@@ -8,7 +8,7 @@
  * the big map, and anything else is reported to the caller, which keeps the
  * static map on screen.
  */
-import maplibregl, { type GeoJSONSource, type Map as MapLibreMap, type MapGeoJSONFeature, type Popup } from "maplibre-gl";
+import maplibregl, { type GeoJSONSource, type Map as MapLibreMap, type MapGeoJSONFeature, type MapSourceDataEvent, type Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "../../styles/map-presentation-v148.css";
 import type { CountryEntityV122, CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
@@ -22,7 +22,9 @@ import {
   applyMapBackdropV151,
   BACKDROP_SOURCE_PREFIX_V151,
   backdropOwnsCityLabelsV151,
+  readMapBackdropKindV151,
   removeMapBackdropV151,
+  VIETNAM_CORE_BBOX_V151,
   type MapBackdropKindV151,
 } from "../../data/map/mapBackdropV151";
 import { addKoreanMapLabelsV151, KOREAN_LABEL_LAYER_IDS_V151 } from "../../data/map/mapLabelsV151";
@@ -70,7 +72,8 @@ export interface MiniMapEngineInputV152 {
   /** Point filters in the big map's form: `${elementId}:${field}` -> value. */
   filters: Record<string, string>;
   boundarySystem: BoundarySystemV151;
-  backdrop: MapBackdropKindV151;
+  /** The mini map's backdrop switch; the kind drawn is the big map's saved one. */
+  backdropOn: boolean;
   camera: MapCameraV151 | null;
   data: { spatial?: SpatialRuntimeAsset; records?: CountryEntityV122[] };
   icons?: boolean;
@@ -78,12 +81,34 @@ export interface MiniMapEngineInputV152 {
   onCamera: (camera: MapCameraV151, atFit: boolean) => void;
   onSelect: (id: string | null) => void;
   onBackdropFallback?: () => void;
+  /** The credit line of the backdrop drawn now ("" when none). */
+  onBackdropCredit?: (credit: string) => void;
   /** A non-backdrop map error, for diagnostics (never logged to the console). */
   onRuntimeError?: (message: string) => void;
   /** The legend of what the engine drew, when it differs from the static map's. */
   onLegend?: (legend: MiniMapLegendV152 | null) => void;
   /** In-box card for a clicked site's full details (a small map cannot hold a wide popup). */
   cardHost?: HTMLElement | null;
+}
+
+/** One short credit line per backdrop kind (full wording: 이용안내 > 지도 이용 시 참고사항). */
+const BACKDROP_CREDIT_V152: Record<MapBackdropKindV151, string> = {
+  terrain: "배경: Mapzen·AWS 지형, Natural Earth, © OpenStreetMap 기여자, OpenFreeMap",
+  satellite: "배경: Esri, Maxar, Earthstar Geographics, © OpenStreetMap 기여자, OpenFreeMap",
+  streets: "배경: © OpenStreetMap 기여자, OpenFreeMap",
+  none: "",
+};
+
+/** The kind to draw when the backdrop is on: the big map's saved kind, terrain when that is "none". */
+function backdropKindWhenOnV152(): MapBackdropKindV151 {
+  let storage: Storage | null = null;
+  try {
+    storage = window.localStorage;
+  } catch {
+    storage = null;
+  }
+  const saved = readMapBackdropKindV151(storage);
+  return saved === "none" ? "terrain" : saved;
 }
 
 export type MiniMapLegendV152 =
@@ -94,7 +119,7 @@ export interface MiniMapEngineV152 {
   map: MapLibreMap;
   zoomBy: (delta: 1 | -1) => void;
   reset: () => void;
-  setBackdrop: (kind: MapBackdropKindV151) => void;
+  setBackdropOn: (on: boolean) => void;
   select: (id: string | null) => void;
   closePopup: () => void;
   destroy: () => void;
@@ -191,7 +216,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
       ? { kind: "lines", classes: TRANSMISSION_VOLTAGE_CLASSES_V152 }
       : null;
   const layerBbox: BboxV152 | null = featureBboxV152(prepared.data);
-  const bounds = miniMapBoundsV152(layerBbox);
+  const bounds = miniMapBoundsV152(layerBbox, VIETNAM_CORE_BBOX_V151);
   // MapLibre keeps a reference to the style it was given; never share the module object.
   const style = JSON.parse(JSON.stringify(MAP_STYLE));
   const map = new maplibregl.Map(miniMapOptionsV152(input.container, style, bounds, input.camera) as any);
@@ -208,7 +233,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
   let rendered: MapLayerRenderResultV152 | null = null;
   let popup: Popup | null = null;
   let pinned = false;
-  let backdropKind: MapBackdropKindV151 = input.backdrop;
+  let backdropKind: MapBackdropKindV151 = input.backdropOn ? backdropKindWhenOnV152() : "none";
   let backdropController: AbortController | null = null;
   let destroyed = false;
 
@@ -276,6 +301,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
     backdropController?.abort();
     removeMapBackdropV151(map);
     backdropKind = kind;
+    input.onBackdropCredit?.(BACKDROP_CREDIT_V152[kind]);
     if (kind === "none") return;
     const controller = new AbortController();
     backdropController = controller;
@@ -286,6 +312,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
       controller.abort();
       removeMapBackdropV151(map);
       backdropKind = "none";
+      input.onBackdropCredit?.("");
       input.onBackdropFallback?.();
     };
     const timer = window.setTimeout(() => { if (errors >= 3) fallBack(); }, 5000);
@@ -417,6 +444,27 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
   }
   publishCamera();
 
+  // Hand over from the static picture once the layer's own data is drawn, not
+  // just the base map (a slow backdrop never holds it up).
+  await new Promise<void>((resolve) => {
+    const sourceId = rendered?.ids.source;
+    let timer = 0;
+    const finish = () => {
+      window.clearTimeout(timer);
+      map.off("sourcedata", onData);
+      resolve();
+    };
+    const onData = (event: MapSourceDataEvent) => {
+      if (event.sourceId === sourceId && map.isSourceLoaded(sourceId)) finish();
+    };
+    if (!sourceId || !map.getSource(sourceId) || map.isSourceLoaded(sourceId)) {
+      resolve();
+      return;
+    }
+    timer = window.setTimeout(finish, 2500);
+    map.on("sourcedata", onData);
+  });
+
   const fitTarget = bounds.fit;
   return {
     map,
@@ -425,7 +473,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
       closePopup();
       map.fitBounds([[fitTarget[0], fitTarget[1]], [fitTarget[2], fitTarget[3]]], { padding: MINIMAP_FIT_PADDING_V152, duration: 250 });
     },
-    setBackdrop: (kind) => applyBackdrop(kind),
+    setBackdropOn: (on) => applyBackdrop(on ? backdropKindWhenOnV152() : "none"),
     select,
     closePopup,
     destroy: () => {

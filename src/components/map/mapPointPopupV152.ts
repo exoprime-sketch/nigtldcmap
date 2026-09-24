@@ -35,6 +35,8 @@ export function createMapPointPopupV152({
   const category = mapIconCategoryV152(layer.elementId, properties, LAYER_COLORS[layer.elementId] || "#176a4b");
   const allRows = entity && facilityCardSpecV153(layer.elementId) ? facilityCardRowsV153(layer.elementId, entity) : undefined;
   const rows = compact && allRows ? allRows.filter((row) => !["country", "name"].includes(row.key)).slice(0, 3) : allRows;
+  // A card that shows 소재지 already says where it is; the note would repeat it.
+  const locationShown = Boolean(rows?.some((row) => row.key === "location" && !row.missing));
   return createMapFeaturePopupV148({
     elementId: layer.elementId,
     selectionKey: String(properties.selectionKey ?? properties.recordId ?? ""),
@@ -48,7 +50,7 @@ export function createMapPointPopupV152({
     note:
       [
         properties.approximate ? "소재 지역의 대표 위치" : "",
-        publicTextV126(properties.locationLabelV151)
+        !locationShown && publicTextV126(properties.locationLabelV151)
           ? `소재 ${publicTextV126(properties.locationLabelV151)}`
           : "",
       ]

@@ -5,7 +5,6 @@ import {
   DEFAULT_BOUNDARY_SYSTEM_V151,
   boundarySystemV151,
 } from "../../data/map/adminBoundaryV151";
-import { readMapBackdropKindV151, type MapBackdropKindV151 } from "../../data/map/mapBackdropV151";
 import type { SpatialRuntimeAsset } from "../../map/layers/types";
 import type { MapCameraV151 } from "../../types/map";
 import type { MiniMapEngineV152, MiniMapLegendV152 } from "./miniMapEngineV152";
@@ -18,14 +17,6 @@ import {
   type MiniMapIntentV152,
 } from "./miniMapStateV152";
 import "./minimap-v152.css";
-
-/** One short credit line per backdrop kind (full wording: 이용안내 > 지도 이용 시 참고사항). */
-const BACKDROP_CREDIT_V152: Record<MapBackdropKindV151, string> = {
-  terrain: "배경: Mapzen·AWS 지형, Natural Earth, © OpenStreetMap 기여자, OpenFreeMap",
-  satellite: "배경: Esri, Maxar, Earthstar Geographics, © OpenStreetMap 기여자, OpenFreeMap",
-  streets: "배경: © OpenStreetMap 기여자, OpenFreeMap",
-  none: "",
-};
 
 /** The mini map's own backdrop switch; on by default, remembered separately from the big map. */
 export const MINIMAP_BACKDROP_STORAGE_KEY_V152 = "cdp-minimap-backdrop-v152";
@@ -40,12 +31,6 @@ function storageV152(): Storage | null {
 
 function readMiniMapBackdropOnV152(): boolean {
   return storageV152()?.getItem(MINIMAP_BACKDROP_STORAGE_KEY_V152) !== "off";
-}
-
-/** The kind to draw when the backdrop is on: the big map's saved kind, terrain when that is "none". */
-function backdropKindWhenOnV152(): MapBackdropKindV151 {
-  const saved = readMapBackdropKindV151(storageV152());
-  return saved === "none" ? "terrain" : saved;
 }
 
 type ControlActionV152 = "zoom-in" | "zoom-out" | "reset";
@@ -80,6 +65,7 @@ export default function MiniMapV152(props: MiniMapV152Props) {
   const { layer, label, children } = props;
   const [machine, dispatch] = useReducer(miniMapReducerV152, MINIMAP_INITIAL_V152);
   const [backdropOn, setBackdropOn] = useState(readMiniMapBackdropOnV152);
+  const [credit, setCredit] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [coarse] = useState(() => typeof window !== "undefined" && Boolean(window.matchMedia?.("(pointer: coarse)").matches));
   const rootRef = useRef<HTMLDivElement>(null);
@@ -128,7 +114,7 @@ export default function MiniMapV152(props: MiniMapV152Props) {
           selected: current.selected,
           filters,
           boundarySystem: boundarySystemV151(storage?.getItem(BOUNDARY_SYSTEM_STORAGE_KEY_V151) || DEFAULT_BOUNDARY_SYSTEM_V151),
-          backdrop: readMiniMapBackdropOnV152() ? backdropKindWhenOnV152() : "none",
+          backdropOn: readMiniMapBackdropOnV152(),
           camera: cameraRef.current,
           data: current.data,
           onCamera: (camera, atFit) => {
@@ -147,6 +133,7 @@ export default function MiniMapV152(props: MiniMapV152Props) {
             propsRef.current.onSelectFeature?.(id);
           },
           onBackdropFallback: () => setBackdropOn(false),
+          onBackdropCredit: setCredit,
         })
       )
       .then((created) => {
@@ -171,6 +158,7 @@ export default function MiniMapV152(props: MiniMapV152Props) {
       // The last view is remembered (restored on the next intent and handed to the big map).
       engine?.destroy();
       cardRef.current?.replaceChildren();
+      setCredit("");
       propsRef.current.onEngineLegend?.(null);
     };
   }, [engineWanted, inputKey, run]);
@@ -239,7 +227,7 @@ export default function MiniMapV152(props: MiniMapV152Props) {
     } catch {
       // optional preference
     }
-    engineRef.current?.setBackdrop(next ? backdropKindWhenOnV152() : "none");
+    engineRef.current?.setBackdropOn(next);
     if (!engineRef.current) intent("button");
   };
 
@@ -322,9 +310,9 @@ export default function MiniMapV152(props: MiniMapV152Props) {
       <p id={helpId} className="minimap152__help" data-testid="minimap-help-v152">
         {help}
       </p>
-      {active && backdropOn && BACKDROP_CREDIT_V152[backdropKindWhenOnV152()] && (
+      {active && backdropOn && credit && (
         <p className="minimap152__credit" data-testid="minimap-credit-v152">
-          {BACKDROP_CREDIT_V152[backdropKindWhenOnV152()]}
+          {credit}
         </p>
       )}
       {machine.state === "error" && (

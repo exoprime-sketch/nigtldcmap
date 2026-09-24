@@ -157,7 +157,8 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
   }
   const raw = field.sources.map((source) => readSource(entity, source)).find((value) => text(value) !== null);
   if (field.format === "number") {
-    const number = field.sources[0] === "capacityMw" || field.sources[0] === "mw" ? powerPlantCapacityMwV141(attributes) : Number(String(raw ?? "").replace(/,/g, ""));
+    // No stated value is 미기재, never 0 (Number("") would be 0).
+    const number = field.sources[0] === "capacityMw" || field.sources[0] === "mw" ? powerPlantCapacityMwV141(attributes) : raw === undefined ? null : Number(String(raw).replace(/,/g, ""));
     if (number === null || !Number.isFinite(number)) return missing;
     // The unit follows the number; E-006 amounts carry their currency and kind.
     const unit = field.unit === "amountCurrency" ? text(attributes.currency) || "" : field.unit || "";

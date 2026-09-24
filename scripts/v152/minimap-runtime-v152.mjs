@@ -58,6 +58,8 @@ const report = {
 };
 
 const near = (a, b, tolerance) => Math.abs(a - b) <= tolerance;
+/** Layers whose map draws sites (points, D-018 activity sites): the static map shows their icons. */
+const SITE_LAYERS_V152 = new Set(["A-023", "A-025", "B-008", "B-012", "B-023", "B-025", "B-028", "B-048", "C-025", "D-018", "E-004", "E-005", "E-006", "E-018", "E-019"]);
 const round = (value, digits = 4) => Math.round(value * 10 ** digits) / 10 ** digits;
 
 function watch(page, bucket) {
@@ -206,6 +208,26 @@ async function checkScreen({ id, url, scope, openTestId }) {
     const engineRequestedEarly = requests.some((url) => url.includes("minimap-engine-v152"));
     check("staticBeforeIntent", before?.state === "static" && before.canvases === 0 && before.staticSvg, before);
     check("noEngineChunkBeforeIntent", !engineRequestedEarly);
+    // Site layers draw icons in the static map once the small icon kit arrives;
+    // lines and provinces never download it.
+    const drawsSites = SITE_LAYERS_V152.has(await root.getAttribute("data-element-id"));
+    if (drawsSites) {
+      await page.locator(`${scope} [data-testid="detail-map-icon-legend-v152"]`).first().waitFor({ state: "attached", timeout: 15000 }).catch(() => null);
+    }
+    const staticIcons = await page.evaluate((selector) => {
+      const host = document.querySelector(`${selector} [data-testid="minimap-v152"]`);
+      return {
+        badges: host ? host.querySelectorAll('svg use[href^="#mi152-"]').length : 0,
+        legendEntries: document.querySelectorAll(`${selector} [data-testid="detail-map-icon-legend-v152"] [data-icon-id]`).length,
+      };
+    }, scope);
+    const kitLoaded = requests.some((url) => url.includes("map-icon-kit-v152"));
+    result.measurements.staticIcons = { ...staticIcons, kitLoaded, drawsSites };
+    check(
+      "staticIconsOnlyForSites",
+      drawsSites ? kitLoaded && staticIcons.legendEntries > 0 : !kitLoaded && staticIcons.badges === 0,
+      result.measurements.staticIcons
+    );
     const jsBeforeIntent = requests.filter((url) => url.endsWith(".js")).map((url) => url.replace(/^.*\/static\/js\//u, ""));
     result.measurements.jsBeforeIntent = jsBeforeIntent;
 

@@ -8,7 +8,6 @@
  * button. Nothing turns it on by time alone (user decision 2026-09-24), and it
  * gives the engine back when it leaves the viewport or another mini map starts.
  */
-import { VIETNAM_CORE_BBOX_V151 } from "../../data/map/mapBackdropV151";
 import type { MapCameraV151 } from "../../types/map";
 
 export type MiniMapStateV152 = "static" | "loading" | "active" | "error";
@@ -115,18 +114,27 @@ export function featureBboxV152(collection: GeoJSON.FeatureCollection | null | u
 /**
  * Where the map first looks (the layer's own extent, else the country) and how
  * far it may pan (the country and the layer, plus a 2-degree margin) so a
- * reader cannot drag Viet Nam off screen for good.
+ * reader cannot drag Viet Nam off screen for good. `core` is the country's
+ * mainland box (the engine passes the backdrop module's; this module stays
+ * free of it so the static map does not download it).
  */
-export function miniMapBoundsV152(layerBbox: BboxV152 | null): { fit: BboxV152; max: BboxV152 } {
-  const core = VIETNAM_CORE_BBOX_V151;
-  const fit: BboxV152 = layerBbox && layerBbox[0] < layerBbox[2] && layerBbox[1] < layerBbox[3]
-    ? layerBbox
-    : [core.west, core.south, core.east, core.north];
+export function miniMapBoundsV152(
+  layerBbox: BboxV152 | null,
+  core: { west: number; south: number; east: number; north: number }
+): { fit: BboxV152; max: BboxV152 } {
+  const coreBox: BboxV152 = [core.west, core.south, core.east, core.north];
+  const valid = layerBbox && layerBbox[0] < layerBbox[2] && layerBbox[1] < layerBbox[3] ? layerBbox : null;
+  // Like the big map's first fit: the layer's extent clipped to the mainland, so
+  // offshore islands widen the pan limit but do not shrink the first view.
+  const clipped: BboxV152 | null = valid
+    ? [Math.max(valid[0], coreBox[0]), Math.max(valid[1], coreBox[1]), Math.min(valid[2], coreBox[2]), Math.min(valid[3], coreBox[3])]
+    : null;
+  const fit: BboxV152 = clipped && clipped[0] < clipped[2] && clipped[1] < clipped[3] ? clipped : valid || coreBox;
   const union: BboxV152 = [
-    Math.min(core.west, fit[0]),
-    Math.min(core.south, fit[1]),
-    Math.max(core.east, fit[2]),
-    Math.max(core.north, fit[3]),
+    Math.min(coreBox[0], (valid || coreBox)[0]),
+    Math.min(coreBox[1], (valid || coreBox)[1]),
+    Math.max(coreBox[2], (valid || coreBox)[2]),
+    Math.max(coreBox[3], (valid || coreBox)[3]),
   ];
   const m = MINIMAP_BOUNDS_MARGIN_DEG_V152;
   return {

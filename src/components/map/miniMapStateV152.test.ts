@@ -15,6 +15,9 @@ import {
   type MiniMapEventV152,
   type MiniMapMachineV152,
 } from "./miniMapStateV152";
+import { VIETNAM_CORE_BBOX_V151 } from "../../data/map/mapBackdropV151";
+
+const CORE = VIETNAM_CORE_BBOX_V151;
 
 const run = (events: MiniMapEventV152[], start: MiniMapMachineV152 = MINIMAP_INITIAL_V152) =>
   events.reduce(miniMapReducerV152, start);
@@ -95,18 +98,20 @@ describe("mini map options", () => {
   });
 
   it("fits the layer and bounds panning to the country plus a 2-degree margin", () => {
-    const bounds = miniMapBoundsV152(bbox);
+    const bounds = miniMapBoundsV152(bbox, CORE);
     expect(bounds.fit).toEqual(bbox);
     expect(MINIMAP_BOUNDS_MARGIN_DEG_V152).toBe(2);
     expect(bounds.max).toEqual([102.1 - 2, 8.1 - 2, 109.6 + 2, 23.5 + 2]);
     // Without a layer extent the country is the fit.
-    expect(miniMapBoundsV152(null).fit).toEqual([102.1, 8.1, 109.6, 23.5]);
-    // A layer reaching beyond the core box widens the pan limit with it.
-    expect(miniMapBoundsV152([100, 5, 112, 24]).max).toEqual([98, 3, 114, 26]);
+    expect(miniMapBoundsV152(null, CORE).fit).toEqual([102.1, 8.1, 109.6, 23.5]);
+    // A layer reaching beyond the core box (offshore islands) widens the pan
+    // limit with it, but the first view stays on the mainland.
+    expect(miniMapBoundsV152([100, 5, 117, 24], CORE).max).toEqual([98, 3, 119, 26]);
+    expect(miniMapBoundsV152([100, 5, 117, 24], CORE).fit).toEqual([102.1, 8.1, 109.6, 23.5]);
   });
 
   it("never captures page scroll, never rotates, zooms 4-12", () => {
-    const options = miniMapOptionsV152(container, { version: 8 }, miniMapBoundsV152(bbox), null);
+    const options = miniMapOptionsV152(container, { version: 8 }, miniMapBoundsV152(bbox, CORE), null);
     expect(options.cooperativeGestures).toBe(true);
     expect(options.dragRotate).toBe(false);
     expect(options.pitchWithRotate).toBe(false);
@@ -122,14 +127,14 @@ describe("mini map options", () => {
   });
 
   it("speaks Korean for the gesture hints", () => {
-    const options = miniMapOptionsV152(container, {}, miniMapBoundsV152(null), null);
+    const options = miniMapOptionsV152(container, {}, miniMapBoundsV152(null, CORE), null);
     expect(options.locale["CooperativeGesturesHandler.WindowsHelpText"]).toContain("Ctrl+스크롤");
     expect(options.locale["CooperativeGesturesHandler.MobileHelpText"]).toContain("두 손가락");
     expect(MINIMAP_LOCALE_V152["Map.Title"]).toBe("지도");
   });
 
   it("reopens a remembered camera, clamped to the zoom range", () => {
-    const options = miniMapOptionsV152(container, {}, miniMapBoundsV152(null), { lng: 106, lat: 16, zoom: 14, bearing: 30 });
+    const options = miniMapOptionsV152(container, {}, miniMapBoundsV152(null, CORE), { lng: 106, lat: 16, zoom: 14, bearing: 30 });
     expect(options.center).toEqual([106, 16]);
     expect(options.zoom).toBe(12);
     expect(options.bounds).toBeUndefined();

@@ -23,11 +23,9 @@ import { TRANSMISSION_VOLTAGE_CLASSES_V152 as LINE_CLASSES_V152 } from "../../..
 import type { MapCameraV151 } from "../../../types/map";
 import FacilityCardV153 from "./FacilityCardV153";
 import { facilityCardSpecV153 } from "../../../data/visualization/facilityCardV153";
-import { publicMapLayerTitleV126 } from "../../../data/visualization/publicMapWorkspaceV126";
-import MapIconSpriteV152 from "../../map/MapIconSpriteV152";
-import MapIconLegendV152 from "../../map/MapIconLegendV152";
-import { mapIconCategoryV152, mapIconImageIdV152, mapIconLegendEntriesV152, MAP_ICON_INK_V152 } from "../../../data/map/mapIconsV152";
 import { LAYER_COLORS } from "../../../map/layers/colors";
+
+type IconKitV152 = typeof import("../../map/mapIconKitV152");
 
 /** Up to this many sites the static map draws each as its icon badge; above it, category-coloured dots. */
 const STATIC_ICON_LIMIT_V152 = 60;
@@ -60,6 +58,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const [picked, setPickedState] = useState("");
   const [override, setOverride] = useState<{ variable: string; period: string } | null>(null);
   const cameraRef = useRef<MapCameraV151 | null>(null);
+  const [iconKit, setIconKit] = useState<IconKitV152 | null>(null);
   const [engineLegend, setEngineLegend] = useState<MiniMapLegendV152 | null>(null);
   const setPicked = (id: string) => {
     setPickedState(id);
@@ -85,6 +84,16 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     }).catch(() => { if (!cancelled) setError(true); });
     return () => { cancelled = true; };
   }, [elementId, countryIso3, retry]);
+  // Sites (points, D-018 activity sites) are drawn as icons; lines and provinces never load the glyphs.
+  const drawsSites = Boolean(runtime && (!runtime.layer.geometryUrl || runtime.layer.renderer === "regional-scope"));
+  useEffect(() => {
+    if (!drawsSites || iconKit) return undefined;
+    let cancelled = false;
+    void import(/* webpackChunkName: "map-icon-kit-v152" */ "../../map/mapIconKitV152").then((kit) => {
+      if (!cancelled) setIconKit(kit);
+    }).catch(() => undefined);
+    return () => { cancelled = true; };
+  }, [drawsSites, iconKit]);
   const resolved = useMemo(() => runtime ? detailMapSelectionV148(runtime.layer, selection) : null, [runtime, selection]);
   const slice = override || resolved;
   const model = useMemo(() => {
@@ -109,12 +118,12 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
       : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || `${f.properties.voltageKv || ""} kV 선로 ${i + 1}`), value: null, sourceRegion: undefined }))
       : points.map((r) => ({ id: r.recordId, label: resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title, value: null, sourceRegion: undefined }));
     const layerColor = LAYER_COLORS[layer.elementId] || "#176a4b";
-    const layerTitle = publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle);
+    const layerTitle = layer.publicShortTitle;
     const iconProperties = points.map((r) => ({ ...(r.normalizedAttributes || {}) } as Record<string, unknown>));
-    const categories = new Map(points.map((r, index) => [r.recordId, mapIconCategoryV152(layer.elementId, iconProperties[index], layerColor)]));
-    const iconLegend = mapIconLegendEntriesV152(layer.elementId, iconProperties, layerColor, layerTitle);
+    const categories = new Map(points.map((r, index) => [r.recordId, iconKit ? iconKit.mapIconCategoryV152(layer.elementId, iconProperties[index], layerColor) : null]));
+    const iconLegend = iconKit ? iconKit.mapIconLegendEntriesV152(layer.elementId, iconProperties, layerColor, layerTitle) : [];
     return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend };
-  }, [runtime, slice, selection.dimensions, compact]);
+  }, [runtime, slice, selection.dimensions, compact, iconKit]);
 
   if (unavailable) return null;
   if (error) return <section className="detail-map148"><h3>위치·분포</h3><p>지도를 불러오지 못했습니다.</p><button type="button" onClick={() => setRetry((v) => v + 1)}>다시 시도</button></section>;
@@ -145,14 +154,14 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     </div>}
     <div className="detail-map148-layout">
       <figure>
-        <MapIconSpriteV152 />
+        {iconKit && <iconKit.MapIconSpriteV152 />}
         <MiniMapV152
           countryIso3={countryIso3}
           layer={layer}
           selected={slice}
           dimensions={selection.dimensions}
           data={{ spatial: geometry ? { geometry, data } : undefined, records: runtime.records }}
-          label={`${publicMapLayerTitleV126(elementId, layer.publicShortTitle)} 확대·이동 지도`}
+          label={`${layer.publicShortTitle} 확대·이동 지도`}
           onCameraChange={(camera) => { cameraRef.current = camera; }}
           onEngineLegend={setEngineLegend}
           onSelectFeature={(id) => { if (!id || model.options.some((o) => o.id === id)) setPicked(id || ""); else onSelectFeature?.(elementId, id); }}
@@ -164,7 +173,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             const id = data ? String(f.properties.adm1Code || "") : String(f.id ?? i);
             const v = model.byCode.get(id);
             const color = data ? mapColorV148(v ? finiteMapValueV148(v.value) : null, model.min, model.max) : lineColorV152(Number(f.properties.voltageKv || f.properties.voltage));
-            if (f.geometry.type === "Point") { const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy); return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id="world"><circle r={picked === id ? 10 : 8.5} fill="#fff" stroke={picked === id ? "#c04721" : LAYER_COLORS[layer.elementId] || "#a95025"} strokeWidth="2" /><use href={`#${mapIconImageIdV152("world")}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: MAP_ICON_INK_V152 }} /><title>{model.options.find((o) => o.id === id)?.label}</title></g>; }
+            if (f.geometry.type === "Point") { const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy); if (!iconKit) return <circle key={id} cx={x} cy={y} r={picked === id ? 5 : 3} fill="#a95025" onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>; return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id="world"><circle r={picked === id ? 10 : 8.5} fill="#fff" stroke={picked === id ? "#c04721" : LAYER_COLORS[layer.elementId] || "#a95025"} strokeWidth="2" /><use href={`#${iconKit.mapIconImageIdV152("world")}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} /><title>{model.options.find((o) => o.id === id)?.label}</title></g>; }
             return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${v.adm1Name}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
           })}
           {!geometry && model.points.map((r) => {
@@ -173,11 +182,11 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             const approximate = model.prepared.approximateRecordIds.has(r.recordId);
             const label = resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title;
             const ring = category?.color || "#087f74";
-            if (category && model.points.length <= STATIC_ICON_LIMIT_V152) {
+            if (iconKit && category && model.points.length <= STATIC_ICON_LIMIT_V152) {
               const size = picked === r.recordId ? 1.25 : 1;
               return <g key={r.recordId} transform={`translate(${x.toFixed(1)},${y.toFixed(1)}) scale(${size})`} opacity={approximate ? 0.6 : 1} onClick={compact ? undefined : () => setPicked(r.recordId)} data-icon-id={category.iconId}>
                 <circle r="8.5" fill="#fff" stroke={picked === r.recordId ? "#c04721" : ring} strokeWidth={picked === r.recordId ? 2.6 : 2} />
-                <use href={`#${mapIconImageIdV152(category.iconId)}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: MAP_ICON_INK_V152 }} />
+                <use href={`#${iconKit.mapIconImageIdV152(category.iconId)}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} />
                 <title>{label}</title>
               </g>;
             }
@@ -189,7 +198,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         </MiniMapV152>
         {data && engineLegend?.kind === "ramp" && <figcaption className="detail-map148-legend" data-legend-source="live-map"><span>{formatPublicNumberV126(engineLegend.minimum, units)}</span><i style={{ background: `linear-gradient(to right, ${engineLegend.from}, ${engineLegend.to})` }} /><span>{formatPublicNumberV126(engineLegend.maximum, units)} {units}</span><small>{engineLegend.boundaryMode === "34" ? "개편 후 34개 성·시 기준 · 색 없음: 자료 없음" : "색 없음: 자료 없음"}</small></figcaption>}
         {data && engineLegend?.kind !== "ramp" && <figcaption className="detail-map148-legend"><span>{formatPublicNumberV126(model.min, units)}</span><i style={{ background: `linear-gradient(to right, ${mapColorV148(model.min, model.min, model.max)}, ${mapColorV148((model.min + model.max) / 2, model.min, model.max)}, ${mapColorV148(model.max, model.min, model.max)})` }} /><span>{formatPublicNumberV126(model.max, units)} {units}</span><small>회색: 자료 없음</small></figcaption>}
-        {!data && !geometry && model.iconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><MapIconLegendV152 entries={model.iconLegend} compact /></div>}
+        {!data && !geometry && iconKit && model.iconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.iconLegend} compact /></div>}
         {!data && <figcaption>{layer.renderer === "line" ? <>{LINE_CLASSES_V152.map((entry) => <span key={entry.kv}><span className="detail-map148-line-key" style={{ background: entry.color, height: entry.kv === 500 ? 4 : 3 }} /><PublicTermTextV134 text={`${entry.kv} kV`} /> </span>)}<PublicTermTextV134 text={`· ${model.features.length}개 선로 구간`} /></> : `${geometry ? model.features.length : model.points.length}개 위치·범위`}{approximate ? " · 속 빈 점은 소재 지역의 대표 위치" : ""}</figcaption>}
       </figure>
       {!compact && <div className="detail-map148-selection">

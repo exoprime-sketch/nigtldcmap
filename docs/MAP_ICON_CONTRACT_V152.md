@@ -132,13 +132,27 @@ DOM 배지(`MapIconBadgeV152`)는 고정 22px 원 + 2.5px 고리를 쓰며 위 �
 3. `npx react-scripts test --env=jsdom --watchAll=false --testMatch='**/mapIconsV152.test.ts'` 로 테스트를 갱신·확인한다(새 규칙이면 `mapIconsV152.test.ts`에 케이스 추가).
 4. Tabler 파일은 `<path>` 요소만 있어야 하며, 생성기가 그 외 요소(`<circle>`, `<rect>` 등)를 만나면 즉시 실패한다 — 실패하면 해당 아이콘은 수작업 검토가 필요하다는 뜻이다.
 
-### 참고: 이 worktree에서 테스트 실행 시 주의
+### 참고: 테스트 실행
+- 한글이 들어간 경로의 중첩 worktree에서는 CRA 기본 `testMatch`가 0건 매칭된 적이 있다(작업 worktree `nigt-wt-d3`에서는 정상). 같은 증상이면 `--testMatch='**/mapIconsV152.test.ts'`처럼 상대 glob을 준다.
 
-이 저장소 경로(한글 폴더명 + 중첩된 git worktree)에서는 `react-scripts test`의 **기본** `testMatch`(절대경로 기반)가 0건 매칭되는 환경 문제가 있었다(생성된 testMatch 문자열에 구분자가 섞여 나옴 — Jest/CRA 쪽 이슈로 보이며 이 모듈의 코드 문제는 아니다). 해결: `--testMatch='**/mapIconsV152.test.ts'`처럼 **상대 경로 glob**을 명시하면 정상 매칭된다(134개 테스트 통과 확인). 같은 증상이 다른 V15x 테스트에서도 나타나면 같은 방식으로 우회한다.
+## 5. 지도·범례·팝업 적용(구현)
 
-## 5. 통합 시 주의(메인 세션이 배선할 것)
+| 자리 | 구현 | 파일 |
+|---|---|---|
+| 점 레이어(큰 지도·미니맵 공통) | 흰 원 배지(`circle`, 고리 = 분류색) + 아이콘(`symbol`, `icon-image: ["get","__icon"]`, `icon-allow-overlap`·`icon-ignore-placement` true, `icon-size` 줌 5→9: 0.7→1.0, 보조 레이어는 ×0.82) + hover 링 + 선택 링 + KR 표시(E-018·E-019, `text-field: "KR"`) | `src/map/layers/pointIconLayer.ts` |
+| 피처 속성 | `__icon`(이미지 id) · `__iconColor`(고리색) · `__iconKey`(범례 그룹) · `__iconTag` — 공유 피처 빌더가 `preparePointLayerV152({icons:true})`에서 기록 | `src/map/layers/index.ts` |
+| 배지 크기 | 반지름 줌 5→9: 주 분석 10→13px, 보조 9→11px(390px 화면에서도 지름 ≥ 18px). A-023은 범례 4구간(10 MW 미만·10~99·100~499·500 이상; 용량 미기재는 가장 작게)으로 5→9: 9/10/11.5/13 → 11/12.5/14/16px | `pointIconLayer.ts` |
+| 클러스터 | 기존 원·숫자 유지 + 주 분석일 때 대표 아이콘 흰색 변형(`mi152-<id>--w`)을 숫자 위에 | `pointIconLayer.ts`, `registerMapIcons(map, ids, "white")` |
+| D-018 활동지점 | 같은 배지 + `world` | `src/map/layers/regionLayer.ts` |
+| 큰 지도 범례 | 활성 목록: 레이어 대표 아이콘 배지(`data-symbol-shape` 속성 유지 + `data-icon-id`). 초점 레이어: `MapIconLegendV152` — 지도에 그린 피처의 `__icon`·`__iconColor`를 현재 필터 기준으로 세므로 범례와 지도가 어긋날 수 없음. A-023은 발전원 아이콘·개수 + 설비용량 배지 크기 4단계 | `src/pages/RealMapExplorerPage.tsx` |
+| 팝업 | 제목 앞 아이콘, 규격 있는 9개 데이터(A-023·A-025·B-048·C-025·E-004·E-005·E-006·E-018·E-019)는 `facilityCardRowsV153` 라벨형 카드 전 행("미기재" 유지) | `src/components/map/mapPointPopupV152.ts`, `mapFeaturePopupV148.ts` |
+| 큰 지도 우측 패널 | 규격 있는 데이터는 `FacilityCardV153`(기존 테스트 id 유지) | `RealMapExplorerPage.tsx` |
+| 미니맵 정적 SVG | 점 60개 이하 레이어는 아이콘 배지(`<use>`), 그 이상은 분류색 점 + 아이콘 범례(분류명·개수). 스프라이트·범례·분류 규칙은 지점을 그리는 레이어일 때만 동적 청크 `map-icon-kit-v152`(`src/components/map/mapIconKitV152.ts`)로 받는다 — 선·면 레이어와 홈(A-024)은 아이콘 코드를 받지 않음 | `src/components/data/public/DetailLocationMapV148.tsx` |
+| KR 표시(DOM) | 배지의 CSS `::after`(7.5px 굵게) — DOM 글자가 아니므로 원시 코드·용어집 검사 대상 아님 | `map-icons-v152.css` |
 
-- `registerMapIcons(map)`을 지도 생성 직후 1회 호출하고, `attachMapIconMissingHandlerV152(map)`을 함께 걸어 지연 등록을 지원한다.
-- `mapIconCategoryV152(elementId, properties, layerColor)`의 `layerColor`는 **호출자가 그 레이어의 기존 고리색을 넘겨야** 한다(예: A-023 이외 레이어는 `RealMapExplorerPage.tsx`의 레이어별 색상표를 그대로 전달). A-023·C-025 고정 팔레트·B-048 명명된 광종은 `layerColor`를 무시한다.
-- 지도 캔버스 심볼 레이어의 `icon-image`는 `mapIconImageIdV152(id)`(`"mi152-" + id`)를 그대로 쓴다. 고리·배경 원은 이 모듈이 그리지 않으므로 기존 circle 레이어(반지름·고리색은 위 2절 상수 참고)를 그대로 유지한다.
-- 팝업·범례 등 DOM에서는 `MapIconBadgeV152`/`MapIconLegendV152`를 쓴다. `mapIconLegendEntriesV152`는 화면에 보여줄 `entries`를 계산만 하고 렌더링은 하지 않는다.
+- 모양 기호(V129 원·사각·삼각·마름모)는 캔버스 아래의 SVG 대체 렌더러와 범례 속성(`data-symbol-shape`)에 그대로 남는다(V133 레이어 구분 감사 계약).
+- **비교 모드**(`MapComparisonWorkspaceV135`)는 이번에 바꾸지 않았다: 두 창을 창별 색으로 구분하는 것이 V135 감사 계약이라, 창 색 고리 변형과 창 범례 개편을 함께 해야 한다(후속).
+
+## 6. 검증
+- 단위: `src/data/map/mapIconsV152.test.ts`(규칙·출처·SVG 134건), `src/map/layers/iconCensusV152.test.ts`(실제 전달 데이터 — 14개 점 레이어의 모든 지점이 자기 분류 아이콘, 대체 아이콘 0건; 점·군집·지역 레이어와 아이콘 규칙 목록 일치), `src/map/layers/pointIconLayer.test.ts`(레이어 스펙·최소 반지름·A-023 용량 구간·클러스터·아이콘 끔 시 V129 그대로).
+- 러너: `node scripts/v152/map-icons-runtime-v152.mjs --build <dir>` → `reports/v152/map-icons-runtime-v152.json` — 15개 레이어 사용 아이콘 등록 100%·`styleimagemissing` 0·범례와 지도 (아이콘, 색) 분류·개수 일치·390px 최소 배지 지름·스크린샷(`reports/v152/shots/icons/`).

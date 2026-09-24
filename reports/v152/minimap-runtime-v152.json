@@ -1,0 +1,2360 @@
+{
+  "schema": "minimap-runtime-v152",
+  "generatedAt": "2026-09-24T00:10:15.930Z",
+  "build": ".\\build",
+  "screens": [
+    {
+      "id": "home",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 0,
+            "kitLoaded": false,
+            "drawsSites": false
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.583,
+            "after": 5.0862
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 0,
+            "scrollAfter": 240,
+            "zoomBefore": 5.0862,
+            "zoomAfter": 5.0862
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.6802,
+              16.0965
+            ],
+            "after": [
+              106.6778,
+              15.4107
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 6.0862,
+            "after": 7.0862
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 7.0862,
+            "after": 6.0862
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.85,
+              16.0953,
+              4.583
+            ],
+            "reset": [
+              105.85,
+              16.0953,
+              4.583
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.85,
+            "after": 107.3168
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.583,
+            "after": 6.583
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.583,
+            "after": 5.583
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.85,
+              16.0953,
+              4.583
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "베트남 송전망110 kV(킬로볼트) · 4.09 km",
+            "selected": "A-024-WB2016-0606",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "A-024-WB2016-0606"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "A-024"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.85,
+              16.0953,
+              5.583
+            ],
+            "url": "105.85000,16.09531,5.58",
+            "big": {
+              "lng": 105.84999999999673,
+              "lat": 16.09530855110276,
+              "zoom": 5.583000984387879
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"jeonryeogmang-wici-migonggeub-jiyeog\":{\"variable\":\"all\",\"period\":\"2016\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 0,
+          "kitLoaded": false,
+          "drawsSites": false
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "447.1b703638.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.85000000000002,
+          "lat": 16.095308551101752,
+          "zoom": 4.583000984387879,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "베트남 송전망110 kV(킬로볼트) · 4.09 km",
+          "selected": "A-024-WB2016-0606",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "A-023",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 14,
+            "kitLoaded": true,
+            "drawsSites": true
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.2067,
+            "after": 4.7099
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 473,
+            "scrollAfter": 713,
+            "zoomBefore": 4.7099,
+            "zoomAfter": 4.7099
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.6773,
+              16.3142
+            ],
+            "after": [
+              106.9802,
+              15.419
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.7099,
+            "after": 6.7099
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.7099,
+            "after": 5.7099
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.85,
+              16.3125,
+              4.2067
+            ],
+            "reset": [
+              105.85,
+              16.3125,
+              4.2067
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.85,
+            "after": 107.754
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.2067,
+            "after": 6.2067
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.2067,
+            "after": 5.2067
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.85,
+              16.3125,
+              4.2067
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "주 분석 · 발전소Ta Niet국가베트남명칭Ta Niet발전원수력소유·운영Ta Niet Hydro Power JSC설비용량3.6 MW가동 연도2014소재지선라(Sơn La) · 개편 후 34개 기준자료 출처WRI GPPD (2021) · Open Development Vietnam",
+            "selected": "v124-a-023-entity-00121",
+            "facilityCard": true
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "v124-a-023-entity-00121"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "A-023"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.85,
+              16.3125,
+              5.2067
+            ],
+            "url": "105.85000,16.31252,5.21",
+            "big": {
+              "lng": 105.84999999999957,
+              "lat": 16.312515998681377,
+              "zoom": 5.206695879597744
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"baljeonso-wici-yongryang\":{\"variable\":\"locations\",\"period\":\"2026\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 14,
+          "kitLoaded": true,
+          "drawsSites": true
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js",
+          "447.1b703638.chunk.js",
+          "map-icon-kit-v152.eea490bc.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.84999999999991,
+          "lat": 16.312515998682088,
+          "zoom": 4.206695879597739,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "주 분석 · 발전소Ta Niet국가베트남명칭Ta Niet발전원수력소유·운영Ta Niet Hydro Power JSC설비용량3.6 MW가동 연도2014소재지선라(Sơn La) · 개편 후 34개 기준자료 출처WRI GPPD (2021) · Open Development Vietnam",
+          "selected": "v124-a-023-entity-00121",
+          "facilityCard": true
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "A-024",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 0,
+            "kitLoaded": false,
+            "drawsSites": false
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.2067,
+            "after": 4.7099
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 413,
+            "scrollAfter": 653,
+            "zoomBefore": 4.7099,
+            "zoomAfter": 4.7099
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.6773,
+              16.097
+            ],
+            "after": [
+              106.9821,
+              15.1995
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.7099,
+            "after": 6.7099
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.7099,
+            "after": 5.7099
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.85,
+              16.0953,
+              4.2067
+            ],
+            "reset": [
+              105.85,
+              16.0953,
+              4.2067
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.85,
+            "after": 107.754
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.2067,
+            "after": 6.2067
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.2067,
+            "after": 5.2067
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.85,
+              16.0953,
+              4.2067
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "베트남 송전망220 kV(킬로볼트) · 68.52 km",
+            "selected": "A-024-WB2016-0545",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "A-024-WB2016-0545"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "A-024"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.85,
+              16.0953,
+              5.2067
+            ],
+            "url": "105.85000,16.09531,5.21",
+            "big": {
+              "lng": 105.84999999999832,
+              "lat": 16.09530855110195,
+              "zoom": 5.206695879597751
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"jeonryeogmang-wici-migonggeub-jiyeog\":{\"variable\":\"all\",\"period\":\"2016\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 0,
+          "kitLoaded": false,
+          "drawsSites": false
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "447.1b703638.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.85000000000002,
+          "lat": 16.095308551101752,
+          "zoom": 4.206695879597745,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "베트남 송전망220 kV(킬로볼트) · 68.52 km",
+          "selected": "A-024-WB2016-0545",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "B-004",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 0,
+            "kitLoaded": false,
+            "drawsSites": false
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4,
+            "after": 4.5032
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 1033,
+            "scrollAfter": 1273,
+            "zoomBefore": 4.5032,
+            "zoomAfter": 4.5032
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              106.5364,
+              16.0641
+            ],
+            "after": [
+              108.0371,
+              15.0314
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.5032,
+            "after": 6.5032
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.5032,
+            "after": 5.5032
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              106.7357,
+              16.0556,
+              4
+            ],
+            "reset": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 106.7357,
+            "after": 108.933
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5,
+            "after": 6
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6,
+            "after": 5
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              116.99696468067555,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            116.99696468067555,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "Điện Biên연평균 기온 · SSP2-4.5(공통사회경제경로 2–4.5) 22.89 °C(섭씨도)2050개편에서 합쳐지지 않은 성·시",
+            "selected": "VN34-71",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "VN34-71"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "B-004"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              106.7357,
+              16.0556,
+              5
+            ],
+            "url": "106.73574,16.05557,5.00",
+            "big": {
+              "lng": 106.73574218749741,
+              "lat": 16.055567943659042,
+              "zoom": 5
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso\":{\"variable\":\"annual-mean-temperature--ssp245\",\"period\":\"2050\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 0,
+          "kitLoaded": false,
+          "drawsSites": false
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "447.1b703638.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 106.73574218749991,
+          "lat": 16.055567943658517,
+          "zoom": 4,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "Điện Biên연평균 기온 · SSP2-4.5(공통사회경제경로 2–4.5) 22.89 °C(섭씨도)2050개편에서 합쳐지지 않은 성·시",
+          "selected": "VN34-71",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "B-023",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 3,
+            "legendEntries": 2,
+            "kitLoaded": true,
+            "drawsSites": true
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.3996,
+            "after": 4.9028
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 500,
+            "scrollAfter": 740,
+            "zoomBefore": 4.9028,
+            "zoomAfter": 4.9028
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.6072,
+              15.5563
+            ],
+            "after": [
+              106.7406,
+              14.775
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.9028,
+            "after": 6.9028
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.9028,
+            "after": 5.9028
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.7583,
+              15.5562,
+              4.3996
+            ],
+            "reset": [
+              105.7583,
+              15.5562,
+              4.3996
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.7583,
+            "after": 107.424
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.3996,
+            "after": 6.3996
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.3996,
+            "after": 5.3996
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.7583,
+              15.5562,
+              4.3996
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "주 분석 · 건기·우기 유량 차이Sơn Tây위치 설명홍강 본류 · 하노이 서부 · VNMC/MONRE 상설 수문관측소. 홍강 삼각주 진입 직전 기준지점기준연도2010소재 하노이MRC (2009) / Le et al. (2014) · 2010년 자료",
+            "selected": "v124-b-023-entity-00004",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "v124-b-023-entity-00004"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "B-023"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.7583,
+              15.5562,
+              5.3996
+            ],
+            "url": "105.75833,15.55620,5.40",
+            "big": {
+              "lng": 105.7583335000013,
+              "lat": 15.556198478422104,
+              "zoom": 5.399613893667097
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"geongi-ugi-yuryang-cai\":{\"variable\":\"locations\",\"period\":\"2026\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 3,
+          "legendEntries": 2,
+          "kitLoaded": true,
+          "drawsSites": true
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js",
+          "447.1b703638.chunk.js",
+          "map-icon-kit-v152.eea490bc.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.75833349999994,
+          "lat": 15.556198478422331,
+          "zoom": 4.399613893667097,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "주 분석 · 건기·우기 유량 차이Sơn Tây위치 설명홍강 본류 · 하노이 서부 · VNMC/MONRE 상설 수문관측소. 홍강 삼각주 진입 직전 기준지점기준연도2010소재 하노이MRC (2009) / Le et al. (2014) · 2010년 자료",
+          "selected": "v124-b-023-entity-00004",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "B-033",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 0,
+            "kitLoaded": false,
+            "drawsSites": false
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4,
+            "after": 4.5032
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 687,
+            "scrollAfter": 927,
+            "zoomBefore": 4.5032,
+            "zoomAfter": 4.5032
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              106.5364,
+              16.0631
+            ],
+            "after": [
+              108.035,
+              15.0319
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.5032,
+            "after": 6.5032
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.5032,
+            "after": 5.5032
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              106.7357,
+              16.0556,
+              4
+            ],
+            "reset": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 106.7357,
+            "after": 108.933
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5,
+            "after": 6
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6,
+            "after": 5
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              116.99696468067555,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            116.99696468067555,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "Điện Biên연간 수관 손실 — 성(省) 단위 4,321 ha(헥타르)2024개편에서 합쳐지지 않은 성·시",
+            "selected": "VN34-71",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "VN34-71"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "B-033"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              106.7357,
+              16.0556,
+              5
+            ],
+            "url": "106.73574,16.05557,5.00",
+            "big": {
+              "lng": 106.73574218749741,
+              "lat": 16.055567943659042,
+              "zoom": 5
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"yeongan-sanrim-sonsil\":{\"variable\":\"annual-tree-cover-loss\",\"period\":\"2024\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 0,
+          "kitLoaded": false,
+          "drawsSites": false
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "447.1b703638.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 106.73574218749991,
+          "lat": 16.055567943658517,
+          "zoom": 4,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "Điện Biên연간 수관 손실 — 성(省) 단위 4,321 ha(헥타르)2024개편에서 합쳐지지 않은 성·시",
+          "selected": "VN34-71",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "C-025",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 6,
+            "kitLoaded": true,
+            "drawsSites": true
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.2067,
+            "after": 4.7099
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 659,
+            "scrollAfter": 899,
+            "zoomBefore": 4.7099,
+            "zoomAfter": 4.7099
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.6773,
+              16.2586
+            ],
+            "after": [
+              106.984,
+              15.3605
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.7099,
+            "after": 6.7099
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.7099,
+            "after": 5.7099
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.85,
+              16.2561,
+              4.2067
+            ],
+            "reset": [
+              105.85,
+              16.2561,
+              4.2067
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.85,
+            "after": 107.754
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.2067,
+            "after": 6.2067
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.2067,
+            "after": 5.2067
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.85,
+              16.2561,
+              4.2067
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "주 분석 · 탄소크레딧 사업Song Chung Hydropower Project국가베트남명칭Song Chung Hydropower Project등록 제도Gold Standard사업자Swiss Carbon Assets Ltd.규모0 tCO₂e/년시점미기재상태Gold Standard Certified Project소재지Tuyen Quang (성·시 경계 밖 ·",
+            "selected": "v124-c-025-entity-00368",
+            "facilityCard": true
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "v124-c-025-entity-00368"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "C-025"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.85,
+              16.2561,
+              5.2067
+            ],
+            "url": "105.85000,16.25606,5.21",
+            "big": {
+              "lng": 105.85000000000537,
+              "lat": 16.256063602220337,
+              "zoom": 5.206695879597739
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul\":{\"variable\":\"locations\",\"period\":\"2026\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 6,
+          "kitLoaded": true,
+          "drawsSites": true
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js",
+          "447.1b703638.chunk.js",
+          "map-icon-kit-v152.eea490bc.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.85000000000002,
+          "lat": 16.256063602219513,
+          "zoom": 4.206695879597741,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "주 분석 · 탄소크레딧 사업Song Chung Hydropower Project국가베트남명칭Song Chung Hydropower Project등록 제도Gold Standard사업자Swiss Carbon Assets Ltd.규모0 tCO₂e/년시점미기재상태Gold Standard Certified Project소재지Tuyen Quang (성·시 경계 밖 ·",
+          "selected": "v124-c-025-entity-00368",
+          "facilityCard": true
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "E-018",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 14,
+            "legendEntries": 2,
+            "kitLoaded": true,
+            "drawsSites": true
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4.5058,
+            "after": 5.009
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 548,
+            "scrollAfter": 788,
+            "zoomBefore": 5.009,
+            "zoomAfter": 5.009
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.5686,
+              16.0436
+            ],
+            "after": [
+              106.6196,
+              15.3209
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 6.009,
+            "after": 7.009
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 7.009,
+            "after": 6.009
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              105.709,
+              16.0391,
+              4.5058
+            ],
+            "reset": [
+              105.709,
+              16.0391,
+              4.5058
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 105.709,
+            "after": 107.2565
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5.5058,
+            "after": 6.5058
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6.5058,
+            "after": 5.5058
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              105.709,
+              16.0391,
+              4.5058
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              111.6,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            111.6,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "주 분석 · 한국 기업 진출SK이노베이션국가베트남명칭SK이노베이션유형존치사업 분야전력(LNG)설립·진출2026-05 착공연락처T. +82-2-2121-5114 / F. +82-2-2121-7001 본사: 서울 종로구 종로 26 (SK빌딩)소재지미기재(성·시 경계 밖)자료 출처energy.ketep.re.kr/globalenergy/site/main/cont",
+            "selected": "v124-e-018-entity-00024",
+            "facilityCard": true
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "v124-e-018-entity-00024"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "E-018"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              105.709,
+              16.0391,
+              5.5058
+            ],
+            "url": "105.70904,16.03911,5.51",
+            "big": {
+              "lng": 105.70903850000093,
+              "lat": 16.03910718932667,
+              "zoom": 5.505839607655366
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"gugnae-gieob-gaedogug-jincul-gieobmyeong-jinculgug-eobjong-re-eneojihyoyul-pyegimul-suceor\":{\"variable\":\"locations\",\"period\":\"2026\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 14,
+          "legendEntries": 2,
+          "kitLoaded": true,
+          "drawsSites": true
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js",
+          "447.1b703638.chunk.js",
+          "map-icon-kit-v152.eea490bc.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 105.70903850000002,
+          "lat": 16.039107189325776,
+          "zoom": 4.505839607655368,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "주 분석 · 한국 기업 진출SK이노베이션국가베트남명칭SK이노베이션유형존치사업 분야전력(LNG)설립·진출2026-05 착공연락처T. +82-2-2121-5114 / F. +82-2-2121-7001 본사: 서울 종로구 종로 26 (SK빌딩)소재지미기재(성·시 경계 밖)자료 출처energy.ketep.re.kr/globalenergy/site/main/cont",
+          "selected": "v124-e-018-entity-00024",
+          "facilityCard": true
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "B-021",
+      "checks": {
+        "staticBeforeIntent": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "noEngineChunkBeforeIntent": {
+          "ok": true
+        },
+        "staticIconsOnlyForSites": {
+          "ok": true,
+          "detail": {
+            "badges": 0,
+            "legendEntries": 0,
+            "kitLoaded": false,
+            "drawsSites": false
+          }
+        },
+        "activeAfterHoverIntent": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "Ctrl+스크롤로 확대, 드래그로 이동",
+            "error": null
+          }
+        },
+        "helpText": {
+          "ok": true,
+          "detail": "Ctrl+스크롤로 확대, 드래그로 이동"
+        },
+        "ctrlWheelZoomsIn": {
+          "ok": true,
+          "detail": {
+            "before": 4,
+            "after": 4.5032
+          }
+        },
+        "plainWheelScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 763,
+            "scrollAfter": 1003,
+            "zoomBefore": 4.5032,
+            "zoomAfter": 4.5032
+          }
+        },
+        "dragPans": {
+          "ok": true,
+          "detail": {
+            "before": [
+              106.5364,
+              16.0628
+            ],
+            "after": [
+              108.0329,
+              15.033
+            ]
+          }
+        },
+        "buttonZoomIn": {
+          "ok": true,
+          "detail": {
+            "before": 5.5032,
+            "after": 6.5032
+          }
+        },
+        "buttonZoomOut": {
+          "ok": true,
+          "detail": {
+            "before": 6.5032,
+            "after": 5.5032
+          }
+        },
+        "resetReturnsToInitialView": {
+          "ok": true,
+          "detail": {
+            "initial": [
+              106.7357,
+              16.0556,
+              4
+            ],
+            "reset": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "keyboardArrowPans": {
+          "ok": true,
+          "detail": {
+            "before": 106.7357,
+            "after": 108.933
+          }
+        },
+        "keyboardPlusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 5,
+            "after": 6
+          }
+        },
+        "keyboardMinusZooms": {
+          "ok": true,
+          "detail": {
+            "before": 6,
+            "after": 5
+          }
+        },
+        "keyboardHomeResets": {
+          "ok": true,
+          "detail": {
+            "after": [
+              106.7357,
+              16.0556,
+              4
+            ]
+          }
+        },
+        "zoomRange4to12": {
+          "ok": true,
+          "detail": {
+            "minZoom": 4,
+            "maxZoom": 12,
+            "maxBounds": [
+              100.1,
+              6.1,
+              116.99696468067555,
+              25.5
+            ],
+            "cooperative": true
+          }
+        },
+        "maxBoundsSet": {
+          "ok": true,
+          "detail": [
+            100.1,
+            6.1,
+            116.99696468067555,
+            25.5
+          ]
+        },
+        "cooperativeGestures": {
+          "ok": true,
+          "detail": true
+        },
+        "popupOpensOnClick": {
+          "ok": true,
+          "detail": {
+            "open": true,
+            "text": "동북부·서북부GVI(글로벌데이터랩 취약성지수) 취약성 지수 44.7 0–100 지수2023",
+            "selected": "North East, North West",
+            "facilityCard": false
+          }
+        },
+        "selectionReported": {
+          "ok": true,
+          "detail": "North East, North West"
+        },
+        "handoffPrimaryLayer": {
+          "ok": true,
+          "detail": "B-021"
+        },
+        "handoffCamera": {
+          "ok": true,
+          "detail": {
+            "mini": [
+              106.7357,
+              16.0556,
+              5
+            ],
+            "url": "106.73574,16.05557,5.00",
+            "big": {
+              "lng": 106.73574218749741,
+              "lat": 16.055567943659042,
+              "zoom": 5
+            }
+          }
+        },
+        "handoffSlice": {
+          "ok": true,
+          "detail": "{\"global-data-lab-gvi-vulnerability-index\":{\"variable\":\"gvi-6\",\"period\":\"2023\"}}"
+        },
+        "releasedOffscreen": {
+          "ok": true,
+          "detail": {
+            "state": "static",
+            "selected": "",
+            "canvases": 0,
+            "staticSvg": true,
+            "help": "마우스를 올리거나 누르면 확대·이동할 수 있습니다",
+            "error": null
+          }
+        },
+        "instancesRemoved": {
+          "ok": true,
+          "detail": {
+            "created": 2,
+            "removed": 2
+          }
+        }
+      },
+      "measurements": {
+        "staticIcons": {
+          "badges": 0,
+          "legendEntries": 0,
+          "kitLoaded": false,
+          "drawsSites": false
+        },
+        "jsBeforeIntent": [
+          "main.1afd79a5.js",
+          "97.2933f668.chunk.js",
+          "762.72489b79.chunk.js"
+        ],
+        "jsAfterIntent": [
+          "538.228ce767.chunk.js",
+          "447.1b703638.chunk.js",
+          "959.56010b07.chunk.js",
+          "minimap-engine-v152.a3a28491.chunk.js"
+        ],
+        "initial": {
+          "lng": 106.73574218749991,
+          "lat": 16.055567943658517,
+          "zoom": 4,
+          "moving": false
+        },
+        "popup": {
+          "open": true,
+          "text": "동북부·서북부GVI(글로벌데이터랩 취약성지수) 취약성 지수 44.7 0–100 지수2023",
+          "selected": "North East, North West",
+          "facilityCard": false
+        },
+        "releaseOffscreen": true
+      },
+      "consoleErrors": 0,
+      "ok": true
+    }
+  ],
+  "touch": [
+    {
+      "id": "A-023",
+      "width": 390,
+      "checks": {
+        "tapStartsEngine": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "두 손가락으로 이동, 벌려서 확대",
+            "error": null
+          }
+        },
+        "touchHelpText": {
+          "ok": true,
+          "detail": "두 손가락으로 이동, 벌려서 확대"
+        },
+        "oneFingerScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 1425,
+            "scrollAfter": 1540
+          }
+        },
+        "twoFingerPan": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.85,
+              16.3125
+            ],
+            "after": [
+              105.85,
+              17.7036
+            ]
+          }
+        },
+        "pinchZooms": {
+          "ok": true,
+          "detail": {
+            "before": 4.0976,
+            "after": 6.6871
+          }
+        },
+        "noHorizontalOverflow390": {
+          "ok": true,
+          "detail": 0
+        }
+      },
+      "consoleErrors": 0,
+      "ok": true
+    },
+    {
+      "id": "A-024",
+      "width": 390,
+      "checks": {
+        "tapStartsEngine": {
+          "ok": true,
+          "detail": {
+            "state": "active",
+            "selected": "",
+            "canvases": 1,
+            "staticSvg": true,
+            "help": "두 손가락으로 이동, 벌려서 확대",
+            "error": null
+          }
+        },
+        "touchHelpText": {
+          "ok": true,
+          "detail": "두 손가락으로 이동, 벌려서 확대"
+        },
+        "oneFingerScrollsPage": {
+          "ok": true,
+          "detail": {
+            "scrollBefore": 1269,
+            "scrollAfter": 1384
+          }
+        },
+        "twoFingerPan": {
+          "ok": true,
+          "detail": {
+            "before": [
+              105.85,
+              16.0953
+            ],
+            "after": [
+              105.85,
+              17.4918
+            ]
+          }
+        },
+        "pinchZooms": {
+          "ok": true,
+          "detail": {
+            "before": 4.0976,
+            "after": 6.6306
+          }
+        },
+        "noHorizontalOverflow390": {
+          "ok": true,
+          "detail": 0
+        }
+      },
+      "consoleErrors": 0,
+      "ok": true
+    }
+  ],
+  "consoleErrors": [],
+  "summary": {
+    "screens": 9,
+    "touch": 2,
+    "failed": [],
+    "consoleErrors": 0
+  }
+}
