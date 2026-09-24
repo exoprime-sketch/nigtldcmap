@@ -611,7 +611,13 @@ const MAP_SEMANTIC_EXPECTATIONS = {
 async function mapSymbolSemanticsOf(page, elementId) {
   const result = { selected: false, panel: null, checks: {}, pass: false };
   try {
-    const button = await page.$('[data-testid="map-keyboard-feature-select"]');
+    // The keyboard navigation is built once the drawn features can be queried,
+    // which on a slow CI runner lands a moment after the layer row reads
+    // "drawn" (B-031 missed it 2 of 5 runs on 2026-09-24). Wait for it rather
+    // than looking once; what is checked afterwards is unchanged.
+    const button = await page
+      .waitForSelector('[data-testid="map-keyboard-feature-select"]', { state: "attached", timeout: 15_000 })
+      .catch(() => null);
     if (!button) { result.reason = "no keyboard feature to select"; return result; }
     await button.click();
     await page.waitForSelector('[data-testid="map-selected-feature-panel"]', { timeout: 15_000 });

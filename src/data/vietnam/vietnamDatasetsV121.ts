@@ -62,9 +62,9 @@ export const VIETNAM_DATASETS_V121: Dataset[] = [
     id: "VNM-V121-A-002",
     elementId: "A-002",
     titleKo:
-      "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표)",
     titleEn:
-      "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표)",
     summary: "베트남 실제 자료 · 지표 21개 · 관측값 420건 · 개체 0건",
     category: "A",
     group: "사회·경제 현황",

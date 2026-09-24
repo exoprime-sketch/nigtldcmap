@@ -8,7 +8,7 @@
 | ID | 데이터명 | 분류 | 자료상태 | 지도 | 사용자 지적 | 조치 | 담당 | 상태 | 증빙 | 1순위 계약(D1) | 유형(V159) |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | A-001 | CPI(Corruption Perceptions Index, 부패인식지수) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
-| A-002 | CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
+| A-002 | WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
 | A-003 | GDP[현재가, PPP, 성장률, 1인당] | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
 | A-004 | 빈곤율; 극빈곤율 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
 | A-005 | 산업구조[농업, 제조, 서비스] | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 | ①국가 수준·추세 · S1 |
@@ -156,7 +156,7 @@
 | E-015 | NDC Partnership[참여 여부(Y/N), Country Page 링크] | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 참여 형태·연도 타임라인+파트너 유형 구성 | P4 | 집중검토 |  | 완료(`comparison-table`) · QA 152/152 | ⑥제도·규제·리스크 · S4 |
 | E-016 | 한국 기후기술 TRL | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 기술별 성숙도 순위 막대 | P4 | 집중검토 |  | 완료(`comparison-table`) · QA 152/152 | ⓪상태 안내 · S4 |
 | E-017 | 한국-경쟁국 기후기술 비교우위 | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 국가별 순위 비교(대상국 라벨 복원) | P4 | 집중검토 |  | 예외(`comparison-table` · 국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)) · QA 152/152 | ⓪상태 안내 · S4 |
-| E-018 | 국내 기업 개도국 진출[기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝 | 협력·실행 기반 | actual-records | point/14 | 시각화 미완 | 아이콘 지도+분야·진출형태 구성 | P3+P4 | 집중검토 |  | 완료(`category-bar`) · QA 152/152 | ④시설·기관·인프라 위치 · S3 |
+| E-018 | 국내 기업 개도국 진출[기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝 | 협력·실행 기반 | actual-records | point/14 | 시각화 미완 | 아이콘 지도+분야·진출형태 구성 | P3+P4 | 진행 — 아이콘 지도 완료(P3·V152), 분야·진출형태 구성은 P4 | V152: 기업 아이콘(building-skyscraper)+KR 표시가 큰 지도·미니맵·범례·팝업(라벨형 카드)에 공통 적용, `reports/v152/map-icons-runtime-v152.json`·`reports/v152/minimap-runtime-v152.json` | 완료(`category-bar`) · QA 152/152 | ④시설·기관·인프라 위치 · S3 |
 | E-019 | 한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, | 협력·실행 기반 | actual-records | point/6 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 | ④시설·기관·인프라 위치 · S3 |
 | E-020 | 한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명,  | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 | ⑤사업·재원 · S4 |
 

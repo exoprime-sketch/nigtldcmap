@@ -44,6 +44,7 @@ import {
   parseDataFinderSelectorStateV125,
 } from "./types/dataFinderV125";
 import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
+import type { MiniMapHandoffV152 } from "./components/map/miniMapStateV152";
 
 const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
 
@@ -877,7 +878,8 @@ export default function App() {
   function openElementOnMap(
     elementId: string,
     countryIso3: string,
-    selectorState?: DataFinderSelectorStateV125
+    selectorState?: DataFinderSelectorStateV125,
+    miniMapView?: MiniMapHandoffV152
   ) {
     if (!hasCountryDataProviderV122(countryIso3)) return;
 
@@ -904,9 +906,11 @@ export default function App() {
       mapPresetId: null,
       comparisonMode: false,
       comparisonLayerIds: [],
-      layerSelectors: {},
+      // V152: the slice the mini map showed travels in the URL (mapSelectors).
+      layerSelectors: miniMapView?.selector ? { [elementId]: miniMapView.selector } : {},
       // V151-2: entering from a detail page fits the target layer once; no stale camera.
-      camera: null,
+      // V152: unless the reader was moving the mini map - then the big map opens there.
+      camera: miniMapView?.camera ?? null,
     }));
     setView("map");
     window.scrollTo({ top: 0, behavior: "smooth" });

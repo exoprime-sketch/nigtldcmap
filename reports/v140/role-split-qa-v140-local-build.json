@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:58184",
-  "generatedAt": "2026-09-21T06:09:05.377Z",
+  "base": "http://127.0.0.1:55098",
+  "generatedAt": "2026-09-24T10:33:51.178Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -554,15 +554,15 @@
     {
       "id": "DOWNLOAD_A002_PRESELECTED",
       "pass": true,
-      "actual": "선택한 데이터 1개 · 최대 312행",
+      "actual": "선택한 데이터 1개 · 최대 348행",
       "expected": "선택한 데이터 1개 · …"
     },
     {
       "id": "DOWNLOAD_A002_FILE",
       "pass": true,
       "actual": {
-        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-21.csv",
-        "bytes": 164497
+        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-24.csv",
+        "bytes": 187093
       },
       "expected": "a file is produced"
     },
@@ -864,10 +864,10 @@
     "D-023": true
   },
   "download": {
-    "summary": "선택한 데이터 1개 · 최대 312행",
+    "summary": "선택한 데이터 1개 · 최대 348행",
     "file": {
-      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-21.csv",
-      "bytes": 164497
+      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-24.csv",
+      "bytes": 187093
     },
     "staticCsvStatus": 200,
     "staticCsvBytes": null

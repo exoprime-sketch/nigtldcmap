@@ -25,3 +25,6 @@
 .detail-map148-legend i { width: 110px; height: 9px; }
 .detail-map148 footer { font-size: 11px; color: #60746c; margin: 12px 0 0; }
 @media(max-width: 680px) { .detail-map148 { padding: 14px; } .detail-map148-layout { grid-template-columns: 1fr; gap: 5px; } .detail-map148 svg { height: 300px; } .detail-map148-controls { flex-direction: column; } }
+
+/* V152: icon legend under point maps (same icons as the live map) */
+.detail-map148-icon-legend { margin: 6px 8px 0; }
