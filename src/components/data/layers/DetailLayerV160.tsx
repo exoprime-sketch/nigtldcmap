@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import "./detail-layer-v160.css";
 
@@ -71,6 +71,8 @@ interface Props {
 
 export default function DetailLayerV160({ layer, title, children }: Props) {
   const [open, setOpen] = useState<boolean>(() => isLayerOpenV160(layer));
+  // The same instance can be handed another layer; read that layer's state.
+  useEffect(() => setOpen(isLayerOpenV160(layer)), [layer]);
   return (
     <details
       className="dtl160"
