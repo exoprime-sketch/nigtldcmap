@@ -26,6 +26,7 @@
   },
   "scripts": {
     "prebuild": "node scripts/v150-1/dataset-directory-v150-1.mjs verify",
+    "build:country-compare:v158": "node scripts/v158/build-country-compare-contract-v158.mjs",
     "build:dataset-directory:v150": "node scripts/v150-1/dataset-directory-v150-1.mjs build && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "verify:dataset-directory:v150": "node scripts/v150-1/dataset-directory-v150-1.mjs verify",
     "test:usage:v149": "node --test scripts/v149/usage.test.cjs",

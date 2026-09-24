@@ -33,7 +33,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-001_cpi_ci_lower",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-002",
@@ -69,7 +77,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-002_wgi_cc_est",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-003",
@@ -101,7 +117,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-003_gdp_current_usd",
+          "unit": "USD",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-004",
@@ -133,7 +157,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-004_poverty_rate_extreme_intl",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-005",
@@ -169,7 +201,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-005_va_share_agriculture",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-006",
@@ -201,7 +241,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-006_unemp_total_ilo",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-007",
@@ -233,7 +281,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-007_population_total",
+          "unit": "명",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-008",
@@ -265,7 +321,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-008_gini_index",
+          "unit": "지수",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-009",
@@ -297,7 +361,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-009_ghg_intensity_gdp_ppp",
+          "unit": "tCO2eq/1,000 국제달러",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-010",
@@ -333,7 +405,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-010_emissions_ch4_co2eq",
+          "unit": "Mt CO2eq",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-011",
@@ -369,7 +449,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-011_emissions_sector_agriculture",
+          "unit": "Mt CO2eq",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-012",
@@ -401,7 +489,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-012_ghg_net_incl_lulucf",
+          "unit": "Mt CO2eq",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-013",
@@ -433,7 +529,11 @@
         }
       ],
       "status": "exception",
-      "note": "목표 간 연결은 문장값 매트릭스(비교표)로 열림 · 히트맵은 후속(P4)"
+      "note": "목표 간 연결은 문장값 매트릭스(비교표)로 열림 · 히트맵은 후속(P4)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "행렬 표라 단일 비교 키가 없음"
+      }
     },
     {
       "elementId": "A-014",
@@ -465,7 +565,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-014_sdg_goal_score_sdg01",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-015",
@@ -497,7 +605,15 @@
         }
       ],
       "status": "exception",
-      "note": "목표별 단일 연도 정규화 점수만 있어 추이선 대신 세부지표별 막대"
+      "note": "목표별 단일 연도 정규화 점수만 있어 추이선 대신 세부지표별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-015_sdg10_gini",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-016",
@@ -533,7 +649,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-016_primary_energy_coal",
+          "unit": "EJ",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-017",
@@ -560,7 +684,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "A-018",
@@ -596,7 +724,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-018_capacity_bioenergy_offgrid",
+          "unit": "MW",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-019",
@@ -628,7 +764,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-019_td_loss_rate",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-020",
@@ -660,7 +804,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-020_renewable_share_capacity",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-021",
@@ -692,7 +844,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-021_electricity_access_rural",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-022",
@@ -728,7 +888,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-022_maifi_evn_group",
+          "unit": "회/고객",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-023",
@@ -764,7 +932,11 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-024",
@@ -800,7 +972,11 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-025",
@@ -836,7 +1012,11 @@
         }
       ],
       "status": "exception",
-      "note": "수록 시설 5건(실증·후보·연구)이라 분류별 막대보다 시설·상태 비교표가 먼저"
+      "note": "수록 시설 5건(실증·후보·연구)이라 분류별 막대보다 시설·상태 비교표가 먼저",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-026",
@@ -863,7 +1043,11 @@
         }
       ],
       "status": "exception",
-      "note": "건물 Footprint는 현재 파일 구성 정보만 제공되고 개별 건물·성시 집계 수치가 없어 registry 표준(분류별 막대+목록)을 적용할 수 없음; 안내문(note)으로 대체"
+      "note": "건물 Footprint는 현재 파일 구성 정보만 제공되고 개별 건물·성시 집계 수치가 없어 registry 표준(분류별 막대+목록)을 적용할 수 없음; 안내문(note)으로 대체",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-027",
@@ -895,7 +1079,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-028",
@@ -927,7 +1115,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "A-029",
@@ -959,7 +1151,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "A-030",
@@ -991,7 +1187,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-030_trade_balance",
+          "unit": "10억 USD",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-031",
@@ -1027,7 +1231,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-031_lpi_customs",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-032",
@@ -1059,7 +1271,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-032_intermediate_dva_share_in_exports",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "A-033",
@@ -1091,7 +1311,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-033_lsci_q1",
+          "unit": "지수",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-001",
@@ -1127,7 +1355,15 @@
         }
       ],
       "status": "exception",
-      "note": "월별 평년값(1991–2020 고정 기간의 계절 프로파일)은 연도 간 시계열이 아니므로 선 대신 월별 막대로 표시"
+      "note": "월별 평년값(1991–2020 고정 기간의 계절 프로파일)은 연도 간 시계열이 아니므로 선 대신 월별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-001_pr_annual_norm",
+          "unit": "mm",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-002",
@@ -1159,7 +1395,15 @@
         }
       ],
       "status": "exception",
-      "note": "기후대 분류는 2020년 단일 시점의 면적 구성으로 연도별 시계열이 없어 선 대신 기후대별 면적 막대로 표시"
+      "note": "기후대 분류는 2020년 단일 시점의 면적 구성으로 연도별 시계열이 없어 선 대신 기후대별 면적 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-002_koppen_area_af",
+          "unit": "km²",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-003",
@@ -1195,7 +1439,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-004",
@@ -1231,7 +1479,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-005",
@@ -1267,7 +1519,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-006",
@@ -1303,7 +1559,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-007",
@@ -1339,7 +1599,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-008",
@@ -1371,7 +1635,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "값과 연도를 가진 지표가 없어 비교 키를 만들 수 없음"
+      }
     },
     {
       "elementId": "B-009",
@@ -1403,7 +1671,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-009_brf_prov_sph_an_giang",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-010",
@@ -1435,7 +1711,15 @@
         }
       ],
       "status": "exception",
-      "note": "관측연도가 2개(2023·2024)뿐이며 순위·피해액·인명피해가 서로 다른 척도로 별도 비교되어 단일 시계열 선 대신 항목별 막대로 표시"
+      "note": "관측연도가 2개(2023·2024)뿐이며 순위·피해액·인명피해가 서로 다른 척도로 별도 비교되어 단일 시계열 선 대신 항목별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-010_cri_rank",
+          "unit": "순위",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-011",
@@ -1471,7 +1755,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-011_comp_capacity",
+          "unit": "지수",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-012",
@@ -1507,7 +1799,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "B-013",
@@ -1539,7 +1835,15 @@
         }
       ],
       "status": "exception",
-      "note": "EU CBAM 노출지수가 2022년 단일 연도의 산업별 비교값만 제공되어 시계열 선 대신 산업별 막대로 표시"
+      "note": "EU CBAM 노출지수가 2022년 단일 연도의 산업별 비교값만 제공되어 시계열 선 대신 산업별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-013_carbon_payment_aluminium",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-014",
@@ -1566,7 +1870,11 @@
         }
       ],
       "status": "exception",
-      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24)"
+      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
+      }
     },
     {
       "elementId": "B-015",
@@ -1598,7 +1906,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "B-016",
@@ -1630,7 +1942,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-016_fossil_share",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-017",
@@ -1662,7 +1982,11 @@
         }
       ],
       "status": "exception",
-      "note": "Aqueduct 평가구역 경계 미확보(지도 보류) · 등급별 평가구역 수 표가 먼저"
+      "note": "Aqueduct 평가구역 경계 미확보(지도 보류) · 등급별 평가구역 수 표가 먼저",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
+      }
     },
     {
       "elementId": "B-018",
@@ -1694,7 +2018,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-018_gdp_pc_full_ssp1",
+          "unit": "USD_2017/인",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-019",
@@ -1726,7 +2058,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-019_pop_full_ssp1",
+          "unit": "백만명",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-020",
@@ -1762,7 +2102,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-020_coastal_flood",
+          "unit": "지수",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-021",
@@ -1798,7 +2146,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-022",
@@ -1830,7 +2182,15 @@
         }
       ],
       "status": "exception",
-      "note": "2040년 단일 시나리오 시점의 재원 구성 비교값만 제공되어 시계열 선 대신 재원별 막대로 표시"
+      "note": "2040년 단일 시나리오 시점의 재원 구성 비교값만 제공되어 시계열 선 대신 재원별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-022_adaptation_investment",
+          "unit": "십억 USD",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-023",
@@ -1862,7 +2222,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "관측지점 시계열이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-024",
@@ -1894,7 +2258,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-024_agri_water_share",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-025",
@@ -1926,7 +2298,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "관측지점 시계열이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-026",
@@ -1958,7 +2334,11 @@
         }
       ],
       "status": "exception",
-      "note": "성·시별 값은 8방향 비율이라 한 값의 지역 막대가 없음. 선택 성·시의 방향별 비율 막대로 표시, 우세 유향 지도는 후속(P4)"
+      "note": "성·시별 값은 8방향 비율이라 한 값의 지역 막대가 없음. 선택 성·시의 방향별 비율 막대로 표시, 우세 유향 지도는 후속(P4)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-027",
@@ -1990,7 +2370,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-027_exploitable_gw",
+          "unit": "10⁹ m³/yr",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-028",
@@ -2022,7 +2410,11 @@
         }
       ],
       "status": "exception",
-      "note": "관측지점별 단위가 달라 한 축의 막대·덤벨을 만들 수 없어 지점별 정렬표로 표시, 전국 총량은 별도"
+      "note": "관측지점별 단위가 달라 한 축의 막대·덤벨을 만들 수 없어 지점별 정렬표로 표시, 전국 총량은 별도",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "관측지점 시계열이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-029",
@@ -2054,7 +2446,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-030",
@@ -2086,7 +2482,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-031",
@@ -2118,7 +2518,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-032",
@@ -2150,7 +2554,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-033",
@@ -2186,7 +2594,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-034",
@@ -2218,7 +2630,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-035",
@@ -2250,7 +2666,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-035_lu_agricultural_land",
+          "unit": "1000 ha",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-036",
@@ -2282,7 +2706,15 @@
         }
       ],
       "status": "exception",
-      "note": "2020·2024년 두 시점만 제공되어 시계열 선 대신 토지 유형별 변화율 막대로 표시"
+      "note": "2020·2024년 두 시점만 제공되어 시계열 선 대신 토지 유형별 변화율 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-036_cagr_lc_artificial_surface",
+          "unit": "%/yr",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-037",
@@ -2314,7 +2746,11 @@
         }
       ],
       "status": "exception",
-      "note": "ESA WorldCover 2021년 단일 시점이라 연도별 누적영역 불가 · 분류별 면적은 성·시 값이므로 지역 비교표가 먼저"
+      "note": "ESA WorldCover 2021년 단일 시점이라 연도별 누적영역 불가 · 분류별 면적은 성·시 값이므로 지역 비교표가 먼저",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
+      }
     },
     {
       "elementId": "B-038",
@@ -2346,7 +2782,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-038_bioenergy_capacity_eia",
+          "unit": "백만 kW",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-039",
@@ -2378,7 +2822,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-040",
@@ -2410,7 +2858,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-041",
@@ -2442,7 +2894,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-042",
@@ -2474,7 +2930,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "B-043",
@@ -2506,7 +2966,15 @@
         }
       ],
       "status": "exception",
-      "note": "2020년 단일 연도의 자원별 가채연수 비교값만 제공되어 시계열 선 대신 자원별 막대로 표시"
+      "note": "2020년 단일 연도의 자원별 가채연수 비교값만 제공되어 시계열 선 대신 자원별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-043_coal_production_eia",
+          "unit": "1000 t",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-044",
@@ -2538,7 +3006,11 @@
         }
       ],
       "status": "exception",
-      "note": "광물별 자원·규정 조건은 문장값이라 정렬표 대신 근거 카드 목록으로 열림 · 매트릭스는 후속(P4)"
+      "note": "광물별 자원·규정 조건은 문장값이라 정렬표 대신 근거 카드 목록으로 열림 · 매트릭스는 후속(P4)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "행렬 표라 단일 비교 키가 없음"
+      }
     },
     {
       "elementId": "B-045",
@@ -2570,7 +3042,15 @@
         }
       ],
       "status": "exception",
-      "note": "2026년 단일 연도 기준 광물별 세계 비중 비교값만 제공되어 시계열 선 대신 광물별 막대로 표시"
+      "note": "2026년 단일 연도 기준 광물별 세계 비중 비교값만 제공되어 시계열 선 대신 광물별 막대로 표시",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-045_production_rank_alumina",
+          "unit": "순위",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-046",
@@ -2602,7 +3082,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "B-046_reserves_0",
+          "unit": "t REO",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "B-047",
@@ -2634,7 +3122,11 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
+      }
     },
     {
       "elementId": "B-048",
@@ -2670,7 +3162,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "C-001",
@@ -2702,7 +3198,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-002",
@@ -2734,7 +3234,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: ⑥ 규칙 — 1순위 문서 카드, 부문별 배출량은 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
+      "note": "V159: ⑥ 규칙 — 1순위 문서 카드, 부문별 배출량은 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-003",
@@ -2766,7 +3270,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-004",
@@ -2798,7 +3306,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-005",
@@ -2825,7 +3337,11 @@
         }
       ],
       "status": "exception",
-      "note": "부문×우선순위 매트릭스는 문장값 비교표로 열림 · 히트맵·정렬표는 후속(P4)"
+      "note": "부문×우선순위 매트릭스는 문장값 비교표로 열림 · 히트맵·정렬표는 후속(P4)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "행렬 표라 단일 비교 키가 없음"
+      }
     },
     {
       "elementId": "C-006",
@@ -2857,7 +3373,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-007",
@@ -2889,7 +3409,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-008",
@@ -2921,7 +3445,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-009",
@@ -2953,7 +3481,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-010",
@@ -2985,7 +3517,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-011",
@@ -3017,7 +3553,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-012",
@@ -3049,7 +3589,11 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-013",
@@ -3081,7 +3625,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-014",
@@ -3113,7 +3661,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-015",
@@ -3140,7 +3692,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "C-016",
@@ -3172,7 +3728,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "C-017",
@@ -3204,7 +3764,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-018",
@@ -3236,7 +3800,11 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "값과 연도를 가진 지표가 없어 비교 키를 만들 수 없음"
+      }
     },
     {
       "elementId": "C-019",
@@ -3268,7 +3836,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: ⑥ 규칙 — 1순위 제도 문서, 성·시별 시설 수는 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
+      "note": "V159: ⑥ 규칙 — 1순위 제도 문서, 성·시별 시설 수는 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-020",
@@ -3295,7 +3867,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "C-021",
@@ -3322,7 +3898,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "C-022",
@@ -3354,7 +3934,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "성·시 분포가 내용이라 국가 단위로 합치지 않음"
+      }
     },
     {
       "elementId": "C-023",
@@ -3381,7 +3965,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "C-024",
@@ -3413,7 +4001,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "C-025",
@@ -3449,7 +4041,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-001",
@@ -3481,7 +4077,15 @@
         }
       ],
       "status": "exception",
-      "note": "단일 시점(2024) 기술별 비교값만 있어 추이선 대신 기술별 막대"
+      "note": "단일 시점(2024) 기술별 비교값만 있어 추이선 대신 기술별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-001_capex_biomass",
+          "unit": "USD/kW",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-002",
@@ -3513,7 +4117,15 @@
         }
       ],
       "status": "exception",
-      "note": "기준기간별 CAGR 비교값만 있어 추이선 대신 분야별 막대"
+      "note": "기준기간별 CAGR 비교값만 있어 추이선 대신 분야별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-002_market_cagr_biomass",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-003",
@@ -3545,7 +4157,15 @@
         }
       ],
       "status": "exception",
-      "note": "단일 시점 기술별 감축량 비교값만 있어 추이선 대신 기술별 막대"
+      "note": "단일 시점 기술별 감축량 비교값만 있어 추이선 대신 기술별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-003_expected_reduction_20yr_biomass",
+          "unit": "tCO2/20년·MW",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-004",
@@ -3577,7 +4197,15 @@
         }
       ],
       "status": "exception",
-      "note": "가격 시나리오별 회수율 비교값만 있어 추이선 대신 기술·시나리오별 막대"
+      "note": "가격 시나리오별 회수율 비교값만 있어 추이선 대신 기술·시나리오별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-004_capex_recovery_biomass_high",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-005",
@@ -3609,7 +4237,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-005_adaptation_share_capital_expenditure",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-006",
@@ -3641,7 +4277,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-006_ept_applied_rate_diesel",
+          "unit": "VND/L",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-007",
@@ -3673,7 +4317,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "D-008",
@@ -3709,7 +4357,15 @@
         }
       ],
       "status": "exception",
-      "note": "부처별 예산 비중이 주 분석, 지역값 3개는 지도에서 확인"
+      "note": "부처별 예산 비중이 주 분석, 지역값 3개는 지도에서 확인",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-008_climate_budget_mard",
+          "unit": "VND",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-009",
@@ -3741,7 +4397,15 @@
         }
       ],
       "status": "exception",
-      "note": "원자료에 2013년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함"
+      "note": "원자료에 2013년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-009_climate_expenditure_gdp_share",
+          "unit": "%",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-010",
@@ -3773,7 +4437,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-010_efficient_price_gasoline",
+          "unit": "USD/L",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-011",
@@ -3805,7 +4477,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-011_oda_disbursement_adaptation_fund",
+          "unit": "USD",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-012",
@@ -3841,7 +4521,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-013",
@@ -3873,7 +4557,15 @@
         }
       ],
       "status": "exception",
-      "note": "2024년 단일 시점 부문 점수만 있어 추이선 대신 부문별 막대"
+      "note": "2024년 단일 시점 부문 점수만 있어 추이선 대신 부문별 막대",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "D-013_dimension_score_esru",
+          "unit": "점",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "D-014",
@@ -3909,7 +4601,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-015",
@@ -3945,7 +4641,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-016",
@@ -3981,7 +4681,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-017",
@@ -4017,7 +4721,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-018",
@@ -4053,7 +4761,11 @@
         }
       ],
       "status": "exception",
-      "note": "베트남 단독·다국가 사업 4건의 승인액은 표로 먼저(다국가 총액 합산 금지)"
+      "note": "베트남 단독·다국가 사업 4건의 승인액은 표로 먼저(다국가 총액 합산 금지)",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-019",
@@ -4089,7 +4801,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-020",
@@ -4125,7 +4841,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-021",
@@ -4161,7 +4881,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-022",
@@ -4197,7 +4921,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-023",
@@ -4233,7 +4961,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-024",
@@ -4260,7 +4992,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "D-025",
@@ -4296,7 +5032,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "D-026",
@@ -4332,7 +5072,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-001",
@@ -4368,7 +5112,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-002",
@@ -4400,7 +5148,11 @@
         }
       ],
       "status": "exception",
-      "note": "DNA 기관이 1곳만 존재해 category-bar 대신 카드형 정보로 표시함"
+      "note": "DNA 기관이 1곳만 존재해 category-bar 대신 카드형 정보로 표시함",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-003",
@@ -4436,7 +5188,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-004",
@@ -4472,7 +5228,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-005",
@@ -4508,7 +5268,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-006",
@@ -4544,7 +5308,11 @@
         }
       ],
       "status": "exception",
-      "note": "기관 유형별 수보다 소재 도시별 분포가 먼저(지도와 짝) — 도시 단위 지역 막대"
+      "note": "기관 유형별 수보다 소재 도시별 분포가 먼저(지도와 짝) — 도시 단위 지역 막대",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-007",
@@ -4576,7 +5344,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "E-008",
@@ -4603,7 +5375,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "E-009",
@@ -4635,7 +5411,15 @@
         }
       ],
       "status": "exception",
-      "note": "원자료에 2016년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함"
+      "note": "원자료에 2016년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "E-009_researcher_count",
+          "unit": "명",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "E-010",
@@ -4667,7 +5451,15 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "E-010_gerd_absolute",
+          "unit": "USD",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "E-011",
@@ -4694,7 +5486,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "E-012",
@@ -4726,7 +5522,15 @@
         }
       ],
       "status": "preserved",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "E-012_avg_monthly_wage_lcu",
+          "unit": "VND",
+          "yearRule": "latest-common"
+        }
+      }
     },
     {
       "elementId": "E-013",
@@ -4753,7 +5557,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "E-014",
@@ -4785,7 +5593,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "E-015",
@@ -4817,7 +5629,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+      }
     },
     {
       "elementId": "E-016",
@@ -4844,7 +5660,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "E-017",
@@ -4871,7 +5691,11 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시"
+      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "상태 안내만 있어 비교할 값이 없음"
+      }
     },
     {
       "elementId": "E-018",
@@ -4907,7 +5731,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-019",
@@ -4943,7 +5771,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     },
     {
       "elementId": "E-020",
@@ -4979,7 +5811,11 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "",
+      "countryCompare": {
+        "comparable": false,
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
+      }
     }
   ]
 }
