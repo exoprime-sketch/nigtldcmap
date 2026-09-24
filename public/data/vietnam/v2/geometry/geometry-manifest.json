@@ -25,7 +25,7 @@
       "sourceGapNotice": "원천 경계가 이웃 성 사이에 남긴 틈은 합쳐진 단위 안에서 구멍으로 남깁니다. 메우면 원천에 없는 경계선을 새로 그리는 것이므로 메우지 않습니다.",
       "url": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
       "validation": {
-        "areaDeltaPpmMax": 0.0,
+        "areaDeltaPpmMax": 0,
         "dissolvedInteriorHoleCount": 1,
         "featureCount": 34,
         "geometryValidity": "pass",
@@ -53,60 +53,6 @@
       "valuesAreAggregated": false,
       "valuesNotice": "경계 전용 자산입니다. 원자료 값은 개편 전 63개 성·시 기준 그대로 두며 34개 단위로 합산·평균하지 않습니다.",
       "version": "2025-07-01"
-    },
-    {
-      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
-      "featureCount": 63,
-      "geometryTypes": [
-        "Polygon",
-        "MultiPolygon"
-      ],
-      "kind": "adm1-boundary",
-      "license": {
-        "attributionRequired": true,
-        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-        "sourceBoundaryLicense": "Public Domain"
-      },
-      "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873",
-      "source": {
-        "apiUrl": "https://www.geoboundaries.org/api/current/gbOpen/VNM/ADM1/",
-        "boundaryId": "VNM-ADM1-63759600",
-        "metadataUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1-metaData.json",
-        "name": "geoBoundaries VNM ADM1",
-        "sourceBuildDate": "2023-12-12",
-        "sourceCommit": "9469f09",
-        "sourceDataUpdateDate": "2023-01-19",
-        "sourceFeatureCount": 64,
-        "sourceSha256": "25dbc2fec9862016710118fc98042d3e803830c72361c91c4e864ae668fa9541",
-        "sourceUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1.geojson"
-      },
-      "url": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-      "validation": {
-        "duplicateProvinceCount": 0,
-        "emptyGeometryCount": 0,
-        "fakeGeometryCount": 0,
-        "featureCount": 63,
-        "geometryValidity": "pass",
-        "invalidGeometryCount": 0,
-        "multiPolygonCount": 13,
-        "polygonCount": 50,
-        "sourceInvalidGeometryCount": 0,
-        "validator": "Shapely 2.1.2 (GEOS is_valid)"
-      },
-      "version": "2023-12-12"
-    },
-    {
-      "featureCount": 63,
-      "kind": "adm1-aliases",
-      "sha256": "593b3da1a8c3c8fb99e05bf8bcedaa7c8e5a1e9ff75a14a6ad965face4969778",
-      "url": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
-      "validation": {
-        "duplicateAliasCount": 0,
-        "lookupKeyCount": 208,
-        "provinceCount": 63,
-        "unmappedProvinceCount": 0
-      }
     },
     {
       "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
@@ -169,7 +115,7 @@
       "simplifyToleranceDeg": 0,
       "url": "/data/vietnam/v2/geometry/vnm-country-outline.geojson",
       "validation": {
-        "areaDeltaPpmMax": 0.0,
+        "areaDeltaPpmMax": 0,
         "dissolvedInteriorHoleCount": 1,
         "featureCount": 1,
         "geometryValidity": "pass",
@@ -210,7 +156,7 @@
       "sha256": "e8133d8ea049f63c20b6b59076b1a492c7f14049b95ff228ddc7cd9017270e23",
       "url": "/data/vietnam/v2/geometry/vnm-region-6.geojson",
       "validation": {
-        "areaDeltaPpmMax": 0.0,
+        "areaDeltaPpmMax": 0,
         "dissolvedInteriorHoleCount": 1,
         "featureCount": 6,
         "geometryValidity": "pass",
@@ -245,46 +191,6 @@
         "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
       },
       "version": "b-021-2026-09-01"
-    },
-    {
-      "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",
-      "attribution": "World Bank Group / ENERGYDATA.INFO, Vietnam - Electricity Transmission Network (2016), CC BY 4.0",
-      "featureCount": 606,
-      "geometryTypes": [
-        "MultiLineString"
-      ],
-      "kind": "transmission-network",
-      "license": "CC-BY-4.0",
-      "sha256": "3fd682c9a9253fd101d48e83491fd4cc4d131f6bfe6fefe3a69d840932b63446",
-      "source": "World Bank Group / ENERGYDATA.INFO",
-      "url": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
-      "version": "2016 network; source resource last modified 2018-11-14"
-    },
-    {
-      "attribution": "Adaptation Fund Board Secretariat; Natural Earth",
-      "elementId": "D-018",
-      "fakeGeometryCount": 0,
-      "featureCount": 4,
-      "geometryTypes": [
-        "MultiPolygon",
-        "Point"
-      ],
-      "kind": "regional-project-scope",
-      "license": {
-        "projectMetadata": "Adaptation Fund Legal Notice (World Bank terms apply)",
-        "scopeBoundary": "Natural Earth public domain"
-      },
-      "publicSpatialNotice": "참여국 경계는 협력범위이며 정밀 사업구역이나 시설 위치가 아닙니다.",
-      "regionalScopeCount": 2,
-      "sha256": "946324c92083bcacbfcab1c9057924505fb3c0f53bc4af494d6393965d1ef36d",
-      "source": {
-        "projectEvidence": "Adaptation Fund official project pages and proposals",
-        "scopeBoundary": "Natural Earth-derived local country boundaries",
-        "scopeBoundaryUrl": "/data/world-countries.geojson"
-      },
-      "url": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
-      "verifiedActivitySiteCount": 2,
-      "version": "Adaptation Fund snapshot 2026; local country boundary release V130"
     },
     {
       "accuracyNotice": "OpenStreetMap is volunteer-mapped: coverage, tagging and names vary by area and date. Geometry is shown for orientation, not for engineering or cadastral use.",
@@ -448,7 +354,7 @@
         "sourceFeatureCount": 443,
         "geometryValidity": "source-invalid-preserved",
         "invalidSourceGeometryCount": 1,
-        "joinMatchRate": 1.0,
+        "joinMatchRate": 1,
         "joinMatchedCount": 443,
         "scoreMismatchCount": 0,
         "simplificationToleranceDeg": 0,
@@ -482,7 +388,7 @@
         "unitsWithoutBasin": 51,
         "invalidDissolveCount": 0,
         "syntheticVertexCount": 0,
-        "areaDeltaPpmMax": 0.0,
+        "areaDeltaPpmMax": 0,
         "usedMakeValidFor": [],
         "geometryValidity": "pass",
         "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
@@ -539,7 +445,7 @@
       ],
       "kind": "slr-lowland-le1m",
       "zoneKey": "le1m",
-      "thresholdM": 1.0,
+      "thresholdM": 1,
       "verticalDatum": "EGM2008",
       "license": "Copernicus DEM licence (free access, attribution required)",
       "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
@@ -576,7 +482,7 @@
       ],
       "kind": "slr-lowland-le2m",
       "zoneKey": "le2m",
-      "thresholdM": 2.0,
+      "thresholdM": 2,
       "verticalDatum": "EGM2008",
       "license": "Copernicus DEM licence (free access, attribution required)",
       "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
@@ -601,6 +507,100 @@
         "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
       },
       "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "featureCount": 63,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "adm1-boundary",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873",
+      "source": {
+        "apiUrl": "https://www.geoboundaries.org/api/current/gbOpen/VNM/ADM1/",
+        "boundaryId": "VNM-ADM1-63759600",
+        "metadataUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1-metaData.json",
+        "name": "geoBoundaries VNM ADM1",
+        "sourceBuildDate": "2023-12-12",
+        "sourceCommit": "9469f09",
+        "sourceDataUpdateDate": "2023-01-19",
+        "sourceFeatureCount": 64,
+        "sourceSha256": "25dbc2fec9862016710118fc98042d3e803830c72361c91c4e864ae668fa9541",
+        "sourceUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1.geojson"
+      },
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "validation": {
+        "duplicateProvinceCount": 0,
+        "emptyGeometryCount": 0,
+        "fakeGeometryCount": 0,
+        "featureCount": 63,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "multiPolygonCount": 13,
+        "polygonCount": 50,
+        "sourceInvalidGeometryCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid)"
+      },
+      "version": "2023-12-12"
+    },
+    {
+      "featureCount": 63,
+      "kind": "adm1-aliases",
+      "sha256": "593b3da1a8c3c8fb99e05bf8bcedaa7c8e5a1e9ff75a14a6ad965face4969778",
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-aliases.json",
+      "validation": {
+        "duplicateAliasCount": 0,
+        "lookupKeyCount": 208,
+        "provinceCount": 63,
+        "unmappedProvinceCount": 0
+      }
+    },
+    {
+      "accuracyNotice": "Digitized from a georeferenced PDF. The source warns of isolated horizontal and vertical displacement of 2–10 km; use only for approximate visualization, not high-accuracy engineering or routing.",
+      "attribution": "World Bank Group / ENERGYDATA.INFO, Vietnam - Electricity Transmission Network (2016), CC BY 4.0",
+      "featureCount": 606,
+      "geometryTypes": [
+        "MultiLineString"
+      ],
+      "kind": "transmission-network",
+      "license": "CC-BY-4.0",
+      "sha256": "3fd682c9a9253fd101d48e83491fd4cc4d131f6bfe6fefe3a69d840932b63446",
+      "source": "World Bank Group / ENERGYDATA.INFO",
+      "url": "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+      "version": "2016 network; source resource last modified 2018-11-14"
+    },
+    {
+      "attribution": "Adaptation Fund Board Secretariat; Natural Earth",
+      "elementId": "D-018",
+      "fakeGeometryCount": 0,
+      "featureCount": 4,
+      "geometryTypes": [
+        "MultiPolygon",
+        "Point"
+      ],
+      "kind": "regional-project-scope",
+      "license": {
+        "projectMetadata": "Adaptation Fund Legal Notice (World Bank terms apply)",
+        "scopeBoundary": "Natural Earth public domain"
+      },
+      "publicSpatialNotice": "참여국 경계는 협력범위이며 정밀 사업구역이나 시설 위치가 아닙니다.",
+      "regionalScopeCount": 2,
+      "sha256": "946324c92083bcacbfcab1c9057924505fb3c0f53bc4af494d6393965d1ef36d",
+      "source": {
+        "projectEvidence": "Adaptation Fund official project pages and proposals",
+        "scopeBoundary": "Natural Earth-derived local country boundaries",
+        "scopeBoundaryUrl": "/data/world-countries.geojson"
+      },
+      "url": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
+      "verifiedActivitySiteCount": 2,
+      "version": "Adaptation Fund snapshot 2026; local country boundary release V130"
     }
   ],
   "boundarySystem": "pre-2025-63",

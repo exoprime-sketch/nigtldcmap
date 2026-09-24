@@ -534,6 +534,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "capacityBand",
+      "commissioningYear",
       "세부 분류",
       "레코드 유형",
       "fuelType",
@@ -1176,7 +1177,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "파리협정 제6조 협력 체결 현황"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 13,
+    "populatedRecordCount": 10,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1356,7 +1357,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "탈탄소 경로 투자 구성"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 11,
+    "populatedRecordCount": 8,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
@@ -3244,7 +3245,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "CTCN NDE(국가지정기구)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 15,
+    "populatedRecordCount": 18,
     "primaryRenderer": "directory",
     "spatiallyLinked": false,
     "yearRange": {
@@ -3454,12 +3455,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "GII 2025"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 30,
+    "populatedRecordCount": 31,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2025,
-      "start": 2011
+      "start": 2002
     }
   },
   {

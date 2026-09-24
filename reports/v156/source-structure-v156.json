@@ -1,0 +1,7686 @@
+{
+  "schemaVersion": "v156",
+  "generator": "scripts/v156/source-structure-v156.py",
+  "generatedAt": "2026-09-24T04:28:10Z",
+  "workbooks": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\_source\\vietnam\\v156\\workbooks",
+  "publishedCatalog": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\public\\data\\vietnam\\v2\\catalog.json",
+  "totals": {
+    "deliveredElements": 145,
+    "publishedElements": 152,
+    "notDelivered": 7,
+    "shapeChanged": 6,
+    "observationRowsDropped": 6,
+    "entityRowsAppeared": 0,
+    "withErrors": 0,
+    "withWarnings": 113
+  },
+  "notDelivered": [
+    "C-020",
+    "C-021",
+    "C-023",
+    "E-011",
+    "E-013",
+    "E-016",
+    "E-017"
+  ],
+  "elements": [
+    {
+      "elementId": "A-001",
+      "file": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 114,
+        "delivered": 114
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 30,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-002",
+      "file": "A-002_WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 348,
+        "delivered": 348
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 30,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-003",
+      "file": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 272,
+        "delivered": 272
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 42,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-004",
+      "file": "A-004_빈곤율; 극빈곤율.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 62,
+        "delivered": 62
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 32,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-005",
+      "file": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 141,
+        "delivered": 141
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 41,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-006",
+      "file": "A-006_실업률; 청년실업률.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 120,
+        "delivered": 120
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 36,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-007",
+      "file": "A-007_인구[총인구, 도시화율].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 263,
+        "delivered": 263
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 67,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-008",
+      "file": "A-008_지니계수.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 31,
+        "delivered": 31
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 32,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-009",
+      "file": "A-009_GHG 배출 강도[GDP 대비, 1인당].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 90,
+        "delivered": 90
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 56,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-010",
+      "file": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 400,
+        "delivered": 400
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 56,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-011",
+      "file": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 495,
+        "delivered": 495
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 56,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-012",
+      "file": "A-012_총 GHG 배출량(LULUCF 제외).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 103,
+        "delivered": 103
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 56,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-013",
+      "file": "A-013.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "mixed",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "entityRows": {
+        "published": 365,
+        "delivered": 365
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2016,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-014",
+      "file": "A-014_UNDESA SDG Index Score.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 494,
+        "delivered": 494
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 27,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-015",
+      "file": "A-015_UNDESA SDG 세부목표별 달성도.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 101,
+        "delivered": 101
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 11,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-016",
+      "file": "A-016_1차 에너지 소비 구조.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 427,
+        "delivered": 427
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 62,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-017",
+      "file": "A-017_LCOE(균등화 발전비용).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 72,
+        "delivered": 72
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-018",
+      "file": "A-018_기술별 발전 설비용량.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 676,
+        "delivered": 676
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 27,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-019",
+      "file": "A-019_송배전 손실률(T&D Loss).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 34,
+        "delivered": 34
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 35,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-020",
+      "file": "A-020_재생에너지 비중.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 52,
+        "delivered": 52
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 27,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-021",
+      "file": "A-021_전력 접근률.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 84,
+        "delivered": 84
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 29,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-022",
+      "file": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 54,
+        "delivered": 54
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 12,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-023",
+      "file": "A-023.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "mixed",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "entityRows": {
+        "published": 1963,
+        "delivered": 236
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-024",
+      "file": "A-024_전력망[위치, 미공급 지역].xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "mixed",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "entityRows": {
+        "published": 722,
+        "delivered": 722
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "line"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-025",
+      "file": "A-025_CCS 시설.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "mixed",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "entityRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation",
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-026",
+      "file": "A-026.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 7,
+        "delivered": 7
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "building"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-027",
+      "file": "A-027_교통 인프라[railway, road].xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 61,
+        "delivered": 61
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [
+        "duplicate-records:16"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-028",
+      "file": "A-028.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 19,
+        "delivered": 19
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-029",
+      "file": "A-029_FTA 체결 현황.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "mixed",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1,
+        "delivered": 1
+      },
+      "entityRows": {
+        "published": 30,
+        "delivered": 30
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-030",
+      "file": "A-030_한-개도국 교역액.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 148,
+        "delivered": 148
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 35,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-031",
+      "file": "A-031_물류성과지수(LPI).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 49,
+        "delivered": 49
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 8,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-032",
+      "file": "A-032_중간재 교역 규모.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 100,
+        "delivered": 100
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 30,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "A-033",
+      "file": "A-033_해운 연결성(LSCI).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 82,
+        "delivered": 82
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 21,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info",
+        "3_결측사유코드",
+        "meta_def",
+        "meta_code_def",
+        "db_framework"
+      ],
+      "warnings": [],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-001",
+      "file": "B-001_건기／우기.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 38,
+        "delivered": 38
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 1991,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-002",
+      "file": "B-002.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 19,
+        "delivered": 19
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "raster"
+      ],
+      "latestYear": {
+        "published": 2099,
+        "delivered": 2099
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-003",
+      "file": "B-003_연평균 기온·강수.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 12621,
+        "delivered": 12621
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-004",
+      "file": "B-004.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 33232,
+        "delivered": 33232
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-005",
+      "file": "B-005.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 31688,
+        "delivered": 31688
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-006",
+      "file": "B-006.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 32608,
+        "delivered": 32608
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-007",
+      "file": "B-007.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 32370,
+        "delivered": 32370
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-008",
+      "file": "B-008_NASA 해수면 상승 전망 (SSP 1-5).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 1575,
+        "delivered": 1575
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-009",
+      "file": "B-009_WWF 생물다양성·기후 리스크.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 255,
+        "delivered": 255
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-010",
+      "file": "B-010_기후 리스크 지수 (CRI).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 12,
+        "delivered": 12
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-011",
+      "file": "B-011_기후 취약성 지수 (ND-GAIN).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1500,
+        "delivered": 1500
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 31,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-012",
+      "file": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 275,
+        "delivered": 275
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-013",
+      "file": "B-013_World Bank CBAM 영향 지수.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 35,
+        "delivered": 35
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-014",
+      "file": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 13,
+        "delivered": 13
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2040,
+        "delivered": 2040
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-015",
+      "file": "B-015_탄소 가격 수준 (ETS, Carbon Tax).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 12,
+        "delivered": 12
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-016",
+      "file": "B-016_화석연료 의존도(Fossil fuel energy consumption (% of total)).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 45,
+        "delivered": 45
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 37,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-017",
+      "file": "B-017_WRI Aqueduct 물 스트레스 지수.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 4867,
+        "delivered": 4867
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_28",
+        "attr_29",
+        "attr_3",
+        "attr_30",
+        "attr_31",
+        "attr_32",
+        "attr_33",
+        "attr_34",
+        "attr_35",
+        "attr_36",
+        "attr_37",
+        "attr_38",
+        "attr_39",
+        "attr_4",
+        "attr_40",
+        "attr_41",
+        "attr_42",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "basin",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2080,
+        "delivered": 2080
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-018",
+      "file": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1-5).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 282,
+        "delivered": 282
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2100
+      },
+      "yearCount": 27,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-019",
+      "file": "B-019_SSP 인구 전망 (SSP 1-5).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 110,
+        "delivered": 110
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2100
+      },
+      "yearCount": 33,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-020",
+      "file": "B-020_EU／UN INFORM Risk Index (복합 리스크 지수).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 2696,
+        "delivered": 2696
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 10,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-021",
+      "file": "B-021_Global Data Lab의 GVI, Vulnerability Index.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 2970,
+        "delivered": 2970
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2100,
+        "delivered": 2100
+      },
+      "yearCount": 51,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-022",
+      "file": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 8,
+        "delivered": 8
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-023",
+      "file": "B-023.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 11,
+        "delivered": 11
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-024",
+      "file": "B-024.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 205,
+        "delivered": 205
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 35,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-025",
+      "file": "B-025_유역 면적(km²).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 9,
+        "delivered": 9
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "basin",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-026",
+      "file": "B-026_유향(flow direction).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 108,
+        "delivered": 108
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-027",
+      "file": "B-027_지하수 잠재량(m³／yr).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 54,
+        "delivered": 54
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation",
+        "raster"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 35,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-028",
+      "file": "B-028.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 16,
+        "delivered": 16
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-029",
+      "file": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 289,
+        "delivered": 289
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-030",
+      "file": "B-030_산림 이득(ha／yr).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 134,
+        "delivered": 134
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-031",
+      "file": "B-031.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 189,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 71,
+        "delivered": 71
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2010,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-032",
+      "file": "B-032.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 63,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 68,
+        "delivered": 68
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2010,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-033",
+      "file": "B-033.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 1489,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 2056,
+        "delivered": 2056
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-034",
+      "file": "B-034.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 362,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 246,
+        "delivered": 246
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-035",
+      "file": "B-035.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 1764,
+        "delivered": 1764
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 66,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-036",
+      "file": "B-036.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 48,
+        "delivered": 48
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation",
+        "raster"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-037",
+      "file": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 781,
+        "delivered": 781
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-038",
+      "file": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 399,
+        "delivered": 399
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 64,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-039",
+      "file": "B-039_수력 잠재량.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 263,
+        "delivered": 263
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2030,
+        "delivered": 2030
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-040",
+      "file": "B-040_지열 잠재량.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 199,
+        "delivered": 199
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-041",
+      "file": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 147,
+        "delivered": 147
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2018,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-042",
+      "file": "B-042_풍력 자원 (풍속, 에너지밀도).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 242,
+        "delivered": 242
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2017,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-043",
+      "file": "B-043.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 274,
+        "delivered": 274
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 47,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-044",
+      "file": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 7,
+        "delivered": 7
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-045",
+      "file": "B-045_글로벌 순위.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 224,
+        "delivered": 224
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 8,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-046",
+      "file": "B-046.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 13,
+        "delivered": 13
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-047",
+      "file": "B-047.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 21,
+        "delivered": 21
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "B-048",
+      "file": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 8,
+        "delivered": 8
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-001",
+      "file": "C-001_NDC (국가 온실가스 감축 목표).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 3,
+        "delivered": 3
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_100",
+        "attr_101",
+        "attr_102",
+        "attr_103",
+        "attr_104",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_28",
+        "attr_29",
+        "attr_3",
+        "attr_30",
+        "attr_31",
+        "attr_32",
+        "attr_33",
+        "attr_34",
+        "attr_35",
+        "attr_36",
+        "attr_37",
+        "attr_38",
+        "attr_39",
+        "attr_4",
+        "attr_40",
+        "attr_41",
+        "attr_42",
+        "attr_43",
+        "attr_44",
+        "attr_45",
+        "attr_46",
+        "attr_47",
+        "attr_48",
+        "attr_49",
+        "attr_5",
+        "attr_50",
+        "attr_51",
+        "attr_52",
+        "attr_53",
+        "attr_54",
+        "attr_55",
+        "attr_56",
+        "attr_57",
+        "attr_58",
+        "attr_59",
+        "attr_6",
+        "attr_60",
+        "attr_61",
+        "attr_62",
+        "attr_63",
+        "attr_64",
+        "attr_65",
+        "attr_66",
+        "attr_67",
+        "attr_68",
+        "attr_69",
+        "attr_7",
+        "attr_70",
+        "attr_71",
+        "attr_72",
+        "attr_73",
+        "attr_74",
+        "attr_75",
+        "attr_76",
+        "attr_77",
+        "attr_78",
+        "attr_79",
+        "attr_8",
+        "attr_80",
+        "attr_81",
+        "attr_82",
+        "attr_83",
+        "attr_84",
+        "attr_85",
+        "attr_86",
+        "attr_87",
+        "attr_88",
+        "attr_89",
+        "attr_9",
+        "attr_90",
+        "attr_91",
+        "attr_92",
+        "attr_93",
+        "attr_94",
+        "attr_95",
+        "attr_96",
+        "attr_97",
+        "attr_98",
+        "attr_99"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2030,
+        "delivered": 2030
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-002",
+      "file": "C-002.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 82,
+        "delivered": 82
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2059
+      },
+      "yearCount": 10,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-003",
+      "file": "C-003_NAP (국가 적응 계획).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 253,
+        "delivered": 253
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_28",
+        "attr_29",
+        "attr_3",
+        "attr_30",
+        "attr_31",
+        "attr_32",
+        "attr_33",
+        "attr_34",
+        "attr_35",
+        "attr_36",
+        "attr_37",
+        "attr_38",
+        "attr_39",
+        "attr_4",
+        "attr_40",
+        "attr_41",
+        "attr_42",
+        "attr_43",
+        "attr_44",
+        "attr_45",
+        "attr_46",
+        "attr_47",
+        "attr_48",
+        "attr_49",
+        "attr_5",
+        "attr_50",
+        "attr_51",
+        "attr_52",
+        "attr_53",
+        "attr_54",
+        "attr_55",
+        "attr_56",
+        "attr_57",
+        "attr_58",
+        "attr_59",
+        "attr_6",
+        "attr_60",
+        "attr_61",
+        "attr_62",
+        "attr_63",
+        "attr_64",
+        "attr_65",
+        "attr_66",
+        "attr_67",
+        "attr_68",
+        "attr_69",
+        "attr_7",
+        "attr_70",
+        "attr_71",
+        "attr_72",
+        "attr_73",
+        "attr_74",
+        "attr_75",
+        "attr_76",
+        "attr_77",
+        "attr_78",
+        "attr_79",
+        "attr_8",
+        "attr_80",
+        "attr_81",
+        "attr_82",
+        "attr_83",
+        "attr_84",
+        "attr_85",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-004",
+      "file": "C-004.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 58,
+        "delivered": 58
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-005",
+      "file": "C-005_TNA (기술 수요 평가).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 408,
+        "delivered": 408
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2012,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-006",
+      "file": "C-006_파리협정 제6.2조·제6.4조 이행 체계·현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 29,
+        "delivered": 29
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_28",
+        "attr_29",
+        "attr_3",
+        "attr_30",
+        "attr_31",
+        "attr_32",
+        "attr_33",
+        "attr_34",
+        "attr_35",
+        "attr_36",
+        "attr_37",
+        "attr_38",
+        "attr_39",
+        "attr_4",
+        "attr_40",
+        "attr_41",
+        "attr_42",
+        "attr_43",
+        "attr_44",
+        "attr_45",
+        "attr_46",
+        "attr_47",
+        "attr_48",
+        "attr_49",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-007",
+      "file": "C-007_파리협정 제6.8조 비시장 접근법 참여 현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 7,
+        "delivered": 7
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-008",
+      "file": "C-008.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 235,
+        "delivered": 235
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 10,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-009",
+      "file": "C-009.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 182,
+        "delivered": 182
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 10,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-010",
+      "file": "C-010.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 59,
+        "delivered": 59
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2027,
+        "delivered": 2030
+      },
+      "yearCount": 9,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-011",
+      "file": "C-011.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 44,
+        "delivered": 44
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-012",
+      "file": "C-012.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 120,
+        "delivered": 120
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-013",
+      "file": "C-013.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 64,
+        "delivered": 64
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-014",
+      "file": "C-014.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 93,
+        "delivered": 93
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-015",
+      "file": "C-015_재생에너지 법제도 원본 링크.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 33,
+        "delivered": 33
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_27",
+        "attr_28",
+        "attr_29",
+        "attr_3",
+        "attr_30",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-016",
+      "file": "C-016.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 639,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 817,
+        "delivered": 817
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-017",
+      "file": "C-017_재생에너지 투자 인센티브_수정안.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 56,
+        "delivered": 56
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-018",
+      "file": "C-018.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 121,
+        "delivered": 121
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2050,
+        "delivered": 2050
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-019",
+      "file": "C-019.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 128,
+        "delivered": 128
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2029,
+        "delivered": 2030
+      },
+      "yearCount": 9,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-022",
+      "file": "C-022.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 98,
+        "delivered": 98
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2030,
+        "delivered": 2030
+      },
+      "yearCount": 7,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-024",
+      "file": "C-024.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 20,
+        "delivered": 20
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 8,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-025",
+      "file": "C-025.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 1190,
+        "delivered": 388
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation",
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-001",
+      "file": "D-001_단위 사업당 CAPEX.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 14,
+        "delivered": 14
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-002",
+      "file": "D-002_시장 성장률.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 8,
+        "delivered": 8
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2030,
+        "delivered": 2030
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-003",
+      "file": "D-003_예상 감축량.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 12,
+        "delivered": 12
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-004",
+      "file": "D-004_크레딧 가격 연동 수익성.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 15,
+        "delivered": 15
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-005",
+      "file": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 10,
+        "delivered": 10
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2020,
+        "delivered": 2026
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-006",
+      "file": "D-006_기후 관련 조세 수입.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 45,
+        "delivered": 45
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 8,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-007",
+      "file": "D-007_기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 3,
+        "delivered": 3
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2022,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-008",
+      "file": "D-008_주관 부처별 기후 예산 규모.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 15,
+        "delivered": 15
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2020,
+        "delivered": 2026
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-009",
+      "file": "D-009_기후대응·기후기술 관련 정부 예산.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 7,
+        "delivered": 7
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "admin1",
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2020,
+        "delivered": 2026
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-010",
+      "file": "D-010_화석연료 보조금 규모.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 10,
+        "delivered": 10
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 5,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-011",
+      "file": "D-011_개도국 내 각국별 ODA 규모.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 400,
+        "delivered": 400
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 6,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-012",
+      "file": "D-012_경쟁국 민간기업의 개도국 진출 현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 22,
+        "delivered": 22
+      },
+      "attributeLabels": [
+        "attr_10_출처",
+        "attr_11_인용위치",
+        "attr_12_비고",
+        "attr_13_38대_기후기술",
+        "attr_14_기술매핑_근거",
+        "attr_15_구분태그",
+        "attr_16_참고",
+        "attr_17_원지표id",
+        "attr_18_기준연도",
+        "attr_1_레코드구분",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_국적",
+        "attr_5_기술분야",
+        "attr_6_진출형태",
+        "attr_7_용량",
+        "attr_8_확인_연도",
+        "attr_9_요약"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-013",
+      "file": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 21,
+        "delivered": 21
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-014",
+      "file": "D-014_EDCF 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 164,
+        "delivered": 164
+      },
+      "attributeLabels": [
+        "attr_10_분야_dac",
+        "attr_11_사업기간",
+        "attr_12_상태",
+        "attr_13_약정액_합계",
+        "attr_14_지출액_합계",
+        "attr_15_보고연도",
+        "attr_16_rio_marker",
+        "attr_17_금리",
+        "attr_18_상환방식",
+        "attr_19_약정일",
+        "attr_1_레코드구분",
+        "attr_20_38대_기후기술",
+        "attr_21_기술매핑_근거",
+        "attr_22_구분태그",
+        "attr_23_참고",
+        "attr_24_원지표id",
+        "attr_25_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_사업번호",
+        "attr_5_crs번호",
+        "attr_6_시행기관",
+        "attr_7_보고기관",
+        "attr_8_원조유형",
+        "attr_9_자금형태"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-015",
+      "file": "D-015_ODA Korea 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 650,
+        "delivered": 650
+      },
+      "attributeLabels": [
+        "attr_10_분야_dac",
+        "attr_11_사업기간",
+        "attr_12_상태",
+        "attr_13_약정액_합계",
+        "attr_14_지출액_합계",
+        "attr_15_보고연도",
+        "attr_16_rio_marker",
+        "attr_17_38대_기후기술",
+        "attr_18_기술매핑_근거",
+        "attr_19_구분태그",
+        "attr_1_레코드구분",
+        "attr_20_참고",
+        "attr_21_원지표id",
+        "attr_22_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_사업번호",
+        "attr_5_crs번호",
+        "attr_6_시행기관",
+        "attr_7_보고기관",
+        "attr_8_원조유형",
+        "attr_9_자금형태"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-016",
+      "file": "D-016_지자체·정부부처 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 232,
+        "delivered": 232
+      },
+      "attributeLabels": [
+        "attr_10_분야_dac",
+        "attr_11_사업기간",
+        "attr_12_상태",
+        "attr_13_약정액_합계",
+        "attr_14_지출액_합계",
+        "attr_15_보고연도",
+        "attr_16_rio_marker",
+        "attr_17_기관유형",
+        "attr_18_38대_기후기술",
+        "attr_19_기술매핑_근거",
+        "attr_1_레코드구분",
+        "attr_20_구분태그",
+        "attr_21_참고",
+        "attr_22_원지표id",
+        "attr_23_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_사업번호",
+        "attr_5_crs번호",
+        "attr_6_시행기관",
+        "attr_7_보고기관",
+        "attr_8_원조유형",
+        "attr_9_자금형태"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-017",
+      "file": "D-017_한국 ODA 기관 PCP입찰 현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 10,
+        "delivered": 10
+      },
+      "attributeLabels": [
+        "attr_10_마감일",
+        "attr_11_사업기간",
+        "attr_12_수행기관_자격요건",
+        "attr_13_상태",
+        "attr_14_출처",
+        "attr_15_38대_기후기술",
+        "attr_16_기술매핑_근거",
+        "attr_17_구분태그",
+        "attr_18_참고",
+        "attr_19_원지표id",
+        "attr_1_레코드구분",
+        "attr_20_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_발주기관",
+        "attr_5_분야",
+        "attr_6_예산",
+        "attr_7_예산유형",
+        "attr_8_입찰유형",
+        "attr_9_공고일"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-018",
+      "file": "D-018.xlsx",
+      "shape": {
+        "before": "mixed",
+        "after": "entity",
+        "changed": true
+      },
+      "observationRows": {
+        "published": 4,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 4,
+        "delivered": 4
+      },
+      "attributeLabels": [
+        "attr_10_기간",
+        "attr_11_승인일",
+        "attr_12_착수일",
+        "attr_13_대상",
+        "attr_14_수혜자_수",
+        "attr_15_베트남_귀속",
+        "attr_16_베트남_귀속금액",
+        "attr_17_지점",
+        "attr_18_38대_기후기술",
+        "attr_19_기술매핑_근거",
+        "attr_1_레코드구분",
+        "attr_20_구분태그",
+        "attr_21_참고",
+        "attr_22_원지표id",
+        "attr_23_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_프로젝트_url",
+        "attr_5_실행기관_ie",
+        "attr_6_승인금액",
+        "attr_7_집행액",
+        "attr_8_분야",
+        "attr_9_상태"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-019",
+      "file": "D-019_CTCN 기술지원 요청.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 10,
+        "delivered": 10
+      },
+      "attributeLabels": [
+        "attr_10_기술유형",
+        "attr_11_제출일",
+        "attr_12_기간",
+        "attr_13_실행기관",
+        "attr_14_목적_구분_objective",
+        "attr_15_ta_수행내용_결과_요약",
+        "attr_16_기술_유형_상세페이지",
+        "attr_17_상세",
+        "attr_18_38대_기후기술",
+        "attr_19_기술매핑_근거",
+        "attr_1_레코드구분",
+        "attr_20_구분태그",
+        "attr_21_참고",
+        "attr_22_원지표id",
+        "attr_23_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_참조번호",
+        "attr_5_요청국가",
+        "attr_6_nde",
+        "attr_7_기술분야_sectors",
+        "attr_8_지원단계",
+        "attr_9_예산"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-020",
+      "file": "D-020_GCF 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 9,
+        "delivered": 9
+      },
+      "attributeLabels": [
+        "attr_10_총사업비",
+        "attr_11_자금조달_유형",
+        "attr_12_상태",
+        "attr_13_이사회_승인일",
+        "attr_14_사업기간",
+        "attr_15_예상_수혜자_전망치_회복력_증진",
+        "attr_16_예상_감축량_전망치",
+        "attr_17_대상국",
+        "attr_18_대상지역",
+        "attr_19_베트남_귀속",
+        "attr_1_레코드구분",
+        "attr_20_비고",
+        "attr_21_38대_기후기술",
+        "attr_22_기술매핑_근거",
+        "attr_23_구분태그",
+        "attr_24_참고",
+        "attr_25_원지표id",
+        "attr_26_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_ref_no",
+        "attr_5_인가기관_ae",
+        "attr_6_분야",
+        "attr_7_결과영역",
+        "attr_8_gcf_승인액",
+        "attr_9_공동재원"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-021",
+      "file": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 640,
+        "delivered": 640
+      },
+      "attributeLabels": [
+        "attr_10_사업기간",
+        "attr_11_실행기관",
+        "attr_12_rio_marker",
+        "attr_13_상세",
+        "attr_14_dac_섹터코드_참고_프로젝트번호_대응",
+        "attr_15_사업기간_실행기관_rio_marker",
+        "attr_16_dac_섹터코드_사업기간_실행기관_rio_marker",
+        "attr_17_38대_기후기술",
+        "attr_18_기술매핑_근거",
+        "attr_19_구분태그",
+        "attr_1_레코드구분",
+        "attr_20_참고",
+        "attr_21_원지표id",
+        "attr_22_기준연도",
+        "attr_23_wb_섹터_world_bank_자체_분류",
+        "attr_24_wb_기후_주요_테마",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_iati_식별자",
+        "attr_5_공여기관",
+        "attr_6_약정액_commitment",
+        "attr_7_집행액_spend",
+        "attr_8_활동상태",
+        "attr_9_dac_섹터코드"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-022",
+      "file": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 15,
+        "delivered": 15
+      },
+      "attributeLabels": [
+        "attr_10_투자액_disbursement",
+        "attr_11_프로젝트_상태",
+        "attr_12_기간_시작",
+        "attr_13_기간_종료",
+        "attr_14_실행기관",
+        "attr_15_rio_marker",
+        "attr_16_투자_유형",
+        "attr_17_공동투자_가능여부",
+        "attr_18_공동투자_형태",
+        "attr_19_출처",
+        "attr_1_레코드구분",
+        "attr_20_링크",
+        "attr_21_dac_섹터코드",
+        "attr_22_사업기간",
+        "attr_23_실행기관_2",
+        "attr_24_rio_marker_2",
+        "attr_25_38대_기후기술",
+        "attr_26_기술매핑_근거",
+        "attr_27_구분태그",
+        "attr_28_참고",
+        "attr_29_원지표id",
+        "attr_2_명칭",
+        "attr_30_기준연도",
+        "attr_3_대표금액",
+        "attr_4_투자기관_유형",
+        "attr_5_공여기관",
+        "attr_6_수원국",
+        "attr_7_섹터_dac_5자리",
+        "attr_8_투자액_commitment",
+        "attr_9_단위"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-023",
+      "file": "D-023_ODA 및 기후기금(GCF, GEF, AF) 재원.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 73,
+        "delivered": 73
+      },
+      "attributeLabels": [
+        "attr_10_gcf_승인액",
+        "attr_11_공동재원",
+        "attr_12_총사업비",
+        "attr_13_자금조달_유형",
+        "attr_14_상태",
+        "attr_15_이사회_승인일",
+        "attr_16_사업기간",
+        "attr_17_예상_수혜자_전망치_회복력_증진",
+        "attr_18_예상_감축량_전망치",
+        "attr_19_대상국",
+        "attr_1_레코드구분",
+        "attr_20_대상지역",
+        "attr_21_베트남_귀속",
+        "attr_22_비고",
+        "attr_23_프로젝트_url",
+        "attr_24_실행기관_ie",
+        "attr_25_승인금액",
+        "attr_26_집행액",
+        "attr_27_기간",
+        "attr_28_승인일",
+        "attr_29_착수일",
+        "attr_2_명칭",
+        "attr_30_대상",
+        "attr_31_수혜자_수",
+        "attr_32_베트남_귀속금액",
+        "attr_33_지점",
+        "attr_34_gef_id",
+        "attr_35_초점분야_focal_areas",
+        "attr_36_사업유형",
+        "attr_37_인가기관_agency",
+        "attr_38_gef_승인액",
+        "attr_39_승인_회계연도",
+        "attr_3_대표금액",
+        "attr_40_신탁기금",
+        "attr_41_gef_주기",
+        "attr_42_인가기관_mdb",
+        "attr_43_ctf_배분액",
+        "attr_44_mdb_공동재원",
+        "attr_45_정부_부담",
+        "attr_46_기타_공동재원",
+        "attr_47_총_사업비",
+        "attr_48_38대_기후기술",
+        "attr_49_기술매핑_근거",
+        "attr_4_기금",
+        "attr_50_구분태그",
+        "attr_51_참고",
+        "attr_52_원지표id",
+        "attr_53_기준연도",
+        "attr_5_ref_no",
+        "attr_6_gcf_사업유형",
+        "attr_7_인가기관_ae",
+        "attr_8_분야",
+        "attr_9_결과영역"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-024",
+      "file": "D-024_VC·임팩트 투자 현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 12,
+        "delivered": 12
+      },
+      "attributeLabels": [
+        "attr_10_국가",
+        "attr_11_투자_연도",
+        "attr_12_공동투자_가능여부",
+        "attr_13_공동투자_형태",
+        "attr_14_출처",
+        "attr_15_링크",
+        "attr_16_투자자명",
+        "attr_17_38대_기후기술",
+        "attr_18_기술매핑_근거",
+        "attr_19_구분태그",
+        "attr_1_레코드구분",
+        "attr_20_참고",
+        "attr_21_원지표id",
+        "attr_22_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_투자_라운드",
+        "attr_5_투자_라운드_2",
+        "attr_6_투자_금액",
+        "attr_7_단위",
+        "attr_8_기술_사업_내용",
+        "attr_9_기후_분야"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-025",
+      "file": "D-025_민간 인프라 투자(PPI).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 132,
+        "delivered": 132
+      },
+      "attributeLabels": [
+        "attr_10_계약기간",
+        "attr_11_상태",
+        "attr_12_financial_close",
+        "attr_13_기술",
+        "attr_14_용량",
+        "attr_15_스폰서",
+        "attr_16_ida_지위",
+        "attr_17_위치",
+        "attr_18_다자기구_지원",
+        "attr_19_양자기구_지원",
+        "attr_1_레코드구분",
+        "attr_20_총_부채조달",
+        "attr_21_참여_은행",
+        "attr_22_38대_기후기술",
+        "attr_23_기술매핑_근거",
+        "attr_24_구분태그",
+        "attr_25_참고",
+        "attr_26_원지표id",
+        "attr_27_기준연도",
+        "attr_28_ppi_프로젝트키_중복_트랜치_합산용",
+        "attr_29_ppi_레코드키_행_유일키",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_ppi_프로젝트",
+        "attr_5_섹터",
+        "attr_6_투자유형",
+        "attr_7_총_투자액",
+        "attr_8_민간지분율",
+        "attr_9_민간_투자액_자체_산출"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "D-026",
+      "file": "D-026_MIGA 정치적 리스크 보증.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 14,
+        "delivered": 14
+      },
+      "attributeLabels": [
+        "attr_10_보증_유형",
+        "attr_11_보증_유형_상세_4대_pri_기준",
+        "attr_12_보증_기간",
+        "attr_13_투자자_투자국",
+        "attr_14_보증_보유자_guarantee_holder",
+        "attr_15_상태",
+        "attr_16_회계연도_fy",
+        "attr_17_이사회일",
+        "attr_18_환경등급",
+        "attr_19_전략_우선분야",
+        "attr_1_레코드구분",
+        "attr_20_비고",
+        "attr_21_출처",
+        "attr_22_링크",
+        "attr_23_38대_기후기술",
+        "attr_24_기술매핑_근거",
+        "attr_25_구분태그",
+        "attr_26_참고",
+        "attr_27_원지표id",
+        "attr_28_기준연도",
+        "attr_2_명칭",
+        "attr_3_대표금액",
+        "attr_4_project_id",
+        "attr_5_국가",
+        "attr_6_섹터",
+        "attr_7_섹터_원문",
+        "attr_8_보증_금액",
+        "attr_9_단위"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2018,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-001",
+      "file": "E-001_CTCN NDE(국가지정기관).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 18,
+        "delivered": 18
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-002",
+      "file": "E-002_DNA(국가지정기관).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 46,
+        "delivered": 46
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-003",
+      "file": "E-003_GCF NDA(국가지정기관).xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 8,
+        "delivered": 8
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-004",
+      "file": "E-004_국제기구 현지사무소 담당자.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 19,
+        "delivered": 19
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-005",
+      "file": "E-005_대학,연구기관,NGO.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 20,
+        "delivered": 20
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-006",
+      "file": "E-006_현지 투자자 네트워크.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 15,
+        "delivered": 15
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_26",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-007",
+      "file": "E-007_온실가스 산정 MRV체계.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 22,
+        "delivered": 22
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-008",
+      "file": "E-008.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 144,
+        "delivered": 144
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-009",
+      "file": "E-009_STEM 졸업자·연구자 수.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 39,
+        "delivered": 39
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 15,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-010",
+      "file": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 31,
+        "delivered": 31
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2025,
+        "delivered": 2026
+      },
+      "yearCount": 10,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-012",
+      "file": "E-012.xlsx",
+      "shape": {
+        "before": "observation",
+        "after": "observation",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 92,
+        "delivered": 92
+      },
+      "entityRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_2"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2024,
+        "delivered": 2026
+      },
+      "yearCount": 4,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-014",
+      "file": "E-014_양자협정 현황.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 10,
+        "delivered": 10
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2023,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-015",
+      "file": "E-015_기타 협력 체계.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 4,
+        "delivered": 4
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-018",
+      "file": "E-018.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 24,
+        "delivered": 24
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-019",
+      "file": "E-019_개도국 내 한국기관 사무소.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 9,
+        "delivered": 9
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "point"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2026
+      },
+      "yearCount": 1,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": true,
+      "hasGeometry": true,
+      "carriedOver": false
+    },
+    {
+      "elementId": "E-020",
+      "file": "E-020_한국 공공·민간 지원체계.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 7,
+        "delivered": 7
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_2",
+        "attr_3",
+        "attr_4",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2026,
+        "delivered": 2027
+      },
+      "yearCount": 3,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16383",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    }
+  ]
+}

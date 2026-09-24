@@ -1,0 +1,99 @@
+{
+  "source": "베트남데이터/20260922",
+  "deliveredAt": "2026-09-22",
+  "held": [
+    "A-013",
+    "A-023",
+    "A-026",
+    "A-028",
+    "B-002",
+    "B-004",
+    "B-005",
+    "B-006",
+    "B-007",
+    "B-023",
+    "B-024",
+    "B-028",
+    "B-031",
+    "B-032",
+    "B-033",
+    "B-034",
+    "B-035",
+    "B-036",
+    "B-043",
+    "B-046",
+    "B-047",
+    "C-002",
+    "C-004",
+    "C-008",
+    "C-009",
+    "C-010",
+    "C-011",
+    "C-012",
+    "C-013",
+    "C-014",
+    "C-016",
+    "C-018",
+    "C-019",
+    "C-022",
+    "C-024",
+    "C-025",
+    "D-018",
+    "E-008",
+    "E-012",
+    "E-018"
+  ],
+  "applied": true,
+  "steps": [
+    {
+      "step": "stage",
+      "status": "ok",
+      "elapsedMs": 872
+    },
+    {
+      "step": "redact",
+      "status": "ok",
+      "elapsedMs": 59131
+    },
+    {
+      "step": "structure",
+      "status": "ok",
+      "elapsedMs": 53705
+    },
+    {
+      "step": "build",
+      "status": "ok",
+      "elapsedMs": 117092
+    },
+    {
+      "step": "diff",
+      "status": "ok",
+      "elapsedMs": 6010
+    },
+    {
+      "step": "apply",
+      "status": "ok",
+      "elapsedMs": 1578
+    },
+    {
+      "step": "dataset-directory",
+      "status": "ok",
+      "elapsedMs": 1003
+    },
+    {
+      "step": "asset-integrity",
+      "status": "ok",
+      "elapsedMs": 790
+    },
+    {
+      "step": "card-summaries",
+      "status": "ok",
+      "elapsedMs": 4712
+    },
+    {
+      "step": "asset-integrity-final",
+      "status": "ok",
+      "elapsedMs": 868
+    }
+  ]
+}
