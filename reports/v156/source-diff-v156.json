@@ -1,23 +1,23 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-diff-v156.mjs",
-  "generatedAt": "2026-09-24T04:00:17.395Z",
+  "generatedAt": "2026-09-24T04:19:03.363Z",
   "trees": {
-    "current": "C:/Users/user/AppData/Local/Temp/claude/C--Users-user-Documents-20260827-----------/35cece45-632e-4ace-a6a4-77c190e0329c/scratchpad/head-baseline/public/data/vietnam/v2",
-    "candidate": "public/data/vietnam/v2"
+    "current": "public/data/vietnam/v2",
+    "candidate": ".staging/v156/public/data/vietnam/v2"
   },
   "deliveredAt": "2026-09-22",
   "totals": {
     "elements": 152,
-    "unchanged": 107,
-    "titleChanged": 0,
-    "schemaBreaking": 17,
-    "bespokeRendererAffected": 1,
-    "valueChanged": 3,
-    "observationsAdded": 1275,
-    "observationsRemoved": 865,
-    "indicatorsAdded": 66,
-    "indicatorsRemoved": 68
+    "unchanged": 151,
+    "titleChanged": 1,
+    "schemaBreaking": 0,
+    "bespokeRendererAffected": 0,
+    "valueChanged": 0,
+    "observationsAdded": 0,
+    "observationsRemoved": 0,
+    "indicatorsAdded": 0,
+    "indicatorsRemoved": 0
   },
   "elements": [
     {
@@ -87,8 +87,8 @@
       },
       "label": {
         "before": "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
-        "after": "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
-        "changed": false
+        "after": "WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표)",
+        "changed": true
       },
       "statusChanges": {},
       "counts": {
@@ -97,7 +97,7 @@
           "after": 33
         },
         "observations": {
-          "before": 312,
+          "before": 348,
           "after": 348
         },
         "entities": {
@@ -109,7 +109,7 @@
           "after": 2024
         },
         "missingRatePercent": {
-          "before": 0,
+          "before": 10.3,
           "after": 10.3
         }
       },
@@ -119,12 +119,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 1,
+        "matched": 348,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 347,
-        "removed": 311,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -132,7 +132,7 @@
         "attributeKeysRemoved": []
       },
       "flags": {
-        "titleChanged": false,
+        "titleChanged": true,
         "schemaBreaking": false,
         "bespokeRenderer": false,
         "unchanged": false
@@ -1458,7 +1458,7 @@
           "after": 1
         },
         "entities": {
-          "before": 5,
+          "before": 1,
           "after": 1
         },
         "latestYear": {
@@ -1473,41 +1473,16 @@
       "indicators": {
         "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "A-025_ccs_facility_count",
-            "changes": {
-              "spatialScope": {
-                "before": "point",
-                "after": "nation"
-              }
-            }
-          },
-          {
-            "indicatorId": "A-025_ccs_facility_registry",
-            "changes": {
-              "labelKo": {
-                "before": "CCS 시설 목록 — 베트남 CCS 관련 시설·프로젝트 개체 목록(좌표·유형·상태)",
-                "after": "CCS 시설 목록 — 베트남 CCS 관련 시설·프로젝트 개체 목록(유형·상태)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 1,
-        "valueChanged": 1,
-        "valueChangeRatePercent": 100,
+        "valueChanged": 0,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
         "added": 0,
         "removed": 0,
-        "samples": [
-          {
-            "key": "A-025_ccs_facility_count|2026||v124-a-025-obs-00001",
-            "before": 5,
-            "after": 1
-          }
-        ]
+        "samples": []
       },
       "entities": {
         "attributeKeysAdded": [],
@@ -1515,9 +1490,9 @@
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -1593,11 +1568,11 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 35,
+          "before": 45,
           "after": 45
         },
         "observations": {
-          "before": 35,
+          "before": 61,
           "after": 61
         },
         "entities": {
@@ -1609,33 +1584,22 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 0,
+          "before": 3.3,
           "after": 3.3
         }
       },
       "indicators": {
-        "added": [
-          "A-027_railways_defaultrate_bridge",
-          "A-027_railways_defaultrate_layer",
-          "A-027_railways_defaultrate_tunnel",
-          "A-027_railways_length_km",
-          "A-027_roads_defaultrate_bridge",
-          "A-027_roads_defaultrate_layer",
-          "A-027_roads_defaultrate_maxspeed",
-          "A-027_roads_defaultrate_oneway",
-          "A-027_roads_defaultrate_tunnel",
-          "A-027_roads_length_km"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 61,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 61,
-        "removed": 35,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -1646,7 +1610,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -1730,7 +1694,7 @@
           "after": 1
         },
         "entities": {
-          "before": 19,
+          "before": 30,
           "after": 30
         },
         "latestYear": {
@@ -1749,32 +1713,22 @@
       },
       "observations": {
         "matched": 1,
-        "valueChanged": 1,
-        "valueChangeRatePercent": 100,
+        "valueChanged": 0,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
         "added": 0,
         "removed": 0,
-        "samples": [
-          {
-            "key": "A-029_fta_count|2026||v124-a-029-obs-00001",
-            "before": 19,
-            "after": 30
-          }
-        ]
+        "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "속성3_A_024_선로상태_기존_계획_A_029_상태_통일코드"
-        ],
-        "attributeKeysRemoved": [
-          "속성3_A_024_선로상태_기존_계획"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -1791,11 +1745,11 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 4,
+          "before": 8,
           "after": 8
         },
         "observations": {
-          "before": 16,
+          "before": 148,
           "after": 148
         },
         "entities": {
@@ -1807,64 +1761,22 @@
           "after": 2024
         },
         "missingRatePercent": {
-          "before": 43.8,
+          "before": 4.7,
           "after": 4.7
         }
       },
       "indicators": {
-        "added": [
-          "A-030_aux_kita_trade_balance",
-          "A-030_aux_kita_trade_korea_exports",
-          "A-030_aux_kita_trade_korea_imports",
-          "A-030_aux_kita_trade_total"
-        ],
+        "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "A-030_trade_balance",
-            "changes": {
-              "labelKo": {
-                "before": "한-베트남 교역 · 무역수지 — 한국 기준 대베트남 무역수지",
-                "after": "한-베트남 교역 · 무역수지 — 수출액에서 수입액을 뺀 값"
-              }
-            }
-          },
-          {
-            "indicatorId": "A-030_trade_korea_exports",
-            "changes": {
-              "labelKo": {
-                "before": "한-베트남 교역 · 대베트남 수출액 — 한국 기준 대베트남 대베트남 수출액",
-                "after": "한-베트남 교역 · 대베트남 수출액 — 한국 기준 대베트남 수출액"
-              }
-            }
-          },
-          {
-            "indicatorId": "A-030_trade_korea_imports",
-            "changes": {
-              "labelKo": {
-                "before": "한-베트남 교역 · 대베트남 수입액 — 한국 기준 대베트남 대베트남 수입액",
-                "after": "한-베트남 교역 · 대베트남 수입액 — 한국 기준 대베트남 수입액"
-              }
-            }
-          },
-          {
-            "indicatorId": "A-030_trade_total",
-            "changes": {
-              "labelKo": {
-                "before": "한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액",
-                "after": "한-베트남 교역 · 총 교역액 — 수출액과 수입액의 합"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 148,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 148,
-        "removed": 16,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -1875,7 +1787,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -2092,350 +2004,7 @@
       "indicators": {
         "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "B-001_pr_annual_norm",
-            "changes": {
-              "labelKo": {
-                "before": "연 평년강수",
-                "after": "연 평년강수 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_apr",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 4월",
-                "after": "월 평년강수 — 4월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_aug",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 8월",
-                "after": "월 평년강수 — 8월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_dec",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 12월",
-                "after": "월 평년강수 — 12월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_feb",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 2월",
-                "after": "월 평년강수 — 2월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_jan",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 1월",
-                "after": "월 평년강수 — 1월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_jul",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 7월",
-                "after": "월 평년강수 — 7월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_jun",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 6월",
-                "after": "월 평년강수 — 6월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_mar",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 3월",
-                "after": "월 평년강수 — 3월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_may",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 5월",
-                "after": "월 평년강수 — 5월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_nov",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 11월",
-                "after": "월 평년강수 — 11월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_oct",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 10월",
-                "after": "월 평년강수 — 10월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_pr_month_norm_sep",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년강수 — 9월",
-                "after": "월 평년강수 — 9월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_apr",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 4월",
-                "after": "월별 건기/우기 구분(전국) — 4월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_aug",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 8월",
-                "after": "월별 건기/우기 구분(전국) — 8월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_dec",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 12월",
-                "after": "월별 건기/우기 구분(전국) — 12월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_feb",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 2월",
-                "after": "월별 건기/우기 구분(전국) — 2월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_jan",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 1월",
-                "after": "월별 건기/우기 구분(전국) — 1월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_jul",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 7월",
-                "after": "월별 건기/우기 구분(전국) — 7월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_jun",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 6월",
-                "after": "월별 건기/우기 구분(전국) — 6월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_mar",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 3월",
-                "after": "월별 건기/우기 구분(전국) — 3월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_may",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 5월",
-                "after": "월별 건기/우기 구분(전국) — 5월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_nov",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 11월",
-                "after": "월별 건기/우기 구분(전국) — 11월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_oct",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 10월",
-                "after": "월별 건기/우기 구분(전국) — 10월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_season_class_national_sep",
-            "changes": {
-              "labelKo": {
-                "before": "월별 건기/우기 구분(전국) — 9월",
-                "after": "월별 건기/우기 구분(전국) — 9월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_annual_norm",
-            "changes": {
-              "labelKo": {
-                "before": "연 평년기온",
-                "after": "연 평년기온 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_apr",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 4월",
-                "after": "월 평년기온 — 4월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_aug",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 8월",
-                "after": "월 평년기온 — 8월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_dec",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 12월",
-                "after": "월 평년기온 — 12월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_feb",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 2월",
-                "after": "월 평년기온 — 2월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_jan",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 1월",
-                "after": "월 평년기온 — 1월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_jul",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 7월",
-                "after": "월 평년기온 — 7월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_jun",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 6월",
-                "after": "월 평년기온 — 6월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_mar",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 3월",
-                "after": "월 평년기온 — 3월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_may",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 5월",
-                "after": "월 평년기온 — 5월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_nov",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 11월",
-                "after": "월 평년기온 — 11월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_oct",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 10월",
-                "after": "월 평년기온 — 10월 (1991-2020 평년)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-001_tas_month_norm_sep",
-            "changes": {
-              "labelKo": {
-                "before": "월 평년기온 — 9월",
-                "after": "월 평년기온 — 9월 (1991-2020 평년)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 38,
@@ -2454,7 +2023,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -2530,7 +2099,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 6,
+          "before": 7,
           "after": 7
         },
         "observations": {
@@ -2538,7 +2107,7 @@
           "after": 0
         },
         "entities": {
-          "before": 8371,
+          "before": 12621,
           "after": 12621
         },
         "latestYear": {
@@ -2551,9 +2120,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-003_climate_adm1_year_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -2574,7 +2141,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -2862,18 +2429,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "2025_개편_후_소속_34개_체계",
-          "기후기술_연계_근거",
-          "소속_행정구역_개편_전_63성_GADM_명칭"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": true,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -2894,7 +2457,7 @@
           "after": 261
         },
         "observations": {
-          "before": 435,
+          "before": 255,
           "after": 255
         },
         "entities": {
@@ -2916,12 +2479,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 252,
+        "matched": 255,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 3,
-        "removed": 183,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -2932,7 +2495,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3102,16 +2665,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "2025_개편_후_소속_34개_체계"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3250,7 +2811,7 @@
           "after": 14
         },
         "observations": {
-          "before": 15,
+          "before": 12,
           "after": 12
         },
         "entities": {
@@ -3262,7 +2823,7 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 13.3,
+          "before": 16.7,
           "after": 16.7
         }
       },
@@ -3272,19 +2833,13 @@
         "changed": []
       },
       "observations": {
-        "matched": 2,
-        "valueChanged": 1,
-        "valueChangeRatePercent": 50,
+        "matched": 12,
+        "valueChanged": 0,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 10,
-        "removed": 13,
-        "samples": [
-          {
-            "key": "B-015_allowance|2026||v124-b-015-obs-00002",
-            "before": 68391454,
-            "after": 268391454
-          }
-        ]
+        "added": 0,
+        "removed": 0,
+        "samples": []
       },
       "entities": {
         "attributeKeysAdded": [],
@@ -3294,7 +2849,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3370,7 +2925,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 1423,
+          "before": 1424,
           "after": 1424
         },
         "observations": {
@@ -3378,7 +2933,7 @@
           "after": 0
         },
         "entities": {
-          "before": 2032,
+          "before": 4867,
           "after": 4867
         },
         "latestYear": {
@@ -3391,9 +2946,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-017_adm1_ranking"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -3407,22 +2960,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "순위표_값",
-          "순위표_단위",
-          "순위표_지표명"
-        ],
-        "attributeKeysRemoved": [
-          "전국_값",
-          "전국_단위",
-          "전국_지표명"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3679,7 +3224,7 @@
           "after": 11
         },
         "observations": {
-          "before": 11,
+          "before": 8,
           "after": 8
         },
         "entities": {
@@ -3701,12 +3246,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 1,
+        "matched": 8,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 7,
-        "removed": 10,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -3717,7 +3262,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3911,7 +3456,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 13,
+          "before": 14,
           "after": 14
         },
         "observations": {
@@ -3919,7 +3464,7 @@
           "after": 0
         },
         "entities": {
-          "before": 74,
+          "before": 108,
           "after": 108
         },
         "latestYear": {
@@ -3932,9 +3477,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-026_flowdir_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -3955,7 +3498,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -3995,17 +3538,7 @@
       "indicators": {
         "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "B-027_gw_gis",
-            "changes": {
-              "labelKo": {
-                "before": "지하수 잠재량 — 격자/대수층 단위(GIS)",
-                "after": "지하수 자원량·함양량 — 격자/대수층 단위(GIS)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 54,
@@ -4024,7 +3557,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4100,7 +3633,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 11,
+          "before": 12,
           "after": 12
         },
         "observations": {
@@ -4108,7 +3641,7 @@
           "after": 0
         },
         "entities": {
-          "before": 231,
+          "before": 289,
           "after": 289
         },
         "latestYear": {
@@ -4121,9 +3654,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-029_peatland_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -4144,7 +3675,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4161,7 +3692,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 5,
+          "before": 6,
           "after": 6
         },
         "observations": {
@@ -4169,7 +3700,7 @@
           "after": 0
         },
         "entities": {
-          "before": 100,
+          "before": 134,
           "after": 134
         },
         "latestYear": {
@@ -4182,9 +3713,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-030_forest_change_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -4205,7 +3734,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4576,7 +4105,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 58,
+          "before": 59,
           "after": 59
         },
         "observations": {
@@ -4584,7 +4113,7 @@
           "after": 0
         },
         "entities": {
-          "before": 747,
+          "before": 781,
           "after": 781
         },
         "latestYear": {
@@ -4597,9 +4126,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-037_landcover_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -4620,7 +4147,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4637,11 +4164,11 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 25,
+          "before": 43,
           "after": 43
         },
         "observations": {
-          "before": 190,
+          "before": 399,
           "after": 399
         },
         "entities": {
@@ -4653,51 +4180,22 @@
           "after": 2050
         },
         "missingRatePercent": {
-          "before": 1.6,
+          "before": 0,
           "after": 0
         }
       },
       "indicators": {
-        "added": [
-          "B-038_agri_residue_bagasse",
-          "B-038_agri_residue_faostat",
-          "B-038_agri_residue_other",
-          "B-038_agri_residue_rice_husk",
-          "B-038_agri_residue_rice_straw",
-          "B-038_aux_capacity_target_biomass_2030",
-          "B-038_aux_capacity_target_wte_2030",
-          "B-038_aux_msw_collection",
-          "B-038_aux_msw_organic_share",
-          "B-038_aux_msw_percap",
-          "B-038_aux_stock_buffalo",
-          "B-038_aux_stock_cattle",
-          "B-038_aux_stock_pig",
-          "B-038_aux_stock_poultry",
-          "B-038_biomass_bankable",
-          "B-038_biomass_energy_potential",
-          "B-038_biomass_theoretical",
-          "B-038_msw_field"
-        ],
+        "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "B-038_livestock_manure",
-            "changes": {
-              "unit": {
-                "before": "Mt/yr",
-                "after": "Mt VS/yr"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 399,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 399,
-        "removed": 190,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -4706,9 +4204,9 @@
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4725,7 +4223,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 20,
+          "before": 21,
           "after": 21
         },
         "observations": {
@@ -4733,7 +4231,7 @@
           "after": 0
         },
         "entities": {
-          "before": 228,
+          "before": 263,
           "after": 263
         },
         "latestYear": {
@@ -4746,9 +4244,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-039_gross_potential_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -4769,7 +4265,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4786,7 +4282,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 36,
+          "before": 37,
           "after": 37
         },
         "observations": {
@@ -4794,7 +4290,7 @@
           "after": 0
         },
         "entities": {
-          "before": 165,
+          "before": 199,
           "after": 199
         },
         "latestYear": {
@@ -4807,9 +4303,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-040_geotemp_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -4830,7 +4324,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4847,7 +4341,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 52,
+          "before": 53,
           "after": 53
         },
         "observations": {
@@ -4855,7 +4349,7 @@
           "after": 0
         },
         "entities": {
-          "before": 113,
+          "before": 147,
           "after": 147
         },
         "latestYear": {
@@ -4868,30 +4362,9 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-041_solar_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "B-041_solar_adm1",
-            "changes": {
-              "labelKo": {
-                "before": "태양광 자원(성 단위 개체 목록)",
-                "after": "태양광 자원(성 단위 개체 목록) (기준연도 2018)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-041_solar_national",
-            "changes": {
-              "labelKo": {
-                "before": "태양광 자원(전국)",
-                "after": "태양광 자원(전국) (기준연도 2018)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -4910,7 +4383,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -4927,7 +4400,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 144,
+          "before": 145,
           "after": 145
         },
         "observations": {
@@ -4935,7 +4408,7 @@
           "after": 0
         },
         "entities": {
-          "before": 205,
+          "before": 242,
           "after": 242
         },
         "latestYear": {
@@ -4948,30 +4421,9 @@
         }
       },
       "indicators": {
-        "added": [
-          "B-042_wind_adm1_adm34"
-        ],
+        "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "B-042_wind_adm1",
-            "changes": {
-              "labelKo": {
-                "before": "풍력 자원(성 단위 개체 목록)",
-                "after": "풍력 자원(성 단위 개체 목록) (기준연도 2017)"
-              }
-            }
-          },
-          {
-            "indicatorId": "B-042_wind_national",
-            "changes": {
-              "labelKo": {
-                "before": "풍력 자원(전국)",
-                "after": "풍력 자원(전국) (기준연도 2017)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -4983,17 +4435,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "설비이용률_상위10",
-          "설비이용률_평균"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5069,11 +4518,11 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 26,
+          "before": 27,
           "after": 27
         },
         "observations": {
-          "before": 26,
+          "before": 7,
           "after": 7
         },
         "entities": {
@@ -5085,24 +4534,22 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 7.7,
+          "before": 0,
           "after": 0
         }
       },
       "indicators": {
-        "added": [
-          "B-044_critical_mineral_legal_framework"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 7,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 7,
-        "removed": 26,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -5113,7 +4560,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5134,7 +4581,7 @@
           "after": 46
         },
         "observations": {
-          "before": 46,
+          "before": 224,
           "after": 224
         },
         "entities": {
@@ -5142,7 +4589,7 @@
           "after": 0
         },
         "latestYear": {
-          "before": 2026,
+          "before": 2025,
           "after": 2025
         },
         "missingRatePercent": {
@@ -5156,12 +4603,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 224,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 224,
-        "removed": 46,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -5170,9 +4617,9 @@
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5342,16 +4789,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "2025_개편_후_소속_34개_체계"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5368,7 +4813,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 60,
+          "before": 50,
           "after": 50
         },
         "observations": {
@@ -5376,7 +4821,7 @@
           "after": 0
         },
         "entities": {
-          "before": 49,
+          "before": 3,
           "after": 3
         },
         "latestYear": {
@@ -5389,22 +4834,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-001_ndc_submission"
-        ],
-        "removed": [
-          "C-001_adaptation_target",
-          "C-001_base_year",
-          "C-001_bau_projection",
-          "C-001_implementation_finance",
-          "C-001_mitigation_target",
-          "C-001_ndc_sdg_linkage",
-          "C-001_sector_mitigation_measures",
-          "C-001_source_link",
-          "C-001_submission_history",
-          "C-001_target_ghg",
-          "C-001_target_sector"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -5417,145 +4848,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "BAU전망_BAU_2014_LULUCF_MtCO_e",
-          "BAU전망_BAU_2014_농업_MtCO_e",
-          "BAU전망_BAU_2014_산업공정_IP_MtCO_e",
-          "BAU전망_BAU_2014_에너지_MtCO_e",
-          "BAU전망_BAU_2014_폐기물_MtCO_e",
-          "BAU전망_BAU_2020_LULUCF_MtCO_e",
-          "BAU전망_BAU_2020_농업_MtCO_e",
-          "BAU전망_BAU_2020_산업공정_IP_MtCO_e",
-          "BAU전망_BAU_2020_에너지_MtCO_e",
-          "BAU전망_BAU_2020_폐기물_MtCO_e",
-          "BAU전망_BAU_2025_LULUCF_MtCO_e",
-          "BAU전망_BAU_2025_농업_MtCO_e",
-          "BAU전망_BAU_2025_산업공정_IP_MtCO_e",
-          "BAU전망_BAU_2025_에너지_MtCO_e",
-          "BAU전망_BAU_2025_폐기물_MtCO_e",
-          "BAU전망_BAU_2030_LULUCF_MtCO_e",
-          "BAU전망_BAU_2030_농업_MtCO_e",
-          "BAU전망_BAU_2030_산업공정_IP_MtCO_e",
-          "BAU전망_BAU_2030_에너지_MtCO_e",
-          "BAU전망_BAU_2030_폐기물_MtCO_e",
-          "BAU전망_BAU_총량_2010_MtCO_e",
-          "BAU전망_BAU_총량_2014_MtCO_e",
-          "BAU전망_BAU_총량_2020_MtCO_e",
-          "BAU전망_BAU_총량_2025_MtCO_e",
-          "BAU전망_BAU_총량_2030_MtCO_e",
-          "감축수단_LULUCF_부문_조치",
-          "감축수단_공통_제도_조치",
-          "감축수단_농업_부문_조치",
-          "감축수단_산업공정_IP_부문_조치",
-          "감축수단_에너지_부문_조치",
-          "감축수단_조치_선정_기준",
-          "감축수단_폐기물_부문_조치",
-          "결측_framework_필수_속성_결측_코드_사유",
-          "기술_기술코드_근거문구",
-          "기술_기술코드_판단근거_유형",
-          "목표기준_GWP_기준",
-          "목표기준_기준연도_년",
-          "목표기준_대상_GHG_목록",
-          "목표기준_대상_GHG_종수_종",
-          "목표기준_대상_부문_목록",
-          "목표기준_대상_부문_수_개",
-          "목표기준_목표연도_년",
-          "목표기준_이행기간_시작일_YYYY_MM_DD",
-          "목표기준_이행기간_종료일_YYYY_MM_DD",
-          "목표기준_적용_범위",
-          "무조건부_무조건부_LULUCF_BAU대비_감축률",
-          "무조건부_무조건부_LULUCF_감축량_MtCO_e",
-          "무조건부_무조건부_LULUCF_소요재원_백만_USD",
-          "무조건부_무조건부_농업_BAU대비_감축률",
-          "무조건부_무조건부_농업_감축량_MtCO_e",
-          "무조건부_무조건부_농업_소요재원_백만_USD",
-          "무조건부_무조건부_산업공정_IP_BAU대비_감축률",
-          "무조건부_무조건부_산업공정_IP_감축량_MtCO_e",
-          "무조건부_무조건부_산업공정_IP_소요재원_백만_USD",
-          "무조건부_무조건부_에너지_BAU대비_감축률",
-          "무조건부_무조건부_에너지_감축량_MtCO_e",
-          "무조건부_무조건부_에너지_소요재원_백만_USD",
-          "무조건부_무조건부_총량_감축량_MtCO_e",
-          "무조건부_무조건부_총량_감축률",
-          "무조건부_무조건부_총량_소요재원_백만_USD",
-          "무조건부_무조건부_폐기물_BAU대비_감축률",
-          "무조건부_무조건부_폐기물_감축량_MtCO_e",
-          "무조건부_무조건부_폐기물_소요재원_백만_USD",
-          "식별_레코드ID",
-          "식별_제출년도_년",
-          "식별_제출본_유형",
-          "식별_제출본명",
-          "식별_제출일_YYYY_MM_DD",
-          "식별_현행_여부_Y_N",
-          "이행체계_SDG_연계_개수_개",
-          "이행체계_SDG_연계_목록",
-          "재원_재원소요_GDP대비_상한",
-          "재원_재원소요_GDP대비_하한",
-          "재원_재원소요_누적_상한_NPV_백만_USD",
-          "재원_재원소요_누적_하한_NPV_백만_USD",
-          "재원_재원소요_대안추정_상한_백만_USD",
-          "재원_재원소요_대안추정_하한_백만_USD",
-          "재원_재원조달_유형_목록",
-          "재원_재원조달_유형_수_개",
-          "적응_적응_세부계획_근거",
-          "적응_적응목표_과제1",
-          "적응_적응목표_과제2",
-          "적응_적응목표_유형",
-          "조건부_조건부_LULUCF_BAU대비_감축률",
-          "조건부_조건부_LULUCF_감축량_MtCO_e",
-          "조건부_조건부_LULUCF_소요재원_백만_USD",
-          "조건부_조건부_농업_BAU대비_감축률",
-          "조건부_조건부_농업_감축량_MtCO_e",
-          "조건부_조건부_농업_소요재원_백만_USD",
-          "조건부_조건부_산업공정_IP_BAU대비_감축률",
-          "조건부_조건부_산업공정_IP_감축량_MtCO_e",
-          "조건부_조건부_산업공정_IP_소요재원_백만_USD",
-          "조건부_조건부_에너지_BAU대비_감축률",
-          "조건부_조건부_에너지_감축량_MtCO_e",
-          "조건부_조건부_에너지_소요재원_백만_USD",
-          "조건부_조건부_총량_감축량_MtCO_e",
-          "조건부_조건부_총량_감축률",
-          "조건부_조건부_총량_소요재원_백만_USD",
-          "조건부_조건부_폐기물_BAU대비_감축률",
-          "조건부_조건부_폐기물_감축량_MtCO_e",
-          "조건부_조건부_폐기물_소요재원_백만_USD",
-          "출처_NDC_등록부_URL",
-          "출처_원문_URL",
-          "출처_원문_문서명"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5631,7 +4931,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 105,
+          "before": 100,
           "after": 100
         },
         "observations": {
@@ -5639,7 +4939,7 @@
           "after": 0
         },
         "entities": {
-          "before": 96,
+          "before": 253,
           "after": 253
         },
         "latestYear": {
@@ -5652,45 +4952,9 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-003_me_indicator",
-          "C-003_nap_submission",
-          "C-003_priority_action"
-        ],
-        "removed": [
-          "C-003_adaptation_finance_need",
-          "C-003_adaptation_governance",
-          "C-003_adaptation_priority_sector",
-          "C-003_me_framework",
-          "C-003_source_link",
-          "C-003_stakeholder_gender",
-          "C-003_submission_history_en_mae",
-          "C-003_submission_history_vanban_chinhphu"
-        ],
-        "changed": [
-          {
-            "indicatorId": "C-003_adaptation_measure_list",
-            "changes": {
-              "labelKo": {
-                "before": "적응 우선 조치 목록(단기/중기/장기)",
-                "after": "적응 조치 목록 — 부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지"
-              }
-            }
-          },
-          {
-            "indicatorId": "C-003_sector_vulnerability",
-            "changes": {
-              "labelKo": {
-                "before": "부문별 취약성 평가(등급)",
-                "after": "NAP (국가 적응 계획)"
-              },
-              "unit": {
-                "before": "등급(정성)",
-                "after": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조"
-              }
-            }
-          }
-        ]
+        "added": [],
+        "removed": [],
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -5702,126 +4966,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "M_E_법적_근거",
-          "M_E_법적_근거_승인일_YYYY_MM_DD",
-          "M_E_보고_수단",
-          "M_E_연차_보고_시한",
-          "M_E_종합_평가_주기_년",
-          "M_E_지표_수_개",
-          "M_E_지표군_수_개",
-          "거버넌스_이행기관",
-          "거버넌스_재정_배정기관",
-          "거버넌스_총괄기관",
-          "거버넌스_투자_연계기관",
-          "결측_framework_필수_속성_결측_코드_사유",
-          "과제_과제_번호",
-          "과제_과제군_번호",
-          "과제_과제군명_국문",
-          "과제_과제군명_원문",
-          "과제_과제명_국문",
-          "과제_과제명_원문",
-          "과제_단계별_성과_2024_2025",
-          "과제_단계별_성과_2026_2030",
-          "과제_단계별_성과_기타_기간",
-          "과제_목표_번호",
-          "과제_목표명_국문",
-          "과제_세부과제_내용_원문",
-          "과제_세부과제_순번",
-          "과제_이행_시작연도_년",
-          "과제_이행_종료연도_년",
-          "과제_이행시기_구분",
-          "과제_주관기관_국문",
-          "과제_주관기관_원문",
-          "구성_적응_우선_분야",
-          "기술_기술코드_근거문구",
-          "기술_기술코드_판단근거_유형",
-          "식별_레코드ID",
-          "식별_레코드_유형",
-          "식별_레코드명",
-          "재원_가용_재원_2021_2030_십억_USD",
-          "재원_가용_재원_GDP_비중",
-          "재원_비국가재원_연간_소요_상한_십억_USD",
-          "재원_비국가재원_연간_소요_하한_십억_USD",
-          "재원_총_소요_2021_2030_상한_십억_USD_NPV_2020",
-          "재원_총_소요_2021_2030_하한_십억_USD_NPV_2020",
-          "재원_총_소요_GDP_비중_상한",
-          "재원_총_소요_GDP_비중_하한",
-          "재원_추가_소요_2021_2030_상한_십억_USD",
-          "재원_추가_소요_2021_2030_하한_십억_USD",
-          "재원_추가_소요_GDP_비중_상한",
-          "재원_추가_소요_GDP_비중_하한",
-          "재원_추가_투자_소요_2022_2040_사회프로그램_십억_USD",
-          "재원_추가_투자_소요_2022_2040_인프라_십억_USD",
-          "재원_추가_투자_소요_2022_2040_합계_십억_USD",
-          "제출_NAP_판",
-          "제출_UNFCCC_NAP_Central_등재일_YYYY_MM_DD",
-          "제출_계획기간",
-          "제출_등재_연도_년",
-          "제출_비전_목표연도_년",
-          "제출_승인_결정번호",
-          "제출_승인_연도_년",
-          "제출_승인일_YYYY_MM_DD",
-          "제출_작성_주관기관",
-          "제출_제출_상태",
-          "젠더_여성_명시_M_E_지표_수_개",
-          "젠더_젠더_여성_명시_세부과제_수_개",
-          "젠더_젠더_전담_과제군",
-          "젠더_취약계층_분석_대상",
-          "지표_담당기관_국문",
-          "지표_담당기관_원문",
-          "지표_지표_내용_원문",
-          "지표_지표_번호",
-          "지표_지표군_번호",
-          "지표_지표군명_국문",
-          "지표_지표군명_원문",
-          "지표_평가_대상_번호",
-          "지표_평가_대상_원문",
-          "출처_문서페이지_URL",
-          "출처_원문_URL",
-          "출처_원문_문서명",
-          "출처_인용_위치",
-          "취약성_대상명_국문",
-          "취약성_대상명_원문",
-          "취약성_원문_절",
-          "취약성_원문_쪽_p",
-          "취약성_정량_영향_원문_발췌",
-          "취약성_주요_영향_국문_요약",
-          "취약성_평가_대상_유형"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5897,7 +5049,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 140,
+          "before": 137,
           "after": 137
         },
         "observations": {
@@ -5905,7 +5057,7 @@
           "after": 0
         },
         "entities": {
-          "before": 135,
+          "before": 408,
           "after": 408
         },
         "latestYear": {
@@ -5918,19 +5070,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-005_barrier",
-          "C-005_priority_tech",
-          "C-005_tna_submission"
-        ],
-        "removed": [
-          "C-005_barrier_analysis",
-          "C-005_priority_sector",
-          "C-005_priority_tech_list",
-          "C-005_source_link",
-          "C-005_tap_status",
-          "C-005_tna_status"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -5943,65 +5084,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "TAP_TAP_유무_Y_N",
-          "결측_framework_필수_속성_결측_코드_사유",
-          "기술_MCDA_평균_점수_점",
-          "기술_기술명_국문",
-          "기술_기술명_영문",
-          "기술_선정_단계",
-          "기술_우선순위_순위_위",
-          "수행_TNA_수행_여부_Y_N",
-          "수행_TNA_수행_연도_년",
-          "수행_우선_섹터_목록",
-          "수행_우선_섹터_수_개",
-          "수행_제출본명",
-          "수행_총괄기관",
-          "식별_TNA_차수_년",
-          "식별_감축_적응_구분",
-          "식별_레코드ID",
-          "식별_부문",
-          "장벽_대상_기술",
-          "장벽_장벽_내용",
-          "장벽_장벽_분류",
-          "장벽_장벽_수준",
-          "출처_원문_URL",
-          "출처_원문_문서명",
-          "출처_인용_위치"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -6018,7 +5108,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 62,
+          "before": 50,
           "after": 50
         },
         "observations": {
@@ -6026,7 +5116,7 @@
           "after": 0
         },
         "entities": {
-          "before": 50,
+          "before": 29,
           "after": 29
         },
         "latestYear": {
@@ -6039,28 +5129,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-006_bilateral_agreement",
-          "C-006_domestic_framework",
-          "C-006_jcm_project"
-        ],
-        "removed": [
-          "C-006_authorization_body_a6partnership",
-          "C-006_authorization_body_baochinhphu",
-          "C-006_authorization_body_vanban_chinhphu",
-          "C-006_authorization_body_vanban_chinhphu_2",
-          "C-006_bilateral_date",
-          "C-006_bilateral_party",
-          "C-006_bilateral_scope",
-          "C-006_corresponding_adjustment_baochinhphu",
-          "C-006_corresponding_adjustment_vanban_chinhphu",
-          "C-006_corresponding_adjustment_vanban_chinhphu_2",
-          "C-006_itmo_transfer_jcm_jp",
-          "C-006_itmo_transfer_unfccc",
-          "C-006_national_registry_a6partnership",
-          "C-006_national_registry_unfccc",
-          "C-006_national_registry_vanban_chinhphu"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -6073,90 +5143,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "결측_framework_필수_속성_결측_코드_사유",
-          "기술_기술코드_근거문구",
-          "기술_기술코드_판단근거_유형",
-          "법령_공포일_YYYY_MM_DD",
-          "법령_문서명_국문",
-          "법령_문서명_원문",
-          "법령_문서번호",
-          "법령_발령기관",
-          "법령_시행일_YYYY_MM_DD",
-          "법령_제6조_관련_역할",
-          "사업_JCM_사업번호",
-          "사업_등록_상태",
-          "사업_등록일",
-          "사업_방법론",
-          "사업_사업명_원문",
-          "사업_소재지",
-          "사업_시작일",
-          "사업_일본_참여기업",
-          "사업_호스트_참여기업",
-          "식별_레코드ID",
-          "식별_레코드_유형",
-          "식별_레코드명",
-          "실적_ITMO_이전_실적_tCO_e",
-          "실적_발행_크레딧_총량_tCO_e",
-          "실적_베트남_배분량_tCO_e",
-          "실적_상대국_배분량_tCO_e",
-          "실적_실적_기준일_YYYY_MM_DD",
-          "체계_A6_4_국가지정기구_DNA",
-          "체계_A6_4_호스트국_참여요건_제출일_YYYY_MM_DD",
-          "체계_ITMO_승인기관",
-          "체계_UNFCCC_CARP_연동",
-          "체계_국가_레지스트리",
-          "체계_상응조정_체계",
-          "출처_문서페이지_URL",
-          "출처_원문_URL",
-          "출처_원문_문서명",
-          "출처_인용_위치",
-          "협정_UNFCCC_CARP_협력접근법_ID",
-          "협정_국내_승인",
-          "협정_대상_부문_기술",
-          "협정_발효_상태",
-          "협정_베트남_승인기관",
-          "협정_상대국",
-          "협정_상대국_승인기관",
-          "협정_초기보고서_제출_당사국_일자",
-          "협정_최신_문서_개정일_YYYY_MM_DD",
-          "협정_최초_체결일_YYYY_MM_DD",
-          "협정_협정_유형",
-          "협정_협정명_원문"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -6173,7 +5167,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 38,
+          "before": 33,
           "after": 33
         },
         "observations": {
@@ -6181,7 +5175,7 @@
           "after": 0
         },
         "entities": {
-          "before": 32,
+          "before": 7,
           "after": 7
         },
         "latestYear": {
@@ -6194,17 +5188,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-007_nma_record"
-        ],
-        "removed": [
-          "C-007_activity_scope",
-          "C-007_participating_body",
-          "C-007_participation_status",
-          "C-007_registered_activity",
-          "C-007_registration_date",
-          "C-007_source_link"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -6217,66 +5202,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "NMA_대상_분야_감축_적응_재정_기술_역량",
-          "NMA_등록_제출_일_YYYY_MM_DD",
-          "NMA_부문",
-          "NMA_비당사국_참여기관",
-          "NMA_제출_당사국",
-          "NMA_참여_당사국_host_표시",
-          "NMA_초점_분야_원문",
-          "NMA_플랫폼_등록_ID",
-          "NMA_활동명_국문",
-          "NMA_활동명_원문",
-          "결측_framework_필수_속성_결측_코드_사유",
-          "기술_기술코드_근거문구",
-          "기술_기술코드_판단근거_유형",
-          "베트남_근거",
-          "베트남_참여_기관",
-          "베트남_참여_실적",
-          "베트남_참여_여부",
-          "베트남_참여_지위",
-          "식별_레코드ID",
-          "식별_레코드_유형",
-          "식별_레코드명",
-          "출처_문서페이지_URL",
-          "출처_원문_URL",
-          "출처_원문_문서명",
-          "출처_인용_위치"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -6706,7 +5639,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 26,
+          "before": 23,
           "after": 23
         },
         "observations": {
@@ -6714,7 +5647,7 @@
           "after": 0
         },
         "entities": {
-          "before": 21,
+          "before": 33,
           "after": 33
         },
         "latestYear": {
@@ -6727,17 +5660,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-015_field_survey",
-          "C-015_policy_document"
-        ],
-        "removed": [
-          "C-015_policy_document_link_datafiles_chinhphu",
-          "C-015_policy_document_link_datafiles_chinhphu_2",
-          "C-015_policy_document_link_erea",
-          "C-015_policy_document_link_moit",
-          "C-015_policy_document_link_vanban_chinhphu"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -6750,71 +5674,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "결측_framework_필수_속성_결측_코드_사유",
-          "관련_관련_데이터요소",
-          "기술_기술코드_근거문구",
-          "기술_기술코드_판단근거_유형",
-          "링크_raw_보유_여부",
-          "링크_raw_파일명",
-          "링크_링크_유형",
-          "링크_문서포털_URL",
-          "링크_원문_PDF_URL",
-          "문서_공포일_YYYY_MM_DD",
-          "문서_대체_개정_관계",
-          "문서_문서_형식",
-          "문서_문서명_국문",
-          "문서_문서명_원문",
-          "문서_문서번호",
-          "문서_발행_기관",
-          "문서_상태",
-          "문서_시행_연도_년",
-          "문서_시행일_YYYY_MM_DD",
-          "문서_주요_내용",
-          "식별_레코드ID",
-          "식별_레코드명",
-          "식별_문서_구분",
-          "출처_인용_위치",
-          "현지조사_RE_사업모델_영향",
-          "현지조사_시행일_제정기관",
-          "현지조사_참고_문헌",
-          "현지조사_표",
-          "현지조사_항목",
-          "현지조사_핵심_조항"
-        ],
-        "attributeKeysRemoved": [
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성2_레코드ID",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성7_상태",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -6890,7 +5757,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 62,
+          "before": 53,
           "after": 53
         },
         "observations": {
@@ -6898,7 +5765,7 @@
           "after": 0
         },
         "entities": {
-          "before": 52,
+          "before": 56,
           "after": 56
         },
         "latestYear": {
@@ -6911,21 +5778,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-017_incentive"
-        ],
-        "removed": [
-          "C-017_implementing_agency_vanban_chinhphu",
-          "C-017_implementing_agency_vanban_chinhphu_2",
-          "C-017_implementing_agency_xaydungchinhsach_chinh",
-          "C-017_incentive_condition",
-          "C-017_incentive_status_datafiles_chinhphu",
-          "C-017_incentive_status_vanban_chinhphu",
-          "C-017_incentive_type_erea",
-          "C-017_incentive_type_vanban_chinhphu",
-          "C-017_target_technology_moit",
-          "C-017_target_technology_thuvienphapluat"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -6938,54 +5792,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "속성10_가격_단위",
-          "속성11_세율",
-          "속성12_적용_기간_년",
-          "속성13_면제_기간_년",
-          "속성14_감면_기간_년",
-          "속성15_감면율",
-          "속성16_기타_비율",
-          "속성17_적용_기한_YYYY_MM_DD",
-          "속성18_지역_요건_판정",
-          "속성19_원문_URL",
-          "속성1_제도명_적용_대상",
-          "속성20_권역_전국이면_전국",
-          "속성23_적용_조건_용량_기한_등_사업_요건",
-          "속성3_가격_하한",
-          "속성4_시행일_YYYY_MM_DD",
-          "속성5_근거_법령_번호_한글_명칭",
-          "속성6_유형",
-          "속성8_시행_기관",
-          "속성9_가격_상한"
-        ],
-        "attributeKeysRemoved": [
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성23_설명",
-          "속성3_값",
-          "속성4_시점",
-          "속성5_등록표준_출처",
-          "속성6_분류",
-          "속성8_사업자_기관",
-          "속성9_방법론"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -7415,7 +6229,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 21,
+          "before": 18,
           "after": 18
         },
         "observations": {
@@ -7423,7 +6237,7 @@
           "after": 0
         },
         "entities": {
-          "before": 388,
+          "before": 1190,
           "after": 1190
         },
         "latestYear": {
@@ -7436,17 +6250,8 @@
         }
       },
       "indicators": {
-        "added": [
-          "C-025_credit_issuance",
-          "C-025_credit_project"
-        ],
-        "removed": [
-          "C-025_project_name_cdm_unfccc",
-          "C-025_project_name_cdm_unfccc_2",
-          "C-025_project_name_gspp_berkeley",
-          "C-025_project_name_jcm_jp",
-          "C-025_project_name_projects_globalcarbonc"
-        ],
+        "added": [],
+        "removed": [],
         "changed": []
       },
       "observations": {
@@ -7459,80 +6264,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "결측_framework_필수_속성_결측_코드_사유",
-          "기술_기술코드_판단_근거",
-          "기술_기술코드_판단_유형",
-          "발행기록_기록_유형",
-          "발행기록_모니터링_기간_시작_YYYY_MM_DD",
-          "발행기록_모니터링_기간_종료_YYYY_MM_DD",
-          "발행기록_발행_요청_상태",
-          "발행기록_발행량_tCO_e",
-          "발행기록_발행일_YYYY_MM_DD",
-          "발행기록_소각량_tCO_e",
-          "발행기록_연도_년",
-          "사업_감축_제거_구분",
-          "사업_기술_분야_등록부_분류",
-          "사업_방법론",
-          "사업_방법론_버전",
-          "사업_사업_규모",
-          "사업_사업_범주_등록부_분류",
-          "사업_사업자_기관",
-          "사업_연간_예상_감축량_tCO_e_년",
-          "사업_적용_표준_버전",
-          "식별_등록_표준",
-          "식별_등록부_프로젝트ID",
-          "식별_등재_상태",
-          "식별_레코드ID",
-          "식별_프로젝트명",
-          "실적_등록일_YYYY_MM_DD",
-          "실적_발행량_tCO_e",
-          "실적_발행일_YYYY_MM_DD",
-          "실적_배분량_tCO_e",
-          "실적_소각량_tCO_e",
-          "실적_최초_빈티지_년",
-          "실적_크레딧_기간_시작_YYYY_MM_DD",
-          "실적_크레딧_기간_종료_YYYY_MM_DD",
-          "지역_지역명_개편_전_표기",
-          "지역_지역명_원문",
-          "지역_지역명_현행",
-          "지역_행정코드_P_code",
-          "출처_수집_경로_비고",
-          "출처_원문_URL"
-        ],
-        "attributeKeysRemoved": [
-          "methodology",
-          "projectId",
-          "proponent",
-          "standard",
-          "status",
-          "기술코드_근거문구",
-          "기술코드_판단근거_유형",
-          "속성10_건수",
-          "속성11_발행량_tCO2e",
-          "속성12_소각량_tCO2e",
-          "속성13_배분량_tCO2e",
-          "속성14_연간예상감축_tCO2e",
-          "속성15_빈티지_연도",
-          "속성16_발행일",
-          "속성17_크레딧기간",
-          "속성18_업종",
-          "속성19_원문URL",
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code",
-          "속성23_설명",
-          "속성3_값",
-          "속성4_시점",
-          "속성6_분류"
-        ]
+        "attributeKeysAdded": [],
+        "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9091,7 +7830,7 @@
           "after": 0
         },
         "entities": {
-          "before": 15,
+          "before": 18,
           "after": 18
         },
         "latestYear": {
@@ -9125,7 +7864,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9142,7 +7881,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 1,
+          "before": 2,
           "after": 2
         },
         "observations": {
@@ -9150,7 +7889,7 @@
           "after": 0
         },
         "entities": {
-          "before": 1,
+          "before": 46,
           "after": 46
         },
         "latestYear": {
@@ -9163,9 +7902,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "E-002_cdm_transition"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -9179,20 +7916,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "CDM_전환_요청_건수_transition_requests",
-          "승인절차_기재_구분_approval_procedure_status",
-          "유치국_전환_승인_건수_host_approvals",
-          "제6_4조_DNA_지정_현황_a64_dna_designation",
-          "제6_4조_등록_건수_transition_registered"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9327,7 +8058,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 1,
+          "before": 2,
           "after": 2
         },
         "observations": {
@@ -9348,21 +8079,9 @@
         }
       },
       "indicators": {
-        "added": [
-          "E-005_research_institution"
-        ],
+        "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "E-005_partner_org",
-            "changes": {
-              "spatialScope": {
-                "before": "point",
-                "after": "nation"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -9374,17 +8093,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "국제협력_실적_구분_intl_coop_status",
-          "기술코드_근거_대조_tech_evidence_check"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9401,7 +8117,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 4,
+          "before": 6,
           "after": 6
         },
         "observations": {
@@ -9422,40 +8138,9 @@
         }
       },
       "indicators": {
-        "added": [
-          "E-006_investor",
-          "E-006_investor_dfi",
-          "E-006_investor_intl",
-          "E-006_investor_media"
-        ],
-        "removed": [
-          "E-006_private_investor_intl",
-          "E-006_private_investor_media"
-        ],
-        "changed": [
-          {
-            "indicatorId": "E-006_dfi",
-            "changes": {
-              "spatialScope": {
-                "before": "point",
-                "after": "nation"
-              }
-            }
-          },
-          {
-            "indicatorId": "E-006_private_investor",
-            "changes": {
-              "labelKo": {
-                "before": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
-                "after": "현지 투자자 네트워크"
-              },
-              "spatialScope": {
-                "before": "point",
-                "after": "nation"
-              }
-            }
-          }
-        ]
+        "added": [],
+        "removed": [],
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -9467,16 +8152,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "좌표_소재_구분_coord_location_type"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9493,7 +8176,7 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 6,
+          "before": 7,
           "after": 7
         },
         "observations": {
@@ -9501,7 +8184,7 @@
           "after": 0
         },
         "entities": {
-          "before": 19,
+          "before": 22,
           "after": 22
         },
         "latestYear": {
@@ -9514,9 +8197,7 @@
         }
       },
       "indicators": {
-        "added": [
-          "E-007_mrv_system"
-        ],
+        "added": [],
         "removed": [],
         "changed": []
       },
@@ -9530,22 +8211,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "근거_보고서_tier_report",
-          "명세서_항목_대응_spec_item",
-          "보고서_대상연도_tier_period",
-          "부문별_Tier_tier_by_sector",
-          "제도_성격_구분_institution_nature",
-          "표준_분류_category_std",
-          "확인_상태_구분_verification_status"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9625,7 +8298,7 @@
           "after": 6
         },
         "observations": {
-          "before": 6,
+          "before": 39,
           "after": 39
         },
         "entities": {
@@ -9637,41 +8310,22 @@
           "after": 2023
         },
         "missingRatePercent": {
-          "before": 16.7,
+          "before": 2.6,
           "after": 2.6
         }
       },
       "indicators": {
         "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "E-009_researcher_count",
-            "changes": {
-              "unit": {
-                "before": "명",
-                "after": "명(FTE)"
-              }
-            }
-          },
-          {
-            "indicatorId": "E-009_researchers_per_million",
-            "changes": {
-              "unit": {
-                "before": "명/백만명",
-                "after": "명/백만명(FTE)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
-        "matched": 0,
+        "matched": 39,
         "valueChanged": 0,
-        "valueChangeRatePercent": null,
+        "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 39,
-        "removed": 6,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -9680,9 +8334,9 @@
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9703,7 +8357,7 @@
           "after": 24
         },
         "observations": {
-          "before": 30,
+          "before": 31,
           "after": 31
         },
         "entities": {
@@ -9725,12 +8379,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 1,
+        "matched": 31,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 30,
-        "removed": 29,
+        "added": 0,
+        "removed": 0,
         "samples": []
       },
       "entities": {
@@ -9741,7 +8395,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -9970,17 +8624,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "문서_유형_document_type",
-          "협력_상대_구분_partner_type"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -10032,17 +8683,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "가입_상태_구분_membership_status",
-          "자료_구분_data_scope"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -10271,17 +8919,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "기후_에너지_담당_판정_focal_point_status",
-          "행_유형_row_type"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -10321,17 +8966,7 @@
       "indicators": {
         "added": [],
         "removed": [],
-        "changed": [
-          {
-            "indicatorId": "E-020_kr_support",
-            "changes": {
-              "unit": {
-                "before": "건(프로그램)",
-                "after": "건(프로그램) / 건(사업)"
-              }
-            }
-          }
-        ]
+        "changed": []
       },
       "observations": {
         "matched": 0,
@@ -10343,22 +8978,14 @@
         "samples": []
       },
       "entities": {
-        "attributeKeysAdded": [
-          "공통_프로그램명_program_name_std",
-          "금액_종류_amount_type",
-          "레코드_구분_record_kind",
-          "신청시기_구분_period_type",
-          "지원_유형_표준_support_type_std",
-          "지원대상_구분_applicant_type",
-          "프로그램_연결키_program_key"
-        ],
+        "attributeKeysAdded": [],
         "attributeKeysRemoved": []
       },
       "flags": {
         "titleChanged": false,
-        "schemaBreaking": true,
+        "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     }
   ]
