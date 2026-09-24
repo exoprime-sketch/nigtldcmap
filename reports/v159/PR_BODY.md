@@ -19,12 +19,16 @@
 - 용어집 33건, 허용목록 4건
 
 ## 검증
-- tsc 0, 단위 테스트 364/364
+- tsc 0, 단위 테스트 368/368
 - `qa:typology:v159` 152/152
 - 회귀: 1순위 섹션 DOM 동일 145/152. 의도 외 변경 0이고, 차이 7건은 ⓪ 상태 화면입니다.
 - 넘침: 12화면 × 6폭 = 72건 모두 0
 - 레거시 감사 선행: entity-cards·portfolio·generic-detail·map-list·glossary 모두 통과
-- `finalize:v151`: **미통과**(2회). B-028 명세서 원문의 "관련 자료"가 public-text:v136 금지 문구에 걸림(REVIEW §4)
+- `finalize:v151` 통과
+  - release:v136 79/79, role-split 53/53, boundary-34 21(+1 skip), boundary-policy 24/24
+  - analysis QA: 필수 실패 38(기준선 41 이하), 신규 0
+- `qa:typology:v159` 152/152, `qa:detail-contract:v153` 152/152, 대표 12화면 회귀 12/12
+- 게이트 대응: 명세서 문구 override 1건(B-028), 명칭 규칙 V159 QA 갱신, analysis QA ⓪ 판정 규칙(REVIEW §4.1·§5)
 
 ## 결정 필요
 - 계약 4건: B-014 '표 전환', C-002·C-019는 ⑥인데 숫자 1순위, E-008 제외 요소
