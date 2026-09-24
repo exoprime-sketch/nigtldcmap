@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from typing import Any, Iterable, Mapping
 
-from ..vietnam_etl.normalization import is_placeholder
+from ..etl.normalization import is_placeholder
 
 Fact = dict[str, Any]
 
