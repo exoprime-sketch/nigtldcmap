@@ -31,10 +31,11 @@ type IconKitV152 = typeof import("../../map/mapIconKitV152");
 const STATIC_ICON_LIMIT_V152 = 60;
 /** The big map's voltage colours, so the static map, the live map and the legend agree. */
 const lineColorV152 = (kv: number) => LINE_CLASSES_V152.find((entry) => entry.kv === kv)?.color || "#196fa0";
+import { countryAssetPathV158 } from "../../../data/countryContext";
 
 type Runtime = { layer: CountryMapLayerV122; base: VietnamMapGeoJsonV124; outline: VietnamMapGeoJsonV124 | null; geometry?: VietnamMapGeoJsonV124; data?: VietnamSpatialLayerAssetV124; records: CountryEntityV122[] };
 // Resolved against PUBLIC_URL so the GitHub Pages subpath build finds it too.
-const BASE = publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
+const BASE = publicAssetUrlV128(countryAssetPathV158("VNM", "geometry/vnm-adm1-63.geojson"));
 // V151-2: the national outline (63 provinces dissolved, display simplification) as the coast stroke.
 const OUTLINE = publicAssetUrlV128(COUNTRY_OUTLINE_Z5_PATH_V151);
 const EMPTY_RECORDS: CountryEntityV122[] = [];

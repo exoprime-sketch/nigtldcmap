@@ -3,6 +3,7 @@ import { describe, expect, it } from "@jest/globals";
 import { resolve } from "path";
 
 import { classifyStatedValueV142, comparableStatedValuesV142 } from "./statedValueRoleV142";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * Negative fixtures first: the values C-011 delivered in its 값 column, which
@@ -56,8 +57,8 @@ describe("classifyStatedValueV142 — C-011's values are not one axis", () => {
   });
 
   it("does not build a comparison out of the C-011 download", () => {
-    const file = resolve(__dirname, "../../../public/data/vietnam/v2/downloads/c-011.json");
-    const semanticsFile = resolve(__dirname, "../../../public/data/vietnam/v2/semantic/elements/c-011.json");
+    const file = resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/c-011.json`);
+    const semanticsFile = resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/semantic/elements/c-011.json`);
     const download = JSON.parse(readFileSync(file, "utf8"));
     const semantics = JSON.parse(readFileSync(semanticsFile, "utf8"));
     const units = new Map<string, { unit: string; unitFamily: string }>(

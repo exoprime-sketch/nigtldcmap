@@ -7,10 +7,11 @@ import {
   normalizeTechnologyIdsV153,
   technologyOptionsV153,
 } from "./technologyIdV153";
+import { countryPublicDirV158 } from "../data/countryContext";
 
 type Catalog = { elements: { elementId: string; technologyIds: string[] }[] };
 const catalog = JSON.parse(
-  readFileSync(resolve(__dirname, "../../public/data/vietnam/v2/catalog.json"), "utf8")
+  readFileSync(resolve(__dirname, `../../${countryPublicDirV158("VNM")}/catalog.json`), "utf8")
 ) as Catalog;
 // The V1 baseline still carries both spellings ("7" and "CTIS-07").
 const rawCatalog = JSON.parse(

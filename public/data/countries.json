@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "countries-v158",
+  "generatedAt": "2026-09-24",
+  "note": "공개 대상 국가 레지스트리. 런타임이 읽는 원본이며, 화면·빌더·감사는 여기서 국가별 데이터 경로와 상태를 얻는다. status=live 국가만 ?country= 파라미터로 선택할 수 있다.",
+  "countries": [
+    {
+      "iso3": "VNM",
+      "nameKo": "베트남",
+      "nameEn": "Viet Nam",
+      "dataRoot": "/data/vietnam/v2",
+      "adm": {
+        "level1": {
+          "count": 34,
+          "label": "성·시",
+          "asset": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+          "keyScheme": "adm1Code34"
+        }
+      },
+      "bbox": [102.14, 8.18, 109.46, 23.39],
+      "defaultZoom": 4.6,
+      "boundaryEpoch": "2025-07-01",
+      "categoriesAvailable": ["A", "B", "C", "D", "E"],
+      "status": "live"
+    },
+    {
+      "iso3": "BGD",
+      "nameKo": "방글라데시",
+      "nameEn": "Bangladesh",
+      "dataRoot": "/data/bgd/v2",
+      "adm": {
+        "level1": {
+          "count": 8,
+          "label": "Division",
+          "asset": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+          "keyScheme": "gadmAdm1"
+        }
+      },
+      "bbox": [88.01, 20.74, 92.68, 26.63],
+      "defaultZoom": 6.4,
+      "boundaryEpoch": "geoBoundaries gbOpen ADM1",
+      "categoriesAvailable": ["A", "B", "C", "E"],
+      "status": "preparing"
+    }
+  ]
+}

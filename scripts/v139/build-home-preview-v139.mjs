@@ -24,12 +24,19 @@ import { fileURLToPath } from "node:url";
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, "../..");
+import { resolveDataRootV158 } from "../v158/country-context-v158.mjs";
+
 const argv = process.argv.slice(2);
 const opt = (name, fallback) => {
   const index = argv.indexOf(name);
   return index < 0 ? fallback : argv[index + 1];
 };
-const DATA = resolve(ROOT, opt("--data", process.env.VIETNAM_DATA_ROOT || "public/data/vietnam/v2"));
+// V158: --data / VIETNAM_DATA_ROOT keep priority; --country picks the tree.
+const DATA = resolveDataRootV158({
+  root: ROOT,
+  argv,
+  env: opt("--data", process.env.VIETNAM_DATA_ROOT || null),
+});
 const OUT_DIR = resolve(DATA, "home");
 const JSON_PATH = resolve(OUT_DIR, "home-preview-v139.json");
 const SVG_PATH = resolve(OUT_DIR, "transmission-preview-v139.svg");

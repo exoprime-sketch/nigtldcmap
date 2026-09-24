@@ -19,8 +19,11 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { resolveDataRootV158 } from "../v158/country-context-v158.mjs";
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
-const DATA = resolve(ROOT, "public/data/vietnam/v2");
+// V158: the published tree comes from the country registry (--country vnm by default).
+const DATA = resolveDataRootV158({ root: ROOT });
 const PUBLIC_FILE = resolve(DATA, "dataset-directory.json");
 const SRC_FILE = resolve(ROOT, "src/data/datasetDirectoryV149.json");
 const REGENERATE = "npm run build:dataset-directory:v150 실행 후 커밋";

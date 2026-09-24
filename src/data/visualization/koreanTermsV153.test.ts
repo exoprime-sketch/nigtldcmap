@@ -2,6 +2,7 @@ import { test, expect } from "@jest/globals";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { climateZoneLabelV153, isUntranslatedV153, koreanTermV153 } from "./koreanTermsV153";
+import { countryPublicDirV158 } from "../countryContext";
 
 test("English terms print Korean first with the source wording in parentheses", () => {
   expect(koreanTermV153("BOT(Build-Operate-Transfer)")).toBe("건설·운영·이전(BOT(Build-Operate-Transfer))");
@@ -23,7 +24,7 @@ test("climate zone labels are Korean(code)", () => {
 
 test("every C-012 item name and value the source states is covered", () => {
   const bundle = JSON.parse(
-    readFileSync(resolve(__dirname, "../../../public/data/vietnam/v2/downloads/c-012.json"), "utf8")
+    readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/c-012.json`), "utf8")
   ) as { entities: { normalizedAttributes: Record<string, unknown> }[] };
   const untranslated = new Set<string>();
   for (const entity of bundle.entities) {
