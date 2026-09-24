@@ -22,7 +22,10 @@
 | qa:detail-contract:v153 | 152/152 |
 | 6폭 넘침(6화면) | 0 |
 | 콘솔 오류 | 0 |
-| finalize:v151 | GATE_RESULT |
+| finalize:v151 1회차 | 실패 — entity-cards:v131(D-024·E-008) → 이후 감사 미실행 |
+| finalize:v151 2회차 | 실패 — temporal-depth:v135 GHG_ANALYTICAL_VIEW(C-002). 그 앞 감사 전부 통과(release 60/63) |
+| 사후 개별 확인 | entity-cards 17/17 · portfolio 12/12 · glossary 16/16 · map-list-ui 19/19 · temporal-depth 11/11 · finder-scroll 13/13 · human-review 10/10 · generic-detail 20/20 · finder-card 12/12 |
+| 게이트 3회차 | 미실행 — CLAUDE.md "2회 초과 반복 시 멈춤". 승인 시 1회 실행 |
 
 ## 측정(전후)
 
@@ -30,6 +33,13 @@
 - 데이터 찾기 기본 카드 152 → 57
 - 상세 1층 하단/800px: 1.24~13.85(통과 B-002·D-011). 1차 분석 영역 전체는 1.85~13.85
 - 지도 레이어 목록 첫 화면: 6분류(42) → 핵심 레이어 20 + 더 많은 레이어(접힘)
+
+## 게이트 실패 원인(V160 이전 누적분)
+
+- 세 건 모두 PR #32 merge 직전 결정(제외 10건 ⓪ 통일, C-002 ⑥ 숫자 차트 없음)이 게이트 재실행 없이 반영된 결과. V160 코드 탓이 아님
+- 조치: entity-cards·portfolio는 ⓪ 유형 제외(E-008은 상태 화면 판정), temporal-depth는 C-002 타일 목록 인정. 사유는 EXPECTATION_CHANGES_V160.md
+- 사전 점검에서 V160 자체 결함 2건도 발견·수정: 지도 펼침 플래그 `layers=all`이 기존 `layers` 파라미터와 충돌 → `mapList=all`; 홈 질문 설명 NDC·C-002 ktCO₂e 용어 도움말 누락
+- main CI도 같은 원인으로 빨강일 가능성 — 이 PR merge가 fix-forward
 
 ## 미완료와 사유
 
