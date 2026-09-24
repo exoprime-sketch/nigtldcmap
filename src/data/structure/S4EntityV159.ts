@@ -1,11 +1,12 @@
 import { normalizeTechnologyIdV153 } from "../../utils/technologyIdV153";
 import type { VietnamEntityV124, VietnamObservationV124 } from "../vietnam/vietnamTypesV124";
 import type { S4EntityV159 } from "./structureTypesV159";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * S4 adapter (docs/DATA_TYPOLOGY_V159_SCHEMA.md §2.4).
  *
- * Verified against public/data/vietnam/v2 downloads for D-020 (GCF
+ * Verified against ${countryPublicDirV158("VNM")} downloads for D-020 (GCF
  * projects), C-009/C-022 (law/checklist registries - a shared numbered-slot
  * template `속성1_레코드명 … 속성23_설명` also seen on C-024/C-025). Field
  * lookups use a normalized key (lower-cased, spaces/underscores stripped),

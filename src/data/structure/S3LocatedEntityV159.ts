@@ -1,11 +1,12 @@
 import { parseNoteTechIdV159 } from "./S1CountryObservationV159";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import type { GeometryTypeV159, S3LocatedEntityV159 } from "./structureTypesV159";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * S3 adapter (docs/DATA_TYPOLOGY_V159_SCHEMA.md §2.3).
  *
- * Verified against public/data/vietnam/v2 downloads for A-023 (power
+ * Verified against ${countryPublicDirV158("VNM")} downloads for A-023 (power
  * plants), E-006 (investor offices) and B-008 (sea-level stations, one of
  * the six dedicated elements - same adapter input, own render component).
  * Field lookups use a normalized key (lower-cased, spaces/underscores
