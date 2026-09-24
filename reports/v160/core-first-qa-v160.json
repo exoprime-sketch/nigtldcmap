@@ -1,0 +1,767 @@
+{
+  "generatedAt": "2026-09-24T13:27:11.557Z",
+  "checks": [
+    {
+      "id": "HOME_BODY_WORDS_MINUS_50",
+      "pass": true,
+      "actual": {
+        "before": 535,
+        "after": 203,
+        "reductionPercent": 62.1,
+        "viewportBefore": 112,
+        "viewportAfter": 111
+      },
+      "expected": ">= 50% fewer words on the home"
+    },
+    {
+      "id": "HOME_SIX_QUESTIONS",
+      "pass": true,
+      "actual": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "expected": 6
+    },
+    {
+      "id": "FINDER_DEFAULT_CORE",
+      "pass": true,
+      "actual": 57,
+      "expected": 57
+    },
+    {
+      "id": "DETAIL_LAYER1_WITHIN_1_5_SCREENS",
+      "pass": false,
+      "actual": [
+        {
+          "id": "A-003",
+          "layer1Bottom": 1242,
+          "ratio": 1.55,
+          "primaryBottom": 1480,
+          "primaryRatio": 1.85
+        },
+        {
+          "id": "B-003",
+          "layer1Bottom": 1845,
+          "ratio": 2.31,
+          "primaryBottom": 2705,
+          "primaryRatio": 3.38
+        },
+        {
+          "id": "A-018",
+          "layer1Bottom": 1280,
+          "ratio": 1.6,
+          "primaryBottom": 3408,
+          "primaryRatio": 4.26
+        },
+        {
+          "id": "A-023",
+          "layer1Bottom": 1591,
+          "ratio": 1.99,
+          "primaryBottom": 3156,
+          "primaryRatio": 3.95
+        },
+        {
+          "id": "D-022",
+          "layer1Bottom": 1472,
+          "ratio": 1.84,
+          "primaryBottom": 3061,
+          "primaryRatio": 3.83
+        },
+        {
+          "id": "C-009",
+          "layer1Bottom": 11083,
+          "ratio": 13.85,
+          "primaryBottom": 11083,
+          "primaryRatio": 13.85
+        },
+        {
+          "id": "A-016",
+          "layer1Bottom": 1273,
+          "ratio": 1.59,
+          "primaryBottom": 2353,
+          "primaryRatio": 2.94
+        },
+        {
+          "id": "D-011",
+          "layer1Bottom": 1183,
+          "ratio": 1.48,
+          "primaryBottom": 2888,
+          "primaryRatio": 3.61
+        },
+        {
+          "id": "A-002",
+          "layer1Bottom": 1369,
+          "ratio": 1.71,
+          "primaryBottom": 1933,
+          "primaryRatio": 2.42
+        },
+        {
+          "id": "E-012",
+          "layer1Bottom": 1458,
+          "ratio": 1.82,
+          "primaryBottom": 2116,
+          "primaryRatio": 2.65
+        },
+        {
+          "id": "C-012",
+          "layer1Bottom": 2929,
+          "ratio": 3.66,
+          "primaryBottom": 8931,
+          "primaryRatio": 11.16
+        },
+        {
+          "id": "B-002",
+          "layer1Bottom": 991,
+          "ratio": 1.24,
+          "primaryBottom": 1631,
+          "primaryRatio": 2.04
+        }
+      ],
+      "expected": "<= 1.5 x 800px"
+    },
+    {
+      "id": "DETAIL_LAYERS_START_COLLAPSED",
+      "pass": true,
+      "actual": [
+        {
+          "id": "A-003",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "B-003",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-018",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-023",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "D-022",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "C-009",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-016",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "D-011",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-002",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "E-012",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "C-012",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "B-002",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        }
+      ],
+      "expected": "every layer summary aria-expanded=\"false\""
+    },
+    {
+      "id": "MAP_DEFAULT_LAYERS_MATCH_POLICY",
+      "pass": true,
+      "actual": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ],
+      "expected": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ]
+    },
+    {
+      "id": "MAP_CORE_OPEN_MORE_FOLDED",
+      "pass": true,
+      "actual": {
+        "coreIds": [
+          "A-023",
+          "A-024",
+          "B-003",
+          "B-004",
+          "B-008",
+          "B-012",
+          "B-021",
+          "B-033",
+          "B-037",
+          "B-039",
+          "B-041",
+          "B-042",
+          "C-016",
+          "C-025",
+          "D-018",
+          "E-004",
+          "E-005",
+          "E-006",
+          "E-018",
+          "E-019"
+        ],
+        "coreOpen": "true",
+        "moreExpanded": "false",
+        "hiddenGroups": 6
+      },
+      "expected": "core open, 더 많은 레이어 folded"
+    },
+    {
+      "id": "NO_HORIZONTAL_OVERFLOW_6_WIDTHS",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "CONSOLE_ERRORS_ZERO",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "evidence": {
+    "homeWords": {
+      "before": 535,
+      "after": 203,
+      "reductionPercent": 62.1,
+      "viewportBefore": 112,
+      "viewportAfter": 111
+    },
+    "layer1": [
+      {
+        "id": "A-003",
+        "layer1Bottom": 1242,
+        "ratio": 1.55,
+        "primaryBottom": 1480,
+        "primaryRatio": 1.85
+      },
+      {
+        "id": "B-003",
+        "layer1Bottom": 1845,
+        "ratio": 2.31,
+        "primaryBottom": 2705,
+        "primaryRatio": 3.38
+      },
+      {
+        "id": "A-018",
+        "layer1Bottom": 1280,
+        "ratio": 1.6,
+        "primaryBottom": 3408,
+        "primaryRatio": 4.26
+      },
+      {
+        "id": "A-023",
+        "layer1Bottom": 1591,
+        "ratio": 1.99,
+        "primaryBottom": 3156,
+        "primaryRatio": 3.95
+      },
+      {
+        "id": "D-022",
+        "layer1Bottom": 1472,
+        "ratio": 1.84,
+        "primaryBottom": 3061,
+        "primaryRatio": 3.83
+      },
+      {
+        "id": "C-009",
+        "layer1Bottom": 11083,
+        "ratio": 13.85,
+        "primaryBottom": 11083,
+        "primaryRatio": 13.85
+      },
+      {
+        "id": "A-016",
+        "layer1Bottom": 1273,
+        "ratio": 1.59,
+        "primaryBottom": 2353,
+        "primaryRatio": 2.94
+      },
+      {
+        "id": "D-011",
+        "layer1Bottom": 1183,
+        "ratio": 1.48,
+        "primaryBottom": 2888,
+        "primaryRatio": 3.61
+      },
+      {
+        "id": "A-002",
+        "layer1Bottom": 1369,
+        "ratio": 1.71,
+        "primaryBottom": 1933,
+        "primaryRatio": 2.42
+      },
+      {
+        "id": "E-012",
+        "layer1Bottom": 1458,
+        "ratio": 1.82,
+        "primaryBottom": 2116,
+        "primaryRatio": 2.65
+      },
+      {
+        "id": "C-012",
+        "layer1Bottom": 2929,
+        "ratio": 3.66,
+        "primaryBottom": 8931,
+        "primaryRatio": 11.16
+      },
+      {
+        "id": "B-002",
+        "layer1Bottom": 991,
+        "ratio": 1.24,
+        "primaryBottom": 1631,
+        "primaryRatio": 2.04
+      }
+    ],
+    "layers": [
+      {
+        "id": "A-003",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "B-003",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-018",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-023",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "D-022",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "C-009",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-016",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "D-011",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-002",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "E-012",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "C-012",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "B-002",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      }
+    ],
+    "map": {
+      "coreIds": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ],
+      "coreOpen": "true",
+      "moreExpanded": "false",
+      "hiddenGroups": 6
+    },
+    "overflow": [],
+    "consoleErrors": []
+  },
+  "summary": {
+    "total": 9,
+    "pass": 8,
+    "failed": [
+      "DETAIL_LAYER1_WITHIN_1_5_SCREENS"
+    ]
+  }
+}

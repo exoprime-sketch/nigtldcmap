@@ -1056,19 +1056,12 @@ export default function CountryDataElementPage({
             </div>
           </section>
 
-          {/* V160-D layer 1 (always open): 판단 포인트, the core figures and
-              the primary chart|map below all read without a click. 데이터
-              설명 and the source/download material move to layers 2-3. */}
+          {/* V160-D layer 1 (always open): 판단 포인트 and the primary
+              chart|map below read without a click. The core-figure strip,
+              데이터 설명 and the source/download material move to layers 2-3. */}
           {typologyV159 ? (
             <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} />
           ) : null}
-
-          <DetailKpiStripV153
-            elementId={elementId}
-            observations={observations}
-            entities={entities}
-            indicatorFamilyCount={indicatorFamilyCountV153(observations)}
-          />
 
           <section className="cdp-panel cdp-detail-panel dl153-detail-panel">
               <CountryElementVisualizationV123
@@ -1094,10 +1087,17 @@ export default function CountryDataElementPage({
               )}
           </section>
 
-          {/* Layer 2 (collapsed): 데이터 설명 - the framework workbook's
-              description, usage and cases. Absent entirely without a spec. */}
-          {specBundleV159?.spec ? (
-            <DetailLayerV160 layer={2} title="데이터 설명">
+          {/* Layer 2 (collapsed): the core-figure strip, then 데이터 설명 -
+              the framework workbook's description, usage and cases (absent
+              without a spec). */}
+          <DetailLayerV160 layer={2} title="데이터 설명">
+            <DetailKpiStripV153
+              elementId={elementId}
+              observations={observations}
+              entities={entities}
+              indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+            />
+            {specBundleV159?.spec ? (
               <DataDescriptionV159
                 spec={specBundleV159.spec}
                 cases={specBundleV159.cases}
@@ -1107,8 +1107,8 @@ export default function CountryDataElementPage({
                   if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
                 }}
               />
-            </DetailLayerV160>
-          ) : null}
+            ) : null}
+          </DetailLayerV160>
 
           {/* Layer 2/3 continued: the router's own DetailLayerV160(3) carries
               자료 출처 and 상세 데이터 (PublicSourcePanelV126,
