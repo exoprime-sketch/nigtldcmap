@@ -2,6 +2,12 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V152-2 분석 QA 지도 기호 검사 대기 예산 (PR 후보)
+
+### Fixed
+
+- `qa:analysis:v140`의 지도 기호 검사(`mapSymbolVerified`)가 레이어가 그려졌다고 읽힌 직후 키보드 선택 버튼을 한 번만 찾아, 느린 CI 러너에서 B-031이 간헐적으로 "no keyboard feature to select"로 실패하던 문제(2026-09-24 새 러너 이미지에서 5회 중 2회, 재실행 시 통과). 버튼을 최대 15초 기다린 뒤 같은 검사를 수행. 판정 기준·기대값·기준선은 변경하지 않음
+
 ## Unreleased — V152-1 CI 감사 브라우저 콜드 스타트 재기동 (PR 후보)
 
 ### Fixed
