@@ -13,9 +13,10 @@ export default function DatasetCardTitleV159({ card, titleAs = "h3" }: DatasetCa
   const Title = titleAs;
   return (
     <div className="dct159" data-testid="dataset-card-title-v159">
-      <p className="dct159-source"><PublicTermTextV134 text={card.sourceLabel} /></p>
+      {/* A div, not a paragraph: the card's paragraph is its description. */}
+      <div className="dct159-source"><PublicTermTextV134 text={card.sourceLabel} /></div>
       <Title className="dct159-name"><PublicTermTextV134 text={card.baseName} /></Title>
-      <p className="dct159-definition"><PublicTermTextV134 text={card.shortDefinitionCard} /></p>
+      <p className="dct159-definition" data-testid="finder-card-description-v135"><PublicTermTextV134 text={card.shortDefinitionCard} /></p>
     </div>
   );
 }
