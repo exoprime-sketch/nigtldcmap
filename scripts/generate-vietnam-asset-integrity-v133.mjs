@@ -18,12 +18,20 @@ const PUBLIC_ROOT = resolve(PROJECT_ROOT, "public");
 // named so its integrity file is complete before it is promoted. Writing this
 // file only after promotion left the semantic and interpretation assets - 157 of
 // them - undeclared in whatever was published in between.
+import { resolveDataRootV158 } from "./v158/country-context-v158.mjs";
+
 const argv = process.argv.slice(2);
 const dataOption = (() => {
   const index = argv.indexOf("--data");
   return index < 0 ? null : argv[index + 1];
 })();
-const V2_ROOT = resolve(PROJECT_ROOT, dataOption || "public/data/vietnam/v2");
+// V158: --data still wins (the refresh runbook points at a staging tree);
+// otherwise the country registry says where the tree is.
+const V2_ROOT = resolveDataRootV158({
+  root: PROJECT_ROOT,
+  argv,
+  env: dataOption,
+});
 const INTEGRITY_PATH = resolve(V2_ROOT, "asset-integrity.json");
 const WORLD_COUNTRIES_PATH = resolve(PUBLIC_ROOT, "data/world-countries.geojson");
 const REPORT_PATH = resolve(

@@ -2,6 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 import { mapOverlapSummariesV145, MapOverlapInputV145 } from "./publicMapOverlapV145";
 import { readFileSync } from "fs";
 import { resolve } from "path";
+import { countryPublicDirV158 } from "../countryContext";
 
 const plan: MapOverlapInputV145 = {
   elementId: "C-016", selectionKey: "VN-23", role: "primary", title: "재생에너지 지역계획", label: "Hà Tĩnh",
@@ -64,7 +65,7 @@ describe("primary-first feature summaries", () => {
     expect(results.every((result) => result.facts.length === 0)).toBe(true);
   });
   it("matches the delivered Hà Tĩnh rooftop solar values at both selectable periods", () => {
-    const asset = JSON.parse(readFileSync(resolve(process.cwd(), "public/data/vietnam/v2/spatial/layers/c-016.json"), "utf8"));
+    const asset = JSON.parse(readFileSync(resolve(process.cwd(), `${countryPublicDirV158("VNM")}/spatial/layers/c-016.json`), "utf8"));
     const rows = asset.values.filter((row: any) => row.adm1Code === "VN-23" && row.variable === "dmt-mai-nha");
     expect(rows).toHaveLength(2);
     expect(rows.map((row: any) => mapOverlapSummariesV145([{ ...plan, properties: { ...row, hasValue: true } }])[0].value)).toEqual(["313 MW", "68 MW"]);

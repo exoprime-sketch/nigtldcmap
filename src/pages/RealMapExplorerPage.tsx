@@ -377,7 +377,7 @@ function publicVietnamSourceRegionV126(value: string | undefined): string {
 }
 
 const VNM_ADM1_GEOMETRY_URL_V126 =
-  publicAssetUrlV128("data/vietnam/v2/geometry/vnm-adm1-63.geojson");
+  publicAssetUrlV128(countryAssetPathV158("VNM", "geometry/vnm-adm1-63.geojson"));
 /** V151: the reference outline follows the chosen vintage; values do not. */
 function vnmAdm1ReferenceUrlV151(system: BoundarySystemV151): string {
   return publicAssetUrlV128(boundaryGeometryPathV151(system));
@@ -539,6 +539,7 @@ export {
   MAP_SOURCE_IDS_RUNTIME_V115,
   MAP_SOURCE_IDS_RUNTIME_V116,
 } from "../data/map/mapRuntimeContractsV116";
+import { countryAssetPathV158 } from "../data/countryContext";
 
 interface SpatialSelection {
   elementId: string;

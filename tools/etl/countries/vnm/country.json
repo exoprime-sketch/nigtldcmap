@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "etl-country-v158",
+  "iso3": "VNM",
+  "nameKo": "베트남",
+  "note": "국가별 ETL 입력 선언. 경로가 코드에 박혀 있으면 두 번째 국가를 같은 파이프라인으로 돌릴 수 없어, 국가마다 이 파일 하나를 추가하는 방식으로 바꿨다. 값은 V156까지 코드에 있던 것과 동일하며, 산출물은 바이트 동일해야 한다.",
+  "dataRoot": "public/data/vietnam/v2",
+  "baseProjection": {
+    "root": "public/data/vietnam/v1",
+    "catalog": "public/data/vietnam/v1/catalog.json",
+    "manifest": "public/data/vietnam/v1/manifest.json",
+    "bundleIndex": "public/data/vietnam/v1/packs-r2/bundle-index-v121r2.json"
+  },
+  "sourcePackage": {
+    "directory": "_source/vietnam/v124",
+    "fileName": "vietnam-data(4).zip"
+  },
+  "publicationDecisions": {
+    "metadataOnly": "config/data-publication/vietnam-v124-publication-decision.json",
+    "allData": "config/data-publication/vietnam-all-data-20260908.json"
+  },
+  "frameworkElementCount": 152,
+  "expectedWorkbooks": 149,
+  "adm1": {
+    "system": "post-2025-34",
+    "count": 34,
+    "legacyCount": 63,
+    "crosswalk": "reports/v138/map-targets-build-v138.json"
+  }
+}

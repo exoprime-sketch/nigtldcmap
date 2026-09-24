@@ -28,7 +28,7 @@ from typing import Any
 
 from openpyxl import load_workbook
 
-from tools.vietnam_etl.normalization import (  # single source of truth for what counts
+from tools.etl.normalization import (  # single source of truth for what counts
     _CREDENTIAL_VALUE_PATTERNS,
 )
 
@@ -114,7 +114,7 @@ def redact_tree(workbooks: pathlib.Path, *, apply: bool) -> dict[str, Any]:
         book.close()
     return {
         "schemaVersion": "v156",
-        "generator": "tools/vietnam_etl/redact_source_credentials_v156.py",
+        "generator": "tools/etl/redact_source_credentials_v156.py",
         "generatedAt": _dt.datetime.now(_dt.timezone.utc)
         .isoformat(timespec="seconds")
         .replace("+00:00", "Z"),

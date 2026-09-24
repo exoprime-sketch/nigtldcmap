@@ -4,8 +4,9 @@ import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { EMPTY_PORTFOLIO_SELECTION_V143, portfolioSelectionModelV143 } from "./PublicPortfolioWorkspaceV143";
 import { isPublicMapFactV143, publicMapFactSourcesV143, hasPublicMapFactValueV143 } from "../../../data/visualization/publicMapCopyV143";
+import { countryPublicDirV158 } from "../../../data/countryContext";
 
-const entities: VietnamEntityV124[] = JSON.parse(readFileSync(resolve(__dirname, "../../../../public/data/vietnam/v2/downloads/d-026.json"), "utf8")).entities;
+const entities: VietnamEntityV124[] = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/d-026.json`), "utf8")).entities;
 const props = { elementId: "D-026", entities, detailTemplate: "portfolio" };
 
 describe("shared portfolio selection", () => {
@@ -37,7 +38,7 @@ describe("shared portfolio selection", () => {
 
 describe("public map copy", () => {
   it("aligns E-018 map facts with the reviewed detail columns", () => {
-    const source = JSON.parse(readFileSync(resolve(__dirname, "../../../../public/data/vietnam/v2/downloads/e-018.json"), "utf8")).entities[0].normalizedAttributes;
+    const source = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/e-018.json`), "utf8")).entities[0].normalizedAttributes;
     const fact = (key: string) => publicMapFactSourcesV143("E-018", { key, sources: ["wrong"] });
     expect(source[fact("sector").sources[0]]).toBe("RE(C&I 옥상태양광)·LNG 터미널·그린수소");
     expect(source[fact("entryForm").sources[0]]).toContain("지분 M&A");

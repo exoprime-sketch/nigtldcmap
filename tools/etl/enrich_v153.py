@@ -295,7 +295,7 @@ class EnrichmentContextV153:
         geometry = repo / "public/data/vietnam/v2/geometry"
         self.adm34 = Adm1Lookup(geometry / "vnm-adm1-34.geojson", "name", "unitCode")
         self.adm63 = Adm1Lookup(geometry / "vnm-adm1-63.geojson", "name", "adm1Code")
-        self.gppd = load_gppd_rows(repo / "tools/vietnam_etl/source")
+        self.gppd = load_gppd_rows(repo / "tools/etl/source")
         self.summary: dict[str, Any] = {}
 
     def apply(

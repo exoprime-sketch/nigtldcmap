@@ -7,8 +7,9 @@ import type {
 } from "./semanticTypesV125";
 import { ELEMENT_VISUALIZATION_SUMMARIES_V125 } from "./generatedVisualizationContractsV125";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { countryAssetPathV158 } from "../countryContext";
 
-const SEMANTIC_BASE_V125 = publicAssetUrlV128("data/vietnam/v2/semantic");
+const SEMANTIC_BASE_V125 = publicAssetUrlV128(countryAssetPathV158("VNM", "semantic"));
 
 async function readJsonV125<T>(url: string, signal?: AbortSignal): Promise<T> {
   const requestUrl = publicAssetUrlV128(url);

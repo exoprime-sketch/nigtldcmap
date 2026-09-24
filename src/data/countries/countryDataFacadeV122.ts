@@ -7,6 +7,7 @@ import type {
 } from "./countryDataTypesV122";
 import {
   getCountryDataProviderV122,
+  ensureCountryRegistryLoadedV158,
   listCountryDataProvidersV122,
 } from "./countryDataProviderRegistryV122";
 
@@ -151,6 +152,9 @@ export function countryNameKoV122(
 export async function loadCatalogForCountrySelectionV122(
   countryIso3: string | "all" | null | undefined
 ): Promise<CountryCatalogItemV122[]> {
+  // V158: the country registry decides which countries are served. Reading it
+  // here means every list on the site agrees with the file, not with a fallback.
+  await ensureCountryRegistryLoadedV158();
   const normalized = normalizeCountry(countryIso3) || "ALL";
   const providers =
     normalized === "ALL"

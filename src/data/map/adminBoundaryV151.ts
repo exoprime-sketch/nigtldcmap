@@ -1,3 +1,4 @@
+import { countryAssetPathV158 } from "../countryContext";
 /**
  * V151: the two Vietnamese province vintages the map can draw.
  *
@@ -23,13 +24,13 @@ export const BOUNDARY_SYSTEM_STORAGE_KEY_V151 = "cdp-map-boundary-system-v151";
 export const BOUNDARY_EFFECTIVE_DATE_V151 = "2025-07-01";
 export const BOUNDARY_LEGAL_BASIS_V151 = "결의 202/2025/QH15";
 
-export const ADM1_34_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-adm1-34.geojson";
-export const ADM1_63_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-adm1-63.geojson";
+export const ADM1_34_GEOMETRY_PATH_V151 = countryAssetPathV158("VNM", "geometry/vnm-adm1-34.geojson");
+export const ADM1_63_GEOMETRY_PATH_V151 = countryAssetPathV158("VNM", "geometry/vnm-adm1-63.geojson");
 /** V151-2: the six GDL regions B-021 is published for, dissolved from the 63 asset. */
-export const REGION_6_GEOMETRY_PATH_V151 = "data/vietnam/v2/geometry/vnm-region-6.geojson";
+export const REGION_6_GEOMETRY_PATH_V151 = countryAssetPathV158("VNM", "geometry/vnm-region-6.geojson");
 /** V151-2: the national outline (all 63 provinces dissolved) and its display-only z5 simplification. */
-export const COUNTRY_OUTLINE_PATH_V151 = "data/vietnam/v2/geometry/vnm-country-outline.geojson";
-export const COUNTRY_OUTLINE_Z5_PATH_V151 = "data/vietnam/v2/geometry/vnm-country-outline-z5.geojson";
+export const COUNTRY_OUTLINE_PATH_V151 = countryAssetPathV158("VNM", "geometry/vnm-country-outline.geojson");
+export const COUNTRY_OUTLINE_Z5_PATH_V151 = countryAssetPathV158("VNM", "geometry/vnm-country-outline-z5.geojson");
 
 export interface Adm1Unit34V151 {
   /** Deliberately not an `adm1Code`: a 63-keyed value must never join to it. */

@@ -5,6 +5,7 @@ import type { VietnamMapGeoJsonV124 } from "../vietnam/vietnamDataLoaderV124";
 import { polygonLabelPointV150 } from "./mapBackdropV150";
 import { pointInGeometryV151, pointInPolygonV151, polygonLabelAnchorV151, polylabelV151 } from "./labelAnchorV151";
 import { buildLabelFeaturesV151, tilePlaceLabelFilterV151 } from "./mapLabelsV151";
+import { countryPublicDirV158 } from "../countryContext";
 
 // Concave "U": a thin base (y 0..1) joining two tall arms (x 0..2 and x 5..7,
 // y 1..10). The notch between the arms (x 2..5, y 1..10) is outside the
@@ -32,10 +33,10 @@ test("polylabel anchors inside a concave polygon where the area centroid does no
 // Read at test time, like adminBoundaryV151.test.ts: compares against the
 // bytes the site actually serves rather than a second copy of the same data.
 const adm1_34 = JSON.parse(
-  readFileSync(join(__dirname, "../../../public/data/vietnam/v2/geometry/vnm-adm1-34.geojson"), "utf8")
+  readFileSync(join(__dirname, `../../../${countryPublicDirV158("VNM")}/geometry/vnm-adm1-34.geojson`), "utf8")
 ) as VietnamMapGeoJsonV124;
 const adm1_63 = JSON.parse(
-  readFileSync(join(__dirname, "../../../public/data/vietnam/v2/geometry/vnm-adm1-63.geojson"), "utf8")
+  readFileSync(join(__dirname, `../../../${countryPublicDirV158("VNM")}/geometry/vnm-adm1-63.geojson`), "utf8")
 ) as VietnamMapGeoJsonV124;
 
 test("every 34-unit and 63-unit polylabel anchor lies inside its own polygon", () => {

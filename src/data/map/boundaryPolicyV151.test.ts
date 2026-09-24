@@ -13,10 +13,11 @@ import {
   policyKindForVariableV151,
 } from "./boundaryPolicyV151";
 import type { BoundaryPolicyV151 } from "./boundaryPolicyV151";
+import { countryPublicDirV158 } from "../countryContext";
 
 // Assets are read from disk at test time, the same way adminBoundaryV151.test.ts
 // does, so the check runs against the bytes the site actually serves.
-const DATA_ROOT = join(__dirname, "../../../public/data/vietnam/v2");
+const DATA_ROOT = join(__dirname, `../../../${countryPublicDirV158("VNM")}`);
 function readSpatialLayer(id: string): { selectors: { defaultVariable: string; defaultPeriod: string }; values: VietnamSpatialValueV124[] } {
   return JSON.parse(readFileSync(join(DATA_ROOT, "spatial/layers", `${id}.json`), "utf8"));
 }

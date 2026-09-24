@@ -1,4 +1,5 @@
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { countryAssetPathV158 } from "../countryContext";
 
 export interface WorldCountryBoundaryProperties {
   iso3: string;
@@ -32,10 +33,10 @@ const WORLD_COUNTRY_BOUNDARIES_URL = publicAssetUrlV128(
  * for the country, far coarser than the province outlines drawn on top of it.
  */
 export const VIETNAM_COUNTRY_OUTLINE_Z5_URL_V151 = publicAssetUrlV128(
-  "data/vietnam/v2/geometry/vnm-country-outline-z5.geojson"
+  countryAssetPathV158("VNM", "geometry/vnm-country-outline-z5.geojson")
 );
 export const VIETNAM_COUNTRY_OUTLINE_URL_V151 = publicAssetUrlV128(
-  "data/vietnam/v2/geometry/vnm-country-outline.geojson"
+  countryAssetPathV158("VNM", "geometry/vnm-country-outline.geojson")
 );
 let boundaryPromise: Promise<WorldCountryBoundaryCollection> | null = null;
 let vietnamOutlinePromise: Promise<WorldCountryBoundaryFeature> | null = null;

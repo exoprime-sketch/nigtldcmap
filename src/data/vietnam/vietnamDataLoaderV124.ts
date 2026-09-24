@@ -25,10 +25,11 @@ import type {
   VietnamSpatialLayerAssetV124,
   VietnamLocationSidecarV151,
 } from "./vietnamTypesV124";
+import { countryAssetPathV158 } from "../countryContext";
 
-const MANIFEST_URL = publicAssetUrlV128("data/vietnam/v2/manifest.json");
+const MANIFEST_URL = publicAssetUrlV128(countryAssetPathV158("VNM", "manifest.json"));
 const DEFAULT_BUNDLE_INDEX_URL =
-  publicAssetUrlV128("data/vietnam/v2/packs/bundle-index-v124.json");
+  publicAssetUrlV128(countryAssetPathV158("VNM", "packs/bundle-index-v124.json"));
 
 const jsonCache = new Map<string, Promise<unknown>>();
 const envelopeCache = new Map<
@@ -591,7 +592,7 @@ async function loadElementPayload(
 export async function loadVietnamQualityReportV124(): Promise<VietnamQualityReportV124> {
   const url = await manifestAssetUrl(
     "qualityReport",
-    publicAssetUrlV128("data/vietnam/v2/quality-report.json")
+    publicAssetUrlV128(countryAssetPathV158("VNM", "quality-report.json"))
   );
   return fetchJson<VietnamQualityReportV124>(url);
 }
@@ -601,7 +602,7 @@ export async function loadVietnamMapIndexV124(): Promise<
 > {
   const url = await manifestAssetUrl(
     "mapIndex",
-    publicAssetUrlV128("data/vietnam/v2/map-index.json")
+    publicAssetUrlV128(countryAssetPathV158("VNM", "map-index.json"))
   );
   const payload = await fetchJson<{
     schemaVersion: "v124";
@@ -632,7 +633,7 @@ export interface VietnamMapGeoJsonV124 {
 }
 
 function assertVietnamV124MapAssetUrl(url: string): void {
-  if (!isPublicAssetWithinV128(url, "data/vietnam/v2")) {
+  if (!isPublicAssetWithinV128(url, countryAssetPathV158("VNM", ""))) {
     throw new VietnamAssetErrorV124(
       "ASSET_SCHEMA_INVALID",
       "V124 지도는 Vietnam V2 공개 자산만 사용할 수 있습니다",
@@ -742,7 +743,7 @@ export async function loadVietnamCatalogV124(): Promise<
 > {
   const url = await manifestAssetUrl(
     "catalog",
-    publicAssetUrlV128("data/vietnam/v2/catalog.json")
+    publicAssetUrlV128(countryAssetPathV158("VNM", "catalog.json"))
   );
   const payload = await fetchJson<{
     schemaVersion: "v124";

@@ -8,6 +8,7 @@ import {
   policyDescriptionsForElementV153,
   policyDocumentDescriptionV153,
 } from "./policyDescriptionsV153";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * V153-D3: the platform-edited descriptions are a contract with the delivery
@@ -16,7 +17,7 @@ import {
  * 속성23_설명 may leak in as if it were a description.
  */
 const ROOT = resolve(__dirname, "../../..");
-const DATA = resolve(ROOT, "public/data/vietnam/v2/downloads");
+const DATA = resolve(ROOT, `${countryPublicDirV158("VNM")}/downloads`);
 const NAME_KEY = "속성1_레코드명";
 
 type Entity = { recordId: string; name: string; elementId: string; normalizedAttributes?: Record<string, unknown> };

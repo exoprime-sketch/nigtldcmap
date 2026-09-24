@@ -6,6 +6,7 @@ import type { CountryEntityV122, CountryMapLayerV122 } from "../../data/countrie
 import { MAP_ICON_LAYER_IDS_V152, mapIconCategoryV152 } from "../../data/map/mapIconsV152";
 import { LAYER_COLORS } from "./colors";
 import { preparePointLayerV152, rendererOf } from "./index";
+import { countryPublicDirV158 } from "../../data/countryContext";
 
 /**
  * V152 icon census over the real delivery: every drawn site of every point
@@ -14,7 +15,7 @@ import { preparePointLayerV152, rendererOf } from "./index";
  * until the icon rules name it (never silently becomes "기타").
  */
 const ROOT = path.resolve(__dirname, "../../..");
-const DATA = path.join(ROOT, "public/data/vietnam/v2");
+const DATA = path.join(ROOT, `${countryPublicDirV158("VNM")}`);
 const mapIndex = JSON.parse(readFileSync(path.join(DATA, "map-index.json"), "utf8")) as { layers: CountryMapLayerV122[] };
 const bundle = JSON.parse(readFileSync(path.join(DATA, "packs/bundle-index-v124.json"), "utf8"));
 const activeLayers = mapIndex.layers.filter((layer) => layer.active !== false && layer.enabled !== false);

@@ -8,9 +8,10 @@ import { resolveMapSelectorBindingV125 } from "../visualization/mapSelectorBindi
 import { mapFactsV148, mapFactValueV148, publicMapFieldsV148, powerCapacitySummaryV148 } from "./mapPresentationV148";
 import { prepareLayerRecordsV138 } from "./prepareLayerRecordsV148";
 import { createMapFeaturePopupV148 } from "../../components/map/mapFeaturePopupV148";
+import { countryAssetPathV158 } from "../countryContext";
 
 const asset = (p: string) => JSON.parse(readFileSync(resolve(__dirname, "../../../public", p.replace(/^\//, "")), "utf8"));
-const layers: CountryMapLayerV122[] = asset("data/vietnam/v2/map-index.json").layers;
+const layers: CountryMapLayerV122[] = asset(countryAssetPathV158("VNM", "map-index.json")).layers;
 
 test.each(layers)("$elementId overview selects an existing declared slice and real geometry", (layer: CountryMapLayerV122) => {
   const selected = detailMapSelectionV148(layer, EMPTY);
@@ -46,7 +47,7 @@ test.each(layers)("$elementId small-map slice survives the full-map handoff", (l
 
 test("power registry scope and capacity share one source reading", () => {
   const l = layers.find((l) => l.elementId === "A-023")!;
-  const rows = asset("data/vietnam/v2/downloads/a-023.json").entities;
+  const rows = asset(countryAssetPathV158("VNM", "downloads/a-023.json")).entities;
   const p = prepareLayerRecordsV138(rows, l);
   const wri = p.records.filter((r) => r.normalizedAttributes.sourceKey === "wri");
   expect(wri).toHaveLength(236);

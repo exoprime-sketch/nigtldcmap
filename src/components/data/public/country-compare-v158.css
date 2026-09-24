@@ -1,0 +1,19 @@
+/* V158: the country comparison block. Only drawn when two countries state the
+   same measure in the same unit, so the styles stay small on purpose. */
+.ccb158 { margin: 16px 0 0; padding: 12px 14px; border: 1px solid #dbe7e2; border-radius: 8px; background: #fbfdfc; }
+.ccb158__title { margin: 0 0 8px; font-size: .95rem; color: #123f36; }
+.ccb158__chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 10px; padding: 0; list-style: none; font-size: .85rem; color: #375a50; }
+.ccb158__chips li { display: inline-flex; align-items: center; gap: 6px; }
+.ccb158__swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.ccb158__chart { width: 100%; height: auto; }
+.ccb158__bars { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.ccb158__bars caption { text-align: left; color: #6b8078; font-size: .8rem; padding-bottom: 6px; }
+.ccb158__bars th { text-align: left; font-weight: 500; color: #375a50; width: 120px; padding: 4px 8px 4px 0; }
+.ccb158__bars td { padding: 4px 0; }
+.ccb158__bars td.num { text-align: right; width: 96px; font-variant-numeric: tabular-nums; }
+.ccb158__bar { display: block; height: 10px; border-radius: 3px; min-width: 2px; }
+.ccb158__note { margin: 8px 0 0; font-size: .8rem; color: #6b8078; }
+@media (max-width: 600px) {
+  .ccb158__bars th { width: 92px; }
+  .ccb158__bars td.num { width: 78px; }
+}

@@ -21,7 +21,7 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from tools.vietnam_etl.workbook_parser import parse_workbook_bytes  # noqa: E402
+from tools.etl.workbook_parser import parse_workbook_bytes  # noqa: E402
 
 OLD_ZIP = ROOT / "_source" / "vietnam" / "v124" / "vietnam-data(4).zip"
 NEW_DIR = ROOT / "베트남데이터" / "file"
