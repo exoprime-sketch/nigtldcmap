@@ -1,0 +1,123 @@
+/* Map icon badges + legend (V152).
+   Sizes are fixed CSS px; the legend list wraps instead of overflowing at
+   320px (see CLAUDE.md's six-width check). */
+
+.mi152-badge {
+  /* Keep in sync with MAP_ICON_INK_V152 in src/data/map/mapIconsV152.ts. */
+  --mi152-ink: #20343a;
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid var(--mi152-ring, #8a9a93);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--mi152-ink);
+}
+
+/* Page rules size every svg inside some containers (e.g. `.detail-map148 svg`);
+   the glyph keeps its own size wherever the badge sits. */
+.mi152-badge > svg.mi152-badge-glyph {
+  display: block;
+  overflow: visible;
+  width: 68% !important;
+  height: 68% !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  cursor: inherit;
+}
+
+/* The map's "KR" tag for Korean companies/offices (drawn by CSS, never DOM text). */
+.mi152-badge--kr::after {
+  content: "KR";
+  position: absolute;
+  right: -7px;
+  bottom: -5px;
+  padding: 0 2px;
+  border-radius: 3px;
+  background: #fff;
+  color: #6d1d3b;
+  font-size: 7.5px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+/* Big map active-layer list: the badge replaces the V129 shape swatch. */
+.cdp-map-symbol.cdp-map-symbol--icon {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* A-023 capacity bands drawn as the badges the map draws. */
+.cdp-map-legend__capacity i.cdp-map-legend__capacity-badge {
+  box-sizing: border-box;
+  border: 2.5px solid #5f6f69;
+  background: #fff;
+  box-shadow: none;
+}
+
+.cdp-map-legend__icons {
+  display: grid;
+  gap: 6px;
+}
+
+.cdp-map-legend__icons > p {
+  margin: 0;
+  color: #5c6f6a;
+  font-size: 11.5px;
+}
+
+.cdp-map-legend__explanation .mi152-badge {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.mi152-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mi152-legend-heading {
+  margin: 0 0 6px;
+  color: #1f2e2b;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.mi152-legend li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 6px;
+  overflow-wrap: anywhere;
+  color: #2c3b38;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.mi152-legend--compact li {
+  gap: 4px;
+  font-size: 11.5px;
+}
+
+.mi152-legend-count {
+  color: #5c6f6a;
+  font-variant-numeric: tabular-nums;
+}

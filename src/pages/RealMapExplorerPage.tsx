@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
-import { PROVINCE_KO_V150 } from "../data/map/mapBackdropV150";
 import {
   applyMapBackdropV151,
   backdropAttributionV151,
@@ -20,9 +19,6 @@ import {
   boundaryPolicyNoticeV151,
   formerProvinceLabelV151,
   isAggregatingKindV151,
-  memberRangeByUnitV151,
-  memberSummaryV151,
-  parentUnitForV151,
   parseMemberSummaryV151,
   policyKindForVariableV151,
   type BoundaryPolicyKindV151,
@@ -31,9 +27,7 @@ import {
   ADM1_34_GEOMETRY_PATH_V151,
   ADM1_34_UNITS_V151,
   BOUNDARY_SYSTEM_STORAGE_KEY_V151,
-  COUNTRY_OUTLINE_PATH_V151,
   DEFAULT_BOUNDARY_SYSTEM_V151,
-  PROVINCE_KO_34_V151,
   REGION_6_GEOMETRY_PATH_V151,
   boundaryGeometryPathV151,
   boundarySystemLabelV151,
@@ -42,7 +36,7 @@ import {
 } from "../data/map/adminBoundaryV151";
 import type { BoundarySystemV151 } from "../data/map/adminBoundaryV151";
 import "../styles/map-readability-v150.css";
-import { isPublicMapFactV143, hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
+import { hasPublicMapFactValueV143 } from "../data/visualization/publicMapCopyV143";
 import maplibregl, { Map as MapLibreMap } from "maplibre-gl";
 import type {
   GeoJSONSource,
@@ -72,11 +66,25 @@ import {
 import type {
   VietnamMapGeoJsonV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
-import type { VietnamMapFactFieldV137, VietnamMapFilterV121 } from "../data/vietnam/vietnamTypesV121";
 import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
-import { prepareLayerRecordsV138, attributeText, type PreparedLayerRecordsV138 } from "../data/map/prepareLayerRecordsV148";
-import { mapFactsV148, mapIndicatorSourceV148, mapSourceLineV148, publicMapFieldsV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
-import { createMapFeaturePopupV148 } from "../components/map/mapFeaturePopupV148";
+import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
+import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
+import MapIconLegendV152 from "../components/map/MapIconLegendV152";
+import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
+import FacilityCardV153 from "../components/data/public/FacilityCardV153";
+import { facilityCardSpecV153 } from "../data/visualization/facilityCardV153";
+import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
+import {
+  attachMapIconMissingHandlerV152,
+  MAP_ICON_LAYER_IDS_V152,
+  mapIconLegendEntriesV152,
+  mapLayerIconV152,
+  registerMapIcons,
+  type MapIconIdV152,
+  type MaplibreMapLike,
+} from "../data/map/mapIconsV152";
+import { boundaryPopupLineV151, createPublicMapPopupContentV129 } from "../components/map/mapPublicPopupV129";
 import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
   VietnamLocationSidecarV151,
@@ -120,7 +128,6 @@ import {
   publicSourceOrganizationV136_1,
   publicTextV126,
 } from "../data/visualization/publicFieldPolicyV126";
-import { resolvePublicEntityTitleV131 } from "../data/visualization/publicEntityTitleV131";
 import {
   getPublicIndicatorInterpretationV129,
   getPublicIndicatorVariablePresentationV129,
@@ -147,7 +154,6 @@ import {
   PublicTermHelpV134,
   PublicTermTextV134,
 } from "../components/help/PublicTermV134";
-import { tokenizePublicTermsV134 } from "../utils/publicTermTokenizerV134";
 import { InteractiveTimeSeriesChartV127 } from "../components/charts/InteractiveTimeSeriesChartV127";
 import type { TimeSeriesV127 } from "../types/chartInteractionV127";
 import { useResizableMapPanelsV129 } from "../hooks/useResizableMapPanelsV129";
@@ -157,6 +163,47 @@ import "../styles/map-comparison-v135.css";
 import "../styles/map-catalog-v138.css";
 import "../styles/map-overlap-v145.css";
 import "../styles/map-presentation-v148.css";
+
+import type {
+  BoundaryRenderContextV151,
+  LayerSelectorState,
+  PublicMapSymbolShapeV129,
+  SpatialRuntimeAsset,
+} from "../map/layers/types";
+import { LAYER_COLORS } from "../map/layers/colors";
+import { MAP_STYLE } from "../map/layers/baseStyle";
+import {
+  layerRuntimeIds,
+  moveMapDataLayersV126,
+  removeLayerFromMap,
+  runtimeKey,
+  type LayerHandlers,
+} from "../map/layers/ids";
+import {
+  filterRecords,
+  layerFactFieldsV137,
+  rendererOf,
+  resolvePublicMapEntityTitleV131,
+  selectedFilterDimensionsV125,
+  selectedFilterValueV141,
+  selectorForLayer,
+} from "../map/layers/contract";
+import {
+  areaKm2ByAdm1CodeV151,
+  choroplethFeatureCollectionV151,
+  featureCollection,
+  lineFeatureCollection,
+  spatialValuesForSelectorV125,
+  statisticalRepresentativePointsV133,
+} from "../map/layers/features";
+import { publicMapSymbolShapeV129 } from "../map/layers/symbols";
+import { applyBoundaryReferenceV152 } from "../map/layers/boundaryLayer";
+import {
+  mountAreaLayerV152,
+  mountPointLayerV152,
+  prepareAreaLayerV152,
+  preparePointLayerV152,
+} from "../map/layers";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -177,121 +224,6 @@ interface RealMapExplorerPageProps {
 
 type LoadStatus = "idle" | "loading" | "ready" | "error";
 
-// V151-2: Viet Nam is drawn from its own dissolved outline; the Natural Earth
-// world file only supplies the neighbouring countries.
-const NOT_VIETNAM_FILTER_V151 = ["!=", ["get", "iso3"], "VNM"];
-const MAP_STYLE: any = {
-  version: 8,
-  glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
-  sources: {
-    "country-boundaries": {
-      type: "geojson",
-      data: publicAssetUrlV128("data/world-countries.geojson"),
-      attribution: "Natural Earth · 로컬 국가 경계",
-    },
-    "vnm-country-outline": {
-      type: "geojson",
-      data: publicAssetUrlV128(COUNTRY_OUTLINE_PATH_V151),
-      attribution: "국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합",
-    },
-  },
-  layers: [
-    {
-      id: "cdp-base-background",
-      type: "background",
-      paint: { "background-color": "#e7efeb" },
-    },
-    {
-      id: "cdp-country-fill",
-      type: "fill",
-      source: "country-boundaries",
-      filter: NOT_VIETNAM_FILTER_V151,
-      paint: {
-        "fill-color": "#ffffff",
-        "fill-opacity": 0.9,
-      },
-    },
-    {
-      id: "cdp-country-outline",
-      type: "line",
-      source: "country-boundaries",
-      filter: NOT_VIETNAM_FILTER_V151,
-      paint: {
-        "line-color": "#587168",
-        "line-width": 1.1,
-        "line-opacity": 0.82,
-      },
-    },
-    // Above the neighbours' coarse outlines so none of them shows inside Viet Nam.
-    {
-      id: "cdp-vnm-country-fill",
-      type: "fill",
-      source: "vnm-country-outline",
-      paint: {
-        "fill-color": "#ffffff",
-        "fill-opacity": 0.9,
-      },
-    },
-    {
-      id: "cdp-vnm-country-outline",
-      type: "line",
-      source: "vnm-country-outline",
-      paint: {
-        "line-color": "#3f5a52",
-        "line-width": 1.3,
-        "line-opacity": 0.9,
-      },
-    },
-  ],
-};
-
-const LAYER_COLORS: Record<string, string> = {
-  "A-023": "#176a4b",
-  "A-024": "#c94f37",
-  "B-021": "#7a4ca5",
-  "B-031": "#2c7a43",
-  "B-032": "#4b9a5d",
-  "B-033": "#d17832",
-  "B-034": "#315b50",
-  "B-048": "#855b20",
-  "C-016": "#d39c19",
-  "C-025": "#7053a3",
-  "D-008": "#287e91",
-  "D-018": "#226f96",
-  "D-023": "#b05e2e",
-  // V138 targets. Climate layers share one hue family, resources another, so
-  // the legend reads by category even when several are drawn together.
-  "A-025": "#5b4a8a",
-  "B-003": "#b8542b",
-  "B-004": "#c2662f",
-  "B-005": "#a8722b",
-  "B-006": "#b23a3a",
-  "B-007": "#2a6fa8",
-  "B-008": "#1f6f8b",
-  "B-012": "#8c2f39",
-  "B-023": "#2b7f9b",
-  "B-025": "#2d6b8a",
-  "B-028": "#1f5f86",
-  "B-029": "#3f7d3a",
-  "B-030": "#3b8a4f",
-  "B-037": "#5a7d2f",
-  "B-039": "#2f6f8f",
-  "B-040": "#9a4c2c",
-  "B-041": "#c98a17",
-  "B-042": "#3b6fa5",
-  "C-009": "#6b4f9e",
-  "C-010": "#4f6f9e",
-  "C-012": "#7a5c2e",
-  "C-013": "#8a4f7a",
-  "C-019": "#5a3d7a",
-  "C-022": "#6d4d8f",
-  "C-024": "#2f7a5a",
-  "E-004": "#1f6b6b",
-  "E-005": "#2a7a86",
-  "E-006": "#7a5a1f",
-  "E-018": "#9a3c62",
-  "E-019": "#a24d2a",
-};
 
 /**
  * V138: the record set a point layer draws, after the contract's own rules.
@@ -303,19 +235,6 @@ const LAYER_COLORS: Record<string, string> = {
  * Applying those rules here, once, keeps the feature count the reader sees
  * equal to the count the build reported.
  */
-
-const A023_FUEL_COLORS_V126: Record<string, string> = {
-  "가스": "#377eb8",
-  "가스·석유": "#4f6f8f",
-  "바이오매스": "#5a9d55",
-  "석유": "#6b7280",
-  "석탄": "#3f3f46",
-  "수력": "#2f8fc1",
-  "태양광": "#e8a317",
-  "폐기물": "#8c6bb1",
-  "풍력": "#27a5a5",
-  "(미표기)": "#8a9a93",
-};
 
 const VIETNAM_SOURCE_REGION_LABELS_V126: Record<string, string> = {
   "Central Highlands": "중부고원",
@@ -348,54 +267,6 @@ function selectedFeatureNounV139(layer: CountryMapLayerV122): string {
     "E-018": "사업지",
   };
   return nouns[layer.elementId] || layer.featureIdentity?.label || "시설";
-}
-
-/**
- * V151-2: the popup line that explains a value under the 34-unit outline.
- * Aggregated feature: "구성 n개 중 m개 값 있음 · min~max[ · 부분 결측]".
- * Range-only province: its parent unit and the spread of the sibling values.
- */
-function boundaryPopupLineV151(properties: Record<string, unknown>, unit: string): string {
-  const format = (value: unknown) =>
-    typeof value === "number" && Number.isFinite(value) ? formatPublicNumberV126(value, unit) : "결측";
-  const summary = parseMemberSummaryV151(properties.memberSummary);
-  if (summary) {
-    const single = summary.memberCount === 1;
-    const range =
-      summary.valueCount > 1 && summary.min !== null && summary.max !== null && summary.min !== summary.max
-        ? ` · 구성 범위 ${format(summary.min)}~${format(summary.max)}${unit ? ` ${unit}` : ""}`
-        : "";
-    const coverage = single
-      ? ""
-      : summary.valueCount === summary.memberCount
-        ? `구성 ${summary.memberCount}개 성·시`
-        : `구성 ${summary.memberCount}개 성·시 중 ${summary.valueCount}개 값 있음`;
-    const flags = summary.partial ? " · 부분 결측" : summary.conflict ? " · 구성 값 불일치" : "";
-    switch (summary.kind) {
-      case "native-34":
-        return `개편 후 34개 기준 원자료 값${single ? "" : ` · ${coverage}`}${flags}`;
-      case "sum":
-        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 합계${range}${flags}`;
-      case "count-sum":
-        return single ? "" : `${coverage} 문서 수 합계${flags}`;
-      case "membership-or":
-        return single ? "" : `${coverage} 중 참여 ${summary.valueCount}개${flags}`;
-      case "area-weighted-mean":
-        return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 면적가중평균${range}${flags}`;
-      default:
-        return single ? "" : `${coverage}${range}${flags}`;
-    }
-  }
-  const parentName = publicTextV126(properties.parentUnitName);
-  if (parentName && properties.policyKind === "range-only") {
-    const count = Number(properties.parentValueCount || 0);
-    const total = Number(properties.parentMemberCount || 0);
-    if (!count) return `${parentName}(34개 기준) · 구성 성·시 값 없음`;
-    return `${parentName}(34개 기준) 구성 범위 ${format(properties.parentMin)}~${format(properties.parentMax)}${
-      unit ? ` ${unit}` : ""
-    } · ${total}개 중 ${count}개 값`;
-  }
-  return "";
 }
 
 /**
@@ -511,15 +382,9 @@ const VNM_ADM1_GEOMETRY_URL_V126 =
 function vnmAdm1ReferenceUrlV151(system: BoundarySystemV151): string {
   return publicAssetUrlV128(boundaryGeometryPathV151(system));
 }
-const VNM_ADM1_BASE_SOURCE_V126 = "cdp-vietnam-adm1-reference";
-const VNM_ADM1_BASE_OUTLINE_V126 = "cdp-vietnam-adm1-reference-outline";
 
 const FALLBACK_VIEWBOX_WIDTH = 1000;
 const FALLBACK_VIEWBOX_HEIGHT = 700;
-const SPATIAL_VALUE_SERIES_CACHE_V125 = new WeakMap<
-  VietnamSpatialLayerAssetV124,
-  Map<string, VietnamSpatialLayerAssetV124["values"]>
->();
 
 type FallbackBounds = readonly [
   readonly [number, number],
@@ -617,10 +482,6 @@ export const MAP_COMPARE_PANE_TEST_IDS_V135 = [
   "map-compare-pane-b",
 ] as const;
 
-function rendererOf(layer: CountryMapLayerV122) {
-  return layer.renderer || (layer.cluster ? "cluster" : "point");
-}
-
 function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
   if (layer.elementId === "A-023") return "발전소 좌표 레코드(두 출처, 중복 미통합)";
   if (layer.elementId === "A-024") return "송전망 구간 606개";
@@ -679,25 +540,6 @@ export {
   MAP_SOURCE_IDS_RUNTIME_V116,
 } from "../data/map/mapRuntimeContractsV116";
 
-interface LayerHandlers {
-  interactiveLayerId: string;
-  additionalInteractiveLayerId?: string;
-  clusterLayerId?: string;
-  onClick: (event: MapLayerMouseEvent) => void;
-  onEnter: (event: MapLayerMouseEvent) => void;
-  onMove?: (event: MapLayerMouseEvent) => void;
-  onPointLeave: () => void;
-  onClusterClick?: (event: MapLayerMouseEvent) => void;
-  onClusterEnter?: (event: MapLayerMouseEvent) => void;
-  onClusterMove?: (event: MapLayerMouseEvent) => void;
-  onClusterLeave?: () => void;
-}
-
-interface SpatialRuntimeAsset {
-  geometry: VietnamMapGeoJsonV124;
-  data?: VietnamSpatialLayerAssetV124;
-}
-
 interface SpatialSelection {
   elementId: string;
   adm1Code?: string;
@@ -714,14 +556,6 @@ interface SpatialSelection {
 }
 
 type PublicMapLayerRoleV129 = "primary" | "context";
-
-type PublicMapSymbolShapeV129 =
-  | "area"
-  | "circle"
-  | "diamond"
-  | "triangle"
-  | "line"
-  | "square";
 
 interface PublicMapLegendIdentityV129 {
   /** V138: selected, but its drawing is switched off. */
@@ -804,15 +638,6 @@ interface PublicMapSummaryRowV126 {
   label: string;
   value: string;
   derived?: boolean;
-}
-
-interface LayerSelectorState {
-  variable: string;
-  period: string;
-}
-
-function runtimeKey(countryIso3: string, elementId: string): string {
-  return `${countryIso3}:${elementId}`;
 }
 
 /**
@@ -1022,51 +847,6 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
   (window as unknown as Record<string, unknown>).__cdpMapV151 = map;
 }
 
-function layerRuntimeIds(countryIso3: string, elementId: string) {
-  const suffix = `${countryIso3}-${elementId}`
-    .toLowerCase()
-    .replace(/[^a-z0-9-]/g, "-");
-  return {
-    source: `v122-source-${suffix}`,
-    point: `v122-point-${suffix}`,
-    pointHit: `v126-point-hit-${suffix}`,
-    pointSelection: `v130-point-selection-${suffix}`,
-    cluster: `v122-cluster-${suffix}`,
-    clusterCount: `v126-cluster-count-${suffix}`,
-    pointSymbol: `v129-point-symbol-${suffix}`,
-    line: `v124-line-${suffix}`,
-    lineHit: `v126-line-hit-${suffix}`,
-    fill: `v124-fill-${suffix}`,
-    outline: `v124-outline-${suffix}`,
-    selection: `v126-selection-${suffix}`,
-  };
-}
-
-function moveMapDataLayersV126(
-  map: MapLibreMap,
-  countryIso3: string,
-  orderedElementIds: string[]
-): void {
-  orderedElementIds.forEach((elementId) => {
-    const ids = layerRuntimeIds(countryIso3, elementId);
-    [
-      ids.fill,
-      ids.outline,
-      ids.cluster,
-      ids.clusterCount,
-      ids.point,
-      ids.pointSymbol,
-      ids.pointSelection,
-      ids.line,
-      ids.pointHit,
-      ids.lineHit,
-      ids.selection,
-    ].forEach((layerId) => {
-      if (map.getLayer(layerId)) map.moveLayer(layerId);
-    });
-  });
-}
-
 function isTopmostActiveFeatureV129(
   map: MapLibreMap,
   point: MapLayerMouseEvent["point"],
@@ -1200,64 +980,6 @@ function mapHitCandidatesV133(
     );
 }
 
-function representativeCoordinateV133(
-  geometry: GeoJSON.Geometry
-): [number, number] | null {
-  const coordinates: Array<[number, number]> = [];
-  const collect = (value: unknown): void => {
-    if (
-      Array.isArray(value) &&
-      value.length >= 2 &&
-      typeof value[0] === "number" &&
-      Number.isFinite(value[0]) &&
-      typeof value[1] === "number" &&
-      Number.isFinite(value[1])
-    ) {
-      coordinates.push([value[0], value[1]]);
-      return;
-    }
-    if (Array.isArray(value)) value.forEach(collect);
-  };
-  collect((geometry as { coordinates?: unknown }).coordinates);
-  if (!coordinates.length) return null;
-  const longitudes = coordinates.map(([longitude]) => longitude);
-  const latitudes = coordinates.map(([, latitude]) => latitude);
-  return [
-    (Math.min(...longitudes) + Math.max(...longitudes)) / 2,
-    (Math.min(...latitudes) + Math.max(...latitudes)) / 2,
-  ];
-}
-
-function statisticalRepresentativePointsV133(
-  collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>
-): GeoJSON.FeatureCollection<GeoJSON.Point> {
-  return {
-    type: "FeatureCollection",
-    features: collection.features.flatMap((feature, index) => {
-      if (!feature.properties?.hasValue) return [];
-      const coordinate = representativeCoordinateV133(feature.geometry);
-      if (!coordinate) return [];
-      const selectionKey = String(
-        feature.properties?.selectionKey || feature.properties?.adm1Code || index
-      );
-      return [
-        {
-          type: "Feature" as const,
-          id: feature.id ?? selectionKey,
-          geometry: { type: "Point" as const, coordinates: coordinate },
-          properties: {
-            ...feature.properties,
-            selectionKey,
-            coordinateMeaning: "statistical-representative-point",
-            publicSpatialNotice:
-              "성·시 단위 통계를 구분하기 위한 대표점이며 실제 사업 위치가 아닙니다.",
-          },
-        },
-      ];
-    }),
-  };
-}
-
 function uniqueB021RegionRankV133(
   data: VietnamSpatialLayerAssetV124 | undefined,
   selector: LayerSelectorState,
@@ -1277,24 +999,6 @@ function uniqueB021RegionRankV133(
   );
   const rank = ordered.findIndex(([region]) => region === sourceRegion);
   return rank >= 0 ? `베트남 6개 권역 중 ${rank + 1}위` : "";
-}
-
-function selectorForLayer(
-  layer: CountryMapLayerV122,
-  selected: LayerSelectorState | undefined
-): LayerSelectorState {
-  const variable =
-    selected?.variable || layer.selectors?.defaultVariable || "locations";
-  const option = layer.selectors?.variables.find((row) => row.key === variable);
-  const periods = option?.periods || layer.selectors?.periods || [];
-  const requestedPeriod = selected?.period || layer.selectors?.defaultPeriod;
-  return {
-    variable,
-    period:
-      requestedPeriod && periods.includes(requestedPeriod)
-        ? requestedPeriod
-        : periods[periods.length - 1] || "미표기",
-  };
 }
 
 /** The variable key a measure and a scenario map to, or the measure's first variable. */
@@ -1348,347 +1052,6 @@ function sharedSelectorKeyV125(
   });
 }
 
-function choroplethFeatureCollection(
-  layer: CountryMapLayerV122,
-  asset: SpatialRuntimeAsset,
-  selector: LayerSelectorState
-): {
-  collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>;
-  minimum: number;
-  maximum: number;
-} {
-  const values = asset.data
-    ? spatialValuesForSelectorV125(asset.data, selector)
-    : [];
-  const valueByCode = new Map(values.map((row) => [row.adm1Code, row]));
-  const numericValues = values.map((row) => row.value).filter(Number.isFinite);
-  const minimum = numericValues.length ? Math.min(...numericValues) : 0;
-  const maximum = numericValues.length ? Math.max(...numericValues) : 1;
-  return {
-    minimum,
-    maximum,
-    collection: {
-      type: "FeatureCollection",
-      features: asset.geometry.features.map((feature) => {
-        const adm1Code = String(feature.properties?.adm1Code || "");
-        const value = valueByCode.get(adm1Code);
-        return {
-          type: "Feature" as const,
-          id: adm1Code,
-          geometry: feature.geometry as GeoJSON.Geometry,
-          properties: {
-            ...feature.properties,
-            elementId: layer.elementId,
-            adm1Code,
-            adm1Name: value?.adm1Name || feature.properties?.name || adm1Code,
-            value: value?.value ?? null,
-            hasValue: Boolean(value),
-            unit: value?.unit || "",
-            period: selector.period,
-            variable: selector.variable,
-            variableLabel:
-              value?.variableLabel ||
-              layer.selectors.variables.find((row) => row.key === selector.variable)
-                ?.label ||
-              layer.publicShortTitle,
-            sourceRegion: value?.sourceRegion || "",
-            sourceIndicatorId: value?.sourceIndicatorId || "",
-            sourceSpatialUnit: value?.sourceSpatialUnit || "admin1",
-            selectionKey: adm1Code,
-          },
-        };
-      }),
-    },
-  };
-}
-
-/** V151-2: what the outline toggle and the layer's policy resolve to for one render. */
-type BoundaryRenderModeV151 = "63" | "34" | "region-6";
-
-interface BoundaryRenderContextV151 {
-  system: BoundarySystemV151;
-  geometry34: VietnamMapGeoJsonV124 | null;
-  region6: VietnamMapGeoJsonV124 | null;
-}
-
-interface ChoroplethCollectionV151 {
-  collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>;
-  minimum: number;
-  maximum: number;
-  mode: BoundaryRenderModeV151;
-  kind: BoundaryPolicyKindV151;
-}
-
-function areaKm2ByAdm1CodeV151(geometry34: VietnamMapGeoJsonV124 | null): Record<string, number> | null {
-  if (!geometry34) return null;
-  const areas: Record<string, number> = {};
-  for (const feature of geometry34.features) {
-    const members = feature.properties?.memberAreaKm2;
-    if (!members || typeof members !== "object") continue;
-    for (const [code, km2] of Object.entries(members as Record<string, unknown>)) {
-      if (typeof km2 === "number" && Number.isFinite(km2)) areas[code] = km2;
-    }
-  }
-  return Object.keys(areas).length ? areas : null;
-}
-
-function variableLabelForSelectorV151(layer: CountryMapLayerV122, selector: LayerSelectorState, fallback?: string): string {
-  return (
-    fallback ||
-    layer.selectors.variables.find((row) => row.key === selector.variable)?.label ||
-    layer.publicShortTitle
-  );
-}
-
-/**
- * The choropleth collection the map draws, after the boundary policy.
- *
- * - 63-unit outline: the source rows as published (unchanged behaviour).
- * - 34-unit outline + aggregating policy: one feature per 34-unit carrying the
- *   aggregated value and a `memberSummary` for the popup and the panel.
- * - 34-unit outline + range-only: still the 63 features, each decorated with
- *   its parent unit and the member range - no single 34 value is invented.
- * - six-region-only (B-021): the six GDL regions, whatever the toggle says.
- */
-function choroplethFeatureCollectionV151(
-  layer: CountryMapLayerV122,
-  asset: SpatialRuntimeAsset,
-  selector: LayerSelectorState,
-  context: BoundaryRenderContextV151
-): ChoroplethCollectionV151 {
-  const kind = policyKindForVariableV151(layer.boundaryPolicy, selector.variable);
-  const values = asset.data ? spatialValuesForSelectorV125(asset.data, selector) : [];
-  const variableLabel = variableLabelForSelectorV151(layer, selector, values[0]?.variableLabel);
-  const unit = values[0]?.unit || "";
-
-  if (kind === "six-region-only" && context.region6) {
-    const byRegion = new Map<string, VietnamSpatialLayerAssetV124["values"][number]>();
-    for (const row of values) {
-      if (row.sourceRegion && !byRegion.has(row.sourceRegion)) byRegion.set(row.sourceRegion, row);
-    }
-    const numeric = [...byRegion.values()].map((row) => row.value).filter(Number.isFinite);
-    return {
-      mode: "region-6",
-      kind,
-      minimum: numeric.length ? Math.min(...numeric) : 0,
-      maximum: numeric.length ? Math.max(...numeric) : 1,
-      collection: {
-        type: "FeatureCollection",
-        features: context.region6.features.map((feature) => {
-          const regionKey = String(feature.properties?.regionKey || feature.properties?.name || "");
-          const row = byRegion.get(regionKey);
-          return {
-            type: "Feature" as const,
-            id: regionKey,
-            geometry: feature.geometry as GeoJSON.Geometry,
-            properties: {
-              ...feature.properties,
-              elementId: layer.elementId,
-              adm1Code: regionKey,
-              adm1Name: String(feature.properties?.nameKo || regionKey),
-              value: row?.value ?? null,
-              hasValue: Boolean(row),
-              unit: row?.unit || unit,
-              period: selector.period,
-              variable: selector.variable,
-              variableLabel: row?.variableLabel || variableLabel,
-              sourceRegion: regionKey,
-              sourceIndicatorId: row?.sourceIndicatorId || "",
-              sourceSpatialUnit: "region",
-              selectionKey: regionKey,
-              boundarySystem: "gdl-six-region",
-              policyKind: kind,
-            },
-          };
-        }),
-      },
-    };
-  }
-
-  const areas = areaKm2ByAdm1CodeV151(context.geometry34);
-  const canAggregate =
-    context.system === "post-2025-34" &&
-    isAggregatingKindV151(kind) &&
-    context.geometry34 !== null &&
-    (kind !== "area-weighted-mean" || areas !== null);
-  if (canAggregate && context.geometry34) {
-    const adm1NameByCode: Record<string, string> = {};
-    for (const feature of asset.geometry.features) {
-      const code = String(feature.properties?.adm1Code || "");
-      if (code) adm1NameByCode[code] = String(feature.properties?.name || code);
-    }
-    const rows = aggregateTo34V151(values, kind, {
-      areaKm2ByAdm1Code: areas || undefined,
-      adm1NameByCode,
-    });
-    const byUnit = new Map(rows.map((row) => [row.unitCode, row]));
-    const numeric = rows.map((row) => row.value).filter((value): value is number => typeof value === "number");
-    return {
-      mode: "34",
-      kind,
-      minimum: numeric.length ? Math.min(...numeric) : 0,
-      maximum: numeric.length ? Math.max(...numeric) : 1,
-      collection: {
-        type: "FeatureCollection",
-        features: context.geometry34.features.map((feature) => {
-          const unitCode = String(feature.properties?.unitCode || "");
-          const row = byUnit.get(unitCode);
-          const value = row?.value ?? null;
-          return {
-            type: "Feature" as const,
-            id: unitCode,
-            geometry: feature.geometry as GeoJSON.Geometry,
-            properties: {
-              ...feature.properties,
-              elementId: layer.elementId,
-              unitCode,
-              // Compatibility key: every selection and panel path keys on adm1Code.
-              adm1Code: unitCode,
-              adm1Name: row?.unitName || String(feature.properties?.name || unitCode),
-              value,
-              hasValue: value !== null,
-              unit: row?.unit || unit,
-              period: selector.period,
-              variable: selector.variable,
-              variableLabel,
-              sourceRegion: "",
-              sourceIndicatorId: row?.sourceIndicatorId || "",
-              sourceSpatialUnit: "post-2025-34-unit",
-              selectionKey: unitCode,
-              boundarySystem: "post-2025-34",
-              policyKind: kind,
-              memberSummary: row ? memberSummaryV151(row) : "",
-              partial: row?.partial ?? false,
-            },
-          };
-        }),
-      },
-    };
-  }
-
-  const base = choroplethFeatureCollection(layer, asset, selector);
-  if (context.system !== "post-2025-34" || kind !== "range-only") {
-    return { ...base, mode: "63", kind };
-  }
-  // Range-only under the 34 outline: keep every province, name its parent
-  // unit and the spread of its siblings so the popup can say "구성 범위".
-  const rangeByUnit = memberRangeByUnitV151(values);
-  return {
-    ...base,
-    mode: "63",
-    kind,
-    collection: {
-      type: "FeatureCollection",
-      features: base.collection.features.map((feature) => {
-        const adm1Code = String(feature.properties?.adm1Code || "");
-        const parent = parentUnitForV151(adm1Code);
-        const range = parent ? rangeByUnit.get(parent.unitCode) : undefined;
-        return {
-          ...feature,
-          properties: {
-            ...feature.properties,
-            policyKind: kind,
-            parentUnitCode: parent?.unitCode || "",
-            parentUnitName: parent?.nameKo || "",
-            parentMin: range?.min ?? null,
-            parentMax: range?.max ?? null,
-            parentValueCount: range?.valueCount ?? 0,
-            parentMemberCount: range?.memberCount ?? (parent?.memberAdm1Codes.length || 0),
-          },
-        };
-      }),
-    },
-  };
-}
-
-function spatialValuesForSelectorV125(
-  data: VietnamSpatialLayerAssetV124,
-  selector: LayerSelectorState
-): VietnamSpatialLayerAssetV124["values"] {
-  let index = SPATIAL_VALUE_SERIES_CACHE_V125.get(data);
-  if (!index) {
-    index = new Map();
-    data.values.forEach((row) => {
-      const key = `${row.variable}\u0000${row.period}`;
-      const records = index!.get(key);
-      if (records) records.push(row);
-      else index!.set(key, [row]);
-    });
-    SPATIAL_VALUE_SERIES_CACHE_V125.set(data, index);
-  }
-  return index.get(`${selector.variable}\u0000${selector.period}`) || [];
-}
-
-function lineFeatureCollection(
-  layer: CountryMapLayerV122,
-  asset: SpatialRuntimeAsset,
-  selector: LayerSelectorState,
-  filters: Record<string, string>
-): GeoJSON.FeatureCollection<GeoJSON.Geometry> {
-  const features = asset.geometry.features.filter((feature) => {
-    if (
-      selector.variable !== "all" &&
-      String(feature.properties?.voltageKv || feature.properties?.voltage) !==
-        selector.variable
-    ) {
-      return false;
-    }
-    return layer.filters.every((filter) => {
-      if (filter.field === "voltageKv") return true;
-      const selected = selectedFilterValueV141(layer, filter, filters);
-      return (
-        selected === "all" ||
-        String(feature.properties?.[filter.field] ?? "") === selected
-      );
-    });
-  });
-  return {
-    type: "FeatureCollection",
-    features: features.map((feature, index) => ({
-      type: "Feature" as const,
-      id: feature.id ?? index,
-      properties: {
-        ...feature.properties,
-        elementId: layer.elementId,
-        selectionKey: String(feature.id ?? index),
-      },
-      geometry: feature.geometry as GeoJSON.Geometry,
-    })),
-  };
-}
-
-/**
- * The facts a layer publishes, and where each one lives in the source.
- *
- * The map index carries this contract per element because the delivery names
- * its columns differently for every one of them. Layers built before the
- * contract existed fall back to their tooltipFields, so nothing regresses while
- * the rest of the tree catches up.
- */
-function layerFactFieldsV137(
-  layer: CountryMapLayerV122
-): VietnamMapFactFieldV137[] {
-  const declared = layer.factFields;
-  if (declared && declared.length) return publicMapFieldsV148(layer);
-  return layer.tooltipFields
-    .filter((field) => field !== "name" && isPublicMapFactV143(fieldLabelV121(field)))
-    .map((field) => ({ key: field, label: fieldLabelV121(field), sources: [field] }));
-}
-
-/** The first value the source actually delivers for this fact. */
-function factValueV137(
-  fact: VietnamMapFactFieldV137,
-  attributes: Record<string, unknown>
-): unknown {
-  for (const key of fact.sources) {
-    const value = attributes[key];
-    if (!hasPublicMapFactValueV143(value)) continue;
-    const mapped = fact.valueMap?.[String(value).trim().toLowerCase()];
-    return mapped ?? value;
-  }
-  return null;
-}
-
 /** The label a reader sees for a fact key, never a raw source column name. */
 function factLabelV137(layer: CountryMapLayerV122, key: string): string {
   return layer.factFields?.find((fact) => fact.key === key)?.label || layer.fieldLabels?.[key] || fieldLabelV121(key);
@@ -1723,109 +1086,6 @@ function popupFactLinesV137(
   return lines;
 }
 
-/** V151-2: where a point sits, worded for the outline on screen. */
-function pointLocationLabelV151(
-  hit: VietnamLocationSidecarV151["byRecordId"][string] | undefined,
-  system: BoundarySystemV151
-): string | null {
-  if (hit === undefined) return null;
-  if (hit === null) return "소재지 미확정(성·시 경계 밖)";
-  if (system === "post-2025-34" && hit.unitCode) {
-    const unitName = PROVINCE_KO_34_V151[hit.unitCode] || hit.adm1Name;
-    return `${unitName} ${formerProvinceLabelV151(hit.adm1Code)}`.trim();
-  }
-  return `${PROVINCE_KO_V150[hit.adm1Code] || hit.adm1Name}(개편 전 63개 기준)`;
-}
-
-function featureCollection(
-  records: CountryEntityV122[],
-  layer: CountryMapLayerV122,
-  prepared: PreparedLayerRecordsV138 = prepareLayerRecordsV138(records, layer),
-  location?: { sidecar: VietnamLocationSidecarV151 | undefined; system: BoundarySystemV151 }
-): GeoJSON.FeatureCollection<GeoJSON.Point> {
-  return {
-    type: "FeatureCollection",
-    features: records
-      .filter(
-        (
-          record
-        ): record is CountryEntityV122 & {
-          latitude: number;
-          longitude: number;
-        } =>
-          record.mapEligible &&
-          typeof record.latitude === "number" &&
-          typeof record.longitude === "number"
-      )
-      .map((record) => {
-        const attrs = record.normalizedAttributes || {};
-        const titleResolution = resolvePublicMapEntityTitleV131(record, layer);
-        const properties: Record<string, string | number | boolean | null> = {
-          recordId: record.recordId,
-          elementId: record.elementId,
-          countryIso3: layer.countryIso3,
-          name: titleResolution.title,
-          nameNote: titleResolution.secondaryNote,
-          entityType: record.entityType,
-          referenceYear:
-            record.provenance.referenceYear || null,
-          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "") || null,
-          selectionKey: record.recordId,
-          approximate: prepared.approximateRecordIds.has(record.recordId),
-          memberCount: prepared.membersByRecordId.get(record.recordId)?.length || 1,
-        };
-        if (location?.sidecar) {
-          const hit = location.sidecar.byRecordId[record.recordId];
-          properties.adm1Code = hit?.adm1Code ?? null;
-          properties.unitCode = hit?.unitCode ?? null;
-          properties.locationLabelV151 = pointLocationLabelV151(hit, location.system);
-        }
-        // Facts come from the layer's own contract, which names the source key
-        // each one lives under. Reading a fixed field name instead is what left
-        // Ban Phuc's popup with no 광종: the mineral is in attrs["광종"], while
-        // the layer asked for attrs["mineral"].
-        layerFactFieldsV137(layer).forEach((fact) => {
-          const value = factValueV137(fact, attrs);
-          if (["string", "number", "boolean"].includes(typeof value)) {
-            properties[fact.key] = value as string | number | boolean;
-          }
-        });
-        layer.tooltipFields.forEach((field) => {
-          const value = field === "name" ? properties.name : attrs[field];
-          if (properties[field] !== undefined) return;
-          if (["string", "number", "boolean"].includes(typeof value)) {
-            properties[field] = value as string | number | boolean;
-          }
-        });
-        layer.filters.forEach((filter) => {
-          if (properties[filter.field] !== undefined) return;
-          const value = attrs[filter.field];
-          if (["string", "number", "boolean"].includes(typeof value)) {
-            properties[filter.field] = value as string | number | boolean;
-          }
-        });
-        return {
-          type: "Feature" as const,
-          id: record.recordId,
-          geometry: {
-            type: "Point" as const,
-            coordinates: [record.longitude, record.latitude],
-          },
-          properties,
-        };
-      }),
-  };
-}
-
-/** The filter's current value: the reader's choice, else the contract's default, else all. */
-function selectedFilterValueV141(
-  layer: CountryMapLayerV122,
-  filter: VietnamMapFilterV121,
-  filters: Record<string, string>
-): string {
-  return filters[`${layer.elementId}:${filter.field}`] || filter.defaultValue || "all";
-}
-
 /**
  * The period a layer's values refer to, as shown beside its title and in
  * 자료정보. A-023 carries two registries with different reference years, so
@@ -1855,37 +1115,6 @@ function layerDisplayedPeriodV142(
   const sourceFilter = layer.filters.find((filter) => filter.field === "sourceKey");
   const choice = sourceFilter ? selectedFilterValueV141(layer, sourceFilter, filters) : "all";
   return powerPlantPeriodForSourceV142(choice);
-}
-
-function filterRecords(
-  records: CountryEntityV122[],
-  layer: CountryMapLayerV122,
-  filters: Record<string, string>
-): CountryEntityV122[] {
-  return prepareLayerRecordsV138(records, layer).records.filter((record) =>
-    layer.filters.every((filter) => {
-      const selected = selectedFilterValueV141(layer, filter, filters);
-      if (selected === "all") return true;
-      const value = record.normalizedAttributes?.[filter.field];
-      return String(value ?? "") === selected;
-    })
-  );
-}
-
-function selectedFilterDimensionsV125(
-  layer: CountryMapLayerV122,
-  filters: Record<string, string>
-): Record<string, string> {
-  return Object.fromEntries(
-    layer.filters.flatMap((filter) => {
-      if (filter.field === "voltageKv") return [];
-      const selected = selectedFilterValueV141(layer, filter, filters);
-      // A filter with a default keeps an explicit "all" (A-023's both-source
-      // view), otherwise restoring the state would fall back to the default.
-      if (selected === "all") return filter.defaultValue ? [[filter.field, "all"]] : [];
-      return [[filter.field, selected]];
-    })
-  );
 }
 
 function medianV126(values: number[]): number | null {
@@ -1923,17 +1152,6 @@ function publicMapEntityTitleV131(
   layer: CountryMapLayerV122
 ): string {
   return resolvePublicMapEntityTitleV131(entity, layer).title;
-}
-
-function resolvePublicMapEntityTitleV131(
-  entity: CountryEntityV122,
-  layer: CountryMapLayerV122
-) {
-  const elementTitle = publicMapLayerTitleV126(
-    layer.elementId,
-    layer.publicShortTitle
-  );
-  return resolvePublicEntityTitleV131(entity, { elementTitle });
 }
 
 const UNAVAILABLE_MAP_FACT_V132 =
@@ -2027,127 +1245,6 @@ function publicTransmissionSegmentTitleV131(
   const raw = properties.voltageKv ?? properties.voltage;
   const voltage = raw === null || raw === undefined || raw === "" ? "" : String(raw);
   return voltage ? `${voltage} kV 송전선로` : "송전망 구간";
-}
-
-function publicMapSymbolShapeV129(
-  layer: CountryMapLayerV122
-): PublicMapSymbolShapeV129 {
-  const renderer = rendererOf(layer);
-  if (renderer === "line") return "line";
-  // Adaptation Fund activity sites use the same diamond in the map and
-  // legend; regional participation areas remain visible behind the symbol.
-  if (layer.elementId === "D-018") return "diamond";
-  if (
-    renderer === "admin1-choropleth" ||
-    renderer === "partial-choropleth" ||
-    renderer === "regional-scope"
-  ) {
-    return "area";
-  }
-  if (["B-048", "D-018"].includes(layer.elementId)) return "diamond";
-  if (["C-025", "D-023"].includes(layer.elementId)) return "square";
-  // V138 point families: stations and hydrological sites as triangles,
-  // organisations and offices as squares, events and facilities as circles.
-  if (["B-008", "B-023", "B-028", "B-025"].includes(layer.elementId)) return "triangle";
-  if (["E-004", "E-005", "E-006", "E-018", "E-019"].includes(layer.elementId)) {
-    return "square";
-  }
-  return "circle";
-}
-
-function createPublicMapPopupContentV129(
-  title: string,
-  lines: string[],
-  options?: {
-    attributes?: Record<string, string>;
-    legacyTestId?: string;
-    testId?: string;
-  }
-): HTMLDivElement {
-  const root = document.createElement("div");
-  root.className = "cdp-map-public-popup";
-  if (options?.testId) root.setAttribute("data-testid", options.testId);
-  Object.entries(options?.attributes || {}).forEach(([name, value]) => {
-    root.setAttribute(`data-${name}`, value);
-  });
-  const appendPublicText = (node: HTMLElement, value: string) => {
-    tokenizePublicTermsV134(value, { firstOccurrenceOnly: false }).forEach(
-      (token) => {
-        if (token.type === "text") {
-          node.appendChild(document.createTextNode(token.value));
-          return;
-        }
-        const term = document.createElement("span");
-        term.setAttribute("data-public-term-v134", token.entry.id);
-        term.setAttribute("data-public-term-mode", "visible-expansion");
-        term.appendChild(document.createTextNode(token.value));
-        const expansion = document.createElement("span");
-        expansion.className = "public-term-visible-expansion-v134";
-        expansion.setAttribute("data-public-term-expansion-v134", "true");
-        expansion.textContent = `(${token.entry.koreanName})`;
-        term.appendChild(expansion);
-        node.appendChild(term);
-      }
-    );
-  };
-  const heading = document.createElement("strong");
-  appendPublicText(heading, title);
-  root.appendChild(heading);
-  lines.filter(Boolean).slice(0, 5).forEach((line) => {
-    const row = document.createElement("span");
-    appendPublicText(row, line);
-    root.appendChild(row);
-  });
-  if (options?.legacyTestId) {
-    const legacyContract = document.createElement("span");
-    legacyContract.hidden = true;
-    legacyContract.setAttribute("aria-hidden", "true");
-    legacyContract.setAttribute("data-testid", options.legacyTestId);
-    Object.entries(options.attributes || {}).forEach(([name, value]) => {
-      legacyContract.setAttribute(`data-${name}`, value);
-    });
-    legacyContract.textContent = [title, ...lines.filter(Boolean)].join(" ");
-    root.appendChild(legacyContract);
-  }
-  return root;
-}
-
-function ensurePublicPointSymbolImageV129(
-  map: MapLibreMap,
-  imageId: string,
-  shape: PublicMapSymbolShapeV129,
-  color: string
-): void {
-  if (shape === "circle" || map.hasImage(imageId)) return;
-  const size = 24;
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-  const context = canvas.getContext("2d");
-  if (!context) return;
-  context.clearRect(0, 0, size, size);
-  context.fillStyle = color;
-  context.strokeStyle = "#ffffff";
-  context.lineWidth = 2.4;
-  context.beginPath();
-  if (shape === "diamond") {
-    context.moveTo(size / 2, 2);
-    context.lineTo(size - 2, size / 2);
-    context.lineTo(size / 2, size - 2);
-    context.lineTo(2, size / 2);
-  } else if (shape === "triangle") {
-    context.moveTo(size / 2, 2);
-    context.lineTo(size - 2, size - 3);
-    context.lineTo(2, size - 3);
-  } else {
-    context.rect(3, 3, size - 6, size - 6);
-  }
-  context.closePath();
-  context.fill();
-  context.stroke();
-  map.addImage(imageId, context.getImageData(0, 0, size, size), {
-    pixelRatio: 2,
-  });
 }
 
 function resolveInitialCountry(initialCountryIso3: string | null): string {
@@ -3100,6 +2197,15 @@ export default function RealMapExplorerPage({
     const markReady = () => {
       ready = true;
       setBaseMapStatus("ready");
+      // V152: point icons (ink) and cluster glyphs (white) for every icon layer.
+      const iconMap = map as unknown as MaplibreMapLike;
+      registerMapIcons(iconMap);
+      registerMapIcons(
+        iconMap,
+        MAP_ICON_LAYER_IDS_V152.map(mapLayerIconV152).filter((id): id is MapIconIdV152 => Boolean(id)),
+        "white"
+      );
+      attachMapIconMissingHandlerV152(iconMap);
       const current = getCountryDataProviderV122(countryIso3);
       if (initialState.camera) {
         // A shared or reloaded link opens where the reader left it.
@@ -3229,52 +2335,7 @@ export default function RealMapExplorerPage({
   useEffect(() => {
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
-    if (countryIso3 !== "VNM" || !adm1Boundary) {
-      if (map.getLayer(VNM_ADM1_BASE_OUTLINE_V126)) {
-        map.removeLayer(VNM_ADM1_BASE_OUTLINE_V126);
-      }
-      if (map.getSource(VNM_ADM1_BASE_SOURCE_V126)) {
-        map.removeSource(VNM_ADM1_BASE_SOURCE_V126);
-      }
-      return;
-    }
-    // V151-2: the 34-unit outline is the primary reference and reads heavier
-    // than the 63 pre-reform provinces, which are a toggle.
-    const is34 = adm1Boundary.features[0]?.properties?.boundarySystem === "post-2025-34";
-    const lineWidth = is34 ? 1.6 : 0.8;
-    const lineOpacity = is34 ? 0.7 : 0.42;
-    const existing = map.getSource(
-      VNM_ADM1_BASE_SOURCE_V126
-    ) as GeoJSONSource | undefined;
-    if (existing) {
-      existing.setData(adm1Boundary as GeoJSON.FeatureCollection);
-      if (map.getLayer(VNM_ADM1_BASE_OUTLINE_V126)) {
-        map.setPaintProperty(VNM_ADM1_BASE_OUTLINE_V126, "line-width", lineWidth);
-        map.setPaintProperty(VNM_ADM1_BASE_OUTLINE_V126, "line-opacity", lineOpacity);
-      }
-      return;
-    }
-    map.addSource(VNM_ADM1_BASE_SOURCE_V126, {
-      type: "geojson",
-      data: adm1Boundary as GeoJSON.FeatureCollection,
-      attribution:
-        '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0 · 2025-07-01 34개 통합 대응',
-    });
-    // Below any data layer already mounted (re-entering Viet Nam), above the backdrop.
-    const firstDataLayer = map.getStyle().layers?.find((entry) => /^v1\d\d-/u.test(entry.id))?.id;
-    map.addLayer(
-      {
-        id: VNM_ADM1_BASE_OUTLINE_V126,
-        type: "line",
-        source: VNM_ADM1_BASE_SOURCE_V126,
-        paint: {
-          "line-color": "#2f6f59",
-          "line-width": lineWidth,
-          "line-opacity": lineOpacity,
-        },
-      },
-      firstDataLayer
-    );
+    applyBoundaryReferenceV152(map, countryIso3, adm1Boundary);
   }, [adm1Boundary, baseMapStatus, countryIso3]);
 
   useEffect(() => {
@@ -3584,56 +2645,24 @@ export default function RealMapExplorerPage({
       ) {
         const asset = spatialByElement[elementId];
         if (!asset) return;
-        const selector = selectorForLayer(layer, selectorByElement[elementId]);
-        const variablePresentationV129 =
-          getPublicIndicatorVariablePresentationV129(
-            elementId,
-            selector.variable
-          );
-        const isRegionalScope = renderer === "regional-scope";
-        const isBudgetContext = elementId === "D-008" && !isPrimary;
-        const choropleth =
-          renderer === "line" || isRegionalScope
-            ? null
-            : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
-        const data =
-          renderer === "line"
-            ? lineFeatureCollection(layer, asset, selector, filters)
-            : isRegionalScope
-            ? (asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>)
-            : isBudgetContext
-            ? statisticalRepresentativePointsV133(choropleth!.collection)
-            : choropleth!.collection;
-        const renderKey = runtimeKey(countryIso3, elementId);
-        const renderSignature = JSON.stringify({
-          renderer,
-          selector,
-          filters: selectedFilterDimensionsV125(layer, filters),
-          featureCount: data.features.length,
-          role: isPrimary ? "primary" : "context",
-          boundary: choropleth ? `${choropleth.mode}:${choropleth.kind}` : boundaryContextV151.system,
+        const prepared = prepareAreaLayerV152({
+          layer,
+          asset,
+          selected: selectorByElement[elementId],
+          filters,
+          boundary: boundaryContextV151,
+          isPrimary,
+          color,
         });
+        const {
+          selector,
+          variablePresentationV129,
+          isRegionalScope,
+          isBudgetContext,
+          renderSignature,
+        } = prepared;
+        const renderKey = runtimeKey(countryIso3, elementId);
         const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
-        const fillColor = isRegionalScope
-          ? color
-          : choropleth
-          ? ([
-              "case",
-              ["==", ["get", "hasValue"], false],
-              "rgba(0, 0, 0, 0)",
-              choropleth.minimum === choropleth.maximum
-                ? color
-                : [
-                    "interpolate",
-                    ["linear"],
-                    ["to-number", ["get", "value"]],
-                    choropleth.minimum,
-                    "#e6f2ea",
-                    choropleth.maximum,
-                    color,
-                  ],
-            ] as any)
-          : color;
         if (existing) {
           if (renderSignaturesRef.current[renderKey] === renderSignature) return;
           removeLayerFromMap(map, countryIso3, elementId, handlersRef.current);
@@ -3641,294 +2670,15 @@ export default function RealMapExplorerPage({
           delete renderSignaturesRef.current[renderKey];
         }
 
-        map.addSource(ids.source, { type: "geojson", data });
-        let interactiveLayerId = ids.line;
-        let additionalInteractiveLayerId: string | undefined;
-        if (renderer === "line") {
-          const voltageWidth = isPrimary
-            ? ([
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                4,
-                [
-                  "match",
-                  ["get", "voltageKv"],
-                  110,
-                  1.5,
-                  220,
-                  2.2,
-                  500,
-                  3,
-                  1.3,
-                ],
-                9,
-                [
-                  "match",
-                  ["get", "voltageKv"],
-                  110,
-                  3,
-                  220,
-                  4.2,
-                  500,
-                  5.6,
-                  2.8,
-                ],
-              ] as any)
-            : 1.15;
-          map.addLayer({
-            id: ids.line,
-            type: "line",
-            source: ids.source,
-            layout: { "line-cap": "round", "line-join": "round" },
-            paint: {
-              "line-color": [
-                "match",
-                ["get", "voltageKv"],
-                110,
-                "#e59b32",
-                220,
-                "#d35a3d",
-                500,
-                "#8b2635",
-                color,
-              ] as any,
-              "line-width": voltageWidth,
-              "line-opacity": roleOpacity,
-            },
+        const { interactiveLayerId, additionalInteractiveLayerId } =
+          mountAreaLayerV152(map, prepared, {
+            ids,
+            color,
+            isPrimary,
+            contextIndex,
+            roleOpacity,
+            icons: true,
           });
-          map.addLayer({
-            id: ids.lineHit,
-            type: "line",
-            source: ids.source,
-            paint: {
-              "line-color": "#000000",
-              "line-width": isPrimary ? 16 : 14,
-              "line-opacity": 0.001,
-            },
-          });
-          map.addLayer({
-            id: ids.selection,
-            type: "line",
-            source: ids.source,
-            filter: ["==", ["get", "selectionKey"], "__none__"],
-            paint: {
-              "line-color": "#fff3a6",
-              "line-width": isPrimary ? 6 : 5,
-              "line-opacity": 0.96,
-            },
-          });
-          interactiveLayerId = ids.lineHit;
-        } else if (isBudgetContext) {
-          interactiveLayerId = ids.pointHit;
-          const valueRadius =
-            choropleth && choropleth.minimum !== choropleth.maximum
-              ? ([
-                  "interpolate",
-                  ["linear"],
-                  ["to-number", ["get", "value"]],
-                  choropleth.minimum,
-                  7,
-                  choropleth.maximum,
-                  20,
-                ] as any)
-              : 12;
-          map.addLayer({
-            id: ids.point,
-            type: "circle",
-            source: ids.source,
-            paint: {
-              "circle-color": color,
-              "circle-radius": valueRadius,
-              "circle-opacity": 0.58,
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": 2,
-            },
-          });
-          map.addLayer({
-            id: ids.pointHit,
-            type: "circle",
-            source: ids.source,
-            paint: {
-              "circle-color": "#000000",
-              "circle-radius": ["max", valueRadius, 14] as any,
-              "circle-opacity": 0.001,
-            },
-          });
-          map.addLayer({
-            id: ids.selection,
-            type: "circle",
-            source: ids.source,
-            filter: ["==", ["get", "selectionKey"], "__none__"],
-            paint: {
-              "circle-color": "rgba(0,0,0,0)",
-              "circle-radius": ["+", valueRadius, 4] as any,
-              "circle-stroke-color": "#f0a51a",
-              "circle-stroke-width": 3.5,
-            },
-          });
-        } else if (isRegionalScope) {
-          interactiveLayerId = ids.fill;
-          additionalInteractiveLayerId = ids.pointHit;
-          const scopeFilter = [
-            "==",
-            ["get", "geometryRole"],
-            "regional-scope",
-          ] as any;
-          const activityFilter = [
-            "==",
-            ["get", "geometryRole"],
-            "activity-site",
-          ] as any;
-          map.addLayer({
-            id: ids.fill,
-            type: "fill",
-            source: ids.source,
-            filter: scopeFilter,
-            paint: {
-              "fill-color": color,
-              "fill-opacity": isPrimary ? 0.2 : 0.08,
-            },
-          });
-          map.addLayer({
-            id: ids.outline,
-            type: "line",
-            source: ids.source,
-            filter: scopeFilter,
-            paint: {
-              "line-color": color,
-              "line-width": isPrimary ? 2.6 : 1.8,
-              "line-opacity": isPrimary ? 0.92 : 0.58,
-              "line-dasharray": [3, 2],
-            },
-          });
-          map.addLayer({
-            id: ids.point,
-            type: "circle",
-            source: ids.source,
-            filter: activityFilter,
-            paint: {
-              "circle-color": color,
-              "circle-radius": isPrimary ? 7 : 4.5,
-              "circle-opacity": 0,
-              "circle-stroke-color": "#ffffff",
-              "circle-stroke-width": isPrimary ? 2 : 1,
-            },
-          });
-          const regionalActivitySymbolId = "cdp-v133-d018-activity-diamond";
-          ensurePublicPointSymbolImageV129(
-            map,
-            regionalActivitySymbolId,
-            "diamond",
-            color
-          );
-          map.addLayer({
-            id: ids.pointSymbol,
-            type: "symbol",
-            source: ids.source,
-            filter: activityFilter,
-            layout: {
-              "icon-allow-overlap": true,
-              "icon-image": regionalActivitySymbolId,
-              "icon-size": isPrimary ? 1 : 0.78,
-            },
-            paint: { "icon-opacity": isPrimary ? 0.96 : 0.64 },
-          });
-          map.addLayer({
-            id: ids.pointHit,
-            type: "circle",
-            source: ids.source,
-            filter: activityFilter,
-            paint: {
-              "circle-color": "#000000",
-              "circle-radius": 14,
-              "circle-opacity": 0.001,
-            },
-          });
-          map.addLayer({
-            id: ids.pointSelection,
-            type: "circle",
-            source: ids.source,
-            filter: ["==", ["get", "selectionKey"], "__none__"],
-            paint: {
-              "circle-color": color,
-              "circle-radius": isPrimary ? 10 : 8,
-              "circle-opacity": 1,
-              "circle-stroke-color": "#f0a51a",
-              "circle-stroke-width": 4,
-            },
-          });
-          map.addLayer({
-            id: ids.selection,
-            type: "line",
-            source: ids.source,
-            filter: ["==", ["get", "selectionKey"], "__none__"],
-            paint: {
-              "line-color": "#f0a51a",
-              "line-width": isPrimary ? 4 : 3,
-              "line-opacity": 1,
-            },
-          });
-        } else {
-          interactiveLayerId = ids.fill;
-          map.addLayer({
-            id: ids.fill,
-            type: "fill",
-            source: ids.source,
-            paint: {
-              "fill-color": fillColor,
-              "fill-opacity": isPrimary ? 0.76 : 0,
-            },
-          });
-          map.addLayer({
-            id: ids.outline,
-            type: "line",
-            source: ids.source,
-            paint: {
-              "line-color": isPrimary ? "#48665a" : color,
-              "line-width": isPrimary
-                ? 0.95
-                : contextIndex === 0
-                ? 3.4
-                : 1.8,
-              "line-opacity": isPrimary
-                ? 0.82
-                : contextIndex === 0
-                ? 0.55
-                : 0.88,
-              ...(isPrimary
-                ? {}
-                : {
-                    "line-dasharray":
-                      contextIndex === 0 ? [1, 1.5] : [4, 2],
-                  }),
-            },
-          });
-          if (!isPrimary) {
-            map.addLayer({
-              id: ids.lineHit,
-              type: "line",
-              source: ids.source,
-              paint: {
-                "line-color": "#000000",
-                "line-width": 14,
-                "line-opacity": 0.001,
-              },
-            });
-            interactiveLayerId = ids.lineHit;
-          }
-          map.addLayer({
-            id: ids.selection,
-            type: "line",
-            source: ids.source,
-            filter: ["==", ["get", "selectionKey"], "__none__"],
-            paint: {
-              "line-color": "#f0a51a",
-              "line-width": isPrimary ? 3.4 : 4.2,
-              "line-opacity": 1,
-            },
-          });
-        }
 
         const onClick = (event: MapLayerMouseEvent) => {
           if (
@@ -4223,21 +2973,20 @@ export default function RealMapExplorerPage({
 
       const records = recordsByElement[elementId];
       if (!records) return;
-      const filteredRecords = filterRecords(records, layer, filters);
-      const data = featureCollection(
-        filteredRecords,
+      const prepared = preparePointLayerV152({
         layer,
-        prepareLayerRecordsV138(records, layer),
-        { sidecar: locationsByElementV151[elementId], system: boundaryContextV151.system }
-      );
-      const renderKey = runtimeKey(countryIso3, elementId);
-      const renderSignature = JSON.stringify({
-        filters: selectedFilterDimensionsV125(layer, filters),
-        recordCount: filteredRecords.length,
-        boundary: boundaryContextV151.system,
-        located: Boolean(locationsByElementV151[elementId]),
-        role: isPrimary ? "primary" : "context",
+        records,
+        filters,
+        location: {
+          sidecar: locationsByElementV151[elementId],
+          system: boundaryContextV151.system,
+        },
+        isPrimary,
+        icons: true,
+        color,
       });
+      const { renderSignature } = prepared;
+      const renderKey = runtimeKey(countryIso3, elementId);
       const existing = map.getSource(ids.source) as GeoJSONSource | undefined;
       if (existing) {
         if (renderSignaturesRef.current[renderKey] === renderSignature) return;
@@ -4246,172 +2995,7 @@ export default function RealMapExplorerPage({
         delete renderSignaturesRef.current[renderKey];
       }
 
-      map.addSource(ids.source, {
-        type: "geojson",
-        data,
-        cluster: layer.cluster,
-        clusterMaxZoom: 13,
-        clusterRadius: isPrimary ? 46 : 28,
-      });
-      if (layer.cluster) {
-        map.addLayer({
-          id: ids.cluster,
-          type: "circle",
-          source: ids.source,
-          filter: ["has", "point_count"],
-          paint: {
-            "circle-color": color,
-            "circle-opacity": isPrimary ? 0.84 : 0.34,
-            "circle-radius": [
-              "step",
-              ["get", "point_count"],
-              isPrimary ? 17 : 11,
-              100,
-              isPrimary ? 22 : 14,
-              750,
-              isPrimary ? 29 : 18,
-            ],
-            "circle-stroke-color": "#ffffff",
-            "circle-stroke-width": isPrimary ? 2 : 1,
-          },
-        });
-        map.addLayer({
-          id: ids.clusterCount,
-          type: "symbol",
-          source: ids.source,
-          filter: ["has", "point_count"],
-          layout: {
-            "text-field": "{point_count_abbreviated}",
-            // The glyph server (V150 backdrop) serves Noto Sans; MapLibre's
-            // default Open Sans stack is not there and would 404 every cluster.
-            "text-font": ["Noto Sans Regular"],
-            "text-size": isPrimary ? 12 : 10,
-          },
-          paint: {
-            "text-color": isPrimary ? "#ffffff" : "#284b3e",
-            "text-opacity": isPrimary ? 1 : 0.72,
-          },
-        });
-      }
-      const pointColor =
-        elementId === "A-023" && isPrimary
-          ? ([
-              "match",
-              ["get", "fuelType"],
-              ...Object.entries(A023_FUEL_COLORS_V126).flatMap(
-                ([fuel, fuelColor]) => [fuel, fuelColor]
-              ),
-              color,
-            ] as any)
-          : color;
-      const pointRadius =
-        elementId === "A-023" && isPrimary
-          ? ([
-              "interpolate",
-              ["linear"],
-              ["to-number", ["get", "capacityMw"], 0],
-              0,
-              4,
-              100,
-              5.5,
-              500,
-              7.5,
-              1000,
-              10,
-            ] as any)
-          : isPrimary
-          ? 7
-          : 4.2;
-      const pointSymbolShape = publicMapSymbolShapeV129(layer);
-      const pointSymbolImageId = `cdp-v129-${elementId
-        .toLowerCase()
-        .replace(/[^a-z0-9-]/g, "-")}-${pointSymbolShape}`;
-      ensurePublicPointSymbolImageV129(
-        map,
-        pointSymbolImageId,
-        pointSymbolShape,
-        color
-      );
-      map.addLayer({
-        id: ids.point,
-        type: "circle",
-        source: ids.source,
-        ...(layer.cluster
-          ? { filter: ["!", ["has", "point_count"]] as any }
-          : {}),
-        paint: {
-          "circle-color": pointColor,
-          "circle-radius": pointRadius,
-          // A row placed at a city or district centre is drawn hollow, so a
-          // reader never takes a representative point for a building.
-          "circle-opacity": [
-            "case",
-            ["==", ["get", "approximate"], true],
-            pointSymbolShape === "circle" ? 0.12 : 0,
-            pointSymbolShape === "circle" ? (isPrimary ? 0.88 : 0.4) : 0,
-          ] as any,
-          "circle-stroke-color": [
-            "case",
-            ["==", ["get", "approximate"], true],
-            color,
-            "#ffffff",
-          ] as any,
-          "circle-stroke-width": [
-            "case",
-            ["==", ["get", "approximate"], true],
-            pointSymbolShape === "circle" ? 2 : 0,
-            isPrimary ? 1.5 : 0.8,
-          ] as any,
-        },
-      });
-      map.addLayer({
-        id: ids.pointHit,
-        type: "circle",
-        source: ids.source,
-        ...(layer.cluster
-          ? { filter: ["!", ["has", "point_count"]] as any }
-          : {}),
-        paint: {
-          "circle-color": "#000000",
-          "circle-radius": isPrimary ? 14 : 12,
-          "circle-opacity": 0.001,
-        },
-      });
-      if (pointSymbolShape !== "circle") {
-        map.addLayer({
-          id: ids.pointSymbol,
-          type: "symbol",
-          source: ids.source,
-          ...(layer.cluster
-            ? { filter: ["!", ["has", "point_count"]] as any }
-            : {}),
-          layout: {
-            "icon-allow-overlap": true,
-            "icon-image": pointSymbolImageId,
-            "icon-size": isPrimary ? 1 : 0.78,
-          },
-          paint: {
-            "icon-opacity": [
-              "case",
-              ["==", ["get", "approximate"], true],
-              isPrimary ? 0.45 : 0.25,
-              isPrimary ? 0.9 : 0.45,
-            ] as any,
-          },
-        });
-      }
-      map.addLayer({
-        id: ids.selection,
-        type: "circle",
-        source: ids.source,
-        filter: ["==", ["get", "selectionKey"], "__none__"],
-        paint: {
-          "circle-color": "rgba(0,0,0,0)",
-          "circle-radius": isPrimary ? 12 : 10,
-          "circle-stroke-color": "#f0a51a",
-          "circle-stroke-width": 3.5,
-        },
-      });
+      mountPointLayerV152(map, prepared, { layer, ids, color, isPrimary }, { icons: true });
 
       const onPointClick = (event: MapLayerMouseEvent) => {
         if (
@@ -4490,14 +3074,6 @@ export default function RealMapExplorerPage({
           number,
           number
         ];
-        const name = publicMapFeatureNameV126(
-          feature.properties?.name,
-          publicMapLayerTitleV126(elementId, layer.publicShortTitle)
-        );
-        const layerTitle = publicMapLayerTitleV126(
-          elementId,
-          layer.publicShortTitle
-        );
         popupRef.current?.remove();
         popupOwnerRef.current = pointPopupOwnerKey;
         if (overlapHits.length > 1) {
@@ -4513,6 +3089,10 @@ export default function RealMapExplorerPage({
             .addTo(map);
           return;
         }
+        const hoveredKey = String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? "");
+        if (map.getLayer(ids.pointHover)) {
+          map.setFilter(ids.pointHover, ["==", ["get", "selectionKey"], hoveredKey || "__none__"]);
+        }
         popupRef.current = new maplibregl.Popup({
           closeButton: false,
           closeOnClick: false,
@@ -4520,29 +3100,19 @@ export default function RealMapExplorerPage({
         })
           .setLngLat(coordinates)
           .setDOMContent(
-            createMapFeaturePopupV148({
-              elementId,
-              selectionKey: String(feature.properties?.selectionKey ?? feature.properties?.recordId ?? ""),
-              title: name,
-              dataset: layerTitle,
+            createMapPointPopupV152({
+              layer,
+              properties: (feature.properties || {}) as Record<string, unknown>,
               primary: isPrimary,
-              facts: mapFactsV148(layer, (feature.properties || {}) as Record<string, unknown>)
-                .filter((fact) => fact.key !== "sourceLabel"),
-              source: mapSourceLineV148((feature.properties || {}) as Record<string, unknown>),
-              note:
-                [
-                  feature.properties?.approximate ? "소재 지역의 대표 위치" : "",
-                  publicTextV126(feature.properties?.locationLabelV151)
-                    ? `소재 ${publicTextV126(feature.properties?.locationLabelV151)}`
-                    : "",
-                ]
-                  .filter(Boolean)
-                  .join(" · ") || undefined,
+              entity: recordIndexRef.current.get(`${elementId}:${String(feature.properties?.recordId || "")}`) || null,
             })
           )
           .addTo(map);
       };
       const onPointLeave = () => {
+        if (map.getLayer(ids.pointHover)) {
+          map.setFilter(ids.pointHover, ["==", ["get", "selectionKey"], "__none__"]);
+        }
         if (popupOwnerRef.current !== pointPopupOwnerKey) return;
         map.getCanvas().style.cursor = "";
         popupRef.current?.remove();
@@ -5027,6 +3597,33 @@ export default function RealMapExplorerPage({
         focusedLayer.accuracyNotice
       )
     : "";
+  // V152: the focused point layer's legend = the drawn features' own icons and
+  // ring colours, counted under the current filters (the map and the legend
+  // read the same properties, so they cannot disagree).
+  const focusedIconLegendV152 = useMemo(() => {
+    if (!focusedLayer || !(MAP_ICON_LAYER_IDS_V152 as readonly string[]).includes(focusedLayer.elementId)) return [];
+    const records = recordsByElement[focusedLayer.elementId];
+    if (!records) return [];
+    const color = LAYER_COLORS[focusedLayer.elementId] || "#176a4b";
+    const { data } = preparePointLayerV152({
+      layer: focusedLayer,
+      records,
+      filters,
+      location: {
+        sidecar: locationsByElementV151[focusedLayer.elementId],
+        system: boundaryContextV151.system,
+      },
+      isPrimary: true,
+      icons: true,
+      color,
+    });
+    return mapIconLegendEntriesV152(
+      focusedLayer.elementId,
+      data.features.map((feature) => (feature.properties || {}) as Record<string, unknown>),
+      color,
+      publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
+    );
+  }, [boundaryContextV151.system, filters, focusedLayer, locationsByElementV151, recordsByElement]);
   const activeLegendIdentitiesV129 = useMemo(() => {
     const ordered = [
       ...(primaryLayerId ? [primaryLayerId] : []),
@@ -8208,12 +6805,24 @@ export default function RealMapExplorerPage({
                       data-testid="map-active-layer-legend-item"
                       className={item.hidden ? "is-hidden" : undefined}
                     >
-                      <i
-                        className={`cdp-map-symbol cdp-map-symbol--${item.shape}`}
-                        style={{ "--cdp-map-symbol-color": item.color } as any}
-                        aria-hidden="true"
-                        data-testid="map-layer-legend-item"
-                      />
+                      {mapLayerIconV152(item.elementId) && item.shape !== "area" && item.shape !== "line" ? (
+                        <i
+                          className="cdp-map-symbol cdp-map-symbol--icon"
+                          style={{ "--cdp-map-symbol-color": item.color } as any}
+                          aria-hidden="true"
+                          data-testid="map-layer-legend-item"
+                          data-icon-id={mapLayerIconV152(item.elementId) || undefined}
+                        >
+                          <MapIconBadgeV152 iconId={mapLayerIconV152(item.elementId)!} color={item.color} size={20} />
+                        </i>
+                      ) : (
+                        <i
+                          className={`cdp-map-symbol cdp-map-symbol--${item.shape}`}
+                          style={{ "--cdp-map-symbol-color": item.color } as any}
+                          aria-hidden="true"
+                          data-testid="map-layer-legend-item"
+                        />
+                      )}
                       <span>
                         <strong>
                           <PublicTermTextV134 text={item.title} />
@@ -8296,32 +6905,19 @@ export default function RealMapExplorerPage({
               ) : focusedLayer.elementId === "A-023" ? (
                 <div
                   className="cdp-map-legend__power"
-                  aria-label="발전원 색상과 설비용량 크기"
+                  aria-label="발전원 기호와 설비용량 크기"
                 >
-                  <strong>발전원 색상</strong>
-                  <ul>
-                    {Object.entries(A023_FUEL_COLORS_V126).map(
-                      ([fuel, fuelColor]) => (
-                        <li key={fuel}>
-                          <i style={{ background: fuelColor }} />
-                          <span>{fuel}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
+                  <strong>발전원</strong>
+                  <MapIconLegendV152 entries={focusedIconLegendV152} compact />
                   <strong>설비용량 크기</strong>
                   <div className="cdp-map-legend__capacity">
-                    {[
-                      ["10 MW 미만", 6],
-                      ["10~99 MW", 8],
-                      ["100~499 MW", 11],
-                      ["500 MW 이상", 14],
-                    ].map(([label, size]) => (
-                      <span key={String(label)}>
+                    {(["10 MW 미만", "10~99 MW", "100~499 MW", "500 MW 이상"] as const).map((label, index) => (
+                      <span key={label}>
                         <i
+                          className="cdp-map-legend__capacity-badge"
                           style={{
-                            width: Number(size),
-                            height: Number(size),
+                            width: A023_CAPACITY_BADGE_RADIUS_V152.z5[index] * 2,
+                            height: A023_CAPACITY_BADGE_RADIUS_V152.z5[index] * 2,
                           }}
                         />
                         {label}
@@ -8333,7 +6929,14 @@ export default function RealMapExplorerPage({
               ) : rendererOf(focusedLayer) === "regional-scope" ? (
                 <div className="cdp-map-legend__explanation">
                   <span>점선 경계·옅은 면: 사업 참여지역</span>
-                  <span>점: 원문에서 검증된 세부 활동지역</span>
+                  <span>
+                    <MapIconBadgeV152
+                      iconId="world"
+                      color={LAYER_COLORS[focusedLayer.elementId] || "#226f96"}
+                      size={18}
+                    />
+                    점: 원문에서 검증된 세부 활동지역
+                  </span>
                   <p>국가 대표좌표는 실제 사업 위치로 표시하지 않습니다.</p>
                 </div>
               ) : rendererOf(focusedLayer) === "admin1-choropleth" ||
@@ -8373,6 +6976,11 @@ export default function RealMapExplorerPage({
                   <p>
                     값 있음 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
                   </p>
+                </div>
+              ) : focusedIconLegendV152.length ? (
+                <div className="cdp-map-legend__icons" aria-label="기호와 분류별 위치 수">
+                  <MapIconLegendV152 entries={focusedIconLegendV152} compact />
+                  {focusedLayer.cluster && <p>묶음 숫자: 포함된 위치 수</p>}
                 </div>
               ) : (
                 <div className="cdp-map-legend__explanation">
@@ -9084,9 +7692,13 @@ export default function RealMapExplorerPage({
                       />
                       <div className="cdp-map-a023-key-facts-v132"
                         data-testid={selected.elementId === "A-023" ? "a023-map-selected-key-facts-v132" : "map-selected-facts-v148"}>
-                        {mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
-                          .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
-                          .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)}
+                        {facilityCardSpecV153(selected.elementId) ? (
+                          <FacilityCardV153 elementId={selected.elementId} entity={selected} compact />
+                        ) : (
+                          mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
+                            .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
+                            .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)
+                        )}
                         <Evidence label="자료연도" value={["B-023", "B-028"].includes(selected.elementId) ? "관측값별 시점 참조" : String(selected.provenance.referenceYear || selectedLayer.selectors?.defaultPeriod || selectedLayer.latestYear || "")} />
                       </div>
                       {selectedMemberFactsV138.map((fact) => (
@@ -9214,83 +7826,4 @@ function Evidence({ label, value }: { label: string; value: string }) {
       </strong>
     </div>
   );
-}
-
-function removeLayerFromMap(
-  map: MapLibreMap,
-  countryIso3: string,
-  elementId: string,
-  handlers: Record<string, LayerHandlers>
-) {
-  const ids = layerRuntimeIds(countryIso3, elementId);
-  const key = runtimeKey(countryIso3, elementId);
-  const handler = handlers[key];
-  if (handler) {
-    if (map.getLayer(handler.interactiveLayerId)) {
-      map.off("click", handler.interactiveLayerId, handler.onClick);
-      map.off("mouseenter", handler.interactiveLayerId, handler.onEnter);
-      if (handler.onMove) {
-        map.off("mousemove", handler.interactiveLayerId, handler.onMove);
-      }
-      map.off("mouseleave", handler.interactiveLayerId, handler.onPointLeave);
-    }
-    if (
-      handler.additionalInteractiveLayerId &&
-      map.getLayer(handler.additionalInteractiveLayerId)
-    ) {
-      map.off("click", handler.additionalInteractiveLayerId, handler.onClick);
-      map.off(
-        "mouseenter",
-        handler.additionalInteractiveLayerId,
-        handler.onEnter
-      );
-      if (handler.onMove) {
-        map.off(
-          "mousemove",
-          handler.additionalInteractiveLayerId,
-          handler.onMove
-        );
-      }
-      map.off(
-        "mouseleave",
-        handler.additionalInteractiveLayerId,
-        handler.onPointLeave
-      );
-    }
-    if (
-      handler.clusterLayerId &&
-      handler.onClusterClick &&
-      map.getLayer(handler.clusterLayerId)
-    ) {
-      map.off("click", handler.clusterLayerId, handler.onClusterClick);
-    }
-    if (handler.clusterLayerId && map.getLayer(handler.clusterLayerId)) {
-      if (handler.onClusterEnter) {
-        map.off("mouseenter", handler.clusterLayerId, handler.onClusterEnter);
-      }
-      if (handler.onClusterMove) {
-        map.off("mousemove", handler.clusterLayerId, handler.onClusterMove);
-      }
-      if (handler.onClusterLeave) {
-        map.off("mouseleave", handler.clusterLayerId, handler.onClusterLeave);
-      }
-    }
-    delete handlers[key];
-  }
-  [
-    ids.selection,
-    ids.pointSelection,
-    ids.clusterCount,
-    ids.pointHit,
-    ids.pointSymbol,
-    ids.point,
-    ids.cluster,
-    ids.lineHit,
-    ids.line,
-    ids.fill,
-    ids.outline,
-  ].forEach((id) => {
-    if (map.getLayer(id)) map.removeLayer(id);
-  });
-  if (map.getSource(ids.source)) map.removeSource(ids.source);
 }
