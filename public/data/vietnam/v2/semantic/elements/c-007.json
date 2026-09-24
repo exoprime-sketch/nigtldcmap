@@ -10,10 +10,30 @@
     }
   ],
   "elementId": "C-007",
-  "entityCount": 7,
+  "entityCount": 32,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 33,
+  "indicatorCount": 38,
   "indicators": [
+    {
+      "axisGroupKey": "measure-b30dc658e0df|분야",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "대상 분야(감축/적응/재정/기술/역량)",
+      "indicatorId": "C-007_activity_scope",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b30dc658e0df",
+        "labelKo": "대상 분야(감축/적응/재정/기술/역량)",
+        "unit": "분야",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b30dc658e0df|분야||C-007_activity_scope",
+      "sourceCaveat": null,
+      "sourceLabel": "대상 분야(감축/적응/재정/기술/역량)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-a209ac74f079|—",
       "dimensionLabels": {
@@ -537,21 +557,41 @@
       }
     },
     {
-      "axisGroupKey": "measure-180a945f25f4|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "axisGroupKey": "measure-30335215cfac|개국",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "파리협정 제6.8조 비시장 접근법 참여 현황",
-      "indicatorId": "C-007_nma_record",
+      "displayLabel": "참여 기관",
+      "indicatorId": "C-007_participating_body",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-180a945f25f4",
-        "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
+        "key": "measure-30335215cfac",
+        "labelKo": "참여 기관",
+        "unit": "개국",
+        "unitFamily": "count"
       },
-      "seriesKey": "measure-180a945f25f4|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-007_nma_record",
+      "seriesKey": "measure-30335215cfac|개국||C-007_participating_body",
       "sourceCaveat": null,
-      "sourceLabel": "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "sourceLabel": "참여 기관",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-44ceb9bf0a47|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "참여 여부",
+      "indicatorId": "C-007_participation_status",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-44ceb9bf0a47",
+        "labelKo": "참여 여부",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-44ceb9bf0a47|여부||C-007_participation_status",
+      "sourceCaveat": null,
+      "sourceLabel": "참여 여부",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -785,6 +825,66 @@
         "sourceRow": 13,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-16c66d4134ff|회",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "등록된 활동명",
+      "indicatorId": "C-007_registered_activity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-16c66d4134ff",
+        "labelKo": "등록된 활동명",
+        "unit": "회",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-16c66d4134ff|회||C-007_registered_activity",
+      "sourceCaveat": null,
+      "sourceLabel": "등록된 활동명",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-dc28b1c924c1|date",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "등록 일자",
+      "indicatorId": "C-007_registration_date",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dc28b1c924c1",
+        "labelKo": "등록 일자",
+        "unit": "date",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-dc28b1c924c1|date||C-007_registration_date",
+      "sourceCaveat": null,
+      "sourceLabel": "등록 일자",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL)",
+      "indicatorId": "C-007_source_link",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-007_source_link",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
@@ -1152,6 +1252,30 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-b30dc658e0df",
+      "labelKo": "대상 분야(감축/적응/재정/기술/역량)",
+      "recordCount": 0,
+      "unit": "분야",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-dc28b1c924c1",
+      "labelKo": "등록 일자",
+      "recordCount": 0,
+      "unit": "date",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-16c66d4134ff",
+      "labelKo": "등록된 활동명",
+      "recordCount": 0,
+      "unit": "회",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-5cc5fedca9e1",
       "labelKo": "베트남 참여 현황",
       "recordCount": 0,
@@ -1175,6 +1299,22 @@
       "unitFamily": "text"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-92ed3a9b9108",
+      "labelKo": "원본 링크(URL)",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-30335215cfac",
+      "labelKo": "참여 기관",
+      "recordCount": 0,
+      "unit": "개국",
+      "unitFamily": "count"
+    },
+    {
       "indicatorCount": 4,
       "key": "measure-abd4be0c93b3",
       "labelKo": "참여 상태 코드 체계",
@@ -1184,11 +1324,11 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-180a945f25f4",
-      "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "key": "measure-44ceb9bf0a47",
+      "labelKo": "참여 여부",
       "recordCount": 0,
-      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-      "unitFamily": "other"
+      "unit": "여부",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 3,

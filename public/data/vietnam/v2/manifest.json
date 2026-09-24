@@ -15,7 +15,7 @@
     "regionalProjectGeometry": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
     "rightsMatrix": "/data/vietnam/v2/rights-matrix.json",
     "searchIndex": [
-      "/data/vietnam/v2/packs/search-index-v124-5d50990c.json"
+      "/data/vietnam/v2/packs/search-index-v124-1fbe22e6.json"
     ],
     "sourceRegistry": "/data/vietnam/v2/packs/source-registry-v124-68d4d85c.json",
     "spatialLayers": [
@@ -31,10 +31,10 @@
   },
   "authorizedElementCount": 20,
   "authorizedRows": {
-    "entities": 350,
-    "found": 522,
-    "observations": 172,
-    "published": 522,
+    "entities": 302,
+    "found": 441,
+    "observations": 139,
+    "published": 441,
     "suppressed": 0,
     "withoutPopulatedRows": [
       "E-011",
@@ -60,7 +60,7 @@
   "downloadableElementCount": 147,
   "frameworkElements": 152,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "mapFeatureCount": 5319,
+  "mapFeatureCount": 4463,
   "mapLayerCount": 42,
   "packCount": 26,
   "publicStatusCounts": {
@@ -73,28 +73,28 @@
     "schema-only": 1
   },
   "rawRows": {
-    "entities": 161675,
-    "metadata": 2159,
-    "nonstandardRows": 342,
-    "normalizedCoreRows": 180480,
-    "observations": 16646,
-    "total": 180822
+    "entities": 153079,
+    "metadata": 2219,
+    "nonstandardRows": 310,
+    "normalizedCoreRows": 171565,
+    "observations": 16267,
+    "total": 171875
   },
   "rowBalance": {
-    "explicitPlaceholderRows": 52,
+    "explicitPlaceholderRows": 19,
     "formOrAuxiliaryRows": 0,
     "matches": true,
-    "processedCoreRows": 180480,
-    "processedNonstandardRows": 342,
-    "processedRows": 180822,
-    "sourceOriginalRows": 180822,
-    "supplementalSourceRows": 290
+    "processedCoreRows": 171565,
+    "processedNonstandardRows": 310,
+    "processedRows": 171875,
+    "sourceOriginalRows": 171875,
+    "supplementalSourceRows": 291
   },
   "runtimeVersion": "v124-gzip-json-envelope-v1",
   "schemaVersion": "v124",
   "shardCount": 26,
   "sourcePackage": "vietnam-data(4).zip",
-  "sourcePackageSha256": "a171c10db68fae1e34830d0f75edf69c6579e722379c08417982e0e1da38ef42",
+  "sourcePackageSha256": "9e3feb01519e4887c8384f3e0f34d566a3859c4e311fd2f2002025d4072859e3",
   "unexplainedElements": 0,
   "workbookFiles": 149
 }

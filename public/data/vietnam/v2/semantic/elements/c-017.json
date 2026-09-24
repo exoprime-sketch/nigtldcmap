@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-017",
-  "entityCount": 56,
+  "entityCount": 52,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 53,
+  "indicatorCount": 62,
   "indicators": [
     {
       "axisGroupKey": "measure-57ba3704915e|—",
@@ -111,21 +111,121 @@
       }
     },
     {
-      "axisGroupKey": "measure-ff551ff2eb14|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "axisGroupKey": "measure-794e7b0c2f47|기관",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "재생에너지 투자 인센티브",
-      "indicatorId": "C-017_incentive",
+      "displayLabel": "시행 기관 · implementing_agency_vanban_chinhphu",
+      "indicatorId": "C-017_implementing_agency_vanban_chinhphu",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-ff551ff2eb14",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "key": "measure-794e7b0c2f47",
+        "labelKo": "시행 기관",
+        "unit": "기관",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-794e7b0c2f47|기관||C-017_implementing_agency_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "시행 기관",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-81b71e728f9d|건",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "시행 기관",
+      "indicatorId": "C-017_implementing_agency_vanban_chinhphu_2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81b71e728f9d",
+        "labelKo": "시행 기관",
+        "unit": "건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-81b71e728f9d|건||C-017_implementing_agency_vanban_chinhphu_2",
+      "sourceCaveat": null,
+      "sourceLabel": "시행 기관",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-794e7b0c2f47|기관",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "시행 기관 · implementing_agency_xaydungchinhsach_chinh",
+      "indicatorId": "C-017_implementing_agency_xaydungchinhsach_chinh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-794e7b0c2f47",
+        "labelKo": "시행 기관",
+        "unit": "기관",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-794e7b0c2f47|기관||C-017_implementing_agency_xaydungchinhsach_chinh",
+      "sourceCaveat": null,
+      "sourceLabel": "시행 기관",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-d304513074b2|년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인센티브 조건(가격/기간/용량)",
+      "indicatorId": "C-017_incentive_condition",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d304513074b2",
+        "labelKo": "인센티브 조건(가격/기간/용량)",
+        "unit": "년",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-ff551ff2eb14|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-017_incentive",
+      "seriesKey": "measure-d304513074b2|년||C-017_incentive_condition",
       "sourceCaveat": null,
-      "sourceLabel": "재생에너지 투자 인센티브",
+      "sourceLabel": "인센티브 조건(가격/기간/용량)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-bfa56044f4cb|여부",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상태 · 상태 [여부]",
+      "indicatorId": "C-017_incentive_status_datafiles_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bfa56044f4cb",
+        "labelKo": "상태",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bfa56044f4cb|여부||C-017_incentive_status_datafiles_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "상태",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5f6de945f241|VND/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "상태 · 상태 [VND/kWh]",
+      "indicatorId": "C-017_incentive_status_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f6de945f241",
+        "labelKo": "상태",
+        "unit": "VND/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-5f6de945f241|VND/kWh||C-017_incentive_status_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "상태",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -687,6 +787,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-d097b2eb7f3c|đồng/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링) · 인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링) [đồng/kWh]",
+      "indicatorId": "C-017_incentive_type_erea",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d097b2eb7f3c",
+        "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+        "unit": "đồng/kWh",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-d097b2eb7f3c|đồng/kWh||C-017_incentive_type_erea",
+      "sourceCaveat": null,
+      "sourceLabel": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a4b1059fa10e|VND/kWh",
       "dimensionLabels": {
         "detail": "현행 가격제도 (전환기 · DPPA · 자가소비) · 태양광 지상형",
@@ -757,6 +877,26 @@
         "sourceRow": 12,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-27e08d734fb5|VND/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링) · 인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링) [VND/kWh]",
+      "indicatorId": "C-017_incentive_type_vanban_chinhphu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-27e08d734fb5",
+        "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+        "unit": "VND/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-27e08d734fb5|VND/kWh||C-017_incentive_type_vanban_chinhphu",
+      "sourceCaveat": null,
+      "sourceLabel": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-1ef969847763|년",
@@ -1717,6 +1857,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-bdd645e4efb9|đồng/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "대상 기술(태양광/풍력/수력/바이오) · target_technology_moit",
+      "indicatorId": "C-017_target_technology_moit",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bdd645e4efb9",
+        "labelKo": "대상 기술(태양광/풍력/수력/바이오)",
+        "unit": "đồng/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-bdd645e4efb9|đồng/kWh||C-017_target_technology_moit",
+      "sourceCaveat": null,
+      "sourceLabel": "대상 기술(태양광/풍력/수력/바이오)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-bdd645e4efb9|đồng/kWh",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "대상 기술(태양광/풍력/수력/바이오) · target_technology_thuvienphapluat",
+      "indicatorId": "C-017_target_technology_thuvienphapluat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bdd645e4efb9",
+        "labelKo": "대상 기술(태양광/풍력/수력/바이오)",
+        "unit": "đồng/kWh",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-bdd645e4efb9|đồng/kWh||C-017_target_technology_thuvienphapluat",
+      "sourceCaveat": null,
+      "sourceLabel": "대상 기술(태양광/풍력/수력/바이오)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-20f971a4ae04|đồng/kWh",
       "dimensionLabels": {
         "detail": "현행 가격제도 · 전환기 협상 상한가",
@@ -1855,11 +2035,35 @@
   ],
   "measures": [
     {
+      "indicatorCount": 2,
+      "key": "measure-bdd645e4efb9",
+      "labelKo": "대상 기술(태양광/풍력/수력/바이오)",
+      "recordCount": 0,
+      "unit": "đồng/kWh",
+      "unitFamily": "energy"
+    },
+    {
       "indicatorCount": 1,
       "key": "measure-fbefd3e70f73",
       "labelKo": "미도입 인센티브 유형",
       "recordCount": 0,
       "unit": "—",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5f6de945f241",
+      "labelKo": "상태",
+      "recordCount": 0,
+      "unit": "VND/kWh",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bfa56044f4cb",
+      "labelKo": "상태",
+      "recordCount": 0,
+      "unit": "여부",
       "unitFamily": "text"
     },
     {
@@ -1877,6 +2081,22 @@
       "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-81b71e728f9d",
+      "labelKo": "시행 기관",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-794e7b0c2f47",
+      "labelKo": "시행 기관",
+      "recordCount": 0,
+      "unit": "기관",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
@@ -1936,6 +2156,22 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-27e08d734fb5",
+      "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+      "recordCount": 0,
+      "unit": "VND/kWh",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d097b2eb7f3c",
+      "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+      "recordCount": 0,
+      "unit": "đồng/kWh",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-69b7ff9b9213",
       "labelKo": "인센티브 조건 (가격 / 기간 / 용량)",
       "recordCount": 0,
@@ -1952,10 +2188,10 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-ff551ff2eb14",
-      "labelKo": "재생에너지 투자 인센티브",
+      "key": "measure-d304513074b2",
+      "labelKo": "인센티브 조건(가격/기간/용량)",
       "recordCount": 0,
-      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unit": "년",
       "unitFamily": "other"
     }
   ],

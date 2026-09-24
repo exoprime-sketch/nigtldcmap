@@ -1,21 +1,21 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-diff-v156.mjs",
-  "generatedAt": "2026-09-24T04:19:03.363Z",
+  "generatedAt": "2026-09-24T08:44:18.915Z",
   "trees": {
-    "current": "public/data/vietnam/v2",
-    "candidate": ".staging/v156/public/data/vietnam/v2"
+    "current": "C:/Users/user/AppData/Local/Temp/claude/C--Users-user-Documents-20260827-----------/35cece45-632e-4ace-a6a4-77c190e0329c/scratchpad/main-baseline/public/data/vietnam/v2",
+    "candidate": "public/data/vietnam/v2"
   },
   "deliveredAt": "2026-09-22",
   "totals": {
     "elements": 152,
-    "unchanged": 151,
+    "unchanged": 147,
     "titleChanged": 1,
     "schemaBreaking": 0,
     "bespokeRendererAffected": 0,
-    "valueChanged": 0,
-    "observationsAdded": 0,
-    "observationsRemoved": 0,
+    "valueChanged": 1,
+    "observationsAdded": 394,
+    "observationsRemoved": 363,
     "indicatorsAdded": 0,
     "indicatorsRemoved": 0
   },
@@ -97,7 +97,7 @@
           "after": 33
         },
         "observations": {
-          "before": 348,
+          "before": 312,
           "after": 348
         },
         "entities": {
@@ -109,7 +109,7 @@
           "after": 2024
         },
         "missingRatePercent": {
-          "before": 10.3,
+          "before": 0,
           "after": 10.3
         }
       },
@@ -119,12 +119,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 348,
+        "matched": 1,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 0,
-        "removed": 0,
+        "added": 347,
+        "removed": 311,
         "samples": []
       },
       "entities": {
@@ -1458,8 +1458,8 @@
           "after": 1
         },
         "entities": {
-          "before": 1,
-          "after": 1
+          "before": 5,
+          "after": 5
         },
         "latestYear": {
           "before": 2026,
@@ -1568,12 +1568,12 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 45,
-          "after": 45
+          "before": 35,
+          "after": 35
         },
         "observations": {
-          "before": 61,
-          "after": 61
+          "before": 35,
+          "after": 35
         },
         "entities": {
           "before": 0,
@@ -1584,8 +1584,8 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 3.3,
-          "after": 3.3
+          "before": 0,
+          "after": 0
         }
       },
       "indicators": {
@@ -1594,7 +1594,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 61,
+        "matched": 35,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -1694,8 +1694,8 @@
           "after": 1
         },
         "entities": {
-          "before": 30,
-          "after": 30
+          "before": 19,
+          "after": 19
         },
         "latestYear": {
           "before": 2026,
@@ -1745,12 +1745,12 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 8,
-          "after": 8
+          "before": 4,
+          "after": 4
         },
         "observations": {
-          "before": 148,
-          "after": 148
+          "before": 16,
+          "after": 16
         },
         "entities": {
           "before": 0,
@@ -1761,8 +1761,8 @@
           "after": 2024
         },
         "missingRatePercent": {
-          "before": 4.7,
-          "after": 4.7
+          "before": 43.8,
+          "after": 43.8
         }
       },
       "indicators": {
@@ -1771,7 +1771,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 148,
+        "matched": 16,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -2099,16 +2099,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 7,
-          "after": 7
+          "before": 6,
+          "after": 6
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 12621,
-          "after": 12621
+          "before": 8371,
+          "after": 8371
         },
         "latestYear": {
           "before": null,
@@ -2457,8 +2457,8 @@
           "after": 261
         },
         "observations": {
-          "before": 255,
-          "after": 255
+          "before": 435,
+          "after": 435
         },
         "entities": {
           "before": 0,
@@ -2479,7 +2479,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 255,
+        "matched": 435,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -2811,7 +2811,7 @@
           "after": 14
         },
         "observations": {
-          "before": 12,
+          "before": 15,
           "after": 12
         },
         "entities": {
@@ -2823,7 +2823,7 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 16.7,
+          "before": 13.3,
           "after": 16.7
         }
       },
@@ -2833,13 +2833,19 @@
         "changed": []
       },
       "observations": {
-        "matched": 12,
-        "valueChanged": 0,
-        "valueChangeRatePercent": 0,
+        "matched": 2,
+        "valueChanged": 1,
+        "valueChangeRatePercent": 50,
         "unitChanged": 0,
-        "added": 0,
-        "removed": 0,
-        "samples": []
+        "added": 10,
+        "removed": 13,
+        "samples": [
+          {
+            "key": "B-015_allowance|2026||v124-b-015-obs-00002",
+            "before": 68391454,
+            "after": 268391454
+          }
+        ]
       },
       "entities": {
         "attributeKeysAdded": [],
@@ -2849,7 +2855,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -2925,16 +2931,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 1424,
-          "after": 1424
+          "before": 1423,
+          "after": 1423
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 4867,
-          "after": 4867
+          "before": 2032,
+          "after": 2032
         },
         "latestYear": {
           "before": null,
@@ -3224,7 +3230,7 @@
           "after": 11
         },
         "observations": {
-          "before": 8,
+          "before": 11,
           "after": 8
         },
         "entities": {
@@ -3246,12 +3252,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 8,
+        "matched": 1,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 0,
-        "removed": 0,
+        "added": 7,
+        "removed": 10,
         "samples": []
       },
       "entities": {
@@ -3262,7 +3268,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -3456,16 +3462,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 14,
-          "after": 14
+          "before": 13,
+          "after": 13
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 108,
-          "after": 108
+          "before": 74,
+          "after": 74
         },
         "latestYear": {
           "before": null,
@@ -3633,16 +3639,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 12,
-          "after": 12
+          "before": 11,
+          "after": 11
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 289,
-          "after": 289
+          "before": 231,
+          "after": 231
         },
         "latestYear": {
           "before": null,
@@ -3692,16 +3698,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 6,
-          "after": 6
+          "before": 5,
+          "after": 5
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 134,
-          "after": 134
+          "before": 100,
+          "after": 100
         },
         "latestYear": {
           "before": null,
@@ -4105,16 +4111,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 59,
-          "after": 59
+          "before": 58,
+          "after": 58
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 781,
-          "after": 781
+          "before": 747,
+          "after": 747
         },
         "latestYear": {
           "before": null,
@@ -4164,12 +4170,12 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 43,
-          "after": 43
+          "before": 25,
+          "after": 25
         },
         "observations": {
-          "before": 399,
-          "after": 399
+          "before": 190,
+          "after": 190
         },
         "entities": {
           "before": 0,
@@ -4180,8 +4186,8 @@
           "after": 2050
         },
         "missingRatePercent": {
-          "before": 0,
-          "after": 0
+          "before": 1.6,
+          "after": 1.6
         }
       },
       "indicators": {
@@ -4190,7 +4196,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 399,
+        "matched": 190,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -4223,16 +4229,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 21,
-          "after": 21
+          "before": 20,
+          "after": 20
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 263,
-          "after": 263
+          "before": 228,
+          "after": 228
         },
         "latestYear": {
           "before": null,
@@ -4282,16 +4288,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 37,
-          "after": 37
+          "before": 36,
+          "after": 36
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 199,
-          "after": 199
+          "before": 165,
+          "after": 165
         },
         "latestYear": {
           "before": null,
@@ -4341,16 +4347,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 53,
-          "after": 53
+          "before": 52,
+          "after": 52
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 147,
-          "after": 147
+          "before": 113,
+          "after": 113
         },
         "latestYear": {
           "before": null,
@@ -4400,16 +4406,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 145,
-          "after": 145
+          "before": 144,
+          "after": 144
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 242,
-          "after": 242
+          "before": 205,
+          "after": 205
         },
         "latestYear": {
           "before": null,
@@ -4518,12 +4524,12 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 27,
-          "after": 27
+          "before": 26,
+          "after": 26
         },
         "observations": {
-          "before": 7,
-          "after": 7
+          "before": 26,
+          "after": 26
         },
         "entities": {
           "before": 0,
@@ -4534,8 +4540,8 @@
           "after": 2026
         },
         "missingRatePercent": {
-          "before": 0,
-          "after": 0
+          "before": 7.7,
+          "after": 7.7
         }
       },
       "indicators": {
@@ -4544,7 +4550,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 7,
+        "matched": 26,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -4581,16 +4587,16 @@
           "after": 46
         },
         "observations": {
-          "before": 224,
-          "after": 224
+          "before": 46,
+          "after": 46
         },
         "entities": {
           "before": 0,
           "after": 0
         },
         "latestYear": {
-          "before": 2025,
-          "after": 2025
+          "before": 2026,
+          "after": 2026
         },
         "missingRatePercent": {
           "before": 0,
@@ -4603,7 +4609,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 224,
+        "matched": 46,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -4813,16 +4819,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 50,
-          "after": 50
+          "before": 60,
+          "after": 60
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 3,
-          "after": 3
+          "before": 49,
+          "after": 49
         },
         "latestYear": {
           "before": null,
@@ -4931,16 +4937,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 100,
-          "after": 100
+          "before": 105,
+          "after": 105
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 253,
-          "after": 253
+          "before": 96,
+          "after": 96
         },
         "latestYear": {
           "before": null,
@@ -5049,16 +5055,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 137,
-          "after": 137
+          "before": 140,
+          "after": 140
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 408,
-          "after": 408
+          "before": 135,
+          "after": 135
         },
         "latestYear": {
           "before": null,
@@ -5108,16 +5114,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 50,
-          "after": 50
+          "before": 62,
+          "after": 62
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 29,
-          "after": 29
+          "before": 50,
+          "after": 50
         },
         "latestYear": {
           "before": null,
@@ -5167,16 +5173,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 33,
-          "after": 33
+          "before": 38,
+          "after": 38
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 7,
-          "after": 7
+          "before": 32,
+          "after": 32
         },
         "latestYear": {
           "before": null,
@@ -5639,16 +5645,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 23,
-          "after": 23
+          "before": 26,
+          "after": 26
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 33,
-          "after": 33
+          "before": 21,
+          "after": 21
         },
         "latestYear": {
           "before": null,
@@ -5757,16 +5763,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 53,
-          "after": 53
+          "before": 62,
+          "after": 62
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 56,
-          "after": 56
+          "before": 52,
+          "after": 52
         },
         "latestYear": {
           "before": null,
@@ -6229,16 +6235,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 18,
-          "after": 18
+          "before": 21,
+          "after": 21
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 1190,
-          "after": 1190
+          "before": 388,
+          "after": 388
         },
         "latestYear": {
           "before": null,
@@ -7830,7 +7836,7 @@
           "after": 0
         },
         "entities": {
-          "before": 18,
+          "before": 15,
           "after": 18
         },
         "latestYear": {
@@ -7864,7 +7870,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -7881,16 +7887,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 2,
-          "after": 2
+          "before": 1,
+          "after": 1
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 46,
-          "after": 46
+          "before": 1,
+          "after": 1
         },
         "latestYear": {
           "before": null,
@@ -8058,8 +8064,8 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 2,
-          "after": 2
+          "before": 1,
+          "after": 1
         },
         "observations": {
           "before": 0,
@@ -8117,8 +8123,8 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 6,
-          "after": 6
+          "before": 4,
+          "after": 4
         },
         "observations": {
           "before": 0,
@@ -8176,16 +8182,16 @@
       "statusChanges": {},
       "counts": {
         "indicators": {
-          "before": 7,
-          "after": 7
+          "before": 6,
+          "after": 6
         },
         "observations": {
           "before": 0,
           "after": 0
         },
         "entities": {
-          "before": 22,
-          "after": 22
+          "before": 19,
+          "after": 19
         },
         "latestYear": {
           "before": null,
@@ -8298,8 +8304,8 @@
           "after": 6
         },
         "observations": {
-          "before": 39,
-          "after": 39
+          "before": 6,
+          "after": 6
         },
         "entities": {
           "before": 0,
@@ -8310,8 +8316,8 @@
           "after": 2023
         },
         "missingRatePercent": {
-          "before": 2.6,
-          "after": 2.6
+          "before": 16.7,
+          "after": 16.7
         }
       },
       "indicators": {
@@ -8320,7 +8326,7 @@
         "changed": []
       },
       "observations": {
-        "matched": 39,
+        "matched": 6,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
@@ -8357,7 +8363,7 @@
           "after": 24
         },
         "observations": {
-          "before": 31,
+          "before": 30,
           "after": 31
         },
         "entities": {
@@ -8379,12 +8385,12 @@
         "changed": []
       },
       "observations": {
-        "matched": 31,
+        "matched": 1,
         "valueChanged": 0,
         "valueChangeRatePercent": 0,
         "unitChanged": 0,
-        "added": 0,
-        "removed": 0,
+        "added": 30,
+        "removed": 29,
         "samples": []
       },
       "entities": {
@@ -8395,7 +8401,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {

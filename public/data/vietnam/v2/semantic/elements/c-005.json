@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-005",
-  "entityCount": 408,
+  "entityCount": 135,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 137,
+  "indicatorCount": 140,
   "indicators": [
     {
       "axisGroupKey": "measure-1c9d577204c2|—",
@@ -1861,21 +1861,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "axisGroupKey": "measure-3ab0935fd31d|등급",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "TNA (기술 수요 평가) · barrier",
-      "indicatorId": "C-005_barrier",
+      "displayLabel": "기술 이전 장벽(Barrier Analysis 결과)",
+      "indicatorId": "C-005_barrier_analysis",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0d1a17b8217c",
-        "labelKo": "TNA (기술 수요 평가)",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
+        "key": "measure-3ab0935fd31d",
+        "labelKo": "기술 이전 장벽(Barrier Analysis 결과)",
+        "unit": "등급",
+        "unitFamily": "text"
       },
-      "seriesKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-005_barrier",
+      "seriesKey": "measure-3ab0935fd31d|등급||C-005_barrier_analysis",
       "sourceCaveat": null,
-      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabel": "기술 이전 장벽(Barrier Analysis 결과)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -4397,21 +4397,61 @@
       }
     },
     {
-      "axisGroupKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "axisGroupKey": "measure-2c7a8d87193b|점",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "TNA (기술 수요 평가) · priority_tech",
-      "indicatorId": "C-005_priority_tech",
+      "displayLabel": "우선 섹터",
+      "indicatorId": "C-005_priority_sector",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0d1a17b8217c",
-        "labelKo": "TNA (기술 수요 평가)",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
+        "key": "measure-2c7a8d87193b",
+        "labelKo": "우선 섹터",
+        "unit": "점",
+        "unitFamily": "score"
       },
-      "seriesKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-005_priority_tech",
+      "seriesKey": "measure-2c7a8d87193b|점||C-005_priority_sector",
       "sourceCaveat": null,
-      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabel": "우선 섹터",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5af8d7a16841|점",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)",
+      "indicatorId": "C-005_priority_tech_list",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5af8d7a16841",
+        "labelKo": "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-5af8d7a16841|점||C-005_priority_tech_list",
+      "sourceCaveat": null,
+      "sourceLabel": "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL)",
+      "indicatorId": "C-005_source_link",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-005_source_link",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -4519,21 +4559,41 @@
       }
     },
     {
-      "axisGroupKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "axisGroupKey": "measure-52b8798102bb|여부",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "TNA (기술 수요 평가) · tna_submission",
-      "indicatorId": "C-005_tna_submission",
+      "displayLabel": "TAP(기술실행계획) 유무",
+      "indicatorId": "C-005_tap_status",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0d1a17b8217c",
-        "labelKo": "TNA (기술 수요 평가)",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "key": "measure-52b8798102bb",
+        "labelKo": "TAP(기술실행계획) 유무",
+        "unit": "여부",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-52b8798102bb|여부||C-005_tap_status",
+      "sourceCaveat": null,
+      "sourceLabel": "TAP(기술실행계획) 유무",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a4fa33021131|년(완료)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수행 여부/수행 연도",
+      "indicatorId": "C-005_tna_status",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a4fa33021131",
+        "labelKo": "수행 여부/수행 연도",
+        "unit": "년(완료)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-0d1a17b8217c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-005_tna_submission",
+      "seriesKey": "measure-a4fa33021131|년(완료)||C-005_tna_status",
       "sourceCaveat": null,
-      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabel": "수행 여부/수행 연도",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -4541,12 +4601,12 @@
   ],
   "measures": [
     {
-      "indicatorCount": 3,
-      "key": "measure-0d1a17b8217c",
-      "labelKo": "TNA (기술 수요 평가)",
+      "indicatorCount": 1,
+      "key": "measure-52b8798102bb",
+      "labelKo": "TAP(기술실행계획) 유무",
       "recordCount": 0,
-      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-      "unitFamily": "other"
+      "unit": "여부",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
@@ -4597,6 +4657,14 @@
       "unitFamily": "text"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-5af8d7a16841",
+      "labelKo": "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)",
+      "recordCount": 0,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
       "indicatorCount": 2,
       "key": "measure-2a391871c652",
       "labelKo": "결론 및 향후 전망",
@@ -4621,11 +4689,43 @@
       "unitFamily": "text"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-3ab0935fd31d",
+      "labelKo": "기술 이전 장벽(Barrier Analysis 결과)",
+      "recordCount": 0,
+      "unit": "등급",
+      "unitFamily": "text"
+    },
+    {
       "indicatorCount": 11,
       "key": "measure-5150389b1e63",
       "labelKo": "부문별 민감도",
       "recordCount": 0,
       "unit": "등급",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a4fa33021131",
+      "labelKo": "수행 여부/수행 연도",
+      "recordCount": 0,
+      "unit": "년(완료)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2c7a8d87193b",
+      "labelKo": "우선 섹터",
+      "recordCount": 0,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-92ed3a9b9108",
+      "labelKo": "원본 링크(URL)",
+      "recordCount": 0,
+      "unit": "URL",
       "unitFamily": "text"
     },
     {

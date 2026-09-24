@@ -15,12 +15,20 @@
     {
       "key": "amountType",
       "labelKo": "amountType",
-      "valueCount": 4,
+      "valueCount": 12,
       "values": [
-        "AUM(운용자산)",
-        "비해당(금액 개념 미적용)",
-        "투자·약정액",
-        "펀드 규모(조성·목표)"
+        "AUM",
+        "개별 커밋액",
+        "개별 투자액",
+        "비해당(DFI)",
+        "비해당(IFI)",
+        "비해당(액셀러레이터·인큐베이터)",
+        "외부 커밋액",
+        "펀드 목표규모",
+        "펀드 커밋규모",
+        "펀드규모(1차 클로징)",
+        "펀드규모(최종 클로징)",
+        "펀드규모(하한)"
       ]
     },
     {
@@ -123,39 +131,25 @@
         "기업 공식",
         "언론(DealStreetAsia)"
       ]
-    },
-    {
-      "key": "좌표_소재_구분_coord_location_type",
-      "labelKo": "좌표_소재_구분_coord_location_type",
-      "valueCount": 7,
-      "values": [
-        "해외 본부 소재지(CHE)",
-        "해외 본부 소재지(FRA)",
-        "해외 본부 소재지(GBR)",
-        "해외 본부 소재지(PHL)",
-        "해외 본부 소재지(SGP)",
-        "해외 본부 소재지(USA)",
-        "현지(대상국) 소재"
-      ]
     }
   ],
   "elementId": "E-006",
   "entityCount": 15,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 6,
+  "indicatorCount": 4,
   "indicators": [
     {
       "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 관련 개발금융기관 4곳 · dfi",
+      "displayLabel": "현지 투자자 네트워크",
       "indicatorId": "E-006_dfi",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
         "labelKo": "현지 투자자 네트워크",
         "unit": "USD(백만)",
-        "unitFamily": "text"
+        "unitFamily": "currency"
       },
       "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_dfi",
       "sourceCaveat": null,
@@ -179,7 +173,7 @@
         "detail": "민간 운용사(기관 공식 웹사이트)"
       },
       "displayLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
-      "indicatorId": "E-006_investor",
+      "indicatorId": "E-006_private_investor",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
@@ -187,32 +181,18 @@
         "unit": "USD(백만)",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(기관 공식 웹사이트)|E-006_investor",
-      "sourceCaveat": null,
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(기관 공식 웹사이트)|E-006_private_investor",
+      "sourceCaveat": "① 원본 '투자 규모(AUM)' 열에 성격이 다른 값이 혼재하여 attr_9~attr_13으로 분해함",
       "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 투자자 네트워크 · investor_dfi",
-      "indicatorId": "E-006_investor_dfi",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5f64c524f78d",
-        "labelKo": "현지 투자자 네트워크",
-        "unit": "USD(백만)",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_investor_dfi",
-      "sourceCaveat": null,
-      "sourceLabel": "현지 투자자 네트워크",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
+      "sourceLabelEn": "Local investor network (climate finance)",
+      "sourceNote": "전화번호 7건, 이메일 4건, 도시 1건 미확보(M07). VinaCapital·Mekong Capital은 AUM 미공개(M02). Mekong Capital은 기후실적 서술이 원본 내에서 상충하여 M10(확인중).",
+      "sourceProvenance": {
+        "elementId": "E-006",
+        "indicatorId": "E-006_private_investor",
+        "sourceFileDecoded": "E-006_현지 투자자 네트워크.xlsx",
+        "sourceRow": 5,
+        "sourceSheet": "2_meta_info"
+      }
     },
     {
       "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
@@ -223,7 +203,7 @@
         "detail": "민간 운용사(국제기구 공시)"
       },
       "displayLabel": "현지 투자자 네트워크 — 민간 운용사(국제기구 공시)",
-      "indicatorId": "E-006_investor_intl",
+      "indicatorId": "E-006_private_investor_intl",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
@@ -231,7 +211,7 @@
         "unit": "USD(백만)",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(국제기구 공시)|E-006_investor_intl",
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(국제기구 공시)|E-006_private_investor_intl",
       "sourceCaveat": null,
       "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(국제기구 공시)",
       "sourceLabelEn": null,
@@ -247,7 +227,7 @@
         "detail": "민간 운용사(언론 보도)"
       },
       "displayLabel": "현지 투자자 네트워크 — 민간 운용사(언론 보도)",
-      "indicatorId": "E-006_investor_media",
+      "indicatorId": "E-006_private_investor_media",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-5f64c524f78d",
@@ -255,48 +235,22 @@
         "unit": "USD(백만)",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(언론 보도)|E-006_investor_media",
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(언론 보도)|E-006_private_investor_media",
       "sourceCaveat": null,
       "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(언론 보도)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 투자자 네트워크 · 베트남 기후금융 민간 투자자 10곳 · private_investor",
-      "indicatorId": "E-006_private_investor",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5f64c524f78d",
-        "labelKo": "현지 투자자 네트워크",
-        "unit": "USD(백만)",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-5f64c524f78d|USD(백만)||E-006_private_investor",
-      "sourceCaveat": "① 원본 '투자 규모(AUM)' 열에 성격이 다른 값이 혼재하여 attr_9~attr_13으로 분해함",
-      "sourceLabel": "현지 투자자 네트워크",
-      "sourceLabelEn": "Local investor network (climate finance)",
-      "sourceNote": "전화번호 7건, 이메일 4건, 도시 1건 미확보(M07). VinaCapital·Mekong Capital은 AUM 미공개(M02). Mekong Capital은 기후실적 서술이 원본 내에서 상충하여 M10(확인중).",
-      "sourceProvenance": {
-        "elementId": "E-006",
-        "indicatorId": "E-006_private_investor",
-        "sourceFileDecoded": "E-006_현지 투자자 네트워크.xlsx",
-        "sourceRow": 5,
-        "sourceSheet": "2_meta_info"
-      }
     }
   ],
   "measures": [
     {
-      "indicatorCount": 6,
+      "indicatorCount": 4,
       "key": "measure-5f64c524f78d",
       "labelKo": "현지 투자자 네트워크",
       "recordCount": 0,
       "unit": "USD(백만)",
-      "unitFamily": "text"
+      "unitFamily": "currency"
     }
   ],
   "observationCount": 0,

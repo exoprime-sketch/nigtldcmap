@@ -4,15 +4,13 @@
   "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
   "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
   "counts": {
-    "located": 1,
-    "outside": 0,
-    "withoutCoordinate": 0
+    "located": 0,
+    "outside": 3,
+    "withoutCoordinate": 2
   },
   "byRecordId": {
-    "v124-a-025-entity-00001": {
-      "adm1Code": "VN-23",
-      "adm1Name": "Hà Tĩnh",
-      "unitCode": null
-    }
+    "v124-a-025-entity-00001": null,
+    "v124-a-025-entity-00002": null,
+    "v124-a-025-entity-00005": null
   }
 }

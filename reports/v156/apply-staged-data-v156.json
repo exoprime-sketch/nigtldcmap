@@ -1,19 +1,29 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/apply-staged-data-v156.mjs",
-  "generatedAt": "2026-09-24T04:19:04.681Z",
+  "generatedAt": "2026-09-24T08:15:24.185Z",
   "from": ".staging/v156/public/data/vietnam/v2",
   "to": "public/data/vietnam/v2",
   "applied": true,
   "totals": {
     "sourceFiles": 536,
     "targetFilesBefore": 555,
-    "written": 9,
-    "unchanged": 527,
-    "prunedStaleShards": 2,
+    "written": 1,
+    "unchanged": 534,
+    "prunedStaleShards": 0,
     "preserved": 19,
+    "mergedManifests": 1,
     "keptUnexplained": 0
   },
+  "merged": [
+    {
+      "path": "geometry/geometry-manifest.json",
+      "assetsBefore": 16,
+      "assetsFromStaging": 4,
+      "assetsKept": 12,
+      "assetsAfter": 16
+    }
+  ],
   "preserved": [
     "dataset-directory.json",
     "geometry/vnm-adm1-34.geojson",
@@ -35,21 +45,10 @@
     "spatial/pending-v155/b-017.json",
     "spatial/pending-v155/d-022-locations.json"
   ],
-  "prunedStaleShards": [
-    "packs/search-index-v124-6855691b.json",
-    "packs/vnm-v124-pack-001-db58bfbe.json"
-  ],
+  "prunedStaleShards": [],
   "keptUnexplained": [],
   "written": [
-    "asset-integrity.json",
-    "catalog.json",
-    "downloads/a-002.csv",
-    "downloads/a-002.json",
-    "downloads/delivery-manifest.json",
-    "manifest.json",
-    "packs/bundle-index-v124.json",
-    "packs/search-index-v124-5d50990c.json",
-    "packs/vnm-v124-pack-001-f4bdbc39.json"
+    "asset-integrity.json"
   ],
   "targetFilesAfter": 555,
   "largestFile": {

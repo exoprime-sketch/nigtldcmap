@@ -50,6 +50,18 @@ const HELD = new Set(
     .filter(Boolean)
 );
 const HOLD_REASON = opt("--hold-reason", "구조 변경으로 현행 화면·계약이 읽지 못함(이전 입고분 유지)");
+/**
+ * `--adopt` is the same decision written the other way round: only these codes
+ * are taken from the new delivery and every other code is held. The 2026-09-22
+ * round ended here - seven rounds of adding codes to `--hold` kept finding new
+ * breakage, and stating the adopted set is both shorter and easier to check.
+ */
+const ADOPTED_ONLY = new Set(
+  (opt("--adopt", "") || "")
+    .split(",")
+    .map((code) => code.trim().toUpperCase())
+    .filter(Boolean)
+);
 /** The delivery the published tree was built from; held codes come from here. */
 const CARRY_FROM = opt("--carry-from", "베트남데이터/file");
 const DELIVERED_AT = opt("--delivered-at", basename(SOURCE));
@@ -104,7 +116,10 @@ const superseded = [];
 const undecided = [];
 const held = [];
 for (const [, rows] of [...groups].sort(([left], [right]) => left.localeCompare(right))) {
-  if (HELD.has(rows[0].elementId)) {
+  const heldByPolicy =
+    HELD.has(rows[0].elementId) ||
+    (ADOPTED_ONLY.size > 0 && rows[0].kind === "workbook" && !ADOPTED_ONLY.has(rows[0].elementId));
+  if (heldByPolicy) {
     for (const row of rows) held.push({ ...row, adoption: "held", reason: HOLD_REASON });
     continue;
   }
@@ -181,6 +196,7 @@ const manifest = {
     undecidedDuplicates: undecided.length,
     held: held.length,
     heldElementIds: [...new Set(held.map((row) => row.elementId))].sort(),
+    adoptPolicy: ADOPTED_ONLY.size > 0 ? [...ADOPTED_ONLY].sort() : null,
     carriedFromPreviousDelivery: carried.length,
     heldWithoutPrevious: heldWithoutPrevious.length,
     stagedWorkbooks: adopted.filter((row) => row.kind === "workbook").length + carried.length,

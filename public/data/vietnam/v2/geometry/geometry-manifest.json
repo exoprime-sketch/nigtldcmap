@@ -1,6 +1,514 @@
 {
   "assets": [
     {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866. 2025-07-01 34-unit grouping derived under Nghị quyết 202/2025/QH15.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over crosswalk34 memberAdm1Codes",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "effectiveDate": "2025-07-01",
+      "featureCount": 34,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "adm1-boundary-34",
+      "legalBasis": "Nghị quyết 202/2025/QH15",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "ea30717d6649ef79922db94590bf764423fbd49c9952352e3f1f36191219ccc5",
+      "sourceGapNotice": "원천 경계가 이웃 성 사이에 남긴 틈은 합쳐진 단위 안에서 구멍으로 남깁니다. 메우면 원천에 없는 경계선을 새로 그리는 것이므로 메우지 않습니다.",
+      "url": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 34,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "memberAreaKm2Coverage": 63,
+        "memberCoverageCount": 63,
+        "mergedUnitCount": 23,
+        "multiPolygonCount": 13,
+        "polygonCount": 21,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215,
+            "memberAdm1Codes": [
+              "VN-49",
+              "VN-50",
+              "VN-51"
+            ],
+            "region": "Vĩnh Long"
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "valuesAreAggregated": false,
+      "valuesNotice": "경계 전용 자산입니다. 원자료 값은 개편 전 63개 성·시 기준 그대로 두며 34개 단위로 합산·평균하지 않습니다.",
+      "version": "2025-07-01"
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-country-outline.geojson",
+        "method": "shapely.simplify(tolerance=0.01, preserve_topology=True); non-mainland parts under 2.0 km2 dropped",
+        "sha256": "9df77cfbd829b462980bb4ece40e6f8637af9435dcc0e29900efc8126db43dd8"
+      },
+      "featureCount": 1,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "country-outline-z5",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "partCount": 22,
+      "sha256": "e8b2fb502295fab1a8e430195032d1a838b71f121a89187bec1eb91ab5bf8c23",
+      "simplifyToleranceDeg": 0.01,
+      "url": "/data/vietnam/v2/geometry/vnm-country-outline-z5.geojson",
+      "validation": {
+        "areaDeltaPpmVsFull": 725.334,
+        "droppedPartAreaKm2Total": 14.652,
+        "droppedPartCount": 22,
+        "featureCount": 1,
+        "fullPartCount": 44,
+        "fullVertexCount": 4839,
+        "geometryValidity": "pass",
+        "partCount": 22,
+        "vertexCount": 981
+      },
+      "version": "2023-12-12-z5",
+      "vertexCount": 981
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over all 63 ADM1 features",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "featureCount": 1,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "country-outline",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "partCount": 44,
+      "sha256": "9df77cfbd829b462980bb4ece40e6f8637af9435dcc0e29900efc8126db43dd8",
+      "simplifyToleranceDeg": 0,
+      "url": "/data/vietnam/v2/geometry/vnm-country-outline.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 1,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "partCount": 44,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area",
+        "vertexCount": 4839
+      },
+      "version": "2023-12-12",
+      "vertexCount": 4839
+    },
+    {
+      "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866. Six-region grouping follows Global Data Lab (GDL Area Database / GVI) region membership; GDL 기관 이용약관에 따라 비영리 표출로 한정.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "method": "shapely.ops.unary_union over spatial/layers/b-021.json#regionMappings provinceCodes",
+        "sha256": "1985e5dc1f60be511b5e6da9642fbd25fb9e0a19c814e4c141772dd6b858b873"
+      },
+      "featureCount": 6,
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "kind": "region-6",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Public Domain"
+      },
+      "sha256": "e8133d8ea049f63c20b6b59076b1a492c7f14049b95ff228ddc7cd9017270e23",
+      "url": "/data/vietnam/v2/geometry/vnm-region-6.geojson",
+      "validation": {
+        "areaDeltaPpmMax": 0,
+        "dissolvedInteriorHoleCount": 1,
+        "featureCount": 6,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "memberCoverageCount": 63,
+        "multiPolygonCount": 4,
+        "polygonCount": 2,
+        "regionCount": 6,
+        "sourceFeatureCount": 63,
+        "sourceGapsLeftOpen": [
+          {
+            "areaKm2": 0.1215,
+            "memberAdm1Codes": [
+              "VN-41",
+              "VN-44",
+              "VN-45",
+              "VN-46",
+              "VN-47",
+              "VN-49",
+              "VN-50",
+              "VN-51",
+              "VN-52",
+              "VN-55",
+              "VN-59",
+              "VN-73",
+              "VN-CT"
+            ],
+            "region": "Mekong River Delta"
+          }
+        ],
+        "syntheticVertexCount": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "b-021-2026-09-01"
+    },
+    {
+      "accuracyNotice": "OpenStreetMap is volunteer-mapped: coverage, tagging and names vary by area and date. Geometry is shown for orientation, not for engineering or cadastral use.",
+      "attribution": "© OpenStreetMap contributors, Open Database License (ODbL) 1.0; extract: Geofabrik vietnam-260921.osm.pbf (2026-09-21)",
+      "featureCount": 8114,
+      "geometryTypes": [
+        "MultiLineString"
+      ],
+      "kind": "osm-roads-rail",
+      "license": "ODbL-1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "sha256": "04be584f971ec0cc3c372ab6a5acb44619c139dc6896c997e88bc5e27b978e33",
+      "source": {
+        "name": "OpenStreetMap contributors",
+        "extract": "Geofabrik vietnam-260921.osm.pbf",
+        "datedUrl": "https://download.geofabrik.de/asia/vietnam-260921.osm.pbf",
+        "pageUrl": "https://download.geofabrik.de/asia/vietnam.html",
+        "md5": "8e8faf2eff113b67f28059c3b4a5c677",
+        "sha256": "24611cc9e678432b3ec2e1928159a5305b985583272120e09a1814dd9266d2dc",
+        "lastModified": "2026-09-21T22:41:35Z"
+      },
+      "url": "/data/vietnam/v2/geometry/vnm-roads-rail.geojson",
+      "version": "OSM extract 2026-09-21",
+      "elementId": "A-027",
+      "selection": {
+        "roads": "highway in {motorway, trunk, primary}; *_link excluded",
+        "rail": "railway=rail without service=*",
+        "clip": "ways with no node inside the published provinces + 2 km margin dropped; ways are never cut"
+      },
+      "simplificationToleranceDeg": 0.0002,
+      "lengthKmByClass": {
+        "고속도로": 6275.8,
+        "간선도로": 22670.9,
+        "주요도로": 17384.9,
+        "철도": 2666.5
+      },
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 8114,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "osmWayCount": 50748,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod length"
+      }
+    },
+    {
+      "accuracyNotice": "OpenStreetMap is volunteer-mapped: coverage, tagging and names vary by area and date. Geometry is shown for orientation, not for engineering or cadastral use.",
+      "attribution": "© OpenStreetMap contributors, Open Database License (ODbL) 1.0; extract: Geofabrik vietnam-260921.osm.pbf (2026-09-21)",
+      "featureCount": 8114,
+      "geometryTypes": [
+        "MultiLineString"
+      ],
+      "kind": "osm-roads-rail-overview",
+      "license": "ODbL-1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "sha256": "f28a3bfbfab00881514d4cfd6b431117a153d3a6e20188a7c2946333ae7424a6",
+      "source": {
+        "name": "OpenStreetMap contributors",
+        "extract": "Geofabrik vietnam-260921.osm.pbf",
+        "datedUrl": "https://download.geofabrik.de/asia/vietnam-260921.osm.pbf",
+        "pageUrl": "https://download.geofabrik.de/asia/vietnam.html",
+        "md5": "8e8faf2eff113b67f28059c3b4a5c677",
+        "sha256": "24611cc9e678432b3ec2e1928159a5305b985583272120e09a1814dd9266d2dc",
+        "lastModified": "2026-09-21T22:41:35Z"
+      },
+      "url": "/data/vietnam/v2/geometry/vnm-roads-rail-overview.geojson",
+      "version": "OSM extract 2026-09-21",
+      "elementId": "A-027",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-roads-rail.geojson",
+        "method": "shapely simplify 0.002 deg",
+        "sha256": "04be584f971ec0cc3c372ab6a5acb44619c139dc6896c997e88bc5e27b978e33"
+      },
+      "simplificationToleranceDeg": 0.002,
+      "usage": "zoom < 8"
+    },
+    {
+      "accuracyNotice": "OpenStreetMap is volunteer-mapped: coverage, tagging and names vary by area and date. Geometry is shown for orientation, not for engineering or cadastral use.",
+      "attribution": "© OpenStreetMap contributors, Open Database License (ODbL) 1.0; extract: Geofabrik vietnam-260921.osm.pbf (2026-09-21)",
+      "featureCount": 1558,
+      "geometryTypes": [
+        "MultiPolygon",
+        "Point",
+        "Polygon"
+      ],
+      "kind": "osm-water-coastal-infra",
+      "license": "ODbL-1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "sha256": "3799bfaa4f79b295f700ef0fef46f250b1ce5ca6667a59fd299c02e88d87a1b7",
+      "source": {
+        "name": "OpenStreetMap contributors",
+        "extract": "Geofabrik vietnam-260921.osm.pbf",
+        "datedUrl": "https://download.geofabrik.de/asia/vietnam-260921.osm.pbf",
+        "pageUrl": "https://download.geofabrik.de/asia/vietnam.html",
+        "md5": "8e8faf2eff113b67f28059c3b4a5c677",
+        "sha256": "24611cc9e678432b3ec2e1928159a5305b985583272120e09a1814dd9266d2dc",
+        "lastModified": "2026-09-21T22:41:35Z"
+      },
+      "url": "/data/vietnam/v2/geometry/vnm-water-coastal-infra.geojson",
+      "version": "OSM extract 2026-09-21",
+      "elementId": "A-028",
+      "selection": {
+        "port": "landuse=port | harbour=yes | seamark:type=harbour (node, way, area) -> representative point",
+        "dam": "waterway=dam (node, way, area) -> representative point; crest length for open ways",
+        "reservoir": "natural=water + water=reservoir areas >= 1.0 km2 -> polygon (simplified 0.0002 deg)",
+        "excluded": "landuse=reservoir legacy tagging (counted in the report only)"
+      },
+      "featureCountByKind": {
+        "port": 66,
+        "dam": 1255,
+        "reservoir": 237
+      },
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 1558,
+        "geometryValidity": "pass",
+        "invalidGeometryCount": 0,
+        "noProvinceCount": 13,
+        "reservoirsBelowMinArea": 3023,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area/length"
+      }
+    },
+    {
+      "accuracyNotice": "Aqueduct 4.0 units follow GADM 4.1 province lines, which differ slightly from the geoBoundaries lines used by this platform, so unit edges do not coincide with the published province boundaries. Basins carry no official name; the label combines the HydroBASINS pfaf_id with the province.",
+      "attribution": "WRI Aqueduct 4.0 Water Risk Framework (Kuzma et al. 2023), baseline annual, release 2023-07-05, CC BY 4.0. Unit polygons derive from HydroBASINS (Lehner & Grill 2013) and GADM 4.1.",
+      "elementId": "B-017",
+      "featureCount": 442,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "joinKey": "stringId",
+      "kind": "aqueduct40-units",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "2f8b7b3a772a5a4dd63c14c3fc14bef0346b96607d3ea141f096a3b97f9715e1",
+      "source": {
+        "downloadUrl": "https://files.wri.org/aqueduct/aqueduct-4-0-water-risk-data.zip",
+        "datasetUrl": "https://www.wri.org/data/aqueduct-global-maps-40-data",
+        "extractedAt": "2026-09-22T03:25:39Z",
+        "gdb": "Aqueduct40_waterrisk_download_Y2023M07D05/GDB/Aq40_Y2023D07M05.gdb",
+        "layer": "baseline_annual",
+        "name": "World Resources Institute (WRI) Aqueduct 4.0",
+        "release": "Y2023M07D05",
+        "subset": "gid_0 = 'VNM'",
+        "zipSha256": "bd3ed2bce88d6ff1b89191632ad134a2436e1e1d49599382f23a04d513624fc3"
+      },
+      "unitDefinition": "HydroBASINS level-6 basin x GADM 4.1 ADM1 province x groundwater aquifer intersection polygon (Aqueduct 4.0 string_id).",
+      "url": "/data/vietnam/v2/geometry/vnm-aqueduct40-basins.geojson",
+      "validation": {
+        "adm34MismatchCount": 44,
+        "adm34MultiMembershipCount": 111,
+        "adm34NoMembershipCount": 9,
+        "duplicateIdCount": 0,
+        "emptySourceGeometryCount": 1,
+        "emptySourceGeometryIds": [
+          "436707-VNM.23_1-1892"
+        ],
+        "featureCount": 442,
+        "sourceFeatureCount": 443,
+        "geometryValidity": "source-invalid-preserved",
+        "invalidSourceGeometryCount": 1,
+        "joinMatchRate": 1,
+        "joinMatchedCount": 443,
+        "scoreMismatchCount": 0,
+        "simplificationToleranceDeg": 0,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Y2023M07D05"
+    },
+    {
+      "accuracyNotice": "Aqueduct 4.0 units follow GADM 4.1 province lines, which differ slightly from the geoBoundaries lines used by this platform, so unit edges do not coincide with the published province boundaries. Basins carry no official name; the label combines the HydroBASINS pfaf_id with the province.",
+      "attribution": "WRI Aqueduct 4.0 Water Risk Framework (Kuzma et al. 2023), baseline annual, release 2023-07-05, CC BY 4.0. Unit polygons derive from HydroBASINS (Lehner & Grill 2013) and GADM 4.1.",
+      "derivedFrom": {
+        "asset": "/data/vietnam/v2/geometry/vnm-aqueduct40-basins.geojson",
+        "method": "shapely.ops.unary_union grouped by pfaf_id (-9999 excluded)",
+        "sha256": "2f8b7b3a772a5a4dd63c14c3fc14bef0346b96607d3ea141f096a3b97f9715e1"
+      },
+      "elementId": "B-017",
+      "featureCount": 58,
+      "geometryTypes": [
+        "MultiPolygon",
+        "Polygon"
+      ],
+      "joinKey": "pfafId",
+      "kind": "aqueduct40-basins-l6",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sha256": "6d987994c1bde0f2d4d8a445321ad9b13239075eec87f748c0e10efe29cefdaf",
+      "url": "/data/vietnam/v2/geometry/vnm-aqueduct40-basins-l6.geojson",
+      "validation": {
+        "basinCount": 58,
+        "memberUnitCount": 391,
+        "unitsWithoutBasin": 51,
+        "invalidDissolveCount": 0,
+        "syntheticVertexCount": 0,
+        "areaDeltaPpmMax": 0,
+        "usedMakeValidFor": [],
+        "geometryValidity": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "valuesAreAggregated": false,
+      "valuesNotice": "기하 전용 자산입니다. B-017 값은 평가구역(string_id) 단위로만 제공하며 유역 단위로 합산·평균하지 않습니다.",
+      "version": "Y2023M07D05"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 20,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le0p5m",
+      "zoneKey": "le0p5m",
+      "thresholdM": 0.5,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "da1a2e4180f65023140ea0268b65236a117d6a4e51e03873684f8ced0ac3d431",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le0p5m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 20,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 20,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le1m",
+      "zoneKey": "le1m",
+      "thresholdM": 1,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "da749ac42b151192cd2cd7ded433599239ae19f7467e8c53e9b693d19a1dd454",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le1m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 20,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
+      "accuracyNotice": "30 m 공개 DEM 기반 개략 저지대. 방조제·제방·지반침하·조석·폭풍해일 미반영. 실제 침수 예측이 아니며 상세 계획에는 사용 불가.",
+      "datumNotice": "높이는 Copernicus DEM GLO-30(DSM, EGM2008 지오이드 기준) 값이며 조위 기준면 보정 없음. 수목·건물 높이가 포함돼 맹그로브·시가지에서 저지대가 과소 산정될 수 있음.",
+      "attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Copernicus DEM GLO-30 COG tiles from the AWS Open Data bucket copernicus-dem-30m.",
+      "elementId": "B-008",
+      "featureCount": 23,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "slr-lowland-le2m",
+      "zoneKey": "le2m",
+      "thresholdM": 2,
+      "verticalDatum": "EGM2008",
+      "license": "Copernicus DEM licence (free access, attribution required)",
+      "licenseUrl": "https://spacedata.copernicus.eu/documents/20123/121286/CSCDA_ESA_Mission-specific+Annex_31_Oct_22.pdf",
+      "sha256": "27263d8c456ee4ed8754a10fb2232c1cecbc5ed5a64d60121ad65d3f9a784d4e",
+      "source": {
+        "name": "Copernicus DEM GLO-30 (ESA / Airbus, DLR)",
+        "bucketUrl": "https://copernicus-dem-30m.s3.amazonaws.com",
+        "registryUrl": "https://registry.opendata.aws/copernicus-dem/",
+        "tileCount": 42,
+        "tileManifestSha256": "9dd5d1241ce007b36a359e56b63756e2094d674304e9ba96ba5b840c994ebc9e",
+        "downloadedAt": "2026-09-22T04:48:58Z"
+      },
+      "method": "해안 30 km 안에서 해발 임계값 이하 셀 중 바다와 8방향으로 연결된 셀만 유지(내륙 고립 저지대 제외). 높이가 정확히 0.0 m인 셀(Copernicus가 편집한 해수·하구·하천 수면)은 연결 경로로만 쓰고 저지대에서 제외. 래스터→폴리곤 후 육지 경계(성·시 폴리곤)로 자르고 0.25 km² 미만 폴리곤·구멍 제거, 위상 보존 단순화.",
+      "url": "/data/vietnam/v2/geometry/vnm-slr-lowland-le2m.geojson",
+      "validation": {
+        "duplicateIdCount": 0,
+        "emptyGeometryCount": 0,
+        "featureCount": 23,
+        "invalidGeometryCount": 0,
+        "geometryValidity": "pass",
+        "rasterNestingAssert": "pass",
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "Copernicus DEM GLO-30 COG, tiles downloaded 2026-09-22"
+    },
+    {
       "attribution": "geoBoundaries (William & Mary geoLab), VNM ADM1, boundary year 2008, build 2023-12-12; Runfola et al. (2020), PLOS ONE 15(4): e0231866.",
       "featureCount": 63,
       "geometryTypes": [
@@ -96,6 +604,11 @@
     }
   ],
   "boundarySystem": "pre-2025-63",
+  "boundarySystems": {
+    "default": "post-2025-34",
+    "legacy": "pre-2025-63",
+    "valuesKeyedTo": "pre-2025-63"
+  },
   "countryIso3": "VNM",
   "generatedAt": "2026-09-01T00:00:00Z",
   "regionMappings": {
@@ -189,7 +702,7 @@
       "joinFailureCount": 0,
       "matchedAdm1Count": 63,
       "publishedValueCount": 21672,
-      "sha256": "94edd8cd76dda8c279d9a2b04efba350e50b112c027d203d3a822cabde1db754",
+      "sha256": "59baf98aaee1737ba29a585cdf6d09593701f52f80069aea0f7302aa15ba624a",
       "url": "/data/vietnam/v2/spatial/layers/b-021.json",
       "zeroImputationCount": 0
     },
@@ -257,7 +770,7 @@
     "emptyGeometryCount": 0,
     "fakeGeometryCount": 0,
     "invalidGeometryCount": 0,
-    "mapFeatureCount": 4002,
+    "mapFeatureCount": 3144,
     "transmissionFeatureCount": 606,
     "zeroImputationCount": 0
   }

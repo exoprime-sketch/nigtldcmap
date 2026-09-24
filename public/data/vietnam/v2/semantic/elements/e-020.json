@@ -18,43 +18,6 @@
         "금융·투자",
         "현지사업화·수주지원"
       ]
-    },
-    {
-      "key": "금액_종류_amount_type",
-      "labelKo": "금액_종류_amount_type",
-      "valueCount": 3,
-      "values": [
-        "과제당 지원액",
-        "수주 계약액",
-        "원천 미게시"
-      ]
-    },
-    {
-      "key": "신청시기_구분_period_type",
-      "labelKo": "신청시기_구분_period_type",
-      "valueCount": 1,
-      "values": [
-        "공고 접수기간"
-      ]
-    },
-    {
-      "key": "지원_유형_표준_support_type_std",
-      "labelKo": "지원_유형_표준_support_type_std",
-      "valueCount": 3,
-      "values": [
-        "4종 외(현지사업화·수주지원)",
-        "FS",
-        "금융"
-      ]
-    },
-    {
-      "key": "지원대상_구분_applicant_type",
-      "labelKo": "지원대상_구분_applicant_type",
-      "valueCount": 2,
-      "values": [
-        "국내 신청주체",
-        "수원국 수혜기관"
-      ]
     }
   ],
   "elementId": "E-020",
@@ -63,7 +26,7 @@
   "indicatorCount": 3,
   "indicators": [
     {
-      "axisGroupKey": "measure-cba66876e826|건(프로그램) / 건(사업)",
+      "axisGroupKey": "measure-8c390968933d|건(프로그램)",
       "dimensionLabels": {
         "category": "민간 지원체계",
         "detail": "베트남 지원 실적 확인분"
@@ -76,12 +39,12 @@
       "indicatorId": "E-020_kr_support",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-cba66876e826",
+        "key": "measure-8c390968933d",
         "labelKo": "한국 공공",
-        "unit": "건(프로그램) / 건(사업)",
+        "unit": "건(프로그램)",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-cba66876e826|건(프로그램) / 건(사업)|category=민간 지원체계|detail=베트남 지원 실적 확인분|E-020_kr_support",
+      "seriesKey": "measure-8c390968933d|건(프로그램)|category=민간 지원체계|detail=베트남 지원 실적 확인분|E-020_kr_support",
       "sourceCaveat": null,
       "sourceLabel": "한국 공공·민간 지원체계 — 베트남 지원 실적 확인분",
       "sourceLabelEn": null,
@@ -147,19 +110,11 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-8c390968933d",
       "labelKo": "한국 공공",
       "recordCount": 0,
       "unit": "건(프로그램)",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-cba66876e826",
-      "labelKo": "한국 공공",
-      "recordCount": 0,
-      "unit": "건(프로그램) / 건(사업)",
       "unitFamily": "text"
     },
     {

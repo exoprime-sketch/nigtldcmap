@@ -3,7 +3,7 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 8,
+      "valueCount": 7,
       "values": [
         "검증",
         "대상",
@@ -11,7 +11,6 @@
         "보고",
         "인벤토리",
         "제도",
-        "지원",
         "탄소시장"
       ]
     },
@@ -22,45 +21,12 @@
       "values": [
         "entity"
       ]
-    },
-    {
-      "key": "부문별_Tier_tier_by_sector",
-      "labelKo": "부문별_Tier_tier_by_sector",
-      "valueCount": 2,
-      "values": [
-        "시설단위 산정수준(인벤토리 부문 Tier 아님)=Tier 2(시설별 산정)·Tier 3(CEMS 실측)",
-        "에너지=Tier 1(석탄채굴·취급 Tier 2); IPPU=Tier 1; 농업=Tier 1(분뇨관리)·Tier 2(벼재배); LULUCF=Tier 1(토지이용매트릭스)·Tier 2(범주식별); 폐기물=Tier 1(고형폐기물 매립 Tier 2)"
-      ]
-    },
-    {
-      "key": "표준_분류_category_std",
-      "labelKo": "표준_분류_category_std",
-      "valueCount": 8,
-      "values": [
-        "검증(제3자·QA/QC)",
-        "레지스트리",
-        "법·제도·거버넌스",
-        "보고(NC·BUR·BTR)",
-        "시설단위 MRV",
-        "인벤토리(Tier·방법론)",
-        "지원(CBIT 등)",
-        "탄소시장·가격제도"
-      ]
-    },
-    {
-      "key": "확인_상태_구분_verification_status",
-      "labelKo": "확인_상태_구분_verification_status",
-      "valueCount": 2,
-      "values": [
-        "미확인",
-        "확인됨"
-      ]
     }
   ],
   "elementId": "E-007",
-  "entityCount": 22,
+  "entityCount": 19,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 7,
+  "indicatorCount": 6,
   "indicators": [
     {
       "axisGroupKey": "measure-9b267d3219bf|제출 여부(제출/미제출)",
@@ -148,7 +114,7 @@
       "dimensions": {
         "category": "근거 문서 목록"
       },
-      "displayLabel": "MRV 제도·근거 문서 목록 · mrv_institution",
+      "displayLabel": "MRV 제도·근거 문서 목록",
       "indicatorId": "E-007_mrv_institution",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -169,30 +135,6 @@
         "sourceRow": 10,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-b2b62b29699a|건(제도·근거 문서)",
-      "dimensionLabels": {
-        "category": "근거 문서 목록"
-      },
-      "dimensions": {
-        "category": "근거 문서 목록"
-      },
-      "displayLabel": "MRV 제도·근거 문서 목록 · mrv_system",
-      "indicatorId": "E-007_mrv_system",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b2b62b29699a",
-        "labelKo": "MRV 제도",
-        "unit": "건(제도·근거 문서)",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b2b62b29699a|건(제도·근거 문서)|category=근거 문서 목록|E-007_mrv_system",
-      "sourceCaveat": null,
-      "sourceLabel": "MRV 제도·근거 문서 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-ce474baa08af|유무(Y/N)",
@@ -277,7 +219,7 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 1,
       "key": "measure-b2b62b29699a",
       "labelKo": "MRV 제도",
       "recordCount": 0,

@@ -45,6 +45,17 @@ const APPLY = argv.includes("--apply");
  */
 const PRESERVE_PREFIXES = ["geometry/", "spatial/"];
 const PRESERVE_FILES = ["dataset-directory.json", "home/card-summaries-v140.json"];
+/**
+ * The geometry manifest is written by both sides: the ETL registers the three
+ * assets it produces (63-unit boundary, aliases, transmission network) and the
+ * V151/V155 spatial builders add theirs (34-unit boundary, six regions, country
+ * outlines, OSM roads/rail, Aqueduct basins, SLR lowland). Copying the staging
+ * version wholesale cut the manifest from 16 assets to 4 and broke
+ * `audit:boundary-34:v151` (`MANIFEST_ENTRY` for vnm-adm1-34.geojson), even
+ * though the .geojson files themselves were preserved. So this one file is
+ * merged by asset kind instead of overwritten.
+ */
+const MERGED_MANIFEST = "geometry/geometry-manifest.json";
 /** Content-hash named shards: a file the new tree does not carry is stale. */
 const PRUNABLE_PREFIXES = ["packs/"];
 
@@ -85,8 +96,29 @@ for (const rel of target.keys()) {
 
 const written = [];
 const unchanged = [];
+const merged = [];
 for (const [rel, path] of source) {
   const destination = join(TO, rel);
+  if (rel === MERGED_MANIFEST && existsSync(destination)) {
+    const before = JSON.parse(readFileSync(destination, "utf8"));
+    const after = JSON.parse(readFileSync(path, "utf8"));
+    const kinds = new Set((after.assets || []).map((asset) => asset.kind));
+    const keptAssets = (before.assets || []).filter((asset) => !kinds.has(asset.kind));
+    const result = {
+      ...before,
+      ...after,
+      assets: [...keptAssets, ...(after.assets || [])],
+    };
+    merged.push({
+      path: rel,
+      assetsBefore: (before.assets || []).length,
+      assetsFromStaging: (after.assets || []).length,
+      assetsKept: keptAssets.length,
+      assetsAfter: result.assets.length,
+    });
+    if (APPLY) writeFileSync(destination, `${JSON.stringify(result, null, 2)}\n`, "utf8");
+    continue;
+  }
   const same = existsSync(destination) && sha256(destination) === sha256(path);
   if (same) {
     unchanged.push(rel);
@@ -113,8 +145,10 @@ const report = {
     unchanged: unchanged.length,
     prunedStaleShards: prunable.length,
     preserved: preserved.length,
+    mergedManifests: merged.length,
     keptUnexplained: kept.length,
   },
+  merged,
   preserved,
   prunedStaleShards: prunable,
   keptUnexplained: kept,

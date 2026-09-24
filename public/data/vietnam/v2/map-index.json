@@ -440,7 +440,7 @@
       "detailElementId": "A-025",
       "detailUrl": "/?element=a-025&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 2,
+      "downloadableRecordCount": 6,
       "elementId": "A-025",
       "label": "CCS 시설·실증 및 후보지역",
       "licenses": [
@@ -481,9 +481,9 @@
       },
       "cluster": false,
       "coordinateMeaning": "verified-physical-site",
-      "displayedCoordinateCount": 1,
+      "displayedCoordinateCount": 3,
       "enabled": true,
-      "featureCount": 1,
+      "featureCount": 3,
       "factFields": [
         {
           "key": "facilityType",
@@ -491,8 +491,8 @@
           "sources": [
             "type"
           ],
-          "recordCount": 1,
-          "filledRecordCount": 1,
+          "recordCount": 3,
+          "filledRecordCount": 3,
           "filterable": true
         },
         {
@@ -501,22 +501,32 @@
           "sources": [
             "field_b25998a0"
           ],
-          "recordCount": 1,
-          "filledRecordCount": 1
+          "recordCount": 3,
+          "filledRecordCount": 3
         }
       ],
       "fieldLabels": {
         "facilityType": "구분",
         "stage": "단계"
       },
-      "filters": [],
+      "filters": [
+        {
+          "field": "type",
+          "label": "구분",
+          "values": [
+            "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+            "지중 저장 후보(Storage)",
+            "CO2 주입(EOR)"
+          ]
+        }
+      ],
       "geometryTypes": [
         "point"
       ],
       "join": {
         "failures": [],
-        "matchedCount": 1,
-        "requiredCount": 1
+        "matchedCount": 3,
+        "requiredCount": 3
       },
       "latestYear": "2026",
       "layerId": "vnm-v138-a-025",
@@ -546,9 +556,9 @@
           }
         ]
       },
-      "sourceCoordinateCount": 1,
+      "sourceCoordinateCount": 3,
       "sourceYear": "2026",
-      "spatialCoverage": "시설·후보지 점 1건",
+      "spatialCoverage": "시설·후보지 점 3건",
       "spatialLimitation": "연구·타당성 2건은 위치 없음(지도 미표시). 저장 후보 광구는 운영시설이 아니라 후보 구역의 대표점.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
@@ -556,7 +566,7 @@
         "facilityType",
         "stage"
       ],
-      "totalEntityCount": 1,
+      "totalEntityCount": 5,
       "unit": "source-provided location",
       "countNoun": "건",
       "analysisItemLabel": "CCS 시설·실증·후보지",
@@ -564,12 +574,12 @@
         "key": "facilityType",
         "approxPattern": "후보|잠재"
       },
-      "memberRowCount": 1,
+      "memberRowCount": 3,
       "locationsUrl": "/data/vietnam/v2/spatial/locations/a-025.json",
       "locationCounts": {
-        "located": 1,
-        "outside": 0,
-        "withoutCoordinate": 0
+        "located": 0,
+        "outside": 3,
+        "withoutCoordinate": 2
       },
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
@@ -583,7 +593,7 @@
       "detailElementId": "B-003",
       "detailUrl": "/?element=b-003&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 12621,
+      "downloadableRecordCount": 8371,
       "elementId": "B-003",
       "label": "연평균 기온·강수",
       "licenses": [
@@ -6336,7 +6346,7 @@
       "detailElementId": "B-029",
       "detailUrl": "/?element=b-029&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 289,
+      "downloadableRecordCount": 231,
       "elementId": "B-029",
       "label": "산림 유형별 면적",
       "licenses": [
@@ -6483,7 +6493,7 @@
       "detailElementId": "B-030",
       "detailUrl": "/?element=b-030&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 134,
+      "downloadableRecordCount": 100,
       "elementId": "B-030",
       "label": "산림 이득",
       "licenses": [
@@ -7195,7 +7205,7 @@
       "detailElementId": "B-037",
       "detailUrl": "/?element=b-037&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 781,
+      "downloadableRecordCount": 747,
       "elementId": "B-037",
       "label": "토지피복 분류별 면적",
       "licenses": [
@@ -7409,7 +7419,7 @@
       "detailElementId": "B-039",
       "detailUrl": "/?element=b-039&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 263,
+      "downloadableRecordCount": 228,
       "elementId": "B-039",
       "label": "수력 잠재량",
       "licenses": [
@@ -7562,7 +7572,7 @@
       "detailElementId": "B-040",
       "detailUrl": "/?element=b-040&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 199,
+      "downloadableRecordCount": 165,
       "elementId": "B-040",
       "label": "지열 자원",
       "licenses": [
@@ -7734,7 +7744,7 @@
       "detailElementId": "B-041",
       "detailUrl": "/?element=b-041&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 147,
+      "downloadableRecordCount": 113,
       "elementId": "B-041",
       "label": "태양광 자원",
       "licenses": [
@@ -7886,7 +7896,7 @@
       "detailElementId": "B-042",
       "detailUrl": "/?element=b-042&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 242,
+      "downloadableRecordCount": 205,
       "elementId": "B-042",
       "label": "풍력 자원",
       "licenses": [
@@ -8064,68 +8074,58 @@
       "defaultPrimary": false,
       "detailElementId": "B-048",
       "detailUrl": "/?element=b-048&country=VNM#element-detail",
-      "displayedCoordinateCount": 4,
+      "displayedCoordinateCount": 2,
       "downloadStatus": "available",
       "downloadableRecordCount": 18,
       "elementId": "B-048",
       "enabled": true,
       "factFields": [
         {
-          "filledRecordCount": 4,
+          "filledRecordCount": 2,
           "filterable": true,
           "key": "mineral",
           "label": "광종",
-          "recordCount": 4,
+          "recordCount": 2,
           "sources": [
             "광종"
           ]
         },
         {
-          "filledRecordCount": 4,
+          "filledRecordCount": 2,
           "filterable": true,
           "key": "regionName",
           "label": "소재 성·시",
-          "recordCount": 4,
+          "recordCount": 2,
           "sources": [
             "소재_행정구역_성"
           ]
         },
         {
-          "filledRecordCount": 4,
+          "filledRecordCount": 2,
           "key": "climateTechBasis",
           "label": "기후기술 연계 근거",
-          "recordCount": 4,
+          "recordCount": 2,
           "sources": [
             "기후기술_연계_근거"
           ]
         },
         {
           "filledRecordCount": 2,
-          "key": "siteNote",
-          "label": "특이사항",
-          "recordCount": 4,
-          "sources": [
-            "특이사항"
-          ]
-        },
-        {
-          "filledRecordCount": 4,
           "key": "coordinateBasis",
           "label": "좌표 산출근거",
-          "recordCount": 4,
+          "recordCount": 2,
           "sources": [
             "좌표_산출근거"
           ]
         }
       ],
       "fakeGeometryCount": 0,
-      "featureCount": 4,
+      "featureCount": 2,
       "fieldLabels": {
         "climateTechBasis": "기후기술 연계 근거",
         "coordinateBasis": "좌표 산출근거",
         "mineral": "광종",
-        "regionName": "소재 성·시",
-        "siteNote": "특이사항"
+        "regionName": "소재 성·시"
       },
       "filters": [
         {
@@ -8133,19 +8133,15 @@
           "label": "광종",
           "values": [
             "구리",
-            "니켈",
-            "보크사이트/알루미나",
-            "텅스텐(+형석·비스무트·구리)"
+            "니켈"
           ]
         },
         {
           "field": "regionName",
           "label": "소재 성·시",
           "values": [
-            "Lam Dong",
             "Lao Cai",
-            "Son La",
-            "Thai Nguyen"
+            "Son La"
           ]
         }
       ],
@@ -8154,8 +8150,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 4,
-        "requiredCount": 4
+        "matchedCount": 2,
+        "requiredCount": 2
       },
       "label": "주요 광산",
       "latestYear": 2022,
@@ -8197,13 +8193,13 @@
         ]
       },
       "source": "USGS MRDS (Mineral Resources Data System) · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
-      "sourceCoordinateCount": 4,
+      "sourceCoordinateCount": 2,
       "sourceOrganizations": [
         "USGS MRDS (Mineral Resources Data System)",
         "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS"
       ],
       "sourceYear": 2022,
-      "spatialCoverage": "출처 좌표가 있는 4개 피처",
+      "spatialCoverage": "출처 좌표가 있는 2개 피처",
       "spatialLimitation": "공개 좌표가 검증된 주요 광산 2곳만 표시합니다.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
@@ -8211,7 +8207,6 @@
         "mineral",
         "regionName",
         "climateTechBasis",
-        "siteNote",
         "coordinateBasis"
       ],
       "totalEntityCount": 8,
@@ -8225,9 +8220,9 @@
       },
       "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
       "locationCounts": {
-        "located": 4,
+        "located": 2,
         "outside": 0,
-        "withoutCoordinate": 4
+        "withoutCoordinate": 6
       },
       "analysisItemLabel": "광산 위치·광종",
       "countNoun": "곳",
@@ -9684,36 +9679,121 @@
       "defaultPrimary": false,
       "detailElementId": "C-025",
       "detailUrl": "/?element=c-025&country=VNM#element-detail",
-      "displayedCoordinateCount": 1118,
+      "displayedCoordinateCount": 262,
       "downloadStatus": "available",
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
-      "fakeGeometryCount": 0,
-      "featureCount": 1118,
-      "filters": [
+      "factFields": [
         {
-          "field": "standard",
-          "label": "표준",
-          "values": [
-            "Gold Standard"
+          "filledRecordCount": 261,
+          "filterable": true,
+          "key": "technologyField",
+          "label": "기술분야",
+          "recordCount": 262,
+          "sources": [
+            "속성6_분류"
           ]
         },
+        {
+          "filledRecordCount": 47,
+          "key": "creditingPeriod",
+          "label": "크레딧 기간",
+          "recordCount": 262,
+          "sources": [
+            "속성17_크레딧기간"
+          ]
+        },
+        {
+          "filledRecordCount": 262,
+          "filterable": true,
+          "key": "regionName",
+          "label": "소재 지역",
+          "recordCount": 262,
+          "sources": [
+            "속성21_지역_현행",
+            "속성20_지역_원문"
+          ]
+        },
+        {
+          "filledRecordCount": 47,
+          "key": "annualReduction",
+          "label": "연간 예상감축량",
+          "recordCount": 262,
+          "sources": [
+            "속성14_연간예상감축_tCO2e"
+          ],
+          "unit": "tCO2e"
+        },
+        {
+          "filledRecordCount": 262,
+          "key": "officialSource",
+          "label": "공식 원문",
+          "recordCount": 262,
+          "sources": [
+            "속성19_원문URL"
+          ]
+        }
+      ],
+      "fakeGeometryCount": 0,
+      "featureCount": 262,
+      "fieldLabels": {
+        "annualReduction": "연간 예상감축량",
+        "creditingPeriod": "크레딧 기간",
+        "officialSource": "공식 원문",
+        "regionName": "소재 지역",
+        "technologyField": "기술분야"
+      },
+      "filters": [
         {
           "field": "technologyField",
           "label": "기술분야",
           "values": [
+            "CTIS-01 태양광 기술",
             "CTIS-03 풍력 기술",
             "CTIS-05 수력 기술",
-            "CTIS-08 바이오에너지 기술"
+            "CTIS-08 바이오에너지 기술",
+            "CTIS-15 폐자원 기술",
+            "CTIS-17 산업효율 기술",
+            "CTIS-19 건물효율 기술",
+            "CTIS-34 농축수산 부문 기술"
           ]
         },
         {
-          "field": "status",
-          "label": "상태",
+          "field": "regionName",
+          "label": "소재 지역",
           "values": [
-            "GOLD_STANDARD_CERTIFIED_DESIGN",
-            "GOLD_STANDARD_CERTIFIED_PROJECT"
+            "An Giang",
+            "Bac Ninh",
+            "Ca Mau",
+            "Can Tho city",
+            "Cao Bang",
+            "Da Nang city",
+            "Dak Lak",
+            "Dien Bien",
+            "Dong Nai",
+            "Dong Thap",
+            "Gia Lai",
+            "Ha Noi",
+            "Ha Tinh",
+            "Ho Chi Minh city",
+            "Hue",
+            "Khanh Hoa",
+            "Lai Chau",
+            "Lam Dong",
+            "Lang Son",
+            "Lao Cai",
+            "Nghe An",
+            "Ninh Binh",
+            "Phu Tho",
+            "Quang Ngai",
+            "Quang Tri",
+            "Son La",
+            "Tay Ninh",
+            "Thai Nguyen",
+            "Thanh Hoa",
+            "Tuyen Quang",
+            "Vinh Long"
           ]
         }
       ],
@@ -9722,8 +9802,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 1118,
-        "requiredCount": 1118
+        "matchedCount": 262,
+        "requiredCount": 262
       },
       "label": "탄소크레딧 사업",
       "latestYear": 2026,
@@ -9768,7 +9848,7 @@
         ]
       },
       "source": "Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry",
-      "sourceCoordinateCount": 1118,
+      "sourceCoordinateCount": 262,
       "sourceOrganizations": [
         "Global Carbon Council (GCC)",
         "UNFCCC CDM Insights",
@@ -9776,16 +9856,16 @@
         "Verra VCS Registry · Gold Standard Registry"
       ],
       "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 1,118개 피처",
+      "spatialCoverage": "출처 좌표가 있는 262개 피처",
       "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
       "spatialScopeType": "project-site",
       "tooltipFields": [
         "name",
-        "standard",
         "technologyField",
-        "status",
+        "creditingPeriod",
+        "regionName",
         "annualReduction",
-        "creditingPeriod"
+        "officialSource"
       ],
       "totalEntityCount": 146,
       "unit": "source-provided location",
@@ -9798,9 +9878,9 @@
       },
       "locationsUrl": "/data/vietnam/v2/spatial/locations/c-025.json",
       "locationCounts": {
-        "located": 1117,
+        "located": 261,
         "outside": 1,
-        "withoutCoordinate": 72
+        "withoutCoordinate": 126
       },
       "analysisItemLabel": "사업 위치·유형",
       "countNoun": "건",
@@ -10408,7 +10488,7 @@
             "intlCoop"
           ],
           "recordCount": 20,
-          "filledRecordCount": 20
+          "filledRecordCount": 18
         },
         {
           "key": "locationPrecision",
@@ -11112,7 +11192,7 @@
       }
     }
   ],
-  "mapFeatureCount": 5319,
+  "mapFeatureCount": 4463,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {

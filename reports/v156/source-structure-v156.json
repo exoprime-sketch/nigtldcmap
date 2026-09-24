@@ -1,7 +1,7 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-structure-v156.py",
-  "generatedAt": "2026-09-24T04:16:52Z",
+  "generatedAt": "2026-09-24T04:28:10Z",
   "workbooks": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\_source\\vietnam\\v156\\workbooks",
   "publishedCatalog": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\public\\data\\vietnam\\v2\\catalog.json",
   "totals": {
@@ -5373,7 +5373,7 @@
     },
     {
       "elementId": "C-025",
-      "file": "C-025_탄소크레딧 발행·소각 실적.xlsx",
+      "file": "C-025.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -5385,7 +5385,7 @@
       },
       "entityRows": {
         "published": 1190,
-        "delivered": 1190
+        "delivered": 388
       },
       "attributeLabels": [
         "attr_1",
@@ -5406,21 +5406,7 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
-        "attr_27",
-        "attr_28",
-        "attr_29",
         "attr_3",
-        "attr_30",
-        "attr_31",
-        "attr_32",
-        "attr_33",
-        "attr_34",
-        "attr_35",
-        "attr_36",
-        "attr_37",
-        "attr_38",
-        "attr_39",
         "attr_4",
         "attr_5",
         "attr_6",
@@ -5429,6 +5415,7 @@
         "attr_9"
       ],
       "spatialUnits": [
+        "nation",
         "point"
       ],
       "latestYear": {
@@ -5442,6 +5429,7 @@
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],

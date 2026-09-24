@@ -5892,9 +5892,13 @@
         {
           "key": "type",
           "labelKo": "type",
-          "valueCount": 1,
+          "valueCount": 5,
           "values": [
-            "Power (coal)"
+            "CO2 주입(EOR)",
+            "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+            "연구",
+            "연구/타당성",
+            "지중 저장 후보(Storage)"
           ]
         },
         {
@@ -5907,7 +5911,7 @@
         }
       ],
       "elementId": "A-025",
-      "entityCount": 1,
+      "entityCount": 5,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -5951,7 +5955,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 1,
-      "populatedRecordCount": 2,
+      "populatedRecordCount": 6,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -5966,6 +5970,18 @@
             "measure-b3485f17df75",
             "measure-06d3a0fc6345",
             "measure-305e39a21a64"
+          ]
+        },
+        {
+          "defaultValue": "CO2 주입(EOR)",
+          "key": "type",
+          "labelKo": "type",
+          "values": [
+            "CO2 주입(EOR)",
+            "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
+            "연구",
+            "연구/타당성",
+            "지중 저장 후보(Storage)"
           ]
         }
       ],
@@ -6202,13 +6218,8 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 38,
+          "valueCount": 32,
           "values": [
-            "bridge 기본값 비율",
-            "layer 기본값 비율",
-            "maxspeed 기본값 비율",
-            "oneway 기본값 비율",
-            "tunnel 기본값 비율",
             "교량(bridge) 결측률",
             "노면(surface) 결측률",
             "노선번호(ref) 결측률",
@@ -6239,7 +6250,6 @@
             "제한속도(maxspeed) 결측률",
             "좌표계",
             "차로수(lanes) 결측률",
-            "총 연장",
             "터널(tunnel) 결측률",
             "피처 수"
           ]
@@ -6247,7 +6257,7 @@
         {
           "key": "detail",
           "labelKo": "세부 분류",
-          "valueCount": 12,
+          "valueCount": 10,
           "values": [
             ".dbf 속성 테이블의 필드 개수",
             "fclass 분류값별 지물 건수",
@@ -6258,9 +6268,7 @@
             "OSM 철도 레이어의 좌표참조체계",
             "OSM 철도 레이어의 지물 건수",
             "결측률을 측정한 속성 필드 개수",
-            "속성 태그 미보유 비율",
-            "원천 기본값으로 채워진 비율",
-            "지오메트리 실측 연장"
+            "속성 태그 미보유 비율"
           ]
         },
         {
@@ -6297,10 +6305,10 @@
       },
       "measures": [
         {
-          "indicatorCount": 14,
+          "indicatorCount": 9,
           "key": "measure-8f35104be85d",
           "labelKo": "도로 레이어",
-          "recordCount": 24,
+          "recordCount": 9,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -6311,14 +6319,6 @@
           "recordCount": 1,
           "unit": "EPSG 코드",
           "unitFamily": "text"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-90039abe6990",
-          "labelKo": "도로 레이어",
-          "recordCount": 1,
-          "unit": "km",
-          "unitFamily": "other"
         },
         {
           "indicatorCount": 1,
@@ -6337,10 +6337,10 @@
           "unitFamily": "count"
         },
         {
-          "indicatorCount": 4,
+          "indicatorCount": 1,
           "key": "measure-0ff4ec179e3f",
           "labelKo": "철도 레이어",
-          "recordCount": 10,
+          "recordCount": 1,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -6351,14 +6351,6 @@
           "recordCount": 1,
           "unit": "EPSG 코드",
           "unitFamily": "text"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-895399eef689",
-          "labelKo": "철도 레이어",
-          "recordCount": 1,
-          "unit": "km",
-          "unitFamily": "other"
         },
         {
           "indicatorCount": 1,
@@ -6378,10 +6370,10 @@
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
-      "missingRecordCount": 2,
+      "missingRecordCount": 0,
       "noDataReason": null,
-      "observationCount": 61,
-      "populatedRecordCount": 59,
+      "observationCount": 35,
+      "populatedRecordCount": 35,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -6395,26 +6387,19 @@
           "values": [
             "measure-8f35104be85d",
             "measure-3ddde7efded5",
-            "measure-90039abe6990",
             "measure-bd9e985f5e92",
             "measure-7d9609ecb1c8",
             "measure-0ff4ec179e3f",
             "measure-22c73ee94b33",
-            "measure-895399eef689",
             "measure-9f2522bf8637",
             "measure-277ea4d09a7b"
           ]
         },
         {
-          "defaultValue": "bridge 기본값 비율",
+          "defaultValue": "교량(bridge) 결측률",
           "key": "category",
           "labelKo": "분류",
           "values": [
-            "bridge 기본값 비율",
-            "layer 기본값 비율",
-            "maxspeed 기본값 비율",
-            "oneway 기본값 비율",
-            "tunnel 기본값 비율",
             "교량(bridge) 결측률",
             "노면(surface) 결측률",
             "노선번호(ref) 결측률",
@@ -6445,7 +6430,6 @@
             "제한속도(maxspeed) 결측률",
             "좌표계",
             "차로수(lanes) 결측률",
-            "총 연장",
             "터널(tunnel) 결측률",
             "피처 수"
           ]
@@ -6464,9 +6448,7 @@
             "OSM 철도 레이어의 좌표참조체계",
             "OSM 철도 레이어의 지물 건수",
             "결측률을 측정한 속성 필드 개수",
-            "속성 태그 미보유 비율",
-            "원천 기본값으로 채워진 비율",
-            "지오메트리 실측 연장"
+            "속성 태그 미보유 비율"
           ]
         }
       ],
@@ -6478,10 +6460,7 @@
         "period",
         "source",
         "missingReason",
-        "sourceEvidence",
-        "속성1_A_013_SDG세부목표코드_A_023_설비용량_MW_A_024_전압_kV_A_025_시설유형_A_029_서명일",
-        "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일",
-        "속성3_A_024_선로상태_기존_계획"
+        "sourceEvidence"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -6494,7 +6473,6 @@
       ],
       "unitFamilies": [
         "count",
-        "other",
         "percent",
         "text"
       ],
@@ -6767,7 +6745,7 @@
         }
       ],
       "elementId": "A-029",
-      "entityCount": 30,
+      "entityCount": 19,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -6811,7 +6789,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 1,
-      "populatedRecordCount": 31,
+      "populatedRecordCount": 20,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -6840,7 +6818,7 @@
         "sourceEvidence",
         "yyyyMmDd",
         "yyyyMmDd2",
-        "속성3_A_024_선로상태_기존_계획_A_029_상태_통일코드"
+        "속성3_A_024_선로상태_기존_계획"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -6879,53 +6857,19 @@
         {
           "key": "detail",
           "labelKo": "세부 분류",
-          "valueCount": 8,
+          "valueCount": 4,
           "values": [
-            "수출액과 수입액의 합",
-            "수출액에서 수입액을 뺀 값",
             "한국 기준 대베트남 대베트남 수입액",
             "한국 기준 대베트남 대베트남 수출액",
             "한국 기준 대베트남 무역수지",
-            "한국 기준 대베트남 수입액",
-            "한국 기준 대베트남 수출액",
             "한국 기준 대베트남 총 교역액"
           ]
         },
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 34,
+          "valueCount": 4,
           "values": [
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
             "2021",
             "2022",
             "2023",
@@ -6951,17 +6895,9 @@
       "measures": [
         {
           "indicatorCount": 4,
-          "key": "measure-949717b1de52",
-          "labelKo": "[보조] 한-베트남 교역",
-          "recordCount": 16,
-          "unit": "10억 USD",
-          "unitFamily": "currency"
-        },
-        {
-          "indicatorCount": 4,
           "key": "measure-fe46d9d1d4c2",
           "labelKo": "한-베트남 교역",
-          "recordCount": 132,
+          "recordCount": 16,
           "unit": "10억 USD",
           "unitFamily": "currency"
         }
@@ -6969,23 +6905,14 @@
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 7,
       "noDataReason": null,
-      "observationCount": 148,
-      "populatedRecordCount": 141,
+      "observationCount": 16,
+      "populatedRecordCount": 9,
       "primaryLabelFields": [
         "displayLabel"
       ],
       "primaryRenderer": "category-comparison",
       "secondaryRenderer": "structured-table",
       "selectors": [
-        {
-          "defaultValue": "measure-949717b1de52",
-          "key": "measure",
-          "labelKo": "측정항목",
-          "values": [
-            "measure-949717b1de52",
-            "measure-fe46d9d1d4c2"
-          ]
-        },
         {
           "defaultValue": "대베트남 수입액",
           "key": "category",
@@ -6998,17 +6925,13 @@
           ]
         },
         {
-          "defaultValue": "수출액과 수입액의 합",
+          "defaultValue": "한국 기준 대베트남 대베트남 수입액",
           "key": "detail",
           "labelKo": "세부 분류",
           "values": [
-            "수출액과 수입액의 합",
-            "수출액에서 수입액을 뺀 값",
             "한국 기준 대베트남 대베트남 수입액",
             "한국 기준 대베트남 대베트남 수출액",
             "한국 기준 대베트남 무역수지",
-            "한국 기준 대베트남 수입액",
-            "한국 기준 대베트남 수출액",
             "한국 기준 대베트남 총 교역액"
           ]
         },
@@ -7017,36 +6940,6 @@
           "key": "year",
           "labelKo": "연도",
           "values": [
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
-            "2000",
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
             "2021",
             "2022",
             "2023",
@@ -7081,7 +6974,7 @@
       ],
       "yearRange": {
         "end": 2024,
-        "start": 1991
+        "start": 2021
       }
     },
     {
@@ -7635,18 +7528,18 @@
           "labelKo": "세부 분류",
           "valueCount": 12,
           "values": [
-            "1월 (1991-2020 평년)",
-            "2월 (1991-2020 평년)",
-            "3월 (1991-2020 평년)",
-            "4월 (1991-2020 평년)",
-            "5월 (1991-2020 평년)",
-            "6월 (1991-2020 평년)",
-            "7월 (1991-2020 평년)",
-            "8월 (1991-2020 평년)",
-            "9월 (1991-2020 평년)",
-            "10월 (1991-2020 평년)",
-            "11월 (1991-2020 평년)",
-            "12월 (1991-2020 평년)"
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월"
           ]
         },
         {
@@ -7676,16 +7569,16 @@
       "measures": [
         {
           "indicatorCount": 1,
-          "key": "measure-1dfdcad372ca",
-          "labelKo": "연 평년강수 (1991-2020 평년)",
+          "key": "measure-007153a24949",
+          "labelKo": "연 평년강수",
           "recordCount": 1,
           "unit": "mm",
           "unitFamily": "other"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-b49b6b6ea1be",
-          "labelKo": "연 평년기온 (1991-2020 평년)",
+          "key": "measure-38d1f991bf44",
+          "labelKo": "연 평년기온",
           "recordCount": 1,
           "unit": "℃",
           "unitFamily": "other"
@@ -7727,34 +7620,34 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-1dfdcad372ca",
+          "defaultValue": "measure-007153a24949",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
-            "measure-1dfdcad372ca",
-            "measure-b49b6b6ea1be",
+            "measure-007153a24949",
+            "measure-38d1f991bf44",
             "measure-706a7683fa04",
             "measure-765f6791d931",
             "measure-7659cb58032f"
           ]
         },
         {
-          "defaultValue": "1월 (1991-2020 평년)",
+          "defaultValue": "1월",
           "key": "detail",
           "labelKo": "세부 분류",
           "values": [
-            "1월 (1991-2020 평년)",
-            "2월 (1991-2020 평년)",
-            "3월 (1991-2020 평년)",
-            "4월 (1991-2020 평년)",
-            "5월 (1991-2020 평년)",
-            "6월 (1991-2020 평년)",
-            "7월 (1991-2020 평년)",
-            "8월 (1991-2020 평년)",
-            "9월 (1991-2020 평년)",
-            "10월 (1991-2020 평년)",
-            "11월 (1991-2020 평년)",
-            "12월 (1991-2020 평년)"
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월"
           ]
         }
       ],
@@ -7986,7 +7879,7 @@
         }
       ],
       "elementId": "B-003",
-      "entityCount": 12621,
+      "entityCount": 8371,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -8010,7 +7903,7 @@
           "unitFamily": "other"
         },
         {
-          "indicatorCount": 3,
+          "indicatorCount": 2,
           "key": "measure-56f2a8018960",
           "labelKo": "연평균 기온",
           "recordCount": 0,
@@ -8046,7 +7939,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 12621,
+      "populatedRecordCount": 8371,
       "primaryLabelFields": [
         "name",
         "title",
@@ -10645,15 +10538,12 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "2025_개편_후_소속_34개_체계",
         "PSMSL_관측소_ID",
         "관측소명_PSMSL",
         "관측소명_베트남어",
-        "기후기술_연계_근거",
         "레코드_키",
         "분위수",
         "상대해수면_상승_m_2005년_기준",
-        "소속_행정구역_개편_전_63성_GADM_명칭",
         "소재",
         "시나리오",
         "신뢰수준",
@@ -10695,12 +10585,18 @@
         {
           "key": "detail",
           "labelKo": "세부 분류",
-          "valueCount": 4,
+          "valueCount": 10,
           "values": [
             "Scape Physical Risk",
             "Scape Regulatory Deficiency Risk",
             "Scape Reputational Risk",
-            "성(省) 단위"
+            "물 부문",
+            "보건 부문",
+            "생태계 부문",
+            "성(省) 단위",
+            "식량 부문",
+            "인간서식지 부문",
+            "인프라 부문"
           ]
         },
         {
@@ -10776,16 +10672,47 @@
         {
           "key": "technology",
           "labelKo": "기술",
-          "valueCount": 1,
+          "valueCount": 2,
           "values": [
+            "30",
             "30,35"
           ]
         },
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 1,
+          "valueCount": 31,
           "values": [
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
             "2026"
           ]
         }
@@ -10810,7 +10737,7 @@
           "indicatorCount": 6,
           "key": "measure-f7305839da3a",
           "labelKo": "ND-GAIN 취약성",
-          "recordCount": 0,
+          "recordCount": 180,
           "unit": "지수",
           "unitFamily": "other"
         },
@@ -10858,8 +10785,8 @@
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 0,
       "noDataReason": null,
-      "observationCount": 255,
-      "populatedRecordCount": 255,
+      "observationCount": 435,
+      "populatedRecordCount": 435,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -10887,7 +10814,13 @@
             "Scape Physical Risk",
             "Scape Regulatory Deficiency Risk",
             "Scape Reputational Risk",
-            "성(省) 단위"
+            "물 부문",
+            "보건 부문",
+            "생태계 부문",
+            "성(省) 단위",
+            "식량 부문",
+            "인간서식지 부문",
+            "인프라 부문"
           ]
         },
         {
@@ -10959,6 +10892,53 @@
             "Vinh Phuc",
             "Yen Bai"
           ]
+        },
+        {
+          "defaultValue": "30",
+          "key": "technology",
+          "labelKo": "기술",
+          "values": [
+            "30",
+            "30,35"
+          ]
+        },
+        {
+          "defaultValue": "2026",
+          "key": "year",
+          "labelKo": "연도",
+          "values": [
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2026"
+          ]
         }
       ],
       "tableColumns": [
@@ -10988,7 +10968,7 @@
       ],
       "yearRange": {
         "end": 2026,
-        "start": 2026
+        "start": 1995
       }
     },
     {
@@ -11698,7 +11678,6 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "2025_개편_후_소속_34개_체계",
         "EM_DAT_재해번호_DisNo",
         "IBTrACS_태풍명_SID",
         "기후기술_연계_근거",
@@ -12474,7 +12453,7 @@
         }
       ],
       "elementId": "B-017",
-      "entityCount": 4867,
+      "entityCount": 2032,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -12562,14 +12541,6 @@
           "unitFamily": "score"
         },
         {
-          "indicatorCount": 1,
-          "key": "measure-9bc614c69ab6",
-          "labelKo": "물 스트레스(행정구역 순위표)",
-          "recordCount": 0,
-          "unit": "점",
-          "unitFamily": "score"
-        },
-        {
           "indicatorCount": 63,
           "key": "measure-f9ca2ab1e6b4",
           "labelKo": "하천 홍수 리스크",
@@ -12590,7 +12561,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 4867,
+      "populatedRecordCount": 2032,
       "primaryLabelFields": [
         "name",
         "title",
@@ -12614,7 +12585,6 @@
             "measure-82e222681420",
             "measure-b6ac53aeb8d1",
             "measure-b9a4e561fc86",
-            "measure-9bc614c69ab6",
             "measure-f9ca2ab1e6b4",
             "measure-a2e7c233f77a"
           ]
@@ -12650,15 +12620,15 @@
         "기후기술_연계_근거",
         "대수층_코드_aqid",
         "레코드_키_string_id",
-        "순위표_값",
-        "순위표_단위",
-        "순위표_지표명",
         "연간_변동성_Interannual_Variability_등급",
         "연간_변동성_Interannual_Variability_원값",
         "연간_변동성_Interannual_Variability_점수_0_5",
         "연안_홍수위험_Coastal_Flood_Risk_등급",
         "연안_홍수위험_Coastal_Flood_Risk_원값",
         "연안_홍수위험_Coastal_Flood_Risk_점수_0_5",
+        "전국_값",
+        "전국_단위",
+        "전국_지표명",
         "종합_물리스크_Overall_Water_Risk_기본가중_등급",
         "종합_물리스크_Overall_Water_Risk_기본가중_원값",
         "종합_물리스크_Overall_Water_Risk_기본가중_점수_0_5",
@@ -15052,7 +15022,7 @@
         }
       ],
       "elementId": "B-026",
-      "entityCount": 108,
+      "entityCount": 74,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -15093,14 +15063,6 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-f267ac8c876d",
-          "labelKo": "유향 D8 분포(성 단위 개체 목록) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "%",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-476b68c2b0d7",
           "labelKo": "유향(전국",
           "recordCount": 0,
@@ -15112,7 +15074,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 108,
+      "populatedRecordCount": 74,
       "primaryLabelFields": [
         "name",
         "title",
@@ -15130,7 +15092,6 @@
             "measure-eec8d0d27c64",
             "measure-ea7536562a69",
             "measure-4bcdf0e2decb",
-            "measure-f267ac8c876d",
             "measure-476b68c2b0d7"
           ]
         }
@@ -15189,14 +15150,6 @@
       "currentVisualizationIssue": "legacy-latest-value-collapse-and-generic-bar",
       "dataPresenceStatus": "actual-records",
       "dimensions": [
-        {
-          "key": "category",
-          "labelKo": "분류",
-          "valueCount": 1,
-          "values": [
-            "함양량"
-          ]
-        },
         {
           "key": "detail",
           "labelKo": "세부 분류",
@@ -15282,8 +15235,8 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-8aad19dca623",
-          "labelKo": "지하수 자원량",
+          "key": "measure-34f4236b35f8",
+          "labelKo": "지하수 잠재량",
           "recordCount": 1,
           "unit": "mm/yr 또는 10⁹ m³/yr",
           "unitFamily": "other"
@@ -15314,7 +15267,7 @@
           "labelKo": "측정항목",
           "values": [
             "measure-551da7ede3b6",
-            "measure-8aad19dca623",
+            "measure-34f4236b35f8",
             "measure-b4eb329a4a57"
           ]
         },
@@ -15598,7 +15551,7 @@
         }
       ],
       "elementId": "B-029",
-      "entityCount": 289,
+      "entityCount": 231,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -15679,14 +15632,6 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-9f5aa96fe609",
-          "labelKo": "이탄지 면적(성 단위 개체 목록) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "km² / 1000 ha",
-          "unitFamily": "area"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-d907bd3ae7d5",
           "labelKo": "자연재생림 면적",
           "recordCount": 0,
@@ -15706,7 +15651,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 289,
+      "populatedRecordCount": 231,
       "primaryLabelFields": [
         "name",
         "title",
@@ -15729,7 +15674,6 @@
             "measure-92cdbada6989",
             "measure-d6fbee3cc540",
             "measure-9ef6d84f95c0",
-            "measure-9f5aa96fe609",
             "measure-d907bd3ae7d5",
             "measure-da5947305341"
           ]
@@ -15796,7 +15740,7 @@
         }
       ],
       "elementId": "B-030",
-      "entityCount": 134,
+      "entityCount": 100,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -15812,7 +15756,7 @@
       },
       "measures": [
         {
-          "indicatorCount": 2,
+          "indicatorCount": 1,
           "key": "measure-97af82a8ed3d",
           "labelKo": "산림 이득",
           "recordCount": 0,
@@ -15856,7 +15800,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 134,
+      "populatedRecordCount": 100,
       "primaryLabelFields": [
         "name",
         "title",
@@ -18005,7 +17949,7 @@
         }
       ],
       "elementId": "B-037",
-      "entityCount": 781,
+      "entityCount": 747,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -18062,14 +18006,6 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-15eb50af4d41",
-          "labelKo": "토지피복 분류별 면적(성 단위 개체 목록) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "km²",
-          "unitFamily": "area"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-e59e55078705",
           "labelKo": "토지피복 분류별 면적(전국)",
           "recordCount": 0,
@@ -18081,7 +18017,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 781,
+      "populatedRecordCount": 747,
       "primaryLabelFields": [
         "name",
         "title",
@@ -18101,7 +18037,6 @@
             "measure-08c6d6285cee",
             "measure-baf2173085f9",
             "measure-6e0e78899b02",
-            "measure-15eb50af4d41",
             "measure-e59e55078705"
           ]
         }
@@ -18165,81 +18100,47 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 6,
+          "valueCount": 3,
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고)",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 바이오매스 발전 설비목표(2030)",
-            "참고자료] 사육두수",
-            "참고자료] 폐자원 발전 설비목표(2030)"
+            "유기성 비중",
+            "전자 폐기물 발생량",
+            "폐기물 발전설비 용량(교차검증, EIA)"
           ]
         },
         {
           "key": "detail",
           "labelKo": "세부 분류",
-          "valueCount": 9,
+          "valueCount": 11,
           "values": [
             "기타",
             "닭(산출 투입자료)",
             "돼지(산출 투입자료)",
+            "매립(형식 미상)",
             "물소(산출 투입자료)",
-            "바가스",
-            "볏짚",
+            "미수거",
             "소(산출 투입자료)",
-            "왕겨",
-            "현지조사 기준"
+            "소각",
+            "위생매립(매립가스 회수설비 보유)",
+            "재활용",
+            "퇴비화"
           ]
         },
         {
           "key": "technology",
           "labelKo": "기술",
-          "valueCount": 2,
+          "valueCount": 4,
           "values": [
+            "08",
             "08,14",
-            "08,15"
+            "08,15",
+            "15"
           ]
         },
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 63,
+          "valueCount": 29,
           "values": [
-            "1965",
-            "1966",
-            "1967",
-            "1968",
-            "1969",
-            "1970",
-            "1971",
-            "1972",
-            "1973",
-            "1974",
-            "1975",
-            "1976",
-            "1977",
-            "1978",
-            "1979",
-            "1980",
-            "1981",
-            "1982",
-            "1983",
-            "1984",
-            "1985",
-            "1986",
-            "1987",
-            "1988",
-            "1989",
-            "1990",
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
             "2000",
             "2001",
             "2002",
@@ -18265,6 +18166,7 @@
             "2022",
             "2023",
             "2024",
+            "2025",
             "2030",
             "2040",
             "2050"
@@ -18291,71 +18193,15 @@
           "indicatorCount": 1,
           "key": "measure-13e56f3e0776",
           "labelKo": "1인당 도시폐기물 발생량",
-          "recordCount": 0,
-          "unit": "kg/인/일",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-2552e0c53444",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 인구",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-22ac0ea3403a",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 중량",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 2,
-          "key": "measure-f8c3b05ddc42",
-          "labelKo": "[산출 투입",
-          "recordCount": 2,
-          "unit": "MW",
-          "unitFamily": "capacity"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-a5170524e4e6",
-          "labelKo": "[산출 투입",
           "recordCount": 5,
           "unit": "kg/인/일",
           "unitFamily": "other"
         },
         {
-          "indicatorCount": 4,
-          "key": "measure-1dfbcc7c9550",
-          "labelKo": "[산출 투입",
-          "recordCount": 240,
-          "unit": "두",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 5,
+          "indicatorCount": 1,
           "key": "measure-76bf52d804b4",
           "labelKo": "농업잔재 자원량",
-          "recordCount": 10,
-          "unit": "Mt/yr",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-30ad010aec85",
-          "labelKo": "농업잔재 자원량 - FAOSTAT 생산량×잔재계수 산출 계열(1965-2024)",
-          "recordCount": 60,
-          "unit": "Mt/yr",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-d74aff6e6eb3",
-          "labelKo": "도시폐기물 발생량",
-          "recordCount": 2,
+          "recordCount": 1,
           "unit": "Mt/yr",
           "unitFamily": "other"
         },
@@ -18363,7 +18209,7 @@
           "indicatorCount": 1,
           "key": "measure-a1c76d6d4e02",
           "labelKo": "도시폐기물 수거율(참고)",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "% 인구",
           "unitFamily": "percent"
         },
@@ -18379,7 +18225,7 @@
           "indicatorCount": 1,
           "key": "measure-cd737328bac0",
           "labelKo": "도시폐기물 중 음식물",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "% 중량",
           "unitFamily": "percent"
         },
@@ -18387,7 +18233,7 @@
           "indicatorCount": 7,
           "key": "measure-4cb7b5447f5a",
           "labelKo": "도시폐기물 처리경로별 비중",
-          "recordCount": 0,
+          "recordCount": 7,
           "unit": "% 중량",
           "unitFamily": "percent"
         },
@@ -18403,31 +18249,15 @@
           "indicatorCount": 1,
           "key": "measure-8643816ff83c",
           "labelKo": "바이오매스",
-          "recordCount": 0,
+          "recordCount": 25,
           "unit": "백만 kW",
           "unitFamily": "capacity"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-c1cecaf34657",
-          "labelKo": "바이오매스 에너지 잠재량",
-          "recordCount": 2,
-          "unit": "TJ/yr",
-          "unitFamily": "energy"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-561a654603fb",
-          "labelKo": "바이오매스 이론 부존량",
-          "recordCount": 2,
-          "unit": "Mt/yr",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-44865662c365",
           "labelKo": "바이오에너지 발전설비 용량(계통연계, 참고)",
-          "recordCount": 0,
+          "recordCount": 21,
           "unit": "MW",
           "unitFamily": "capacity"
         },
@@ -18435,7 +18265,7 @@
           "indicatorCount": 1,
           "key": "measure-877aae060687",
           "labelKo": "바이오에너지 발전설비 용량(독립계통, 참고)",
-          "recordCount": 0,
+          "recordCount": 26,
           "unit": "MW",
           "unitFamily": "capacity"
         },
@@ -18443,23 +18273,15 @@
           "indicatorCount": 4,
           "key": "measure-efdceb96360b",
           "labelKo": "사육두수",
-          "recordCount": 0,
+          "recordCount": 40,
           "unit": "두",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-85c55a6c5112",
-          "labelKo": "수집가능(bankable) 바이오매스 공급량",
-          "recordCount": 2,
-          "unit": "Mt/yr",
           "unitFamily": "other"
         },
         {
           "indicatorCount": 1,
           "key": "measure-cce048e76be7",
           "labelKo": "임업잔재 자원량",
-          "recordCount": 2,
+          "recordCount": 1,
           "unit": "Mt/yr",
           "unitFamily": "other"
         },
@@ -18467,7 +18289,7 @@
           "indicatorCount": 1,
           "key": "measure-34b5f36d14cf",
           "labelKo": "재생에너지 발전량 비중(참고)",
-          "recordCount": 0,
+          "recordCount": 24,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -18475,7 +18297,7 @@
           "indicatorCount": 1,
           "key": "measure-684bafb2a64b",
           "labelKo": "재생에너지 설비용량 비중(참고)",
-          "recordCount": 0,
+          "recordCount": 26,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -18483,24 +18305,24 @@
           "indicatorCount": 1,
           "key": "measure-d58e7b07454a",
           "labelKo": "전기",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "t/yr",
           "unitFamily": "other"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-ccc9e008a799",
+          "key": "measure-29a5e522b7a8",
           "labelKo": "축산폐기물(가축분뇨) 자원량",
-          "recordCount": 60,
-          "unit": "Mt VS/yr",
+          "recordCount": 1,
+          "unit": "Mt/yr",
           "unitFamily": "other"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
-      "missingRecordCount": 0,
+      "missingRecordCount": 3,
       "noDataReason": null,
-      "observationCount": 399,
-      "populatedRecordCount": 399,
+      "observationCount": 190,
+      "populatedRecordCount": 187,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -18513,44 +18335,31 @@
           "labelKo": "측정항목",
           "values": [
             "measure-13e56f3e0776",
-            "measure-2552e0c53444",
-            "measure-22ac0ea3403a",
-            "measure-f8c3b05ddc42",
-            "measure-a5170524e4e6",
-            "measure-1dfbcc7c9550",
             "measure-76bf52d804b4",
-            "measure-30ad010aec85",
-            "measure-d74aff6e6eb3",
             "measure-a1c76d6d4e02",
             "measure-f206688f0259",
             "measure-cd737328bac0",
             "measure-4cb7b5447f5a",
             "measure-9c0d857558df",
             "measure-8643816ff83c",
-            "measure-c1cecaf34657",
-            "measure-561a654603fb",
             "measure-44865662c365",
             "measure-877aae060687",
             "measure-efdceb96360b",
-            "measure-85c55a6c5112",
             "measure-cce048e76be7",
             "measure-34b5f36d14cf",
             "measure-684bafb2a64b",
             "measure-d58e7b07454a",
-            "measure-ccc9e008a799"
+            "measure-29a5e522b7a8"
           ]
         },
         {
-          "defaultValue": "참고자료] 1인당 도시폐기물 발생량",
+          "defaultValue": "유기성 비중",
           "key": "category",
           "labelKo": "분류",
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고)",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 바이오매스 발전 설비목표(2030)",
-            "참고자료] 사육두수",
-            "참고자료] 폐자원 발전 설비목표(2030)"
+            "유기성 비중",
+            "전자 폐기물 발생량",
+            "폐기물 발전설비 용량(교차검증, EIA)"
           ]
         },
         {
@@ -18561,21 +18370,25 @@
             "기타",
             "닭(산출 투입자료)",
             "돼지(산출 투입자료)",
+            "매립(형식 미상)",
             "물소(산출 투입자료)",
-            "바가스",
-            "볏짚",
+            "미수거",
             "소(산출 투입자료)",
-            "왕겨",
-            "현지조사 기준"
+            "소각",
+            "위생매립(매립가스 회수설비 보유)",
+            "재활용",
+            "퇴비화"
           ]
         },
         {
-          "defaultValue": "08,14",
+          "defaultValue": "08",
           "key": "technology",
           "labelKo": "기술",
           "values": [
+            "08",
             "08,14",
-            "08,15"
+            "08,15",
+            "15"
           ]
         },
         {
@@ -18583,41 +18396,6 @@
           "key": "year",
           "labelKo": "연도",
           "values": [
-            "1965",
-            "1966",
-            "1967",
-            "1968",
-            "1969",
-            "1970",
-            "1971",
-            "1972",
-            "1973",
-            "1974",
-            "1975",
-            "1976",
-            "1977",
-            "1978",
-            "1979",
-            "1980",
-            "1981",
-            "1982",
-            "1983",
-            "1984",
-            "1985",
-            "1986",
-            "1987",
-            "1988",
-            "1989",
-            "1990",
-            "1991",
-            "1992",
-            "1993",
-            "1994",
-            "1995",
-            "1996",
-            "1997",
-            "1998",
-            "1999",
             "2000",
             "2001",
             "2002",
@@ -18643,6 +18421,7 @@
             "2022",
             "2023",
             "2024",
+            "2025",
             "2030",
             "2040",
             "2050"
@@ -18672,13 +18451,12 @@
       ],
       "unitFamilies": [
         "capacity",
-        "energy",
         "other",
         "percent"
       ],
       "yearRange": {
         "end": 2050,
-        "start": 1965
+        "start": 2000
       }
     },
     {
@@ -18697,7 +18475,7 @@
         }
       ],
       "elementId": "B-039",
-      "entityCount": 263,
+      "entityCount": 228,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -18810,14 +18588,6 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-2bd10ca4428f",
-          "labelKo": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "TWh/yr · GWh/yr",
-          "unitFamily": "energy"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-d374a50706e3",
           "labelKo": "수력 잠재량",
           "recordCount": 0,
@@ -18861,7 +18631,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 263,
+      "populatedRecordCount": 228,
       "primaryLabelFields": [
         "name",
         "title",
@@ -18888,7 +18658,6 @@
             "measure-6c4981e34947",
             "measure-e1009ff62390",
             "measure-9b457cc4f86b",
-            "measure-2bd10ca4428f",
             "measure-d374a50706e3",
             "measure-a49f99f25ada",
             "measure-5c7695e4d3ca",
@@ -18960,7 +18729,7 @@
         }
       ],
       "elementId": "B-040",
-      "entityCount": 199,
+      "entityCount": 165,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -19027,14 +18796,6 @@
           "indicatorCount": 1,
           "key": "measure-3831f5947755",
           "labelKo": "심도별 지온(성 단위 개체 목록)",
-          "recordCount": 0,
-          "unit": "℃ / ℃·km⁻¹",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-dcd343b5fe0f",
-          "labelKo": "심도별 지온(성 단위 개체 목록) - 2025년 34개 체계",
           "recordCount": 0,
           "unit": "℃ / ℃·km⁻¹",
           "unitFamily": "other"
@@ -19116,7 +18877,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 199,
+      "populatedRecordCount": 165,
       "primaryLabelFields": [
         "name",
         "title",
@@ -19138,7 +18899,6 @@
             "measure-172b9be5466d",
             "measure-87d99c782845",
             "measure-3831f5947755",
-            "measure-dcd343b5fe0f",
             "measure-efc020d676ff",
             "measure-3f6866d43f5a",
             "measure-9f446e55e5eb",
@@ -19222,7 +18982,7 @@
         }
       ],
       "elementId": "B-041",
-      "entityCount": 147,
+      "entityCount": 113,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -19351,24 +19111,16 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-dee802079812",
-          "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018)",
+          "key": "measure-72caa322d086",
+          "labelKo": "태양광 자원(성 단위 개체 목록)",
           "recordCount": 0,
           "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
           "unitFamily": "energy"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-a88b6c506a19",
-          "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
-          "unitFamily": "energy"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-36d52b7b9c7f",
-          "labelKo": "태양광 자원(전국) (기준연도 2018)",
+          "key": "measure-0050bff3bdd1",
+          "labelKo": "태양광 자원(전국)",
           "recordCount": 0,
           "unit": "지표별 상이(속성 열 참조)",
           "unitFamily": "other"
@@ -19378,7 +19130,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 147,
+      "populatedRecordCount": 113,
       "primaryLabelFields": [
         "name",
         "title",
@@ -19407,9 +19159,8 @@
             "measure-4999244c44da",
             "measure-e8dfe93e4f75",
             "measure-fb19d27802f3",
-            "measure-dee802079812",
-            "measure-a88b6c506a19",
-            "measure-36d52b7b9c7f"
+            "measure-72caa322d086",
+            "measure-0050bff3bdd1"
           ]
         }
       ],
@@ -19484,7 +19235,7 @@
         }
       ],
       "elementId": "B-042",
-      "entityCount": 242,
+      "entityCount": 205,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -19525,24 +19276,16 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-022b340c6cb5",
-          "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
+          "key": "measure-8f51eb34e396",
+          "labelKo": "풍력 자원(성 단위 개체 목록)",
           "recordCount": 0,
           "unit": "m/s · W/m²",
           "unitFamily": "area"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-52d37a92a784",
-          "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
-          "recordCount": 0,
-          "unit": "m/s · W/m²",
-          "unitFamily": "area"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-23cac7ae3394",
-          "labelKo": "풍력 자원(전국) (기준연도 2017)",
+          "key": "measure-797049975044",
+          "labelKo": "풍력 자원(전국)",
           "recordCount": 0,
           "unit": "지표별 상이(속성 열 참조)",
           "unitFamily": "other"
@@ -19568,7 +19311,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 242,
+      "populatedRecordCount": 205,
       "primaryLabelFields": [
         "name",
         "title",
@@ -19586,9 +19329,8 @@
             "measure-d042edbf9452",
             "measure-36d5d073716a",
             "measure-c1e63408b2bc",
-            "measure-022b340c6cb5",
-            "measure-52d37a92a784",
-            "measure-23cac7ae3394",
+            "measure-8f51eb34e396",
+            "measure-797049975044",
             "measure-c0e651fae45c",
             "measure-46a9bbc12321"
           ]
@@ -19610,8 +19352,6 @@
         "기준기간",
         "기후기술_연계_근거",
         "레코드_키",
-        "설비이용률_상위10",
-        "설비이용률_평균",
         "에너지밀도_상위10_W_m",
         "에너지밀도_최대_W_m",
         "에너지밀도_최소_W_m",
@@ -20052,23 +19792,28 @@
       "dataPresenceStatus": "actual-records",
       "dimensions": [
         {
-          "key": "category",
-          "labelKo": "분류",
-          "valueCount": 1,
-          "values": [
-            "데이터 접근 체계"
-          ]
-        },
-        {
           "key": "detail",
           "labelKo": "세부 분류",
-          "valueCount": 6,
+          "valueCount": 19,
           "values": [
             "구리",
+            "납-아연",
             "니켈",
             "리튬",
             "망간",
+            "보크사이트",
+            "안티모니",
+            "인광석",
+            "인광석(아파타이트)",
+            "주석",
+            "철",
             "코발트",
+            "크로마이트",
+            "텅스텐",
+            "티타늄광물",
+            "티타늄광물(미가공)",
+            "형석",
+            "흑연",
             "희토류"
           ]
         },
@@ -20083,9 +19828,8 @@
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 2,
+          "valueCount": 1,
           "values": [
-            "2024",
             "2026"
           ]
         }
@@ -20110,7 +19854,7 @@
           "indicatorCount": 1,
           "key": "measure-4b0020774e59",
           "labelKo": "10개국 기준광물 목록",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "—",
           "unitFamily": "other"
         },
@@ -20118,23 +19862,15 @@
           "indicatorCount": 7,
           "key": "measure-befc79f3731c",
           "labelKo": "원광 수출규제 대상 광종",
-          "recordCount": 0,
+          "recordCount": 7,
           "unit": "해당 여부",
-          "unitFamily": "text"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-2c845545edf8",
-          "labelKo": "핵심광물 법",
-          "recordCount": 1,
-          "unit": "상태",
           "unitFamily": "text"
         },
         {
           "indicatorCount": 17,
           "key": "measure-796bc07af80c",
           "labelKo": "핵심광물 부존 상태",
-          "recordCount": 6,
+          "recordCount": 17,
           "unit": "상태",
           "unitFamily": "text"
         },
@@ -20142,16 +19878,16 @@
           "indicatorCount": 1,
           "key": "measure-a316b3573a2e",
           "labelKo": "현지조사 결과 반영",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "—",
           "unitFamily": "other"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
-      "missingRecordCount": 0,
+      "missingRecordCount": 2,
       "noDataReason": null,
-      "observationCount": 7,
-      "populatedRecordCount": 7,
+      "observationCount": 26,
+      "populatedRecordCount": 24,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -20165,7 +19901,6 @@
           "values": [
             "measure-4b0020774e59",
             "measure-befc79f3731c",
-            "measure-2c845545edf8",
             "measure-796bc07af80c",
             "measure-a316b3573a2e"
           ]
@@ -20176,20 +19911,24 @@
           "labelKo": "세부 분류",
           "values": [
             "구리",
+            "납-아연",
             "니켈",
             "리튬",
             "망간",
+            "보크사이트",
+            "안티모니",
+            "인광석",
+            "인광석(아파타이트)",
+            "주석",
+            "철",
             "코발트",
+            "크로마이트",
+            "텅스텐",
+            "티타늄광물",
+            "티타늄광물(미가공)",
+            "형석",
+            "흑연",
             "희토류"
-          ]
-        },
-        {
-          "defaultValue": "2026",
-          "key": "year",
-          "labelKo": "연도",
-          "values": [
-            "2024",
-            "2026"
           ]
         }
       ],
@@ -20220,7 +19959,7 @@
       ],
       "yearRange": {
         "end": 2026,
-        "start": 2024
+        "start": 2026
       }
     },
     {
@@ -20257,15 +19996,9 @@
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 7,
+          "valueCount": 1,
           "values": [
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
+            "2026"
           ]
         }
       ],
@@ -20289,7 +20022,7 @@
           "indicatorCount": 8,
           "key": "measure-47af40a32a99",
           "labelKo": "세계 매장량 비중",
-          "recordCount": 47,
+          "recordCount": 8,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -20297,7 +20030,7 @@
           "indicatorCount": 8,
           "key": "measure-49bb1b5855fe",
           "labelKo": "세계 매장량 순위",
-          "recordCount": 47,
+          "recordCount": 8,
           "unit": "순위",
           "unitFamily": "other"
         },
@@ -20305,7 +20038,7 @@
           "indicatorCount": 10,
           "key": "measure-49de79d3637e",
           "labelKo": "세계 생산량 비중",
-          "recordCount": 60,
+          "recordCount": 10,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -20313,7 +20046,7 @@
           "indicatorCount": 10,
           "key": "measure-7048e6eac20b",
           "labelKo": "세계 생산량 순위",
-          "recordCount": 60,
+          "recordCount": 10,
           "unit": "순위",
           "unitFamily": "other"
         },
@@ -20329,8 +20062,8 @@
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 0,
       "noDataReason": null,
-      "observationCount": 224,
-      "populatedRecordCount": 224,
+      "observationCount": 46,
+      "populatedRecordCount": 46,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -20365,20 +20098,6 @@
             "흑연",
             "희토류"
           ]
-        },
-        {
-          "defaultValue": "2025",
-          "key": "year",
-          "labelKo": "연도",
-          "values": [
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ]
         }
       ],
       "tableColumns": [
@@ -20407,8 +20126,8 @@
         "percent"
       ],
       "yearRange": {
-        "end": 2025,
-        "start": 2019
+        "end": 2026,
+        "start": 2026
       }
     },
     {
@@ -20882,7 +20601,7 @@
       "entityCount": 8,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 4,
+        "featureCount": 2,
         "mapMode": "point",
         "stateParameters": [
           "element",
@@ -20962,7 +20681,6 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "2025_개편_후_소속_34개_체계",
         "광산명",
         "광종",
         "기후기술_연계_근거",
@@ -21004,7 +20722,7 @@
         }
       ],
       "elementId": "C-001",
-      "entityCount": 3,
+      "entityCount": 49,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -21037,11 +20755,11 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-0b7dfbe76c81",
-          "labelKo": "NDC (국가 온실가스 감축 목표)",
+          "key": "measure-360d4b31ef57",
+          "labelKo": "BAU 배출 전망(2030, MtCO₂e)",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
+          "unit": "MtCO₂e",
+          "unitFamily": "emissions"
         },
         {
           "indicatorCount": 1,
@@ -21050,6 +20768,30 @@
           "recordCount": 0,
           "unit": "—",
           "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-32172a16fdd6",
+          "labelKo": "NDC-SDG 연계 매핑",
+          "recordCount": 0,
+          "unit": "개",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-cbe06005f532",
+          "labelKo": "감축 목표(무조건부/조건부, %)",
+          "recordCount": 0,
+          "unit": "MtCO₂e",
+          "unitFamily": "emissions"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-a8a6e4494ecc",
+          "labelKo": "기준연도",
+          "recordCount": 0,
+          "unit": "년",
+          "unitFamily": "other"
         },
         {
           "indicatorCount": 2,
@@ -21066,6 +20808,22 @@
           "recordCount": 0,
           "unit": "년",
           "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-df9573e21702",
+          "labelKo": "대상 GHG",
+          "recordCount": 0,
+          "unit": "종",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-2a42b809c6f0",
+          "labelKo": "대상 부문",
+          "recordCount": 0,
+          "unit": "개",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 1,
@@ -21092,12 +20850,36 @@
           "unitFamily": "currency"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-c105b6835235",
+          "labelKo": "부문별 감축 전략",
+          "recordCount": 0,
+          "unit": "년",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-a2c3c0328922",
           "labelKo": "원본 링크 (URL)",
           "recordCount": 0,
           "unit": "URL",
           "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-92ed3a9b9108",
+          "labelKo": "원본 링크(URL)",
+          "recordCount": 0,
+          "unit": "URL",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-5352debcb131",
+          "labelKo": "이행 재원 소요(USD)",
+          "recordCount": 0,
+          "unit": "% of GDP",
+          "unitFamily": "percent"
         },
         {
           "indicatorCount": 2,
@@ -21156,12 +20938,28 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-3f09bac7f822",
+          "labelKo": "적응 부문 목표",
+          "recordCount": 0,
+          "unit": "정성 목표",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 3,
           "key": "measure-f603ffff5be4",
           "labelKo": "제출 이력 (제출년도 / 문서)",
           "recordCount": 0,
           "unit": "년월",
           "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-9f8075525a0d",
+          "labelKo": "제출 이력(제출년도/버전)",
+          "recordCount": 0,
+          "unit": "년월",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 1,
@@ -21192,7 +20990,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 3,
+      "populatedRecordCount": 49,
       "primaryLabelFields": [
         "name",
         "title",
@@ -21209,14 +21007,22 @@
           "values": [
             "measure-0e53a42c2ef6",
             "measure-e6430685c3e9",
-            "measure-0b7dfbe76c81",
+            "measure-360d4b31ef57",
             "measure-750542e171b7",
+            "measure-32172a16fdd6",
+            "measure-cbe06005f532",
+            "measure-a8a6e4494ecc",
             "measure-b01b43f88306",
             "measure-8248773be1e9",
+            "measure-df9573e21702",
+            "measure-2a42b809c6f0",
             "measure-3c434fd1c372",
             "measure-228adfe53276",
             "measure-be125e4a5a93",
+            "measure-c105b6835235",
             "measure-a2c3c0328922",
+            "measure-92ed3a9b9108",
+            "measure-5352debcb131",
             "measure-e4f66cbb4dd8",
             "measure-8cc13d83a281",
             "measure-861715acedbe",
@@ -21224,7 +21030,9 @@
             "measure-907fa56d1b51",
             "measure-04125704f4f7",
             "measure-a4c54399892b",
+            "measure-3f09bac7f822",
             "measure-f603ffff5be4",
+            "measure-9f8075525a0d",
             "measure-b525a6cb26da",
             "measure-e15c351e095f",
             "measure-dc619d163ad8"
@@ -21240,110 +21048,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "BAU전망_BAU_2014_LULUCF_MtCO_e",
-        "BAU전망_BAU_2014_농업_MtCO_e",
-        "BAU전망_BAU_2014_산업공정_IP_MtCO_e",
-        "BAU전망_BAU_2014_에너지_MtCO_e",
-        "BAU전망_BAU_2014_폐기물_MtCO_e",
-        "BAU전망_BAU_2020_LULUCF_MtCO_e",
-        "BAU전망_BAU_2020_농업_MtCO_e",
-        "BAU전망_BAU_2020_산업공정_IP_MtCO_e",
-        "BAU전망_BAU_2020_에너지_MtCO_e",
-        "BAU전망_BAU_2020_폐기물_MtCO_e",
-        "BAU전망_BAU_2025_LULUCF_MtCO_e",
-        "BAU전망_BAU_2025_농업_MtCO_e",
-        "BAU전망_BAU_2025_산업공정_IP_MtCO_e",
-        "BAU전망_BAU_2025_에너지_MtCO_e",
-        "BAU전망_BAU_2025_폐기물_MtCO_e",
-        "BAU전망_BAU_2030_LULUCF_MtCO_e",
-        "BAU전망_BAU_2030_농업_MtCO_e",
-        "BAU전망_BAU_2030_산업공정_IP_MtCO_e",
-        "BAU전망_BAU_2030_에너지_MtCO_e",
-        "BAU전망_BAU_2030_폐기물_MtCO_e",
-        "BAU전망_BAU_총량_2010_MtCO_e",
-        "BAU전망_BAU_총량_2014_MtCO_e",
-        "BAU전망_BAU_총량_2020_MtCO_e",
-        "BAU전망_BAU_총량_2025_MtCO_e",
-        "BAU전망_BAU_총량_2030_MtCO_e",
-        "감축수단_LULUCF_부문_조치",
-        "감축수단_공통_제도_조치",
-        "감축수단_농업_부문_조치",
-        "감축수단_산업공정_IP_부문_조치",
-        "감축수단_에너지_부문_조치",
-        "감축수단_조치_선정_기준",
-        "감축수단_폐기물_부문_조치",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "기술_기술코드_근거문구",
-        "기술_기술코드_판단근거_유형",
-        "목표기준_GWP_기준",
-        "목표기준_기준연도_년",
-        "목표기준_대상_GHG_목록",
-        "목표기준_대상_GHG_종수_종",
-        "목표기준_대상_부문_목록",
-        "목표기준_대상_부문_수_개",
-        "목표기준_목표연도_년",
-        "목표기준_이행기간_시작일_YYYY_MM_DD",
-        "목표기준_이행기간_종료일_YYYY_MM_DD",
-        "목표기준_적용_범위",
-        "무조건부_무조건부_LULUCF_BAU대비_감축률",
-        "무조건부_무조건부_LULUCF_감축량_MtCO_e",
-        "무조건부_무조건부_LULUCF_소요재원_백만_USD",
-        "무조건부_무조건부_농업_BAU대비_감축률",
-        "무조건부_무조건부_농업_감축량_MtCO_e",
-        "무조건부_무조건부_농업_소요재원_백만_USD",
-        "무조건부_무조건부_산업공정_IP_BAU대비_감축률",
-        "무조건부_무조건부_산업공정_IP_감축량_MtCO_e",
-        "무조건부_무조건부_산업공정_IP_소요재원_백만_USD",
-        "무조건부_무조건부_에너지_BAU대비_감축률",
-        "무조건부_무조건부_에너지_감축량_MtCO_e",
-        "무조건부_무조건부_에너지_소요재원_백만_USD",
-        "무조건부_무조건부_총량_감축량_MtCO_e",
-        "무조건부_무조건부_총량_감축률",
-        "무조건부_무조건부_총량_소요재원_백만_USD",
-        "무조건부_무조건부_폐기물_BAU대비_감축률",
-        "무조건부_무조건부_폐기물_감축량_MtCO_e",
-        "무조건부_무조건부_폐기물_소요재원_백만_USD",
-        "식별_레코드ID",
-        "식별_제출년도_년",
-        "식별_제출본_유형",
-        "식별_제출본명",
-        "식별_제출일_YYYY_MM_DD",
-        "식별_현행_여부_Y_N",
-        "이행체계_SDG_연계_개수_개",
-        "이행체계_SDG_연계_목록",
-        "재원_재원소요_GDP대비_상한",
-        "재원_재원소요_GDP대비_하한",
-        "재원_재원소요_누적_상한_NPV_백만_USD",
-        "재원_재원소요_누적_하한_NPV_백만_USD",
-        "재원_재원소요_대안추정_상한_백만_USD",
-        "재원_재원소요_대안추정_하한_백만_USD",
-        "재원_재원조달_유형_목록",
-        "재원_재원조달_유형_수_개",
-        "적응_적응_세부계획_근거",
-        "적응_적응목표_과제1",
-        "적응_적응목표_과제2",
-        "적응_적응목표_유형",
-        "조건부_조건부_LULUCF_BAU대비_감축률",
-        "조건부_조건부_LULUCF_감축량_MtCO_e",
-        "조건부_조건부_LULUCF_소요재원_백만_USD",
-        "조건부_조건부_농업_BAU대비_감축률",
-        "조건부_조건부_농업_감축량_MtCO_e",
-        "조건부_조건부_농업_소요재원_백만_USD",
-        "조건부_조건부_산업공정_IP_BAU대비_감축률",
-        "조건부_조건부_산업공정_IP_감축량_MtCO_e",
-        "조건부_조건부_산업공정_IP_소요재원_백만_USD",
-        "조건부_조건부_에너지_BAU대비_감축률",
-        "조건부_조건부_에너지_감축량_MtCO_e",
-        "조건부_조건부_에너지_소요재원_백만_USD",
-        "조건부_조건부_총량_감축량_MtCO_e",
-        "조건부_조건부_총량_감축률",
-        "조건부_조건부_총량_소요재원_백만_USD",
-        "조건부_조건부_폐기물_BAU대비_감축률",
-        "조건부_조건부_폐기물_감축량_MtCO_e",
-        "조건부_조건부_폐기물_소요재원_백만_USD",
-        "출처_NDC_등록부_URL",
-        "출처_원문_URL",
-        "출처_원문_문서명"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -21790,7 +21519,7 @@
         }
       ],
       "elementId": "C-003",
-      "entityCount": 253,
+      "entityCount": 96,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -21806,12 +21535,12 @@
       },
       "measures": [
         {
-          "indicatorCount": 4,
-          "key": "measure-0d84c4364f88",
-          "labelKo": "NAP (국가 적응 계획)",
+          "indicatorCount": 1,
+          "key": "measure-fcf5f44d4bde",
+          "labelKo": "M&E 지표 체계",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
+          "unit": "주기",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 6,
@@ -21855,6 +21584,14 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-7a783d6e2862",
+          "labelKo": "부문별 적응 투자 소요(USD)",
+          "recordCount": 0,
+          "unit": "10억 USD",
+          "unitFamily": "currency"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-afee07eab741",
           "labelKo": "부문별 취약성 평가 커버리지",
           "recordCount": 0,
@@ -21868,6 +21605,14 @@
           "recordCount": 0,
           "unit": "개",
           "unitFamily": "count"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-bce25459c68e",
+          "labelKo": "부문별 취약성 평가(등급)",
+          "recordCount": 0,
+          "unit": "등급(정성)",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 1,
@@ -21895,6 +21640,22 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-9cb35263a197",
+          "labelKo": "원본 링크(URL)",
+          "recordCount": 0,
+          "unit": "파일",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-6b27103f3066",
+          "labelKo": "이해관계자",
+          "recordCount": 0,
+          "unit": "개 절/과제군",
+          "unitFamily": "count"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-7f7352495393",
           "labelKo": "이해관계자 참여 및 젠더",
           "recordCount": 0,
@@ -21918,6 +21679,14 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-000fd88781fb",
+          "labelKo": "적응 거버넌스 체계",
+          "recordCount": 0,
+          "unit": "정성 목표",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-2dca22fe6945",
           "labelKo": "적응 과제 구성 (목표별 과제 수)",
@@ -21932,6 +21701,22 @@
           "recordCount": 0,
           "unit": "—",
           "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-4fffc5142679",
+          "labelKo": "적응 우선 분야",
+          "recordCount": 0,
+          "unit": "분야",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-4c161656d94f",
+          "labelKo": "적응 우선 조치 목록(단기/중기/장기)",
+          "recordCount": 0,
+          "unit": "건",
+          "unitFamily": "count"
         },
         {
           "indicatorCount": 1,
@@ -21990,7 +21775,7 @@
           "unitFamily": "currency"
         },
         {
-          "indicatorCount": 19,
+          "indicatorCount": 18,
           "key": "measure-d488fe9ed5a1",
           "labelKo": "적응 조치 목록",
           "recordCount": 0,
@@ -22038,6 +21823,22 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-19e4bdce0d7f",
+          "labelKo": "제출 이력(제출년도/문서 링크)",
+          "recordCount": 0,
+          "unit": "발표일",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-8238d356e418",
+          "labelKo": "제출 이력(제출년도/문서 링크)",
+          "recordCount": 0,
+          "unit": "승인일",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-8942eab8405b",
           "labelKo": "추진체계(거버넌스)",
@@ -22050,7 +21851,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 253,
+      "populatedRecordCount": 96,
       "primaryLabelFields": [
         "name",
         "title",
@@ -22061,26 +21862,33 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-0d84c4364f88",
+          "defaultValue": "measure-fcf5f44d4bde",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
-            "measure-0d84c4364f88",
+            "measure-fcf5f44d4bde",
             "measure-5fe3f7758fc5",
             "measure-eac7da3651f3",
             "measure-e410a2317a14",
             "measure-f569183d2a90",
             "measure-a14e3d3fd6cf",
+            "measure-7a783d6e2862",
             "measure-afee07eab741",
             "measure-679d65807805",
+            "measure-bce25459c68e",
             "measure-74284f6c42eb",
             "measure-f9b2ffe7b506",
             "measure-18d4cd34c5bd",
+            "measure-9cb35263a197",
+            "measure-6b27103f3066",
             "measure-7f7352495393",
             "measure-a8e2be4ac249",
             "measure-d97a30c49595",
+            "measure-000fd88781fb",
             "measure-2dca22fe6945",
             "measure-d5bb4825ada8",
+            "measure-4fffc5142679",
+            "measure-4c161656d94f",
             "measure-17bb32cfa520",
             "measure-a92fb4790833",
             "measure-4b06990f7e37",
@@ -22094,6 +21902,8 @@
             "measure-e1a7d4aad6b2",
             "measure-2a71356ea6b0",
             "measure-e407ad004105",
+            "measure-19e4bdce0d7f",
+            "measure-8238d356e418",
             "measure-8942eab8405b"
           ]
         }
@@ -22107,91 +21917,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "M_E_법적_근거",
-        "M_E_법적_근거_승인일_YYYY_MM_DD",
-        "M_E_보고_수단",
-        "M_E_연차_보고_시한",
-        "M_E_종합_평가_주기_년",
-        "M_E_지표_수_개",
-        "M_E_지표군_수_개",
-        "거버넌스_이행기관",
-        "거버넌스_재정_배정기관",
-        "거버넌스_총괄기관",
-        "거버넌스_투자_연계기관",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "과제_과제_번호",
-        "과제_과제군_번호",
-        "과제_과제군명_국문",
-        "과제_과제군명_원문",
-        "과제_과제명_국문",
-        "과제_과제명_원문",
-        "과제_단계별_성과_2024_2025",
-        "과제_단계별_성과_2026_2030",
-        "과제_단계별_성과_기타_기간",
-        "과제_목표_번호",
-        "과제_목표명_국문",
-        "과제_세부과제_내용_원문",
-        "과제_세부과제_순번",
-        "과제_이행_시작연도_년",
-        "과제_이행_종료연도_년",
-        "과제_이행시기_구분",
-        "과제_주관기관_국문",
-        "과제_주관기관_원문",
-        "구성_적응_우선_분야",
-        "기술_기술코드_근거문구",
-        "기술_기술코드_판단근거_유형",
-        "식별_레코드ID",
-        "식별_레코드_유형",
-        "식별_레코드명",
-        "재원_가용_재원_2021_2030_십억_USD",
-        "재원_가용_재원_GDP_비중",
-        "재원_비국가재원_연간_소요_상한_십억_USD",
-        "재원_비국가재원_연간_소요_하한_십억_USD",
-        "재원_총_소요_2021_2030_상한_십억_USD_NPV_2020",
-        "재원_총_소요_2021_2030_하한_십억_USD_NPV_2020",
-        "재원_총_소요_GDP_비중_상한",
-        "재원_총_소요_GDP_비중_하한",
-        "재원_추가_소요_2021_2030_상한_십억_USD",
-        "재원_추가_소요_2021_2030_하한_십억_USD",
-        "재원_추가_소요_GDP_비중_상한",
-        "재원_추가_소요_GDP_비중_하한",
-        "재원_추가_투자_소요_2022_2040_사회프로그램_십억_USD",
-        "재원_추가_투자_소요_2022_2040_인프라_십억_USD",
-        "재원_추가_투자_소요_2022_2040_합계_십억_USD",
-        "제출_NAP_판",
-        "제출_UNFCCC_NAP_Central_등재일_YYYY_MM_DD",
-        "제출_계획기간",
-        "제출_등재_연도_년",
-        "제출_비전_목표연도_년",
-        "제출_승인_결정번호",
-        "제출_승인_연도_년",
-        "제출_승인일_YYYY_MM_DD",
-        "제출_작성_주관기관",
-        "제출_제출_상태",
-        "젠더_여성_명시_M_E_지표_수_개",
-        "젠더_젠더_여성_명시_세부과제_수_개",
-        "젠더_젠더_전담_과제군",
-        "젠더_취약계층_분석_대상",
-        "지표_담당기관_국문",
-        "지표_담당기관_원문",
-        "지표_지표_내용_원문",
-        "지표_지표_번호",
-        "지표_지표군_번호",
-        "지표_지표군명_국문",
-        "지표_지표군명_원문",
-        "지표_평가_대상_번호",
-        "지표_평가_대상_원문",
-        "출처_문서페이지_URL",
-        "출처_원문_URL",
-        "출처_원문_문서명",
-        "출처_인용_위치",
-        "취약성_대상명_국문",
-        "취약성_대상명_원문",
-        "취약성_원문_절",
-        "취약성_원문_쪽_p",
-        "취약성_정량_영향_원문_발췌",
-        "취약성_주요_영향_국문_요약",
-        "취약성_평가_대상_유형"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -22206,7 +21956,6 @@
         "count",
         "currency",
         "currency-per-period",
-        "other",
         "percent",
         "text"
       ],
@@ -22648,7 +22397,7 @@
         }
       ],
       "elementId": "C-005",
-      "entityCount": 408,
+      "entityCount": 135,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -22664,12 +22413,12 @@
       },
       "measures": [
         {
-          "indicatorCount": 3,
-          "key": "measure-0d1a17b8217c",
-          "labelKo": "TNA (기술 수요 평가)",
+          "indicatorCount": 1,
+          "key": "measure-52b8798102bb",
+          "labelKo": "TAP(기술실행계획) 유무",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
+          "unit": "여부",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 1,
@@ -22720,6 +22469,14 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-5af8d7a16841",
+          "labelKo": "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)",
+          "recordCount": 0,
+          "unit": "점",
+          "unitFamily": "score"
+        },
+        {
           "indicatorCount": 2,
           "key": "measure-2a391871c652",
           "labelKo": "결론 및 향후 전망",
@@ -22744,11 +22501,43 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-3ab0935fd31d",
+          "labelKo": "기술 이전 장벽(Barrier Analysis 결과)",
+          "recordCount": 0,
+          "unit": "등급",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 11,
           "key": "measure-5150389b1e63",
           "labelKo": "부문별 민감도",
           "recordCount": 0,
           "unit": "등급",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-a4fa33021131",
+          "labelKo": "수행 여부/수행 연도",
+          "recordCount": 0,
+          "unit": "년(완료)",
+          "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-2c7a8d87193b",
+          "labelKo": "우선 섹터",
+          "recordCount": 0,
+          "unit": "점",
+          "unitFamily": "score"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-92ed3a9b9108",
+          "labelKo": "원본 링크(URL)",
+          "recordCount": 0,
+          "unit": "URL",
           "unitFamily": "text"
         },
         {
@@ -22828,7 +22617,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 408,
+      "populatedRecordCount": 135,
       "primaryLabelFields": [
         "name",
         "title",
@@ -22839,21 +22628,26 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-0d1a17b8217c",
+          "defaultValue": "measure-52b8798102bb",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
-            "measure-0d1a17b8217c",
+            "measure-52b8798102bb",
             "measure-3c4a2e7a7b48",
             "measure-fa1e65f35af3",
             "measure-6362b9456575",
             "measure-1245430d6bd1",
             "measure-4bdda2d85c94",
             "measure-409c0d1eb950",
+            "measure-5af8d7a16841",
             "measure-2a391871c652",
             "measure-53d9653ef03e",
             "measure-f6727a07bccf",
+            "measure-3ab0935fd31d",
             "measure-5150389b1e63",
+            "measure-a4fa33021131",
+            "measure-2c7a8d87193b",
+            "measure-92ed3a9b9108",
             "measure-a9f014ebe021",
             "measure-1c9d577204c2",
             "measure-357d125b6fed",
@@ -22875,30 +22669,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "TAP_TAP_유무_Y_N",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "기술_MCDA_평균_점수_점",
-        "기술_기술명_국문",
-        "기술_기술명_영문",
-        "기술_선정_단계",
-        "기술_우선순위_순위_위",
-        "수행_TNA_수행_여부_Y_N",
-        "수행_TNA_수행_연도_년",
-        "수행_우선_섹터_목록",
-        "수행_우선_섹터_수_개",
-        "수행_제출본명",
-        "수행_총괄기관",
-        "식별_TNA_차수_년",
-        "식별_감축_적응_구분",
-        "식별_레코드ID",
-        "식별_부문",
-        "장벽_대상_기술",
-        "장벽_장벽_내용",
-        "장벽_장벽_분류",
-        "장벽_장벽_수준",
-        "출처_원문_URL",
-        "출처_원문_문서명",
-        "출처_인용_위치"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -22935,7 +22730,7 @@
         }
       ],
       "elementId": "C-006",
-      "entityCount": 29,
+      "entityCount": 50,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -22951,12 +22746,52 @@
       },
       "measures": [
         {
+          "indicatorCount": 4,
+          "key": "measure-997be4df1a98",
+          "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
+          "recordCount": 0,
+          "unit": "URL",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-90427fa0ff19",
+          "labelKo": "ITMO 양자 협정 체결국",
+          "recordCount": 0,
+          "unit": "국가",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-d383f73ec708",
+          "labelKo": "ITMO 이전 실적(tCO₂e)",
+          "recordCount": 0,
+          "unit": "tCO₂e",
+          "unitFamily": "emissions"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-3a4646ce328f",
+          "labelKo": "ITMO 이전 실적(tCO₂e)",
+          "recordCount": 0,
+          "unit": "건",
+          "unitFamily": "count"
+        },
+        {
           "indicatorCount": 1,
           "key": "measure-4e52783bb6e3",
           "labelKo": "UNFCCC 국제 등록부 연동 현황",
           "recordCount": 0,
           "unit": "—",
           "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 3,
+          "key": "measure-71f5d0c377f3",
+          "labelKo": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
+          "recordCount": 0,
+          "unit": "건",
+          "unitFamily": "count"
         },
         {
           "indicatorCount": 1,
@@ -22996,6 +22831,30 @@
           "labelKo": "국내 탄소 레지스트리",
           "recordCount": 0,
           "unit": "—",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-57b631768527",
+          "labelKo": "대상 부문/기술",
+          "recordCount": 0,
+          "unit": "건",
+          "unitFamily": "count"
+        },
+        {
+          "indicatorCount": 2,
+          "key": "measure-c915f1ec6ddd",
+          "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
+          "recordCount": 0,
+          "unit": "공포일",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-4f0dabc24773",
+          "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
+          "recordCount": 0,
+          "unit": "시행일",
           "unitFamily": "text"
         },
         {
@@ -23087,27 +22946,27 @@
           "unitFamily": "count"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-a8ad970c05ca",
+          "labelKo": "체결 일자",
+          "recordCount": 0,
+          "unit": "체결일",
+          "unitFamily": "text"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-fb21b950ba23",
           "labelKo": "총괄",
           "recordCount": 0,
           "unit": "—",
           "unitFamily": "text"
-        },
-        {
-          "indicatorCount": 3,
-          "key": "measure-afccc533d2a6",
-          "labelKo": "파리협정 제6.2조",
-          "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 29,
+      "populatedRecordCount": 50,
       "primaryLabelFields": [
         "name",
         "title",
@@ -23118,16 +22977,24 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-4e52783bb6e3",
+          "defaultValue": "measure-997be4df1a98",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
+            "measure-997be4df1a98",
+            "measure-90427fa0ff19",
+            "measure-d383f73ec708",
+            "measure-3a4646ce328f",
             "measure-4e52783bb6e3",
+            "measure-71f5d0c377f3",
             "measure-36cd1e132571",
             "measure-46214761d3a0",
             "measure-bba9323f1146",
             "measure-24c8d9f8bace",
             "measure-2690b1485e33",
+            "measure-57b631768527",
+            "measure-c915f1ec6ddd",
+            "measure-4f0dabc24773",
             "measure-2eb46c45594a",
             "measure-a2c3c0328922",
             "measure-70509ec4bf53",
@@ -23139,8 +23006,8 @@
             "measure-efb589b6ec16",
             "measure-1595453686e1",
             "measure-88e863e626a0",
-            "measure-fb21b950ba23",
-            "measure-afccc533d2a6"
+            "measure-a8ad970c05ca",
+            "measure-fb21b950ba23"
           ]
         }
       ],
@@ -23153,55 +23020,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "기술_기술코드_근거문구",
-        "기술_기술코드_판단근거_유형",
-        "법령_공포일_YYYY_MM_DD",
-        "법령_문서명_국문",
-        "법령_문서명_원문",
-        "법령_문서번호",
-        "법령_발령기관",
-        "법령_시행일_YYYY_MM_DD",
-        "법령_제6조_관련_역할",
-        "사업_JCM_사업번호",
-        "사업_등록_상태",
-        "사업_등록일",
-        "사업_방법론",
-        "사업_사업명_원문",
-        "사업_소재지",
-        "사업_시작일",
-        "사업_일본_참여기업",
-        "사업_호스트_참여기업",
-        "식별_레코드ID",
-        "식별_레코드_유형",
-        "식별_레코드명",
-        "실적_ITMO_이전_실적_tCO_e",
-        "실적_발행_크레딧_총량_tCO_e",
-        "실적_베트남_배분량_tCO_e",
-        "실적_상대국_배분량_tCO_e",
-        "실적_실적_기준일_YYYY_MM_DD",
-        "체계_A6_4_국가지정기구_DNA",
-        "체계_A6_4_호스트국_참여요건_제출일_YYYY_MM_DD",
-        "체계_ITMO_승인기관",
-        "체계_UNFCCC_CARP_연동",
-        "체계_국가_레지스트리",
-        "체계_상응조정_체계",
-        "출처_문서페이지_URL",
-        "출처_원문_URL",
-        "출처_원문_문서명",
-        "출처_인용_위치",
-        "협정_UNFCCC_CARP_협력접근법_ID",
-        "협정_국내_승인",
-        "협정_대상_부문_기술",
-        "협정_발효_상태",
-        "협정_베트남_승인기관",
-        "협정_상대국",
-        "협정_상대국_승인기관",
-        "협정_초기보고서_제출_당사국_일자",
-        "협정_최신_문서_개정일_YYYY_MM_DD",
-        "협정_최초_체결일_YYYY_MM_DD",
-        "협정_협정_유형",
-        "협정_협정명_원문"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -23240,7 +23083,7 @@
         }
       ],
       "elementId": "C-007",
-      "entityCount": 7,
+      "entityCount": 32,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -23313,6 +23156,30 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-b30dc658e0df",
+          "labelKo": "대상 분야(감축/적응/재정/기술/역량)",
+          "recordCount": 0,
+          "unit": "분야",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-dc28b1c924c1",
+          "labelKo": "등록 일자",
+          "recordCount": 0,
+          "unit": "date",
+          "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-16c66d4134ff",
+          "labelKo": "등록된 활동명",
+          "recordCount": 0,
+          "unit": "회",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-5cc5fedca9e1",
           "labelKo": "베트남 참여 현황",
           "recordCount": 0,
@@ -23336,6 +23203,22 @@
           "unitFamily": "text"
         },
         {
+          "indicatorCount": 1,
+          "key": "measure-92ed3a9b9108",
+          "labelKo": "원본 링크(URL)",
+          "recordCount": 0,
+          "unit": "URL",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-30335215cfac",
+          "labelKo": "참여 기관",
+          "recordCount": 0,
+          "unit": "개국",
+          "unitFamily": "count"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-abd4be0c93b3",
           "labelKo": "참여 상태 코드 체계",
@@ -23345,11 +23228,11 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-180a945f25f4",
-          "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
+          "key": "measure-44ceb9bf0a47",
+          "labelKo": "참여 여부",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
+          "unit": "여부",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 3,
@@ -23364,7 +23247,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 7,
+      "populatedRecordCount": 32,
       "primaryLabelFields": [
         "name",
         "title",
@@ -23386,11 +23269,16 @@
             "measure-a209ac74f079",
             "measure-8a7fb8a4f4a3",
             "measure-3fa8963ce1f2",
+            "measure-b30dc658e0df",
+            "measure-dc28b1c924c1",
+            "measure-16c66d4134ff",
             "measure-5cc5fedca9e1",
             "measure-58ceb231178a",
             "measure-a2c3c0328922",
+            "measure-92ed3a9b9108",
+            "measure-30335215cfac",
             "measure-abd4be0c93b3",
-            "measure-180a945f25f4",
+            "measure-44ceb9bf0a47",
             "measure-96693371c2b8"
           ]
         }
@@ -23404,31 +23292,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "NMA_대상_분야_감축_적응_재정_기술_역량",
-        "NMA_등록_제출_일_YYYY_MM_DD",
-        "NMA_부문",
-        "NMA_비당사국_참여기관",
-        "NMA_제출_당사국",
-        "NMA_참여_당사국_host_표시",
-        "NMA_초점_분야_원문",
-        "NMA_플랫폼_등록_ID",
-        "NMA_활동명_국문",
-        "NMA_활동명_원문",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "기술_기술코드_근거문구",
-        "기술_기술코드_판단근거_유형",
-        "베트남_근거",
-        "베트남_참여_기관",
-        "베트남_참여_실적",
-        "베트남_참여_여부",
-        "베트남_참여_지위",
-        "식별_레코드ID",
-        "식별_레코드_유형",
-        "식별_레코드명",
-        "출처_문서페이지_URL",
-        "출처_원문_URL",
-        "출처_원문_문서명",
-        "출처_인용_위치"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -26591,7 +26479,7 @@
         }
       ],
       "elementId": "C-015",
-      "entityCount": 33,
+      "entityCount": 21,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -26607,12 +26495,12 @@
       },
       "measures": [
         {
-          "indicatorCount": 2,
-          "key": "measure-66521843c1ba",
-          "labelKo": "재생에너지 법제도 원본 링크",
+          "indicatorCount": 5,
+          "key": "measure-f9effe27b94e",
+          "labelKo": "상기 문서들의 원본 링크(URL)",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
+          "unit": "URL",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 18,
@@ -26635,7 +26523,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 33,
+      "populatedRecordCount": 21,
       "primaryLabelFields": [
         "name",
         "title",
@@ -26646,11 +26534,11 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-66521843c1ba",
+          "defaultValue": "measure-f9effe27b94e",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
-            "measure-66521843c1ba",
+            "measure-f9effe27b94e",
             "measure-af1eb5f40c48",
             "measure-1a8991448f45"
           ]
@@ -26665,36 +26553,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "관련_관련_데이터요소",
-        "기술_기술코드_근거문구",
-        "기술_기술코드_판단근거_유형",
-        "링크_raw_보유_여부",
-        "링크_raw_파일명",
-        "링크_링크_유형",
-        "링크_문서포털_URL",
-        "링크_원문_PDF_URL",
-        "문서_공포일_YYYY_MM_DD",
-        "문서_대체_개정_관계",
-        "문서_문서_형식",
-        "문서_문서명_국문",
-        "문서_문서명_원문",
-        "문서_문서번호",
-        "문서_발행_기관",
-        "문서_상태",
-        "문서_시행_연도_년",
-        "문서_시행일_YYYY_MM_DD",
-        "문서_주요_내용",
-        "식별_레코드ID",
-        "식별_레코드명",
-        "식별_문서_구분",
-        "출처_인용_위치",
-        "현지조사_RE_사업모델_영향",
-        "현지조사_시행일_제정기관",
-        "현지조사_참고_문헌",
-        "현지조사_표",
-        "현지조사_항목",
-        "현지조사_핵심_조항"
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성2_레코드ID",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
+        "속성7_상태",
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -26706,7 +26589,6 @@
         "missingReason"
       ],
       "unitFamilies": [
-        "other",
         "text"
       ],
       "yearRange": {
@@ -27063,7 +26945,7 @@
         }
       ],
       "elementId": "C-017",
-      "entityCount": 56,
+      "entityCount": 52,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -27079,11 +26961,35 @@
       },
       "measures": [
         {
+          "indicatorCount": 2,
+          "key": "measure-bdd645e4efb9",
+          "labelKo": "대상 기술(태양광/풍력/수력/바이오)",
+          "recordCount": 0,
+          "unit": "đồng/kWh",
+          "unitFamily": "energy"
+        },
+        {
           "indicatorCount": 1,
           "key": "measure-fbefd3e70f73",
           "labelKo": "미도입 인센티브 유형",
           "recordCount": 0,
           "unit": "—",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-5f6de945f241",
+          "labelKo": "상태",
+          "recordCount": 0,
+          "unit": "VND/kWh",
+          "unitFamily": "energy"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-bfa56044f4cb",
+          "labelKo": "상태",
+          "recordCount": 0,
+          "unit": "여부",
           "unitFamily": "text"
         },
         {
@@ -27101,6 +27007,22 @@
           "recordCount": 0,
           "unit": "건",
           "unitFamily": "count"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-81b71e728f9d",
+          "labelKo": "시행 기관",
+          "recordCount": 0,
+          "unit": "건",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 2,
+          "key": "measure-794e7b0c2f47",
+          "labelKo": "시행 기관",
+          "recordCount": 0,
+          "unit": "기관",
+          "unitFamily": "text"
         },
         {
           "indicatorCount": 1,
@@ -27160,6 +27082,22 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-27e08d734fb5",
+          "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+          "recordCount": 0,
+          "unit": "VND/kWh",
+          "unitFamily": "energy"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-d097b2eb7f3c",
+          "labelKo": "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
+          "recordCount": 0,
+          "unit": "đồng/kWh",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-69b7ff9b9213",
           "labelKo": "인센티브 조건 (가격 / 기간 / 용량)",
           "recordCount": 0,
@@ -27176,10 +27114,10 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-ff551ff2eb14",
-          "labelKo": "재생에너지 투자 인센티브",
+          "key": "measure-d304513074b2",
+          "labelKo": "인센티브 조건(가격/기간/용량)",
           "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+          "unit": "년",
           "unitFamily": "other"
         }
       ],
@@ -27187,7 +27125,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 56,
+      "populatedRecordCount": 52,
       "primaryLabelFields": [
         "name",
         "title",
@@ -27198,13 +27136,18 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-fbefd3e70f73",
+          "defaultValue": "measure-bdd645e4efb9",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
+            "measure-bdd645e4efb9",
             "measure-fbefd3e70f73",
+            "measure-5f6de945f241",
+            "measure-bfa56044f4cb",
             "measure-57ba3704915e",
             "measure-666c99ad27c6",
+            "measure-81b71e728f9d",
+            "measure-794e7b0c2f47",
             "measure-cb70e21ceb42",
             "measure-f0ca565dc89c",
             "measure-a4b1059fa10e",
@@ -27212,9 +27155,11 @@
             "measure-29dba73a2b2d",
             "measure-c3eb757196a2",
             "measure-58c560b28e4e",
+            "measure-27e08d734fb5",
+            "measure-d097b2eb7f3c",
             "measure-69b7ff9b9213",
             "measure-1ef969847763",
-            "measure-ff551ff2eb14"
+            "measure-d304513074b2"
           ]
         }
       ],
@@ -27229,29 +27174,29 @@
         "sourceEvidence",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "속성10_가격_단위",
-        "속성11_세율",
-        "속성12_적용_기간_년",
-        "속성13_면제_기간_년",
-        "속성14_감면_기간_년",
-        "속성15_감면율",
-        "속성16_기타_비율",
-        "속성17_적용_기한_YYYY_MM_DD",
-        "속성18_지역_요건_판정",
-        "속성19_원문_URL",
-        "속성1_제도명_적용_대상",
-        "속성20_권역_전국이면_전국",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
         "속성21_지역_현행",
         "속성22_행정코드P_code",
-        "속성23_적용_조건_용량_기한_등_사업_요건",
+        "속성23_설명",
         "속성2_레코드ID",
-        "속성3_가격_하한",
-        "속성4_시행일_YYYY_MM_DD",
-        "속성5_근거_법령_번호_한글_명칭",
-        "속성6_유형",
+        "속성3_값",
+        "속성4_시점",
+        "속성5_등록표준_출처",
+        "속성6_분류",
         "속성7_상태",
-        "속성8_시행_기관",
-        "속성9_가격_상한"
+        "속성8_사업자_기관",
+        "속성9_방법론"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -28953,13 +28898,34 @@
           "values": [
             "entity"
           ]
+        },
+        {
+          "key": "status",
+          "labelKo": "status",
+          "valueCount": 14,
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT",
+            "Late to verify",
+            "LISTED",
+            "Listed",
+            "Registered",
+            "Registration requested",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested",
+            "Withdrawn"
+          ]
         }
       ],
       "elementId": "C-025",
-      "entityCount": 1190,
+      "entityCount": 388,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 1118,
+        "featureCount": 262,
         "mapMode": "point",
         "stateParameters": [
           "element",
@@ -29092,19 +29058,27 @@
           "unitFamily": "emissions"
         },
         {
-          "indicatorCount": 2,
-          "key": "measure-346664787776",
-          "labelKo": "탄소크레딧 발행",
-          "recordCount": 0,
-          "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-          "unitFamily": "other"
-        },
-        {
           "indicatorCount": 1,
           "key": "measure-fc3208a87cfa",
           "labelKo": "탄소크레딧 프로젝트 레지스트리 (Verra VCS",
           "recordCount": 0,
           "unit": "—",
+          "unitFamily": "text"
+        },
+        {
+          "indicatorCount": 2,
+          "key": "measure-58c98474b1f2",
+          "labelKo": "프로젝트명",
+          "recordCount": 0,
+          "unit": "tCO₂e",
+          "unitFamily": "emissions"
+        },
+        {
+          "indicatorCount": 3,
+          "key": "measure-a737ef4cdda0",
+          "labelKo": "프로젝트명",
+          "recordCount": 0,
+          "unit": "건",
           "unitFamily": "text"
         }
       ],
@@ -29112,7 +29086,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 1190,
+      "populatedRecordCount": 388,
       "primaryLabelFields": [
         "name",
         "title",
@@ -29142,8 +29116,30 @@
             "measure-09e20b230faf",
             "measure-9357335aacb1",
             "measure-3c703d3fa737",
-            "measure-346664787776",
-            "measure-fc3208a87cfa"
+            "measure-fc3208a87cfa",
+            "measure-58c98474b1f2",
+            "measure-a737ef4cdda0"
+          ]
+        },
+        {
+          "defaultValue": "Gold Standard Certified Design",
+          "key": "status",
+          "labelKo": "status",
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT",
+            "Late to verify",
+            "LISTED",
+            "Listed",
+            "Registered",
+            "Registration requested",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested",
+            "Withdrawn"
           ]
         }
       ],
@@ -29156,45 +29152,31 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "결측_framework_필수_속성_결측_코드_사유",
-        "기술_기술코드_판단_근거",
-        "기술_기술코드_판단_유형",
-        "발행기록_기록_유형",
-        "발행기록_모니터링_기간_시작_YYYY_MM_DD",
-        "발행기록_모니터링_기간_종료_YYYY_MM_DD",
-        "발행기록_발행_요청_상태",
-        "발행기록_발행량_tCO_e",
-        "발행기록_발행일_YYYY_MM_DD",
-        "발행기록_소각량_tCO_e",
-        "발행기록_연도_년",
-        "사업_감축_제거_구분",
-        "사업_기술_분야_등록부_분류",
-        "사업_방법론",
-        "사업_방법론_버전",
-        "사업_사업_규모",
-        "사업_사업_범주_등록부_분류",
-        "사업_사업자_기관",
-        "사업_연간_예상_감축량_tCO_e_년",
-        "사업_적용_표준_버전",
-        "식별_등록_표준",
-        "식별_등록부_프로젝트ID",
-        "식별_등재_상태",
-        "식별_레코드ID",
-        "식별_프로젝트명",
-        "실적_등록일_YYYY_MM_DD",
-        "실적_발행량_tCO_e",
-        "실적_발행일_YYYY_MM_DD",
-        "실적_배분량_tCO_e",
-        "실적_소각량_tCO_e",
-        "실적_최초_빈티지_년",
-        "실적_크레딧_기간_시작_YYYY_MM_DD",
-        "실적_크레딧_기간_종료_YYYY_MM_DD",
-        "지역_지역명_개편_전_표기",
-        "지역_지역명_원문",
-        "지역_지역명_현행",
-        "지역_행정코드_P_code",
-        "출처_수집_경로_비고",
-        "출처_원문_URL"
+        "methodology",
+        "projectId",
+        "proponent",
+        "standard",
+        "status",
+        "기술코드_근거문구",
+        "기술코드_판단근거_유형",
+        "속성10_건수",
+        "속성11_발행량_tCO2e",
+        "속성12_소각량_tCO2e",
+        "속성13_배분량_tCO2e",
+        "속성14_연간예상감축_tCO2e",
+        "속성15_빈티지_연도",
+        "속성16_발행일",
+        "속성17_크레딧기간",
+        "속성18_업종",
+        "속성19_원문URL",
+        "속성1_레코드명",
+        "속성20_지역_원문",
+        "속성21_지역_현행",
+        "속성22_행정코드P_code",
+        "속성23_설명",
+        "속성3_값",
+        "속성4_시점",
+        "속성6_분류"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -29208,7 +29190,6 @@
       "unitFamilies": [
         "count",
         "emissions",
-        "other",
         "text"
       ],
       "yearRange": {
@@ -33287,13 +33268,9 @@
         {
           "key": "a64Status",
           "labelKo": "a64Status",
-          "valueCount": 5,
+          "valueCount": 1,
           "values": [
-            "Pending additional documentation from activity participant",
-            "Transition fee payment pending",
-            "Waiting for HP approval",
-            "전환 요청 45건(단독 44·다국가 PoA 1) 중 베트남 DNA 승인 23건 · 제6.4조 등록 0건 (상태: 사업참여자 추가서류 대기 22 · 유치국 승인 대기 21 · 전환 수수료 납부 대기 1 · 다국가 PoA — 해당국 승인·상태 기재 없음 1)",
-            "해당국 기재 없음"
+            "파리협정 제6.4조 국가지정기관(DNA) — 현행"
           ]
         },
         {
@@ -33307,26 +33284,14 @@
         {
           "key": "recordStatus",
           "labelKo": "recordStatus",
-          "valueCount": 5,
-          "values": [
-            "다국가 PoA — 해당국 승인·상태 기재 없음",
-            "사업참여자 추가서류 대기",
-            "유치국 승인 대기",
-            "전환 수수료 납부 대기",
-            "현행"
-          ]
-        },
-        {
-          "key": "승인절차_기재_구분_approval_procedure_status",
-          "labelKo": "승인절차_기재_구분_approval_procedure_status",
           "valueCount": 1,
           "values": [
-            "기재"
+            "현행"
           ]
         }
       ],
       "elementId": "E-002",
-      "entityCount": 46,
+      "entityCount": 1,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -33343,14 +33308,6 @@
       "measures": [
         {
           "indicatorCount": 1,
-          "key": "measure-763feb8142b6",
-          "labelKo": "DNA(국가지정기관)",
-          "recordCount": 0,
-          "unit": "건",
-          "unitFamily": "count"
-        },
-        {
-          "indicatorCount": 1,
           "key": "measure-259fd2435dc6",
           "labelKo": "DNA(국가지정기관)",
           "recordCount": 0,
@@ -33362,7 +33319,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 46,
+      "populatedRecordCount": 1,
       "primaryLabelFields": [
         "name",
         "title",
@@ -33371,41 +33328,7 @@
       ],
       "primaryRenderer": "directory",
       "secondaryRenderer": "structured-table",
-      "selectors": [
-        {
-          "defaultValue": "measure-763feb8142b6",
-          "key": "measure",
-          "labelKo": "측정항목",
-          "values": [
-            "measure-763feb8142b6",
-            "measure-259fd2435dc6"
-          ]
-        },
-        {
-          "defaultValue": "Pending additional documentation from activity participant",
-          "key": "a64Status",
-          "labelKo": "a64Status",
-          "values": [
-            "Pending additional documentation from activity participant",
-            "Transition fee payment pending",
-            "Waiting for HP approval",
-            "전환 요청 45건(단독 44·다국가 PoA 1) 중 베트남 DNA 승인 23건 · 제6.4조 등록 0건 (상태: 사업참여자 추가서류 대기 22 · 유치국 승인 대기 21 · 전환 수수료 납부 대기 1 · 다국가 PoA — 해당국 승인·상태 기재 없음 1)",
-            "해당국 기재 없음"
-          ]
-        },
-        {
-          "defaultValue": "다국가 PoA — 해당국 승인·상태 기재 없음",
-          "key": "recordStatus",
-          "labelKo": "recordStatus",
-          "values": [
-            "다국가 PoA — 해당국 승인·상태 기재 없음",
-            "사업참여자 추가서류 대기",
-            "유치국 승인 대기",
-            "전환 수수료 납부 대기",
-            "현행"
-          ]
-        }
-      ],
+      "selectors": [],
       "tableColumns": [
         "displayLabel",
         "value",
@@ -33415,7 +33338,6 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "CDM_전환_요청_건수_transition_requests",
         "a64Status",
         "approvalProcedure",
         "deputyEmail",
@@ -33435,11 +33357,7 @@
         "validTo",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "수집_기준_절차",
-        "승인절차_기재_구분_approval_procedure_status",
-        "유치국_전환_승인_건수_host_approvals",
-        "제6_4조_DNA_지정_현황_a64_dna_designation",
-        "제6_4조_등록_건수_transition_registered"
+        "수집_기준_절차"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -33451,7 +33369,6 @@
         "missingReason"
       ],
       "unitFamilies": [
-        "count",
         "text"
       ],
       "yearRange": {
@@ -33596,20 +33513,18 @@
           "valueCount": 3,
           "values": [
             "보완(2026-08-14)",
-            "수집 완료",
-            "수집현황"
+            "수집현황",
+            "현지조사"
           ]
         },
         {
           "key": "contactType",
           "labelKo": "contactType",
-          "valueCount": 5,
+          "valueCount": 3,
           "values": [
             "기관장·대표",
-            "대표 창구",
-            "실무 담당자",
-            "해당 없음 — 기관 운영 종료",
-            "해당 없음 — 사무소 미설치"
+            "기후·에너지 담당 부서·프로그램 대표",
+            "대표 창구(일반)"
           ]
         },
         {
@@ -33639,7 +33554,7 @@
           "valueCount": 3,
           "values": [
             "미설치",
-            "종료",
+            "종료(2025-07-01 업무 종료, 잔여 대외원조 기능 미 국무부 이관)",
             "현행"
           ]
         }
@@ -33698,8 +33613,8 @@
           "labelKo": "collectionStatus",
           "values": [
             "보완(2026-08-14)",
-            "수집 완료",
-            "수집현황"
+            "수집현황",
+            "현지조사"
           ]
         },
         {
@@ -33708,10 +33623,8 @@
           "labelKo": "contactType",
           "values": [
             "기관장·대표",
-            "대표 창구",
-            "실무 담당자",
-            "해당 없음 — 기관 운영 종료",
-            "해당 없음 — 사무소 미설치"
+            "기후·에너지 담당 부서·프로그램 대표",
+            "대표 창구(일반)"
           ]
         },
         {
@@ -33733,7 +33646,7 @@
           "labelKo": "recordStatus",
           "values": [
             "미설치",
-            "종료",
+            "종료(2025-07-01 업무 종료, 잔여 대외원조 기능 미 국무부 이관)",
             "현행"
           ]
         }
@@ -33827,15 +33740,6 @@
             "연구기관(국가 아카데미)",
             "연구소"
           ]
-        },
-        {
-          "key": "국제협력_실적_구분_intl_coop_status",
-          "labelKo": "국제협력_실적_구분_intl_coop_status",
-          "valueCount": 2,
-          "values": [
-            "미확인",
-            "실적 있음"
-          ]
         }
       ],
       "elementId": "E-005",
@@ -33855,12 +33759,12 @@
       },
       "measures": [
         {
-          "indicatorCount": 2,
+          "indicatorCount": 1,
           "key": "measure-1cf59fec9fbd",
           "labelKo": "대학",
           "recordCount": 0,
           "unit": "기관(건)",
-          "unitFamily": "text"
+          "unitFamily": "count"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
@@ -33906,15 +33810,6 @@
             "연구기관(국가 아카데미)",
             "연구소"
           ]
-        },
-        {
-          "defaultValue": "미확인",
-          "key": "국제협력_실적_구분_intl_coop_status",
-          "labelKo": "국제협력_실적_구분_intl_coop_status",
-          "values": [
-            "미확인",
-            "실적 있음"
-          ]
         }
       ],
       "tableColumns": [
@@ -33935,8 +33830,6 @@
         "orgName",
         "orgType",
         "sourceUrl",
-        "국제협력_실적_구분_intl_coop_status",
-        "기술코드_근거_대조_tech_evidence_check",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
         "수집_기준_절차",
@@ -33952,7 +33845,7 @@
         "missingReason"
       ],
       "unitFamilies": [
-        "text"
+        "count"
       ],
       "yearRange": {
         "end": null,
@@ -33980,12 +33873,20 @@
         {
           "key": "amountType",
           "labelKo": "amountType",
-          "valueCount": 4,
+          "valueCount": 12,
           "values": [
-            "AUM(운용자산)",
-            "비해당(금액 개념 미적용)",
-            "투자·약정액",
-            "펀드 규모(조성·목표)"
+            "AUM",
+            "개별 커밋액",
+            "개별 투자액",
+            "비해당(DFI)",
+            "비해당(IFI)",
+            "비해당(액셀러레이터·인큐베이터)",
+            "외부 커밋액",
+            "펀드 목표규모",
+            "펀드 커밋규모",
+            "펀드규모(1차 클로징)",
+            "펀드규모(최종 클로징)",
+            "펀드규모(하한)"
           ]
         },
         {
@@ -34088,20 +33989,6 @@
             "기업 공식",
             "언론(DealStreetAsia)"
           ]
-        },
-        {
-          "key": "좌표_소재_구분_coord_location_type",
-          "labelKo": "좌표_소재_구분_coord_location_type",
-          "valueCount": 7,
-          "values": [
-            "해외 본부 소재지(CHE)",
-            "해외 본부 소재지(FRA)",
-            "해외 본부 소재지(GBR)",
-            "해외 본부 소재지(PHL)",
-            "해외 본부 소재지(SGP)",
-            "해외 본부 소재지(USA)",
-            "현지(대상국) 소재"
-          ]
         }
       ],
       "elementId": "E-006",
@@ -34121,12 +34008,12 @@
       },
       "measures": [
         {
-          "indicatorCount": 6,
+          "indicatorCount": 4,
           "key": "measure-5f64c524f78d",
           "labelKo": "현지 투자자 네트워크",
           "recordCount": 0,
           "unit": "USD(백만)",
-          "unitFamily": "text"
+          "unitFamily": "currency"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
@@ -34156,14 +34043,22 @@
           ]
         },
         {
-          "defaultValue": "AUM(운용자산)",
+          "defaultValue": "AUM",
           "key": "amountType",
           "labelKo": "amountType",
           "values": [
-            "AUM(운용자산)",
-            "비해당(금액 개념 미적용)",
-            "투자·약정액",
-            "펀드 규모(조성·목표)"
+            "AUM",
+            "개별 커밋액",
+            "개별 투자액",
+            "비해당(DFI)",
+            "비해당(IFI)",
+            "비해당(액셀러레이터·인큐베이터)",
+            "외부 커밋액",
+            "펀드 목표규모",
+            "펀드 커밋규모",
+            "펀드규모(1차 클로징)",
+            "펀드규모(최종 클로징)",
+            "펀드규모(하한)"
           ]
         },
         {
@@ -34258,20 +34153,6 @@
             "기업 공식",
             "언론(DealStreetAsia)"
           ]
-        },
-        {
-          "defaultValue": "해외 본부 소재지(CHE)",
-          "key": "좌표_소재_구분_coord_location_type",
-          "labelKo": "좌표_소재_구분_coord_location_type",
-          "values": [
-            "해외 본부 소재지(CHE)",
-            "해외 본부 소재지(FRA)",
-            "해외 본부 소재지(GBR)",
-            "해외 본부 소재지(PHL)",
-            "해외 본부 소재지(SGP)",
-            "해외 본부 소재지(USA)",
-            "현지(대상국) 소재"
-          ]
         }
       ],
       "tableColumns": [
@@ -34312,7 +34193,6 @@
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
         "수집_기준_절차",
-        "좌표_소재_구분_coord_location_type",
         "좌표_정밀도_출처"
       ],
       "tooltipFields": [
@@ -34325,7 +34205,7 @@
         "missingReason"
       ],
       "unitFamilies": [
-        "text"
+        "currency"
       ],
       "yearRange": {
         "end": null,
@@ -34341,7 +34221,7 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 8,
+          "valueCount": 7,
           "values": [
             "검증",
             "대상",
@@ -34349,7 +34229,6 @@
             "보고",
             "인벤토리",
             "제도",
-            "지원",
             "탄소시장"
           ]
         },
@@ -34360,43 +34239,10 @@
           "values": [
             "entity"
           ]
-        },
-        {
-          "key": "부문별_Tier_tier_by_sector",
-          "labelKo": "부문별_Tier_tier_by_sector",
-          "valueCount": 2,
-          "values": [
-            "시설단위 산정수준(인벤토리 부문 Tier 아님)=Tier 2(시설별 산정)·Tier 3(CEMS 실측)",
-            "에너지=Tier 1(석탄채굴·취급 Tier 2); IPPU=Tier 1; 농업=Tier 1(분뇨관리)·Tier 2(벼재배); LULUCF=Tier 1(토지이용매트릭스)·Tier 2(범주식별); 폐기물=Tier 1(고형폐기물 매립 Tier 2)"
-          ]
-        },
-        {
-          "key": "표준_분류_category_std",
-          "labelKo": "표준_분류_category_std",
-          "valueCount": 8,
-          "values": [
-            "검증(제3자·QA/QC)",
-            "레지스트리",
-            "법·제도·거버넌스",
-            "보고(NC·BUR·BTR)",
-            "시설단위 MRV",
-            "인벤토리(Tier·방법론)",
-            "지원(CBIT 등)",
-            "탄소시장·가격제도"
-          ]
-        },
-        {
-          "key": "확인_상태_구분_verification_status",
-          "labelKo": "확인_상태_구분_verification_status",
-          "valueCount": 2,
-          "values": [
-            "미확인",
-            "확인됨"
-          ]
         }
       ],
       "elementId": "E-007",
-      "entityCount": 22,
+      "entityCount": 19,
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
@@ -34436,7 +34282,7 @@
           "unitFamily": "text"
         },
         {
-          "indicatorCount": 2,
+          "indicatorCount": 1,
           "key": "measure-b2b62b29699a",
           "labelKo": "MRV 제도",
           "recordCount": 0,
@@ -34464,7 +34310,7 @@
       "missingRecordCount": 0,
       "noDataReason": null,
       "observationCount": 0,
-      "populatedRecordCount": 22,
+      "populatedRecordCount": 19,
       "primaryLabelFields": [
         "name",
         "title",
@@ -34498,41 +34344,7 @@
             "보고",
             "인벤토리",
             "제도",
-            "지원",
             "탄소시장"
-          ]
-        },
-        {
-          "defaultValue": "시설단위 산정수준(인벤토리 부문 Tier 아님)=Tier 2(시설별 산정)·Tier 3(CEMS 실측)",
-          "key": "부문별_Tier_tier_by_sector",
-          "labelKo": "부문별_Tier_tier_by_sector",
-          "values": [
-            "시설단위 산정수준(인벤토리 부문 Tier 아님)=Tier 2(시설별 산정)·Tier 3(CEMS 실측)",
-            "에너지=Tier 1(석탄채굴·취급 Tier 2); IPPU=Tier 1; 농업=Tier 1(분뇨관리)·Tier 2(벼재배); LULUCF=Tier 1(토지이용매트릭스)·Tier 2(범주식별); 폐기물=Tier 1(고형폐기물 매립 Tier 2)"
-          ]
-        },
-        {
-          "defaultValue": "검증(제3자·QA/QC)",
-          "key": "표준_분류_category_std",
-          "labelKo": "표준_분류_category_std",
-          "values": [
-            "검증(제3자·QA/QC)",
-            "레지스트리",
-            "법·제도·거버넌스",
-            "보고(NC·BUR·BTR)",
-            "시설단위 MRV",
-            "인벤토리(Tier·방법론)",
-            "지원(CBIT 등)",
-            "탄소시장·가격제도"
-          ]
-        },
-        {
-          "defaultValue": "미확인",
-          "key": "확인_상태_구분_verification_status",
-          "labelKo": "확인_상태_구분_verification_status",
-          "values": [
-            "미확인",
-            "확인됨"
           ]
         }
       ],
@@ -34550,16 +34362,9 @@
         "item",
         "legalBasis",
         "sourceUrl",
-        "근거_보고서_tier_report",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "명세서_항목_대응_spec_item",
-        "보고서_대상연도_tier_period",
-        "부문별_Tier_tier_by_sector",
-        "수집_기준_절차",
-        "제도_성격_구분_institution_nature",
-        "표준_분류_category_std",
-        "확인_상태_구분_verification_status"
+        "수집_기준_절차"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -34731,21 +34536,9 @@
         {
           "key": "year",
           "labelKo": "연도",
-          "valueCount": 14,
+          "valueCount": 2,
           "values": [
-            "2002",
-            "2005",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2012",
-            "2013",
-            "2015",
             "2016",
-            "2017",
-            "2019",
-            "2021",
             "2023"
           ]
         }
@@ -34770,7 +34563,7 @@
           "indicatorCount": 1,
           "key": "measure-33733e6335a3",
           "labelKo": "STEM 졸업 비중(남성)",
-          "recordCount": 8,
+          "recordCount": 1,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -34778,7 +34571,7 @@
           "indicatorCount": 1,
           "key": "measure-e67e1496b556",
           "labelKo": "STEM 졸업 비중(여성)",
-          "recordCount": 8,
+          "recordCount": 1,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -34786,7 +34579,7 @@
           "indicatorCount": 1,
           "key": "measure-0aaf37a2b769",
           "labelKo": "STEM 졸업 비중(전체)",
-          "recordCount": 8,
+          "recordCount": 1,
           "unit": "%",
           "unitFamily": "percent"
         },
@@ -34800,26 +34593,26 @@
         },
         {
           "indicatorCount": 1,
-          "key": "measure-351fd006e334",
+          "key": "measure-9c5bcab6c9a9",
           "labelKo": "연구자 수(백만명당)",
-          "recordCount": 7,
-          "unit": "명/백만명(FTE)",
+          "recordCount": 1,
+          "unit": "명/백만명",
           "unitFamily": "count"
         },
         {
           "indicatorCount": 1,
-          "key": "measure-315d9123945d",
+          "key": "measure-6bee104be284",
           "labelKo": "연구자 수(절대수)",
-          "recordCount": 7,
-          "unit": "명(FTE)",
+          "recordCount": 1,
+          "unit": "명",
           "unitFamily": "count"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 1,
       "noDataReason": null,
-      "observationCount": 39,
-      "populatedRecordCount": 38,
+      "observationCount": 6,
+      "populatedRecordCount": 5,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -34835,8 +34628,8 @@
             "measure-e67e1496b556",
             "measure-0aaf37a2b769",
             "measure-52b24a618d30",
-            "measure-351fd006e334",
-            "measure-315d9123945d"
+            "measure-9c5bcab6c9a9",
+            "measure-6bee104be284"
           ]
         },
         {
@@ -34844,19 +34637,7 @@
           "key": "year",
           "labelKo": "연도",
           "values": [
-            "2002",
-            "2005",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2012",
-            "2013",
-            "2015",
             "2016",
-            "2017",
-            "2019",
-            "2021",
             "2023"
           ]
         }
@@ -34888,7 +34669,7 @@
       ],
       "yearRange": {
         "end": 2023,
-        "start": 2002
+        "start": 2016
       }
     },
     {
@@ -35589,27 +35370,6 @@
             "체결 — 베트남 측(PVN) 요청으로 성사",
             "체결 — 한국 측 요청으로 성사"
           ]
-        },
-        {
-          "key": "문서_유형_document_type",
-          "labelKo": "문서_유형_document_type",
-          "valueCount": 4,
-          "values": [
-            "공동성명·선언",
-            "공동위·작업반",
-            "양해각서(MOU·MoC)",
-            "조약·협정"
-          ]
-        },
-        {
-          "key": "협력_상대_구분_partner_type",
-          "labelKo": "협력_상대_구분_partner_type",
-          "valueCount": 3,
-          "values": [
-            "다자",
-            "제3국 양자",
-            "한국 관련"
-          ]
         }
       ],
       "elementId": "E-014",
@@ -35684,27 +35444,6 @@
             "체결 — 베트남 측(PVN) 요청으로 성사",
             "체결 — 한국 측 요청으로 성사"
           ]
-        },
-        {
-          "defaultValue": "공동성명·선언",
-          "key": "문서_유형_document_type",
-          "labelKo": "문서_유형_document_type",
-          "values": [
-            "공동성명·선언",
-            "공동위·작업반",
-            "양해각서(MOU·MoC)",
-            "조약·협정"
-          ]
-        },
-        {
-          "defaultValue": "다자",
-          "key": "협력_상대_구분_partner_type",
-          "labelKo": "협력_상대_구분_partner_type",
-          "values": [
-            "다자",
-            "제3국 양자",
-            "한국 관련"
-          ]
         }
       ],
       "tableColumns": [
@@ -35723,10 +35462,8 @@
         "status",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "문서_유형_document_type",
         "수집_기준_절차",
-        "체결국",
-        "협력_상대_구분_partner_type"
+        "체결국"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -35757,15 +35494,6 @@
           "valueCount": 1,
           "values": [
             "entity"
-          ]
-        },
-        {
-          "key": "가입_상태_구분_membership_status",
-          "labelKo": "가입_상태_구분_membership_status",
-          "valueCount": 2,
-          "values": [
-            "가입 완료",
-            "미가입"
           ]
         }
       ],
@@ -35824,15 +35552,6 @@
             "measure-21a0b685904b",
             "measure-b1136b8f8947"
           ]
-        },
-        {
-          "defaultValue": "가입 완료",
-          "key": "가입_상태_구분_membership_status",
-          "labelKo": "가입_상태_구분_membership_status",
-          "values": [
-            "가입 완료",
-            "미가입"
-          ]
         }
       ],
       "tableColumns": [
@@ -35844,13 +35563,11 @@
         "source",
         "missingReason",
         "sourceEvidence",
-        "가입_상태_구분_membership_status",
         "가입_시점",
         "가입_참여_상태",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
         "수집_기준_절차",
-        "자료_구분_data_scope",
         "참여_내용",
         "체계_유형",
         "출처_URL",
@@ -36215,25 +35932,6 @@
           "values": [
             "entity"
           ]
-        },
-        {
-          "key": "기후_에너지_담당_판정_focal_point_status",
-          "labelKo": "기후_에너지_담당_판정_focal_point_status",
-          "valueCount": 3,
-          "values": [
-            "없음 확인(원천 업무안내 기준) — 기후·에너지 업무 표기 없음",
-            "유(원천 업무안내 기준) — 기후·에너지 업무 명시",
-            "해당 없음 — 사무소 미설치"
-          ]
-        },
-        {
-          "key": "행_유형_row_type",
-          "labelKo": "행_유형_row_type",
-          "valueCount": 2,
-          "values": [
-            "미설치 안내",
-            "현지사무소"
-          ]
         }
       ],
       "elementId": "E-019",
@@ -36283,25 +35981,6 @@
             "Hanoi",
             "Ho Chi Minh City"
           ]
-        },
-        {
-          "defaultValue": "없음 확인(원천 업무안내 기준) — 기후·에너지 업무 표기 없음",
-          "key": "기후_에너지_담당_판정_focal_point_status",
-          "labelKo": "기후_에너지_담당_판정_focal_point_status",
-          "values": [
-            "없음 확인(원천 업무안내 기준) — 기후·에너지 업무 표기 없음",
-            "유(원천 업무안내 기준) — 기후·에너지 업무 명시",
-            "해당 없음 — 사무소 미설치"
-          ]
-        },
-        {
-          "defaultValue": "미설치 안내",
-          "key": "행_유형_row_type",
-          "labelKo": "행_유형_row_type",
-          "values": [
-            "미설치 안내",
-            "현지사무소"
-          ]
         }
       ],
       "tableColumns": [
@@ -36322,10 +36001,8 @@
         "sourceUrl",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "기후_에너지_담당_판정_focal_point_status",
         "수집_기준_절차",
-        "좌표_정밀도_출처",
-        "행_유형_row_type"
+        "좌표_정밀도_출처"
       ],
       "tooltipFields": [
         "displayLabel",
@@ -36368,43 +36045,6 @@
             "금융·투자",
             "현지사업화·수주지원"
           ]
-        },
-        {
-          "key": "금액_종류_amount_type",
-          "labelKo": "금액_종류_amount_type",
-          "valueCount": 3,
-          "values": [
-            "과제당 지원액",
-            "수주 계약액",
-            "원천 미게시"
-          ]
-        },
-        {
-          "key": "신청시기_구분_period_type",
-          "labelKo": "신청시기_구분_period_type",
-          "valueCount": 1,
-          "values": [
-            "공고 접수기간"
-          ]
-        },
-        {
-          "key": "지원_유형_표준_support_type_std",
-          "labelKo": "지원_유형_표준_support_type_std",
-          "valueCount": 3,
-          "values": [
-            "4종 외(현지사업화·수주지원)",
-            "FS",
-            "금융"
-          ]
-        },
-        {
-          "key": "지원대상_구분_applicant_type",
-          "labelKo": "지원대상_구분_applicant_type",
-          "valueCount": 2,
-          "values": [
-            "국내 신청주체",
-            "수원국 수혜기관"
-          ]
         }
       ],
       "elementId": "E-020",
@@ -36424,19 +36064,11 @@
       },
       "measures": [
         {
-          "indicatorCount": 1,
+          "indicatorCount": 2,
           "key": "measure-8c390968933d",
           "labelKo": "한국 공공",
           "recordCount": 0,
           "unit": "건(프로그램)",
-          "unitFamily": "text"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-cba66876e826",
-          "labelKo": "한국 공공",
-          "recordCount": 0,
-          "unit": "건(프로그램) / 건(사업)",
           "unitFamily": "text"
         },
         {
@@ -36468,7 +36100,6 @@
           "labelKo": "측정항목",
           "values": [
             "measure-8c390968933d",
-            "measure-cba66876e826",
             "measure-e4b3b50682e0"
           ]
         },
@@ -36481,35 +36112,6 @@
             "FS·마스터플랜 수립",
             "금융·투자",
             "현지사업화·수주지원"
-          ]
-        },
-        {
-          "defaultValue": "과제당 지원액",
-          "key": "금액_종류_amount_type",
-          "labelKo": "금액_종류_amount_type",
-          "values": [
-            "과제당 지원액",
-            "수주 계약액",
-            "원천 미게시"
-          ]
-        },
-        {
-          "defaultValue": "4종 외(현지사업화·수주지원)",
-          "key": "지원_유형_표준_support_type_std",
-          "labelKo": "지원_유형_표준_support_type_std",
-          "values": [
-            "4종 외(현지사업화·수주지원)",
-            "FS",
-            "금융"
-          ]
-        },
-        {
-          "defaultValue": "국내 신청주체",
-          "key": "지원대상_구분_applicant_type",
-          "labelKo": "지원대상_구분_applicant_type",
-          "values": [
-            "국내 신청주체",
-            "수원국 수혜기관"
           ]
         }
       ],
@@ -36530,16 +36132,9 @@
         "supportLimit",
         "supportType",
         "supportingOrganization",
-        "공통_프로그램명_program_name_std",
-        "금액_종류_amount_type",
         "기술코드_근거문구",
         "기술코드_판단근거_유형",
-        "레코드_구분_record_kind",
-        "수집_기준_절차",
-        "신청시기_구분_period_type",
-        "지원_유형_표준_support_type_std",
-        "지원대상_구분_applicant_type",
-        "프로그램_연결키_program_key"
+        "수집_기준_절차"
       ],
       "tooltipFields": [
         "displayLabel",

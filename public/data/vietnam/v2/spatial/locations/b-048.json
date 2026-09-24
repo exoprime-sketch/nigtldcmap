@@ -4,29 +4,19 @@
   "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
   "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
   "counts": {
-    "located": 4,
+    "located": 2,
     "outside": 0,
-    "withoutCoordinate": 4
+    "withoutCoordinate": 6
   },
   "byRecordId": {
-    "v124-b-048-entity-00002": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": null
-    },
-    "v124-b-048-entity-00006": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": null
-    },
-    "v124-b-048-entity-00007": {
+    "v124-b-048-entity-00001": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
       "unitCode": null
     },
-    "v124-b-048-entity-00008": {
-      "adm1Code": "VN-69",
-      "adm1Name": "Thái Nguyên",
+    "v124-b-048-entity-00006": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
       "unitCode": null
     }
   }

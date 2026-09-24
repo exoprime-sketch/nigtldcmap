@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-001",
-  "entityCount": 3,
+  "entityCount": 49,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 50,
+  "indicatorCount": 60,
   "indicators": [
     {
       "axisGroupKey": "measure-0e53a42c2ef6|MtCO₂e",
@@ -287,6 +287,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-3f09bac7f822|정성 목표",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "적응 부문 목표",
+      "indicatorId": "C-001_adaptation_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3f09bac7f822",
+        "labelKo": "적응 부문 목표",
+        "unit": "정성 목표",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-3f09bac7f822|정성 목표||C-001_adaptation_target",
+      "sourceCaveat": null,
+      "sourceLabel": "적응 부문 목표",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a8a6e4494ecc|년",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기준연도",
+      "indicatorId": "C-001_base_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a8a6e4494ecc",
+        "labelKo": "기준연도",
+        "unit": "년",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a8a6e4494ecc|년||C-001_base_year",
+      "sourceCaveat": null,
+      "sourceLabel": "기준연도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-e6430685c3e9|MtCO₂e",
       "dimensionLabels": {
         "category": "2014(기준연도)",
@@ -421,6 +461,26 @@
         "sourceRow": 11,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-360d4b31ef57|MtCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "BAU 배출 전망(2030, MtCO₂e)",
+      "indicatorId": "C-001_bau_projection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-360d4b31ef57",
+        "labelKo": "BAU 배출 전망(2030, MtCO₂e)",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-360d4b31ef57|MtCO₂e||C-001_bau_projection",
+      "sourceCaveat": null,
+      "sourceLabel": "BAU 배출 전망(2030, MtCO₂e)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-e15c351e095f|MtCO₂e",
@@ -797,6 +857,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-5352debcb131|% of GDP",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "이행 재원 소요(USD)",
+      "indicatorId": "C-001_implementation_finance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5352debcb131",
+        "labelKo": "이행 재원 소요(USD)",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-5352debcb131|% of GDP||C-001_implementation_finance",
+      "sourceCaveat": null,
+      "sourceLabel": "이행 재원 소요(USD)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-8cc13d83a281|—",
       "dimensionLabels": {
         "category": "재원 조달원) 재원 조달 유형",
@@ -1149,6 +1229,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-cbe06005f532|MtCO₂e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "감축 목표(무조건부/조건부, %)",
+      "indicatorId": "C-001_mitigation_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cbe06005f532",
+        "labelKo": "감축 목표(무조건부/조건부, %)",
+        "unit": "MtCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-cbe06005f532|MtCO₂e||C-001_mitigation_target",
+      "sourceCaveat": null,
+      "sourceLabel": "감축 목표(무조건부/조건부, %)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-32172a16fdd6|개",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NDC-SDG 연계 매핑",
+      "indicatorId": "C-001_ndc_sdg_linkage",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-32172a16fdd6",
+        "labelKo": "NDC-SDG 연계 매핑",
+        "unit": "개",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-32172a16fdd6|개||C-001_ndc_sdg_linkage",
+      "sourceCaveat": null,
+      "sourceLabel": "NDC-SDG 연계 매핑",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-750542e171b7|—",
       "dimensionLabels": {
         "category": "감축 적응 공동편익",
@@ -1183,21 +1303,45 @@
       }
     },
     {
-      "axisGroupKey": "measure-0b7dfbe76c81|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "NDC (국가 온실가스 감축 목표)",
-      "indicatorId": "C-001_ndc_submission",
+      "axisGroupKey": "measure-c105b6835235|년",
+      "dimensionLabels": {
+        "category": "수단 목록"
+      },
+      "dimensions": {
+        "category": "수단 목록"
+      },
+      "displayLabel": "부문별 감축 전략·수단 목록",
+      "indicatorId": "C-001_sector_mitigation_measures",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0b7dfbe76c81",
-        "labelKo": "NDC (국가 온실가스 감축 목표)",
-        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
+        "key": "measure-c105b6835235",
+        "labelKo": "부문별 감축 전략",
+        "unit": "년",
+        "unitFamily": "text"
       },
-      "seriesKey": "measure-0b7dfbe76c81|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-001_ndc_submission",
+      "seriesKey": "measure-c105b6835235|년|category=수단 목록|C-001_sector_mitigation_measures",
       "sourceCaveat": null,
-      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabel": "부문별 감축 전략·수단 목록",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-92ed3a9b9108|URL",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "원본 링크(URL)",
+      "indicatorId": "C-001_source_link",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92ed3a9b9108",
+        "labelKo": "원본 링크(URL)",
+        "unit": "URL",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-92ed3a9b9108|URL||C-001_source_link",
+      "sourceCaveat": null,
+      "sourceLabel": "원본 링크(URL)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1339,6 +1483,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-9f8075525a0d|년월",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "제출 이력(제출년도/버전)",
+      "indicatorId": "C-001_submission_history",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9f8075525a0d",
+        "labelKo": "제출 이력(제출년도/버전)",
+        "unit": "년월",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-9f8075525a0d|년월||C-001_submission_history",
+      "sourceCaveat": null,
+      "sourceLabel": "제출 이력(제출년도/버전)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-f603ffff5be4|년월",
       "dimensionLabels": {
         "category": "INDC",
@@ -1439,6 +1603,46 @@
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-df9573e21702|종",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "대상 GHG",
+      "indicatorId": "C-001_target_ghg",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-df9573e21702",
+        "labelKo": "대상 GHG",
+        "unit": "종",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-df9573e21702|종||C-001_target_ghg",
+      "sourceCaveat": null,
+      "sourceLabel": "대상 GHG",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-2a42b809c6f0|개",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "대상 부문",
+      "indicatorId": "C-001_target_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2a42b809c6f0",
+        "labelKo": "대상 부문",
+        "unit": "개",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-2a42b809c6f0|개||C-001_target_sector",
+      "sourceCaveat": null,
+      "sourceLabel": "대상 부문",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-228adfe53276|MtCO₂e",
@@ -1732,11 +1936,11 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-0b7dfbe76c81",
-      "labelKo": "NDC (국가 온실가스 감축 목표)",
+      "key": "measure-360d4b31ef57",
+      "labelKo": "BAU 배출 전망(2030, MtCO₂e)",
       "recordCount": 0,
-      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
-      "unitFamily": "other"
+      "unit": "MtCO₂e",
+      "unitFamily": "emissions"
     },
     {
       "indicatorCount": 1,
@@ -1745,6 +1949,30 @@
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-32172a16fdd6",
+      "labelKo": "NDC-SDG 연계 매핑",
+      "recordCount": 0,
+      "unit": "개",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cbe06005f532",
+      "labelKo": "감축 목표(무조건부/조건부, %)",
+      "recordCount": 0,
+      "unit": "MtCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a8a6e4494ecc",
+      "labelKo": "기준연도",
+      "recordCount": 0,
+      "unit": "년",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 2,
@@ -1761,6 +1989,22 @@
       "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-df9573e21702",
+      "labelKo": "대상 GHG",
+      "recordCount": 0,
+      "unit": "종",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2a42b809c6f0",
+      "labelKo": "대상 부문",
+      "recordCount": 0,
+      "unit": "개",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
@@ -1787,12 +2031,36 @@
       "unitFamily": "currency"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-c105b6835235",
+      "labelKo": "부문별 감축 전략",
+      "recordCount": 0,
+      "unit": "년",
+      "unitFamily": "text"
+    },
+    {
       "indicatorCount": 4,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
       "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-92ed3a9b9108",
+      "labelKo": "원본 링크(URL)",
+      "recordCount": 0,
+      "unit": "URL",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5352debcb131",
+      "labelKo": "이행 재원 소요(USD)",
+      "recordCount": 0,
+      "unit": "% of GDP",
+      "unitFamily": "percent"
     },
     {
       "indicatorCount": 2,
@@ -1851,12 +2119,28 @@
       "unitFamily": "text"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-3f09bac7f822",
+      "labelKo": "적응 부문 목표",
+      "recordCount": 0,
+      "unit": "정성 목표",
+      "unitFamily": "text"
+    },
+    {
       "indicatorCount": 3,
       "key": "measure-f603ffff5be4",
       "labelKo": "제출 이력 (제출년도 / 문서)",
       "recordCount": 0,
       "unit": "년월",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9f8075525a0d",
+      "labelKo": "제출 이력(제출년도/버전)",
+      "recordCount": 0,
+      "unit": "년월",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
