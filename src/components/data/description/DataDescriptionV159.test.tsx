@@ -23,6 +23,7 @@ const SPEC: DatasetSpecRowV159 = {
   refApa: "Test Org. (2026). Test dataset.",
   checkedAt: "2026-09-01",
   decision: null,
+  decisionNote: null,
 };
 
 const CASES: UseCaseV159[] = [

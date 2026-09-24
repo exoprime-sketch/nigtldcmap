@@ -1,5 +1,10 @@
 /* V159 display-type templates: shared shell, technology filter, status. */
 .tpl159 {
+  /* The shell sits between the V153 frame and its blocks; it keeps the
+     frame's grid rhythm so the heading, primary section, sources and tables
+     stay 16px apart as before. */
+  display: grid;
+  gap: 16px;
   min-width: 0;
 }
 
@@ -8,7 +13,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  margin: 0 0 12px;
+  margin: 0;
   min-width: 0;
 }
 
@@ -46,7 +51,7 @@
 }
 
 .tpl159-notice {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 0.875rem;
   color: var(--color-text-muted, #475569);
   overflow-wrap: anywhere;

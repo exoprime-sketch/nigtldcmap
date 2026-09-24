@@ -24,6 +24,10 @@ import {
   technologyLabelV121,
 } from "../utils/vietnamActualV121";
 import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
+import { getCardSpecV159 } from "../data/spec/datasetSpecV159";
+import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
+import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
+import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitleV159";
 import "../styles/country-data-platform-v122.css";
 
 interface DataExplorerPageProps {
@@ -207,6 +211,9 @@ export default function DataExplorerPage({
   const [yearFilter, setYearFilter] = useState(initialRestore?.yearFilter || "all");
   const [sortMode, setSortMode] =
     useState<FinderSortModeV128>(initialRestore?.sortMode || "relevance");
+  // V159: who the dataset serves (from its use cases) and its display type.
+  const [userFilter, setUserFilter] = useState<string>("all");
+  const [typeFilter, setTypeFilter] = useState<DisplayTypeV159 | "all">("all");
   const [deliveryFilter, setDeliveryFilter] =
     useState<FinderDeliveryFilterV140>(initialRestore?.deliveryFilter || "all");
   const [filtersExpanded, setFiltersExpanded] = useState(initialRestore?.filtersExpanded || false);
@@ -376,6 +383,11 @@ export default function DataExplorerPage({
         return false;
       }
       if (deliveryFilter === "map" && !item.hasMapData) return false;
+      if (userFilter !== "all" || typeFilter !== "all") {
+        const card = getCardSpecV159(item.elementId);
+        if (userFilter !== "all" && !card?.users.includes(userFilter)) return false;
+        if (typeFilter !== "all" && card?.displayType !== typeFilter) return false;
+      }
       if (
         deliveryFilter === "download" &&
         publicDownloadStatusV128(item).key !== "downloadable"
@@ -390,6 +402,9 @@ export default function DataExplorerPage({
           [
             item.publicTitle,
             item.publicDescription,
+            getCardSpecV159(item.elementId)?.sourceLabel || "",
+            getCardSpecV159(item.elementId)?.baseName || "",
+            getCardSpecV159(item.elementId)?.shortDefinitionCard || "",
             item.categoryLabel,
             item.sectionLabel,
             item.groupLabel,
@@ -443,6 +458,8 @@ export default function DataExplorerPage({
     sortMode,
     sourceOrganization,
     selectedTechnology,
+    typeFilter,
+    userFilter,
     yearFilter,
   ]);
 
@@ -649,6 +666,8 @@ export default function DataExplorerPage({
     setYearFilter("all");
     setSortMode("relevance");
     setDeliveryFilter("all");
+    setUserFilter("all");
+    setTypeFilter("all");
   }
 
   return (
@@ -812,6 +831,38 @@ export default function DataExplorerPage({
                 ))}
               </select>
             </label>
+            <label className="cdp-field">
+              <span className="cdp-field__label">주 사용자</span>
+              <select
+                className="cdp-select"
+                data-testid="finder-user-filter-v159"
+                value={userFilter}
+                onChange={(event) => setUserFilter(event.target.value)}
+              >
+                <option value="all">전체</option>
+                {PRIMARY_USERS_V159.map((user) => (
+                  <option key={user} value={user}>
+                    {user}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="cdp-field">
+              <span className="cdp-field__label">유형</span>
+              <select
+                className="cdp-select"
+                data-testid="finder-type-filter-v159"
+                value={typeFilter}
+                onChange={(event) => setTypeFilter(event.target.value as DisplayTypeV159 | "all")}
+              >
+                <option value="all">전체</option>
+                {(["U1", "U2", "U3", "U4", "U5", "U6"] as const).map((type) => (
+                  <option key={type} value={type}>
+                    {`${DISPLAY_TYPE_MARKS_V159[type]} ${DISPLAY_TYPE_LABELS_V159[type]}`}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
           <PublicTermHelpV134
             text={[
@@ -896,10 +947,18 @@ export default function DataExplorerPage({
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>
             )}
-            <h2><PublicTermTextV134 text={item.publicTitle} /></h2>
-            <p className="cdp-card__description">
-              <PublicTermTextV134 text={item.publicDescription} />
-            </p>
+            {/* V159: source line, the dataset's own name and the spec's short
+                definition; the catalogue's title stays the fallback. */}
+            {getCardSpecV159(item.elementId) ? (
+              <DatasetCardTitleV159 card={getCardSpecV159(item.elementId)!} titleAs="h2" />
+            ) : (
+              <>
+                <h2><PublicTermTextV134 text={item.publicTitle} /></h2>
+                <p className="cdp-card__description">
+                  <PublicTermTextV134 text={item.publicDescription} />
+                </p>
+              </>
+            )}
             {summary && <FinderCardSummaryV140 summary={summary} />}
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>

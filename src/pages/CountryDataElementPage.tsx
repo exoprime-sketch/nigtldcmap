@@ -30,6 +30,14 @@ import CountryElementVisualizationV123, { indicatorFamilyCountV153 } from "../co
 import DetailKpiStripV153 from "../components/data/public/DetailKpiStripV153";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
+import { getCardSpecV159, getTypologyV159, loadDatasetSpecV159 } from "../data/spec/datasetSpecV159";
+import type { DatasetSpecBundleV159 } from "../data/spec/datasetSpecV159";
+import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
+import { decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
+import SourceLineV159 from "../components/data/description/SourceLineV159";
+import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
+import DecisionPointsV159 from "../components/data/templates/DecisionPointsV159";
 import "../styles/country-data-platform-v122.css";
 import "../styles/detail-layout-v153.css";
 
@@ -764,6 +772,43 @@ export default function CountryDataElementPage({
       ? "수록 선로 구간 722건 중 원천이 좌표를 제공한 606건을 지도에 표시합니다. 나머지 116건은 계획표에 기재된 구간으로 좌표가 없어 지도에 나타나지 않습니다."
       : "";
 
+  // V159: the framework workbook's description, usage and cases (a lazy
+  // chunk), and the display type's decision points from the loaded rows.
+  const typologyV159 = elementId ? getTypologyV159(elementId) : null;
+  const [specBundleV159, setSpecBundleV159] = useState<DatasetSpecBundleV159 | null>(null);
+  useEffect(() => {
+    let alive = true;
+    setSpecBundleV159(null);
+    if (!elementId) return undefined;
+    void loadDatasetSpecV159(elementId)
+      .then((loaded) => {
+        if (alive) setSpecBundleV159(loaded);
+      })
+      .catch(() => {
+        // The description is additive; the analysis stands without it.
+      });
+    return () => {
+      alive = false;
+    };
+  }, [elementId]);
+  const decisionPointListV159 = useMemo(() => {
+    if (!typologyV159 || typologyV159.displayType === "U0" || !bundle?.meta || !hasPopulatedRows) return [];
+    const rows = adaptStructureV159(typologyV159.structure, {
+      observations: bundle.observations,
+      entities: bundle.entities,
+      indicators: bundle.meta.indicators,
+    });
+    return decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
+  }, [bundle, countryIso3, hasPopulatedRows, typologyV159]);
+  const presentIndicatorIdsV159 = useMemo(
+    () =>
+      new Set([
+        ...(bundle?.observations || []).map((row) => row.indicatorId),
+        ...(bundle?.entities || []).map((row) => row.indicatorId || ""),
+      ]),
+    [bundle]
+  );
+
   if (!elementId) {
     return (
       <div className="page-shell cdp-page">
@@ -813,7 +858,8 @@ export default function CountryDataElementPage({
   }
 
   const meta = bundle?.meta;
-  const pageTitle = catalogItem?.publicTitle || meta?.element.elementLabel || "";
+  const cardSpec = getCardSpecV159(elementId);
+  const pageTitle = cardSpec?.baseName || catalogItem?.publicTitle || meta?.element.elementLabel || "";
   const hasMap = Boolean(meta && (catalogItem?.hasMapData || meta.element.mapFeatureCount > 0));
   // V153: the small map is handed to the analysis frame, which sets it beside
   // the first analysis block; the component itself is unchanged.
@@ -889,15 +935,22 @@ export default function CountryDataElementPage({
                   )}
                 </div>
               )}
+              {/* V159: source line, the dataset's own name and the spec's short
+                  definition, read from the framework workbook. */}
+              {cardSpec?.sourceLabel ? (
+                <p className="cdp-detail-hero__source" data-testid="hero-source-line-v159">
+                  {cardSpec.sourceLabel}
+                </p>
+              ) : null}
               <h1>
-                <PublicTermTextV134
-                  text={catalogItem?.publicTitle || meta.element.elementLabel}
-                />
+                <PublicTermTextV134 text={pageTitle} />
               </h1>
-              <p>
+              <p data-testid={cardSpec ? "hero-short-definition-v159" : undefined}>
                 <PublicTermTextV134
                   text={`${provider.countryNameKo}${
-                    catalogItem?.publicDescription
+                    cardSpec?.shortDefinitionCard
+                      ? ` · ${cardSpec.shortDefinitionCard}`
+                      : catalogItem?.publicDescription
                       ? ` · ${catalogItem.publicDescription}`
                       : ""
                   }`}
@@ -959,6 +1012,20 @@ export default function CountryDataElementPage({
               )}
             </div>
           </section>
+
+          <DataDescriptionV159
+            spec={specBundleV159?.spec || null}
+            cases={specBundleV159?.cases || []}
+            availableIndicatorIds={presentIndicatorIdsV159}
+            onHighlightIndicators={(ids) => {
+              const primary = document.querySelector<HTMLElement>('[data-testid="public-analysis-primary"]');
+              if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
+            }}
+          />
+          <SourceLineV159 spec={specBundleV159?.spec || null} />
+          {typologyV159 ? (
+            <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} />
+          ) : null}
 
           <DetailKpiStripV153
             elementId={elementId}
