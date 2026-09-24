@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v156",
-  "generatedAt": "2026-09-24T08:44:43Z",
+  "generatedAt": "2026-09-24T09:03:28Z",
   "delivery": {
     "directory": "베트남데이터/20260922",
     "deliveredAt": "2026-09-22"
@@ -16,10 +16,49 @@
     ]
   },
   "totals": {
-    "adoptedWorkbooks": 5,
-    "held": 140,
-    "carriedFromPreviousDelivery": 140,
-    "stagedWorkbooks": 145
+    "frameworkElements": 152,
+    "delivered": 145,
+    "adopted": 5,
+    "identicalNoChange": 22,
+    "heldWithChange": 118,
+    "notDelivered": 7
+  },
+  "identicalNoChange": [
+    "A-015",
+    "A-017",
+    "A-022",
+    "A-033",
+    "B-014",
+    "B-018",
+    "B-019",
+    "B-020",
+    "B-021",
+    "B-025",
+    "D-002",
+    "D-004",
+    "D-006",
+    "D-012",
+    "D-017",
+    "D-020",
+    "D-021",
+    "D-022",
+    "D-023",
+    "D-024",
+    "E-003",
+    "E-004"
+  ],
+  "notDelivered": {
+    "noSourceAtAll": [
+      "C-020",
+      "C-021",
+      "C-023"
+    ],
+    "previousWorkbookCarriedOver": [
+      "E-011",
+      "E-013",
+      "E-016",
+      "E-017"
+    ]
   },
   "reasonGroups": {
     "structure": {
@@ -121,11 +160,109 @@
       "detail": "새 문구 \"WWF BRF\"의 BRF가 용어집·허용목록에 없어 glossary 감사 실패 — 원문 확인 후 등록하고 채택"
     },
     "not-value-only": {
-      "elementIds": null,
+      "elementIds": [
+        "A-001",
+        "A-003",
+        "A-004",
+        "A-005",
+        "A-006",
+        "A-007",
+        "A-008",
+        "A-009",
+        "A-010",
+        "A-011",
+        "A-012",
+        "A-014",
+        "A-016",
+        "A-018",
+        "A-019",
+        "A-020",
+        "A-021",
+        "A-024",
+        "A-027",
+        "A-030",
+        "A-031",
+        "A-032",
+        "B-001",
+        "B-003",
+        "B-008",
+        "B-010",
+        "B-011",
+        "B-012",
+        "B-013",
+        "B-016",
+        "B-017",
+        "B-026",
+        "B-029",
+        "B-030",
+        "B-037",
+        "B-038",
+        "B-039",
+        "B-040",
+        "B-041",
+        "B-042",
+        "B-044",
+        "B-048",
+        "C-001",
+        "D-001",
+        "D-003",
+        "D-005",
+        "D-007",
+        "D-008",
+        "D-009",
+        "D-010",
+        "D-011",
+        "D-013",
+        "D-014",
+        "D-015",
+        "D-016",
+        "D-019",
+        "D-025",
+        "D-026",
+        "E-014",
+        "E-020"
+      ],
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+    },
+    "indicator-metadata-only": {
+      "elementIds": [
+        "B-027",
+        "E-005",
+        "E-006",
+        "E-015",
+        "E-019"
+      ],
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
+    },
+    "identical": {
+      "elementIds": [
+        "A-015",
+        "A-017",
+        "A-022",
+        "A-033",
+        "B-014",
+        "B-018",
+        "B-019",
+        "B-020",
+        "B-021",
+        "B-025",
+        "D-002",
+        "D-004",
+        "D-006",
+        "D-012",
+        "D-017",
+        "D-020",
+        "D-021",
+        "D-022",
+        "D-023",
+        "D-024",
+        "E-003",
+        "E-004"
+      ],
+      "detail": "신규 워크북을 채택해도 공개 트리가 바뀌지 않는다(채택 스테이징 빌드 후 diff로 실측: 변화 0)"
     }
   },
-  "held": [
+  "heldWithChange": [
     {
       "elementId": "A-001",
       "reason": "not-value-only",
@@ -192,17 +329,7 @@
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "A-015",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "A-016",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "A-017",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -223,11 +350,6 @@
     },
     {
       "elementId": "A-021",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "A-022",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -278,11 +400,6 @@
     },
     {
       "elementId": "A-032",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "A-033",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -352,37 +469,12 @@
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "B-014",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "B-016",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
       "elementId": "B-017",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "B-018",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "B-019",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "B-020",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "B-021",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -397,19 +489,14 @@
       "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
     },
     {
-      "elementId": "B-025",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "B-026",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
       "elementId": "B-027",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+      "reason": "indicator-metadata-only",
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
     },
     {
       "elementId": "B-028",
@@ -632,27 +719,12 @@
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "D-002",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "D-003",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "D-004",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "D-005",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-006",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -682,11 +754,6 @@
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "D-012",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "D-013",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
@@ -707,42 +774,12 @@
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
     {
-      "elementId": "D-017",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "D-018",
       "reason": "structure",
       "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
     },
     {
       "elementId": "D-019",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-020",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-021",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-022",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-023",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "D-024",
       "reason": "not-value-only",
       "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
     },
@@ -762,24 +799,14 @@
       "detail": "공개 명칭 자리에 내부 레코드 키가 들어와 audit:glossary:v134·project-scope:v130 실패"
     },
     {
-      "elementId": "E-003",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
-      "elementId": "E-004",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
-    },
-    {
       "elementId": "E-005",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+      "reason": "indicator-metadata-only",
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
     },
     {
       "elementId": "E-006",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+      "reason": "indicator-metadata-only",
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
     },
     {
       "elementId": "E-007",
@@ -808,8 +835,8 @@
     },
     {
       "elementId": "E-015",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+      "reason": "indicator-metadata-only",
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
     },
     {
       "elementId": "E-018",
@@ -818,8 +845,8 @@
     },
     {
       "elementId": "E-019",
-      "reason": "not-value-only",
-      "detail": "값 외에 지표·속성·상태 변화가 있어 이번 라운드(값만 갱신) 범위 밖"
+      "reason": "indicator-metadata-only",
+      "detail": "값·행수는 같고 지표 메타(개수·라벨)만 늘어난다 — 이번 라운드 범위(값 변화만) 밖"
     },
     {
       "elementId": "E-020",
