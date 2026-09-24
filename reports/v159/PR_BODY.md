@@ -24,7 +24,7 @@
 - 회귀: 1순위 섹션 DOM 동일 145/152. 의도 외 변경 0이고, 차이 7건은 ⓪ 상태 화면입니다.
 - 넘침: 12화면 × 6폭 = 72건 모두 0
 - 레거시 감사 선행: entity-cards·portfolio·generic-detail·map-list·glossary 모두 통과
-- `finalize:v151`: REVIEW §4 참조
+- `finalize:v151`: **미통과**(2회). B-028 명세서 원문의 "관련 자료"가 public-text:v136 금지 문구에 걸림(REVIEW §4)
 
 ## 결정 필요
 - 계약 4건: B-014 '표 전환', C-002·C-019는 ⑥인데 숫자 1순위, E-008 제외 요소
