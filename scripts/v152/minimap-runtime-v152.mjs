@@ -218,7 +218,7 @@ async function checkScreen({ id, url, scope, openTestId }) {
       const host = document.querySelector(`${selector} [data-testid="minimap-v152"]`);
       return {
         badges: host ? host.querySelectorAll('svg use[href^="#mi152-"]').length : 0,
-        legendEntries: document.querySelectorAll(`${selector} [data-testid="detail-map-icon-legend-v152"] [data-icon-id]`).length,
+        legendEntries: document.querySelectorAll(`${selector} [data-testid="detail-map-icon-legend-v152"] li[data-icon-id]`).length,
       };
     }, scope);
     const kitLoaded = requests.some((url) => url.includes("map-icon-kit-v152"));

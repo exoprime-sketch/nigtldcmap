@@ -1,21 +1,16 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-22T05:12:07.739Z",
+  "generatedAt": "2026-09-24T00:32:45.147Z",
   "audit": "release:v136",
-  "status": "FAIL",
+  "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "release:v136",
-    "status": "FAIL",
-    "passed": 53,
-    "failed": 4,
-    "total": 57,
-    "failedChecks": [
-      "V134_GLOSSARY",
-      "VISIBLE_ACRONYM_WITHOUT_GLOSSARY",
-      "V134_REGRESSION",
-      "REMAINING_BLOCKERS"
-    ],
+    "status": "PASS",
+    "passed": 79,
+    "failed": 0,
+    "total": 79,
+    "failedChecks": [],
     "commandResults": [
       {
         "name": "CI_PROCESS_GUARDS",
@@ -23,7 +18,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 1243,
+        "elapsedMs": 1354,
         "timedOut": false
       },
       {
@@ -32,7 +27,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 18800,
+        "elapsedMs": 20151,
         "timedOut": false
       },
       {
@@ -41,7 +36,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 8061,
+        "elapsedMs": 7924,
         "timedOut": false
       },
       {
@@ -50,7 +45,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 11100,
+        "elapsedMs": 5607,
         "timedOut": false
       },
       {
@@ -59,7 +54,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 669,
+        "elapsedMs": 789,
         "timedOut": false
       },
       {
@@ -68,7 +63,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 624,
+        "elapsedMs": 622,
         "timedOut": false
       },
       {
@@ -77,7 +72,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 565,
+        "elapsedMs": 665,
         "timedOut": false
       },
       {
@@ -86,7 +81,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 621,
+        "elapsedMs": 790,
         "timedOut": false
       },
       {
@@ -95,7 +90,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5624,
+        "elapsedMs": 6707,
         "timedOut": false
       },
       {
@@ -104,7 +99,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 31055,
+        "elapsedMs": 22672,
         "timedOut": false
       },
       {
@@ -113,7 +108,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3252,
+        "elapsedMs": 3965,
         "timedOut": false
       },
       {
@@ -122,7 +117,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 8254,
+        "elapsedMs": 9625,
         "timedOut": false
       },
       {
@@ -131,7 +126,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5757,
+        "elapsedMs": 6596,
         "timedOut": false
       },
       {
@@ -140,7 +135,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 561,
+        "elapsedMs": 589,
         "timedOut": false
       },
       {
@@ -149,7 +144,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5402,
+        "elapsedMs": 6136,
         "timedOut": false
       },
       {
@@ -158,7 +153,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3055,
+        "elapsedMs": 3130,
         "timedOut": false
       },
       {
@@ -167,16 +162,214 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3600,
+        "elapsedMs": 3764,
         "timedOut": false
       },
       {
         "name": "V134_GLOSSARY",
         "command": "npm run audit:glossary:v134",
-        "exitCode": 1,
+        "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 57245,
+        "elapsedMs": 38855,
+        "timedOut": false
+      },
+      {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 5921,
+        "timedOut": false
+      },
+      {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 7259,
+        "timedOut": false
+      },
+      {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 145311,
+        "timedOut": false
+      },
+      {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 592,
+        "timedOut": false
+      },
+      {
+        "name": "V135_FINDER_CARD",
+        "command": "npm run audit:finder-card:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 6068,
+        "timedOut": false
+      },
+      {
+        "name": "V135_TEMPORAL_DEPTH",
+        "command": "npm run audit:temporal-depth:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 35016,
+        "timedOut": false
+      },
+      {
+        "name": "V135_DETAIL_HIERARCHY",
+        "command": "npm run audit:detail-hierarchy:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33585,
+        "timedOut": false
+      },
+      {
+        "name": "V135_MAP_GUIDE",
+        "command": "npm run audit:map-guide:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2464,
+        "timedOut": false
+      },
+      {
+        "name": "V135_MAP_ACCESS",
+        "command": "npm run audit:map-access:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 3802,
+        "timedOut": false
+      },
+      {
+        "name": "V135_MAP_COMPARE",
+        "command": "npm run audit:map-compare:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 4140,
+        "timedOut": false
+      },
+      {
+        "name": "V135_PUBLIC_SCREEN",
+        "command": "npm run audit:public-screen:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 34896,
+        "timedOut": false
+      },
+      {
+        "name": "V136_PUBLIC_TEXT",
+        "command": "npm run audit:public-text:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 151354,
+        "timedOut": false
+      },
+      {
+        "name": "V136_DUPLICATE_COPY",
+        "command": "npm run audit:duplicate-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33047,
+        "timedOut": false
+      },
+      {
+        "name": "V136_MAP_LIST_UI",
+        "command": "npm run audit:map-list-ui:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 5423,
+        "timedOut": false
+      },
+      {
+        "name": "V136_MAP_COPY",
+        "command": "npm run audit:map-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2435,
+        "timedOut": false
+      },
+      {
+        "name": "V136_PUBLIC_CONTROLS",
+        "command": "npm run audit:public-controls:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2625,
+        "timedOut": false
+      },
+      {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 9654,
+        "timedOut": false
+      },
+      {
+        "name": "V136_3_UNIT_TESTS",
+        "command": "npm run test:unit",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 9098,
+        "timedOut": false
+      },
+      {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 157605,
+        "timedOut": false
+      },
+      {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33354,
+        "timedOut": false
+      },
+      {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 48411,
+        "timedOut": false
+      },
+      {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 579,
         "timedOut": false
       }
     ],
@@ -195,7 +388,7 @@
       "v133LayerDistinction": "PASS",
       "generatedData": "PASS",
       "ciContract": "PASS",
-      "glossary": "FAIL",
+      "glossary": "PASS",
       "oda": "PASS",
       "drought": "PASS",
       "publicCopy": "PASS",
@@ -219,13 +412,13 @@
     },
     "frameworkElements": 152,
     "accountedElements": 152,
-    "publicTextInventoryCount": 42981,
+    "publicTextInventoryCount": 44630,
     "publicRouteCount": 158,
     "internalPublicTokenCount": 0,
     "duplicateVisibleCopyCount": 0,
     "mapDataItemCount": 43,
     "screenshotCaptureIsReleaseBlocker": false,
-    "remainingBlockers": 1
+    "remainingBlockers": 0
   },
   "checks": [
     {
@@ -239,7 +432,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 1243,
+        "elapsedMs": 1354,
         "timedOut": false
       },
       "expected": {
@@ -257,7 +450,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 18800,
+        "elapsedMs": 20151,
         "timedOut": false
       },
       "expected": {
@@ -275,7 +468,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 8061,
+        "elapsedMs": 7924,
         "timedOut": false
       },
       "expected": {
@@ -293,7 +486,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 11100,
+        "elapsedMs": 5607,
         "timedOut": false
       },
       "expected": {
@@ -311,7 +504,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 669,
+        "elapsedMs": 789,
         "timedOut": false
       },
       "expected": {
@@ -329,7 +522,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 624,
+        "elapsedMs": 622,
         "timedOut": false
       },
       "expected": {
@@ -347,7 +540,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 565,
+        "elapsedMs": 665,
         "timedOut": false
       },
       "expected": {
@@ -365,7 +558,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 621,
+        "elapsedMs": 790,
         "timedOut": false
       },
       "expected": {
@@ -383,7 +576,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5624,
+        "elapsedMs": 6707,
         "timedOut": false
       },
       "expected": {
@@ -401,7 +594,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 31055,
+        "elapsedMs": 22672,
         "timedOut": false
       },
       "expected": {
@@ -419,7 +612,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3252,
+        "elapsedMs": 3965,
         "timedOut": false
       },
       "expected": {
@@ -437,7 +630,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 8254,
+        "elapsedMs": 9625,
         "timedOut": false
       },
       "expected": {
@@ -455,7 +648,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5757,
+        "elapsedMs": 6596,
         "timedOut": false
       },
       "expected": {
@@ -473,7 +666,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 561,
+        "elapsedMs": 589,
         "timedOut": false
       },
       "expected": {
@@ -491,7 +684,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 5402,
+        "elapsedMs": 6136,
         "timedOut": false
       },
       "expected": {
@@ -509,7 +702,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3055,
+        "elapsedMs": 3130,
         "timedOut": false
       },
       "expected": {
@@ -527,7 +720,7 @@
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 3600,
+        "elapsedMs": 3764,
         "timedOut": false
       },
       "expected": {
@@ -538,14 +731,410 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V134_GLOSSARY",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
         "name": "V134_GLOSSARY",
         "command": "npm run audit:glossary:v134",
-        "exitCode": 1,
+        "exitCode": 0,
         "signal": null,
         "error": null,
-        "elapsedMs": 57245,
+        "elapsedMs": 38855,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_ODA_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_ODA_ANALYSIS",
+        "command": "npm run audit:oda-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 5921,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_DROUGHT_ANALYSIS",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_DROUGHT_ANALYSIS",
+        "command": "npm run audit:drought-analysis:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 7259,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_PUBLIC_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_PUBLIC_COPY",
+        "command": "npm run audit:public-copy:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 145311,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "status": "PASS",
+      "actual": {
+        "name": "V134_VISUAL_QA_CONTRACT",
+        "command": "npm run audit:visual-qa-contract:v134",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 592,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_FINDER_CARD",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_FINDER_CARD",
+        "command": "npm run audit:finder-card:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 6068,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_TEMPORAL_DEPTH",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_TEMPORAL_DEPTH",
+        "command": "npm run audit:temporal-depth:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 35016,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_DETAIL_HIERARCHY",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_DETAIL_HIERARCHY",
+        "command": "npm run audit:detail-hierarchy:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33585,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_GUIDE",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_GUIDE",
+        "command": "npm run audit:map-guide:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2464,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_ACCESS",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_ACCESS",
+        "command": "npm run audit:map-access:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 3802,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_MAP_COMPARE",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_MAP_COMPARE",
+        "command": "npm run audit:map-compare:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 4140,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V135_PUBLIC_SCREEN",
+      "status": "PASS",
+      "actual": {
+        "name": "V135_PUBLIC_SCREEN",
+        "command": "npm run audit:public-screen:v135",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 34896,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_PUBLIC_TEXT",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_PUBLIC_TEXT",
+        "command": "npm run audit:public-text:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 151354,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_DUPLICATE_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_DUPLICATE_COPY",
+        "command": "npm run audit:duplicate-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33047,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_MAP_LIST_UI",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_MAP_LIST_UI",
+        "command": "npm run audit:map-list-ui:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 5423,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_MAP_COPY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_MAP_COPY",
+        "command": "npm run audit:map-copy:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2435,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_PUBLIC_CONTROLS",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_PUBLIC_CONTROLS",
+        "command": "npm run audit:public-controls:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 2625,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_FINDER_SCROLL",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_FINDER_SCROLL",
+        "command": "npm run audit:finder-scroll:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 9654,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_3_UNIT_TESTS",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_3_UNIT_TESTS",
+        "command": "npm run test:unit",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 9098,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+        "command": "npm run audit:generic-detail-public:v136-2",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 157605,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_4_SCREEN_USABILITY",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_4_SCREEN_USABILITY",
+        "command": "npm run audit:screen-usability:v136-4",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 33354,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_HUMAN_REVIEW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_HUMAN_REVIEW",
+        "command": "npm run audit:human-review:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 48411,
+        "timedOut": false
+      },
+      "expected": {
+        "exitCode": 0
+      }
+    },
+    {
+      "type": "check",
+      "audit": "release:v136",
+      "name": "V136_WORKFLOW",
+      "status": "PASS",
+      "actual": {
+        "name": "V136_WORKFLOW",
+        "command": "npm run audit:workflow:v136",
+        "exitCode": 0,
+        "signal": null,
+        "error": null,
+        "elapsedMs": 579,
         "timedOut": false
       },
       "expected": {
@@ -690,8 +1279,8 @@
       "type": "check",
       "audit": "release:v136",
       "name": "VISIBLE_ACRONYM_WITHOUT_GLOSSARY",
-      "status": "FAIL",
-      "actual": 47,
+      "status": "PASS",
+      "actual": 0,
       "expected": 0
     },
     {
@@ -746,9 +1335,9 @@
       "type": "check",
       "audit": "release:v136",
       "name": "V134_REGRESSION",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
-        "glossary": "FAIL",
+        "glossary": "PASS",
         "oda": "PASS",
         "drought": "PASS",
         "publicCopy": "PASS",
@@ -962,18 +1551,8 @@
       "type": "check",
       "audit": "release:v136",
       "name": "REMAINING_BLOCKERS",
-      "status": "FAIL",
-      "actual": [
-        {
-          "name": "V134_GLOSSARY",
-          "command": "npm run audit:glossary:v134",
-          "exitCode": 1,
-          "signal": null,
-          "error": null,
-          "elapsedMs": 57245,
-          "timedOut": false
-        }
-      ],
+      "status": "PASS",
+      "actual": [],
       "expected": []
     }
   ],
@@ -984,7 +1563,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 1243,
+      "elapsedMs": 1354,
       "timedOut": false
     },
     {
@@ -993,7 +1572,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 18800,
+      "elapsedMs": 20151,
       "timedOut": false
     },
     {
@@ -1002,7 +1581,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 8061,
+      "elapsedMs": 7924,
       "timedOut": false
     },
     {
@@ -1011,7 +1590,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 11100,
+      "elapsedMs": 5607,
       "timedOut": false
     },
     {
@@ -1020,7 +1599,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 669,
+      "elapsedMs": 789,
       "timedOut": false
     },
     {
@@ -1029,7 +1608,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 624,
+      "elapsedMs": 622,
       "timedOut": false
     },
     {
@@ -1038,7 +1617,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 565,
+      "elapsedMs": 665,
       "timedOut": false
     },
     {
@@ -1047,7 +1626,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 621,
+      "elapsedMs": 790,
       "timedOut": false
     },
     {
@@ -1056,7 +1635,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5624,
+      "elapsedMs": 6707,
       "timedOut": false
     },
     {
@@ -1065,7 +1644,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 31055,
+      "elapsedMs": 22672,
       "timedOut": false
     },
     {
@@ -1074,7 +1653,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 3252,
+      "elapsedMs": 3965,
       "timedOut": false
     },
     {
@@ -1083,7 +1662,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 8254,
+      "elapsedMs": 9625,
       "timedOut": false
     },
     {
@@ -1092,7 +1671,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5757,
+      "elapsedMs": 6596,
       "timedOut": false
     },
     {
@@ -1101,7 +1680,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 561,
+      "elapsedMs": 589,
       "timedOut": false
     },
     {
@@ -1110,7 +1689,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 5402,
+      "elapsedMs": 6136,
       "timedOut": false
     },
     {
@@ -1119,7 +1698,7 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 3055,
+      "elapsedMs": 3130,
       "timedOut": false
     },
     {
@@ -1128,16 +1707,214 @@
       "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 3600,
+      "elapsedMs": 3764,
       "timedOut": false
     },
     {
       "name": "V134_GLOSSARY",
       "command": "npm run audit:glossary:v134",
-      "exitCode": 1,
+      "exitCode": 0,
       "signal": null,
       "error": null,
-      "elapsedMs": 57245,
+      "elapsedMs": 38855,
+      "timedOut": false
+    },
+    {
+      "name": "V134_ODA_ANALYSIS",
+      "command": "npm run audit:oda-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 5921,
+      "timedOut": false
+    },
+    {
+      "name": "V134_DROUGHT_ANALYSIS",
+      "command": "npm run audit:drought-analysis:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 7259,
+      "timedOut": false
+    },
+    {
+      "name": "V134_PUBLIC_COPY",
+      "command": "npm run audit:public-copy:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 145311,
+      "timedOut": false
+    },
+    {
+      "name": "V134_VISUAL_QA_CONTRACT",
+      "command": "npm run audit:visual-qa-contract:v134",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 592,
+      "timedOut": false
+    },
+    {
+      "name": "V135_FINDER_CARD",
+      "command": "npm run audit:finder-card:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 6068,
+      "timedOut": false
+    },
+    {
+      "name": "V135_TEMPORAL_DEPTH",
+      "command": "npm run audit:temporal-depth:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 35016,
+      "timedOut": false
+    },
+    {
+      "name": "V135_DETAIL_HIERARCHY",
+      "command": "npm run audit:detail-hierarchy:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 33585,
+      "timedOut": false
+    },
+    {
+      "name": "V135_MAP_GUIDE",
+      "command": "npm run audit:map-guide:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 2464,
+      "timedOut": false
+    },
+    {
+      "name": "V135_MAP_ACCESS",
+      "command": "npm run audit:map-access:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 3802,
+      "timedOut": false
+    },
+    {
+      "name": "V135_MAP_COMPARE",
+      "command": "npm run audit:map-compare:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 4140,
+      "timedOut": false
+    },
+    {
+      "name": "V135_PUBLIC_SCREEN",
+      "command": "npm run audit:public-screen:v135",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 34896,
+      "timedOut": false
+    },
+    {
+      "name": "V136_PUBLIC_TEXT",
+      "command": "npm run audit:public-text:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 151354,
+      "timedOut": false
+    },
+    {
+      "name": "V136_DUPLICATE_COPY",
+      "command": "npm run audit:duplicate-copy:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 33047,
+      "timedOut": false
+    },
+    {
+      "name": "V136_MAP_LIST_UI",
+      "command": "npm run audit:map-list-ui:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 5423,
+      "timedOut": false
+    },
+    {
+      "name": "V136_MAP_COPY",
+      "command": "npm run audit:map-copy:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 2435,
+      "timedOut": false
+    },
+    {
+      "name": "V136_PUBLIC_CONTROLS",
+      "command": "npm run audit:public-controls:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 2625,
+      "timedOut": false
+    },
+    {
+      "name": "V136_FINDER_SCROLL",
+      "command": "npm run audit:finder-scroll:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 9654,
+      "timedOut": false
+    },
+    {
+      "name": "V136_3_UNIT_TESTS",
+      "command": "npm run test:unit",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 9098,
+      "timedOut": false
+    },
+    {
+      "name": "V136_2_GENERIC_DETAIL_PUBLIC",
+      "command": "npm run audit:generic-detail-public:v136-2",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 157605,
+      "timedOut": false
+    },
+    {
+      "name": "V136_4_SCREEN_USABILITY",
+      "command": "npm run audit:screen-usability:v136-4",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 33354,
+      "timedOut": false
+    },
+    {
+      "name": "V136_HUMAN_REVIEW",
+      "command": "npm run audit:human-review:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 48411,
+      "timedOut": false
+    },
+    {
+      "name": "V136_WORKFLOW",
+      "command": "npm run audit:workflow:v136",
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "elapsedMs": 579,
       "timedOut": false
     }
   ],
@@ -1156,7 +1933,7 @@
     "v133LayerDistinction": "PASS",
     "generatedData": "PASS",
     "ciContract": "PASS",
-    "glossary": "FAIL",
+    "glossary": "PASS",
     "oda": "PASS",
     "drought": "PASS",
     "publicCopy": "PASS",
@@ -1180,11 +1957,11 @@
   },
   "frameworkElements": 152,
   "accountedElements": 152,
-  "publicTextInventoryCount": 42981,
+  "publicTextInventoryCount": 44630,
   "publicRouteCount": 158,
   "internalPublicTokenCount": 0,
   "duplicateVisibleCopyCount": 0,
   "mapDataItemCount": 43,
   "screenshotCaptureIsReleaseBlocker": false,
-  "remainingBlockers": 1
+  "remainingBlockers": 0
 }
