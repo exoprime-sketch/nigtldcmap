@@ -99,7 +99,7 @@ function sha256(text) {
   return createHash("sha256").update(text).digest("hex");
 }
 
-/** Fold a place name the way tools/vietnam_etl/b034_facts_v137.normalize_place does. */
+/** Fold a place name the way tools/etl/b034_facts_v137.normalize_place does. */
 export function normalizePlace(name) {
   const text = String(name ?? "").trim();
   const stripped = text

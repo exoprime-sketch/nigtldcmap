@@ -1,4 +1,4 @@
-# tools/vietnam_etl/source
+# tools/etl/source
 
 Small, reproducible extracts of public source files the ETL joins against.
 Nothing here is edited by hand; each file states how it was cut from its

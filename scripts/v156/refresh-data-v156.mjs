@@ -86,7 +86,7 @@ const STEPS = [
   // A delivery may document its collection method with a live key in it. The
   // ETL refuses to build until someone has looked; this removes the value from
   // the staged copy and records hashes, never values.
-  ["redact", python, ["-m", "tools.vietnam_etl.redact_source_credentials_v156", "--workbooks", `_source/vietnam/${VERSION}/workbooks`]],
+  ["redact", python, ["-m", "tools.etl.redact_source_credentials_v156", "--workbooks", `_source/vietnam/${VERSION}/workbooks`]],
   // Shape first: it answers "what changed in the delivery" even when the build
   // cannot finish, which is exactly when the question matters most.
   ["structure", python, ["scripts/v156/source-structure-v156.py", "--workbooks", `_source/vietnam/${VERSION}/workbooks`, "--out", `${OUT}/source-structure-${VERSION}.json`]],

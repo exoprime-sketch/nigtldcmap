@@ -31,7 +31,7 @@ npm run refresh:data -- --source 베트남데이터/<YYYYMMDD> --hold A-023,B-03
 | 단계 | 스크립트 | 무엇을 막는가 |
 |---|---|---|
 | stage | `scripts/v156/stage-source-v156.mjs` | `~$…xlsx` 잠금 파일·`._DAV`가 워크북으로 읽히는 것, 같은 코드 중복 파일의 임의 채택(`_수정안`만 자동 채택, 그 외는 실패), 보류 요소가 오래된 ZIP으로 후퇴하는 것 |
-| redact | `tools/vietnam_etl/redact_source_credentials_v156.py` | 입고분 메타시트에 적힌 API 키 등이 트리로 흘러드는 것(값은 스테이징 사본에서만 제거, 해시·행만 기록) |
+| redact | `tools/etl/redact_source_credentials_v156.py` | 입고분 메타시트에 적힌 API 키 등이 트리로 흘러드는 것(값은 스테이징 사본에서만 제거, 해시·행만 기록) |
 | structure | `scripts/v156/source-structure-v156.py` | 빌드가 실패해도 "구조가 어떻게 바뀌었는지"를 답하지 못하는 상황 |
 | build | `scripts/v137/build-final-data-v137.mjs` | etl→semantic→interpretation→temporal→map-targets→home-preview→asset-integrity 순서가 어긋나는 것 |
 | diff | `scripts/v156/source-diff-v156.mjs` | 값·지표·단위·최신연도·결측률 변화를 모르고 반영하는 것 |

@@ -27,7 +27,7 @@ of them disagree.
 
 Run:
 
-    python -m tools.vietnam_etl.repack_packs_v151_2 --data public/data/vietnam/v2
+    python -m tools.etl.repack_packs_v151_2 --data public/data/vietnam/v2
 """
 
 from __future__ import annotations

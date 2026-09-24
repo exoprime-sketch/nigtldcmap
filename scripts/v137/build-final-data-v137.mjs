@@ -34,7 +34,7 @@ const env = {
 
 /** [label, command, args] - each one reads what the previous one wrote. */
 const STEPS = [
-  ["etl", "python", ["-m", "tools.vietnam_etl.build_public_v2"]],
+  ["etl", "python", ["-m", "tools.etl.build_public_v2"]],
   ["semantic", "python", ["tools/vietnam_semantic/build_semantic_v125.py"]],
   ["interpretation", process.execPath, ["scripts/build-vietnam-interpretation-v129.mjs"]],
   ["temporal", process.execPath, ["scripts/build-public-temporal-contract-v135.mjs"]],

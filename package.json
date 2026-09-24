@@ -215,7 +215,7 @@
     "build:adm1-34:v151": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "audit:boundary-policy:v151-2": "node scripts/v151-2/audit-boundary-policy-v151-2.mjs",
     "build:geometry:v151-2": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && python3 tools/vietnam_spatial/build_region_6_v151_2.py && python3 tools/vietnam_spatial/build_country_outline_v151_2.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
-    "repack:packs:v151-2": "python -m tools.vietnam_etl.repack_packs_v151_2 --data public/data/vietnam/v2 && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
+    "repack:packs:v151-2": "python -m tools.etl.repack_packs_v151_2 --data public/data/vietnam/v2 && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "qa:viewport:v151-2": "node scripts/v151-2/viewport-preserve-v151-2.mjs",
     "qa:labels:v151-2": "node scripts/v151-2/label-dedup-v151-2.mjs",
     "measure:backdrop:v151-2": "node scripts/v151-2/measure-backdrop-v151-2.mjs",
