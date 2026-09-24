@@ -50,6 +50,7 @@
     "finalize:v108": "npm run finalize:v107 && npm run audit:v108",
     "audit:v109": "node scripts/policy-evidence-audit-v109.mjs",
     "finalize:v109": "npm run finalize:v108 && npm run audit:v109",
+    "refresh:data": "node scripts/v156/refresh-data-v156.mjs",
     "refresh:worldbank:v110": "node scripts/refresh-worldbank-snapshots-v110.mjs",
     "audit:v110": "node scripts/tna-snapshot-audit-v110.mjs",
     "finalize:v110": "npm run refresh:worldbank:v110 && npm run finalize:v109 && npm run audit:v110",

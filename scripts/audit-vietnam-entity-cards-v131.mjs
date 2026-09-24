@@ -51,6 +51,9 @@ const entityElementIds = catalog
       !nonCardRenderers.has(rendererByElement.get(element.elementId))
   )
   .map((element) => element.elementId);
+const entityCountByElementV131 = new Map(
+  catalog.map((element) => [element.elementId, Number(element.entityCount || 0)])
+);
 const cardSource = sourceTextV131([
   resolve(PROJECT_ROOT, "src/components/data/public/PublicEntityCardGridV131.tsx"),
   resolve(PROJECT_ROOT, "src/components/data/public/public-entity-cards-v131.css"),
@@ -68,7 +71,7 @@ audit.check("CARD_COMPONENT_CONTRACT", [
   "-webkit-line-clamp: 2",
 ].every((token) => cardSource.includes(token)), true, true);
 
-function cardSnapshotExpression(elementId) {
+function cardSnapshotExpression(elementId, expectedEntityCount = 0) {
   return `(() => {
     const normalize = (value) => String(value || '').normalize('NFC').replace(/\\s+/gu, ' ').trim();
     const cards = [...document.querySelectorAll('[data-testid="public-entity-card-v131"]')];
@@ -96,6 +99,18 @@ function cardSnapshotExpression(elementId) {
     });
     const grid = document.querySelector('[data-testid="public-entity-card-grid-v131"]');
     const columns = grid ? getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length : 0;
+    // V153: E-006 lists every investor by name in two ordered lists split by
+    // where the organisation sits, with the selected one opened as a facility
+    // card - the records are shown, just not as a card grid. Recognising the
+    // container alone would pass an empty list, so count the rows and require
+    // every record the catalog states: 8 in Vietnam + 7 abroad = 15.
+    const listedRecordRenderer = document.querySelector('[data-testid="investor-network-v153"]') ? 'investor-network-v153' : null;
+    const listedRecordCount = listedRecordRenderer
+      ? [...document.querySelectorAll('[data-testid="investor-list-vietnam-v153"] > li, [data-testid="investor-list-abroad-v153"] > li')].length
+      : null;
+    const listedRecordExpected = ${JSON.stringify(expectedEntityCount)};
+    const listedRecordShowsEveryRecord =
+      listedRecordCount !== null && listedRecordExpected > 0 && listedRecordCount === listedRecordExpected;
     // V142 renders station observations and safety records as typed tables,
     // not interchangeable entity cards. Require actual named, populated tables
     // with the relevant context columns; a container alone is not sufficient.
@@ -141,10 +156,10 @@ function cardSnapshotExpression(elementId) {
       // V148: A-023 reads its plants as a searchable list under the fuel
       // distribution and A-024 its lines as voltage/plan tables - the records
       // are shown, but not as cards.
-      // V153: E-006 lists every investor by name in two ordered lists split by
-      // where the organisation sits, with the selected one opened as a facility
-      // card - again the records are shown, just not as a card grid.
-      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"], [data-testid="investor-network-v153"]')) || specializedTable?.valid === true,
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"]')) || listedRecordShowsEveryRecord || specializedTable?.valid === true,
+      listedRecordCount,
+      listedRecordExpected,
+      listedRecordRenderer,
       cardCount: cards.length,
       contextTitleCount: rows.filter((row) => ['source-identifier', 'factual-composite', 'record-type'].includes(row.strategy)).length,
       invalid: rows.filter((row) => !row.title || row.title === '명칭 미기재' || row.title === '자료 없음' || row.factCount > 6 || row.badgeCount > 4 || row.longParagraphs.length > 0 || row.pipeText || row.textLength > 760 || row.titleClamp !== '2'),
@@ -178,7 +193,7 @@ try {
         `document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute('data-analysis-state') === 'ready'`,
         { timeoutMs: 25_000 }
       );
-      const result = await evaluateValue(browser.cdp, cardSnapshotExpression(elementId));
+      const result = await evaluateValue(browser.cdp, cardSnapshotExpression(elementId, entityCountByElementV131.get(elementId) || 0));
       console.log(JSON.stringify({ type: "progress", audit: "entity-cards:v131", elementId, phase: "complete" }));
       routeResults.push(result);
       entityCardCount += Number(result?.cardCount || 0);
@@ -207,7 +222,7 @@ try {
         `Boolean(document.querySelector('[data-testid="public-entity-card-grid-v131"]'))`,
         { timeoutMs: 25_000 }
       );
-      const result = await evaluateValue(browser.cdp, cardSnapshotExpression(elementId));
+      const result = await evaluateValue(browser.cdp, cardSnapshotExpression(elementId, entityCountByElementV131.get(elementId) || 0));
       const expectedMaxColumns = width < 620 ? 1 : width < 960 ? 2 : width < 1240 ? 3 : 4;
       if (
         Number(result?.overflow || 0) > 1 ||
@@ -258,6 +273,21 @@ audit.check(
     (row) => !(Number(row?.cardCount || 0) > 0 || row?.distributionSummary === true)
   ).map((row) => row?.elementId),
   []
+);
+audit.check(
+  "LISTED_RECORD_COUNT_MATCHES_CATALOG",
+  routeResults
+    .filter((row) => row?.listedRecordRenderer)
+    .every((row) => Number(row.listedRecordCount) === Number(row.listedRecordExpected) && Number(row.listedRecordCount) > 0),
+  routeResults
+    .filter((row) => row?.listedRecordRenderer)
+    .map((row) => ({
+      elementId: row.elementId,
+      renderer: row.listedRecordRenderer,
+      listed: row.listedRecordCount,
+      catalogEntityCount: row.listedRecordExpected,
+    })),
+  "every listed record renderer shows the catalog's entityCount rows"
 );
 audit.check("ENTITY_CARD_DUPLICATE_PRIMARY_TITLE_COUNT", duplicateCardTitleCount === 0, duplicateCardTitleCount, 0, routeResults.filter((row) => row?.duplicates?.length));
 audit.check("ENTITY_CARD_PUBLIC_TITLE_RESOLVER", cardSource.includes("resolvePublicEntityTitleV131") && !cardSource.includes('|| "명칭 미기재"'), true, true);

@@ -8,7 +8,7 @@
 | ID | 데이터명 | 분류 | 자료상태 | 지도 | 사용자 지적 | 조치 | 담당 | 상태 | 증빙 | 1순위 계약(D1) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | A-001 | CPI(Corruption Perceptions Index, 부패인식지수) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
-| A-002 | CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`line`) · QA 152/152 |
+| A-002 | WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`line`) · QA 152/152 |
 | A-003 | GDP[현재가, PPP, 성장률, 1인당] | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | A-004 | 빈곤율; 극빈곤율 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | A-005 | 산업구조[농업, 제조, 서비스] | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |

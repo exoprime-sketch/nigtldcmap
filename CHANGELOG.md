@@ -25,6 +25,25 @@
 - 점 팝업: 카드에 소재지 행이 있으면 아래 '소재 …' 주석을 반복하지 않음(카드가 없는 데이터는 그대로 표시)
 - 범례 배지의 KR 표시가 과대하게 그려지던 CSS 단축 속성 오류
 
+## Unreleased — V156 데이터 부분 갱신 · 갱신 런북 (PR 후보)
+
+### Added
+
+- 갱신 런북 `docs/DATA_REFRESH_RUNBOOK_V156.md` + 1명령 `npm run refresh:data`(stage → redact → structure → build → diff, `--apply` 시 apply → dataset-directory → card-summaries → asset-integrity)
+- `scripts/v156/`: 입고분 스테이징(`stage-source-v156.mjs` — 잠금·`._DAV` 제외, `_수정안` 채택, `--hold`로 이전 입고분 유지), 구조 스캔(`source-structure-v156.py`), 값 diff(`source-diff-v156.mjs`), 반영(`apply-staged-data-v156.mjs` — 체인 밖 자산 보존)
+- 자격증명 제거 `tools/vietnam_etl/redact_source_credentials_v156.py`(탐지 패턴은 `normalization`과 공유, 값 대신 해시·길이만 기록)
+
+### Changed
+
+- 2026-09-22 입고분으로 **값만 바뀐 5개 요소** 갱신(A-002·B-015·B-022·E-001·E-010). 요소 152개 중 변화 5, 지표 추가·삭제 0. 나머지 140개는 구조·범위·한도·계약 불일치로 보류하고 이전 입고분 값을 유지
+- A-002 제목을 CPIA → WGI(Worldwide Governance Indicators)로 교체(V1 카탈로그·데이터셋 제목·추적표). 상세 화면은 기존 WGI 렌더러가 그대로 담당
+- `audit:entity-cards:v131`에 "표시 레코드 수 = 카탈로그 entityCount" 대조 추가(E-006 목록 렌더러)
+
+### Not changed (기록)
+
+- 140개 요소 보류 사유는 `reports/v156/hold-list-v156.json`(구조 변경 15·공개명칭 부재 12·coverage drop 8·검토 기준선 7·지도 계약 5·용량 한도 3·지표 ID 체계 1·시간 계약 1·용어 미등록 1·값 외 변화 87)
+- 게이트·감사·테스트 기대값은 변경하지 않았다
+
 ## Unreleased — V152-2 분석 QA 지도 기호 검사 대기 예산 (PR 후보)
 
 ### Fixed

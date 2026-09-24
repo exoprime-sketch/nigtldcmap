@@ -3,16 +3,16 @@
   "schemaVersion": "v124",
   "sourceZip": {
     "entryCount": 145,
-    "fileName": "file",
-    "sha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2"
+    "fileName": "workbooks",
+    "sha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3"
   },
   "summary": {
     "actualDataWorkbookCount": 143,
     "authorizedElementCount": 20,
-    "authorizedEntityRows": 299,
-    "authorizedObservationRows": 138,
-    "authorizedRowsFound": 437,
-    "authorizedRowsPublished": 437,
+    "authorizedEntityRows": 302,
+    "authorizedObservationRows": 139,
+    "authorizedRowsFound": 441,
+    "authorizedRowsPublished": 441,
     "authorizedRowsSuppressed": 0,
     "authorizedWithoutPopulatedRows": [
       "E-011",
@@ -21,27 +21,27 @@
     "credentialValueRemovedCount": 0,
     "duplicateRecordCount": 0,
     "entityMissingRowCount": 2,
-    "entityPopulatedRowCount": 153074,
-    "entityRowCount": 153076,
+    "entityPopulatedRowCount": 153077,
+    "entityRowCount": 153079,
     "frameworkElementCount": 152,
-    "metadataRowCount": 2225,
+    "metadataRowCount": 2219,
     "missingWorkbookCount": 7,
-    "observationMissingRowCount": 460,
-    "observationPopulatedRowCount": 15776,
-    "observationRowCount": 16236,
+    "observationMissingRowCount": 496,
+    "observationPopulatedRowCount": 15771,
+    "observationRowCount": 16267,
     "placeholderOnlyWorkbookCount": 0,
-    "placeholderRowCount": 18,
+    "placeholderRowCount": 19,
     "providedButUnexplainedEmptyCount": 0,
-    "publicPopulatedRowCount": 168850,
+    "publicPopulatedRowCount": 168848,
     "quarantinedWorkbookCount": 0,
     "rowBalance": {
-      "explicitPlaceholderRows": 18,
+      "explicitPlaceholderRows": 19,
       "formOrAuxiliaryRows": 0,
       "matches": true,
-      "processedCoreRows": 171537,
-      "processedNonstandardRows": 309,
-      "processedRows": 171846,
-      "sourceOriginalRows": 171846,
+      "processedCoreRows": 171565,
+      "processedNonstandardRows": 310,
+      "processedRows": 171875,
+      "sourceOriginalRows": 171875,
       "supplementalSourceRows": 291
     },
     "rowBalancePass": true,
@@ -137,8 +137,8 @@
       "sourceOrganizations": [
         "Transparency International"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://images.transparencycdn.org/images/CPI2025_Results.xlsx",
         "https://www.transparency.org/en/cpi/2011"
@@ -184,7 +184,7 @@
       ]
     },
     {
-      "archiveName": "A-002.xlsx",
+      "archiveName": "A-002_WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표).xlsx",
       "attributionTexts": [
         "World Development Indicators, The World Bank. Licensed under CC BY 4.0."
       ],
@@ -214,8 +214,8 @@
         "observation": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 312,
-          "uniqueRecordCount": 312
+          "recordCount": 348,
+          "uniqueRecordCount": 348
         }
       },
       "elementId": "A-002",
@@ -232,13 +232,13 @@
       "latestYear": 2026,
       "metadataRowCount": 12,
       "normalizationResult": "normalized",
-      "observationMissingRowCount": 0,
+      "observationMissingRowCount": 36,
       "observationPopulatedRowCount": 312,
-      "observationRowCount": 312,
+      "observationRowCount": 348,
       "originalLicenses": [
         "CC BY 4.0"
       ],
-      "placeholderRowCount": 0,
+      "placeholderRowCount": 1,
       "publicPopulatedRowCount": 312,
       "rowBalance": {
         "entity": {
@@ -249,9 +249,9 @@
         },
         "observation": {
           "balanced": true,
-          "missing": 0,
+          "missing": 36,
           "populated": 312,
-          "records": 312
+          "records": 348
         },
         "pass": true
       },
@@ -268,8 +268,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.worldbank.org/en/publication/worldwide-governance-indicators"
       ],
@@ -282,8 +282,11 @@
       "warnings": [],
       "years": [
         1996,
+        1997,
         1998,
+        1999,
         2000,
+        2001,
         2002,
         2003,
         2004,
@@ -395,8 +398,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=VN",
         "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=VN",
@@ -543,8 +546,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=VN",
         "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=VN"
@@ -676,8 +679,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=VN",
         "https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations=VN",
@@ -820,8 +823,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/SL.UEM.1524.NE.ZS?locations=VN",
         "https://data.worldbank.org/indicator/SL.UEM.1524.ZS?locations=VN",
@@ -959,8 +962,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=VN",
         "https://data.worldbank.org/indicator/SP.URB.GROW?locations=VN",
@@ -1129,8 +1132,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/SI.POV.GINI?locations=VN"
       ],
@@ -1261,8 +1264,8 @@
       "sourceOrganizations": [
         "European Commission, Joint Research Centre (JRC) — EDGAR"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://edgar.jrc.ec.europa.eu/dataset_ghg2025"
       ],
@@ -1421,8 +1424,8 @@
         "European Commission, Joint Research Centre (JRC) — EDGAR",
         "European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://edgar.jrc.ec.europa.eu/dataset_ghg2025"
       ],
@@ -1578,8 +1581,8 @@
       "sourceOrganizations": [
         "European Commission, Joint Research Centre (JRC) — EDGAR"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://edgar.jrc.ec.europa.eu/dataset_ghg2025"
       ],
@@ -1737,8 +1740,8 @@
         "European Commission, Joint Research Centre (JRC) — EDGAR",
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/EN.GHG.CO2.LU.MT.CE.AR5?locations=VN",
         "https://edgar.jrc.ec.europa.eu/dataset_ghg2025"
@@ -1896,8 +1899,8 @@
       "sourceOrganizations": [
         "World Resources Institute — Climate Watch"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.climatewatchdata.org/ndcs-sdg"
       ],
@@ -1998,8 +2001,8 @@
       "sourceOrganizations": [
         "Sustainable Development Solutions Network (SDSN)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://dashboards.sdgindex.org/profiles/vietnam"
       ],
@@ -2125,8 +2128,8 @@
       "sourceOrganizations": [
         "Sustainable Development Solutions Network (SDSN)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://dashboards.sdgindex.org/profiles/vietnam"
       ],
@@ -2236,8 +2239,8 @@
       "sourceOrganizations": [
         "Energy Institute"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.energyinst.org/statistical-review/resources-and-data-downloads"
       ],
@@ -2398,8 +2401,8 @@
       "sourceOrganizations": [
         "BloombergNEF"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://about.bnef.com/insights/clean-energy/vietnam-a-techno-economic-analysis-of-power-generation/"
       ],
@@ -2502,8 +2505,8 @@
       "sourceOrganizations": [
         "International Renewable Energy Agency (IRENA)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.irena.org/Data/Downloads/IRENASTAT"
       ],
@@ -2629,8 +2632,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/EG.ELC.LOSS.ZS?locations=VN"
       ],
@@ -2764,8 +2767,8 @@
       "sourceOrganizations": [
         "International Renewable Energy Agency (IRENA)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.irena.org/Data/Downloads/IRENASTAT"
       ],
@@ -2891,8 +2894,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/EG.ELC.ACCS.RU.ZS?locations=VN",
         "https://data.worldbank.org/indicator/EG.ELC.ACCS.UR.ZS?locations=VN",
@@ -3022,8 +3025,8 @@
       "sourceOrganizations": [
         "Vietnam Electricity (EVN)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://en.evn.com.vn/c3/documents/Annual-Report-9-15.aspx"
       ],
@@ -3135,8 +3138,8 @@
       "sourceOrganizations": [
         "World Resources Institute"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datasets.wri.org/datasets/global-power-plant-database"
       ],
@@ -3238,8 +3241,8 @@
       "sourceOrganizations": [
         "World Bank (ENERGYDATA.INFO)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://energydata.info/dataset/viet-nam-electricity-transmission-network-2016",
         "https://energydata.info/dataset/vietnam-electricity-transmission-network"
@@ -3342,8 +3345,8 @@
       "sourceOrganizations": [
         "STADT(공개 1차 출처 정리)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.globalccsinstitute.com/resources/global-status-of-ccs/"
       ],
@@ -3444,8 +3447,8 @@
       "sourceOrganizations": [
         "Google Research (Open Buildings)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://sites.research.google/gr/open-buildings/"
       ],
@@ -3547,8 +3550,8 @@
       "sourceOrganizations": [
         "OpenStreetMap contributors"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://download.geofabrik.de/asia/vietnam.html"
       ],
@@ -3649,8 +3652,8 @@
       "sourceOrganizations": [
         "OpenStreetMap contributors"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://download.geofabrik.de/asia/vietnam.html"
       ],
@@ -3751,8 +3754,8 @@
       "sourceOrganizations": [
         "WTO and Integration Center, VCCI"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://wtocenter.vn/fta"
       ],
@@ -3852,8 +3855,8 @@
       "sourceOrganizations": [
         "한국무역협회(Korea International Trade Association)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://stat.kita.net/stat/kts/ctr/CtrTotalImpExpList.screen"
       ],
@@ -3957,8 +3960,8 @@
       "sourceOrganizations": [
         "World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.worldbank.org/indicator/LP.LPI.CUST.XQ?locations=VN",
         "https://data.worldbank.org/indicator/LP.LPI.INFR.XQ?locations=VN",
@@ -4074,8 +4077,8 @@
         "OECD",
         "World Bank WITS (원자료: UN Comtrade)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data360.worldbank.org/en/dataset/OECD_TIVA",
         "https://wits.worldbank.org/CountryProfile/en/Country/VNM/StartYear/2000/EndYear/2023/TradeFlow/EXPIMP/Partner/WLD/Product/UNCTAD-SoP2"
@@ -4205,8 +4208,8 @@
       "sourceOrganizations": [
         "United Nations Conference on Trade and Development (UNCTAD)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://unctadstat.unctad.org/datacentre/dataviewer/US.LSCI"
       ],
@@ -4323,8 +4326,8 @@
       "sourceOrganizations": [
         "World Bank CCKP (CRU TS 4.09)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cru-x0.5_climatology_tas,pr_climatology_monthly_1991-2020_mean_historical_cru_ts4.09_mean/VNM?_format=json"
       ],
@@ -4424,8 +4427,8 @@
       "sourceOrganizations": [
         "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.gloh2o.org/koppen/"
       ],
@@ -4529,8 +4532,8 @@
         "World Bank CCKP (CRU TS 4.09)",
         "World Bank CCKP (CRU TS 4.10) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cru-x0.5_timeseries_tas,tasmax,tasmin,pr_timeseries_annual_1901-2024_mean_historical_cru_ts4.09_mean/VNM?_format=json",
         "https://climateknowledgeportal.worldbank.org/download-data"
@@ -4635,8 +4638,8 @@
         "World Bank CCKP (CMIP6 x0.25)",
         "World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cmip6-x0.25_timeseries_hurs_timeseries_annual_1950-2014_median_historical_ensemble_all_mean/VNM?_format=json",
         "https://climateknowledgeportal.worldbank.org/download-data"
@@ -4740,8 +4743,8 @@
         "World Bank CCKP (CMIP6 x0.25)",
         "World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cmip6-x0.25_timeseries_rx1day,rx5day,r20mm,r50mm,cwd,cdd_timeseries_annual_1950-2014_median_historical_ensemble_all_mean/VNM?_format=json",
         "https://climateknowledgeportal.worldbank.org/download-data"
@@ -4845,8 +4848,8 @@
         "World Bank CCKP (CMIP6 x0.25)",
         "World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cmip6-x0.25_timeseries_hd35,hd40,tr23,tr26,tr29,hi35_timeseries_annual_1950-2014_median_historical_ensemble_all_mean/VNM?_format=json",
         "https://climateknowledgeportal.worldbank.org/download-data"
@@ -4950,8 +4953,8 @@
         "World Bank CCKP (CMIP6 x0.25)",
         "World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cckpapi.worldbank.org/cckp/v1/cmip6-x0.25_timeseries_rx1day,rx5day,r20mm,r50mm,cwd,cdd_timeseries_annual_1950-2014_median_historical_ensemble_all_mean/VNM?_format=json",
         "https://climateknowledgeportal.worldbank.org/download-data"
@@ -5053,8 +5056,8 @@
       "sourceOrganizations": [
         "IPCC AR6 Sea Level Projection Tool (NASA/IPCC)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://sealevel.nasa.gov/data_tools/17"
       ],
@@ -5159,8 +5162,8 @@
         "WWF Biodiversity Risk Filter",
         "WWF Biodiversity Risk Filter (RFS V3.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://gain.nd.edu/assets/647440/ndgain_countryindex_2026.zip",
         "https://riskfilter.org/biodiversity/explore/country-profiles"
@@ -5291,8 +5294,8 @@
       "sourceOrganizations": [
         "Germanwatch Climate Risk Index 2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.germanwatch.org/sites/default/files/2025-11/CRI%2026%20full%20report.pdf"
       ],
@@ -5397,8 +5400,8 @@
         "University of Notre Dame (ND-GAIN)",
         "University of Notre Dame ND-GAIN Country Index 2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://gain.nd.edu/assets/647440/ndgain_countryindex_2026.zip"
       ],
@@ -5526,8 +5529,8 @@
       "sourceOrganizations": [
         "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://doi.org/10.14428/DVN/I0LTPH"
       ],
@@ -5630,8 +5633,8 @@
         "World Bank Relative CBAM Exposure Index",
         "World Bank — EU CBAM Exposure Index"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datacatalog.worldbank.org/search/dataset/0065200",
         "https://thedocs.worldbank.org/en/doc/f617485768833ea38968a5f1ac2292f0-0430012023/related/EUCBAM-Dashboard-download.xlsx"
@@ -5732,8 +5735,8 @@
       "sourceOrganizations": [
         "World Bank Vietnam CCDR (2022)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://documents1.worldbank.org/curated/en/099000007072236813/pdf/P177241053ba0a05a0811809c0a36a856da.pdf"
       ],
@@ -5754,12 +5757,11 @@
       ]
     },
     {
-      "archiveName": "B-015.xlsx",
+      "archiveName": "B-015_탄소 가격 수준 (ETS, Carbon Tax).xlsx",
       "attributionTexts": [
-        "World Bank Carbon Pricing Dashboard — 기관 이용약관. 이용 시 출처 표기 필수",
-        "World Bank Carbon Pricing Dashboard; 베트남 정부 Decree 29/2026/ND-CP — 기관 이용약관. 이용 시 출처 표기 필수",
-        "베트남 정부 Decree 29/2026/ND-CP 및 할당계획 — 법령 원문(베트남 지식재산권법 제15조상 저작권 비보호 대상). 재발행 시 출처 명기: 베트남 정부 법령포털 vanban.chinhphu.vn.",
-        "베트남 정부 할당계획(Decree 29/2026/ND-CP) — 법령 원문(베트남 지식재산권법 제15조상 저작권 비보호 대상). 재발행 시 출처 명기: 베트남 정부 법령포털 vanban.chinhphu.vn.",
+        "World Bank Carbon Pricing Dashboard — The World Bank Group authorizes the use of this material subject to the terms and conditions on its website, Legal. [출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+        "World Bank Carbon Pricing Dashboard; 베트남 정부 Decree 29/2026/ND-CP — The World Bank Group authorizes the use of this material subject to the terms and conditions on its website, Legal. [출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+        "베트남 총리 결정 263/QĐ-TTg(2026-02-09, 2025·2026년 온실가스 배출 총 할당량 시범 승인) — 법령 원문(베트남 지식재산권법 제15조상 저작권 비보호 대상). 재발행 시 출처 명기: 베트남 정부 법령포털 vanban.chinhphu.vn.",
         "하노이증권거래소(HNX) 국내 탄소거래소 — 기관 이용약관. 이용 시 출처 표기 필수 · [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0)."
       ],
       "coordinateOrGeometry": false,
@@ -5783,14 +5785,14 @@
         "metadata": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 14,
-          "uniqueRecordCount": 14
+          "recordCount": 11,
+          "uniqueRecordCount": 11
         },
         "observation": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 15,
-          "uniqueRecordCount": 15
+          "recordCount": 12,
+          "uniqueRecordCount": 12
         }
       },
       "elementId": "B-015",
@@ -5805,18 +5807,18 @@
       "hasCoordinates": false,
       "hasGeometry": false,
       "latestYear": 2026,
-      "metadataRowCount": 14,
+      "metadataRowCount": 11,
       "normalizationResult": "normalized",
       "observationMissingRowCount": 2,
-      "observationPopulatedRowCount": 13,
-      "observationRowCount": 15,
+      "observationPopulatedRowCount": 10,
+      "observationRowCount": 12,
       "originalLicenses": [
         "기관 이용약관",
-        "라이선스 미게시 — HNX 국내 탄소거래소 이용약관 미공개(2026년 개설 예정 단계)",
+        "명시없음",
         "법령 원문(저작권 비보호 대상·출처표시)"
       ],
       "placeholderRowCount": 0,
-      "publicPopulatedRowCount": 13,
+      "publicPopulatedRowCount": 10,
       "rowBalance": {
         "entity": {
           "balanced": true,
@@ -5827,8 +5829,8 @@
         "observation": {
           "balanced": true,
           "missing": 2,
-          "populated": 13,
-          "records": 15
+          "populated": 10,
+          "records": 12
         },
         "pass": true
       },
@@ -5841,16 +5843,15 @@
       "sourceOrganizations": [
         "World Bank Carbon Pricing Dashboard",
         "World Bank Carbon Pricing Dashboard; 베트남 정부 Decree 29/2026/ND-CP",
-        "베트남 정부 Decree 29/2026/ND-CP 및 할당계획",
-        "베트남 정부 할당계획(Decree 29/2026/ND-CP)",
+        "베트남 총리 결정 263/QĐ-TTg(2026-02-09) — 2025·2026년 온실가스 배출 총 할당량 시범 승인(Decree 29/2026/NĐ-CP 에 따른 시범단계)",
         "하노이증권거래소(HNX) 국내 탄소거래소"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://carbonpricingdashboard.worldbank.org/compliance/factsheets",
-        "https://www.hnx.vn/",
-        "https://www.vietnam-briefing.com/news/decree-29-2026-vietnam-operationalizes-its-first-carbon-trading-market.html/"
+        "https://vanban.chinhphu.vn/?docid=216923&pageid=27160",
+        "https://www.hnx.vn/"
       ],
       "spatialUnits": [
         "nation"
@@ -5864,7 +5865,6 @@
       "years": [
         2020,
         2022,
-        2023,
         2025,
         2026
       ]
@@ -5953,8 +5953,8 @@
         "Energy Institute Statistical Review of World Energy",
         "World Bank WDI (원자료 IEA)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://api.worldbank.org/v2/country/VNM/indicator/EG.USE.COMM.FO.ZS?format=json&per_page=500",
         "https://www.energyinst.org/__data/assets/excel_doc/0008/1656215/EI-Stats-Review-ALL-data.xlsx"
@@ -6091,8 +6091,8 @@
         "WRI Aqueduct 4.0 (2023)",
         "WRI Aqueduct 4.0 (Kuzma et al., 2023) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip",
         "https://www.wri.org/data/aqueduct-global-maps-40-data"
@@ -6197,8 +6197,8 @@
         "IIASA SSP Database v3.1 (IIASA GDP 2023)",
         "IIASA SSP Database v3.1 (OECD ENV-Growth 2023)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.ece.iiasa.ac.at/ssp/"
       ],
@@ -6322,8 +6322,8 @@
       "sourceOrganizations": [
         "IIASA SSP Database v3.1 (IIASA-WiC POP 2023)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.ece.iiasa.ac.at/ssp/"
       ],
@@ -6462,8 +6462,8 @@
         "JRC INFORM Risk Index 2026",
         "JRC INFORM Risk Index — Trend 2017–2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://drmkc.jrc.ec.europa.eu/inform-index",
         "https://drmkc.jrc.ec.europa.eu/inform-index/Portals/0/InfoRM/2026/INFORM2026_TREND_2017_2026_v72_ALL.xlsx",
@@ -6578,8 +6578,8 @@
         "Global Data Lab GVI (Huisman et al., 2025)",
         "Global Data Lab — GVIP Database (Huisman et al., 2025)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://globaldatalab.org/gvi/download/"
       ],
@@ -6648,10 +6648,9 @@
       ]
     },
     {
-      "archiveName": "B-022.xlsx",
+      "archiveName": "B-022_World Bank CCDR(Country Climate and Development)의 기후 피해 경제적 비용 (GDP 대비 %).xlsx",
       "attributionTexts": [
-        "World Bank Vietnam CCDR (2022) — 기관 이용약관. 이용 시 출처 표기 필수",
-        "World Bank Vietnam CCDR 2022 — CC-BY-4.0. 이용 시 출처 표기 필수",
+        "World Bank Vietnam CCDR (2022) — The World Bank Group authorizes the use of this material subject to the terms and conditions on its website, Legal. [출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
         "World Bank Vietnam Country Climate and Development Report (CCDR) 2022 — CC-BY-4.0. 이용 시 출처 표기 필수"
       ],
       "coordinateOrGeometry": false,
@@ -6674,14 +6673,14 @@
         "metadata": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 11,
-          "uniqueRecordCount": 11
+          "recordCount": 8,
+          "uniqueRecordCount": 8
         },
         "observation": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 11,
-          "uniqueRecordCount": 11
+          "recordCount": 8,
+          "uniqueRecordCount": 8
         }
       },
       "elementId": "B-022",
@@ -6696,17 +6695,17 @@
       "hasCoordinates": false,
       "hasGeometry": false,
       "latestYear": 2050,
-      "metadataRowCount": 11,
+      "metadataRowCount": 8,
       "normalizationResult": "normalized",
       "observationMissingRowCount": 0,
-      "observationPopulatedRowCount": 11,
-      "observationRowCount": 11,
+      "observationPopulatedRowCount": 8,
+      "observationRowCount": 8,
       "originalLicenses": [
         "CC-BY-4.0",
         "기관 이용약관"
       ],
       "placeholderRowCount": 0,
-      "publicPopulatedRowCount": 11,
+      "publicPopulatedRowCount": 8,
       "rowBalance": {
         "entity": {
           "balanced": true,
@@ -6717,8 +6716,8 @@
         "observation": {
           "balanced": true,
           "missing": 0,
-          "populated": 11,
-          "records": 11
+          "populated": 8,
+          "records": 8
         },
         "pass": true
       },
@@ -6730,11 +6729,10 @@
       "sourceCategory": "A",
       "sourceOrganizations": [
         "World Bank Vietnam CCDR (2022)",
-        "World Bank Vietnam CCDR 2022",
         "World Bank Vietnam Country Climate and Development Report (CCDR) 2022"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://documents1.worldbank.org/curated/en/099000007072236813/pdf/P177241053ba0a05a0811809c0a36a856da.pdf",
         "https://openknowledge.worldbank.org/handle/10986/37618"
@@ -6837,8 +6835,8 @@
       "sourceOrganizations": [
         "MRC (2009) / Le et al. (2014)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.mrcmekong.org/publications/"
       ],
@@ -6941,8 +6939,8 @@
         "FAO AQUASTAT",
         "베트남 통계청(GSO) 관개면적·수확면적 통계"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.apps.fao.org/aquastat/?lang=en&country=VNM",
         "https://www.nso.gov.vn/en/statistical-data/"
@@ -7077,8 +7075,8 @@
         "MONRE Table 2.13.2 via WEPA Outlook 2024 · VNMC · HydroSHEDS DIR 15s(v1.1) · OSM admin0",
         "MONRE via WEPA (2024) / VNMC"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://wepa-db.net/database/vietnam"
       ],
@@ -7179,8 +7177,8 @@
       "sourceOrganizations": [
         "HydroSHEDS v1 Flow Direction (DIR 15s)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.hydrosheds.org/hydrosheds-core-downloads"
       ],
@@ -7283,8 +7281,8 @@
         "FAO AQUASTAT",
         "IGRAC GGIS / PCR-GLOBWB2 · WaterGAP / NASA GRACE-FO"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.apps.fao.org/aquastat/?lang=en&country=VNM",
         "https://www.un-igrac.org/global-groundwater-information-system-ggis"
@@ -7418,8 +7416,8 @@
       "sourceOrganizations": [
         "FAO AQUASTAT"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data.apps.fao.org/aquastat/?lang=en&country=VNM"
       ],
@@ -7522,8 +7520,8 @@
         "FAO FAOSTAT Land Use(RL)·Land Cover(LC) · Global Forest Watch (UMD/WRI)",
         "Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
         "https://greifswaldmoor.de/global-peatland-database-en.html"
@@ -7627,8 +7625,8 @@
         "Global Forest Watch / UMD (Potapov et al. 2022)",
         "Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data-api.globalforestwatch.org/dataset/umd_adm1_net_tree_cover_change_from_height",
         "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss"
@@ -7732,8 +7730,8 @@
         "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1",
         "Global Forest Watch / Hansen et al.(2013), UMD"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
@@ -7835,8 +7833,8 @@
       "sourceOrganizations": [
         "Global Forest Watch / Hansen et al.(2013)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
@@ -7939,8 +7937,8 @@
         "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1",
         "Global Forest Watch / Hansen (UMD)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data-api.globalforestwatch.org/dataset/gadm__tcl__adm1_change",
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
@@ -8044,8 +8042,8 @@
       "sourceOrganizations": [
         "Global Forest Watch (Harris et al. 2021)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.globalforestwatch.org/dashboards/country/VNM/"
       ],
@@ -8148,8 +8146,8 @@
         "FAO FAOSTAT Land Use (RL)",
         "FAOSTAT Land Use (RL)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip"
       ],
@@ -8316,8 +8314,8 @@
         "FAO FAOSTAT Land Cover (LC), MODIS",
         "FAO FAOSTAT Land Use (RL)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://bulks-faostat.fao.org/production/Environment_LandCover_E_All_Data_(Normalized).zip",
         "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip"
@@ -8423,8 +8421,8 @@
         "ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1",
         "FAO FAOSTAT Land Cover (LC) — CCI_LC · MODIS · CGLS · WorldCover 국가 집계"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://bulks-faostat.fao.org/production/Environment_LandCover_E_All_Data_(Normalized).zip",
         "https://esa-worldcover.org/en/data-access"
@@ -8543,8 +8541,8 @@
         "U.S. EIA International Energy Statistics (Bulk File INTL.txt)",
         "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datacatalog.worldbank.org/search/dataset/0039597/what-a-waste-global-database",
         "https://www.eia.gov/opendata/bulkfiles.php",
@@ -8679,8 +8677,8 @@
         "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1",
         "IHA · EVN · Energy Institute · U.S. EIA · World Bank/ESMAP · 베트남 총리 Decision 768/QĐ-TTg"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://doi.org/10.4121/uuid:99b42e30-8ee0-4d64-a3d0-4b0c4dd5d6b0",
         "https://www.hydropower.org/status-report"
@@ -8784,8 +8782,8 @@
         "IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1",
         "Institute of Energy (IoE, MOIT) · DGGV · U.S. EIA · World Geothermal Congress · IRENA Global Atlas"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://globalatlas.irena.org/",
         "https://www.geothermal-energy.org/explore/our-databases/conference-paper-database/"
@@ -8887,8 +8885,8 @@
       "sourceOrganizations": [
         "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://globalsolaratlas.info/download/vietnam"
       ],
@@ -8990,8 +8988,8 @@
       "sourceOrganizations": [
         "Global Wind Atlas 3.x"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://globalwindatlas.info/en/area/Vietnam"
       ],
@@ -9101,8 +9099,8 @@
         "U.S. EIA International Energy Statistics / OPEC ASB / 베트남 PVN 연차보고서",
         "U.S. Energy Information Administration — International Energy Statistics (API bulk file INTL.txt)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.eia.gov/opendata/bulkfiles.php",
         "https://www.energyinst.org/__data/assets/excel_doc/0008/1656215/EI-Stats-Review-ALL-data.xlsx"
@@ -9255,8 +9253,8 @@
         "연구진 설정(발주처 협의 예정)",
         "현지조사(예정)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
         "—"
@@ -9355,8 +9353,8 @@
       "sourceOrganizations": [
         "USGS Mineral Commodity Summaries 2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
       ],
@@ -9455,8 +9453,8 @@
       "sourceOrganizations": [
         "USGS Mineral Commodity Summaries 2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
       ],
@@ -9556,8 +9554,8 @@
       "sourceOrganizations": [
         "USGS Mineral Commodity Summaries 2026"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
       ],
@@ -9657,8 +9655,8 @@
       "sourceOrganizations": [
         "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://pubs.usgs.gov/myb/vol3/2022/myb3-2022-vietnam.pdf"
       ],
@@ -9759,8 +9757,8 @@
       "sourceOrganizations": [
         "UNFCCC NDC Registry / 베트남 천연자원환경부(MONRE)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://unfccc.int/sites/default/files/NDC/2022-06/VIETNAM'S%20INDC.pdf",
         "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam_NDC_2022_Eng.pdf"
@@ -9871,8 +9869,8 @@
         "UNFCCC / 베트남 천연자원환경부(MONRE)",
         "UNFCCC BTR/BUR (Viet Nam)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://climateknowledgeportal.worldbank.org/",
         "https://openknowledge.worldbank.org/",
@@ -9988,8 +9986,8 @@
       "sourceOrganizations": [
         "UNFCCC NAP Central / 베트남 농업환경부(MAE)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://en.mae.gov.vn/Pages/chi-tiet-tin-Eng.aspx?ItemID=9015",
         "https://unfccc.int/sites/default/files/resource/NAP_Vietnam_2025_EN.pdf",
@@ -10102,8 +10100,8 @@
         "Quyết định số 896/QĐ-TTg — Phê duyệt Chiến lược quốc gia về biến đổi khí hậu giai đoạn đến năm 2050",
         "베트남 총리실 (Quyết định 896/QĐ-TTg) / World Bank"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://faolex.fao.org/docs/pdf/vie211804.pdf",
         "https://faolex.fao.org/docs/pdf/vie212245.pdf",
@@ -10213,8 +10211,8 @@
         "베트남 천연자원환경부(MONRE) — Viet Nam TNA (2012.6), UNFCCC TT:CLEAR 수록",
         "베트남 천연자원환경부(MONRE) 기상수문기후변화국 — Viet Nam Technology Needs Assessment (Ha Noi, 2012.6), UNFCCC TT:CLEAR 수록"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://unfccc.int/ttclear/misc_/StaticFiles/gnwoerk_static/TNR_CRE/e9067c6e3b97459989b2196f12155ad5/95d71d0e507c4e4c9b4fe7851e5c7f2a.pdf"
       ],
@@ -10332,8 +10330,8 @@
         "베트남 천연자원환경부(MONRE) 기상수문기후변화국 — Viet Nam Technology Needs Assessment (Ha Noi, 2012.6), UNFCCC TT:CLEAR 수록",
         "일본 환경성(MOEJ) JCM 공식 등록부 — Viet Nam-Japan"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://a6partnership.org/a6-implementation-status/current-developments-in-bilateral-cooperation-and-article-6-4-mechanism",
         "https://baochinhphu.vn/quy-dinh-ve-trao-doi-chuyen-giao-ket-qua-giam-nhe-phat-thai-khi-nha-kinh-va-tin-chi-cac-bon-102260402150338417.htm",
@@ -10447,8 +10445,8 @@
         "UNFCCC NMA Platform",
         "UNFCCC — Article 6.8 NMA Platform"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://unfccc.int/nma-platform",
         "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation/Article-6-8/nma-platform/main/non-market-approaches/6166d9e9-0330-f011-a2d9-000d3ab1d5c1",
@@ -10571,8 +10569,8 @@
         "베트남 정부 포털(Báo Chính phủ)",
         "베트남 총리실 — Quyết định 942/QĐ-TTg"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://baochinhphu.vn/viet-nam-tham-gia-cam-ket-giam-phat-thai-metan-ngan-chan-va-dao-nguoc-tinh-trang-mat-rung-suy-thoai-dat-102303261.htm",
         "https://caselaw.vn/van-ban-phap-luat/509186-quyet-dinh-so-942-qd-ttg-ngay-05-08-2022-cua-thu-tuong-chinh-phu-phe-duyet-ke-hoach-hanh-dong-giam-phat-thai-khi-me-tan-den-nam-2030",
@@ -10712,8 +10710,8 @@
         "베트남 총리 — Quyết định 768/QĐ-TTg (2025-04-15)",
         "베트남 총리실 — Quyết định 13/2024/QĐ-TTg"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://climate-laws.org/document/decision-no-942-qd-ttg-on-approving-action-plan-for-methane-emissions-reduction-by-2030_9e42",
         "https://climate-laws.org/document/decree-no-06-2022-nd-cp-on-mitigation-of-green-house-gas-ghg-emissions-and-protection-of-ozone-layer_d8ff",
@@ -10848,8 +10846,8 @@
         "베트남 정부 공보 / LuatVietnam",
         "베트남 정부 공보(vanban.chinhphu.vn)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/146-qh15-2025.signed.pdf",
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/110-ndcp.signed.pdf",
@@ -10977,8 +10975,8 @@
         "대한민국 외교부 해외안전여행 / 베트남 통계총국(GSO)",
         "베트남 공안부(Bộ Công an) / 통계총국(GSO)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://0404.go.kr/ntnSafetyInfo/86/detail",
         "https://0404.go.kr/travelAlert/apntStatus/stepTravelAlert",
@@ -11099,8 +11097,8 @@
         "베트남 재무부(Bộ Tài chính) 투자 포털",
         "베트남 정부 공보(Công báo)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/123-vbhn-vpqh.pdf",
         "https://ppi.worldbank.org/en/customquery",
@@ -11221,8 +11219,8 @@
         "베트남 국회 — Nghị quyết 98/2023/QH15 (정부 정책포털 전문)",
         "베트남 국회·정부 공보 / LuatVietnam"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://archive.doingbusiness.org/content/dam/doingBusiness/country/v/vietnam/VNM.pdf",
         "https://investmentpolicy.unctad.org/international-investment-agreements/countries/229/viet-nam",
@@ -11342,8 +11340,8 @@
         "베트남 재무부 — Thông tư 38/2023/TT-BTC",
         "베트남 정부 공보(Công báo)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://archive.doingbusiness.org/content/dam/doingBusiness/country/v/vietnam/VNM.pdf",
         "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-61-2025-nd-cp-44551/55658.htm",
@@ -11460,8 +11458,8 @@
         "베트남 정부 공보 / 산업무역부(MOIT)",
         "베트남 정부 공보(vanban.chinhphu.vn)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "http://www.erea.gov.vn/d6/vi-VN/news/Ban-hanh-Quyet-dinh-so-21QD-BCT-khung-gia-phat-dien-nha-may-dien-mat-troi-dien-gio-chuyen-tiep-6-192-166",
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2023/5/500-ttg.signed.pdf",
@@ -11585,8 +11583,8 @@
         "베트남 산업무역부(Bộ Công Thương) 공식 게시",
         "베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
         "https://moit.gov.vn/",
@@ -11718,8 +11716,8 @@
         "베트남 총리실 — Công điện 118/CĐ-TTg (2025-07-22)",
         "베트남 투자법·법인세법·토지법 체계 및 Nghị quyết 98/2023/QH15"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "http://www.erea.gov.vn/d6/vi-VN/news/Ban-hanh-Quyet-dinh-so-21QD-BCT-khung-gia-phat-dien-nam-2023-cho-cac-du-an-dien-mat-troi-dien-gio-chuyen-tiep-1c1g2n",
         "https://baochinhphu.vn/chinh-sach-uu-dai-phat-trien-dien-nang-luong-tai-tao-dien-nang-luong-moi-102250304172509197.htm",
@@ -11841,8 +11839,8 @@
         "베트남 총리실 (Quyết định 768/QĐ-TTg) / EVN",
         "베트남 총리실 — Quyết định 768/QĐ-TTg (개정 PDP8)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
         "https://moit.gov.vn/",
@@ -11982,8 +11980,8 @@
         "베트남 총리실 — Quyết định 263/QĐ-TTg (2026-02-09)",
         "하노이증권거래소(HNX) — 국내 탄소거래소 거래결과"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "http://www.erea.gov.vn/d6/vi-VN/news/Ban-hanh-Quyet-dinh-so-21QD-BCT-khung-gia-phat-dien-nam-2023-cho-cac-du-an-dien-mat-troi-dien-gio-chuyen-tiep-1c1g2n",
         "https://carbonpricingdashboard.worldbank.org/",
@@ -12127,8 +12125,8 @@
         "Nghị định số 29/2026/NĐ-CP của Chính phủ: Sàn giao dịch các-bon trong nước",
         "베트남 정부 공보(Công báo)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://carbonpricingdashboard.worldbank.org/",
         "https://gspp.berkeley.edu/berkeley-carbon-trading-project/offsets-database",
@@ -12252,8 +12250,8 @@
         "World Bank",
         "베트남 정부 포털(Báo Điện tử Chính phủ, Văn phòng Chính phủ) — \"Viet Nam gains nearly US$72 million from carbon credit\"(2026-04-02) / GCF 제44차 이사회 결정 사실정보 인용"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://en.baochinhphu.vn/viet-nam-gains-nearly-us72-million-from-carbon-credit-111260402094517938.htm",
         "https://unfccc.int/",
@@ -12377,8 +12375,8 @@
         "UNFCCC — CDM Projects Interactive Map (projectsLocationAll.xml)",
         "일본 환경성(MOEJ) JCM 공식 등록부 — Viet Nam-Japan"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://cdm.unfccc.int/Projects/MapApp/index.html",
         "https://cdm.unfccc.int/Statistics/Public/CDMinsights/index.html",
@@ -12483,8 +12481,8 @@
       "sourceOrganizations": [
         "World Bank Private Participation in Infrastructure (PPI) Database"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ppi.worldbank.org/en/ppidata"
       ],
@@ -12585,8 +12583,8 @@
       "sourceOrganizations": [
         "The Shiv (베트남 산업 전문지) — 총리결정 768/QĐ-TTg(개정 PDP8) 해설"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://the-shiv.com/vietnams-revised-power-development-plan-8-2025-whats-changed/"
       ],
@@ -12687,8 +12685,8 @@
       "sourceOrganizations": [
         "베트남전력공사(EVN) · 베트남 기후변화국(DCC)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://en.evn.com.vn/d6/news/Overview-of-national-power-sources-in-2023-66-142-4147.aspx"
       ],
@@ -12788,8 +12786,8 @@
       "sourceOrganizations": [
         "World Federation of Exchanges (VCM 실거래 연구) · MSCI Carbon Markets · Sylvera"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://focus.world-exchanges.org/articles/wfe-research-liuvcm"
       ],
@@ -12893,8 +12891,8 @@
         "United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
         "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://vietnam.un.org/sites/default/files/2019-08/ietnam%20CPEIR%20Report%20%20(ENG).pdf",
         "https://www.undp.org/vietnam/publications/climate-public-expenditure-and-investment-review-viet-nam",
@@ -13007,8 +13005,8 @@
         "베트남 재정부(Bộ Tài chính) 국가예산 결산 공개 결정 · 베트남 국회(Quốc hội) 국가예산 결산 승인 결의",
         "베트남 재정부(Ministry of Finance) 국가예산계획 — CEIC Data 재게시"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://luatvietnam.vn/tai-chinh/nghi-quyet-21-2026-qh16-bo-sung-va-phe-chuan-quyet-toan-ngan-sach-nha-nuoc-2024-434117-d1.html",
         "https://thuvienphapluat.vn/van-ban/Tai-chinh-nha-nuoc/Nghi-quyet-53-2022-QH15-phe-chuan-quyet-toan-ngan-sach-nha-nuoc-2020-520520.aspx",
@@ -13123,8 +13121,8 @@
         "United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
         "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://vietnam.un.org/sites/default/files/2019-08/ietnam%20CPEIR%20Report%20%20(ENG).pdf",
         "https://www.worldbank.org/en/country/vietnam/brief/key-highlights-country-climate-and-development-report-for-vietnam"
@@ -13230,8 +13228,8 @@
         "United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
         "World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://vietnam.un.org/sites/default/files/2019-08/ietnam%20CPEIR%20Report%20%20(ENG).pdf",
         "https://www.undp.org/vietnam/publications/climate-public-expenditure-and-investment-review-viet-nam",
@@ -13340,8 +13338,8 @@
         "United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022",
         "United Nations Development Programme 베트남사무소(보도자료)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://vietnam.un.org/sites/default/files/2019-08/ietnam%20CPEIR%20Report%20%20(ENG).pdf",
         "https://www.undp.org/vietnam/publications/climate-public-expenditure-and-investment-review-viet-nam"
@@ -13452,8 +13450,8 @@
         "International Monetary Fund — Fossil Fuel Subsidies Database / Data for a Greener World",
         "Organisation for Economic Co-operation and Development — OECD Economic Surveys: Viet Nam 2025"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ieefa.org/resources/elevated-oil-prices-compound-southeast-asias-fossil-fuel-subsidy-challenge",
         "https://www.imf.org/en/Topics/climate-change/energy-subsidies",
@@ -13558,8 +13556,8 @@
       "sourceOrganizations": [
         "Organisation for Economic Co-operation and Development — Creditor Reporting System (CRS)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://data-explorer.oecd.org/vis?df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_CRS%40DF_CRS&dq=..VNM._T._T.D.Q._T..&pd=2020%2C2024"
       ],
@@ -13663,8 +13661,8 @@
       "sourceOrganizations": [
         "업계 전문지·로펌 분석·기업 공시 종합(IEEFA, Akin Gump, Lexology, Enerdata, Vietnam Briefing, Maritime Executive 등)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ieefa.org/sites/default/files/2023-09/Quiet%20Rise%20of%20Prominent%20Southeast%20Asian%20Energy%20Companies.pdf"
       ],
@@ -13764,8 +13762,8 @@
       "sourceOrganizations": [
         "Global Green Growth Institute (GGGI) — Green Growth Index 2024"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://greengrowthindex.gggi.org/"
       ],
@@ -13865,8 +13863,8 @@
       "sourceOrganizations": [
         "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
       ],
@@ -13967,8 +13965,8 @@
       "sourceOrganizations": [
         "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
       ],
@@ -14069,8 +14067,8 @@
       "sourceOrganizations": [
         "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
       ],
@@ -14171,8 +14169,8 @@
       "sourceOrganizations": [
         "KOICA 전자조달시스템 · 조달청 나라장터(G2B) · ODA Korea 통합 입찰공고"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://nebid.koica.go.kr/oep/masc/mainPageForm.do"
       ],
@@ -14272,8 +14270,8 @@
       "sourceOrganizations": [
         "Adaptation Fund Board Secretariat"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.adaptation-fund.org/projects-programmes/"
       ],
@@ -14373,8 +14371,8 @@
       "sourceOrganizations": [
         "Climate Technology Centre and Network (CTCN)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.ctc-n.org/technical-assistance/ctcn-technical-assistance"
       ],
@@ -14475,8 +14473,8 @@
       "sourceOrganizations": [
         "Green Climate Fund"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.greenclimate.fund/countries/viet-nam"
       ],
@@ -14576,8 +14574,8 @@
       "sourceOrganizations": [
         "IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://d-portal.iatistandard.org/ctrack.html?country=VN"
       ],
@@ -14677,8 +14675,8 @@
       "sourceOrganizations": [
         "IATI Registry — d-portal 집계(World Bank·ADB·IFC 등 MDB·DFI 보고분)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://d-portal.iatistandard.org/ctrack.html?country=VN"
       ],
@@ -14778,8 +14776,8 @@
       "sourceOrganizations": [
         "Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.greenclimate.fund/countries/viet-nam"
       ],
@@ -14879,8 +14877,8 @@
       "sourceOrganizations": [
         "New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 (DealStreetAsia·Tracxn 병용)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.dealstreetasia.com/stories/climate-tech-funding-vietnam-467890"
       ],
@@ -14980,8 +14978,8 @@
       "sourceOrganizations": [
         "World Bank Private Participation in Infrastructure (PPI) Database"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ppi.worldbank.org/en/ppidata"
       ],
@@ -15082,8 +15080,8 @@
       "sourceOrganizations": [
         "Multilateral Investment Guarantee Agency (MIGA), World Bank Group"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.miga.org/projects?f%5B0%5D=country%3AVietnam"
       ],
@@ -15104,7 +15102,7 @@
       ]
     },
     {
-      "archiveName": "E-001.xlsx",
+      "archiveName": "E-001_CTCN NDE(국가지정기관).xlsx",
       "attributionTexts": [
         "Source: Climate Technology Centre & Network (CTCN)"
       ],
@@ -15122,8 +15120,8 @@
         "entity": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 15,
-          "uniqueRecordCount": 15
+          "recordCount": 18,
+          "uniqueRecordCount": 18
         },
         "metadata": {
           "duplicateCount": 0,
@@ -15143,8 +15141,8 @@
         "E-001"
       ],
       "entityMissingRowCount": 0,
-      "entityPopulatedRowCount": 15,
-      "entityRowCount": 15,
+      "entityPopulatedRowCount": 18,
+      "entityRowCount": 18,
       "errors": [],
       "excelErrorCellCount": 0,
       "hasCoordinates": false,
@@ -15159,13 +15157,13 @@
         "라이선스 미게시 — CTCN 이용약관·저작권정책 부재(Disclaimer 본문 없음, /open-data에도 조건 미기재) [라이선스 X] 원천이 이용약관·저작권정책을 게시하지 않아 재이용 조건의 근거가 없다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 판정한다. 재게시하려면 원천기관의 서면 허락을 받아야 한다. 개인 성명·직위가 포함되어 「개인정보 보호법」 제15조·제17조에 따른 목적 범위 내 이용으로 한정. 다운로드 제공 대상은 원천 파일이 아니라 용역사가 재편집한 표준서식 레코드임."
       ],
       "placeholderRowCount": 1,
-      "publicPopulatedRowCount": 15,
+      "publicPopulatedRowCount": 18,
       "rowBalance": {
         "entity": {
           "balanced": true,
           "missing": 0,
-          "populated": 15,
-          "records": 15
+          "populated": 18,
+          "records": 18
         },
         "observation": {
           "balanced": true,
@@ -15182,10 +15180,10 @@
       ],
       "sourceCategory": "A",
       "sourceOrganizations": [
-        "Climate Technology Centre and Network (CTCN) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
+        "공개 원천: Climate Technology Centre and Network (CTCN) | 현지조사: 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.ctc-n.org/about-ctcn/nde/ministry-natural-resources-and-environment-viet-nam",
         "https://www.ctc-n.org/networking-and-collaboration/collaboration/ta-proponents/steering-center-urban-flood-control",
@@ -15287,8 +15285,8 @@
       "sourceOrganizations": [
         "United Nations Framework Convention on Climate Change (UNFCCC) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://unfccc.int/sites/default/files/resource/A6.4_HPPR_Viet%20Nam.pdf"
       ],
@@ -15387,8 +15385,8 @@
       "sourceOrganizations": [
         "Green Climate Fund (GCF) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.greenclimate.fund/countries/viet-nam"
       ],
@@ -15541,8 +15539,8 @@
         "United States Department of State",
         "World Bank / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "http://www.koica.go.kr/sites/vnm_en/index.do",
         "https://gggi.org/country/vietnam/",
@@ -15661,8 +15659,8 @@
       "sourceOrganizations": [
         "각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.ctc-n.org/networking-and-collaboration/collaboration/network-members/vietnam-institute-meteorology-hydrology"
       ],
@@ -15771,8 +15769,8 @@
         "International Finance Corporation (IFC)",
         "각 운용사·투자사 공식 웹사이트(레코드별 상이 — 1.2_entity 참조)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://disclosures.ifc.org/project-detail/SII/32754/armstrong-south-east-asia-clean-energy-fund-l-p",
         "https://vinacapital.com/contact/",
@@ -15888,8 +15886,8 @@
         "베트남 정부 법령(Decree·Decision·Circular) 및 UNFCCC 문서(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
         "베트남 정부(Government of Viet Nam)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://bnews.vn/quy-dinh-van-hanh-he-thong-dang-ky-quoc-gia-ve-han-ngach-phat-thai-va-tin-chi-carbon/412392.html",
         "https://thuvienphapluat.vn/hoi-dap-phap-luat/5A9CE-hd-yeu-cau-doi-voi-don-vi-tham-dinh-phat-thai-khi-nha-kinh.html",
@@ -15999,8 +15997,8 @@
         "USPTO (United States Patent and Trademark Office) Patent Public Search",
         "각 게재 학술지 — MDPI · Elsevier · Springer Nature · IEEE · Frontiers · PLOS 등 국제저널, Journal of Climate Change Science(IMHEN), Vietnam Journal of Science and Technology / Earth Sciences(VAST) (레코드별 상이 — 1.2_entity attr_10 참조)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ppubs.uspto.gov/pubwebapp/",
         "https://www.mdpi.com/1996-1073/16/9/3780"
@@ -16107,8 +16105,8 @@
         "World Bank (원자료: UNESCO Institute for Statistics)",
         "World Bank — Researchers in R&D per million (SP.POP.SCIE.RD.P6) 및 Population total (SP.POP.TOTL). 원자료 UNESCO Institute for Statistics (UIS)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://api.uis.unesco.org/api/public/data/indicators?indicator=FOSGP.5T8.F500600700&geoUnit=VNM&indicatorMetadata=true&footnotes=true",
         "https://api.uis.unesco.org/api/public/data/indicators?indicator=FOSGP.5T8.F500600700.F&geoUnit=VNM&indicatorMetadata=true&footnotes=true",
@@ -16133,7 +16131,7 @@
       ]
     },
     {
-      "archiveName": "E-010.xlsx",
+      "archiveName": "E-010_UNESCO UIS의 R&D 지출(GRED), WIPO 혁신지수(GII).xlsx",
       "attributionTexts": [
         "Source: WIPO, Global Innovation Index 2025 — Viet Nam country profile (CC BY 4.0)",
         "Source: World Bank Open Data (World Development Indicators), CC BY 4.0"
@@ -16164,8 +16162,8 @@
         "observation": {
           "duplicateCount": 0,
           "duplicateHashes": [],
-          "recordCount": 30,
-          "uniqueRecordCount": 30
+          "recordCount": 31,
+          "uniqueRecordCount": 31
         }
       },
       "elementId": "E-010",
@@ -16183,13 +16181,13 @@
       "metadataRowCount": 24,
       "normalizationResult": "normalized",
       "observationMissingRowCount": 0,
-      "observationPopulatedRowCount": 30,
-      "observationRowCount": 30,
+      "observationPopulatedRowCount": 31,
+      "observationRowCount": 31,
       "originalLicenses": [
         "CC BY 4.0"
       ],
       "placeholderRowCount": 1,
-      "publicPopulatedRowCount": 30,
+      "publicPopulatedRowCount": 31,
       "rowBalance": {
         "entity": {
           "balanced": true,
@@ -16200,8 +16198,8 @@
         "observation": {
           "balanced": true,
           "missing": 0,
-          "populated": 30,
-          "records": 30
+          "populated": 31,
+          "records": 31
         },
         "pass": true
       },
@@ -16216,8 +16214,8 @@
         "World Bank — Research and development expenditure (% of GDP, GB.XPD.RSDV.GD.ZS) 및 GDP (current US$, NY.GDP.MKTP.CD). GERD 원자료 UNESCO Institute for Statistics (UIS)",
         "World Intellectual Property Organization (WIPO)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://api.worldbank.org/v2/country/VNM/indicator/GB.XPD.RSDV.GD.ZS?format=json ; https://api.worldbank.org/v2/country/VNM/indicator/NY.GDP.MKTP.CD?format=json",
         "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=VN",
@@ -16235,6 +16233,7 @@
         "missing-optional-sheet:db_framework"
       ],
       "years": [
+        2002,
         2011,
         2013,
         2015,
@@ -16435,8 +16434,8 @@
         "베트남 통계청 National Statistics Office of Viet Nam (NSO, 구 GSO)",
         "베트남 통계청(NSO) 월평균임금 및 World Bank 공식 기간평균환율(PA.NUS.FCRF)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://sdmx.ilo.org/rest/data/ILO,DF_EMP_DWAP_SEX_AGE_RT,1.0/VNM.A...?format=jsondata&startPeriod=2022",
         "https://sdmx.ilo.org/rest/data/ILO,DF_EMP_TEMP_SEX_AGE_NB,1.0/VNM.A...?format=jsondata&startPeriod=2022",
@@ -16638,8 +16637,8 @@
       "sourceOrganizations": [
         "대한민국 외교부(MOFA)·2050 탄소중립녹색성장위원회, 일본 JCM 사무국, 스위스 연방환경청(BAFU), 싱가포르 통상산업부(MTI), 베트남 JETP 사무국 / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.mofa.go.kr/www/brd/m_3825/view.do?seq=367599"
       ],
@@ -16739,8 +16738,8 @@
       "sourceOrganizations": [
         "NDC Partnership, Global Green Growth Institute (GGGI), Global Methane Pledge, IRENA — 각 기구 공식 회원·참여국 정보"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://ndcpartnership.org/country/vnm"
       ],
@@ -17050,8 +17049,8 @@
         "각 언론사 보도(레코드별 상이 — 1.2_entity 참조)",
         "한국에너지기술평가원(KETEP) 글로벌에너지정보"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://energy.ketep.re.kr/globalenergy/site/main/content/vietnam",
         "https://www.bkt21.com/",
@@ -17154,8 +17153,8 @@
       "sourceOrganizations": [
         "각 기관 공식 웹사이트(용역사 취합)"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.kotra.or.kr/hanoi/subList/40000001229"
       ],
@@ -17254,8 +17253,8 @@
       "sourceOrganizations": [
         "한국환경산업기술원(KEITI) 해외진출지원 실적표 / 한국수출입은행 EDCF 승인현황 / CTCN 기술지원 프로젝트 / 국가녹색기술연구소(NIGT) 실적 / 한국에너지공단 — 레코드별 상이"
       ],
-      "sourcePackage": "file",
-      "sourcePackageSha256": "D7C4170F467A9B0B28B2EF9DF7F7B05260DAE5D0F899A420393C340053B12BE2",
+      "sourcePackage": "workbooks",
+      "sourcePackageSha256": "9E3FEB01519E4887C8384F3E0F34D566A3859C4E311FD2F2002025D4072859E3",
       "sourceUrls": [
         "https://www.keiti.re.kr/site/keiti/02/10202030000002018092810.jsp"
       ],
