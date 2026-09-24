@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
@@ -197,6 +197,7 @@ import {
   statisticalRepresentativePointsV133,
 } from "../map/layers/features";
 import { publicMapSymbolShapeV129 } from "../map/layers/symbols";
+import mapDefaultLayersV160 from "../data/map/mapDefaultLayersV160.json";
 import { applyBoundaryReferenceV152 } from "../map/layers/boundaryLayer";
 import {
   mountAreaLayerV152,
@@ -204,6 +205,9 @@ import {
   prepareAreaLayerV152,
   preparePointLayerV152,
 } from "../map/layers";
+
+/** V160: the group holding the core map datasets (mapDefaultLayersV160.json). */
+const MAP_CORE_GROUP_V160 = "핵심 레이어";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -3309,6 +3313,28 @@ export default function RealMapExplorerPage({
       ),
     })).filter((group) => group.rows.length > 0);
   }, [layers]);
+  // V160: the core datasets (src/data/map/mapDefaultLayersV160.json) form the
+  // first group, open by default; every other layer stays in its category
+  // under '더 많은 레이어', folded until asked for (or `layers=all` in the URL).
+  // map-index.json, the builder and the renderers are unchanged.
+  const mapCatalogGroupsV160 = useMemo(() => {
+    const core = new Set<string>(mapDefaultLayersV160.defaultElementIds);
+    const rowByElement = new Map(mapTargetGroupsV138.flatMap((group) => group.rows).map((row) => [row.target.elementId, row]));
+    const coreRows = mapDefaultLayersV160.defaultElementIds
+      .map((id) => rowByElement.get(id))
+      .filter((row): row is NonNullable<typeof row> => Boolean(row));
+    const others = mapTargetGroupsV138
+      .map((group) => ({ ...group, rows: group.rows.filter((row) => !core.has(row.target.elementId)), core: false }))
+      .filter((group) => group.rows.length > 0);
+    return [{ category: MAP_CORE_GROUP_V160, rows: coreRows, core: true }, ...others];
+  }, [mapTargetGroupsV138]);
+  const [moreLayersOpenV160, setMoreLayersOpenV160] = useState<boolean>(() => {
+    try {
+      return new URLSearchParams(window.location.search).get("layers") === "all";
+    } catch {
+      return false;
+    }
+  });
   // V140: the list's counts come from the map index, the same file the home
   // counts from, so "지도 자료 N개" is one number on every screen. Targets
   // the contract names but the index does not carry are counted as pending.
@@ -3330,15 +3356,17 @@ export default function RealMapExplorerPage({
     const targetsByElement = new Map(
       PUBLIC_MAP_TARGETS_V138.map((target) => [target.elementId, target.category])
     );
+    const coreIds = new Set<string>(mapDefaultLayersV160.defaultElementIds);
+    // A selected layer outside the core group unfolds '더 많은 레이어'.
+    if (activeIds.some((id) => !coreIds.has(id) && targetsByElement.has(id))) setMoreLayersOpenV160(true);
     setOpenCategoriesV138((current) => {
       const next = new Set(current);
       activeIds.forEach((id) => {
-        const category = targetsByElement.get(id);
+        const category = coreIds.has(id) ? MAP_CORE_GROUP_V160 : targetsByElement.get(id);
         if (category) next.add(category);
       });
-      if (next.size === 0 && PUBLIC_MAP_TARGET_CATEGORIES_V138.length) {
-        next.add(PUBLIC_MAP_TARGET_CATEGORIES_V138[0]);
-      }
+      // V160: the core group is the one that opens by default.
+      if (next.size === 0) next.add(MAP_CORE_GROUP_V160);
       return next;
     });
   }, [activeIds]);
@@ -5062,17 +5090,15 @@ export default function RealMapExplorerPage({
                   type="button"
                   className="cdp-button cdp-button--secondary cdp-button--compact"
                   aria-expanded={
-                    openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
+                    moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category))
                   }
-                  onClick={() =>
-                    setOpenCategoriesV138(
-                      openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
-                        ? new Set()
-                        : new Set(PUBLIC_MAP_TARGET_CATEGORIES_V138)
-                    )
-                  }
+                  onClick={() => {
+                    const allOpen = moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category));
+                    setOpenCategoriesV138(allOpen ? new Set() : new Set(mapCatalogGroupsV160.map((group) => group.category)));
+                    setMoreLayersOpenV160(!allOpen);
+                  }}
                 >
-                  {openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
+                  {moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category))
                     ? "모두 접기"
                     : "모두 펼치기"}
                 </button>
@@ -5110,8 +5136,9 @@ export default function RealMapExplorerPage({
                 </label>
               </div>
             )}
-            {mapTargetGroupsV138.map(({ category, rows }) => {
+            {mapCatalogGroupsV160.map(({ category, rows, core }, groupIndex) => {
               const open = openCategoriesV138.has(category);
+              const firstMoreGroup = !core && groupIndex === 1;
               const selectedCount = rows.filter((row) =>
                 activeIds.includes(row.target.elementId)
               ).length;
@@ -5121,11 +5148,24 @@ export default function RealMapExplorerPage({
                   : 0;
               const groupId = `map-catalog-group-${category.replace(/[^0-9A-Za-z가-힣]+/gu, "-")}`;
               return (
+                <Fragment key={category}>
+                {firstMoreGroup ? (
+                  <button
+                    type="button"
+                    className="cdp-map-catalog-v160__more"
+                    data-testid="map-more-layers-v160"
+                    aria-expanded={moreLayersOpenV160}
+                    onClick={() => setMoreLayersOpenV160((current) => !current)}
+                  >
+                    더 많은 레이어 · {mapCatalogGroupsV160.slice(1).reduce((sum, group) => sum + group.rows.length, 0)}개
+                  </button>
+                ) : null}
                 <div
-                  key={category}
-                  className={`cdp-map-catalog-v138__group ${open ? "is-open" : ""}`}
+                  className={`cdp-map-catalog-v138__group ${open ? "is-open" : ""} ${core ? "is-core-v160" : ""}`}
                   data-map-group-v135={category}
                   data-map-group-selected={selectedCount}
+                  data-map-core-v160={core ? "true" : undefined}
+                  hidden={!core && !moreLayersOpenV160}
                 >
                   <button
                     type="button"
@@ -5340,6 +5380,7 @@ export default function RealMapExplorerPage({
                     })}
                   </ul>
                 </div>
+                </Fragment>
               );
             })}
             <button
