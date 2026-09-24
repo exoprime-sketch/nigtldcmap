@@ -119,6 +119,12 @@
 
 ## 5. 기대값 변경
 - `reports/v159/EXPECTATION_CHANGES_V159.md`: 계약 테스트의 `STATUS_IDS`를 고정 5개에서 유형 ⓪ 7개로 바꿨습니다(E-016·E-017 추가).
+- **role-split QA 명칭 기대값**(사유: 명칭 규칙 V159, 승인 2026-09-23)
+  - 적용한 명칭 규칙: 출처 윗줄 + 원데이터명
+  - `FINDER_TITLES_EQUAL_HOME`: 검사 로직은 그대로입니다. 홈 추천 카드도 데이터 찾기와 같은 규칙을 쓰게 코드를 맞췄습니다. 출처 윗줄을 두고, 제목은 원데이터명으로 바꿨습니다.
+  - `DETAIL_A002_TITLE`: 기대값이 하드코딩 문자열이었는데, `datasetSpecV159.json`의 `platformName`에서 출처 줄 접두를 떼어 파생하도록 바꿨습니다. 파생값은 JSON의 `baseName`과도 대조합니다.
+  - `DETAIL_TITLES_FOLLOW_SPEC_V159`(신규): 같은 파생 규칙으로 상세 제목 152개를 전수 검사합니다.
+  - 결과: role-split 단독 실행 53/53(기존 52 + 신규 1)
 
 ## 6. 작업 방식 기록
 - 서브에이전트 3개(worktree, Sonnet)
