@@ -113,6 +113,9 @@ ALLOWED_STATUSES = {
     "data-entry-planned",
     "not-collected",
     "quarantined",
+    # V156: a reviewed decision not to offer the element. The framework still
+    # counts it and its data files stay, but the public listing leaves it out.
+    "excluded",
 }
 
 
@@ -1629,6 +1632,10 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         if not out.is_absolute():
             out = (repo / out).resolve()
     decision_path = repo / "config/data-publication/vietnam-v124-publication-decision.json"
+    # V156: elements a review decided not to offer. Read here so the catalog - the
+    # one place every screen and audit reads - states the decision with its reason
+    # and date, instead of each screen keeping its own list.
+    exclusion_path = repo / "config/data-publication/vietnam-exclusions-v156.json"
     if source_dir is not None:
         if not source_dir.is_dir():
             raise FileNotFoundError(f"SOURCE_DIR_NOT_FOUND: {source_dir}")
@@ -1657,6 +1664,23 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     (out / "downloads").mkdir(parents=True)
 
     decision = json.loads(decision_path.read_text(encoding="utf-8"))
+    exclusions: dict[str, dict[str, Any]] = {}
+    if exclusion_path.is_file():
+        exclusion_doc = json.loads(exclusion_path.read_text(encoding="utf-8"))
+        exclusions = {
+            str(row["elementId"]): row for row in exclusion_doc.get("exclusions", [])
+        }
+        declared = int(exclusion_doc.get("exclusionCount", len(exclusions)))
+        if declared != len(exclusions):
+            raise ValueError(
+                "exclusion decision count "
+                f"{declared} does not match its list ({len(exclusions)})"
+            )
+        for element_id, row in exclusions.items():
+            if not str(row.get("reason") or "").strip():
+                raise ValueError(f"exclusion without a reason: {element_id}")
+            if not str(row.get("decidedAt") or "").strip():
+                raise ValueError(f"exclusion without a decision date: {element_id}")
     all_data_decision_path = repo / "config/data-publication/vietnam-all-data-20260908.json"
     all_data_decision = (
         json.loads(all_data_decision_path.read_text(encoding="utf-8"))
@@ -2093,9 +2117,12 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         }
 
         element = base_element
+        exclusion = exclusions.get(element_id)
         element.update(
             {
-                "publicStatus": status,
+                # An excluded element keeps its measured presence and its files;
+                # only the offer is withdrawn, and the reason travels with it.
+                "publicStatus": "excluded" if exclusion else status,
                 "dataPresenceStatus": presence,
                 "emptyReason": empty_reason,
                 "displayAllowed": display_allowed,
@@ -2137,6 +2164,17 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "publicationDecision": decision_ref if is_authorized else None,
             }
         )
+        if exclusion:
+            # The status the measurement produced is kept beside the decision, so
+            # a reader of the catalog can tell "we decided not to offer this" from
+            # "there is nothing to offer".
+            element["exclusion"] = {
+                "reason": str(exclusion.get("reason") or ""),
+                "basis": str(exclusion.get("basis") or ""),
+                "decidedAt": str(exclusion.get("decidedAt") or ""),
+                "measuredStatus": status,
+                "measuredPresence": presence,
+            }
         # V153: one spelling per CTIS technology in what is published. The V1
         # catalog wrote "7" on most elements and "CTIS-07" on the C-series; the
         # V1 rows themselves are left as they are.

@@ -22,6 +22,7 @@ npm run refresh:data -- --source 베트남데이터/<YYYYMMDD> --hold A-023,B-03
 | `--source` | `베트남데이터/20260922` | 워크북이 **바로 들어 있는** 디렉터리(하위 탐색 없음) |
 | `--version` | `v156` | 스테이징·보고서 접두(`_source/vietnam/<version>`, `reports/<version>`) |
 | `--hold` | 없음 | 채택하지 않을 요소 코드. 해당 코드는 `--carry-from` 입고분 파일로 스테이징된다 |
+| `--adopt` | 없음 | 반대 방향 표기: 이 코드만 채택하고 나머지는 전부 보류한다. 실패마다 `--hold`를 늘리는 것보다 짧고 검증하기 쉽다 |
 | `--carry-from` | `베트남데이터/file` | **현재 공개 트리를 만든 입고분**. ETL 자체 fallback(V124 ZIP)은 더 오래된 자료다 |
 | `--expected-workbooks` | `149` | carry-over 병합 **후** 워크북 수(= 프레임워크 총계). 이 값이 틀리면 ETL이 중단한다 |
 | `--staging` | `.staging/<version>` | `.staging/` 하위여야 한다. 그 밖의 경로는 `build()`가 거부한다 |

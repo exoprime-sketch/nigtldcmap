@@ -16,7 +16,23 @@ export type VietnamElementPublicStatusV124 =
   | "schema-only"
   | "data-entry-planned"
   | "not-collected"
-  | "quarantined";
+  | "quarantined"
+  /**
+   * V156: a reviewed decision not to offer the element. The framework still has
+   * 152 elements and the data files stay; the public listing, search, counts and
+   * sitemap leave it out, and its own page states the decision.
+   */
+  | "excluded";
+
+/** The decision behind `publicStatus: "excluded"`, as the catalog records it. */
+export interface VietnamElementExclusionV156 {
+  reason: string;
+  basis: string;
+  decidedAt: string;
+  /** What the measurement said before the decision was applied. */
+  measuredStatus: string;
+  measuredPresence: string;
+}
 
 export interface VietnamPublicationDecisionRefV124 {
   decisionId: string;
@@ -73,6 +89,8 @@ export interface VietnamCatalogElementV124 {
   groupLabel: string;
   packageStatus: PackageCoverageStatus;
   publicStatus: VietnamElementPublicStatusV124;
+  /** V156: the decision behind `publicStatus: "excluded"`. */
+  exclusion?: VietnamElementExclusionV156 | null;
   detailTemplate:
     | "indicator"
     | "composition"

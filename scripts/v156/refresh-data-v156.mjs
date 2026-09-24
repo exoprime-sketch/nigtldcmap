@@ -30,6 +30,8 @@ const opt = (name, fallback) => {
 const SOURCE = opt("--source", "베트남데이터/20260922");
 const VERSION = opt("--version", "v156");
 const HOLD = opt("--hold", "");
+/** The other direction: adopt only these codes and hold every other one. */
+const ADOPT = opt("--adopt", "");
 const CARRY_FROM = opt("--carry-from", "베트남데이터/file");
 const DELIVERED_AT = opt("--delivered-at", basename(SOURCE).replace(/^(\d{4})(\d{2})(\d{2})$/u, "$1-$2-$3"));
 /** The ETL asserts this count AFTER carry-over, so it is the framework total. */
@@ -47,6 +49,7 @@ if (argv.includes("--help") || argv.includes("-h")) {
       "  --source              워크북이 바로 들어 있는 디렉터리 (필수에 가까움)",
       "  --version <vNNN>      스테이징·보고서 접두 (기본 v156)",
       "  --hold A-023,B-033    채택하지 않을 요소 코드 (이전 입고분 유지)",
+      "  --adopt A-002,B-015   이 코드만 채택하고 나머지는 전부 보류",
       "  --carry-from <dir>    보류 요소를 가져올 이전 입고분 (기본 베트남데이터/file)",
       "  --expected-workbooks  carry-over 후 워크북 수 (기본 149)",
       "  --staging <dir>       .staging/ 하위여야 함 (기본 .staging/<version>)",
@@ -81,6 +84,7 @@ const STEPS = [
       "--delivered-at", DELIVERED_AT,
       "--carry-from", CARRY_FROM,
       ...(HOLD ? ["--hold", HOLD] : []),
+      ...(ADOPT ? ["--adopt", ADOPT] : []),
     ],
   ],
   // A delivery may document its collection method with a live key in it. The
@@ -123,7 +127,7 @@ for (const [label, command, args] of [...STEPS, ...(APPLY ? APPLY_STEPS : [])]) 
 }
 writeFileSync(
   resolve(reportsDir, `refresh-${VERSION}.json`),
-  `${JSON.stringify({ source: SOURCE, deliveredAt: DELIVERED_AT, held: HOLD ? HOLD.split(",") : [], applied: APPLY, steps: log }, null, 2)}\n`,
+  `${JSON.stringify({ source: SOURCE, deliveredAt: DELIVERED_AT, held: HOLD ? HOLD.split(",") : [], adopted: ADOPT ? ADOPT.split(",") : [], applied: APPLY, steps: log }, null, 2)}\n`,
   "utf8"
 );
 process.stdout.write(

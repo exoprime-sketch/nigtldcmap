@@ -713,7 +713,9 @@ export default function CountryDataElementPage({
     const startedAt = markDetailPrepareStart(startMark);
     void Promise.all([
       loadCountryElementBundleV122(countryIso3, elementId),
-      loadCatalogForCountrySelectionV122(countryIso3),
+      // V156: an excluded element is not in any list, but its own page has to
+      // resolve so it can say why it is not offered.
+      loadCatalogForCountrySelectionV122(countryIso3, { includeExcluded: true }),
     ])
       .then(([payload, catalog]) => {
         if (cancelled) return;
@@ -763,6 +765,30 @@ export default function CountryDataElementPage({
     elementId === "A-024" && !mapSelectionUnavailableReason
       ? "수록 선로 구간 722건 중 원천이 좌표를 제공한 606건을 지도에 표시합니다. 나머지 116건은 계획표에 기재된 구간으로 좌표가 없어 지도에 나타나지 않습니다."
       : "";
+
+  // V156: a reviewed decision not to offer this element. One card, no charts, no
+  // table, no download - and the reason and date the decision carries.
+  if (catalogItem?.publicStatus === "excluded") {
+    return (
+      <div className="page-shell cdp-page cdp-detail-page-v146" data-detail-excluded-v156="true">
+        <button
+          type="button"
+          className="cdp-button cdp-button--secondary"
+          onClick={onBack}
+        >
+          {backLabel}
+        </button>
+        <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
+          <h1>{catalogItem.publicTitle}</h1>
+          <p>
+            이 항목은 {catalogItem.exclusion?.decidedAt || "2026-09-23"} 검토로 제공 대상에서
+            제외되었습니다.
+          </p>
+          {catalogItem.exclusion?.reason ? <p>{catalogItem.exclusion.reason}</p> : null}
+        </div>
+      </div>
+    );
+  }
 
   if (!elementId) {
     return (

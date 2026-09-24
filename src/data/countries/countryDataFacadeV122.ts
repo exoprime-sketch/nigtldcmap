@@ -148,8 +148,23 @@ export function countryNameKoV122(
   return getCountryDataProviderV122(countryIso3)?.countryNameKo || "선택 국가";
 }
 
+/**
+ * V156: an element a review decided not to offer is left out of every list -
+ * the finder, its search, the category counts, the home figures and the sitemap
+ * all read this one function. Its own page still resolves, which is why the
+ * detail route asks for `includeExcluded` and states the decision instead.
+ */
+export interface CountryCatalogSelectionOptionsV156 {
+  includeExcluded?: boolean;
+}
+
+export function isExcludedCatalogItemV156(item: CountryCatalogItemV122): boolean {
+  return item.publicStatus === "excluded";
+}
+
 export async function loadCatalogForCountrySelectionV122(
-  countryIso3: string | "all" | null | undefined
+  countryIso3: string | "all" | null | undefined,
+  options: CountryCatalogSelectionOptionsV156 = {}
 ): Promise<CountryCatalogItemV122[]> {
   const normalized = normalizeCountry(countryIso3) || "ALL";
   const providers =
@@ -167,12 +182,22 @@ export async function loadCatalogForCountrySelectionV122(
       }
     })
   );
-  return groups.flat();
+  const items = groups.flat();
+  return options.includeExcluded
+    ? items
+    : items.filter((item) => !isExcludedCatalogItemV156(item));
 }
 
 export async function loadSearchIndexForCountrySelectionV122(
   countryIso3: string | "all" | null | undefined
 ): Promise<Map<string, CountrySearchEntryV122>> {
+  // The search index is built per provider and does not carry the publication
+  // decision, so the excluded keys are removed against the catalog below.
+  const excludedKeys = new Set(
+    (await loadCatalogForCountrySelectionV122(countryIso3, { includeExcluded: true }))
+      .filter(isExcludedCatalogItemV156)
+      .map((item) => countryCatalogKeyV122(item.providerId, item.elementId))
+  );
   const normalized = normalizeCountry(countryIso3) || "ALL";
   const providers =
     normalized === "ALL"
@@ -191,12 +216,11 @@ export async function loadSearchIndexForCountrySelectionV122(
   );
   const result = new Map<string, CountrySearchEntryV122>();
   indexes.forEach((index) =>
-    index.forEach((entry) =>
-      result.set(
-        countryCatalogKeyV122(entry.providerId, entry.elementId),
-        entry
-      )
-    )
+    index.forEach((entry) => {
+      const key = countryCatalogKeyV122(entry.providerId, entry.elementId);
+      if (excludedKeys.has(key)) return;
+      result.set(key, entry);
+    })
   );
   return result;
 }

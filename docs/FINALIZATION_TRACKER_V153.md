@@ -23,7 +23,7 @@
 | A-014 | UNDESA SDG Index Score | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | A-015 | UNDESA SDG 세부목표별 달성도 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`category-bar` · 목표별 단일 연도 정규화 점수만 있어 추이선 대신 세부지표별 막대) · QA 152/152 |
 | A-016 | 1차 에너지 소비 구조 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`stacked-area`) · QA 152/152 |
-| A-017 | LCOE(균등화 발전비용) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`dumbbell` · 국가 시계열이 아닌 기술별 비용 범위(하한~상한)와 벤치마크의 비교이므로 추이선 대신 기술별 범위 덤벨) · QA 152/152 |
+| A-017 | LCOE(균등화 발전비용) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 예외(`dumbbell` · 국가 시계열이 아닌 기술별 비용 범위(하한~상한)와 벤치마크의 비교이므로 추이선 대신 기술별 범위 덤벨) · QA 152/152 |
 | A-018 | 기술별 발전 설비용량 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`stacked-area`) · QA 152/152 |
 | A-019 | 송배전 손실률(T&D Loss) | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
 | A-020 | 재생에너지 비중 | 국가 기본 정보 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
@@ -102,15 +102,15 @@
 | C-012 | PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상 | 정책·제도 | actual-records | region-choropleth/56 | 한글화 | 한글화(원문 병기)+34개 지역 지도+지역 클릭 개조식 패널 | P4 | 진행(D0: 한글화·개조식 완료 · 34개 지역 지도는 P4) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §4 · screens/C-012-1440.png | 완료·보존(`comparison-table`) · QA 152/152 |
 | C-013 | 외국인 투자 규정[외국인 지분 제한, 투자 인센티브(세제 혜택/경제특구), 투자 보호 협정(BIT), 수익  | 정책·제도 | actual-records | region-choropleth/14 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`comparison-table`) · QA 152/152 |
 | C-014 | 인허가 프로세스[환경영향평가(EIA) 절차, 건축 허가 절차, 건축 허가 소요 기간, 건축 허가 비용, 전력 | 정책·제도 | actual-records | country-aggregate/0 | 시각화 미완 | 단계 흐름도+소요기간 표 | P4 | 집중검토 |  | 완료(`comparison-table`) · QA 152/152 |
-| C-015 | 상기 문서들의 원본 링크 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`comparison-table`) · QA 152/152 |
+| C-015 | 상기 문서들의 원본 링크 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`comparison-table`) · QA 152/152 |
 | C-016 | 재생에너지 발주 및 확대 계획[국가 RE 용량 목표, 입찰 일정(예정/진행/완료), 대상 기술, 사업자 선정 | 정책·제도 | actual-records | choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
 | C-017 | 재생에너지 투자 인센티브[인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링), 대상 기술(태양광/풍력 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`comparison-table`) · QA 152/152 |
 | C-018 | 중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설 | 정책·제도 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`category-bar`) · QA 152/152 |
 | C-019 | 탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, | 정책·제도 | actual-records | region-choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
-| C-020 | GHG 감축 사업 타당성 기초 정보 | 정책·제도 | not-collected | not-applicable/0 | 데이터 없음 | 상태 안내 유지 또는 CDM/JCM 등록부 수집(결정) | PE | 집중검토 |  | 완료(`status-note`) · QA 152/152 |
+| C-020 | GHG 감축 사업 타당성 기초 정보 | 정책·제도 | not-collected | not-applicable/0 | 데이터 없음 | 상태 안내 유지 또는 CDM/JCM 등록부 수집(결정) | PE | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`status-note`) · QA 152/152 |
 | C-021 | VCM 프로젝트 파이프라인 | 정책·제도 | not-collected | not-applicable/0 | 시각화 미완(미수집) | C-025 연결 안내 또는 Verra/GS 등록부 수집(결정) | PE | 집중검토 |  | 완료(`status-note`) · QA 152/152 |
 | C-022 | 탄소시장 준비도 | 정책·제도 | actual-records | region-choropleth/63 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`region-bar`) · QA 152/152 |
-| C-023 | 한계저감비용(MAC) | 정책·제도 | not-collected | not-applicable/0 | 시각화 미완 | MAC 커브(누적 감축량 vs 비용) | P4 | 집중검토 |  | 완료(`status-note`) · QA 152/152 |
+| C-023 | 한계저감비용(MAC) | 정책·제도 | not-collected | not-applicable/0 | 시각화 미완 | MAC 커브(누적 감축량 vs 비용) | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`status-note`) · QA 152/152 |
 | C-024 | REDD+ 현황[REDD+ 전략 수립 여부, FREL 제출 여부, FREL 제출년, 결과기반지불(RBP) 수 | 정책·제도 | actual-records | choropleth/6 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`comparison-table`) · QA 152/152 |
 | C-025 | 탄소크레딧 발행·소각 실적[프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량, 소각량, 빈티 | 정책·제도 | actual-records | point/262 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-001 | 단위 사업당 CAPEX | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`category-bar` · 단일 시점(2024) 기술별 비교값만 있어 추이선 대신 기술별 막대) · QA 152/152 |
@@ -136,7 +136,7 @@
 | D-021 | 주요 국제기구·MDB 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등),  | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-022 | MDB/DFI/PPP 투자 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/IFC 등), 섹터(DAC 5 | 시장·산업 및 재원 | actual-records | country-aggregate/0 | 사업 위치 추후 추가 | 목록·금액 구성+좌표 수집 후 지도 | P4+PE | 진행 — 자산 확보(P6c) → 등록 대기(P6b) | V155-2: `spatial/pending-v155/d-022-locations.json`(15건 매핑률 100% — 성·시 7·전국 8·미확인 0, 출처 URL 60/60), 검수 `tools/vietnam_spatial/source/d-022-review-v155.json`, 계약 제안 `spatial/pending-layers-v155.json`(region-choropleth native-34), `docs/DATA_ASSETS_V155.md` §7 | 완료(`category-bar`) · QA 152/152 |
 | D-023 | ODA 및 기후기금(GCF, GEF, AF) 재원[프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), | 시장·산업 및 재원 | actual-records | panel-only/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
-| D-024 | VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
+| D-024 | VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`category-bar`) · QA 152/152 |
 | D-025 | 민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/ | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | D-026 | MIGA 정치적 리스크 보증[프로젝트명, 국가, 섹터, 보증 금액, 보증 유형(수용/이전제한/계약위반/전쟁내 | 시장·산업 및 재원 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | E-001 | CTCN NDE(국가지정기구)[국가, 기관명, 소속 부처, 담당자명(Focal Point), 직함, 이메일, | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
@@ -146,16 +146,16 @@
 | E-005 | 대학·연구기관·NGO[기관명, 기관 유형(대학/연구소/싱크탱크/NGO), 소재국, 도시, 전문 분야(기후/에 | 협력·실행 기반 | actual-records | point/20 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | E-006 | 현지 투자자 네트워크[기관명, 기관 유형(VC/PE/DFI/상업은행/임팩트투자/AC), 투자 분야(기후/에너 | 협력·실행 기반 | actual-records | point/8 | 지도 추가, 현지가 아닌 기관 포함 | 베트남 소재 기관만 지도(도시), 해외 본부 6곳은 별도 목록 | P4 | 완료(D0: 소재 8/7 분리 · 지도 피처 8 유지) | PR-D0 reports/v153/D0_DATA_DEFECTS.md §2 · screens/E-006-1440.png | 예외(`region-bar` · 기관 유형별 수보다 소재 도시별 분포가 먼저(지도와 짝) — 도시 단위 지역 막대) · QA 152/152 |
 | E-007 | 온실가스 산정 MRV 체계[GHG 인벤토리 작성 역량(Tier 1/2/3), 국가 레지스트리 유무, 제3자  | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`comparison-table`) · QA 152/152 |
-| E-008 | 논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비 | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
+| E-008 | 논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비 | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`category-bar`) · QA 152/152 |
 | E-009 | STEM 졸업자 수; 연구자 수 | 협력·실행 기반 | partial-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 예외(`category-bar` · 원자료에 2016년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함) · QA 152/152 |
 | E-010 | UNESCO UIS R&D 지출(GERD); WIPO 혁신지수(GII) | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`line`) · QA 152/152 |
-| E-011 | 기술준비수준(TRL) | 협력·실행 기반 | no-populated-record | country-aggregate/0 | 없음 | 공개 출처 부재 → 상태 안내 유지 | 유지 | 집중검토 |  | 완료(`status-note`) · QA 152/152 |
+| E-011 | 기술준비수준(TRL) | 협력·실행 기반 | no-populated-record | country-aggregate/0 | 없음 | 공개 출처 부재 → 상태 안내 유지 | 유지 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`status-note`) · QA 152/152 |
 | E-012 | 직군별 종사자 수; 직군별 임금 | 협력·실행 기반 | partial-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료·보존(`category-bar`) · QA 152/152 |
-| E-013 | 운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/ | 협력·실행 기반 | no-populated-record | country-aggregate/0 | 시각화 미완 | 자료 미제공 상태 안내 유지 | 유지 | 집중검토 |  | 완료(`status-note`) · QA 152/152 |
+| E-013 | 운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/ | 협력·실행 기반 | no-populated-record | country-aggregate/0 | 시각화 미완 | 자료 미제공 상태 안내 유지 | 유지 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`status-note`) · QA 152/152 |
 | E-014 | 양자협정[협정 유형(제6.2조 양자/기후변화 공동위/녹색성장 MOU), 체결국, 체결 일자, 대상 분야, 이 | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`timeline`) · QA 152/152 |
 | E-015 | NDC Partnership[참여 여부(Y/N), Country Page 링크] | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 참여 형태·연도 타임라인+파트너 유형 구성 | P4 | 집중검토 |  | 완료(`comparison-table`) · QA 152/152 |
-| E-016 | 한국 기후기술 TRL | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 기술별 성숙도 순위 막대 | P4 | 집중검토 |  | 완료(`comparison-table`) · QA 152/152 |
-| E-017 | 한국-경쟁국 기후기술 비교우위 | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 국가별 순위 비교(대상국 라벨 복원) | P4 | 집중검토 |  | 예외(`comparison-table` · 국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)) · QA 152/152 |
+| E-016 | 한국 기후기술 TRL | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 기술별 성숙도 순위 막대 | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 완료(`comparison-table`) · QA 152/152 |
+| E-017 | 한국-경쟁국 기후기술 비교우위 | 협력·실행 기반 | actual-records | country-aggregate/0 | 시각화 미완 | 국가별 순위 비교(대상국 라벨 복원) | P4 | 제외(V156 제공 대상 제외) | `docs/DATASET_EXCLUSIONS_V156.md` | 예외(`comparison-table` · 국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)) · QA 152/152 |
 | E-018 | 국내 기업 개도국 진출[기업명, 진출국, 업종(RE/에너지효율/폐기물/수처리), 진출 형태(법인/지사/프로젝 | 협력·실행 기반 | actual-records | point/14 | 시각화 미완 | 아이콘 지도+분야·진출형태 구성 | P3+P4 | 집중검토 |  | 완료(`category-bar`) · QA 152/152 |
 | E-019 | 한국 기관 사무소[기관명(KOTRA무역관/KOICA사무소/에너지공단/KEPCO/한수원 등), 소재국, 도시, | 협력·실행 기반 | actual-records | point/6 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
 | E-020 | 한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명,  | 협력·실행 기반 | actual-records | country-aggregate/0 |  | 표준 계약(유형별 1순위) 적용·검증 | P4 | 대기 |  | 완료(`category-bar`) · QA 152/152 |
