@@ -51,6 +51,8 @@ export interface TypologyRowV159 {
   elementId: string;
   displayType: DisplayTypeV159;
   displayTypeLabel: string;
+  /** The type the spec v2 table assigned; differs where an excluded element became ⓪. */
+  specDisplayType: DisplayTypeV159;
   structure: StructureV159;
   structureLabel: string;
   flags: TypologyFlagsV159;

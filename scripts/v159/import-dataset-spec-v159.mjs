@@ -367,12 +367,17 @@ function main() {
   const typology = typologyRows.map((row) => {
     const specRow = specById.get(row.elementId);
     if (!specRow) throw new Error(`${row.elementId}: not in spec sheet`);
-    const type = DISPLAY_TYPES[row.displayKey];
+    // Every excluded element (status 제외, by the spec sheet 0918 or the user
+    // 0923) is a ⓪ status screen, whatever type the assignment table gave it
+    // (decision 2026-09-24). The spec's own type is kept as specDisplayType.
+    const specType = DISPLAY_TYPES[row.displayKey];
+    const type = /^제외/u.test(row.status) ? DISPLAY_TYPES["⓪"] : specType;
     const scenario = [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
     return {
       elementId: row.elementId,
       displayType: type.code,
       displayTypeLabel: type.label,
+      specDisplayType: specType.code,
       structure: row.structure,
       structureLabel: STRUCTURES[row.structure],
       flags: {

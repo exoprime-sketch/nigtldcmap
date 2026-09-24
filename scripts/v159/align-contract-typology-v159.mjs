@@ -97,7 +97,12 @@ const rows = contract.rows.map((row) => {
   findings.push({ elementId, displayType: type.displayType, structure: type.structure, archetype: next.archetype, primary: next.primary.type, verdict, comment });
   // Changes applied on an earlier run stay listed: the row's note records them.
   if (!applied.some((item) => item.elementId === elementId) && String(next.note).startsWith("V159:")) {
-    applied.push({ elementId, from: "(V153 계약)", to: `${next.archetype} / ${next.primary.type}`, reason: `명세 v2 ⓪ 상태 안내(${type.status})` });
+    applied.push({
+      elementId,
+      from: "(V153 계약)",
+      to: `${next.archetype} / ${next.primary.type}`,
+      reason: next.archetype === "status-note" ? `⓪ 상태 안내(${type.status})` : String(next.note).replace(/^V159:\s*/u, ""),
+    });
   }
   return next;
 });

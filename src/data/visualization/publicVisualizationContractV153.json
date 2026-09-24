@@ -537,22 +537,17 @@
     },
     {
       "elementId": "A-017",
-      "displayType": "U3",
+      "displayType": "U0",
       "structure": "S1",
-      "archetype": "national-series",
+      "archetype": "status-note",
       "primary": {
-        "type": "dumbbell",
-        "title": "발전기술별 LCOE 범위와 벤치마크",
-        "xAxis": "균등화 발전비용",
-        "yAxis": "발전원",
-        "unit": "USD/MWh"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "2023·2030·2050년 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -564,8 +559,8 @@
           "url": "https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser"
         }
       ],
-      "status": "exception",
-      "note": "국가 시계열이 아닌 기술별 비용 범위(하한~상한)와 벤치마크의 비교이므로 추이선 대신 기술별 범위 덤벨"
+      "status": "standard",
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "A-018",
@@ -1552,18 +1547,13 @@
       "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
+        "type": "table",
         "title": "탄소세 시나리오별 GDP 영향",
-        "xAxis": "GDP 영향",
-        "yAxis": "시나리오",
-        "unit": "%"
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "시나리오별 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -1576,7 +1566,7 @@
         }
       ],
       "status": "exception",
-      "note": "2030·2040년 두 시점의 시나리오별 비교값만 제공되어 시계열 선 대신 시나리오별 막대로 표시"
+      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24)"
     },
     {
       "elementId": "B-015",
@@ -2718,13 +2708,13 @@
       "elementId": "C-002",
       "displayType": "U6",
       "structure": "S4",
-      "archetype": "national-series",
+      "archetype": "policy-document",
       "primary": {
-        "type": "category-bar",
-        "title": "부문별 배출량(2016 BUR3)",
-        "xAxis": "부문별 순배출량",
-        "yAxis": "부문",
-        "unit": "ktCO₂e"
+        "type": "comparison-table",
+        "title": "격년투명성보고서 제출 이력·내용",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -2743,8 +2733,8 @@
           "url": "https://www.iea.org/policies"
         }
       ],
-      "status": "exception",
-      "note": "BUR3(2016) 단일 시점 부문별 인벤토리 수치라 추이선 대신 부문별 막대"
+      "status": "standard",
+      "note": "V159: ⑥ 규칙 — 1순위 문서 카드, 부문별 배출량은 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
     },
     {
       "elementId": "C-003",
@@ -3127,22 +3117,17 @@
     },
     {
       "elementId": "C-015",
-      "displayType": "U6",
+      "displayType": "U0",
       "structure": "S4",
-      "archetype": "policy-document",
+      "archetype": "status-note",
       "primary": {
-        "type": "comparison-table",
-        "title": "정책 원문 링크 목록",
+        "type": "status-note",
+        "title": "공개 상태 안내",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "문서명·기관·발행일 표"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -3155,7 +3140,7 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "C-016",
@@ -3257,18 +3242,18 @@
       "elementId": "C-019",
       "displayType": "U6",
       "structure": "S4",
-      "archetype": "province-distribution",
+      "archetype": "policy-document",
       "primary": {
-        "type": "region-bar",
-        "title": "성·시별 탄소시장 의무시설",
-        "xAxis": "시설 수",
-        "yAxis": "성·시",
-        "unit": "개소"
+        "type": "comparison-table",
+        "title": "탄소시장 제도·세율·시행 일정",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
-          "type": "table",
-          "title": "성·시별 시설수 표"
+          "type": "sorted-table",
+          "title": "성·시별 시설 수 표"
         }
       ],
       "mapRole": "beside-primary",
@@ -3283,7 +3268,7 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: ⑥ 규칙 — 1순위 제도 문서, 성·시별 시설 수는 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
     },
     {
       "elementId": "C-020",
@@ -4252,26 +4237,17 @@
     },
     {
       "elementId": "D-024",
-      "displayType": "U5",
+      "displayType": "U0",
       "structure": "S4",
-      "archetype": "registry",
+      "archetype": "status-note",
       "primary": {
-        "type": "category-bar",
-        "title": "라운드별 VC·임팩트투자",
-        "xAxis": "건수",
-        "yAxis": "투자 라운드",
-        "unit": "건"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "cards-list",
-          "title": "투자 카드"
-        },
-        {
-          "type": "table",
-          "title": "투자 목록 표"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4284,7 +4260,7 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "D-025",
@@ -4604,22 +4580,17 @@
     },
     {
       "elementId": "E-008",
-      "displayType": "U1",
+      "displayType": "U0",
       "structure": "S1",
-      "archetype": "registry",
+      "archetype": "status-note",
       "primary": {
-        "type": "category-bar",
-        "title": "논문 목록의 발행연도별 건수",
-        "xAxis": "건수",
-        "yAxis": "발행연도",
-        "unit": "건"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "연도별 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4632,7 +4603,7 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "E-009",

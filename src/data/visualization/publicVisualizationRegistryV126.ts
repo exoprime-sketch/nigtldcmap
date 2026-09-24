@@ -185,6 +185,8 @@ const ELEMENT_RENDERER_OVERRIDES_V126: Record<
   "B-034": "spatial-analysis",
   "C-016": "spatial-analysis",
   "C-019": "policy-timeline",
+  // V159: the carbon-tax scenarios read as a table, no chart (spec v2 '표 전환').
+  "B-014": "structured-table",
   "E-007": "evidence-matrix",
   "E-008": "multi-metric-trend",
   "E-012": "multi-metric-trend",

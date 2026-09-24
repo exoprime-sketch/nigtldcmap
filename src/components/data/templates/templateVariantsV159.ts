@@ -97,6 +97,9 @@ export interface ElementVariantV159 {
   phase: "early" | "late";
 }
 
+// A-017 (lcoe-range) and E-008 (research-patent) left the variants when every
+// excluded element became a ⓪ status screen (2026-09-24); the variants stay
+// defined for a re-admitted element.
 export const ELEMENT_VARIANTS_V159: Record<string, ElementVariantV159> = {
   "A-026": { variant: "building-metadata", phase: "early" },
   "B-001": { variant: "monthly-climate", phase: "early" },
@@ -114,10 +117,8 @@ export const ELEMENT_VARIANTS_V159: Record<string, ElementVariantV159> = {
   "A-016": { variant: "primary-energy-composition", phase: "early" },
   "D-005": { variant: "climate-budget-allocation", phase: "early" },
   "A-002": { variant: "cpia-policy-capacity", phase: "early" },
-  "E-008": { variant: "research-patent", phase: "early" },
   "E-012": { variant: "occupation-wage", phase: "early" },
   "A-024": { variant: "transmission-network", phase: "late" },
-  "A-017": { variant: "lcoe-range", phase: "late" },
   "C-001": { variant: "ndc-targets", phase: "late" },
   "C-019": { variant: "carbon-market-regions", phase: "late" },
   "C-022": { variant: "carbon-market-regions", phase: "late" },
