@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "v160-home-questions-1",
+  "source": "docs/plan/V160_핵심정보_단순화_기획.md §1 · KPI 선택 2026-09-24",
+  "questions": [
+    {
+      "displayType": "U1",
+      "title": "이 나라 수준은?",
+      "description": "경제·배출·에너지·거버넌스 수준과 추세",
+      "coreElementIds": [
+        "A-001",
+        "A-002",
+        "A-003",
+        "A-007",
+        "A-009",
+        "A-012",
+        "A-016",
+        "A-020",
+        "A-021",
+        "A-022",
+        "A-030",
+        "B-011",
+        "D-011"
+      ],
+      "heroIndicator": {
+        "elementId": "A-003",
+        "requested": "GDP",
+        "source": "card-summaries-v140 headline"
+      },
+      "kpiReview": [
+        {
+          "elementId": "A-003",
+          "requested": "GDP",
+          "found": "514.7 10억 미국달러 · 2025년 명목 국내총생산",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "displayType": "U2",
+      "title": "어디가 유리한가?",
+      "description": "성·시별 기후 위험과 재생에너지 자원",
+      "coreElementIds": [
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-017",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016"
+      ],
+      "heroIndicator": {
+        "elementId": "B-041",
+        "requested": "태양광 자원(GHI) 최고 성",
+        "source": "card-summaries-v140 headline"
+      },
+      "kpiReview": [
+        {
+          "elementId": "B-041",
+          "requested": "태양광 자원(GHI) 최고 성",
+          "found": "5.23 kWh/m²/일 수평면 전일사량(GHI, 평균) 최대 · Bình Thuận · 63개 성·시 중 · 1999–2018 장기평균",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "displayType": "U3",
+      "title": "어떤 기술이?",
+      "description": "기술별 설비·비용·감축 효과 비교",
+      "coreElementIds": [
+        "A-018",
+        "C-005",
+        "D-001",
+        "D-003",
+        "D-004"
+      ],
+      "heroIndicator": {
+        "elementId": "A-018",
+        "requested": "기술별 설비용량(최대 기술)",
+        "source": "card-summaries-v140 headline"
+      },
+      "kpiReview": [
+        {
+          "elementId": "A-018",
+          "requested": "기술별 설비용량(최대 기술)",
+          "found": "28,100 MW 발전 설비용량 최대 · 석탄(계통연계) · 2025년",
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "displayType": "U4",
+      "title": "무엇이 어디에·누구에게?",
+      "description": "발전소·송전망과 협력 기관의 위치",
+      "coreElementIds": [
+        "A-023",
+        "A-024",
+        "E-001",
+        "E-002",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ],
+      "heroIndicator": null,
+      "kpiReview": [
+        {
+          "elementId": "A-023",
+          "requested": "발전소 수",
+          "found": "41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "displayType": "U5",
+      "title": "누가 어디에 얼마나?",
+      "description": "국제 기후 재원과 개발협력 사업",
+      "coreElementIds": [
+        "C-025",
+        "D-014",
+        "D-015",
+        "D-018",
+        "D-019",
+        "D-020",
+        "D-021",
+        "D-022"
+      ],
+      "heroIndicator": null,
+      "kpiReview": [
+        {
+          "elementId": "D-020",
+          "requested": "GCF 승인액",
+          "found": "8건 사업 · 2026년",
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "displayType": "U6",
+      "title": "규정·지원·리스크는?",
+      "description": "NDC·법제도·인센티브·탄소시장",
+      "coreElementIds": [
+        "B-015",
+        "C-001",
+        "C-003",
+        "C-009",
+        "C-012",
+        "C-013",
+        "C-014",
+        "C-017",
+        "C-019",
+        "C-022"
+      ],
+      "heroIndicator": {
+        "elementId": "C-001",
+        "requested": "NDC 감축목표",
+        "source": "card-summaries-v140 headline"
+      },
+      "kpiReview": [
+        {
+          "elementId": "C-001",
+          "requested": "NDC 감축목표",
+          "found": "15.8 % 2030년 자체 이행 감축목표 · 국제지원 시 전체 43.5%",
+          "accepted": true
+        }
+      ]
+    }
+  ]
+}

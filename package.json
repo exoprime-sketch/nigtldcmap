@@ -207,6 +207,8 @@
     "qa:typology:v159": "node scripts/v159/typology-qa-v159.mjs",
     "qa:regression:v159": "node scripts/v159/regression-screens-v159.mjs",
     "screens:v159": "node scripts/v159/screens-v159.mjs",
+    "build:core-first:v160": "node scripts/v160/build-core-first-v160.mjs",
+    "check:core-first:v160": "node scripts/v160/build-core-first-v160.mjs --check",
     "finalize:v140": "npm run verify:dataset-directory:v150 && npm run finalize:v136 && npm run qa:role-split:v140 && npm run qa:analysis:v140:baseline",
     "verify:ignore-command:v140": "node scripts/v140/verify-ignore-command-v140.mjs",
     "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs",
