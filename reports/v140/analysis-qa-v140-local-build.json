@@ -1,19 +1,19 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:62026",
-    "generatedAt": "2026-09-24T00:44:13.195Z",
+    "base": "http://127.0.0.1:50465",
+    "generatedAt": "2026-09-24T10:45:24.771Z",
     "version": {
       "local": {
-        "cardSummaries": "5864396a0221ed61",
-        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
-        "sourceHash": "7468be0d991068a3",
+        "cardSummaries": "b48eae2753609e68",
+        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
+        "sourceHash": "6a61dd89cedc59f3",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "remote": {
-        "cardSummaries": "5864396a0221ed61",
-        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
+        "cardSummaries": "b48eae2753609e68",
+        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
@@ -266,7 +266,7 @@
     },
     {
       "elementId": "A-002",
-      "title": "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "title": "WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표)",
       "kind": "signed-bars",
       "cardClicked": true,
       "homeCardClicked": true,
@@ -348,7 +348,7 @@
         },
         "table": {
           "status": "match",
-          "table": "상세 데이터 · 전체 312행 · 값 있음 312행 · 결측 0행",
+          "table": "상세 데이터 · 전체 348행 · 값 있음 312행 · 결측 36행",
           "cell": "WGI 시민 자유 | 참여 · 책임성(Estimate) · 베트남 |  | -1.0983 | 점 | 2024 |  |  | ",
           "key": "indicator+region+time+unit"
         },
@@ -5348,7 +5348,7 @@
           {
             "control": "항목 선택",
             "from": "ETS 대상 시설 수 · 개소",
-            "to": "국가 크레딧 메커니즘 상태 · 상태",
+            "to": "국내 배출권거래제(ETS) 운영 상태 · 상태",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -14494,10 +14494,10 @@
       "cardValueVerified": true,
       "recomputed": {
         "status": "match",
-        "computed": 15,
-        "expected": 15,
+        "computed": 18,
+        "expected": 18,
         "expectedScale": null,
-        "rows": 15,
+        "rows": 18,
         "note": "entity rows"
       },
       "detailAnalysisFit": null,
@@ -14515,7 +14515,7 @@
         "pass": true,
         "headings": [
           "기관 분류별 기관 수",
-          "기관 디렉터리 · 15곳",
+          "기관 디렉터리 · 18곳",
           "Ministry of Natural Resources and Environment (MONRE)",
           "Institute of Energy"
         ]
@@ -14531,14 +14531,14 @@
         "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderHeadline": "15곳",
+        "finderHeadline": "18곳",
         "title": "CTCN 국가지정기구",
         "heading": "",
         "selectors": [
           "기관 구분 선택=전체"
         ],
         "url": "?view=data&element=ctcn-nde-guggajijeonggigu-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-focal-point-jigha&country=VNM&from=explorer",
-        "cardValue": "15곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 15곳",
+        "cardValue": "18곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 18곳",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -14553,15 +14553,15 @@
           "pass": true,
           "headings": [
             "기관 분류별 기관 수",
-            "기관 디렉터리 · 15곳",
+            "기관 디렉터리 · 18곳",
             "Ministry of Natural Resources and Environment (MONRE)",
             "Institute of Energy"
           ]
         },
         "table": {
           "status": "match",
-          "table": "상세 데이터 · 목록 15건",
-          "cell": "row count 15",
+          "table": "상세 데이터 · 목록 18건",
+          "cell": "row count 18",
           "key": "row-count"
         },
         "controls": [
@@ -15462,7 +15462,7 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "GERD · 2011~2023년 추이"
+          "GERD · 2002~2023년 추이"
         ]
       },
       "controlsVerified": true,
@@ -15482,7 +15482,7 @@
           "연도 선택=2023"
         ],
         "url": "?view=data&element=unesco-uis-r-d-jicul-gerd-wipo-hyeogsinjisu-gii&country=VNM&from=explorer&measure=measure-6f94f67e75e4&year=2023",
-        "cardValue": "0.415 % = text-34:TR: GERD · GDP 대비 0.4146 % 2023 비교 자료 없음 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GERD · 2011~2023년 추이",
+        "cardValue": "0.415 % = text-38:TR: GERD · GDP 대비 0.4146 % 2023 비교 자료 없음 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GERD · 2002~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "line",
@@ -15501,12 +15501,12 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "GERD · 2011~2023년 추이"
+            "GERD · 2002~2023년 추이"
           ]
         },
         "table": {
           "status": "match",
-          "table": "차트에 사용한 값 · 2011~2023년 · 단위 %",
+          "table": "차트에 사용한 값 · 2002~2023년 · 단위 %",
           "cell": "GERD · GDP 대비 | 2023 | 0.4146 | %",
           "key": "indicator+region+time+unit"
         },
