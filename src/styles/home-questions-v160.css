@@ -1,0 +1,152 @@
+/* Home question cards (V160 core-first).
+   The home used to list eight featured datasets; it now opens on the six
+   questions the plan defines (docs/plan/V160_핵심정보_단순화_기획.md §1) and
+   lets each one lead straight into its core datasets. A card shows only the
+   question, a one-line description, an optional real KPI and a button - no
+   invented figures, no chart preview here (that stays on the finder card). */
+
+.home-questions-v160 {
+  border-bottom: 1px solid #dbe4eb;
+  background: var(--white);
+}
+
+.home-questions-v160__inner {
+  width: min(var(--page-width), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 32px 0 28px;
+}
+
+.home-questions-v160__inner > h2 {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing: -0.03em;
+}
+
+.home-questions-v160__grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .home-questions-v160__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-questions-v160__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.home-questions-v160__card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 18px 16px;
+  border: 1px solid #dbe4eb;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(20, 43, 66, 0.04);
+}
+
+.home-questions-v160__mark {
+  color: #0f766e;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home-questions-v160__card h3 {
+  margin: 2px 0 0;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.home-questions-v160__description {
+  margin: 0;
+  color: var(--slate-600);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.home-questions-v160__kpi {
+  margin: 4px 0 0;
+  display: grid;
+  gap: 2px;
+}
+
+.home-questions-v160__kpi strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #0f766e;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-questions-v160__kpi span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--slate-600);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.home-questions-v160__open {
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 0 14px;
+  align-self: start;
+  border: 1px solid #cfdbe4;
+  border-radius: 8px;
+  color: var(--blue-700);
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.home-questions-v160__open:hover,
+.home-questions-v160__open:focus-visible {
+  border-color: var(--blue-700);
+  background: #eef5fc;
+}
+
+.home-questions-v160__all {
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  color: var(--blue-700);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.home-questions-v160__all:hover,
+.home-questions-v160__all:focus-visible {
+  text-decoration: underline;
+}
+
+.home-questions-v160__load-error {
+  margin: 0;
+  padding: 12px 24px;
+  color: var(--slate-600);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .home-questions-v160__inner {
+    width: min(100% - 32px, var(--page-width));
+    padding: 24px 0 20px;
+  }
+}
