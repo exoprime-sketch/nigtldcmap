@@ -95,6 +95,8 @@ try {
   for (const route of shellRoutes) {
     const url = new URL(server.url);
     url.searchParams.set("country", "VNM");
+    // V160: the finder opens on the core tier; the audit reads every public card.
+    if (route.key === "finder") url.searchParams.set("tier", "all");
     url.hash = route.hash;
     await navigate(browser.cdp, url.toString());
     await waitForValue(

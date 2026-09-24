@@ -42,6 +42,7 @@ import DataDescriptionV159 from "../components/data/description/DataDescriptionV
 import SourceLineV159 from "../components/data/description/SourceLineV159";
 import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
 import DecisionPointsV159 from "../components/data/templates/DecisionPointsV159";
+import DetailLayerV160 from "../components/data/layers/DetailLayerV160";
 import "../styles/country-data-platform-v122.css";
 import "../styles/detail-layout-v153.css";
 
@@ -1055,26 +1056,12 @@ export default function CountryDataElementPage({
             </div>
           </section>
 
-          <DataDescriptionV159
-            spec={specBundleV159?.spec || null}
-            cases={specBundleV159?.cases || []}
-            availableIndicatorIds={presentIndicatorIdsV159}
-            onHighlightIndicators={(ids) => {
-              const primary = document.querySelector<HTMLElement>('[data-testid="public-analysis-primary"]');
-              if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
-            }}
-          />
-          <SourceLineV159 spec={specBundleV159?.spec || null} />
+          {/* V160-D layer 1 (always open): 판단 포인트 and the primary
+              chart|map below read without a click. The core-figure strip,
+              데이터 설명 and the source/download material move to layers 2-3. */}
           {typologyV159 ? (
             <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} />
           ) : null}
-
-          <DetailKpiStripV153
-            elementId={elementId}
-            observations={observations}
-            entities={entities}
-            indicatorFamilyCount={indicatorFamilyCountV153(observations)}
-          />
 
           <section className="cdp-panel cdp-detail-panel dl153-detail-panel">
               <CountryElementVisualizationV123
@@ -1098,26 +1085,56 @@ export default function CountryDataElementPage({
                   <p>{emptyStateCopy.description}</p>
                 </div>
               )}
-
-              <section className="cdp-section cdp-v125-download">
-                <h3>다운로드</h3>
-                {downloadStatus?.key === "downloadable" ? (
-                  <button
-                    type="button"
-                    className="cdp-button cdp-button--primary"
-                    data-testid="public-download-link"
-                    onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
-                  >
-                    전체 데이터 다운로드
-                  </button>
-                ) : (
-                  <div data-download-status={downloadStatus?.key}>
-                    <strong>{downloadStatus?.label || "다운로드 자료 없음"}</strong>
-                    {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
-                  </div>
-                )}
-              </section>
           </section>
+
+          {/* Layer 2 (collapsed): the core-figure strip, then 데이터 설명 -
+              the framework workbook's description, usage and cases (absent
+              without a spec). */}
+          <DetailLayerV160 layer={2} title="데이터 설명">
+            <DetailKpiStripV153
+              elementId={elementId}
+              observations={observations}
+              entities={entities}
+              indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+            />
+            {specBundleV159?.spec ? (
+              <DataDescriptionV159
+                spec={specBundleV159.spec}
+                cases={specBundleV159.cases}
+                availableIndicatorIds={presentIndicatorIdsV159}
+                onHighlightIndicators={(ids) => {
+                  const primary = document.querySelector<HTMLElement>('[data-testid="public-analysis-primary"]');
+                  if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
+                }}
+              />
+            ) : null}
+          </DetailLayerV160>
+
+          {/* Layer 2/3 continued: the router's own DetailLayerV160(3) carries
+              자료 출처 and 상세 데이터 (PublicSourcePanelV126,
+              PublicRawDataTablesV126); this page-level layer 3 carries the
+              short source/APA line and the download action. */}
+          <DetailLayerV160 layer={3} title="다운로드·참고문헌">
+            <SourceLineV159 spec={specBundleV159?.spec || null} />
+            <section className="cdp-section cdp-v125-download">
+              <h3>다운로드</h3>
+              {downloadStatus?.key === "downloadable" ? (
+                <button
+                  type="button"
+                  className="cdp-button cdp-button--primary"
+                  data-testid="public-download-link"
+                  onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
+                >
+                  전체 데이터 다운로드
+                </button>
+              ) : (
+                <div data-download-status={downloadStatus?.key}>
+                  <strong>{downloadStatus?.label || "다운로드 자료 없음"}</strong>
+                  {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
+                </div>
+              )}
+            </section>
+          </DetailLayerV160>
         </>
       )}
     </div>

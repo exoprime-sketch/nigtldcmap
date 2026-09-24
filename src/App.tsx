@@ -8,6 +8,17 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import { CLIMATE_TECHNOLOGY_BY_ID } from "./data/climateTechnologyCatalog";
 import { technologyParamV153 } from "./utils/technologyIdV153";
+import type { DisplayTypeV159 } from "./data/spec/specTypesV159";
+
+// V160: the finder opens on the core datasets; `tier=all` shows every public
+// one. `type=U1..U6` narrows to one display type (the home questions).
+export type ExplorerTierV160 = "core" | "all";
+function explorerTierParamV160(value: string | null): ExplorerTierV160 {
+  return value === "all" ? "all" : "core";
+}
+function explorerTypeParamV160(value: string | null): DisplayTypeV159 | "all" {
+  return value && /^U[1-6]$/u.test(value) ? (value as DisplayTypeV159) : "all";
+}
 import { PRIORITY_COUNTRIES } from "./data/priorityCountries";
 import { DATASETS } from "./data/publicDatasets";
 import { INDICATOR_CONFIGS } from "./data/indicators/registry";
@@ -427,6 +438,12 @@ export default function App() {
   const [explorerGroup, setExplorerGroup] = useState<string | null>(
     initialParams.get("group")
   );
+  const [explorerTier, setExplorerTier] = useState<ExplorerTierV160>(
+    explorerTierParamV160(initialParams.get("tier"))
+  );
+  const [explorerType, setExplorerType] = useState<DisplayTypeV159 | "all">(
+    explorerTypeParamV160(initialParams.get("type"))
+  );
   const [selectedDatasetId, setSelectedDatasetId] = useState<string | null>(
     initialLocationView === "dataset-detail" ? null : initialParams.get("dataset")
   );
@@ -530,6 +547,8 @@ export default function App() {
 
       const restoredTechnology = params.get("technology");
       setTechnologyId(technologyParamV153(restoredTechnology));
+      setExplorerTier(explorerTierParamV160(params.get("tier")));
+      setExplorerType(explorerTypeParamV160(params.get("type")));
 
       const restoredDataCountryIso3 = hasCountryDataProviderV122(countryParam)
         ? countryParam
@@ -600,6 +619,8 @@ export default function App() {
       if (category !== "all") params.set("category", category);
       if (technologyId !== "all") params.set("technology", technologyId);
       if (explorerGroup) params.set("group", explorerGroup);
+      if (explorerTier === "all") params.set("tier", "all");
+      if (explorerType !== "all") params.set("type", explorerType);
     }
 
     if (
@@ -670,6 +691,11 @@ export default function App() {
 
     if (view === "map") {
       appendMapViewParams(params, mapViewState);
+      // V160: `mapList=all` opens '더 많은 레이어' on arrival; keep it while
+      // the map stays open so the lazily mounted list can still read it.
+      if (new URLSearchParams(window.location.search).get("mapList") === "all") {
+        params.set("mapList", "all");
+      }
       if (mapViewState.focusLayerKey && mapViewState.countryIso3) {
         params.set(
           "element",
@@ -725,6 +751,8 @@ export default function App() {
     category,
     technologyId,
     explorerGroup,
+    explorerTier,
+    explorerType,
     selectedElementId,
     selectedElementCountryIso3,
     selectedDatasetId,
@@ -967,6 +995,24 @@ export default function App() {
     setExplorerGroup(null);
     setSelectedDatasetId(null);
     setSelectedCountryIso3(null);
+    // A search looks across every public dataset, not only the core ones.
+    setExplorerTier("all");
+    setExplorerType("all");
+    setView("explorer");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // V160: a home question opens the finder on its core datasets.
+  function openHomeQuestion(displayType: DisplayTypeV159) {
+    markNextNavigationAsPush();
+    setQuery("");
+    setSourceOrganization("all");
+    setExplorerCountryIso3("all");
+    setCategory("all");
+    setTechnologyId("all");
+    setExplorerGroup(null);
+    setExplorerTier("core");
+    setExplorerType(displayType);
     setView("explorer");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -1096,6 +1142,7 @@ export default function App() {
             onOpenElement={openElement}
             onOpenMapElement={openElementOnMap}
             onNavigate={navigate}
+            onOpenQuestion={openHomeQuestion}
           />
         )}
 
@@ -1107,6 +1154,10 @@ export default function App() {
             category={category}
             technologyId={technologyId}
             selectedGroup={explorerGroup}
+            tier={explorerTier}
+            displayType={explorerType}
+            onTierChange={setExplorerTier}
+            onDisplayTypeChange={setExplorerType}
             onQueryChange={setQuery}
             onCountryChange={setExplorerCountryIso3}
             onSourceOrganizationChange={setSourceOrganization}

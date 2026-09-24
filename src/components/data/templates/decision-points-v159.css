@@ -19,3 +19,9 @@
 @media (max-width: 400px) {
   .dp159-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+/* V160: layer 1 is read without scrolling far - on wide screens the points
+   sit two to a row instead of one long column. */
+@media (min-width: 900px) {
+  .dp159-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+}

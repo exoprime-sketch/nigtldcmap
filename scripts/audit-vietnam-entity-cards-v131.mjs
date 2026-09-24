@@ -44,11 +44,20 @@ const nonCardRenderers = new Set([
   "capability-scorecard",
   "status-only",
 ]);
+// V159/V160: ⓪ elements (exclusions, not yet delivered) render the status
+// screen only, by decision - like the "status-only" renderer above, they have
+// no record cards to check. Read from the typology, never listed here.
+const statusOnlyElementIdsV160 = new Set(
+  (readJson(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json")).value?.rows || [])
+    .filter((row) => row.displayType === "U0")
+    .map((row) => row.elementId)
+);
 const entityElementIds = catalog
   .filter(
     (element) =>
       payloadRecords(packs.elements.get(element.elementId)?.entities).length > 0 &&
-      !nonCardRenderers.has(rendererByElement.get(element.elementId))
+      !nonCardRenderers.has(rendererByElement.get(element.elementId)) &&
+      !statusOnlyElementIdsV160.has(element.elementId)
   )
   .map((element) => element.elementId);
 const entityCountByElementV131 = new Map(

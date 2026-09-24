@@ -14,6 +14,7 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136 } from "./v136/audit-helpers.mjs";
+import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
 const audit = new AuditV125("finder-scroll:v136");
 const finderSource = readFileSync(
@@ -82,7 +83,7 @@ async function revealSequence(cdp, limit = 12) {
       break;
     }
     sequence.push(Number(await evaluateValue(cdp, CARD_COUNT)));
-    if (sequence[sequence.length - 1] >= 152) break;
+    if (sequence[sequence.length - 1] >= FINDER_PUBLIC_COUNT_V160) break;
   }
   return sequence;
 }
@@ -179,7 +180,7 @@ try {
         };
       })()`
     );
-    if (settled && settled.total > 0 && settled.total !== 152) {
+    if (settled && settled.total > 0 && settled.total !== FINDER_PUBLIC_COUNT_V160) {
       observedMinimum = Math.min(observedMinimum, settled.visible);
     }
     await new Promise((resolveWait) => setTimeout(resolveWait, 40));
@@ -258,7 +259,8 @@ try {
   if (server) await server.close();
 }
 
-const expectedSequence = [24, 48, 72, 96, 120, 144, 152];
+// V160: 24 at a time up to every public dataset the finder lists with tier=all.
+const expectedSequence = finderAutoLoadSequenceV160();
 const sequenceMatches =
   JSON.stringify(sequence) === JSON.stringify(expectedSequence);
 // V149 adds a passive, rAF-throttled scroll listener that only records the

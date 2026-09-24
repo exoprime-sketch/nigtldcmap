@@ -27,6 +27,7 @@ import { mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
+import { FINDER_PUBLIC_COUNT_V160 } from "../v160/core-first-audit-v160.mjs";
 
 const argv = process.argv.slice(2);
 const opt = (flag, fallback = null) => {
@@ -101,6 +102,7 @@ const report = {
 // baseName the importer wrote, so the rule is checked on both sides.
 const SPEC_ROWS_V159 = JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetSpecV159.json"), "utf8")).rows;
 const SPEC_BY_ID_V159 = new Map(SPEC_ROWS_V159.map((row) => [row.elementId, row]));
+const HOME_QUESTIONS_V160 = JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/homeQuestionsV160.json"), "utf8")).questions;
 function specTitleV159(elementId) {
   const row = SPEC_BY_ID_V159.get(elementId);
   if (!row) return null;
@@ -193,8 +195,12 @@ check("B017_NOT_IN_MAP_INDEX", !indexIds.has("B-017"), indexIds.has("B-017"), fa
 
 // ------------------------------------------------------------ home
 await section("HOME", async () => {
-  const page = await open("/", ".home-featured-v139__card");
-  await page.waitForFunction(() => document.querySelectorAll(".home-featured-v139__card").length >= 8, null, { timeout: 60_000 });
+  // V160: the home's entry points are six question cards (homeQuestionsV160.json)
+  // that open the finder on a question's core datasets; the eight featured
+  // dataset cards are gone. The checks moved with them: six cards, the KPI
+  // exactly where the data has one, the finder reached, the same titles.
+  const page = await open("/", '[data-testid="home-questions-v160"]');
+  await page.waitForFunction(() => document.querySelectorAll('[data-testid="home-question-v160"]').length >= 6, null, { timeout: 60_000 });
   await page.waitForTimeout(800);
   const home = await page.evaluate(() => {
     const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
@@ -204,84 +210,50 @@ await section("HOME", async () => {
         tidy(node.querySelector("dd")?.textContent),
       ])
     );
-    const cards = [...document.querySelectorAll(".home-featured-v139__card")].map((card) => ({
-      id: card.getAttribute("data-element-id"),
-      kind: card.getAttribute("data-preview-kind"),
+    const questions = [...document.querySelectorAll('[data-testid="home-question-v160"]')].map((card) => ({
+      type: card.getAttribute("data-display-type"),
       title: tidy(card.querySelector("h3")?.textContent),
-      question: tidy(card.querySelector(".home-featured-v139__question")?.textContent),
-      headlineValue: tidy(card.querySelector(".fcs140-headline strong")?.textContent),
-      headlineLabel: tidy(card.querySelector(".fcs140-headline span")?.textContent),
-      hasPreview: Boolean(card.querySelector(".fcs140-preview svg, .fcs140-preview img, .fcs140-preview ul, .fcs140-preview dl")),
-      factLabels: [...card.querySelectorAll(".home-featured-v139__meta dt")].map((node) => tidy(node.textContent)),
-      // Glossary term buttons sit inside the text; the card's own controls are
-      // the ones that are not a bare acronym.
-      controls: [...card.querySelectorAll("button, a")]
-        .map((node) => tidy(node.textContent))
-        .filter((text) => !/^[A-Za-z0-9₂₄()·\s]{1,14}$/u.test(text)),
-      text: tidy(card.innerText),
-      height: Math.round(card.getBoundingClientRect().height),
+      kpi: card.querySelector('[data-testid="home-question-kpi-v160"]') ? tidy(card.querySelector('[data-testid="home-question-kpi-v160"]').textContent) : null,
+      button: tidy(card.querySelector('[data-testid="home-question-open-v160"]')?.textContent),
     }));
-    return {
-      stats,
-      cards,
-      heroMapLink: tidy(document.querySelector('[data-testid="home-hero-map-link-v139"]')?.textContent),
-      overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
-    };
+    return { stats, questions, overflow: document.documentElement.scrollWidth > window.innerWidth + 1 };
   });
   report.home = home;
   await captureV150(page, resolve(SHOTS, "home-1440.png"), { fullPage: true });
-  const ids = home.cards.map((card) => card.id);
-  check("HOME_FEATURED_EIGHT", ids.length === 8 && new Set(ids).size === 8, ids, "eight distinct datasets selected by the active ordering");
-  FEATURED = ids;
-  check("HOME_CARD_SUMMARY", home.cards.every((card) => card.title && card.headlineLabel), home.cards.map((card) => card.headlineLabel), "named data with a meaningful summary");
+  check("HOME_QUESTIONS_SIX", JSON.stringify(home.questions.map((q) => q.type)) === JSON.stringify(HOME_QUESTIONS_V160.map((q) => q.displayType)), home.questions.map((q) => q.type), HOME_QUESTIONS_V160.map((q) => q.displayType));
+  check("HOME_QUESTION_TITLES", HOME_QUESTIONS_V160.every((q, index) => (home.questions[index]?.title || "").includes(q.title)), home.questions.map((q) => q.title), HOME_QUESTIONS_V160.map((q) => q.title));
   check(
-    "HOME_CARD_HEADLINE",
-    home.cards.every((card) => card.headlineValue && card.headlineLabel),
-    home.cards.map((card) => `${card.headlineValue} — ${card.headlineLabel}`),
-    "one figure with its rule on every card"
+    "HOME_QUESTION_KPI",
+    HOME_QUESTIONS_V160.every((q, index) => (q.heroIndicator ? Boolean(home.questions[index]?.kpi) : home.questions[index]?.kpi === null)),
+    home.questions.map((q) => ({ type: q.type, kpi: q.kpi })),
+    HOME_QUESTIONS_V160.map((q) => ({ type: q.displayType, kpi: q.heroIndicator ? q.heroIndicator.elementId : null }))
   );
-  check("HOME_CARD_PREVIEW", home.cards.every((card) => card.hasPreview), home.cards.map((card) => card.hasPreview), "type-appropriate chart, facts or levels on every card");
-  check(
-    "HOME_CARD_FACTS_PERIOD_PROVIDER_ONLY",
-    home.cards.every((card) => JSON.stringify(card.factLabels) === JSON.stringify(HOME_CARD_FACT_LABELS)),
-    home.cards.map((card) => card.factLabels),
-    HOME_CARD_FACT_LABELS
-  );
-  check(
-    "HOME_CARD_SINGLE_DETAIL_CONTROL",
-    home.cards.every((card) => card.controls.length === 1 && /상세보기/u.test(card.controls[0])),
-    home.cards.map((card) => card.controls),
-    ["상세보기 →"]
-  );
-  check(
-    "HOME_CARD_NO_MAP_OR_DOWNLOAD_CONTROL",
-    home.cards.every((card) => !card.controls.some((text) => /지도|다운로드/u.test(text))),
-    home.cards.flatMap((card) => card.controls.filter((text) => /지도|다운로드/u.test(text))),
-    []
-  );
-  check(
-    "HOME_CARD_NO_ROW_COUNT",
-    home.cards.every((card) => !/\d행\b|원자료 행|수록 행/u.test(card.text)),
-    home.cards.filter((card) => /\d행\b|원자료 행|수록 행/u.test(card.text)).map((card) => card.id),
-    []
-  );
-  check(
-    "HOME_CARD_NO_CAVEAT_PARAGRAPH",
-    home.cards.every((card) => !/않습니다|않으며|있을 수 있습니다/u.test(card.text)),
-    home.cards.filter((card) => /않습니다|않으며|있을 수 있습니다/u.test(card.text)).map((card) => card.id),
-    []
-  );
+  check("HOME_QUESTION_COUNTS", HOME_QUESTIONS_V160.every((q, index) => (home.questions[index]?.button || "").includes(`${q.coreElementIds.length}개`)), home.questions.map((q) => q.button), HOME_QUESTIONS_V160.map((q) => `${q.coreElementIds.length}개`));
+  // Each question opens the finder on its type and its core datasets.
+  const opened = [];
+  for (const [index, q] of HOME_QUESTIONS_V160.entries()) {
+    await page.goto(`${base}/`, { waitUntil: "networkidle", timeout: 90_000 });
+    await page.waitForSelector('[data-testid="home-question-open-v160"]', { timeout: 60_000 });
+    await page.locator('[data-testid="home-question-open-v160"]').nth(index).click();
+    await page.waitForSelector('[data-testid="finder-results-v136"]', { timeout: 60_000 });
+    await page.waitForFunction(() => Number(document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute("data-total-count") || 0) > 0, null, { timeout: 30_000 }).catch(() => null);
+    const url = new URL(page.url());
+    const total = await page.$eval('[data-testid="finder-results-v136"]', (node) => Number(node.getAttribute("data-total-count"))).catch(() => null);
+    opened.push({ type: q.displayType, hash: url.hash, typeParam: url.searchParams.get("type"), total, expected: q.coreElementIds.length });
+  }
+  check("HOME_QUESTION_OPENS_FINDER", opened.every((row) => row.hash === "#explorer" && row.typeParam === row.type && row.total === row.expected), opened, "finder with type=Ux and the question's core datasets");
+  FEATURED = HOME_QUESTIONS_V160.flatMap((q) => q.coreElementIds.slice(0, 2));
   check("HOME_NO_OVERFLOW", !home.overflow, home.overflow, false);
   await page.close();
 });const homeMapCount = count(report.home?.stats?.["지도 제공 항목"]);
 const homeTotalCount = count(report.home?.stats?.["전체 데이터 항목"]);
 const homeDownloadCount = count(report.home?.stats?.["다운로드 가능 항목"]);
-const homeTitle = (id) => report.home?.cards.find((card) => card.id === id)?.title || null;
 check("HOME_MAP_COUNT_EQUALS_INDEX", homeMapCount === indexActive.length, homeMapCount, indexActive.length);
 
 // ------------------------------------------------------------ finder
 await section("FINDER", async () => {
-  const page = await open("/#explorer", '[data-testid="finder-results-v136"]');
+  // V160: every public dataset (tier=all), as the finder showed before core-first.
+  const page = await open("/?tier=all#explorer", '[data-testid="finder-results-v136"]');
   const total = () => page.$eval('[data-testid="finder-results-v136"]', (node) => Number(node.getAttribute("data-total-count")));
   await page.waitForFunction(
     () => Number(document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute("data-total-count") || 0) > 0,
@@ -295,7 +267,7 @@ await section("FINDER", async () => {
   // the title puts the card on the first page regardless of paging.
   const finderTitles = {};
   for (const id of FEATURED) {
-    await page.fill(".cdp-input", (homeTitle(id) || "").replace(/\(.*?\)/gu, "").trim());
+    await page.fill(".cdp-input", (specTitleV159(id) || "").replace(/\(.*?\)/gu, "").trim());
     await page
       .waitForFunction((elementId) => Boolean(document.querySelector(`[data-testid="public-finder-card-v135"][data-element-id="${elementId}"]`)), id, { timeout: 30_000 })
       .catch(() => null);
@@ -325,7 +297,8 @@ await section("FINDER", async () => {
     .$eval('[data-testid="public-finder-card-v135"][data-element-id="B-017"]', (card) => [...card.querySelectorAll("button")].map((button) => String(button.textContent || "").trim()))
     .catch(() => null);
   report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons };
-  check("FINDER_TOTAL_152", totalAll === 152 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, 152);
+  // V160: tier=all lists every public dataset (informationTiersV160, tier != hidden).
+  check("FINDER_TOTAL_152", totalAll === FINDER_PUBLIC_COUNT_V160 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, FINDER_PUBLIC_COUNT_V160);
   check(
     "FINDER_HAS_SORT_AND_FILTERS",
     ["정렬", "대분류", "제공기관", "제공 형태", "기후기술", "자료연도"].every((name) => labels.includes(name)),
@@ -337,8 +310,9 @@ await section("FINDER", async () => {
   check("FINDER_DOWNLOAD_FILTER_EQUALS_HOME", totalDownload === homeDownloadCount, { totalDownload, homeDownloadCount }, "one count");
   check(
     "FINDER_TITLES_EQUAL_HOME",
-    FEATURED.every((id) => finderTitles[id] && finderTitles[id] === homeTitle(id)),
-    FEATURED.map((id) => ({ id, home: homeTitle(id), finder: finderTitles[id] })),
+    // V160: the datasets a home question leads to carry the V159 name rule.
+    FEATURED.every((id) => finderTitles[id] && finderTitles[id] === specTitleV159(id)),
+    FEATURED.map((id) => ({ id, expected: specTitleV159(id), finder: finderTitles[id] })),
     "same public title"
   );
   check("FINDER_B017_NO_MAP_BUTTON", Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)), b017Buttons, "no 지도에서 보기 on B-017");

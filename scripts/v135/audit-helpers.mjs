@@ -51,6 +51,9 @@ export function finderUrlV135(baseUrl, query = "") {
   const url = new URL(baseUrl);
   url.searchParams.set("country", "VNM");
   if (query) url.searchParams.set("q", query);
+  // V160: the finder opens on the core tier; audits look at every public
+  // dataset, as they always did (reports/v160/EXPECTATION_CHANGES_V160.md).
+  url.searchParams.set("tier", "all");
   url.hash = "explorer";
   return url.toString();
 }
@@ -72,6 +75,8 @@ export function mapUrlV135(baseUrl, parameters = {}) {
       url.searchParams.set(key, String(value));
     }
   }
+  // V160: every layer group unfolded, as before the core/more split.
+  url.searchParams.set("mapList", "all");
   url.hash = "map";
   return url.toString();
 }
@@ -313,7 +318,10 @@ export function revealMapDatasetExpressionV138(elementId) {
     const drawer = document.querySelector('[data-testid="map-layer-panel"] .cdp-map-panel-toggle');
     if (drawer && drawer.getAttribute('aria-expanded') === 'false') drawer.click();
     const input = document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))});
+    // V160: layers outside the core group sit under '더 많은 레이어'.
     const group = input?.closest('[data-map-group-v135]');
+    const more = document.querySelector('[data-testid="map-more-layers-v160"]');
+    if (group?.hidden && more && more.getAttribute('aria-expanded') !== 'true') more.click();
     const toggle = group?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
     if (toggle && toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
     input?.scrollIntoView?.({ block: 'center' });

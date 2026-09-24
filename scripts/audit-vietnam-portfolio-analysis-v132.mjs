@@ -35,7 +35,16 @@ const portfolioRendererIds = fitRows
 // are read as participation statements, initiatives and actors
 // (CooperationChecklistAnalysisV141), not as a project portfolio.
 const NOT_PORTFOLIO_V141 = new Set(["C-007", "C-008"]);
-const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])].filter((id) => !NOT_PORTFOLIO_V141.has(id));
+// V159/V160: ⓪ elements (exclusions, not yet delivered) show the status
+// screen only, by decision (PR #32) - no portfolio to check. Read from the
+// typology, never listed here.
+const STATUS_ONLY_V160 = new Set(
+  (readJson(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json")).value?.rows || [])
+    .filter((row) => row.displayType === "U0")
+    .map((row) => row.elementId)
+);
+const E008_STATUS_ONLY_V160 = STATUS_ONLY_V160.has("E-008");
+const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])].filter((id) => !NOT_PORTFOLIO_V141.has(id) && !STATUS_ONLY_V160.has(id));
 // The screens are driven from the served build, so the expectations are read
 // from the data that build holds. Reading public/data while driving build/ made
 // this audit compare two different trees: it counted C-007 as having no entities
@@ -184,6 +193,19 @@ try {
   }
 
   await navigate(browser.cdp, detailUrlV129(server.url, "E-008"));
+  if (E008_STATUS_ONLY_V160) {
+    // ⓪: the status screen replaces the research analysis; it must be shown
+    // and no research list may leak before it.
+    await waitForValue(browser.cdp, `Boolean(document.querySelector('[data-testid="public-status-only"]'))`, { timeoutMs: 25_000 });
+    e008Result = await evaluateValue(
+      browser.cdp,
+      `(() => ({
+        statusOnly: Boolean(document.querySelector('[data-testid="public-status-only"]')),
+        researchAnalysis: Boolean(document.querySelector('[data-testid="e008-research-analysis-v132"]')),
+        internalTitleCount: [...document.querySelectorAll('h3, h4')].filter((node) => /^(?:recordId|indicatorId|null|undefined)$/iu.test(node.textContent?.trim() || '')).length,
+      }))()`
+    );
+  } else {
   await waitForValue(
     browser.cdp,
     `Boolean(document.querySelector('[data-testid="e008-research-analysis-v132"]'))`,
@@ -212,6 +234,7 @@ try {
       };
     })()`
   );
+  }
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
 } finally {
@@ -254,9 +277,10 @@ audit.check(
   { runtimeFailure, checked: routeResults.length, failures: routeFailures },
   { runtimeFailure: null, checked: portfolioIds.length, failures: [] }
 );
+const e008StatusOkV160 = E008_STATUS_ONLY_V160 && e008Result?.statusOnly === true && e008Result?.researchAnalysis === false;
 audit.check(
   "E008_ANALYSIS_BEFORE_LIST",
-  e008Result?.ordered === true &&
+  E008_STATUS_ONLY_V160 ? e008StatusOkV160 : e008Result?.ordered === true &&
     e008Result?.trendOrNote === true &&
     Object.values(e008Result?.sections || {}).every(Boolean) &&
     Number(e008Result?.filterCount || 0) >= 3,
@@ -274,9 +298,9 @@ audit.check(
 );
 audit.check(
   "RESEARCH_LIST_BEFORE_ANALYSIS",
-  e008Result?.ordered === true,
-  e008Result?.ordered,
-  true
+  E008_STATUS_ONLY_V160 ? e008StatusOkV160 : e008Result?.ordered === true,
+  E008_STATUS_ONLY_V160 ? e008Result : e008Result?.ordered,
+  E008_STATUS_ONLY_V160 ? "⓪ status screen, no research list" : true
 );
 audit.check(
   "E008_PUBLIC_TITLE_POLICY",
@@ -305,7 +329,7 @@ finishAuditV132(audit, "portfolio-analysis-audit-v132.json", {
   portfolioElementCount: portfolioIds.length,
   entityBearingPortfolioElementCount: entityBearingIds.size,
   portfolioListBeforeSummaryCount: routeFailures.length,
-  researchListBeforeAnalysisCount: e008Result?.ordered === true ? 0 : 1,
-  e008Result: runtimeFailure === null && e008Result?.ordered === true ? "PASS" : "FAIL",
+  researchListBeforeAnalysisCount: e008Result?.ordered === true || e008StatusOkV160 ? 0 : 1,
+  e008Result: runtimeFailure === null && (e008Result?.ordered === true || e008StatusOkV160) ? "PASS" : "FAIL",
   runtimeFailure,
 });

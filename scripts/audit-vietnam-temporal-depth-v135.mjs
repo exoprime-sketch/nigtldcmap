@@ -84,7 +84,9 @@ try {
           const ghg = root?.querySelector('[data-testid="ghg-sector-gas-analysis-v135"]');
           const inventory = root?.querySelector('[data-testid="reported-inventory-v147"]');
           const inventoryRows = [...(inventory?.querySelectorAll('[data-testid="inventory-matrix-v147"] tbody tr') || [])];
-          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventory?.querySelectorAll('figure li').length === 4;
+          // V159 (PR #32): C-002 is a ⑥ screen and draws no numeric chart; the
+          // four sector totals moved from a bar figure to a tile list.
+          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && (inventory?.querySelectorAll('figure li').length === 4 || inventory?.querySelectorAll('[data-testid="reported-inventory-tiles-v159"] li').length === 4);
           return {
             depth,
             chartCount: annualChartCount,
