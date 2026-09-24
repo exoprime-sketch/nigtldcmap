@@ -125,15 +125,23 @@ function HomeCardPreview({ elementId }: { elementId: string }) {
   return <HomePreviewChartV139 card={card} />;
 }
 
-export default function FinderCardSummaryV140({ summary }: { summary: CardSummaryV140 }) {
+export interface FinderCardSummaryV140Props {
+  summary: CardSummaryV140;
+  /** V160: support/reference cards show the headline KPI only — no chart
+   * preview. The headline itself is never invented here; it is always the
+   * value this same pre-built summary already carries. */
+  kpiOnly?: boolean;
+}
+
+export default function FinderCardSummaryV140({ summary, kpiOnly }: FinderCardSummaryV140Props) {
   const { kind, headline, preview } = summary;
   return (
-    <div className="fcs140" data-testid="finder-card-summary-v140" data-card-kind={kind}>
+    <div className="fcs140" data-testid="finder-card-summary-v140" data-card-kind={kind} data-kpi-only={kpiOnly ? "true" : "false"}>
       <p className="fcs140-headline" data-testid="finder-card-headline-v140">
         <strong><PublicTermTextV134 text={headline.value} /></strong>
         <span><PublicTermTextV134 text={headline.label} /></span>
       </p>
-      <div className="fcs140-preview">
+      {!kpiOnly && <div className="fcs140-preview">
         {!preview.home && ["line", "spatial-trend", "bars", "spatial", "composition"].includes(kind) && <ChartAxesV150
           x={kind === "line" || kind === "spatial-trend" ? "연도" : kind === "composition" ? undefined : summary.measure?.label || "값"}
           y={kind === "line" || kind === "spatial-trend" ? summary.measure?.label || "값" : kind === "composition" ? undefined : kind === "spatial" ? "성·시" : "항목"}
@@ -188,7 +196,7 @@ export default function FinderCardSummaryV140({ summary }: { summary: CardSummar
         ) : kind === "status" ? (
           <p className="fcs140-status" role="status"><PublicTermTextV134 text={preview.note || "현재 제공하지 않음"} /></p>
         ) : null}
-      </div>
+      </div>}
     </div>
   );
 }
