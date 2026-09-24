@@ -38,6 +38,12 @@ interface DataExplorerPageProps {
   category: CategoryCode | "all";
   technologyId: string;
   selectedGroup: string | null;
+  /** V160: "core" (default) shows the core datasets, "all" every public one; kept in the URL as tier=all. */
+  tier: "core" | "all";
+  /** V160: display-type filter (U1..U6), kept in the URL as type=; replaces the V159 local type filter. */
+  displayType: DisplayTypeV159 | "all";
+  onTierChange: (value: "core" | "all") => void;
+  onDisplayTypeChange: (value: DisplayTypeV159 | "all") => void;
   onQueryChange: (value: string) => void;
   onCountryChange: (value: string) => void;
   onSourceOrganizationChange: (value: string) => void;

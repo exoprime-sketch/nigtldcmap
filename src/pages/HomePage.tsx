@@ -9,6 +9,7 @@ import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125
 import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import { getCardSpecV159 } from "../data/spec/datasetSpecV159";
+import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
 import "../styles/home-final-v13.css";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 
@@ -20,6 +21,8 @@ interface HomePageProps {
   onOpenElement: (elementId: string, countryIso3: string, selection?: DataFinderSelectorStateV125) => void;
   onOpenMapElement: (elementId: string, countryIso3: string, selection?: DataFinderSelectorStateV125) => void;
   onNavigate: (view: View) => void;
+  /** V160: open the finder on a question's core datasets. */
+  onOpenQuestion: (displayType: DisplayTypeV159) => void;
 }
 const SEARCH_EXAMPLES_V139 = ["국내총생산", "가뭄", "산림손실", "송전망"];
 
