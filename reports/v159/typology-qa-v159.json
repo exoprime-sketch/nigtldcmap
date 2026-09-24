@@ -1,21 +1,17 @@
 {
-  "generatedAt": "2026-09-24T03:27:22.997Z",
+  "generatedAt": "2026-09-24T08:32:59.302Z",
   "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\tmp\\build-v159-review",
   "summary": {
     "elements": 152,
     "pass": 152,
     "fail": 0,
     "failedIds": [],
+    "decisionPointsShown": 118,
     "decisionPointsHidden": [
       "A-026",
       "A-027",
       "A-028",
       "B-002",
-      "B-003",
-      "B-004",
-      "B-005",
-      "B-006",
-      "B-007",
       "B-008",
       "B-009",
       "B-012",
@@ -25,18 +21,10 @@
       "B-017",
       "B-024",
       "B-026",
-      "B-029",
-      "B-030",
       "B-035",
       "B-036",
-      "B-037",
-      "B-039",
-      "B-040",
-      "B-041",
-      "B-042",
       "B-044",
       "C-005",
-      "C-016",
       "C-018",
       "C-022",
       "C-025",
@@ -47,7 +35,46 @@
       "E-007",
       "E-008",
       "E-015"
-    ]
+    ],
+    "statusElements": [
+      "C-020",
+      "C-021",
+      "C-023",
+      "E-011",
+      "E-013",
+      "E-016",
+      "E-017"
+    ],
+    "chipHighlightElements": [
+      "A-001",
+      "A-003",
+      "A-004",
+      "A-006",
+      "A-007",
+      "A-008",
+      "A-009",
+      "A-012",
+      "A-014",
+      "A-019",
+      "A-020",
+      "A-021",
+      "A-030",
+      "A-031",
+      "A-032",
+      "A-033",
+      "B-011",
+      "B-016",
+      "B-018",
+      "B-019",
+      "B-020",
+      "B-021",
+      "B-027",
+      "B-038",
+      "D-006",
+      "E-010"
+    ],
+    "chipsEnabled": 68,
+    "chipsInert": 453
   },
   "results": [
     {
@@ -79,6 +106,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 3,
+        "inert": 4,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -113,6 +145,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 11,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -145,6 +182,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 1,
+        "inert": 5,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -179,6 +221,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 1,
+        "inert": 2,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -211,6 +258,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -245,6 +297,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 1,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -277,6 +334,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 1,
+        "inert": 2,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -311,6 +373,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 0,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -343,6 +410,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 1,
+        "inert": 2,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -377,6 +449,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -409,6 +486,11 @@
         "chartsInPrimary": 10,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 12,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -443,6 +525,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 2,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -475,6 +562,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -509,6 +601,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 2,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -541,6 +638,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -575,6 +677,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 7,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -607,6 +714,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -641,6 +753,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 8,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -673,6 +790,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 3,
+        "inert": 0,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -707,6 +829,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 4,
+        "inert": 0,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -739,6 +866,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 5,
+        "inert": 2,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -773,6 +905,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -805,6 +942,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -839,6 +981,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -871,6 +1018,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -905,6 +1057,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -937,6 +1094,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 9,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -971,6 +1133,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 7,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1003,6 +1170,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1037,6 +1209,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 7,
+        "inert": 0,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1069,6 +1246,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 10,
+        "inert": 0,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1103,6 +1285,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 2,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1135,6 +1322,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 2,
+        "inert": 0,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1169,6 +1361,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1202,6 +1399,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1230,12 +1432,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -1263,12 +1470,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -1296,12 +1508,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -1329,12 +1546,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -1362,12 +1584,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -1399,6 +1626,11 @@
         "chartsInPrimary": 2,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -1433,6 +1665,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1465,6 +1702,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 5,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1499,6 +1741,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 3,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1531,6 +1778,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -1565,6 +1817,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1597,6 +1854,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 5,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -1631,6 +1893,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1663,6 +1930,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 2,
+        "inert": 2,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1697,6 +1969,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -1729,6 +2006,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 2,
+        "inert": 4,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1763,6 +2045,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 3,
+        "inert": 3,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1795,6 +2082,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 4,
+        "inert": 10,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1829,6 +2121,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 2,
+        "inert": 5,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1861,6 +2158,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 7,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -1895,6 +2197,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1927,6 +2234,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -1961,6 +2273,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -1993,6 +2310,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -2027,6 +2349,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 1,
+        "inert": 2,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2060,6 +2387,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2088,12 +2420,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2121,12 +2458,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2158,6 +2500,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2192,6 +2539,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2224,6 +2576,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2258,6 +2615,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2290,6 +2652,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 7,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -2324,6 +2691,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 9,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -2352,12 +2724,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2390,6 +2767,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 1,
+        "inert": 10,
+        "highlightWorks": true
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2418,12 +2800,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2451,12 +2838,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 2,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2484,12 +2876,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2517,12 +2914,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -2554,6 +2956,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 9,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2588,6 +2995,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -2620,6 +3032,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2654,6 +3071,11 @@
         "statusNote": true,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2686,6 +3108,11 @@
         "chartsInPrimary": 0,
         "statusNote": true,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2720,6 +3147,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2752,6 +3184,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2786,6 +3223,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2818,6 +3260,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2852,6 +3299,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2884,6 +3336,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -2918,6 +3375,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -2950,6 +3412,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -2984,6 +3451,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3016,6 +3488,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3050,6 +3527,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3082,6 +3564,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3116,6 +3603,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3148,6 +3640,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3182,6 +3679,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3215,6 +3717,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3243,12 +3750,17 @@
         "usage": true,
         "casesPart": true,
         "casesCount": 3,
-        "decisionPoints": null,
+        "decisionPoints": 2,
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
       },
-      "decisionPointsShown": false,
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
+      "decisionPointsShown": true,
       "pass": true
     },
     {
@@ -3280,6 +3792,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3314,6 +3831,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -3346,6 +3868,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3380,6 +3907,11 @@
         "statusNote": true,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -3412,6 +3944,11 @@
         "chartsInPrimary": 0,
         "statusNote": true,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -3446,6 +3983,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -3478,6 +4020,11 @@
         "chartsInPrimary": 0,
         "statusNote": true,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -3512,6 +4059,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3544,6 +4096,11 @@
         "chartsInPrimary": 5,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -3578,6 +4135,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 12,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3610,6 +4172,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 12,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3644,6 +4211,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3676,6 +4248,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 11,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3710,6 +4287,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 9,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3742,6 +4324,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 2,
+        "inert": 6,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3776,6 +4363,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3808,6 +4400,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -3842,6 +4439,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 4,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3874,6 +4476,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 9,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3908,6 +4515,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -3940,6 +4552,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -3974,6 +4591,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 5,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4006,6 +4628,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4040,6 +4667,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4072,6 +4704,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4106,6 +4743,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4138,6 +4780,11 @@
         "chartsInPrimary": 2,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4172,6 +4819,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4204,6 +4856,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4238,6 +4895,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4270,6 +4932,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4304,6 +4971,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4336,6 +5008,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4370,6 +5047,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 1,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4402,6 +5084,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4436,6 +5123,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4468,6 +5160,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -4502,6 +5199,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4534,6 +5236,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4568,6 +5275,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4600,6 +5312,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4634,6 +5351,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4666,6 +5388,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -4700,6 +5427,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 6,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -4732,6 +5464,11 @@
         "chartsInPrimary": 4,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 1,
+        "inert": 7,
+        "highlightWorks": true
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4766,6 +5503,11 @@
         "statusNote": true,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4798,6 +5540,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 13,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4832,6 +5579,11 @@
         "statusNote": true,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4864,6 +5616,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -4898,6 +5655,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4930,6 +5692,11 @@
         "chartsInPrimary": 0,
         "statusNote": true,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
       },
       "decisionPointsShown": false,
       "pass": true
@@ -4964,6 +5731,11 @@
         "statusNote": true,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 0,
+        "highlightWorks": null
+      },
       "decisionPointsShown": false,
       "pass": true
     },
@@ -4996,6 +5768,11 @@
         "chartsInPrimary": 1,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
@@ -5030,6 +5807,11 @@
         "statusNote": false,
         "overflow320": 0
       },
+      "chips": {
+        "enabled": 0,
+        "inert": 2,
+        "highlightWorks": null
+      },
       "decisionPointsShown": true,
       "pass": true
     },
@@ -5062,6 +5844,11 @@
         "chartsInPrimary": 0,
         "statusNote": false,
         "overflow320": 0
+      },
+      "chips": {
+        "enabled": 0,
+        "inert": 3,
+        "highlightWorks": null
       },
       "decisionPointsShown": true,
       "pass": true
