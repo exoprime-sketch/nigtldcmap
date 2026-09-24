@@ -1,0 +1,43 @@
+{
+  "schema": "renderer-extraction-verification-v152",
+  "generatedAt": "2026-09-23T22:39:11.152Z",
+  "styleSnapshot": {
+    "runs": 94,
+    "differences": 0,
+    "status": "PASS",
+    "determinismCheck": "같은 추출 전 빌드로 2회 스냅샷 비교 차이 0 (94회)",
+    "coverage": "활성 42개 레이어 단독 주 분석 + 공유 조합 5종 × 경계 34/63, 배경 없음"
+  },
+  "qaMapV138": {
+    "before": {
+      "layers": 42,
+      "consoleErrors": 0,
+      "httpFailures": {
+        "tiles.openfreemap.org net::ERR_ABORTED": 410
+      }
+    },
+    "after": {
+      "layers": 42,
+      "consoleErrors": 0,
+      "httpFailures": {
+        "tiles.openfreemap.org net::ERR_ABORTED": 412
+      }
+    },
+    "otherDifferences": 0,
+    "note": "차이는 외부 배경 타일 요청 취소 건수(탐색 중 중단)뿐, 레이어·상호작용·폭별 결과 동일"
+  },
+  "bundle": {
+    "mainJsBytes": {
+      "before": 2042653,
+      "after": 2042649
+    },
+    "mapPageChunkBytes": {
+      "before": 274024,
+      "after": 275816
+    },
+    "maplibreChunkBytes": {
+      "before": 1062816,
+      "after": 1062816
+    }
+  }
+}

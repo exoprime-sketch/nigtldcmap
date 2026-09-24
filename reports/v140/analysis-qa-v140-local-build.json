@@ -1,19 +1,19 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:55407",
-    "generatedAt": "2026-09-24T04:59:52.410Z",
+    "base": "http://127.0.0.1:50465",
+    "generatedAt": "2026-09-24T10:45:24.771Z",
     "version": {
       "local": {
-        "cardSummaries": "5864396a0221ed61",
-        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
-        "sourceHash": "7468be0d991068a3",
+        "cardSummaries": "b48eae2753609e68",
+        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
+        "sourceHash": "6a61dd89cedc59f3",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "remote": {
-        "cardSummaries": "5864396a0221ed61",
-        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
+        "cardSummaries": "b48eae2753609e68",
+        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
@@ -266,7 +266,7 @@
     },
     {
       "elementId": "A-002",
-      "title": "CPIA(Country Policy and Institutional Assessment, 국가 신용도·거버넌스 수준 지표)",
+      "title": "WGI(Worldwide Governance Indicators, 국가 거버넌스 평가 지표)",
       "kind": "signed-bars",
       "cardClicked": true,
       "homeCardClicked": true,
@@ -348,7 +348,7 @@
         },
         "table": {
           "status": "match",
-          "table": "상세 데이터 · 전체 312행 · 값 있음 312행 · 결측 0행",
+          "table": "상세 데이터 · 전체 348행 · 값 있음 312행 · 결측 36행",
           "cell": "WGI 시민 자유 | 참여 · 책임성(Estimate) · 베트남 |  | -1.0983 | 점 | 2024 |  |  | ",
           "key": "indicator+region+time+unit"
         },
@@ -2475,8 +2475,6 @@
           "title": "선택 발전소",
           "rows": [
             "데이터명: 발전소",
-            "발전원: 수력",
-            "설비용량: 1 MW",
             "자료연도: 2021",
             "출처: World Resources Institute",
             "지도 표시: 시설 점 · 위치 좌표"
@@ -2714,8 +2712,6 @@
           "title": "선택 시설·후보지",
           "rows": [
             "데이터명: CCS 시설·실증 및 후보지역",
-            "구분: CO2 주입(EOR)",
-            "단계: 완료(2011.6 주입, 2012.2 종료)",
             "자료연도: 2026",
             "출처: STADT(공개 1차 출처 정리)",
             "지도 표시: 시설·후보지 점 · 위치 좌표"
@@ -5352,7 +5348,7 @@
           {
             "control": "항목 선택",
             "from": "ETS 대상 시설 수 · 개소",
-            "to": "국가 크레딧 메커니즘 상태 · 상태",
+            "to": "국내 배출권거래제(ETS) 운영 상태 · 상태",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -9224,9 +9220,6 @@
           "title": "선택 광산",
           "rows": [
             "데이터명: 주요 광산",
-            "광종: 니켈",
-            "소재 성·시: Son La",
-            "기후기술 연계 근거: 이차전지 양극재 — 수송효율(전기차) 기술 소재",
             "자료연도: 2022",
             "출처: USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
             "지도 표시: 광산 점 · 위치 좌표"
@@ -11597,10 +11590,6 @@
           "title": "선택 사업",
           "rows": [
             "데이터명: 탄소크레딧 사업",
-            "등록제도: CDM",
-            "등록번호: CDM Ref 7956",
-            "소재 지역: Gia Lai",
-            "공식 원문: 공식 원문",
             "자료연도: 2026",
             "출처: UNFCCC — CDM Projects Interactive Map (projectsLocationAll.xml)",
             "지도 표시: 사업 점 · 위치 좌표"
@@ -14505,10 +14494,10 @@
       "cardValueVerified": true,
       "recomputed": {
         "status": "match",
-        "computed": 15,
-        "expected": 15,
+        "computed": 18,
+        "expected": 18,
         "expectedScale": null,
-        "rows": 15,
+        "rows": 18,
         "note": "entity rows"
       },
       "detailAnalysisFit": null,
@@ -14526,7 +14515,7 @@
         "pass": true,
         "headings": [
           "기관 분류별 기관 수",
-          "기관 디렉터리 · 15곳",
+          "기관 디렉터리 · 18곳",
           "Ministry of Natural Resources and Environment (MONRE)",
           "Institute of Energy"
         ]
@@ -14542,14 +14531,14 @@
         "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderHeadline": "15곳",
+        "finderHeadline": "18곳",
         "title": "CTCN 국가지정기구",
         "heading": "",
         "selectors": [
           "기관 구분 선택=전체"
         ],
         "url": "?view=data&element=ctcn-nde-guggajijeonggigu-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-focal-point-jigha&country=VNM&from=explorer",
-        "cardValue": "15곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 15곳",
+        "cardValue": "18곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 18곳",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -14564,15 +14553,15 @@
           "pass": true,
           "headings": [
             "기관 분류별 기관 수",
-            "기관 디렉터리 · 15곳",
+            "기관 디렉터리 · 18곳",
             "Ministry of Natural Resources and Environment (MONRE)",
             "Institute of Energy"
           ]
         },
         "table": {
           "status": "match",
-          "table": "상세 데이터 · 목록 15건",
-          "cell": "row count 15",
+          "table": "상세 데이터 · 목록 18건",
+          "cell": "row count 18",
           "key": "row-count"
         },
         "controls": [
@@ -14813,11 +14802,6 @@
           "title": "선택 기관",
           "rows": [
             "데이터명: 국제기구 현지사무소",
-            "사무소·프로그램: Viet Nam Resident Mission",
-            "도시: Hanoi",
-            "기관 유형: 다자개발은행",
-            "사무소 주소: 3rd Floor, Cornerstone Building, 16 Phan Chu Trinh Street, Cua Nam Ward, Ha Noi",
-            "사무소 상태: 현행",
             "자료연도: 2026",
             "출처: Asian Development Bank (ADB)",
             "지도 표시: 사무소 점(정밀도 표시) · 위치 좌표"
@@ -14971,10 +14955,6 @@
           "title": "선택 기관",
           "rows": [
             "데이터명: 대학·연구기관·NGO",
-            "전문 분야: 환경",
-            "도시: Ho Chi Minh City",
-            "기관 유형: 대학(학부)",
-            "연구·실행 역량: 2000년 설립. 환경과학·환경공학기술·자원환경관리 3개 전공, 교원 48명",
             "자료연도: 2026",
             "출처: 각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
             "지도 표시: 기관 점(정밀도 표시) · 위치 좌표"
@@ -15101,10 +15081,6 @@
           "title": "선택 기관",
           "rows": [
             "데이터명: 현지 투자자 네트워크",
-            "투자 분야: 지속가능농업·순환경제·폐기물·신에너지",
-            "베트남 내 거점 도시: Ho Chi Minh City",
-            "펀드·계열: Green Transition Fund",
-            "본부 국가: VNM",
             "자료연도: 2026",
             "출처: 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조)",
             "지도 표시: 거점 점(정밀도 표시) · 위치 좌표"
@@ -15486,7 +15462,7 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "GERD · 2011~2023년 추이"
+          "GERD · 2002~2023년 추이"
         ]
       },
       "controlsVerified": true,
@@ -15506,7 +15482,7 @@
           "연도 선택=2023"
         ],
         "url": "?view=data&element=unesco-uis-r-d-jicul-gerd-wipo-hyeogsinjisu-gii&country=VNM&from=explorer&measure=measure-6f94f67e75e4&year=2023",
-        "cardValue": "0.415 % = text-34:TR: GERD · GDP 대비 0.4146 % 2023 비교 자료 없음 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GERD · 2011~2023년 추이",
+        "cardValue": "0.415 % = text-38:TR: GERD · GDP 대비 0.4146 % 2023 비교 자료 없음 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GERD · 2002~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "line",
@@ -15525,12 +15501,12 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "GERD · 2011~2023년 추이"
+            "GERD · 2002~2023년 추이"
           ]
         },
         "table": {
           "status": "match",
-          "table": "차트에 사용한 값 · 2011~2023년 · 단위 %",
+          "table": "차트에 사용한 값 · 2002~2023년 · 단위 %",
           "cell": "GERD · GDP 대비 | 2023 | 0.4146 | %",
           "key": "indicator+region+time+unit"
         },
@@ -16218,10 +16194,6 @@
           "title": "선택 사업지",
           "rows": [
             "데이터명: 한국 기업 진출",
-            "업종·기술: 바이오매스 발전·옥상태양광·탄소크레딧",
-            "진출 상태: 존치",
-            "진출 형태: 합작투자 및 프로젝트 지분투자, 오프그리드 C&I 태양광 전력공급계약",
-            "설립·진출 연도: 1953 설립 / 2018 진출",
             "자료연도: 2026",
             "출처: 각 기업 공식 웹사이트(자료별 상이 —참조)",
             "지도 표시: 사업지 점(진출 상태·정밀도 표시) · 위치 좌표"
@@ -16339,9 +16311,6 @@
           "title": "선택 기관",
           "rows": [
             "데이터명: 한국 기관 사무소",
-            "담당 업무: 무상원조 ODA 총괄(보건·교육·농촌·기후환경)",
-            "도시: Hanoi",
-            "주소: 18F, Lotte Center Hanoi, 54 Lieu Giai Street, Ba Dinh District, Hanoi",
             "자료연도: 2026",
             "출처: 각 기관 공식 웹사이트(용역사 취합)",
             "지도 표시: 사무소 점(정밀도 표시) · 위치 좌표"

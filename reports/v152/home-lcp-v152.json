@@ -1,0 +1,146 @@
+{
+  "schema": "home-lcp-v152",
+  "generatedAt": "2026-09-24T00:08:14.726Z",
+  "runs": 5,
+  "results": {
+    "before": {
+      "build": ".\\tmp\\build-v152-before",
+      "medianLcpMs": 144,
+      "samples": [
+        {
+          "lcpMs": 164,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": null,
+          "jsBytes": 2212180,
+          "scripts": [
+            "168.c35b4bb3.chunk.js",
+            "334.f7cbf3b0.chunk.js",
+            "main.ab935773.js"
+          ]
+        },
+        {
+          "lcpMs": 136,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": null,
+          "jsBytes": 2212180,
+          "scripts": [
+            "168.c35b4bb3.chunk.js",
+            "334.f7cbf3b0.chunk.js",
+            "main.ab935773.js"
+          ]
+        },
+        {
+          "lcpMs": 144,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": null,
+          "jsBytes": 2212180,
+          "scripts": [
+            "168.c35b4bb3.chunk.js",
+            "334.f7cbf3b0.chunk.js",
+            "main.ab935773.js"
+          ]
+        },
+        {
+          "lcpMs": 140,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": null,
+          "jsBytes": 2212180,
+          "scripts": [
+            "168.c35b4bb3.chunk.js",
+            "334.f7cbf3b0.chunk.js",
+            "main.ab935773.js"
+          ]
+        },
+        {
+          "lcpMs": 148,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": null,
+          "jsBytes": 2212180,
+          "scripts": [
+            "168.c35b4bb3.chunk.js",
+            "334.f7cbf3b0.chunk.js",
+            "main.ab935773.js"
+          ]
+        }
+      ]
+    },
+    "after": {
+      "build": ".\\build",
+      "medianLcpMs": 144,
+      "samples": [
+        {
+          "lcpMs": 152,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": "static",
+          "jsBytes": 2228887,
+          "scripts": [
+            "762.72489b79.chunk.js",
+            "97.2933f668.chunk.js",
+            "main.55886e1f.js"
+          ]
+        },
+        {
+          "lcpMs": 160,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": "static",
+          "jsBytes": 2228887,
+          "scripts": [
+            "762.72489b79.chunk.js",
+            "97.2933f668.chunk.js",
+            "main.55886e1f.js"
+          ]
+        },
+        {
+          "lcpMs": 144,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": "static",
+          "jsBytes": 2228887,
+          "scripts": [
+            "762.72489b79.chunk.js",
+            "97.2933f668.chunk.js",
+            "main.55886e1f.js"
+          ]
+        },
+        {
+          "lcpMs": 140,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": "static",
+          "jsBytes": 2228887,
+          "scripts": [
+            "762.72489b79.chunk.js",
+            "97.2933f668.chunk.js",
+            "main.55886e1f.js"
+          ]
+        },
+        {
+          "lcpMs": 144,
+          "lcpElement": "H1.",
+          "engineLoaded": false,
+          "miniMapState": "static",
+          "jsBytes": 2228887,
+          "scripts": [
+            "762.72489b79.chunk.js",
+            "97.2933f668.chunk.js",
+            "main.55886e1f.js"
+          ]
+        }
+      ]
+    }
+  },
+  "summary": {
+    "medianBeforeMs": 144,
+    "medianAfterMs": 144,
+    "changePct": 0,
+    "withinBudget": true,
+    "engineLoadedWithoutIntent": false
+  }
+}

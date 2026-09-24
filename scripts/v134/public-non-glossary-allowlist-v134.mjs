@@ -355,6 +355,8 @@ const PUBLIC_LICENSE_IDENTIFIERS_V134 = Object.freeze([
   "BY-NC-SA-4.0",
   "BY-ND",
   "BY-ND-4.0-DE",
+  // V152: the map icon set's licence (Tabler Icons, MIT), named in the 이용안내 attribution.
+  "MIT",
 ]);
 
 const OFFICIAL_SOURCE_IDENTIFIERS_V134 = Object.freeze([

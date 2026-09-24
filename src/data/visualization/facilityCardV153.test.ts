@@ -54,6 +54,21 @@ test("E-006 cards separate a Vietnam office from a head office abroad", () => {
   expect(byKey(facilityCardRowsV153("E-006", patamar)).hq.value).toBe("USA");
 });
 
+test("C-025 card prints 미기재 for an unstated reduction, never 0", () => {
+  const entities = inflate(source("c-025")) as Record<string, unknown>[];
+  const key = "속성14_연간예상감축_tCO2e";
+  const unstated = entities.find((row) => {
+    const value = ((row.normalizedAttributes || {}) as Record<string, unknown>)[key];
+    return value === undefined || value === null || String(value).trim() === "";
+  })!;
+  const stated = entities.find((row) => Number(((row.normalizedAttributes || {}) as Record<string, unknown>)[key]) > 0)!;
+  expect(unstated).toBeDefined();
+  const missingScale = byKey(facilityCardRowsV153("C-025", unstated as never)).scale;
+  expect(missingScale.value).toBe("미기재");
+  expect(missingScale.missing).toBe(true);
+  expect(byKey(facilityCardRowsV153("C-025", stated as never)).scale.value).toMatch(/[1-9][\d,.]* tCO₂e\/년$/u);
+});
+
 test("every declared spec starts with 국가 and 명칭 and ends with 자료 출처", () => {
   for (const spec of Object.values(FACILITY_CARD_SPECS_V153)) {
     expect(spec.fields[0].label).toBe("국가");
