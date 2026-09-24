@@ -3,8 +3,9 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { parseHydroRowV142, mergeHydroRowsV142, hydroSeasonPairsV142 } from "./HydroStationObservationsV142";
+import { countryPublicDirV158 } from "../../../data/countryContext";
 
-const source = (id: string): VietnamEntityV124[] => JSON.parse(readFileSync(resolve(__dirname, `../../../../public/data/vietnam/v2/downloads/${id}.json`), "utf8")).entities;
+const source = (id: string): VietnamEntityV124[] => JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/${id}.json`), "utf8")).entities;
 
 describe("Hydro observations: keep source meaning and values", () => {
   it("compares two reviewed seasonal extreme pairs, never different years or shares", () => {

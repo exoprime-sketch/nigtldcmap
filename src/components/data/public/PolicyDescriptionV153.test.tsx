@@ -7,9 +7,10 @@ import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141";
 import { InitiativeDescriptionsV153, PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
+import { countryPublicDirV158 } from "../../../data/countryContext";
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
-const DATA = resolve(__dirname, "../../../../public/data/vietnam/v2/downloads");
+const DATA = resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads`);
 const entitiesOf = (elementId: string): VietnamEntityV124[] =>
   JSON.parse(readFileSync(resolve(DATA, `${elementId.toLowerCase()}.json`), "utf8")).entities;
 
