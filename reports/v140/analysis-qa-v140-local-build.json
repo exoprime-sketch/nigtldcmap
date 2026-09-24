@@ -1,19 +1,19 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:58604",
-    "generatedAt": "2026-09-22T04:51:57.623Z",
+    "base": "http://127.0.0.1:56574",
+    "generatedAt": "2026-09-24T01:48:42.057Z",
     "version": {
       "local": {
-        "cardSummaries": "6b20c6c308afcf32",
-        "cardGeneratedAt": "2026-09-22T00:31:35.080Z",
-        "sourceHash": "f741030d596ef713",
+        "cardSummaries": "5864396a0221ed61",
+        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
+        "sourceHash": "7468be0d991068a3",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "remote": {
-        "cardSummaries": "6b20c6c308afcf32",
-        "cardGeneratedAt": "2026-09-22T00:31:35.080Z",
+        "cardSummaries": "5864396a0221ed61",
+        "cardGeneratedAt": "2026-09-22T04:27:31.518Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
@@ -93,11 +93,11 @@
       "notApplicable": 111
     },
     "controlsVerified": {
-      "pass": 127,
-      "fail": 4,
-      "notApplicable": 21
+      "pass": 120,
+      "fail": 1,
+      "notApplicable": 31
     },
-    "controlsTried": 322,
+    "controlsTried": 256,
     "tableValuesVerified": {
       "pass": 130,
       "fail": 14,
@@ -114,8 +114,8 @@
       "fail": 0,
       "notApplicable": 111
     },
-    "withRemainingIssues": 41,
-    "requiredFailures": 42,
+    "withRemainingIssues": 38,
+    "requiredFailures": 39,
     "requiredFailureIds": [
       "A-006",
       "A-010",
@@ -124,7 +124,6 @@
       "A-016",
       "A-017",
       "A-022",
-      "A-024",
       "A-025",
       "A-027",
       "A-028",
@@ -133,7 +132,6 @@
       "A-031",
       "A-033",
       "B-001",
-      "B-012",
       "B-023",
       "B-024",
       "B-026",
@@ -144,7 +142,6 @@
       "C-005",
       "C-006",
       "C-011",
-      "C-012",
       "C-013",
       "C-014",
       "C-015",
@@ -2510,8 +2507,7 @@
         "selectors": [
           "자료 출처=WRI GPPD · 2021년",
           "발전원=전체 발전원",
-          "설비용량=전체 용량",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "설비용량=전체 용량"
         ],
         "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer",
         "cardValue": "41,350 MW = text-45:P: WRI 수록 발전소 설비용량 합계 41,350 MW · 2021년 · 236기 중 용량 기재 236기. 자료 출처 WRI GPPD · 2021년 OpenStreetMap · 2026년 추출 두 출처 함께 · 따로 집계 발전원 전체 발전원 가스 가스·석유 바이오매스 석유 석탄 수력 태양광",
@@ -2563,14 +2559,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Kon Dao",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (발전소)"
@@ -2613,7 +2601,7 @@
           "송전선 경로"
         ]
       },
-      "controlsVerified": false,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -2643,17 +2631,15 @@
         "pass": true,
         "missing": []
       },
-      "remainingIssue": [
-        "control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → 110 kV 선로 1)"
+      "remainingIssue": [],
+      "notApplicable": [
+        "controlsVerified: no selectable control in the primary analysis"
       ],
-      "notApplicable": [],
       "evidence": {
         "finderHeadline": "23,608 km",
         "title": "베트남 송전망",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=jeonryeogmang-wici-migonggeub-jiyeog&country=VNM&from=explorer&year=2016",
         "cardValue": "23,608 km = text-22:TR: 500 kV 32 4,092 17% 220 kV 143 7,201 31% 110 kV 431 12,314 52% 합계 606 23,608 100% World Bank ENERGYDATA.INFO 2016 송전망 · 구간 수와 구간 길이 합계 전압 구간 수 연장(km) 비중(연장 기준) ",
         "fit": "selectors, heading and KPI state the selection",
@@ -2679,16 +2665,6 @@
           "cell": "합계 | 606 | 23,608 | 100%",
           "key": "indicator+region+time+unit"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "110 kV 선로 1",
-            "changed": false,
-            "numbersChanged": false,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (베트남 송전망)"
       },
       "internalWording": null,
@@ -2729,7 +2705,7 @@
           "포집(Capture) 연구 (시멘트 생산 탈탄소화 CCS 연구)"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -2761,14 +2737,14 @@
         "card value 5 건 (건, 2026) not stated as such on the detail",
         "detail does not show the card's selection: year 2026 not shown; measure \"CCS 시설 수\" not named"
       ],
-      "notApplicable": [],
+      "notApplicable": [
+        "controlsVerified: no selectable control in the primary analysis"
+      ],
       "evidence": {
         "finderHeadline": "5 건",
         "title": "탄소포집·저장 시설",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026",
         "fit": "year 2026 not shown; measure \"CCS 시설 수\" not named",
         "analysisFit": {
@@ -2794,16 +2770,6 @@
           "cell": "CCS 시설 수 | 수록 CCS 시설·프로젝트 총 건수 |  | 5 | 건 | 2026 |  |  | ",
           "key": "indicator+region+time+unit"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Rang Dong 유전 CO2-EOR 파일럿",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (CCS(탄소포집·저장) 시설·실증 및 후보지역)"
       },
       "internalWording": null,
@@ -3792,12 +3758,14 @@
           "rows": [
             "데이터명: 연평균 기온·강수",
             "항목: 연평균 기온",
-            "값: 22.4",
+            "값: 28.05",
             "단위: °C",
             "자료연도: 2025",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 28.05 · Kiên Giang 28.05",
             "출처: World Bank CCKP (CRU TS 4.10) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -3821,10 +3789,7 @@
         "selectors": [
           "표시 항목 선택=연평균 기온 — °C",
           "지역 선택=63개 성·시 전체 분포",
-          "지역 비교연도=2025년",
-          "작은 지도 표시 항목=연평균 기온",
-          "작은 지도 기준시점=2025",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 비교연도=2025년"
         ],
         "url": "?view=data&element=yeonpyeonggyun-gion-yeonpyeonggyun-gangsu&country=VNM&from=explorer&year=2025&dim.regionMeasure=연평균_기온",
         "cardValue": "24.9 °C = text-46:TR: 전체 1901년 24.4 22.73 27.6 63 전체 2025년 24.9 23.08 28.13 63 전체 변화 1901→2025 +0.5 °C (중앙값 기준) 63 연평균 기온 (°C) · 1901~2025년 · 성·시 값의 분위 · 처음·마지막 연도와 변화 구분 기간 중앙값 10분위",
@@ -3882,30 +3847,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "연평균 기온",
-            "to": "연평균 최고기온",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2025",
-            "to": "1901",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (연평균 기온·강수)"
@@ -3965,12 +3906,14 @@
           "rows": [
             "데이터명: 미래기후 전망(CMIP6)",
             "항목: 연평균 기온 · SSP2-4.5",
-            "값: 22.85",
+            "값: 29.73",
             "단위: °C",
             "자료연도: 2100",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 30.02 · Kiên Giang 29.57",
             "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -3995,10 +3938,7 @@
           "표시 항목 선택=연평균 기온 — °C",
           "지역 선택=63개 성·시 전체 분포",
           "시나리오 선택=SSP2-4.5",
-          "지역 비교연도=2100년",
-          "작은 지도 표시 항목=연평균 기온 · SSP2-4.5",
-          "작은 지도 기준시점=2100",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 비교연도=2100년"
         ],
         "url": "?view=data&element=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso&country=VNM&from=explorer&year=2100&dim.regionMeasure=연평균_기온&dim.scenario=ssp245",
         "cardValue": "26.8 °C = text-46:TR: SSP2-4.5 2015년 24.83 21.84 28.16 63 SSP2-4.5 2100년 26.77 23.98 29.71 63 SSP2-4.5 변화 2015→2100 +1.94 °C (중앙값 기준) 63 연평균 기온 (°C) · 2015~2100년 · 성·시 값의 분위 · 처음·마지막",
@@ -4064,30 +4004,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "연평균 기온 · SSP2-4.5",
-            "to": "연평균 기온 · 과거 모형(historical)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2100",
-            "to": "2015",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (미래기후 전망(CMIP6))"
@@ -4147,12 +4063,14 @@
           "rows": [
             "데이터명: 가뭄",
             "항목: 연속 건조일수(CDD) · SSP2-4.5",
-            "값: 15.64",
+            "값: 24.93",
             "단위: 일",
             "자료연도: 2100",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 27.82 · Kiên Giang 23.28",
             "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -4177,10 +4095,7 @@
           "표시 항목 선택=연속 건조일수(CDD) — 일",
           "지역 선택=63개 성·시 전체 분포",
           "시나리오 선택=SSP2-4.5",
-          "지역 비교연도=2100년",
-          "작은 지도 표시 항목=연속 건조일수(CDD) · SSP2-4.5",
-          "작은 지도 기준시점=2100",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 비교연도=2100년"
         ],
         "url": "?view=data&element=gamum-yeonsog-geonjoilsu-cdd-pyojungangsujisu-spei12-toyangsubun&country=VNM&from=explorer&year=2100&dim.regionMeasure=연속_건조일수_CDD_일&dim.scenario=ssp245",
         "cardValue": "18.2 일 = text-47:TR: SSP2-4.5 2015년 20.33 13.62 41.2 63 SSP2-4.5 2100년 18.23 12.69 38.32 63 SSP2-4.5 변화 2015→2100 -2.1 일 (중앙값 기준) 63 연속 건조일수(CDD) (일) · 2015~2100년 · 성·시 값의 분위 · 처음·마",
@@ -4246,30 +4161,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "연속 건조일수(CDD) · SSP2-4.5",
-            "to": "연속 건조일수(CDD) · 과거 모형(historical)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2100",
-            "to": "2015",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (가뭄)"
@@ -4329,13 +4220,15 @@
           "rows": [
             "데이터명: 폭염",
             "항목: 폭염일수(최고기온 35°C 이상) · SSP2-4.5",
-            "값: 1.1",
+            "값: 45.26",
             "단위: 일",
             "자료연도: 2100",
             "값 해석: 일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 76.75 · Kiên Giang 27.33",
             "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -4360,10 +4253,7 @@
           "표시 항목 선택=폭염일수(최고기온 35°C 이상) — 일",
           "지역 선택=63개 성·시 전체 분포",
           "시나리오 선택=SSP2-4.5",
-          "지역 비교연도=2100년",
-          "작은 지도 표시 항목=폭염일수(최고기온 35°C 이상) · SSP2-4.5",
-          "작은 지도 기준시점=2100",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 비교연도=2100년"
         ],
         "url": "?view=data&element=pogyeom-pogyeomilsu-tx35-pogyeomilsu-tx40-yeoldaeya-tr20-yeoldaeya-tr25-heat-index-hi35&country=VNM&from=explorer&year=2100&dim.regionMeasure=폭염일수_TX_35_일&dim.scenario=ssp245",
         "cardValue": "33.3 일 = text-46:TR: SSP2-4.5 2015년 6.36 0.25 22.24 51 SSP2-4.5 2100년 33.31 5.8 84.43 63 SSP2-4.5 변화 2015→2100 +26.95 일 (중앙값 기준) 63 폭염일수(최고기온 35°C 이상) (일) · 2015~2100년 · 성·시 값의 분위 ·",
@@ -4429,30 +4319,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "폭염일수(최고기온 35°C 이상) · SSP2-4.5",
-            "to": "폭염일수(최고기온 35°C 이상) · 과거 모형(historical)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2100",
-            "to": "2015",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (폭염)"
@@ -4512,12 +4378,14 @@
           "rows": [
             "데이터명: 극한강수",
             "항목: 최대 1일 강수량(RX1day) · SSP2-4.5",
-            "값: 77.42",
+            "값: 37.18",
             "단위: mm",
             "자료연도: 2100",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 32.73 · Kiên Giang 39.71",
             "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -4542,10 +4410,7 @@
           "표시 항목 선택=최대 1일 강수량(RX1day) — mm",
           "지역 선택=63개 성·시 전체 분포",
           "시나리오 선택=SSP2-4.5",
-          "지역 비교연도=2100년",
-          "작은 지도 표시 항목=최대 1일 강수량(RX1day) · SSP2-4.5",
-          "작은 지도 기준시점=2100",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 비교연도=2100년"
         ],
         "url": "?view=data&element=hongsu-coedae-1il-gangsu-rx1day-coedae-5il-gangsu-rx5day-houilsu-r20mm-houilsu-r50mm-yeons&country=VNM&from=explorer&year=2100&dim.regionMeasure=최대_1일_강수_mm&dim.scenario=ssp245",
         "cardValue": "71.1 mm = text-46:TR: SSP2-4.5 2015년 59.07 35.2 86.44 63 SSP2-4.5 2100년 71.06 34.63 87.23 63 SSP2-4.5 변화 2015→2100 +11.99 mm (중앙값 기준) 63 최대 1일 강수량(RX1day) (mm) · 2015~2100년 · 성·시 값의 ",
@@ -4611,30 +4476,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "최대 1일 강수량(RX1day) · SSP2-4.5",
-            "to": "최대 1일 강수량(RX1day) · 과거 모형(historical)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2100",
-            "to": "2015",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (극한강수)"
@@ -4717,8 +4558,7 @@
         "heading": "",
         "selectors": [
           "관측소 선택=Đà Nẵng · 중부 — 다낭",
-          "분위 선택=중앙값(50분위)",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "분위 선택=중앙값(50분위)"
         ],
         "url": "?view=data&element=nasa-haesumyeon-sangseung-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&dim.scenario=SSP2-4.5",
         "cardValue": "0.63 m = text-8:TR: SSP1-1.9 2020년 0.06 2100년 0.46 +0.39 m SSP1-2.6 2020년 0.06 2100년 0.5 +0.44 m SSP2-4.5 2020년 0.06 2100년 0.63 +0.57 m SSP3-7.0 2020년 0.06 2100년 0.75 +0.69 m SSP5-",
@@ -4762,14 +4602,6 @@
             "control": "분위 선택",
             "from": "중앙값(50분위)",
             "to": "5분위",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Đà Nẵng",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -5143,7 +4975,7 @@
           "위치 살펴보기"
         ]
       },
-      "controlsVerified": false,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -5173,20 +5005,17 @@
         "pass": true,
         "missing": []
       },
-      "remainingIssue": [
-        "control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → Tropical cyclone)"
-      ],
+      "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "275건",
         "title": "재해·재난 이력",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=jaehae-jaenan-iryeog-em-dat&country=VNM&from=explorer",
         "cardValue": "275건 = analysis-0:HEADER: 유형별 재해 유형별 사건 수 · 275건",
         "analysisFit": {
@@ -5213,16 +5042,6 @@
           "cell": "row count 275",
           "key": "row-count"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Tropical cyclone",
-            "changed": false,
-            "numbersChanged": false,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (재해 이력)"
       },
       "internalWording": null,
@@ -6144,14 +5963,14 @@
           "rows": [
             "데이터명: 지역 취약성",
             "항목: GVI 취약성 지수 — 지역(6권역)",
-            "값: 44.7 / 100",
+            "값: 41.4 / 100",
             "단위: 0–100 지수",
             "자료연도: 2023",
             "값 해석: 높을수록 사회경제적 취약성이 큼",
-            "지역: Lai Châu",
-            "비교·공간단위: 동북부·서북부 권역의 값 · 개편 전 성·시 단위 독립값이 아님",
-            "자료 설명: Lai Châu의 개별 추정값이 아니라 동북부·서북부 권역의 값을 표시합니다.",
-            "권역 비교: 베트남 6개 권역 중 1위 · 현재 값이 큰 순서",
+            "지역: 중부고원",
+            "비교·공간단위: 중부고원 권역의 값 · 개편 전 성·시 단위 독립값이 아님",
+            "자료 설명: 중부고원의 개별 추정값이 아니라 중부고원 권역의 값을 표시합니다.",
+            "권역 비교: 베트남 6개 권역 중 2위 · 현재 값이 큰 순서",
             "출처: Global Data Lab GVI (Huisman et al., 2025)",
             "지도 표시: 권역 소속 성·시 경계(권역값 동일 표시) · 성·시 경계 값"
           ],
@@ -6180,10 +5999,7 @@
           "세부 분류 선택=국가",
           "분류 선택=전체",
           "연도 선택=2023",
-          "권역 비교 연도=2023년",
-          "작은 지도 표시 항목=GVI 취약성 지수 — 지역(6권역)",
-          "작은 지도 기준시점=2023",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "권역 비교 연도=2023년"
         ],
         "url": "?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-ab1a3ae58df4&year=2023&dim.detail=국가",
         "cardValue": "37.1 지수 = text-133:TR: GVI 취약성 지수 — 국가 37.1 지수 2023 -0.1 지수 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GVI 취약성 지수 · 2000~2023년 추이",
@@ -6256,30 +6072,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "GVI 취약성 지수 — 지역(6권역)",
-            "to": "구성지표 — 1인당 GNI(로그)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2023",
-            "to": "2000",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (지역 취약성)"
@@ -6438,7 +6230,7 @@
           "Kratie (Krâchéh) · 관측값 3건"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": false,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -6473,15 +6265,14 @@
       ],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "10건",
         "title": "건기/우기 유량 차이",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=geongi-ugi-yuryang-cai&country=VNM&from=explorer",
         "cardValue": "10건 = text-6:P: 끄우롱(메콩 델타) · 관측값 2건 8대 하천유역 관측 항목 값 단위 기준연도 비교 메콩델타 건기 유량 비중 10 % 2004 단일 관측값 메콩델타 우기 유량 비중 90 % 2009 단일 관측값",
         "analysisFit": {
@@ -6508,16 +6299,6 @@
           "reason": "no table states or holds 10 rows (2 rows, 3 rows, 4 rows, 11 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "끄우롱(메콩 델타)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (건기·우기 유량 차이)"
       },
       "internalWording": null,
@@ -6715,8 +6496,7 @@
         "title": "유역 면적",
         "heading": "",
         "selectors": [
-          "유역 면적 기준=전체 유역 면적(문헌)",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "유역 면적 기준=전체 유역 면적(문헌)"
         ],
         "url": "?view=data&element=yuyeog-myeonjeog&country=VNM&from=explorer",
         "cardValue": "86,253 km² = text-1:LI: 홍–타이빈 베트남 내 면적(GIS 산출) 86,253 km² 전체 유역 면적(문헌) 169,000 km²",
@@ -6750,14 +6530,6 @@
             "control": "유역 면적 기준",
             "from": "전체 유역 면적(문헌)",
             "to": "베트남 내 면적(문헌)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "홍–타이빈",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -7003,7 +6775,7 @@
           "홍–타이빈 · 관측값 2건"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": false,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -7040,15 +6812,14 @@
       ],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "15건",
         "title": "하천 유량",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=haceon-yuryang&country=VNM&from=explorer",
         "analysisFit": {
           "kind": "facts",
@@ -7074,16 +6845,6 @@
           "reason": "no table states or holds 15 rows (3 rows, 1 rows, 2 rows, 1 rows, 4 rows, 16 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Sơn Tây",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (하천유량)"
       },
       "internalWording": null,
@@ -7139,12 +6900,14 @@
           "rows": [
             "데이터명: 이탄지 면적(산림 유형별 면적 중)",
             "항목: 이탄지 면적 합계",
-            "값: 0",
+            "값: 406.8",
             "단위: km²",
             "자료연도: 2022",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 0 · Kiên Giang 406.8",
             "출처: Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7168,10 +6931,7 @@
         "selectors": [
           "표시 항목 선택=이탄지 면적 합계 — km²",
           "지역 선택=63개 성·시 전체 분포",
-          "전국 자료 항목=맹그로브 면적 · 1000 ha",
-          "작은 지도 표시 항목=이탄지 면적 합계",
-          "작은 지도 기준시점=2022",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "전국 자료 항목=맹그로브 면적 · 1000 ha"
         ],
         "url": "?view=data&element=sanrim-yuhyeongbyeol-myeonjeog-yeoldaeurim-maenggeurobeu-itanji-deung&country=VNM&from=explorer&dim.regionMeasure=이탄지_면적_합계_km",
         "cardValue": "884 km² = analysis-11:FIGCAPTION: 0 884.1 km² 회색: 자료 없음",
@@ -7224,22 +6984,6 @@
             "control": "전국 자료 항목",
             "from": "맹그로브 면적 · 1000 ha",
             "to": "습윤열대 1차림 면적(위성 기준) · ha",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "이탄지 면적 합계",
-            "to": "이탄 우세 면적",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
@@ -7299,12 +7043,14 @@
           "rows": [
             "데이터명: 산림 이득",
             "항목: 수관 이득(2000–2020 누적)",
-            "값: 16,043",
+            "값: 4,544",
             "단위: ha",
             "자료연도: 2000–2020",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 1,847 · Kiên Giang 2,697",
             "출처: Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7327,10 +7073,7 @@
         "heading": "",
         "selectors": [
           "표시 항목 선택=수관 이득(2000–2020 누적) — ha",
-          "지역 선택=63개 성·시 전체 분포",
-          "작은 지도 표시 항목=수관 이득(2000–2020 누적)",
-          "작은 지도 기준시점=2000–2020",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 선택=63개 성·시 전체 분포"
         ],
         "url": "?view=data&element=sanrim-ideug&country=VNM&from=explorer&dim.regionMeasure=이득_ha",
         "cardValue": "123,227 ha = analysis-7:FIGCAPTION: 596.9 123,227 ha 회색: 자료 없음",
@@ -7377,22 +7120,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "수관 이득(2000–2020 누적)",
-            "to": "수관 손실(2000–2020 누적)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (산림 이득)"
@@ -7449,12 +7176,14 @@
           "rows": [
             "데이터명: 산림 총면적",
             "항목: 성(省)별 수관 면적(2010)",
-            "값: 563,212",
+            "값: 145,569",
             "단위: ha",
             "자료연도: 2010",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 31,815 · Kiên Giang 113,754",
             "출처: Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen et al.(2013), UMD",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7477,10 +7206,7 @@
         "heading": "2000년 성·시별 비교 · Nghệ An 위치",
         "selectors": [
           "항목 선택=성(省)별 분석대상 면적 · ha",
-          "지역 선택=Nghệ An",
-          "작은 지도 표시 항목=성(省)별 수관 면적(2010)",
-          "작은 지도 기준시점=2010",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 선택=Nghệ An"
         ],
         "url": "?view=data&element=sanrim-cong-myeonjeog&country=VNM&from=explorer&measure=measure-8dab1a416248&year=2000&dim.detail=Nghệ+An",
         "cardValue": "165만 ha = text-0:LI: 1. Nghệ An 1,647,459",
@@ -7528,22 +7254,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "성(省)별 수관 면적(2010)",
-            "to": "성(省)별 분석대상 면적",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (산림 총면적)"
@@ -7599,12 +7309,14 @@
           "rows": [
             "데이터명: 수관 피복률",
             "항목: 성(省)별 수관 피복률 — 임계 30%",
-            "값: 61.7",
+            "값: 12.7",
             "단위: %",
             "자료연도: 2010",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 10.9 · Kiên Giang 13.8",
             "출처: Global Forest Watch / Hansen et al.(2013)",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7626,13 +7338,10 @@
         "title": "수관 피복률",
         "heading": "2010년 성·시별 비교 · Bắc Kạn 위치",
         "selectors": [
-          "지역 선택=Bắc Kạn",
-          "작은 지도 표시 항목=성(省)별 수관 피복률 — 임계 30%",
-          "작은 지도 기준시점=2010",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 선택=Bắc Kạn"
         ],
         "url": "?view=data&element=sugwan-pibogryul&country=VNM&from=explorer&measure=measure-15d5f8e7a89f&year=2010&dim.detail=Bắc+Kạn",
-        "cardValue": "85.1 % = analysis-5:FIGCAPTION: 0.1 85.1 % 회색: 자료 없음",
+        "cardValue": "85.1 % = text-45:P: 상위 15개 성·시와 선택 지역입니다. 전체 순위는 '전체 성·시 비교'에서 '표로 보기'로 확인할 수 있습니다. 보조 비교 2010년 성·시별 비교 · Bắc Kạn 위치 가로: 성(省)별 수관 피복률 세로: 성·시 단위: % 1. Bắc Kạn 85.1 2. Kon Tum 77.3 ",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial",
@@ -7668,14 +7377,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (수관 피복률)"
@@ -7733,12 +7434,14 @@
           "rows": [
             "데이터명: 연간 산림손실",
             "항목: 연간 수관 손실 — 성(省) 단위",
-            "값: 937.7",
+            "값: 223.9",
             "단위: ha",
             "자료연도: 2024",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 10.14 · Kiên Giang 213.8",
             "출처: Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD)",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7761,10 +7464,7 @@
         "heading": "2024년 성·시별 비교 · Quảng Ninh 위치",
         "selectors": [
           "지역 선택=Quảng Ninh",
-          "기준연도=2024년",
-          "작은 지도 표시 항목=연간 수관 손실 — 성(省) 단위",
-          "작은 지도 기준시점=2024",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "기준연도=2024년"
         ],
         "url": "?view=data&element=yeongan-sanrim-sonsil&country=VNM&from=explorer&measure=measure-3ac8acb37269&year=2024&dim.detail_2=Quảng+Ninh",
         "cardValue": "11,728 ha = analysis-5:FIGCAPTION: 0 11,728 ha 회색: 자료 없음",
@@ -7813,22 +7513,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2024",
-            "to": "2001",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (연간 산림손실)"
@@ -7885,12 +7569,14 @@
           "rows": [
             "데이터명: 산림 탄소",
             "항목: 산림탄소 순플럭스(연평균)",
-            "값: -822,213",
+            "값: -790,865",
             "단위: Mg CO2e/yr",
             "자료연도: 2001–2024",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang -327,911 · Kiên Giang -462,954",
             "출처: Global Forest Watch (Harris et al. 2021)",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -7914,10 +7600,7 @@
         "selectors": [
           "항목 선택=산림탄소 순플럭스(연평균) · Mg CO2e/yr",
           "지역 선택=Kon Tum",
-          "기간=2001–2024",
-          "작은 지도 표시 항목=산림탄소 순플럭스(연평균)",
-          "작은 지도 기준시점=2001–2024",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "기간=2001–2024"
         ],
         "url": "?view=data&element=tanso-jeojangryang&country=VNM&from=explorer&measure=measure-ef59b2b71a01&period=2001–2024&dim.detail=Kon+Tum",
         "cardValue": "292만 Mg CO2e/yr = analysis-6:FIGCAPTION: -3,261,471 2,923,480 Mg CO2e/yr 회색: 자료 없음",
@@ -7973,22 +7656,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "산림탄소 순플럭스(연평균)",
-            "to": "산림탄소 총배출(연평균)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (산림 탄소)"
@@ -8277,12 +7944,14 @@
           "rows": [
             "데이터명: 토지피복 분류별 면적",
             "항목: 경작지 면적",
-            "값: 327.7",
+            "값: 6,153",
             "단위: km²",
             "자료연도: 2021",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 2,575 · Kiên Giang 3,578",
             "출처: ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -8306,10 +7975,7 @@
         "selectors": [
           "표시 항목 선택=경작지 면적 — km²",
           "지역 선택=63개 성·시 전체 분포",
-          "전국 자료 항목=토지피복 면적 — 시가화지역(인공지표) · 1000 ha",
-          "작은 지도 표시 항목=경작지 면적",
-          "작은 지도 기준시점=2021",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "전국 자료 항목=토지피복 면적 — 시가화지역(인공지표) · 1000 ha"
         ],
         "url": "?view=data&element=tojipibog-bunryubyeol-myeonjeog-gyeongjagji-sanrim-coji-geonmul-suce-naji&country=VNM&from=explorer&dim.regionMeasure=경작지_면적_km",
         "cardValue": "3,578 km² = analysis-11:FIGCAPTION: 34.78 3,578 km² 회색: 자료 없음",
@@ -8362,22 +8028,6 @@
             "control": "전국 자료 항목",
             "from": "토지피복 면적 — 시가화지역(인공지표) · 1000 ha",
             "to": "토지피복 면적(CGLS) — 시가화지역(인공지표) · 1000 ha",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "경작지 면적",
-            "to": "수목 면적",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
@@ -8543,12 +8193,14 @@
           "rows": [
             "데이터명: 수력 이론 잠재량",
             "항목: 이론 총잠재량",
-            "값: 16,402",
+            "값: 58.09",
             "단위: GWh/년",
             "자료연도: 2017",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 8.03 · Kiên Giang 50.06",
             "출처: Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -8572,10 +8224,7 @@
         "selectors": [
           "표시 항목 선택=이론 총잠재량 — GWh/년",
           "지역 선택=63개 성·시 전체 분포",
-          "전국 자료 항목=연간 수력 발전량 — EI 계열 · TWh/yr",
-          "작은 지도 표시 항목=이론 총잠재량",
-          "작은 지도 기준시점=2017",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "전국 자료 항목=연간 수력 발전량 — EI 계열 · TWh/yr"
         ],
         "url": "?view=data&element=suryeog-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=이론_총잠재량_GWh_yr",
         "cardValue": "16,904 GWh/년 = analysis-11:FIGCAPTION: 1.44 16,904 GWh/년 회색: 자료 없음",
@@ -8628,22 +8277,6 @@
             "control": "전국 자료 항목",
             "from": "연간 수력 발전량 — EI 계열 · TWh/yr",
             "to": "연간 수력 발전량 — EIA 계열 · 십억 kWh/yr",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "이론 총잠재량",
-            "to": "전국 대비 비중",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
@@ -8704,12 +8337,14 @@
           "rows": [
             "데이터명: 지열 자원(심도별 지온)",
             "항목: 심도 2km 지온(평균)",
-            "값: 66.03",
+            "값: 84.78",
             "단위: °C",
             "자료연도: 2026",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 73.55 · Kiên Giang 91.17",
             "출처: IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -8733,10 +8368,7 @@
         "selectors": [
           "표시 항목 선택=심도 1km 지온(평균) — °C",
           "지역 선택=63개 성·시 전체 분포",
-          "전국 자료 항목=지열 발전량 — 실적(EIA) · 십억 kWh/yr",
-          "작은 지도 표시 항목=심도 1km 지온(평균)",
-          "작은 지도 기준시점=2026",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "전국 자료 항목=지열 발전량 — 실적(EIA) · 십억 kWh/yr"
         ],
         "url": "?view=data&element=jiyeol-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=심도_1km_지온_평균",
         "cardValue": "69.5 °C = analysis-11:FIGCAPTION: 42.29 69.49 °C 회색: 자료 없음",
@@ -8789,22 +8421,6 @@
             "control": "전국 자료 항목",
             "from": "지열 발전량 — 실적(EIA) · 십억 kWh/yr",
             "to": "지열 발전설비 용량 — 실적(EIA) · 백만 kW",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "심도 1km 지온(평균)",
-            "to": "심도 2km 지온(평균)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
@@ -8864,12 +8480,14 @@
           "rows": [
             "데이터명: 태양광 자원",
             "항목: 수평면 전일사량(GHI, 평균)",
-            "값: 3.77",
+            "값: 4.82",
             "단위: kWh/m²/일",
             "자료연도: 1999–2018 장기평균(LTA)",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 4.95 · Kiên Giang 4.74",
             "출처: Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -8892,10 +8510,7 @@
         "heading": "",
         "selectors": [
           "표시 항목 선택=수평면 전일사량(GHI, 평균) — kWh/m²/일",
-          "지역 선택=63개 성·시 전체 분포",
-          "작은 지도 표시 항목=수평면 전일사량(GHI, 평균)",
-          "작은 지도 기준시점=1999–2018 장기평균(LTA)",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 선택=63개 성·시 전체 분포"
         ],
         "url": "?view=data&element=taeyanggwang-gwanryeon-jipyo-ghi-dni&country=VNM&from=explorer&dim.regionMeasure=수평면_전일사량_GHI_평균",
         "cardValue": "5.23 kWh/m²/일 = analysis-7:FIGCAPTION: 3.34 5.23 kWh/m²/일 회색: 자료 없음",
@@ -8942,22 +8557,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "수평면 전일사량(GHI, 평균)",
-            "to": "직달 일사량(DNI, 평균)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (태양광 자원)"
@@ -9014,12 +8613,14 @@
           "rows": [
             "데이터명: 풍력 자원",
             "항목: 풍속 평균(고도 100m)",
-            "값: 2.54",
+            "값: 4.97",
             "단위: m/s",
             "자료연도: 2008–2017 장기평균(ERA5 기반)",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 4.82 · Kiên Giang 5.05",
             "출처: Global Wind Atlas 3.x",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -9042,10 +8643,7 @@
         "heading": "",
         "selectors": [
           "표시 항목 선택=풍속 평균(고도 100m) — m/s",
-          "지역 선택=63개 성·시 전체 분포",
-          "작은 지도 표시 항목=풍속 평균(고도 100m)",
-          "작은 지도 기준시점=2008–2017 장기평균(ERA5 기반)",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역 선택=63개 성·시 전체 분포"
         ],
         "url": "?view=data&element=pungryeog-jaweon-pungsog-eneojimildo&country=VNM&from=explorer&dim.regionMeasure=풍속_평균_m_s",
         "cardValue": "5.68 m/s = analysis-7:FIGCAPTION: 2.54 5.68 m/s 회색: 자료 없음",
@@ -9092,22 +8690,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "풍속 평균(고도 100m)",
-            "to": "풍속 상위 10%(고도 100m)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (풍력 자원)"
@@ -9633,7 +9215,7 @@
           "Binh Thuan"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -9665,15 +9247,14 @@
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "8곳",
         "title": "주요 광산 위치",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=juyo-gwangsan-wici&country=VNM&from=explorer",
         "cardValue": "8곳 = analysis-1:HEADER: 목록 상세 데이터 · 8건",
         "analysisFit": {
@@ -9701,16 +9282,6 @@
           "cell": "row count 8",
           "key": "row-count"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Ban Phuc",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (주요 광산)"
       },
       "internalWording": null,
@@ -10456,7 +10027,7 @@
           "지역별 분포"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": false,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -10469,8 +10040,10 @@
             "값: 원천 미제공",
             "단위: 건",
             "자료연도: 2021–2025",
-            "지역: Lai Châu",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -10488,17 +10061,14 @@
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "54건",
         "title": "기후변화 법·제도",
         "heading": "",
-        "selectors": [
-          "작은 지도 표시 항목=지방 기후 법제도 문서 수",
-          "작은 지도 기준시점=2021–2025",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=gihu-beobjedo-beobryeongmyeong-yuhyeong-beobryul-sihaengryeong-gyuje-insentibeu-daesang-bu&country=VNM&from=explorer",
         "cardValue": "54건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 54건 · 원천 182행을 문서 단위로 묶음 · 시행(발효)일 순 2005-07-01 전력법 28/2004/QH11 제정(국회 통과)·공포일 2004-12-03 Electricity Law 28/2004/QH11 (구법) 28/200",
         "analysisFit": {
@@ -10525,16 +10095,6 @@
           "reason": "no table states or holds 54 rows (182 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Đà Nẵng",
-            "changed": true,
-            "numbersChanged": false,
-            "subjectChanged": true
-          }
-        ],
         "map": "layer drawn as primary (기후 법제도(지방 문서))"
       },
       "internalWording": null,
@@ -10578,7 +10138,7 @@
           "지역별 분포"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": false,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -10591,8 +10151,10 @@
             "값: 원천 미제공",
             "단위: 건",
             "자료연도: 2021–2025",
-            "지역: Lai Châu",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -10610,17 +10172,14 @@
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "41건",
         "title": "환경 법·제도",
         "heading": "",
-        "selectors": [
-          "작은 지도 표시 항목=지방 환경 법제도 문서 수",
-          "작은 지도 기준시점=2021–2025",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=gita-hwangyeong-beobjedo-beobryeongmyeong-yuhyeong-eiabeob-daegijil-sujil-pyegimul-saengmu&country=VNM&from=explorer",
         "cardValue": "41건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 41건 · 원천 59행을 문서 단위로 묶음 · 시행(발효)일 순 2008 법률 2008.11.13 국회 제12기 통과·시행, 시행중, 소관 MONRE(MAE) 플랫폼 편집 설명 · 출처 1건 · 2026-09-22 확인 생물다양성법 ",
         "analysisFit": {
@@ -10647,16 +10206,6 @@
           "reason": "no table states or holds 41 rows (59 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Gia Lai",
-            "changed": true,
-            "numbersChanged": false,
-            "subjectChanged": true
-          }
-        ],
         "map": "layer drawn as primary (환경 법제도(지방 문서))"
       },
       "internalWording": null,
@@ -10786,7 +10335,7 @@
           "조달 방식(경쟁입찰 / 협상 / 지명) · 9건"
         ]
       },
-      "controlsVerified": false,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -10796,13 +10345,12 @@
           "rows": [
             "데이터명: PPP 사업 이력",
             "항목: PPP 사업 수(PPI 수록)",
-            "값: 5",
+            "값: 원천 미제공",
             "단위: 건",
             "자료연도: 1997–2024",
-            "지역: Lai Châu",
-            "비교·공간단위: Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님",
-            "자료 설명: Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다.",
-            "출처: 베트남 국회·정부 공보 / World Bank PPP Legal Framework",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
             "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
           ],
           "coverage": ""
@@ -10818,22 +10366,17 @@
         "pass": true,
         "missing": []
       },
-      "remainingIssue": [
-        "control without effect on the primary analysis: 작은 지도 지역·대상 선택 (지도 또는 목록에서 선택 → Bắc Ninh)"
-      ],
+      "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "120건",
         "title": "민관협력·조달 제도",
         "heading": "",
-        "selectors": [
-          "작은 지도 표시 항목=PPP 사업 수(PPI 수록)",
-          "작은 지도 기준시점=1997–2024",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer",
         "cardValue": "120건 = text-1:LI: 항목120건",
         "analysisFit": {
@@ -10861,16 +10404,6 @@
           "cell": "row count 120",
           "key": "row-count"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Bắc Ninh",
-            "changed": false,
-            "numbersChanged": false,
-            "subjectChanged": false
-          }
-        ],
         "map": "layer drawn as primary (PPP(민관협력) 사업 이력)"
       },
       "internalWording": null,
@@ -10925,7 +10458,9 @@
             "값: 원천 미제공",
             "단위: 건",
             "자료연도: 2014–2025",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
             "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
           ],
           "coverage": ""
@@ -10953,10 +10488,7 @@
         "title": "외국인 투자제도",
         "heading": "",
         "selectors": [
-          "자료 구분=전체",
-          "작은 지도 표시 항목=지역 특별 인센티브 근거 행 수",
-          "작은 지도 기준시점=2014–2025",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "자료 구분=전체"
         ],
         "url": "?view=data&element=oegugin-tuja-gyujeong-oegugin-jibun-jehan-tuja-insentibeu-seje-hyetaeg-gyeongjeteuggu-tuja&country=VNM&from=explorer",
         "analysisFit": {
@@ -10990,14 +10522,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Khánh Hòa",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
           }
         ],
         "map": "layer drawn as primary (외국인 투자 규정(지역 특별 인센티브))"
@@ -11224,12 +10748,14 @@
           "rows": [
             "데이터명: 재생에너지 지역계획",
             "항목: 옥상태양광(ĐMT mái nhà) 계획용량",
-            "값: 50",
+            "값: 100",
             "단위: MW",
             "자료연도: 2025-2030",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 50 · Kiên Giang 50",
             "출처: 베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -11255,10 +10781,7 @@
         "selectors": [
           "항목 선택=집중형 태양광(ĐMT tập trung) 계획용량 · MW",
           "지역 선택=전체 성·시 비교",
-          "기간=2025-2030",
-          "작은 지도 표시 항목=옥상태양광(ĐMT mái nhà) 계획용량",
-          "작은 지도 기준시점=2025-2030",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "기간=2025-2030"
         ],
         "url": "?view=data&element=jaesaengeneoji-balju-mic-hwagdae-gyehoeg-gugga-re-yongryang-mogpyo-ibcal-iljeong-yejeong-j&country=VNM&from=explorer&measure=measure-1f93f6946b11&period=2025-2030",
         "fit": "selectors, heading and KPI state the selection",
@@ -11308,30 +10831,6 @@
             "control": "기간",
             "from": "2025-2030",
             "to": "2031-2035",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "옥상태양광(ĐMT mái nhà) 계획용량",
-            "to": "바이오매스발전(điện sinh khối) 계획용량",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 기준시점",
-            "from": "2025-2030",
-            "to": "2031-2035",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Lai Châu",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -11590,10 +11089,7 @@
         "selectors": [
           "기준일=2026-08-10",
           "지역=전체 지역",
-          "자료 구분=전체",
-          "작은 지도 표시 항목=온실가스 인벤토리 의무 대상 시설 수",
-          "작은 지도 기준시점=2026",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "자료 구분=전체"
         ],
         "url": "?view=data&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&country=VNM&from=explorer",
         "cardValue": "479개소 = text-1:LI: Hồ Chí Minh 479  성·시별 시설 수 · 2026-08-10 · 개소",
@@ -11796,12 +11292,12 @@
           "rows": [
             "데이터명: 탄소시장 대상시설 업종 구성",
             "항목: 대상시설 수 — 공상(산업·무역)",
-            "값: 2",
+            "값: 7",
             "단위: 개",
             "자료연도: 2026",
-            "지역: Lai Châu",
-            "비교·공간단위: Lai Châu 개편 후 성·시의 값 · 개편 전 성·시 단위 독립값이 아님",
-            "자료 설명: Lai Châu은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다.",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 7 · Kiên Giang 7",
             "출처: Chính phủ / 베트남 정부 공보",
             "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
           ],
@@ -11827,10 +11323,7 @@
         "heading": "",
         "selectors": [
           "기준일=2026-08-10",
-          "지역=Hồ Chí Minh",
-          "작은 지도 표시 항목=대상시설 수 — 공상(산업·무역)",
-          "작은 지도 기준시점=2026",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "지역=Hồ Chí Minh"
         ],
         "url": "?view=data&element=tansosijang-junbido&country=VNM&from=explorer&dim.registryRegion=VN79",
         "cardValue": "479개소 = text-0:P: 법령에 수록된 34개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다. Hồ Chí Minh의 대상 시설은 479개소입니다. 기준일 2026-08-10 지역 전체 지역 Hồ Chí Minh Tây Ninh Đồng Nai Bắc Ninh Phú Thọ Hưng Yên N",
@@ -11866,22 +11359,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 표시 항목",
-            "from": "대상시설 수 — 공상(산업·무역)",
-            "to": "대상시설 수 — 교통운송",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "An Giang",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (탄소시장 대상시설 업종 구성)"
@@ -12002,8 +11479,10 @@
             "값: 원천 미제공",
             "단위: 참여 프로그램 수",
             "자료연도: 2022",
-            "지역: Lai Châu",
-            "지도 표시: 성·시 경계(개편 전 63) · 성·시 경계 값"
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
+            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
           ],
           "coverage": ""
         },
@@ -12030,10 +11509,7 @@
         "title": "산림전용 방지 및 산림보전(REDD+)",
         "heading": "",
         "selectors": [
-          "자료 구분=전체",
-          "작은 지도 표시 항목=FCPF ERPA(북중부 6개 성) 참여",
-          "작은 지도 기준시점=2022",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "자료 구분=전체"
         ],
         "url": "?view=data&element=redd-hyeonhwang-redd-jeonryag-surib-yeobu-frel-jecul-yeobu-frel-jeculnyeon-gyeolgwagibanji&country=VNM&from=explorer",
         "analysisFit": {
@@ -12064,14 +11540,6 @@
             "control": "자료 구분",
             "from": "전체",
             "to": "FREL 제출",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Hà Tĩnh",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
@@ -12162,8 +11630,7 @@
         "selectors": [
           "상태 선택=전체",
           "연도=전체 기간",
-          "등록 표준·분야=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "등록 표준·분야=전체"
         ],
         "url": "?view=data&element=tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&country=VNM&from=explorer",
         "cardValue": "388건 = text-0:P: 검색어 연도 전체 기간 2025년 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2009년 등록 표준·분야 전체 ART TREES CDM GCC Gold Standard J",
@@ -12216,14 +11683,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Dak Srong 3A Hydr",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (탄소크레딧 사업)"
@@ -12976,10 +12435,13 @@
           "rows": [
             "데이터명: 지역 기후예산",
             "항목: 성 단위 기후변화 지출 누계",
-            "값: 원천 미제공",
+            "값: 179,000,000,000",
             "단위: VND",
             "자료연도: 2010-2013",
-            "지역: Lai Châu",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
+            "구성 성·시: 2개 중 1개 값 있음 · 부분 결측 — An Giang 179,000,000,000 · Kiên Giang 결측",
+            "출처: United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
             "지도 표시: 성·시 경계(3개, 나머지 미표시) · 성·시 경계 값"
           ],
           "coverage": ""
@@ -13005,10 +12467,7 @@
           "항목 선택=주관 부처별 기후 예산 규모 · %",
           "세부 분류 선택=전체",
           "연도 선택=2020",
-          "주관 부처별 기후 예산 규모 % 정렬=자료 순서",
-          "작은 지도 표시 항목=성 단위 기후변화 지출 누계",
-          "작은 지도 기준시점=2010-2013",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "주관 부처별 기후 예산 규모 % 정렬=자료 순서"
         ],
         "url": "?view=data&element=jugwan-buceobyeol-gihu-yesan-gyumo&country=VNM&from=explorer&measure=measure-1658538c67b4&year=2020",
         "cardValue": "80 % = text-0:STRONG: 단위: % 정렬 자료 순서 높은 값부터 낮은 값부터 가로: 주관 부처별 기후 예산 규모 세로: 부처 단위: % 5개 부처 기후예산 비중 18 % 6개 부처 기후지출 비중 상한(max) 38 % 6개 부처 기후지출 비중 하한(min) 26 % MARD+MOT 합산 비중(CPEIR 2015",
@@ -13068,14 +12527,6 @@
             "control": "주관 부처별 기후 예산 규모 % 정렬",
             "from": "자료 순서",
             "to": "높은 값부터",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Quảng Nam",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
@@ -14113,8 +13564,7 @@
           "분류 선택=전체",
           "세부 분류 선택=전체",
           "연도=전체 기간",
-          "분야·기금=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "분야·기금=전체"
         ],
         "url": "?view=data&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&country=VNM&from=explorer&measure=measure-2aa34c218045",
         "cardValue": "1,135만 USD = text-1:TR: Adaptation Fund 프로젝트 · 승인액 합계 — 전 사업 승인액 단순합 23,244,067 USD 미기재 Adaptation Fund 프로젝트 · 집행액 합계 — 전 사업 집행액 단순합 10,503,442 USD 미기재 Adaptation Fund 프로젝트 · 베트남 단독사업 ",
@@ -14186,14 +13636,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Mekong EbA South: Enhancing Climate Resi",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (적응기금 사업)"
@@ -15407,8 +14849,7 @@
           "자료 상태 선택=전체",
           "연락 유형 선택=전체",
           "기관 유형 선택=전체",
-          "상태 선택=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "상태 선택=전체"
         ],
         "url": "?view=data&element=gugjegigu-hyeonjisamuso-damdangja-gigwanmyeong-undp-unep-unido-fao-wb-adb-giz-jica-koica-d&country=VNM&from=explorer",
         "cardValue": "17곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 17곳",
@@ -15476,14 +14917,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "ADB",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (국제기구 현지사무소)"
@@ -15570,8 +15003,7 @@
         "heading": "",
         "selectors": [
           "도시 선택=전체",
-          "기관 유형 선택=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "기관 유형 선택=전체"
         ],
         "url": "?view=data&element=daehag-yeongugigwan-ngo-gigwanmyeong-gigwan-yuhyeong-daehag-yeonguso-singkeutaengkeu-ngo-s&country=VNM&from=explorer",
         "cardValue": "20곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 20곳",
@@ -15616,14 +15048,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Faculty of Environment, University of Sc",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (대학·연구기관·NGO(비정부기구))"
@@ -15668,7 +15092,7 @@
           "위치 살펴보기"
         ]
       },
-      "controlsVerified": true,
+      "controlsVerified": null,
       "tableValuesVerified": true,
       "mapHandoffVerified": true,
       "mapSymbolVerified": {
@@ -15701,15 +15125,14 @@
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "15곳",
         "title": "현지 투자자 네트워크",
         "heading": "",
-        "selectors": [
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
-        ],
+        "selectors": [],
         "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer",
         "cardValue": "15곳 = text-0:P: 기관 수 15곳 가운데 베트남에 사무소를 둔 8곳은 도시 단위로 지도에 표시하고, 본부만 확인되는 7곳은 베트남 투자 실적이 있는 해외 소재 기관으로 따로 둡니다. 기관을 누르면 카드가 열립니다. 기관 수15곳 베트남 소재 · 지도 표시8곳 해외 소재(베트남 투자 실적)7곳 도시별 기관",
         "analysisFit": {
@@ -15736,16 +15159,6 @@
           "cell": "row count 15",
           "key": "row-count"
         },
-        "controls": [
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "Touchstone Partners",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          }
-        ],
         "map": "layer drawn as primary (현지 투자자 네트워크)"
       },
       "internalWording": null,
@@ -16836,8 +16249,7 @@
         "title": "한국 기업의 현지 진출",
         "heading": "",
         "selectors": [
-          "업종·진출형태=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "업종·진출형태=전체"
         ],
         "url": "?view=data&element=gugnae-gieob-gaedogug-jincul-gieobmyeong-jinculgug-eobjong-re-eneojihyoyul-pyegimul-suceor&country=VNM&from=explorer",
         "cardValue": "24곳 = text-0:P: 전체 자료 · 수록 기업 24건 / 전체 24건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 업종·진출형태 전체 바이오매스 발전·옥상태양광·탄소크레딧 산림탄소(REDD+) 수처리 수처리(산업폐수·하수) 수처리(하수처리시설) 에너지효율(가스복합화력) 에너지효율(전력기기·배전반)",
@@ -16875,14 +16287,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "LX인터내셔널 (LX International)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (한국 기업 진출)"
@@ -16965,8 +16369,7 @@
         "title": "한국 기관 현지사무소",
         "heading": "",
         "selectors": [
-          "도시 선택=전체",
-          "작은 지도 지역·대상 선택=지도 또는 목록에서 선택"
+          "도시 선택=전체"
         ],
         "url": "?view=data&element=hangug-gigwan-samuso-gigwanmyeong-kotramuyeoggwan-koicasamuso-eneojigongdan-kepco-hansuweo&country=VNM&from=explorer",
         "cardValue": "6곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 6곳",
@@ -17002,14 +16405,6 @@
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": true
-          },
-          {
-            "control": "작은 지도 지역·대상 선택",
-            "from": "지도 또는 목록에서 선택",
-            "to": "KOICA 베트남사무소",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
           }
         ],
         "map": "layer drawn as primary (한국 기관 사무소)"
