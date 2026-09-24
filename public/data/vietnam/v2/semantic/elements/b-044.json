@@ -1,28 +1,23 @@
 {
   "dimensions": [
     {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "데이터 접근 체계"
+      ]
+    },
+    {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 19,
+      "valueCount": 6,
       "values": [
         "구리",
-        "납-아연",
         "니켈",
         "리튬",
         "망간",
-        "보크사이트",
-        "안티모니",
-        "인광석",
-        "인광석(아파타이트)",
-        "주석",
-        "철",
         "코발트",
-        "크로마이트",
-        "텅스텐",
-        "티타늄광물",
-        "티타늄광물(미가공)",
-        "형석",
-        "흑연",
         "희토류"
       ]
     },
@@ -37,8 +32,9 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 2,
       "values": [
+        "2024",
         "2026"
       ]
     }
@@ -46,8 +42,32 @@
   "elementId": "B-044",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 26,
+  "indicatorCount": 27,
   "indicators": [
+    {
+      "axisGroupKey": "measure-2c845545edf8|상태",
+      "dimensionLabels": {
+        "category": "데이터 접근 체계"
+      },
+      "dimensions": {
+        "category": "데이터 접근 체계"
+      },
+      "displayLabel": "핵심광물 법·데이터 접근 체계",
+      "indicatorId": "B-044_critical_mineral_legal_framework",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c845545edf8",
+        "labelKo": "핵심광물 법",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-2c845545edf8|상태|category=데이터 접근 체계|B-044_critical_mineral_legal_framework",
+      "sourceCaveat": null,
+      "sourceLabel": "핵심광물 법·데이터 접근 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-befc79f3731c|해당 여부",
       "dimensionLabels": {
@@ -874,7 +894,7 @@
       "indicatorCount": 1,
       "key": "measure-4b0020774e59",
       "labelKo": "10개국 기준광물 목록",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "other"
     },
@@ -882,15 +902,23 @@
       "indicatorCount": 7,
       "key": "measure-befc79f3731c",
       "labelKo": "원광 수출규제 대상 광종",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "해당 여부",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2c845545edf8",
+      "labelKo": "핵심광물 법",
+      "recordCount": 1,
+      "unit": "상태",
       "unitFamily": "text"
     },
     {
       "indicatorCount": 17,
       "key": "measure-796bc07af80c",
       "labelKo": "핵심광물 부존 상태",
-      "recordCount": 17,
+      "recordCount": 6,
       "unit": "상태",
       "unitFamily": "text"
     },
@@ -898,12 +926,12 @@
       "indicatorCount": 1,
       "key": "measure-a316b3573a2e",
       "labelKo": "현지조사 결과 반영",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 26,
+  "observationCount": 7,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

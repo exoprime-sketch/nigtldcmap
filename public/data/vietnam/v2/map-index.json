@@ -227,16 +227,6 @@
       "totalEntityCount": 1963,
       "unit": "source-provided location",
       "zeroImputationCount": 0,
-      "analysisItemLabel": "발전소 위치·발전원",
-      "countNoun": "곳",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "시설 좌표(WRI GPPD·OSM)",
-        "displaySpatialUnit": "시설 점",
-        "limitation": "WRI·OSM 동일시설은 원천 ID·명칭·좌표로 후보만 표시하고 자동 통합하지 않음. 용량은 값이 있는 475건만 합산 가능.",
-        "evidence": "원천 좌표 1,889건(WRI 236 + OSM 1,653); 좌표 없는 74행 미표시",
-        "representativeItem": "발전소 위치 1,889곳"
-      },
-      "periodLabel": "WRI GPPD 2021 · OSM 2026 추출",
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
         "kind": "none",
@@ -248,6 +238,16 @@
         "located": 1870,
         "outside": 19,
         "withoutCoordinate": 74
+      },
+      "analysisItemLabel": "발전소 위치·발전원",
+      "countNoun": "곳",
+      "periodLabel": "WRI GPPD 2021 · OSM 2026 추출",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "시설 좌표(WRI GPPD·OSM)",
+        "displaySpatialUnit": "시설 점",
+        "limitation": "WRI·OSM 동일시설은 원천 ID·명칭·좌표로 후보만 표시하고 자동 통합하지 않음. 용량은 값이 있는 475건만 합산 가능.",
+        "evidence": "원천 좌표 1,889건(WRI 236 + OSM 1,653); 좌표 없는 74행 미표시",
+        "representativeItem": "발전소 위치 1,889곳"
       }
     },
     {
@@ -421,18 +421,18 @@
       "totalEntityCount": 722,
       "unit": "kV · km",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "선로 구간 geometry(World Bank 2016)",
         "displaySpatialUnit": "선로",
         "limitation": "선로 교차는 전기적 접속을 뜻하지 않음. 변전소·접속 정보는 원천에 없음.",
         "evidence": "지도 606구간은 World Bank 2016 geometry, 상세 722행은 PDP8 계획선로 116행 포함",
         "representativeItem": "송전 선로 606구간"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "none",
-        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -440,7 +440,7 @@
       "detailElementId": "A-025",
       "detailUrl": "/?element=a-025&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 6,
+      "downloadableRecordCount": 2,
       "elementId": "A-025",
       "label": "CCS 시설·실증 및 후보지역",
       "licenses": [
@@ -481,9 +481,9 @@
       },
       "cluster": false,
       "coordinateMeaning": "verified-physical-site",
-      "displayedCoordinateCount": 3,
+      "displayedCoordinateCount": 1,
       "enabled": true,
-      "featureCount": 3,
+      "featureCount": 1,
       "factFields": [
         {
           "key": "facilityType",
@@ -491,8 +491,8 @@
           "sources": [
             "type"
           ],
-          "recordCount": 3,
-          "filledRecordCount": 3,
+          "recordCount": 1,
+          "filledRecordCount": 1,
           "filterable": true
         },
         {
@@ -501,32 +501,22 @@
           "sources": [
             "field_b25998a0"
           ],
-          "recordCount": 3,
-          "filledRecordCount": 3
+          "recordCount": 1,
+          "filledRecordCount": 1
         }
       ],
       "fieldLabels": {
         "facilityType": "구분",
         "stage": "단계"
       },
-      "filters": [
-        {
-          "field": "type",
-          "label": "구분",
-          "values": [
-            "고농도 CO2 가스전(CO2 분리·재주입 잠재)",
-            "지중 저장 후보(Storage)",
-            "CO2 주입(EOR)"
-          ]
-        }
-      ],
+      "filters": [],
       "geometryTypes": [
         "point"
       ],
       "join": {
         "failures": [],
-        "matchedCount": 3,
-        "requiredCount": 3
+        "matchedCount": 1,
+        "requiredCount": 1
       },
       "latestYear": "2026",
       "layerId": "vnm-v138-a-025",
@@ -556,9 +546,9 @@
           }
         ]
       },
-      "sourceCoordinateCount": 3,
+      "sourceCoordinateCount": 1,
       "sourceYear": "2026",
-      "spatialCoverage": "시설·후보지 점 3건",
+      "spatialCoverage": "시설·후보지 점 1건",
       "spatialLimitation": "연구·타당성 2건은 위치 없음(지도 미표시). 저장 후보 광구는 운영시설이 아니라 후보 구역의 대표점.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
@@ -566,7 +556,7 @@
         "facilityType",
         "stage"
       ],
-      "totalEntityCount": 5,
+      "totalEntityCount": 1,
       "unit": "source-provided location",
       "countNoun": "건",
       "analysisItemLabel": "CCS 시설·실증·후보지",
@@ -574,12 +564,12 @@
         "key": "facilityType",
         "approxPattern": "후보|잠재"
       },
-      "memberRowCount": 3,
+      "memberRowCount": 1,
       "locationsUrl": "/data/vietnam/v2/spatial/locations/a-025.json",
       "locationCounts": {
-        "located": 0,
-        "outside": 3,
-        "withoutCoordinate": 2
+        "located": 1,
+        "outside": 0,
+        "withoutCoordinate": 0
       },
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
@@ -593,7 +583,7 @@
       "detailElementId": "B-003",
       "detailUrl": "/?element=b-003&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 8371,
+      "downloadableRecordCount": 12621,
       "elementId": "B-003",
       "label": "연평균 기온·강수",
       "licenses": [
@@ -5716,18 +5706,18 @@
       "totalEntityCount": 21672,
       "unit": "지수",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "six-region-only",
+        "note": "GDL 6개 권역 값을 권역 경계에 표시하며 행정경계 기준과 무관합니다.",
+        "valueSystem": "gdl-six-region"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "GDL 6개 권역",
         "displaySpatialUnit": "권역 소속 성·시 경계(권역값 동일 표시)",
         "limitation": "성·시별 독립 추정값이 아님.",
         "evidence": "6개 권역값을 명시적 소속표로 63개 경계에 표시",
         "representativeItem": "GVI 종합지수 2023"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "six-region-only",
-        "note": "GDL 6개 권역 값을 권역 경계에 표시하며 행정경계 기준과 무관합니다.",
-        "valueSystem": "gdl-six-region"
       }
     },
     {
@@ -6346,7 +6336,7 @@
       "detailElementId": "B-029",
       "detailUrl": "/?element=b-029&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 231,
+      "downloadableRecordCount": 289,
       "elementId": "B-029",
       "label": "산림 유형별 면적",
       "licenses": [
@@ -6493,7 +6483,7 @@
       "detailElementId": "B-030",
       "detailUrl": "/?element=b-030&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 100,
+      "downloadableRecordCount": 134,
       "elementId": "B-030",
       "label": "산림 이득",
       "licenses": [
@@ -6771,18 +6761,18 @@
       "totalEntityCount": 189,
       "unit": "ha",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "기본 항목은 분석대상 국토면적이 아니라 수관 면적.",
         "evidence": "성·시 63개 값(GFW, 임계 30%)",
         "representativeItem": "성·시별 수관 면적 2010"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "sum",
-        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -6881,18 +6871,18 @@
       "totalEntityCount": 63,
       "unit": "%",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "분모는 성별 분석대상 면적, 임계 피복률 30%.",
         "evidence": "성·시 63개 값",
         "representativeItem": "성·시별 수관 피복률 2010"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "area-weighted-mean",
-        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -7035,18 +7025,18 @@
       "totalEntityCount": 1489,
       "unit": "ha",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "지역 선택 시 해당 성·시 2001–2024 추이 표시.",
         "evidence": "성·시 63개 × 24개 연도(1,489값)",
         "representativeItem": "성·시별 연간 수관 손실 2024"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "sum",
-        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -7186,18 +7176,18 @@
       "totalEntityCount": 315,
       "unit": "Mg CO2e/yr",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "저장량(재고)과 연간 플럭스는 단위와 시점이 달라 같은 축에 두지 않음.",
         "evidence": "성·시 63개 × 5 지표",
         "representativeItem": "성·시별 지상부 탄소저장량"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "sum",
-        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -7205,7 +7195,7 @@
       "detailElementId": "B-037",
       "detailUrl": "/?element=b-037&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 747,
+      "downloadableRecordCount": 781,
       "elementId": "B-037",
       "label": "토지피복 분류별 면적",
       "licenses": [
@@ -7419,7 +7409,7 @@
       "detailElementId": "B-039",
       "detailUrl": "/?element=b-039&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 228,
+      "downloadableRecordCount": 263,
       "elementId": "B-039",
       "label": "수력 잠재량",
       "licenses": [
@@ -7572,7 +7562,7 @@
       "detailElementId": "B-040",
       "detailUrl": "/?element=b-040&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 165,
+      "downloadableRecordCount": 199,
       "elementId": "B-040",
       "label": "지열 자원",
       "licenses": [
@@ -7744,7 +7734,7 @@
       "detailElementId": "B-041",
       "detailUrl": "/?element=b-041&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 113,
+      "downloadableRecordCount": 147,
       "elementId": "B-041",
       "label": "태양광 자원",
       "licenses": [
@@ -7896,7 +7886,7 @@
       "detailElementId": "B-042",
       "detailUrl": "/?element=b-042&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 205,
+      "downloadableRecordCount": 242,
       "elementId": "B-042",
       "label": "풍력 자원",
       "licenses": [
@@ -8074,58 +8064,68 @@
       "defaultPrimary": false,
       "detailElementId": "B-048",
       "detailUrl": "/?element=b-048&country=VNM#element-detail",
-      "displayedCoordinateCount": 2,
+      "displayedCoordinateCount": 4,
       "downloadStatus": "available",
       "downloadableRecordCount": 18,
       "elementId": "B-048",
       "enabled": true,
       "factFields": [
         {
-          "filledRecordCount": 2,
+          "filledRecordCount": 4,
           "filterable": true,
           "key": "mineral",
           "label": "광종",
-          "recordCount": 2,
+          "recordCount": 4,
           "sources": [
             "광종"
           ]
         },
         {
-          "filledRecordCount": 2,
+          "filledRecordCount": 4,
           "filterable": true,
           "key": "regionName",
           "label": "소재 성·시",
-          "recordCount": 2,
+          "recordCount": 4,
           "sources": [
             "소재_행정구역_성"
           ]
         },
         {
-          "filledRecordCount": 2,
+          "filledRecordCount": 4,
           "key": "climateTechBasis",
           "label": "기후기술 연계 근거",
-          "recordCount": 2,
+          "recordCount": 4,
           "sources": [
             "기후기술_연계_근거"
           ]
         },
         {
           "filledRecordCount": 2,
+          "key": "siteNote",
+          "label": "특이사항",
+          "recordCount": 4,
+          "sources": [
+            "특이사항"
+          ]
+        },
+        {
+          "filledRecordCount": 4,
           "key": "coordinateBasis",
           "label": "좌표 산출근거",
-          "recordCount": 2,
+          "recordCount": 4,
           "sources": [
             "좌표_산출근거"
           ]
         }
       ],
       "fakeGeometryCount": 0,
-      "featureCount": 2,
+      "featureCount": 4,
       "fieldLabels": {
         "climateTechBasis": "기후기술 연계 근거",
         "coordinateBasis": "좌표 산출근거",
         "mineral": "광종",
-        "regionName": "소재 성·시"
+        "regionName": "소재 성·시",
+        "siteNote": "특이사항"
       },
       "filters": [
         {
@@ -8133,15 +8133,19 @@
           "label": "광종",
           "values": [
             "구리",
-            "니켈"
+            "니켈",
+            "보크사이트/알루미나",
+            "텅스텐(+형석·비스무트·구리)"
           ]
         },
         {
           "field": "regionName",
           "label": "소재 성·시",
           "values": [
+            "Lam Dong",
             "Lao Cai",
-            "Son La"
+            "Son La",
+            "Thai Nguyen"
           ]
         }
       ],
@@ -8150,8 +8154,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 2,
-        "requiredCount": 2
+        "matchedCount": 4,
+        "requiredCount": 4
       },
       "label": "주요 광산",
       "latestYear": 2022,
@@ -8193,13 +8197,13 @@
         ]
       },
       "source": "USGS MRDS (Mineral Resources Data System) · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
-      "sourceCoordinateCount": 2,
+      "sourceCoordinateCount": 4,
       "sourceOrganizations": [
         "USGS MRDS (Mineral Resources Data System)",
         "USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS"
       ],
       "sourceYear": 2022,
-      "spatialCoverage": "출처 좌표가 있는 2개 피처",
+      "spatialCoverage": "출처 좌표가 있는 4개 피처",
       "spatialLimitation": "공개 좌표가 검증된 주요 광산 2곳만 표시합니다.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
@@ -8207,20 +8211,12 @@
         "mineral",
         "regionName",
         "climateTechBasis",
+        "siteNote",
         "coordinateBasis"
       ],
       "totalEntityCount": 8,
       "unit": "source-provided location",
       "zeroImputationCount": 0,
-      "analysisItemLabel": "광산 위치·광종",
-      "countNoun": "곳",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "광산 좌표(USGS MRDS)",
-        "displaySpatialUnit": "광산 점",
-        "limitation": "지도는 좌표가 검증된 2곳만 표시. 나머지 6곳은 상세 목록에서 광종·지역 제공.",
-        "evidence": "좌표 검증 2곳(전체 목록 8곳)",
-        "representativeItem": "Bản Phúc 니켈 광산"
-      },
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
         "kind": "none",
@@ -8229,9 +8225,18 @@
       },
       "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
       "locationCounts": {
-        "located": 2,
+        "located": 4,
         "outside": 0,
-        "withoutCoordinate": 6
+        "withoutCoordinate": 4
+      },
+      "analysisItemLabel": "광산 위치·광종",
+      "countNoun": "곳",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "광산 좌표(USGS MRDS)",
+        "displaySpatialUnit": "광산 점",
+        "limitation": "지도는 좌표가 검증된 2곳만 표시. 나머지 6곳은 상세 목록에서 광종·지역 제공.",
+        "evidence": "좌표 검증 2곳(전체 목록 8곳)",
+        "representativeItem": "Bản Phúc 니켈 광산"
       }
     },
     {
@@ -9160,18 +9165,18 @@
       "totalEntityCount": 639,
       "unit": "MW",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "성·시(총리 결정 768/QĐ-TTg 부속표)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
         "limitation": "원문 0(계획 없음)과 미제공을 구분. 목표·추가·기존 용량은 기술 라벨로 구분.",
         "evidence": "지역 관측 639건",
         "representativeItem": "성·시별 태양광 계획용량 2030"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "sum",
-        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -9679,121 +9684,36 @@
       "defaultPrimary": false,
       "detailElementId": "C-025",
       "detailUrl": "/?element=c-025&country=VNM#element-detail",
-      "displayedCoordinateCount": 262,
+      "displayedCoordinateCount": 1118,
       "downloadStatus": "available",
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
-      "factFields": [
-        {
-          "filledRecordCount": 261,
-          "filterable": true,
-          "key": "technologyField",
-          "label": "기술분야",
-          "recordCount": 262,
-          "sources": [
-            "속성6_분류"
-          ]
-        },
-        {
-          "filledRecordCount": 47,
-          "key": "creditingPeriod",
-          "label": "크레딧 기간",
-          "recordCount": 262,
-          "sources": [
-            "속성17_크레딧기간"
-          ]
-        },
-        {
-          "filledRecordCount": 262,
-          "filterable": true,
-          "key": "regionName",
-          "label": "소재 지역",
-          "recordCount": 262,
-          "sources": [
-            "속성21_지역_현행",
-            "속성20_지역_원문"
-          ]
-        },
-        {
-          "filledRecordCount": 47,
-          "key": "annualReduction",
-          "label": "연간 예상감축량",
-          "recordCount": 262,
-          "sources": [
-            "속성14_연간예상감축_tCO2e"
-          ],
-          "unit": "tCO2e"
-        },
-        {
-          "filledRecordCount": 262,
-          "key": "officialSource",
-          "label": "공식 원문",
-          "recordCount": 262,
-          "sources": [
-            "속성19_원문URL"
-          ]
-        }
-      ],
       "fakeGeometryCount": 0,
-      "featureCount": 262,
-      "fieldLabels": {
-        "annualReduction": "연간 예상감축량",
-        "creditingPeriod": "크레딧 기간",
-        "officialSource": "공식 원문",
-        "regionName": "소재 지역",
-        "technologyField": "기술분야"
-      },
+      "featureCount": 1118,
       "filters": [
+        {
+          "field": "standard",
+          "label": "표준",
+          "values": [
+            "Gold Standard"
+          ]
+        },
         {
           "field": "technologyField",
           "label": "기술분야",
           "values": [
-            "CTIS-01 태양광 기술",
             "CTIS-03 풍력 기술",
             "CTIS-05 수력 기술",
-            "CTIS-08 바이오에너지 기술",
-            "CTIS-15 폐자원 기술",
-            "CTIS-17 산업효율 기술",
-            "CTIS-19 건물효율 기술",
-            "CTIS-34 농축수산 부문 기술"
+            "CTIS-08 바이오에너지 기술"
           ]
         },
         {
-          "field": "regionName",
-          "label": "소재 지역",
+          "field": "status",
+          "label": "상태",
           "values": [
-            "An Giang",
-            "Bac Ninh",
-            "Ca Mau",
-            "Can Tho city",
-            "Cao Bang",
-            "Da Nang city",
-            "Dak Lak",
-            "Dien Bien",
-            "Dong Nai",
-            "Dong Thap",
-            "Gia Lai",
-            "Ha Noi",
-            "Ha Tinh",
-            "Ho Chi Minh city",
-            "Hue",
-            "Khanh Hoa",
-            "Lai Chau",
-            "Lam Dong",
-            "Lang Son",
-            "Lao Cai",
-            "Nghe An",
-            "Ninh Binh",
-            "Phu Tho",
-            "Quang Ngai",
-            "Quang Tri",
-            "Son La",
-            "Tay Ninh",
-            "Thai Nguyen",
-            "Thanh Hoa",
-            "Tuyen Quang",
-            "Vinh Long"
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT"
           ]
         }
       ],
@@ -9802,8 +9722,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 262,
-        "requiredCount": 262
+        "matchedCount": 1118,
+        "requiredCount": 1118
       },
       "label": "탄소크레딧 사업",
       "latestYear": 2026,
@@ -9848,7 +9768,7 @@
         ]
       },
       "source": "Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry",
-      "sourceCoordinateCount": 262,
+      "sourceCoordinateCount": 1118,
       "sourceOrganizations": [
         "Global Carbon Council (GCC)",
         "UNFCCC CDM Insights",
@@ -9856,29 +9776,20 @@
         "Verra VCS Registry · Gold Standard Registry"
       ],
       "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 262개 피처",
+      "spatialCoverage": "출처 좌표가 있는 1,118개 피처",
       "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
       "spatialScopeType": "project-site",
       "tooltipFields": [
         "name",
+        "standard",
         "technologyField",
-        "creditingPeriod",
-        "regionName",
+        "status",
         "annualReduction",
-        "officialSource"
+        "creditingPeriod"
       ],
       "totalEntityCount": 146,
       "unit": "source-provided location",
       "zeroImputationCount": 0,
-      "analysisItemLabel": "사업 위치·유형",
-      "countNoun": "건",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "사업 좌표(등록부·지오코딩)",
-        "displaySpatialUnit": "사업 점",
-        "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원천 ID로만 판단.",
-        "evidence": "좌표 있는 262건(전체 388행; 발행 거래 행은 사업 수에 포함하지 않음)",
-        "representativeItem": "검증된 사업 위치 262건"
-      },
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
         "kind": "none",
@@ -9887,9 +9798,18 @@
       },
       "locationsUrl": "/data/vietnam/v2/spatial/locations/c-025.json",
       "locationCounts": {
-        "located": 261,
+        "located": 1117,
         "outside": 1,
-        "withoutCoordinate": 126
+        "withoutCoordinate": 72
+      },
+      "analysisItemLabel": "사업 위치·유형",
+      "countNoun": "건",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "사업 좌표(등록부·지오코딩)",
+        "displaySpatialUnit": "사업 점",
+        "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원천 ID로만 판단.",
+        "evidence": "좌표 있는 262건(전체 388행; 발행 거래 행은 사업 수에 포함하지 않음)",
+        "representativeItem": "검증된 사업 위치 262건"
       }
     },
     {
@@ -9997,18 +9917,18 @@
       "totalEntityCount": 3,
       "unit": "VND",
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "자료가 있는 3개 성·시",
         "displaySpatialUnit": "성·시 경계(3개, 나머지 미표시)",
         "limitation": "전국·부처·3개 성 값은 분리. 나머지 60개 성·시는 0이 아니라 미제공.",
         "evidence": "3개 성 값",
         "representativeItem": "Bắc Ninh 등 3개 성 기후지출"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "sum",
-        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -10128,18 +10048,18 @@
       "unit": "사업 범위·세부 활동지역",
       "verifiedActivitySiteFeatureCount": 2,
       "zeroImputationCount": 0,
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "검증된 활동지역 점 · 참여국 범위",
         "displaySpatialUnit": "활동지역 점 · 참여국 범위",
         "limitation": "지역사업 승인금액은 베트남 배분액이 아님. 사업 수와 활동지·참여범위 수는 다른 수.",
         "evidence": "사업 4건(활동지 2, 참여국 범위 2)",
         "representativeItem": "메콩 EbA 지역사업"
-      },
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "none",
-        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
-        "valueSystem": "pre-2025-63"
       }
     },
     {
@@ -10488,7 +10408,7 @@
             "intlCoop"
           ],
           "recordCount": 20,
-          "filledRecordCount": 18
+          "filledRecordCount": 20
         },
         {
           "key": "locationPrecision",
@@ -11192,7 +11112,7 @@
       }
     }
   ],
-  "mapFeatureCount": 4463,
+  "mapFeatureCount": 5319,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {

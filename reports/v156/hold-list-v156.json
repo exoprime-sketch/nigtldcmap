@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "v156",
+  "generatedAt": "2026-09-24T04:01:17Z",
+  "delivery": {
+    "directory": "베트남데이터/20260922",
+    "deliveredAt": "2026-09-22"
+  },
+  "totals": {
+    "adoptedWorkbooks": 106,
+    "held": 39,
+    "carriedFromPreviousDelivery": 39,
+    "stagedWorkbooks": 145
+  },
+  "reasonGroups": {
+    "structure": {
+      "elementIds": [
+        "A-013",
+        "A-023",
+        "A-028",
+        "B-002",
+        "B-005",
+        "B-024",
+        "B-031",
+        "B-032",
+        "B-033",
+        "B-034",
+        "B-035",
+        "B-036",
+        "C-016",
+        "D-018",
+        "E-008"
+      ],
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    "coverage-drop": {
+      "elementIds": [
+        "B-043",
+        "C-002",
+        "C-004",
+        "C-008",
+        "C-009",
+        "C-010",
+        "C-014",
+        "C-018"
+      ],
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    "indicator-id-scheme": {
+      "elementIds": [
+        "E-012"
+      ],
+      "detail": "지표 ID에 _nat 접미가 추가되어 build_semantic_v125의 e012_decode_id가 해독 실패(90→229개)"
+    },
+    "file-size-limit": {
+      "elementIds": [
+        "B-004",
+        "B-006",
+        "B-007"
+      ],
+      "detail": "downloads JSON이 142~153 MB로 커져 GitHub 파일당 100 MB 한도 초과"
+    },
+    "map-contract-break": {
+      "elementIds": [
+        "C-012",
+        "C-013",
+        "C-019",
+        "C-022",
+        "C-024"
+      ],
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    "reviewed-baseline-mismatch": {
+      "elementIds": [
+        "A-026",
+        "B-023",
+        "B-046",
+        "B-047",
+        "C-011",
+        "E-018",
+        "B-028"
+      ],
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    }
+  },
+  "held": [
+    {
+      "elementId": "A-013",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "A-023",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "A-026",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "A-028",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-002",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-004",
+      "reason": "file-size-limit",
+      "detail": "downloads JSON이 142~153 MB로 커져 GitHub 파일당 100 MB 한도 초과"
+    },
+    {
+      "elementId": "B-005",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-006",
+      "reason": "file-size-limit",
+      "detail": "downloads JSON이 142~153 MB로 커져 GitHub 파일당 100 MB 한도 초과"
+    },
+    {
+      "elementId": "B-007",
+      "reason": "file-size-limit",
+      "detail": "downloads JSON이 142~153 MB로 커져 GitHub 파일당 100 MB 한도 초과"
+    },
+    {
+      "elementId": "B-023",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "B-024",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-028",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "B-031",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-032",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-033",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-034",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-035",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-036",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "B-043",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "B-046",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "B-047",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "C-002",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-004",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-008",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-009",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-010",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-011",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    },
+    {
+      "elementId": "C-012",
+      "reason": "map-contract-break",
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    {
+      "elementId": "C-013",
+      "reason": "map-contract-break",
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    {
+      "elementId": "C-014",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-016",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "C-018",
+      "reason": "coverage-drop",
+      "detail": "ETL promotionBlocker MATERIAL_COVERAGE_DROP — 공개 행이 이전 대비 절반 미만"
+    },
+    {
+      "elementId": "C-019",
+      "reason": "map-contract-break",
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    {
+      "elementId": "C-022",
+      "reason": "map-contract-break",
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    {
+      "elementId": "C-024",
+      "reason": "map-contract-break",
+      "detail": "지표 ID 재편으로 지도 선언 변수가 사라져 detailMapSelectionV148이 미선언 변수를 고름(mapPresentationV148 실패)"
+    },
+    {
+      "elementId": "D-018",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "E-008",
+      "reason": "structure",
+      "detail": "관측행이 개체행으로 바뀌거나 그레인(임계·원인·시나리오)이 늘어 현행 렌더러·계약이 읽지 못함"
+    },
+    {
+      "elementId": "E-012",
+      "reason": "indicator-id-scheme",
+      "detail": "지표 ID에 _nat 접미가 추가되어 build_semantic_v125의 e012_decode_id가 해독 실패(90→229개)"
+    },
+    {
+      "elementId": "E-018",
+      "reason": "reviewed-baseline-mismatch",
+      "detail": "검토 내용을 고정한 단위 테스트와 불일치 — 기대값을 임의로 바꾸지 않고 내용 재검토 후 채택 예정"
+    }
+  ],
+  "unclassified": [],
+  "notHeldButListed": []
+}

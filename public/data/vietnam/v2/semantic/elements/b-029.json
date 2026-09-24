@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-029",
-  "entityCount": 231,
+  "entityCount": 289,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 11,
+  "indicatorCount": 12,
   "indicators": [
     {
       "axisGroupKey": "measure-0473db465754|1000 ha / ha",
@@ -231,6 +231,26 @@
       "sourceProvenance": {}
     },
     {
+      "axisGroupKey": "measure-9f5aa96fe609|km² / 1000 ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "이탄지 면적(성 단위 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-029_peatland_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9f5aa96fe609",
+        "labelKo": "이탄지 면적(성 단위 개체 목록) - 2025년 34개 체계",
+        "unit": "km² / 1000 ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-9f5aa96fe609|km² / 1000 ha||B-029_peatland_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "이탄지 면적(성 단위 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-d6fbee3cc540|1000 ha",
       "dimensionLabels": {
         "detail": "모자이크 포함(상한)"
@@ -382,6 +402,14 @@
       "indicatorCount": 1,
       "key": "measure-9ef6d84f95c0",
       "labelKo": "이탄지 면적(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "km² / 1000 ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9f5aa96fe609",
+      "labelKo": "이탄지 면적(성 단위 개체 목록) - 2025년 34개 체계",
       "recordCount": 0,
       "unit": "km² / 1000 ha",
       "unitFamily": "area"

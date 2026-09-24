@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-041",
-  "entityCount": 113,
+  "entityCount": 147,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 52,
+  "indicatorCount": 53,
   "indicators": [
     {
       "axisGroupKey": "measure-d4ea24d651b9|kWh/m²/day",
@@ -1509,41 +1509,61 @@
       }
     },
     {
-      "axisGroupKey": "measure-72caa322d086|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
+      "axisGroupKey": "measure-dee802079812|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "태양광 자원(성 단위 개체 목록)",
+      "displayLabel": "태양광 자원(성 단위 개체 목록) (기준연도 2018)",
       "indicatorId": "B-041_solar_adm1",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-72caa322d086",
-        "labelKo": "태양광 자원(성 단위 개체 목록)",
+        "key": "measure-dee802079812",
+        "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018)",
         "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
         "unitFamily": "energy"
       },
-      "seriesKey": "measure-72caa322d086|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃||B-041_solar_adm1",
+      "seriesKey": "measure-dee802079812|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃||B-041_solar_adm1",
       "sourceCaveat": null,
-      "sourceLabel": "태양광 자원(성 단위 개체 목록)",
+      "sourceLabel": "태양광 자원(성 단위 개체 목록) (기준연도 2018)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-0050bff3bdd1|지표별 상이(속성 열 참조)",
+      "axisGroupKey": "measure-a88b6c506a19|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "태양광 자원(전국)",
+      "displayLabel": "태양광 자원(성 단위 개체 목록) (기준연도 2018) - 2025년 34개 체계",
+      "indicatorId": "B-041_solar_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a88b6c506a19",
+        "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018) - 2025년 34개 체계",
+        "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-a88b6c506a19|GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃||B-041_solar_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "태양광 자원(성 단위 개체 목록) (기준연도 2018) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-36d52b7b9c7f|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "태양광 자원(전국) (기준연도 2018)",
       "indicatorId": "B-041_solar_national",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0050bff3bdd1",
-        "labelKo": "태양광 자원(전국)",
+        "key": "measure-36d52b7b9c7f",
+        "labelKo": "태양광 자원(전국) (기준연도 2018)",
         "unit": "지표별 상이(속성 열 참조)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-0050bff3bdd1|지표별 상이(속성 열 참조)||B-041_solar_national",
+      "seriesKey": "measure-36d52b7b9c7f|지표별 상이(속성 열 참조)||B-041_solar_national",
       "sourceCaveat": null,
-      "sourceLabel": "태양광 자원(전국)",
+      "sourceLabel": "태양광 자원(전국) (기준연도 2018)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1792,16 +1812,24 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-72caa322d086",
-      "labelKo": "태양광 자원(성 단위 개체 목록)",
+      "key": "measure-dee802079812",
+      "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018)",
       "recordCount": 0,
       "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
       "unitFamily": "energy"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-0050bff3bdd1",
-      "labelKo": "태양광 자원(전국)",
+      "key": "measure-a88b6c506a19",
+      "labelKo": "태양광 자원(성 단위 개체 목록) (기준연도 2018) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "GHI·DNI kWh/m²/일 · PVOUT kWh/kWp/일 · OPTA ° · TEMP ℃",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-36d52b7b9c7f",
+      "labelKo": "태양광 자원(전국) (기준연도 2018)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

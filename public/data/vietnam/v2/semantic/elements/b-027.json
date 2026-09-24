@@ -1,6 +1,14 @@
 {
   "dimensions": [
     {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "함양량"
+      ]
+    },
+    {
       "key": "detail",
       "labelKo": "세부 분류",
       "valueCount": 1,
@@ -91,25 +99,27 @@
       }
     },
     {
-      "axisGroupKey": "measure-34f4236b35f8|mm/yr 또는 10⁹ m³/yr",
+      "axisGroupKey": "measure-8aad19dca623|mm/yr 또는 10⁹ m³/yr",
       "dimensionLabels": {
+        "category": "함양량",
         "detail": "격자/대수층 단위(GIS)"
       },
       "dimensions": {
+        "category": "함양량",
         "detail": "격자/대수층 단위(GIS)"
       },
-      "displayLabel": "지하수 잠재량 — 격자/대수층 단위(GIS)",
+      "displayLabel": "지하수 자원량·함양량 — 격자/대수층 단위(GIS)",
       "indicatorId": "B-027_gw_gis",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-34f4236b35f8",
-        "labelKo": "지하수 잠재량",
+        "key": "measure-8aad19dca623",
+        "labelKo": "지하수 자원량",
         "unit": "mm/yr 또는 10⁹ m³/yr",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-34f4236b35f8|mm/yr 또는 10⁹ m³/yr|detail=격자/대수층 단위(GIS)|B-027_gw_gis",
+      "seriesKey": "measure-8aad19dca623|mm/yr 또는 10⁹ m³/yr|category=함양량|detail=격자/대수층 단위(GIS)|B-027_gw_gis",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin)·대수층 단위 산출 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
-      "sourceLabel": "지하수 잠재량 — 격자/대수층 단위(GIS)",
+      "sourceLabel": "지하수 자원량·함양량 — 격자/대수층 단위(GIS)",
       "sourceLabelEn": "Groundwater potential (gridded/aquifer)",
       "sourceNote": "2026년: GIS 원천 검토 완료·수집 미착수 — 절차 확정 후 진행",
       "sourceProvenance": {
@@ -162,8 +172,8 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-34f4236b35f8",
-      "labelKo": "지하수 잠재량",
+      "key": "measure-8aad19dca623",
+      "labelKo": "지하수 자원량",
       "recordCount": 1,
       "unit": "mm/yr 또는 10⁹ m³/yr",
       "unitFamily": "other"

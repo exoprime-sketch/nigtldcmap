@@ -10,10 +10,30 @@
     }
   ],
   "elementId": "B-017",
-  "entityCount": 2032,
+  "entityCount": 4867,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 1423,
+  "indicatorCount": 1424,
   "indicators": [
+    {
+      "axisGroupKey": "measure-9bc614c69ab6|점",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "물 스트레스(행정구역 순위표)",
+      "indicatorId": "B-017_adm1_ranking",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9bc614c69ab6",
+        "labelKo": "물 스트레스(행정구역 순위표)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-9bc614c69ab6|점||B-017_adm1_ranking",
+      "sourceCaveat": null,
+      "sourceLabel": "물 스트레스(행정구역 순위표)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-b6ac53aeb8d1|비율 / 점수(0~5) / 등급",
       "dimensionLabels": {},
@@ -48392,6 +48412,14 @@
       "labelKo": "물 스트레스(전국 순위표)",
       "recordCount": 0,
       "unit": "점수(0~5) / 순위",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9bc614c69ab6",
+      "labelKo": "물 스트레스(행정구역 순위표)",
+      "recordCount": 0,
+      "unit": "점",
       "unitFamily": "score"
     },
     {

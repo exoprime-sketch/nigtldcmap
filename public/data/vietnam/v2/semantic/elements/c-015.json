@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-015",
-  "entityCount": 21,
+  "entityCount": 33,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 26,
+  "indicatorCount": 23,
   "indicators": [
     {
       "axisGroupKey": "measure-1a8991448f45|—",
@@ -119,101 +119,41 @@
       }
     },
     {
-      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "axisGroupKey": "measure-66521843c1ba|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_datafiles_chinhphu",
-      "indicatorId": "C-015_policy_document_link_datafiles_chinhphu",
+      "displayLabel": "재생에너지 법제도 원본 링크 · field_survey",
+      "indicatorId": "C-015_field_survey",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-f9effe27b94e",
-        "labelKo": "상기 문서들의 원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
+        "key": "measure-66521843c1ba",
+        "labelKo": "재생에너지 법제도 원본 링크",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_datafiles_chinhphu",
+      "seriesKey": "measure-66521843c1ba|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-015_field_survey",
       "sourceCaveat": null,
-      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabel": "재생에너지 법제도 원본 링크",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-f9effe27b94e|URL",
+      "axisGroupKey": "measure-66521843c1ba|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_datafiles_chinhphu_2",
-      "indicatorId": "C-015_policy_document_link_datafiles_chinhphu_2",
+      "displayLabel": "재생에너지 법제도 원본 링크 · policy_document",
+      "indicatorId": "C-015_policy_document",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-f9effe27b94e",
-        "labelKo": "상기 문서들의 원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
+        "key": "measure-66521843c1ba",
+        "labelKo": "재생에너지 법제도 원본 링크",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_datafiles_chinhphu_2",
+      "seriesKey": "measure-66521843c1ba|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-015_policy_document",
       "sourceCaveat": null,
-      "sourceLabel": "상기 문서들의 원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f9effe27b94e|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_erea",
-      "indicatorId": "C-015_policy_document_link_erea",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f9effe27b94e",
-        "labelKo": "상기 문서들의 원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_erea",
-      "sourceCaveat": null,
-      "sourceLabel": "상기 문서들의 원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f9effe27b94e|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_moit",
-      "indicatorId": "C-015_policy_document_link_moit",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f9effe27b94e",
-        "labelKo": "상기 문서들의 원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_moit",
-      "sourceCaveat": null,
-      "sourceLabel": "상기 문서들의 원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f9effe27b94e|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상기 문서들의 원본 링크(URL) · policy_document_link_vanban_chinhphu",
-      "indicatorId": "C-015_policy_document_link_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f9effe27b94e",
-        "labelKo": "상기 문서들의 원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f9effe27b94e|URL||C-015_policy_document_link_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "상기 문서들의 원본 링크(URL)",
+      "sourceLabel": "재생에너지 법제도 원본 링크",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -865,12 +805,12 @@
   ],
   "measures": [
     {
-      "indicatorCount": 5,
-      "key": "measure-f9effe27b94e",
-      "labelKo": "상기 문서들의 원본 링크(URL)",
+      "indicatorCount": 2,
+      "key": "measure-66521843c1ba",
+      "labelKo": "재생에너지 법제도 원본 링크",
       "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 18,

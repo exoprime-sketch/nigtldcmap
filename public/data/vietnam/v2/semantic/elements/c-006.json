@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-006",
-  "entityCount": 50,
+  "entityCount": 29,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 62,
+  "indicatorCount": 50,
   "indicators": [
     {
       "axisGroupKey": "measure-8568e50a527a|건",
@@ -809,161 +809,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-997be4df1a98|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 양자 협정 승인 기관(Authorization Body) · authorization_body_a6partnership",
-      "indicatorId": "C-006_authorization_body_a6partnership",
+      "axisGroupKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "dimensions": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · bilateral_agreement",
+      "indicatorId": "C-006_bilateral_agreement",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-997be4df1a98",
-        "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
-        "unit": "URL",
-        "unitFamily": "text"
+        "key": "measure-afccc533d2a6",
+        "labelKo": "파리협정 제6.2조",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-997be4df1a98|URL||C-006_authorization_body_a6partnership",
+      "seriesKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_bilateral_agreement",
       "sourceCaveat": null,
-      "sourceLabel": "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-997be4df1a98|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 양자 협정 승인 기관(Authorization Body) · authorization_body_baochinhphu",
-      "indicatorId": "C-006_authorization_body_baochinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-997be4df1a98",
-        "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-997be4df1a98|URL||C-006_authorization_body_baochinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-997be4df1a98|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 양자 협정 승인 기관(Authorization Body) · authorization_body_vanban_chinhphu",
-      "indicatorId": "C-006_authorization_body_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-997be4df1a98",
-        "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-997be4df1a98|URL||C-006_authorization_body_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-997be4df1a98|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 양자 협정 승인 기관(Authorization Body) · authorization_body_vanban_chinhphu_2",
-      "indicatorId": "C-006_authorization_body_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-997be4df1a98",
-        "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-997be4df1a98|URL||C-006_authorization_body_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a8ad970c05ca|체결일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "체결 일자",
-      "indicatorId": "C-006_bilateral_date",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a8ad970c05ca",
-        "labelKo": "체결 일자",
-        "unit": "체결일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a8ad970c05ca|체결일||C-006_bilateral_date",
-      "sourceCaveat": null,
-      "sourceLabel": "체결 일자",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-90427fa0ff19|국가",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 양자 협정 체결국",
-      "indicatorId": "C-006_bilateral_party",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-90427fa0ff19",
-        "labelKo": "ITMO 양자 협정 체결국",
-        "unit": "국가",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-90427fa0ff19|국가||C-006_bilateral_party",
-      "sourceCaveat": null,
-      "sourceLabel": "ITMO 양자 협정 체결국",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-57b631768527|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 부문/기술",
-      "indicatorId": "C-006_bilateral_scope",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-57b631768527",
-        "labelKo": "대상 부문/기술",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-57b631768527|건||C-006_bilateral_scope",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 부문/기술",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-c915f1ec6ddd|공포일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부 · corresponding_adjustment_baochinhphu",
-      "indicatorId": "C-006_corresponding_adjustment_baochinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-c915f1ec6ddd",
-        "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-        "unit": "공포일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-c915f1ec6ddd|공포일||C-006_corresponding_adjustment_baochinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부",
+      "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1001,46 +865,6 @@
         "sourceRow": 23,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-4f0dabc24773|시행일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-      "indicatorId": "C-006_corresponding_adjustment_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4f0dabc24773",
-        "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-        "unit": "시행일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4f0dabc24773|시행일||C-006_corresponding_adjustment_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-c915f1ec6ddd|공포일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부 · corresponding_adjustment_vanban_chinhphu_2",
-      "indicatorId": "C-006_corresponding_adjustment_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-c915f1ec6ddd",
-        "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-        "unit": "공포일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-c915f1ec6ddd|공포일||C-006_corresponding_adjustment_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-2690b1485e33|—",
@@ -1143,6 +967,30 @@
         "sourceRow": 25,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "dimensions": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · domestic_framework",
+      "indicatorId": "C-006_domestic_framework",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-afccc533d2a6",
+        "labelKo": "파리협정 제6.2조",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_domestic_framework",
+      "sourceCaveat": null,
+      "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-bba9323f1146|시행일",
@@ -1355,41 +1203,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-d383f73ec708|tCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 이전 실적(tCO₂e) · ITMO 이전 실적(tCO₂e) [tCO₂e]",
-      "indicatorId": "C-006_itmo_transfer_jcm_jp",
+      "axisGroupKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "dimensions": {
+        "category": "제6.4조 이행 체계 · 현황"
+      },
+      "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · jcm_project",
+      "indicatorId": "C-006_jcm_project",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-d383f73ec708",
-        "labelKo": "ITMO 이전 실적(tCO₂e)",
-        "unit": "tCO₂e",
-        "unitFamily": "emissions"
+        "key": "measure-afccc533d2a6",
+        "labelKo": "파리협정 제6.2조",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-d383f73ec708|tCO₂e||C-006_itmo_transfer_jcm_jp",
+      "seriesKey": "measure-afccc533d2a6|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_jcm_project",
       "sourceCaveat": null,
-      "sourceLabel": "ITMO 이전 실적(tCO₂e)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-3a4646ce328f|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ITMO 이전 실적(tCO₂e) · ITMO 이전 실적(tCO₂e) [건]",
-      "indicatorId": "C-006_itmo_transfer_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-3a4646ce328f",
-        "labelKo": "ITMO 이전 실적(tCO₂e)",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-3a4646ce328f|건||C-006_itmo_transfer_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "ITMO 이전 실적(tCO₂e)",
+      "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1531,66 +1363,6 @@
         "sourceRow": 14,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-71f5d0c377f3|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태 · national_registry_a6partnership",
-      "indicatorId": "C-006_national_registry_a6partnership",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-71f5d0c377f3",
-        "labelKo": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-71f5d0c377f3|건||C-006_national_registry_a6partnership",
-      "sourceCaveat": null,
-      "sourceLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-71f5d0c377f3|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태 · national_registry_unfccc",
-      "indicatorId": "C-006_national_registry_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-71f5d0c377f3",
-        "labelKo": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-71f5d0c377f3|건||C-006_national_registry_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-71f5d0c377f3|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태 · national_registry_vanban_chinhphu",
-      "indicatorId": "C-006_national_registry_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-71f5d0c377f3",
-        "labelKo": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-71f5d0c377f3|건||C-006_national_registry_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
@@ -1935,52 +1707,12 @@
   ],
   "measures": [
     {
-      "indicatorCount": 4,
-      "key": "measure-997be4df1a98",
-      "labelKo": "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-90427fa0ff19",
-      "labelKo": "ITMO 양자 협정 체결국",
-      "recordCount": 0,
-      "unit": "국가",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-d383f73ec708",
-      "labelKo": "ITMO 이전 실적(tCO₂e)",
-      "recordCount": 0,
-      "unit": "tCO₂e",
-      "unitFamily": "emissions"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-3a4646ce328f",
-      "labelKo": "ITMO 이전 실적(tCO₂e)",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
-    },
-    {
       "indicatorCount": 1,
       "key": "measure-4e52783bb6e3",
       "labelKo": "UNFCCC 국제 등록부 연동 현황",
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-71f5d0c377f3",
-      "labelKo": "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
     },
     {
       "indicatorCount": 1,
@@ -2020,30 +1752,6 @@
       "labelKo": "국내 탄소 레지스트리",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-57b631768527",
-      "labelKo": "대상 부문/기술",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-c915f1ec6ddd",
-      "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-      "recordCount": 0,
-      "unit": "공포일",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-4f0dabc24773",
-      "labelKo": "상응조정(Corresponding Adjustment) 체계 구축 여부",
-      "recordCount": 0,
-      "unit": "시행일",
       "unitFamily": "text"
     },
     {
@@ -2135,20 +1843,20 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-a8ad970c05ca",
-      "labelKo": "체결 일자",
-      "recordCount": 0,
-      "unit": "체결일",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 4,
       "key": "measure-fb21b950ba23",
       "labelKo": "총괄",
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-afccc533d2a6",
+      "labelKo": "파리협정 제6.2조",
+      "recordCount": 0,
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     }
   ],
   "observationCount": 0,

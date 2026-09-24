@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-030",
-  "entityCount": 100,
+  "entityCount": 134,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 5,
+  "indicatorCount": 6,
   "indicators": [
     {
       "axisGroupKey": "measure-97af82a8ed3d|ha",
@@ -34,6 +34,30 @@
       "seriesKey": "measure-97af82a8ed3d|ha|category=순변화(성 단위 개체 목록)|B-030_forest_change_adm1",
       "sourceCaveat": null,
       "sourceLabel": "산림 이득·순변화(성 단위 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-97af82a8ed3d|ha",
+      "dimensionLabels": {
+        "category": "순변화(성 단위 개체 목록) - 2025년 34개 체계"
+      },
+      "dimensions": {
+        "category": "순변화(성 단위 개체 목록) - 2025년 34개 체계"
+      },
+      "displayLabel": "산림 이득·순변화(성 단위 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-030_forest_change_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-97af82a8ed3d",
+        "labelKo": "산림 이득",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-97af82a8ed3d|ha|category=순변화(성 단위 개체 목록) - 2025년 34개 체계|B-030_forest_change_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "산림 이득·순변화(성 단위 개체 목록) - 2025년 34개 체계",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -147,7 +171,7 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-97af82a8ed3d",
       "labelKo": "산림 이득",
       "recordCount": 0,

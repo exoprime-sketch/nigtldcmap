@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "v156",
+  "generator": "scripts/v156/apply-staged-data-v156.mjs",
+  "generatedAt": "2026-09-24T03:59:21.824Z",
+  "from": ".staging/v156/public/data/vietnam/v2",
+  "to": "public/data/vietnam/v2",
+  "applied": true,
+  "totals": {
+    "sourceFiles": 536,
+    "targetFilesBefore": 555,
+    "written": 16,
+    "unchanged": 520,
+    "prunedStaleShards": 1,
+    "preserved": 19,
+    "keptUnexplained": 0
+  },
+  "preserved": [
+    "dataset-directory.json",
+    "geometry/vnm-adm1-34.geojson",
+    "geometry/vnm-aqueduct40-basins-l6.geojson",
+    "geometry/vnm-aqueduct40-basins.geojson",
+    "geometry/vnm-country-outline-z5.geojson",
+    "geometry/vnm-country-outline.geojson",
+    "geometry/vnm-region-6.geojson",
+    "geometry/vnm-roads-rail-overview.geojson",
+    "geometry/vnm-roads-rail.geojson",
+    "geometry/vnm-slr-lowland-le0p5m.geojson",
+    "geometry/vnm-slr-lowland-le1m.geojson",
+    "geometry/vnm-slr-lowland-le2m.geojson",
+    "geometry/vnm-water-coastal-infra.geojson",
+    "home/card-summaries-v140.json",
+    "spatial/pending-layers-v155.json",
+    "spatial/pending-v155/b-008-lowland-by-adm1.json",
+    "spatial/pending-v155/b-008-slr-zones.json",
+    "spatial/pending-v155/b-017.json",
+    "spatial/pending-v155/d-022-locations.json"
+  ],
+  "prunedStaleShards": [
+    "packs/vnm-v124-pack-008-ef16feda.json"
+  ],
+  "keptUnexplained": [],
+  "written": [
+    "asset-integrity.json",
+    "catalog.json",
+    "downloads/b-028.csv",
+    "downloads/b-028.json",
+    "downloads/delivery-manifest.json",
+    "framework-coverage.json",
+    "manifest.json",
+    "map-index.json",
+    "packs/bundle-index-v124.json",
+    "packs/vnm-v124-pack-008-87ab0c3a.json",
+    "quality-report.json",
+    "semantic/element-visualization-contracts-v125.json",
+    "semantic/elements/b-028.json",
+    "semantic/indicator-semantics-v125.json",
+    "semantic/semantic-integrity-v125.json",
+    "spatial/locations/b-028.json"
+  ],
+  "targetFilesAfter": 555,
+  "largestFile": {
+    "rel": "downloads/b-006.json",
+    "bytes": 86468654
+  }
+}

@@ -10,30 +10,10 @@
     }
   ],
   "elementId": "C-003",
-  "entityCount": 96,
+  "entityCount": 253,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 105,
+  "indicatorCount": 100,
   "indicators": [
-    {
-      "axisGroupKey": "measure-7a783d6e2862|10억 USD",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "부문별 적응 투자 소요(USD)",
-      "indicatorId": "C-003_adaptation_finance_need",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a783d6e2862",
-        "labelKo": "부문별 적응 투자 소요(USD)",
-        "unit": "10억 USD",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-7a783d6e2862|10억 USD||C-003_adaptation_finance_need",
-      "sourceCaveat": null,
-      "sourceLabel": "부문별 적응 투자 소요(USD)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
     {
       "axisGroupKey": "measure-a743b974bc5f|10억 USD",
       "dimensionLabels": {
@@ -887,45 +867,27 @@
       }
     },
     {
-      "axisGroupKey": "measure-000fd88781fb|정성 목표",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "적응 거버넌스 체계",
-      "indicatorId": "C-003_adaptation_governance",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-000fd88781fb",
-        "labelKo": "적응 거버넌스 체계",
-        "unit": "정성 목표",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-000fd88781fb|정성 목표||C-003_adaptation_governance",
-      "sourceCaveat": null,
-      "sourceLabel": "적응 거버넌스 체계",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4c161656d94f|건",
+      "axisGroupKey": "measure-d488fe9ed5a1|건",
       "dimensionLabels": {
+        "detail": "부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지",
         "technology": "27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 37 · 38"
       },
       "dimensions": {
+        "detail": "부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지",
         "technology": "27,28,29,30,31,32,33,34,35,36,37,38"
       },
-      "displayLabel": "적응 우선 조치 목록(단기/중기/장기)",
+      "displayLabel": "적응 조치 목록 — 부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지",
       "indicatorId": "C-003_adaptation_measure_list",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-4c161656d94f",
-        "labelKo": "적응 우선 조치 목록(단기/중기/장기)",
+        "key": "measure-d488fe9ed5a1",
+        "labelKo": "적응 조치 목록",
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-4c161656d94f|건|technology=27,28,29,30,31,32,33,34,35,36,37,38|C-003_adaptation_measure_list",
+      "seriesKey": "measure-d488fe9ed5a1|건|detail=부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지|technology=27,28,29,30,31,32,33,34,35,36,37,38|C-003_adaptation_measure_list",
       "sourceCaveat": "각 No. 아래에 복수의 '세부 과제(Specific tasks)'와 담당기관·단계별 산출물이 병기됨. 상위 '과제 수 76/33/52'(C.1.c.05)는 별도 집계 기준이므로 본 블록과 합계가 일치하지 않음",
-      "sourceLabel": "적응 우선 조치 목록(단기/중기/장기)",
+      "sourceLabel": "적응 조치 목록 — 부문별 과제군(groups of tasks) 수 · 1.1 수자원·토지자원의 효율적 이용 및 고갈·황폐화 방지",
       "sourceLabelEn": "Adaptation Measure List",
       "sourceNote": "각 No. 아래에 복수의 '세부 과제(Specific tasks)'와 담당기관·단계별 산출물이 병기됨. 상위 '과제 수 76/33/52'(C.1.c.05)는 별도 집계 기준이므로 본 블록과 합계가 일치하지 않음",
       "sourceProvenance": {
@@ -1715,26 +1677,6 @@
         "sourceRow": 23,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-4fffc5142679|분야",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "적응 우선 분야",
-      "indicatorId": "C-003_adaptation_priority_sector",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4fffc5142679",
-        "labelKo": "적응 우선 분야",
-        "unit": "분야",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4fffc5142679|분야||C-003_adaptation_priority_sector",
-      "sourceCaveat": null,
-      "sourceLabel": "적응 우선 분야",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-2dca22fe6945|개 과제",
@@ -2545,21 +2487,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-fcf5f44d4bde|주기",
+      "axisGroupKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "M&E 지표 체계",
-      "indicatorId": "C-003_me_framework",
+      "displayLabel": "NAP (국가 적응 계획) · me_indicator",
+      "indicatorId": "C-003_me_indicator",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-fcf5f44d4bde",
-        "labelKo": "M&E 지표 체계",
-        "unit": "주기",
-        "unitFamily": "text"
+        "key": "measure-0d84c4364f88",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-fcf5f44d4bde|주기||C-003_me_framework",
+      "seriesKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-003_me_indicator",
       "sourceCaveat": null,
-      "sourceLabel": "M&E 지표 체계",
+      "sourceLabel": "NAP (국가 적응 계획)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -2905,6 +2847,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NAP (국가 적응 계획) · nap_submission",
+      "indicatorId": "C-003_nap_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0d84c4364f88",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-003_nap_submission",
+      "sourceCaveat": null,
+      "sourceLabel": "NAP (국가 적응 계획)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NAP (국가 적응 계획) · priority_action",
+      "indicatorId": "C-003_priority_action",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0d84c4364f88",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-003_priority_action",
+      "sourceCaveat": null,
+      "sourceLabel": "NAP (국가 적응 계획)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-8942eab8405b|역할",
       "dimensionLabels": {
         "category": "부처 성급 인민위원회",
@@ -3041,65 +3023,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-bce25459c68e|등급(정성)",
+      "axisGroupKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "부문별 취약성 평가(등급)",
+      "displayLabel": "NAP (국가 적응 계획) · sector_vulnerability",
       "indicatorId": "C-003_sector_vulnerability",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-bce25459c68e",
-        "labelKo": "부문별 취약성 평가(등급)",
-        "unit": "등급(정성)",
-        "unitFamily": "text"
+        "key": "measure-0d84c4364f88",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-bce25459c68e|등급(정성)||C-003_sector_vulnerability",
+      "seriesKey": "measure-0d84c4364f88|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-003_sector_vulnerability",
       "sourceCaveat": null,
-      "sourceLabel": "부문별 취약성 평가(등급)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-9cb35263a197|파일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL)",
-      "indicatorId": "C-003_source_link",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9cb35263a197",
-        "labelKo": "원본 링크(URL)",
-        "unit": "파일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-9cb35263a197|파일||C-003_source_link",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-6b27103f3066|개 절/과제군",
-      "dimensionLabels": {
-        "category": "젠더 분석"
-      },
-      "dimensions": {
-        "category": "젠더 분석"
-      },
-      "displayLabel": "이해관계자·젠더 분석",
-      "indicatorId": "C-003_stakeholder_gender",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-6b27103f3066",
-        "labelKo": "이해관계자",
-        "unit": "개 절/과제군",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-6b27103f3066|개 절/과제군|category=젠더 분석|C-003_stakeholder_gender",
-      "sourceCaveat": null,
-      "sourceLabel": "이해관계자·젠더 분석",
+      "sourceLabel": "NAP (국가 적응 계획)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -3205,26 +3143,6 @@
         "sourceRow": 10,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-19e4bdce0d7f|발표일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "제출 이력(제출년도/문서 링크) · 제출 이력(제출년도/문서 링크) [발표일]",
-      "indicatorId": "C-003_submission_history_en_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-19e4bdce0d7f",
-        "labelKo": "제출 이력(제출년도/문서 링크)",
-        "unit": "발표일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-19e4bdce0d7f|발표일||C-003_submission_history_en_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "제출 이력(제출년도/문서 링크)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-e407ad004105|승인일",
@@ -3395,36 +3313,16 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-8238d356e418|승인일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "제출 이력(제출년도/문서 링크) · 제출 이력(제출년도/문서 링크) [승인일]",
-      "indicatorId": "C-003_submission_history_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-8238d356e418",
-        "labelKo": "제출 이력(제출년도/문서 링크)",
-        "unit": "승인일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-8238d356e418|승인일||C-003_submission_history_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "제출 이력(제출년도/문서 링크)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
-      "indicatorCount": 1,
-      "key": "measure-fcf5f44d4bde",
-      "labelKo": "M&E 지표 체계",
+      "indicatorCount": 4,
+      "key": "measure-0d84c4364f88",
+      "labelKo": "NAP (국가 적응 계획)",
       "recordCount": 0,
-      "unit": "주기",
-      "unitFamily": "text"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 6,
@@ -3468,14 +3366,6 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-7a783d6e2862",
-      "labelKo": "부문별 적응 투자 소요(USD)",
-      "recordCount": 0,
-      "unit": "10억 USD",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-afee07eab741",
       "labelKo": "부문별 취약성 평가 커버리지",
       "recordCount": 0,
@@ -3489,14 +3379,6 @@
       "recordCount": 0,
       "unit": "개",
       "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-bce25459c68e",
-      "labelKo": "부문별 취약성 평가(등급)",
-      "recordCount": 0,
-      "unit": "등급(정성)",
-      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
@@ -3524,22 +3406,6 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-9cb35263a197",
-      "labelKo": "원본 링크(URL)",
-      "recordCount": 0,
-      "unit": "파일",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-6b27103f3066",
-      "labelKo": "이해관계자",
-      "recordCount": 0,
-      "unit": "개 절/과제군",
-      "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-7f7352495393",
       "labelKo": "이해관계자 참여 및 젠더",
       "recordCount": 0,
@@ -3563,14 +3429,6 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-000fd88781fb",
-      "labelKo": "적응 거버넌스 체계",
-      "recordCount": 0,
-      "unit": "정성 목표",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 4,
       "key": "measure-2dca22fe6945",
       "labelKo": "적응 과제 구성 (목표별 과제 수)",
@@ -3585,22 +3443,6 @@
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-4fffc5142679",
-      "labelKo": "적응 우선 분야",
-      "recordCount": 0,
-      "unit": "분야",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-4c161656d94f",
-      "labelKo": "적응 우선 조치 목록(단기/중기/장기)",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
     },
     {
       "indicatorCount": 1,
@@ -3659,7 +3501,7 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 18,
+      "indicatorCount": 19,
       "key": "measure-d488fe9ed5a1",
       "labelKo": "적응 조치 목록",
       "recordCount": 0,
@@ -3702,22 +3544,6 @@
       "indicatorCount": 2,
       "key": "measure-e407ad004105",
       "labelKo": "제출 이력 (국내 승인 및 UNFCCC 등재)",
-      "recordCount": 0,
-      "unit": "승인일",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-19e4bdce0d7f",
-      "labelKo": "제출 이력(제출년도/문서 링크)",
-      "recordCount": 0,
-      "unit": "발표일",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-8238d356e418",
-      "labelKo": "제출 이력(제출년도/문서 링크)",
       "recordCount": 0,
       "unit": "승인일",
       "unitFamily": "text"

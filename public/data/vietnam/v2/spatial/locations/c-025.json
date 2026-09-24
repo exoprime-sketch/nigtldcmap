@@ -4,1316 +4,5596 @@
   "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
   "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
   "counts": {
-    "located": 261,
+    "located": 1117,
     "outside": 1,
-    "withoutCoordinate": 126
+    "withoutCoordinate": 72
   },
   "byRecordId": {
     "v124-c-025-entity-00001": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "unitCode": null
     },
     "v124-c-025-entity-00002": {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "unitCode": null
     },
     "v124-c-025-entity-00003": {
-      "adm1Code": "VN-CT",
-      "adm1Name": "Cần Thơ",
-      "unitCode": "VN34-CT"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00004": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00005": {
-      "adm1Code": "VN-58",
-      "adm1Name": "Bình Phước",
-      "unitCode": "VN34-39"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00006": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00007": {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00008": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00009": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00010": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00011": {
-      "adm1Code": "VN-26",
-      "adm1Name": "Thừa Thiên Huế",
-      "unitCode": "VN34-26"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00012": {
-      "adm1Code": "VN-DN",
-      "adm1Name": "Đà Nẵng",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00013": {
-      "adm1Code": "VN-39",
-      "adm1Name": "Đồng Nai",
-      "unitCode": "VN34-39"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00014": {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00015": {
-      "adm1Code": "VN-39",
-      "adm1Name": "Đồng Nai",
-      "unitCode": "VN34-39"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00016": {
-      "adm1Code": "VN-43",
-      "adm1Name": "Bà Rịa–Vũng Tàu",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00017": {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00018": {
-      "adm1Code": "VN-63",
-      "adm1Name": "Hà Nam",
-      "unitCode": "VN34-18"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00019": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00020": {
-      "adm1Code": "VN-DN",
-      "adm1Name": "Đà Nẵng",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00021": {
-      "adm1Code": "VN-57",
-      "adm1Name": "Bình Dương",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00022": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00023": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00024": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00025": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00026": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00027": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
     },
     "v124-c-025-entity-00028": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00029": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00030": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00031": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00032": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00033": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00034": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00035": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00036": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00037": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00038": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00039": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00040": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00041": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00042": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00043": {
       "adm1Code": "VN-03",
       "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00044": {
       "adm1Code": "VN-03",
       "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00045": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00046": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00047": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00048": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00049": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00050": {
       "adm1Code": "VN-03",
       "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00051": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00052": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00053": {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00054": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00055": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00056": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00057": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00058": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00059": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00060": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00061": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00062": {
       "adm1Code": "VN-03",
       "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00063": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00064": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00065": {
       "adm1Code": "VN-03",
       "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00066": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00067": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00068": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00069": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00070": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00071": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00072": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00073": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00074": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00075": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00076": {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00077": {
       "adm1Code": "VN-07",
       "adm1Name": "Tuyên Quang",
-      "unitCode": "VN34-07"
+      "unitCode": null
     },
     "v124-c-025-entity-00078": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00079": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00080": {
-      "adm1Code": "VN-26",
-      "adm1Name": "Thừa Thiên Huế",
-      "unitCode": "VN34-26"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00081": {
-      "adm1Code": "VN-09",
-      "adm1Name": "Lạng Sơn",
-      "unitCode": "VN34-09"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00082": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00083": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00084": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
     },
     "v124-c-025-entity-00085": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00086": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00087": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00088": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00089": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
     },
     "v124-c-025-entity-00090": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
     },
     "v124-c-025-entity-00091": {
-      "adm1Code": "VN-29",
-      "adm1Name": "Quảng Ngãi",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
     },
     "v124-c-025-entity-00092": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
     },
     "v124-c-025-entity-00093": {
-      "adm1Code": "VN-23",
-      "adm1Name": "Hà Tĩnh",
-      "unitCode": "VN34-23"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00094": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00095": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00096": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00097": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00098": {
-      "adm1Code": "VN-58",
-      "adm1Name": "Bình Phước",
-      "unitCode": "VN34-39"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00099": {
-      "adm1Code": "VN-04",
-      "adm1Name": "Cao Bằng",
-      "unitCode": "VN34-04"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00100": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00101": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00102": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00103": {
-      "adm1Code": "VN-26",
-      "adm1Name": "Thừa Thiên Huế",
-      "unitCode": "VN34-26"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00104": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00105": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00106": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00107": {
-      "adm1Code": "VN-71",
-      "adm1Name": "Điện Biên",
-      "unitCode": "VN34-71"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00108": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00109": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00110": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00111": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00112": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00113": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00114": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00115": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "unitCode": null
     },
     "v124-c-025-entity-00116": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "unitCode": null
     },
     "v124-c-025-entity-00117": {
-      "adm1Code": "VN-69",
-      "adm1Name": "Thái Nguyên",
-      "unitCode": "VN34-69"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00118": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00119": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00120": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00121": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "unitCode": null
     },
     "v124-c-025-entity-00122": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00123": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00124": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "unitCode": null
     },
     "v124-c-025-entity-00125": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00126": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
     },
     "v124-c-025-entity-00127": {
       "adm1Code": "VN-05",
       "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "unitCode": null
     },
     "v124-c-025-entity-00128": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00129": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00130": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00131": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00132": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00133": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
-    },
-    "v124-c-025-entity-00134": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
-    },
-    "v124-c-025-entity-00135": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
-    },
-    "v124-c-025-entity-00136": {
       "adm1Code": "VN-06",
       "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "unitCode": null
+    },
+    "v124-c-025-entity-00134": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00135": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00136": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00137": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00138": {
-      "adm1Code": "VN-32",
-      "adm1Name": "Phú Yên",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
     },
     "v124-c-025-entity-00139": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00140": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00141": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00142": {
-      "adm1Code": "VN-32",
-      "adm1Name": "Phú Yên",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00143": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00144": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00145": {
-      "adm1Code": "VN-29",
-      "adm1Name": "Quảng Ngãi",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00146": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00147": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00148": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00149": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00150": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00151": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00152": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00153": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00154": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00155": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00156": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00157": {
-      "adm1Code": "VN-71",
-      "adm1Name": "Điện Biên",
-      "unitCode": "VN34-71"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00158": {
-      "adm1Code": "VN-53",
-      "adm1Name": "Bắc Kạn",
-      "unitCode": "VN34-69"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00159": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00160": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00161": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00162": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00163": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00164": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00165": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00166": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00167": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00168": {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
-      "unitCode": "VN34-01"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00169": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00170": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00171": {
-      "adm1Code": "VN-26",
-      "adm1Name": "Thừa Thiên Huế",
-      "unitCode": "VN34-26"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00172": {
-      "adm1Code": "VN-09",
-      "adm1Name": "Lạng Sơn",
-      "unitCode": "VN34-09"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00173": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00174": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00175": {
-      "adm1Code": "VN-04",
-      "adm1Name": "Cao Bằng",
-      "unitCode": "VN34-04"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00176": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00177": {
-      "adm1Code": "VN-09",
-      "adm1Name": "Lạng Sơn",
-      "unitCode": "VN34-09"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00178": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00179": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00180": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00181": {
       "adm1Code": "VN-02",
       "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "unitCode": null
     },
     "v124-c-025-entity-00182": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00183": {
-      "adm1Code": "VN-34",
-      "adm1Name": "Khánh Hòa",
-      "unitCode": "VN34-34"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00184": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00185": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00186": {
-      "adm1Code": "VN-47",
-      "adm1Name": "Kiên Giang",
-      "unitCode": "VN34-44"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00187": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00188": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00189": {
-      "adm1Code": "VN-55",
-      "adm1Name": "Bạc Liêu",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
     "v124-c-025-entity-00190": {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
     },
-    "v124-c-025-entity-00191": null,
+    "v124-c-025-entity-00191": {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
+    },
     "v124-c-025-entity-00192": {
-      "adm1Code": "VN-70",
-      "adm1Name": "Vĩnh Phúc",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00193": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00194": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00195": {
-      "adm1Code": "VN-29",
-      "adm1Name": "Quảng Ngãi",
-      "unitCode": "VN34-29"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00196": {
-      "adm1Code": "VN-68",
-      "adm1Name": "Phú Thọ",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00197": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
     },
     "v124-c-025-entity-00198": {
-      "adm1Code": "VN-57",
-      "adm1Name": "Bình Dương",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00199": {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00200": {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "unitCode": "VN34-SG"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00201": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00202": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00203": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
     },
     "v124-c-025-entity-00204": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00205": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00206": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00207": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00208": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00209": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00210": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00211": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00212": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00213": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00214": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00215": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00216": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00217": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00218": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00219": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00220": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00221": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00222": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00223": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00224": {
-      "adm1Code": "VN-34",
-      "adm1Name": "Khánh Hòa",
-      "unitCode": "VN34-34"
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00225": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00226": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00227": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00228": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00229": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00230": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00231": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00232": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00233": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00234": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00235": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00236": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00237": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00238": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00239": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00240": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00241": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00242": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00243": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00244": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00245": {
-      "adm1Code": "VN-59",
-      "adm1Name": "Cà Mau",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00246": {
-      "adm1Code": "VN-59",
-      "adm1Name": "Cà Mau",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00247": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00248": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00249": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00250": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00251": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00252": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00253": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00254": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00255": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00256": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00257": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00258": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00259": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00260": {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
     },
     "v124-c-025-entity-00261": {
-      "adm1Code": "VN-55",
-      "adm1Name": "Bạc Liêu",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00262": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00263": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00264": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00265": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00266": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00267": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00268": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00269": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00270": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
     },
     "v124-c-025-entity-00271": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
     },
     "v124-c-025-entity-00272": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
     },
     "v124-c-025-entity-00273": {
       "adm1Code": "VN-22",
       "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "unitCode": null
     },
     "v124-c-025-entity-00274": {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "unitCode": "VN34-30"
-    },
-    "v124-c-025-entity-00275": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
-    },
-    "v124-c-025-entity-00277": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
-    },
-    "v124-c-025-entity-00287": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
-    },
-    "v124-c-025-entity-00288": {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "unitCode": "VN34-30"
-    },
-    "v124-c-025-entity-00289": {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
-    },
-    "v124-c-025-entity-00291": {
       "adm1Code": "VN-22",
       "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "unitCode": null
     },
-    "v124-c-025-entity-00292": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+    "v124-c-025-entity-00275": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
     },
-    "v124-c-025-entity-00293": {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "unitCode": "VN34-29"
+    "v124-c-025-entity-00276": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
     },
-    "v124-c-025-entity-00297": {
+    "v124-c-025-entity-00277": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00278": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00279": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00280": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00281": {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00282": {
       "adm1Code": "VN-25",
       "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
+      "unitCode": null
+    },
+    "v124-c-025-entity-00283": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00284": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00285": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00286": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00287": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00288": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00289": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00290": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00291": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00292": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00293": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00294": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00295": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00296": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00297": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00298": {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00299": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00300": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00301": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00302": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00303": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00304": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00305": {
       "adm1Code": "VN-24",
       "adm1Name": "Quảng Bình",
-      "unitCode": "VN34-25"
+      "unitCode": null
     },
     "v124-c-025-entity-00306": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
     },
     "v124-c-025-entity-00307": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00308": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00309": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00310": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00311": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
     },
     "v124-c-025-entity-00312": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
     },
     "v124-c-025-entity-00313": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
     },
-    "v124-c-025-entity-00316": {
-      "adm1Code": "VN-54",
-      "adm1Name": "Bắc Giang",
-      "unitCode": "VN34-56"
+    "v124-c-025-entity-00314": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
     },
-    "v124-c-025-entity-00325": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
-    "v124-c-025-entity-00326": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
-    "v124-c-025-entity-00327": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
-    "v124-c-025-entity-00328": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
-    },
-    "v124-c-025-entity-00329": {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "unitCode": "VN34-02"
-    },
-    "v124-c-025-entity-00330": {
-      "adm1Code": "VN-53",
-      "adm1Name": "Bắc Kạn",
-      "unitCode": "VN34-69"
-    },
-    "v124-c-025-entity-00331": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
-    },
-    "v124-c-025-entity-00333": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
-    "v124-c-025-entity-00334": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
-    "v124-c-025-entity-00335": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
-    },
-    "v124-c-025-entity-00336": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
-    },
-    "v124-c-025-entity-00337": {
-      "adm1Code": "VN-53",
-      "adm1Name": "Bắc Kạn",
-      "unitCode": "VN34-69"
-    },
-    "v124-c-025-entity-00338": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
-    },
-    "v124-c-025-entity-00339": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
-    },
-    "v124-c-025-entity-00352": {
+    "v124-c-025-entity-00315": {
       "adm1Code": "VN-27",
       "adm1Name": "Quảng Nam",
-      "unitCode": "VN34-DN"
+      "unitCode": null
+    },
+    "v124-c-025-entity-00316": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00317": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00318": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00319": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00320": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00321": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00322": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00323": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00324": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00325": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00326": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00327": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00328": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00329": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00330": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00331": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00332": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00333": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00334": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00335": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00336": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00337": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00338": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00339": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00340": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00341": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00342": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00343": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00344": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00345": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00346": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00347": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00348": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00349": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00350": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00351": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00352": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00353": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00354": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00355": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00356": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00357": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
     },
     "v124-c-025-entity-00358": {
-      "adm1Code": "VN-47",
-      "adm1Name": "Kiên Giang",
-      "unitCode": "VN34-44"
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
     },
     "v124-c-025-entity-00359": {
-      "adm1Code": "VN-46",
-      "adm1Name": "Tiền Giang",
-      "unitCode": "VN34-45"
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00360": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00361": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00362": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00363": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00364": {
-      "adm1Code": "VN-53",
-      "adm1Name": "Bắc Kạn",
-      "unitCode": "VN34-69"
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00365": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00366": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00367": {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "unitCode": "VN34-35"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00368": {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "unitCode": "VN34-07"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00369": {
-      "adm1Code": "VN-59",
-      "adm1Name": "Cà Mau",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00370": {
-      "adm1Code": "VN-59",
-      "adm1Name": "Cà Mau",
-      "unitCode": "VN34-59"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00371": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00372": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00373": {
-      "adm1Code": "VN-51",
-      "adm1Name": "Trà Vinh",
-      "unitCode": "VN34-49"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00374": {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "unitCode": "VN34-68"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00375": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00376": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00377": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00378": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00379": {
-      "adm1Code": "VN-37",
-      "adm1Name": "Tây Ninh",
-      "unitCode": "VN34-37"
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00380": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00381": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
     },
     "v124-c-025-entity-00382": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00383": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00384": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00385": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00386": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00387": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00388": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00389": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00390": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00391": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00392": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00393": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00394": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00395": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00396": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00397": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00398": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00399": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00400": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00401": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00402": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00403": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00404": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00405": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00406": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00407": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00408": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00409": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00410": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00411": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00412": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00413": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00414": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00415": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00416": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00417": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00418": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00419": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00420": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00421": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00422": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00423": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00424": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00425": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00426": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00427": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00428": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00429": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00430": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00431": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00432": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00433": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00434": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00435": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00436": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00437": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00438": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00439": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00440": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00441": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00442": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00443": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00444": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00445": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00446": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00447": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00448": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00449": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00450": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00451": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00452": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00453": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00454": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00455": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00456": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00457": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00458": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00459": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00460": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00461": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00462": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00463": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00464": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00465": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00466": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00467": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00468": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00469": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00470": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00471": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00472": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00473": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00474": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00475": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00476": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00477": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00478": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00479": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00480": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00481": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00482": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00483": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00484": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00485": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00486": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00487": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00488": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00489": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00490": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00491": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00492": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00493": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00494": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00495": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00496": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00497": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00498": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00499": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00500": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00501": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00502": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00503": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00504": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00505": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00506": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00507": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00508": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00509": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00510": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00511": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00512": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00513": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00514": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00515": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00516": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00517": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00518": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00519": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00520": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00521": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00522": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00523": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00524": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00525": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00526": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00527": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00528": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00529": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00530": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00531": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00532": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00533": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00534": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00535": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00536": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00537": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00538": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00539": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00540": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00541": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00542": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00543": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00544": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00545": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00546": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00547": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00548": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00549": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00550": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00551": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00552": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00553": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00554": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00555": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00556": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00557": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00558": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00559": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00560": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00561": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00562": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00563": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00564": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00565": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00566": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00567": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00568": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00569": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00570": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00571": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00572": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00573": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00574": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00575": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00576": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00577": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00578": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00579": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00580": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00581": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00582": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00583": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00584": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00585": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00586": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00587": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00588": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00589": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00590": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00591": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00592": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00593": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00594": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00595": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00596": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00597": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00598": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00599": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00600": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00601": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00602": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00603": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00604": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00605": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00606": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00607": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00608": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00609": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00610": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00611": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00612": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00613": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00614": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00615": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00616": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00617": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00618": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00619": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00620": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00621": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00622": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00623": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00624": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00625": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00626": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00627": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00628": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00629": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00630": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00631": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00632": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00633": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00634": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00635": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00636": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00637": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00638": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00639": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00640": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00641": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00642": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00643": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00644": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00645": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00646": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00647": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00648": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00649": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00650": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00651": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00652": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00653": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00654": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00655": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00656": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00657": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00658": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00659": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00660": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00661": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00662": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00663": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00664": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00665": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00666": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00667": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00668": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00669": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00670": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00671": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00672": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00673": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00674": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00675": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00676": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00677": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00678": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00679": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00680": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00681": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00682": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00683": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00684": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00685": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00686": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00687": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00688": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00689": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00690": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00691": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00692": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00693": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00694": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00695": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00696": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00697": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00698": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00699": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00700": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00701": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00702": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00703": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00704": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00705": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00706": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00707": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00708": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00709": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00710": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00711": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00712": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00713": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00714": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00715": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00716": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00717": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00718": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00719": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00720": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00721": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00722": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00723": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00724": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00725": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00726": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00727": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00728": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00729": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00730": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00731": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00732": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00733": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00734": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00735": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00736": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00737": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00738": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00739": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00740": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00741": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00742": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00743": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00744": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00745": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00746": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00747": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00748": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00749": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00750": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00751": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00752": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00753": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00754": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00755": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00756": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00757": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00758": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00759": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00760": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00761": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00762": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00763": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00764": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00765": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00766": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00767": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00768": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00769": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00770": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00771": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00772": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00773": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00774": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00775": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00776": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00777": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00778": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00779": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00780": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00781": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00782": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00783": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00784": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00785": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00786": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00787": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00788": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00789": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00790": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00822": {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00823": {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00824": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00825": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00826": {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00827": {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00828": {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00829": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00830": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00831": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00832": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00833": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00834": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00835": {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00836": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00837": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00838": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00839": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00840": {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00841": {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00842": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00843": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00844": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00845": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00846": {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00847": {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00848": {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00849": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00850": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00851": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00852": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00853": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00854": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00855": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00856": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00857": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00858": {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00859": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00860": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00861": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00862": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00863": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00864": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00865": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00866": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00867": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00868": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00869": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00870": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00871": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00872": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00873": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00874": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00875": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00876": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00877": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00878": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00879": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00880": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00881": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00882": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00883": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00884": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00885": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00886": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00887": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00888": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00889": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00890": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00891": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00892": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00893": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00894": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00895": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00896": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00897": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00898": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00899": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00900": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00901": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00902": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00903": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00904": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00905": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00906": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00907": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00908": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00909": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00910": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00911": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00912": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00913": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00914": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00915": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00916": {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00917": {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00918": {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00919": {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00920": {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00921": {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00922": {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00923": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00924": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00925": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00926": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00927": {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00928": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00929": {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00930": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00931": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00932": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00933": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00934": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00935": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00936": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00937": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00938": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00939": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00940": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00941": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00942": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00943": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00944": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00945": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00946": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00947": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00948": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00949": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00950": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00951": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00952": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00953": {
       "adm1Code": "VN-22",
       "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "unitCode": null
+    },
+    "v124-c-025-entity-00954": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00955": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00956": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00957": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00958": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00959": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00960": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00961": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00962": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00963": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00964": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00965": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00966": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00967": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00968": {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00969": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00970": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00971": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00972": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00973": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00974": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00975": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00976": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00977": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00978": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00979": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00980": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00981": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00982": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00983": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00984": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00985": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00986": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00987": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00988": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00989": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00990": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00991": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00992": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00993": {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00994": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00995": {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00996": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00997": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00998": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-00999": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01000": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01001": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01002": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01003": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01004": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01005": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01006": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01007": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01008": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01009": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01010": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01011": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01012": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01013": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01014": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01015": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01016": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01017": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01018": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01019": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01020": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01021": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01022": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01023": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01024": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01025": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01026": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01027": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01028": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01029": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01030": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01031": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01032": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01033": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01034": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01035": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01036": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01037": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01038": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01039": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01040": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01041": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01042": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01043": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01044": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01045": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01046": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01047": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01048": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01049": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01050": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01051": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01052": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01053": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01054": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01055": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01056": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01057": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01058": {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01059": {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01060": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01061": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01062": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01063": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01064": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01065": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01066": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01067": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01068": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01069": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01070": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01071": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01072": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01073": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01074": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01075": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01076": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01077": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01078": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01079": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01080": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01081": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01082": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01083": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01084": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01085": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01086": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01087": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01088": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01089": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01090": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01091": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01092": null,
+    "v124-c-025-entity-01093": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01094": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01095": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01096": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01097": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01098": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01099": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01100": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01101": {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01102": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01103": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01104": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01105": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01106": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01107": {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01108": {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01109": {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01110": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01111": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01112": {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01113": {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01114": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01115": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01116": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01117": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01118": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01119": {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01120": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01121": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01122": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01123": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01124": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01125": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01126": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01127": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01128": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01129": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01130": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01131": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01132": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01133": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01134": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01135": {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01136": {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01137": {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01138": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01139": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01140": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01141": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01142": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01143": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01144": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01145": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01146": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01147": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01148": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
+    },
+    "v124-c-025-entity-01149": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": null
     }
   }
 }

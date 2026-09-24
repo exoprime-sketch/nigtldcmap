@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-039",
-  "entityCount": 228,
+  "entityCount": 263,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 20,
+  "indicatorCount": 21,
   "indicators": [
     {
       "axisGroupKey": "measure-6bd0c5a1b0ce|MW",
@@ -415,6 +415,26 @@
       "sourceProvenance": {}
     },
     {
+      "axisGroupKey": "measure-2bd10ca4428f|TWh/yr · GWh/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-039_gross_potential_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2bd10ca4428f",
+        "labelKo": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+        "unit": "TWh/yr · GWh/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-2bd10ca4428f|TWh/yr · GWh/yr||B-039_gross_potential_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a49f99f25ada|MW / TWh/yr / 백만 kW",
       "dimensionLabels": {},
       "dimensions": {},
@@ -710,6 +730,14 @@
       "indicatorCount": 1,
       "key": "measure-9b457cc4f86b",
       "labelKo": "수력 이론 총잠재량(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "TWh/yr · GWh/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2bd10ca4428f",
+      "labelKo": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
       "recordCount": 0,
       "unit": "TWh/yr · GWh/yr",
       "unitFamily": "energy"

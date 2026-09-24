@@ -37,12 +37,21 @@
         "연구기관(국가 아카데미)",
         "연구소"
       ]
+    },
+    {
+      "key": "국제협력_실적_구분_intl_coop_status",
+      "labelKo": "국제협력_실적_구분_intl_coop_status",
+      "valueCount": 2,
+      "values": [
+        "미확인",
+        "실적 있음"
+      ]
     }
   ],
   "elementId": "E-005",
   "entityCount": 20,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 1,
+  "indicatorCount": 2,
   "indicators": [
     {
       "axisGroupKey": "measure-1cf59fec9fbd|기관(건)",
@@ -52,14 +61,14 @@
       "dimensions": {
         "category": "연구기관 · NGO"
       },
-      "displayLabel": "대학·연구기관·NGO",
+      "displayLabel": "대학·연구기관·NGO · partner_org",
       "indicatorId": "E-005_partner_org",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-1cf59fec9fbd",
         "labelKo": "대학",
         "unit": "기관(건)",
-        "unitFamily": "count"
+        "unitFamily": "text"
       },
       "seriesKey": "measure-1cf59fec9fbd|기관(건)|category=연구기관 · NGO|E-005_partner_org",
       "sourceCaveat": null,
@@ -73,16 +82,40 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-1cf59fec9fbd|기관(건)",
+      "dimensionLabels": {
+        "category": "연구기관 · NGO"
+      },
+      "dimensions": {
+        "category": "연구기관 · NGO"
+      },
+      "displayLabel": "대학·연구기관·NGO · research_institution",
+      "indicatorId": "E-005_research_institution",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1cf59fec9fbd",
+        "labelKo": "대학",
+        "unit": "기관(건)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-1cf59fec9fbd|기관(건)|category=연구기관 · NGO|E-005_research_institution",
+      "sourceCaveat": null,
+      "sourceLabel": "대학·연구기관·NGO",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-1cf59fec9fbd",
       "labelKo": "대학",
       "recordCount": 0,
       "unit": "기관(건)",
-      "unitFamily": "count"
+      "unitFamily": "text"
     }
   ],
   "observationCount": 0,

@@ -3,47 +3,81 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 3,
+      "valueCount": 6,
       "values": [
-        "유기성 비중",
-        "전자 폐기물 발생량",
-        "폐기물 발전설비 용량(교차검증, EIA)"
+        "참고자료] 1인당 도시폐기물 발생량",
+        "참고자료] 도시폐기물 수거율(참고)",
+        "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
+        "참고자료] 바이오매스 발전 설비목표(2030)",
+        "참고자료] 사육두수",
+        "참고자료] 폐자원 발전 설비목표(2030)"
       ]
     },
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 11,
+      "valueCount": 9,
       "values": [
         "기타",
         "닭(산출 투입자료)",
         "돼지(산출 투입자료)",
-        "매립(형식 미상)",
         "물소(산출 투입자료)",
-        "미수거",
+        "바가스",
+        "볏짚",
         "소(산출 투입자료)",
-        "소각",
-        "위생매립(매립가스 회수설비 보유)",
-        "재활용",
-        "퇴비화"
+        "왕겨",
+        "현지조사 기준"
       ]
     },
     {
       "key": "technology",
       "labelKo": "기술",
-      "valueCount": 4,
+      "valueCount": 2,
       "values": [
-        "08",
         "08,14",
-        "08,15",
-        "15"
+        "08,15"
       ]
     },
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 29,
+      "valueCount": 63,
       "values": [
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
         "2000",
         "2001",
         "2002",
@@ -69,7 +103,6 @@
         "2022",
         "2023",
         "2024",
-        "2025",
         "2030",
         "2040",
         "2050"
@@ -79,7 +112,7 @@
   "elementId": "B-038",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 25,
+  "indicatorCount": 43,
   "indicators": [
     {
       "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
@@ -110,6 +143,346 @@
         "sourceRow": 13,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
+      "dimensionLabels": {
+        "detail": "바가스"
+      },
+      "dimensions": {
+        "detail": "바가스"
+      },
+      "displayLabel": "농업잔재 자원량 — 바가스",
+      "indicatorId": "B-038_agri_residue_bagasse",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76bf52d804b4",
+        "labelKo": "농업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76bf52d804b4|Mt/yr|detail=바가스|B-038_agri_residue_bagasse",
+      "sourceCaveat": null,
+      "sourceLabel": "농업잔재 자원량 — 바가스",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-30ad010aec85|Mt/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농업잔재 자원량 - FAOSTAT 생산량×잔재계수 산출 계열(1965-2024)",
+      "indicatorId": "B-038_agri_residue_faostat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-30ad010aec85",
+        "labelKo": "농업잔재 자원량 - FAOSTAT 생산량×잔재계수 산출 계열(1965-2024)",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-30ad010aec85|Mt/yr||B-038_agri_residue_faostat",
+      "sourceCaveat": null,
+      "sourceLabel": "농업잔재 자원량 - FAOSTAT 생산량×잔재계수 산출 계열(1965-2024)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
+      "dimensionLabels": {
+        "detail": "기타"
+      },
+      "dimensions": {
+        "detail": "기타"
+      },
+      "displayLabel": "농업잔재 자원량 — 기타",
+      "indicatorId": "B-038_agri_residue_other",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76bf52d804b4",
+        "labelKo": "농업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76bf52d804b4|Mt/yr|detail=기타|B-038_agri_residue_other",
+      "sourceCaveat": null,
+      "sourceLabel": "농업잔재 자원량 — 기타",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
+      "dimensionLabels": {
+        "detail": "왕겨"
+      },
+      "dimensions": {
+        "detail": "왕겨"
+      },
+      "displayLabel": "농업잔재 자원량 — 왕겨",
+      "indicatorId": "B-038_agri_residue_rice_husk",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76bf52d804b4",
+        "labelKo": "농업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76bf52d804b4|Mt/yr|detail=왕겨|B-038_agri_residue_rice_husk",
+      "sourceCaveat": null,
+      "sourceLabel": "농업잔재 자원량 — 왕겨",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-76bf52d804b4|Mt/yr",
+      "dimensionLabels": {
+        "detail": "볏짚"
+      },
+      "dimensions": {
+        "detail": "볏짚"
+      },
+      "displayLabel": "농업잔재 자원량 — 볏짚",
+      "indicatorId": "B-038_agri_residue_rice_straw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76bf52d804b4",
+        "labelKo": "농업잔재 자원량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76bf52d804b4|Mt/yr|detail=볏짚|B-038_agri_residue_rice_straw",
+      "sourceCaveat": null,
+      "sourceLabel": "농업잔재 자원량 — 볏짚",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f8c3b05ddc42|MW",
+      "dimensionLabels": {
+        "category": "참고자료] 바이오매스 발전 설비목표(2030)"
+      },
+      "dimensions": {
+        "category": "참고자료] 바이오매스 발전 설비목표(2030)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 바이오매스 발전 설비목표(2030)",
+      "indicatorId": "B-038_aux_capacity_target_biomass_2030",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8c3b05ddc42",
+        "labelKo": "[산출 투입",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-f8c3b05ddc42|MW|category=참고자료] 바이오매스 발전 설비목표(2030)|B-038_aux_capacity_target_biomass_2030",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 바이오매스 발전 설비목표(2030)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f8c3b05ddc42|MW",
+      "dimensionLabels": {
+        "category": "참고자료] 폐자원 발전 설비목표(2030)"
+      },
+      "dimensions": {
+        "category": "참고자료] 폐자원 발전 설비목표(2030)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 폐자원 발전 설비목표(2030)",
+      "indicatorId": "B-038_aux_capacity_target_wte_2030",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f8c3b05ddc42",
+        "labelKo": "[산출 투입",
+        "unit": "MW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-f8c3b05ddc42|MW|category=참고자료] 폐자원 발전 설비목표(2030)|B-038_aux_capacity_target_wte_2030",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 폐자원 발전 설비목표(2030)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-2552e0c53444|% 인구",
+      "dimensionLabels": {
+        "category": "참고자료] 도시폐기물 수거율(참고)"
+      },
+      "dimensions": {
+        "category": "참고자료] 도시폐기물 수거율(참고)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 도시폐기물 수거율(참고)",
+      "indicatorId": "B-038_aux_msw_collection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2552e0c53444",
+        "labelKo": "[산출 투입",
+        "unit": "% 인구",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-2552e0c53444|% 인구|category=참고자료] 도시폐기물 수거율(참고)|B-038_aux_msw_collection",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 도시폐기물 수거율(참고)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-22ac0ea3403a|% 중량",
+      "dimensionLabels": {
+        "category": "참고자료] 도시폐기물 중 음식물 · 유기성 비중"
+      },
+      "dimensions": {
+        "category": "참고자료] 도시폐기물 중 음식물 · 유기성 비중"
+      },
+      "displayLabel": "[산출 투입·참고자료] 도시폐기물 중 음식물·유기성 비중",
+      "indicatorId": "B-038_aux_msw_organic_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-22ac0ea3403a",
+        "labelKo": "[산출 투입",
+        "unit": "% 중량",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-22ac0ea3403a|% 중량|category=참고자료] 도시폐기물 중 음식물 · 유기성 비중|B-038_aux_msw_organic_share",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 도시폐기물 중 음식물·유기성 비중",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a5170524e4e6|kg/인/일",
+      "dimensionLabels": {
+        "category": "참고자료] 1인당 도시폐기물 발생량"
+      },
+      "dimensions": {
+        "category": "참고자료] 1인당 도시폐기물 발생량"
+      },
+      "displayLabel": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
+      "indicatorId": "B-038_aux_msw_percap",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a5170524e4e6",
+        "labelKo": "[산출 투입",
+        "unit": "kg/인/일",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a5170524e4e6|kg/인/일|category=참고자료] 1인당 도시폐기물 발생량|B-038_aux_msw_percap",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "dimensionLabels": {
+        "category": "참고자료] 사육두수",
+        "detail": "물소(산출 투입자료)"
+      },
+      "dimensions": {
+        "category": "참고자료] 사육두수",
+        "detail": "물소(산출 투입자료)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 사육두수 — 물소(산출 투입자료)",
+      "indicatorId": "B-038_aux_stock_buffalo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1dfbcc7c9550",
+        "labelKo": "[산출 투입",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=물소(산출 투입자료)|B-038_aux_stock_buffalo",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 사육두수 — 물소(산출 투입자료)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "dimensionLabels": {
+        "category": "참고자료] 사육두수",
+        "detail": "소(산출 투입자료)"
+      },
+      "dimensions": {
+        "category": "참고자료] 사육두수",
+        "detail": "소(산출 투입자료)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 사육두수 — 소(산출 투입자료)",
+      "indicatorId": "B-038_aux_stock_cattle",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1dfbcc7c9550",
+        "labelKo": "[산출 투입",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=소(산출 투입자료)|B-038_aux_stock_cattle",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 사육두수 — 소(산출 투입자료)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "dimensionLabels": {
+        "category": "참고자료] 사육두수",
+        "detail": "돼지(산출 투입자료)"
+      },
+      "dimensions": {
+        "category": "참고자료] 사육두수",
+        "detail": "돼지(산출 투입자료)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 사육두수 — 돼지(산출 투입자료)",
+      "indicatorId": "B-038_aux_stock_pig",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1dfbcc7c9550",
+        "labelKo": "[산출 투입",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=돼지(산출 투입자료)|B-038_aux_stock_pig",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 사육두수 — 돼지(산출 투입자료)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "dimensionLabels": {
+        "category": "참고자료] 사육두수",
+        "detail": "닭(산출 투입자료)"
+      },
+      "dimensions": {
+        "category": "참고자료] 사육두수",
+        "detail": "닭(산출 투입자료)"
+      },
+      "displayLabel": "[산출 투입·참고자료] 사육두수 — 닭(산출 투입자료)",
+      "indicatorId": "B-038_aux_stock_poultry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1dfbcc7c9550",
+        "labelKo": "[산출 투입",
+        "unit": "두",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=닭(산출 투입자료)|B-038_aux_stock_poultry",
+      "sourceCaveat": null,
+      "sourceLabel": "[산출 투입·참고자료] 사육두수 — 닭(산출 투입자료)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-8643816ff83c|백만 kW",
@@ -202,6 +575,66 @@
       }
     },
     {
+      "axisGroupKey": "measure-85c55a6c5112|Mt/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "수집가능(bankable) 바이오매스 공급량",
+      "indicatorId": "B-038_biomass_bankable",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-85c55a6c5112",
+        "labelKo": "수집가능(bankable) 바이오매스 공급량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-85c55a6c5112|Mt/yr||B-038_biomass_bankable",
+      "sourceCaveat": null,
+      "sourceLabel": "수집가능(bankable) 바이오매스 공급량",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-c1cecaf34657|TJ/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "바이오매스 에너지 잠재량",
+      "indicatorId": "B-038_biomass_energy_potential",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c1cecaf34657",
+        "labelKo": "바이오매스 에너지 잠재량",
+        "unit": "TJ/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-c1cecaf34657|TJ/yr||B-038_biomass_energy_potential",
+      "sourceCaveat": null,
+      "sourceLabel": "바이오매스 에너지 잠재량",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-561a654603fb|Mt/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "바이오매스 이론 부존량",
+      "indicatorId": "B-038_biomass_theoretical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-561a654603fb",
+        "labelKo": "바이오매스 이론 부존량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-561a654603fb|Mt/yr||B-038_biomass_theoretical",
+      "sourceCaveat": null,
+      "sourceLabel": "바이오매스 이론 부존량",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-d58e7b07454a|t/yr",
       "dimensionLabels": {
         "category": "전자 폐기물 발생량"
@@ -262,7 +695,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-29a5e522b7a8|Mt/yr",
+      "axisGroupKey": "measure-ccc9e008a799|Mt VS/yr",
       "dimensionLabels": {
         "technology": "08 · 15"
       },
@@ -273,12 +706,12 @@
       "indicatorId": "B-038_livestock_manure",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-29a5e522b7a8",
+        "key": "measure-ccc9e008a799",
         "labelKo": "축산폐기물(가축분뇨) 자원량",
-        "unit": "Mt/yr",
+        "unit": "Mt VS/yr",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-29a5e522b7a8|Mt/yr|technology=08,15|B-038_livestock_manure",
+      "seriesKey": "measure-ccc9e008a799|Mt VS/yr|technology=08,15|B-038_livestock_manure",
       "sourceCaveat": "[신규 수집 반영] 발주처 검토의견 「축산폐기물 자원량 산출」에 대한 조치. FAOSTAT QCL에서 Viet Nam · Element=Stocks · 4축종(소·물소·돼지·닭) × 2015–2024년 40건을 내려받아 수록했습니다(원자료: FAOSTAT_data_en_8-18-2026.csv, 39건 Official value). 분뇨 자원량 산출의 투입자료이자 그 자체로 축산 규모 지표로 사용 가능하도록 별도 지표화했습니다. [산출 보류 사유 — 계수 미확정] 받으신 FAOSTAT 파일에는 사육두수만 있고 분뇨발생 원단위는 포함되어 있지 않습니다. 공개 문헌에서 확인 가능한 계수는 축산 사육구조에 따라 편차가 커, 소농 중심 계수(소 4.5 kg/두/일 등)를 적용하면 2024년 기준 약 47 Mt/yr, 집약축산(유럽 낙농) 계수(소 17 t/두/년 등)를 적용하면 약 192 Mt/yr로 **약 4.5배 차이**가 발생합니다. 차이의 대부분은 소 계수(1.6 t/두/년 vs 17 t/두/년)에서 나오는데, 베트남 소는 재래 육우·역우가 주종이라 유럽 낙농우 계수를 그대로 적용하는 것은 부적절합니다. 근거 없는 단일값 제시를 피하기 위해 수록을 보류하고, 베트남 국가 온실가스 인벤토리(MONRE BUR/NC) 또는 MARD 축산 통계의 국가 고유 원단위를 확보한 뒤 적용하겠습니다. [참고] 상기 시산값은 산출 절차 검증용이며 수록값이 아닙니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
       "sourceLabel": "축산폐기물(가축분뇨) 자원량",
       "sourceLabelEn": "Livestock manure availability",
@@ -350,6 +783,30 @@
         "sourceRow": 19,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-d74aff6e6eb3|Mt/yr",
+      "dimensionLabels": {
+        "detail": "현지조사 기준"
+      },
+      "dimensions": {
+        "detail": "현지조사 기준"
+      },
+      "displayLabel": "도시폐기물 발생량 — 현지조사 기준",
+      "indicatorId": "B-038_msw_field",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d74aff6e6eb3",
+        "labelKo": "도시폐기물 발생량",
+        "unit": "Mt/yr",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d74aff6e6eb3|Mt/yr|detail=현지조사 기준|B-038_msw_field",
+      "sourceCaveat": null,
+      "sourceLabel": "도시폐기물 발생량 — 현지조사 기준",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f206688f0259|Mt/yr",
@@ -839,15 +1296,71 @@
       "indicatorCount": 1,
       "key": "measure-13e56f3e0776",
       "labelKo": "1인당 도시폐기물 발생량",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "kg/인/일",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-2552e0c53444",
+      "labelKo": "[산출 투입",
+      "recordCount": 1,
+      "unit": "% 인구",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-22ac0ea3403a",
+      "labelKo": "[산출 투입",
+      "recordCount": 1,
+      "unit": "% 중량",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-f8c3b05ddc42",
+      "labelKo": "[산출 투입",
+      "recordCount": 2,
+      "unit": "MW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a5170524e4e6",
+      "labelKo": "[산출 투입",
+      "recordCount": 5,
+      "unit": "kg/인/일",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-1dfbcc7c9550",
+      "labelKo": "[산출 투입",
+      "recordCount": 240,
+      "unit": "두",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 5,
       "key": "measure-76bf52d804b4",
       "labelKo": "농업잔재 자원량",
-      "recordCount": 1,
+      "recordCount": 10,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-30ad010aec85",
+      "labelKo": "농업잔재 자원량 - FAOSTAT 생산량×잔재계수 산출 계열(1965-2024)",
+      "recordCount": 60,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d74aff6e6eb3",
+      "labelKo": "도시폐기물 발생량",
+      "recordCount": 2,
       "unit": "Mt/yr",
       "unitFamily": "other"
     },
@@ -855,7 +1368,7 @@
       "indicatorCount": 1,
       "key": "measure-a1c76d6d4e02",
       "labelKo": "도시폐기물 수거율(참고)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "% 인구",
       "unitFamily": "percent"
     },
@@ -871,7 +1384,7 @@
       "indicatorCount": 1,
       "key": "measure-cd737328bac0",
       "labelKo": "도시폐기물 중 음식물",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "% 중량",
       "unitFamily": "percent"
     },
@@ -879,7 +1392,7 @@
       "indicatorCount": 7,
       "key": "measure-4cb7b5447f5a",
       "labelKo": "도시폐기물 처리경로별 비중",
-      "recordCount": 7,
+      "recordCount": 0,
       "unit": "% 중량",
       "unitFamily": "percent"
     },
@@ -895,15 +1408,31 @@
       "indicatorCount": 1,
       "key": "measure-8643816ff83c",
       "labelKo": "바이오매스",
-      "recordCount": 25,
+      "recordCount": 0,
       "unit": "백만 kW",
       "unitFamily": "capacity"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-c1cecaf34657",
+      "labelKo": "바이오매스 에너지 잠재량",
+      "recordCount": 2,
+      "unit": "TJ/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-561a654603fb",
+      "labelKo": "바이오매스 이론 부존량",
+      "recordCount": 2,
+      "unit": "Mt/yr",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-44865662c365",
       "labelKo": "바이오에너지 발전설비 용량(계통연계, 참고)",
-      "recordCount": 21,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -911,7 +1440,7 @@
       "indicatorCount": 1,
       "key": "measure-877aae060687",
       "labelKo": "바이오에너지 발전설비 용량(독립계통, 참고)",
-      "recordCount": 26,
+      "recordCount": 0,
       "unit": "MW",
       "unitFamily": "capacity"
     },
@@ -919,15 +1448,23 @@
       "indicatorCount": 4,
       "key": "measure-efdceb96360b",
       "labelKo": "사육두수",
-      "recordCount": 40,
+      "recordCount": 0,
       "unit": "두",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-85c55a6c5112",
+      "labelKo": "수집가능(bankable) 바이오매스 공급량",
+      "recordCount": 2,
+      "unit": "Mt/yr",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
       "key": "measure-cce048e76be7",
       "labelKo": "임업잔재 자원량",
-      "recordCount": 1,
+      "recordCount": 2,
       "unit": "Mt/yr",
       "unitFamily": "other"
     },
@@ -935,7 +1472,7 @@
       "indicatorCount": 1,
       "key": "measure-34b5f36d14cf",
       "labelKo": "재생에너지 발전량 비중(참고)",
-      "recordCount": 24,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -943,7 +1480,7 @@
       "indicatorCount": 1,
       "key": "measure-684bafb2a64b",
       "labelKo": "재생에너지 설비용량 비중(참고)",
-      "recordCount": 26,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -951,20 +1488,20 @@
       "indicatorCount": 1,
       "key": "measure-d58e7b07454a",
       "labelKo": "전기",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t/yr",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-29a5e522b7a8",
+      "key": "measure-ccc9e008a799",
       "labelKo": "축산폐기물(가축분뇨) 자원량",
-      "recordCount": 1,
-      "unit": "Mt/yr",
+      "recordCount": 60,
+      "unit": "Mt VS/yr",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 190,
+  "observationCount": 399,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

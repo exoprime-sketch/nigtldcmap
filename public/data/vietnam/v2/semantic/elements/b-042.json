@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-042",
-  "entityCount": 205,
+  "entityCount": 242,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 144,
+  "indicatorCount": 145,
   "indicators": [
     {
       "axisGroupKey": "measure-c1e63408b2bc|W/m²",
@@ -1811,41 +1811,61 @@
       }
     },
     {
-      "axisGroupKey": "measure-8f51eb34e396|m/s · W/m²",
+      "axisGroupKey": "measure-022b340c6cb5|m/s · W/m²",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "풍력 자원(성 단위 개체 목록)",
+      "displayLabel": "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
       "indicatorId": "B-042_wind_adm1",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-8f51eb34e396",
-        "labelKo": "풍력 자원(성 단위 개체 목록)",
+        "key": "measure-022b340c6cb5",
+        "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
         "unit": "m/s · W/m²",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-8f51eb34e396|m/s · W/m²||B-042_wind_adm1",
+      "seriesKey": "measure-022b340c6cb5|m/s · W/m²||B-042_wind_adm1",
       "sourceCaveat": null,
-      "sourceLabel": "풍력 자원(성 단위 개체 목록)",
+      "sourceLabel": "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-797049975044|지표별 상이(속성 열 참조)",
+      "axisGroupKey": "measure-52d37a92a784|m/s · W/m²",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "풍력 자원(전국)",
+      "displayLabel": "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
+      "indicatorId": "B-042_wind_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-52d37a92a784",
+        "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
+        "unit": "m/s · W/m²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-52d37a92a784|m/s · W/m²||B-042_wind_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-23cac7ae3394|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "풍력 자원(전국) (기준연도 2017)",
       "indicatorId": "B-042_wind_national",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-797049975044",
-        "labelKo": "풍력 자원(전국)",
+        "key": "measure-23cac7ae3394",
+        "labelKo": "풍력 자원(전국) (기준연도 2017)",
         "unit": "지표별 상이(속성 열 참조)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-797049975044|지표별 상이(속성 열 참조)||B-042_wind_national",
+      "seriesKey": "measure-23cac7ae3394|지표별 상이(속성 열 참조)||B-042_wind_national",
       "sourceCaveat": null,
-      "sourceLabel": "풍력 자원(전국)",
+      "sourceLabel": "풍력 자원(전국) (기준연도 2017)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -4826,16 +4846,24 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-8f51eb34e396",
-      "labelKo": "풍력 자원(성 단위 개체 목록)",
+      "key": "measure-022b340c6cb5",
+      "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
       "recordCount": 0,
       "unit": "m/s · W/m²",
       "unitFamily": "area"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-797049975044",
-      "labelKo": "풍력 자원(전국)",
+      "key": "measure-52d37a92a784",
+      "labelKo": "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "m/s · W/m²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-23cac7ae3394",
+      "labelKo": "풍력 자원(전국) (기준연도 2017)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"
