@@ -70,6 +70,7 @@ import TransmissionNetworkSummaryV140, {
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
+import DetailLayerV160 from "../layers/DetailLayerV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
@@ -536,23 +537,30 @@ export default function PublicDataAnalysisRouterV126({
         {mapSlot}
       </section>
 
-      <PublicSourcePanelV126
-        elementId={elementId}
-        indicators={indicators}
-        observations={observations}
-        entities={entities}
-        spatialUnit={spatialUnit}
-        aggregationBasis={aggregationBasis}
-      />
-      {/* A status screen states the decision only; its rows are not tabled (V159). */}
-      {elementId !== "D-011" && !isStatusV159 ? (
-        <PublicRawDataTablesV126
+      {/* V160: source metadata and the raw-data table read as layer 3 - closed
+          by default, opened on request or by a remembered global preference.
+          Their own testids (detail-source-line-v153, public-raw-table, ...)
+          stay in the DOM either way, since a closed <details> does not
+          unmount its children. */}
+      <DetailLayerV160 layer={3} title="자료 출처·상세 데이터">
+        <PublicSourcePanelV126
           elementId={elementId}
-          observations={semanticRows}
+          indicators={indicators}
+          observations={observations}
           entities={entities}
-          detailTemplate={detailTemplate}
+          spatialUnit={spatialUnit}
+          aggregationBasis={aggregationBasis}
         />
-      ) : null}
+        {/* A status screen states the decision only; its rows are not tabled (V159). */}
+        {elementId !== "D-011" && !isStatusV159 ? (
+          <PublicRawDataTablesV126
+            elementId={elementId}
+            observations={semanticRows}
+            entities={entities}
+            detailTemplate={detailTemplate}
+          />
+        ) : null}
+      </DetailLayerV160>
     </>
   );
 

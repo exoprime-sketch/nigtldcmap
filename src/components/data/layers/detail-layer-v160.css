@@ -1,0 +1,67 @@
+/* V160-D: layer 2/3 collapsed sections of the detail screen. Palette matches
+   the other detail panels (data-description-v159.css, public-data-analysis-v126.css). */
+
+.dtl160 {
+  min-width: 0;
+  border: 1px solid #dbe7e3;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.dtl160 + .dtl160 {
+  margin-top: 14px;
+}
+
+.dtl160 > summary {
+  color: #173a33;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 15px 18px;
+  list-style: none;
+}
+
+.dtl160 > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dtl160 > summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  color: #567067;
+  transition: transform 0.15s ease;
+}
+
+.dtl160[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.dtl160 > summary:focus-visible {
+  outline: 2px solid #16806b;
+  outline-offset: 2px;
+}
+
+.dtl160-body {
+  padding: 0 18px 18px;
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* A reader who prints the page (or saves it as a PDF) gets every layer open,
+   regardless of what was collapsed on screen - the closed-details UA rule
+   (`details:not([open]) > *:not(summary) { display: none }`) is overridden
+   here rather than by toggling the `open` attribute, so screen state is
+   untouched. */
+@media print {
+  .dtl160 > summary::before {
+    content: "";
+    margin-right: 0;
+  }
+  .dtl160-body {
+    display: grid !important;
+  }
+}
