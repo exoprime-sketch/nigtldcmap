@@ -1060,7 +1060,6 @@ const CATALOG_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] = [
   seedV134({ id: "ept", term: "EPT", englishName: "Environmental Protection Tax", koreanName: "환경보호세", definition: "연료 등 환경 부담이 큰 품목에 부과하는 베트남의 세목입니다.", category: "economy" }),
   seedV134({ id: "db2020", term: "DB2020", englishName: "Doing Business 2020", koreanName: "세계은행 기업환경평가 2020년판", definition: "세계은행이 발간한 기업환경평가의 2020년판으로, 이 지표의 마지막 발간본입니다.", category: "economy" }),
   seedV134({ id: "wgi", term: "WGI", englishName: "Worldwide Governance Indicators", koreanName: "세계 거버넌스 지표", definition: "세계은행이 국가별 거버넌스 수준을 여섯 차원으로 추정한 지표입니다.", category: "economy" }),
-  seedV134({ id: "nri", term: "NRI", englishName: "Network Readiness Index", koreanName: "네트워크 준비지수", definition: "포르툴란스 연구소가 기술·사람·거버넌스·영향 네 영역으로 각국의 디지털 기술 활용 준비도를 평가한 지수입니다.", category: "economy" }),
   seedV134({ id: "b2b", term: "B2B", englishName: "Business-to-Business", koreanName: "기업 간 거래", definition: "최종 소비자가 아니라 기업과 기업 사이에 이루어지는 거래를 뜻합니다.", category: "economy" }),
   seedV134({ id: "ai", term: "AI", englishName: "Artificial Intelligence", koreanName: "인공지능", definition: "사람의 인지·판단 기능을 기계가 수행하도록 하는 기술 분야입니다.", category: "economy" }),
   seedV134({ id: "it", term: "IT", englishName: "Information Technology", koreanName: "정보기술", definition: "정보를 수집·저장·전송·처리하는 기술과 그 기반 시설을 통칭합니다.", category: "economy" }),

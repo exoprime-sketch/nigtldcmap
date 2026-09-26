@@ -40,6 +40,6 @@
 
 ## 그 밖의 변경(기대값이 아닌 것)
 - 단위 테스트 `ResearchPatentAnalysisV144.test.ts`: E-008 카드 검증은 E-008이 제외인 동안 "카드 없음 + 제외 사유·결정일(2026-09-18) 존재"를 확인하고, 다시 공개되면 원래 카드 검증으로 돌아간다(검증 삭제 없음)
-- 용어집: `NRI`(Network Readiness Index·네트워크 준비지수) 등록 — E-011 안내 카드 사유에 쓰인 약어. glossary 감사가 안내 페이지 문구도 인벤토리에 넣으면서 드러남
+- 용어집: E-011 안내 카드 사유의 `NRI`는 #32(V159)가 등록한 항목을 쓴다(이 PR에서 따로 넣었던 같은 ID는 main 병합 후 중복이라 제거)
 - 게이트 밖 옛 감사(v124–v135의 release·finder-ux·limitations·public-content·public-screens·routes·semantic·visual 등)의 152 기준값은 이번에 바꾸지 않았다(게이트 미포함, 이미 V139 이전 기대값으로 실패하는 감사 포함)
 
