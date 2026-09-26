@@ -23,10 +23,17 @@
  *        VERCEL_AUTOMATION_BYPASS_SECRET=… for a protected Preview (or --bypass-secret)
  */
 import { chromium } from "playwright";
-import { mkdirSync, statSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
+import { publicListedElementsV156 } from "../v156/exclusions-audit-v156.mjs";
+
+// V156: the finder and the home figure count the public set (excluded elements
+// are in no list); the framework (catalog length) is unchanged.
+const PUBLIC_COUNT_V156 = publicListedElementsV156(
+  JSON.parse(readFileSync(resolve(PROJECT_ROOT, "public/data/vietnam/v2/catalog.json"), "utf8")).elements
+).length;
 
 const argv = process.argv.slice(2);
 const opt = (flag, fallback = null) => {
@@ -311,7 +318,8 @@ await section("FINDER", async () => {
     .$eval('[data-testid="public-finder-card-v135"][data-element-id="B-017"]', (card) => [...card.querySelectorAll("button")].map((button) => String(button.textContent || "").trim()))
     .catch(() => null);
   report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons };
-  check("FINDER_TOTAL_152", totalAll === 152 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, 152);
+  // The check keeps its name; its count is the public set (152 when all were public).
+  check("FINDER_TOTAL_152", totalAll === PUBLIC_COUNT_V156 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, PUBLIC_COUNT_V156);
   check(
     "FINDER_HAS_SORT_AND_FILTERS",
     ["정렬", "대분류", "제공기관", "제공 형태", "기후기술", "자료연도"].every((name) => labels.includes(name)),

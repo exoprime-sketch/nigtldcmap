@@ -22,6 +22,8 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finishAuditV135, normalizeTextV135 } from "./v135/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("temporal-depth:v135");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 const contractResult = readJson(resolve(PROJECT_ROOT, "reports/v132/final-public-visualization-contract-v132.json"));
@@ -47,7 +49,7 @@ try {
       brokenAssets.push({ url: response.url, status: response.status });
     }
   });
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     try {
       await navigate(browser.cdp, detailUrlV135(server.url, elementId));
@@ -197,7 +199,7 @@ const ghgAnalyticalView =
     : (ghg?.inventoryValid === true || ghg?.analyticalView === true) && ghg?.rawTableIsPrimary === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
-audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
+audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === publicListedElementsV156(catalog).length && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: publicListedElementsV156(catalog).length, routeFailures: [] });
 audit.check("TEMPORAL_DEPTH_MARKER_COVERAGE", invalidDepth.length === 0, invalidDepth, []);
 audit.check("TEMPORAL_DEPTH_CONTRACT_MATCH", contractDepthMismatches.length === 0, contractDepthMismatches, []);
 audit.check("SINGLE_YEAR_TIME_SERIES_COUNT", singleYearTrend.length === 0, singleYearTrend, []);

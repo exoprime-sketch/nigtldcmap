@@ -72,7 +72,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
       </div>
     </section>
     <section className="home-status-v139" aria-label="데이터 현황"><dl className="home-status-v139__inner home-v128-stats" aria-live="polite">
-      <div><dt>전체 데이터 항목</dt><dd>{overview ? overview.frameworkElementCount + "개" : "—"}</dd></div>
+      <div><dt>전체 데이터 항목</dt><dd>{overview ? overview.publicElementCount + "개" : "—"}</dd></div>
       <div><dt>지도 제공 항목</dt><dd>{overview ? overview.mapLayerCount + "개" : "—"}</dd></div>
       <div><dt>다운로드 가능 항목</dt><dd>{overview ? overview.downloadableElementCount + "개" : "—"}</dd></div>
       <div><dt>데이터 기준일</dt><dd>{overview?.releaseDate ?? "—"}</dd></div>

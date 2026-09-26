@@ -1,20 +1,31 @@
 {
   "summary": {
-    "generatedAt": "2026-09-22T04:58:37.524Z",
-    "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\build",
-    "elements": 152,
-    "pass": 152,
+    "generatedAt": "2026-09-24T13:18:11.971Z",
+    "build": "C:\\Users\\user\\Documents\\nigt-wt-d3\\build",
+    "elements": 142,
+    "pass": 142,
     "fail": 0,
     "failedIds": [],
+    "excludedIds": [
+      "A-017",
+      "C-015",
+      "C-020",
+      "C-023",
+      "D-024",
+      "E-008",
+      "E-011",
+      "E-013",
+      "E-016",
+      "E-017"
+    ],
     "byStatus": {
-      "standard": 108,
+      "standard": 100,
       "preserved": 11,
-      "exception": 33
+      "exception": 31
     },
     "exceptionIds": [
       "A-013",
       "A-015",
-      "A-017",
       "A-025",
       "A-026",
       "B-001",
@@ -43,72 +54,71 @@
       "D-018",
       "E-002",
       "E-006",
-      "E-009",
-      "E-017"
+      "E-009"
     ],
     "checks": {
       "primaryTypeMatch": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "rankOrder": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "axesMatch": {
-        "pass": 113,
+        "pass": 110,
         "fail": 0,
-        "notApplicable": 39
+        "notApplicable": 32
       },
       "blockHonesty": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "readingNotesAbsent": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "statusNoteNoChart": {
-        "pass": 5,
+        "pass": 1,
         "fail": 0,
-        "notApplicable": 147
+        "notApplicable": 141
       },
       "policyNoNumericChart": {
-        "pass": 22,
+        "pass": 20,
         "fail": 0,
-        "notApplicable": 130
+        "notApplicable": 122
       },
       "kpiRow": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "titleOnce": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "sourceLine": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "mapPlacement": {
         "pass": 42,
         "fail": 0,
-        "notApplicable": 110
+        "notApplicable": 100
       },
       "overflow320": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       },
       "console": {
-        "pass": 152,
+        "pass": 142,
         "fail": 0,
         "notApplicable": 0
       }
@@ -1492,96 +1502,6 @@
       "pass": true
     },
     {
-      "elementId": "A-017",
-      "archetype": "national-series",
-      "status": "exception",
-      "expected": {
-        "type": "dumbbell",
-        "title": "발전기술별 LCOE 범위와 벤치마크",
-        "xAxis": "균등화 발전비용",
-        "yAxis": "발전원",
-        "unit": "USD/MWh"
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": true,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "match",
-          "blocks": [
-            {
-              "type": "dumbbell",
-              "rank": "1",
-              "top": 746,
-              "left": 155,
-              "width": 1130,
-              "axes": {
-                "x": "균등화 발전비용",
-                "y": "발전원",
-                "unit": "USD/MWh"
-              }
-            },
-            {
-              "type": "sorted-table",
-              "rank": "2",
-              "top": 1437,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            },
-            {
-              "type": "table",
-              "rank": "3",
-              "top": 1900,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "USD/MWh",
-              "text": "155 USD/MWhLCOE 최대 · 해상풍력 · 2023년"
-            },
-            {
-              "unit": "년",
-              "text": "2023·2030·2050년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "72건공개 관측값"
-            },
-            {
-              "unit": "종",
-              "text": "24종지표 수"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
       "elementId": "A-018",
       "archetype": "composition",
       "status": "standard",
@@ -2054,7 +1974,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1443,
+              "top": 1544,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -2066,7 +1986,7 @@
             {
               "type": "sorted-table",
               "rank": "3",
-              "top": 1944,
+              "top": 2045,
               "left": 155,
               "width": 557,
               "axes": null
@@ -2074,7 +1994,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 2094,
+              "top": 2195,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -2084,7 +2004,7 @@
             "top": 677,
             "left": 923,
             "width": 362,
-            "height": 749,
+            "height": 850,
             "mapReady": true
           },
           "split": true,
@@ -2114,7 +2034,7 @@
             "top": 1473,
             "left": 31,
             "width": 328,
-            "height": 725,
+            "height": 809,
             "mapReady": true
           },
           "first": {
@@ -2124,7 +2044,7 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2214
+            "top": 2298
           }
         },
         "overflow320": 0,
@@ -2180,7 +2100,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1384,
+              "top": 1401,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -2192,7 +2112,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 1645,
+              "top": 1662,
               "left": 155,
               "width": 557,
               "axes": null
@@ -2200,7 +2120,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 1645,
+              "top": 1662,
               "left": 728,
               "width": 557,
               "axes": null
@@ -2210,7 +2130,7 @@
             "top": 617,
             "left": 923,
             "width": 362,
-            "height": 750,
+            "height": 767,
             "mapReady": true
           },
           "split": true,
@@ -2240,7 +2160,7 @@
             "top": 1372,
             "left": 31,
             "width": 328,
-            "height": 709,
+            "height": 743,
             "mapReady": true
           },
           "first": {
@@ -2250,7 +2170,7 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2097
+            "top": 2131
           }
         },
         "overflow320": 0,
@@ -2302,7 +2222,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1465,
+              "top": 1493,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -2312,7 +2232,7 @@
             "top": 651,
             "left": 923,
             "width": 362,
-            "height": 750,
+            "height": 778,
             "mapReady": true
           },
           "split": true,
@@ -2343,7 +2263,7 @@
             "top": 1521,
             "left": 31,
             "width": 328,
-            "height": 769,
+            "height": 797,
             "mapReady": true
           },
           "first": {
@@ -2353,7 +2273,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2354
+            "top": 2382
           }
         },
         "overflow320": 0,
@@ -3265,7 +3185,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 1813,
+              "top": 1830,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -3277,7 +3197,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2260,
+              "top": 2277,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3285,7 +3205,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 2492,
+              "top": 2510,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3295,7 +3215,7 @@
             "top": 873,
             "left": 923,
             "width": 362,
-            "height": 925,
+            "height": 942,
             "mapReady": true
           },
           "split": true,
@@ -3387,7 +3307,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 2004,
+              "top": 2021,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -3399,7 +3319,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2524,
+              "top": 2541,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3407,7 +3327,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 3427,
+              "top": 3444,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3417,7 +3337,7 @@
             "top": 900,
             "left": 923,
             "width": 362,
-            "height": 1088,
+            "height": 1105,
             "mapReady": true
           },
           "split": true,
@@ -3509,7 +3429,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 2002,
+              "top": 2019,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -3521,7 +3441,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2483,
+              "top": 2500,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3529,7 +3449,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 3253,
+              "top": 3270,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3539,7 +3459,7 @@
             "top": 898,
             "left": 923,
             "width": 362,
-            "height": 1088,
+            "height": 1105,
             "mapReady": true
           },
           "split": true,
@@ -3631,7 +3551,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 2019,
+              "top": 2036,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -3643,7 +3563,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2538,
+              "top": 2555,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3651,7 +3571,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 3441,
+              "top": 3458,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3661,7 +3581,7 @@
             "top": 890,
             "left": 923,
             "width": 362,
-            "height": 1113,
+            "height": 1130,
             "mapReady": true
           },
           "split": true,
@@ -3753,7 +3673,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 2027,
+              "top": 2044,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -3765,7 +3685,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2548,
+              "top": 2565,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3773,7 +3693,7 @@
             {
               "type": "table",
               "rank": "4",
-              "top": 3452,
+              "top": 3469,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3783,7 +3703,7 @@
             "top": 898,
             "left": 923,
             "width": 362,
-            "height": 1113,
+            "height": 1130,
             "mapReady": true
           },
           "split": true,
@@ -3875,7 +3795,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1732,
+              "top": 1777,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -3885,7 +3805,7 @@
             "top": 908,
             "left": 923,
             "width": 362,
-            "height": 808,
+            "height": 854,
             "mapReady": true
           },
           "split": true,
@@ -3911,7 +3831,7 @@
             "top": 2170,
             "left": 31,
             "width": 328,
-            "height": 769,
+            "height": 814,
             "mapReady": true
           },
           "first": {
@@ -3921,7 +3841,7 @@
           },
           "second": {
             "type": "table",
-            "top": 2955
+            "top": 3001
           }
         },
         "overflow320": 0,
@@ -4231,7 +4151,7 @@
             {
               "type": "timeline",
               "rank": "2",
-              "top": 1348,
+              "top": 1449,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -4241,7 +4161,7 @@
             "top": 546,
             "left": 923,
             "width": 362,
-            "height": 786,
+            "height": 887,
             "mapReady": true
           },
           "split": true,
@@ -4267,7 +4187,7 @@
             "top": 1185,
             "left": 31,
             "width": 328,
-            "height": 746,
+            "height": 847,
             "mapReady": true
           },
           "first": {
@@ -4277,7 +4197,7 @@
           },
           "second": {
             "type": "timeline",
-            "top": 1948
+            "top": 2049
           }
         },
         "overflow320": 0,
@@ -4516,11 +4436,11 @@
             },
             {
               "unit": "건",
-              "text": "13건공개 관측값"
+              "text": "10건공개 관측값"
             },
             {
               "unit": "종",
-              "text": "14종지표 수"
+              "text": "11종지표 수"
             }
           ],
           "titleCount": 1,
@@ -5001,7 +4921,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 1783,
+              "top": 1800,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -5013,7 +4933,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2544,
+              "top": 2561,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5023,7 +4943,7 @@
             "top": 659,
             "left": 923,
             "width": 362,
-            "height": 1108,
+            "height": 1125,
             "mapReady": true
           },
           "split": true,
@@ -5053,7 +4973,7 @@
             "top": 1821,
             "left": 31,
             "width": 328,
-            "height": 1094,
+            "height": 1111,
             "mapReady": true
           },
           "first": {
@@ -5063,7 +4983,7 @@
           },
           "second": {
             "type": "line",
-            "top": 2930
+            "top": 2947
           }
         },
         "overflow320": 0,
@@ -5138,11 +5058,11 @@
             },
             {
               "unit": "건",
-              "text": "11건공개 관측값"
+              "text": "8건공개 관측값"
             },
             {
               "unit": "종",
-              "text": "11종지표 수"
+              "text": "8종지표 수"
             }
           ],
           "titleCount": 1,
@@ -5201,7 +5121,7 @@
             {
               "type": "sorted-table",
               "rank": "2",
-              "top": 1557,
+              "top": 1602,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5209,7 +5129,7 @@
             {
               "type": "sorted-table",
               "rank": "3",
-              "top": 1762,
+              "top": 1807,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5217,7 +5137,7 @@
             {
               "type": "sorted-table",
               "rank": "4",
-              "top": 2004,
+              "top": 2049,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5227,7 +5147,7 @@
             "top": 646,
             "left": 923,
             "width": 362,
-            "height": 895,
+            "height": 940,
             "mapReady": true
           },
           "split": true,
@@ -5253,7 +5173,7 @@
             "top": 1315,
             "left": 31,
             "width": 328,
-            "height": 872,
+            "height": 900,
             "mapReady": true
           },
           "first": {
@@ -5263,7 +5183,7 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 2203
+            "top": 2231
           }
         },
         "overflow320": 0,
@@ -5405,7 +5325,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1525,
+              "top": 1570,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -5417,7 +5337,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 1929,
+              "top": 1974,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5427,7 +5347,7 @@
             "top": 691,
             "left": 923,
             "width": 362,
-            "height": 818,
+            "height": 863,
             "mapReady": true
           },
           "split": true,
@@ -5453,7 +5373,7 @@
             "top": 1649,
             "left": 31,
             "width": 328,
-            "height": 777,
+            "height": 822,
             "mapReady": true
           },
           "first": {
@@ -5463,7 +5383,7 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2442
+            "top": 2487
           }
         },
         "overflow320": 0,
@@ -5675,7 +5595,7 @@
             {
               "type": "sorted-table",
               "rank": "2",
-              "top": 1516,
+              "top": 1544,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5683,7 +5603,7 @@
             {
               "type": "sorted-table",
               "rank": "3",
-              "top": 1684,
+              "top": 1712,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5691,7 +5611,7 @@
             {
               "type": "sorted-table",
               "rank": "4",
-              "top": 1889,
+              "top": 1917,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5699,7 +5619,7 @@
             {
               "type": "table",
               "rank": "5",
-              "top": 2058,
+              "top": 2086,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -5709,7 +5629,7 @@
             "top": 646,
             "left": 923,
             "width": 362,
-            "height": 854,
+            "height": 882,
             "mapReady": true
           },
           "split": true,
@@ -5735,7 +5655,7 @@
             "top": 1298,
             "left": 31,
             "width": 328,
-            "height": 812,
+            "height": 857,
             "mapReady": true
           },
           "first": {
@@ -5745,7 +5665,7 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 2126
+            "top": 2171
           }
         },
         "overflow320": 0,
@@ -6147,7 +6067,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1749,
+              "top": 1766,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -6157,7 +6077,7 @@
             "top": 678,
             "left": 923,
             "width": 362,
-            "height": 1055,
+            "height": 1073,
             "mapReady": true
           },
           "split": true,
@@ -6187,7 +6107,7 @@
             "top": 1546,
             "left": 31,
             "width": 328,
-            "height": 1041,
+            "height": 1058,
             "mapReady": true
           },
           "first": {
@@ -6197,7 +6117,7 @@
           },
           "second": {
             "type": "table",
-            "top": 2604
+            "top": 2621
           }
         },
         "overflow320": 0,
@@ -6253,7 +6173,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1675,
+              "top": 1692,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -6263,7 +6183,7 @@
             "top": 659,
             "left": 923,
             "width": 362,
-            "height": 1000,
+            "height": 1017,
             "mapReady": true
           },
           "split": true,
@@ -6359,7 +6279,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1697,
+              "top": 1714,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -6369,7 +6289,7 @@
             "top": 679,
             "left": 923,
             "width": 362,
-            "height": 1002,
+            "height": 1019,
             "mapReady": true
           },
           "split": true,
@@ -6399,7 +6319,7 @@
             "top": 1729,
             "left": 31,
             "width": 328,
-            "height": 1087,
+            "height": 1104,
             "mapReady": true
           },
           "first": {
@@ -6409,7 +6329,7 @@
           },
           "second": {
             "type": "table",
-            "top": 2832
+            "top": 2849
           }
         },
         "overflow320": 0,
@@ -6633,7 +6553,7 @@
             {
               "type": "region-bar",
               "rank": "2",
-              "top": 1803,
+              "top": 1820,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -6645,7 +6565,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2440,
+              "top": 2457,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -6653,7 +6573,7 @@
             {
               "type": "line",
               "rank": "4",
-              "top": 3290,
+              "top": 3307,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -6665,7 +6585,7 @@
             {
               "type": "table",
               "rank": "5",
-              "top": 3782,
+              "top": 3799,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -6675,7 +6595,7 @@
             "top": 864,
             "left": 923,
             "width": 362,
-            "height": 924,
+            "height": 941,
             "mapReady": true
           },
           "split": true,
@@ -6913,7 +6833,7 @@
             "top": 2086,
             "left": 31,
             "width": 328,
-            "height": 1057,
+            "height": 1074,
             "mapReady": true
           },
           "first": {
@@ -6923,7 +6843,7 @@
           },
           "second": {
             "type": "table",
-            "top": 3159
+            "top": 3176
           }
         },
         "overflow320": 0,
@@ -7109,7 +7029,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 2015,
+              "top": 2032,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7117,7 +7037,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2162,
+              "top": 2179,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7127,7 +7047,7 @@
             "top": 893,
             "left": 923,
             "width": 362,
-            "height": 1106,
+            "height": 1123,
             "mapReady": true
           },
           "split": true,
@@ -7547,7 +7467,7 @@
             {
               "type": "category-bar",
               "rank": "1",
-              "top": 624,
+              "top": 626,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -7559,7 +7479,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1048,
+              "top": 1050,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7567,7 +7487,7 @@
             {
               "type": "status-note",
               "rank": "3",
-              "top": 1425,
+              "top": 1429,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7637,7 +7557,7 @@
             {
               "type": "table",
               "rank": "1",
-              "top": 624,
+              "top": 625,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7645,7 +7565,7 @@
             {
               "type": "status-note",
               "rank": "2",
-              "top": 1128,
+              "top": 1129,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7727,7 +7647,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1330,
+              "top": 1375,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -7737,7 +7657,7 @@
             "top": 546,
             "left": 923,
             "width": 362,
-            "height": 768,
+            "height": 813,
             "mapReady": true
           },
           "split": true,
@@ -7764,7 +7684,7 @@
             "top": 1292,
             "left": 31,
             "width": 328,
-            "height": 728,
+            "height": 773,
             "mapReady": true
           },
           "first": {
@@ -7774,7 +7694,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2036
+            "top": 2081
           }
         },
         "overflow320": 0,
@@ -8393,7 +8313,7 @@
             {
               "type": "category-bar",
               "rank": "3",
-              "top": 5243,
+              "top": 5249,
               "left": 169,
               "width": 1102,
               "axes": {
@@ -8405,7 +8325,7 @@
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 5445,
+              "top": 5451,
               "left": 169,
               "width": 1102,
               "axes": {
@@ -8417,7 +8337,7 @@
             {
               "type": "comparison-table",
               "rank": "5",
-              "top": 5831,
+              "top": 5836,
               "left": 169,
               "width": 1102,
               "axes": null
@@ -8425,7 +8345,7 @@
             {
               "type": "comparison-table",
               "rank": "6",
-              "top": 7759,
+              "top": 7764,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8433,7 +8353,7 @@
             {
               "type": "cards-list",
               "rank": "7",
-              "top": 8496,
+              "top": 8502,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8509,7 +8429,7 @@
             "top": 546,
             "left": 923,
             "width": 362,
-            "height": 980,
+            "height": 997,
             "mapReady": true
           },
           "split": true,
@@ -8532,16 +8452,16 @@
         },
         "narrow": {
           "slot": {
-            "top": 17397,
+            "top": 17406,
             "left": 31,
             "width": 328,
-            "height": 1041,
+            "height": 1058,
             "mapReady": true
           },
           "first": {
             "type": "timeline",
             "top": 808,
-            "height": 16573
+            "height": 16582
           },
           "second": null
         },
@@ -8596,7 +8516,7 @@
             "top": 546,
             "left": 923,
             "width": 362,
-            "height": 1014,
+            "height": 1033,
             "mapReady": true
           },
           "split": true,
@@ -8619,16 +8539,16 @@
         },
         "narrow": {
           "slot": {
-            "top": 13774,
+            "top": 13816,
             "left": 31,
             "width": 328,
-            "height": 1092,
+            "height": 1094,
             "mapReady": true
           },
           "first": {
             "type": "timeline",
             "top": 771,
-            "height": 12987
+            "height": 13028
           },
           "second": null
         },
@@ -8803,7 +8723,7 @@
             {
               "type": "comparison-table",
               "rank": "2",
-              "top": 2830,
+              "top": 2848,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8811,7 +8731,7 @@
             {
               "type": "comparison-table",
               "rank": "3",
-              "top": 3047,
+              "top": 3067,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8819,7 +8739,7 @@
             {
               "type": "comparison-table",
               "rank": "4",
-              "top": 3513,
+              "top": 3533,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8827,7 +8747,7 @@
             {
               "type": "comparison-table",
               "rank": "5",
-              "top": 4075,
+              "top": 4100,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8835,7 +8755,7 @@
             {
               "type": "comparison-table",
               "rank": "6",
-              "top": 6699,
+              "top": 6761,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8843,7 +8763,7 @@
             {
               "type": "sorted-table",
               "rank": "7",
-              "top": 6897,
+              "top": 6962,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -8876,7 +8796,7 @@
         },
         "narrow": {
           "slot": {
-            "top": 4302,
+            "top": 4330,
             "left": 31,
             "width": 328,
             "height": 1036,
@@ -8885,11 +8805,11 @@
           "first": {
             "type": "comparison-table",
             "top": 1013,
-            "height": 3273
+            "height": 3301
           },
           "second": {
             "type": "comparison-table",
-            "top": 5355
+            "top": 5383
           }
         },
         "overflow320": 0,
@@ -8943,7 +8863,7 @@
             "top": 546,
             "left": 923,
             "width": 362,
-            "height": 1039,
+            "height": 1058,
             "mapReady": true
           },
           "split": true,
@@ -8966,16 +8886,16 @@
         },
         "narrow": {
           "slot": {
-            "top": 2331,
+            "top": 2368,
             "left": 31,
             "width": 328,
-            "height": 1092,
+            "height": 1094,
             "mapReady": true
           },
           "first": {
             "type": "comparison-table",
             "top": 789,
-            "height": 1526
+            "height": 1563
           },
           "second": null
         },
@@ -9052,72 +8972,6 @@
       "pass": true
     },
     {
-      "elementId": "C-015",
-      "archetype": "policy-document",
-      "status": "standard",
-      "expected": {
-        "type": "comparison-table",
-        "title": "정책 원문 링크 목록",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": true,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "comparison-table",
-              "rank": "1",
-              "top": 546,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "건",
-              "text": "20건원문 링크 · 2016–2026년"
-            },
-            {
-              "unit": "년",
-              "text": "2016–2026년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "21건공개 목록"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
       "elementId": "C-016",
       "archetype": "province-distribution",
       "status": "standard",
@@ -9164,7 +9018,7 @@
             {
               "type": "table",
               "rank": "2",
-              "top": 1777,
+              "top": 1795,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -9174,7 +9028,7 @@
             "top": 679,
             "left": 923,
             "width": 362,
-            "height": 1082,
+            "height": 1100,
             "mapReady": true
           },
           "split": true,
@@ -9204,7 +9058,7 @@
             "top": 1678,
             "left": 31,
             "width": 328,
-            "height": 1081,
+            "height": 1082,
             "mapReady": true
           },
           "first": {
@@ -9214,7 +9068,7 @@
           },
           "second": {
             "type": "table",
-            "top": 2775
+            "top": 2776
           }
         },
         "overflow320": 0,
@@ -9491,7 +9345,7 @@
             "top": 2287,
             "left": 31,
             "width": 328,
-            "height": 1091,
+            "height": 1108,
             "mapReady": true
           },
           "first": {
@@ -9501,61 +9355,8 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 3442
+            "top": 3459
           }
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "C-020",
-      "archetype": "status-note",
-      "status": "standard",
-      "expected": {
-        "type": "status-note",
-        "title": "감축사업 기초자료 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": true,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "status-note",
-              "rank": "1",
-              "top": 522,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [],
-          "titleCount": 1,
-          "nestedTags": 0
         },
         "overflow320": 0,
         "console": []
@@ -9708,7 +9509,7 @@
             "top": 2288,
             "left": 31,
             "width": 328,
-            "height": 1091,
+            "height": 1108,
             "mapReady": true
           },
           "first": {
@@ -9718,61 +9519,8 @@
           },
           "second": {
             "type": "sorted-table",
-            "top": 3443
+            "top": 3460
           }
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "C-023",
-      "archetype": "status-note",
-      "status": "standard",
-      "expected": {
-        "type": "status-note",
-        "title": "한계저감비용 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": true,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "status-note",
-              "rank": "1",
-              "top": 522,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [],
-          "titleCount": 1,
-          "nestedTags": 0
         },
         "overflow320": 0,
         "console": []
@@ -9825,7 +9573,7 @@
             "top": 548,
             "left": 923,
             "width": 362,
-            "height": 1078,
+            "height": 1096,
             "mapReady": true
           },
           "split": true,
@@ -9851,7 +9599,7 @@
             "top": 2499,
             "left": 31,
             "width": 328,
-            "height": 1102,
+            "height": 1103,
             "mapReady": true
           },
           "first": {
@@ -9914,7 +9662,7 @@
             {
               "type": "line",
               "rank": "2",
-              "top": 1665,
+              "top": 1738,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9926,7 +9674,7 @@
             {
               "type": "category-bar",
               "rank": "3",
-              "top": 2284,
+              "top": 2357,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9938,7 +9686,7 @@
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 3004,
+              "top": 3077,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -9950,7 +9698,7 @@
             {
               "type": "table",
               "rank": "5",
-              "top": 3724,
+              "top": 3798,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -9958,7 +9706,7 @@
             {
               "type": "cards-list",
               "rank": "6",
-              "top": 3869,
+              "top": 3942,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -9968,7 +9716,7 @@
             "top": 864,
             "left": 923,
             "width": 362,
-            "height": 785,
+            "height": 858,
             "mapReady": true
           },
           "split": true,
@@ -9994,7 +9742,7 @@
             "top": 1887,
             "left": 31,
             "width": 328,
-            "height": 761,
+            "height": 817,
             "mapReady": true
           },
           "first": {
@@ -10004,7 +9752,7 @@
           },
           "second": {
             "type": "line",
-            "top": 2664
+            "top": 2720
           }
         },
         "overflow320": 0,
@@ -10642,7 +10390,7 @@
             "top": 1746,
             "left": 31,
             "width": 328,
-            "height": 1152,
+            "height": 1169,
             "mapReady": true
           },
           "first": {
@@ -10652,7 +10400,7 @@
           },
           "second": {
             "type": "table",
-            "top": 2914
+            "top": 2931
           }
         },
         "overflow320": 0,
@@ -11650,7 +11398,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1800,
+              "top": 1817,
               "left": 155,
               "width": 557,
               "axes": {
@@ -11662,7 +11410,7 @@
             {
               "type": "line",
               "rank": "3",
-              "top": 1800,
+              "top": 1817,
               "left": 728,
               "width": 557,
               "axes": {
@@ -11674,7 +11422,7 @@
             {
               "type": "category-bar",
               "rank": "4",
-              "top": 2383,
+              "top": 2400,
               "left": 155,
               "width": 557,
               "axes": {
@@ -11686,7 +11434,7 @@
             {
               "type": "table",
               "rank": "5",
-              "top": 2801,
+              "top": 2818,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -11694,7 +11442,7 @@
             {
               "type": "cards-list",
               "rank": "6",
-              "top": 2970,
+              "top": 2987,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -11704,7 +11452,7 @@
             "top": 678,
             "left": 923,
             "width": 362,
-            "height": 894,
+            "height": 911,
             "mapReady": true
           },
           "split": true,
@@ -11734,7 +11482,7 @@
             "top": 1582,
             "left": 31,
             "width": 328,
-            "height": 855,
+            "height": 872,
             "mapReady": true
           },
           "first": {
@@ -11744,7 +11492,7 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2917
+            "top": 2934
           }
         },
         "overflow320": 0,
@@ -12416,124 +12164,6 @@
       "pass": true
     },
     {
-      "elementId": "D-024",
-      "archetype": "registry",
-      "status": "standard",
-      "expected": {
-        "type": "category-bar",
-        "title": "라운드별 VC·임팩트투자",
-        "xAxis": "건수",
-        "yAxis": "투자 라운드",
-        "unit": "건"
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": true,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "match",
-          "blocks": [
-            {
-              "type": "category-bar",
-              "rank": "1",
-              "top": 785,
-              "left": 155,
-              "width": 557,
-              "axes": {
-                "x": "건수",
-                "y": "투자 라운드",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "line",
-              "rank": "2",
-              "top": 785,
-              "left": 728,
-              "width": 557,
-              "axes": {
-                "x": "연도",
-                "y": "건수",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "3",
-              "top": 1369,
-              "left": 155,
-              "width": 557,
-              "axes": {
-                "x": "건수",
-                "y": "투자 라운드",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "table",
-              "rank": "4",
-              "top": 1911,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            },
-            {
-              "type": "cards-list",
-              "rank": "5",
-              "top": 2079,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            },
-            {
-              "type": "cards-list",
-              "rank": "6",
-              "top": 2633,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "건",
-              "text": "7건투자 건 · 2026년"
-            },
-            {
-              "unit": "년",
-              "text": "2026년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "12건공개 목록"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
       "elementId": "D-025",
       "archetype": "registry",
       "status": "standard",
@@ -12855,7 +12485,7 @@
           "tiles": [
             {
               "unit": "곳",
-              "text": "15곳기관 · 2026년"
+              "text": "18곳기관 · 2026년"
             },
             {
               "unit": "년",
@@ -12863,7 +12493,7 @@
             },
             {
               "unit": "건",
-              "text": "15건공개 목록"
+              "text": "18건공개 목록"
             }
           ],
           "titleCount": 1,
@@ -13069,7 +12699,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1673,
+              "top": 1701,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -13079,7 +12709,7 @@
             "top": 658,
             "left": 923,
             "width": 362,
-            "height": 1000,
+            "height": 1028,
             "mapReady": true
           },
           "split": true,
@@ -13106,7 +12736,7 @@
             "top": 1716,
             "left": 31,
             "width": 328,
-            "height": 1054,
+            "height": 1082,
             "mapReady": true
           },
           "first": {
@@ -13116,7 +12746,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2786
+            "top": 2814
           }
         },
         "overflow320": 0,
@@ -13172,7 +12802,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1425,
+              "top": 1498,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -13182,7 +12812,7 @@
             "top": 658,
             "left": 923,
             "width": 362,
-            "height": 751,
+            "height": 824,
             "mapReady": true
           },
           "split": true,
@@ -13209,7 +12839,7 @@
             "top": 1708,
             "left": 31,
             "width": 328,
-            "height": 787,
+            "height": 843,
             "mapReady": true
           },
           "first": {
@@ -13219,7 +12849,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2511
+            "top": 2567
           }
         },
         "overflow320": 0,
@@ -13275,7 +12905,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1442,
+              "top": 1487,
               "left": 155,
               "width": 367,
               "axes": null
@@ -13283,7 +12913,7 @@
             {
               "type": "cards-list",
               "rank": "3",
-              "top": 1442,
+              "top": 1487,
               "left": 536,
               "width": 367,
               "axes": null
@@ -13293,7 +12923,7 @@
             "top": 659,
             "left": 923,
             "width": 362,
-            "height": 767,
+            "height": 812,
             "mapReady": true
           },
           "split": true,
@@ -13319,7 +12949,7 @@
             "top": 1404,
             "left": 31,
             "width": 328,
-            "height": 786,
+            "height": 831,
             "mapReady": true
           },
           "first": {
@@ -13329,7 +12959,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 2206
+            "top": 2251
           }
         },
         "overflow320": 0,
@@ -13393,144 +13023,6 @@
             {
               "unit": "건",
               "text": "19건공개 목록"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "E-008",
-      "archetype": "registry",
-      "status": "standard",
-      "expected": {
-        "type": "category-bar",
-        "title": "논문 목록의 발행연도별 건수",
-        "xAxis": "건수",
-        "yAxis": "발행연도",
-        "unit": "건"
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": true,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "match",
-          "blocks": [
-            {
-              "type": "category-bar",
-              "rank": "1",
-              "top": 602,
-              "left": 155,
-              "width": 557,
-              "axes": {
-                "x": "건수",
-                "y": "발행연도",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "2",
-              "top": 602,
-              "left": 728,
-              "width": 557,
-              "axes": {
-                "x": "건수",
-                "y": "발행연도",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "3",
-              "top": 1086,
-              "left": 155,
-              "width": 271,
-              "axes": {
-                "x": "건수",
-                "y": "항목",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "4",
-              "top": 1086,
-              "left": 442,
-              "width": 271,
-              "axes": {
-                "x": "건수",
-                "y": "항목",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "5",
-              "top": 1086,
-              "left": 728,
-              "width": 271,
-              "axes": {
-                "x": "건수",
-                "y": "항목",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "category-bar",
-              "rank": "6",
-              "top": 1086,
-              "left": 1015,
-              "width": 271,
-              "axes": {
-                "x": "건수",
-                "y": "항목",
-                "unit": "건"
-              }
-            },
-            {
-              "type": "cards-list",
-              "rank": "7",
-              "top": 2048,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "건",
-              "text": "144건수록 논문·특허 · 2021–2026년"
-            },
-            {
-              "unit": "년",
-              "text": "2021–2026년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "144건공개 목록"
             }
           ],
           "titleCount": 1,
@@ -13694,70 +13186,17 @@
             },
             {
               "unit": "년",
-              "text": "2011–2023년자료기간"
+              "text": "2002–2023년자료기간"
             },
             {
               "unit": "건",
-              "text": "30건공개 관측값"
+              "text": "31건공개 관측값"
             },
             {
               "unit": "종",
               "text": "24종지표 수"
             }
           ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "E-011",
-      "archetype": "status-note",
-      "status": "standard",
-      "expected": {
-        "type": "status-note",
-        "title": "기술준비수준 자료 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": true,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "status-note",
-              "rank": "1",
-              "top": 521,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [],
           "titleCount": 1,
           "nestedTags": 0
         },
@@ -13852,59 +13291,6 @@
               "text": "90종지표 수"
             }
           ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "E-013",
-      "archetype": "status-note",
-      "status": "standard",
-      "expected": {
-        "type": "status-note",
-        "title": "운영유지보수 역량 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": true,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "status-note",
-              "rank": "1",
-              "top": 522,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [],
           "titleCount": 1,
           "nestedTags": 0
         },
@@ -14047,142 +13433,6 @@
       "pass": true
     },
     {
-      "elementId": "E-016",
-      "archetype": "policy-document",
-      "status": "standard",
-      "expected": {
-        "type": "comparison-table",
-        "title": "한국 기후기술 TRL 근거",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": true,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "comparison-table",
-              "rank": "1",
-              "top": 658,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "건",
-              "text": "4건부문 · 2020·2025년"
-            },
-            {
-              "unit": "년",
-              "text": "2020·2025년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "4건공개 목록"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
-      "elementId": "E-017",
-      "archetype": "national-series",
-      "status": "exception",
-      "expected": {
-        "type": "comparison-table",
-        "title": "국가별 기후기술 순위 비교",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
-      },
-      "checks": {
-        "primaryTypeMatch": true,
-        "rankOrder": true,
-        "axesMatch": null,
-        "blockHonesty": true,
-        "readingNotesAbsent": true,
-        "statusNoteNoChart": null,
-        "policyNoNumericChart": null,
-        "kpiRow": true,
-        "titleOnce": true,
-        "sourceLine": true,
-        "nestedTags": true,
-        "mapPlacement": null,
-        "overflow320": true,
-        "console": true
-      },
-      "evidence": {
-        "wide": {
-          "verdict": "match",
-          "axesVerdict": "not-applicable",
-          "blocks": [
-            {
-              "type": "comparison-table",
-              "rank": "1",
-              "top": 678,
-              "left": 155,
-              "width": 1130,
-              "axes": null
-            }
-          ],
-          "slot": null,
-          "split": false,
-          "tiles": [
-            {
-              "unit": "위",
-              "text": "4 위한국 · 기후기술 수준 순위 · 5개국 중 · 2020년 · 값이 작을수록 우수"
-            },
-            {
-              "unit": "년",
-              "text": "2020년자료기간"
-            },
-            {
-              "unit": "건",
-              "text": "10건공개 관측값"
-            },
-            {
-              "unit": "종",
-              "text": "2종지표 수"
-            }
-          ],
-          "titleCount": 1,
-          "nestedTags": 0
-        },
-        "overflow320": 0,
-        "console": []
-      },
-      "issues": [],
-      "pass": true
-    },
-    {
       "elementId": "E-018",
       "archetype": "registry",
       "status": "standard",
@@ -14229,7 +13479,7 @@
             {
               "type": "category-bar",
               "rank": "2",
-              "top": 1517,
+              "top": 1562,
               "left": 155,
               "width": 1130,
               "axes": {
@@ -14241,7 +13491,7 @@
             {
               "type": "table",
               "rank": "3",
-              "top": 2237,
+              "top": 2282,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -14249,7 +13499,7 @@
             {
               "type": "cards-list",
               "rank": "4",
-              "top": 2382,
+              "top": 2427,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -14259,7 +13509,7 @@
             "top": 752,
             "left": 923,
             "width": 362,
-            "height": 749,
+            "height": 794,
             "mapReady": true
           },
           "split": true,
@@ -14285,7 +13535,7 @@
             "top": 1894,
             "left": 31,
             "width": 328,
-            "height": 768,
+            "height": 813,
             "mapReady": true
           },
           "first": {
@@ -14295,7 +13545,7 @@
           },
           "second": {
             "type": "category-bar",
-            "top": 2678
+            "top": 2724
           }
         },
         "overflow320": 0,
@@ -14351,7 +13601,7 @@
             {
               "type": "cards-list",
               "rank": "2",
-              "top": 1423,
+              "top": 1468,
               "left": 155,
               "width": 1130,
               "axes": null
@@ -14361,7 +13611,7 @@
             "top": 658,
             "left": 923,
             "width": 362,
-            "height": 749,
+            "height": 794,
             "mapReady": true
           },
           "split": true,
@@ -14388,7 +13638,7 @@
             "top": 1256,
             "left": 31,
             "width": 328,
-            "height": 708,
+            "height": 753,
             "mapReady": true
           },
           "first": {
@@ -14398,7 +13648,7 @@
           },
           "second": {
             "type": "cards-list",
-            "top": 1980
+            "top": 2025
           }
         },
         "overflow320": 0,

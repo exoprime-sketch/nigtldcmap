@@ -158,8 +158,11 @@ export interface CountryCatalogSelectionOptionsV156 {
   includeExcluded?: boolean;
 }
 
+/** Statuses that keep an element out of every public list (the audits use the same set). */
+const NON_PUBLIC_STATUSES_V156: ReadonlySet<string> = new Set(["excluded", "not-provided"]);
+
 export function isExcludedCatalogItemV156(item: CountryCatalogItemV122): boolean {
-  return item.publicStatus === "excluded";
+  return NON_PUBLIC_STATUSES_V156.has(item.publicStatus);
 }
 
 export async function loadCatalogForCountrySelectionV122(

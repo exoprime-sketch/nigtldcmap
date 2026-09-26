@@ -668,6 +668,12 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   }
 }
 
+/** V156: how an exclusion's basis reads on the public notice (the decision file keeps its own words). */
+const EXCLUSION_BASIS_LABEL_V156: Record<string, string> = {
+  "사용자 결정": "사용자 검토",
+  "데이터 명세서": "데이터 명세서 검토",
+};
+
 export default function CountryDataElementPage({
   elementId,
   countryIso3,
@@ -779,12 +785,25 @@ export default function CountryDataElementPage({
           {backLabel}
         </button>
         <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
-          <h1>{catalogItem.publicTitle}</h1>
+          <h1><PublicTermTextV134 text={catalogItem.publicTitle} /></h1>
           <p>
-            이 항목은 {catalogItem.exclusion?.decidedAt || "2026-09-23"} 검토로 제공 대상에서
-            제외되었습니다.
+            이 항목은 {catalogItem.exclusion?.decidedAt ? `${catalogItem.exclusion.decidedAt} ` : ""}검토로
+            제공 대상에서 제외되었습니다.
           </p>
-          {catalogItem.exclusion?.reason ? <p>{catalogItem.exclusion.reason}</p> : null}
+          <p>
+            <strong>결정</strong>{" "}
+            <span data-exclusion-field="decision">
+              제공 대상 제외({EXCLUSION_BASIS_LABEL_V156[catalogItem.exclusion?.basis || ""] || "검토"})
+            </span>
+          </p>
+          <p>
+            <strong>사유</strong>{" "}
+            <span data-exclusion-field="reason"><PublicTermTextV134 text={catalogItem.exclusion?.reason || ""} /></span>
+          </p>
+          <p>
+            <strong>결정일</strong>{" "}
+            <span data-exclusion-field="decidedAt">{catalogItem.exclusion?.decidedAt || ""}</span>
+          </p>
         </div>
       </div>
     );

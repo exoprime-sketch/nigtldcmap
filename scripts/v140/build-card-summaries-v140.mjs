@@ -982,7 +982,11 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
 const reviewedIndicatorCopyV144 = JSON.parse(readFileSync(resolve("src/data/visualization/publicIndicatorCopyV144.json"), "utf8"));
 const cards = [];
 const review = [];
-for (const item of [...catalog].sort((a, b) => a.elementId.localeCompare(b.elementId))) {
+// V156: a card is an offer to read the element; an element decided not to be
+// offered (publicStatus excluded / not-provided) gets no card, like it gets no
+// finder entry or home figure. Its detail URL states the decision instead.
+const NON_PUBLIC_STATUSES_V156 = new Set(["excluded", "not-provided"]);
+for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(row.publicStatus)).sort((a, b) => a.elementId.localeCompare(b.elementId))) {
   const elementId = item.elementId;
   const pack = packs.get(elementId);
   const contract = contractByElement.get(elementId);
@@ -1095,6 +1099,6 @@ mkdirSync(dirname(OUT_PATH), { recursive: true });
 writeFileSync(OUT_PATH, `${JSON.stringify(output, null, 1)}\n`);
 mkdirSync(dirname(REVIEW_PATH), { recursive: true });
 const kinds = cards.reduce((acc, card) => ({ ...acc, [card.kind]: (acc[card.kind] || 0) + 1 }), {});
-writeFileSync(REVIEW_PATH, `# 152개 카드 요약 검토표 (V140)\n\n생성 ${output.generatedAt} · 데이터 ${output.dataSnapshot}\n\n종류별: ${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(" · ")}\n\n| 요소 | 종류 | 핵심값 | 설명 | 자료기간 | 집계 규칙 |\n| --- | --- | --- | --- | --- | --- |\n${review.join("\n")}\n\n## 경고\n\n${warnings.map((w) => `- ${w.elementId}: ${w.message}`).join("\n") || "없음"}\n`);
+writeFileSync(REVIEW_PATH, `# 공개 카드 요약 검토표 (V140)\n\n생성 ${output.generatedAt} · 데이터 ${output.dataSnapshot}\n\n종류별: ${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(" · ")}\n\n| 요소 | 종류 | 핵심값 | 설명 | 자료기간 | 집계 규칙 |\n| --- | --- | --- | --- | --- | --- |\n${review.join("\n")}\n\n## 경고\n\n${warnings.map((w) => `- ${w.elementId}: ${w.message}`).join("\n") || "없음"}\n`);
 writeFileSync(REPORT_PATH, `${JSON.stringify({ generatedAt: output.generatedAt, cards: cards.length, kinds, warnings, bytes: Buffer.byteLength(JSON.stringify(output)) }, null, 2)}\n`);
 console.log(JSON.stringify({ cards: cards.length, kinds, warnings: warnings.length, bytes: Buffer.byteLength(JSON.stringify(output)) }));

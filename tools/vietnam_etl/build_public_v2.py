@@ -2121,12 +2121,13 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         element.update(
             {
                 # An excluded element keeps its measured presence and its files;
-                # only the offer is withdrawn, and the reason travels with it.
+                # only the offer is withdrawn - no download is offered either -
+                # and the reason travels with it.
                 "publicStatus": "excluded" if exclusion else status,
                 "dataPresenceStatus": presence,
                 "emptyReason": empty_reason,
                 "displayAllowed": display_allowed,
-                "downloadAllowed": download_allowed,
+                "downloadAllowed": False if exclusion else download_allowed,
                 "observationCount": len(observations),
                 "entityCount": len(entities),
                 "downloadableRecordCount": downloadable_count,
@@ -2669,7 +2670,11 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "publicStatusCounts": status_counts,
         "mapLayerCount": spatial_build["mapLayerCount"],
         "mapFeatureCount": spatial_build["mapFeatureCount"],
-        "downloadableElementCount": sum(bool(row.get("downloadAssets")) for row in catalog),
+        # Counts the offer: an excluded element keeps its files but is not offered.
+        "downloadableElementCount": sum(
+            bool(row.get("downloadAssets")) and row.get("publicStatus") != "excluded"
+            for row in catalog
+        ),
         "downloadDelivery": {
             key: download_manifest[key]
             for key in (

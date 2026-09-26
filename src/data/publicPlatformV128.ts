@@ -33,6 +33,8 @@ export interface VietnamPublicOverviewV128 {
   catalog: CountryCatalogItemV122[];
   featured: CountryCatalogItemV122[];
   frameworkElementCount: number;
+  /** V156: items a reader can find (excluded elements are not listed anywhere). */
+  publicElementCount: number;
   dataProvidedElementCount: number;
   downloadableElementCount: number;
   mapLayerCount: number;
@@ -192,6 +194,8 @@ export async function loadVietnamPublicOverviewV128(): Promise<VietnamPublicOver
             catalogById.get(elementId)
           ).filter((item): item is CountryCatalogItemV122 => Boolean(item)),
           frameworkElementCount: manifest.frameworkElements,
+          // The finder, search and home cards all read this filtered catalog.
+          publicElementCount: catalog.length,
           dataProvidedElementCount:
             manifest.publicStatusCounts.actual +
             manifest.publicStatusCounts["public-authorized"] +
