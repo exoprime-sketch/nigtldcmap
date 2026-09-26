@@ -15,6 +15,27 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
   const isSector = elementId === "C-022";
   const chart = isSector && selected && selected.sectorTotalMatches ? selected.sectors : sameDate.map((row) => ({ label: row.region, value: row.count }));
   const scale = Math.max(1, ...chart.map((row) => row.value));
+  if (!isSector) {
+    // C-019 (⑥, V159): the carbon-pricing documents come first; the facility
+    // counts by province follow as KPI tiles and the table - no chart
+    // (decision 2026-09-24). C-022's checklist score keeps its bars.
+    const total = rows.reduce((sum, row) => sum + row.count, 0);
+    const top = rows.slice(0, 3);
+    return <section className="detail146" data-testid="carbon-market-regions-v146">
+      <h3>탄소시장 제도·세율·시행 일정</h3>
+      <p className="detail146-note">아래 자료는 각 문서에 기재된 시점과 적용 조건을 기준으로 확인해 주세요. 환경보호세 세율은 배출권 거래가격이 아닙니다.</p>
+      <section className="d153-block" data-analysis-block="comparison-table"><EvidenceMatrixV125 rows={[]} entities={model.other} /></section>
+      <h3>온실가스 인벤토리 대상 시설 · 성·시별</h3>
+      <p>법령에 수록된 {rows.length}개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다.</p>
+      <div className="detail146-select"><label>기준일 <select value={date} onChange={(event) => { setDate(event.target.value); setRegion("all"); }}>{model.dates.map((value) => <option key={value}>{value}</option>)}</select></label></div>
+      <ul className="d153-summary" aria-label={`대상 시설 · ${date}`} data-testid="carbon-market-tiles-v159">
+        <li><span>대상 시설 합계</span><strong>{total.toLocaleString("ko-KR")}개소</strong></li>
+        <li><span>수록 성·시</span><strong>{rows.length}곳</strong></li>
+        {top.map((row) => <li key={row.code}><span>{row.region}</span><strong>{row.count.toLocaleString("ko-KR")}개소</strong></li>)}
+      </ul>
+      <details className="detail146-details"><summary>성·시별 시설 수 표</summary><div className="detail146-table" data-analysis-block="sorted-table"><table><caption>{date} · 개소</caption><thead><tr><th scope="col">지역</th><th scope="col">시설 수</th></tr></thead><tbody>{rows.map((row) => <tr key={row.code}><th scope="row">{row.region}</th><td>{row.count.toLocaleString("ko-KR")}</td></tr>)}</tbody></table></div></details>
+    </section>;
+  }
   return <section className="detail146" data-testid="carbon-market-regions-v146">
     <p>법령에 수록된 {rows.length}개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다.{selected && ` ${selected.region}의 대상 시설은 ${selected.count.toLocaleString("ko-KR")}개소입니다.`}</p>
     <div className="detail146-select"><label>기준일 <select value={date} onChange={(event) => { setDate(event.target.value); setRegion("all"); }}>{model.dates.map((value) => <option key={value}>{value}</option>)}</select></label>

@@ -888,6 +888,7 @@ function TrendUnitV125({
   ];
   const series: TimeSeriesV127[] = sourceSeries.map((item, index) => ({
     id: item.key,
+    indicatorIds: Array.from(new Set(item.rows.map((row) => row.indicatorId).filter(Boolean))),
     label: item.label,
     unit: publicUnit,
     linePattern: patterns[index % patterns.length],

@@ -1,0 +1,710 @@
+{
+  "summary": {
+    "generatedAt": "2026-09-24T10:56:27.298Z",
+    "build": "C:\\Users\\user\\Documents\\nigt-wt-d0\\tmp\\build-v159-review",
+    "elements": 8,
+    "pass": 8,
+    "fail": 0,
+    "failedIds": [],
+    "byStatus": {
+      "standard": 7,
+      "preserved": 0,
+      "exception": 1
+    },
+    "exceptionIds": [
+      "B-014"
+    ],
+    "checks": {
+      "primaryTypeMatch": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "rankOrder": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "axesMatch": {
+        "pass": 1,
+        "fail": 0,
+        "notApplicable": 7
+      },
+      "blockHonesty": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "readingNotesAbsent": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "statusNoteNoChart": {
+        "pass": 0,
+        "fail": 0,
+        "notApplicable": 8
+      },
+      "policyNoNumericChart": {
+        "pass": 2,
+        "fail": 0,
+        "notApplicable": 6
+      },
+      "kpiRow": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "titleOnce": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "sourceLine": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "mapPlacement": {
+        "pass": 2,
+        "fail": 0,
+        "notApplicable": 6
+      },
+      "overflow320": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "console": {
+        "pass": 8,
+        "fail": 0,
+        "notApplicable": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "elementId": "A-017",
+      "archetype": "status-note",
+      "status": "standard",
+      "expected": {
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "status-note",
+              "rank": "1",
+              "top": 954,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "USD/MWh",
+              "text": "155 USD/MWhLCOE 최대 · 해상풍력 · 2023년"
+            },
+            {
+              "unit": "년",
+              "text": "2023·2030·2050년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "72건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "24종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-014",
+      "archetype": "national-series",
+      "status": "exception",
+      "expected": {
+        "type": "table",
+        "title": "탄소세 시나리오별 GDP 영향",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "table",
+              "rank": "1",
+              "top": 1063,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "%",
+              "text": "-2.2 %GDP 영향 · NZP-no-reforms · 2040년"
+            },
+            {
+              "unit": "년",
+              "text": "2030·2040년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "13건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "8종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-002",
+      "archetype": "policy-document",
+      "status": "standard",
+      "expected": {
+        "type": "comparison-table",
+        "title": "격년투명성보고서 제출 이력·내용",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": true,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "comparison-table",
+              "rank": "1",
+              "top": 1085,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            },
+            {
+              "type": "table",
+              "rank": "2",
+              "top": 2902,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "82건항목 · 2010–2059년"
+            },
+            {
+              "unit": "년",
+              "text": "2010–2059년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "82건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-015",
+      "archetype": "status-note",
+      "status": "standard",
+      "expected": {
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "status-note",
+              "rank": "1",
+              "top": 921,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "20건원문 링크 · 2016–2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2016–2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "21건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-019",
+      "archetype": "policy-document",
+      "status": "standard",
+      "expected": {
+        "type": "comparison-table",
+        "title": "탄소시장 제도·세율·시행 일정",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": true,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "comparison-table",
+              "rank": "1",
+              "top": 1116,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            },
+            {
+              "type": "sorted-table",
+              "rank": "2",
+              "top": 4205,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 1116,
+            "left": 923,
+            "width": 362,
+            "height": 1130,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "개소",
+              "text": "479개소Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
+            },
+            {
+              "unit": "일",
+              "text": "2026-08-10 기준일자료 기준일"
+            },
+            {
+              "unit": "건",
+              "text": "128건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "narrow": {
+          "slot": {
+            "top": 4804,
+            "left": 31,
+            "width": 328,
+            "height": 1108,
+            "mapReady": true
+          },
+          "first": {
+            "type": "comparison-table",
+            "top": 1880,
+            "height": 2907
+          },
+          "second": {
+            "type": "sorted-table",
+            "top": 6248
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-022",
+      "archetype": "province-distribution",
+      "status": "standard",
+      "expected": {
+        "type": "region-bar",
+        "title": "성·시별 탄소시장 대상시설",
+        "xAxis": "시설 수",
+        "yAxis": "성·시",
+        "unit": "개소"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "region-bar",
+              "rank": "1",
+              "top": 1105,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "시설 수",
+                "y": "성·시",
+                "unit": "개소"
+              }
+            },
+            {
+              "type": "sorted-table",
+              "rank": "2",
+              "top": 2391,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            },
+            {
+              "type": "comparison-table",
+              "rank": "3",
+              "top": 2478,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 1105,
+            "left": 923,
+            "width": 362,
+            "height": 1029,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "개소",
+              "text": "479개소Hồ Chí Minh · 인벤토리 의무 대상 시설 · 2026-08-10"
+            },
+            {
+              "unit": "일",
+              "text": "2026-08-10 기준일자료 기준일"
+            },
+            {
+              "unit": "건",
+              "text": "98건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "narrow": {
+          "slot": {
+            "top": 2978,
+            "left": 31,
+            "width": 328,
+            "height": 1108,
+            "mapReady": true
+          },
+          "first": {
+            "type": "region-bar",
+            "top": 1739,
+            "height": 1222
+          },
+          "second": {
+            "type": "sorted-table",
+            "top": 4149
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "D-024",
+      "archetype": "status-note",
+      "status": "standard",
+      "expected": {
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "status-note",
+              "rank": "1",
+              "top": 950,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "7건투자 건 · 2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "12건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "E-008",
+      "archetype": "status-note",
+      "status": "standard",
+      "expected": {
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": null,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "status-note",
+              "rank": "1",
+              "top": 950,
+              "left": 155,
+              "width": 1130,
+              "axes": null
+            }
+          ],
+          "slot": null,
+          "split": false,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "144건수록 논문·특허 · 2021–2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2021–2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "144건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "generatedAt": "2026-09-24T11:02:47.291Z",
+  "verdict": "dom-signature",
+  "pixelEvidence": {
+    "blurRadius": 1,
+    "channelDelta": 24,
+    "maxRowShift": 2
+  },
+  "compared": 12,
+  "pass": 11,
+  "failedIds": [
+    "A-023"
+  ],
+  "results": {
+    "A-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1357,
+            1130
+          ],
+          [
+            1357,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            902,
+            1130
+          ],
+          [
+            902,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-016": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1734,
+            1130
+          ],
+          [
+            1734,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2754,
+            1130
+          ],
+          [
+            2754,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-023": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 437,
+        "base": "@layout height=2434 gapToNext=1580",
+        "new": "@layout height=2518 gapToNext=1580",
+        "baseLines": 438,
+        "newLines": 438
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          2435,
+          1130
+        ],
+        "new": [
+          2519,
+          1130
+        ]
+      }
+    },
+    "B-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1102,
+            1130
+          ],
+          [
+            1102,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2128,
+            1130
+          ],
+          [
+            2128,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            10530,
+            1130
+          ],
+          [
+            10530,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            8288,
+            1130
+          ],
+          [
+            8288,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-011": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2329,
+            1130
+          ],
+          [
+            2329,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-022": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2506,
+            1130
+          ],
+          [
+            2506,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1561,
+            1130
+          ],
+          [
+            1561,
+            1130
+          ]
+        ]
+      }
+    }
+  }
+}

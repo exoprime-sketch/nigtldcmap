@@ -8,6 +8,7 @@ import { datasetDatesV149, mapDatasetIdsV149, sortHomeItemsV149, usePublicUsageV
 import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
+import { getCardSpecV159 } from "../data/spec/datasetSpecV159";
 import "../styles/home-final-v13.css";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 
@@ -43,7 +44,8 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
   }, [overview, sort, hasViews, usage]);
   const topMap = usage?.map.find(item => mapDatasetIdsV149.has(item.elementId));
   const mapElement = topMap?.elementId || "A-024";
-  const mapTitle = overview?.catalog.find(item => item.elementId === mapElement)?.publicTitle || "송전망";
+  // V159 naming: the dataset's own name (source line apart), as on the finder and detail.
+  const mapTitle = getCardSpecV159(mapElement)?.baseName || overview?.catalog.find(item => item.elementId === mapElement)?.publicTitle || "송전망";
   const mapSelection = summaries.get(mapElement)?.selection || EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
 
   return <div className="home-v139" data-v128-home>
@@ -91,15 +93,18 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         {items.map(item => {
           const card = summaries.get(item.elementId);
           const date = datasetDatesV149.get(item.elementId);
+          const spec = getCardSpecV159(item.elementId);
+          const title = spec?.baseName || item.publicTitle;
           return <article key={item.elementId} className="home-featured-v139__card" data-element-id={item.elementId} aria-labelledby={"home-card-" + item.elementId}>
-            <h3 id={"home-card-" + item.elementId}><PublicTermTextV134 text={item.publicTitle} /></h3>
+            {spec?.sourceLabel ? <div className="home-featured-v139__source" data-testid="home-card-source-v159"><PublicTermTextV134 text={spec.sourceLabel} /></div> : null}
+            <h3 id={"home-card-" + item.elementId}><PublicTermTextV134 text={title} /></h3>
             {card && <FinderCardSummaryV140 summary={card} />}
             <dl className="home-featured-v139__meta">
               <div><dt>자료기간</dt><dd><PublicTermTextV134 text={card?.period || publicReferencePeriodV128(item)} /></dd></div>
               <div><dt>제공기관</dt><dd><PublicTermTextV134 text={card?.provider || item.sourceOrganizations.join(" · ")} /></dd></div>
               {sort === "latest" && date && <div><dt>갱신일</dt><dd><time dateTime={date}>{new Date(date).toLocaleDateString("ko-KR", {timeZone:"Asia/Seoul"})}</time></dd></div>}
             </dl>
-            <button type="button" className="home-featured-v139__open" data-testid="home-card-open-v140" onClick={() => onOpenElement(item.elementId, "VNM", card?.selection || undefined)} aria-label={item.publicTitle + " 상세보기"}>상세보기 →</button>
+            <button type="button" className="home-featured-v139__open" data-testid="home-card-open-v140" onClick={() => onOpenElement(item.elementId, "VNM", card?.selection || undefined)} aria-label={title + " 상세보기"}>상세보기 →</button>
           </article>;
         })}
       </div> : <div className="home-v128-loading" role="status">{loadError ? "데이터를 불러오지 못했습니다. 데이터 찾기에서 다시 확인해 주세요." : "데이터를 불러오는 중입니다."}</div>}

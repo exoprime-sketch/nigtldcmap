@@ -1,0 +1,3098 @@
+{
+  "generatedAt": "2026-09-24T03:28:14.493Z",
+  "base": "tmp/build-v159-base (main 325b355 = #27)",
+  "new": "tmp/build-v159-review",
+  "verdict": "dom-signature",
+  "pixelEvidence": {
+    "blurRadius": 1,
+    "channelDelta": 24,
+    "maxRowShift": 2
+  },
+  "compared": 152,
+  "domIdentical": 145,
+  "differs": [
+    "C-020",
+    "C-021",
+    "C-023",
+    "E-011",
+    "E-013",
+    "E-016",
+    "E-017"
+  ],
+  "intendedChanges": [
+    "C-020",
+    "C-021",
+    "C-023",
+    "E-011",
+    "E-013",
+    "E-016",
+    "E-017"
+  ],
+  "unintended": [],
+  "results": {
+    "A-001": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            926,
+            1130
+          ],
+          [
+            926,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1357,
+            1130
+          ],
+          [
+            1357,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            902,
+            1130
+          ],
+          [
+            902,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-004": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            924,
+            1130
+          ],
+          [
+            924,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-005": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1057,
+            1130
+          ],
+          [
+            1057,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-006": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            899,
+            1130
+          ],
+          [
+            899,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-007": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            899,
+            1130
+          ],
+          [
+            899,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-008": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            898,
+            1130
+          ],
+          [
+            898,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            950,
+            1130
+          ],
+          [
+            950,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-010": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2483,
+            1130
+          ],
+          [
+            2483,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-011": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2611,
+            1130
+          ],
+          [
+            2611,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            903,
+            1130
+          ],
+          [
+            903,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-013": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2520,
+            1130
+          ],
+          [
+            2520,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-014": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            902,
+            1130
+          ],
+          [
+            902,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-015": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            708,
+            1130
+          ],
+          [
+            708,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-016": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1734,
+            1130
+          ],
+          [
+            1734,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-017": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            929,
+            1130
+          ],
+          [
+            929,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2754,
+            1130
+          ],
+          [
+            2754,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-019": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            898,
+            1130
+          ],
+          [
+            898,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-020": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            965,
+            1130
+          ],
+          [
+            965,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-021": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            987,
+            1130
+          ],
+          [
+            987,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-022": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1088,
+            1130
+          ],
+          [
+            1088,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-023": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2435,
+            1130
+          ],
+          [
+            2435,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-024": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1363,
+            1130
+          ],
+          [
+            1363,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-025": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            897,
+            1130
+          ],
+          [
+            897,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-026": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            179,
+            1130
+          ],
+          [
+            179,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-027": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1310,
+            1130
+          ],
+          [
+            1310,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-028": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1132,
+            1130
+          ],
+          [
+            1132,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-029": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2684,
+            1130
+          ],
+          [
+            2684,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-030": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1059,
+            1130
+          ],
+          [
+            1059,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-031": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1247,
+            1130
+          ],
+          [
+            1247,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-032": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            977,
+            1130
+          ],
+          [
+            977,
+            1130
+          ]
+        ]
+      }
+    },
+    "A-033": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            981,
+            1130
+          ],
+          [
+            981,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-001": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1287,
+            1130
+          ],
+          [
+            1287,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1102,
+            1130
+          ],
+          [
+            1102,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2128,
+            1130
+          ],
+          [
+            2128,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-004": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3084,
+            1130
+          ],
+          [
+            3084,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-005": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2912,
+            1130
+          ],
+          [
+            2912,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-006": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3099,
+            1130
+          ],
+          [
+            3099,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-007": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3110,
+            1130
+          ],
+          [
+            3110,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-008": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1548,
+            1130
+          ],
+          [
+            1548,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1112,
+            1130
+          ],
+          [
+            1112,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-010": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            908,
+            1130
+          ],
+          [
+            908,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-011": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            811,
+            1130
+          ],
+          [
+            811,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            24609,
+            1130
+          ],
+          [
+            24609,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-013": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            433,
+            1130
+          ],
+          [
+            433,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-014": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1073,
+            1130
+          ],
+          [
+            1073,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-015": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1070,
+            1130
+          ],
+          [
+            1070,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-016": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            808,
+            1130
+          ],
+          [
+            808,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-017": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1910,
+            1130
+          ],
+          [
+            1910,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1066,
+            1130
+          ],
+          [
+            1066,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-019": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1064,
+            1130
+          ],
+          [
+            1064,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-020": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1060,
+            1130
+          ],
+          [
+            1060,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-021": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2418,
+            1130
+          ],
+          [
+            2418,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-022": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            727,
+            1130
+          ],
+          [
+            727,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-023": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0.000209,
+        "rowShift": 0,
+        "size": [
+          [
+            1835,
+            1130
+          ],
+          [
+            1835,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-024": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            882,
+            1130
+          ],
+          [
+            882,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-025": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1902,
+            1130
+          ],
+          [
+            1902,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-026": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1012,
+            1130
+          ],
+          [
+            1012,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-027": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            808,
+            1130
+          ],
+          [
+            808,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-028": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1883,
+            1130
+          ],
+          [
+            1883,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-029": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2826,
+            1130
+          ],
+          [
+            2826,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-030": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2080,
+            1130
+          ],
+          [
+            2080,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-031": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1212,
+            1130
+          ],
+          [
+            1212,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-032": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1266,
+            1130
+          ],
+          [
+            1266,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-033": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1211,
+            1130
+          ],
+          [
+            1211,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-034": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1213,
+            1130
+          ],
+          [
+            1213,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-035": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            810,
+            1130
+          ],
+          [
+            810,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-036": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2604,
+            1130
+          ],
+          [
+            2604,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-037": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3301,
+            1130
+          ],
+          [
+            3301,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-038": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            809,
+            1130
+          ],
+          [
+            809,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-039": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2876,
+            1130
+          ],
+          [
+            2876,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-040": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2878,
+            1130
+          ],
+          [
+            2878,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-041": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2156,
+            1130
+          ],
+          [
+            2156,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-042": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2127,
+            1130
+          ],
+          [
+            2127,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-043": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            727,
+            1130
+          ],
+          [
+            727,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-044": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            586,
+            1130
+          ],
+          [
+            586,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-045": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1104,
+            1130
+          ],
+          [
+            1104,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-046": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1141,
+            1130
+          ],
+          [
+            1141,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-047": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            767,
+            1130
+          ],
+          [
+            767,
+            1130
+          ]
+        ]
+      }
+    },
+    "B-048": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1093,
+            1130
+          ],
+          [
+            1093,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-001": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            928,
+            1130
+          ],
+          [
+            928,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            898,
+            1130
+          ],
+          [
+            898,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1272,
+            1130
+          ],
+          [
+            1272,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-004": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1671,
+            1130
+          ],
+          [
+            1671,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-005": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1469,
+            1130
+          ],
+          [
+            1469,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-006": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1570,
+            1130
+          ],
+          [
+            1570,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-007": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2099,
+            1130
+          ],
+          [
+            2099,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-008": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            8030,
+            1130
+          ],
+          [
+            8030,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            10530,
+            1130
+          ],
+          [
+            10530,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-010": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            8346,
+            1130
+          ],
+          [
+            8346,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-011": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3222,
+            1130
+          ],
+          [
+            3222,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            8288,
+            1130
+          ],
+          [
+            8288,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-013": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1491,
+            1130
+          ],
+          [
+            1491,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-014": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1402,
+            1130
+          ],
+          [
+            1402,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-015": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1057,
+            1130
+          ],
+          [
+            1057,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-016": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1294,
+            1130
+          ],
+          [
+            1294,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-017": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1735,
+            1130
+          ],
+          [
+            1735,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2327,
+            1130
+          ],
+          [
+            2327,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-019": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1508,
+            1130
+          ],
+          [
+            1508,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-020": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 3,
+        "base": "      strong \"아직 공개된 값이 없습니다\"",
+        "new": "      strong \"금년도 공개 대상에서 제외된 데이터입니다\"",
+        "baseLines": 6,
+        "newLines": 10
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          94,
+          1130
+        ],
+        "new": [
+          124,
+          1130
+        ]
+      }
+    },
+    "C-021": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 3,
+        "base": "      strong \"아직 공개된 값이 없습니다\"",
+        "new": "      strong \"자료가 아직 입고되지 않았습니다\"",
+        "baseLines": 6,
+        "newLines": 8
+      },
+      "pixel": {
+        "pass": false,
+        "diffRatio": 0.046065,
+        "rowShift": 0,
+        "size": [
+          [
+            94,
+            1130
+          ],
+          [
+            95,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-022": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1508,
+            1130
+          ],
+          [
+            1508,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-023": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 3,
+        "base": "      strong \"아직 공개된 값이 없습니다\"",
+        "new": "      strong \"금년도 공개 대상에서 제외된 데이터입니다\"",
+        "baseLines": 6,
+        "newLines": 10
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          94,
+          1130
+        ],
+        "new": [
+          124,
+          1130
+        ]
+      }
+    },
+    "C-024": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1616,
+            1130
+          ],
+          [
+            1616,
+            1130
+          ]
+        ]
+      }
+    },
+    "C-025": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3741,
+            1130
+          ],
+          [
+            3741,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-001": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            828,
+            1130
+          ],
+          [
+            828,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            652,
+            1130
+          ],
+          [
+            652,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            615,
+            1130
+          ],
+          [
+            615,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-004": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            823,
+            1130
+          ],
+          [
+            823,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-005": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            826,
+            1130
+          ],
+          [
+            826,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-006": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            891,
+            1130
+          ],
+          [
+            891,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-007": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            315,
+            1130
+          ],
+          [
+            315,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-008": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1438,
+            1130
+          ],
+          [
+            1438,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            672,
+            1130
+          ],
+          [
+            672,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-010": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            811,
+            1130
+          ],
+          [
+            811,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-011": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2329,
+            1130
+          ],
+          [
+            2329,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2131,
+            1130
+          ],
+          [
+            2131,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-013": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1881,
+            1130
+          ],
+          [
+            1881,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-014": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2444,
+            1130
+          ],
+          [
+            2444,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-015": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2493,
+            1130
+          ],
+          [
+            2493,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-016": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2479,
+            1130
+          ],
+          [
+            2479,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-017": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2595,
+            1130
+          ],
+          [
+            2595,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2540,
+            1130
+          ],
+          [
+            2540,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-019": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2066,
+            1130
+          ],
+          [
+            2066,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-020": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1901,
+            1130
+          ],
+          [
+            1901,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-021": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            3055,
+            1130
+          ],
+          [
+            3055,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-022": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2506,
+            1130
+          ],
+          [
+            2506,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-023": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2989,
+            1130
+          ],
+          [
+            2989,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-024": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2109,
+            1130
+          ],
+          [
+            2109,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-025": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2727,
+            1130
+          ],
+          [
+            2727,
+            1130
+          ]
+        ]
+      }
+    },
+    "D-026": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2121,
+            1130
+          ],
+          [
+            2121,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-001": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1610,
+            1130
+          ],
+          [
+            1610,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-002": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            299,
+            1130
+          ],
+          [
+            299,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-003": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1228,
+            1130
+          ],
+          [
+            1228,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-004": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2160,
+            1130
+          ],
+          [
+            2160,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-005": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1846,
+            1130
+          ],
+          [
+            1846,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-006": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1910,
+            1130
+          ],
+          [
+            1910,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-007": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1572,
+            1130
+          ],
+          [
+            1572,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-008": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2382,
+            1130
+          ],
+          [
+            2382,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-009": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            925,
+            1130
+          ],
+          [
+            925,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-010": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            903,
+            1130
+          ],
+          [
+            903,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-011": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 3,
+        "base": "      strong \"아직 공개된 값이 없습니다\"",
+        "new": "      strong \"금년도 공개 대상에서 제외된 데이터입니다\"",
+        "baseLines": 6,
+        "newLines": 12
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          94,
+          1130
+        ],
+        "new": [
+          178,
+          1130
+        ]
+      }
+    },
+    "E-012": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1561,
+            1130
+          ],
+          [
+            1561,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-013": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 3,
+        "base": "      strong \"아직 공개된 값이 없습니다\"",
+        "new": "      strong \"금년도 공개 대상에서 제외된 데이터입니다\"",
+        "baseLines": 6,
+        "newLines": 10
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          94,
+          1130
+        ],
+        "new": [
+          124,
+          1130
+        ]
+      }
+    },
+    "E-014": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1295,
+            1130
+          ],
+          [
+            1295,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-015": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            468,
+            1130
+          ],
+          [
+            468,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-016": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 1,
+        "base": "  div [data-testid=public-analytical-view]",
+        "new": "  section [data-analysis-block=status-note data-testid=public-status-only]",
+        "baseLines": 56,
+        "newLines": 10
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          524,
+          1130
+        ],
+        "new": [
+          124,
+          1130
+        ]
+      }
+    },
+    "E-017": {
+      "pass": false,
+      "domSame": false,
+      "firstDifference": {
+        "line": 1,
+        "base": "  div [data-testid=public-analytical-view]",
+        "new": "  section [data-analysis-block=status-note data-testid=public-status-only]",
+        "baseLines": 55,
+        "newLines": 10
+      },
+      "pixel": {
+        "pass": false,
+        "reason": "size",
+        "base": [
+          564,
+          1130
+        ],
+        "new": [
+          124,
+          1130
+        ]
+      }
+    },
+    "E-018": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2545,
+            1130
+          ],
+          [
+            2545,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-019": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            1649,
+            1130
+          ],
+          [
+            1649,
+            1130
+          ]
+        ]
+      }
+    },
+    "E-020": {
+      "pass": true,
+      "domSame": true,
+      "firstDifference": null,
+      "pixel": {
+        "pass": true,
+        "diffRatio": 0,
+        "rowShift": 0,
+        "size": [
+          [
+            2075,
+            1130
+          ],
+          [
+            2075,
+            1130
+          ]
+        ]
+      }
+    }
+  }
+}

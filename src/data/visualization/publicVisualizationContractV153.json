@@ -5,6 +5,8 @@
   "rows": [
     {
       "elementId": "A-001",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -35,6 +37,8 @@
     },
     {
       "elementId": "A-002",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -69,6 +73,8 @@
     },
     {
       "elementId": "A-003",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -99,6 +105,8 @@
     },
     {
       "elementId": "A-004",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -129,6 +137,8 @@
     },
     {
       "elementId": "A-005",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -163,6 +173,8 @@
     },
     {
       "elementId": "A-006",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -193,6 +205,8 @@
     },
     {
       "elementId": "A-007",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -223,6 +237,8 @@
     },
     {
       "elementId": "A-008",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -253,6 +269,8 @@
     },
     {
       "elementId": "A-009",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -283,6 +301,8 @@
     },
     {
       "elementId": "A-010",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "composition",
       "primary": {
         "type": "stacked-area",
@@ -317,6 +337,8 @@
     },
     {
       "elementId": "A-011",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "composition",
       "primary": {
         "type": "stacked-area",
@@ -351,6 +373,8 @@
     },
     {
       "elementId": "A-012",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -381,6 +405,8 @@
     },
     {
       "elementId": "A-013",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "matrix",
       "primary": {
         "type": "comparison-table",
@@ -411,6 +437,8 @@
     },
     {
       "elementId": "A-014",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -441,6 +469,8 @@
     },
     {
       "elementId": "A-015",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -471,6 +501,8 @@
     },
     {
       "elementId": "A-016",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "composition",
       "primary": {
         "type": "stacked-area",
@@ -505,20 +537,17 @@
     },
     {
       "elementId": "A-017",
-      "archetype": "national-series",
+      "displayType": "U0",
+      "structure": "S1",
+      "archetype": "status-note",
       "primary": {
-        "type": "dumbbell",
-        "title": "발전기술별 LCOE 범위와 벤치마크",
-        "xAxis": "균등화 발전비용",
-        "yAxis": "발전원",
-        "unit": "USD/MWh"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "2023·2030·2050년 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -530,11 +559,13 @@
           "url": "https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser"
         }
       ],
-      "status": "exception",
-      "note": "국가 시계열이 아닌 기술별 비용 범위(하한~상한)와 벤치마크의 비교이므로 추이선 대신 기술별 범위 덤벨"
+      "status": "standard",
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "A-018",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "composition",
       "primary": {
         "type": "stacked-area",
@@ -569,6 +600,8 @@
     },
     {
       "elementId": "A-019",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -599,6 +632,8 @@
     },
     {
       "elementId": "A-020",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -629,6 +664,8 @@
     },
     {
       "elementId": "A-021",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -659,6 +696,8 @@
     },
     {
       "elementId": "A-022",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -693,6 +732,8 @@
     },
     {
       "elementId": "A-023",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -727,6 +768,8 @@
     },
     {
       "elementId": "A-024",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -761,6 +804,8 @@
     },
     {
       "elementId": "A-025",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "comparison-table",
@@ -795,6 +840,8 @@
     },
     {
       "elementId": "A-026",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "registry",
       "primary": {
         "type": "note",
@@ -820,6 +867,8 @@
     },
     {
       "elementId": "A-027",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -850,6 +899,8 @@
     },
     {
       "elementId": "A-028",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -880,6 +931,8 @@
     },
     {
       "elementId": "A-029",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -910,6 +963,8 @@
     },
     {
       "elementId": "A-030",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -940,6 +995,8 @@
     },
     {
       "elementId": "A-031",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -974,6 +1031,8 @@
     },
     {
       "elementId": "A-032",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1004,6 +1063,8 @@
     },
     {
       "elementId": "A-033",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1034,6 +1095,8 @@
     },
     {
       "elementId": "B-001",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -1068,6 +1131,8 @@
     },
     {
       "elementId": "B-002",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -1098,6 +1163,8 @@
     },
     {
       "elementId": "B-003",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1132,6 +1199,8 @@
     },
     {
       "elementId": "B-004",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1166,6 +1235,8 @@
     },
     {
       "elementId": "B-005",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1200,6 +1271,8 @@
     },
     {
       "elementId": "B-006",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1234,6 +1307,8 @@
     },
     {
       "elementId": "B-007",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1268,6 +1343,8 @@
     },
     {
       "elementId": "B-008",
+      "displayType": "U2",
+      "structure": "S3",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1298,6 +1375,8 @@
     },
     {
       "elementId": "B-009",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1328,6 +1407,8 @@
     },
     {
       "elementId": "B-010",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -1358,6 +1439,8 @@
     },
     {
       "elementId": "B-011",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1392,6 +1475,8 @@
     },
     {
       "elementId": "B-012",
+      "displayType": "U2",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -1426,6 +1511,8 @@
     },
     {
       "elementId": "B-013",
+      "displayType": "U6",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -1456,20 +1543,17 @@
     },
     {
       "elementId": "B-014",
+      "displayType": "U6",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
+        "type": "table",
         "title": "탄소세 시나리오별 GDP 영향",
-        "xAxis": "GDP 영향",
-        "yAxis": "시나리오",
-        "unit": "%"
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "시나리오별 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -1482,10 +1566,12 @@
         }
       ],
       "status": "exception",
-      "note": "2030·2040년 두 시점의 시나리오별 비교값만 제공되어 시계열 선 대신 시나리오별 막대로 표시"
+      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24)"
     },
     {
       "elementId": "B-015",
+      "displayType": "U6",
+      "structure": "S1",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -1516,6 +1602,8 @@
     },
     {
       "elementId": "B-016",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1546,6 +1634,8 @@
     },
     {
       "elementId": "B-017",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "table",
@@ -1576,6 +1666,8 @@
     },
     {
       "elementId": "B-018",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1606,6 +1698,8 @@
     },
     {
       "elementId": "B-019",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1636,6 +1730,8 @@
     },
     {
       "elementId": "B-020",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1670,6 +1766,8 @@
     },
     {
       "elementId": "B-021",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1704,6 +1802,8 @@
     },
     {
       "elementId": "B-022",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -1734,6 +1834,8 @@
     },
     {
       "elementId": "B-023",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "station",
       "primary": {
         "type": "dumbbell",
@@ -1764,6 +1866,8 @@
     },
     {
       "elementId": "B-024",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1794,6 +1898,8 @@
     },
     {
       "elementId": "B-025",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "station",
       "primary": {
         "type": "dumbbell",
@@ -1824,6 +1930,8 @@
     },
     {
       "elementId": "B-026",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "category-bar",
@@ -1854,6 +1962,8 @@
     },
     {
       "elementId": "B-027",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -1884,6 +1994,8 @@
     },
     {
       "elementId": "B-028",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "station",
       "primary": {
         "type": "sorted-table",
@@ -1914,6 +2026,8 @@
     },
     {
       "elementId": "B-029",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1944,6 +2058,8 @@
     },
     {
       "elementId": "B-030",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -1974,6 +2090,8 @@
     },
     {
       "elementId": "B-031",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2004,6 +2122,8 @@
     },
     {
       "elementId": "B-032",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2034,6 +2154,8 @@
     },
     {
       "elementId": "B-033",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2068,6 +2190,8 @@
     },
     {
       "elementId": "B-034",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2098,6 +2222,8 @@
     },
     {
       "elementId": "B-035",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -2128,6 +2254,8 @@
     },
     {
       "elementId": "B-036",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -2158,6 +2286,8 @@
     },
     {
       "elementId": "B-037",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "composition",
       "primary": {
         "type": "table",
@@ -2188,6 +2318,8 @@
     },
     {
       "elementId": "B-038",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -2218,6 +2350,8 @@
     },
     {
       "elementId": "B-039",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2248,6 +2382,8 @@
     },
     {
       "elementId": "B-040",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2278,6 +2414,8 @@
     },
     {
       "elementId": "B-041",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2308,6 +2446,8 @@
     },
     {
       "elementId": "B-042",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2338,6 +2478,8 @@
     },
     {
       "elementId": "B-043",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -2368,6 +2510,8 @@
     },
     {
       "elementId": "B-044",
+      "displayType": "U1",
+      "structure": "S4",
       "archetype": "matrix",
       "primary": {
         "type": "cards-list",
@@ -2398,6 +2542,8 @@
     },
     {
       "elementId": "B-045",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -2428,6 +2574,8 @@
     },
     {
       "elementId": "B-046",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -2458,6 +2606,8 @@
     },
     {
       "elementId": "B-047",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "table",
@@ -2488,6 +2638,8 @@
     },
     {
       "elementId": "B-048",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -2522,6 +2674,8 @@
     },
     {
       "elementId": "C-001",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2552,13 +2706,15 @@
     },
     {
       "elementId": "C-002",
-      "archetype": "national-series",
+      "displayType": "U6",
+      "structure": "S4",
+      "archetype": "policy-document",
       "primary": {
-        "type": "category-bar",
-        "title": "부문별 배출량(2016 BUR3)",
-        "xAxis": "부문별 순배출량",
-        "yAxis": "부문",
-        "unit": "ktCO₂e"
+        "type": "comparison-table",
+        "title": "격년투명성보고서 제출 이력·내용",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -2577,11 +2733,13 @@
           "url": "https://www.iea.org/policies"
         }
       ],
-      "status": "exception",
-      "note": "BUR3(2016) 단일 시점 부문별 인벤토리 수치라 추이선 대신 부문별 막대"
+      "status": "standard",
+      "note": "V159: ⑥ 규칙 — 1순위 문서 카드, 부문별 배출량은 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
     },
     {
       "elementId": "C-003",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2612,6 +2770,8 @@
     },
     {
       "elementId": "C-004",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2642,6 +2802,8 @@
     },
     {
       "elementId": "C-005",
+      "displayType": "U3",
+      "structure": "S4",
       "archetype": "matrix",
       "primary": {
         "type": "comparison-table",
@@ -2667,6 +2829,8 @@
     },
     {
       "elementId": "C-006",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2697,6 +2861,8 @@
     },
     {
       "elementId": "C-007",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2727,6 +2893,8 @@
     },
     {
       "elementId": "C-008",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2757,6 +2925,8 @@
     },
     {
       "elementId": "C-009",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -2787,6 +2957,8 @@
     },
     {
       "elementId": "C-010",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -2817,6 +2989,8 @@
     },
     {
       "elementId": "C-011",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2847,6 +3021,8 @@
     },
     {
       "elementId": "C-012",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2877,6 +3053,8 @@
     },
     {
       "elementId": "C-013",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2907,6 +3085,8 @@
     },
     {
       "elementId": "C-014",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -2937,20 +3117,17 @@
     },
     {
       "elementId": "C-015",
-      "archetype": "policy-document",
+      "displayType": "U0",
+      "structure": "S4",
+      "archetype": "status-note",
       "primary": {
-        "type": "comparison-table",
-        "title": "정책 원문 링크 목록",
+        "type": "status-note",
+        "title": "공개 상태 안내",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "문서명·기관·발행일 표"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -2963,10 +3140,12 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "C-016",
+      "displayType": "U2",
+      "structure": "S2",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -2997,6 +3176,8 @@
     },
     {
       "elementId": "C-017",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -3027,6 +3208,8 @@
     },
     {
       "elementId": "C-018",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3057,18 +3240,20 @@
     },
     {
       "elementId": "C-019",
-      "archetype": "province-distribution",
+      "displayType": "U6",
+      "structure": "S4",
+      "archetype": "policy-document",
       "primary": {
-        "type": "region-bar",
-        "title": "성·시별 탄소시장 의무시설",
-        "xAxis": "시설 수",
-        "yAxis": "성·시",
-        "unit": "개소"
+        "type": "comparison-table",
+        "title": "탄소시장 제도·세율·시행 일정",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
-          "type": "table",
-          "title": "성·시별 시설수 표"
+          "type": "sorted-table",
+          "title": "성·시별 시설 수 표"
         }
       ],
       "mapRole": "beside-primary",
@@ -3083,10 +3268,12 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: ⑥ 규칙 — 1순위 제도 문서, 성·시별 시설 수는 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24)"
     },
     {
       "elementId": "C-020",
+      "displayType": "U0",
+      "structure": "S4",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -3112,6 +3299,8 @@
     },
     {
       "elementId": "C-021",
+      "displayType": "U0",
+      "structure": "S4",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -3137,6 +3326,8 @@
     },
     {
       "elementId": "C-022",
+      "displayType": "U6",
+      "structure": "S1",
       "archetype": "province-distribution",
       "primary": {
         "type": "region-bar",
@@ -3167,6 +3358,8 @@
     },
     {
       "elementId": "C-023",
+      "displayType": "U0",
+      "structure": "S4",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -3192,6 +3385,8 @@
     },
     {
       "elementId": "C-024",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -3222,6 +3417,8 @@
     },
     {
       "elementId": "C-025",
+      "displayType": "U5",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3256,6 +3453,8 @@
     },
     {
       "elementId": "D-001",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3286,6 +3485,8 @@
     },
     {
       "elementId": "D-002",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3316,6 +3517,8 @@
     },
     {
       "elementId": "D-003",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3346,6 +3549,8 @@
     },
     {
       "elementId": "D-004",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3376,6 +3581,8 @@
     },
     {
       "elementId": "D-005",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "composition",
       "primary": {
         "type": "category-bar",
@@ -3406,6 +3613,8 @@
     },
     {
       "elementId": "D-006",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -3436,6 +3645,8 @@
     },
     {
       "elementId": "D-007",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -3466,6 +3677,8 @@
     },
     {
       "elementId": "D-008",
+      "displayType": "U5",
+      "structure": "S2",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3500,6 +3713,8 @@
     },
     {
       "elementId": "D-009",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3530,6 +3745,8 @@
     },
     {
       "elementId": "D-010",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -3560,6 +3777,8 @@
     },
     {
       "elementId": "D-011",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -3590,6 +3809,8 @@
     },
     {
       "elementId": "D-012",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3624,6 +3845,8 @@
     },
     {
       "elementId": "D-013",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -3654,6 +3877,8 @@
     },
     {
       "elementId": "D-014",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3688,6 +3913,8 @@
     },
     {
       "elementId": "D-015",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3722,6 +3949,8 @@
     },
     {
       "elementId": "D-016",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3756,6 +3985,8 @@
     },
     {
       "elementId": "D-017",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3790,6 +4021,8 @@
     },
     {
       "elementId": "D-018",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "table",
@@ -3824,6 +4057,8 @@
     },
     {
       "elementId": "D-019",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3858,6 +4093,8 @@
     },
     {
       "elementId": "D-020",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3892,6 +4129,8 @@
     },
     {
       "elementId": "D-021",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3926,6 +4165,8 @@
     },
     {
       "elementId": "D-022",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3960,6 +4201,8 @@
     },
     {
       "elementId": "D-023",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -3994,24 +4237,17 @@
     },
     {
       "elementId": "D-024",
-      "archetype": "registry",
+      "displayType": "U0",
+      "structure": "S4",
+      "archetype": "status-note",
       "primary": {
-        "type": "category-bar",
-        "title": "라운드별 VC·임팩트투자",
-        "xAxis": "건수",
-        "yAxis": "투자 라운드",
-        "unit": "건"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "cards-list",
-          "title": "투자 카드"
-        },
-        {
-          "type": "table",
-          "title": "투자 목록 표"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4024,10 +4260,12 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "D-025",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4062,6 +4300,8 @@
     },
     {
       "elementId": "D-026",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4096,6 +4336,8 @@
     },
     {
       "elementId": "E-001",
+      "displayType": "U4",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4130,6 +4372,8 @@
     },
     {
       "elementId": "E-002",
+      "displayType": "U4",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "cards-list",
@@ -4160,6 +4404,8 @@
     },
     {
       "elementId": "E-003",
+      "displayType": "U4",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4194,6 +4440,8 @@
     },
     {
       "elementId": "E-004",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4228,6 +4476,8 @@
     },
     {
       "elementId": "E-005",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4262,6 +4512,8 @@
     },
     {
       "elementId": "E-006",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "region-bar",
@@ -4296,6 +4548,8 @@
     },
     {
       "elementId": "E-007",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -4326,20 +4580,17 @@
     },
     {
       "elementId": "E-008",
-      "archetype": "registry",
+      "displayType": "U0",
+      "structure": "S1",
+      "archetype": "status-note",
       "primary": {
-        "type": "category-bar",
-        "title": "논문 목록의 발행연도별 건수",
-        "xAxis": "건수",
-        "yAxis": "발행연도",
-        "unit": "건"
+        "type": "status-note",
+        "title": "공개 상태 안내",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "연도별 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4352,10 +4603,12 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "E-009",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -4386,6 +4639,8 @@
     },
     {
       "elementId": "E-010",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "line",
@@ -4416,6 +4671,8 @@
     },
     {
       "elementId": "E-011",
+      "displayType": "U0",
+      "structure": "S4",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -4441,6 +4698,8 @@
     },
     {
       "elementId": "E-012",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "national-series",
       "primary": {
         "type": "category-bar",
@@ -4471,6 +4730,8 @@
     },
     {
       "elementId": "E-013",
+      "displayType": "U0",
+      "structure": "S4",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -4496,6 +4757,8 @@
     },
     {
       "elementId": "E-014",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "timeline",
@@ -4526,6 +4789,8 @@
     },
     {
       "elementId": "E-015",
+      "displayType": "U6",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -4556,20 +4821,17 @@
     },
     {
       "elementId": "E-016",
-      "archetype": "policy-document",
+      "displayType": "U0",
+      "structure": "S4",
+      "archetype": "status-note",
       "primary": {
-        "type": "comparison-table",
-        "title": "한국 기후기술 TRL 근거",
+        "type": "status-note",
+        "title": "공개 상태 안내",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "기술·단계·근거 표"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4582,24 +4844,21 @@
         }
       ],
       "status": "standard",
-      "note": ""
+      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "E-017",
-      "archetype": "national-series",
+      "displayType": "U0",
+      "structure": "S4",
+      "archetype": "status-note",
       "primary": {
-        "type": "comparison-table",
-        "title": "국가별 기후기술 순위 비교",
+        "type": "status-note",
+        "title": "공개 상태 안내",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [
-        {
-          "type": "table",
-          "title": "국가별 값"
-        }
-      ],
+      "secondary": [],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4611,11 +4870,13 @@
           "url": "https://databrowser.uis.unesco.org/"
         }
       ],
-      "status": "exception",
-      "note": "국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)"
+      "status": "standard",
+      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시"
     },
     {
       "elementId": "E-018",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4650,6 +4911,8 @@
     },
     {
       "elementId": "E-019",
+      "displayType": "U4",
+      "structure": "S3",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",
@@ -4684,6 +4947,8 @@
     },
     {
       "elementId": "E-020",
+      "displayType": "U5",
+      "structure": "S4",
       "archetype": "registry",
       "primary": {
         "type": "category-bar",

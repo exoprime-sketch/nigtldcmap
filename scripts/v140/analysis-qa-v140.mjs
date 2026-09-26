@@ -70,6 +70,15 @@ const DATA = resolve(PROJECT_ROOT, "public/data/vietnam/v2");
 const summariesFile = readFileSync(resolve(DATA, "home/card-summaries-v140.json"), "utf8");
 const summariesAsset = JSON.parse(summariesFile);
 const summaries = summariesAsset.cards;
+// V159 ⓪ status elements (excluded or not yet delivered, decided 2026-09-23):
+// they show one status notice instead of an analysis, so they are judged by
+// statusNoticePresent · chartCount0 · cardShowsStatus instead of the card
+// value and analysis-fit checks. Every other element is judged as before.
+const STATUS_IDS_V159 = new Set(
+  JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
+    .filter((row) => row.displayType === "U0")
+    .map((row) => row.elementId)
+);
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
@@ -777,9 +786,10 @@ async function checkElement(context, item) {
     const cardSelector = `[data-testid="public-finder-card-v135"][data-element-id="${elementId}"]`;
     const cardFound = await page.waitForSelector(cardSelector, { timeout: 30_000 }).then(() => true).catch(() => false);
     if (cardFound) {
-      await page.waitForSelector(`${cardSelector} [data-testid="finder-card-summary-v140"]`, { timeout: 20_000 }).catch(() => null);
+      await page.waitForSelector(`${cardSelector} ${STATUS_IDS_V159.has(elementId) ? '[data-testid="finder-card-status-v159"]' : '[data-testid="finder-card-summary-v140"]'}`, { timeout: 20_000 }).catch(() => null);
       const finderHeadline = clean(await page.$eval(`${cardSelector} [data-testid="finder-card-headline-v140"] strong`, (node) => node.textContent).catch(() => ""));
       record.evidence.finderHeadline = finderHeadline;
+      record.evidence.finderStatusBadge = clean(await page.$eval(`${cardSelector} [data-testid="finder-card-status-v159"]`, (node) => node.textContent).catch(() => ""));
       if (card) claim = claimOf(card, finderHeadline);
       await page.click(`${cardSelector} [data-testid="finder-card-open-v140"]`);
       await waitReady(page);
@@ -894,6 +904,30 @@ async function checkElement(context, item) {
     // ---- 4b. does the primary analysis fit the data kind? (every element)
     record.analysisFit = await analysisFitOf(page, card, screen, claim);
     record.evidence.analysisFit = record.analysisFit;
+
+    // ---- 4c. ⓪ status elements: the notice, no chart, a status badge on the card
+    if (STATUS_IDS_V159.has(elementId)) {
+      const notice = await page.evaluate(() => {
+        const primary = document.querySelector('[data-testid="public-analysis-primary"]');
+        const notes = primary ? primary.querySelectorAll('[data-testid="status-note-v159"]') : [];
+        const rows = notes.length === 1
+          ? Array.from(notes[0].querySelectorAll("dt")).map((dt) => ({ label: (dt.textContent || "").trim(), value: (dt.nextElementSibling?.textContent || "").trim() }))
+          : [];
+        return { count: notes.length, rows, charts: primary ? primary.querySelectorAll("svg").length : -1 };
+      });
+      const shown = (label) => notice.rows.some((row) => row.label === label && row.value);
+      record.statusChecks = {
+        statusNoticePresent: notice.count === 1 && ["결정", "사유", "결정일"].every(shown),
+        chartCount0: notice.charts === 0,
+        cardShowsStatus: Boolean(record.evidence.finderStatusBadge) && !record.evidence.finderHeadline,
+      };
+      record.evidence.statusNotice = notice;
+      record.cardValueVerified = null;
+      record.detailAnalysisFit = null;
+      record.analysisFit = { pass: null, kind: "status-v159", reason: "⓪ status element: judged by statusNoticePresent · chartCount0 · cardShowsStatus" };
+      record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: ⓪ status element (V159)");
+      Object.entries(record.statusChecks).forEach(([key, ok]) => { if (!ok) record.remainingIssue.push(`${key} failed`); });
+    }
 
     // ---- 5. tables
     const tables = await openTablesAndRead(page);
@@ -1035,7 +1069,7 @@ if (server) await server.close();
 results.sort((a, b) => a.elementId.localeCompare(b.elementId));
 const tally = (key) => ({ pass: results.filter((r) => r[key] === true).length, fail: results.filter((r) => r[key] === false).length, notApplicable: results.filter((r) => r[key] === null).length });
 const countBy = (pick) => results.reduce((acc, r) => { const key = pick(r) || "none"; acc[key] = (acc[key] || 0) + 1; return acc; }, {});
-const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesBounded === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording));
+const requiredFailures = results.filter((r) => !r.screenLoaded || r.detailTilesBounded === false || r.cardClicked === false || r.homeCardClicked === false || r.selectionUrlPreserved === false || r.cardValueVerified === false || r.detailAnalysisFit === false || r.analysisFit?.pass === false || r.controlsVerified === false || r.mapHandoffVerified === false || (r.mapSymbolVerified && r.mapSymbolVerified.pass === false) || r.recomputed?.status === "mismatch" || r.evidence.table?.status === "value-without-keys" || Boolean(r.internalWording) || Boolean(r.statusChecks && Object.values(r.statusChecks).some((ok) => ok === false)));
 const summary = {
   label,
   base,
@@ -1104,6 +1138,7 @@ function failureKeys(r) {
   if (r.recomputed?.status === "mismatch") keys.push("recomputed");
   if (r.evidence.table?.status === "value-without-keys") keys.push("tableValueWithoutKeys");
   if (r.internalWording) keys.push("internalWording");
+  if (r.statusChecks) Object.entries(r.statusChecks).forEach(([key, ok]) => { if (ok === false) keys.push(key); });
   return keys;
 }
 const baselinePath = opt("--baseline", null);

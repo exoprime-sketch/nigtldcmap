@@ -1,0 +1,21 @@
+/* V159: fixed "판단 포인트" block shared by templates U1-U6. */
+.dp159 { min-width: 0; display: grid; gap: 8px; }
+.dp159 h3 { margin: 0; font-size: 1rem; }
+.dp159-list { margin: 0; display: grid; gap: 8px; min-width: 0; }
+.dp159-row {
+  display: grid;
+  grid-template-columns: minmax(0, 140px) minmax(0, 1fr);
+  gap: 6px 10px;
+  min-width: 0;
+  font-size: .9rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed #e2ebe6;
+  padding-bottom: 6px;
+}
+.dp159-row dt { margin: 0; color: #375a50; overflow-wrap: anywhere; }
+.dp159-row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.dp159-row dd small { display: block; color: #6b8078; font-size: .8rem; margin-top: 2px; overflow-wrap: anywhere; }
+
+@media (max-width: 400px) {
+  .dp159-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}

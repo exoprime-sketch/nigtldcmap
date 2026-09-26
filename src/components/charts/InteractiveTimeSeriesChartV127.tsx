@@ -922,6 +922,7 @@ export function InteractiveTimeSeriesChartV127({
             {plottedSeries.map((item) => (
               <g
                 className="v127-interactive-chart__series"
+                data-indicator-id={item.indicatorIds && item.indicatorIds.length ? item.indicatorIds.join(" ") : undefined}
                 data-line-pattern={item.linePattern}
                 key={item.id}
                 style={{ color: item.color }}

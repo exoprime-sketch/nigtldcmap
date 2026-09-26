@@ -9,6 +9,7 @@
  * an `exception` with the reason.
  */
 import contractJson from "./publicVisualizationContractV153.json";
+import type { DisplayTypeV159, StructureV159 } from "../spec/specTypesV159";
 
 export type VisualizationArchetypeV153 =
   | "national-series"
@@ -78,6 +79,10 @@ export interface ContractPrimaryV153 extends ContractBlockV153 {
 
 export interface VisualizationContractRowV153 {
   elementId: string;
+  /** V159 display type, copied from src/data/spec/datasetTypologyV159.json. */
+  displayType: DisplayTypeV159;
+  /** V159 delivery structure, copied from the same typology row. */
+  structure: StructureV159;
   archetype: VisualizationArchetypeV153;
   primary: ContractPrimaryV153;
   secondary: ContractBlockV153[];

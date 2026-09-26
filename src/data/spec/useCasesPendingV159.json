@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "v159-use-cases-pending-1",
+  "note": "Use cases for elements the framework workbook left without any (D-001, D-002, D-004), written in the sheet's format from the element's own 상세 설명·활용 방법 and delivered indicators only. Marked verified: pending and shown with a '검증 대기' badge until NIGT checks them against the delivered data. Storyline numbers stay as OO like the sheet's own examples.",
+  "author": "V159 PR-J draft (Claude Code), awaiting NIGT verification",
+  "cases": [
+    {
+      "elementId": "D-001",
+      "caseNo": 1,
+      "purpose": "기술별 1kW당 설비투자비 견주기",
+      "purposeEn": "Technology CAPEX Comparison",
+      "logic": "같은 방식(사업별 총투자액÷설비용량의 기술별 중앙값)으로 산출한 값이라 태양광·풍력·수력·바이오에너지·폐자원 사이에서 같은 용량을 갖추는 데 드는 초기 투자 부담의 차이를 나란히 볼 수 있다.",
+      "dataUsedText": "기술별 CAPEX 중앙값(D-001_capex_solar_pv·D-001_capex_wind·D-001_capex_hydro_large·D-001_capex_hydro_small·D-001_capex_biomass·D-001_capex_waste_to_energy)",
+      "storyline": "\"대상국 민간참여 인프라 사업 표본으로 보면 태양광은 1kW당 약 OO달러, 풍력은 OO달러로, 같은 용량을 갖추는 데 드는 초기 투자 부담이 기술마다 OO배 차이 난다.\"",
+      "users": ["기업", "금융기관"],
+      "caution": "사업별 총투자액을 용량으로 나눠 산출한 파생값이고 명목 금액이라 투자 연도가 다르면 물가·환율 영향이 섞이며, 국가 간 비교가능성은 아직 확인되지 않았다."
+    },
+    {
+      "elementId": "D-001",
+      "caseNo": 2,
+      "purpose": "후보 사업의 개략 사업비 어림잡기",
+      "purposeEn": "Order-of-Magnitude Project Cost",
+      "logic": "기술별 중앙값에 계획 용량을 곱하면 후보 사업의 개략 설비투자비를 얻고, 표본 상한·하한을 함께 곱하면 그 추정이 표본 안에서 얼마나 넓게 흩어지는지 범위로 보일 수 있다.",
+      "dataUsedText": "기술별 CAPEX 중앙값(D-001_capex_solar_pv·D-001_capex_wind), 표본 상한·하한(D-001_capex_solar_pv_max·D-001_capex_solar_pv_min·D-001_capex_wind_max·D-001_capex_wind_min)",
+      "storyline": "\"OOMW 규모 태양광 후보 사업의 설비투자비는 표본 중앙값 기준 약 OO만 달러이고, 표본 범위로는 OO~OO만 달러다.\"",
+      "users": ["기업", "공공기관"],
+      "caution": "표본이 적은 기술은 중앙값이 몇 건에 좌우되고, 상한·하한은 표본이 여럿인 기술에만 있어 모든 기술에 범위를 붙일 수는 없다."
+    },
+    {
+      "elementId": "D-002",
+      "caseNo": 1,
+      "purpose": "정책 수요가 몰린 기후기술 가려내기",
+      "purposeEn": "Policy-Driven Market Targeting",
+      "logic": "개정 전력개발계획(PDP8)의 2030년 설비용량 목표를 2023년 실적과 견준 연평균 성장률이라, 값이 큰 기술일수록 계획상 설비가 빠르게 늘어나야 하는 분야로 읽을 수 있다.",
+      "dataUsedText": "기술별 설비용량 연평균성장률(D-002_market_cagr_solar_pv·D-002_market_cagr_wind_onshore·D-002_market_cagr_biomass·D-002_market_cagr_waste_to_energy·D-002_market_cagr_hydro·D-002_market_cagr_pumped_storage)",
+      "storyline": "\"대상국 전력개발계획상 2030년까지 설비용량 연평균 성장률은 OO가 OO%로 가장 높아, 이 분야에 정책 수요가 몰려 있다.\"",
+      "users": ["기업", "공공기관"],
+      "caution": "실적 통계가 아니라 정부 목표를 실적과 대비해 계산한 파생값이고 원천이 업계 전문지 해설이라, 계획이 개정되면 값이 통째로 바뀐다."
+    },
+    {
+      "elementId": "D-002",
+      "caseNo": 2,
+      "purpose": "진출 우선순위 후보 기술 줄 세우기",
+      "purposeEn": "Market Entry Screening",
+      "logic": "같은 계획·같은 산출식(2030년 목표 구간 중앙값÷2023년 실적, 7년 복리)으로 만든 기술별 성장률을 나란히 놓으면, 진출 검토 대상 기술을 성장 여지 순으로 좁히는 첫 거름망으로 쓸 수 있다.",
+      "dataUsedText": "기술별 설비용량 연평균성장률(D-002_market_cagr_solar_pv·D-002_market_cagr_wind_onshore·D-002_market_cagr_biomass·D-002_market_cagr_waste_to_energy·D-002_market_cagr_hydro·D-002_market_cagr_pumped_storage)",
+      "storyline": "\"계획상 성장률 상위 3개 기술은 OO·OO·OO(연 OO~OO%)이어서, 이 세 분야를 우선 검토 대상으로 둔다.\"",
+      "users": ["기업", "금융기관"],
+      "caution": "2023년 실적 설비용량이 게재되지 않은 기술(배터리저장·해상 풍력)은 값이 비어 있어 순위에서 빠지며, 계획에 기댄 값이라 다른 나라와 견줄 수 없다."
+    },
+    {
+      "elementId": "D-004",
+      "caseNo": 1,
+      "purpose": "크레딧 가격 시나리오별 투자비 회수 여지 보기",
+      "purposeEn": "Carbon Credit Revenue Sensitivity",
+      "logic": "기술마다 크레딧 가격 고·중·저 세 시나리오의 회수율을 나란히 보면, 20년치 크레딧 수익이 설비투자비를 얼마나 메우는지와 그 몫이 가격 가정에 따라 얼마나 흔들리는지를 함께 가늠할 수 있다.",
+      "dataUsedText": "기술·시나리오별 투자비 회수율(D-004_capex_recovery_solar_pv_low·D-004_capex_recovery_solar_pv_mid·D-004_capex_recovery_solar_pv_high·D-004_capex_recovery_hydro_small_low·D-004_capex_recovery_hydro_small_mid·D-004_capex_recovery_hydro_small_high)",
+      "storyline": "\"소수력은 중간 가격 시나리오에서 20년치 크레딧 수익이 설비투자비의 OO%를 메우지만, 저가격 시나리오에서는 OO%에 그친다.\"",
+      "users": ["기업", "금융기관"],
+      "caution": "내부수익률(IRR)이 아니라 투자비 회수율이며, 감축량(D-003)과 설비투자비(D-001)라는 두 파생값을 다시 곱한 이중 추정치라 원본 통계처럼 읽으면 안 된다."
+    },
+    {
+      "elementId": "D-004",
+      "caseNo": 2,
+      "purpose": "크레딧 수익 비중이 큰 기술 고르기",
+      "purposeEn": "Credit-Financed Technology Screening",
+      "logic": "같은 가격 시나리오 안에서 기술별 회수율을 견주면, 크레딧 수입이 사업비 마련에서 상대적으로 큰 몫을 차지하는 기술을 가려 탄소크레딧 연계 금융 구조를 먼저 검토할 대상으로 삼을 수 있다.",
+      "dataUsedText": "중간 가격 시나리오 회수율(D-004_capex_recovery_solar_pv_mid·D-004_capex_recovery_wind_onshore_mid·D-004_capex_recovery_hydro_large_mid·D-004_capex_recovery_hydro_small_mid·D-004_capex_recovery_biomass_mid)",
+      "storyline": "\"중간 가격 시나리오에서 회수율이 가장 높은 기술은 OO(OO%)이고 가장 낮은 기술은 OO(OO%)여서, 크레딧 연계 금융은 OO부터 검토한다.\"",
+      "users": ["금융기관", "공공기관"],
+      "caution": "가격 원천이 업계·연구기관 자료라 신뢰 등급이 낮고 국가 간 비교에 쓸 수 없으며, 기술마다 설비투자비 표본 수가 달라 회수율 차이의 일부는 표본 차이일 수 있다."
+    }
+  ]
+}

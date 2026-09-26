@@ -186,3 +186,12 @@
 .pec131-card__heading > * {
   min-width: 0;
 }
+
+/* V159: the source line above the dataset name in the detail hero. */
+.cdp-detail-hero .cdp-detail-hero__source {
+  margin: 6px 0 2px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #475569);
+  overflow-wrap: anywhere;
+}
