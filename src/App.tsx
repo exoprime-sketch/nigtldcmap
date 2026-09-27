@@ -729,6 +729,13 @@ export default function App() {
       }
     }
 
+    // V160: `detailLayers=all` opens every detail layer (detailLayerStoreV160
+    // reads it); kept across views so a finder -> card -> detail visit that
+    // started with it still arrives with every layer open.
+    if (new URLSearchParams(window.location.search).get("detailLayers") === "all") {
+      params.set("detailLayers", "all");
+    }
+
     const queryString = params.toString();
     const nextUrl = `${window.location.pathname}${
       queryString ? `?${queryString}` : ""

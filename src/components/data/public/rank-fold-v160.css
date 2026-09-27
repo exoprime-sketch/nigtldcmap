@@ -1,0 +1,37 @@
+/* V160: top/bottom 10 of a regional ranking; the gap and the toggle. */
+[data-rank-gap] {
+  position: relative;
+  margin-top: 22px;
+}
+[data-rank-gap]::before {
+  content: "⋯ " attr(data-rank-gap);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: .78rem;
+  color: #6b8078;
+}
+.rank-fold-v160 {
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: 1px solid #b9cfc8;
+  border-radius: 10px;
+  background: #fff;
+  color: #173a33;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rank-fold-v160:focus-visible {
+  outline: 2px solid #16806b;
+  outline-offset: 2px;
+}
+@media print {
+  .rank-fold-v160 { display: none; }
+}
+/* Bar rows set their own display (grid/flex), which would override the
+   hidden attribute; a folded row must stay folded. */
+li[hidden] {
+  display: none !important;
+}

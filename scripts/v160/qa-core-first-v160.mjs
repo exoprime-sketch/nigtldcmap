@@ -3,7 +3,8 @@
  * V160 core-first QA against production builds in real Chromium.
  *
  *   home     six question cards; body words of the home against the pre-V160
- *            build (--base), target -50% or more (first-viewport words recorded)
+ *            build (--base), target -50% or more; the first 1440x900 screen
+ *            holds 120 words at most
  *   finder   the default list (no tier parameter) holds the core datasets
  *   detail   12 samples at 1280x800: layer 1 as the plan defines it (hero ->
  *            판단 포인트 -> 1순위 차트 | 지도 자리) ends within 1.5 viewports;
@@ -93,6 +94,8 @@ async function homeWords(baseUrl, viewportOnly) {
   const reduction = before ? Math.round((1 - after / before) * 1000) / 10 : null;
   report.evidence.homeWords = { before, after, reductionPercent: reduction, viewportBefore, viewportAfter };
   check("HOME_BODY_WORDS_MINUS_50", reduction !== null && reduction >= 50, report.evidence.homeWords, ">= 50% fewer words on the home");
+  // Decision 2026-09-28: the first 1440x900 screen also has an absolute cap.
+  check("HOME_FIRST_SCREEN_WORDS_MAX_120", viewportAfter <= 120, viewportAfter, "<= 120 words");
   const { context, page } = await freshPage({ width: 1440, height: 900 });
   await page.goto(`${url(server)}/`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(90_000) });
   await page.waitForSelector('[data-testid="home-question-v160"]', { timeout: scaledTimeoutMsV150(30_000) });
@@ -131,6 +134,9 @@ async function homeWords(baseUrl, viewportOnly) {
         layer: layer.getAttribute("data-layer"),
         expanded: layer.querySelector("summary")?.getAttribute("aria-expanded"),
       }));
+      // The later charts folded under the first chart (layer 2) start closed too.
+      const more = document.querySelector('[data-testid="detail-layer-v160-more"]');
+      if (more) layers.push({ layer: "2-charts", expanded: more.getAttribute("aria-expanded") });
       return { layer1Bottom: rank1Bottom, primaryBottom: bottom(primary), layers };
     });
     const ratio = (value) => (value ? Math.round((value / 800) * 100) / 100 : null);

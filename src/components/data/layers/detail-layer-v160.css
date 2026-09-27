@@ -65,3 +65,50 @@
     display: grid !important;
   }
 }
+
+/* Layer 2 inside the analysis panel: the frame marks everything after the
+   rank-1 chart|map row with data-v160-rest; it folds with layer 2 on screen
+   and always prints. */
+@media screen {
+  .dl153-frame[data-v160-more="closed"] [data-v160-rest] {
+    display: none !important;
+  }
+}
+
+.dtl160-more {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin: 12px 0 4px;
+  padding: 10px 18px;
+  border: 1px dashed #b9cfc8;
+  border-radius: 12px;
+  background: #f6faf8;
+  color: #173a33;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dtl160-more::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  color: #567067;
+}
+
+.dtl160-more[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.dtl160-more:focus-visible {
+  outline: 2px solid #16806b;
+  outline-offset: 2px;
+}
+
+@media print {
+  .dtl160-more {
+    display: none;
+  }
+}

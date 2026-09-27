@@ -54,6 +54,8 @@ export function finderUrlV135(baseUrl, query = "") {
   // V160: the finder opens on the core tier; audits look at every public
   // dataset, as they always did (reports/v160/EXPECTATION_CHANGES_V160.md).
   url.searchParams.set("tier", "all");
+  // ...and a card clicked from here opens its detail with every layer open.
+  url.searchParams.set("detailLayers", "all");
   url.hash = "explorer";
   return url.toString();
 }
@@ -63,6 +65,9 @@ export function detailUrlV135(baseUrl, elementId) {
   url.searchParams.set("view", "data");
   url.searchParams.set("country", "VNM");
   url.searchParams.set("element", elementId);
+  // V160: every detail layer open (the V159 layout); the collapsed default
+  // is checked by scripts/v160/qa-core-first-v160.mjs.
+  url.searchParams.set("detailLayers", "all");
   url.hash = "element-detail";
   return url.toString();
 }

@@ -3,6 +3,7 @@ import { act } from "react-dom/test-utils";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
 import DetailLayerV160 from "./DetailLayerV160";
+import { resetDetailLayerOverridesV160 } from "./detailLayerStoreV160";
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -12,6 +13,7 @@ let container: HTMLDivElement;
 let root: Root;
 beforeEach(() => {
   window.localStorage.clear();
+  resetDetailLayerOverridesV160();
   container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);

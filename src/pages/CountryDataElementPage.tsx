@@ -943,7 +943,7 @@ export default function CountryDataElementPage({
 
       {meta && (
         <>
-          <section className="cdp-detail-hero">
+          <section className="cdp-detail-hero cdp-detail-hero--v160">
             <div>
               <div className="cdp-card__path">
                 <span>
@@ -1054,14 +1054,17 @@ export default function CountryDataElementPage({
                 </button>
               )}
             </div>
+            {/* V160-D layer 1: 판단 포인트 as a chip strip across the hero,
+                read with the title before the first chart. */}
+            {typologyV159 ? (
+              <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} variant="strip" />
+            ) : null}
           </section>
 
-          {/* V160-D layer 1 (always open): 판단 포인트 and the primary
-              chart|map below read without a click. The core-figure strip,
-              데이터 설명 and the source/download material move to layers 2-3. */}
-          {typologyV159 ? (
-            <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} />
-          ) : null}
+          {/* V160-D layer 1 (always open): the hero with its 판단 포인트
+              strip and the primary chart|map row below read without a click.
+              The core-figure strip, the later charts, 데이터 설명 and the
+              source/download material are layers 2-3. */}
 
           <section className="cdp-panel cdp-detail-panel dl153-detail-panel">
               <CountryElementVisualizationV123

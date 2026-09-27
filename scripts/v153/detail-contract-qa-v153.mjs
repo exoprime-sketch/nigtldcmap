@@ -226,7 +226,9 @@ async function checkElement(context, row) {
       const narrow = await page.evaluate(readScreen);
       const f2 = narrow.blocks[0];
       const s2 = narrow.blocks[1];
-      const later = narrow.blocks.slice(1);
+      // V160: blocks after rank 1 are layer 2 - folded (not laid out) until
+      // the reader opens it; the slot must precede the ones that are shown.
+      const later = narrow.blocks.slice(1).filter((block) => block.width > 0);
       const between = Boolean(f2 && narrow.slot && narrow.slot.top >= f2.top + f2.height - 4 && later.every((block) => narrow.slot.top <= block.top + 4));
       record.checks.mapPlacement = beside && between;
       record.evidence.narrow = { slot: narrow.slot, first: f2 ? { type: f2.type, top: f2.top, height: f2.height } : null, second: s2 ? { type: s2.type, top: s2.top } : null };

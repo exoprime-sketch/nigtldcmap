@@ -71,6 +71,8 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
 import DetailLayerV160 from "../layers/DetailLayerV160";
+import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "../layers/detailLayerStoreV160";
+import { useDetailFoldV160 } from "./detailFoldContextV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
@@ -179,6 +181,8 @@ export default function PublicDataAnalysisRouterV126({
     [indicators, presentIndicatorIds]
   );
   const [selectedTech, setSelectedTech] = useState("all");
+  const foldV160 = useDetailFoldV160();
+  const layerTwoOpenV160 = useDetailLayerOpenV160("2");
   useEffect(() => setSelectedTech("all"), [elementId]);
   const techIndicatorIds = useMemo(() => {
     if (selectedTech === "all") return null;
@@ -532,10 +536,25 @@ export default function PublicDataAnalysisRouterV126({
         </header>
       )}
 
-      <section className="pav126-primary" data-testid="public-analysis-primary">
+      <section className="pav126-primary" data-testid="public-analysis-primary" id={`pav126-primary-${elementId}`}>
         {body}
         {mapSlot}
       </section>
+
+      {/* V160: the charts after the first chart|map row are layer 2 - folded
+          here with the layer's shared open state (the frame marks them). */}
+      {foldV160.hasRest ? (
+        <button
+          type="button"
+          className="dtl160-more"
+          data-testid="detail-layer-v160-more"
+          aria-expanded={layerTwoOpenV160}
+          aria-controls={`pav126-primary-${elementId}`}
+          onClick={() => setDetailLayerOpenV160("2", !layerTwoOpenV160)}
+        >
+          {layerTwoOpenV160 ? "추가 차트 접기" : foldV160.restBlocks > 0 ? `차트 ${foldV160.restBlocks}개 더 보기` : "자세히 보기"}
+        </button>
+      ) : null}
 
       {/* V160: source metadata and the raw-data table read as layer 3 - closed
           by default, opened on request or by a remembered global preference.

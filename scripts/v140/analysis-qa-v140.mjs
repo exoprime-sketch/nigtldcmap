@@ -779,6 +779,8 @@ async function checkElement(context, item) {
     params.set("view", "data");
     params.set("country", "VNM");
     params.set("element", elementId);
+    // V160: every detail layer open (the V159 layout); see qa-core-first-v160.
+    params.set("detailLayers", "all");
     return `${base}/?${params.toString()}#element-detail`;
   };
   try {
@@ -786,7 +788,7 @@ async function checkElement(context, item) {
     // V160: the finder opens on the core tier; tier=all lists every public
     // dataset. ⓪ status elements are not listed at all (tier hidden), so they
     // are opened by their detail URL and the missing card is the expected state.
-    await page.goto(`${base}/?tier=all#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
+    await page.goto(`${base}/?tier=all&detailLayers=all#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
     await page.waitForSelector('[data-testid="finder-results-v136"]', { timeout: 60_000 });
     const searchTerm = (card?.title || item.elementLabel).replace(/\[.*$/u, "").split(/[:;]/u)[0].trim().slice(0, 40);
     await page.fill(".cdp-input", searchTerm);

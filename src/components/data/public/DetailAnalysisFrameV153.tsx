@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
   AXIS_BLOCK_TYPES_V153,
@@ -10,6 +10,9 @@ import type {
 } from "../../../data/visualization/publicVisualizationContractV153";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { AnalysisContractContextV153 } from "./analysisContractContextV153";
+import { DetailFoldContextV160 } from "./detailFoldContextV160";
+import type { DetailFoldV160 } from "./detailFoldContextV160";
+import { useDetailLayerOpenV160 } from "../layers/detailLayerStoreV160";
 
 /**
  * V153-D1: the frame around the analysis router.
@@ -21,6 +24,12 @@ import { AnalysisContractContextV153 } from "./analysisContractContextV153";
  * stylesheet can put the map beside the first block), and the frame records
  * whether the first block is the one the contract declares. The frame only
  * writes attributes React does not manage; it never moves a node.
+ *
+ * V160: everything after the rank-1 row (blocks ranked 2 and below, and the
+ * notes between them) is marked `data-v160-rest`. That part is layer 2 of
+ * the detail screen: folded with layer 2's shared open state (the "차트 더
+ * 보기" toggle under the first chart, or the '데이터 설명' layer), shown in
+ * print. Still attributes only - nothing is moved or unmounted.
  */
 interface Props {
   elementId: string;
@@ -89,12 +98,15 @@ export function judgeAxesV153(
 export default function DetailAnalysisFrameV153({ elementId, children }: Props) {
   const contract = useMemo(() => visualizationContractV153(elementId), [elementId]);
   const rootRef = useRef<HTMLDivElement>(null);
+  const [fold, setFold] = useState<DetailFoldV160>({ restBlocks: 0, hasRest: false });
+  const layerTwoOpen = useDetailLayerOpenV160("2");
 
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return undefined;
     const ranked = new Set<Element>();
     const flattened = new Set<Element>();
+    const rested = new Set<Element>();
     let warned: string | null = null;
     let frame = 0;
 
@@ -140,6 +152,27 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
       });
       flattened.clear();
       nextFlat.forEach((wrapper) => flattened.add(wrapper));
+      // V160: the rest of the primary section after the rank-1 row - the
+      // later siblings of the first block and of each wrapper above it.
+      const nextRest = new Set<Element>();
+      let level: Element | null = first;
+      while (level && level !== primary) {
+        for (let sibling = level.nextElementSibling; sibling; sibling = sibling.nextElementSibling) {
+          if (!sibling.classList.contains(MAP_SLOT_CLASS)) nextRest.add(sibling);
+        }
+        level = level.parentElement;
+      }
+      nextRest.forEach((node) => {
+        if (!node.hasAttribute("data-v160-rest")) node.setAttribute("data-v160-rest", "");
+      });
+      rested.forEach((node) => {
+        if (!nextRest.has(node)) node.removeAttribute("data-v160-rest");
+      });
+      rested.clear();
+      nextRest.forEach((node) => rested.add(node));
+      const restBlocks = Math.max(0, blocks.length - 1);
+      const hasRest = nextRest.size > 0;
+      setFold((current) => (current.restBlocks === restBlocks && current.hasRest === hasRest ? current : { restBlocks, hasRest }));
       const split = Boolean(first && slot);
       if (split) {
         if (!primary.hasAttribute("data-dl153-split")) primary.setAttribute("data-dl153-split", "");
@@ -206,6 +239,7 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
       if (frame) window.cancelAnimationFrame(frame);
       ranked.forEach((block) => block.removeAttribute("data-analysis-rank"));
       flattened.forEach((wrapper) => wrapper.removeAttribute("data-dl153-flat"));
+      rested.forEach((node) => node.removeAttribute("data-v160-rest"));
       root.querySelector(PRIMARY_SELECTOR)?.removeAttribute("data-dl153-split");
       root.removeAttribute("data-contract-verdict");
       root.removeAttribute("data-contract-axes");
@@ -214,6 +248,7 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
 
   return (
     <AnalysisContractContextV153.Provider value={contract}>
+      <DetailFoldContextV160.Provider value={fold}>
       <div
         ref={rootRef}
         className="dl153-frame"
@@ -222,9 +257,11 @@ export default function DetailAnalysisFrameV153({ elementId, children }: Props) 
         data-contract-archetype={contract?.archetype || "none"}
         data-contract-primary={contract?.primary.type || "none"}
         data-contract-status={contract?.status || "none"}
+        data-v160-more={layerTwoOpen ? "open" : "closed"}
       >
         {children}
       </div>
+      </DetailFoldContextV160.Provider>
     </AnalysisContractContextV153.Provider>
   );
 }

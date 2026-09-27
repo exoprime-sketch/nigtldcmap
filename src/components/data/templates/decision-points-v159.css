@@ -25,3 +25,36 @@
 @media (min-width: 900px) {
   .dp159-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
 }
+
+/* V160: the strip variant - chips across the detail hero (2-4 points). */
+.cdp-detail-hero--v160 { flex-wrap: wrap; }
+.dp159--strip {
+  flex: 1 1 100%;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 8px 12px;
+  padding-top: 14px;
+  border-top: 1px solid #e2ebe6;
+}
+.dp159--strip h3 { font-size: .85rem; color: #375a50; padding-top: 8px; white-space: nowrap; }
+.dp159--strip .dp159-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dp159--strip .dp159-row {
+  flex: 1 1 180px;
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid #dbe7e3;
+  border-radius: 12px;
+  background: #f6faf8;
+  line-height: 1.4;
+}
+.dp159--strip .dp159-row dt { font-size: .78rem; }
+.dp159--strip .dp159-row dd { font-weight: 700; }
+.dp159--strip .dp159-row dd small { font-weight: 400; }
+@media (max-width: 600px) {
+  .dp159--strip { grid-template-columns: minmax(0, 1fr); }
+  .dp159--strip h3 { padding-top: 0; }
+}

@@ -91,6 +91,9 @@ export function detailUrlV129(baseUrl, elementId) {
   url.searchParams.set("view", "data");
   url.searchParams.set("country", "VNM");
   url.searchParams.set("element", elementId);
+  // V160: every detail layer open (the V159 layout); the collapsed default
+  // is checked by scripts/v160/qa-core-first-v160.mjs.
+  url.searchParams.set("detailLayers", "all");
   url.hash = "element-detail";
   return url.toString();
 }

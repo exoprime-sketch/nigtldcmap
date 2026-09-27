@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import "./detail-layer-v160.css";
+import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "./detailLayerStoreV160";
 
 /**
  * V160-D: a collapsed secondary/tertiary section of the detail screen.
@@ -15,51 +15,10 @@ import "./detail-layer-v160.css";
  *
  * Open state is remembered globally - one localStorage entry per layer
  * number, shared by every dataset - not per element, per the plan (a reader
- * who opens 데이터 설명 once expects it open on the next dataset too).
+ * who opens 데이터 설명 once expects it open on the next dataset too). The
+ * state lives in detailLayerStoreV160, so the layer-2 charts folded under the
+ * first chart open and close with this layer.
  */
-
-const STORAGE_KEY_V160 = "detail-layers-v160";
-
-function storageV160(): Storage | null {
-  try {
-    return typeof window === "undefined" ? null : window.localStorage;
-  } catch {
-    return null;
-  }
-}
-
-function readLayerStateV160(): Record<string, boolean> {
-  const store = storageV160();
-  if (!store) return {};
-  try {
-    const raw = store.getItem(STORAGE_KEY_V160);
-    if (!raw) return {};
-    const parsed: unknown = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? (parsed as Record<string, boolean>) : {};
-  } catch {
-    return {};
-  }
-}
-
-function writeLayerStateV160(layer: number, open: boolean): void {
-  const store = storageV160();
-  if (!store) return;
-  try {
-    const current = readLayerStateV160();
-    current[String(layer)] = open;
-    store.setItem(STORAGE_KEY_V160, JSON.stringify(current));
-  } catch {
-    // Best-effort remembering; the layer still works from React state alone.
-  }
-}
-
-function isLayerOpenV160(layer: number): boolean {
-  try {
-    return readLayerStateV160()[String(layer)] === true;
-  } catch {
-    return false;
-  }
-}
 
 interface Props {
   /** Which of the two collapsed layers this is (layer 1 - hero/판단 포인트/primary chart - is never wrapped here). */
@@ -70,9 +29,8 @@ interface Props {
 }
 
 export default function DetailLayerV160({ layer, title, children }: Props) {
-  const [open, setOpen] = useState<boolean>(() => isLayerOpenV160(layer));
-  // The same instance can be handed another layer; read that layer's state.
-  useEffect(() => setOpen(isLayerOpenV160(layer)), [layer]);
+  // Shared with every other layer-N control on the page (detailLayerStoreV160).
+  const open = useDetailLayerOpenV160(String(layer));
   return (
     <details
       className="dtl160"
@@ -81,8 +39,7 @@ export default function DetailLayerV160({ layer, title, children }: Props) {
       open={open}
       onToggle={(event) => {
         const next = event.currentTarget.open;
-        setOpen(next);
-        writeLayerStateV160(layer, next);
+        if (next !== open) setDetailLayerOpenV160(String(layer), next);
       }}
     >
       {/* details/summary already exposes expanded state to assistive tech,
