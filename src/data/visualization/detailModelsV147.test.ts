@@ -4,8 +4,9 @@ import { resolve } from "path";
 import { monthlyClimateV147, nationalSeriesV147, burInventoryV147, uniqueNumericV147, allowsRelativeChangeV147, changeUnitV147 } from "./detailModelsV147";
 import type { SemanticObservationV125 } from "./semanticTypesV125";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
+import { countryPublicDirV158 } from "../countryContext";
 
-const source = (id: string) => JSON.parse(readFileSync(resolve(__dirname, `../../../public/data/vietnam/v2/downloads/${id}.json`), "utf8"));
+const source = (id: string) => JSON.parse(readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/${id}.json`), "utf8"));
 
 test("month order and values come from explicit monthly indicators, not 1991 observations", () => {
   const m = monthlyClimateV147(source("b-001").observations);

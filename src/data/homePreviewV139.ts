@@ -1,5 +1,6 @@
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
+import { countryAssetPathV158 } from "./countryContext";
 
 /**
  * The home page's pre-built preview asset (scripts/v139/build-home-preview-v139.mjs).
@@ -112,7 +113,7 @@ export interface HomePreviewV139 {
   cards: HomePreviewCardV139[];
 }
 
-const PREVIEW_URL = publicAssetUrlV128("data/vietnam/v2/home/home-preview-v139.json");
+const PREVIEW_URL = publicAssetUrlV128(countryAssetPathV158("VNM", "home/home-preview-v139.json"));
 
 let cache: Promise<HomePreviewV139> | null = null;
 

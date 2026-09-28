@@ -23,8 +23,8 @@ import openpyxl
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from tools.vietnam_etl.b034_facts_v137 import derive_b034_facts  # noqa: E402
-from tools.vietnam_etl.workbook_parser import parse_workbook_bytes  # noqa: E402
+from tools.etl.b034_facts_v137 import derive_b034_facts  # noqa: E402
+from tools.etl.workbook_parser import parse_workbook_bytes  # noqa: E402
 
 WORKBOOK = ROOT / "베트남데이터" / "file" / "B-034.xlsx"
 ALIASES = ROOT / "public/data/vietnam/v2/geometry/vnm-adm1-aliases.json"
@@ -241,7 +241,7 @@ def run_negative(tmp: pathlib.Path) -> list[dict]:
     # Contract-level control: if the derivation dated the flux measures to the
     # element's reference_year instead of the period the sheet's note states,
     # the independent expectation must catch it.
-    from tools.vietnam_etl import b034_facts_v137 as module
+    from tools.etl import b034_facts_v137 as module
 
     original = module.PROVINCE_MEASURE_CONTRACT
     module.PROVINCE_MEASURE_CONTRACT = tuple(
