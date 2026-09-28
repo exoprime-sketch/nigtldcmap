@@ -18,13 +18,15 @@
 
 ### 화면
 - 상세 제외 안내 카드: 결정(공개 표기 "사용자 검토" / "데이터 명세서 검토")·사유·결정일을 따로 표시, 결정일 임의 대체값(2026-09-23) 제거, 용어 도움말 적용. #32의 V159 훅 뒤에서 반환(훅 규칙)
+- 제외 안내 화면 제목 머리: 다른 상세와 같은 V159 명칭 규칙(출처 윗줄 + 원데이터명, `datasetCardSpecV159`) — #32의 상세 제목 152 전수 검사와 일치
 - 홈 '전체 데이터 항목' = 공개 요소 수(142), '다운로드 가능 항목' = 141
 - 파사드 비공개 상태에 `not-provided` 포함, 검색 결과·다운로드 항목에 `data-element-id`(감사 식별용)
 - 용어 도움말: E-011 사유의 `NRI`는 #32가 등록한 용어집 항목 사용(이 PR의 중복 항목은 병합 후 제거)
 
 ### 감사·QA
 - 공통 헬퍼 `scripts/v156/exclusions-audit-v156.mjs`(공개·제외 집합 파생, 안내 카드 스냅숏·판정)
-- 기대값 변경 21건 — 검사별 이전/이후·사유: `reports/v156/EXPECTATION_CHANGES_V156D.md`
+- 기대값 변경 23건 + main(#32) 기인 3건(temporal-depth C-002 판정·analysis QA 제외 판정·role-split은 기대값 불변 화면 수정) — 검사별 이전/이후·사유: `reports/v156/EXPECTATION_CHANGES_V156D.md`
+- analysis QA(`qa:analysis:v140`): 제외 요소는 찾기 카드 클릭 대신 `checkExcludedElementV156`(찾기 검색 부재·안내 카드·결정 파일 일치·차트 0·다운로드 링크 0) — 기준선 파일 불변
 - 안내 카드 검사 추가: entity-cards(`EXCLUDED_ENTITY_ROUTE_NOTICE_V156`), portfolio-analysis(`EXCLUDED_PORTFOLIO_ROUTE_NOTICE_V156`, E-008 검사 3개는 제외 동안 안내 카드 판정), glossary(`EXCLUDED_DETAIL_NOTICE_V156`, 안내 페이지 문구도 용어 인벤토리)
 - 새 감사 `exclusions:v156`(13검사) — 배포 감사 browser 샤드 1
 - 단위 테스트 E-008 카드 검증을 제외 상태 분기로(삭제 없음)
@@ -39,9 +41,21 @@
 | `entity-cards:v131`(main 병합 후) | **18/18** — `ENTITY_CARD_ROUTE_RENDERING` 0(main 2)·`ENTITY_RECORDS_SHOWN_SOMEHOW` 통과·D-024·E-008 안내 카드 통과 |
 | `portfolio-analysis:v132` / `glossary:v134` | 13/13 / 17/17 |
 | `qa:detail-contract:v153` | 142/142(제외 10건 `excludedIds`) |
-| `finalize:v151` | GATE_RESULT |
+| `temporal-depth:v135` / `qa:role-split:v140` / `qa:analysis:v140:baseline`(3회차 후 단독) | 11/11 / 53/53 / 필수 실패 34(기준선 41, 신규 0, 해소 A-017·A-023·C-002·C-012·C-015·C-019·E-016) — 제외 10건 모두 안내 카드 판정 통과 |
+| e2e(`build-candidate-v137` + playwright, win32) | 211/214 — 상세 152(공개 142 + 제외 안내 10)·A-017 기준 화면(제외 안내) 통과. 실패 3건은 시각 기준선(finder 3%·detail-a016 5%·detail-d011 3%): 기준 이미지 미갱신(a016은 #27 이후, d011·finder는 #32의 카드·데이터 설명 영역) — 이 PR 몫은 finder 건수 문구 152→142뿐 |
+| `finalize:v151` | **통과**(4회차, `c53debb`) — release:v136 80/80(신규 `V156_EXCLUSIONS` 포함) · role-split 53/53 · analysis QA 필수 실패 34(기준선 41, 신규 0) · boundary-34 21/22(1 skip) · boundary-policy 24/24 |
+
+## 게이트 이력(finalize:v151)
+- 1회차: `release:v136 PUBLIC_ROUTE_COUNT`(148, 기대 ≥ 157 고정값) → 5 + 공개 집합으로 파생
+- 2회차(main #32 병합 후): `glossary:v134 GLOSSARY_UNIQUE_ID` — 이 PR의 NRI 항목이 #32의 `nri`와 중복 → 이 PR 쪽 제거
+- 3회차(사용자 승인): `temporal-depth:v135 GHG_ANALYTICAL_VIEW`(C-002) → `release:v136` `V135_TEMPORAL_DEPTH`·`V135_REGRESSION`·`REMAINING_BLOCKERS`
+  - 원인: #32가 게이트 통과 뒤 넣은 ⑥ 정리 커밋(C-002 막대 그림 → KPI 타일). C-002 렌더 경로·판정 로직은 main과 차이 0
+  - 배포 감사가 첫 실패에서 멈추므로, 이후 명령 21개를 코드 수정 없이 단독 실행해 실패 목록을 모음: `qa:role-split:v140 DETAIL_TITLES_FOLLOW_SPEC_V159`(제외 10건 제목 없음), `qa:analysis:v140` 기준선 초과(44 > 41, 신규 = 제외 10건 `screenLoaded`·`cardClicked`). 나머지 19개 통과
+  - 세 건을 한 번에 수정(기록: `EXPECTATION_CHANGES_V156D.md` §main(#32))
+- 4회차(사용자 승인 2026-09-28, `c53debb`): **통과** — release:v136 80/80(신규 `V156_EXCLUSIONS` 포함) · role-split 53/53 · analysis QA 필수 실패 34(기준선 41, 신규 0) · boundary-34 21/22(1 skip) · boundary-policy 24/24
 
 ## 미완료·사유
-- **main CI 빨강(#32 기인, 이 PR 범위 밖)**: `security:v128` `TRACKED_RAW_SOURCE` — `docs/handoff/v159/datasetTypologyV159.xlsx`가 원자료 형식으로 추적됨. 정적 게이트에서 실패해 브라우저 샤드가 돌지 않음. 처리 방식(저장소 밖 보관·CSV 전환·인계 문서 예외 목록)은 결정 필요
+- **main CI 빨강(#32 기인)**: `security:v128` `TRACKED_RAW_SOURCE` — `docs/handoff/v159/datasetTypologyV159.xlsx`. 별도 PR #35(`fix/v159-handoff-xlsx`, xlsx → CSV 5개, 보안 감사 13/13)로 분리, 병합 승인 대기
 - D-024 사유는 명세서 문구("원자료 없음") 그대로이나 제외 전 측정은 개체 12건 — 문구 조정 여부 확인 필요
+- e2e 시각 기준선 3건(finder·detail-a016·detail-d011) 교체는 이 PR에서 하지 않음 — 기준 이미지를 현재 화면으로 덮지 않는 규칙(V152 REVIEW). 실제 이미지 검토 후 별도 fix-forward(Linux 기준은 CI 산출물)
 - 게이트 밖 옛 감사(v124–v135 release·finder-ux·limitations 등)의 152 기준값은 바꾸지 않음
