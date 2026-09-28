@@ -85,13 +85,25 @@ try {
             .filter(Boolean);
           const ghg = root?.querySelector('[data-testid="ghg-sector-gas-analysis-v135"]');
           const inventory = root?.querySelector('[data-testid="reported-inventory-v147"]');
-          const inventoryRows = [...(inventory?.querySelectorAll('[data-testid="inventory-matrix-v147"] tbody tr') || [])];
-          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventory?.querySelectorAll('figure li').length === 4;
+          const inventoryMatrix = inventory?.querySelector('[data-testid="inventory-matrix-v147"]');
+          const inventoryRows = [...(inventoryMatrix?.querySelectorAll('tbody tr') || [])];
+          // V159 (decision 2026-09-24): C-002 is a document-first screen that
+          // draws no numeric chart, so its four sector figures lead as KPI
+          // tiles instead of the V147 bar figure. Either one is the analysis,
+          // and the tiles must come before the source table.
+          const inventoryFigureItems = inventory?.querySelectorAll('figure li').length || 0;
+          const inventoryTiles = [...(inventory?.querySelectorAll('[data-testid="reported-inventory-tiles-v159"] li') || [])];
+          const inventoryTilesLead = inventoryTiles.length === 4 && Boolean(inventoryMatrix) &&
+            Boolean(inventoryTiles[0].compareDocumentPosition(inventoryMatrix) & Node.DOCUMENT_POSITION_FOLLOWING) &&
+            inventoryTiles.every((tile) => /[0-9]|미기재/.test(tile.querySelector('strong')?.textContent || ''));
+          const inventoryPresentation = inventoryFigureItems === 4 ? 'figure-v147' : inventoryTilesLead ? 'kpi-tiles-v159' : 'none';
+          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventoryPresentation !== 'none';
           return {
             depth,
             chartCount: annualChartCount,
             monthlyCycleCount: validMonthlyCycle ? 1 : 0,
             inventoryValid,
+            inventoryPresentation,
             onePointCharts,
             claims,
             text,
@@ -212,12 +224,14 @@ audit.check(
   {
     sectorGasObservations: ghgObservations.length,
     sectorGasView: ghg?.ghg || null,
+    inventoryValid: ghg?.inventoryValid,
+    inventoryPresentation: ghg?.inventoryPresentation,
     analyticalView: ghg?.analyticalView,
     rawTableIsPrimary: ghg?.rawTableIsPrimary,
   },
   ghgObservations.length > 0
     ? { present: true, rawMatrixPrimary: "false" }
-    : { analyticalView: true, rawTableIsPrimary: false }
+    : { "inventoryValid || analyticalView": true, rawTableIsPrimary: false }
 );
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);

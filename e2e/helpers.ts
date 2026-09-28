@@ -5,12 +5,47 @@ import { resolve } from "node:path";
 const ROOT = resolve(__dirname, "..");
 const BUILD = resolve(ROOT, process.env.NIGT_E2E_BUILD || ".verify/candidate/build");
 
-/** Every element the candidate publishes, read from the build it serves. */
+type CandidateCatalogRow = {
+  elementId: string;
+  publicStatus?: string;
+  exclusion?: { decidedAt?: string; reason?: string } | null;
+};
+
+function candidateCatalog(): CandidateCatalogRow[] {
+  return (
+    JSON.parse(
+      readFileSync(resolve(BUILD, "data/vietnam/v2/catalog.json"), "utf8")
+    ) as { elements: CandidateCatalogRow[] }
+  ).elements;
+}
+
+/** Every element of the framework, read from the build it serves. */
 export function candidateElementIds(): string[] {
-  const catalog = JSON.parse(
-    readFileSync(resolve(BUILD, "data/vietnam/v2/catalog.json"), "utf8")
-  ) as { elements: Array<{ elementId: string }> };
-  return catalog.elements.map((row) => row.elementId).sort();
+  return candidateCatalog().map((row) => row.elementId).sort();
+}
+
+// V156-D: an element decided not to be offered is in no list, search, count or
+// download; its own URL shows one notice card (scripts/v156/exclusions-audit-v156.mjs).
+const NON_PUBLIC_STATUSES = new Set(["excluded", "not-provided"]);
+
+/** Every element the candidate publishes: the detail screens a reader can find. */
+export function candidatePublicElementIds(): string[] {
+  return candidateCatalog()
+    .filter((row) => !NON_PUBLIC_STATUSES.has(String(row.publicStatus || "")))
+    .map((row) => row.elementId)
+    .sort();
+}
+
+/** Elements decided not to be offered, with the decision their notice states. */
+export function candidateExcludedElements(): Array<{ elementId: string; decidedAt: string; reason: string }> {
+  return candidateCatalog()
+    .filter((row) => NON_PUBLIC_STATUSES.has(String(row.publicStatus || "")))
+    .map((row) => ({
+      elementId: row.elementId,
+      decidedAt: String(row.exclusion?.decidedAt || ""),
+      reason: String(row.exclusion?.reason || ""),
+    }))
+    .sort((a, b) => a.elementId.localeCompare(b.elementId));
 }
 
 export const detailUrl = (elementId: string) =>

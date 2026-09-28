@@ -862,6 +862,9 @@ export default function CountryDataElementPage({
   // V156: a reviewed decision not to offer this element. One card, no charts, no
   // table, no download - and the reason and date the decision carries.
   if (catalogItem?.publicStatus === "excluded") {
+    // The heading follows the V159 naming rule like every other detail: the
+    // source line and the dataset's own name from the framework spec.
+    const excludedSpecV156 = getCardSpecV159(catalogItem.elementId);
     return (
       <div className="page-shell cdp-page cdp-detail-page-v146" data-detail-excluded-v156="true">
         <button
@@ -871,8 +874,19 @@ export default function CountryDataElementPage({
         >
           {backLabel}
         </button>
+        <section className="cdp-detail-hero">
+          <div>
+            {excludedSpecV156?.sourceLabel ? (
+              <p className="cdp-detail-hero__source">
+                <PublicTermTextV134 text={excludedSpecV156.sourceLabel} />
+              </p>
+            ) : null}
+            <h1>
+              <PublicTermTextV134 text={excludedSpecV156?.baseName || catalogItem.publicTitle} />
+            </h1>
+          </div>
+        </section>
         <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
-          <h1><PublicTermTextV134 text={catalogItem.publicTitle} /></h1>
           <p>
             이 항목은 {catalogItem.exclusion?.decidedAt ? `${catalogItem.exclusion.decidedAt} ` : ""}검토로
             제공 대상에서 제외되었습니다.
