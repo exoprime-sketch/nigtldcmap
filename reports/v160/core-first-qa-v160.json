@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T23:23:49.104Z",
+  "generatedAt": "2026-09-28T23:48:17.125Z",
   "checks": [
     {
       "id": "HOME_BODY_WORDS_MINUS_50",
@@ -44,73 +44,73 @@
       "actual": [
         {
           "id": "A-003",
-          "rank1Top": 591,
+          "rank1Top": 619,
           "stripBottom": 431,
           "pass": true
         },
         {
           "id": "B-003",
-          "rank1Top": 703,
+          "rank1Top": 730,
           "stripBottom": 466,
           "pass": true
         },
         {
           "id": "A-018",
-          "rank1Top": 613,
+          "rank1Top": 640,
           "stripBottom": 467,
           "pass": true
         },
         {
           "id": "A-023",
-          "rank1Top": 652,
+          "rank1Top": 680,
           "stripBottom": 448,
           "pass": true
         },
         {
           "id": "D-022",
-          "rank1Top": 712,
+          "rank1Top": 739,
           "stripBottom": 430,
           "pass": true
         },
         {
           "id": "C-009",
-          "rank1Top": 498,
+          "rank1Top": 526,
           "stripBottom": 428,
           "pass": true
         },
         {
           "id": "A-016",
-          "rank1Top": 542,
+          "rank1Top": 569,
           "stripBottom": 429,
           "pass": true
         },
         {
           "id": "D-011",
-          "rank1Top": 502,
+          "rank1Top": 530,
           "stripBottom": 432,
           "pass": true
         },
         {
           "id": "A-002",
-          "rank1Top": 615,
+          "rank1Top": 642,
           "stripBottom": 429,
           "pass": true
         },
         {
           "id": "E-012",
-          "rank1Top": 623,
+          "rank1Top": 651,
           "stripBottom": 430,
           "pass": true
         },
         {
           "id": "C-012",
-          "rank1Top": 669,
+          "rank1Top": 697,
           "stripBottom": 525,
           "pass": true
         },
         {
           "id": "B-002",
-          "rank1Top": 571,
+          "rank1Top": 598,
           "stripBottom": null,
           "pass": true
         }
@@ -124,52 +124,52 @@
         {
           "id": "A-003",
           "type": "line",
-          "ratio": 1.43
+          "ratio": 1.46
         },
         {
           "id": "B-003",
           "type": "region-bar",
-          "ratio": 1.96
+          "ratio": 1.99
         },
         {
           "id": "A-018",
           "type": "stacked-area",
-          "ratio": 1.55
+          "ratio": 1.58
         },
         {
           "id": "A-023",
           "type": "category-bar",
-          "ratio": 1.85
+          "ratio": 1.89
         },
         {
           "id": "D-022",
           "type": "category-bar",
-          "ratio": 1.77
+          "ratio": 1.8
         },
         {
           "id": "A-016",
           "type": "stacked-area",
-          "ratio": 1.49
+          "ratio": 1.53
         },
         {
           "id": "D-011",
           "type": "line",
-          "ratio": 1.41
+          "ratio": 1.44
         },
         {
           "id": "A-002",
           "type": "line",
-          "ratio": 1.58
+          "ratio": 1.61
         },
         {
           "id": "E-012",
           "type": "category-bar",
-          "ratio": 1.75
+          "ratio": 1.79
         },
         {
           "id": "B-002",
           "type": "category-bar",
-          "ratio": 1.16
+          "ratio": 1.19
         }
       ],
       "expected": "<= 2.0 x 800px"
@@ -187,7 +187,7 @@
             "shown": 10,
             "button": true
           },
-          "ratio": 2.07
+          "ratio": 2.11
         },
         {
           "id": "C-012",
@@ -198,7 +198,7 @@
             "shown": 10,
             "button": true
           },
-          "ratio": 1.99
+          "ratio": 2.02
         }
       ],
       "expected": "timeline/table: 10 items shown + '전체 보기'"
@@ -563,67 +563,67 @@
       {
         "id": "A-003",
         "rank1Type": "line",
-        "rank1Top": 591,
+        "rank1Top": 619,
         "stripBottom": 431,
-        "layer1Bottom": 1143,
-        "ratio": 1.43,
-        "primaryBottom": 1143,
-        "primaryRatio": 1.43,
+        "layer1Bottom": 1170,
+        "ratio": 1.46,
+        "primaryBottom": 1170,
+        "primaryRatio": 1.46,
         "listFold": null
       },
       {
         "id": "B-003",
         "rank1Type": "region-bar",
-        "rank1Top": 703,
+        "rank1Top": 730,
         "stripBottom": 466,
-        "layer1Bottom": 1564,
-        "ratio": 1.96,
-        "primaryBottom": 1564,
-        "primaryRatio": 1.96,
+        "layer1Bottom": 1591,
+        "ratio": 1.99,
+        "primaryBottom": 1591,
+        "primaryRatio": 1.99,
         "listFold": null
       },
       {
         "id": "A-018",
         "rank1Type": "stacked-area",
-        "rank1Top": 613,
+        "rank1Top": 640,
         "stripBottom": 467,
-        "layer1Bottom": 1238,
-        "ratio": 1.55,
-        "primaryBottom": 1238,
-        "primaryRatio": 1.55,
+        "layer1Bottom": 1266,
+        "ratio": 1.58,
+        "primaryBottom": 1266,
+        "primaryRatio": 1.58,
         "listFold": null
       },
       {
         "id": "A-023",
         "rank1Type": "category-bar",
-        "rank1Top": 652,
+        "rank1Top": 680,
         "stripBottom": 448,
-        "layer1Bottom": 1480,
-        "ratio": 1.85,
-        "primaryBottom": 1480,
-        "primaryRatio": 1.85,
+        "layer1Bottom": 1508,
+        "ratio": 1.89,
+        "primaryBottom": 1508,
+        "primaryRatio": 1.89,
         "listFold": null
       },
       {
         "id": "D-022",
         "rank1Type": "category-bar",
-        "rank1Top": 712,
+        "rank1Top": 739,
         "stripBottom": 430,
-        "layer1Bottom": 1416,
-        "ratio": 1.77,
-        "primaryBottom": 1438,
-        "primaryRatio": 1.8,
+        "layer1Bottom": 1443,
+        "ratio": 1.8,
+        "primaryBottom": 1465,
+        "primaryRatio": 1.83,
         "listFold": null
       },
       {
         "id": "C-009",
         "rank1Type": "timeline",
-        "rank1Top": 498,
+        "rank1Top": 526,
         "stripBottom": 428,
-        "layer1Bottom": 1659,
-        "ratio": 2.07,
-        "primaryBottom": 1659,
-        "primaryRatio": 2.07,
+        "layer1Bottom": 1687,
+        "ratio": 2.11,
+        "primaryBottom": 1687,
+        "primaryRatio": 2.11,
         "listFold": {
           "state": "closed",
           "items": 54,
@@ -634,56 +634,56 @@
       {
         "id": "A-016",
         "rank1Type": "stacked-area",
-        "rank1Top": 542,
+        "rank1Top": 569,
         "stripBottom": 429,
-        "layer1Bottom": 1195,
-        "ratio": 1.49,
-        "primaryBottom": 1195,
-        "primaryRatio": 1.49,
+        "layer1Bottom": 1223,
+        "ratio": 1.53,
+        "primaryBottom": 1223,
+        "primaryRatio": 1.53,
         "listFold": null
       },
       {
         "id": "D-011",
         "rank1Type": "line",
-        "rank1Top": 502,
+        "rank1Top": 530,
         "stripBottom": 432,
-        "layer1Bottom": 1125,
-        "ratio": 1.41,
-        "primaryBottom": 1125,
-        "primaryRatio": 1.41,
+        "layer1Bottom": 1154,
+        "ratio": 1.44,
+        "primaryBottom": 1154,
+        "primaryRatio": 1.44,
         "listFold": null
       },
       {
         "id": "A-002",
         "rank1Type": "line",
-        "rank1Top": 615,
+        "rank1Top": 642,
         "stripBottom": 429,
-        "layer1Bottom": 1260,
-        "ratio": 1.58,
-        "primaryBottom": 1260,
-        "primaryRatio": 1.58,
+        "layer1Bottom": 1287,
+        "ratio": 1.61,
+        "primaryBottom": 1287,
+        "primaryRatio": 1.61,
         "listFold": null
       },
       {
         "id": "E-012",
         "rank1Type": "category-bar",
-        "rank1Top": 623,
+        "rank1Top": 651,
         "stripBottom": 430,
-        "layer1Bottom": 1402,
-        "ratio": 1.75,
-        "primaryBottom": 1402,
-        "primaryRatio": 1.75,
+        "layer1Bottom": 1429,
+        "ratio": 1.79,
+        "primaryBottom": 1429,
+        "primaryRatio": 1.79,
         "listFold": null
       },
       {
         "id": "C-012",
         "rank1Type": "comparison-table",
-        "rank1Top": 669,
+        "rank1Top": 697,
         "stripBottom": 525,
-        "layer1Bottom": 1590,
-        "ratio": 1.99,
-        "primaryBottom": 1590,
-        "primaryRatio": 1.99,
+        "layer1Bottom": 1617,
+        "ratio": 2.02,
+        "primaryBottom": 1617,
+        "primaryRatio": 2.02,
         "listFold": {
           "state": "closed",
           "items": 33,
@@ -694,12 +694,12 @@
       {
         "id": "B-002",
         "rank1Type": "category-bar",
-        "rank1Top": 571,
+        "rank1Top": 598,
         "stripBottom": null,
-        "layer1Bottom": 925,
-        "ratio": 1.16,
-        "primaryBottom": 925,
-        "primaryRatio": 1.16,
+        "layer1Bottom": 953,
+        "ratio": 1.19,
+        "primaryBottom": 953,
+        "primaryRatio": 1.19,
         "listFold": null
       }
     ],
