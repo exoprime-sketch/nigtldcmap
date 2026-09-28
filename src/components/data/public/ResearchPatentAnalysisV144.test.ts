@@ -24,7 +24,7 @@ describe("E-008 delivered list analysis", () => {
     const card = cards.cards.find((entry: { elementId: string }) => entry.elementId === "E-008");
     // V156: while E-008 is excluded (data specification 2026-09-18) it is offered
     // nowhere - no card is generated. The card assertions return when it is offered.
-    const catalog = JSON.parse(readFileSync(resolve(__dirname, "../../../../public/data/vietnam/v2/catalog.json"), "utf8"));
+    const catalog = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/catalog.json`), "utf8"));
     const element = catalog.elements.find((entry: { elementId: string }) => entry.elementId === "E-008");
     if (element.publicStatus === "excluded") {
       expect(card).toBeUndefined();
