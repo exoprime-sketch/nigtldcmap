@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:55098",
-  "generatedAt": "2026-09-24T10:33:51.178Z",
+  "base": "http://127.0.0.1:55826",
+  "generatedAt": "2026-09-28T02:27:58.186Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -279,10 +279,10 @@
       "id": "FINDER_TOTAL_152",
       "pass": true,
       "actual": {
-        "totalAll": 152,
-        "homeTotalCount": 152
+        "totalAll": 142,
+        "homeTotalCount": 142
       },
-      "expected": 152
+      "expected": 142
     },
     {
       "id": "FINDER_HAS_SORT_AND_FILTERS",
@@ -296,7 +296,9 @@
         "자료연도",
         "제공기관",
         "제공 형태",
-        "기후기술"
+        "기후기술",
+        "주 사용자",
+        "유형"
       ],
       "expected": "정렬·대분류·제공기관·제공 형태·기후기술·자료연도"
     },
@@ -323,8 +325,8 @@
       "id": "FINDER_DOWNLOAD_FILTER_EQUALS_HOME",
       "pass": true,
       "actual": {
-        "totalDownload": 147,
-        "homeDownloadCount": 147
+        "totalDownload": 141,
+        "homeDownloadCount": 141
       },
       "expected": "one count"
     },
@@ -334,43 +336,43 @@
       "actual": [
         {
           "id": "A-002",
-          "home": "국가 거버넌스 지표(WGI)",
-          "finder": "국가 거버넌스 지표(WGI)"
+          "home": "세계 거버넌스 지표(WGI)",
+          "finder": "세계 거버넌스 지표(WGI)"
         },
         {
           "id": "A-003",
-          "home": "국내총생산 및 경제성장",
-          "finder": "국내총생산 및 경제성장"
+          "home": "국내총생산(GDP)",
+          "finder": "국내총생산(GDP)"
         },
         {
           "id": "A-010",
-          "home": "온실가스 종류별 배출량",
-          "finder": "온실가스 종류별 배출량"
+          "home": "가스종류별 온실가스 배출량",
+          "finder": "가스종류별 온실가스 배출량"
         },
         {
           "id": "A-023",
-          "home": "발전소 현황",
-          "finder": "발전소 현황"
+          "home": "발전소 공간정보(GPPD)",
+          "finder": "발전소 공간정보(GPPD)"
         },
         {
           "id": "A-024",
-          "home": "베트남 송전망",
-          "finder": "베트남 송전망"
+          "home": "송전망 공간정보",
+          "finder": "송전망 공간정보"
         },
         {
           "id": "B-033",
-          "home": "연간 산림손실",
-          "finder": "연간 산림손실"
+          "home": "연간 수목 피복 손실",
+          "finder": "연간 수목 피복 손실"
         },
         {
           "id": "C-016",
-          "home": "재생에너지 발주·확대계획",
-          "finder": "재생에너지 발주·확대계획"
+          "home": "재생에너지 발주·확대 계획",
+          "finder": "재생에너지 발주·확대 계획"
         },
         {
           "id": "D-023",
-          "home": "국제협력·기후재원 사업",
-          "finder": "국제협력·기후재원 사업"
+          "home": "국제 기후기금 승인 사업",
+          "finder": "국제 기후기금 승인 사업"
         }
       ],
       "expected": "same public title"
@@ -379,6 +381,7 @@
       "id": "FINDER_B017_NO_MAP_BUTTON",
       "pass": true,
       "actual": [
+        "WRI",
         "WRI",
         "WRI",
         "상세보기",
@@ -486,14 +489,14 @@
     {
       "id": "DETAIL_A002_TITLE",
       "pass": true,
-      "actual": "국가 거버넌스 지표(WGI)",
-      "expected": "국가 거버넌스 지표(WGI)"
+      "actual": "세계 거버넌스 지표(WGI)",
+      "expected": "세계 거버넌스 지표(WGI)"
     },
     {
       "id": "DETAIL_A002_ANALYSIS",
       "pass": true,
       "actual": {
-        "title": "국가 거버넌스 지표(WGI)",
+        "title": "세계 거버넌스 지표(WGI)",
         "analysisMounted": true,
         "chartCount": 4,
         "limitationItems": [
@@ -502,6 +505,15 @@
         ]
       },
       "expected": "analysis root with charts"
+    },
+    {
+      "id": "DETAIL_TITLES_FOLLOW_SPEC_V159",
+      "pass": true,
+      "actual": {
+        "checked": 152,
+        "mismatches": []
+      },
+      "expected": "152 detail titles = spec platformName without the source line"
     },
     {
       "id": "ROUTE /?view=data&country=VNM&element=A-010#element-detail",
@@ -561,7 +573,7 @@
       "id": "DOWNLOAD_A002_FILE",
       "pass": true,
       "actual": {
-        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-24.csv",
+        "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-28.csv",
         "bytes": 187093
       },
       "expected": "a file is produced"
@@ -624,16 +636,16 @@
   },
   "home": {
     "stats": {
-      "전체 데이터 항목": "152개",
+      "전체 데이터 항목": "142개",
       "지도 제공 항목": "42개",
-      "다운로드 가능 항목": "147개",
+      "다운로드 가능 항목": "141개",
       "데이터 기준일": "2026.08.27"
     },
     "cards": [
       {
         "id": "A-002",
         "kind": null,
-        "title": "국가 거버넌스 지표(WGI)",
+        "title": "세계 거버넌스 지표(WGI)",
         "question": "",
         "headlineValue": "−1.10 ~ +0.01",
         "headlineLabel": "2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호",
@@ -645,13 +657,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국가 거버넌스 지표(WGI) −1.10 ~ +0.01 2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호 가로: 거버넌스 지수 세로: 항목 단위: 점(표준값 Estimate, 약 −2.5~+2.5) 시민참여·책임성 -1.10 정치 안정 +0.01 정부 효과성 -0.09 규제의 질 -0.27 법치 -0.31 부패 통제 -0.25 자료기간 2024년 값 · 1996–2024년 제공 제공기관 World Bank · 세계 거버넌스 지표(WGI) 상세보기 →",
-        "height": 412
+        "text": "World Bank 세계 거버넌스 지표(WGI) −1.10 ~ +0.01 2024년 여섯 영역 표준값(Estimate) 범위 · 점 · 약 −2.5~+2.5, 값이 클수록 양호 가로: 거버넌스 지수 세로: 항목 단위: 점(표준값 Estimate, 약 −2.5~+2.5) 시민참여·책임성 -1.10 정치 안정 +0.01 정부 효과성 -0.09 규제의 질 -0.27 법치 -0.31 부패 통제 -0.25 자료기간 2024년 값 · 1996–2024년 제공 제공기관 World Bank · 세계 거버넌스 지표(WGI) 상세보기 →",
+        "height": 441
       },
       {
         "id": "A-003",
         "kind": null,
-        "title": "국내총생산 및 경제성장",
+        "title": "국내총생산(GDP)",
         "question": "",
         "headlineValue": "514.7",
         "headlineLabel": "10억 미국달러 · 2025년 명목 국내총생산",
@@ -663,13 +675,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국내총생산 및 경제성장 514.7 10억 미국달러 · 2025년 명목 국내총생산 가로: 연도 세로: 국내총생산 단위: 10억 미국달러(명목, 현재 가격) 515 0 1985 2025 자료기간 1985–2025년 제공기관 World Bank 국가 통계 상세보기 →",
-        "height": 386
+        "text": "World Bank WDI 국내총생산(GDP) 514.7 10억 미국달러 · 2025년 명목 국내총생산 가로: 연도 세로: 국내총생산 단위: 10억 미국달러(명목, 현재 가격) 515 0 1985 2025 자료기간 1985–2025년 제공기관 World Bank 국가 통계 상세보기 →",
+        "height": 416
       },
       {
         "id": "A-010",
         "kind": null,
-        "title": "온실가스 종류별 배출량",
+        "title": "가스종류별 온실가스 배출량",
         "question": "",
         "headlineValue": "582.7",
         "headlineLabel": "MtCO₂e · 2024년 네 가스 합계",
@@ -681,13 +693,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "온실가스 종류별 배출량 582.7 MtCO₂e · 2024년 네 가스 합계 단위: MtCO₂e (GWP-100, AR5) · 구성비 % CO₂ 430.8 74% CH₄ 114.9 20% N₂O 26.1 4% 불소계 온실가스 10.9 2% 자료기간 2024년 구성 · 1970–2024년 제공 제공기관 European Commission JRC · EDGAR 상세보기 →",
-        "height": 408
+        "text": "EU JRC EDGAR 가스종류별 온실가스 배출량 582.7 MtCO₂e · 2024년 네 가스 합계 단위: MtCO₂e (GWP-100, AR5) · 구성비 % CO₂ 430.8 74% CH₄ 114.9 20% N₂O 26.1 4% 불소계 온실가스 10.9 2% 자료기간 2024년 구성 · 1970–2024년 제공 제공기관 European Commission JRC · EDGAR 상세보기 →",
+        "height": 438
       },
       {
         "id": "A-023",
         "kind": null,
-        "title": "발전소 현황",
+        "title": "발전소 공간정보(GPPD)",
         "question": "",
         "headlineValue": "41,350 MW",
         "headlineLabel": "WRI 수록 발전소 설비용량 합계 · 2021년",
@@ -699,13 +711,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "발전소 현황 41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년 가로: 수록 시설 수 세로: 발전원 단위: 곳 태양광 16 1,213 수력 174 422 석탄 24 36 풍력 5 38 가스 9 9 석유 6 2 WRI OSM 자료기간 WRI GPPD v1.3.0(2021) · OSM 2026년 추출 제공기관 World Resources Institute · OpenStreetMap 기여자 상세보기 →",
-        "height": 445
+        "text": "WRI 발전소 공간정보(GPPD) 41,350 MW WRI 수록 발전소 설비용량 합계 · 2021년 가로: 수록 시설 수 세로: 발전원 단위: 곳 태양광 16 1,213 수력 174 422 석탄 24 36 풍력 5 38 가스 9 9 석유 6 2 WRI OSM 자료기간 WRI GPPD v1.3.0(2021) · OSM 2026년 추출 제공기관 World Resources Institute · OpenStreetMap 기여자 상세보기 →",
+        "height": 475
       },
       {
         "id": "A-024",
         "kind": null,
-        "title": "베트남 송전망",
+        "title": "송전망 공간정보",
         "question": "",
         "headlineValue": "23,608 km",
         "headlineLabel": "2016년 송전선 606구간 총연장",
@@ -717,13 +729,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "베트남 송전망 23,608 km 2016년 송전선 606구간 총연장 500 kV 32구간 4,092 km 220 kV 143구간 7,201 km 110 kV 431구간 12,314 km 자료기간 2016년 선로(경로 있음) · 계획 선로는 목록 제공기관 World Bank (ENERGYDATA.INFO) 상세보기 →",
-        "height": 477
+        "text": "World Bank ENERGYDATA.INFO 송전망 공간정보 23,608 km 2016년 송전선 606구간 총연장 500 kV 32구간 4,092 km 220 kV 143구간 7,201 km 110 kV 431구간 12,314 km 자료기간 2016년 선로(경로 있음) · 계획 선로는 목록 제공기관 World Bank (ENERGYDATA.INFO) 상세보기 →",
+        "height": 506
       },
       {
         "id": "B-033",
         "kind": null,
-        "title": "연간 산림손실",
+        "title": "연간 수목 피복 손실",
         "question": "",
         "headlineValue": "11,728 ha",
         "headlineLabel": "Quảng Ninh · 2024년 손실이 가장 큰 성·시",
@@ -735,13 +747,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "연간 산림손실 11,728 ha Quảng Ninh · 2024년 손실이 가장 큰 성·시 가로: 연도 세로: 산림손실 면적 단위: ha/년 · 수관 밀도 30% 기준 13,535 0 2001 2024 자료기간 2001–2024년 제공기관 Global Forest Watch (UMD/WRI) 상세보기 →",
-        "height": 389
+        "text": "Global Forest Watch 연간 수목 피복 손실 11,728 ha Quảng Ninh · 2024년 손실이 가장 큰 성·시 가로: 연도 세로: 산림손실 면적 단위: ha/년 · 수관 밀도 30% 기준 13,535 0 2001 2024 자료기간 2001–2024년 제공기관 Global Forest Watch (UMD/WRI) 상세보기 →",
+        "height": 417
       },
       {
         "id": "C-016",
         "kind": null,
-        "title": "재생에너지 발주·확대계획",
+        "title": "재생에너지 발주·확대 계획",
         "question": "",
         "headlineValue": "27,385 MW",
         "headlineLabel": "63개 성·시 합계 · 집중형 태양광 2025–2030년 계획",
@@ -753,13 +765,13 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "재생에너지 발주·확대계획 27,385 MW 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획 가로: 계획 설비용량 세로: 성·시 단위: MW(계획 용량) Sơn La 3,674 Đắk Lắk 3,349 Ninh Thuận 1,974 Yên Bái 1,656 Đắk Nông 1,294 Lai Châu 1,086 자료기간 2025–2030년 · 집중형 태양광 제공기관 베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II 상세보기 →",
-        "height": 411
+        "text": "베트남 총리실 재생에너지 발주·확대 계획 27,385 MW 63개 성·시 합계 · 집중형 태양광 2025–2030년 계획 가로: 계획 설비용량 세로: 성·시 단위: MW(계획 용량) Sơn La 3,674 Đắk Lắk 3,349 Ninh Thuận 1,974 Yên Bái 1,656 Đắk Nông 1,294 Lai Châu 1,086 자료기간 2025–2030년 · 집중형 태양광 제공기관 베트남 총리실 · 산업무역부(MOIT), 개정 PDP8 부록 II 상세보기 →",
+        "height": 439
       },
       {
         "id": "D-023",
         "kind": null,
-        "title": "국제협력·기후재원 사업",
+        "title": "국제 기후기금 승인 사업",
         "question": "",
         "headlineValue": "71건",
         "headlineLabel": "4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업",
@@ -771,30 +783,30 @@
         "controls": [
           "상세보기 →"
         ],
-        "text": "국제협력·기후재원 사업 71건 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업 단위: 사업 수(건) · 구성비 % GEF 53 75% GCF 8 11% CIF(Clean Technology Fund) 6 8% Adaptation Fund 4 6% 자료기간 1991–2026년 승인·등록 사업 제공기관 GCF · GEF · 적응기금 · CIF 공개 사업 목록 상세보기 →",
-        "height": 424
+        "text": "GCF 외 국제 기후기금 승인 사업 71건 4개 기금의 개별 사업 · 1991–2026년 승인·등록 사업 단위: 사업 수(건) · 구성비 % GEF 53 75% GCF 8 11% CIF(Clean Technology Fund) 6 8% Adaptation Fund 4 6% 자료기간 1991–2026년 승인·등록 사업 제공기관 GCF · GEF · 적응기금 · CIF 공개 사업 목록 상세보기 →",
+        "height": 453
       }
     ],
     "heroMapLink": "큰 지도에서 비교",
     "overflow": false
   },
   "finder": {
-    "totalAll": 152,
+    "totalAll": 142,
     "totalMap": 42,
-    "totalDownload": 147,
+    "totalDownload": 141,
     "visibleCards": {
       "cards": 24,
       "withMapButton": 24
     },
     "finderTitles": {
-      "A-002": "국가 거버넌스 지표(WGI)",
-      "A-003": "국내총생산 및 경제성장",
-      "A-010": "온실가스 종류별 배출량",
-      "A-023": "발전소 현황",
-      "A-024": "베트남 송전망",
-      "B-033": "연간 산림손실",
-      "C-016": "재생에너지 발주·확대계획",
-      "D-023": "국제협력·기후재원 사업"
+      "A-002": "세계 거버넌스 지표(WGI)",
+      "A-003": "국내총생산(GDP)",
+      "A-010": "가스종류별 온실가스 배출량",
+      "A-023": "발전소 공간정보(GPPD)",
+      "A-024": "송전망 공간정보",
+      "B-033": "연간 수목 피복 손실",
+      "C-016": "재생에너지 발주·확대 계획",
+      "D-023": "국제 기후기금 승인 사업"
     },
     "labels": [
       "검색",
@@ -805,9 +817,12 @@
       "자료연도",
       "제공기관",
       "제공 형태",
-      "기후기술"
+      "기후기술",
+      "주 사용자",
+      "유형"
     ],
     "b017Buttons": [
+      "WRI",
       "WRI",
       "WRI",
       "상세보기",
@@ -848,7 +863,7 @@
     }
   },
   "detail": {
-    "title": "국가 거버넌스 지표(WGI)",
+    "title": "세계 거버넌스 지표(WGI)",
     "analysisMounted": true,
     "chartCount": 4,
     "limitationItems": [
@@ -866,7 +881,7 @@
   "download": {
     "summary": "선택한 데이터 1개 · 최대 348행",
     "file": {
-      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-24.csv",
+      "name": "vietnam_wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo_2026-09-28.csv",
       "bytes": 187093
     },
     "staticCsvStatus": 200,
@@ -878,8 +893,8 @@
     "statesNotOnMap": true
   },
   "summary": {
-    "passed": 52,
+    "passed": 53,
     "failed": 0,
-    "total": 52
+    "total": 53
   }
 }

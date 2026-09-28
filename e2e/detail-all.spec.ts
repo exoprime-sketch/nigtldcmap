@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
 import {
   INTERNAL_TOKEN,
-  candidateElementIds,
+  candidateExcludedElements,
+  candidatePublicElementIds,
   collectPageErrors,
+  detailUrl,
   openDetail,
   realPageErrors,
 } from "./helpers";
@@ -16,7 +18,8 @@ import {
  * not mean the screen says the right thing about its data - that judgement is
  * the meaning review, and it is recorded separately.
  */
-const ELEMENT_IDS = candidateElementIds();
+const ELEMENT_IDS = candidatePublicElementIds();
+const EXCLUDED_ELEMENTS = candidateExcludedElements();
 
 test.describe("detail screens", () => {
   for (const elementId of ELEMENT_IDS) {
@@ -66,6 +69,36 @@ test.describe("detail screens", () => {
 
       expect(realPageErrors(errors), `${elementId} threw at runtime`).toEqual([]);
       await expect(root).toHaveAttribute("data-analysis-state", /ready|empty/);
+    });
+  }
+});
+
+/**
+ * V156-D: an element decided not to be offered keeps its URL, which shows one
+ * notice card - the decision, the reason and the date from the decision file -
+ * and nothing to read, chart or download (reports/v156/EXPECTATION_CHANGES_V156D.md).
+ */
+test.describe("excluded elements", () => {
+  for (const { elementId, decidedAt, reason } of EXCLUDED_ELEMENTS) {
+    test(`${elementId} shows its exclusion notice and nothing else`, async ({ page }) => {
+      const errors = collectPageErrors(page);
+      await page.goto(detailUrl(elementId));
+      const notice = page.getByTestId("detail-excluded-v156");
+      await expect(notice).toBeVisible({ timeout: 60_000 });
+      await expect(page.locator(".cdp-detail-hero h1")).not.toBeEmpty();
+      await expect(notice.locator('[data-exclusion-field="decision"]')).not.toBeEmpty();
+      await expect(notice.locator('[data-exclusion-field="reason"]')).toContainText(reason);
+      await expect(notice.locator('[data-exclusion-field="decidedAt"]')).toHaveText(decidedAt);
+      await expect(page.getByTestId("public-analysis-root")).toHaveCount(0);
+      const pageRoot = page.locator('[data-detail-excluded-v156="true"]');
+      await expect(pageRoot.locator('table, canvas, svg[role="img"]')).toHaveCount(0);
+      const downloadOffers = await pageRoot
+        .locator("a, button")
+        .evaluateAll((nodes) =>
+          nodes.filter((node) => /download|다운로드|내려받/iu.test(`${node.getAttribute("href") || ""} ${node.textContent || ""}`)).length
+        );
+      expect(downloadOffers, `${elementId} offers a download`).toBe(0);
+      expect(realPageErrors(errors), `${elementId} threw at runtime`).toEqual([]);
     });
   }
 });

@@ -1,13 +1,13 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-08-27T00:00:00Z",
- "generatedAt": "2026-09-24T04:52:07.382Z",
+ "generatedAt": "2026-09-24T11:27:38.756Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
   "homePreview": "v139-home-preview-2"
  },
- "sourceHash": "6a61dd89cedc59f3",
+ "sourceHash": "ad1af64a0e3d29af",
  "cards": [
   {
    "elementId": "A-001",
@@ -1967,108 +1967,6 @@
    }
   },
   {
-   "elementId": "A-017",
-   "title": "LCOE(균등화 발전비용)",
-   "kind": "bars",
-   "headline": {
-    "value": "155 USD/MWh",
-    "label": "LCOE 최대 · 해상풍력 · 2023년"
-   },
-   "preview": {
-    "parts": [
-     {
-      "label": "해상풍력",
-      "value": 155
-     },
-     {
-      "label": "육상풍력+배터리(4시간)",
-      "value": 146
-     },
-     {
-      "label": "태양광+배터리(4시간)",
-      "value": 144
-     },
-     {
-      "label": "육상풍력",
-      "value": 97
-     },
-     {
-      "label": "가스복합화력(CCGT)",
-      "value": 90
-     },
-     {
-      "label": "석탄화력",
-      "value": 80
-     }
-    ],
-    "unit": "USD/MWh",
-    "scope": "2023년",
-    "omitted": 2,
-    "total": null
-   },
-   "period": "2023·2030·2050년",
-   "selection": {
-    "measure": "measure-353011f9421d",
-    "sex": null,
-    "year": 2023,
-    "period": null,
-    "dimensions": {}
-   },
-   "basis": {
-    "unit": "관측값",
-    "rule": "LCOE(USD/MWh)을 2023년 기준으로 8개 항목에서 비교 · 기준값 · 상한·하한은 상세"
-   },
-   "measure": {
-    "key": "measure-353011f9421d",
-    "label": "LCOE",
-    "unit": "USD/MWh"
-   },
-   "provider": "BloombergNEF",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
-    "observationCount": 72,
-    "entityCount": 0,
-    "indicatorIds": [
-     "A-017_lcoe_ccgt_benchmark",
-     "A-017_lcoe_ccgt_max",
-     "A-017_lcoe_ccgt_min",
-     "A-017_lcoe_coal_benchmark",
-     "A-017_lcoe_coal_max",
-     "A-017_lcoe_coal_min",
-     "A-017_lcoe_floating_solar_benchmark",
-     "A-017_lcoe_floating_solar_max",
-     "A-017_lcoe_floating_solar_min",
-     "A-017_lcoe_offshore_wind_benchmark",
-     "A-017_lcoe_offshore_wind_max",
-     "A-017_lcoe_offshore_wind_min",
-     "A-017_lcoe_onshore_wind_battery_benchmark",
-     "A-017_lcoe_onshore_wind_battery_max",
-     "A-017_lcoe_onshore_wind_battery_min",
-     "A-017_lcoe_onshore_wind_benchmark",
-     "A-017_lcoe_onshore_wind_max",
-     "A-017_lcoe_onshore_wind_min",
-     "A-017_lcoe_solar_battery_benchmark",
-     "A-017_lcoe_solar_battery_max",
-     "A-017_lcoe_solar_battery_min",
-     "A-017_lcoe_solar_benchmark",
-     "A-017_lcoe_solar_max",
-     "A-017_lcoe_solar_min"
-    ],
-    "headlineIndicatorIds": [
-     "A-017_lcoe_offshore_wind_benchmark",
-     "A-017_lcoe_onshore_wind_battery_benchmark",
-     "A-017_lcoe_solar_battery_benchmark",
-     "A-017_lcoe_onshore_wind_benchmark",
-     "A-017_lcoe_ccgt_benchmark",
-     "A-017_lcoe_coal_benchmark",
-     "A-017_lcoe_floating_solar_benchmark",
-     "A-017_lcoe_solar_benchmark"
-    ]
-   }
-  },
-  {
    "elementId": "A-018",
    "title": "기술별 발전 설비용량",
    "kind": "bars",
@@ -2129,7 +2027,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 676,
     "entityCount": 0,
     "indicatorIds": [
@@ -2359,7 +2257,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 34,
     "entityCount": 0,
     "indicatorIds": [
@@ -2519,7 +2417,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 52,
     "entityCount": 0,
     "indicatorIds": [
@@ -2688,7 +2586,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 84,
     "entityCount": 0,
     "indicatorIds": [
@@ -2783,7 +2681,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 54,
     "entityCount": 0,
     "indicatorIds": [
@@ -2829,7 +2727,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 1,
     "entityCount": 1963,
     "indicatorIds": [
@@ -2868,7 +2766,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-941515c7.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-003-408d3d25.json",
     "observationCount": 1,
     "entityCount": 722,
     "indicatorIds": [
@@ -9423,7 +9321,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 235,
     "indicatorIds": [
@@ -9493,7 +9391,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 182,
     "indicatorIds": [
@@ -9568,7 +9466,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 59,
     "indicatorIds": [
@@ -9635,7 +9533,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 44,
     "indicatorIds": [
@@ -9698,7 +9596,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 120,
     "indicatorIds": [
@@ -9763,7 +9661,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 64,
     "indicatorIds": [
@@ -9828,7 +9726,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-03da9a2c.json",
     "observationCount": 0,
     "entityCount": 93,
     "indicatorIds": [
@@ -9848,65 +9746,6 @@
      "C-014_power_permit_cost",
      "C-014_power_permit_duration_archive_doingbusiness",
      "C-014_power_permit_duration_congbao_chinhphu"
-    ]
-   }
-  },
-  {
-   "elementId": "C-015",
-   "title": "상기 문서들의 원본 링크",
-   "kind": "facts",
-   "headline": {
-    "value": "20건",
-    "label": "원문 링크 · 2016–2026년"
-   },
-   "preview": {
-    "facts": [
-     {
-      "label": "원안 PDP8",
-      "value": ""
-     },
-     {
-      "label": "개정령",
-      "value": ""
-     },
-     {
-      "label": "전력법 시행령",
-      "value": ""
-     }
-    ],
-    "more": 15
-   },
-   "period": "2016–2026년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
-   "basis": {
-    "unit": "원문 링크",
-    "rule": "원문 링크 1건 = 원천 1행 · 원천의 집계·설명 행 1건 제외",
-    "count": {
-     "rows": 20,
-     "distinct": 20,
-     "sourceRows": 21
-    }
-   },
-   "measure": null,
-   "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-012-6108b228.json",
-    "observationCount": 0,
-    "entityCount": 21,
-    "indicatorIds": [
-     "C-015_policy_document_link_datafiles_chinhphu",
-     "C-015_policy_document_link_datafiles_chinhphu_2",
-     "C-015_policy_document_link_erea",
-     "C-015_policy_document_link_moit",
-     "C-015_policy_document_link_vanban_chinhphu"
     ]
    }
   },
@@ -9943,7 +9782,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 639,
     "entityCount": 817,
     "indicatorIds": [
@@ -10125,7 +9964,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 0,
     "entityCount": 52,
     "indicatorIds": [
@@ -10202,7 +10041,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 0,
     "entityCount": 121,
     "indicatorIds": [
@@ -10271,7 +10110,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 0,
     "entityCount": 128,
     "indicatorIds": [
@@ -10302,34 +10141,6 @@
    }
   },
   {
-   "elementId": "C-020",
-   "title": "GHG 감축 사업 타당성 기초 정보",
-   "kind": "status",
-   "headline": {
-    "value": "값 제공 전",
-    "label": "원자료 미수집"
-   },
-   "preview": {
-    "note": "원자료가 아직 수집되지 않아 값을 제공하지 않습니다"
-   },
-   "period": "—",
-   "selection": null,
-   "basis": {
-    "unit": "없음",
-    "rule": "값이 없어 수치·그래프를 만들지 않음"
-   },
-   "measure": null,
-   "provider": "제공기관 확인",
-   "mapConnected": false,
-   "downloadable": false,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
-    "observationCount": 0,
-    "entityCount": 0,
-    "indicatorIds": []
-   }
-  },
-  {
    "elementId": "C-021",
    "title": "VCM 프로젝트 파이프라인",
    "kind": "status",
@@ -10351,7 +10162,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 0,
     "entityCount": 0,
     "indicatorIds": []
@@ -10407,7 +10218,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-6eab4929.json",
     "observationCount": 0,
     "entityCount": 98,
     "indicatorIds": [
@@ -10423,34 +10234,6 @@
     "headlineIndicatorIds": [
      "C-022_carbon_market_readiness_vanban_chinhphu"
     ]
-   }
-  },
-  {
-   "elementId": "C-023",
-   "title": "한계저감비용(MAC)",
-   "kind": "status",
-   "headline": {
-    "value": "값 제공 전",
-    "label": "원자료 미수집"
-   },
-   "preview": {
-    "note": "원자료가 아직 수집되지 않아 값을 제공하지 않습니다"
-   },
-   "period": "—",
-   "selection": null,
-   "basis": {
-    "unit": "없음",
-    "rule": "값이 없어 수치·그래프를 만들지 않음"
-   },
-   "measure": null,
-   "provider": "제공기관 확인",
-   "mapConnected": false,
-   "downloadable": false,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-013-11c8d353.json",
-    "observationCount": 0,
-    "entityCount": 0,
-    "indicatorIds": []
    }
   },
   {
@@ -12057,66 +11840,11 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 73,
     "indicatorIds": [
      "D-023_climate_fund_finance_registry"
-    ]
-   }
-  },
-  {
-   "elementId": "D-024",
-   "title": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
-   "kind": "facts",
-   "headline": {
-    "value": "7건",
-    "label": "투자 건 · 2026년"
-   },
-   "preview": {
-    "facts": [
-     {
-      "label": "Stride",
-      "value": ""
-     },
-     {
-      "label": "CME Solar",
-      "value": ""
-     },
-     {
-      "label": "Dat Bike",
-      "value": ""
-     }
-    ],
-    "more": 1
-   },
-   "period": "2026년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
-   "basis": {
-    "unit": "투자 건",
-    "rule": "투자 건 1건 = 원천 1행(레코드구분=개별) · 원천의 집계·설명 행 5건 제외",
-    "count": {
-     "rows": 7,
-     "distinct": 7,
-     "sourceRows": 12
-    }
-   },
-   "measure": null,
-   "provider": "New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 (DealStreetAsia·Tracxn 병용)",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
-    "observationCount": 0,
-    "entityCount": 12,
-    "indicatorIds": [
-     "D-024_vc_impact_investment_deal_registry"
     ]
    }
   },
@@ -12181,7 +11909,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 132,
     "indicatorIds": [
@@ -12246,7 +11974,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 14,
     "indicatorIds": [
@@ -12301,7 +12029,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 18,
     "indicatorIds": [
@@ -12350,7 +12078,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 1,
     "indicatorIds": [
@@ -12405,7 +12133,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 8,
     "indicatorIds": [
@@ -12475,7 +12203,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-72e8eaba.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-017-54cec185.json",
     "observationCount": 0,
     "entityCount": 19,
     "indicatorIds": [
@@ -12558,7 +12286,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 0,
     "entityCount": 20,
     "indicatorIds": [
@@ -12627,7 +12355,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 0,
     "entityCount": 15,
     "indicatorIds": [
@@ -12699,59 +12427,11 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 0,
     "entityCount": 19,
     "indicatorIds": [
      "E-007_mrv_institution"
-    ]
-   }
-  },
-  {
-   "elementId": "E-008",
-   "title": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
-   "kind": "bars",
-   "headline": {
-    "value": "144건",
-    "label": "수록 논문·특허 · 2021–2026년"
-   },
-   "preview": {
-    "parts": [
-     {
-      "label": "논문",
-      "value": 114
-     },
-     {
-      "label": "특허",
-      "value": 30
-     }
-    ],
-    "unit": "건",
-    "scope": "수록 자료 유형별",
-    "omitted": 0
-   },
-   "period": "2021–2026년",
-   "selection": null,
-   "basis": {
-    "unit": "수록 논문·특허",
-    "rule": "문서 유형별 수록 행 수 · 발행연도 기준 · 국가 전체 통계 아님",
-    "count": {
-     "rows": 144,
-     "distinct": 144,
-     "sourceRows": 144
-    }
-   },
-   "measure": null,
-   "provider": "각 논문 출판사·특허 공개 원문(자료별 출처 제공)",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
-    "observationCount": 0,
-    "entityCount": 144,
-    "indicatorIds": [
-     "E-008_paper",
-     "E-008_patent"
     ]
    }
   },
@@ -12790,7 +12470,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 6,
     "entityCount": 0,
     "indicatorIds": [
@@ -12876,7 +12556,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 31,
     "entityCount": 0,
     "indicatorIds": [
@@ -12885,34 +12565,6 @@
     "headlineIndicatorIds": [
      "E-010_gerd_pct_gdp"
     ]
-   }
-  },
-  {
-   "elementId": "E-011",
-   "title": "기술준비수준(TRL)",
-   "kind": "status",
-   "headline": {
-    "value": "값 제공 전",
-    "label": "입력 예정 자료"
-   },
-   "preview": {
-    "note": "현재 값을 제공하지 않습니다"
-   },
-   "period": "—",
-   "selection": null,
-   "basis": {
-    "unit": "없음",
-    "rule": "값이 없어 수치·그래프를 만들지 않음"
-   },
-   "measure": null,
-   "provider": "해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정",
-   "mapConnected": false,
-   "downloadable": false,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
-    "observationCount": 0,
-    "entityCount": 0,
-    "indicatorIds": []
    }
   },
   {
@@ -12950,7 +12602,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-98fc770f.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-018-1f5eeb64.json",
     "observationCount": 92,
     "entityCount": 0,
     "indicatorIds": [
@@ -12969,34 +12621,6 @@
     "headlineIndicatorIds": [
      "E-012_occupation_employment_all_total"
     ]
-   }
-  },
-  {
-   "elementId": "E-013",
-   "title": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
-   "kind": "status",
-   "headline": {
-    "value": "값 제공 전",
-    "label": "입력 양식만 있는 자료"
-   },
-   "preview": {
-    "note": "입력 양식만 있어 실제 값이 없습니다"
-   },
-   "period": "—",
-   "selection": null,
-   "basis": {
-    "unit": "없음",
-    "rule": "값이 없어 수치·그래프를 만들지 않음"
-   },
-   "measure": null,
-   "provider": "출처기관 미확인",
-   "mapConnected": false,
-   "downloadable": false,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
-    "observationCount": 0,
-    "entityCount": 0,
-    "indicatorIds": []
    }
   },
   {
@@ -13046,7 +12670,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-90696ae9.json",
     "observationCount": 0,
     "entityCount": 10,
     "indicatorIds": [
@@ -13101,134 +12725,11 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-90696ae9.json",
     "observationCount": 0,
     "entityCount": 4,
     "indicatorIds": [
      "E-015_coop_framework"
-    ]
-   }
-  },
-  {
-   "elementId": "E-016",
-   "title": "한국 기후기술 TRL",
-   "kind": "facts",
-   "headline": {
-    "value": "4건",
-    "label": "부문 · 2020·2025년"
-   },
-   "preview": {
-    "facts": [
-     {
-      "label": "기후기술:전체 - 5년 후 전망(2025)",
-      "value": ""
-     },
-     {
-      "label": "기후기술: 감축(Mitigation)",
-      "value": ""
-     },
-     {
-      "label": "기후기술: 융복합(Convergence)",
-      "value": ""
-     }
-    ],
-    "more": 1
-   },
-   "period": "2020·2025년",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
-   "basis": {
-    "unit": "부문",
-    "rule": "부문 1건 = 원천 1행",
-    "count": {
-     "rows": 4,
-     "distinct": 4,
-     "sourceRows": 4
-    }
-   },
-   "measure": null,
-   "provider": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
-    "observationCount": 0,
-    "entityCount": 4,
-    "indicatorIds": [
-     "E-016_kr_climate_tech_trl"
-    ]
-   }
-  },
-  {
-   "elementId": "E-017",
-   "title": "한국-경쟁국 기후기술 비교우위",
-   "kind": "bars",
-   "headline": {
-    "value": "4 위",
-    "label": "한국 · 기후기술 수준 순위 · 5개국 중 · 2020년 · 값이 작을수록 우수"
-   },
-   "preview": {
-    "parts": [
-     {
-      "label": "미국",
-      "value": 1
-     },
-     {
-      "label": "유럽연합",
-      "value": 2
-     },
-     {
-      "label": "일본",
-      "value": 3
-     },
-     {
-      "label": "한국",
-      "value": 4
-     },
-     {
-      "label": "중국",
-      "value": 5
-     }
-    ],
-    "unit": "위",
-    "scope": "5개국 비교 · 2020년",
-    "omitted": 0
-   },
-   "period": "2020년",
-   "selection": {
-    "measure": "measure-21b0eed49d22",
-    "sex": null,
-    "year": 2020,
-    "period": null,
-    "dimensions": {}
-   },
-   "basis": {
-    "unit": "관측값",
-    "rule": "기후기술 수준 순위(위) 2020년 5개국 값 비교 · 대표값은 한국"
-   },
-   "measure": {
-    "key": "measure-21b0eed49d22",
-    "label": "기후기술 수준 순위",
-    "unit": "위"
-   },
-   "leadCountry": "KOR",
-   "provider": "국가녹색기술연구소(NIGT) / 기후기술정보시스템(CTis)",
-   "mapConnected": false,
-   "downloadable": true,
-   "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
-    "observationCount": 10,
-    "entityCount": 0,
-    "indicatorIds": [
-     "E-017_tech_rank"
-    ],
-    "headlineIndicatorIds": [
-     "E-017_tech_rank"
     ]
    }
   },
@@ -13277,7 +12778,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-90696ae9.json",
     "observationCount": 0,
     "entityCount": 24,
     "indicatorIds": [
@@ -13335,7 +12836,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-90696ae9.json",
     "observationCount": 0,
     "entityCount": 9,
     "indicatorIds": [
@@ -13389,7 +12890,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-40f65c44.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-019-90696ae9.json",
     "observationCount": 0,
     "entityCount": 7,
     "indicatorIds": [

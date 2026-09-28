@@ -3,7 +3,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { AuditV125, PROJECT_ROOT } from "./v125/audit-utils.mjs";
+import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v125/audit-utils.mjs";
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 import {
   evaluateValue,
   launchHeadlessBrowser,
@@ -15,6 +16,8 @@ import {
 import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136 } from "./v136/audit-helpers.mjs";
 
+// V156: the finder lists the public set; its size decides where auto-loading stops.
+const PUBLIC_COUNT_V156 = publicListedElementsV156(catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value)).length;
 const audit = new AuditV125("finder-scroll:v136");
 const finderSource = readFileSync(
   resolve(PROJECT_ROOT, "src/pages/DataExplorerPage.tsx"),
@@ -82,7 +85,7 @@ async function revealSequence(cdp, limit = 12) {
       break;
     }
     sequence.push(Number(await evaluateValue(cdp, CARD_COUNT)));
-    if (sequence[sequence.length - 1] >= 152) break;
+    if (sequence[sequence.length - 1] >= PUBLIC_COUNT_V156) break;
   }
   return sequence;
 }
@@ -258,7 +261,10 @@ try {
   if (server) await server.close();
 }
 
-const expectedSequence = [24, 48, 72, 96, 120, 144, 152];
+// Batches of 24 up to the public count ([24, …, 144, 152] when all 152 were public).
+const expectedSequence = [];
+for (let shown = 24; shown < PUBLIC_COUNT_V156; shown += 24) expectedSequence.push(shown);
+expectedSequence.push(PUBLIC_COUNT_V156);
 const sequenceMatches =
   JSON.stringify(sequence) === JSON.stringify(expectedSequence);
 // V149 adds a passive, rAF-throttled scroll listener that only records the

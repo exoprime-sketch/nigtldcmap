@@ -22,6 +22,8 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finishAuditV135 } from "./v135/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("detail-hierarchy:v135");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 
@@ -43,7 +45,7 @@ try {
       brokenAssets.push({ url: response.url, status: response.status });
     }
   });
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     try {
       await navigate(browser.cdp, detailUrlV135(server.url, elementId));
@@ -124,7 +126,7 @@ const ghgHierarchy =
       ghg?.genericRawMatrixHeading === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
-audit.check("DETAIL_ROUTE_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
+audit.check("DETAIL_ROUTE_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === publicListedElementsV156(catalog).length && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: publicListedElementsV156(catalog).length, routeFailures: [] });
 audit.check("DETAIL_PUBLIC_TITLE_COVERAGE", blankTitles.length === 0, blankTitles, []);
 audit.check("DETAIL_PRIMARY_ANALYSIS_COVERAGE", missingPrimary.length === 0, missingPrimary, []);
 audit.check("DETAIL_METADATA_MARKER_COVERAGE", missingMetadata.length === 0, missingMetadata, []);

@@ -34,9 +34,12 @@ import {
 import { detailUrlV135 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136, writeCsvV136 } from "./v136/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("screen-usability:v136-4");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
-const ELEMENT_IDS = catalog.map((item) => item.elementId);
+// V156: the public set; INSPECTED_ROUTE_COUNT follows it (ELEMENT_IDS + 4).
+const ELEMENT_IDS = publicListedElementsV156(catalog).map((item) => item.elementId);
 
 const ANALYSIS_READY = `(() => {
   const root = document.querySelector('[data-testid="public-analysis-root"]');

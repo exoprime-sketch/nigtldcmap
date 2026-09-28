@@ -14,9 +14,13 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { finderUrlV135, finishAuditV135 } from "./v135/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("finder-card:v135");
 const catalogResult = readJson(resolve(V2_ROOT, "catalog.json"));
 const catalog = catalogElements(catalogResult.value);
+// V156: the finder lists the public set (excluded elements are in no list).
+const publicSetV156 = publicListedElementsV156(catalog);
 
 let server = null;
 let browser = null;
@@ -44,7 +48,7 @@ try {
   );
   // The finder reveals results progressively. V136 replaced the "더 보기"
   // control with scroll-driven loading, so the census reveals the remaining
-  // cards by scrolling. The guarantee is unchanged: all 152 public elements
+  // cards by scrolling. The guarantee is unchanged: every public element
   // must be inspected.
   for (let guard = 0; guard < 40; guard += 1) {
     const count = Number(
@@ -53,7 +57,7 @@ try {
         `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`
       )
     );
-    if (count >= 152) break;
+    if (count >= publicSetV156.length) break;
     await evaluateValue(
       browser.cdp,
       `(() => { window.scrollTo(0, document.body.scrollHeight); return true; })()`
@@ -70,7 +74,7 @@ try {
   }
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length === 152`,
+    `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length === ${publicSetV156.length}`,
     { timeoutMs: 35_000 }
   );
   snapshot = await evaluateValue(
@@ -159,7 +163,7 @@ const genericDescriptions = cards.filter((card) => {
 const invalidActions = cards.filter((card) => card.invalidAction);
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
-audit.check("FINDER_CARD_RUNTIME_COVERAGE", runtimeFailure === null && cards.length === 152, { runtimeFailure, cardCount: cards.length }, { cardCount: 152 });
+audit.check("FINDER_CARD_RUNTIME_COVERAGE", runtimeFailure === null && cards.length === publicSetV156.length, { runtimeFailure, cardCount: cards.length }, { cardCount: publicSetV156.length });
 audit.check("FINDER_INTERNAL_METADATA_COUNT", internalMetadata.length === 0, internalMetadata, []);
 audit.check("FINDER_DUPLICATE_MEASURE_TITLE_COUNT", duplicateMeasureTitles.length === 0, duplicateMeasureTitles, []);
 audit.check(

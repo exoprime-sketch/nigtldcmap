@@ -25,6 +25,8 @@ import {
   sourceTextV131,
 } from "./v131/audit-helpers.mjs";
 
+import { auditExcludedNoticesV156, excludedElementsV156, publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("entity-cards:v131");
 const catalogResult = readJson(resolve(V2_ROOT, "catalog.json"));
 const catalog = catalogElements(catalogResult.value);
@@ -44,13 +46,16 @@ const nonCardRenderers = new Set([
   "capability-scorecard",
   "status-only",
 ]);
-const entityElementIds = catalog
-  .filter(
-    (element) =>
-      payloadRecords(packs.elements.get(element.elementId)?.entities).length > 0 &&
-      !nonCardRenderers.has(rendererByElement.get(element.elementId))
-  )
-  .map((element) => element.elementId);
+const entityElements = catalog.filter(
+  (element) =>
+    payloadRecords(packs.elements.get(element.elementId)?.entities).length > 0 &&
+    !nonCardRenderers.has(rendererByElement.get(element.elementId))
+);
+// V156: cards are checked on public routes; an excluded element's route is
+// checked for its notice card instead (no cards, no chart, no download link).
+const entityElementIds = publicListedElementsV156(entityElements).map((element) => element.elementId);
+const excludedEntityElementsV156 = excludedElementsV156(entityElements);
+let excludedNoticesV156 = [];
 const entityCountByElementV131 = new Map(
   catalog.map((element) => [element.elementId, Number(element.entityCount || 0)])
 );
@@ -234,6 +239,15 @@ try {
       }
     }
   }
+  excludedNoticesV156 = await auditExcludedNoticesV156({
+    cdp: browser.cdp,
+    baseUrl: server.url,
+    elements: excludedEntityElementsV156,
+    detailUrl: detailUrlV129,
+    navigate,
+    waitForValue,
+    evaluateValue,
+  });
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
 } finally {
@@ -257,6 +271,7 @@ const duplicateCardTitleCount = routeResults.reduce(
 );
 
 audit.check("ENTITY_CARD_ROUTE_COVERAGE", runtimeFailure === null && routeResults.length === entityElementIds.length, routeResults.length, entityElementIds.length, { runtimeFailure, routeFailures });
+audit.check("EXCLUDED_ENTITY_ROUTE_NOTICE_V156", excludedNoticesV156.length === excludedEntityElementsV156.length && excludedNoticesV156.every((row) => row.pass), excludedNoticesV156.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems })), { routes: excludedEntityElementsV156.map((element) => element.elementId), notice: "card, no chart, no download link" });
 audit.check("ENTITY_CARD_WITHOUT_MEANINGFUL_PRIMARY_TITLE", routeFailures.flatMap((row) => row?.invalid || []).length === 0, routeFailures.flatMap((row) => row?.invalid || []).length, 0, routeFailures.slice(0, 30));
 audit.check("ENTITY_CARD_LONG_UNSTRUCTURED_TEXT_COUNT", longTextCount === 0, longTextCount, 0);
 audit.check("ENTITY_CARD_RESPONSIVE", responsiveFailures.length === 0, responsiveFailures.length, 0, responsiveFailures.slice(0, 20));

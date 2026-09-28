@@ -585,6 +585,7 @@ export default function DownloadPage({
                     selected ? "is-selected" : ""
                   } ${downloadSelectable ? "" : "is-unavailable"}`}
                   key={key}
+                  data-element-id={item.elementId}
                 >
                   <label className="cdp-download-item__selector" htmlFor={inputId}>
                     <input

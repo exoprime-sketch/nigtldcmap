@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { openDetail } from "./helpers";
+import { candidateExcludedElements, detailUrl, openDetail } from "./helpers";
 
 /**
  * The screens whose completeness the rest are measured against, pinned to the
@@ -68,6 +68,18 @@ test("D-011 states constant prices, the period and the total it counted", async 
 });
 
 test("A-017 states the year its costs are for, with the unit", async ({ page }) => {
+  // V156-D: A-017 is not offered (spec review 2026-09-18). While the decision
+  // stands its URL shows the notice card instead of the comparison; once it is
+  // offered again the comparison below is checked as before.
+  const excluded = candidateExcludedElements().find((row) => row.elementId === "A-017");
+  if (excluded) {
+    await page.goto(detailUrl("A-017"));
+    const notice = page.getByTestId("detail-excluded-v156");
+    await expect(notice.locator('[data-exclusion-field="reason"]')).toContainText(excluded.reason, { timeout: 60_000 });
+    await expect(notice.locator('[data-exclusion-field="decidedAt"]')).toHaveText(excluded.decidedAt);
+    await expect(page.getByTestId("public-analysis-root")).toHaveCount(0);
+    return;
+  }
   await openDetail(page, "A-017");
   const analysis = page.getByTestId("public-analysis-primary");
   await expect(analysis).toContainText("USD/MWh");
