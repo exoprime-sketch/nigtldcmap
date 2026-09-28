@@ -39,6 +39,7 @@ import {
   publicPortfolioSectionTitleV138,
 } from "../public/PublicPortfolioSummaryV132";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import ListFoldV160 from "../public/ListFoldV160";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVisualizationContractV153";
@@ -1314,13 +1315,15 @@ function documentTimelineEntriesV140(entities: VietnamEntityV124[]): DocumentTim
 }
 
 function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
-  const entries = documentTimelineEntriesV140(entities);
+  // V160: the most recent document first; the first ten open (ListFoldV160).
+  const entries = documentTimelineEntriesV140(entities).reverse();
   if (entries.length === 0) return null;
   return (
     <VisualizationFrameV125 eyebrow="연대기" title="법령·문서별 시행 시점과 핵심 사항" block="timeline">
       <p className="sv125-document-count" data-testid="document-timeline-count-v140">
-        법령·문서 {entries.length.toLocaleString("ko-KR")}건 · 원천 {entities.length.toLocaleString("ko-KR")}행을 문서 단위로 묶음 · 시행(발효)일 순
+        법령·문서 {entries.length.toLocaleString("ko-KR")}건 · 원천 {entities.length.toLocaleString("ko-KR")}행을 문서 단위로 묶음 · 시행(발효)일 최근 순
       </p>
+      <ListFoldV160 total={entries.length}>
       <ol className="sv125-policy-timeline sv125-policy-timeline--documents" data-testid="document-timeline-v140">
         {entries.map((entry) => (
           <li key={entry.key} data-document-rows={entry.rowCount}>
@@ -1352,6 +1355,7 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
           </li>
         ))}
       </ol>
+      </ListFoldV160>
     </VisualizationFrameV125>
   );
 }

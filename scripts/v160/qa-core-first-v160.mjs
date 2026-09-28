@@ -6,9 +6,13 @@
  *            build (--base), target -50% or more; the first 1440x900 screen
  *            holds 120 words at most
  *   finder   the default list (no tier parameter) holds the core datasets
- *   detail   12 samples at 1280x800: layer 1 as the plan defines it (hero ->
- *            판단 포인트 -> 1순위 차트 | 지도 자리) ends within 1.5 viewports;
- *            the whole primary analysis section's bottom is recorded too;
+ *   detail   12 samples at 1280x800 (criteria of 2026-09-29, replacing the
+ *            plan's 1.5 screens):
+ *            (i)  first screen, all 12: the whole 판단 포인트 strip and the
+ *                 top of the rank-1 block lie within the first 800px;
+ *            (ii) a chart's layer 1 (the 1순위 차트 | 지도 row) ends within
+ *                 2.0 screens; a timeline/table block is exempt and instead
+ *                 opens on 10 items with '전체 보기';
  *            every collapsed layer starts with aria-expanded="false"
  *   map      the core group holds the policy file's layers, the rest folded
  *   all      no console/page errors; 320/390/768/1024/1440/1920 no overflow
@@ -130,6 +134,19 @@ async function homeWords(baseUrl, viewportOnly) {
       const rank1 = primary?.querySelector("[data-analysis-block]") || null;
       const slot = document.querySelector('[data-testid="detail-map-slot-v153"]');
       const rank1Bottom = rank1 ? Math.max(bottom(rank1), slot ? bottom(slot) : 0) : null;
+      const rank1Top = rank1 ? Math.round(rank1.getBoundingClientRect().top + window.scrollY) : null;
+      const rank1Type = rank1?.getAttribute("data-analysis-block") || null;
+      const strip = document.querySelector('[data-testid="decision-points-v159"]');
+      const fold = rank1?.querySelector("[data-v160-list-fold]") || null;
+      const foldItems = fold ? [...fold.querySelectorAll(":scope > ol > li, :scope > ul > li")] : [];
+      const listFold = fold
+        ? {
+            state: fold.getAttribute("data-v160-list-fold"),
+            items: foldItems.length,
+            shown: foldItems.filter((item) => item.getBoundingClientRect().height > 0).length,
+            button: Boolean(fold.querySelector(":scope > .rank-fold-v160")),
+          }
+        : null;
       const layers = [...document.querySelectorAll('[data-testid="detail-layer-v160"]')].map((layer) => ({
         layer: layer.getAttribute("data-layer"),
         expanded: layer.querySelector("summary")?.getAttribute("aria-expanded"),
@@ -137,16 +154,27 @@ async function homeWords(baseUrl, viewportOnly) {
       // The later charts folded under the first chart (layer 2) start closed too.
       const more = document.querySelector('[data-testid="detail-layer-v160-more"]');
       if (more) layers.push({ layer: "2-charts", expanded: more.getAttribute("aria-expanded") });
-      return { layer1Bottom: rank1Bottom, primaryBottom: bottom(primary), layers };
+      return { layer1Bottom: rank1Bottom, primaryBottom: bottom(primary), rank1Top, rank1Type, stripBottom: bottom(strip), listFold, layers };
     });
     const ratio = (value) => (value ? Math.round((value / 800) * 100) / 100 : null);
-    heights.push({ id, layer1Bottom: measure.layer1Bottom, ratio: ratio(measure.layer1Bottom), primaryBottom: measure.primaryBottom, primaryRatio: ratio(measure.primaryBottom) });
+    heights.push({ id, rank1Type: measure.rank1Type, rank1Top: measure.rank1Top, stripBottom: measure.stripBottom, layer1Bottom: measure.layer1Bottom, ratio: ratio(measure.layer1Bottom), primaryBottom: measure.primaryBottom, primaryRatio: ratio(measure.primaryBottom), listFold: measure.listFold });
     collapsed.push({ id, layers: measure.layers });
     await context.close();
   }
   report.evidence.layer1 = heights;
   report.evidence.layers = collapsed;
-  check("DETAIL_LAYER1_WITHIN_1_5_SCREENS", heights.every((row) => row.ratio !== null && row.ratio <= 1.5), heights, "<= 1.5 x 800px");
+  const LONG_TYPES = new Set(["timeline", "table", "comparison-table", "sorted-table"]);
+  const firstScreen = heights.map((row) => ({ id: row.id, rank1Top: row.rank1Top, stripBottom: row.stripBottom, pass: row.rank1Top !== null && row.rank1Top < 800 && (row.stripBottom === null || row.stripBottom <= 800) }));
+  check("DETAIL_FIRST_SCREEN_12", firstScreen.every((row) => row.pass), firstScreen, "판단 포인트 strip bottom <= 800 and rank-1 top < 800, 12/12");
+  const charts = heights.filter((row) => !LONG_TYPES.has(row.rank1Type));
+  check("DETAIL_CHART_LAYER1_WITHIN_2_SCREENS", charts.every((row) => row.ratio !== null && row.ratio <= 2.0), charts.map((row) => ({ id: row.id, type: row.rank1Type, ratio: row.ratio })), "<= 2.0 x 800px");
+  const long = heights.filter((row) => LONG_TYPES.has(row.rank1Type));
+  check(
+    "DETAIL_LONG_BLOCK_OPENS_ON_10",
+    long.every((row) => !row.listFold || row.listFold.items <= 10 || (row.listFold.state === "closed" && row.listFold.shown <= 10 && row.listFold.button)),
+    long.map((row) => ({ id: row.id, type: row.rank1Type, listFold: row.listFold, ratio: row.ratio })),
+    "timeline/table: 10 items shown + '전체 보기'"
+  );
   check("DETAIL_LAYERS_START_COLLAPSED", collapsed.every((row) => row.layers.length >= 2 && row.layers.every((layer) => layer.expanded === "false")), collapsed, 'every layer summary aria-expanded="false"');
 }
 
@@ -200,5 +228,5 @@ const failed = report.checks.filter((item) => !item.pass).map((item) => item.id)
 report.summary = { total: report.checks.length, pass: report.checks.length - failed.length, failed };
 mkdirSync(dirname(OUT), { recursive: true });
 writeFileSync(OUT, `${JSON.stringify(report, null, 2)}\n`);
-console.log(JSON.stringify({ ...report.summary, homeWords: report.evidence.homeWords, layer1: report.evidence.layer1.map((row) => `${row.id}:${row.ratio}`).join(" ") }));
+console.log(JSON.stringify({ ...report.summary, homeWords: report.evidence.homeWords, layer1: report.evidence.layer1.map((row) => `${row.id}:${row.rank1Type}:top${row.rank1Top}:strip${row.stripBottom}:${row.ratio}`).join(" ") }));
 if (failed.length) process.exitCode = 1;

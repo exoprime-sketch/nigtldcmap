@@ -8,11 +8,11 @@ import { useRankFoldV160 } from "./RankFoldV160";
 
 export interface AnalysisBarV147 { id: string; label: string; value: number | null }
 /** `xAxis`/`yAxis`: what the length measures and what each bar is (V153 contract axes); the title is the caption. */
-export function AnalysisBarsV147({ rows, title, unit, maximum, xAxis, yAxis, rankFold = false }: { rows: AnalysisBarV147[]; title: string; unit: string; maximum?: number; xAxis?: string; yAxis?: string; /** V160: a ranked regional list - top/bottom 10 + '전체 보기'. */ rankFold?: boolean }) {
+export function AnalysisBarsV147({ rows, title, unit, maximum, xAxis, yAxis, rankFold = false, rankEdge }: { rows: AnalysisBarV147[]; title: string; unit: string; maximum?: number; xAxis?: string; yAxis?: string; /** V160: a ranked regional list - top/bottom 10 + '전체 보기'. */ rankFold?: boolean; /** V160: rows kept at each end (10; 5 for a first-layer ranking). */ rankEdge?: number }) {
   // What each bar is: the caller says, else the dataset's contract for a bar
   // screen, else the generic word.
   const contract = useAnalysisContractV153();
-  const fold = useRankFoldV160(rankFold ? rows.length : 0, title);
+  const fold = useRankFoldV160(rankFold ? rows.length : 0, title, rankEdge);
   const y = yAxis || (contract && ["category-bar", "region-bar"].includes(contract.primary.type) ? contract.primary.yAxis : null) || "비교 항목";
   const values = rows.flatMap((r) => r.value === null ? [] : [r.value]);
   const min = Math.min(0, ...values);

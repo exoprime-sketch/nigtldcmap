@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 import type {
   ElementIndicatorSemanticsV125,
@@ -91,6 +92,7 @@ import U4LocationsV159 from "../templates/U4LocationsV159";
 import U5ProjectsFinanceV159 from "../templates/U5ProjectsFinanceV159";
 import U6PolicyV159 from "../templates/U6PolicyV159";
 import "./public-data-analysis-v126.css";
+import "../layers/detail-head-v160.css";
 
 const OccupationEmploymentWagePreviewV125 = lazy(
   () => import("../semantic/OccupationEmploymentWagePreviewV125")
@@ -182,6 +184,10 @@ export default function PublicDataAnalysisRouterV126({
   );
   const [selectedTech, setSelectedTech] = useState("all");
   const foldV160 = useDetailFoldV160();
+  // V160: the hero keeps a slot for the analysis heading (merged into the
+  // hero); until it is found - or on a page without it - the heading stays here.
+  const [heroSlotV160, setHeroSlotV160] = useState<HTMLElement | null>(null);
+  useEffect(() => setHeroSlotV160(document.getElementById("detail-hero-analysis-v160")), [elementId]);
   const layerTwoOpenV160 = useDetailLayerOpenV160("2");
   useEffect(() => setSelectedTech("all"), [elementId]);
   const techIndicatorIds = useMemo(() => {
@@ -528,13 +534,21 @@ export default function PublicDataAnalysisRouterV126({
     <>
       {/* The title is stated once, by the page; the analysis heading is kept
           only where it adds a reading ("배출량 변화와 구성") (V153). */}
-      {!sameTitleV153(pageTitle, analysisTitle) && (
-        <header className="pav126-heading">
-          <h2 data-testid="public-data-title">
-            <PublicTermTextV134 text={analysisTitle} />
-          </h2>
-        </header>
-      )}
+      {!sameTitleV153(pageTitle, analysisTitle) &&
+        (heroSlotV160
+          ? createPortal(
+              <h2 className="pav126-hero-heading" data-testid="public-data-title">
+                <PublicTermTextV134 text={analysisTitle} />
+              </h2>,
+              heroSlotV160
+            )
+          : (
+            <header className="pav126-heading">
+              <h2 data-testid="public-data-title">
+                <PublicTermTextV134 text={analysisTitle} />
+              </h2>
+            </header>
+          ))}
 
       <section className="pav126-primary" data-testid="public-analysis-primary" id={`pav126-primary-${elementId}`}>
         {body}

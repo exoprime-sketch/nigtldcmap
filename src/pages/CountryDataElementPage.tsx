@@ -988,6 +988,9 @@ export default function CountryDataElementPage({
               <h1>
                 <PublicTermTextV134 text={pageTitle} />
               </h1>
+              {/* V160: the analysis heading (when it adds a reading) is
+                  rendered here by the analysis router, through a portal. */}
+              <div className="cdp-detail-hero__analysis" id="detail-hero-analysis-v160" />
               <p data-testid={cardSpec ? "hero-short-definition-v159" : undefined}>
                 <PublicTermTextV134
                   text={`${provider.countryNameKo}${

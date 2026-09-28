@@ -35,3 +35,11 @@
 li[hidden] {
   display: none !important;
 }
+
+/* ListFoldV160: the first 10 items of a long first-layer list. */
+@media screen {
+  .list-fold-v160[data-v160-list-fold="closed"] > ol > li:nth-child(n + 11),
+  .list-fold-v160[data-v160-list-fold="closed"] > ul > li:nth-child(n + 11) {
+    display: none !important;
+  }
+}

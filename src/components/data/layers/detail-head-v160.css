@@ -1,0 +1,147 @@
+/* V160-D: the first layer reads from the top of the screen - the analysis
+   heading sits in the hero, and the conditions and axes above the first
+   chart take one row (label beside its control), not a stacked block. */
+
+.pav126-hero-heading {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #375a50;
+  line-height: 1.45;
+}
+
+.cdp-detail-hero__analysis:empty {
+  display: none;
+}
+
+/* Conditions: label and control side by side. */
+.dl153-frame .sv125-controls label,
+.dl153-frame .prs137__controls label,
+.dl153-frame .sv125-fixed-value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.dl153-frame .sv125-fixed-value strong {
+  min-height: 34px;
+  padding: 0.3rem 0.6rem;
+}
+
+/* A select beside its label shrinks with the line (a long option must not
+   widen the page at 320px). */
+.dl153-frame .sv125-controls label,
+.dl153-frame .prs137__controls label {
+  min-width: 0;
+  max-width: 100%;
+}
+.dl153-frame .sv125-controls select,
+.dl153-frame .prs137__controls select {
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 36px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.dl153-frame .prs137__controls {
+  margin-bottom: 8px;
+}
+
+/* A section heading: its small label on the heading's own line. */
+.dl153-frame .pav126-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 10px;
+}
+
+.dl153-frame .pav126-section-heading h3 {
+  margin: 0 0 4px;
+}
+
+.dl153-frame .pav126-section-heading > p {
+  flex: 1 1 100%;
+}
+
+.dl153-frame .sv125-controls {
+  padding: 0.5rem 0.7rem;
+  gap: 0.5rem 1rem;
+}
+
+/* The facts line above a regional chart: "항목 값" pairs on one row. */
+.dl153-frame .prs138__facts {
+  gap: 4px 16px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+.dl153-frame .prs138__facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+}
+
+/* The small map beside the first chart: the same map, a tighter frame -
+   its selectors sit label-beside-control on one row. Layout only; the map
+   itself (MiniMapV152) is untouched. */
+.dl153-map-slot .detail-map148 {
+  margin-top: 0;
+  padding: 14px;
+}
+.dl153-map-slot .detail-map148 h3 {
+  margin-bottom: 4px;
+}
+.dl153-map-slot .detail-map148 header p {
+  margin: 4px 0;
+}
+.dl153-map-slot .detail-map148-controls {
+  gap: 6px 12px;
+  margin: 8px 0;
+}
+/* One row only where the map's own layout is side by side (above its
+   680px breakpoint); below it the map keeps its stacked controls. */
+@media (min-width: 681px) {
+  .dl153-map-slot .detail-map148-controls label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+.dl153-map-slot .detail-map148-controls select {
+  padding: 5px 8px;
+  min-width: 0;
+  max-width: 100%;
+}
+.dl153-map-slot .detail-map148-controls .detail-map148-selection {
+  flex: 1 1 100%;
+  margin: 0;
+  padding-top: 0;
+}
+
+/* Beside the map, the rows above the first chart sit closer together. */
+.dl153-frame .pav126-primary[data-dl153-split] {
+  row-gap: 10px;
+}
+.dl153-frame .pav126-primary[data-dl153-split] .prs137__lede,
+.dl153-frame .pav126-primary[data-dl153-split] .prs137__controls,
+.dl153-frame .pav126-primary[data-dl153-split] .prs138__facts {
+  margin-bottom: 0;
+}
+.dl153-map-slot .detail-map148 footer {
+  margin-top: 6px;
+}
+.dl153-map-slot .detail-map148-layout .detail-map148-selection {
+  padding-top: 4px;
+}
+.dl153-map-slot .detail-map148-selection h4 {
+  margin: 8px 0 4px;
+}
+.dl153-map-slot .detail-map148-value {
+  margin: 6px 0;
+}
