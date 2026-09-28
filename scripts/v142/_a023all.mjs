@@ -1,0 +1,15 @@
+import { chromium } from "playwright";
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+await page.goto(`http://127.0.0.1:4318/?view=data&country=VNM&element=A-023#element-detail`, { waitUntil: "networkidle", timeout: 90_000 });
+await page.waitForFunction(() => document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") === "ready", null, { timeout: 60_000 });
+await page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((n) => /지도에서 보기/u.test(n.textContent || "") && !n.disabled); b?.click(); });
+await page.waitForFunction(() => document.querySelector('.cdp-map-catalog-v138__item[data-map-element="A-023"]')?.getAttribute("data-map-drawn") === "true", null, { timeout: 60_000 });
+await page.waitForTimeout(1500);
+const idx = await page.$$eval("select", (nodes) => nodes.findIndex((s) => [...s.options].some((o) => /OSM/u.test(o.textContent || ""))));
+const handle = (await page.$$("select"))[idx];
+await handle.selectOption("all");
+await page.waitForTimeout(3000);
+const r = await page.evaluate(() => { const t = document.body.innerText; const i = t.indexOf("표시 출처"); return { sel: [...document.querySelectorAll("select")].map(s=>s.value).join(","), url: location.href, snippet: t.slice(i, i + 120) }; });
+console.log(JSON.stringify(r, null, 1));
+await browser.close();

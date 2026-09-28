@@ -86,7 +86,7 @@ Vercel은 보존 중인 배포마다 그 산출물을 저장하고 GB-month로 �
 
 ## 6. 하지 않은 것 — `downloads/` 외부 이전
 
-630 MB가 산출물의 88%이고 gzip으로 20 MB가 되지만, `catalog.json`의 `url`·`sha256`·`deliveryMode`와 QA 게이트(`audit-vietnam-deployment-v128.mjs:120`, `role-split-qa-v140.mjs:430`, `audit-vietnam-navigation-v125.mjs:483`)가 `/data/vietnam/v2/downloads/…` 절대 경로를 계약으로 삼는다. `tools/vietnam_etl/download_delivery_v137.py`의 `ObjectStorageAdapter`가 이전 경로를 이미 갖고 있으나, 저장소 선택·URL 계약·게이트 수정·무결성 재검증이 따르므로 별도 설계와 검증 없이는 실행하지 않는다.
+630 MB가 산출물의 88%이고 gzip으로 20 MB가 되지만, `catalog.json`의 `url`·`sha256`·`deliveryMode`와 QA 게이트(`audit-vietnam-deployment-v128.mjs:120`, `role-split-qa-v140.mjs:430`, `audit-vietnam-navigation-v125.mjs:483`)가 `/data/vietnam/v2/downloads/…` 절대 경로를 계약으로 삼는다. `tools/etl/download_delivery_v137.py`의 `ObjectStorageAdapter`가 이전 경로를 이미 갖고 있으나, 저장소 선택·URL 계약·게이트 수정·무결성 재검증이 따르므로 별도 설계와 검증 없이는 실행하지 않는다.
 
 ## 7. 추이 기록 절차
 

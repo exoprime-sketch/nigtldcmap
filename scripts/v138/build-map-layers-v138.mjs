@@ -37,12 +37,19 @@ import {
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, "../..");
+import { resolveDataRootV158 } from "../v158/country-context-v158.mjs";
+
 const argv = process.argv.slice(2);
 const opt = (name, fallback) => {
   const index = argv.indexOf(name);
   return index < 0 ? fallback : argv[index + 1];
 };
-const DATA = resolve(ROOT, opt("--data", process.env.VIETNAM_DATA_ROOT || "public/data/vietnam/v2"));
+// V158: --data / VIETNAM_DATA_ROOT keep priority; --country picks the tree.
+const DATA = resolveDataRootV158({
+  root: ROOT,
+  argv,
+  env: opt("--data", process.env.VIETNAM_DATA_ROOT || null),
+});
 const CONTRACT_PATH = resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json");
 const REPORT_PATH = resolve(ROOT, "reports/v138/map-targets-build-v138.json");
 const GENERATED_AT = "2026-09-01T00:00:00Z";
@@ -92,7 +99,7 @@ function sha256(text) {
   return createHash("sha256").update(text).digest("hex");
 }
 
-/** Fold a place name the way tools/vietnam_etl/b034_facts_v137.normalize_place does. */
+/** Fold a place name the way tools/etl/b034_facts_v137.normalize_place does. */
 export function normalizePlace(name) {
   const text = String(name ?? "").trim();
   const stripped = text

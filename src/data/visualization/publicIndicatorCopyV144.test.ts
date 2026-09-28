@@ -4,6 +4,7 @@ import type { SemanticObservationV125 } from "./semanticTypesV125";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { portfolioCategoryKeyLabelV142, publicPortfolioRecordLabelV138 } from "../../components/data/public/PublicPortfolioSummaryV132";
+import { countryPublicDirV158 } from "../countryContext";
 
 const row = (year: number, value: number, seriesKey = "ilo") => ({
   elementId: "A-006", recordId: `r-${year}`, indicatorId: "unemployment", countryIso3: "VNM", year, value,
@@ -47,7 +48,7 @@ describe("reviewed public indicator copy", () => {
     expect(publicPercentHeadlineV144(0)).toBe("0");
   });
   it("identifies the real A-026 metadata-only delivery, but never hides real counts", () => {
-    const source = JSON.parse(readFileSync(resolve(__dirname, "../../../public/data/vietnam/v2/downloads/a-026.json"), "utf8"));
+    const source = JSON.parse(readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/a-026.json`), "utf8"));
     expect(metadataOnlyBuildingsV144(source.observations)).toBe(true);
     expect(metadataOnlyBuildingsV144([...source.observations, { indicatorId: "A-026_building_footprint_count", value: 0 }])).toBe(false);
   });
