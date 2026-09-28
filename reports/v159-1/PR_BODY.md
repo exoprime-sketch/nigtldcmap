@@ -8,5 +8,6 @@
 
 ## 검증
 - `security:v128` 13/13(`TRACKED_RAW_SOURCE` 0) · 생성기 `--check` 최신 · 시트 행 수 불변
+- 로컬 `finalize:v151` 통과(main `aa8e171` 병합 후 `afd93f0`): release:v136 80/80 · role-split 53/53 · analysis QA 필수 실패 34(기준선 41, 신규 0) · boundary-34 21/22(1 skip) · boundary-policy 24/24
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

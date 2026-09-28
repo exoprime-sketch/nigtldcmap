@@ -19,3 +19,8 @@
 | `audit-vietnam-security-v128.mjs` | 13/13, `TRACKED_RAW_SOURCE` 0건 |
 | `build-typology-handoff-v159.mjs --check` | 생성 문서 최신 |
 | 생성기 재실행 | 시트 행 수 동일(7·41·152·152·155), 생성 문서 내용 변화는 CSV 행 1줄뿐 |
+
+## 게이트(로컬 finalize:v151)
+- 기준: `afd93f0` = main `aa8e171`(#36 제외 10건 + #33 다국가 골격 포함) + 이 PR. 1회차는 #33 병합 전 기준이라 중단하고 최신 main을 병합해 다시 실행(판정 전 중단, 실패 아님)
+- 결과 **통과**: release:v136 80/80 · role-split 53/53 · analysis QA 필수 실패 34(기준선 41, 신규 0) · boundary-34 21/22(1 skip) · boundary-policy 24/24
+- `security:v128` 13/13(`TRACKED_RAW_SOURCE` 0) — main CI 정적 잡 실패 원인 해소
