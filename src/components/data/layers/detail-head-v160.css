@@ -2,16 +2,26 @@
    heading sits in the hero, and the conditions and axes above the first
    chart take one row (label beside its control), not a stacked block. */
 
-.pav126-hero-heading {
-  margin: 4px 0 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #375a50;
-  line-height: 1.45;
+/* The analysis heading on the analysis panel's first line, with the data
+   summary beside it (wrapping below on a narrow screen). */
+.cev123-heading--v160 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
 }
-
-.cdp-detail-hero__analysis:empty {
+.cev123-heading--v160 .cev123-heading__title:empty {
   display: none;
+}
+.cev123-heading__title {
+  min-width: 0;
+}
+.pav126-hero-heading {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #122b27;
+  line-height: 1.4;
 }
 
 /* Conditions: label and control side by side. */

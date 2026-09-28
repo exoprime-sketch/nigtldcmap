@@ -184,10 +184,11 @@ export default function PublicDataAnalysisRouterV126({
   );
   const [selectedTech, setSelectedTech] = useState("all");
   const foldV160 = useDetailFoldV160();
-  // V160: the hero keeps a slot for the analysis heading (merged into the
-  // hero); until it is found - or on a page without it - the heading stays here.
+  // V160: the analysis panel's first line keeps a slot for the analysis
+  // heading (one row with the data summary); until it is found - or on a page
+  // without it - the heading stays here.
   const [heroSlotV160, setHeroSlotV160] = useState<HTMLElement | null>(null);
-  useEffect(() => setHeroSlotV160(document.getElementById("detail-hero-analysis-v160")), [elementId]);
+  useEffect(() => setHeroSlotV160(document.getElementById("detail-analysis-heading-v160")), [elementId]);
   const layerTwoOpenV160 = useDetailLayerOpenV160("2");
   useEffect(() => setSelectedTech("all"), [elementId]);
   const techIndicatorIds = useMemo(() => {
