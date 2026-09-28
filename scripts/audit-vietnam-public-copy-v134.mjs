@@ -23,6 +23,8 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV134, finishAuditV134 } from "./v134/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("public-copy:v134");
 const require = createRequire(import.meta.url);
 require.extensions[".ts"] = (module, fileName) => {
@@ -163,7 +165,7 @@ try {
     throw new Error("production build missing; run npm run build before public copy audit");
   }
   server = await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     const expected = headingById.get(elementId);
     try {
@@ -216,7 +218,7 @@ try {
   if (server) await server.close();
 }
 
-audit.check("DETAIL_ROUTE_RUNTIME_COVERAGE", runtimeFailure === null && inspectedRoutes === 152 && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: 152, routeFailures: [] });
+audit.check("DETAIL_ROUTE_RUNTIME_COVERAGE", runtimeFailure === null && inspectedRoutes === publicListedElementsV156(catalog).length && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: publicListedElementsV156(catalog).length, routeFailures: [] });
 audit.check("GENERIC_ANALYSIS_COPY_COUNT", genericHits.length === 0, genericHits, []);
 audit.check("DATA_SPECIFIC_TITLE_MATCH", titleMismatches.length === 0, titleMismatches, []);
 audit.check("PAGE_AND_ANALYSIS_HEADING_DISTINCT", repeatedRuntimeHeadings.length === 0, repeatedRuntimeHeadings, []);

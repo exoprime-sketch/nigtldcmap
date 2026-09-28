@@ -34,8 +34,12 @@ import {
   writeCsvV136,
 } from "./v136/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("human-review:v136");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
+// V156: the finder and detail reviews cover the public set.
+const publicSetV156 = publicListedElementsV156(catalog);
 
 // Every active layer the index publishes is reviewed, not a typed list of
 // twelve: V138 connected thirty more targets and each needs the same pass.
@@ -136,7 +140,7 @@ try {
     const count = Number(
       await evaluateValue(browser.cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`)
     );
-    if (count >= catalog.length) break;
+    if (count >= publicSetV156.length) break;
     await evaluateValue(browser.cdp, `(() => { window.scrollTo(0, document.body.scrollHeight); return true; })()`);
     try {
       await waitForValue(
@@ -176,7 +180,7 @@ try {
   });
 
   // ---- detail routes
-  for (const element of catalog) {
+  for (const element of publicSetV156) {
     const elementId = String(element.elementId || "");
     await navigate(browser.cdp, detailUrlV135(server.url, elementId));
     await waitForValue(browser.cdp, ANALYSIS_READY, { timeoutMs: 30_000 });
@@ -344,8 +348,8 @@ const unresolvedRemove = allRows.filter((row) => row.decision === "REMOVE");
 const mapActivationFailures = mapRows.filter((row) => row.activationFailure);
 
 audit.check("HUMAN_REVIEW_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
-audit.check("FINDER_HUMAN_REVIEW_COUNT", finderRows.length === 152, finderRows.length, 152);
-audit.check("DETAIL_HUMAN_REVIEW_COUNT", detailRows.length === 152, detailRows.length, 152);
+audit.check("FINDER_HUMAN_REVIEW_COUNT", finderRows.length === publicSetV156.length, finderRows.length, publicSetV156.length);
+audit.check("DETAIL_HUMAN_REVIEW_COUNT", detailRows.length === publicSetV156.length, detailRows.length, publicSetV156.length);
 audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", new Set(mapRows.map((row) => row.elementId)).size === MAP_DATASETS.length && MAP_DATASETS.length === mapLayerCountV138(), new Set(mapRows.map((row) => row.elementId)).size, mapLayerCountV138());
 audit.check("MAP_REVIEW_ACTIVATION", mapActivationFailures.length === 0, mapActivationFailures.slice(0, 5), []);
 audit.check("DOWNLOAD_HUMAN_REVIEW", downloadRows.length > 0, downloadRows.length, ">0");

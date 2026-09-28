@@ -14,6 +14,8 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finderUrlV135, finishAuditV135, mapUrlV135, normalizeTextV135 } from "./v135/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("public-screen:v135");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 
@@ -94,8 +96,9 @@ try {
   }
 
   // Q. Every detail route must lead with an analysis a reader can act on, not
-  // with a raw table or a metadata block.
-  for (const element of catalog) {
+  // with a raw table or a metadata block. V156: the public set - an excluded
+  // element's URL carries a notice, not an analysis.
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     await navigate(browser.cdp, detailUrlV135(server.url, elementId));
     await waitForValue(

@@ -23,6 +23,8 @@ import { detailUrlV135, finderUrlV135, mapUrlV135,
 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136, normalizeTextV136 } from "./v136/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("duplicate-copy:v136");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 
@@ -123,7 +125,7 @@ try {
   );
   findings.push({ route: "finder", ...(await evaluateValue(browser.cdp, duplicateExpression())) });
 
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     await navigate(browser.cdp, detailUrlV135(server.url, elementId));
     await waitForValue(browser.cdp, ANALYSIS_READY, { timeoutMs: 30_000 });
@@ -145,7 +147,8 @@ const repeatedHeadingFindings = findings.flatMap((row) =>
 const duplicateCount = gluedFindings.length + repeatedHeadingFindings.length;
 
 audit.check("DUPLICATE_COPY_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
-audit.check("INSPECTED_ROUTE_COUNT", findings.length >= 154, findings.length, ">=154");
+// V156: 2 list routes (home, finder) + every public detail (154 when all 152 were public).
+audit.check("INSPECTED_ROUTE_COUNT", findings.length >= 2 + publicListedElementsV156(catalog).length, findings.length, `>=${2 + publicListedElementsV156(catalog).length}`);
 audit.check("DUPLICATE_VISIBLE_COPY_COUNT", duplicateCount === 0, { glued: gluedFindings.slice(0, 20), repeatedHeadings: repeatedHeadingFindings.slice(0, 20) }, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);
 

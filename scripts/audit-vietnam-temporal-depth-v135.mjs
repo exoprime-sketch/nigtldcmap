@@ -22,6 +22,8 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finishAuditV135, normalizeTextV135 } from "./v135/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("temporal-depth:v135");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 const contractResult = readJson(resolve(PROJECT_ROOT, "reports/v132/final-public-visualization-contract-v132.json"));
@@ -47,7 +49,7 @@ try {
       brokenAssets.push({ url: response.url, status: response.status });
     }
   });
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     try {
       await navigate(browser.cdp, detailUrlV135(server.url, elementId));
@@ -83,13 +85,25 @@ try {
             .filter(Boolean);
           const ghg = root?.querySelector('[data-testid="ghg-sector-gas-analysis-v135"]');
           const inventory = root?.querySelector('[data-testid="reported-inventory-v147"]');
-          const inventoryRows = [...(inventory?.querySelectorAll('[data-testid="inventory-matrix-v147"] tbody tr') || [])];
-          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventory?.querySelectorAll('figure li').length === 4;
+          const inventoryMatrix = inventory?.querySelector('[data-testid="inventory-matrix-v147"]');
+          const inventoryRows = [...(inventoryMatrix?.querySelectorAll('tbody tr') || [])];
+          // V159 (decision 2026-09-24): C-002 is a document-first screen that
+          // draws no numeric chart, so its four sector figures lead as KPI
+          // tiles instead of the V147 bar figure. Either one is the analysis,
+          // and the tiles must come before the source table.
+          const inventoryFigureItems = inventory?.querySelectorAll('figure li').length || 0;
+          const inventoryTiles = [...(inventory?.querySelectorAll('[data-testid="reported-inventory-tiles-v159"] li') || [])];
+          const inventoryTilesLead = inventoryTiles.length === 4 && Boolean(inventoryMatrix) &&
+            Boolean(inventoryTiles[0].compareDocumentPosition(inventoryMatrix) & Node.DOCUMENT_POSITION_FOLLOWING) &&
+            inventoryTiles.every((tile) => /[0-9]|미기재/.test(tile.querySelector('strong')?.textContent || ''));
+          const inventoryPresentation = inventoryFigureItems === 4 ? 'figure-v147' : inventoryTilesLead ? 'kpi-tiles-v159' : 'none';
+          const inventoryValid = inventoryRows.length === 4 && inventoryRows.every((row) => row.querySelectorAll('td').length === 5 && /[0-9]/.test(row.querySelector('td')?.textContent || '')) && inventoryPresentation !== 'none';
           return {
             depth,
             chartCount: annualChartCount,
             monthlyCycleCount: validMonthlyCycle ? 1 : 0,
             inventoryValid,
+            inventoryPresentation,
             onePointCharts,
             claims,
             text,
@@ -197,7 +211,7 @@ const ghgAnalyticalView =
     : (ghg?.inventoryValid === true || ghg?.analyticalView === true) && ghg?.rawTableIsPrimary === false;
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
-audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === 152 && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: 152, routeFailures: [] });
+audit.check("TEMPORAL_RUNTIME_COVERAGE", runtimeFailure === null && routes.length === publicListedElementsV156(catalog).length && routeFailures.length === 0, { runtimeFailure, routeCount: routes.length, routeFailures }, { routeCount: publicListedElementsV156(catalog).length, routeFailures: [] });
 audit.check("TEMPORAL_DEPTH_MARKER_COVERAGE", invalidDepth.length === 0, invalidDepth, []);
 audit.check("TEMPORAL_DEPTH_CONTRACT_MATCH", contractDepthMismatches.length === 0, contractDepthMismatches, []);
 audit.check("SINGLE_YEAR_TIME_SERIES_COUNT", singleYearTrend.length === 0, singleYearTrend, []);
@@ -210,12 +224,14 @@ audit.check(
   {
     sectorGasObservations: ghgObservations.length,
     sectorGasView: ghg?.ghg || null,
+    inventoryValid: ghg?.inventoryValid,
+    inventoryPresentation: ghg?.inventoryPresentation,
     analyticalView: ghg?.analyticalView,
     rawTableIsPrimary: ghg?.rawTableIsPrimary,
   },
   ghgObservations.length > 0
     ? { present: true, rawMatrixPrimary: "false" }
-    : { analyticalView: true, rawTableIsPrimary: false }
+    : { "inventoryValid || analyticalView": true, rawTableIsPrimary: false }
 );
 audit.check("BROKEN_ASSET", brokenAssets.length === 0, brokenAssets, []);
 audit.check("CONSOLE_ERROR", (browser?.runtimeErrors || []).length === 0, browser?.runtimeErrors || [], []);

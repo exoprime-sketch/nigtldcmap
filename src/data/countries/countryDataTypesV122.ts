@@ -1,6 +1,7 @@
 import type {
   VietnamCatalogElementV124,
   VietnamDownloadAssetV124,
+  VietnamElementExclusionV156,
   VietnamElementPublicStatusV124,
   VietnamElementShardPayloadV124,
   VietnamEntityV124,
@@ -47,6 +48,8 @@ export interface CountryCatalogItemV122 {
   technologyIds: string[];
   publicStatus: VietnamElementPublicStatusV124;
   publicStatusLabel: string;
+  /** V156: set when `publicStatus` is "excluded"; null otherwise. */
+  exclusion?: VietnamElementExclusionV156 | null;
   dataPresenceStatus?: string | null;
   emptyReason?: string | null;
   displayAllowed: boolean;

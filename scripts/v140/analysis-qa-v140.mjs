@@ -50,6 +50,7 @@ import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
 import { recordRoleOf } from "./card-model-v140.mjs";
+import { EXCLUDED_NOTICE_SNAPSHOT_V156, excludedNoticeVerdictV156, isPubliclyListedV156 } from "../v156/exclusions-audit-v156.mjs";
 
 const argv = process.argv.slice(2);
 const opt = (flag, fallback = null) => {
@@ -1047,6 +1048,80 @@ async function checkElement(context, item) {
   return record;
 }
 
+// V156-D exclusions (user 2026-09-23 six + spec 2026-09-18 four,
+// reports/v156/EXPECTATION_CHANGES_V156D.md): an element decided not to be
+// offered has no finder card, analysis, table or download to walk - it is in
+// no list by decision. In place of the walk it is judged by what its own URL
+// must show: absent from the finder search, one notice card with the decision,
+// the reason and the date from the decision file, no chart, no download link,
+// and a clean runtime.
+async function checkExcludedElementV156(context, item) {
+  const elementId = item.elementId;
+  const record = {
+    elementId,
+    title: item.elementLabel,
+    kind: null,
+    cardClicked: null,
+    homeCardClicked: null,
+    selectionUrlPreserved: null,
+    screenLoaded: false,
+    cardValueVerified: null,
+    recomputed: null,
+    detailAnalysisFit: null,
+    analysisFit: { pass: null, kind: "excluded-v156", reason: "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0" },
+    controlsVerified: null,
+    tableValuesVerified: null,
+    mapHandoffVerified: null,
+    mapSymbolVerified: null,
+    remainingIssue: [],
+    notApplicable: ["cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"],
+    evidence: {},
+  };
+  const consoleErrors = [];
+  const assetFailures = [];
+  const page = await context.newPage();
+  page.on("console", (message) => { if (message.type() === "error") consoleErrors.push(message.text().slice(0, 200)); });
+  page.on("pageerror", (error) => consoleErrors.push(`pageerror: ${String(error?.message || error).slice(0, 200)}`));
+  page.on("response", (response) => {
+    const url = response.url();
+    if (!/\/static\/(?:js|css)\/|\/data\/|\.(?:json|geojson)(?:\?|$)/u.test(url)) return;
+    if (response.status() >= 400) assetFailures.push({ url: url.slice(-90), status: response.status() });
+  });
+  try {
+    // ---- 1. the finder: its own name finds no card
+    await page.goto(`${base}/#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
+    await page.waitForSelector('[data-testid="finder-results-v136"] [data-testid="public-finder-card-v135"]', { timeout: 60_000 });
+    const searchTerm = String(item.elementLabel || "").replace(/\[.*$/u, "").split(/[:;]/u)[0].trim().slice(0, 40);
+    await page.fill(".cdp-input", searchTerm);
+    await page.waitForTimeout(1_000);
+    const finderCards = await page.$$eval(`[data-testid="public-finder-card-v135"][data-element-id="${elementId}"]`, (nodes) => nodes.length).catch(() => -1);
+    record.evidence.finderSearch = { searchTerm, cards: finderCards };
+    // ---- 2. its own URL: the notice card and nothing else
+    await page.goto(`${base}/?view=data&country=VNM&element=${elementId}#element-detail`, { waitUntil: "networkidle", timeout: 90_000 });
+    await page.waitForSelector('[data-detail-excluded-v156="true"] [data-testid="detail-excluded-v156"]', { timeout: 30_000 }).catch(() => null);
+    const snapshot = await page.evaluate(EXCLUDED_NOTICE_SNAPSHOT_V156);
+    const verdict = excludedNoticeVerdictV156(snapshot, item.exclusion || null);
+    record.evidence.exclusionNotice = { snapshot, verdict };
+    record.statusChecks = {
+      absentFromFinder: finderCards === 0,
+      exclusionNoticePresent: Boolean(snapshot?.page && snapshot?.notice && snapshot?.decision && snapshot?.reason && snapshot?.decidedAt),
+      noticeMatchesDecision: verdict.pass,
+      chartCount0: Number(snapshot?.charts) === 0 && !snapshot?.analysisRoot,
+      downloadLinks0: Number(snapshot?.downloadLinks) === 0,
+    };
+    Object.entries(record.statusChecks).forEach(([key, ok]) => { if (!ok) record.remainingIssue.push(`${key} failed`); });
+    if (!verdict.pass) record.remainingIssue.push(`notice: ${verdict.problems.join(", ")}`);
+    record.screenLoaded = Boolean(snapshot?.page && snapshot?.notice) && consoleErrors.length === 0 && assetFailures.length === 0;
+    if (consoleErrors.length) record.remainingIssue.push(`console: ${consoleErrors[0]}`);
+    if (assetFailures.length) record.remainingIssue.push(`asset: ${JSON.stringify(assetFailures[0])}`);
+  } catch (error) {
+    record.remainingIssue.push(`runtime: ${(error instanceof Error ? error.message : String(error)).split("\n")[0].slice(0, 160)}`);
+  } finally {
+    await page.close().catch(() => null);
+  }
+  return record;
+}
+
 // ---------------------------------------------------------------- run
 const targets = catalog.filter((item) => !only || only.includes(item.elementId)).sort((a, b) => a.elementId.localeCompare(b.elementId));
 const results = [];
@@ -1056,7 +1131,7 @@ await Promise.all(
     const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, extraHTTPHeaders: bypassHeaders });
     while (queue.length) {
       const item = queue.shift();
-      const record = await checkElement(context, item);
+      const record = isPubliclyListedV156(item) ? await checkElement(context, item) : await checkExcludedElementV156(context, item);
       results.push(record);
       process.stdout.write(`${record.elementId} ${record.screenLoaded ? "ok" : "FAIL"} click=${record.cardClicked} url=${record.selectionUrlPreserved} value=${record.cardValueVerified} recomp=${record.recomputed?.status} fit=${record.detailAnalysisFit} afit=${record.analysisFit?.pass} ctrl=${record.controlsVerified} table=${record.evidence.table?.status} map=${record.mapHandoffVerified} sym=${record.mapSymbolVerified ? record.mapSymbolVerified.pass : null}${record.remainingIssue.length ? ` | ${record.remainingIssue.join("; ").slice(0, 140)}` : ""}${record.analysisFit?.missing?.length ? ` | afit missing: ${record.analysisFit.missing.join(", ")}` : ""}${record.mapSymbolVerified && record.mapSymbolVerified.pass === false ? ` | map symbol: ${(record.mapSymbolVerified.missing || [record.mapSymbolVerified.reason]).join(", ")}` : ""}\n`);
     }
@@ -1078,6 +1153,7 @@ const summary = {
   elements: results.length,
   valueBearing: results.filter((r) => r.kind && r.kind !== "status").length,
   statusOnly: results.filter((r) => r.kind === "status").length,
+  excludedV156: results.filter((r) => r.analysisFit?.kind === "excluded-v156").map((r) => r.elementId),
   cardClicked: tally("cardClicked"),
   homeCardClicked: tally("homeCardClicked"),
   selectionUrlPreserved: tally("selectionUrlPreserved"),

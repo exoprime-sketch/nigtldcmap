@@ -680,6 +680,12 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   }
 }
 
+/** V156: how an exclusion's basis reads on the public notice (the decision file keeps its own words). */
+const EXCLUSION_BASIS_LABEL_V156: Record<string, string> = {
+  "사용자 결정": "사용자 검토",
+  "데이터 명세서": "데이터 명세서 검토",
+};
+
 export default function CountryDataElementPage({
   elementId,
   countryIso3,
@@ -725,7 +731,9 @@ export default function CountryDataElementPage({
     const startedAt = markDetailPrepareStart(startMark);
     void Promise.all([
       loadCountryElementBundleV122(countryIso3, elementId),
-      loadCatalogForCountrySelectionV122(countryIso3),
+      // V156: an excluded element is not in any list, but its own page has to
+      // resolve so it can say why it is not offered.
+      loadCatalogForCountrySelectionV122(countryIso3, { includeExcluded: true }),
     ])
       .then(([payload, catalog]) => {
         if (cancelled) return;
@@ -850,6 +858,57 @@ export default function CountryDataElementPage({
     () => new Set(seriesIdsKeyV159 ? seriesIdsKeyV159.split(" ") : []),
     [seriesIdsKeyV159]
   );
+
+  // V156: a reviewed decision not to offer this element. One card, no charts, no
+  // table, no download - and the reason and date the decision carries.
+  if (catalogItem?.publicStatus === "excluded") {
+    // The heading follows the V159 naming rule like every other detail: the
+    // source line and the dataset's own name from the framework spec.
+    const excludedSpecV156 = getCardSpecV159(catalogItem.elementId);
+    return (
+      <div className="page-shell cdp-page cdp-detail-page-v146" data-detail-excluded-v156="true">
+        <button
+          type="button"
+          className="cdp-button cdp-button--secondary"
+          onClick={onBack}
+        >
+          {backLabel}
+        </button>
+        <section className="cdp-detail-hero">
+          <div>
+            {excludedSpecV156?.sourceLabel ? (
+              <p className="cdp-detail-hero__source">
+                <PublicTermTextV134 text={excludedSpecV156.sourceLabel} />
+              </p>
+            ) : null}
+            <h1>
+              <PublicTermTextV134 text={excludedSpecV156?.baseName || catalogItem.publicTitle} />
+            </h1>
+          </div>
+        </section>
+        <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
+          <p>
+            이 항목은 {catalogItem.exclusion?.decidedAt ? `${catalogItem.exclusion.decidedAt} ` : ""}검토로
+            제공 대상에서 제외되었습니다.
+          </p>
+          <p>
+            <strong>결정</strong>{" "}
+            <span data-exclusion-field="decision">
+              제공 대상 제외({EXCLUSION_BASIS_LABEL_V156[catalogItem.exclusion?.basis || ""] || "검토"})
+            </span>
+          </p>
+          <p>
+            <strong>사유</strong>{" "}
+            <span data-exclusion-field="reason"><PublicTermTextV134 text={catalogItem.exclusion?.reason || ""} /></span>
+          </p>
+          <p>
+            <strong>결정일</strong>{" "}
+            <span data-exclusion-field="decidedAt">{catalogItem.exclusion?.decidedAt || ""}</span>
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (!elementId) {
     return (

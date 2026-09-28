@@ -99,6 +99,7 @@ function toCatalogItem(
     mapFeatureCount: item.mapFeatureCount,
     downloadableRecordCount: item.downloadableRecordCount,
     downloadAssets: item.downloadAssets || [],
+    exclusion: item.exclusion ?? null,
     raw: item,
   };
 }
@@ -114,6 +115,8 @@ function publicStatusLabelV124(
     "data-entry-planned": "입력 예정",
     "not-collected": "원자료 미수집",
     quarantined: "현재 제공하지 않음",
+    // V156: a decision, not a measurement - the label says so plainly.
+    excluded: "제공 대상 제외",
   };
   return labels[status];
 }

@@ -1,19 +1,19 @@
-# 상세 계약 QA V153-D1 (2026-09-22T04:58:37.524Z)
+# 상세 계약 QA V153-D1 (2026-09-24T13:18:11.971Z)
 
-- 대상 152개 · 통과 152 · 실패 0 · 예외 행 33개(A-013, A-015, A-017, A-025, A-026, B-001, B-002, B-010, B-013, B-014, B-017, B-022, B-026, B-028, B-036, B-037, B-043, B-044, B-045, C-002, C-005, D-001, D-002, D-003, D-004, D-008, D-009, D-013, D-018, E-002, E-006, E-009, E-017)
-- primaryTypeMatch: 통과 152 · 실패 0 · 해당 없음 0
-- rankOrder: 통과 152 · 실패 0 · 해당 없음 0
-- axesMatch: 통과 113 · 실패 0 · 해당 없음 39
-- blockHonesty: 통과 152 · 실패 0 · 해당 없음 0
-- readingNotesAbsent: 통과 152 · 실패 0 · 해당 없음 0
-- statusNoteNoChart: 통과 5 · 실패 0 · 해당 없음 147
-- policyNoNumericChart: 통과 22 · 실패 0 · 해당 없음 130
-- kpiRow: 통과 152 · 실패 0 · 해당 없음 0
-- titleOnce: 통과 152 · 실패 0 · 해당 없음 0
-- sourceLine: 통과 152 · 실패 0 · 해당 없음 0
-- mapPlacement: 통과 42 · 실패 0 · 해당 없음 110
-- overflow320: 통과 152 · 실패 0 · 해당 없음 0
-- console: 통과 152 · 실패 0 · 해당 없음 0
+- 대상 142개 · 통과 142 · 실패 0 · 예외 행 31개(A-013, A-015, A-025, A-026, B-001, B-002, B-010, B-013, B-014, B-017, B-022, B-026, B-028, B-036, B-037, B-043, B-044, B-045, C-002, C-005, D-001, D-002, D-003, D-004, D-008, D-009, D-013, D-018, E-002, E-006, E-009)
+- primaryTypeMatch: 통과 142 · 실패 0 · 해당 없음 0
+- rankOrder: 통과 142 · 실패 0 · 해당 없음 0
+- axesMatch: 통과 110 · 실패 0 · 해당 없음 32
+- blockHonesty: 통과 142 · 실패 0 · 해당 없음 0
+- readingNotesAbsent: 통과 142 · 실패 0 · 해당 없음 0
+- statusNoteNoChart: 통과 1 · 실패 0 · 해당 없음 141
+- policyNoNumericChart: 통과 20 · 실패 0 · 해당 없음 122
+- kpiRow: 통과 142 · 실패 0 · 해당 없음 0
+- titleOnce: 통과 142 · 실패 0 · 해당 없음 0
+- sourceLine: 통과 142 · 실패 0 · 해당 없음 0
+- mapPlacement: 통과 42 · 실패 0 · 해당 없음 100
+- overflow320: 통과 142 · 실패 0 · 해당 없음 0
+- console: 통과 142 · 실패 0 · 해당 없음 0
 
 | ID | 계약 1순위 | 첫 블록 | 판정 | 문제 |
 |---|---|---|---|---|
@@ -33,7 +33,6 @@
 | A-014 | line | line | 통과 |  |
 | A-015 | category-bar | category-bar | 통과 |  |
 | A-016 | stacked-area | stacked-area | 통과 |  |
-| A-017 | dumbbell | dumbbell | 통과 |  |
 | A-018 | stacked-area | stacked-area | 통과 |  |
 | A-019 | line | line | 통과 |  |
 | A-020 | line | line | 통과 |  |
@@ -112,15 +111,12 @@
 | C-012 | comparison-table | comparison-table | 통과 |  |
 | C-013 | comparison-table | comparison-table | 통과 |  |
 | C-014 | comparison-table | comparison-table | 통과 |  |
-| C-015 | comparison-table | comparison-table | 통과 |  |
 | C-016 | region-bar | region-bar | 통과 |  |
 | C-017 | comparison-table | comparison-table | 통과 |  |
 | C-018 | category-bar | category-bar | 통과 |  |
 | C-019 | region-bar | region-bar | 통과 |  |
-| C-020 | status-note | status-note | 통과 |  |
 | C-021 | status-note | status-note | 통과 |  |
 | C-022 | region-bar | region-bar | 통과 |  |
-| C-023 | status-note | status-note | 통과 |  |
 | C-024 | comparison-table | comparison-table | 통과 |  |
 | C-025 | category-bar | category-bar | 통과 |  |
 | D-001 | category-bar | category-bar | 통과 |  |
@@ -146,7 +142,6 @@
 | D-021 | category-bar | category-bar | 통과 |  |
 | D-022 | category-bar | category-bar | 통과 |  |
 | D-023 | category-bar | category-bar | 통과 |  |
-| D-024 | category-bar | category-bar | 통과 |  |
 | D-025 | category-bar | category-bar | 통과 |  |
 | D-026 | category-bar | category-bar | 통과 |  |
 | E-001 | category-bar | category-bar | 통과 |  |
@@ -156,16 +151,11 @@
 | E-005 | category-bar | category-bar | 통과 |  |
 | E-006 | region-bar | region-bar | 통과 |  |
 | E-007 | comparison-table | comparison-table | 통과 |  |
-| E-008 | category-bar | category-bar | 통과 |  |
 | E-009 | category-bar | category-bar | 통과 |  |
 | E-010 | line | line | 통과 |  |
-| E-011 | status-note | status-note | 통과 |  |
 | E-012 | category-bar | category-bar | 통과 |  |
-| E-013 | status-note | status-note | 통과 |  |
 | E-014 | timeline | timeline | 통과 |  |
 | E-015 | comparison-table | comparison-table | 통과 |  |
-| E-016 | comparison-table | comparison-table | 통과 |  |
-| E-017 | comparison-table | comparison-table | 통과 |  |
 | E-018 | category-bar | category-bar | 통과 |  |
 | E-019 | category-bar | category-bar | 통과 |  |
 | E-020 | category-bar | category-bar | 통과 |  |

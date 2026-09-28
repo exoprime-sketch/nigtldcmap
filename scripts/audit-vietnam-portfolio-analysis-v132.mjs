@@ -22,6 +22,7 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV129 } from "./v129/audit-helpers.mjs";
 import { finishAuditV132 } from "./v132/audit-helpers.mjs";
+import { auditExcludedNoticesV156, excludedElementsV156, isPubliclyListedV156 } from "./v156/exclusions-audit-v156.mjs";
 
 const audit = new AuditV125("portfolio-analysis:v132");
 const fitResult = readJson(
@@ -43,6 +44,18 @@ const portfolioIds = [...new Set(["D-012", ...portfolioRendererIds])].filter((id
 const BUILD_ROOT = resolve(PROJECT_ROOT, "build");
 const BUILD_DATA_ROOT = resolve(BUILD_ROOT, "data/vietnam/v2");
 const pack = loadPackPayloads(BUILD_DATA_ROOT);
+// V156: the served build's own catalog says which elements are offered. A
+// portfolio element decided not to be offered keeps its renderer assignment
+// (PORTFOLIO_ELEMENT_COUNT) but its route shows the notice card, which is what
+// is checked there; E-008 likewise, when excluded.
+const buildCatalogV156 = readJson(resolve(BUILD_DATA_ROOT, "catalog.json")).value?.elements || [];
+const buildCatalogByIdV156 = new Map(buildCatalogV156.map((element) => [element.elementId, element]));
+const isOfferedV156 = (elementId) => isPubliclyListedV156(buildCatalogByIdV156.get(elementId));
+const publicPortfolioIds = portfolioIds.filter(isOfferedV156);
+const excludedPortfolioElementsV156 = excludedElementsV156(portfolioIds.map((id) => buildCatalogByIdV156.get(id)).filter(Boolean));
+const e008ExcludedV156 = !isOfferedV156("E-008");
+let excludedPortfolioNoticesV156 = [];
+let e008NoticeV156 = null;
 
 /** The build's data and the repository's data have to be the same bytes. */
 const dataDifferences = ["packs/bundle-index-v124.json", "catalog.json", "manifest.json"]
@@ -106,7 +119,7 @@ try {
   server = await startStaticBuildServer(BUILD_ROOT);
   browser = await launchHeadlessBrowser();
   await setViewport(browser.cdp, 1440, 1100);
-  for (const elementId of portfolioIds) {
+  for (const elementId of publicPortfolioIds) {
     try {
       await navigate(browser.cdp, detailUrlV129(server.url, elementId));
       await waitForValue(
@@ -183,6 +196,11 @@ try {
     }
   }
 
+  const noticeRuntimeV156 = { cdp: browser.cdp, baseUrl: server.url, detailUrl: detailUrlV129, navigate, waitForValue, evaluateValue };
+  excludedPortfolioNoticesV156 = await auditExcludedNoticesV156({ ...noticeRuntimeV156, elements: excludedPortfolioElementsV156 });
+  if (e008ExcludedV156) {
+    e008NoticeV156 = (await auditExcludedNoticesV156({ ...noticeRuntimeV156, elements: [buildCatalogByIdV156.get("E-008")] }))[0] || { pass: false, problems: ["E-008 notice not checked"] };
+  } else {
   await navigate(browser.cdp, detailUrlV129(server.url, "E-008"));
   await waitForValue(
     browser.cdp,
@@ -212,6 +230,7 @@ try {
       };
     })()`
   );
+  }
 } catch (error) {
   runtimeFailure = error instanceof Error ? error.message : String(error);
 } finally {
@@ -250,18 +269,29 @@ audit.check(
 );
 audit.check(
   "PORTFOLIO_LIST_BEFORE_SUMMARY",
-  runtimeFailure === null && routeResults.length === portfolioIds.length && routeFailures.length === 0,
+  runtimeFailure === null && routeResults.length === publicPortfolioIds.length && routeFailures.length === 0,
   { runtimeFailure, checked: routeResults.length, failures: routeFailures },
-  { runtimeFailure: null, checked: portfolioIds.length, failures: [] }
+  { runtimeFailure: null, checked: publicPortfolioIds.length, failures: [] }
 );
 audit.check(
+  "EXCLUDED_PORTFOLIO_ROUTE_NOTICE_V156",
+  excludedPortfolioNoticesV156.length === excludedPortfolioElementsV156.length && excludedPortfolioNoticesV156.every((row) => row.pass),
+  excludedPortfolioNoticesV156.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems })),
+  { routes: excludedPortfolioElementsV156.map((element) => element.elementId), notice: "card, no chart, no download link" }
+);
+// V156: while E-008 is excluded its route is the notice card; the three E-008
+// checks then verify that card (present, no chart, no download link) instead of
+// the research analysis it no longer offers.
+audit.check(
   "E008_ANALYSIS_BEFORE_LIST",
-  e008Result?.ordered === true &&
-    e008Result?.trendOrNote === true &&
-    Object.values(e008Result?.sections || {}).every(Boolean) &&
-    Number(e008Result?.filterCount || 0) >= 3,
-  e008Result,
-  {
+  e008ExcludedV156
+    ? e008NoticeV156?.pass === true
+    : e008Result?.ordered === true &&
+      e008Result?.trendOrNote === true &&
+      Object.values(e008Result?.sections || {}).every(Boolean) &&
+      Number(e008Result?.filterCount || 0) >= 3,
+  e008ExcludedV156 ? { excluded: true, notice: e008NoticeV156 && { pass: e008NoticeV156.pass, problems: e008NoticeV156.problems } } : e008Result,
+  e008ExcludedV156 ? { excluded: true, notice: "card, no chart, no download link" } : {
     sections: {
       "e008-breakdown": true,
       "e008-collaboration": true,
@@ -274,15 +304,15 @@ audit.check(
 );
 audit.check(
   "RESEARCH_LIST_BEFORE_ANALYSIS",
-  e008Result?.ordered === true,
-  e008Result?.ordered,
-  true
+  e008ExcludedV156 ? e008NoticeV156?.pass === true : e008Result?.ordered === true,
+  e008ExcludedV156 ? { excluded: true, notice: e008NoticeV156?.pass === true } : e008Result?.ordered,
+  e008ExcludedV156 ? { excluded: true, notice: true } : true
 );
 audit.check(
   "E008_PUBLIC_TITLE_POLICY",
-  Number(e008Result?.internalTitleCount || 0) === 0,
-  Number(e008Result?.internalTitleCount || 0),
-  0
+  e008ExcludedV156 ? e008NoticeV156?.pass === true : Number(e008Result?.internalTitleCount || 0) === 0,
+  e008ExcludedV156 ? { excluded: true, notice: e008NoticeV156?.pass === true } : Number(e008Result?.internalTitleCount || 0),
+  e008ExcludedV156 ? { excluded: true, notice: true } : 0
 );
 const v132ComponentSource = [
   "src/components/data/public/PublicPortfolioSummaryV132.tsx",
