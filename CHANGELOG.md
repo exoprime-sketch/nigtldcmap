@@ -2,6 +2,20 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V158 배포 단일화: GitHub Pages 배포 중단, Vercel 하나로 (PR 후보)
+
+### Removed
+
+- `.github/workflows/pages.yml`(수동 실행 전용 GitHub Pages 배포). 사용자 결정(2026-09-29)에 따른 것이다.
+  - 사유: build가 948.6 MB로 Pages 기준 900 MB를 넘었고, Pages 사이트는 설정·배포된 적이 없다(`reports/v158/DEPLOY_VERCEL_ONLY_V158.md`).
+
+### Changed
+
+- 게이트 감사: `workflow:v136`·`ci-contract:v133`·`visual-qa-contract:v134`의 Pages 검사를 `PAGES_WORKFLOW_RETIRED`로 바꿨다(Pages로 배포하는 workflow 0).
+- `performance:v128` source map 정책의 근거를 `ci.yml`로 옮겼다.
+- `deployment:v128` 문자열 검사에서 국가 경로 레지스트리(`countryContext.ts`)와 테스트 파일을 예외로 두었다. #33 이후 main CI Static gate 실패를 fix-forward한 것이다.
+- 배포 문서(`DEPLOYMENT_V128`·`ROLLBACK_V128`·README·CLAUDE.md)를 Vercel 기준으로 고쳤다.
+
 ## Unreleased — V158-B1 방글라데시 적재·8개 Division 경계·지도 후보표 (PR 후보)
 
 ### Added

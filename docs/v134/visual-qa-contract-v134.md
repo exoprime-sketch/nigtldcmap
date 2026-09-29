@@ -4,7 +4,7 @@ V134 treats browser/DOM behavior as release evidence and screenshot files as dia
 
 ## Blocking release path
 
-Both `.github/workflows/ci.yml` and `.github/workflows/pages.yml` run:
+`.github/workflows/ci.yml` runs (V158: the GitHub Pages workflow was deleted; Vercel deploys):
 
 1. `npm ci`
 2. `npm run finalize:v134`

@@ -14,13 +14,13 @@
 - 배포 environment와 완료 시각
 - manifest `generatedAt`
 - 필수 smoke screenshot
-- 배포에 사용한 workflow revision과 `PUBLIC_URL` repository variable
-- Pages source·environment protection 설정 snapshot
+- 배포 commit SHA와 Vercel deployment id
+- Vercel 프로젝트 환경변수 이름 목록(값 제외)과 도메인 설정 snapshot
 - custom domain을 사용하는 경우 CNAME, DNS와 TLS 상태
 
-GitHub Pages artifact retention과 environment history가 실제로 유지되는지 repository 설정에서 확인한다. retention을 확인하지 않은 상태에서 이전 artifact가 복구 가능하다고 가정하지 않는다.
+이전 Vercel production 배포가 보존 정책(retention) 안에 남아 있는지 확인한다. 확인하지 않은 상태에서 이전 배포로 되돌릴 수 있다고 가정하지 않는다(V158부터 GitHub Pages 배포 없음).
 
-base-path 또는 custom-domain 장애에서는 artifact만 되돌려도 복구되지 않을 수 있다. 직전 정상 배포 기록의 `PUBLIC_URL`, Pages source/environment, CNAME·DNS·TLS 설정을 현재 값과 대조하고, 설정 변경도 변경 이력과 승인 절차를 통해 복원한다. credential 값은 snapshot에 기록하지 않는다.
+base-path 또는 custom-domain 장애에서는 artifact만 되돌려도 복구되지 않을 수 있다. 직전 정상 배포 기록의 환경변수, 도메인, CNAME·DNS·TLS 설정을 현재 값과 대조하고, 설정 변경도 변경 이력과 승인 절차를 통해 복원한다. credential 값은 snapshot에 기록하지 않는다.
 
 ## 롤백 판단
 
