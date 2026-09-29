@@ -862,8 +862,14 @@ export function publicTextV126(value: unknown): string | null {
  * notes address whoever maintains the sheet, not a reader picking a source
  * filter, and they surfaced verbatim on the finder, the download list and the
  * source panel. The organisation name in front of the note is real and stays.
+ *
+ * A second kind of note names no organisation at all - it is a project-status
+ * placeholder ("확인필요", "연구진 설정(발주처 협의 예정)", "현지조사(예정)") or
+ * says which internal team assembled a public list ("…(용역사 취합)"). Unlike
+ * the sheet-column notes above, there is no real name in front of these to
+ * keep - the whole value is the note, so it is dropped entirely (2026-09-29).
  */
-const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조|확인필요|발주처|용역사|현지조사\(예정\)/u;
 
 const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
   // a bracketed aside about the sheet: "(레코드별 상이 - attr_19 참조)"

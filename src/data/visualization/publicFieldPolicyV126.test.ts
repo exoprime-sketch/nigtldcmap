@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { publicTextV126 } from "./publicFieldPolicyV126";
+import { publicSourceOrganizationV136_1, publicTextV126 } from "./publicFieldPolicyV126";
 
 describe("publicTextV126 separator trimming", () => {
   // The trimming rule exists to remove separators left dangling by the
@@ -30,5 +30,39 @@ describe("publicTextV126 separator trimming", () => {
   // compiler reused; the reader needs the basin, not the file note.
   it("drops the boundary-file reuse note and keeps the place", () => {
     expect(publicTextV126("8대 하천유역 — B-025 폴리곤 재사용")).toBe("8대 하천유역");
+  });
+});
+
+describe("publicSourceOrganizationV136_1 - internal review/status notes", () => {
+  // 2026-09-29: the finder's '출처(제공기관)' filter, the finder cards and the
+  // download page's attribution list showed these verbatim - a project-status
+  // placeholder with no organisation named, or a real-looking description
+  // that was actually just naming which internal team compiled it.
+  it("drops a bare status placeholder entirely", () => {
+    expect(publicSourceOrganizationV136_1("확인필요")).toBeNull();
+  });
+
+  it("drops a pending-decision placeholder even with a methodology word in front", () => {
+    expect(publicSourceOrganizationV136_1("연구진 설정(발주처 협의 예정)")).toBeNull();
+    expect(publicSourceOrganizationV136_1("현지조사(예정)")).toBeNull();
+  });
+
+  it("drops a value that only names who compiled a public list, not a source", () => {
+    expect(publicSourceOrganizationV136_1("각 기관 공식 웹사이트(용역사 취합)")).toBeNull();
+    expect(
+      publicSourceOrganizationV136_1("대한민국 외교부(MOFA) / 2050 탄소중립녹색성장위원회 등 공식 발표자료(용역사 취합)")
+    ).toBeNull();
+  });
+
+  it("keeps a real source description that merely mentions a field survey, absent a pending marker", () => {
+    expect(publicSourceOrganizationV136_1("FAOSTAT 임산물 생산량 기반 산출 / 현지조사")).toBe(
+      "FAOSTAT 임산물 생산량 기반 산출 / 현지조사"
+    );
+  });
+
+  it("keeps the sheet-note handling this function already had", () => {
+    expect(publicSourceOrganizationV136_1("USPTO (Google Patents 경유) — 레코드별 상이, 1.2_entity attr_14 참조")).toBe(
+      "USPTO (Google Patents 경유)"
+    );
   });
 });
