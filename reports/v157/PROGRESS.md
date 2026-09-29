@@ -59,3 +59,17 @@
   - 결과: `qa:role-split:v140` **53/53**, `npm run test:unit` **600/600**, `npx tsc --noEmit` 0.
 - **전후 캡처 8쌍 완료**: before는 운영 URL(`https://nigtldcmap.vercel.app`, = main), after는 이번 브랜치 production 빌드, 같은 경로·같은 클릭(`scripts/v157/capture-screens-v157.mjs`). 저장 위치 `reports/v157/screens/{before,after}/`, 촬영 단계는 각 폴더의 `screens-v157.json`.
 - **대기 중**: #43(2026년 제외 6건) 병합 알림. 알림이 오면 `origin/main` **merge**(rebase 금지) → `finalize:v151` **1회**(실패 시 실패 단계만 1회) → PR 생성 → Vercel Preview → 보고. 병합은 사용자가 "PR #N 병합"이라고 말할 때만.
+
+## 병합 후 할 일(사용자 지시 2026-09-30, 순서대로)
+
+1. **P8 병합 직후**
+   - `stash@{0}`(감사 생성물 5개, 2026-09-30 07:03 세션4 산출물로 추정) **삭제**. 삭제 전 사본 위치는 이 세션 스크래치패드(`peer-audit-backup/`)이며 세션4에 이미 통지함.
+   - **e2e 지도 B-031 실패 1건 원인 확인** — P8(V157)로 해소됐는지 판정 후 보고.
+2. **PROGRESS.md 갱신 후 대기.** 전수 QA(P5) 착수 신호를 받으면 `/clear` 후 이 문서와 `prompts/P5_V154_전수QA_merge.md` 기준으로 진행한다.
+
+## P8 PR 진행 기록(2026-09-30)
+
+- `origin/main`(#43 `26df689`) **merge** 완료(`6dc017e`, rebase 아님). 충돌 48건 중 생성물은 main 기준 수용 후 빌더 재실행, 코드 충돌 3건은 수동 해소.
+- 병합 시 `MAP_CORE_GROUP_V160`('핵심 레이어' 그룹·'더 많은 레이어' 접기) **미수용** — 사유 `REVIEW_V157.md` §4.8. 지도 화면 '핵심' 문구 0건 재확인(자료명 `핵심광물 부존`만 검출).
+- 병합 후 재확인: 활성 레이어 60개·피처 14,920개 동일, 계약 재빌드 `changed=false`(표출 60 / 대체 12, `boundaryPolicy34` 변경 없음).
+- 병합을 막던 타 세션 산출물 5개는 `stash@{0}`에 보관(위 1번에서 삭제 예정).
