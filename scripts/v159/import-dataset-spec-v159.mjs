@@ -48,10 +48,12 @@ const appliedOverrides = new Set();
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
-function applyOverride(elementId, field, value) {
+// Use-case fields (caution, dataUsed) name the case: `caseNo` in the override.
+function applyOverride(elementId, field, value, caseNo = null) {
   let out = value;
   OVERRIDES.forEach((item, index) => {
     if (item.elementId !== elementId || item.field !== field) return;
+    if (item.caseNo !== undefined && item.caseNo !== caseNo) return;
     const count = out.split(item.from).length - 1;
     if (count !== 1) throw new Error(`${elementId}.${field}: override 'from' found ${count} times`);
     out = out.replace(item.from, item.to);
@@ -337,7 +339,8 @@ function main() {
       const elementId = text(row[u("코드")]);
       const purposeRaw = text(row[u("활용 목적")]);
       const en = purposeRaw.match(/\s*\(([A-Za-z][^()]*)\)\s*$/);
-      const caution = text(row[u("유의점")]);
+      const caseNo = Number(text(row[u("사례 번호")]));
+      const caution = applyOverride(elementId, "caution", text(row[u("유의점")]), caseNo);
       const display = cautionForRegistry(caution, countries, registry);
       if (display.replacements.length) cautionReview.push({ elementId, caseNo: Number(text(row[u("사례 번호")])), caution, cautionDisplay: display.value, rule: display.rule, replacements: display.replacements });
       return {
@@ -346,7 +349,7 @@ function main() {
         purpose: en ? purposeRaw.slice(0, en.index).trim() : purposeRaw,
         purposeEn: en ? en[1].trim() : "",
         logic: text(row[u("논리 구조")]),
-        dataUsed: parseDataUsed(text(row[u("쓰는 데이터")]), catalog),
+        dataUsed: parseDataUsed(applyOverride(elementId, "dataUsed", text(row[u("쓰는 데이터")]), caseNo), catalog),
         storyline: text(row[u("스토리라인 예시")]),
         users: text(row[u("주 사용자")]).split(/\s*·\s*/).filter(Boolean),
         caution,
@@ -492,7 +495,7 @@ function writeCorrections() {
   writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
 }
 
-const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법" };
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터" };
 
 function mdCell(value) {
   return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");

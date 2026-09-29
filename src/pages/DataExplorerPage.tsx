@@ -971,18 +971,19 @@ export default function DataExplorerPage({
                 <dt>자료기간</dt>
                 <dd>{summary?.period && summary.kind !== "status" ? <PublicTermTextV134 text={summary.period} /> : semanticYearRange}</dd>
               </div>
-              <div>
-                <dt>제공기관</dt>
-                <dd>
-                  <PublicTermTextV134
-                    text={
-                      summary?.provider || (item.sourceOrganizations.length > 0
-                        ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                        : "—")
-                    }
-                  />
-                </dd>
-              </div>
+              {/* V161: provider and organisations arrive judged (working notes
+                  removed, spec source name as fallback); with nothing real left
+                  the row is not shown rather than filled with a placeholder. */}
+              {(summary?.provider || item.sourceOrganizations.length > 0) && (
+                <div>
+                  <dt>제공기관</dt>
+                  <dd>
+                    <PublicTermTextV134
+                      text={summary?.provider || item.sourceOrganizations.slice(0, 2).join(" · ")}
+                    />
+                  </dd>
+                </div>
+              )}
             </dl>
             <div className="cdp-card__actions">
               <button

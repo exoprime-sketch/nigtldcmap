@@ -112,7 +112,9 @@ export default function PublicSourcePanelV126({
     ...observations.map((item) => item.unit),
   ]);
   const licenses = uniquePublicValuesV126([
-    ...indicators.map((item) => item.licenseCode),
+    // V161: a licence line can end with a working note ("다운로드 제공 대상은 …
+    // 용역사가 재편집한 표준서식 자료임.") - judged like every source display.
+    ...indicators.map((item) => publicSourceOrganizationV136_1(item.licenseCode)),
     // Attribution lines carry the same per-row sheet note as the organisation
     // names - "Source: 각 기관 공식 웹사이트 및 공개 보도 (레코드별 상이)".
     ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
