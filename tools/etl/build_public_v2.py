@@ -1711,6 +1711,10 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 raise ValueError(f"exclusion without a reason: {element_id}")
             if not str(row.get("decidedAt") or "").strip():
                 raise ValueError(f"exclusion without a decision date: {element_id}")
+            # V156-E (2026-09-29): the detail page states only this public line;
+            # the reason, basis and date stay in the decision record.
+            if not str(row.get("publicNotice") or "").strip():
+                raise ValueError(f"exclusion without a public notice: {element_id}")
     all_data_decision_path = repo / country_config["publicationDecisions"]["allData"]
     all_data_decision = (
         json.loads(all_data_decision_path.read_text(encoding="utf-8"))
@@ -2203,6 +2207,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "reason": str(exclusion.get("reason") or ""),
                 "basis": str(exclusion.get("basis") or ""),
                 "decidedAt": str(exclusion.get("decidedAt") or ""),
+                "publicNotice": str(exclusion.get("publicNotice") or ""),
                 "measuredStatus": status,
                 "measuredPresence": presence,
             }

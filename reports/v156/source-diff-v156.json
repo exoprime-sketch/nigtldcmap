@@ -1,7 +1,7 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-diff-v156.mjs",
-  "generatedAt": "2026-09-29T05:10:41.906Z",
+  "generatedAt": "2026-09-29T05:36:08.072Z",
   "trees": {
     "current": "public/data/vietnam/v2",
     "candidate": ".staging/v156/public/data/vietnam/v2"
@@ -9,7 +9,7 @@
   "deliveredAt": "2026-09-22",
   "totals": {
     "elements": 152,
-    "unchanged": 146,
+    "unchanged": 152,
     "titleChanged": 0,
     "schemaBreaking": 0,
     "bespokeRendererAffected": 0,
@@ -975,16 +975,7 @@
         "after": "LCOE(균등화 발전비용)",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "actual",
-          "after": "excluded"
-        },
-        "downloadAllowed": {
-          "before": true,
-          "after": false
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 24,
@@ -1029,7 +1020,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5940,12 +5931,7 @@
         "after": "GHG 감축 사업 타당성 기초 정보",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "not-collected",
-          "after": "excluded"
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 0,
@@ -5990,7 +5976,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -6004,12 +5990,7 @@
         "after": "VCM 프로젝트 파이프라인",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "not-collected",
-          "after": "excluded"
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 0,
@@ -6054,7 +6035,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8251,16 +8232,7 @@
         "after": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "public-authorized",
-          "after": "excluded"
-        },
-        "downloadAllowed": {
-          "before": true,
-          "after": false
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 26,
@@ -8305,7 +8277,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8732,16 +8704,7 @@
         "after": "한국 기후기술 TRL",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "public-authorized",
-          "after": "excluded"
-        },
-        "downloadAllowed": {
-          "before": true,
-          "after": false
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 1,
@@ -8786,7 +8749,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8800,16 +8763,7 @@
         "after": "한국-경쟁국 기후기술 비교우위",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "public-authorized",
-          "after": "excluded"
-        },
-        "downloadAllowed": {
-          "before": true,
-          "after": false
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 2,
@@ -8854,7 +8808,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {

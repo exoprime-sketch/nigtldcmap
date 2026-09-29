@@ -83,7 +83,7 @@ const STATUS_NOTICE_V159 = new Map(
 );
 const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
 // Spec v8 (2026-09-29): the notice is one line; the words it must carry.
-const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제외" };
+const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제공 대상이 아닌" };
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
@@ -1079,7 +1079,7 @@ async function checkExcludedElementV156(context, item) {
     cardValueVerified: null,
     recomputed: null,
     detailAnalysisFit: null,
-    analysisFit: { pass: null, kind: "excluded-v156", reason: "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0" },
+    analysisFit: { pass: null, kind: "excluded-v156", reason: "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0" },
     controlsVerified: null,
     tableValuesVerified: null,
     mapHandoffVerified: null,
@@ -1115,7 +1115,11 @@ async function checkExcludedElementV156(context, item) {
     record.evidence.exclusionNotice = { snapshot, verdict };
     record.statusChecks = {
       absentFromFinder: finderCards === 0,
-      exclusionNoticePresent: Boolean(snapshot?.page && snapshot?.notice && snapshot?.decision && snapshot?.reason && snapshot?.decidedAt),
+      // V156-E (기준서 v1.1 표 13): the card is the title and one public line.
+      // Replaces exclusionNoticePresent (decision · reason · date shown) with
+      // the public line shown and the decision record not shown.
+      publicNoticePresent: Boolean(snapshot?.page && snapshot?.notice && snapshot?.publicNotice),
+      noDecisionMeta: Boolean(snapshot?.notice) && !verdict.problems.some((problem) => problem.startsWith("decision record shown")),
       noticeMatchesDecision: verdict.pass,
       chartCount0: Number(snapshot?.charts) === 0 && !snapshot?.analysisRoot,
       downloadLinks0: Number(snapshot?.downloadLinks) === 0,

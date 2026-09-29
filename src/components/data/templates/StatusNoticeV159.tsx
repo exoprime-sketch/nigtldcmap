@@ -22,7 +22,7 @@ export function statusNoticeLabelV159(typology: Pick<TypologyRowV159, "status" |
 
 const NOTICE_LINE_V159: Record<string, string> = {
   "data-pending": "데이터 준비 중 — 자료가 입고되면 분석 화면을 제공합니다.",
-  excluded: "금년도 공개 대상에서 제외된 데이터입니다.",
+  excluded: "제공 대상이 아닌 데이터입니다.",
 };
 
 interface Props {
