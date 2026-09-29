@@ -780,11 +780,15 @@ async function checkElement(context, item) {
     params.set("view", "data");
     params.set("country", "VNM");
     params.set("element", elementId);
+    // V160: every detail layer open (the V159 layout); the collapsed default
+    // is checked by scripts/v160/qa-core-first-v160.mjs.
+    params.set("detailLayers", "all");
     return `${base}/?${params.toString()}#element-detail`;
   };
   try {
     // ---- 1. the real card click, from the finder
-    await page.goto(`${base}/#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
+    // V160: a card clicked from the finder opens its detail with every layer open.
+    await page.goto(`${base}/?detailLayers=all#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
     await page.waitForSelector('[data-testid="finder-results-v136"]', { timeout: 60_000 });
     const searchTerm = (card?.title || item.elementLabel).replace(/\[.*$/u, "").split(/[:;]/u)[0].trim().slice(0, 40);
     await page.fill(".cdp-input", searchTerm);

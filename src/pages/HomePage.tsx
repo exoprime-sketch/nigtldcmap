@@ -1,8 +1,11 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
 import type { View } from "../app/navigation";
-import { loadVietnamPublicOverviewV128, publicReferencePeriodV128 } from "../data/publicPlatformV128";
-import type { VietnamPublicOverviewV128 } from "../data/publicPlatformV128";
+import { loadPublicOverviewV161, publicReferencePeriodV128 } from "../data/publicPlatformV128";
+import type { PublicOverviewV161 } from "../data/publicPlatformV128";
+import { ensureCountryRegistryLoadedV158 } from "../data/countries/countryDataProviderRegistryV122";
+import { resolveHomeCountryV161 } from "../data/homeCountryV161";
+import type { HomeCountryV161 } from "../data/homeCountryV161";
 import { loadCardSummariesV140, type CardSummaryV140 } from "../data/cardSummariesV140";
 import { datasetDatesV149, mapDatasetIdsV149, sortHomeItemsV149, usePublicUsageV149 } from "../data/publicUsageV149";
 import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125 } from "../types/dataFinderV125";
@@ -22,19 +25,30 @@ interface HomePageProps {
   onNavigate: (view: View) => void;
 }
 const SEARCH_EXAMPLES_V139 = ["국내총생산", "가뭄", "산림손실", "송전망"];
+const DEFAULT_MAP_ELEMENT_V139 = "A-024";
 
 export default function HomePage({ query, onQueryChange, onSubmit, onSearchExample, onOpenElement, onOpenMapElement, onNavigate }: HomePageProps) {
-  const [overview, setOverview] = useState<VietnamPublicOverviewV128 | null>(null);
+  // V161: the current country comes from ?country= and the country registry;
+  // every figure below is read from that country's own data tree.
+  const [country, setCountry] = useState<HomeCountryV161 | null>(null);
+  const [overview, setOverview] = useState<PublicOverviewV161 | null>(null);
   const [summaries, setSummaries] = useState<Map<string, CardSummaryV140>>(new Map());
   const [loadError, setLoadError] = useState(false);
   const [sort, setSort] = useState<"views" | "latest">("views");
   const usage = usePublicUsageV149();
   useEffect(() => {
     let cancelled = false;
-    void loadVietnamPublicOverviewV128().then(value => { if (!cancelled) setOverview(value); }).catch(() => { if (!cancelled) setLoadError(true); });
-    void loadCardSummariesV140().then(value => { if (!cancelled) setSummaries(value); }).catch(() => undefined);
+    void ensureCountryRegistryLoadedV158().catch(() => undefined).then(() => {
+      if (cancelled) return;
+      const current = resolveHomeCountryV161(window.location.search);
+      setCountry(current);
+      if (!current) { setLoadError(true); return; }
+      void loadPublicOverviewV161(current.iso3).then(value => { if (!cancelled) setOverview(value); }).catch(() => { if (!cancelled) setLoadError(true); });
+      void loadCardSummariesV140(current.iso3).then(value => { if (!cancelled) setSummaries(value); }).catch(() => undefined);
+    });
     return () => { cancelled = true; };
   }, []);
+  const countryIso3 = country?.iso3 || "";
   const hasViews = Boolean(usage?.detail.length);
   const items = useMemo(() => {
     if (!overview) return [];
@@ -43,10 +57,14 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
     return sortHomeItemsV149(overview.catalog.filter(item => item.hasPublicData), sort, usage?.detail || []).slice(0,8);
   }, [overview, sort, hasViews, usage]);
   const topMap = usage?.map.find(item => mapDatasetIdsV149.has(item.elementId));
-  const mapElement = topMap?.elementId || "A-024";
+  // The most viewed map dataset; else the transmission grid (A-024, the pre-V161
+  // default) when this country maps it; else the country's first map dataset.
+  const mapElement = (topMap && overview?.mapElementIds.includes(topMap.elementId) ? topMap.elementId : null)
+    || (overview?.mapElementIds.includes(DEFAULT_MAP_ELEMENT_V139) ? DEFAULT_MAP_ELEMENT_V139 : null)
+    || overview?.mapElementIds[0] || null;
   // V159 naming: the dataset's own name (source line apart), as on the finder and detail.
-  const mapTitle = getCardSpecV159(mapElement)?.baseName || overview?.catalog.find(item => item.elementId === mapElement)?.publicTitle || "송전망";
-  const mapSelection = summaries.get(mapElement)?.selection || EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
+  const mapTitle = mapElement ? getCardSpecV159(mapElement)?.baseName || overview?.catalog.find(item => item.elementId === mapElement)?.publicTitle || "" : "";
+  const mapSelection = (mapElement && summaries.get(mapElement)?.selection) || EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
 
   return <div className="home-v139" data-v128-home>
     <section className="home-final-v13 home-hero-v139" aria-labelledby="home-v128-title">
@@ -54,8 +72,8 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         <div className="home-final-copy home-hero-v139__copy">
           <span className="home-final-eyebrow">국가별 기후기술 협력 데이터</span>
           <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
-          <p>베트남의 정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.</p>
-          <p className="home-final-scope">현재 제공 국가 · 베트남</p>
+          <p>{country ? `${country.nameKo}의 ` : ""}정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.</p>
+          <p className="home-final-scope">현재 제공 국가 · {country ? country.live.map(item => item.nameKo).join(" · ") : "—"}</p>
           <form className="home-final-search" onSubmit={onSubmit} role="search">
             <label className="sr-only" htmlFor="home-search">데이터명·지역·기술·기관 검색</label>
             <input id="home-search" value={query} onChange={event => onQueryChange(event.target.value)} placeholder="데이터명·지역·기술·기관 검색" />
@@ -66,10 +84,12 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         <aside className="home-regional-v149" aria-labelledby="home-regional-heading" data-testid="home-hero-map-v139">
           <h2 id="home-regional-heading">주요 지역 데이터</h2>
           {topMap && <p className="home-regional-v149__basis">최근 30일 지도 조회 1위</p>}
-          <h3>{mapTitle}</h3>
-          <Suspense fallback={<p role="status">지도를 불러오는 중입니다.</p>}>
-            <DetailLocationMapV148 key={mapElement} compact elementId={mapElement} countryIso3="VNM" selection={mapSelection} onOpenMap={onOpenMapElement} />
-          </Suspense>
+          {mapElement ? <>
+            <h3>{mapTitle}</h3>
+            <Suspense fallback={<p role="status">지도를 불러오는 중입니다.</p>}>
+              <DetailLocationMapV148 key={mapElement} compact elementId={mapElement} countryIso3={countryIso3} selection={mapSelection} onOpenMap={onOpenMapElement} />
+            </Suspense>
+          </> : <p role="status">{overview ? "데이터 준비 중" : "지도를 불러오는 중입니다."}</p>}
         </aside>
       </div>
     </section>
@@ -98,13 +118,13 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           return <article key={item.elementId} className="home-featured-v139__card" data-element-id={item.elementId} aria-labelledby={"home-card-" + item.elementId}>
             {spec?.sourceLabel ? <div className="home-featured-v139__source" data-testid="home-card-source-v159"><PublicTermTextV134 text={spec.sourceLabel} /></div> : null}
             <h3 id={"home-card-" + item.elementId}><PublicTermTextV134 text={title} /></h3>
-            {card && <FinderCardSummaryV140 summary={card} />}
+            {card ? <FinderCardSummaryV140 summary={card} /> : <p className="home-featured-v139__preparing" role="status">데이터 준비 중</p>}
             <dl className="home-featured-v139__meta">
               <div><dt>자료기간</dt><dd><PublicTermTextV134 text={card?.period || publicReferencePeriodV128(item)} /></dd></div>
               <div><dt>제공기관</dt><dd><PublicTermTextV134 text={card?.provider || item.sourceOrganizations.join(" · ")} /></dd></div>
               {sort === "latest" && date && <div><dt>갱신일</dt><dd><time dateTime={date}>{new Date(date).toLocaleDateString("ko-KR", {timeZone:"Asia/Seoul"})}</time></dd></div>}
             </dl>
-            <button type="button" className="home-featured-v139__open" data-testid="home-card-open-v140" onClick={() => onOpenElement(item.elementId, "VNM", card?.selection || undefined)} aria-label={title + " 상세보기"}>상세보기 →</button>
+            <button type="button" className="home-featured-v139__open" data-testid="home-card-open-v140" onClick={() => onOpenElement(item.elementId, countryIso3, card?.selection || undefined)} aria-label={title + " 상세보기"}>상세보기 →</button>
           </article>;
         })}
       </div> : <div className="home-v128-loading" role="status">{loadError ? "데이터를 불러오지 못했습니다. 데이터 찾기에서 다시 확인해 주세요." : "데이터를 불러오는 중입니다."}</div>}

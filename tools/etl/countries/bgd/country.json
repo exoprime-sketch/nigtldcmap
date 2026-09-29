@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "etl-country-v158",
+  "iso3": "BGD",
+  "note": "새 국가 빌더(tools/etl/countries/bgd/build_country_v2.py)의 입력 선언. 베트남 빌더(tools/etl/build_public_v2.py)가 읽는 sourcePackage·baseProjection은 일부러 두지 않는다 — ETL_COUNTRY=BGD로 베트남 빌더를 돌리면 쓰기 전에 실패한다. 국가명·데이터 루트·Division 수는 public/data/countries.json에서 읽는다.",
+  "source": {
+    "delivery": "20260923",
+    "directory": "../20260827_개도국전략지도플랫폼/방글라데시데이터/20260923",
+    "staging": "_source/bgd/v158/workbooks",
+    "manifest": "_source/bgd/v158/source-manifest-v158.json"
+  },
+  "output": "public/data/bgd/v2",
+  "version": "v158",
+  "packPrefix": "bgd-v158",
+  "publicationDecisions": {
+    "allData": "tools/etl/countries/bgd/publication-decision-20260929.json"
+  },
+  "adm1": {
+    "system": "adm1-8",
+    "crosswalk": "tools/etl/countries/bgd/crosswalk-adm1.json"
+  },
+  "regionColumns": "tools/etl/countries/bgd/region-columns.json",
+  "countrySpecificElements": {
+    "note": "명칭·출처가 국가마다 다른 요소(사용자 2026-09-29, 용역사 기준서와 동일). 화면은 국가별 2_meta_info의 요소_KR·source_org로 표시하며, 빌더는 그 값을 지표 labelKo·sourceOrg에 원문 그대로 둔다.",
+    "elementIds": ["A-029", "A-030", "B-025", "C-004", "C-009", "C-010", "C-016", "C-017", "C-018", "D-003", "D-006"]
+  },
+  "boundaries": {
+    "provider": "geoBoundaries",
+    "release": "gbOpen",
+    "method": "ADM2 districts dissolved into ADM1 divisions by membership (user decision 2026-09-29)",
+    "staging": "_source/bgd/v158/boundaries"
+  }
+}

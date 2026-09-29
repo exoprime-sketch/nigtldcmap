@@ -4,6 +4,7 @@ import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { facilityRegionsV146 } from "../../../data/visualization/facilityRegionsV146";
 import { EvidenceMatrixV125 } from "../semantic/SemanticContractRendererV125";
 import "./detail-analysis-v146.css";
+import { useRankFoldV160 } from "./RankFoldV160";
 
 export default function CarbonMarketRegionsV146({ elementId, entities, initialRegion }: { elementId: string; entities: VietnamEntityV124[]; initialRegion?: string }) {
   const model = useMemo(() => facilityRegionsV146(entities), [entities]);
@@ -15,6 +16,8 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
   const isSector = elementId === "C-022";
   const chart = isSector && selected && selected.sectorTotalMatches ? selected.sectors : sameDate.map((row) => ({ label: row.region, value: row.count }));
   const scale = Math.max(1, ...chart.map((row) => row.value));
+  // V160: a province ranking opens on its top and bottom 10 (sectors are not a ranking of regions).
+  const rankFold = useRankFoldV160(isSector && selected?.sectorTotalMatches ? 0 : chart.length, `${date}|${region}`);
   if (!isSector) {
     // C-019 (⑥, V159): the carbon-pricing documents come first; the facility
     // counts by province follow as KPI tiles and the table - no chart
@@ -41,7 +44,7 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
     <div className="detail146-select"><label>기준일 <select value={date} onChange={(event) => { setDate(event.target.value); setRegion("all"); }}>{model.dates.map((value) => <option key={value}>{value}</option>)}</select></label>
       <label>지역 <select value={region} onChange={(event) => setRegion(event.target.value)}><option value="all">전체 지역</option>{rows.map((row) => <option value={row.code} key={row.code}>{row.region}</option>)}</select></label></div>
     <ChartAxesV150 x="시설 수" y={isSector && selected?.sectorTotalMatches ? "부문" : "성·시"} unit="개소" />
-    <figure className="detail146-chart" data-analysis-block={isSector && selected?.sectorTotalMatches ? "category-bar" : "region-bar"}><figcaption>{isSector && selected?.sectorTotalMatches ? `${selected.region} · 부문별 시설 수` : "성·시별 시설 수"} · {date} · 개소</figcaption><ol>{chart.map((row) => <li key={row.label}><span>{row.label}</span><i aria-hidden="true"><b style={{ width: `${row.value / scale * 100}%` }} /></i><strong>{row.value.toLocaleString("ko-KR")}</strong></li>)}</ol></figure>
+    <figure className="detail146-chart" data-analysis-block={isSector && selected?.sectorTotalMatches ? "category-bar" : "region-bar"}><figcaption>{isSector && selected?.sectorTotalMatches ? `${selected.region} · 부문별 시설 수` : "성·시별 시설 수"} · {date} · 개소</figcaption><ol>{chart.map((row, index) => <li key={row.label} {...rankFold.rowProps(index)}><span>{row.label}</span><i aria-hidden="true"><b style={{ width: `${row.value / scale * 100}%` }} /></i><strong>{row.value.toLocaleString("ko-KR")}</strong></li>)}</ol>{rankFold.toggle}</figure>
     {isSector && selected && !selected.sectorTotalMatches && <p role="status">이 지역의 부문별 세부 수치는 원자료에서 확인해 주세요.</p>}
     <details className="detail146-details"><summary>지역별 시설 수 표</summary><div className="detail146-table" data-analysis-block="sorted-table"><table><caption>선택한 기준일·지역 · 개소</caption><thead><tr><th scope="col">지역</th><th scope="col">시설 수</th>{isSector && <th scope="col">부문별 구성</th>}</tr></thead><tbody>{sameDate.map((row) => <tr key={row.code}><th scope="row">{row.region}</th><td>{row.count.toLocaleString("ko-KR")}</td>{isSector && <td>{row.sectors.map((sector) => `${sector.label} ${sector.value}개소`).join(" · ") || "미기재"}</td>}</tr>)}</tbody></table></div></details>
     <details className="detail146-details"><summary>{isSector ? "탄소시장 준비도 평가·제도 근거" : "탄소시장 제도·세율·시행 일정"}</summary>

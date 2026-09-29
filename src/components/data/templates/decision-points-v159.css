@@ -19,3 +19,52 @@
 @media (max-width: 400px) {
   .dp159-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+/* V160: layer 1 is read without scrolling far - on wide screens the points
+   sit two to a row instead of one long column. */
+@media (min-width: 900px) {
+  .dp159-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+}
+
+/* V160: the strip variant - one row of chips across the detail hero
+   (2-4 points; each chip reads "label value · detail" on one line where the
+   width allows, wrapping inside the chip rather than growing the row). */
+.cdp-detail-hero--v160 { flex-wrap: wrap; }
+.dp159--strip {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 8px 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2ebe6;
+}
+.dp159--strip h3 { flex: 0 0 auto; align-self: center; font-size: .85rem; color: #375a50; white-space: nowrap; }
+.dp159--strip .dp159-list {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+.dp159--strip .dp159-row {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+  padding: 6px 10px;
+  border: 1px solid #dbe7e3;
+  border-radius: 12px;
+  background: #f6faf8;
+  line-height: 1.35;
+}
+.dp159--strip .dp159-row dt { font-size: .78rem; }
+.dp159--strip .dp159-row dd { font-weight: 700; }
+.dp159--strip .dp159-row dd small { display: inline; margin: 0 0 0 4px; font-weight: 400; }
+@media (max-width: 900px) {
+  .dp159--strip { flex-wrap: wrap; }
+  .dp159--strip h3 { flex-basis: 100%; }
+  .dp159--strip .dp159-list { flex-wrap: wrap; }
+  .dp159--strip .dp159-row { flex: 1 1 200px; }
+}

@@ -448,7 +448,7 @@ await section("MAP", async () => {
 });
 // ------------------------------------------------------------ A-002 detail
 await section("DETAIL_A002", async () => {
-  const page = await open("/?view=data&country=VNM&element=A-002#element-detail", "h1");
+  const page = await open("/?view=data&country=VNM&element=A-002&detailLayers=all#element-detail", "h1");
   await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
   await page.waitForTimeout(800);
   const detail = await page.evaluate(() => {
@@ -476,7 +476,7 @@ await section("DETAIL_TITLES_V159", async () => {
   const mismatches = [];
   for (const row of SPEC_ROWS_V159) {
     const expected = specTitleV159(row.elementId);
-    await page.goto(`${base}/?view=data&country=VNM&element=${row.elementId}#element-detail`, { waitUntil: "domcontentloaded", timeout: 90_000 });
+    await page.goto(`${base}/?view=data&country=VNM&element=${row.elementId}&detailLayers=all#element-detail`, { waitUntil: "domcontentloaded", timeout: 90_000 });
     const title = await page
       .waitForFunction(() => {
         const text = String(document.querySelector(".cdp-detail-hero h1")?.textContent || "").normalize("NFC").replace(/\s+/gu, " ").trim();
@@ -493,7 +493,7 @@ await section("DETAIL_TITLES_V159", async () => {
 await section("MOVED_CAVEATS", async () => {
   const moved = {};
   for (const [id, needle] of MOVED_CAVEATS) {
-    const page = await open(`/?view=data&country=VNM&element=${id}#element-detail`, "h1");
+    const page = await open(`/?view=data&country=VNM&element=${id}&detailLayers=all#element-detail`, "h1");
     await page.waitForSelector('[data-testid="public-limitations-panel"]', { timeout: 60_000 }).catch(() => null);
     moved[id] = await page
       .$$eval('[data-testid="public-limitation-item"]', (nodes, text) => nodes.some((node) => (node.textContent || "").includes(text)), needle)
@@ -527,7 +527,7 @@ await section("DOWNLOAD", async () => {
 });
 // ------------------------------------------------------------ B-017 detail: no location claim
 await section("B017_DETAIL", async () => {
-  const page = await open("/?view=data&country=VNM&element=B-017#element-detail", "h1");
+  const page = await open("/?view=data&country=VNM&element=B-017&detailLayers=all#element-detail", "h1");
   await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
   await page.waitForTimeout(500);
   const b017 = await page.evaluate(() => {

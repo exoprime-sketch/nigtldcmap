@@ -8,6 +8,13 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import { CLIMATE_TECHNOLOGY_BY_ID } from "./data/climateTechnologyCatalog";
 import { technologyParamV153 } from "./utils/technologyIdV153";
+
+// V160-R (R-10): the finder lists every public dataset, ordered by name
+// (default) or by views; `sort=views` in the URL, name is the unmarked default.
+export type ExplorerSortV160 = "name" | "views";
+function explorerSortParamV160(value: string | null): ExplorerSortV160 {
+  return value === "views" ? "views" : "name";
+}
 import { PRIORITY_COUNTRIES } from "./data/priorityCountries";
 import { DATASETS } from "./data/publicDatasets";
 import { INDICATOR_CONFIGS } from "./data/indicators/registry";
@@ -427,6 +434,9 @@ export default function App() {
   const [explorerGroup, setExplorerGroup] = useState<string | null>(
     initialParams.get("group")
   );
+  const [explorerSort, setExplorerSort] = useState<ExplorerSortV160>(
+    explorerSortParamV160(initialParams.get("sort"))
+  );
   const [selectedDatasetId, setSelectedDatasetId] = useState<string | null>(
     initialLocationView === "dataset-detail" ? null : initialParams.get("dataset")
   );
@@ -530,6 +540,7 @@ export default function App() {
 
       const restoredTechnology = params.get("technology");
       setTechnologyId(technologyParamV153(restoredTechnology));
+      setExplorerSort(explorerSortParamV160(params.get("sort")));
 
       const restoredDataCountryIso3 = hasCountryDataProviderV122(countryParam)
         ? countryParam
@@ -600,6 +611,7 @@ export default function App() {
       if (category !== "all") params.set("category", category);
       if (technologyId !== "all") params.set("technology", technologyId);
       if (explorerGroup) params.set("group", explorerGroup);
+      if (explorerSort !== "name") params.set("sort", explorerSort);
     }
 
     if (
@@ -670,6 +682,11 @@ export default function App() {
 
     if (view === "map") {
       appendMapViewParams(params, mapViewState);
+      // V160: `mapList=all` opens '더 많은 레이어' on arrival; keep it while
+      // the map stays open so the lazily mounted list can still read it.
+      if (new URLSearchParams(window.location.search).get("mapList") === "all") {
+        params.set("mapList", "all");
+      }
       if (mapViewState.focusLayerKey && mapViewState.countryIso3) {
         params.set(
           "element",
@@ -703,6 +720,13 @@ export default function App() {
       }
     }
 
+    // V160: `detailLayers=all` opens every detail layer (detailLayerStoreV160
+    // reads it); kept across views so a finder -> card -> detail visit that
+    // started with it still arrives with every layer open.
+    if (new URLSearchParams(window.location.search).get("detailLayers") === "all") {
+      params.set("detailLayers", "all");
+    }
+
     const queryString = params.toString();
     const nextUrl = `${window.location.pathname}${
       queryString ? `?${queryString}` : ""
@@ -725,6 +749,7 @@ export default function App() {
     category,
     technologyId,
     explorerGroup,
+    explorerSort,
     selectedElementId,
     selectedElementCountryIso3,
     selectedDatasetId,
@@ -1107,6 +1132,8 @@ export default function App() {
             category={category}
             technologyId={technologyId}
             selectedGroup={explorerGroup}
+            sort={explorerSort}
+            onSortChange={setExplorerSort}
             onQueryChange={setQuery}
             onCountryChange={setExplorerCountryIso3}
             onSourceOrganizationChange={setSourceOrganization}
