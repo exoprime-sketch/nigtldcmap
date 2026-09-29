@@ -1,0 +1,31 @@
+{
+  "authorizedElementCount": 0,
+  "decisions": [
+    {
+      "approvedAt": "2026-09-29",
+      "approvedByRole": "project-owner",
+      "basis": {
+        "statedOn": "2026-09-29",
+        "statements": [
+          "베트남, 방글라데시 상관 없이 모든 건에 대해 일단은 모두 공개합니다.",
+          "공개 가능여부 상관없이 최대한 표출",
+          "표출만, 다운로드는 메타대로"
+        ],
+        "type": "project-owner-statement"
+      },
+      "contactFieldsAllowed": true,
+      "countryIso3": "BGD",
+      "decision": "display-all-download-per-source",
+      "decisionId": "BGD-ALL-DATA-DISPLAY-2026-09-29",
+      "displayAllowed": true,
+      "downloadAllowed": true,
+      "downloadRule": "indicator meta download_allowed == 가능 (record downloadEligible carries the verdict)",
+      "exclusions": [],
+      "notes": "방글라데시 납품 요소의 값은 원자료 메타의 표출 가능 여부(redistribution_allowed)와 관계없이 모두 표출한다. 다운로드 파일에는 지표 메타 download_allowed가 '가능'인 지표의 기록만 담는다(불가·확인필요·제한은 제외). 원문 라이선스와 출처 표기는 지표별로 그대로 보존하며, 이 결정이 새로운 오픈 라이선스를 부여하지 않는다. 미제공 요소에 값을 만들지 않는다. 비밀번호·토큰·인증정보는 이 결정의 대상이 아니다.",
+      "scope": "all-delivered-elements",
+      "sourceAttributionRequired": true,
+      "sourceLicensePreserved": true
+    }
+  ],
+  "schemaVersion": "v124"
+}

@@ -1,0 +1,83 @@
+{
+  "accountedElements": 152,
+  "assetLayoutVersion": "gzip-base64-json-envelope-v2",
+  "assets": {
+    "adm1Geometry": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+    "assetIntegrity": "/data/bgd/v2/asset-integrity.json",
+    "bundleIndex": "/data/bgd/v2/packs/bundle-index-v124.json",
+    "catalog": "/data/bgd/v2/catalog.json",
+    "frameworkCoverage": "/data/bgd/v2/framework-coverage.json",
+    "geometryManifest": "/data/bgd/v2/geometry/geometry-manifest.json",
+    "mapIndex": "/data/bgd/v2/map-index.json",
+    "publicationDecisions": "/data/bgd/v2/publication-decisions.json",
+    "qualityReport": "/data/bgd/v2/quality-report.json",
+    "rightsMatrix": "/data/bgd/v2/rights-matrix.json",
+    "searchIndex": [
+      "/data/bgd/v2/packs/search-index-v124-5a658814.json"
+    ],
+    "sourceRegistry": "/data/bgd/v2/packs/source-registry-v124-ff31b129.json",
+    "spatialLayers": []
+  },
+  "authorizedElementCount": 0,
+  "authorizedRows": {
+    "entities": 0,
+    "found": 0,
+    "observations": 0,
+    "published": 0,
+    "suppressed": 0,
+    "withoutPopulatedRows": []
+  },
+  "bundleIndexElements": 152,
+  "country": {
+    "iso3": "BGD",
+    "nameEn": "Bangladesh",
+    "nameKo": "방글라데시"
+  },
+  "downloadDelivery": {
+    "adapter": "null",
+    "adapterConfigured": false,
+    "assetCount": 170,
+    "externalAssetCount": 0,
+    "externalByteTotal": 0,
+    "pendingUploadCount": 0,
+    "repositoryAssetCount": 170,
+    "uploadedCount": 0
+  },
+  "downloadableElementCount": 85,
+  "frameworkElements": 152,
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "mapFeatureCount": 0,
+  "mapLayerCount": 0,
+  "packCount": 24,
+  "publicStatusCounts": {
+    "actual": 91,
+    "not-provided": 33,
+    "partial": 25,
+    "schema-only": 3
+  },
+  "rawRows": {
+    "entities": 28697,
+    "metadata": 1747,
+    "nonstandardRows": 304,
+    "normalizedCoreRows": 50825,
+    "observations": 20381,
+    "total": 51129
+  },
+  "rowBalance": {
+    "explicitPlaceholderRows": 66,
+    "formOrAuxiliaryRows": 0,
+    "matches": true,
+    "processedCoreRows": 50825,
+    "processedNonstandardRows": 304,
+    "processedRows": 51129,
+    "sourceOriginalRows": 51129,
+    "supplementalSourceRows": 238
+  },
+  "runtimeVersion": "v124-gzip-json-envelope-v1",
+  "schemaVersion": "v124",
+  "shardCount": 24,
+  "sourcePackage": "방글라데시데이터/20260923",
+  "sourcePackageSha256": "fb6ff895cbda9536fb6b3c908403f48772c365650a2013d30cfc62abc77fb4ef",
+  "unexplainedElements": 0,
+  "workbookFiles": 119
+}

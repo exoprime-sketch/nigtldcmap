@@ -37,9 +37,14 @@ countryPublicDirV158("VNM");                                      // 노드 측(
 ## 4. 새 국가 추가 체크리스트
 
 1. **레지스트리**: `public/data/countries.json`에 항목 추가 — `iso3`·`nameKo`·`nameEn`·`dataRoot`·`adm.level1{count,label,asset,keyScheme}`·`bbox`·`defaultZoom`·`boundaryEpoch`·`categoriesAvailable`·`status: "preparing"`. 번들 폴백(`countryContext.ts`의 `BUNDLED_DATA_ROOTS_V158`)도 같이 갱신한다(테스트가 일치를 확인한다).
-2. **ETL 입력 선언**: `tools/etl/countries/<iso3>/country.json` — 기준 투영(카탈로그·매니페스트), 원자료 패키지, 공개 결정 파일, 프레임워크 요소 수, ADM1 체계. 값은 그 국가의 것으로 적고 코드는 고치지 않는다.
+2. **ETL 입력 선언**: `tools/etl/countries/<iso3>/country.json` — 원자료 납품 폴더·스테이징 경로, 출력 루트, 팩 접두, 공개 결정 파일, ADM1 체계, 지역명 열 선언(`region-columns.json`). 값은 그 국가의 것으로 적고 코드는 고치지 않는다. 기대 워크북 수·미제공 목록은 적지 않는다 — 프레임워크(152)와 납품 목록의 차이에서 계산한다.
 3. **경계**: `adm.level1.asset`이 가리키는 GeoJSON과 이름 crosswalk·한글 지명표를 `tools/etl/countries/<iso3>/`에 둔다. 경계는 임의 생성하지 않고 출처·라이선스를 manifest에 적는다.
-4. **적재**: `ETL_COUNTRY=<ISO3> python -m tools.etl.build_public_v2`(또는 런북 `npm run refresh:data -- --source … --apply`)로 `public/data/<iso3>/v2`를 만든다.
+4. **적재**(V158-B1 정정): 새 국가는 **국가 빌더**로 만든다. 베트남 빌더(`tools.etl.build_public_v2`)는 베트남 V1 기준 투영·파생 규칙·공간 빌더를 전제하므로 `ETL_COUNTRY=<ISO3>`로 다른 국가에 돌리지 않는다. 새 국가의 `country.json`에는 베트남 빌더가 읽는 `sourcePackage`·`baseProjection`을 두지 않아, 잘못 돌려도 쓰기 전에 멈춘다.
+   1. `python tools/etl/countries/<code>/stage_source.py --country <code>` — 납품 xlsx만 `_source/<code>/…/workbooks`로 복사하고 sha256 목록을 쓴다.
+   2. `python -m tools.etl.redact_source_credentials_v156 --workbooks <스테이징> --report reports/v15x/source-credential-redaction-<code>-v15x.json` — 복사본에서만 자격증명을 지운다(원본은 건드리지 않는다).
+   3. `python tools/etl/countries/<code>/build_country_v2.py --country <code>` — `public/data/<code>/v2`(베트남과 같은 파일명·스키마, 지도 레이어 0). `--out .staging/<dir>/public/data/<code>/v2`로 스테이징에 먼저 쓸 수 있다.
+   4. `node tools/etl/countries/<code>/verify_country_v2.cjs --country <code>` — 베트남 트리와 스키마 대조, 행·칸 누락 0, 권리·다운로드, 무결성, 지역명(`formatRegionName`), 베트남 트리 불변. 결과는 `reports/v15x/<code>-verify-v15x.json`.
+   - 스크립트는 `--country` 인자로만 국가를 받는다. 세 번째 국가가 오면 `tools/etl/countries/` 공용 위치로 옮기기만 하면 된다.
 5. **후속 빌더**: `--country <iso3>`로 map-targets → home-preview → dataset-directory → card-summaries → asset-integrity를 돌린다.
 6. **비교 계약**: `npm run build:country-compare:v158`로 `countryCompare`를 다시 생성한다. 비교는 **같은 단위**일 때만 이뤄지고, 연도는 `latest-common`(두 국가가 모두 가진 최신 연도)이다.
 7. **공개 전환**: 데이터·게이트가 통과한 뒤에 `status`를 `live`로 바꾼다. 그때 비로소 `?country=<iso3>`가 허용된다.
