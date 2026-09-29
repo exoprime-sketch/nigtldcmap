@@ -1,0 +1,3162 @@
+{
+  "schemaVersion": "region-names-v161",
+  "generatedBy": "scripts/v161/build-region-names-v161.mjs",
+  "format": "한글명 (현지명)",
+  "rules": [
+    "① 플랫폼 사전(베트남 63·34·도시, 방글라데시 주 8·구 64) ③ 그 밖의 베트남 지명은 국립국어원 베트남어 표기 규칙 제안(pending) ④ 없으면 현지명만",
+    "현지명은 원문 그대로 괄호에 넣고, 한글명과 같으면 괄호를 생략한다",
+    "지도 라벨은 한글만(mode: label), 개편 전 63개 성은 원문 유지 + 통합 안내(mergedInto)"
+  ],
+  "countries": {
+    "BGD": {
+      "levels": [
+        "division",
+        "district"
+      ],
+      "entries": [
+        {
+          "level": "division",
+          "local": "Barisal",
+          "ko": "바리살",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "barisal",
+            "barishal"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Chittagong",
+          "ko": "치타공",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "chattogram",
+            "chittagong"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Dhaka",
+          "ko": "다카",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dhaka"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Khulna",
+          "ko": "쿨나",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "khulna"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Mymensingh",
+          "ko": "마이멘싱",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "mymensingh"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Rajshahi",
+          "ko": "라지샤히",
+          "source": "intake-2026-09-23 · kowiki",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "rajshahi"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Rangpur",
+          "ko": "랑푸르",
+          "source": "intake-2026-09-23 · kowiki",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "rangpur"
+          ]
+        },
+        {
+          "level": "division",
+          "local": "Sylhet",
+          "ko": "실렛",
+          "source": "embassy-dhaka-2016 · intake-2026-09-23",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "sylhet"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Bagerhat",
+          "ko": "바게르하트",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "bagerhat"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Bandarban",
+          "ko": "반다르반",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "bandarban"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Barguna",
+          "ko": "바르구나",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "barguna"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Barisal",
+          "ko": "바리살",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "barisal",
+            "barishal"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Bhola",
+          "ko": "볼라",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "bhola"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Bogra",
+          "ko": "보그라",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "bogra",
+            "bogura"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Brahamanbaria",
+          "ko": "브라만바리아",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "brahamanbaria",
+            "brahmanbaria"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Chandpur",
+          "ko": "찬드푸르",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "chandpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Chittagong",
+          "ko": "치타공",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "chattogram",
+            "chittagong"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Chuadanga",
+          "ko": "추아당가",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "chuadanga"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Comilla",
+          "ko": "코밀라",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "comilla",
+            "cumilla"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Cox's Bazar",
+          "ko": "콕스바자르",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "coxsbazar"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Dhaka",
+          "ko": "다카",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dhaka"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Dinajpur",
+          "ko": "디나지푸르",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "dinajpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Faridpur",
+          "ko": "파리드푸르",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "faridpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Feni",
+          "ko": "페니",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "feni"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Gaibandha",
+          "ko": "가이반다",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "gaibandha"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Gazipur",
+          "ko": "가지푸르",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "gazipur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Gopalganj",
+          "ko": "고팔간지",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "gopalganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Habiganj",
+          "ko": "하비간지",
+          "parent": "Sylhet",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "habiganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Jamalpur",
+          "ko": "자말푸르",
+          "parent": "Mymensingh",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "jamalpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Jessore",
+          "ko": "조쇼르",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "jashore",
+            "jessore"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Jhalokati",
+          "ko": "잘로카티",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "jhalokathi",
+            "jhalokati"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Jhenaidah",
+          "ko": "제나이다",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "jhenaidah"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Joypurhat",
+          "ko": "조이푸르하트",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "joypurhat"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Khagrachhari",
+          "ko": "카그라차리",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "khagrachhari"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Khulna",
+          "ko": "쿨나",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "khulna"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Kishoreganj",
+          "ko": "키쇼레간지",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "kishoreganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Kurigram",
+          "ko": "쿠리그람",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "kurigram"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Kushtia",
+          "ko": "쿠슈티아",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "kushtia"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Lakshmipur",
+          "ko": "락슈미푸르",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "lakshmipur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Lalmonirhat",
+          "ko": "랄모니르하트",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "lalmonirhat"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Madaripur",
+          "ko": "마다리푸르",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "madaripur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Magura",
+          "ko": "마구라",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "magura"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Manikganj",
+          "ko": "마니크간지",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "manikganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Maulvibazar",
+          "ko": "모울비바자르",
+          "parent": "Sylhet",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "maulvibazar",
+            "moulvibazar"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Meherpur",
+          "ko": "메헤르푸르",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "meherpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Munshiganj",
+          "ko": "문시간지",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "munshiganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Mymensingh",
+          "ko": "마이멘싱",
+          "parent": "Mymensingh",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "mymensingh"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Naogaon",
+          "ko": "나오가온",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "naogaon"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Narail",
+          "ko": "나라일",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "narail"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Narayanganj",
+          "ko": "나라양간지",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "narayanganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Narsingdi",
+          "ko": "나르싱디",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "narsingdi"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Natore",
+          "ko": "나토르",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "natore"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Nawabganj",
+          "ko": "차파이나와브간지",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "chapainawabganj",
+            "nawabganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Netrakona",
+          "ko": "네트로코나",
+          "parent": "Mymensingh",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "netrakona",
+            "netrokona"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Nilphamari",
+          "ko": "닐파마리",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "nilphamari"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Noakhali",
+          "ko": "노아칼리",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "noakhali"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Pabna",
+          "ko": "파브나",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "pabna"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Panchagarh",
+          "ko": "판차가르",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "panchagarh"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Patuakhali",
+          "ko": "파투아칼리",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "patuakhali"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Pirojpur",
+          "ko": "피로지푸르",
+          "parent": "Barisal",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "pirojpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Rajbari",
+          "ko": "라지바리",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "rajbari"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Rajshahi",
+          "ko": "라지샤히",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "rajshahi"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Rangamati",
+          "ko": "랑가마티",
+          "parent": "Chittagong",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "rangamati"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Rangpur",
+          "ko": "랑푸르",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "rangpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Satkhira",
+          "ko": "사트키라",
+          "parent": "Khulna",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "satkhira"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Shariatpur",
+          "ko": "샤리아트푸르",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "shariatpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Sherpur",
+          "ko": "셰르푸르",
+          "parent": "Mymensingh",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "sherpur"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Sirajganj",
+          "ko": "시라지간지",
+          "parent": "Rajshahi",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "sirajganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Sunamganj",
+          "ko": "수남간지",
+          "parent": "Sylhet",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "sunamganj"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Sylhet",
+          "ko": "실렛",
+          "parent": "Sylhet",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "sylhet"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Tangail",
+          "ko": "탕가일",
+          "parent": "Dhaka",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "tangail"
+          ]
+        },
+        {
+          "level": "district",
+          "local": "Thakurgaon",
+          "ko": "타쿠르가온",
+          "parent": "Rangpur",
+          "source": "kowiki:방글라데시의 구@39642062",
+          "reviewStatus": "pending",
+          "keys": [
+            "thakurgaon"
+          ]
+        }
+      ]
+    },
+    "VNM": {
+      "levels": [
+        "adm1-34",
+        "city",
+        "adm1-63",
+        "locality"
+      ],
+      "entries": [
+        {
+          "level": "adm1-34",
+          "code": "VN34-01",
+          "local": "Lai Châu",
+          "ko": "라이쩌우",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "laichau"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-02",
+          "local": "Lào Cai",
+          "ko": "라오까이",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "laocai"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-04",
+          "local": "Cao Bằng",
+          "ko": "까오방",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "caobang"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-05",
+          "local": "Sơn La",
+          "ko": "선라",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "sonla"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-07",
+          "local": "Tuyên Quang",
+          "ko": "뚜옌꽝",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "tuyenquang"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-09",
+          "local": "Lạng Sơn",
+          "ko": "랑선",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "langson"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-13",
+          "local": "Quảng Ninh",
+          "ko": "꽝닌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "quangninh"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-18",
+          "local": "Ninh Bình",
+          "ko": "닌빈",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "ninhbinh"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-21",
+          "local": "Thanh Hóa",
+          "ko": "타인호아",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "thanhhoa"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-22",
+          "local": "Nghệ An",
+          "ko": "응에안",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "nghean"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-23",
+          "local": "Hà Tĩnh",
+          "ko": "하띤",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hatinh"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-25",
+          "local": "Quảng Trị",
+          "ko": "꽝찌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "quangtri"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-26",
+          "local": "Huế",
+          "ko": "후에",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hue"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-29",
+          "local": "Quảng Ngãi",
+          "ko": "꽝응아이",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "quangngai"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-30",
+          "local": "Gia Lai",
+          "ko": "잘라이",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "gialai"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-33",
+          "local": "Đắk Lắk",
+          "ko": "닥락",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "daclac",
+            "daclak",
+            "daklak"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-34",
+          "local": "Khánh Hòa",
+          "ko": "카인호아",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "khanhhoa"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-35",
+          "local": "Lâm Đồng",
+          "ko": "럼동",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "lamdong"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-37",
+          "local": "Tây Ninh",
+          "ko": "떠이닌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "tayninh"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-39",
+          "local": "Đồng Nai",
+          "ko": "동나이",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dongnai"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-44",
+          "local": "An Giang",
+          "ko": "안장",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "angiang"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-45",
+          "local": "Đồng Tháp",
+          "ko": "동탑",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dongthap"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-49",
+          "local": "Vĩnh Long",
+          "ko": "빈롱",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "vinhlong"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-56",
+          "local": "Bắc Ninh",
+          "ko": "박닌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "bacninh"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-59",
+          "local": "Cà Mau",
+          "ko": "까마우",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "camau"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-66",
+          "local": "Hưng Yên",
+          "ko": "흥옌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hungyen"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-68",
+          "local": "Phú Thọ",
+          "ko": "푸토",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "phutho"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-69",
+          "local": "Thái Nguyên",
+          "ko": "타이응우옌",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "thainguyen"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-71",
+          "local": "Điện Biên",
+          "ko": "디엔비엔",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dienbien"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-CT",
+          "local": "Cần Thơ",
+          "ko": "껀터",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "cantho"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-DN",
+          "local": "Đà Nẵng",
+          "ko": "다낭",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "danang"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-HN",
+          "local": "Hà Nội",
+          "ko": "하노이",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hanoi"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-HP",
+          "local": "Hải Phòng",
+          "ko": "하이퐁",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "haiphong"
+          ]
+        },
+        {
+          "level": "adm1-34",
+          "code": "VN34-SG",
+          "local": "Hồ Chí Minh",
+          "ko": "호찌민",
+          "source": "ADM1_34_UNITS_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hcmc",
+            "hochiminh",
+            "saigon"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-26",
+          "local": "Huế",
+          "ko": "후에",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hue"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-CT",
+          "local": "Cần Thơ",
+          "ko": "껀터",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "cantho"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-DN",
+          "local": "Đà Nẵng",
+          "ko": "다낭",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "danang"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-HN",
+          "local": "Hà Nội",
+          "ko": "하노이",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hanoi"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-HP",
+          "local": "Hải Phòng",
+          "ko": "하이퐁",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "haiphong"
+          ]
+        },
+        {
+          "level": "city",
+          "code": "VN34-SG",
+          "local": "Hồ Chí Minh",
+          "ko": "호찌민",
+          "source": "MAP_CITIES_V151",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hcmc",
+            "hochiminh",
+            "saigon"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-01",
+          "local": "Lai Châu",
+          "ko": "라이쩌우",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "laichau",
+            "provincelaichau"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-02",
+          "local": "Lào Cai",
+          "ko": "라오까이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "laocai",
+            "provincelaocai"
+          ],
+          "mergedInto": {
+            "code": "VN34-02",
+            "ko": "라오까이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-03",
+          "local": "Hà Giang",
+          "ko": "하장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hagiang",
+            "provincehagiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-07",
+            "ko": "뚜옌꽝",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-04",
+          "local": "Cao Bằng",
+          "ko": "까오방",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "caobang",
+            "provincecaobang"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-05",
+          "local": "Sơn La",
+          "ko": "선라",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincesonla",
+            "sonla"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-06",
+          "local": "Yên Bái",
+          "ko": "옌바이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provinceyenbai",
+            "yenbai"
+          ],
+          "mergedInto": {
+            "code": "VN34-02",
+            "ko": "라오까이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-07",
+          "local": "Tuyên Quang",
+          "ko": "뚜옌꽝",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincetuyenquang",
+            "tuyenquang"
+          ],
+          "mergedInto": {
+            "code": "VN34-07",
+            "ko": "뚜옌꽝",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-09",
+          "local": "Lạng Sơn",
+          "ko": "랑선",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "langson",
+            "provincelangson"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-13",
+          "local": "Quảng Ninh",
+          "ko": "꽝닌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincequangninh",
+            "quangninh"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-14",
+          "local": "Hòa Bình",
+          "ko": "호아빈",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hoabinh",
+            "provincehoabinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-68",
+            "ko": "푸토",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-18",
+          "local": "Ninh Bình",
+          "ko": "닌빈",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "ninhbinh",
+            "provinceninhbinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-18",
+            "ko": "닌빈",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-20",
+          "local": "Thái Bình",
+          "ko": "타이빈",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincethaibinh",
+            "thaibinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-66",
+            "ko": "흥옌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-21",
+          "local": "Thanh Hóa",
+          "ko": "타인호아",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincethanhhoa",
+            "thanhhoa"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-22",
+          "local": "Nghệ An",
+          "ko": "응에안",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "nghean",
+            "provincenghean"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-23",
+          "local": "Hà Tĩnh",
+          "ko": "하띤",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hatinh",
+            "provincehatinh"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-24",
+          "local": "Quảng Bình",
+          "ko": "꽝빈",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincequangbinh",
+            "quangbinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-25",
+            "ko": "꽝찌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-25",
+          "local": "Quảng Trị",
+          "ko": "꽝찌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincequangtri",
+            "quangtri"
+          ],
+          "mergedInto": {
+            "code": "VN34-25",
+            "ko": "꽝찌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-26",
+          "local": "Thừa Thiên Huế",
+          "ko": "트어티엔후에",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincethuathienhue",
+            "thuathienhue"
+          ],
+          "mergedInto": {
+            "code": "VN34-26",
+            "ko": "후에",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-27",
+          "local": "Quảng Nam",
+          "ko": "꽝남",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincequangnam",
+            "quangnam"
+          ],
+          "mergedInto": {
+            "code": "VN34-DN",
+            "ko": "다낭",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-28",
+          "local": "Kon Tum",
+          "ko": "꼰뚬",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "kontum",
+            "provincekontum"
+          ],
+          "mergedInto": {
+            "code": "VN34-29",
+            "ko": "꽝응아이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-29",
+          "local": "Quảng Ngãi",
+          "ko": "꽝응아이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincequangngai",
+            "quangngai"
+          ],
+          "mergedInto": {
+            "code": "VN34-29",
+            "ko": "꽝응아이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-30",
+          "local": "Gia Lai",
+          "ko": "잘라이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "gialai",
+            "provincegialai"
+          ],
+          "mergedInto": {
+            "code": "VN34-30",
+            "ko": "잘라이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-31",
+          "local": "Bình Định",
+          "ko": "빈딘",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "binhdinh",
+            "provincebinhdinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-30",
+            "ko": "잘라이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-32",
+          "local": "Phú Yên",
+          "ko": "푸옌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "phuyen",
+            "provincephuyen"
+          ],
+          "mergedInto": {
+            "code": "VN34-33",
+            "ko": "닥락",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-33",
+          "local": "Đắk Lắk",
+          "ko": "닥락",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "daclac",
+            "daclak",
+            "daklak",
+            "provincedaklak"
+          ],
+          "mergedInto": {
+            "code": "VN34-33",
+            "ko": "닥락",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-34",
+          "local": "Khánh Hòa",
+          "ko": "카인호아",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "khanhhoa",
+            "provincekhanhhoa"
+          ],
+          "mergedInto": {
+            "code": "VN34-34",
+            "ko": "카인호아",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-35",
+          "local": "Lâm Đồng",
+          "ko": "럼동",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "lamdong",
+            "provincelamdong"
+          ],
+          "mergedInto": {
+            "code": "VN34-35",
+            "ko": "럼동",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-36",
+          "local": "Ninh Thuận",
+          "ko": "닌투언",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "ninhthuan",
+            "provinceninhthuan"
+          ],
+          "mergedInto": {
+            "code": "VN34-34",
+            "ko": "카인호아",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-37",
+          "local": "Tây Ninh",
+          "ko": "떠이닌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincetayninh",
+            "tayninh"
+          ],
+          "mergedInto": {
+            "code": "VN34-37",
+            "ko": "떠이닌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-39",
+          "local": "Đồng Nai",
+          "ko": "동나이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dongnai",
+            "provincedongnai"
+          ],
+          "mergedInto": {
+            "code": "VN34-39",
+            "ko": "동나이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-40",
+          "local": "Bình Thuận",
+          "ko": "빈투언",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "binhthuan",
+            "provincebinhthuan"
+          ],
+          "mergedInto": {
+            "code": "VN34-35",
+            "ko": "럼동",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-41",
+          "local": "Long An",
+          "ko": "롱안",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "longan",
+            "provincelongan"
+          ],
+          "mergedInto": {
+            "code": "VN34-37",
+            "ko": "떠이닌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-43",
+          "local": "Bà Rịa–Vũng Tàu",
+          "ko": "바리아붕따우",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "bariavungtau",
+            "provincebariavungtau"
+          ],
+          "mergedInto": {
+            "code": "VN34-SG",
+            "ko": "호찌민",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-44",
+          "local": "An Giang",
+          "ko": "안장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "angiang",
+            "provinceangiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-44",
+            "ko": "안장",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-45",
+          "local": "Đồng Tháp",
+          "ko": "동탑",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dongthap",
+            "provincedongthap"
+          ],
+          "mergedInto": {
+            "code": "VN34-45",
+            "ko": "동탑",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-46",
+          "local": "Tiền Giang",
+          "ko": "띠엔장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincetiengiang",
+            "tiengiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-45",
+            "ko": "동탑",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-47",
+          "local": "Kiên Giang",
+          "ko": "끼엔장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "kiengiang",
+            "provincekiengiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-44",
+            "ko": "안장",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-49",
+          "local": "Vĩnh Long",
+          "ko": "빈롱",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincevinhlong",
+            "vinhlong"
+          ],
+          "mergedInto": {
+            "code": "VN34-49",
+            "ko": "빈롱",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-50",
+          "local": "Bến Tre",
+          "ko": "벤째",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "bentre",
+            "provincebentre"
+          ],
+          "mergedInto": {
+            "code": "VN34-49",
+            "ko": "빈롱",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-51",
+          "local": "Trà Vinh",
+          "ko": "짜빈",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincetravinh",
+            "travinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-49",
+            "ko": "빈롱",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-52",
+          "local": "Sóc Trăng",
+          "ko": "속짱",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincesoctrang",
+            "soctrang"
+          ],
+          "mergedInto": {
+            "code": "VN34-CT",
+            "ko": "껀터",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-53",
+          "local": "Bắc Kạn",
+          "ko": "박깐",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "backan",
+            "provincebackan"
+          ],
+          "mergedInto": {
+            "code": "VN34-69",
+            "ko": "타이응우옌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-54",
+          "local": "Bắc Giang",
+          "ko": "박장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "bacgiang",
+            "provincebacgiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-56",
+            "ko": "박닌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-55",
+          "local": "Bạc Liêu",
+          "ko": "박리에우",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "baclieu",
+            "provincebaclieu"
+          ],
+          "mergedInto": {
+            "code": "VN34-59",
+            "ko": "까마우",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-56",
+          "local": "Bắc Ninh",
+          "ko": "박닌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "bacninh",
+            "provincebacninh"
+          ],
+          "mergedInto": {
+            "code": "VN34-56",
+            "ko": "박닌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-57",
+          "local": "Bình Dương",
+          "ko": "빈즈엉",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "binhduong",
+            "provincebinhduong"
+          ],
+          "mergedInto": {
+            "code": "VN34-SG",
+            "ko": "호찌민",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-58",
+          "local": "Bình Phước",
+          "ko": "빈프억",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "binhphuoc",
+            "provincebinhphuoc"
+          ],
+          "mergedInto": {
+            "code": "VN34-39",
+            "ko": "동나이",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-59",
+          "local": "Cà Mau",
+          "ko": "까마우",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "camau",
+            "provincecamau"
+          ],
+          "mergedInto": {
+            "code": "VN34-59",
+            "ko": "까마우",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-61",
+          "local": "Hải Dương",
+          "ko": "하이즈엉",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "haiduong",
+            "provincehaiduong"
+          ],
+          "mergedInto": {
+            "code": "VN34-HP",
+            "ko": "하이퐁",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-63",
+          "local": "Hà Nam",
+          "ko": "하남",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hanam",
+            "provincehanam"
+          ],
+          "mergedInto": {
+            "code": "VN34-18",
+            "ko": "닌빈",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-66",
+          "local": "Hưng Yên",
+          "ko": "흥옌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hungyen",
+            "provincehungyen"
+          ],
+          "mergedInto": {
+            "code": "VN34-66",
+            "ko": "흥옌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-67",
+          "local": "Nam Định",
+          "ko": "남딘",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "namdinh",
+            "provincenamdinh"
+          ],
+          "mergedInto": {
+            "code": "VN34-18",
+            "ko": "닌빈",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-68",
+          "local": "Phú Thọ",
+          "ko": "푸토",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "phutho",
+            "provincephutho"
+          ],
+          "mergedInto": {
+            "code": "VN34-68",
+            "ko": "푸토",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-69",
+          "local": "Thái Nguyên",
+          "ko": "타이응우옌",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincethainguyen",
+            "thainguyen"
+          ],
+          "mergedInto": {
+            "code": "VN34-69",
+            "ko": "타이응우옌",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-70",
+          "local": "Vĩnh Phúc",
+          "ko": "빈푹",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "provincevinhphuc",
+            "vinhphuc"
+          ],
+          "mergedInto": {
+            "code": "VN34-68",
+            "ko": "푸토",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-71",
+          "local": "Điện Biên",
+          "ko": "디엔비엔",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dienbien",
+            "provincedienbien"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-72",
+          "local": "Đắk Nông",
+          "ko": "닥농",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "dacnong",
+            "daknong",
+            "provincedaknong"
+          ],
+          "mergedInto": {
+            "code": "VN34-35",
+            "ko": "럼동",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-73",
+          "local": "Hậu Giang",
+          "ko": "허우장",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "haugiang",
+            "provincehaugiang"
+          ],
+          "mergedInto": {
+            "code": "VN34-CT",
+            "ko": "껀터",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-CT",
+          "local": "Cần Thơ",
+          "ko": "껀터",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "cantho",
+            "provincecantho"
+          ],
+          "mergedInto": {
+            "code": "VN34-CT",
+            "ko": "껀터",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-DN",
+          "local": "Đà Nẵng",
+          "ko": "다낭",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "danang",
+            "provincedanang"
+          ],
+          "mergedInto": {
+            "code": "VN34-DN",
+            "ko": "다낭",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-HN",
+          "local": "Hà Nội",
+          "ko": "하노이",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hanoi",
+            "provincehanoi"
+          ]
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-HP",
+          "local": "Hải Phòng",
+          "ko": "하이퐁",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "haiphong",
+            "provincehaiphong"
+          ],
+          "mergedInto": {
+            "code": "VN34-HP",
+            "ko": "하이퐁",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "adm1-63",
+          "code": "VN-SG",
+          "local": "Hồ Chí Minh",
+          "ko": "호찌민",
+          "source": "PROVINCE_KO_V150",
+          "reviewStatus": "confirmed",
+          "keys": [
+            "hcmc",
+            "hochiminh",
+            "provincehochiminh",
+            "saigon"
+          ],
+          "mergedInto": {
+            "code": "VN34-SG",
+            "ko": "호찌민",
+            "effective": "2025-07-01"
+          }
+        },
+        {
+          "level": "locality",
+          "local": "Ba Đình",
+          "ko": "바딘",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "badinh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Ba Đồn",
+          "ko": "바돈",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "badon"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bắc Mê",
+          "ko": "박메",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "bacme"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bắc Trà My",
+          "ko": "박짜미",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "bactramy"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bắc Từ Liêm",
+          "ko": "박뜰리엠",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "bactuliem"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bắc Yên",
+          "ko": "박옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "bacyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bảo Lâm",
+          "ko": "바올럼",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "baolam"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bảo Thắng",
+          "ko": "바오탕",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "baothang"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bát Xát",
+          "ko": "밧쌋",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "batxat"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bình Sơn",
+          "ko": "빈선",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "binhson"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bình Xuyên",
+          "ko": "빈쑤옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "binhxuyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Bố Trạch",
+          "ko": "보짜익",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "botrach"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Cam Lộ",
+          "ko": "깜로",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "camlo"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Cẩm Xuyên",
+          "ko": "껌쑤옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "camxuyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Cầu Gi",
+          "ko": "꺼우기",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "caugi"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Cầu Giấy",
+          "ko": "꺼우저이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "caugiay"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Chương Mỹ",
+          "ko": "쯔엉미",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "chuongmy"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đốn",
+          "ko": "돈",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "don"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đông Anh",
+          "ko": "동아인",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "donganh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đống Đa",
+          "ko": "동다",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "dongda"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đông Triều",
+          "ko": "동찌에우",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "dongtrieu"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đức Phổ",
+          "ko": "득포",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "ducpho"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Đức Thọ",
+          "ko": "득토",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "ductho"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Gia Lâm",
+          "ko": "잘럼",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "gialam"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Giao Thủy",
+          "ko": "자오투이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "giaothuy"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Gò Công",
+          "ko": "고꽁",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "gocong"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hai Bà Trưng",
+          "ko": "하이바쯩",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "haibatrung"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hải Lăng",
+          "ko": "하일랑",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "hailang"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hoàn Kiếm",
+          "ko": "호안끼엠",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "hoankiem"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hoàng Mai",
+          "ko": "호앙마이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "hoangmai"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hoành Bồ",
+          "ko": "호안보",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "hoanhbo"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hương Khê",
+          "ko": "흐엉케",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "huongkhe"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Hương Sơn",
+          "ko": "흐엉선",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "huongson"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Kiến Tường",
+          "ko": "끼엔뜨엉",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "kientuong"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Kỳ Anh",
+          "ko": "끼아인",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "kyanh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Lập Thạch",
+          "ko": "럽타익",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "lapthach"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Lệ Thủy",
+          "ko": "레투이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "lethuy"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Long Biên",
+          "ko": "롱비엔",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "longbien"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Mai Sơn",
+          "ko": "마이선",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "maison"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Mê Linh",
+          "ko": "멜린",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "melinh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Minh Hóa",
+          "ko": "민호아",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "minhhoa"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Mộc Hóa",
+          "ko": "목호아",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "mochoa"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Móng Cái",
+          "ko": "몽까이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "mongcai"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Mường Khương",
+          "ko": "므엉크엉",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "muongkhuong"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Mỹ Tho",
+          "ko": "미토",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "mytho"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Nam Từ Liêm",
+          "ko": "남뜰리엠",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "namtuliem"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Nghĩa Hành",
+          "ko": "응이아하인",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "nghiahanh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Nghĩa Lộ",
+          "ko": "응이알로",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "nghialo"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Núi Thành",
+          "ko": "누이타인",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "nuithanh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Phong Điền",
+          "ko": "퐁디엔",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "phongdien"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Phú Lộc",
+          "ko": "풀록",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "phuloc"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Phú Ninh",
+          "ko": "푸닌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "phuninh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Phúc Yên",
+          "ko": "푹옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "phucyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Quảng Trạch",
+          "ko": "꽝짜익",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "quangtrach"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Rạch Giá",
+          "ko": "라익자",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "rachgia"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Sóc Sơn",
+          "ko": "속선",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "socson"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Sơn Hà",
+          "ko": "선하",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "sonha"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Sông Lô",
+          "ko": "송로",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "songlo"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Sông Mã",
+          "ko": "송마",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "songma"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tam Đảo",
+          "ko": "땀다오",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tamdao"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tam Dương",
+          "ko": "땀즈엉",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tamduong"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tam Kỳ",
+          "ko": "땀끼",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tamky"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tân Hưng",
+          "ko": "떤흥",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tanhung"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tây Hồ",
+          "ko": "떠이호",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tayho"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Thạch Hà",
+          "ko": "타익하",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "thachha"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Thăng Bình",
+          "ko": "탕빈",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "thangbinh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Thanh Trì",
+          "ko": "타인찌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "thanhtri"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Thanh Xuân",
+          "ko": "타인쑤언",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "thanhxuan"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Thủ Đức",
+          "ko": "투득",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "thuduc"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tiên Yên",
+          "ko": "띠엔옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tienyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Trạm Tấu",
+          "ko": "짬떠우",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tramtau"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Trần Văn Thời",
+          "ko": "쩐반터이",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tranvanthoi"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Trấn Yên",
+          "ko": "쩐옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tranyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tuy Đức",
+          "ko": "뚜이득",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tuyduc"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Tuyên Hóa",
+          "ko": "뚜옌호아",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "tuyenhoa"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Văn Bàn",
+          "ko": "반반",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vanban"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vị Xuyên",
+          "ko": "비쑤옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vixuyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vĩnh Hưng",
+          "ko": "빈흥",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vinhhung"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vĩnh Linh",
+          "ko": "빈린",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vinhlinh"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vĩnh Tường",
+          "ko": "빈뜨엉",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vinhtuong"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vĩnh Yên",
+          "ko": "빈옌",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vinhyen"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Vũ Quang",
+          "ko": "부꽝",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "vuquang"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Yên Châu",
+          "ko": "옌쩌우",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "yenchau"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Yên Lạc",
+          "ko": "옌락",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "yenlac"
+          ]
+        },
+        {
+          "level": "locality",
+          "local": "Yên Minh",
+          "ko": "옌민",
+          "source": "nikl-vi-rule",
+          "reviewStatus": "pending",
+          "keys": [
+            "yenminh"
+          ]
+        }
+      ]
+    }
+  },
+  "sources": {
+    "vnm": [
+      "PROVINCE_KO_V150",
+      "vnm-adm1-aliases (63)",
+      "ADM1_34_UNITS_V151",
+      "MAP_CITIES_V151",
+      "Viet Nam packs (place-name fields)"
+    ],
+    "bgd": {
+      "districtsLocal": "geoBoundaries gbOpen BGD-ADM2-16705992 (Bangladesh Bureau of Statistics (BBS), OCHA ROAP, Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)) sha256 7dbdb186f3b8af10417147a99859196fcd89c619fb5c6ac3804251fb6b449b6a",
+      "koreanNames": "https://ko.wikipedia.org/w/index.php?title=%EB%B0%A9%EA%B8%80%EB%9D%BC%EB%8D%B0%EC%8B%9C%EC%9D%98%20%EA%B5%AC&oldid=39642062",
+      "embassy": "https://overseas.mofa.go.kr/bd-ko/brd/m_2162/view.do?seq=1263477"
+    }
+  }
+}
