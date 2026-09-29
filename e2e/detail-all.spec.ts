@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   INTERNAL_TOKEN,
   candidateExcludedElements,
+  candidatePreparingElementIds,
   candidatePublicElementIds,
   collectPageErrors,
   detailUrl,
@@ -20,6 +21,7 @@ import {
  */
 const ELEMENT_IDS = candidatePublicElementIds();
 const EXCLUDED_ELEMENTS = candidateExcludedElements();
+const PREPARING_IDS = candidatePreparingElementIds();
 
 test.describe("detail screens", () => {
   for (const elementId of ELEMENT_IDS) {
@@ -37,12 +39,20 @@ test.describe("detail screens", () => {
       expect(text.trim().length, `${elementId} rendered no analysis`).toBeGreaterThan(0);
       expect(text, `${elementId} exposes an internal key`).not.toMatch(INTERNAL_TOKEN);
 
-      // 제공기관 and 자료기간 are what a public dataset has to state.
+      // 제공기관 and 자료기간 are what a public dataset has to state. Since V160
+      // the source panel sits in the collapsed layer 3 ('자료 출처·상세 데이터'),
+      // so that layer is opened first - a closed <details> keeps its children
+      // in the DOM but gives them no text to read.
+      const layer = page.getByTestId("detail-layer-v160").filter({ has: page.getByTestId("public-source-panel") });
+      await layer.evaluate((element: HTMLDetailsElement) => { element.open = true; });
       const source = page.getByTestId("detail-metadata-v135");
       await source.evaluate((element: HTMLDetailsElement) => { element.open = true; });
       const sourceText = await page.getByTestId("public-source-panel").innerText();
       expect(sourceText).toContain("제공기관");
-      expect(sourceText).toContain("자료기간");
+      // V156-E: a dataset not yet delivered states no data period (the line is
+      // hidden rather than filled with '미기재').
+      if (PREPARING_IDS.has(elementId)) expect(sourceText).not.toContain("자료기간");
+      else expect(sourceText).toContain("자료기간");
 
       const selects = page.locator('[data-testid="public-selector"] select');
       const count = await selects.count();
