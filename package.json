@@ -28,6 +28,8 @@
     "prebuild": "node scripts/v150-1/dataset-directory-v150-1.mjs verify",
     "build:country-compare:v158": "node scripts/v158/build-country-compare-contract-v158.mjs",
     "build:map-contract:v157": "node scripts/v157/build-map-content-contract-v157.mjs",
+    "build:map-companions:v157": "node scripts/v157/build-map-companions-v157.mjs",
+    "qa:map-selection:v161": "node scripts/v161/map-selection-qa-v161.mjs",
     "build:region-names:v161": "node scripts/v161/build-region-names-v161.mjs",
     "check:region-names:v161": "node scripts/v161/build-region-names-v161.mjs --check && node --test scripts/v161/vietnamese-hangul-v161.test.mjs",
     "build:dataset-directory:v150": "node scripts/v150-1/dataset-directory-v150-1.mjs build && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",

@@ -1,0 +1,73 @@
+/* V157: datasets shown beside a layer because the delivery states no region for
+   them. Compact so the map's own answer stays first. */
+.mc157 {
+  display: grid;
+  gap: 6px;
+}
+.mc157__title {
+  margin: 0;
+  font-size: 0.92rem;
+}
+.mc157__lead {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #4b5a55;
+}
+.mc157__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.mc157__list > li {
+  display: grid;
+  gap: 2px;
+  padding: 7px 9px;
+  border: 1px solid #dfe7e3;
+  border-radius: 7px;
+  background: #fbfdfc;
+}
+.mc157__name {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.mc157__role {
+  margin-left: 5px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: #e7efeb;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #46574f;
+}
+.mc157__value {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 0.86rem;
+}
+.mc157__period {
+  font-size: 0.72rem;
+  color: #5f6d67;
+}
+.mc157__note,
+.mc157__source {
+  margin: 0;
+  font-size: 0.73rem;
+  color: #5f6d67;
+  overflow-wrap: anywhere;
+}
+.mc157__link {
+  justify-self: start;
+  font-size: 0.76rem;
+}
+.mc157__measure {
+  font-size: 0.76rem;
+  color: #4b5a55;
+  width: 100%;
+}

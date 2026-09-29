@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "map-companions-v157",
+  "countryIso3": "VNM",
+  "generatedAt": "2026-09-29T03:27:19.277Z",
+  "generator": "scripts/v157/build-map-companions-v157.mjs",
+  "source": "public/data/vietnam/v2/map-content-contract-v157.json (companionLayers)",
+  "note": "지도에 올릴 수 없는 요소를 연관 레이어와 함께 보여 주기 위한 계약입니다. 카드 값은 공개 다운로드에서 읽은 값이며 화면에 숫자를 직접 적지 않습니다.",
+  "layers": [
+    {
+      "elementId": "A-024",
+      "companions": [
+        {
+          "elementId": "A-022",
+          "publicName": "전력공급 신뢰도",
+          "role": "primary",
+          "form": "A",
+          "note": "EVN 관할표 완성 전까지 송전망 레이어 옆 국가값 카드(MAIFI·SAIDI)",
+          "status": "reference-mapping-pending",
+          "statusReason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",
+          "headline": {
+            "indicatorLabel": "MAIFI",
+            "value": 0.95,
+            "unit": "회/고객",
+            "period": "2026",
+            "indicatorId": "A-022_maifi_evnhanoi",
+            "source": "Vietnam Electricity (EVN)",
+            "sourceUrl": "https://en.evn.com.vn/c3/documents/Annual-Report-9-15.aspx",
+            "otherIndicatorCount": 8,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=A-022#element-detail",
+          "recordCount": 0,
+          "observationCount": 54
+        }
+      ]
+    },
+    {
+      "elementId": "B-003",
+      "companions": [
+        {
+          "elementId": "B-002",
+          "publicName": "기후대",
+          "role": "primary",
+          "form": "A",
+          "note": "기후대 국가 면적 구성을 기후 레이어 옆 카드로",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "열대기후(A군) 국토 점유 비율",
+            "value": 74.02,
+            "unit": "%",
+            "period": "2099",
+            "indicatorId": "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
+            "source": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
+            "sourceUrl": "https://www.gloh2o.org/koppen/",
+            "otherIndicatorCount": 1,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-002#element-detail",
+          "recordCount": 0,
+          "observationCount": 19
+        }
+      ]
+    },
+    {
+      "elementId": "B-008",
+      "companions": [
+        {
+          "elementId": "A-013",
+          "publicName": "NDC-SDG 지역조치",
+          "role": "secondary",
+          "form": "A",
+          "note": "해수면 상승 관련 NDC 조치 인용 카드",
+          "quotationOnly": true,
+          "status": "region-text-generic",
+          "statusReason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+          "headline": {
+            "indicatorLabel": "NDC-SDG 연계 건수",
+            "value": 365,
+            "unit": "건",
+            "period": "2016",
+            "indicatorId": "A-013_ndc_sdg_linkage_count",
+            "source": "World Resources Institute — Climate Watch",
+            "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg",
+            "otherIndicatorCount": 0,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=A-013#element-detail",
+          "recordCount": 365,
+          "observationCount": 1
+        }
+      ]
+    },
+    {
+      "elementId": "B-012",
+      "companions": [
+        {
+          "elementId": "A-013",
+          "publicName": "NDC-SDG 지역조치",
+          "role": "primary",
+          "form": "A",
+          "note": "NDC 원문 인용 카드만 — 경계·좌표를 만들지 않음",
+          "quotationOnly": true,
+          "status": "region-text-generic",
+          "statusReason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+          "headline": {
+            "indicatorLabel": "NDC-SDG 연계 건수",
+            "value": 365,
+            "unit": "건",
+            "period": "2016",
+            "indicatorId": "A-013_ndc_sdg_linkage_count",
+            "source": "World Resources Institute — Climate Watch",
+            "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg",
+            "otherIndicatorCount": 0,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=A-013#element-detail",
+          "recordCount": 365,
+          "observationCount": 1
+        }
+      ]
+    },
+    {
+      "elementId": "B-017",
+      "companions": [
+        {
+          "elementId": "B-024",
+          "publicName": "농업용수 대리지표",
+          "role": "primary",
+          "form": "A",
+          "note": "농업용수 대리지표 국가값을 물 스트레스 레이어 옆 카드로",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "농업 용수 취수 비중",
+            "value": 94.7824,
+            "unit": "%",
+            "period": "2023",
+            "indicatorId": "B-024_agri_water_share",
+            "source": "FAO AQUASTAT",
+            "sourceUrl": "https://data.apps.fao.org/aquastat/?lang=en&country=VNM",
+            "otherIndicatorCount": 5,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-024#element-detail",
+          "recordCount": 0,
+          "observationCount": 205
+        }
+      ]
+    },
+    {
+      "elementId": "B-037",
+      "companions": [
+        {
+          "elementId": "B-035",
+          "publicName": "토지이용 면적",
+          "role": "primary",
+          "form": "A",
+          "note": "토지이용 면적 국가값을 토지피복 레이어 옆 카드로",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "산림 탄소저장량(FAO)",
+            "value": 777.07,
+            "unit": "백만 톤 C",
+            "period": "2025",
+            "indicatorId": "B-035_lu_forest_carbon_stock",
+            "source": "FAOSTAT Land Use (RL)",
+            "sourceUrl": "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip",
+            "otherIndicatorCount": 6,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-035#element-detail",
+          "recordCount": 0,
+          "observationCount": 1764
+        },
+        {
+          "elementId": "B-036",
+          "publicName": "토지이용 변화율",
+          "role": "primary",
+          "form": "A",
+          "note": "토지이용 변화율 국가값을 토지피복 레이어 옆 카드로",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "토지이용 변화율",
+            "value": 1.789,
+            "unit": "",
+            "period": "2024",
+            "indicatorId": "B-036_cagr_lu_agricultural_land",
+            "source": "FAO FAOSTAT Land Use (RL)",
+            "sourceUrl": "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip",
+            "otherIndicatorCount": 22,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-036#element-detail",
+          "recordCount": 0,
+          "observationCount": 48
+        }
+      ]
+    },
+    {
+      "elementId": "B-048",
+      "companions": [
+        {
+          "elementId": "B-044",
+          "publicName": "핵심광물 부존",
+          "role": "primary",
+          "form": "C",
+          "note": "광종이 일치하는 광산 팝업에 부존 1줄, 일치하지 않는 광종은 패널 카드",
+          "matchOn": "광종",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "value": null,
+            "reason": "원천에 수치 관측값이 없습니다(문서·목록형 자료)"
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-044#element-detail",
+          "recordCount": 0,
+          "observationCount": 26
+        },
+        {
+          "elementId": "B-046",
+          "publicName": "광물 매장량",
+          "role": "primary",
+          "form": "C",
+          "note": "광종이 일치하는 광산 팝업에 매장량 1줄, 일치하지 않는 광종은 패널 카드",
+          "matchOn": "광종",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "확인 매장량",
+            "value": 3500000,
+            "unit": "t REO",
+            "period": "2026",
+            "indicatorId": "B-046_reserves_0",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "sourceUrl": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+            "otherIndicatorCount": 7,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-046#element-detail",
+          "recordCount": 0,
+          "observationCount": 13
+        },
+        {
+          "elementId": "B-047",
+          "publicName": "광물 생산량",
+          "role": "primary",
+          "form": "C",
+          "note": "광종이 일치하는 광산 팝업에 생산량 1줄, 일치하지 않는 광종은 패널 카드",
+          "matchOn": "광종",
+          "status": "national-only",
+          "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+          "headline": {
+            "indicatorLabel": "광산 생산량",
+            "value": 3000,
+            "unit": "t (W 함량)",
+            "period": "2025",
+            "indicatorId": "B-047_production_0",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "sourceUrl": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+            "otherIndicatorCount": 8,
+            "reason": null
+          },
+          "detailUrl": "/?view=data&country=VNM&element=B-047#element-detail",
+          "recordCount": 0,
+          "observationCount": 21
+        }
+      ]
+    },
+    {
+      "elementId": "C-016",
+      "companions": [
+        {
+          "elementId": "C-003",
+          "publicName": "국가적응계획 지역과제",
+          "role": "primary",
+          "form": "A",
+          "note": "국가적응계획 지역과제를 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)",
+          "status": "region-fields-empty",
+          "statusReason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+          "headline": {
+            "value": null,
+            "reason": "원천에 수치 관측값이 없습니다(문서·목록형 자료)"
+          },
+          "detailUrl": "/?view=data&country=VNM&element=C-003#element-detail",
+          "recordCount": 96,
+          "observationCount": 0
+        },
+        {
+          "elementId": "C-017",
+          "publicName": "지역 발전가격·지원",
+          "role": "primary",
+          "form": "A",
+          "note": "지역 발전가격·지원을 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)",
+          "status": "region-fields-empty",
+          "statusReason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+          "headline": {
+            "value": null,
+            "reason": "원천에 수치 관측값이 없습니다(문서·목록형 자료)"
+          },
+          "detailUrl": "/?view=data&country=VNM&element=C-017#element-detail",
+          "recordCount": 52,
+          "observationCount": 0
+        }
+      ]
+    },
+    {
+      "elementId": "C-025",
+      "companions": [
+        {
+          "elementId": "C-006",
+          "publicName": "JCM 사업",
+          "role": "primary",
+          "form": "A",
+          "note": "JCM 사업 현황을 크레딧 레이어 옆 카드로(사업지역 확인 시 승격)",
+          "status": "data-pending",
+          "statusReason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
+          "headline": {
+            "value": null,
+            "reason": "원천에 수치 관측값이 없습니다(문서·목록형 자료)"
+          },
+          "detailUrl": "/?view=data&country=VNM&element=C-006#element-detail",
+          "recordCount": 50,
+          "observationCount": 0
+        }
+      ]
+    }
+  ]
+}

@@ -461,3 +461,23 @@
   color: #4b5a55;
   white-space: nowrap;
 }
+
+/* V161-C: the layer summary folds to its title while a selection is open. */
+.cdp-map-summary-fold-v161 {
+  cursor: pointer;
+  list-style: none;
+}
+.cdp-map-summary-fold-v161::-webkit-details-marker {
+  display: none;
+}
+.cdp-map-summary-fold-v161 h3 {
+  display: inline;
+}
+.cdp-map-summary-fold-v161::after {
+  content: " ▾";
+  color: #5f6d67;
+  font-size: 0.8em;
+}
+details[open] > .cdp-map-summary-fold-v161::after {
+  content: " ▴";
+}
