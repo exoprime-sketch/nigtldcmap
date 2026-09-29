@@ -2,6 +2,17 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V158-SYNC 베트남 파생 자산을 생성기 출력과 맞춤 (PR 후보, 화면 변화 0)
+
+### Fixed
+
+- 커밋본이 생성기 출력보다 뒤처졌던 베트남 파생 자산 4개 파일을 재생성했다: semantic 계약 30요소 `mapLinkage`, 생성 TS 모듈 30요소 `spatiallyLinked`, dataset-directory 6요소 `updatedAt`. integrity 갱신. 공개 화면은 두 값을 읽지 않아 화면 서명 151화면 차이 0.
+- `screen-signature-v158`: 찾기·지도·다운로드·이용안내를 해시 경로로 찍는다(이전에는 `?view=` 주소라 모두 홈으로 찍혔다).
+
+### Added
+
+- `scripts/v158/derived-sync-table-v158.py`: 커밋본 ↔ 재생성 결과 대조표(요소·필드 단위).
+
 ## Unreleased — V158 배포 단일화: GitHub Pages 배포 중단, Vercel 하나로 (PR 후보)
 
 ### Removed
