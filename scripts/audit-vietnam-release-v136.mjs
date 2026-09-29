@@ -308,7 +308,8 @@ audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, rev
 audit.check("UNRESOLVED_REMOVE_COUNT", review.unresolvedRemoveCount === 0, review.unresolvedRemoveCount ?? null, 0);
 audit.check("V136_1_REGRESSION", statuses.finderScroll === "PASS" && statuses.humanReview === "PASS", { finderScroll: statuses.finderScroll, humanReview: statuses.humanReview }, "PASS");
 audit.check("CI_CURRENT_RELEASE_GATE", workflow.ciCurrentGate === "finalize:v136", workflow.ciCurrentGate ?? null, "finalize:v136");
-audit.check("PAGES_CURRENT_RELEASE_GATE", workflow.pagesCurrentGate === "finalize:v136", workflow.pagesCurrentGate ?? null, "finalize:v136");
+// V158: GitHub Pages deployment retired (Vercel only); workflow:v136 reports it.
+audit.check("PAGES_WORKFLOW_RETIRED", workflow.pagesWorkflowRetired === true, workflow.pagesWorkflowRetired ?? null, true);
 audit.check("VISUAL_QA_CURRENT_CAPTURE", workflow.visualQaCurrentCapture === "capture:screenshots:v136", workflow.visualQaCurrentCapture ?? null, "capture:screenshots:v136");
 audit.check("OLD_V135_CURRENT_GATE_COUNT", workflow.oldV135CurrentGateCount === 0, workflow.oldV135CurrentGateCount ?? null, 0);
 audit.check("SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER", !commands.some((entry) => /screenshot|capture:/iu.test(entry.command)), commands.map((entry) => entry.command), "no screenshot command");

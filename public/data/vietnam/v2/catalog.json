@@ -1681,12 +1681,12 @@
       "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 189764,
+          "byteSize": 189803,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 72,
-          "sha256": "fd51a376c9f5e361446b48998b70a09b0e5a01c68170f35e5ff036d319631414",
+          "sha256": "b9524af08bd62ce89d5f2cd597840b453299b2e27116b792fbf38cb62de02ef7",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/a-017.json"
         },
@@ -1707,11 +1707,12 @@
       "emptyReason": null,
       "entityCount": 0,
       "exclusion": {
-        "basis": "데이터 명세서",
-        "decidedAt": "2026-09-18",
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
         "measuredPresence": "actual-records",
         "measuredStatus": "actual",
-        "reason": "원자료(BloombergNEF)의 재배포 제한으로 제공 대상에서 제외"
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
       },
       "groupCode": "A.2.a",
       "groupLabel": "에너지·전력 정보",
@@ -10941,15 +10942,15 @@
       ],
       "detailTemplate": "policy",
       "displayAllowed": true,
-      "downloadAllowed": false,
+      "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 145439,
+          "byteSize": 145186,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 21,
-          "sha256": "b10da1982c343015027aeba8c3dbaaaa0a0a896d88c79481cf4cc1ded80d61d6",
+          "sha256": "3be9558d03362fa9802293f0ffda47ade056dd8a1dd548f8d9dfc83b57816e7e",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/c-015.json"
         },
@@ -10969,13 +10970,6 @@
       "elementLabel": "상기 문서들의 원본 링크",
       "emptyReason": null,
       "entityCount": 21,
-      "exclusion": {
-        "basis": "데이터 명세서",
-        "decidedAt": "2026-09-18",
-        "measuredPresence": "actual-records",
-        "measuredStatus": "actual",
-        "reason": "법령 원문 링크는 각 데이터의 원문 링크로 통합해 별도 항목으로 제공하지 않음"
-      },
       "groupCode": "C.3.d",
       "groupLabel": "재생에너지 관련 법제도",
       "hasWarnings": false,
@@ -10987,7 +10981,7 @@
       "observationCount": 0,
       "packageReason": "요소별 Excel 파일 제공",
       "packageStatus": "provided",
-      "publicStatus": "excluded",
+      "publicStatus": "actual",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [
@@ -11705,11 +11699,12 @@
       "emptyReason": "not-collected",
       "entityCount": 0,
       "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
         "measuredPresence": "not-collected",
         "measuredStatus": "not-collected",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 데이터 없음"
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
       },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
@@ -11773,6 +11768,14 @@
       "elementLabel": "VCM 프로젝트 파이프라인",
       "emptyReason": "not-collected",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-collected",
+        "measuredStatus": "not-collected",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -11784,7 +11787,7 @@
       "observationCount": 0,
       "packageReason": "원자료 미수집",
       "packageStatus": "not-collected",
-      "publicStatus": "not-collected",
+      "publicStatus": "excluded",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [],
@@ -11991,13 +11994,6 @@
       "elementLabel": "한계저감비용(MAC)",
       "emptyReason": "not-collected",
       "entityCount": 0,
-      "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
-        "measuredPresence": "not-collected",
-        "measuredStatus": "not-collected",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'"
-      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -12009,7 +12005,7 @@
       "observationCount": 0,
       "packageReason": "원자료 미수집",
       "packageStatus": "not-collected",
-      "publicStatus": "excluded",
+      "publicStatus": "not-collected",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [],
@@ -15169,15 +15165,15 @@
       ],
       "detailTemplate": "finance",
       "displayAllowed": true,
-      "downloadAllowed": false,
+      "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 58354,
+          "byteSize": 58152,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 12,
-          "sha256": "00d7f19f32b7711e50e33475d121f3c25274978cfe517efb292a488412c174a6",
+          "sha256": "1d89661c69236d5ebc83b83e49e7842613acfc369b94e7c7c9156a96e52157ec",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/d-024.json"
         },
@@ -15197,13 +15193,6 @@
       "elementLabel": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
       "emptyReason": null,
       "entityCount": 12,
-      "exclusion": {
-        "basis": "데이터 명세서",
-        "decidedAt": "2026-09-18",
-        "measuredPresence": "actual-records",
-        "measuredStatus": "actual",
-        "reason": "확인된 원자료가 없어 제공 대상에서 제외"
-      },
       "groupCode": "D.3.a",
       "groupLabel": "기후기술 분야 투자 정보",
       "hasWarnings": true,
@@ -15215,7 +15204,7 @@
       "observationCount": 0,
       "packageReason": "요소별 Excel 파일 제공",
       "packageStatus": "provided",
-      "publicStatus": "excluded",
+      "publicStatus": "actual",
       "publicationDecision": null,
       "qualityIssueCount": 2,
       "referenceYears": [
@@ -16381,12 +16370,12 @@
       "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 487809,
+          "byteSize": 487846,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 144,
-          "sha256": "0ea4c93456932113071c97e35003052790548f64ef12f93171fd7d5bfc4f874e",
+          "sha256": "781c46cb3698a9db63323919772f3ee38d07396ee69f71b15d4e60b14f847dd7",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-008.json"
         },
@@ -16407,11 +16396,12 @@
       "emptyReason": null,
       "entityCount": 144,
       "exclusion": {
-        "basis": "데이터 명세서",
-        "decidedAt": "2026-09-18",
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
         "measuredPresence": "actual-records",
         "measuredStatus": "public-authorized",
-        "reason": "논문·특허 검색 기준이 검증되지 않아 제공 대상에서 제외"
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
       },
       "groupCode": "E.2.b",
       "groupLabel": "논문·특허",
@@ -16750,13 +16740,6 @@
       "elementLabel": "기술준비수준(TRL)",
       "emptyReason": "explicit-placeholder-only",
       "entityCount": 0,
-      "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
-        "measuredPresence": "no-populated-record",
-        "measuredStatus": "data-entry-planned",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 명세서상 NRI 대체 예정이나 자료 미입고"
-      },
       "groupCode": "E.2.c",
       "groupLabel": "개도국 기술 역량 평가 지표",
       "hasWarnings": false,
@@ -16768,7 +16751,7 @@
       "observationCount": 0,
       "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
       "packageStatus": "provided",
-      "publicStatus": "excluded",
+      "publicStatus": "data-entry-planned",
       "publicationDecision": {
         "approvedAt": "2026-08-27",
         "approvedByRole": "project-owner",
@@ -16968,13 +16951,6 @@
       "elementLabel": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
       "emptyReason": "schema-only",
       "entityCount": 0,
-      "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
-        "measuredPresence": "no-populated-record",
-        "measuredStatus": "schema-only",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'"
-      },
       "groupCode": "E.2.d",
       "groupLabel": "운영·유지보수 역량",
       "hasWarnings": false,
@@ -16986,7 +16962,7 @@
       "observationCount": 0,
       "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
       "packageStatus": "provided",
-      "publicStatus": "excluded",
+      "publicStatus": "schema-only",
       "publicationDecision": {
         "approvedAt": "2026-08-27",
         "approvedByRole": "project-owner",
@@ -17267,12 +17243,12 @@
       "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 10895,
+          "byteSize": 10880,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 4,
-          "sha256": "f2d1402e3eff87336561b32050ef3eaeacf793b4ef772770bde84a1a04f15a7e",
+          "sha256": "41e609c88933d03076d4f426cb32ab4b7d048421d309c075fe6ba6aa0158b759",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-016.json"
         },
@@ -17293,11 +17269,12 @@
       "emptyReason": null,
       "entityCount": 4,
       "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
         "measuredPresence": "actual-records",
         "measuredStatus": "public-authorized",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함"
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
       },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",
@@ -17381,12 +17358,12 @@
       "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 15787,
+          "byteSize": 15772,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 10,
-          "sha256": "6cb239a3e326ac369e09bd16dcc91527cae5d37e85e96119ce31ae8c1674ff7d",
+          "sha256": "41a0d107af28bc63fe57bc00a92bb7a6fc60842cbddeb0e6bb77c0b470e3f619",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-017.json"
         },
@@ -17407,11 +17384,12 @@
       "emptyReason": null,
       "entityCount": 0,
       "exclusion": {
-        "basis": "사용자 결정",
-        "decidedAt": "2026-09-23",
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
         "measuredPresence": "actual-records",
         "measuredStatus": "public-authorized",
-        "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함"
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
       },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",

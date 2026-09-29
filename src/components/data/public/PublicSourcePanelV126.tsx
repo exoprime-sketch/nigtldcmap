@@ -25,6 +25,14 @@ interface Props {
   spatialUnit?: string;
   /** What the headline figure counted, moved here out of the KPI subtitle. */
   aggregationBasis?: string[];
+  /**
+   * V159 data-pending element (spec v8): nothing delivered yet, so no line
+   * may carry a stand-in ("제공기관 확인", "미기재"). The provider is the
+   * spec's source field (`sourceLabel`, e.g. "Verra 외") and a line without
+   * a value is left out; the data period is never shown.
+   */
+  pendingSourceLabel?: string | null;
+  pending?: boolean;
 }
 
 export default function PublicSourcePanelV126({
@@ -34,6 +42,8 @@ export default function PublicSourcePanelV126({
   entities,
   spatialUnit,
   aggregationBasis = [],
+  pendingSourceLabel = null,
+  pending = false,
 }: Props) {
   const [provider, setProvider] = useState<string>("");
   useEffect(() => {
@@ -125,19 +135,27 @@ export default function PublicSourcePanelV126({
   // under the collapsed 자료정보·이용조건. The visible provider is the card
   // model's public wording (V140), never the raw provenance strings, which
   // carry the compiler's notes.
+  const unitText = units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ");
+  const pendingProvider = publicTextV126(pendingSourceLabel) || "";
   // V161: a period or unit the data does not state is left out of the line
   // and the panel, never filled with a placeholder ("자료기간 미기재").
-  const period = summarizeYearsV126(years);
-  const sourceLine = [
-    `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
-    period && `자료기간 ${period}`,
-    units.length > 0 && `단위 ${units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ")}`,
-  ].filter(Boolean).join(" · ");
+  const period = pending ? "" : summarizeYearsV126(years);
+  const sourceLine = (
+    pending
+      ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`]
+      : [
+          `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
+          period && `자료기간 ${period}`,
+          unitText && `단위 ${unitText}`,
+        ]
+  ).filter(Boolean).join(" · ");
   return (
     <div className="pav126-source-frame-v153" data-testid="detail-source-frame-v153">
-    <p className="pav126-source-line-v153" data-testid="detail-source-line-v153">
-      <PublicTermTextV134 text={sourceLine} />
-    </p>
+    {sourceLine ? (
+      <p className="pav126-source-line-v153" data-testid="detail-source-line-v153">
+        <PublicTermTextV134 text={sourceLine} />
+      </p>
+    ) : null}
     <details
       className="pav126-source pav126-source--details-v135"
       data-testid="detail-metadata-v135"
@@ -152,14 +170,23 @@ export default function PublicSourcePanelV126({
           <h3>출처와 이용조건</h3>
         </div>
         <dl>
-        <div>
-          <dt>제공기관</dt>
-          <dd>
-            <PublicTermTextV134
-              text={organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}
-            />
-          </dd>
-        </div>
+        {pending ? (
+          pendingProvider ? (
+            <div>
+              <dt>제공기관</dt>
+              <dd><PublicTermTextV134 text={pendingProvider} /></dd>
+            </div>
+          ) : null
+        ) : (
+          <div>
+            <dt>제공기관</dt>
+            <dd>
+              <PublicTermTextV134
+                text={organizations.join(" · ") || "공개 자료에 기관명이 명시되지 않음"}
+              />
+            </dd>
+          </div>
+        )}
         {period && (
           <div>
             <dt>자료기간</dt>
@@ -188,7 +215,8 @@ export default function PublicSourcePanelV126({
             </dd>
           </div>
         )}
-        {licenses.length > 0 && (
+        {/* A data-pending element's terms are the planned ones ('기재 예정'), not terms of data. */}
+        {!pending && licenses.length > 0 && (
           <div>
             <dt>이용조건</dt>
             <dd>

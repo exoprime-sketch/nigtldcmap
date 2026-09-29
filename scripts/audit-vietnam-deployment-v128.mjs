@@ -132,9 +132,19 @@ const requiredAssets = [
 
 const srcRoot = resolve(PROJECT_ROOT, "src");
 const resolverPath = resolve(srcRoot, "utils/publicAssetUrlV128.ts");
+// V158: countryContext.ts is the one place that names each country's data root
+// (registry mirror); every runtime caller takes countryAssetPathV158() through
+// publicAssetUrlV128, which SUBPATH_RUNTIME_RESOLUTION exercises. Its unit test
+// pins those roots and is not shipped. Exactly these two files are exempt, like
+// the resolver itself.
+const exemptPaths = new Set([
+  resolverPath,
+  resolve(srcRoot, "data/countryContext.ts"),
+  resolve(srcRoot, "data/countryContext.test.ts"),
+]);
 const rootRelativeRuntimeUses = [];
 for (const path of walk(srcRoot)) {
-  if (!/\.(?:ts|tsx|js|jsx)$/u.test(path) || path === resolverPath) continue;
+  if (!/\.(?:ts|tsx|js|jsx)$/u.test(path) || exemptPaths.has(path)) continue;
   const lines = readFileSync(path, "utf8").split(/\r?\n/u);
   lines.forEach((line, index) => {
     if (/(["'`])\/(?:data|assets)\//u.test(line)) {

@@ -51,23 +51,23 @@
       "name": "ROW_BALANCE",
       "status": "PASS",
       "actual": {
-        "sourceRows": 171846,
-        "processedRows": 171846,
-        "publicPopulatedRows": 168850,
-        "catalogProcessedRows": 171846,
-        "catalogPublicPopulatedRows": 168850,
+        "sourceRows": 171875,
+        "processedRows": 171875,
+        "publicPopulatedRows": 168848,
+        "catalogProcessedRows": 171875,
+        "catalogPublicPopulatedRows": 168848,
         "catalogRowBreakdown": {
-          "metadataRows": 2225,
-          "nonstandardRows": 309,
-          "observationRows": 16236,
-          "entityRows": 153076,
-          "publicPopulatedRows": 168850
+          "metadataRows": 2219,
+          "nonstandardRows": 310,
+          "observationRows": 16267,
+          "entityRows": 153079,
+          "publicPopulatedRows": 168848
         }
       },
       "expected": {
         "matches": true,
-        "catalogProcessedRows": 171846,
-        "catalogPublicPopulatedRows": 168850
+        "catalogProcessedRows": 171875,
+        "catalogPublicPopulatedRows": 168848
       }
     },
     {

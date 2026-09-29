@@ -46,9 +46,9 @@ export const EXCLUDED_NOTICE_SNAPSHOT_V156 = `(() => {
   return {
     page: Boolean(page),
     notice: Boolean(card),
-    decision: field('decision'),
-    reason: field('reason'),
-    decidedAt: field('decidedAt'),
+    publicNotice: field('publicNotice'),
+    cardText: (card?.textContent || '').replace(/\\s+/g, ' ').trim(),
+    decisionFields: card ? card.querySelectorAll('[data-exclusion-field="decision"], [data-exclusion-field="reason"], [data-exclusion-field="decidedAt"]').length : 0,
     charts: within('svg[role="img"], canvas, [data-analysis-block], [data-chart-axes]'),
     tables: within('table'),
     downloadLinks: downloadNodes.length,
@@ -56,15 +56,30 @@ export const EXCLUDED_NOTICE_SNAPSHOT_V156 = `(() => {
   };
 })()`;
 
-/** A notice page passes when it states all three facts and offers nothing else. */
+/**
+ * A notice page passes when it states the decision's public line and nothing
+ * of the decision record, and offers nothing else.
+ *
+ * V156-E (2026-09-29, 기준서 v1.1 표 13): the card is the title plus one public
+ * line (`exclusion.publicNotice`). The former checks that the decision, the
+ * reason and the date were shown and matched the decision file are replaced by
+ * the reverse - the public line is shown and matches, and the record (reason,
+ * basis, date, and the 결정·사유·결정일 labels) is not shown.
+ */
 export function excludedNoticeVerdictV156(snapshot, decision) {
   const problems = [];
   if (!snapshot?.page || !snapshot?.notice) problems.push("notice card missing");
-  if (!snapshot?.decision) problems.push("decision missing");
-  if (!snapshot?.reason) problems.push("reason missing");
-  if (decision?.reason && snapshot?.reason && !snapshot.reason.includes(decision.reason)) problems.push("reason differs from the decision file");
-  if (!snapshot?.decidedAt) problems.push("decision date missing");
-  if (decision?.decidedAt && snapshot?.decidedAt && !snapshot.decidedAt.includes(decision.decidedAt)) problems.push("date differs from the decision file");
+  if (!snapshot?.publicNotice) problems.push("public notice missing");
+  if (decision?.publicNotice && snapshot?.publicNotice && snapshot.publicNotice !== decision.publicNotice) problems.push("public notice differs from the decision file");
+  const text = snapshot?.cardText || "";
+  const leaked = [
+    Number(snapshot?.decisionFields || 0) > 0 && "decision fields",
+    /결정일|사유|결정\s/u.test(text) && "decision labels",
+    decision?.reason && text.includes(decision.reason) && "internal reason",
+    decision?.decidedAt && text.includes(decision.decidedAt) && "decision date",
+    decision?.basis && text.includes(decision.basis) && "decision basis",
+  ].filter(Boolean);
+  if (leaked.length) problems.push(`decision record shown: ${leaked.join(", ")}`);
   if (Number(snapshot?.charts || 0) !== 0) problems.push(`charts ${snapshot.charts}`);
   if (Number(snapshot?.tables || 0) !== 0) problems.push(`tables ${snapshot.tables}`);
   if (Number(snapshot?.downloadLinks || 0) !== 0) problems.push(`download links ${snapshot.downloadLinks}`);

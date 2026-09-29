@@ -23,7 +23,6 @@ export type TemplateVariantKeyV159 =
   | "primary-energy-composition"
   | "climate-budget-allocation"
   | "cpia-policy-capacity"
-  | "research-patent"
   | "occupation-wage"
   | "energy-outlook-plan"
   | "mineral-resources"
@@ -37,6 +36,9 @@ export type TemplateVariantKeyV159 =
   | "capital-cost"
   | "lcoe-range"
   | "technology-scenario-heatmap"
+  | "research-patent"
+  | "korea-tech-readiness"
+  | "korea-tech-level"
   // U4 시설·기관·인프라 위치
   | "ccs-status"
   | "basin-area"
@@ -55,7 +57,6 @@ export type TemplateVariantKeyV159 =
   | "ndc-sdg-matrix";
 
 export const TEMPLATE_VARIANTS_V159: Record<DisplayTypeV159, readonly TemplateVariantKeyV159[]> = {
-  U0: [],
   U1: [
     "monthly-climate",
     "sdg-indicators",
@@ -64,13 +65,12 @@ export const TEMPLATE_VARIANTS_V159: Record<DisplayTypeV159, readonly TemplateVa
     "primary-energy-composition",
     "climate-budget-allocation",
     "cpia-policy-capacity",
-    "research-patent",
     "occupation-wage",
     "energy-outlook-plan",
     "mineral-resources",
   ],
   U2: ["building-metadata", "flow-direction", "spei-drought", "climate-zone", "sea-level-stations"],
-  U3: ["capital-cost", "lcoe-range", "technology-scenario-heatmap"],
+  U3: ["capital-cost", "lcoe-range", "technology-scenario-heatmap", "research-patent", "korea-tech-readiness", "korea-tech-level"],
   U4: [
     "ccs-status",
     "basin-area",
@@ -98,8 +98,9 @@ export interface ElementVariantV159 {
 }
 
 // A-017 (lcoe-range) and E-008 (research-patent) left the variants when every
-// excluded element became a ⓪ status screen (2026-09-24); the variants stay
-// defined for a re-admitted element.
+// excluded element became a status screen (2026-09-24) and came back with the
+// lift (2026-09-29). Spec v8 moves E-008 to ③ (technology fields by record
+// count), so research-patent is a ③ variant.
 export const ELEMENT_VARIANTS_V159: Record<string, ElementVariantV159> = {
   "A-026": { variant: "building-metadata", phase: "early" },
   "B-001": { variant: "monthly-climate", phase: "early" },
@@ -117,8 +118,13 @@ export const ELEMENT_VARIANTS_V159: Record<string, ElementVariantV159> = {
   "A-016": { variant: "primary-energy-composition", phase: "early" },
   "D-005": { variant: "climate-budget-allocation", phase: "early" },
   "A-002": { variant: "cpia-policy-capacity", phase: "early" },
+  "E-008": { variant: "research-patent", phase: "early" },
+  // Spec v8: Korea-reference screens (typology referenceCountryIso3).
+  "E-016": { variant: "korea-tech-readiness", phase: "early" },
+  "E-017": { variant: "korea-tech-level", phase: "early" },
   "E-012": { variant: "occupation-wage", phase: "early" },
   "A-024": { variant: "transmission-network", phase: "late" },
+  "A-017": { variant: "lcoe-range", phase: "late" },
   "C-001": { variant: "ndc-targets", phase: "late" },
   "C-019": { variant: "carbon-market-regions", phase: "late" },
   "C-022": { variant: "carbon-market-regions", phase: "late" },

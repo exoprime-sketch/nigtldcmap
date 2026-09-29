@@ -13,6 +13,7 @@ const CARD: DatasetCardSpecV159 = {
   baseName: "부패인식지수(CPI)",
   shortDefinitionCard: "전문가·기업인 조사를 바탕으로 각국 공공부문의 부패 수준을 인식 기준으로 정량화한 지수",
   displayType: "U1",
+  statusNotice: null,
   users: ["금융기관", "기업"],
 };
 
