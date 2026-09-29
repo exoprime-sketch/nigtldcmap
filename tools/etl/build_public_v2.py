@@ -1617,6 +1617,53 @@ def _country_config(repo: pathlib.Path, iso3: str) -> dict[str, Any]:
     return config
 
 
+
+# V158 (user decision 2026-09-30): exclusions that apply to every country live
+# in one decision (the contractor's standard marks the publication split as
+# common to all countries); a country's own file holds only what is its alone.
+COMMON_EXCLUSIONS_PATH = "config/data-publication/common-exclusions-v158.json"
+
+
+def load_exclusion_decisions(repo: pathlib.Path, country_config: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """The elements a country does not offer: the common decision plus its own.
+
+    Each row keeps its reason, date and public notice as written. An element
+    declared in both files is refused rather than merged.
+    """
+    sources = [repo / COMMON_EXCLUSIONS_PATH]
+    own = (country_config.get("publicationDecisions") or {}).get("exclusions")
+    if own:
+        sources.append(repo / own)
+    if not sources[0].is_file():
+        raise FileNotFoundError(f"common exclusion decision missing: {sources[0]}")
+    exclusions: dict[str, dict[str, Any]] = {}
+    for path in sources:
+        if not path.is_file():
+            continue
+        exclusion_doc = json.loads(path.read_text(encoding="utf-8"))
+        rows = exclusion_doc.get("exclusions", [])
+        declared = int(exclusion_doc.get("exclusionCount", len(rows)))
+        if declared != len(rows):
+            raise ValueError(
+                "exclusion decision count "
+                f"{declared} does not match its list ({len(rows)})"
+            )
+        for row in rows:
+            element_id = str(row["elementId"])
+            if element_id in exclusions:
+                raise ValueError(f"exclusion declared twice: {element_id} ({path.name})")
+            if not str(row.get("reason") or "").strip():
+                raise ValueError(f"exclusion without a reason: {element_id}")
+            if not str(row.get("decidedAt") or "").strip():
+                raise ValueError(f"exclusion without a decision date: {element_id}")
+            # V156-E (2026-09-29): the detail page states only this public line;
+            # the reason, basis and date stay in the decision record.
+            if not str(row.get("publicNotice") or "").strip():
+                raise ValueError(f"exclusion without a public notice: {element_id}")
+            exclusions[element_id] = row
+    return exclusions
+
+
 def build(repo: pathlib.Path) -> dict[str, Any]:
     # Three env overrides let the final source be built into a staging tree and
     # diffed before anything under public/ is touched. Unset, every one of them
@@ -1662,10 +1709,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     decision_path = repo / country_config["publicationDecisions"]["metadataOnly"]
     # V156: elements a review decided not to offer. Read here so the catalog - the
     # one place every screen and audit reads - states the decision with its reason
-    # and date, instead of each screen keeping its own list. Declared per country,
-    # because a second country's review is a different decision.
-    exclusion_decision = country_config["publicationDecisions"].get("exclusions")
-    exclusion_path = repo / exclusion_decision if exclusion_decision else None
+    # and date, instead of each screen keeping its own list. V158: the decision
+    # common to every country plus the country's own (load_exclusion_decisions).
     if source_dir is not None:
         if not source_dir.is_dir():
             raise FileNotFoundError(f"SOURCE_DIR_NOT_FOUND: {source_dir}")
@@ -1694,27 +1739,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     (out / "downloads").mkdir(parents=True)
 
     decision = json.loads(decision_path.read_text(encoding="utf-8"))
-    exclusions: dict[str, dict[str, Any]] = {}
-    if exclusion_path is not None and exclusion_path.is_file():
-        exclusion_doc = json.loads(exclusion_path.read_text(encoding="utf-8"))
-        exclusions = {
-            str(row["elementId"]): row for row in exclusion_doc.get("exclusions", [])
-        }
-        declared = int(exclusion_doc.get("exclusionCount", len(exclusions)))
-        if declared != len(exclusions):
-            raise ValueError(
-                "exclusion decision count "
-                f"{declared} does not match its list ({len(exclusions)})"
-            )
-        for element_id, row in exclusions.items():
-            if not str(row.get("reason") or "").strip():
-                raise ValueError(f"exclusion without a reason: {element_id}")
-            if not str(row.get("decidedAt") or "").strip():
-                raise ValueError(f"exclusion without a decision date: {element_id}")
-            # V156-E (2026-09-29): the detail page states only this public line;
-            # the reason, basis and date stay in the decision record.
-            if not str(row.get("publicNotice") or "").strip():
-                raise ValueError(f"exclusion without a public notice: {element_id}")
+    exclusions = load_exclusion_decisions(repo, country_config)
     all_data_decision_path = repo / country_config["publicationDecisions"]["allData"]
     all_data_decision = (
         json.loads(all_data_decision_path.read_text(encoding="utf-8"))

@@ -507,6 +507,10 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "sourceLicensePreserved": bool(decision["sourceLicensePreserved"]),
         "sourceAttributionRequired": bool(decision["sourceAttributionRequired"]),
     }
+    # V158 (user decision 2026-09-30): the exclusions common to every country
+    # (plus any of the country's own) - the same loader and the same catalog
+    # shape as Viet Nam's builder.
+    exclusions = v2.load_exclusion_decisions(REPO, config)
 
     if out.exists():
         for name in OWNED_FILES:
@@ -630,6 +634,21 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             "countryElementLabels": column_accounting.get(element_id, {}).get("elementNameValues", []),
             "collectionPlanned": {"Y": True, "N": False}.get(collection),
         }
+        exclusion = exclusions.get(element_id)
+        if exclusion:
+            # As in Viet Nam's catalog: the offer is withdrawn (no download is
+            # offered), the files and the measured status stay, and the public
+            # notice travels with the decision.
+            element["publicStatus"] = "excluded"
+            element["downloadAllowed"] = False
+            element["exclusion"] = {
+                "reason": str(exclusion.get("reason") or ""),
+                "basis": str(exclusion.get("basis") or ""),
+                "decidedAt": str(exclusion.get("decidedAt") or ""),
+                "publicNotice": str(exclusion.get("publicNotice") or ""),
+                "measuredStatus": status,
+                "measuredPresence": presence,
+            }
         if download_allowed:
             token = element_id.lower()
             element["downloadAssets"] = [
@@ -978,7 +997,10 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "publicStatusCounts": status_counts,
         "mapLayerCount": 0,
         "mapFeatureCount": 0,
-        "downloadableElementCount": sum(bool(row.get("downloadAssets")) for row in catalog),
+        # Counts the offer: an excluded element keeps its files but is not offered.
+        "downloadableElementCount": sum(
+            bool(row.get("downloadAssets")) and row.get("publicStatus") != "excluded" for row in catalog
+        ),
         "downloadDelivery": {
             key: download_manifest[key]
             for key in ("assetCount", "repositoryAssetCount", "externalAssetCount", "externalByteTotal", "uploadedCount", "pendingUploadCount", "adapter", "adapterConfigured")
