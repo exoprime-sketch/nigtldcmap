@@ -36,7 +36,57 @@ grep -nE "VNM|베트남|Vietnam|vietnam|/data/(vietnam|bgd)|63개|성·시" \
 | qa-core-first | 14/14 (홈 8카드·현재 국가 수치, 찾기 공개 전체·가나다순·미입고 맨 뒤·sort URL 유지, 상세·지도, 6폭 넘침 0 — 홈·찾기 포함) |
 | analysis QA — 이 PR | 필수 실패 34(기준선 41 이내), 신규 0, 홈 카드 클릭 8/8 · `analysis-qa-rollback-pr-20260929.log` |
 | analysis QA — main(origin/main 체크아웃의 스크립트·빌드) | 필수 실패 34, 신규 0, 홈 카드 클릭 해당 없음 · `analysis-qa-rollback-main-20260929.log` |
-| 전체 게이트 finalize:v151 | 미실행 |
+| 전체 게이트 finalize:v151 | **1회차 통과**(아래 표) |
+
+## 게이트 — finalize:v151 1회차 통과(재실행 없음) · 로그 `reports/v160/gate/finalize-v151-rollback-r1.log` · 커밋 f8d0cef
+
+| 단계 | 결과 |
+|---|---|
+| verify:dataset-directory:v150 | 152 항목 · 294 파일 확인 |
+| audit:release:v136 (finalize:v136, 감사 38개 요약 모두 PASS) | 80/80 |
+| qa:role-split:v140 | 53/53 (#34 이전 검사 수로 복원) |
+| qa:analysis:v140:baseline | 필수 실패 34(기준선 41 이내), 신규 0 |
+| audit:boundary-34:v151 --skip-browser | 21 통과 · 1 건너뜀 |
+| audit:boundary-policy:v151-2 | 24/24 |
+
+## 단위 테스트 593 → 579 내역
+
+삭제 21 − 추가 7 = −14. 삭제는 전부 폐기된 V160 기능(홈 질문·등급·tier) 테스트 — 복원 대상 없음.
+
+| 삭제 파일 | 케이스 |
+|---|---|
+| `src/pages/HomePage.v160.test.tsx` (5) | 질문 6카드 U1..U6 순서 · KPI는 heroIndicator 있을 때만 · 질문 버튼 onOpenQuestion · 주요 데이터 8그리드·정렬 없음 · 제목 위계(h1→h2→h3/질문) |
+| `src/pages/DataExplorerPage.filterByTier.test.ts` (8) | core 기본 57 · all 141 · hidden 미표시 · 검색 시 core→all · 검색 시에도 hidden 제외 · 공백 검색은 검색 아님 · 등급표에 없는 id 제외 · 공개 수 141 |
+| `src/data/spec/coreFirstV160.test.ts` (8) | 152 요소 등급 1개씩 · 57/50/34/11 · core는 ⓪ 아님 · hidden = 제외10+미입고 · hidden == 카탈로그 excluded ∪ not-collected · 질문 6개·유형별 core ≥5 · 질문이 core 57 전부 포함 · KPI는 카드 요약이거나 없음 |
+| 추가 `src/data/finderSortV160.test.ts` (2) | 가나다순(Collator ko)·미입고 맨 뒤 · 조회순(동률 가나다순)·미입고 맨 뒤 |
+| 추가 `src/data/homeCountryV161.test.ts` (5) | country 없음 · 공개 국가(VNM) · 준비 중(BGD) · 알 수 없는 코드 → 기본 공개 국가 · 공개 국가 목록/없음 |
+
+## `core-first-audit-v160.mjs` 삭제 대조
+
+이 파일에는 검사(check)가 없었다 — 도우미 6개만. 상세 3단·지도 기본 레이어 검사는 처음부터 `qa-core-first-v160.mjs`에 있었고 그대로 남는다.
+
+| 내보낸 것 | 역할 | 삭제 후 |
+|---|---|---|
+| `FINDER_PUBLIC_IDS_V160`·`FINDER_PUBLIC_COUNT_V160`(141) | 등급 기준 찾기 건수 | 감사가 fcc04f7의 카탈로그 공개 집합(142)으로 복원 |
+| `FINDER_HIDDEN_IDS_V160` | 등급 hidden 목록 | analysis QA fcc04f7 판정으로 복원(미입고도 찾기 카드로 검사) |
+| `finderAutoLoadSequenceV160` | 24개씩 로드 순서 | fcc04f7의 공개 수 기준 순서로 복원 |
+| `withAllTiersV160` | URL에 tier=all | main에서도 호출 0회(가져오기만) — 등급 폐기로 불필요 |
+| `withAllLayersV160` | URL에 layers=all | main에서도 호출 0회. 지도 전체 펼침 진입은 공용 URL 도우미(`mapList=all`, v129·v133·v134·v135)에 유지 |
+
+| qa-core-first 검사 | main | 이 PR |
+|---|---|---|
+| 상세 3단: DETAIL_FIRST_SCREEN_12 · DETAIL_CHART_LAYER1_WITHIN_2_SCREENS · DETAIL_LONG_BLOCK_OPENS_ON_10 · DETAIL_LAYERS_START_COLLAPSED | 4 | 4 (동일) |
+| 지도 기본 레이어: MAP_DEFAULT_LAYERS_MATCH_POLICY · MAP_CORE_OPEN_MORE_FOLDED | 2 | 2 (동일) |
+| NO_HORIZONTAL_OVERFLOW_6_WIDTHS · CONSOLE_ERRORS_ZERO | 2 | 2 (동일) |
+| 홈 | HOME_BODY_WORDS_MINUS_50 · HOME_FIRST_SCREEN_WORDS_MAX_120 · HOME_SIX_QUESTIONS | HOME_FEATURED_EIGHT · HOME_FIGURES_FROM_CURRENT_COUNTRY |
+| 찾기 | FINDER_DEFAULT_CORE | FINDER_LISTS_PUBLIC_SET · FINDER_SORT_NAME_DEFAULT · FINDER_PREPARING_LAST · FINDER_SORT_URL_KEPT |
+| **합계** | **12** | **14** |
+
+## 정리
+
+- 추적표 '등급(V160)' 열 삭제 — fcc04f7 추적표와 바이트 동일
+- `docs/CORE_FIRST_V160.md` 상단에 "2026-09-29 폐기 — 홈 질문·등급 철회, 상세 3단·지도 기본 레이어만 유지"
+- 스태시 `home-restore-prep-churn-s4` 삭제
 
 ## 화면
 
