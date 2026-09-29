@@ -2,6 +2,13 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V161-A 지역명 표기 모듈 (PR 후보)
+
+### Added
+
+- 지역명 `한글명 (현지명)` 모듈 `src/data/geo/regionNameV161.ts` + 생성 사전 `regionNamesV161.json`: 베트남 34개 단위·도시 6·63개 성(기존 표, 자동 변환 0, 개편 전 성 통합 안내), 방글라데시 주 8·구 64, 그 밖의 베트남 지명은 국립국어원 표기 규칙 제안(검수 대기). 화면 적용은 후속(B·C·P9-B1)
+- 생성기 `npm run build:region-names:v161`·점검 `check:region-names:v161`, 방글라데시 원천 스냅숏(geoBoundaries ADM2·한국어 위키백과 revid 고정), 검수표 `docs/handoff/v161/REGION_NAME_REVIEW.md`
+
 ## Unreleased — V156-D 제외 10건 공개 반영 (PR 후보)
 
 ### Changed

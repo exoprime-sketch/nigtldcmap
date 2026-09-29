@@ -6,7 +6,10 @@
  * import-dataset-spec-v159.mjs) plus the two hand-written planning
  * documents (the S1-S4 schema doc and the typology assignment plan) and
  * assembles the contractor handoff package:
- *   output/v159/datasetTypologyV159.xlsx        5 sheets (git-ignored)
+ *   output/v159/datasetTypologyV159.xlsx        5 sheets (git-ignored, for delivery)
+ *   output/v159/sheets/1..5-*.csv                the same 5 sheets as CSV (git-ignored;
+ *                                                copied to docs/handoff/v159/sheets - the
+ *                                                repository keeps text, not a workbook)
  *   output/v159/structure-examples/S1..S4.csv    real delivered rows (git-ignored)
  *   docs/DATA_TYPOLOGY_V159.md                   generated handoff document (committed)
  *
@@ -690,6 +693,7 @@ ${mdTableFromSheet(sheets.assignment)}
 | 파일 | 용도 |
 |---|---|
 | \`output/v159/datasetTypologyV159.xlsx\` | 이 문서의 표 5개(표출유형 정의 / 구조 스키마 S1~S4 / 152 배정표 / 명칭 분리표 / 사례 통계) |
+| \`output/v159/sheets/1~5-*.csv\` | 같은 표 5개의 CSV(저장소 사본: \`docs/handoff/v159/sheets/\` — 저장소에는 통합문서 대신 텍스트로 둔다) |
 | \`output/v159/structure-examples/S1.csv\`~\`S4.csv\` | 구조별 실제 납품 행 예시(값은 모두 실 데이터에서 그대로 옮김, 출처 없는 칸은 비움) |
 | \`docs/DATA_TYPOLOGY_V159_SCHEMA.md\` | 구조 4형태 스키마(§2 표가 xlsx "구조 스키마" 시트의 정본) |
 | \`docs/DATA_TYPOLOGY_V159.md\` | 이 문서 |
@@ -759,6 +763,20 @@ function main() {
     "S4.csv": buildS4Csv(),
   };
   for (const [file, content] of Object.entries(csvOutputs)) writeFileSync(resolve(EXAMPLES_DIR, file), content);
+
+  // The same five tables as the workbook, as CSV: the repository keeps these
+  // (docs/handoff/v159/sheets), since a tracked .xlsx is raw-source material to
+  // the security audit. The workbook itself stays a delivery artifact in output/.
+  const SHEETS_DIR = resolve(OUT_DIR, "sheets");
+  mkdirSync(SHEETS_DIR, { recursive: true });
+  const sheetFiles = {
+    "1-display-type.csv": sheets.displayType,
+    "2-structure-schema.csv": sheets.structureSchema,
+    "3-assignment.csv": sheets.assignment,
+    "4-name-split.csv": sheets.nameSplit,
+    "5-case-stats.csv": sheets.caseStats,
+  };
+  for (const [file, sheet] of Object.entries(sheetFiles)) writeFileSync(resolve(SHEETS_DIR, file), toCsv(sheet.headers, sheet.rows));
 
   const summary = {
     xlsx: xlsxPath,
