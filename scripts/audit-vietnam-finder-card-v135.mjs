@@ -13,7 +13,6 @@ import {
   waitForValue,
 } from "./v125/browser-runtime.mjs";
 import { finderUrlV135, finishAuditV135 } from "./v135/audit-helpers.mjs";
-import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160 } from "./v160/core-first-audit-v160.mjs";
 
 import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 
@@ -58,7 +57,7 @@ try {
         `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`
       )
     );
-    if (count >= FINDER_PUBLIC_COUNT_V160) break;
+    if (count >= publicSetV156.length) break;
     await evaluateValue(
       browser.cdp,
       `(() => { window.scrollTo(0, document.body.scrollHeight); return true; })()`
@@ -75,7 +74,7 @@ try {
   }
   await waitForValue(
     browser.cdp,
-    `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length === ${FINDER_PUBLIC_COUNT_V160}`,
+    `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length === ${publicSetV156.length}`,
     { timeoutMs: 35_000 }
   );
   snapshot = await evaluateValue(
@@ -164,8 +163,7 @@ const genericDescriptions = cards.filter((card) => {
 const invalidActions = cards.filter((card) => card.invalidAction);
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
-// V160: every public dataset the finder lists with tier=all (⓪ elements are not listed).
-audit.check("FINDER_CARD_RUNTIME_COVERAGE", runtimeFailure === null && cards.length === FINDER_PUBLIC_COUNT_V160, { runtimeFailure, cardCount: cards.length }, { cardCount: FINDER_PUBLIC_COUNT_V160 });
+audit.check("FINDER_CARD_RUNTIME_COVERAGE", runtimeFailure === null && cards.length === publicSetV156.length, { runtimeFailure, cardCount: cards.length }, { cardCount: publicSetV156.length });
 audit.check("FINDER_INTERNAL_METADATA_COUNT", internalMetadata.length === 0, internalMetadata, []);
 audit.check("FINDER_DUPLICATE_MEASURE_TITLE_COUNT", duplicateMeasureTitles.length === 0, duplicateMeasureTitles, []);
 audit.check(
