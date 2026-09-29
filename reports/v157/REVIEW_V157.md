@@ -322,3 +322,37 @@
 
 - 결과: `npm run qa:role-split:v140` **53/53 통과**(이전 51/53). 판정 기준·검사 위치는 한 건도 바꾸지 않았다.
 - 상세 화면의 안내는 지도 대상 12건에만 나온다. 애초에 지도 대상이 아닌 자료는 종전대로 아무것도 표시하지 않는다("지도 대상이 아님"은 알릴 내용이 아니다).
+
+### 4.8 PR 보고 추가 확인 2건(사용자 요구 2026-09-29)
+
+#### (1) B-017 평가구역 경계의 출처 — 원천 기하 확인, 표출 유지
+
+| 항목 | 내용 |
+| --- | --- |
+| 데이터셋 | WRI Aqueduct 4.0 Water Risk Framework, `baseline_annual` (Kuzma et al. 2023) |
+| 릴리스 | `Y2023M07D05` (2023-07-05) |
+| 배포 파일 | `aqueduct-4-0-water-risk-data.zip` (261,527,511 bytes, SHA-256 `bd3ed2bc…24fc3`) → `Aqueduct40_waterrisk_download_Y2023M07D05/GDB/Aq40_Y2023D07M05.gdb`, 레이어 `baseline_annual` (전 세계 68,506 폴리곤, EPSG:4326) |
+| 추출 | 2026-09-22, pyogrio 0.13 / GDAL 3.12 `OpenFileGDB`, 조건 `gid_0 = 'VNM'` → 443개 단위 |
+| 저장소 내 원본 | `tools/vietnam_spatial/source/vnm-aqueduct40-baseline-annual-source.geojson.gz` (SHA-256 `4137f04c…a2e5`), `source/README.md`에 출처·URL·해시·라이선스 기재 |
+| 라이선스 | **CC BY 4.0** — 화면 표기: "WRI Aqueduct 4.0 Water Risk Framework (Kuzma et al. 2023), baseline annual, release 2023-07-05, CC BY 4.0. Unit polygons derive from HydroBASINS (Lehner & Grill 2013) and GADM 4.1." (map-index 레이어 `attribution`, 피처 속성 `license`·`attribution`에도 동일 기재) |
+| 단위의 성격 | Aqueduct가 배포하는 평가구역 = HydroBASINS 6단계 유역 ∩ GADM 4.1 ADM1 ∩ 대수층. 이 프로젝트가 만든 구획이 아니다 |
+
+- **임의 생성·근사 여부**: 없음. 빌더 기록(`reports/v155/aqueduct-basins-v155.json`)의 `simplificationToleranceDeg = 0`, `syntheticVertexCount = 0`, 피처 속성 `geometryProvenance = "source-provided-polygon"`, `isSynthetic = false`.
+- **이번 라운드 재확인**(기록을 믿지 않고 직접 대조): `node scripts/v157/verify-b017-source-v157.mjs` → 공개 442개 폴리곤 전부가 원본 캡슐의 같은 `stringId` 폴리곤과 **좌표까지 동일**(`matched 442`, `vertexMismatch 0`, `idsNotInSource 0`, 점수 불일치 0). 공개 파일 SHA-256 `2f8b7b3a…9715e1`은 V155 기록과 일치.
+- **443 → 442**: 원천에서 `Shape_Area = 0`인 빈 기하 1건(`436707-VNM.23_1-1892`, Hải Phòng)은 그릴 좌표가 없어 제외했다. 대체 도형을 만들지 않았다(원천 결함 그대로 기록).
+- **확인 한계**: 261 MB 원본 zip은 이 체크아웃에 없다(읽기전용 원본 폴더 보관). 따라서 zip → GDB → 캡슐 구간은 README에 기록된 SHA-256과 추출 기록에 근거하고, **캡슐 → 공개 자산 구간은 위 대조로 직접 검증**했다. zip 해시 재확인이 필요하면 원본 폴더에서 1회 실행하면 된다.
+- 결론: 원천 기하가 맞으므로 **표출 보류로 되돌리지 않는다**. 지도가 쓰는 파일은 원본 정점 그대로인 `vnm-aqueduct40-basins.geojson`이며, 유역 단위로 합친 `-l6.geojson`은 기하 전용(지표값 합산 없음)으로 지도에 쓰지 않는다.
+
+#### (2) 지도 목록의 '핵심 레이어' 그룹 — 7개 분류 유지(의도된 상태)
+
+- **현상 정리**: 운영(= main)의 지도 목록 첫 그룹은 `핵심 레이어`(20개, 기본 펼침)이고 나머지는 '더 많은 레이어' 아래 7개 분류로 접혀 있다. 이 구성은 **#34(V160)** 가 넣었고, #41은 홈·데이터 찾기만 되돌려 지도에는 남아 있다. 이 브랜치는 #34 이전에서 갈라져 나와 아직 그 코드가 없으므로, 현재 캡처의 7개 분류는 "이 브랜치가 바꾼 것"이 아니라 "#34 이전 구성"이다.
+- **결정(의도된 변경)**: `origin/main` 병합 시 `MAP_CORE_GROUP_V160`('핵심 레이어' 그룹 + '더 많은 레이어' 접기)을 **받지 않고 7개 분류 목록을 유지**한다. 사유:
+  - '핵심' 개념은 폐기됐다(#41이 홈·찾기에서 되돌림). 지도에만 남기면 화면마다 분류 체계가 달라진다.
+  - 60개 자료 중 20개를 '핵심'으로 고르는 기준은 자료에 없다(편집자 판단). 계약이 정의하는 분류는 7개 분류뿐이며 목록 수·개수 표기가 모두 이 분류를 따른다.
+  - 그리는 레이어·기본 선택·map-index는 이 그룹과 무관하다(목록 구성·접힘만 바뀐다).
+- **영향**: `scripts/v160/qa-core-first-v160.mjs`의 지도 절(`data-map-core-v160`)은 실패하게 된다. 이 스크립트는 차단 게이트(`finalize:v151`)와 GitHub CI 어디에도 들어 있지 않다. '핵심' 폐기 정리는 세션4 되돌리기 작업 범위이므로 그쪽에 알린다.
+- **'핵심' 문구 0건 확인**(이 브랜치 production 빌드, 지도 화면 목록 전부 펼친 상태의 렌더 텍스트 스캔):
+  - 운영: `{"base":"https://nigtldcmap.vercel.app","hits":[{"tag":"span","text":"핵심 레이어"}]}`
+  - 이 브랜치: 화면 문구 **0건**. 검출된 2건은 모두 자료명 `핵심광물 부존`(B-044, 표출 불가 12건의 '준비 중' 줄에 나오는 이름)으로 UI 어휘가 아니다.
+  - 소스 대조: `git grep -n "핵심 레이어" -- src public` → main 1건(`RealMapExplorerPage.tsx:210`), 이 브랜치 **0건**.
+- 병합 후 같은 스캔을 다시 돌려 0건을 재확인하고 캡처 01·02를 다시 찍는다.
