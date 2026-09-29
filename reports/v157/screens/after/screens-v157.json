@@ -1,0 +1,147 @@
+{
+  "schema": "screens-v157",
+  "generatedAt": "2026-09-29T07:18:00.857Z",
+  "base": "http://127.0.0.1:4357",
+  "out": "/output/v157/screens/after",
+  "shots": [
+    {
+      "name": "01-map-default",
+      "note": "지도 첫 화면(레이어 선택 없음)",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기"
+      ],
+      "selectionCard": false,
+      "selectionTitle": null,
+      "companions": 0,
+      "drawnLayers": 0,
+      "file": "/output/v157/screens/after/01-map-default.png"
+    },
+    {
+      "name": "02-map-list-groups",
+      "note": "지도 자료 목록 7개 분류 펼침",
+      "expandGroups": true,
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록의 분류 7개 모두 펼침"
+      ],
+      "selectionCard": false,
+      "selectionTitle": null,
+      "companions": 0,
+      "drawnLayers": 0,
+      "file": "/output/v157/screens/after/02-map-list-groups.png"
+    },
+    {
+      "name": "03-layer-b017-grades",
+      "note": "B-017 물 스트레스 평가구역",
+      "layer": "B-017",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 B-017 분류 펼침",
+        "B-017 선택"
+      ],
+      "selectionCard": false,
+      "selectionTitle": null,
+      "companions": 1,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/03-layer-b017-grades.png"
+    },
+    {
+      "name": "04-layer-b026-directions",
+      "note": "B-026 우세 유향(범주형)",
+      "layer": "B-026",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 B-026 분류 펼침",
+        "B-026 선택"
+      ],
+      "selectionCard": false,
+      "selectionTitle": null,
+      "companions": 0,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/04-layer-b026-directions.png"
+    },
+    {
+      "name": "05-layer-a028-assets",
+      "note": "A-028 항만·댐·저수지",
+      "layer": "A-028",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 A-028 분류 펼침",
+        "A-028 선택"
+      ],
+      "selectionCard": false,
+      "selectionTitle": null,
+      "companions": 0,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/05-layer-a028-assets.png"
+    },
+    {
+      "name": "06-layer-b048-companions",
+      "note": "B-048 광산 + 연관 데이터",
+      "layer": "B-048",
+      "select": "keyboard",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 B-048 분류 펼침",
+        "B-048 선택",
+        "키보드 대상 선택 버튼으로 첫 개체 선택"
+      ],
+      "selectionCard": true,
+      "selectionTitle": "Ban Phuc",
+      "companions": 1,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/06-layer-b048-companions.png"
+    },
+    {
+      "name": "07-selection-card-region",
+      "note": "성·시 선택 설명 카드",
+      "layer": "C-016",
+      "select": "keyboard",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 C-016 분류 펼침",
+        "C-016 선택",
+        "키보드 대상 선택 버튼으로 첫 개체 선택"
+      ],
+      "selectionCard": true,
+      "selectionTitle": "안장 (An Giang)",
+      "companions": 1,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/07-selection-card-region.png"
+    },
+    {
+      "name": "08-selection-card-facility",
+      "note": "시설 선택 설명 카드",
+      "layer": "A-023",
+      "select": "keyboard",
+      "status": "captured",
+      "path": "/?view=map&country=VNM#map",
+      "steps": [
+        "/?view=map&country=VNM#map 열기",
+        "자료 목록에서 A-023 분류 펼침",
+        "A-023 선택",
+        "키보드 대상 선택 버튼으로 첫 개체 선택"
+      ],
+      "selectionCard": true,
+      "selectionTitle": "Kon Dao",
+      "companions": 0,
+      "drawnLayers": 1,
+      "file": "/output/v157/screens/after/08-selection-card-facility.png"
+    }
+  ],
+  "consoleErrors": []
+}
