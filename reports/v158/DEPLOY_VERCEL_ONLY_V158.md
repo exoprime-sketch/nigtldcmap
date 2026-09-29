@@ -58,8 +58,9 @@
   - `countryContext.ts`는 V158-A에서 국가 데이터 루트를 한곳에 모은 레지스트리 모듈이다. 화면 코드는 `countryAssetPathV158()` → `publicAssetUrlV128`만 쓴다.
     - 절대 경로 도우미 `dataUrl`·`vietnamDataUrlV158`의 모듈 밖 사용은 0이다.
     - 하위 경로 실행은 `SUBPATH_RUNTIME_RESOLUTION`이 브라우저로 확인하며 PASS다.
-  - 테스트 파일은 배포되지 않는다.
-- **변경**: 문자열 검사 예외에 resolver 외 `src/data/countryContext.ts`와 `*.test.*`를 추가했다.
+  - 그 단위 테스트(`countryContext.test.ts`)는 이 경로 값을 고정하는 검사이고 배포되지 않는다.
+- **변경**: 문자열 검사 예외에 resolver 외 **정확한 경로 2개**만 추가했다: `src/data/countryContext.ts`, `src/data/countryContext.test.ts`.
+  - 처음 커밋은 테스트 파일 전체(`*.test.*` 패턴)를 뺐으나, 사용자 확인(2026-09-29)에 따라 이 테스트 하나로 좁혔다. 좁힌 뒤에도 걸리는 곳 0(9/9).
   - 규칙 자체(화면 코드의 `"/data/…"` 문자열 금지)는 그대로다.
 - **결과**: `audit:deployment:v128` 9/9
 
