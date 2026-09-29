@@ -22,10 +22,10 @@ export default function ReportedInventoryAnalysisV147({ entities }: { entities: 
     <h3><PublicTermTextV134 text="2016년 부문별 온실가스 배출량 · BUR3 수록 자료" /></h3>
     <p className="detail146-note"><PublicTermTextV134 text="보고서에 수록된 2016년 배출량입니다. 현재 배출량이나 NDC 감축 달성량은 아닙니다. 과거 BUR와 산정기준이 달라 하나의 추이로 연결하지 않습니다." /></p>
     <ul className="d153-summary" aria-label="부문별 순배출량 · 2016년 · ktCO₂e" data-testid="reported-inventory-tiles-v159">
-      {inventory.map((r) => <li key={r.source}><span><PublicTermTextV134 text={r.label} /></span><strong>{r.total === null ? "미기재" : `${formatValueV121(r.total)} ktCO₂e`}</strong></li>)}
+      {inventory.map((r) => <li key={r.source}><span><PublicTermTextV134 text={r.label} /></span><strong>{r.total === null ? "미기재" : <PublicTermTextV134 text={`${formatValueV121(r.total)} ktCO₂e`} />}</strong></li>)}
     </ul>
     <p className="detail146-note">음수는 순흡수량입니다. 총계·부문 합계·가스별 값을 중복해서 더하지 않습니다.</p>
-    <div className="detail146-table" data-analysis-block="table"><table data-testid="inventory-matrix-v147"><caption>2016년 · BUR3 표 2.3·2.15 · 단위: ktCO₂e</caption><thead><tr><th scope="col">부문</th><th scope="col">부문 합계</th>{BUR_GASES_V147.map((g) => <th key={g} scope="col"><PublicTermTextV134 text={GAS_LABELS[g]} /></th>)}</tr></thead><tbody>{inventory.map((r) => <tr key={r.source}><th scope="row">{r.label}</th><td>{formatValueV121(r.total)}</td>{BUR_GASES_V147.map((g) => <td key={g}>{r.gases[g] === null ? "미기재" : formatValueV121(r.gases[g])}</td>)}</tr>)}</tbody></table></div>
+    <div className="detail146-table" data-analysis-block="table"><table data-testid="inventory-matrix-v147"><caption><PublicTermTextV134 text="2016년 · BUR3 표 2.3·2.15 · 단위: ktCO₂e" /></caption><thead><tr><th scope="col">부문</th><th scope="col">부문 합계</th>{BUR_GASES_V147.map((g) => <th key={g} scope="col"><PublicTermTextV134 text={GAS_LABELS[g]} /></th>)}</tr></thead><tbody>{inventory.map((r) => <tr key={r.source}><th scope="row">{r.label}</th><td>{formatValueV121(r.total)}</td>{BUR_GASES_V147.map((g) => <td key={g}>{r.gases[g] === null ? "미기재" : formatValueV121(r.gases[g])}</td>)}</tr>)}</tbody></table></div>
     <p className="detail146-note">원문의 빈 셀은 ‘미기재’로 남겼습니다. 가스별 합계와 부문 합계에는 원문 반올림 차이가 있을 수 있습니다.</p>
   </section>;
 }

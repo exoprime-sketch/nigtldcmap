@@ -140,9 +140,7 @@ export default function DataDescriptionV159({
   availableIndicatorIds,
   onHighlightIndicators,
 }: DataDescriptionV159Props) {
-  const rawId = useId().replace(/:/g, "");
-  const headingId = `dd159-heading-${rawId}`;
-  const casesRegionId = `dd159-cases-${rawId}`;
+  const casesRegionId = `dd159-cases-${useId().replace(/:/g, "")}`;
   const [casesOpen, setCasesOpen] = useState(false);
   const [activeChipKey, setActiveChipKey] = useState<string | null>(null);
 
@@ -160,12 +158,13 @@ export default function DataDescriptionV159({
 
   return (
     <section
-      aria-labelledby={headingId}
+      // V160: the section's own "데이터 설명" heading is now the enclosing
+      // DetailLayerV160's <summary> (layer 2), so it is not repeated here.
+      aria-label="데이터 설명"
       className="dd159"
       data-dd159-cases={cases.length}
       data-testid="data-description-v159"
     >
-      <h2 id={headingId}>데이터 설명</h2>
       <div className="dd159-part" data-dd159-part="description">
         <h3>상세 설명</h3>
         <p>

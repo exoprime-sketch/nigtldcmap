@@ -5,6 +5,7 @@ import { publicSourceUrlV126 } from "../../../data/visualization/publicFieldPoli
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./detail-analysis-v146.css";
 import "./detail-analysis-v153.css";
+import ListFoldV160 from "./ListFoldV160";
 
 interface Props {
   entities: VietnamEntityV124[];
@@ -32,6 +33,8 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
       {model.groups.map((group) => (
         <section key={group.key} className="d153-section" data-analysis-block="comparison-table" data-testid={`ppp-group-${group.key}-v153`}>
           <h4>{group.title} · {group.facts.length}건</h4>
+          {/* V160: the first ten rows open; '전체 보기' for the rest. */}
+          <ListFoldV160 total={group.facts.length}>
           <ul className="d153-facts">
             {group.facts.map((fact) => {
               const href = publicSourceUrlV126(fact.href);
@@ -49,6 +52,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
               );
             })}
           </ul>
+          </ListFoldV160>
         </section>
       ))}
       {model.provinces.length ? (

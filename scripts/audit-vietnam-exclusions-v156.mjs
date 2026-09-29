@@ -21,6 +21,7 @@ import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v
 import { evaluateValue, launchHeadlessBrowser, navigate, setViewport, startStaticBuildServer, waitForValue } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { auditExcludedNoticesV156, excludedElementsV156, publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+import { FINDER_HIDDEN_IDS_V160 } from "./v160/core-first-audit-v160.mjs";
 
 const audit = new AuditV125("exclusions:v156");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
@@ -37,6 +38,12 @@ const hasDownloadAssets = (element) =>
   Array.isArray(element?.downloadAssets) ? element.downloadAssets.length > 0 : Boolean(element?.downloadAssets && Object.keys(element.downloadAssets).length);
 const publicDownloadable = publicSet.filter(hasDownloadAssets).length;
 const cards = Array.isArray(cardDoc.cards) ? cardDoc.cards : Object.values(cardDoc.cards || {});
+// V160 (core-first, decision 2026-09-29): the finder (tier=all) and the home
+// figures list the public set minus the tier-hidden elements (C-021, not
+// collected); the home shows six question cards instead of the featured grid.
+const finderSet = publicSet.filter((element) => !FINDER_HIDDEN_IDS_V160.has(String(element.elementId)));
+const finderDownloadable = finderSet.filter(hasDownloadAssets).length;
+const homeQuestions = readJson(resolve(PROJECT_ROOT, "src/data/spec/homeQuestionsV160.json")).value?.questions || [];
 
 // ---- data: the decisions, the catalog and the counts agree -----------------
 const decisionIds = new Set(decisions.map((row) => String(row.elementId)));
@@ -112,7 +119,7 @@ let finder = null;
 const categories = [];
 const search = [];
 let searchControl = null;
-const home = { sorts: [], figures: null };
+const home = { questions: null, pageIds: [], questionIds: [], figures: null };
 let downloads = null;
 let notices = [];
 try {
@@ -126,7 +133,7 @@ try {
   await waitForValue(cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length > 0`, { timeoutMs: 35_000 });
   for (let guard = 0; guard < 20; guard += 1) {
     const count = Number(await evaluateValue(cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`));
-    if (count >= publicSet.length) break;
+    if (count >= finderSet.length) break;
     await evaluateValue(cdp, `(() => { window.scrollTo(0, document.documentElement.scrollHeight); return true; })()`);
     try {
       await waitForValue(cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length > ${count}`, { timeoutMs: 8_000 });
@@ -145,7 +152,7 @@ try {
   const codes = [...new Set(catalog.map((element) => String(element.categoryCode || "")).filter(Boolean))].sort();
   for (const code of codes) {
     await evaluateValue(cdp, setSelectValue(CATEGORY_SELECT, code));
-    const expected = publicSet.filter((element) => element.categoryCode === code).length;
+    const expected = finderSet.filter((element) => element.categoryCode === code).length;
     await waitForValue(cdp, `document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute('data-total-count') === '${expected}'`, { timeoutMs: 10_000 }).catch(() => null);
     const shown = Number(await evaluateValue(cdp, `document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute('data-total-count')`));
     categories.push({ code, shown, expected, full: catalog.filter((element) => element.categoryCode === code).length });
@@ -172,15 +179,15 @@ try {
   }
   await evaluateValue(cdp, `(() => { document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); return true; })()`);
 
-  // Home: both orders of the featured cards, and the two figures.
+  // Home (V160): the six question cards, every element id the page names,
+  // and the two figures.
   await navigate(cdp, `${server.url.replace(/\/$/u, "")}/#home`);
-  await waitForValue(cdp, `document.querySelectorAll('.home-featured-v139__card[data-element-id]').length > 0`, { timeoutMs: 35_000 });
-  for (const label of ["조회순", "최신순"]) {
-    await evaluateValue(cdp, `(() => { const button = [...document.querySelectorAll('.home-sort-v149 button')].find((node) => node.textContent.trim() === ${JSON.stringify(label)}); button?.click(); return Boolean(button); })()`);
-    await new Promise((resolveWait) => setTimeout(resolveWait, 600));
-    const ids = await evaluateValue(cdp, `[...document.querySelectorAll('.home-featured-v139__card[data-element-id]')].map((node) => node.getAttribute('data-element-id'))`);
-    home.sorts.push({ label, ids, excluded: ids.filter((id) => excludedIds.has(id)) });
-  }
+  await waitForValue(cdp, `document.querySelectorAll('[data-testid="home-question-v160"]').length > 0`, { timeoutMs: 35_000 });
+  home.questions = Number(await evaluateValue(cdp, `document.querySelectorAll('[data-testid="home-question-v160"]').length`));
+  home.pageIds = await evaluateValue(cdp, `[...document.querySelectorAll('main [data-element-id]')].map((node) => node.getAttribute('data-element-id'))`);
+  home.questionIds = homeQuestions.flatMap((question) => question.coreElementIds || []);
+  // The figures fill in once the catalog has loaded (the cards do not wait for it).
+  await waitForValue(cdp, `[...document.querySelectorAll('.home-status-v139 dl > div dd')].some((node) => /[0-9]/.test(node.textContent || ''))`, { timeoutMs: 35_000 }).catch(() => null);
   home.figures = await evaluateValue(cdp, `(() => {
     const read = (label) => { const row = [...document.querySelectorAll('.home-status-v139 dl > div')].find((node) => node.querySelector('dt')?.textContent.trim() === label); return Number((row?.querySelector('dd')?.textContent || '').replace(/[^0-9]/g, '')) || null; };
     return { items: read('전체 데이터 항목'), downloadable: read('다운로드 가능 항목') };
@@ -204,9 +211,9 @@ try {
 audit.check("EXCLUSIONS_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
 audit.check(
   "EXCLUDED_ABSENT_FROM_FINDER",
-  finder !== null && finder.excluded.length === 0 && finder.count === publicSet.length && finder.total === publicSet.length,
+  finder !== null && finder.excluded.length === 0 && finder.count === finderSet.length && finder.total === finderSet.length,
   finder,
-  { count: publicSet.length, total: publicSet.length, excluded: [] }
+  { count: finderSet.length, total: finderSet.length, excluded: [] }
 );
 audit.check(
   "CATEGORY_COUNTS_PUBLIC_ONLY",
@@ -222,12 +229,14 @@ audit.check(
 );
 audit.check(
   "EXCLUDED_ABSENT_FROM_HOME",
-  home.sorts.length === 2 &&
-    home.sorts.every((row) => row.ids.length > 0 && row.excluded.length === 0) &&
-    home.figures?.items === publicSet.length &&
-    home.figures?.downloadable === publicDownloadable,
-  home,
-  { excluded: [], items: publicSet.length, downloadable: publicDownloadable }
+  home.questions === 6 &&
+    !home.pageIds.some((id) => excludedIds.has(id)) &&
+    home.questionIds.length > 0 &&
+    !home.questionIds.some((id) => excludedIds.has(id)) &&
+    home.figures?.items === finderSet.length &&
+    home.figures?.downloadable === finderDownloadable,
+  { ...home, excludedOnPage: home.pageIds.filter((id) => excludedIds.has(id)), excludedInQuestions: home.questionIds.filter((id) => excludedIds.has(id)) },
+  { questions: 6, excluded: [], items: finderSet.length, downloadable: finderDownloadable }
 );
 audit.check(
   "EXCLUDED_DOWNLOAD_NOT_OFFERED",

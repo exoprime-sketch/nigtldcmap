@@ -14,6 +14,7 @@ import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { useAnalysisContractV153 } from "./analysisContractContextV153";
+import { useRankFoldV160 } from "./RankFoldV160";
 import { Fragment } from "react";
 
 /**
@@ -48,7 +49,6 @@ const ALL_REGIONS = "";
  */
 const SUM_ALLOWED = new Set(["C-016"]);
 const TOTAL_LIKE = /^(전국|합계|총계|total)$/iu;
-const TOP_COUNT = 15;
 
 type Row = SemanticObservationV125 & { value: number };
 
@@ -212,6 +212,18 @@ export default function ProvinceSeriesAnalysisV140({
   }, [measure, measures, numeric, region, regionKey, time]);
 
   const v153 = useAnalysisContractV153();
+  // V160: the province ranking opens on its top and bottom 10 (RankFoldV160).
+  const rankFold = useRankFoldV160(comparison.length, `${measure?.key}|${time}`);
+  // One line above the list saying what it shows - the fold's own numbers,
+  // so the sentence and the rows on screen always agree.
+  const rankNoticeV160 = (withSelection: boolean) =>
+    rankFold.foldable ? (
+      <p className="psa140__notice" data-testid="psa140-rank-notice-v160">
+        {rankFold.expanded
+          ? `${isYearTime(time) ? `${time}년` : time} 기준 전체 ${comparison.length}개 성·시입니다.`
+          : `${isYearTime(time) ? `${time}년` : time} 기준 상위·하위 ${rankFold.edge}개 성·시${withSelection ? "와 선택 지역" : ""}입니다. 전체는 '전체 ${comparison.length}개 보기'에서 확인할 수 있습니다.`}
+      </p>
+    ) : null;
 
   if (!measure) {
     return <div className="pav126-empty" role="status">이 자료에는 수치 값이 없습니다.</div>;
@@ -222,9 +234,6 @@ export default function ProvinceSeriesAnalysisV140({
   const selectedRow = region ? valueAt(region, time) : null;
   const rank = region ? comparison.findIndex((entry) => entry.region === region) + 1 : 0;
   const timeLabel = isYearTime(time) ? `${time}년` : time;
-  const compareShown = comparison.slice(0, TOP_COUNT);
-  const highlightIncluded = !region || compareShown.some((entry) => entry.region === region);
-  const compareRows = highlightIncluded ? compareShown : [...compareShown, ...comparison.filter((entry) => entry.region === region)];
 
   const update = (patch: Partial<{ measure: string; region: string; time: string }>) => {
     const nextTime = patch.time ?? time;
@@ -357,18 +366,15 @@ export default function ProvinceSeriesAnalysisV140({
             ))}
           </ul></>
         ) : (
-          <><ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
-            {compareRows.map((entry, index) => (
-              <li key={entry.region} className={entry.region === region ? "is-selected" : undefined}>
+          <>{rankNoticeV160(false)}<ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
+            {comparison.map((entry, index) => (
+              <li key={entry.region} {...rankFold.rowProps(index)}>
                 <span>{index + 1}. {entry.region}</span>
                 <SignedBarV146 value={entry.row.value} values={values} />
                 <strong>{format(entry.row.value)}</strong>
               </li>
             ))}
-          </ul></>
-        )}
-        {!tableOpen && !region && comparison.length > TOP_COUNT && (
-          <p className="psa140__notice">상위 {TOP_COUNT}개 성·시입니다. 전체 {comparison.length}개는 '표로 보기'에서 확인할 수 있습니다.</p>
+          </ul>{rankFold.toggle}</>
         )}
       </section>
           ) },
@@ -378,12 +384,12 @@ export default function ProvinceSeriesAnalysisV140({
             <span>보조 비교</span>
             <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {region} 위치</h3>
           </header>
+          {rankNoticeV160(true)}
           <ChartAxesV150 x={measure.label} y="성·시" unit={unit} />
           <ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
-            {compareRows.map((entry) => {
-              const index = comparison.findIndex((candidate) => candidate.region === entry.region);
+            {comparison.map((entry, index) => {
               return (
-                <li key={entry.region} className={entry.region === region ? "is-selected" : undefined}>
+                <li key={entry.region} className={entry.region === region ? "is-selected" : undefined} {...rankFold.rowProps(index, entry.region === region)}>
                   <span>{index + 1}. {entry.region}</span>
                   <SignedBarV146 value={entry.row.value} values={values} />
                   <strong>{format(entry.row.value)}</strong>
@@ -391,9 +397,7 @@ export default function ProvinceSeriesAnalysisV140({
               );
             })}
           </ul>
-          {comparison.length > TOP_COUNT && (
-            <p className="psa140__notice">상위 {TOP_COUNT}개 성·시와 선택 지역입니다. 전체 순위는 '전체 성·시 비교'에서 '표로 보기'로 확인할 수 있습니다.</p>
-          )}
+          {rankFold.toggle}
         </section>
           ) }] : []),
         ],
