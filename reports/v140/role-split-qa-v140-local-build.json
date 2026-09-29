@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:64983",
-  "generatedAt": "2026-09-29T02:28:07.817Z",
+  "base": "http://127.0.0.1:56534",
+  "generatedAt": "2026-09-29T06:29:59.126Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -279,10 +279,10 @@
       "id": "FINDER_TOTAL_152",
       "pass": true,
       "actual": {
-        "totalAll": 142,
-        "homeTotalCount": 142
+        "totalAll": 146,
+        "homeTotalCount": 146
       },
-      "expected": 142
+      "expected": 146
     },
     {
       "id": "FINDER_HAS_SORT_AND_FILTERS",
@@ -325,8 +325,8 @@
       "id": "FINDER_DOWNLOAD_FILTER_EQUALS_HOME",
       "pass": true,
       "actual": {
-        "totalDownload": 141,
-        "homeDownloadCount": 141
+        "totalDownload": 143,
+        "homeDownloadCount": 143
       },
       "expected": "one count"
     },
@@ -470,18 +470,18 @@
       "id": "MAP_GROUP_COUNTS_NAME_PENDING",
       "pass": true,
       "actual": [
-        "8개",
-        "8개",
-        "5개 · 준비 중 1",
-        "8개",
-        "6개",
+        "20개",
+        "2개",
         "3개",
-        "5개"
+        "5개 · 준비 중 1",
+        "6개",
+        "6개",
+        "1개"
       ],
       "expected": "the group holding a pending target says so"
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-002#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-002&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
@@ -516,31 +516,31 @@
       "expected": "152 detail titles = spec platformName without the source line"
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-010#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-010&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-024#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-024&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=B-033#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=B-033&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=C-016#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=C-016&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=D-023#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=D-023&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
@@ -585,7 +585,7 @@
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=B-017#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=B-017&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
@@ -636,9 +636,9 @@
   },
   "home": {
     "stats": {
-      "전체 데이터 항목": "142개",
+      "전체 데이터 항목": "146개",
       "지도 제공 항목": "42개",
-      "다운로드 가능 항목": "141개",
+      "다운로드 가능 항목": "143개",
       "데이터 기준일": "2026.08.27"
     },
     "cards": [
@@ -791,9 +791,9 @@
     "overflow": false
   },
   "finder": {
-    "totalAll": 142,
+    "totalAll": 146,
     "totalMap": 42,
-    "totalDownload": 141,
+    "totalDownload": 143,
     "visibleCards": {
       "cards": 24,
       "withMapButton": 24
@@ -836,13 +836,13 @@
     "rowCount": 43,
     "availableCount": 42,
     "groupCounts": [
-      "8개",
-      "8개",
-      "5개 · 준비 중 1",
-      "8개",
-      "6개",
+      "20개",
+      "2개",
       "3개",
-      "5개"
+      "5개 · 준비 중 1",
+      "6개",
+      "6개",
+      "1개"
     ],
     "pendingRows": [
       {

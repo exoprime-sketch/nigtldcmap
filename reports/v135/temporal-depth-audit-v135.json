@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v135-final-public-screen-audit-1",
-  "generatedAt": "2026-09-21T01:26:54.202Z",
+  "generatedAt": "2026-09-29T06:18:41.682Z",
   "audit": "temporal-depth:v135",
   "status": "PASS",
   "summary": {
@@ -11,13 +11,13 @@
     "failed": 0,
     "total": 11,
     "failedChecks": [],
-    "inspectedRoutes": 152,
+    "inspectedRoutes": 146,
     "temporalDepthCounts": {
-      "single-year": 26,
+      "single-year": 25,
       "two-year": 9,
-      "time-series": 38,
+      "time-series": 37,
       "scenario": 3,
-      "non-temporal": 76
+      "non-temporal": 72
     },
     "singleYearTimeSeriesCount": 0,
     "twoYearGenericTrendCount": 0,
@@ -41,11 +41,11 @@
       "status": "PASS",
       "actual": {
         "runtimeFailure": null,
-        "routeCount": 152,
+        "routeCount": 146,
         "routeFailures": []
       },
       "expected": {
-        "routeCount": 152,
+        "routeCount": 146,
         "routeFailures": []
       }
     },
@@ -108,11 +108,13 @@
           "present": false,
           "rawMatrixPrimary": null
         },
+        "inventoryValid": true,
+        "inventoryPresentation": "kpi-tiles-v159",
         "analyticalView": false,
         "rawTableIsPrimary": false
       },
       "expected": {
-        "analyticalView": true,
+        "inventoryValid || analyticalView": true,
         "rawTableIsPrimary": false
       }
     },
@@ -133,13 +135,13 @@
       "expected": []
     }
   ],
-  "inspectedRoutes": 152,
+  "inspectedRoutes": 146,
   "temporalDepthCounts": {
-    "single-year": 26,
+    "single-year": 25,
     "two-year": 9,
-    "time-series": 38,
+    "time-series": 37,
     "scenario": 3,
-    "non-temporal": 76
+    "non-temporal": 72
   },
   "singleYearTimeSeriesCount": 0,
   "twoYearGenericTrendCount": 0,

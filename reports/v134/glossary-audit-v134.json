@@ -1,24 +1,24 @@
 {
   "schemaVersion": "v134-context-glossary-analysis-audit-1",
-  "generatedAt": "2026-09-24T00:20:31.569Z",
+  "generatedAt": "2026-09-29T06:14:30.695Z",
   "audit": "glossary:v134",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "glossary:v134",
     "status": "PASS",
-    "passed": 16,
+    "passed": 17,
     "failed": 0,
-    "total": 16,
+    "total": 17,
     "failedChecks": [],
     "frameworkElements": 152,
     "accountedElements": 152,
-    "glossaryTermCount": 505,
+    "glossaryTermCount": 538,
     "visibleAcronymWithoutGlossaryCount": 0,
-    "acronymInventoryCount": 786,
+    "acronymInventoryCount": 843,
     "selectedOptionGlossaryFailureCount": 0,
     "mapInteractionPass": true,
-    "inspectedRoutes": 157,
+    "inspectedRoutes": 151,
     "runtimeFailure": null
   },
   "checks": [
@@ -88,12 +88,12 @@
       "name": "PRODUCTION_DOM_ROUTE_COVERAGE",
       "status": "PASS",
       "actual": {
-        "inspectedRoutes": 157,
+        "inspectedRoutes": 151,
         "routeFailures": [],
         "runtimeFailure": null
       },
       "expected": {
-        "inspectedRoutes": 157,
+        "inspectedRoutes": 151,
         "routeFailures": []
       }
     },
@@ -118,8 +118,47 @@
       "audit": "glossary:v134",
       "name": "FINDER_ALL_CARDS_AUDITED",
       "status": "PASS",
-      "actual": 152,
-      "expected": 152
+      "actual": 146,
+      "expected": 146
+    },
+    {
+      "type": "check",
+      "audit": "glossary:v134",
+      "name": "EXCLUDED_DETAIL_NOTICE_V156",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "A-017",
+          "pass": true,
+          "problems": []
+        },
+        {
+          "elementId": "C-020",
+          "pass": true,
+          "problems": []
+        },
+        {
+          "elementId": "C-021",
+          "pass": true,
+          "problems": []
+        },
+        {
+          "elementId": "E-008",
+          "pass": true,
+          "problems": []
+        },
+        {
+          "elementId": "E-016",
+          "pass": true,
+          "problems": []
+        },
+        {
+          "elementId": "E-017",
+          "pass": true,
+          "problems": []
+        }
+      ],
+      "expected": "notice card, no chart, no download link"
     },
     {
       "type": "check",
@@ -172,11 +211,11 @@
   ],
   "frameworkElements": 152,
   "accountedElements": 152,
-  "glossaryTermCount": 505,
+  "glossaryTermCount": 538,
   "visibleAcronymWithoutGlossaryCount": 0,
-  "acronymInventoryCount": 786,
+  "acronymInventoryCount": 843,
   "selectedOptionGlossaryFailureCount": 0,
   "mapInteractionPass": true,
-  "inspectedRoutes": 157,
+  "inspectedRoutes": 151,
   "runtimeFailure": null
 }
