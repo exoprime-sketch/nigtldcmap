@@ -25,7 +25,7 @@ import {
 } from "../utils/vietnamActualV121";
 import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
 import { getCardSpecV159, getTypologyV159 } from "../data/spec/datasetSpecV159";
-import { statusDecisionV159 } from "../components/data/templates/U0StatusV159";
+import { statusNoticeLabelV159 } from "../components/data/templates/StatusNoticeV159";
 import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
 import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitleV159";
@@ -960,11 +960,11 @@ export default function DataExplorerPage({
                 </p>
               </>
             )}
-            {/* V159 ⓪: an excluded or not-yet-delivered dataset shows its
-                status on the card, not a figure. */}
-            {getCardSpecV159(item.elementId)?.displayType === "U0" ? (
+            {/* V159: an excluded or not-yet-delivered dataset shows its
+                status on the card ('데이터 준비 중'), not a figure. */}
+            {getCardSpecV159(item.elementId)?.statusNotice ? (
               <p className="cdp-card__status-v159" data-testid="finder-card-status-v159">
-                <span className="cdp-chip">{statusDecisionV159(getTypologyV159(item.elementId)?.status || "").decision}</span>
+                <span className="cdp-chip">{statusNoticeLabelV159(getTypologyV159(item.elementId) || { status: "", statusNotice: null })}</span>
               </p>
             ) : (
               summary && <FinderCardSummaryV140 summary={summary} />

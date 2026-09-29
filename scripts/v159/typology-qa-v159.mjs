@@ -12,7 +12,9 @@
  *     area has 상세 설명 and 활용 방법, plus 활용 사례 when the element has cases;
  *   - decision points: the block is present, or hidden because no point
  *     could be computed (recorded, allowed);
- *   - status (⓪): the statement only - no chart in the analysis section;
+ *   - status notice (spec v8 statusNotice, e.g. data-pending): the template of
+ *     the element's own type around the statement only - no chart in the
+ *     analysis section, no decision points;
  *   - 320px: no horizontal overflow.
  * Writes reports/v159/typology-qa-v159.json.
  *
@@ -46,7 +48,7 @@ const base = server.url.replace(/\/$/u, "");
 const browser = await chromium.launch(process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {});
 
 async function check(context, row) {
-  const record = { elementId: row.elementId, displayType: row.displayType, structure: row.structure, checks: {}, issues: [] };
+  const record = { elementId: row.elementId, displayType: row.displayType, structure: row.structure, statusNotice: row.statusNotice, checks: {}, issues: [] };
   const page = await context.newPage();
   const errors = [];
   page.on("pageerror", (error) => errors.push(String(error).slice(0, 200)));
@@ -61,7 +63,7 @@ async function check(context, row) {
     // The description loads its own chunk.
     await page.waitForSelector('[data-testid="data-description-v159"]', { timeout: scaledTimeoutMsV150(15_000) }).catch(() => null);
     // Layer-based decision points (② elements) arrive after the map layer loads.
-    if (row.displayType !== "U0") await page.waitForSelector('[data-testid="decision-points-v159"]', { timeout: scaledTimeoutMsV150(6_000) }).catch(() => null);
+    if (!row.statusNotice) await page.waitForSelector('[data-testid="decision-points-v159"]', { timeout: scaledTimeoutMsV150(6_000) }).catch(() => null);
     await page.waitForTimeout(300);
     const screen = await page.evaluate(() => {
       const template = document.querySelector('[data-testid="template-v159"]');
@@ -105,9 +107,9 @@ async function check(context, row) {
     record.checks.template = screen.template === row.displayType && screen.structure === row.structure;
     record.checks.firstBlock = screen.verdict === "match";
     record.checks.description = screen.shortDefinition && screen.description && screen.usage && (expectCases === 0 || (screen.casesPart && screen.casesCount === expectCases));
-    record.checks.decisionPoints = row.displayType === "U0" ? screen.decisionPoints === null : true;
+    record.checks.decisionPoints = row.statusNotice ? screen.decisionPoints === null : true;
     record.decisionPointsShown = screen.decisionPoints !== null;
-    record.checks.status = row.displayType === "U0" ? screen.statusNote && screen.chartsInPrimary === 0 : true;
+    record.checks.status = row.statusNotice ? screen.statusNote && screen.chartsInPrimary === 0 : true;
     await page.setViewportSize({ width: 320, height: 800 });
     await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth);
@@ -149,7 +151,7 @@ const summary = {
   pass: results.length - failedIds.length,
   fail: failedIds.length,
   failedIds,
-  decisionPointsHidden: results.filter((item) => item.pass && !item.decisionPointsShown && item.displayType !== "U0").map((item) => item.elementId),
+  decisionPointsHidden: results.filter((item) => item.pass && !item.decisionPointsShown && !item.statusNotice).map((item) => item.elementId),
   decisionPointsShown: results.filter((item) => item.decisionPointsShown).length,
   chipHighlightElements: results.filter((item) => item.chips?.highlightWorks === true).map((item) => item.elementId),
   chipsEnabled: results.reduce((sum, item) => sum + (item.chips?.enabled || 0), 0),

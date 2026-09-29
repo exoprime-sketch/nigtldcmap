@@ -825,7 +825,7 @@ export default function CountryDataElementPage({
     };
   }, [countryIso3, elementId, typologyV159]);
   const decisionPointListV159 = useMemo(() => {
-    if (!typologyV159 || typologyV159.displayType === "U0" || !bundle?.meta || !hasPopulatedRows) return [];
+    if (!typologyV159 || typologyV159.statusNotice || !bundle?.meta || !hasPopulatedRows) return [];
     const rows = adaptStructureV159(typologyV159.structure, {
       observations: bundle.observations,
       entities: bundle.entities,

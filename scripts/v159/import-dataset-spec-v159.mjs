@@ -74,8 +74,10 @@ const DISPLAY_TYPES = {
   "④": { code: "U4", label: "시설·기관·인프라 위치" },
   "⑤": { code: "U5", label: "사업·재원" },
   "⑥": { code: "U6", label: "제도·규제·리스크" },
-  "⓪": { code: "U0", label: "상태 안내" },
 };
+// Spec v8 (2026-09-29): options the assignment table has no column for.
+// D-004 compares technologies across price scenarios.
+const SCENARIO_V8 = new Set(["D-004"]);
 const STRUCTURES = {
   S1: "국가×연도 관측값",
   S2: "지역×연도 관측값",
@@ -374,34 +376,33 @@ function main() {
   const typology = typologyRows.map((row) => {
     const specRow = specById.get(row.elementId);
     if (!specRow) throw new Error(`${row.elementId}: not in spec sheet`);
-    // Every excluded element (status 제외, by the spec sheet 0918 or the user
-    // 0923) is a ⓪ status screen, whatever type the assignment table gave it
-    // (decision 2026-09-24). The spec's own type is kept as specDisplayType.
-    // V156-E: an exclusion the decision file has lifted (2026-09-29) no longer
-    // makes a status screen - without data the element states that it has not
-    // been delivered, like C-021; with data it takes the spec's type, or the
-    // type the lift decision names where the spec only had ⓪.
-    const specType = DISPLAY_TYPES[row.displayKey];
-    let type = /^제외/u.test(row.status) ? DISPLAY_TYPES["⓪"] : specType;
+    // Spec v8 (2026-09-29): every element keeps its assigned type (U1-U6);
+    // the ⓪ status type is gone. Whether the screen is a notice instead of
+    // the analysis is `statusNotice`: "data-pending" when the data has not
+    // been delivered (status 미입고, or an exclusion the decision file lifted
+    // without data), "excluded" for an exclusion that still stands.
+    const type = DISPLAY_TYPES[row.displayKey];
     let status = row.status;
+    let statusNotice = /^미입고/u.test(row.status) ? "data-pending" : null;
     const lift = LIFTED_EXCLUSIONS.get(row.elementId);
-    if (/^제외/u.test(row.status) && lift && !ACTIVE_EXCLUSIONS.has(row.elementId)) {
-      const liftedOn = lift.liftedAt.slice(5).replace("-", "");
-      if (!lift.dataPresent) {
-        type = DISPLAY_TYPES["⓪"];
-        status = "미입고(상태안내)";
+    if (/^제외/u.test(row.status)) {
+      if (ACTIVE_EXCLUSIONS.has(row.elementId) || !lift) {
+        statusNotice = "excluded";
+      } else if (!lift.dataPresent) {
+        status = "미입고(데이터 준비 중)";
+        statusNotice = "data-pending";
       } else {
-        type = lift.displayTypeAfterLift ? DISPLAY_TYPES[lift.displayTypeAfterLift] : specType;
-        if (!type || type.code === "U0") throw new Error(`${row.elementId}: lifted with data but no display type other than ⓪`);
-        status = `공개(제외 해제 ${liftedOn})`;
+        const liftType = lift.displayTypeAfterLift ? DISPLAY_TYPES[lift.displayTypeAfterLift] : type;
+        if (liftType?.code !== type.code) throw new Error(`${row.elementId}: lift decision type differs from the assignment table`);
+        status = `공개(제외 해제 ${lift.liftedAt.slice(5).replace("-", "")})`;
       }
     }
-    const scenario = [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
+    const scenario = SCENARIO_V8.has(row.elementId) || [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
     return {
       elementId: row.elementId,
       displayType: type.code,
       displayTypeLabel: type.label,
-      specDisplayType: specType.code,
+      specDisplayType: type.code,
       structure: row.structure,
       structureLabel: STRUCTURES[row.structure],
       flags: {
@@ -412,6 +413,7 @@ function main() {
         scenario,
       },
       status,
+      statusNotice,
       variant: row.variant,
       dedicated: DEDICATED[row.elementId] || null,
       coverage: { VNM: row.vnm, BGD: row.bgd },
@@ -454,6 +456,7 @@ function main() {
       baseName: row.baseName,
       shortDefinitionCard: row.shortDefinitionCard,
       displayType: typologyById.get(row.elementId).displayType,
+      statusNotice: typologyById.get(row.elementId).statusNotice,
       users: [...users.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([user]) => user),
     };
   });

@@ -5,7 +5,7 @@ import {
   TEMPLATE_VARIANTS_V159,
   variantTemplateV159,
 } from "./templateVariantsV159";
-import { statusDecisionV159 } from "./U0StatusV159";
+import { statusDecisionV159, statusNoticeLabelV159 } from "./StatusNoticeV159";
 import { technologyOptionsForIndicatorsV159 } from "./TechFilterV159";
 
 describe("V159 template variants", () => {
@@ -34,7 +34,7 @@ describe("V159 template variants", () => {
   });
 
   test("status elements have no body variant", () => {
-    for (const row of allTypologyV159().filter((item) => item.displayType === "U0")) {
+    for (const row of allTypologyV159().filter((item) => item.statusNotice)) {
       expect(ELEMENT_VARIANTS_V159[row.elementId]).toBeUndefined();
     }
   });
@@ -43,7 +43,12 @@ describe("V159 template variants", () => {
 describe("V159 status decision", () => {
   test("reads the decision and the 2026 date from the status column", () => {
     expect(statusDecisionV159("제외(사용자 0923)")).toEqual({ decision: "제외", decidedAt: "2026-09-23" });
-    expect(statusDecisionV159("미입고(상태안내)")).toEqual({ decision: "미입고", decidedAt: null });
+    expect(statusDecisionV159("미입고(데이터 준비 중)")).toEqual({ decision: "미입고", decidedAt: null });
+  });
+
+  test("a data-pending element is labelled '데이터 준비 중'", () => {
+    expect(statusNoticeLabelV159({ status: "미입고(데이터 준비 중)", statusNotice: "data-pending" })).toBe("데이터 준비 중");
+    expect(statusNoticeLabelV159({ status: "제외(사용자 0923)", statusNotice: "excluded" })).toBe("제외");
   });
 });
 

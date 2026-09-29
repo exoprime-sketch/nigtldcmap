@@ -71,13 +71,14 @@ const DATA = resolve(PROJECT_ROOT, "public/data/vietnam/v2");
 const summariesFile = readFileSync(resolve(DATA, "home/card-summaries-v140.json"), "utf8");
 const summariesAsset = JSON.parse(summariesFile);
 const summaries = summariesAsset.cards;
-// V159 ⓪ status elements (excluded or not yet delivered, decided 2026-09-23):
+// V159 status elements (excluded or not yet delivered, decided 2026-09-23;
+// spec v8 2026-09-29 keeps their U1-U6 type and marks them with statusNotice):
 // they show one status notice instead of an analysis, so they are judged by
 // statusNoticePresent · chartCount0 · cardShowsStatus instead of the card
 // value and analysis-fit checks. Every other element is judged as before.
 const STATUS_IDS_V159 = new Set(
   JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
-    .filter((row) => row.displayType === "U0")
+    .filter((row) => row.statusNotice)
     .map((row) => row.elementId)
 );
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
@@ -906,7 +907,7 @@ async function checkElement(context, item) {
     record.analysisFit = await analysisFitOf(page, card, screen, claim);
     record.evidence.analysisFit = record.analysisFit;
 
-    // ---- 4c. ⓪ status elements: the notice, no chart, a status badge on the card
+    // ---- 4c. status-notice elements: the notice, no chart, a status badge on the card
     if (STATUS_IDS_V159.has(elementId)) {
       const notice = await page.evaluate(() => {
         const primary = document.querySelector('[data-testid="public-analysis-primary"]');
@@ -925,8 +926,8 @@ async function checkElement(context, item) {
       record.evidence.statusNotice = notice;
       record.cardValueVerified = null;
       record.detailAnalysisFit = null;
-      record.analysisFit = { pass: null, kind: "status-v159", reason: "⓪ status element: judged by statusNoticePresent · chartCount0 · cardShowsStatus" };
-      record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: ⓪ status element (V159)");
+      record.analysisFit = { pass: null, kind: "status-v159", reason: "status-notice element: judged by statusNoticePresent · chartCount0 · cardShowsStatus" };
+      record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)");
       Object.entries(record.statusChecks).forEach(([key, ok]) => { if (!ok) record.remainingIssue.push(`${key} failed`); });
     }
 

@@ -80,7 +80,7 @@ import {
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
-import U0StatusV159 from "../templates/U0StatusV159";
+import StatusNoticeV159 from "../templates/StatusNoticeV159";
 import U1CountryProfileV159 from "../templates/U1CountryProfileV159";
 import U2RegionalV159 from "../templates/U2RegionalV159";
 import U3TechnologyV159 from "../templates/U3TechnologyV159";
@@ -491,14 +491,16 @@ export default function PublicDataAnalysisRouterV126({
     return null;
   };
 
-  const isStatusV159 = typology?.displayType === "U0";
+  // Spec v8: a data-pending (or excluded) element keeps its U1-U6 template
+  // shell, with the notice in place of the analysis.
+  const isStatusV159 = Boolean(typology?.statusNotice);
   const earlyBody = variantEntry?.phase === "early" ? renderVariantV159(variantEntry.variant) : null;
   const lateBody =
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
   const body = isStatusV159 && typology ? (
-    <U0StatusV159 typology={typology} />
+    <StatusNoticeV159 typology={typology} />
   ) : (
     earlyBody ??
     renderGenericShapeV159() ??
@@ -580,9 +582,6 @@ export default function PublicDataAnalysisRouterV126({
       return <U5ProjectsFinanceV159 context={templateContext}>{content}</U5ProjectsFinanceV159>;
     case "U6":
       return <U6PolicyV159 context={templateContext}>{content}</U6PolicyV159>;
-    default:
-      // ⓪: the shell without the technology filter around the statement.
-      return <U1CountryProfileV159 context={templateContext}>{content}</U1CountryProfileV159>;
   }
 }
 

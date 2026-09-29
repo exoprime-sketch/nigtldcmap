@@ -124,10 +124,6 @@ test("U6: incentive presence only appears when a record's own text names one", (
   expect(p2.find((p) => p.key === "incentive-presence")?.value).toBe("있음 (1건)");
 });
 
-test("U0 always returns no points", () => {
-  expect(decisionPointsV159("U0", { structure: "S4", rows: [] }, { countryIso3: "VNM" })).toEqual([]);
-});
-
 function baseS3(overrides: Partial<S3LocatedEntityV159>): S3LocatedEntityV159 {
   return {
     elementId: "X-000",

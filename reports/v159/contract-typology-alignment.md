@@ -1,8 +1,8 @@
 # 계약(V153) ↔ 유형(V159) 정합 보고
 
-`scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(⓪ 상태 안내)만 적용한다.
+`scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(상태 안내 — 명세 v8부터 유형은 유지하고 statusNotice로 판정)만 적용한다.
 
-- 일치 142 · 자료 한계(전국값 대체) 8 · 결정 필요 1 · 불일치 1 / 152
+- 일치 138 · 상태 안내(데이터 준비 중 등) 5 · 자료 한계(전국값 대체) 8 · 결정 필요 0 · 불일치 1 / 152
 - 적용한 계약 변경 3건
 
 ## 적용한 계약 변경
@@ -25,14 +25,17 @@
 | B-035 | U2 | S2 | national-series | line | data-limited | 지역 단위 값이 납품되지 않아 계약이 전국 계열을 1순위로 둠 — ② 템플릿은 전국값 대체 표시 |
 | B-036 | U2 | S2 | national-series | category-bar | data-limited | 지역 단위 값이 납품되지 않아 계약이 전국 계열을 1순위로 둠 — ② 템플릿은 전국값 대체 표시 |
 | B-037 | U2 | S2 | composition | table | data-limited | 지역 단위 값이 납품되지 않아 계약이 전국 계열을 1순위로 둠 — ② 템플릿은 전국값 대체 표시 |
-| E-008 | U1 | S1 | registry | category-bar | review | 국가 수준 유형인데 계약은 레코드 목록 — 요소 상태(공개(제외 해제 0929)) 확인 |
-| E-016 | U3 | S4 | policy-document | comparison-table | mismatch | 호환표 밖 조합 |
+| C-020 | U5 | S4 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
+| C-021 | U5 | S4 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
+| C-023 | U3 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
+| E-011 | U1 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
+| E-013 | U1 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
+| E-016 | U3 | S1 | policy-document | comparison-table | mismatch | 호환표 밖 조합 |
 
 ## 호환표
 
 | 표출 유형 | 허용 archetype |
 |---|---|
-| U0 | status-note |
 | U1 | national-series · composition · matrix |
 | U2 | province-distribution · station · registry |
 | U3 | national-series · composition · matrix |

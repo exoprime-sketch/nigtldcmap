@@ -20,11 +20,11 @@ const catalogIds = (JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV15
 const mapIndex = JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV158("VNM")}/map-index.json`), "utf8")).layers as Array<{ elementId: string; active?: boolean; enabled?: boolean }>;
 const mapIds = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
 
-// V159: the status screens are the typology's ⓪ rows (C-020, C-021, C-023,
-// E-011, E-013 and, from the 2026-09-23 exclusion, E-016 and E-017) - see
-// reports/v159/EXPECTATION_CHANGES_V159.md.
-const STATUS_IDS = (JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows as Array<{ elementId: string; displayType: string }>)
-  .filter((row) => row.displayType === "U0")
+// V159: the status screens are the typology rows with a status notice - spec
+// v8 (2026-09-29) keeps their U1-U6 type; the five data-pending elements are
+// C-020, C-021, C-023, E-011, E-013. See reports/v159/EXPECTATION_CHANGES_V159.md.
+const STATUS_IDS = (JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows as Array<{ elementId: string; statusNotice: string | null }>)
+  .filter((row) => row.statusNotice)
   .map((row) => row.elementId)
   .sort();
 const COMPOSITION_IDS = ["A-010", "A-011", "A-016", "A-018", "B-037"];

@@ -7,8 +7,9 @@
  *   contract carries a copy so the QA and the router read one row).
  * - Judges each row's V153 archetype against the display type with the
  *   compatibility table below and writes reports/v159/contract-typology-alignment.md.
- * - Applies only the contract changes the spec states outright: a ⓪ (U0)
- *   element opens on the status statement and draws no chart. Everything
+ * - Applies only the contract changes the spec states outright: an element
+ *   with a status notice (spec v8: data-pending or excluded; it keeps its
+ *   U1-U6 type) opens on the status statement and draws no chart. Everything
  *   else that does not fit is listed for a decision, never rewritten to
  *   match a screen.
  *
@@ -26,7 +27,6 @@ const REPORT_PATH = resolve(ROOT, "reports/v159/contract-typology-alignment.md")
 
 // Archetypes each display type can open on. Anything else is a mismatch.
 const COMPATIBLE = {
-  U0: ["status-note"],
   U1: ["national-series", "composition", "matrix"],
   U2: ["province-distribution", "station", "registry"],
   U3: ["national-series", "composition", "matrix"],
@@ -53,8 +53,8 @@ const rows = contract.rows.map((row) => {
   const { elementId, displayType: _d, structure: _s, ...rest } = next;
   next = { elementId, displayType: type.displayType, structure: type.structure, ...rest };
 
-  if (type.displayType === "U0" && next.archetype !== "status-note") {
-    applied.push({ elementId, from: `${next.archetype} / ${next.primary.type}`, to: "status-note / status-note", reason: `명세 v2 ⓪ 상태 안내(${type.status})` });
+  if (type.statusNotice && next.archetype !== "status-note") {
+    applied.push({ elementId, from: `${next.archetype} / ${next.primary.type}`, to: "status-note / status-note", reason: `명세 v8 상태 안내(${type.status})` });
     next = {
       ...next,
       archetype: "status-note",
@@ -69,7 +69,15 @@ const rows = contract.rows.map((row) => {
   const compatible = COMPATIBLE[type.displayType].includes(next.archetype);
   let verdict = compatible ? "consistent" : "mismatch";
   let comment = "";
-  if (!compatible && type.displayType === "U2" && ["national-series", "composition"].includes(next.archetype)) {
+  if (type.statusNotice && next.archetype === "status-note") {
+    verdict = "status-notice";
+    comment = type.statusNotice === "data-pending" ? "데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지)" : "공개 제외 — 안내만 표시";
+  } else if (!compatible && type.displayType === "U3" && type.structure === "S4" && next.archetype === "registry" && next.primary.type === "category-bar") {
+    // Spec v8: a ③ record list (E-008, one row per paper or patent) compares
+    // technology fields by the number of records.
+    verdict = "consistent";
+    comment = "③ 개체 목록 — 기술 분야별 건수 막대";
+  } else if (!compatible && type.displayType === "U2" && ["national-series", "composition"].includes(next.archetype)) {
     verdict = "data-limited";
     comment = type.structure === "S3"
       ? "관측소 지점 계열이 1순위(전용 컴포넌트) — 지역 면 값 없음"
@@ -101,7 +109,7 @@ const rows = contract.rows.map((row) => {
       elementId,
       from: "(V153 계약)",
       to: `${next.archetype} / ${next.primary.type}`,
-      reason: next.archetype === "status-note" ? `⓪ 상태 안내(${type.status})` : String(next.note).replace(/^V159:\s*/u, ""),
+      reason: next.archetype === "status-note" ? `상태 안내(${type.status})` : String(next.note).replace(/^V159:\s*/u, ""),
     });
   }
   return next;
@@ -122,9 +130,9 @@ const count = (verdict) => findings.filter((item) => item.verdict === verdict).l
 const lines = [
   "# 계약(V153) ↔ 유형(V159) 정합 보고",
   "",
-  "`scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(⓪ 상태 안내)만 적용한다.",
+  "`scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(상태 안내 — 명세 v8부터 유형은 유지하고 statusNotice로 판정)만 적용한다.",
   "",
-  `- 일치 ${count("consistent")} · 자료 한계(전국값 대체) ${count("data-limited")} · 결정 필요 ${count("review")} · 불일치 ${count("mismatch")} / 152`,
+  `- 일치 ${count("consistent")} · 상태 안내(데이터 준비 중 등) ${count("status-notice")} · 자료 한계(전국값 대체) ${count("data-limited")} · 결정 필요 ${count("review")} · 불일치 ${count("mismatch")} / 152`,
   `- 적용한 계약 변경 ${applied.length}건`,
   "",
   "## 적용한 계약 변경",
@@ -148,4 +156,4 @@ const lines = [
 ];
 mkdirSync(dirname(REPORT_PATH), { recursive: true });
 writeFileSync(REPORT_PATH, lines.join("\n"));
-console.log(JSON.stringify({ consistent: count("consistent"), dataLimited: count("data-limited"), review: count("review"), mismatch: count("mismatch"), applied: applied.map((item) => item.elementId) }));
+console.log(JSON.stringify({ consistent: count("consistent"), statusNotice: count("status-notice"), dataLimited: count("data-limited"), review: count("review"), mismatch: count("mismatch"), applied: applied.map((item) => item.elementId) }));

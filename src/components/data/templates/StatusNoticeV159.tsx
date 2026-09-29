@@ -5,11 +5,13 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./templates-v159.css";
 
 /**
- * V159 ⓪ 상태 안내: one statement - the decision, its date and, when the
- * framework workbook states one, the reason. No chart, no table.
+ * V159 status notice, shown instead of the analysis when the typology row
+ * has a `statusNotice` (spec v8: the element keeps its U1-U6 type; this
+ * replaces the former ⓪ status type). One statement - the state, its date
+ * and, when the framework workbook states one, the reason. No chart, no table.
  *
- * The status line is the spec v2 status column ("제외(사용자 0923)",
- * "미입고(상태안내)"); the date is the MMDD it carries in 2026. The reason
+ * The state is the spec status column ("미입고(데이터 준비 중)",
+ * "제외(사용자 0923)"); the date is the MMDD it carries in 2026. The reason
  * is the workbook's 처리방향 line verbatim, or nothing.
  */
 export function statusDecisionV159(status: string): { decision: string; decidedAt: string | null } {
@@ -18,9 +20,14 @@ export function statusDecisionV159(status: string): { decision: string; decidedA
   return { decision, decidedAt: date ? `2026-${date[1]}-${date[2]}` : null };
 }
 
+/** The words a card chip and the notice use for the state. */
+export function statusNoticeLabelV159(typology: Pick<TypologyRowV159, "status" | "statusNotice">): string {
+  return typology.statusNotice === "data-pending" ? "데이터 준비 중" : statusDecisionV159(typology.status).decision;
+}
+
 const HEADLINE_V159: Record<string, string> = {
   제외: "금년도 공개 대상에서 제외된 데이터입니다",
-  미입고: "자료가 아직 입고되지 않았습니다",
+  미입고: "데이터 준비 중입니다 — 자료가 입고되면 분석 화면을 제공합니다",
   대체: "다른 지표로 대체하기로 한 데이터입니다",
 };
 
@@ -28,7 +35,7 @@ interface Props {
   typology: TypologyRowV159;
 }
 
-export default function U0StatusV159({ typology }: Props) {
+export default function StatusNoticeV159({ typology }: Props) {
   const [reason, setReason] = useState<string | null>(null);
   useEffect(() => {
     let alive = true;
@@ -45,7 +52,7 @@ export default function U0StatusV159({ typology }: Props) {
     <section
       className="sv125-status tpl159-status"
       data-testid="public-status-only"
-      data-public-empty-reason="status-decision"
+      data-public-empty-reason={typology.statusNotice === "data-pending" ? "data-pending" : "status-decision"}
       data-analysis-block="status-note"
       data-status-decision={decision}
     >
@@ -54,7 +61,7 @@ export default function U0StatusV159({ typology }: Props) {
         <strong>{HEADLINE_V159[decision] || "공개 상태 안내"}</strong>
         <dl data-testid="status-note-v159">
           <dt>결정</dt>
-          <dd>{decision}</dd>
+          <dd>{statusNoticeLabelV159(typology)}</dd>
           {/* All three lines always show; what the sources do not state is
               said as such rather than left out. */}
           <dt>사유</dt>

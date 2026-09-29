@@ -36,7 +36,6 @@ export interface DecisionPointsOptsV159 {
  * | U4 | 개체 수 · 규모 합계 · 분류 구성 | 합계: populated sizes use more than one unit |
  * | U5 | 건수 · 총액 · 기관 상위 3 · 최근 승인 | 총액: populated amounts use more than one currency |
  * | U6 | 최신 개정 · 상태 · 적용지역 · 인센티브 유무 | 적용지역: no row carries a region tag; 인센티브: no row text names one |
- * | U0 | (none) | always |
  */
 export function decisionPointsV159(
   displayType: DisplayTypeV159,
@@ -56,7 +55,6 @@ export function decisionPointsV159(
       return rows.structure === "S4" ? decisionPointsU5(rows.rows) : [];
     case "U6":
       return rows.structure === "S4" ? decisionPointsU6(rows.rows) : [];
-    case "U0":
     default:
       return [];
   }
