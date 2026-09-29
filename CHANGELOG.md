@@ -14,6 +14,24 @@
 ### Added
 
 - 등급 정본 `src/data/spec/informationTiersV160.json`·홈 질문 `homeQuestionsV160.json`(기획서 §3에서 생성, `build:core-first:v160`/`check:core-first:v160`), `qa:core-first:v160`, `docs/CORE_FIRST_V160.md`, 추적표 '등급(V160)' 열
+## Unreleased — V161-A 지역명 표기 모듈 (PR 후보)
+
+### Added
+
+- 지역명 `한글명 (현지명)` 모듈 `src/data/geo/regionNameV161.ts` + 생성 사전 `regionNamesV161.json`: 베트남 34개 단위·도시 6·63개 성(기존 표, 자동 변환 0, 개편 전 성 통합 안내), 방글라데시 주 8·구 64, 그 밖의 베트남 지명은 국립국어원 표기 규칙 제안(검수 대기). 화면 적용은 후속(B·C·P9-B1)
+- 생성기 `npm run build:region-names:v161`·점검 `check:region-names:v161`, 방글라데시 원천 스냅숏(geoBoundaries ADM2·한국어 위키백과 revid 고정), 검수표 `docs/handoff/v161/REGION_NAME_REVIEW.md`
+
+## Unreleased — V156-D 제외 10건 공개 반영 (PR 후보)
+
+### Changed
+
+- 제외 10건(사용자 검토 2026-09-23: C-020·C-023·E-011·E-013·E-016·E-017 / 데이터 명세서 2026-09-18: A-017·C-015·D-024·E-008)을 데이터 찾기 목록·검색·카테고리 건수·홈 카드·홈 수치·다운로드에서 제외. 공개 데이터 항목 152 → 142(프레임워크 152 유지), 다운로드 가능 항목 141. C-021은 미입고 안내 유지
+- 제외 요소의 직접 URL: 제목 머리(출처 윗줄 + 원데이터명)와 안내 카드 1개(결정·사유·결정일)만 표시, 차트·표·다운로드 없음
+- 감사·QA·e2e: 152 고정값 대신 카탈로그에서 공개 집합 파생, 제외 요소 자리에는 안내 카드 검사(`reports/v156/EXPECTATION_CHANGES_V156D.md`)
+
+### Added
+
+- 배포 감사 `exclusions:v156`(제외 10건 전수: 목록·검색·카테고리 건수·홈·다운로드 부재, 안내 카드), 결정 기록 `docs/DATASET_EXCLUSIONS_V156.md`
 
 ## Unreleased — V159 데이터 유형화(표출 6유형 × 구조 4형태)·데이터 설명 영역 (PR 후보)
 

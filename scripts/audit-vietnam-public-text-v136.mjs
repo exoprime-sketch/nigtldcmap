@@ -30,6 +30,8 @@ import {
   writeCsvV136,
 } from "./v136/audit-helpers.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("public-text:v136");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 
@@ -124,7 +126,7 @@ try {
   );
   record("map", "map", await evaluateValue(browser.cdp, visibleTextInventoryExpressionV136()));
 
-  for (const element of catalog) {
+  for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
     // Text coverage tests individual screens, not a 152-navigation session.
     // Release the previous renderer/decoded shards instead of accumulating
@@ -176,7 +178,8 @@ writeCsvV136(
 
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
 audit.check("PUBLIC_TEXT_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
-audit.check("PUBLIC_ROUTE_COUNT", routes.size >= 157, routes.size, ">=157");
+// V156: 5 non-detail routes (home, download, guide, finder cards, map) + every public detail (157 when all 152 were public).
+audit.check("PUBLIC_ROUTE_COUNT", routes.size >= 5 + publicListedElementsV156(catalog).length, routes.size, `>=${5 + publicListedElementsV156(catalog).length}`);
 audit.check("PUBLIC_TEXT_INVENTORY_COUNT", inventory.length > 0, inventory.length, ">0");
 audit.check("INTERNAL_PUBLIC_TOKEN_COUNT", internalHits.length === 0, internalHits.slice(0, 25), []);
 audit.check("AWKWARD_GENERIC_COPY_COUNT", awkwardHits.length === 0, awkwardHits.slice(0, 25), []);

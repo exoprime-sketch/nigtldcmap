@@ -3,7 +3,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { AuditV125, PROJECT_ROOT } from "./v125/audit-utils.mjs";
+import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v125/audit-utils.mjs";
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 import {
   evaluateValue,
   launchHeadlessBrowser,
@@ -16,6 +17,8 @@ import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136 } from "./v136/audit-helpers.mjs";
 import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
+// V156: the finder lists the public set; its size decides where auto-loading stops.
+const PUBLIC_COUNT_V156 = publicListedElementsV156(catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value)).length;
 const audit = new AuditV125("finder-scroll:v136");
 const finderSource = readFileSync(
   resolve(PROJECT_ROOT, "src/pages/DataExplorerPage.tsx"),

@@ -4,7 +4,12 @@ import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSyn
 import { dirname, relative, resolve } from "node:path";
 import { runAuditCommand } from "./ci/run-audit-command.mjs";
 
-import { AuditV125, PROJECT_ROOT, readJson } from "./v125/audit-utils.mjs";
+import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v125/audit-utils.mjs";
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
+// V156: every public count is the public set derived from catalog.json (152 when
+// all were public); the framework (catalog length) stays the full set.
+const PUBLIC_COUNT_V156 = publicListedElementsV156(catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value)).length;
 import { mapLayerCountV138, mapTargetCountV138 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136, reportStatusV136 } from "./v136/audit-helpers.mjs";
 import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
@@ -55,6 +60,9 @@ const commands = [
   { name: "V136_3_UNIT_TESTS", command: "npm run test:unit", group: "static" },
   { name: "V136_2_GENERIC_DETAIL_PUBLIC", command: "npm run audit:generic-detail-public:v136-2", group: "browser", shard: 1 },
   { name: "V136_4_SCREEN_USABILITY", command: "npm run audit:screen-usability:v136-4", group: "browser", shard: 4 },
+  // V156: the elements decided not to be offered - absent from every list,
+  // search, count, home card and download; their URL shows the notice card.
+  { name: "V156_EXCLUSIONS", command: "npm run audit:exclusions:v156", group: "browser", shard: 1 },
   { name: "V136_HUMAN_REVIEW", command: "npm run audit:human-review:v136", group: "browser", shard: 2 },
   { name: "V136_WORKFLOW", command: "npm run audit:workflow:v136", group: "static" },
 ];
@@ -254,7 +262,8 @@ const group = (keys) => keys.every((key) => statuses[key] === "PASS");
 
 audit.check("FRAMEWORK_ELEMENTS", glossary.frameworkElements === 152, glossary.frameworkElements, 152);
 audit.check("ACCOUNTED_ELEMENTS", glossary.accountedElements === 152, glossary.accountedElements, 152);
-audit.check("PUBLIC_ROUTE_COUNT", Number(text.publicRouteCount) >= 157, text.publicRouteCount ?? null, ">=157");
+// 5 non-detail routes + every public detail (157 when all 152 were public).
+audit.check("PUBLIC_ROUTE_COUNT", Number(text.publicRouteCount) >= 5 + PUBLIC_COUNT_V156, text.publicRouteCount ?? null, `>=${5 + PUBLIC_COUNT_V156}`);
 
 audit.check("INTERNAL_PUBLIC_TOKEN_COUNT", text.internalPublicTokenCount === 0, text.internalPublicTokenCount ?? null, 0);
 audit.check("DUPLICATE_VISIBLE_COPY_COUNT", duplicate.duplicateVisibleCopyCount === 0, duplicate.duplicateVisibleCopyCount ?? null, 0);
@@ -287,11 +296,12 @@ audit.check("V135_REGRESSION", group(["v135FinderCard", "v135TemporalDepth", "v1
 audit.check("V136_REGRESSION", group(["publicText", "duplicateCopy", "mapListUi", "mapCopy", "publicControls"]), { publicText: statuses.publicText, duplicateCopy: statuses.duplicateCopy, mapListUi: statuses.mapListUi, mapCopy: statuses.mapCopy, publicControls: statuses.publicControls }, "PASS");
 
 audit.check("FINDER_LOAD_MORE_VISIBLE_COUNT", scroll.finderLoadMoreVisibleCount === 0, scroll.finderLoadMoreVisibleCount ?? null, 0);
-// V160: the finder lists every public dataset (informationTiersV160, tier != hidden) with tier=all.
+// V160: the finder (tier=all) lists the public set minus the tier-hidden
+// elements (C-021, not collected); detail routes cover the whole public set.
 audit.check("FINDER_AUTO_LOAD_SEQUENCE", JSON.stringify(scroll.autoLoadSequence) === JSON.stringify(finderAutoLoadSequenceV160()), scroll.autoLoadSequence ?? null, finderAutoLoadSequenceV160());
 audit.check("FINDER_DUPLICATE_CARD_COUNT", scroll.duplicateCardCount === 0, scroll.duplicateCardCount ?? null, 0);
 audit.check("FINDER_HUMAN_REVIEW_COUNT", review.finderHumanReviewCount === FINDER_PUBLIC_COUNT_V160, review.finderHumanReviewCount ?? null, FINDER_PUBLIC_COUNT_V160);
-audit.check("DETAIL_HUMAN_REVIEW_COUNT", review.detailHumanReviewCount === 152, review.detailHumanReviewCount ?? null, 152);
+audit.check("DETAIL_HUMAN_REVIEW_COUNT", review.detailHumanReviewCount === PUBLIC_COUNT_V156, review.detailHumanReviewCount ?? null, PUBLIC_COUNT_V156);
 audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount === expectedMapLayers, review.mapDatasetHumanReviewCount ?? null, expectedMapLayers);
 audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, review.unresolvedRewriteCount ?? null, 0);
 audit.check("UNRESOLVED_REMOVE_COUNT", review.unresolvedRemoveCount === 0, review.unresolvedRemoveCount ?? null, 0);

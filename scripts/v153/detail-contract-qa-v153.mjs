@@ -30,6 +30,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { startStaticBuildServer, scaledTimeoutMsV150 } from "../v125/browser-runtime.mjs";
+import { excludedElementIdsV156 } from "../v156/exclusions-audit-v156.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
@@ -44,7 +45,10 @@ const OUT = resolve(ROOT, opt("--out", "reports/v153/detail-contract-qa-v153.jso
 const ONLY = opt("--ids", null) ? opt("--ids").split(",").map((s) => s.trim()).filter(Boolean) : null;
 
 const contract = JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/publicVisualizationContractV153.json"), "utf8"));
-const rows = contract.rows.filter((row) => !ONLY || ONLY.includes(row.elementId));
+// V156: an element decided not to be offered has no analysis screen to hold to
+// its contract - its URL shows the exclusion notice (checked by exclusions:v156).
+const EXCLUDED_V156 = new Set(excludedElementIdsV156(JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/catalog.json"), "utf8")).elements));
+const rows = contract.rows.filter((row) => (!ONLY || ONLY.includes(row.elementId)) && !EXCLUDED_V156.has(row.elementId));
 const AXIS_TYPES = new Set(["line", "stacked-area", "region-bar", "category-bar", "dumbbell", "heatmap"]);
 const NUMERIC_TYPES = AXIS_TYPES;
 const STATUS_IDS = new Set(["C-020", "C-021", "C-023", "E-011", "E-013"]);
@@ -282,6 +286,7 @@ const summary = {
   pass: results.length - failed.length,
   fail: failed.length,
   failedIds: failed.map((r) => r.elementId),
+  excludedIds: [...EXCLUDED_V156].sort(),
   byStatus: { standard: results.filter((r) => r.status === "standard").length, preserved: results.filter((r) => r.status === "preserved").length, exception: results.filter((r) => r.status === "exception").length },
   exceptionIds: results.filter((r) => r.status === "exception").map((r) => r.elementId),
   checks: Object.fromEntries(["primaryTypeMatch", "rankOrder", "axesMatch", "blockHonesty", "readingNotesAbsent", "statusNoteNoChart", "policyNoNumericChart", "kpiRow", "titleOnce", "sourceLine", "mapPlacement", "overflow320", "console"].map((key) => [key, tally(key)])),

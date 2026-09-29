@@ -28,6 +28,13 @@ import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
 import { FINDER_PUBLIC_COUNT_V160 } from "../v160/core-first-audit-v160.mjs";
+import { publicListedElementsV156 } from "../v156/exclusions-audit-v156.mjs";
+
+// V156: the finder and the home figure count the public set (excluded elements
+// are in no list); the framework (catalog length) is unchanged.
+const PUBLIC_COUNT_V156 = publicListedElementsV156(
+  JSON.parse(readFileSync(resolve(PROJECT_ROOT, "public/data/vietnam/v2/catalog.json"), "utf8")).elements
+).length;
 
 const argv = process.argv.slice(2);
 const opt = (flag, fallback = null) => {

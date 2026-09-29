@@ -2,6 +2,7 @@ import { CLIMATE_TECHNOLOGIES } from "../climateTechnologyCatalog";
 import { normalizeTechnologyIdsV153 } from "../../utils/technologyIdV153";
 import type { VietnamIndicatorMetaV124, VietnamObservationV124 } from "../vietnam/vietnamTypesV124";
 import type { S1CountryObservationV159, ValueKindV159 } from "./structureTypesV159";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * S1 adapter (docs/DATA_TYPOLOGY_V159_SCHEMA.md §2.1).
@@ -9,7 +10,7 @@ import type { S1CountryObservationV159, ValueKindV159 } from "./structureTypesV1
  * Real deliveries mix two encodings: (a) explicit columns already on the
  * observation/indicator (unit, technologyIds), and (b) dimensions folded into
  * `note` head-tags or `indicator_id` suffixes (A-001, A-010, D-004, C-016,
- * B-008 samples in public/data/vietnam/v2/downloads). This module reads only
+ * B-008 samples in ${countryPublicDirV158("VNM")}/downloads). This module reads only
  * documented, verifiable markers; anything it cannot recognize stays null
  * rather than being guessed. Rule table:
  *

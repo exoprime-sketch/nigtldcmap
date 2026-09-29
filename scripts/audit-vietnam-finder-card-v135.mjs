@@ -15,9 +15,13 @@ import {
 import { finderUrlV135, finishAuditV135 } from "./v135/audit-helpers.mjs";
 import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160 } from "./v160/core-first-audit-v160.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("finder-card:v135");
 const catalogResult = readJson(resolve(V2_ROOT, "catalog.json"));
 const catalog = catalogElements(catalogResult.value);
+// V156: the finder lists the public set (excluded elements are in no list).
+const publicSetV156 = publicListedElementsV156(catalog);
 
 let server = null;
 let browser = null;
@@ -45,7 +49,7 @@ try {
   );
   // The finder reveals results progressively. V136 replaced the "더 보기"
   // control with scroll-driven loading, so the census reveals the remaining
-  // cards by scrolling. The guarantee is unchanged: all 152 public elements
+  // cards by scrolling. The guarantee is unchanged: every public element
   // must be inspected.
   for (let guard = 0; guard < 40; guard += 1) {
     const count = Number(

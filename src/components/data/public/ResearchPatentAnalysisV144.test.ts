@@ -3,8 +3,9 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { nationalPublicationTrendV132, researchRecordV132, researchCollaborationLabelV144 } from "./ResearchPatentAnalysisV132";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
+import { countryPublicDirV158 } from "../../../data/countryContext";
 
-const source = JSON.parse(readFileSync(resolve(__dirname, "../../../../public/data/vietnam/v2/downloads/e-008.json"), "utf8"));
+const source = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/e-008.json`), "utf8"));
 const records = (source.entities as VietnamEntityV124[]).map((entity) => researchRecordV132(entity)!).filter(Boolean);
 
 describe("E-008 delivered list analysis", () => {
@@ -19,8 +20,18 @@ describe("E-008 delivered list analysis", () => {
     expect(records.every((record) => record.year && record.year >= 2021 && record.year <= 2026)).toBe(true);
   });
   it("uses actual document years and types in the generated card, not stale catalogue metadata", () => {
-    const cards = JSON.parse(readFileSync(resolve(__dirname, "../../../../public/data/vietnam/v2/home/card-summaries-v140.json"), "utf8"));
+    const cards = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/home/card-summaries-v140.json`), "utf8"));
     const card = cards.cards.find((entry: { elementId: string }) => entry.elementId === "E-008");
+    // V156: while E-008 is excluded (data specification 2026-09-18) it is offered
+    // nowhere - no card is generated. The card assertions return when it is offered.
+    const catalog = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/catalog.json`), "utf8"));
+    const element = catalog.elements.find((entry: { elementId: string }) => entry.elementId === "E-008");
+    if (element.publicStatus === "excluded") {
+      expect(card).toBeUndefined();
+      expect(element.exclusion?.reason).toBeTruthy();
+      expect(element.exclusion?.decidedAt).toBe("2026-09-18");
+      return;
+    }
     expect(card.period).toBe("2021–2026년");
     expect(card.headline.value).toBe("144건");
     expect(card.preview.parts).toEqual([{ label: "논문", value: 114 }, { label: "특허", value: 30 }]);

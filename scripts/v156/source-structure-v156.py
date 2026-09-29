@@ -24,7 +24,7 @@ from typing import Any
 # Run from anywhere: the ETL package lives at the repository root.
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 
-from tools.vietnam_etl.source_zip import analyze_source_dir  # noqa: E402
+from tools.etl.source_zip import analyze_source_dir  # noqa: E402
 
 
 def _catalog_rows(catalog_path: pathlib.Path) -> dict[str, dict[str, Any]]:

@@ -1,9 +1,9 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-structure-v156.py",
-  "generatedAt": "2026-09-24T04:28:10Z",
-  "workbooks": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\_source\\vietnam\\v156\\workbooks",
-  "publishedCatalog": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\public\\data\\vietnam\\v2\\catalog.json",
+  "generatedAt": "2026-09-24T11:25:39Z",
+  "workbooks": "C:\\Users\\user\\Documents\\nigt-wt-d3\\_source\\vietnam\\v156\\workbooks",
+  "publishedCatalog": "C:\\Users\\user\\Documents\\nigt-wt-d3\\public\\data\\vietnam\\v2\\catalog.json",
   "totals": {
     "deliveredElements": 145,
     "publishedElements": 152,
@@ -12,7 +12,7 @@
     "observationRowsDropped": 6,
     "entityRowsAppeared": 0,
     "withErrors": 0,
-    "withWarnings": 113
+    "withWarnings": 112
   },
   "notDelivered": [
     "C-020",
@@ -26,7 +26,7 @@
   "elements": [
     {
       "elementId": "A-001",
-      "file": "A-001_CPI(Corruption Perceptions Index, 부패인식지수).xlsx",
+      "file": "A-001.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -114,7 +114,7 @@
     },
     {
       "elementId": "A-003",
-      "file": "A-003_GDP[현재가, PPP, 성장률, 1인당].xlsx",
+      "file": "A-003.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -158,7 +158,7 @@
     },
     {
       "elementId": "A-004",
-      "file": "A-004_빈곤율; 극빈곤율.xlsx",
+      "file": "A-004.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -202,7 +202,7 @@
     },
     {
       "elementId": "A-005",
-      "file": "A-005_산업구조[농업, 제조, 서비스].xlsx",
+      "file": "A-005.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -246,7 +246,7 @@
     },
     {
       "elementId": "A-006",
-      "file": "A-006_실업률; 청년실업률.xlsx",
+      "file": "A-006.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -290,7 +290,7 @@
     },
     {
       "elementId": "A-007",
-      "file": "A-007_인구[총인구, 도시화율].xlsx",
+      "file": "A-007.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -334,7 +334,7 @@
     },
     {
       "elementId": "A-008",
-      "file": "A-008_지니계수.xlsx",
+      "file": "A-008.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -378,7 +378,7 @@
     },
     {
       "elementId": "A-009",
-      "file": "A-009_GHG 배출 강도[GDP 대비, 1인당].xlsx",
+      "file": "A-009.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -404,7 +404,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 56,
+      "yearCount": 57,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -422,7 +422,7 @@
     },
     {
       "elementId": "A-010",
-      "file": "A-010_GHG 배출량[CO₂, CH₄, N₂O, F-gas].xlsx",
+      "file": "A-010.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -448,7 +448,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 56,
+      "yearCount": 57,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -466,7 +466,7 @@
     },
     {
       "elementId": "A-011",
-      "file": "A-011_GHG 배출량[에너지, 산업공정, 농업, 폐기물].xlsx",
+      "file": "A-011.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -492,7 +492,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 56,
+      "yearCount": 57,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -510,7 +510,7 @@
     },
     {
       "elementId": "A-012",
-      "file": "A-012_총 GHG 배출량(LULUCF 제외).xlsx",
+      "file": "A-012.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -536,7 +536,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 56,
+      "yearCount": 57,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -598,7 +598,7 @@
     },
     {
       "elementId": "A-014",
-      "file": "A-014_UNDESA SDG Index Score.xlsx",
+      "file": "A-014.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -642,7 +642,7 @@
     },
     {
       "elementId": "A-015",
-      "file": "A-015_UNDESA SDG 세부목표별 달성도.xlsx",
+      "file": "A-015.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -686,7 +686,7 @@
     },
     {
       "elementId": "A-016",
-      "file": "A-016_1차 에너지 소비 구조.xlsx",
+      "file": "A-016.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -730,7 +730,7 @@
     },
     {
       "elementId": "A-017",
-      "file": "A-017_LCOE(균등화 발전비용).xlsx",
+      "file": "A-017.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -774,7 +774,7 @@
     },
     {
       "elementId": "A-018",
-      "file": "A-018_기술별 발전 설비용량.xlsx",
+      "file": "A-018.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -818,7 +818,7 @@
     },
     {
       "elementId": "A-019",
-      "file": "A-019_송배전 손실률(T&D Loss).xlsx",
+      "file": "A-019.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -862,7 +862,7 @@
     },
     {
       "elementId": "A-020",
-      "file": "A-020_재생에너지 비중.xlsx",
+      "file": "A-020.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -906,7 +906,7 @@
     },
     {
       "elementId": "A-021",
-      "file": "A-021_전력 접근률.xlsx",
+      "file": "A-021.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -950,7 +950,7 @@
     },
     {
       "elementId": "A-022",
-      "file": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+      "file": "A-022.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1038,7 +1038,7 @@
     },
     {
       "elementId": "A-024",
-      "file": "A-024_전력망[위치, 미공급 지역].xlsx",
+      "file": "A-024.xlsx",
       "shape": {
         "before": "mixed",
         "after": "mixed",
@@ -1082,7 +1082,7 @@
     },
     {
       "elementId": "A-025",
-      "file": "A-025_CCS 시설.xlsx",
+      "file": "A-025.xlsx",
       "shape": {
         "before": "mixed",
         "after": "mixed",
@@ -1093,8 +1093,8 @@
         "delivered": 1
       },
       "entityRows": {
-        "published": 1,
-        "delivered": 1
+        "published": 5,
+        "delivered": 5
       },
       "attributeLabels": [
         "attr_1",
@@ -1102,7 +1102,6 @@
         "attr_3"
       ],
       "spatialUnits": [
-        "nation",
         "point"
       ],
       "latestYear": {
@@ -1171,15 +1170,15 @@
     },
     {
       "elementId": "A-027",
-      "file": "A-027_교통 인프라[railway, road].xlsx",
+      "file": "A-027.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 61,
-        "delivered": 61
+        "published": 35,
+        "delivered": 35
       },
       "entityRows": {
         "published": 0,
@@ -1207,9 +1206,7 @@
         "meta_code_def",
         "db_framework"
       ],
-      "warnings": [
-        "duplicate-records:16"
-      ],
+      "warnings": [],
       "errors": [],
       "hasCoordinates": false,
       "hasGeometry": false,
@@ -1261,7 +1258,7 @@
     },
     {
       "elementId": "A-029",
-      "file": "A-029_FTA 체결 현황.xlsx",
+      "file": "A-029.xlsx",
       "shape": {
         "before": "mixed",
         "after": "mixed",
@@ -1272,8 +1269,8 @@
         "delivered": 1
       },
       "entityRows": {
-        "published": 30,
-        "delivered": 30
+        "published": 19,
+        "delivered": 19
       },
       "attributeLabels": [
         "attr_1",
@@ -1305,15 +1302,15 @@
     },
     {
       "elementId": "A-030",
-      "file": "A-030_한-개도국 교역액.xlsx",
+      "file": "A-030.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 148,
-        "delivered": 148
+        "published": 16,
+        "delivered": 16
       },
       "entityRows": {
         "published": 0,
@@ -1331,7 +1328,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 35,
+      "yearCount": 5,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -1349,7 +1346,7 @@
     },
     {
       "elementId": "A-031",
-      "file": "A-031_물류성과지수(LPI).xlsx",
+      "file": "A-031.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1393,7 +1390,7 @@
     },
     {
       "elementId": "A-032",
-      "file": "A-032_중간재 교역 규모.xlsx",
+      "file": "A-032.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1437,7 +1434,7 @@
     },
     {
       "elementId": "A-033",
-      "file": "A-033_해운 연결성(LSCI).xlsx",
+      "file": "A-033.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1481,7 +1478,7 @@
     },
     {
       "elementId": "B-001",
-      "file": "B-001_건기／우기.xlsx",
+      "file": "B-001.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1506,7 +1503,7 @@
         "published": 1991,
         "delivered": 2026
       },
-      "yearCount": 3,
+      "yearCount": 2,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -1563,7 +1560,7 @@
     },
     {
       "elementId": "B-003",
-      "file": "B-003_연평균 기온·강수.xlsx",
+      "file": "B-003.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -1574,8 +1571,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 12621,
-        "delivered": 12621
+        "published": 8371,
+        "delivered": 8371
       },
       "attributeLabels": [
         "attr_1",
@@ -1835,7 +1832,7 @@
     },
     {
       "elementId": "B-008",
-      "file": "B-008_NASA 해수면 상승 전망 (SSP 1-5).xlsx",
+      "file": "B-008.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -1854,9 +1851,6 @@
         "attr_10",
         "attr_11",
         "attr_12",
-        "attr_13",
-        "attr_14",
-        "attr_15",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -1873,7 +1867,7 @@
         "published": 2100,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -1889,15 +1883,15 @@
     },
     {
       "elementId": "B-009",
-      "file": "B-009_WWF 생물다양성·기후 리스크.xlsx",
+      "file": "B-009.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 255,
-        "delivered": 255
+        "published": 435,
+        "delivered": 435
       },
       "entityRows": {
         "published": 0,
@@ -1914,7 +1908,7 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 1,
+      "yearCount": 31,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -1930,7 +1924,7 @@
     },
     {
       "elementId": "B-010",
-      "file": "B-010_기후 리스크 지수 (CRI).xlsx",
+      "file": "B-010.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -1955,7 +1949,7 @@
         "published": 2024,
         "delivered": 2026
       },
-      "yearCount": 3,
+      "yearCount": 4,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -1971,7 +1965,7 @@
     },
     {
       "elementId": "B-011",
-      "file": "B-011_기후 취약성 지수 (ND-GAIN).xlsx",
+      "file": "B-011.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2012,7 +2006,7 @@
     },
     {
       "elementId": "B-012",
-      "file": "B-012_재해·재난 이력 (EM-DAT).xlsx",
+      "file": "B-012.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2035,7 +2029,6 @@
         "attr_14",
         "attr_15",
         "attr_16",
-        "attr_17",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -2068,7 +2061,7 @@
     },
     {
       "elementId": "B-013",
-      "file": "B-013_World Bank CBAM 영향 지수.xlsx",
+      "file": "B-013.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2109,7 +2102,7 @@
     },
     {
       "elementId": "B-014",
-      "file": "B-014_World Bank CCDR(Country Climate and Development) 내 '탄소세 시뮬레이션 결과(배출감소율, GDP 영향, 세수 효과).xlsx",
+      "file": "B-014.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2191,7 +2184,7 @@
     },
     {
       "elementId": "B-016",
-      "file": "B-016_화석연료 의존도(Fossil fuel energy consumption (% of total)).xlsx",
+      "file": "B-016.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2232,7 +2225,7 @@
     },
     {
       "elementId": "B-017",
-      "file": "B-017_WRI Aqueduct 물 스트레스 지수.xlsx",
+      "file": "B-017.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2243,8 +2236,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 4867,
-        "delivered": 4867
+        "published": 2032,
+        "delivered": 2032
       },
       "attributeLabels": [
         "attr_1",
@@ -2291,15 +2284,14 @@
         "attr_9"
       ],
       "spatialUnits": [
-        "admin1",
         "basin",
         "nation"
       ],
       "latestYear": {
         "published": 2080,
-        "delivered": 2080
+        "delivered": 2026
       },
-      "yearCount": 3,
+      "yearCount": 2,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -2315,7 +2307,7 @@
     },
     {
       "elementId": "B-018",
-      "file": "B-018_SSP GDP(PPP, PPP per cap) 전망 (SSP 1-5).xlsx",
+      "file": "B-018.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2356,7 +2348,7 @@
     },
     {
       "elementId": "B-019",
-      "file": "B-019_SSP 인구 전망 (SSP 1-5).xlsx",
+      "file": "B-019.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2397,7 +2389,7 @@
     },
     {
       "elementId": "B-020",
-      "file": "B-020_EU／UN INFORM Risk Index (복합 리스크 지수).xlsx",
+      "file": "B-020.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2438,7 +2430,7 @@
     },
     {
       "elementId": "B-021",
-      "file": "B-021_Global Data Lab의 GVI, Vulnerability Index.xlsx",
+      "file": "B-021.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2612,7 +2604,7 @@
     },
     {
       "elementId": "B-025",
-      "file": "B-025_유역 면적(km²).xlsx",
+      "file": "B-025.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2665,7 +2657,7 @@
     },
     {
       "elementId": "B-026",
-      "file": "B-026_유향(flow direction).xlsx",
+      "file": "B-026.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2676,8 +2668,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 108,
-        "delivered": 108
+        "published": 74,
+        "delivered": 74
       },
       "attributeLabels": [
         "attr_1",
@@ -2725,7 +2717,7 @@
     },
     {
       "elementId": "B-027",
-      "file": "B-027_지하수 잠재량(m³／yr).xlsx",
+      "file": "B-027.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -2817,7 +2809,7 @@
     },
     {
       "elementId": "B-029",
-      "file": "B-029_산림 유형별 면적(열대우림／맹그로브／이탄지 등).xlsx",
+      "file": "B-029.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2828,8 +2820,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 289,
-        "delivered": 289
+        "published": 231,
+        "delivered": 231
       },
       "attributeLabels": [
         "attr_1",
@@ -2859,7 +2851,7 @@
         "published": 2025,
         "delivered": 2026
       },
-      "yearCount": 4,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -2875,7 +2867,7 @@
     },
     {
       "elementId": "B-030",
-      "file": "B-030_산림 이득(ha／yr).xlsx",
+      "file": "B-030.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -2886,8 +2878,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 134,
-        "delivered": 134
+        "published": 100,
+        "delivered": 100
       },
       "attributeLabels": [
         "attr_1",
@@ -3232,7 +3224,7 @@
     },
     {
       "elementId": "B-037",
-      "file": "B-037_토지피복 분류별 면적(경작지／산림／초지／건물／수체／나지, ha).xlsx",
+      "file": "B-037.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3243,8 +3235,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 781,
-        "delivered": 781
+        "published": 747,
+        "delivered": 747
       },
       "attributeLabels": [
         "attr_1",
@@ -3295,15 +3287,15 @@
     },
     {
       "elementId": "B-038",
-      "file": "B-038_바이오매스 자원 가용량 (농업잔재／임업잔재／도시폐기물／축산폐기물).xlsx",
+      "file": "B-038.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 399,
-        "delivered": 399
+        "published": 190,
+        "delivered": 190
       },
       "entityRows": {
         "published": 0,
@@ -3320,7 +3312,7 @@
         "published": 2050,
         "delivered": 2050
       },
-      "yearCount": 64,
+      "yearCount": 30,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3336,7 +3328,7 @@
     },
     {
       "elementId": "B-039",
-      "file": "B-039_수력 잠재량.xlsx",
+      "file": "B-039.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3347,8 +3339,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 263,
-        "delivered": 263
+        "published": 228,
+        "delivered": 228
       },
       "attributeLabels": [
         "attr_1",
@@ -3377,9 +3369,9 @@
       ],
       "latestYear": {
         "published": 2030,
-        "delivered": 2030
+        "delivered": 2026
       },
-      "yearCount": 4,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3395,7 +3387,7 @@
     },
     {
       "elementId": "B-040",
-      "file": "B-040_지열 잠재량.xlsx",
+      "file": "B-040.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3406,8 +3398,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 199,
-        "delivered": 199
+        "published": 165,
+        "delivered": 165
       },
       "attributeLabels": [
         "attr_1",
@@ -3460,7 +3452,7 @@
     },
     {
       "elementId": "B-041",
-      "file": "B-041_태양광 관련 지표 (GHI, DNI).xlsx",
+      "file": "B-041.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3471,8 +3463,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 147,
-        "delivered": 147
+        "published": 113,
+        "delivered": 113
       },
       "attributeLabels": [
         "attr_1",
@@ -3511,7 +3503,7 @@
         "published": 2018,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3527,7 +3519,7 @@
     },
     {
       "elementId": "B-042",
-      "file": "B-042_풍력 자원 (풍속, 에너지밀도).xlsx",
+      "file": "B-042.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3538,8 +3530,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 242,
-        "delivered": 242
+        "published": 205,
+        "delivered": 205
       },
       "attributeLabels": [
         "attr_1",
@@ -3555,8 +3547,6 @@
         "attr_19",
         "attr_2",
         "attr_20",
-        "attr_21",
-        "attr_22",
         "attr_3",
         "attr_4",
         "attr_5",
@@ -3573,7 +3563,7 @@
         "published": 2017,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3630,15 +3620,15 @@
     },
     {
       "elementId": "B-044",
-      "file": "B-044_광물명(리튬／코발트／니켈／구리／희토류／망간).xlsx",
+      "file": "B-044.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 7,
-        "delivered": 7
+        "published": 26,
+        "delivered": 26
       },
       "entityRows": {
         "published": 0,
@@ -3655,7 +3645,7 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 1,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3671,15 +3661,15 @@
     },
     {
       "elementId": "B-045",
-      "file": "B-045_글로벌 순위.xlsx",
+      "file": "B-045.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 224,
-        "delivered": 224
+        "published": 46,
+        "delivered": 46
       },
       "entityRows": {
         "published": 0,
@@ -3696,7 +3686,7 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 8,
+      "yearCount": 1,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3794,7 +3784,7 @@
     },
     {
       "elementId": "B-048",
-      "file": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+      "file": "B-048.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3814,8 +3804,7 @@
         "attr_3",
         "attr_4",
         "attr_5",
-        "attr_6",
-        "attr_7"
+        "attr_6"
       ],
       "spatialUnits": [
         "point"
@@ -3824,7 +3813,7 @@
         "published": 2022,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -3840,7 +3829,7 @@
     },
     {
       "elementId": "C-001",
-      "file": "C-001_NDC (국가 온실가스 감축 목표).xlsx",
+      "file": "C-001.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -3851,17 +3840,12 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 3,
-        "delivered": 3
+        "published": 49,
+        "delivered": 49
       },
       "attributeLabels": [
         "attr_1",
         "attr_10",
-        "attr_100",
-        "attr_101",
-        "attr_102",
-        "attr_103",
-        "attr_104",
         "attr_11",
         "attr_12",
         "attr_13",
@@ -3878,87 +3862,13 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
-        "attr_27",
-        "attr_28",
-        "attr_29",
         "attr_3",
-        "attr_30",
-        "attr_31",
-        "attr_32",
-        "attr_33",
-        "attr_34",
-        "attr_35",
-        "attr_36",
-        "attr_37",
-        "attr_38",
-        "attr_39",
         "attr_4",
-        "attr_40",
-        "attr_41",
-        "attr_42",
-        "attr_43",
-        "attr_44",
-        "attr_45",
-        "attr_46",
-        "attr_47",
-        "attr_48",
-        "attr_49",
         "attr_5",
-        "attr_50",
-        "attr_51",
-        "attr_52",
-        "attr_53",
-        "attr_54",
-        "attr_55",
-        "attr_56",
-        "attr_57",
-        "attr_58",
-        "attr_59",
         "attr_6",
-        "attr_60",
-        "attr_61",
-        "attr_62",
-        "attr_63",
-        "attr_64",
-        "attr_65",
-        "attr_66",
-        "attr_67",
-        "attr_68",
-        "attr_69",
         "attr_7",
-        "attr_70",
-        "attr_71",
-        "attr_72",
-        "attr_73",
-        "attr_74",
-        "attr_75",
-        "attr_76",
-        "attr_77",
-        "attr_78",
-        "attr_79",
         "attr_8",
-        "attr_80",
-        "attr_81",
-        "attr_82",
-        "attr_83",
-        "attr_84",
-        "attr_85",
-        "attr_86",
-        "attr_87",
-        "attr_88",
-        "attr_89",
-        "attr_9",
-        "attr_90",
-        "attr_91",
-        "attr_92",
-        "attr_93",
-        "attr_94",
-        "attr_95",
-        "attr_96",
-        "attr_97",
-        "attr_98",
-        "attr_99"
+        "attr_9"
       ],
       "spatialUnits": [
         "nation"
@@ -3967,13 +3877,14 @@
         "published": 2030,
         "delivered": 2030
       },
-      "yearCount": 4,
+      "yearCount": 5,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -4048,7 +3959,7 @@
     },
     {
       "elementId": "C-003",
-      "file": "C-003_NAP (국가 적응 계획).xlsx",
+      "file": "C-003.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -4059,8 +3970,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 253,
-        "delivered": 253
+        "published": 96,
+        "delivered": 96
       },
       "attributeLabels": [
         "attr_1",
@@ -4081,72 +3992,12 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
-        "attr_27",
-        "attr_28",
-        "attr_29",
         "attr_3",
-        "attr_30",
-        "attr_31",
-        "attr_32",
-        "attr_33",
-        "attr_34",
-        "attr_35",
-        "attr_36",
-        "attr_37",
-        "attr_38",
-        "attr_39",
         "attr_4",
-        "attr_40",
-        "attr_41",
-        "attr_42",
-        "attr_43",
-        "attr_44",
-        "attr_45",
-        "attr_46",
-        "attr_47",
-        "attr_48",
-        "attr_49",
         "attr_5",
-        "attr_50",
-        "attr_51",
-        "attr_52",
-        "attr_53",
-        "attr_54",
-        "attr_55",
-        "attr_56",
-        "attr_57",
-        "attr_58",
-        "attr_59",
         "attr_6",
-        "attr_60",
-        "attr_61",
-        "attr_62",
-        "attr_63",
-        "attr_64",
-        "attr_65",
-        "attr_66",
-        "attr_67",
-        "attr_68",
-        "attr_69",
         "attr_7",
-        "attr_70",
-        "attr_71",
-        "attr_72",
-        "attr_73",
-        "attr_74",
-        "attr_75",
-        "attr_76",
-        "attr_77",
-        "attr_78",
-        "attr_79",
         "attr_8",
-        "attr_80",
-        "attr_81",
-        "attr_82",
-        "attr_83",
-        "attr_84",
-        "attr_85",
         "attr_9"
       ],
       "spatialUnits": [
@@ -4156,13 +4007,14 @@
         "published": 2050,
         "delivered": 2050
       },
-      "yearCount": 5,
+      "yearCount": 7,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -4237,7 +4089,7 @@
     },
     {
       "elementId": "C-005",
-      "file": "C-005_TNA (기술 수요 평가).xlsx",
+      "file": "C-005.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -4248,71 +4100,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 408,
-        "delivered": 408
-      },
-      "attributeLabels": [
-        "attr_1",
-        "attr_10",
-        "attr_11",
-        "attr_12",
-        "attr_13",
-        "attr_14",
-        "attr_15",
-        "attr_16",
-        "attr_17",
-        "attr_18",
-        "attr_19",
-        "attr_2",
-        "attr_20",
-        "attr_21",
-        "attr_22",
-        "attr_23",
-        "attr_24",
-        "attr_3",
-        "attr_4",
-        "attr_5",
-        "attr_6",
-        "attr_7",
-        "attr_8",
-        "attr_9"
-      ],
-      "spatialUnits": [
-        "nation"
-      ],
-      "latestYear": {
-        "published": 2012,
-        "delivered": 2026
-      },
-      "yearCount": 3,
-      "sheetNames": [
-        "1.1_observation(측정값)",
-        "1.2_entity(레코드형)",
-        "2_meta_info"
-      ],
-      "warnings": [
-        "missing-optional-sheet:db_framework"
-      ],
-      "errors": [],
-      "hasCoordinates": false,
-      "hasGeometry": false,
-      "carriedOver": false
-    },
-    {
-      "elementId": "C-006",
-      "file": "C-006_파리협정 제6.2조·제6.4조 이행 체계·현황.xlsx",
-      "shape": {
-        "before": "entity",
-        "after": "entity",
-        "changed": false
-      },
-      "observationRows": {
-        "published": 0,
-        "delivered": 0
-      },
-      "entityRows": {
-        "published": 29,
-        "delivered": 29
+        "published": 135,
+        "delivered": 135
       },
       "attributeLabels": [
         "attr_1",
@@ -4333,32 +4122,73 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
-        "attr_27",
-        "attr_28",
-        "attr_29",
         "attr_3",
-        "attr_30",
-        "attr_31",
-        "attr_32",
-        "attr_33",
-        "attr_34",
-        "attr_35",
-        "attr_36",
-        "attr_37",
-        "attr_38",
-        "attr_39",
         "attr_4",
-        "attr_40",
-        "attr_41",
-        "attr_42",
-        "attr_43",
-        "attr_44",
-        "attr_45",
-        "attr_46",
-        "attr_47",
-        "attr_48",
-        "attr_49",
+        "attr_5",
+        "attr_6",
+        "attr_7",
+        "attr_8",
+        "attr_9"
+      ],
+      "spatialUnits": [
+        "nation"
+      ],
+      "latestYear": {
+        "published": 2012,
+        "delivered": 2026
+      },
+      "yearCount": 2,
+      "sheetNames": [
+        "1.1_observation(측정값)",
+        "1.2_entity(레코드형)",
+        "2_meta_info"
+      ],
+      "warnings": [
+        "2_meta_info:column-limit-applied:16382",
+        "missing-optional-sheet:db_framework"
+      ],
+      "errors": [],
+      "hasCoordinates": false,
+      "hasGeometry": false,
+      "carriedOver": false
+    },
+    {
+      "elementId": "C-006",
+      "file": "C-006.xlsx",
+      "shape": {
+        "before": "entity",
+        "after": "entity",
+        "changed": false
+      },
+      "observationRows": {
+        "published": 0,
+        "delivered": 0
+      },
+      "entityRows": {
+        "published": 50,
+        "delivered": 50
+      },
+      "attributeLabels": [
+        "attr_1",
+        "attr_10",
+        "attr_11",
+        "attr_12",
+        "attr_13",
+        "attr_14",
+        "attr_15",
+        "attr_16",
+        "attr_17",
+        "attr_18",
+        "attr_19",
+        "attr_2",
+        "attr_20",
+        "attr_21",
+        "attr_22",
+        "attr_23",
+        "attr_24",
+        "attr_25",
+        "attr_3",
+        "attr_4",
         "attr_5",
         "attr_6",
         "attr_7",
@@ -4372,13 +4202,14 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 4,
+      "yearCount": 5,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -4388,7 +4219,7 @@
     },
     {
       "elementId": "C-007",
-      "file": "C-007_파리협정 제6.8조 비시장 접근법 참여 현황.xlsx",
+      "file": "C-007.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -4399,8 +4230,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 7,
-        "delivered": 7
+        "published": 32,
+        "delivered": 32
       },
       "attributeLabels": [
         "attr_1",
@@ -4443,6 +4274,7 @@
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -4911,7 +4743,7 @@
     },
     {
       "elementId": "C-015",
-      "file": "C-015_재생에너지 법제도 원본 링크.xlsx",
+      "file": "C-015.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -4922,8 +4754,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 33,
-        "delivered": 33
+        "published": 21,
+        "delivered": 21
       },
       "attributeLabels": [
         "attr_1",
@@ -4944,12 +4776,7 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
-        "attr_27",
-        "attr_28",
-        "attr_29",
         "attr_3",
-        "attr_30",
         "attr_4",
         "attr_5",
         "attr_6",
@@ -4964,13 +4791,14 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 5,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -5046,7 +4874,7 @@
     },
     {
       "elementId": "C-017",
-      "file": "C-017_재생에너지 투자 인센티브_수정안.xlsx",
+      "file": "C-017.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -5057,8 +4885,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 56,
-        "delivered": 56
+        "published": 52,
+        "delivered": 52
       },
       "attributeLabels": [
         "attr_1",
@@ -5094,13 +4922,14 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 6,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
         "2_meta_info"
       ],
       "warnings": [
+        "2_meta_info:column-limit-applied:16382",
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
@@ -5384,7 +5213,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 1190,
+        "published": 388,
         "delivered": 388
       },
       "attributeLabels": [
@@ -5439,7 +5268,7 @@
     },
     {
       "elementId": "D-001",
-      "file": "D-001_단위 사업당 CAPEX.xlsx",
+      "file": "D-001.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5478,7 +5307,7 @@
     },
     {
       "elementId": "D-002",
-      "file": "D-002_시장 성장률.xlsx",
+      "file": "D-002.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5517,7 +5346,7 @@
     },
     {
       "elementId": "D-003",
-      "file": "D-003_예상 감축량.xlsx",
+      "file": "D-003.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5556,7 +5385,7 @@
     },
     {
       "elementId": "D-004",
-      "file": "D-004_크레딧 가격 연동 수익성.xlsx",
+      "file": "D-004.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5595,7 +5424,7 @@
     },
     {
       "elementId": "D-005",
-      "file": "D-005_감축적응 구분별 예산 배분 비율.xlsx",
+      "file": "D-005.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5634,7 +5463,7 @@
     },
     {
       "elementId": "D-006",
-      "file": "D-006_기후 관련 조세 수입.xlsx",
+      "file": "D-006.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5673,7 +5502,7 @@
     },
     {
       "elementId": "D-007",
-      "file": "D-007_기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준.xlsx",
+      "file": "D-007.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5712,7 +5541,7 @@
     },
     {
       "elementId": "D-008",
-      "file": "D-008_주관 부처별 기후 예산 규모.xlsx",
+      "file": "D-008.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5752,7 +5581,7 @@
     },
     {
       "elementId": "D-009",
-      "file": "D-009_기후대응·기후기술 관련 정부 예산.xlsx",
+      "file": "D-009.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5792,7 +5621,7 @@
     },
     {
       "elementId": "D-010",
-      "file": "D-010_화석연료 보조금 규모.xlsx",
+      "file": "D-010.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5831,7 +5660,7 @@
     },
     {
       "elementId": "D-011",
-      "file": "D-011_개도국 내 각국별 ODA 규모.xlsx",
+      "file": "D-011.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5870,7 +5699,7 @@
     },
     {
       "elementId": "D-012",
-      "file": "D-012_경쟁국 민간기업의 개도국 진출 현황.xlsx",
+      "file": "D-012.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -5922,13 +5751,13 @@
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
-      "hasCoordinates": true,
-      "hasGeometry": true,
+      "hasCoordinates": false,
+      "hasGeometry": false,
       "carriedOver": false
     },
     {
       "elementId": "D-013",
-      "file": "D-013_GGGI Green Growth Index(녹색성장지수).xlsx",
+      "file": "D-013.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
@@ -5967,7 +5796,7 @@
     },
     {
       "elementId": "D-014",
-      "file": "D-014_EDCF 프로젝트.xlsx",
+      "file": "D-014.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6026,13 +5855,13 @@
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
-      "hasCoordinates": true,
-      "hasGeometry": true,
+      "hasCoordinates": false,
+      "hasGeometry": false,
       "carriedOver": false
     },
     {
       "elementId": "D-015",
-      "file": "D-015_ODA Korea 프로젝트.xlsx",
+      "file": "D-015.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6088,13 +5917,13 @@
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
-      "hasCoordinates": true,
-      "hasGeometry": true,
+      "hasCoordinates": false,
+      "hasGeometry": false,
       "carriedOver": false
     },
     {
       "elementId": "D-016",
-      "file": "D-016_지자체·정부부처 프로젝트.xlsx",
+      "file": "D-016.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6151,13 +5980,13 @@
         "missing-optional-sheet:db_framework"
       ],
       "errors": [],
-      "hasCoordinates": true,
-      "hasGeometry": true,
+      "hasCoordinates": false,
+      "hasGeometry": false,
       "carriedOver": false
     },
     {
       "elementId": "D-017",
-      "file": "D-017_한국 ODA 기관 PCP입찰 현황.xlsx",
+      "file": "D-017.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6280,7 +6109,7 @@
     },
     {
       "elementId": "D-019",
-      "file": "D-019_CTCN 기술지원 요청.xlsx",
+      "file": "D-019.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6343,7 +6172,7 @@
     },
     {
       "elementId": "D-020",
-      "file": "D-020_GCF 프로젝트.xlsx",
+      "file": "D-020.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6409,7 +6238,7 @@
     },
     {
       "elementId": "D-021",
-      "file": "D-021_주요 국제기구·MDB 프로젝트.xlsx",
+      "file": "D-021.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6473,7 +6302,7 @@
     },
     {
       "elementId": "D-022",
-      "file": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+      "file": "D-022.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6543,7 +6372,7 @@
     },
     {
       "elementId": "D-023",
-      "file": "D-023_ODA 및 기후기금(GCF, GEF, AF) 재원.xlsx",
+      "file": "D-023.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6636,7 +6465,7 @@
     },
     {
       "elementId": "D-024",
-      "file": "D-024_VC·임팩트 투자 현황.xlsx",
+      "file": "D-024.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6698,7 +6527,7 @@
     },
     {
       "elementId": "D-025",
-      "file": "D-025_민간 인프라 투자(PPI).xlsx",
+      "file": "D-025.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6767,7 +6596,7 @@
     },
     {
       "elementId": "D-026",
-      "file": "D-026_MIGA 정치적 리스크 보증.xlsx",
+      "file": "D-026.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6887,7 +6716,7 @@
     },
     {
       "elementId": "E-002",
-      "file": "E-002_DNA(국가지정기관).xlsx",
+      "file": "E-002.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -6898,8 +6727,8 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 46,
-        "delivered": 46
+        "published": 1,
+        "delivered": 1
       },
       "attributeLabels": [
         "attr_1",
@@ -6915,11 +6744,6 @@
         "attr_19",
         "attr_2",
         "attr_20",
-        "attr_21",
-        "attr_22",
-        "attr_23",
-        "attr_24",
-        "attr_25",
         "attr_3",
         "attr_4",
         "attr_5",
@@ -6952,7 +6776,7 @@
     },
     {
       "elementId": "E-003",
-      "file": "E-003_GCF NDA(국가지정기관).xlsx",
+      "file": "E-003.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7004,7 +6828,7 @@
     },
     {
       "elementId": "E-004",
-      "file": "E-004_국제기구 현지사무소 담당자.xlsx",
+      "file": "E-004.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7063,7 +6887,7 @@
     },
     {
       "elementId": "E-005",
-      "file": "E-005_대학,연구기관,NGO.xlsx",
+      "file": "E-005.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7083,8 +6907,6 @@
         "attr_11",
         "attr_12",
         "attr_13",
-        "attr_14",
-        "attr_15",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -7118,7 +6940,7 @@
     },
     {
       "elementId": "E-006",
-      "file": "E-006_현지 투자자 네트워크.xlsx",
+      "file": "E-006.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7151,7 +6973,6 @@
         "attr_23",
         "attr_24",
         "attr_25",
-        "attr_26",
         "attr_3",
         "attr_4",
         "attr_5",
@@ -7184,7 +7005,7 @@
     },
     {
       "elementId": "E-007",
-      "file": "E-007_온실가스 산정 MRV체계.xlsx",
+      "file": "E-007.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7195,25 +7016,18 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 22,
-        "delivered": 22
+        "published": 19,
+        "delivered": 19
       },
       "attributeLabels": [
         "attr_1",
-        "attr_10",
-        "attr_11",
-        "attr_12",
-        "attr_13",
-        "attr_14",
-        "attr_15",
         "attr_2",
         "attr_3",
         "attr_4",
         "attr_5",
         "attr_6",
         "attr_7",
-        "attr_8",
-        "attr_9"
+        "attr_8"
       ],
       "spatialUnits": [
         "nation"
@@ -7222,7 +7036,7 @@
         "published": 2026,
         "delivered": 2026
       },
-      "yearCount": 2,
+      "yearCount": 4,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -7294,15 +7108,15 @@
     },
     {
       "elementId": "E-009",
-      "file": "E-009_STEM 졸업자·연구자 수.xlsx",
+      "file": "E-009.xlsx",
       "shape": {
         "before": "observation",
         "after": "observation",
         "changed": false
       },
       "observationRows": {
-        "published": 39,
-        "delivered": 39
+        "published": 6,
+        "delivered": 6
       },
       "entityRows": {
         "published": 0,
@@ -7319,7 +7133,7 @@
         "published": 2023,
         "delivered": 2026
       },
-      "yearCount": 15,
+      "yearCount": 3,
       "sheetNames": [
         "1.1_observation(측정값)",
         "1.2_entity(레코드형)",
@@ -7420,7 +7234,7 @@
     },
     {
       "elementId": "E-014",
-      "file": "E-014_양자협정 현황.xlsx",
+      "file": "E-014.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7436,8 +7250,6 @@
       },
       "attributeLabels": [
         "attr_1",
-        "attr_10",
-        "attr_11",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -7471,7 +7283,7 @@
     },
     {
       "elementId": "E-015",
-      "file": "E-015_기타 협력 체계.xlsx",
+      "file": "E-015.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7487,8 +7299,6 @@
       },
       "attributeLabels": [
         "attr_1",
-        "attr_10",
-        "attr_11",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -7573,7 +7383,7 @@
     },
     {
       "elementId": "E-019",
-      "file": "E-019_개도국 내 한국기관 사무소.xlsx",
+      "file": "E-019.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7591,8 +7401,6 @@
         "attr_1",
         "attr_10",
         "attr_11",
-        "attr_12",
-        "attr_13",
         "attr_2",
         "attr_3",
         "attr_4",
@@ -7626,7 +7434,7 @@
     },
     {
       "elementId": "E-020",
-      "file": "E-020_한국 공공·민간 지원체계.xlsx",
+      "file": "E-020.xlsx",
       "shape": {
         "before": "entity",
         "after": "entity",
@@ -7644,13 +7452,6 @@
         "attr_1",
         "attr_10",
         "attr_11",
-        "attr_12",
-        "attr_13",
-        "attr_14",
-        "attr_15",
-        "attr_16",
-        "attr_17",
-        "attr_18",
         "attr_2",
         "attr_3",
         "attr_4",

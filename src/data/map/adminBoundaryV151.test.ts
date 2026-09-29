@@ -15,6 +15,7 @@ import {
   boundarySystemV151,
   boundaryValueNoticeV151,
 } from "./adminBoundaryV151";
+import { countryPublicDirV158 } from "../countryContext";
 
 // Read at test time rather than statically imported: the candidate build
 // (.verify/candidate) copies src/ without reports/, and CRA type-checks tests.
@@ -26,7 +27,7 @@ const crosswalk34 = crosswalkBuild.crosswalk34;
 // bytes the site actually serves, not a second copy of the same literal.
 const adm1_34 = JSON.parse(
   readFileSync(
-    join(__dirname, "../../../public/data/vietnam/v2/geometry/vnm-adm1-34.geojson"),
+    join(__dirname, `../../../${countryPublicDirV158("VNM")}/geometry/vnm-adm1-34.geojson`),
     "utf8"
   )
 ) as { features: { properties: Record<string, unknown> }[] };

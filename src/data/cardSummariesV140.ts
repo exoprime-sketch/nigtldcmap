@@ -1,5 +1,6 @@
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
+import { countryAssetPathV158 } from "./countryContext";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -97,7 +98,7 @@ export interface CardSummariesV140 {
   cards: CardSummaryV140[];
 }
 
-const SUMMARIES_URL = publicAssetUrlV128("data/vietnam/v2/home/card-summaries-v140.json");
+const SUMMARIES_URL = publicAssetUrlV128(countryAssetPathV158("VNM", "home/card-summaries-v140.json"));
 
 let cache: Promise<Map<string, CardSummaryV140>> | null = null;
 

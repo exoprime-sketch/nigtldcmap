@@ -6,12 +6,13 @@ import type {
 } from "../vietnam/vietnamTypesV124";
 import { adaptS1V159 } from "./S1CountryObservationV159";
 import type { RegionSystemV159, S2RegionObservationV159 } from "./structureTypesV159";
+import { countryPublicDirV158 } from "../countryContext";
 
 /**
  * S2 adapter (docs/DATA_TYPOLOGY_V159_SCHEMA.md §2.2).
  *
  * S2 rows carry every S1 field plus a region. Real deliveries state the
- * region three different ways (verified against public/data/vietnam/v2
+ * region three different ways (verified against ${countryPublicDirV158("VNM")}
  * downloads for B-021, D-008, C-016):
  *
  * | region_system | source marker | example |
@@ -126,7 +127,7 @@ export function adaptS2V159(
 }
 
 /**
- * S2 rows from the province layer the map draws (public/data/vietnam/v2/
+ * S2 rows from the province layer the map draws (${countryPublicDirV158("VNM")}/
  * spatial/layers/<id>.json), for elements whose province values arrive as a
  * map layer rather than as pack observations.
  *

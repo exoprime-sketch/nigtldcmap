@@ -224,6 +224,7 @@
 | 파일 | 용도 |
 |---|---|
 | `output/v159/datasetTypologyV159.xlsx` | 이 문서의 표 5개(표출유형 정의 / 구조 스키마 S1~S4 / 152 배정표 / 명칭 분리표 / 사례 통계) |
+| `output/v159/sheets/1~5-*.csv` | 같은 표 5개의 CSV(저장소 사본: `docs/handoff/v159/sheets/` — 저장소에는 통합문서 대신 텍스트로 둔다) |
 | `output/v159/structure-examples/S1.csv`~`S4.csv` | 구조별 실제 납품 행 예시(값은 모두 실 데이터에서 그대로 옮김, 출처 없는 칸은 비움) |
 | `docs/DATA_TYPOLOGY_V159_SCHEMA.md` | 구조 4형태 스키마(§2 표가 xlsx "구조 스키마" 시트의 정본) |
 | `docs/DATA_TYPOLOGY_V159.md` | 이 문서 |

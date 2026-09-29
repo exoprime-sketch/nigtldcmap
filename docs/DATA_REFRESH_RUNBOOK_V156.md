@@ -22,6 +22,7 @@ npm run refresh:data -- --source 베트남데이터/<YYYYMMDD> --hold A-023,B-03
 | `--source` | `베트남데이터/20260922` | 워크북이 **바로 들어 있는** 디렉터리(하위 탐색 없음) |
 | `--version` | `v156` | 스테이징·보고서 접두(`_source/vietnam/<version>`, `reports/<version>`) |
 | `--hold` | 없음 | 채택하지 않을 요소 코드. 해당 코드는 `--carry-from` 입고분 파일로 스테이징된다 |
+| `--adopt` | 없음 | 반대 방향 표기: 이 코드만 채택하고 나머지는 전부 보류한다. 실패마다 `--hold`를 늘리는 것보다 짧고 검증하기 쉽다 |
 | `--carry-from` | `베트남데이터/file` | **현재 공개 트리를 만든 입고분**. ETL 자체 fallback(V124 ZIP)은 더 오래된 자료다 |
 | `--expected-workbooks` | `149` | carry-over 병합 **후** 워크북 수(= 프레임워크 총계). 이 값이 틀리면 ETL이 중단한다 |
 | `--staging` | `.staging/<version>` | `.staging/` 하위여야 한다. 그 밖의 경로는 `build()`가 거부한다 |
@@ -31,7 +32,7 @@ npm run refresh:data -- --source 베트남데이터/<YYYYMMDD> --hold A-023,B-03
 | 단계 | 스크립트 | 무엇을 막는가 |
 |---|---|---|
 | stage | `scripts/v156/stage-source-v156.mjs` | `~$…xlsx` 잠금 파일·`._DAV`가 워크북으로 읽히는 것, 같은 코드 중복 파일의 임의 채택(`_수정안`만 자동 채택, 그 외는 실패), 보류 요소가 오래된 ZIP으로 후퇴하는 것 |
-| redact | `tools/vietnam_etl/redact_source_credentials_v156.py` | 입고분 메타시트에 적힌 API 키 등이 트리로 흘러드는 것(값은 스테이징 사본에서만 제거, 해시·행만 기록) |
+| redact | `tools/etl/redact_source_credentials_v156.py` | 입고분 메타시트에 적힌 API 키 등이 트리로 흘러드는 것(값은 스테이징 사본에서만 제거, 해시·행만 기록) |
 | structure | `scripts/v156/source-structure-v156.py` | 빌드가 실패해도 "구조가 어떻게 바뀌었는지"를 답하지 못하는 상황 |
 | build | `scripts/v137/build-final-data-v137.mjs` | etl→semantic→interpretation→temporal→map-targets→home-preview→asset-integrity 순서가 어긋나는 것 |
 | diff | `scripts/v156/source-diff-v156.mjs` | 값·지표·단위·최신연도·결측률 변화를 모르고 반영하는 것 |

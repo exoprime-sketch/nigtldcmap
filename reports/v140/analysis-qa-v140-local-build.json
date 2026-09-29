@@ -1,31 +1,43 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:50465",
-    "generatedAt": "2026-09-24T10:45:24.771Z",
+    "base": "http://127.0.0.1:53335",
+    "generatedAt": "2026-09-28T23:12:18.859Z",
     "version": {
       "local": {
-        "cardSummaries": "b48eae2753609e68",
-        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
-        "sourceHash": "6a61dd89cedc59f3",
+        "cardSummaries": "9b46dd1b520f762f",
+        "cardGeneratedAt": "2026-09-24T11:27:38.756Z",
+        "sourceHash": "ad1af64a0e3d29af",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "remote": {
-        "cardSummaries": "b48eae2753609e68",
-        "cardGeneratedAt": "2026-09-24T04:52:07.382Z",
+        "cardSummaries": "9b46dd1b520f762f",
+        "cardGeneratedAt": "2026-09-24T11:27:38.756Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "match": true
     },
     "elements": 152,
-    "valueBearing": 147,
-    "statusOnly": 5,
+    "valueBearing": 141,
+    "statusOnly": 1,
+    "excludedV156": [
+      "A-017",
+      "C-015",
+      "C-020",
+      "C-023",
+      "D-024",
+      "E-008",
+      "E-011",
+      "E-013",
+      "E-016",
+      "E-017"
+    ],
     "cardClicked": {
-      "pass": 152,
+      "pass": 142,
       "fail": 0,
-      "notApplicable": 0
+      "notApplicable": 10
     },
     "homeCardClicked": {
       "pass": 8,
@@ -33,96 +45,98 @@
       "notApplicable": 144
     },
     "selectionUrlPreserved": {
-      "pass": 89,
+      "pass": 87,
       "fail": 4,
-      "notApplicable": 59
+      "notApplicable": 61
     },
     "screenLoaded": {
-      "pass": 150,
-      "fail": 2,
+      "pass": 152,
+      "fail": 0,
       "notApplicable": 0
     },
     "detailTilesAbsent": {
-      "pass": 150,
+      "pass": 142,
       "fail": 0,
       "notApplicable": 0
     },
     "detailTilesBounded": {
-      "pass": 150,
+      "pass": 142,
       "fail": 0,
       "notApplicable": 0
     },
     "cardValueVerified": {
-      "pass": 128,
-      "fail": 21,
-      "notApplicable": 3
+      "pass": 120,
+      "fail": 18,
+      "notApplicable": 14
     },
     "recomputed": {
-      "match": 142,
-      "not-applicable": 8,
+      "match": 136,
+      "none": 10,
+      "not-applicable": 4,
       "mismatch": 2
     },
     "detailAnalysisFit": {
-      "pass": 78,
-      "fail": 15,
-      "notApplicable": 59
+      "pass": 77,
+      "fail": 14,
+      "notApplicable": 61
     },
     "analysisFit": {
-      "pass": 151,
+      "pass": 140,
       "fail": 1,
-      "notApplicable": 0,
+      "notApplicable": 11,
       "byKind": {
         "line:true": 33,
         "signed-bars:true": 1,
-        "bars:true": 40,
+        "bars:true": 37,
         "composition:true": 5,
         "level:true": 17,
+        "excluded-v156:null": 10,
         "grouped-bars:true": 1,
         "map:true": 1,
-        "facts:true": 32,
+        "facts:true": 29,
         "spatial-trend:true": 5,
         "spatial:true": 11,
-        "status:true": 5,
+        "status-v159:null": 1,
         "bars:false": 1
       }
     },
     "internalWording": [],
     "mapSymbolVerified": {
-      "pass": 41,
+      "pass": 42,
       "fail": 0,
-      "notApplicable": 111
+      "notApplicable": 110
     },
     "controlsVerified": {
-      "pass": 120,
+      "pass": 117,
       "fail": 1,
-      "notApplicable": 31
+      "notApplicable": 34
     },
-    "controlsTried": 256,
+    "controlsTried": 249,
     "tableValuesVerified": {
-      "pass": 130,
-      "fail": 14,
-      "notApplicable": 8
+      "pass": 125,
+      "fail": 13,
+      "notApplicable": 14
     },
     "tableClassification": {
-      "match": 130,
+      "match": 125,
       "no-derived-row": 2,
-      "not-applicable": 8,
-      "row-count-differs": 12
+      "none": 10,
+      "not-applicable": 4,
+      "row-count-differs": 11
     },
     "mapHandoffVerified": {
-      "pass": 41,
+      "pass": 42,
       "fail": 0,
-      "notApplicable": 111
+      "notApplicable": 110
     },
-    "withRemainingIssues": 38,
-    "requiredFailures": 39,
+    "withRemainingIssues": 33,
+    "requiredFailures": 34,
     "requiredFailureIds": [
       "A-006",
       "A-010",
       "A-013",
       "A-015",
       "A-016",
-      "A-017",
       "A-022",
       "A-025",
       "A-027",
@@ -136,7 +150,6 @@
       "B-024",
       "B-026",
       "B-028",
-      "C-002",
       "C-003",
       "C-004",
       "C-005",
@@ -144,17 +157,14 @@
       "C-011",
       "C-013",
       "C-014",
-      "C-015",
       "C-016",
       "C-017",
-      "C-019",
       "C-024",
       "D-001",
       "D-011",
       "E-007",
       "E-012",
       "E-015",
-      "E-016",
       "E-018"
     ]
   },
@@ -206,6 +216,7 @@
       ],
       "evidence": {
         "finderHeadline": "41 점",
+        "finderStatusBadge": "",
         "title": "부패인식지수(CPI)",
         "heading": "",
         "selectors": [
@@ -317,7 +328,8 @@
       ],
       "evidence": {
         "finderHeadline": "−1.10 ~ +0.01",
-        "title": "국가 거버넌스 지표(WGI)",
+        "finderStatusBadge": "",
+        "title": "세계 거버넌스 지표(WGI)",
         "heading": "",
         "selectors": [
           "거버넌스 지표 기준연도 선택=2024",
@@ -422,7 +434,8 @@
       ],
       "evidence": {
         "finderHeadline": "514.7",
-        "title": "국내총생산 및 경제성장",
+        "finderStatusBadge": "",
+        "title": "국내총생산(GDP)",
         "heading": "",
         "selectors": [
           "항목 선택=GDP 총액 · USD",
@@ -527,7 +540,8 @@
       ],
       "evidence": {
         "finderHeadline": "4.2 %",
-        "title": "빈곤율 및 극빈곤율",
+        "finderStatusBadge": "",
+        "title": "빈곤율",
         "heading": "",
         "selectors": [
           "항목 선택=빈곤율 · %",
@@ -633,7 +647,8 @@
       ],
       "evidence": {
         "finderHeadline": "42.7 %",
-        "title": "산업구조",
+        "finderStatusBadge": "",
+        "title": "산업별 부가가치 비중",
         "heading": "",
         "selectors": [
           "기준연도=2025년"
@@ -732,7 +747,8 @@
       ],
       "evidence": {
         "finderHeadline": "1.52 %",
-        "title": "고용 및 실업",
+        "finderStatusBadge": "",
+        "title": "실업률",
         "heading": "",
         "selectors": [
           "항목 선택=전체 실업률 · %",
@@ -840,7 +856,8 @@
       ],
       "evidence": {
         "finderHeadline": "1.02억 명",
-        "title": "인구 및 도시화",
+        "finderStatusBadge": "",
+        "title": "인구",
         "heading": "",
         "selectors": [
           "항목 선택=총인구 · 명",
@@ -939,7 +956,8 @@
       ],
       "evidence": {
         "finderHeadline": "36.1 지수",
-        "title": "소득 불평등(지니계수)",
+        "finderStatusBadge": "",
+        "title": "지니계수",
         "heading": "",
         "selectors": [
           "연도 선택=2022"
@@ -1035,7 +1053,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.402 tCO2eq/1,000 국제달러",
-        "title": "온실가스 배출집약도",
+        "finderStatusBadge": "",
+        "title": "온실가스 배출강도",
         "heading": "",
         "selectors": [
           "항목 선택=GHG 배출 강도 · tCO2eq/1,000 국제달러",
@@ -1144,7 +1163,8 @@
       ],
       "evidence": {
         "finderHeadline": "582.7",
-        "title": "온실가스 종류별 배출량",
+        "finderStatusBadge": "",
+        "title": "가스종류별 온실가스 배출량",
         "heading": "",
         "selectors": [
           "측정 기준=가스별 CO₂ 환산 배출량 · MtCO₂e",
@@ -1249,6 +1269,7 @@
       ],
       "evidence": {
         "finderHeadline": "202 MtCO₂e",
+        "finderStatusBadge": "",
         "title": "부문별 온실가스 배출량",
         "heading": "",
         "selectors": [
@@ -1347,7 +1368,8 @@
       ],
       "evidence": {
         "finderHeadline": "584 MtCO₂e",
-        "title": "온실가스 총배출량",
+        "finderStatusBadge": "",
+        "title": "온실가스 총배출량·순배출량",
         "heading": "",
         "selectors": [
           "항목 선택=총 GHG 배출량 · Mt CO2eq",
@@ -1448,7 +1470,8 @@
       ],
       "evidence": {
         "finderHeadline": "365 건",
-        "title": "NDC와 지속가능발전목표 연계",
+        "finderStatusBadge": "",
+        "title": "NDC·SDG 연계 목록",
         "heading": "",
         "selectors": [
           "정보 유형 선택=전체"
@@ -1538,7 +1561,8 @@
       ],
       "evidence": {
         "finderHeadline": "73.8 점",
-        "title": "지속가능발전목표 지수",
+        "finderStatusBadge": "",
+        "title": "지속가능발전목표 이행 종합점수(SDG Index)",
         "heading": "",
         "selectors": [
           "항목 선택=SDG Index 종합점수 · 점",
@@ -1643,7 +1667,8 @@
       ],
       "evidence": {
         "finderHeadline": "93.9 점",
-        "title": "지속가능발전목표 세부 달성도",
+        "finderStatusBadge": "",
+        "title": "SDG 세부지표별 달성도",
         "heading": "",
         "selectors": [
           "SDG 목표=SDG1 세부지표 달성도",
@@ -1749,7 +1774,8 @@
       ],
       "evidence": {
         "finderHeadline": "2.57 EJ",
-        "title": "1차 에너지 소비구조",
+        "finderStatusBadge": "",
+        "title": "1차 에너지 소비량",
         "heading": "",
         "selectors": [
           "상세 구성 기준연도=2025년"
@@ -1802,97 +1828,57 @@
     {
       "elementId": "A-017",
       "title": "LCOE(균등화 발전비용)",
-      "kind": "bars",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
-      "selectionUrlPreserved": true,
+      "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "match",
-        "computed": 155,
-        "expected": 155,
-        "expectedScale": null,
-        "rows": 8,
-        "note": "largest part at the card's year"
-      },
-      "detailAnalysisFit": false,
+      "cardValueVerified": null,
+      "recomputed": null,
+      "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "bars",
-        "expected": [
-          "compared categories named (6/6)",
-          "comparison drawn or tabled",
-          "unit \"USD/MWh\" stated"
-        ],
-        "found": [
-          "compared categories named (6/6)",
-          "comparison drawn or tabled",
-          "unit \"USD/MWh\" stated"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "2023년 발전원별 균등화 발전비용"
-        ]
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
-      "controlsVerified": true,
-      "tableValuesVerified": true,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
-      "remainingIssue": [
-        "detail does not show the card's selection: measure \"LCOE\" not named"
-      ],
+      "remainingIssue": [],
       "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "155 USD/MWh",
-        "title": "발전원별 균등화 발전비용",
-        "heading": "",
-        "selectors": [
-          "발전비용 비교 연도=2023년 기준"
-        ],
-        "url": "?view=data&element=lcoe-gyundeunghwa-baljeonbiyong&country=VNM&from=explorer&measure=measure-353011f9421d&year=2023",
-        "cardValue": "155 USD/MWh = text-15:LI: 해상풍력 155 121 ~ 218  비용 범위와 기준값 · USD/MWh · 2022년 불변가격 0 ~ 250 · 모든 연도에 같은 눈금 적용",
-        "fit": "measure \"LCOE\" not named",
-        "analysisFit": {
-          "kind": "bars",
-          "expected": [
-            "compared categories named (6/6)",
-            "comparison drawn or tabled",
-            "unit \"USD/MWh\" stated"
-          ],
-          "found": [
-            "compared categories named (6/6)",
-            "comparison drawn or tabled",
-            "unit \"USD/MWh\" stated"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "2023년 발전원별 균등화 발전비용"
-          ]
+        "finderSearch": {
+          "searchTerm": "LCOE(균등화 발전비용)",
+          "cards": 0
         },
-        "table": {
-          "status": "match",
-          "table": "단위: USD/MWh · 2023년 기준 또는 전망",
-          "cell": "해상풍력 | 121 | 155 | 218",
-          "key": "indicator+region+time+unit"
-        },
-        "controls": [
-          {
-            "control": "발전비용 비교 연도",
-            "from": "2023년 기준",
-            "to": "2030년 전망",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(데이터 명세서 검토)",
+            "reason": "원자료(BloombergNEF)의 재배포 제한으로 제공 대상에서 제외",
+            "decidedAt": "2026-09-18",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
           }
-        ]
+        }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "A-018",
@@ -1943,7 +1929,8 @@
       ],
       "evidence": {
         "finderHeadline": "28,100 MW",
-        "title": "발전설비 용량",
+        "finderStatusBadge": "",
+        "title": "재생·비재생에너지 기술별 발전 설비용량",
         "heading": "",
         "selectors": [
           "계열 보기=주요 8개 함께 보기",
@@ -2049,6 +2036,7 @@
       ],
       "evidence": {
         "finderHeadline": "6.58 %",
+        "finderStatusBadge": "",
         "title": "송배전 손실률",
         "heading": "",
         "selectors": [
@@ -2145,7 +2133,8 @@
       ],
       "evidence": {
         "finderHeadline": "57.8 %",
-        "title": "재생에너지 비중",
+        "finderStatusBadge": "",
+        "title": "전력 부문 재생에너지 비중",
         "heading": "",
         "selectors": [
           "분류 선택=설비용량 기준",
@@ -2250,6 +2239,7 @@
       ],
       "evidence": {
         "finderHeadline": "100 %",
+        "finderStatusBadge": "",
         "title": "전력 접근률",
         "heading": "",
         "selectors": [
@@ -2357,7 +2347,8 @@
       ],
       "evidence": {
         "finderHeadline": "1.25 회/고객",
-        "title": "정전 빈도와 지속시간",
+        "finderStatusBadge": "",
+        "title": "정전 지속시간·횟수(SAIDI, SAIFI)",
         "heading": "",
         "selectors": [
           "항목 선택=MAIFI · 회/고객",
@@ -2500,7 +2491,8 @@
       ],
       "evidence": {
         "finderHeadline": "41,350 MW",
-        "title": "발전소 현황",
+        "finderStatusBadge": "",
+        "title": "발전소 공간정보(GPPD)",
         "heading": "",
         "selectors": [
           "자료 출처=WRI GPPD · 2021년",
@@ -2635,7 +2627,8 @@
       ],
       "evidence": {
         "finderHeadline": "23,608 km",
-        "title": "베트남 송전망",
+        "finderStatusBadge": "",
+        "title": "송전망 공간정보",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=jeonryeogmang-wici-migonggeub-jiyeog&country=VNM&from=explorer&year=2016",
@@ -2738,7 +2731,8 @@
       ],
       "evidence": {
         "finderHeadline": "5 건",
-        "title": "탄소포집·저장 시설",
+        "finderStatusBadge": "",
+        "title": "이산화탄소 포집·저장 시설(CCS)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026",
@@ -2815,7 +2809,8 @@
       ],
       "evidence": {
         "finderHeadline": "건물 수·면적 미제공",
-        "title": "건물 분포",
+        "finderStatusBadge": "",
+        "title": "건물 윤곽·속성",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=geonmul-puspeurinteu-footprint&country=VNM&from=explorer",
@@ -2887,7 +2882,8 @@
       ],
       "evidence": {
         "finderHeadline": "312만 건",
-        "title": "육상교통 인프라",
+        "finderStatusBadge": "",
+        "title": "교통 인프라",
         "heading": "",
         "selectors": [
           "인프라 자료 종류=철도"
@@ -2973,6 +2969,7 @@
       ],
       "evidence": {
         "finderHeadline": "38,001 건",
+        "finderStatusBadge": "",
         "title": "해안·수자원 인프라",
         "heading": "",
         "selectors": [
@@ -3060,7 +3057,8 @@
       ],
       "evidence": {
         "finderHeadline": "19 건",
-        "title": "자유무역협정 체결 현황",
+        "finderStatusBadge": "",
+        "title": "자유무역협정 현황(FTA)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=fta-cegyeol-hyeonhwang&country=VNM&from=explorer&measure=measure-1c87d29d26f9&year=2026",
@@ -3140,7 +3138,8 @@
       ],
       "evidence": {
         "finderHeadline": "86.7 10억 USD",
-        "title": "한국과의 교역 규모",
+        "finderStatusBadge": "",
+        "title": "한-베트남 교역액",
         "heading": "",
         "selectors": [
           "분류 선택=총 교역액",
@@ -3249,7 +3248,8 @@
       ],
       "evidence": {
         "finderHeadline": "3.1 점",
-        "title": "물류성과지수",
+        "finderStatusBadge": "",
+        "title": "물류성과지수(LPI)",
         "heading": "",
         "selectors": [
           "분류 선택=통관",
@@ -3355,7 +3355,8 @@
       ],
       "evidence": {
         "finderHeadline": "29.3 %",
-        "title": "중간재 교역 규모",
+        "finderStatusBadge": "",
+        "title": "중간재 교역 규모(TiVA)",
         "heading": "",
         "selectors": [
           "항목 선택=중간재 교역 · %",
@@ -3481,7 +3482,8 @@
       ],
       "evidence": {
         "finderHeadline": "479 지수",
-        "title": "해운 연결성",
+        "finderStatusBadge": "",
+        "title": "정기선 해운 연결성(LSCI)",
         "heading": "",
         "selectors": [
           "분류 선택=Q1",
@@ -3589,7 +3591,8 @@
       ],
       "evidence": {
         "finderHeadline": "263 mm",
-        "title": "건기와 우기",
+        "finderStatusBadge": "",
+        "title": "건기·우기 구분",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=geongi-ugi&country=VNM&from=explorer&measure=measure-706a7683fa04&year=1991",
@@ -3670,7 +3673,8 @@
       ],
       "evidence": {
         "finderHeadline": "138,159 km²",
-        "title": "기후대",
+        "finderStatusBadge": "",
+        "title": "쾨펜-가이거 기후대 구분",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020",
@@ -3780,7 +3784,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "24.9 °C",
-        "title": "평균 기온과 강수량",
+        "finderStatusBadge": "",
+        "title": "연평균 기온·강수",
         "heading": "",
         "selectors": [
           "표시 항목 선택=연평균 기온 — °C",
@@ -3928,7 +3933,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "26.8 °C",
-        "title": "과거·미래 기후전망(CMIP6)",
+        "finderStatusBadge": "",
+        "title": "과거·미래 기후 변수(CMIP6)",
         "heading": "",
         "selectors": [
           "표시 항목 선택=연평균 기온 — °C",
@@ -4085,7 +4091,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "18.2 일",
-        "title": "가뭄 위험",
+        "finderStatusBadge": "",
+        "title": "가뭄 지표",
         "heading": "",
         "selectors": [
           "표시 항목 선택=연속 건조일수(CDD) — 일",
@@ -4243,7 +4250,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "33.3 일",
-        "title": "폭염 위험",
+        "finderStatusBadge": "",
+        "title": "폭염 지표",
         "heading": "",
         "selectors": [
           "표시 항목 선택=폭염일수(최고기온 35°C 이상) — 일",
@@ -4400,7 +4408,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "71.1 mm",
-        "title": "홍수·호우 위험",
+        "finderStatusBadge": "",
+        "title": "홍수 관련 극한 강수 지표",
         "heading": "",
         "selectors": [
           "표시 항목 선택=최대 1일 강수량(RX1day) — mm",
@@ -4550,7 +4559,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "0.63 m",
-        "title": "해수면 상승 전망",
+        "finderStatusBadge": "",
+        "title": "해수면 상승 전망(SSP)",
         "heading": "",
         "selectors": [
           "관측소 선택=Đà Nẵng · 중부 — 다낭",
@@ -4656,7 +4666,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.592 지수",
-        "title": "생물다양성·기후 위험",
+        "finderStatusBadge": "",
+        "title": "생물다양성 리스크(BRF)",
         "heading": "",
         "selectors": [
           "항목 선택=ND-GAIN 취약성 · 지수",
@@ -4771,7 +4782,8 @@
       ],
       "evidence": {
         "finderHeadline": "10 순위",
-        "title": "기후위험지수",
+        "finderStatusBadge": "",
+        "title": "기후 리스크 지수(CRI)",
         "heading": "",
         "selectors": [
           "항목 선택=CRI 종합 순위 · 순위",
@@ -4877,7 +4889,8 @@
       ],
       "evidence": {
         "finderHeadline": "45.9 점",
-        "title": "기후취약성지수",
+        "finderStatusBadge": "",
+        "title": "기후 취약성·적응 준비도 지수",
         "heading": "",
         "selectors": [
           "항목 선택=ND-GAIN 종합점수 · 점",
@@ -5009,6 +5022,7 @@
       ],
       "evidence": {
         "finderHeadline": "275건",
+        "finderStatusBadge": "",
         "title": "재해·재난 이력",
         "heading": "",
         "selectors": [],
@@ -5091,7 +5105,8 @@
       ],
       "evidence": {
         "finderHeadline": "52.3 %",
-        "title": "탄소국경조정제도 영향",
+        "finderStatusBadge": "",
+        "title": "탄소국경조정제도(CBAM) 노출 지수",
         "heading": "",
         "selectors": [
           "항목 선택=EU 평균 탄소지불액 · %",
@@ -5179,12 +5194,7 @@
         ],
         "missing": [],
         "pass": true,
-        "headings": [
-          "GDP 영향",
-          "단위: %",
-          "기준연도 대비 변화",
-          "단위: %"
-        ]
+        "headings": []
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
@@ -5196,7 +5206,8 @@
       ],
       "evidence": {
         "finderHeadline": "-2.2 %",
-        "title": "탄소세 도입 효과 전망",
+        "finderStatusBadge": "",
+        "title": "탄소세 도입 효과 모의 결과(CCDR)",
         "heading": "",
         "selectors": [
           "항목 선택=GDP 영향 · %",
@@ -5204,7 +5215,7 @@
           "연도 선택=2040"
         ],
         "url": "?view=data&element=ccdr-tansose-simyulreisyeon-gyeolgwa-baeculgamsoyul-gdp-yeonghyang-sesu-hyogwa&country=VNM&from=explorer&measure=measure-bf20bb336833&year=2040&dim.detail=NZP-no-reforms",
-        "cardValue": "-2.2 % = text-0:P: 선택한 2040년 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다. 항목 GDP 영향 단위: % 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다. 가로: GDP 영향 세로: 시나리오 ",
+        "cardValue": "-2.2 % = text-1:TR: GDP 영향 — NZP-no-reforms -2.2 % 2040 항목별 자료 항목 값 단위 시점",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "level",
@@ -5220,17 +5231,12 @@
           ],
           "missing": [],
           "pass": true,
-          "headings": [
-            "GDP 영향",
-            "단위: %",
-            "기준연도 대비 변화",
-            "단위: %"
-          ]
+          "headings": []
         },
         "table": {
           "status": "match",
-          "table": "차트에 사용한 값 · 단위 %",
-          "cell": "NZP-no-reforms | 2040 | -2.2 | %",
+          "table": "항목별 자료",
+          "cell": "GDP 영향 — NZP-no-reforms | -2.2 | % | 2040",
           "key": "indicator+region+time+unit"
         },
         "controls": [
@@ -5248,7 +5254,7 @@
             "to": "NZP-with-measures",
             "changed": true,
             "numbersChanged": true,
-            "subjectChanged": false
+            "subjectChanged": true
           },
           {
             "control": "연도 선택",
@@ -5256,7 +5262,7 @@
             "to": "2030",
             "changed": true,
             "numbersChanged": true,
-            "subjectChanged": false
+            "subjectChanged": true
           }
         ]
       },
@@ -5310,7 +5316,8 @@
       ],
       "evidence": {
         "finderHeadline": "51 개소",
-        "title": "탄소가격 수준",
+        "finderStatusBadge": "",
+        "title": "탄소 가격 수준(ETS·탄소세)",
         "heading": "",
         "selectors": [
           "항목 선택=ETS 대상 시설 수 · 개소",
@@ -5422,6 +5429,7 @@
       ],
       "evidence": {
         "finderHeadline": "72.5 %",
+        "finderStatusBadge": "",
         "title": "화석연료 의존도",
         "heading": "",
         "selectors": [
@@ -5527,7 +5535,8 @@
       ],
       "evidence": {
         "finderHeadline": "443개 평가구역",
-        "title": "물 스트레스",
+        "finderStatusBadge": "",
+        "title": "기저 물 스트레스",
         "heading": "",
         "selectors": [
           "표시 항목 선택=기준 물 스트레스(Baseline Water Stress) · 원값 — 비율(총 취수량 ÷ 가용 재생수자원)",
@@ -5627,7 +5636,8 @@
       ],
       "evidence": {
         "finderHeadline": "7,364 2017년 구매력평가 기준 10억 미국달러/년",
-        "title": "장기 국내총생산 전망",
+        "finderStatusBadge": "",
+        "title": "공유사회경제경로(SSP) GDP 전망",
         "heading": "",
         "selectors": [
           "항목 선택=GDP(PPP) 전 구간 · 2017년 구매력평가 기준 10억 미국달러/년",
@@ -5735,7 +5745,8 @@
       ],
       "evidence": {
         "finderHeadline": "92.5 백만명",
-        "title": "장기 인구 전망",
+        "finderStatusBadge": "",
+        "title": "공유사회경제경로(SSP) 인구 전망",
         "heading": "",
         "selectors": [
           "항목 선택=인구 전 구간 · 백만명",
@@ -5843,7 +5854,8 @@
       ],
       "evidence": {
         "finderHeadline": "4 지수",
-        "title": "복합 위험지수",
+        "finderStatusBadge": "",
+        "title": "복합 리스크 지수",
         "heading": "",
         "selectors": [
           "항목 선택=INFORM Risk 시계열(2017–2026) · 지수",
@@ -5988,7 +6000,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "37.1 지수",
-        "title": "취약성지수",
+        "finderStatusBadge": "",
+        "title": "취약성 지수(GVI)",
         "heading": "",
         "selectors": [
           "항목 선택=GVI 취약성 지수 · 지수",
@@ -6123,7 +6136,8 @@
       ],
       "evidence": {
         "finderHeadline": "184 십억 US$",
-        "title": "기후피해의 경제적 비용",
+        "finderStatusBadge": "",
+        "title": "기후 피해 경제적 비용(CCDR)",
         "heading": "",
         "selectors": [
           "항목 선택=기후 투자 재원 구성 · 십억 US$",
@@ -6266,7 +6280,8 @@
       ],
       "evidence": {
         "finderHeadline": "10건",
-        "title": "건기/우기 유량 차이",
+        "finderStatusBadge": "",
+        "title": "건기·우기 유량 차이",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=geongi-ugi-yuryang-cai&country=VNM&from=explorer",
@@ -6352,7 +6367,8 @@
       ],
       "evidence": {
         "finderHeadline": "94.8 %",
-        "title": "농업 용수 비중",
+        "finderStatusBadge": "",
+        "title": "농업용수 취수 비중",
         "heading": "",
         "selectors": [
           "항목=농업 용수 취수 비중 · %",
@@ -6489,7 +6505,8 @@
       ],
       "evidence": {
         "finderHeadline": "86,253 km²",
-        "title": "유역 면적",
+        "finderStatusBadge": "",
+        "title": "하천유역 면적",
         "heading": "",
         "selectors": [
           "유역 면적 기준=전체 유역 면적(문헌)"
@@ -6585,7 +6602,8 @@
       ],
       "evidence": {
         "finderHeadline": "23.3 %",
-        "title": "유향(flow direction)",
+        "finderStatusBadge": "",
+        "title": "흐름 방향(유향)",
         "heading": "",
         "selectors": [
           "유향 지역=KiênGiang"
@@ -6676,7 +6694,8 @@
       ],
       "evidence": {
         "finderHeadline": "4.67 10⁹ m³/yr",
-        "title": "지하수 잠재량",
+        "finderStatusBadge": "",
+        "title": "재생가능 지하수 부존량",
         "heading": "",
         "selectors": [
           "항목 선택=이용가능(정규 재생) 지하수 · 10⁹ m³/yr",
@@ -6813,6 +6832,7 @@
       ],
       "evidence": {
         "finderHeadline": "15건",
+        "finderStatusBadge": "",
         "title": "하천 유량",
         "heading": "",
         "selectors": [],
@@ -6922,6 +6942,7 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "884 km²",
+        "finderStatusBadge": "",
         "title": "산림 유형별 면적",
         "heading": "",
         "selectors": [
@@ -7065,7 +7086,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "123,227 ha",
-        "title": "산림 이득(2000–2020 누적)",
+        "finderStatusBadge": "",
+        "title": "수목 피복 증가(산림 이득)",
         "heading": "",
         "selectors": [
           "표시 항목 선택=수관 이득(2000–2020 누적) — ha",
@@ -7198,7 +7220,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "165만 ha",
-        "title": "산림 총면적",
+        "finderStatusBadge": "",
+        "title": "수목 피복 면적(산림 총 면적)",
         "heading": "2000년 성·시별 비교 · Nghệ An 위치",
         "selectors": [
           "항목 선택=성(省)별 분석대상 면적 · ha",
@@ -7331,6 +7354,7 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "85.1 %",
+        "finderStatusBadge": "",
         "title": "수관 피복률",
         "heading": "2010년 성·시별 비교 · Bắc Kạn 위치",
         "selectors": [
@@ -7456,7 +7480,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "11,728 ha",
-        "title": "연간 산림손실",
+        "finderStatusBadge": "",
+        "title": "연간 수목 피복 손실",
         "heading": "2024년 성·시별 비교 · Quảng Ninh 위치",
         "selectors": [
           "지역 선택=Quảng Ninh",
@@ -7591,7 +7616,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "292만 Mg CO2e/yr",
-        "title": "탄소 저장량",
+        "finderStatusBadge": "",
+        "title": "산림 탄소 저장량",
         "heading": "2001–2024 성·시별 비교 · Kon Tum 위치",
         "selectors": [
           "항목 선택=산림탄소 순플럭스(연평균) · Mg CO2e/yr",
@@ -7707,7 +7733,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.12 ha/cap",
-        "title": "LULUCF 관련 면적 변화",
+        "finderStatusBadge": "",
+        "title": "토지이용·토지이용변화 및 임업(LULUCF) 면적",
         "heading": "",
         "selectors": [
           "항목 선택=1인당 경작지 면적 · ha/cap",
@@ -7814,6 +7841,7 @@
       ],
       "evidence": {
         "finderHeadline": "4.98 %/yr",
+        "finderStatusBadge": "",
         "title": "토지이용 변화율",
         "heading": "",
         "selectors": [
@@ -7966,7 +7994,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "3,578 km²",
-        "title": "토지피복 구성",
+        "finderStatusBadge": "",
+        "title": "토지피복 분류별 면적",
         "heading": "",
         "selectors": [
           "표시 항목 선택=경작지 면적 — km²",
@@ -8082,7 +8111,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.82 kg/인/일",
-        "title": "바이오매스 자원 가용량",
+        "finderStatusBadge": "",
+        "title": "바이오매스 발생량",
         "heading": "",
         "selectors": [
           "항목 선택=1인당 도시폐기물 발생량 · kg/인/일",
@@ -8215,7 +8245,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "16,904 GWh/년",
-        "title": "수력 잠재량",
+        "finderStatusBadge": "",
+        "title": "전지구 수력 총잠재량",
         "heading": "",
         "selectors": [
           "표시 항목 선택=이론 총잠재량 — GWh/년",
@@ -8359,6 +8390,7 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "69.5 °C",
+        "finderStatusBadge": "",
         "title": "지열 잠재량",
         "heading": "",
         "selectors": [
@@ -8502,7 +8534,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "5.23 kWh/m²/일",
-        "title": "태양광 자원",
+        "finderStatusBadge": "",
+        "title": "태양 일사량(GHI·DNI)",
         "heading": "",
         "selectors": [
           "표시 항목 선택=수평면 전일사량(GHI, 평균) — kWh/m²/일",
@@ -8635,7 +8668,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "5.68 m/s",
-        "title": "풍력 자원",
+        "finderStatusBadge": "",
+        "title": "풍속·바람 에너지밀도",
         "heading": "",
         "selectors": [
           "표시 항목 선택=풍속 평균(고도 100m) — m/s",
@@ -8741,7 +8775,8 @@
       ],
       "evidence": {
         "finderHeadline": "74.1 년",
-        "title": "화석연료 자원량",
+        "finderStatusBadge": "",
+        "title": "화석연료 확인매장량",
         "heading": "",
         "selectors": [
           "항목 선택=가채연수(R/P ratio) · 년",
@@ -8848,7 +8883,8 @@
       ],
       "evidence": {
         "finderHeadline": "수출금지(원광) 대상",
-        "title": "핵심 광물 종류",
+        "finderStatusBadge": "",
+        "title": "핵심광물 광종 목록",
         "heading": "",
         "selectors": [
           "항목 선택=원광 수출규제 대상 광종 · 해당 여부",
@@ -8946,7 +8982,8 @@
       ],
       "evidence": {
         "finderHeadline": "10.7 %",
-        "title": "광물자원 국제순위",
+        "finderStatusBadge": "",
+        "title": "광종별 세계 매장량·생산 순위",
         "heading": "",
         "selectors": [
           "항목 선택=세계 매장량 비중 · %",
@@ -9058,7 +9095,8 @@
       ],
       "evidence": {
         "finderHeadline": "54,000 t",
-        "title": "광물 매장량",
+        "finderStatusBadge": "",
+        "title": "광물 매장량(확인·추정)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=maejangryang-hwagin-cujeong&country=VNM&from=explorer&measure=measure-080d04348d93&year=2026",
@@ -9139,7 +9177,8 @@
       ],
       "evidence": {
         "finderHeadline": "11,000 t",
-        "title": "광물 생산량",
+        "finderStatusBadge": "",
+        "title": "광종별 광산 생산량",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-3fda9946012e&year=2025",
@@ -9245,7 +9284,8 @@
       ],
       "evidence": {
         "finderHeadline": "8곳",
-        "title": "주요 광산 위치",
+        "finderStatusBadge": "",
+        "title": "광산·가공 시설 위치",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=juyo-gwangsan-wici&country=VNM&from=explorer",
@@ -9326,7 +9366,8 @@
       ],
       "evidence": {
         "finderHeadline": "15.8 %",
-        "title": "국가 온실가스 감축목표(NDC)",
+        "finderStatusBadge": "",
+        "title": "국가결정기여(NDC)",
         "heading": "",
         "selectors": [
           "이행 조건=자체 이행(무조건부)"
@@ -9377,8 +9418,8 @@
       "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
-      "screenLoaded": false,
-      "cardValueVerified": false,
+      "screenLoaded": true,
+      "cardValueVerified": true,
       "recomputed": {
         "status": "match",
         "computed": 82,
@@ -9401,31 +9442,31 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "2016년 부문별 온실가스 배출량 · BUR3 수록 자료",
-          "항목별 내용과 기준"
+          "격년투명성보고서 제출 이력·내용",
+          "항목별 내용과 기준",
+          "2016년 부문별 온실가스 배출량 · BUR3 수록 자료"
         ]
       },
-      "controlsVerified": null,
+      "controlsVerified": true,
       "tableValuesVerified": true,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
-      "remainingIssue": [
-        "card value 82건 (건) not stated as such on the detail",
-        "runtime: page.selectOption: Timeout 30000ms exceeded."
-      ],
+      "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
         "finderHeadline": "82건",
-        "title": "격년투명성보고서(BTR)",
+        "finderStatusBadge": "",
+        "title": "격년투명성보고서(BTR·구 BUR)",
         "heading": "",
         "selectors": [
-          "인벤토리 비교 항목=부문별 합계",
           "자료 구분=전체"
         ],
         "url": "?view=data&element=btr-jeculnyeondo-munseo-ringkeu-ghg-congbaeculryang-incl-excl-lulucf-bumunbyeol-ndc-gamcug&country=VNM&from=explorer",
+        "cardValue": "82건 = text-101:P: 보고서에 수록된 2016년 배출량입니다. 현재 배출량이나 NDC 감축 달성량은 아닙니다. 과거 BUR와 산정기준이 달라 하나의 추이로 연결하지 않습니다. 격년투명성보고서 제출 이력·내용 자료 목록 항목별 내용과 기준 검색어 자료 구분 전체 적응 프로그램 현황 기후재원 기후 시나리오별 전",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -9439,8 +9480,9 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "2016년 부문별 온실가스 배출량 · BUR3 수록 자료",
-            "항목별 내용과 기준"
+            "격년투명성보고서 제출 이력·내용",
+            "항목별 내용과 기준",
+            "2016년 부문별 온실가스 배출량 · BUR3 수록 자료"
           ]
         },
         "table": {
@@ -9448,9 +9490,21 @@
           "table": "상세 데이터 · 목록 82건",
           "cell": "row count 82",
           "key": "row-count"
-        }
+        },
+        "controls": [
+          {
+            "control": "자료 구분",
+            "from": "전체",
+            "to": "적응 프로그램 현황",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
+          }
+        ]
       },
-      "internalWording": null
+      "internalWording": null,
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "C-003",
@@ -9500,7 +9554,8 @@
       ],
       "evidence": {
         "finderHeadline": "96건",
-        "title": "국가적응계획(NAP)",
+        "finderStatusBadge": "",
+        "title": "국가 적응계획(NAP)",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -9591,7 +9646,8 @@
       ],
       "evidence": {
         "finderHeadline": "58건",
-        "title": "장기 저탄소 발전전략",
+        "finderStatusBadge": "",
+        "title": "장기 저탄소 발전전략(LT-LEDS)·에너지 믹스 전망",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -9682,7 +9738,8 @@
       ],
       "evidence": {
         "finderHeadline": "135건",
-        "title": "기후기술 수요 및 우선기술",
+        "finderStatusBadge": "",
+        "title": "기술수요평가(TNA)",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -9773,7 +9830,8 @@
       ],
       "evidence": {
         "finderHeadline": "50건",
-        "title": "파리협정 제6조 양자협력 체계",
+        "finderStatusBadge": "",
+        "title": "파리협정 6조 국제 감축실적 거래(ITMO)",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -9866,7 +9924,8 @@
       ],
       "evidence": {
         "finderHeadline": "1건",
-        "title": "파리협정 비시장 접근",
+        "finderStatusBadge": "",
+        "title": "파리협정 6.8조 비시장 접근법(NMA)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=parihyeobjeong-je6-8jo-bisijang-jeobgeunbeob-camyeo-yeobu-deungrogdoen-hwaldongmyeong-daes&country=VNM&from=explorer",
@@ -9948,7 +10007,8 @@
       ],
       "evidence": {
         "finderHeadline": "32개",
-        "title": "국제 기후협력 이니셔티브",
+        "finderStatusBadge": "",
+        "title": "협력적 기후 이니셔티브 참여",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=cooperative-climate-initiative-inisyeotibeu-myeong-camyeo-sangtae-active-completed-camyeo&country=VNM&from=explorer",
@@ -10059,7 +10119,8 @@
       ],
       "evidence": {
         "finderHeadline": "54건",
-        "title": "기후변화 법·제도",
+        "finderStatusBadge": "",
+        "title": "기후 법제도 현황",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=gihu-beobjedo-beobryeongmyeong-yuhyeong-beobryul-sihaengryeong-gyuje-insentibeu-daesang-bu&country=VNM&from=explorer",
@@ -10170,7 +10231,8 @@
       ],
       "evidence": {
         "finderHeadline": "41건",
-        "title": "환경 법·제도",
+        "finderStatusBadge": "",
+        "title": "환경 법제도 현황",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=gita-hwangyeong-beobjedo-beobryeongmyeong-yuhyeong-eiabeob-daegijil-sujil-pyegimul-saengmu&country=VNM&from=explorer",
@@ -10257,7 +10319,8 @@
       ],
       "evidence": {
         "finderHeadline": "44건",
-        "title": "치안·안전 정보",
+        "finderStatusBadge": "",
+        "title": "현지 치안·안전 정보",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=cian-anjeon-jeongbo-gyeongbo-deunggeub-yeohaengyuyi-jaje-ceolsugweongo-yeohaenggeumji-hyeo&country=VNM&from=explorer",
@@ -10367,7 +10430,8 @@
       ],
       "evidence": {
         "finderHeadline": "120건",
-        "title": "민관협력·조달 제도",
+        "finderStatusBadge": "",
+        "title": "민관협력(PPP) 제도·조달 체계",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer",
@@ -10478,7 +10542,8 @@
       ],
       "evidence": {
         "finderHeadline": "64건",
-        "title": "외국인 투자제도",
+        "finderStatusBadge": "",
+        "title": "외국인 투자 규제",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -10571,7 +10636,8 @@
       ],
       "evidence": {
         "finderHeadline": "93건",
-        "title": "사업 인허가 절차",
+        "finderStatusBadge": "",
+        "title": "사업 인허가 절차·기간·비용",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -10617,82 +10683,57 @@
     {
       "elementId": "C-015",
       "title": "상기 문서들의 원본 링크",
-      "kind": "facts",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": false,
-      "recomputed": {
-        "status": "match",
-        "computed": 20,
-        "expected": 20,
-        "expectedScale": null,
-        "rows": 21,
-        "note": "entity rows (1 excluded as the rule states)"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "facts",
-        "expected": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "found": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "항목별 내용과 기준"
-        ]
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
-      "tableValuesVerified": true,
+      "tableValuesVerified": null,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
-      "remainingIssue": [
-        "card value 20건 (건) not stated as such on the detail"
-      ],
+      "remainingIssue": [],
       "notApplicable": [
-        "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "20건",
-        "title": "정책·제도 원문자료",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=sanggi-munseodeulyi-weonbon-ringkeu&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "facts",
-          "expected": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "found": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "항목별 내용과 기준"
-          ]
+        "finderSearch": {
+          "searchTerm": "상기 문서들의 원본 링크",
+          "cards": 0
         },
-        "table": {
-          "status": "match",
-          "table": "항목별 내용과 기준",
-          "cell": "row count 20",
-          "key": "row-count"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(데이터 명세서 검토)",
+            "reason": "법령 원문 링크는 각 데이터의 원문 링크로 통합해 별도 항목으로 제공하지 않음",
+            "decidedAt": "2026-09-18",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "C-016",
@@ -10769,7 +10810,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "27,385 MW",
-        "title": "재생에너지 발주·확대계획",
+        "finderStatusBadge": "",
+        "title": "재생에너지 발주·확대 계획",
         "heading": "발전원·계획기간별 지역 비교",
         "selectors": [
           "항목 선택=집중형 태양광(ĐMT tập trung) 계획용량 · MW",
@@ -10883,7 +10925,8 @@
       ],
       "evidence": {
         "finderHeadline": "52건",
-        "title": "재생에너지 투자 인센티브",
+        "finderStatusBadge": "",
+        "title": "재생에너지 투자 인센티브·인센티브 조건",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -10980,7 +11023,8 @@
       ],
       "evidence": {
         "finderHeadline": "293,088~295,646 MW",
-        "title": "중장기 전력 계획·전망(개정 PDP8)",
+        "finderStatusBadge": "",
+        "title": "중장기 에너지 전망",
         "heading": "",
         "selectors": [
           "계획 연도=2050"
@@ -11037,7 +11081,7 @@
       "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
-      "screenLoaded": false,
+      "screenLoaded": true,
       "cardValueVerified": true,
       "recomputed": {
         "status": "match",
@@ -11051,91 +11095,126 @@
       "analysisFit": {
         "kind": "bars",
         "expected": [
-          "compared categories named (6/6)",
+          "compared categories named (3/6)",
           "comparison drawn or tabled"
         ],
         "found": [
-          "compared categories named (6/6)",
+          "compared categories named (3/6)",
           "comparison drawn or tabled"
         ],
         "missing": [],
         "pass": true,
         "headings": [
+          "탄소시장 제도·세율·시행 일정",
           "항목별 내용과 기준",
+          "온실가스 인벤토리 대상 시설 · 성·시별",
           "지역별 분포"
         ]
       },
-      "controlsVerified": null,
+      "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
-      "remainingIssue": [
-        "runtime: page.selectOption: Timeout 30000ms exceeded."
-      ],
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "데이터명: 탄소시장 대상시설(인벤토리 의무)",
+            "항목: 온실가스 인벤토리 의무 대상 시설 수",
+            "값: 27",
+            "단위: 개",
+            "자료연도: 2026",
+            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
+            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시: 2개 중 2개 값 있음 — An Giang 27 · Kiên Giang 27",
+            "출처: Chính phủ / 베트남 정부 공보",
+            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true,
+          "reviewCase": true
+        },
+        "pass": true,
+        "missing": []
+      },
+      "remainingIssue": [],
       "notApplicable": [
         "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "479개소",
-        "title": "탄소시장 법·제도와 예산",
+        "finderStatusBadge": "",
+        "title": "탄소가격제 법률·예산",
         "heading": "",
         "selectors": [
-          "기준일=2026-08-10",
-          "지역=전체 지역",
-          "자료 구분=전체"
+          "자료 구분=전체",
+          "기준일=2026-08-10"
         ],
         "url": "?view=data&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&country=VNM&from=explorer",
-        "cardValue": "479개소 = text-1:LI: Hồ Chí Minh 479  성·시별 시설 수 · 2026-08-10 · 개소",
+        "cardValue": "479개소 = text-107:LI: Hồ Chí Minh479개소",
         "analysisFit": {
           "kind": "bars",
           "expected": [
-            "compared categories named (6/6)",
+            "compared categories named (3/6)",
             "comparison drawn or tabled"
           ],
           "found": [
-            "compared categories named (6/6)",
+            "compared categories named (3/6)",
             "comparison drawn or tabled"
           ],
           "missing": [],
           "pass": true,
           "headings": [
+            "탄소시장 제도·세율·시행 일정",
             "항목별 내용과 기준",
+            "온실가스 인벤토리 대상 시설 · 성·시별",
             "지역별 분포"
           ]
         },
         "table": {
           "status": "match",
-          "table": "선택한 기준일·지역 · 개소",
+          "table": "2026-08-10 · 개소",
           "cell": "Hồ Chí Minh | 479",
           "key": "indicator+region+time+unit"
-        }
+        },
+        "controls": [
+          {
+            "control": "자료 구분",
+            "from": "전체",
+            "to": "탄소시장 예산",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
+          }
+        ],
+        "map": "layer drawn as primary (탄소시장 대상시설(인벤토리 의무))"
       },
-      "internalWording": null
+      "internalWording": null,
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "C-020",
       "title": "GHG 감축 사업 타당성 기초 정보",
-      "kind": "status",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "not-applicable"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "status",
-        "expected": [
-          "status wording"
-        ],
-        "found": [
-          "status wording"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": []
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11143,38 +11222,38 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardValueVerified: status screen (checked for the status wording only)",
-        "detailAnalysisFit: card carries no selection",
-        "tableValuesVerified: status screen, no values",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "값 제공 전",
-        "title": "온실가스 감축사업 기초정보",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=ghg-gamcug-saeob-tadangseong-gico-jeongbo&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "status",
-          "expected": [
-            "status wording"
-          ],
-          "found": [
-            "status wording"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": []
+        "finderSearch": {
+          "searchTerm": "GHG 감축 사업 타당성 기초 정보",
+          "cards": 0
         },
-        "table": {
-          "status": "not-applicable",
-          "reason": "status screen, no values"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 데이터 없음",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "C-021",
@@ -11184,22 +11263,15 @@
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
+      "cardValueVerified": null,
       "recomputed": {
         "status": "not-applicable"
       },
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "status",
-        "expected": [
-          "status wording"
-        ],
-        "found": [
-          "status wording"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": []
+        "pass": null,
+        "kind": "status-v159",
+        "reason": "⓪ status element: judged by statusNoticePresent · chartCount0 · cardShowsStatus"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11209,13 +11281,15 @@
       "notApplicable": [
         "cardValueVerified: status screen (checked for the status wording only)",
         "detailAnalysisFit: card carries no selection",
+        "cardValueVerified · detailAnalysisFit · analysisFit: ⓪ status element (V159)",
         "tableValuesVerified: status screen, no values",
         "controlsVerified: no selectable control in the primary analysis",
         "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderHeadline": "값 제공 전",
-        "title": "자발적 탄소시장 사업목록",
+        "finderHeadline": "",
+        "finderStatusBadge": "미입고",
+        "title": "자발적 탄소시장(VCM) 사업 파이프라인",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=vcm-peurojegteu-paipeurain&country=VNM&from=explorer",
@@ -11231,12 +11305,35 @@
           "pass": true,
           "headings": []
         },
+        "statusNotice": {
+          "count": 1,
+          "rows": [
+            {
+              "label": "결정",
+              "value": "미입고"
+            },
+            {
+              "label": "사유",
+              "value": "기재된 사유 없음"
+            },
+            {
+              "label": "결정일",
+              "value": "기재된 결정일 없음"
+            }
+          ],
+          "charts": 0
+        },
         "table": {
           "status": "not-applicable",
           "reason": "status screen, no values"
         }
       },
       "internalWording": null,
+      "statusChecks": {
+        "statusNoticePresent": true,
+        "chartCount0": true,
+        "cardShowsStatus": true
+      },
       "detailTilesAbsent": true,
       "detailTilesBounded": true
     },
@@ -11312,7 +11409,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "479개소",
-        "title": "탄소시장 준비도",
+        "finderStatusBadge": "",
+        "title": "탄소시장 참여 준비도",
         "heading": "",
         "selectors": [
           "기준일=2026-08-10",
@@ -11363,27 +11461,18 @@
     {
       "elementId": "C-023",
       "title": "한계저감비용(MAC)",
-      "kind": "status",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "not-applicable"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "status",
-        "expected": [
-          "status wording"
-        ],
-        "found": [
-          "status wording"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": []
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11391,38 +11480,38 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardValueVerified: status screen (checked for the status wording only)",
-        "detailAnalysisFit: card carries no selection",
-        "tableValuesVerified: status screen, no values",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "값 제공 전",
-        "title": "한계저감비용",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=hangyejeogambiyong-mac&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "status",
-          "expected": [
-            "status wording"
-          ],
-          "found": [
-            "status wording"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": []
+        "finderSearch": {
+          "searchTerm": "한계저감비용(MAC)",
+          "cards": 0
         },
-        "table": {
-          "status": "not-applicable",
-          "reason": "status screen, no values"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "C-024",
@@ -11499,7 +11588,8 @@
       ],
       "evidence": {
         "finderHeadline": "20건",
-        "title": "산림전용 방지 및 산림보전(REDD+)",
+        "finderStatusBadge": "",
+        "title": "산림전용·황폐화 방지(REDD+) 이행",
         "heading": "",
         "selectors": [
           "자료 구분=전체"
@@ -11614,7 +11704,8 @@
       ],
       "evidence": {
         "finderHeadline": "388건",
-        "title": "탄소크레딧 사업 및 발행실적",
+        "finderStatusBadge": "",
+        "title": "탄소크레딧 발행·소각 실적",
         "heading": "",
         "selectors": [
           "상태 선택=전체",
@@ -11728,7 +11819,8 @@
       ],
       "evidence": {
         "finderHeadline": "2,400 USD/kW",
-        "title": "단위 사업당 CAPEX",
+        "finderStatusBadge": "",
+        "title": "단위 사업당 설비투자비(CAPEX)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=danwi-saeobdang-capex&country=VNM&from=explorer&measure=measure-f941a0397abc&year=2024&dim.category=바이오에너지+기술+(Biomass)&dim.detail=총투자액÷설비용량+중앙값",
@@ -11810,7 +11902,8 @@
       ],
       "evidence": {
         "finderHeadline": "22.8 %",
-        "title": "시장 성장률",
+        "finderStatusBadge": "",
+        "title": "기후기술 시장 성장률(CAGR)",
         "heading": "",
         "selectors": [
           "분류 선택=바이오에너지 기술"
@@ -11906,7 +11999,8 @@
       ],
       "evidence": {
         "finderHeadline": "22,500 tCO2/20년·MW",
-        "title": "예상 감축량",
+        "finderStatusBadge": "",
+        "title": "1MW당 예상 온실가스 감축량",
         "heading": "",
         "selectors": [
           "항목 선택=예상 감축량 · tCO2/20년·MW",
@@ -12017,7 +12111,8 @@
       ],
       "evidence": {
         "finderHeadline": "24.4 %",
-        "title": "크레딧 가격 연동 수익성",
+        "finderStatusBadge": "",
+        "title": "크레딧 수익의 투자비 회수율",
         "heading": "",
         "selectors": [
           "분류 선택=바이오에너지 기술(고 시나리오)"
@@ -12114,7 +12209,8 @@
       ],
       "evidence": {
         "finderHeadline": "88 %",
-        "title": "감축/적응 구분별 예산 배분 비율",
+        "finderStatusBadge": "",
+        "title": "감축·적응 기후예산 배분 비율",
         "heading": "",
         "selectors": [
           "예산 기준=총 기후변화 지출"
@@ -12211,7 +12307,8 @@
       ],
       "evidence": {
         "finderHeadline": "371,010억 VND",
-        "title": "기후 관련 조세 수입",
+        "finderStatusBadge": "",
+        "title": "기후 관련 조세(환경보호세) 수입",
         "heading": "",
         "selectors": [
           "항목 선택=기후 관련 조세 수입 · VND",
@@ -12325,7 +12422,8 @@
       ],
       "evidence": {
         "finderHeadline": "부분 도입 — TCCRE 유형분류 기반 사후 태깅",
-        "title": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+        "finderStatusBadge": "",
+        "title": "기후예산태깅(CBT) 도입 여부·수준",
         "heading": "",
         "selectors": [
           "분류 선택=전체",
@@ -12450,7 +12548,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "80 %",
-        "title": "주관 부처별 기후 예산 규모",
+        "finderStatusBadge": "",
+        "title": "부처별 기후 예산",
         "heading": "",
         "selectors": [
           "항목 선택=주관 부처별 기후 예산 규모 · %",
@@ -12573,7 +12672,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.1 %",
-        "title": "기후대응·기후기술 관련 정부 예산",
+        "finderStatusBadge": "",
+        "title": "기후대응 정부 예산 규모",
         "heading": "",
         "selectors": [
           "항목 선택=기후대응 정부 예산 · %"
@@ -12668,7 +12768,8 @@
       ],
       "evidence": {
         "finderHeadline": "387억 USD",
-        "title": "화석연료 보조금 규모",
+        "finderStatusBadge": "",
+        "title": "화석연료 보조금",
         "heading": "",
         "selectors": [
           "항목 선택=화석연료 보조금 규모 · USD",
@@ -12779,7 +12880,8 @@
       ],
       "evidence": {
         "finderHeadline": "16.65억 USD",
-        "title": "개도국 내 각국별 ODA 규모",
+        "finderStatusBadge": "",
+        "title": "지원 주체별 공적개발원조(ODA) 규모",
         "heading": "",
         "selectors": [
           "공여자=세계은행그룹"
@@ -12879,7 +12981,8 @@
       ],
       "evidence": {
         "finderHeadline": "22곳",
-        "title": "경쟁국 민간기업의 개도국 진출 현황",
+        "finderStatusBadge": "",
+        "title": "경쟁국 기업 진출 현황",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -12982,6 +13085,7 @@
       ],
       "evidence": {
         "finderHeadline": "72.1 점",
+        "finderStatusBadge": "",
         "title": "녹색성장지수",
         "heading": "",
         "selectors": [
@@ -13097,7 +13201,8 @@
       ],
       "evidence": {
         "finderHeadline": "164건",
-        "title": "대외경제협력기금 사업",
+        "finderStatusBadge": "",
+        "title": "양허성 차관 사업",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -13202,7 +13307,8 @@
       ],
       "evidence": {
         "finderHeadline": "650건",
-        "title": "한국 공적개발원조 사업",
+        "finderStatusBadge": "",
+        "title": "공적개발원조(ODA) 프로젝트",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -13307,7 +13413,8 @@
       ],
       "evidence": {
         "finderHeadline": "232건",
-        "title": "정부·지방자치단체 협력사업",
+        "finderStatusBadge": "",
+        "title": "부처·지자체 개발협력 사업",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -13412,7 +13519,8 @@
       ],
       "evidence": {
         "finderHeadline": "10건",
-        "title": "한국 ODA 사업기획·입찰",
+        "finderStatusBadge": "",
+        "title": "사업개요서(PCP)·입찰 공고",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -13546,7 +13654,8 @@
       "notApplicable": [],
       "evidence": {
         "finderHeadline": "1,135만 USD",
-        "title": "적응기금 사업",
+        "finderStatusBadge": "",
+        "title": "기후적응 지원사업",
         "heading": "",
         "selectors": [
           "항목 선택=Adaptation Fund 프로젝트 · USD",
@@ -13682,7 +13791,8 @@
       ],
       "evidence": {
         "finderHeadline": "10건",
-        "title": "CTCN 기술지원",
+        "finderStatusBadge": "",
+        "title": "기술지원 요청 현황",
         "heading": "",
         "selectors": [
           "기술 분야 선택=전체",
@@ -13796,7 +13906,8 @@
       ],
       "evidence": {
         "finderHeadline": "8건",
-        "title": "녹색기후기금 사업",
+        "finderStatusBadge": "",
+        "title": "승인 사업 목록",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -13900,7 +14011,8 @@
       ],
       "evidence": {
         "finderHeadline": "640건",
-        "title": "국제기구·개발은행 사업",
+        "finderStatusBadge": "",
+        "title": "다자개발은행·국제기구 개발협력 사업",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -14005,7 +14117,8 @@
       ],
       "evidence": {
         "finderHeadline": "15건",
-        "title": "개발금융·민관협력 투자사업",
+        "finderStatusBadge": "",
+        "title": "다자개발은행·개발금융기관 기후 관련 투자 사업",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -14112,7 +14225,8 @@
       ],
       "evidence": {
         "finderHeadline": "71건",
-        "title": "국제협력·기후재원 사업",
+        "finderStatusBadge": "",
+        "title": "국제 기후기금 승인 사업",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -14173,106 +14287,57 @@
     {
       "elementId": "D-024",
       "title": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
-      "kind": "facts",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "match",
-        "computed": 7,
-        "expected": 7,
-        "expectedScale": null,
-        "rows": 12,
-        "note": "entity rows with 레코드구분=개별 (5 excluded as the rule states)"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "facts",
-        "expected": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "found": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "주요 분야·기금 구성",
-          "연도별 투자 거래 수",
-          "투자 라운드별 투자 거래 수",
-          "투자 거래 목록"
-        ]
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
-      "controlsVerified": true,
-      "tableValuesVerified": false,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "7건",
-        "title": "벤처·임팩트 투자",
-        "heading": "",
-        "selectors": [
-          "연도=전체 기간",
-          "기후 분야·투자 라운드=전체"
-        ],
-        "url": "?view=data&element=vc-impaegteu-tuja-hyeonhwang-tuja-raundeu-seed-series-a-c-tujajamyeong-tuja-geumaeg-daesan&country=VNM&from=explorer",
-        "cardValue": "7건 = text-0:P: 검색어 연도 전체 기간 2026년 2025년 2024년 2023년 기후 분야·투자 라운드 전체 모빌리티(EV) AgTech RE(태양광) 선택 초기화 전체 자료 · 투자 거래 7건 / 전체 7건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 투자 거래를 집계하며, 통화가 확인된",
-        "analysisFit": {
-          "kind": "facts",
-          "expected": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "found": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "주요 분야·기금 구성",
-            "연도별 투자 거래 수",
-            "투자 라운드별 투자 거래 수",
-            "투자 거래 목록"
-          ]
+        "finderSearch": {
+          "searchTerm": "VC·임팩트 투자 현황",
+          "cards": 0
         },
-        "table": {
-          "status": "row-count-differs",
-          "reason": "no table states or holds 7 rows (3 rows, 4 rows, 6 rows, 3 rows, 12 rows)",
-          "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
-        },
-        "controls": [
-          {
-            "control": "연도",
-            "from": "전체 기간",
-            "to": "2026년",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(데이터 명세서 검토)",
+            "reason": "확인된 원자료가 없어 제공 대상에서 제외",
+            "decidedAt": "2026-09-18",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
           },
-          {
-            "control": "기후 분야·투자 라운드",
-            "from": "전체",
-            "to": "모빌리티(EV)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
+          "verdict": {
+            "pass": true,
+            "problems": []
           }
-        ]
+        }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "D-025",
@@ -14323,7 +14388,8 @@
       ],
       "evidence": {
         "finderHeadline": "132건",
-        "title": "민간 인프라 투자",
+        "finderStatusBadge": "",
+        "title": "민간 인프라 참여 사업(PPI)",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -14428,7 +14494,8 @@
       ],
       "evidence": {
         "finderHeadline": "9건",
-        "title": "정치적 위험 보증사업",
+        "finderStatusBadge": "",
+        "title": "정치적 위험 보증 현황",
         "heading": "",
         "selectors": [
           "연도=전체 기간",
@@ -14532,7 +14599,8 @@
       ],
       "evidence": {
         "finderHeadline": "18곳",
-        "title": "CTCN 국가지정기구",
+        "finderStatusBadge": "",
+        "title": "각국 기후기술 창구기관(NDE)",
         "heading": "",
         "selectors": [
           "기관 구분 선택=전체"
@@ -14627,7 +14695,8 @@
       ],
       "evidence": {
         "finderHeadline": "1곳",
-        "title": "파리협정 국가지정기관",
+        "finderStatusBadge": "",
+        "title": "감축사업 승인기관(DNA)",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=dna-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-seungin&country=VNM&from=explorer",
@@ -14709,7 +14778,8 @@
       ],
       "evidence": {
         "finderHeadline": "8건",
-        "title": "녹색기후기금 국가지정기관",
+        "finderStatusBadge": "",
+        "title": "사업제안 추천기관(NDA)",
         "heading": "",
         "selectors": [
           "역할 선택=전체"
@@ -14826,7 +14896,8 @@
       ],
       "evidence": {
         "finderHeadline": "17곳",
-        "title": "국제기구 현지사무소",
+        "finderStatusBadge": "",
+        "title": "국제기구 현지사무소 담당자",
         "heading": "",
         "selectors": [
           "도시 선택=전체",
@@ -14979,7 +15050,8 @@
       ],
       "evidence": {
         "finderHeadline": "20곳",
-        "title": "대학·연구기관·시민사회",
+        "finderStatusBadge": "",
+        "title": "대학·연구기관·비영리단체(NGO)",
         "heading": "",
         "selectors": [
           "도시 선택=전체",
@@ -15106,7 +15178,8 @@
       ],
       "evidence": {
         "finderHeadline": "15곳",
-        "title": "현지 투자자 네트워크",
+        "finderStatusBadge": "",
+        "title": "현지 기후사업 투자기관",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer",
@@ -15189,7 +15262,8 @@
       ],
       "evidence": {
         "finderHeadline": "19건",
-        "title": "온실가스 산정·보고·검증 체계",
+        "finderStatusBadge": "",
+        "title": "온실가스 측정·보고·검증(MRV) 체계",
         "heading": "",
         "selectors": [
           "분류 선택=전체"
@@ -15235,115 +15309,57 @@
     {
       "elementId": "E-008",
       "title": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
-      "kind": "bars",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "match",
-        "computed": 144,
-        "expected": 144,
-        "expectedScale": null,
-        "rows": 144,
-        "note": "entity rows"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "bars",
-        "expected": [
-          "compared categories named (2/2)",
-          "comparison drawn or tabled"
-        ],
-        "found": [
-          "compared categories named (2/2)",
-          "comparison drawn or tabled"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "논문 목록의 발행연도별 건수",
-          "특허 목록의 발행연도별 건수",
-          "기술분야별 수록 건수",
-          "공개 목록의 협력국 구분"
-        ]
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
-      "controlsVerified": true,
-      "tableValuesVerified": true,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "144건",
-        "title": "기후기술 논문·특허",
-        "heading": "",
-        "selectors": [
-          "유형=전체",
-          "연도=전체",
-          "분야=전체"
-        ],
-        "url": "?view=data&element=nonmun-teugheo-nonmun-teugheomyeong-gihugisul-bunya-teugheo-culweonin-gugjeog-teugheo-culw&country=VNM&from=explorer",
-        "cardValue": "144건 = text-0:P: 아래 분석은 수록된 논문·특허 144건을 대상으로 합니다. 베트남 전체 논문·특허 통계가 아니며, 연도별 건수 차이가 국가 전체의 증가·감소를 뜻하지는 않습니다. 논문 목록의 발행연도별 건수 수록 논문의 발행연도를 집계했습니다. 자료가 없는 연도를 0으로 채우지 않습니다. 가로: 건수 ",
-        "analysisFit": {
-          "kind": "bars",
-          "expected": [
-            "compared categories named (2/2)",
-            "comparison drawn or tabled"
-          ],
-          "found": [
-            "compared categories named (2/2)",
-            "comparison drawn or tabled"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "논문 목록의 발행연도별 건수",
-            "특허 목록의 발행연도별 건수",
-            "기술분야별 수록 건수",
-            "공개 목록의 협력국 구분"
-          ]
+        "finderSearch": {
+          "searchTerm": "논문·특허",
+          "cards": 0
         },
-        "table": {
-          "status": "match",
-          "table": "상세 데이터 · 목록 144건",
-          "cell": "row count 144",
-          "key": "row-count"
-        },
-        "controls": [
-          {
-            "control": "유형",
-            "from": "전체",
-            "to": "논문",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(데이터 명세서 검토)",
+            "reason": "논문·특허 검색 기준이 검증되지 않아 제공 대상에서 제외",
+            "decidedAt": "2026-09-18",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
           },
-          {
-            "control": "연도",
-            "from": "전체",
-            "to": "2026년",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
-          },
-          {
-            "control": "분야",
-            "from": "전체",
-            "to": "건강",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": false
+          "verdict": {
+            "pass": true,
+            "problems": []
           }
-        ]
+        }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "E-009",
@@ -15392,7 +15408,8 @@
       ],
       "evidence": {
         "finderHeadline": "31.2 %",
-        "title": "과학기술 인력",
+        "finderStatusBadge": "",
+        "title": "STEM 졸업 비중·연구자 수",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=stem-joleobja-su-yeonguja-su&country=VNM&from=explorer&measure=measure-33733e6335a3&year=2016",
@@ -15475,7 +15492,8 @@
       ],
       "evidence": {
         "finderHeadline": "0.415 %",
-        "title": "연구개발·혁신 역량",
+        "finderStatusBadge": "",
+        "title": "혁신지수(GII)·연구개발비 비중(GERD)",
         "heading": "",
         "selectors": [
           "항목 선택=GERD · %",
@@ -15536,27 +15554,18 @@
     {
       "elementId": "E-011",
       "title": "기술준비수준(TRL)",
-      "kind": "status",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "not-applicable"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "status",
-        "expected": [
-          "status wording"
-        ],
-        "found": [
-          "status wording"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": []
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15564,38 +15573,38 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardValueVerified: status screen (checked for the status wording only)",
-        "detailAnalysisFit: card carries no selection",
-        "tableValuesVerified: status screen, no values",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "값 제공 전",
-        "title": "기술준비수준",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=gisuljunbisujun-trl&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "status",
-          "expected": [
-            "status wording"
-          ],
-          "found": [
-            "status wording"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": []
+        "finderSearch": {
+          "searchTerm": "기술준비수준(TRL)",
+          "cards": 0
         },
-        "table": {
-          "status": "not-applicable",
-          "reason": "status screen, no values"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 명세서상 NRI 대체 예정이나 자료 미입고",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "E-012",
@@ -15644,7 +15653,8 @@
       ],
       "evidence": {
         "finderHeadline": "51,860 천명",
-        "title": "기술인력과 임금",
+        "finderStatusBadge": "",
+        "title": "직군별 종사자 수·임금",
         "heading": "",
         "selectors": [
           "E-012 항목 선택=종사자 수",
@@ -15710,27 +15720,18 @@
     {
       "elementId": "E-013",
       "title": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
-      "kind": "status",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "not-applicable"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "status",
-        "expected": [
-          "status wording"
-        ],
-        "found": [
-          "status wording"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": []
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15738,38 +15739,38 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardValueVerified: status screen (checked for the status wording only)",
-        "detailAnalysisFit: card carries no selection",
-        "tableValuesVerified: status screen, no values",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "값 제공 전",
-        "title": "운영·유지보수 역량",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=unyeong-yujibosu-yeogryang-sugryeon-gisulinryeog-gayongseong-bupum-jodal-ganeungseong-gugn&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "status",
-          "expected": [
-            "status wording"
-          ],
-          "found": [
-            "status wording"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": []
+        "finderSearch": {
+          "searchTerm": "운영·유지보수 역량",
+          "cards": 0
         },
-        "table": {
-          "status": "not-applicable",
-          "reason": "status screen, no values"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "E-014",
@@ -15819,7 +15820,8 @@
       ],
       "evidence": {
         "finderHeadline": "10건",
-        "title": "기후·녹색성장 양자협정",
+        "finderStatusBadge": "",
+        "title": "양자 기후협력 협정 현황",
         "heading": "",
         "selectors": [
           "협정 유형 선택=전체",
@@ -15923,7 +15925,8 @@
       ],
       "evidence": {
         "finderHeadline": "4건",
-        "title": "NDC 파트너십 참여",
+        "finderStatusBadge": "",
+        "title": "국제 기후협력체 참여 현황",
         "heading": "",
         "selectors": [],
         "url": "?view=data&element=ndc-partnership-camyeo-yeobu-y-n-country-page-ringkeu&country=VNM&from=explorer",
@@ -15957,195 +15960,112 @@
     {
       "elementId": "E-016",
       "title": "한국 기후기술 TRL",
-      "kind": "facts",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": false,
-      "recomputed": {
-        "status": "match",
-        "computed": 4,
-        "expected": 4,
-        "expectedScale": null,
-        "rows": 4,
-        "note": "entity rows"
-      },
+      "cardValueVerified": null,
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
-        "kind": "facts",
-        "expected": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "found": [
-          "register count stated",
-          "list, table, timeline or directory"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "항목별 내용과 기준"
-        ]
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
-      "controlsVerified": true,
-      "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
-      "remainingIssue": [
-        "card value 4건 (건) not stated as such on the detail"
-      ],
-      "notApplicable": [
-        "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
-      ],
-      "evidence": {
-        "finderHeadline": "4건",
-        "title": "한국 기후기술 성숙도",
-        "heading": "",
-        "selectors": [
-          "기준연도 선택=전체",
-          "부문 선택=전체"
-        ],
-        "url": "?view=data&element=hangug-gihugisul-trl&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "facts",
-          "expected": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "found": [
-            "register count stated",
-            "list, table, timeline or directory"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "항목별 내용과 기준"
-          ]
-        },
-        "table": {
-          "status": "match",
-          "table": "항목별 내용과 기준",
-          "cell": "row count 4",
-          "key": "row-count"
-        },
-        "controls": [
-          {
-            "control": "기준연도 선택",
-            "from": "전체",
-            "to": "2020",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          },
-          {
-            "control": "부문 선택",
-            "from": "전체",
-            "to": "기후기술: 감축(Mitigation)",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
-          }
-        ]
-      },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
-    },
-    {
-      "elementId": "E-017",
-      "title": "한국-경쟁국 기후기술 비교우위",
-      "kind": "bars",
-      "cardClicked": true,
-      "homeCardClicked": null,
-      "selectionUrlPreserved": true,
-      "screenLoaded": true,
-      "cardValueVerified": true,
-      "recomputed": {
-        "status": "match",
-        "computed": 4,
-        "expected": 4,
-        "expectedScale": null,
-        "rows": 5,
-        "note": "the KOR row"
-      },
-      "detailAnalysisFit": true,
-      "analysisFit": {
-        "kind": "bars",
-        "expected": [
-          "compared categories named (5/5)",
-          "comparison drawn or tabled",
-          "unit \"위\" stated"
-        ],
-        "found": [
-          "compared categories named (5/5)",
-          "comparison drawn or tabled",
-          "unit \"위\" stated"
-        ],
-        "missing": [],
-        "pass": true,
-        "headings": [
-          "항목별 내용과 기준"
-        ]
-      },
-      "controlsVerified": true,
-      "tableValuesVerified": true,
+      "controlsVerified": null,
+      "tableValuesVerified": null,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "4 위",
-        "title": "한국 기후기술 비교우위",
-        "heading": "",
-        "selectors": [
-          "항목 선택=기후기술 수준 순위 · 위"
-        ],
-        "url": "?view=data&element=hangug-gyeongjaenggug-gihugisul-bigyouwi&country=VNM&from=explorer&measure=measure-21b0eed49d22&year=2020",
-        "cardValue": "4 위 = text-3:TR: 중국 · 기후기술 수준 순위 5 위 2020 유럽연합 · 기후기술 수준 순위 2 위 2020 일본 · 기후기술 수준 순위 3 위 2020 한국 · 기후기술 수준 순위 4 위 2020 미국 · 기후기술 수준 순위 1 위 2020 항목 내용·값 단위 기준연도·대상·근거 항목별 내용과 기준",
-        "fit": "selectors, heading and KPI state the selection",
-        "analysisFit": {
-          "kind": "bars",
-          "expected": [
-            "compared categories named (5/5)",
-            "comparison drawn or tabled",
-            "unit \"위\" stated"
-          ],
-          "found": [
-            "compared categories named (5/5)",
-            "comparison drawn or tabled",
-            "unit \"위\" stated"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": [
-            "항목별 내용과 기준"
-          ]
+        "finderSearch": {
+          "searchTerm": "한국 기후기술 TRL",
+          "cards": 0
         },
-        "table": {
-          "status": "match",
-          "table": "항목별 내용과 기준",
-          "cell": "한국 · 기후기술 수준 순위 | 4 | 위 | 2020",
-          "key": "indicator+region+time+unit"
-        },
-        "controls": [
-          {
-            "control": "항목 선택",
-            "from": "기후기술 수준 순위 · 위",
-            "to": "기후기술 수준(최고국 대비) · %",
-            "changed": true,
-            "numbersChanged": true,
-            "subjectChanged": true
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
           }
-        ]
+        }
       },
-      "internalWording": null,
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
+    },
+    {
+      "elementId": "E-017",
+      "title": "한국-경쟁국 기후기술 비교우위",
+      "kind": null,
+      "cardClicked": null,
+      "homeCardClicked": null,
+      "selectionUrlPreserved": null,
+      "screenLoaded": true,
+      "cardValueVerified": null,
+      "recomputed": null,
+      "detailAnalysisFit": null,
+      "analysisFit": {
+        "pass": null,
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+      },
+      "controlsVerified": null,
+      "tableValuesVerified": null,
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
+      "remainingIssue": [],
+      "notApplicable": [
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+      ],
+      "evidence": {
+        "finderSearch": {
+          "searchTerm": "한국-경쟁국 기후기술 비교우위",
+          "cards": 0
+        },
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "decision": "제공 대상 제외(사용자 검토)",
+            "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
+            "decidedAt": "2026-09-23",
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
+        }
+      },
+      "statusChecks": {
+        "absentFromFinder": true,
+        "exclusionNoticePresent": true,
+        "noticeMatchesDecision": true,
+        "chartCount0": true,
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "E-018",
@@ -16218,7 +16138,8 @@
       ],
       "evidence": {
         "finderHeadline": "24곳",
-        "title": "한국 기업의 현지 진출",
+        "finderStatusBadge": "",
+        "title": "국내 기업 개도국 진출 현황",
         "heading": "",
         "selectors": [
           "업종·진출형태=전체"
@@ -16335,7 +16256,8 @@
       ],
       "evidence": {
         "finderHeadline": "6곳",
-        "title": "한국 기관 현지사무소",
+        "finderStatusBadge": "",
+        "title": "개도국 내 한국 기관 사무소",
         "heading": "",
         "selectors": [
           "도시 선택=전체"
@@ -16431,7 +16353,8 @@
       ],
       "evidence": {
         "finderHeadline": "3개",
-        "title": "한국의 공공·민간 지원제도",
+        "finderStatusBadge": "",
+        "title": "한국 기후기술 해외진출 지원사업",
         "heading": "",
         "selectors": [
           "지원 유형 선택=전체",

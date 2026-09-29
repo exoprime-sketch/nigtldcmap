@@ -34,6 +34,8 @@ export const VIETNAM_PUBLIC_STATUS_LABEL_V124: Record<
   partial: "부분 데이터",
   "public-authorized": "공개 승인 데이터",
   "schema-only": "입력 양식만 제공",
+  // V156: a decision not to offer, not a measurement of the data.
+  excluded: "제공 대상 제외",
   "data-entry-planned": "입력 예정",
   "not-collected": "원자료 미수집",
   quarantined: "형식 검토 필요",

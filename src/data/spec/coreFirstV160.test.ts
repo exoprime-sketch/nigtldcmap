@@ -1,6 +1,9 @@
 import { describe, expect, test } from "@jest/globals";
+import { readFileSync } from "fs";
+import { resolve } from "path";
 import { allTypologyV159 } from "./datasetSpecV159";
 import { allTiersV160, HOME_QUESTIONS_V160 } from "./coreFirstV160";
+import { countryDataRootV158 } from "../countryContext";
 
 const tiers = allTiersV160();
 const typology = new Map(allTypologyV159().map((row) => [row.elementId, row]));
@@ -26,6 +29,23 @@ describe("V160 information tiers", () => {
     expect(hidden).toEqual(["A-017", "C-015", "C-020", "C-021", "C-023", "D-024", "E-008", "E-011", "E-013", "E-016", "E-017"]);
     const statusIds = [...typology.values()].filter((row) => row.displayType === "U0").map((row) => row.elementId).sort();
     expect(hidden).toEqual(statusIds);
+  });
+});
+
+describe("V160 hidden tier against the published catalog", () => {
+  // The finder's hidden tier must be exactly the elements the catalog does not
+  // list as public data: the excluded ones (V156) and the one not yet
+  // delivered. Lifting either is the job of the catalog change, not a tier edit.
+  test("hidden == catalog excluded ∪ not collected", () => {
+    const catalog = JSON.parse(readFileSync(resolve(__dirname, "../../../public", `.${countryDataRootV158("VNM")}`, "catalog.json"), "utf8")) as {
+      elements: { elementId: string; publicStatus?: string }[];
+    };
+    const notPublic = catalog.elements
+      .filter((element) => element.publicStatus === "excluded" || element.publicStatus === "not-collected" || element.publicStatus === "not-provided")
+      .map((element) => element.elementId)
+      .sort();
+    const hidden = tiers.filter((row) => row.tier === "hidden").map((row) => row.elementId).sort();
+    expect(hidden).toEqual(notPublic);
   });
 });
 

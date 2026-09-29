@@ -1,0 +1,42 @@
+﻿구조,구조명,납품 열,뜻,허용값/예,어댑터 필드,템플릿 입력
+S1,S1 국가×연도 관측값 (58),`요소_id`,,,`elementId`,라우팅 키
+S1,S1 국가×연도 관측값 (58),`indicator_id`,,,`indicatorId`,"계열 ID, 계약 `headlineIndicatorIds` 조인"
+S1,S1 국가×연도 관측값 (58),`country_iso3`,,,`countryIso3`,국가 비교·순위(①·③)
+S1,S1 국가×연도 관측값 (58),`year` / `period`,,,`year` · `period`,x축(시간)
+S1,S1 국가×연도 관측값 (58),`value`,,,`value`(number \,string \
+S1,S1 국가×연도 관측값 (58),`missing_reason_code`,,,`missingReasonCode`,결측 표시(0 대체 없음)
+S1,S1 국가×연도 관측값 (58),`note`,,,`note`,행 주석 툴팁
+S1,S1 국가×연도 관측값 (58),`category`,,,`category`,구성 막대·누적영역·도넛 계열
+S1,S1 국가×연도 관측값 (58),`scenario`,,,`scenario`,시나리오 토글
+S1,S1 국가×연도 관측값 (58),`tech_id`,,,`techIds: string[]`(두 자리 정규화),38대 기술 필터·③ 기술 순위
+S1,S1 국가×연도 관측값 (58),`bound`,,,`bound`,범위 밴드(min–max)
+S1,S1 국가×연도 관측값 (58),`value_kind`,,,`valueKind`,실적/추정/전망 표기
+S1,S1 국가×연도 관측값 (58),`2_meta_info.unit` · `unit_detail`,,,`unit` · `unitDetail`,축 단위(계약값 우선 → `ChartAxesV150`)
+S2,S2 지역×연도 관측값 (27),`region_system`,지역 체계,"`adm1-63`(개편 전 63개) · `adm1-34`(2025-07-01 시행 34개) · `region-6`(6개 권역, GDL 등) · `basin-aqueduct40` · `basin-hydrosheds` · `ministry`(부처, D-008)",`regionSystem`,
+S2,S2 지역×연도 관측값 (27),`region_key`,체계 안의 키,`adm1-63`: GADM `VNM.1_1` 형식 · `adm1-34`: 34개 코드 · `region-6`: 원천 코드(`VNMr104`) · 유역: 원천 ID(Aqueduct `string_id`),`regionKey`,
+S2,S2 지역×연도 관측값 (27),`region_name`,원문 지역명(검수용),원천 표기 그대로,`regionName`,
+S3,S3 위치 개체 (17),"`record_key` (추가, 필수)","원천 개체 ID(예: `WRI1030864`, 관측소 번호)",,`recordKey`,카드·팝업·지도 선택 동기화
+S3,S3 위치 개체 (17),`name` (추가),원문 명칭,,`name`,카드 제목(라벨형)
+S3,S3 위치 개체 (17),`lat` · `lon`,WGS84 십진수,,`latitude` · `longitude`,점
+S3,S3 위치 개체 (17),`geometry_type`,`point` · `line` · `polygon`,,`geometryType`,렌더러 선택
+S3,S3 위치 개체 (17),`crs`,`EPSG:4326`,,`crs`,검증만
+S3,S3 위치 개체 (17),"`geometry_ref` (추가, 선·면만)",기하 파일 안의 피처 ID(GeoJSON 별도 납품),,`geometryRef`,선·면
+S3,S3 위치 개체 (17),`class` (추가),분류(발전원·전압·광종·기관 유형 등),,`classKey` · `classLabel`,아이콘·범례·분류별 수
+S3,S3 위치 개체 (17),`size_value` · `size_unit` (추가),규모(MW·kV·km·건수),,`size`,규모 막대·합계
+S3,S3 위치 개체 (17),`year` (추가),준공·승인·관측 연도,,`year`,필터
+S3,S3 위치 개체 (17),`owner` (추가),소유·운영 기관,,`owner`,카드 사실
+S3,S3 위치 개체 (17),"`adm1_name` (추가, 원천에 있을 때만)",원천이 적은 소재 성·시,,`adm1Source`,"소재 표기(없으면 플랫폼이 좌표 point-in-polygon으로 산출, 경계 밖은 null)"
+S3,S3 위치 개체 (17),`tech_id`,기후기술,,`techIds`,38대 기술 필터
+S3,S3 위치 개체 (17),`record_source_url` (추가),레코드별 출처,,`sourceUrl`,카드 링크
+S4,S4 비공간 개체 (50),`record_key` (필수),"원천 ID(사업번호 `FP013`, 법령 번호 `72/2020/QH14`)",,`recordKey`,행 키
+S4,S4 비공간 개체 (50),`name`,원문 명칭(사업명·법령명·기관명),,`name`,목록 제목
+S4,S4 비공간 개체 (50),`record_type`,유형(법률·시행령·결정 / 사업 유형 / 기관 유형),,`recordType`,⑥ 유형별 그룹 · ⑤ 분류 파이
+S4,S4 비공간 개체 (50),`year` · `date`,"승인·공포·시행 연도, 날짜(`YYYY-MM-DD`)",,`year` · `date`,"타임라인 · ""최신 개정"""
+S4,S4 비공간 개체 (50),`status`,상태(시행·개정·폐지·승인·종료 등 원문),,`status`,상태 배지
+S4,S4 비공간 개체 (50),`description`,"원문 요지(요약 금지, 원문 인용)",,`description`,접이식 설명
+S4,S4 비공간 개체 (50),`amount_value` · `amount_currency`,금액(원화 환산 금지),,`amount`,⑤ 총액·정렬
+S4,S4 비공간 개체 (50),`org`,공여·인가·주관 기관,,`org`,⑤ 공여기관 상위 3
+S4,S4 비공간 개체 (50),`region_tags`,"적용 지역(원천이 밝힌 것만, `;` 구분, S2의 `region_system:key` 형식)",,`regionTags`,⑤ 지역 건수 지도 · ⑥ 적용지역 강조
+S4,S4 비공간 개체 (50),`tech_id`,기후기술,,`techIds`,38대 기술 필터 · ③ C-005 기술 목록
+S4,S4 비공간 개체 (50),`link` · `record_source_url`,원문·레코드 출처,,`links`,원문 링크
+S4,S4 비공간 개체 (50),`score` (C-022 등 체크리스트),원천 점수,,`score`,⑥ 체크리스트 점수

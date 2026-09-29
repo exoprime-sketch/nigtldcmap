@@ -31,6 +31,7 @@ import {
 import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPolicyV126";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { publicDatasetDescriptionV135 } from "../visualization/publicDatasetDescriptionV135";
+import { countryAssetPathV158 } from "../countryContext";
 
 function toCatalogItem(
   item: VietnamCatalogElementV124
@@ -99,6 +100,7 @@ function toCatalogItem(
     mapFeatureCount: item.mapFeatureCount,
     downloadableRecordCount: item.downloadableRecordCount,
     downloadAssets: item.downloadAssets || [],
+    exclusion: item.exclusion ?? null,
     raw: item,
   };
 }
@@ -114,6 +116,8 @@ function publicStatusLabelV124(
     "data-entry-planned": "입력 예정",
     "not-collected": "원자료 미수집",
     quarantined: "현재 제공하지 않음",
+    // V156: a decision, not a measurement - the label says so plainly.
+    excluded: "제공 대상 제외",
   };
   return labels[status];
 }
@@ -125,7 +129,7 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
   countryNameEn: "Viet Nam",
   countryPublicSlug: publicCountrySlugV122("VNM"),
   dataSchemaVersion: "v124",
-  manifestUrl: publicAssetUrlV128("data/vietnam/v2/manifest.json"),
+  manifestUrl: publicAssetUrlV128(countryAssetPathV158("VNM", "manifest.json")),
   availability: "available",
   mapView: {
     center: [106.2, 16.1],

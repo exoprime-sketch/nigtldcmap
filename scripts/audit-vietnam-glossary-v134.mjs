@@ -33,6 +33,8 @@ import {
 import { getPublicNonGlossaryAllowanceV134 } from "./v134/public-non-glossary-allowlist-v134.mjs";
 import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
+import { auditExcludedNoticesV156, excludedElementsV156, publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("glossary:v134");
 const require = createRequire(import.meta.url);
 require.extensions[".ts"] = (module, fileName) => {
@@ -80,6 +82,11 @@ audit.check("SSP245_PATTERN", /4\.5 W\/m²/u.test(tokenizerModule.resolvePublicT
 const catalogResult = readJson(resolve(V2_ROOT, "catalog.json"));
 const catalog = catalogElements(catalogResult.value);
 audit.check("FRAMEWORK_ELEMENTS", catalog.length === 152, catalog.length, 152);
+// V156: every list and detail sweep covers the public set; excluded elements
+// are checked on their notice page instead (and its text is inventoried).
+const publicSetV156 = publicListedElementsV156(catalog);
+const STATIC_ROUTE_COUNT_V134 = 5; // home, finder, map, download, guide
+let excludedNoticesV156 = [];
 
 // Visible public tokens that are formats, route/UI vocabulary or ISO country codes
 // rather than domain terms. Every exception is recorded in the inventory.
@@ -483,7 +490,7 @@ try {
 
   // Debug aid: V134_ONLY_ELEMENTS=A-017,D-001 limits the detail sweep.
   const onlyElements = new Set(String(process.env.V134_ONLY_ELEMENTS || "").split(",").map((id) => id.trim()).filter(Boolean));
-  for (const element of catalog) {
+  for (const element of publicSetV156) {
     const elementId = String(element.elementId || "");
     if (onlyElements.size && !onlyElements.has(elementId)) continue;
     progress(elementId, "start");
@@ -502,6 +509,19 @@ try {
       progress(elementId, "failed");
       if (/DevTools command timeout|DevTools socket closed/.test(String(error))) throw error;
     }
+  }
+
+  if (!onlyElements.size) {
+    excludedNoticesV156 = await auditExcludedNoticesV156({
+      cdp: browser.cdp,
+      baseUrl: server.url,
+      elements: catalog,
+      detailUrl: detailUrlV134,
+      navigate,
+      waitForValue,
+      evaluateValue,
+      onPage: async (elementId) => recordCandidates(`notice:${elementId}`, await evaluateValue(browser.cdp, snapshotExpression)),
+    });
   }
 
   await navigate(browser.cdp, detailUrlV134(server.url, "D-011"));
@@ -555,10 +575,11 @@ writeCsvV134(
 );
 const unmatched = inventoryRows.filter((row) => row.approved !== "true");
 
-audit.check("PRODUCTION_DOM_ROUTE_COVERAGE", runtimeFailure === null && inspectedRoutes === 157 && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: 157, routeFailures: [] });
+audit.check("PRODUCTION_DOM_ROUTE_COVERAGE", runtimeFailure === null && inspectedRoutes === STATIC_ROUTE_COUNT_V134 + publicSetV156.length && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: STATIC_ROUTE_COUNT_V134 + publicSetV156.length, routeFailures: [] });
 audit.check("VISIBLE_ACRONYM_WITHOUT_GLOSSARY", unmatched.length === 0, unmatched, []);
 audit.check("SELECTED_OPTION_GLOSSARY_HELP", selectedOptionFailures.length === 0, selectedOptionFailures, []);
 audit.check("FINDER_ALL_CARDS_AUDITED", finderCardCount === FINDER_PUBLIC_COUNT_V160, finderCardCount, FINDER_PUBLIC_COUNT_V160);
+audit.check("EXCLUDED_DETAIL_NOTICE_V156", excludedNoticesV156.length === excludedElementsV156(catalog).length && excludedNoticesV156.every((row) => row.pass), excludedNoticesV156.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems })), "notice card, no chart, no download link");
 audit.check("GLOSSARY_HOVER_PASS", hoverPass, hoverPass, true);
 audit.check("GLOSSARY_KEYBOARD_PASS", keyboardPass, keyboardPass, true);
 audit.check("GLOSSARY_MOBILE_PASS", mobilePass, mobilePass, true);

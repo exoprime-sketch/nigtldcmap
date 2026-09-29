@@ -8,6 +8,7 @@ import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import type { ElementVisualizationContractV125 } from "../../../data/visualization/semanticTypesV125";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
+import { countryPublicDirV158 } from "../../../data/countryContext";
 
 /**
  * V153-D3 adds a platform-edited description under the timeline entries of
@@ -18,7 +19,7 @@ import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
 const ROOT = resolve(__dirname, "../../../..");
-const DATA = resolve(ROOT, "public/data/vietnam/v2");
+const DATA = resolve(ROOT, `${countryPublicDirV158("VNM")}`);
 const contracts = JSON.parse(readFileSync(resolve(DATA, "semantic/element-visualization-contracts-v125.json"), "utf8")).contracts as ElementVisualizationContractV125[];
 const entitiesOf = (elementId: string): VietnamEntityV124[] =>
   JSON.parse(readFileSync(resolve(DATA, `downloads/${elementId.toLowerCase()}.json`), "utf8")).entities;

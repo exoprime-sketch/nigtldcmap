@@ -42,9 +42,12 @@ import {
   PUBLIC_RECORD_TERMS_V136_2,
 } from "./v136-2/generic-detail-contract.mjs";
 
+import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+
 const audit = new AuditV125("generic-detail-public:v136-2");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
-const ELEMENT_IDS = catalog.map((item) => item.elementId);
+// V156: the public set; an excluded element's URL carries a notice, not an analysis.
+const ELEMENT_IDS = publicListedElementsV156(catalog).map((item) => item.elementId);
 
 const ANALYSIS_READY = `(() => {
   const root = document.querySelector('[data-testid="public-analysis-root"]');
@@ -364,7 +367,7 @@ const sample = (kind) =>
   findings.filter((item) => item.kind === kind).slice(0, 12);
 
 audit.check("GENERIC_DETAIL_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
-audit.check("DETAIL_ROUTE_COUNT", inspectedRoutes === 152, inspectedRoutes, 152);
+audit.check("DETAIL_ROUTE_COUNT", inspectedRoutes === ELEMENT_IDS.length, inspectedRoutes, ELEMENT_IDS.length);
 audit.check("GENERIC_DETAIL_ROUTE_COUNT", genericRoutes.length > 0, genericRoutes.length, ">0");
 audit.check("PUBLIC_MEASUREMENT_TERM_COUNT", countOf("measurement-term") === 0, sample("measurement-term"), []);
 audit.check("PUBLIC_RECORD_TERM_COUNT", countOf("record-term") === 0, sample("record-term"), []);

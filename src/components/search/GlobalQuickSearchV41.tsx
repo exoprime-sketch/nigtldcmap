@@ -184,6 +184,7 @@ export default function GlobalQuickSearchV41({
                       <article
                         className="global-search-v128-result"
                         key={catalogItem.elementId}
+                        data-element-id={catalogItem.elementId}
                       >
                         <button
                           type="button"
