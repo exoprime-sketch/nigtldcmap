@@ -2,7 +2,9 @@
 
 import { execFileSync } from "node:child_process";
 import {
+  existsSync,
   mkdirSync,
+  readdirSync,
   readFileSync,
   writeFileSync,
 } from "node:fs";
@@ -13,7 +15,6 @@ const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(SCRIPT_DIR, "..");
 const REPORT_PATH = resolve(PROJECT_ROOT, "reports/v133/ci-contract-v133.json");
 const CI_PATH = resolve(PROJECT_ROOT, ".github/workflows/ci.yml");
-const PAGES_PATH = resolve(PROJECT_ROOT, ".github/workflows/pages.yml");
 const GITATTRIBUTES_PATH = resolve(PROJECT_ROOT, ".gitattributes");
 const PACKAGE_PATH = resolve(PROJECT_ROOT, "package.json");
 const GENERATED_AUDIT_PATH = resolve(
@@ -46,7 +47,6 @@ function gitOutput(args) {
 }
 
 const ci = readFileSync(CI_PATH, "utf8");
-const pages = readFileSync(PAGES_PATH, "utf8");
 const gitAttributes = readFileSync(GITATTRIBUTES_PATH, "utf8");
 const packageJson = JSON.parse(readFileSync(PACKAGE_PATH, "utf8"));
 const generatedAudit = readFileSync(GENERATED_AUDIT_PATH, "utf8");
@@ -100,22 +100,23 @@ check(
   Object.fromEntries(Object.keys(ciContract).map((key) => [key, true]))
 );
 
-const pagesContract = {
-  finalize: /npm run finalize:v136/u.test(pages),
-  build: /npm run build/u.test(pages),
-  publicUrl: /PUBLIC_URL/u.test(pages),
-  deploy: /actions\/deploy-pages@/u.test(pages),
-  smoke: /Smoke deployed production site|Smoke deployed URL/u.test(pages),
-  currentReports: /reports\/v136\//u.test(pages),
-  screenshotCaptureSeparated: !/capture:screenshots:v13[0-9]/u.test(pages),
-  noLegacyGate: !/finalize:v12[0-9]|finalize:v13[0-5]\b|blocking V128 release gate/iu.test(pages),
-  noLocalSourceAudit: !/audit:source-local:v133|_source\//u.test(pages),
-};
+// V158 (user decision 2026-09-29): production is Vercel only and the GitHub
+// Pages workflow was deleted. No workflow may publish to GitHub Pages again.
+const WORKFLOW_DIR = resolve(PROJECT_ROOT, ".github/workflows");
+const pagesDeployingWorkflows = readdirSync(WORKFLOW_DIR)
+  .filter((name) => /\.ya?ml$/u.test(name))
+  .filter((name) =>
+    /actions\/(?:deploy-pages|upload-pages-artifact|configure-pages)@/u.test(
+      readFileSync(resolve(WORKFLOW_DIR, name), "utf8")
+    )
+  );
+const pagesWorkflowRetired =
+  !existsSync(resolve(WORKFLOW_DIR, "pages.yml")) && pagesDeployingWorkflows.length === 0;
 check(
-  "PAGES_WORKFLOW_CURRENT_RELEASE_GATE",
-  Object.values(pagesContract).every(Boolean),
-  pagesContract,
-  Object.fromEntries(Object.keys(pagesContract).map((key) => [key, true]))
+  "PAGES_WORKFLOW_RETIRED",
+  pagesWorkflowRetired,
+  { pagesWorkflowRetired, pagesDeployingWorkflows },
+  { pagesWorkflowRetired: true, pagesDeployingWorkflows: [] }
 );
 
 const generatedAuditSourceIndependent =
@@ -123,8 +124,7 @@ const generatedAuditSourceIndependent =
 check(
   "SOURCE_ZIP_REQUIRED_IN_CI",
   generatedAuditSourceIndependent &&
-    ciContract.noLocalSourceAudit &&
-    pagesContract.noLocalSourceAudit,
+    ciContract.noLocalSourceAudit,
   false,
   false,
   { generatedAuditSourceIndependent }
