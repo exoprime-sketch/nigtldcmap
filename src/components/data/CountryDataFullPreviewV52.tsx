@@ -137,13 +137,16 @@ export default function CountryDataFullPreviewV52({
       data-temporal-depth-v135={temporalDepthV135}
       data-testid="public-analysis-root"
     >
-      {/* V160: the analysis heading (when it adds a reading) opens the
-          analysis area in one compact line - the router renders it here
-          through a portal, so it stays inside the analysis area. */}
-      <div className="cev123-analysis-title-v160" id="detail-analysis-heading-v160" />
       <header className="cev123-heading">
         <small data-testid="public-data-summary">{publicDataSummary}</small>
       </header>
+
+      {/* V160: the analysis heading (when it adds a reading) opens the
+          visible analysis area in one compact line - the router renders it
+          here through a portal, so it stays inside the analysis area. It
+          follows the summary header (hidden on the detail page), keeping the
+          analysis root's text order as before. */}
+      <div className="cev123-analysis-title-v160" id="detail-analysis-heading-v160" />
 
       {error && (
         <div className="cev123-empty" role="alert" data-public-empty-reason="analysis-asset-error">
