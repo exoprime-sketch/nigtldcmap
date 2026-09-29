@@ -78,7 +78,7 @@ const summaries = summariesAsset.cards;
 // value and analysis-fit checks. Every other element is judged as before.
 const STATUS_NOTICE_V159 = new Map(
   JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
-    .filter((row) => row.statusNotice)
+    .filter((row) => row.statusNotice === "data-pending")
     .map((row) => [row.elementId, row.statusNotice])
 );
 const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());

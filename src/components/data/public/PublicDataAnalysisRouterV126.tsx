@@ -72,7 +72,7 @@ import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
-import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
+import { getCardSpecV159, getTypologyV159 } from "../../../data/spec/datasetSpecV159";
 import {
   elementVariantV159,
   GENERIC_BODY_VARIANTS_V159,
@@ -550,6 +550,8 @@ export default function PublicDataAnalysisRouterV126({
         entities={entities}
         spatialUnit={spatialUnit}
         aggregationBasis={aggregationBasis}
+        pending={typology?.statusNotice === "data-pending"}
+        pendingSourceLabel={typology?.statusNotice === "data-pending" ? getCardSpecV159(elementId)?.sourceLabel : null}
       />
       {/* A status screen states the decision only; its rows are not tabled (V159). */}
       {elementId !== "D-011" && !isStatusV159 ? (

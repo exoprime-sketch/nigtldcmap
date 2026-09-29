@@ -1678,15 +1678,15 @@
       ],
       "detailTemplate": "composition",
       "displayAllowed": true,
-      "downloadAllowed": true,
+      "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 189542,
+          "byteSize": 189734,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 72,
-          "sha256": "78bb54f6ca362f1328a9a893337362d157fc77a2f1f66185266017b6fb5598ac",
+          "sha256": "76242cb0370c3570168c497647a9dfe701983b2e3ee976aaec1533868089691f",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/a-017.json"
         },
@@ -1706,6 +1706,13 @@
       "elementLabel": "LCOE(균등화 발전비용)",
       "emptyReason": null,
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "actual-records",
+        "measuredStatus": "actual",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "A.2.a",
       "groupLabel": "에너지·전력 정보",
       "hasWarnings": false,
@@ -1717,7 +1724,7 @@
       "observationCount": 72,
       "packageReason": "요소별 Excel 파일 제공",
       "packageStatus": "provided",
-      "publicStatus": "actual",
+      "publicStatus": "excluded",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [
@@ -11690,6 +11697,13 @@
       "elementLabel": "GHG 감축 사업 타당성 기초 정보",
       "emptyReason": "not-collected",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-collected",
+        "measuredStatus": "not-collected",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -11701,7 +11715,7 @@
       "observationCount": 0,
       "packageReason": "원자료 미수집",
       "packageStatus": "not-collected",
-      "publicStatus": "not-collected",
+      "publicStatus": "excluded",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [],
@@ -11752,6 +11766,13 @@
       "elementLabel": "VCM 프로젝트 파이프라인",
       "emptyReason": "not-collected",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-collected",
+        "measuredStatus": "not-collected",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -11763,7 +11784,7 @@
       "observationCount": 0,
       "packageReason": "원자료 미수집",
       "packageStatus": "not-collected",
-      "publicStatus": "not-collected",
+      "publicStatus": "excluded",
       "publicationDecision": null,
       "qualityIssueCount": 0,
       "referenceYears": [],
@@ -16343,15 +16364,15 @@
       ],
       "detailTemplate": "entity",
       "displayAllowed": true,
-      "downloadAllowed": true,
+      "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 487585,
+          "byteSize": 487777,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 144,
-          "sha256": "9b2ac993e5a2f00057d047946c92bd49113ee951fcbcde74629ca250c75f1dd4",
+          "sha256": "0229739e1d92b9c0e515338c91820896ec0ef524bce04e19a232030f3cfc7be7",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-008.json"
         },
@@ -16371,6 +16392,13 @@
       "elementLabel": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
       "emptyReason": null,
       "entityCount": 144,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "actual-records",
+        "measuredStatus": "public-authorized",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.2.b",
       "groupLabel": "논문·특허",
       "hasWarnings": true,
@@ -16382,7 +16410,7 @@
       "observationCount": 0,
       "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
       "packageStatus": "provided",
-      "publicStatus": "public-authorized",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-08-27",
         "approvedByRole": "project-owner",
@@ -17208,15 +17236,15 @@
       ],
       "detailTemplate": "entity",
       "displayAllowed": true,
-      "downloadAllowed": true,
+      "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 10619,
+          "byteSize": 10811,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 4,
-          "sha256": "ea4abddfa0d4b454f8cef6e06a99178e0b858900e52e308e8e768d1154e02f62",
+          "sha256": "039b7081351e9014921be3db07f604c212e3bc58f6a354f3bfb4996fdb418b67",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-016.json"
         },
@@ -17236,6 +17264,13 @@
       "elementLabel": "한국 기후기술 TRL",
       "emptyReason": null,
       "entityCount": 4,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "actual-records",
+        "measuredStatus": "public-authorized",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",
       "hasWarnings": true,
@@ -17247,7 +17282,7 @@
       "observationCount": 0,
       "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
       "packageStatus": "provided",
-      "publicStatus": "public-authorized",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-08-27",
         "approvedByRole": "project-owner",
@@ -17315,15 +17350,15 @@
       ],
       "detailTemplate": "entity",
       "displayAllowed": true,
-      "downloadAllowed": true,
+      "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 15511,
+          "byteSize": 15703,
           "deliveryMode": "repository",
           "format": "JSON",
           "mediaType": "application/json",
           "recordCount": 10,
-          "sha256": "6ae175a968c6cc6aa43b1307bacc0af5f4e8189e26040689651970e48f26881a",
+          "sha256": "7d3f4f5d49fb668f4d4d985c084e0868b77061db0189a756aa15e694092a6c29",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/vietnam/v2/downloads/e-017.json"
         },
@@ -17343,6 +17378,13 @@
       "elementLabel": "한국-경쟁국 기후기술 비교우위",
       "emptyReason": null,
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "actual-records",
+        "measuredStatus": "public-authorized",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",
       "hasWarnings": false,
@@ -17354,7 +17396,7 @@
       "observationCount": 10,
       "packageReason": "공개 승인 결정에 따라 원자료 행 공개",
       "packageStatus": "provided",
-      "publicStatus": "public-authorized",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-08-27",
         "approvedByRole": "project-owner",

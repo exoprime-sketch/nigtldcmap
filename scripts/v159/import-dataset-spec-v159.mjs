@@ -50,7 +50,7 @@ const appliedOverrides = new Set();
 // decision as it stood (제외 0918/0923); the decision file says whether it still
 // stands, and for a lifted one whether there is data and which screen it gets.
 const EXCLUSION_DECISION = JSON.parse(readFileSync(resolve(ROOT, "config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
-const ACTIVE_EXCLUSIONS = new Set(EXCLUSION_DECISION.exclusions.map((row) => row.elementId));
+const ACTIVE_EXCLUSIONS = new Map(EXCLUSION_DECISION.exclusions.map((row) => [row.elementId, row]));
 const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) => [row.elementId, row]));
 
 // A recorded minimal correction replaces the workbook text only where its
@@ -390,8 +390,16 @@ function main() {
     let status = row.status;
     let statusNotice = /^미입고/u.test(row.status) ? "data-pending" : null;
     const lift = LIFTED_EXCLUSIONS.get(row.elementId);
-    if (/^제외/u.test(row.status)) {
-      if (ACTIVE_EXCLUSIONS.has(row.elementId) || !lift) {
+    const active = ACTIVE_EXCLUSIONS.get(row.elementId);
+    if (active) {
+      // An exclusion the decision file holds now wins over the table's status
+      // (2026-09-29: six re-excluded for 2026, C-021 among them though the
+      // table says 미입고). The element keeps its type, structure and contract
+      // so the design is reused when it is published.
+      status = `제외(${active.basis} ${active.decidedAt.slice(5).replace("-", "")})`;
+      statusNotice = "excluded";
+    } else if (/^제외/u.test(row.status)) {
+      if (!lift) {
         statusNotice = "excluded";
       } else if (!lift.dataPresent) {
         status = "미입고(데이터 준비 중)";

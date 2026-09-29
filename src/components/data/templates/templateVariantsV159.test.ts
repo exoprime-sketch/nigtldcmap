@@ -33,8 +33,8 @@ describe("V159 template variants", () => {
     for (const id of dedicated) expect(ELEMENT_VARIANTS_V159[id]).toBeDefined();
   });
 
-  test("status elements have no body variant", () => {
-    for (const row of allTypologyV159().filter((item) => item.statusNotice)) {
+  test("data-pending elements have no body variant", () => {
+    for (const row of allTypologyV159().filter((item) => item.statusNotice === "data-pending")) {
       expect(ELEMENT_VARIANTS_V159[row.elementId]).toBeUndefined();
     }
   });

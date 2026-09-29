@@ -1,16 +1,16 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/apply-staged-data-v156.mjs",
-  "generatedAt": "2026-09-29T00:34:26.190Z",
+  "generatedAt": "2026-09-29T05:10:43.387Z",
   "from": ".staging/v156/public/data/vietnam/v2",
   "to": "public/data/vietnam/v2",
   "applied": true,
   "totals": {
     "sourceFiles": 536,
     "targetFilesBefore": 555,
-    "written": 17,
-    "unchanged": 518,
-    "prunedStaleShards": 6,
+    "written": 13,
+    "unchanged": 522,
+    "prunedStaleShards": 4,
     "preserved": 19,
     "mergedManifests": 1,
     "keptUnexplained": 0
@@ -46,32 +46,26 @@
     "spatial/pending-v155/d-022-locations.json"
   ],
   "prunedStaleShards": [
-    "packs/vnm-v124-pack-003-408d3d25.json",
-    "packs/vnm-v124-pack-012-03da9a2c.json",
-    "packs/vnm-v124-pack-013-6eab4929.json",
-    "packs/vnm-v124-pack-017-54cec185.json",
-    "packs/vnm-v124-pack-018-1f5eeb64.json",
-    "packs/vnm-v124-pack-019-90696ae9.json"
+    "packs/vnm-v124-pack-003-941515c7.json",
+    "packs/vnm-v124-pack-013-11c8d353.json",
+    "packs/vnm-v124-pack-018-98fc770f.json",
+    "packs/vnm-v124-pack-019-40f65c44.json"
   ],
   "keptUnexplained": [],
   "written": [
     "asset-integrity.json",
     "catalog.json",
     "downloads/a-017.json",
-    "downloads/c-015.json",
-    "downloads/d-024.json",
     "downloads/delivery-manifest.json",
     "downloads/e-008.json",
     "downloads/e-016.json",
     "downloads/e-017.json",
     "manifest.json",
     "packs/bundle-index-v124.json",
-    "packs/vnm-v124-pack-003-941515c7.json",
-    "packs/vnm-v124-pack-012-6108b228.json",
-    "packs/vnm-v124-pack-013-11c8d353.json",
-    "packs/vnm-v124-pack-017-72e8eaba.json",
-    "packs/vnm-v124-pack-018-98fc770f.json",
-    "packs/vnm-v124-pack-019-40f65c44.json"
+    "packs/vnm-v124-pack-003-69c9d1f2.json",
+    "packs/vnm-v124-pack-013-9a23b337.json",
+    "packs/vnm-v124-pack-018-0a0b9834.json",
+    "packs/vnm-v124-pack-019-fa1c0f2e.json"
   ],
   "targetFilesAfter": 555,
   "largestFile": {

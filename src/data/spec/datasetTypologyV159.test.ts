@@ -33,7 +33,7 @@ describe("V159 dataset typology", () => {
       const type = getTypologyV159(row.elementId)!;
       expect(row.displayType).toBe(type.displayType);
       expect(row.structure).toBe(type.structure);
-      if (type.statusNotice) expect(row.primary.type).toBe("status-note");
+      if (type.statusNotice === "data-pending") expect(row.primary.type).toBe("status-note");
     }
   });
 });

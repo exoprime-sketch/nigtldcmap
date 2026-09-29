@@ -20,11 +20,15 @@ const catalogIds = (JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV15
 const mapIndex = JSON.parse(readFileSync(resolve(ROOT, `${countryPublicDirV158("VNM")}/map-index.json`), "utf8")).layers as Array<{ elementId: string; active?: boolean; enabled?: boolean }>;
 const mapIds = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
 
-// V159: the status screens are the typology rows with a status notice - spec
-// v8 (2026-09-29) keeps their U1-U6 type; the five data-pending elements are
-// C-020, C-021, C-023, E-011, E-013. See reports/v159/EXPECTATION_CHANGES_V159.md.
-const STATUS_IDS = (JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows as Array<{ elementId: string; statusNotice: string | null }>)
-  .filter((row) => row.statusNotice)
+// V159: the status screens are the typology's data-pending rows - spec v8
+// (2026-09-29) keeps their U1-U6 type (C-023, E-011, E-013 since the same
+// day's re-exclusion). An excluded element keeps its designed contract for
+// when it is published; C-020 and C-021 never had data, so theirs is the
+// status note too. See reports/v159/EXPECTATION_CHANGES_V159.md.
+const TYPOLOGY_ROWS = JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows as Array<{ elementId: string; statusNotice: string | null }>;
+const EXCLUDED_IDS = new Set(TYPOLOGY_ROWS.filter((row) => row.statusNotice === "excluded").map((row) => row.elementId));
+const STATUS_IDS = TYPOLOGY_ROWS
+  .filter((row) => row.statusNotice === "data-pending")
   .map((row) => row.elementId)
   .sort();
 const COMPOSITION_IDS = ["A-010", "A-011", "A-016", "A-018", "B-037"];
@@ -84,7 +88,7 @@ describe("V153 visualization contract", () => {
       expect(row.primary.type).toBe("status-note");
       expect(row.secondary).toEqual([]);
     }
-    expect(VISUALIZATION_CONTRACT_V153.filter((row) => row.archetype === "status-note").map((row) => row.elementId).sort()).toEqual(STATUS_IDS);
+    expect(VISUALIZATION_CONTRACT_V153.filter((row) => row.archetype === "status-note" && !EXCLUDED_IDS.has(row.elementId)).map((row) => row.elementId).sort()).toEqual(STATUS_IDS);
     for (const id of COMPOSITION_IDS) expect(visualizationContractV153(id)!.archetype).toBe("composition");
     for (const id of MATRIX_IDS) {
       const row = visualizationContractV153(id)!;

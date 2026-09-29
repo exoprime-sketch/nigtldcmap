@@ -1,7 +1,7 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-diff-v156.mjs",
-  "generatedAt": "2026-09-29T00:34:24.903Z",
+  "generatedAt": "2026-09-29T05:10:41.906Z",
   "trees": {
     "current": "public/data/vietnam/v2",
     "candidate": ".staging/v156/public/data/vietnam/v2"
@@ -9,7 +9,7 @@
   "deliveredAt": "2026-09-22",
   "totals": {
     "elements": 152,
-    "unchanged": 142,
+    "unchanged": 146,
     "titleChanged": 0,
     "schemaBreaking": 0,
     "bespokeRendererAffected": 0,
@@ -977,12 +977,12 @@
       },
       "statusChanges": {
         "publicStatus": {
-          "before": "excluded",
-          "after": "actual"
+          "before": "actual",
+          "after": "excluded"
         },
         "downloadAllowed": {
-          "before": false,
-          "after": true
+          "before": true,
+          "after": false
         }
       },
       "counts": {
@@ -5645,16 +5645,7 @@
         "after": "상기 문서들의 원본 링크",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "excluded",
-          "after": "actual"
-        },
-        "downloadAllowed": {
-          "before": false,
-          "after": true
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 26,
@@ -5699,7 +5690,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -5951,8 +5942,8 @@
       },
       "statusChanges": {
         "publicStatus": {
-          "before": "excluded",
-          "after": "not-collected"
+          "before": "not-collected",
+          "after": "excluded"
         }
       },
       "counts": {
@@ -6013,7 +6004,12 @@
         "after": "VCM 프로젝트 파이프라인",
         "changed": false
       },
-      "statusChanges": {},
+      "statusChanges": {
+        "publicStatus": {
+          "before": "not-collected",
+          "after": "excluded"
+        }
+      },
       "counts": {
         "indicators": {
           "before": 0,
@@ -6058,7 +6054,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -6131,12 +6127,7 @@
         "after": "한계저감비용(MAC)",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "excluded",
-          "after": "not-collected"
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 0,
@@ -6181,7 +6172,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -7670,16 +7661,7 @@
         "after": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "excluded",
-          "after": "actual"
-        },
-        "downloadAllowed": {
-          "before": false,
-          "after": true
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 6,
@@ -7724,7 +7706,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8271,12 +8253,12 @@
       },
       "statusChanges": {
         "publicStatus": {
-          "before": "excluded",
-          "after": "public-authorized"
+          "before": "public-authorized",
+          "after": "excluded"
         },
         "downloadAllowed": {
-          "before": false,
-          "after": true
+          "before": true,
+          "after": false
         }
       },
       "counts": {
@@ -8455,12 +8437,7 @@
         "after": "기술준비수준(TRL)",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "excluded",
-          "after": "data-entry-planned"
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 0,
@@ -8505,7 +8482,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8578,12 +8555,7 @@
         "after": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
         "changed": false
       },
-      "statusChanges": {
-        "publicStatus": {
-          "before": "excluded",
-          "after": "schema-only"
-        }
-      },
+      "statusChanges": {},
       "counts": {
         "indicators": {
           "before": 0,
@@ -8628,7 +8600,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": false
+        "unchanged": true
       }
     },
     {
@@ -8762,12 +8734,12 @@
       },
       "statusChanges": {
         "publicStatus": {
-          "before": "excluded",
-          "after": "public-authorized"
+          "before": "public-authorized",
+          "after": "excluded"
         },
         "downloadAllowed": {
-          "before": false,
-          "after": true
+          "before": true,
+          "after": false
         }
       },
       "counts": {
@@ -8830,12 +8802,12 @@
       },
       "statusChanges": {
         "publicStatus": {
-          "before": "excluded",
-          "after": "public-authorized"
+          "before": "public-authorized",
+          "after": "excluded"
         },
         "downloadAllowed": {
-          "before": false,
-          "after": true
+          "before": true,
+          "after": false
         }
       },
       "counts": {

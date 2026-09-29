@@ -41,7 +41,10 @@ const typology = JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/datasetTyp
 const cases = JSON.parse(readFileSync(resolve(ROOT, "src/data/spec/useCasesV159.json"), "utf8")).cases;
 const caseCount = new Map();
 for (const item of cases) caseCount.set(item.elementId, (caseCount.get(item.elementId) || 0) + 1);
-const rows = typology.filter((row) => !ONLY || ONLY.includes(row.elementId));
+// An excluded element's URL shows the exclusion card (checked by
+// exclusions:v156), not a template - it is listed, not walked.
+const excludedIds = typology.filter((row) => row.statusNotice === "excluded").map((row) => row.elementId);
+const rows = typology.filter((row) => row.statusNotice !== "excluded" && (!ONLY || ONLY.includes(row.elementId)));
 
 const server = await startStaticBuildServer(BUILD, { port: 4363 });
 const base = server.url.replace(/\/$/u, "");
@@ -63,7 +66,7 @@ async function check(context, row) {
     // The description loads its own chunk.
     await page.waitForSelector('[data-testid="data-description-v159"]', { timeout: scaledTimeoutMsV150(15_000) }).catch(() => null);
     // Layer-based decision points (② elements) arrive after the map layer loads.
-    if (!row.statusNotice) await page.waitForSelector('[data-testid="decision-points-v159"]', { timeout: scaledTimeoutMsV150(6_000) }).catch(() => null);
+    if (row.statusNotice !== "data-pending") await page.waitForSelector('[data-testid="decision-points-v159"]', { timeout: scaledTimeoutMsV150(6_000) }).catch(() => null);
     await page.waitForTimeout(300);
     const screen = await page.evaluate(() => {
       const template = document.querySelector('[data-testid="template-v159"]');
@@ -107,9 +110,9 @@ async function check(context, row) {
     record.checks.template = screen.template === row.displayType && screen.structure === row.structure;
     record.checks.firstBlock = screen.verdict === "match";
     record.checks.description = screen.shortDefinition && screen.description && screen.usage && (expectCases === 0 || (screen.casesPart && screen.casesCount === expectCases));
-    record.checks.decisionPoints = row.statusNotice ? screen.decisionPoints === null : true;
+    record.checks.decisionPoints = row.statusNotice === "data-pending" ? screen.decisionPoints === null : true;
     record.decisionPointsShown = screen.decisionPoints !== null;
-    record.checks.status = row.statusNotice ? screen.statusNote && screen.chartsInPrimary === 0 : true;
+    record.checks.status = row.statusNotice === "data-pending" ? screen.statusNote && screen.chartsInPrimary === 0 : true;
     await page.setViewportSize({ width: 320, height: 800 });
     await page.waitForTimeout(250);
     const overflow = await page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth);
@@ -151,7 +154,8 @@ const summary = {
   pass: results.length - failedIds.length,
   fail: failedIds.length,
   failedIds,
-  decisionPointsHidden: results.filter((item) => item.pass && !item.decisionPointsShown && !item.statusNotice).map((item) => item.elementId),
+  excludedIds,
+  decisionPointsHidden: results.filter((item) => item.pass && !item.decisionPointsShown && item.statusNotice !== "data-pending").map((item) => item.elementId),
   decisionPointsShown: results.filter((item) => item.decisionPointsShown).length,
   chipHighlightElements: results.filter((item) => item.chips?.highlightWorks === true).map((item) => item.elementId),
   chipsEnabled: results.reduce((sum, item) => sum + (item.chips?.enabled || 0), 0),

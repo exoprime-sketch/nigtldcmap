@@ -53,7 +53,10 @@ const rows = contract.rows.map((row) => {
   const { elementId, displayType: _d, structure: _s, ...rest } = next;
   next = { elementId, displayType: type.displayType, structure: type.structure, ...rest };
 
-  if (type.statusNotice && next.archetype !== "status-note") {
+  // Only a data-pending element opens on the notice. An excluded element's
+  // detail is the exclusion card (V156) before any analysis renders, so its
+  // contract keeps the designed first block for when it is published.
+  if (type.statusNotice === "data-pending" && next.archetype !== "status-note") {
     applied.push({ elementId, from: `${next.archetype} / ${next.primary.type}`, to: "status-note / status-note", reason: `명세 v8 상태 안내(${type.status})` });
     next = {
       ...next,
@@ -69,9 +72,9 @@ const rows = contract.rows.map((row) => {
   const compatible = COMPATIBLE[type.displayType].includes(next.archetype);
   let verdict = compatible ? "consistent" : "mismatch";
   let comment = "";
-  if (type.statusNotice && next.archetype === "status-note") {
+  if (type.statusNotice === "data-pending" && next.archetype === "status-note") {
     verdict = "status-notice";
-    comment = type.statusNotice === "data-pending" ? "데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지)" : "공개 제외 — 안내만 표시";
+    comment = "데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지)";
   } else if (!compatible && type.displayType === "U3" && type.structure === "S4" && next.archetype === "registry" && next.primary.type === "category-bar") {
     // Spec v8: a ③ record list (E-008, one row per paper or patent) compares
     // technology fields by the number of records.
@@ -107,6 +110,10 @@ const rows = contract.rows.map((row) => {
     verdict = "review";
     comment = `명세 변형 '${type.variant}'인데 계약 1순위는 ${next.primary.type} — 결정 필요`;
   }
+  if (type.statusNotice === "excluded") {
+    comment = `${type.status} — 상세는 제외 안내 카드, 계약은 공개 전환 때 쓰도록 유지 · 설계 판정 ${verdict}${comment ? `: ${comment}` : ""}`;
+    verdict = "excluded";
+  }
   findings.push({ elementId, displayType: type.displayType, structure: type.structure, archetype: next.archetype, primary: next.primary.type, verdict, comment });
   // Changes applied on an earlier run stay listed: the row's note records them.
   if (!applied.some((item) => item.elementId === elementId) && String(next.note).startsWith("V159:")) {
@@ -137,7 +144,7 @@ const lines = [
   "",
   "`scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(상태 안내 — 명세 v8부터 유형은 유지하고 statusNotice로 판정)만 적용한다.",
   "",
-  `- 일치 ${count("consistent")} · 상태 안내(데이터 준비 중 등) ${count("status-notice")} · 자료 한계(전국값 대체) ${count("data-limited")} · 결정 필요 ${count("review")} · 불일치 ${count("mismatch")} / 152`,
+  `- 일치 ${count("consistent")} · 상태 안내(데이터 준비 중) ${count("status-notice")} · 공개 제외 ${count("excluded")} · 자료 한계(전국값 대체) ${count("data-limited")} · 결정 필요 ${count("review")} · 불일치 ${count("mismatch")} / 152`,
   `- 적용한 계약 변경 ${applied.length}건`,
   "",
   "## 적용한 계약 변경",
@@ -161,4 +168,4 @@ const lines = [
 ];
 mkdirSync(dirname(REPORT_PATH), { recursive: true });
 writeFileSync(REPORT_PATH, lines.join("\n"));
-console.log(JSON.stringify({ consistent: count("consistent"), statusNotice: count("status-notice"), dataLimited: count("data-limited"), review: count("review"), mismatch: count("mismatch"), applied: applied.map((item) => item.elementId) }));
+console.log(JSON.stringify({ consistent: count("consistent"), statusNotice: count("status-notice"), excluded: count("excluded"), dataLimited: count("data-limited"), review: count("review"), mismatch: count("mismatch"), applied: applied.map((item) => item.elementId) }));
