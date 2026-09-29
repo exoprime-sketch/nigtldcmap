@@ -1,29 +1,34 @@
-# V158-B1 진행 상태 (feat/v158-b1-bgd-ingest · PR #38)
+# V158-B2 진행 상태 (방글라데시 지도 등록·공개 전환·10개국 확장 기준·배포 용량)
 
-## 목표·수용기준 (P9_V158_다국가_국가비교.md B1 절 + 사용자 지시 2026-09-29)
-- 원천 `방글라데시데이터\20260923\`(119개) 적재
-  - 베트남과 같은 파일명·스키마로 `public/data/bgd/v2`에 둔다.
-  - 공개 결정: 표출은 전부, 다운로드는 메타대로, 제외 0
-- 8개 Division 경계는 ADM2 64구를 주별로 합성해 만든다. 한글명은 `formatRegionName`으로 쓰고 사전 매칭이 100%여야 한다.
-- 지도 후보표 1장(베트남 PDF 형식). 승인 전에는 지도에 등록하지 않는다.
-- 편집 범위는 `public/data/bgd/**`·`tools/etl/countries/bgd/**`·문서뿐이다. `src/**`는 수정하지 않는다.
-- 10개국 확장 기준 가운데 B1에서 갖출 것
-  - 11개 요소의 `요소_KR`·`source_org`를 원문 그대로 보존한다.
-  - 지역명 괄호는 로마자 기준으로 쓴다.
-  - 국가명·국가 수를 코드에 적지 않는다.
-- 검증: 검증기, 베트남 회귀(`git diff` 0), `finalize:v151` 1회
+계획: `C:\Users\user\.claude\plans\tranquil-greeting-harp.md`(2026-09-29 승인) · 세션5 · wt-d3
+
+## 목표·수용기준
+- **PR-A 배포 용량 결정안**: 10개국 예측, Vercel(Hobby) 한도, 지연 로드·압축·외부 저장 중 1안 권고. 화면 변화 0.
+- **PR-B 국가 일반화 계층**(VNM 화면 변화 0, BGD는 preparing)
+  - 국가별 로더·provider
+  - 국가별 카드 이름·출처(12개), 유형, 명세 문구 필터(타국 문단 숨김·보고)
+  - 지역명 괄호 로마자, 벵골 글꼴, 비교 블록 연도 규칙
+  - BGD 파생 자산
+- **PR-C BGD 지도 43**: 등록 37·보류 6, 참고 지도 3, 윤곽 밖 제외 A-023 1·E-006 7. 새 빌더, v138은 수정하지 않음.
+- **PR-D 공개 전환**: BGD live, 홈 국가 선택, 찾기 국가 탭(기본 = 현재 국가), 비교 블록, 추적표 BGD 열.
+- **공통**
+  - `finalize:v151` PR 직전 1회
+  - BGD QA: 타국 표현 0, 괄호 비라틴 0, 벵골 깨짐 0, 6폭 넘침 0
+  - 가짜 3번째 국가 시험
+  - 병합은 "PR #N 병합" 지시 때만
 
 ## 완료
-- 3089ad0 적재·경계·후보표·ETL·검증기·문서 정정
-  - 검증기 53/53, 결정성 확인, `audit:security:v128` 13/13
-- a302191 `finalize:v151` 통과 결과·REVIEW·PR 본문
-  - 게이트: release 80/80, role-split 53/53, 분석 QA 기준선 이내, 경계 감사 PASS
-  - tsc 0, 단위 테스트 564/564
-- PR #38 생성
+- B1(#38)·Vercel 단일화(#40) 병합
+- PR-A 작성: `docs/DEPLOYMENT_CAPACITY_V158.md`, `scripts/v158/deployment-capacity-v158.mjs`, `reports/v158/deployment-capacity-v158.json`
+  - build 948.7 MB, 10개국 2.19~7.12 GB → 압축 시 0.28~1.19 GB
 
 ## 진행 중
-- Vercel Preview(a302191) 배포 확인
+- PR-A push·PR·보고
 
-## 대기
-- 사용자 승인 2건: 지도 후보표(등록 후보 37·보류 6), 병합
-- 후보표를 승인받은 뒤 B2(지도 등록·화면 연결·10개국 확장 기준 화면 요구)를 진행한다.
+## 대기·결정 필요
+- PR-A 결정 3건: 압축안 채택, 기존 다운로드 주소 처리, Hobby 비상업 조건
+- 동시 작업과 겹치는 파일
+  - P8(`RealMapExplorerPage`·`DetailLocationMapV148`·`publicMapWorkspaceV126`·v138 빌더)
+  - #42(`vietnamCountryDataProviderV122`)
+  - ②(라우터·출처 패널·템플릿 변형·추적표)
+  - 상대 PR이 병합된 뒤 main을 merge해서 푼다.
