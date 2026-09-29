@@ -5666,7 +5666,7 @@
     {
       "elementId": "E-016",
       "displayType": "U3",
-      "structure": "S1",
+      "structure": "S4",
       "archetype": "policy-document",
       "primary": {
         "type": "comparison-table",
@@ -5696,7 +5696,7 @@
       "note": "",
       "countryCompare": {
         "comparable": false,
-        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
+        "reason": "기준국(한국) 값이라 국가 간 비교 대상이 아님"
       }
     },
     {
@@ -5705,16 +5705,16 @@
       "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "comparison-table",
-        "title": "국가별 기후기술 순위 비교",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "국가별 기후기술 수준(최고국 대비)",
+        "xAxis": "최고국 대비 기후기술 수준",
+        "yAxis": "국가",
+        "unit": "%"
       },
       "secondary": [
         {
           "type": "table",
-          "title": "국가별 값"
+          "title": "국가별 수준·순위"
         }
       ],
       "mapRole": "none",
@@ -5729,10 +5729,10 @@
         }
       ],
       "status": "exception",
-      "note": "국가별 순위 비교표로 열림 · 순위 막대(대상국 라벨 복원)는 후속(P4)",
+      "note": "V159: 명세 v8 — 2020년 5개국 최고국 대비 수준 막대(한국 강조·순위 병기), 한국 기준값이라 국가 비교 제외(결정 2026-09-29)",
       "countryCompare": {
         "comparable": false,
-        "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
+        "reason": "기준국(한국) 값이라 국가 간 비교 대상이 아님"
       }
     },
     {

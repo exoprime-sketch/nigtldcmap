@@ -37,6 +37,8 @@ export type TemplateVariantKeyV159 =
   | "lcoe-range"
   | "technology-scenario-heatmap"
   | "research-patent"
+  | "korea-tech-readiness"
+  | "korea-tech-level"
   // U4 시설·기관·인프라 위치
   | "ccs-status"
   | "basin-area"
@@ -68,7 +70,7 @@ export const TEMPLATE_VARIANTS_V159: Record<DisplayTypeV159, readonly TemplateVa
     "mineral-resources",
   ],
   U2: ["building-metadata", "flow-direction", "spei-drought", "climate-zone", "sea-level-stations"],
-  U3: ["capital-cost", "lcoe-range", "technology-scenario-heatmap", "research-patent"],
+  U3: ["capital-cost", "lcoe-range", "technology-scenario-heatmap", "research-patent", "korea-tech-readiness", "korea-tech-level"],
   U4: [
     "ccs-status",
     "basin-area",
@@ -117,6 +119,9 @@ export const ELEMENT_VARIANTS_V159: Record<string, ElementVariantV159> = {
   "D-005": { variant: "climate-budget-allocation", phase: "early" },
   "A-002": { variant: "cpia-policy-capacity", phase: "early" },
   "E-008": { variant: "research-patent", phase: "early" },
+  // Spec v8: Korea-reference screens (typology referenceCountryIso3).
+  "E-016": { variant: "korea-tech-readiness", phase: "early" },
+  "E-017": { variant: "korea-tech-level", phase: "early" },
   "E-012": { variant: "occupation-wage", phase: "early" },
   "A-024": { variant: "transmission-network", phase: "late" },
   "A-017": { variant: "lcoe-range", phase: "late" },

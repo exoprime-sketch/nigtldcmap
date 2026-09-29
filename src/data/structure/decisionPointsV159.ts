@@ -20,6 +20,15 @@ export interface DecisionPointsOptsV159 {
   /** Contract-listed indicator ids for the element's headline series, in priority order. */
   headlineIndicatorIds?: string[];
   countryIso3: string;
+  /**
+   * Spec v8: a fixed reference country (typology referenceCountryIso3, E-017
+   * Korea). A ③ element without technology rows then reads that country
+   * against the other delivered subjects: its level, its rank, the gap to the
+   * top subject.
+   */
+  referenceCountryIso3?: string | null;
+  /** How a subject code prints (e.g. EUU → 유럽연합(EU)); the code itself otherwise. */
+  countryLabel?: (iso3: string) => string;
 }
 
 /**
@@ -33,6 +42,8 @@ export interface DecisionPointsOptsV159 {
  * | U1 | 최신값·연도 · 최근 5년 방향 · 10개국 중 순위 | rank: fewer than 2 countries have the headline indicator at its latest year |
  * | U2 | 상위/하위 3개 지역 · 전국 대비 | no S2 rows / no regional rows / no national row (전국 대비 only) |
  * | U3 | 값이 큰 기술 상위 3 · 기술별 값·출처연도 | no rows carry a techId or category |
+ * | U3 (reference country, v8) | 기준국 수준 · N개국 중 순위 · 최고국과 격차 | no tech rows and fewer than 2 subjects at the latest year |
+ * | U3·S4 records (v8, decisionPointsU3RecordsV159) | 총 건수(구분별) · 건수 상위 기술 분야 3 | no record carries a technology field |
  * | U4 | 개체 수 · 규모 합계 · 분류 구성 | 합계: populated sizes use more than one unit |
  * | U5 | 건수 · 총액 · 기관 상위 3 · 최근 승인 | 총액: populated amounts use more than one currency |
  * | U6 | 최신 개정 · 상태 · 적용지역 · 인센티브 유무 | 적용지역: no row carries a region tag; 인센티브: no row text names one |
@@ -236,7 +247,7 @@ function decisionPointsU3(
   const candidates = scoped.filter(
     (row) => row.countryIso3 === opts.countryIso3 && isNumeric(row.value) && (row.techIds.length > 0 || row.category)
   );
-  if (candidates.length === 0) return [];
+  if (candidates.length === 0) return opts.referenceCountryIso3 ? decisionPointsReferenceCountry(rows, opts) : [];
   const latestYear = Math.max(...candidates.map((row) => row.year ?? -Infinity));
   if (!Number.isFinite(latestYear)) return [];
   const atLatestYear = candidates.filter((row) => row.year === latestYear);
@@ -267,6 +278,75 @@ function decisionPointsU3(
       key: "technology-count",
       label: "기술별 값·출처연도",
       value: `${sorted.length}개 기술 · ${latestYear}년 기준`,
+    },
+  ];
+}
+
+/**
+ * Spec v8 ③ with a reference country (E-017): the headline indicator at its
+ * latest year across the delivered subjects. The rank is counted from the
+ * values (largest first); the gap is to the largest value, in %p when the
+ * unit is %.
+ */
+function decisionPointsReferenceCountry(
+  rows: readonly S1CountryObservationV159[],
+  opts: DecisionPointsOptsV159
+): DecisionPointV159[] {
+  const subject = opts.referenceCountryIso3;
+  const headlineId = pickHeadlineIndicatorId(rows, opts.headlineIndicatorIds);
+  if (!subject || !headlineId) return [];
+  const readings = rows.filter((row) => row.indicatorId === headlineId && isNumeric(row.value) && row.year !== null);
+  if (readings.length === 0) return [];
+  const latestYear = Math.max(...readings.map((row) => row.year as number));
+  const byCountry = new Map<string, S1CountryObservationV159>();
+  for (const row of readings) if (row.year === latestYear && !byCountry.has(row.countryIso3)) byCountry.set(row.countryIso3, row);
+  const own = byCountry.get(subject);
+  if (!own || byCountry.size < 2) return [];
+  const sorted = [...byCountry.values()].sort((a, b) => (b.value as number) - (a.value as number));
+  const label = (iso3: string) => (opts.countryLabel ? opts.countryLabel(iso3) : iso3);
+  const unit = own.unit;
+  const top = sorted[0];
+  const gap = (top.value as number) - (own.value as number);
+  // A gap between two percentages is in percentage points.
+  const gapText = unit === "%" ? `${formatNumber(gap)}%p` : `${formatNumber(gap)}${unitSuffix(unit)}`;
+  return [
+    { key: "reference-level", label: `${label(subject)} 수준`, value: `${formatNumber(own.value as number)}${unitSuffix(unit)} (${latestYear}년)` },
+    { key: "reference-rank", label: `${byCountry.size}개국 중 순위`, value: `${sorted.indexOf(own) + 1}위` },
+    {
+      key: "reference-gap",
+      label: "최고국과 격차",
+      value: top === own ? "최고국" : `${gapText} (${label(top.countryIso3)} ${formatNumber(top.value as number)}${unitSuffix(unit)})`,
+    },
+  ];
+}
+
+/** One S4 record of a ③ element as the chart counts it: its kind and the technology fields the source assigned. */
+export interface TechnologyRecordV159 {
+  kind: string;
+  technologies: string[];
+}
+
+/**
+ * Spec v8 ③·S4 (E-008): how many records, split by kind, and the three
+ * technology fields with the most records. A record assigned two fields
+ * counts once in each, as in the chart. Hidden when no record carries a field.
+ */
+export function decisionPointsU3RecordsV159(records: readonly TechnologyRecordV159[]): DecisionPointV159[] {
+  if (!records.some((record) => record.technologies.length > 0)) return [];
+  const kinds = new Map<string, number>();
+  const fields = new Map<string, number>();
+  for (const record of records) {
+    kinds.set(record.kind, (kinds.get(record.kind) || 0) + 1);
+    for (const field of new Set(record.technologies)) fields.set(field, (fields.get(field) || 0) + 1);
+  }
+  const byCount = (a: [string, number], b: [string, number]) => b[1] - a[1] || a[0].localeCompare(b[0], "ko");
+  const kindText = [...kinds.entries()].sort(byCount).map(([kind, count]) => `${kind} ${count.toLocaleString("ko-KR")}`).join(" · ");
+  return [
+    { key: "record-total", label: "총 건수", value: `${records.length.toLocaleString("ko-KR")}건${kinds.size > 1 ? ` (${kindText})` : ""}` },
+    {
+      key: "top-technology-fields",
+      label: "건수 상위 기술 분야",
+      value: [...fields.entries()].sort(byCount).slice(0, 3).map(([field, count]) => `${field} ${count.toLocaleString("ko-KR")}건`).join(" · "),
     },
   ];
 }

@@ -7,7 +7,7 @@ import { useAnalysisContractV153 } from "./analysisContractContextV153";
 
 export interface AnalysisBarV147 { id: string; label: string; value: number | null }
 /** `xAxis`/`yAxis`: what the length measures and what each bar is (V153 contract axes); the title is the caption. */
-export function AnalysisBarsV147({ rows, title, unit, maximum, xAxis, yAxis }: { rows: AnalysisBarV147[]; title: string; unit: string; maximum?: number; xAxis?: string; yAxis?: string }) {
+export function AnalysisBarsV147({ rows, title, unit, maximum, xAxis, yAxis, highlightId }: { rows: AnalysisBarV147[]; title: string; unit: string; maximum?: number; xAxis?: string; yAxis?: string; highlightId?: string }) {
   // What each bar is: the caller says, else the dataset's contract for a bar
   // screen, else the generic word.
   const contract = useAnalysisContractV153();
@@ -20,7 +20,7 @@ export function AnalysisBarsV147({ rows, title, unit, maximum, xAxis, yAxis }: {
   return <figure className="analysis147-bars">
     <figcaption><PublicTermTextV134 text={title} /></figcaption>
     <ChartAxesV150 x={xAxis || title} y={y} unit={unit} />
-    <ol>{rows.map((r) => <li key={r.id}>
+    <ol>{rows.map((r) => <li key={r.id} data-highlight={r.id === highlightId ? "true" : undefined}>
       <span><PublicTermTextV134 text={r.label} /></span>
       <i aria-hidden="true"><em style={{ left: `${zero}%` }} />{r.value !== null && <b style={{ left: `${(Math.min(0, r.value) - min) / span * 100}%`, width: `${Math.abs(r.value) / span * 100}%` }} />}</i>
       <strong>{r.value === null ? "자료 없음" : formatValueV121(r.value)}</strong>

@@ -81,6 +81,7 @@ import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
 import StatusNoticeV159 from "../templates/StatusNoticeV159";
+import { KoreaTechLevelV159, KoreaTechReadinessV159 } from "./KoreaReferenceAnalysisV159";
 import U1CountryProfileV159 from "../templates/U1CountryProfileV159";
 import U2RegionalV159 from "../templates/U2RegionalV159";
 import U3TechnologyV159 from "../templates/U3TechnologyV159";
@@ -402,6 +403,10 @@ export default function PublicDataAnalysisRouterV126({
         );
       case "transmission-network":
         return isTransmissionDeliveryV140(entities) ? <TransmissionNetworkSummaryV140 entities={entities} /> : null;
+      case "korea-tech-readiness":
+        return <KoreaTechReadinessV159 entities={entities} />;
+      case "korea-tech-level":
+        return <KoreaTechLevelV159 rows={semanticRows} />;
       case "lcoe-range":
         return <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
       case "ndc-targets":

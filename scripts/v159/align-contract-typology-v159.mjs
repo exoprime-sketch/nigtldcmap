@@ -77,6 +77,11 @@ const rows = contract.rows.map((row) => {
     // technology fields by the number of records.
     verdict = "consistent";
     comment = "③ 개체 목록 — 기술 분야별 건수 막대";
+  } else if (!compatible && type.displayType === "U3" && type.structure === "S4" && next.primary.type === "comparison-table") {
+    // Spec v8: a ③ record list with text values (E-016, one record per
+    // technology field) opens on the table of those records.
+    verdict = "consistent";
+    comment = "③ 개체 목록 — 분야별 수치 비교표";
   } else if (!compatible && type.displayType === "U2" && ["national-series", "composition"].includes(next.archetype)) {
     verdict = "data-limited";
     comment = type.structure === "S3"

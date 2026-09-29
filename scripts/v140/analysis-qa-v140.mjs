@@ -74,13 +74,16 @@ const summaries = summariesAsset.cards;
 // V159 status elements (excluded or not yet delivered, decided 2026-09-23;
 // spec v8 2026-09-29 keeps their U1-U6 type and marks them with statusNotice):
 // they show one status notice instead of an analysis, so they are judged by
-// statusNoticePresent · chartCount0 · cardShowsStatus instead of the card
+// statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus instead of the card
 // value and analysis-fit checks. Every other element is judged as before.
-const STATUS_IDS_V159 = new Set(
+const STATUS_NOTICE_V159 = new Map(
   JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
     .filter((row) => row.statusNotice)
-    .map((row) => row.elementId)
+    .map((row) => [row.elementId, row.statusNotice])
 );
+const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
+// Spec v8 (2026-09-29): the notice is one line; the words it must carry.
+const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제외" };
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
@@ -912,21 +915,28 @@ async function checkElement(context, item) {
       const notice = await page.evaluate(() => {
         const primary = document.querySelector('[data-testid="public-analysis-primary"]');
         const notes = primary ? primary.querySelectorAll('[data-testid="status-note-v159"]') : [];
-        const rows = notes.length === 1
-          ? Array.from(notes[0].querySelectorAll("dt")).map((dt) => ({ label: (dt.textContent || "").trim(), value: (dt.nextElementSibling?.textContent || "").trim() }))
-          : [];
-        return { count: notes.length, rows, charts: primary ? primary.querySelectorAll("svg").length : -1 };
+        const text = notes.length === 1 ? (notes[0].textContent || "").replace(/\s+/gu, " ").trim() : "";
+        const section = primary ? primary.querySelector('[data-testid="public-status-only"]') : null;
+        return {
+          count: notes.length,
+          text,
+          metaLines: section ? section.querySelectorAll("dl, dt").length : 0,
+          charts: primary ? primary.querySelectorAll("svg").length : -1,
+        };
       });
-      const shown = (label) => notice.rows.some((row) => row.label === label && row.value);
+      // V8: the three-line notice (결정·사유·결정일) is gone from public
+      // screens; the notice is one line carrying its state, and no internal
+      // decision record may show.
       record.statusChecks = {
-        statusNoticePresent: notice.count === 1 && ["결정", "사유", "결정일"].every(shown),
+        statusNoticePresent: notice.count === 1 && notice.text.includes(STATUS_NOTICE_WORDS_V159[STATUS_NOTICE_V159.get(elementId)] || "데이터 준비 중"),
+        noDecisionMeta: notice.metaLines === 0 && !/결정일|사유/u.test(notice.text),
         chartCount0: notice.charts === 0,
         cardShowsStatus: Boolean(record.evidence.finderStatusBadge) && !record.evidence.finderHeadline,
       };
       record.evidence.statusNotice = notice;
       record.cardValueVerified = null;
       record.detailAnalysisFit = null;
-      record.analysisFit = { pass: null, kind: "status-v159", reason: "status-notice element: judged by statusNoticePresent · chartCount0 · cardShowsStatus" };
+      record.analysisFit = { pass: null, kind: "status-v159", reason: "status-notice element: judged by statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus" };
       record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)");
       Object.entries(record.statusChecks).forEach(([key, ok]) => { if (!ok) record.remainingIssue.push(`${key} failed`); });
     }

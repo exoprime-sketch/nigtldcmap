@@ -78,6 +78,11 @@ const DISPLAY_TYPES = {
 // Spec v8 (2026-09-29): options the assignment table has no column for.
 // D-004 compares technologies across price scenarios.
 const SCENARIO_V8 = new Set(["D-004"]);
+// Elements whose values describe a fixed reference country rather than the
+// page's country: every country screen shows the same rows and they are never
+// compared across countries (E-016 Korea's own TRL records, E-017 Korea
+// against four competitors).
+const REFERENCE_COUNTRY_V8 = { "E-016": "KOR", "E-017": "KOR" };
 const STRUCTURES = {
   S1: "국가×연도 관측값",
   S2: "지역×연도 관측값",
@@ -414,6 +419,7 @@ function main() {
       },
       status,
       statusNotice,
+      referenceCountryIso3: REFERENCE_COUNTRY_V8[row.elementId] || null,
       variant: row.variant,
       dedicated: DEDICATED[row.elementId] || null,
       coverage: { VNM: row.vnm, BGD: row.bgd },

@@ -37,7 +37,10 @@ import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
 import type { S2RegionObservationV159 } from "../data/structure/structureTypesV159";
 import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV124";
-import { decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { decisionPointsU3RecordsV159, decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { visualizationContractV153 } from "../data/visualization/publicVisualizationContractV153";
+import { researchRecordV132 } from "../components/data/public/ResearchPatentAnalysisV132";
+import { referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
 import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
 import SourceLineV159 from "../components/data/description/SourceLineV159";
 import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
@@ -831,7 +834,28 @@ export default function CountryDataElementPage({
       entities: bundle.entities,
       indicators: bundle.meta.indicators,
     });
-    const fromRows = decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
+    // Spec v8 ③·S4: records counted as the chart counts them (the source's
+    // own technology classification), not the adapter's generic fields.
+    if (typologyV159.displayType === "U3" && typologyV159.structure === "S4") {
+      const records = bundle.entities.flatMap((entity) => {
+        const record = researchRecordV132(entity, bundle.meta?.element.detailTemplate);
+        return record ? [{ kind: record.type, technologies: record.technologyClasses }] : [];
+      });
+      return decisionPointsU3RecordsV159(records);
+    }
+    // Spec v8 reference country (E-017): the headline is the series the
+    // primary chart draws, i.e. the rows in the contract's primary unit.
+    const reference = typologyV159.referenceCountryIso3;
+    const primaryUnit = reference ? visualizationContractV153(typologyV159.elementId)?.primary.unit : null;
+    const fromRows = decisionPointsV159(typologyV159.displayType, rows, {
+      countryIso3: countryIso3 || "VNM",
+      referenceCountryIso3: reference,
+      countryLabel: referenceSubjectLabelV159,
+      headlineIndicatorIds:
+        rows.structure === "S1" && primaryUnit
+          ? [...new Set(rows.rows.filter((row) => row.unit === primaryUnit).map((row) => row.indicatorId))]
+          : undefined,
+    });
     if (fromRows.length > 0 || layerRowsV159.length === 0) return fromRows;
     return decisionPointsV159("U2", { structure: "S2", rows: layerRowsV159 }, { countryIso3: countryIso3 || "VNM" });
   }, [bundle, countryIso3, hasPopulatedRows, layerRowsV159, typologyV159]);

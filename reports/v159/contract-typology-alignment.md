@@ -2,8 +2,8 @@
 
 `scripts/v159/align-contract-typology-v159.mjs`가 생성. 계약 행에 `displayType`·`structure`를 유형 JSON에서 복사하고, V153 `archetype`을 표출 유형 호환표로 판정한다. 계약은 화면에 맞춰 고치지 않으며, 명세가 명시한 변경(상태 안내 — 명세 v8부터 유형은 유지하고 statusNotice로 판정)만 적용한다.
 
-- 일치 138 · 상태 안내(데이터 준비 중 등) 5 · 자료 한계(전국값 대체) 8 · 결정 필요 0 · 불일치 1 / 152
-- 적용한 계약 변경 3건
+- 일치 139 · 상태 안내(데이터 준비 중 등) 5 · 자료 한계(전국값 대체) 8 · 결정 필요 0 · 불일치 0 / 152
+- 적용한 계약 변경 4건
 
 ## 적용한 계약 변경
 
@@ -12,6 +12,7 @@
 | B-014 | (V153 계약) | national-series / table | 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24) |
 | C-002 | (V153 계약) | policy-document / comparison-table | ⑥ 규칙 — 1순위 문서 카드, 부문별 배출량은 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24) |
 | C-019 | (V153 계약) | policy-document / comparison-table | ⑥ 규칙 — 1순위 제도 문서, 성·시별 시설 수는 KPI 타일·표로 보조(차트 없음, 결정 2026-09-24) |
+| E-017 | (V153 계약) | national-series / category-bar | 명세 v8 — 2020년 5개국 최고국 대비 수준 막대(한국 강조·순위 병기), 한국 기준값이라 국가 비교 제외(결정 2026-09-29) |
 
 ## 결정 필요·자료 한계·불일치
 
@@ -30,7 +31,6 @@
 | C-023 | U3 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
 | E-011 | U1 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
 | E-013 | U1 | S1 | status-note | status-note | status-notice | 데이터 준비 중 — 자료 입고 전까지 안내만 표시(유형은 유지) |
-| E-016 | U3 | S1 | policy-document | comparison-table | mismatch | 호환표 밖 조합 |
 
 ## 호환표
 

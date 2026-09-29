@@ -63,6 +63,12 @@ export interface TypologyRowV159 {
   /** Spec v2 status column, e.g. "공개", "미입고(데이터 준비 중)". */
   status: string;
   statusNotice: StatusNoticeV159;
+  /**
+   * Set when the values describe a fixed reference country (E-016, E-017:
+   * Korea) instead of the page's country: every country screen shows the same
+   * rows, the decision points read that country, and it is never compared.
+   */
+  referenceCountryIso3: string | null;
   /** Spec v2 변형·비고 column, verbatim. */
   variant: string;
   /** Set for the six elements drawn by their own component. */

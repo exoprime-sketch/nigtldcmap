@@ -27,3 +27,10 @@
   .analysis147-months { grid-template-columns: repeat(6,minmax(0,1fr)); }
   .analysis147-block { padding-top: 18px; }
 }
+/* Spec v8: the reference subject (E-017 Korea) is the highlighted bar. */
+.analysis147-bars li[data-highlight="true"] > span, .analysis147-bars li[data-highlight="true"] > strong { font-weight: 700; color: #0c5a4b; }
+.analysis147-bars li[data-highlight="true"] > i > b { background: #0c5a4b; height: 16px; top: 3px; }
+.kr159-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0 20px; }
+.kr159-figures > div { border: 1px solid #dce5e1; border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.kr159-figures dt { font-size: .84rem; color: #567067; }
+.kr159-figures dd { margin: 6px 0 0; font-size: 1.3rem; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
