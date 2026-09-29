@@ -7,6 +7,7 @@ import { DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
 import { getPublicAnalysisHeadingsV134 } from "../visualization/publicAnalysisHeadingsV134";
 import { publicIndicatorDimensionV144 } from "../visualization/publicIndicatorCopyV144";
 import reviewedCopy from "../visualization/publicIndicatorCopyV144.json";
+import { publicElementCopyV126 } from "../visualization/publicCopyRegistryV126";
 
 const registry = JSON.parse(readFileSync(resolve(__dirname, "../../../public/data/countries.json"), "utf8"));
 const defaultEntry = registry.countries.find((row: { iso3: string }) => row.iso3 === DEFAULT_COUNTRY_ISO3_V158);
@@ -31,6 +32,17 @@ describe("country-scoped reviewed copy V158", () => {
     for (const row of rows) {
       expect(headingsForCountryV158(row, DEFAULT_COUNTRY_ISO3_V158)).toBe(row);
       expect(headingsForCountryV158(row, other)?.publicAnalysisTitle).toBe("");
+    }
+  });
+
+  test("the analysis copy falls back past every reviewed line naming another country", () => {
+    for (const elementId of ["B-025", "C-008"]) {
+      const base = publicElementCopyV126(elementId, "structured-table");
+      expect(publicElementCopyV126(elementId, "structured-table", DEFAULT_COUNTRY_ISO3_V158)).toEqual(base);
+      const scoped = publicElementCopyV126(elementId, "structured-table", other);
+      expect(scoped.title).not.toContain(defaultEntry.nameKo);
+      expect(scoped.description).not.toContain(defaultEntry.nameKo);
+      expect(scoped.title.length).toBeGreaterThan(0);
     }
   });
 

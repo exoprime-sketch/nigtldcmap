@@ -5,6 +5,7 @@ import { normalizeTechnologyIdsV153 } from "../../utils/technologyIdV153";
 import { publicTextV126 } from "./publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "./publicCategoryLabelV136_2";
 import descriptionsV150 from "./datasetDescriptionsV150.json";
+import { copyForCountryV158, headingsForCountryV158, specNeedsCountryScopeV158 } from "../countries/countryCopyV158";
 
 export { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 
@@ -141,6 +142,30 @@ const CPIA_LABELS_V126: Record<string, string> = {
 const PUBLIC_FORBIDDEN_COPY_V126 =
   /\.xlsx|SDMX\s*flat|INDICATOR=|COMP_BREAKDOWN|REF_AREA=|sourceFile|sourceSheet|sourceRow|recordId|indicatorId|apiParams|packUrl|shardId|sha256|publicationDecisionId|MultiLineString|MapLibre|technical provenance/iu;
 
+/**
+ * V158: the same copy for a country the review was not written for. A reviewed
+ * line naming another target country is left out and the next source in the
+ * same order fills in, ending at the renderer's generic title and sentence.
+ */
+function publicElementCopyForCountryV158(
+  elementId: string,
+  renderer: PublicAnalyticalRendererV126,
+  country: string | null | undefined
+): PublicElementCopyV126 {
+  const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), country);
+  const reviewed = ELEMENT_COPY_V126[elementId];
+  const title = copyForCountryV158(reviewed?.title, country) || headings?.publicAnalysisTitle || RENDERER_TITLES_V126[renderer];
+  const concise = copyForCountryV158((descriptionsV150 as Record<string, string>)[elementId], country);
+  const description =
+    concise ||
+    copyForCountryV158(reviewed?.description, country) ||
+    headings?.publicQuestion ||
+    (renderer === "status-only"
+      ? "현재 공개된 실제 값이 없어 자료 확보 또는 입력 진행 상태를 안내합니다."
+      : "공개된 측정값과 분류를 선택해 시점별 변화와 항목 간 차이를 확인할 수 있습니다.");
+  return { title, description };
+}
+
 /** True when the element's analysis copy was reviewed rather than generated from its renderer. */
 export function hasReviewedElementCopyV126(elementId: string): boolean {
   return Boolean(ELEMENT_COPY_V126[elementId] || getPublicAnalysisHeadingsV134(elementId));
@@ -148,8 +173,10 @@ export function hasReviewedElementCopyV126(elementId: string): boolean {
 
 export function publicElementCopyV126(
   elementId: string,
-  renderer: PublicAnalyticalRendererV126
+  renderer: PublicAnalyticalRendererV126,
+  country?: string | null
 ): PublicElementCopyV126 {
+  if (specNeedsCountryScopeV158(country)) return publicElementCopyForCountryV158(elementId, renderer, country);
   const headings = getPublicAnalysisHeadingsV134(elementId);
   const concise = (descriptionsV150 as Record<string, string>)[elementId];
   if (concise) return { title: ELEMENT_COPY_V126[elementId]?.title || headings?.publicAnalysisTitle || RENDERER_TITLES_V126[renderer], description: concise };

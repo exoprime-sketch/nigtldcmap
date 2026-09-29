@@ -212,7 +212,7 @@ export default function PublicDataAnalysisRouterV126({
   );
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
-  const copy = publicElementCopyV126(elementId, publicRenderer);
+  const copy = publicElementCopyV126(elementId, publicRenderer, dataCountryV158);
   const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), dataCountryV158);
   const analysisTitle = headings?.publicAnalysisTitle || copy.title;
   const semanticRows = useMemo(
