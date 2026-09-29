@@ -653,9 +653,12 @@ const C_TEMPLATE_CARDS = {
     const submitter = facts.find((row) => /제출당사국.*\(1\)/u.test(row.name));
     const fields = facts.filter((row) => /대상 분야/u.test(row.name)).map((row) => row.valueText);
     const year = registered?.year || status?.year || null;
+    // V158: a delivery without the stated NMA count has no figure to put in
+    // the headline; a missing count is not 0. The generic card lists its rows.
+    if (!registered || !Number.isFinite(Number(registered.valueText))) return null;
     return {
       kind: "facts",
-      headline: { value: `${formatNumber(Number(registered?.valueText) || 0)}건`, label: `베트남 참여 NMA(SUBARU) · 플랫폼 등록 ${platform?.valueText || "?"}건 중 · ${status?.valueText || "참여 지위 미확인"} · ${year || ""}년` },
+      headline: { value: `${formatNumber(Number(registered.valueText))}건`, label: `${COUNTRY_ENTRY.nameKo} 참여 NMA(SUBARU) · 플랫폼 등록 ${platform?.valueText || "?"}건 중 · ${status?.valueText || "참여 지위 미확인"} · ${year || ""}년` },
       preview: { facts: [
         { label: "참여 지위", value: status?.valueText || "미확인" },
         { label: "제출당사국", value: submitter?.valueText || "미확인" },
@@ -1058,7 +1061,10 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     } else if (REGIONAL_LAYERS.has(elementId)) {
       card = regionalCard(elementId, item, pack, contract) || (ENTITY_RULES[elementId] ? entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]) : null);
     } else if (C_TEMPLATE_CARDS[elementId]) {
-      card = C_TEMPLATE_CARDS[elementId](pack.entities.records, item);
+      // V158: a reviewed template that finds none of its rows in a delivery
+      // (another country's sheet) hands over to the generic facts card.
+      card = C_TEMPLATE_CARDS[elementId](pack.entities.records, item)
+        || (entities.length ? entityCard(elementId, item, pack, contract, { unit: "항목", kind: "facts" }) : null);
     } else if (ENTITY_RULES[elementId]) {
       card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
     } else if (entities.length) {

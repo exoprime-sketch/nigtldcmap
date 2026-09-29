@@ -1,18 +1,26 @@
 import reviewedCopy from "./publicIndicatorCopyV144.json";
 import type { SemanticObservationV125 } from "./semanticTypesV125";
 import { publicDimensionContextV136_2, publicMeasureLabelV126 } from "./publicCopyRegistryV126";
+import { copyForCountryV158 } from "../countries/countryCopyV158";
 
 const copy: Record<string, Record<string, string>> = reviewedCopy;
 
-/** Explicit source phrases only. Never shorten unknown dimensions by length. */
-export function publicIndicatorDimensionV144(elementId: string, value: string): string {
-  return copy[elementId]?.[value] ?? value;
+/**
+ * Explicit source phrases only. Never shorten unknown dimensions by length.
+ * V158: the phrases were reviewed for the default country; on another
+ * country's rows a phrase naming a different country gives way to the
+ * delivered value.
+ */
+export function publicIndicatorDimensionV144(elementId: string, value: string, country?: string | null): string {
+  const reviewed = copy[elementId]?.[value];
+  if (reviewed === undefined) return value;
+  return country && reviewed && !copyForCountryV158(reviewed, country) ? value : reviewed;
 }
 
-export function publicIndicatorContextV144(elementId: string, labels: Record<string, string>): string[] {
+export function publicIndicatorContextV144(elementId: string, labels: Record<string, string>, country?: string | null): string[] {
   const values = Object.entries(labels).flatMap(([key, original]) => {
     if (["year", "period"].includes(key)) return [];
-    const value = publicIndicatorDimensionV144(elementId, original);
+    const value = publicIndicatorDimensionV144(elementId, original, country);
     // SSP codes identify a scientific scenario, not an internal record ID.
     return /^SSP[1-5](?:[-–]\d(?:\.\d)?)?$/u.test(value)
       ? [value] : publicDimensionContextV136_2({ [key]: value });
@@ -24,7 +32,7 @@ export function publicIndicatorSeriesV144(row: SemanticObservationV125): string 
   if (!copy[row.elementId]) return row.displayLabel || row.semanticMeasure.labelKo;
   const parts = Object.entries(row.dimensionLabels)
     .filter(([key]) => !["year", "period", "technology"].includes(key))
-    .map(([, value]) => publicIndicatorDimensionV144(row.elementId, value))
+    .map(([, value]) => publicIndicatorDimensionV144(row.elementId, value, row.countryIso3))
     .filter(Boolean);
   return [publicMeasureLabelV126(row.semanticMeasure.labelKo), ...new Set(parts)].join(" · ");
 }

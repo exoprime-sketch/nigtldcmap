@@ -78,6 +78,7 @@ import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicInd
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { useCountryCardSpecV158, useCountryTypologyV158, useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import { variantForCountryV158 } from "../templates/variantCountryScopeV158";
+import { headingsForCountryV158 } from "../../../data/countries/countryCopyV158";
 import { GENERIC_BODY_VARIANTS_V159 } from "../templates/templateVariantsV159";
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
@@ -171,7 +172,8 @@ export default function PublicDataAnalysisRouterV126({
   // V159: the display type picks the template, the element's variant the body.
   // V158: the type and variant as seen from the page's country.
   const typology = useCountryTypologyV158(elementId);
-  const variantEntry = variantForCountryV158(elementId, useDataCountryV158());
+  const dataCountryV158 = useDataCountryV158();
+  const variantEntry = variantForCountryV158(elementId, dataCountryV158);
   const cardSpec = useCountryCardSpecV158(elementId);
   // The shared climate-technology filter narrows the rows before any body
   // reads them, so every variant sees the same selection.
@@ -211,7 +213,7 @@ export default function PublicDataAnalysisRouterV126({
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
   const copy = publicElementCopyV126(elementId, publicRenderer);
-  const headings = getPublicAnalysisHeadingsV134(elementId);
+  const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), dataCountryV158);
   const analysisTitle = headings?.publicAnalysisTitle || copy.title;
   const semanticRows = useMemo(
     () =>

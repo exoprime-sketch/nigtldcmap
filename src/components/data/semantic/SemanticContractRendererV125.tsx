@@ -28,6 +28,8 @@ import type {
 import { getPublicFixedDomainV127 } from "../../../data/visualization/publicVisualizationRegistryV126";
 import { publicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import { getPublicAnalysisHeadingsV134 } from "../../../data/visualization/publicAnalysisHeadingsV134";
+import { headingsForCountryV158 } from "../../../data/countries/countryCopyV158";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import {
   publicDimensionValueV134,
 } from "../../../data/visualization/publicCopyRegistryV126";
@@ -118,7 +120,7 @@ export default function SemanticContractRendererV125({
   const textRows = presentRows.filter(
     (row) => typeof row.value !== "number"
   );
-  const publicHeadings = getPublicAnalysisHeadingsV134(contract.elementId);
+  const publicHeadings = headingsForCountryV158(getPublicAnalysisHeadingsV134(contract.elementId), useDataCountryV158());
   // One selected category over many periods: B-033 with a province chosen
   // showed a single bar for the chosen year, not the 2001-2024 series the
   // delivery holds for that province.

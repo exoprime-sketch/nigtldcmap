@@ -37,25 +37,14 @@ import type {
   TypologyRowV159,
   UseCaseV159,
 } from "./specTypesV159";
-import {
-  DEFAULT_COUNTRY_ISO3_V158,
-  normalizeCountryIso3V158,
-} from "../countryContext";
+import { normalizeCountryIso3V158 } from "../countryContext";
+import { SPEC_AUTHORED_COUNTRIES_V158, specNeedsCountryScopeV158 } from "../countries/countryCopyV158";
 import { otherCountryTermsV158 } from "../countries/countryTermsV158";
-import {
-  scopeCasesToCountryV158,
-  scopeTextToCountryV158,
-  shouldScopeTextV158,
-} from "../countries/countryTextScopeV158";
+import { scopeCasesToCountryV158, scopeTextToCountryV158 } from "../countries/countryTextScopeV158";
 import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPolicyV126";
 import { publicTitleFromRawLabelV158 } from "../countries/publicLabelsV122";
 
-/**
- * The countries the V159 spec was written for. The import records this as
- * `useCasesV159.json` `registryCountries` (the default country); a unit test
- * keeps the two equal without pulling that 1 MB chunk into the main bundle.
- */
-export const SPEC_AUTHORED_COUNTRIES_V158: readonly string[] = [DEFAULT_COUNTRY_ISO3_V158];
+export { SPEC_AUTHORED_COUNTRIES_V158, specNeedsCountryScopeV158 };
 
 const COUNTRY_SPECIFIC_V158 = new Set<string>(countrySpecificJson.elementIds);
 
@@ -65,12 +54,6 @@ export function countrySpecificElementIdsV158(): string[] {
 
 export function isCountrySpecificElementV158(elementId: string): boolean {
   return COUNTRY_SPECIFIC_V158.has(String(elementId || "").toUpperCase());
-}
-
-/** True when spec text must be scoped for this country. */
-export function specNeedsCountryScopeV158(country: string | null | undefined): boolean {
-  const iso3 = normalizeCountryIso3V158(country) || DEFAULT_COUNTRY_ISO3_V158;
-  return shouldScopeTextV158(iso3, SPEC_AUTHORED_COUNTRIES_V158);
 }
 
 /** The parts of a catalog item this layer reads. */

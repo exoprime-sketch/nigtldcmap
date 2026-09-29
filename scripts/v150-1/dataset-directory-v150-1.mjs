@@ -103,7 +103,7 @@ function build() {
   }
   console.log(`dataset directory (${COUNTRY_ISO3}): ${items.length} items, ${items.filter((item) => item.map).length} map items, ${new Set(items.map((item) => item.updatedAt)).size} distinct dates, git ${available ? "history" : "unavailable"} -> ${PUBLIC_FILE}`);
   const integrityDataArg = relativePath(ROOT, DATA).split(sep).join("/");
-  console.log(`정리: node scripts/generate-vietnam-asset-integrity-v133.mjs --data ${integrityDataArg} 로 integrity를 갱신한 뒤 ${IS_DEFAULT_COUNTRY ? "두 파일을" : "파일을"} 함께 커밋`);
+  console.log(`정리: node scripts/generate-vietnam-asset-integrity-v133.mjs ${IS_DEFAULT_COUNTRY ? "" : `--country ${COUNTRY_ISO3.toLowerCase()} `}--data ${integrityDataArg} 로 integrity를 갱신한 뒤 ${IS_DEFAULT_COUNTRY ? "두 파일을" : "파일을"} 함께 커밋`);
 }
 
 function verify() {

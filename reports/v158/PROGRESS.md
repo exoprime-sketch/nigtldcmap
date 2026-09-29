@@ -19,16 +19,21 @@
 
 ## 완료
 - B1(#38)·Vercel 단일화(#40) 병합
-- PR-A 작성: `docs/DEPLOYMENT_CAPACITY_V158.md`, `scripts/v158/deployment-capacity-v158.mjs`, `reports/v158/deployment-capacity-v158.json`
+- PR-A(#44, `docs/v158-b2a-deploy-capacity`) push·Preview·보고 — "PR #44 병합" 대기
   - build 948.7 MB, 10개국 2.19~7.12 GB → 압축 시 0.28~1.19 GB
+- PR-B 구현(`feat/v158-b2b-country-layer`, PR-A 위에 쌓음)
+  - 커밋 `1700032`(일반화 계층·BGD 파생 자산) → main(#43) merge `651406b` → 비교 시계열 재생성
+  - #43(⓪ 폐지·statusNotice) 반영: 국가별 유형은 그 나라 카탈로그 상태로 안내(미입고 → 데이터 준비 중)
+  - 추가 수정: 처음 연 `?country=` 재해석(App), 국가 목록 갱신 훅(찾기·상세·다운로드), 자기 국가 없는 비교 블록 숨김
+  - 점검 스크립트: `country-qa-v158`(BGD 화면 QA), `fake-country-check-v158`(가짜 3번째 국가), 화면 서명 해시 경로 수정
+  - 검증: tsc 0 · 단위 658/658 · 가짜 3번째 국가 11/11(merge 전 빌드)
 
-## 진행 중
-- PR-A push·PR·보고
+## 진행 중(2026-09-29 17시, 컨텍스트 압축 뒤 재확인)
+- PR-B 검증: 새 main 기준 BGD QA·가짜 국가 재실행 → VNM 화면 서명(베이스 26df689 vs PR) → `finalize:v151` 1회 → REVIEW·PR_BODY·CHANGELOG → push(PR 생성은 #44 병합 뒤)
 
 ## 대기·결정 필요
 - PR-A 결정 3건: 압축안 채택, 기존 다운로드 주소 처리, Hobby 비상업 조건
-- 동시 작업과 겹치는 파일
-  - P8(`RealMapExplorerPage`·`DetailLocationMapV148`·`publicMapWorkspaceV126`·v138 빌더)
-  - #42(`vietnamCountryDataProviderV122`)
-  - ②(라우터·출처 패널·템플릿 변형·추적표)
-  - 상대 PR이 병합된 뒤 main을 merge해서 푼다.
+- **본부장 2026 제외 6건의 BGD 적용 여부**(PR-D 전): BGD는 A-017(관측 72)·E-008(개체 544) 자료 있음, 나머지 4건 미입고. 현재 코드는 각 나라 카탈로그 상태를 따르므로 BGD 공개 시 A-017·E-008이 보인다.
+- 베트남 파생 자산 불일치(main 기존): semantic 계약 1파일·TS 모듈·dataset-directory 6요소(A-017·C-015·D-024·E-008·E-016·E-017)가 생성기 출력과 다름. main 코드 = PR 코드 출력(바이트 동일) → fix-forward 대상
+- PR-D로 넘긴 것: 전역 검색 국가 범위, 홈 `?country=` 보존, 비교 헤드라인 교정 12건 승인, BGD 홈 지도 기본 요소
+- 동시 작업과 겹치는 파일: P8(지도), #42(출처 표기·provider), #45(e2e). 상대 PR 병합 뒤 main을 merge해서 푼다.
