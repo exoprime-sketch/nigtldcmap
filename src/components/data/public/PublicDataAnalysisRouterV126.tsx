@@ -76,7 +76,7 @@ import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "../layers/detail
 import { useDetailFoldV160 } from "./detailFoldContextV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
-import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
+import { getCardSpecV159, getTypologyV159 } from "../../../data/spec/datasetSpecV159";
 import {
   elementVariantV159,
   GENERIC_BODY_VARIANTS_V159,
@@ -84,7 +84,8 @@ import {
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
-import U0StatusV159 from "../templates/U0StatusV159";
+import StatusNoticeV159 from "../templates/StatusNoticeV159";
+import { KoreaTechLevelV159, KoreaTechReadinessV159 } from "./KoreaReferenceAnalysisV159";
 import U1CountryProfileV159 from "../templates/U1CountryProfileV159";
 import U2RegionalV159 from "../templates/U2RegionalV159";
 import U3TechnologyV159 from "../templates/U3TechnologyV159";
@@ -414,6 +415,10 @@ export default function PublicDataAnalysisRouterV126({
         );
       case "transmission-network":
         return isTransmissionDeliveryV140(entities) ? <TransmissionNetworkSummaryV140 entities={entities} /> : null;
+      case "korea-tech-readiness":
+        return <KoreaTechReadinessV159 entities={entities} />;
+      case "korea-tech-level":
+        return <KoreaTechLevelV159 rows={semanticRows} />;
       case "lcoe-range":
         return <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
       case "ndc-targets":
@@ -503,14 +508,16 @@ export default function PublicDataAnalysisRouterV126({
     return null;
   };
 
-  const isStatusV159 = typology?.displayType === "U0";
+  // Spec v8: a data-pending (or excluded) element keeps its U1-U6 template
+  // shell, with the notice in place of the analysis.
+  const isStatusV159 = Boolean(typology?.statusNotice);
   const earlyBody = variantEntry?.phase === "early" ? renderVariantV159(variantEntry.variant) : null;
   const lateBody =
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
   const body = isStatusV159 && typology ? (
-    <U0StatusV159 typology={typology} />
+    <StatusNoticeV159 typology={typology} />
   ) : (
     earlyBody ??
     renderGenericShapeV159() ??
@@ -584,6 +591,8 @@ export default function PublicDataAnalysisRouterV126({
           entities={entities}
           spatialUnit={spatialUnit}
           aggregationBasis={aggregationBasis}
+          pending={typology?.statusNotice === "data-pending"}
+          pendingSourceLabel={typology?.statusNotice === "data-pending" ? getCardSpecV159(elementId)?.sourceLabel : null}
         />
         {/* A status screen states the decision only; its rows are not tabled (V159). */}
         {elementId !== "D-011" && !isStatusV159 ? (
@@ -622,9 +631,6 @@ export default function PublicDataAnalysisRouterV126({
       return <U5ProjectsFinanceV159 context={templateContext}>{content}</U5ProjectsFinanceV159>;
     case "U6":
       return <U6PolicyV159 context={templateContext}>{content}</U6PolicyV159>;
-    default:
-      // ⓪: the shell without the technology filter around the statement.
-      return <U1CountryProfileV159 context={templateContext}>{content}</U1CountryProfileV159>;
   }
 }
 

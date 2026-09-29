@@ -45,6 +45,13 @@ const PENDING_CASES_PATH = resolve(OUT_DIR, "useCasesPendingV159.json");
 const OVERRIDES = JSON.parse(readFileSync(resolve(OUT_DIR, "specTextOverridesV159.json"), "utf8")).overrides;
 const CORRECTIONS_DOC = resolve(ROOT, "docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md");
 const appliedOverrides = new Set();
+// V156-E: whether an element is excluded is a publication decision, kept in
+// the decision file the ETL reads. The spec sheet's status column records the
+// decision as it stood (제외 0918/0923); the decision file says whether it still
+// stands, and for a lifted one whether there is data and which screen it gets.
+const EXCLUSION_DECISION = JSON.parse(readFileSync(resolve(ROOT, "config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
+const ACTIVE_EXCLUSIONS = new Map(EXCLUSION_DECISION.exclusions.map((row) => [row.elementId, row]));
+const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) => [row.elementId, row]));
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
@@ -67,8 +74,15 @@ const DISPLAY_TYPES = {
   "④": { code: "U4", label: "시설·기관·인프라 위치" },
   "⑤": { code: "U5", label: "사업·재원" },
   "⑥": { code: "U6", label: "제도·규제·리스크" },
-  "⓪": { code: "U0", label: "상태 안내" },
 };
+// Spec v8 (2026-09-29): options the assignment table has no column for.
+// D-004 compares technologies across price scenarios.
+const SCENARIO_V8 = new Set(["D-004"]);
+// Elements whose values describe a fixed reference country rather than the
+// page's country: every country screen shows the same rows and they are never
+// compared across countries (E-016 Korea's own TRL records, E-017 Korea
+// against four competitors).
+const REFERENCE_COUNTRY_V8 = { "E-016": "KOR", "E-017": "KOR" };
 const STRUCTURES = {
   S1: "국가×연도 관측값",
   S2: "지역×연도 관측값",
@@ -367,17 +381,41 @@ function main() {
   const typology = typologyRows.map((row) => {
     const specRow = specById.get(row.elementId);
     if (!specRow) throw new Error(`${row.elementId}: not in spec sheet`);
-    // Every excluded element (status 제외, by the spec sheet 0918 or the user
-    // 0923) is a ⓪ status screen, whatever type the assignment table gave it
-    // (decision 2026-09-24). The spec's own type is kept as specDisplayType.
-    const specType = DISPLAY_TYPES[row.displayKey];
-    const type = /^제외/u.test(row.status) ? DISPLAY_TYPES["⓪"] : specType;
-    const scenario = [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
+    // Spec v8 (2026-09-29): every element keeps its assigned type (U1-U6);
+    // the ⓪ status type is gone. Whether the screen is a notice instead of
+    // the analysis is `statusNotice`: "data-pending" when the data has not
+    // been delivered (status 미입고, or an exclusion the decision file lifted
+    // without data), "excluded" for an exclusion that still stands.
+    const type = DISPLAY_TYPES[row.displayKey];
+    let status = row.status;
+    let statusNotice = /^미입고/u.test(row.status) ? "data-pending" : null;
+    const lift = LIFTED_EXCLUSIONS.get(row.elementId);
+    const active = ACTIVE_EXCLUSIONS.get(row.elementId);
+    if (active) {
+      // An exclusion the decision file holds now wins over the table's status
+      // (2026-09-29: six re-excluded for 2026, C-021 among them though the
+      // table says 미입고). The element keeps its type, structure and contract
+      // so the design is reused when it is published.
+      status = `제외(${active.basis} ${active.decidedAt.slice(5).replace("-", "")})`;
+      statusNotice = "excluded";
+    } else if (/^제외/u.test(row.status)) {
+      if (!lift) {
+        statusNotice = "excluded";
+      } else if (!lift.dataPresent) {
+        status = "미입고(데이터 준비 중)";
+        statusNotice = "data-pending";
+      } else {
+        const liftType = lift.displayTypeAfterLift ? DISPLAY_TYPES[lift.displayTypeAfterLift] : type;
+        if (liftType?.code !== type.code) throw new Error(`${row.elementId}: lift decision type differs from the assignment table`);
+        status = `공개(제외 해제 ${lift.liftedAt.slice(5).replace("-", "")})`;
+      }
+    }
+    const scenario = SCENARIO_V8.has(row.elementId) || [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
     return {
       elementId: row.elementId,
       displayType: type.code,
       displayTypeLabel: type.label,
-      specDisplayType: specType.code,
+      specDisplayType: type.code,
       structure: row.structure,
       structureLabel: STRUCTURES[row.structure],
       flags: {
@@ -387,7 +425,9 @@ function main() {
         categorical: /범주형/.test(row.variant),
         scenario,
       },
-      status: row.status,
+      status,
+      statusNotice,
+      referenceCountryIso3: REFERENCE_COUNTRY_V8[row.elementId] || null,
       variant: row.variant,
       dedicated: DEDICATED[row.elementId] || null,
       coverage: { VNM: row.vnm, BGD: row.bgd },
@@ -430,6 +470,7 @@ function main() {
       baseName: row.baseName,
       shortDefinitionCard: row.shortDefinitionCard,
       displayType: typologyById.get(row.elementId).displayType,
+      statusNotice: typologyById.get(row.elementId).statusNotice,
       users: [...users.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([user]) => user),
     };
   });

@@ -7,12 +7,17 @@
  */
 
 /** Display type: the user question a screen answers (spec v2 §1). */
-export type DisplayTypeV159 = "U0" | "U1" | "U2" | "U3" | "U4" | "U5" | "U6";
+export type DisplayTypeV159 = "U1" | "U2" | "U3" | "U4" | "U5" | "U6";
+/**
+ * Why a screen shows a notice instead of the analysis (spec v8, 2026-09-29;
+ * replaces the ⓪ status type): the data has not been delivered yet, or the
+ * element is excluded from publication. null for every other element.
+ */
+export type StatusNoticeV159 = "data-pending" | "excluded" | null;
 /** Data structure: the delivery shape the adapters normalise (spec v2 §2). */
 export type StructureV159 = "S1" | "S2" | "S3" | "S4";
 
 export const DISPLAY_TYPE_LABELS_V159: Record<DisplayTypeV159, string> = {
-  U0: "상태 안내",
   U1: "국가 수준·추세",
   U2: "지역·입지",
   U3: "기술별 비교",
@@ -21,9 +26,8 @@ export const DISPLAY_TYPE_LABELS_V159: Record<DisplayTypeV159, string> = {
   U6: "제도·규제·리스크",
 };
 
-/** Circled numerals the plan uses for the six types (⓪ for status). */
+/** Circled numerals the plan uses for the six types. */
 export const DISPLAY_TYPE_MARKS_V159: Record<DisplayTypeV159, string> = {
-  U0: "⓪",
   U1: "①",
   U2: "②",
   U3: "③",
@@ -51,13 +55,20 @@ export interface TypologyRowV159 {
   elementId: string;
   displayType: DisplayTypeV159;
   displayTypeLabel: string;
-  /** The type the spec v2 table assigned; differs where an excluded element became ⓪. */
+  /** The type the assignment table gave; equal to displayType since spec v8 (no ⓪). */
   specDisplayType: DisplayTypeV159;
   structure: StructureV159;
   structureLabel: string;
   flags: TypologyFlagsV159;
-  /** Spec v2 status column, e.g. "공개", "제외(사용자 0923)". */
+  /** Spec v2 status column, e.g. "공개", "미입고(데이터 준비 중)". */
   status: string;
+  statusNotice: StatusNoticeV159;
+  /**
+   * Set when the values describe a fixed reference country (E-016, E-017:
+   * Korea) instead of the page's country: every country screen shows the same
+   * rows, the decision points read that country, and it is never compared.
+   */
+  referenceCountryIso3: string | null;
   /** Spec v2 변형·비고 column, verbatim. */
   variant: string;
   /** Set for the six elements drawn by their own component. */
@@ -121,6 +132,7 @@ export interface DatasetCardSpecV159 {
   baseName: string;
   shortDefinitionCard: string;
   displayType: DisplayTypeV159;
+  statusNotice: StatusNoticeV159;
   /** Primary users across the element's cases, most frequent first. */
   users: string[];
 }

@@ -12,13 +12,13 @@ describe("V159 dataset typology", () => {
   test("152 rows, every row has a display type and a structure", () => {
     expect(typology).toHaveLength(152);
     for (const row of typology) {
-      expect(["U0", "U1", "U2", "U3", "U4", "U5", "U6"]).toContain(row.displayType);
+      expect(["U1", "U2", "U3", "U4", "U5", "U6"]).toContain(row.displayType);
       expect(["S1", "S2", "S3", "S4"]).toContain(row.structure);
     }
   });
 
-  test("six display types plus status and four structures, no more", () => {
-    expect(new Set(typology.map((row) => row.displayType)).size).toBeLessThanOrEqual(7);
+  test("six display types and four structures, no more (spec v8: no ⓪)", () => {
+    expect(new Set(typology.map((row) => row.displayType)).size).toBeLessThanOrEqual(6);
     expect(new Set(typology.map((row) => row.structure)).size).toBeLessThanOrEqual(4);
   });
 
@@ -33,7 +33,7 @@ describe("V159 dataset typology", () => {
       const type = getTypologyV159(row.elementId)!;
       expect(row.displayType).toBe(type.displayType);
       expect(row.structure).toBe(type.structure);
-      if (type.displayType === "U0") expect(row.primary.type).toBe("status-note");
+      if (type.statusNotice === "data-pending") expect(row.primary.type).toBe("status-note");
     }
   });
 });
@@ -59,7 +59,10 @@ describe("V159 dataset spec", () => {
   });
 
   test("every card spec row exists and names the same type", () => {
-    for (const row of typology) expect(getCardSpecV159(row.elementId)?.displayType).toBe(row.displayType);
+    for (const row of typology) {
+      expect(getCardSpecV159(row.elementId)?.displayType).toBe(row.displayType);
+      expect(getCardSpecV159(row.elementId)?.statusNotice).toBe(row.statusNotice);
+    }
   });
 });
 

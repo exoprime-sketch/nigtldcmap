@@ -36,14 +36,20 @@ export function candidatePublicElementIds(): string[] {
     .sort();
 }
 
-/** Elements decided not to be offered, with the decision their notice states. */
-export function candidateExcludedElements(): Array<{ elementId: string; decidedAt: string; reason: string }> {
+/**
+ * Elements decided not to be offered. V156-E (기준서 v1.1 표 13): the notice
+ * states `publicNotice` only; the decision record (reason, basis, date) is
+ * carried so a test can check it is NOT shown.
+ */
+export function candidateExcludedElements(): Array<{ elementId: string; decidedAt: string; reason: string; basis: string; publicNotice: string }> {
   return candidateCatalog()
     .filter((row) => NON_PUBLIC_STATUSES.has(String(row.publicStatus || "")))
     .map((row) => ({
       elementId: row.elementId,
       decidedAt: String(row.exclusion?.decidedAt || ""),
       reason: String(row.exclusion?.reason || ""),
+      basis: String(row.exclusion?.basis || ""),
+      publicNotice: String(row.exclusion?.publicNotice || ""),
     }))
     .sort((a, b) => a.elementId.localeCompare(b.elementId));
 }

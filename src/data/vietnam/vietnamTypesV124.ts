@@ -26,9 +26,12 @@ export type VietnamElementPublicStatusV124 =
 
 /** The decision behind `publicStatus: "excluded"`, as the catalog records it. */
 export interface VietnamElementExclusionV156 {
+  /** Internal record of the decision - kept, never shown on a public page. */
   reason: string;
   basis: string;
   decidedAt: string;
+  /** V156-E: the one line the detail page states (e.g. "2026년 제공 대상이 아닌 데이터입니다."). */
+  publicNotice?: string;
   /** What the measurement said before the decision was applied. */
   measuredStatus: string;
   measuredPresence: string;

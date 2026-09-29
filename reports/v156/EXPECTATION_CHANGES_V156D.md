@@ -52,3 +52,15 @@
 - 용어집: E-011 안내 카드 사유의 `NRI`는 #32(V159)가 등록한 항목을 쓴다(이 PR에서 따로 넣었던 같은 ID는 main 병합 후 중복이라 제거)
 - 게이트 밖 옛 감사(v124–v135의 release·finder-ux·limitations·public-content·public-screens·routes·semantic·visual 등)의 152 기준값은 이번에 바꾸지 않았다(게이트 미포함, 이미 V139 이전 기대값으로 실패하는 감사 포함)
 
+
+## V156-E 재제외 6건 (2026-09-29, feat/v156-e-exclusions-lift)
+
+- 사유: 본부장 결정(2026-09-29) — 2026년 미적용 6건(A-017·C-020·C-021·E-008·E-016·E-017), 용역사 기준서 v1.1과 동일. 같은 날 앞서 한 10건 전체 해제(공개 152)를 이 6건만 되돌린다. C-015·D-024는 공개 유지.
+- 공개 집합: 152 → **146**(카탈로그 파생, 숫자를 적은 검사 없음). 다운로드 가능 146 → **143**, 카드 요약 152 → **146**, 미입고 안내 5 → **3**(C-023·E-011·E-013).
+- 판정 규칙·검사 수 불변. 제외 6건은 V156-D와 같은 경로(목록·검색·카테고리·홈·다운로드 비표시 + 직접 URL 안내 카드)로 판정 — `exclusions:v156` 13/13.
+- C-021은 제외 이력이 없던 요소라 이번에 처음 `exclusions`에 들어간다(명세 상태 열은 '미입고'). 제외 결정이 표의 상태보다 우선한다.
+- 제외 안내 카드(2026-09-29, 기준서 v1.1 표 13): 제목 + 공개 문구 1줄("2026년 제공 대상이 아닌 데이터입니다.", 결정 파일 `publicNotice` → 카탈로그 `exclusion.publicNotice`). 결정 구분·사유·결정일 줄 삭제 — 내부 사유 원문은 결정 파일·카탈로그에 보존, 화면 비표시.
+  - 공용 판정 `excludedNoticeVerdictV156`(exclusions·entity-cards·glossary·portfolio 감사와 analysis QA가 공유): '결정·사유·결정일 표시 + 결정 파일과 일치'(문제 5종) → '공개 문구 표시 + 결정 파일과 일치 + 결정 기록(사유 원문·근거·결정일·결정/사유/결정일 표기) 비표시'(문제 3종, 기록 노출은 5가지 신호를 모두 봄). 차트·표·다운로드·분석 0 검사 불변. 옛 3줄 카드는 새 판정에서 실패함을 확인.
+  - analysis QA 제외 요소 검사: `exclusionNoticePresent` → `publicNoticePresent` + `noDecisionMeta`(5 → 6개). `exclusions:v156`의 `EXCLUDED_DETAIL_NOTICE` 기대 문구·증거 필드 갱신(검사 수 13 불변).
+  - ETL: 제외 결정에 `publicNotice`가 없으면 중단(사유·결정일과 같은 필수 필드).
+- e2e(advisory) 제외 요소 테스트(2026-09-29, PR #43 CI): `e2e/detail-all.spec.ts` 'excluded elements'(6건)·`e2e/detail-reference.spec.ts` 'A-017 states the year…'(제외 분기)가 옛 카드의 결정·사유·결정일 칸을 찾아 실패 → 새 카드 기준으로 교체: 공개 문구(`data-exclusion-field="publicNotice"`)가 카탈로그 `exclusion.publicNotice`와 같음 + 결정 칸 0개 + 카드 글에 사유 원문·결정일·근거·'결정일/사유' 표기 없음. 분석 루트 0·표/차트 0·다운로드 0·런타임 오류 0 검사는 그대로. 테스트 삭제 0, 로컬 후보 빌드에서 7/7 통과. `e2e/helpers.ts` `candidateExcludedElements`에 `basis`·`publicNotice` 추가.

@@ -7,15 +7,15 @@
     "type": "summary",
     "audit": "portfolio-analysis:v132",
     "status": "PASS",
-    "passed": 12,
+    "passed": 13,
     "failed": 0,
-    "total": 12,
+    "total": 13,
     "failedChecks": [],
     "portfolioElementCount": 17,
     "entityBearingPortfolioElementCount": 17,
     "portfolioListBeforeSummaryCount": 0,
-    "researchListBeforeAnalysisCount": 0,
-    "e008Result": "PASS",
+    "researchListBeforeAnalysisCount": 1,
+    "e008Result": "FAIL",
     "runtimeFailure": null
   },
   "checks": [
@@ -86,29 +86,29 @@
     {
       "type": "check",
       "audit": "portfolio-analysis:v132",
+      "name": "EXCLUDED_PORTFOLIO_ROUTE_NOTICE_V156",
+      "status": "PASS",
+      "actual": [],
+      "expected": {
+        "routes": [],
+        "notice": "card, no chart, no download link"
+      }
+    },
+    {
+      "type": "check",
+      "audit": "portfolio-analysis:v132",
       "name": "E008_ANALYSIS_BEFORE_LIST",
       "status": "PASS",
       "actual": {
-        "sections": {
-          "e008-breakdown": true,
-          "e008-collaboration": true,
-          "e008-list": true
-        },
-        "trendOrNote": true,
-        "ordered": true,
-        "filterCount": 4,
-        "listItemCount": 6,
-        "internalTitleCount": 0
+        "excluded": true,
+        "notice": {
+          "pass": true,
+          "problems": []
+        }
       },
       "expected": {
-        "sections": {
-          "e008-breakdown": true,
-          "e008-collaboration": true,
-          "e008-list": true
-        },
-        "trendOrNote": "a national trend, or the note that none is published",
-        "ordered": true,
-        "filterCount": ">= 3"
+        "excluded": true,
+        "notice": "card, no chart, no download link"
       }
     },
     {
@@ -116,16 +116,28 @@
       "audit": "portfolio-analysis:v132",
       "name": "RESEARCH_LIST_BEFORE_ANALYSIS",
       "status": "PASS",
-      "actual": true,
-      "expected": true
+      "actual": {
+        "excluded": true,
+        "notice": true
+      },
+      "expected": {
+        "excluded": true,
+        "notice": true
+      }
     },
     {
       "type": "check",
       "audit": "portfolio-analysis:v132",
       "name": "E008_PUBLIC_TITLE_POLICY",
       "status": "PASS",
-      "actual": 0,
-      "expected": 0
+      "actual": {
+        "excluded": true,
+        "notice": true
+      },
+      "expected": {
+        "excluded": true,
+        "notice": true
+      }
     },
     {
       "type": "check",
@@ -153,7 +165,7 @@
   "portfolioElementCount": 17,
   "entityBearingPortfolioElementCount": 17,
   "portfolioListBeforeSummaryCount": 0,
-  "researchListBeforeAnalysisCount": 0,
-  "e008Result": "PASS",
+  "researchListBeforeAnalysisCount": 1,
+  "e008Result": "FAIL",
   "runtimeFailure": null
 }
