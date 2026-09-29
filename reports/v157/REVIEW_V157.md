@@ -356,3 +356,37 @@
   - 이 브랜치: 화면 문구 **0건**. 검출된 2건은 모두 자료명 `핵심광물 부존`(B-044, 표출 불가 12건의 '준비 중' 줄에 나오는 이름)으로 UI 어휘가 아니다.
   - 소스 대조: `git grep -n "핵심 레이어" -- src public` → main 1건(`RealMapExplorerPage.tsx:210`), 이 브랜치 **0건**.
 - 병합 후 같은 스캔을 다시 돌려 0건을 재확인하고 캡처 01·02를 다시 찍는다.
+
+### 4.9 병합 후 게이트가 찾아낸 것(2026-09-30)
+
+`origin/main`을 두 번 병합(#43 `26df689`, #46 `dfb6693`·#44 `5b82ea6`)하고 `finalize:v151`을 돌리는 과정에서 나온 4건이다. 실행은 4회, 매번 원인을 고친 뒤 재실행했다.
+
+| # | 무엇이 걸렸나 | 성격 | 조치 |
+| --- | --- | --- | --- |
+| 1 | `qa:analysis:v140` `mapSymbolVerified` 45건 | **검사 결함** — 값·사실을 폐지된 `항목/값/단위` 행(`.cdp-evidence-row`)에서만 읽었다. P12-C가 문장 카드로 바꾼 뒤 모든 레이어에서 행 0개 | 판정 기준 불변, 읽는 위치만 새 카드(`map-selection-lines/members/comparison-v161`) + 기존 행으로 확장 |
+| 2 | 같은 검사 `internalWording` C-003·C-017 | **실제 결함** — 상세 안내(§4.7)가 사유 문구를 그대로 보여주는데 그 문구가 원자료 열 이름(`속성20_지역_원문` 등)을 담고 있었다 | 생성기에서 사유를 "지역 열 3개가 모두 비어 있음(제공자 재납품 필요)", 재납품 기준을 "지역 열이 채워진 재납품"으로 바꾸고 재생성. 열 이름은 `criteriaEvidence.emptyRegionFields`와 재납품 요청 문서에 유지 |
+| 3 | `audit:generated-data:v133` 해시 1건 | **작업 순서** — `build:semantic:v125`를 integrity 갱신 뒤에 돌렸다 | `generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2` 재실행 → 15/15 |
+| 4 | `audit:project-scope:v130` `D023_REGION_COUNT_NOT_POINTS`, `audit:map-dedup:v130` `D023_SHARED_PROJECTS_DRAWN_BY_D018_ONLY` | **기대값 정정** — semantic 계약을 생성기로 재생성하자 D-023의 `mapLinkage`가 `panel-only` → `region-choropleth`(피처 15, 카탈로그와 동일)로 바뀌었는데, 두 감사가 규칙을 "panel-only여야 한다"는 당시 상태로 적고 있었다 | 규칙 자체로 고침: 상세 연결은 **카탈로그와 같아야 하고 `point`·`cluster`·`line`·`regional-scope`는 금지**. 지점 자격 0건·D-018 공유사업 미표출·프리셋 미지정 조건은 그대로 |
+
+- 1·4번은 기대값·검사 코드 변경이므로 여기에 사유를 남긴다. **판정을 느슨하게 한 것은 없다**(1번은 같은 사실을 다른 마크업에서 읽고, 4번은 금지 대상을 더 명시적으로 적었다).
+- 2번의 문구 변경으로 `map-content-contract-v157.json`의 C-003·C-017 `reason` 2줄, `publicMapTargetsV138.json`의 같은 2건 `reason`·`requiredAsset`이 바뀌었다. **표출 여부(60/12)·`boundaryPolicy34`·행 수(72)는 변동 없다.**
+
+#### 파생 자산 재생성(#46 원칙)
+
+- `build:map-targets:v138` · `build:dataset-directory:v150` · `build:semantic:v125`를 생성기 그대로 실행하고 수동 편집은 하지 않았다.
+- 활성 레이어 60 기준 대조: `mapLinkage.enabled` **60/60 일치**(한쪽만 있는 요소 0), `featureCount` 불일치 0, 생성 TS 모듈 `spatiallyLinked` true 60 · false 92(합 152). 변경 24건 = 신규 등록 21건(false→true) + 지도 해제 3건(C-009·C-010·C-019, true→false).
+
+#### 게이트 밖 레거시 감사(손대지 않음)
+
+- `audit:semantic:v125`·`audit:map-semantic:v125`는 `finalize:v151` 명령 목록에 없다. V125 시절 기대값(`ACTIVE_MAP_LAYERS` 기대 12개 등)이라 등록 60개 상태에서 실패한다. 기존 '구 감사' 범주로 두고 이번 PR에서 바꾸지 않았다.
+
+#### 최종 게이트 결과(4회차, 2026-09-30)
+
+| 단계 | 결과 |
+| --- | --- |
+| `verify:dataset-directory:v150` | PASS |
+| `finalize:v136` | **80/80 PASS** |
+| `qa:role-split:v140` | **53/53 PASS** |
+| `qa:analysis:v140:baseline` | **PASS** — 필수 실패 34(기준선 41 이내) · 새 실패 0 · 해소 7 |
+| `audit:boundary-34:v151` | **21/22 PASS**(브라우저 1건 `--skip-browser` 생략) |
+| `audit:boundary-policy:v151-2` | **25/25 PASS** |
