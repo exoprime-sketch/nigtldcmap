@@ -46,13 +46,18 @@ export default function PublicSourcePanelV126({
   pending = false,
 }: Props) {
   const [provider, setProvider] = useState<string>("");
+  const [cardPeriod, setCardPeriod] = useState<string>("");
   useEffect(() => {
     let cancelled = false;
     setProvider("");
+    setCardPeriod("");
     if (!elementId) return undefined;
     loadCardSummariesV140()
       .then((cards) => {
-        if (!cancelled) setProvider(cards.get(elementId)?.provider || "");
+        if (cancelled) return;
+        const card = cards.get(elementId);
+        setProvider(card?.provider || "");
+        setCardPeriod(card && card.kind !== "status" ? card.period || "" : "");
       })
       .catch(() => undefined);
     return () => {
@@ -139,7 +144,9 @@ export default function PublicSourcePanelV126({
   const pendingProvider = publicTextV126(pendingSourceLabel) || "";
   // V161: a period or unit the data does not state is left out of the line
   // and the panel, never filled with a placeholder ("자료기간 미기재").
-  const period = pending ? "" : summarizeYearsV126(years);
+  // When the rows carry no year (D-018), the card's own period is the one
+  // the reader already saw on the finder card - never a placeholder.
+  const period = pending ? "" : summarizeYearsV126(years) || cardPeriod;
   const sourceLine = (
     pending
       ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`]
