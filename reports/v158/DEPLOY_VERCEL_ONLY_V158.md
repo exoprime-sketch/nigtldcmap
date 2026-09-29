@@ -26,7 +26,7 @@
 | `README.md` | 배포 문단 |
 | `docs/ROLLBACK_V128.md` | Pages 보존 항목 → Vercel |
 | `docs/v134/visual-qa-contract-v134.md` | 릴리스 경로 문장 |
-| `CLAUDE.md` | "Vercel + GitHub Pages" → "Vercel" |
+| `CLAUDE.md` | **바꾸지 않음** — 사용자 지시(2026-09-29 병합 규칙 변경): CLAUDE.md 수정은 세션4 되돌리기 PR만 한다. 3행 "Vercel + GitHub Pages" → "Vercel"은 그 PR 병합 뒤 반영할 후속 항목 |
 
 - `DEPLOYMENT_V128.md`
   - 하위 경로 build 계약(`PUBLIC_URL`, resolver)은 유지했다. 예시 주소는 Vercel이다.

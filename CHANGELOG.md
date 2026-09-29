@@ -14,7 +14,7 @@
 - 게이트 감사: `workflow:v136`·`ci-contract:v133`·`visual-qa-contract:v134`의 Pages 검사를 `PAGES_WORKFLOW_RETIRED`로 바꿨다(Pages로 배포하는 workflow 0).
 - `performance:v128` source map 정책의 근거를 `ci.yml`로 옮겼다.
 - `deployment:v128` 문자열 검사에서 국가 경로 레지스트리(`countryContext.ts`)와 테스트 파일을 예외로 두었다. #33 이후 main CI Static gate 실패를 fix-forward한 것이다.
-- 배포 문서(`DEPLOYMENT_V128`·`ROLLBACK_V128`·README·CLAUDE.md)를 Vercel 기준으로 고쳤다.
+- 배포 문서(`DEPLOYMENT_V128`·`ROLLBACK_V128`·README·`visual-qa-contract-v134`)를 Vercel 기준으로 고쳤다. CLAUDE.md는 세션4 PR 뒤에 반영한다.
 
 ## Unreleased — V160 핵심 정보 우선(홈 6질문 · 데이터 찾기 핵심 57 · 상세 3층 · 지도 기본 레이어) (PR 후보)
 
