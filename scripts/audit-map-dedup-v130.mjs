@@ -76,9 +76,14 @@ const d023DrawnShared = d023DrawnTitles.filter((title) => d023SharedTitles.has(t
 check(
   "D023_SHARED_PROJECTS_DRAWN_BY_D018_ONLY",
   d023DrawnShared.length === 0 &&
-    semanticContracts.contracts.find(
-      (contract) => contract.elementId === "D-023"
-    )?.mapLinkage?.mapMode === "panel-only" &&
+    // V157: D-023 draws a count per province; the linkage may say so, but never
+    // a point or site mode - that is what would redraw D-018's projects.
+    !["point", "cluster", "regional-scope", "line"].includes(
+      String(
+        semanticContracts.contracts.find((contract) => contract.elementId === "D-023")?.mapLinkage
+          ?.mapMode || ""
+      )
+    ) &&
     !/\|\s*["']D-023["']/u.test(presetSource),
   {
     sharedProjectsDrawnByD023: d023DrawnShared,

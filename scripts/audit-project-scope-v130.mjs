@@ -133,8 +133,11 @@ check(
   d023.filter((entity) => entity.mapEligible).length === 0 &&
     d023Catalog?.mapMode === "region-choropleth" &&
     Number(d023Catalog?.mapFeatureCount || 0) > 0 &&
-    d023Contract?.mapLinkage?.enabled === false &&
-    d023Contract?.mapLinkage?.mapMode === "panel-only",
+    // V157: D-023 is registered as a region count, so the detail linkage says
+    // what the catalog says - and never a point, cluster or site mode.
+    d023Contract?.mapLinkage?.mapMode ===
+      (d023Contract?.mapLinkage?.enabled ? d023Catalog?.mapMode : "panel-only") &&
+    !["point", "cluster", "regional-scope", "line"].includes(String(d023Contract?.mapLinkage?.mapMode || "")),
   {
     mapEligibleEntities: d023.filter((entity) => entity.mapEligible).length,
     catalogMapMode: d023Catalog?.mapMode,
