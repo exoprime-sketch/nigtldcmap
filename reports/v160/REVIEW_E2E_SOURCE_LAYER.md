@@ -13,7 +13,7 @@
 ## E2E 실패 수 before / after
 | 기준 | before | after |
 |---|---|---|
-| CI 'Playwright against the candidate build' | main 147 · #43 마지막 실행 151(= 146 상세 로드 + 화면 기준 이미지 4 + 지도 1) | PR CI 결과로 확인(PR 본문 갱신) |
+| CI 'Playwright against the candidate build' | main 147 · #43 마지막 실행 151(= 146 상세 로드 + 화면 기준 이미지 4 + 지도 1) | **7 실패 · 207 통과**(PR #45 CI) — 상세 로드 2(A-002·A-019) + 화면 기준 이미지 4(home·finder·detail-a016·detail-d011) + 지도 1(B-031) |
 | 로컬 후보 빌드(같은 명령 `npx playwright test`) | 상세 로드 146 실패(수정 전 필터 실행) | 전체 **4 실패 · 210 통과** |
 
 로컬 after 4건
