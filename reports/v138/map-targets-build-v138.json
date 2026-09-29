@@ -1,6 +1,6 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-29T22:07:56.560Z",
+  "generatedAt": "2026-09-29T23:07:01.077Z",
   "dataRoot": "/public/data/vietnam/v2",
   "targetCount": 72,
   "counts": {
@@ -888,8 +888,8 @@
       "status": "not-connected",
       "representation": "none",
       "build": "none",
-      "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
-      "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+      "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "requiredAsset": "지역 열이 채워진 재납품",
       "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
     {
@@ -970,8 +970,8 @@
       "status": "not-connected",
       "representation": "none",
       "build": "none",
-      "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
-      "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+      "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "requiredAsset": "지역 열이 채워진 재납품",
       "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
     {
@@ -1482,5 +1482,5 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json"
     }
   ],
-  "mapIndexSha256": "4401bc9bbe77ad2fb01ee7956e712e08120a1aed91dbad83085e2c494089ee2e"
+  "mapIndexSha256": "ac7d62203df50958a94c284204c02d210cc54924b155fb08c75e95f4d8547cb4"
 }

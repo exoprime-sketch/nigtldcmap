@@ -10,6 +10,7 @@
  *
  * Usage:
  *   node scripts/v158/screen-signature-v158.mjs --build tmp/build-x --out reports/v158/signature-x.json
+ *     [--screens home,finder,map,downloads,guide,detail:A-001]
  *   node scripts/v158/screen-signature-v158.mjs --compare a.json b.json
  *
  * The comparison is what the gate reads: it prints the screens whose signature
@@ -96,18 +97,25 @@ if (argv.includes("--compare")) {
     .map((item) => item.elementId)
     .sort();
 
-  const screens = [
+  // The view is read from the hash (src/app/navigation.ts); a `view=` query
+  // parameter is not a route and opens the home screen.
+  const allScreens = [
     { key: "home", url: "/" },
-    { key: "finder", url: `/?view=data&country=${COUNTRY}` },
-    { key: "map", url: `/?view=map&country=${COUNTRY}` },
-    { key: "downloads", url: `/?view=downloads&country=${COUNTRY}` },
-    { key: "guide", url: `/?view=guide&country=${COUNTRY}` },
+    { key: "finder", url: `/?country=${COUNTRY}#explorer` },
+    { key: "map", url: `/?country=${COUNTRY}#map` },
+    { key: "downloads", url: `/?country=${COUNTRY}#download` },
+    { key: "guide", url: "/#guide" },
     ...elements.map((elementId) => ({
       key: `detail:${elementId}`,
-      url: `/?view=data&country=${COUNTRY}&element=${elementId}#element-detail`,
+      url: `/?country=${COUNTRY}&element=${elementId}#element-detail`,
       elementId,
     })),
   ];
+  const onlyKeys = opt("screens", "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  const screens = onlyKeys.length > 0 ? allScreens.filter((screen) => onlyKeys.includes(screen.key)) : allScreens;
 
   const server = await startStaticBuildServer(BUILD, { port: PORT });
   const base = server.url.replace(/\/$/u, "");
