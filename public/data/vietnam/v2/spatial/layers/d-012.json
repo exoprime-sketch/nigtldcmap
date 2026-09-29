@@ -1,0 +1,691 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-012",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "d-012-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-012-located-count",
+        "measureId": "d-012-located-count",
+        "measureKey": "d-012-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 22
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00008",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00008",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "An Giang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "An Giang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00010",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00010",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00011",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00011",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00014",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00016",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00016",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00016",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "d-012-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-012_company_entry_registry",
+      "sourceRecordId": "v124-d-012-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-32": [
+      {
+        "recordId": "v124-d-012-entity-00002",
+        "label": "Super Energy - Thinh Long Phu Yen 태양광",
+        "date": "",
+        "status": "",
+        "value": "50",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-012_company_entry_registry"
+      },
+      {
+        "recordId": "v124-d-012-entity-00012",
+        "label": "B.Grimm Power - Hoa Hoi 태양광",
+        "date": "",
+        "status": "",
+        "value": "257",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-012-entity-00002",
+        "label": "Super Energy - Thinh Long Phu Yen 태양광",
+        "date": "",
+        "status": "",
+        "value": "50",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-012_company_entry_registry"
+      },
+      {
+        "recordId": "v124-d-012-entity-00012",
+        "label": "B.Grimm Power - Hoa Hoi 태양광",
+        "date": "",
+        "status": "",
+        "value": "257",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-d-012-entity-00003",
+        "label": "Mainstream Renewable Power - Dak Nong 태양광 포트폴리오",
+        "date": "",
+        "status": "",
+        "value": "405",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-d-012-entity-00003",
+        "label": "Mainstream Renewable Power - Dak Nong 태양광 포트폴리오",
+        "date": "",
+        "status": "",
+        "value": "405",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-d-012-entity-00003",
+        "label": "Mainstream Renewable Power - Dak Nong 태양광 포트폴리오",
+        "date": "",
+        "status": "",
+        "value": "405",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "v124-d-012-entity-00008",
+        "label": "Gulf Energy - TTC 산업단지 2개 태양광",
+        "date": "",
+        "status": "",
+        "value": "120",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "v124-d-012-entity-00008",
+        "label": "Gulf Energy - TTC 산업단지 2개 태양광",
+        "date": "",
+        "status": "",
+        "value": "120",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-44": [
+      {
+        "recordId": "v124-d-012-entity-00009",
+        "label": "ACWA Power - An Giang 태양광",
+        "date": "",
+        "status": "",
+        "value": "210",
+        "url": "",
+        "region": "An Giang",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-47": [
+      {
+        "recordId": "v124-d-012-entity-00009",
+        "label": "ACWA Power - An Giang 태양광",
+        "date": "",
+        "status": "",
+        "value": "210",
+        "url": "",
+        "region": "An Giang",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-d-012-entity-00010",
+        "label": "Quadran International - Binh Dinh 태양광",
+        "date": "",
+        "status": "",
+        "value": "50",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-d-012-entity-00010",
+        "label": "Quadran International - Binh Dinh 태양광",
+        "date": "",
+        "status": "",
+        "value": "50",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "v124-d-012-entity-00011",
+        "label": "AC Energy - BIM/AC Renewables 태양광",
+        "date": "",
+        "status": "",
+        "value": "330",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-d-012-entity-00011",
+        "label": "AC Energy - BIM/AC Renewables 태양광",
+        "date": "",
+        "status": "",
+        "value": "330",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-d-012-entity-00014",
+        "label": "Orsted - T&T 협력 해상풍력",
+        "date": "",
+        "status": "",
+        "value": "2000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "v124-d-012-entity-00015",
+        "label": "Mainstream Renewable Power - Phu Cuong Soc Trang",
+        "date": "",
+        "status": "",
+        "value": "1400",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "v124-d-012-entity-00015",
+        "label": "Mainstream Renewable Power - Phu Cuong Soc Trang",
+        "date": "",
+        "status": "",
+        "value": "1400",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "v124-d-012-entity-00015",
+        "label": "Mainstream Renewable Power - Phu Cuong Soc Trang",
+        "date": "",
+        "status": "",
+        "value": "1400",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-d-012-entity-00016",
+        "label": "Mainstream Renewable Power - Ben Tre 해상풍력",
+        "date": "",
+        "status": "",
+        "value": "500",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-d-012-entity-00016",
+        "label": "Mainstream Renewable Power - Ben Tre 해상풍력",
+        "date": "",
+        "status": "",
+        "value": "500",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-d-012-entity-00016",
+        "label": "Mainstream Renewable Power - Ben Tre 해상풍력",
+        "date": "",
+        "status": "",
+        "value": "500",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-d-012-entity-00022",
+        "label": "B.Grimm Power - Quang Tri 풍력",
+        "date": "",
+        "status": "",
+        "value": "48",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-d-012-entity-00022",
+        "label": "B.Grimm Power - Quang Tri 풍력",
+        "date": "",
+        "status": "",
+        "value": "48",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-012_company_entry_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-012-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 22,
+      "missingCount": 41,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "각 발행처 표기: 본 데이터셋은 해당 보고서·기사에 게재된 사실값만 인용하며 본문을 재게시하지 않음."
+    ],
+    "licenses": [
+      "발행처 저작권 유보(업계 전문지·로펌·연구기관 보고서)"
+    ],
+    "organizations": [
+      "업계 전문지·로펌 분석·기업 공시 종합(IEEFA, Akin Gump, Lexology, Enerdata, Vietnam Briefing, Maritime Executive 등)"
+    ],
+    "urls": [
+      "https://ieefa.org/sites/default/files/2023-09/Quiet%20Rise%20of%20Prominent%20Southeast%20Asian%20Energy%20Companies.pdf"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 22,
+    "maxSeriesFeatureCount": 22,
+    "missingAdm1Count": 41,
+    "providedZeroCount": 0,
+    "publishedValueCount": 22,
+    "sourceValueCount": 11,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 10
+  }
+}

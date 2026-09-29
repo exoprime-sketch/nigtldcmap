@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "record-regions-v157",
+  "elementId": "D-020",
+  "countryIso3": "VNM",
+  "method": "province-dictionary-v157 value match (region column > record title > other; URL never; organisation column only for organisation records)",
+  "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
+  "recordsAreOrganisations": false,
+  "counts": {
+    "records": 9,
+    "located": 2,
+    "withoutRegion": 7,
+    "multiUnit": 1,
+    "units": 7
+  },
+  "columnsUsed": [
+    {
+      "column": "대상지역",
+      "records": 7
+    }
+  ],
+  "byRecordId": {
+    "v124-d-020-entity-00003": [
+      {
+        "unitCode34": "VN34-07",
+        "name": "Tuyên Quang",
+        "adm1Codes63": [
+          "VN-03",
+          "VN-07"
+        ],
+        "spelling": "tuyen quang",
+        "column": "대상지역",
+        "columnKind": "region"
+      },
+      {
+        "unitCode34": "VN34-71",
+        "name": "Điện Biên",
+        "adm1Codes63": [
+          "VN-71"
+        ],
+        "spelling": "dien bien",
+        "column": "대상지역",
+        "columnKind": "region"
+      },
+      {
+        "unitCode34": "VN34-01",
+        "name": "Lai Châu",
+        "adm1Codes63": [
+          "VN-01"
+        ],
+        "spelling": "lai chau",
+        "column": "대상지역",
+        "columnKind": "region"
+      },
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "lao cai",
+        "column": "대상지역",
+        "columnKind": "region"
+      },
+      {
+        "unitCode34": "VN34-68",
+        "name": "Phú Thọ",
+        "adm1Codes63": [
+          "VN-14",
+          "VN-68",
+          "VN-70"
+        ],
+        "spelling": "phu tho",
+        "column": "대상지역",
+        "columnKind": "region"
+      },
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "column": "대상지역",
+        "columnKind": "region"
+      }
+    ],
+    "v124-d-020-entity-00004": [
+      {
+        "unitCode34": "VN34-26",
+        "name": "Huế",
+        "adm1Codes63": [
+          "VN-26"
+        ],
+        "spelling": "thua thien hue",
+        "column": "대상지역",
+        "columnKind": "region"
+      }
+    ]
+  }
+}

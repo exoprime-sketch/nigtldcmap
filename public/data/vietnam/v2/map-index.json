@@ -1,5 +1,5 @@
 {
-  "activeMapLayerCount": 42,
+  "activeMapLayerCount": 60,
   "countryIso3": "VNM",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-01T00:00:00Z",
@@ -586,6 +586,503 @@
         "kind": "none",
         "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
         "valueSystem": "pre-2025-63"
+      }
+    },
+    {
+      "elementId": "A-027",
+      "layerId": "vnm-v155-a-027",
+      "label": "도로·철도망",
+      "publicShortTitle": "도로·철도망",
+      "rawLabel": "교통 인프라[railway, road]",
+      "category": "에너지·인프라",
+      "detailElementId": "A-027",
+      "detailUrl": "/?element=a-027&country=VNM#element-detail",
+      "active": true,
+      "enabled": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "cluster": false,
+      "regionalProject": false,
+      "scopeCountries": [
+        "VNM"
+      ],
+      "mapMode": "line",
+      "renderer": "line",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "aggregationLevel": "network-segment",
+      "spatialScopeType": "network",
+      "coordinateMeaning": "verified-network-geometry",
+      "assetRef": {
+        "elementId": "A-027",
+        "provider": "vietnam-v124",
+        "section": "geometry"
+      },
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-roads-rail.geojson",
+      "overviewGeometryUrl": "/data/vietnam/v2/geometry/vnm-roads-rail-overview.geojson",
+      "overviewMaxZoom": 8,
+      "geometryTypes": [
+        "MultiLineString"
+      ],
+      "featureCount": 8114,
+      "unit": "km",
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "all",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "all",
+            "label": "전체(고속도로·간선·주요도로·철도)",
+            "periods": [
+              "2026"
+            ],
+            "unit": "km"
+          },
+          {
+            "key": "고속도로",
+            "label": "고속도로",
+            "periods": [
+              "2026"
+            ],
+            "unit": "km"
+          },
+          {
+            "key": "간선도로",
+            "label": "간선도로",
+            "periods": [
+              "2026"
+            ],
+            "unit": "km"
+          },
+          {
+            "key": "주요도로",
+            "label": "주요도로",
+            "periods": [
+              "2026"
+            ],
+            "unit": "km"
+          },
+          {
+            "key": "철도",
+            "label": "철도",
+            "periods": [
+              "2026"
+            ],
+            "unit": "km"
+          }
+        ]
+      },
+      "filters": [
+        {
+          "field": "class",
+          "label": "구분",
+          "values": [
+            "고속도로",
+            "간선도로",
+            "주요도로",
+            "철도"
+          ]
+        }
+      ],
+      "factFields": [
+        {
+          "key": "class",
+          "label": "구분",
+          "sources": [
+            "class"
+          ],
+          "filterable": true,
+          "valueMap": {
+            "고속도로": "고속도로",
+            "간선도로": "간선도로",
+            "주요도로": "주요도로",
+            "철도": "철도"
+          }
+        },
+        {
+          "key": "ref",
+          "label": "노선 번호",
+          "sources": [
+            "ref"
+          ]
+        },
+        {
+          "key": "name",
+          "label": "이름",
+          "sources": [
+            "name"
+          ]
+        },
+        {
+          "key": "lengthKm",
+          "label": "확인된 길이",
+          "sources": [
+            "lengthKm"
+          ],
+          "unit": "km"
+        },
+        {
+          "key": "osmWayCount",
+          "label": "구성 OSM way 수",
+          "sources": [
+            "osmWayCount"
+          ]
+        }
+      ],
+      "fieldLabels": {
+        "class": "구분",
+        "ref": "노선 번호",
+        "name": "이름",
+        "lengthKm": "확인된 길이"
+      },
+      "tooltipFields": [
+        "ref",
+        "name",
+        "class",
+        "lengthKm"
+      ],
+      "lineStyle": {
+        "byClass": {
+          "고속도로": {
+            "color": "#b13f2a",
+            "width": {
+              "z6": 1.2,
+              "z10": 2.4,
+              "z14": 4
+            },
+            "zIndex": 4
+          },
+          "간선도로": {
+            "color": "#d98b2b",
+            "width": {
+              "z6": 0.8,
+              "z10": 1.6,
+              "z14": 3
+            },
+            "zIndex": 3
+          },
+          "주요도로": {
+            "color": "#8a8a3a",
+            "width": {
+              "z6": 0.5,
+              "z10": 1.2,
+              "z14": 2.4
+            },
+            "zIndex": 2
+          },
+          "철도": {
+            "color": "#2f4a8a",
+            "width": {
+              "z6": 0.8,
+              "z10": 1.4,
+              "z14": 2.2
+            },
+            "dasharray": [
+              4,
+              2
+            ],
+            "zIndex": 5
+          }
+        },
+        "note": "색은 제안값이며 V150 지도 팔레트에 맞춰 P6b 에서 확정. 철도는 점선으로 구분해 색만으로 식별하지 않게 함."
+      },
+      "legend": {
+        "title": "도로·철도망(OSM)",
+        "note": "고속도로·간선도로·주요도로·철도 · 자료 2026-09-21 추출"
+      },
+      "source": "OpenStreetMap contributors",
+      "sourceOrganizations": [
+        "OpenStreetMap contributors"
+      ],
+      "sourceUrls": [
+        "https://download.geofabrik.de/asia/vietnam.html"
+      ],
+      "sourceYear": "2026",
+      "latestYear": "2026",
+      "license": "ODbL-1.0",
+      "licenses": [
+        "ODbL-1.0"
+      ],
+      "attribution": "© OpenStreetMap contributors, Open Database License (ODbL) 1.0; extract: Geofabrik vietnam-260921.osm.pbf (2026-09-21)",
+      "accuracyNotice": "OpenStreetMap 은 자원봉사 지도이므로 지역·시기별로 수록 범위와 태그 품질이 다릅니다. 고속도로 등 분리 차로는 방향별로 따로 그려져 연장에 두 번 계산됩니다. 설계·측량 용도가 아닙니다.",
+      "publicSpatialNotice": "OpenStreetMap 2026-09-21 추출 기준 선형이며 정밀 설계용 위치가 아닙니다.",
+      "spatialLimitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다.",
+      "spatialCoverage": "전국 · 8,114개 선형(way 50,748개 병합)",
+      "spatialStatus": "ready-pending-registration",
+      "mapBenefit": "발전소·송전망·산업단지와 육상 교통 접근성을 함께 볼 수 있습니다.",
+      "missingRegions": [],
+      "join": {
+        "requiredCount": 8114,
+        "matchedCount": 8114,
+        "missingCount": 0,
+        "failures": []
+      },
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "totalEntityCount": 8114,
+      "sourceCoordinateCount": 8114,
+      "displayedCoordinateCount": 8114,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 35,
+      "mapTargetV138": {
+        "publicName": "교통 인프라(도로·철도)",
+        "sourceSpatialUnit": "전국 · 8,114개 선형(way 50,748개 병합)",
+        "displaySpatialUnit": "network-segment",
+        "selectableVariables": "전체(고속도로·간선·주요도로·철도) · 고속도로 · 간선도로 · 주요도로 · 철도",
+        "unit": "km",
+        "period": "2026년 기준",
+        "representativeItem": "도로·철도망",
+        "evidence": "자산 피처 8114개 · MultiLineString",
+        "limitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다."
+      }
+    },
+    {
+      "elementId": "A-028",
+      "layerId": "vnm-v155-a-028",
+      "label": "항만·댐·저수지",
+      "publicShortTitle": "항만·댐·저수지",
+      "rawLabel": "해안 인프라; 수자원 인프라",
+      "category": "물·자원",
+      "detailElementId": "A-028",
+      "detailUrl": "/?element=a-028&country=VNM#element-detail",
+      "active": true,
+      "enabled": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "cluster": true,
+      "clusterNote": "댐 1,255개는 z<9 에서 클러스터, 항만·저수지는 항상 개별 표시 제안",
+      "regionalProject": false,
+      "scopeCountries": [
+        "VNM"
+      ],
+      "mapMode": "point",
+      "renderer": "point-and-polygon",
+      "rendererNote": "point 렌더러 + 저수지 폴리곤(fill) 결합. 기존 렌더러에 폴리곤 kind 가 없으면 저수지는 representativeLon/Lat 로 점 표시 후 폴리곤은 후속.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "aggregationLevel": "facility",
+      "spatialScopeType": "facility",
+      "coordinateMeaning": "verified-facility-location",
+      "assetRef": {
+        "elementId": "A-028",
+        "provider": "vietnam-v124",
+        "section": "geometry"
+      },
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-water-coastal-infra.geojson",
+      "geometryTypes": [
+        "Point",
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "featureCount": 1558,
+      "featureCountByKind": {
+        "port": 66,
+        "dam": 1255,
+        "reservoir": 237
+      },
+      "unit": "곳",
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "all",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "all",
+            "label": "전체",
+            "periods": [
+              "2026"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "port",
+            "label": "항만",
+            "periods": [
+              "2026"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "dam",
+            "label": "댐",
+            "periods": [
+              "2026"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "reservoir",
+            "label": "저수지(≥1 km²)",
+            "periods": [
+              "2026"
+            ],
+            "unit": "곳"
+          }
+        ]
+      },
+      "filters": [
+        {
+          "field": "kind",
+          "label": "종류",
+          "values": [
+            "port",
+            "dam",
+            "reservoir"
+          ],
+          "valueLabels": {
+            "port": "항만",
+            "dam": "댐",
+            "reservoir": "저수지"
+          }
+        },
+        {
+          "field": "adm1Name34",
+          "label": "성·시(2025)",
+          "values": []
+        }
+      ],
+      "factFields": [
+        {
+          "key": "kind",
+          "label": "종류",
+          "sources": [
+            "kind"
+          ],
+          "filterable": true,
+          "valueMap": {
+            "port": "항만",
+            "dam": "댐",
+            "reservoir": "저수지"
+          }
+        },
+        {
+          "key": "name",
+          "label": "이름",
+          "sources": [
+            "name"
+          ]
+        },
+        {
+          "key": "areaKm2",
+          "label": "면적",
+          "sources": [
+            "areaKm2"
+          ],
+          "unit": "km²"
+        },
+        {
+          "key": "lengthKm",
+          "label": "댐 마루 길이",
+          "sources": [
+            "lengthKm"
+          ],
+          "unit": "km"
+        },
+        {
+          "key": "adm1Name34",
+          "label": "성·시(2025)",
+          "sources": [
+            "adm1Name34"
+          ],
+          "filterable": true
+        },
+        {
+          "key": "adm1Name",
+          "label": "성·시(개편 전 63)",
+          "sources": [
+            "adm1Name"
+          ]
+        }
+      ],
+      "fieldLabels": {
+        "kind": "종류",
+        "name": "이름",
+        "areaKm2": "면적",
+        "lengthKm": "댐 마루 길이",
+        "adm1Name34": "성·시(2025)"
+      },
+      "tooltipFields": [
+        "name",
+        "kind",
+        "areaKm2",
+        "lengthKm",
+        "adm1Name34"
+      ],
+      "iconKeys": {
+        "port": "infra-port",
+        "dam": "infra-dam",
+        "reservoir": "infra-reservoir",
+        "note": "V152 아이콘 모듈 키 제안(모듈은 세션 ① 작업). 키가 없으면 기본 점 마커 + 종류별 색(항만 #2a6f97 · 댐 #a23b72 · 저수지 #3b8a6e)으로 대체."
+      },
+      "polygonStyle": {
+        "reservoir": {
+          "fillColor": "#3b8a6e",
+          "fillOpacity": 0.45,
+          "outlineColor": "#3b8a6e",
+          "outlineWidth": 0.8
+        }
+      },
+      "legend": {
+        "title": "항만·댐·저수지(OSM)",
+        "note": "항만 66 · 댐 1,255 · 저수지(≥1 km²) 237 · 자료 2026-09-21 추출"
+      },
+      "source": "OpenStreetMap contributors",
+      "sourceOrganizations": [
+        "OpenStreetMap contributors"
+      ],
+      "sourceUrls": [
+        "https://download.geofabrik.de/asia/vietnam.html"
+      ],
+      "sourceYear": "2026",
+      "latestYear": "2026",
+      "license": "ODbL-1.0",
+      "licenses": [
+        "ODbL-1.0"
+      ],
+      "attribution": "© OpenStreetMap contributors, Open Database License (ODbL) 1.0; extract: Geofabrik vietnam-260921.osm.pbf (2026-09-21)",
+      "accuracyNotice": "OpenStreetMap 의 항만 태그(landuse=port, harbour=yes, seamark:type=harbour)는 수록이 드물어 66곳만 잡히며 항만 전수가 아닙니다. 댐은 대표점(면·선의 중간 지점)이고 이름이 없는 시설이 77% 입니다. 저수지는 1 km² 이상만 수록(3,023개 제외).",
+      "publicSpatialNotice": "OpenStreetMap 2026-09-21 추출 기준 위치이며 시설 전수나 정밀 위치가 아닙니다.",
+      "spatialLimitation": "OSM 태그 기준 수록이라 항만은 전수가 아니며, 이름 없는 댐이 많습니다.",
+      "spatialCoverage": "전국 · 항만 66 · 댐 1,255 · 저수지 237",
+      "spatialStatus": "ready-pending-registration",
+      "mapBenefit": "수자원·해안 시설의 분포를 물 스트레스·홍수 위험과 함께 볼 수 있습니다.",
+      "missingRegions": [],
+      "join": {
+        "requiredCount": 1558,
+        "matchedCount": 1558,
+        "missingCount": 0,
+        "failures": []
+      },
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "totalEntityCount": 1558,
+      "sourceCoordinateCount": 1558,
+      "displayedCoordinateCount": 1558,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 19,
+      "mapTargetV138": {
+        "publicName": "수자원 시설",
+        "sourceSpatialUnit": "전국 · 항만 66 · 댐 1,255 · 저수지 237",
+        "displaySpatialUnit": "point 렌더러 + 저수지 폴리곤(fill) 결합. 기존 렌더러에 폴리곤 kind 가 없으면 저수지는 representativeLon/Lat 로 점 표시 후 폴리곤은 후속.",
+        "selectableVariables": "전체 · 항만 · 댐 · 저수지(≥1 km²)",
+        "unit": "곳",
+        "period": "2026년 기준",
+        "representativeItem": "항만·댐·저수지",
+        "evidence": "자산 피처 1558개 · Point·Polygon·MultiPolygon",
+        "limitation": "OSM 태그 기준 수록이라 항만은 전수가 아니며, 이름 없는 댐이 많습니다."
       }
     },
     {
@@ -4890,6 +5387,159 @@
     },
     {
       "category": "기후·위험",
+      "detailElementId": "B-009",
+      "detailUrl": "/?element=b-009&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 435,
+      "elementId": "B-009",
+      "label": "생물다양성 위험",
+      "licenses": [
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "생물다양성 위험",
+      "rawLabel": "WWF 생물다양성·기후 리스크",
+      "source": "University of Notre Dame ND-GAIN Country Index 2026 · WWF Biodiversity Risk Filter · WWF Biodiversity Risk Filter (RFS V3.0)",
+      "sourceOrganizations": [
+        "University of Notre Dame ND-GAIN Country Index 2026",
+        "WWF Biodiversity Risk Filter",
+        "WWF Biodiversity Risk Filter (RFS V3.0)"
+      ],
+      "sourceUrls": [
+        "https://gain.nd.edu/assets/647440/ndgain_countryindex_2026.zip",
+        "https://riskfilter.org/biodiversity/explore/country-profiles"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원천 워크북 Adm1 시트의 개편 전 63개 성 단위 값 · 지표 4종",
+        "displaySpatialUnit": "63개 성 경계에 그대로 표시(34개 체계 전환 시 구성 성 값 유지)",
+        "limitation": "성 단위 값은 원천이 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다.",
+        "evidence": "성 단위 관측값 252건 · 지표 4종",
+        "representativeItem": "An Giang WWF BRF 물리적 위험(Scape Physical)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "pre-2025-63-province",
+      "assetRef": {
+        "elementId": "B-009",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-009.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2026",
+      "layerId": "vnm-v138-b-009",
+      "legend": {
+        "note": "단위 점 · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "WWF BRF 물리적 위험(Scape Physical)"
+      },
+      "mapBenefit": "지표 4종 선택 → 성별 값 비교",
+      "mapMode": "region-choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026",
+      "spatialCoverage": "개편 후 34개 성·시 중 63개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "성 단위 값은 원천이 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "measure-e6301164f105",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "measure-e6301164f105",
+            "measureId": "measure-e6301164f105",
+            "measureKey": "measure-e6301164f105",
+            "scenario": null,
+            "label": "WWF BRF 물리적 위험(Scape Physical)",
+            "unit": "점",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "measure-cb1027dfafc6",
+            "measureId": "measure-cb1027dfafc6",
+            "measureKey": "measure-cb1027dfafc6",
+            "scenario": null,
+            "label": "WWF BRF 제공 서비스(Provisioning)",
+            "unit": "점",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "measure-7cc081331dce",
+            "measureId": "measure-7cc081331dce",
+            "measureKey": "measure-7cc081331dce",
+            "scenario": null,
+            "label": "WWF BRF 조절",
+            "unit": "점",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "measure-81082b435201",
+            "measureId": "measure-81082b435201",
+            "measureKey": "measure-81082b435201",
+            "scenario": null,
+            "label": "WWF BRF 조절 서비스(Mitigating)",
+            "unit": "점",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 435,
+      "unit": "점"
+    },
+    {
+      "category": "기후·위험",
       "detailElementId": "B-012",
       "detailUrl": "/?element=b-012&country=VNM#element-detail",
       "downloadStatus": "available",
@@ -5138,6 +5788,232 @@
         "kind": "none",
         "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
         "valueSystem": "pre-2025-63"
+      }
+    },
+    {
+      "elementId": "B-017",
+      "layerId": "vnm-v155-b-017",
+      "label": "물 스트레스(Aqueduct 4.0)",
+      "publicShortTitle": "물 스트레스",
+      "rawLabel": "WRI Aqueduct 물 스트레스 지수",
+      "category": "물·자원",
+      "detailElementId": "B-017",
+      "detailUrl": "/?element=b-017&country=VNM#element-detail",
+      "active": true,
+      "enabled": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "cluster": false,
+      "regionalProject": false,
+      "scopeCountries": [
+        "VNM"
+      ],
+      "mapMode": "choropleth",
+      "renderer": "unit-choropleth",
+      "rendererNote": "admin1-choropleth 와 같은 값→색 규칙이지만 조인 키가 adm1Code 가 아니라 stringId 이고 경계 자산이 평가구역 폴리곤입니다. 34/63 경계 전환·boundaryPolicy 의 영향을 받지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "값이 Aqueduct 평가구역 단위이므로 성·시 경계 개편(63→34)의 영향을 받지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "aggregationLevel": "aqueduct40-unit",
+      "spatialScopeType": "assessment-unit",
+      "coordinateMeaning": "source-unit-value",
+      "assetRef": {
+        "elementId": "B-017",
+        "provider": "vietnam-v124",
+        "section": "geometry"
+      },
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-aqueduct40-basins.geojson",
+      "alternateGeometry": {
+        "key": "basin-l6",
+        "label": "유역 단위 보기(HydroBASINS lvl6)",
+        "geometryUrl": "/data/vietnam/v2/geometry/vnm-aqueduct40-basins-l6.geojson",
+        "joinKey": "pfafId",
+        "valuesAreAggregated": false,
+        "note": "기하 전용 보기입니다. 값은 평가구역(stringId) 단위로만 존재하므로 유역 단위 보기에서는 외곽선만 그리고 값 색을 칠하지 않거나, 평가구역 색 위에 유역 외곽선을 겹칩니다. 유역 단위로 값을 합산·평균하지 않습니다."
+      },
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-017.json",
+      "joinKey": "stringId",
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "featureCount": 442,
+      "totalEntityCount": 443,
+      "unit": "점",
+      "selectors": {
+        "defaultPeriod": "2023",
+        "defaultVariable": "overall-water-risk",
+        "periods": [
+          "2023"
+        ],
+        "periodLabels": {
+          "2023": "Aqueduct 4.0 기준연도 산출(2023-07-05 배포)"
+        },
+        "variables": [
+          {
+            "key": "overall-water-risk",
+            "label": "종합 물 리스크(기본 가중)",
+            "measureId": "w_awr_def_tot_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 387
+          },
+          {
+            "key": "baseline-water-stress",
+            "label": "기준 물 스트레스",
+            "measureId": "bws_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 387
+          },
+          {
+            "key": "baseline-water-depletion",
+            "label": "기준 물 고갈",
+            "measureId": "bwd_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 387
+          },
+          {
+            "key": "interannual-variability",
+            "label": "연간 변동성",
+            "measureId": "iav_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 387
+          },
+          {
+            "key": "seasonal-variability",
+            "label": "계절 변동성",
+            "measureId": "sev_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 387
+          },
+          {
+            "key": "groundwater-table-decline",
+            "label": "지하수위 하강",
+            "measureId": "gtd_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 5,
+            "note": "원천 점수가 5개 평가구역에만 있어 등급(categoryLabel)만 널리 채워져 있습니다. 등록 시 제외 또는 등급 전용 표시를 검토."
+          },
+          {
+            "key": "riverine-flood-risk",
+            "label": "하천 홍수 위험",
+            "measureId": "rfr_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 391
+          },
+          {
+            "key": "coastal-flood-risk",
+            "label": "연안 홍수 위험",
+            "measureId": "cfr_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 391
+          },
+          {
+            "key": "drought-risk",
+            "label": "가뭄 위험",
+            "measureId": "drr_score",
+            "periods": [
+              "2023"
+            ],
+            "unit": "점",
+            "maxFeatureCount": 391
+          }
+        ]
+      },
+      "valueScale": {
+        "min": 0,
+        "max": 5,
+        "kind": "sequential",
+        "note": "Aqueduct 4.0 정규화 점수 0–5. 등급 문자열은 각 값 레코드의 categoryLabel 에 있으며 팝업에 함께 표시."
+      },
+      "filters": [],
+      "tooltipFields": [
+        "label",
+        "value",
+        "categoryLabel",
+        "unit",
+        "adm1Name34Primary",
+        "period"
+      ],
+      "fieldLabels": {
+        "label": "평가구역",
+        "categoryLabel": "등급",
+        "adm1Name34Primary": "주 소속 성·시(2025)",
+        "pfafId": "유역 코드(HydroBASINS lvl6)"
+      },
+      "legend": {
+        "title": "종합 물 리스크(기본 가중)",
+        "note": "0–5점 · 값 없는 평가구역은 투명 · 평가구역 = 유역×성×대수층 교차 단위"
+      },
+      "source": "World Resources Institute (WRI) Aqueduct 4.0",
+      "sourceOrganizations": [
+        "World Resources Institute (WRI) Aqueduct 4.0"
+      ],
+      "sourceUrls": [
+        "https://www.wri.org/data/aqueduct-global-maps-40-data"
+      ],
+      "sourceYear": "2023",
+      "latestYear": "2023",
+      "license": "CC-BY-4.0",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "attribution": "WRI Aqueduct 4.0 Water Risk Framework (Kuzma et al. 2023), baseline annual, release 2023-07-05, CC BY 4.0. Unit polygons derive from HydroBASINS (Lehner & Grill 2013) and GADM 4.1.",
+      "accuracyNotice": "평가구역 경계는 Aqueduct 4.0 원천(GADM 4.1 성 경계 기준)이며 이 플랫폼의 성·시 경계(geoBoundaries)와 미세하게 어긋납니다. 라벨의 '유역 {pfafId} · {성 이름}' 은 공식 유역명이 아니라 HydroBASINS 코드와 소속 성을 붙인 편의 라벨입니다. 원천에 도형이 없는 평가구역 1개(436707-VNM.23_1-1892, Hải Phòng)는 지도에 표시되지 않습니다.",
+      "publicSpatialNotice": "유역×성×대수층 교차 단위(Aqueduct 4.0)로 표시하며 성·시 단위로 합산하지 않습니다.",
+      "spatialLimitation": "평가구역 경계는 원천 GADM 4.1 기준이라 성·시 경계와 정확히 겹치지 않습니다.",
+      "spatialCoverage": "평가구역 443개 중 도형 442개 · 변수별 값 5~391개",
+      "spatialStatus": "ready-pending-registration",
+      "missingValuePolicy": "값 없는 평가구역은 투명 처리, 0 대체 없음",
+      "mapBenefit": "물 스트레스·홍수·가뭄 위험을 유역 단위로 비교하고 성·시 경계와 겹쳐 볼 수 있습니다.",
+      "missingRegions": [],
+      "join": {
+        "requiredCount": 442,
+        "matchedCount": 442,
+        "missingCount": 0,
+        "failures": []
+      },
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "sourceCoordinateCount": 0,
+      "displayedCoordinateCount": 0,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 2032,
+      "mapTargetV138": {
+        "publicName": "물 스트레스",
+        "sourceSpatialUnit": "평가구역 443개 중 도형 442개 · 변수별 값 5~391개",
+        "displaySpatialUnit": "admin1-choropleth 와 같은 값→색 규칙이지만 조인 키가 adm1Code 가 아니라 stringId 이고 경계 자산이 평가구역 폴리곤입니다. 34/63 경계 전환·boundaryPolicy 의 영향을 받지 않습니다.",
+        "selectableVariables": "종합 물 리스크(기본 가중) · 기준 물 스트레스 · 기준 물 고갈 · 연간 변동성 · 계절 변동성 · 지하수위 하강 · 하천 홍수 위험 · 연안 홍수 위험 · 가뭄 위험",
+        "unit": "점",
+        "period": "2023 기준선(Aqueduct 4.0)",
+        "representativeItem": "평가구역 443개 중 물 스트레스 등급 분포",
+        "evidence": "자산 피처 442개 · MultiPolygon",
+        "limitation": "평가구역 경계는 원천 GADM 4.1 기준이라 성·시 경계와 정확히 겹치지 않습니다."
       }
     },
     {
@@ -6146,6 +7022,121 @@
         "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
         "valueSystem": "pre-2025-63"
       }
+    },
+    {
+      "category": "물·자원",
+      "detailElementId": "B-026",
+      "detailUrl": "/?element=b-026&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 74,
+      "elementId": "B-026",
+      "label": "흐름방향",
+      "licenses": [
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "흐름방향",
+      "rawLabel": "유향(flow direction)",
+      "source": "HydroSHEDS v1 Flow Direction (DIR 15s)",
+      "sourceOrganizations": [
+        "HydroSHEDS v1 Flow Direction (DIR 15s)"
+      ],
+      "sourceUrls": [
+        "https://www.hydrosheds.org/hydrosheds-core-downloads"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료가 성 단위로 집계한 행(행정단위=Province)",
+        "displaySpatialUnit": "개편 전 63개 성 경계에 성 단위 값 표시",
+        "limitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
+        "evidence": "성 단위 행 74건 · 성·시 34개",
+        "representativeItem": "W 서 (An Giang)"
+      },
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "range-only",
+        "note": "분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "B-026",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-026.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "미기재",
+      "layerId": "vnm-v138-b-026",
+      "legend": {
+        "note": "단위 % · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "우세 유향 격자 비율"
+      },
+      "mapBenefit": "성 클릭 → 8방향 비율·우세 유향(우세_유향)",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "미기재",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 범위만 표시)",
+      "spatialLimitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "미기재",
+        "defaultVariable": "dominant-flow-direction-share",
+        "periods": [
+          "미기재"
+        ],
+        "variables": [
+          {
+            "key": "dominant-flow-direction-share",
+            "measureId": "b026-dominant-flow-share",
+            "measureKey": "dominant-flow-direction-share",
+            "scenario": null,
+            "label": "우세 유향 격자 비율",
+            "unit": "%",
+            "periods": [
+              "미기재"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 74,
+      "unit": "%",
+      "memberRecordsInAsset": true
     },
     {
       "category": "물·자원",
@@ -8236,261 +9227,45 @@
     },
     {
       "category": "정책·사업여건",
-      "detailElementId": "C-009",
-      "detailUrl": "/?element=c-009&country=VNM#element-detail",
+      "detailElementId": "C-008",
+      "detailUrl": "/?element=c-008&country=VNM#element-detail",
       "downloadStatus": "available",
-      "downloadableRecordCount": 182,
-      "elementId": "C-009",
-      "label": "기후 법제도(지방 문서)",
+      "downloadableRecordCount": 235,
+      "elementId": "C-008",
+      "label": "국제 이니셔티브",
       "licenses": [
         "CC-BY-4.0",
-        "FAO FAOLEX 공개자료 — 출처 표기 조건",
-        "ICAP 저작권 표기 조건부 배포 허용",
-        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
-        "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
-        "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
-        "베트남 정부 공보 이용약관",
-        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
-        "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
-        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
-      ],
-      "publicShortTitle": "기후 법제도(지방 문서)",
-      "rawLabel": "기후 법제도[법령명, 유형(법률/시행령/규제/인센티브), 대상 분야(감축/적응/에너지/산업), 시행 연도, 상태(시행중/폐지/계류), 주관 부처, 원본 링크]",
-      "source": "FAO FAOLEX — Electricity Law 28/2004/QH11 영문본 · 베트남 정부 — Nghị định 119/2025/NĐ-CP · 베트남 정부 — Nghị định 57/2025/NĐ-CP (Nghị định 243/2026/NĐ-CP 개정) · 베트남 정부 공보 / Climate Policy Database · 베트남 정부 공보(vanban.chinhphu.vn) · 베트남 정부 정책포털 — TOÀN VĂN: Luật Điện lực · 베트남 총리 — Quyết định 500/QĐ-TTg (2023-05-15) · 베트남 총리 — Quyết định 768/QĐ-TTg (2025-04-15) · 베트남 총리실 — Quyết định 13/2024/QĐ-TTg",
-      "sourceOrganizations": [
-        "FAO FAOLEX — Electricity Law 28/2004/QH11 영문본",
-        "베트남 정부 — Nghị định 119/2025/NĐ-CP",
-        "베트남 정부 — Nghị định 57/2025/NĐ-CP (Nghị định 243/2026/NĐ-CP 개정)",
-        "베트남 정부 공보 / Climate Policy Database",
-        "베트남 정부 공보(vanban.chinhphu.vn)",
-        "베트남 정부 정책포털 — TOÀN VĂN: Luật Điện lực",
-        "베트남 총리 — Quyết định 500/QĐ-TTg (2023-05-15)",
-        "베트남 총리 — Quyết định 768/QĐ-TTg (2025-04-15)",
-        "베트남 총리실 — Quyết định 13/2024/QĐ-TTg"
-      ],
-      "sourceUrls": [
-        "https://climate-laws.org/document/decision-no-232-qd-ttg_4679",
-        "https://climate-laws.org/document/decision-no-942-qd-ttg-on-approving-action-plan-for-methane-emissions-reduction-by-2030_9e42",
-        "https://climate-laws.org/document/decree-no-06-2022-nd-cp-on-mitigation-of-green-house-gas-ghg-emissions-and-protection-of-ozone-layer_d8ff",
-        "https://climatepolicydatabase.org/policies",
-        "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/8/13-ttg.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/6/119-nd.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/6/243-ndcp.signed.pdf",
-        "https://english.luatvietnam.vn/cong-nghiep/decision-13-2024-qd-ttg-sectors-and-establishments-subject-to-greenhouse-gas-inventory-363497-d1.html",
-        "https://english.luatvietnam.vn/cong-nghiep/electricity-law-no-61-2024-qh15-380161-d1.html",
-        "https://english.luatvietnam.vn/law-on-environmental-protection-no-72-2020-qh14-dated-november-17-2020-of-the-national-assembly-195564-doc1.html",
-        "https://english.luatvietnam.vn/tai-nguyen/decree-119-2025-nd-cp-mitigation-of-greenhouse-gas-emissions-402540-d1.html",
-        "https://faolex.fao.org/docs/pdf/vie212245.pdf",
-        "https://faolex.fao.org/docs/pdf/vie50740.pdf",
-        "https://icapcarbonaction.com/en/news/vietnam-approves-carbon-market-roadmap-pilot-ets-launch-june-2025",
-        "https://luatvietnam.vn/",
-        "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/sap-nhap-tinh-co-hieu-luc-khi-nao-nam-2025-viet-nam-sau-sap-nhap-con-bao-nhieu-tinh-63-tinh-gop-lai-950580-221296.html",
-        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Ke-hoach-2810-KH-UBND-2022-thuc-hien-Quyet-dinh-896-QD-TTg-Chien-luoc-ve-bien-doi-khi-hau-Gia-Lai-542600.aspx",
-        "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1318-QD-UBND-2024-phe-duyet-Ke-hoach-hanh-dong-tang-truong-xanh-Quang-Ninh-610666.aspx"
-      ],
-      "scopeCountries": [
-        "VNM"
-      ],
-      "defaultOverlay": false,
-      "defaultPrimary": false,
-      "fakeGeometryCount": 0,
-      "zeroImputationCount": 0,
-      "regionalProject": false,
-      "spatialStatus": "ready",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "지방 결정문의 적용 성·시(원문 지역명)",
-        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
-        "limitation": "전국 법령은 지도 객체를 만들지 않음. C-010과 같은 지방문서는 문서번호로 한 번만 집계.",
-        "evidence": "지방 문서 4건(전국 법령 행과 거래소 소재 행은 지역 객체 없음)",
-        "representativeItem": "Đà Nẵng Quyết định 2609/QĐ-UBND(2021)"
-      },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "count-sum",
-        "note": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-        "valueSystem": "pre-2025-63"
-      },
-      "active": true,
-      "aggregationLevel": "admin1",
-      "assetRef": {
-        "elementId": "C-009",
-        "provider": "vietnam-v124",
-        "section": "spatial"
-      },
-      "cluster": false,
-      "coordinateMeaning": "source-region-value",
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-009.json",
-      "displayedCoordinateCount": 0,
-      "enabled": true,
-      "featureCount": 4,
-      "filters": [],
-      "geometryTypes": [
-        "Polygon",
-        "MultiPolygon"
-      ],
-      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-      "join": {
-        "failures": [],
-        "matchedCount": 4,
-        "missingCount": 59,
-        "requiredCount": 63
-      },
-      "latestYear": "2021–2025",
-      "layerId": "vnm-v138-c-009",
-      "legend": {
-        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
-        "title": "지방 기후 법제도 문서 수"
-      },
-      "mapBenefit": "성·시 클릭 → 해당 지방 문서 목록(문서번호·시행일·원문)",
-      "mapMode": "choropleth",
-      "missingRegions": [
-        "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
-        "Cao Bằng",
-        "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
-        "Lạng Sơn",
-        "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
-        "Thanh Hóa",
-        "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
-        "Kon Tum",
-        "Quảng Ngãi",
-        "Bình Định",
-        "Phú Yên",
-        "Đắk Lắk",
-        "Khánh Hòa",
-        "Lâm Đồng",
-        "Ninh Thuận",
-        "Tây Ninh",
-        "Đồng Nai",
-        "Bình Thuận",
-        "Long An",
-        "Bà Rịa–Vũng Tàu",
-        "An Giang",
-        "Đồng Tháp",
-        "Tiền Giang",
-        "Kiên Giang",
-        "Vĩnh Long",
-        "Bến Tre",
-        "Trà Vinh",
-        "Sóc Trăng",
-        "Bắc Kạn",
-        "Bắc Giang",
-        "Bạc Liêu",
-        "Bắc Ninh",
-        "Bình Dương",
-        "Bình Phước",
-        "Cà Mau",
-        "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
-        "Phú Thọ",
-        "Thái Nguyên",
-        "Vĩnh Phúc",
-        "Điện Biên",
-        "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
-      ],
-      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-      "renderer": "partial-choropleth",
-      "sourceCoordinateCount": 0,
-      "sourceYear": "2021–2025",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개(34개 경계에서는 구성 성·시 집계값)",
-      "spatialLimitation": "전국 법령은 지도 객체를 만들지 않음. C-010과 같은 지방문서는 문서번호로 한 번만 집계.",
-      "spatialScopeType": "admin1",
-      "selectors": {
-        "defaultPeriod": "2021–2025",
-        "defaultVariable": "local-document-count",
-        "periods": [
-          "2021–2025"
-        ],
-        "variables": [
-          {
-            "key": "local-document-count",
-            "measureId": "c009-local-docs",
-            "measureKey": "local-document-count",
-            "scenario": null,
-            "label": "지방 기후 법제도 문서 수",
-            "unit": "건",
-            "periods": [
-              "2021–2025"
-            ],
-            "maxFeatureCount": 4
-          }
-        ]
-      },
-      "tooltipFields": [
-        "adm1Name",
-        "value",
-        "unit",
-        "period"
-      ],
-      "totalEntityCount": 4,
-      "unit": "건",
-      "memberRecordsInAsset": true
-    },
-    {
-      "category": "정책·사업여건",
-      "detailElementId": "C-010",
-      "detailUrl": "/?element=c-010&country=VNM#element-detail",
-      "downloadStatus": "available",
-      "downloadableRecordCount": 59,
-      "elementId": "C-010",
-      "label": "환경 법제도(지방 문서)",
-      "licenses": [
-        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+        "UNFCCC 문서 이용약관",
+        "국제 이니셔티브 공개자료 — 출처 표기 조건",
+        "국제기구 공개 발간물 — 출처 표기 조건",
         "국제기구·공공기관 공개자료 — 출처 표기 조건",
         "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
-        "베트남 정부 공보 이용약관",
-        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
-        "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
-        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+        "베트남 정부 공보 — 사실 정보 인용",
+        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호"
       ],
-      "publicShortTitle": "환경 법제도(지방 문서)",
-      "rawLabel": "기타 환경 법제도[법령명, 유형(EIA법/대기질/수질/폐기물/생물다양성), 시행 연도, 상태, 주관 부처, 원본 링크]",
-      "source": "베트남 정부 — Nghị định 05/2025/NĐ-CP (환경보호법 시행령 08/2022 개정) · 베트남 정부 공보 / LuatVietnam · 베트남 정부 공보(vanban.chinhphu.vn)",
+      "publicShortTitle": "국제 이니셔티브",
+      "rawLabel": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
+      "source": "Global Methane Pledge (EU·US 공동 주도) · UNFCCC Global Climate Action Portal (NAZCA) · UNFCCC — Article 6.8 NMA Platform · 베트남 정부 포털(Báo Chính phủ) · 베트남 총리실 — Quyết định 942/QĐ-TTg",
       "sourceOrganizations": [
-        "베트남 정부 — Nghị định 05/2025/NĐ-CP (환경보호법 시행령 08/2022 개정)",
-        "베트남 정부 공보 / LuatVietnam",
-        "베트남 정부 공보(vanban.chinhphu.vn)"
+        "Global Methane Pledge (EU·US 공동 주도)",
+        "UNFCCC Global Climate Action Portal (NAZCA)",
+        "UNFCCC — Article 6.8 NMA Platform",
+        "베트남 정부 포털(Báo Chính phủ)",
+        "베트남 총리실 — Quyết định 942/QĐ-TTg"
       ],
       "sourceUrls": [
-        "https://danang.gov.vn/vi/w/quyet-dinh-2609qd-ubnd-vv-phe-duyet-ke-hoach-hanh-dong-ung-pho-voi-bien-doi-khi-hau-thanh-pho-da-nang-giai-doan-2021-2030-tam-nhin-den-nam-2050-i",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/146-qh15-2025.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/01/48-cp.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/110-ndcp.signed.pdf",
-        "https://english.luatvietnam.vn/decree-no-08-2022-nd-cp-detailing-a-number-of-articles-of-the-law-on-environmental-protection-215632-doc1.html",
-        "https://enviliance.com/regions/southeast-asia/vn/report_13103",
-        "https://enviliance.com/regions/southeast-asia/vn/report_9904",
-        "https://lawnet.vn/en/vb/Decision-149-QD-TTg-2022-Approving-the-national-strategy-for-biodiversity-until-2030-7CCE6.html",
-        "https://luatvietnam.vn/",
-        "https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/sap-nhap-tinh-co-hieu-luc-khi-nao-nam-2025-viet-nam-sau-sap-nhap-con-bao-nhieu-tinh-63-tinh-gop-lai-950580-221296.html",
-        "https://thuvienphapluat.vn/van-ban/EN/Tai-nguyen-Moi-truong/Law-28-2023-QH15-Water-Resources/594492/tieng-anh.aspx",
-        "https://thuvienphapluat.vn/van-ban/EN/Tai-nguyen-Moi-truong/Law-No-20-2008-QH12-of-November-13-2008-on-biodiversity/88506/tieng-anh.aspx",
-        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Ke-hoach-2810-KH-UBND-2022-thuc-hien-Quyet-dinh-896-QD-TTg-Chien-luoc-ve-bien-doi-khi-hau-Gia-Lai-542600.aspx",
-        "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-1318-QD-UBND-2024-phe-duyet-Ke-hoach-hanh-dong-tang-truong-xanh-Quang-Ninh-610666.aspx",
-        "https://thuvienphapluat.vn/van-ban/Thuong-mai/Quyet-dinh-3560-QD-UBND-2023-Ke-hoach-hanh-dong-tang-truong-xanh-Nghe-An-2021-2030-584956.aspx",
-        "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Quyet-dinh-219-QD-TTg-2022-phe-duyet-Quy-hoach-tinh-Bac-Giang-thoi-ky-2021-2030-503751.aspx",
-        "https://vanban.chinhphu.vn/?pageid=27160&docid=212294",
-        "https://vbpl.vn/van-ban/dia-phuong",
-        "https://vea.mae.gov.vn/Data/files/2025/DECREE%2005_2025_ND_CP.pdf",
-        "https://www.informea.org/en/content/legislation/national-technical-regulation-ambient-air-quality-qcvn-05-2023btnmt"
+        "https://baochinhphu.vn/viet-nam-tham-gia-cam-ket-giam-phat-thai-metan-ngan-chan-va-dao-nguoc-tinh-trang-mat-rung-suy-thoai-dat-102303261.htm",
+        "https://caselaw.vn/van-ban-phap-luat/509186-quyet-dinh-so-942-qd-ttg-ngay-05-08-2022-cua-thu-tuong-chinh-phu-phe-duyet-ke-hoach-hanh-dong-giam-phat-thai-khi-me-tan-den-nam-2030",
+        "https://climate-laws.org/document/decision-no-942-qd-ttg-on-approving-action-plan-for-methane-emissions-reduction-by-2030_9e42",
+        "https://climateaction.unfccc.int/",
+        "https://climateaction.unfccc.int/Actors/Countries/VNM",
+        "https://climateaction.unfccc.int/Initiatives",
+        "https://en.baochinhphu.vn/govt-adopts-action-plan-to-implement-global-coal-to-clean-power-transition-statement-111250218093147551.htm",
+        "https://en.baochinhphu.vn/national-plan-on-implementation-of-glasgow-declaration-on-forests-and-land-use-issued-111230826145327625.htm",
+        "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation/Article-6-8/nma-platform/main/non-market-approaches",
+        "https://www.bmz.de/en/news/archive-press-releases/just-energy-transition-partnership-jetp-with-vietnam-135514",
+        "https://www.ccacoalition.org/partners/vietnam",
+        "https://www.globalmethanepledge.org/"
       ],
       "scopeCountries": [
         "VNM"
@@ -8502,32 +9277,32 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "지방 환경규정의 적용 성·시(원문 지역명)",
-        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
-        "limitation": "C-009와 문서번호가 같은 지방문서는 같은 객체이며 두 자료를 함께 켜도 문서 수를 더하지 않음.",
-        "evidence": "지방 문서 4건(C-009와 동일 문서 4건 공유)",
-        "representativeItem": "Quảng Ninh Quyết định 1318/QĐ-UBND(2024)"
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 235건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
+        "representativeItem": "British International School Ho Chi Minh City (Hồ Chí Minh)"
       },
-      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
-        "kind": "count-sum",
-        "note": "34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-        "valueSystem": "pre-2025-63"
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
       },
       "active": true,
-      "aggregationLevel": "admin1",
+      "aggregationLevel": "post-2025-34-unit",
       "assetRef": {
-        "elementId": "C-010",
+        "elementId": "C-008",
         "provider": "vietnam-v124",
         "section": "spatial"
       },
       "cluster": false,
       "coordinateMeaning": "source-region-value",
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-010.json",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-008.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 4,
+      "featureCount": 17,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -8536,18 +9311,18 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 4,
-        "missingCount": 59,
+        "matchedCount": 17,
+        "missingCount": 46,
         "requiredCount": 63
       },
-      "latestYear": "2021–2025",
-      "layerId": "vnm-v138-c-010",
+      "latestYear": "1994~2050년",
+      "layerId": "vnm-v138-c-008",
       "legend": {
-        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
-        "title": "지방 환경 법제도 문서 수"
+        "note": "단위 건 · 결측 46개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 지방 문서 목록",
-      "mapMode": "choropleth",
+      "mapBenefit": "성·시 클릭 → 사업 목록(속성1_레코드명·속성3_값·속성4_시점)",
+      "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
         "Lào Cai",
@@ -8557,17 +9332,14 @@
         "Yên Bái",
         "Tuyên Quang",
         "Lạng Sơn",
+        "Quảng Ninh",
         "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
         "Thanh Hóa",
+        "Nghệ An",
         "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
+        "Gia Lai",
         "Bình Định",
         "Phú Yên",
         "Đắk Lắk",
@@ -8578,7 +9350,6 @@
         "Đồng Nai",
         "Bình Thuận",
         "Long An",
-        "Bà Rịa–Vũng Tàu",
         "An Giang",
         "Đồng Tháp",
         "Tiền Giang",
@@ -8586,54 +9357,45 @@
         "Vĩnh Long",
         "Bến Tre",
         "Trà Vinh",
-        "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
         "Bạc Liêu",
         "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
         "Cà Mau",
         "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
         "Phú Thọ",
         "Thái Nguyên",
         "Vĩnh Phúc",
         "Điện Biên",
         "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Hải Phòng"
       ],
-      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
-      "sourceYear": "2021–2025",
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 4개(34개 경계에서는 구성 성·시 집계값)",
-      "spatialLimitation": "C-009와 문서번호가 같은 지방문서는 같은 객체이며 두 자료를 함께 켜도 문서 수를 더하지 않음.",
-      "spatialScopeType": "admin1",
+      "sourceYear": "1994~2050년",
+      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
       "selectors": {
-        "defaultPeriod": "2021–2025",
-        "defaultVariable": "local-document-count",
+        "defaultPeriod": "1994~2050년",
+        "defaultVariable": "c-008-located-count",
         "periods": [
-          "2021–2025"
+          "1994~2050년"
         ],
         "variables": [
           {
-            "key": "local-document-count",
-            "measureId": "c010-local-docs",
-            "measureKey": "local-document-count",
+            "key": "c-008-located-count",
+            "measureId": "c-008-located-count",
+            "measureKey": "c-008-located-count",
             "scenario": null,
-            "label": "지방 환경 법제도 문서 수",
+            "label": "지역이 확인된 사업 수",
             "unit": "건",
             "periods": [
-              "2021–2025"
+              "1994~2050년"
             ],
-            "maxFeatureCount": 4
+            "maxFeatureCount": 17
           }
         ]
       },
@@ -8643,11 +9405,9 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 4,
+      "totalEntityCount": 235,
       "unit": "건",
-      "memberRecordsInAsset": true,
-      "sharedObjectsWith": "C-009",
-      "sharedObjectKind": "document"
+      "memberRecordsInAsset": true
     },
     {
       "category": "정책·사업여건",
@@ -9173,147 +9933,6 @@
         "evidence": "지역 관측 639건",
         "representativeItem": "성·시별 태양광 계획용량 2030"
       }
-    },
-    {
-      "category": "정책·사업여건",
-      "detailElementId": "C-019",
-      "detailUrl": "/?element=c-019&country=VNM#element-detail",
-      "downloadStatus": "available",
-      "downloadableRecordCount": 128,
-      "elementId": "C-019",
-      "label": "탄소시장 대상시설(인벤토리 의무)",
-      "licenses": [
-        "ICAP 저작권 표기 조건부 배포 허용",
-        "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
-        "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
-        "베트남 정부 공보 이용약관",
-        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
-      ],
-      "publicShortTitle": "탄소시장 대상시설(인벤토리 의무)",
-      "rawLabel": "탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, FIT 도입 여부, FIP 도입 여부, RPS 도입 여부, 탄소시장 관련 예산 규모]",
-      "source": "베트남 국회상임위원회 — Nghị quyết 109/2025/UBTVQH15 · 베트남 국회상임위원회 — Nghị quyết 579/2018/UBTVQH14 · 베트남 정부 — Nghị định 06/2022/NĐ-CP (119/2025/NĐ-CP 개정) · 베트남 정부 — Nghị định 29/2026/NĐ-CP · 베트남 정부 — Nghị định 29/2026/NĐ-CP / 하노이증권거래소(HNX) · 베트남 정부 공보 / ICAP / World Bank Carbon Pricing Dashboard",
-      "sourceOrganizations": [
-        "베트남 국회상임위원회 — Nghị quyết 109/2025/UBTVQH15",
-        "베트남 국회상임위원회 — Nghị quyết 579/2018/UBTVQH14",
-        "베트남 정부 — Nghị định 06/2022/NĐ-CP (119/2025/NĐ-CP 개정)",
-        "베트남 정부 — Nghị định 29/2026/NĐ-CP",
-        "베트남 정부 — Nghị định 29/2026/NĐ-CP / 하노이증권거래소(HNX)",
-        "베트남 정부 공보 / ICAP / World Bank Carbon Pricing Dashboard"
-      ],
-      "sourceUrls": [
-        "https://carbonpricingdashboard.worldbank.org/",
-        "https://carbonpricingdashboard.worldbank.org/compliance-factsheet/ETS_VN",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2018/10/579.signed.pdf",
-        "https://documents1.worldbank.org/curated/en/099355507062229876/pdf/P17724103036ee07909701028a237b6d18b.pdf",
-        "https://en.vietnamplus.vn/vietnam-considers-50-cut-to-environmental-tax-on-fuel-through-mid-2026-post339849.vnp",
-        "https://hnx.vn/vi-vn/cacbon.html",
-        "https://icapcarbonaction.com/en/ets/vietnam",
-        "https://icapcarbonaction.com/en/news/vietnam-approves-carbon-market-roadmap-pilot-ets-launch-june-2025",
-        "https://icapcarbonaction.com/en/news/vietnam-issues-rules-pilot-ets-launching-august-2025",
-        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Nghi-dinh-119-2025-ND-CP-sua-doi-Nghi-dinh-06-2022-ND-CP-giam-nhe-phat-thai-khi-nha-kinh.aspx",
-        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Nghi-dinh-29-2026-ND-CP-San-giao-dich-cac-bon-trong-nuoc-649674.aspx",
-        "https://thuvienphapluat.vn/van-ban/Thue-Phi-Le-Phi/Nghi-quyet-109-2025-UBTVQH15-muc-thue-bao-ve-moi-truong-doi-voi-xang-dau-mo-nhon.aspx",
-        "https://vanban.chinhphu.vn/?pageid=27160&docid=216694",
-        "https://www.cemnet.com/News/story/181615/vietnam-launches-pilot-carbon-market-covering-51-cement-plants.html",
-        "https://www.mayerbrown.com/en/insights/publications/2023/01/vietnams-moit-sets-ceiling-price-for-solar-and-wind-projects-completed-after-expiry-of-feed-in-tariff-deadline",
-        "https://www.opis.com/resources/energy-market-news-from-opis/vietnam-to-allow-30-offset-use-in-ets-pilot-starting-2025/",
-        "https://www.steelorbis.com/steel-news/latest-news/vietnam-launches-pilot-carbon-trading-exchange-with-first-allowance-trades-1461629.htm"
-      ],
-      "scopeCountries": [
-        "VNM"
-      ],
-      "defaultOverlay": false,
-      "defaultPrimary": false,
-      "fakeGeometryCount": 0,
-      "zeroImputationCount": 0,
-      "regionalProject": false,
-      "spatialStatus": "ready",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "2025년 개편 후 34개 성·시(Quyết định 2026-08-10 대상시설 명부 집계)",
-        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
-        "limitation": "C-022와 같은 시설 명부를 지역별(C-019)·업종별(C-022)로 보는 것이며 두 자료를 함께 켜도 시설 수를 더하지 않음.",
-        "evidence": "34개 지역 × 시설 수(합계 2,166)",
-        "representativeItem": "Hồ Chí Minh 479개 시설"
-      },
-      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "native-34",
-        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-        "valueSystem": "post-2025-34"
-      },
-      "active": true,
-      "aggregationLevel": "post-2025-34-unit",
-      "assetRef": {
-        "elementId": "C-019",
-        "provider": "vietnam-v124",
-        "section": "spatial"
-      },
-      "cluster": false,
-      "coordinateMeaning": "source-region-value",
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-019.json",
-      "displayedCoordinateCount": 0,
-      "enabled": true,
-      "featureCount": 63,
-      "filters": [],
-      "geometryTypes": [
-        "Polygon",
-        "MultiPolygon"
-      ],
-      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-      "join": {
-        "failures": [],
-        "matchedCount": 63,
-        "missingCount": 0,
-        "requiredCount": 63
-      },
-      "latestYear": "2026",
-      "layerId": "vnm-v138-c-019",
-      "legend": {
-        "note": "단위 개 · 결측 0개 성·시(개편 전 63개 기준)",
-        "title": "온실가스 인벤토리 의무 대상 시설 수"
-      },
-      "mapBenefit": "성·시(34개 체계) 클릭 → 대상시설 수",
-      "mapMode": "region-choropleth",
-      "missingRegions": [],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
-      "renderer": "admin1-choropleth",
-      "sourceCoordinateCount": 0,
-      "sourceYear": "2026",
-      "spatialCoverage": "개편 후 34개 성·시 중 34개 값(34개 경계 직접 표시)",
-      "spatialLimitation": "C-022와 같은 시설 명부를 지역별(C-019)·업종별(C-022)로 보는 것이며 두 자료를 함께 켜도 시설 수를 더하지 않음.",
-      "spatialScopeType": "region",
-      "selectors": {
-        "defaultPeriod": "2026",
-        "defaultVariable": "ghg-inventory-facility-count",
-        "periods": [
-          "2026"
-        ],
-        "variables": [
-          {
-            "key": "ghg-inventory-facility-count",
-            "measureId": "c019-facility-count",
-            "measureKey": "ghg-inventory-facility-count",
-            "scenario": null,
-            "label": "온실가스 인벤토리 의무 대상 시설 수",
-            "unit": "개",
-            "periods": [
-              "2026"
-            ],
-            "maxFeatureCount": 63
-          }
-        ]
-      },
-      "tooltipFields": [
-        "adm1Name",
-        "value",
-        "unit",
-        "period"
-      ],
-      "totalEntityCount": 36,
-      "unit": "개",
-      "sharedObjectsWith": "C-022",
-      "sharedObjectKind": "facility-register"
     },
     {
       "category": "정책·사업여건",
@@ -10012,6 +10631,790 @@
       }
     },
     {
+      "category": "협력기관·기업",
+      "detailElementId": "D-012",
+      "detailUrl": "/?element=d-012&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 22,
+      "elementId": "D-012",
+      "label": "외국기업 진출",
+      "licenses": [
+        "발행처 저작권 유보(업계 전문지·로펌·연구기관 보고서)"
+      ],
+      "publicShortTitle": "외국기업 진출",
+      "rawLabel": "경쟁국 민간기업의 개도국 진출 현황[기업명, 국적, 진출 대상국, 기술 분야(RE/효율/폐기물), 프로젝트명, 용량, 투자액, 진출 형태(EPC/투자/라이선스)]",
+      "source": "업계 전문지·로펌 분석·기업 공시 종합(IEEFA, Akin Gump, Lexology, Enerdata, Vietnam Briefing, Maritime Executive 등)",
+      "sourceOrganizations": [
+        "업계 전문지·로펌 분석·기업 공시 종합(IEEFA, Akin Gump, Lexology, Enerdata, Vietnam Briefing, Maritime Executive 등)"
+      ],
+      "sourceUrls": [
+        "https://ieefa.org/sites/default/files/2023-09/Quiet%20Rise%20of%20Prominent%20Southeast%20Asian%20Energy%20Companies.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계) · 추출 열 name·비고",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 22건 중 성·시 확인 11건 · 성·시 10개 · 복수 성 0건",
+        "representativeItem": "Super Energy - Thinh Long Phu Yen 태양광 (Đắk Lắk)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-012",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-012.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 22,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 22,
+        "missingCount": 41,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-d-012",
+      "legend": {
+        "note": "단위 건 · 결측 41개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Đồng Nai",
+        "Bà Rịa–Vũng Tàu",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đà Nẵng",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 10개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "d-012-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-012-located-count",
+            "measureId": "d-012-located-count",
+            "measureKey": "d-012-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 22
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 22,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-014",
+      "detailUrl": "/?element=d-014&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 164,
+      "elementId": "D-014",
+      "label": "EDCF 사업",
+      "licenses": [
+        "공공누리 제1유형(출처표시)"
+      ],
+      "publicShortTitle": "EDCF 사업",
+      "rawLabel": "EDCF 프로젝트[프로젝트명, 수원국, 섹터, 승인 금액, 금리, 상환 기간, 거치 기간, 사업 기간, 시행기관, 상태(승인/집행/완료)]",
+      "source": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
+      "sourceOrganizations": [
+        "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+      ],
+      "sourceUrls": [
+        "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 164건 중 성·시 확인 43건 · 성·시 12개 · 복수 성 4건",
+        "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-014",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-014.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 26,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 26,
+        "missingCount": 37,
+        "requiredCount": 63
+      },
+      "latestYear": "2024년 기준",
+      "layerId": "vnm-v138-d-014",
+      "legend": {
+        "note": "단위 건 · 결측 37개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Thái Nguyên",
+        "Điện Biên",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2024년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 12개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2024년 기준",
+        "defaultVariable": "d-014-located-count",
+        "periods": [
+          "2024년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-014-located-count",
+            "measureId": "d-014-located-count",
+            "measureKey": "d-014-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2024년 기준"
+            ],
+            "maxFeatureCount": 26
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 164,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-015",
+      "detailUrl": "/?element=d-015&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 650,
+      "elementId": "D-015",
+      "label": "한국 ODA 사업",
+      "licenses": [
+        "공공누리 제1유형(출처표시)"
+      ],
+      "publicShortTitle": "한국 ODA 사업",
+      "rawLabel": "ODA Korea 프로젝트[사업명, 수원국, 시행기관(KOICA/EDCF/부처), 사업 유형(프로젝트/기술협력/연수), 사업 기간, 사업비, 분야(DAC 섹터코드), 상태]",
+      "source": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
+      "sourceOrganizations": [
+        "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+      ],
+      "sourceUrls": [
+        "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 650건 중 성·시 확인 103건 · 성·시 23개 · 복수 성 4건",
+        "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-015",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-015.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 45,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 45,
+        "missingCount": 18,
+        "requiredCount": 63
+      },
+      "latestYear": "2024년 기준",
+      "layerId": "vnm-v138-d-015",
+      "legend": {
+        "note": "단위 건 · 결측 18개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Sơn La",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Thanh Hóa",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Khánh Hòa",
+        "Ninh Thuận",
+        "Bà Rịa–Vũng Tàu",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Sóc Trăng",
+        "Bình Dương",
+        "Điện Biên",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2024년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 23개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2024년 기준",
+        "defaultVariable": "d-015-located-count",
+        "periods": [
+          "2024년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-015-located-count",
+            "measureId": "d-015-located-count",
+            "measureKey": "d-015-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2024년 기준"
+            ],
+            "maxFeatureCount": 45
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 650,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-016",
+      "detailUrl": "/?element=d-016&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 232,
+      "elementId": "D-016",
+      "label": "부처·지자체 ODA",
+      "licenses": [
+        "공공누리 제1유형(출처표시)"
+      ],
+      "publicShortTitle": "부처·지자체 ODA",
+      "rawLabel": "지자체·정부부처 프로젝트[사업명, 수원국, 시행기관(부처/지자체명), 사업 유형, 사업 기간, 사업비, 분야]",
+      "source": "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분",
+      "sourceOrganizations": [
+        "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+      ],
+      "sourceUrls": [
+        "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 232건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
+        "representativeItem": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략 (Hà Nội)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-016",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-016.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 14,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 14,
+        "missingCount": 49,
+        "requiredCount": 63
+      },
+      "latestYear": "2024년 기준",
+      "layerId": "vnm-v138-d-016",
+      "legend": {
+        "note": "단위 건 · 결측 49개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Hà Giang",
+        "Sơn La",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Hải Dương",
+        "Hưng Yên",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2024년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2024년 기준",
+        "defaultVariable": "d-016-located-count",
+        "periods": [
+          "2024년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-016-located-count",
+            "measureId": "d-016-located-count",
+            "measureKey": "d-016-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2024년 기준"
+            ],
+            "maxFeatureCount": 14
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 232,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-017",
+      "detailUrl": "/?element=d-017&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 10,
+      "elementId": "D-017",
+      "label": "사업 입찰·공모",
+      "licenses": [
+        "공공누리 제1유형(출처표시)"
+      ],
+      "publicShortTitle": "사업 입찰·공모",
+      "rawLabel": "한국 ODA 기관 PCP/입찰 현황[사업명, 대상국, 발주기관(KOICA/EDCF/부처), 분야, 예산 규모, 입찰 유형(PCP/RFP/경쟁), 입찰 일정(공고일/마감일), 수행기관 자격 요건]",
+      "source": "KOICA 전자조달시스템 · 조달청 나라장터(G2B) · ODA Korea 통합 입찰공고",
+      "sourceOrganizations": [
+        "KOICA 전자조달시스템 · 조달청 나라장터(G2B) · ODA Korea 통합 입찰공고"
+      ],
+      "sourceUrls": [
+        "https://nebid.koica.go.kr/oep/masc/mainPageForm.do"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 10건 중 성·시 확인 4건 · 성·시 3개 · 복수 성 0건",
+        "representativeItem": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역 (Đắk Lắk)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-017",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-017.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 4,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 4,
+        "missingCount": 59,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-d-017",
+      "legend": {
+        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·예산·공고일·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hà Nội",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 3개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "d-017-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-017-located-count",
+            "measureId": "d-017-located-count",
+            "measureKey": "d-017-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 4
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 10,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
       "accuracyNotice": "참여국 경계는 사업의 협력범위이며 사업 위치가 아닙니다. 검증된 세부 활동지역만 점으로 표시합니다.",
       "active": true,
       "aggregationLevel": "regional-project",
@@ -10141,6 +11544,1456 @@
         "evidence": "사업 4건(활동지 2, 참여국 범위 2)",
         "representativeItem": "메콩 EbA 지역사업"
       }
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-019",
+      "detailUrl": "/?element=d-019&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 10,
+      "elementId": "D-019",
+      "label": "기술지원 사업",
+      "licenses": [
+        "CTCN 웹사이트 이용약관(UNFCCC·UNEP·UNIDO)"
+      ],
+      "publicShortTitle": "기술지원 사업",
+      "rawLabel": "CTCN 기술지원 요청[요청 국가, NDE 기관명, 기술 분야(Sectors), 지원 단계(Phase: Scoping/TA Delivery/Completed), 예산, 기술 유형(Technologies), 기간, TA 결과 요약]",
+      "source": "Climate Technology Centre and Network (CTCN)",
+      "sourceOrganizations": [
+        "Climate Technology Centre and Network (CTCN)"
+      ],
+      "sourceUrls": [
+        "https://www.ctc-n.org/technical-assistance/ctcn-technical-assistance"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 10건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
+        "representativeItem": "Strengthening hai phong city’s climate adaptation and dis… (Hải Phòng)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-019",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-019.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 2,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 2,
+        "missingCount": 61,
+        "requiredCount": 63
+      },
+      "latestYear": "2025년 기준",
+      "layerId": "vnm-v138-d-019",
+      "legend": {
+        "note": "단위 건 · 결측 61개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·예산·기간·지원단계)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hà Nội",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2025년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 1개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2025년 기준",
+        "defaultVariable": "d-019-located-count",
+        "periods": [
+          "2025년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-019-located-count",
+            "measureId": "d-019-located-count",
+            "measureKey": "d-019-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2025년 기준"
+            ],
+            "maxFeatureCount": 2
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 10,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-020",
+      "detailUrl": "/?element=d-020&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 9,
+      "elementId": "D-020",
+      "label": "GCF 사업",
+      "licenses": [
+        "GCF Terms and conditions (기관 이용약관)"
+      ],
+      "publicShortTitle": "GCF 사업",
+      "rawLabel": "GCF 프로젝트[프로젝트명(Ref No.), 국가, 인가기관(AE), GCF 승인 금액, 공동재원, 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 상태(Approved/Under Implementation/Completed), 이사회 승인일, 예상 수혜자 수, 예상 감축량]",
+      "source": "Green Climate Fund",
+      "sourceOrganizations": [
+        "Green Climate Fund"
+      ],
+      "sourceUrls": [
+        "https://www.greenclimate.fund/countries/viet-nam"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 대상지역",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 9건 중 성·시 확인 2건 · 성·시 7개 · 복수 성 1건",
+        "representativeItem": "Vietnam REDD-plus results-based payments for results peri… (Tuyên Quang)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-020",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-020.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 11,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 11,
+        "missingCount": 52,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-d-020",
+      "legend": {
+        "note": "단위 건 · 결측 52개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Cao Bằng",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Thái Nguyên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hà Nội",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 7개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "d-020-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-020-located-count",
+            "measureId": "d-020-located-count",
+            "measureKey": "d-020-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 11
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 9,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-021",
+      "detailUrl": "/?element=d-021&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 640,
+      "elementId": "D-021",
+      "label": "국제기구·MDB 사업",
+      "licenses": [
+        "d-portal / IATI 이용약관"
+      ],
+      "publicShortTitle": "국제기구·MDB 사업",
+      "rawLabel": "주요 국제기구·MDB 프로젝트[프로젝트명, 수원국, 공여기관(WB/ADB/UNDP/FAO/UNCCD 등), 섹터(DAC 코드), 금액(commitment/disbursement), 기간, 상태, 실행기관, Rio Marker]",
+      "source": "IATI Datastore (IATI Secretariat) — 국제기구·MDB 보고 활동 원자료 · IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분) · IATI Registry — d-portal 집계(국제기구·MDB 보고분)",
+      "sourceOrganizations": [
+        "IATI Datastore (IATI Secretariat) — 국제기구·MDB 보고 활동 원자료",
+        "IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분)",
+        "IATI Registry — d-portal 집계(국제기구·MDB 보고분)"
+      ],
+      "sourceUrls": [
+        "https://api.iatistandard.org/datastore/activity/select?q=recipient_country_code:VN",
+        "https://d-portal.iatistandard.org/ctrack.html?country=VN"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계) · 추출 열 name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 640건 중 성·시 확인 71건 · 성·시 27개 · 복수 성 15건",
+        "representativeItem": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project) (Đắk Lắk)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-021",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-021.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 53,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 53,
+        "missingCount": 10,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-d-021",
+      "legend": {
+        "note": "단위 건 · 결측 10개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Sơn La",
+        "Quảng Ninh",
+        "Đồng Nai",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Bình Phước",
+        "Điện Biên"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 27개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "d-021-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-021-located-count",
+            "measureId": "d-021-located-count",
+            "measureKey": "d-021-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 53
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 640,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "elementId": "D-022",
+      "layerId": "vnm-v155-d-022",
+      "label": "개발금융 사업 소재 성·시",
+      "publicShortTitle": "개발금융 사업 위치",
+      "rawLabel": "MDB/DFI/PPP 투자 프로젝트",
+      "category": "국제사업·재원",
+      "detailElementId": "D-022",
+      "detailUrl": "/?element=d-022&country=VNM#element-detail",
+      "active": true,
+      "enabled": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "cluster": false,
+      "regionalProject": false,
+      "scopeCountries": [
+        "VNM"
+      ],
+      "mapMode": "region-choropleth",
+      "renderer": "admin1-choropleth",
+      "rendererNote": "조인 키가 adm1Code(63)가 아니라 adm1Code34(2025 34 단위)이고 경계 자산이 vnm-adm1-34 입니다. 63 토글 시에는 memberAdm1Codes 로 같은 값을 펼쳐 칠하는 것을 제안(값 분할 없음).",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "aggregationLevel": "post-2025-34-unit",
+      "spatialScopeType": "admin1",
+      "coordinateMeaning": "source-region-value",
+      "assetRef": {
+        "elementId": "D-022",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-022.json",
+      "joinKey": "adm1Code34",
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "featureCount": 12,
+      "totalEntityCount": 15,
+      "unit": "건",
+      "selectors": {
+        "defaultPeriod": "1997–2025",
+        "defaultVariable": "project-count",
+        "periods": [
+          "1997–2025"
+        ],
+        "variables": [
+          {
+            "key": "project-count",
+            "label": "사업 수(소재 성 기준)",
+            "unit": "건",
+            "periods": [
+              "1997–2025"
+            ],
+            "maxFeatureCount": 12
+          },
+          {
+            "key": "commitment-sum",
+            "label": "승인액 합계(USD, 다수 성 사업 전액 계상)",
+            "unit": "USD",
+            "periods": [
+              "1997–2025"
+            ],
+            "maxFeatureCount": 12
+          }
+        ]
+      },
+      "valueScale": {
+        "kind": "sequential",
+        "note": "사업 수는 정수 등급, 승인액은 USD 합계(다수 성 사업 전액 계상)"
+      },
+      "filters": [],
+      "tooltipFields": [
+        "adm1Name34",
+        "value",
+        "unit",
+        "recordIds"
+      ],
+      "fieldLabels": {
+        "adm1Name34": "성·시(2025)",
+        "recordIds": "해당 사업"
+      },
+      "legend": {
+        "title": "개발금융 사업 수(소재 성·시)",
+        "note": "World Bank 15건 중 성·시 확인 7건 · 전국 사업 8건은 성별 값 없음 · 다수 성 사업은 각 성에 사업 수 1건·승인액 전액 계상 — 성 간 합산 불가(중복). 전국 사업은 성별 값 없이 별도 목록."
+      },
+      "nationalRecordIds": [
+        "v124-d-022-entity-00001",
+        "v124-d-022-entity-00002",
+        "v124-d-022-entity-00008",
+        "v124-d-022-entity-00011",
+        "v124-d-022-entity-00012",
+        "v124-d-022-entity-00013",
+        "v124-d-022-entity-00014",
+        "v124-d-022-entity-00015"
+      ],
+      "pendingRecordIds": [],
+      "source": "IATI Registry — d-portal(World Bank 보고) · World Bank Projects & Operations",
+      "sourceOrganizations": [
+        "IATI Registry — d-portal 집계(World Bank·ADB·IFC 등 MDB·DFI 보고분)",
+        "World Bank Projects & Operations"
+      ],
+      "sourceUrls": [
+        "https://d-portal.iatistandard.org/ctrack.html?country=VN",
+        "https://projects.worldbank.org/en/projects-operations/projects-list?countrycode_exact=VN"
+      ],
+      "sourceYear": "2025",
+      "latestYear": "2025",
+      "license": "d-portal / IATI 이용약관",
+      "licenses": [
+        "d-portal / IATI 이용약관",
+        "World Bank Open Data 이용약관"
+      ],
+      "attribution": "Project locations: World Bank activity <location> elements reported to IATI (d-portal) and World Bank project documents (PAD/PID/ISDS/Program Document). Province names lifted to the 2025 34-unit boundaries (Nghị quyết 202/2025/QH15).",
+      "accuracyNotice": "소재는 World Bank가 IATI로 보고한 성 단위 location과 사업문서에 명시된 성·시만 사용했으며 좌표 추정·지오코딩은 하지 않았습니다. 다수 성 사업은 각 성에 사업 수 1건·승인액 전액을 계상하므로 성 간 합산은 중복됩니다. 전국 사업(개발정책차관·전국 융자 프로그램)은 성별 값이 없습니다. 하위사업이 실행 중 결정되는 프로그램은 전국으로 분류했습니다.",
+      "publicSpatialNotice": "성·시 단위 소재(World Bank 보고)이며 사업 현장 좌표가 아닙니다.",
+      "spatialLimitation": "회랑형 사업(남부 수로)은 문서에 명시된 양단 시만 대응하고 경유 성은 미표시. 컨셉 단계 사업은 범위가 바뀔 수 있음.",
+      "spatialCoverage": "성·시 34개 중 12개 · 사업 15건(성 확인 7·전국 8·미확인 0)",
+      "spatialStatus": "ready-pending-registration",
+      "missingValuePolicy": "사업이 없는 성·시는 투명 처리, 0 대체 없음",
+      "mapBenefit": "개발금융 사업이 어느 성·시에 집중되는지 물 스트레스·저지대·인프라 레이어와 함께 볼 수 있습니다.",
+      "generatedAt": "2026-09-22T04:18:47Z",
+      "missingRegions": [],
+      "join": {
+        "requiredCount": 12,
+        "matchedCount": 12,
+        "missingCount": 0,
+        "failures": []
+      },
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "sourceCoordinateCount": 0,
+      "displayedCoordinateCount": 0,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 15,
+      "mapTargetV138": {
+        "publicName": "MDB·DFI 금융",
+        "sourceSpatialUnit": "성·시 34개 중 12개 · 사업 15건(성 확인 7·전국 8·미확인 0)",
+        "displaySpatialUnit": "조인 키가 adm1Code(63)가 아니라 adm1Code34(2025 34 단위)이고 경계 자산이 vnm-adm1-34 입니다. 63 토글 시에는 memberAdm1Codes 로 같은 값을 펼쳐 칠하는 것을 제안(값 분할 없음).",
+        "selectableVariables": "사업 수(소재 성 기준) · 승인액 합계(USD, 다수 성 사업 전액 계상)",
+        "unit": "건",
+        "period": "2026년 기준",
+        "representativeItem": "개발금융 사업 위치",
+        "evidence": "자산 피처 12개 · Polygon·MultiPolygon",
+        "limitation": "회랑형 사업(남부 수로)은 문서에 명시된 양단 시만 대응하고 경유 성은 미표시. 컨셉 단계 사업은 범위가 바뀔 수 있음."
+      }
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-023",
+      "detailUrl": "/?element=d-023&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 73,
+      "elementId": "D-023",
+      "label": "기후기금 사업",
+      "licenses": [
+        "GCF Terms and conditions (기관 이용약관)",
+        "World Bank Group Terms and Conditions"
+      ],
+      "publicShortTitle": "기후기금 사업",
+      "rawLabel": "ODA 및 기후기금(GCF, GEF, AF) 재원[프로젝트명, 수원국, 기금명(GCF/GEF/AF/CIF), 승인 금액, 공동재원(co-financing), 분야(mitigation/adaptation/cross-cutting), 결과영역(Result Area), 인가기관(AE/Agency), 상태(Approved/Implementing/Completed), Readiness 구분, 공동투자 참여 가능 여부 및 형태]",
+      "source": "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee · Global Environment Facility (GEF) Secretariat · Green Climate Fund · Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds",
+      "sourceOrganizations": [
+        "Climate Investment Funds (CIF) — Clean Technology Fund (CTF) Trust Fund Committee",
+        "Global Environment Facility (GEF) Secretariat",
+        "Green Climate Fund",
+        "Green Climate Fund · Global Environment Facility · Adaptation Fund Board Secretariat · Climate Investment Funds"
+      ],
+      "sourceUrls": [
+        "https://www.cif.org/country/vietnam",
+        "https://www.greenclimate.fund/countries/viet-nam",
+        "https://www.thegef.org/projects-operations/database"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계) · 추출 열 대상지역·name",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 73건 중 성·시 확인 5건 · 성·시 9개 · 복수 성 1건",
+        "representativeItem": "Hanoi Sustainable Urban Transport (Hà Nội)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-023",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-023.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 15,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 15,
+        "missingCount": 48,
+        "requiredCount": 63
+      },
+      "latestYear": "2013~2026년",
+      "layerId": "vnm-v138-d-023",
+      "legend": {
+        "note": "단위 건 · 결측 48개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Cao Bằng",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Thái Nguyên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hải Phòng"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2013~2026년",
+      "spatialCoverage": "개편 후 34개 성·시 중 9개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2013~2026년",
+        "defaultVariable": "d-023-located-count",
+        "periods": [
+          "2013~2026년"
+        ],
+        "variables": [
+          {
+            "key": "d-023-located-count",
+            "measureId": "d-023-located-count",
+            "measureKey": "d-023-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2013~2026년"
+            ],
+            "maxFeatureCount": 15
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 73,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-025",
+      "detailUrl": "/?element=d-025&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 132,
+      "elementId": "D-025",
+      "label": "민간 인프라 사업",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "publicShortTitle": "민간 인프라 사업",
+      "rawLabel": "민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/Concession/Divestiture), 총 투자액, 민간 투자액, 계약 기간, 상태(Active/Cancelled/Distressed), Financial Close 연도, 스폰서/개발사, IDA 지위, 공동투자 참여 가능 여부 및 형태]",
+      "source": "World Bank Private Participation in Infrastructure (PPI) Database",
+      "sourceOrganizations": [
+        "World Bank Private Participation in Infrastructure (PPI) Database"
+      ],
+      "sourceUrls": [
+        "https://ppi.worldbank.org/en/ppidata"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 118건(개편 후 34개 체계) · 추출 열 위치·name·스폰서",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 132건 중 성·시 확인 118건 · 성·시 28개 · 복수 성 5건",
+        "representativeItem": "Bau Ngu Lake Solar Power Plant (Khánh Hòa)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-025",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-025.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 54,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 54,
+        "missingCount": 9,
+        "requiredCount": 63
+      },
+      "latestYear": "2024년 기준",
+      "layerId": "vnm-v138-d-025",
+      "legend": {
+        "note": "단위 건 · 결측 9개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·민간_투자액_자체_산출·Financial_Close·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Cao Bằng",
+        "Lạng Sơn",
+        "Thái Bình",
+        "Thừa Thiên Huế",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Hưng Yên"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2024년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 28개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2024년 기준",
+        "defaultVariable": "d-025-located-count",
+        "periods": [
+          "2024년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-025-located-count",
+            "measureId": "d-025-located-count",
+            "measureKey": "d-025-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2024년 기준"
+            ],
+            "maxFeatureCount": 54
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 132,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "국제사업·재원",
+      "detailElementId": "D-026",
+      "detailUrl": "/?element=d-026&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 14,
+      "elementId": "D-026",
+      "label": "보증 지원사업",
+      "licenses": [
+        "World Bank Group Terms and Conditions"
+      ],
+      "publicShortTitle": "보증 지원사업",
+      "rawLabel": "MIGA 정치적 리스크 보증[프로젝트명, 국가, 섹터, 보증 금액, 보증 유형(수용/이전제한/계약위반/전쟁내란), 보증 기간, 투자자, 상태]",
+      "source": "Multilateral Investment Guarantee Agency (MIGA), World Bank Group",
+      "sourceOrganizations": [
+        "Multilateral Investment Guarantee Agency (MIGA), World Bank Group"
+      ],
+      "sourceUrls": [
+        "https://www.miga.org/projects?f%5B0%5D=country%3AVietnam"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 name·비고",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 14건 중 성·시 확인 2건 · 성·시 4개 · 복수 성 2건",
+        "representativeItem": "Hanoi-Haiphong Expressway (Hải Phòng)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "D-026",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-026.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 8,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 8,
+        "missingCount": 55,
+        "requiredCount": 63
+      },
+      "latestYear": "2018년 기준",
+      "layerId": "vnm-v138-d-026",
+      "legend": {
+        "note": "단위 건 · 결측 55개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 사업 수"
+      },
+      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·보증_기간·상태)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Cà Mau",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2018년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 4개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2018년 기준",
+        "defaultVariable": "d-026-located-count",
+        "periods": [
+          "2018년 기준"
+        ],
+        "variables": [
+          {
+            "key": "d-026-located-count",
+            "measureId": "d-026-located-count",
+            "measureKey": "d-026-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 사업 수",
+            "unit": "건",
+            "periods": [
+              "2018년 기준"
+            ],
+            "maxFeatureCount": 8
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 14,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "협력기관·기업",
+      "detailElementId": "E-001",
+      "detailUrl": "/?element=e-001&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 18,
+      "elementId": "E-001",
+      "label": "CTCN 참여기관",
+      "licenses": [
+        "CTCN 웹사이트 이용약관(Disclaimer)"
+      ],
+      "publicShortTitle": "CTCN 참여기관",
+      "rawLabel": "CTCN NDE(국가지정기구)[국가, 기관명, 소속 부처, 담당자명(Focal Point), 직함, 이메일, 전화번호]",
+      "source": "Climate Technology Centre and Network (CTCN)",
+      "sourceOrganizations": [
+        "Climate Technology Centre and Network (CTCN)"
+      ],
+      "sourceUrls": [
+        "https://www.ctc-n.org/about-ctcn/national-designated-entities/ministry-natural-resources-and-environment-vietnam",
+        "https://www.ctc-n.org/network/network-members",
+        "https://www.ctc-n.org/networking-and-collaboration/collaboration/ta-proponents"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계) · 추출 열 note",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 18건 중 성·시 확인 6건 · 성·시 1개 · 복수 성 0건",
+        "representativeItem": "네트워크 회원(민간기업) (Hà Nội)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "E-001",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-001.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 1,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 1,
+        "missingCount": 62,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-e-001",
+      "legend": {
+        "note": "단위 건 · 결측 62개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 기관 수"
+      },
+      "mapBenefit": "성·시 클릭 → 기관 목록(명칭)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 1개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "e-001-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "e-001-located-count",
+            "measureId": "e-001-located-count",
+            "measureKey": "e-001-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 기관 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 1
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 18,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "협력기관·기업",
+      "detailElementId": "E-002",
+      "detailUrl": "/?element=e-002&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 1,
+      "elementId": "E-002",
+      "label": "DNA 협력창구",
+      "licenses": [
+        "UNFCCC 웹사이트 이용약관"
+      ],
+      "publicShortTitle": "DNA 협력창구",
+      "rawLabel": "DNA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태]",
+      "source": "United Nations Framework Convention on Climate Change (UNFCCC)",
+      "sourceOrganizations": [
+        "United Nations Framework Convention on Climate Change (UNFCCC)"
+      ],
+      "sourceUrls": [
+        "https://unfccc.int/sites/default/files/resource/A6.4_HPPR_Viet%20Nam.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 officeAddress",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 1건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
+        "representativeItem": "Department of Climate Change (기후변화국) (Hà Nội)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "E-002",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-002.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 1,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 1,
+        "missingCount": 62,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-e-002",
+      "legend": {
+        "note": "단위 건 · 결측 62개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 기관 수"
+      },
+      "mapBenefit": "성·시 클릭 → 기관 목록(a64Status)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Bình Phước",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 1개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "e-002-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "e-002-located-count",
+            "measureId": "e-002-located-count",
+            "measureKey": "e-002-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 기관 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 1
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 1,
+      "unit": "건",
+      "memberRecordsInAsset": true
     },
     {
       "category": "협력기관·기업",
@@ -11190,19 +14043,238 @@
         "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
         "valueSystem": "pre-2025-63"
       }
+    },
+    {
+      "category": "협력기관·기업",
+      "detailElementId": "E-020",
+      "detailUrl": "/?element=e-020&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 7,
+      "elementId": "E-020",
+      "label": "한국 지원사업",
+      "licenses": [],
+      "publicShortTitle": "한국 지원사업",
+      "rawLabel": "한국 공공·민간 지원체계[지원기관명(NIGT/GTC/KOTRA/KIAT/에너지공단 등), 지원 프로그램명, 지원 유형(실증/FS/기술이전/금융), 지원 대상(기업/연구기관), 예산 규모, 신청 시기, 원본 링크]",
+      "source": "NIGT·과기정통부·한국에너지공단·KIAT·KEITI·KOICA·KOTRA·한국수출입은행 등 각 기관 공식 웹사이트(용역사 취합) · 한국에너지공단·KOTRA·KEITI·KIAT·한국수출입은행·기후에너지환경부 등 공식 공고 및 언론 보도(용역사 취합)",
+      "sourceOrganizations": [
+        "NIGT·과기정통부·한국에너지공단·KIAT·KEITI·KOICA·KOTRA·한국수출입은행 등 각 기관 공식 웹사이트(용역사 취합)",
+        "한국에너지공단·KOTRA·KEITI·KIAT·한국수출입은행·기후에너지환경부 등 공식 공고 및 언론 보도(용역사 취합)"
+      ],
+      "sourceUrls": [
+        "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_8_source_url 열 참조"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 field_01856451",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+        "evidence": "개체 7건 중 성·시 확인 2건 · 성·시 2개 · 복수 성 0건",
+        "representativeItem": "한국환경산업기술원(KEITI) (Đồng Nai)"
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "E-020",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 3,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 3,
+        "missingCount": 60,
+        "requiredCount": 63
+      },
+      "latestYear": "2026년 기준",
+      "layerId": "vnm-v138-e-020",
+      "legend": {
+        "note": "단위 건 · 결측 60개 성·시(개편 전 63개 기준)",
+        "title": "지역이 확인된 기관 수"
+      },
+      "mapBenefit": "성·시 클릭 → 기관 목록(명칭)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Bình Thuận",
+        "Long An",
+        "Bà Rịa–Vũng Tàu",
+        "An Giang",
+        "Đồng Tháp",
+        "Tiền Giang",
+        "Kiên Giang",
+        "Vĩnh Long",
+        "Bến Tre",
+        "Trà Vinh",
+        "Sóc Trăng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bạc Liêu",
+        "Bắc Ninh",
+        "Bình Dương",
+        "Cà Mau",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hậu Giang",
+        "Cần Thơ",
+        "Đà Nẵng",
+        "Hà Nội",
+        "Hải Phòng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026년 기준",
+      "spatialCoverage": "개편 후 34개 성·시 중 2개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "2026년 기준",
+        "defaultVariable": "e-020-located-count",
+        "periods": [
+          "2026년 기준"
+        ],
+        "variables": [
+          {
+            "key": "e-020-located-count",
+            "measureId": "e-020-located-count",
+            "measureKey": "e-020-located-count",
+            "scenario": null,
+            "label": "지역이 확인된 기관 수",
+            "unit": "건",
+            "periods": [
+              "2026년 기준"
+            ],
+            "maxFeatureCount": 3
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 7,
+      "unit": "건",
+      "memberRecordsInAsset": true
     }
   ],
-  "mapFeatureCount": 4463,
+  "mapFeatureCount": 14920,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {
-    "schemaVersion": "public-map-targets-v138",
-    "targetCount": 43,
-    "connectedCount": 42,
+    "schemaVersion": "public-map-targets-v157",
+    "targetCount": 72,
+    "connectedCount": 60,
     "notConnected": [
       {
-        "elementId": "B-017",
-        "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다."
+        "elementId": "A-013",
+        "reason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)"
+      },
+      {
+        "elementId": "A-022",
+        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
+      },
+      {
+        "elementId": "B-002",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-024",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-035",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-036",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-044",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-046",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "B-047",
+        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
+      },
+      {
+        "elementId": "C-003",
+        "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
+      },
+      {
+        "elementId": "C-006",
+        "reason": "사업지역 세분화 전 — 성 단위 가능하면 등록"
+      },
+      {
+        "elementId": "C-017",
+        "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
       }
     ]
   }

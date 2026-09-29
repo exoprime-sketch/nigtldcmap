@@ -99,6 +99,15 @@ const PREFERRED_POPUP_KEYS = [
   /(설명|내용|분류|description)/iu,
 ];
 const SOURCE_URL_KEYS = /(원문url|url|링크|link)/iu;
+/** Columns naming an organisation, which is not where a project happens. */
+const INSTITUTION_KEYS =
+  /(기관|시행|발주|사업자|보고기관|운영기관|실행|수행|소속|orgname|organization|agency|operator|institution)/iu;
+/** Columns that say, in the delivery's own words, which area a record covers. */
+const REGION_MEANING_KEYS =
+  /(지역|대상지|소재|위치|행정|province|adm1|region|city|주소|address|체계)/iu;
+/** Records that are themselves organisations, so their seat is their location. */
+const ORGANISATION_RECORD_KEYS = /(기관명|orgname|organizationname|companyname|기업명|대학|연구소)/iu;
+
 /** A named person's contact details stay off the map popup. */
 const PERSONAL_CONTACT_KEYS =
   /(email|phone|fax|mobile|연락처|담당자|deputy|focalpoint|직함)/iu;
@@ -162,6 +171,7 @@ function evidenceFor(elementId) {
   const regionFieldsFilled = new Set();
   const regionCodeColumns = new Set();
   const spatialUnitValues = new Set();
+  const organisationRecordColumns = new Set();
   const attributeStats = new Map();
   let nationwideRows = 0;
   const genericRegionRows = new Set();
@@ -178,6 +188,10 @@ function evidenceFor(elementId) {
       if (GENERIC_REGION_WORDS.test(value)) genericRegionRows.add(entity.recordId ?? value);
       const hits = PROVINCES.codes(value);
       if (hits.length === 0) continue;
+      const seen = provinceColumns.get(field) ?? { rows: 0, codes: new Set(), kind: "name" };
+      seen.rows += 1;
+      hits.forEach((code) => seen.codes.add(code));
+      provinceColumns.set(field, seen);
       freeTextProvinceRows += 1;
       freeTextFields.add(field);
       hits.forEach((code) => freeTextProvinceCodes.add(code));
@@ -206,9 +220,21 @@ function evidenceFor(elementId) {
       if (REGION_CODE_VALUE.test(text)) regionCodeColumns.add(key);
       const hits = PROVINCES.codes(text);
       if (hits.length > 0) {
-        hits.forEach((code) => rowProvinces.add(code));
-        provinceColumns.set(key, (provinceColumns.get(key) ?? 0) + 1);
+        const kind = SOURCE_URL_KEYS.test(key)
+          ? "url"
+          : REGION_MEANING_KEYS.test(key)
+            ? "region"
+            : INSTITUTION_KEYS.test(key)
+              ? "institution"
+              : "other";
+        const seen = provinceColumns.get(key) ?? { rows: 0, codes: new Set(), kind };
+        seen.rows += 1;
+        hits.forEach((code) => seen.codes.add(code));
+        provinceColumns.set(key, seen);
+        // A URL that happens to contain a city name is not a region statement.
+        if (kind !== "url") hits.forEach((code) => rowProvinces.add(code));
       }
+      if (ORGANISATION_RECORD_KEYS.test(key)) organisationRecordColumns.add(key);
       if (SPATIAL_UNIT_KEYS.test(key) && SPATIAL_UNIT_VALUES.test(text)) {
         standsForUnit = true;
         spatialUnitValues.add(text.toLowerCase());
@@ -247,7 +273,25 @@ function evidenceFor(elementId) {
     hits.forEach((code) => observationProvinceCodes.add(code));
   }
 
-  const busiest = [...provinceColumns.entries()].sort((left, right) => right[1] - left[1])[0];
+  const columnCandidates = [...provinceColumns.entries()]
+    .map(([column, seen]) => ({
+      column,
+      rows: seen.rows,
+      codeCount: seen.codes.size,
+      kind: seen.kind,
+    }))
+    .sort((left, right) => right.rows - left.rows);
+  const recordsAreOrganisations = organisationRecordColumns.size > 0;
+  const ORDER = recordsAreOrganisations
+    ? ["region", "name", "institution", "other"]
+    : ["region", "name", "other"];
+  const chosenColumn =
+    ORDER.map((kind) => columnCandidates.find((row) => row.kind === kind)).find(Boolean) ?? null;
+  // Province codes that survive the column choice: a URL never counts, and an
+  // organisation column counts only for records that are organisations.
+  const allowedColumns = new Set(
+    columnCandidates.filter((row) => ORDER.includes(row.kind)).map((row) => row.column)
+  );
   return {
     spatialLayer: layer
       ? {
@@ -263,8 +307,13 @@ function evidenceFor(elementId) {
     observationRows: observations.length,
     coordinateRows,
     provinceRows,
-    provinceCodeCount: provinceCodes.size,
-    provinceColumn: busiest ? { column: busiest[0], rows: busiest[1] } : null,
+    provinceCodeCount: chosenColumn ? chosenColumn.codeCount : 0,
+    provinceColumn: chosenColumn,
+    provinceColumnCandidates: columnCandidates,
+    recordsAreOrganisations,
+    rejectedRegionColumns: columnCandidates
+      .filter((row) => !allowedColumns.has(row.column))
+      .map((row) => ({ column: row.column, kind: row.kind, rows: row.rows })),
     observationProvinceRows,
     observationProvinceCodeCount: observationProvinceCodes.size,
     regionScopedTextRows,
@@ -323,6 +372,74 @@ function criteriaFrom(evidence) {
   if (evidence.regionScopedTextRows > 0) criteria.push("③");
   return criteria;
 }
+
+/**
+ * Where a target the data cannot map is shown instead (사용자 결정 2026-09-29).
+ *
+ * `form` follows the 기획표: A = 레이어 선택 시 우측 패널 카드, B = 지역 패널
+ * '전국 기준값' 줄, C = 팝업 보강 1~2줄. `role` marks the layer a reader reaches
+ * first. Nothing here draws the value on the map; that is the point.
+ */
+const COMPANION_PLACEMENTS_V157 = {
+  "B-002": [{ elementId: "B-003", role: "primary", form: "A", note: "기후대 국가 면적 구성을 기후 레이어 옆 카드로" }],
+  "B-024": [{ elementId: "B-017", role: "primary", form: "A", note: "농업용수 대리지표 국가값을 물 스트레스 레이어 옆 카드로" }],
+  "B-035": [{ elementId: "B-037", role: "primary", form: "A", note: "토지이용 면적 국가값을 토지피복 레이어 옆 카드로" }],
+  "B-036": [{ elementId: "B-037", role: "primary", form: "A", note: "토지이용 변화율 국가값을 토지피복 레이어 옆 카드로" }],
+  "B-044": [
+    {
+      elementId: "B-048",
+      role: "primary",
+      form: "C",
+      note: "광종이 일치하는 광산 팝업에 부존 1줄, 일치하지 않는 광종은 패널 카드",
+      matchOn: "광종",
+    },
+  ],
+  "B-046": [
+    {
+      elementId: "B-048",
+      role: "primary",
+      form: "C",
+      note: "광종이 일치하는 광산 팝업에 매장량 1줄, 일치하지 않는 광종은 패널 카드",
+      matchOn: "광종",
+    },
+  ],
+  "B-047": [
+    {
+      elementId: "B-048",
+      role: "primary",
+      form: "C",
+      note: "광종이 일치하는 광산 팝업에 생산량 1줄, 일치하지 않는 광종은 패널 카드",
+      matchOn: "광종",
+    },
+  ],
+  "A-013": [
+    {
+      elementId: "B-012",
+      role: "primary",
+      form: "A",
+      note: "NDC 원문 인용 카드만 — 경계·좌표를 만들지 않음",
+      quotationOnly: true,
+    },
+    {
+      elementId: "B-008",
+      role: "secondary",
+      form: "A",
+      note: "해수면 상승 관련 NDC 조치 인용 카드",
+      quotationOnly: true,
+    },
+  ],
+  "C-003": [{ elementId: "C-016", role: "primary", form: "A", note: "국가적응계획 지역과제를 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)" }],
+  "C-017": [{ elementId: "C-016", role: "primary", form: "A", note: "지역 발전가격·지원을 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)" }],
+  "C-006": [{ elementId: "C-025", role: "primary", form: "A", note: "JCM 사업 현황을 크레딧 레이어 옆 카드로(사업지역 확인 시 승격)" }],
+  "A-022": [
+    {
+      elementId: "A-024",
+      role: "primary",
+      form: "A",
+      note: "EVN 관할표 완성 전까지 송전망 레이어 옆 국가값 카드(MAIFI·SAIDI)",
+    },
+  ],
+};
 
 const selection = readJson(SELECTION_PATH);
 const v138 = new Map(readJson(V138_CONTRACT_PATH).targets.map((row) => [row.elementId, row]));
@@ -585,7 +702,12 @@ function popupFieldsV157(evidence, criteria, layers) {
   if (regionColumn && regionColumn !== "명칭" && regionColumn !== "name") {
     fields.push({
       key: regionColumn,
-      label: LOCATION_DESCRIPTOR_KEYS.test(regionColumn) ? "위치" : "지역",
+      label:
+        evidence.provinceColumn?.kind === "institution"
+          ? "기관 소재지"
+          : LOCATION_DESCRIPTOR_KEYS.test(regionColumn)
+            ? "위치"
+            : "지역",
       labelSource: "contract",
       source: "normalizedAttributes",
       note: "기관 주소를 사업지역으로 전용하지 않음",
@@ -797,6 +919,7 @@ const rows = items
           evidence.spatialLayer?.joinKey ??
           evidence.provinceColumn?.column ??
           (evidence.observationProvinceRows > 0 ? "observations.indicatorId" : null),
+        regionColumnKind: evidence.provinceColumn?.kind ?? null,
         regionRows:
           evidence.provinceColumn?.rows ??
           (evidence.observationProvinceRows > 0 ? evidence.observationProvinceRows : 0),
@@ -836,6 +959,8 @@ const rows = items
       ],
       status,
       statusReason: reason,
+      // A target the data cannot map travels with the layer a reader would open.
+      companionLayers: COMPANION_PLACEMENTS_V157[item.elementId] ?? [],
     };
   })
   .sort((left, right) => left.elementId.localeCompare(right.elementId));
@@ -870,6 +995,14 @@ const changed = previous !== text;
 if (!CHECK_ONLY) {
   mkdirSync(resolve(ROOT, "reports/v157"), { recursive: true });
   writeFileSync(OUT_PATH, text, "utf8");
+}
+
+const MAPPED_STATUSES_V157 = new Set(["registered", "pending-registration", "candidate"]);
+const withoutCompanion = rows
+  .filter((row) => !MAPPED_STATUSES_V157.has(row.status) && row.companionLayers.length === 0)
+  .map((row) => row.elementId);
+if (withoutCompanion.length > 0) {
+  throw new Error(`UNMAPPED_TARGET_WITHOUT_COMPANION: ${withoutCompanion.join(", ")}`);
 }
 
 const byStatus = rows.reduce((acc, row) => {
@@ -916,6 +1049,13 @@ const report = {
   withoutGeometry: rows.filter((row) => !row.geometry).map((row) => row.elementId),
   // Fields the popup would print with no label yet: publicFieldPolicyV126 needs
   // an entry for each before the UI step can show them.
+  companionPlacements: rows
+    .filter((row) => row.companionLayers.length > 0)
+    .map((row) => ({
+      elementId: row.elementId,
+      status: row.status,
+      companions: row.companionLayers.map((companion) => `${companion.elementId}(${companion.form})`),
+    })),
   labelsPending: [
     ...new Set(
       rows.flatMap((row) =>

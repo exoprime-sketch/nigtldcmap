@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "record-regions-v157",
+  "elementId": "D-016",
+  "countryIso3": "VNM",
+  "method": "province-dictionary-v157 value match (region column > record title > other; URL never; organisation column only for organisation records)",
+  "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
+  "recordsAreOrganisations": false,
+  "counts": {
+    "records": 232,
+    "located": 14,
+    "withoutRegion": 218,
+    "multiUnit": 0,
+    "units": 8
+  },
+  "columnsUsed": [
+    {
+      "column": "name",
+      "records": 14
+    }
+  ],
+  "byRecordId": {
+    "v124-d-016-entity-00004": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "하노이",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00005": [
+      {
+        "unitCode34": "VN34-04",
+        "name": "Cao Bằng",
+        "adm1Codes63": [
+          "VN-04"
+        ],
+        "spelling": "까오방",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00009": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "라오까이",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00012": [
+      {
+        "unitCode34": "VN34-59",
+        "name": "Cà Mau",
+        "adm1Codes63": [
+          "VN-55",
+          "VN-59"
+        ],
+        "spelling": "까마우",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00013": [
+      {
+        "unitCode34": "VN34-59",
+        "name": "Cà Mau",
+        "adm1Codes63": [
+          "VN-55",
+          "VN-59"
+        ],
+        "spelling": "까마우",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00071": [
+      {
+        "unitCode34": "VN34-18",
+        "name": "Ninh Bình",
+        "adm1Codes63": [
+          "VN-18",
+          "VN-63",
+          "VN-67"
+        ],
+        "spelling": "닌빈",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00090": [
+      {
+        "unitCode34": "VN34-22",
+        "name": "Nghệ An",
+        "adm1Codes63": [
+          "VN-22"
+        ],
+        "spelling": "응에안",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00177": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "다낭",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00180": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "꽝남",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00191": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "라오까이",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00194": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "다낭",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00203": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "하노이",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00219": [
+      {
+        "unitCode34": "VN34-33",
+        "name": "Đắk Lắk",
+        "adm1Codes63": [
+          "VN-32",
+          "VN-33"
+        ],
+        "spelling": "푸옌",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-016-entity-00228": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "하노이",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ]
+  }
+}

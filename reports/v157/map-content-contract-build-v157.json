@@ -1,6 +1,6 @@
 {
   "schema": "map-content-contract-build-v157",
-  "generatedAt": "2026-09-27T23:40:57.850Z",
+  "generatedAt": "2026-09-28T23:10:59.041Z",
   "country": "VNM",
   "rowCount": 72,
   "provinceDictionary": {
@@ -11,16 +11,14 @@
   "byStatus": {
     "region-text-generic": 1,
     "reference-mapping-pending": 1,
-    "registered": 39,
-    "pending-registration": 4,
+    "registered": 60,
     "national-only": 7,
-    "candidate": 17,
     "region-fields-empty": 2,
     "data-pending": 1
   },
   "criteriaCounts": {
     "none": 12,
-    "①": 54,
+    "①": 53,
     "②": 57,
     "③": 12
   },
@@ -38,10 +36,94 @@
     "C-006",
     "C-017"
   ],
+  "companionPlacements": [
+    {
+      "elementId": "A-013",
+      "status": "region-text-generic",
+      "companions": [
+        "B-012(A)",
+        "B-008(A)"
+      ]
+    },
+    {
+      "elementId": "A-022",
+      "status": "reference-mapping-pending",
+      "companions": [
+        "A-024(A)"
+      ]
+    },
+    {
+      "elementId": "B-002",
+      "status": "national-only",
+      "companions": [
+        "B-003(A)"
+      ]
+    },
+    {
+      "elementId": "B-024",
+      "status": "national-only",
+      "companions": [
+        "B-017(A)"
+      ]
+    },
+    {
+      "elementId": "B-035",
+      "status": "national-only",
+      "companions": [
+        "B-037(A)"
+      ]
+    },
+    {
+      "elementId": "B-036",
+      "status": "national-only",
+      "companions": [
+        "B-037(A)"
+      ]
+    },
+    {
+      "elementId": "B-044",
+      "status": "national-only",
+      "companions": [
+        "B-048(C)"
+      ]
+    },
+    {
+      "elementId": "B-046",
+      "status": "national-only",
+      "companions": [
+        "B-048(C)"
+      ]
+    },
+    {
+      "elementId": "B-047",
+      "status": "national-only",
+      "companions": [
+        "B-048(C)"
+      ]
+    },
+    {
+      "elementId": "C-003",
+      "status": "region-fields-empty",
+      "companions": [
+        "C-016(A)"
+      ]
+    },
+    {
+      "elementId": "C-006",
+      "status": "data-pending",
+      "companions": [
+        "C-025(A)"
+      ]
+    },
+    {
+      "elementId": "C-017",
+      "status": "region-fields-empty",
+      "companions": [
+        "C-016(A)"
+      ]
+    }
+  ],
   "labelsPending": [
-    "a64Status",
-    "approvalProcedure",
-    "field_7b638c0f",
     "field_890a80ed",
     "typeOfInformation"
   ],

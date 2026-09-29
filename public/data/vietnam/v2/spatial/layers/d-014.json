@@ -1,0 +1,1509 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-014",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2024년 기준",
+    "defaultVariable": "d-014-located-count",
+    "periods": [
+      "2024년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-014-located-count",
+        "measureId": "d-014-located-count",
+        "measureKey": "d-014-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2024년 기준"
+        ],
+        "maxFeatureCount": 26
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00005",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00005",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00005",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00046",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00046",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00046",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00050",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00069",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00069",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00075",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00114",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00114",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00114",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00127",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "d-014-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-014_edcf_project_registry",
+      "sourceRecordId": "v124-d-014-entity-00127",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-24": [
+      {
+        "recordId": "v124-d-014-entity-00001",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2011~2011(1개 연도행 합산)",
+        "status": "완료",
+        "value": "12,000,000 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00002",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2012~2016(4개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00003",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00065",
+        "label": "꽝빈성 직업전문대학 개선사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00066",
+        "label": "꽝빈성 직업전문대학 개선사업(소액차관)",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-d-014-entity-00001",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2011~2011(1개 연도행 합산)",
+        "status": "완료",
+        "value": "12,000,000 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00002",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2012~2016(4개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00003",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00065",
+        "label": "꽝빈성 직업전문대학 개선사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00066",
+        "label": "꽝빈성 직업전문대학 개선사업(소액차관)",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-d-014-entity-00004",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "2010~2010(1개 연도행 합산)",
+        "status": "미상",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00012",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00013",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00123",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00124",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00164",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "2023~2023(1개 연도행 합산)",
+        "status": "집행중",
+        "value": "67,099,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-d-014-entity-00004",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "2010~2010(1개 연도행 합산)",
+        "status": "미상",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00012",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00013",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00123",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00124",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00164",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "2023~2023(1개 연도행 합산)",
+        "status": "집행중",
+        "value": "67,099,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-d-014-entity-00004",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "2010~2010(1개 연도행 합산)",
+        "status": "미상",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00012",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00013",
+        "label": "호아빈 상수도 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00123",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00124",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00164",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "2023~2023(1개 연도행 합산)",
+        "status": "집행중",
+        "value": "67,099,000 USD",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-d-014-entity-00005",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00006",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-d-014-entity-00005",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00006",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-d-014-entity-00005",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00006",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-d-014-entity-00007",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00008",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00050",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00051",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00062",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00077",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00110",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00111",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "2014~2014(1개 연도행 합산)",
+        "status": "미상",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00148",
+        "label": "베트남 하이퐁 종합병원 건립사업",
+        "date": "2017~2021(5개 연도행 합산)",
+        "status": "완료",
+        "value": "95,000,000 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-d-014-entity-00007",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00008",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00050",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00051",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00062",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00077",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00110",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00111",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "2014~2014(1개 연도행 합산)",
+        "status": "미상",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00148",
+        "label": "베트남 하이퐁 종합병원 건립사업",
+        "date": "2017~2021(5개 연도행 합산)",
+        "status": "완료",
+        "value": "95,000,000 USD",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "v124-d-014-entity-00024",
+        "label": "흥옌시 폐수처리사업",
+        "date": "2012~2012(1개 연도행 합산)",
+        "status": "완료",
+        "value": "23,117,000 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00025",
+        "label": "흥옌시 폐수처리사업",
+        "date": "2014~2016(3개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00026",
+        "label": "흥옌시 폐수처리시설 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "v124-d-014-entity-00024",
+        "label": "흥옌시 폐수처리사업",
+        "date": "2012~2012(1개 연도행 합산)",
+        "status": "완료",
+        "value": "23,117,000 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00025",
+        "label": "흥옌시 폐수처리사업",
+        "date": "2014~2016(3개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00026",
+        "label": "흥옌시 폐수처리시설 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-d-014-entity-00046",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00047",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-d-014-entity-00046",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00047",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-d-014-entity-00046",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00047",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-d-014-entity-00050",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00051",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00062",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00077",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "2010~2016(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00143",
+        "label": "하노이 약학대학 건립사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-014-entity-00069",
+        "label": "베트남 옌바이 종합병원 건립사업",
+        "date": "2011~2016(5개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00070",
+        "label": "옌바이 종합병원 건립사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00087",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "13,600,000 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00088",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-014-entity-00069",
+        "label": "베트남 옌바이 종합병원 건립사업",
+        "date": "2011~2016(5개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00070",
+        "label": "옌바이 종합병원 건립사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00087",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "13,600,000 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00088",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-d-014-entity-00071",
+        "label": "까마우성 종합병원 개선사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00072",
+        "label": "베트남 까마우성 종합병원 개선사업",
+        "date": "2012~2016(5개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-d-014-entity-00071",
+        "label": "까마우성 종합병원 개선사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00072",
+        "label": "베트남 까마우성 종합병원 개선사업",
+        "date": "2012~2016(5개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-d-014-entity-00075",
+        "label": "하띤성 중등직업학교 개선사업",
+        "date": "2017~2023(7개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00076",
+        "label": "하띤성 중등직업학교 개선사업(소액차관)",
+        "date": "2011~2016(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00125",
+        "label": "하띤성 둑토 종합병원 앞 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00126",
+        "label": "하띤성 둑토 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-d-014-entity-00114",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00115",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2014~2014(1개 연도행 합산)",
+        "status": "미상",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00129",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "62,663,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00130",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-d-014-entity-00114",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00115",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2014~2014(1개 연도행 합산)",
+        "status": "미상",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00129",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "62,663,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00130",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-d-014-entity-00114",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00115",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "2014~2014(1개 연도행 합산)",
+        "status": "미상",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00129",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "62,663,000 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      },
+      {
+        "recordId": "v124-d-014-entity-00130",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "2018~2023(6개 연도행 합산)",
+        "status": "완료",
+        "value": "0 USD",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-d-014-entity-00127",
+        "label": "빈딘성 꾸이년병원 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-d-014-entity-00127",
+        "label": "빈딘성 꾸이년병원 의료기자재 공급사업",
+        "date": "2015~2015(1개 연도행 합산)",
+        "status": "완료",
+        "value": "3,000,000 USD",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-014_edcf_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-014-located-count",
+      "period": "2024년 기준",
+      "expectedCount": 63,
+      "matchedCount": 26,
+      "missingCount": 37,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "출처: 한국국제협력단(KOICA)·한국수출입은행(EDCF)·ODA Korea, 공공누리 제1유형."
+    ],
+    "licenses": [
+      "공공누리 제1유형(출처표시)"
+    ],
+    "organizations": [
+      "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 26,
+    "maxSeriesFeatureCount": 26,
+    "missingAdm1Count": 37,
+    "providedZeroCount": 0,
+    "publishedValueCount": 26,
+    "sourceValueCount": 47,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 12
+  }
+}

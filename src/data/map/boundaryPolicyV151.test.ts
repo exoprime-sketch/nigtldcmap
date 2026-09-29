@@ -178,8 +178,11 @@ test("B-032: Lâm Đồng's area-weighted value stays within its members' range"
   );
 });
 
-test("C-019: native-34 reproduces the identical replicated value per unit, with no conflicts", () => {
-  const layer = readSpatialLayer("c-019");
+// V157 moved C-019 off the map (2026-09-22 전수검토: 지도 비표출), so the native-34
+// check runs on C-013, a registered layer with the same shape: a value stated per
+// 2025 unit and replicated to that unit's member provinces.
+test("C-013: native-34 reproduces the identical replicated value per unit, with no conflicts", () => {
+  const layer = readSpatialLayer("c-013");
   const { defaultVariable, defaultPeriod } = layer.selectors;
   const rows = layer.values.filter((v) => v.variable === defaultVariable && v.period === defaultPeriod);
   const distinctRegions = new Set(rows.map((r) => r.sourceRegion));

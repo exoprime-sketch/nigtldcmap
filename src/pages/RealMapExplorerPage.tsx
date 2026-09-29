@@ -3570,7 +3570,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedSeriesCoverage =
     focusedLayer && focusedSelector
-      ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage.find(
+      ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage?.find(
           (row) =>
             row.variable === focusedSelector.variable &&
             row.period === focusedSelector.period
@@ -3579,8 +3579,8 @@ export default function RealMapExplorerPage({
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
       ? `${focusedSeriesCoverage.missingCount}개 성·시 원천 미제공 · 0으로 대체하지 않음`
-      : focusedLayer.missingRegions.length
-      ? focusedLayer.missingRegions.join(" · ")
+      : (focusedLayer.missingRegions ?? []).length
+      ? (focusedLayer.missingRegions ?? []).join(" · ")
       : "없음"
     : "";
   const focusedPublicCopy = focusedLayer

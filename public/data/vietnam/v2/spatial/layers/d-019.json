@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-019",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025년 기준",
+    "defaultVariable": "d-019-located-count",
+    "periods": [
+      "2025년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-019-located-count",
+        "measureId": "d-019-located-count",
+        "measureKey": "d-019-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2025년 기준"
+        ],
+        "maxFeatureCount": 2
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "d-019-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2025년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-019_ctcn_technical_assistance_registry",
+      "sourceRecordId": "v124-d-019-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "d-019-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2025년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-019_ctcn_technical_assistance_registry",
+      "sourceRecordId": "v124-d-019-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-61": [
+      {
+        "recordId": "v124-d-019-entity-00007",
+        "label": "Strengthening hai phong city’s climate adaptation and disaster prevention: a pilot for localized early warning system",
+        "date": "원천 미게재",
+        "status": "Scoping(원문 Design)",
+        "value": "(미확인) (-)",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-019_ctcn_technical_assistance_registry"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-d-019-entity-00007",
+        "label": "Strengthening hai phong city’s climate adaptation and disaster prevention: a pilot for localized early warning system",
+        "date": "원천 미게재",
+        "status": "Scoping(원문 Design)",
+        "value": "(미확인) (-)",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-019_ctcn_technical_assistance_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-019-located-count",
+      "period": "2025년 기준",
+      "expectedCount": 63,
+      "matchedCount": 2,
+      "missingCount": 61,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: Climate Technology Centre and Network (CTCN) — https://www.ctc-n.org/"
+    ],
+    "licenses": [
+      "CTCN 웹사이트 이용약관(UNFCCC·UNEP·UNIDO)"
+    ],
+    "organizations": [
+      "Climate Technology Centre and Network (CTCN)"
+    ],
+    "urls": [
+      "https://www.ctc-n.org/technical-assistance/ctcn-technical-assistance"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 2,
+    "maxSeriesFeatureCount": 2,
+    "missingAdm1Count": 61,
+    "providedZeroCount": 0,
+    "publishedValueCount": 2,
+    "sourceValueCount": 1,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 1
+  }
+}

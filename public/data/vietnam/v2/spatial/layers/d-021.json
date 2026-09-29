@@ -1,0 +1,2671 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-021",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "d-021-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-021-located-count",
+        "measureId": "d-021-located-count",
+        "measureKey": "d-021-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 53
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 15,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00021",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 15,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00021",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 15,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00021",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00056",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00066",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00066",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00066",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00081",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thanh Hóa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00093",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00093",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00093",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00094",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00094",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00101",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Huế",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00103",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00103",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00103",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00104",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00104",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00105",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00105",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00105",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00118",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00118",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00138",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00138",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00139",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00139",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00141",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00158",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cao Bằng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00158",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00158",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00160",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00160",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00160",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00160",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00298",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00298",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00322",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 5,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00322",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00350",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00350",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00373",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00373",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00373",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00426",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00426",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00441",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lạng Sơn",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00596",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "variable": "d-021-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-021_international_org_mdb_project_registry",
+      "sourceRecordId": "v124-d-021-entity-00596",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-32": [
+      {
+        "recordId": "v124-d-021-entity-00004",
+        "label": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project)",
+        "date": "2020-06-05 ~ 미보고",
+        "status": "",
+        "value": "27409240",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-021-entity-00004",
+        "label": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project)",
+        "date": "2020-06-05 ~ 미보고",
+        "status": "",
+        "value": "27409240",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-d-021-entity-00021",
+        "label": "Sustainable Urban Transport for Ho Chi Minh Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-07-27",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00023",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 1",
+        "date": "2011-03-11 ~ 2019-04-09",
+        "status": "",
+        "value": "40000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00024",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-11-12",
+        "status": "",
+        "value": "48950000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00026",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 2",
+        "date": "2013-07-04 ~ 2020-12-14",
+        "status": "",
+        "value": "500000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00033",
+        "label": "Ha Noi and Ho Chi Minh City Power Grid Development Sector Project",
+        "date": "2014-11-07 ~ 2024-09-17",
+        "status": "",
+        "value": "172700000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00049",
+        "label": "Ho Chi Minh City Environmental Sanitation (Nhieu Loc-Thi Nghe Basin) Project",
+        "date": "1998-04-15 ~ 2002-03-29",
+        "status": "",
+        "value": "1642376",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00071",
+        "label": "Binh Duong Province's Water Environment Improvement Project",
+        "date": "2024-01-12 ~ 2029-10-31",
+        "status": "",
+        "value": "230763010",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00080",
+        "label": "Second Ho Chi Minh City Environmental Sanitation Project",
+        "date": "2014-12-23 ~ 2026-12-31",
+        "status": "",
+        "value": "419000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00090",
+        "label": "Binh Duong Water Treatment Expansion Project",
+        "date": "2020-11-17 ~ 미보고",
+        "status": "",
+        "value": "8000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00183",
+        "label": "Binh Duong Waste Management and Energy Efficiency Project",
+        "date": "2022-12-09 ~ 미보고",
+        "status": "",
+        "value": "7000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00290",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Technical Assistance Project",
+        "date": "2007-12-20 ~ 2012-01-10",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00330",
+        "label": "Ho Chi Minh City Third Ring Road Technical Assistance Project",
+        "date": "2015-05-04 ~ 2018-12-17",
+        "status": "",
+        "value": "12580000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00335",
+        "label": "Ho Chi Minh City Development Policy Operation 1",
+        "date": "",
+        "status": "",
+        "value": "125000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00521",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Construction Project",
+        "date": "2009-03-20 ~ 2018-11-22",
+        "status": "",
+        "value": "410200000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00616",
+        "label": "Ho Chi Minh City Green Transport Development",
+        "date": "2015-05-29 ~ 2023-12-31",
+        "status": "",
+        "value": "8484160",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-d-021-entity-00021",
+        "label": "Sustainable Urban Transport for Ho Chi Minh Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-07-27",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00023",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 1",
+        "date": "2011-03-11 ~ 2019-04-09",
+        "status": "",
+        "value": "40000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00024",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-11-12",
+        "status": "",
+        "value": "48950000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00026",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 2",
+        "date": "2013-07-04 ~ 2020-12-14",
+        "status": "",
+        "value": "500000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00033",
+        "label": "Ha Noi and Ho Chi Minh City Power Grid Development Sector Project",
+        "date": "2014-11-07 ~ 2024-09-17",
+        "status": "",
+        "value": "172700000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00049",
+        "label": "Ho Chi Minh City Environmental Sanitation (Nhieu Loc-Thi Nghe Basin) Project",
+        "date": "1998-04-15 ~ 2002-03-29",
+        "status": "",
+        "value": "1642376",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00071",
+        "label": "Binh Duong Province's Water Environment Improvement Project",
+        "date": "2024-01-12 ~ 2029-10-31",
+        "status": "",
+        "value": "230763010",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00080",
+        "label": "Second Ho Chi Minh City Environmental Sanitation Project",
+        "date": "2014-12-23 ~ 2026-12-31",
+        "status": "",
+        "value": "419000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00090",
+        "label": "Binh Duong Water Treatment Expansion Project",
+        "date": "2020-11-17 ~ 미보고",
+        "status": "",
+        "value": "8000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00183",
+        "label": "Binh Duong Waste Management and Energy Efficiency Project",
+        "date": "2022-12-09 ~ 미보고",
+        "status": "",
+        "value": "7000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00290",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Technical Assistance Project",
+        "date": "2007-12-20 ~ 2012-01-10",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00330",
+        "label": "Ho Chi Minh City Third Ring Road Technical Assistance Project",
+        "date": "2015-05-04 ~ 2018-12-17",
+        "status": "",
+        "value": "12580000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00335",
+        "label": "Ho Chi Minh City Development Policy Operation 1",
+        "date": "",
+        "status": "",
+        "value": "125000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00521",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Construction Project",
+        "date": "2009-03-20 ~ 2018-11-22",
+        "status": "",
+        "value": "410200000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00616",
+        "label": "Ho Chi Minh City Green Transport Development",
+        "date": "2015-05-29 ~ 2023-12-31",
+        "status": "",
+        "value": "8484160",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-d-021-entity-00021",
+        "label": "Sustainable Urban Transport for Ho Chi Minh Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-07-27",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00023",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 1",
+        "date": "2011-03-11 ~ 2019-04-09",
+        "status": "",
+        "value": "40000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00024",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit Line 2",
+        "date": "2014-07-18 ~ 2020-11-12",
+        "status": "",
+        "value": "48950000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00026",
+        "label": "Ho Chi Minh City Urban Mass Rapid Transit Line 2 Investment Program - Tranche 2",
+        "date": "2013-07-04 ~ 2020-12-14",
+        "status": "",
+        "value": "500000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00033",
+        "label": "Ha Noi and Ho Chi Minh City Power Grid Development Sector Project",
+        "date": "2014-11-07 ~ 2024-09-17",
+        "status": "",
+        "value": "172700000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00049",
+        "label": "Ho Chi Minh City Environmental Sanitation (Nhieu Loc-Thi Nghe Basin) Project",
+        "date": "1998-04-15 ~ 2002-03-29",
+        "status": "",
+        "value": "1642376",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00071",
+        "label": "Binh Duong Province's Water Environment Improvement Project",
+        "date": "2024-01-12 ~ 2029-10-31",
+        "status": "",
+        "value": "230763010",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00080",
+        "label": "Second Ho Chi Minh City Environmental Sanitation Project",
+        "date": "2014-12-23 ~ 2026-12-31",
+        "status": "",
+        "value": "419000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00090",
+        "label": "Binh Duong Water Treatment Expansion Project",
+        "date": "2020-11-17 ~ 미보고",
+        "status": "",
+        "value": "8000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00183",
+        "label": "Binh Duong Waste Management and Energy Efficiency Project",
+        "date": "2022-12-09 ~ 미보고",
+        "status": "",
+        "value": "7000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00290",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Technical Assistance Project",
+        "date": "2007-12-20 ~ 2012-01-10",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00330",
+        "label": "Ho Chi Minh City Third Ring Road Technical Assistance Project",
+        "date": "2015-05-04 ~ 2018-12-17",
+        "status": "",
+        "value": "12580000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00335",
+        "label": "Ho Chi Minh City Development Policy Operation 1",
+        "date": "",
+        "status": "",
+        "value": "125000000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00521",
+        "label": "Ho Chi Minh City-Long Thanh-Dau Giay Expressway Construction Project",
+        "date": "2009-03-20 ~ 2018-11-22",
+        "status": "",
+        "value": "410200000",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00616",
+        "label": "Ho Chi Minh City Green Transport Development",
+        "date": "2015-05-29 ~ 2023-12-31",
+        "status": "",
+        "value": "8484160",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-d-021-entity-00022",
+        "label": "Ha Noi Metro Rail System Project (Line 3: Nhon-Ha Noi Station Section)",
+        "date": "2011-10-13 ~ 2016-06-30",
+        "status": "",
+        "value": "293000000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00025",
+        "label": "Ha Noi Metro Rail System Project (Line 3: Nhon-Ha Noi Station Section)",
+        "date": "2016-11-08 ~ 2025-09-26",
+        "status": "",
+        "value": "50000000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00027",
+        "label": "Ha Noi Metro Rail System Project (Line 3: Nhon-Ha Noi Station Section)",
+        "date": "2016-11-08 ~ 2019-12-31",
+        "status": "",
+        "value": "59000000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00033",
+        "label": "Ha Noi and Ho Chi Minh City Power Grid Development Sector Project",
+        "date": "2014-11-07 ~ 2024-09-17",
+        "status": "",
+        "value": "172700000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00205",
+        "label": "This activity will contribute to achieving results for the HANOI - OPERATIONAL SUPPORT TO PROGRAMME DELIVERY output",
+        "date": "2017-01-01 ~ 2021-12-31",
+        "status": "",
+        "value": "1190380",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00321",
+        "label": "Hanoi Urban Transport Development Project",
+        "date": "",
+        "status": "",
+        "value": "115901590",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00410",
+        "label": "University of Science and Technology of Hanoi Development (New Model University) Project",
+        "date": "2011-11-10 ~ 2018-06-30",
+        "status": "",
+        "value": "20000000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00441",
+        "label": "Greater Mekong Subregion Ha Noi-Lang Son and Ben Luc-Long Thanh Expressways Technical Assistance Project",
+        "date": "2008-12-12 ~ 2017-05-08",
+        "status": "",
+        "value": "26000000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00454",
+        "label": "Vietnam University Development of VNU-Hanoi, VNU-HCM, and UD",
+        "date": "",
+        "status": "",
+        "value": "294870020",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00500",
+        "label": "Strengthening Sustainable Urban Transport for Ha Noi Metro Line 3",
+        "date": "2015-02-09 ~ 2020-05-08",
+        "status": "",
+        "value": "4200000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00529",
+        "label": "Strengthening Sustainable Urban Transport for Ha Noi Metro Line 3",
+        "date": "2015-02-09 ~ 2019-06-30",
+        "status": "",
+        "value": "48950000",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-d-021-entity-00056",
+        "label": "Nghe An Province's Vinh City Priority Infrastructure and Urban Resilience Development Project",
+        "date": "2023-07-28 ~ 2030-12-02",
+        "status": "",
+        "value": "129600000",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00081",
+        "label": "Irrigation: Climate Resilient and inclusive Water Infrastructure for rural Smallholders in Thanh Hoa and Nghe An provinces",
+        "date": "2024-12-11 ~ 2031-12-31",
+        "status": "",
+        "value": "42210000",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00417",
+        "label": "Nghe An Tate &amp; Lyle Ltd.",
+        "date": "2000-03-09 ~ 미보고",
+        "status": "",
+        "value": "20000000",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "v124-d-021-entity-00066",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "",
+        "status": "",
+        "value": "195696620",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00091",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "2014-12-21 ~ 2024-11-18",
+        "status": "",
+        "value": "8186104",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00092",
+        "label": "Can Tho Urban Development and Resilience Single Donor Trust Fund",
+        "date": "2016-09-06 ~ 2026-04-07",
+        "status": "",
+        "value": "8685138",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "v124-d-021-entity-00066",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "",
+        "status": "",
+        "value": "195696620",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00091",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "2014-12-21 ~ 2024-11-18",
+        "status": "",
+        "value": "8186104",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00092",
+        "label": "Can Tho Urban Development and Resilience Single Donor Trust Fund",
+        "date": "2016-09-06 ~ 2026-04-07",
+        "status": "",
+        "value": "8685138",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "v124-d-021-entity-00066",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "",
+        "status": "",
+        "value": "195696620",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00091",
+        "label": "Can Tho Urban Development and Resilience Project",
+        "date": "2014-12-21 ~ 2024-11-18",
+        "status": "",
+        "value": "8186104",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00092",
+        "label": "Can Tho Urban Development and Resilience Single Donor Trust Fund",
+        "date": "2016-09-06 ~ 2026-04-07",
+        "status": "",
+        "value": "8685138",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-d-021-entity-00081",
+        "label": "Irrigation: Climate Resilient and inclusive Water Infrastructure for rural Smallholders in Thanh Hoa and Nghe An provinces",
+        "date": "2024-12-11 ~ 2031-12-31",
+        "status": "",
+        "value": "42210000",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00087",
+        "label": "Thanh Hoa City Comprehensive Socioeconomic Development Project",
+        "date": "2009-04-17 ~ 2017-03-31",
+        "status": "",
+        "value": "72000000",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00120",
+        "label": "THANH HOA Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-01-01",
+        "status": "",
+        "value": "2921211",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-d-021-entity-00093",
+        "label": "Vinh Long City Urban Development and Enhanced Climate Resilience Project in Vinh Long Province",
+        "date": "2020-06-30 ~ 2027-10-31",
+        "status": "",
+        "value": "80600000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00152",
+        "label": "Rural Development: Programme for Improving Market Participation of the Poor in Ha Tinh and Tra Vinh Provinces",
+        "date": "2006-09-14 ~ 2012-12-31",
+        "status": "",
+        "value": "26272676",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00156",
+        "label": "Rural Development: Project for Adaption to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "2013-12-11 ~ 2020-12-31",
+        "status": "",
+        "value": "33665600",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00159",
+        "label": "Credit and Financial Services: Climate Smart Agricultural Value Chain Development in Ben Tre and Tra Vinh Provinces",
+        "date": "2021-12-30 ~ 2027-06-30",
+        "status": "",
+        "value": "43000000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-d-021-entity-00093",
+        "label": "Vinh Long City Urban Development and Enhanced Climate Resilience Project in Vinh Long Province",
+        "date": "2020-06-30 ~ 2027-10-31",
+        "status": "",
+        "value": "80600000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00152",
+        "label": "Rural Development: Programme for Improving Market Participation of the Poor in Ha Tinh and Tra Vinh Provinces",
+        "date": "2006-09-14 ~ 2012-12-31",
+        "status": "",
+        "value": "26272676",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00156",
+        "label": "Rural Development: Project for Adaption to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "2013-12-11 ~ 2020-12-31",
+        "status": "",
+        "value": "33665600",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00159",
+        "label": "Credit and Financial Services: Climate Smart Agricultural Value Chain Development in Ben Tre and Tra Vinh Provinces",
+        "date": "2021-12-30 ~ 2027-06-30",
+        "status": "",
+        "value": "43000000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-d-021-entity-00093",
+        "label": "Vinh Long City Urban Development and Enhanced Climate Resilience Project in Vinh Long Province",
+        "date": "2020-06-30 ~ 2027-10-31",
+        "status": "",
+        "value": "80600000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00152",
+        "label": "Rural Development: Programme for Improving Market Participation of the Poor in Ha Tinh and Tra Vinh Provinces",
+        "date": "2006-09-14 ~ 2012-12-31",
+        "status": "",
+        "value": "26272676",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00156",
+        "label": "Rural Development: Project for Adaption to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "2013-12-11 ~ 2020-12-31",
+        "status": "",
+        "value": "33665600",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00159",
+        "label": "Credit and Financial Services: Climate Smart Agricultural Value Chain Development in Ben Tre and Tra Vinh Provinces",
+        "date": "2021-12-30 ~ 2027-06-30",
+        "status": "",
+        "value": "43000000",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-d-021-entity-00094",
+        "label": "QUANG NAM Coastal Resilient",
+        "date": "2017-09-20 ~ 2026-06-01",
+        "status": "",
+        "value": "1172190",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00361",
+        "label": "Danang Sustainable City Development Project (SCDP)",
+        "date": "2013-04-26 ~ 2021-06-30",
+        "status": "",
+        "value": "151881580",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00392",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "2008-12-18 ~ 2016-12-28",
+        "status": "",
+        "value": "2378481",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00447",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "",
+        "status": "",
+        "value": "279735740",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-d-021-entity-00094",
+        "label": "QUANG NAM Coastal Resilient",
+        "date": "2017-09-20 ~ 2026-06-01",
+        "status": "",
+        "value": "1172190",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00361",
+        "label": "Danang Sustainable City Development Project (SCDP)",
+        "date": "2013-04-26 ~ 2021-06-30",
+        "status": "",
+        "value": "151881580",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00392",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "2008-12-18 ~ 2016-12-28",
+        "status": "",
+        "value": "2378481",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00447",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "",
+        "status": "",
+        "value": "279735740",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-d-021-entity-00101",
+        "label": "HUE Coastal Resilient",
+        "date": "2017-09-20 ~ 2026-07-01",
+        "status": "",
+        "value": "1696495",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00177",
+        "label": "Climate Adaptation and Resilience in Thua Thien Hue Province Vietnam (CARe Hue)",
+        "date": "2024-07-18 ~ 2029-12-17",
+        "status": "",
+        "value": "9550000",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-d-021-entity-00103",
+        "label": "NAM DINH Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-05-01",
+        "status": "",
+        "value": "1886975",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-d-021-entity-00103",
+        "label": "NAM DINH Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-05-01",
+        "status": "",
+        "value": "1886975",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-d-021-entity-00103",
+        "label": "NAM DINH Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-05-01",
+        "status": "",
+        "value": "1886975",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-28": [
+      {
+        "recordId": "v124-d-021-entity-00104",
+        "label": "QUANG NGAI Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-06-01",
+        "status": "",
+        "value": "1903536",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00392",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "2008-12-18 ~ 2016-12-28",
+        "status": "",
+        "value": "2378481",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00447",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "",
+        "status": "",
+        "value": "279735740",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-29": [
+      {
+        "recordId": "v124-d-021-entity-00104",
+        "label": "QUANG NGAI Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-06-01",
+        "status": "",
+        "value": "1903536",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00392",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "2008-12-18 ~ 2016-12-28",
+        "status": "",
+        "value": "2378481",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00447",
+        "label": "Da Nang-Quang Ngai Expressway Development Project",
+        "date": "",
+        "status": "",
+        "value": "279735740",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-d-021-entity-00105",
+        "label": "Vinh Phuc Flood Risk and Water Management Project",
+        "date": "2016-04-29 ~ 2023-12-31",
+        "status": "",
+        "value": "100249376",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-d-021-entity-00105",
+        "label": "Vinh Phuc Flood Risk and Water Management Project",
+        "date": "2016-04-29 ~ 2023-12-31",
+        "status": "",
+        "value": "100249376",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-d-021-entity-00105",
+        "label": "Vinh Phuc Flood Risk and Water Management Project",
+        "date": "2016-04-29 ~ 2023-12-31",
+        "status": "",
+        "value": "100249376",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-d-021-entity-00118",
+        "label": "CA MAU Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-06-01",
+        "status": "",
+        "value": "2751083",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-d-021-entity-00118",
+        "label": "CA MAU Coastal Resilient",
+        "date": "2017-09-20 ~ 2025-06-01",
+        "status": "",
+        "value": "2751083",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "v124-d-021-entity-00138",
+        "label": "Rural Development: Ha Giang Development Project for Ethnic Minorities",
+        "date": "1997-12-04 ~ 2004-06-30",
+        "status": "",
+        "value": "12413108",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00143",
+        "label": "Agricultural Development: Participatory Resource Management Project - Tuyen Quang Province",
+        "date": "1993-04-06 ~ 2001-12-31",
+        "status": "",
+        "value": "19002234",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00144",
+        "label": "Rural Development: Rural Income Diversification Project in Tuyen Quang Province",
+        "date": "2001-12-06 ~ 2010-03-31",
+        "status": "",
+        "value": "19674740",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00148",
+        "label": "Rural Development: Commodity-oriented Poverty Reduction Programme in Ha Giang Province",
+        "date": "2014-09-01 ~ 2020-09-30",
+        "status": "",
+        "value": "20051096",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00151",
+        "label": "Rural Development: Decentralized Programme for Rural Poverty Reduction in Ha Giang and Quang Binh Provinces",
+        "date": "2004-12-02 ~ 2012-03-31",
+        "status": "",
+        "value": "25671210",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-d-021-entity-00138",
+        "label": "Rural Development: Ha Giang Development Project for Ethnic Minorities",
+        "date": "1997-12-04 ~ 2004-06-30",
+        "status": "",
+        "value": "12413108",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00143",
+        "label": "Agricultural Development: Participatory Resource Management Project - Tuyen Quang Province",
+        "date": "1993-04-06 ~ 2001-12-31",
+        "status": "",
+        "value": "19002234",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00144",
+        "label": "Rural Development: Rural Income Diversification Project in Tuyen Quang Province",
+        "date": "2001-12-06 ~ 2010-03-31",
+        "status": "",
+        "value": "19674740",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00148",
+        "label": "Rural Development: Commodity-oriented Poverty Reduction Programme in Ha Giang Province",
+        "date": "2014-09-01 ~ 2020-09-30",
+        "status": "",
+        "value": "20051096",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00151",
+        "label": "Rural Development: Decentralized Programme for Rural Poverty Reduction in Ha Giang and Quang Binh Provinces",
+        "date": "2004-12-02 ~ 2012-03-31",
+        "status": "",
+        "value": "25671210",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-d-021-entity-00139",
+        "label": "Agricultural Development: Agricultural Resources Conservation and Development Project in Quang Binh Province",
+        "date": "1996-12-04 ~ 2002-12-31",
+        "status": "",
+        "value": "14451449",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00151",
+        "label": "Rural Development: Decentralized Programme for Rural Poverty Reduction in Ha Giang and Quang Binh Provinces",
+        "date": "2004-12-02 ~ 2012-03-31",
+        "status": "",
+        "value": "25671210",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00155",
+        "label": "Rural Development: Sustainable Rural Development for the Poor Project in Ha Tinh and Quang Binh Provinces",
+        "date": "2013-09-19 ~ 2019-06-30",
+        "status": "",
+        "value": "31124794",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-d-021-entity-00139",
+        "label": "Agricultural Development: Agricultural Resources Conservation and Development Project in Quang Binh Province",
+        "date": "1996-12-04 ~ 2002-12-31",
+        "status": "",
+        "value": "14451449",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00151",
+        "label": "Rural Development: Decentralized Programme for Rural Poverty Reduction in Ha Giang and Quang Binh Provinces",
+        "date": "2004-12-02 ~ 2012-03-31",
+        "status": "",
+        "value": "25671210",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00155",
+        "label": "Rural Development: Sustainable Rural Development for the Poor Project in Ha Tinh and Quang Binh Provinces",
+        "date": "2013-09-19 ~ 2019-06-30",
+        "status": "",
+        "value": "31124794",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-d-021-entity-00141",
+        "label": "Agricultural Development: Ha Tinh Rural Development Project",
+        "date": "1999-04-29 ~ 2006-03-31",
+        "status": "",
+        "value": "15403969",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00152",
+        "label": "Rural Development: Programme for Improving Market Participation of the Poor in Ha Tinh and Tra Vinh Provinces",
+        "date": "2006-09-14 ~ 2012-12-31",
+        "status": "",
+        "value": "26272676",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00155",
+        "label": "Rural Development: Sustainable Rural Development for the Poor Project in Ha Tinh and Quang Binh Provinces",
+        "date": "2013-09-19 ~ 2019-06-30",
+        "status": "",
+        "value": "31124794",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-04": [
+      {
+        "recordId": "v124-d-021-entity-00158",
+        "label": "Rural Development: Commercial Smallholder Support Project in Bac Kan and Cao Bang",
+        "date": "2016-12-14 ~ 2025-05-31",
+        "status": "",
+        "value": "40547328",
+        "url": "",
+        "region": "Cao Bằng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "v124-d-021-entity-00158",
+        "label": "Rural Development: Commercial Smallholder Support Project in Bac Kan and Cao Bang",
+        "date": "2016-12-14 ~ 2025-05-31",
+        "status": "",
+        "value": "40547328",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00558",
+        "label": "Dynamic City Integrated Development Project - Thai Nguyen",
+        "date": "2018-06-22 ~ 2023-12-31",
+        "status": "",
+        "value": "50508232",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "v124-d-021-entity-00158",
+        "label": "Rural Development: Commercial Smallholder Support Project in Bac Kan and Cao Bang",
+        "date": "2016-12-14 ~ 2025-05-31",
+        "status": "",
+        "value": "40547328",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00558",
+        "label": "Dynamic City Integrated Development Project - Thai Nguyen",
+        "date": "2018-06-22 ~ 2023-12-31",
+        "status": "",
+        "value": "50508232",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-d-021-entity-00160",
+        "label": "Rural Development: Agriculture, Farmers and Rural Areas Support Project in Gia Lai, Ninh Thuan and Tuyen Quang Provinces",
+        "date": "2010-12-15 ~ 2017-09-30",
+        "status": "",
+        "value": "48501996",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-d-021-entity-00298",
+        "label": "San Miguel Haiphong Glass Company",
+        "date": "1996-10-29 ~ 미보고",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00322",
+        "label": "GMS Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2015-05-04 ~ 2019-10-01",
+        "status": "",
+        "value": "117000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00364",
+        "label": "VIETNAM: Haiphong Urban Transport Project",
+        "date": "2011-03-29 ~ 2020-02-29",
+        "status": "",
+        "value": "166982820",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00628",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2008-09-26 ~ 2019-10-01",
+        "status": "",
+        "value": "896000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00570",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2006-01-19 ~ 2010-05-12",
+        "status": "",
+        "value": "6000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00582",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project",
+        "date": "2007-01-16 ~ 2016-12-21",
+        "status": "",
+        "value": "60000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-d-021-entity-00298",
+        "label": "San Miguel Haiphong Glass Company",
+        "date": "1996-10-29 ~ 미보고",
+        "status": "",
+        "value": "10000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00322",
+        "label": "GMS Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2015-05-04 ~ 2019-10-01",
+        "status": "",
+        "value": "117000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00364",
+        "label": "VIETNAM: Haiphong Urban Transport Project",
+        "date": "2011-03-29 ~ 2020-02-29",
+        "status": "",
+        "value": "166982820",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00628",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2008-09-26 ~ 2019-10-01",
+        "status": "",
+        "value": "896000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00570",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2006-01-19 ~ 2010-05-12",
+        "status": "",
+        "value": "6000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00582",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project",
+        "date": "2007-01-16 ~ 2016-12-21",
+        "status": "",
+        "value": "60000000",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-021-entity-00322",
+        "label": "GMS Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2015-05-04 ~ 2019-10-01",
+        "status": "",
+        "value": "117000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00628",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2008-09-26 ~ 2019-10-01",
+        "status": "",
+        "value": "896000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00570",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2006-01-19 ~ 2010-05-12",
+        "status": "",
+        "value": "6000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00582",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project",
+        "date": "2007-01-16 ~ 2016-12-21",
+        "status": "",
+        "value": "60000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-021-entity-00322",
+        "label": "GMS Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2015-05-04 ~ 2019-10-01",
+        "status": "",
+        "value": "117000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00628",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2008-09-26 ~ 2019-10-01",
+        "status": "",
+        "value": "896000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00570",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor - Noi Bai-Lao Cai Highway Project",
+        "date": "2006-01-19 ~ 2010-05-12",
+        "status": "",
+        "value": "6000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      },
+      {
+        "recordId": "v124-d-021-entity-00582",
+        "label": "Greater Mekong and Subregion (GMS) Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project",
+        "date": "2007-01-16 ~ 2016-12-21",
+        "status": "",
+        "value": "60000000",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-d-021-entity-00350",
+        "label": "Bac Ninh WTE",
+        "date": "2022-04-07 ~ 미보고",
+        "status": "",
+        "value": "15000000",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-d-021-entity-00350",
+        "label": "Bac Ninh WTE",
+        "date": "2022-04-07 ~ 미보고",
+        "status": "",
+        "value": "15000000",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-d-021-entity-00373",
+        "label": "Marketing/Storage/Processing: Project for the Economic Empowerment of Ethnic Minorities in Poor Communes of Dak Nong Province",
+        "date": "2010-04-22 ~ 2017-06-30",
+        "status": "",
+        "value": "19788992",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-d-021-entity-00373",
+        "label": "Marketing/Storage/Processing: Project for the Economic Empowerment of Ethnic Minorities in Poor Communes of Dak Nong Province",
+        "date": "2010-04-22 ~ 2017-06-30",
+        "status": "",
+        "value": "19788992",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-d-021-entity-00373",
+        "label": "Marketing/Storage/Processing: Project for the Economic Empowerment of Ethnic Minorities in Poor Communes of Dak Nong Province",
+        "date": "2010-04-22 ~ 2017-06-30",
+        "status": "",
+        "value": "19788992",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "v124-d-021-entity-00426",
+        "label": "Sucrerie Bourbon - Tay Ninh",
+        "date": "1997-05-22 ~ 미보고",
+        "status": "",
+        "value": "22000000",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "v124-d-021-entity-00426",
+        "label": "Sucrerie Bourbon - Tay Ninh",
+        "date": "1997-05-22 ~ 미보고",
+        "status": "",
+        "value": "22000000",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-09": [
+      {
+        "recordId": "v124-d-021-entity-00441",
+        "label": "Greater Mekong Subregion Ha Noi-Lang Son and Ben Luc-Long Thanh Expressways Technical Assistance Project",
+        "date": "2008-12-12 ~ 2017-05-08",
+        "status": "",
+        "value": "26000000",
+        "url": "",
+        "region": "Lạng Sơn",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "v124-d-021-entity-00596",
+        "label": "Comprehensive Socioeconomic Urban Development Project in Viet Tri, Hung Yen and Dong Dang",
+        "date": "2012-03-09 ~ 2018-02-26",
+        "status": "",
+        "value": "70000000",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "v124-d-021-entity-00596",
+        "label": "Comprehensive Socioeconomic Urban Development Project in Viet Tri, Hung Yen and Dong Dang",
+        "date": "2012-03-09 ~ 2018-02-26",
+        "status": "",
+        "value": "70000000",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-021_international_org_mdb_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-021-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 53,
+      "missingCount": 10,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: IATI Registry data via d-portal (d-portal.iatistandard.org)."
+    ],
+    "licenses": [
+      "d-portal / IATI 이용약관"
+    ],
+    "organizations": [
+      "IATI Datastore (IATI Secretariat) — 국제기구·MDB 보고 활동 원자료",
+      "IATI Registry — d-portal 집계(World Bank, ADB, IFC, UNDP, FAO, UNESCO, UNICEF, UN-Habitat, UNEP, IFAD, UNIDO, WHO, ILO 등 보고분)",
+      "IATI Registry — d-portal 집계(국제기구·MDB 보고분)"
+    ],
+    "urls": [
+      "https://api.iatistandard.org/datastore/activity/select?q=recipient_country_code:VN",
+      "https://d-portal.iatistandard.org/ctrack.html?country=VN"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 53,
+    "maxSeriesFeatureCount": 53,
+    "missingAdm1Count": 10,
+    "providedZeroCount": 0,
+    "publishedValueCount": 53,
+    "sourceValueCount": 87,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 27
+  }
+}

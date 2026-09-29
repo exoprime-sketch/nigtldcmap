@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "record-regions-v157",
+  "elementId": "D-019",
+  "countryIso3": "VNM",
+  "method": "province-dictionary-v157 value match (region column > record title > other; URL never; organisation column only for organisation records)",
+  "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
+  "recordsAreOrganisations": false,
+  "counts": {
+    "records": 10,
+    "located": 1,
+    "withoutRegion": 9,
+    "multiUnit": 0,
+    "units": 1
+  },
+  "columnsUsed": [
+    {
+      "column": "name",
+      "records": 1
+    }
+  ],
+  "byRecordId": {
+    "v124-d-019-entity-00007": [
+      {
+        "unitCode34": "VN34-HP",
+        "name": "Hải Phòng",
+        "adm1Codes63": [
+          "VN-61",
+          "VN-HP"
+        ],
+        "spelling": "hai phong",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ]
+  }
+}

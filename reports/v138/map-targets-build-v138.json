@@ -1,15 +1,15 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-22T04:27:26.234Z",
+  "generatedAt": "2026-09-29T00:09:47.277Z",
   "dataRoot": "/public/data/vietnam/v2",
-  "targetCount": 43,
+  "targetCount": 72,
   "counts": {
-    "implemented": 28,
-    "partial": 14,
-    "notConnected": 1
+    "implemented": 31,
+    "partial": 29,
+    "notConnected": 12
   },
-  "activeMapLayerCount": 42,
-  "mapFeatureCount": 4463,
+  "activeMapLayerCount": 60,
+  "mapFeatureCount": 14920,
   "crosswalk34": [
     {
       "region": "An Giang",
@@ -281,6 +281,24 @@
   ],
   "targets": [
     {
+      "elementId": "A-013",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+      "requiredAsset": "원문 지역어에 대응하는 공식 경계 정의",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
+      "elementId": "A-022",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",
+      "requiredAsset": "EVN 5개 총공사 관할표(성별 출처 URL 포함)",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
       "elementId": "A-023",
       "status": "implemented",
       "representation": "point",
@@ -329,6 +347,31 @@
       "filters": [
         "구분(3)"
       ]
+    },
+    {
+      "elementId": "A-027",
+      "status": "implemented",
+      "build": "pending-v155",
+      "layerId": "vnm-v155-a-027",
+      "featureCount": 8114,
+      "registeredFrom": "spatial/pending-layers-v155.json"
+    },
+    {
+      "elementId": "A-028",
+      "status": "implemented",
+      "build": "pending-v155",
+      "layerId": "vnm-v155-a-028",
+      "featureCount": 1558,
+      "registeredFrom": "spatial/pending-layers-v155.json"
+    },
+    {
+      "elementId": "B-002",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
     {
       "elementId": "B-003",
@@ -430,6 +473,24 @@
       "filters": []
     },
     {
+      "elementId": "B-009",
+      "status": "partial",
+      "representation": "admin1-choropleth",
+      "build": "observation-dimension",
+      "sourceRowCount": 435,
+      "publishedValueCount": 252,
+      "seriesCount": 4,
+      "variableCount": 4,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 183,
+      "sourceRegionCount": 63,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-009.json"
+    },
+    {
       "elementId": "B-012",
       "status": "partial",
       "representation": "point",
@@ -488,12 +549,11 @@
     },
     {
       "elementId": "B-017",
-      "status": "not-connected",
-      "representation": "none",
-      "build": "none",
-      "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다.",
-      "requiredAsset": "Aqueduct 4.0 baseline annual 폴리곤(string_id 기준)을 베트남 범위로 추출한 GeoJSON",
-      "forbidden": "443개 평가구역 값을 성·시 값으로 합치거나 성 대표점에 찍는 표현"
+      "status": "implemented",
+      "build": "pending-v155",
+      "layerId": "vnm-v155-b-017",
+      "featureCount": 442,
+      "registeredFrom": "spatial/pending-layers-v155.json"
     },
     {
       "elementId": "B-021",
@@ -522,6 +582,15 @@
       ]
     },
     {
+      "elementId": "B-024",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
       "elementId": "B-025",
       "status": "partial",
       "representation": "point",
@@ -536,6 +605,32 @@
       "filters": [
         "수계 구분(6)"
       ]
+    },
+    {
+      "elementId": "B-026",
+      "status": "partial",
+      "representation": "admin1-choropleth",
+      "build": "admin1-attributes",
+      "sourceRowCount": 74,
+      "publishedValueCount": 63,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 63,
+      "unmatchedRegionNames": [
+        [
+          "Việt Nam",
+          11
+        ],
+        [
+          "Viet Nam",
+          11
+        ]
+      ],
+      "rowsWithoutRegion": 0,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-026.json"
     },
     {
       "elementId": "B-028",
@@ -647,6 +742,24 @@
       ]
     },
     {
+      "elementId": "B-035",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
+      "elementId": "B-036",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
       "elementId": "B-037",
       "status": "implemented",
       "representation": "admin1-choropleth",
@@ -732,6 +845,33 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-042.json"
     },
     {
+      "elementId": "B-044",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
+      "elementId": "B-046",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
+      "elementId": "B-047",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
       "elementId": "B-048",
       "status": "implemented",
       "representation": "point",
@@ -744,38 +884,40 @@
       ]
     },
     {
-      "elementId": "C-009",
-      "status": "partial",
-      "representation": "admin1-choropleth",
-      "build": "admin1-attributes",
-      "sourceRowCount": 4,
-      "publishedValueCount": 4,
-      "seriesCount": 1,
-      "variableCount": 1,
-      "periodCount": 1,
-      "matchedAdm1Count": 4,
-      "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 0,
-      "duplicateValueCount": 0,
-      "valueTable": false,
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-009.json"
+      "elementId": "C-003",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+      "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
     {
-      "elementId": "C-010",
+      "elementId": "C-006",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
+      "requiredAsset": "사업별 실시 지역(성·시)이 채워진 재납품",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
+    },
+    {
+      "elementId": "C-008",
       "status": "partial",
-      "representation": "admin1-choropleth",
-      "build": "admin1-attributes",
-      "sourceRowCount": 4,
-      "publishedValueCount": 4,
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 235,
+      "publishedValueCount": 17,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
-      "matchedAdm1Count": 4,
+      "matchedAdm1Count": 17,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 0,
+      "rowsWithoutRegion": 221,
+      "sourceRegionCount": 8,
       "duplicateValueCount": 0,
       "valueTable": false,
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-010.json"
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-008.json"
     },
     {
       "elementId": "C-012",
@@ -824,22 +966,13 @@
       ]
     },
     {
-      "elementId": "C-019",
-      "status": "implemented",
-      "representation": "region-choropleth",
-      "build": "region-membership",
-      "sourceRowCount": 36,
-      "publishedValueCount": 63,
-      "seriesCount": 1,
-      "variableCount": 1,
-      "periodCount": 1,
-      "matchedAdm1Count": 63,
-      "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 2,
-      "sourceRegionCount": 34,
-      "duplicateValueCount": 0,
-      "valueTable": false,
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-019.json"
+      "elementId": "C-017",
+      "status": "not-connected",
+      "representation": "none",
+      "build": "none",
+      "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+      "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+      "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
     {
       "elementId": "C-022",
@@ -899,6 +1032,96 @@
       ]
     },
     {
+      "elementId": "D-012",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 22,
+      "publishedValueCount": 22,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 22,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 11,
+      "sourceRegionCount": 10,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-012.json"
+    },
+    {
+      "elementId": "D-014",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 164,
+      "publishedValueCount": 26,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 26,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 121,
+      "sourceRegionCount": 12,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-014.json"
+    },
+    {
+      "elementId": "D-015",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 650,
+      "publishedValueCount": 45,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 45,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 547,
+      "sourceRegionCount": 23,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-015.json"
+    },
+    {
+      "elementId": "D-016",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 232,
+      "publishedValueCount": 14,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 14,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 218,
+      "sourceRegionCount": 8,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-016.json"
+    },
+    {
+      "elementId": "D-017",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 10,
+      "publishedValueCount": 4,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 4,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 6,
+      "sourceRegionCount": 3,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-017.json"
+    },
+    {
       "elementId": "D-018",
       "status": "implemented",
       "representation": "regional-scope",
@@ -907,6 +1130,158 @@
       "patched": [
         "boundaryPolicy34"
       ]
+    },
+    {
+      "elementId": "D-019",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 10,
+      "publishedValueCount": 2,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 2,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 9,
+      "sourceRegionCount": 1,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-019.json"
+    },
+    {
+      "elementId": "D-020",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 9,
+      "publishedValueCount": 11,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 11,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 7,
+      "sourceRegionCount": 7,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-020.json"
+    },
+    {
+      "elementId": "D-021",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 640,
+      "publishedValueCount": 53,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 53,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 569,
+      "sourceRegionCount": 27,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-021.json"
+    },
+    {
+      "elementId": "D-022",
+      "status": "implemented",
+      "build": "pending-v155",
+      "layerId": "vnm-v155-d-022",
+      "featureCount": 12,
+      "registeredFrom": "spatial/pending-layers-v155.json"
+    },
+    {
+      "elementId": "D-023",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 73,
+      "publishedValueCount": 15,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 15,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 68,
+      "sourceRegionCount": 9,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-023.json"
+    },
+    {
+      "elementId": "D-025",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 132,
+      "publishedValueCount": 54,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 54,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 14,
+      "sourceRegionCount": 28,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-025.json"
+    },
+    {
+      "elementId": "D-026",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 14,
+      "publishedValueCount": 8,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 8,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 12,
+      "sourceRegionCount": 4,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/d-026.json"
+    },
+    {
+      "elementId": "E-001",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 18,
+      "publishedValueCount": 1,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 1,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 12,
+      "sourceRegionCount": 1,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-001.json"
+    },
+    {
+      "elementId": "E-002",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 1,
+      "publishedValueCount": 1,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 1,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 0,
+      "sourceRegionCount": 1,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-002.json"
     },
     {
       "elementId": "E-004",
@@ -1087,7 +1462,25 @@
       "filters": [
         "도시(2)"
       ]
+    },
+    {
+      "elementId": "E-020",
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 7,
+      "publishedValueCount": 3,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 3,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 5,
+      "sourceRegionCount": 2,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json"
     }
   ],
-  "mapIndexSha256": "28890fb7fc7e3cf15dd48d0104f3a40258b2af11601555c5b3479fe2e14661ae"
+  "mapIndexSha256": "4e05a964c10c2cf025a45e322a3c810364d42e37d1a83020fee87a177b3045ac"
 }
