@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "deployment-capacity-v158",
+  "generatedAt": "2026-09-29",
+  "method": "public/ tree measured file by file; downloads gzip level 9 and per-element deflate level 9 + ZIP headers; forecast = measured countries + (priority countries not yet loaded) × anchor country, plus shared public files and the static bundle",
+  "priorityCountries": 10,
+  "measuredCountries": 2,
+  "futureCountries": 8,
+  "public": {
+    "bytes": 942836619,
+    "MB": 942.8,
+    "files": 839,
+    "largestFile": {
+      "bytes": 86468654,
+      "path": "data/vietnam/v2/downloads/b-006.json",
+      "MB": 86.5
+    },
+    "sharedNonCountryMB": 16.5
+  },
+  "build": {
+    "dir": "tmp/build-v158b2a",
+    "bytes": 948658270,
+    "MB": 948.7,
+    "files": 867,
+    "largestFile": {
+      "bytes": 86468654,
+      "path": "data/vietnam/v2/downloads/b-006.json",
+      "MB": 86.5
+    },
+    "staticBundleMB": 5.8
+  },
+  "countries": [
+    {
+      "iso3": "VNM",
+      "nameKo": "베트남",
+      "status": "live",
+      "dataRoot": "/data/vietnam/v2",
+      "totalBytes": 771427779,
+      "totalMB": 771.4,
+      "files": 555,
+      "largestFile": {
+        "bytes": 86468654,
+        "path": "data/vietnam/v2/downloads/b-006.json",
+        "MB": 86.5
+      },
+      "categories": {
+        "downloads": {
+          "bytes": 662483353,
+          "files": 295,
+          "MB": 662.5
+        },
+        "geometry": {
+          "bytes": 48496902,
+          "files": 16,
+          "MB": 48.5
+        },
+        "semantic": {
+          "bytes": 19451066,
+          "files": 155,
+          "MB": 19.5
+        },
+        "spatial": {
+          "bytes": 19441937,
+          "files": 46,
+          "MB": 19.4
+        },
+        "packs": {
+          "bytes": 19225176,
+          "files": 29,
+          "MB": 19.2
+        },
+        "(root files)": {
+          "bytes": 1856270,
+          "files": 9,
+          "MB": 1.9
+        },
+        "home": {
+          "bytes": 424839,
+          "files": 3,
+          "MB": 0.4
+        },
+        "interpretation": {
+          "bytes": 48236,
+          "files": 2,
+          "MB": 0
+        }
+      },
+      "downloads": {
+        "files": 294,
+        "elements": 147,
+        "rawBytes": 662346750,
+        "rawMB": 662.3,
+        "gzipMB": 18.9,
+        "zipPerElementMB": 18.9,
+        "zipPerElementBytes": 18895562,
+        "compressionRatio": 35.1,
+        "largestZip": {
+          "bytes": 3762505,
+          "element": "b-006",
+          "MB": 3.8
+        },
+        "shareOfCountry": 85.9
+      }
+    },
+    {
+      "iso3": "BGD",
+      "nameKo": "방글라데시",
+      "status": "preparing",
+      "dataRoot": "/data/bgd/v2",
+      "totalBytes": 154908937,
+      "totalMB": 154.9,
+      "files": 209,
+      "largestFile": {
+        "bytes": 17015845,
+        "path": "data/bgd/v2/downloads/b-004.json",
+        "MB": 17
+      },
+      "categories": {
+        "downloads": {
+          "bytes": 145352657,
+          "files": 171,
+          "MB": 145.4
+        },
+        "packs": {
+          "bytes": 5645610,
+          "files": 27,
+          "MB": 5.6
+        },
+        "geometry": {
+          "bytes": 2586768,
+          "files": 3,
+          "MB": 2.6
+        },
+        "(root files)": {
+          "bytes": 1323902,
+          "files": 8,
+          "MB": 1.3
+        }
+      },
+      "downloads": {
+        "files": 170,
+        "elements": 85,
+        "rawBytes": 145274787,
+        "rawMB": 145.3,
+        "gzipMB": 4.4,
+        "zipPerElementMB": 4.4,
+        "zipPerElementBytes": 4378690,
+        "compressionRatio": 33.2,
+        "largestZip": {
+          "bytes": 674990,
+          "element": "b-004",
+          "MB": 0.7
+        },
+        "shareOfCountry": 93.8
+      }
+    }
+  ],
+  "forecast": [
+    {
+      "label": "하한(가장 작은 측정 국가형)",
+      "anchorIso3": "BGD",
+      "compressedDownloads": false,
+      "futureCountries": 8,
+      "perFutureCountryMB": 154.9,
+      "deployMB": 2187.9
+    },
+    {
+      "label": "상한(가장 큰 측정 국가형)",
+      "anchorIso3": "VNM",
+      "compressedDownloads": false,
+      "futureCountries": 8,
+      "perFutureCountryMB": 771.4,
+      "deployMB": 7120.1
+    },
+    {
+      "label": "하한 · 다운로드 압축",
+      "anchorIso3": "BGD",
+      "compressedDownloads": true,
+      "futureCountries": 8,
+      "perFutureCountryMB": 14,
+      "deployMB": 276.4
+    },
+    {
+      "label": "상한 · 다운로드 압축",
+      "anchorIso3": "VNM",
+      "compressedDownloads": true,
+      "futureCountries": 8,
+      "perFutureCountryMB": 128,
+      "deployMB": 1188.1
+    }
+  ]
+}

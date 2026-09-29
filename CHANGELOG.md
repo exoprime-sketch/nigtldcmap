@@ -2,6 +2,13 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V158-B2a 배포 용량 예측·데이터 배포 방식 결정안 (PR 후보)
+
+### Added
+
+- `docs/DEPLOYMENT_CAPACITY_V158.md`: Vercel(Hobby) 공식 한도, 10개국 배포 1회 예측(2.19~7.12 GB), 지연 로드·사전 압축·외부 저장 비교, 권고(요소별 다운로드 사전 압축 → 0.28~1.19 GB), 외부 저장 전환 조건, 사용자 결정(2026-09-30: ② 사전 압축 채택·구현 별도 PR, 기존 다운로드 주소 404 허용, Hobby 비상업 조건 보류)
+- `scripts/v158/deployment-capacity-v158.mjs`(읽기 전용 실측: 국가·범주별 크기, 파일 수, 최대 파일, 요소별 ZIP 크기)와 결과 `reports/v158/deployment-capacity-v158.json`. 국가·대상국 수는 레지스트리·우선국가 목록에서 읽음
+
 ## Unreleased — V158-SYNC 베트남 파생 자산을 생성기 출력과 맞춤 (PR 후보, 화면 변화 0)
 
 ### Fixed
