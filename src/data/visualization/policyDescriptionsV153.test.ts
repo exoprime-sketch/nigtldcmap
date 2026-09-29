@@ -1,5 +1,4 @@
 import { describe, expect, test } from "@jest/globals";
-import { readFileSync } from "fs";
 import { resolve } from "path";
 import {
   POLICY_DESCRIPTIONS_V153,
@@ -8,7 +7,7 @@ import {
   policyDescriptionsForElementV153,
   policyDocumentDescriptionV153,
 } from "./policyDescriptionsV153";
-import { countryPublicDirV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 /**
  * V153-D3: the platform-edited descriptions are a contract with the delivery
@@ -17,12 +16,11 @@ import { countryPublicDirV158 } from "../countryContext";
  * 속성23_설명 may leak in as if it were a description.
  */
 const ROOT = resolve(__dirname, "../../..");
-const DATA = resolve(ROOT, `${countryPublicDirV158("VNM")}/downloads`);
 const NAME_KEY = "속성1_레코드명";
 
 type Entity = { recordId: string; name: string; elementId: string; normalizedAttributes?: Record<string, unknown> };
 const entitiesOf = (elementId: string): Entity[] =>
-  JSON.parse(readFileSync(resolve(DATA, `${elementId.toLowerCase()}.json`), "utf8")).entities;
+  readDownloadJsonV158(elementId).entities;
 const rowName = (entity: Entity) => String(entity.normalizedAttributes?.[NAME_KEY] ?? entity.name ?? "").trim();
 const HTTPS = /^https:\/\/[^\s"'<>]+$/u;
 const ATTRIBUTE_LABEL = /^(?:시행\(발효\)일|집행 주무기관|제정\(국회 통과\)·공포일|감축·적응 구분|NAZCA 표기 기후분야|공식 참여 여부|참여·서명 시점|이니셔티브 주제 분야|정식 명칭)/u;

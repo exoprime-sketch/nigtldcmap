@@ -117,7 +117,8 @@ const requiredAssets = [
   "/data/vietnam/v2/packs/bundle-index-v124.json",
   "/data/vietnam/v2/semantic/indicator-semantics-v125.json",
   "/data/vietnam/v2/semantic/element-visualization-contracts-v125.json",
-  "/data/vietnam/v2/downloads/a-002.json",
+  // V158: one download ZIP per element.
+  "/data/vietnam/v2/downloads/a-002.zip",
   "/data/vietnam/v2/map-index.json",
   "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
   "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",

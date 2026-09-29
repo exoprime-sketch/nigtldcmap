@@ -1,14 +1,12 @@
-import { readFileSync } from "fs";
 import { describe, expect, it } from "@jest/globals";
-import { resolve } from "path";
 
 import { publicRecordRoleV142, publicRecordRoleRuleV142 } from "./publicRecordRoleV142";
 import { portfolioCategoryKeyLabelV142, unlabelledPortfolioCategoryKeysV142 } from "../../components/data/public/PublicPortfolioSummaryV132";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
-import { countryPublicDirV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 const download = (elementId: string) =>
-  JSON.parse(readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/${elementId.toLowerCase()}.json`), "utf8")) as { entities: VietnamEntityV124[] };
+  readDownloadJsonV158(elementId) as { entities: VietnamEntityV124[] };
 
 describe("publicRecordRoleV142 — D-026 guarantees vs cover definitions", () => {
   const entities = download("D-026").entities;

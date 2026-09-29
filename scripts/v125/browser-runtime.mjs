@@ -19,6 +19,8 @@ const MIME_TYPES = {
   ".svg": "image/svg+xml",
   ".txt": "text/plain; charset=utf-8",
   ".webp": "image/webp",
+  // V158: the per-element download ZIPs.
+  ".zip": "application/zip",
 };
 
 function isInside(root, target) {

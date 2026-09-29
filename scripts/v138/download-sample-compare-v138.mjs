@@ -11,12 +11,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDownloadJsonV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(fileURLToPath(import.meta.url), "../../..");
 const V2 = resolve(ROOT, "public/data/vietnam/v2");
 const OUT = resolve(ROOT, "reports/v138");
 const read = (path) => JSON.parse(readFileSync(path, "utf8"));
-const download = (id) => read(resolve(V2, "downloads", `${id.toLowerCase()}.json`));
+// V158: the download JSON ships inside downloads/<id>.zip.
+const download = (id) => readDownloadJsonV158(V2, id);
 const screens = read(resolve(OUT, "screen-review-v138.json")).rows;
 const mapQa = read(resolve(OUT, "map-runtime-qa-v138.json"));
 const mapIndex = read(resolve(V2, "map-index.json"));

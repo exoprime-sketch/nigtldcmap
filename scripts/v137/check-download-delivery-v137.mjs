@@ -21,6 +21,8 @@
 
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
+import { createHash } from "node:crypto";
+import { readZipMembersV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const argv = process.argv.slice(2);
@@ -107,6 +109,19 @@ function main() {
           catalog: asset.url,
           manifest: row.url,
         });
+      }
+      // V158: the files inside a download ZIP are the ones the catalog lists.
+      if (String(asset.format).toUpperCase() === "ZIP" && row.deliveryMode === "repository") {
+        const path = resolve(DATA, "downloads", row.fileName);
+        const members = existsSync(path) ? readZipMembersV158(path) : new Map();
+        if (!(asset.entries || []).length) problems.push({ kind: "ZIP_ENTRIES_NOT_LISTED", asset: `${element.elementId}:ZIP` });
+        for (const entry of asset.entries || []) {
+          const member = members.get(entry.fileName);
+          const digest = member ? createHash("sha256").update(member).digest("hex") : null;
+          if (!member || member.length !== entry.byteSize || digest !== entry.sha256) {
+            problems.push({ kind: "ZIP_MEMBER_DIFFERS_FROM_CATALOG", asset: `${element.elementId}:${entry.fileName}` });
+          }
+        }
       }
     }
   }

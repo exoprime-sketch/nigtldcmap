@@ -41,10 +41,12 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import io
 import json
 import math
 import time
 from collections import defaultdict
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -83,7 +85,8 @@ BUCKET_URL = "https://copernicus-dem-30m.s3.amazonaws.com"
 TILE_LIST_URL = f"{BUCKET_URL}/tileList.txt"
 WORLD_COUNTRIES = REPOSITORY_ROOT / "public" / "data" / "world-countries.geojson"
 NEIGHBOUR_ISO3 = ("CHN", "LAO", "KHM", "THA")
-B008_CSV = V2_ROOT / "downloads" / "b-008.csv"
+# V158: the download ships as downloads/b-008.zip holding b-008.csv.
+B008_ZIP = V2_ROOT / "downloads" / "b-008.zip"
 
 THRESHOLDS: list[tuple[str, float]] = [("le0p5m", 0.5), ("le1m", 1.0), ("le2m", 2.0)]
 ZONE_LABELS = {"le0p5m": "≤0.5 m", "le1m": "≤1 m", "le2m": "≤2 m"}
@@ -638,7 +641,8 @@ def round_coordinates(geometry: dict[str, Any], digits: int = 6) -> dict[str, An
 
 def build_slr_zone_table(generated_at: str) -> dict[str, Any]:
     rows = []
-    with B008_CSV.open(encoding="utf-8-sig", newline="") as handle:
+    csv_text = zipfile.ZipFile(B008_ZIP).read("b-008.csv").decode("utf-8-sig")
+    with io.StringIO(csv_text, newline="") as handle:
         for record in csv.DictReader(handle):
             attributes = json.loads(record["attributes_json"])
             rows.append((record, attributes))
@@ -698,7 +702,8 @@ def build_slr_zone_table(generated_at: str) -> dict[str, Any]:
         ),
         "zones": [{"zoneKey": key, "label": ZONE_LABELS[key], "thresholdM": value} for key, value in THRESHOLDS],
         "source": {
-            "csv": "/data/vietnam/v2/downloads/b-008.csv",
+            "csv": "b-008.csv",
+            "download": "/data/vietnam/v2/downloads/b-008.zip",
             "sourceOrg": rows[0][0]["source_org"] or "NASA Sea Level Projection Tool (IPCC AR6) · PSMSL",
             "sourceUrl": rows[0][0]["source_url"],
             "valueField": "attributes_json.상대해수면_상승_m_2005년_기준",

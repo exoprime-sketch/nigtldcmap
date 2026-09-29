@@ -56,6 +56,18 @@ export interface VietnamDownloadAssetV124 {
   byteSize?: number;
   sha256?: string;
   recordCount?: number;
+  /** V158: the files inside a ZIP asset (the element's CSV and JSON). */
+  entries?: VietnamDownloadAssetEntryV158[];
+}
+
+/** V158: one file inside an element's download ZIP. */
+export interface VietnamDownloadAssetEntryV158 {
+  fileName: string;
+  format: string;
+  mediaType?: string;
+  byteSize?: number;
+  sha256?: string;
+  recordCount?: number;
 }
 
 export type VietnamDataAssetRefV124 = {

@@ -148,24 +148,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 439118,
+          "byteSize": 21503,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 220046,
+              "fileName": "a-002.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 348,
+              "sha256": "f0c18385c4270b1b9acdfe6f555f8b7dc621713804fd529775ddd3e6eb99af08"
+            },
+            {
+              "byteSize": 439200,
+              "fileName": "a-002.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 348,
+              "sha256": "dff14728b51977d7d628ff02b4cfaa905742def82b0b20ac083d9e66d639f800"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 348,
-          "sha256": "bea804392c517d5d2c67f948f8e06c77bdbaca91574426e5b25a6dd5127bc6a7",
+          "sha256": "5d94c019775ae130f7e423d7282c8f6b9b0593ca38acc2f7b5b23219bb8fcf92",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-002.json"
-        },
-        {
-          "byteSize": 220046,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 348,
-          "sha256": "f0c18385c4270b1b9acdfe6f555f8b7dc621713804fd529775ddd3e6eb99af08",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-002.csv"
+          "url": "/data/bgd/v2/downloads/a-002.zip"
         }
       ],
       "downloadableRecordCount": 348,
@@ -294,24 +302,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 315650,
+          "byteSize": 21059,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 152771,
+              "fileName": "a-003.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 272,
+              "sha256": "796409396ae2b6c0277a0f0408d4332f8af61ff3e28727ba61ef57afdfb3cbbd"
+            },
+            {
+              "byteSize": 315732,
+              "fileName": "a-003.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 272,
+              "sha256": "d99f62856d7675f2e9c0426d57dad97cf309ee35fdb539caf84aaf345277efc9"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 272,
-          "sha256": "e210152a31a6d8a8f457c702f84fdd484f6f19ffb37cd6686a0aa5525f6e0111",
+          "sha256": "9fc9ec47dd8ad2e0a51a234bb49f9363a727f4c1a42ed75b10790b6b2307b1b9",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-003.json"
-        },
-        {
-          "byteSize": 152771,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 272,
-          "sha256": "796409396ae2b6c0277a0f0408d4332f8af61ff3e28727ba61ef57afdfb3cbbd",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-003.csv"
+          "url": "/data/bgd/v2/downloads/a-003.zip"
         }
       ],
       "downloadableRecordCount": 272,
@@ -458,24 +474,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 47909,
+          "byteSize": 6837,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 18036,
+              "fileName": "a-004.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 33,
+              "sha256": "e15812308c6431163687f480ca50cc946d737b4932dc44738760125171b359b5"
+            },
+            {
+              "byteSize": 47990,
+              "fileName": "a-004.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 33,
+              "sha256": "944cdc845713e1b59a999d790fe09229a6f2659033e7958a5a595d6b69c827de"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 33,
-          "sha256": "3184b84621766b187493d55824c13769b15a90d85a485272f717f192a2459c78",
+          "sha256": "38a1b0233f37a4c5e7d14d8381a1543e87b018e1b6ca638ed0ab36db8d8496ec",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-004.json"
-        },
-        {
-          "byteSize": 18036,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 33,
-          "sha256": "e15812308c6431163687f480ca50cc946d737b4932dc44738760125171b359b5",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-004.csv"
+          "url": "/data/bgd/v2/downloads/a-004.zip"
         }
       ],
       "downloadableRecordCount": 33,
@@ -608,24 +632,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 180065,
+          "byteSize": 14043,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 87817,
+              "fileName": "a-005.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 160,
+              "sha256": "32244938a03f9d8aaddd63144a6e58df63ddd44cb815fa2b1420c1b06b37a95f"
+            },
+            {
+              "byteSize": 180147,
+              "fileName": "a-005.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 160,
+              "sha256": "405b082c9cb54ec3d23cab278e44e0e658811ab4d28164df1ce143f474fb9f54"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 160,
-          "sha256": "79bd0d71bc3da87cab07ad47a3c70a3464f62c3cdf5bf0052e995dd63cfc9c5f",
+          "sha256": "b9abf522100e62b61908e23676562c367b9dc6544e1437c7b0df0019397a58c2",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-005.json"
-        },
-        {
-          "byteSize": 87817,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 160,
-          "sha256": "32244938a03f9d8aaddd63144a6e58df63ddd44cb815fa2b1420c1b06b37a95f",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-005.csv"
+          "url": "/data/bgd/v2/downloads/a-005.zip"
         }
       ],
       "downloadableRecordCount": 160,
@@ -768,24 +800,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 157483,
+          "byteSize": 11078,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 70780,
+              "fileName": "a-006.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 133,
+              "sha256": "268dfdee0cf45ce2e5f123a4c2477cc4951b32657f0da8f3fd705225e095f4d5"
+            },
+            {
+              "byteSize": 157565,
+              "fileName": "a-006.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 133,
+              "sha256": "7d78d93c5d152f06935b07af6abac0059f8f07d84f907e4651f6e04c59caec40"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 133,
-          "sha256": "88c437f52b3b7f4abe821341491e04e6fa0589633b3ca5fa388c92c20964afc0",
+          "sha256": "fbc3cf25d8d61ed325e3118ce236f30f4fa3babc818a0c1a3f58af000aefb283",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-006.json"
-        },
-        {
-          "byteSize": 70780,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 133,
-          "sha256": "268dfdee0cf45ce2e5f123a4c2477cc4951b32657f0da8f3fd705225e095f4d5",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-006.csv"
+          "url": "/data/bgd/v2/downloads/a-006.zip"
         }
       ],
       "downloadableRecordCount": 133,
@@ -923,24 +963,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 277442,
+          "byteSize": 17958,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 138437,
+              "fileName": "a-007.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 263,
+              "sha256": "c7c8d495b6e0b9fdf0e73100ff427415deaedd28934b9093adfcefd7880a8e9f"
+            },
+            {
+              "byteSize": 277524,
+              "fileName": "a-007.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 263,
+              "sha256": "26f76f9f18e1d1df6c4480472a51fa3104837cad35dc5c628f23db9503ba0850"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 263,
-          "sha256": "ecffe1a1d747c997c80d08fbf950d235da19876f2a59ff69f2c676035718386f",
+          "sha256": "cd485ee6c579010238cff9457c0619d75c0898dce0b519b0c839effbe6aa7ad9",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-007.json"
-        },
-        {
-          "byteSize": 138437,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 263,
-          "sha256": "c7c8d495b6e0b9fdf0e73100ff427415deaedd28934b9093adfcefd7880a8e9f",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-007.csv"
+          "url": "/data/bgd/v2/downloads/a-007.zip"
         }
       ],
       "downloadableRecordCount": 263,
@@ -1109,24 +1157,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 40127,
+          "byteSize": 6304,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 16557,
+              "fileName": "a-008.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 32,
+              "sha256": "edd87181b2978bb3bf9065d0a4f197e75976a32e141061402fe2534788f4b8f4"
+            },
+            {
+              "byteSize": 40208,
+              "fileName": "a-008.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 32,
+              "sha256": "23a05b1168935445608fda89dea073a0a7e5bf8689173a7314bd96fb251c879e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 32,
-          "sha256": "6ed60ef49eaaee5fb5637e1f61ad646cb58e57cf04285f30e6b8c6698945ad9c",
+          "sha256": "1f7abfd1a832479edbb04ae6daad7cd51176c142d82e8264701c10eaf82d4fc7",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-008.json"
-        },
-        {
-          "byteSize": 16557,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 32,
-          "sha256": "edd87181b2978bb3bf9065d0a4f197e75976a32e141061402fe2534788f4b8f4",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-008.csv"
+          "url": "/data/bgd/v2/downloads/a-008.zip"
         }
       ],
       "downloadableRecordCount": 32,
@@ -1258,24 +1314,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 122034,
+          "byteSize": 9817,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 60564,
+              "fileName": "a-009.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 90,
+              "sha256": "40a35a68667cd6c6f4f8fda4984d0e8993ffa445cb2ebcdd367339eed4e5c4b7"
+            },
+            {
+              "byteSize": 122115,
+              "fileName": "a-009.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 90,
+              "sha256": "2c4a11e14ce2ce6ffb561ea2ffacd5694e5b161bdd80597354e7b91d4429f4dc"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 90,
-          "sha256": "abc26bbd428c33dffa7c37e7868efbdc7415294cc4753650426c67c3cf319697",
+          "sha256": "7a506f94ead9838bd13fe9229ed3281775f0e82ca39740110e6c0613ded5baef",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-009.json"
-        },
-        {
-          "byteSize": 60564,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 90,
-          "sha256": "40a35a68667cd6c6f4f8fda4984d0e8993ffa445cb2ebcdd367339eed4e5c4b7",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-009.csv"
+          "url": "/data/bgd/v2/downloads/a-009.zip"
         }
       ],
       "downloadableRecordCount": 90,
@@ -1430,24 +1494,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 475258,
+          "byteSize": 21863,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 205936,
+              "fileName": "a-010.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 310,
+              "sha256": "a36bedbb07bf44a5e08b4ea6225aa842f54d84768b051cc6ca3b8dd00ce1b637"
+            },
+            {
+              "byteSize": 475340,
+              "fileName": "a-010.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 310,
+              "sha256": "c3814ecf2261a2d178c9b8e452381eb9172ce3779d8ada8f2f205df661d2708e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 310,
-          "sha256": "efc79c7519073791913678920c61b437f98ba8d08a6d9af902bc8e581baec0eb",
+          "sha256": "4739a3ebdd8f4333421a44e93261a75eff2c3850d38a3b981bf37c5bc368f08e",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-010.json"
-        },
-        {
-          "byteSize": 205936,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 310,
-          "sha256": "a36bedbb07bf44a5e08b4ea6225aa842f54d84768b051cc6ca3b8dd00ce1b637",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-010.csv"
+          "url": "/data/bgd/v2/downloads/a-010.zip"
         }
       ],
       "downloadableRecordCount": 310,
@@ -1609,24 +1681,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 680440,
+          "byteSize": 30243,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 335071,
+              "fileName": "a-011.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 495,
+              "sha256": "9a9ef52f7036cdce7ffb770b338207ac403fbfd093a2e7bbfcc96344d94e22a7"
+            },
+            {
+              "byteSize": 680522,
+              "fileName": "a-011.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 495,
+              "sha256": "6ec16004fb0670b577152faced006f6476a92ca3984014832d46a7129746cd03"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 495,
-          "sha256": "b8b792ab543b3164ef0918af98800823b1b28f8394450b7bfa693a32ffa428a7",
+          "sha256": "5859dc6832890789ef7c03f8da772b686a3a77c659818732b36ddf5df15ad3f1",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-011.json"
-        },
-        {
-          "byteSize": 335071,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 495,
-          "sha256": "9a9ef52f7036cdce7ffb770b338207ac403fbfd093a2e7bbfcc96344d94e22a7",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-011.csv"
+          "url": "/data/bgd/v2/downloads/a-011.zip"
         }
       ],
       "downloadableRecordCount": 495,
@@ -1788,24 +1868,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 151869,
+          "byteSize": 11327,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 65998,
+              "fileName": "a-012.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 103,
+              "sha256": "613082ef00884420cb16477c55f7307077f8ba1ee7b35d6e451a9255af1619c7"
+            },
+            {
+              "byteSize": 151951,
+              "fileName": "a-012.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 103,
+              "sha256": "6313b2f0529b3d5e9bb1ca984325f03b9344bdbadc06ce9d730e31d0f8e5745d"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 103,
-          "sha256": "ff4a19c8c0c2c0000c53481a516b358bb390be1937a51c99aa124e65297ddfb6",
+          "sha256": "d00e5bcbb34f77329f44879a848e8b9d9f866d2f9df5716d97196d0e06ba831f",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-012.json"
-        },
-        {
-          "byteSize": 65998,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 103,
-          "sha256": "613082ef00884420cb16477c55f7307077f8ba1ee7b35d6e451a9255af1619c7",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-012.csv"
+          "url": "/data/bgd/v2/downloads/a-012.zip"
         }
       ],
       "downloadableRecordCount": 103,
@@ -1964,24 +2052,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 405893,
+          "byteSize": 23215,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 226518,
+              "fileName": "a-013.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 220,
+              "sha256": "8a17b8b50011ebd0ce432c6045c56ccb9ca88a2f7ab95ec43a8f6d3a78b8daaa"
+            },
+            {
+              "byteSize": 405975,
+              "fileName": "a-013.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 220,
+              "sha256": "b05bd4c647d07d4e0cd9cba60df6c243032efee0ffd5514c8d6945968a0d6754"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 220,
-          "sha256": "b846636ac50ed0e8fd02aaf62ae55831f0824c0da8f853ee50958d5ad8d87cdb",
+          "sha256": "01ca8eaae6864fedf96cbaa4cf2a6db53280835d1df3ef622abf16e886dd995b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-013.json"
-        },
-        {
-          "byteSize": 226518,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 220,
-          "sha256": "8a17b8b50011ebd0ce432c6045c56ccb9ca88a2f7ab95ec43a8f6d3a78b8daaa",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-013.csv"
+          "url": "/data/bgd/v2/downloads/a-013.zip"
         }
       ],
       "downloadableRecordCount": 220,
@@ -2706,24 +2802,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 33912,
+          "byteSize": 6467,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 16374,
+              "fileName": "a-019.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 34,
+              "sha256": "dd6425cdb481d3545b88c6c3dc62aae3fe34e5d0089a45896e07adccf0556431"
+            },
+            {
+              "byteSize": 33993,
+              "fileName": "a-019.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 34,
+              "sha256": "a67984b0a8cee1abe92e534fe0bc4cf0290ffadb5936c692f653766ed1a8d822"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 34,
-          "sha256": "f7ec79a6432329b08a353dc1aa5e3fa54437ac8f4b06194ad90141979f615f21",
+          "sha256": "d0a492eff454b3539735d7a8774e9e44133f458b6b079988b8671805d19b7739",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-019.json"
-        },
-        {
-          "byteSize": 16374,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 34,
-          "sha256": "dd6425cdb481d3545b88c6c3dc62aae3fe34e5d0089a45896e07adccf0556431",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-019.csv"
+          "url": "/data/bgd/v2/downloads/a-019.zip"
         }
       ],
       "downloadableRecordCount": 34,
@@ -2985,24 +3089,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 108363,
+          "byteSize": 9021,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 47523,
+              "fileName": "a-021.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 95,
+              "sha256": "3ac3e208ce901f7ea94da10916d2b0f7679e4717e812b6e626d01f3ef91df0b1"
+            },
+            {
+              "byteSize": 108444,
+              "fileName": "a-021.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 95,
+              "sha256": "5e24c80b72ccee5caaf646ca20f95879eeb564c2df3e2a0bd0f0eae8635cd958"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 95,
-          "sha256": "bdbc70ad1cd25bb93e8ac97959ae5fcf9558c11c114895b3d556bab36de85e84",
+          "sha256": "7280b971283a10e744e484a8fe6fae0cf41f17ace59908e0e0656d24dd1f3338",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-021.json"
-        },
-        {
-          "byteSize": 47523,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 95,
-          "sha256": "3ac3e208ce901f7ea94da10916d2b0f7679e4717e812b6e626d01f3ef91df0b1",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-021.csv"
+          "url": "/data/bgd/v2/downloads/a-021.zip"
         }
       ],
       "downloadableRecordCount": 95,
@@ -3136,24 +3248,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 67740,
+          "byteSize": 8918,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 14713,
+              "fileName": "a-022.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 32,
+              "sha256": "37dde9021159bb9f14f5e4f35f7041980222878e9245de035f6e1a66e3b9c7a6"
+            },
+            {
+              "byteSize": 67821,
+              "fileName": "a-022.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 32,
+              "sha256": "582da4c1118d7645d8027e97eabe4fe864d6b7ccb1dfb921379cebedf35c12b3"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 32,
-          "sha256": "8beda14af483b79c19dc0e1de6a258944a694c3763bdf55b46dcc012801c726b",
+          "sha256": "89139a3965466230839889e69baa1a39f83d2e3abc8b747720160cddaf9ad712",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-022.json"
-        },
-        {
-          "byteSize": 14713,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 32,
-          "sha256": "37dde9021159bb9f14f5e4f35f7041980222878e9245de035f6e1a66e3b9c7a6",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-022.csv"
+          "url": "/data/bgd/v2/downloads/a-022.zip"
         }
       ],
       "downloadableRecordCount": 32,
@@ -3276,24 +3396,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 98042,
+          "byteSize": 11804,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 52051,
+              "fileName": "a-023.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 57,
+              "sha256": "0a27054696f978b37d85efbf488695d3d91faebe532f2ac3956759aca49bcb22"
+            },
+            {
+              "byteSize": 98123,
+              "fileName": "a-023.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 57,
+              "sha256": "8f20cfc2d68b50bcd57802e34857f83019f4c0ccfb5fab0ca2da82833f9efe5e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 57,
-          "sha256": "dbed6d46f50a027dd905509254818054b98a248fec53b5c6aff5c525b662b8aa",
+          "sha256": "6a2998e15375cadbb81d02303a946976692e910c2ab126b9b58e8b846b1269f0",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-023.json"
-        },
-        {
-          "byteSize": 52051,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 57,
-          "sha256": "0a27054696f978b37d85efbf488695d3d91faebe532f2ac3956759aca49bcb22",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-023.csv"
+          "url": "/data/bgd/v2/downloads/a-023.zip"
         }
       ],
       "downloadableRecordCount": 57,
@@ -3495,24 +3623,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 17492,
+          "byteSize": 6248,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 2092,
+              "fileName": "a-025.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 2,
+              "sha256": "efb2a7aa2cdba27f96e0672de044eaffdf1fa8a70ed889f75449fd32cbcabc91"
+            },
+            {
+              "byteSize": 17572,
+              "fileName": "a-025.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 2,
+              "sha256": "5d10f313c7bd600a33e11be82f3b9237308e916cac94f75bf4c5b43829b32c10"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 2,
-          "sha256": "0fc32aaa095ab399a4ca2d904d11f61ee79afd6bd8a4830a640dbfa082afc4be",
+          "sha256": "0f7b89a233af7960887519c49e779fe2d12c09438a3fc6f8bcf2aae439e171b4",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-025.json"
-        },
-        {
-          "byteSize": 2092,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 2,
-          "sha256": "efb2a7aa2cdba27f96e0672de044eaffdf1fa8a70ed889f75449fd32cbcabc91",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-025.csv"
+          "url": "/data/bgd/v2/downloads/a-025.zip"
         }
       ],
       "downloadableRecordCount": 2,
@@ -3615,24 +3751,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 64509,
+          "byteSize": 8961,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1987,
+              "fileName": "a-026.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 1,
+              "sha256": "f30395088bcd1b9b012b968c735f52b079b081e97893c77b9edffb473fe6f37d"
+            },
+            {
+              "byteSize": 64589,
+              "fileName": "a-026.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 1,
+              "sha256": "54b2e096552374344fe34bb3d207eaace7f111d3e26289fd2738388a5c444628"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 1,
-          "sha256": "4385b578b5e03847a46d155be089550ccfd545be27fac42811d98c8913d8dac1",
+          "sha256": "27a9c258cc9c41294436941fe4eb6c3c9b84d1708dd029e5b0b1cb669703f162",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-026.json"
-        },
-        {
-          "byteSize": 1987,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 1,
-          "sha256": "f30395088bcd1b9b012b968c735f52b079b081e97893c77b9edffb473fe6f37d",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-026.csv"
+          "url": "/data/bgd/v2/downloads/a-026.zip"
         }
       ],
       "downloadableRecordCount": 1,
@@ -4027,24 +4171,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 197929,
+          "byteSize": 12884,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 105303,
+              "fileName": "a-030.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 144,
+              "sha256": "a727f145d28fffe4320b030ec3c4d7d0021f5fc92e3957ec78c5e2bda4e1005d"
+            },
+            {
+              "byteSize": 198011,
+              "fileName": "a-030.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 144,
+              "sha256": "23881f6bdb35fda7a3c6f7eb8ef9d8a3a61bb5fddde43b13ab355a4b1e66ad55"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 144,
-          "sha256": "10068b4404bd22d5c275da453b98fb1a9d5f6e612048c3ff23a15af840ab7469",
+          "sha256": "53c6fa37b8db7f865a0216c0eabd6b6f2f1b3f80ef184e519958e1085389d98c",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-030.json"
-        },
-        {
-          "byteSize": 105303,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 144,
-          "sha256": "a727f145d28fffe4320b030ec3c4d7d0021f5fc92e3957ec78c5e2bda4e1005d",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-030.csv"
+          "url": "/data/bgd/v2/downloads/a-030.zip"
         }
       ],
       "downloadableRecordCount": 144,
@@ -4180,24 +4332,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 80848,
+          "byteSize": 7844,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 21892,
+              "fileName": "a-031.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 42,
+              "sha256": "b00f00714234a965579f8dc69b34e383d7af43852a8bd1c95b8e24e98e6e198b"
+            },
+            {
+              "byteSize": 80929,
+              "fileName": "a-031.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 42,
+              "sha256": "79fd6b248207c6f88e85d916f56935b5abe968faa681f844212e7c3f9d10b300"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 42,
-          "sha256": "f727d0104d7662ff86922c1c2be212a2e03c86f895439b6a2db3130fb88da5fe",
+          "sha256": "9c2638378d48b0ea3f46ae9b544a848ce6a774fea806a2f11241282ca00bea36",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-031.json"
-        },
-        {
-          "byteSize": 21892,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 42,
-          "sha256": "b00f00714234a965579f8dc69b34e383d7af43852a8bd1c95b8e24e98e6e198b",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-031.csv"
+          "url": "/data/bgd/v2/downloads/a-031.zip"
         }
       ],
       "downloadableRecordCount": 42,
@@ -4309,24 +4469,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 91393,
+          "byteSize": 9737,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 37435,
+              "fileName": "a-032.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 54,
+              "sha256": "9459ba1288ebe27c74b17745413c4ea08970c46306f2b527a184f8eb4c043471"
+            },
+            {
+              "byteSize": 91474,
+              "fileName": "a-032.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 54,
+              "sha256": "af2fdab4767efa597cdadfcdd25943a5752f467ca5f11d34fe1b8231e5312f4f"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 54,
-          "sha256": "fc1da57a8c7e5df76c85cddee3948550480e28e5080fdc282368c08c442d185b",
+          "sha256": "bf94ebbfc4af86016027b4b08f925123f83be4d36ff0069588fa4b5631f1dd0d",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-032.json"
-        },
-        {
-          "byteSize": 37435,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 54,
-          "sha256": "9459ba1288ebe27c74b17745413c4ea08970c46306f2b527a184f8eb4c043471",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/a-032.csv"
+          "url": "/data/bgd/v2/downloads/a-032.zip"
         }
       ],
       "downloadableRecordCount": 54,
@@ -4581,24 +4749,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 201983,
+          "byteSize": 8992,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 17774,
+              "fileName": "b-001.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 38,
+              "sha256": "7d99d9c501929fbf98e17c972c4f9f0aaa4759320665d607b3c7fc423db9809d"
+            },
+            {
+              "byteSize": 202064,
+              "fileName": "b-001.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 38,
+              "sha256": "f69432981184be9bca48bee3c8c0ecb2a3d6e55e10ea9f2fdc1324b5b12894f3"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 38,
-          "sha256": "cdf0ab2713a73c4717225a0f282c034b7c59335ea28b447bf902141479de89d0",
+          "sha256": "a3bc86ad332912716b6c8f85318787caa0f4c5e22ceb39416b220a7915a7e564",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-001.json"
-        },
-        {
-          "byteSize": 17774,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 38,
-          "sha256": "7d99d9c501929fbf98e17c972c4f9f0aaa4759320665d607b3c7fc423db9809d",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-001.csv"
+          "url": "/data/bgd/v2/downloads/b-001.zip"
         }
       ],
       "downloadableRecordCount": 38,
@@ -4701,24 +4877,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 179264,
+          "byteSize": 13322,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 59799,
+              "fileName": "b-002.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 43,
+              "sha256": "d6b190f51724af72c7ad31bb8c0d763e81a8c55f6290117318c27a4381389c7d"
+            },
+            {
+              "byteSize": 179345,
+              "fileName": "b-002.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 43,
+              "sha256": "3e043933329347c82182a3fa4f226df916a90f794734e64992a76c6a29e60d11"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 43,
-          "sha256": "fc8b099677ced68057d6e9a85556cbb3c95bd95426972ab746c87a57b49205fd",
+          "sha256": "30861cd9108366c282e66d4b8f72820aeae385831648d1f672ccddaafc8006d0",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-002.json"
-        },
-        {
-          "byteSize": 59799,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 43,
-          "sha256": "d6b190f51724af72c7ad31bb8c0d763e81a8c55f6290117318c27a4381389c7d",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-002.csv"
+          "url": "/data/bgd/v2/downloads/b-002.zip"
         }
       ],
       "downloadableRecordCount": 43,
@@ -4827,24 +5011,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 3587791,
+          "byteSize": 140907,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1440935,
+              "fileName": "b-003.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 1125,
+              "sha256": "221b24650e24996e75862124d6f4c339a2ca1f1e40f95e12def98d812880f0d7"
+            },
+            {
+              "byteSize": 3587874,
+              "fileName": "b-003.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 1125,
+              "sha256": "500cbb73f329a87f4e7dc3abe1b79a8b7fb27776899d3a035c886641f580f281"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 1125,
-          "sha256": "bb968d71e8299c061f5770f66e7a08f2394ace2ffc6a19b8d3a48ee16edbd0e2",
+          "sha256": "a3d0785f186cefffadcb8d06b1781d1074b1e93fe05ef3a282668e34cb1ca27d",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-003.json"
-        },
-        {
-          "byteSize": 1440935,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 1125,
-          "sha256": "221b24650e24996e75862124d6f4c339a2ca1f1e40f95e12def98d812880f0d7",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-003.csv"
+          "url": "/data/bgd/v2/downloads/b-003.zip"
         }
       ],
       "downloadableRecordCount": 1125,
@@ -4951,24 +5143,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 17015845,
+          "byteSize": 681865,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 7341119,
+              "fileName": "b-004.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 4455,
+              "sha256": "27bb86212660ab6e3ff524e1edaa794869c7fba00fc6b7638f92cca0463b5fdc"
+            },
+            {
+              "byteSize": 17015928,
+              "fileName": "b-004.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 4455,
+              "sha256": "48ed76ee3def88068a4d0cdb0592feceee7593e5a6ee983e7ba8efae26219fc5"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 4455,
-          "sha256": "006b262307ec6c1d2afa6a65019b712863911030b90a786e04277c12765adf4f",
+          "sha256": "747960e8b687b9ad14e3da389acce204f50aac2a6a3ab147522a67b43e90553e",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-004.json"
-        },
-        {
-          "byteSize": 7341119,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 4455,
-          "sha256": "27bb86212660ab6e3ff524e1edaa794869c7fba00fc6b7638f92cca0463b5fdc",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-004.csv"
+          "url": "/data/bgd/v2/downloads/b-004.zip"
         }
       ],
       "downloadableRecordCount": 4455,
@@ -5073,24 +5273,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 13447432,
+          "byteSize": 350226,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6033510,
+              "fileName": "b-005.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 4485,
+              "sha256": "074d58a5b5d2d43c54dda49449c02498f73f4cd2662eff516cd70e9a1767f616"
+            },
+            {
+              "byteSize": 13447515,
+              "fileName": "b-005.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 4485,
+              "sha256": "0eef87d65ba53221ef23fe35582e835a4f8af0097357bfb9e8ba31120e057e76"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 4485,
-          "sha256": "7a92d61c8a00261adf283c12fd9ffaca1c6c09bda3c13365308b7623eaafb9f6",
+          "sha256": "1d82be0ce74ba4cef88cccfc21d95e8e1983bdbd9c6bfbc673590c0e8898a8b5",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-005.json"
-        },
-        {
-          "byteSize": 6033510,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 4485,
-          "sha256": "074d58a5b5d2d43c54dda49449c02498f73f4cd2662eff516cd70e9a1767f616",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-005.csv"
+          "url": "/data/bgd/v2/downloads/b-005.zip"
         }
       ],
       "downloadableRecordCount": 4485,
@@ -5228,24 +5436,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 14054114,
+          "byteSize": 664454,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6569850,
+              "fileName": "b-006.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 4455,
+              "sha256": "70741a790bc4ec3d6e958314251f7f80646d25a032a4d07b3c2dee006951a381"
+            },
+            {
+              "byteSize": 14054197,
+              "fileName": "b-006.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 4455,
+              "sha256": "8c5cef3c13aa1b351353b7bc29c37f15c65758f6598b31ead354fd1ab1840069"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 4455,
-          "sha256": "f4bf933204b8ffc197aec32fef3454eb274e03d8500e5be394595aad11a26e72",
+          "sha256": "7035fb3dbc3547ab6392a1616275e54d8f75beccf104b54ed96b19cafa282aca",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-006.json"
-        },
-        {
-          "byteSize": 6569850,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 4455,
-          "sha256": "70741a790bc4ec3d6e958314251f7f80646d25a032a4d07b3c2dee006951a381",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-006.csv"
+          "url": "/data/bgd/v2/downloads/b-006.zip"
         }
       ],
       "downloadableRecordCount": 4455,
@@ -5350,24 +5566,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 14619206,
+          "byteSize": 630429,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6778156,
+              "fileName": "b-007.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 4455,
+              "sha256": "874739cdeea5c643ec76483c1ceb7b5f577380763e34bcb7a71b14dcd3ea5542"
+            },
+            {
+              "byteSize": 14619289,
+              "fileName": "b-007.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 4455,
+              "sha256": "71024a6c84f2f3caf597518ae95ac244a079f235d3bcca6ba031fb3c8fdf8584"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 4455,
-          "sha256": "c7a49cc97362680614002e03b2c7b124f489879dcfba9e42fd9b23332edbb2c7",
+          "sha256": "02aad703f8942741f4481b81bec4974fe2f3394ff79c0648ee701fc5e5816d1b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-007.json"
-        },
-        {
-          "byteSize": 6778156,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 4455,
-          "sha256": "874739cdeea5c643ec76483c1ceb7b5f577380763e34bcb7a71b14dcd3ea5542",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-007.csv"
+          "url": "/data/bgd/v2/downloads/b-007.zip"
         }
       ],
       "downloadableRecordCount": 4455,
@@ -5471,24 +5695,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 3073464,
+          "byteSize": 87838,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1735141,
+              "fileName": "b-008.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 1260,
+              "sha256": "b16be380cd0f2f2451e8d6f5094b4ca1d08000f1cec7c3df74f9e9b38c9eceaf"
+            },
+            {
+              "byteSize": 3073547,
+              "fileName": "b-008.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 1260,
+              "sha256": "2cf3f5e598162e6b2acecc92654a494188a19c6b5e4686528cfde428ec9f4a6b"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 1260,
-          "sha256": "626fe7bdae62e6730ba6ccbc717076b4a886b58c1dcc23bcfb4c1243e2533ddb",
+          "sha256": "d4e39389c94fe1264f58ba3318db22d967c7d7c89ea0726ebe512c9fcceec450",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-008.json"
-        },
-        {
-          "byteSize": 1735141,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 1260,
-          "sha256": "b16be380cd0f2f2451e8d6f5094b4ca1d08000f1cec7c3df74f9e9b38c9eceaf",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-008.csv"
+          "url": "/data/bgd/v2/downloads/b-008.zip"
         }
       ],
       "downloadableRecordCount": 1260,
@@ -5686,24 +5918,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 48450,
+          "byteSize": 6905,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 4769,
+              "fileName": "b-010.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 8,
+              "sha256": "23fbf4a83bfa290f796105641e5c16d0bbf0b42d58f2b9fd996f391fb5563dbb"
+            },
+            {
+              "byteSize": 48530,
+              "fileName": "b-010.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 8,
+              "sha256": "6df03845230226788e54c9bfd0b7eede859a5bf98ff91d12ebb39ec8b405bef3"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 8,
-          "sha256": "0e13b7dae7a3c89fb6a854c4430250a2e116f8d7256e214cb768db1609ea7644",
+          "sha256": "e1b32924f7c868489e581ea091e7c598652e75f81000369dcb412c0d299fc23d",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-010.json"
-        },
-        {
-          "byteSize": 4769,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 8,
-          "sha256": "23fbf4a83bfa290f796105641e5c16d0bbf0b42d58f2b9fd996f391fb5563dbb",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-010.csv"
+          "url": "/data/bgd/v2/downloads/b-010.zip"
         }
       ],
       "downloadableRecordCount": 8,
@@ -5929,24 +6169,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 955638,
+          "byteSize": 94861,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 523145,
+              "fileName": "b-012.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 367,
+              "sha256": "c0d22f22ea80c6dc936a2f9a3a3210ee06adbbcc47ad9ba0433be0cbee3d8274"
+            },
+            {
+              "byteSize": 955720,
+              "fileName": "b-012.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 367,
+              "sha256": "56807df7bd4b59d257d0dca6f426b771f659c60bc289ca17c0578aee5467f0b3"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 367,
-          "sha256": "9a406898380889c72482c3f274492df4660b545234cb5e23db345780d76a46dc",
+          "sha256": "c2ebd26ab2f6c2fc8e09689ea2f2bc6d648b758edda87e2fa5c497816490f1ce",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-012.json"
-        },
-        {
-          "byteSize": 523145,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 367,
-          "sha256": "c0d22f22ea80c6dc936a2f9a3a3210ee06adbbcc47ad9ba0433be0cbee3d8274",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-012.csv"
+          "url": "/data/bgd/v2/downloads/b-012.zip"
         }
       ],
       "downloadableRecordCount": 367,
@@ -6048,24 +6296,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 174547,
+          "byteSize": 9436,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 15284,
+              "fileName": "b-013.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 35,
+              "sha256": "b30706342ebb755854457006e53d49dd5ed7e40109db4abbcbdce6c74a0c2830"
+            },
+            {
+              "byteSize": 174628,
+              "fileName": "b-013.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 35,
+              "sha256": "79929350870b0c51c8b7423f6e9edd7db904510a2f28dc54a48eaeb2e92825f8"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 35,
-          "sha256": "71d4adc5eb212c19e7e0b1b7640b26805698a3a96f851e48685989e6d9fcf966",
+          "sha256": "679bd7bfb3124d99d3c17bb64ef142b31ff85184f969f13e8edee6ddc4aa6367",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-013.json"
-        },
-        {
-          "byteSize": 15284,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 35,
-          "sha256": "b30706342ebb755854457006e53d49dd5ed7e40109db4abbcbdce6c74a0c2830",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-013.csv"
+          "url": "/data/bgd/v2/downloads/b-013.zip"
         }
       ],
       "downloadableRecordCount": 35,
@@ -6171,24 +6427,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 95396,
+          "byteSize": 7484,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 14411,
+              "fileName": "b-014.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 19,
+              "sha256": "0400d52d294b76b5c38a6907d2f560c7510a6302fcf6a44cd343304229316f0f"
+            },
+            {
+              "byteSize": 95477,
+              "fileName": "b-014.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 19,
+              "sha256": "4845cf014df4eed896c0ea7b9415743d6f3b2f1d77e73d9ba79f3ccf5dbf51a2"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 19,
-          "sha256": "30ed008848f55f7a8e4ffb60db8b4fe280e7484ffff40527aa939bd87f3be62d",
+          "sha256": "e5ca00c636d888c40ab4af1437eb19471bcc54ec0867a90955562cbcba7c6acb",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-014.json"
-        },
-        {
-          "byteSize": 14411,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 19,
-          "sha256": "0400d52d294b76b5c38a6907d2f560c7510a6302fcf6a44cd343304229316f0f",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-014.csv"
+          "url": "/data/bgd/v2/downloads/b-014.zip"
         }
       ],
       "downloadableRecordCount": 19,
@@ -6292,24 +6556,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 57578,
+          "byteSize": 6593,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 4834,
+              "fileName": "b-015.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 10,
+              "sha256": "debf6453670a0a92c963f4ffe10ae2e332e22c96053278d2de7a5020de8361d0"
+            },
+            {
+              "byteSize": 57659,
+              "fileName": "b-015.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 10,
+              "sha256": "91a00d91590c2b8b57a317af561d4f038a4f92e5592b6331a28d9c0f0c7281f8"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 10,
-          "sha256": "f02abf16aff74ef4fcab611878d0d3dd541f375ce1dc734778c419b96fe59ddb",
+          "sha256": "902483494505fcf45fe547cce4090a18b1846080c4d3512ec73e7537f0235645",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-015.json"
-        },
-        {
-          "byteSize": 4834,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 10,
-          "sha256": "debf6453670a0a92c963f4ffe10ae2e332e22c96053278d2de7a5020de8361d0",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-015.csv"
+          "url": "/data/bgd/v2/downloads/b-015.zip"
         }
       ],
       "downloadableRecordCount": 10,
@@ -6413,24 +6685,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 102471,
+          "byteSize": 8948,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 22779,
+              "fileName": "b-016.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 45,
+              "sha256": "6ae14d2ca52856bb4cee7498710d6e46200cfc05a31d9163200a79c3e1ea88f3"
+            },
+            {
+              "byteSize": 102552,
+              "fileName": "b-016.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 45,
+              "sha256": "e8b3a8f036e2e6ffd8a238e36bed878eb0847c330b8a7b0dd4fc43a4ece73203"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 45,
-          "sha256": "9c8e47d31aa797bd878ec9bc5304063903a950577ec8df90afeeae781c72a9c6",
+          "sha256": "6258b08d1052bd4ebbac19c4e253d663584e96821e72d922b8fcadc3143a2a54",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-016.json"
-        },
-        {
-          "byteSize": 22779,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 45,
-          "sha256": "6ae14d2ca52856bb4cee7498710d6e46200cfc05a31d9163200a79c3e1ea88f3",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-016.csv"
+          "url": "/data/bgd/v2/downloads/b-016.zip"
         }
       ],
       "downloadableRecordCount": 45,
@@ -6573,24 +6853,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 3304846,
+          "byteSize": 115679,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 2135692,
+              "fileName": "b-017.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 632,
+              "sha256": "892bc01562210c043fcc41f41520db15ff5626b2f8a489265b4b202bbdfff4d8"
+            },
+            {
+              "byteSize": 3304928,
+              "fileName": "b-017.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 632,
+              "sha256": "7ab6303a5f071662f851f17bfc4e2329346229028b58deb22d1f373a8b4290ee"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 632,
-          "sha256": "da71b3a6ce6ae00538f015b2b4af50d84540b3a0900997911ccd41e9fd8688eb",
+          "sha256": "119fd92168503ae222d382d977f08d606be86311b4f6c25391cc6c62d41b99a3",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-017.json"
-        },
-        {
-          "byteSize": 2135692,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 632,
-          "sha256": "892bc01562210c043fcc41f41520db15ff5626b2f8a489265b4b202bbdfff4d8",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-017.csv"
+          "url": "/data/bgd/v2/downloads/b-017.zip"
         }
       ],
       "downloadableRecordCount": 632,
@@ -6697,24 +6985,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 551836,
+          "byteSize": 20950,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 117586,
+              "fileName": "b-018.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 282,
+              "sha256": "1281c256b3e38b0a8034e261cd97560eb4b9778e2ebe8d5b98076f264d7e79ae"
+            },
+            {
+              "byteSize": 551918,
+              "fileName": "b-018.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 282,
+              "sha256": "d762bfe0a6485da7c6d0cf5cd6b174b702413a625b1fed64ccdcc51376aa77c3"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 282,
-          "sha256": "0b67c94bd083ed643a5ae76763437821580935cd79f68320bcb179fc5191063c",
+          "sha256": "a03548ce79a659528c31863e09b03844eab1600f47e1c1e0845a3a3d6253414b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-018.json"
-        },
-        {
-          "byteSize": 117586,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 282,
-          "sha256": "1281c256b3e38b0a8034e261cd97560eb4b9778e2ebe8d5b98076f264d7e79ae",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-018.csv"
+          "url": "/data/bgd/v2/downloads/b-018.zip"
         }
       ],
       "downloadableRecordCount": 282,
@@ -6844,24 +7140,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 167267,
+          "byteSize": 10556,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 42892,
+              "fileName": "b-019.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 110,
+              "sha256": "79a7557573d7ed4ccdfd3fb17fc8fcf91e477484e7b7f36d2b1e23b67b911595"
+            },
+            {
+              "byteSize": 167349,
+              "fileName": "b-019.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 110,
+              "sha256": "b52d2508eb3008e3ab5b0dc9f626e63030987d73107f89c37960bb48edba8842"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 110,
-          "sha256": "d2522c6e257b216edf9d4fa517956764c2cf21dcc14c5a8a405814b60c767b20",
+          "sha256": "127737674f80831e4be7e23b4528473499a7c6316c4ceda8abf310524e21ce09",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-019.json"
-        },
-        {
-          "byteSize": 42892,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 110,
-          "sha256": "79a7557573d7ed4ccdfd3fb17fc8fcf91e477484e7b7f36d2b1e23b67b911595",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-019.csv"
+          "url": "/data/bgd/v2/downloads/b-019.zip"
         }
       ],
       "downloadableRecordCount": 110,
@@ -6994,24 +7298,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 5264839,
+          "byteSize": 134883,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1321654,
+              "fileName": "b-020.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 2718,
+              "sha256": "91b0ab5d9bfdc21a805dca5ef50dfffa7420d78104f35381d171fe949b041420"
+            },
+            {
+              "byteSize": 5264922,
+              "fileName": "b-020.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 2718,
+              "sha256": "c3cc3dadcac8f389cc141d32465e55ec8c5cc559e2eb421a2e923d9b5adcc6ad"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 2718,
-          "sha256": "38be2f52f5a1fbbd67fc92bcfc4fde6ff3f28c491026bfdaf127db37aa284ff1",
+          "sha256": "6e9585339d96fb0900cd0a7f4dd9073fc1173d6f53e9f67f437b29453d259ec0",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-020.json"
-        },
-        {
-          "byteSize": 1321654,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 2718,
-          "sha256": "91b0ab5d9bfdc21a805dca5ef50dfffa7420d78104f35381d171fe949b041420",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-020.csv"
+          "url": "/data/bgd/v2/downloads/b-020.zip"
         }
       ],
       "downloadableRecordCount": 2718,
@@ -7281,24 +7593,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 56378,
+          "byteSize": 8031,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6765,
+              "fileName": "b-022.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 10,
+              "sha256": "4d684d24b94f25139e0067f9acbd0c275b7abdfcb91a3780524684358fd908ae"
+            },
+            {
+              "byteSize": 56459,
+              "fileName": "b-022.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 10,
+              "sha256": "67a6e11c1ade81d05bd77ecd3fc701240f418e89e1f8fede39b2864dcb5c35b1"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 10,
-          "sha256": "ac8f3be29932c45ae1f4409afa39533c64df0f8c798eacc3629a8f1720240fb9",
+          "sha256": "94244d3e375dface82e0387454f516725d3a0ed922cb5365b6105612ffa58420",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-022.json"
-        },
-        {
-          "byteSize": 6765,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 10,
-          "sha256": "4d684d24b94f25139e0067f9acbd0c275b7abdfcb91a3780524684358fd908ae",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-022.csv"
+          "url": "/data/bgd/v2/downloads/b-022.zip"
         }
       ],
       "downloadableRecordCount": 10,
@@ -7406,24 +7726,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 1953364,
+          "byteSize": 69151,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 924737,
+              "fileName": "b-023.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 558,
+              "sha256": "8a0ad265d6c05815ae382edf89306cda9075de1084e09933b8ccd4d42215c115"
+            },
+            {
+              "byteSize": 1953446,
+              "fileName": "b-023.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 558,
+              "sha256": "ae4e56507842a07e90445afc49ac56741c65a101660686c51526e07249b2cc64"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 558,
-          "sha256": "93b8b2816cd092e58bb6e90f3839ac8fdf746fddd39733b88555bc912e60fdb7",
+          "sha256": "0708a741f223c253881b9630790b76504a216b367b7c958afb05a6586919f7d8",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-023.json"
-        },
-        {
-          "byteSize": 924737,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 558,
-          "sha256": "8a0ad265d6c05815ae382edf89306cda9075de1084e09933b8ccd4d42215c115",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-023.csv"
+          "url": "/data/bgd/v2/downloads/b-023.zip"
         }
       ],
       "downloadableRecordCount": 558,
@@ -7526,24 +7854,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 53034,
+          "byteSize": 7260,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 11112,
+              "fileName": "b-024.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 32,
+              "sha256": "881673955d1035d1f3430711ba418a931fb5ebe4a4c02cfe3ec4c8f8a94c2988"
+            },
+            {
+              "byteSize": 53115,
+              "fileName": "b-024.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 32,
+              "sha256": "2e0316aa27efec136bfddfba7239ecb20cd92c0a969c322841310d7d9078cce5"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 32,
-          "sha256": "3dd484219a2267fd5122312fd0c6377d3d6c63343f6d60bf8a6ecf15ef389e99",
+          "sha256": "facc8f2db823755ca8f651ec6d2b35fe48489ea8cb2ed0a25ee3328df054d2d4",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-024.json"
-        },
-        {
-          "byteSize": 11112,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 32,
-          "sha256": "881673955d1035d1f3430711ba418a931fb5ebe4a4c02cfe3ec4c8f8a94c2988",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-024.csv"
+          "url": "/data/bgd/v2/downloads/b-024.zip"
         }
       ],
       "downloadableRecordCount": 32,
@@ -7666,24 +8002,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 235644,
+          "byteSize": 17733,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 122968,
+              "fileName": "b-025.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 67,
+              "sha256": "f9273869e201d2ffdf130f536b0ca642d593c858e85e4c20d26d9e1ce13e09a1"
+            },
+            {
+              "byteSize": 235725,
+              "fileName": "b-025.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 67,
+              "sha256": "38c5fe80a563bc7768d95aa6caac44b22f55baa50716ab8abb1378814a791275"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 67,
-          "sha256": "b35e81a9263f08a7fdcf5a907f043538bc627a7d4da1e2acf0ec372b1c515b37",
+          "sha256": "7432f7d157e21c488703a4ebaaf71ec2b154667a31e749373110e979f3255091",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-025.json"
-        },
-        {
-          "byteSize": 122968,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 67,
-          "sha256": "f9273869e201d2ffdf130f536b0ca642d593c858e85e4c20d26d9e1ce13e09a1",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-025.csv"
+          "url": "/data/bgd/v2/downloads/b-025.zip"
         }
       ],
       "downloadableRecordCount": 67,
@@ -7787,24 +8131,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 65762,
+          "byteSize": 10094,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 27060,
+              "fileName": "b-026.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 17,
+              "sha256": "d25609b41a33e0652895c10a46a81563cd48ea71799a6428b9906ff616408217"
+            },
+            {
+              "byteSize": 65843,
+              "fileName": "b-026.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 17,
+              "sha256": "1b4bc3befcf018d72705a4d0b65c7e97bfda0a6cbdbbfcac2f8c2fd4edbc58d5"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 17,
-          "sha256": "3ebda0ffffc88f667cb2e15629966707f3eeef612584692066abb16e5405d3ab",
+          "sha256": "64b764a3424d0a5127e014b4b319a979429847d3cb558f35cb645b2fae9c81bf",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-026.json"
-        },
-        {
-          "byteSize": 27060,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 17,
-          "sha256": "d25609b41a33e0652895c10a46a81563cd48ea71799a6428b9906ff616408217",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-026.csv"
+          "url": "/data/bgd/v2/downloads/b-026.zip"
         }
       ],
       "downloadableRecordCount": 17,
@@ -7907,24 +8259,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 60095,
+          "byteSize": 7748,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 12648,
+              "fileName": "b-027.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 35,
+              "sha256": "6e0c0d1b3a179d9ab5905587920b0cb3a3ac89edc9d620abc823808d4aeaa7e0"
+            },
+            {
+              "byteSize": 60176,
+              "fileName": "b-027.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 35,
+              "sha256": "e29f82cd4417ad2857f6d20f5099fe9fa3df36832db31fbba26c4c85f0573c00"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 35,
-          "sha256": "035f6dfcf6eb8cd6859808ba618d6d6f2ceef95b92f2915609ec0750fb3830e4",
+          "sha256": "573067e8b397075f8d5b9313283a326632390d55065a83ffd4548cbdd54f99a2",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-027.json"
-        },
-        {
-          "byteSize": 12648,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 35,
-          "sha256": "6e0c0d1b3a179d9ab5905587920b0cb3a3ac89edc9d620abc823808d4aeaa7e0",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-027.csv"
+          "url": "/data/bgd/v2/downloads/b-027.zip"
         }
       ],
       "downloadableRecordCount": 35,
@@ -8063,24 +8423,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 49176,
+          "byteSize": 10583,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 14753,
+              "fileName": "b-028.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 8,
+              "sha256": "dd7b004f16cefe09fee752c2ab8988a48fed5ccd5bb66bb635a0ff344d5bdba6"
+            },
+            {
+              "byteSize": 49256,
+              "fileName": "b-028.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 8,
+              "sha256": "5ce732504372460b5390a0b774ed7b2a99a7e0552d8e71af61c6327589535ee6"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 8,
-          "sha256": "7f52dd371b896be52dc218cc375219116c4a30d0a3096331a996324c20b11f4b",
+          "sha256": "56331c6a3b92f44edacd58e8eda6ecbdab207ee06428d2e6ce7a229bf689775b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-028.json"
-        },
-        {
-          "byteSize": 14753,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 8,
-          "sha256": "dd7b004f16cefe09fee752c2ab8988a48fed5ccd5bb66bb635a0ff344d5bdba6",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-028.csv"
+          "url": "/data/bgd/v2/downloads/b-028.zip"
         }
       ],
       "downloadableRecordCount": 8,
@@ -8193,24 +8561,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 531800,
+          "byteSize": 24246,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 260929,
+              "fileName": "b-029.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 165,
+              "sha256": "308c2f3b9e02c5050f763e3a33bb6715336ba3578ec2828ad8ead310a5d2daa9"
+            },
+            {
+              "byteSize": 531882,
+              "fileName": "b-029.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 165,
+              "sha256": "f17b852e1410b210ade7340ad659a4d640fc145b42667701baff18e518975b9e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 165,
-          "sha256": "635571e100eca0875e70765e28ffe1783893aa30532971b88cf924feeae85f9f",
+          "sha256": "2269d5866b19db314717f5aff841dd05db873ec64d10451a04887409240d0e32",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-029.json"
-        },
-        {
-          "byteSize": 260929,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 165,
-          "sha256": "308c2f3b9e02c5050f763e3a33bb6715336ba3578ec2828ad8ead310a5d2daa9",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-029.csv"
+          "url": "/data/bgd/v2/downloads/b-029.zip"
         }
       ],
       "downloadableRecordCount": 165,
@@ -8322,24 +8698,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 53730,
+          "byteSize": 9568,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 16573,
+              "fileName": "b-030.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 10,
+              "sha256": "cc1abc7bab27cf0c20b1bef377de08d56a7b579b500a0e1f6f8080ae52b13b94"
+            },
+            {
+              "byteSize": 53811,
+              "fileName": "b-030.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 10,
+              "sha256": "e5636720e0df298b29524b8a5e46745c057296f18712854c9f4e62fb97f81369"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 10,
-          "sha256": "1fca6c613d7d46ec396bf67de4bb5201b6e048d2295e7e68adfac57e356b5a4b",
+          "sha256": "30f254afeee8d47399fe6991ac16591564311ef26a09fcde4b34ead174c095bf",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-030.json"
-        },
-        {
-          "byteSize": 16573,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 10,
-          "sha256": "cc1abc7bab27cf0c20b1bef377de08d56a7b579b500a0e1f6f8080ae52b13b94",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-030.csv"
+          "url": "/data/bgd/v2/downloads/b-030.zip"
         }
       ],
       "downloadableRecordCount": 10,
@@ -8447,24 +8831,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 48594,
+          "byteSize": 9402,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 15297,
+              "fileName": "b-031.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 9,
+              "sha256": "0f4fd58c95767c6eba84ff86becc04cfaeb5f55a19db9a7d7f503198d6669243"
+            },
+            {
+              "byteSize": 48674,
+              "fileName": "b-031.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 9,
+              "sha256": "2af3124047fdafe35dd82fb150dda1e93ee2f41100226c70b03bb587c81823a2"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 9,
-          "sha256": "86444faff963c9a6f2db13a3c1a5fded13c2bf79789b8a38d8fe58250dee32df",
+          "sha256": "a98360963e717c1075e3f276256de6c0cc877a964912eea8a6dae4d6193d2381",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-031.json"
-        },
-        {
-          "byteSize": 15297,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 9,
-          "sha256": "0f4fd58c95767c6eba84ff86becc04cfaeb5f55a19db9a7d7f503198d6669243",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-031.csv"
+          "url": "/data/bgd/v2/downloads/b-031.zip"
         }
       ],
       "downloadableRecordCount": 9,
@@ -8571,24 +8963,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 45958,
+          "byteSize": 8089,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 13930,
+              "fileName": "b-032.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 9,
+              "sha256": "2acd1e334560b80ecd9133cc5cef289c9f2edffe5a4810aeb234f4264d58c5a8"
+            },
+            {
+              "byteSize": 46038,
+              "fileName": "b-032.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 9,
+              "sha256": "66c42ea5cf1084cdaf24feda1ba7eb8ff362049d072513850972bd7d0050e3f8"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 9,
-          "sha256": "d016b54db1f5e3df9d21052531c88f4b35ef72e47d69084f473785f0f4564a53",
+          "sha256": "7548110d95a45771121c139fe5145baa5e211ca2a944c953b7286b1d3e212bc0",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-032.json"
-        },
-        {
-          "byteSize": 13930,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 9,
-          "sha256": "2acd1e334560b80ecd9133cc5cef289c9f2edffe5a4810aeb234f4264d58c5a8",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-032.csv"
+          "url": "/data/bgd/v2/downloads/b-032.zip"
         }
       ],
       "downloadableRecordCount": 9,
@@ -8694,24 +9094,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 1460309,
+          "byteSize": 45290,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 560297,
+              "fileName": "b-033.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 379,
+              "sha256": "d1bee983fe4165e869d8241fd9c623ee68ce0a04820f5a561720e1ada0a631ed"
+            },
+            {
+              "byteSize": 1460391,
+              "fileName": "b-033.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 379,
+              "sha256": "be07a4762ba15eb61392de40202eaa505fbb80eaee70560a45d7b2b017cf1183"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 379,
-          "sha256": "ca08d56017c6bc8651a4a2c855fe6f71d00c3708d545efcb67c08ff6d4396f38",
+          "sha256": "80dc3410338b38bc15ca0668e8b4cad9fe071f00fa13f46a7908f0bc4017dae2",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-033.json"
-        },
-        {
-          "byteSize": 560297,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 379,
-          "sha256": "d1bee983fe4165e869d8241fd9c623ee68ce0a04820f5a561720e1ada0a631ed",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-033.csv"
+          "url": "/data/bgd/v2/downloads/b-033.zip"
         }
       ],
       "downloadableRecordCount": 379,
@@ -8822,24 +9230,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 61146,
+          "byteSize": 9406,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 22863,
+              "fileName": "b-034.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 13,
+              "sha256": "eced7d39d52263440c6c8cc78797ecb5a60eff1213ace7429d0b786102e56267"
+            },
+            {
+              "byteSize": 61227,
+              "fileName": "b-034.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 13,
+              "sha256": "afcc0fa7ca111488ab3254c0b7feb46999bb01ed853a2ca306b44e488fd24d55"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 13,
-          "sha256": "e2f8d19d13a231293c0b73791e4431611c2e3e2b4f03b487cb82490693ca0019",
+          "sha256": "cbd144b6117c07dc59b66473a5596c029f7f4e969611c6e8ca45b48f6a2f388f",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-034.json"
-        },
-        {
-          "byteSize": 22863,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 13,
-          "sha256": "eced7d39d52263440c6c8cc78797ecb5a60eff1213ace7429d0b786102e56267",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-034.csv"
+          "url": "/data/bgd/v2/downloads/b-034.zip"
         }
       ],
       "downloadableRecordCount": 13,
@@ -8944,24 +9360,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 2232603,
+          "byteSize": 100959,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 864135,
+              "fileName": "b-035.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 1176,
+              "sha256": "108dadd283b9f9d43ffffc61926016b67a8141a868f42b613f1f481e674254c3"
+            },
+            {
+              "byteSize": 2232686,
+              "fileName": "b-035.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 1176,
+              "sha256": "dd6030cd4a3fd7b62c652385d62c0e430929406f1dfc12d09e8f982c5f8e1375"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 1176,
-          "sha256": "ff46f124bdc556725abe382f818566000698a8577239f68a1fa07fbc7ea42207",
+          "sha256": "8f1dc65eb1a07c38a448d5da32c01b11ef2c800d670084bebd277fe6886f7c13",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-035.json"
-        },
-        {
-          "byteSize": 864135,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 1176,
-          "sha256": "108dadd283b9f9d43ffffc61926016b67a8141a868f42b613f1f481e674254c3",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-035.csv"
+          "url": "/data/bgd/v2/downloads/b-035.zip"
         }
       ],
       "downloadableRecordCount": 1176,
@@ -9136,24 +9560,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 376184,
+          "byteSize": 27488,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 96317,
+              "fileName": "b-036.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 83,
+              "sha256": "1fb632f5902f36cb534f654f29b6bca9ac9790b4598a55200c55aa288f8c01d1"
+            },
+            {
+              "byteSize": 376265,
+              "fileName": "b-036.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 83,
+              "sha256": "b0d8d4078ab2b693e11fc3ab282734bdc5ad4a3d9542609e74a6bbcb5722fe03"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 83,
-          "sha256": "2e6188cf820e103f7f57513e3a84d27654099a38b52cde1c4849b8f8f3a9b4bf",
+          "sha256": "d86fa9ce1ad9e4d17e60418afdcac2879c7f638ae7833f7407e051bfb069a60b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-036.json"
-        },
-        {
-          "byteSize": 96317,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 83,
-          "sha256": "1fb632f5902f36cb534f654f29b6bca9ac9790b4598a55200c55aa288f8c01d1",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-036.csv"
+          "url": "/data/bgd/v2/downloads/b-036.zip"
         }
       ],
       "downloadableRecordCount": 83,
@@ -9269,24 +9701,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 2782110,
+          "byteSize": 67338,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1370703,
+              "fileName": "b-037.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 684,
+              "sha256": "ad25d379d30df152bc7f50ce2ad344bc8b94751ccb8b1d7b6616264c8c26dfb6"
+            },
+            {
+              "byteSize": 2782192,
+              "fileName": "b-037.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 684,
+              "sha256": "2bd21f74cf84b01689454162ec0e9a7bec2c394665ec98d8ca3911db844dd665"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 684,
-          "sha256": "f123011364ff3f81814e8dbe9a28a8301441459cfcce8396d8ef08bbf96a5c2f",
+          "sha256": "a1daaf12f1e5a85cb0535e528de4c9eadda6f352a05fb6d93dda88979cca3dec",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-037.json"
-        },
-        {
-          "byteSize": 1370703,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 684,
-          "sha256": "ad25d379d30df152bc7f50ce2ad344bc8b94751ccb8b1d7b6616264c8c26dfb6",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-037.csv"
+          "url": "/data/bgd/v2/downloads/b-037.zip"
         }
       ],
       "downloadableRecordCount": 684,
@@ -9394,24 +9834,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 604418,
+          "byteSize": 33943,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 209992,
+              "fileName": "b-038.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 328,
+              "sha256": "dcc6ef834a586c99537aa9154dcef3fd31a126c7776db600c491a3147077bff1"
+            },
+            {
+              "byteSize": 604500,
+              "fileName": "b-038.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 328,
+              "sha256": "cda6c337a432e22e085c44df2262eee25bb761a270464015efd21df8be7acc63"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 328,
-          "sha256": "f344b5e63b3370efd7cbcf3ea6f3c02bfec69daa8b28a900b539fe9a3ee6bd63",
+          "sha256": "3c86fc6787b86b977e4c35c5800a88f0e3879050956235967535b173c8bf14ff",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-038.json"
-        },
-        {
-          "byteSize": 209992,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 328,
-          "sha256": "dcc6ef834a586c99537aa9154dcef3fd31a126c7776db600c491a3147077bff1",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-038.csv"
+          "url": "/data/bgd/v2/downloads/b-038.zip"
         }
       ],
       "downloadableRecordCount": 328,
@@ -9588,24 +10036,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 373384,
+          "byteSize": 18420,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 180586,
+              "fileName": "b-039.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 152,
+              "sha256": "52c3bfe6dbc1e3fed2ad75bb01b3e9b35748515a6188d65378849218bb591a04"
+            },
+            {
+              "byteSize": 373466,
+              "fileName": "b-039.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 152,
+              "sha256": "0c89957b3bff838e28d9cc294af920f3d48c81100642e914e4330def0d99827b"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 152,
-          "sha256": "b500f42813681aa40ba31c4a7db4a851994c2ecc94b6cebc9e161dbc3f3d3a29",
+          "sha256": "928714229a32ca527dfad16ae92752e4ac18c2197ee8027bcd06a9435e1dc04d",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-039.json"
-        },
-        {
-          "byteSize": 180586,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 152,
-          "sha256": "52c3bfe6dbc1e3fed2ad75bb01b3e9b35748515a6188d65378849218bb591a04",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-039.csv"
+          "url": "/data/bgd/v2/downloads/b-039.zip"
         }
       ],
       "downloadableRecordCount": 152,
@@ -9812,24 +10268,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 169587,
+          "byteSize": 13048,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 80247,
+              "fileName": "b-041.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 43,
+              "sha256": "f7934b7a7358b481e5cf5f48f1b1ae7846c60fde3191be0f5ed3f8f98713ba70"
+            },
+            {
+              "byteSize": 169668,
+              "fileName": "b-041.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 43,
+              "sha256": "cc8c30a172dc8534ab2af2f67a0541187b6a21e07b68aadbf3672f28d8bef7fc"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 43,
-          "sha256": "f080684a23806d525c39d0478d94d3ce86aa6040e39aeaca8f606a2b7bc8e535",
+          "sha256": "cd3c6137eb159b5e87d62a2095d79272da483f029307701f0dc23055271f7bd3",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-041.json"
-        },
-        {
-          "byteSize": 80247,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 43,
-          "sha256": "f7934b7a7358b481e5cf5f48f1b1ae7846c60fde3191be0f5ed3f8f98713ba70",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-041.csv"
+          "url": "/data/bgd/v2/downloads/b-041.zip"
         }
       ],
       "downloadableRecordCount": 43,
@@ -9934,24 +10398,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 319823,
+          "byteSize": 16023,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 127770,
+              "fileName": "b-042.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 82,
+              "sha256": "00cbc56b52042ab9050747243f06d66fe2818d5c7a1333b2cfd82630f0831112"
+            },
+            {
+              "byteSize": 319904,
+              "fileName": "b-042.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 82,
+              "sha256": "7b7bf4b2b571c259834707137a9811f04657a83d562f639df7b00534472fce72"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 82,
-          "sha256": "ebc7dffdb3ff48d94bbb4415482373aa1ba3522877b713f8bad6b5e1838c26aa",
+          "sha256": "9cf53d7d2d87fb745548d1a0d2ae416a1d21ba8ca958f3ff71267f2b2acab42f",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-042.json"
-        },
-        {
-          "byteSize": 127770,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 82,
-          "sha256": "00cbc56b52042ab9050747243f06d66fe2818d5c7a1333b2cfd82630f0831112",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-042.csv"
+          "url": "/data/bgd/v2/downloads/b-042.zip"
         }
       ],
       "downloadableRecordCount": 82,
@@ -10054,24 +10526,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 279193,
+          "byteSize": 14702,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 46863,
+              "fileName": "b-043.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 88,
+              "sha256": "c351755a078b610b2b9814294eaddf94414d2af1dddf7f92b7679f9f5b75e4c3"
+            },
+            {
+              "byteSize": 279274,
+              "fileName": "b-043.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 88,
+              "sha256": "f20fc8585a572f66cae3597391fb54500c09af515a6fb13ec9231933059b3c3e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 88,
-          "sha256": "7be2f68ebbd7b788e74a489ab0ff08e33e046bff3034ef5a2d5e9b037ac0dfc3",
+          "sha256": "cbb0f40481b7dde63126c46f8241707bdb28351e6cc0dd4d261cb859ff4256e9",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-043.json"
-        },
-        {
-          "byteSize": 46863,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 88,
-          "sha256": "c351755a078b610b2b9814294eaddf94414d2af1dddf7f92b7679f9f5b75e4c3",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-043.csv"
+          "url": "/data/bgd/v2/downloads/b-043.zip"
         }
       ],
       "downloadableRecordCount": 88,
@@ -10224,24 +10704,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 41555,
+          "byteSize": 6111,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6637,
+              "fileName": "b-044.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 6,
+              "sha256": "ee7a080235fb737fabf3c64a067fee89c18c61a5a46e0e84867aee5cc64cd838"
+            },
+            {
+              "byteSize": 41635,
+              "fileName": "b-044.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 6,
+              "sha256": "56f996343fc08c21d2d68d30a2b3f225798c0143e0854cfce5adc47c8be7453e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 6,
-          "sha256": "27c4b487bd99691f58ee3dd12a409ff1456f3af6af8281cbea1131bfd81e2928",
+          "sha256": "29dc5d40029f1b3a23603b02e2085beea7dcedf59dcadac25022b717cb0ecad7",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-044.json"
-        },
-        {
-          "byteSize": 6637,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 6,
-          "sha256": "ee7a080235fb737fabf3c64a067fee89c18c61a5a46e0e84867aee5cc64cd838",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-044.csv"
+          "url": "/data/bgd/v2/downloads/b-044.zip"
         }
       ],
       "downloadableRecordCount": 6,
@@ -10341,24 +10829,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 170437,
+          "byteSize": 8598,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 15940,
+              "fileName": "b-045.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 24,
+              "sha256": "b8cb2175c498568b6c50a8fd7d9eb78d7d2e8d2295de6be696a96c710dbe8356"
+            },
+            {
+              "byteSize": 170518,
+              "fileName": "b-045.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 24,
+              "sha256": "f749bb831fb2c2958ab2e8ffeb4af09f9dc83f14d95b988edc481d5f28248f79"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 24,
-          "sha256": "7a60b0bb4059eca8324888f0b5f8affa073b15f8368980efc1e7287bd202093a",
+          "sha256": "4113198d4d6ebeb3396170d769590a42156e16ad7e891e4d727e3388fea9ae7c",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-045.json"
-        },
-        {
-          "byteSize": 15940,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 24,
-          "sha256": "b8cb2175c498568b6c50a8fd7d9eb78d7d2e8d2295de6be696a96c710dbe8356",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-045.csv"
+          "url": "/data/bgd/v2/downloads/b-045.zip"
         }
       ],
       "downloadableRecordCount": 24,
@@ -10459,24 +10955,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 37548,
+          "byteSize": 5517,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 4379,
+              "fileName": "b-046.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 6,
+              "sha256": "f0193c2b8320ef4592b5d6b7a014576919cc28d7c7408ad11d550917ee1446d4"
+            },
+            {
+              "byteSize": 37628,
+              "fileName": "b-046.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 6,
+              "sha256": "ef8eed0e64abbe4ca7880384697c94948baac6abbeb96998d4cbb31b4f80b4d6"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 6,
-          "sha256": "bad4e0657f800e1af77d6a01a96f2a0e191568b608a467da7a6420c1b1d8e54e",
+          "sha256": "aae23ab80e89eff3a81129b6e3f50785a68874a21a4a0e9190d0d3921e068c23",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-046.json"
-        },
-        {
-          "byteSize": 4379,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 6,
-          "sha256": "f0193c2b8320ef4592b5d6b7a014576919cc28d7c7408ad11d550917ee1446d4",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-046.csv"
+          "url": "/data/bgd/v2/downloads/b-046.zip"
         }
       ],
       "downloadableRecordCount": 6,
@@ -10576,24 +11080,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 36487,
+          "byteSize": 5458,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 4283,
+              "fileName": "b-047.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 6,
+              "sha256": "b0f8d0c1d86df1d9ac52567a638d0b9a86b62ea52c1ada7c5a2134ca60622d70"
+            },
+            {
+              "byteSize": 36567,
+              "fileName": "b-047.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 6,
+              "sha256": "c899886cec0eb4009f817d9dd0634f2ba19e9f73a5f1f546d3e9914df340266c"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 6,
-          "sha256": "474a5a881a8e3920cef755119d3110caa6a2c35fb520ef12064f96d20f3488ca",
+          "sha256": "5afe75fc9a04991487ce6eae371fcab8bf064a78ab34f1588da4b20662ed046b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-047.json"
-        },
-        {
-          "byteSize": 4283,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 6,
-          "sha256": "b0f8d0c1d86df1d9ac52567a638d0b9a86b62ea52c1ada7c5a2134ca60622d70",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-047.csv"
+          "url": "/data/bgd/v2/downloads/b-047.zip"
         }
       ],
       "downloadableRecordCount": 6,
@@ -10694,24 +11206,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 12737,
+          "byteSize": 5120,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 3708,
+              "fileName": "b-048.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 3,
+              "sha256": "5e18a7d22cd0c94ebe0814e2602a1746ee4228a9db0be47ee8b999dfd1b6b049"
+            },
+            {
+              "byteSize": 12817,
+              "fileName": "b-048.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 3,
+              "sha256": "c71aaa1a8d2a483523d41d6ef746ce5f6043be25828a9ee25b66e44c49ec024a"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 3,
-          "sha256": "68fa2e8f1f57d55c349f47421105d8d0583ce5777514410a405c6e9c7823a47c",
+          "sha256": "a3241bbda3788b7b0172f58be1c92a054d8c832a677df94b678d9db15bc179d9",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-048.json"
-        },
-        {
-          "byteSize": 3708,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 3,
-          "sha256": "5e18a7d22cd0c94ebe0814e2602a1746ee4228a9db0be47ee8b999dfd1b6b049",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/b-048.csv"
+          "url": "/data/bgd/v2/downloads/b-048.zip"
         }
       ],
       "downloadableRecordCount": 3,
@@ -10816,24 +11336,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 383088,
+          "byteSize": 30542,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 243761,
+              "fileName": "c-001.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 69,
+              "sha256": "3b683f6bede7ec177a720219f0df1cd27b9ffd7328924992597b2806a981d62b"
+            },
+            {
+              "byteSize": 383169,
+              "fileName": "c-001.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 69,
+              "sha256": "12b2400fd5a3b5e8393c5ad2e410a60c04b90f105f6b0f7679ccd4e704ccbc8e"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 69,
-          "sha256": "efe6135480bb392281396e6dbbfd2d306a8b8234c3b3987065037808ae6d3ddd",
+          "sha256": "ab77514ba546aa6c986b209569ef234b2b1e79fa23a6fb2381dfacb14a19ad55",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-001.json"
-        },
-        {
-          "byteSize": 243761,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 69,
-          "sha256": "3b683f6bede7ec177a720219f0df1cd27b9ffd7328924992597b2806a981d62b",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-001.csv"
+          "url": "/data/bgd/v2/downloads/c-001.zip"
         }
       ],
       "downloadableRecordCount": 69,
@@ -10958,24 +11486,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 301962,
+          "byteSize": 25072,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 194966,
+              "fileName": "c-002.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 51,
+              "sha256": "ec32c5525182d39237431df370e0a2e707e93d2b6e0ab979e6cc488dbbe34ccb"
+            },
+            {
+              "byteSize": 302043,
+              "fileName": "c-002.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 51,
+              "sha256": "f0883e23df98c0aaa1a726ef04083f268ee3f206031a93e626eba4938773d5ea"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 51,
-          "sha256": "e097de52d39a638df02e66f5bec24db36c5b8235bea344fb0cd11ffe25745c3e",
+          "sha256": "cdf55aabab2323e3952b4cb4f043f5768a1dbfa834e68279d96d26e90374f2d3",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-002.json"
-        },
-        {
-          "byteSize": 194966,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 51,
-          "sha256": "ec32c5525182d39237431df370e0a2e707e93d2b6e0ab979e6cc488dbbe34ccb",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-002.csv"
+          "url": "/data/bgd/v2/downloads/c-002.zip"
         }
       ],
       "downloadableRecordCount": 51,
@@ -11087,24 +11623,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 80716,
+          "byteSize": 12622,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 46663,
+              "fileName": "c-003.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 13,
+              "sha256": "6a376200599ad2545b9e1f2338dfa2ed462d00e208919e942a85797f005b3183"
+            },
+            {
+              "byteSize": 80797,
+              "fileName": "c-003.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 13,
+              "sha256": "709fe6a64a665d7efab88e0caac52f4e995bff21de23a1f94467e259e7eff4fd"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 13,
-          "sha256": "c42233d709e713cb1d8c9d9a4f8458cd1d0d84b490491340a6d9c257df3b740e",
+          "sha256": "4a010a064c9cac6942d5498d97ef319b8dfe56d60acc04ebcd7474bee26efed0",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-003.json"
-        },
-        {
-          "byteSize": 46663,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 13,
-          "sha256": "6a376200599ad2545b9e1f2338dfa2ed462d00e208919e942a85797f005b3183",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-003.csv"
+          "url": "/data/bgd/v2/downloads/c-003.zip"
         }
       ],
       "downloadableRecordCount": 13,
@@ -11316,24 +11860,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 175946,
+          "byteSize": 16687,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 104969,
+              "fileName": "c-005.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 36,
+              "sha256": "986372103076937d405430fd3913ba9ff696c1635cefb47d2c60eab11d89768a"
+            },
+            {
+              "byteSize": 176027,
+              "fileName": "c-005.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 36,
+              "sha256": "9117d00ac00b069e7e2307f2bc4326a96bf6fbeef504204dc059253c92db8fdf"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 36,
-          "sha256": "75d3044275b69e5d68395033e51c612bd088e8cd560486aa1833e4d8b46d5ef4",
+          "sha256": "c49f06f29f9e3ebd1a13130bd3796940fee6b77a97d841b404aa9f68fce96bf3",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-005.json"
-        },
-        {
-          "byteSize": 104969,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 36,
-          "sha256": "986372103076937d405430fd3913ba9ff696c1635cefb47d2c60eab11d89768a",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-005.csv"
+          "url": "/data/bgd/v2/downloads/c-005.zip"
         }
       ],
       "downloadableRecordCount": 36,
@@ -11443,24 +11995,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 94093,
+          "byteSize": 16158,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 53683,
+              "fileName": "c-006.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 16,
+              "sha256": "5438c86b246d13f61a1a262140344e7ae167ef5ceb7cc6c0bf87f2d3aa874d04"
+            },
+            {
+              "byteSize": 94174,
+              "fileName": "c-006.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 16,
+              "sha256": "a052af8ddb97cd4341ae39756788c3a361538122ce210c25e89e9e0522de5c08"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 16,
-          "sha256": "2bc88de973c97b2f67959d8463f458ece7c750e5a8f5b6f9daed6342d82a38a1",
+          "sha256": "46f92ff4e203f92e6b771bae6034122d8c1766002d0bce271021548c6393093b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-006.json"
-        },
-        {
-          "byteSize": 53683,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 16,
-          "sha256": "5438c86b246d13f61a1a262140344e7ae167ef5ceb7cc6c0bf87f2d3aa874d04",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-006.csv"
+          "url": "/data/bgd/v2/downloads/c-006.zip"
         }
       ],
       "downloadableRecordCount": 16,
@@ -11572,24 +12132,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 17240,
+          "byteSize": 7014,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 5939,
+              "fileName": "c-007.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 2,
+              "sha256": "d82db1df9e06ea13eaf372a5db65da954aeccfe193ad691138d1494835fd4ac3"
+            },
+            {
+              "byteSize": 17320,
+              "fileName": "c-007.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 2,
+              "sha256": "1e6768310bbc6a7428e9243b0fa8395bb6fc9972b822b9eca8882a854a30dcab"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 2,
-          "sha256": "5b0bf9c2b10bc532dd14429f98adc3bda2d59fa21176af5eb6f4a9ec86c7cf6a",
+          "sha256": "a3d7e0d29c73f5b5d7a800e39860d10e92d45a568efcd060cabfb5a98ff6cddc",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-007.json"
-        },
-        {
-          "byteSize": 5939,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 2,
-          "sha256": "d82db1df9e06ea13eaf372a5db65da954aeccfe193ad691138d1494835fd4ac3",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-007.csv"
+          "url": "/data/bgd/v2/downloads/c-007.zip"
         }
       ],
       "downloadableRecordCount": 2,
@@ -11693,24 +12261,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 456819,
+          "byteSize": 26797,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 294622,
+              "fileName": "c-008.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 96,
+              "sha256": "2b3c7bd65fafea844ae86af8e1e7746235236b9839c8cd309bf88c535ebadb91"
+            },
+            {
+              "byteSize": 456900,
+              "fileName": "c-008.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 96,
+              "sha256": "f9ce6ad47e5fcadec7366749db9185b7e6e9ae2a56fc6f39f57ff80191e7d776"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 96,
-          "sha256": "e6c0200da3747690b04bae11172410d7dde9c5ad886d7bb961b0064a8130cd56",
+          "sha256": "3bed41f5e7666f51ff779a4c528f7f8166840573461990cdc05a5c4165566aa1",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-008.json"
-        },
-        {
-          "byteSize": 294622,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 96,
-          "sha256": "2b3c7bd65fafea844ae86af8e1e7746235236b9839c8cd309bf88c535ebadb91",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-008.csv"
+          "url": "/data/bgd/v2/downloads/c-008.zip"
         }
       ],
       "downloadableRecordCount": 96,
@@ -12012,24 +12588,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 100220,
+          "byteSize": 10619,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 51956,
+              "fileName": "c-011.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 19,
+              "sha256": "3628ca9fec297740ee312abc6e3d77661ba2bdfde77903ade14505535617f64e"
+            },
+            {
+              "byteSize": 100301,
+              "fileName": "c-011.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 19,
+              "sha256": "23b68c449c3da24b137e5ac90d67c1c8d1b91a325482c73a30abdb9d133e24d5"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 19,
-          "sha256": "a00904a67dc8b2a5c8b910bb364249d0b4d121d848a0bd1fba06cd1d42c1c65e",
+          "sha256": "cf52c82339116576e3c4d6a0d90f0aa2daec0abb9b730a6fe9f262607198ccf2",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-011.json"
-        },
-        {
-          "byteSize": 51956,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 19,
-          "sha256": "3628ca9fec297740ee312abc6e3d77661ba2bdfde77903ade14505535617f64e",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-011.csv"
+          "url": "/data/bgd/v2/downloads/c-011.zip"
         }
       ],
       "downloadableRecordCount": 19,
@@ -12145,24 +12729,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 217237,
+          "byteSize": 22040,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 126907,
+              "fileName": "c-012.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 37,
+              "sha256": "7dc3c39ab2106d518a0a9e6b11b2c8abd12c4f65337441cf3212e84a26870ff7"
+            },
+            {
+              "byteSize": 217318,
+              "fileName": "c-012.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 37,
+              "sha256": "17a72349611faccfc76ef71d6b8aa41560881d1897410dfc8ea39468931f47b2"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 37,
-          "sha256": "e7c5166f72d78d15b5b17d6479ef21c1afe3edddc7358f7d7e094bf29f6a6108",
+          "sha256": "c6fa068992c6fca70dce56c3c7336ea15a6433f514a44a02eee04ddf88f723bd",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-012.json"
-        },
-        {
-          "byteSize": 126907,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 37,
-          "sha256": "7dc3c39ab2106d518a0a9e6b11b2c8abd12c4f65337441cf3212e84a26870ff7",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-012.csv"
+          "url": "/data/bgd/v2/downloads/c-012.zip"
         }
       ],
       "downloadableRecordCount": 37,
@@ -12381,24 +12973,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 250224,
+          "byteSize": 23104,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 151150,
+              "fileName": "c-014.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 36,
+              "sha256": "f9f74a521d8673d9f287a47155e81954db1bc260ffbbb56c28d6c8cafd56a2b1"
+            },
+            {
+              "byteSize": 250305,
+              "fileName": "c-014.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 36,
+              "sha256": "6d96d24b9b5c0a9d15db59679fc25428747eff39666fd9ad90dbb48c0a6c3726"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 36,
-          "sha256": "51482d18de38d130fc2043920607d8220d3a6d3274d17d05a6e28a37312fc46b",
+          "sha256": "c3366061d13228c7d7896e2c32a9957708b63167cb9237c2fb7e5c78f6911f6d",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-014.json"
-        },
-        {
-          "byteSize": 151150,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 36,
-          "sha256": "f9f74a521d8673d9f287a47155e81954db1bc260ffbbb56c28d6c8cafd56a2b1",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-014.csv"
+          "url": "/data/bgd/v2/downloads/c-014.zip"
         }
       ],
       "downloadableRecordCount": 36,
@@ -12950,24 +13550,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 38963,
+          "byteSize": 9361,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 3983,
+              "fileName": "c-019.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 1,
+              "sha256": "3e7875b26ebb53079f86747ef89606752fd2f2edf7cfeed42f95ec7598867fd2"
+            },
+            {
+              "byteSize": 39043,
+              "fileName": "c-019.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 1,
+              "sha256": "0062e060125a261e7719803e42b62e77a54cf54685fb0e662976c71abe6902fb"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 1,
-          "sha256": "31dd4a9c2d1078fd96f26e03da66676b8c5fa862bd8f339bba417264a0477b3a",
+          "sha256": "d1bb9256ae124633831868e7c791e33c0d08f7e42206e96f82ef1215448a322a",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-019.json"
-        },
-        {
-          "byteSize": 3983,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 1,
-          "sha256": "3e7875b26ebb53079f86747ef89606752fd2f2edf7cfeed42f95ec7598867fd2",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-019.csv"
+          "url": "/data/bgd/v2/downloads/c-019.zip"
         }
       ],
       "downloadableRecordCount": 1,
@@ -13401,24 +14009,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 46605,
+          "byteSize": 10296,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 20418,
+              "fileName": "c-024.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 7,
+              "sha256": "1ff3676592f144025e1f8b38984735c338c8877e35f209ad1207f21ae2e58e31"
+            },
+            {
+              "byteSize": 46685,
+              "fileName": "c-024.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 7,
+              "sha256": "84e3a07a382c4bba2a8db986c669992b54a2b09cd20c62d7c5d01a2c1e9a7459"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 7,
-          "sha256": "1de06e8529f52eb1c9e90f086371443b7143960f4e5c51684a2750869e8a09fb",
+          "sha256": "bc4bbf403531207053b21119a40f2ba5d5353ffd2e85c212319c8460346efb15",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-024.json"
-        },
-        {
-          "byteSize": 20418,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 7,
-          "sha256": "1ff3676592f144025e1f8b38984735c338c8877e35f209ad1207f21ae2e58e31",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-024.csv"
+          "url": "/data/bgd/v2/downloads/c-024.zip"
         }
       ],
       "downloadableRecordCount": 7,
@@ -13519,24 +14135,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 836774,
+          "byteSize": 39895,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 491000,
+              "fileName": "c-025.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 177,
+              "sha256": "b719119c2f734800f8d9a668f058b5c33a25cdbd703b4e9e6aca26d4de3cbc2d"
+            },
+            {
+              "byteSize": 836856,
+              "fileName": "c-025.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 177,
+              "sha256": "736144fde75eca7177a31aa2a0b4598874367df12d75e7a9440d3edf921a9311"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 177,
-          "sha256": "80bc3a58d34a7b1614de56b378b1f10ebf5f1820ef946d89ff35933c005ef98f",
+          "sha256": "c122bc8d43bcc036a10d1b61df1fe46b36f644c153c2065f916b4d9b61c041bf",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-025.json"
-        },
-        {
-          "byteSize": 491000,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 177,
-          "sha256": "b719119c2f734800f8d9a668f058b5c33a25cdbd703b4e9e6aca26d4de3cbc2d",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/c-025.csv"
+          "url": "/data/bgd/v2/downloads/c-025.zip"
         }
       ],
       "downloadableRecordCount": 177,
@@ -15784,24 +16408,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 23525,
+          "byteSize": 6581,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 9499,
+              "fileName": "e-003.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 5,
+              "sha256": "518f70d2f387fd059bdadfbc6ded71acb38f3eed0dda4f2bc587efaca55a8b44"
+            },
+            {
+              "byteSize": 23605,
+              "fileName": "e-003.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 5,
+              "sha256": "6a68b1dfedf480d08f6274506d7c2d255a0ab9791b8f2862ba27a07d51ac6793"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 5,
-          "sha256": "c76814d8d72e0018434b6531ac5f020ccd7f30de9215f017cc74a53f3f4345fc",
+          "sha256": "d6cec8dd7c120f048a38e20c10ba7c4e907b3e9091233e173ef1884dece3d7c9",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-003.json"
-        },
-        {
-          "byteSize": 9499,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 5,
-          "sha256": "518f70d2f387fd059bdadfbc6ded71acb38f3eed0dda4f2bc587efaca55a8b44",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-003.csv"
+          "url": "/data/bgd/v2/downloads/e-003.zip"
         }
       ],
       "downloadableRecordCount": 5,
@@ -15901,24 +16533,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 152013,
+          "byteSize": 24227,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 30668,
+              "fileName": "e-004.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 10,
+              "sha256": "13add807c2efdf1aa5ec356c8a4c4081193a6399c90b12983d55bf3313f64b07"
+            },
+            {
+              "byteSize": 152094,
+              "fileName": "e-004.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 10,
+              "sha256": "43a935fef99abbfb38b46b33b48a750c0c2cd47c3820f9db644068b69d4a27e1"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 10,
-          "sha256": "05107a561dfbf4a16f60c4fb84fc1bff1ae207bc0e57a837ee3ca41406bed7e8",
+          "sha256": "9b9e53c3c6be1a1f5b27c1c5e9592e8a814c7d388a9169fb8d3e0f3ad9c1853b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-004.json"
-        },
-        {
-          "byteSize": 30668,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 10,
-          "sha256": "13add807c2efdf1aa5ec356c8a4c4081193a6399c90b12983d55bf3313f64b07",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-004.csv"
+          "url": "/data/bgd/v2/downloads/e-004.zip"
         }
       ],
       "downloadableRecordCount": 10,
@@ -16453,24 +17093,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 2861742,
+          "byteSize": 220564,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1572300,
+              "fileName": "e-008.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 545,
+              "sha256": "7415d0bab9713e24ee2159da05e7cbb55848dce97191f9eb1180dbdeb9484b8c"
+            },
+            {
+              "byteSize": 2861824,
+              "fileName": "e-008.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 545,
+              "sha256": "5eac771e714c0f7b4b3b3d1fdab3d4e217e87322e450ce45f19538882643c859"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 545,
-          "sha256": "8f6d6fbf0cf7b98b6686db98dba515c939135405e6e0dbf28f0549e96f562a9a",
+          "sha256": "cc8d4acec35c519d8c1c7b58060b8ed6ef09c952482620c7099b9ba2af1432e8",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-008.json"
-        },
-        {
-          "byteSize": 1572300,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 545,
-          "sha256": "7415d0bab9713e24ee2159da05e7cbb55848dce97191f9eb1180dbdeb9484b8c",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-008.csv"
+          "url": "/data/bgd/v2/downloads/e-008.zip"
         }
       ],
       "downloadableRecordCount": 545,
@@ -16607,24 +17255,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 22011,
+          "byteSize": 4764,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 1506,
+              "fileName": "e-009.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 2,
+              "sha256": "3925eb97c4a7a65b8b5239ec690f270776a6742f0871274c587e6d566afa6147"
+            },
+            {
+              "byteSize": 22091,
+              "fileName": "e-009.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 2,
+              "sha256": "7bac5296bea6554b14a3052c58702561bfe27211d5595f81e32e2be1b1fe37df"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 2,
-          "sha256": "a0d2553ffa4e142b166fbfac3eba462365c5b3007ac48a23a7ca7750db38d25f",
+          "sha256": "771d2d98b63931861ff99ddd30a83019726031b1c0e82e6370a0e877e5081133",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-009.json"
-        },
-        {
-          "byteSize": 1506,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 2,
-          "sha256": "3925eb97c4a7a65b8b5239ec690f270776a6742f0871274c587e6d566afa6147",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-009.csv"
+          "url": "/data/bgd/v2/downloads/e-009.zip"
         }
       ],
       "downloadableRecordCount": 2,
@@ -16738,24 +17394,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 76545,
+          "byteSize": 9352,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 13956,
+              "fileName": "e-010.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 24,
+              "sha256": "c25990eccdb460a2d7461094510fc77bb30af91cc6c3aafcc357bc1533c584a8"
+            },
+            {
+              "byteSize": 76626,
+              "fileName": "e-010.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 24,
+              "sha256": "8d5a20c732af8f12dab777ad62495a748b563f519b18cc19ff2f15ce8dbc06ec"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 24,
-          "sha256": "87204c849bc7fd9a28b9134c09689d9a77580927b980192c6bc3912a6e8835e7",
+          "sha256": "0aadd1490c8a3e3410d19a6e851e81875a4dae5f52cc1a03abfbbcd85dcdbe9b",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-010.json"
-        },
-        {
-          "byteSize": 13956,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 24,
-          "sha256": "c25990eccdb460a2d7461094510fc77bb30af91cc6c3aafcc357bc1533c584a8",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-010.csv"
+          "url": "/data/bgd/v2/downloads/e-010.zip"
         }
       ],
       "downloadableRecordCount": 24,
@@ -16935,24 +17599,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 1096236,
+          "byteSize": 42611,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 430987,
+              "fileName": "e-012.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 759,
+              "sha256": "6835c8510af54e26af8a1d8d9f2b156fceed1c8d826a943ae8bd1ce5fe8b8b86"
+            },
+            {
+              "byteSize": 1096318,
+              "fileName": "e-012.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 759,
+              "sha256": "e2a665efdf5dbbe79e2bc0b452471746bc928d906769471e373d17e332c13f2d"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 759,
-          "sha256": "ed37cadb2bb5b89769472a52089b04c89112651d784aa28c59e2bf9495f22066",
+          "sha256": "8a47c1dc87f08357b943df01bd373f7681cc6fb2f4a819e7ef52c52168a3f9e8",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-012.json"
-        },
-        {
-          "byteSize": 430987,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 759,
-          "sha256": "6835c8510af54e26af8a1d8d9f2b156fceed1c8d826a943ae8bd1ce5fe8b8b86",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-012.csv"
+          "url": "/data/bgd/v2/downloads/e-012.zip"
         }
       ],
       "downloadableRecordCount": 759,
@@ -17488,24 +18160,32 @@
       "downloadAllowed": true,
       "downloadAssets": [
         {
-          "byteSize": 21771,
+          "byteSize": 8624,
           "deliveryMode": "repository",
-          "format": "JSON",
-          "mediaType": "application/json",
+          "entries": [
+            {
+              "byteSize": 6862,
+              "fileName": "e-018.csv",
+              "format": "CSV",
+              "mediaType": "text/csv; charset=utf-8",
+              "recordCount": 2,
+              "sha256": "183916c89158dda1b19da56a75170e53366a0fd7579d9de6bc3a12bd860af357"
+            },
+            {
+              "byteSize": 21851,
+              "fileName": "e-018.json",
+              "format": "JSON",
+              "mediaType": "application/json",
+              "recordCount": 2,
+              "sha256": "1ad0325ac84faba867d0789bc6028e7c2e359c0db79bd6b082000682498067b2"
+            }
+          ],
+          "format": "ZIP",
+          "mediaType": "application/zip",
           "recordCount": 2,
-          "sha256": "e1e8c005a01277816b53a35423ed650ca23c83bf34e267d53e57d43b76634ef5",
+          "sha256": "b292e125c42ba05f7b7bf7e87340fc0f47af7c4888376dc61fd6c3b63053977a",
           "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-018.json"
-        },
-        {
-          "byteSize": 6862,
-          "deliveryMode": "repository",
-          "format": "CSV",
-          "mediaType": "text/csv; charset=utf-8",
-          "recordCount": 2,
-          "sha256": "183916c89158dda1b19da56a75170e53366a0fd7579d9de6bc3a12bd860af357",
-          "uploadState": "NOT_REQUIRED",
-          "url": "/data/bgd/v2/downloads/e-018.csv"
+          "url": "/data/bgd/v2/downloads/e-018.zip"
         }
       ],
       "downloadableRecordCount": 2,

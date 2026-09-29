@@ -2,17 +2,14 @@ import { afterEach, beforeEach, expect, test } from "@jest/globals";
 import { act } from "react-dom/test-utils";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import CooperationChecklistAnalysisV141 from "./CooperationChecklistAnalysisV141";
 import { InitiativeDescriptionsV153, PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
-import { countryPublicDirV158 } from "../../../data/countryContext";
+import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
-const DATA = resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads`);
 const entitiesOf = (elementId: string): VietnamEntityV124[] =>
-  JSON.parse(readFileSync(resolve(DATA, `${elementId.toLowerCase()}.json`), "utf8")).entities;
+  readDownloadJsonV158(elementId).entities;
 
 let container: HTMLDivElement;
 let root: Root;

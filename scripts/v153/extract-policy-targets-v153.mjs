@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDownloadJsonV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
@@ -25,7 +26,8 @@ const CLASS_KEY = "속성6_분류";
 const URL_KEY = "속성19_원문URL";
 
 const entitiesOf = (elementId) =>
-  JSON.parse(readFileSync(resolve(DATA, `downloads/${elementId.toLowerCase()}.json`), "utf8")).entities || [];
+  // V158: the download JSON ships inside downloads/<id>.zip.
+  readDownloadJsonV158(DATA, elementId)?.entities || [];
 
 /** "Decision 942/QĐ-TTg", "942/QD-TTg", "QCVN 05:2023/BTNMT" → a stable code. */
 export function documentCodeV153(value) {

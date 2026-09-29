@@ -9,6 +9,7 @@ import { mapFactsV148, mapFactValueV148, publicMapFieldsV148, powerCapacitySumma
 import { prepareLayerRecordsV138 } from "./prepareLayerRecordsV148";
 import { createMapFeaturePopupV148 } from "../../components/map/mapFeaturePopupV148";
 import { countryAssetPathV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 const asset = (p: string) => JSON.parse(readFileSync(resolve(__dirname, "../../../public", p.replace(/^\//, "")), "utf8"));
 const layers: CountryMapLayerV122[] = asset(countryAssetPathV158("VNM", "map-index.json")).layers;
@@ -47,7 +48,7 @@ test.each(layers)("$elementId small-map slice survives the full-map handoff", (l
 
 test("power registry scope and capacity share one source reading", () => {
   const l = layers.find((l) => l.elementId === "A-023")!;
-  const rows = asset(countryAssetPathV158("VNM", "downloads/a-023.json")).entities;
+  const rows = readDownloadJsonV158("a-023").entities;
   const p = prepareLayerRecordsV138(rows, l);
   const wri = p.records.filter((r) => r.normalizedAttributes.sourceKey === "wri");
   expect(wri).toHaveLength(236);
