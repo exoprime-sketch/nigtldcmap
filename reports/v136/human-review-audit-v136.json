@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-21T01:37:39.076Z",
+  "generatedAt": "2026-09-29T06:29:55.888Z",
   "audit": "human-review:v136",
   "status": "PASS",
   "summary": {
@@ -11,13 +11,13 @@
     "failed": 0,
     "total": 10,
     "failedChecks": [],
-    "finderHumanReviewCount": 152,
-    "detailHumanReviewCount": 152,
+    "finderHumanReviewCount": 146,
+    "detailHumanReviewCount": 146,
     "mapDatasetHumanReviewCount": 42,
     "downloadReviewRows": 120,
     "guideReviewRows": 120,
-    "editorialDecisionLogRows": 670,
-    "keepCount": 670,
+    "editorialDecisionLogRows": 658,
+    "keepCount": 658,
     "unresolvedRewriteCount": 0,
     "unresolvedRemoveCount": 0,
     "runtimeFailure": null
@@ -40,16 +40,16 @@
       "audit": "human-review:v136",
       "name": "FINDER_HUMAN_REVIEW_COUNT",
       "status": "PASS",
-      "actual": 152,
-      "expected": 152
+      "actual": 146,
+      "expected": 146
     },
     {
       "type": "check",
       "audit": "human-review:v136",
       "name": "DETAIL_HUMAN_REVIEW_COUNT",
       "status": "PASS",
-      "actual": 152,
-      "expected": 152
+      "actual": 146,
+      "expected": 146
     },
     {
       "type": "check",
@@ -104,17 +104,17 @@
       "audit": "human-review:v136",
       "name": "EDITORIAL_DECISION_LOG_ROWS",
       "status": "PASS",
-      "actual": 670,
+      "actual": 658,
       "expected": ">=316"
     }
   ],
-  "finderHumanReviewCount": 152,
-  "detailHumanReviewCount": 152,
+  "finderHumanReviewCount": 146,
+  "detailHumanReviewCount": 146,
   "mapDatasetHumanReviewCount": 42,
   "downloadReviewRows": 120,
   "guideReviewRows": 120,
-  "editorialDecisionLogRows": 670,
-  "keepCount": 670,
+  "editorialDecisionLogRows": 658,
+  "keepCount": 658,
   "unresolvedRewriteCount": 0,
   "unresolvedRemoveCount": 0,
   "runtimeFailure": null

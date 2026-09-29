@@ -20,6 +20,13 @@ function walk(dir: string): string[] {
   });
 }
 const sources = walk(SRC).filter((path) => !/\.test\.tsx?$/u.test(path));
+// Import statements and versioned code identifiers (the shared
+// `VietnamObservationV124`-style data types every component imports) are not
+// wording a reader sees; they are dropped before the scan.
+const visibleSource = (source: string) =>
+  source
+    .replace(/^import[\s\S]*?from\s+["'][^"']+["'];?$/gmu, "")
+    .replace(/\b[A-Za-z_$][\w$]*V\d+[\w$]*\b/gu, "");
 const componentFile = (name: string) =>
   sources.find((path) => new RegExp(`function ${name}\\b`, "u").test(readFileSync(path, "utf8")));
 
@@ -50,7 +57,7 @@ describe("authored-country variants V158", () => {
       const text = components
         .map((name) => componentFile(name))
         .filter((path): path is string => Boolean(path))
-        .map((path) => readFileSync(path, "utf8"))
+        .map((path) => visibleSource(readFileSync(path, "utf8")))
         .join("\n");
       const authored = findCountryTermsV158(text, terms).length > 0 || adminWords.some((word) => text.includes(word));
       if (authored && !AUTHORED_COUNTRY_VARIANTS_V158.has(variant as TemplateVariantKeyV159)) unlisted.push(variant);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T02:27:11.234Z",
+  "generatedAt": "2026-09-29T06:58:04.971Z",
   "summary": {
     "type": "summary",
     "audit": "exclusions:v156",
@@ -9,20 +9,16 @@
     "total": 13,
     "failedChecks": [],
     "frameworkElements": 152,
-    "publicElements": 142,
+    "publicElements": 146,
     "excludedElements": [
       "A-017",
-      "C-015",
       "C-020",
-      "C-023",
-      "D-024",
+      "C-021",
       "E-008",
-      "E-011",
-      "E-013",
       "E-016",
       "E-017"
     ],
-    "publicDownloadable": 141
+    "publicDownloadable": 143
   },
   "checks": [
     {
@@ -33,29 +29,21 @@
       "actual": {
         "decisions": [
           "A-017",
-          "C-015",
           "C-020",
-          "C-023",
-          "D-024",
+          "C-021",
           "E-008",
-          "E-011",
-          "E-013",
           "E-016",
           "E-017"
         ],
         "catalogExcluded": [
           "A-017",
-          "C-015",
           "C-020",
-          "C-023",
-          "D-024",
+          "C-021",
           "E-008",
-          "E-011",
-          "E-013",
           "E-016",
           "E-017"
         ],
-        "declared": 10
+        "declared": 6
       },
       "expected": "same elements, declared count = list"
     },
@@ -85,9 +73,9 @@
       "name": "PUBLIC_SET_DERIVED",
       "status": "PASS",
       "actual": {
-        "publicSet": 142,
-        "catalogMinusExcluded": 142,
-        "manifestPublic": 142
+        "publicSet": 146,
+        "catalogMinusExcluded": 146,
+        "manifestPublic": 146
       },
       "expected": "public = full - excluded (catalog and manifest agree)"
     },
@@ -98,12 +86,12 @@
       "status": "PASS",
       "actual": {
         "downloadAllowed": [],
-        "downloadableElementCount": 141,
-        "publicWithDownloadAssets": 141
+        "downloadableElementCount": 143,
+        "publicWithDownloadAssets": 143
       },
       "expected": {
         "downloadAllowed": [],
-        "downloadableElementCount": 141
+        "downloadableElementCount": 143
       }
     },
     {
@@ -112,12 +100,12 @@
       "name": "EXCLUDED_ABSENT_FROM_HOME_DATA",
       "status": "PASS",
       "actual": {
-        "cards": 142,
+        "cards": 146,
         "excludedCards": [],
         "excludedInPreview": []
       },
       "expected": {
-        "cards": 142,
+        "cards": 146,
         "excludedCards": [],
         "excludedInPreview": []
       }
@@ -140,13 +128,13 @@
       "name": "EXCLUDED_ABSENT_FROM_FINDER",
       "status": "PASS",
       "actual": {
-        "count": 142,
-        "total": 142,
+        "count": 146,
+        "total": 146,
         "excluded": []
       },
       "expected": {
-        "count": 142,
-        "total": 142,
+        "count": 146,
+        "total": 146,
         "excluded": []
       }
     },
@@ -170,20 +158,20 @@
         },
         {
           "code": "C",
-          "shown": 22,
-          "expected": 22,
+          "shown": 23,
+          "expected": 23,
           "full": 25
         },
         {
           "code": "D",
-          "shown": 25,
-          "expected": 25,
+          "shown": 26,
+          "expected": 26,
           "full": 26
         },
         {
           "code": "E",
-          "shown": 15,
-          "expected": 15,
+          "shown": 17,
+          "expected": 17,
           "full": 20
         }
       ],
@@ -207,38 +195,18 @@
             "found": false
           },
           {
-            "elementId": "C-015",
-            "query": "상기 문서들의 원본 링크",
-            "found": false
-          },
-          {
             "elementId": "C-020",
             "query": "GHG 감축 사업 타당성 기초 정보",
             "found": false
           },
           {
-            "elementId": "C-023",
-            "query": "한계저감비용(MAC)",
-            "found": false
-          },
-          {
-            "elementId": "D-024",
-            "query": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
+            "elementId": "C-021",
+            "query": "VCM 프로젝트 파이프라인",
             "found": false
           },
           {
             "elementId": "E-008",
             "query": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
-            "found": false
-          },
-          {
-            "elementId": "E-011",
-            "query": "기술준비수준(TRL)",
-            "found": false
-          },
-          {
-            "elementId": "E-013",
-            "query": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
             "found": false
           },
           {
@@ -282,27 +250,27 @@
           {
             "label": "최신순",
             "ids": [
+              "D-024",
+              "C-015",
               "A-016",
               "B-005",
               "D-005",
               "D-011",
               "D-022",
-              "B-023",
-              "B-001",
-              "A-026"
+              "B-023"
             ],
             "excluded": []
           }
         ],
         "figures": {
-          "items": 142,
-          "downloadable": 141
+          "items": 146,
+          "downloadable": 143
         }
       },
       "expected": {
         "excluded": [],
-        "items": 142,
-        "downloadable": 141
+        "items": 146,
+        "downloadable": 143
       }
     },
     {
@@ -311,11 +279,11 @@
       "name": "EXCLUDED_DOWNLOAD_NOT_OFFERED",
       "status": "PASS",
       "actual": {
-        "count": 142,
+        "count": 146,
         "excluded": []
       },
       "expected": {
-        "count": 142,
+        "count": 146,
         "excluded": []
       }
     },
@@ -329,84 +297,46 @@
           "elementId": "A-017",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(데이터 명세서 검토)",
-          "reason": "원자료(BloombergNEF)의 재배포 제한으로 제공 대상에서 제외",
-          "decidedAt": "2026-09-18"
-        },
-        {
-          "elementId": "C-015",
-          "pass": true,
-          "problems": [],
-          "decision": "제공 대상 제외(데이터 명세서 검토)",
-          "reason": "법령 원문 링크는 각 데이터의 원문 링크로 통합해 별도 항목으로 제공하지 않음",
-          "decidedAt": "2026-09-18"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         },
         {
           "elementId": "C-020",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 데이터 없음",
-          "decidedAt": "2026-09-23"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         },
         {
-          "elementId": "C-023",
+          "elementId": "C-021",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
-          "decidedAt": "2026-09-23"
-        },
-        {
-          "elementId": "D-024",
-          "pass": true,
-          "problems": [],
-          "decision": "제공 대상 제외(데이터 명세서 검토)",
-          "reason": "확인된 원자료가 없어 제공 대상에서 제외",
-          "decidedAt": "2026-09-18"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         },
         {
           "elementId": "E-008",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(데이터 명세서 검토)",
-          "reason": "논문·특허 검색 기준이 검증되지 않아 제공 대상에서 제외",
-          "decidedAt": "2026-09-18"
-        },
-        {
-          "elementId": "E-011",
-          "pass": true,
-          "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 명세서상 NRI 대체 예정이나 자료 미입고",
-          "decidedAt": "2026-09-23"
-        },
-        {
-          "elementId": "E-013",
-          "pass": true,
-          "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
-          "decidedAt": "2026-09-23"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         },
         {
           "elementId": "E-016",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
-          "decidedAt": "2026-09-23"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         },
         {
           "elementId": "E-017",
           "pass": true,
           "problems": [],
-          "decision": "제공 대상 제외(사용자 검토)",
-          "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
-          "decidedAt": "2026-09-23"
+          "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+          "cardText": "2026년 제공 대상이 아닌 데이터입니다."
         }
       ],
-      "expected": "notice card with decision, reason and date; no chart, table or download"
+      "expected": "title + the decision's public line (V156-E, 기준서 v1.1 표 13); no decision record (reason, basis, date); no chart, table or download"
     }
   ]
 }

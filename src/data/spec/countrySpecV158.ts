@@ -15,9 +15,10 @@
  *   country's own label.
  * - The reference line of the spec (source org, link, APA, checked date)
  *   describes the default country's source and is not shown.
- * - A type the spec set to ⓪ because of the default country's own exclusion
- *   returns to the spec type when the country publishes the element; an
- *   element the country did not deliver is shown as a status note.
+ * - The status notice ('데이터 준비 중', exclusion) follows the country's own
+ *   catalog, not the default country's: an element the country did not
+ *   deliver is '데이터 준비 중', one it excluded is excluded, any other is
+ *   shown with its analysis.
  *
  * Nothing here names a country: the default is `DEFAULT_COUNTRY_ISO3_V158` and
  * other countries come from the registry.
@@ -29,12 +30,12 @@ import {
   loadDatasetSpecV159,
   type DatasetSpecBundleV159,
 } from "./datasetSpecV159";
-import {
-  DISPLAY_TYPE_LABELS_V159,
-  type DatasetCardSpecV159,
-  type DatasetSpecRowV159,
-  type TypologyRowV159,
-  type UseCaseV159,
+import type {
+  DatasetCardSpecV159,
+  DatasetSpecRowV159,
+  StatusNoticeV159,
+  TypologyRowV159,
+  UseCaseV159,
 } from "./specTypesV159";
 import {
   DEFAULT_COUNTRY_ISO3_V158,
@@ -146,21 +147,23 @@ function buildCardSpecForCountryV158(
     : scoped(base?.baseName, iso3) || countryLabel || item?.publicTitle || "";
   const sourceLabel = countrySource || scoped(base?.sourceLabel, iso3);
   const shortDefinitionCard = scoped(base?.shortDefinitionCard, iso3);
-  // The card's type follows the country's own typology (a ⓪ lifted, or an
-  // element the country did not deliver).
-  const displayType = getTypologyForCountryV158(elementId, iso3, item)?.displayType || base?.displayType || "U0";
+  // The card's notice follows the country's own typology.
+  const typology = getTypologyForCountryV158(elementId, iso3, item);
+  const displayType = typology?.displayType || base?.displayType;
+  const statusNotice = typology ? typology.statusNotice : base?.statusNotice ?? null;
   if (!base) {
-    if (!item) return null;
+    if (!item || !displayType) return null;
     return {
       elementId: String(elementId).toUpperCase(),
       sourceLabel,
       baseName,
       shortDefinitionCard,
       displayType,
+      statusNotice,
       users: [],
     };
   }
-  return { ...base, baseName, sourceLabel, shortDefinitionCard, displayType };
+  return { ...base, baseName, sourceLabel, shortDefinitionCard, displayType: displayType || base.displayType, statusNotice };
 }
 
 /** The public title for a country's catalog item, by the same rules. */
@@ -177,10 +180,17 @@ export function publicTitleForCountryV158(
   return scoped(sharedTitle, iso3) || countryLabel || sharedTitle;
 }
 
+/** The status words a country's own catalog state stands for. */
+const COUNTRY_STATUS_V158: Record<"data-pending" | "excluded" | "public", string> = {
+  "data-pending": "미입고(데이터 준비 중)",
+  excluded: "제외",
+  public: "공개",
+};
+
 /**
- * The typology row for a country. ⓪ set by the default country's exclusion
- * returns to the spec type where the country publishes the element; an element
- * the country did not deliver becomes a status note.
+ * The typology row for a country. The type and structure are the spec's; the
+ * status notice is the country's own - the default country's publication
+ * decisions and missing deliveries are its own and do not carry over.
  */
 export function getTypologyForCountryV158(
   elementId: string,
@@ -189,26 +199,9 @@ export function getTypologyForCountryV158(
 ): TypologyRowV159 | null {
   const row = getTypologyV159(elementId);
   if (!row || !specNeedsCountryScopeV158(country) || !item) return row;
-  if (item.publicStatus === "not-provided") {
-    return {
-      ...row,
-      displayType: "U0",
-      displayTypeLabel: DISPLAY_TYPE_LABELS_V159.U0,
-      status: "미입고",
-      variant: "",
-      dedicated: null,
-    };
-  }
-  if (row.displayType === "U0" && item.publicStatus !== "excluded") {
-    return {
-      ...row,
-      displayType: row.specDisplayType,
-      displayTypeLabel: DISPLAY_TYPE_LABELS_V159[row.specDisplayType],
-      status: "공개",
-      variant: "",
-    };
-  }
-  return row;
+  const statusNotice: StatusNoticeV159 =
+    item.publicStatus === "not-provided" ? "data-pending" : item.publicStatus === "excluded" ? "excluded" : null;
+  return { ...row, statusNotice, status: COUNTRY_STATUS_V158[statusNotice ?? "public"] };
 }
 
 export interface CountrySpecHiddenV158 {

@@ -75,20 +75,25 @@ test.describe("detail screens", () => {
 
 /**
  * V156-D: an element decided not to be offered keeps its URL, which shows one
- * notice card - the decision, the reason and the date from the decision file -
- * and nothing to read, chart or download (reports/v156/EXPECTATION_CHANGES_V156D.md).
+ * notice card and nothing to read, chart or download. V156-E (기준서 v1.1 표 13):
+ * the card is the title and the decision's public line only - the decision
+ * record (reason, basis, date) stays in the decision file and is not shown
+ * (reports/v156/EXPECTATION_CHANGES_V156D.md).
  */
 test.describe("excluded elements", () => {
-  for (const { elementId, decidedAt, reason } of EXCLUDED_ELEMENTS) {
+  for (const { elementId, decidedAt, reason, basis, publicNotice } of EXCLUDED_ELEMENTS) {
     test(`${elementId} shows its exclusion notice and nothing else`, async ({ page }) => {
       const errors = collectPageErrors(page);
       await page.goto(detailUrl(elementId));
       const notice = page.getByTestId("detail-excluded-v156");
       await expect(notice).toBeVisible({ timeout: 60_000 });
       await expect(page.locator(".cdp-detail-hero h1")).not.toBeEmpty();
-      await expect(notice.locator('[data-exclusion-field="decision"]')).not.toBeEmpty();
-      await expect(notice.locator('[data-exclusion-field="reason"]')).toContainText(reason);
-      await expect(notice.locator('[data-exclusion-field="decidedAt"]')).toHaveText(decidedAt);
+      expect(publicNotice, `${elementId} has a public notice in the catalog`).not.toBe("");
+      await expect(notice.locator('[data-exclusion-field="publicNotice"]')).toHaveText(publicNotice);
+      await expect(notice.locator('[data-exclusion-field="decision"], [data-exclusion-field="reason"], [data-exclusion-field="decidedAt"]')).toHaveCount(0);
+      const noticeText = await notice.innerText();
+      for (const hidden of [reason, decidedAt, basis].filter(Boolean)) expect(noticeText, `${elementId} shows its decision record`).not.toContain(hidden);
+      expect(noticeText).not.toMatch(/결정일|사유/u);
       await expect(page.getByTestId("public-analysis-root")).toHaveCount(0);
       const pageRoot = page.locator('[data-detail-excluded-v156="true"]');
       await expect(pageRoot.locator('table, canvas, svg[role="img"]')).toHaveCount(0);

@@ -1,18 +1,18 @@
 {
   "schemaVersion": "v131-public-content-audit-1",
-  "generatedAt": "2026-09-24T00:19:18.799Z",
+  "generatedAt": "2026-09-29T06:12:53.963Z",
   "audit": "entity-cards:v131",
   "status": "PASS",
   "summary": {
     "type": "summary",
     "audit": "entity-cards:v131",
     "status": "PASS",
-    "passed": 16,
+    "passed": 18,
     "failed": 0,
-    "total": 16,
+    "total": 18,
     "failedChecks": [],
-    "entityElementRouteCount": 56,
-    "entityCardCount": 245,
+    "entityElementRouteCount": 55,
+    "entityCardCount": 239,
     "entityContextTitleCount": 0,
     "entityCardLongTextCount": 0,
     "entityCardDuplicatePrimaryTitleCount": 0,
@@ -50,11 +50,30 @@
       "audit": "entity-cards:v131",
       "name": "ENTITY_CARD_ROUTE_COVERAGE",
       "status": "PASS",
-      "actual": 56,
-      "expected": 56,
+      "actual": 55,
+      "expected": 55,
       "details": {
         "runtimeFailure": null,
         "routeFailures": []
+      }
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
+      "name": "EXCLUDED_ENTITY_ROUTE_NOTICE_V156",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "E-008",
+          "pass": true,
+          "problems": []
+        }
+      ],
+      "expected": {
+        "routes": [
+          "E-008"
+        ],
+        "notice": "card, no chart, no download link"
       }
     },
     {
@@ -163,6 +182,21 @@
     {
       "type": "check",
       "audit": "entity-cards:v131",
+      "name": "LISTED_RECORD_COUNT_MATCHES_CATALOG",
+      "status": "PASS",
+      "actual": [
+        {
+          "elementId": "E-006",
+          "renderer": "investor-network-v153",
+          "listed": 15,
+          "catalogEntityCount": 15
+        }
+      ],
+      "expected": "every listed record renderer shows the catalog's entityCount rows"
+    },
+    {
+      "type": "check",
+      "audit": "entity-cards:v131",
       "name": "ENTITY_CARD_DUPLICATE_PRIMARY_TITLE_COUNT",
       "status": "PASS",
       "actual": 0,
@@ -194,8 +228,8 @@
       "expected": []
     }
   ],
-  "entityElementRouteCount": 56,
-  "entityCardCount": 245,
+  "entityElementRouteCount": 55,
+  "entityCardCount": 239,
   "entityContextTitleCount": 0,
   "entityCardLongTextCount": 0,
   "entityCardDuplicatePrimaryTitleCount": 0,

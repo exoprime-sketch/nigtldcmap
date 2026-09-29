@@ -1,7 +1,11 @@
 import { createContext, useContext, useMemo, type ReactNode } from "react";
 import { DEFAULT_COUNTRY_ISO3_V158, normalizeCountryIso3V158 } from "../countryContext";
-import { getTypologyForCountryV158, type CountrySpecItemV158 } from "../spec/countrySpecV158";
-import type { TypologyRowV159 } from "../spec/specTypesV159";
+import {
+  getCardSpecForCountryV158,
+  getTypologyForCountryV158,
+  type CountrySpecItemV158,
+} from "../spec/countrySpecV158";
+import type { DatasetCardSpecV159, TypologyRowV159 } from "../spec/specTypesV159";
 
 /**
  * V158: the country whose data a screen is showing - and, on a detail page,
@@ -44,6 +48,16 @@ export function useCountryTypologyV158(elementId: string): TypologyRowV159 | nul
   const itemForElement = item && item.elementId === elementId ? item : null;
   return useMemo(
     () => getTypologyForCountryV158(elementId, country, itemForElement),
+    [country, elementId, itemForElement]
+  );
+}
+
+/** The card spec (name, source, one-line definition) as seen from the page's country. */
+export function useCountryCardSpecV158(elementId: string): DatasetCardSpecV159 | null {
+  const { country, item } = useContext(DataCountryContextV158);
+  const itemForElement = item && item.elementId === elementId ? item : null;
+  return useMemo(
+    () => getCardSpecForCountryV158(elementId, country, itemForElement),
     [country, elementId, itemForElement]
   );
 }

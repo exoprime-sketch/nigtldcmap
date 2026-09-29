@@ -43,7 +43,10 @@ import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
 import type { S2RegionObservationV159 } from "../data/structure/structureTypesV159";
 import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV124";
-import { decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { decisionPointsU3RecordsV159, decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { visualizationContractV153 } from "../data/visualization/publicVisualizationContractV153";
+import { researchRecordV132 } from "../components/data/public/ResearchPatentAnalysisV132";
+import { koreaTechReadinessPointsV159, referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
 import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
 import SourceLineV159 from "../components/data/description/SourceLineV159";
 import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
@@ -687,11 +690,13 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   }
 }
 
-/** V156: how an exclusion's basis reads on the public notice (the decision file keeps its own words). */
-const EXCLUSION_BASIS_LABEL_V156: Record<string, string> = {
-  "사용자 결정": "사용자 검토",
-  "데이터 명세서": "데이터 명세서 검토",
-};
+/**
+ * V156-E (2026-09-29, 기준서 v1.1 표 13): an excluded element's page states one
+ * public line. The decision record (reason, basis, date) stays in the decision
+ * file and the catalog and is never shown. The fallback covers a decision
+ * recorded before the public line existed.
+ */
+const EXCLUSION_PUBLIC_NOTICE_FALLBACK_V156 = "제공 대상이 아닌 데이터입니다.";
 
 /**
  * V158: the page sets the country its data comes from for everything below it
@@ -849,13 +854,38 @@ function CountryDataElementPageV122({
     };
   }, [countryIso3, elementId, typologyV159]);
   const decisionPointListV159 = useMemo(() => {
-    if (!typologyV159 || typologyV159.displayType === "U0" || !bundle?.meta || !hasPopulatedRows) return [];
+    if (!typologyV159 || typologyV159.statusNotice || !bundle?.meta || !hasPopulatedRows) return [];
     const rows = adaptStructureV159(typologyV159.structure, {
       observations: bundle.observations,
       entities: bundle.entities,
       indicators: bundle.meta.indicators,
     });
-    const fromRows = decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
+    // Spec v8 ③·S4: records counted as the chart counts them (the source's
+    // own technology classification), not the adapter's generic fields.
+    // Spec v11: the Korea-reference record list (E-016) reads its '전체' record.
+    if (typologyV159.referenceCountryIso3 && typologyV159.structure === "S4") {
+      return koreaTechReadinessPointsV159(bundle.entities);
+    }
+    if (typologyV159.displayType === "U3" && typologyV159.structure === "S4") {
+      const records = bundle.entities.flatMap((entity) => {
+        const record = researchRecordV132(entity, bundle.meta?.element.detailTemplate);
+        return record ? [{ kind: record.type, technologies: record.technologyClasses }] : [];
+      });
+      return decisionPointsU3RecordsV159(records);
+    }
+    // Spec v8 reference country (E-017): the headline is the series the
+    // primary chart draws, i.e. the rows in the contract's primary unit.
+    const reference = typologyV159.referenceCountryIso3;
+    const primaryUnit = reference ? visualizationContractV153(typologyV159.elementId)?.primary.unit : null;
+    const fromRows = decisionPointsV159(typologyV159.displayType, rows, {
+      countryIso3: countryIso3 || "VNM",
+      referenceCountryIso3: reference,
+      countryLabel: referenceSubjectLabelV159,
+      headlineIndicatorIds:
+        rows.structure === "S1" && primaryUnit
+          ? [...new Set(rows.rows.filter((row) => row.unit === primaryUnit).map((row) => row.indicatorId))]
+          : undefined,
+    });
     if (fromRows.length > 0 || layerRowsV159.length === 0) return fromRows;
     return decisionPointsV159("U2", { structure: "S2", rows: layerRowsV159 }, { countryIso3: countryIso3 || "VNM" });
   }, [bundle, countryIso3, hasPopulatedRows, layerRowsV159, typologyV159]);
@@ -883,8 +913,8 @@ function CountryDataElementPageV122({
     [seriesIdsKeyV159]
   );
 
-  // V156: a reviewed decision not to offer this element. One card, no charts, no
-  // table, no download - and the reason and date the decision carries.
+  // V156: a reviewed decision not to offer this element. The title and one
+  // public line - no charts, no table, no download, no decision record.
   if (catalogItem?.publicStatus === "excluded") {
     // The heading follows the V159 naming rule like every other detail: the
     // source line and the dataset's own name from the framework spec.
@@ -911,23 +941,8 @@ function CountryDataElementPageV122({
           </div>
         </section>
         <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
-          <p>
-            이 항목은 {catalogItem.exclusion?.decidedAt ? `${catalogItem.exclusion.decidedAt} ` : ""}검토로
-            제공 대상에서 제외되었습니다.
-          </p>
-          <p>
-            <strong>결정</strong>{" "}
-            <span data-exclusion-field="decision">
-              제공 대상 제외({EXCLUSION_BASIS_LABEL_V156[catalogItem.exclusion?.basis || ""] || "검토"})
-            </span>
-          </p>
-          <p>
-            <strong>사유</strong>{" "}
-            <span data-exclusion-field="reason"><PublicTermTextV134 text={catalogItem.exclusion?.reason || ""} /></span>
-          </p>
-          <p>
-            <strong>결정일</strong>{" "}
-            <span data-exclusion-field="decidedAt">{catalogItem.exclusion?.decidedAt || ""}</span>
+          <p data-exclusion-field="publicNotice">
+            {catalogItem.exclusion?.publicNotice || EXCLUSION_PUBLIC_NOTICE_FALLBACK_V156}
           </p>
         </div>
       </div>

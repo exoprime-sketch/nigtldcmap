@@ -22,14 +22,19 @@ describe("E-008 delivered list analysis", () => {
   it("uses actual document years and types in the generated card, not stale catalogue metadata", () => {
     const cards = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/home/card-summaries-v140.json`), "utf8"));
     const card = cards.cards.find((entry: { elementId: string }) => entry.elementId === "E-008");
-    // V156: while E-008 is excluded (data specification 2026-09-18) it is offered
-    // nowhere - no card is generated. The card assertions return when it is offered.
+    // V156: while E-008 is excluded it is offered nowhere - no card is
+    // generated. The card assertions return when it is offered. The catalogue
+    // carries the decision file's date (data specification 2026-09-18; since
+    // 2026-09-29 the 본부장 decision for 2026), not a date fixed here.
     const catalog = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/catalog.json`), "utf8"));
     const element = catalog.elements.find((entry: { elementId: string }) => entry.elementId === "E-008");
     if (element.publicStatus === "excluded") {
       expect(card).toBeUndefined();
       expect(element.exclusion?.reason).toBeTruthy();
-      expect(element.exclusion?.decidedAt).toBe("2026-09-18");
+      const decision = JSON.parse(readFileSync(resolve(__dirname, "../../../../config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
+      const decided = decision.exclusions.find((entry: { elementId: string }) => entry.elementId === "E-008");
+      expect(decided).toBeDefined();
+      expect(element.exclusion?.decidedAt).toBe(decided.decidedAt);
       return;
     }
     expect(card.period).toBe("2021–2026년");

@@ -94,19 +94,29 @@ describe("country spec layer V158", () => {
     expect(title.length).toBeGreaterThan(0);
   });
 
-  test("a type set to status note by the default country's exclusion returns to the spec type", () => {
-    const base = getTypologyV159("A-017");
-    expect(base?.displayType).toBe("U0");
-    const row = getTypologyForCountryV158("A-017", other.iso3, itemFor("A-017"));
-    expect(row?.displayType).toBe(base?.specDisplayType);
+  test("the default country's status notice does not carry over; the country's own catalog decides", () => {
+    // An element the default country excluded but this country delivered.
+    const noticed = otherCatalog.find((row) => {
+      const base = getTypologyV159(row.elementId as string);
+      return base?.statusNotice && row.publicStatus !== "not-provided" && row.publicStatus !== "excluded";
+    }) as Record<string, unknown>;
+    const elementId = noticed.elementId as string;
+    const base = getTypologyV159(elementId);
+    const row = getTypologyForCountryV158(elementId, other.iso3, itemFor(elementId));
+    expect(row?.statusNotice).toBeNull();
     expect(row?.status).toBe("공개");
+    expect(row?.displayType).toBe(base?.displayType);
+    expect(getCardSpecForCountryV158(elementId, other.iso3, itemFor(elementId))?.statusNotice).toBeNull();
   });
 
-  test("an element the country did not deliver is a status note", () => {
+  test("an element the country did not deliver shows '데이터 준비 중' and keeps its type", () => {
     const missing = otherCatalog.find((row) => row.publicStatus === "not-provided") as Record<string, unknown>;
-    const row = getTypologyForCountryV158(missing.elementId as string, other.iso3, itemFor(missing.elementId as string));
-    expect(row?.displayType).toBe("U0");
-    expect(row?.status).toBe("미입고");
+    const elementId = missing.elementId as string;
+    const row = getTypologyForCountryV158(elementId, other.iso3, itemFor(elementId));
+    expect(row?.statusNotice).toBe("data-pending");
+    expect(row?.status).toBe("미입고(데이터 준비 중)");
+    expect(row?.displayType).toBe(getTypologyV159(elementId)?.displayType);
+    expect(getCardSpecForCountryV158(elementId, other.iso3, itemFor(elementId))?.statusNotice).toBe("data-pending");
   });
 
   test("spec text for another country drops paragraphs naming other countries and the reference line", async () => {
