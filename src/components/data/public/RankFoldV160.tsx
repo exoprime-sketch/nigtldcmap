@@ -18,6 +18,12 @@ export interface RankFoldV160 {
   rowProps: (index: number, keepVisible?: boolean) => { hidden?: boolean; "data-rank-gap"?: string };
   /** The '전체 보기' toggle, or null when the list is short. */
   toggle: ReactNode;
+  /** Rows kept at each end while folded. */
+  edge: number;
+  /** Whether the list is long enough to fold at all. */
+  foldable: boolean;
+  /** Whether the reader opened every row. */
+  expanded: boolean;
 }
 
 export function useRankFoldV160(total: number, resetKey: unknown = null, edgeOption?: number): RankFoldV160 {
@@ -30,6 +36,9 @@ export function useRankFoldV160(total: number, resetKey: unknown = null, edgeOpt
   const middle = total - edge * 2;
   const isHidden = (index: number) => folded && index >= edge && index < total - edge;
   return {
+    edge,
+    foldable,
+    expanded,
     isHidden,
     rowProps: (index, keepVisible = false) => {
       if (isHidden(index) && !keepVisible) return { hidden: true };

@@ -214,6 +214,16 @@ export default function ProvinceSeriesAnalysisV140({
   const v153 = useAnalysisContractV153();
   // V160: the province ranking opens on its top and bottom 10 (RankFoldV160).
   const rankFold = useRankFoldV160(comparison.length, `${measure?.key}|${time}`);
+  // One line above the list saying what it shows - the fold's own numbers,
+  // so the sentence and the rows on screen always agree.
+  const rankNoticeV160 = (withSelection: boolean) =>
+    rankFold.foldable ? (
+      <p className="psa140__notice" data-testid="psa140-rank-notice-v160">
+        {rankFold.expanded
+          ? `${isYearTime(time) ? `${time}년` : time} 기준 전체 ${comparison.length}개 성·시입니다.`
+          : `${isYearTime(time) ? `${time}년` : time} 기준 상위·하위 ${rankFold.edge}개 성·시${withSelection ? "와 선택 지역" : ""}입니다. 전체는 '전체 ${comparison.length}개 보기'에서 확인할 수 있습니다.`}
+      </p>
+    ) : null;
 
   if (!measure) {
     return <div className="pav126-empty" role="status">이 자료에는 수치 값이 없습니다.</div>;
@@ -356,7 +366,7 @@ export default function ProvinceSeriesAnalysisV140({
             ))}
           </ul></>
         ) : (
-          <><ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
+          <>{rankNoticeV160(false)}<ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
             {comparison.map((entry, index) => (
               <li key={entry.region} {...rankFold.rowProps(index)}>
                 <span>{index + 1}. {entry.region}</span>
@@ -374,6 +384,7 @@ export default function ProvinceSeriesAnalysisV140({
             <span>보조 비교</span>
             <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {region} 위치</h3>
           </header>
+          {rankNoticeV160(true)}
           <ChartAxesV150 x={measure.label} y="성·시" unit={unit} />
           <ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
             {comparison.map((entry, index) => {
