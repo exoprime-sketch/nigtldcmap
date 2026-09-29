@@ -1,42 +1,131 @@
 {
-  "generatedAt": "2026-09-29T03:54:49.762Z",
+  "generatedAt": "2026-09-29T04:46:03.017Z",
   "checks": [
     {
-      "id": "HOME_BODY_WORDS_MINUS_50",
-      "pass": true,
-      "actual": {
-        "before": 535,
-        "after": 204,
-        "reductionPercent": 61.9,
-        "viewportBefore": 112,
-        "viewportAfter": 112
-      },
-      "expected": ">= 50% fewer words on the home"
-    },
-    {
-      "id": "HOME_FIRST_SCREEN_WORDS_MAX_120",
-      "pass": true,
-      "actual": 112,
-      "expected": "<= 120 words"
-    },
-    {
-      "id": "HOME_SIX_QUESTIONS",
+      "id": "HOME_FEATURED_EIGHT",
       "pass": true,
       "actual": [
-        "U1",
-        "U2",
-        "U3",
-        "U4",
-        "U5",
-        "U6"
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
       ],
-      "expected": 6
+      "expected": "eight distinct featured datasets"
     },
     {
-      "id": "FINDER_DEFAULT_CORE",
+      "id": "HOME_FIGURES_FROM_CURRENT_COUNTRY",
       "pass": true,
-      "actual": 57,
-      "expected": 57
+      "actual": {
+        "scope": "현재 제공 국가 · 베트남",
+        "cards": [
+          {
+            "id": "A-002",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-003",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-010",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-023",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-024",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "B-033",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "C-016",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "D-023",
+            "summary": true,
+            "preparing": false
+          }
+        ]
+      },
+      "expected": {
+        "scopeNames": [
+          "베트남"
+        ],
+        "card": "a summary from the country's data, or '데이터 준비 중'"
+      }
+    },
+    {
+      "id": "FINDER_LISTS_PUBLIC_SET",
+      "pass": true,
+      "actual": 142,
+      "expected": 142
+    },
+    {
+      "id": "FINDER_SORT_NAME_DEFAULT",
+      "pass": true,
+      "actual": {
+        "sortValue": "name",
+        "firstTen": [
+          "1차 에너지 소비량",
+          "1MW당 예상 온실가스 감축량",
+          "가뭄 지표",
+          "가스종류별 온실가스 배출량",
+          "각국 기후기술 창구기관(NDE)",
+          "감축·적응 기후예산 배분 비율",
+          "감축사업 승인기관(DNA)",
+          "개도국 내 한국 기관 사무소",
+          "건기·우기 구분",
+          "건기·우기 유량 차이"
+        ]
+      },
+      "expected": "가나다순 selected; cards in Intl.Collator('ko') order of the shown name"
+    },
+    {
+      "id": "FINDER_PREPARING_LAST",
+      "pass": true,
+      "actual": {
+        "loaded": 142,
+        "tail": [
+          {
+            "id": "C-021",
+            "title": "자발적 탄소시장(VCM) 사업 파이프라인",
+            "preparing": true
+          }
+        ]
+      },
+      "expected": {
+        "lastIds": [
+          "C-021"
+        ],
+        "label": "데이터 준비 중"
+      }
+    },
+    {
+      "id": "FINDER_SORT_URL_KEPT",
+      "pass": true,
+      "actual": {
+        "url": "?category=B&sort=views",
+        "viewsDisabled": true,
+        "selected": "name"
+      },
+      "expected": "sort=views kept after a filter change; 조회순 disabled (name order shown) only where the usage service is absent"
     },
     {
       "id": "DETAIL_FIRST_SCREEN_12",
@@ -552,12 +641,58 @@
     }
   ],
   "evidence": {
-    "homeWords": {
-      "before": 535,
-      "after": 204,
-      "reductionPercent": 61.9,
-      "viewportBefore": 112,
-      "viewportAfter": 112
+    "home": {
+      "cards": [
+        {
+          "id": "A-002",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-003",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-010",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-023",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-024",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "B-033",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "C-016",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "D-023",
+          "summary": true,
+          "preparing": false
+        }
+      ],
+      "scope": "현재 제공 국가 · 베트남"
+    },
+    "finderSort": {
+      "total": 142,
+      "views": {
+        "url": "?category=B&sort=views",
+        "viewsDisabled": true,
+        "selected": "name"
+      }
     },
     "layer1": [
       {
@@ -984,8 +1119,8 @@
     "consoleErrors": []
   },
   "summary": {
-    "total": 12,
-    "pass": 12,
+    "total": 14,
+    "pass": 14,
     "failed": []
   }
 }

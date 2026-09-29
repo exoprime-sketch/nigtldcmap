@@ -29,10 +29,9 @@ import { statusDecisionV159 } from "../components/data/templates/U0StatusV159";
 import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
 import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitleV159";
-import { getTierV160, TIER_LABELS_V160 } from "../data/spec/coreFirstV160";
-import type { InformationTierV160 } from "../data/spec/coreFirstV160";
+import { USAGE_API_AVAILABLE_V149, usePublicUsageV149 } from "../data/publicUsageV149";
+import { compareFinderItemsV160, isPreparingStatusV160 } from "../data/finderSortV160";
 import "../styles/country-data-platform-v122.css";
-import "../styles/finder-core-v160.css";
 
 interface DataExplorerPageProps {
   query: string;
@@ -41,12 +40,6 @@ interface DataExplorerPageProps {
   category: CategoryCode | "all";
   technologyId: string;
   selectedGroup: string | null;
-  /** V160: "core" (default) shows the core datasets, "all" every public one; kept in the URL as tier=all. */
-  tier: "core" | "all";
-  /** V160: display-type filter (U1..U6), kept in the URL as type=; replaces the V159 local type filter. */
-  displayType: DisplayTypeV159 | "all";
-  onTierChange: (value: "core" | "all") => void;
-  onDisplayTypeChange: (value: DisplayTypeV159 | "all") => void;
   onQueryChange: (value: string) => void;
   onCountryChange: (value: string) => void;
   onSourceOrganizationChange: (value: string) => void;
@@ -60,6 +53,9 @@ interface DataExplorerPageProps {
     selection?: DataFinderSelectorStateV125
   ) => void;
   onOpenMapElement?: (elementId: string, countryIso3: string) => void;
+  /** V160-R (R-10): list order - by name (default) or by detail views. */
+  sort?: "name" | "views";
+  onSortChange?: (value: "name" | "views") => void;
 }
 
 const INITIAL_VISIBLE_COUNT = 24;
@@ -153,7 +149,16 @@ function maxScrollYV136(): number {
   const scroller = document.scrollingElement || document.documentElement;
   return Math.max(0, scroller.scrollHeight - window.innerHeight);
 }
-type FinderSortModeV128 = "relevance" | "latest" | "title";
+type FinderSortModeV128 = "name" | "views";
+
+/** The name the card shows (V159 base name, else the catalogue title) - the key of 가나다순. */
+function finderDisplayTitleV160(item: CountryCatalogItemV122): string {
+  return getCardSpecV159(item.elementId)?.baseName || item.publicTitle;
+}
+/** A dataset not yet delivered is listed last, marked '데이터 준비 중'. */
+function isPreparingV160(item: CountryCatalogItemV122): boolean {
+  return isPreparingStatusV160(item.publicStatus);
+}
 
 /**
  * V140: the finder is where a reader finds the datasets the map draws and the
@@ -176,30 +181,6 @@ function latestYearLabel(value: number | string | null | undefined): string {
   return String(value);
 }
 
-/**
- * V160 core-first gate: which items pass the finder's tier filter.
- *
- * Hidden (⓪) elements never appear, in either mode. With an empty query the
- * `tier` prop decides (core = only the core 57, all = every non-hidden
- * element). A non-empty query widens the list to every non-hidden element
- * regardless of `tier` — a reader searching should find a support/reference
- * dataset by name, not be blocked by the default filter — without touching
- * the `tier` prop itself (the toggle keeps its own state).
- */
-export function filterByTierV160<T extends { elementId: string }>(
-  items: T[],
-  tier: "core" | "all",
-  query: string
-): T[] {
-  const widened = query.trim().length > 0;
-  return items.filter((item) => {
-    const itemTier = getTierV160(item.elementId);
-    if (itemTier === null || itemTier === "hidden") return false;
-    if (widened) return true;
-    return tier === "all" ? true : itemTier === "core";
-  });
-}
-
 function referenceYearRangeV125(item: CountryCatalogItemV122): string {
   const years = item.raw.referenceYears
     .flatMap((value) => String(value).match(/\b(?:19|20)\d{2}\b/g) || [])
@@ -219,10 +200,6 @@ export default function DataExplorerPage({
   category,
   technologyId,
   selectedGroup,
-  tier,
-  displayType,
-  onTierChange,
-  onDisplayTypeChange,
   onQueryChange,
   onCountryChange,
   onSourceOrganizationChange,
@@ -232,6 +209,8 @@ export default function DataExplorerPage({
   onOpenDownload,
   onOpenElement,
   onOpenMapElement,
+  sort = "name",
+  onSortChange,
 }: DataExplorerPageProps) {
   const baseKey = JSON.stringify([countryIso3, normalizedSearchV121(query), category, selectedGroup, sourceOrganization, technologyId]);
   const [initialRestore] = useState(() => {
@@ -247,11 +226,18 @@ export default function DataExplorerPage({
   const [searchIndexLoadedFor, setSearchIndexLoadedFor] = useState("");
   const [error, setError] = useState("");
   const [yearFilter, setYearFilter] = useState(initialRestore?.yearFilter || "all");
-  const [sortMode, setSortMode] =
-    useState<FinderSortModeV128>(initialRestore?.sortMode || "relevance");
-  // V159: who the dataset serves (from its use cases). V160: the display-type
-  // filter itself now lives in the URL as props.displayType.
+  // 조회순 reads the usage counts the home already uses; without that service
+  // (a static host) the option is disabled and the list stays in name order.
+  const usage = usePublicUsageV149();
+  const viewsAvailable = USAGE_API_AVAILABLE_V149 && usage !== null;
+  const sortMode: FinderSortModeV128 = sort === "views" && viewsAvailable ? "views" : "name";
+  const viewCounts = useMemo(
+    () => new Map((usage?.detail || []).map((row) => [row.elementId, row.count])),
+    [usage]
+  );
+  // V159: who the dataset serves (from its use cases) and its display type.
   const [userFilter, setUserFilter] = useState<string>("all");
+  const [typeFilter, setTypeFilter] = useState<DisplayTypeV159 | "all">("all");
   const [deliveryFilter, setDeliveryFilter] =
     useState<FinderDeliveryFilterV140>(initialRestore?.deliveryFilter || "all");
   const [filtersExpanded, setFiltersExpanded] = useState(initialRestore?.filtersExpanded || false);
@@ -383,21 +369,6 @@ export default function DataExplorerPage({
     [availableCatalog, category]
   );
 
-  // V160: the tier toggle's own counts — independent of every other filter,
-  // so "핵심 데이터 57 / 전체 보기 142" reads the same whether or not a
-  // category or search narrows the list underneath it.
-  const tierCountsV160 = useMemo(() => {
-    let core = 0;
-    let all = 0;
-    for (const item of availableCatalog) {
-      const itemTier = getTierV160(item.elementId);
-      if (itemTier === null || itemTier === "hidden") continue;
-      all += 1;
-      if (itemTier === "core") core += 1;
-    }
-    return { core, all };
-  }, [availableCatalog]);
-
   const years = useMemo(
     () =>
       unique(availableCatalog.map((item) => latestYearLabel(item.latestYear)))
@@ -416,15 +387,8 @@ export default function DataExplorerPage({
   );
   const selectedTechnology = normalizeTechnologyIdV153(technologyId) ?? "all";
 
-  // V160: tier gate first — hidden never shows, core-only by default, and a
-  // non-empty search widens to every non-hidden element (see filterByTierV160).
-  const tierGatedCatalog = useMemo(
-    () => filterByTierV160(availableCatalog, tier, normalizedQuery),
-    [availableCatalog, tier, normalizedQuery]
-  );
-
   const filtered = useMemo(() => {
-    const matching = tierGatedCatalog.filter((item) => {
+    const matching = availableCatalog.filter((item) => {
       if (category !== "all" && item.categoryCode !== category) return false;
       if (selectedGroup && item.groupCode !== selectedGroup) return false;
       if (
@@ -443,10 +407,10 @@ export default function DataExplorerPage({
         return false;
       }
       if (deliveryFilter === "map" && !item.hasMapData) return false;
-      if (userFilter !== "all" || displayType !== "all") {
+      if (userFilter !== "all" || typeFilter !== "all") {
         const card = getCardSpecV159(item.elementId);
         if (userFilter !== "all" && !card?.users.includes(userFilter)) return false;
-        if (displayType !== "all" && card?.displayType !== displayType) return false;
+        if (typeFilter !== "all" && card?.displayType !== typeFilter) return false;
       }
       if (
         deliveryFilter === "download" &&
@@ -480,36 +444,10 @@ export default function DataExplorerPage({
       return true;
     });
 
-    return matching.sort((left, right) => {
-      if (sortMode === "latest") {
-        const yearDifference =
-          Number(right.latestYear || 0) - Number(left.latestYear || 0);
-        if (yearDifference !== 0) return yearDifference;
-      } else if (sortMode === "relevance" && normalizedQuery) {
-        const relevance = (item: CountryCatalogItemV122): number => {
-          const title = normalizedSearchV121(item.publicTitle);
-          if (title === normalizedQuery) return 1_000;
-          if (title.startsWith(normalizedQuery)) return 700;
-          if (title.includes(normalizedQuery)) return 500;
-          const indexed = searchIndex.get(
-            countryCatalogKeyV122(item.providerId, item.elementId)
-          );
-          const measureOrCategory = normalizedSearchV121(
-            [
-              item.categoryLabel,
-              item.groupLabel,
-              ...(indexed?.keywords || []),
-            ].join(" ")
-          );
-          return measureOrCategory.includes(normalizedQuery) ? 300 : 100;
-        };
-        const scoreDifference = relevance(right) - relevance(left);
-        if (scoreDifference !== 0) return scoreDifference;
-      }
-      return left.publicTitle.localeCompare(right.publicTitle, "ko");
-    });
+    const key = (item: CountryCatalogItemV122) => ({ elementId: item.elementId, title: finderDisplayTitleV160(item), publicStatus: item.publicStatus });
+    return matching.sort((left, right) => compareFinderItemsV160(key(left), key(right), sortMode, viewCounts));
   }, [
-    tierGatedCatalog,
+    availableCatalog,
     category,
     deliveryFilter,
     normalizedQuery,
@@ -518,7 +456,8 @@ export default function DataExplorerPage({
     sortMode,
     sourceOrganization,
     selectedTechnology,
-    displayType,
+    viewCounts,
+    typeFilter,
     userFilter,
     yearFilter,
   ]);
@@ -723,12 +662,10 @@ export default function DataExplorerPage({
     onGroupChange(null);
     onSourceOrganizationChange("all");
     onTechnologyChange("all");
-    onTierChange("core");
-    onDisplayTypeChange("all");
     setYearFilter("all");
-    setSortMode("relevance");
     setDeliveryFilter("all");
     setUserFilter("all");
+    setTypeFilter("all");
   }
 
   return (
@@ -775,13 +712,13 @@ export default function DataExplorerPage({
             <select
               className="cdp-select"
               value={sortMode}
+              data-testid="finder-sort-v160"
               onChange={(event) =>
-                setSortMode(event.target.value as FinderSortModeV128)
+                onSortChange?.(event.target.value as FinderSortModeV128)
               }
             >
-              <option value="relevance">관련도</option>
-              <option value="latest">최신 기준연도</option>
-              <option value="title">데이터명</option>
+              <option value="name">가나다순</option>
+              <option value="views" disabled={!viewsAvailable}>조회순</option>
             </select>
           </label>
 
@@ -913,8 +850,8 @@ export default function DataExplorerPage({
               <select
                 className="cdp-select"
                 data-testid="finder-type-filter-v159"
-                value={displayType}
-                onChange={(event) => onDisplayTypeChange(event.target.value as DisplayTypeV159 | "all")}
+                value={typeFilter}
+                onChange={(event) => setTypeFilter(event.target.value as DisplayTypeV159 | "all")}
               >
                 <option value="all">전체</option>
                 {(["U1", "U2", "U3", "U4", "U5", "U6"] as const).map((type) => (
@@ -954,36 +891,6 @@ export default function DataExplorerPage({
         </div>
       </section>
 
-      {/* V160: the finder's default scope — 핵심 57 first, '전체 보기' widens
-          to every public dataset (142). A non-empty search already widens
-          the list regardless of this toggle; the toggle only sets the
-          default a reader returns to once the search is cleared. */}
-      <div
-        className="cdp-tier-toggle-v160"
-        data-testid="finder-tier-toggle-v160"
-        role="group"
-        aria-label="데이터 범위"
-      >
-        <button
-          type="button"
-          className="cdp-tier-toggle-v160__button"
-          data-tier="core"
-          aria-pressed={tier === "core"}
-          onClick={() => onTierChange("core")}
-        >
-          {`핵심 데이터 ${tierCountsV160.core.toLocaleString("ko-KR")}`}
-        </button>
-        <button
-          type="button"
-          className="cdp-tier-toggle-v160__button"
-          data-tier="all"
-          aria-pressed={tier === "all"}
-          onClick={() => onTierChange("all")}
-        >
-          {`전체 보기 ${tierCountsV160.all.toLocaleString("ko-KR")}`}
-        </button>
-      </div>
-
       {error && (
         <div className="cdp-alert cdp-alert--error" role="alert">
           <strong>{error}</strong>
@@ -1018,10 +925,6 @@ export default function DataExplorerPage({
                 : `${contract.yearRange.start}–${contract.yearRange.end}`
             : referenceYearRangeV125(item);
           const summary = cardSummaries?.get(item.elementId) ?? null;
-          const cardSpec = getCardSpecV159(item.elementId);
-          // V160: hidden (⓪) elements are already excluded by tierGatedCatalog,
-          // so every card reaching here carries core/support/reference.
-          const itemTier: InformationTierV160 | null = getTierV160(item.elementId);
           return (
           <article
             className="cdp-dataset-card"
@@ -1042,24 +945,10 @@ export default function DataExplorerPage({
             {showCountryContext && (
               <span className="cdp-country-chip">{item.countryNameKo}</span>
             )}
-            {/* V160: a reader always sees what kind of question the card
-                answers and, in search results, how central it is. */}
-            <div className="cdp-card__badges-v160">
-              {cardSpec && (
-                <span className="cdp-chip cdp-chip--type-v160" data-testid="finder-card-type-v160">
-                  {`${DISPLAY_TYPE_MARKS_V159[cardSpec.displayType]} ${DISPLAY_TYPE_LABELS_V159[cardSpec.displayType]}`}
-                </span>
-              )}
-              {itemTier && (
-                <span className="cdp-chip cdp-chip--tier-v160" data-testid="finder-card-tier-v160">
-                  {TIER_LABELS_V160[itemTier]}
-                </span>
-              )}
-            </div>
             {/* V159: source line, the dataset's own name and the spec's short
                 definition; the catalogue's title stays the fallback. */}
-            {cardSpec ? (
-              <DatasetCardTitleV159 card={cardSpec} titleAs="h2" />
+            {getCardSpecV159(item.elementId) ? (
+              <DatasetCardTitleV159 card={getCardSpecV159(item.elementId)!} titleAs="h2" />
             ) : (
               <>
                 <h2><PublicTermTextV134 text={item.publicTitle} /></h2>
@@ -1070,14 +959,12 @@ export default function DataExplorerPage({
             )}
             {/* V159 ⓪: an excluded or not-yet-delivered dataset shows its
                 status on the card, not a figure. */}
-            {cardSpec?.displayType === "U0" ? (
+            {getCardSpecV159(item.elementId)?.displayType === "U0" ? (
               <p className="cdp-card__status-v159" data-testid="finder-card-status-v159">
-                <span className="cdp-chip">{statusDecisionV159(getTypologyV159(item.elementId)?.status || "").decision}</span>
+                <span className="cdp-chip">{isPreparingV160(item) ? "데이터 준비 중" : statusDecisionV159(getTypologyV159(item.elementId)?.status || "").decision}</span>
               </p>
             ) : (
-              // V160: only core cards keep the chart preview; support/
-              // reference cards show the same pre-built headline KPI alone.
-              summary && <FinderCardSummaryV140 summary={summary} kpiOnly={itemTier !== "core"} />
+              summary && <FinderCardSummaryV140 summary={summary} />
             )}
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
