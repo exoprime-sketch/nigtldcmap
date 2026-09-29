@@ -399,7 +399,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술",
       "연도"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "A-017",
     "measureLabels": [
       "LCOE"
@@ -2421,7 +2421,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "레코드 유형"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "C-015",
     "measureLabels": [
       "상기 문서들의 원본 링크(URL)",
@@ -3178,7 +3178,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "레코드 유형"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "D-024",
     "measureLabels": [
       "VC"
@@ -3402,7 +3402,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "레코드 유형"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "E-008",
     "measureLabels": [
       "논문"
@@ -3583,7 +3583,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "referenceYear",
       "부문"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "E-016",
     "measureLabels": [
       "한국 기후기술 TRL(분야별 기술수준"
@@ -3603,7 +3603,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "연도"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "E-017",
     "measureLabels": [
       "기후기술 수준 순위",

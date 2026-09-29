@@ -45,6 +45,13 @@ const PENDING_CASES_PATH = resolve(OUT_DIR, "useCasesPendingV159.json");
 const OVERRIDES = JSON.parse(readFileSync(resolve(OUT_DIR, "specTextOverridesV159.json"), "utf8")).overrides;
 const CORRECTIONS_DOC = resolve(ROOT, "docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md");
 const appliedOverrides = new Set();
+// V156-E: whether an element is excluded is a publication decision, kept in
+// the decision file the ETL reads. The spec sheet's status column records the
+// decision as it stood (제외 0918/0923); the decision file says whether it still
+// stands, and for a lifted one whether there is data and which screen it gets.
+const EXCLUSION_DECISION = JSON.parse(readFileSync(resolve(ROOT, "config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
+const ACTIVE_EXCLUSIONS = new Set(EXCLUSION_DECISION.exclusions.map((row) => row.elementId));
+const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) => [row.elementId, row]));
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
@@ -370,8 +377,25 @@ function main() {
     // Every excluded element (status 제외, by the spec sheet 0918 or the user
     // 0923) is a ⓪ status screen, whatever type the assignment table gave it
     // (decision 2026-09-24). The spec's own type is kept as specDisplayType.
+    // V156-E: an exclusion the decision file has lifted (2026-09-29) no longer
+    // makes a status screen - without data the element states that it has not
+    // been delivered, like C-021; with data it takes the spec's type, or the
+    // type the lift decision names where the spec only had ⓪.
     const specType = DISPLAY_TYPES[row.displayKey];
-    const type = /^제외/u.test(row.status) ? DISPLAY_TYPES["⓪"] : specType;
+    let type = /^제외/u.test(row.status) ? DISPLAY_TYPES["⓪"] : specType;
+    let status = row.status;
+    const lift = LIFTED_EXCLUSIONS.get(row.elementId);
+    if (/^제외/u.test(row.status) && lift && !ACTIVE_EXCLUSIONS.has(row.elementId)) {
+      const liftedOn = lift.liftedAt.slice(5).replace("-", "");
+      if (!lift.dataPresent) {
+        type = DISPLAY_TYPES["⓪"];
+        status = "미입고(상태안내)";
+      } else {
+        type = lift.displayTypeAfterLift ? DISPLAY_TYPES[lift.displayTypeAfterLift] : specType;
+        if (!type || type.code === "U0") throw new Error(`${row.elementId}: lifted with data but no display type other than ⓪`);
+        status = `공개(제외 해제 ${liftedOn})`;
+      }
+    }
     const scenario = [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
     return {
       elementId: row.elementId,
@@ -387,7 +411,7 @@ function main() {
         categorical: /범주형/.test(row.variant),
         scenario,
       },
-      status: row.status,
+      status,
       variant: row.variant,
       dedicated: DEDICATED[row.elementId] || null,
       coverage: { VNM: row.vnm, BGD: row.bgd },

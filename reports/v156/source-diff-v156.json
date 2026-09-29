@@ -1,7 +1,7 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-diff-v156.mjs",
-  "generatedAt": "2026-09-24T11:27:31.997Z",
+  "generatedAt": "2026-09-29T00:34:24.903Z",
   "trees": {
     "current": "public/data/vietnam/v2",
     "candidate": ".staging/v156/public/data/vietnam/v2"
@@ -9,7 +9,7 @@
   "deliveredAt": "2026-09-22",
   "totals": {
     "elements": 152,
-    "unchanged": 146,
+    "unchanged": 142,
     "titleChanged": 0,
     "schemaBreaking": 0,
     "bespokeRendererAffected": 0,
@@ -976,9 +976,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "actual"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
@@ -5642,9 +5646,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "actual"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
@@ -5941,7 +5949,12 @@
         "after": "GHG 감축 사업 타당성 기초 정보",
         "changed": false
       },
-      "statusChanges": {},
+      "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "not-collected"
+        }
+      },
       "counts": {
         "indicators": {
           "before": 0,
@@ -5986,7 +5999,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -6118,7 +6131,12 @@
         "after": "한계저감비용(MAC)",
         "changed": false
       },
-      "statusChanges": {},
+      "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "not-collected"
+        }
+      },
       "counts": {
         "indicators": {
           "before": 0,
@@ -6163,7 +6181,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -7653,9 +7671,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "actual"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
@@ -8248,9 +8270,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "public-authorized"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
@@ -8429,7 +8455,12 @@
         "after": "기술준비수준(TRL)",
         "changed": false
       },
-      "statusChanges": {},
+      "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "data-entry-planned"
+        }
+      },
       "counts": {
         "indicators": {
           "before": 0,
@@ -8474,7 +8505,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -8547,7 +8578,12 @@
         "after": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
         "changed": false
       },
-      "statusChanges": {},
+      "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "schema-only"
+        }
+      },
       "counts": {
         "indicators": {
           "before": 0,
@@ -8592,7 +8628,7 @@
         "titleChanged": false,
         "schemaBreaking": false,
         "bespokeRenderer": false,
-        "unchanged": true
+        "unchanged": false
       }
     },
     {
@@ -8725,9 +8761,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "public-authorized"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
@@ -8789,9 +8829,13 @@
         "changed": false
       },
       "statusChanges": {
+        "publicStatus": {
+          "before": "excluded",
+          "after": "public-authorized"
+        },
         "downloadAllowed": {
-          "before": true,
-          "after": false
+          "before": false,
+          "after": true
         }
       },
       "counts": {
