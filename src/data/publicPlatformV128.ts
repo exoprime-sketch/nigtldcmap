@@ -3,7 +3,7 @@ import {
   loadCountryMapIndexV122,
   loadSearchIndexForCountrySelectionV122,
 } from "./countries/countryDataFacadeV122";
-import { loadVietnamManifestV124 } from "./vietnam/vietnamDataLoaderV124";
+import { ensureCountryRegistryLoadedV158, getCountryDataProviderV122 } from "./countries/countryDataProviderRegistryV122";
 import { getElementVisualizationSummaryV125 } from "./visualization/elementVisualizationRegistryV125";
 import { technologyLabelV121 } from "../utils/vietnamActualV121";
 import { normalizeTechnologyIdsV153 } from "../utils/technologyIdV153";
@@ -41,6 +41,12 @@ export interface VietnamPublicOverviewV128 {
   releaseDate: string;
 }
 
+/** V161: the same overview for any live country, plus the ids of its map layers. */
+export interface PublicOverviewV161 extends VietnamPublicOverviewV128 {
+  countryIso3: string;
+  mapElementIds: string[];
+}
+
 export interface PublicSearchItemV128 {
   catalogItem: CountryCatalogItemV122;
   measureLabels: string[];
@@ -63,7 +69,7 @@ const FEATURED_ELEMENT_IDS_V128 = [
   "D-023",
 ] as const;
 
-let overviewCacheV128: Promise<VietnamPublicOverviewV128> | null = null;
+const overviewCacheV161 = new Map<string, Promise<PublicOverviewV161>>();
 let searchCacheV128: Promise<PublicSearchItemV128[]> | null = null;
 
 function normalizeSearchTextV128(value: string): string {
@@ -177,42 +183,52 @@ export function publicReferencePeriodV128(
   return item.latestYear ? `${item.latestYear}년` : "기준기간 없음";
 }
 
+/**
+ * V161: a live country's overview - its catalog, counts and map layers - read
+ * through the country's data provider (countries.json decides which are live).
+ * Rejects for a country that is not served, so the caller shows "데이터 준비 중".
+ */
+export async function loadPublicOverviewV161(countryIso3: string): Promise<PublicOverviewV161> {
+  const iso3 = countryIso3.trim().toUpperCase();
+  const cached = overviewCacheV161.get(iso3);
+  if (cached) return cached;
+  const promise = (async () => {
+    await ensureCountryRegistryLoadedV158();
+    const provider = getCountryDataProviderV122(iso3);
+    if (!provider) throw new Error(`COUNTRY_NOT_SERVED: ${iso3}`);
+    const [manifest, catalog, mapLayers] = await Promise.all([
+      provider.loadManifest(),
+      loadCatalogForCountrySelectionV122(iso3),
+      loadCountryMapIndexV122(iso3),
+    ]);
+    const catalogById = new Map(catalog.map((item) => [item.elementId, item]));
+    const activeLayers = mapLayers.filter((layer) => layer.active !== false && layer.enabled !== false);
+    return {
+      countryIso3: iso3,
+      catalog,
+      featured: FEATURED_ELEMENT_IDS_V128.map((elementId) => catalogById.get(elementId)).filter(
+        (item): item is CountryCatalogItemV122 => Boolean(item)
+      ),
+      frameworkElementCount: manifest.frameworkElements,
+      // The finder, search and home cards all read this filtered catalog.
+      publicElementCount: catalog.length,
+      dataProvidedElementCount:
+        manifest.publicStatusCounts.actual +
+        manifest.publicStatusCounts["public-authorized"] +
+        manifest.publicStatusCounts.partial,
+      downloadableElementCount: manifest.downloadableElementCount,
+      mapLayerCount: activeLayers.length,
+      mapElementIds: activeLayers.map((layer) => layer.elementId),
+      releaseDate: publicReleaseDateV128(manifest.generatedAt),
+    };
+  })();
+  overviewCacheV161.set(iso3, promise);
+  promise.catch(() => overviewCacheV161.delete(iso3));
+  return promise;
+}
+
 export async function loadVietnamPublicOverviewV128(): Promise<VietnamPublicOverviewV128> {
-  if (!overviewCacheV128) {
-    overviewCacheV128 = Promise.all([
-      loadVietnamManifestV124(),
-      loadCatalogForCountrySelectionV122("VNM"),
-      loadCountryMapIndexV122("VNM"),
-    ])
-      .then(([manifest, catalog, mapLayers]) => {
-        const catalogById = new Map(
-          catalog.map((item) => [item.elementId, item])
-        );
-        return {
-          catalog,
-          featured: FEATURED_ELEMENT_IDS_V128.map((elementId) =>
-            catalogById.get(elementId)
-          ).filter((item): item is CountryCatalogItemV122 => Boolean(item)),
-          frameworkElementCount: manifest.frameworkElements,
-          // The finder, search and home cards all read this filtered catalog.
-          publicElementCount: catalog.length,
-          dataProvidedElementCount:
-            manifest.publicStatusCounts.actual +
-            manifest.publicStatusCounts["public-authorized"] +
-            manifest.publicStatusCounts.partial,
-          downloadableElementCount: manifest.downloadableElementCount,
-          mapLayerCount: mapLayers.filter(
-            (layer) => layer.active !== false && layer.enabled !== false
-          ).length,
-          releaseDate: publicReleaseDateV128(manifest.generatedAt),
-        };
-      })
-      .catch((error) => {
-        overviewCacheV128 = null;
-        throw error;
-      });
-  }
-  return overviewCacheV128;
+  return loadPublicOverviewV161("VNM");
 }
 
 export async function loadPublicSearchItemsV128(): Promise<PublicSearchItemV128[]> {

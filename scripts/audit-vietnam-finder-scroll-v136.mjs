@@ -15,7 +15,6 @@ import {
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136 } from "./v136/audit-helpers.mjs";
-import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
 // V156: the finder lists the public set; its size decides where auto-loading stops.
 const PUBLIC_COUNT_V156 = publicListedElementsV156(catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value)).length;
@@ -86,7 +85,7 @@ async function revealSequence(cdp, limit = 12) {
       break;
     }
     sequence.push(Number(await evaluateValue(cdp, CARD_COUNT)));
-    if (sequence[sequence.length - 1] >= FINDER_PUBLIC_COUNT_V160) break;
+    if (sequence[sequence.length - 1] >= PUBLIC_COUNT_V156) break;
   }
   return sequence;
 }
@@ -183,7 +182,7 @@ try {
         };
       })()`
     );
-    if (settled && settled.total > 0 && settled.total !== FINDER_PUBLIC_COUNT_V160) {
+    if (settled && settled.total > 0 && settled.total !== 152) {
       observedMinimum = Math.min(observedMinimum, settled.visible);
     }
     await new Promise((resolveWait) => setTimeout(resolveWait, 40));
@@ -262,8 +261,10 @@ try {
   if (server) await server.close();
 }
 
-// V160: 24 at a time up to every public dataset the finder lists with tier=all.
-const expectedSequence = finderAutoLoadSequenceV160();
+// Batches of 24 up to the public count ([24, …, 144, 152] when all 152 were public).
+const expectedSequence = [];
+for (let shown = 24; shown < PUBLIC_COUNT_V156; shown += 24) expectedSequence.push(shown);
+expectedSequence.push(PUBLIC_COUNT_V156);
 const sequenceMatches =
   JSON.stringify(sequence) === JSON.stringify(expectedSequence);
 // V149 adds a passive, rAF-throttled scroll listener that only records the

@@ -98,13 +98,18 @@ export interface CardSummariesV140 {
   cards: CardSummaryV140[];
 }
 
-const SUMMARIES_URL = publicAssetUrlV128(countryAssetPathV158("VNM", "home/card-summaries-v140.json"));
+const cacheByCountry = new Map<string, Promise<Map<string, CardSummaryV140>>>();
 
-let cache: Promise<Map<string, CardSummaryV140>> | null = null;
-
-export function loadCardSummariesV140(): Promise<Map<string, CardSummaryV140>> {
+/**
+ * The card summaries of a country's data tree (countries.json data root;
+ * Vietnam by default, as every caller before V161 assumed). A country whose
+ * tree has no summaries rejects, and the caller shows "데이터 준비 중".
+ */
+export function loadCardSummariesV140(countryIso3: string = "VNM"): Promise<Map<string, CardSummaryV140>> {
+  const iso3 = countryIso3.trim().toUpperCase();
+  let cache = cacheByCountry.get(iso3);
   if (!cache) {
-    cache = fetch(SUMMARIES_URL)
+    cache = fetch(publicAssetUrlV128(countryAssetPathV158(iso3, "home/card-summaries-v140.json")))
       .then((response) => {
         if (!response.ok) throw new Error(`card summaries ${response.status}`);
         return response.text();
@@ -116,11 +121,9 @@ export function loadCardSummariesV140(): Promise<Map<string, CardSummaryV140>> {
           throw new Error("card summaries schema mismatch");
         }
         return new Map(value.cards.map((card) => [card.elementId, card]));
-      })
-      .catch((error) => {
-        cache = null;
-        throw error;
       });
+    cacheByCountry.set(iso3, cache);
+    cache.catch(() => cacheByCountry.delete(iso3));
   }
   return cache;
 }

@@ -12,7 +12,6 @@ import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 const PUBLIC_COUNT_V156 = publicListedElementsV156(catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value)).length;
 import { mapLayerCountV138, mapTargetCountV138 } from "./v135/audit-helpers.mjs";
 import { finishAuditV136, reportStatusV136 } from "./v136/audit-helpers.mjs";
-import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
 const audit = new AuditV125("release:v136");
 
@@ -296,11 +295,13 @@ audit.check("V135_REGRESSION", group(["v135FinderCard", "v135TemporalDepth", "v1
 audit.check("V136_REGRESSION", group(["publicText", "duplicateCopy", "mapListUi", "mapCopy", "publicControls"]), { publicText: statuses.publicText, duplicateCopy: statuses.duplicateCopy, mapListUi: statuses.mapListUi, mapCopy: statuses.mapCopy, publicControls: statuses.publicControls }, "PASS");
 
 audit.check("FINDER_LOAD_MORE_VISIBLE_COUNT", scroll.finderLoadMoreVisibleCount === 0, scroll.finderLoadMoreVisibleCount ?? null, 0);
-// V160: the finder (tier=all) lists the public set minus the tier-hidden
-// elements (C-021, not collected); detail routes cover the whole public set.
-audit.check("FINDER_AUTO_LOAD_SEQUENCE", JSON.stringify(scroll.autoLoadSequence) === JSON.stringify(finderAutoLoadSequenceV160()), scroll.autoLoadSequence ?? null, finderAutoLoadSequenceV160());
+// Batches of 24 up to the public count.
+const AUTO_LOAD_SEQUENCE_V156 = [];
+for (let shown = 24; shown < PUBLIC_COUNT_V156; shown += 24) AUTO_LOAD_SEQUENCE_V156.push(shown);
+AUTO_LOAD_SEQUENCE_V156.push(PUBLIC_COUNT_V156);
+audit.check("FINDER_AUTO_LOAD_SEQUENCE", JSON.stringify(scroll.autoLoadSequence) === JSON.stringify(AUTO_LOAD_SEQUENCE_V156), scroll.autoLoadSequence ?? null, AUTO_LOAD_SEQUENCE_V156);
 audit.check("FINDER_DUPLICATE_CARD_COUNT", scroll.duplicateCardCount === 0, scroll.duplicateCardCount ?? null, 0);
-audit.check("FINDER_HUMAN_REVIEW_COUNT", review.finderHumanReviewCount === FINDER_PUBLIC_COUNT_V160, review.finderHumanReviewCount ?? null, FINDER_PUBLIC_COUNT_V160);
+audit.check("FINDER_HUMAN_REVIEW_COUNT", review.finderHumanReviewCount === PUBLIC_COUNT_V156, review.finderHumanReviewCount ?? null, PUBLIC_COUNT_V156);
 audit.check("DETAIL_HUMAN_REVIEW_COUNT", review.detailHumanReviewCount === PUBLIC_COUNT_V156, review.detailHumanReviewCount ?? null, PUBLIC_COUNT_V156);
 audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", review.mapDatasetHumanReviewCount === expectedMapLayers, review.mapDatasetHumanReviewCount ?? null, expectedMapLayers);
 audit.check("UNRESOLVED_REWRITE_COUNT", review.unresolvedRewriteCount === 0, review.unresolvedRewriteCount ?? null, 0);

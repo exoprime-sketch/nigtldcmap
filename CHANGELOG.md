@@ -2,6 +2,23 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V160-R 홈·데이터 찾기 되돌리기 + 찾기 정렬(R-10) (PR 후보)
+
+### Changed
+
+- 홈: V160 질문 6카드 폐기 → #34 직전(fcc04f7) '주요 데이터' 레이아웃으로 복원. 수치·보조 문구는 현재 국가(`?country=` → 국가 레지스트리 기본 공개 국가)의 데이터에서 읽고, 값이 없으면 '데이터 준비 중'
+- 데이터 찾기: '핵심' 기본 필터·전체 보기 토글·등급 배지 폐기 → fcc04f7로 복원. 기존 `tier=` 링크는 무시
+- 상세 3단·지도 기본 레이어는 유지
+
+### Added
+
+- 데이터 찾기 정렬(R-10): 공개 요소 전체, 가나다순(기본, `Intl.Collator('ko')`)·조회순(기존 조회수 집계 API, 미설정 환경은 선택지 비활성), URL `sort=name|views`(검색어·필터 변경 시 유지), 미입고 요소는 맨 뒤 '데이터 준비 중'
+- 저장소 CLAUDE.md 절대 규칙: 병합은 사용자가 Preview를 검토하고 "PR #N 병합"이라고 명시한 경우에만
+
+### Removed
+
+- `homeQuestionsV160.json`·`home-questions-v160.css`·`HomePage.v160.test.tsx`·`finder-core-v160.css`·`coreFirstV160.ts`(등급 조회)·`core-first-audit-v160.mjs`
+
 ## Unreleased — V160 핵심 정보 우선(홈 6질문 · 데이터 찾기 핵심 57 · 상세 3층 · 지도 기본 레이어) (PR 후보)
 
 ### Changed
