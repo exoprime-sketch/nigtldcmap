@@ -8,7 +8,7 @@ const BUILD = resolve(ROOT, process.env.NIGT_E2E_BUILD || ".verify/candidate/bui
 type CandidateCatalogRow = {
   elementId: string;
   publicStatus?: string;
-  exclusion?: { decidedAt?: string; reason?: string } | null;
+  exclusion?: { decidedAt?: string; reason?: string; basis?: string; publicNotice?: string } | null;
 };
 
 function candidateCatalog(): CandidateCatalogRow[] {
@@ -36,14 +36,30 @@ export function candidatePublicElementIds(): string[] {
     .sort();
 }
 
-/** Elements decided not to be offered, with the decision their notice states. */
-export function candidateExcludedElements(): Array<{ elementId: string; decidedAt: string; reason: string }> {
+/**
+ * Published elements not yet delivered - the statuses src/data/finderSortV160.ts
+ * lists last as '데이터 준비 중' (C-023, E-011, E-013 since V156-E). Their
+ * source line names the provider only: no data period is stated.
+ */
+const PREPARING_STATUSES = new Set(["not-collected", "data-entry-planned", "schema-only"]);
+export function candidatePreparingElementIds(): Set<string> {
+  return new Set(candidateCatalog().filter((row) => PREPARING_STATUSES.has(String(row.publicStatus || ""))).map((row) => row.elementId));
+}
+
+/**
+ * Elements decided not to be offered. V156-E (기준서 v1.1 표 13): the notice
+ * states `publicNotice` only; the decision record (reason, basis, date) is
+ * carried so a test can check it is NOT shown.
+ */
+export function candidateExcludedElements(): Array<{ elementId: string; decidedAt: string; reason: string; basis: string; publicNotice: string }> {
   return candidateCatalog()
     .filter((row) => NON_PUBLIC_STATUSES.has(String(row.publicStatus || "")))
     .map((row) => ({
       elementId: row.elementId,
       decidedAt: String(row.exclusion?.decidedAt || ""),
       reason: String(row.exclusion?.reason || ""),
+      basis: String(row.exclusion?.basis || ""),
+      publicNotice: String(row.exclusion?.publicNotice || ""),
     }))
     .sort((a, b) => a.elementId.localeCompare(b.elementId));
 }

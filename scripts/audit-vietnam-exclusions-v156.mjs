@@ -238,8 +238,8 @@ audit.check(
 audit.check(
   "EXCLUDED_DETAIL_NOTICE",
   notices.length === excluded.length && notices.every((row) => row.pass),
-  notices.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems, decision: row.snapshot?.decision, reason: row.snapshot?.reason, decidedAt: row.snapshot?.decidedAt })),
-  "notice card with decision, reason and date; no chart, table or download"
+  notices.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems, publicNotice: row.snapshot?.publicNotice, cardText: row.snapshot?.cardText })),
+  "title + the decision's public line (V156-E, 기준서 v1.1 표 13); no decision record (reason, basis, date); no chart, table or download"
 );
 
 const summary = audit.finish({

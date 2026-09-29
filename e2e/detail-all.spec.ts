@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   INTERNAL_TOKEN,
   candidateExcludedElements,
+  candidatePreparingElementIds,
   candidatePublicElementIds,
   collectPageErrors,
   detailUrl,
@@ -20,6 +21,7 @@ import {
  */
 const ELEMENT_IDS = candidatePublicElementIds();
 const EXCLUDED_ELEMENTS = candidateExcludedElements();
+const PREPARING_IDS = candidatePreparingElementIds();
 
 test.describe("detail screens", () => {
   for (const elementId of ELEMENT_IDS) {
@@ -37,12 +39,20 @@ test.describe("detail screens", () => {
       expect(text.trim().length, `${elementId} rendered no analysis`).toBeGreaterThan(0);
       expect(text, `${elementId} exposes an internal key`).not.toMatch(INTERNAL_TOKEN);
 
-      // 제공기관 and 자료기간 are what a public dataset has to state.
+      // 제공기관 and 자료기간 are what a public dataset has to state. Since V160
+      // the source panel sits in the collapsed layer 3 ('자료 출처·상세 데이터'),
+      // so that layer is opened first - a closed <details> keeps its children
+      // in the DOM but gives them no text to read.
+      const layer = page.getByTestId("detail-layer-v160").filter({ has: page.getByTestId("public-source-panel") });
+      await layer.evaluate((element: HTMLDetailsElement) => { element.open = true; });
       const source = page.getByTestId("detail-metadata-v135");
       await source.evaluate((element: HTMLDetailsElement) => { element.open = true; });
       const sourceText = await page.getByTestId("public-source-panel").innerText();
       expect(sourceText).toContain("제공기관");
-      expect(sourceText).toContain("자료기간");
+      // V156-E: a dataset not yet delivered states no data period (the line is
+      // hidden rather than filled with '미기재').
+      if (PREPARING_IDS.has(elementId)) expect(sourceText).not.toContain("자료기간");
+      else expect(sourceText).toContain("자료기간");
 
       const selects = page.locator('[data-testid="public-selector"] select');
       const count = await selects.count();
@@ -75,20 +85,25 @@ test.describe("detail screens", () => {
 
 /**
  * V156-D: an element decided not to be offered keeps its URL, which shows one
- * notice card - the decision, the reason and the date from the decision file -
- * and nothing to read, chart or download (reports/v156/EXPECTATION_CHANGES_V156D.md).
+ * notice card and nothing to read, chart or download. V156-E (기준서 v1.1 표 13):
+ * the card is the title and the decision's public line only - the decision
+ * record (reason, basis, date) stays in the decision file and is not shown
+ * (reports/v156/EXPECTATION_CHANGES_V156D.md).
  */
 test.describe("excluded elements", () => {
-  for (const { elementId, decidedAt, reason } of EXCLUDED_ELEMENTS) {
+  for (const { elementId, decidedAt, reason, basis, publicNotice } of EXCLUDED_ELEMENTS) {
     test(`${elementId} shows its exclusion notice and nothing else`, async ({ page }) => {
       const errors = collectPageErrors(page);
       await page.goto(detailUrl(elementId));
       const notice = page.getByTestId("detail-excluded-v156");
       await expect(notice).toBeVisible({ timeout: 60_000 });
       await expect(page.locator(".cdp-detail-hero h1")).not.toBeEmpty();
-      await expect(notice.locator('[data-exclusion-field="decision"]')).not.toBeEmpty();
-      await expect(notice.locator('[data-exclusion-field="reason"]')).toContainText(reason);
-      await expect(notice.locator('[data-exclusion-field="decidedAt"]')).toHaveText(decidedAt);
+      expect(publicNotice, `${elementId} has a public notice in the catalog`).not.toBe("");
+      await expect(notice.locator('[data-exclusion-field="publicNotice"]')).toHaveText(publicNotice);
+      await expect(notice.locator('[data-exclusion-field="decision"], [data-exclusion-field="reason"], [data-exclusion-field="decidedAt"]')).toHaveCount(0);
+      const noticeText = await notice.innerText();
+      for (const hidden of [reason, decidedAt, basis].filter(Boolean)) expect(noticeText, `${elementId} shows its decision record`).not.toContain(hidden);
+      expect(noticeText).not.toMatch(/결정일|사유/u);
       await expect(page.getByTestId("public-analysis-root")).toHaveCount(0);
       const pageRoot = page.locator('[data-detail-excluded-v156="true"]');
       await expect(pageRoot.locator('table, canvas, svg[role="img"]')).toHaveCount(0);

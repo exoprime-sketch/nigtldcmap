@@ -95,7 +95,6 @@ const DISPLAY_SYMBOL_TO_CODE = {
   "④": "U4",
   "⑤": "U5",
   "⑥": "U6",
-  "⓪": "U0",
 };
 
 function buildDisplayTypeSheet() {
@@ -639,9 +638,9 @@ function buildHandoffMarkdown(sheets) {
 
 ## 1. 목적
 
-152개 공개 데이터 요소를 개별 화면으로 설계하지 않고, 사용자 질문 기준 **표출 유형 6개(+ 상태 안내 1개)** 와 납품 구조 기준 **데이터 구조 4형태(S1~S4)** 로 정리해 용역사가 구조화 작업을 할 수 있게 한다. 배정표(요소 → 표출 유형·구조)는 \`docs/plan/V159_데이터유형화_명세.md\` §4가 정본이고, 이 문서와 \`datasetTypologyV159.xlsx\`는 그 확정본(\`src/data/spec/datasetTypologyV159.json\`)에서 생성한다.
+152개 공개 데이터 요소를 개별 화면으로 설계하지 않고, 사용자 질문 기준 **표출 유형 6개** 와 납품 구조 기준 **데이터 구조 4형태(S1~S4)** 로 정리해 용역사가 구조화 작업을 할 수 있게 한다. 자료가 아직 없는 요소도 유형·구조를 두고, 화면에서만 '데이터 준비 중' 안내를 보인다(명세 v8, 상태 안내 유형 폐지). 배정표(요소 → 표출 유형·구조)는 \`docs/plan/V159_데이터유형화_명세.md\` §4가 정본이고, 이 문서와 \`datasetTypologyV159.xlsx\`는 그 확정본(\`src/data/spec/datasetTypologyV159.json\`)에서 생성한다.
 
-## 2. 표출 유형 6개(+ 상태 안내)
+## 2. 표출 유형 6개
 
 ${mdTableFromSheet(sheets.displayType)}
 

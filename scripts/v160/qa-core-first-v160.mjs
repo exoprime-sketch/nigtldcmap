@@ -37,7 +37,10 @@ const catalog = JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/ca
 const registry = JSON.parse(readFileSync(resolve(ROOT, "public/data/countries.json"), "utf8")).countries;
 // The finder lists the public set (V156: publicStatus not excluded / not-provided).
 const PUBLIC_SET = catalog.filter((element) => !["excluded", "not-provided"].includes(element.publicStatus));
-const PREPARING_IDS = PUBLIC_SET.filter((element) => element.publicStatus === "not-collected").map((element) => element.elementId);
+// Not yet delivered = src/data/finderSortV160.ts isPreparingStatusV160 (V156-E:
+// not collected, entry planned, template only - C-023, E-011, E-013).
+const PREPARING_STATUSES = new Set(["not-collected", "data-entry-planned", "schema-only"]);
+const PREPARING_IDS = PUBLIC_SET.filter((element) => PREPARING_STATUSES.has(element.publicStatus)).map((element) => element.elementId);
 const LIVE_NAMES = registry.filter((country) => country.status === "live").map((country) => country.nameKo);
 const mapDefaults = JSON.parse(readFileSync(resolve(ROOT, "src/data/map/mapDefaultLayersV160.json"), "utf8")).defaultElementIds;
 const SAMPLES = ["A-003", "B-003", "A-018", "A-023", "D-022", "C-009", "A-016", "D-011", "A-002", "E-012", "C-012", "B-002"];

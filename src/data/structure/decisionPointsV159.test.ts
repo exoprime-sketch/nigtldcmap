@@ -5,7 +5,7 @@ import type {
   S3LocatedEntityV159,
   S4EntityV159,
 } from "./structureTypesV159";
-import { decisionPointsV159 } from "./decisionPointsV159";
+import { decisionPointsU3RecordsV159, decisionPointsV159 } from "./decisionPointsV159";
 
 function s1(overrides: Partial<S1CountryObservationV159>): S1CountryObservationV159 {
   return {
@@ -124,10 +124,6 @@ test("U6: incentive presence only appears when a record's own text names one", (
   expect(p2.find((p) => p.key === "incentive-presence")?.value).toBe("있음 (1건)");
 });
 
-test("U0 always returns no points", () => {
-  expect(decisionPointsV159("U0", { structure: "S4", rows: [] }, { countryIso3: "VNM" })).toEqual([]);
-});
-
 function baseS3(overrides: Partial<S3LocatedEntityV159>): S3LocatedEntityV159 {
   return {
     elementId: "X-000",
@@ -172,3 +168,37 @@ function baseS4(overrides: Partial<S4EntityV159>): S4EntityV159 {
     ...overrides,
   };
 }
+
+test("U3 reference country (spec v8, E-017): level, rank among subjects, gap in %p", () => {
+  const level = (countryIso3: string, value: number) => s1({ indicatorId: "E-017_tech_level", countryIso3, year: 2020, value, unit: "%" });
+  const rows = [level("CHN", 75.9), level("EUU", 95.6), level("JPN", 88.4), level("KOR", 80.8), level("USA", 98.4)];
+  const labels: Record<string, string> = { KOR: "한국", USA: "미국" };
+  const points = decisionPointsV159("U3", { structure: "S1", rows }, {
+    countryIso3: "VNM",
+    referenceCountryIso3: "KOR",
+    countryLabel: (iso3) => labels[iso3] || iso3,
+  });
+  expect(points.map((p) => p.key)).toEqual(["reference-level", "reference-rank", "reference-gap"]);
+  expect(points[0]).toMatchObject({ label: "한국 수준" });
+  expect(points[0].value).toContain("80.8");
+  expect(points[1]).toMatchObject({ label: "5개국 중 순위", value: "4위" });
+  expect(points[2].value.startsWith("17.6%p (미국 98.4")).toBe(true);
+  // Without a reference country the same rows give no ③ points (no technology rows).
+  expect(decisionPointsV159("U3", { structure: "S1", rows }, { countryIso3: "VNM" })).toEqual([]);
+});
+
+test("U3 records (spec v8, E-008): total by kind and the top three technology fields", () => {
+  const records = [
+    { kind: "논문", technologies: ["물", "건강"] },
+    { kind: "논문", technologies: ["물"] },
+    { kind: "특허", technologies: ["태양광"] },
+    { kind: "논문", technologies: [] },
+    { kind: "논문", technologies: ["물", "태양광"] },
+  ];
+  const points = decisionPointsU3RecordsV159(records);
+  expect(points).toEqual([
+    { key: "record-total", label: "총 건수", value: "5건 (논문 4 · 특허 1)" },
+    { key: "top-technology-fields", label: "건수 상위 기술 분야", value: "물 3건 · 태양광 2건 · 건강 1건" },
+  ]);
+  expect(decisionPointsU3RecordsV159([{ kind: "논문", technologies: [] }])).toEqual([]);
+});
