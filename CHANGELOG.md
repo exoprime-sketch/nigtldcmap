@@ -2,6 +2,20 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V158-B2b 국가 일반화 계층 + 방글라데시 파생 자산 (PR 후보, 베트남 화면 변화 0)
+
+### Added
+
+- 국가별 로더·provider(`countryDataLoaderV158`·`registryCountryDataProviderV158`): 국가는 `public/data/countries.json` 레지스트리만으로 추가된다. 처음 연 `?country=`는 레지스트리 로드 뒤 다시 읽는다.
+- 국가별 표시 계층: 국가 고유 12요소 이름·출처, 그 나라 카탈로그 상태의 안내, 타국 이름·지명이 든 명세 문단·사례와 검수 문구 숨김(원문 무수정), 괄호 로마자, Noto Sans Bengali 자체 호스팅(`unicode-range`), 비교 블록 연도 규칙.
+- 방글라데시 파생 자산: semantic·카드 요약·dataset-directory·presentation·integrity. 방글라데시는 `preparing` 그대로다.
+- 점검: `scripts/v158/country-qa-v158.mjs`(비기본 국가 화면 QA), `scripts/v158/fake-country-check-v158.mjs`(가짜 3번째 국가).
+
+### Fixed
+
+- 카드 요약 C-007: 등재 건수 행이 없는 납품을 '0건'으로 보이지 않고 일반 항목 카드로(결측 0 대체 금지).
+- `screen-signature-v158`: 찾기·지도·다운로드·이용안내를 해시 경로로 찍는다(이전에는 모두 홈으로 찍혔다).
+
 ## Unreleased — V158-B2a 배포 용량 예측·데이터 배포 방식 결정안 (PR 후보)
 
 ### Added

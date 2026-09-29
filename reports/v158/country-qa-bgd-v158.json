@@ -7,8 +7,8 @@
     "finderCount": true,
     "detailRuntimeErrors": true,
     "detailCountryKept": true,
-    "otherCountryExpressions": false,
-    "nonLatinBrackets": false,
+    "otherCountryExpressions": true,
+    "nonLatinBrackets": true,
     "bengaliRendering": true,
     "overflow": true
   },
@@ -17,12 +17,13 @@
     "finderShown": 119,
     "finderExpected": 119,
     "runtimeErrors": 0,
-    "otherCountryLeaks": 130,
-    "otherCountrySourceDerived": 33,
-    "nonLatinBrackets": 11,
+    "otherCountryLeaks": 0,
+    "otherCountrySourceDerived": 10,
+    "nonLatinBrackets": 0,
+    "nonLatinBracketsSourceDerived": 6,
     "bengaliPages": 4,
     "brokenBengaliPages": 0,
-    "overflowScreensChecked": 49,
+    "overflowScreensChecked": 50,
     "overflowWidths": [
       320,
       390,
@@ -33,7 +34,7 @@
     ],
     "overflowFindings": 0,
     "compareStates": {
-      "multi-line": 27,
+      "multi-line": 28,
       "grouped-bars": 6,
       "latest-each": 1,
       "unit-mismatch": 1
@@ -58,1142 +59,24 @@
       "E": 16
     },
     "countryNameShown": true,
-    "otherCountry": [
-      {
-        "term": "베트남",
-        "iso3": "VNM",
-        "kind": "country",
-        "sourceDerived": false,
-        "context": ", 기관, 기술, 지역으로 데이터를 검색할 수 있습니다 검색 국가 전체 베트남 방글라데시 정렬 가나다순 조회순 대분류 전체 국가 기본정보 기후·환경 "
-      }
-    ],
-    "nonLatinBrackets": [
-      {
-        "bracket": "격년투명성보고서, 舊 BUR",
-        "context": " 에너지 자원량 광물 자원량 NDC (국가 온실가스 감축 목표) BTR (격년투명성보고서, 舊 BUR) NAP (국가 적응 계획) LT-LEDS (장기 저탄소 발전 전략) T"
-      },
-      {
-        "bracket": "격년투명성보고서, 舊 BUR",
-        "context": " 에너지 자원량 광물 자원량 NDC (국가 온실가스 감축 목표) BTR (격년투명성보고서, 舊 BUR) NAP (국가 적응 계획) LT-LEDS (장기 저탄소 발전 전략) T"
-      }
+    "otherCountry": [],
+    "nonLatinBrackets": [],
+    "selectors": [
+      "전체 · 베트남 · 방글라데시",
+      "가나다순 · 조회순",
+      "전체 · 국가 기본정보 · 기후·환경 · 정책·제도 · 시장·산업·재원 · 협력사업·이행",
+      "전체 · 사회·경제 현황 · GHG 배출 현황 · SDG · 에너지·전력 정보 · 에너지·전력 GIS 공간정보 · 인프라 GIS 공간정보 · 한·개도국 교역액 및 FTA 체결 현황 · 공급망 · 기후 기초 정보 · 과거·미래 기후 · 기후 영향 인자 · 해수면 상승 전망 · 물리적 리스크 · 전환 리스크 · 수자원 취약성 · SSP(공유 사회 경제 경로)기반 사회경제적 리스크 · 기타 관련 지표 · 수문학 · 산림 · 토지이용 · 에너지 자원량 · 광물 자원량 · NDC (국가 온실가스 감축 목표) · BTR (격년투명성보고서, 舊 BUR) · NAP (국가 적응 계획) · LT-LEDS (장기 저탄소 발전 전략) · TNA (기술 수요 평가) · 파리협정 제6.8조 비시장 접근법 참여 현황 · Cooperative Climate Initiative 참여 현황 · 기후 법제도 현황 · 기타 환경 관련 법제도 현황 · 치안·안전 정보 · PPP 법제도·조달 체계 · 외국인 투자 규정 · 인허가 프로세스 · 재생에너지 관련 법제도 · 탄소 시장 관련 법률·예산 · GHG 감축 사업 타당성 검증 기초 정보 · 탄소크레딧 관련 프로젝트·실적 · 공공 파트너 · 민간 파트너 · 온실가스 산정 MRV 체계 · 논문·특허 · 개도국 기술 역량 평가 지표 · 양자협정 현황 · 기타 협력 체계 · 국내 기업 개도국 진출 현황 · 개도국 내 한국 기관 사무소 · 한국 공공·민간 지원체계",
+      "전체 · 2100 · 2099 · 2080 · 2050 · 2040 · 2035 · 2027 · 2026",
+      "전체 · 각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) · 각 기관 공식 웹사이트(KOTRA·KOICA·한국수출입은행·KITA·KEITI·KEPCO) · 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조) · 국세청(NBR) · 방글라데시 법무부 법령DB · 대한무역투자진흥공사(KOTRA) · 방글라데시 법무부 법령DB · 방글라데시 법무부 법령DB(bdlaws.minlaw.gov.bd) · 국세청(NBR) · 방글라데시 전력부(Power Division, MPEMR) · SREDA · 방글라데시 국회 · FAOLEX(FAO) · JICA · UN ESCAP Asia Pacific Energy Portal · 방글라데시 중앙은행(Bangladesh Bank) 외환정책국(FEPD) · 방글라데시 통계국(BBS) × FAO AQUASTAT(국가 농업용수 비중) · 방글라데시 환경청(Department of Environment) · 환경산림기후변화부(MoEFCC) · 세계은행 Ci-Dev · UNFCCC · 산업통상자원부(보도 인용) / JCM 사무국(일본 환경성·경제산업성·외무성) / Article 6 Implementation Partnership · 외교부 해외안전여행 — 방글라데시 국가페이지 · 외교부 해외안전여행 — 여행경보제도 · 전력·에너지·광물자원부(MPEMR) · JICA · IEEJ · 환경산림기후변화부(MoEFCC) · UNFCCC 장기전략 포털 · 전력·에너지·광물자원부(MPEMR) · JICA · IEEJ · UNFCCC(COP26 국가성명) · 한국에너지기술평가원(KETEP) 세계에너지시장정보 — 해외진출 국내기업 정보 · 한국환경산업기술원(KEITI) 해외진출지원 실적표 / 한국수출입은행 EDCF 승인현황 / CTCN 기술지원 프로젝트 / 국가녹색기술연구소(NIGT) 실적 / 한국에너지공단 — 자료별 상이 · Agence Française de Développement (AFD) · Asian Development Bank — Asia Regional Integration Center (ARIC) [기준 원천] / World Trade Organization — RTA-IS [대조] · Asian Development Bank (ADB) · Bangladesh Power Development Board (BPDB) · Bangladesh Power Development Board (BPDB) — IPP 입찰 공고 · Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724) · Berkeley Carbon Trading Project — Voluntary Registry Offsets Database (VROD) v2026-06 · BloombergNEF · Climate Policy Database (climatepolicydatabase.org) · Climate Technology Centre and Network (CTCN) · Climate Watch — NDC Content API (Bangladesh) · Copernicus Emergency Management Service - GloFAS v4 (격자 래스터, CDS) · Copernicus Emergency Management Service - GloFAS v4 (Open-Meteo Global Flood API 경유) · Copernicus Emergency Management Service — GloFAS v4 (Open-Meteo Global Flood API 경유) · Copernicus ERA5-Land (ECMWF/C3S) · Department of Environment, Ministry of Environment, Forest and Climate Change (MoEFCC), Bangladesh · Department of Environment, MoEFCC (Bangladesh Carbon Market Framework) · UNFCCC CDM Insights · Berkeley VROD · Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) · EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1 · Energy Institute · Energy Institute Statistical Review of World Energy · ESA Climate Change Initiative Land Cover (v2.0.7cds, 1992-2015) · Copernicus Climate Change Service C3S Land Cover (v2.1.1, 2016-2022) · ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1 · EU JRC INFORM Risk 2026 TREND · EU JRC INFORM Risk Index 2026 (v0.7.2) · European Commission JRC / UN OCHA — INFORM Risk 2026 · European Commission, Joint Research Centre (JRC) — EDGAR · European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2 · European External Action Service (EEAS) / European Union · FAO — FAOSTAT Crops and livestock products (QCL) 작물 생산량 × 잔재계수(RPR) · FAO — FAOSTAT Crops and livestock products (QCL), Live Animals / Stocks · FAO — FAOSTAT Forestry Production and Trade (FO) 원목·제재목 생산량 × 잔재비 · FAO AQUASTAT · FAO FAOSTAT Land Cover (LC) — CCI-LC · MODIS · CGLS · WorldCover 국가 집계 · FAO FAOSTAT Land Cover (LC), CCI-LC · FAO FAOSTAT Land Cover (LC), MODIS · FAO FAOSTAT Land Use (RL) · FAO FAOSTAT Land Use(RL)·Land Cover(LC) · Global Peatland Map 2.0 · Global Forest Watch (UMD/WRI) · FAOLEX — Bangladesh Energy Regulatory Commission Act, 2003 (Act No. 13 of 2003), Authentic English Text · FAOLEX — The Environment Conservation Rules, 1997 (S.R.O. No. 197-Law/97), Un-official English Version · FAOLEX — The Environment Conservation Rules, 1997, Schedule-13 (S.R.O. No. 234-Law/2002 대체본) · FAOLEX — স্থাবর সম্পত্তি অধিগ্রহণ ও হুকুমদখল আইন, ২০১৭ (Act No. 21 of 2017) · FAOLEX Database (FAO) — 방글라데시 환경 법령 · Climate Policy Database(지정 출처, 대조용) · FAOLEX Database (FAO) — 방글라데시 환경보전규칙 · 부동산 수용·징발법 · 에너지규제위원회법 · FAOLEX Database (FAO) · 방글라데시 국회 관보 · Climate Policy Database(지정 출처, 대조용) · FAOSTAT Land Use (RL) · FAOSTAT QCL 사육두수 × IPCC 2019 Refinement Tier 1 기본값(Vol.4 Ch.10) · Food and Agriculture Organization of the United Nations (FAO) · Germanwatch Climate Risk Index 2026 · Global Data Lab — GVIP Database (Huisman et al., 2025) · Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch / Hansen (UMD) · Global Forest Watch / Hansen et al.(2013) · Global Forest Watch / Hansen et al.(2013), UMD · Global Forest Watch / UMD (Potapov et al. 2022) · Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1 · Global Green Growth Institute (GGGI) · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Wind Atlas 3.x · Google Research (Open Buildings) · Green Climate Fund (GCF) · Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1 · HydroSHEDS v1 Flow Direction (DIR 15s) · IGRAC GGIS / PCR-GLOBWB2 · WaterGAP / NASA GRACE-FO · IHA · Energy Institute · U.S. EIA · World Bank/ESMAP · IIASA SSP Database v3.1 · IIASA SSP Database v3.1 (IIASA GDP 2023) · IIASA SSP Database v3.1 (IIASA-WiC POP 2023) · IIASA SSP Database v3.1 (OECD ENV-Growth 2023) · Infrastructure Development Company Limited (IDCOL) — Solar Home System Program · International Energy Agency (IEA) · International Finance Corporation (IFC) · International Labour Organization (ILOSTAT) · International Renewable Energy Agency (IRENA) · IPCC AR6 Sea Level Projection Tool (NASA/IPCC) · IRENA — Renewable Capacity Statistics 2026 · IRENA Global Atlas (HDR Subsurface Thermal Profiles) · IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1 · Japan International Cooperation Agency (JICA) · JRC INFORM Risk Index — Trend 2017–2026 · JRC INFORM Risk Index 2026 · KfW Development Bank · Korea International Cooperation Agency (KOICA) · Ministry of Finance, Bangladesh · Bangladesh Climate Change Trust (BCCT) · FAOLEX · Ministry of Foreign Affairs of Denmark · Ministry of Foreign Affairs of the Netherlands · National Board of Revenue (NBR) — S.R.O. No. 400-Ain/Aykar-54/2024 · National Board of Revenue (NBR), Internal Resources Division, Ministry of Finance · Power Division, MPEMR · SREDA · ND-GAIN Country Index 2026 · NDC Partnership, Global Green Growth Institute (GGGI), Global Methane Pledge, IRENA — 각 기구 공식 회원·참여국 정보 · OECD · OpenAlex (OurResearch) · OpenStreetMap contributors · OpenStreetMap contributors (Geofabrik 배포본) · Power Division, MPEMR — Renewable Energy Policy of Bangladesh 2025 · Public Private Partnership Authority (PPPA), Prime Minister’s Office, Bangladesh · SREDA 국가재생에너지데이터베이스(NDRE) · BPDB 입찰 공고 · Sustainable Development Solutions Network (SDSN) · Transparency International · U.S. EIA International Energy Statistics / OPEC ASB · U.S. Energy Information Administration — International Energy Statistics (API bulk file INTL.txt) · UN ESCAP Asia Pacific Energy Portal — Net Metering Guidelines 2018 (영문 승인본) · UNCTAD Investment Policy Hub — IIA Navigator · UNESCO Institute for Statistics (UIS) · UNFCCC · UNFCCC — Bangladesh BTR1 (2025) · BUR1 (2023), MoEFCC · UNFCCC · 방글라데시 환경산림기후변화부(MoEFCC) 환경청(DoE) · UNFCCC 사무국 — 글래스고 비시장접근법위원회(GCNMA) · UNFCCC 사무국 — 글래스고 비시장접근법위원회(GCNMA) · NMA 플랫폼 · UNFCCC 제출문서(BTR1·BUR1·기술분석보고서·NDC) / 방글라데시 법령(bdlaws.minlaw.gov.bd) / 방글라데시 환경청(DoE) / GEF / World Bank / 일본 정부(JCM) · UNFCCC CDM Registry · UNFCCC Global Climate Action Portal (NAZCA) · UNFCCC NAP Central — National Adaptation Plan of Bangladesh (2023-2050), MoEFCC · UNFCCC NDC Registry — Bangladesh NDC 3.0 (2025) · Updated NDC (2021), MoEFCC · UNFCCC REDD+ Web Platform · UNFCCC 기술평가보고서 · 리마 REDD+ 정보허브 · FCPF · UNFCCC Technology Mechanism (TT:CLEAR) — National Designated Entities · UNFCCC TT:CLEAR — Bangladesh TNA and TAP Reports (Ministry of Environment and Forests) · United Nations Conference on Trade and Development (UNCTAD) · United Nations Development Programme (UNDP) · United Nations Educational, Scientific and Cultural Organization (UNESCO) · United Nations Environment Programme (UNEP) · United Nations Framework Convention on Climate Change (UNFCCC) · United Nations Industrial Development Organization (UNIDO) · United States Department of State · University of Notre Dame (ND-GAIN) · University of Notre Dame ND-GAIN Country Index 2026 · USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026 · USGS Minerals Yearbook 2020–21 (Bangladesh) · USGS MRDS (Mineral Resources Data System, Edition 20160315) · USPTO Patent Public Search · World Bank · World Bank — Carbon Pricing Dashboard (2025-08판) · World Bank — Doing Business 2020 Economy Profile (Bangladesh) · World Bank — Doing Business 2020, Economy Profile of Bangladesh · World Bank — EU CBAM Exposure Index · World Bank — Intentional homicides (per 100,000 people), VC.IHR.PSRC.P5 (원자료 UNODC) · World Bank — Private Participation in Infrastructure (PPI) Database (Data360) · World Bank — Research and development expenditure (% of GDP, GB.XPD.RSDV.GD.ZS) 및 GDP (current US$, NY.GDP.MKTP.CD). GERD 원자료 UNESCO Institute for Statistics (UIS) · World Bank · Bangladesh Police · 외교부 해외안전여행 · World Bank (UNESCO Institute for Statistics 원자료) · World Bank 방글라데시 CCDR (2022) · World Bank 방글라데시 Country Climate and Development Report (CCDR) 2022 · World Bank Carbon Pricing Dashboard · World Bank CCKP (CMIP6 x0.25) · World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1 · World Bank CCKP (CRU TS 4.09) · World Bank CCKP (CRU TS 4.10) · World Bank CCKP (CRU TS 4.10) · 경계 GADM 4.1 ADM1 · World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03) · World Bank Relative CBAM Exposure Index · World Bank WDI (원자료 IEA) · World Bank WITS (원자료: UN Comtrade) · World Intellectual Property Organization (WIPO) · World Resources Institute · World Resources Institute — Climate Watch · WRI Aqueduct 4.0 (2023) · WRI Aqueduct 4.0 (Kuzma et al., 2023) · 경계 GADM 4.1 ADM1 · WWF Biodiversity Risk Filter · WWF Biodiversity Risk Filter (RFS V3.0) · WWF HydroSHEDS — HydroBASINS v1.c (level 08) · 경계 GADM 4.1 ADM0",
+      "전체 · 지도 제공 · 다운로드 가능",
+      "전체 · 01 태양광 기술 · 02 태양열 기술 · 03 풍력 기술 · 04 해양에너지 기술 · 05 수력 기술 · 06 수열 기술 · 07 지열 기술 · 08 바이오에너지 기술 · 09 수소·암모니아 발전 기술 · 10 석탄액화·가스화 기술 · 11 원자력 기술 · 13 수소 기술 · 14 바이오매스 기술 · 15 폐자원 기술 · 16 발전효율 기술 · 17 산업효율 기술 · 18 수송효율 기술 · 19 건물효율 기술 · 20 전력 통합 기술 · 21 열 통합 기술 · 22 전력-비전력 부문 간 결합 기술 · 23 메탄 처리 기술 · 24 기타 온실가스 처리 및 대체 기술 · 25 탄소 흡수원 기술 · 26 산업·에너지 부문 기술 · 27 농축수산 부문 기술 · 28 산림·생태계 부문 기술 · 29 물 부문 기술 · 30 건강 부문 기술 · 31 국토·연안 부문 기술 · 32 기후변화 감시 및 진단 기술 · 33 기후변화 예측 기술 · 34 기후변화 영향 평가 기술 · 35 기후변화 취약성 및 위험성 평가 기술 · 36 적응조치의 효과평가 기술 · 37 기후변화 적응기반 기술 · 38 이산화탄소 포집·저장·활용 기술",
+      "전체 · 공공기관 · 기업 · 금융기관 · 연구자",
+      "전체 · ① 국가 수준·추세 · ② 지역·입지 · ③ 기술별 비교 · ④ 시설·기관·인프라 위치 · ⑤ 사업·재원 · ⑥ 제도·규제·리스크"
     ],
     "errors": []
   },
-  "leaks": [
-    {
-      "elementId": "finder",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": ", 기관, 기술, 지역으로 데이터를 검색할 수 있습니다 검색 국가 전체 베트남 방글라데시 정렬 가나다순 조회순 대분류 전체 국가 기본정보 기후·환경 "
-    },
-    {
-      "elementId": "A-002",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "여건이 어떤 수준인지 국제 비교가 가능하도록 표준화해 추정한 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 -1.1 점 (2024년)"
-    },
-    {
-      "elementId": "A-003",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "서비스의 최종 가치를 집계해 경제 규모와 소득 수준을 나타낸 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 456,319,229,25"
-    },
-    {
-      "elementId": "A-004",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "인구가 전체 인구에서 차지하는 몫으로 잰 경제적 취약 인구의 비율 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 5.9 % (2022년) "
-    },
-    {
-      "elementId": "A-005",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 부가가치가 국내총생산에서 차지하는 몫으로 나타낸 경제 구조 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 11.42 % (2025년"
-    },
-    {
-      "elementId": "A-006",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "구 가운데 일자리를 얻지 못한 사람의 비율로 나타낸 노동시장 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 3.78 % (2025년)"
-    },
-    {
-      "elementId": "A-007",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "나라의 거주 인구 규모와 도시 지역 거주 분포를 집계한 인구 통계 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 175,686,899 명 "
-    },
-    {
-      "elementId": "A-008",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "비지출 분포가 균등 상태에서 얼마나 벗어났는지 나타낸 불평등 지수 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 30.9 지수 (2022년"
-    },
-    {
-      "elementId": "A-009",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "배출량을 경제 규모와 인구로 나누어 산출한 국가 온실가스 배출강도 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 1.27 tCO2eq/인 "
-    },
-    {
-      "elementId": "A-012",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "위적 온실가스를 이산화탄소 상당량으로 합산해 나타낸 국가 총배출량 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 220.83 MtCO₂e "
-    },
-    {
-      "elementId": "A-014",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "능발전목표(SDG)의 이행 수준을 하나의 점수로 종합한 국가 지수 국가 베트남 방글라데시 판단 포인트 최신값·연도 83.05 점 (2025년) 최근 "
-    },
-    {
-      "elementId": "A-015",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "목표(SDG)의 개별 세부지표마다 달성 수준을 정규화해 매긴 점수 국가 베트남 방글라데시 판단 포인트 최신값·연도 90.42 점 (2022년) 목표별"
-    },
-    {
-      "elementId": "A-018",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "너지 전원의 최대 순 발전용량을 발전기술별로 집계한 설비용량 통계 국가 베트남 방글라데시 판단 포인트 값이 큰 기술 상위 3 발전효율 기술: 6,27"
-    },
-    {
-      "elementId": "A-019",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 사라지는 전력량을 총 발전량 대비 비율로 나타낸 계통 손실 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 7.9 % (2023년) "
-    },
-    {
-      "elementId": "A-020",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "재생에너지가 차지하는 몫을 발전량과 설비용량 기준으로 나타낸 비율 국가 베트남 방글라데시 판단 포인트 최신값·연도 5.04 % (2025년) 최근 5"
-    },
-    {
-      "elementId": "A-021",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "있는 인구가 전체 인구에서 차지하는 비율로 나타낸 전력 보급 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 99.5 % (2024년)"
-    },
-    {
-      "elementId": "A-022",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "로, 세계은행(World Bank) 조사값과 자국 공시값을 담는다 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 88.92 일 (2022년"
-    },
-    {
-      "elementId": "A-025",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "설(CCS) 방글라데시 · 탄소포집·저장 시설·실증·후보지역 현황 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 1개 CCS 실증·후보·연구 "
-    },
-    {
-      "elementId": "A-026",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "그려 올린 건물 윤곽 폴리곤과 용도·층수·높이 등 건물 속성 정보 국가 베트남 방글라데시 다운로드 건물 공간자료 제공 현황 항목 건물 풋프린트 · 건"
-    },
-    {
-      "elementId": "A-027",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 구축한 철도·도로 레이어의 수록 현황을 정리한 교통 인프라 자료 국가 베트남 방글라데시 육상교통 인프라의 지역별 차이와 범위 공간자료에 수록된 지물"
-    },
-    {
-      "elementId": "A-028",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "자들이 구축한 자연지형지물·수로 레이어의 수록 현황을 정리한 자료 국가 베트남 방글라데시 판단 포인트 개체 수 2,102개 규모 합계 15,969.0"
-    },
-    {
-      "elementId": "A-031",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "무 전문가 설문을 바탕으로 각국의 물류 성과를 종합해 평가한 지수 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 2.3 점 (2022년) "
-    },
-    {
-      "elementId": "A-032",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 제품의 투입물로 오가는 중간재의 교역 규모와 비중을 집계한 통계 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 20.3 % (2020년)"
-    },
-    {
-      "elementId": "A-033",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "가 세계 정기선 해운 네트워크에 얼마나 이어져 있는지 종합한 지수 국가 베트남 방글라데시 판단 포인트 최신값·연도 75.12 지수 (2026년) 최근"
-    },
-    {
-      "elementId": "B-001",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 임계값에 견주어 한 해 열두 달을 건기와 우기로 가른 계절 구분 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 2,175.7 mm (19"
-    },
-    {
-      "elementId": "B-002",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "육지 기후를 유형화해 1km 격자로 그린 쾨펜-가이거 기후대 구분 국가 베트남 방글라데시 다운로드 기후대의 지역별 차이와 범위 성·시 단위 값이 납품"
-    },
-    {
-      "elementId": "B-003",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "관측 격자자료를 연 단위로 집계해 제공하는 연평균 기온과 연강수량 국가 베트남 방글라데시 다운로드 평균 기온과 강수량의 추세와 최근 수준 주 분석 9"
-    },
-    {
-      "elementId": "B-004",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "P6 모델 앙상블을 상세화해 시나리오별로 제공하는 기후 변수 묶음 국가 베트남 방글라데시 다운로드 과거·미래 기후전망(CMIP6)의 시나리오·기간별 "
-    },
-    {
-      "elementId": "B-005",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 앙상블에서 산출한 무강수 지속과 물수지 부족을 담은 가뭄 지표군 국가 베트남 방글라데시 다운로드 가뭄 위험의 시나리오별 장기 전망 SPEI-12 전"
-    },
-    {
-      "elementId": "B-006",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "6 앙상블에서 산출한 낮 더위·밤 더위·체감온도 초과 일수 지표군 국가 베트남 방글라데시 다운로드 폭염 위험의 지역별 차이와 범위 주 분석 9개 성·"
-    },
-    {
-      "elementId": "B-007",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "CMIP6 앙상블에서 산출한 극한 강수량과 호우일수를 담은 지표군 국가 베트남 방글라데시 다운로드 홍수·호우 위험의 지역별 차이와 범위 주 분석 9개"
-    },
-    {
-      "elementId": "B-008",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 배출 시나리오별로 추정한 조위관측소 단위 상대 해수면 상승 전망 국가 베트남 방글라데시 다운로드 해수면 상승 전망의 시나리오·기간별 변화 주 분석 "
-    },
-    {
-      "elementId": "B-009",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "과 훼손에서 오는 물리적·규제·평판 위험을 지역별로 평가한 위험도 국가 베트남 방글라데시 생물다양성·기후 위험의 항목별 공개 현황 성·시 단위 값이 "
-    },
-    {
-      "elementId": "B-010",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "발생한 인명·경제 피해를 기준으로 국가를 줄 세운 사후 평가 순위 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 13 순위 (2024년) "
-    },
-    {
-      "elementId": "B-011",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "데시 · 기후 취약성과 적응 준비도를 함께 재어 산출한 국가 지수 국가 베트남 방글라데시 판단 포인트 최신값·연도 0.64 지수 (2024년) 최근 "
-    },
-    {
-      "elementId": "B-012",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "규모를 넘은 재해를 사건 단위로 기록해 온 국제 재해 데이터베이스 국가 베트남 방글라데시 다운로드 재해·재난 이력의 사건 유형과 발생 시기 유형별 재"
-    },
-    {
-      "elementId": "B-013",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "약도와 대EU 수출 비중을 엮어 산정한 추가 배출비용 상대 노출도 국가 베트남 방글라데시 다운로드 탄소국경조정제도 영향의 항목별 공개 현황 항목 EU"
-    },
-    {
-      "elementId": "B-014",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "서에서 탄소가격 도입 효과를 거시모형으로 모의한 국가별 추정 결과 국가 베트남 방글라데시 다운로드 탄소세 도입 효과 전망의 시나리오·기간별 변화 항목"
-    },
-    {
-      "elementId": "B-015",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "TS·탄소세) 방글라데시 · 탄소가격 제도·가격 수준과 대상 범위 국가 베트남 방글라데시 다운로드 탄소가격 수준의 주요 제도 변화 항목 ETS 대상 "
-    },
-    {
-      "elementId": "B-016",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "국제에너지기구 통계를 원자료로 산출한 총에너지 대비 화석연료 비중 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 71.29 % (2015년"
-    },
-    {
-      "elementId": "B-017",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 물 수요를 이용 가능한 공급량으로 나누어 산정한 물 스트레스 값 국가 베트남 방글라데시 다운로드 물 스트레스의 지역별 차이와 범위 성·시 단위 값이"
-    },
-    {
-      "elementId": "B-018",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " · 다섯 개 사회경제 서사별로 추정한 국가 국내총생산 장기 전망 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 86,427.29 2017"
-    },
-    {
-      "elementId": "B-019",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " · 다섯 개 사회경제 서사별로 추정한 국가 인구 규모 장기 전망 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 143.87 백만명 (21"
-    },
-    {
-      "elementId": "B-020",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 리스크 지수 방글라데시 · 재해 위험·취약성·대응역량 지표 비교 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 4.5 지수 (2026년)"
-    },
-    {
-      "elementId": "B-021",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " · 사회경제 여건 일곱 영역을 묶어 산출한 기후 취약성 복합지수 국가 베트남 방글라데시 판단 포인트 상위 3개 지역 전국(Total): 9.04 2"
-    },
-    {
-      "elementId": "B-022",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "고서에서 적응하지 않았을 때의 경제 손실과 투자 소요를 추정한 값 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 38 십억 USD (203"
-    },
-    {
-      "elementId": "B-023",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "데시 · 관측 유량으로 제시한 건기와 우기 사이의 하천 유량 격차 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 558개 관측지점별 건기·우기"
-    },
-    {
-      "elementId": "B-024",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "라데시 · 산정한 연간 총 담수 취수량 가운데 농업이 차지하는 몫 국가 베트남 방글라데시 다운로드 농업 용수 비중(%)의 항목별 비중과 연도별 흐름 "
-    },
-    {
-      "elementId": "B-025",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "유역 면적 방글라데시 · 주요 하천유역별 국경 내·전체 면적 비교 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 67개 규모 합계 278,68"
-    },
-    {
-      "elementId": "B-026",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "치표고모델에서 산출한 격자별 물 흐름 방향과 그 방위별 분포 비율 국가 베트남 방글라데시 다운로드 성·시별 물이 흐르는 방향 주 분석 9개 성·시 분"
-    },
-    {
-      "elementId": "B-027",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "시 · 강수 침투로 해마다 다시 채워지는 몫을 잡은 지하수 자원량 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 21.12 10⁹ m³/y"
-    },
-    {
-      "elementId": "B-028",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 아쿠아스탯 수자원 계열로 지점과 유역에 붙인 하천 유량 관련 값 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 8개 관측지점별 하천 유량과 "
-    },
-    {
-      "elementId": "B-029",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 그라이프스발트 습지센터 이탄지 지도로 잰 산림·습지 유형별 넓이 국가 베트남 방글라데시 다운로드 산림 유형별 면적의 지역별 차이와 범위 주 분석 9"
-    },
-    {
-      "elementId": "B-030",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 방글라데시 · 수목이 없던 곳에 수관이 새로 생긴 넓이를 잰 값 국가 베트남 방글라데시 다운로드 산림 이득(2000–2020 누적)의 지역별 차이와"
-    },
-    {
-      "elementId": "B-031",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "진 수관 밀도 기준을 넘는 목본 식생이 덮은 넓이를 합산해 잰 값 국가 베트남 방글라데시 다운로드 산림 총면적의 지역별 차이와 범위 주 분석 9개 성"
-    },
-    {
-      "elementId": "B-032",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "이 지표를 덮은 정도를 수직 투영해 백분율로 나타낸 수관 밀도 값 국가 베트남 방글라데시 다운로드 수관 피복률(%)의 지역별 차이와 범위 주 분석 9"
-    },
-    {
-      "elementId": "B-033",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "이 있던 곳이 사라진 넓이를 위성으로 탐지해 해마다 집계한 총손실 국가 베트남 방글라데시 다운로드 연간 산림손실의 지역별 차이와 범위 주 분석 9개 "
-    },
-    {
-      "elementId": "B-034",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "산림의 지상부 바이오매스에 쌓인 탄소량을 잰 저장량과 그 변화 값 국가 베트남 방글라데시 다운로드 탄소 저장량의 지역별 차이와 범위 주 분석 9개 성"
-    },
-    {
-      "elementId": "B-035",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "· 국가 보고를 바탕으로 집계한 토지이용 범주별 면적과 관련 지표 국가 베트남 방글라데시 다운로드 전국 토지이용과 농지 지표의 변화 성·시 단위 값이"
-    },
-    {
-      "elementId": "B-036",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 토지이용·토지피복 범주별 면적에서 산출한 연평균 토지이용 변화율 국가 베트남 방글라데시 다운로드 토지 유형별 이용·피복 변화율과 두 시점 변화 성·"
-    },
-    {
-      "elementId": "B-037",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "성 관측으로 지표의 물리적 피복 상태를 분류해 집계한 분류별 넓이 국가 베트남 방글라데시 다운로드 토지피복 구성의 지역별 차이와 범위 성·시 단위 값"
-    },
-    {
-      "elementId": "B-038",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "지로 돌릴 수 있는 유기물 자원이 한 해 얼마나 생기는지 잡은 값 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 138.33 Mt/yr ("
-    },
-    {
-      "elementId": "B-040",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "벌아틀라스의 심도별 지온과 문헌 기반 지열 이용 규모를 담은 자료 국가 베트남 방글라데시 지열 잠재량의 지역별 차이와 범위 주 분석 9개 성·시 분포"
-    },
-    {
-      "elementId": "B-041",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "글로벌솔라아틀라스가 잰 수평면 전천 일사량과 직달 일사량 자원 값 국가 베트남 방글라데시 다운로드 태양광 자원의 지역별 차이와 범위 주 분석 9개 성"
-    },
-    {
-      "elementId": "B-042",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "이 기준으로 산출한 장기 평균 풍속과 단위 면적당 바람 에너지밀도 국가 베트남 방글라데시 다운로드 풍력 자원의 지역별 차이와 범위 주 분석 9개 성·"
-    },
-    {
-      "elementId": "B-043",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "과 미국 에너지정보청 통계로 잡은 석탄·석유·천연가스의 확인매장량 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 0.11 조 m³ (tcm"
-    },
-    {
-      "elementId": "B-044",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "· 정리한 광종 목록과 광종별 부존 상태·원광 수출규제 해당 여부 국가 베트남 방글라데시 다운로드 핵심 광물 종류의 항목별 공개 현황 세부 분류 전체"
-    },
-    {
-      "elementId": "B-045",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "집 표를 판독해 매긴 광종별 세계 매장량·생산량 순위와 세계 비중 국가 베트남 방글라데시 광물자원 국제순위의 항목별 공개 현황 현재 선택 조건에 표시"
-    },
-    {
-      "elementId": "B-046",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " · 보고한 광종별 확인 매장량과 매장량 미수록 광종의 부존 근거 국가 베트남 방글라데시 광물 매장량의 항목별 공개 현황 현재 선택 조건에 표시할 값"
-    },
-    {
-      "elementId": "B-047",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " · 보고한 광종별 연간 광산 생산량과 알루미나 등 가공품 생산량 국가 베트남 방글라데시 광물 생산량의 항목별 공개 현황 현재 선택 조건에 표시할 값"
-    },
-    {
-      "elementId": "B-048",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "물자원자료체계(MRDS)로 확인한 주요 광산의 소재지와 광종 속성 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 3개 주요 광산 위치의 지역별"
-    },
-    {
-      "elementId": "C-001",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "에 따라 제출·갱신하는 국가 차원의 온실가스 감축·적응 공약 문서 국가 베트남 방글라데시 다운로드 NDC 이행 조건별 감축목표 기후기술 전체 01 태"
-    },
-    {
-      "elementId": "C-002",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "사국이 격년으로 제출하는 온실가스 배출량과 감축 이행 진전 보고서 국가 베트남 방글라데시 다운로드 보고서에 수록된 배출량과 이행 정보 자료 목록 항목"
-    },
-    {
-      "elementId": "C-003",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "위해 수립해 유엔기후변화협약(UNFCCC)에 통보하는 중장기 계획 국가 베트남 방글라데시 다운로드 국가적응계획(NAP)의 항목별 공개 현황 자료 목록"
-    },
-    {
-      "elementId": "C-005",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "을 스스로 발굴해 우선순위를 매기고 도입 장벽을 분석한 평가 결과 국가 베트남 방글라데시 다운로드 기후기술 수요 및 우선기술의 항목별 공개 현황 자료"
-    },
-    {
-      "elementId": "C-006",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "TMO) 양자 협정과 이를 뒷받침하는 국가 이행 체계의 구축 현황 국가 베트남 방글라데시 다운로드 판단 포인트 건수 16건 파리협정 제6조 양자협력 "
-    },
-    {
-      "elementId": "C-007",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 이전 없이 각국의 감축목표 이행을 돕는 비시장 협력의 참여 현황 국가 베트남 방글라데시 다운로드 파리협정 6.8조 비시장접근법(NMA) 참여 현황 "
-    },
-    {
-      "elementId": "C-008",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "기후 목표를 위해 자발적으로 함께 추진하는 협력 활동의 참여 기록 국가 베트남 방글라데시 다운로드 국제 기후협력 이니셔티브의 베트남 참여 검색어 선택"
-    },
-    {
-      "elementId": "C-009",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 직접 관련되는 국가 차원의 법률·하위법령·전략·계획을 모은 대장 국가 베트남 방글라데시 기후변화 법·제도의 주요 제도 변화 연대기 시점별 기록 · "
-    },
-    {
-      "elementId": "C-010",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "성 등 기후 외 환경 분야 법령의 제정과 시행 현황을 기록한 대장 국가 베트남 방글라데시 환경 법·제도의 주요 제도 변화 연대기 시점별 기록 · 13"
-    },
-    {
-      "elementId": "C-012",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "조달 방식, 계약 유형, 사업 이력으로 제도 기반을 나타낸 정보군 국가 베트남 방글라데시 다운로드 민관협력·조달 제도의 항목별 공개 현황 자료 목록 "
-    },
-    {
-      "elementId": "C-014",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "·토지 등기에 필요한 절차 수와 소요 기간, 비용을 기록한 정보군 국가 베트남 방글라데시 다운로드 사업 인허가 절차의 항목별 공개 현황 자료 목록 항"
-    },
-    {
-      "elementId": "C-016",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "대상 기술, 사업자 선정 방식, 발주 기관을 담은 계획·발주 현황 국가 베트남 방글라데시 성·시별 재생에너지 계획용량 기후기술 전체 03 풍력 기술 "
-    },
-    {
-      "elementId": "C-017",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "지원제도의 유형·대상 기술·시행 기관과 지급 가격·기간·용량 조건 국가 베트남 방글라데시 재생에너지 투자 인센티브의 항목별 공개 현황 기후기술 전체 "
-    },
-    {
-      "elementId": "C-019",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "부문·가격, 관련 예산으로 탄소가격제의 법적 근거를 나타낸 정보군 국가 베트남 방글라데시 다운로드 지역별 온실가스 인벤토리 의무 대상 시설 연대기 시"
-    },
-    {
-      "elementId": "C-020",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "는 데 필요한 감축 방법론·베이스라인·추가성 근거 등의 기초 정보 국가 베트남 방글라데시 온실가스 감축사업 기초정보 수집 상태 자료가 아직 입고되지 "
-    },
-    {
-      "elementId": "C-021",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "에서 개발 중이거나 검증 절차를 밟고 있는 감축·흡수 사업의 목록 국가 베트남 방글라데시 자발적 탄소시장 사업목록 수집 상태 자료가 아직 입고되지 않"
-    },
-    {
-      "elementId": "C-023",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "데 드는 비용을 감축수단별로 견주기 위해 톤당 금액으로 나타낸 값 국가 베트남 방글라데시 한계저감비용 자료 수집 상태 자료가 아직 입고되지 않았습니다"
-    },
-    {
-      "elementId": "C-024",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "소축적 증진(REDD+)에 관한 국가 단위 이행 요건의 충족 현황 국가 베트남 방글라데시 다운로드 판단 포인트 건수 7건 산림전용 방지 및 산림보전("
-    },
-    {
-      "elementId": "D-001",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "자액을 설비용량으로 나눠 기술별로 집계한 용량 1kW당 설비투자비 국가 베트남 방글라데시 단위 사업당 CAPEX의 항목별 공개 현황 자료가 아직 입고"
-    },
-    {
-      "elementId": "D-002",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "0년 설비용량 목표를 2023년 실적과 견줘 환산한 연평균 성장률 국가 베트남 방글라데시 시장 성장률의 항목별 공개 현황 자료가 아직 입고되지 않았습"
-    },
-    {
-      "elementId": "D-003",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "가스 감축량 방글라데시 · 기술·설비 규모별 예상 온실가스 감축량 국가 베트남 방글라데시 예상 감축량의 항목별 공개 현황 자료가 아직 입고되지 않았습"
-    },
-    {
-      "elementId": "D-004",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "가로 20년 크레딧 수익이 설비투자비를 얼마나 메우는지 본 회수율 국가 베트남 방글라데시 크레딧 가격 연동 수익성의 항목별 공개 현황 자료가 아직 입"
-    },
-    {
-      "elementId": "D-005",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 감축·적응·동시기여로 갈라 각 몫이 차지하는 비중으로 나타낸 값 국가 베트남 방글라데시 기후예산의 적응·감축 배분 구조 자료가 아직 입고되지 않았습"
-    },
-    {
-      "elementId": "D-006",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "세) 수입 방글라데시 · 환경보호세 등 세목별 세수와 연도별 변화 국가 베트남 방글라데시 환경보호세 수입과 연료별 세율 자료가 아직 입고되지 않았습니"
-    },
-    {
-      "elementId": "D-007",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "성을 표시하는 제도를 갖췄는지와 어느 수준까지 갖췄는지 구분한 값 국가 베트남 방글라데시 기후예산태깅(CBT, Climate Budget Taggin"
-    },
-    {
-      "elementId": "D-008",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "출을 그 재원을 관리하는 부처·성 단위로 나눠 집계한 금액과 비중 국가 베트남 방글라데시 주관 부처별 기후 예산 규모의 항목별 공개 현황 자료가 아직"
-    },
-    {
-      "elementId": "D-009",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "다고 가려낸 정부 지출의 규모와 경제 규모 대비 부담을 집계한 값 국가 베트남 방글라데시 총 지출 규모, 연도별 추이의 항목별 공개 현황 자료가 아직"
-    },
-    {
-      "elementId": "D-010",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "지하는 데 들어가는 명시적·암묵적 지원을 합쳐 산정한 보조금 규모 국가 베트남 방글라데시 화석연료 보조금 규모의 항목별 공개 현황 자료가 아직 입고되"
-    },
-    {
-      "elementId": "D-011",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "력 대상국에 실제 지출된 공적개발원조(ODA) 금액을 집계한 통계 국가 베트남 방글라데시 ODA 유입 규모와 공여자 구성 자료가 아직 입고되지 않았습"
-    },
-    {
-      "elementId": "D-012",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 경쟁국 민간기업이 현지 기후기술 사업에 진출한 건을 기록한 대장 국가 베트남 방글라데시 경쟁국 민간기업의 개도국 진출 현황의 항목별 공개 현황 자료"
-    },
-    {
-      "elementId": "D-013",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "과 연계된 목표의 달성도로 나라별 녹색성장 성과를 평가한 종합지수 국가 베트남 방글라데시 녹색성장지수의 종합·부문·세부항목별 점수 자료가 아직 입고되"
-    },
-    {
-      "elementId": "D-014",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "F)이 제출한 유상원조 사업을 사업 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 대외경제협력기금 사업의 규모와 분야별 분포 자료가 아직 입고"
-    },
-    {
-      "elementId": "D-015",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "개발원조(ODA) 사업을 뽑아 사업 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 한국 공적개발원조 사업의 규모와 분야별 분포 자료가 아직 입"
-    },
-    {
-      "elementId": "D-016",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "위원회와 지방자치단체가 제출한 개발협력 사업을 건별로 기록한 대장 국가 베트남 방글라데시 정부·지방자치단체 협력사업의 규모와 분야별 분포 자료가 아직"
-    },
-    {
-      "elementId": "D-017",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 개발협력 사업의 사업개요서 접수·입찰 공고를 건별로 기록한 대장 국가 베트남 방글라데시 한국 ODA 사업기획·입찰의 항목별 공개 현황 자료가 아직 "
-    },
-    {
-      "elementId": "D-018",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "시 · 승인한 기후적응 사업을 사업 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 적응기금 사업의 규모와 분야별 분포 자료가 아직 입고되지 않"
-    },
-    {
-      "elementId": "D-019",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 통해 접수한 기술지원 요청을 요청 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 CTCN 기술지원의 규모와 분야별 분포 자료가 아직 입고되지"
-    },
-    {
-      "elementId": "D-020",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "(AE)이 이행을 맡는 사업을 사업 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 녹색기후기금 사업의 규모와 분야별 분포 자료가 아직 입고되지"
-    },
-    {
-      "elementId": "D-021",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "상국에서 추진한 개발협력 사업을 사업 1건당 한 행으로 모은 대장 국가 베트남 방글라데시 국제기구·개발은행 사업의 규모와 분야별 분포 자료가 아직 입"
-    },
-    {
-      "elementId": "D-022",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "련된 것으로 분류된 투자 사업을 사업 1건당 한 행으로 모은 대장 국가 베트남 방글라데시 개발금융·민관협력 투자사업의 규모와 분야별 분포 자료가 아직"
-    },
-    {
-      "elementId": "D-023",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "자기금(CIF)이 승인한 사업을 사업 1건당 한 행으로 모은 대장 국가 베트남 방글라데시 국제협력·기후재원 사업의 규모와 분야별 분포 자료가 아직 입"
-    },
-    {
-      "elementId": "D-024",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "사에 실린 기후기술 투자 거래를 거래 1건당 한 행으로 모은 대장 국가 베트남 방글라데시 벤처·임팩트 투자의 규모와 분야별 분포 자료가 아직 입고되지"
-    },
-    {
-      "elementId": "D-025",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "험을 나눠 지는 인프라 사업을 사업 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 민간 인프라 투자의 규모와 분야별 분포 자료가 아직 입고되지"
-    },
-    {
-      "elementId": "D-026",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "려고 발급했거나 제안한 보증을 보증 1건당 한 행으로 기록한 대장 국가 베트남 방글라데시 정치적 위험 보증사업의 규모와 분야별 분포 자료가 아직 입고"
-    },
-    {
-      "elementId": "E-002",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "축사업 참여를 승인하도록 지정한 국가지정기관(DNA)의 기관 대장 국가 베트남 방글라데시 파리협정 국가지정기관의 기관별 공개 정보 제6_4조_전환_상"
-    },
-    {
-      "elementId": "E-006",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 댈 수 있는 투자기관을 유형·투자 분야·운용 규모로 정리한 대장 국가 베트남 방글라데시 판단 포인트 개체 수 16개 현지 투자자 네트워크의 기관별 "
-    },
-    {
-      "elementId": "E-007",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 검증하는 협력 대상국의 측정·보고·검증(MRV) 체계 구비 현황 국가 베트남 방글라데시 온실가스 산정·보고·검증 체계의 항목별 공개 현황 분류 전체"
-    },
-    {
-      "elementId": "E-008",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 분야·출원인·한국과의 공동 산출 여부까지 건별로 모은 문헌 대장 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 66.2 % (2026년)"
-    },
-    {
-      "elementId": "E-009",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 인구 100만 명당 연구자 수를 함께 보는 기술 인력 기반 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 11.15 % (2020년"
-    },
-    {
-      "elementId": "E-010",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "(GII)와 국내총생산 대비 연구개발 지출 비율을 함께 보는 지표 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 19 순위 (2025년) "
-    },
-    {
-      "elementId": "E-011",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 여러 세부 지표로 종합해 나타낸 네트워크 준비지수(NRI) 점수 국가 베트남 방글라데시 기술준비수준 입력 준비 상태 자료가 아직 입고되지 않았습니다"
-    },
-    {
-      "elementId": "E-012",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "임금 수준을 고용률·산업부문별 종사자 비중과 함께 보는 노동 통계 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 17.37 % (2024년"
-    },
-    {
-      "elementId": "E-013",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "행할 수 있는 역량을 인력·부품·정비체계·사후관리로 나눠 본 자료 국가 베트남 방글라데시 운영·유지보수 역량 입력 양식 자료가 아직 입고되지 않았습니"
-    },
-    {
-      "elementId": "E-014",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "너지 협력 문서의 유형·체결일·이행 상태를 협정 단위로 모은 자료 국가 베트남 방글라데시 판단 포인트 상태 이행 중 2건 기후·녹색성장 양자협정의 항"
-    },
-    {
-      "elementId": "E-015",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 협력 대상국이 회원으로 참여하고 있는지를 협력체별로 표시한 자료 국가 베트남 방글라데시 NDC 파트너십 참여의 항목별 공개 현황 가입_상태_구분_m"
-    },
-    {
-      "elementId": "E-016",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 상용화까지 어느 단계에 이르렀는지 분야별로 나타낸 성숙 단계 값 국가 베트남 방글라데시 한국 기후기술 성숙도의 항목별 공개 현황 자료가 아직 입고되"
-    },
-    {
-      "elementId": "E-017",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": " 수출에서 얼마나 강점을 갖는지 나타낸 현시비교우위(RCA) 지표 국가 베트남 방글라데시 한국 기후기술 비교우위의 항목별 공개 현황 자료가 아직 입고"
-    },
-    {
-      "elementId": "E-018",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "지사와 수행 중인 사업을 업종·진출 형태별로 모은 기업 단위 대장 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 3개 한국 기업의 현지 진출의"
-    },
-    {
-      "elementId": "E-020",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": false,
-      "context": "는 기후기술 해외진출 지원 프로그램의 유형·대상·예산을 모은 자료 국가 베트남 방글라데시 판단 포인트 건수 9건 한국의 공공·민간 지원제도의 규모와 "
-    }
-  ],
+  "leaks": [],
   "sourceDerived": [
-    {
-      "elementId": "A-001",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "바탕으로 각국 공공부문의 부패 수준을 인식 기준으로 정량화한 지수 국가 베트남 방글라데시 판단 포인트 최신값·연도 21.53 점 (2025년) 최근 "
-    },
-    {
-      "elementId": "A-010",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "적 온실가스 배출량을 가스 종류별로 구분해 집계한 국가 배출 통계 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 70.46 MtCO₂e ("
-    },
-    {
-      "elementId": "A-011",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "실가스 배출량을 배출이 일어나는 활동 부문별로 구분해 집계한 통계 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 67.82 MtCO₂e ("
-    },
-    {
-      "elementId": "A-013",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "C) 문안을 지속가능발전목표 세부목표에 대응시켜 정리한 연계 정보 국가 베트남 방글라데시 다운로드 기후목표와 지속가능발전목표의 연결 자료 목록 항목별"
-    },
-    {
-      "elementId": "A-016",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": " 나라의 1차 에너지 소비를 공급원별로 구분해 집계한 에너지 통계 국가 베트남 방글라데시 판단 포인트 최신값·연도 0.42 EJ (2025년) 최근 "
-    },
-    {
-      "elementId": "A-017",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": " 수명주기 비용을 총 발전량으로 나누어 산출한 단위 발전량당 비용 국가 베트남 방글라데시 판단 포인트 값이 큰 기술 상위 3 발전효율 기술: 94 U"
-    },
-    {
-      "elementId": "A-023",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": " · 개별 발전소의 위치와 설비용량을 지점 단위로 정리한 공간정보 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 57개 규모 합계 11,840"
-    },
-    {
-      "elementId": "A-024",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": ".INFO로 공개한 송전 선로의 경로와 전압을 담은 선형 공간정보 국가 베트남 방글라데시 판단 포인트 개체 수 984개 베트남 송전망의 지역별 차이와"
-    },
-    {
-      "elementId": "A-029",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "조] FTA 체결 현황 방글라데시 · 자유무역협정 체결·발효 현황 국가 베트남 방글라데시 판단 포인트 최신 개정 2026년 (2026년) 자유무역협정"
-    },
     {
       "elementId": "A-029",
       "term": "인도네시아",
@@ -1273,176 +156,225 @@
       "kind": "country",
       "sourceDerived": true,
       "context": ": D-8 PTA] · 구분: 다자/지역 · 상대국/지역: 방글라데시, 이집트, 인도네시아, 이란, 말레이시아, 나이지리아, 파키스탄, 튀르키예 · "
-    },
-    {
-      "elementId": "A-030",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "한-개도국 교역액 방글라데시 · 한국과의 교역 규모와 연도별 변화 국가 베트남 방글라데시 다운로드 판단 포인트 최신값·연도 0.98 10억 USD ("
-    },
-    {
-      "elementId": "B-039",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "데시 · 하천 격자점의 유량과 낙차로 산정한 이론적 수력 총잠재량 국가 베트남 방글라데시 다운로드 수력 잠재량의 지역별 차이와 범위 주 분석 9개 성"
-    },
-    {
-      "elementId": "C-004",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "고 수립·통보하는 장기 배출 경로와 넷제로 목표를 담은 국가 전략 국가 베트남 방글라데시 장기 저탄소 발전전략의 항목별 공개 현황 자료 목록 항목별 "
-    },
-    {
-      "elementId": "C-011",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": " 치안 상황, 범죄 통계로 현지 활동의 안전 여건을 나타낸 정보군 국가 베트남 방글라데시 다운로드 치안·안전 정보의 항목별 공개 현황 정책 정책 목록"
-    },
-    {
-      "elementId": "C-013",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "투자보호협정, 수익 송금 규정으로 이뤄진 외국인 투자 규제 정보군 국가 베트남 방글라데시 외국인 투자제도의 항목별 공개 현황 자료 목록 항목별 내용과"
-    },
-    {
-      "elementId": "C-015",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": " 관련 법제도·계획 문서의 원문 소재지(URL)를 담는 메타 항목 국가 베트남 방글라데시 정책·제도 원문자료의 항목별 공개 현황 자료 목록 항목별 내"
-    },
-    {
-      "elementId": "C-018",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "확충 계획, 재생에너지 비중 목표를 담은 중장기 에너지 수급 전망 국가 베트남 방글라데시 개정 PDP8의 전력 계획·전망과 전력가격 규정 정책 정책 "
-    },
-    {
-      "elementId": "C-022",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "관 기반을 갖췄는지 제도 구축 항목별로 판정해 점수로 나타낸 지표 국가 베트남 방글라데시 인벤토리 대상 시설의 지역·부문별 구성 자료 목록 항목별 내"
-    },
-    {
-      "elementId": "C-025",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "량을 등록 표준·기술 분야와 함께 프로젝트 단위로 모은 실적 대장 국가 베트남 방글라데시 다운로드 탄소크레딧 사업 및 발행실적의 규모와 분야별 분포 "
-    },
-    {
-      "elementId": "E-001",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "을 요청하는 공식 창구로 지정한 국가지정기구(NDE)의 기관 대장 국가 베트남 방글라데시 CTCN 국가지정기구의 기관별 공개 정보 기후기술 전체 02"
-    },
-    {
-      "elementId": "E-003",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "국 정부를 잇는 창구로 지정한 국가지정기관(NDA)의 담당자 대장 국가 베트남 방글라데시 다운로드 녹색기후기금 국가지정기관의 기관별 공개 정보 역할_"
-    },
-    {
-      "elementId": "E-004",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "자 개발협력기관의 현지 조직과 기후·에너지 담당 창구를 모은 대장 국가 베트남 방글라데시 다운로드 판단 포인트 개체 수 19개 국제기구 현지사무소의 "
-    },
-    {
-      "elementId": "E-005",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "발이나 관련 활동을 수행하는 대학·연구기관·비영리단체의 기관 대장 국가 베트남 방글라데시 판단 포인트 개체 수 20개 대학·연구기관·시민사회의 기관별"
-    },
-    {
-      "elementId": "E-019",
-      "term": "베트남",
-      "iso3": "VNM",
-      "kind": "country",
-      "sourceDerived": true,
-      "context": "소의 소재지·담당 업무와 기후·에너지 담당 인력 유무를 모은 대장 국가 베트남 방글라데시 판단 포인트 개체 수 8개 한국 기관 현지사무소의 기관별 공"
     }
   ],
-  "brackets": [
-    {
-      "elementId": "finder",
-      "bracket": "격년투명성보고서, 舊 BUR",
-      "context": " 에너지 자원량 광물 자원량 NDC (국가 온실가스 감축 목표) BTR (격년투명성보고서, 舊 BUR) NAP (국가 적응 계획) LT-LEDS (장기 저탄소 발전 전략) T"
-    },
-    {
-      "elementId": "finder",
-      "bracket": "격년투명성보고서, 舊 BUR",
-      "context": " 에너지 자원량 광물 자원량 NDC (국가 온실가스 감축 목표) BTR (격년투명성보고서, 舊 BUR) NAP (국가 적응 계획) LT-LEDS (장기 저탄소 발전 전략) T"
-    },
-    {
-      "elementId": "B-023",
-      "bracket": "倍",
-      "context": " 558건 Bhairab Bazar · 2015 값 10.362 단위 비(倍) 지점·유역 Bhairab Bazar 위치 메그나 본류 · BWDB 상설"
-    },
-    {
-      "elementId": "B-023",
-      "bracket": "倍",
-      "context": " 558건 Bhairab Bazar · 2015 값 10.362 단위 비(倍) 지점·유역 Bhairab Bazar 위치 메그나 본류 · BWDB 상설"
-    },
-    {
-      "elementId": "C-002",
-      "bracket": "격년투명성보고서, 舊 BUR",
-      "context": "검색 결과로 돌아가기 정책·제도 › BTR (격년투명성보고서, 舊 BUR) 데이터 제공 다운로드 가능 UNFCCC — Bangladesh BTR1"
-    },
+  "brackets": [],
+  "sourceBrackets": [
     {
       "elementId": "C-010",
       "bracket": "সনের … নং",
+      "sourceDerived": true,
       "context": "27년 산림법과 2012년 야생동물법을 대체한 것으로 확인되나, 법령번호(সনের … নং)·재가일·폐지조항 원문을 확보하지 못함. 재확보 대상 1차 출처: bdl"
     },
     {
       "elementId": "C-010",
       "bracket": "বিধিমালা",
+      "sourceDerived": true,
       "context": " 못함. 재확보 대상 1차 출처: https://doe.gov.bd 규칙(বিধিমালা) 목록 및 해당 관보 PDF. FAOLEX 게재본 — FAO 이용약관 적"
     },
     {
       "elementId": "C-014",
       "bracket": "ক",
+      "sourceDerived": true,
       "context": "지 취득 BGD-C014-LAND-ARIPA 시장가는 제9조 제(1)항 (ক) — 제4조 통지 발부 직전 12개월간 인근(vicinity) 동종·동등"
     },
     {
       "elementId": "C-014",
       "bracket": "খ",
+      "sourceDerived": true,
       "context": "분이며 총 보상액 비율이 아님. 부수 손실 100%는 제9조 제(1)항 (খ)~(ঙ)(작물·수목, 분할손실, 기타 재산·소득 영향, 이전비용)에 적용"
     },
     {
       "elementId": "C-014",
       "bracket": "ঙ",
+      "sourceDerived": true,
       "context": "총 보상액 비율이 아님. 부수 손실 100%는 제9조 제(1)항 (খ)~(ঙ)(작물·수목, 분할손실, 기타 재산·소득 영향, 이전비용)에 적용됨. 기"
     },
     {
       "elementId": "C-017",
       "bracket": "খ",
+      "sourceDerived": true,
       "context": " 법률의 위임을 함께 원용함. BGD-C017-INS-TAX211 조건 (খ)이 \"নবায়নযোগ্য জ্বালানি নীতিমালা, ২০২৫ এ"
     }
+  ],
+  "selectorTexts": [
+    "전체 · 베트남 · 방글라데시",
+    "가나다순 · 조회순",
+    "전체 · 국가 기본정보 · 기후·환경 · 정책·제도 · 시장·산업·재원 · 협력사업·이행",
+    "전체 · 사회·경제 현황 · GHG 배출 현황 · SDG · 에너지·전력 정보 · 에너지·전력 GIS 공간정보 · 인프라 GIS 공간정보 · 한·개도국 교역액 및 FTA 체결 현황 · 공급망 · 기후 기초 정보 · 과거·미래 기후 · 기후 영향 인자 · 해수면 상승 전망 · 물리적 리스크 · 전환 리스크 · 수자원 취약성 · SSP(공유 사회 경제 경로)기반 사회경제적 리스크 · 기타 관련 지표 · 수문학 · 산림 · 토지이용 · 에너지 자원량 · 광물 자원량 · NDC (국가 온실가스 감축 목표) · BTR (격년투명성보고서, 舊 BUR) · NAP (국가 적응 계획) · LT-LEDS (장기 저탄소 발전 전략) · TNA (기술 수요 평가) · 파리협정 제6.8조 비시장 접근법 참여 현황 · Cooperative Climate Initiative 참여 현황 · 기후 법제도 현황 · 기타 환경 관련 법제도 현황 · 치안·안전 정보 · PPP 법제도·조달 체계 · 외국인 투자 규정 · 인허가 프로세스 · 재생에너지 관련 법제도 · 탄소 시장 관련 법률·예산 · GHG 감축 사업 타당성 검증 기초 정보 · 탄소크레딧 관련 프로젝트·실적 · 공공 파트너 · 민간 파트너 · 온실가스 산정 MRV 체계 · 논문·특허 · 개도국 기술 역량 평가 지표 · 양자협정 현황 · 기타 협력 체계 · 국내 기업 개도국 진출 현황 · 개도국 내 한국 기관 사무소 · 한국 공공·민간 지원체계",
+    "전체 · 2100 · 2099 · 2080 · 2050 · 2040 · 2035 · 2027 · 2026",
+    "전체 · 각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) · 각 기관 공식 웹사이트(KOTRA·KOICA·한국수출입은행·KITA·KEITI·KEPCO) · 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조) · 국세청(NBR) · 방글라데시 법무부 법령DB · 대한무역투자진흥공사(KOTRA) · 방글라데시 법무부 법령DB · 방글라데시 법무부 법령DB(bdlaws.minlaw.gov.bd) · 국세청(NBR) · 방글라데시 전력부(Power Division, MPEMR) · SREDA · 방글라데시 국회 · FAOLEX(FAO) · JICA · UN ESCAP Asia Pacific Energy Portal · 방글라데시 중앙은행(Bangladesh Bank) 외환정책국(FEPD) · 방글라데시 통계국(BBS) × FAO AQUASTAT(국가 농업용수 비중) · 방글라데시 환경청(Department of Environment) · 환경산림기후변화부(MoEFCC) · 세계은행 Ci-Dev · UNFCCC · 산업통상자원부(보도 인용) / JCM 사무국(일본 환경성·경제산업성·외무성) / Article 6 Implementation Partnership · 외교부 해외안전여행 — 방글라데시 국가페이지 · 외교부 해외안전여행 — 여행경보제도 · 전력·에너지·광물자원부(MPEMR) · JICA · IEEJ · 환경산림기후변화부(MoEFCC) · UNFCCC 장기전략 포털 · 전력·에너지·광물자원부(MPEMR) · JICA · IEEJ · UNFCCC(COP26 국가성명) · 한국에너지기술평가원(KETEP) 세계에너지시장정보 — 해외진출 국내기업 정보 · 한국환경산업기술원(KEITI) 해외진출지원 실적표 / 한국수출입은행 EDCF 승인현황 / CTCN 기술지원 프로젝트 / 국가녹색기술연구소(NIGT) 실적 / 한국에너지공단 — 자료별 상이 · Agence Française de Développement (AFD) · Asian Development Bank — Asia Regional Integration Center (ARIC) [기준 원천] / World Trade Organization — RTA-IS [대조] · Asian Development Bank (ADB) · Bangladesh Power Development Board (BPDB) · Bangladesh Power Development Board (BPDB) — IPP 입찰 공고 · Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724) · Berkeley Carbon Trading Project — Voluntary Registry Offsets Database (VROD) v2026-06 · BloombergNEF · Climate Policy Database (climatepolicydatabase.org) · Climate Technology Centre and Network (CTCN) · Climate Watch — NDC Content API (Bangladesh) · Copernicus Emergency Management Service - GloFAS v4 (격자 래스터, CDS) · Copernicus Emergency Management Service - GloFAS v4 (Open-Meteo Global Flood API 경유) · Copernicus Emergency Management Service — GloFAS v4 (Open-Meteo Global Flood API 경유) · Copernicus ERA5-Land (ECMWF/C3S) · Department of Environment, Ministry of Environment, Forest and Climate Change (MoEFCC), Bangladesh · Department of Environment, MoEFCC (Bangladesh Carbon Market Framework) · UNFCCC CDM Insights · Berkeley VROD · Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) · EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1 · Energy Institute · Energy Institute Statistical Review of World Energy · ESA Climate Change Initiative Land Cover (v2.0.7cds, 1992-2015) · Copernicus Climate Change Service C3S Land Cover (v2.1.1, 2016-2022) · ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1 · EU JRC INFORM Risk 2026 TREND · EU JRC INFORM Risk Index 2026 (v0.7.2) · European Commission JRC / UN OCHA — INFORM Risk 2026 · European Commission, Joint Research Centre (JRC) — EDGAR · European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2 · European External Action Service (EEAS) / European Union · FAO — FAOSTAT Crops and livestock products (QCL) 작물 생산량 × 잔재계수(RPR) · FAO — FAOSTAT Crops and livestock products (QCL), Live Animals / Stocks · FAO — FAOSTAT Forestry Production and Trade (FO) 원목·제재목 생산량 × 잔재비 · FAO AQUASTAT · FAO FAOSTAT Land Cover (LC) — CCI-LC · MODIS · CGLS · WorldCover 국가 집계 · FAO FAOSTAT Land Cover (LC), CCI-LC · FAO FAOSTAT Land Cover (LC), MODIS · FAO FAOSTAT Land Use (RL) · FAO FAOSTAT Land Use(RL)·Land Cover(LC) · Global Peatland Map 2.0 · Global Forest Watch (UMD/WRI) · FAOLEX — Bangladesh Energy Regulatory Commission Act, 2003 (Act No. 13 of 2003), Authentic English Text · FAOLEX — The Environment Conservation Rules, 1997 (S.R.O. No. 197-Law/97), Un-official English Version · FAOLEX — The Environment Conservation Rules, 1997, Schedule-13 (S.R.O. No. 234-Law/2002 대체본) · FAOLEX — স্থাবর সম্পত্তি অধিগ্রহণ ও হুকুমদখল আইন, ২০১৭ (Act No. 21 of 2017) · FAOLEX Database (FAO) — 방글라데시 환경 법령 · Climate Policy Database(지정 출처, 대조용) · FAOLEX Database (FAO) — 방글라데시 환경보전규칙 · 부동산 수용·징발법 · 에너지규제위원회법 · FAOLEX Database (FAO) · 방글라데시 국회 관보 · Climate Policy Database(지정 출처, 대조용) · FAOSTAT Land Use (RL) · FAOSTAT QCL 사육두수 × IPCC 2019 Refinement Tier 1 기본값(Vol.4 Ch.10) · Food and Agriculture Organization of the United Nations (FAO) · Germanwatch Climate Risk Index 2026 · Global Data Lab — GVIP Database (Huisman et al., 2025) · Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch / Hansen (UMD) · Global Forest Watch / Hansen et al.(2013) · Global Forest Watch / Hansen et al.(2013), UMD · Global Forest Watch / UMD (Potapov et al. 2022) · Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1 · Global Green Growth Institute (GGGI) · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Wind Atlas 3.x · Google Research (Open Buildings) · Green Climate Fund (GCF) · Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1 · HydroSHEDS v1 Flow Direction (DIR 15s) · IGRAC GGIS / PCR-GLOBWB2 · WaterGAP / NASA GRACE-FO · IHA · Energy Institute · U.S. EIA · World Bank/ESMAP · IIASA SSP Database v3.1 · IIASA SSP Database v3.1 (IIASA GDP 2023) · IIASA SSP Database v3.1 (IIASA-WiC POP 2023) · IIASA SSP Database v3.1 (OECD ENV-Growth 2023) · Infrastructure Development Company Limited (IDCOL) — Solar Home System Program · International Energy Agency (IEA) · International Finance Corporation (IFC) · International Labour Organization (ILOSTAT) · International Renewable Energy Agency (IRENA) · IPCC AR6 Sea Level Projection Tool (NASA/IPCC) · IRENA — Renewable Capacity Statistics 2026 · IRENA Global Atlas (HDR Subsurface Thermal Profiles) · IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1 · Japan International Cooperation Agency (JICA) · JRC INFORM Risk Index — Trend 2017–2026 · JRC INFORM Risk Index 2026 · KfW Development Bank · Korea International Cooperation Agency (KOICA) · Ministry of Finance, Bangladesh · Bangladesh Climate Change Trust (BCCT) · FAOLEX · Ministry of Foreign Affairs of Denmark · Ministry of Foreign Affairs of the Netherlands · National Board of Revenue (NBR) — S.R.O. No. 400-Ain/Aykar-54/2024 · National Board of Revenue (NBR), Internal Resources Division, Ministry of Finance · Power Division, MPEMR · SREDA · ND-GAIN Country Index 2026 · NDC Partnership, Global Green Growth Institute (GGGI), Global Methane Pledge, IRENA — 각 기구 공식 회원·참여국 정보 · OECD · OpenAlex (OurResearch) · OpenStreetMap contributors · OpenStreetMap contributors (Geofabrik 배포본) · Power Division, MPEMR — Renewable Energy Policy of Bangladesh 2025 · Public Private Partnership Authority (PPPA), Prime Minister’s Office, Bangladesh · SREDA 국가재생에너지데이터베이스(NDRE) · BPDB 입찰 공고 · Sustainable Development Solutions Network (SDSN) · Transparency International · U.S. EIA International Energy Statistics / OPEC ASB · U.S. Energy Information Administration — International Energy Statistics (API bulk file INTL.txt) · UN ESCAP Asia Pacific Energy Portal — Net Metering Guidelines 2018 (영문 승인본) · UNCTAD Investment Policy Hub — IIA Navigator · UNESCO Institute for Statistics (UIS) · UNFCCC · UNFCCC — Bangladesh BTR1 (2025) · BUR1 (2023), MoEFCC · UNFCCC · 방글라데시 환경산림기후변화부(MoEFCC) 환경청(DoE) · UNFCCC 사무국 — 글래스고 비시장접근법위원회(GCNMA) · UNFCCC 사무국 — 글래스고 비시장접근법위원회(GCNMA) · NMA 플랫폼 · UNFCCC 제출문서(BTR1·BUR1·기술분석보고서·NDC) / 방글라데시 법령(bdlaws.minlaw.gov.bd) / 방글라데시 환경청(DoE) / GEF / World Bank / 일본 정부(JCM) · UNFCCC CDM Registry · UNFCCC Global Climate Action Portal (NAZCA) · UNFCCC NAP Central — National Adaptation Plan of Bangladesh (2023-2050), MoEFCC · UNFCCC NDC Registry — Bangladesh NDC 3.0 (2025) · Updated NDC (2021), MoEFCC · UNFCCC REDD+ Web Platform · UNFCCC 기술평가보고서 · 리마 REDD+ 정보허브 · FCPF · UNFCCC Technology Mechanism (TT:CLEAR) — National Designated Entities · UNFCCC TT:CLEAR — Bangladesh TNA and TAP Reports (Ministry of Environment and Forests) · United Nations Conference on Trade and Development (UNCTAD) · United Nations Development Programme (UNDP) · United Nations Educational, Scientific and Cultural Organization (UNESCO) · United Nations Environment Programme (UNEP) · United Nations Framework Convention on Climate Change (UNFCCC) · United Nations Industrial Development Organization (UNIDO) · United States Department of State · University of Notre Dame (ND-GAIN) · University of Notre Dame ND-GAIN Country Index 2026 · USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026 · USGS Minerals Yearbook 2020–21 (Bangladesh) · USGS MRDS (Mineral Resources Data System, Edition 20160315) · USPTO Patent Public Search · World Bank · World Bank — Carbon Pricing Dashboard (2025-08판) · World Bank — Doing Business 2020 Economy Profile (Bangladesh) · World Bank — Doing Business 2020, Economy Profile of Bangladesh · World Bank — EU CBAM Exposure Index · World Bank — Intentional homicides (per 100,000 people), VC.IHR.PSRC.P5 (원자료 UNODC) · World Bank — Private Participation in Infrastructure (PPI) Database (Data360) · World Bank — Research and development expenditure (% of GDP, GB.XPD.RSDV.GD.ZS) 및 GDP (current US$, NY.GDP.MKTP.CD). GERD 원자료 UNESCO Institute for Statistics (UIS) · World Bank · Bangladesh Police · 외교부 해외안전여행 · World Bank (UNESCO Institute for Statistics 원자료) · World Bank 방글라데시 CCDR (2022) · World Bank 방글라데시 Country Climate and Development Report (CCDR) 2022 · World Bank Carbon Pricing Dashboard · World Bank CCKP (CMIP6 x0.25) · World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1 · World Bank CCKP (CRU TS 4.09) · World Bank CCKP (CRU TS 4.10) · World Bank CCKP (CRU TS 4.10) · 경계 GADM 4.1 ADM1 · World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03) · World Bank Relative CBAM Exposure Index · World Bank WDI (원자료 IEA) · World Bank WITS (원자료: UN Comtrade) · World Intellectual Property Organization (WIPO) · World Resources Institute · World Resources Institute — Climate Watch · WRI Aqueduct 4.0 (2023) · WRI Aqueduct 4.0 (Kuzma et al., 2023) · 경계 GADM 4.1 ADM1 · WWF Biodiversity Risk Filter · WWF Biodiversity Risk Filter (RFS V3.0) · WWF HydroSHEDS — HydroBASINS v1.c (level 08) · 경계 GADM 4.1 ADM0",
+    "전체 · 지도 제공 · 다운로드 가능",
+    "전체 · 01 태양광 기술 · 02 태양열 기술 · 03 풍력 기술 · 04 해양에너지 기술 · 05 수력 기술 · 06 수열 기술 · 07 지열 기술 · 08 바이오에너지 기술 · 09 수소·암모니아 발전 기술 · 10 석탄액화·가스화 기술 · 11 원자력 기술 · 13 수소 기술 · 14 바이오매스 기술 · 15 폐자원 기술 · 16 발전효율 기술 · 17 산업효율 기술 · 18 수송효율 기술 · 19 건물효율 기술 · 20 전력 통합 기술 · 21 열 통합 기술 · 22 전력-비전력 부문 간 결합 기술 · 23 메탄 처리 기술 · 24 기타 온실가스 처리 및 대체 기술 · 25 탄소 흡수원 기술 · 26 산업·에너지 부문 기술 · 27 농축수산 부문 기술 · 28 산림·생태계 부문 기술 · 29 물 부문 기술 · 30 건강 부문 기술 · 31 국토·연안 부문 기술 · 32 기후변화 감시 및 진단 기술 · 33 기후변화 예측 기술 · 34 기후변화 영향 평가 기술 · 35 기후변화 취약성 및 위험성 평가 기술 · 36 적응조치의 효과평가 기술 · 37 기후변화 적응기반 기술 · 38 이산화탄소 포집·저장·활용 기술",
+    "전체 · 공공기관 · 기업 · 금융기관 · 연구자",
+    "전체 · ① 국가 수준·추세 · ② 지역·입지 · ③ 기술별 비교 · ④ 시설·기관·인프라 위치 · ⑤ 사업·재원 · ⑥ 제도·규제·리스크",
+    "베트남 · 방글라데시",
+    "CPI 산출 원천 수 · 건 · CPI 순위 · 위 · CPI 순위(구 척도) · 위 · CPI 신뢰구간 상한 · 점 · CPI 신뢰구간 하한 · 점 · CPI 점수 · 점 · CPI 점수(구 척도) · 점 · CPI 표준오차 · 점",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2000 · 1998 · 1996",
+    "백분위(같은 해 조사대상국 중 위치) · 표준값(Estimate)",
+    "1인당 GDP · USD · 1인당 GDP · 국제달러 · 1인당 GDP 성장률 · % · GDP 성장률 · % · GDP 총액 · USD · GDP 총액 · 국제달러 · GNI 총액 · 국제달러",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990 · 1989 · 1988 · 1987 · 1986 · 1985",
+    "극빈곤율 · % · 빈곤율 · %",
+    "2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991",
+    "2025년 · 2024년 · 2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년 · 2007년 · 2006년 · 2005년 · 2004년 · 2003년 · 2002년 · 2001년 · 2000년 · 1999년 · 1998년 · 1997년 · 1996년 · 1995년 · 1994년 · 1993년 · 1992년 · 1991년 · 1990년 · 1989년 · 1988년 · 1987년 · 1986년",
+    "전체 실업률 · % · 청년 실업률 · %",
+    "전체 · ILO 추정치 · 베트남 통계",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991",
+    "도시인구 · 명 · 도시인구 증가율 · % · 도시화율 · % · 총인구 · 명",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990 · 1989 · 1988 · 1987 · 1986 · 1985 · 1984 · 1983 · 1982 · 1981 · 1980 · 1979 · 1978 · 1977 · 1976 · 1975 · 1974 · 1973 · 1972 · 1971 · 1970 · 1969 · 1968 · 1967 · 1966 · 1965 · 1964 · 1963 · 1962 · 1961 · 1960",
+    "GHG 배출 강도 · tCO2eq/1,000 국제달러 · GHG 배출 강도 · tCO2eq/인",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990",
+    "가스별 CO₂ 환산 배출량 · MtCO₂e · 가스별 질량 · Gg",
+    "2024년 · 2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년 · 2007년 · 2006년 · 2005년 · 2004년 · 2003년 · 2002년 · 2001년 · 2000년 · 1999년 · 1998년 · 1997년 · 1996년 · 1995년 · 1994년 · 1993년 · 1992년 · 1991년 · 1990년 · 1989년 · 1988년 · 1987년 · 1986년 · 1985년 · 1984년 · 1983년 · 1982년 · 1981년 · 1980년 · 1979년 · 1978년 · 1977년 · 1976년 · 1975년 · 1974년 · 1973년 · 1972년 · 1971년 · 1970년",
+    "LULUCF 순플럭스 · Mt CO2eq · 순 GHG 배출량 · Mt CO2eq · 총 GHG 배출량 · Mt CO2eq",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990 · 1989 · 1988 · 1987 · 1986 · 1985 · 1984 · 1983 · 1982 · 1981 · 1980 · 1979 · 1978 · 1977 · 1976 · 1975 · 1974 · 1973 · 1972 · 1971 · 1970",
+    "SDG Index 종합순위 · 위 · SDG Index 종합점수 · 점 · 목표별 달성도 · 점",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000",
+    "SDG1 세부지표 달성도 · SDG2 세부지표 달성도 · SDG3 세부지표 달성도 · SDG4 세부지표 달성도 · SDG5 세부지표 달성도 · SDG6 세부지표 달성도 · SDG7 세부지표 달성도 · SDG8 세부지표 달성도 · SDG9 세부지표 달성도 · SDG10 세부지표 달성도 · SDG11 세부지표 달성도 · SDG12 세부지표 달성도 · SDG13 세부지표 달성도 · SDG14 세부지표 달성도 · SDG15 세부지표 달성도 · SDG16 세부지표 달성도 · SDG17 세부지표 달성도",
+    "점수 낮은 순 · 점수 높은 순 · 지표명 순",
+    "2025년 · 2024년 · 2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년 · 2007년 · 2006년 · 2005년 · 2004년 · 2003년 · 2002년 · 2001년 · 2000년 · 1999년 · 1998년 · 1997년 · 1996년 · 1995년 · 1994년 · 1993년 · 1992년 · 1991년 · 1990년 · 1989년 · 1988년 · 1987년 · 1986년 · 1985년 · 1984년 · 1983년 · 1982년 · 1981년 · 1980년 · 1979년 · 1978년 · 1977년 · 1976년 · 1975년 · 1974년 · 1973년 · 1972년 · 1971년 · 1970년 · 1969년 · 1968년 · 1967년 · 1966년 · 1965년",
+    "전체 · 가스복합화력(CCGT)(기준값) · 가스복합화력(CCGT)(상한) · 가스복합화력(CCGT)(하한) · 석탄화력(기준값) · 석탄화력(상한) · 석탄화력(하한) · 수상 태양광(기준값) · 수상 태양광(상한) · 수상 태양광(하한) · 육상풍력(기준값) · 육상풍력(상한) · 육상풍력(하한) · 육상풍력+배터리(4시간)(기준값) · 육상풍력+배터리(4시간)(상한) · 육상풍력+배터리(4시간)(하한) · 태양광(기준값) · 태양광(상한) · 태양광(하한) · 태양광+배터리(4시간)(기준값) · 태양광+배터리(4시간)(상한) · 태양광+배터리(4시간)(하한) · 해상풍력(기준값) · 해상풍력(상한) · 해상풍력(하한)",
+    "전체 · 01 태양광 기술 · 01 태양광 기술 · 13 수소 기술 · 03 풍력 기술 · 03 풍력 기술 · 13 수소 기술 · 16 발전효율 기술",
+    "2050 · 2030 · 2023",
+    "자료 순서 · 높은 값부터 · 낮은 값부터",
+    "주요 8개 함께 보기 · 비재생에너지 합계(계통연계) · 화석연료(계통연계) · 천연가스(계통연계) · 석유(계통연계) · 석탄(계통연계) · 비재생에너지 합계(독립형) · 화석연료(독립형) · 재생에너지 합계(계통연계) · 태양광(계통연계) · 태양에너지(계통연계) · 재생 수력(계통연계) · 재생에너지 합계(독립형) · 태양광(독립형) · 태양에너지(독립형) · 육상풍력(계통연계) · 풍력(계통연계) · 고체 바이오연료(계통연계) · 바이오에너지(계통연계) · 바이오에너지(독립형) · 바이오가스(독립형) · 육상풍력(독립형) · 풍력(독립형) · 고체 바이오연료(독립형)",
+    "2025년 · 2024년 · 2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년 · 2007년 · 2006년 · 2005년 · 2004년 · 2003년 · 2002년 · 2001년 · 2000년",
+    "2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990",
+    "전체 · 발전량 기준 · 설비용량 기준",
+    "전체 · 농촌 · 도시 · 전체",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993",
+    "SAIDI · 분/고객 · SAIFI · 회/고객 · 전기 연결 대기일수 · 일 · 정전 피해 기업 매출손실률 · %",
+    "2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007",
+    "송전 선로 구간 수 · 건 · 송전 선로 목록 · kV · 송전 선로 총 연장 · km",
+    "건물 풋프린트 · 건 · 건물 풋프린트(OSM 참고) · % · 건물 풋프린트(OSM 참고) · EPSG 코드 · 건물 풋프린트(OSM 참고) · m2 · 건물 풋프린트(OSM 참고) · 개 · 건물 풋프린트(OSM 참고) · 건",
+    "전체 · 총 바닥면적 · 평균 바닥면적",
+    "철도 · 도로",
+    "자연지형·지물 · 수로",
+    "전체 · 대방글라데시 수입액 · 대방글라데시 수출액 · 무역수지 · 총 교역액",
+    "2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990 · 1989 · 1988",
+    "전체 · 국제운송 · 물류서비스 역량 · 인프라 · 정시성 · 종합 · 추적가능성 · 통관",
+    "2022 · 2018 · 2016 · 2014 · 2010 · 2007",
+    "중간재 교역 · % · 중간재 교역 규모 · 천 USD",
+    "전체 · 수출 중 중간재 국내부가가치 비중 · 재수출된 중간재 수입 비중",
+    "2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995",
+    "전체 · Q1 · Q2 · Q3 · Q4",
+    "2026 · 2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006",
+    "연 평년강수 (1991-2020 평년) · mm · 연 평년기온 (1991-2020 평년) · ℃ · 월 평년강수 · mm · 월 평년기온 · ℃ · 월별 건기/우기 구분(전국) · 구분",
+    "전체 · 1월 (1991-2020 평년) · 2월 (1991-2020 평년) · 3월 (1991-2020 평년) · 4월 (1991-2020 평년) · 5월 (1991-2020 평년) · 6월 (1991-2020 평년) · 7월 (1991-2020 평년) · 8월 (1991-2020 평년) · 9월 (1991-2020 평년) · 10월 (1991-2020 평년) · 11월 (1991-2020 평년) · 12월 (1991-2020 평년)",
+    "국가 우세 기후대 · 구분 · 기후대별 점유 면적 · km2 · 기후대별 점유 비율 · % · 열대기후(A군) 국토 점유 비율 · %",
+    "연평균 기온 — °C · 연평균 최고기온 — °C · 연평균 최저기온 — °C · 연강수량 — mm",
+    "9개 성·시 전체 분포 · Bangladesh · Barisal · Chittagong · Dhaka · Khulna · Mymensingh · Rajshahi · Rangpur · Sylhet",
+    "1901년 · 1902년 · 1903년 · 1904년 · 1905년 · 1906년 · 1907년 · 1908년 · 1909년 · 1910년 · 1911년 · 1912년 · 1913년 · 1914년 · 1915년 · 1916년 · 1917년 · 1918년 · 1919년 · 1920년 · 1921년 · 1922년 · 1923년 · 1924년 · 1925년 · 1926년 · 1927년 · 1928년 · 1929년 · 1930년 · 1931년 · 1932년 · 1933년 · 1934년 · 1935년 · 1936년 · 1937년 · 1938년 · 1939년 · 1940년 · 1941년 · 1942년 · 1943년 · 1944년 · 1945년 · 1946년 · 1947년 · 1948년 · 1949년 · 1950년 · 1951년 · 1952년 · 1953년 · 1954년 · 1955년 · 1956년 · 1957년 · 1958년 · 1959년 · 1960년 · 1961년 · 1962년 · 1963년 · 1964년 · 1965년 · 1966년 · 1967년 · 1968년 · 1969년 · 1970년 · 1971년 · 1972년 · 1973년 · 1974년 · 1975년 · 1976년 · 1977년 · 1978년 · 1979년 · 1980년 · 1981년 · 1982년 · 1983년 · 1984년 · 1985년 · 1986년 · 1987년 · 1988년 · 1989년 · 1990년 · 1991년 · 1992년 · 1993년 · 1994년 · 1995년 · 1996년 · 1997년 · 1998년 · 1999년 · 2000년 · 2001년 · 2002년 · 2003년 · 2004년 · 2005년 · 2006년 · 2007년 · 2008년 · 2009년 · 2010년 · 2011년 · 2012년 · 2013년 · 2014년 · 2015년 · 2016년 · 2017년 · 2018년 · 2019년 · 2020년 · 2021년 · 2022년 · 2023년 · 2024년 · 2025년",
+    "연평균 기온 — °C · 연평균 최고기온 — °C · 연평균 최저기온 — °C · 연강수량 — mm · 상대습도 — % · 지표면 일사량 W m — W/m² · 지표면 풍속 m s — m/s",
+    "모든 시나리오 · 과거 모형(historical) · SSP1-1.9 · SSP1-2.6 · SSP2-4.5 · SSP3-7.0 · SSP5-8.5",
+    "2015년 · 2016년 · 2017년 · 2018년 · 2019년 · 2020년 · 2021년 · 2022년 · 2023년 · 2024년 · 2025년 · 2026년 · 2027년 · 2028년 · 2029년 · 2030년 · 2031년 · 2032년 · 2033년 · 2034년 · 2035년 · 2036년 · 2037년 · 2038년 · 2039년 · 2040년 · 2041년 · 2042년 · 2043년 · 2044년 · 2045년 · 2046년 · 2047년 · 2048년 · 2049년 · 2050년 · 2051년 · 2052년 · 2053년 · 2054년 · 2055년 · 2056년 · 2057년 · 2058년 · 2059년 · 2060년 · 2061년 · 2062년 · 2063년 · 2064년 · 2065년 · 2066년 · 2067년 · 2068년 · 2069년 · 2070년 · 2071년 · 2072년 · 2073년 · 2074년 · 2075년 · 2076년 · 2077년 · 2078년 · 2079년 · 2080년 · 2081년 · 2082년 · 2083년 · 2084년 · 2085년 · 2086년 · 2087년 · 2088년 · 2089년 · 2090년 · 2091년 · 2092년 · 2093년 · 2094년 · 2095년 · 2096년 · 2097년 · 2098년 · 2099년 · 2100년",
+    "폭염일수(최고기온 35°C 이상) — 일 · 폭염일수(최고기온 40°C 이상) — 일 · 열대야(최저기온 23°C 이상) — 일 · 열대야(최저기온 26°C 이상) — 일 · 열대야(최저기온 29°C 이상) — 일 · 체감온도(Heat Index) 35°C 이상 일수 — 일",
+    "최대 1일 강수량(RX1day) — mm · 최대 5일 강수량(RX5day) — mm · 호우일수(20mm 이상) — 일 · 호우일수(50mm 이상) — 일 · 연속 습윤일수(CWD) — 일",
+    "CHARCHANGA · COX'S BAZAAR · HIRON POINT · KHEPUPARA",
+    "5분위 · 17분위 · 중앙값(50분위) · 83분위 · 95분위",
+    "WWF BRF · 지수 · WWF BRF 물리적 위험(Scape Physical) · 점 · WWF BRF 제공 서비스(Provisioning) · 점 · WWF BRF 조절 · 점 · WWF BRF 조절 서비스(Mitigating) · 점",
+    "전체 · Scape Physical Risk · Scape Regulatory Deficiency Risk · Scape Reputational Risk",
+    "2024년 최대 피해 극한기상 사건 · 사건 · CRI 30년 누적 순위 · 순위 · CRI 순위 · 순위 · CRI 종합 순위 · 순위",
+    "2024 · 2023",
+    "ND-GAIN 종합점수 · 점 · ND-GAIN 준비도 · 지수 · 물 하위지표 · 점 · 보건 하위지표 · 점 · 생태계 서비스 하위지표 · 점 · 식량 하위지표 · 점 · 인간 서식지 하위지표 · 점 · 인프라 하위지표 · 점 · 적응준비도(Readiness) · 지수 · 취약성 구성요소 · 지수 · 취약성 종합(Vulnerability) · 지수 · 취약성 하위부문 · 지수",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995",
+    "EU 평균 탄소지불액 · % · 경제 노출지수(Economic Exposure Index) · % · 대EU 수출비중 · % · 대EU 수출액 · % · 무역 노출지수(Trade Exposure Index) · % · 생산 노출지수(Output Exposure Index) · % · 탄소지불액 · %",
+    "CBAM 합계 · 비료 · 시멘트 · 알루미늄 · 철강",
+    "GDP 영향 · %p (GDP 성장률) · 권고 탄소가격 경로 · USD/tCO₂e · 누적 추가 세수 · 십억 USD · 배출 감소율 · % · 연간 세수(GDP 대비) (범위 상한) · % of GDP/yr · 연간 세수(GDP 대비) (범위 하한) · % of GDP/yr",
+    "전체 · NZP-no-reforms · NZP-with-measures",
+    "ETS 대상 시설 수 · 개소 · 국내 배출권거래제(ETS) 운영 상태 · 상태 · 배출권 할당량 · tCO₂e · 탄소 가격(실효 가격) · USD/tCO₂e · 탄소세 · USD/tCO₂e",
+    "전체 · 거래소 개설 · 법적 근거 · 시행 규정",
+    "화석연료 소비 비중 · % · 화석연료 소비 비중(EI 기반 보완 산출) · %",
+    "2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990",
+    "기준 물 스트레스(Baseline Water Stress) · 원값 — 비율(총 취수량 ÷ 가용 재생수자원) · 기준 물 스트레스 · 점수(0~5) — 점(0~5) · 기준 물 고갈(Baseline Water Depletion) · 원값 — 비율(소비적 이용 ÷ 가용 재생수자원) · 기준 물 고갈 · 점수(0~5) — 점(0~5) · 종합 물 리스크(Overall Water Risk, 기본 가중) · 점수(0~5) — 점(0~5) · 종합 물 리스크(기본 가중) · 원값 — 가중 평균 점수(0~5) · 가뭄 위험(Drought Risk) · 원값 — 지수(0~1) · 가뭄 위험 · 점수(0~5) — 점(0~5) · 하천 홍수 위험(Riverine Flood Risk) · 원값 — 연간 홍수 피해 예상 인구 비율 · 하천 홍수 위험 · 점수(0~5) — 점(0~5) · 연안 홍수 위험(Coastal Flood Risk) · 원값 — 연간 홍수 피해 예상 인구 비율 · 연안 홍수 위험 · 점수(0~5) — 점(0~5) · 지하수위 하강(Groundwater Table Decline) · 원값 — cm/년 · 연간 변동성(Interannual Variability) · 원값 — 변동계수 · 연간 변동성 · 점수(0~5) — 점(0~5) · 계절 변동성(Seasonal Variability) · 원값 — 변동계수 · 계절 변동성 · 점수(0~5) — 점(0~5) · 순위표 값",
+    "8개 성·시 · 평가구역 전체 분포 · Bangladesh · Barisal · Chittagong · Dhaka · Khulna · Rajshahi · Rangpur · Sylhet",
+    "1인당 GDP(PPP) · 2017년 구매력평가 기준 미국달러/인 · 1인당 GDP(PPP) 과거 실적(참고) · 2017년 구매력평가 기준 미국달러/인 · 1인당 GDP(PPP) 전 구간 · 2017년 구매력평가 기준 미국달러/인 · GDP(PPP) · 2017년 구매력평가 기준 10억 미국달러/년 · GDP(PPP) 과거 실적(참고) · 2017년 구매력평가 기준 10억 미국달러/년 · GDP(PPP) 전 구간 · 2017년 구매력평가 기준 10억 미국달러/년 · GDP(PPP) 전망 · 2017년 구매력평가 기준 10억 미국달러/년",
+    "전체 · SSP1 · SSP2 · SSP3 · SSP4 · SSP5",
+    "2100 · 2095 · 2090 · 2085 · 2080 · 2075 · 2070 · 2065 · 2060 · 2055 · 2050 · 2045 · 2040 · 2035 · 2030 · 2025 · 2020",
+    "인구 과거 실적(참고) · 백만명 · 인구 전 구간 · 백만명 · 인구 전망 · 백만명",
+    "INFORM Risk · 지수 · INFORM Risk 세계 순위 · 순위 · INFORM Risk 시계열(2017–2026) · 지수 · INFORM Risk 위험등급 · 등급 · INFORM 결측 지표 수 · 개 · INFORM 신뢰도 부족 지수 · 점 · INFORM 자료 최신성 · 년 · INFORM 추세 · 원값 · INFORM 추세 · 점 · INFORM 하위지표 · 점 · 결측 지표 비율 · %",
+    "전체 · INFORM 종합 · 대응역량 부족(CC) · 위험·노출(HA) · 취약성(VU)",
+    "2026 · 2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017",
+    "GVI 7개 사회경제 차원 하위지수 · 지수 · GVI 장래전망(PGVI, 2020–2100) · 지수 · GVI 취약성 지수 · 지수 · 구성지표 · % · 구성지표 · 2017년 구매력평가 기준 미국달러(로그) · 구성지표 · 년 · 구성지표 · 세 · 구성지표 · 지수 · 전망 구성지표 · % · 전망 구성지표 · USD (2017 PPP) · 전망 구성지표 · 건/100명 · 전망 구성지표 · 년 · 전망 구성지표 · 세 · 전망 구성지표 · 지수",
+    "전체 · 국가 · 지역(23구역)",
+    "전체 · Bagerhat, Khulna, Satkhira · Bandarban, Cox s Bazar · Barguna, Bhola, Patuakhali · Barisal, Jhalokati, Pirojpur · Bogra, Gaibandha, Jaypurhat · Brahmanbaria, Chandpur, Comilla · Chittagong · Chuadanga, Jhenaidah, Kushtia, Meherpur · Dhaka · Dinajpur, Nilphamari, Panchagarh, Thakurgaon · Faridpur, Manikganj, Rajbari · Feni, Lakshmipur, Noakhali · Gazipur, Narayanganj, Narsingdi · Gopalganj, Madaripur, Munshiganj, Shariatpur · Habiganj, Sunamganj · Jamalpur, Sherpur, Tangail · Jessore, Magura, Narail · Khagrachhari, Rangamati (Chattagram) · Kishoreganj, Mymensingh, Netrakona · Kurigram, Lalmonirhat, Rangpur · Maulvibazar, Sylhet · Naogaon, Nawabganj, Rajshahi · Natore, Pabna, Sirajganj",
+    "2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000",
+    "2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년 · 2007년 · 2006년 · 2005년 · 2004년 · 2003년 · 2002년 · 2001년 · 2000년",
+    "기후 투자 재원 구성 · 십억 US$ · 기후 피해 경제손실(적응 부재 시) (범위 상한) · % of GDP/yr · 기후 피해 경제손실(적응 부재 시) (범위 하한) · % of GDP/yr · 적응 투자 필요액 · 십억 USD · 총 투자 필요액(적응+탈탄소) · 십억 USD · 추가 극빈곤 인구 · 명",
+    "전체 · 공공 · 민간 · 외부(대외) 지원",
+    "농업 용수 취수 비중 · % · 농업 용수 취수 비중(총 재생가능 수자원 대비) · %",
+    "2023년 · 2022년 · 2021년 · 2020년 · 2019년 · 2018년 · 2017년 · 2016년 · 2015년 · 2014년 · 2013년 · 2012년 · 2011년 · 2010년 · 2009년 · 2008년",
+    "전체 · Basin · Country",
+    "동 비율(E) — % · 북동 비율(NE) — % · 북서 비율(NW) — % · 북 비율(N) — % · 남동 비율(SE) — % · 남서 비율(SW) — % · 남 비율(S) — % · W 서 비율 — % · 우세 유향 비율 — %",
+    "이용가능(정규 재생) 지하수 · 10⁹ m³/yr · 지하수 자원량 · mm/yr 또는 10⁹ m³/yr · 총 재생가능 지하수 자원량 · 10⁹ m³/yr",
+    "이탄지 면적 합계 — km² · 이탄 우세 면적 — km² · 이탄 모자이크 면적 — km² · 전국 값 · 이탄지 면적 이탄 우세 천ha · 이탄지 면적 천ha · 합계",
+    "국토 대비 이탄지 비율 · % · 이탄지 총면적 · 천ha · 이탄지 총면적 · km2 · 습윤열대 1차림 면적(위성 기준) · ha · 습윤열대 1차림 잔여 면적(환산값) · ha · 맹그로브 면적 · 1000 ha · 맹그로브 면적(MODIS) · 1000 ha · 맹그로브 면적(WorldCover) · 1000 ha · 자연재생림 면적 · 1000 ha · 조림지 면적 · 1000 ha",
+    "수관 이득(2000–2020 누적) — ha · 수관 손실(2000–2020 누적) — ha · 수관 순변화(2000–2020) — ha · 수관 순변화율(2000–2020) — % · 교란 후 회복(2000–2020) — ha · 수관 면적 ha · 2000년 — ha · 분석대상 면적 ha(GFW) · 유지 ha — ha",
+    "증감 ha · 2000 2010 — ha · 분석대상 면적 ha — ha · 수관 면적 ha · 2000 — ha · 수관 면적 ha · 2010 — ha · 수관 피복률 · 2000 · 수관 피복률 · 2010",
+    "2001년 · 2002년 · 2003년 · 2004년 · 2005년 · 2006년 · 2007년 · 2008년 · 2009년 · 2010년 · 2011년 · 2012년 · 2013년 · 2014년 · 2015년 · 2016년 · 2017년 · 2018년 · 2019년 · 2020년 · 2021년 · 2022년 · 2023년 · 2024년 · 2025년",
+    "산림탄소 순플럭스 yr(Mg CO2e) · 산림탄소 총배출 yr(Mg CO2e) · 산림탄소 총흡수 yr(Mg CO2) · 지상부 탄소밀도 ha(Mg C) — ha · 지상부 탄소저장량(Mg C) · 값 전국 계열",
+    "농업 총면적(Agriculture) · 1000 ha · 양식 · 1000 ha · 유기농 경작지 · 1000 ha · 유기농 인증 완료 경작지 · 1000 ha · 유기농 인증 완료 농지 · 1000 ha · 유기농 인증 완료 영구 초지 · 1000 ha · 유기농 전환 · 1000 ha · 유기농 전환 영구 초지 · 1000 ha · 일년생 작물 재배면적 · 1000 ha · 일년생 초지 · 1000 ha · 일년생 휴경지 · 1000 ha · 토지이용 면적 · 1000 ha",
+    "2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008 · 2007 · 2006 · 2005 · 2004 · 2003 · 2002 · 2001 · 2000 · 1999 · 1998 · 1997 · 1996 · 1995 · 1994 · 1993 · 1992 · 1991 · 1990 · 1989 · 1988 · 1987 · 1986 · 1985 · 1984 · 1983 · 1982 · 1981 · 1980 · 1979 · 1978 · 1977 · 1976 · 1975 · 1974 · 1973 · 1972 · 1971 · 1970 · 1969 · 1968 · 1967 · 1966 · 1965 · 1964 · 1963 · 1962 · 1961",
+    "토지이용 변화율 · %/yr · 토지피복 변화율 · %/yr · 토지피복 변화율(MODIS) · %/yr",
+    "전체 · 가경지 · 경작지 · 관개 정비면적 · 국토면적 · 기타 토지 · 내수면 · 농지 · 산림지 · 영구 초지·목초지 · 영년생 작물 · 원시림 · 육지면적 · 자연재생림 · 조림지",
+    "2024 · 2020",
+    "경작지 면적 — km² · 수목 면적 — km² · 초지 면적 — km² · 관목 면적 — km² · 건물·인공지표 면적 — km² · 영구수체 면적 — km² · 맹그로브 면적 — km² · 초본습지 면적 — km² · 나지·희박식생 면적 — km² · 전국 값 · km · 합계 — km²",
+    "토지피복 면적(ESA WorldCover) — 수목 · km2 · 토지피복 면적(ESA WorldCover) — 관목 · km2 · 토지피복 면적(ESA WorldCover) — 초지 · km2 · 토지피복 면적(ESA WorldCover) — 경작지 · km2 · 토지피복 면적(ESA WorldCover) — 건물(인공지표) · km2 · 토지피복 면적(ESA WorldCover) — 나지·희박식생 · km2 · 토지피복 면적(ESA WorldCover) — 영구수체 · km2 · 토지피복 면적(ESA WorldCover) — 초본습지 · km2 · 토지피복 면적(ESA WorldCover) — 맹그로브 · km2 · 토지피복 면적(FAOSTAT CCI_LC) — 시가화지역(인공지표) · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 초지 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 초본작물 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 내륙 수역 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 맹그로브 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 만년설·빙하 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 관목지 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — Shrubs and/or herbaceous vegetation, aquatic or regularly flooded · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 희박 자연식생 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 육상 나지 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 수목지 · 1000 ha · 토지피복 면적(FAOSTAT CCI_LC) — 목본작물 · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 시가화지역(인공지표) · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 연안 수역·조간대 · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 초본작물 · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 내륙 수역 · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 관목지 · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — Shrubs and/or herbaceous vegetation, aquatic or regularly flooded · 1000 ha · 토지피복 면적(FAOSTAT CGLS) — 육상 나지 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 시가화지역(인공지표) · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 초지 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 초본작물 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 내륙 수역 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 맹그로브 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 만년설·빙하 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 관목지 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — Shrubs and/or herbaceous vegetation, aquatic or regularly flooded · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 육상 나지 · 1000 ha · 토지피복 면적(FAOSTAT MODIS) — 수목지 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 시가화지역(인공지표) · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 초지 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 초본작물 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 내륙 수역 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 맹그로브 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 만년설·빙하 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 관목지 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — Shrubs and/or herbaceous vegetation, aquatic or regularly flooded · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 육상 나지 · 1000 ha · 토지피복 면적(FAOSTAT WorldCover) — 수목지 · 1000 ha",
+    "[산출 투입 · % 인구 · [산출 투입 · % 중량 · [산출 투입 · kg/인/일 · [산출 투입 · 두 · 농업잔재 자원량 · Mt/yr · 도시폐기물 중 유기성 자원량(산출) · Mt/yr · 도시폐기물(MSW) 자원량 · Mt/yr · 임업잔재 자원량 · Mt/yr · 축산폐기물(가축분뇨) 자원량 · Mt VS/yr",
+    "이론 총잠재량 — GWh/년 · 전국 대비 비중 — % · 최대 단일격자 잠재량 — GWh/년 · 전국 값 · 격자 GWh yr · 90분위 — GWh/년 · 이론 총잠재량 TWh yr — TWh/년",
+    "연간 수력 발전량 — EI 계열 · TWh/yr · 설비용량 — 연도별(EIA) · MW · 연간 수력 발전량 — EIA 계열 · TWh/yr · 이론 총잠재량 — 전국 합계 · TWh/yr",
+    "심도 1km 지온(평균) — °C · 심도 2km 지온(평균) — °C · 심도 3km 지온(평균) — °C · 지온경사(1~2km) — °C/km · 지온경사(2~3km) — °C/km · 심도 지온 · 1km 최대 — °C · 심도 지온 · 1km 최소 — °C · 심도 지온 · 2km 최대 — °C · 심도 지온 · 2km 최소 — °C · 심도 지온 · 3km 최대 — °C · 심도 지온 · 3km 최소 — °C · 전국 값",
+    "심도 1km 지온 — 전국 최대 · ℃ · 심도 1km 지온 — 전국 평균 · ℃ · 심도 1km 지온 — 전국 최소 · ℃ · 심도 2km 지온 — 전국 최대 · ℃ · 심도 2km 지온 — 전국 평균 · ℃ · 심도 2km 지온 — 전국 최소 · ℃ · 심도 3km 지온 — 전국 최대 · ℃ · 심도 3km 지온 — 전국 평균 · ℃ · 심도 3km 지온 — 전국 최소 · ℃ · 지온경사 1→2km · ℃/km · 지온경사 2→3km · ℃/km",
+    "수평면 전일사량(GHI, 평균) — kWh/m²/일 · 직달 일사량(DNI, 평균) — kWh/m²/일 · 실용 발전량(PVOUT, 평균) — kWh/kWp/일 · 최적 경사각(평균) — ° · 기온(TEMP) · 최대 — °C · 기온(TEMP) · 최소 — °C · 기온(TEMP) · 평균 — °C · 수평면 전일사량(GHI) · 최대 · 수평면 전일사량(GHI) · 최소 · 실용 발전량(PVOUT) · 최대 · 실용 발전량(PVOUT) · 최소 · 직달 일사량(DNI) · 최대 · 직달 일사량(DNI) · 최소 · 최적 경사각(OPTA) · 최대 · 최적 경사각(OPTA) · 최소",
+    "풍속 평균(고도 100m) — m/s · 풍속 상위 10%(고도 100m) — m/s · 풍력밀도 평균(고도 100m) — W/m² · 풍력밀도 상위 10%(고도 100m) — W/m² · 풍속 6m/s 이상 면적비율 — % · 에너지밀도 W m · 최대 — W/m² · 에너지밀도 W m · 최소 — W/m² · 풍속 m s · 최대 — m/s · 풍속 m s · 최소 — m/s · 설비이용률 상위10 · 설비이용률 · 평균",
+    "석유 확인매장량 · 십억 배럴 · 석유 확인매장량(질량 기준) · 백만 톤 · 석탄 확인매장량 · 백만 단수톤 · 석탄 확인매장량 · 백만 톤 · 천연가스 확인매장량 · 조 m³ (tcm) · 천연가스 확인매장량(tcf 기준) · 조 ft³ (tcf) · 확인매장량",
+    "2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016 · 2015 · 2014 · 2013 · 2012 · 2011 · 2010 · 2009 · 2008",
+    "전체 · 구리 · 니켈 · 리튬 · 망간 · 코발트 · 희토류",
+    "전체 · 기후재원 · 기타 자료",
+    "전체 · 기타 자료 · 우선 분야",
+    "전체 · 기타 자료 · PPP 전담기관",
+    "전체 · 기타 자료 · 토지 취득",
+    "전체 · 기타 자료 · 시행기관 · 대상 기술",
+    "전체 · FREL 제출 · 참여 기금 · 결과기반지불(RBP) · 기타 자료",
+    "전체 · NDE(국가지정기구) · TA 제안기관(비영리 금융기관) · TA 제안기관(정부기관) · 네트워크 회원 · 네트워크 회원(NGO) · 네트워크 회원(대학 부설 연구소) · 네트워크 회원(연구기관)",
+    "전체 · Pending additional documentation from activity participant · 등록 · 전환 요청 11건(단독 11·다국가 PoA 0) 중 방글라데시 DNA 승인 11건 · 제6.4조 등록 7건 (상태: 제6.4조 등록 완료 7 · 사업참여자 추가서류 대기 4)",
+    "전체 · 사업참여자 추가서류 대기 · 제6.4조 등록 완료 · 현행",
+    "전체 · NDA 대표(National Designated Authority) · 직접접근 인증기관(DAE) 담당",
+    "전체 · 공관 · 국제기구(기타) · 다자개발은행 · 양자개발협력기관 · 양자원조기관 · 유엔 · 유엔 전문기구 · 지역기구",
+    "전체 · 기관장·대표 · 대상 없음 · 대표 창구",
+    "전체 · Bangkok (Thailand) · Dhaka",
+    "전체 · 대상 없음 · 부분수집 · 수집현황",
+    "전체 · 미설치 · 현행",
+    "전체 · Dhaka · Dhaka / Gazipur(CCDB Climate Centre) · Gazipur · Satkhira (Shyamnagar)",
+    "전체 · NGO · 대학 · 연구소 · 정부연구기관",
+    "전체 · 미확인 · 실적 있음",
+    "전체 · AUM(운용자산) · 기금·제도 규모 · 대출·여신액 · 승인액 · 자본금 · 투자·약정액 · 펀드 규모(조성·목표)",
+    "전체 · Beijing · Dhaka · Incheon (Songdo) · Manila · Singapore · Washington, D.C.",
+    "전체 · BGD · CHN · GBR · KOR · PHL · SGP · USA",
+    "전체 · 해외 본부 소재지(CHN) · 해외 본부 소재지(GBR) · 해외 본부 소재지(KOR) · 해외 본부 소재지(PHL) · 해외 본부 소재지(SGP) · 해외 본부 소재지(USA) · 현지(대상국) 소재",
+    "전체 · 감축·적응 전 분야(에너지효율, 재생에너지, 연안 회복력) · 그린 인프라, 에너지효율·재생에너지(태양광·풍력·바이오매스), 여성기업 · 그린 인프라, 재생·저탄소 전력 온렌딩 · 그린 재금융(재생에너지·에너지효율·폐수처리), 그린본드 시장조성 · 기후스마트 제조·그린파이낸스, 기후펀드 LP 출자 · 기후적응·연안 회복력, 소액금융 도매금융 · 기후회복력 SME 성장자본, 청정에너지·물 · 기후회복력 농업·물·생계, 소셜벤처 초기투자 · 딥테크·지속가능성(전기이륜차 배터리교환 등) · 오프그리드 태양광·P2P 전력거래, 젠더렌즈 임팩트투자 · 유틸리티급 태양광, 청정에너지 인프라 · 재생에너지 확대(SREP), 청정기술(CTF), 기후회복력(PPCR) · 재생에너지(태양광 홈시스템·미니그리드·태양광 관개), 에너지효율, 인프라 PPP · 재생에너지, 금융기관 기후대출, MSME 금융 · 초기단계 기술 스타트업(전기차 등 지속가능 모빌리티 포함) · 클린테크·청정에너지, 지속가능 모빌리티, 기후 애그테크",
+    "전체 · Accelerating Asia 액셀러레이터 펀드 · ADB Ventures Investment Fund 1 (VIF1) / ADB · CTF / SREP / PPCR (6개 MDB 통해 집행) · GCF DAE / 적응기금(AF) 국가이행기구 · Green Transformation Fund(GTF), 환경친화제품 재금융제도 · IIX Growth Fund / IIX Impact Partners · SAJIDA Impact Partners / Climate Innovation Fund (British Asian Trust 공동) · Small Enterprise Assistance Funds (SEAF) 운용 · UNFCCC 재정메커니즘 운영주체 · Wavemaker Impact(기후테크 벤처빌더) 계열 · World Bank Group · 민간부문운영국(PSOD) / Bangladesh Resident Mission · 방글라데시 정부 소유 NBFI / GCF 국가직접접근기구(DAE) · 영국 정부(FCDO) 100% 소유 · 재무부 재무국 100% 소유 / AFD EEREWEF 라인",
+    "전체 · 검증 · 대상 · 등록부 · 보고 · 인벤토리 · 제도 · 지원 · 탄소시장",
+    "전체 · 부문별 Tier 원천 미기재 · 부문별 일괄 미명시 — 대부분 Tier 1, LULUCF=Tier 2·3 · 부문별 일괄 미명시 — 대부분 부문 Tier 1, 자료가 상세한 경우 상위 Tier (예: Barind 지역 장내발효 Tier 2) · 핵심범주 분석 수준=Tier 1 (산정 Tier 아님)",
+    "전체 · 감축목표·적응(NDC·NAP) · 검증(제3자·QA/QC) · 레지스트리 · 법·제도·거버넌스 · 보고(NC·BUR·BTR) · 시설단위 MRV · 인벤토리(Tier·방법론) · 지원(CBIT 등) · 탄소시장·가격제도",
+    "전체 · 미확인 · 제도 부재 · 확인됨",
+    "GERD · % · GERD · USD · GII 2025 · 순위 · GII 2025 · 점수",
+    "전체 · Innovation Input Sub-Index 순위 · Innovation Output Sub-Index 순위 · Pillar 1 Institutions 순위 · Pillar 2 Human capital & research 순위 · Pillar 3 Infrastructure 순위 · Pillar 4 Market sophistication 순위 · Pillar 5 Business sophistication 순위 · Pillar 6 Knowledge & technology outputs 순위 · Pillar 7 Creative outputs 순위 · 소득그룹(저중소득국(lower middle income)) 내 순위 · 종합 순위 · 지역(중앙·남아시아(Central and Southern Asia)) 내 순위",
+    "직군별 종사자 수 · % · 직군별 종사자 수 · BDT · 직군별 종사자 수 · USD · 직군별 종사자 수 · 천명",
+    "전체 · 고용률 · 산업부문 종사자 비중 · 직군 구성비 · 직군별 여성 비중",
+    "전체 · 관리자 · 관리자 · 남성 · 관리자 · 여성 · 관리자 · 전체 · 기능원·관련직 · 기능원·관련직 · 남성 · 기능원·관련직 · 여성 · 기능원·관련직 · 전체 · 기술공·준전문가 · 기술공·준전문가 · 남성 · 기술공·준전문가 · 여성 · 기술공·준전문가 · 전체 · 기타·미정의 · 기타·미정의 · 남성 · 기타·미정의 · 여성 · 기타·미정의 · 전체 · 농림어업 숙련직 · 농림어업 숙련직 · 남성 · 농림어업 숙련직 · 여성 · 농림어업 숙련직 · 전체 · 단순노무직 · 단순노무직 · 남성 · 단순노무직 · 여성 · 단순노무직 · 전체 · 사무직 · 사무직 · 남성 · 사무직 · 여성 · 사무직 · 전체 · 서비스·판매직 · 서비스·판매직 · 남성 · 서비스·판매직 · 여성 · 서비스·판매직 · 전체 · 장치·기계 조작·조립원 · 장치·기계 조작·조립원 · 남성 · 장치·기계 조작·조립원 · 여성 · 장치·기계 조작·조립원 · 전체 · 전문가 · 전문가 · 남성 · 전문가 · 여성 · 전문가 · 전체 · 합계",
+    "2024 · 2023 · 2022 · 2017 · 2016 · 2013 · 2011 · 2010 · 2006 · 2005 · 2003 · 1996 · 1991 · 1989 · 1986 · 1985 · 1984",
+    "전체 · 공동크레딧제도(JCM) — 양자 탄소상쇄 협정(파리협정 6.2조 협력적 접근법) · 파리협정 제6조 이행 양해각서(MOU)",
+    "전체 · 양해각서(MOU·MoC) · 조약·협정",
+    "전체 · 제3국 양자 · 한국 관련",
+    "전체 · 가입 완료 · 미가입",
+    "전체 · 도로 중심선 기준점 · 행정구역 중심점",
+    "전체 · 미확인 — 사무소 설치 여부 미확인 · 없음 확인(원천 업무안내 기준) — 기후·에너지 업무 표기 없음 · 유(원천 업무안내 기준) — 기후·에너지 업무 명시 · 해당 없음 — 사무소 미설치",
+    "전체 · 미설치 안내 · 설치여부 미확인 · 현지사무소",
+    "전체 · 개별 승인액 · 과제당 지원액 · 원천 미게시",
+    "전체 · FS · FS;기술이전 · 금융 · 기술이전 · 기술이전;실증",
+    "전체 · 국내 신청주체 · 수원국 수혜기관"
   ],
   "runtimeErrors": [],
   "lostCountry": [],
@@ -1465,8 +397,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 769,
-      "otherCountryHits": 1,
+      "textLength": 572,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1485,8 +417,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 733,
-      "otherCountryHits": 1,
+      "textLength": 558,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1505,8 +437,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 950,
-      "otherCountryHits": 1,
+      "textLength": 637,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1525,8 +457,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 691,
-      "otherCountryHits": 1,
+      "textLength": 504,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1545,8 +477,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 492,
-      "otherCountryHits": 1,
+      "textLength": 482,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1565,8 +497,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 741,
-      "otherCountryHits": 1,
+      "textLength": 514,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1585,8 +517,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 874,
-      "otherCountryHits": 1,
+      "textLength": 495,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1605,8 +537,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 639,
-      "otherCountryHits": 1,
+      "textLength": 469,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1625,8 +557,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 960,
-      "otherCountryHits": 1,
+      "textLength": 724,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1645,8 +577,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 776,
-      "otherCountryHits": 1,
+      "textLength": 730,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1665,8 +597,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 748,
-      "otherCountryHits": 1,
+      "textLength": 738,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1685,8 +617,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 994,
-      "otherCountryHits": 1,
+      "textLength": 644,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1699,8 +631,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 6690,
-      "otherCountryHits": 1,
+      "textLength": 6680,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1719,8 +651,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 790,
-      "otherCountryHits": 1,
+      "textLength": 600,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1739,8 +671,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 750,
-      "otherCountryHits": 1,
+      "textLength": 472,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1759,8 +691,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 619,
-      "otherCountryHits": 1,
+      "textLength": 609,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1772,9 +704,15 @@
       "bengaliCount": 0,
       "bengaliFontUsable": null,
       "replacementCount": 0,
-      "compare": null,
-      "textLength": 1216,
-      "otherCountryHits": 1,
+      "compare": {
+        "text": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용 방글라데시 베트남 비교 지표 A-017_lcoe_ccgt_benchmark · 연도 규칙 두 국가가 모두 가진 최신 연도",
+        "state": "multi-line",
+        "chips": 2,
+        "sourceNote": false,
+        "unitNote": false
+      },
+      "textLength": 794,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1793,8 +731,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 710,
-      "otherCountryHits": 1,
+      "textLength": 700,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1813,8 +751,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 621,
-      "otherCountryHits": 1,
+      "textLength": 441,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1833,8 +771,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 673,
-      "otherCountryHits": 1,
+      "textLength": 515,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1853,8 +791,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 646,
-      "otherCountryHits": 1,
+      "textLength": 464,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1867,8 +805,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 726,
-      "otherCountryHits": 1,
+      "textLength": 576,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1881,8 +819,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 417,
-      "otherCountryHits": 1,
+      "textLength": 407,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1895,8 +833,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 423,
-      "otherCountryHits": 1,
+      "textLength": 355,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1909,8 +847,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 326,
-      "otherCountryHits": 1,
+      "textLength": 316,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1923,8 +861,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 610,
-      "otherCountryHits": 1,
+      "textLength": 443,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1937,8 +875,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 414,
-      "otherCountryHits": 1,
+      "textLength": 404,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1951,8 +889,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 463,
-      "otherCountryHits": 1,
+      "textLength": 453,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -1965,8 +903,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 10818,
-      "otherCountryHits": 11,
+      "textLength": 10808,
+      "otherCountryHits": 10,
       "errorCount": 0
     },
     {
@@ -1985,8 +923,8 @@
         "sourceNote": true,
         "unitNote": false
       },
-      "textLength": 891,
-      "otherCountryHits": 1,
+      "textLength": 665,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2005,8 +943,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 716,
-      "otherCountryHits": 1,
+      "textLength": 639,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2025,8 +963,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 784,
-      "otherCountryHits": 1,
+      "textLength": 578,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2045,8 +983,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 745,
-      "otherCountryHits": 1,
+      "textLength": 615,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2065,8 +1003,8 @@
         "sourceNote": true,
         "unitNote": false
       },
-      "textLength": 1029,
-      "otherCountryHits": 1,
+      "textLength": 700,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2079,8 +1017,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 558,
-      "otherCountryHits": 1,
+      "textLength": 479,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2093,8 +1031,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1616,
-      "otherCountryHits": 1,
+      "textLength": 715,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2107,8 +1045,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1530,
-      "otherCountryHits": 1,
+      "textLength": 747,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2121,8 +1059,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 257,
-      "otherCountryHits": 1,
+      "textLength": 247,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2135,8 +1073,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1573,
-      "otherCountryHits": 1,
+      "textLength": 741,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2149,8 +1087,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1554,
-      "otherCountryHits": 1,
+      "textLength": 767,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2163,8 +1101,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 841,
-      "otherCountryHits": 1,
+      "textLength": 756,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2177,8 +1115,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 731,
-      "otherCountryHits": 1,
+      "textLength": 494,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2197,8 +1135,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 516,
-      "otherCountryHits": 1,
+      "textLength": 425,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2217,8 +1155,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 917,
-      "otherCountryHits": 1,
+      "textLength": 565,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2231,8 +1169,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 363,
-      "otherCountryHits": 1,
+      "textLength": 353,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2245,8 +1183,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 565,
-      "otherCountryHits": 1,
+      "textLength": 375,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2259,8 +1197,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 847,
-      "otherCountryHits": 1,
+      "textLength": 655,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2273,8 +1211,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 417,
-      "otherCountryHits": 1,
+      "textLength": 285,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2293,8 +1231,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 761,
-      "otherCountryHits": 1,
+      "textLength": 528,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2307,8 +1245,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1580,
-      "otherCountryHits": 1,
+      "textLength": 796,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2327,8 +1265,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 1290,
-      "otherCountryHits": 1,
+      "textLength": 875,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2347,8 +1285,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 816,
-      "otherCountryHits": 1,
+      "textLength": 648,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2367,8 +1305,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 1104,
-      "otherCountryHits": 1,
+      "textLength": 791,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2381,8 +1319,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1865,
-      "otherCountryHits": 1,
+      "textLength": 693,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2401,8 +1339,8 @@
         "sourceNote": true,
         "unitNote": false
       },
-      "textLength": 960,
-      "otherCountryHits": 1,
+      "textLength": 747,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2415,8 +1353,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1718,
-      "otherCountryHits": 1,
+      "textLength": 1708,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2435,8 +1373,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 555,
-      "otherCountryHits": 1,
+      "textLength": 498,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2449,8 +1387,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 903,
-      "otherCountryHits": 1,
+      "textLength": 552,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2463,8 +1401,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 665,
-      "otherCountryHits": 1,
+      "textLength": 448,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2477,8 +1415,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 843,
-      "otherCountryHits": 1,
+      "textLength": 579,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2491,8 +1429,8 @@
       "bengaliFontUsable": true,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1475,
-      "otherCountryHits": 1,
+      "textLength": 1465,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2505,8 +1443,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1014,
-      "otherCountryHits": 1,
+      "textLength": 827,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2519,8 +1457,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1068,
-      "otherCountryHits": 1,
+      "textLength": 798,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2533,8 +1471,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1005,
-      "otherCountryHits": 1,
+      "textLength": 795,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2547,8 +1485,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 715,
-      "otherCountryHits": 1,
+      "textLength": 614,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2561,8 +1499,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 972,
-      "otherCountryHits": 1,
+      "textLength": 721,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2575,8 +1513,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 928,
-      "otherCountryHits": 1,
+      "textLength": 717,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2595,8 +1533,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 1252,
-      "otherCountryHits": 1,
+      "textLength": 673,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2615,8 +1553,8 @@
         "sourceNote": false,
         "unitNote": false
       },
-      "textLength": 1022,
-      "otherCountryHits": 1,
+      "textLength": 850,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2629,8 +1567,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 817,
-      "otherCountryHits": 1,
+      "textLength": 572,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2643,8 +1581,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 800,
-      "otherCountryHits": 1,
+      "textLength": 623,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2657,8 +1595,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 955,
-      "otherCountryHits": 1,
+      "textLength": 752,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2671,8 +1609,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1070,
-      "otherCountryHits": 1,
+      "textLength": 747,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2685,8 +1623,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1165,
-      "otherCountryHits": 1,
+      "textLength": 760,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2699,8 +1637,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1015,
-      "otherCountryHits": 1,
+      "textLength": 694,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2713,8 +1651,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 868,
-      "otherCountryHits": 1,
+      "textLength": 641,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2727,8 +1665,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1110,
-      "otherCountryHits": 1,
+      "textLength": 1077,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2741,8 +1679,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 323,
-      "otherCountryHits": 1,
+      "textLength": 313,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2755,8 +1693,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 295,
-      "otherCountryHits": 1,
+      "textLength": 285,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2769,8 +1707,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 292,
-      "otherCountryHits": 1,
+      "textLength": 282,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2783,8 +1721,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 379,
-      "otherCountryHits": 1,
+      "textLength": 369,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2797,8 +1735,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2138,
-      "otherCountryHits": 1,
+      "textLength": 2128,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2811,8 +1749,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2452,
-      "otherCountryHits": 1,
+      "textLength": 2428,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2825,8 +1763,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1588,
-      "otherCountryHits": 1,
+      "textLength": 1563,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2839,8 +1777,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 834,
-      "otherCountryHits": 1,
+      "textLength": 824,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2853,8 +1791,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2405,
-      "otherCountryHits": 1,
+      "textLength": 2380,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2867,8 +1805,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 3453,
-      "otherCountryHits": 1,
+      "textLength": 3443,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2881,8 +1819,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 441,
-      "otherCountryHits": 1,
+      "textLength": 431,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2895,8 +1833,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 396,
-      "otherCountryHits": 1,
+      "textLength": 373,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2909,8 +1847,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 763,
-      "otherCountryHits": 1,
+      "textLength": 753,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2923,8 +1861,8 @@
       "bengaliFontUsable": true,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2994,
-      "otherCountryHits": 1,
+      "textLength": 2984,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2937,8 +1875,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 677,
-      "otherCountryHits": 1,
+      "textLength": 667,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2951,8 +1889,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1219,
-      "otherCountryHits": 1,
+      "textLength": 1191,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2965,8 +1903,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2095,
-      "otherCountryHits": 1,
+      "textLength": 2085,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2979,8 +1917,8 @@
       "bengaliFontUsable": true,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 3286,
-      "otherCountryHits": 1,
+      "textLength": 3261,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -2993,8 +1931,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1375,
-      "otherCountryHits": 1,
+      "textLength": 1365,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3007,8 +1945,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 780,
-      "otherCountryHits": 1,
+      "textLength": 770,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3021,8 +1959,8 @@
       "bengaliFontUsable": true,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 2284,
-      "otherCountryHits": 1,
+      "textLength": 2254,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3035,8 +1973,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 496,
-      "otherCountryHits": 1,
+      "textLength": 486,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3049,8 +1987,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 8933,
-      "otherCountryHits": 1,
+      "textLength": 8923,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3063,8 +2001,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 320,
-      "otherCountryHits": 1,
+      "textLength": 291,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3077,8 +2015,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 327,
-      "otherCountryHits": 1,
+      "textLength": 298,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3091,8 +2029,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1331,
-      "otherCountryHits": 1,
+      "textLength": 1321,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3105,8 +2043,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 296,
-      "otherCountryHits": 1,
+      "textLength": 267,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3119,8 +2057,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1631,
-      "otherCountryHits": 1,
+      "textLength": 1586,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3133,8 +2071,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 534,
-      "otherCountryHits": 1,
+      "textLength": 524,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3147,8 +2085,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 327,
-      "otherCountryHits": 1,
+      "textLength": 298,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3161,8 +2099,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 315,
-      "otherCountryHits": 1,
+      "textLength": 286,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3175,8 +2113,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 276,
-      "otherCountryHits": 1,
+      "textLength": 247,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3189,8 +2127,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 309,
-      "otherCountryHits": 1,
+      "textLength": 280,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3203,8 +2141,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 306,
-      "otherCountryHits": 1,
+      "textLength": 277,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3217,8 +2155,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 269,
-      "otherCountryHits": 1,
+      "textLength": 240,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3231,8 +2169,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 348,
-      "otherCountryHits": 1,
+      "textLength": 319,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3245,8 +2183,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 298,
-      "otherCountryHits": 1,
+      "textLength": 269,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3259,8 +2197,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 302,
-      "otherCountryHits": 1,
+      "textLength": 273,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3273,8 +2211,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 295,
-      "otherCountryHits": 1,
+      "textLength": 266,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3287,8 +2225,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 297,
-      "otherCountryHits": 1,
+      "textLength": 268,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3301,8 +2239,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 325,
-      "otherCountryHits": 1,
+      "textLength": 296,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3315,8 +2253,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 285,
-      "otherCountryHits": 1,
+      "textLength": 256,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3329,8 +2267,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 329,
-      "otherCountryHits": 1,
+      "textLength": 300,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3343,8 +2281,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 327,
-      "otherCountryHits": 1,
+      "textLength": 298,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3357,8 +2295,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 326,
-      "otherCountryHits": 1,
+      "textLength": 297,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3371,8 +2309,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 325,
-      "otherCountryHits": 1,
+      "textLength": 296,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3385,8 +2323,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 287,
-      "otherCountryHits": 1,
+      "textLength": 258,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3399,8 +2337,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 295,
-      "otherCountryHits": 1,
+      "textLength": 266,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3413,8 +2351,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 288,
-      "otherCountryHits": 1,
+      "textLength": 259,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3427,8 +2365,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 324,
-      "otherCountryHits": 1,
+      "textLength": 295,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3441,8 +2379,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 333,
-      "otherCountryHits": 1,
+      "textLength": 304,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3455,8 +2393,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 323,
-      "otherCountryHits": 1,
+      "textLength": 294,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3469,8 +2407,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 342,
-      "otherCountryHits": 1,
+      "textLength": 313,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3483,8 +2421,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 301,
-      "otherCountryHits": 1,
+      "textLength": 272,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3497,8 +2435,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 308,
-      "otherCountryHits": 1,
+      "textLength": 279,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3511,8 +2449,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 827,
-      "otherCountryHits": 1,
+      "textLength": 716,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3525,8 +2463,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 741,
-      "otherCountryHits": 1,
+      "textLength": 536,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3539,8 +2477,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 451,
-      "otherCountryHits": 1,
+      "textLength": 382,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3553,8 +2491,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1256,
-      "otherCountryHits": 1,
+      "textLength": 1113,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3567,8 +2505,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 587,
-      "otherCountryHits": 1,
+      "textLength": 467,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3581,8 +2519,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1870,
-      "otherCountryHits": 1,
+      "textLength": 579,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3595,8 +2533,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 4942,
-      "otherCountryHits": 1,
+      "textLength": 4608,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3609,8 +2547,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 738,
-      "otherCountryHits": 1,
+      "textLength": 772,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3623,8 +2561,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 529,
-      "otherCountryHits": 1,
+      "textLength": 519,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3637,8 +2575,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 1495,
-      "otherCountryHits": 1,
+      "textLength": 1034,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3651,8 +2589,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 311,
-      "otherCountryHits": 1,
+      "textLength": 282,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3671,8 +2609,8 @@
         "sourceNote": false,
         "unitNote": true
       },
-      "textLength": 2982,
-      "otherCountryHits": 1,
+      "textLength": 2346,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3685,8 +2623,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 307,
-      "otherCountryHits": 1,
+      "textLength": 278,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3699,8 +2637,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 576,
-      "otherCountryHits": 1,
+      "textLength": 457,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3713,8 +2651,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 692,
-      "otherCountryHits": 1,
+      "textLength": 669,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3727,8 +2665,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 307,
-      "otherCountryHits": 1,
+      "textLength": 278,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3741,8 +2679,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 313,
-      "otherCountryHits": 1,
+      "textLength": 284,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3755,8 +2693,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 488,
-      "otherCountryHits": 1,
+      "textLength": 455,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3769,8 +2707,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 684,
-      "otherCountryHits": 1,
+      "textLength": 545,
+      "otherCountryHits": 0,
       "errorCount": 0
     },
     {
@@ -3783,8 +2721,8 @@
       "bengaliFontUsable": null,
       "replacementCount": 0,
       "compare": null,
-      "textLength": 598,
-      "otherCountryHits": 1,
+      "textLength": 513,
+      "otherCountryHits": 0,
       "errorCount": 0
     }
   ]
