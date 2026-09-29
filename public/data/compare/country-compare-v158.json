@@ -11,11 +11,11 @@
       "VNM"
     ],
     "contractPath": "src/data/visualization/publicVisualizationContractV153.json",
-    "contractSha256": "c5cb4a00f62e204cd786ecc37a4a31b89e07831cae97a887235220147db2f061"
+    "contractSha256": "9c0bc7a0c520317e1374ea99eed783aa75e1788024e8979161ba895c2ebc2109"
   },
-  "elementCount": 57,
+  "elementCount": 58,
   "statusCounts": {
-    "common-year": 33,
+    "common-year": 34,
     "latest-each": 1,
     "unit-mismatch": 1,
     "missing-in-country": 22
@@ -4624,6 +4624,71 @@
           ],
           "status": "common-year",
           "commonYear": 2025
+        }
+      ],
+      "status": "common-year"
+    },
+    "A-017": {
+      "elementId": "A-017",
+      "compareKey": {
+        "indicatorId": "A-017_lcoe_ccgt_benchmark",
+        "unit": "USD/MWh",
+        "yearRule": "latest-common"
+      },
+      "countries": {
+        "BGD": {
+          "countryIso3": "BGD",
+          "countryNameKo": "방글라데시",
+          "present": true,
+          "unit": "USD/MWh",
+          "labelKo": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용",
+          "sourceOrg": "BloombergNEF",
+          "points": [
+            {
+              "year": 2023,
+              "value": 95
+            },
+            {
+              "year": 2030,
+              "value": 94
+            },
+            {
+              "year": 2050,
+              "value": 94
+            }
+          ]
+        },
+        "VNM": {
+          "countryIso3": "VNM",
+          "countryNameKo": "베트남",
+          "present": true,
+          "unit": "USD/MWh",
+          "labelKo": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용",
+          "sourceOrg": "BloombergNEF",
+          "points": [
+            {
+              "year": 2023,
+              "value": 90
+            },
+            {
+              "year": 2030,
+              "value": 90
+            },
+            {
+              "year": 2050,
+              "value": 90
+            }
+          ]
+        }
+      },
+      "pairs": [
+        {
+          "countries": [
+            "BGD",
+            "VNM"
+          ],
+          "status": "common-year",
+          "commonYear": 2050
         }
       ],
       "status": "common-year"
