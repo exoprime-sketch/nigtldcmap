@@ -1,7 +1,7 @@
 # 국가 비교 지표 검토 (V158)
 
 생성 기준 계약: `src/data/visualization/publicVisualizationContractV153.json`(2026-09-22) · 데이터 트리 보유 국가: BGD, VNM
-비교 가능 요소 57개 · 쌍 상태: common-year 33 · latest-each 1 · unit-mismatch 1 · missing-in-country 22
+비교 가능 요소 58개 · 쌍 상태: common-year 34 · latest-each 1 · unit-mismatch 1 · missing-in-country 22
 
 이 표는 자동 판정 결과이며 키를 바꾸지 않는다. 대표지표로 보이지 않는 항목은 아래 별도 절에 모아 사용자 승인을 기다린다.
 
@@ -24,6 +24,7 @@
 | A-014 | A-014_sdg_goal_score_sdg01 | common-year | 목표별 달성도 · SDG1 빈곤 종식 — 목표 단위 달성도 점수(0~100) | 목표별 달성도 · SDG1 빈곤 종식 — 목표 단위 달성도 점수(0~100) | 부문·가스·시나리오 등 세부 하위분류로 보임 |
 | A-015 | A-015_sdg10_gini | common-year | SDG10 세부지표 달성도 · 지니계수 — 정규화 달성도 점수(0~100) | SDG10 세부지표 달성도 · 지니계수 — 정규화 달성도 점수(0~100) | 부문·가스·시나리오 등 세부 하위분류로 보임 |
 | A-016 | A-016_primary_energy_coal | common-year | 1차 에너지 소비 · 석탄 — 석탄 1차에너지 소비량 | 1차 에너지 소비 · 석탄 — 석탄 1차에너지 소비량 | - |
+| A-017 | A-017_lcoe_ccgt_benchmark | common-year | LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용 | LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용 | - |
 | A-018 | A-018_capacity_bioenergy_offgrid | common-year | 발전 설비용량 · Bioenergy(독립형) — 기술별 누적 설치 발전설비 용량 | 발전 설비용량 · Bioenergy(독립형) — 기술별 누적 설치 발전설비 용량 | 부문·가스·시나리오 등 세부 하위분류로 보임 |
 | A-019 | A-019_td_loss_rate | common-year | 송배전 손실률 — 총 발전량 대비 송·배전 과정 손실 비율 | 송배전 손실률 — 총 발전량 대비 송·배전 과정 손실 비율 | - |
 | A-020 | A-020_renewable_share_capacity | common-year | 재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중 | 재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중 | - |

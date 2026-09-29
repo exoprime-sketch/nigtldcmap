@@ -18,7 +18,7 @@ const PUBLIC_ROOT = resolve(PROJECT_ROOT, "public");
 // named so its integrity file is complete before it is promoted. Writing this
 // file only after promotion left the semantic and interpretation assets - 157 of
 // them - undeclared in whatever was published in between.
-import { resolveDataRootV158, resolveCountryIso3V158, countryEntryV158, DEFAULT_COUNTRY_ISO3_V158 } from "./v158/country-context-v158.mjs";
+import { resolveDataRootV158, resolveCountryIso3V158, countryEntryV158, countryRegistryV158, DEFAULT_COUNTRY_ISO3_V158 } from "./v158/country-context-v158.mjs";
 
 const argv = process.argv.slice(2);
 const dataOption = (() => {
@@ -34,6 +34,17 @@ const V2_ROOT = resolveDataRootV158({
 });
 const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
 const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
+// V158: `--data` naming another registered country's published tree without
+// its `--country` would write that tree's integrity under this country's URL
+// prefix (and this country's report). Staging trees match no registry root.
+{
+  const owner = countryRegistryV158(PROJECT_ROOT).countries.find(
+    (row) => resolve(PROJECT_ROOT, `public${row.dataRoot}`) === V2_ROOT
+  );
+  if (owner && owner.iso3 !== COUNTRY_ISO3) {
+    throw new Error(`DATA_ROOT_COUNTRY_MISMATCH: --data is ${owner.iso3}'s tree; pass --country ${owner.iso3.toLowerCase()}`);
+  }
+}
 // The registry's own dataRoot, e.g. "/data/bgd/v2" - the published prefix for
 // this country regardless of whether V2_ROOT above is the real public/ tree or
 // a staging copy of it.

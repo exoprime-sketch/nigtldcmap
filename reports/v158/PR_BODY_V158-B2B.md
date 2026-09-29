@@ -20,7 +20,7 @@
 - 베트남 화면 서명: 151화면(홈·찾기·지도·다운로드·이용안내·상세 146) 차이 0
 - BGD 화면 QA 7/7: 찾기 119 · 상세 152 런타임 오류 0 · 타국 표현 0(원자료 유래 10건 허용·기록) · 괄호 비라틴 0(원자료 유래 6건) · 벵골 4페이지 정상 · 6폭 넘침 0 · 비교 표본 4종
 - 가짜 3번째 국가 11/11 · BGD 데이터 검증기 52/52
-- `finalize:v151`: FINALIZE_RESULT
+- `finalize:v151`: 통과(1회) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41 이내, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24
 
 ## Preview·확인 경로
 - Preview: PREVIEW_URL
