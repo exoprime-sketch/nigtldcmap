@@ -1,11 +1,19 @@
 import type { CountryDataProviderV122 } from "./countryDataTypesV122";
 import { VietnamCountryDataProviderV122 } from "./vietnamCountryDataProviderV122";
 import {
+  countryRegistryCacheV158,
   isLiveCountryV158,
   loadCountryRegistryV158,
+  type CountryRegistryV158,
 } from "../countryContext";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
+import { createRegistryCountryDataProviderV158 } from "./registryCountryDataProviderV158";
 
+/**
+ * The default country's provider is bundled. V158: every other country in the
+ * registry gets a provider once `countries.json` has been read (see
+ * `syncRegistryProvidersV158`), so a country is added by the registry alone.
+ */
 const PROVIDERS: CountryDataProviderV122[] = [VietnamCountryDataProviderV122];
 
 const PROVIDER_BY_COUNTRY = new Map(
@@ -15,7 +23,24 @@ const PROVIDER_BY_ID = new Map(
   PROVIDERS.map((provider) => [provider.providerId, provider])
 );
 
+let syncedRegistryV158: CountryRegistryV158 | null = null;
+
+/** Adds a provider for each registry country that has none yet. */
+function syncRegistryProvidersV158(): void {
+  const registry = countryRegistryCacheV158();
+  if (!registry || registry === syncedRegistryV158) return;
+  syncedRegistryV158 = registry;
+  for (const entry of registry.countries) {
+    if (PROVIDER_BY_COUNTRY.has(entry.iso3)) continue;
+    const provider = createRegistryCountryDataProviderV158(entry);
+    PROVIDERS.push(provider);
+    PROVIDER_BY_COUNTRY.set(provider.countryIso3, provider);
+    PROVIDER_BY_ID.set(provider.providerId, provider);
+  }
+}
+
 export function listCountryDataProvidersV122(): CountryDataProviderV122[] {
+  syncRegistryProvidersV158();
   return PROVIDERS.filter((provider) => isLiveCountryV158(provider.countryIso3));
 }
 
@@ -30,6 +55,7 @@ export function getCountryDataProviderV122(
   countryIso3: string | null | undefined
 ): CountryDataProviderV122 | null {
   const normalized = countryIso3?.trim().toUpperCase() || "";
+  syncRegistryProvidersV158();
   if (!isLiveCountryV158(normalized)) return null;
   return PROVIDER_BY_COUNTRY.get(normalized) || null;
 }
@@ -40,12 +66,16 @@ export function getCountryDataProviderV122(
  * resolves a catalog; a failure leaves the fallback in place.
  */
 export function ensureCountryRegistryLoadedV158(): Promise<unknown> {
-  return loadCountryRegistryV158((relPath) => publicAssetUrlV128(relPath));
+  return loadCountryRegistryV158((relPath) => publicAssetUrlV128(relPath)).then((registry) => {
+    syncRegistryProvidersV158();
+    return registry;
+  });
 }
 
 export function getCountryDataProviderByIdV122(
   providerId: string | null | undefined
 ): CountryDataProviderV122 | null {
+  syncRegistryProvidersV158();
   return providerId ? PROVIDER_BY_ID.get(providerId) || null : null;
 }
 
@@ -60,6 +90,7 @@ export function firstCountryDataProviderV122(): CountryDataProviderV122 | null {
 }
 
 export function availableDataCountryIso3V122(): string[] {
+  syncRegistryProvidersV158();
   return PROVIDERS.filter(
     (provider) =>
       provider.availability === "available" && isLiveCountryV158(provider.countryIso3)

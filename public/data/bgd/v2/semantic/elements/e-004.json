@@ -1,0 +1,598 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "기관_유형_org_type",
+      "labelKo": "기관_유형_org_type",
+      "valueCount": 8,
+      "values": [
+        "공관",
+        "국제기구(기타)",
+        "다자개발은행",
+        "양자개발협력기관",
+        "양자원조기관",
+        "유엔",
+        "유엔 전문기구",
+        "지역기구"
+      ]
+    },
+    {
+      "key": "담당자_성격_contact_type",
+      "labelKo": "담당자_성격_contact_type",
+      "valueCount": 3,
+      "values": [
+        "기관장·대표",
+        "대상 없음",
+        "대표 창구"
+      ]
+    },
+    {
+      "key": "도시_city",
+      "labelKo": "도시_city",
+      "valueCount": 2,
+      "values": [
+        "Bangkok (Thailand)",
+        "Dhaka"
+      ]
+    },
+    {
+      "key": "수집_상태_collection_status",
+      "labelKo": "수집_상태_collection_status",
+      "valueCount": 3,
+      "values": [
+        "대상 없음",
+        "부분수집",
+        "수집현황"
+      ]
+    },
+    {
+      "key": "현행여부_record_status",
+      "labelKo": "현행여부_record_status",
+      "valueCount": 2,
+      "values": [
+        "미설치",
+        "현행"
+      ]
+    }
+  ],
+  "elementId": "E-004",
+  "entityCount": 19,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 19,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08 · 13 · 15 · 16 · 17 · 18 · 19 · 20 · 23 · 24 · 25 · 32 · 34 · 38"
+      },
+      "dimensions": {
+        "technology": "01,02,03,04,05,07,08,13,15,16,17,18,19,20,23,24,25,32,34,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · ADB — Bangladesh 사무소 안내 · adb",
+      "indicatorId": "E-004_adb",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,02,03,04,05,07,08,13,15,16,17,18,19,20,23,24,25,32,34,38|E-004_adb",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기후·에너지 담당자 미확보. 대표 연락처만 확보.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 04 · 05 · 16 · 17 · 18 · 19 · 24 · 32 · 33 · 34 · 38"
+      },
+      "dimensions": {
+        "technology": "01,03,04,05,16,17,18,19,24,32,33,34,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · AFD (Agence Française de Développement) — Bangladesh 사무소 안내 · afd",
+      "indicatorId": "E-004_afd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,03,04,05,16,17,18,19,24,32,33,34,38|E-004_afd",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 전화·주소만 확보.",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · Embassy of Denmark — Bangladesh 사무소 안내 · denmark",
+      "indicatorId": "E-004_denmark",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=해당없음|E-004_denmark",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대사(기관장) 정보 확보. DEPP 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 08 · 13 · 15 · 16 · 23 · 24 · 27 · 28 · 30 · 32 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "01,03,08,13,15,16,23,24,27,28,30,32,34,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · European Union — Bangladesh 사무소 안내 · eu",
+      "indicatorId": "E-004_eu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,03,08,13,15,16,23,24,27,28,30,32,34,35,38|E-004_eu",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대사(기관장) 정보 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "34"
+      },
+      "dimensions": {
+        "technology": "34"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · FAO — Bangladesh 사무소 안내 · fao",
+      "indicatorId": "E-004_fao",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=34|E-004_fao",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 본 플랫폼은 국가녹색기술연구소(NIGT)가 운영하는 비영리 공공 플랫폼으로 이용료를 받지 않고 광고·판매 등 수익활동을 하지 않는다. 원천 약관의 제한 사유가 비상업(non-commercial)·개인 이용 한정인 경우 그 조건이 충족되므로 다운로드 '가능'으로 판정한다. 이행 조건: 출처(FAO)를 표시한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 이메일만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08 · 13 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 38"
+      },
+      "dimensions": {
+        "technology": "01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · GGGI — Bangladesh 사무소 안내 · gggi",
+      "indicatorId": "E-004_gggi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38|E-004_gggi",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "본부 공통 이메일만 확보. 현지 담당자·전화 미확보. GGGI 는 방글라데시 국가프로그램·회원 지위가 없어 국가 페이지가 존재하지 않는다.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 08 · 13 · 15 · 17 · 18 · 19 · 24 · 25 · 26 · 31 · 32 · 33 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "01,03,08,13,15,17,18,19,24,25,26,31,32,33,34,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · GIZ — Bangladesh 사무소 안내 · giz",
+      "indicatorId": "E-004_giz",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,03,08,13,15,17,18,19,24,25,26,31,32,33,34,35,38|E-004_giz",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "에너지 프로그램 부서 대표메일 확보. 담당자 개인 정보 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "15 · 17 · 18 · 19 · 25 · 32 · 33 · 34"
+      },
+      "dimensions": {
+        "technology": "15,17,18,19,25,32,33,34"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · IFC (International Finance Corporation) — Bangladesh 사무소 안내 · ifc",
+      "indicatorId": "E-004_ifc",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=15,17,18,19,25,32,33,34|E-004_ifc",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 본 플랫폼은 국가녹색기술연구소(NIGT)가 운영하는 비영리 공공 플랫폼으로 이용료를 받지 않고 광고·판매 등 수익활동을 하지 않는다. 원천 약관의 제한 사유가 비상업(non-commercial)·개인 이용 한정인 경우 그 조건이 충족되므로 다운로드 '가능'으로 판정한다. 이행 조건: 출처(IFC)를 표시한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소 주소, 담당자 직함, Country Manager 재직 여부 미확보. 출처가 보도자료로 연락처 공식 페이지 아님.",
+      "sourceProvenance": {
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08 · 13 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 38"
+      },
+      "dimensions": {
+        "technology": "01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · IRENA — Bangladesh 사무소 안내 · irena",
+      "indicatorId": "E-004_irena",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38|E-004_irena",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 본 플랫폼은 국가녹색기술연구소(NIGT)가 운영하는 비영리 공공 플랫폼으로 이용료를 받지 않고 광고·판매 등 수익활동을 하지 않는다. 원천 약관의 제한 사유가 비상업(non-commercial)·개인 이용 한정인 경우 그 조건이 충족되므로 다운로드 '가능'으로 판정한다. 이행 조건: 출처(IRENA)를 표시하고 IRENA 로고를 사용하지 않는다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "방글라데시 국가사무소 미운영(M03, 대상외).",
+      "sourceProvenance": {
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 05 · 15 · 16 · 18 · 23 · 24 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "01,05,15,16,18,23,24,29,30,31,32,33,34,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · JICA — Bangladesh 사무소 안내 · jica",
+      "indicatorId": "E-004_jica",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,05,15,16,18,23,24,29,30,31,32,33,34,35,38|E-004_jica",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 본 플랫폼은 국가녹색기술연구소(NIGT)가 운영하는 비영리 공공 플랫폼으로 이용료를 받지 않고 광고·판매 등 수익활동을 하지 않는다. 원천 약관의 제한 사유가 비상업(non-commercial)·개인 이용 한정인 경우 그 조건이 충족되므로 다운로드 '가능'으로 판정한다. 이행 조건: 출처(JICA)를 표시하고 인용 범위를 넘지 않는다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 전화만 확보.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 02 · 03 · 04 · 05 · 07 · 08 · 13 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 22 · 23 · 24 · 25 · 26 · 27 · 28 · 29 · 30 · 31 · 32 · 33 · 34 · 35 · 36 · 38"
+      },
+      "dimensions": {
+        "technology": "01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · KfW Development Bank — Bangladesh 사무소 안내 · kfw",
+      "indicatorId": "E-004_kfw",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,02,03,04,05,07,08,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38|E-004_kfw",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소장 정보 확보. 이메일 및 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "15 · 18 · 23 · 29 · 33 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "15,18,23,29,33,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · KfW Development Bank — Bangladesh 사무소 안내 · koica",
+      "indicatorId": "E-004_koica",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=15,18,23,29,33,35,38|E-004_koica",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 원천이 공공누리 표시를 부착하고 있으나 자료별 유형(제1유형·제3유형)이 확정되지 않아 다운로드 허용 여부를 확정할 수 없으므로 '제한'으로 표기한다. 제1유형이면 다운로드가 가능하고, 제3유형(변경금지)이면 재편집본 배포가 제한된다. 【NIGT 협의 필요】 NIGT가 KOICA 등 해당 기관과 직접 협의하여 건별 공공누리 유형을 확인·확정해야 한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소장 정보 확보. 이메일 및 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · Embassy of the Kingdom of the Netherlands — Bangladesh 사무소 안내 · netherlands",
+      "indicatorId": "E-004_netherlands",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=해당없음|E-004_netherlands",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 이메일만 확보. 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 15 · 23 · 24 · 29 · 30 · 31 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "01,15,23,24,29,30,31,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · UNDP — Bangladesh 사무소 안내 · undp",
+      "indicatorId": "E-004_undp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,15,23,24,29,30,31,35,38|E-004_undp",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "대표 접수 이메일만 확보. 기후·에너지 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · UNEP — Bangladesh 사무소 안내 · unep",
+      "indicatorId": "E-004_unep",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=해당없음|E-004_unep",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "방글라데시 국가사무소 미설치(M03, 대상외). 지역사무소(방콕) 관할.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "23 · 27 · 29 · 30 · 32 · 33 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "23,27,29,30,32,33,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · UNESCO — Bangladesh 사무소 안내 · unesco",
+      "indicatorId": "E-004_unesco",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=23,27,29,30,32,33,35,38|E-004_unesco",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관장 정보만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "13 · 15 · 17 · 22 · 23 · 24 · 32 · 36"
+      },
+      "dimensions": {
+        "technology": "13,15,17,22,23,24,32,36"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · UNIDO — Bangladesh 사무소 안내 · unido",
+      "indicatorId": "E-004_unido",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=13,15,17,22,23,24,32,36|E-004_unido",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관장 정보만 확보. 기후·에너지 실무 담당자 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · USAID — Bangladesh 사무소 안내 · usaid",
+      "indicatorId": "E-004_usaid",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=해당없음|E-004_usaid",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "기관 운영 종료(M03, 대상외). 공식 출처 및 후속 조직 정보 미확보.",
+      "sourceProvenance": {
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-211b3fff8c20|해당없음",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 05 · 07 · 15 · 18 · 19 · 21 · 23 · 24 · 32 · 33 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "01,03,05,07,15,18,19,21,23,24,32,33,34,35,38"
+      },
+      "displayLabel": "국제기구 현지사무소 담당자 · World Bank — Bangladesh 사무소 안내 · worldbank",
+      "indicatorId": "E-004_worldbank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-211b3fff8c20",
+        "labelKo": "국제기구 현지사무소 담당자",
+        "unit": "해당없음",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-211b3fff8c20|해당없음|technology=01,03,05,07,15,18,19,21,23,24,32,33,34,35,38|E-004_worldbank",
+      "sourceCaveat": "각 국제기구·공관의 공식 웹사이트 게시분만 수집함. 게시되지 않은 담당자명·이메일·전화·팩스는 패턴 추정 없이 결측(M01)으로 표기함. GGGI는 방글라데시 국가프로그램·회원 지위가 모두 없어 대상 외(M03), IRENA는 국가사무소를 운영하지 않아 회원 지위만 기재하고 현지 담당자는 대상 외(M03)임. USAID는 2025-07-01자로 대외원조 집행을 종료하고 국무부가 존속 프로그램을 운영하므로 주방글라데시 미국대사관 창구로 대체 기재함(M01). 현지조사 미수행 국가로 베트남과 달리 현지 확인 정보는 포함되지 않음. 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기후기술코드(tech_ids)는 1.2_entity 의 tech_id 실제 기입값을 집계한 값이다. 본 요소는 국제기구 현지사무소로 단일 기술 특정이 어려워 레코드별 tech_id 를 두지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 본 플랫폼은 국가녹색기술연구소(NIGT)가 운영하는 비영리 공공 플랫폼으로 이용료를 받지 않고 광고·판매 등 수익활동을 하지 않는다. 원천 약관의 제한 사유가 비상업(non-commercial)·개인 이용 한정인 경우 그 조건이 충족되므로 다운로드 '가능'으로 판정한다. 이행 조건: 출처(World Bank)를 표시하고 2차적저작물을 작성하지 않는다.",
+      "sourceLabel": "국제기구 현지사무소 담당자",
+      "sourceLabelEn": "Local offices of international organisations — focal points",
+      "sourceNote": "사무소 주소 및 기후·에너지 실무 담당자 미확보. 원천이 최종 갱신일(last_updated)을 공표하지 않음 — 본문·meta·JSON-LD·sitemap·HTTP 헤더 전수 확인(M01).",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 19,
+      "key": "measure-211b3fff8c20",
+      "labelKo": "국제기구 현지사무소 담당자",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

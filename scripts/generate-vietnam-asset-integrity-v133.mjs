@@ -18,7 +18,7 @@ const PUBLIC_ROOT = resolve(PROJECT_ROOT, "public");
 // named so its integrity file is complete before it is promoted. Writing this
 // file only after promotion left the semantic and interpretation assets - 157 of
 // them - undeclared in whatever was published in between.
-import { resolveDataRootV158 } from "./v158/country-context-v158.mjs";
+import { resolveDataRootV158, resolveCountryIso3V158, countryEntryV158, DEFAULT_COUNTRY_ISO3_V158 } from "./v158/country-context-v158.mjs";
 
 const argv = process.argv.slice(2);
 const dataOption = (() => {
@@ -32,12 +32,22 @@ const V2_ROOT = resolveDataRootV158({
   argv,
   env: dataOption,
 });
-const INTEGRITY_PATH = resolve(V2_ROOT, "asset-integrity.json");
+const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
+const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
+// The registry's own dataRoot, e.g. "/data/bgd/v2" - the published prefix for
+// this country regardless of whether V2_ROOT above is the real public/ tree or
+// a staging copy of it.
+const PUBLISHED_DATA_PREFIX = countryEntryV158(PROJECT_ROOT, COUNTRY_ISO3).dataRoot.replace(/\/$/u, "");
+const outOverrideIndex = argv.indexOf("--out");
+const INTEGRITY_PATH = outOverrideIndex < 0 ? resolve(V2_ROOT, "asset-integrity.json") : resolve(PROJECT_ROOT, argv[outOverrideIndex + 1]);
 const WORLD_COUNTRIES_PATH = resolve(PUBLIC_ROOT, "data/world-countries.geojson");
-const REPORT_PATH = resolve(
-  PROJECT_ROOT,
-  "reports/v133/asset-integrity-generation-v133.json"
-);
+// A byte-identity/schema-diff check (--out) never touches the committed
+// reports/v133 tree; a non-default country gets its own report file so it
+// never overwrites Viet Nam's.
+const REPORT_PATH =
+  outOverrideIndex >= 0
+    ? resolve(dirname(INTEGRITY_PATH), "asset-integrity-generation-v133.json")
+    : resolve(PROJECT_ROOT, `reports/v133/asset-integrity-generation-v133${IS_DEFAULT_COUNTRY ? "" : `-${COUNTRY_ISO3.toLowerCase()}`}.json`);
 
 function walkFiles(root) {
   const files = [];
@@ -63,7 +73,7 @@ function walkFiles(root) {
 function publicUrl(path) {
   const fromData = relative(V2_ROOT, path);
   if (!fromData.startsWith("..")) {
-    return `/data/vietnam/v2/${fromData.split(sep).join("/")}`;
+    return `${PUBLISHED_DATA_PREFIX}/${fromData.split(sep).join("/")}`;
   }
   return `/${relative(PUBLIC_ROOT, path).split(sep).join("/")}`;
 }
@@ -72,8 +82,12 @@ function sha256(bytes) {
   return createHash("sha256").update(bytes).digest("hex");
 }
 
+// Always exclude the tree's own asset-integrity.json, whether or not --out
+// moved where a fresh one gets written (a byte-identity check must describe
+// the tree exactly as build/verify see it, not add its own output as a file).
+const NATURAL_INTEGRITY_PATH = resolve(V2_ROOT, "asset-integrity.json");
 const paths = walkFiles(V2_ROOT)
-  .filter((path) => resolve(path) !== INTEGRITY_PATH)
+  .filter((path) => resolve(path) !== INTEGRITY_PATH && resolve(path) !== NATURAL_INTEGRITY_PATH)
   .concat(WORLD_COUNTRIES_PATH)
   .sort((left, right) => publicUrl(left).localeCompare(publicUrl(right), "en"));
 

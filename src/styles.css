@@ -1,5 +1,6 @@
 @import "./styles/map-v120.css";
 @import "./styles/comparison-v120.css";
+@import "./styles/fonts-bengali-v158.css";
 :root {
   --navy-950: #071a2d;
   --navy-900: #0b2540;
@@ -50,7 +51,7 @@ body {
   color: var(--slate-900);
   background: var(--slate-50);
   font-family: Inter, Pretendard, "Noto Sans KR", "Apple SD Gothic Neo",
-    "Malgun Gothic", Arial, sans-serif;
+    "Malgun Gothic", "Noto Sans Bengali", Arial, sans-serif;
   line-height: 1.55;
 }
 button,

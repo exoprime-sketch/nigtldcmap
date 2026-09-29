@@ -1,0 +1,302 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-001",
+  "entityCount": 69,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "32 · 33 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "32,33,34,35,38"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · adaptation_sector",
+      "indicatorId": "C-001_adaptation_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=32,33,34,35,38|C-001_adaptation_sector",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 적응 부문 1건(8행). NAP의 8개 주제 부문과 동일한 구분이므로 C-003의 C-003_priority_sector 행과 1:1 대응함. [기술분류] 수자원 32, 재난·도시 33, 농업·수산 34, 생태계 35, 정책·역량 38.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 적응 부문 1건(8행). NAP의 8개 주제 부문과 동일한 구분이므로 C-003의 C-003_priority_sector 행과 1:1 대응함. [기술분류] 수자원 32, 재난·도시 33, 농업·수산 34, 생태계 35, 정책·역량 38.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · adaptation_summary",
+      "indicatorId": "C-001_adaptation_summary",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_adaptation_summary",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 적응 총괄 항목 1건(8행) — 개입 과제 수 2건, 주제 부문 수, 연간 적응투자 소요 하한·상한, 연간 기후 피해액, 2100년 GDP 손실 전망 하한·상한. [범위 표기] 원문이 범위로 제시한 값(12–14 십억 USD, 24.5–77.9%)은 하한·상한을 각각 행으로 두고 단일 대표값으로 축약하지 않음. [정합] NAP 전체 개입 과제 113건·주제 부문 8개는 C-003과 동일한 수치임.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 적응 총괄 항목 1건(8행) — 개입 과제 수 2건, 주제 부문 수, 연간 적응투자 소요 하한·상한, 연간 기후 피해액, 2100년 GDP 손실 전망 하한·상한. [범위 표기] 원문이 범위로 제시한 값(12–14 십억 USD, 24.5–77.9%)은 하한·상한을 각각 행으로 두고 단일 대표값으로 축약하지 않음. [정합] NAP 전체 개입 과제 113건·주제 부문 8개는 C-003과 동일한 수치임.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · finance",
+      "indicatorId": "C-001_finance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_finance",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NDC 3.0 이행 재원 소요 1건. 구서식의 총 소요·무조건부·조건부·전제조건 4행을 1행의 속성 열로 통합함. [정합] 조건부 소요 90.23 십억 USD는 C-002의 기후재원 소요(NDC 3.0 감축)와 동일한 수치임.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NDC 3.0 이행 재원 소요 1건. 구서식의 총 소요·무조건부·조건부·전제조건 4행을 1행의 속성 열로 통합함. [정합] 조건부 소요 90.23 십억 USD는 C-002의 기후재원 소요(NDC 3.0 감축)와 동일한 수치임.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 05 · 08 · 18 · 23"
+      },
+      "dimensions": {
+        "technology": "01,03,05,08,18,23"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · non_ghg_target",
+      "indicatorId": "C-001_non_ghg_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01,03,05,08,18,23|C-001_non_ghg_target",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 비온실가스 정량목표 1건(17행) — NDC 3.0 10건 + Updated NDC(2021) 무조건부 재생에너지 설비 목표 7건. [보완 수집] 구서식은 2021년 목표를 합계 911.8 MW와 5개 값(581·149·20·5·100)만 두고 기술명이 없었으나, 2021 Updated NDC 원문 Table 4를 대조하여 기술명(계통연계 태양광·풍력·바이오매스·바이오가스·신규 수력)을 확정하고 누락되어 있던 태양광 미니그리드 56.8 MW를 보완함 — 기술별 합 911.8 MW가 합계와 일치함. [판 구분] 2021년 목표는 NDC 3.0에 대응 항목이 기재되어 있지 않으므로 NDC 3.0 목표로 전용하지 않음 — 「[정량목표] NDC 판」 열로 구분함. [최소 기준값] 철도 유휴부지 태양광 30%는 원문이 \"at least\"로 표기한 최소 기준값임.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 비온실가스 정량목표 1건(17행) — NDC 3.0 10건 + Updated NDC(2021) 무조건부 재생에너지 설비 목표 7건. [보완 수집] 구서식은 2021년 목표를 합계 911.8 MW와 5개 값(581·149·20·5·100)만 두고 기술명이 없었으나, 2021 Updated NDC 원문 Table 4를 대조하여 기술명(계통연계 태양광·풍력·바이오매스·바이오가스·신규 수력)을 확정하고 누락되어 있던 태양광 미니그리드 56.8 MW를 보완함 — 기술별 합 911.8 MW가 합계와 일치함. [판 구분] 2021년 목표는 NDC 3.0에 대응 항목이 기재되어 있지 않으므로 NDC 3.0 목표로 전용하지 않음 — 「[정량목표] NDC 판」 열로 구분함. [최소 기준값] 철도 유휴부지 태양광 30%는 원문이 \"at least\"로 표기한 최소 기준값임.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · sdg_linkage",
+      "indicatorId": "C-001_sdg_linkage",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_sdg_linkage",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 연계 SDG 1건(7행) — SDG 7·8·9·11·13·15·17. [집계행 삭제] 구서식의 「연계 SDG 목록」·「연계 SDG 수 7」 행은 행 수와 「[SDG] 번호」 열로 대체되므로 삭제함.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 연계 SDG 1건(7행) — SDG 7·8·9·11·13·15·17. [집계행 삭제] 구서식의 「연계 SDG 목록」·「연계 SDG 수 7」 행은 행 수와 「[SDG] 번호」 열로 대체되므로 삭제함.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "15 · 16 · 17 · 18 · 20 · 21"
+      },
+      "dimensions": {
+        "technology": "15,16,17,18,20,21"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · sector_measure",
+      "indicatorId": "C-001_sector_measure",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=15,16,17,18,20,21|C-001_sector_measure",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 부문 감축수단 1건(5행) — 에너지 / 수송 / IPPU / AFOLU / 폐기물. [정량 목표 분리] 수단 서술에 포함된 정량 목표(철도 348km, 승용차 30% 등)는 C-001_non_ghg_target 행에 값·단위·목표연도로 따로 수록하여 검색·집계가 가능하게 함.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 부문 감축수단 1건(5행) — 에너지 / 수송 / IPPU / AFOLU / 폐기물. [정량 목표 분리] 수단 서술에 포함된 정량 목표(철도 348km, 승용차 30% 등)는 C-001_non_ghg_target 행에 값·단위·목표연도로 따로 수록하여 검색·집계가 가능하게 함.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "15 · 16 · 17 · 18 · 19 · 21 · 23"
+      },
+      "dimensions": {
+        "technology": "15,16,17,18,19,21,23"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · sector_target",
+      "indicatorId": "C-001_sector_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=15,16,17,18,19,21,23|C-001_sector_target",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 부문 1건(15행) — 대분류 4건(에너지·IPPU·AFOLU·폐기물), 세부 11건. [서식 핵심] 구서식은 부문×지표(BAU·무조건부·조건부) 조합마다 1행을 두어 45행이었으나, 신서식에서는 부문을 행으로 두고 세 지표를 열로 두었음. [합산 주의] 「[부문] 계층」 열이 대분류·세부를 구분함 — 두 계층을 함께 합산하면 이중계상이 됨. 대분류 합계가 총계와 일치함을 확인함. [기술분류] framework 「행별 태깅」 — 발전·상업·농업용에너지·탈루 16, 제조업·벽돌가마·IPPU 17, 수송 18, 가정 19, 경종·축산 21, 산림 23, 폐기물 15.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 부문 1건(15행) — 대분류 4건(에너지·IPPU·AFOLU·폐기물), 세부 11건. [서식 핵심] 구서식은 부문×지표(BAU·무조건부·조건부) 조합마다 1행을 두어 45행이었으나, 신서식에서는 부문을 행으로 두고 세 지표를 열로 두었음. [합산 주의] 「[부문] 계층」 열이 대분류·세부를 구분함 — 두 계층을 함께 합산하면 이중계상이 됨. 대분류 합계가 총계와 일치함을 확인함. [기술분류] framework 「행별 태깅」 — 발전·상업·농업용에너지·탈루 16, 제조업·벽돌가마·IPPU 17, 수송 18, 가정 19, 경종·축산 21, 산림 23, 폐기물 15.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · submission",
+      "indicatorId": "C-001_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_submission",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NDC 판 1건(4행) — INDC(2015) / First NDC(2016) / Updated NDC 2.0(2021-08-26) / Third NDC 3.0(2025-09-29, 현행). [집계행 삭제] 구서식의 목표연도 4행과 원본 링크 3행은 각각 「[제출] 목표 연도」·「[제출] 원문 URL」 열로 흡수되어 삭제함. [현행 판] 현행 목표는 NDC 3.0(목표연도 2035)이며, NDC 2.0(목표연도 2030) 값과 혼용하지 않도록 「[제출] 상태」 열에 표시함.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "INDC·First NDC의 정확한 제출일은 연도만 공개되어 미수집(M06).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · target",
+      "indicatorId": "C-001_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_target",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NDC 판별 감축 목표 1건(2행) — NDC 3.0(2035) / Updated NDC 2.0(2030). [서식 핵심] 구서식은 BAU·무조건부 감축량·감축률·조건부 감축량·감축률·합계를 각각 1행씩 두었으나, 신서식에서는 NDC 판을 행으로 두고 이들을 열로 두어 한 행에서 목표 구조 전체가 읽히도록 함. [검산] BAU 418.40 = 부문 합계(264.00+8.30+110.89+35.21), 합계 감축량 84.97 = 26.74+58.23. [원문 표기] 원문은 합계를 \"Total cumulative reduction from 2026 to 2035\"로 누적 표현하나 값은 2035년 단년 BAU 대비 합계와 동일함 — 원문 표기를 바꾸지 않고 비고에 남김. [판 간 비교 금지] NDC 3.0(기준 2022·목표 2035)과 NDC 2.0(목표 2030)은 BAU 산정 기준이 달라 감축률을 직접 비교하면 안 됨.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "Updated NDC(2021)의 기준연도·합계 감축량은 Climate Watch 기재 항목에 없어 미수집(M06).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "NDC (국가 온실가스 감축 목표) · treaty_milestone",
+      "indicatorId": "C-001_treaty_milestone",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca593452ed2f",
+        "labelKo": "NDC (국가 온실가스 감축 목표)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ca593452ed2f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-001_treaty_milestone",
+      "sourceCaveat": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 파리협정 이정표 1건(2행) — 서명 2016-04-22 / 비준 2016-09-21. NDC 제출 이력과 성격이 달라 레코드 유형을 분리함.",
+      "sourceLabel": "NDC (국가 온실가스 감축 목표)",
+      "sourceLabelEn": "Nationally Determined Contribution",
+      "sourceNote": "[raw] ([raw]\\C-001\\) C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf · C-001_NDC (국가 온실가스 감축 목표)_BGD_NDC2.0_Updated_UNFCCC_2021-08-26.pdf · C-001_NDC (국가 온실가스 감축 목표)_climatewatch_ndcs_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 12개(C-001_submission_history·_source_link·_base_year·_mitigation_target·_target_ghg·_target_sector·_bau_projection·_sector_mitigation_measures·_ndc_sdg_linkage·_adaptation_target·_implementation_finance 및 출처 접미사 _unfccc·_climatewatch)를 레코드 유형 10개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 파리협정 이정표 1건(2행) — 서명 2016-04-22 / 비준 2016-09-21. NDC 제출 이력과 성격이 달라 레코드 유형을 분리함.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 10,
+      "key": "measure-ca593452ed2f",
+      "labelKo": "NDC (국가 온실가스 감축 목표)",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

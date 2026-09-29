@@ -76,11 +76,9 @@ import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "../layers/detail
 import { useDetailFoldV160 } from "./detailFoldContextV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
-import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
-import {
-  elementVariantV159,
-  GENERIC_BODY_VARIANTS_V159,
-} from "../templates/templateVariantsV159";
+import { useCountryTypologyV158, useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
+import { variantForCountryV158 } from "../templates/variantCountryScopeV158";
+import { GENERIC_BODY_VARIANTS_V159 } from "../templates/templateVariantsV159";
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
@@ -170,8 +168,9 @@ export default function PublicDataAnalysisRouterV126({
   mapSlot,
 }: Props) {
   // V159: the display type picks the template, the element's variant the body.
-  const typology = getTypologyV159(elementId);
-  const variantEntry = elementVariantV159(elementId);
+  // V158: the type and variant as seen from the page's country.
+  const typology = useCountryTypologyV158(elementId);
+  const variantEntry = variantForCountryV158(elementId, useDataCountryV158());
   // The shared climate-technology filter narrows the rows before any body
   // reads them, so every variant sees the same selection.
   const presentIndicatorIds = useMemo(

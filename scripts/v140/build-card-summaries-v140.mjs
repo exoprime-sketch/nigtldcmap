@@ -18,9 +18,15 @@
  *   facts         what a register or document set carries, in words
  *   status        the five elements that publish no values yet
  *
- * Usage: node scripts/v140/build-card-summaries-v140.mjs [--data public/data/vietnam/v2]
+ * Usage: node scripts/v140/build-card-summaries-v140.mjs [--data public/data/vietnam/v2] [--country vnm] [--out <path>]
+ *
+ * V158: `--country <iso3>` (default vnm) resolves the data root from the
+ * country registry instead of hard-coding Viet Nam's. A non-default country
+ * has no home preview yet, so its home-card branch is simply skipped; its
+ * province/region map targets come from its own (possibly empty) map-index
+ * instead of Viet Nam's hand-authored publicMapTargetsV138.json contract.
  */
-import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -42,25 +48,41 @@ import {
   TOTAL_LIKE,
   recordRoleOf,
 } from "./card-model-v140.mjs";
+import { resolveDataRootV158, resolveCountryIso3V158, countryEntryV158, DEFAULT_COUNTRY_ISO3_V158 } from "../v158/country-context-v158.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
-const opt = (flag, fallback) => {
-  const index = argv.indexOf(flag);
-  return index < 0 ? fallback : argv[index + 1];
-};
-const DATA = resolve(ROOT, opt("--data", process.env.VIETNAM_DATA_ROOT || "public/data/vietnam/v2"));
-const OUT_PATH = resolve(DATA, "home/card-summaries-v140.json");
-const REVIEW_PATH = resolve(ROOT, "reports/v140/card-summaries-review-v140.md");
-const REPORT_PATH = resolve(ROOT, "reports/v140/card-summaries-build-v140.json");
+const DATA = resolveDataRootV158({ root: ROOT, argv, env: process.env.VIETNAM_DATA_ROOT || null });
+const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
+const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
+const COUNTRY_ENTRY = countryEntryV158(ROOT, COUNTRY_ISO3);
+const COUNTRY_NAME_KO = COUNTRY_ENTRY.nameKo;
+// A non-default country's own reports never overwrite Viet Nam's committed review/build files.
+const REPORT_SUFFIX = IS_DEFAULT_COUNTRY ? "" : `-${COUNTRY_ISO3.toLowerCase()}`;
+const outOverrideIndex = argv.indexOf("--out");
+const OUT_PATH = outOverrideIndex < 0 ? resolve(DATA, "home/card-summaries-v140.json") : resolve(ROOT, argv[outOverrideIndex + 1]);
+// --out also moves the review/build report next to it, so a byte-identity
+// check never touches the committed reports/v140 tree.
+const REVIEW_PATH = outOverrideIndex < 0 ? resolve(ROOT, `reports/v140/card-summaries-review-v140${REPORT_SUFFIX}.md`) : resolve(dirname(OUT_PATH), "card-summaries-review-v140.md");
+const REPORT_PATH = outOverrideIndex < 0 ? resolve(ROOT, `reports/v140/card-summaries-build-v140${REPORT_SUFFIX}.json`) : resolve(dirname(OUT_PATH), "card-summaries-build-v140.json");
 
 const packs = loadPacks(DATA);
 const { byElement: semanticByElement, contractByElement } = loadSemantics(DATA);
 const catalog = readJson(resolve(DATA, "catalog.json")).elements;
 const manifest = readJson(resolve(DATA, "manifest.json"));
-const homePreview = readJson(resolve(DATA, "home/home-preview-v139.json"));
-const mapTargets = readJson(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json")).targets;
+const HOME_PREVIEW_PATH = resolve(DATA, "home/home-preview-v139.json");
+// A non-default country has not built a home preview yet; a card build for it
+// still has to run (elements need summaries before their home cards exist),
+// so it gets no home-sourced cards instead of failing outright.
+const homePreview = existsSync(HOME_PREVIEW_PATH) ? readJson(HOME_PREVIEW_PATH) : { schemaVersion: null, cards: [] };
 const mapIndex = readJson(resolve(DATA, "map-index.json"));
+// Viet Nam's map targets are a hand-reviewed contract keyed to its own source
+// column names; a second country has none yet, so its "targets" are derived
+// from what its own map-index actually publishes (empty until it has layers -
+// BGD currently has none, so this is [] for it today).
+const mapTargets = IS_DEFAULT_COUNTRY
+  ? readJson(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json")).targets
+  : mapIndex.layers.map((layer) => ({ elementId: layer.elementId, period: layer.mapTargetV138?.period || null, build: layer.mapTargetV138?.build || null }));
 // V150: exact-equivalent unit respellings shared with src/data/visualization/unitDisplayV150.ts.
 const UNIT_ALIASES_V150 = readJson(resolve(ROOT, "src/data/visualization/unitDisplayV150.json")).aliases;
 function displayUnitV150(unit) {
@@ -318,7 +340,7 @@ function seriesLabel(series) {
   const labels = Object.entries(series.labels)
     .filter(([key]) => !["entityType", "year", "period", "technology"].includes(key))
     .map(([, value]) => value)
-    .filter((value) => value && value !== "베트남" && !/^\d+(\s*·\s*\d+)*$/u.test(value))
+    .filter((value) => value && value !== COUNTRY_NAME_KO && !/^\d+(\s*·\s*\d+)*$/u.test(value))
     // A dimension that carries the indicator's full description is not a
     // label; the reader gets it on the detail screen.
     .filter((value) => value.length <= 28);

@@ -16,6 +16,8 @@ import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
+import { displayRegionCellV158, useCountryPresentationV158 } from "../../../data/countries/countryPresentationV158";
 
 interface Props {
   elementId: string;
@@ -41,6 +43,9 @@ export default function PublicRawDataTablesV126({
   entities,
   detailTemplate,
 }: Props) {
+  // V158: region-name cells of a country other than the default show a
+  // Latin-only bracket; nothing changes for the default country.
+  const presentationV158 = useCountryPresentationV158(useDataCountryV158());
   const total = observations.length + entities.length;
   const paginated = total > 500;
   const [open, setOpen] = useState(false);
@@ -210,7 +215,7 @@ export default function PublicRawDataTablesV126({
                     <td><PublicTermTextV134 text={titleResolution.title} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
-                      <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(attributes[column])} /></td>
+                      <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(displayRegionCellV158(column, attributes[column], attributes, presentationV158))} /></td>
                     ))}
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>

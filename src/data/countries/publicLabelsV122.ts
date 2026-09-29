@@ -166,6 +166,15 @@ function normalizeAcronymTitle(value: string): string {
   return raw;
 }
 
+/**
+ * V158: a delivered label as a public title, without the curated table - the
+ * column inventory removed and the acronym titles normalised, as
+ * `publicDatasetTitleV122` does for an uncurated element.
+ */
+export function publicTitleFromRawLabelV158(rawLabel: string): string {
+  return normalizeAcronymTitle(removeFieldInventory(rawLabel || ""));
+}
+
 export function publicDatasetTitleV122(
   elementId: string,
   rawLabel: string

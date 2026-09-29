@@ -415,13 +415,16 @@ const redaction = fs.existsSync(path.join(REPO, redactionReport)) ? readJson(red
 check("NO_SECRETS", secretHits.length === 0 && redaction && redaction.applied === true, { secretHits, redactionApplied: redaction && redaction.applied }, "no secret pattern; redaction applied");
 
 // ---------------------------------------------------------------- J. reference unchanged
-const diff = spawnSync("git", ["diff", "--quiet", "HEAD", "--", `public${reference.dataRoot}`, "public/data/countries.json", "src"], { cwd: REPO });
+// V158-B2: src is no longer part of this check. The country layer changes src
+// on purpose; the reference country's screens are held by the screen
+// signature and the release gate instead (reports/v158/EXPECTATION_CHANGES_V158-B2.md).
+const diff = spawnSync("git", ["diff", "--quiet", "HEAD", "--", `public${reference.dataRoot}`, "public/data/countries.json"], { cwd: REPO });
 const refIntegrity = readJson(path.join(refRoot, "asset-integrity.json"));
 const refDrift = refIntegrity.assets.filter((row) => {
   const file = path.join(REPO, "public", row.url);
   return !fs.existsSync(file) || sha256(fs.readFileSync(file)) !== row.sha256;
 }).map((row) => row.url);
-check("REFERENCE_TREE_UNCHANGED", diff.status === 0 && refDrift.length === 0, { gitDiffClean: diff.status === 0, drift: refDrift.slice(0, 5) }, "no change to the reference tree, registry or src");
+check("REFERENCE_TREE_UNCHANGED", diff.status === 0 && refDrift.length === 0, { gitDiffClean: diff.status === 0, drift: refDrift.slice(0, 5) }, "no change to the reference tree or the registry");
 
 // ---------------------------------------------------------------- K. determinism
 const compare = arg("--compare");

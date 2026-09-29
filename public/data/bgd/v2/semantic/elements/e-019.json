@@ -1,0 +1,80 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "기후_에너지_담당_판정_focal_point_status",
+      "labelKo": "기후_에너지_담당_판정_focal_point_status",
+      "valueCount": 4,
+      "values": [
+        "미확인 — 사무소 설치 여부 미확인",
+        "없음 확인(원천 업무안내 기준) — 기후·에너지 업무 표기 없음",
+        "유(원천 업무안내 기준) — 기후·에너지 업무 명시",
+        "해당 없음 — 사무소 미설치"
+      ]
+    },
+    {
+      "key": "행_유형_row_type",
+      "labelKo": "행_유형_row_type",
+      "valueCount": 3,
+      "values": [
+        "미설치 안내",
+        "설치여부 미확인",
+        "현지사무소"
+      ]
+    }
+  ],
+  "elementId": "E-019",
+  "entityCount": 8,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-32c05c3abf2c|개소(사무소)",
+      "dimensionLabels": {
+        "technology": "15 · 18 · 23 · 29 · 33 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "15,18,23,29,33,35,38"
+      },
+      "displayLabel": "개도국 내 한국 기관 사무소",
+      "indicatorId": "E-019_kr_agency_office",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-32c05c3abf2c",
+        "labelKo": "개도국 내 한국 기관 사무소",
+        "unit": "개소(사무소)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-32c05c3abf2c|개소(사무소)|technology=15,18,23,29,33,35,38|E-019_kr_agency_office",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 설치 3건은 모두 Gulshan 2 I-K Tower 동일 건물 소재. 좌표는 Gulshan 2 구역 중심점(OpenStreetMap, ODbL 1.0)이며 건물 단위 좌표는 미확보. 한국에너지공단·한국수자원공사는 공식 해외사무소 목록이 게시되지 않아 미확인(M01). 기후·에너지 담당자 유무는 022 이슈로그 데이터 요소의 '유무' 항목에 따라 공개정보 기준으로 판정했다. 기관 누리집에 전담자 직위·연락처가 게시되지 않은 건은 '무(공개된 정보 없음)'로 기재하며, 이는 담당자 부재를 단정하는 것이 아니다. 기후기술코드(tech_ids) : 해당없음. 대상국에 사무소를 둔 한국기관은 무역·투자 지원(KOTRA·무역협회), 무상원조 총괄(KOICA), 정책금융(수출입은행)으로 38대 기후기술 중 하나를 특정할 수 없고, 단일 기술이 특정되는 기관(K-water·KEPCO·에너지공단·KEITI 등)은 사무소가 없거나 설치 여부가 확인되지 않는다. 억지 매핑 금지 원칙에 따라 부여하지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 원천이 제3자 제공에 사전 협의·허락을 요구하거나 자료별 공공누리 유형이 확정되지 않아 현 시점에서 다운로드 허용 여부를 확정할 수 없으므로 '제한'으로 표기한다. 【NIGT 협의 필요】 KOTRA(웹을 통한 제3자 제공 시 사전 협의·허락), KEITI·KOICA(자료별 공공누리 유형 확인), 한국수출입은행·한국에너지공단(저작권정책 미게시)에 대해 NIGT가 해당 기관과 직접 협의하여 허용 여부와 조건을 확정해야 한다. 협의 결과에 따라 '가능' 또는 '불가'로 확정한다.",
+      "sourceLabel": "개도국 내 한국 기관 사무소",
+      "sourceLabelEn": "Korean public agency offices in developing countries",
+      "sourceNote": "레코드 8행. 도시 5건·주소 5건·연락처 5건 미확보. 한국수력원자력 등 3건은 방글라데시 사무소 미설치가 공식 해외지사 목록으로 확인되어 구조적 부존(M03)이며, 2건은 공식 누리집에 해외사무소 현황 페이지가 없어 설치 여부 자체를 확인하지 못했다(M02). '기후·에너지 담당'은 8건 중 7건이 '무(공개된 정보 없음)'로, 기관 누리집에 전담자 직위·연락처가 게시되지 않은 것이며 담당자 부재를 단정한 값이 아니다. 메타 결측: 라이선스·최종갱신일·검증자 미확인(M01).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-32c05c3abf2c",
+      "labelKo": "개도국 내 한국 기관 사무소",
+      "recordCount": 0,
+      "unit": "개소(사무소)",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

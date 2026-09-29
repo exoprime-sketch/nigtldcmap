@@ -1,11 +1,13 @@
 {
   "type": "summary",
   "audit": "country-verify:bgd:v158",
-  "status": "PASS",
-  "passed": 53,
-  "failed": 0,
-  "total": 53,
-  "failedChecks": [],
+  "status": "FAIL",
+  "passed": 51,
+  "failed": 1,
+  "total": 52,
+  "failedChecks": [
+    "REFERENCE_TREE_UNCHANGED"
+  ],
   "framework": 152,
   "delivered": 119,
   "notProvided": 33,
@@ -799,6 +801,7 @@
           "C-004",
           "C-009",
           "C-010",
+          "C-015",
           "C-016",
           "C-017",
           "C-018"
@@ -811,6 +814,7 @@
         "C-004",
         "C-009",
         "C-010",
+        "C-015",
         "C-016",
         "C-017",
         "C-018"
@@ -827,18 +831,12 @@
     },
     {
       "name": "REFERENCE_TREE_UNCHANGED",
-      "pass": true,
+      "pass": false,
       "actual": {
-        "gitDiffClean": true,
+        "gitDiffClean": false,
         "drift": []
       },
       "expected": "no change to the reference tree, registry or src"
-    },
-    {
-      "name": "DETERMINISTIC_BUILD",
-      "pass": true,
-      "actual": [],
-      "expected": "second build byte-identical"
     }
   ]
 }

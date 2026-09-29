@@ -1,0 +1,122 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "승인절차_기재_구분_approval_procedure_status",
+      "labelKo": "승인절차_기재_구분_approval_procedure_status",
+      "valueCount": 1,
+      "values": [
+        "기재"
+      ]
+    },
+    {
+      "key": "제6_4조_전환_상태_a64_status",
+      "labelKo": "제6_4조_전환_상태_a64_status",
+      "valueCount": 3,
+      "values": [
+        "Pending additional documentation from activity participant",
+        "Registered",
+        "전환 요청 11건(단독 11·다국가 PoA 0) 중 방글라데시 DNA 승인 11건 · 제6.4조 등록 7건 (상태: 제6.4조 등록 완료 7 · 사업참여자 추가서류 대기 4)"
+      ]
+    },
+    {
+      "key": "현행여부_record_status",
+      "labelKo": "현행여부_record_status",
+      "valueCount": 3,
+      "values": [
+        "사업참여자 추가서류 대기",
+        "제6.4조 등록 완료",
+        "현행"
+      ]
+    }
+  ],
+  "elementId": "E-002",
+  "entityCount": 12,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-763feb8142b6|건",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "DNA(국가지정기관) · DNA(국가지정기관) [건]",
+      "indicatorId": "E-002_cdm_transition",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-763feb8142b6",
+        "labelKo": "DNA(국가지정기관)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-763feb8142b6|건|technology=해당없음|E-002_cdm_transition",
+      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "sourceLabel": "DNA(국가지정기관)",
+      "sourceLabelEn": "CDM activities in transition to Article 6.4",
+      "sourceNote": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-259fd2435dc6|해당없음",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "DNA(국가지정기관) · DNA(국가지정기관) [해당없음]",
+      "indicatorId": "E-002_dna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-259fd2435dc6",
+        "labelKo": "DNA(국가지정기관)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-259fd2435dc6|해당없음|technology=해당없음|E-002_dna",
+      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "sourceLabel": "DNA(국가지정기관)",
+      "sourceLabelEn": "Designated National Authority (DNA)",
+      "sourceNote": "주담당 직함, 부담당자 성명·직함·이메일·전화가 원천 문서에 기재되지 않음.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-763feb8142b6",
+      "labelKo": "DNA(국가지정기관)",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-259fd2435dc6",
+      "labelKo": "DNA(국가지정기관)",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

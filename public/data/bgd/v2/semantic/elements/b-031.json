@@ -1,0 +1,94 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "B-031",
+  "entityCount": 9,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-625d7be5a1b6|ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "산림 총 면적(ADM1 단위 개체 목록)",
+      "indicatorId": "B-031_forest_extent_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-625d7be5a1b6",
+        "labelKo": "산림 총 면적(ADM1 단위 개체 목록)",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-625d7be5a1b6|ha|technology=23,35|B-031_forest_extent_adm1",
+      "sourceCaveat": "[값의 성격] 모델(위성 분류 GFW) / [지역구분] 데이터검토 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1(관구) 단위 GIS 개체로 재구성하여 1.2_entity 단독 작성. [변경] v3.0 의 1.1_observation 지표 207개(관구별 189 + 전국 18)를 개체 71건(성 63 + 전국 8개 임계값)으로 재구성. 값은 변경 없이 속성 열로 이관. [행정구역 기준] 원자료(GFW)와 경계(GADM 4.1)가 모두 2025년 개편 이전 8개 관구 체계이므로 8개 기준으로 수록하고, 34개 기준 납품이 필요하면 attr_5 로 집계할 수 있으나, 피복률(attr_10~11)은 비율값이라 단순 합산이 불가하고 면적 가중 재계산이 필요합니다. [교차검증] 관구별 합계 대비 전국값 편차 — 분석대상 면적 +0.00% · 수관면적2000 -0.00% · 수관면적2010 +0.00%. [기술분류] 데이터검토 021 이슈로그 「기술 분류 필요 = [데이터셋 전체] 탄소 흡수원 기술 · 산림·생태계 부문 기술」 대상 — tech_ids=23;35 (별첨2 30_tech_info 기준). / [기술코드] tech_ids=23;35. 1.2_entity 의 tech_id 열에도 동일하게 23;35 를 기입했습니다(레코드 9건). 클라이언트 승인에 따라 개체 tech_id 열에도 2_meta_info 의 tech_ids 와 같이 ';' 구분 복수값을 기입하며(종전 \"정수 1개\" 규정을 대체), 주 기술 23 를 맨 앞에 둡니다. 요소↔기술 매핑의 관계 유형·근거는 별첨 「31_map_element_tech 기술매핑대장」 참조. [원천 경계 불일치] Global Forest Watch 의 ADM1 집계는 마이멘싱 관구 분리(2015) 이전 7개 관구 체계를 사용합니다. 본 자료의 다카(Dhaka) 관구 값에는 마이멘싱 관구가 포함되어 있으며, 마이멘싱 관구는 별도 값이 원천에 없어 NP/M01 로 처리했습니다. B-033(연간 산림 손실)은 GADM 4.1 8개 관구 기준으로 제공되어 마이멘싱 값이 별도로 존재합니다. / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인). / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "산림 총 면적(ADM1 단위 개체 목록)",
+      "sourceLabelEn": "Forest (tree cover) extent by province",
+      "sourceNote": "[값의 성격] 모델(위성 분류 GFW) / [지역구분] 데이터검토 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1(관구) 단위 GIS 개체로 재구성하여 1.2_entity 단독 작성. [변경] v3.0 의 1.1_observation 지표 207개(관구별 189 + 전국 18)를 개체 71건(성 63 + 전국 8개 임계값)으로 재구성. 값은 변경 없이 속성 열로 이관. [행정구역 기준] 원자료(GFW)와 경계(GADM 4.1)가 모두 2025년 개편 이전 8개 관구 체계이므로 8개 기준으로 수록하고, 34개 기준 납품이 필요하면 attr_5 로 집계할 수 있으나, 피복률(attr_10~11)은 비율값이라 단순 합산이 불가하고 면적 가중 재계산이 필요합니다. [교차검증] 관구별 합계 대비 전국값 편차 — 분석대상 면적 +0.00% · 수관면적2000 -0.00% · 수관면적2010 +0.00%. [기술분류] 데이터검토 021 이슈로그 「기술 분류 필요 = [데이터셋 전체] 탄소 흡수원 기술 · 산림·생태계 부문 기술」 대상 — tech_ids=23;35 (별첨2 30_tech_info 기준). / [기술코드] tech_ids=23;35. 1.2_entity 의 tech_id 열에도 동일하게 23;35 를 기입했습니다(레코드 9건). 클라이언트 승인에 따라 개체 tech_id 열에도 2_meta_info 의 tech_ids 와 같이 ';' 구분 복수값을 기입하며(종전 \"정수 1개\" 규정을 대체), 주 기술 23 를 맨 앞에 둡니다. 요소↔기술 매핑의 관계 유형·근거는 별첨 「31_map_element_tech 기술매핑대장」 참조. [원천 경계 불일치] Global Forest Watch 의 ADM1 집계는 마이멘싱 관구 분리(2015) 이전 7개 관구 체계를 사용합니다. 본 자료의 다카(Dhaka) 관구 값에는 마이멘싱 관구가 포함되어 있으며, 마이멘싱 관구는 별도 값이 원천에 없어 NP/M01 로 처리했습니다. B-033(연간 산림 손실)은 GADM 4.1 8개 관구 기준으로 제공되어 마이멘싱 값이 별도로 존재합니다. / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인). / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-92fbd197a303|ha",
+      "dimensionLabels": {
+        "technology": "23 · 35"
+      },
+      "dimensions": {
+        "technology": "23,35"
+      },
+      "displayLabel": "산림 총 면적(전국, 수관밀도 임계값별)",
+      "indicatorId": "B-031_forest_extent_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-92fbd197a303",
+        "labelKo": "산림 총 면적(전국, 수관밀도 임계값별)",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-92fbd197a303|ha|technology=23,35|B-031_forest_extent_national",
+      "sourceCaveat": "[값의 성격] 모델(위성 분류 GFW) / 전국 집계값. 관구별 값은 GFW 가 임계 30% 기준만 제공하므로 ADM1 단위 레코드는 attr_6=30 고정입니다. 지리적 경계가 ADM1 단위가 아니어서 좌표·폴리곤을 부여하지 않았습니다. / [기술코드] tech_ids=23;35. 1.2_entity 의 tech_id 열에도 동일하게 23;35 를 기입했습니다(레코드 9건). 클라이언트 승인에 따라 개체 tech_id 열에도 2_meta_info 의 tech_ids 와 같이 ';' 구분 복수값을 기입하며(종전 \"정수 1개\" 규정을 대체), 주 기술 23 를 맨 앞에 둡니다. 요소↔기술 매핑의 관계 유형·근거는 별첨 「31_map_element_tech 기술매핑대장」 참조. [원천 경계 불일치] Global Forest Watch 의 ADM1 집계는 마이멘싱 관구 분리(2015) 이전 7개 관구 체계를 사용합니다. 본 자료의 다카(Dhaka) 관구 값에는 마이멘싱 관구가 포함되어 있으며, 마이멘싱 관구는 별도 값이 원천에 없어 NP/M01 로 처리했습니다. B-033(연간 산림 손실)은 GADM 4.1 8개 관구 기준으로 제공되어 마이멘싱 값이 별도로 존재합니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "산림 총 면적(전국, 수관밀도 임계값별)",
+      "sourceLabelEn": "Forest (tree cover) extent, national by canopy threshold",
+      "sourceNote": "[값의 성격] 모델(위성 분류 GFW) / 전국 집계값. 관구별 값은 GFW 가 임계 30% 기준만 제공하므로 ADM1 단위 레코드는 attr_6=30 고정입니다. 지리적 경계가 ADM1 단위가 아니어서 좌표·폴리곤을 부여하지 않았습니다. / [기술코드] tech_ids=23;35. 1.2_entity 의 tech_id 열에도 동일하게 23;35 를 기입했습니다(레코드 9건). 클라이언트 승인에 따라 개체 tech_id 열에도 2_meta_info 의 tech_ids 와 같이 ';' 구분 복수값을 기입하며(종전 \"정수 1개\" 규정을 대체), 주 기술 23 를 맨 앞에 둡니다. 요소↔기술 매핑의 관계 유형·근거는 별첨 「31_map_element_tech 기술매핑대장」 참조. [원천 경계 불일치] Global Forest Watch 의 ADM1 집계는 마이멘싱 관구 분리(2015) 이전 7개 관구 체계를 사용합니다. 본 자료의 다카(Dhaka) 관구 값에는 마이멘싱 관구가 포함되어 있으며, 마이멘싱 관구는 별도 값이 원천에 없어 NP/M01 로 처리했습니다. B-033(연간 산림 손실)은 GADM 4.1 8개 관구 기준으로 제공되어 마이멘싱 값이 별도로 존재합니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-625d7be5a1b6",
+      "labelKo": "산림 총 면적(ADM1 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-92fbd197a303",
+      "labelKo": "산림 총 면적(전국, 수관밀도 임계값별)",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

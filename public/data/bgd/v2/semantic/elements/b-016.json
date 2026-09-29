@@ -1,0 +1,137 @@
+{
+  "dimensions": [
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 36,
+      "values": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-016",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-877ad0f1aa8d|%",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 소비 비중",
+      "indicatorId": "B-016_fossil_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-877ad0f1aa8d",
+        "labelKo": "화석연료 소비 비중",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-877ad0f1aa8d|%|technology=범용|B-016_fossil_share",
+      "sourceCaveat": "[값의 성격] 통계(WDI·EI) / [결측 확인] WDI API(lastupdated 2026-07-13) 원본 확인 결과 1990–2015는 정상값, **2016–2023은 값이 0으로 반환되나 방글라데시의 실제 화석연료 비중이 0%일 수 없으므로 실질 결측(NP)**으로 처리. 2024–2025는 null. Q-008 판별기준(\"0이라고 적었을 때 사실인 경우에만 0\")에 따라 0을 값으로 쓰지 않고 결측사유 NP를 기입함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] WDI API 응답 lastupdated / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. / [부분 결측] 값이 없는 연도(2016~2025, 10개)는 행별 결측코드 M01 · 2016년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2017년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2018년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2019년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2020년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2021년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2022년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2023년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2024년: 원천 null — IEA 원자료 미제공 / 2025년: 원천 null — IEA 원자료 미제공",
+      "sourceLabel": "화석연료 소비 비중",
+      "sourceLabelEn": "Fossil fuel energy consumption (% of total)",
+      "sourceNote": "[값의 성격] 통계(WDI·EI) / [결측 확인] WDI API(lastupdated 2026-07-13) 원본 확인 결과 1990–2015는 정상값, **2016–2023은 값이 0으로 반환되나 방글라데시의 실제 화석연료 비중이 0%일 수 없으므로 실질 결측(NP)**으로 처리. 2024–2025는 null. Q-008 판별기준(\"0이라고 적었을 때 사실인 경우에만 0\")에 따라 0을 값으로 쓰지 않고 결측사유 NP를 기입함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] WDI API 응답 lastupdated / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. / [부분 결측] 값이 없는 연도(2016~2025, 10개)는 행별 결측코드 M01 · 2016년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2017년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2018년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2019년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2020년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2021년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2022년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2023년: WDI가 0 값을 반환하나 실질 결측 — IEA 원자료 미갱신 구간(실제 0%가 아님) / 2024년: 원천 null — IEA 원자료 미제공 / 2025년: 원천 null — IEA 원자료 미제공",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-98a19c41d3d6|%",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "indicatorId": "B-016_fossil_share_ei",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-98a19c41d3d6",
+        "labelKo": "화석연료 소비 비중(EI 기반 보완 산출)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-98a19c41d3d6|%|technology=범용|B-016_fossil_share_ei",
+      "sourceCaveat": "[값의 성격] 통계(WDI·EI) / [분리 사유] 종전 파일 부제에 \"EI 통계로 보완\"이라 적었으나 실제 보완값이 없었음. EI는 1차에너지 기준, WDI(IEA)는 최종에너지 기준으로 정의가 달라 동일 계열로 접속하면 Q-004(소스 혼재 금지) 위반 → 별도 지표코드로 분리 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간 / [라이선스 근거] Energy Institute Statistical Review of World Energy 2025 보고서 「Quoting from the review」 항 — 출처를 \"Energy Institute Statistical Review of World Energy 2025\"로 표기하면 인용 가능하고, 표·차트의 대량 복제(extensive reproduction)만 EI 서면 허가 대상입니다(statisticalreview@energyinst.org). S&P Global Commodity Insights 출처 계열은 사전 허가 없이 재배포 불가이나 본 요소 수록 값에는 해당 사항이 없습니다(2026-09-21 원문 확인).  / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. / [원천 판] Energy Institute Statistical Review of World Energy 2025 판(보고서 표지·각주 기준). raw 파일명 연도를 2026 에서 2025 로 정정(2026-09-21).",
+      "sourceLabel": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "sourceLabelEn": "Fossil share (EI Statistical Review based)",
+      "sourceNote": "[값의 성격] 통계(WDI·EI) / [분리 사유] 종전 파일 부제에 \"EI 통계로 보완\"이라 적었으나 실제 보완값이 없었음. EI는 1차에너지 기준, WDI(IEA)는 최종에너지 기준으로 정의가 달라 동일 계열로 접속하면 Q-004(소스 혼재 금지) 위반 → 별도 지표코드로 분리 신설. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간 / [라이선스 근거] Energy Institute Statistical Review of World Energy 2025 보고서 「Quoting from the review」 항 — 출처를 \"Energy Institute Statistical Review of World Energy 2025\"로 표기하면 인용 가능하고, 표·차트의 대량 복제(extensive reproduction)만 EI 서면 허가 대상입니다(statisticalreview@energyinst.org). S&P Global Commodity Insights 출처 계열은 사전 허가 없이 재배포 불가이나 본 요소 수록 값에는 해당 사항이 없습니다(2026-09-21 원문 확인).  / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. / [원천 판] Energy Institute Statistical Review of World Energy 2025 판(보고서 표지·각주 기준). raw 파일명 연도를 2026 에서 2025 로 정정(2026-09-21).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-877ad0f1aa8d",
+      "labelKo": "화석연료 소비 비중",
+      "recordCount": 36,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-98a19c41d3d6",
+      "labelKo": "화석연료 소비 비중(EI 기반 보완 산출)",
+      "recordCount": 9,
+      "unit": "%",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 45,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

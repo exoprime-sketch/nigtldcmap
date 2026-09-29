@@ -53,7 +53,9 @@ export function loadPacks(dataRoot) {
   const cache = new Map();
   const elements = new Map();
   for (const [elementId, entry] of Object.entries(index.elements)) {
-    const path = resolve(dataRoot, entry.packUrl.replace(/^\/data\/vietnam\/v2\//u, ""));
+    // V158: a pack URL is always /data/<slug>/v2/... - strip whichever
+    // country's prefix it carries, not just Viet Nam's.
+    const path = resolve(dataRoot, entry.packUrl.replace(/^\/data\/[^/]+\/v2\//u, ""));
     let shard = cache.get(path);
     if (!shard) {
       const envelope = readJson(path);

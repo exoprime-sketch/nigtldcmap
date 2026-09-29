@@ -1,0 +1,229 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-014",
+  "entityCount": 54,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 7,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · db_indicator",
+      "indicatorId": "C-014_db_indicator",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_db_indicator",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = Doing Business 인허가 관련 지표 영역 1건(3행) — 건축허가 / 전기 계통연계 / 부동산 등기. 구서식은 절차 수·소요기간·비용·지수가 각각 1행씩 10행에 흩어져 있었으나, 신서식에서는 지표 영역을 행으로 두고 지표 항목을 열로 두었음. [비용 기준 상이] 비용 단위가 영역마다 달라(건축 창고 가액 대비 % · 전기 1인당 소득 대비 % · 등기 부동산 가액 대비 %) 「[지표] 비용 기준」 열에 각각 명시함 — 영역 간 값을 직접 비교하면 안 됨. [시점 유의] Doing Business 시리즈는 2021년 중단되었고 archive.doingbusiness.org가 영구 아카이브임 — 2019년 조사 기준값이며 현행 제도와 다를 수 있음.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = Doing Business 인허가 관련 지표 영역 1건(3행) — 건축허가 / 전기 계통연계 / 부동산 등기. 구서식은 절차 수·소요기간·비용·지수가 각각 1행씩 10행에 흩어져 있었으나, 신서식에서는 지표 영역을 행으로 두고 지표 항목을 열로 두었음. [비용 기준 상이] 비용 단위가 영역마다 달라(건축 창고 가액 대비 % · 전기 1인당 소득 대비 % · 등기 부동산 가액 대비 %) 「[지표] 비용 기준」 열에 각각 명시함 — 영역 간 값을 직접 비교하면 안 됨. [시점 유의] Doing Business 시리즈는 2021년 중단되었고 archive.doingbusiness.org가 영구 아카이브임 — 2019년 조사 기준값이며 현행 제도와 다를 수 있음.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · ec_category",
+      "indicatorId": "C-014_ec_category",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_ec_category",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = ECR 1997 Rule 7(1)의 환경 분류 등급 1건(4행 전수) — Green / Orange-A / Orange-B / Red. 구서식은 등급별 기간이 값 1개씩 12행에 흩어져 있었으나, 신서식에서는 등급을 행으로 두고 절차 단계(LCC·ECC·EIA 승인·최종 ECC)와 유효기간·갱신 시한을 열로 두었음. [집계행 삭제] 구서식의 「환경 분류 등급 수 4」·「환경 분류 등급 목록」 행은 행 수와 「[분류] 환경 분류 등급」 열로 대체되므로 삭제함. [기간 단위] Rule 7(7)·7(8)은 역일(days), Rule 7(9)~(13)은 근무일(working days)로 표기가 다르며, 이를 서로 다른 열로 분리하여 혼동을 없앰. [중복 정정] 구서식에는 Rule 7(8)의 LCC 기간(Orange-A 30 · Orange-B·Red 60)이 「역일」 행과 「근무일」 행으로 중복 기재되어 있었으나, 원문 대조 결과 Rule 7(8)은 \"thirty days\"·\"sixty days\"(역일)이고 근무일 규정은 Rule 7(9)~(13)에만 있으므로 중복 행을 삭제하고 역일로 통일함. [Green 등급] Rule 7(4)상 입지허가 절차 자체가 없으므로 LCC 관련 값은 M03(구조적 부존)이며, Rule 7(7)의 15일(역일) 심사기간은 환경허가 직접 심사 기간임을 「[분류]」 열 주기로 명시함.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = ECR 1997 Rule 7(1)의 환경 분류 등급 1건(4행 전수) — Green / Orange-A / Orange-B / Red. 구서식은 등급별 기간이 값 1개씩 12행에 흩어져 있었으나, 신서식에서는 등급을 행으로 두고 절차 단계(LCC·ECC·EIA 승인·최종 ECC)와 유효기간·갱신 시한을 열로 두었음. [집계행 삭제] 구서식의 「환경 분류 등급 수 4」·「환경 분류 등급 목록」 행은 행 수와 「[분류] 환경 분류 등급」 열로 대체되므로 삭제함. [기간 단위] Rule 7(7)·7(8)은 역일(days), Rule 7(9)~(13)은 근무일(working days)로 표기가 다르며, 이를 서로 다른 열로 분리하여 혼동을 없앰. [중복 정정] 구서식에는 Rule 7(8)의 LCC 기간(Orange-A 30 · Orange-B·Red 60)이 「역일」 행과 「근무일」 행으로 중복 기재되어 있었으나, 원문 대조 결과 Rule 7(8)은 \"thirty days\"·\"sixty days\"(역일)이고 근무일 규정은 Rule 7(9)~(13)에만 있으므로 중복 행을 삭제하고 역일로 통일함. [Green 등급] Rule 7(4)상 입지허가 절차 자체가 없으므로 LCC 관련 값은 M03(구조적 부존)이며, Rule 7(7)의 15일(역일) 심사기간은 환경허가 직접 심사 기간임을 「[분류]」 열 주기로 명시함.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · ec_fee",
+      "indicatorId": "C-014_ec_fee",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_ec_fee",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 투자규모 구간 1건(7행 전수). 구서식의 구간별 7행 + 갱신 비율 1행을 구간 행 + 「[수수료] 갱신 수수료 비율」 열로 재구조화함. [판본 유의] Schedule-13은 S.R.O. No. 234-Law/2002(2002-08-24)로 대체되어 2002-08-26 발효된 판본이며, ECR 1997 원 공포본의 수수료가 아님 — 「[수수료] 적용 판본」 열에 명시함. [구간 범위] 원문 제1항은 투자규모 100,000 Tk 이상 구간만 열거하며, 그 미만 구간은 원문에 없음.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "현행 수수료는 ECR 2023 তফসিল-১৩에서 갱신되었을 수 있으나 벵골어 인코딩 문제로 원문 확인 불가(M06).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · land_acquisition_rule",
+      "indicatorId": "C-014_land_acquisition_rule",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_land_acquisition_rule",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 토지수용 보상 산정 규정 1건. 구서식의 정부 목적·민간기관 목적·부수 손실·시장가 기준기간 4행을 1행의 속성 열로 통합함. [해석 유의] 200%·300%·100%는 시장가에 대한 가산분이며 총 보상액 비율이 아님 — 원문 표기(제9조 제(2)·(3)항)를 그대로 수록함.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 토지수용 보상 산정 규정 1건. 구서식의 정부 목적·민간기관 목적·부수 손실·시장가 기준기간 4행을 1행의 속성 열로 통합함. [해석 유의] 200%·300%·100%는 시장가에 대한 가산분이며 총 보상액 비율이 아님 — 원문 표기(제9조 제(2)·(3)항)를 그대로 수록함.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · legal_basis",
+      "indicatorId": "C-014_legal_basis",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_legal_basis",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 인허가 근거 법령 1건(5행) — ECR 1997 / ECR 2023 / ARIPA 2017 / BERC Act 2003 / BERC 개정법 2023. [언어] ECR 2023·ARIPA 2017·BERC 개정법 2023은 벵골어 정본만 공개되어 있음. ECR 1997은 FAOLEX 게재 영문 비공식본(Un-official English Version)이며 정본이 아님을 표시함. [라이선스] FAOLEX 게재본은 FAO 이용약관 적용 — 법령명·조문 사실만 수록하고 원문 텍스트·파일은 재배포하지 않으며 원본 링크로 연결함.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "ECR 2023은 벵골어 정본의 레거시 인코딩으로 등급·기준을 확정하지 못해 M08(정의 불일치), BERC 개정법 2023은 조문 대조 미완료로 M06.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7d90ac73b2d7|텍스트 · 일 · BDT",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 절차 단계",
+      "indicatorId": "C-014_permit_step",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7d90ac73b2d7",
+        "labelKo": "인허가 절차 단계",
+        "unit": "텍스트 · 일 · BDT",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-7d90ac73b2d7|텍스트 · 일 · BDT|technology=해당없음|C-014_permit_step",
+      "sourceCaveat": "[정의·범위] 1행 = 인허가 절차 1단계. Doing Business 2020 Economy Profile의 「Details – Procedure, Time and Cost」 표를 절차 단위로 옮긴 것으로, 건축허가 16 · 전기 계통연계 9 · 부동산 등기 8 = 총 33단계. 각 단계의 담당 기관·소요기간·비용을 원문 그대로 수록했습니다. [수치화] 소요기간은 「N days」 형태만 일 단위로 환산했고, 월·구간 등 환산 불가 표기는 수치 열을 비우고 원문 표기를 보존했습니다(NE·M06). 비용도 같은 원칙으로 금액과 원문 표기를 분리했습니다. [조사 도시] Doing Business 2020은 각 경제의 최대 상업도시를 조사하며, 방글라데시는 인구 1억 명 초과 경제로 Dhaka · Chittagong 2개 도시의 인구가중평균입니다. 기존 db_indicator 3행에도 조사 도시를 명시했고, 지역명을 「전국」에서 조사 도시로 정정했습니다.",
+      "sourceLabel": "인허가 절차 단계",
+      "sourceLabelEn": "Permit Procedure Step",
+      "sourceNote": "[정의·범위] 1행 = 인허가 절차 1단계. Doing Business 2020 Economy Profile의 「Details – Procedure, Time and Cost」 표를 절차 단위로 옮긴 것으로, 건축허가 16 · 전기 계통연계 9 · 부동산 등기 8 = 총 33단계. 각 단계의 담당 기관·소요기간·비용을 원문 그대로 수록했습니다. [수치화] 소요기간은 「N days」 형태만 일 단위로 환산했고, 월·구간 등 환산 불가 표기는 수치 열을 비우고 원문 표기를 보존했습니다(NE·M06). 비용도 같은 원칙으로 금액과 원문 표기를 분리했습니다. [조사 도시] Doing Business 2020은 각 경제의 최대 상업도시를 조사하며, 방글라데시는 인구 1억 명 초과 경제로 Dhaka · Chittagong 2개 도시의 인구가중평균입니다. 기존 db_indicator 3행에도 조사 도시를 명시했고, 지역명을 「전국」에서 조사 도시로 정정했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "technology": "해당없음"
+      },
+      "displayLabel": "인허가 프로세스 · tariff_rule",
+      "indicatorId": "C-014_tariff_rule",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9e6ed063a780",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-9e6ed063a780|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-014_tariff_rule",
+      "sourceCaveat": "[raw] ([raw]\\C-014\\) C-014_인허가 프로세스_BGD_EnvConservationRules_1997_SRO197_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_EnvConservationRules_2023_SRO53_gazette_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_ARIPA_2017_Act21of2017_BN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-014_인허가 프로세스_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-014_인허가 프로세스_WB_DoingBusiness2020_Bangladesh_EconomyProfile.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-014_eia_procedure·_construction_permit·_construction_permit_duration·_construction_permit_cost·_power_permit·_power_permit_duration·_power_permit_cost·_land_acquisition·_land_acquisition_duration·_land_acquisition_cost 및 출처 접미사 _faolex·_worldbank·_archive_doingbusiness)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 전력요금 규제 절차 1건. 구서식의 규제기관·공표 기한·개정 횟수 상한·청문 의무 4행을 1행의 속성 열로 통합함. [개정 유의] BERC (개정)법 2023이 제34조를 개정하였으므로 본 행의 값은 2003년 원문 기준임 — 개정 반영 여부는 「[결측]」 열에 명시함.",
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": "Permitting Process",
+      "sourceNote": "2023년 개정법(Act No. 6 of 2023)의 제34조 개정 후 문언은 벵골어 조문 대조 미완료로 미반영(M06).",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-7d90ac73b2d7",
+      "labelKo": "인허가 절차 단계",
+      "recordCount": 0,
+      "unit": "텍스트 · 일 · BDT",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-9e6ed063a780",
+      "labelKo": "인허가 프로세스",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

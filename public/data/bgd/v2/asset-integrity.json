@@ -1,11 +1,16 @@
 {
   "algorithm": "SHA-256",
-  "assetCount": 209,
+  "assetCount": 368,
   "assets": [
     {
       "bytes": 587684,
       "sha256": "2849e029e4d8d09dc6664b109513d714268e900f091e45579ad59f190712bb74",
       "url": "/data/bgd/v2/catalog.json"
+    },
+    {
+      "bytes": 58750,
+      "sha256": "df5791d48a8ec27787b04ec06620f6a4ae5bf29383398cc11e3064a3525a97c3",
+      "url": "/data/bgd/v2/dataset-directory.json"
     },
     {
       "bytes": 220046,
@@ -883,6 +888,11 @@
       "url": "/data/bgd/v2/geometry/geometry-manifest.json"
     },
     {
+      "bytes": 326540,
+      "sha256": "6924d00ed423334a348797ebd17255d7cb1b32281da2a7607f03fd68ea618c3c",
+      "url": "/data/bgd/v2/home/card-summaries-v140.json"
+    },
+    {
       "bytes": 2484,
       "sha256": "cd8932c2ce9c2a90394b13dc4ab6d8cd8d7484e24879823a3632d6b182e136bb",
       "url": "/data/bgd/v2/manifest.json"
@@ -1028,6 +1038,11 @@
       "url": "/data/bgd/v2/packs/source-registry-v124-ff31b129.json"
     },
     {
+      "bytes": 302,
+      "sha256": "51bb79d659b9e3ec1949d5bb46ecebae11ccf01c67e15526fa8a0ad625c254bb",
+      "url": "/data/bgd/v2/presentation-v158.json"
+    },
+    {
       "bytes": 1592,
       "sha256": "ec2aedd63703f5f6f57825043b76abda49f699415be0490ad2ff85a937cac404",
       "url": "/data/bgd/v2/publication-decisions.json"
@@ -1041,6 +1056,786 @@
       "bytes": 203076,
       "sha256": "1ddfb0c3f8aab2f110a701e6eede560b79f8d1ac3e715ceb9746b2239950b8bd",
       "url": "/data/bgd/v2/rights-matrix.json"
+    },
+    {
+      "bytes": 649242,
+      "sha256": "a30c522b732dd26160a46b73eb62e28a2cad2b60f0876811dd8b94099643ffbf",
+      "url": "/data/bgd/v2/semantic/element-visualization-contracts-v125.json"
+    },
+    {
+      "bytes": 85187,
+      "sha256": "0920b37595e8f60352e70d36aab8680a2f71711ba0ae91ed7e50a2cb29c66db2",
+      "url": "/data/bgd/v2/semantic/element-visualization-summaries-v125.json"
+    },
+    {
+      "bytes": 88182,
+      "sha256": "142b0daf96b1024a62938bd5c2102504de0d7a9337665f9f20fb2ec7d82d623b",
+      "url": "/data/bgd/v2/semantic/elements/a-001.json"
+    },
+    {
+      "bytes": 99017,
+      "sha256": "cec28fb6c75aaffbd49b42fe2c2409dfa476babc504d154ea0f76d2cf56bc051",
+      "url": "/data/bgd/v2/semantic/elements/a-002.json"
+    },
+    {
+      "bytes": 60541,
+      "sha256": "4125eda99ee2e12add38f81b57954161a0148479fe5e2f2fdf1a9662fc8e349c",
+      "url": "/data/bgd/v2/semantic/elements/a-003.json"
+    },
+    {
+      "bytes": 14371,
+      "sha256": "e77c15edb1dcc95941d40fa494699d477d488014207c3334e3277c815d229794",
+      "url": "/data/bgd/v2/semantic/elements/a-004.json"
+    },
+    {
+      "bytes": 30955,
+      "sha256": "527185347eade58a7191b588c94ec7b45c73afba933dc9bbbb178c8875051fc9",
+      "url": "/data/bgd/v2/semantic/elements/a-005.json"
+    },
+    {
+      "bytes": 26272,
+      "sha256": "5b5e576c941902eda3f71264a43b961af8c403bafe35948d0e8777716a618719",
+      "url": "/data/bgd/v2/semantic/elements/a-006.json"
+    },
+    {
+      "bytes": 29179,
+      "sha256": "c3b2ce23ad5b890bceb9ca5b398b06ac448e46fa02c42c58a5b8aa3f12a26508",
+      "url": "/data/bgd/v2/semantic/elements/a-007.json"
+    },
+    {
+      "bytes": 5719,
+      "sha256": "8704f8a89031de71e0df6a47db5e657aee8f11d3440381407f8c573531aaeb9a",
+      "url": "/data/bgd/v2/semantic/elements/a-008.json"
+    },
+    {
+      "bytes": 20060,
+      "sha256": "150c6e1ac814b0b7cfdc30a21512d83db08ead50004caa5f08d109b084aed93f",
+      "url": "/data/bgd/v2/semantic/elements/a-009.json"
+    },
+    {
+      "bytes": 70002,
+      "sha256": "9ab409de5af0394da8720c6c24986d342da0c0052f17f4f624473d3dc34500b6",
+      "url": "/data/bgd/v2/semantic/elements/a-010.json"
+    },
+    {
+      "bytes": 112148,
+      "sha256": "ab42a61cde92ee91b14a206b49c36a375cd968b4d9e59eb503f399888496b53a",
+      "url": "/data/bgd/v2/semantic/elements/a-011.json"
+    },
+    {
+      "bytes": 25070,
+      "sha256": "ca814c86013fb58e4d2080a2715fd87dae67871177970d51fe1961f379eb5a4a",
+      "url": "/data/bgd/v2/semantic/elements/a-012.json"
+    },
+    {
+      "bytes": 8334,
+      "sha256": "ca6dc56cabe3fe53cb9ada267effd2aafa2e3b83f914324207b5d62d7d69feef",
+      "url": "/data/bgd/v2/semantic/elements/a-013.json"
+    },
+    {
+      "bytes": 186858,
+      "sha256": "449979f42677583cb5d1375b9dba3d71d4302f972635d5793b9f28647ef62036",
+      "url": "/data/bgd/v2/semantic/elements/a-014.json"
+    },
+    {
+      "bytes": 1032745,
+      "sha256": "e61aaa50e4e6980b9dde96c3e3f850735377aaabc872751dd028b69dbe35c40f",
+      "url": "/data/bgd/v2/semantic/elements/a-015.json"
+    },
+    {
+      "bytes": 99108,
+      "sha256": "0eefb1d959362f8160eab7fa956b850e714f07321c0047a3b84cbe1fc7716479",
+      "url": "/data/bgd/v2/semantic/elements/a-016.json"
+    },
+    {
+      "bytes": 305138,
+      "sha256": "ab5b819673b828dd66f97d9231c2da9bedf078224071eb56abd697b236a8df59",
+      "url": "/data/bgd/v2/semantic/elements/a-017.json"
+    },
+    {
+      "bytes": 295899,
+      "sha256": "9c3f1e4004df3fb8d6df3093a5e7e0c515e8cfcfac2c6d2a17902c5ae241e196",
+      "url": "/data/bgd/v2/semantic/elements/a-018.json"
+    },
+    {
+      "bytes": 8486,
+      "sha256": "aa8161e7374a07c44f64e04ce578abfdeef5bdfa4f8c05f8d2ede5df0b20a149",
+      "url": "/data/bgd/v2/semantic/elements/a-019.json"
+    },
+    {
+      "bytes": 23742,
+      "sha256": "a8ddf0afbfd2a15ad21f20a04e09383df3b5aa51e0f1d95a2a93fb56c35d40c1",
+      "url": "/data/bgd/v2/semantic/elements/a-020.json"
+    },
+    {
+      "bytes": 25249,
+      "sha256": "3f4c2904dd80078dcfbb520550efc8b50b0657deaee880f4c02a3ec1810bd07c",
+      "url": "/data/bgd/v2/semantic/elements/a-021.json"
+    },
+    {
+      "bytes": 26853,
+      "sha256": "8c20fb8c9bbb883749755092a8d688c458479dd6762a517357ce0eb087cd41d7",
+      "url": "/data/bgd/v2/semantic/elements/a-022.json"
+    },
+    {
+      "bytes": 9254,
+      "sha256": "eff8096faab5c61749fafa3047b3fac6eba3eb6f08d1016f5336770bd2ef0650",
+      "url": "/data/bgd/v2/semantic/elements/a-023.json"
+    },
+    {
+      "bytes": 34614,
+      "sha256": "e785b0c19ef06bcb9444bd017b988a0066d9407dcfff657ef59c4cf692ce9947",
+      "url": "/data/bgd/v2/semantic/elements/a-024.json"
+    },
+    {
+      "bytes": 15194,
+      "sha256": "ca3faa34f5cab0f23ff9e84895171c963a6520e83d0649efc28dc97d4383caed",
+      "url": "/data/bgd/v2/semantic/elements/a-025.json"
+    },
+    {
+      "bytes": 94883,
+      "sha256": "b4033012fdbbc32cf37f16fa0660b5250e4fc9424c81e14907c457cdc78ecf4f",
+      "url": "/data/bgd/v2/semantic/elements/a-026.json"
+    },
+    {
+      "bytes": 847386,
+      "sha256": "4b503e43248f8a02a8427f0b567dab3e212cb9c06010d54a883a8a44e2fd02cd",
+      "url": "/data/bgd/v2/semantic/elements/a-027.json"
+    },
+    {
+      "bytes": 376350,
+      "sha256": "8602caf1d5e14d2da831fecea28d36746824d4b9162e3ac6011170ac743834bb",
+      "url": "/data/bgd/v2/semantic/elements/a-028.json"
+    },
+    {
+      "bytes": 10955,
+      "sha256": "68aae4ef281c87326260f3d2928e4ffb4ae9f045e7c1f4b789924543b66fe164",
+      "url": "/data/bgd/v2/semantic/elements/a-029.json"
+    },
+    {
+      "bytes": 43979,
+      "sha256": "c9d483485f0d6a36ac7d8cf6e550686a6e27d089832c994fb5bf29c72c270ff6",
+      "url": "/data/bgd/v2/semantic/elements/a-030.json"
+    },
+    {
+      "bytes": 36754,
+      "sha256": "50039afeed9fdcacc26d93f9a0201f3ea96e4b64e262d8bc21dd1629813cad81",
+      "url": "/data/bgd/v2/semantic/elements/a-031.json"
+    },
+    {
+      "bytes": 32068,
+      "sha256": "facaff97bf07d37336cf3054b14f6b623fa8e17bde435ae22fbf79b7e0059597",
+      "url": "/data/bgd/v2/semantic/elements/a-032.json"
+    },
+    {
+      "bytes": 36494,
+      "sha256": "d62b623e686c0fb26f1b2a02e6107afe3cc7a51bd4bb8632f7b08292bd8eab56",
+      "url": "/data/bgd/v2/semantic/elements/a-033.json"
+    },
+    {
+      "bytes": 108441,
+      "sha256": "f7fa815c692da413428a3941dd908de6335748c46a08e428083f0492f0d247eb",
+      "url": "/data/bgd/v2/semantic/elements/b-001.json"
+    },
+    {
+      "bytes": 54155,
+      "sha256": "a598dd5c75c838caed941b744e452688f9af914e64f33b312436f7e817b0103c",
+      "url": "/data/bgd/v2/semantic/elements/b-002.json"
+    },
+    {
+      "bytes": 5982,
+      "sha256": "53f843d7eb10b75e627f22a56bc96d81c54e01b35182a2f801f146756494e15c",
+      "url": "/data/bgd/v2/semantic/elements/b-003.json"
+    },
+    {
+      "bytes": 9017,
+      "sha256": "5349214127e5ed260fcffd00577d105fcf6bfc538dad595c5fd4a62b77b8136f",
+      "url": "/data/bgd/v2/semantic/elements/b-004.json"
+    },
+    {
+      "bytes": 9220,
+      "sha256": "ef99be5f7ba888f02a4cb42a25aa5128f3388aa3b33d0f9535ad3b2e8b61d897",
+      "url": "/data/bgd/v2/semantic/elements/b-005.json"
+    },
+    {
+      "bytes": 6741,
+      "sha256": "39e1e8fbbe9ca48d6ed6c1918633e60786446514caac1328e835d5e937a4e8a7",
+      "url": "/data/bgd/v2/semantic/elements/b-006.json"
+    },
+    {
+      "bytes": 5373,
+      "sha256": "daa02d0ccc4040a206a4d837509f9a6cefb7ad3f08969b49d20f28a82ed2216e",
+      "url": "/data/bgd/v2/semantic/elements/b-007.json"
+    },
+    {
+      "bytes": 4133,
+      "sha256": "93ec4f0581805091a75089f98ed9be5a96a4055552e290739dc130781c02193a",
+      "url": "/data/bgd/v2/semantic/elements/b-008.json"
+    },
+    {
+      "bytes": 214732,
+      "sha256": "5aee6d55bc5186c0d5ed7936ac8db2c77fa8b96b3067c21dac0016135a2ed346",
+      "url": "/data/bgd/v2/semantic/elements/b-009.json"
+    },
+    {
+      "bytes": 32765,
+      "sha256": "c06eab84979e46fb34ca95e2db20b1736225c2fa77382be341172c61810921fd",
+      "url": "/data/bgd/v2/semantic/elements/b-010.json"
+    },
+    {
+      "bytes": 243636,
+      "sha256": "478f8786f20b47d91100330d39c78c05e0ebdc58a91dba470303ad89acdb12aa",
+      "url": "/data/bgd/v2/semantic/elements/b-011.json"
+    },
+    {
+      "bytes": 4024,
+      "sha256": "7efb8cb4ece4ba0a81d404d3ddbfd2ee5cb7087654f6965be1942bdc829a8d55",
+      "url": "/data/bgd/v2/semantic/elements/b-012.json"
+    },
+    {
+      "bytes": 87288,
+      "sha256": "dd3f5de07edb0806988bb3eb762073bb155645c02b080f2d4fe460d55ec4c5e2",
+      "url": "/data/bgd/v2/semantic/elements/b-013.json"
+    },
+    {
+      "bytes": 67565,
+      "sha256": "24220d5f2c642cdb270e03970e87d453770bb7a960ac8fd2c302b596c1a4c684",
+      "url": "/data/bgd/v2/semantic/elements/b-014.json"
+    },
+    {
+      "bytes": 32403,
+      "sha256": "24d56ea998f089f86d28edcee8067ab20a33a619a88db1d9b65abb448d33f49f",
+      "url": "/data/bgd/v2/semantic/elements/b-015.json"
+    },
+    {
+      "bytes": 10507,
+      "sha256": "68a25a2533401d92cb5167ca5ef2b0993d949ea4495470ec2e2946d125dbf026",
+      "url": "/data/bgd/v2/semantic/elements/b-016.json"
+    },
+    {
+      "bytes": 18850,
+      "sha256": "0e5174ac4370f52f7e96e08289e66a4e92657de03b2a2b5f4d65d1e96f743bfc",
+      "url": "/data/bgd/v2/semantic/elements/b-017.json"
+    },
+    {
+      "bytes": 121650,
+      "sha256": "a250461950c889791740bbca8da5cf3d0d3f8f3882e8f8ca714e13829ac60367",
+      "url": "/data/bgd/v2/semantic/elements/b-018.json"
+    },
+    {
+      "bytes": 53431,
+      "sha256": "8c5aa2ced81aeda18bfad41b82ca9bb9f58d01ff9b90071eabc8805c6b6eca45",
+      "url": "/data/bgd/v2/semantic/elements/b-019.json"
+    },
+    {
+      "bytes": 1180732,
+      "sha256": "95f8fec91872adc5cd2b4c859c3389ca1b9b3d55730865b846dbe56bcca8b942",
+      "url": "/data/bgd/v2/semantic/elements/b-020.json"
+    },
+    {
+      "bytes": 2269976,
+      "sha256": "5d6c2e965705a93c2896357de3a161f20ebb1b1d4f79916f237e802bc0f8c7e0",
+      "url": "/data/bgd/v2/semantic/elements/b-021.json"
+    },
+    {
+      "bytes": 40103,
+      "sha256": "2eadebd8e598d46da890a09ea76ef8f0cfb7367ce67f5c3cf0b6e5c67e718a13",
+      "url": "/data/bgd/v2/semantic/elements/b-022.json"
+    },
+    {
+      "bytes": 6267,
+      "sha256": "45252c36a74b85878d5c905f156421a264fd1b9ea313ae2173e655446fe78255",
+      "url": "/data/bgd/v2/semantic/elements/b-023.json"
+    },
+    {
+      "bytes": 18532,
+      "sha256": "dc3238ddd61760d3de6c00b6385f65293297c0e0a50a6fd180e7ee4a22763c31",
+      "url": "/data/bgd/v2/semantic/elements/b-024.json"
+    },
+    {
+      "bytes": 6298,
+      "sha256": "713e910770ae35cf3b87ce21d537e4db66e0bda53896cb4ea11d9487197545f2",
+      "url": "/data/bgd/v2/semantic/elements/b-025.json"
+    },
+    {
+      "bytes": 10773,
+      "sha256": "71af5f2bddee001fd4b936bfca90bee7a034759f9f876ea5344697a674153ff0",
+      "url": "/data/bgd/v2/semantic/elements/b-026.json"
+    },
+    {
+      "bytes": 15925,
+      "sha256": "37e0c79de3c2f253e6dbfbce8c2482ad847cf795f2dcdaf9514903b0651a9114",
+      "url": "/data/bgd/v2/semantic/elements/b-027.json"
+    },
+    {
+      "bytes": 16347,
+      "sha256": "0b9baeb6d5744359e56c01d3c2cca242e82ce4c22c2536f41ff0cb9f78ad23bc",
+      "url": "/data/bgd/v2/semantic/elements/b-028.json"
+    },
+    {
+      "bytes": 15464,
+      "sha256": "85d57c2835b8f55a0f84e053782b3e9fac66be1c94384b75ca0a51f55afb5a72",
+      "url": "/data/bgd/v2/semantic/elements/b-029.json"
+    },
+    {
+      "bytes": 8773,
+      "sha256": "36c6dca1b2f06031b80007195cddb0bd2c18a89d2e16bd99335f524c97a3fe1c",
+      "url": "/data/bgd/v2/semantic/elements/b-030.json"
+    },
+    {
+      "bytes": 9968,
+      "sha256": "8c495605f6784c668f422da948fd6562710ebbc8d61b856575f3edda8c0377af",
+      "url": "/data/bgd/v2/semantic/elements/b-031.json"
+    },
+    {
+      "bytes": 8910,
+      "sha256": "9b8f951706929ae49da43e4d0e4d4ce6ab006dbcd923cd0d07e8564734235321",
+      "url": "/data/bgd/v2/semantic/elements/b-032.json"
+    },
+    {
+      "bytes": 18702,
+      "sha256": "0a0bc01190f3e8a24a73f4ff5db36b7673749a9e122f244683aa1581ca0dde65",
+      "url": "/data/bgd/v2/semantic/elements/b-033.json"
+    },
+    {
+      "bytes": 10359,
+      "sha256": "94359693f17495fee3ebf1ee2100f60f1ecd126ca93b1632827bc19d730b1cb6",
+      "url": "/data/bgd/v2/semantic/elements/b-034.json"
+    },
+    {
+      "bytes": 134597,
+      "sha256": "4ae713b266ad27d4f144070329f37761b379ce5d12c0f3ed28cf1ed4c3cf79eb",
+      "url": "/data/bgd/v2/semantic/elements/b-035.json"
+    },
+    {
+      "bytes": 182318,
+      "sha256": "9a9c2b81cbb3dc8ea59353525a38b0751b60d5ac095ea23a635963354b092a8b",
+      "url": "/data/bgd/v2/semantic/elements/b-036.json"
+    },
+    {
+      "bytes": 9771,
+      "sha256": "df6577ee089d6fff28ba9ae66ea0e42ab6043523b6f38999d51c352c6fd86a12",
+      "url": "/data/bgd/v2/semantic/elements/b-037.json"
+    },
+    {
+      "bytes": 65750,
+      "sha256": "c967248c9edf7bbc01871fbf4144a83c1e757cb4eebc805874b99bb1154761fa",
+      "url": "/data/bgd/v2/semantic/elements/b-038.json"
+    },
+    {
+      "bytes": 15624,
+      "sha256": "126b7ea313c7209e24d8bd01b4c545da2afc397f5477da97f3d3834c7a5cdb68",
+      "url": "/data/bgd/v2/semantic/elements/b-039.json"
+    },
+    {
+      "bytes": 14235,
+      "sha256": "dc6b4de5045dea591c9212bf21d03bc7016d09fb95aebb9677c3e39159931522",
+      "url": "/data/bgd/v2/semantic/elements/b-040.json"
+    },
+    {
+      "bytes": 8903,
+      "sha256": "39053e8623cfa95ce9950b34ad037e047b8c10262fd6d7b36bcde4456606d6cd",
+      "url": "/data/bgd/v2/semantic/elements/b-041.json"
+    },
+    {
+      "bytes": 9573,
+      "sha256": "f4442757fd347aae0199c9640c771db325cf85951716b97c755382f450ef60bc",
+      "url": "/data/bgd/v2/semantic/elements/b-042.json"
+    },
+    {
+      "bytes": 82669,
+      "sha256": "2ffa5dc9d62c919dd0d480840df15f242ca522298c35fbbbeae8ac9ec638164a",
+      "url": "/data/bgd/v2/semantic/elements/b-043.json"
+    },
+    {
+      "bytes": 44678,
+      "sha256": "48d599ea98e2826ce30df3817cc5e37c86a29975de43cdbbc3f560e49b8ab4fa",
+      "url": "/data/bgd/v2/semantic/elements/b-044.json"
+    },
+    {
+      "bytes": 117443,
+      "sha256": "dbc7de007fd79bc2f754a0a099f544c41d132de8106af8314701c43b6afd6b81",
+      "url": "/data/bgd/v2/semantic/elements/b-045.json"
+    },
+    {
+      "bytes": 26416,
+      "sha256": "e6245ab7e52bc6057518924669e57a2cda21178c88fd273364c4692d1ed18e66",
+      "url": "/data/bgd/v2/semantic/elements/b-046.json"
+    },
+    {
+      "bytes": 24734,
+      "sha256": "780ddf0b07c13cd758586f86a4ee16b80d2f5941ce2f15d497bdb5d42c515fca",
+      "url": "/data/bgd/v2/semantic/elements/b-047.json"
+    },
+    {
+      "bytes": 2924,
+      "sha256": "765e927232ac164bebc6f1962c7e36ff1ebf96d016f78f15046d5038857c8543",
+      "url": "/data/bgd/v2/semantic/elements/b-048.json"
+    },
+    {
+      "bytes": 33578,
+      "sha256": "91e7bdb20ae8ea67314b0a1c1868d86b3e4b203915c322924720a059312c018d",
+      "url": "/data/bgd/v2/semantic/elements/c-001.json"
+    },
+    {
+      "bytes": 19631,
+      "sha256": "51e44f5f28268c76c9a7f6d77a57c48ef0eacb30614ef42cc914064af1421f11",
+      "url": "/data/bgd/v2/semantic/elements/c-002.json"
+    },
+    {
+      "bytes": 9135,
+      "sha256": "57ce3b44bec7786f2a0b97920dd375b77741ec1118cf553d604fcd882f28546e",
+      "url": "/data/bgd/v2/semantic/elements/c-003.json"
+    },
+    {
+      "bytes": 4101,
+      "sha256": "7fbecb68c17b65ff9842aeedaded590252a96976eca0d303286732416592b0f8",
+      "url": "/data/bgd/v2/semantic/elements/c-004.json"
+    },
+    {
+      "bytes": 15253,
+      "sha256": "c6b39b72eea2dd73d6bd11b4a56ea0ffe1adb8f572ac881cb595ab859fc26fba",
+      "url": "/data/bgd/v2/semantic/elements/c-005.json"
+    },
+    {
+      "bytes": 10465,
+      "sha256": "42bd6be589884e313cafa90bd6f4d7641cf8a0be065a6f3376d30b8514c76ef1",
+      "url": "/data/bgd/v2/semantic/elements/c-006.json"
+    },
+    {
+      "bytes": 5045,
+      "sha256": "3b770c66bf8c9658360ace3e6a68947c6fbb8ead15939f8709c52b54cec3600c",
+      "url": "/data/bgd/v2/semantic/elements/c-007.json"
+    },
+    {
+      "bytes": 8761,
+      "sha256": "53a1eb40a07ef23366360f5d80ec76b4ef896c1a4196459e9e913dc96f8c28a4",
+      "url": "/data/bgd/v2/semantic/elements/c-008.json"
+    },
+    {
+      "bytes": 3815,
+      "sha256": "7f085ea7a8b535e1388b5acab09bdcea9724bb54b536fbef420fb12ef78ff0f8",
+      "url": "/data/bgd/v2/semantic/elements/c-009.json"
+    },
+    {
+      "bytes": 8891,
+      "sha256": "966561bccf03f1d6d908476bfbbbf4f5b2e507d7bce9a0f8c1c1a8c38599c415",
+      "url": "/data/bgd/v2/semantic/elements/c-010.json"
+    },
+    {
+      "bytes": 22883,
+      "sha256": "0c931e0adf6efcc7b571e84d59a20028f654a9e704210b78506b0f9c1856e49c",
+      "url": "/data/bgd/v2/semantic/elements/c-011.json"
+    },
+    {
+      "bytes": 16729,
+      "sha256": "831e58743427f6bfbe7072a074902175e11ece58f5e4cdbaba83e31b8f4ea60d",
+      "url": "/data/bgd/v2/semantic/elements/c-012.json"
+    },
+    {
+      "bytes": 20880,
+      "sha256": "98ebf064b7d69d4afcce65123bfa211ea412afbc10af18701c8f0428ce6ecf0d",
+      "url": "/data/bgd/v2/semantic/elements/c-013.json"
+    },
+    {
+      "bytes": 25880,
+      "sha256": "f480867ed7633a7412176e194ab1247a580e9e3a8bed57f57e20675b492d58b4",
+      "url": "/data/bgd/v2/semantic/elements/c-014.json"
+    },
+    {
+      "bytes": 4252,
+      "sha256": "244a60243cc50195a0c46d2d057084d3cd43035ba0897a21e664e2ddbf12d2dd",
+      "url": "/data/bgd/v2/semantic/elements/c-015.json"
+    },
+    {
+      "bytes": 16281,
+      "sha256": "f6d29af451afbb371efe8d084801b34089ffa1a2de354922a7fb4aad0d742403",
+      "url": "/data/bgd/v2/semantic/elements/c-016.json"
+    },
+    {
+      "bytes": 24327,
+      "sha256": "47aaa36cc0b79b61207c3bf338ba0f5dc01a3a669da0118527840214d39cc953",
+      "url": "/data/bgd/v2/semantic/elements/c-017.json"
+    },
+    {
+      "bytes": 14353,
+      "sha256": "11004d0d947bb82239dabcfd23a6ff9d42a37b0ea0e4f6b1ede3bec31a6faaae",
+      "url": "/data/bgd/v2/semantic/elements/c-018.json"
+    },
+    {
+      "bytes": 29647,
+      "sha256": "a0c85b3ade21876cd70c0ce0657323410740748f37680e39049b93ee0132d344",
+      "url": "/data/bgd/v2/semantic/elements/c-019.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "379f015078ec4cff9a2ccb33faac5e77d5c772ee5c2374076ebb27c0dd675f9d",
+      "url": "/data/bgd/v2/semantic/elements/c-020.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "9872879f53970b1ae7f1497f2d893d194322e0dc6f484a3ea3cb9a3c27a4d80f",
+      "url": "/data/bgd/v2/semantic/elements/c-021.json"
+    },
+    {
+      "bytes": 7809,
+      "sha256": "538bcd819b995e8fcd535bccb9ef718fc27dff8a16d4757984df1a8b20ac795b",
+      "url": "/data/bgd/v2/semantic/elements/c-022.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "0a41447c53019e0da4f2402e062e8ff133136d9303c1cf377248647139dbcbc2",
+      "url": "/data/bgd/v2/semantic/elements/c-023.json"
+    },
+    {
+      "bytes": 13364,
+      "sha256": "3ac1e42d6124921d2a9ab9ce7a60f0b26df697a89309d55c9befdca16fbcfee0",
+      "url": "/data/bgd/v2/semantic/elements/c-024.json"
+    },
+    {
+      "bytes": 6794,
+      "sha256": "d0e5560ae748898be6d5b3e617fac5a427c07e03c48e0756c418bc5603aedc0a",
+      "url": "/data/bgd/v2/semantic/elements/c-025.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "0b5c5f5d7b0b9d41c0b237a5c8f7c06597235cb599f0140622391abc50c0ce23",
+      "url": "/data/bgd/v2/semantic/elements/d-001.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "8ffb4cf8a0bca289d1024cebbe70b55056b8e424f59b2f095b7d460f0af1d320",
+      "url": "/data/bgd/v2/semantic/elements/d-002.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "20c29ae907730f9d393c81b45b4fd8e29038fe1c5b07d3e8f13ed357ed04e464",
+      "url": "/data/bgd/v2/semantic/elements/d-003.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "9a95887ad4769be119a9d4a61c8f3c256e4ea80de5543d74022376febf37da3e",
+      "url": "/data/bgd/v2/semantic/elements/d-004.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "2e188b009c92816e8e93aa6c2e9fad1c2191b3dabed799c92912cfb403f4e4fe",
+      "url": "/data/bgd/v2/semantic/elements/d-005.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "696e7635e2b71d3eaed50d7212cbcc5f9fe18e311113a6920d328877872209a9",
+      "url": "/data/bgd/v2/semantic/elements/d-006.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "094bc5c9ec1f7c9c5630d89367e5ae98af26d4f60b79bf7c74cf32f6aa0cb05c",
+      "url": "/data/bgd/v2/semantic/elements/d-007.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "1b672047747722b35e652c591a7d6e343877569b9efd7b8650dd1f72ead5c2db",
+      "url": "/data/bgd/v2/semantic/elements/d-008.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "d623dfe83344644b719c3d84b5df4bb13f8da152831bd70563fa3131f0033244",
+      "url": "/data/bgd/v2/semantic/elements/d-009.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "75678de21c29b565df55fb038780e090c6e4124f94031998045ac9395eb182c9",
+      "url": "/data/bgd/v2/semantic/elements/d-010.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "d8e769f37ad4ac0cda382a0f2555f89b70074c835149ac2c7eecf0e70427313f",
+      "url": "/data/bgd/v2/semantic/elements/d-011.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "9df05e99f427efa85704be5927913a934726f6077e33bf813fd468848df17538",
+      "url": "/data/bgd/v2/semantic/elements/d-012.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "3ede4fdfa827afe6bffa24114f331c939609d926f6de01e0d313f86b5a5942d3",
+      "url": "/data/bgd/v2/semantic/elements/d-013.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "9d4c9434bb1be00415e1d5b5d68e9e0382635b8bb1d6390168de38e27ab817f5",
+      "url": "/data/bgd/v2/semantic/elements/d-014.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "26cb8e7bc9967fb8d30c8876c943f325d7e230e9f5424e1be8f7c60e0f53e3aa",
+      "url": "/data/bgd/v2/semantic/elements/d-015.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "d072f8f86a696bb4a61bae4b9d03c1691bba364790eee45c2d85e91cbfb528dd",
+      "url": "/data/bgd/v2/semantic/elements/d-016.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "7c6ebe131f3c5775983b6d8e8aef94788c7c17fb99c0e89f03d6c8f85b2fa3cf",
+      "url": "/data/bgd/v2/semantic/elements/d-017.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "5e3b2c111e139c24b95b9bd92e9a7fc30e22469d0764f3e6f851824d0ec40c96",
+      "url": "/data/bgd/v2/semantic/elements/d-018.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "df0f4a8a255a5fdfbac912d18384b511a6cb6f55edaff8902999d9ee98e152b5",
+      "url": "/data/bgd/v2/semantic/elements/d-019.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "5d29353bc046ba14bfbfca655243417a9d25db1fa07ca01fc76c8c85a6bb7ee8",
+      "url": "/data/bgd/v2/semantic/elements/d-020.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "12aac4ef171d22f1bb651accb71541e3893db1bdc99fa7504ed3cc5dbead93cd",
+      "url": "/data/bgd/v2/semantic/elements/d-021.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "dffe383af201c707d4b32a97014035f5070d20646156e8e5ce11ff127b92ca22",
+      "url": "/data/bgd/v2/semantic/elements/d-022.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "7639b8fe55c7c27625554af66b60a7813bef384abb8574eafa8e4393ab65d029",
+      "url": "/data/bgd/v2/semantic/elements/d-023.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "6a74e388d884a6139ac83134acc22aa57a8cba39dbafd2b3615313ccd1d0aa55",
+      "url": "/data/bgd/v2/semantic/elements/d-024.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "88aa4a31e98ee554cc7c3edf714469f639ba1d4637cc0ec820578b5039675a7d",
+      "url": "/data/bgd/v2/semantic/elements/d-025.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "7d733bc54a4f705a9cf16dfd6143f6e7cb5630a58c216054f14b2f1477ce5294",
+      "url": "/data/bgd/v2/semantic/elements/d-026.json"
+    },
+    {
+      "bytes": 7836,
+      "sha256": "2adef7b2693b8fc0077c7f6c3e9747e8f1698a851465a988699762fdab8acdb2",
+      "url": "/data/bgd/v2/semantic/elements/e-001.json"
+    },
+    {
+      "bytes": 7189,
+      "sha256": "c2cc62c5e6ec34bb3062dd4ad5ca53f4087f28dbca9e04c241006f909763cb61",
+      "url": "/data/bgd/v2/semantic/elements/e-002.json"
+    },
+    {
+      "bytes": 4346,
+      "sha256": "8cb90d5596e67fdf782dc37fa2960633cbaf1069271257136ff66630b0bad8d3",
+      "url": "/data/bgd/v2/semantic/elements/e-003.json"
+    },
+    {
+      "bytes": 65658,
+      "sha256": "6dcf8cd75d7c4b2ccecc23eba94de13c70ad2f0f80e2c935503c3f7960830f34",
+      "url": "/data/bgd/v2/semantic/elements/e-004.json"
+    },
+    {
+      "bytes": 5175,
+      "sha256": "addaf977a70a608ac95a01a35c7550429ae45cdce1d1c166a7a84120eb3b8821",
+      "url": "/data/bgd/v2/semantic/elements/e-005.json"
+    },
+    {
+      "bytes": 9261,
+      "sha256": "c4ce8abb8523320b822190c9e8d490342bf52b9f7beb95e868364289127f14be",
+      "url": "/data/bgd/v2/semantic/elements/e-006.json"
+    },
+    {
+      "bytes": 5312,
+      "sha256": "ef7c5637a00da57f52017e624013c8afa0d87b3e2e0ced014f8ac7d3c86c7f59",
+      "url": "/data/bgd/v2/semantic/elements/e-007.json"
+    },
+    {
+      "bytes": 10033,
+      "sha256": "deb26fbce9c3243d9f3938f59e6b594f7790625c977695044276e87ba01b9b8d",
+      "url": "/data/bgd/v2/semantic/elements/e-008.json"
+    },
+    {
+      "bytes": 14568,
+      "sha256": "fd7887be7ff00db31e4fc2e1b86928701369bf0c24db5f90be068767334759ca",
+      "url": "/data/bgd/v2/semantic/elements/e-009.json"
+    },
+    {
+      "bytes": 41798,
+      "sha256": "a7e51792f7aaf9b9cd08767141dba6608a172e224c3f10fdd68572a21e1505bc",
+      "url": "/data/bgd/v2/semantic/elements/e-010.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "442316bd4df3c15da67f79145d21f3cbc24a5d645455d42a8320d27e6ebd299e",
+      "url": "/data/bgd/v2/semantic/elements/e-011.json"
+    },
+    {
+      "bytes": 341272,
+      "sha256": "229bf54111acab41045cae6018966b0b078058b22373ddfe4b908e6d71ab31c0",
+      "url": "/data/bgd/v2/semantic/elements/e-012.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "a36315dc0ccba67307cc72eda01e354ba8e949da41ab39ee06c54391cde378b6",
+      "url": "/data/bgd/v2/semantic/elements/e-013.json"
+    },
+    {
+      "bytes": 4077,
+      "sha256": "98df165ec2c9d96b7c8ba0e9dcd4fa8dd41c6ed44ea39f152080300863069724",
+      "url": "/data/bgd/v2/semantic/elements/e-014.json"
+    },
+    {
+      "bytes": 3152,
+      "sha256": "a83560e51a036d5152228cfa1b2ec9417eea2402d91518bc6339fad011c60047",
+      "url": "/data/bgd/v2/semantic/elements/e-015.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "d445faf77b8ff7c2b606ba583decec97449d5c0e180259bdad87e4c9285e678f",
+      "url": "/data/bgd/v2/semantic/elements/e-016.json"
+    },
+    {
+      "bytes": 283,
+      "sha256": "6cc3ca111fcceed372fd620001daeff809e55388d804dac2d10f945f1495950a",
+      "url": "/data/bgd/v2/semantic/elements/e-017.json"
+    },
+    {
+      "bytes": 5727,
+      "sha256": "af2fe9f8d5cbaabdff9d12940b2775016d5decc83dc09c5a594c4f65a099e335",
+      "url": "/data/bgd/v2/semantic/elements/e-018.json"
+    },
+    {
+      "bytes": 5386,
+      "sha256": "15da26cb9d6e33eedb9b30693bed97fe5dd4ea63868edef4c1a4838bfb3a4b98",
+      "url": "/data/bgd/v2/semantic/elements/e-019.json"
+    },
+    {
+      "bytes": 6293,
+      "sha256": "3b10d97fabac91a9076c790e2cf405bfeb3a69fa8df04cd76e87c932e1f4650c",
+      "url": "/data/bgd/v2/semantic/elements/e-020.json"
+    },
+    {
+      "bytes": 57329,
+      "sha256": "7feef4e0ad7f569b6df59e0690271a2010a4745b430168643a0bfe36281f9d81",
+      "url": "/data/bgd/v2/semantic/indicator-semantics-v125.json"
+    },
+    {
+      "bytes": 970,
+      "sha256": "a765bd9bde51c5a423941d29b12937dc146e8760008badedf83ecff786f4314a",
+      "url": "/data/bgd/v2/semantic/semantic-integrity-v125.json"
     },
     {
       "bytes": 402023,

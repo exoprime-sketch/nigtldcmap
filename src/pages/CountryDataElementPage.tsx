@@ -8,8 +8,8 @@ import {
 } from "../data/countries/countryDataFacadeV122";
 import {
   getCountryDataProviderV122,
-  listCountryDataProvidersV122,
 } from "../data/countries/countryDataProviderRegistryV122";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import {
   publicDataStatusLabelV128,
@@ -31,7 +31,13 @@ import CountryElementVisualizationV123, { indicatorFamilyCountV153 } from "../co
 import DetailKpiStripV153 from "../components/data/public/DetailKpiStripV153";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
-import { getCardSpecV159, getTypologyV159, loadDatasetSpecV159 } from "../data/spec/datasetSpecV159";
+import {
+  getCardSpecForCountryV158,
+  getTypologyForCountryV158,
+  loadDatasetSpecForCountryV158,
+} from "../data/spec/countrySpecV158";
+import { DataCountryProviderV158 } from "../data/countries/DataCountryContextV158";
+import DetailCountryCompareV158 from "../components/data/public/DetailCountryCompareV158";
 import type { DatasetSpecBundleV159 } from "../data/spec/datasetSpecV159";
 import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
@@ -687,7 +693,19 @@ const EXCLUSION_BASIS_LABEL_V156: Record<string, string> = {
   "데이터 명세서": "데이터 명세서 검토",
 };
 
-export default function CountryDataElementPage({
+/**
+ * V158: the page sets the country its data comes from for everything below it
+ * (KPI strip, source panel, analysis templates, status note).
+ */
+export default function CountryDataElementPage(props: Props) {
+  return (
+    <DataCountryProviderV158 country={props.countryIso3}>
+      <CountryDataElementPageV122 {...props} />
+    </DataCountryProviderV158>
+  );
+}
+
+function CountryDataElementPageV122({
   elementId,
   countryIso3,
   onBack,
@@ -699,7 +717,7 @@ export default function CountryDataElementPage({
   selectorState,
   onSelectorStateChange,
 }: Props) {
-  const providers = useMemo(() => listCountryDataProvidersV122(), []);
+  const providers = useCountryDataProvidersV158();
   const provider = getCountryDataProviderV122(countryIso3);
   const [catalogItem, setCatalogItem] = useState<CountryCatalogItemV122 | null>(
     null
@@ -787,13 +805,18 @@ export default function CountryDataElementPage({
 
   // V159: the framework workbook's description, usage and cases (a lazy
   // chunk), and the display type's decision points from the loaded rows.
-  const typologyV159 = elementId ? getTypologyV159(elementId) : null;
+  // V158: the type as seen from this country (memoised: a country other than
+  // the default gets a derived row, and the row is an effect dependency).
+  const typologyV159 = useMemo(
+    () => (elementId ? getTypologyForCountryV158(elementId, countryIso3, catalogItem) : null),
+    [catalogItem, countryIso3, elementId]
+  );
   const [specBundleV159, setSpecBundleV159] = useState<DatasetSpecBundleV159 | null>(null);
   useEffect(() => {
     let alive = true;
     setSpecBundleV159(null);
     if (!elementId) return undefined;
-    void loadDatasetSpecV159(elementId)
+    void loadDatasetSpecForCountryV158(elementId, countryIso3)
       .then((loaded) => {
         if (alive) setSpecBundleV159(loaded);
       })
@@ -803,7 +826,7 @@ export default function CountryDataElementPage({
     return () => {
       alive = false;
     };
-  }, [elementId]);
+  }, [countryIso3, elementId]);
   // ② elements whose province values arrive as the map's layer, not as pack
   // rows: the decision points read the layer the map opens on.
   const [layerRowsV159, setLayerRowsV159] = useState<S2RegionObservationV159[]>([]);
@@ -865,7 +888,7 @@ export default function CountryDataElementPage({
   if (catalogItem?.publicStatus === "excluded") {
     // The heading follows the V159 naming rule like every other detail: the
     // source line and the dataset's own name from the framework spec.
-    const excludedSpecV156 = getCardSpecV159(catalogItem.elementId);
+    const excludedSpecV156 = getCardSpecForCountryV158(catalogItem.elementId, countryIso3, catalogItem);
     return (
       <div className="page-shell cdp-page cdp-detail-page-v146" data-detail-excluded-v156="true">
         <button
@@ -960,7 +983,7 @@ export default function CountryDataElementPage({
   }
 
   const meta = bundle?.meta;
-  const cardSpec = getCardSpecV159(elementId);
+  const cardSpec = getCardSpecForCountryV158(elementId, countryIso3, catalogItem);
   const pageTitle = cardSpec?.baseName || catalogItem?.publicTitle || meta?.element.elementLabel || "";
   const hasMap = Boolean(meta && (catalogItem?.hasMapData || meta.element.mapFeatureCount > 0));
   // V153: the small map is handed to the analysis frame, which sets it beside
@@ -978,6 +1001,7 @@ export default function CountryDataElementPage({
     ? publicDownloadStatusV128(catalogItem)
     : null;
   return (
+    <DataCountryProviderV158 country={countryIso3} item={catalogItem}>
     <div
       className="page-shell cdp-page cdp-detail-page-v146"
       data-detail-prepare-ms={prepareMs === null ? undefined : prepareMs}
@@ -1149,6 +1173,10 @@ export default function CountryDataElementPage({
               )}
           </section>
 
+          {/* V158: the same indicator across the live countries; draws nothing
+              while fewer than two countries are live. */}
+          <DetailCountryCompareV158 elementId={elementId} countryIso3={provider.countryIso3} />
+
           {/* Layer 2 (collapsed): the core-figure strip, then 데이터 설명 -
               the framework workbook's description, usage and cases (absent
               without a spec). */}
@@ -1200,5 +1228,6 @@ export default function CountryDataElementPage({
         </>
       )}
     </div>
+    </DataCountryProviderV158>
   );
 }

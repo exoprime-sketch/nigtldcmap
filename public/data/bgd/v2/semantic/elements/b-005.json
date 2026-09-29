@@ -1,0 +1,174 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 30,
+      "values": [
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020"
+      ]
+    }
+  ],
+  "elementId": "B-005",
+  "entityCount": 4455,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-c7f7887e5dbe|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "가뭄(관구×시나리오×연도 개체 목록)",
+      "indicatorId": "B-005_climate_adm1_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c7f7887e5dbe",
+        "labelKo": "가뭄(관구×시나리오×연도 개체 목록)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c7f7887e5dbe|지표별 상이(속성 열 참조)|technology=범용|B-005_climate_adm1_year",
+      "sourceCaveat": "[값의 성격] 모델(CMIP6·재분석) / [지역구분] 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1 단위 GIS 개체로 재구성. [변경] v3.0 은 국가 단일값(0.25° 면적평균)만 보유했으나 CCKP 포털의 Sub-national first level 집계를 재수집하여 관구 8개 × 시나리오 6종 × 연도 조합 3960건을 신규 확보. 기존 전국 시계열은 값 변경 없이 병존 수록. [시나리오 범위] historical · ssp119 · ssp126 · ssp245 · ssp370 · ssp585. 원천이 일부 지표에 ssp119 를 제공하지 않아 지표별 시나리오 수가 다를 수 있으며, 해당 조합은 값이 공란입니다. [행정구역 기준] GADM 4.1 ADM1(8개 관구). / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인).",
+      "sourceLabel": "가뭄(관구×시나리오×연도 개체 목록)",
+      "sourceLabelEn": "CMIP6 climate indices by province",
+      "sourceNote": "[값의 성격] 모델(CMIP6·재분석) / [지역구분] 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1 단위 GIS 개체로 재구성. [변경] v3.0 은 국가 단일값(0.25° 면적평균)만 보유했으나 CCKP 포털의 Sub-national first level 집계를 재수집하여 관구 8개 × 시나리오 6종 × 연도 조합 3960건을 신규 확보. 기존 전국 시계열은 값 변경 없이 병존 수록. [시나리오 범위] historical · ssp119 · ssp126 · ssp245 · ssp370 · ssp585. 원천이 일부 지표에 ssp119 를 제공하지 않아 지표별 시나리오 수가 다를 수 있으며, 해당 조합은 값이 공란입니다. [행정구역 기준] GADM 4.1 ADM1(8개 관구). / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-01ad3987e7b7|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "가뭄(전국)",
+      "indicatorId": "B-005_climate_national_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-01ad3987e7b7",
+        "labelKo": "가뭄(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-01ad3987e7b7|지표별 상이(속성 열 참조)|technology=범용|B-005_climate_national_year",
+      "sourceCaveat": "[값의 성격] 모델(CMIP6·재분석) / 전국 집계값. ADM1 단위 신규 수집분과 동일 원천·동일 앙상블 설정. / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음).",
+      "sourceLabel": "가뭄(전국)",
+      "sourceLabelEn": "CMIP6 climate indices, national",
+      "sourceNote": "[값의 성격] 모델(CMIP6·재분석) / 전국 집계값. ADM1 단위 신규 수집분과 동일 원천·동일 앙상블 설정. / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-324aefebcd8b|m³/m³",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "토양수분(전국 연평균, 1991-2020 평년)",
+      "indicatorId": "B-005_soil_moisture",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-324aefebcd8b",
+        "labelKo": "토양수분(전국 연평균, 1991-2020 평년)",
+        "unit": "m³/m³",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-324aefebcd8b|m³/m³|technology=범용|B-005_soil_moisture",
+      "sourceCaveat": "[값의 성격] 모델(CMIP6·재분석) / 재분석(reanalysis) 자료로 관측값이 아님. 0–289cm 깊이가중 평균값이므로 표층(0–7cm) 값과 다름. 전국 단일값으로 행정구역 단위는 원천이 제공하지 않음. [라이선스 근거] Licence to Use Copernicus Products — 무료·재배포·상업이용 가능, 출처 표기 조건. [원천 갱신일 근거] CDS 데이터셋 페이지 갱신일 미표기 — 원자료 취득일(2026-09-11) 기준. [산출 정정] 종전 값은 다운로드 영역(bbox) 내 전체 유효 격자 평균이었으나 산출방식대로 국가 경계(GADM ADM0) 내 격자만으로 재산출함. / [지역 해상도] 토양수분은 CCKP 가 성(ADM1) 단위를 제공하지 않아 국가 값(ERA5-Land 국가 경계 면적평균)만 수록(원천 한계). / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "토양수분(전국 연평균, 1991-2020 평년)",
+      "sourceLabelEn": "Volumetric soil water, annual mean (national)",
+      "sourceNote": "[값의 성격] 모델(CMIP6·재분석) / 재분석(reanalysis) 자료로 관측값이 아님. 0–289cm 깊이가중 평균값이므로 표층(0–7cm) 값과 다름. 전국 단일값으로 행정구역 단위는 원천이 제공하지 않음. [라이선스 근거] Licence to Use Copernicus Products — 무료·재배포·상업이용 가능, 출처 표기 조건. [원천 갱신일 근거] CDS 데이터셋 페이지 갱신일 미표기 — 원자료 취득일(2026-09-11) 기준. [산출 정정] 종전 값은 다운로드 영역(bbox) 내 전체 유효 격자 평균이었으나 산출방식대로 국가 경계(GADM ADM0) 내 격자만으로 재산출함. / [지역 해상도] 토양수분은 CCKP 가 성(ADM1) 단위를 제공하지 않아 국가 값(ERA5-Land 국가 경계 면적평균)만 수록(원천 한계). / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-c7f7887e5dbe",
+      "labelKo": "가뭄(관구×시나리오×연도 개체 목록)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-01ad3987e7b7",
+      "labelKo": "가뭄(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-324aefebcd8b",
+      "labelKo": "토양수분(전국 연평균, 1991-2020 평년)",
+      "recordCount": 30,
+      "unit": "m³/m³",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 30,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

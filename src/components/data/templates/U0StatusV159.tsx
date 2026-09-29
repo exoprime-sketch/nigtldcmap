@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { loadDatasetSpecV159 } from "../../../data/spec/datasetSpecV159";
+import { loadDatasetSpecForCountryV158 } from "../../../data/spec/countrySpecV158";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import type { TypologyRowV159 } from "../../../data/spec/specTypesV159";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./templates-v159.css";
@@ -30,16 +31,19 @@ interface Props {
 
 export default function U0StatusV159({ typology }: Props) {
   const [reason, setReason] = useState<string | null>(null);
+  // V158: the reason comes from the spec as seen from the country on screen;
+  // another country's own decision note is not this country's reason.
+  const country = useDataCountryV158();
   useEffect(() => {
     let alive = true;
     setReason(null);
-    void loadDatasetSpecV159(typology.elementId).then(({ spec }) => {
+    void loadDatasetSpecForCountryV158(typology.elementId, country).then(({ spec }) => {
       if (alive) setReason(spec?.decisionNote || null);
     });
     return () => {
       alive = false;
     };
-  }, [typology.elementId]);
+  }, [country, typology.elementId]);
   const { decision, decidedAt } = statusDecisionV159(typology.status);
   return (
     <section

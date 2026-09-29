@@ -34,6 +34,11 @@ const bangladesh = (points: Point[], unit = "USD"): CountryCompareSeriesV158 => 
   points,
 });
 
+const withSource = (row: CountryCompareSeriesV158, sourceOrg: string): CountryCompareSeriesV158 => ({
+  ...row,
+  sourceOrg,
+});
+
 let container: HTMLDivElement;
 let root: Root;
 
@@ -132,5 +137,59 @@ describe("CountryCompareBlockV158", () => {
     ]);
     expect(view.textContent).toContain("A-003_gdp_current_usd");
     expect(view.textContent).toContain("두 국가가 모두 가진 최신 연도");
+  });
+
+  test("no shared year, both matched: each country's own latest value with its year", () => {
+    const view = draw([
+      vietnam([
+        { year: 2022, value: 410 },
+        { year: 2023, value: 429 },
+      ]),
+      bangladesh([{ year: 2024, value: 451 }]),
+    ]);
+    const block = view.querySelector('[data-testid="country-compare-v158"]');
+    expect(block?.getAttribute("data-state")).toBe("latest-each");
+    const latest = view.querySelector('[data-testid="country-compare-latest-each-v158"]');
+    expect(latest?.textContent).toBe("베트남 429 (2023) · 방글라데시 451 (2024)");
+    expect(view.textContent).toContain(
+      "비교 국가에 공통 연도가 없어 각 나라의 최신 값을 연도와 함께 표시합니다"
+    );
+    // Not a bar/line render - no shared axis exists to draw.
+    expect(view.querySelector('[data-testid="country-compare-bars-v158"]')).toBeNull();
+    expect(view.querySelector('[data-testid="country-compare-lines-v158"]')).toBeNull();
+  });
+
+  test("no shared year and only one country actually has a value: still nothing", () => {
+    const view = draw([
+      vietnam([{ year: 2023, value: 429 }]),
+      bangladesh([{ year: 2024, value: null }]),
+    ]);
+    expect(view.innerHTML).toBe("");
+  });
+
+  test("differing sources are named in a footnote", () => {
+    const view = draw([
+      withSource(vietnam([{ year: 2023, value: 429 }]), "World Bank"),
+      withSource(bangladesh([{ year: 2024, value: 451 }]), "World Bank WITS"),
+    ]);
+    const note = view.querySelector('[data-testid="country-compare-source-note-v158"]');
+    expect(note?.textContent).toContain("베트남 World Bank");
+    expect(note?.textContent).toContain("방글라데시 World Bank WITS");
+  });
+
+  test("same source: no footnote", () => {
+    const view = draw([
+      withSource(vietnam([{ year: 2024, value: 468 }]), "World Bank"),
+      withSource(bangladesh([{ year: 2024, value: 451 }]), "World Bank"),
+    ]);
+    expect(view.querySelector('[data-testid="country-compare-source-note-v158"]')).toBeNull();
+  });
+
+  test("a country with no stated source: no footnote (nothing half-stated)", () => {
+    const view = draw([
+      withSource(vietnam([{ year: 2024, value: 468 }]), "World Bank"),
+      bangladesh([{ year: 2024, value: 451 }]),
+    ]);
+    expect(view.querySelector('[data-testid="country-compare-source-note-v158"]')).toBeNull();
   });
 });

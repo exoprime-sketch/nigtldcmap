@@ -66,6 +66,7 @@ OWNED_FILES = (
     "publication-decisions.json",
     "rights-matrix.json",
     "map-index.json",
+    "presentation-v158.json",
     "asset-integrity.json",
 )
 OWNED_DIRS = ("packs", "downloads")
@@ -917,6 +918,18 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
     v2._write_json(out / "publication-decisions.json", publication_decisions)
     v2._write_json(out / "rights-matrix.json", rights_matrix)
     v2._write_json(out / "map-index.json", map_index)
+    # V158-B2: which entity columns hold region names, for the screens. A column
+    # listed here is shown as "한글명 (로마자)" and never with a non-Latin local
+    # name; the delivered value itself stays as it is in the packs.
+    v2._write_json(
+        out / "presentation-v158.json",
+        {
+            "schemaVersion": "country-presentation-v158",
+            "countryIso3": iso3,
+            "regionColumns": region_columns,
+            "listSeparator": region_separator,
+        },
+    )
 
     assets = {
         "catalog": f"{data_root}/catalog.json",

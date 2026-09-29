@@ -15,6 +15,7 @@ import {
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import { useEffect, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
   /** For the usage notes filed under the collapsed terms (V153). */
@@ -36,11 +37,12 @@ export default function PublicSourcePanelV126({
   aggregationBasis = [],
 }: Props) {
   const [provider, setProvider] = useState<string>("");
+  const dataCountryV158 = useDataCountryV158();
   useEffect(() => {
     let cancelled = false;
     setProvider("");
     if (!elementId) return undefined;
-    loadCardSummariesV140()
+    loadCardSummariesV140(dataCountryV158)
       .then((cards) => {
         if (!cancelled) setProvider(cards.get(elementId)?.provider || "");
       })
@@ -48,7 +50,7 @@ export default function PublicSourcePanelV126({
     return () => {
       cancelled = true;
     };
-  }, [elementId]);
+  }, [dataCountryV158, elementId]);
   // Organisation names arrive with the compiler's note about which sheet column
   // varies per row - "(레코드별 상이 - attr_19 참조)". The names are real; the
   // notes were never meant for a reader.

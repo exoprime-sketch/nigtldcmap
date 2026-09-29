@@ -118,6 +118,7 @@ function publicStatusLabelV124(
     quarantined: "현재 제공하지 않음",
     // V156: a decision, not a measurement - the label says so plainly.
     excluded: "제공 대상 제외",
+    "not-provided": "미제공",
   };
   return labels[status];
 }
@@ -194,3 +195,6 @@ export const VietnamCountryDataProviderV122: CountryDataProviderV122 = {
   publicElementToken: publicElementPathTokenV121,
   clearCache: clearVietnamDataCacheV124,
 };
+
+/** V158: the catalog mapping, for the providers built from the country registry. */
+export { toCatalogItem as toCountryCatalogItemBaseV158 };

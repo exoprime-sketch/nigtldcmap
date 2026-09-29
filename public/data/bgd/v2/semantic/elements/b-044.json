@@ -1,0 +1,227 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 6,
+      "values": [
+        "구리",
+        "니켈",
+        "리튬",
+        "망간",
+        "코발트",
+        "희토류"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "해당없음"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-044",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "코발트",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "코발트",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 코발트",
+      "indicatorId": "B-044_mineral_presence_cobalt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=코발트|technology=해당없음|B-044_mineral_presence_cobalt",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 코발트",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "구리",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "구리",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 구리",
+      "indicatorId": "B-044_mineral_presence_copper",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=구리|technology=해당없음|B-044_mineral_presence_copper",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 구리",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "리튬",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "리튬",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 리튬",
+      "indicatorId": "B-044_mineral_presence_lithium",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=리튬|technology=해당없음|B-044_mineral_presence_lithium",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 리튬",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "망간",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "망간",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 망간",
+      "indicatorId": "B-044_mineral_presence_manganese",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=망간|technology=해당없음|B-044_mineral_presence_manganese",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 망간",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "니켈",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "니켈",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 니켈",
+      "indicatorId": "B-044_mineral_presence_nickel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=니켈|technology=해당없음|B-044_mineral_presence_nickel",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 니켈",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-796bc07af80c|상태",
+      "dimensionLabels": {
+        "detail": "희토류",
+        "technology": "해당없음"
+      },
+      "dimensions": {
+        "detail": "희토류",
+        "technology": "해당없음"
+      },
+      "displayLabel": "핵심광물 부존 상태 — 희토류",
+      "indicatorId": "B-044_mineral_presence_rare_earths",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-796bc07af80c",
+        "labelKo": "핵심광물 부존 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-796bc07af80c|상태|detail=희토류|technology=해당없음|B-044_mineral_presence_rare_earths",
+      "sourceCaveat": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceLabel": "핵심광물 부존 상태 — 희토류",
+      "sourceLabelEn": "Critical mineral occurrence status",
+      "sourceNote": "[값의 성격] 문헌(법령·USGS) / [수록 범위] 본 요소는 발주처 「데이터 요소」 정의(광물명 — 리튬／코발트／니켈／구리／희토류／망간) 6개 광종만 수록합니다. 연구진이 확장했던 그 밖의 광종 목록은 정의 밖이므로 제외했습니다(2026-09-17). / [정합성] 본 요소의 광종 목록은 B-046(매장량)·B-047(생산량)·B-048(광산 위치)과 광종명을 동일 표기로 통일하여 요소 간 대조가 가능하도록 정리함. \"USGS 미수록\"은 부존이 없다는 뜻이 아니라 USGS가 상업적 매장량을 보고하지 않음(NP)을 의미. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간 / [기술분류] 데이터검토 02 이슈로그 「기술 분류 필요 = [행별 태깅] 태양광 기술 · 풍력 기술 · 전력 통합 기술 · 수송효율 기술」 대상 — tech_ids=해당없음(2026-09-18 통일) (별첨2 30_tech_info). [행별 근거] 보크사이트 — 38대 기후기술에 직접 대응하는 용도가 특정되지 않음 — 별첨2 R4(억지 매핑 금지)에 따라 배경 데이터로 처리 / [라이선스 근거] USGS Copyrights and Credits — \"USGS-authored or produced data and information are considered to be in the U.S. Public Domain\". / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 확인] USGS Mineral Commodity Summaries 2026 전문(PDF)을 대상으로 국가명 Bangladesh 를 전수 검색한 결과, 광종별 매장량·생산량 표에 방글라데시 국가행이 존재하지 않았습니다(본문 중 \"IRON AND STEEL SCRAP\" 장의 미국 고철 수출 상대국 서술 1건만 확인되며 이는 방글라데시의 광물 자원량·생산량 지표가 아님). USGS 는 개별 표기 기준 미만 국가를 Other countries 로 합산하므로 해당 값은 원천에 공표되지 않은 것이며, 부존·생산 자체가 없음을 뜻하지 않습니다 → 전 지표 NP/M01. 방글라데시에 대해 지점 단위로 확인 가능한 광물 부존 정보는 USGS MRDS 기반 B-048(주요 광산 위치)에 별도 수록하였습니다. / [기술분류 통일] 발주처 검토의견(2026-09-16)에 따라 tech_ids 「해당없음」으로 통일(광물 부존·매장·생산 정보는 특정 기후기술에 귀속되지 않음) / [기술 태깅] 발주처 검토의견(2026-09-16)에 따라 B-044~B-048 의 tech_ids 를 「해당없음」으로 통일했습니다(광물 부존·순위·매장량·생산량·광산 위치는 특정 기후기술에 직접 대응하지 않는 배경 자료). 이슈로그 「[행별 태깅]」 방침과 다른 점은 회신_2 에서 확인 요청. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 6,
+      "key": "measure-796bc07af80c",
+      "labelKo": "핵심광물 부존 상태",
+      "recordCount": 6,
+      "unit": "상태",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 6,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}
