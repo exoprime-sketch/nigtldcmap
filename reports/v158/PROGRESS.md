@@ -28,8 +28,11 @@
   - 점검 스크립트: `country-qa-v158`(BGD 화면 QA), `fake-country-check-v158`(가짜 3번째 국가), 화면 서명 해시 경로 수정
   - 검증: tsc 0 · 단위 658/658 · 가짜 3번째 국가 11/11(merge 전 빌드)
 
-## 진행 중(2026-09-29 17시, 컨텍스트 압축 뒤 재확인)
-- PR-B 검증: 새 main 기준 BGD QA·가짜 국가 재실행 → VNM 화면 서명(베이스 26df689 vs PR) → `finalize:v151` 1회 → REVIEW·PR_BODY·CHANGELOG → push(PR 생성은 #44 병합 뒤)
+## 진행 중(2026-09-29 저녁)
+- PR-B 검증 완료·push(`feat/v158-b2b-country-layer`)
+  - tsc 0 · 단위 663/663 · VNM 화면 서명 151 차이 0 · BGD 화면 QA 7/7 · 가짜 국가 11/11 · BGD 검증기 52/52 · `finalize:v151` 1회 통과
+  - Preview 확인 뒤 보고. PR 생성은 #44 병합 뒤(쌓인 브랜치 → main merge 후 PR)
+- 다음: PR-C(BGD 지도 43, P8 비의존 새 빌더)
 
 ## 대기·결정 필요
 - PR-A 결정 3건: 압축안 채택, 기존 다운로드 주소 처리, Hobby 비상업 조건
