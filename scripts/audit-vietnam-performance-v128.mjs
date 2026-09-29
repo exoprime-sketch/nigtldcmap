@@ -106,7 +106,10 @@ const publicPlatformSource = sourceText(
   resolve(PROJECT_ROOT, "src/data/publicPlatformV128.ts")
 );
 const downloadSource = sourceText(resolve(PROJECT_ROOT, "src/pages/DownloadPage.tsx"));
-const pagesWorkflow = sourceText(resolve(PROJECT_ROOT, ".github/workflows/pages.yml"));
+// V158: the Pages workflow is gone (Vercel only). The release gate's build in
+// ci.yml is the one this audit measures; Vercel's own setting lives in the
+// Vercel project environment, outside the repository.
+const releaseWorkflow = sourceText(resolve(PROJECT_ROOT, ".github/workflows/ci.yml"));
 const mapLazyLoaded =
   /lazy\(\(\)\s*=>\s*import\(["']\.\/pages\/RealMapExplorerPage["']\)\)/u.test(
     appSource
@@ -125,7 +128,7 @@ const searchIndexLazy =
     `${searchSource}\n${publicPlatformSource}`
   );
 const deploymentSourceMapPolicyConfigured =
-  /GENERATE_SOURCEMAP:\s*["']?false/iu.test(pagesWorkflow);
+  /GENERATE_SOURCEMAP:\s*["']?false/iu.test(releaseWorkflow);
 const deploymentArtifactSourceMapCount = Number(
   deploymentReportResult.value?.subpath?.sourceMapCount
 );

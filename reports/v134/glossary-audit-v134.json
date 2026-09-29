@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v134-context-glossary-analysis-audit-1",
-  "generatedAt": "2026-09-29T05:56:07.186Z",
+  "generatedAt": "2026-09-29T06:14:30.695Z",
   "audit": "glossary:v134",
   "status": "PASS",
   "summary": {
@@ -15,10 +15,10 @@
     "accountedElements": 152,
     "glossaryTermCount": 538,
     "visibleAcronymWithoutGlossaryCount": 0,
-    "acronymInventoryCount": 838,
+    "acronymInventoryCount": 843,
     "selectedOptionGlossaryFailureCount": 0,
     "mapInteractionPass": true,
-    "inspectedRoutes": 147,
+    "inspectedRoutes": 151,
     "runtimeFailure": null
   },
   "checks": [
@@ -88,12 +88,12 @@
       "name": "PRODUCTION_DOM_ROUTE_COVERAGE",
       "status": "PASS",
       "actual": {
-        "inspectedRoutes": 147,
+        "inspectedRoutes": 151,
         "routeFailures": [],
         "runtimeFailure": null
       },
       "expected": {
-        "inspectedRoutes": 147,
+        "inspectedRoutes": 151,
         "routeFailures": []
       }
     },
@@ -118,8 +118,8 @@
       "audit": "glossary:v134",
       "name": "FINDER_ALL_CARDS_AUDITED",
       "status": "PASS",
-      "actual": 142,
-      "expected": 142
+      "actual": 146,
+      "expected": 146
     },
     {
       "type": "check",
@@ -133,37 +133,17 @@
           "problems": []
         },
         {
-          "elementId": "C-015",
-          "pass": true,
-          "problems": []
-        },
-        {
           "elementId": "C-020",
           "pass": true,
           "problems": []
         },
         {
-          "elementId": "C-023",
-          "pass": true,
-          "problems": []
-        },
-        {
-          "elementId": "D-024",
+          "elementId": "C-021",
           "pass": true,
           "problems": []
         },
         {
           "elementId": "E-008",
-          "pass": true,
-          "problems": []
-        },
-        {
-          "elementId": "E-011",
-          "pass": true,
-          "problems": []
-        },
-        {
-          "elementId": "E-013",
           "pass": true,
           "problems": []
         },
@@ -233,9 +213,9 @@
   "accountedElements": 152,
   "glossaryTermCount": 538,
   "visibleAcronymWithoutGlossaryCount": 0,
-  "acronymInventoryCount": 838,
+  "acronymInventoryCount": 843,
   "selectedOptionGlossaryFailureCount": 0,
   "mapInteractionPass": true,
-  "inspectedRoutes": 147,
+  "inspectedRoutes": 151,
   "runtimeFailure": null
 }

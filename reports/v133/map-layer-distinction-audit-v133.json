@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-29T05:55:22.787Z",
+  "generatedAt": "2026-09-29T06:13:41.498Z",
   "audit": "map-layer-distinction:v133",
   "status": "PASS",
   "summary": {
@@ -11,7 +11,7 @@
     "failed": 0,
     "total": 13,
     "failedChecks": [],
-    "mapLayerCount": 60,
+    "mapLayerCount": 42,
     "visibleMapSymbolWithoutLegend": 0,
     "climateSnapshot": {
       "primaryElement": "B-021",
@@ -243,8 +243,8 @@
       "name": "MAP_LAYER_COUNT",
       "status": "PASS",
       "actual": {
-        "active": 60,
-        "declared": 60
+        "active": 42,
+        "declared": 42
       },
       "expected": "declared active count, at least the twelve ETL layers"
     },
@@ -259,13 +259,10 @@
     {
       "type": "check",
       "audit": "map-layer-distinction:v133",
-      "name": "D023_NOT_A_SITE_LAYER",
+      "name": "D023_DUPLICATE_MAP_FEATURE",
       "status": "PASS",
-      "actual": {
-        "renderer": "partial-choropleth",
-        "mapMode": "region-choropleth"
-      },
-      "expected": "absent, or a region choropleth - never project-site points"
+      "actual": 0,
+      "expected": 0
     },
     {
       "type": "check",
@@ -626,7 +623,7 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 60,
+  "mapLayerCount": 42,
   "visibleMapSymbolWithoutLegend": 0,
   "climateSnapshot": {
     "primaryElement": "B-021",

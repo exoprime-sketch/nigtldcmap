@@ -14,7 +14,10 @@
  *                   country-level indicator whose values carry a year
  *   not comparable  a registry or policy document (records, not a measure), a
  *                   province distribution or station series (the geography is
- *                   the point), a matrix, a status note, or no stated unit
+ *                   the point), a matrix, a status note, or no stated unit;
+ *                   also any element whose values describe a fixed reference
+ *                   country (typology referenceCountryIso3, spec v8: E-016,
+ *                   E-017 - Korea), whatever its archetype
  *
  * `compareKey.indicatorId` is the element's headline indicator - the one the
  * primary chart draws - taken from the published download payload. `yearRule`
@@ -37,6 +40,7 @@ const argv = process.argv.slice(2);
 const CHECK_ONLY = argv.includes("--check");
 const COUNTRY = resolveCountryIso3V158({ argv });
 const CONTRACT_PATH = resolve(ROOT, "src/data/visualization/publicVisualizationContractV153.json");
+const TYPOLOGY_PATH = resolve(ROOT, "src/data/spec/datasetTypologyV159.json");
 const DATA_DIR = resolve(ROOT, countryPublicDirV158(ROOT, COUNTRY));
 
 /** Archetypes whose primary chart states one measure per year for the country. */
@@ -85,6 +89,9 @@ function headlineIndicator(elementId) {
 }
 
 const contract = readJson(CONTRACT_PATH);
+const referenceCountry = new Map(
+  readJson(TYPOLOGY_PATH).rows.filter((row) => row.referenceCountryIso3).map((row) => [row.elementId, row.referenceCountryIso3])
+);
 let comparable = 0;
 const reasons = {};
 const rows = contract.rows.map((row) => {
@@ -92,7 +99,9 @@ const rows = contract.rows.map((row) => {
   const unit = String(row.primary?.unit ?? "").trim();
   const headline = COMPARABLE_ARCHETYPES.has(archetype) ? headlineIndicator(row.elementId) : null;
   let decision;
-  if (!COMPARABLE_ARCHETYPES.has(archetype)) {
+  if (referenceCountry.has(row.elementId)) {
+    decision = { comparable: false, reason: "기준국(한국) 값이라 국가 간 비교 대상이 아님" };
+  } else if (!COMPARABLE_ARCHETYPES.has(archetype)) {
     decision = {
       comparable: false,
       reason: ARCHETYPE_REASON[archetype] || `유형 ${archetype}는 비교 대상이 아님`,

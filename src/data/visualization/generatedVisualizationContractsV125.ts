@@ -2421,7 +2421,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "레코드 유형"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "C-015",
     "measureLabels": [
       "상기 문서들의 원본 링크(URL)",
@@ -3178,7 +3178,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "레코드 유형"
     ],
-    "downloadAvailable": false,
+    "downloadAvailable": true,
     "elementId": "D-024",
     "measureLabels": [
       "VC"

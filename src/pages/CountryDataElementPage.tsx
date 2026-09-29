@@ -38,11 +38,15 @@ import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
 import type { S2RegionObservationV159 } from "../data/structure/structureTypesV159";
 import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV124";
-import { decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { decisionPointsU3RecordsV159, decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { visualizationContractV153 } from "../data/visualization/publicVisualizationContractV153";
+import { researchRecordV132 } from "../components/data/public/ResearchPatentAnalysisV132";
+import { koreaTechReadinessPointsV159, referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
 import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
 import SourceLineV159 from "../components/data/description/SourceLineV159";
 import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
 import DecisionPointsV159 from "../components/data/templates/DecisionPointsV159";
+import DetailLayerV160 from "../components/data/layers/DetailLayerV160";
 import "../styles/country-data-platform-v122.css";
 import "../styles/detail-layout-v153.css";
 
@@ -681,11 +685,13 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
   }
 }
 
-/** V156: how an exclusion's basis reads on the public notice (the decision file keeps its own words). */
-const EXCLUSION_BASIS_LABEL_V156: Record<string, string> = {
-  "사용자 결정": "사용자 검토",
-  "데이터 명세서": "데이터 명세서 검토",
-};
+/**
+ * V156-E (2026-09-29, 기준서 v1.1 표 13): an excluded element's page states one
+ * public line. The decision record (reason, basis, date) stays in the decision
+ * file and the catalog and is never shown. The fallback covers a decision
+ * recorded before the public line existed.
+ */
+const EXCLUSION_PUBLIC_NOTICE_FALLBACK_V156 = "제공 대상이 아닌 데이터입니다.";
 
 export default function CountryDataElementPage({
   elementId,
@@ -826,13 +832,38 @@ export default function CountryDataElementPage({
     };
   }, [countryIso3, elementId, typologyV159]);
   const decisionPointListV159 = useMemo(() => {
-    if (!typologyV159 || typologyV159.displayType === "U0" || !bundle?.meta || !hasPopulatedRows) return [];
+    if (!typologyV159 || typologyV159.statusNotice || !bundle?.meta || !hasPopulatedRows) return [];
     const rows = adaptStructureV159(typologyV159.structure, {
       observations: bundle.observations,
       entities: bundle.entities,
       indicators: bundle.meta.indicators,
     });
-    const fromRows = decisionPointsV159(typologyV159.displayType, rows, { countryIso3: countryIso3 || "VNM" });
+    // Spec v8 ③·S4: records counted as the chart counts them (the source's
+    // own technology classification), not the adapter's generic fields.
+    // Spec v11: the Korea-reference record list (E-016) reads its '전체' record.
+    if (typologyV159.referenceCountryIso3 && typologyV159.structure === "S4") {
+      return koreaTechReadinessPointsV159(bundle.entities);
+    }
+    if (typologyV159.displayType === "U3" && typologyV159.structure === "S4") {
+      const records = bundle.entities.flatMap((entity) => {
+        const record = researchRecordV132(entity, bundle.meta?.element.detailTemplate);
+        return record ? [{ kind: record.type, technologies: record.technologyClasses }] : [];
+      });
+      return decisionPointsU3RecordsV159(records);
+    }
+    // Spec v8 reference country (E-017): the headline is the series the
+    // primary chart draws, i.e. the rows in the contract's primary unit.
+    const reference = typologyV159.referenceCountryIso3;
+    const primaryUnit = reference ? visualizationContractV153(typologyV159.elementId)?.primary.unit : null;
+    const fromRows = decisionPointsV159(typologyV159.displayType, rows, {
+      countryIso3: countryIso3 || "VNM",
+      referenceCountryIso3: reference,
+      countryLabel: referenceSubjectLabelV159,
+      headlineIndicatorIds:
+        rows.structure === "S1" && primaryUnit
+          ? [...new Set(rows.rows.filter((row) => row.unit === primaryUnit).map((row) => row.indicatorId))]
+          : undefined,
+    });
     if (fromRows.length > 0 || layerRowsV159.length === 0) return fromRows;
     return decisionPointsV159("U2", { structure: "S2", rows: layerRowsV159 }, { countryIso3: countryIso3 || "VNM" });
   }, [bundle, countryIso3, hasPopulatedRows, layerRowsV159, typologyV159]);
@@ -860,8 +891,8 @@ export default function CountryDataElementPage({
     [seriesIdsKeyV159]
   );
 
-  // V156: a reviewed decision not to offer this element. One card, no charts, no
-  // table, no download - and the reason and date the decision carries.
+  // V156: a reviewed decision not to offer this element. The title and one
+  // public line - no charts, no table, no download, no decision record.
   if (catalogItem?.publicStatus === "excluded") {
     // The heading follows the V159 naming rule like every other detail: the
     // source line and the dataset's own name from the framework spec.
@@ -888,23 +919,8 @@ export default function CountryDataElementPage({
           </div>
         </section>
         <div className="cdp-panel cdp-empty" data-testid="detail-excluded-v156">
-          <p>
-            이 항목은 {catalogItem.exclusion?.decidedAt ? `${catalogItem.exclusion.decidedAt} ` : ""}검토로
-            제공 대상에서 제외되었습니다.
-          </p>
-          <p>
-            <strong>결정</strong>{" "}
-            <span data-exclusion-field="decision">
-              제공 대상 제외({EXCLUSION_BASIS_LABEL_V156[catalogItem.exclusion?.basis || ""] || "검토"})
-            </span>
-          </p>
-          <p>
-            <strong>사유</strong>{" "}
-            <span data-exclusion-field="reason"><PublicTermTextV134 text={catalogItem.exclusion?.reason || ""} /></span>
-          </p>
-          <p>
-            <strong>결정일</strong>{" "}
-            <span data-exclusion-field="decidedAt">{catalogItem.exclusion?.decidedAt || ""}</span>
+          <p data-exclusion-field="publicNotice">
+            {catalogItem.exclusion?.publicNotice || EXCLUSION_PUBLIC_NOTICE_FALLBACK_V156}
           </p>
         </div>
       </div>
@@ -1025,7 +1041,7 @@ export default function CountryDataElementPage({
 
       {meta && (
         <>
-          <section className="cdp-detail-hero">
+          <section className="cdp-detail-hero cdp-detail-hero--v160">
             <div>
               <div className="cdp-card__path">
                 <span>
@@ -1136,28 +1152,17 @@ export default function CountryDataElementPage({
                 </button>
               )}
             </div>
+            {/* V160-D layer 1: 판단 포인트 as a chip strip across the hero,
+                read with the title before the first chart. */}
+            {typologyV159 ? (
+              <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} variant="strip" />
+            ) : null}
           </section>
 
-          <DataDescriptionV159
-            spec={specBundleV159?.spec || null}
-            cases={specBundleV159?.cases || []}
-            availableIndicatorIds={presentIndicatorIdsV159}
-            onHighlightIndicators={(ids) => {
-              const primary = document.querySelector<HTMLElement>('[data-testid="public-analysis-primary"]');
-              if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
-            }}
-          />
-          <SourceLineV159 spec={specBundleV159?.spec || null} />
-          {typologyV159 ? (
-            <DecisionPointsV159 displayType={typologyV159.displayType} points={decisionPointListV159} />
-          ) : null}
-
-          <DetailKpiStripV153
-            elementId={elementId}
-            observations={observations}
-            entities={entities}
-            indicatorFamilyCount={indicatorFamilyCountV153(observations)}
-          />
+          {/* V160-D layer 1 (always open): the hero with its 판단 포인트
+              strip and the primary chart|map row below read without a click.
+              The core-figure strip, the later charts, 데이터 설명 and the
+              source/download material are layers 2-3. */}
 
           <section className="cdp-panel cdp-detail-panel dl153-detail-panel">
               <CountryElementVisualizationV123
@@ -1181,26 +1186,56 @@ export default function CountryDataElementPage({
                   <p>{emptyStateCopy.description}</p>
                 </div>
               )}
-
-              <section className="cdp-section cdp-v125-download">
-                <h3>다운로드</h3>
-                {downloadStatus?.key === "downloadable" ? (
-                  <button
-                    type="button"
-                    className="cdp-button cdp-button--primary"
-                    data-testid="public-download-link"
-                    onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
-                  >
-                    전체 데이터 다운로드
-                  </button>
-                ) : (
-                  <div data-download-status={downloadStatus?.key}>
-                    <strong>{downloadStatus?.label || "다운로드 자료 없음"}</strong>
-                    {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
-                  </div>
-                )}
-              </section>
           </section>
+
+          {/* Layer 2 (collapsed): the core-figure strip, then 데이터 설명 -
+              the framework workbook's description, usage and cases (absent
+              without a spec). */}
+          <DetailLayerV160 layer={2} title="데이터 설명">
+            <DetailKpiStripV153
+              elementId={elementId}
+              observations={observations}
+              entities={entities}
+              indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+            />
+            {specBundleV159?.spec ? (
+              <DataDescriptionV159
+                spec={specBundleV159.spec}
+                cases={specBundleV159.cases}
+                availableIndicatorIds={presentIndicatorIdsV159}
+                onHighlightIndicators={(ids) => {
+                  const primary = document.querySelector<HTMLElement>('[data-testid="public-analysis-primary"]');
+                  if (applyIndicatorHighlightV159(primary, ids) > 0) primary?.scrollIntoView({ block: "start", behavior: "smooth" });
+                }}
+              />
+            ) : null}
+          </DetailLayerV160>
+
+          {/* Layer 2/3 continued: the router's own DetailLayerV160(3) carries
+              자료 출처 and 상세 데이터 (PublicSourcePanelV126,
+              PublicRawDataTablesV126); this page-level layer 3 carries the
+              short source/APA line and the download action. */}
+          <DetailLayerV160 layer={3} title="다운로드·참고문헌">
+            <SourceLineV159 spec={specBundleV159?.spec || null} />
+            <section className="cdp-section cdp-v125-download">
+              <h3>다운로드</h3>
+              {downloadStatus?.key === "downloadable" ? (
+                <button
+                  type="button"
+                  className="cdp-button cdp-button--primary"
+                  data-testid="public-download-link"
+                  onClick={() => onOpenDownload(elementId, provider.countryIso3, null)}
+                >
+                  전체 데이터 다운로드
+                </button>
+              ) : (
+                <div data-download-status={downloadStatus?.key}>
+                  <strong>{downloadStatus?.label || "다운로드 자료 없음"}</strong>
+                  {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
+                </div>
+              )}
+            </section>
+          </DetailLayerV160>
         </>
       )}
     </div>

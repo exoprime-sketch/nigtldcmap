@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 import type {
   ElementIndicatorSemanticsV125,
@@ -70,9 +71,12 @@ import TransmissionNetworkSummaryV140, {
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import PublicRawDataTablesV126 from "./PublicRawDataTablesV126";
 import PublicSourcePanelV126 from "./PublicSourcePanelV126";
+import DetailLayerV160 from "../layers/DetailLayerV160";
+import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "../layers/detailLayerStoreV160";
+import { useDetailFoldV160 } from "./detailFoldContextV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
-import { getTypologyV159 } from "../../../data/spec/datasetSpecV159";
+import { getCardSpecV159, getTypologyV159 } from "../../../data/spec/datasetSpecV159";
 import {
   elementVariantV159,
   GENERIC_BODY_VARIANTS_V159,
@@ -80,7 +84,8 @@ import {
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
-import U0StatusV159 from "../templates/U0StatusV159";
+import StatusNoticeV159 from "../templates/StatusNoticeV159";
+import { KoreaTechLevelV159, KoreaTechReadinessV159 } from "./KoreaReferenceAnalysisV159";
 import U1CountryProfileV159 from "../templates/U1CountryProfileV159";
 import U2RegionalV159 from "../templates/U2RegionalV159";
 import U3TechnologyV159 from "../templates/U3TechnologyV159";
@@ -88,6 +93,7 @@ import U4LocationsV159 from "../templates/U4LocationsV159";
 import U5ProjectsFinanceV159 from "../templates/U5ProjectsFinanceV159";
 import U6PolicyV159 from "../templates/U6PolicyV159";
 import "./public-data-analysis-v126.css";
+import "../layers/detail-head-v160.css";
 
 const OccupationEmploymentWagePreviewV125 = lazy(
   () => import("../semantic/OccupationEmploymentWagePreviewV125")
@@ -178,6 +184,13 @@ export default function PublicDataAnalysisRouterV126({
     [indicators, presentIndicatorIds]
   );
   const [selectedTech, setSelectedTech] = useState("all");
+  const foldV160 = useDetailFoldV160();
+  // V160: the analysis panel's first line keeps a slot for the analysis
+  // heading (one row with the data summary); until it is found - or on a page
+  // without it - the heading stays here.
+  const [heroSlotV160, setHeroSlotV160] = useState<HTMLElement | null>(null);
+  useEffect(() => setHeroSlotV160(document.getElementById("detail-analysis-heading-v160")), [elementId]);
+  const layerTwoOpenV160 = useDetailLayerOpenV160("2");
   useEffect(() => setSelectedTech("all"), [elementId]);
   const techIndicatorIds = useMemo(() => {
     if (selectedTech === "all") return null;
@@ -402,6 +415,10 @@ export default function PublicDataAnalysisRouterV126({
         );
       case "transmission-network":
         return isTransmissionDeliveryV140(entities) ? <TransmissionNetworkSummaryV140 entities={entities} /> : null;
+      case "korea-tech-readiness":
+        return <KoreaTechReadinessV159 entities={entities} />;
+      case "korea-tech-level":
+        return <KoreaTechLevelV159 rows={semanticRows} />;
       case "lcoe-range":
         return <LcoeRangeAnalysisV146 rows={semanticRows} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
       case "ndc-targets":
@@ -491,14 +508,16 @@ export default function PublicDataAnalysisRouterV126({
     return null;
   };
 
-  const isStatusV159 = typology?.displayType === "U0";
+  // Spec v8: a data-pending (or excluded) element keeps its U1-U6 template
+  // shell, with the notice in place of the analysis.
+  const isStatusV159 = Boolean(typology?.statusNotice);
   const earlyBody = variantEntry?.phase === "early" ? renderVariantV159(variantEntry.variant) : null;
   const lateBody =
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
   const body = isStatusV159 && typology ? (
-    <U0StatusV159 typology={typology} />
+    <StatusNoticeV159 typology={typology} />
   ) : (
     earlyBody ??
     renderGenericShapeV159() ??
@@ -523,36 +542,68 @@ export default function PublicDataAnalysisRouterV126({
     <>
       {/* The title is stated once, by the page; the analysis heading is kept
           only where it adds a reading ("배출량 변화와 구성") (V153). */}
-      {!sameTitleV153(pageTitle, analysisTitle) && (
-        <header className="pav126-heading">
-          <h2 data-testid="public-data-title">
-            <PublicTermTextV134 text={analysisTitle} />
-          </h2>
-        </header>
-      )}
+      {!sameTitleV153(pageTitle, analysisTitle) &&
+        (heroSlotV160
+          ? createPortal(
+              <h2 className="pav126-hero-heading" data-testid="public-data-title">
+                <PublicTermTextV134 text={analysisTitle} />
+              </h2>,
+              heroSlotV160
+            )
+          : (
+            <header className="pav126-heading">
+              <h2 data-testid="public-data-title">
+                <PublicTermTextV134 text={analysisTitle} />
+              </h2>
+            </header>
+          ))}
 
-      <section className="pav126-primary" data-testid="public-analysis-primary">
+      <section className="pav126-primary" data-testid="public-analysis-primary" id={`pav126-primary-${elementId}`}>
         {body}
         {mapSlot}
       </section>
 
-      <PublicSourcePanelV126
-        elementId={elementId}
-        indicators={indicators}
-        observations={observations}
-        entities={entities}
-        spatialUnit={spatialUnit}
-        aggregationBasis={aggregationBasis}
-      />
-      {/* A status screen states the decision only; its rows are not tabled (V159). */}
-      {elementId !== "D-011" && !isStatusV159 ? (
-        <PublicRawDataTablesV126
-          elementId={elementId}
-          observations={semanticRows}
-          entities={entities}
-          detailTemplate={detailTemplate}
-        />
+      {/* V160: the charts after the first chart|map row are layer 2 - folded
+          here with the layer's shared open state (the frame marks them). */}
+      {foldV160.hasRest ? (
+        <button
+          type="button"
+          className="dtl160-more"
+          data-testid="detail-layer-v160-more"
+          aria-expanded={layerTwoOpenV160}
+          aria-controls={`pav126-primary-${elementId}`}
+          onClick={() => setDetailLayerOpenV160("2", !layerTwoOpenV160)}
+        >
+          {layerTwoOpenV160 ? "추가 차트 접기" : foldV160.restBlocks > 0 ? `차트 ${foldV160.restBlocks}개 더 보기` : "자세히 보기"}
+        </button>
       ) : null}
+
+      {/* V160: source metadata and the raw-data table read as layer 3 - closed
+          by default, opened on request or by a remembered global preference.
+          Their own testids (detail-source-line-v153, public-raw-table, ...)
+          stay in the DOM either way, since a closed <details> does not
+          unmount its children. */}
+      <DetailLayerV160 layer={3} title="자료 출처·상세 데이터">
+        <PublicSourcePanelV126
+          elementId={elementId}
+          indicators={indicators}
+          observations={observations}
+          entities={entities}
+          spatialUnit={spatialUnit}
+          aggregationBasis={aggregationBasis}
+          pending={typology?.statusNotice === "data-pending"}
+          pendingSourceLabel={typology?.statusNotice === "data-pending" ? getCardSpecV159(elementId)?.sourceLabel : null}
+        />
+        {/* A status screen states the decision only; its rows are not tabled (V159). */}
+        {elementId !== "D-011" && !isStatusV159 ? (
+          <PublicRawDataTablesV126
+            elementId={elementId}
+            observations={semanticRows}
+            entities={entities}
+            detailTemplate={detailTemplate}
+          />
+        ) : null}
+      </DetailLayerV160>
     </>
   );
 
@@ -580,9 +631,6 @@ export default function PublicDataAnalysisRouterV126({
       return <U5ProjectsFinanceV159 context={templateContext}>{content}</U5ProjectsFinanceV159>;
     case "U6":
       return <U6PolicyV159 context={templateContext}>{content}</U6PolicyV159>;
-    default:
-      // ⓪: the shell without the technology filter around the statement.
-      return <U1CountryProfileV159 context={templateContext}>{content}</U1CountryProfileV159>;
   }
 }
 

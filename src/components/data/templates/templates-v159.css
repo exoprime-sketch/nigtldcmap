@@ -57,19 +57,7 @@
   overflow-wrap: anywhere;
 }
 
-.tpl159-status dl {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: 4px 12px;
-  margin: 8px 0 0;
-}
-
-.tpl159-status dt {
-  font-weight: 600;
-}
-
-.tpl159-status dd {
+.tpl159-status p {
   margin: 0;
-  min-width: 0;
   overflow-wrap: anywhere;
 }

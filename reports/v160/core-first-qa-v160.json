@@ -1,0 +1,1126 @@
+{
+  "generatedAt": "2026-09-29T04:46:03.017Z",
+  "checks": [
+    {
+      "id": "HOME_FEATURED_EIGHT",
+      "pass": true,
+      "actual": [
+        "A-002",
+        "A-003",
+        "A-010",
+        "A-023",
+        "A-024",
+        "B-033",
+        "C-016",
+        "D-023"
+      ],
+      "expected": "eight distinct featured datasets"
+    },
+    {
+      "id": "HOME_FIGURES_FROM_CURRENT_COUNTRY",
+      "pass": true,
+      "actual": {
+        "scope": "현재 제공 국가 · 베트남",
+        "cards": [
+          {
+            "id": "A-002",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-003",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-010",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-023",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "A-024",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "B-033",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "C-016",
+            "summary": true,
+            "preparing": false
+          },
+          {
+            "id": "D-023",
+            "summary": true,
+            "preparing": false
+          }
+        ]
+      },
+      "expected": {
+        "scopeNames": [
+          "베트남"
+        ],
+        "card": "a summary from the country's data, or '데이터 준비 중'"
+      }
+    },
+    {
+      "id": "FINDER_LISTS_PUBLIC_SET",
+      "pass": true,
+      "actual": 142,
+      "expected": 142
+    },
+    {
+      "id": "FINDER_SORT_NAME_DEFAULT",
+      "pass": true,
+      "actual": {
+        "sortValue": "name",
+        "firstTen": [
+          "1차 에너지 소비량",
+          "1MW당 예상 온실가스 감축량",
+          "가뭄 지표",
+          "가스종류별 온실가스 배출량",
+          "각국 기후기술 창구기관(NDE)",
+          "감축·적응 기후예산 배분 비율",
+          "감축사업 승인기관(DNA)",
+          "개도국 내 한국 기관 사무소",
+          "건기·우기 구분",
+          "건기·우기 유량 차이"
+        ]
+      },
+      "expected": "가나다순 selected; cards in Intl.Collator('ko') order of the shown name"
+    },
+    {
+      "id": "FINDER_PREPARING_LAST",
+      "pass": true,
+      "actual": {
+        "loaded": 142,
+        "tail": [
+          {
+            "id": "C-021",
+            "title": "자발적 탄소시장(VCM) 사업 파이프라인",
+            "preparing": true
+          }
+        ]
+      },
+      "expected": {
+        "lastIds": [
+          "C-021"
+        ],
+        "label": "데이터 준비 중"
+      }
+    },
+    {
+      "id": "FINDER_SORT_URL_KEPT",
+      "pass": true,
+      "actual": {
+        "url": "?category=B&sort=views",
+        "viewsDisabled": true,
+        "selected": "name"
+      },
+      "expected": "sort=views kept after a filter change; 조회순 disabled (name order shown) only where the usage service is absent"
+    },
+    {
+      "id": "DETAIL_FIRST_SCREEN_12",
+      "pass": true,
+      "actual": [
+        {
+          "id": "A-003",
+          "rank1Top": 619,
+          "stripBottom": 431,
+          "pass": true
+        },
+        {
+          "id": "B-003",
+          "rank1Top": 730,
+          "stripBottom": 466,
+          "pass": true
+        },
+        {
+          "id": "A-018",
+          "rank1Top": 640,
+          "stripBottom": 467,
+          "pass": true
+        },
+        {
+          "id": "A-023",
+          "rank1Top": 680,
+          "stripBottom": 448,
+          "pass": true
+        },
+        {
+          "id": "D-022",
+          "rank1Top": 739,
+          "stripBottom": 430,
+          "pass": true
+        },
+        {
+          "id": "C-009",
+          "rank1Top": 526,
+          "stripBottom": 428,
+          "pass": true
+        },
+        {
+          "id": "A-016",
+          "rank1Top": 569,
+          "stripBottom": 429,
+          "pass": true
+        },
+        {
+          "id": "D-011",
+          "rank1Top": 530,
+          "stripBottom": 432,
+          "pass": true
+        },
+        {
+          "id": "A-002",
+          "rank1Top": 642,
+          "stripBottom": 429,
+          "pass": true
+        },
+        {
+          "id": "E-012",
+          "rank1Top": 651,
+          "stripBottom": 430,
+          "pass": true
+        },
+        {
+          "id": "C-012",
+          "rank1Top": 697,
+          "stripBottom": 525,
+          "pass": true
+        },
+        {
+          "id": "B-002",
+          "rank1Top": 598,
+          "stripBottom": null,
+          "pass": true
+        }
+      ],
+      "expected": "판단 포인트 strip bottom <= 800 and rank-1 top < 800, 12/12"
+    },
+    {
+      "id": "DETAIL_CHART_LAYER1_WITHIN_2_SCREENS",
+      "pass": true,
+      "actual": [
+        {
+          "id": "A-003",
+          "type": "line",
+          "ratio": 1.46
+        },
+        {
+          "id": "B-003",
+          "type": "region-bar",
+          "ratio": 1.99
+        },
+        {
+          "id": "A-018",
+          "type": "stacked-area",
+          "ratio": 1.58
+        },
+        {
+          "id": "A-023",
+          "type": "category-bar",
+          "ratio": 1.89
+        },
+        {
+          "id": "D-022",
+          "type": "category-bar",
+          "ratio": 1.8
+        },
+        {
+          "id": "A-016",
+          "type": "stacked-area",
+          "ratio": 1.53
+        },
+        {
+          "id": "D-011",
+          "type": "line",
+          "ratio": 1.44
+        },
+        {
+          "id": "A-002",
+          "type": "line",
+          "ratio": 1.61
+        },
+        {
+          "id": "E-012",
+          "type": "category-bar",
+          "ratio": 1.79
+        },
+        {
+          "id": "B-002",
+          "type": "category-bar",
+          "ratio": 1.19
+        }
+      ],
+      "expected": "<= 2.0 x 800px"
+    },
+    {
+      "id": "DETAIL_LONG_BLOCK_OPENS_ON_10",
+      "pass": true,
+      "actual": [
+        {
+          "id": "C-009",
+          "type": "timeline",
+          "listFold": {
+            "state": "closed",
+            "items": 54,
+            "shown": 10,
+            "button": true
+          },
+          "ratio": 2.11
+        },
+        {
+          "id": "C-012",
+          "type": "comparison-table",
+          "listFold": {
+            "state": "closed",
+            "items": 33,
+            "shown": 10,
+            "button": true
+          },
+          "ratio": 2.02
+        }
+      ],
+      "expected": "timeline/table: 10 items shown + '전체 보기'"
+    },
+    {
+      "id": "DETAIL_LAYERS_START_COLLAPSED",
+      "pass": true,
+      "actual": [
+        {
+          "id": "A-003",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "B-003",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-018",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-023",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "D-022",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "C-009",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-016",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "D-011",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "A-002",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "E-012",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "C-012",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        },
+        {
+          "id": "B-002",
+          "layers": [
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2",
+              "expanded": "false"
+            },
+            {
+              "layer": "3",
+              "expanded": "false"
+            },
+            {
+              "layer": "2-charts",
+              "expanded": "false"
+            }
+          ]
+        }
+      ],
+      "expected": "every layer summary aria-expanded=\"false\""
+    },
+    {
+      "id": "MAP_DEFAULT_LAYERS_MATCH_POLICY",
+      "pass": true,
+      "actual": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ],
+      "expected": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ]
+    },
+    {
+      "id": "MAP_CORE_OPEN_MORE_FOLDED",
+      "pass": true,
+      "actual": {
+        "coreIds": [
+          "A-023",
+          "A-024",
+          "B-003",
+          "B-004",
+          "B-008",
+          "B-012",
+          "B-021",
+          "B-033",
+          "B-037",
+          "B-039",
+          "B-041",
+          "B-042",
+          "C-016",
+          "C-025",
+          "D-018",
+          "E-004",
+          "E-005",
+          "E-006",
+          "E-018",
+          "E-019"
+        ],
+        "coreOpen": "true",
+        "moreExpanded": "false",
+        "hiddenGroups": 6
+      },
+      "expected": "core open, 더 많은 레이어 folded"
+    },
+    {
+      "id": "NO_HORIZONTAL_OVERFLOW_6_WIDTHS",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "id": "CONSOLE_ERRORS_ZERO",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "evidence": {
+    "home": {
+      "cards": [
+        {
+          "id": "A-002",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-003",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-010",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-023",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "A-024",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "B-033",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "C-016",
+          "summary": true,
+          "preparing": false
+        },
+        {
+          "id": "D-023",
+          "summary": true,
+          "preparing": false
+        }
+      ],
+      "scope": "현재 제공 국가 · 베트남"
+    },
+    "finderSort": {
+      "total": 142,
+      "views": {
+        "url": "?category=B&sort=views",
+        "viewsDisabled": true,
+        "selected": "name"
+      }
+    },
+    "layer1": [
+      {
+        "id": "A-003",
+        "rank1Type": "line",
+        "rank1Top": 619,
+        "stripBottom": 431,
+        "layer1Bottom": 1170,
+        "ratio": 1.46,
+        "primaryBottom": 1170,
+        "primaryRatio": 1.46,
+        "listFold": null
+      },
+      {
+        "id": "B-003",
+        "rank1Type": "region-bar",
+        "rank1Top": 730,
+        "stripBottom": 466,
+        "layer1Bottom": 1591,
+        "ratio": 1.99,
+        "primaryBottom": 1591,
+        "primaryRatio": 1.99,
+        "listFold": null
+      },
+      {
+        "id": "A-018",
+        "rank1Type": "stacked-area",
+        "rank1Top": 640,
+        "stripBottom": 467,
+        "layer1Bottom": 1266,
+        "ratio": 1.58,
+        "primaryBottom": 1266,
+        "primaryRatio": 1.58,
+        "listFold": null
+      },
+      {
+        "id": "A-023",
+        "rank1Type": "category-bar",
+        "rank1Top": 680,
+        "stripBottom": 448,
+        "layer1Bottom": 1508,
+        "ratio": 1.89,
+        "primaryBottom": 1508,
+        "primaryRatio": 1.89,
+        "listFold": null
+      },
+      {
+        "id": "D-022",
+        "rank1Type": "category-bar",
+        "rank1Top": 739,
+        "stripBottom": 430,
+        "layer1Bottom": 1443,
+        "ratio": 1.8,
+        "primaryBottom": 1465,
+        "primaryRatio": 1.83,
+        "listFold": null
+      },
+      {
+        "id": "C-009",
+        "rank1Type": "timeline",
+        "rank1Top": 526,
+        "stripBottom": 428,
+        "layer1Bottom": 1687,
+        "ratio": 2.11,
+        "primaryBottom": 1687,
+        "primaryRatio": 2.11,
+        "listFold": {
+          "state": "closed",
+          "items": 54,
+          "shown": 10,
+          "button": true
+        }
+      },
+      {
+        "id": "A-016",
+        "rank1Type": "stacked-area",
+        "rank1Top": 569,
+        "stripBottom": 429,
+        "layer1Bottom": 1223,
+        "ratio": 1.53,
+        "primaryBottom": 1223,
+        "primaryRatio": 1.53,
+        "listFold": null
+      },
+      {
+        "id": "D-011",
+        "rank1Type": "line",
+        "rank1Top": 530,
+        "stripBottom": 432,
+        "layer1Bottom": 1154,
+        "ratio": 1.44,
+        "primaryBottom": 1154,
+        "primaryRatio": 1.44,
+        "listFold": null
+      },
+      {
+        "id": "A-002",
+        "rank1Type": "line",
+        "rank1Top": 642,
+        "stripBottom": 429,
+        "layer1Bottom": 1287,
+        "ratio": 1.61,
+        "primaryBottom": 1287,
+        "primaryRatio": 1.61,
+        "listFold": null
+      },
+      {
+        "id": "E-012",
+        "rank1Type": "category-bar",
+        "rank1Top": 651,
+        "stripBottom": 430,
+        "layer1Bottom": 1429,
+        "ratio": 1.79,
+        "primaryBottom": 1429,
+        "primaryRatio": 1.79,
+        "listFold": null
+      },
+      {
+        "id": "C-012",
+        "rank1Type": "comparison-table",
+        "rank1Top": 697,
+        "stripBottom": 525,
+        "layer1Bottom": 1617,
+        "ratio": 2.02,
+        "primaryBottom": 1617,
+        "primaryRatio": 2.02,
+        "listFold": {
+          "state": "closed",
+          "items": 33,
+          "shown": 10,
+          "button": true
+        }
+      },
+      {
+        "id": "B-002",
+        "rank1Type": "category-bar",
+        "rank1Top": 598,
+        "stripBottom": null,
+        "layer1Bottom": 953,
+        "ratio": 1.19,
+        "primaryBottom": 953,
+        "primaryRatio": 1.19,
+        "listFold": null
+      }
+    ],
+    "layers": [
+      {
+        "id": "A-003",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "B-003",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-018",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-023",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "D-022",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "C-009",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-016",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "D-011",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "A-002",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "E-012",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "C-012",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      },
+      {
+        "id": "B-002",
+        "layers": [
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2",
+            "expanded": "false"
+          },
+          {
+            "layer": "3",
+            "expanded": "false"
+          },
+          {
+            "layer": "2-charts",
+            "expanded": "false"
+          }
+        ]
+      }
+    ],
+    "map": {
+      "coreIds": [
+        "A-023",
+        "A-024",
+        "B-003",
+        "B-004",
+        "B-008",
+        "B-012",
+        "B-021",
+        "B-033",
+        "B-037",
+        "B-039",
+        "B-041",
+        "B-042",
+        "C-016",
+        "C-025",
+        "D-018",
+        "E-004",
+        "E-005",
+        "E-006",
+        "E-018",
+        "E-019"
+      ],
+      "coreOpen": "true",
+      "moreExpanded": "false",
+      "hiddenGroups": 6
+    },
+    "overflow": [],
+    "consoleErrors": []
+  },
+  "summary": {
+    "total": 14,
+    "pass": 14,
+    "failed": []
+  }
+}

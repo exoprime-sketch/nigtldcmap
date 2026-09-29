@@ -93,8 +93,9 @@ if (Object.keys(ko63).length !== 63 || aliases.length !== 63 || units34.length !
 // (the city of Huế, Vũng Tàu, the Côn Đảo islands). They are not the
 // province's name, so they are not display keys.
 const JOIN_ONLY_VARIANTS = { "VN-26": ["Huế", "Hue"], "VN-43": ["Côn Đảo", "Vung Tau"] };
-// Other names in use for the same unit.
-const OTHER_NAMES = { "VN-SG": ["HCMC", "Sai Gon", "Saigon"], "VN34-SG": ["HCMC", "Sai Gon", "Saigon"] };
+// Other names in use for the same unit. Bắc Cạn is the pre-2003 spelling of
+// Bắc Kạn that some sources (WWF) still use.
+const OTHER_NAMES = { "VN-SG": ["HCMC", "Sai Gon", "Saigon"], "VN34-SG": ["HCMC", "Sai Gon", "Saigon"], "VN-53": ["Bắc Cạn", "Bac Can"] };
 const aliasByCode = new Map(aliases.map((row) => [row.adm1Code, row]));
 const unitByMember = new Map(units34.flatMap((unit) => unit.members.map((code) => [code, unit])));
 const looseKey = (value) => regionKey(value).replace(/k/gu, "c"); // Đắk / Đắc

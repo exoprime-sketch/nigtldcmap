@@ -25,10 +25,12 @@ import {
 } from "../utils/vietnamActualV121";
 import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
 import { getCardSpecV159, getTypologyV159 } from "../data/spec/datasetSpecV159";
-import { statusDecisionV159 } from "../components/data/templates/U0StatusV159";
+import { statusNoticeLabelV159 } from "../components/data/templates/StatusNoticeV159";
 import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
 import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitleV159";
+import { USAGE_API_AVAILABLE_V149, usePublicUsageV149 } from "../data/publicUsageV149";
+import { compareFinderItemsV160, isPreparingStatusV160 } from "../data/finderSortV160";
 import "../styles/country-data-platform-v122.css";
 
 interface DataExplorerPageProps {
@@ -51,6 +53,9 @@ interface DataExplorerPageProps {
     selection?: DataFinderSelectorStateV125
   ) => void;
   onOpenMapElement?: (elementId: string, countryIso3: string) => void;
+  /** V160-R (R-10): list order - by name (default) or by detail views. */
+  sort?: "name" | "views";
+  onSortChange?: (value: "name" | "views") => void;
 }
 
 const INITIAL_VISIBLE_COUNT = 24;
@@ -144,7 +149,16 @@ function maxScrollYV136(): number {
   const scroller = document.scrollingElement || document.documentElement;
   return Math.max(0, scroller.scrollHeight - window.innerHeight);
 }
-type FinderSortModeV128 = "relevance" | "latest" | "title";
+type FinderSortModeV128 = "name" | "views";
+
+/** The name the card shows (V159 base name, else the catalogue title) - the key of 가나다순. */
+function finderDisplayTitleV160(item: CountryCatalogItemV122): string {
+  return getCardSpecV159(item.elementId)?.baseName || item.publicTitle;
+}
+/** A dataset not yet delivered is listed last, marked '데이터 준비 중'. */
+function isPreparingV160(item: CountryCatalogItemV122): boolean {
+  return isPreparingStatusV160(item.publicStatus);
+}
 
 /**
  * V140: the finder is where a reader finds the datasets the map draws and the
@@ -195,6 +209,8 @@ export default function DataExplorerPage({
   onOpenDownload,
   onOpenElement,
   onOpenMapElement,
+  sort = "name",
+  onSortChange,
 }: DataExplorerPageProps) {
   const baseKey = JSON.stringify([countryIso3, normalizedSearchV121(query), category, selectedGroup, sourceOrganization, technologyId]);
   const [initialRestore] = useState(() => {
@@ -210,8 +226,15 @@ export default function DataExplorerPage({
   const [searchIndexLoadedFor, setSearchIndexLoadedFor] = useState("");
   const [error, setError] = useState("");
   const [yearFilter, setYearFilter] = useState(initialRestore?.yearFilter || "all");
-  const [sortMode, setSortMode] =
-    useState<FinderSortModeV128>(initialRestore?.sortMode || "relevance");
+  // 조회순 reads the usage counts the home already uses; without that service
+  // (a static host) the option is disabled and the list stays in name order.
+  const usage = usePublicUsageV149();
+  const viewsAvailable = USAGE_API_AVAILABLE_V149 && usage !== null;
+  const sortMode: FinderSortModeV128 = sort === "views" && viewsAvailable ? "views" : "name";
+  const viewCounts = useMemo(
+    () => new Map((usage?.detail || []).map((row) => [row.elementId, row.count])),
+    [usage]
+  );
   // V159: who the dataset serves (from its use cases) and its display type.
   const [userFilter, setUserFilter] = useState<string>("all");
   const [typeFilter, setTypeFilter] = useState<DisplayTypeV159 | "all">("all");
@@ -421,34 +444,8 @@ export default function DataExplorerPage({
       return true;
     });
 
-    return matching.sort((left, right) => {
-      if (sortMode === "latest") {
-        const yearDifference =
-          Number(right.latestYear || 0) - Number(left.latestYear || 0);
-        if (yearDifference !== 0) return yearDifference;
-      } else if (sortMode === "relevance" && normalizedQuery) {
-        const relevance = (item: CountryCatalogItemV122): number => {
-          const title = normalizedSearchV121(item.publicTitle);
-          if (title === normalizedQuery) return 1_000;
-          if (title.startsWith(normalizedQuery)) return 700;
-          if (title.includes(normalizedQuery)) return 500;
-          const indexed = searchIndex.get(
-            countryCatalogKeyV122(item.providerId, item.elementId)
-          );
-          const measureOrCategory = normalizedSearchV121(
-            [
-              item.categoryLabel,
-              item.groupLabel,
-              ...(indexed?.keywords || []),
-            ].join(" ")
-          );
-          return measureOrCategory.includes(normalizedQuery) ? 300 : 100;
-        };
-        const scoreDifference = relevance(right) - relevance(left);
-        if (scoreDifference !== 0) return scoreDifference;
-      }
-      return left.publicTitle.localeCompare(right.publicTitle, "ko");
-    });
+    const key = (item: CountryCatalogItemV122) => ({ elementId: item.elementId, title: finderDisplayTitleV160(item), publicStatus: item.publicStatus });
+    return matching.sort((left, right) => compareFinderItemsV160(key(left), key(right), sortMode, viewCounts));
   }, [
     availableCatalog,
     category,
@@ -459,6 +456,7 @@ export default function DataExplorerPage({
     sortMode,
     sourceOrganization,
     selectedTechnology,
+    viewCounts,
     typeFilter,
     userFilter,
     yearFilter,
@@ -665,7 +663,6 @@ export default function DataExplorerPage({
     onSourceOrganizationChange("all");
     onTechnologyChange("all");
     setYearFilter("all");
-    setSortMode("relevance");
     setDeliveryFilter("all");
     setUserFilter("all");
     setTypeFilter("all");
@@ -715,13 +712,13 @@ export default function DataExplorerPage({
             <select
               className="cdp-select"
               value={sortMode}
+              data-testid="finder-sort-v160"
               onChange={(event) =>
-                setSortMode(event.target.value as FinderSortModeV128)
+                onSortChange?.(event.target.value as FinderSortModeV128)
               }
             >
-              <option value="relevance">관련도</option>
-              <option value="latest">최신 기준연도</option>
-              <option value="title">데이터명</option>
+              <option value="name">가나다순</option>
+              <option value="views" disabled={!viewsAvailable}>조회순</option>
             </select>
           </label>
 
@@ -960,15 +957,29 @@ export default function DataExplorerPage({
                 </p>
               </>
             )}
-            {/* V159 ⓪: an excluded or not-yet-delivered dataset shows its
-                status on the card, not a figure. */}
-            {getCardSpecV159(item.elementId)?.displayType === "U0" ? (
+            {/* V159: an excluded or not-yet-delivered dataset shows its
+                status on the card ('데이터 준비 중'), not a figure. */}
+            {getCardSpecV159(item.elementId)?.statusNotice ? (
               <p className="cdp-card__status-v159" data-testid="finder-card-status-v159">
-                <span className="cdp-chip">{statusDecisionV159(getTypologyV159(item.elementId)?.status || "").decision}</span>
+                <span className="cdp-chip">{statusNoticeLabelV159(getTypologyV159(item.elementId) || { status: "", statusNotice: null })}</span>
               </p>
             ) : (
               summary && <FinderCardSummaryV140 summary={summary} />
             )}
+            {getCardSpecV159(item.elementId)?.statusNotice === "data-pending" ? (
+              // V159 data-pending (spec v8): no stand-in text ("미기재",
+              // "제공기관 확인"). The period line is left out - nothing has
+              // been delivered - and the provider is the spec's source field,
+              // or no line at all.
+              getCardSpecV159(item.elementId)?.sourceLabel ? (
+                <dl className="cdp-card__facts cdp-card__facts--public-v135" data-testid="finder-card-facts-pending-v159">
+                  <div>
+                    <dt>제공기관</dt>
+                    <dd><PublicTermTextV134 text={getCardSpecV159(item.elementId)?.sourceLabel || ""} /></dd>
+                  </div>
+                </dl>
+              ) : null
+            ) : (
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
               <div>
                 <dt>자료기간</dt>
@@ -987,6 +998,7 @@ export default function DataExplorerPage({
                 </dd>
               </div>
             </dl>
+            )}
             <div className="cdp-card__actions">
               <button
                 type="button"

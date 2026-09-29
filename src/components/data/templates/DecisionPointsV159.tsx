@@ -7,6 +7,8 @@ import "./decision-points-v159.css";
 interface Props {
   displayType: DisplayTypeV159;
   points: DecisionPointV159[];
+  /** V160: "strip" lays the points out as chips across the detail hero. */
+  variant?: "list" | "strip";
 }
 
 /**
@@ -22,10 +24,10 @@ interface Props {
  * (docs/PUBLIC_CARD_ANALYSIS_CONTRACT_V140.md) counts blocks carrying that
  * attribute, and a decision-points list is a derived summary, not a chart.
  */
-export default function DecisionPointsV159({ displayType, points }: Props) {
+export default function DecisionPointsV159({ displayType, points, variant = "list" }: Props) {
   if (points.length === 0) return null;
   return (
-    <section className="dp159" data-testid="decision-points-v159" data-display-type={displayType}>
+    <section className={variant === "strip" ? "dp159 dp159--strip" : "dp159"} data-testid="decision-points-v159" data-display-type={displayType}>
       <h3>판단 포인트</h3>
       <dl className="dp159-list">
         {points.map((point) => (

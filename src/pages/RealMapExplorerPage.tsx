@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
@@ -224,6 +224,7 @@ import {
   prepareAreaLayerV152,
   preparePointLayerV152,
 } from "../map/layers";
+
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -5625,9 +5626,7 @@ export default function RealMapExplorerPage({
                 <button
                   type="button"
                   className="cdp-button cdp-button--secondary cdp-button--compact"
-                  aria-expanded={
-                    openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
-                  }
+                  aria-expanded={openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length}
                   onClick={() =>
                     setOpenCategoriesV138(
                       openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
@@ -5685,8 +5684,8 @@ export default function RealMapExplorerPage({
                   : 0;
               const groupId = `map-catalog-group-${category.replace(/[^0-9A-Za-z가-힣]+/gu, "-")}`;
               return (
+                <Fragment key={category}>
                 <div
-                  key={category}
                   className={`cdp-map-catalog-v138__group ${open ? "is-open" : ""}`}
                   data-map-group-v135={category}
                   data-map-group-selected={selectedCount}
@@ -5904,6 +5903,7 @@ export default function RealMapExplorerPage({
                     })}
                   </ul>
                 </div>
+                </Fragment>
               );
             })}
             <button

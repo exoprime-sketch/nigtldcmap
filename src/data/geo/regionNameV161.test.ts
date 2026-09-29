@@ -42,6 +42,11 @@ describe("Viet Nam: the dictionaries answer every province and city (no rule-bas
     expect(misses).toEqual([]);
   });
 
+  test("older spellings still in use find the province", () => {
+    expect(formatRegionName({ country: "VNM", raw: "Bac Can", level: "adm1-63" })).toBe("박깐 (Bac Can)");
+    expect(regionNameKo({ country: "VNM", raw: "Bắc Cạn", level: "adm1-63" })).toBe("박깐");
+  });
+
   test("a place joined to a province is not given the province's name", () => {
     expect(regionNameKo({ country: "VNM", raw: "Côn Đảo", level: "adm1-63" })).toBeNull();
     expect(regionNameKo({ country: "VNM", raw: "Vung Tau", level: "adm1-63" })).toBeNull();

@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:60260",
-  "generatedAt": "2026-09-29T07:04:35.121Z",
+  "base": "http://127.0.0.1:56534",
+  "generatedAt": "2026-09-29T06:29:59.126Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -72,62 +72,18 @@
       "id": "MAP_COUNT_MANIFEST_EQUALS_INDEX",
       "pass": true,
       "actual": {
-        "manifestMapLayerCount": 60,
+        "manifestMapLayerCount": 42,
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
-        "indexActiveMapLayerCount": 60,
-        "indexActiveLayers": 60,
+        "indexActiveMapLayerCount": 42,
+        "indexActiveLayers": 42,
         "indexTargetContract": {
-          "schemaVersion": "public-map-targets-v157",
-          "targetCount": 72,
-          "connectedCount": 60,
+          "schemaVersion": "public-map-targets-v138",
+          "targetCount": 43,
+          "connectedCount": 42,
           "notConnected": [
             {
-              "elementId": "A-013",
-              "reason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)"
-            },
-            {
-              "elementId": "A-022",
-              "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
-            },
-            {
-              "elementId": "B-002",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-024",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-035",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-036",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-044",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-046",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "B-047",
-              "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-            },
-            {
-              "elementId": "C-003",
-              "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
-            },
-            {
-              "elementId": "C-006",
-              "reason": "사업지역 세분화 전 — 성 단위 가능하면 등록"
-            },
-            {
-              "elementId": "C-017",
-              "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
+              "elementId": "B-017",
+              "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다."
             }
           ]
         },
@@ -137,16 +93,10 @@
       "expected": "manifest.mapLayerCount = map-index.activeMapLayerCount = active layers"
     },
     {
-      "id": "PENDING_EXAMPLE_FROM_CONTRACT",
+      "id": "B017_NOT_IN_MAP_INDEX",
       "pass": true,
-      "actual": {
-        "elementId": "A-013",
-        "group": "기후·위험",
-        "inIndex": false
-      },
-      "expected": {
-        "inIndex": false
-      }
+      "actual": false,
+      "expected": false
     },
     {
       "id": "ROUTE /",
@@ -316,8 +266,8 @@
     {
       "id": "HOME_MAP_COUNT_EQUALS_INDEX",
       "pass": true,
-      "actual": 60,
-      "expected": 60
+      "actual": 42,
+      "expected": 42
     },
     {
       "id": "ROUTE /#explorer",
@@ -329,10 +279,10 @@
       "id": "FINDER_TOTAL_152",
       "pass": true,
       "actual": {
-        "totalAll": 142,
-        "homeTotalCount": 142
+        "totalAll": 146,
+        "homeTotalCount": 146
       },
-      "expected": 142
+      "expected": 146
     },
     {
       "id": "FINDER_HAS_SORT_AND_FILTERS",
@@ -356,9 +306,9 @@
       "id": "FINDER_MAP_FILTER_EQUALS_INDEX",
       "pass": true,
       "actual": {
-        "totalMap": 60,
-        "index": 60,
-        "homeMapCount": 60
+        "totalMap": 42,
+        "index": 42,
+        "homeMapCount": 42
       },
       "expected": "one count"
     },
@@ -375,8 +325,8 @@
       "id": "FINDER_DOWNLOAD_FILTER_EQUALS_HOME",
       "pass": true,
       "actual": {
-        "totalDownload": 141,
-        "homeDownloadCount": 141
+        "totalDownload": 143,
+        "homeDownloadCount": 143
       },
       "expected": "one count"
     },
@@ -428,29 +378,16 @@
       "expected": "same public title"
     },
     {
-      "id": "FINDER_PENDING_NO_MAP_BUTTON",
+      "id": "FINDER_B017_NO_MAP_BUTTON",
       "pass": true,
-      "actual": {
-        "elementId": "A-013",
-        "buttons": [
-          "SDG",
-          "WRI",
-          "NDC",
-          "SDG",
-          "NDC",
-          "NDC",
-          "SDG",
-          "상세보기",
-          "다운로드"
-        ],
-        "reach": {
-          "found": true,
-          "passes": 17,
-          "cards": 142,
-          "remaining": 0
-        }
-      },
-      "expected": "no 지도에서 보기 on A-013"
+      "actual": [
+        "WRI",
+        "WRI",
+        "WRI",
+        "상세보기",
+        "다운로드"
+      ],
+      "expected": "no 지도에서 보기 on B-017"
     },
     {
       "id": "ROUTE /#map",
@@ -461,25 +398,25 @@
     {
       "id": "MAP_LEDE_COUNT_EQUALS_INDEX",
       "pass": true,
-      "actual": "60개 자료 · 선택 0개 · 준비 중 12개",
-      "expected": "60개 자료 · 선택 …"
+      "actual": "42개 자료 · 선택 0개 · 준비 중 1개",
+      "expected": "42개 자료 · 선택 …"
     },
     {
       "id": "MAP_GUIDE_COUNT_EQUALS_INDEX",
       "pass": true,
-      "actual": "지도 자료 60개 · 준비 중 12개 (지도 대상 72개 중 위치·경계가 확인된 자료만 지도에 표시)",
-      "expected": 60
+      "actual": "지도 자료 42개 · 준비 중 1개 (지도 대상 43개 중 위치·경계가 확인된 자료만 지도에 표시)",
+      "expected": 42
     },
     {
       "id": "MAP_COUNT_ONE_NUMBER_EVERYWHERE",
       "pass": true,
       "actual": {
-        "home": 60,
-        "mapLede": 60,
-        "mapGuide": 60,
-        "finderMapFilter": 60,
-        "mapIndex": 60,
-        "manifest": 60
+        "home": 42,
+        "mapLede": 42,
+        "mapGuide": 42,
+        "finderMapFilter": 42,
+        "mapIndex": 42,
+        "manifest": 42
       },
       "expected": "one number"
     },
@@ -487,10 +424,10 @@
       "id": "MAP_PENDING_STATED",
       "pass": true,
       "actual": {
-        "lede": "60개 자료 · 선택 0개 · 준비 중 12개",
-        "ledePending": 12,
-        "rows": 72,
-        "available": 60
+        "lede": "42개 자료 · 선택 0개 · 준비 중 1개",
+        "ledePending": 1,
+        "rows": 43,
+        "available": 42
       },
       "expected": "the lede states how many targets are pending"
     },
@@ -499,95 +436,7 @@
       "pass": true,
       "actual": [
         {
-          "id": "A-022",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "A-013",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-002",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-024",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-044",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-046",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-047",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-035",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "B-036",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "C-003",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "C-006",
-          "badge": "준비 중",
-          "summary": "위치자료 미확보 · 지도 표시 제외",
-          "disabled": true,
-          "checked": false,
-          "dashed": true
-        },
-        {
-          "id": "C-017",
+          "id": "B-017",
           "badge": "준비 중",
           "summary": "위치자료 미확보 · 지도 표시 제외",
           "disabled": true,
@@ -598,52 +447,41 @@
       "expected": "badge, disabled checkbox, dashed border, 위치자료 미확보"
     },
     {
-      "id": "MAP_PENDING_ROW_SHOWN",
+      "id": "MAP_B017_PENDING",
       "pass": true,
       "actual": [
-        "A-022",
-        "A-013",
-        "B-002",
-        "B-024",
-        "B-044",
-        "B-046",
-        "B-047",
-        "B-035",
-        "B-036",
-        "C-003",
-        "C-006",
-        "C-017"
+        "B-017"
       ],
       "expected": [
-        "A-013"
+        "B-017"
       ]
     },
     {
-      "id": "MAP_PENDING_NEVER_DRAWN",
+      "id": "MAP_B017_NEVER_DRAWN",
       "pass": true,
       "actual": {
         "found": true,
         "checked": false,
         "drawn": "false"
       },
-      "expected": "clicking the pending dataset draws nothing"
+      "expected": "clicking B-017 draws nothing"
     },
     {
       "id": "MAP_GROUP_COUNTS_NAME_PENDING",
       "pass": true,
       "actual": [
-        "10개 · 준비 중 1",
-        "11개 · 준비 중 2",
-        "11개 · 준비 중 4",
-        "10개 · 준비 중 2",
-        "7개 · 준비 중 3",
-        "14개",
-        "9개"
+        "20개",
+        "2개",
+        "3개",
+        "5개 · 준비 중 1",
+        "6개",
+        "6개",
+        "1개"
       ],
       "expected": "the group holding a pending target says so"
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-002#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-002&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
@@ -678,31 +516,31 @@
       "expected": "152 detail titles = spec platformName without the source line"
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-010#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-010&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-024#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=A-024&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=B-033#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=B-033&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=C-016#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=C-016&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=D-023#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=D-023&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
@@ -747,13 +585,13 @@
       "expected": 200
     },
     {
-      "id": "ROUTE /?view=data&country=VNM&element=A-013#element-detail",
+      "id": "ROUTE /?view=data&country=VNM&element=B-017&detailLayers=all#element-detail",
       "pass": true,
       "actual": 200,
       "expected": 200
     },
     {
-      "id": "PENDING_DETAIL_NO_LOCATION_CLAIM",
+      "id": "B017_DETAIL_NO_LOCATION_CLAIM",
       "pass": true,
       "actual": {
         "mapLinks": 0,
@@ -778,62 +616,18 @@
   "consoleErrors": [],
   "httpFailures": [],
   "assets": {
-    "manifestMapLayerCount": 60,
+    "manifestMapLayerCount": 42,
     "manifestGeneratedAt": "2026-08-27T00:00:00Z",
-    "indexActiveMapLayerCount": 60,
-    "indexActiveLayers": 60,
+    "indexActiveMapLayerCount": 42,
+    "indexActiveLayers": 42,
     "indexTargetContract": {
-      "schemaVersion": "public-map-targets-v157",
-      "targetCount": 72,
-      "connectedCount": 60,
+      "schemaVersion": "public-map-targets-v138",
+      "targetCount": 43,
+      "connectedCount": 42,
       "notConnected": [
         {
-          "elementId": "A-013",
-          "reason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)"
-        },
-        {
-          "elementId": "A-022",
-          "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
-        },
-        {
-          "elementId": "B-002",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-024",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-035",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-036",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-044",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-046",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "B-047",
-          "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)"
-        },
-        {
-          "elementId": "C-003",
-          "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
-        },
-        {
-          "elementId": "C-006",
-          "reason": "사업지역 세분화 전 — 성 단위 가능하면 등록"
-        },
-        {
-          "elementId": "C-017",
-          "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code"
+          "elementId": "B-017",
+          "reason": "원천 레코드의 좌표는 소속 성(GADM)의 대표점이며 평가구역 자체의 위치가 아닙니다. 평가구역 경계는 Aqueduct 4.0 GDB(Aq40_Y2023D07M05.gdb)에만 있으며 이 저장소의 파이프라인(GDAL 미설치)으로는 GeoJSON을 추출하지 못했습니다."
         }
       ]
     },
@@ -842,9 +636,9 @@
   },
   "home": {
     "stats": {
-      "전체 데이터 항목": "142개",
-      "지도 제공 항목": "60개",
-      "다운로드 가능 항목": "141개",
+      "전체 데이터 항목": "146개",
+      "지도 제공 항목": "42개",
+      "다운로드 가능 항목": "143개",
       "데이터 기준일": "2026.08.27"
     },
     "cards": [
@@ -997,9 +791,9 @@
     "overflow": false
   },
   "finder": {
-    "totalAll": 142,
-    "totalMap": 60,
-    "totalDownload": 141,
+    "totalAll": 146,
+    "totalMap": 42,
+    "totalDownload": 143,
     "visibleCards": {
       "cards": 24,
       "withMapButton": 24
@@ -1028,129 +822,31 @@
       "유형"
     ],
     "b017Buttons": [
-      "SDG",
       "WRI",
-      "NDC",
-      "SDG",
-      "NDC",
-      "NDC",
-      "SDG",
+      "WRI",
+      "WRI",
       "상세보기",
       "다운로드"
-    ],
-    "pendingCardReach": {
-      "found": true,
-      "passes": 17,
-      "cards": 142,
-      "remaining": 0
-    }
+    ]
   },
   "map": {
-    "lede": "60개 자료 · 선택 0개 · 준비 중 12개",
-    "ledeConnected": 60,
-    "ledePending": 12,
-    "rowCount": 72,
-    "availableCount": 60,
+    "lede": "42개 자료 · 선택 0개 · 준비 중 1개",
+    "ledeConnected": 42,
+    "ledePending": 1,
+    "rowCount": 43,
+    "availableCount": 42,
     "groupCounts": [
-      "10개 · 준비 중 1",
-      "11개 · 준비 중 2",
-      "11개 · 준비 중 4",
-      "10개 · 준비 중 2",
-      "7개 · 준비 중 3",
-      "14개",
-      "9개"
+      "20개",
+      "2개",
+      "3개",
+      "5개 · 준비 중 1",
+      "6개",
+      "6개",
+      "1개"
     ],
     "pendingRows": [
       {
-        "id": "A-022",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "A-013",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-002",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-024",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-044",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-046",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-047",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-035",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "B-036",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "C-003",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "C-006",
-        "badge": "준비 중",
-        "summary": "위치자료 미확보 · 지도 표시 제외",
-        "disabled": true,
-        "checked": false,
-        "dashed": true
-      },
-      {
-        "id": "C-017",
+        "id": "B-017",
         "badge": "준비 중",
         "summary": "위치자료 미확보 · 지도 표시 제외",
         "disabled": true,
@@ -1159,7 +855,7 @@
       }
     ],
     "drawn": [],
-    "guideCount": "지도 자료 60개 · 준비 중 12개 (지도 대상 72개 중 위치·경계가 확인된 자료만 지도에 표시)",
+    "guideCount": "지도 자료 42개 · 준비 중 1개 (지도 대상 43개 중 위치·경계가 확인된 자료만 지도에 표시)",
     "b017Click": {
       "found": true,
       "checked": false,

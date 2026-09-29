@@ -1,43 +1,39 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:53335",
-    "generatedAt": "2026-09-28T23:12:18.859Z",
+    "base": "http://127.0.0.1:54761",
+    "generatedAt": "2026-09-29T06:42:11.383Z",
     "version": {
       "local": {
-        "cardSummaries": "9b46dd1b520f762f",
-        "cardGeneratedAt": "2026-09-24T11:27:38.756Z",
-        "sourceHash": "ad1af64a0e3d29af",
+        "cardSummaries": "685bbaf7c1b271fc",
+        "cardGeneratedAt": "2026-09-29T05:36:15.094Z",
+        "sourceHash": "5836b5b3e5096243",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "remote": {
-        "cardSummaries": "9b46dd1b520f762f",
-        "cardGeneratedAt": "2026-09-24T11:27:38.756Z",
+        "cardSummaries": "685bbaf7c1b271fc",
+        "cardGeneratedAt": "2026-09-29T05:36:15.094Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
         "mapLayerCount": 42
       },
       "match": true
     },
     "elements": 152,
-    "valueBearing": 141,
-    "statusOnly": 1,
+    "valueBearing": 143,
+    "statusOnly": 3,
     "excludedV156": [
       "A-017",
-      "C-015",
       "C-020",
-      "C-023",
-      "D-024",
+      "C-021",
       "E-008",
-      "E-011",
-      "E-013",
       "E-016",
       "E-017"
     ],
     "cardClicked": {
-      "pass": 142,
+      "pass": 146,
       "fail": 0,
-      "notApplicable": 10
+      "notApplicable": 6
     },
     "homeCardClicked": {
       "pass": 8,
@@ -55,24 +51,24 @@
       "notApplicable": 0
     },
     "detailTilesAbsent": {
-      "pass": 142,
+      "pass": 146,
       "fail": 0,
       "notApplicable": 0
     },
     "detailTilesBounded": {
-      "pass": 142,
+      "pass": 146,
       "fail": 0,
       "notApplicable": 0
     },
     "cardValueVerified": {
-      "pass": 120,
-      "fail": 18,
-      "notApplicable": 14
+      "pass": 121,
+      "fail": 19,
+      "notApplicable": 12
     },
     "recomputed": {
-      "match": 136,
-      "none": 10,
-      "not-applicable": 4,
+      "match": 138,
+      "none": 6,
+      "not-applicable": 6,
       "mismatch": 2
     },
     "detailAnalysisFit": {
@@ -81,22 +77,22 @@
       "notApplicable": 61
     },
     "analysisFit": {
-      "pass": 140,
+      "pass": 142,
       "fail": 1,
-      "notApplicable": 11,
+      "notApplicable": 9,
       "byKind": {
         "line:true": 33,
         "signed-bars:true": 1,
         "bars:true": 37,
         "composition:true": 5,
         "level:true": 17,
-        "excluded-v156:null": 10,
+        "excluded-v156:null": 6,
         "grouped-bars:true": 1,
         "map:true": 1,
-        "facts:true": 29,
+        "facts:true": 31,
         "spatial-trend:true": 5,
         "spatial:true": 11,
-        "status-v159:null": 1,
+        "status-v159:null": 3,
         "bars:false": 1
       }
     },
@@ -107,30 +103,30 @@
       "notApplicable": 110
     },
     "controlsVerified": {
-      "pass": 117,
+      "pass": 118,
       "fail": 1,
-      "notApplicable": 34
+      "notApplicable": 33
     },
-    "controlsTried": 249,
+    "controlsTried": 251,
     "tableValuesVerified": {
-      "pass": 125,
-      "fail": 13,
-      "notApplicable": 14
+      "pass": 126,
+      "fail": 14,
+      "notApplicable": 12
     },
     "tableClassification": {
-      "match": 125,
+      "match": 126,
       "no-derived-row": 2,
-      "none": 10,
-      "not-applicable": 4,
-      "row-count-differs": 11
+      "none": 6,
+      "not-applicable": 6,
+      "row-count-differs": 12
     },
     "mapHandoffVerified": {
       "pass": 42,
       "fail": 0,
       "notApplicable": 110
     },
-    "withRemainingIssues": 33,
-    "requiredFailures": 34,
+    "withRemainingIssues": 34,
+    "requiredFailures": 35,
     "requiredFailureIds": [
       "A-006",
       "A-010",
@@ -157,6 +153,7 @@
       "C-011",
       "C-013",
       "C-014",
+      "C-015",
       "C-016",
       "C-017",
       "C-024",
@@ -223,7 +220,7 @@
           "항목 선택=CPI 점수 · 점",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=cpi-corruption-perceptions-index-bupaeinsigjisu&country=VNM&from=explorer&measure=measure-ffa3eb23fb73&year=2025",
+        "url": "?view=data&element=cpi-corruption-perceptions-index-bupaeinsigjisu&country=VNM&from=explorer&measure=measure-ffa3eb23fb73&year=2025&detailLayers=all",
         "cardValue": "41 점 = text-62:TR: CPI 점수 · 베트남 · 0~100점 41 점 2025 +1 점 2025 · 항목별 값 항목 값 단위 시점 전년 대비 CPI 점수 · 2012~2025년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -335,7 +332,7 @@
           "거버넌스 지표 기준연도 선택=2024",
           "거버넌스 지표 표시 값 선택=표준값(Estimate)"
         ],
-        "url": "?view=data&element=wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo&country=VNM&from=explorer&year=2024&dim.cpiaCluster=economic&dim.wgiMeasure=est",
+        "url": "?view=data&element=wgi-worldwide-governance-indicators-gugga-geobeoneonseu-jipyo&country=VNM&from=explorer&year=2024&dim.cpiaCluster=economic&dim.wgiMeasure=est&detailLayers=all",
         "cardValue": "−1.10 ~ +0.01 = text-15:P: 보조 분석 2024년 부문별 비교 가로: 값(막대 길이) 세로: 부문 단위: 점 시민 자유·참여·책임성 -1.1 점 정치안정·폭력부재 0.01 점 정부 효과성 -0.09 점 규제의 질 -0.27 점 법치 -0.31 점 부패 통제 -0.25 점 약 -2.5~2.5 · 값이 클수록 양호 ·",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -441,7 +438,7 @@
           "항목 선택=GDP 총액 · USD",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=gdp-hyeonjaega-ppp-seongjangryul-1indang&country=VNM&from=explorer&measure=measure-82dc14f247b2&year=2025",
+        "url": "?view=data&element=gdp-hyeonjaega-ppp-seongjangryul-1indang&country=VNM&from=explorer&measure=measure-82dc14f247b2&year=2025&detailLayers=all",
         "cardValue": "514.7 = text-172:TR: GDP 총액 · 명목 · 경상가격 514,697,215,165.065 USD 2025 +38,372,642,380 USD 2025 · 항목별 값 항목 값 단위 시점 전년 대비 GDP 총액 · 1985~2025년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -547,7 +544,7 @@
           "항목 선택=빈곤율 · %",
           "연도 선택=2022"
         ],
-        "url": "?view=data&element=bingonyul-geugbingonyul&country=VNM&from=explorer&measure=measure-33137a759a42&year=2022",
+        "url": "?view=data&element=bingonyul-geugbingonyul&country=VNM&from=explorer&measure=measure-33137a759a42&year=2022&detailLayers=all",
         "cardValue": "4.2 % = text-72:TR: 빈곤율 · 국가빈곤선 4.2 % 2022 -0.2 %p 2022 · 항목별 값 항목 값 단위 시점 전년 대비 빈곤율 · 1992~2022년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -653,7 +650,7 @@
         "selectors": [
           "기준연도=2025년"
         ],
-        "url": "?view=data&element=saneobgujo-nongeob-jejo-seobiseu&country=VNM&from=explorer&measure=measure-398b8bde8064&year=2025",
+        "url": "?view=data&element=saneobgujo-nongeob-jejo-seobiseu&country=VNM&from=explorer&measure=measure-398b8bde8064&year=2025&detailLayers=all",
         "cardValue": "42.7 % = text-569:STRONG: 서비스업 42.74 %",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -755,7 +752,7 @@
           "분류 선택=ILO 추정치",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=sileobryul-ceongnyeonsileobryul&country=VNM&from=explorer&measure=measure-93ccf6a5d485&year=2025&dim.category=ILO+모델추정",
+        "url": "?view=data&element=sileobryul-ceongnyeonsileobryul&country=VNM&from=explorer&measure=measure-93ccf6a5d485&year=2025&dim.category=ILO+모델추정&detailLayers=all",
         "cardValue": "1.52 % = text-144:TR: 전체 실업률 · ILO 추정치 1.523 % 2025 -0.079 %p 2025 · 항목별 값 항목 값 단위 시점 전년 대비 전체 실업률 · 1991~2025년 추이",
         "fit": "selection \"ILO 모델추정\" not shown; selection \"경제활동인구 대비 실업자 비율(ILO 모형 보정 추정치)\" not shown",
         "analysisFit": {
@@ -863,7 +860,7 @@
           "항목 선택=총인구 · 명",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=ingu-congingu-dosihwayul&country=VNM&from=explorer&measure=measure-be793786b249&year=2025",
+        "url": "?view=data&element=ingu-congingu-dosihwayul&country=VNM&from=explorer&measure=measure-be793786b249&year=2025&detailLayers=all",
         "cardValue": "1.02억 명 = text-270:TR: 총인구 101,598,527 명 2025 +610,841 명 2025 · 항목별 값 항목 값 단위 시점 전년 대비 총인구 · 1960~2025년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -962,7 +959,7 @@
         "selectors": [
           "연도 선택=2022"
         ],
-        "url": "?view=data&element=jinigyesu&country=VNM&from=explorer&measure=measure-a6e5b6b4f25f&year=2022",
+        "url": "?view=data&element=jinigyesu&country=VNM&from=explorer&measure=measure-a6e5b6b4f25f&year=2022&detailLayers=all",
         "cardValue": "36.1 지수 = text-56:TR: 지니계수 · 소비지출 기준 36.1 지수 2022 비교 자료 없음 2022 · 항목별 값 항목 값 단위 시점 전년 대비 지니계수 · 1992~2022년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -1060,7 +1057,7 @@
           "항목 선택=GHG 배출 강도 · tCO2eq/1,000 국제달러",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=ghg-baecul-gangdo-gdp-daebi-1indang&country=VNM&from=explorer&measure=measure-90f520e15b99&year=2024",
+        "url": "?view=data&element=ghg-baecul-gangdo-gdp-daebi-1indang&country=VNM&from=explorer&measure=measure-90f520e15b99&year=2024&detailLayers=all",
         "cardValue": "0.402 tCO2eq/1,000 국제달러 = text-148:TR: GHG 배출 강도 · GDP 대비 · 2021년 불변가격 · PPP 기준 0.4019 tCO2eq/1,000 국제달러 2024 +0.0021 tCO2eq/1,000 국제달러 2024 · 항목별 값 항목 값 단위 시점 전년 대비 GHG 배출 강도 · 1990~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -1170,7 +1167,7 @@
           "측정 기준=가스별 CO₂ 환산 배출량 · MtCO₂e",
           "기준연도=2024년"
         ],
-        "url": "?view=data&element=ghg-baeculryang-co2-ch4-n2o-f-gas&country=VNM&from=explorer&measure=measure-165d8811fba3&year=2024",
+        "url": "?view=data&element=ghg-baeculryang-co2-ch4-n2o-f-gas&country=VNM&from=explorer&measure=measure-165d8811fba3&year=2024&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "composition",
@@ -1275,7 +1272,7 @@
         "selectors": [
           "기준연도=2024년"
         ],
-        "url": "?view=data&element=ghg-baeculryang-eneoji-saneobgongjeong-nongeob-pyegimul&country=VNM&from=explorer&measure=measure-8f3f26173c00&year=2024",
+        "url": "?view=data&element=ghg-baeculryang-eneoji-saneobgongjeong-nongeob-pyegimul&country=VNM&from=explorer&measure=measure-8f3f26173c00&year=2024&detailLayers=all",
         "cardValue": "202 MtCO₂e = text-10:LI: 발전 202.2 MtCO₂e 34.6%",
         "compositionParts": "6/6 parts found",
         "fit": "selectors, heading and KPI state the selection",
@@ -1375,7 +1372,7 @@
           "항목 선택=총 GHG 배출량 · Mt CO2eq",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=cong-ghg-baeculryang-lulucf-jeoe&country=VNM&from=explorer&measure=measure-31c014917117&year=2024",
+        "url": "?view=data&element=cong-ghg-baeculryang-lulucf-jeoe&country=VNM&from=explorer&measure=measure-31c014917117&year=2024&detailLayers=all",
         "cardValue": "584 MtCO₂e = text-228:TR: 총 GHG 배출량 · LULUCF 제외 584.2576 MtCO₂e 2024 +41.3341 MtCO₂e 2024 · 항목별 값 항목 값 단위 시점 전년 대비 총 GHG 배출량 · 1970~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -1476,7 +1473,7 @@
         "selectors": [
           "정보 유형 선택=전체"
         ],
-        "url": "?view=data&element=climate-watch-ndc-sdg-linkage&country=VNM&from=explorer&measure=measure-688e21a19b14&year=2016",
+        "url": "?view=data&element=climate-watch-ndc-sdg-linkage&country=VNM&from=explorer&measure=measure-688e21a19b14&year=2016&detailLayers=all",
         "cardValue": "365 건 = text-3:TR: Climate Watch 연계 자료 총 건수 365 건 2016 NDC–SDG 연계 NDC–SDG 연계 · SDG 1.2 · 행동 SDG1 · 세부목표 1.2 · 부문: Cities and Urban Development · 기후대응: Adaptation · 상태: Future · ND",
         "fit": "measure \"NDC-SDG 연계 건수\" not named",
         "analysisFit": {
@@ -1568,7 +1565,7 @@
           "항목 선택=SDG Index 종합점수 · 점",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=undesa-sdg-index-score&country=VNM&from=explorer&measure=measure-87fffae7373e&year=2025",
+        "url": "?view=data&element=undesa-sdg-index-score&country=VNM&from=explorer&measure=measure-87fffae7373e&year=2025&detailLayers=all",
         "cardValue": "73.8 점 = text-110:TR: SDG Index 종합점수 · 0~100점 73.843 점 2025 +0.2043 점 2025 · 항목별 값 항목 값 단위 시점 전년 대비 SDG Index 종합점수 · 2000~2025년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -1674,7 +1671,7 @@
           "SDG 목표=SDG1 세부지표 달성도",
           "달성도 정렬=점수 낮은 순"
         ],
-        "url": "?view=data&element=undesa-sdg-sebumogpyobyeol-dalseongdo&country=VNM&from=explorer&measure=measure-5ea01ce732be&year=2026&dim.category=1일+4.20달러+미만+빈곤율&dim.detail=정규화+달성도+점수(0~100)",
+        "url": "?view=data&element=undesa-sdg-sebumogpyobyeol-dalseongdo&country=VNM&from=explorer&measure=measure-5ea01ce732be&year=2026&dim.category=1일+4.20달러+미만+빈곤율&dim.detail=정규화+달성도+점수(0~100)&detailLayers=all",
         "cardValue": "93.9 점 = text-7:P: SDG1 세부지표 달성도 가로: SDG1 세부지표 달성도 세로: SDG 세부지표 단위: 점(0~100) 1일 4.20달러 미만 빈곤율 · 2026년 93.936 1일 3.00달러 미만 빈곤율 · 2026년 97.921 0을 기준으로 표시합니다.  SDG1 세부지표 달성도",
         "fit": "selection \"정규화 달성도 점수(0~100)\" not shown",
         "analysisFit": {
@@ -1780,7 +1777,7 @@
         "selectors": [
           "상세 구성 기준연도=2025년"
         ],
-        "url": "?view=data&element=1ca-eneoji-sobi-gujo&country=VNM&from=explorer&measure=measure-d79799fd97aa&year=2025",
+        "url": "?view=data&element=1ca-eneoji-sobi-gujo&country=VNM&from=explorer&measure=measure-d79799fd97aa&year=2025&detailLayers=all",
         "cardValue": "2.57 EJ = text-4:STRONG: 석탄 2.569 EJ 54.7%",
         "compositionParts": "6/6 parts found",
         "fit": "measure \"1차 에너지 소비\" not named",
@@ -1839,7 +1836,7 @@
       "analysisFit": {
         "pass": null,
         "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -1858,9 +1855,9 @@
           "snapshot": {
             "page": true,
             "notice": true,
-            "decision": "제공 대상 제외(데이터 명세서 검토)",
-            "reason": "원자료(BloombergNEF)의 재배포 제한으로 제공 대상에서 제외",
-            "decidedAt": "2026-09-18",
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
             "charts": 0,
             "tables": 0,
             "downloadLinks": 0,
@@ -1874,7 +1871,8 @@
       },
       "statusChecks": {
         "absentFromFinder": true,
-        "exclusionNoticePresent": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
         "noticeMatchesDecision": true,
         "chartCount0": true,
         "downloadLinks0": true
@@ -1936,7 +1934,7 @@
           "계열 보기=주요 8개 함께 보기",
           "기준연도=2025년"
         ],
-        "url": "?view=data&element=gisulbyeol-baljeon-seolbiyongryang&country=VNM&from=explorer&measure=measure-0487be6ab6ec&year=2025",
+        "url": "?view=data&element=gisulbyeol-baljeon-seolbiyongryang&country=VNM&from=explorer&measure=measure-0487be6ab6ec&year=2025&detailLayers=all",
         "cardValue": "28,100 MW = text-622:STRONG: 석탄(계통연계) 28,100 MW",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -2042,7 +2040,7 @@
         "selectors": [
           "연도 선택=2023"
         ],
-        "url": "?view=data&element=songbaejeon-sonsilryul-t-d-loss&country=VNM&from=explorer&measure=measure-2afa1823a80c&year=2023",
+        "url": "?view=data&element=songbaejeon-sonsilryul-t-d-loss&country=VNM&from=explorer&measure=measure-2afa1823a80c&year=2023&detailLayers=all",
         "cardValue": "6.58 % = text-140:TR: 송배전 손실률 6.5832 % 2023 +0.3838 %p 2023 · 항목별 값 항목 값 단위 시점 전년 대비 송배전 손실률 · 1990~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -2140,7 +2138,7 @@
           "분류 선택=설비용량 기준",
           "연도 선택=2025"
         ],
-        "url": "?view=data&element=jaesaengeneoji-bijung&country=VNM&from=explorer&measure=measure-3923e88a8f1a&year=2025&dim.category=설비용량+기준",
+        "url": "?view=data&element=jaesaengeneoji-bijung&country=VNM&from=explorer&measure=measure-3923e88a8f1a&year=2025&dim.category=설비용량+기준&detailLayers=all",
         "cardValue": "57.8 % = text-108:TR: 재생에너지 비중 · 설비용량 기준 57.8 % 2025 -0.12 %p 2025 · 항목별 값 항목 값 단위 시점 전년 대비 재생에너지 비중 · 2000~2025년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -2246,7 +2244,7 @@
           "분류 선택=전체",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=jeonryeog-jeobgeunryul&country=VNM&from=explorer&measure=measure-b6bedc475e56&year=2024&dim.category=전체",
+        "url": "?view=data&element=jeonryeog-jeobgeunryul&country=VNM&from=explorer&measure=measure-b6bedc475e56&year=2024&dim.category=전체&detailLayers=all",
         "cardValue": "100 % = text-116:TR: 전력 접근률 · 전체 100 % 2024 +0.2 %p 2024 · 항목별 값 항목 값 단위 시점 전년 대비 전력 접근률 · 1997~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -2356,7 +2354,7 @@
           "세부 분류 선택=순간정전",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=jeongjeonbindo-saidi-saifi&country=VNM&from=explorer&measure=measure-12b77d48a0f1&year=2024&dim.category=EVN+그룹+전체&dim.detail=연간+고객당+순간정전+횟수",
+        "url": "?view=data&element=jeongjeonbindo-saidi-saifi&country=VNM&from=explorer&measure=measure-12b77d48a0f1&year=2024&dim.category=EVN+그룹+전체&dim.detail=연간+고객당+순간정전+횟수&detailLayers=all",
         "cardValue": "1.25 회/고객 = analysis-1:SUMMARY: 표로 보기 · MAIFI · 1개 계열 · 9행",
         "fit": "selection \"연간 고객당 순간정전 횟수\" not shown",
         "analysisFit": {
@@ -2499,7 +2497,7 @@
           "발전원=전체 발전원",
           "설비용량=전체 용량"
         ],
-        "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer",
+        "url": "?view=data&element=baljeonso-wici-yongryang&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "41,350 MW = text-45:P: WRI 수록 발전소 설비용량 합계 41,350 MW · 2021년 · 236기 중 용량 기재 236기. 자료 출처 WRI GPPD · 2021년 OpenStreetMap · 2026년 추출 두 출처 함께 · 따로 집계 발전원 전체 발전원 가스 가스·석유 바이오매스 석유 석탄 수력 태양광",
         "analysisFit": {
           "kind": "grouped-bars",
@@ -2631,7 +2629,7 @@
         "title": "송전망 공간정보",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=jeonryeogmang-wici-migonggeub-jiyeog&country=VNM&from=explorer&year=2016",
+        "url": "?view=data&element=jeonryeogmang-wici-migonggeub-jiyeog&country=VNM&from=explorer&year=2016&detailLayers=all",
         "cardValue": "23,608 km = text-22:TR: 500 kV 32 4,092 17% 220 kV 143 7,201 31% 110 kV 431 12,314 52% 합계 606 23,608 100% World Bank ENERGYDATA.INFO 2016 송전망 · 구간 수와 구간 길이 합계 전압 구간 수 연장(km) 비중(연장 기준) ",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -2735,7 +2733,7 @@
         "title": "이산화탄소 포집·저장 시설(CCS)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026",
+        "url": "?view=data&element=ccs-siseol&country=VNM&from=explorer&measure=measure-06d3a0fc6345&year=2026&detailLayers=all",
         "fit": "year 2026 not shown; measure \"CCS 시설 수\" not named",
         "analysisFit": {
           "kind": "level",
@@ -2813,7 +2811,7 @@
         "title": "건물 윤곽·속성",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=geonmul-puspeurinteu-footprint&country=VNM&from=explorer",
+        "url": "?view=data&element=geonmul-puspeurinteu-footprint&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -2888,7 +2886,7 @@
         "selectors": [
           "인프라 자료 종류=철도"
         ],
-        "url": "?view=data&element=gyotong-inpeura-railway-road&country=VNM&from=explorer&measure=measure-7d9609ecb1c8&year=2026&dim.category=피처+수&dim.detail=OSM+도로+레이어의+지물+건수",
+        "url": "?view=data&element=gyotong-inpeura-railway-road&country=VNM&from=explorer&measure=measure-7d9609ecb1c8&year=2026&dim.category=피처+수&dim.detail=OSM+도로+레이어의+지물+건수&detailLayers=all",
         "cardValue": "312만 건 = text-9:TR: 철도 3,720 2026 도로 3,118,565 2026 자료 종류별 수록 지물 수 자료 종류 수록 지물 수(건) 자료연도",
         "fit": "year 2026 not shown; selection \"피처 수\" not shown; selection \"OSM 도로 레이어의 지물 건수\" not shown; measure \"도로 레이어\" not named",
         "analysisFit": {
@@ -2975,7 +2973,7 @@
         "selectors": [
           "인프라 자료 종류=자연지형·지물"
         ],
-        "url": "?view=data&element=haean-inpeura-sujaweon-inpeura&country=VNM&from=explorer&measure=measure-db2cea55bbcc&year=2026&dim.category=피처+수&dim.detail=OSM+수로+레이어의+지물+건수",
+        "url": "?view=data&element=haean-inpeura-sujaweon-inpeura&country=VNM&from=explorer&measure=measure-db2cea55bbcc&year=2026&dim.category=피처+수&dim.detail=OSM+수로+레이어의+지물+건수&detailLayers=all",
         "cardValue": "38,001 건 = text-9:TR: 자연지형·지물 33,608 2026 수로 38,001 2026 자료 종류별 수록 지물 수 자료 종류 수록 지물 수(건) 자료연도",
         "fit": "year 2026 not shown; selection \"피처 수\" not shown; selection \"OSM 수로 레이어의 지물 건수\" not shown; measure \"수로 레이어\" not named",
         "analysisFit": {
@@ -3061,7 +3059,7 @@
         "title": "자유무역협정 현황(FTA)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=fta-cegyeol-hyeonhwang&country=VNM&from=explorer&measure=measure-1c87d29d26f9&year=2026",
+        "url": "?view=data&element=fta-cegyeol-hyeonhwang&country=VNM&from=explorer&measure=measure-1c87d29d26f9&year=2026&detailLayers=all",
         "cardValue": "19 건 = text-53:LI: 2026 무역협정 건수 — 체결·협상 중 협정 총 건수 19",
         "fit": "measure \"무역협정 건수\" not named",
         "analysisFit": {
@@ -3145,7 +3143,7 @@
           "분류 선택=총 교역액",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=han-gaedogug-gyoyeogaeg&country=VNM&from=explorer&measure=measure-fe46d9d1d4c2&year=2024&dim.category=총+교역액",
+        "url": "?view=data&element=han-gaedogug-gyoyeogaeg&country=VNM&from=explorer&measure=measure-fe46d9d1d4c2&year=2024&dim.category=총+교역액&detailLayers=all",
         "cardValue": "86.7 10억 USD = text-16:TR: 한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액 86.7 10억 USD 2024 비교 자료 없음 2024 · 항목별 값 항목 값 단위 시점 전년 대비 한-베트남 교역 · 2021~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -3255,7 +3253,7 @@
           "분류 선택=통관",
           "연도 선택=2022"
         ],
-        "url": "?view=data&element=mulryuseonggwajisu-lpi&country=VNM&from=explorer&measure=measure-9ee6e8638d12&year=2022&dim.category=통관",
+        "url": "?view=data&element=mulryuseonggwajisu-lpi&country=VNM&from=explorer&measure=measure-9ee6e8638d12&year=2022&dim.category=통관&detailLayers=all",
         "cardValue": "3.1 점 = text-32:TR: 물류성과지수(LPI) · 통관 · 1~5점 3.1 점 2022 비교 자료 없음 2022 · 항목별 값 항목 값 단위 시점 전년 대비 물류성과지수(LPI) · 2007~2022년 추이",
         "fit": "selection \"통관 부문 점수(1=낮음 ~ 5=높음)\" not shown",
         "analysisFit": {
@@ -3364,7 +3362,7 @@
           "세부 분류 선택=Trade in Value Added: Domestic value added in gross exports of intermediate products",
           "연도 선택=2020"
         ],
-        "url": "?view=data&element=jungganjae-gyoyeog-gyumo&country=VNM&from=explorer&measure=measure-2183e07a67f3&year=2020&dim.category=수출+중+중간재+국내부가가치+비중&dim.detail=Trade+in+Value+Added:+Domestic+value+added+in+gross+exports+of+intermediate+products",
+        "url": "?view=data&element=jungganjae-gyoyeog-gyumo&country=VNM&from=explorer&measure=measure-2183e07a67f3&year=2020&dim.category=수출+중+중간재+국내부가가치+비중&dim.detail=Trade+in+Value+Added:+Domestic+value+added+in+gross+exports+of+intermediate+products&det",
         "cardValue": "29.3 % = text-108:TR: 중간재 교역 · 수출 중 중간재 국내부가가치 비중 29.3 % 2020 +0.2 %p 2020 · 항목별 값 항목 값 단위 시점 전년 대비 중간재 교역 · 1995~2020년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -3489,7 +3487,7 @@
           "분류 선택=Q1",
           "연도 선택=2026"
         ],
-        "url": "?view=data&element=haeun-yeongyeolseong-lsci&country=VNM&from=explorer&measure=measure-a8b5f1ca1a7a&year=2026&dim.category=Q1",
+        "url": "?view=data&element=haeun-yeongyeolseong-lsci&country=VNM&from=explorer&measure=measure-a8b5f1ca1a7a&year=2026&dim.category=Q1&detailLayers=all",
         "cardValue": "479 지수 = text-88:TR: 해운 연결성 지수(LSCI) · Q1 478.82 지수 2026 +39.56 지수 2026 · 항목별 값 항목 값 단위 시점 전년 대비 해운 연결성 지수(LSCI) · 2006~2026년 추이",
         "fit": "selection \"정기선 해운 연결성 지수(Q1 분기값)\" not shown",
         "analysisFit": {
@@ -3595,7 +3593,7 @@
         "title": "건기·우기 구분",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=geongi-ugi&country=VNM&from=explorer&measure=measure-706a7683fa04&year=1991",
+        "url": "?view=data&element=geongi-ugi&country=VNM&from=explorer&measure=measure-706a7683fa04&year=1991&detailLayers=all",
         "cardValue": "263 mm = text-0:P: 월별 강수량과 기온 · 1991~2020년 평년값 30년 평균으로 본 베트남의 계절 변화입니다. 특정 연도의 관측값이나 모든 지역의 건기·우기 일정을 뜻하지 않습니다. 1월 건기 2월 건기 3월 건기 4월 건기 5월 우기 6월 우기 7월 우기 8월 우기 9월 우기 10월 우기 11월 우",
         "fit": "measure \"월 평년강수\" not named",
         "analysisFit": {
@@ -3677,7 +3675,7 @@
         "title": "쾨펜-가이거 기후대 구분",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020",
+        "url": "?view=data&element=gihudae-climate-zone&country=VNM&from=explorer&measure=measure-095dc03abb8f&year=2020&detailLayers=all",
         "cardValue": "138,159 km² = text-0:P: 쾨펜 기후대별 국토 점유 면적과 비율입니다(Beck et al. 2023, 1991–2020 관측 기준). 기후대 이름은 한글을 먼저 쓰고 분류 코드를 괄호에 두었습니다. 국가 우세 기후대 · 2020년(1991–2020)온대·동계건조·고온하계(Cwa) 기후대별 점유 면적 최대 · 온대",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -3792,8 +3790,8 @@
           "지역 선택=63개 성·시 전체 분포",
           "지역 비교연도=2025년"
         ],
-        "url": "?view=data&element=yeonpyeonggyun-gion-yeonpyeonggyun-gangsu&country=VNM&from=explorer&year=2025&dim.regionMeasure=연평균_기온",
-        "cardValue": "24.9 °C = text-46:TR: 전체 1901년 24.4 22.73 27.6 63 전체 2025년 24.9 23.08 28.13 63 전체 변화 1901→2025 +0.5 °C (중앙값 기준) 63 연평균 기온 (°C) · 1901~2025년 · 성·시 값의 분위 · 처음·마지막 연도와 변화 구분 기간 중앙값 10분위",
+        "url": "?view=data&element=yeonpyeonggyun-gion-yeonpyeonggyun-gangsu&country=VNM&from=explorer&year=2025&dim.regionMeasure=연평균_기온&detailLayers=all",
+        "cardValue": "24.9 °C = text-89:LI: Hà Nội24.94  연평균 기온 · 2025년 · 전체",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial-trend",
@@ -3942,8 +3940,8 @@
           "시나리오 선택=SSP2-4.5",
           "지역 비교연도=2100년"
         ],
-        "url": "?view=data&element=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso&country=VNM&from=explorer&year=2100&dim.regionMeasure=연평균_기온&dim.scenario=ssp245",
-        "cardValue": "26.8 °C = text-46:TR: SSP2-4.5 2015년 24.83 21.84 28.16 63 SSP2-4.5 2100년 26.77 23.98 29.71 63 SSP2-4.5 변화 2015→2100 +1.94 °C (중앙값 기준) 63 연평균 기온 (°C) · 2015~2100년 · 성·시 값의 분위 · 처음·마지막",
+        "url": "?view=data&element=cmip6-giban-gwageo-mirae-gihu-gion-tas-coegogion-tasmax-coejeogion-tasmin-gangsu-pr-pungso&country=VNM&from=explorer&year=2100&dim.regionMeasure=연평균_기온&dim.scenario=ssp245&detailLayers=all",
+        "cardValue": "26.8 °C = text-95:LI: Hà Nam26.84  연평균 기온 · 2100년 · SSP2-4.5",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial-trend",
@@ -4100,8 +4098,8 @@
           "시나리오 선택=SSP2-4.5",
           "지역 비교연도=2100년"
         ],
-        "url": "?view=data&element=gamum-yeonsog-geonjoilsu-cdd-pyojungangsujisu-spei12-toyangsubun&country=VNM&from=explorer&year=2100&dim.regionMeasure=연속_건조일수_CDD_일&dim.scenario=ssp245",
-        "cardValue": "18.2 일 = text-47:TR: SSP2-4.5 2015년 20.33 13.62 41.2 63 SSP2-4.5 2100년 18.23 12.69 38.32 63 SSP2-4.5 변화 2015→2100 -2.1 일 (중앙값 기준) 63 연속 건조일수(CDD) (일) · 2015~2100년 · 성·시 값의 분위 · 처음·마",
+        "url": "?view=data&element=gamum-yeonsog-geonjoilsu-cdd-pyojungangsujisu-spei12-toyangsubun&country=VNM&from=explorer&year=2100&dim.regionMeasure=연속_건조일수_CDD_일&dim.scenario=ssp245&detailLayers=all",
+        "cardValue": "18.2 일 = text-99:LI: Quảng Ninh18.23  연속 건조일수(CDD) · 2100년 · SSP2-4.5",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial-trend",
@@ -4259,8 +4257,8 @@
           "시나리오 선택=SSP2-4.5",
           "지역 비교연도=2100년"
         ],
-        "url": "?view=data&element=pogyeom-pogyeomilsu-tx35-pogyeomilsu-tx40-yeoldaeya-tr20-yeoldaeya-tr25-heat-index-hi35&country=VNM&from=explorer&year=2100&dim.regionMeasure=폭염일수_TX_35_일&dim.scenario=ssp245",
-        "cardValue": "33.3 일 = text-46:TR: SSP2-4.5 2015년 6.36 0.25 22.24 51 SSP2-4.5 2100년 33.31 5.8 84.43 63 SSP2-4.5 변화 2015→2100 +26.95 일 (중앙값 기준) 63 폭염일수(최고기온 35°C 이상) (일) · 2015~2100년 · 성·시 값의 분위 ·",
+        "url": "?view=data&element=pogyeom-pogyeomilsu-tx35-pogyeomilsu-tx40-yeoldaeya-tr20-yeoldaeya-tr25-heat-index-hi35&country=VNM&from=explorer&year=2100&dim.regionMeasure=폭염일수_TX_35_일&dim.scenario=ssp245&detailLayers=all",
+        "cardValue": "33.3 일 = text-98:LI: Quảng Trị33.31  폭염일수(최고기온 35°C 이상) · 2100년 · SSP2-4.5",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial-trend",
@@ -4417,8 +4415,8 @@
           "시나리오 선택=SSP2-4.5",
           "지역 비교연도=2100년"
         ],
-        "url": "?view=data&element=hongsu-coedae-1il-gangsu-rx1day-coedae-5il-gangsu-rx5day-houilsu-r20mm-houilsu-r50mm-yeons&country=VNM&from=explorer&year=2100&dim.regionMeasure=최대_1일_강수_mm&dim.scenario=ssp245",
-        "cardValue": "71.1 mm = text-46:TR: SSP2-4.5 2015년 59.07 35.2 86.44 63 SSP2-4.5 2100년 71.06 34.63 87.23 63 SSP2-4.5 변화 2015→2100 +11.99 mm (중앙값 기준) 63 최대 1일 강수량(RX1day) (mm) · 2015~2100년 · 성·시 값의 ",
+        "url": "?view=data&element=hongsu-coedae-1il-gangsu-rx1day-coedae-5il-gangsu-rx5day-houilsu-r20mm-houilsu-r50mm-yeons&country=VNM&from=explorer&year=2100&dim.regionMeasure=최대_1일_강수_mm&dim.scenario=ssp245&detailLayers=all",
+        "cardValue": "71.1 mm = text-98:LI: Lào Cai71.06  최대 1일 강수량(RX1day) · 2100년 · SSP2-4.5",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial-trend",
@@ -4566,7 +4564,7 @@
           "관측소 선택=Đà Nẵng · 중부 — 다낭",
           "분위 선택=중앙값(50분위)"
         ],
-        "url": "?view=data&element=nasa-haesumyeon-sangseung-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&dim.scenario=SSP2-4.5",
+        "url": "?view=data&element=nasa-haesumyeon-sangseung-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&dim.scenario=SSP2-4.5&detailLayers=all",
         "cardValue": "0.63 m = text-8:TR: SSP1-1.9 2020년 0.06 2100년 0.46 +0.39 m SSP1-2.6 2020년 0.06 2100년 0.5 +0.44 m SSP2-4.5 2020년 0.06 2100년 0.63 +0.57 m SSP3-7.0 2020년 0.06 2100년 0.75 +0.69 m SSP5-",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -4674,7 +4672,7 @@
           "세부 분류 선택=생태계 부문",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=wwf-saengmuldayangseong-gihu-riseukeu&country=VNM&from=explorer&measure=measure-f7305839da3a&year=2024&dim.detail=생태계+부문",
+        "url": "?view=data&element=wwf-saengmuldayangseong-gihu-riseukeu&country=VNM&from=explorer&measure=measure-f7305839da3a&year=2024&dim.detail=생태계+부문&detailLayers=all",
         "cardValue": "0.592 지수 = analysis-1:SUMMARY: 표로 보기 · ND-GAIN 취약성 · 1개 계열 · 30행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -4789,7 +4787,7 @@
           "항목 선택=CRI 종합 순위 · 순위",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=gihu-riseukeu-jisu-cri&country=VNM&from=explorer&measure=measure-f20de2f62bc7&year=2024",
+        "url": "?view=data&element=gihu-riseukeu-jisu-cri&country=VNM&from=explorer&measure=measure-f20de2f62bc7&year=2024&detailLayers=all",
         "cardValue": "10 순위 = text-0:P: 선택한 2024년 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다. 항목 CRI 종합 순위 단위: 순위 가로: CRI 종합 순위 세로: 지표 단위: 순위 CRI 종합 순위 10 순위 표로 보기 · CRI 종합 순위 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -4896,7 +4894,7 @@
           "항목 선택=ND-GAIN 종합점수 · 점",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=gihu-cwiyagseong-jisu-nd-gain&country=VNM&from=explorer&measure=measure-6afe5ec8b669&year=2024",
+        "url": "?view=data&element=gihu-cwiyagseong-jisu-nd-gain&country=VNM&from=explorer&measure=measure-6afe5ec8b669&year=2024&detailLayers=all",
         "cardValue": "45.9 점 = text-124:TR: ND-GAIN 종합점수 45.8992 점 2024 +0.1283 점 2024 · 항목별 값 항목 값 단위 시점 전년 대비 ND-GAIN 종합점수 · 1995~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5026,7 +5024,7 @@
         "title": "재해·재난 이력",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=jaehae-jaenan-iryeog-em-dat&country=VNM&from=explorer",
+        "url": "?view=data&element=jaehae-jaenan-iryeog-em-dat&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "275건 = analysis-0:HEADER: 유형별 재해 유형별 사건 수 · 275건",
         "analysisFit": {
           "kind": "bars",
@@ -5112,7 +5110,7 @@
           "항목 선택=EU 평균 탄소지불액 · %",
           "세부 분류 선택=비료"
         ],
-        "url": "?view=data&element=world-bank-cbam-yeonghyang-jisu&country=VNM&from=explorer&measure=measure-b7e803503605&year=2022&dim.detail=비료",
+        "url": "?view=data&element=world-bank-cbam-yeonghyang-jisu&country=VNM&from=explorer&measure=measure-b7e803503605&year=2022&dim.detail=비료&detailLayers=all",
         "cardValue": "52.3 % = text-3:B: 단위: % 가로: EU 평균 탄소지불액 세로: 산업 단위: % 비료 52.2795 % 표로 보기 · EU 평균 탄소지불액 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5214,7 +5212,7 @@
           "세부 분류 선택=NZP-no-reforms",
           "연도 선택=2040"
         ],
-        "url": "?view=data&element=ccdr-tansose-simyulreisyeon-gyeolgwa-baeculgamsoyul-gdp-yeonghyang-sesu-hyogwa&country=VNM&from=explorer&measure=measure-bf20bb336833&year=2040&dim.detail=NZP-no-reforms",
+        "url": "?view=data&element=ccdr-tansose-simyulreisyeon-gyeolgwa-baeculgamsoyul-gdp-yeonghyang-sesu-hyogwa&country=VNM&from=explorer&measure=measure-bf20bb336833&year=2040&dim.detail=NZP-no-reforms&detailLayers=all",
         "cardValue": "-2.2 % = text-1:TR: GDP 영향 — NZP-no-reforms -2.2 % 2040 항목별 자료 항목 값 단위 시점",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5324,7 +5322,7 @@
           "세부 분류 선택=전체",
           "ETS 대상 시설 수 개소 정렬=자료 순서"
         ],
-        "url": "?view=data&element=tanso-gagyeog-sujun-ets-carbon-tax&country=VNM&from=explorer&measure=measure-e7c7cd02a63b&year=2026",
+        "url": "?view=data&element=tanso-gagyeog-sujun-ets-carbon-tax&country=VNM&from=explorer&measure=measure-e7c7cd02a63b&year=2026&detailLayers=all",
         "cardValue": "51 개소 = text-8:LI: 2026 ETS 대상 시설 수 — 시멘트 공장 51 개소 원문 보기",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5436,7 +5434,7 @@
           "항목 선택=화석연료 소비 비중 · %",
           "연도 선택=2015"
         ],
-        "url": "?view=data&element=hwaseogyeonryo-yijondo-fossil-fuel-energy-consumption&country=VNM&from=explorer&measure=measure-877ad0f1aa8d&year=2015",
+        "url": "?view=data&element=hwaseogyeonryo-yijondo-fossil-fuel-energy-consumption&country=VNM&from=explorer&measure=measure-877ad0f1aa8d&year=2015&detailLayers=all",
         "cardValue": "72.5 % = text-108:TR: 화석연료 소비 비중 72.5472 % 2015 +3.095 %p 2015 · 항목별 값 항목 값 단위 시점 전년 대비 화석연료 소비 비중 · 1990~2015년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5542,7 +5540,7 @@
           "표시 항목 선택=기준 물 스트레스(Baseline Water Stress) · 원값 — 비율(총 취수량 ÷ 가용 재생수자원)",
           "지역 선택=63개 성·시 · 평가구역 전체 분포"
         ],
-        "url": "?view=data&element=wri-aqueduct-mul-seuteureseu-jisu&country=VNM&from=explorer",
+        "url": "?view=data&element=wri-aqueduct-mul-seuteureseu-jisu&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "443개 평가구역 = analysis-0:H3: 63개 성·시 · 평가구역 443개 분포",
         "analysisFit": {
           "kind": "bars",
@@ -5644,7 +5642,7 @@
           "세부 분류 선택=SSP2",
           "연도 선택=2100"
         ],
-        "url": "?view=data&element=ssp-gdp-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-42d427ed0568&year=2100&dim.detail=SSP2",
+        "url": "?view=data&element=ssp-gdp-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-42d427ed0568&year=2100&dim.detail=SSP2&detailLayers=all",
         "cardValue": "7,364 십억 USD_2017/yr = text-72:TR: GDP(PPP) 전 구간 — SSP2 7,364.4 2017년 구매력평가 기준 10억 미국달러/년 2100 비교 자료 없음 2100 · 항목별 값 항목 값 단위 시점 전년 대비 GDP(PPP) 전 구간 · 2020~2100년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5753,7 +5751,7 @@
           "세부 분류 선택=SSP2",
           "연도 선택=2100"
         ],
-        "url": "?view=data&element=ssp-ingu-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-1a16449ec4ae&year=2100&dim.detail=SSP2",
+        "url": "?view=data&element=ssp-ingu-jeonmang-ssp1-ssp2-ssp3-ssp4-ssp5&country=VNM&from=explorer&measure=measure-1a16449ec4ae&year=2100&dim.detail=SSP2&detailLayers=all",
         "cardValue": "92.5 백만명 = text-72:TR: 인구 전 구간 — SSP2 92.531 백만명 2100 비교 자료 없음 2100 · 항목별 값 항목 값 단위 시점 전년 대비 인구 전 구간 · 2020~2100년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -5862,7 +5860,7 @@
           "세부 분류 선택=INFORM 종합",
           "연도 선택=2026"
         ],
-        "url": "?view=data&element=eu-un-inform-risk-index-boghab-riseukeu-jisu&country=VNM&from=explorer&measure=measure-f22e839fa61b&year=2026&dim.detail=INFORM+종합",
+        "url": "?view=data&element=eu-un-inform-risk-index-boghab-riseukeu-jisu&country=VNM&from=explorer&measure=measure-f22e839fa61b&year=2026&dim.detail=INFORM+종합&detailLayers=all",
         "cardValue": "4 지수 = text-44:TR: INFORM Risk 시계열(2017–2026) — INFORM 종합 4 지수 2026 +0.1 지수 2026 · 항목별 값 항목 값 단위 시점 전년 대비 INFORM Risk 시계열(2017–2026) · 2017~2026년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -6010,7 +6008,7 @@
           "연도 선택=2023",
           "권역 비교 연도=2023년"
         ],
-        "url": "?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-ab1a3ae58df4&year=2023&dim.detail=국가",
+        "url": "?view=data&element=global-data-lab-gvi-vulnerability-index&country=VNM&from=explorer&measure=measure-ab1a3ae58df4&year=2023&dim.detail=국가&detailLayers=all",
         "cardValue": "37.1 지수 = text-133:TR: GVI 취약성 지수 — 국가 37.1 지수 2023 -0.1 지수 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GVI 취약성 지수 · 2000~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -6144,7 +6142,7 @@
           "세부 분류 선택=전체",
           "기후 투자 재원 구성 십억 US$ 정렬=자료 순서"
         ],
-        "url": "?view=data&element=ccdr-gihu-pihae-gyeongjejeog-biyong&country=VNM&from=explorer&measure=measure-165518c98ba5&year=2040",
+        "url": "?view=data&element=ccdr-gihu-pihae-gyeongjejeog-biyong&country=VNM&from=explorer&measure=measure-165518c98ba5&year=2040&detailLayers=all",
         "cardValue": "184 십억 US$ = text-3:B: 단위: 십억 US$ 정렬 자료 순서 높은 값부터 낮은 값부터 가로: 기후 투자 재원 구성 세로: 재원 구성(공공/민간) 단위: 십억 US$ 공공 130 십억 US$ 민간 184 십억 US$ 외부(대외) 지원 54 십억 US$ 표로 보기 · 기후 투자 재원 구성 · 3행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -6284,7 +6282,7 @@
         "title": "건기·우기 유량 차이",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=geongi-ugi-yuryang-cai&country=VNM&from=explorer",
+        "url": "?view=data&element=geongi-ugi-yuryang-cai&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "10건 = text-6:P: 끄우롱(메콩 델타) · 관측값 2건 8대 하천유역 관측 항목 값 단위 기준연도 비교 메콩델타 건기 유량 비중 10 % 2004 단일 관측값 메콩델타 우기 유량 비중 90 % 2009 단일 관측값",
         "analysisFit": {
           "kind": "facts",
@@ -6374,7 +6372,7 @@
           "항목=농업 용수 취수 비중 · %",
           "기준연도=2023년"
         ],
-        "url": "?view=data&element=nongeob-yongsu-bijung&country=VNM&from=explorer&measure=measure-357fd35f6277&year=2023",
+        "url": "?view=data&element=nongeob-yongsu-bijung&country=VNM&from=explorer&measure=measure-357fd35f6277&year=2023&detailLayers=all",
         "cardValue": "94.8 % = text-141:STRONG: 농업 용수 취수 비중 94.78 %",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -6511,7 +6509,7 @@
         "selectors": [
           "유역 면적 기준=전체 유역 면적(문헌)"
         ],
-        "url": "?view=data&element=yuyeog-myeonjeog&country=VNM&from=explorer",
+        "url": "?view=data&element=yuyeog-myeonjeog&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "86,253 km² = text-1:LI: 홍–타이빈 베트남 내 면적(GIS 산출) 86,253 km² 전체 유역 면적(문헌) 169,000 km²",
         "analysisFit": {
           "kind": "bars",
@@ -6608,7 +6606,7 @@
         "selectors": [
           "유향 지역=KiênGiang"
         ],
-        "url": "?view=data&element=yuhyang-flow-direction&country=VNM&from=explorer&dim.regionMeasure=우세_유향_비율",
+        "url": "?view=data&element=yuhyang-flow-direction&country=VNM&from=explorer&dim.regionMeasure=우세_유향_비율&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial",
@@ -6701,7 +6699,7 @@
           "항목 선택=이용가능(정규 재생) 지하수 · 10⁹ m³/yr",
           "연도 선택=2023"
         ],
-        "url": "?view=data&element=jihasu-jamjaeryang&country=VNM&from=explorer&measure=measure-551da7ede3b6&year=2023",
+        "url": "?view=data&element=jihasu-jamjaeryang&country=VNM&from=explorer&measure=measure-551da7ede3b6&year=2023&detailLayers=all",
         "cardValue": "4.67 10⁹ m³/yr = text-80:TR: 이용가능(정규 재생) 지하수 4.672 10⁹ m³/yr 2023 0 10⁹ m³/yr 2023 · 항목별 값 항목 값 단위 시점 전년 대비 이용가능(정규 재생) 지하수 · 2005~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -6836,7 +6834,7 @@
         "title": "하천 유량",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=haceon-yuryang&country=VNM&from=explorer",
+        "url": "?view=data&element=haceon-yuryang&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -6950,7 +6948,7 @@
           "지역 선택=63개 성·시 전체 분포",
           "전국 자료 항목=맹그로브 면적 · 1000 ha"
         ],
-        "url": "?view=data&element=sanrim-yuhyeongbyeol-myeonjeog-yeoldaeurim-maenggeurobeu-itanji-deung&country=VNM&from=explorer&dim.regionMeasure=이탄지_면적_합계_km",
+        "url": "?view=data&element=sanrim-yuhyeongbyeol-myeonjeog-yeoldaeurim-maenggeurobeu-itanji-deung&country=VNM&from=explorer&dim.regionMeasure=이탄지_면적_합계_km&detailLayers=all",
         "cardValue": "884 km² = analysis-11:FIGCAPTION: 0 884.1 km² 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -7093,7 +7091,7 @@
           "표시 항목 선택=수관 이득(2000–2020 누적) — ha",
           "지역 선택=63개 성·시 전체 분포"
         ],
-        "url": "?view=data&element=sanrim-ideug&country=VNM&from=explorer&dim.regionMeasure=이득_ha",
+        "url": "?view=data&element=sanrim-ideug&country=VNM&from=explorer&dim.regionMeasure=이득_ha&detailLayers=all",
         "cardValue": "123,227 ha = analysis-7:FIGCAPTION: 596.9 123,227 ha 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -7227,8 +7225,8 @@
           "항목 선택=성(省)별 분석대상 면적 · ha",
           "지역 선택=Nghệ An"
         ],
-        "url": "?view=data&element=sanrim-cong-myeonjeog&country=VNM&from=explorer&measure=measure-8dab1a416248&year=2000&dim.detail=Nghệ+An",
-        "cardValue": "165만 ha = text-0:LI: 1. Nghệ An 1,647,459",
+        "url": "?view=data&element=sanrim-cong-myeonjeog&country=VNM&from=explorer&measure=measure-8dab1a416248&year=2000&dim.detail=Nghệ+An&detailLayers=all",
+        "cardValue": "165만 ha = text-0:P: 보조 비교 2000년 성·시별 비교 · Nghệ An 위치 2000년 기준 상위·하위 10개 성·시와 선택 지역입니다. 전체는 '전체 63개 보기'에서 확인할 수 있습니다. 가로: 성(省)별 분석대상 면적 세로: 성·시 단위: ha 1. Nghệ An 1,647,459 2. Gia La",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial",
@@ -7360,8 +7358,8 @@
         "selectors": [
           "지역 선택=Bắc Kạn"
         ],
-        "url": "?view=data&element=sugwan-pibogryul&country=VNM&from=explorer&measure=measure-15d5f8e7a89f&year=2010&dim.detail=Bắc+Kạn",
-        "cardValue": "85.1 % = text-45:P: 상위 15개 성·시와 선택 지역입니다. 전체 순위는 '전체 성·시 비교'에서 '표로 보기'로 확인할 수 있습니다. 보조 비교 2010년 성·시별 비교 · Bắc Kạn 위치 가로: 성(省)별 수관 피복률 세로: 성·시 단위: % 1. Bắc Kạn 85.1 2. Kon Tum 77.3 ",
+        "url": "?view=data&element=sugwan-pibogryul&country=VNM&from=explorer&measure=measure-15d5f8e7a89f&year=2010&dim.detail=Bắc+Kạn&detailLayers=all",
+        "cardValue": "85.1 % = text-0:P: 보조 비교 2010년 성·시별 비교 · Bắc Kạn 위치 2010년 기준 상위·하위 10개 성·시와 선택 지역입니다. 전체는 '전체 63개 보기'에서 확인할 수 있습니다. 가로: 성(省)별 수관 피복률 세로: 성·시 단위: % 1. Bắc Kạn 85.1 2. Kon Tum 77.3 ",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial",
@@ -7487,7 +7485,7 @@
           "지역 선택=Quảng Ninh",
           "기준연도=2024년"
         ],
-        "url": "?view=data&element=yeongan-sanrim-sonsil&country=VNM&from=explorer&measure=measure-3ac8acb37269&year=2024&dim.detail_2=Quảng+Ninh",
+        "url": "?view=data&element=yeongan-sanrim-sonsil&country=VNM&from=explorer&measure=measure-3ac8acb37269&year=2024&dim.detail_2=Quảng+Ninh&detailLayers=all",
         "cardValue": "11,728 ha = analysis-5:FIGCAPTION: 0 11,728 ha 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -7624,7 +7622,7 @@
           "지역 선택=Kon Tum",
           "기간=2001–2024"
         ],
-        "url": "?view=data&element=tanso-jeojangryang&country=VNM&from=explorer&measure=measure-ef59b2b71a01&period=2001–2024&dim.detail=Kon+Tum",
+        "url": "?view=data&element=tanso-jeojangryang&country=VNM&from=explorer&measure=measure-ef59b2b71a01&period=2001–2024&dim.detail=Kon+Tum&detailLayers=all",
         "cardValue": "292만 Mg CO2e/yr = analysis-6:FIGCAPTION: -3,261,471 2,923,480 Mg CO2e/yr 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -7740,7 +7738,7 @@
           "항목 선택=1인당 경작지 면적 · ha/cap",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=lulucf-gwanryeon-myeonjeog-byeonhwa&country=VNM&from=explorer&measure=measure-a6dff20f1447&year=2024",
+        "url": "?view=data&element=lulucf-gwanryeon-myeonjeog-byeonhwa&country=VNM&from=explorer&measure=measure-a6dff20f1447&year=2024&detailLayers=all",
         "cardValue": "0.12 ha/cap = text-260:TR: 1인당 경작지 면적 0.12 ha/cap 2024 0 ha/cap 2024 · 항목별 값 항목 값 단위 시점 전년 대비 1인당 경작지 면적 · 1961~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -7850,7 +7848,7 @@
           "연도 선택=2024",
           "토지이용 변화율 %/yr 정렬=자료 순서"
         ],
-        "url": "?view=data&element=tojiiyong-byeonhwayul&country=VNM&from=explorer&measure=measure-9c9a9d42a47b&year=2024",
+        "url": "?view=data&element=tojiiyong-byeonhwayul&country=VNM&from=explorer&measure=measure-9c9a9d42a47b&year=2024&detailLayers=all",
         "cardValue": "4.98 %/yr = text-285:TR: 토지이용 변화율 — 조림지 4.9754 %/yr 2024 비교 자료 없음 토지이용 변화율 — 농지 1.789 %/yr 2024 비교 자료 없음 토지이용 변화율 — 가경지 0.6826 %/yr 2024 비교 자료 없음 토지이용 변화율 — 국토면적 0.0027 %/yr 2024 비교 자료 ",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8002,7 +8000,7 @@
           "지역 선택=63개 성·시 전체 분포",
           "전국 자료 항목=토지피복 면적 — 시가화지역(인공지표) · 1000 ha"
         ],
-        "url": "?view=data&element=tojipibog-bunryubyeol-myeonjeog-gyeongjagji-sanrim-coji-geonmul-suce-naji&country=VNM&from=explorer&dim.regionMeasure=경작지_면적_km",
+        "url": "?view=data&element=tojipibog-bunryubyeol-myeonjeog-gyeongjagji-sanrim-coji-geonmul-suce-naji&country=VNM&from=explorer&dim.regionMeasure=경작지_면적_km&detailLayers=all",
         "cardValue": "3,578 km² = analysis-11:FIGCAPTION: 34.78 3,578 km² 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8118,7 +8116,7 @@
           "항목 선택=1인당 도시폐기물 발생량 · kg/인/일",
           "연도 선택=2050"
         ],
-        "url": "?view=data&element=baiomaeseu-jaweon-gayongryang-nongeobjanjae-imeobjanjae-dosipyegimul-cugsanpyegimul&country=VNM&from=explorer&measure=measure-13e56f3e0776&year=2050",
+        "url": "?view=data&element=baiomaeseu-jaweon-gayongryang-nongeobjanjae-imeobjanjae-dosipyegimul-cugsanpyegimul&country=VNM&from=explorer&measure=measure-13e56f3e0776&year=2050&detailLayers=all",
         "cardValue": "0.82 kg/인/일 = analysis-0:H4: 1인당 도시폐기물 발생량 · 2015~2050년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8253,7 +8251,7 @@
           "지역 선택=63개 성·시 전체 분포",
           "전국 자료 항목=연간 수력 발전량 — EI 계열 · TWh/yr"
         ],
-        "url": "?view=data&element=suryeog-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=이론_총잠재량_GWh_yr",
+        "url": "?view=data&element=suryeog-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=이론_총잠재량_GWh_yr&detailLayers=all",
         "cardValue": "16,904 GWh/년 = analysis-11:FIGCAPTION: 1.44 16,904 GWh/년 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8398,7 +8396,7 @@
           "지역 선택=63개 성·시 전체 분포",
           "전국 자료 항목=지열 발전량 — 실적(EIA) · 십억 kWh/yr"
         ],
-        "url": "?view=data&element=jiyeol-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=심도_1km_지온_평균",
+        "url": "?view=data&element=jiyeol-jamjaeryang&country=VNM&from=explorer&dim.regionMeasure=심도_1km_지온_평균&detailLayers=all",
         "cardValue": "69.5 °C = analysis-11:FIGCAPTION: 42.29 69.49 °C 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8541,7 +8539,7 @@
           "표시 항목 선택=수평면 전일사량(GHI, 평균) — kWh/m²/일",
           "지역 선택=63개 성·시 전체 분포"
         ],
-        "url": "?view=data&element=taeyanggwang-gwanryeon-jipyo-ghi-dni&country=VNM&from=explorer&dim.regionMeasure=수평면_전일사량_GHI_평균",
+        "url": "?view=data&element=taeyanggwang-gwanryeon-jipyo-ghi-dni&country=VNM&from=explorer&dim.regionMeasure=수평면_전일사량_GHI_평균&detailLayers=all",
         "cardValue": "5.23 kWh/m²/일 = analysis-7:FIGCAPTION: 3.34 5.23 kWh/m²/일 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8675,7 +8673,7 @@
           "표시 항목 선택=풍속 평균(고도 100m) — m/s",
           "지역 선택=63개 성·시 전체 분포"
         ],
-        "url": "?view=data&element=pungryeog-jaweon-pungsog-eneojimildo&country=VNM&from=explorer&dim.regionMeasure=풍속_평균_m_s",
+        "url": "?view=data&element=pungryeog-jaweon-pungsog-eneojimildo&country=VNM&from=explorer&dim.regionMeasure=풍속_평균_m_s&detailLayers=all",
         "cardValue": "5.68 m/s = analysis-7:FIGCAPTION: 2.54 5.68 m/s 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8783,7 +8781,7 @@
           "세부 분류 선택=전체",
           "가채연수(R/P ratio) 년 정렬=자료 순서"
         ],
-        "url": "?view=data&element=hwaseogyeonryo-jaweonryang-seogtan-seogyu-lng-deung&country=VNM&from=explorer&measure=measure-961575bc9f6b&year=2020",
+        "url": "?view=data&element=hwaseogyeonryo-jaweonryang-seogtan-seogyu-lng-deung&country=VNM&from=explorer&measure=measure-961575bc9f6b&year=2020&detailLayers=all",
         "cardValue": "74.1 년 = text-3:B: 단위: 년 정렬 자료 순서 높은 값부터 낮은 값부터 가로: 가채연수(R/P ratio) 세로: 자원 종류 단위: 년 석유 58.06 년 석탄 69.11 년 천연가스 74.14 년 표로 보기 · 가채연수(R/P ratio) · 3행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -8890,7 +8888,7 @@
           "항목 선택=원광 수출규제 대상 광종 · 해당 여부",
           "세부 분류 선택=전체"
         ],
-        "url": "?view=data&element=gwangmulmyeong-rityum-kobalteu-nikel-manggan-heugyeon-juseog-nab-ayeon-mageunesyumhwahabmu&country=VNM&from=explorer&measure=measure-befc79f3731c&year=2026",
+        "url": "?view=data&element=gwangmulmyeong-rityum-kobalteu-nikel-manggan-heugyeon-juseog-nab-ayeon-mageunesyumhwahabmu&country=VNM&from=explorer&measure=measure-befc79f3731c&year=2026&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "facts",
@@ -8990,7 +8988,7 @@
           "세부 분류 선택=전체",
           "세계 매장량 비중 % 정렬=자료 순서"
         ],
-        "url": "?view=data&element=geulrobeol-sunwi&country=VNM&from=explorer&measure=measure-47af40a32a99&year=2026",
+        "url": "?view=data&element=geulrobeol-sunwi&country=VNM&from=explorer&measure=measure-47af40a32a99&year=2026&detailLayers=all",
         "cardValue": "10.7 % = text-3:B: 단위: % 정렬 자료 순서 높은 값부터 낮은 값부터 가로: 세계 매장량 비중 세로: 광물 단위: % 안티모니 2.7 % 보크사이트 10.69 % 형석 4.85 % 흑연 3.13 % 인광석 0.04 % 희토류 4.67 % 주석 0.38 % 텅스텐 3.62 % 표로 보기 · 세계 매장량 비",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -9099,7 +9097,7 @@
         "title": "광물 매장량(확인·추정)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=maejangryang-hwagin-cujeong&country=VNM&from=explorer&measure=measure-080d04348d93&year=2026",
+        "url": "?view=data&element=maejangryang-hwagin-cujeong&country=VNM&from=explorer&measure=measure-080d04348d93&year=2026&detailLayers=all",
         "cardValue": "54,000 t = text-5:LI: 확인 매장량 · 안티모니 · 2026년54,000 t (Sb 함량)",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -9181,7 +9179,7 @@
         "title": "광종별 광산 생산량",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-3fda9946012e&year=2025",
+        "url": "?view=data&element=yeongan-saengsanryang&country=VNM&from=explorer&measure=measure-3fda9946012e&year=2025&detailLayers=all",
         "cardValue": "11,000 t = text-0:P: USGS가 보고한 광종별 광산 생산량입니다. 2024년은 실적치, 2025년은 USGS 추정치이며 광종마다 단위가 다릅니다. 광산 생산량 · 수록 광종9종 원천 미보고 광종2종 광산 생산량 · 주석 · 2025년11,000 t (Sn 함량) 기준 연도2024–2025년 광종별 광산 생산",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -9288,7 +9286,7 @@
         "title": "광산·가공 시설 위치",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=juyo-gwangsan-wici&country=VNM&from=explorer",
+        "url": "?view=data&element=juyo-gwangsan-wici&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "8곳 = analysis-1:HEADER: 목록 상세 데이터 · 8건",
         "analysisFit": {
           "kind": "facts",
@@ -9372,7 +9370,7 @@
         "selectors": [
           "이행 조건=자체 이행(무조건부)"
         ],
-        "url": "?view=data&element=ndc-jeculnyeondo-beojeon-bau-baecul-jeonmang-gamcug-mogpyo-mujogeonbu-jogeonbu-bumunbyeol&country=VNM&from=explorer",
+        "url": "?view=data&element=ndc-jeculnyeondo-beojeon-bau-baecul-jeonmang-gamcug-mogpyo-mujogeonbu-jogeonbu-bumunbyeol&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "15.8 % = text-0:P: 2022년 제출 NDC 기준입니다. 국제지원 조건부 목표는 자체 이행분을 포함한 전체 목표이며, 두 목표를 더하지 않습니다. 2030년 목표 · 2022년 NDC 항목 자체 이행 국제지원 시 전체 단위 감축률 15.8 43.5 % 감축량 146.3 403.7 백만 tCO₂e 소요재원 2",
         "analysisFit": {
           "kind": "bars",
@@ -9465,7 +9463,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=btr-jeculnyeondo-munseo-ringkeu-ghg-congbaeculryang-incl-excl-lulucf-bumunbyeol-ndc-gamcug&country=VNM&from=explorer",
+        "url": "?view=data&element=btr-jeculnyeondo-munseo-ringkeu-ghg-congbaeculryang-incl-excl-lulucf-bumunbyeol-ndc-gamcug&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "82건 = text-101:P: 보고서에 수록된 2016년 배출량입니다. 현재 배출량이나 NDC 감축 달성량은 아닙니다. 과거 BUR와 산정기준이 달라 하나의 추이로 연결하지 않습니다. 격년투명성보고서 제출 이력·내용 자료 목록 항목별 내용과 기준 검색어 자료 구분 전체 적응 프로그램 현황 기후재원 기후 시나리오별 전",
         "analysisFit": {
           "kind": "facts",
@@ -9560,7 +9558,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=nap-jeculnyeondo-munseo-ringkeu-bumunbyeol-cwiyagseong-pyeongga-jeogeung-useon-bunya-jeoge&country=VNM&from=explorer",
+        "url": "?view=data&element=nap-jeculnyeondo-munseo-ringkeu-bumunbyeol-cwiyagseong-pyeongga-jeogeung-useon-bunya-jeoge&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -9652,7 +9650,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=lt-leds-janggi-baecul-gyeongro-bau-gamcug-nesjero-sinariobyeol-nesjero-mogpyo-yeondo-nesje&country=VNM&from=explorer",
+        "url": "?view=data&element=lt-leds-janggi-baecul-gyeongro-bau-gamcug-nesjero-sinariobyeol-nesjero-mogpyo-yeondo-nesje&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -9744,7 +9742,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=tna-suhaeng-yeobu-suhaeng-yeondo-gisul-ijeon-jangbyeog-barrier-analysis-gyeolgwa-tap-gisul&country=VNM&from=explorer",
+        "url": "?view=data&element=tna-suhaeng-yeobu-suhaeng-yeondo-gisul-ijeon-jangbyeog-barrier-analysis-gyeolgwa-tap-gisul&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -9836,7 +9834,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=itmo-yangja-hyeobjeong-cegyeolgug-cegyeol-ilja-daesang-bumun-daesang-gisul-seungin-gigwan&country=VNM&from=explorer",
+        "url": "?view=data&element=itmo-yangja-hyeobjeong-cegyeolgug-cegyeol-ilja-daesang-bumun-daesang-gisul-seungin-gigwan&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -9928,7 +9926,7 @@
         "title": "파리협정 6.8조 비시장 접근법(NMA)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=parihyeobjeong-je6-8jo-bisijang-jeobgeunbeob-camyeo-yeobu-deungrogdoen-hwaldongmyeong-daes&country=VNM&from=explorer",
+        "url": "?view=data&element=parihyeobjeong-je6-8jo-bisijang-jeobgeunbeob-camyeo-yeobu-deungrogdoen-hwaldongmyeong-daes&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "1건 = text-2:TR: 참여당사국 등재 NMA 건수 1 2026 베트남이 참여당사국으로 등재된 NMA 건수 — SUBARU 1건. 플랫폼 전체 6건 중 1건. 원문 베트남 Art 6.8 NFP 지정 여부 2025 [미공개] Article 6.8 국가연락창구(NFP) 명단은 NMA 플랫폼의 National Fo",
         "analysisFit": {
           "kind": "facts",
@@ -10011,7 +10009,7 @@
         "title": "협력적 기후 이니셔티브 참여",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=cooperative-climate-initiative-inisyeotibeu-myeong-camyeo-sangtae-active-completed-camyeo&country=VNM&from=explorer",
+        "url": "?view=data&element=cooperative-climate-initiative-inisyeotibeu-myeong-camyeo-sangtae-active-completed-camyeo&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "32개 = analysis-1:H5: 이니셔티브별 베트남 참여 비교 · 32개",
         "analysisFit": {
           "kind": "bars",
@@ -10123,8 +10121,8 @@
         "title": "기후 법제도 현황",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=gihu-beobjedo-beobryeongmyeong-yuhyeong-beobryul-sihaengryeong-gyuje-insentibeu-daesang-bu&country=VNM&from=explorer",
-        "cardValue": "54건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 54건 · 원천 182행을 문서 단위로 묶음 · 시행(발효)일 순 2005-07-01 전력법 28/2004/QH11 제정(국회 통과)·공포일 2004-12-03 Electricity Law 28/2004/QH11 (구법) 28/200",
+        "url": "?view=data&element=gihu-beobjedo-beobryeongmyeong-yuhyeong-beobryul-sihaengryeong-gyuje-insentibeu-daesang-bu&country=VNM&from=explorer&detailLayers=all",
+        "cardValue": "54건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 54건 · 원천 182행을 문서 단위로 묶음 · 시행(발효)일 최근 순 시점 미기재 목표 · 2030 전력부문 GHG 배출목표 하한(min) (보완항목) 시점 미기재 DPPA 세부 규정 적용범위 재생에너지·해상풍력 인센티브·원자력 포",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -10235,8 +10233,8 @@
         "title": "환경 법제도 현황",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=gita-hwangyeong-beobjedo-beobryeongmyeong-yuhyeong-eiabeob-daegijil-sujil-pyegimul-saengmu&country=VNM&from=explorer",
-        "cardValue": "41건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 41건 · 원천 59행을 문서 단위로 묶음 · 시행(발효)일 순 2008 법률 2008.11.13 국회 제12기 통과·시행, 시행중, 소관 MONRE(MAE) 플랫폼 편집 설명 · 출처 1건 · 2026-09-22 확인 생물다양성법 ",
+        "url": "?view=data&element=gita-hwangyeong-beobjedo-beobryeongmyeong-yuhyeong-eiabeob-daegijil-sujil-pyegimul-saengmu&country=VNM&from=explorer&detailLayers=all",
+        "cardValue": "41건 = text-0:P: 연대기 법령·문서별 시행 시점과 핵심 사항 법령·문서 41건 · 원천 59행을 문서 단위로 묶음 · 시행(발효)일 최근 순 시점 미기재 Luật 146/2025/QH15의 환경보호법 개정 범위 개정 대상 조문 ĐTM·환경허가 조항 중심 37개 항 개정 시점 미기재 Decree 110/2",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -10323,7 +10321,7 @@
         "title": "현지 치안·안전 정보",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=cian-anjeon-jeongbo-gyeongbo-deunggeub-yeohaengyuyi-jaje-ceolsugweongo-yeohaenggeumji-hyeo&country=VNM&from=explorer",
+        "url": "?view=data&element=cian-anjeon-jeongbo-gyeongbo-deunggeub-yeohaengyuyi-jaje-ceolsugweongo-yeohaenggeumji-hyeo&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -10434,7 +10432,7 @@
         "title": "민관협력(PPP) 제도·조달 체계",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer",
+        "url": "?view=data&element=ppp-beobjedo-jodal-cegye-ppp-beobryul-yumu-ppp-beobryul-myeongcing-ppp-jeondam-gigwan-joda&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "120건 = text-1:LI: 항목120건",
         "analysisFit": {
           "kind": "facts",
@@ -10548,7 +10546,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=oegugin-tuja-gyujeong-oegugin-jibun-jehan-tuja-insentibeu-seje-hyetaeg-gyeongjeteuggu-tuja&country=VNM&from=explorer",
+        "url": "?view=data&element=oegugin-tuja-gyujeong-oegugin-jibun-jehan-tuja-insentibeu-seje-hyetaeg-gyeongjeteuggu-tuja&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -10642,7 +10640,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=inheoga-peuroseseu-hwangyeongyeonghyangpyeongga-eia-jeolca-geoncug-heoga-jeolca-geoncug-he&country=VNM&from=explorer",
+        "url": "?view=data&element=inheoga-peuroseseu-hwangyeongyeonghyangpyeongga-eia-jeolca-geoncug-heoga-jeolca-geoncug-he&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -10683,57 +10681,83 @@
     {
       "elementId": "C-015",
       "title": "상기 문서들의 원본 링크",
-      "kind": null,
-      "cardClicked": null,
+      "kind": "facts",
+      "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": null,
-      "recomputed": null,
+      "cardValueVerified": false,
+      "recomputed": {
+        "status": "match",
+        "computed": 20,
+        "expected": 20,
+        "expectedScale": null,
+        "rows": 21,
+        "note": "entity rows (1 excluded as the rule states)"
+      },
       "detailAnalysisFit": null,
       "analysisFit": {
-        "pass": null,
-        "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "kind": "facts",
+        "expected": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "found": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "항목별 내용과 기준"
+        ]
       },
       "controlsVerified": null,
-      "tableValuesVerified": null,
+      "tableValuesVerified": true,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
-      "remainingIssue": [],
+      "remainingIssue": [
+        "card value 20건 (건) not stated as such on the detail"
+      ],
       "notApplicable": [
-        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderSearch": {
-          "searchTerm": "상기 문서들의 원본 링크",
-          "cards": 0
+        "finderHeadline": "20건",
+        "finderStatusBadge": "",
+        "title": "재생에너지 법령 원문 링크",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=sanggi-munseodeulyi-weonbon-ringkeu&country=VNM&from=explorer&detailLayers=all",
+        "analysisFit": {
+          "kind": "facts",
+          "expected": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "found": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "항목별 내용과 기준"
+          ]
         },
-        "exclusionNotice": {
-          "snapshot": {
-            "page": true,
-            "notice": true,
-            "decision": "제공 대상 제외(데이터 명세서 검토)",
-            "reason": "법령 원문 링크는 각 데이터의 원문 링크로 통합해 별도 항목으로 제공하지 않음",
-            "decidedAt": "2026-09-18",
-            "charts": 0,
-            "tables": 0,
-            "downloadLinks": 0,
-            "analysisRoot": false
-          },
-          "verdict": {
-            "pass": true,
-            "problems": []
-          }
+        "table": {
+          "status": "match",
+          "table": "항목별 내용과 기준",
+          "cell": "row count 20",
+          "key": "row-count"
         }
       },
-      "statusChecks": {
-        "absentFromFinder": true,
-        "exclusionNoticePresent": true,
-        "noticeMatchesDecision": true,
-        "chartCount0": true,
-        "downloadLinks0": true
-      }
+      "internalWording": null,
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "C-016",
@@ -10818,7 +10842,7 @@
           "지역 선택=전체 성·시 비교",
           "기간=2025-2030"
         ],
-        "url": "?view=data&element=jaesaengeneoji-balju-mic-hwagdae-gyehoeg-gugga-re-yongryang-mogpyo-ibcal-iljeong-yejeong-j&country=VNM&from=explorer&measure=measure-1f93f6946b11&period=2025-2030",
+        "url": "?view=data&element=jaesaengeneoji-balju-mic-hwagdae-gyehoeg-gugga-re-yongryang-mogpyo-ibcal-iljeong-yejeong-j&country=VNM&from=explorer&measure=measure-1f93f6946b11&period=2025-2030&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "bars",
@@ -10931,7 +10955,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=jaesaengeneoji-tuja-insentibeu-insentibeu-yuhyeong-fit-fip-rps-seje-bojogeum-nesmiteoring&country=VNM&from=explorer",
+        "url": "?view=data&element=jaesaengeneoji-tuja-insentibeu-insentibeu-yuhyeong-fit-fip-rps-seje-bojogeum-nesmiteoring&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -11029,7 +11053,7 @@
         "selectors": [
           "계획 연도=2050"
         ],
-        "url": "?view=data&element=jungjanggi-eneoji-jeonmang-jeonmang-gigwan-iea-hyeonji-jeongbu-jeonmang-sinariomyeong-eneo&country=VNM&from=explorer&year=2050",
+        "url": "?view=data&element=jungjanggi-eneoji-jeonmang-jeonmang-gigwan-iea-hyeonji-jeongbu-jeonmang-sinariomyeong-eneo&country=VNM&from=explorer&year=2050&detailLayers=all",
         "cardValue": "293,088~295,646 MW = text-1:LI: 태양광 293,088~295,646 MW",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -11157,7 +11181,7 @@
           "자료 구분=전체",
           "기준일=2026-08-10"
         ],
-        "url": "?view=data&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&country=VNM&from=explorer",
+        "url": "?view=data&element=tanso-sijang-beobryul-yesan-tansose-doib-yeobu-tansose-seyul-ets-doib-yeobu-ets-daesang-bu&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "479개소 = text-107:LI: Hồ Chí Minh479개소",
         "analysisFit": {
           "kind": "bars",
@@ -11214,7 +11238,7 @@
       "analysisFit": {
         "pass": null,
         "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11233,9 +11257,9 @@
           "snapshot": {
             "page": true,
             "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 데이터 없음",
-            "decidedAt": "2026-09-23",
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
             "charts": 0,
             "tables": 0,
             "downloadLinks": 0,
@@ -11249,7 +11273,8 @@
       },
       "statusChecks": {
         "absentFromFinder": true,
-        "exclusionNoticePresent": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
         "noticeMatchesDecision": true,
         "chartCount0": true,
         "downloadLinks0": true
@@ -11258,20 +11283,18 @@
     {
       "elementId": "C-021",
       "title": "VCM 프로젝트 파이프라인",
-      "kind": "status",
-      "cardClicked": true,
+      "kind": null,
+      "cardClicked": null,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
       "cardValueVerified": null,
-      "recomputed": {
-        "status": "not-applicable"
-      },
+      "recomputed": null,
       "detailAnalysisFit": null,
       "analysisFit": {
         "pass": null,
-        "kind": "status-v159",
-        "reason": "⓪ status element: judged by statusNoticePresent · chartCount0 · cardShowsStatus"
+        "kind": "excluded-v156",
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11279,63 +11302,39 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardValueVerified: status screen (checked for the status wording only)",
-        "detailAnalysisFit: card carries no selection",
-        "cardValueVerified · detailAnalysisFit · analysisFit: ⓪ status element (V159)",
-        "tableValuesVerified: status screen, no values",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
       ],
       "evidence": {
-        "finderHeadline": "",
-        "finderStatusBadge": "미입고",
-        "title": "자발적 탄소시장(VCM) 사업 파이프라인",
-        "heading": "",
-        "selectors": [],
-        "url": "?view=data&element=vcm-peurojegteu-paipeurain&country=VNM&from=explorer",
-        "analysisFit": {
-          "kind": "status",
-          "expected": [
-            "status wording"
-          ],
-          "found": [
-            "status wording"
-          ],
-          "missing": [],
-          "pass": true,
-          "headings": []
+        "finderSearch": {
+          "searchTerm": "VCM 프로젝트 파이프라인",
+          "cards": 0
         },
-        "statusNotice": {
-          "count": 1,
-          "rows": [
-            {
-              "label": "결정",
-              "value": "미입고"
-            },
-            {
-              "label": "사유",
-              "value": "기재된 사유 없음"
-            },
-            {
-              "label": "결정일",
-              "value": "기재된 결정일 없음"
-            }
-          ],
-          "charts": 0
-        },
-        "table": {
-          "status": "not-applicable",
-          "reason": "status screen, no values"
+        "exclusionNotice": {
+          "snapshot": {
+            "page": true,
+            "notice": true,
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
+            "charts": 0,
+            "tables": 0,
+            "downloadLinks": 0,
+            "analysisRoot": false
+          },
+          "verdict": {
+            "pass": true,
+            "problems": []
+          }
         }
       },
-      "internalWording": null,
       "statusChecks": {
-        "statusNoticePresent": true,
+        "absentFromFinder": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
+        "noticeMatchesDecision": true,
         "chartCount0": true,
-        "cardShowsStatus": true
-      },
-      "detailTilesAbsent": true,
-      "detailTilesBounded": true
+        "downloadLinks0": true
+      }
     },
     {
       "elementId": "C-022",
@@ -11416,7 +11415,7 @@
           "기준일=2026-08-10",
           "지역=Hồ Chí Minh"
         ],
-        "url": "?view=data&element=tansosijang-junbido&country=VNM&from=explorer&dim.registryRegion=VN79",
+        "url": "?view=data&element=tansosijang-junbido&country=VNM&from=explorer&dim.registryRegion=VN79&detailLayers=all",
         "cardValue": "479개소 = text-0:P: 법령에 수록된 34개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다. Hồ Chí Minh의 대상 시설은 479개소입니다. 기준일 2026-08-10 지역 전체 지역 Hồ Chí Minh Tây Ninh Đồng Nai Bắc Ninh Phú Thọ Hưng Yên N",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -11461,18 +11460,20 @@
     {
       "elementId": "C-023",
       "title": "한계저감비용(MAC)",
-      "kind": null,
-      "cardClicked": null,
+      "kind": "status",
+      "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
       "cardValueVerified": null,
-      "recomputed": null,
+      "recomputed": {
+        "status": "not-applicable"
+      },
       "detailAnalysisFit": null,
       "analysisFit": {
         "pass": null,
-        "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "kind": "status-v159",
+        "reason": "status-notice element: judged by statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -11480,38 +11481,52 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+        "cardValueVerified: status screen (checked for the status wording only)",
+        "detailAnalysisFit: card carries no selection",
+        "cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)",
+        "tableValuesVerified: status screen, no values",
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderSearch": {
-          "searchTerm": "한계저감비용(MAC)",
-          "cards": 0
+        "finderHeadline": "",
+        "finderStatusBadge": "데이터 준비 중",
+        "title": "한계저감비용(MAC)",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=hangyejeogambiyong-mac&country=VNM&from=explorer&detailLayers=all",
+        "analysisFit": {
+          "kind": "status",
+          "expected": [
+            "status wording"
+          ],
+          "found": [
+            "status wording"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": []
         },
-        "exclusionNotice": {
-          "snapshot": {
-            "page": true,
-            "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
-            "decidedAt": "2026-09-23",
-            "charts": 0,
-            "tables": 0,
-            "downloadLinks": 0,
-            "analysisRoot": false
-          },
-          "verdict": {
-            "pass": true,
-            "problems": []
-          }
+        "statusNotice": {
+          "count": 1,
+          "text": "데이터 준비 중 — 자료가 입고되면 분석 화면을 제공합니다.",
+          "metaLines": 0,
+          "charts": 0
+        },
+        "table": {
+          "status": "not-applicable",
+          "reason": "status screen, no values"
         }
       },
+      "internalWording": null,
       "statusChecks": {
-        "absentFromFinder": true,
-        "exclusionNoticePresent": true,
-        "noticeMatchesDecision": true,
+        "statusNoticePresent": true,
+        "noDecisionMeta": true,
         "chartCount0": true,
-        "downloadLinks0": true
-      }
+        "cardShowsStatus": true
+      },
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "C-024",
@@ -11594,7 +11609,7 @@
         "selectors": [
           "자료 구분=전체"
         ],
-        "url": "?view=data&element=redd-hyeonhwang-redd-jeonryag-surib-yeobu-frel-jecul-yeobu-frel-jeculnyeon-gyeolgwagibanji&country=VNM&from=explorer",
+        "url": "?view=data&element=redd-hyeonhwang-redd-jeonryag-surib-yeobu-frel-jecul-yeobu-frel-jeculnyeon-gyeolgwagibanji&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -11712,7 +11727,7 @@
           "연도=전체 기간",
           "등록 표준·분야=전체"
         ],
-        "url": "?view=data&element=tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&country=VNM&from=explorer",
+        "url": "?view=data&element=tansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "388건 = text-0:P: 검색어 연도 전체 기간 2025년 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2009년 등록 표준·분야 전체 ART TREES CDM GCC Gold Standard J",
         "analysisFit": {
           "kind": "bars",
@@ -11823,7 +11838,7 @@
         "title": "단위 사업당 설비투자비(CAPEX)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=danwi-saeobdang-capex&country=VNM&from=explorer&measure=measure-f941a0397abc&year=2024&dim.category=바이오에너지+기술+(Biomass)&dim.detail=총투자액÷설비용량+중앙값",
+        "url": "?view=data&element=danwi-saeobdang-capex&country=VNM&from=explorer&measure=measure-f941a0397abc&year=2024&dim.category=바이오에너지+기술+(Biomass)&dim.detail=총투자액÷설비용량+중앙값&detailLayers=all",
         "cardValue": "2,400 USD/kW = text-21:TR: 바이오에너지 미제공 2,400 미제공 대수력(50MW 초과) 98 1,156 1,961 소수력(50MW 미만) 787 1,103 1,867 태양광 724 1,004 1,318 폐자원 에너지 미제공 6,379 미제공 풍력 913 1,791 3,333 2024년 · 단위 USD/kW · 하",
         "fit": "selection \"바이오에너지 기술 (Biomass)\" not shown; selection \"총투자액÷설비용량 중앙값\" not shown; measure \"단위 사업당 CAPEX\" not named",
         "analysisFit": {
@@ -11908,7 +11923,7 @@
         "selectors": [
           "분류 선택=바이오에너지 기술"
         ],
-        "url": "?view=data&element=sijang-seongjangryul&country=VNM&from=explorer&measure=measure-62de91e6eba5&year=2030&dim.category=바이오에너지+기술",
+        "url": "?view=data&element=sijang-seongjangryul&country=VNM&from=explorer&measure=measure-62de91e6eba5&year=2030&dim.category=바이오에너지+기술&detailLayers=all",
         "cardValue": "22.8 % = text-3:B: 단위: % 가로: 시장 성장률 세로: 기술 분야 단위: % 바이오에너지 기술 22.8 % 표로 보기 · 시장 성장률 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12007,7 +12022,7 @@
           "분류 선택=바이오에너지 기술",
           "세부 분류 선택=1MW당 20년 누적 온실가스 감축량"
         ],
-        "url": "?view=data&element=yesang-gamcugryang&country=VNM&from=explorer&measure=measure-d3b4eabbfb70&year=2023&dim.category=바이오에너지+기술&dim.detail=1MW당+20년+누적+온실가스+감축량",
+        "url": "?view=data&element=yesang-gamcugryang&country=VNM&from=explorer&measure=measure-d3b4eabbfb70&year=2023&dim.category=바이오에너지+기술&dim.detail=1MW당+20년+누적+온실가스+감축량&detailLayers=all",
         "cardValue": "22,500 tCO2/20년·MW = text-3:B: 단위: tCO2/20년·MW 가로: 예상 감축량 세로: 발전기술 단위: tCO2/20년·MW 바이오에너지 기술 22,500 tCO2/20년·MW 표로 보기 · 예상 감축량 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12117,7 +12132,7 @@
         "selectors": [
           "분류 선택=바이오에너지 기술(고 시나리오)"
         ],
-        "url": "?view=data&element=keuredis-gagyeog-yeondong-suigseong&country=VNM&from=explorer&measure=measure-efd3a678cdd8&year=2026&dim.category=바이오에너지+기술(고+시나리오)",
+        "url": "?view=data&element=keuredis-gagyeog-yeondong-suigseong&country=VNM&from=explorer&measure=measure-efd3a678cdd8&year=2026&dim.category=바이오에너지+기술(고+시나리오)&detailLayers=all",
         "cardValue": "24.4 % = text-3:B: 단위: % 가로: 크레딧 가격 연동 수익성 세로: 발전기술 단위: % 바이오에너지 기술(고 시나리오) 24.4 % 표로 보기 · 크레딧 가격 연동 수익성 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12215,7 +12230,7 @@
         "selectors": [
           "예산 기준=총 기후변화 지출"
         ],
-        "url": "?view=data&element=gamcug-jeogeung-gubunbyeol-yesan-baebun-biyul&country=VNM&from=explorer&measure=measure-a7c43c49fe43&year=2013&dim.budgetBasis=total-climate",
+        "url": "?view=data&element=gamcug-jeogeung-gubunbyeol-yesan-baebun-biyul&country=VNM&from=explorer&measure=measure-a7c43c49fe43&year=2013&dim.budgetBasis=total-climate&detailLayers=all",
         "cardValue": "88 % = text-10:P: 주 분석 대표 예산 배분 구조 2010–2013년 총 기후변화 대응 지출 기준 가로: 배분 비중(누적 막대 길이) 세로: 지출 항목 단위: % · 구성비 % 적응 88% 감축 2% 동시기여 10% 적응 88% 감축 2% 동시기여 10% CPEIR 2015의 동일한 총 기후변화 대응 지출",
         "compositionParts": "3/3 parts found",
         "fit": "selectors, heading and KPI state the selection",
@@ -12316,7 +12331,7 @@
           "세부 분류 선택=국가예산 계획액(dự toán) 연도별",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=gihu-gwanryeon-jose-suib&country=VNM&from=explorer&measure=measure-d4d5bb18840e&year=2024&dim.category=환경보호세(EPT)&dim.detail=국가예산+계획액(dự+toán)+연도별",
+        "url": "?view=data&element=gihu-gwanryeon-jose-suib&country=VNM&from=explorer&measure=measure-d4d5bb18840e&year=2024&dim.category=환경보호세(EPT)&dim.detail=국가예산+계획액(dự+toán)+연도별&detailLayers=all",
         "cardValue": "371,010억 VND = text-28:TR: 기후 관련 조세 수입 · 환경보호세(EPT) — 국가예산 계획액(dự toán) 연도별 37,101,000,000,000 VND 2024 -26,787,000,000,000 VND 2024 · 항목별 값 항목 값 단위 시점 전년 대비 기후 관련 조세 수입 · 2019~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12429,7 +12444,7 @@
           "분류 선택=전체",
           "연도 선택=2022"
         ],
-        "url": "?view=data&element=gihuyesantaeging-cbt-climate-budget-tagging-doib-yeobu-mic-sujun&country=VNM&from=explorer&measure=measure-f23fdc3a02fd&year=2022",
+        "url": "?view=data&element=gihuyesantaeging-cbt-climate-budget-tagging-doib-yeobu-mic-sujun&country=VNM&from=explorer&measure=measure-f23fdc3a02fd&year=2022&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "facts",
@@ -12557,7 +12572,7 @@
           "연도 선택=2020",
           "주관 부처별 기후 예산 규모 % 정렬=자료 순서"
         ],
-        "url": "?view=data&element=jugwan-buceobyeol-gihu-yesan-gyumo&country=VNM&from=explorer&measure=measure-1658538c67b4&year=2020",
+        "url": "?view=data&element=jugwan-buceobyeol-gihu-yesan-gyumo&country=VNM&from=explorer&measure=measure-1658538c67b4&year=2020&detailLayers=all",
         "cardValue": "80 % = text-0:STRONG: 단위: % 정렬 자료 순서 높은 값부터 낮은 값부터 가로: 주관 부처별 기후 예산 규모 세로: 부처 단위: % 5개 부처 기후예산 비중 18 % 6개 부처 기후지출 비중 상한(max) 38 % 6개 부처 기후지출 비중 하한(min) 26 % MARD+MOT 합산 비중(CPEIR 2015",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12678,7 +12693,7 @@
         "selectors": [
           "항목 선택=기후대응 정부 예산 · %"
         ],
-        "url": "?view=data&element=gihudaeeung-gihugisul-gwanryeon-jeongbu-yesan-cong-jicul-gyumo-yeondobyeol-cui&country=VNM&from=explorer&measure=measure-ec76b1280745&year=2013",
+        "url": "?view=data&element=gihudaeeung-gihugisul-gwanryeon-jeongbu-yesan-cong-jicul-gyumo-yeondobyeol-cui&country=VNM&from=explorer&measure=measure-ec76b1280745&year=2013&detailLayers=all",
         "cardValue": "0.1 % = text-7:B: 단위: % 가로: 기후대응 정부 예산 세로: 연도 단위: % GDP 대비 기후지출 비중 0.1 % 표로 보기 · 기후대응 정부 예산 · 1행",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12776,7 +12791,7 @@
           "분류 선택=총액",
           "연도 선택=2024"
         ],
-        "url": "?view=data&element=hwaseogyeonryo-bojogeum-gyumo&country=VNM&from=explorer&measure=measure-465d4d66c9ba&year=2024&dim.category=총액",
+        "url": "?view=data&element=hwaseogyeonryo-bojogeum-gyumo&country=VNM&from=explorer&measure=measure-465d4d66c9ba&year=2024&dim.category=총액&detailLayers=all",
         "cardValue": "387억 USD = text-18:TR: 화석연료 보조금 규모 · 총액 — 연도별 38,700,000,000 USD 2024 비교 자료 없음 2024 · 항목별 값 항목 값 단위 시점 전년 대비 화석연료 보조금 규모 · 2021~2024년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -12886,7 +12901,7 @@
         "selectors": [
           "공여자=세계은행그룹"
         ],
-        "url": "?view=data&element=gaedogug-nae-gaggugbyeol-oda-gyumo&country=VNM&from=explorer&measure=measure-8149e560b53b&year=2024",
+        "url": "?view=data&element=gaedogug-nae-gaggugbyeol-oda-gyumo&country=VNM&from=explorer&measure=measure-8149e560b53b&year=2024&detailLayers=all",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "line",
@@ -12988,7 +13003,7 @@
           "연도=전체 기간",
           "기술분야=전체"
         ],
-        "url": "?view=data&element=gyeongjaenggug-mingangieobyi-gaedogug-jincul-hyeonhwang-gieobmyeong-gugjeog-jincul-daesang&country=VNM&from=explorer",
+        "url": "?view=data&element=gyeongjaenggug-mingangieobyi-gaedogug-jincul-hyeonhwang-gieobmyeong-gugjeog-jincul-daesang&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "22곳 = text-0:P: 검색어 연도 전체 기간 2021년 2020년 2019년 기술분야 전체 효율(모듈) RE(복합) RE(태양광) RE(풍력) RE(해상풍력) 선택 초기화 전체 자료 · 진출 사례 22건 / 전체 22건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 진출 사례를 집계하며, 통화가 확",
         "analysisFit": {
           "kind": "bars",
@@ -13093,7 +13108,7 @@
           "세부 분류 선택=차원(dimension) 점수",
           "GGGI Green Growth Index 점 정렬=자료 순서"
         ],
-        "url": "?view=data&element=gggi-green-growth-index-nogsaegseongjangjisu&country=VNM&from=explorer&measure=measure-36c8b59e695d&year=2024&dim.detail=차원(dimension)+점수",
+        "url": "?view=data&element=gggi-green-growth-index-nogsaegseongjangjisu&country=VNM&from=explorer&measure=measure-36c8b59e695d&year=2024&dim.detail=차원(dimension)+점수&detailLayers=all",
         "cardValue": "72.1 점 = text-3:B: 단위: 점 정렬 자료 순서 높은 값부터 낮은 값부터 가로: GGGI Green Growth Index 세로: 부문·차원 단위: 점 효율 · 지속가능 자원이용(ESRU) 54.6 점 녹색경제 기회(GEO) 50.23 점 자연자본 보호(NCP) 62.59 점 사회 통합(Social Incl",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -13208,7 +13223,7 @@
           "연도=전체 기간",
           "분야·원조유형=전체"
         ],
-        "url": "?view=data&element=edcf-peurojegteu-peurojegteumyeong-suweongug-segteo-seungin-geumaeg-geumri-sanghwan-gigan&country=VNM&from=explorer",
+        "url": "?view=data&element=edcf-peurojegteu-peurojegteumyeong-suweongug-segteo-seungin-geumaeg-geumri-sanghwan-gigan&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "164건 = text-0:P: 전체 자료 · 사업 164건 / 전체 164건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 연도 전체 기간 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2009년 2008",
         "analysisFit": {
           "kind": "bars",
@@ -13314,7 +13329,7 @@
           "연도=전체 기간",
           "분야·원조유형=전체"
         ],
-        "url": "?view=data&element=oda-korea-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-koica-edcf-buceo-saeob-yuhyeong&country=VNM&from=explorer",
+        "url": "?view=data&element=oda-korea-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-koica-edcf-buceo-saeob-yuhyeong&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "650건 = text-0:P: 전체 자료 · 사업 기록 650건 / 전체 650건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 연도 전체 기간 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2",
         "analysisFit": {
           "kind": "bars",
@@ -13420,7 +13435,7 @@
           "연도=전체 기간",
           "분야·원조유형=전체"
         ],
-        "url": "?view=data&element=jijace-jeongbubuceo-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-buceo-jijacemyeong-sae&country=VNM&from=explorer",
+        "url": "?view=data&element=jijace-jeongbubuceo-peurojegteu-saeobmyeong-suweongug-sihaenggigwan-buceo-jijacemyeong-sae&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "232건 = text-0:P: 전체 자료 · 사업 기록 232건 / 전체 232건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 연도 전체 기간 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 분야·원조유형",
         "analysisFit": {
           "kind": "bars",
@@ -13526,7 +13541,7 @@
           "연도=전체 기간",
           "분야·입찰유형=전체"
         ],
-        "url": "?view=data&element=hangug-oda-gigwan-pcp-ibcal-hyeonhwang-saeobmyeong-daesanggug-baljugigwan-koica-edcf-buceo&country=VNM&from=explorer",
+        "url": "?view=data&element=hangug-oda-gigwan-pcp-ibcal-hyeonhwang-saeobmyeong-daesanggug-baljugigwan-koica-edcf-buceo&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "10건 = text-0:P: 검색어 연도 전체 기간 2026년 2025년 2023년 2021년 분야·입찰유형 전체 공공행정·디지털 과학기술 교육·디지털 도로교통·평가 스마트시티 스마트시티·기자재 에너지·농촌개발 전 분야 직업교육훈련 환경·수처리 선택 초기화 전체 자료 · 사업 10건 / 전체 10건 아래 현황·차트",
         "analysisFit": {
           "kind": "facts",
@@ -13664,7 +13679,7 @@
           "연도=전체 기간",
           "분야·기금=전체"
         ],
-        "url": "?view=data&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&country=VNM&from=explorer&measure=measure-2aa34c218045",
+        "url": "?view=data&element=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye&country=VNM&from=explorer&measure=measure-2aa34c218045&detailLayers=all",
         "cardValue": "1,135만 USD = text-1:TR: Adaptation Fund 프로젝트 · 승인액 합계 — 전 사업 승인액 단순합 23,244,067 USD 미기재 Adaptation Fund 프로젝트 · 집행액 합계 — 전 사업 집행액 단순합 10,503,442 USD 미기재 Adaptation Fund 프로젝트 · 베트남 단독사업 ",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -13799,7 +13814,7 @@
           "연도=전체 기간",
           "기술분야=전체"
         ],
-        "url": "?view=data&element=ctcn-gisuljiweon-yoceong-yoceong-gugga-nde-gigwanmyeong-gisul-bunya-sectors-jiweon-dangye&country=VNM&from=explorer",
+        "url": "?view=data&element=ctcn-gisuljiweon-yoceong-yoceong-gugga-nde-gigwanmyeong-gisul-bunya-sectors-jiweon-dangye&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "10건 = text-0:P: 검색어 연도 전체 기간 2025년 2023년 2022년 2021년 2020년 2019년 2016년 2015년 기술분야 전체 원천 미기재 Biomass power Cement production Integrated solid waste management 선택 초기화 전체 자료 · 기술지",
         "analysisFit": {
           "kind": "bars",
@@ -13913,7 +13928,7 @@
           "연도=전체 기간",
           "분야·기금=전체"
         ],
-        "url": "?view=data&element=gcf-peurojegteu-peurojegteumyeong-ref-no-gugga-ingagigwan-ae-gcf-seungin-geumaeg-gongdongj&country=VNM&from=explorer",
+        "url": "?view=data&element=gcf-peurojegteu-peurojegteumyeong-ref-no-gugga-ingagigwan-ae-gcf-seungin-geumaeg-gongdongj&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "8건 = text-0:P: 검색어 연도 전체 기간 2026년 2024년 2020년 2018년 2016년 분야·기금 전체 Adaptation Cross-cutting Mitigation 선택 초기화 전체 자료 · 사업 8건 / 전체 8건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 사업을 집계하며, 통화",
         "analysisFit": {
           "kind": "facts",
@@ -14018,7 +14033,7 @@
           "연도=전체 기간",
           "분야·공여기관=전체"
         ],
-        "url": "?view=data&element=juyo-gugjegigu-mdb-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-undp-fao-u&country=VNM&from=explorer",
+        "url": "?view=data&element=juyo-gugjegigu-mdb-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-undp-fao-u&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "640건 = text-0:P: 전체 자료 · 지원 활동 640건 / 전체 640건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 연도 전체 기간 2026년 2025년 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2015년 2014년 2013년 2012년 2",
         "analysisFit": {
           "kind": "bars",
@@ -14124,7 +14139,7 @@
           "연도=전체 기간",
           "분야·투자유형=전체"
         ],
-        "url": "?view=data&element=mdb-dfi-ppp-tuja-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-ifc-deung-se&country=VNM&from=explorer",
+        "url": "?view=data&element=mdb-dfi-ppp-tuja-peurojegteu-peurojegteumyeong-suweongug-gongyeogigwan-wb-adb-ifc-deung-se&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "15건 = text-0:P: 검색어 연도 전체 기간 2025년 2024년 2023년 2020년 2017년 2016년 2014년 2012년 2009년 분야·투자유형 전체 14020 — 상하수도 기타 14022 — 위생(대규모) 14050 — 폐기물 관리·처리 15110 — 공공행정 기타 15110 — 중앙정부 행정 ",
         "analysisFit": {
           "kind": "bars",
@@ -14232,7 +14247,7 @@
           "연도=전체 기간",
           "기금·분야=전체"
         ],
-        "url": "?view=data&element=oda-mic-gihugigeum-gcf-gef-af-jaeweon-peurojegteumyeong-suweongug-gigeummyeong-gcf-gef-af&country=VNM&from=explorer",
+        "url": "?view=data&element=oda-mic-gihugigeum-gcf-gef-af-jaeweon-peurojegteumyeong-suweongug-gigeummyeong-gcf-gef-af&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "71건 = text-0:P: 검색어 연도 전체 기간 2026년 2025년 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2016년 2015년 2014년 2013년 2012년 2011년 2010년 2009년 2008년 2007년 2005년 2003년 2002년 2001년 1998년 199",
         "analysisFit": {
           "kind": "composition",
@@ -14287,57 +14302,107 @@
     {
       "elementId": "D-024",
       "title": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
-      "kind": null,
-      "cardClicked": null,
+      "kind": "facts",
+      "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
-      "cardValueVerified": null,
-      "recomputed": null,
+      "cardValueVerified": true,
+      "recomputed": {
+        "status": "match",
+        "computed": 7,
+        "expected": 7,
+        "expectedScale": null,
+        "rows": 12,
+        "note": "entity rows with 레코드구분=개별 (5 excluded as the rule states)"
+      },
       "detailAnalysisFit": null,
       "analysisFit": {
-        "pass": null,
-        "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "kind": "facts",
+        "expected": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "found": [
+          "register count stated",
+          "list, table, timeline or directory"
+        ],
+        "missing": [],
+        "pass": true,
+        "headings": [
+          "주요 분야·기금 구성",
+          "연도별 투자 거래 수",
+          "투자 라운드별 투자 거래 수",
+          "투자 거래 목록"
+        ]
       },
-      "controlsVerified": null,
-      "tableValuesVerified": null,
+      "controlsVerified": true,
+      "tableValuesVerified": false,
       "mapHandoffVerified": null,
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+        "selectionUrlPreserved: card carries no selection",
+        "detailAnalysisFit: card carries no selection",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderSearch": {
-          "searchTerm": "VC·임팩트 투자 현황",
-          "cards": 0
+        "finderHeadline": "7건",
+        "finderStatusBadge": "",
+        "title": "기후기술 벤처·임팩트 투자",
+        "heading": "",
+        "selectors": [
+          "연도=전체 기간",
+          "기후 분야·투자 라운드=전체"
+        ],
+        "url": "?view=data&element=vc-impaegteu-tuja-hyeonhwang-tuja-raundeu-seed-series-a-c-tujajamyeong-tuja-geumaeg-daesan&country=VNM&from=explorer&detailLayers=all",
+        "cardValue": "7건 = text-0:P: 검색어 연도 전체 기간 2026년 2025년 2024년 2023년 기후 분야·투자 라운드 전체 모빌리티(EV) AgTech RE(태양광) 선택 초기화 전체 자료 · 투자 거래 7건 / 전체 7건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 투자 거래를 집계하며, 통화가 확인된",
+        "analysisFit": {
+          "kind": "facts",
+          "expected": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "found": [
+            "register count stated",
+            "list, table, timeline or directory"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": [
+            "주요 분야·기금 구성",
+            "연도별 투자 거래 수",
+            "투자 라운드별 투자 거래 수",
+            "투자 거래 목록"
+          ]
         },
-        "exclusionNotice": {
-          "snapshot": {
-            "page": true,
-            "notice": true,
-            "decision": "제공 대상 제외(데이터 명세서 검토)",
-            "reason": "확인된 원자료가 없어 제공 대상에서 제외",
-            "decidedAt": "2026-09-18",
-            "charts": 0,
-            "tables": 0,
-            "downloadLinks": 0,
-            "analysisRoot": false
+        "table": {
+          "status": "row-count-differs",
+          "reason": "no table states or holds 7 rows (3 rows, 4 rows, 6 rows, 3 rows, 12 rows)",
+          "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
+        },
+        "controls": [
+          {
+            "control": "연도",
+            "from": "전체 기간",
+            "to": "2026년",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": true
           },
-          "verdict": {
-            "pass": true,
-            "problems": []
+          {
+            "control": "기후 분야·투자 라운드",
+            "from": "전체",
+            "to": "모빌리티(EV)",
+            "changed": true,
+            "numbersChanged": true,
+            "subjectChanged": false
           }
-        }
+        ]
       },
-      "statusChecks": {
-        "absentFromFinder": true,
-        "exclusionNoticePresent": true,
-        "noticeMatchesDecision": true,
-        "chartCount0": true,
-        "downloadLinks0": true
-      }
+      "internalWording": null,
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "D-025",
@@ -14395,7 +14460,7 @@
           "연도=전체 기간",
           "섹터·투자유형=전체"
         ],
-        "url": "?view=data&element=mingan-inpeura-tuja-ppi-peurojegteumyeong-gugga-segteo-jeonryeog-sudo-gyotong-tongsin-tuja&country=VNM&from=explorer",
+        "url": "?view=data&element=mingan-inpeura-tuja-ppi-peurojegteumyeong-gugga-segteo-jeonryeog-sudo-gyotong-tongsin-tuja&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "132건 = text-0:P: 검색어 연도 전체 기간 2024년 2023년 2022년 2021년 2020년 2019년 2018년 2017년 2016년 2014년 2012년 2011년 2010년 2009년 2008년 2007년 2005년 2003년 2002년 2001년 섹터·투자유형 전체 Energy/Electrici",
         "analysisFit": {
           "kind": "bars",
@@ -14501,7 +14566,7 @@
           "연도=전체 기간",
           "섹터·보증유형=전체"
         ],
-        "url": "?view=data&element=miga-jeongcijeog-riseukeu-bojeung-peurojegteumyeong-gugga-segteo-bojeung-geumaeg-bojeung-y&country=VNM&from=explorer",
+        "url": "?view=data&element=miga-jeongcijeog-riseukeu-bojeung-peurojegteumyeong-gugga-segteo-bojeung-geumaeg-bojeung-y&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "9건 = text-0:P: 검색어 연도 전체 기간 2018년 2016년 2014년 2013년 2003년 2001년 1999년 섹터·보증유형 전체 교통 전력 제조 통신 화학 선택 초기화 전체 자료 · 보증사업 9건 / 전체 9건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 보증사업을 집계하며, 통화가 확",
         "analysisFit": {
           "kind": "bars",
@@ -14605,7 +14670,7 @@
         "selectors": [
           "기관 구분 선택=전체"
         ],
-        "url": "?view=data&element=ctcn-nde-guggajijeonggigu-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-focal-point-jigha&country=VNM&from=explorer",
+        "url": "?view=data&element=ctcn-nde-guggajijeonggigu-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-focal-point-jigha&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "18곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 18곳",
         "analysisFit": {
           "kind": "facts",
@@ -14699,7 +14764,7 @@
         "title": "감축사업 승인기관(DNA)",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=dna-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-seungin&country=VNM&from=explorer",
+        "url": "?view=data&element=dna-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-seungin&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "1곳 = analysis-0:HEADER: 기관·연락망 기관 디렉터리 · 1곳",
         "analysisFit": {
           "kind": "facts",
@@ -14784,7 +14849,7 @@
         "selectors": [
           "역할 선택=전체"
         ],
-        "url": "?view=data&element=gcf-nda-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-jeo&country=VNM&from=explorer",
+        "url": "?view=data&element=gcf-nda-guggajijeonggigwan-gugga-gigwanmyeong-sosog-buceo-damdangjamyeong-jigham-imeil-jeo&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "8건 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 기관 3곳 · 담당자 8명",
         "analysisFit": {
           "kind": "facts",
@@ -14906,7 +14971,7 @@
           "기관 유형 선택=전체",
           "상태 선택=전체"
         ],
-        "url": "?view=data&element=gugjegigu-hyeonjisamuso-damdangja-gigwanmyeong-undp-unep-unido-fao-wb-adb-giz-jica-koica-d&country=VNM&from=explorer",
+        "url": "?view=data&element=gugjegigu-hyeonjisamuso-damdangja-gigwanmyeong-undp-unep-unido-fao-wb-adb-giz-jica-koica-d&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "17곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 17곳",
         "analysisFit": {
           "kind": "bars",
@@ -15057,7 +15122,7 @@
           "도시 선택=전체",
           "기관 유형 선택=전체"
         ],
-        "url": "?view=data&element=daehag-yeongugigwan-ngo-gigwanmyeong-gigwan-yuhyeong-daehag-yeonguso-singkeutaengkeu-ngo-s&country=VNM&from=explorer",
+        "url": "?view=data&element=daehag-yeongugigwan-ngo-gigwanmyeong-gigwan-yuhyeong-daehag-yeonguso-singkeutaengkeu-ngo-s&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "20곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 20곳",
         "analysisFit": {
           "kind": "bars",
@@ -15182,7 +15247,7 @@
         "title": "현지 기후사업 투자기관",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer",
+        "url": "?view=data&element=hyeonji-tujaja-neteuweokeu-gigwanmyeong-gigwan-yuhyeong-vc-pe-dfi-sangeobeunhaeng-impaegte&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "15곳 = text-0:P: 기관 수 15곳 가운데 베트남에 사무소를 둔 8곳은 도시 단위로 지도에 표시하고, 본부만 확인되는 7곳은 베트남 투자 실적이 있는 해외 소재 기관으로 따로 둡니다. 기관을 누르면 카드가 열립니다. 기관 수15곳 베트남 소재 · 지도 표시8곳 해외 소재(베트남 투자 실적)7곳 도시별 기관",
         "analysisFit": {
           "kind": "bars",
@@ -15268,7 +15333,7 @@
         "selectors": [
           "분류 선택=전체"
         ],
-        "url": "?view=data&element=onsilgaseu-sanjeong-mrv-cegye-ghg-inbentori-jagseong-yeogryang-tier-1-2-3-gugga-rejiseuteu&country=VNM&from=explorer",
+        "url": "?view=data&element=onsilgaseu-sanjeong-mrv-cegye-ghg-inbentori-jagseong-yeogryang-tier-1-2-3-gugga-rejiseuteu&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "bars",
           "expected": [
@@ -15320,7 +15385,7 @@
       "analysisFit": {
         "pass": null,
         "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15339,9 +15404,9 @@
           "snapshot": {
             "page": true,
             "notice": true,
-            "decision": "제공 대상 제외(데이터 명세서 검토)",
-            "reason": "논문·특허 검색 기준이 검증되지 않아 제공 대상에서 제외",
-            "decidedAt": "2026-09-18",
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
             "charts": 0,
             "tables": 0,
             "downloadLinks": 0,
@@ -15355,7 +15420,8 @@
       },
       "statusChecks": {
         "absentFromFinder": true,
-        "exclusionNoticePresent": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
         "noticeMatchesDecision": true,
         "chartCount0": true,
         "downloadLinks0": true
@@ -15412,7 +15478,7 @@
         "title": "STEM 졸업 비중·연구자 수",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=stem-joleobja-su-yeonguja-su&country=VNM&from=explorer&measure=measure-33733e6335a3&year=2016",
+        "url": "?view=data&element=stem-joleobja-su-yeonguja-su&country=VNM&from=explorer&measure=measure-33733e6335a3&year=2016&detailLayers=all",
         "cardValue": "31.2 % = text-0:P: 성별 STEM 전공 졸업 비중 각 성별 고등교육 졸업자 중 과학·기술·공학·수학 전공자가 차지하는 비율입니다. STEM 졸업자의 남녀 구성비가 아니므로 합계가 100%가 되지 않습니다. 2016년 · 고등교육 졸업자 중 STEM 전공 비중 가로: 2016년 · 고등교육 졸업자 중 STE",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -15499,7 +15565,7 @@
           "항목 선택=GERD · %",
           "연도 선택=2023"
         ],
-        "url": "?view=data&element=unesco-uis-r-d-jicul-gerd-wipo-hyeogsinjisu-gii&country=VNM&from=explorer&measure=measure-6f94f67e75e4&year=2023",
+        "url": "?view=data&element=unesco-uis-r-d-jicul-gerd-wipo-hyeogsinjisu-gii&country=VNM&from=explorer&measure=measure-6f94f67e75e4&year=2023&detailLayers=all",
         "cardValue": "0.415 % = text-38:TR: GERD · GDP 대비 0.4146 % 2023 비교 자료 없음 2023 · 항목별 값 항목 값 단위 시점 전년 대비 GERD · 2002~2023년 추이",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
@@ -15554,18 +15620,20 @@
     {
       "elementId": "E-011",
       "title": "기술준비수준(TRL)",
-      "kind": null,
-      "cardClicked": null,
+      "kind": "status",
+      "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
       "cardValueVerified": null,
-      "recomputed": null,
+      "recomputed": {
+        "status": "not-applicable"
+      },
       "detailAnalysisFit": null,
       "analysisFit": {
         "pass": null,
-        "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "kind": "status-v159",
+        "reason": "status-notice element: judged by statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15573,38 +15641,52 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+        "cardValueVerified: status screen (checked for the status wording only)",
+        "detailAnalysisFit: card carries no selection",
+        "cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)",
+        "tableValuesVerified: status screen, no values",
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderSearch": {
-          "searchTerm": "기술준비수준(TRL)",
-          "cards": 0
+        "finderHeadline": "",
+        "finderStatusBadge": "데이터 준비 중",
+        "title": "네트워크 준비지수(NRI)",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=gisuljunbisujun-trl&country=VNM&from=explorer&detailLayers=all",
+        "analysisFit": {
+          "kind": "status",
+          "expected": [
+            "status wording"
+          ],
+          "found": [
+            "status wording"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": []
         },
-        "exclusionNotice": {
-          "snapshot": {
-            "page": true,
-            "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 명세서상 NRI 대체 예정이나 자료 미입고",
-            "decidedAt": "2026-09-23",
-            "charts": 0,
-            "tables": 0,
-            "downloadLinks": 0,
-            "analysisRoot": false
-          },
-          "verdict": {
-            "pass": true,
-            "problems": []
-          }
+        "statusNotice": {
+          "count": 1,
+          "text": "데이터 준비 중 — 자료가 입고되면 분석 화면을 제공합니다.",
+          "metaLines": 0,
+          "charts": 0
+        },
+        "table": {
+          "status": "not-applicable",
+          "reason": "status screen, no values"
         }
       },
+      "internalWording": null,
       "statusChecks": {
-        "absentFromFinder": true,
-        "exclusionNoticePresent": true,
-        "noticeMatchesDecision": true,
+        "statusNoticePresent": true,
+        "noDecisionMeta": true,
         "chartCount0": true,
-        "downloadLinks0": true
-      }
+        "cardShowsStatus": true
+      },
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "E-012",
@@ -15661,7 +15743,7 @@
           "E-012 성별 선택=전체",
           "E-012 기준연도 선택=2024년"
         ],
-        "url": "?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer&measure=occupation_employment_count&sex=total&year=2024",
+        "url": "?view=data&element=jiggunbyeol-jongsaja-su-jiggunbyeol-imgeum&country=VNM&from=explorer&measure=occupation_employment_count&sex=total&year=2024&detailLayers=all",
         "fit": "measure \"총 취업자 수\" not named",
         "analysisFit": {
           "kind": "level",
@@ -15720,18 +15802,20 @@
     {
       "elementId": "E-013",
       "title": "운영·유지보수 역량[숙련 기술인력 가용성, 부품 조달 가능성(국내생산/수입의존), 예방정비 체계 수준, A/S 인프라(서비스센터/원격모니터링 유무), 과거 유사시설 O&M 실적]",
-      "kind": null,
-      "cardClicked": null,
+      "kind": "status",
+      "cardClicked": true,
       "homeCardClicked": null,
       "selectionUrlPreserved": null,
       "screenLoaded": true,
       "cardValueVerified": null,
-      "recomputed": null,
+      "recomputed": {
+        "status": "not-applicable"
+      },
       "detailAnalysisFit": null,
       "analysisFit": {
         "pass": null,
-        "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "kind": "status-v159",
+        "reason": "status-notice element: judged by statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15739,38 +15823,52 @@
       "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "cardClicked · homeCardClicked · selectionUrlPreserved · cardValueVerified · detailAnalysisFit · analysisFit · controlsVerified · tableValuesVerified · mapHandoffVerified: excluded element (V156-D), in no list by decision"
+        "cardValueVerified: status screen (checked for the status wording only)",
+        "detailAnalysisFit: card carries no selection",
+        "cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)",
+        "tableValuesVerified: status screen, no values",
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
-        "finderSearch": {
-          "searchTerm": "운영·유지보수 역량",
-          "cards": 0
+        "finderHeadline": "",
+        "finderStatusBadge": "데이터 준비 중",
+        "title": "현지 운영·유지보수 역량(O&M)",
+        "heading": "",
+        "selectors": [],
+        "url": "?view=data&element=unyeong-yujibosu-yeogryang-sugryeon-gisulinryeog-gayongseong-bupum-jodal-ganeungseong-gugn&country=VNM&from=explorer&detailLayers=all",
+        "analysisFit": {
+          "kind": "status",
+          "expected": [
+            "status wording"
+          ],
+          "found": [
+            "status wording"
+          ],
+          "missing": [],
+          "pass": true,
+          "headings": []
         },
-        "exclusionNotice": {
-          "snapshot": {
-            "page": true,
-            "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 검토표 판정 '제외'",
-            "decidedAt": "2026-09-23",
-            "charts": 0,
-            "tables": 0,
-            "downloadLinks": 0,
-            "analysisRoot": false
-          },
-          "verdict": {
-            "pass": true,
-            "problems": []
-          }
+        "statusNotice": {
+          "count": 1,
+          "text": "데이터 준비 중 — 자료가 입고되면 분석 화면을 제공합니다.",
+          "metaLines": 0,
+          "charts": 0
+        },
+        "table": {
+          "status": "not-applicable",
+          "reason": "status screen, no values"
         }
       },
+      "internalWording": null,
       "statusChecks": {
-        "absentFromFinder": true,
-        "exclusionNoticePresent": true,
-        "noticeMatchesDecision": true,
+        "statusNoticePresent": true,
+        "noDecisionMeta": true,
         "chartCount0": true,
-        "downloadLinks0": true
-      }
+        "cardShowsStatus": true
+      },
+      "detailTilesAbsent": true,
+      "detailTilesBounded": true
     },
     {
       "elementId": "E-014",
@@ -15827,7 +15925,7 @@
           "협정 유형 선택=전체",
           "상태 선택=전체"
         ],
-        "url": "?view=data&element=yangjahyeobjeong-hyeobjeong-yuhyeong-je6-2jo-yangja-gihubyeonhwa-gongdongwi-nogsaegseongja&country=VNM&from=explorer",
+        "url": "?view=data&element=yangjahyeobjeong-hyeobjeong-yuhyeong-je6-2jo-yangja-gihubyeonhwa-gongdongwi-nogsaegseongja&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "10건 = analysis-0:HEADER: 연대기 시점별 기록 · 10건",
         "analysisFit": {
           "kind": "facts",
@@ -15929,7 +16027,7 @@
         "title": "국제 기후협력체 참여 현황",
         "heading": "",
         "selectors": [],
-        "url": "?view=data&element=ndc-partnership-camyeo-yeobu-y-n-country-page-ringkeu&country=VNM&from=explorer",
+        "url": "?view=data&element=ndc-partnership-camyeo-yeobu-y-n-country-page-ringkeu&country=VNM&from=explorer&detailLayers=all",
         "analysisFit": {
           "kind": "facts",
           "expected": [
@@ -15971,7 +16069,7 @@
       "analysisFit": {
         "pass": null,
         "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -15990,9 +16088,9 @@
           "snapshot": {
             "page": true,
             "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
-            "decidedAt": "2026-09-23",
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
             "charts": 0,
             "tables": 0,
             "downloadLinks": 0,
@@ -16006,7 +16104,8 @@
       },
       "statusChecks": {
         "absentFromFinder": true,
-        "exclusionNoticePresent": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
         "noticeMatchesDecision": true,
         "chartCount0": true,
         "downloadLinks0": true
@@ -16026,7 +16125,7 @@
       "analysisFit": {
         "pass": null,
         "kind": "excluded-v156",
-        "reason": "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0"
+        "reason": "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0"
       },
       "controlsVerified": null,
       "tableValuesVerified": null,
@@ -16045,9 +16144,9 @@
           "snapshot": {
             "page": true,
             "notice": true,
-            "decision": "제공 대상 제외(사용자 검토)",
-            "reason": "사용자 검토(2026-09-23) 제외 결정 — 한국 측 지표로 개도국 플랫폼 표출 제외, 2026-09-22 입고분 미포함",
-            "decidedAt": "2026-09-23",
+            "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+            "cardText": "2026년 제공 대상이 아닌 데이터입니다.",
+            "decisionFields": 0,
             "charts": 0,
             "tables": 0,
             "downloadLinks": 0,
@@ -16061,7 +16160,8 @@
       },
       "statusChecks": {
         "absentFromFinder": true,
-        "exclusionNoticePresent": true,
+        "publicNoticePresent": true,
+        "noDecisionMeta": true,
         "noticeMatchesDecision": true,
         "chartCount0": true,
         "downloadLinks0": true
@@ -16144,7 +16244,7 @@
         "selectors": [
           "업종·진출형태=전체"
         ],
-        "url": "?view=data&element=gugnae-gieob-gaedogug-jincul-gieobmyeong-jinculgug-eobjong-re-eneojihyoyul-pyegimul-suceor&country=VNM&from=explorer",
+        "url": "?view=data&element=gugnae-gieob-gaedogug-jincul-gieobmyeong-jinculgug-eobjong-re-eneojihyoyul-pyegimul-suceor&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "24곳 = text-0:P: 전체 자료 · 수록 기업 24건 / 전체 24건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 검색어 업종·진출형태 전체 바이오매스 발전·옥상태양광·탄소크레딧 산림탄소(REDD+) 수처리 수처리(산업폐수·하수) 수처리(하수처리시설) 에너지효율(가스복합화력) 에너지효율(전력기기·배전반)",
         "analysisFit": {
           "kind": "bars",
@@ -16262,7 +16362,7 @@
         "selectors": [
           "도시 선택=전체"
         ],
-        "url": "?view=data&element=hangug-gigwan-samuso-gigwanmyeong-kotramuyeoggwan-koicasamuso-eneojigongdan-kepco-hansuweo&country=VNM&from=explorer",
+        "url": "?view=data&element=hangug-gigwan-samuso-gigwanmyeong-kotramuyeoggwan-koicasamuso-eneojigongdan-kepco-hansuweo&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "6곳 = analysis-1:HEADER: 기관·연락망 기관 디렉터리 · 현지 사무소 6곳",
         "analysisFit": {
           "kind": "facts",
@@ -16360,7 +16460,7 @@
           "지원 유형 선택=전체",
           "지원유형·지원기관=전체"
         ],
-        "url": "?view=data&element=hangug-gonggong-mingan-jiweoncegye-jiweongigwanmyeong-nigt-gtc-kotra-kiat-eneojigongdan-de&country=VNM&from=explorer",
+        "url": "?view=data&element=hangug-gonggong-mingan-jiweoncegye-jiweongigwanmyeong-nigt-gtc-kotra-kiat-eneojigongdan-de&country=VNM&from=explorer&detailLayers=all",
         "cardValue": "3개 = text-0:P: 검색어 지원유형·지원기관 전체 금융·투자 현지사업화·수주지원 FS·기초조사 FS·마스터플랜 수립 선택 초기화 전체 자료 · 활용 사례 7건 / 전체 7건 아래 현황·차트·목록에 같은 조건이 적용됩니다. 공개된 활용 사례를 집계하며, 통화가 확인된 금액만 통화별로 합산합니다. 주요 분야·",
         "analysisFit": {
           "kind": "facts",

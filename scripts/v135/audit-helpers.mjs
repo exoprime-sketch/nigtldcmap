@@ -51,6 +51,8 @@ export function finderUrlV135(baseUrl, query = "") {
   const url = new URL(baseUrl);
   url.searchParams.set("country", "VNM");
   if (query) url.searchParams.set("q", query);
+  // V160: a card clicked from here opens its detail with every layer open.
+  url.searchParams.set("detailLayers", "all");
   url.hash = "explorer";
   return url.toString();
 }
@@ -60,6 +62,9 @@ export function detailUrlV135(baseUrl, elementId) {
   url.searchParams.set("view", "data");
   url.searchParams.set("country", "VNM");
   url.searchParams.set("element", elementId);
+  // V160: every detail layer open (the V159 layout); the collapsed default
+  // is checked by scripts/v160/qa-core-first-v160.mjs.
+  url.searchParams.set("detailLayers", "all");
   url.hash = "element-detail";
   return url.toString();
 }
@@ -72,6 +77,8 @@ export function mapUrlV135(baseUrl, parameters = {}) {
       url.searchParams.set(key, String(value));
     }
   }
+  // V160: every layer group unfolded, as before the core/more split.
+  url.searchParams.set("mapList", "all");
   url.hash = "map";
   return url.toString();
 }
@@ -313,7 +320,10 @@ export function revealMapDatasetExpressionV138(elementId) {
     const drawer = document.querySelector('[data-testid="map-layer-panel"] .cdp-map-panel-toggle');
     if (drawer && drawer.getAttribute('aria-expanded') === 'false') drawer.click();
     const input = document.querySelector(${JSON.stringify(mapDatasetControlSelectorV135(elementId))});
+    // V160: layers outside the core group sit under '더 많은 레이어'.
     const group = input?.closest('[data-map-group-v135]');
+    const more = document.querySelector('[data-testid="map-more-layers-v160"]');
+    if (group?.hidden && more && more.getAttribute('aria-expanded') !== 'true') more.click();
     const toggle = group?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
     if (toggle && toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
     input?.scrollIntoView?.({ block: 'center' });

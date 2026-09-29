@@ -68,15 +68,17 @@ test("D-011 states constant prices, the period and the total it counted", async 
 });
 
 test("A-017 states the year its costs are for, with the unit", async ({ page }) => {
-  // V156-D: A-017 is not offered (spec review 2026-09-18). While the decision
-  // stands its URL shows the notice card instead of the comparison; once it is
-  // offered again the comparison below is checked as before.
+  // V156-D/E: A-017 is not offered (2026년 미적용, 2026-09-29). While the
+  // decision stands its URL shows the notice card - the public line, no decision
+  // record - instead of the comparison; once it is offered again the comparison
+  // below is checked as before.
   const excluded = candidateExcludedElements().find((row) => row.elementId === "A-017");
   if (excluded) {
     await page.goto(detailUrl("A-017"));
     const notice = page.getByTestId("detail-excluded-v156");
-    await expect(notice.locator('[data-exclusion-field="reason"]')).toContainText(excluded.reason, { timeout: 60_000 });
-    await expect(notice.locator('[data-exclusion-field="decidedAt"]')).toHaveText(excluded.decidedAt);
+    await expect(notice.locator('[data-exclusion-field="publicNotice"]')).toHaveText(excluded.publicNotice, { timeout: 60_000 });
+    await expect(notice.locator('[data-exclusion-field="reason"], [data-exclusion-field="decidedAt"]')).toHaveCount(0);
+    await expect(notice).not.toContainText(excluded.reason);
     await expect(page.getByTestId("public-analysis-root")).toHaveCount(0);
     return;
   }

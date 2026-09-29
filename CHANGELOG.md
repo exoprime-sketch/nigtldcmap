@@ -2,6 +2,76 @@
 
 이 문서는 공개 플랫폼의 주요 변경을 기록합니다. 아직 merge·배포·tag가 확인되지 않은 작업은 `Unreleased`에 둡니다.
 
+## Unreleased — V158 배포 단일화: GitHub Pages 배포 중단, Vercel 하나로 (PR 후보)
+
+### Removed
+
+- `.github/workflows/pages.yml`(수동 실행 전용 GitHub Pages 배포). 사용자 결정(2026-09-29)에 따른 것이다.
+  - 사유: build가 948.6 MB로 Pages 기준 900 MB를 넘었고, Pages 사이트는 설정·배포된 적이 없다(`reports/v158/DEPLOY_VERCEL_ONLY_V158.md`).
+
+### Changed
+
+- 게이트 감사: `workflow:v136`·`ci-contract:v133`·`visual-qa-contract:v134`의 Pages 검사를 `PAGES_WORKFLOW_RETIRED`로 바꿨다(Pages로 배포하는 workflow 0).
+- `performance:v128` source map 정책의 근거를 `ci.yml`로 옮겼다.
+- `deployment:v128` 문자열 검사에서 국가 경로 레지스트리 `src/data/countryContext.ts`와 그 테스트 `countryContext.test.ts`(정확한 경로 2개)를 예외로 두었다. #33 이후 main CI Static gate 실패를 fix-forward한 것이다.
+- 배포 문서(`DEPLOYMENT_V128`·`ROLLBACK_V128`·README·`visual-qa-contract-v134`)를 Vercel 기준으로 고쳤다. CLAUDE.md는 세션4 PR 뒤에 반영한다.
+## Unreleased — V160-R 홈·데이터 찾기 되돌리기 + 찾기 정렬(R-10) (PR 후보)
+
+### Changed
+
+- 홈: V160 질문 6카드 폐기 → #34 직전(fcc04f7) '주요 데이터' 레이아웃으로 복원. 수치·보조 문구는 현재 국가(`?country=` → 국가 레지스트리 기본 공개 국가)의 데이터에서 읽고, 값이 없으면 '데이터 준비 중'
+- 데이터 찾기: '핵심' 기본 필터·전체 보기 토글·등급 배지 폐기 → fcc04f7로 복원. 기존 `tier=` 링크는 무시
+- 상세 3단·지도 기본 레이어는 유지
+
+### Added
+
+- 데이터 찾기 정렬(R-10): 공개 요소 전체, 가나다순(기본, `Intl.Collator('ko')`)·조회순(기존 조회수 집계 API, 미설정 환경은 선택지 비활성), URL `sort=name|views`(검색어·필터 변경 시 유지), 미입고 요소는 맨 뒤 '데이터 준비 중'
+- 저장소 CLAUDE.md 절대 규칙: 병합은 사용자가 Preview를 검토하고 "PR #N 병합"이라고 명시한 경우에만
+
+### Removed
+
+- `homeQuestionsV160.json`·`home-questions-v160.css`·`HomePage.v160.test.tsx`·`finder-core-v160.css`·`coreFirstV160.ts`(등급 조회)·`core-first-audit-v160.mjs`
+
+
+## Unreleased — V160 핵심 정보 우선(홈 6질문 · 데이터 찾기 핵심 57 · 상세 3층 · 지도 기본 레이어) (PR 후보)
+
+### Changed
+
+- 홈: 주요 데이터 8그리드·정렬 → 질문 6카드(표출 유형 ①~⑥, 대표 KPI는 카드 요약에 있는 값만 — ④·⑤는 해당 값 없음으로 숨김), 카드 클릭 시 그 유형의 핵심 데이터로 찾기 이동, 통계 수는 공개 목록(⓪ 제외) 기준
+- 데이터 찾기: 기본 '핵심' 57개, '전체 보기'(`tier=all`, 141 = ⓪ 11건 제외), 카드에 등급·유형 표시, 보조·참고는 KPI 한 줄만
+- 상세: 3층 — 1층(제목·판단 포인트·1순위 차트|지도) 상시, 2층 '데이터 설명'(핵심 수치 포함)·3층 '다운로드·참고문헌'(출처·상세 표) 접힘(`<details>`, 전역 기억, 인쇄 시 펼침); 판단 포인트 넓은 화면 2열
+- 지도: '핵심 레이어' 20개(`src/data/map/mapDefaultLayersV160.json`) 기본, 나머지 6분류는 '더 많은 레이어' 아래(`mapList=all`로 펼침). map-index·빌더·렌더러 불변
+
+### Added
+
+- 등급 정본 `src/data/spec/informationTiersV160.json`·홈 질문 `homeQuestionsV160.json`(기획서 §3에서 생성, `build:core-first:v160`/`check:core-first:v160`), `qa:core-first:v160`, `docs/CORE_FIRST_V160.md`, 추적표 '등급(V160)' 열
+
+## Unreleased — V158-B1 방글라데시 적재·8개 Division 경계·지도 후보표 (PR 후보)
+
+### Added
+
+- 방글라데시 데이터 트리 `public/data/bgd/v2`
+  - 구성: 납품 119개 + 미제공 33개 = 152, 기록 49,078·지표 1,747, 팩 24, 다운로드 85개 요소
+  - 파일명·스키마는 베트남과 같고 지도 레이어는 0이다.
+  - 공개 결정(2026-09-29): 표출은 전부, 다운로드는 지표 메타가 `가능`인 기록만, 제외 0건
+  - 다운로드 CSV 끝에 `지역명_한글`(`formatRegionName`) 열을 붙였다. Division 행 100% 적중, 비라틴 0.
+- 새 국가 ETL `tools/etl/countries/bgd/`: 스크립트는 `--country` 인자를 받고, 국가명·개수를 코드에 적지 않는다.
+  - `stage_source.py`: 원자료 복사·sha256
+  - `build_country_v2.py`: 베트남 빌더는 고치지 않고 순수 도우미만 쓴다.
+  - `verify_country_v2.cjs`: 53개 검사 — 베트남 스키마 대조, 행·칸 누락 0, 권리·다운로드, 무결성·앱 로더 규칙, 지역명, 베트남 불변, 결정성
+  - `render_preview.py`: 미리보기 PNG
+- 8개 Division 경계 `geometry/bgd-adm1-8.geojson`·국가 윤곽·경계 매니페스트
+  - 원천: geoBoundaries ADM2 64구(BBS·OCHA, CC BY 3.0 IGO)를 사전 소속대로 합성
+  - ADM1 면적 과반 교차 검증 64/64, 위상 보존 단순화 0.0008°, 새 꼭짓점 0
+  - 스크립트 `boundaries_adm2_dissolve.py`, 크로스워크 `crosswalk-adm1.json`
+- 지도 후보표(승인 대기, 등록은 B2): 제공 119 → 기준 충족 43(등록 후보 37 · 보류 6) · 지도 제외 76 / 미제공 33
+  - 1장 요약·152행 전수검토표·근거 JSON·미리보기 PNG(`reports/v158/`)
+  - PDF 1쪽(베트남 형식)
+
+### Changed
+
+- `docs/MULTICOUNTRY_V158.md` 온보딩 4단계: 새 국가 적재는 국가 빌더를 쓴다. 이전 안내였던 `ETL_COUNTRY=<ISO3>`로 베트남 빌더를 돌리는 방법은 쓰지 않는다.
+
 ## Unreleased — V161-A 지역명 표기 모듈 (PR 후보)
 
 ### Added

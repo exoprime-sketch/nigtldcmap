@@ -661,17 +661,22 @@
     },
     {
       "elementId": "A-017",
-      "displayType": "U0",
+      "displayType": "U3",
       "structure": "S1",
-      "archetype": "status-note",
+      "archetype": "national-series",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "dumbbell",
+        "title": "발전기술별 LCOE 범위와 벤치마크",
+        "xAxis": "균등화 발전비용",
+        "yAxis": "발전원",
+        "unit": "USD/MWh"
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "2023·2030·2050년 값"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -683,11 +688,15 @@
           "url": "https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser"
         }
       ],
-      "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "status": "exception",
+      "note": "국가 시계열이 아닌 기술별 비용 범위(하한~상한)와 벤치마크의 비교이므로 추이선 대신 기술별 범위 덤벨",
       "countryCompare": {
-        "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "A-017_lcoe_ccgt_benchmark",
+          "unit": "USD/MWh",
+          "yearRule": "latest-common"
+        }
       }
     },
     {
@@ -3669,17 +3678,22 @@
     },
     {
       "elementId": "C-015",
-      "displayType": "U0",
+      "displayType": "U6",
       "structure": "S4",
-      "archetype": "status-note",
+      "archetype": "policy-document",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
+        "type": "comparison-table",
+        "title": "정책 원문 링크 목록",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "문서명·기관·발행일 표"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -3692,10 +3706,10 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "note": "",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "정책 문서 상태라 수치 비교 대상이 아님"
       }
     },
     {
@@ -3844,7 +3858,7 @@
     },
     {
       "elementId": "C-020",
-      "displayType": "U0",
+      "displayType": "U5",
       "structure": "S4",
       "archetype": "status-note",
       "primary": {
@@ -3875,7 +3889,7 @@
     },
     {
       "elementId": "C-021",
-      "displayType": "U0",
+      "displayType": "U5",
       "structure": "S4",
       "archetype": "status-note",
       "primary": {
@@ -3942,8 +3956,8 @@
     },
     {
       "elementId": "C-023",
-      "displayType": "U0",
-      "structure": "S4",
+      "displayType": "U3",
+      "structure": "S1",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -4969,17 +4983,26 @@
     },
     {
       "elementId": "D-024",
-      "displayType": "U0",
+      "displayType": "U5",
       "structure": "S4",
-      "archetype": "status-note",
+      "archetype": "registry",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "라운드별 VC·임팩트투자",
+        "xAxis": "건수",
+        "yAxis": "투자 라운드",
+        "unit": "건"
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "cards-list",
+          "title": "투자 카드"
+        },
+        {
+          "type": "table",
+          "title": "투자 목록 표"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -4992,10 +5015,10 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "note": "",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
       }
     },
     {
@@ -5352,17 +5375,22 @@
     },
     {
       "elementId": "E-008",
-      "displayType": "U0",
-      "structure": "S1",
-      "archetype": "status-note",
+      "displayType": "U3",
+      "structure": "S4",
+      "archetype": "registry",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "논문 목록의 발행연도별 건수",
+        "xAxis": "건수",
+        "yAxis": "발행연도",
+        "unit": "건"
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "연도별 값"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -5375,10 +5403,10 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(명세서 0918) — 결정·사유·결정일 안내만 표시",
+      "note": "",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
       }
     },
     {
@@ -5463,8 +5491,8 @@
     },
     {
       "elementId": "E-011",
-      "displayType": "U0",
-      "structure": "S4",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -5534,8 +5562,8 @@
     },
     {
       "elementId": "E-013",
-      "displayType": "U0",
-      "structure": "S4",
+      "displayType": "U1",
+      "structure": "S1",
       "archetype": "status-note",
       "primary": {
         "type": "status-note",
@@ -5637,17 +5665,22 @@
     },
     {
       "elementId": "E-016",
-      "displayType": "U0",
+      "displayType": "U3",
       "structure": "S4",
-      "archetype": "status-note",
+      "archetype": "policy-document",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
+        "type": "comparison-table",
+        "title": "한국 기후기술 TRL 근거",
         "xAxis": null,
         "yAxis": null,
         "unit": null
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "기술·단계·근거 표"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -5660,25 +5693,30 @@
         }
       ],
       "status": "standard",
-      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시",
+      "note": "",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "기준국(한국) 값이라 국가 간 비교 대상이 아님"
       }
     },
     {
       "elementId": "E-017",
-      "displayType": "U0",
-      "structure": "S4",
-      "archetype": "status-note",
+      "displayType": "U3",
+      "structure": "S1",
+      "archetype": "national-series",
       "primary": {
-        "type": "status-note",
-        "title": "공개 상태 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "국가별 기후기술 수준(최고국 대비)",
+        "xAxis": "최고국 대비 기후기술 수준",
+        "yAxis": "국가",
+        "unit": "%"
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "국가별 수준·순위"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
@@ -5690,11 +5728,11 @@
           "url": "https://databrowser.uis.unesco.org/"
         }
       ],
-      "status": "standard",
-      "note": "V159: 제외(사용자 0923) — 결정·사유·결정일 안내만 표시",
+      "status": "exception",
+      "note": "V159: 명세 v8 — 2020년 5개국 최고국 대비 수준 막대(한국 강조·순위 병기), 한국 기준값이라 국가 비교 제외(결정 2026-09-29)",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "기준국(한국) 값이라 국가 간 비교 대상이 아님"
       }
     },
     {

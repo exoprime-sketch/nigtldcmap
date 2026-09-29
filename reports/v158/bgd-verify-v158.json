@@ -1,0 +1,844 @@
+{
+  "type": "summary",
+  "audit": "country-verify:bgd:v158",
+  "status": "PASS",
+  "passed": 53,
+  "failed": 0,
+  "total": 53,
+  "failedChecks": [],
+  "framework": 152,
+  "delivered": 119,
+  "notProvided": 33,
+  "records": 49078,
+  "packs": 24,
+  "downloadableElements": 85,
+  "divisionRows": 18096,
+  "nonLatinSourceCells": {
+    "B-035:지역명": 31,
+    "B-036:지역명": 4
+  },
+  "reference": "VNM",
+  "checks": [
+    {
+      "name": "SCHEMA_ENVELOPE_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "payloadChunkCount",
+          "payloadChunks",
+          "resourceType",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardId",
+          "transportEncoding"
+        ],
+        "theirs": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "payloadChunkCount",
+          "payloadChunks",
+          "resourceType",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardId",
+          "transportEncoding"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_PACK_CONTENT_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "assetLayoutVersion",
+          "elementIds",
+          "elements",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardId"
+        ],
+        "theirs": [
+          "assetLayoutVersion",
+          "elementIds",
+          "elements",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardId"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_BUNDLE_INDEX_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "assetLayoutVersion",
+          "elementCount",
+          "elements",
+          "packCount",
+          "packs",
+          "runtimeVersion",
+          "schemaVersion",
+          "totals"
+        ],
+        "theirs": [
+          "assetLayoutVersion",
+          "elementCount",
+          "elements",
+          "packCount",
+          "packs",
+          "runtimeVersion",
+          "schemaVersion",
+          "totals"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_BUNDLE_PACK_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "elementIds",
+          "entityCount",
+          "envelopeByteSize",
+          "metaCount",
+          "observationCount",
+          "packUrl",
+          "shardId"
+        ],
+        "theirs": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "elementIds",
+          "entityCount",
+          "envelopeByteSize",
+          "metaCount",
+          "observationCount",
+          "packUrl",
+          "shardId"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_BUNDLE_ELEMENT_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "elementId",
+          "entityCount",
+          "envelopeByteSize",
+          "metaCount",
+          "observationCount",
+          "packUrl",
+          "packageStatus",
+          "publicStatus",
+          "shardId"
+        ],
+        "theirs": [
+          "compressedByteSize",
+          "compressedSha256",
+          "contentByteSize",
+          "contentSha256",
+          "elementId",
+          "entityCount",
+          "envelopeByteSize",
+          "metaCount",
+          "observationCount",
+          "packUrl",
+          "packageStatus",
+          "publicStatus",
+          "shardId"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_PAYLOAD_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "entities",
+          "meta",
+          "observations"
+        ],
+        "theirs": [
+          "entities",
+          "meta",
+          "observations"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_META_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "element",
+          "fieldDefinitions",
+          "indicators",
+          "package",
+          "publicationDecision",
+          "rights",
+          "rowAccounting",
+          "schemaVersion",
+          "sourceRegistryIds"
+        ],
+        "theirs": [
+          "element",
+          "fieldDefinitions",
+          "indicators",
+          "package",
+          "publicationDecision",
+          "rights",
+          "rowAccounting",
+          "schemaVersion",
+          "sourceRegistryIds"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_CATALOG_KEYS_SUBSET",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "SCHEMA_INDICATOR_KEYS_SUBSET",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "SCHEMA_OBSERVATION_KEYS_SUBSET",
+      "pass": true,
+      "actual": [
+        "sourceAttributes"
+      ],
+      "expected": [
+        "sourceAttributes allowed"
+      ]
+    },
+    {
+      "name": "SCHEMA_ENTITY_KEYS_SUBSET",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "SCHEMA_PROVENANCE_KEYS_SUBSET",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "SCHEMA_SEARCH_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "elements",
+          "runtimeVersion",
+          "schemaVersion",
+          "|",
+          "elementId",
+          "keywords",
+          "publicSlug",
+          "searchText"
+        ],
+        "theirs": [
+          "elements",
+          "runtimeVersion",
+          "schemaVersion",
+          "|",
+          "elementId",
+          "keywords",
+          "publicSlug",
+          "searchText"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_SOURCE_REGISTRY_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "runtimeVersion",
+          "schemaVersion",
+          "sources",
+          "|",
+          "apiEndpoint",
+          "apiParams",
+          "attributionText",
+          "citationLocators",
+          "elementIds",
+          "indicatorIds",
+          "licenseCode",
+          "licenseUrl",
+          "sourceGrade",
+          "sourceId",
+          "sourceOrg",
+          "sourceSeriesId",
+          "sourceUrl",
+          "sourceUrlNote"
+        ],
+        "theirs": [
+          "runtimeVersion",
+          "schemaVersion",
+          "sources",
+          "|",
+          "apiEndpoint",
+          "apiParams",
+          "attributionText",
+          "citationLocators",
+          "elementIds",
+          "indicatorIds",
+          "licenseCode",
+          "licenseUrl",
+          "sourceGrade",
+          "sourceId",
+          "sourceOrg",
+          "sourceSeriesId",
+          "sourceUrl",
+          "sourceUrlNote"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_DOWNLOAD_JSON_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "countryIso3",
+          "downloadSchemaVersion",
+          "element",
+          "entities",
+          "generatedAt",
+          "indicators",
+          "observations",
+          "schemaVersion"
+        ],
+        "theirs": [
+          "countryIso3",
+          "downloadSchemaVersion",
+          "element",
+          "entities",
+          "generatedAt",
+          "indicators",
+          "observations",
+          "schemaVersion"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_DELIVERY_MANIFEST_KEYS",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "adapter",
+          "adapterConfigured",
+          "assetCount",
+          "assets",
+          "externalAssetCount",
+          "externalByteTotal",
+          "note",
+          "pendingUploadCount",
+          "repositoryAssetCount",
+          "repositoryMaxBytes",
+          "schema",
+          "uploadedCount"
+        ],
+        "theirs": [
+          "adapter",
+          "adapterConfigured",
+          "assetCount",
+          "assets",
+          "externalAssetCount",
+          "externalByteTotal",
+          "note",
+          "pendingUploadCount",
+          "repositoryAssetCount",
+          "repositoryMaxBytes",
+          "schema",
+          "uploadedCount"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_quality-report.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "generatedAt",
+          "schemaVersion",
+          "sourceZip",
+          "summary",
+          "workbooks"
+        ],
+        "theirs": [
+          "generatedAt",
+          "schemaVersion",
+          "sourceZip",
+          "summary",
+          "workbooks"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_framework-coverage.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "accountedElementCount",
+          "elements",
+          "frameworkElementCount",
+          "schemaVersion",
+          "sourceWorkbookCount",
+          "unexplainedElementCount",
+          "unexplainedElementIds"
+        ],
+        "theirs": [
+          "accountedElementCount",
+          "elements",
+          "frameworkElementCount",
+          "schemaVersion",
+          "sourceWorkbookCount",
+          "unexplainedElementCount",
+          "unexplainedElementIds"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_rights-matrix.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "authorizedElementCount",
+          "authorizedPrivacyBlockedCount",
+          "authorizedRightsBlockedCount",
+          "elements",
+          "schemaVersion"
+        ],
+        "theirs": [
+          "authorizedElementCount",
+          "authorizedPrivacyBlockedCount",
+          "authorizedRightsBlockedCount",
+          "elements",
+          "schemaVersion"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_publication-decisions.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "authorizedElementCount",
+          "decisions",
+          "schemaVersion"
+        ],
+        "theirs": [
+          "authorizedElementCount",
+          "decisions",
+          "schemaVersion"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_map-index.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "activeMapLayerCount",
+          "countryIso3",
+          "dataSchemaVersion",
+          "generatedAt",
+          "geometryManifest",
+          "layers",
+          "mapFeatureCount",
+          "mapTargetContract",
+          "platformRelease",
+          "schemaVersion"
+        ],
+        "theirs": [
+          "activeMapLayerCount",
+          "countryIso3",
+          "dataSchemaVersion",
+          "generatedAt",
+          "geometryManifest",
+          "layers",
+          "mapFeatureCount",
+          "mapTargetContract",
+          "platformRelease",
+          "schemaVersion"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_TOP_KEYS_manifest.json",
+      "pass": true,
+      "actual": {
+        "ours": [
+          "accountedElements",
+          "assetLayoutVersion",
+          "assets",
+          "authorizedElementCount",
+          "authorizedRows",
+          "bundleIndexElements",
+          "country",
+          "downloadDelivery",
+          "downloadableElementCount",
+          "frameworkElements",
+          "generatedAt",
+          "mapFeatureCount",
+          "mapLayerCount",
+          "packCount",
+          "publicStatusCounts",
+          "rawRows",
+          "rowBalance",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardCount",
+          "sourcePackage",
+          "sourcePackageSha256",
+          "unexplainedElements",
+          "workbookFiles"
+        ],
+        "theirs": [
+          "accountedElements",
+          "assetLayoutVersion",
+          "assets",
+          "authorizedElementCount",
+          "authorizedRows",
+          "bundleIndexElements",
+          "country",
+          "downloadDelivery",
+          "downloadableElementCount",
+          "frameworkElements",
+          "generatedAt",
+          "mapFeatureCount",
+          "mapLayerCount",
+          "packCount",
+          "publicStatusCounts",
+          "rawRows",
+          "rowBalance",
+          "runtimeVersion",
+          "schemaVersion",
+          "shardCount",
+          "sourcePackage",
+          "sourcePackageSha256",
+          "unexplainedElements",
+          "workbookFiles"
+        ]
+      },
+      "expected": "same key set"
+    },
+    {
+      "name": "SCHEMA_MANIFEST_ASSET_KEYS_SUBSET",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "SCHEMA_CSV_HEADER",
+      "pass": true,
+      "actual": [],
+      "expected": [
+        "element_id",
+        "element_label",
+        "record_type",
+        "record_id",
+        "indicator_id",
+        "country_iso3",
+        "year",
+        "period_start",
+        "period_end",
+        "period",
+        "statistic_type",
+        "source_year_label",
+        "value",
+        "unit",
+        "name",
+        "latitude",
+        "longitude",
+        "attributes_json",
+        "missing_reason_code",
+        "note",
+        "source_org",
+        "source_url",
+        "license_code",
+        "source_file",
+        "source_sheet",
+        "source_row",
+        "publication_decision_id",
+        "지역명_한글"
+      ]
+    },
+    {
+      "name": "COUNT_FRAMEWORK",
+      "pass": true,
+      "actual": {
+        "catalog": 152,
+        "bundle": 152,
+        "payloads": 152
+      },
+      "expected": "equal"
+    },
+    {
+      "name": "COUNT_DELIVERED",
+      "pass": true,
+      "actual": {
+        "delivered": 119
+      },
+      "expected": 119
+    },
+    {
+      "name": "NOT_PROVIDED_HAS_NOTHING",
+      "pass": true,
+      "actual": {
+        "notProvided": 33,
+        "bad": []
+      },
+      "expected": "no indicator, record or download"
+    },
+    {
+      "name": "NO_EXCLUDED",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "STATUS_COUNTS_MATCH",
+      "pass": true,
+      "actual": {
+        "partial": 25,
+        "actual": 91,
+        "schema-only": 3,
+        "not-provided": 33
+      },
+      "expected": {
+        "actual": 91,
+        "not-provided": 33,
+        "partial": 25,
+        "schema-only": 3
+      }
+    },
+    {
+      "name": "RECORDS_COUNTRY_ONLY",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "RECORD_ID_FORMAT",
+      "pass": true,
+      "actual": [],
+      "expected": "^bgd-v158-[a-e]-\\d{3}-(obs|entity)-\\d{5}$"
+    },
+    {
+      "name": "NO_REFERENCE_RECORD_IDS",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "NO_REFERENCE_STRINGS",
+      "pass": true,
+      "actual": [],
+      "expected": [
+        "/data/vietnam/v2",
+        "vnm-v124"
+      ]
+    },
+    {
+      "name": "PROVENANCE_FROM_STAGED_FILES",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "ROWS_PUBLISHED_EQUAL_SOURCE",
+      "pass": true,
+      "actual": {
+        "mismatches": [],
+        "publishedTotal": 49078
+      },
+      "expected": "per element equal, row balance matches"
+    },
+    {
+      "name": "NO_SOURCE_CELL_DROPPED",
+      "pass": true,
+      "actual": [],
+      "expected": "every filled attribute and template-external cell kept"
+    },
+    {
+      "name": "RIGHTS_DOWNLOAD_PER_SOURCE_META",
+      "pass": true,
+      "actual": [],
+      "expected": "download only where meta says 가능; license kept"
+    },
+    {
+      "name": "DOWNLOADS_EXACTLY_ELIGIBLE",
+      "pass": true,
+      "actual": [],
+      "expected": "download files hold exactly the eligible records"
+    },
+    {
+      "name": "ASSET_INTEGRITY",
+      "pass": true,
+      "actual": [],
+      "expected": "every file listed with matching bytes and sha256"
+    },
+    {
+      "name": "DOWNLOAD_ASSET_HASHES",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "LOADER_ENVELOPE_CONTRACT",
+      "pass": true,
+      "actual": [],
+      "expected": "validateEnvelope rules (vietnamDataLoaderV124.ts)"
+    },
+    {
+      "name": "LOADER_BUNDLE_INDEX_CONTRACT",
+      "pass": true,
+      "actual": {
+        "elementCount": 152,
+        "packs": 24
+      },
+      "expected": "validateBundleIndex rules with the framework size"
+    },
+    {
+      "name": "LOADER_MANIFEST_CONTRACT",
+      "pass": true,
+      "actual": "v124",
+      "expected": "v124"
+    },
+    {
+      "name": "URLS_RESOLVE",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "NO_FILE_OVER_100MIB",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "PACK_PLAN_RULE",
+      "pass": true,
+      "actual": {
+        "packProblems": [],
+        "unpacked": []
+      },
+      "expected": "slices of the platform size; solo only above the platform limit; each element once"
+    },
+    {
+      "name": "REGION_NAME_EQUALS_FORMATREGIONNAME",
+      "pass": true,
+      "actual": [],
+      "expected": "지역명_한글 = formatRegionName(label) of the romanised column"
+    },
+    {
+      "name": "REGION_DIVISION_HIT_100",
+      "pass": true,
+      "actual": {
+        "divisionRows": 18096,
+        "divisionHits": 18096
+      },
+      "expected": "every Division row resolves in the dictionary"
+    },
+    {
+      "name": "REGION_LABEL_NO_NON_LATIN",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "COUNTRY_SPECIFIC_NAMES_AS_DELIVERED",
+      "pass": true,
+      "actual": {
+        "problems": [],
+        "checkedElements": [
+          "A-029",
+          "A-030",
+          "B-025",
+          "C-004",
+          "C-009",
+          "C-010",
+          "C-016",
+          "C-017",
+          "C-018"
+        ]
+      },
+      "expected": [
+        "A-029",
+        "A-030",
+        "B-025",
+        "C-004",
+        "C-009",
+        "C-010",
+        "C-016",
+        "C-017",
+        "C-018"
+      ]
+    },
+    {
+      "name": "NO_SECRETS",
+      "pass": true,
+      "actual": {
+        "secretHits": [],
+        "redactionApplied": true
+      },
+      "expected": "no secret pattern; redaction applied"
+    },
+    {
+      "name": "REFERENCE_TREE_UNCHANGED",
+      "pass": true,
+      "actual": {
+        "gitDiffClean": true,
+        "drift": []
+      },
+      "expected": "no change to the reference tree, registry or src"
+    },
+    {
+      "name": "DETERMINISTIC_BUILD",
+      "pass": true,
+      "actual": [],
+      "expected": "second build byte-identical"
+    }
+  ]
+}

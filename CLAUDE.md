@@ -1,9 +1,10 @@
 # CLAUDE.md — nigtldcmap (개도국 기후기술 협력 데이터 플랫폼)
 
-React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 provider는 베트남 파일럿(152개 데이터 항목, 지도 대상 43개 중 42개 활성). 배포는 Vercel(nigtldcmap.vercel.app) + GitHub Pages. 사용자와의 대화·보고서·커밋 본문은 한국어(개조식), 코드 주석은 영어 유지.
+React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 provider는 베트남 파일럿(152개 데이터 항목, 지도 대상 43개 중 42개 활성). 배포는 Vercel(nigtldcmap.vercel.app). 사용자와의 대화·보고서·커밋 본문은 한국어(개조식), 코드 주석은 영어 유지.
 
 ## 절대 규칙
 - main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건: 로컬 `finalize:v140` 통과(analysis QA는 41건 기준선 이내) + Vercel Preview Ready + 사용자 승인. GitHub CI는 merge를 막지 않되 **main에서 반드시 녹색**이어야 하며, 빨강이면 다음 PR을 시작하기 전에 fix-forward로 먼저 고친다.
+- **병합은 사용자가 Preview를 직접 검토한 뒤 "PR #N 병합"이라고 명시한 경우에만.** 게이트 통과·검토자 '승인 권고'·앞선 일반 승인만으로 병합하지 않는다. PR 보고에는 ① Preview URL ② 화면이 바뀌는 페이지 목록과 확인 경로(URL·클릭 순서) ③ 바뀐 화면 전후 캡처(1440px)를 넣고, 화면 변화가 없으면 '화면 변화 0'이라고 쓴다. (2026-09-29, #34 운영 수동 복구 후)
 - 게이트·감사 스크립트의 기대값을 현재값으로 바꿔 통과시키지 않는다. 기대값 변경은 사유를 `reports/v15x/`에 기록.
 - 데이터 조작 금지: 결측 0 대체, 임의 경계·좌표 생성, 추정 분야 채움, 출처 간 중복 합산 금지. 원자료에 없는 값은 만들지 않는다.
 - 새 탭·새 사이트 구조 금지. 홈 → 데이터 찾기 → 상세 → 데이터 지도/다운로드/이용안내 안에서 작업.

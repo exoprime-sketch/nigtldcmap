@@ -71,15 +71,19 @@ const DATA = resolve(PROJECT_ROOT, "public/data/vietnam/v2");
 const summariesFile = readFileSync(resolve(DATA, "home/card-summaries-v140.json"), "utf8");
 const summariesAsset = JSON.parse(summariesFile);
 const summaries = summariesAsset.cards;
-// V159 ⓪ status elements (excluded or not yet delivered, decided 2026-09-23):
+// V159 status elements (excluded or not yet delivered, decided 2026-09-23;
+// spec v8 2026-09-29 keeps their U1-U6 type and marks them with statusNotice):
 // they show one status notice instead of an analysis, so they are judged by
-// statusNoticePresent · chartCount0 · cardShowsStatus instead of the card
+// statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus instead of the card
 // value and analysis-fit checks. Every other element is judged as before.
-const STATUS_IDS_V159 = new Set(
+const STATUS_NOTICE_V159 = new Map(
   JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
-    .filter((row) => row.displayType === "U0")
-    .map((row) => row.elementId)
+    .filter((row) => row.statusNotice === "data-pending")
+    .map((row) => [row.elementId, row.statusNotice])
 );
+const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
+// Spec v8 (2026-09-29): the notice is one line; the words it must carry.
+const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제공 대상이 아닌" };
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
@@ -776,11 +780,15 @@ async function checkElement(context, item) {
     params.set("view", "data");
     params.set("country", "VNM");
     params.set("element", elementId);
+    // V160: every detail layer open (the V159 layout); the collapsed default
+    // is checked by scripts/v160/qa-core-first-v160.mjs.
+    params.set("detailLayers", "all");
     return `${base}/?${params.toString()}#element-detail`;
   };
   try {
     // ---- 1. the real card click, from the finder
-    await page.goto(`${base}/#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
+    // V160: a card clicked from the finder opens its detail with every layer open.
+    await page.goto(`${base}/?detailLayers=all#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
     await page.waitForSelector('[data-testid="finder-results-v136"]', { timeout: 60_000 });
     const searchTerm = (card?.title || item.elementLabel).replace(/\[.*$/u, "").split(/[:;]/u)[0].trim().slice(0, 40);
     await page.fill(".cdp-input", searchTerm);
@@ -906,27 +914,34 @@ async function checkElement(context, item) {
     record.analysisFit = await analysisFitOf(page, card, screen, claim);
     record.evidence.analysisFit = record.analysisFit;
 
-    // ---- 4c. ⓪ status elements: the notice, no chart, a status badge on the card
+    // ---- 4c. status-notice elements: the notice, no chart, a status badge on the card
     if (STATUS_IDS_V159.has(elementId)) {
       const notice = await page.evaluate(() => {
         const primary = document.querySelector('[data-testid="public-analysis-primary"]');
         const notes = primary ? primary.querySelectorAll('[data-testid="status-note-v159"]') : [];
-        const rows = notes.length === 1
-          ? Array.from(notes[0].querySelectorAll("dt")).map((dt) => ({ label: (dt.textContent || "").trim(), value: (dt.nextElementSibling?.textContent || "").trim() }))
-          : [];
-        return { count: notes.length, rows, charts: primary ? primary.querySelectorAll("svg").length : -1 };
+        const text = notes.length === 1 ? (notes[0].textContent || "").replace(/\s+/gu, " ").trim() : "";
+        const section = primary ? primary.querySelector('[data-testid="public-status-only"]') : null;
+        return {
+          count: notes.length,
+          text,
+          metaLines: section ? section.querySelectorAll("dl, dt").length : 0,
+          charts: primary ? primary.querySelectorAll("svg").length : -1,
+        };
       });
-      const shown = (label) => notice.rows.some((row) => row.label === label && row.value);
+      // V8: the three-line notice (결정·사유·결정일) is gone from public
+      // screens; the notice is one line carrying its state, and no internal
+      // decision record may show.
       record.statusChecks = {
-        statusNoticePresent: notice.count === 1 && ["결정", "사유", "결정일"].every(shown),
+        statusNoticePresent: notice.count === 1 && notice.text.includes(STATUS_NOTICE_WORDS_V159[STATUS_NOTICE_V159.get(elementId)] || "데이터 준비 중"),
+        noDecisionMeta: notice.metaLines === 0 && !/결정일|사유/u.test(notice.text),
         chartCount0: notice.charts === 0,
         cardShowsStatus: Boolean(record.evidence.finderStatusBadge) && !record.evidence.finderHeadline,
       };
       record.evidence.statusNotice = notice;
       record.cardValueVerified = null;
       record.detailAnalysisFit = null;
-      record.analysisFit = { pass: null, kind: "status-v159", reason: "⓪ status element: judged by statusNoticePresent · chartCount0 · cardShowsStatus" };
-      record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: ⓪ status element (V159)");
+      record.analysisFit = { pass: null, kind: "status-v159", reason: "status-notice element: judged by statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus" };
+      record.notApplicable.push("cardValueVerified · detailAnalysisFit · analysisFit: status-notice element (V159)");
       Object.entries(record.statusChecks).forEach(([key, ok]) => { if (!ok) record.remainingIssue.push(`${key} failed`); });
     }
 
@@ -1068,7 +1083,7 @@ async function checkExcludedElementV156(context, item) {
     cardValueVerified: null,
     recomputed: null,
     detailAnalysisFit: null,
-    analysisFit: { pass: null, kind: "excluded-v156", reason: "excluded element: judged by absentFromFinder · exclusionNoticePresent · noticeMatchesDecision · chartCount0 · downloadLinks0" },
+    analysisFit: { pass: null, kind: "excluded-v156", reason: "excluded element: judged by absentFromFinder · publicNoticePresent · noDecisionMeta · noticeMatchesDecision · chartCount0 · downloadLinks0" },
     controlsVerified: null,
     tableValuesVerified: null,
     mapHandoffVerified: null,
@@ -1104,7 +1119,11 @@ async function checkExcludedElementV156(context, item) {
     record.evidence.exclusionNotice = { snapshot, verdict };
     record.statusChecks = {
       absentFromFinder: finderCards === 0,
-      exclusionNoticePresent: Boolean(snapshot?.page && snapshot?.notice && snapshot?.decision && snapshot?.reason && snapshot?.decidedAt),
+      // V156-E (기준서 v1.1 표 13): the card is the title and one public line.
+      // Replaces exclusionNoticePresent (decision · reason · date shown) with
+      // the public line shown and the decision record not shown.
+      publicNoticePresent: Boolean(snapshot?.page && snapshot?.notice && snapshot?.publicNotice),
+      noDecisionMeta: Boolean(snapshot?.notice) && !verdict.problems.some((problem) => problem.startsWith("decision record shown")),
       noticeMatchesDecision: verdict.pass,
       chartCount0: Number(snapshot?.charts) === 0 && !snapshot?.analysisRoot,
       downloadLinks0: Number(snapshot?.downloadLinks) === 0,
