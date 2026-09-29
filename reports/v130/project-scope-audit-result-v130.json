@@ -114,12 +114,12 @@
     },
     {
       "type": "check",
-      "name": "D023_PANEL_ONLY",
+      "name": "D023_REGION_COUNT_NOT_POINTS",
       "status": "PASS",
       "actual": {
         "mapEligibleEntities": 0,
-        "catalogMapMode": "panel-only",
-        "catalogMapFeatureCount": 0,
+        "catalogMapMode": "region-choropleth",
+        "catalogMapFeatureCount": 15,
         "semanticMapLinkage": {
           "enabled": false,
           "featureCount": 0,
@@ -134,7 +134,7 @@
           ]
         }
       },
-      "expected": "entities disabled; catalog and semantic contract panel-only"
+      "expected": "no map-eligible points; catalog draws the region count; detail linkage stays panel-only"
     },
     {
       "type": "check",

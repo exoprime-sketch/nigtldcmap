@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v136-public-copy-acceptance-1",
-  "generatedAt": "2026-09-21T01:37:39.076Z",
+  "generatedAt": "2026-09-29T06:13:31.434Z",
   "audit": "human-review:v136",
   "status": "PASS",
   "summary": {
@@ -11,13 +11,13 @@
     "failed": 0,
     "total": 10,
     "failedChecks": [],
-    "finderHumanReviewCount": 152,
-    "detailHumanReviewCount": 152,
-    "mapDatasetHumanReviewCount": 42,
+    "finderHumanReviewCount": 142,
+    "detailHumanReviewCount": 142,
+    "mapDatasetHumanReviewCount": 60,
     "downloadReviewRows": 120,
     "guideReviewRows": 120,
-    "editorialDecisionLogRows": 670,
-    "keepCount": 670,
+    "editorialDecisionLogRows": 704,
+    "keepCount": 704,
     "unresolvedRewriteCount": 0,
     "unresolvedRemoveCount": 0,
     "runtimeFailure": null
@@ -40,24 +40,24 @@
       "audit": "human-review:v136",
       "name": "FINDER_HUMAN_REVIEW_COUNT",
       "status": "PASS",
-      "actual": 152,
-      "expected": 152
+      "actual": 142,
+      "expected": 142
     },
     {
       "type": "check",
       "audit": "human-review:v136",
       "name": "DETAIL_HUMAN_REVIEW_COUNT",
       "status": "PASS",
-      "actual": 152,
-      "expected": 152
+      "actual": 142,
+      "expected": 142
     },
     {
       "type": "check",
       "audit": "human-review:v136",
       "name": "MAP_DATASET_HUMAN_REVIEW_COUNT",
       "status": "PASS",
-      "actual": 42,
-      "expected": 42
+      "actual": 60,
+      "expected": 60
     },
     {
       "type": "check",
@@ -104,17 +104,17 @@
       "audit": "human-review:v136",
       "name": "EDITORIAL_DECISION_LOG_ROWS",
       "status": "PASS",
-      "actual": 670,
+      "actual": 704,
       "expected": ">=316"
     }
   ],
-  "finderHumanReviewCount": 152,
-  "detailHumanReviewCount": 152,
-  "mapDatasetHumanReviewCount": 42,
+  "finderHumanReviewCount": 142,
+  "detailHumanReviewCount": 142,
+  "mapDatasetHumanReviewCount": 60,
   "downloadReviewRows": 120,
   "guideReviewRows": 120,
-  "editorialDecisionLogRows": 670,
-  "keepCount": 670,
+  "editorialDecisionLogRows": 704,
+  "keepCount": 704,
   "unresolvedRewriteCount": 0,
   "unresolvedRemoveCount": 0,
   "runtimeFailure": null

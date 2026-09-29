@@ -4600,6 +4600,27 @@ export default function RealMapExplorerPage({
       if (properties.categoryLabel) {
         lines.push(...selectionLineV161("분류", properties.categoryLabel));
       }
+      // How this area's value came about, when it is not the area's own figure:
+      // a six-region value is the region's, and a merged 2025 unit's value covers
+      // every constituent province. The reader sees this on the value, not in a
+      // hover tooltip.
+      if (properties.policyKind === "six-region-only" || properties.boundarySystem === "gdl-six-region") {
+        lines.push(
+          ...selectionLineV161(
+            "자료 설명",
+            `${selectedSpatial.adm1Name}의 개별 추정값이 아니라 ${publicVietnamSourceRegionV126(
+              publicTextV126(properties.sourceRegion) || undefined
+            )} ${regionUnitLabelV138(selectedOwningLayer)}의 값을 표시합니다.`
+          )
+        );
+      } else if (properties.boundarySystem === "post-2025-34" && selectedMemberSummaryV151) {
+        lines.push(
+          ...selectionLineV161(
+            "자료 설명",
+            `2025년 개편 후 ${selectedMemberSummaryV151.unitNameKo || selectedMemberSummaryV151.unitName} 전체의 값이며 소속 성·시에 같은 값을 표시합니다.`
+          )
+        );
+      }
       if (isUnit) {
         lines.push(
           ...selectionLineV161(
@@ -4724,14 +4745,10 @@ export default function RealMapExplorerPage({
       const title =
         selectedEntityTitleResolutionV131?.title ||
         publicMapEntityTitleV131(selected, selectedLayer);
-      const facts = mapFactsV148(
-        selectedLayer,
-        (selected.normalizedAttributes || {}) as Record<string, unknown>
-      );
+      // The facts themselves are shown by the record's own block below the card
+      // (the V153 facility card where one exists), so the card says where the
+      // record is and how it compares, without repeating them.
       const lines: MapSelectionLineV161[] = [];
-      facts.slice(0, 6).forEach((fact) => {
-        lines.push(...selectionLineV161(fact.label, fact.value));
-      });
       const locatedIn = locationsByElementV151[selectedLayer.elementId]?.byRecordId?.[
         selected.recordId
       ];
@@ -8074,6 +8091,41 @@ export default function RealMapExplorerPage({
                         onZoom={() => zoomToSelectionV161()}
                       />
                     )}
+                    {/* The record's own facts: the V153 facility card where one is
+                        defined, else the layer's public fact fields. The metadata
+                        rows moved into the card's closing meta line (P12-C). */}
+                    <div
+                      className="cdp-map-a023-key-facts-v132"
+                      data-testid={
+                        selected.elementId === "A-023"
+                          ? "a023-map-selected-key-facts-v132"
+                          : "map-selected-facts-v148"
+                      }
+                    >
+                      {facilityCardSpecV153(selected.elementId) ? (
+                        <FacilityCardV153 elementId={selected.elementId} entity={selected} compact />
+                      ) : (
+                        mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
+                          .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
+                          .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)
+                      )}
+                      <Evidence
+                        label="자료연도"
+                        value={
+                          ["B-023", "B-028"].includes(selected.elementId)
+                            ? "관측값별 시점 참조"
+                            : String(
+                                selected.provenance.referenceYear ||
+                                  selectedLayer.selectors?.defaultPeriod ||
+                                  selectedLayer.latestYear ||
+                                  ""
+                              )
+                        }
+                      />
+                    </div>
+                    {selectedMemberFactsV138.map((fact) => (
+                      <Evidence key={fact.label} label={fact.label} value={fact.value} />
+                    ))}
                     {selectedMemberSeriesV138 && (
                       <section
                         className="cdp-map-region-trend-v132"

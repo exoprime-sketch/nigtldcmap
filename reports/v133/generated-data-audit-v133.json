@@ -51,32 +51,32 @@
       "name": "ROW_BALANCE",
       "status": "PASS",
       "actual": {
-        "sourceRows": 171846,
-        "processedRows": 171846,
-        "publicPopulatedRows": 168850,
-        "catalogProcessedRows": 171846,
-        "catalogPublicPopulatedRows": 168850,
+        "sourceRows": 171875,
+        "processedRows": 171875,
+        "publicPopulatedRows": 168848,
+        "catalogProcessedRows": 171875,
+        "catalogPublicPopulatedRows": 168848,
         "catalogRowBreakdown": {
-          "metadataRows": 2225,
-          "nonstandardRows": 309,
-          "observationRows": 16236,
-          "entityRows": 153076,
-          "publicPopulatedRows": 168850
+          "metadataRows": 2219,
+          "nonstandardRows": 310,
+          "observationRows": 16267,
+          "entityRows": 153079,
+          "publicPopulatedRows": 168848
         }
       },
       "expected": {
         "matches": true,
-        "catalogProcessedRows": 171846,
-        "catalogPublicPopulatedRows": 168850
+        "catalogProcessedRows": 171875,
+        "catalogPublicPopulatedRows": 168848
       }
     },
     {
       "name": "ASSET_INTEGRITY_COVERAGE",
       "status": "PASS",
       "actual": {
-        "declared": 555,
-        "recorded": 555,
-        "expected": 555,
+        "declared": 573,
+        "recorded": 573,
+        "expected": 573,
         "missing": 0,
         "unexpected": 0,
         "duplicate": 0
@@ -100,7 +100,7 @@
       "actual": 0,
       "expected": 0,
       "details": {
-        "checked": 556,
+        "checked": 574,
         "broken": []
       }
     },
@@ -134,16 +134,16 @@
       "name": "MAP_INTEGRITY",
       "status": "PASS",
       "actual": {
-        "declaredLayers": 42,
-        "layers": 42,
-        "connectedTargets": 42,
+        "declaredLayers": 60,
+        "layers": 60,
+        "connectedTargets": 60,
         "missingTargetLayers": [],
-        "declaredFeatures": 4463,
-        "features": 4463,
+        "declaredFeatures": 14920,
+        "features": 14920,
         "declaredMatchesActual": true
       },
       "expected": {
-        "layers": "declared count, <= 43 targets, every connected target present",
+        "layers": "declared count, <= 72 targets, every connected target present",
         "features": ">= 2900",
         "declaredMatchesActual": true,
         "fakeGeometry": 0

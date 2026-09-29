@@ -10,6 +10,9 @@ import { mapFactsV148, mapIndicatorSourceV148 } from "../../../data/map/mapPrese
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { publicSourceOrganizationV136_1 } from "../../../data/visualization/publicFieldPolicyV126";
+import { PROVINCE_KO_V150 } from "../../../data/map/mapBackdropV150";
+import { publicMapTargetV138 } from "../../../data/visualization/publicMapWorkspaceV126";
+import { formatRegionName } from "../../../data/geo/regionNameV161";
 import { MAP_PLACES_V150 } from "../../../data/map/mapBackdropV150";
 import "./detail-location-map-v148.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
@@ -115,7 +118,17 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const extent = [...base.features, ...(geometry?.features || [])].flatMap((f) => coordinatePairsV148(f.geometry.coordinates));
     points.forEach((r) => extent.push([r.longitude!, r.latitude!]));
     const project = overviewProjectionV148(extent, compact ? 360 : 460, 400);
-    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: v.adm1Name, value: v.value, sourceRegion: v.sourceRegion }))
+    // V157: a unit layer (B-017's assessment zones) states its own label and no
+    // province name, and a bare code must never reach the screen. Name first, then
+    // the unit's own label, then the province the code stands for.
+    const regionLabelV157 = (row: { adm1Code: string; adm1Name?: string; label?: string }) =>
+      row.adm1Name ||
+      row.label ||
+      (PROVINCE_KO_V150[row.adm1Code]
+        ? formatRegionName({ country: "VNM", raw: PROVINCE_KO_V150[row.adm1Code] })
+        : "") ||
+      "지역 미표기";
+    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: regionLabelV157(v as { adm1Code: string; adm1Name?: string; label?: string }), value: v.value, sourceRegion: v.sourceRegion }))
       : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || `${f.properties.voltageKv || ""} kV 선로 ${i + 1}`), value: null, sourceRegion: undefined }))
       : points.map((r) => ({ id: r.recordId, label: resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title, value: null, sourceRegion: undefined }));
     const layerColor = LAYER_COLORS[layer.elementId] || "#176a4b";
@@ -126,7 +139,26 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend };
   }, [runtime, slice, selection.dimensions, compact, iconKit]);
 
-  if (unavailable) return null;
+  // V157: a dataset the review named a map target but the data cannot place says so
+  // here, with the contract's reason, instead of leaving the reader to wonder.
+  if (unavailable) {
+    const target = publicMapTargetV138(elementId);
+    const reason = target?.build?.kind === "none" ? target.build.reason : "";
+    if (!reason) return null;
+    return (
+      <section className="detail-map148" data-testid="detail-map-not-mapped-v157">
+        <h3>위치·분포</h3>
+        <p className="detail-map148-note">
+          이 자료는 <strong>지도에 표시하지 않습니다</strong>. <PublicTermTextV134 text={reason} />
+        </p>
+        {target?.build?.requiredAsset ? (
+          <p className="detail-map148-note">
+            지도에 올리려면: <PublicTermTextV134 text={String(target.build.requiredAsset)} />
+          </p>
+        ) : null}
+      </section>
+    );
+  }
   if (error) return <section className="detail-map148"><h3>위치·분포</h3><p>지도를 불러오지 못했습니다.</p><button type="button" onClick={() => setRetry((v) => v + 1)}>다시 시도</button></section>;
   if (!runtime || !model || !slice) return <section className="detail-map148" role="status">작은 지도를 불러오는 중입니다.</section>;
   const { layer, base, data, geometry } = runtime;

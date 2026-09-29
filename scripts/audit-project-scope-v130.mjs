@@ -124,11 +124,15 @@ check(
   ).length,
   0
 );
+// V157 (2026-09-22 전수검토): D-023 is a map target, drawn as a count per 2025
+// unit from the province each record states - never as a project site. The check
+// therefore still forbids eligible points and a linked point layer, and expects the
+// region choropleth the contract declares.
 check(
-  "D023_PANEL_ONLY",
+  "D023_REGION_COUNT_NOT_POINTS",
   d023.filter((entity) => entity.mapEligible).length === 0 &&
-    d023Catalog?.mapMode === "panel-only" &&
-    d023Catalog?.mapFeatureCount === 0 &&
+    d023Catalog?.mapMode === "region-choropleth" &&
+    Number(d023Catalog?.mapFeatureCount || 0) > 0 &&
     d023Contract?.mapLinkage?.enabled === false &&
     d023Contract?.mapLinkage?.mapMode === "panel-only",
   {
@@ -137,7 +141,7 @@ check(
     catalogMapFeatureCount: d023Catalog?.mapFeatureCount,
     semanticMapLinkage: d023Contract?.mapLinkage,
   },
-  "entities disabled; catalog and semantic contract panel-only"
+  "no map-eligible points; catalog draws the region count; detail linkage stays panel-only"
 );
 const c025VisibleNameFailures = c025.filter(
   (entity) =>

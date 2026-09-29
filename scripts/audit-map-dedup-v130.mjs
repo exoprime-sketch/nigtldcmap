@@ -52,23 +52,43 @@ check(
   },
   { visibleBefore: ">= visibleAfter", visibleAfter: 0 }
 );
+// V157 (2026-09-22 전수검토): D-023 is drawn as a count per 2025 unit. The rule the
+// removal protected is that a project shared with D-018 is drawn once, by D-018 - so
+// that is what is checked, on the records D-023 actually draws.
+const d023SharedTitles = new Set(
+  (duplicateAudit.duplicatePairs || [])
+    .map((pair) => String(pair.title || pair.normalizedTitle || "").trim().toLowerCase())
+    .filter(Boolean)
+);
+const d023DrawnTitles = (() => {
+  let asset = null;
+  try {
+    asset = publicJson("spatial/layers/d-023.json");
+  } catch {
+    return [];
+  }
+  return Object.values(asset.memberRecords || {})
+    .flat()
+    .map((row) => String(row.label || "").trim().toLowerCase())
+    .filter(Boolean);
+})();
+const d023DrawnShared = d023DrawnTitles.filter((title) => d023SharedTitles.has(title));
 check(
-  "D023_ACTIVE_MAP_LAYER_REMOVED",
-  !mapIndex.layers.some((layer) => layer.elementId === "D-023") &&
-    catalog.elements.find((element) => element.elementId === "D-023")?.mapMode ===
-      "panel-only" &&
+  "D023_SHARED_PROJECTS_DRAWN_BY_D018_ONLY",
+  d023DrawnShared.length === 0 &&
     semanticContracts.contracts.find(
       (contract) => contract.elementId === "D-023"
     )?.mapLinkage?.mapMode === "panel-only" &&
     !/\|\s*["']D-023["']/u.test(presetSource),
   {
+    sharedProjectsDrawnByD023: d023DrawnShared,
     activeLayers: mapIndex.layers.filter((layer) => layer.elementId === "D-023").length,
     catalogMapMode: catalog.elements.find((element) => element.elementId === "D-023")?.mapMode,
     semanticMapMode: semanticContracts.contracts.find(
       (contract) => contract.elementId === "D-023"
     )?.mapLinkage?.mapMode,
   },
-  "no active layer or preset type; catalog/semantic panel-only"
+  "no shared project drawn by D-023; detail linkage panel-only; no preset names it"
 );
 check(
   "CROSS_LAYER_DUPLICATE_VISIBLE_COUNT",

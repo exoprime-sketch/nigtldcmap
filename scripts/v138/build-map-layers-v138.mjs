@@ -1537,6 +1537,15 @@ function main() {
             : layer.renderer === "cluster"
               ? "cluster"
               : "point";
+  // V157: a target the contract dropped keeps no map claim in the catalog - the
+  // finder's "지도 있음" filter reads this, and it counted the three dropped layers
+  // until the value was cleared here.
+  for (const elementId of droppedByContract) {
+    const item = catalog.elements.find((row) => row.elementId === elementId);
+    if (!item) continue;
+    item.mapMode = "panel-only";
+    item.mapFeatureCount = 0;
+  }
   for (const item of catalog.elements) {
     const layer = layerByElement.get(item.elementId);
     if (!layer || layer.enabled === false) continue;

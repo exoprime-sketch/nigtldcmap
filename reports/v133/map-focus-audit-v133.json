@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-24T00:19:45.555Z",
+  "generatedAt": "2026-09-29T05:55:13.216Z",
   "audit": "map-focus:v133",
   "status": "PASS",
   "summary": {
@@ -11,11 +11,11 @@
     "failed": 0,
     "total": 13,
     "failedChecks": [],
-    "mapLayerCount": 42,
-    "mapFeatureOrScopeCount": 4463,
+    "mapLayerCount": 60,
+    "mapFeatureOrScopeCount": 14920,
     "presetCombinationFailures": 0,
     "primaryLayerMax": 1,
-    "companionLimit": 64,
+    "companionLimit": 71,
     "simultaneousPolygonFillContextCount": 0,
     "renderedPolygonFillContextCount": 0,
     "presetSnapshots": [
@@ -322,11 +322,11 @@
       "name": "MAP_LAYERS",
       "status": "PASS",
       "actual": {
-        "active": 42,
-        "declared": 42,
-        "targets": 43
+        "active": 60,
+        "declared": 60,
+        "targets": 72
       },
-      "expected": "declared count, between 12 and 43"
+      "expected": "declared count, between 12 and 72"
     },
     {
       "type": "check",
@@ -334,8 +334,8 @@
       "name": "MAP_FEATURE_OR_SCOPE_COUNT",
       "status": "PASS",
       "actual": {
-        "declared": 4463,
-        "actual": 4463
+        "declared": 14920,
+        "actual": 14920
       },
       "expected": {
         "declared": "equal to actual",
@@ -398,11 +398,11 @@
       "name": "CONTEXT_SELECTION_KEPT",
       "status": "PASS",
       "actual": {
-        "companionLimit": 64,
+        "companionLimit": 71,
         "contextCount": 2
       },
       "expected": {
-        "companionLimit": ">= 42",
+        "companionLimit": ">= 71",
         "contextCount": ">= 2, all in legend"
       }
     },
@@ -610,11 +610,11 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 42,
-  "mapFeatureOrScopeCount": 4463,
+  "mapLayerCount": 60,
+  "mapFeatureOrScopeCount": 14920,
   "presetCombinationFailures": 0,
   "primaryLayerMax": 1,
-  "companionLimit": 64,
+  "companionLimit": 71,
   "simultaneousPolygonFillContextCount": 0,
   "renderedPolygonFillContextCount": 0,
   "presetSnapshots": [

@@ -381,7 +381,17 @@ audit.check(
   "declared active count, at least the twelve ETL layers"
 );
 audit.check("MAP_LAYER_PUBLIC_CONTRACT", layerContractFailures.length === 0, layerContractFailures, []);
-audit.check("D023_DUPLICATE_MAP_FEATURE", !layers.some((layer) => layer.elementId === "D-023"), layers.filter((layer) => layer.elementId === "D-023").length, 0);
+// V157 (2026-09-22 전수검토): D-023 is a map target, drawn as a count per 2025 unit.
+// What must stay true is that it draws no project sites of its own - the four projects
+// it shares with D-018 keep a single spatial representation, D-018's. The dedup audit
+// checks the shared titles; here the layer must not be a point/cluster layer.
+const d023Layer = layers.find((layer) => layer.elementId === "D-023") || null;
+audit.check(
+  "D023_NOT_A_SITE_LAYER",
+  d023Layer === null || /choropleth/u.test(String(d023Layer.renderer || "")),
+  { renderer: d023Layer?.renderer ?? null, mapMode: d023Layer?.mapMode ?? null },
+  "absent, or a region choropleth - never project-site points"
+);
 audit.check(
   "CLIMATE_LAYER_VISUAL_DISTINCTION",
   climateSnapshot !== null && climateShapesPass,
