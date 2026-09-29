@@ -12,6 +12,7 @@ import {
 } from "node:fs";
 import { dirname, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readZipMembersV158 } from "./v158/download-zip-v158.mjs";
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(SCRIPT_DIR, "..");
@@ -351,10 +352,12 @@ check(
   invalidDownloads
 );
 
+// V158: a ZIP asset is reconciled through the JSON file inside it.
 const jsonDownloadAssets = downloadAssets.filter(
   (asset) =>
     String(asset.format || "").toUpperCase() === "JSON" ||
-    String(asset.url || "").toLowerCase().endsWith(".json")
+    String(asset.url || "").toLowerCase().endsWith(".json") ||
+    String(asset.format || "").toUpperCase() === "ZIP"
 );
 const downloadRowFailures = [];
 for (const asset of jsonDownloadAssets) {
@@ -368,7 +371,12 @@ for (const asset of jsonDownloadAssets) {
     continue;
   }
   try {
-    const payload = JSON.parse(readFileSync(path, "utf8"));
+    const zipped = String(asset.format || "").toUpperCase() === "ZIP";
+    const jsonEntry = zipped ? (asset.entries || []).find((entry) => String(entry.format || "").toUpperCase() === "JSON") : null;
+    if (zipped && !jsonEntry) throw new Error("ZIP asset lists no JSON file");
+    const payload = JSON.parse(
+      zipped ? readZipMembersV158(path).get(jsonEntry.fileName)?.toString("utf8") ?? "" : readFileSync(path, "utf8")
+    );
     const observationRows = Array.isArray(payload?.observations)
       ? payload.observations.length
       : 0;

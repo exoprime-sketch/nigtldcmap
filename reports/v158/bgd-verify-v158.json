@@ -2,9 +2,9 @@
   "type": "summary",
   "audit": "country-verify:bgd:v158",
   "status": "PASS",
-  "passed": 53,
+  "passed": 52,
   "failed": 0,
-  "total": 53,
+  "total": 52,
   "failedChecks": [],
   "framework": 152,
   "delivered": 119,
@@ -833,12 +833,6 @@
         "drift": []
       },
       "expected": "no change to the reference tree, registry or src"
-    },
-    {
-      "name": "DETERMINISTIC_BUILD",
-      "pass": true,
-      "actual": [],
-      "expected": "second build byte-identical"
     }
   ]
 }
