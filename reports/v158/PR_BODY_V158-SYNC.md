@@ -21,7 +21,7 @@
 - `scripts/v158/screen-signature-v158.mjs`: 찾기·지도·다운로드·이용안내를 `?view=`(경로 아님, 홈으로 열림) 대신 해시 경로로 찍는다. B2b 브랜치의 같은 파일과 내용이 같다.
 
 ## Preview·확인 경로
-- Preview: PREVIEW_URL
+- Preview: https://nigtldcmap-3e7oq0ors-exoprime-5142s-projects.vercel.app (커밋 `f18e7c5`, Vercel 로그인 필요)
 - **화면 변화 0**: 확인할 페이지가 없다.
 
 자세한 내용: `reports/v158/REVIEW_V158-SYNC.md`
