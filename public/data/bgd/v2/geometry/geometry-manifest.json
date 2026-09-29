@@ -1,0 +1,99 @@
+{
+  "assets": [
+    {
+      "attribution": "geoBoundaries (BBS, OCHA ROAP), CC BY 3.0 IGO",
+      "derivedFrom": {
+        "adm1CrossCheck": {
+          "boundaryId": "BGD-ADM1-32408957",
+          "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+          "sha256": "f25f782a3b6eeece96e4218094380e2d02e2ac560c1eb125f59bd7229a1ca348",
+          "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1.geojson"
+        },
+        "membership": "regionNamesV161 district parent, cross-checked against geoBoundaries ADM1 BGD-ADM1-32408957",
+        "method": "dissolve-by-membership"
+      },
+      "featureCount": 8,
+      "geometryTypes": [
+        "MultiPolygon",
+        "Polygon"
+      ],
+      "kind": "adm1-boundary",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)"
+      },
+      "sha256": "6f6a54b949149c087b818751d34e9c22d56a2c60447815336a2c8d21e47f9ed6",
+      "simplificationToleranceDeg": 0.0008,
+      "source": {
+        "boundaryId": "BGD-ADM2-16705992",
+        "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "provider": "Bangladesh Bureau of Statistics (BBS), OCHA ROAP",
+        "sha256": "54379ccc77f6f59dab3569ecc5f9b3850dbed2d65a5f43a034bdf92179f5621b",
+        "sourceCommit": "9469f09",
+        "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2.geojson"
+      },
+      "url": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "validation": {
+        "areaChangePctSimplified": -0.0036,
+        "areaChangePpmDissolve": 0.0,
+        "featureCount": 8,
+        "gapKm2": 0.0,
+        "overlapsKm2": 0.0,
+        "synthesizedVertices": 0,
+        "valid": true,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "v158"
+    },
+    {
+      "attribution": "geoBoundaries (BBS, OCHA ROAP), CC BY 3.0 IGO",
+      "derivedFrom": {
+        "asset": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+        "method": "shapely.unary_union over the 8 simplified divisions",
+        "sha256": "6f6a54b949149c087b818751d34e9c22d56a2c60447815336a2c8d21e47f9ed6"
+      },
+      "featureCount": 1,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "country-outline",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)"
+      },
+      "sha256": "d58c46c342ea20d225b479d69a5c8f3db3ead3e8a84e2dd23c70e445b1eaed92",
+      "simplificationToleranceDeg": 0,
+      "source": {
+        "boundaryId": "BGD-ADM2-16705992",
+        "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "provider": "Bangladesh Bureau of Statistics (BBS), OCHA ROAP",
+        "sha256": "54379ccc77f6f59dab3569ecc5f9b3850dbed2d65a5f43a034bdf92179f5621b",
+        "sourceCommit": "9469f09",
+        "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2.geojson"
+      },
+      "url": "/data/bgd/v2/geometry/bgd-country-outline.geojson",
+      "validation": {
+        "areaChangePctSimplified": -0.0036,
+        "areaChangePpmDissolve": 0.0,
+        "featureCount": 1,
+        "gapKm2": 0.0,
+        "overlapsKm2": 0,
+        "synthesizedVertices": 0,
+        "valid": true,
+        "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "v158"
+    }
+  ],
+  "boundarySystem": "adm1-8",
+  "boundarySystems": {
+    "default": "adm1-8",
+    "valuesKeyedTo": "adm1-8"
+  },
+  "countryIso3": "BGD",
+  "schemaVersion": "v124-geometry-manifest-1"
+}

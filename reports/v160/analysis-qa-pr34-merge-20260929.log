@@ -1,0 +1,159 @@
+
+> react-typescript@1.0.0 qa:analysis:v140:baseline
+> node scripts/v140/analysis-qa-v140.mjs --baseline reports/v150/analysis-qa-baseline-v150.json
+
+A-001 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-003 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-002 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-005 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-004 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-006 ok click=true url=false value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | selection lost in URL: dim.detail=null; detail does not show the card's selection: selection "ILO 모델추정" not shown; selection "경제활동인구 대비 실업자 
+A-008 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-007 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-009 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-011 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-010 ok click=true url=true value=false recomp=match fit=true afit=false ctrl=true table=no-derived-row map=null sym=null | card value 582.7 (MtCO₂e, 2024) not stated as such on the detail | afit missing: parts named (0/0)
+A-013 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: measure "NDC-SDG 연계 건수" not named
+A-012 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-014 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-016 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: measure "1차 에너지 소비" not named
+A-015 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: selection "정규화 달성도 점수(0~100)" not shown
+A-017 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+A-019 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-018 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-020 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-021 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+A-022 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: selection "연간 고객당 순간정전 횟수" not shown
+A-024 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=null table=match map=true sym=true
+A-026 ok click=true url=null value=null recomp=not-applicable fit=null afit=true ctrl=null table=not-applicable map=null sym=null
+A-023 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=true sym=true
+A-025 ok click=true url=true value=false recomp=match fit=false afit=true ctrl=null table=match map=true sym=true | card value 5 건 (건, 2026) not stated as such on the detail; detail does not show the card's selection: year 2026 not shown; measure "CCS 시설 수
+A-027 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: year 2026 not shown; selection "피처 수" not shown; selection "OSM 도로 레이어의 지물 건수" not shown; measure
+A-028 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | detail does not show the card's selection: year 2026 not shown; selection "피처 수" not shown; selection "OSM 수로 레이어의 지물 건수" not shown; measure
+A-029 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=null table=match map=null sym=null | detail does not show the card's selection: measure "무역협정 건수" not named
+A-030 ok click=true url=false value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null | selection lost in URL: dim.detail=null
+A-031 ok click=true url=false value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | selection lost in URL: dim.detail=null; detail does not show the card's selection: selection "통관 부문 점수(1=낮음 ~ 5=높음)" not shown
+B-001 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=null table=match map=null sym=null | detail does not show the card's selection: measure "월 평년강수" not named
+A-032 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-002 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=null table=match map=null sym=null
+A-033 ok click=true url=false value=true recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | selection lost in URL: dim.detail=null; detail does not show the card's selection: selection "정기선 해운 연결성 지수(Q1 분기값)" not shown
+B-003 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-005 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-004 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-008 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-006 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-010 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-007 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-009 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-012 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=true sym=true
+B-011 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-013 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-016 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-014 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-015 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-017 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=null sym=null
+B-018 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-019 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-020 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-022 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-023 ok click=true url=null value=true recomp=mismatch fit=null afit=true ctrl=null table=row-count-differs map=true sym=true | recomputed from the download file: 11 vs card 10
+B-024 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=false table=match map=null sym=null | control without effect on the primary analysis: 기준연도 (2023년 → 2022년)
+B-021 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-026 ok click=true url=true value=false recomp=match fit=true afit=true ctrl=true table=no-derived-row map=null sym=null | card value 23.3 % (%) not stated as such on the detail
+B-025 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=true sym=true
+B-027 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-028 ok click=true url=null value=false recomp=mismatch fit=null afit=true ctrl=null table=row-count-differs map=true sym=true | card value 15건 (건) not stated as such on the detail; recomputed from the download file: 16 vs card 15
+B-029 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-030 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-031 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-032 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-033 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-035 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-034 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-038 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-036 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-037 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-039 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-040 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-041 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-044 ok click=true url=true value=null recomp=not-applicable fit=true afit=true ctrl=true table=not-applicable map=null sym=null
+B-042 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+B-043 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-046 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=null table=match map=null sym=null
+B-047 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=null table=match map=null sym=null
+C-001 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+B-045 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+B-048 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=true sym=true
+C-002 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+C-003 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 96건 (건) not stated as such on the detail
+C-004 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 58건 (건) not stated as such on the detail
+C-007 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=row-count-differs map=null sym=null
+C-006 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 50건 (건) not stated as such on the detail
+C-005 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 135건 (건) not stated as such on the detail
+C-008 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=null sym=null
+C-011 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=null table=match map=null sym=null | card value 44건 (건) not stated as such on the detail
+C-010 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=row-count-differs map=true sym=true
+C-009 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=row-count-differs map=true sym=true
+C-012 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=true sym=true
+C-014 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 93건 (건) not stated as such on the detail
+C-015 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+C-013 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=true sym=true | card value 64건 (건) not stated as such on the detail
+C-017 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 52건 (건) not stated as such on the detail
+C-018 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+C-020 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+C-016 ok click=true url=true value=false recomp=match fit=true afit=true ctrl=true table=match map=true sym=true | card value 27,385 MW (MW) not stated as such on the detail
+C-021 ok click=null url=null value=null recomp=not-applicable fit=null afit=null ctrl=null table=not-applicable map=null sym=null
+C-019 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=true sym=true
+C-023 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+C-022 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+C-024 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=true sym=true | card value 20건 (건) not stated as such on the detail
+D-001 ok click=true url=true value=true recomp=match fit=false afit=true ctrl=null table=match map=null sym=null | detail does not show the card's selection: selection "바이오에너지 기술 (Biomass)" not shown; selection "총투자액÷설비용량 중앙값" not shown; measure "단위 사업당 C
+D-002 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-003 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-004 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+C-025 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=true sym=true
+D-005 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-007 ok click=true url=true value=null recomp=not-applicable fit=true afit=true ctrl=true table=not-applicable map=null sym=null
+D-006 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-009 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-011 ok click=true url=true value=false recomp=match fit=true afit=true ctrl=true table=match map=null sym=null | card value 16.65억 USD (USD, 2024) not stated as such on the detail
+D-010 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-008 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+D-012 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-013 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+D-014 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-015 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-016 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-017 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-020 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=null sym=null
+D-019 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-018 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=true sym=true
+D-021 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-022 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-024 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+D-023 ok click=true url=null value=true recomp=match fit=null afit=false ctrl=true table=match map=null sym=null | afit missing: parts named (0/0)
+D-025 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+D-026 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=null sym=null
+E-002 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=null sym=null
+E-001 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+E-003 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+E-006 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=null table=match map=true sym=true
+E-005 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=true sym=true
+E-008 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+E-007 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=true table=match map=null sym=null | card value 19건 (건) not stated as such on the detail
+E-009 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=null table=match map=null sym=null
+E-004 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=true sym=true
+E-011 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+E-010 ok click=true url=true value=true recomp=match fit=true afit=true ctrl=true table=match map=null sym=null
+E-013 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+E-015 ok click=true url=null value=false recomp=match fit=null afit=true ctrl=null table=match map=null sym=null | card value 4건 (건) not stated as such on the detail
+E-012 ok click=true url=true value=false recomp=match fit=false afit=true ctrl=true table=match map=null sym=null | card value 51,860 천명 (천명, 2024) not stated as such on the detail; detail does not show the card's selection: measure "총 취업자 수" not named
+E-016 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+E-014 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=match map=null sym=null
+E-017 ok click=null url=null value=null recomp=undefined fit=null afit=null ctrl=null table=undefined map=null sym=null
+E-018 ok click=true url=null value=true recomp=match fit=null afit=false ctrl=true table=match map=true sym=true | afit missing: compared categories named (1/2)
+E-019 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=true sym=true
+E-020 ok click=true url=null value=true recomp=match fit=null afit=true ctrl=true table=row-count-differs map=null sym=null
+{"label":"local-build","base":"http://127.0.0.1:57975","generatedAt":"2026-09-29T03:52:46.287Z","version":{"local":{"cardSummaries":"9b46dd1b520f762f","cardGeneratedAt":"2026-09-24T11:27:38.756Z","sourceHash":"ad1af64a0e3d29af","manifestGeneratedAt":"2026-08-27T00:00:00Z","mapLayerCount":42},"remote":{"cardSummaries":"9b46dd1b520f762f","cardGeneratedAt":"2026-09-24T11:27:38.756Z","manifestGeneratedAt":"2026-08-27T00:00:00Z","mapLayerCount":42},"match":true},"elements":152,"valueBearing":141,"statusOnly":1,"excludedV156":["A-017","C-015","C-020","C-023","D-024","E-008","E-011","E-013","E-016","E-017"],"cardClicked":{"pass":141,"fail":0,"notApplicable":11},"homeCardClicked":{"pass":0,"fail":0,"notApplicable":152},"selectionUrlPreserved":{"pass":87,"fail":4,"notApplicable":61},"screenLoaded":{"pass":152,"fail":0,"notApplicable":0},"detailTilesAbsent":{"pass":142,"fail":0,"notApplicable":0},"detailTilesBounded":{"pass":142,"fail":0,"notApplicable":0},"cardValueVerified":{"pass":120,"fail":18,"notApplicable":14},"recomputed":{"match":136,"none":10,"not-applicable":4,"mismatch":2},"detailAnalysisFit":{"pass":77,"fail":14,"notApplicable":61},"analysisFit":{"pass":138,"fail":3,"notApplicable":11,"byKind":{"line:true":33,"signed-bars:true":1,"bars:true":37,"composition:false":2,"composition:true":3,"level:true":17,"excluded-v156:null":10,"grouped-bars:true":1,"map:true":1,"facts:true":29,"spatial-trend:true":5,"spatial:true":11,"status-v159:null":1,"bars:false":1}},"internalWording":[],"mapSymbolVerified":{"pass":42,"fail":0,"notApplicable":110},"controlsVerified":{"pass":117,"fail":1,"notApplicable":34},"controlsTried":249,"tableValuesVerified":{"pass":125,"fail":13,"notApplicable":14},"tableClassification":{"match":125,"no-derived-row":2,"none":10,"not-applicable":4,"row-count-differs":11},"mapHandoffVerified":{"pass":42,"fail":0,"notApplicable":110},"withRemainingIssues":33,"requiredFailures":35,"requiredFailureIds":["A-006","A-010","A-013","A-015","A-016","A-022","A-025","A-027","A-028","A-029","A-030","A-031","A-033","B-001","B-023","B-024","B-026","B-028","C-003","C-004","C-005","C-006","C-011","C-013","C-014","C-016","C-017","C-024","D-001","D-011","D-023","E-007","E-012","E-015","E-018"]}
+{"type":"baseline","baseline":"reports/v150/analysis-qa-baseline-v150.json","baselineCount":41,"requiredFailures":35,"newFailures":["A-010:analysisFit","D-023:analysisFit"],"resolved":["A-017","A-023","C-002","C-012","C-015","C-019","E-016"],"pass":false}
+EXIT 1

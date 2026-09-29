@@ -14,6 +14,32 @@
 ### Added
 
 - 등급 정본 `src/data/spec/informationTiersV160.json`·홈 질문 `homeQuestionsV160.json`(기획서 §3에서 생성, `build:core-first:v160`/`check:core-first:v160`), `qa:core-first:v160`, `docs/CORE_FIRST_V160.md`, 추적표 '등급(V160)' 열
+## Unreleased — V158-B1 방글라데시 적재·8개 Division 경계·지도 후보표 (PR 후보)
+
+### Added
+
+- 방글라데시 데이터 트리 `public/data/bgd/v2`
+  - 구성: 납품 119개 + 미제공 33개 = 152, 기록 49,078·지표 1,747, 팩 24, 다운로드 85개 요소
+  - 파일명·스키마는 베트남과 같고 지도 레이어는 0이다.
+  - 공개 결정(2026-09-29): 표출은 전부, 다운로드는 지표 메타가 `가능`인 기록만, 제외 0건
+  - 다운로드 CSV 끝에 `지역명_한글`(`formatRegionName`) 열을 붙였다. Division 행 100% 적중, 비라틴 0.
+- 새 국가 ETL `tools/etl/countries/bgd/`: 스크립트는 `--country` 인자를 받고, 국가명·개수를 코드에 적지 않는다.
+  - `stage_source.py`: 원자료 복사·sha256
+  - `build_country_v2.py`: 베트남 빌더는 고치지 않고 순수 도우미만 쓴다.
+  - `verify_country_v2.cjs`: 53개 검사 — 베트남 스키마 대조, 행·칸 누락 0, 권리·다운로드, 무결성·앱 로더 규칙, 지역명, 베트남 불변, 결정성
+  - `render_preview.py`: 미리보기 PNG
+- 8개 Division 경계 `geometry/bgd-adm1-8.geojson`·국가 윤곽·경계 매니페스트
+  - 원천: geoBoundaries ADM2 64구(BBS·OCHA, CC BY 3.0 IGO)를 사전 소속대로 합성
+  - ADM1 면적 과반 교차 검증 64/64, 위상 보존 단순화 0.0008°, 새 꼭짓점 0
+  - 스크립트 `boundaries_adm2_dissolve.py`, 크로스워크 `crosswalk-adm1.json`
+- 지도 후보표(승인 대기, 등록은 B2): 제공 119 → 기준 충족 43(등록 후보 37 · 보류 6) · 지도 제외 76 / 미제공 33
+  - 1장 요약·152행 전수검토표·근거 JSON·미리보기 PNG(`reports/v158/`)
+  - PDF 1쪽(베트남 형식)
+
+### Changed
+
+- `docs/MULTICOUNTRY_V158.md` 온보딩 4단계: 새 국가 적재는 국가 빌더를 쓴다. 이전 안내였던 `ETL_COUNTRY=<ISO3>`로 베트남 빌더를 돌리는 방법은 쓰지 않는다.
+
 ## Unreleased — V161-A 지역명 표기 모듈 (PR 후보)
 
 ### Added

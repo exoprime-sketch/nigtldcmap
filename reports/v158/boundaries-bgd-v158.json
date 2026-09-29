@@ -1,0 +1,306 @@
+{
+  "adm1CrossCheck": {
+    "byDivision": {
+      "Barisal": {
+        "adm1ShapeId": "32408957B31852228482374",
+        "adm1ShapeIso": "BD-A",
+        "adm1ShapeName": "Barisal",
+        "memberDistrictCount": 6
+      },
+      "Chittagong": {
+        "adm1ShapeId": "32408957B94023193097291",
+        "adm1ShapeIso": "BD-B",
+        "adm1ShapeName": "Chittagong",
+        "memberDistrictCount": 11
+      },
+      "Dhaka": {
+        "adm1ShapeId": "32408957B77718829177955",
+        "adm1ShapeIso": "BD-C",
+        "adm1ShapeName": "Dhaka",
+        "memberDistrictCount": 13
+      },
+      "Khulna": {
+        "adm1ShapeId": "32408957B3859287816056",
+        "adm1ShapeIso": "BD-D",
+        "adm1ShapeName": "Khulna",
+        "memberDistrictCount": 10
+      },
+      "Mymensingh": {
+        "adm1ShapeId": "32408957B83626866084602",
+        "adm1ShapeIso": "BD-H",
+        "adm1ShapeName": "Mymensingh",
+        "memberDistrictCount": 4
+      },
+      "Rajshahi": {
+        "adm1ShapeId": "32408957B27409320841034",
+        "adm1ShapeIso": "BD-E",
+        "adm1ShapeName": "Rajshani",
+        "memberDistrictCount": 8
+      },
+      "Rangpur": {
+        "adm1ShapeId": "32408957B77489436868882",
+        "adm1ShapeIso": "BD-F",
+        "adm1ShapeName": "Rangpur",
+        "memberDistrictCount": 8
+      },
+      "Sylhet": {
+        "adm1ShapeId": "32408957B58397560032916",
+        "adm1ShapeIso": "BD-G",
+        "adm1ShapeName": "Sylhet",
+        "memberDistrictCount": 4
+      }
+    },
+    "evidence": {
+      "districtsChecked": 64,
+      "lowestShares": [
+        {
+          "adm1ShapeName": "Chittagong",
+          "district": "Noakhali",
+          "division": "Chittagong",
+          "share": 0.6165
+        },
+        {
+          "adm1ShapeName": "Barisal",
+          "district": "Bhola",
+          "division": "Barisal",
+          "share": 0.6911
+        },
+        {
+          "adm1ShapeName": "Barisal",
+          "district": "Pirojpur",
+          "division": "Barisal",
+          "share": 0.8428
+        },
+        {
+          "adm1ShapeName": "Barisal",
+          "district": "Patuakhali",
+          "division": "Barisal",
+          "share": 0.8578
+        },
+        {
+          "adm1ShapeName": "Mymensingh",
+          "district": "Jamalpur",
+          "division": "Mymensingh",
+          "share": 0.8595
+        }
+      ],
+      "method": "area majority: each district's largest ADM1 overlap must hold >= 50% of it and match its division",
+      "minimumShare": 0.6165,
+      "pointOnSurface": {
+        "inside": 63,
+        "note": "evidence only; the coarse ADM1 coastline leaves coastal interior points outside",
+        "outsideAll": [
+          {
+            "distanceDeg": 0.01583,
+            "district": "Noakhali",
+            "nearestAdm1": "Chittagong"
+          }
+        ]
+      }
+    }
+  },
+  "countryIso3": "BGD",
+  "dissolve": {
+    "afterSimplification": {
+      "areaChangePctVsPreSimplify": -0.0036,
+      "areaKm2Union8": 139846.9834,
+      "coverageTopologyNote": "shapely.coverage_is_valid(simplified_8_divisions, gap_width=0.0): confirms coverage_simplify introduced no overlaps and kept every shared division-to-division edge exactly matched.",
+      "coverageTopologyValid": true,
+      "gateOverlapKm2Max": 5.0,
+      "outerBoundaryGeneralization": {
+        "gainedKm2": 28.1074,
+        "lostKm2": 33.1394,
+        "note": "One-directional area lost/gained versus the pre-simplify (full-detail) union - the expected cost of coarsening the outer boundary/coastline, not a gap between divisions. The signed net (areaChangePctVsPreSimplify above) is the figure that matters."
+      },
+      "overlapsKm2": 0.0,
+      "synthesizedVertices": 0,
+      "valid": true
+    },
+    "beforeSimplification": {
+      "areaChangePpm": 0.0,
+      "areaKm2Union64": 139852.0192,
+      "areaKm2Union8": 139852.0192,
+      "gapKm2": 0.0,
+      "gateAreaPpmMax": 1.0,
+      "gateGapKm2Max": 5.0,
+      "gateOverlapKm2Max": 5.0,
+      "overlapsKm2": 0.0,
+      "valid": true
+    },
+    "chosenToleranceDeg": 0.0008,
+    "countryOutline": {
+      "synthesizedVertices": 0,
+      "valid": true
+    },
+    "toleranceTrials": [
+      {
+        "bytes": 2849967,
+        "toleranceDeg": 0.0003
+      },
+      {
+        "bytes": 2390352,
+        "toleranceDeg": 0.0004
+      },
+      {
+        "bytes": 2068905,
+        "toleranceDeg": 0.0005
+      },
+      {
+        "bytes": 1828191,
+        "toleranceDeg": 0.0006
+      },
+      {
+        "bytes": 1490163,
+        "toleranceDeg": 0.0008
+      },
+      {
+        "bytes": 1254735,
+        "toleranceDeg": 0.001
+      },
+      {
+        "bytes": 907155,
+        "toleranceDeg": 0.0015
+      }
+    ],
+    "usedMakeValidFor": []
+  },
+  "districtMatch": {
+    "divisionsFormed": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Mymensingh",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet"
+    ],
+    "expectedDistrictCount": 64,
+    "matchedDistrictCount": 64
+  },
+  "divisionKeyTable": [
+    {
+      "districtCount": 6,
+      "divisionKey": "BGD.1_1",
+      "iso3166_2": "BD-A",
+      "nameEn": "Barisal",
+      "nameKo": "바리살"
+    },
+    {
+      "districtCount": 11,
+      "divisionKey": "BGD.2_1",
+      "iso3166_2": "BD-B",
+      "nameEn": "Chittagong",
+      "nameKo": "치타공"
+    },
+    {
+      "districtCount": 13,
+      "divisionKey": "BGD.3_1",
+      "iso3166_2": "BD-C",
+      "nameEn": "Dhaka",
+      "nameKo": "다카"
+    },
+    {
+      "districtCount": 10,
+      "divisionKey": "BGD.4_1",
+      "iso3166_2": "BD-D",
+      "nameEn": "Khulna",
+      "nameKo": "쿨나"
+    },
+    {
+      "districtCount": 8,
+      "divisionKey": "BGD.5_1",
+      "iso3166_2": "BD-E",
+      "nameEn": "Rajshahi",
+      "nameKo": "라지샤히"
+    },
+    {
+      "districtCount": 8,
+      "divisionKey": "BGD.6_1",
+      "iso3166_2": "BD-F",
+      "nameEn": "Rangpur",
+      "nameKo": "랑푸르"
+    },
+    {
+      "districtCount": 4,
+      "divisionKey": "BGD.7_1",
+      "iso3166_2": "BD-G",
+      "nameEn": "Sylhet",
+      "nameKo": "실렛"
+    },
+    {
+      "districtCount": 4,
+      "divisionKey": "BGD.8_1",
+      "iso3166_2": "BD-H",
+      "nameEn": "Mymensingh",
+      "nameKo": "마이멘싱"
+    }
+  ],
+  "generatedFromCommit": {
+    "adm1CrossCheck": {
+      "boundaryId": "BGD-ADM1-32408957",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "sha256": "f25f782a3b6eeece96e4218094380e2d02e2ac560c1eb125f59bd7229a1ca348",
+      "sourceCommit": "9469f09",
+      "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1.geojson"
+    },
+    "adm2": {
+      "boundaryId": "BGD-ADM2-16705992",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "provider": "Bangladesh Bureau of Statistics (BBS), OCHA ROAP",
+      "sha256": "54379ccc77f6f59dab3569ecc5f9b3850dbed2d65a5f43a034bdf92179f5621b",
+      "sourceCommit": "9469f09",
+      "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2.geojson"
+    }
+  },
+  "notes": "B-017(WRI Aqueduct) 관구 순위표는 GADM 3.6 ADM1 7개 기준이라 GADM 4.1 8개보다 적다 — 미수록: Mymensingh(Mymensingh은(는) 2015년 Dhaka 관구에서 분리 신설됨). geoBoundaries ADM1 원본은 Rajshahi 관구의 shapeName을 \"Rajshani\"로 표기한 오탈자를 그대로 담고 있다(iso3166_2=BD-E, 발행 경계값엔 영향 없음).",
+  "outputs": {
+    "adm1Geojson": {
+      "bytes": 1490163,
+      "featureCount": 8,
+      "path": "public/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "sha256": "6f6a54b949149c087b818751d34e9c22d56a2c60447815336a2c8d21e47f9ed6"
+    },
+    "countryOutlineGeojson": {
+      "bytes": 1092499,
+      "path": "public/data/bgd/v2/geometry/bgd-country-outline.geojson",
+      "sha256": "d58c46c342ea20d225b479d69a5c8f3db3ead3e8a84e2dd23c70e445b1eaed92"
+    },
+    "crosswalk": {
+      "bytes": 3985,
+      "path": "tools/etl/countries/bgd/crosswalk-adm1.json"
+    },
+    "geometryManifest": {
+      "bytes": 4106,
+      "path": "public/data/bgd/v2/geometry/geometry-manifest.json"
+    },
+    "report": {
+      "path": "reports/v158/boundaries-bgd-v158.json"
+    }
+  },
+  "schemaVersion": "bgd-boundaries-adm2-dissolve-v158",
+  "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area/length",
+  "workbookDivisionKeys": {
+    "B-003": {
+      "codes": [
+        "BGD.1_1",
+        "BGD.2_1",
+        "BGD.3_1",
+        "BGD.4_1",
+        "BGD.5_1",
+        "BGD.6_1",
+        "BGD.7_1",
+        "BGD.8_1"
+      ],
+      "divisionCount": 8,
+      "path": "../20260827_개도국전략지도플랫폼/방글라데시데이터/20260923/B-003_연평균 기온·강수.xlsx"
+    },
+    "B-017": {
+      "divisionCount": 7,
+      "missingDivisions": [
+        "Mymensingh"
+      ],
+      "path": "../20260827_개도국전략지도플랫폼/방글라데시데이터/20260923/B-017_WRI Aqueduct 물 스트레스 지수.xlsx"
+    }
+  }
+}
