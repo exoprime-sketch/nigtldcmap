@@ -14,6 +14,7 @@
 ## 검증
 - tsc 0 · unit 564/564 · core-first 12/12
 - finalize:v151 3회 실패 후 단계별: detail-hierarchy 12/12 · duplicate-copy 0 · human-review 10/10 · release 79/79 · role-split 49/49 · analysis QA main 대비 신규 0 · boundary-34 21(+1 skip) · boundary-policy 24/24
+- main(fcc04f7, #33·#35·#36·#37·#38) 병합 후: finalize:v151 1회차 exclusions:v156 실패 → 감사 V160 이관(사용자 결정) → release 80/80 · role-split 49/49 · analysis QA main 대비 신규 0 · boundary-34 21(+1 skip) · boundary-policy 24/24 · unit 593/593(hidden == 카탈로그 excluded ∪ not-collected 테스트 추가)
 - A-010·D-023 analysisFit은 main에도 있는 #32 유래 실패 — merge 직후 fix-forward PR
 - 상세: reports/v160/REVIEW_V160.md · 기대값 변경: reports/v160/EXPECTATION_CHANGES_V160.md
 
