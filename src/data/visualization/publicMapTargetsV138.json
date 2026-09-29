@@ -2044,8 +2044,8 @@
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
-        "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+        "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+        "requiredAsset": "지역 열이 채워진 재납품",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
       "selectableVariables": "(상세 화면) 권역별 적응조치·이행기간",
@@ -2053,7 +2053,7 @@
       "period": "2020~2050년",
       "representativeItem": "권역별 적응조치·이행기간",
       "evidence": "개체 96건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -2277,8 +2277,8 @@
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
-        "requiredAsset": "지역 열(속성20·21·22)이 채워진 재납품",
+        "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+        "requiredAsset": "지역 열이 채워진 재납품",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
       "selectableVariables": "(상세 화면) 권역별 가격상한·닌투언 특례",
@@ -2286,7 +2286,7 @@
       "period": "2016~2026년",
       "representativeItem": "권역별 가격상한·닌투언 특례",
       "evidence": "개체 52건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {

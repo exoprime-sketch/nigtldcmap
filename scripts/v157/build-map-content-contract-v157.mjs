@@ -558,9 +558,11 @@ function statusFor(elementId, geometry, evidence) {
       };
     }
     if (evidence.emptyRegionFields.length > 0) {
+      // The columns are named in criteriaEvidence.emptyRegionFields and in the
+      // re-delivery request; the status says the fact without the internal keys.
       return {
         status: "region-fields-empty",
-        reason: `지역 열은 있으나 값이 전무 — ${evidence.emptyRegionFields.join(", ")}`,
+        reason: `지역 열은 있으나 값이 전무 — 지역 열 ${evidence.emptyRegionFields.length}개가 모두 비어 있음(제공자 재납품 필요)`,
       };
     }
     if (evidence.genericRegionRows > 0) {

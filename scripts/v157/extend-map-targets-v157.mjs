@@ -444,7 +444,7 @@ function pendingTarget(row, entry) {
 function unmappedTarget(row, entry) {
   const REQUIRED_ASSET = {
     "national-only": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
-    "region-fields-empty": "지역 열(속성20·21·22)이 채워진 재납품",
+    "region-fields-empty": "지역 열이 채워진 재납품",
     "region-text-generic": "원문 지역어에 대응하는 공식 경계 정의",
     "reference-mapping-pending": "EVN 5개 총공사 관할표(성별 출처 URL 포함)",
     "data-pending": "사업별 실시 지역(성·시)이 채워진 재납품",

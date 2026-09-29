@@ -1,6 +1,6 @@
 {
   "schema": "map-content-contract-build-v157",
-  "generatedAt": "2026-09-28T23:10:59.041Z",
+  "generatedAt": "2026-09-29T22:58:39.067Z",
   "country": "VNM",
   "rowCount": 72,
   "provinceDictionary": {
@@ -279,7 +279,7 @@
       "pdf": "③",
       "computed": [],
       "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -311,7 +311,7 @@
       "pdf": "③",
       "computed": [],
       "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code",
+      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -322,5 +322,5 @@
       }
     }
   ],
-  "changed": false
+  "changed": true
 }

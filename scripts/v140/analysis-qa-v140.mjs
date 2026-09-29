@@ -630,7 +630,18 @@ async function mapSymbolSemanticsOf(page, elementId) {
     const panel = await page.evaluate(() => {
       const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
       const node = document.querySelector('[data-testid="map-selected-feature-panel"]');
-      const rows = [...(node?.querySelectorAll(".cdp-evidence-row") || [])].map((row) => `${tidy(row.querySelector("span")?.textContent)}: ${tidy(row.querySelector("strong")?.textContent)}`);
+      // V157/P12-C: the panel states the selection in sentences now; the older
+      // `항목 / 값 / 단위` rows remain on the kinds that still use them. Both count
+      // as the panel saying something about the feature that was clicked.
+      const legacyRows = [...(node?.querySelectorAll(".cdp-evidence-row") || [])].map(
+        (row) => `${tidy(row.querySelector("span")?.textContent)}: ${tidy(row.querySelector("strong")?.textContent)}`
+      );
+      const cardLines = [
+        ...(node?.querySelectorAll('[data-testid="map-selection-lines-v161"] > li') || []),
+        ...(node?.querySelectorAll('[data-testid="map-selection-members-v161"] > li') || []),
+        ...(node?.querySelectorAll('[data-testid="map-selection-comparison-v161"] > li') || []),
+      ].map((line) => tidy(line.textContent));
+      const rows = [...legacyRows, ...cardLines].filter(Boolean);
       const info = tidy(document.querySelector(".cdp-map-layer-info, [data-testid='map-layer-info']")?.innerText || "");
       const coverage = tidy([...document.querySelectorAll("dt")].find((dt) => /지도 표시 범위|공간 단위|표시 단위/u.test(dt.textContent || ""))?.nextElementSibling?.textContent || "");
       return { elementId: node?.getAttribute("data-selected-element-id") || "", title: tidy(node?.querySelector("h3")?.textContent), rows, text: tidy(node?.innerText), info, coverage, body: tidy(document.body.innerText).slice(0, 20000) };
