@@ -23,7 +23,7 @@
 - `finalize:v151`: 통과(1회) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41 이내, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24
 
 ## Preview·확인 경로
-- Preview: PREVIEW_URL
+- Preview: https://nigtldcmap-ibl63iqqs-exoprime-5142s-projects.vercel.app (커밋 `9a25c32`, Vercel 로그인 필요)
 - **화면 변화 0**: 베트남 공개 화면(홈·찾기·상세·지도·다운로드·이용안내)은 그대로다. BGD는 `preparing`이라 `?country=BGD`도 베트남 화면으로 열린다.
 - 참고(비공개 상태 미리보기, 로컬 빌드에서 레지스트리만 브라우저 안에서 live로 바꿔 1440px 캡처): `reports/v158/screens/b2b-bgd-*.png` — 찾기, A-001 비교, C-015 국가 고유 이름, C-017 벵골 문자, C-020 데이터 준비 중, E-012 단위 불일치
 
