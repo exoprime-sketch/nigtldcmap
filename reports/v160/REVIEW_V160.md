@@ -54,7 +54,7 @@
 | main 병합 전(9-29 오전) | 필수 46 · 기준선 밖 A-010·D-023 + 11(제외 10건 시간 초과·C-021) · 카드 요약 해시 불일치 | 필수 35 · 기준선 밖 A-010·D-023 | 0 | `analysis-qa-main-prod-20260929.log` · `analysis-qa-pr34-20260929.log` |
 | main(8c3bf66) 병합 후 | 필수 36 · 기준선 밖 A-010·C-021·D-023 · 해시 일치 | 필수 35 · 기준선 밖 A-010·D-023 | **0** | `analysis-qa-main-prod-merge-20260929.log` · `analysis-qa-pr34-merge-20260929.log` |
 
-- A-010·D-023: 기존 실패(main 동일, #32 유래). #32 직전 보고서(a747d54)에서는 'parts named 4/4' 통과. #34 merge 직후 main에서 fix-forward PR
+- A-010·D-023: 기존 실패(main 동일, #32 유래). #32 직전 보고서(a747d54)에서는 'parts named 4/4' 통과. #34 merge 직후 main에서 fix-forward PR — **정정(2026-09-29): #32가 아니라 V160이 analysis QA의 `HOME_IDS`를 비워 구성 항목 조회가 빈 것이 원인. main 대조도 V160 스크립트로 실행돼 같게 보였음. `reports/v160/FIXFORWARD_A010_D023.md`**
 - #34 병합 후 실행은 8c3bf66 병합 시점. 이후 병합한 #38(fcc04f7)은 public/data/bgd·tools/etl/countries/bgd·reports/v158만 추가해 베트남 화면·코드·데이터가 같으므로 재실행하지 않음
 - B-032(#34에서만 실패했던 1건): 목록 위 안내 1줄을 되살려 해결 — 아래 화면
 
@@ -105,6 +105,6 @@
 - 대표 KPI ④ 발전소 수·⑤ GCF 승인액: 카드 요약에 값 없음 → 숨김(추정 금지)
 - 2층 '연관 데이터 칩': 연관 데이터 패널이 현재 없음(V157) → 해당 없음
 - 분석 제목은 히어로가 아니라 분석 영역 첫 줄로 병합: detail-hierarchy가 분석 영역 안 제목을 요구(기준 불변)
-- A-010·D-023 analysisFit: #32 유래 기존 실패, #34 merge 직후 fix-forward PR
+- A-010·D-023 analysisFit: #32 유래 기존 실패, #34 merge 직후 fix-forward PR — **정정(2026-09-29): #32가 아니라 V160이 analysis QA의 `HOME_IDS`를 비워 구성 항목 조회가 빈 것이 원인. main 대조도 V160 스크립트로 실행돼 같게 보였음. `reports/v160/FIXFORWARD_A010_D023.md`**
 - (완료) "informationTiersV160 hidden == 카탈로그 excluded ∪ not-collected" 단위 테스트 — main 병합 시 추가
 - 데이터 찾기 '핵심' 기본 필터·전체 보기 토글은 P12-B에서 공개 142 전체 + 정렬(가나다순/조회순)로 교체 예정(사용자 결정 2026-09-29)

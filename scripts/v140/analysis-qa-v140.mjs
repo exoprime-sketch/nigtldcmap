@@ -90,6 +90,11 @@ const mapConnected = new Set(mapIndex.filter((layer) => layer.active !== false &
 // finder, not a dataset; no home card opens a detail screen any more, so
 // homeCardClicked is not applicable (role-split QA checks the questions).
 const HOME_IDS = new Set(homePreview.cards.map((card) => card.elementId).filter(() => false));
+// The home preview asset still holds the parts and unit of the cards whose
+// summary says `preview.home` (A-010, D-023, ...): the card-expectation
+// lookup reads it whether or not the home shows those cards (V160 emptied
+// HOME_IDS for the click check only; the lookup must not follow it).
+const HOME_PREVIEW_IDS = new Set(homePreview.cards.map((card) => card.elementId));
 const sha = (text) => createHash("sha256").update(text).digest("hex").slice(0, 16);
 
 const server = externalBase ? null : await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
@@ -521,7 +526,7 @@ const COUNT_LIKE_UNIT = /(?:^|\s)수$|^(?:건|곳|개|명|기)$|(?:행|건|곳|�
 async function analysisFitOf(page, card, screen, claim) {
   if (!card) return { kind: null, pass: null, expected: [], missing: ["no card"] };
   // Home-copied cards keep their parts in the home asset.
-  const homeCard = HOME_IDS.has(card.elementId) ? homePreview.cards.find((entry) => entry.elementId === card.elementId) : null;
+  const homeCard = HOME_PREVIEW_IDS.has(card.elementId) ? homePreview.cards.find((entry) => entry.elementId === card.elementId) : null;
   const cardParts = (card.preview?.parts || homeCard?.parts || homeCard?.bars || []).map((part) => clean(part.label));
   const dom = await page.evaluate(() => {
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
