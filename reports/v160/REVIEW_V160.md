@@ -47,16 +47,15 @@
 
 ## 분석 QA — main 대비 신규 실패 0
 
-같은 스크립트·같은 기준선(`reports/v150/analysis-qa-baseline-v150.json`)으로 실행. 원본 로그: `reports/v160/analysis-qa-main-prod-20260929.log`, `reports/v160/analysis-qa-pr34-20260929.log`.
+같은 스크립트·같은 기준선(`reports/v150/analysis-qa-baseline-v150.json`)으로 실행.
 
-| 항목 | main(운영 = origin/main 8c3bf66, 카드 요약 해시 동일) | #34 |
-|---|---|---|
-| 기준선 대비 필수 실패 | 46 | 35 |
-| 기준선에 없는 실패 | A-010·D-023 analysisFit + 11건(A-017·C-015·C-020·C-023·D-024·E-008·E-011·E-013·E-016·E-017 screenLoaded 시간 초과, C-021 cardShowsStatus) | **A-010·D-023 analysisFit** |
-| main 대비 #34 신규 | — | **0** |
+| 회차 | main(운영) | #34 | main 대비 #34 신규 | 로그 |
+|---|---|---|---|---|
+| main 병합 전(9-29 오전) | 필수 46 · 기준선 밖 A-010·D-023 + 11(제외 10건 시간 초과·C-021) · 카드 요약 해시 불일치 | 필수 35 · 기준선 밖 A-010·D-023 | 0 | `analysis-qa-main-prod-20260929.log` · `analysis-qa-pr34-20260929.log` |
+| main(8c3bf66) 병합 후 | 필수 36 · 기준선 밖 A-010·C-021·D-023 · 해시 일치 | 필수 35 · 기준선 밖 A-010·D-023 | **0** | `analysis-qa-main-prod-merge-20260929.log` · `analysis-qa-pr34-merge-20260929.log` |
 
-- A-010·D-023: 기존 실패(main 동일, #32 유래). #32 직전 보고서(a747d54)에서는 'parts named 4/4' 통과, 이후 두 브랜치 모두 '(0/0)'. #34에서는 고치지 않고 #34 merge 직후 main에서 fix-forward PR로 처리
-- main의 제외 10건 시간 초과·C-021은 #36(0cfef4f) 이후 main 쪽 결과이며 #34에는 아직 없음(rebase 시 확인)
+- A-010·D-023: 기존 실패(main 동일, #32 유래). #32 직전 보고서(a747d54)에서는 'parts named 4/4' 통과. #34 merge 직후 main에서 fix-forward PR
+- #34 병합 후 실행은 8c3bf66 병합 시점. 이후 병합한 #38(fcc04f7)은 public/data/bgd·tools/etl/countries/bgd·reports/v158만 추가해 베트남 화면·코드·데이터가 같으므로 재실행하지 않음
 - B-032(#34에서만 실패했던 1건): 목록 위 안내 1줄을 되살려 해결 — 아래 화면
 
 ## B-032 수정 전후
@@ -67,22 +66,38 @@
 
 ## 검증
 
+### main 병합(c7c1d5e: 8c3bf66 · faf2894: fcc04f7) 후 게이트 — 로그 `reports/v160/gate/`
+
+| 회차 | 단계 | 결과 | 로그 |
+|---|---|---|---|
+| 1 | finalize:v151 (verify → finalize:v136 → …) | 실패 — `exclusions:v156`(#36 감사, V160 이전 홈 그리드·찾기 142 기준) 6건 → release:v136 파생 4건 | `finalize-v151-merge-r1.log` |
+| — | 사용자 결정: exclusions:v156 V160 이관 → `audit:exclusions:v156` 단독 | 13/13 | — |
+| 2 | audit:release:v136 (실패 단계 단독 재실행) | 80/80 | `release-v136-merge-r2.log` |
+| 2 | qa:role-split:v140 | 49/49 | `role-split-v140-merge.log` |
+| 2 | qa:analysis:v140:baseline | main 대비 신규 0(위 표) | `analysis-qa-*-merge-20260929.log` |
+| 2 | audit:boundary-34:v151 --skip-browser | 21 통과 · 1 건너뜀 | `boundary-34-v151-merge.log` |
+| 2 | audit:boundary-policy:v151-2 | 24/24 | `boundary-policy-v151-2-merge.log` |
+
+### 기타(최종 헤드 faf2894)
+
 | 항목 | 결과 |
 |---|---|
 | tsc | 오류 0 |
-| test:unit | 564/564 |
+| test:unit | 593/593 (신규: hidden == 카탈로그 excluded ∪ not-collected) |
 | qa:core-first:v160 | 12/12 |
-| qa:typology:v159 | 148/152 → 4건(B-005·B-006·B-007·C-016, 320px 넘침) 수정 후 `--ids` 5/5 |
-| qa:detail-contract:v153 | 동일 4건 수정 후 `--ids` 5/5 |
-| finalize:v151 | 1·2·3회차 실패(각 entity-cards / temporal-depth / detail-hierarchy) → 4회차 대신 단계별 실행 |
-| audit:detail-hierarchy:v135 | 12/12 |
-| audit:duplicate-copy:v136 | 중복 0 |
-| audit:human-review:v136 | 10/10 |
-| audit:release:v136 | 79/79 |
-| qa:role-split:v140 | 49/49 |
-| qa:analysis:v140:baseline | main 대비 신규 0(위 표) |
-| audit:boundary-34:v151 --skip-browser | 21 통과 · 1 건너뜀 |
-| audit:boundary-policy:v151-2 | 24/24 |
+| qa:typology:v159 · qa:detail-contract:v153 | 병합 전 4건(320px 넘침) 수정 후 `--ids` 5/5 |
+
+### 병합 전 경과(참고)
+
+- finalize:v151 1·2·3회차 실패(entity-cards / temporal-depth / detail-hierarchy) → 단계별: detail-hierarchy 12/12 · duplicate-copy 0 · human-review 10/10 · release 79/79 · role-split 49/49
+
+### main 병합 충돌 해소
+
+- 8c3bf66(#33·#35·#36·#37) 병합 충돌 13건
+  - 감사 스크립트 10: 제외 10건은 main 처리 채택(entity-cards·portfolio·temporal-depth는 main 파일 그대로), 찾기 건수는 V160(tier=all 141), 상세 경로 건수는 main 공개 집합(142), human-review 찾기 스크롤 한도도 141
+  - HomePage: V160 질문 6카드 유지 · CHANGELOG: 양쪽 유지 · 추적표: main 표 + 등급(V160) 열 재생성
+- fcc04f7(#38) 병합 충돌 1건: CHANGELOG 양쪽 유지
+- V160 생성 자산(`build:core-first:v160 --check`)은 main 데이터 기준으로도 최신(재생성 결과 동일)
 
 ## 미완료와 사유
 
@@ -91,4 +106,5 @@
 - 2층 '연관 데이터 칩': 연관 데이터 패널이 현재 없음(V157) → 해당 없음
 - 분석 제목은 히어로가 아니라 분석 영역 첫 줄로 병합: detail-hierarchy가 분석 영역 안 제목을 요구(기준 불변)
 - A-010·D-023 analysisFit: #32 유래 기존 실패, #34 merge 직후 fix-forward PR
-- 세션5 제외 PR(#36) 반영 rebase 시 "informationTiersV160 hidden == 카탈로그 excluded/not-provided" 단위 테스트 추가 예정
+- (완료) "informationTiersV160 hidden == 카탈로그 excluded ∪ not-collected" 단위 테스트 — main 병합 시 추가
+- 데이터 찾기 '핵심' 기본 필터·전체 보기 토글은 P12-B에서 공개 142 전체 + 정렬(가나다순/조회순)로 교체 예정(사용자 결정 2026-09-29)
