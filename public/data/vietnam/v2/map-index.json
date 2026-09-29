@@ -7057,7 +7057,7 @@
         "displaySpatialUnit": "개편 전 63개 성 경계에 성 단위 값 표시",
         "limitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
         "evidence": "성 단위 행 74건 · 성·시 34개",
-        "representativeItem": "W 서 (An Giang)"
+        "representativeItem": "W 서"
       },
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
       "boundaryPolicy": {
@@ -7091,7 +7091,7 @@
         "missingCount": 0,
         "requiredCount": 63
       },
-      "latestYear": "미기재",
+      "latestYear": "2022년 기준",
       "layerId": "vnm-v138-b-026",
       "legend": {
         "note": "단위 % · 결측 0개 성·시(개편 전 63개 기준)",
@@ -7103,15 +7103,15 @@
       "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
-      "sourceYear": "미기재",
+      "sourceYear": "2022년 기준",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 범위만 표시)",
       "spatialLimitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
       "spatialScopeType": "admin1",
       "selectors": {
-        "defaultPeriod": "미기재",
+        "defaultPeriod": "2022년 기준",
         "defaultVariable": "dominant-flow-direction-share",
         "periods": [
-          "미기재"
+          "2022년 기준"
         ],
         "variables": [
           {
@@ -7122,7 +7122,7 @@
             "label": "우세 유향 격자 비율",
             "unit": "%",
             "periods": [
-              "미기재"
+              "2022년 기준"
             ],
             "maxFeatureCount": 63
           }

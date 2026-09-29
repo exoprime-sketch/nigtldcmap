@@ -189,6 +189,12 @@ import {
   selectorForLayer,
 } from "../map/layers/contract";
 import {
+  assetFeatureCollectionV157,
+  categoryLegendV157,
+  isAreaRendererV152,
+  unitChoroplethCollectionV157,
+} from "../map/layers";
+import {
   areaKm2ByAdm1CodeV151,
   choroplethFeatureCollectionV151,
   featureCollection,
@@ -493,15 +499,15 @@ function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
     .replace(/피처/gu, "위치자료");
 }
 
+/**
+ * Whether the layer draws a published spatial asset rather than entity records.
+ *
+ * V157: the list is the renderers' own (`isAreaRendererV152`), so a new area
+ * renderer is fetched as well as drawn - B-017 and A-028 were mounted but never
+ * asked for their asset, which left them out of the map's rendered list.
+ */
 function isExternalSpatialLayer(layer: CountryMapLayerV122): boolean {
-  return [
-    "line",
-    "admin1-choropleth",
-    "partial-choropleth",
-    "regional-scope",
-  ].includes(
-    rendererOf(layer)
-  );
+  return isAreaRendererV152(rendererOf(layer));
 }
 
 function optionalFiniteNumberV130(value: unknown): number | null {
@@ -1509,10 +1515,14 @@ export default function RealMapExplorerPage({
       const visualRank = (elementId: string) => {
         const layer = layers.find((item) => item.elementId === elementId);
         const renderer = layer ? rendererOf(layer) : "point";
+        // Areas are drawn under points; V157's unit choropleth and the
+        // polygon half of an asset layer belong with them.
         const isArea =
           renderer === "admin1-choropleth" ||
           renderer === "partial-choropleth" ||
-          renderer === "regional-scope";
+          renderer === "regional-scope" ||
+          renderer === "unit-choropleth" ||
+          renderer === "point-and-polygon";
         const isPrimary = elementId === primaryLayerId;
         if (isArea) return isPrimary ? 0 : 1;
         return isPrimary ? 3 : 2;
@@ -1702,7 +1712,25 @@ export default function RealMapExplorerPage({
           });
         return;
       }
-      const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
+      // V157: an assessment-unit layer joins on its own key, and a geometry asset
+      // has no values to join at all. The fallback draws their polygons; A-028's
+      // 1,321 points are left to the canvas (the panel says so).
+      const rendererV157 = rendererOf(layer);
+      const result =
+        rendererV157 === "unit-choropleth"
+          ? unitChoroplethCollectionV157(layer, asset, selector)
+          : rendererV157 === "point-and-polygon"
+            ? {
+                collection: {
+                  type: "FeatureCollection" as const,
+                  features: assetFeatureCollectionV157(layer, asset, filters).features.filter(
+                    (feature) => /polygon/iu.test(feature.geometry.type)
+                  ),
+                },
+                minimum: 0,
+                maximum: 1,
+              }
+            : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
       if (isBudgetContext) {
         statisticalRepresentativePointsV133(result.collection).features.forEach(
           (feature, featureIndex) => {
@@ -2638,12 +2666,8 @@ export default function RealMapExplorerPage({
         : contextLayerIds.indexOf(elementId);
       const roleOpacity = isPrimary ? 0.88 : 0.36;
 
-      if (
-        renderer === "line" ||
-        renderer === "admin1-choropleth" ||
-        renderer === "partial-choropleth" ||
-        renderer === "regional-scope"
-      ) {
+      // V157: the area renderers are listed once, in src/map/layers.
+      if (isAreaRendererV152(renderer)) {
         const asset = spatialByElement[elementId];
         if (!asset) return;
         const prepared = prepareAreaLayerV152({
@@ -3398,6 +3422,14 @@ export default function RealMapExplorerPage({
       } else if (renderer === "regional-scope") {
         if (!asset) return null;
         geoJson = asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+      } else if (renderer === "point-and-polygon") {
+        if (!asset) return null;
+        geoJson = assetFeatureCollectionV157(layer, asset, filters);
+      } else if (renderer === "unit-choropleth") {
+        if (!asset) return null;
+        const result = unitChoroplethCollectionV157(layer, asset, selector);
+        geoJson = result.collection;
+        valueDomain = { maximum: result.maximum, minimum: result.minimum };
       } else {
         if (!asset) return null;
         const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
@@ -3625,6 +3657,36 @@ export default function RealMapExplorerPage({
       publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
     );
   }, [boundaryContextV151.system, filters, focusedLayer, locationsByElementV151, recordsByElement]);
+  /**
+   * V157: the focused layer's categories, when it is drawn by category rather
+   * than by value. Read from the features the map drew, under the same filters.
+   */
+  const focusedCategoryLegendV157 = useMemo(() => {
+    if (!focusedLayer || !focusedSelector) return [];
+    const asset = spatialByElement[focusedLayer.elementId];
+    if (!asset) return [];
+    const renderer = rendererOf(focusedLayer);
+    const collection =
+      renderer === "unit-choropleth"
+        ? unitChoroplethCollectionV157(focusedLayer, asset, focusedSelector).collection
+        : renderer === "point-and-polygon"
+          ? assetFeatureCollectionV157(focusedLayer, asset, filters)
+          : renderer === "admin1-choropleth" || renderer === "partial-choropleth"
+            ? choroplethFeatureCollectionV151(
+                focusedLayer,
+                asset,
+                focusedSelector,
+                boundaryContextV151
+              ).collection
+            : null;
+    return collection ? categoryLegendV157(collection) : [];
+  }, [
+    boundaryContextV151,
+    filters,
+    focusedLayer,
+    focusedSelector,
+    spatialByElement,
+  ]);
   const activeLegendIdentitiesV129 = useMemo(() => {
     const ordered = [
       ...(primaryLayerId ? [primaryLayerId] : []),
@@ -3796,6 +3858,50 @@ export default function RealMapExplorerPage({
         value: String(focusedLayer.sourceYear || focusedSelector.period),
       });
       return { ...empty, summaryRows, unit: "구간" };
+    }
+    if (renderer === "unit-choropleth") {
+      const asset = spatialByElement[focusedLayer.elementId];
+      if (!asset) return empty;
+      const rendered = unitChoroplethCollectionV157(focusedLayer, asset, focusedSelector);
+      const withValue = rendered.collection.features.filter(
+        (feature) => feature.properties?.hasValue
+      );
+      summaryRows.push({
+        label: "값이 있는 단위",
+        value: `${withValue.length.toLocaleString()}개 / 전체 ${rendered.collection.features.length.toLocaleString()}개`,
+      });
+      rendered.categories.forEach((category) =>
+        summaryRows.push({
+          label: category.label,
+          value: `${category.featureCount.toLocaleString()}개 단위`,
+        })
+      );
+      summaryRows.push({
+        label: "기준연도",
+        value: String(focusedLayer.sourceYear || focusedSelector.period),
+      });
+      return { ...empty, summaryRows, unit: String(focusedLayer.unit || "") };
+    }
+    if (renderer === "point-and-polygon") {
+      const asset = spatialByElement[focusedLayer.elementId];
+      if (!asset) return empty;
+      const features = assetFeatureCollectionV157(focusedLayer, asset, filters).features;
+      const byKind = new Map<string, number>();
+      features.forEach((feature) => {
+        const kind = String(feature.properties?.kindLabel || feature.properties?.categoryLabel || "미표기");
+        byKind.set(kind, (byKind.get(kind) || 0) + 1);
+      });
+      summaryRows.push({ label: "표시 대상", value: `${features.length.toLocaleString()}개` });
+      [...byKind.entries()]
+        .sort(([, left], [, right]) => right - left)
+        .forEach(([kind, count]) =>
+          summaryRows.push({ label: kind, value: `${count.toLocaleString()}개` })
+        );
+      summaryRows.push({
+        label: "기준연도",
+        value: String(focusedLayer.sourceYear || focusedSelector.period),
+      });
+      return { ...empty, summaryRows, unit: String(focusedLayer.unit || "") };
     }
     if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
       const asset = spatialByElement[focusedLayer.elementId];
@@ -4416,8 +4522,13 @@ export default function RealMapExplorerPage({
         renderer === "line"
           ? lineFeatureCollection(layer, asset, selector, filters)
           : renderer === "regional-scope"
-          ? asset.geometry
-          : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151).collection;
+            ? asset.geometry
+            : renderer === "point-and-polygon"
+              ? assetFeatureCollectionV157(layer, asset, filters)
+              : renderer === "unit-choropleth"
+                ? unitChoroplethCollectionV157(layer, asset, selector).collection
+                : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151)
+                    .collection;
       collection.features.forEach((feature, featureIndex) => {
         const properties = (feature.properties || {}) as Record<string, unknown>;
         const rawLength = properties.lengthKm ?? properties.length;
@@ -6940,8 +7051,9 @@ export default function RealMapExplorerPage({
                   </span>
                   <p>국가 대표좌표는 실제 사업 위치로 표시하지 않습니다.</p>
                 </div>
-              ) : rendererOf(focusedLayer) === "admin1-choropleth" ||
-                rendererOf(focusedLayer) === "partial-choropleth" ? (
+              ) : (rendererOf(focusedLayer) === "admin1-choropleth" ||
+                  rendererOf(focusedLayer) === "partial-choropleth") &&
+                focusedCategoryLegendV157.length === 0 ? (
                 <div className="cdp-map-legend__scale">
                   <span className="cdp-map-legend__gradient" aria-label="낮은 값에서 높은 값">
                     <i
@@ -6978,6 +7090,26 @@ export default function RealMapExplorerPage({
                     값 있음 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
                   </p>
                 </div>
+              ) : focusedCategoryLegendV157.length ? (
+                <ul
+                  className="cdp-map-legend__categories"
+                  data-testid="map-category-legend-v157"
+                  aria-label="분류별 색과 대상 수"
+                >
+                  {focusedCategoryLegendV157.map((entry) => (
+                    <li key={entry.label}>
+                      <span
+                        className="cdp-map-legend__swatch"
+                        style={{ background: entry.color }}
+                        aria-hidden="true"
+                      />
+                      <PublicTermTextV134 text={entry.label} />
+                      <span className="cdp-map-legend__count">
+                        {entry.featureCount.toLocaleString()}개
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               ) : focusedIconLegendV152.length ? (
                 <div className="cdp-map-legend__icons" aria-label="기호와 분류별 위치 수">
                   <MapIconLegendV152 entries={focusedIconLegendV152} compact />

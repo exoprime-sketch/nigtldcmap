@@ -30,6 +30,19 @@ import { mountLineLayersV152 } from "./lineLayer";
 import { assignPointIconsV152 } from "./pointIconLayer";
 import { mountPointLayersV152 } from "./pointLayer";
 import { mountBudgetContextLayersV152, mountRegionalScopeLayersV152 } from "./regionLayer";
+import {
+  mountAssetFeatureLayersV157,
+  mountUnitChoroplethLayersV157,
+} from "./assetFeatureLayerV157";
+import {
+  assetFeatureCollectionV157,
+  categoricalFillColorV157,
+  categoryLegendV157,
+  hasPointFeaturesV157,
+  hasPolygonFeaturesV157,
+  unitChoroplethCollectionV157,
+} from "./unitFeaturesV157";
+import type { CategoryLegendEntryV157 } from "./unitFeaturesV157";
 import type {
   BoundaryRenderContextV151,
   ChoroplethCollectionV151,
@@ -37,7 +50,15 @@ import type {
   SpatialRuntimeAsset,
 } from "./types";
 
-export const AREA_RENDERERS_V152 = ["line", "admin1-choropleth", "partial-choropleth", "regional-scope"] as const;
+export const AREA_RENDERERS_V152 = [
+  "line",
+  "admin1-choropleth",
+  "partial-choropleth",
+  "regional-scope",
+  // V157: both are drawn from a spatial asset, not from entity records.
+  "unit-choropleth",
+  "point-and-polygon",
+] as const;
 
 /** Whether a renderer draws spatial assets (lines, provinces, regions) rather than entity points. */
 export function isAreaRendererV152(renderer: string): boolean {
@@ -65,6 +86,8 @@ export interface MapAreaLayerPreparedV152 {
   data: GeoJSON.FeatureCollection<GeoJSON.Geometry>;
   renderSignature: string;
   fillColor: any;
+  /** V157: the categories the fill paints, in legend order; empty when numeric. */
+  categories: CategoryLegendEntryV157[];
 }
 
 export function prepareAreaLayerV152({
@@ -94,18 +117,23 @@ export function prepareAreaLayerV152({
     );
   const isRegionalScope = renderer === "regional-scope";
   const isBudgetContext = elementId === "D-008" && !isPrimary;
-  const choropleth =
-    renderer === "line" || isRegionalScope
+  const isUnitChoropleth = renderer === "unit-choropleth";
+  const isAssetFeatures = renderer === "point-and-polygon";
+  const choropleth = isUnitChoropleth
+    ? unitChoroplethCollectionV157(layer, asset, selector)
+    : renderer === "line" || isRegionalScope || isAssetFeatures
       ? null
       : choroplethFeatureCollectionV151(layer, asset, selector, boundary);
   const data =
     renderer === "line"
       ? lineFeatureCollection(layer, asset, selector, filters)
-      : isRegionalScope
-      ? (asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>)
-      : isBudgetContext
-      ? statisticalRepresentativePointsV133(choropleth!.collection)
-      : choropleth!.collection;
+      : isAssetFeatures
+        ? assetFeatureCollectionV157(layer, asset, filters)
+        : isRegionalScope
+          ? (asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>)
+          : isBudgetContext
+            ? statisticalRepresentativePointsV133(choropleth!.collection)
+            : choropleth!.collection;
   const renderSignature = JSON.stringify({
     renderer,
     selector,
@@ -114,7 +142,12 @@ export function prepareAreaLayerV152({
     role: isPrimary ? "primary" : "context",
     boundary: choropleth ? `${choropleth.mode}:${choropleth.kind}` : boundary.system,
   });
-  const fillColor = choroplethFillColorV152(color, choropleth, isRegionalScope);
+  // A category is not a quantity: when the features carry one, each category gets
+  // its own colour and the legend lists them.
+  const categories = categoryLegendV157(data);
+  const categoricalFill = categoricalFillColorV157(categories);
+  const fillColor =
+    categoricalFill ?? choroplethFillColorV152(color, choropleth, isRegionalScope);
   return {
     renderer,
     selector,
@@ -125,6 +158,7 @@ export function prepareAreaLayerV152({
     data,
     renderSignature,
     fillColor,
+    categories,
   };
 }
 
@@ -143,6 +177,28 @@ export function mountAreaLayerV152(
   map.addSource(ids.source, { type: "geojson", data: prepared.data });
   if (prepared.renderer === "line") {
     return { interactiveLayerId: mountLineLayersV152(map, { ids, color, isPrimary, roleOpacity }) };
+  }
+  if (prepared.renderer === "point-and-polygon") {
+    return mountAssetFeatureLayersV157(map, {
+      ids,
+      color,
+      isPrimary,
+      roleOpacity,
+      fillColor: prepared.fillColor,
+      hasPolygons: hasPolygonFeaturesV157(prepared.data),
+      hasPoints: hasPointFeaturesV157(prepared.data),
+    });
+  }
+  if (prepared.renderer === "unit-choropleth") {
+    return {
+      interactiveLayerId: mountUnitChoroplethLayersV157(map, {
+        ids,
+        color,
+        isPrimary,
+        contextIndex,
+        fillColor: prepared.fillColor,
+      }),
+    };
   }
   if (prepared.isBudgetContext) {
     return { interactiveLayerId: mountBudgetContextLayersV152(map, { ids, color, choropleth: prepared.choropleth }) };
@@ -362,5 +418,7 @@ export * from "./contract";
 export * from "./features";
 export * from "./symbols";
 export * from "./boundaryLayer";
+export * from "./unitFeaturesV157";
+export * from "./assetFeatureLayerV157";
 export * from "./pointIconLayer";
 export { TRANSMISSION_VOLTAGE_CLASSES_V152 } from "./lineLayer";

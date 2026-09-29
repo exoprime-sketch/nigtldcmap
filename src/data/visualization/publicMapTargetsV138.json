@@ -35,7 +35,8 @@
       "period": "2016년 기준",
       "representativeItem": "삼각주 산림보전·관개개선 계획",
       "evidence": "개체 365건 · 성·시 확인 0건",
-      "limitation": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "A-022",
@@ -56,7 +57,8 @@
       "period": "2025~2026년",
       "representativeItem": "전력회사 관할별 정전시간·빈도",
       "evidence": "관측값 54건(국가 단위)",
-      "limitation": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "A-023",
@@ -219,7 +221,8 @@
       "period": "2026년 기준",
       "representativeItem": "도로·철도망",
       "evidence": "자산 피처 8114개 · MultiLineString",
-      "limitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다."
+      "limitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "A-028",
@@ -248,7 +251,8 @@
       "period": "2026년 기준",
       "representativeItem": "항만·댐·저수지",
       "evidence": "자산 피처 1558개 · Point·Polygon·MultiPolygon",
-      "limitation": "OSM 태그 기준 수록이라 항만은 전수가 아니며, 이름 없는 댐이 많습니다."
+      "limitation": "OSM 태그 기준 수록이라 항만은 전수가 아니며, 이름 없는 댐이 많습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-002",
@@ -269,7 +273,8 @@
       "period": "1930~2099년",
       "representativeItem": "성별 기후대·유형별 면적비율",
       "evidence": "관측값 19건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-003",
@@ -757,7 +762,8 @@
       "period": "2024~2026년",
       "representativeItem": "An Giang WWF BRF 물리적 위험(Scape Physical)",
       "evidence": "성 단위 관측값 252건 · 지표 4종",
-      "limitation": "성 단위 값은 원천이 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다."
+      "limitation": "성 단위 값은 원천이 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-012",
@@ -1045,7 +1051,8 @@
       "period": "2023년 기준",
       "representativeItem": "성별 벼 재배면적·용수배분 추정",
       "evidence": "관측값 205건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-025",
@@ -1161,6 +1168,8 @@
           "지역명_베트남어",
           "지역명_로마자"
         ],
+        "categoryKey": "우세_유향",
+        "periodFixed": "2022년 기준",
         "measures": [
           {
             "key": "dominant-flow-direction-share",
@@ -1184,9 +1193,10 @@
       "selectableVariables": "성 클릭 → 8방향 비율·우세 유향(우세_유향)",
       "unit": "%",
       "period": "2022년 기준",
-      "representativeItem": "W 서 (An Giang)",
+      "representativeItem": "W 서",
       "evidence": "성 단위 행 74건 · 성·시 34개",
-      "limitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다."
+      "limitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-028",
@@ -1526,7 +1536,8 @@
       "period": "2024~2025년",
       "representativeItem": "성별 토지이용 면적 시계열",
       "evidence": "관측값 1764건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-036",
@@ -1547,7 +1558,8 @@
       "period": "2022~2024년",
       "representativeItem": "성별 기간별 토지이용 면적 변화율",
       "evidence": "관측값 48건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-037",
@@ -1937,7 +1949,8 @@
       "period": "2026년 기준",
       "representativeItem": "광산 소재지역·광종",
       "evidence": "관측값 26건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-046",
@@ -1958,7 +1971,8 @@
       "period": "2026년 기준",
       "representativeItem": "광산 소재지역·니켈·리튬 매장 범위",
       "evidence": "관측값 13건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-047",
@@ -1979,7 +1993,8 @@
       "period": "2025년 기준",
       "representativeItem": "라오까이 구리 생산량 범위",
       "evidence": "관측값 21건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "B-048",
@@ -2038,7 +2053,8 @@
       "period": "2020~2050년",
       "representativeItem": "권역별 적응조치·이행기간",
       "evidence": "개체 96건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "C-006",
@@ -2066,7 +2082,8 @@
       "period": "2023~2026년",
       "representativeItem": "사업지역·기술·등록상태",
       "evidence": "개체 50건 · 성·시 확인 0건",
-      "limitation": "사업지역 세분화 전 — 성 단위 가능하면 등록 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "사업지역 세분화 전 — 성 단위 가능하면 등록 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "C-008",
@@ -2113,7 +2130,8 @@
       "period": "1994~2050년",
       "representativeItem": "British International School Ho Chi Minh City (Hồ Chí Minh)",
       "evidence": "개체 235건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "C-012",
@@ -2268,7 +2286,8 @@
       "period": "2016~2026년",
       "representativeItem": "권역별 가격상한·닌투언 특례",
       "evidence": "개체 52건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다."
+      "limitation": "지역 열은 있으나 값이 전무 — 속성20_지역_원문, 속성21_지역_현행, 속성22_행정코드P_code 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "C-022",
@@ -2492,7 +2511,8 @@
       "period": "2026년 기준",
       "representativeItem": "Super Energy - Thinh Long Phu Yen 태양광 (Đắk Lắk)",
       "evidence": "개체 22건 중 성·시 확인 11건 · 성·시 10개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-014",
@@ -2539,7 +2559,8 @@
       "period": "2024년 기준",
       "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
       "evidence": "개체 164건 중 성·시 확인 43건 · 성·시 12개 · 복수 성 4건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-015",
@@ -2586,7 +2607,8 @@
       "period": "2024년 기준",
       "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
       "evidence": "개체 650건 중 성·시 확인 103건 · 성·시 23개 · 복수 성 4건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-016",
@@ -2633,7 +2655,8 @@
       "period": "2024년 기준",
       "representativeItem": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략 (Hà Nội)",
       "evidence": "개체 232건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-017",
@@ -2680,7 +2703,8 @@
       "period": "2026년 기준",
       "representativeItem": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역 (Đắk Lắk)",
       "evidence": "개체 10건 중 성·시 확인 4건 · 성·시 3개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-018",
@@ -2758,7 +2782,8 @@
       "period": "2025년 기준",
       "representativeItem": "Strengthening hai phong city’s climate adaptation and dis… (Hải Phòng)",
       "evidence": "개체 10건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-020",
@@ -2805,7 +2830,8 @@
       "period": "2026년 기준",
       "representativeItem": "Vietnam REDD-plus results-based payments for results peri… (Tuyên Quang)",
       "evidence": "개체 9건 중 성·시 확인 2건 · 성·시 7개 · 복수 성 1건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-021",
@@ -2851,7 +2877,8 @@
       "period": "2026년 기준",
       "representativeItem": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project) (Đắk Lắk)",
       "evidence": "개체 640건 중 성·시 확인 71건 · 성·시 27개 · 복수 성 15건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-022",
@@ -2879,7 +2906,8 @@
       "period": "2026년 기준",
       "representativeItem": "개발금융 사업 위치",
       "evidence": "자산 피처 12개 · Polygon·MultiPolygon",
-      "limitation": "회랑형 사업(남부 수로)은 문서에 명시된 양단 시만 대응하고 경유 성은 미표시. 컨셉 단계 사업은 범위가 바뀔 수 있음."
+      "limitation": "회랑형 사업(남부 수로)은 문서에 명시된 양단 시만 대응하고 경유 성은 미표시. 컨셉 단계 사업은 범위가 바뀔 수 있음.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-023",
@@ -2927,7 +2955,8 @@
       "period": "2013~2026년",
       "representativeItem": "Hanoi Sustainable Urban Transport (Hà Nội)",
       "evidence": "개체 73건 중 성·시 확인 5건 · 성·시 9개 · 복수 성 1건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-025",
@@ -2976,7 +3005,8 @@
       "period": "2024년 기준",
       "representativeItem": "Bau Ngu Lake Solar Power Plant (Khánh Hòa)",
       "evidence": "개체 132건 중 성·시 확인 119건 · 성·시 28개 · 복수 성 5건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "D-026",
@@ -3025,7 +3055,8 @@
       "period": "2018년 기준",
       "representativeItem": "Hanoi-Haiphong Expressway (Hải Phòng)",
       "evidence": "개체 14건 중 성·시 확인 2건 · 성·시 4개 · 복수 성 2건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "E-001",
@@ -3069,7 +3100,8 @@
       "period": "2026년 기준",
       "representativeItem": "네트워크 회원(민간기업) (Hà Nội)",
       "evidence": "개체 18건 중 성·시 확인 6건 · 성·시 1개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "E-002",
@@ -3114,7 +3146,8 @@
       "period": "2026년 기준",
       "representativeItem": "Department of Climate Change (기후변화국) (Hà Nội)",
       "evidence": "개체 1건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
       "elementId": "E-004",
@@ -3556,7 +3589,8 @@
       "period": "2026년 기준",
       "representativeItem": "한국환경산업기술원(KEITI) (Đồng Nai)",
       "evidence": "개체 7건 중 성·시 확인 2건 · 성·시 2개 · 복수 성 0건",
-      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다."
+      "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     }
   ],
   "contentContract": "public/data/vietnam/v2/map-content-contract-v157.json",

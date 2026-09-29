@@ -349,6 +349,10 @@ function provinceAttributeTarget(row, entry) {
     build: {
       kind: "admin1-attributes",
       regionKeys: ["지역명_베트남어", "지역명_로마자"],
+      // The map colours by this column's value (범주형 단계구분도) and keeps the
+      // measure for the popup.
+      categoryKey: declared.categoryKey,
+      periodFixed: periodTextFor(entry),
       measures: [{ ...declared.measure, aggregate: "value" }],
       defaultMeasure: declared.measure.key,
       coverageKind: "complete",
@@ -472,6 +476,31 @@ function unmappedTarget(row, entry) {
   };
 }
 
+const GENERATOR_V157 = "scripts/v157/extend-map-targets-v157.mjs";
+
+/**
+ * The row V157 would write for an element, chosen from the evidence rather than
+ * from the element's current status: once a layer is registered the content
+ * contract calls it "registered", and a rerun must still produce the same row
+ * (the gate runs this with --check).
+ */
+function generateTarget(row, entry) {
+  const target = pending.has(row.elementId)
+    ? pendingTarget(row, entry)
+    : // A declared province table wins: B-026's records are provinces, so it is
+      // built from the province name even though its values also mention one.
+      PROVINCE_ATTRIBUTE_MEASURES_V157[row.elementId]
+      ? provinceAttributeTarget(row, entry)
+      : readRegionSidecar(row.elementId)?.counts.located > 0
+        ? sidecarTarget(row, entry)
+        : row.criteriaEvidence.observationProvinceCodeCount >= 2
+          ? observationDimensionTarget(row, entry)
+          : row.criteriaEvidence.coordinateRows > 0
+            ? entityPointTarget(row, entry)
+            : unmappedTarget(row, entry);
+  return { ...target, generatedBy: GENERATOR_V157 };
+}
+
 const report = { kept: [], added: [], dropped: [], changed: [] };
 const nextTargets = [];
 for (const row of content.rows) {
@@ -501,16 +530,17 @@ for (const row of content.rows) {
       });
       continue;
     }
-    // A row built from the region extraction states measured counts, so it is
-    // regenerated when the extraction changes (all of its text is generated).
-    if (existing.build?.regionSidecar) {
-      const refreshed = sidecarTarget(row, entry);
-      if (JSON.stringify(refreshed) !== JSON.stringify(existing)) {
+    // A row V157 generated is regenerated on every run: its text states measured
+    // counts and its build directive is derived, so the file must not drift from
+    // the data. The 40 rows V138 wrote by hand are kept exactly as they are.
+    if (existing.generatedBy === GENERATOR_V157) {
+      const refreshed = generateTarget(row, entry);
+      if (refreshed && JSON.stringify(refreshed) !== JSON.stringify(existing)) {
         report.changed.push({
           elementId: row.elementId,
-          from: "region-sidecar row",
-          to: "refreshed from the current extraction",
-          reason: "추출 결과 변경(성·시 확인 건수·열)",
+          from: `${existing.build?.kind} row`,
+          to: "regenerated from the current data",
+          reason: "측정값·빌드 지시 갱신",
         });
         nextTargets.push(refreshed);
         continue;
@@ -520,20 +550,7 @@ for (const row of content.rows) {
     report.kept.push(row.elementId);
     continue;
   }
-  // The branch reads the evidence, not the status: once a layer is registered the
-  // content contract calls it "registered", and a rerun must still produce the
-  // same build directive (the gate runs this with --check).
-  let target = null;
-  if (pending.has(row.elementId)) target = pendingTarget(row, entry);
-  // A declared province table wins: B-026's records are provinces, so it is built
-  // from the province name even though its values also mention one.
-  else if (PROVINCE_ATTRIBUTE_MEASURES_V157[row.elementId])
-    target = provinceAttributeTarget(row, entry);
-  else if (readRegionSidecar(row.elementId)?.counts.located > 0) target = sidecarTarget(row, entry);
-  else if (row.criteriaEvidence.observationProvinceCodeCount >= 2)
-    target = observationDimensionTarget(row, entry);
-  else if (row.criteriaEvidence.coordinateRows > 0) target = entityPointTarget(row, entry);
-  else target = unmappedTarget(row, entry);
+  const target = generateTarget(row, entry);
   nextTargets.push(target);
   report.added.push({ elementId: row.elementId, kind: target.build.kind });
 }

@@ -431,3 +431,33 @@
     min-height: 72px;
   }
 }
+
+/* V157: a categorical layer's legend - one swatch per category, with how many
+   areas carry it. Wraps at narrow widths so the panel never overflows. */
+.cdp-map-legend__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cdp-map-legend__categories li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.cdp-map-legend__swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+}
+.cdp-map-legend__count {
+  color: #4b5a55;
+  white-space: nowrap;
+}

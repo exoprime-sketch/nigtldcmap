@@ -401,6 +401,12 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
         period,
         value,
         unit: measure.unit,
+        // V157: a province table may state a category alongside its number
+        // (B-026's dominant flow direction). The map colours by the category and
+        // keeps the number for the popup; the category is copied, not derived.
+        ...(build.categoryKey && text(attributes[build.categoryKey])
+          ? { categoryLabel: text(attributes[build.categoryKey]) }
+          : {}),
         sourceIndicatorId: record.indicatorId,
         sourceRecordId: record.recordId,
         sourceSpatialUnit: "admin1",
