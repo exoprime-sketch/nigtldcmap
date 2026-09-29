@@ -125,11 +125,14 @@ export default function PublicSourcePanelV126({
   // under the collapsed 자료정보·이용조건. The visible provider is the card
   // model's public wording (V140), never the raw provenance strings, which
   // carry the compiler's notes.
+  // V161: a period or unit the data does not state is left out of the line
+  // and the panel, never filled with a placeholder ("자료기간 미기재").
+  const period = summarizeYearsV126(years);
   const sourceLine = [
     `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
-    `자료기간 ${summarizeYearsV126(years)}`,
-    `단위 ${units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ") || "미기재"}`,
-  ].join(" · ");
+    period && `자료기간 ${period}`,
+    units.length > 0 && `단위 ${units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ")}`,
+  ].filter(Boolean).join(" · ");
   return (
     <div className="pav126-source-frame-v153" data-testid="detail-source-frame-v153">
     <p className="pav126-source-line-v153" data-testid="detail-source-line-v153">
@@ -157,16 +160,20 @@ export default function PublicSourcePanelV126({
             />
           </dd>
         </div>
-        <div>
-          <dt>자료기간</dt>
-          <dd>{summarizeYearsV126(years)}</dd>
-        </div>
-        <div>
-          <dt>단위</dt>
-          <dd>
-            <PublicTermTextV134 text={units.join(" · ") || "미기재"} />
-          </dd>
-        </div>
+        {period && (
+          <div>
+            <dt>자료기간</dt>
+            <dd>{period}</dd>
+          </div>
+        )}
+        {units.length > 0 && (
+          <div>
+            <dt>단위</dt>
+            <dd>
+              <PublicTermTextV134 text={units.join(" · ")} />
+            </dd>
+          </div>
+        )}
         {spatialUnit && (
           <div>
             <dt>자료 범위</dt>
@@ -265,7 +272,7 @@ function summarizeYearsV126(values: string[]): string {
     .map(Number)
     .filter(Number.isFinite)
     .sort((left, right) => left - right);
-  if (years.length === 0) return values.slice(0, 8).join(" · ") || "미기재";
+  if (years.length === 0) return values.slice(0, 8).join(" · ");
   const first = years[0];
   const last = years[years.length - 1];
   return first === last ? String(first) : `${first}~${last}`;

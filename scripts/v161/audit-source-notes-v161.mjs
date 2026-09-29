@@ -45,6 +45,12 @@ export const SOURCE_NOTE_PATTERNS_V161 = [
   ["contractor", /용역사|STADT/u],
   ["field survey", /현지조사|현지\s*컨설턴트/u],
   ["missing-source placeholder", /원천\s*미기재/u],
+  // A card or detail row filled with a placeholder instead of being left out.
+  // textContent joins a <dt> to its <dd> with no space ("자료기간미기재").
+  // A data category the delivery left blank reads a bare "미기재" (D-019
+  // "미기재 7") - a data value, deliberately not matched here.
+  ["unconfirmed provider placeholder", /제공기관\s*확인/u],
+  ["missing period / unit placeholder", /자료기간\s*미기재|단위\s*미기재/u],
   ["working file / version", /Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu],
 ];
 

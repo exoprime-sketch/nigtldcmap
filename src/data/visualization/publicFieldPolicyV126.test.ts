@@ -41,6 +41,8 @@ describe("publicSourceOrganizationV136_1 - the project's working notes (V161)", 
   // this one function; a line is judged part by part (" / ", " | ").
   it("drops a bare status placeholder or a pending decision", () => {
     expect(publicSourceOrganizationV136_1("확인필요")).toBeNull();
+    // the card summary builder's own placeholder for "no organisation" (C-021)
+    expect(publicSourceOrganizationV136_1("제공기관 확인")).toBeNull();
     expect(publicSourceOrganizationV136_1("연구진 설정(발주처 협의 예정)")).toBeNull();
     expect(publicSourceOrganizationV136_1("현지조사(예정)")).toBeNull();
   });
