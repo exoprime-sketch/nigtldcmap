@@ -138,8 +138,9 @@
 | `verify_country_v2.cjs --country bgd --compare <두 번째 빌드>` | 53/53 (`reports/v158/bgd-verify-v158.json`) |
 | 변조 사본 시험(CSV 지역명 1칸 · 다운로드 1행 삭제) | 의도한 4개 검사 실패 — 검사가 실제로 잡음 |
 | `audit:security:v128` (BGD 트리 포함) | 13/13 |
-| E-008 원본 자격증명 대조 | 산출물·보고서·도구·PDF 8,378개 파일 0건(값은 출력하지 않고 원본에서 읽어 대조), 제거 기록 해시와 원본 일치 |
-| `finalize:v151` 1회 | (작성 중) |
+| E-008 원본 자격증명 대조 | 보고서·도구·데이터·문서·PDF 8,383개 파일 0건(값은 출력하지 않고 원본에서 읽어 대조), 제거 기록 해시와 원본 일치 |
+| `npx tsc --noEmit` · `npm run test:unit` | 0 · 564/564(55 suites) |
+| `finalize:v151` 1회 | 통과 — `verify:dataset-directory:v150` → release:v136 80/80(감사 요약 39개 전부 PASS) → role-split 53/53 → 분석 QA 기준선 41 이내(필수 실패 34 · 새 실패 0 · 해소 7) → boundary-34·boundary-policy PASS |
 | 베트남 회귀 | `git diff` 0(베트남 트리·`countries.json`·`src`), 베트남 `asset-integrity` 재해시 일치 |
 
 - 검증기(53개) 구성
@@ -188,4 +189,10 @@
 - B-017(관구 7개)·B-021(GDL 권역)·C-002(농업생태구역)·C-011(치안구역)은 맞는 경계가 없어 보류했다. 경계를 만들지 않는다.
 
 ## 미완료·사유
-(작성 중)
+- **지도 등록**: 후보표 승인 전이라 하지 않았다(사용자 지시). 레이어는 0이다.
+- **화면 연결**: 앱 로더·provider의 BGD 연결과 국가 선택은 B2에서 한다. `src/**` 편집 금지(#34·P12-B 충돌 방지)에 따른 것이다.
+  - 그래서 이번 PR로 `public/data/bgd`는 배포되지만 화면에서는 보이지 않는다(BGD는 `preparing`).
+- **베트남 후속 빌더**(map-targets·home-preview·dataset-directory·card-summaries)의 BGD 실행
+  - `semantic/`·`home/`·`spatial/`·`dataset-directory`는 생성기가 `src`에 쓰거나 베트남 전용이라 B2로 넘겼다.
+- **B-012 구 단위 목록**: 좌표 205개 지점으로 후보에 올렸다. 구(64) 단위 경계는 발행하지 않았다(8개 Division만).
+- **Vercel Preview**: push 뒤 확인한다(아래 PR 참고).
