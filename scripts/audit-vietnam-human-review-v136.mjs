@@ -33,6 +33,7 @@ import {
   normalizeTextV136,
   writeCsvV136,
 } from "./v136/audit-helpers.mjs";
+import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
 import { publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 
@@ -140,7 +141,7 @@ try {
     const count = Number(
       await evaluateValue(browser.cdp, `document.querySelectorAll('[data-testid="public-finder-card-v135"]').length`)
     );
-    if (count >= publicSetV156.length) break;
+    if (count >= FINDER_PUBLIC_COUNT_V160) break;
     await evaluateValue(browser.cdp, `(() => { window.scrollTo(0, document.body.scrollHeight); return true; })()`);
     try {
       await waitForValue(
@@ -348,7 +349,9 @@ const unresolvedRemove = allRows.filter((row) => row.decision === "REMOVE");
 const mapActivationFailures = mapRows.filter((row) => row.activationFailure);
 
 audit.check("HUMAN_REVIEW_RUNTIME", runtimeFailure === null, { runtimeFailure }, { runtimeFailure: null });
-audit.check("FINDER_HUMAN_REVIEW_COUNT", finderRows.length === publicSetV156.length, finderRows.length, publicSetV156.length);
+// V160: the finder lists every public dataset except the tier-hidden ones
+// (tier=all); every public route is reviewed on its detail page.
+audit.check("FINDER_HUMAN_REVIEW_COUNT", finderRows.length === FINDER_PUBLIC_COUNT_V160, finderRows.length, FINDER_PUBLIC_COUNT_V160);
 audit.check("DETAIL_HUMAN_REVIEW_COUNT", detailRows.length === publicSetV156.length, detailRows.length, publicSetV156.length);
 audit.check("MAP_DATASET_HUMAN_REVIEW_COUNT", new Set(mapRows.map((row) => row.elementId)).size === MAP_DATASETS.length && MAP_DATASETS.length === mapLayerCountV138(), new Set(mapRows.map((row) => row.elementId)).size, mapLayerCountV138());
 audit.check("MAP_REVIEW_ACTIVATION", mapActivationFailures.length === 0, mapActivationFailures.slice(0, 5), []);

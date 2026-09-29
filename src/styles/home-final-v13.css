@@ -1,10 +1,10 @@
-/* Home (V139).
+/* Home (V139, core-first V160).
    The header is where a visitor moves between functions; the home is where
    they find real data and start an analysis. So the hero is short - a title,
-   one sentence, the search - beside one verified map, the four status facts
-   are a thin strip, and the eight featured datasets are real previews on a
-   light ground. Nothing is pushed down to fill the viewport, and nothing is
-   cut to fit it. */
+   one sentence, the search. The six question cards (home-questions-v160.css)
+   follow below it, then the four status facts as a thin strip, then the
+   verified map preview. Nothing is pushed down to fill the viewport, and
+   nothing is cut to fit it. */
 
 .home-v139 {
   color: var(--slate-900);
@@ -26,6 +26,13 @@
   grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
   align-items: stretch;
   gap: clamp(24px, 4vw, 56px);
+}
+
+/* V160: the hero now holds only the search copy - the six question cards and
+   the map preview moved into their own sections below it, so the grid
+   collapses to a single, narrower column. */
+.home-hero-v160__inner {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .home-final-eyebrow {
@@ -117,8 +124,7 @@
   font-size: 12px;
 }
 
-.home-final-suggestions button,
-.home-category-chips button {
+.home-final-suggestions button {
   min-height: 34px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   color: #e3eef5;
@@ -138,99 +144,16 @@
   background: rgba(131, 221, 216, 0.14);
 }
 
-/* The map: one image, its caption, the legend as text, the source, and one
-   link into the data map with the same dataset selected. */
-.home-hero-v139__map {
-  margin: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 14px;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
+/* ---------------------------------------------------------------- regional map (V160: moved below the question cards) */
+
+.home-regional-v160__inner {
+  width: min(var(--page-width), calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 32px) 0;
 }
 
-.home-hero-v139__map-image {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 380px;
-  justify-self: center;
-  display: block;
-  border-radius: 8px;
-  background: #fbfdfc;
-}
-
-.home-hero-v139__map figcaption {
-  min-width: 0;
-  display: grid;
-  gap: 5px;
-  align-content: end;
-  color: #d6e3ec;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.home-hero-v139__map figcaption strong {
-  color: var(--white);
-  font-size: 15px;
-}
-
-.home-hero-v139__legend {
-  margin: 4px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 2px;
-}
-
-.home-hero-v139__legend li,
-.home-chart-v139__legend li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.home-hero-v139__legend i,
-.home-chart-v139__legend i {
-  width: 14px;
-  height: 4px;
-  flex: none;
-  border-radius: 2px;
-}
-
-.home-hero-v139__map figcaption small {
-  color: #9fb6c9;
-  font-size: 11px;
-}
-
-.home-hero-v139__map-link {
-  min-height: 40px;
-  margin-top: 4px;
-  padding: 0 12px;
-  justify-self: start;
-  border: 1px solid rgba(131, 221, 216, 0.6);
-  border-radius: 8px;
-  color: #bfe9e6;
-  background: transparent;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.home-hero-v139__map-link:hover,
-.home-hero-v139__map-link:focus-visible {
-  background: rgba(131, 221, 216, 0.14);
-}
-
-.home-hero-v139__map-placeholder {
-  min-height: 240px;
-  display: grid;
-  place-items: center;
-  color: #9fb6c9;
-  font-size: 13px;
+.home-regional-v160 .home-regional-v149 {
+  max-width: 640px;
 }
 
 /* ---------------------------------------------------------------- status strip */
@@ -269,244 +192,6 @@
   letter-spacing: -0.02em;
 }
 
-/* ---------------------------------------------------------------- featured */
-
-.home-featured-v139__inner,
-.home-topics-v139__inner {
-  width: min(var(--page-width), calc(100% - 48px));
-  margin: 0 auto;
-}
-
-.home-featured-v139__inner {
-  padding: 36px 0 12px;
-}
-
-.home-featured-v139__heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.home-featured-v139__heading h2,
-.home-topics-v139 h2 {
-  margin: 0;
-  font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing: -0.03em;
-}
-
-.home-featured-v139__heading > button,
-.home-topics-v139 .home-category-chips button {
-  min-height: 44px;
-  border: 0;
-  color: var(--blue-700);
-  background: transparent;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.home-featured-v139__grid {
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: start;
-  gap: 14px;
-}
-
-/* Each card is as tall as what it says; a row is not stretched to its
-   tallest card, so no card carries blank space above its footer. */
-.home-featured-v139__card {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 16px 16px 14px;
-  border: 1px solid #dbe4eb;
-  border-radius: 12px;
-  background: var(--white);
-  box-shadow: 0 2px 8px rgba(20, 43, 66, 0.04);
-}
-
-.home-featured-v139__card h3 {
-  margin: 0;
-  font-size: 17px;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-}
-
-/* V140: a card reads title → question → one figure → preview → period ·
-   provider → 상세보기. Caveats, units tables and row counts moved to the
-   detail screen. */
-.home-featured-v139__question {
-  margin: 0;
-  color: var(--slate-600);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.home-featured-v139__headline {
-  margin: 0;
-  display: grid;
-  gap: 2px;
-}
-
-.home-featured-v139__headline strong {
-  color: #0f766e;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
-
-.home-featured-v139__headline span {
-  color: var(--slate-600);
-  font-size: 12px;
-  line-height: 1.45;
-}
-
-.home-featured-v139__chart {
-  min-width: 0;
-  align-self: start;
-}
-
-.home-chart-v139 {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.home-chart-v139__legend {
-  margin: 6px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 3px;
-  font-size: 12px;
-  color: var(--slate-900);
-}
-
-.home-chart-v139__legend li {
-  min-width: 0;
-}
-
-.home-chart-v139__legend li span {
-  flex: 1;
-  min-width: 0;
-}
-
-.home-chart-v139__legend li strong {
-  font-size: 12px;
-}
-
-.home-chart-v139__legend li small {
-  color: var(--slate-600);
-}
-
-.home-chart-v139__legend--inline {
-  grid-template-columns: repeat(2, minmax(0, auto));
-  justify-content: start;
-  column-gap: 14px;
-}
-
-.home-chart-v139__map img {
-  width: 100%;
-  max-height: 170px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.home-featured-v139__meta {
-  margin: 0;
-  display: grid;
-  gap: 3px;
-  font-size: 12px;
-}
-
-.home-featured-v139__meta > div {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 6px;
-}
-
-.home-featured-v139__meta dt {
-  color: var(--slate-600);
-  font-weight: 700;
-}
-
-.home-featured-v139__meta dd {
-  margin: 0;
-  color: var(--slate-900);
-}
-
-.home-featured-v139__open {
-  min-height: 40px;
-  padding: 0 12px;
-  justify-self: start;
-  border: 1px solid #cfdbe4;
-  border-radius: 8px;
-  color: var(--blue-700);
-  background: var(--white);
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.home-featured-v139__open:hover,
-.home-featured-v139__open:focus-visible {
-  border-color: var(--blue-700);
-  background: #eef5fc;
-}
-
-.home-v128-loading {
-  min-height: 160px;
-  padding: 28px 0;
-  display: grid;
-  place-items: center;
-  color: var(--slate-600);
-  font-size: 13px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-/* ---------------------------------------------------------------- topics */
-
-.home-topics-v139__inner {
-  padding: 24px 0 44px;
-}
-
-.home-topics-v139 p {
-  margin: 6px 0 0;
-  color: var(--slate-600);
-  font-size: 13px;
-}
-
-.home-topics-v139 .home-category-chips {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.home-topics-v139 .home-category-chips button {
-  min-height: 40px;
-  padding: 0 14px;
-  border: 1px solid #cfdbe4;
-  border-radius: 999px;
-  color: var(--navy-900);
-  background: var(--white);
-  font-size: 13px;
-}
-
-.home-topics-v139 .home-category-chips button:hover,
-.home-topics-v139 .home-category-chips button:focus-visible {
-  border-color: var(--blue-700);
-  color: var(--blue-700);
-  background: #eef5fc;
-}
-
 .home-v139 button:focus-visible,
 .home-v139 input:focus-visible {
   outline: 3px solid #83ddd8;
@@ -521,41 +206,13 @@
 
 /* ---------------------------------------------------------------- responsive */
 
-@media (max-width: 1100px) {
-  .home-featured-v139__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 980px) {
-  .home-hero-v139__inner {
-    grid-template-columns: 1fr;
-  }
-
-  /* On a narrow screen the title, the search and the featured data come
-     first; the map preview follows the copy, smaller. */
-  .home-hero-v139__map {
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: start;
-    max-width: 640px;
-  }
-
-  /* An auto grid track and a max-width of 100% resolve to nothing for an
-     image; the height is given and the width follows the aspect ratio. */
-  .home-hero-v139__map-image {
-    width: auto;
-    max-width: none;
-    height: 220px;
-    max-height: none;
-    justify-self: start;
-  }
-}
+/* .home-hero-v160__inner already forces a single column at every width
+   (see above), so the hero itself needs no narrow-screen override. */
 
 @media (max-width: 640px) {
   .home-hero-v139__inner,
   .home-status-v139__inner,
-  .home-featured-v139__inner,
-  .home-topics-v139__inner {
+  .home-regional-v160__inner {
     width: min(100% - 32px, var(--page-width));
   }
 
@@ -576,37 +233,7 @@
     min-height: 44px;
   }
 
-  /* A phone reader gets the title, the search and the featured data first;
-     the map is kept, small, beside its caption. */
-  .home-hero-v139__map {
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: start;
-    padding: 10px;
-  }
-
-  .home-hero-v139__map-image {
-    height: 150px;
-  }
-
   .home-status-v139__inner {
     gap: 6px 20px;
   }
-
-  .home-featured-v139__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-featured-v139__heading {
-    align-items: start;
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-
-/* V159: the source line above the dataset name on a featured card. */
-.home-featured-v139__source {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: #4f665f;
-  overflow-wrap: anywhere;
 }

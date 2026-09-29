@@ -31,6 +31,7 @@ import {
   writeCsvV134,
 } from "./v134/audit-helpers.mjs";
 import { getPublicNonGlossaryAllowanceV134 } from "./v134/public-non-glossary-allowlist-v134.mjs";
+import { FINDER_PUBLIC_COUNT_V160, finderAutoLoadSequenceV160, withAllTiersV160 } from "./v160/core-first-audit-v160.mjs";
 
 import { auditExcludedNoticesV156, excludedElementsV156, publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
 
@@ -445,8 +446,9 @@ try {
   await setViewport(browser.cdp, 1440, 1000);
 
   const staticRoutes = [
-    ["home", `${server.url}/#home`, "document.querySelectorAll('.home-featured-list button').length >= 4"],
-    ["finder", `${server.url}/?country=VNM#explorer`, "document.querySelectorAll('.cdp-dataset-card').length > 0"],
+    // V160: the home's entry points are the six question cards.
+    ["home", `${server.url}/#home`, "document.querySelectorAll('.home-featured-list button, [data-testid=\"home-question-open-v160\"]').length >= 4"],
+    ["finder", `${server.url}/?country=VNM&tier=all#explorer`, "document.querySelectorAll('.cdp-dataset-card').length > 0"],
     ["map", mapUrlV134(server.url), "document.querySelectorAll('.cdp-map-catalog-v138__item[data-map-available=\"true\"]').length >= 12"],
     ["download", `${server.url}/?country=VNM#download`, "document.querySelectorAll('.cdp-download-item').length > 0"],
     ["guide", `${server.url}/?guide=glossary#guide`, "Boolean(document.querySelector('[data-v134-glossary-directory]'))"],
@@ -460,7 +462,8 @@ try {
       // composition differs between environments. The finder can show every
       // card the builder makes; loading all 152 fixes the audited set of
       // card legends and unit strings regardless of the home's selection.
-      const total = publicSetV156.length;
+      // V160: every public dataset the finder lists with tier=all.
+      const total = FINDER_PUBLIC_COUNT_V160;
       await waitForValue(
         browser.cdp,
         `(() => { const n = document.querySelectorAll('[data-testid="public-finder-card-v135"]').length; if (n < ${total}) window.scrollTo(0, document.documentElement.scrollHeight); return n >= ${total}; })()`,
@@ -575,7 +578,7 @@ const unmatched = inventoryRows.filter((row) => row.approved !== "true");
 audit.check("PRODUCTION_DOM_ROUTE_COVERAGE", runtimeFailure === null && inspectedRoutes === STATIC_ROUTE_COUNT_V134 + publicSetV156.length && routeFailures.length === 0, { inspectedRoutes, routeFailures, runtimeFailure }, { inspectedRoutes: STATIC_ROUTE_COUNT_V134 + publicSetV156.length, routeFailures: [] });
 audit.check("VISIBLE_ACRONYM_WITHOUT_GLOSSARY", unmatched.length === 0, unmatched, []);
 audit.check("SELECTED_OPTION_GLOSSARY_HELP", selectedOptionFailures.length === 0, selectedOptionFailures, []);
-audit.check("FINDER_ALL_CARDS_AUDITED", finderCardCount === publicSetV156.length, finderCardCount, publicSetV156.length);
+audit.check("FINDER_ALL_CARDS_AUDITED", finderCardCount === FINDER_PUBLIC_COUNT_V160, finderCardCount, FINDER_PUBLIC_COUNT_V160);
 audit.check("EXCLUDED_DETAIL_NOTICE_V156", excludedNoticesV156.length === excludedElementsV156(catalog).length && excludedNoticesV156.every((row) => row.pass), excludedNoticesV156.map((row) => ({ elementId: row.elementId, pass: row.pass, problems: row.problems })), "notice card, no chart, no download link");
 audit.check("GLOSSARY_HOVER_PASS", hoverPass, hoverPass, true);
 audit.check("GLOSSARY_KEYBOARD_PASS", keyboardPass, keyboardPass, true);

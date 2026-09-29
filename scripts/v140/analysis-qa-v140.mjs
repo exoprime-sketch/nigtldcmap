@@ -50,6 +50,7 @@ import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
 import { recordRoleOf } from "./card-model-v140.mjs";
+import { FINDER_HIDDEN_IDS_V160 } from "../v160/core-first-audit-v160.mjs";
 import { EXCLUDED_NOTICE_SNAPSHOT_V156, excludedNoticeVerdictV156, isPubliclyListedV156 } from "../v156/exclusions-audit-v156.mjs";
 
 const argv = process.argv.slice(2);
@@ -85,7 +86,15 @@ const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "u
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
 const homePreview = JSON.parse(readFileSync(resolve(DATA, "home/home-preview-v139.json"), "utf8"));
 const mapConnected = new Set(mapIndex.filter((layer) => layer.active !== false && layer.enabled !== false).map((layer) => layer.elementId));
-const HOME_IDS = new Set(homePreview.cards.map((card) => card.elementId));
+// V160: the home's entry points are the six question cards, which open the
+// finder, not a dataset; no home card opens a detail screen any more, so
+// homeCardClicked is not applicable (role-split QA checks the questions).
+const HOME_IDS = new Set(homePreview.cards.map((card) => card.elementId).filter(() => false));
+// The home preview asset still holds the parts and unit of the cards whose
+// summary says `preview.home` (A-010, D-023, ...): the card-expectation
+// lookup reads it whether or not the home shows those cards (V160 emptied
+// HOME_IDS for the click check only; the lookup must not follow it).
+const HOME_PREVIEW_IDS = new Set(homePreview.cards.map((card) => card.elementId));
 const sha = (text) => createHash("sha256").update(text).digest("hex").slice(0, 16);
 
 const server = externalBase ? null : await startStaticBuildServer(resolve(PROJECT_ROOT, "build"));
@@ -517,7 +526,7 @@ const COUNT_LIKE_UNIT = /(?:^|\s)수$|^(?:건|곳|개|명|기)$|(?:행|건|곳|�
 async function analysisFitOf(page, card, screen, claim) {
   if (!card) return { kind: null, pass: null, expected: [], missing: ["no card"] };
   // Home-copied cards keep their parts in the home asset.
-  const homeCard = HOME_IDS.has(card.elementId) ? homePreview.cards.find((entry) => entry.elementId === card.elementId) : null;
+  const homeCard = HOME_PREVIEW_IDS.has(card.elementId) ? homePreview.cards.find((entry) => entry.elementId === card.elementId) : null;
   const cardParts = (card.preview?.parts || homeCard?.parts || homeCard?.bars || []).map((part) => clean(part.label));
   const dom = await page.evaluate(() => {
     const primary = document.querySelector('[data-testid="public-analysis-primary"]');
@@ -776,17 +785,32 @@ async function checkElement(context, item) {
     params.set("view", "data");
     params.set("country", "VNM");
     params.set("element", elementId);
+    // V160: every detail layer open (the V159 layout); see qa-core-first-v160.
+    params.set("detailLayers", "all");
     return `${base}/?${params.toString()}#element-detail`;
   };
   try {
     // ---- 1. the real card click, from the finder
-    await page.goto(`${base}/#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
+    // V160: the finder opens on the core tier; tier=all lists every public
+    // dataset. ⓪ status elements are not listed at all (tier hidden), so they
+    // are opened by their detail URL and the missing card is the expected state.
+    await page.goto(`${base}/?tier=all&detailLayers=all#explorer`, { waitUntil: "networkidle", timeout: 90_000 });
     await page.waitForSelector('[data-testid="finder-results-v136"]', { timeout: 60_000 });
     const searchTerm = (card?.title || item.elementLabel).replace(/\[.*$/u, "").split(/[:;]/u)[0].trim().slice(0, 40);
     await page.fill(".cdp-input", searchTerm);
     const cardSelector = `[data-testid="public-finder-card-v135"][data-element-id="${elementId}"]`;
-    const cardFound = await page.waitForSelector(cardSelector, { timeout: 30_000 }).then(() => true).catch(() => false);
-    if (cardFound) {
+    const hiddenFromFinder = FINDER_HIDDEN_IDS_V160.has(elementId);
+    const cardFound = hiddenFromFinder
+      ? false
+      : await page.waitForSelector(cardSelector, { timeout: 30_000 }).then(() => true).catch(() => false);
+    if (hiddenFromFinder) {
+      await page.waitForTimeout(800);
+      record.evidence.finderHidden = !(await page.$(cardSelector));
+      record.cardClicked = null;
+      record.notApplicable.push("cardClicked: ⓪ element is not listed in the finder (V160 tier hidden)");
+      await page.goto(detailUrl(), { waitUntil: "networkidle", timeout: 90_000 });
+      await waitReady(page);
+    } else if (cardFound) {
       await page.waitForSelector(`${cardSelector} ${STATUS_IDS_V159.has(elementId) ? '[data-testid="finder-card-status-v159"]' : '[data-testid="finder-card-summary-v140"]'}`, { timeout: 20_000 }).catch(() => null);
       const finderHeadline = clean(await page.$eval(`${cardSelector} [data-testid="finder-card-headline-v140"] strong`, (node) => node.textContent).catch(() => ""));
       record.evidence.finderHeadline = finderHeadline;
@@ -920,7 +944,9 @@ async function checkElement(context, item) {
       record.statusChecks = {
         statusNoticePresent: notice.count === 1 && ["결정", "사유", "결정일"].every(shown),
         chartCount0: notice.charts === 0,
-        cardShowsStatus: Boolean(record.evidence.finderStatusBadge) && !record.evidence.finderHeadline,
+        // V160: a ⓪ element is not listed in the finder at all; either that or
+        // a status badge without a figure keeps the card from showing a value.
+        cardShowsStatus: record.evidence.finderHidden === true || (Boolean(record.evidence.finderStatusBadge) && !record.evidence.finderHeadline),
       };
       record.evidence.statusNotice = notice;
       record.cardValueVerified = null;

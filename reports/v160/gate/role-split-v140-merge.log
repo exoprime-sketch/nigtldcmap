@@ -1,0 +1,24 @@
+
+> react-typescript@1.0.0 qa:role-split:v140
+> node scripts/v140/role-split-qa-v140.mjs
+
+screenshot capture skipped (elementHandle.screenshot: Timeout 30000ms exceeded.
+Call log:
+[2m  - taking element screenshot[22m
+[2m  - waiting for fonts to load...[22m
+[2m  - fonts loaded[22m
+[2m  - attempting scroll into view action[22m
+[2m    2 × waiting for element to be stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying scroll into view action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be stable[22m
+[2m      - element is not visible[22m
+[2m    - retrying scroll into view action[22m
+[2m      - waiting 100ms[22m
+[2m    57 × waiting for element to be stable[22m
+[2m       - element is not visible[22m
+[2m     - retrying scroll into view action[22m
+[2m       - waiting 500ms[22m
+)
+{"label":"local-build","base":"http://127.0.0.1:50935","passed":49,"failed":0,"total":49,"failedIds":[]}

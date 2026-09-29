@@ -52,6 +52,18 @@ function renderTimeline(elementId: string): HTMLElement {
  */
 const TERMS_ADDED_AFTER_BASELINE_V151_2 = ["qd-ttg", "nd-cp", "qh15", "moej", "cru-ts", "hydrosheds-dir"];
 
+/**
+ * V160 lists the documents most recent first (decision 2026-09-29); the
+ * baseline was taken in the renderer's earlier ascending order, so the entries
+ * are compared in that order. The entries' own markup is still compared byte
+ * for byte (the fold that shows the first ten sits outside the list).
+ */
+function inBaselineOrder(timeline: HTMLElement): HTMLElement {
+  const clone = timeline.cloneNode(true) as HTMLElement;
+  [...clone.children].reverse().forEach((entry) => clone.appendChild(entry));
+  return clone;
+}
+
 /** The entry with the V153 card removed: what the pre-V153 renderer produced. */
 function withoutDescription(entry: Element): string {
   const clone = entry.cloneNode(true) as Element;
@@ -67,12 +79,12 @@ describe("document timeline around the V153 description line", () => {
   test("C-016 has no description keys and its markup is byte-identical to the pre-V153 renderer", () => {
     const timeline = renderTimeline("C-016");
     expect(timeline.querySelectorAll('[data-testid="policy-description-v153"]')).toHaveLength(0);
-    expect(sha256(timeline.outerHTML)).toBe(BASELINE["C-016"].timeline);
+    expect(sha256(inBaselineOrder(timeline).outerHTML)).toBe(BASELINE["C-016"].timeline);
   });
 
   test.each(["C-009", "C-010"])("%s entries are byte-identical to the pre-V153 renderer apart from the appended card", (elementId) => {
     const timeline = renderTimeline(elementId);
-    const entries = [...timeline.children];
+    const entries = [...inBaselineOrder(timeline).children];
     expect(entries).toHaveLength(BASELINE[elementId].entries.length);
     entries.forEach((entry, index) => {
       expect(sha256(withoutDescription(entry))).toBe(BASELINE[elementId].entries[index]);

@@ -431,3 +431,31 @@
     min-height: 72px;
   }
 }
+
+/* V160: the core group first; the rest behind '더 많은 레이어'. */
+.cdp-map-catalog-v138__group.is-core-v160 > .cdp-map-catalog-v138__group-toggle {
+  font-weight: 700;
+}
+.cdp-map-catalog-v160__more {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  margin: 6px 0 2px;
+  padding: 8px 10px;
+  border: 1px dashed #b9cfc6;
+  border-radius: 9px;
+  background: #f6faf8;
+  color: #24483c;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.cdp-map-catalog-v160__more[aria-expanded="true"] {
+  border-style: solid;
+}
+.cdp-map-catalog-v160__more:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
