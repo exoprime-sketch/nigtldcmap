@@ -42,6 +42,16 @@ export function candidatePublicElementIds(): string[] {
  * source line names the provider only: no data period is stated.
  */
 const PREPARING_STATUSES = new Set(["not-collected", "data-entry-planned", "schema-only"]);
+
+/**
+ * V161: delivered elements whose data states no period. The source line
+ * leaves the period out instead of printing '자료기간 미기재', and no year is
+ * borrowed from elsewhere. D-018: every record's 기준연도 (attr_23) is empty
+ * and its observations carry no year; the catalogue's 2026 is the year the
+ * project list was exported (2026-07-15), not a data period
+ * (reports/v160/SOURCE_FILTER_INTERNAL_MEMO_V161.md).
+ */
+export const PERIOD_NOT_STATED_V161: ReadonlySet<string> = new Set(["D-018"]);
 export function candidatePreparingElementIds(): Set<string> {
   return new Set(candidateCatalog().filter((row) => PREPARING_STATUSES.has(String(row.publicStatus || ""))).map((row) => row.elementId));
 }
