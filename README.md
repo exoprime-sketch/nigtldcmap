@@ -120,9 +120,9 @@ npm run repack:packs:v151-2     # 8 MB 초과 요소 단독 팩 재구성 + asse
 
 ## 배포
 
-공개 asset은 `publicAssetUrlV128` 단일 resolver를 통과합니다. root domain, custom root domain과 GitHub Pages project path `/nigtldcmap/`에서 같은 source code로 manifest, catalog, pack, semantic, download, 지도 JSON·GeoJSON을 요청합니다. `PUBLIC_URL`은 build 환경에서만 지정하며 resolver가 중복 prefix를 방지합니다.
+공개 asset은 `publicAssetUrlV128` 단일 resolver를 통과합니다. origin root(Vercel)와 하위 경로(`PUBLIC_URL`) build에서 같은 source code로 manifest, catalog, pack, semantic, download, 지도 JSON·GeoJSON을 요청합니다. `PUBLIC_URL`은 build 환경에서만 지정하며 resolver가 중복 prefix를 방지합니다.
 
-`.github/workflows/ci.yml`은 main 대상 PR, main push와 수동 실행에서 전체 release gate를 수행하고 build 및 V128 reports artifact를 보존합니다. `.github/workflows/pages.yml`은 main 또는 수동 실행에서 같은 source SHA의 gate를 다시 통과한 뒤 배포용 build를 별도로 생성해 GitHub Pages에 배포하고 공개 URL smoke를 수행합니다. 실제 repository Pages 설정과 custom domain/DNS 승인은 [배포 문서](docs/DEPLOYMENT_V128.md)의 사전조건을 따릅니다.
+`.github/workflows/ci.yml`은 main 대상 PR, main push와 수동 실행에서 전체 release gate를 수행하고 build 및 V128 reports artifact를 보존합니다. 배포는 Vercel 하나입니다(main → production `nigtldcmap.vercel.app`, PR 브랜치 → Preview). GitHub Pages workflow는 V158에서 삭제했습니다(`reports/v158/DEPLOY_VERCEL_ONLY_V158.md`). custom domain/DNS 승인은 [배포 문서](docs/DEPLOYMENT_V128.md)의 사전조건을 따릅니다.
 
 배포된 URL을 별도로 점검할 때:
 

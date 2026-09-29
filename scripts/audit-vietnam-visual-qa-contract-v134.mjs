@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,7 +8,6 @@ const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = resolve(SCRIPT_DIR, "..");
 const PACKAGE_PATH = resolve(PROJECT_ROOT, "package.json");
 const CI_PATH = resolve(PROJECT_ROOT, ".github/workflows/ci.yml");
-const PAGES_PATH = resolve(PROJECT_ROOT, ".github/workflows/pages.yml");
 const VISUAL_QA_PATH = resolve(PROJECT_ROOT, ".github/workflows/visual-qa.yml");
 const REPORT_PATH = resolve(
   PROJECT_ROOT,
@@ -26,7 +25,6 @@ function readText(path) {
 const packageJson = JSON.parse(readText(PACKAGE_PATH));
 const scripts = packageJson.scripts || {};
 const ci = readText(CI_PATH);
-const pages = readText(PAGES_PATH);
 const visualQa = readText(VISUAL_QA_PATH);
 const checks = [];
 
@@ -167,7 +165,18 @@ const releaseWorkflowContract = (source, reportPath) => ({
   currentReports: reportPath ? /reports\/v136\//u.test(source) : true,
 });
 const ciContract = releaseWorkflowContract(ci, true);
-const pagesContract = releaseWorkflowContract(pages, false);
+// V158 (user decision 2026-09-29): production is Vercel only and the GitHub
+// Pages workflow was deleted. No workflow may publish to GitHub Pages again.
+const WORKFLOW_DIR = resolve(PROJECT_ROOT, ".github/workflows");
+const pagesDeployingWorkflows = readdirSync(WORKFLOW_DIR)
+  .filter((name) => /\.ya?ml$/u.test(name))
+  .filter((name) =>
+    /actions\/(?:deploy-pages|upload-pages-artifact|configure-pages)@/u.test(
+      readFileSync(resolve(WORKFLOW_DIR, name), "utf8")
+    )
+  );
+const pagesWorkflowRetired =
+  !existsSync(resolve(WORKFLOW_DIR, "pages.yml")) && pagesDeployingWorkflows.length === 0;
 check(
   "CI_BLOCKING_RELEASE_JOB",
   Object.values(ciContract).every(Boolean),
@@ -175,10 +184,10 @@ check(
   Object.fromEntries(Object.keys(ciContract).map((name) => [name, true]))
 );
 check(
-  "PAGES_BLOCKING_RELEASE_JOB",
-  Object.values(pagesContract).every(Boolean),
-  pagesContract,
-  Object.fromEntries(Object.keys(pagesContract).map((name) => [name, true]))
+  "PAGES_WORKFLOW_RETIRED",
+  pagesWorkflowRetired,
+  { pagesWorkflowRetired, pagesDeployingWorkflows },
+  { pagesWorkflowRetired: true, pagesDeployingWorkflows: [] }
 );
 
 const captureStep = visualQa.match(
@@ -209,12 +218,10 @@ check(
 
 const captureExcludedFromFinalize =
   releaseScreenshotReferences.length === 0 &&
-  ciContract.noScreenshotCapture &&
-  pagesContract.noScreenshotCapture;
+  ciContract.noScreenshotCapture;
 const functionalAuditBlocking =
   Object.values(blockingFunctionalCommands).every(Boolean) &&
-  ciContract.finalizeCurrentGate &&
-  pagesContract.finalizeCurrentGate;
+  ciContract.finalizeCurrentGate;
 const failed = checks.filter((row) => row.status === "FAIL");
 const report = {
   schemaVersion: "v134-visual-qa-contract-1",
@@ -224,7 +231,7 @@ const report = {
   contract: {
     SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER: !captureExcludedFromFinalize,
     FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER: functionalAuditBlocking,
-    releaseWorkflows: [".github/workflows/ci.yml", ".github/workflows/pages.yml"],
+    releaseWorkflows: [".github/workflows/ci.yml"],
     visualQaWorkflow: ".github/workflows/visual-qa.yml",
     blockingEntryPoint: "npm run finalize:v136",
     nonBlockingEntryPoint: "npm run capture:screenshots:v136",
@@ -235,7 +242,7 @@ const report = {
     releaseScreenshotReferences,
     blockingFunctionalCommands,
     ciContract,
-    pagesContract,
+    pagesWorkflowRetired,
     visualWorkflowContract,
   },
   summary: {
