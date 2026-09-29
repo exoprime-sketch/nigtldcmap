@@ -10,8 +10,20 @@
     "located": 1,
     "withoutRegion": 0,
     "multiUnit": 0,
-    "units": 1
+    "units": 1,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 0
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "officeAddress",
@@ -27,6 +39,7 @@
           "VN-HN"
         ],
         "spelling": "hanoi",
+        "matchKind": "exact",
         "column": "officeAddress",
         "columnKind": "region"
       }

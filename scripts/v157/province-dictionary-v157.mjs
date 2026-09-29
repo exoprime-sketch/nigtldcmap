@@ -173,11 +173,56 @@ export function provinceDictionaryV157(root, dataDir) {
     return [...found.values()];
   }
 
+  /**
+   * Units named by a value whose characters were lost in transfer: "S?c Tr?ng"
+   * for "Sóc Trăng". Each run of '?' or U+FFFD stands for one character, and a
+   * pattern is accepted only when exactly one spelling matches it.
+   */
+  function matchesCorrupted(text) {
+    const raw = String(text ?? "");
+    if (!/[?\uFFFD]/u.test(raw)) return [];
+    const found = new Map();
+    // Split on separators the deliveries use, and drop the words that are not
+    // part of a name ("Province", "성", "Tỉnh").
+    for (const phrase of raw.split(/[,;·|/()\n]+/u)) {
+      const candidate = phrase
+        .replace(/\b(province|tinh|tỉnh|city)\b/giu, " ")
+        .replace(/성$/u, "")
+        .trim();
+      if (!candidate || !/[?\uFFFD]/u.test(candidate)) continue;
+      // The pattern is the value itself, with one wildcard per lost character.
+      const pattern = new RegExp(
+        `^${candidate
+          .split("")
+          .map((character) =>
+            /[?\uFFFD]/u.test(character)
+              ? "."
+              : /[\p{L}\p{N}]/u.test(character)
+                ? character.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")
+                : " "
+          )
+          .join("")
+          .replace(/\s+/gu, " ")
+          .trim()}$`,
+        "iu"
+      );
+      const hits = spellings.filter((spelling) => pattern.test(spelling));
+      // Ambiguous or unknown: leave it unmatched and let the report say so.
+      if (hits.length !== 1) continue;
+      const unit = entries.get(hits[0]);
+      if (!found.has(unit.unitCode34)) {
+        found.set(unit.unitCode34, { ...unit, spelling: candidate, matchKind: "corrupted" });
+      }
+    }
+    return [...found.values()];
+  }
+
   return {
     size: entries.size,
     unitCount: units.size,
     warnings,
     matches,
+    matchesCorrupted,
     /** Just the 2025 unit codes, for callers that only count regions. */
     codes(text) {
       return matches(text).map((unit) => unit.unitCode34);

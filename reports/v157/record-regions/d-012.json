@@ -10,8 +10,20 @@
     "located": 11,
     "withoutRegion": 11,
     "multiUnit": 0,
-    "units": 10
+    "units": 10,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 11
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "name",
@@ -32,6 +44,7 @@
           "VN-33"
         ],
         "spelling": "phu yen",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -46,6 +59,7 @@
           "VN-72"
         ],
         "spelling": "dak nong",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -59,6 +73,7 @@
           "VN-41"
         ],
         "spelling": "tay ninh",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       }
@@ -72,6 +87,7 @@
           "VN-47"
         ],
         "spelling": "an giang",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -85,6 +101,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -98,6 +115,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       }
@@ -111,6 +129,7 @@
           "VN-33"
         ],
         "spelling": "phu yen",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       }
@@ -123,6 +142,7 @@
           "VN-HN"
         ],
         "spelling": "하노이",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       }
@@ -137,6 +157,7 @@
           "VN-CT"
         ],
         "spelling": "soc trang",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -151,6 +172,7 @@
           "VN-51"
         ],
         "spelling": "ben tre",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -164,6 +186,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }

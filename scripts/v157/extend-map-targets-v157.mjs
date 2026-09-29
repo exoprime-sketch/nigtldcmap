@@ -501,6 +501,21 @@ for (const row of content.rows) {
       });
       continue;
     }
+    // A row built from the region extraction states measured counts, so it is
+    // regenerated when the extraction changes (all of its text is generated).
+    if (existing.build?.regionSidecar) {
+      const refreshed = sidecarTarget(row, entry);
+      if (JSON.stringify(refreshed) !== JSON.stringify(existing)) {
+        report.changed.push({
+          elementId: row.elementId,
+          from: "region-sidecar row",
+          to: "refreshed from the current extraction",
+          reason: "추출 결과 변경(성·시 확인 건수·열)",
+        });
+        nextTargets.push(refreshed);
+        continue;
+      }
+    }
     nextTargets.push(existing);
     report.kept.push(row.elementId);
     continue;

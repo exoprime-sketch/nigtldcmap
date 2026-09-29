@@ -7,15 +7,71 @@
   "recordsAreOrganisations": false,
   "counts": {
     "records": 132,
-    "located": 118,
-    "withoutRegion": 14,
+    "located": 119,
+    "withoutRegion": 13,
     "multiUnit": 5,
-    "units": 28
+    "units": 28,
+    "unplacedByReason": {
+      "unresolved": 4,
+      "subProvincePlace": 5,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 2,
+      "codeOnly": 0,
+      "noRegionStated": 2
+    }
   },
+  "corruptedMatches": [
+    {
+      "recordId": "v124-d-025-entity-00027",
+      "column": "위치",
+      "spelling": "S?c Tr?ng",
+      "unit": "Cần Thơ"
+    }
+  ],
+  "unresolvedValues": [
+    {
+      "value": "위치=Bihn Nguyen",
+      "records": 1
+    },
+    {
+      "value": "위치=Nhon Hoi Economic Zone",
+      "records": 1
+    },
+    {
+      "value": "위치=Phong Huy",
+      "records": 1
+    },
+    {
+      "value": "위치=Phong Lieu",
+      "records": 1
+    },
+    {
+      "value": "위치=Phong Nguyen",
+      "records": 1
+    },
+    {
+      "value": "위치=Duyen Hai town",
+      "records": 1
+    },
+    {
+      "value": "위치=Dong Hai, Duyen Hai district",
+      "records": 1
+    },
+    {
+      "value": "위치=Bung River, Ma Cooih commune and Ka Dang commune in Dong Giang",
+      "records": 1
+    },
+    {
+      "value": "위치=Xuan Tam commune, Van Yen district",
+      "records": 1
+    }
+  ],
   "columnsUsed": [
     {
       "column": "위치",
-      "records": 118
+      "records": 119
     },
     {
       "column": "name",
@@ -36,6 +92,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -49,6 +106,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -62,6 +120,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -75,6 +134,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -88,6 +148,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -101,6 +162,7 @@
           "VN-41"
         ],
         "spelling": "tay ninh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -114,6 +176,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -128,6 +191,7 @@
           "VN-51"
         ],
         "spelling": "tra vinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -141,6 +205,7 @@
           "VN-41"
         ],
         "spelling": "tay ninh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -154,6 +219,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -167,6 +233,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -180,6 +247,7 @@
           "VN-33"
         ],
         "spelling": "phu yen",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -193,6 +261,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -206,6 +275,7 @@
           "VN-56"
         ],
         "spelling": "bac ninh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       },
@@ -216,6 +286,7 @@
           "VN-HN"
         ],
         "spelling": "hanoi",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -229,6 +300,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -243,6 +315,7 @@
           "VN-SG"
         ],
         "spelling": "ba ria vung tau",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -257,6 +330,7 @@
           "VN-72"
         ],
         "spelling": "lam dong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -270,6 +344,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -283,6 +358,7 @@
           "VN-59"
         ],
         "spelling": "bac lieu",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -296,6 +372,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -310,6 +387,7 @@
           "VN-CT"
         ],
         "spelling": "soc trang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -323,6 +401,7 @@
           "VN-59"
         ],
         "spelling": "bac lieu",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -336,6 +415,22 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
+        "column": "위치",
+        "columnKind": "region"
+      }
+    ],
+    "v124-d-025-entity-00027": [
+      {
+        "unitCode34": "VN34-CT",
+        "name": "Cần Thơ",
+        "adm1Codes63": [
+          "VN-52",
+          "VN-73",
+          "VN-CT"
+        ],
+        "spelling": "S?c Tr?ng",
+        "matchKind": "corrupted",
         "column": "위치",
         "columnKind": "region"
       }
@@ -350,6 +445,7 @@
           "VN-51"
         ],
         "spelling": "ben tre",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -364,6 +460,7 @@
           "VN-72"
         ],
         "spelling": "binh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -378,6 +475,7 @@
           "VN-70"
         ],
         "spelling": "hoa binh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -392,6 +490,7 @@
           "VN-CT"
         ],
         "spelling": "soc trang",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -406,6 +505,7 @@
           "VN-51"
         ],
         "spelling": "tra vinh",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -420,6 +520,7 @@
           "VN-51"
         ],
         "spelling": "tra vinh",
+        "matchKind": "exact",
         "column": "스폰서",
         "columnKind": "other"
       }
@@ -434,6 +535,7 @@
           "VN-51"
         ],
         "spelling": "tra vinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -448,6 +550,7 @@
           "VN-SG"
         ],
         "spelling": "ho chi minh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -462,6 +565,7 @@
           "VN-70"
         ],
         "spelling": "hoa binh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -475,6 +579,7 @@
           "VN-59"
         ],
         "spelling": "bac lieu",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -488,6 +593,7 @@
           "VN-25"
         ],
         "spelling": "quang binh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -501,6 +607,7 @@
           "VN-31"
         ],
         "spelling": "gia lai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -515,6 +622,7 @@
           "VN-CT"
         ],
         "spelling": "soc trang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -528,6 +636,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -542,6 +651,7 @@
           "VN-51"
         ],
         "spelling": "ben tre",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -556,6 +666,7 @@
           "VN-72"
         ],
         "spelling": "binh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -569,6 +680,7 @@
           "VN-59"
         ],
         "spelling": "ca mau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -583,6 +695,7 @@
           "VN-72"
         ],
         "spelling": "dak nong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -596,6 +709,7 @@
           "VN-06"
         ],
         "spelling": "yen bai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -609,6 +723,7 @@
           "VN-06"
         ],
         "spelling": "yen bai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -622,6 +737,7 @@
           "VN-36"
         ],
         "spelling": "khanh hoa",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -635,6 +751,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -649,6 +766,7 @@
           "VN-72"
         ],
         "spelling": "lam dong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -662,6 +780,7 @@
           "VN-31"
         ],
         "spelling": "gia lai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -675,6 +794,7 @@
           "VN-58"
         ],
         "spelling": "binh phuoc",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -687,6 +807,7 @@
           "VN-05"
         ],
         "spelling": "son la",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -700,6 +821,7 @@
           "VN-DN"
         ],
         "spelling": "quang nam",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -713,6 +835,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -726,6 +849,7 @@
           "VN-07"
         ],
         "spelling": "ha giang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -738,6 +862,7 @@
           "VN-05"
         ],
         "spelling": "son la",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -751,6 +876,7 @@
           "VN-31"
         ],
         "spelling": "gia lai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -765,6 +891,7 @@
           "VN-72"
         ],
         "spelling": "lam dong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       },
@@ -776,6 +903,7 @@
           "VN-58"
         ],
         "spelling": "dong nai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -788,6 +916,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -801,6 +930,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -814,6 +944,7 @@
           "VN-31"
         ],
         "spelling": "binh dinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -827,6 +958,7 @@
           "VN-07"
         ],
         "spelling": "ha giang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -840,6 +972,7 @@
           "VN-33"
         ],
         "spelling": "dak lak",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -853,6 +986,7 @@
           "VN-29"
         ],
         "spelling": "kon tum",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -867,6 +1001,7 @@
           "VN-72"
         ],
         "spelling": "lam dong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -880,6 +1015,7 @@
           "VN-07"
         ],
         "spelling": "tuyen quang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -893,6 +1029,7 @@
           "VN-36"
         ],
         "spelling": "ninh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -906,6 +1043,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -918,6 +1056,7 @@
           "VN-05"
         ],
         "spelling": "son la",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -931,6 +1070,7 @@
           "VN-31"
         ],
         "spelling": "gia lai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -944,6 +1084,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -957,6 +1098,7 @@
           "VN-06"
         ],
         "spelling": "yen bai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -970,6 +1112,7 @@
           "VN-56"
         ],
         "spelling": "bac giang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -982,6 +1125,7 @@
           "VN-21"
         ],
         "spelling": "thanh hoa",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -994,6 +1138,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1007,6 +1152,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1020,6 +1166,7 @@
           "VN-29"
         ],
         "spelling": "kon tum",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1033,6 +1180,7 @@
           "VN-58"
         ],
         "spelling": "dong nai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       },
@@ -1045,6 +1193,7 @@
           "VN-72"
         ],
         "spelling": "dak nong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1058,6 +1207,7 @@
           "VN-07"
         ],
         "spelling": "ha giang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1071,6 +1221,7 @@
           "VN-DN"
         ],
         "spelling": "quang nam",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1084,6 +1235,7 @@
           "VN-DN"
         ],
         "spelling": "quang nam",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1096,6 +1248,7 @@
           "VN-22"
         ],
         "spelling": "nghe an",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1109,6 +1262,7 @@
           "VN-58"
         ],
         "spelling": "binh phuoc",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1122,6 +1276,7 @@
           "VN-25"
         ],
         "spelling": "quang binh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       },
@@ -1133,6 +1288,7 @@
           "VN-07"
         ],
         "spelling": "ha giang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1145,6 +1301,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1159,6 +1316,7 @@
           "VN-72"
         ],
         "spelling": "dak nong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1172,6 +1330,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1186,6 +1345,7 @@
           "VN-72"
         ],
         "spelling": "dak nong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1199,6 +1359,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1212,6 +1373,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1224,6 +1386,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1236,6 +1399,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1248,6 +1412,7 @@
           "VN-22"
         ],
         "spelling": "nghe an",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1261,6 +1426,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1273,6 +1439,7 @@
           "VN-21"
         ],
         "spelling": "thanh hoa",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1285,6 +1452,7 @@
           "VN-71"
         ],
         "spelling": "dien bien",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       },
@@ -1295,6 +1463,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1308,6 +1477,7 @@
           "VN-29"
         ],
         "spelling": "kon tum",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1321,6 +1491,7 @@
           "VN-31"
         ],
         "spelling": "gia lai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1335,6 +1506,7 @@
           "VN-70"
         ],
         "spelling": "phu tho",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1348,6 +1520,7 @@
           "VN-07"
         ],
         "spelling": "tuyen quang",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1361,6 +1534,7 @@
           "VN-06"
         ],
         "spelling": "yen bai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1374,6 +1548,7 @@
           "VN-58"
         ],
         "spelling": "dong nai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1388,6 +1563,7 @@
           "VN-SG"
         ],
         "spelling": "ho chi minh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1402,6 +1578,7 @@
           "VN-SG"
         ],
         "spelling": "ba ria vung tau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1416,6 +1593,7 @@
           "VN-SG"
         ],
         "spelling": "ba ria vung tau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1430,6 +1608,7 @@
           "VN-SG"
         ],
         "spelling": "ba ria vung tau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1443,6 +1622,7 @@
           "VN-HP"
         ],
         "spelling": "hai duong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1456,6 +1636,7 @@
           "VN-HP"
         ],
         "spelling": "hai duong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1469,6 +1650,7 @@
           "VN-HP"
         ],
         "spelling": "hai duong",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1483,6 +1665,7 @@
           "VN-67"
         ],
         "spelling": "ninh binh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1497,6 +1680,7 @@
           "VN-SG"
         ],
         "spelling": "ba ria vung tau",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1510,6 +1694,7 @@
           "VN-69"
         ],
         "spelling": "thai nguyen",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1522,6 +1707,7 @@
           "VN-13"
         ],
         "spelling": "quang ninh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1536,6 +1722,7 @@
           "VN-72"
         ],
         "spelling": "binh thuan",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1550,6 +1737,7 @@
           "VN-51"
         ],
         "spelling": "tra vinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1562,6 +1750,7 @@
           "VN-21"
         ],
         "spelling": "thanh hoa",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1575,6 +1764,7 @@
           "VN-36"
         ],
         "spelling": "khanh hoa",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1587,6 +1777,7 @@
           "VN-23"
         ],
         "spelling": "ha tinh",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1600,6 +1791,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1613,6 +1805,7 @@
           "VN-25"
         ],
         "spelling": "quang tri",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }
@@ -1626,6 +1819,7 @@
           "VN-58"
         ],
         "spelling": "dong nai",
+        "matchKind": "exact",
         "column": "위치",
         "columnKind": "region"
       }

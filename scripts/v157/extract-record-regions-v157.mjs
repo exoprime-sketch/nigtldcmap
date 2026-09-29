@@ -52,12 +52,67 @@ const INSTITUTION_KEYS =
 const ORGANISATION_RECORD_KEYS =
   /(기관명|orgname|organizationname|companyname|기업명|대학|연구소)/iu;
 const IDENTITY_KEYS = /(recordid|elementid|indicatorid|기술코드|수집_기준|근거문구|판단근거)/iu;
+/** Values that state the whole country rather than a region. */
+const NATIONWIDE_VALUES =
+  /^(전국|전역|전국\s*공통|nation(wide)?|viet\s*nam|vietnam|베트남|all provinces|국가)/iu;
+/** A region code column: the delivery's own numbering, not a name. */
+const REGION_CODE_KEYS = /(행정코드|p_?code|adm1code|지역코드)/iu;
+/** "인용위치" is where a quote sits in its source, not where something is. */
+const CITATION_LOCATION_KEYS = /(인용위치|인용_위치|citation|출처위치|근거위치|쪽수|페이지)/iu;
+/** Another country named in the value: the row is a multi-country project. */
+const OTHER_COUNTRY_WORDS =
+  /(라오스|캄보디아|인도네시아|필리핀|태국|미얀마|중국|말레이시아|인도|방글라데시|laos|cambodia|indonesia|philippines|thailand|myanmar|china|malaysia)/iu;
+/** A group of provinces the source names as one area (GDL·기획표 권역 표기). */
+const REGION_GROUP_WORDS =
+  /(중부고원|남중부해안|북중부|홍강\s*삼각주|메콩\s*델타|메콩델타|동북부|서북부|남동부|central highlands|mekong (river )?delta|red river delta|north(ern)? central|south(ern)? central|northeast|northwest|southeast)/iu;
+/** A count of provinces with no names ("28개 연안 성(省)"). */
+const UNNAMED_PROVINCE_SET = /\d+\s*개\s*[^\s]{0,6}\s*(성|省|province)/iu;
+/** A place below the province level, which needs a district table to resolve. */
+const SUB_PROVINCE_WORDS =
+  /(commune|district|town|ward|village|economic zone|industrial (park|zone)|공단|산업단지|경제구역|읍|면|리$)/iu;
 
 function columnKind(key) {
   if (SOURCE_URL_KEYS.test(key)) return "url";
   if (REGION_MEANING_KEYS.test(key)) return "region";
   if (INSTITUTION_KEYS.test(key)) return "institution";
   return "other";
+}
+
+/**
+ * Why a record could not be placed, read from its own values.
+ *
+ * Only a region column counts here: a description that happens to contain a word
+ * is not a region statement, and the record's title was already searched.
+ */
+function unplacedReason(record) {
+  const attributes = record.normalizedAttributes ?? {};
+  const regionValues = [];
+  const codeValues = [];
+  for (const [key, value] of Object.entries(attributes)) {
+    if (IDENTITY_KEYS.test(key)) continue;
+    const text = String(value ?? "").trim();
+    if (!text) continue;
+    if (CITATION_LOCATION_KEYS.test(key)) continue;
+    if (REGION_CODE_KEYS.test(key)) codeValues.push({ column: key, value: text });
+    else if (REGION_MEANING_KEYS.test(key) && !SOURCE_URL_KEYS.test(key)) {
+      regionValues.push({ column: key, value: text });
+    }
+  }
+  const nationwide = regionValues.filter((row) => NATIONWIDE_VALUES.test(row.value));
+  const named = regionValues.filter((row) => !NATIONWIDE_VALUES.test(row.value));
+  if (named.length > 0) {
+    // In order of how specific the statement is, so a value that names another
+    // country is not filed as an unknown spelling.
+    const joined = named.map((row) => row.value).join(" · ");
+    if (OTHER_COUNTRY_WORDS.test(joined)) return { reason: "crossCountry", values: named };
+    if (UNNAMED_PROVINCE_SET.test(joined)) return { reason: "unnamedProvinceSet", values: named };
+    if (REGION_GROUP_WORDS.test(joined)) return { reason: "regionGroup", values: named };
+    if (SUB_PROVINCE_WORDS.test(joined)) return { reason: "subProvincePlace", values: named };
+    return { reason: "unresolved", values: named };
+  }
+  if (nationwide.length > 0) return { reason: "nationwide", values: nationwide };
+  if (codeValues.length > 0) return { reason: "codeOnly", values: codeValues };
+  return { reason: "noRegionStated", values: [] };
 }
 
 /**
@@ -80,13 +135,18 @@ function unitsForRecord(record, recordsAreOrganisations) {
   for (const kind of order) {
     const hits = [];
     for (const column of columns.filter((row) => row.kind === kind && row.value.trim())) {
-      for (const unit of PROVINCES.matches(column.value)) {
+      // A value whose characters were lost in transfer is the same province: the
+      // dictionary accepts the pattern only when exactly one province matches.
+      const matched = PROVINCES.matches(column.value);
+      const units = matched.length > 0 ? matched : PROVINCES.matchesCorrupted(column.value);
+      for (const unit of units) {
         if (hits.some((row) => row.unitCode34 === unit.unitCode34)) continue;
         hits.push({
           unitCode34: unit.unitCode34,
           name: unit.canonical,
           adm1Codes63: unit.adm1Codes63,
           spelling: unit.spelling,
+          matchKind: unit.matchKind ?? "exact",
           column: column.key,
           columnKind: kind,
         });
@@ -159,16 +219,45 @@ for (const row of rows) {
     Object.keys(record.normalizedAttributes ?? {}).some((key) => ORGANISATION_RECORD_KEYS.test(key))
   );
   const byRecordId = {};
+  const corruptedMatches = [];
   const columnsUsed = new Map();
   const unitsSeen = new Set();
   let located = 0;
   let multiUnit = 0;
+  const unplaced = {
+    unresolved: 0,
+    subProvincePlace: 0,
+    regionGroup: 0,
+    unnamedProvinceSet: 0,
+    crossCountry: 0,
+    nationwide: 0,
+    codeOnly: 0,
+    noRegionStated: 0,
+  };
+  const unresolvedValues = new Map();
   for (const record of records) {
     const units = unitsForRecord(record, recordsAreOrganisations);
-    if (units.length === 0) continue;
+    if (units.length === 0) {
+      const why = unplacedReason(record);
+      unplaced[why.reason] += 1;
+      for (const row of why.values) {
+        if (!["unresolved", "codeOnly", "subProvincePlace"].includes(why.reason)) continue;
+        const key = `${row.column}=${row.value}`;
+        unresolvedValues.set(key, (unresolvedValues.get(key) ?? 0) + 1);
+      }
+      continue;
+    }
     located += 1;
     if (units.length > 1) multiUnit += 1;
     units.forEach((unit) => {
+      if (unit.matchKind === "corrupted") {
+        corruptedMatches.push({
+          recordId: record.recordId,
+          column: unit.column,
+          spelling: unit.spelling,
+          unit: unit.name,
+        });
+      }
       unitsSeen.add(unit.unitCode34);
       columnsUsed.set(unit.column, (columnsUsed.get(unit.column) ?? 0) + 1);
     });
@@ -188,7 +277,17 @@ for (const row of rows) {
       withoutRegion: records.length - located,
       multiUnit,
       units: unitsSeen.size,
+      // Why the rest are not on the map, from their own values.
+      unplacedByReason: unplaced,
     },
+    // Records matched through a value whose characters the delivery lost; the
+    // provider is asked to fix the encoding (MAP_DATA_REQUEST).
+    corruptedMatches,
+    // The values a reviewer would have to look at to add a spelling.
+    unresolvedValues: [...unresolvedValues.entries()]
+      .sort((left, right) => right[1] - left[1])
+      .slice(0, 40)
+      .map(([value, records]) => ({ value, records })),
     columnsUsed: [...columnsUsed.entries()]
       .sort((left, right) => right[1] - left[1])
       .map(([column, count]) => ({ column, records: count })),
@@ -201,6 +300,8 @@ for (const row of rows) {
     status: located > 0 ? "extracted" : "no-region-found",
     ...document.counts,
     columnsUsed: document.columnsUsed,
+    corruptedMatchCount: corruptedMatches.length,
+    unresolvedValues: document.unresolvedValues,
   });
 }
 
@@ -221,5 +322,17 @@ process.stdout.write(
     located: summary.reduce((sum, row) => sum + (row.located ?? 0), 0),
     withoutRegion: summary.reduce((sum, row) => sum + (row.withoutRegion ?? 0), 0),
     noRegionFound: summary.filter((row) => row.status !== "extracted").map((row) => row.elementId),
+    unplaced: summary.reduce(
+      (acc, row) => {
+        for (const [reason, count] of Object.entries(row.unplacedByReason ?? {})) {
+          acc[reason] = (acc[reason] ?? 0) + count;
+        }
+        return acc;
+      },
+      {}
+    ),
+    elementsWithUnresolvedValues: summary
+      .filter((row) => (row.unplacedByReason?.unresolved ?? 0) > 0)
+      .map((row) => `${row.elementId}:${row.unplacedByReason.unresolved}`),
   })}\n`
 );

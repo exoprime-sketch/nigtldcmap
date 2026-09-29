@@ -10,8 +10,20 @@
     "located": 1,
     "withoutRegion": 9,
     "multiUnit": 0,
-    "units": 1
+    "units": 1,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 9
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "name",
@@ -28,6 +40,7 @@
           "VN-HP"
         ],
         "spelling": "hai phong",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }

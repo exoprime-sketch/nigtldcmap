@@ -10,8 +10,20 @@
     "located": 2,
     "withoutRegion": 5,
     "multiUnit": 0,
-    "units": 2
+    "units": 2,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 5
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "field_01856451",
@@ -28,6 +40,7 @@
           "VN-58"
         ],
         "spelling": "동나이",
+        "matchKind": "exact",
         "column": "field_01856451",
         "columnKind": "other"
       }
@@ -40,6 +53,7 @@
           "VN-23"
         ],
         "spelling": "하띤",
+        "matchKind": "exact",
         "column": "field_01856451",
         "columnKind": "other"
       }

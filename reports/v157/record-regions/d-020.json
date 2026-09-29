@@ -10,8 +10,20 @@
     "located": 2,
     "withoutRegion": 7,
     "multiUnit": 1,
-    "units": 7
+    "units": 7,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 2,
+      "unnamedProvinceSet": 1,
+      "crossCountry": 2,
+      "nationwide": 1,
+      "codeOnly": 0,
+      "noRegionStated": 1
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "대상지역",
@@ -28,6 +40,7 @@
           "VN-07"
         ],
         "spelling": "tuyen quang",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       },
@@ -38,6 +51,7 @@
           "VN-71"
         ],
         "spelling": "dien bien",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       },
@@ -48,6 +62,7 @@
           "VN-01"
         ],
         "spelling": "lai chau",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       },
@@ -59,6 +74,7 @@
           "VN-06"
         ],
         "spelling": "lao cai",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       },
@@ -71,6 +87,7 @@
           "VN-70"
         ],
         "spelling": "phu tho",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       },
@@ -81,6 +98,7 @@
           "VN-05"
         ],
         "spelling": "son la",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       }
@@ -93,6 +111,7 @@
           "VN-26"
         ],
         "spelling": "thua thien hue",
+        "matchKind": "exact",
         "column": "대상지역",
         "columnKind": "region"
       }

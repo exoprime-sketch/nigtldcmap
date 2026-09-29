@@ -10,8 +10,20 @@
     "located": 2,
     "withoutRegion": 12,
     "multiUnit": 2,
-    "units": 4
+    "units": 4,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 12
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "name",
@@ -32,6 +44,7 @@
           "VN-HP"
         ],
         "spelling": "haiphong",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       },
@@ -42,6 +55,7 @@
           "VN-HN"
         ],
         "spelling": "hanoi",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -55,6 +69,7 @@
           "VN-58"
         ],
         "spelling": "동나이",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       },
@@ -67,6 +82,7 @@
           "VN-72"
         ],
         "spelling": "럼동",
+        "matchKind": "exact",
         "column": "비고",
         "columnKind": "other"
       }

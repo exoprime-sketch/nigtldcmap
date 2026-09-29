@@ -10,8 +10,20 @@
     "located": 4,
     "withoutRegion": 6,
     "multiUnit": 0,
-    "units": 3
+    "units": 3,
+    "unplacedByReason": {
+      "unresolved": 0,
+      "subProvincePlace": 0,
+      "regionGroup": 0,
+      "unnamedProvinceSet": 0,
+      "crossCountry": 0,
+      "nationwide": 0,
+      "codeOnly": 0,
+      "noRegionStated": 6
+    }
   },
+  "corruptedMatches": [],
+  "unresolvedValues": [],
   "columnsUsed": [
     {
       "column": "name",
@@ -28,6 +40,7 @@
           "VN-33"
         ],
         "spelling": "닥락",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -40,6 +53,7 @@
           "VN-71"
         ],
         "spelling": "디엔비엔",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -52,6 +66,7 @@
           "VN-26"
         ],
         "spelling": "후에",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
@@ -64,6 +79,7 @@
           "VN-26"
         ],
         "spelling": "후에",
+        "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
       }
