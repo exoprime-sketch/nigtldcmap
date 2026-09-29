@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:51431",
-  "generatedAt": "2026-09-29T06:45:37.734Z",
+  "base": "http://127.0.0.1:60260",
+  "generatedAt": "2026-09-29T07:04:35.121Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -429,9 +429,28 @@
     },
     {
       "id": "FINDER_PENDING_NO_MAP_BUTTON",
-      "pass": false,
-      "actual": null,
-      "expected": "no 지도에서 보기 on B-017"
+      "pass": true,
+      "actual": {
+        "elementId": "A-013",
+        "buttons": [
+          "SDG",
+          "WRI",
+          "NDC",
+          "SDG",
+          "NDC",
+          "NDC",
+          "SDG",
+          "상세보기",
+          "다운로드"
+        ],
+        "reach": {
+          "found": true,
+          "passes": 17,
+          "cards": 142,
+          "remaining": 0
+        }
+      },
+      "expected": "no 지도에서 보기 on A-013"
     },
     {
       "id": "ROUTE /#map",
@@ -735,11 +754,11 @@
     },
     {
       "id": "PENDING_DETAIL_NO_LOCATION_CLAIM",
-      "pass": false,
+      "pass": true,
       "actual": {
         "mapLinks": 0,
         "mapEngine": false,
-        "statesNotOnMap": false
+        "statesNotOnMap": true
       },
       "expected": "no map link, no map, states it is not on the map"
     },
@@ -1008,7 +1027,23 @@
       "주 사용자",
       "유형"
     ],
-    "b017Buttons": null
+    "b017Buttons": [
+      "SDG",
+      "WRI",
+      "NDC",
+      "SDG",
+      "NDC",
+      "NDC",
+      "SDG",
+      "상세보기",
+      "다운로드"
+    ],
+    "pendingCardReach": {
+      "found": true,
+      "passes": 17,
+      "cards": 142,
+      "remaining": 0
+    }
   },
   "map": {
     "lede": "60개 자료 · 선택 0개 · 준비 중 12개",
@@ -1159,11 +1194,11 @@
   "b017Detail": {
     "mapLinks": 0,
     "mapEngine": false,
-    "statesNotOnMap": false
+    "statesNotOnMap": true
   },
   "summary": {
-    "passed": 51,
-    "failed": 2,
+    "passed": 53,
+    "failed": 0,
     "total": 53
   }
 }

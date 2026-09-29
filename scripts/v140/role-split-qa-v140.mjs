@@ -340,26 +340,35 @@ await section("FINDER", async () => {
   await page.waitForTimeout(400);
   const totalDownload = await total();
   await page.selectOption('[data-testid="finder-delivery-filter-v140"]', "all");
-  await page.fill(".cdp-input", "물 스트레스");
-  await page
-    .waitForFunction((id) => {
-      // The pending dataset may sit past the first page of cards: search for it.
-      const box = [...document.querySelectorAll("input.cdp-input")].find(
-        (node) => node.getAttribute("placeholder")?.includes("데이터를 찾으시나요")
-      );
-      if (box && box.value !== id) {
-        // React reads the value from its own setter; set it the way the DOM does.
-        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value")?.set;
-        setter?.call(box, id);
-        box.dispatchEvent(new Event("input", { bubbles: true }));
-      }
-      return Boolean(document.querySelector(`[data-testid="public-finder-card-v135"][data-element-id="${id}"]`));
-    }, PENDING_ID_V157, { timeout: 30_000 })
-    .catch(() => null);
+  await page.fill(".cdp-input", "");
+  await page.waitForTimeout(400);
+  // V157: the finder is one alphabetical list that adds rows as the reader scrolls
+  // (PR #41), so the pending dataset is not on the first screen. Bring the list's own
+  // sentinel into view until its card is in the DOM, or until the sentinel says there
+  // is nothing left to load - the same way a reader reaches it.
+  const pendingCardReach = await page.evaluate(async (id) => {
+    const card = () => document.querySelector(`[data-testid="public-finder-card-v135"][data-element-id="${id}"]`);
+    const sentinel = () => document.querySelector('[data-testid="finder-scroll-sentinel-v136"]');
+    let passes = 0;
+    while (!card() && passes < 60) {
+      const node = sentinel();
+      if (!node) break;
+      if (Number(node.getAttribute("data-remaining") || 0) <= 0) break;
+      node.scrollIntoView({ block: "end" });
+      await new Promise((done) => setTimeout(done, 200));
+      passes += 1;
+    }
+    return {
+      found: Boolean(card()),
+      passes,
+      cards: document.querySelectorAll('[data-testid="public-finder-card-v135"]').length,
+      remaining: Number(sentinel()?.getAttribute("data-remaining") || 0),
+    };
+  }, PENDING_ID_V157);
   const b017Buttons = await page
     .$eval(`[data-testid="public-finder-card-v135"][data-element-id="${PENDING_ID_V157}"]`, (card) => [...card.querySelectorAll("button")].map((button) => String(button.textContent || "").trim()))
     .catch(() => null);
-  report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons };
+  report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons, pendingCardReach };
   // The check keeps its name; its count is the public set (152 when all were public).
   check("FINDER_TOTAL_152", totalAll === PUBLIC_COUNT_V156 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, PUBLIC_COUNT_V156);
   check(
@@ -377,7 +386,12 @@ await section("FINDER", async () => {
     FEATURED.map((id) => ({ id, home: homeTitle(id), finder: finderTitles[id] })),
     "same public title"
   );
-  check("FINDER_PENDING_NO_MAP_BUTTON", Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)), b017Buttons, "no 지도에서 보기 on B-017");
+  check(
+    "FINDER_PENDING_NO_MAP_BUTTON",
+    Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)),
+    { elementId: PENDING_ID_V157, buttons: b017Buttons, reach: pendingCardReach },
+    `no 지도에서 보기 on ${PENDING_ID_V157}`
+  );
   await page.close();
 });
 // ------------------------------------------------------------ map
