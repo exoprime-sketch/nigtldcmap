@@ -1,4 +1,5 @@
 import type { VietnamEntityV124, VietnamObservationV124 } from "../../../data/vietnam/vietnamTypesV124";
+import type { DecisionPointV159 } from "../../../data/structure/decisionPointsV159";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
@@ -50,8 +51,8 @@ function sectorLabel(entity: VietnamEntityV124): string {
   return raw.replace(/^기후기술\s*:\s*/u, "").replace(/\s+-\s+/u, " · ");
 }
 
-export function KoreaTechReadinessV159({ entities }: { entities: VietnamEntityV124[] }) {
-  const rows = entities.map((entity) => {
+function readinessRowsV159(entities: readonly VietnamEntityV124[]) {
+  return entities.map((entity) => {
     const attrs = entity.normalizedAttributes || {};
     return {
       id: entity.recordId,
@@ -62,8 +63,30 @@ export function KoreaTechReadinessV159({ entities }: { entities: VietnamEntityV1
       year: text(attrs.referenceYear),
     };
   });
-  const populated = rows.filter((row) => row.level || row.gap || row.leader);
-  const headline = populated[0] || null;
+}
+
+/** The '전체' (all climate technologies) sector record - the one the headline figures read. */
+function overallRowV159(rows: ReturnType<typeof readinessRowsV159>) {
+  return rows.find((row) => /^전체/u.test(row.sector) && (row.level || row.gap || row.leader)) || null;
+}
+
+/**
+ * E-016 decision points (spec v11): 기술수준 · 기술격차 · 최고국 from the
+ * '전체' sector record as delivered; a figure the record lacks is left out.
+ */
+export function koreaTechReadinessPointsV159(entities: readonly VietnamEntityV124[]): DecisionPointV159[] {
+  const overall = overallRowV159(readinessRowsV159(entities));
+  if (!overall) return [];
+  const points: DecisionPointV159[] = [];
+  if (overall.level) points.push({ key: "reference-level", label: "기술수준", value: overall.level });
+  if (overall.gap) points.push({ key: "reference-gap", label: "기술격차", value: overall.gap });
+  if (overall.leader) points.push({ key: "reference-leader", label: "최고국", value: overall.leader });
+  return points;
+}
+
+export function KoreaTechReadinessV159({ entities }: { entities: VietnamEntityV124[] }) {
+  const rows = readinessRowsV159(entities);
+  const headline = overallRowV159(rows);
   return (
     <section className="detail146" data-testid="korea-tech-readiness-v159">
       <div className="detail146-table" data-analysis-block="comparison-table">

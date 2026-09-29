@@ -40,7 +40,7 @@ import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV1
 import { decisionPointsU3RecordsV159, decisionPointsV159 } from "../data/structure/decisionPointsV159";
 import { visualizationContractV153 } from "../data/visualization/publicVisualizationContractV153";
 import { researchRecordV132 } from "../components/data/public/ResearchPatentAnalysisV132";
-import { referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
+import { koreaTechReadinessPointsV159, referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
 import DataDescriptionV159 from "../components/data/description/DataDescriptionV159";
 import SourceLineV159 from "../components/data/description/SourceLineV159";
 import { applyIndicatorHighlightV159 } from "../components/data/description/highlightIndicatorsV159";
@@ -836,6 +836,10 @@ export default function CountryDataElementPage({
     });
     // Spec v8 ③·S4: records counted as the chart counts them (the source's
     // own technology classification), not the adapter's generic fields.
+    // Spec v11: the Korea-reference record list (E-016) reads its '전체' record.
+    if (typologyV159.referenceCountryIso3 && typologyV159.structure === "S4") {
+      return koreaTechReadinessPointsV159(bundle.entities);
+    }
     if (typologyV159.displayType === "U3" && typologyV159.structure === "S4") {
       const records = bundle.entities.flatMap((entity) => {
         const record = researchRecordV132(entity, bundle.meta?.element.detailTemplate);
