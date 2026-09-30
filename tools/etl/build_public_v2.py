@@ -554,6 +554,12 @@ _REVIEWED_PUBLIC_KEYS_V137: dict[str, dict[str, str]] = {
         "속성7(상태)": "status",
         "속성8(사업자·기관)": "proponent",
         "속성9(방법론)": "methodology",
+        # V162: the 2026-09-30 wide template labels the same columns this way.
+        "[식별] 등록부 프로젝트ID": "projectId",
+        "[식별] 등록 표준": "standard",
+        "[식별] 등재 상태": "status",
+        "[사업] 사업자·기관": "proponent",
+        "[사업] 방법론": "methodology",
     },
 }
 

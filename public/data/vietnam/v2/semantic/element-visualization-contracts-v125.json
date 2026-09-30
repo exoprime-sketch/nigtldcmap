@@ -29509,13 +29509,34 @@
           "values": [
             "entity"
           ]
+        },
+        {
+          "key": "status",
+          "labelKo": "status",
+          "valueCount": 14,
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT",
+            "Late to verify",
+            "LISTED",
+            "Listed",
+            "Registered",
+            "Registration requested",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested",
+            "Withdrawn"
+          ]
         }
       ],
       "elementId": "C-025",
       "entityCount": 1190,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 1133,
+        "featureCount": 1106,
         "mapMode": "point",
         "stateParameters": [
           "element",
@@ -29701,6 +29722,27 @@
             "measure-346664787776",
             "measure-fc3208a87cfa"
           ]
+        },
+        {
+          "defaultValue": "Gold Standard Certified Design",
+          "key": "status",
+          "labelKo": "status",
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "GOLD_STANDARD_CERTIFIED_DESIGN",
+            "GOLD_STANDARD_CERTIFIED_PROJECT",
+            "Late to verify",
+            "LISTED",
+            "Listed",
+            "Registered",
+            "Registration requested",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested",
+            "Withdrawn"
+          ]
         }
       ],
       "tableColumns": [
@@ -29712,6 +29754,11 @@
         "source",
         "missingReason",
         "sourceEvidence",
+        "methodology",
+        "projectId",
+        "proponent",
+        "standard",
+        "status",
         "결측_framework_필수_속성_결측_코드_사유",
         "기술_기술코드_판단_근거",
         "기술_기술코드_판단_유형",
@@ -29725,16 +29772,11 @@
         "발행기록_연도_년",
         "사업_감축_제거_구분",
         "사업_기술_분야_등록부_분류",
-        "사업_방법론",
         "사업_방법론_버전",
         "사업_사업_규모",
         "사업_사업_범주_등록부_분류",
-        "사업_사업자_기관",
         "사업_연간_예상_감축량_tCO_e_년",
         "사업_적용_표준_버전",
-        "식별_등록_표준",
-        "식별_등록부_프로젝트ID",
-        "식별_등재_상태",
         "식별_레코드ID",
         "식별_레코드_유형",
         "식별_프로젝트명",

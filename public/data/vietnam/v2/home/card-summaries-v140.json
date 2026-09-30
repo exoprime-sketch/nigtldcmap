@@ -1,13 +1,13 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-09-30T21:12:16.872Z",
+ "generatedAt": "2026-09-30T21:28:33.572Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
   "homePreview": "v139-home-preview-2"
  },
- "sourceHash": "8888bd11020a506a",
+ "sourceHash": "15bcbae4668cffc1",
  "cards": [
   {
    "elementId": "A-001",
@@ -16152,27 +16152,42 @@
   {
    "elementId": "C-025",
    "title": "탄소크레딧 발행·소각 실적[프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량, 소각량, 빈티지, 발행일]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
     "value": "1,190건",
-    "label": "프로젝트"
+    "label": "프로젝트 수"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "Song Muc Hydro Power Station Regeneration Project in Vietnam",
-      "value": ""
+      "label": "Verra VCS",
+      "value": 436
      },
      {
-      "label": "Phu Mau hydropower project",
-      "value": ""
+      "label": "Gold Standard",
+      "value": 415
      },
      {
-      "label": "Suoi Tan hydropower project",
-      "value": ""
+      "label": "CDM",
+      "value": 313
+     },
+     {
+      "label": "GCC",
+      "value": 23
+     },
+     {
+      "label": "JCM",
+      "value": 2
+     },
+     {
+      "label": "ART TREES",
+      "value": 1
      }
     ],
-    "more": 342
+    "unit": "프로젝트 수",
+    "scope": "등록 표준별",
+    "omitted": 0,
+    "unlabelled": 0
    },
    "period": "2026-06 집계",
    "selection": {
@@ -16184,10 +16199,9 @@
    },
    "basis": {
     "unit": "프로젝트",
-    "rule": "프로젝트 1건 = 원천 1행",
+    "rule": "프로젝트 1건 = 원천 1행 · 등록 표준별 건수",
     "count": {
      "rows": 1190,
-     "distinct": 1190,
      "sourceRows": 1190
     }
    },
@@ -16197,7 +16211,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-014-c-025-6706884c.json",
+    "packUrl": "/data/vietnam/v2/packs/vnm-v124-pack-014-c-025-fbb584e5.json",
     "observationCount": 0,
     "entityCount": 1190,
     "indicatorIds": [

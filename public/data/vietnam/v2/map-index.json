@@ -10277,101 +10277,101 @@
       "defaultPrimary": false,
       "detailElementId": "C-025",
       "detailUrl": "/?element=c-025&country=VNM#element-detail",
-      "displayedCoordinateCount": 1133,
+      "displayedCoordinateCount": 1106,
       "downloadStatus": "available",
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
       "factFields": [
         {
-          "filledRecordCount": 1133,
+          "filledRecordCount": 1106,
           "filterable": true,
           "key": "standard",
           "label": "등록표준",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
-            "식별_등록_표준"
+            "standard"
           ]
         },
         {
-          "filledRecordCount": 342,
+          "filledRecordCount": 340,
           "filterable": true,
           "key": "technologyField",
           "label": "기술분야",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
             "사업_기술_분야_등록부_분류"
           ]
         },
         {
-          "filledRecordCount": 343,
+          "filledRecordCount": 341,
           "filterable": true,
           "key": "status",
           "label": "상태",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
-            "식별_등재_상태"
+            "status"
           ]
         },
         {
-          "filledRecordCount": 1133,
+          "filledRecordCount": 1106,
           "filterable": true,
           "key": "regionName",
           "label": "소재 지역",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
             "지역_지역명_현행"
           ]
         },
         {
-          "filledRecordCount": 304,
+          "filledRecordCount": 302,
           "key": "proponent",
           "label": "사업자·기관",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
-            "사업_사업자_기관"
+            "proponent"
           ]
         },
         {
-          "filledRecordCount": 333,
+          "filledRecordCount": 331,
           "key": "methodology",
           "label": "방법론",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
-            "사업_방법론"
+            "methodology"
           ]
         },
         {
-          "filledRecordCount": 327,
+          "filledRecordCount": 325,
           "key": "annualReduction",
           "label": "연간 예상감축량",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
             "사업_연간_예상_감축량_tCO_e_년"
           ],
           "unit": "tCO2e"
         },
         {
-          "filledRecordCount": 1133,
+          "filledRecordCount": 1106,
           "key": "recordCode",
           "label": "원천 식별번호",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
-            "식별_등록부_프로젝트ID"
+            "projectId"
           ]
         },
         {
-          "filledRecordCount": 1133,
+          "filledRecordCount": 1106,
           "key": "officialSource",
           "label": "공식 원문",
-          "recordCount": 1133,
+          "recordCount": 1106,
           "sources": [
             "출처_원문_URL"
           ]
         }
       ],
       "fakeGeometryCount": 0,
-      "featureCount": 343,
+      "featureCount": 341,
       "fieldLabels": {
         "annualReduction": "연간 예상감축량",
         "methodology": "방법론",
@@ -10477,8 +10477,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 1133,
-        "requiredCount": 1133
+        "matchedCount": 1106,
+        "requiredCount": 1106
       },
       "label": "탄소크레딧 사업",
       "latestYear": 2026,
@@ -10531,7 +10531,7 @@
         "Verra VCS Registry · Gold Standard Registry"
       ],
       "sourceYear": 2026,
-      "spatialCoverage": "출처 좌표가 있는 1,133개 피처",
+      "spatialCoverage": "출처 좌표가 있는 1,106개 피처",
       "spatialLimitation": "전국 프로그램 대표좌표 2건과 베트남 밖 잘못된 좌표 2건은 표시하지 않습니다.",
       "spatialScopeType": "project-site",
       "tooltipFields": [
@@ -10565,6 +10565,7 @@
       "countNoun": "건",
       "featureIdentity": {
         "sources": [
+          "projectId",
           "식별_등록부_프로젝트ID"
         ],
         "label": "탄소크레딧 사업",
@@ -14163,7 +14164,7 @@
       "memberRecordsInAsset": true
     }
   ],
-  "mapFeatureCount": 15289,
+  "mapFeatureCount": 15287,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {
