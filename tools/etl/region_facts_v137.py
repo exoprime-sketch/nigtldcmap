@@ -69,7 +69,9 @@ REGION_CONTRACTS: dict[str, dict[str, Any]] = {
                 "publicLabel": "성(省)별 수관 피복률",
                 "quantityType": "ratio",
                 "statisticType": "point-in-time",
-                "period": "2010",
+                # V162: the 2026-09-30 delivery carries 2000 and 2010 per
+                # province (was 2010 only); the row's own year is the period.
+                "periodField": "기준연도",
                 # The denominator is printed per row and travels with the value;
                 # a percentage without it cannot be compared across sources.
                 "denominatorField": "분모_기준",
@@ -78,6 +80,10 @@ REGION_CONTRACTS: dict[str, dict[str, Any]] = {
     },
     "B-033": {
         "indicatorSuffix": "_adm1_year",
+        # V162: the 2026-09-30 delivery adds primary-forest loss per province
+        # and year (B-033_primary_loss_adm1_year) with the same suffix. It is
+        # a different measure; this contract stays tree-cover loss only.
+        "indicatorIds": ("B-033_loss_adm1_year",),
         "measures": (
             {
                 "sourceLabel": "수관 손실(ha)",
@@ -118,7 +124,9 @@ def derive_region_facts(
     for entity in workbook.get("entities") or []:
         attributes = entity.get("attributes") or {}
         indicator = _text(entity.get("indicator_id"))
-        if not indicator.endswith(contract["indicatorSuffix"]):
+        if not indicator.endswith(contract["indicatorSuffix"]) or (
+            contract.get("indicatorIds") and indicator not in contract["indicatorIds"]
+        ):
             national.append({"indicatorId": indicator, "classification": _text(attributes.get("구분"))})
             continue
 

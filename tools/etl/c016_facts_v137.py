@@ -33,7 +33,7 @@ from __future__ import annotations
 import re
 from typing import Any, Mapping
 
-from .b034_facts_v137 import build_region_crosswalk, normalize_place
+from .b034_facts_v137 import attribute_key_by_label, build_region_crosswalk, normalize_place
 
 ELEMENT_ID = "C-016"
 
@@ -121,10 +121,119 @@ def _scope(region_raw: str, description: str) -> tuple[str, str]:
     return "province", region_raw
 
 
+NEW_TEMPLATE_INDICATOR = "C-016_regional_allocation"
+# The 2026-09-30 delivery names technologies in Korean only. These are the keys
+# and labels the published series already use (from the Vietnamese names), so
+# indicator ids and the map layer's variables do not move.
+_TECHNOLOGY_V162 = {
+    "옥상태양광": ("dmt-mai-nha", "옥상태양광(ĐMT mái nhà)"),
+    "집중형 태양광": ("dmt-tap-trung", "집중형 태양광(ĐMT tập trung)"),
+    "육상·근해 풍력": ("dien-gio-tren-bo-va-gan-bo", "육상 근해 풍력(điện gió trên bờ và gần bờ)"),
+    "바이오매스발전": ("dien-sinh-khoi", "바이오매스발전(điện sinh khối)"),
+    "폐기물발전": ("dien-rac", "폐기물발전(điện rác)"),
+    "소수력": ("thuy-dien-nho", "소수력(thủy điện nhỏ)"),
+    "양수발전": ("thuy-dien-tich-nang", "양수발전(thủy điện tích năng)"),
+    "수력 30~50MW": ("30mw-50mw", "수력 30MW초과~50MW미만"),
+}
+_LEVEL_SCOPE = {"지방(성·시)": "province", "권역": "region", "전국": "nation"}
+
+
+def _derive_new_template(workbook: Mapping[str, Any], crosswalk: Mapping[str, Any]) -> dict[str, Any]:
+    """V162: the 2026-09-30 delivery writes one row per region x technology x
+    period ("[열→행 전개]") with labelled columns. Same rules as before: only
+    province rows become map values; 권역 and 전국 rows stay their own series."""
+    def field(attributes: Mapping[str, Any], label: str) -> Any:
+        # Attributes are keyed by the parser's folded label, in column order;
+        # the same binding _authorized_entities uses.
+        key = attribute_key_by_label(workbook, attributes).get(label)
+        return attributes.get(key) if key else None
+
+    facts: list[dict[str, Any]] = []
+    national: list[dict[str, Any]] = []
+    regional: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
+    unmatched: list[str] = []
+    for entity in workbook.get("entities") or []:
+        attributes = entity.get("attributes") or {}
+        indicator = _text(entity.get("indicator_id"))
+        source_row = int(entity.get("source_row") or 0)
+        record = {
+            "elementId": ELEMENT_ID,
+            "indicatorId": indicator,
+            "sourceRow": source_row,
+            "recordName": _text(field(attributes, "[식별] 레코드명")),
+            "planVersion": PLAN_VERSION,
+            "tableRef": "Phụ lục II",
+            "sourceUrl": _text(field(attributes, "[출처] 원문 URL")),
+            "note": _text(entity.get("note")),
+            "description": "",
+        }
+        if indicator != NEW_TEMPLATE_INDICATOR:
+            national.append({**record, "kind": "narrative"})
+            continue
+        technology = _text(field(attributes, "[배분] 전원 (국문)"))
+        period = _text(field(attributes, "[배분] 대상 기간"))
+        value = _number(field(attributes, "[배분] 용량 (MW)"))
+        scope = _LEVEL_SCOPE.get(_text(field(attributes, "[식별] 행정 수준")), "")
+        region_name = _text(field(attributes, "[지역] 지역명 (개편 전)"))
+        record.update({"technology": technology, "period": period, "bound": None, "boundLabel": "단일값",
+                       "scope": scope, "regionSourceName": _text(field(attributes, "[지역] 지역명 (원문)")) or region_name,
+                       "region2025Name": _text(field(attributes, "[지역] 지역명 (현행)")),
+                       "region2025PCode": _text(field(attributes, "[지역] 행정코드 (현행)")),
+                       "rawValue": field(attributes, "[배분] 용량 (MW)")})
+        if value is None:
+            skipped.append({**record, "reason": "NO_NUMERIC_VALUE"})
+            continue
+        if not period:
+            skipped.append({**record, "reason": "PERIOD_UNRESOLVED"})
+            continue
+        if scope == "nation":
+            national.append({**record, "kind": "capacity", "value": value, "unit": CAPACITY_UNIT})
+            continue
+        if scope == "region":
+            regional.append({**record, "kind": "capacity", "value": value, "unit": CAPACITY_UNIT})
+            continue
+        if scope != "province":
+            skipped.append({**record, "reason": "SCOPE_UNRESOLVED"})
+            continue
+        if technology not in _TECHNOLOGY_V162:
+            skipped.append({**record, "reason": "TECHNOLOGY_UNMAPPED"})
+            continue
+        match = crosswalk.get(_fold(region_name))
+        if not match:
+            unmatched.append(region_name)
+            skipped.append({**record, "reason": "REGION_UNRESOLVED"})
+            continue
+        facts.append({
+            **record,
+            "kind": "capacity",
+            "value": value,
+            "unit": CAPACITY_UNIT,
+            "adm1Code": match["adm1Code"],
+            "adm1Name": match["canonicalName"],
+            "geographyVersion": "pre-2025-63",
+            "variable": _TECHNOLOGY_V162[technology][0],
+            "variableLabel": f"{_TECHNOLOGY_V162[technology][1]} 계획용량",
+            "quantityType": "capacity",
+            "statisticType": "plan-target",
+        })
+    return {
+        "facts": facts,
+        "nationalRows": national,
+        "regionalRows": regional,
+        "skipped": skipped,
+        "unmatchedRegions": sorted(set(unmatched)),
+        "planVersion": PLAN_VERSION,
+        "template": "v162-row-per-allocation",
+    }
+
+
 def derive_c016_facts(
     workbook: Mapping[str, Any], alias_payload: Mapping[str, Any]
 ) -> dict[str, Any]:
     crosswalk = build_region_crosswalk(alias_payload)
+    if any(_text(e.get("indicator_id")) == NEW_TEMPLATE_INDICATOR for e in workbook.get("entities") or []):
+        return _derive_new_template(workbook, crosswalk)
     facts: list[dict[str, Any]] = []
     national: list[dict[str, Any]] = []
     regional: list[dict[str, Any]] = []

@@ -152,6 +152,11 @@ E012_OCCUPATIONS = {
     ),
     "elem": ("elementary", "단순노무직", "단순노무직", 9),
     "other": ("other", "기타·미정의", "기타·미정의", 10),
+    # V162: ILOSTAT's two residual groups arrive split - ISCO 0 (armed forces)
+    # and X (not classifiable). The delivery labels both 기타·미정의; the code
+    # tells them apart, so the label says which one.
+    "armed": ("armed_forces", "기타·미정의(군인)", "기타·미정의(군인)", 11),
+    "unclass": ("unclassified", "기타·미정의(분류불능)", "기타·미정의(분류불능)", 12),
 }
 E012_SEXES = {
     "total": ("total", "전체", 0),
@@ -343,7 +348,40 @@ def e012_measure(measure_key: str, unit: str) -> dict[str, Any]:
     return measure
 
 
+# ISCO-08 major group per occupation code, for the V162 note wording.
+E012_ISCO_V162 = {"mgr": "1", "prof": "2", "tech": "3", "clerk": "4", "service": "5",
+                  "agri": "6", "craft": "7", "operator": "8", "elem": "9"}
+
+E012_SOURCES = {
+    "ilo": ("ilo", "ILOSTAT"),
+    "nso": ("nso", "베트남 통계청(NSO)"),
+}
+_E012_OCC = "all|mgr|prof|tech|clerk|service|agri|craft|operator|elem|other|armed|unclass"
+
+
 def e012_decode_id(indicator_id: str) -> tuple[str, dict[str, str], dict[str, str]]:
+    """V162: an id may end in `_nat` (the national statistics office's series of
+    the same measure, beside ILOSTAT's) and an occupation wage in `_usd` (ILO's
+    USD conversion). Both become dimensions so no two sources or currencies ever
+    share one series; the base decoding is unchanged."""
+    source = "ilo"
+    base_id = indicator_id
+    if base_id.endswith("_nat"):
+        source, base_id = "nso", base_id[: -len("_nat")]
+    measure, dims, labels = _e012_decode_base(base_id)
+    if measure == "occupation_wage" and "currency" not in dims:
+        currency = "VND"
+        dims = {**dims, "currency": currency}
+        labels = {**labels, "currency": currency}
+    dims = {**dims, "source": E012_SOURCES[source][0]}
+    labels = {**labels, "source": E012_SOURCES[source][1]}
+    return measure, dims, labels
+
+
+def _e012_decode_base(indicator_id: str) -> tuple[str, dict[str, str], dict[str, str]]:
+    usd = False
+    if indicator_id.startswith("E-012_occupation_wage_") and indicator_id.endswith("_usd"):
+        usd, indicator_id = True, indicator_id[: -len("_usd")]
     if indicator_id == "E-012_employment_rate":
         return "employment_rate", {}, {}
     if indicator_id == "E-012_employed_persons":
@@ -359,34 +397,10 @@ def e012_decode_id(indicator_id: str) -> tuple[str, dict[str, str], dict[str, st
             {"occupation": "전체 직군", "sex": "전체", "classification": "산업부문"},
         )
     patterns = [
-        (
-            re.compile(
-                r"E-012_occupation_employment_(all|mgr|prof|tech|clerk|service|agri|craft|operator|elem|other)_(total|male|female)"
-            ),
-            "occupation_employment_count",
-            None,
-        ),
-        (
-            re.compile(
-                r"E-012_occupation_employment_share_(all|mgr|prof|tech|clerk|service|agri|craft|operator|elem|other)_(total|male|female)"
-            ),
-            "occupation_employment_share",
-            None,
-        ),
-        (
-            re.compile(
-                r"E-012_occupation_female_share_(all|mgr|prof|tech|clerk|service|agri|craft|operator|elem|other)"
-            ),
-            "occupation_female_share",
-            "female",
-        ),
-        (
-            re.compile(
-                r"E-012_occupation_wage_(all|mgr|prof|tech|clerk|service|agri|craft|operator|elem|other)_(total|male|female)"
-            ),
-            "occupation_wage",
-            None,
-        ),
+        (re.compile(rf"E-012_occupation_employment_({_E012_OCC})_(total|male|female)"), "occupation_employment_count", None),
+        (re.compile(rf"E-012_occupation_employment_share_({_E012_OCC})_(total|male|female)"), "occupation_employment_share", None),
+        (re.compile(rf"E-012_occupation_female_share_({_E012_OCC})"), "occupation_female_share", "female"),
+        (re.compile(rf"E-012_occupation_wage_({_E012_OCC})_(total|male|female)"), "occupation_wage", None),
     ]
     for pattern, measure, default_sex in patterns:
         match = pattern.fullmatch(indicator_id)
@@ -395,11 +409,13 @@ def e012_decode_id(indicator_id: str) -> tuple[str, dict[str, str], dict[str, st
         occupation = E012_OCCUPATIONS[match.group(1)]
         sex_code = default_sex or match.group(2)
         sex = E012_SEXES[sex_code]
-        return (
-            measure,
-            {"occupation": occupation[0], "sex": sex[0]},
-            {"occupation": occupation[1], "sex": sex[1]},
-        )
+        dims = {"occupation": occupation[0], "sex": sex[0]}
+        labels = {"occupation": occupation[1], "sex": sex[1]}
+        if measure == "occupation_wage":
+            currency = "USD" if usd else "VND"
+            dims["currency"] = currency
+            labels["currency"] = currency
+        return measure, dims, labels
     raise RuntimeError(f"Unrecognized E-012 indicator id: {indicator_id}")
 
 
@@ -420,6 +436,20 @@ def validate_e012_notes(
             continue
         note = nfc(observation.get("note"))
         occupation = E012_OCCUPATIONS[match.group(1)]
+        # V162: the 2026-09-30 delivery words the note from the ILOSTAT series
+        # ("… — 관리자(ISCO-08 1) / 여성", "… — 농림어업 숙련종사자(6)"): the
+        # ISCO major group number and the sex after " / " carry the same check.
+        isco = E012_ISCO_V162.get(match.group(1))
+        new_form = "[원본: ILOSTAT" in note
+        if new_form:
+            if isco is not None and not re.search(rf"(?:ISCO-08\s*{isco}\)|\({isco}\))", note):
+                mismatches.append({"recordId": observation["recordId"], "indicatorId": indicator_id,
+                                   "reason": f"note ISCO group does not match {occupation[1]}"})
+            sex_code = match.group(2)
+            if sex_code in ("male", "female") and E012_SEXES[sex_code][1] not in note:
+                mismatches.append({"recordId": observation["recordId"], "indicatorId": indicator_id,
+                                   "reason": f"note sex does not match {E012_SEXES[sex_code][1]}"})
+            continue
         if f"직군: {occupation[2]}" not in note:
             mismatches.append(
                 {

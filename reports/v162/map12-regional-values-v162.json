@@ -1,0 +1,1001 @@
+{
+  "schema": "stage0-compare-v157-2",
+  "source": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\베트남데이터",
+  "elements": [
+    {
+      "elementId": "A-013",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "A-013_Climate Watch NDC-SDG linkage.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info",
+          "3_결측사유코드",
+          "meta_def",
+          "meta_code_def",
+          "db_framework"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 365,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_1=속성1(A-013:SDG세부목표코드 / A-023:설비용량_MW / A-024:전압_kV / A-025:시설유형 / A-029:서명",
+            "attr_2=속성2(A-013:정보유형 / A-023:주연료 / A-024:구간연장_km / A-025:추진상태 / A-029:발효일)",
+            "attr_3=속성3(A-024:선로상태(기존/계획))"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 1,
+        "indicatorIds": 1,
+        "sampleIds": [
+          "A-013_ndc_sdg_linkage_count"
+        ],
+        "entityRows": 365,
+        "withCoordinates": 0,
+        "placeKeys": [
+          "속성3_A_024_선로상태_기존_계획"
+        ]
+      }
+    },
+    {
+      "elementId": "A-022",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "A-022_정전빈도[SAIDI, SAIFI].xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info",
+          "3_결측사유코드",
+          "meta_def",
+          "meta_code_def",
+          "db_framework"
+        ],
+        "observation": {
+          "rows": 54,
+          "indicatorIds": 21,
+          "sampleIds": [
+            "A-022_saidi_evn_group",
+            "A-022_saifi_evn_group",
+            "A-022_maifi_evn_group",
+            "A-022_saidi_evnhanoi",
+            "A-022_saifi_evnhanoi",
+            "A-022_maifi_evnhanoi",
+            "A-022_saidi_evnhcmc_current",
+            "A-022_saifi_evnhcmc_current",
+            "A-022_maifi_evnhcmc_current",
+            "A-022_saidi_evnhcmc_former",
+            "A-022_saifi_evnhcmc_former",
+            "A-022_maifi_evnhcmc_former",
+            "A-022_saidi_evnnpc",
+            "A-022_saifi_evnnpc",
+            "A-022_maifi_evnnpc",
+            "A-022_saidi_evncpc",
+            "A-022_saifi_evncpc",
+            "A-022_maifi_evncpc",
+            "A-022_saidi_evnspc",
+            "A-022_saifi_evnspc",
+            "A-022_maifi_evnspc"
+          ]
+        },
+        "entity": {
+          "rows": 0,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_1=속성1(A-013:SDG세부목표코드 / A-023:설비용량_MW / A-024:전압_kV / A-025:시설유형 / A-029:서명",
+            "attr_2=속성2(A-013:정보유형 / A-023:주연료 / A-024:구간연장_km / A-025:추진상태 / A-029:발효일)",
+            "attr_3=속성3(A-024:선로상태(기존/계획))"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 54,
+        "indicatorIds": 21,
+        "sampleIds": [
+          "A-022_maifi_evn_group",
+          "A-022_maifi_evncpc",
+          "A-022_maifi_evnhanoi",
+          "A-022_maifi_evnhcmc_current",
+          "A-022_maifi_evnhcmc_former",
+          "A-022_maifi_evnnpc",
+          "A-022_maifi_evnspc",
+          "A-022_saidi_evn_group",
+          "A-022_saidi_evncpc",
+          "A-022_saidi_evnhanoi",
+          "A-022_saidi_evnhcmc_current",
+          "A-022_saidi_evnhcmc_former",
+          "A-022_saidi_evnnpc",
+          "A-022_saidi_evnspc",
+          "A-022_saifi_evn_group",
+          "A-022_saifi_evncpc",
+          "A-022_saifi_evnhanoi",
+          "A-022_saifi_evnhcmc_current",
+          "A-022_saifi_evnhcmc_former",
+          "A-022_saifi_evnnpc",
+          "A-022_saifi_evnspc"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-002",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-002_기후대(Climate zone).xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 64,
+          "indicatorIds": 64,
+          "sampleIds": [
+            "B-002_koppen_class",
+            "B-002_koppen_share_af",
+            "B-002_koppen_share_am_tropical_monsoon",
+            "B-002_koppen_share_aw_tropical_savanna",
+            "B-002_koppen_share_cfa",
+            "B-002_koppen_share_cfb",
+            "B-002_koppen_share_cwa",
+            "B-002_koppen_share_cwb",
+            "B-002_koppen_area_af",
+            "B-002_koppen_area_am_tropical_monsoon",
+            "B-002_koppen_area_aw_tropical_savanna",
+            "B-002_koppen_area_cfa",
+            "B-002_koppen_area_cfb",
+            "B-002_koppen_area_cwa",
+            "B-002_koppen_area_cwb",
+            "B-002_koppen_tropical_share_1901_1930",
+            "B-002_koppen_tropical_share_1991_2020",
+            "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
+            "B-002_koppen_tropical_share_2071_2099_ssp5_8_5",
+            "B-002_koppen_class_1901_1930",
+            "B-002_koppen_share_af_1901_1930",
+            "B-002_koppen_area_af_1901_1930",
+            "B-002_koppen_share_am_tropical_monsoon_1901_1930",
+            "B-002_koppen_area_am_tropical_monsoon_1901_1930",
+            "B-002_koppen_share_aw_tropical_savanna_1901_1930",
+            "B-002_koppen_area_aw_tropical_savanna_1901_1930",
+            "B-002_koppen_share_cwa_1901_1930",
+            "B-002_koppen_area_cwa_1901_1930",
+            "B-002_koppen_share_cwb_1901_1930",
+            "B-002_koppen_area_cwb_1901_1930",
+            "B-002_koppen_share_cfa_1901_1930",
+            "B-002_koppen_area_cfa_1901_1930",
+            "B-002_koppen_share_cfb_1901_1930",
+            "B-002_koppen_area_cfb_1901_1930",
+            "B-002_koppen_class_2071_2099_ssp2_4_5",
+            "B-002_koppen_share_af_2071_2099_ssp2_4_5",
+            "B-002_koppen_area_af_2071_2099_ssp2_4_5",
+            "B-002_koppen_share_am_tropical_monsoon_2071_2099_ssp2_4_5",
+            "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp2_4_5",
+            "B-002_koppen_share_aw_tropical_savanna_2071_2099_ssp2_4_5"
+          ]
+        },
+        "entity": {
+          "rows": 1427,
+          "withCoordinates": 1427,
+          "provinceRows": 1427,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_2=지역명",
+            "attr_23=경계·좌표 산출근거"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 19,
+        "indicatorIds": 19,
+        "sampleIds": [
+          "B-002_koppen_area_af",
+          "B-002_koppen_area_am_tropical_monsoon",
+          "B-002_koppen_area_aw_tropical_savanna",
+          "B-002_koppen_area_cfa",
+          "B-002_koppen_area_cfb",
+          "B-002_koppen_area_cwa",
+          "B-002_koppen_area_cwb",
+          "B-002_koppen_class",
+          "B-002_koppen_share_af",
+          "B-002_koppen_share_am_tropical_monsoon",
+          "B-002_koppen_share_aw_tropical_savanna",
+          "B-002_koppen_share_cfa",
+          "B-002_koppen_share_cfb",
+          "B-002_koppen_share_cwa",
+          "B-002_koppen_share_cwb",
+          "B-002_koppen_tropical_share_1901_1930",
+          "B-002_koppen_tropical_share_1991_2020",
+          "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
+          "B-002_koppen_tropical_share_2071_2099_ssp5_8_5"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-024",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-024_농업 용수 비중.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 68,
+          "indicatorIds": 2,
+          "sampleIds": [
+            "B-024_agri_water_share",
+            "B-024_agri_water_share_trwr"
+          ]
+        },
+        "entity": {
+          "rows": 194,
+          "withCoordinates": 194,
+          "provinceRows": 194,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_2=지역명",
+            "attr_9=값의 성격",
+            "attr_14=지역 비율(%)",
+            "attr_21=경계·좌표 산출근거"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 205,
+        "indicatorIds": 7,
+        "sampleIds": [
+          "B-024_agri_water_share",
+          "B-024_agri_water_share_subnat",
+          "B-024_agri_water_share_trwr",
+          "B-024_wue_industrial",
+          "B-024_wue_irrigated_agri",
+          "B-024_wue_services",
+          "B-024_wue_total"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-035",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-035_LULUCF 관련 면적 변화.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 961,
+          "indicatorIds": 26,
+          "sampleIds": [
+            "B-035_lu_agricultural_land",
+            "B-035_lu_cropland",
+            "B-035_lu_arable_land",
+            "B-035_lu_permanent_crops",
+            "B-035_lu_permanent_meadows_and_pastures",
+            "B-035_lu_forest_land",
+            "B-035_lu_inland_waters",
+            "B-035_lu_other_land",
+            "B-035_lu_land_area",
+            "B-035_lu_country_area",
+            "B-035_lu_naturally_regenerating_forest",
+            "B-035_lu_planted_forest",
+            "B-035_lu_primary_forest",
+            "B-035_lu_land_area_equipped_for_irrigation",
+            "B-035_lu_settlements",
+            "B-035_lu_agriculture",
+            "B-035_lu_temporary_crops",
+            "B-035_lu_temporary_fallow",
+            "B-035_lu_temporary_meadows_and_pastures",
+            "B-035_lu_agriculture_area_under_organic_agr",
+            "B-035_lu_agriculture_area_certified_organic",
+            "B-035_lu_cropland_area_under_organic_agric",
+            "B-035_lu_inland_waters_used_for_aquac_or_holding_faci",
+            "B-035_lu_cropland_area_certified_organic_area",
+            "B-035_lu_perm_meadows_pastures_area_under_organic_agr",
+            "B-035_lu_perm_meadows_pastures_area_certified_organic"
+          ]
+        },
+        "entity": {
+          "rows": 3038,
+          "withCoordinates": 3038,
+          "provinceRows": 3038,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_2=지역명",
+            "attr_10=도시 면적(km²)",
+            "attr_19=도시 비율(%, 육지 대비)",
+            "attr_23=경계·좌표 산출근거"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 1764,
+        "indicatorIds": 41,
+        "sampleIds": [
+          "B-035_lu_agricultural_land",
+          "B-035_lu_agricultural_land_share_in_land_area",
+          "B-035_lu_agricultural_land_value_of_agricultural_prod",
+          "B-035_lu_agriculture",
+          "B-035_lu_agriculture_area_certified_organic",
+          "B-035_lu_agriculture_area_under_organic_agr",
+          "B-035_lu_agriculture_area_under_organic_agric_share_i",
+          "B-035_lu_arable_land",
+          "B-035_lu_arable_land_share_in_agricultural_land",
+          "B-035_lu_country_area",
+          "B-035_lu_cropland",
+          "B-035_lu_cropland_area_certified_organic_area",
+          "B-035_lu_cropland_area_per_capita",
+          "B-035_lu_cropland_area_under_organic_agric",
+          "B-035_lu_cropland_share_in_agricultural_land",
+          "B-035_lu_cropland_share_in_land_area",
+          "B-035_lu_forest_carbon_stock",
+          "B-035_lu_forest_land",
+          "B-035_lu_forest_land_share_in_land_area",
+          "B-035_lu_inland_waters",
+          "B-035_lu_inland_waters_used_for_aquac_or_holding_faci",
+          "B-035_lu_land_area",
+          "B-035_lu_land_area_equipped_for_irrigation",
+          "B-035_lu_land_area_equipped_for_irrigation_share_in_c",
+          "B-035_lu_naturally_regenerating_forest",
+          "B-035_lu_naturally_regenerating_forest_share_in_fores",
+          "B-035_lu_other_land",
+          "B-035_lu_perm_meadows_pastures_area_certified_organic",
+          "B-035_lu_perm_meadows_pastures_area_under_organic_agr",
+          "B-035_lu_permanent_crops",
+          "B-035_lu_permanent_crops_share_in_agricultural_land",
+          "B-035_lu_permanent_meadows_and_pastures",
+          "B-035_lu_permanent_meadows_and_pastures_share_in_agri",
+          "B-035_lu_permanent_meadows_and_pastures_share_in_land",
+          "B-035_lu_planted_forest",
+          "B-035_lu_planted_forest_share_in_forest_land",
+          "B-035_lu_primary_forest",
+          "B-035_lu_settlements",
+          "B-035_lu_temporary_crops",
+          "B-035_lu_temporary_fallow"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-036",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-036_토지이용 변화율.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 48,
+          "indicatorIds": 34,
+          "sampleIds": [
+            "B-036_cagr_lu_forest_land",
+            "B-036_cagr_lu_agricultural_land",
+            "B-036_cagr_lu_cropland",
+            "B-036_cagr_lu_permanent_meadows_and_pastures",
+            "B-036_cagr_lu_land_area",
+            "B-036_cagr_lu_arable_land",
+            "B-036_cagr_lu_permanent_crops",
+            "B-036_cagr_lu_inland_waters",
+            "B-036_cagr_lu_other_land",
+            "B-036_cagr_lu_country_area",
+            "B-036_cagr_lu_planted_forest",
+            "B-036_cagr_lu_primary_forest",
+            "B-036_cagr_lu_naturally_regenerating_forest",
+            "B-036_cagr_lu_land_area_equipped_for_irrigation",
+            "B-036_cagr_lc_artificial_surface",
+            "B-036_cagr_lc_grassland",
+            "B-036_cagr_lc_herbaceous_crops",
+            "B-036_cagr_lc_inland_water_bodie",
+            "B-036_cagr_lc_mangroves",
+            "B-036_cagr_lc_shrub-covered_area",
+            "B-036_cagr_lc_shrubs_and/or_herb",
+            "B-036_cagr_lc_sparsely_natural_v",
+            "B-036_cagr_lc_terrestrial_barren",
+            "B-036_cagr_lc_tree-covered_areas",
+            "B-036_cagr_lc_woody_crops",
+            "B-036_cagr_modis_artificial_surfa",
+            "B-036_cagr_modis_grassland",
+            "B-036_cagr_modis_herbaceous_crops",
+            "B-036_cagr_modis_inland_water_bod",
+            "B-036_cagr_modis_mangroves",
+            "B-036_cagr_modis_shrub-covered_ar",
+            "B-036_cagr_modis_shrubs_and/or_he",
+            "B-036_cagr_modis_terrestrial_barr",
+            "B-036_cagr_modis_tree-covered_are"
+          ]
+        },
+        "entity": {
+          "rows": 392,
+          "withCoordinates": 392,
+          "provinceRows": 392,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_2=지역명",
+            "attr_5=기간(시작-종료)",
+            "attr_11=도시 CAGR(%/yr)",
+            "attr_13=산림 면적 시작(km²)",
+            "attr_14=농경지 면적 시작(km²)",
+            "attr_15=초지·관목 면적 시작(km²)",
+            "attr_16=습지 면적 시작(km²)",
+            "attr_17=도시 면적 시작(km²)",
+            "attr_18=나지 면적 시작(km²)",
+            "attr_23=도시 면적 종료(km²)",
+            "attr_27=경계·좌표 산출근거"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 48,
+        "indicatorIds": 34,
+        "sampleIds": [
+          "B-036_cagr_lc_artificial_surface",
+          "B-036_cagr_lc_grassland",
+          "B-036_cagr_lc_herbaceous_crops",
+          "B-036_cagr_lc_inland_water_bodie",
+          "B-036_cagr_lc_mangroves",
+          "B-036_cagr_lc_shrub-covered_area",
+          "B-036_cagr_lc_shrubs_and/or_herb",
+          "B-036_cagr_lc_sparsely_natural_v",
+          "B-036_cagr_lc_terrestrial_barren",
+          "B-036_cagr_lc_tree-covered_areas",
+          "B-036_cagr_lc_woody_crops",
+          "B-036_cagr_lu_agricultural_land",
+          "B-036_cagr_lu_arable_land",
+          "B-036_cagr_lu_country_area",
+          "B-036_cagr_lu_cropland",
+          "B-036_cagr_lu_forest_land",
+          "B-036_cagr_lu_inland_waters",
+          "B-036_cagr_lu_land_area",
+          "B-036_cagr_lu_land_area_equipped_for_irrigation",
+          "B-036_cagr_lu_naturally_regenerating_forest",
+          "B-036_cagr_lu_other_land",
+          "B-036_cagr_lu_permanent_crops",
+          "B-036_cagr_lu_permanent_meadows_and_pastures",
+          "B-036_cagr_lu_planted_forest",
+          "B-036_cagr_lu_primary_forest",
+          "B-036_cagr_modis_artificial_surfa",
+          "B-036_cagr_modis_grassland",
+          "B-036_cagr_modis_herbaceous_crops",
+          "B-036_cagr_modis_inland_water_bod",
+          "B-036_cagr_modis_mangroves",
+          "B-036_cagr_modis_shrub-covered_ar",
+          "B-036_cagr_modis_shrubs_and/or_he",
+          "B-036_cagr_modis_terrestrial_barr",
+          "B-036_cagr_modis_tree-covered_are"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-044",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-044_광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석].xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 2,
+          "indicatorIds": 2,
+          "sampleIds": [
+            "B-044_critical_mineral_legal_framework",
+            "B-044_mineral_export_regime"
+          ]
+        },
+        "entity": {
+          "rows": 21,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_6=값 성격"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 26,
+        "indicatorIds": 26,
+        "sampleIds": [
+          "B-044_export_ban_minerals_g01",
+          "B-044_export_ban_minerals_g03",
+          "B-044_export_ban_minerals_g04",
+          "B-044_export_ban_minerals_g05",
+          "B-044_export_ban_minerals_g06",
+          "B-044_export_ban_minerals_manganese",
+          "B-044_export_ban_minerals_rare_earths",
+          "B-044_field_survey",
+          "B-044_mineral_presence_antimony",
+          "B-044_mineral_presence_bauxite",
+          "B-044_mineral_presence_cobalt",
+          "B-044_mineral_presence_copper",
+          "B-044_mineral_presence_fluorspar",
+          "B-044_mineral_presence_g02",
+          "B-044_mineral_presence_g10",
+          "B-044_mineral_presence_g12",
+          "B-044_mineral_presence_graphite",
+          "B-044_mineral_presence_lithium",
+          "B-044_mineral_presence_manganese",
+          "B-044_mineral_presence_nickel",
+          "B-044_mineral_presence_phosphate",
+          "B-044_mineral_presence_rare_earths",
+          "B-044_mineral_presence_tin",
+          "B-044_mineral_presence_titanium",
+          "B-044_mineral_presence_tungsten",
+          "B-044_reference_minerals_10c"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-046",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-046_매장량[확인, 추정].xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 64,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_6=값 성격",
+            "attr_16=원천 위치"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 13,
+        "indicatorIds": 13,
+        "sampleIds": [
+          "B-046_reserves_0",
+          "B-046_reserves_1",
+          "B-046_reserves_2",
+          "B-046_reserves_3",
+          "B-046_reserves_4",
+          "B-046_reserves_5",
+          "B-046_reserves_6",
+          "B-046_reserves_7",
+          "B-046_reserves_critical_missing_cobalt",
+          "B-046_reserves_critical_missing_copper",
+          "B-046_reserves_critical_missing_lithium",
+          "B-046_reserves_critical_missing_manganese",
+          "B-046_reserves_critical_missing_nickel"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "B-047",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-047_연간 생산량.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 81,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_6=값 성격",
+            "attr_16=원천 위치"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 21,
+        "indicatorIds": 12,
+        "sampleIds": [
+          "B-047_production_0",
+          "B-047_production_1",
+          "B-047_production_2",
+          "B-047_production_3",
+          "B-047_production_4",
+          "B-047_production_5",
+          "B-047_production_6",
+          "B-047_production_7",
+          "B-047_production_8",
+          "B-047_production_cu_mn_copper",
+          "B-047_production_cu_mn_manganese",
+          "B-047_ree_production_note"
+        ],
+        "entityRows": 0,
+        "withCoordinates": 0,
+        "placeKeys": []
+      }
+    },
+    {
+      "elementId": "C-003",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "C-003_NAP (국가 적응 계획).xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 272,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_16=[제출] 작성 주관기관",
+            "attr_20=[구성] 항목",
+            "attr_21=[구성] 값",
+            "attr_22=[구성] 단위",
+            "attr_23=[구성] 근거",
+            "attr_44=[M&E] 보고 주기·시한",
+            "attr_51=[젠더] 젠더·여성 명시 세부과제 수 (개)",
+            "attr_52=[젠더] 여성 명시 M&E 지표 수 (개)",
+            "attr_54=[취약성] 평가 대상 유형",
+            "attr_55=[취약성] 부문·대상명 (원문)",
+            "attr_56=[취약성] 부문·대상명 (국문)",
+            "attr_57=[취약성] 부문 개입코드 접두",
+            "attr_58=[취약성] 원문 절",
+            "attr_59=[취약성] 원문 쪽 (p.)",
+            "attr_60=[취약성] 정량 영향 (원문 발췌)",
+            "attr_61=[취약성] 주요 영향 (국문 요약)",
+            "attr_62=[취약성] 우선 과제 구분",
+            "attr_63=[취약성] 우선 과제 내용",
+            "attr_76=[과제] 이행 시작연도 (년)",
+            "attr_78=[과제] 이행시기 구분",
+            "attr_81=[과제] 단계별 성과 (1기)",
+            "attr_83=[과제] 단계별 성과 (2기)",
+            "attr_84=[과제] 단계별 성과 (기타)",
+            "attr_94=[지역] 지역명 (개편 전)",
+            "attr_95=[지역] 행정코드 (개편 전)",
+            "attr_96=[지역] 지역명 (현행)",
+            "attr_97=[지역] 행정코드 (현행)",
+            "attr_102=[출처] 인용 위치",
+            "attr_106=[결측] framework 필수 속성 결측 (코드·사유)"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 0,
+        "indicatorIds": 0,
+        "sampleIds": [],
+        "entityRows": 96,
+        "withCoordinates": 0,
+        "placeKeys": [
+          "속성10_건수",
+          "속성11_발행량_tCO2e",
+          "속성12_소각량_tCO2e",
+          "속성13_배분량_tCO2e",
+          "속성14_연간예상감축_tCO2e",
+          "속성15_빈티지_연도",
+          "속성16_발행일",
+          "속성17_크레딧기간",
+          "속성18_업종",
+          "속성19_원문URL",
+          "속성1_레코드명",
+          "속성20_지역_원문",
+          "속성21_지역_현행",
+          "속성22_행정코드P_code",
+          "속성23_설명",
+          "속성2_레코드ID",
+          "속성3_값",
+          "속성4_시점",
+          "속성5_등록표준_출처",
+          "속성6_분류"
+        ]
+      }
+    },
+    {
+      "elementId": "C-006",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "C-006_파리협정 제6.2조·제6.4조 이행 체계·현황.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 38,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_20=[협정] 기준 시점",
+            "attr_31=[법령] 시행일 (YYYY-MM-DD)",
+            "attr_40=[체계] 기준 시점 (년)",
+            "attr_62=[사업] 시작일",
+            "attr_72=[전환] 기준 시점",
+            "attr_73=[지역] 지역명 (개편 전)",
+            "attr_74=[지역] 행정코드 (개편 전)",
+            "attr_75=[지역] 지역명 (현행)",
+            "attr_76=[지역] 행정코드 (현행)",
+            "attr_81=[출처] 인용 위치",
+            "attr_85=[결측] framework 필수 속성 결측 (코드·사유)"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 0,
+        "indicatorIds": 0,
+        "sampleIds": [],
+        "entityRows": 50,
+        "withCoordinates": 0,
+        "placeKeys": [
+          "속성10_건수",
+          "속성11_발행량_tCO2e",
+          "속성12_소각량_tCO2e",
+          "속성13_배분량_tCO2e",
+          "속성14_연간예상감축_tCO2e",
+          "속성15_빈티지_연도",
+          "속성16_발행일",
+          "속성17_크레딧기간",
+          "속성18_업종",
+          "속성19_원문URL",
+          "속성1_레코드명",
+          "속성20_지역_원문",
+          "속성21_지역_현행",
+          "속성22_행정코드P_code",
+          "속성23_설명",
+          "속성2_레코드ID",
+          "속성3_값",
+          "속성4_시점",
+          "속성5_등록표준_출처",
+          "속성6_분류"
+        ]
+      }
+    },
+    {
+      "elementId": "C-017",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "C-017_재생에너지 투자 인센티브.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 56,
+          "withCoordinates": 0,
+          "provinceRows": 0,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_7=[제도] 시행 기관",
+            "attr_19=[기간] 시행일 (YYYY-MM-DD)",
+            "attr_21=[지역] 권역",
+            "attr_22=[지역] 지역 요건 판정",
+            "attr_23=[지역] 지역명 (개편 전)",
+            "attr_24=[지역] 행정코드 (개편 전)",
+            "attr_25=[지역] 지역명 (현행)",
+            "attr_26=[지역] 행정코드 (현행)",
+            "attr_30=[출처] 인용 위치",
+            "attr_33=[결측] framework 필수 속성 결측 (코드·사유)"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 0,
+        "indicatorIds": 0,
+        "sampleIds": [],
+        "entityRows": 52,
+        "withCoordinates": 0,
+        "placeKeys": [
+          "속성10_건수",
+          "속성11_발행량_tCO2e",
+          "속성12_소각량_tCO2e",
+          "속성13_배분량_tCO2e",
+          "속성14_연간예상감축_tCO2e",
+          "속성15_빈티지_연도",
+          "속성16_발행일",
+          "속성17_크레딧기간",
+          "속성18_업종",
+          "속성19_원문URL",
+          "속성1_레코드명",
+          "속성20_지역_원문",
+          "속성21_지역_현행",
+          "속성22_행정코드P_code",
+          "속성23_설명",
+          "속성2_레코드ID",
+          "속성3_값",
+          "속성4_시점",
+          "속성5_등록표준_출처",
+          "속성6_분류"
+        ]
+      }
+    },
+    {
+      "elementId": "B-048",
+      "publicStatus": "actual",
+      "source0922": {
+        "file": "B-048_주요 광산 위치.xlsx",
+        "sheets": [
+          "1.1_observation(측정값)",
+          "1.2_entity(레코드형)",
+          "2_meta_info"
+        ],
+        "observation": {
+          "rows": 0,
+          "indicatorIds": 0,
+          "sampleIds": []
+        },
+        "entity": {
+          "rows": 41,
+          "withCoordinates": 37,
+          "provinceRows": 41,
+          "regionRows": 0,
+          "placeColumns": [
+            "lat=위도",
+            "lon=경도",
+            "crs=좌표계",
+            "attr_1=광산명",
+            "attr_5=좌표 산출근거",
+            "attr_9=좌표 성격"
+          ]
+        },
+        "meta": {
+          "spatialUnits": [],
+          "sourceUrls": []
+        }
+      },
+      "v156": {
+        "observationRows": 0,
+        "indicatorIds": 0,
+        "sampleIds": [],
+        "entityRows": 8,
+        "withCoordinates": 0,
+        "placeKeys": [
+          "광산명",
+          "소재_행정구역_성",
+          "좌표_산출근거"
+        ]
+      }
+    }
+  ]
+}

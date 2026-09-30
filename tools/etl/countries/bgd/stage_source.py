@@ -13,6 +13,7 @@ from the staged copy, by ``tools.etl.redact_source_credentials_v156``.
 from __future__ import annotations
 
 import argparse
+import unicodedata
 import hashlib
 import json
 import pathlib
@@ -28,7 +29,16 @@ from tools.etl.normalization import extract_element_id  # noqa: E402
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--country", required=True, help="country folder under tools/etl/countries")
+    parser.add_argument(
+        "--duplicate-decisions",
+        default=None,
+        help="V162: JSON from scripts/v162/resolve-duplicates-v162.py naming the file to adopt per duplicated code",
+    )
     args = parser.parse_args()
+    decisions = {}
+    if args.duplicate_decisions:
+        doc = json.loads((REPO / args.duplicate_decisions).read_text(encoding="utf-8"))
+        decisions = {row["elementId"]: row for row in doc["decisions"]}
 
     config_path = REPO / "tools/etl/countries" / args.country.lower() / "country.json"
     config = json.loads(config_path.read_text(encoding="utf-8"))
@@ -52,8 +62,19 @@ def main() -> int:
     if None in ids:
         raise SystemExit("WORKBOOK_WITHOUT_ELEMENT_ID: " + ", ".join(p.name for p, i in zip(workbooks, ids) if i is None))
     duplicates = sorted({item for item in ids if ids.count(item) > 1})
-    if duplicates:
-        raise SystemExit(f"DUPLICATE_ELEMENT_WORKBOOKS: {duplicates}")
+    superseded = []
+    for element_id in duplicates:
+        decision = decisions.get(element_id)
+        adopted = unicodedata.normalize("NFC", decision["adopted"]) if decision else None
+        names = [unicodedata.normalize("NFC", p.name) for p, i in zip(workbooks, ids) if i == element_id]
+        if adopted not in names:
+            raise SystemExit(f"DUPLICATE_ELEMENT_WORKBOOKS: {element_id} {names}")
+        for path, i in list(zip(workbooks, ids)):
+            if i == element_id and unicodedata.normalize("NFC", path.name) != adopted:
+                superseded.append({"elementId": element_id, "fileName": path.name, "supersededBy": decision["adopted"], "rule": decision["rule"]})
+    dropped = {row["fileName"] for row in superseded}
+    kept = [(p, i) for p, i in zip(workbooks, ids) if p.name not in dropped]
+    workbooks, ids = [p for p, _ in kept], [i for _, i in kept]
 
     if staging.exists():
         shutil.rmtree(staging)
@@ -71,7 +92,9 @@ def main() -> int:
             }
         )
     skipped = sorted(
-        item.name for item in source.iterdir() if item.name not in {path.name for path in workbooks}
+        item.name
+        for item in source.iterdir()
+        if item.name not in {path.name for path in workbooks} and item.name not in dropped
     )
     manifest = {
         "schemaVersion": "country-source-manifest-v158",
@@ -79,6 +102,7 @@ def main() -> int:
         "delivery": config["source"]["delivery"],
         "workbookCount": len(files),
         "files": files,
+        "supersededDuplicates": superseded,
         "skippedEntries": skipped,
     }
     manifest_path.parent.mkdir(parents=True, exist_ok=True)

@@ -39,6 +39,8 @@ const EXPECTED_WORKBOOKS = opt("--expected-workbooks", "149");
 const STAGING = opt("--staging", `.staging/${VERSION}`);
 const OUT = opt("--out", `reports/${VERSION}`);
 const APPLY = argv.includes("--apply");
+/** V162: which file to adopt where the delivery holds several for one code. */
+const DUPLICATE_DECISIONS = opt("--duplicate-decisions", "");
 
 // Without this, `--help` looked like an unknown flag and the whole pipeline ran.
 if (argv.includes("--help") || argv.includes("-h")) {
@@ -54,6 +56,7 @@ if (argv.includes("--help") || argv.includes("-h")) {
       "  --expected-workbooks  carry-over 후 워크북 수 (기본 149)",
       "  --staging <dir>       .staging/ 하위여야 함 (기본 .staging/<version>)",
       "  --out <dir>           보고서 디렉터리 (기본 reports/<version>)",
+      "  --duplicate-decisions <json>  같은 코드 중복 파일의 채택 결정 (scripts/v162/resolve-duplicates-v162.py 출력)",
       "  --apply               공개 트리에 반영 (없으면 diff까지만)",
       "",
       "자세한 절차·게이트: docs/DATA_REFRESH_RUNBOOK_V156.md",
@@ -85,6 +88,7 @@ const STEPS = [
       "--carry-from", CARRY_FROM,
       ...(HOLD ? ["--hold", HOLD] : []),
       ...(ADOPT ? ["--adopt", ADOPT] : []),
+      ...(DUPLICATE_DECISIONS ? ["--duplicate-decisions", DUPLICATE_DECISIONS] : []),
     ],
   ],
   // A delivery may document its collection method with a live key in it. The

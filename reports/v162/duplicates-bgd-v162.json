@@ -1,0 +1,665 @@
+{
+ "schema": "duplicates-v162",
+ "country": "bgd",
+ "source": "C:\\Users\\user\\Documents\\20260827_개도국전략지도플랫폼\\방글라데시데이터",
+ "decisions": [
+  {
+   "elementId": "D-022",
+   "rule": "superset",
+   "keyColumns": {
+    "observation": 8,
+    "entity": null
+   },
+   "adopted": "D-022_MDBDFIPPP 투자 프로젝트 (2).xlsx",
+   "superseded": [
+    "D-022_MDBDFIPPP 투자 프로젝트.xlsx"
+   ],
+   "files": [
+    {
+     "name": "D-022_MDBDFIPPP 투자 프로젝트 (2).xlsx",
+     "records": 340,
+     "observation": 4,
+     "entity": 336,
+     "c012Rows": 2,
+     "sha256": "6337f5ecc567772bd8dc3e29396e052b34470213829c335df648053d58683341",
+     "containsAllOthers": true,
+     "containsCellLevel": [
+      "D-022_MDBDFIPPP 투자 프로젝트.xlsx"
+     ]
+    },
+    {
+     "name": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+     "records": 340,
+     "observation": 4,
+     "entity": 336,
+     "c012Rows": 0,
+     "sha256": "2ff625f355f5c8298904a9368fcd1be23fbd11df6a9ab9cc984a48c42ef22896",
+     "containsAllOthers": false,
+     "containsCellLevel": []
+    }
+   ],
+   "conflicts": [],
+   "conflictCount": 0,
+   "valueConflictCount": 0,
+   "recordsOnlyInSuperseded": [
+    {
+     "file": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+     "kind": "entity",
+     "key": [
+      "D-022",
+      "MDBDFIPPP 투자 프로젝트",
+      "D-022_ifc_investment_services_registry",
+      "BGD",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "개별",
+      "Summit Bibiyana II Power Company Limited",
+      "80000000",
+      "30542",
+      "International Finance Corporation (IFC)",
+      "Active",
+      "04/23/2015",
+      "",
+      "80000000",
+      "",
+      "",
+      "",
+      "SUMMIT BIBIYANA II POWER COMPANY LIMITED",
+      "",
+      "A - Significant",
+      "Regional Industry - INF Asia & Pac",
+      "",
+      "사업명·기업명 내 'power' (키워드 자체 분류)",
+      "",
+      "미매핑(N4) · 원천 분류 없음 + 사업명 키워드 불일치",
+      "",
+      "",
+      "",
+      "",
+      "미상(원천 미제공)",
+      "",
+      "",
+      "",
+      "Infrastructure",
+      "차관",
+      "04/23/2015",
+      "80000000",
+      "USD",
+      "",
+      "",
+      "",
+      "",
+      "IFC Investment Services Projects (World Bank Data Catalog, 2026-09-25)",
+      "",
+      "",
+      "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 75.00M USD · 지분 5.00M USD. 회계연도 2015 · 공시일 01/26/2015 · https://disclosures.ifc.org/project-detail/SII/30542/summit-bibiyana-ii-power-company-limited [좌표·행정구역 미확보 2026-09-25] 원천(World Bank Projects·JICA·IFC·AIIB)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+      "Loan",
+      "에너지",
+      "원천 미제공(기후 관련성 자체 분류로 대체)"
+     ]
+    },
+    {
+     "file": "D-022_MDBDFIPPP 투자 프로젝트.xlsx",
+     "kind": "entity",
+     "key": [
+      "D-022",
+      "MDBDFIPPP 투자 프로젝트",
+      "D-022_ifc_investment_services_registry",
+      "BGD",
+      "",
+      "22.69399",
+      "89.339731",
+      "point",
+      "EPSG:4326",
+      "개별",
+      "Khulna Power Project",
+      "25800000",
+      "8750",
+      "International Finance Corporation (IFC)",
+      "Completed",
+      "06/04/1998",
+      "",
+      "25800000",
+      "",
+      "",
+      "",
+      "Khulna Power Company Limited",
+      "",
+      "B - Limited",
+      "Gbl Infrastructure &amp; Natural Resources",
+      "",
+      "사업명·기업명 내 'power' (키워드 자체 분류)",
+      "",
+      "미매핑(N4) · 원천 분류 없음 + 사업명 키워드 불일치",
+      "",
+      "",
+      "",
+      "",
+      "행정구역 대표점",
+      "Khulna Division",
+      "",
+      "",
+      "Infrastructure",
+      "차관",
+      "06/04/1998",
+      "25800000",
+      "USD",
+      "",
+      "",
+      "",
+      "",
+      "IFC Investment Services Projects (World Bank Data Catalog, 2026-09-25)",
+      "",
+      "",
+      "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 22.50M USD · 지분 3.30M USD. 회계연도 1998 · 공시일 04/27/1998 · https://disclosures.ifc.org/project-detail/SPI/8750/khulna-power-project [좌표·행정구역 미확보 2026-09-25] 원천(World Bank Projects·JICA·IFC·AIIB)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정. [좌표 부여 2026-09-26] 명칭의 'khulna' → OSM admin1 Khulna Division(BD-D) 대표점 · 사업지 실좌표 아님 · © OpenStreetMap contributors, ODbL 1.0",
+      "Loan",
+      "에너지",
+      "원천 미제공(기후 관련성 자체 분류로 대체)"
+     ]
+    }
+   ],
+   "recordsOnlyInSupersededCount": 2
+  },
+  {
+   "elementId": "D-025",
+   "rule": "superset",
+   "keyColumns": {
+    "observation": null,
+    "entity": 33
+   },
+   "adopted": "D-025_민간 인프라 투자(PPI) (2).xlsx",
+   "superseded": [
+    "D-025_민간 인프라 투자(PPI).xlsx"
+   ],
+   "files": [
+    {
+     "name": "D-025_민간 인프라 투자(PPI) (2).xlsx",
+     "records": 116,
+     "observation": 49,
+     "entity": 67,
+     "c012Rows": 37,
+     "sha256": "bbf1ed03cf4e9a8e19256d8d4366393a3f435f442d917618a4c159450f667bb6",
+     "containsAllOthers": true,
+     "containsCellLevel": [
+      "D-025_민간 인프라 투자(PPI).xlsx"
+     ]
+    },
+    {
+     "name": "D-025_민간 인프라 투자(PPI).xlsx",
+     "records": 116,
+     "observation": 49,
+     "entity": 67,
+     "c012Rows": 0,
+     "sha256": "b198a470873087d9553862ef1dbc56f52ed32011fe5954737246a472e3eb6b14",
+     "containsAllOthers": false,
+     "containsCellLevel": []
+    }
+   ],
+   "conflicts": [],
+   "conflictCount": 0,
+   "valueConflictCount": 0,
+   "recordsOnlyInSuperseded": [
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "1997",
+      "313700000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "1998",
+      "225000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "1999",
+      "16150000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2000",
+      "18500000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2001",
+      "483000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2006",
+      "40500000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2007",
+      "25400000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2008",
+      "177400000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2009",
+      "88530000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2010",
+      "137130000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2011",
+      "324507000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2012",
+      "1527800000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2013",
+      "40300000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2014",
+      "516500000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2015",
+      "300000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2016",
+      "170000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2017",
+      "438000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2018",
+      "269000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2019",
+      "35710000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2020",
+      "2087000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2022",
+      "613000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2023",
+      "247550000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_energy",
+      "BGD",
+      "2024",
+      "24300000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_ict",
+      "BGD",
+      "2001",
+      "10000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_ict",
+      "BGD",
+      "2005",
+      "50000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_ict",
+      "BGD",
+      "2014",
+      "70000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_transport",
+      "BGD",
+      "2017",
+      "179580000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_transport",
+      "BGD",
+      "2019",
+      "909260000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_transport",
+      "BGD",
+      "2020",
+      "1240000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_transport",
+      "BGD",
+      "2022",
+      "377530000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_transport",
+      "BGD",
+      "2023",
+      "261000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_water",
+      "BGD",
+      "2018",
+      "327000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_investment_water",
+      "BGD",
+      "2019",
+      "72000000"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_project_count",
+      "BGD",
+      "2022",
+      "2",
+      "",
+      "",
+      "PPI 연차보고서 기준 사업 건수. 총투자액 991백만 USD"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_project_count",
+      "BGD",
+      "2023",
+      "3",
+      "",
+      "",
+      "PPI 연차보고서 기준 사업 건수. 총투자액 508.6백만 USD"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_project_count",
+      "BGD",
+      "2024",
+      "1",
+      "",
+      "",
+      "PPI 연차보고서 기준 사업 건수. 총투자액 24백만 USD"
+     ]
+    },
+    {
+     "file": "D-025_민간 인프라 투자(PPI).xlsx",
+     "kind": "observation",
+     "key": [
+      "D-025",
+      "민간 인프라 투자(PPI)",
+      "D-025_ppi_project_registry_count",
+      "BGD",
+      "2024",
+      "67",
+      "",
+      "",
+      "[해소 2026-09-28] World Bank PPI Database 방글라데시 Custom Query 원본을 확보해 프로젝트 단위 목록 67건을 1.2 레코드형 시트에 수록하고 누적 건수를 기입함. 금융종결 2000–2024년 전수."
+     ]
+    }
+   ],
+   "recordsOnlyInSupersededCount": 37
+  }
+ ]
+}

@@ -46,7 +46,9 @@ type OccupationKey =
   | "craft"
   | "machine_operator"
   | "elementary"
-  | "other";
+  | "other"
+  | "armed_forces"
+  | "unclassified";
 
 type OccupationOption = {
   key: OccupationKey;
@@ -134,7 +136,33 @@ export const E012_OCCUPATION_LABELS_V125: OccupationOption[] = [
     shortLabel: "기타",
     order: 10,
   },
+  // V162: ILOSTAT's residual groups arrive split into ISCO 0 and X.
+  {
+    key: "armed_forces",
+    label: "기타·미정의(군인)",
+    shortLabel: "군인",
+    order: 11,
+  },
+  {
+    key: "unclassified",
+    label: "기타·미정의(분류불능)",
+    shortLabel: "분류불능",
+    order: 12,
+  },
 ];
+
+/**
+ * V162: the 2026-09-30 delivery carries the national statistics office's
+ * series beside ILOSTAT's and ILO's wages in USD beside VND. This view compares
+ * occupations within one source and one currency - the ILOSTAT series in VND,
+ * as before - so no chart ever places two sources' values side by side as if
+ * they were one. The other series stay in the table and the download.
+ */
+function isPrimarySeriesV162(observation: SemanticObservationV125): boolean {
+  const source = String(observation.dimensions.source || "ilo");
+  const currency = String(observation.dimensions.currency || "VND");
+  return source === "ilo" && (observation.semanticMeasure.key !== "occupation_wage" || currency === "VND");
+}
 
 const MEASURE_LABELS: Record<E012MeasureKeyV125, string> = {
   employment_rate: "고용률",
@@ -165,7 +193,7 @@ const DEFAULT_SELECTION: E012VisualizationSelectionV125 = {
 };
 
 export default function OccupationEmploymentWagePreviewV125({
-  observations,
+  observations: allObservations,
   selection,
   onSelectionChange,
   countryNameKo = "베트남",
@@ -177,6 +205,7 @@ export default function OccupationEmploymentWagePreviewV125({
   const yearId = useId();
   const [internalSelection, setInternalSelection] =
     useState<E012VisualizationSelectionV125>(DEFAULT_SELECTION);
+  const observations = useMemo(() => allObservations.filter(isPrimarySeriesV162), [allObservations]);
 
   const years = useMemo(() => availableYears(observations), [observations]);
   const current = normalizeSelection(
