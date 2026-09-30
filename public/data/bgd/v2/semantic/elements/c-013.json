@@ -16,12 +16,8 @@
   "indicators": [
     {
       "axisGroupKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "외국인 투자 규정 · equity_cap",
       "indicatorId": "C-013_equity_cap",
       "inferenceMethod": "deterministic-source-structure",
@@ -31,7 +27,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-013_equity_cap",
+      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-013_equity_cap",
       "sourceCaveat": "[raw] ([raw]\\C-013\\) C-013_외국인 투자 규정_UNCTAD_IIA_Bangladesh_rendered_2026-08-19.html · C-013_외국인 투자 규정_BGD_ForeignPrivateInvestmentAct_1980_Act11of1980_EN_bdlaws.html · C-013_외국인 투자 규정_BGD_BIDA_Act_2016_Act35of2016_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_EconomicZonesAct_2010_Act42of2010_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_IncomeTaxAct_2023_ActXII2023_EN.pdf · C-013_외국인 투자 규정_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-013_외국인 투자 규정_BGD_BB_FEPD1_CircularLetter15_2026-09-03_Royalty_Remittance_EN.pdf · C-013_외국인 투자 규정_BGD_KOR_BIT_1986_fulltext_EN.pdf [정의·범위] 1행 = 지분 제한 규정 1건(2행: 전 업종 상한 없음 · 유보/통제 업종 미확보). [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 4개(C-013_investment_treaty_nolicense·_investment_incentive_bdgov·_foreign_equity_cap_bdgov·_profit_remittance_bdgov)를 레코드 유형 5개로 정리하고 범용 열의 값을 속성별 명명 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 투자 규정·협정은 전국 적용이므로 전 행 「전국 / BGD」. [기술분류] 제도·협정 레코드로 특정 기후기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
       "sourceLabel": "외국인 투자 규정",
       "sourceLabelEn": "Foreign Investment Regulations",
@@ -43,12 +39,8 @@
     },
     {
       "axisGroupKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "외국인 투자 규정 · incentive",
       "indicatorId": "C-013_incentive",
       "inferenceMethod": "deterministic-source-structure",
@@ -58,7 +50,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-013_incentive",
+      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-013_incentive",
       "sourceCaveat": "[raw] ([raw]\\C-013\\) C-013_외국인 투자 규정_UNCTAD_IIA_Bangladesh_rendered_2026-08-19.html · C-013_외국인 투자 규정_BGD_ForeignPrivateInvestmentAct_1980_Act11of1980_EN_bdlaws.html · C-013_외국인 투자 규정_BGD_BIDA_Act_2016_Act35of2016_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_EconomicZonesAct_2010_Act42of2010_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_IncomeTaxAct_2023_ActXII2023_EN.pdf · C-013_외국인 투자 규정_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-013_외국인 투자 규정_BGD_BB_FEPD1_CircularLetter15_2026-09-03_Royalty_Remittance_EN.pdf · C-013_외국인 투자 규정_BGD_KOR_BIT_1986_fulltext_EN.pdf [정의·범위] 1행 = 투자 인센티브 근거 1건(2행). 재생에너지 분야의 구체 감면율·기간은 C-017 참조. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 4개(C-013_investment_treaty_nolicense·_investment_incentive_bdgov·_foreign_equity_cap_bdgov·_profit_remittance_bdgov)를 레코드 유형 5개로 정리하고 범용 열의 값을 속성별 명명 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 투자 규정·협정은 전국 적용이므로 전 행 「전국 / BGD」. [기술분류] 제도·협정 레코드로 특정 기후기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
       "sourceLabel": "외국인 투자 규정",
       "sourceLabelEn": "Foreign Investment Regulations",
@@ -70,12 +62,8 @@
     },
     {
       "axisGroupKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "외국인 투자 규정 · law",
       "indicatorId": "C-013_law",
       "inferenceMethod": "deterministic-source-structure",
@@ -85,7 +73,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-013_law",
+      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-013_law",
       "sourceCaveat": "[raw] ([raw]\\C-013\\) C-013_외국인 투자 규정_UNCTAD_IIA_Bangladesh_rendered_2026-08-19.html · C-013_외국인 투자 규정_BGD_ForeignPrivateInvestmentAct_1980_Act11of1980_EN_bdlaws.html · C-013_외국인 투자 규정_BGD_BIDA_Act_2016_Act35of2016_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_EconomicZonesAct_2010_Act42of2010_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_IncomeTaxAct_2023_ActXII2023_EN.pdf · C-013_외국인 투자 규정_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-013_외국인 투자 규정_BGD_BB_FEPD1_CircularLetter15_2026-09-03_Royalty_Remittance_EN.pdf · C-013_외국인 투자 규정_BGD_KOR_BIT_1986_fulltext_EN.pdf [정의·범위] 1행 = 외국인 투자 관련 법령 1건(4행). [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 4개(C-013_investment_treaty_nolicense·_investment_incentive_bdgov·_foreign_equity_cap_bdgov·_profit_remittance_bdgov)를 레코드 유형 5개로 정리하고 범용 열의 값을 속성별 명명 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 투자 규정·협정은 전국 적용이므로 전 행 「전국 / BGD」. [기술분류] 제도·협정 레코드로 특정 기후기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
       "sourceLabel": "외국인 투자 규정",
       "sourceLabelEn": "Foreign Investment Regulations",
@@ -97,12 +85,8 @@
     },
     {
       "axisGroupKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "외국인 투자 규정 · remittance",
       "indicatorId": "C-013_remittance",
       "inferenceMethod": "deterministic-source-structure",
@@ -112,7 +96,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-013_remittance",
+      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-013_remittance",
       "sourceCaveat": "[raw] ([raw]\\C-013\\) C-013_외국인 투자 규정_UNCTAD_IIA_Bangladesh_rendered_2026-08-19.html · C-013_외국인 투자 규정_BGD_ForeignPrivateInvestmentAct_1980_Act11of1980_EN_bdlaws.html · C-013_외국인 투자 규정_BGD_BIDA_Act_2016_Act35of2016_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_EconomicZonesAct_2010_Act42of2010_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_IncomeTaxAct_2023_ActXII2023_EN.pdf · C-013_외국인 투자 규정_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-013_외국인 투자 규정_BGD_BB_FEPD1_CircularLetter15_2026-09-03_Royalty_Remittance_EN.pdf · C-013_외국인 투자 규정_BGD_KOR_BIT_1986_fulltext_EN.pdf [정의·범위] 1행 = 송금 규정 1건. 자본·수익·청산대금 송금 보장은 외국인민간투자법 1980 제8조(C-013_law 행) 참조. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 4개(C-013_investment_treaty_nolicense·_investment_incentive_bdgov·_foreign_equity_cap_bdgov·_profit_remittance_bdgov)를 레코드 유형 5개로 정리하고 범용 열의 값을 속성별 명명 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 투자 규정·협정은 전국 적용이므로 전 행 「전국 / BGD」. [기술분류] 제도·협정 레코드로 특정 기후기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
       "sourceLabel": "외국인 투자 규정",
       "sourceLabelEn": "Foreign Investment Regulations",
@@ -124,12 +108,8 @@
     },
     {
       "axisGroupKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "외국인 투자 규정 · treaty",
       "indicatorId": "C-013_treaty",
       "inferenceMethod": "deterministic-source-structure",
@@ -139,7 +119,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-013_treaty",
+      "seriesKey": "measure-065ce4b6f2c9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-013_treaty",
       "sourceCaveat": "[raw] ([raw]\\C-013\\) C-013_외국인 투자 규정_UNCTAD_IIA_Bangladesh_rendered_2026-08-19.html · C-013_외국인 투자 규정_BGD_ForeignPrivateInvestmentAct_1980_Act11of1980_EN_bdlaws.html · C-013_외국인 투자 규정_BGD_BIDA_Act_2016_Act35of2016_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_EconomicZonesAct_2010_Act42of2010_BN_bdlaws.html · C-013_외국인 투자 규정_BGD_IncomeTaxAct_2023_ActXII2023_EN.pdf · C-013_외국인 투자 규정_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-013_외국인 투자 규정_BGD_BB_FEPD1_CircularLetter15_2026-09-03_Royalty_Remittance_EN.pdf · C-013_외국인 투자 규정_BGD_KOR_BIT_1986_fulltext_EN.pdf [정의·범위] 1행 = 투자 협정 1건(42행: BIT 34 · TIP 8). 구서식은 협정 총건수(34)와 한-방/북-방 협정 3개 사실만 수록했으나, 신서식에서는 UNCTAD 표를 전수로 옮겨 협정별 상태·서명일·발효일·원문 언어를 행으로 수록함. 상태 내역 — 발효 25건 · 서명(미발효) 7건 · 종료 2건. 대한민국과의 BIT는 1986-06-18 서명·1988-10-06 발효(In force)이며, 북한과의 BIT(1999-06-21 서명)는 미발효(Signed, not in force)로 별개 문서임. UNCTAD는 기계판독 API·CSV를 제공하지 않아 렌더링 HTML이 유일한 원본이며, 해당 HTML의 표를 파싱해 옮김. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 4개(C-013_investment_treaty_nolicense·_investment_incentive_bdgov·_foreign_equity_cap_bdgov·_profit_remittance_bdgov)를 레코드 유형 5개로 정리하고 범용 열의 값을 속성별 명명 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 투자 규정·협정은 전국 적용이므로 전 행 「전국 / BGD」. [기술분류] 제도·협정 레코드로 특정 기후기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
       "sourceLabel": "외국인 투자 규정",
       "sourceLabelEn": "Foreign Investment Regulations",

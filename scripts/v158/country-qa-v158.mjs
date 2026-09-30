@@ -33,6 +33,7 @@ const ROOT = repoRootV158(import.meta.dirname);
 const require = createRequire(import.meta.url);
 require("sucrase/register/ts");
 const {
+  adminUnitsV158,
   buildOtherCountryTermsV158,
   confirmedRegionEntriesV158,
   findCountryTermsV158,
@@ -90,6 +91,8 @@ const terms = buildOtherCountryTermsV158({
   displayedIso3: COUNTRY,
   countries: unionRegistryCountriesV158(registry.countries),
   regionEntries: confirmedRegionEntriesV158(),
+  // Another country's level-1 word ("성·시") counts too (V158-B2b).
+  adminUnits: adminUnitsV158(registry),
 });
 
 /** Every string the country's delivery holds for an element: its packs and catalog row. */

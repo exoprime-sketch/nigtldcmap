@@ -212,17 +212,10 @@ export function publicDatasetDescriptionV122(
 
 export function publicCountrySlugV122(iso3: string): string {
   const normalized = iso3.trim().toUpperCase();
+  // The default country's reviewed slug. Every other registry country's slug
+  // comes from its registry name (registryCountryDataProviderV158, V158-B2b).
   const known: Record<string, string> = {
     VNM: "vietnam",
-    BGD: "bangladesh",
-    PHL: "philippines",
-    KHM: "cambodia",
-    IDN: "indonesia",
-    LAO: "laos",
-    LKA: "sri-lanka",
-    IND: "india",
-    MYS: "malaysia",
-    EGY: "egypt",
   };
   return known[normalized] || normalized.toLowerCase();
 }

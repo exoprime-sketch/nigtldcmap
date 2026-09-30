@@ -1,12 +1,12 @@
 {
   "schema": "fake-country-check-v158",
-  "build": "tmp/build-b2-pr",
+  "build": "tmp/build-b2b-pr",
   "fakeCountry": {
     "iso3": "XTS",
     "nameKo": "시험국",
     "servedFrom": "BGD"
   },
-  "expectedFinder": 119,
+  "expectedFinder": 117,
   "checks": {
     "homeListsFakeCountry": true,
     "homeNoErrors": true,
@@ -35,7 +35,7 @@
       "path": "/?country=XTS#explorer",
       "errors": [],
       "search": "?country=XTS",
-      "finderTotal": 119,
+      "finderTotal": 117,
       "countryOptions": [
         "전체",
         "베트남",
@@ -43,7 +43,7 @@
         "시험국"
       ],
       "compare": null,
-      "textLength": 9609,
+      "textLength": 9818,
       "fakeNameCount": 25
     },
     "details": [
@@ -78,13 +78,13 @@
         "fakeNameCount": 2
       },
       {
-        "path": "/?country=XTS&element=C-020#element-detail",
+        "path": "/?country=XTS&element=C-023#element-detail",
         "errors": [],
-        "search": "?country=XTS&element=C-020",
+        "search": "?country=XTS&element=C-023",
         "finderTotal": -1,
         "countryOptions": [],
         "compare": null,
-        "textLength": 303,
+        "textLength": 279,
         "fakeNameCount": 2
       }
     ],
@@ -101,7 +101,7 @@
           "방글라데시"
         ]
       },
-      "textLength": 855,
+      "textLength": 873,
       "fakeNameCount": 1
     }
   }

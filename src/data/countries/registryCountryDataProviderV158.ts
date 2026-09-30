@@ -19,7 +19,7 @@ import type {
   CountrySearchEntryV122,
 } from "./countryDataTypesV122";
 import {
-  publicCountrySlugV122,
+  safePublicFilenamePartV122,
   publicDatasetShortTitleV122,
   publicDatasetTitleV122,
   removeInternalSearchTokensV122,
@@ -108,7 +108,8 @@ export function createRegistryCountryDataProviderV158(
     countryIso3: iso3,
     countryNameKo: entry.nameKo,
     countryNameEn: entry.nameEn,
-    countryPublicSlug: publicCountrySlugV122(iso3),
+    // The file-name slug comes from the registry's English name (V158-B2b), not a table in code.
+    countryPublicSlug: safePublicFilenamePartV122(entry.nameEn || iso3),
     dataSchemaVersion: "v124",
     get manifestUrl() {
       return publicAssetUrlV128(countryAssetPathV158(iso3, "manifest.json"));

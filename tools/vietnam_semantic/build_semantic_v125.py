@@ -824,12 +824,32 @@ def entity_dimension_values(entities: list[dict[str, Any]]) -> dict[str, set[str
     }
 
 
+# A delivered column's key written as "<header>_<english_key>" - Bangladesh's
+# "부문별_Tier_tier_by_sector" - is the column's own header joined to its
+# English key. The header itself sits in the field definition as
+# "부문별 Tier(tier_by_sector)"; the reader's label is that header without the key.
+DELIVERED_KEY_HANGUL = re.compile(r"[\uac00-\ud7a3]")
+DELIVERED_LABEL_ASCII_KEY = re.compile(r"\s*\([A-Za-z0-9_ .-]+\)\s*$")
+
+
+def delivered_field_label(key: str, field_definitions: list[dict[str, Any]] | None) -> str | None:
+    if not field_definitions or not DELIVERED_KEY_HANGUL.search(key):
+        return None
+    for item in field_definitions:
+        if nfc(item.get("normalizedKey")) != key:
+            continue
+        label = DELIVERED_LABEL_ASCII_KEY.sub("", nfc(item.get("label"))).strip()
+        return label or None
+    return None
+
+
 def summarize_semantics(
     indicators: list[dict[str, Any]],
     indicator_semantics: list[dict[str, Any]],
     record_semantics: list[dict[str, Any]],
     observations: list[dict[str, Any]],
     entities: list[dict[str, Any]],
+    field_definitions: list[dict[str, Any]] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     indicator_record_counts = Counter(item["indicatorId"] for item in observations)
     measures: dict[tuple[str, str], dict[str, Any]] = {}
@@ -875,7 +895,7 @@ def summarize_semantics(
     dimensions = [
         {
             "key": key,
-            "labelKo": dimension_labels.get(key, key),
+            "labelKo": dimension_labels.get(key) or delivered_field_label(key, field_definitions) or key,
             "values": sorted_values(values),
             "valueCount": len(values),
         }
@@ -1187,6 +1207,7 @@ def main() -> None:
             record_semantics,
             observations,
             entities,
+            payload["meta"].get("fieldDefinitions", []),
         )
         contract = make_contract(
             element,

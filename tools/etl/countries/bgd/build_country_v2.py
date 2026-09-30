@@ -59,6 +59,9 @@ PACK_ELEMENT_COUNT = v2.PACK_ELEMENT_COUNT
 SOLO_PACK_CONTENT_BYTES = v2.SOLO_PACK_CONTENT_BYTES
 
 # Paths this builder owns inside the output tree. geometry/ is not one of them.
+# tech_ids values that mean "no technology" in the delivery.
+NO_TECHNOLOGY_V158 = frozenset({"해당없음", "해당 없음", "없음"})
+
 OWNED_FILES = (
     "catalog.json",
     "manifest.json",
@@ -311,7 +314,12 @@ def _indicators(workbook: Mapping[str, Any], observations: list[Mapping[str, Any
         for column, key in META_TO_INDICATOR.items():
             value = row.get(column)
             indicator[key] = None if value in (None, "") else value
-        indicator["technologyIds"] = v2.normalize_technology_ids_v153(row.get("tech_ids"))
+        # V158: the delivery writes "해당없음" in tech_ids for an indicator tied to
+        # no technology; that is no technology, as in Viet Nam's catalog, not a
+        # technology called "해당없음" (it surfaced as a dimension on screen).
+        indicator["technologyIds"] = [
+            tid for tid in v2.normalize_technology_ids_v153(row.get("tech_ids")) if tid not in NO_TECHNOLOGY_V158
+        ]
         indicator["extraMeta"] = {column: row.get(column) for column in META_EXTRA if row.get(column) not in (None, "")}
         unknown = sorted(set(row) - META_HANDLED - set(META_TO_INDICATOR) - set(META_EXTRA))
         for column in unknown:

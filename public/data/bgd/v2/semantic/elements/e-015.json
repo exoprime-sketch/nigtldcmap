@@ -10,7 +10,7 @@
     },
     {
       "key": "가입_상태_구분_membership_status",
-      "labelKo": "가입_상태_구분_membership_status",
+      "labelKo": "가입 상태 구분",
       "valueCount": 2,
       "values": [
         "가입 완료",
@@ -25,12 +25,8 @@
   "indicators": [
     {
       "axisGroupKey": "measure-21a0b685904b|해당없음",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "NDC Partnership 회원 여부",
       "indicatorId": "E-015_coop_framework",
       "inferenceMethod": "deterministic-source-structure",
@@ -40,7 +36,7 @@
         "unit": "해당없음",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-21a0b685904b|해당없음|technology=해당없음|E-015_coop_framework",
+      "seriesKey": "measure-21a0b685904b|해당없음||E-015_coop_framework",
       "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 가입 시점이 공식 자료에 표기되지 않은 GMP·IRENA는 시점을 공란으로 두고 회원·참여 지위만 수록. GGGI 미가입은 공식 회원국 목록 전수 대조로 확인. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
       "sourceLabel": "NDC Partnership 회원 여부",
       "sourceLabelEn": "Other cooperation frameworks",

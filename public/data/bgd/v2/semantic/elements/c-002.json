@@ -16,12 +16,8 @@
   "indicators": [
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · climate_finance",
       "indicatorId": "C-002_climate_finance",
       "inferenceMethod": "deterministic-source-structure",
@@ -31,7 +27,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_climate_finance",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_climate_finance",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 재원 항목 1건(7행) — 소요 3건(NAP 적응·NDC 2021 감축·NDC 3.0 감축) + 수혜 4건(총계·적응·감축·교차분야). [단위 통일] 금액을 백만 USD로 통일함 — 원문이 십억 USD로 표기한 소요 항목도 백만 USD로 환산하여 수혜 실적과 같은 단위에서 비교 가능하게 함. [성격 구분] 「소요」는 장래 추정치, 「수혜」는 2015-2024년 실적임 — 두 값을 더하거나 비교 시 대상 기간이 다름에 유의. [프로그램 수] 구서식의 지원 수혜 프로그램 수 4행을 수혜 행의 「[재원] 프로그램 수」 열로 옮겨 금액과 건수가 같은 행에 오도록 함. [정합] NAP 적응 소요 2,300억 USD는 C-003(NAP)의 총 소요와 동일한 수치임.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",
@@ -70,12 +66,8 @@
     },
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · ghg_inventory",
       "indicatorId": "C-002_ghg_inventory",
       "inferenceMethod": "deterministic-source-structure",
@@ -85,7 +77,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_ghg_inventory",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_ghg_inventory",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 1개 연도 인벤토리(11행) — BTR1 계열 4개 연도(2019-2022) + BUR1 계열 7개 연도(2013-2019). [서식 핵심] 구서식은 부문·가스·연도 조합마다 1행을 두어 48행이었고 행에 부문·가스 이름이 남아 있지 않았으나, 신서식에서는 연도를 행으로 두고 부문(에너지·IPPU·농업·LULUCF·폐기물)과 가스(CO₂·CH₄·N₂O·HFCs)를 열로 두어 어느 값이 무엇인지 열 머리글로 확정함. [계열 분리] BTR1 계열(ktCO₂eq)과 BUR1 계열(MtCO₂eq)은 단위와 집계 정의(BUR1은 FOLU를 AFOLU에 통합)가 달라 「[인벤토리] 계열」 열로 구분하였으며, 인벤토리 재산정으로 2019년 값도 서로 다름 — 두 계열을 이어 붙여 시계열로 쓰면 안 됨. [검산] 부문 합계와 가스 합계가 각각 총계와 소수 둘째자리까지 일치함을 확인함. [LULUCF] 2019~2022년 전 연도 양(+)의 순배출원이며, 원문은 2022년부터 개선된 산림경영으로 흡수원 역할이 시작되었다고 서술함.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",
@@ -97,12 +89,8 @@
     },
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · ndc_reduction",
       "indicatorId": "C-002_ndc_reduction",
       "inferenceMethod": "deterministic-source-structure",
@@ -112,7 +100,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_ndc_reduction",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_ndc_reduction",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 1개 연도(10행, 2021-2030). 구서식은 이행 상태×연도 조합마다 1행을 두어 29행이었으나, 신서식에서는 연도를 행으로 두고 이행완료·채택·계획·합계를 열로 두었음. [실적·전망 구분] 2024년까지는 실적, 2025년 이후는 전망치임 — 「[감축] 값 성격」 열에 명시하였으므로 전망치를 실적으로 읽지 말 것. [검산] 합계 = 이행완료 + 채택 + 계획이 원문 Grand Total과 일치함(2028년 5.47+6.33+10.48=22.28). [부문 누락] IPPU 부문은 원문 표에 행이 없어 감축량이 정량화되어 있지 않음.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",
@@ -124,12 +112,8 @@
     },
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · ndc_reduction_sector",
       "indicatorId": "C-002_ndc_reduction_sector",
       "inferenceMethod": "deterministic-source-structure",
@@ -139,7 +123,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_ndc_reduction_sector",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_ndc_reduction_sector",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 부문 × 이행 상태 1건(9행) — 에너지·AFOLU·폐기물 × 이행완료·채택·계획. [검산] 부문별 합이 연도별 값과 일치함(2030년 이행완료 5.37+0.02+0.08=5.47 · 채택 6.20+0.08+0.05=6.33 · 계획 5.84+2.90+1.74=10.48). [부문 누락] IPPU 부문은 원문 표에 행이 없음 — 부문 합계가 전 부문 합계라고 읽으면 안 됨.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",
@@ -151,12 +135,8 @@
     },
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · submission",
       "indicatorId": "C-002_submission",
       "inferenceMethod": "deterministic-source-structure",
@@ -166,7 +146,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_submission",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_submission",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 제출 문서 1건(4행) — BTR1 / BUR1 / CRT·CTF 공통보고표(미제출) / BTR2(기한 미도래). [집계행 삭제] 구서식의 「BTR1 분량 450」 행과 「원본 링크」 2행은 각각 「[제출] 문서 분량」·「[제출] 원문 URL」 열로 흡수되어 삭제함. [상태 구분] 미제출(M02)과 기한 미도래(M03)를 서로 다른 사유로 구분함 — 둘 다 \"없음\"이지만 성격이 다름.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",
@@ -178,12 +158,8 @@
     },
     {
       "axisGroupKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "해당없음"
-      },
-      "dimensions": {
-        "technology": "해당없음"
-      },
+      "dimensionLabels": {},
+      "dimensions": {},
       "displayLabel": "BTR (격년투명성보고서, 舊 BUR) · unavailable",
       "indicatorId": "C-002_unavailable",
       "inferenceMethod": "deterministic-source-structure",
@@ -193,7 +169,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=해당없음|C-002_unavailable",
+      "seriesKey": "measure-11d5ee64cbdb|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-002_unavailable",
       "sourceCaveat": "[raw] ([raw]\\C-002\\) C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BTR1_Interim_UNFCCC_2025-12-31.pdf · C-002_BTR (격년투명성보고서, 舊 BUR)_Bangladesh_BUR1_UNFCCC_2023-11-25.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 10개(C-002_submission_history·_source_link·_ghg_total_emission·_ghg_sector_emission·_ndc_achievement·_climate_finance·_adaptation_program_count·_climate_projection_ssp·_extreme_climate_index·_gdp_loss_estimate)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 미확보 항목 1건(2행). 값 대신 \"왜 값이 없는지\"를 기록하는 레코드임. [파생값 금지] LULUCF 제외 총계는 총계에서 LULUCF를 빼면 산출되지만 원문이 발표하지 않은 파생값이므로 만들어 넣지 않음 — 같은 판단이 반복되도록 행으로 남김. [2차 출처 배제] 기후 GDP 손실률은 2차 출처에 통용되는 수치가 있으나 BTR1 원문에 없으므로 수록하지 않음.",
       "sourceLabel": "BTR (격년투명성보고서, 舊 BUR)",
       "sourceLabelEn": "Biennial Transparency Report",

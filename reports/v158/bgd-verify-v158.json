@@ -1,11 +1,13 @@
 {
   "type": "summary",
   "audit": "country-verify:bgd:v158",
-  "status": "PASS",
-  "passed": 52,
-  "failed": 0,
+  "status": "FAIL",
+  "passed": 51,
+  "failed": 1,
   "total": 52,
-  "failedChecks": [],
+  "failedChecks": [
+    "REFERENCE_TREE_UNCHANGED"
+  ],
   "framework": 152,
   "delivered": 119,
   "notProvided": 33,
@@ -631,24 +633,43 @@
       "expected": "no indicator, record or download"
     },
     {
-      "name": "NO_EXCLUDED",
+      "name": "EXCLUSIONS_MATCH_COMMON_DECISION",
       "pass": true,
-      "actual": [],
-      "expected": []
+      "actual": {
+        "excluded": [
+          "A-017",
+          "C-020",
+          "C-021",
+          "E-008",
+          "E-016",
+          "E-017"
+        ],
+        "mismatch": []
+      },
+      "expected": [
+        "A-017",
+        "C-020",
+        "C-021",
+        "E-008",
+        "E-016",
+        "E-017"
+      ]
     },
     {
       "name": "STATUS_COUNTS_MATCH",
       "pass": true,
       "actual": {
-        "partial": 25,
-        "actual": 91,
+        "partial": 24,
+        "actual": 90,
+        "excluded": 6,
         "schema-only": 3,
-        "not-provided": 33
+        "not-provided": 29
       },
       "expected": {
-        "actual": 91,
-        "not-provided": 33,
-        "partial": 25,
+        "actual": 90,
+        "excluded": 6,
+        "not-provided": 29,
+        "partial": 24,
         "schema-only": 3
       }
     },
@@ -799,6 +820,7 @@
           "C-004",
           "C-009",
           "C-010",
+          "C-015",
           "C-016",
           "C-017",
           "C-018"
@@ -811,6 +833,7 @@
         "C-004",
         "C-009",
         "C-010",
+        "C-015",
         "C-016",
         "C-017",
         "C-018"
@@ -827,12 +850,12 @@
     },
     {
       "name": "REFERENCE_TREE_UNCHANGED",
-      "pass": true,
+      "pass": false,
       "actual": {
-        "gitDiffClean": true,
+        "gitDiffClean": false,
         "drift": []
       },
-      "expected": "no change to the reference tree, registry or src"
+      "expected": "no change to the reference tree or the registry"
     }
   ]
 }

@@ -1,16 +1,16 @@
 # 명세 텍스트 국가 범위 제한 — BGD (V158-B2 WP2)
 
-**2026-09-29**
+**2026-09-30**
 
 ## 검토 결과
 
 □ 대상: BGD 화면에 표시되는 명세 텍스트(datasetSpecV159 · useCasesV159 · datasetCardSpecV159). 원문은 VNM 기준으로 작성됨. 다른 나라(원문 작성국 제외 대상국 전체) 이름·지명이 들어간 문단·사례만 숨김(원문 수정 없음).
 
-ㅇ 프레임워크 152개 요소 중 영향받은 요소: **117개** (제공 93개 · BGD 미제공 24개 / 전체 미제공 33개)
+ㅇ 프레임워크 152개 요소 중 영향받은 요소: **117개** (제공 95개 · BGD 미제공 22개 / 전체 미제공 29개)
 
-ㅇ 사용 사례(useCasesV159) 372건 중 숨김: **179건**
+ㅇ 사용 사례(useCasesV159) 372건 중 숨김: **180건**
 
-ㅇ 적용한 다른 나라 용어 수(국가명 + 확정 지명): 145개
+ㅇ 적용한 다른 나라 용어 수(국가명 + 확정 지명): 146개
 
 ## 필드별 숨김 문단 수 (datasetSpecV159 / datasetCardSpecV159)
 
@@ -28,8 +28,8 @@
 
 | 필드 | 숨김 건수 |
 |---|---|
-| caution | 165 |
-| cautionDisplay | 142 |
+| caution | 166 |
+| cautionDisplay | 143 |
 | logic | 14 |
 | storyline | 8 |
 | purpose | 1 |
@@ -118,8 +118,8 @@
 | C-017 |  | datasetSpec.description(1), datasetSpec.usage(1), datasetCardSpec.sourceLabel(1) | #1 |
 | C-018 |  | datasetSpec.description(1), datasetSpec.usage(1), datasetCardSpec.sourceLabel(1) | #1 |
 | C-019 |  | datasetSpec.description(1), datasetSpec.usage(1) | #1, #3 |
-| C-020 | 미제공 | datasetSpec.usage(1) | - |
-| C-021 | 미제공 | datasetSpec.usage(1) | - |
+| C-020 |  | datasetSpec.usage(1) | - |
+| C-021 |  | datasetSpec.usage(1) | - |
 | C-022 |  | datasetSpec.usage(1) | #1, #2 |
 | C-023 | 미제공 | datasetSpec.usage(1) | - |
 | C-024 |  | - | #2 |
@@ -130,7 +130,7 @@
 | D-006 | 미제공 | datasetSpec.shortDefinition(1), datasetSpec.shortDefinitionCard(1), datasetSpec.description(1), datasetCardSpec.sourceLabel(1) | #1, #2 |
 | D-007 | 미제공 | - | #1, #2 |
 | D-008 | 미제공 | datasetSpec.description(1) | #1, #2 |
-| D-009 | 미제공 | datasetSpec.description(1) | #1, #2 |
+| D-009 | 미제공 | datasetSpec.description(1) | #1, #2, #3 |
 | D-010 | 미제공 | datasetSpec.description(1) | #1, #2, #3 |
 | D-012 | 미제공 | datasetSpec.description(1) | #1 |
 | D-013 | 미제공 | - | #2, #3 |

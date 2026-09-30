@@ -40,7 +40,7 @@ export interface CountryTermV158 {
   readonly term: string;
   readonly script: "hangul" | "latin";
   readonly iso3: string;
-  readonly kind: "country" | "region";
+  readonly kind: "country" | "region" | "admin-unit";
 }
 
 export interface CountryNameInputV158 {
@@ -55,10 +55,23 @@ export interface RegionNameInputV158 {
   readonly local?: string | null;
 }
 
+/** A registry country's own word for its level-1 unit (`adm.level1.label`). */
+export interface AdminUnitInputV158 {
+  readonly iso3: string;
+  readonly label?: string | null;
+}
+
 export interface BuildOtherCountryTermsInputV158 {
   readonly displayedIso3: string;
   readonly countries: readonly CountryNameInputV158[];
   readonly regionEntries: readonly RegionNameInputV158[];
+  /**
+   * V158-B2b: another country's Korean word for its level-1 unit is that
+   * country's wording too - Viet Nam's "성·시" on a Bangladesh page is Viet
+   * Nam's copy. Only a Korean label is a term; the displayed country's own
+   * label never is.
+   */
+  readonly adminUnits?: readonly AdminUnitInputV158[];
 }
 
 /** Below this length a Korean name is too short to trust as a whole-word match. */
@@ -144,7 +157,7 @@ export function buildOtherCountryTermsV158(
   const seenHangul = new Set<string>();
   const seenLatin = new Set<string>();
 
-  const pushHangul = (raw: string, iso3: string, kind: "country" | "region") => {
+  const pushHangul = (raw: string, iso3: string, kind: CountryTermV158["kind"]) => {
     const trimmed = raw.normalize("NFC").trim();
     if (trimmed.length < MIN_HANGUL_LEN) return;
     if (trimmed.toUpperCase() === iso3) return;
@@ -176,6 +189,19 @@ export function buildOtherCountryTermsV158(
     if (!iso3 || iso3 === displayed) continue;
     if (region.ko) pushHangul(region.ko, iso3, "region");
     if (region.local) pushLatin(region.local, iso3, "region");
+  }
+
+  const ownAdminUnits = new Set(
+    (input.adminUnits ?? [])
+      .filter((unit) => normalizeIso3V158(unit.iso3) === displayed && unit.label)
+      .map((unit) => hangulKeyV158(String(unit.label)))
+  );
+  for (const unit of input.adminUnits ?? []) {
+    const iso3 = normalizeIso3V158(unit.iso3);
+    const label = String(unit.label ?? "");
+    if (!iso3 || iso3 === displayed || !/[\uac00-\ud7a3]/u.test(label)) continue;
+    if (ownAdminUnits.has(hangulKeyV158(label))) continue;
+    pushHangul(label, iso3, "admin-unit");
   }
 
   return terms;
@@ -272,6 +298,11 @@ export function confirmedRegionEntriesV158(): RegionNameInputV158[] {
   return confirmedRegionEntriesCache;
 }
 
+/** Every registry country's level-1 label, for `adminUnits`. */
+export function adminUnitsV158(registry: { countries: ReadonlyArray<{ iso3: string; adm?: { level1?: { label?: string } } }> }): AdminUnitInputV158[] {
+  return registry.countries.map((row) => ({ iso3: row.iso3, label: row.adm?.level1?.label ?? null }));
+}
+
 const otherCountryTermsMemo = new Map<
   string,
   { registryRef: CountryRegistryV158 | null; terms: CountryTermV158[] }
@@ -294,6 +325,7 @@ export function otherCountryTermsV158(displayedIso3: string): CountryTermV158[] 
     displayedIso3: iso3,
     countries: unionRegistryCountriesV158(registry.countries),
     regionEntries: confirmedRegionEntriesV158(),
+    adminUnits: adminUnitsV158(registry),
   });
   otherCountryTermsMemo.set(iso3, { registryRef, terms });
   return terms;

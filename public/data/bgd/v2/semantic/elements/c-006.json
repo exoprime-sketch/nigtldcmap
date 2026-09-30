@@ -17,12 +17,10 @@
     {
       "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "해당없음"
+        "category": "제6.4조 이행 체계 · 현황"
       },
       "dimensions": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "해당없음"
+        "category": "제6.4조 이행 체계 · 현황"
       },
       "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · bilateral_agreement",
       "indicatorId": "C-006_bilateral_agreement",
@@ -33,7 +31,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=해당없음|C-006_bilateral_agreement",
+      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_bilateral_agreement",
       "sourceCaveat": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = 제6.2조 협력적 접근법 양자문서 1건(3행). 방글라데시 DoE가 공식 열거한 일본 JCM·대한민국 MoU·세계은행 Ci-Dev HCA 3건이며, 이 중 세계은행은 국가가 아닌 국제기구임. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자(C-006_bilateral_party·_bilateral_date·_bilateral_scope)를 레코드 유형 1개로 통합하고, 협정 1건이 상대국 행·체결일 행으로 흩어져 있던 것을 1행 = 협정 1건으로 재구조화함. [집계행 삭제] 구서식의 「체결 건수 3」 행은 행 수로 산출되는 파생값이므로 삭제함(신서식 행 수 3과 동일). [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 국가 간 협정이므로 「전국 / BGD」. [기술분류] 협정 행은 특정 기후기술을 지목하지 않아 tech_id 공란(판단 유형·근거는 「[기술]」 열).",
       "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",
@@ -46,12 +44,10 @@
     {
       "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "해당없음"
+        "category": "제6.4조 이행 체계 · 현황"
       },
       "dimensions": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "해당없음"
+        "category": "제6.4조 이행 체계 · 현황"
       },
       "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · domestic_framework",
       "indicatorId": "C-006_domestic_framework",
@@ -62,7 +58,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=해당없음|C-006_domestic_framework",
+      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_domestic_framework",
       "sourceCaveat": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = 국내 이행체계 구성요소 1건(6행) — 제6.4조 호스트국 참여요건 제출 / DNA 설립 / 상응조정 산정방법 / 국내 탄소 레지스트리 / UNFCCC 국제 레지스트리·CARP 연동 / ITMO 이전 실적. [서식] 구서식에서 참여요건 서식의 체크 항목(파리협정 당사국·NDC·DNA 지정·DNA 기관·대표자·전환 승인 건수)이 6행으로 흩어져 있던 것을 제출 레코드 1행의 「[제출]」 속성 열로 통합함. [수치 유의] 「호스트국 전환 승인 건수 11」(DoE 발표)과 UNFCCC 전환목록상 실제 전환 완료 7건은 서로 다른 수치이며, 차이 사유는 원문에 설명이 없어 양쪽을 각각 원문대로 수록함(11은 본 레코드, 7은 C-006_transition_activity 행 수). [지역구분] 국가 단위 제도이므로 「전국 / BGD」. [기술분류] 제도 행은 특정 기후기술을 지목하지 않아 tech_id 공란.",
       "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",

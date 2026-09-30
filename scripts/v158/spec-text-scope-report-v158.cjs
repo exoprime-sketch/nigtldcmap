@@ -45,6 +45,7 @@ if (!countryArg) throw new Error("--country is required, e.g. --country bgd");
 const DISPLAYED_ISO3 = String(countryArg).trim().toUpperCase();
 
 const {
+  adminUnitsV158,
   buildOtherCountryTermsV158,
   unionRegistryCountriesV158,
   confirmedRegionEntriesV158,
@@ -84,6 +85,7 @@ const terms = buildOtherCountryTermsV158({
   displayedIso3: DISPLAYED_ISO3,
   countries: unionRegistryCountriesV158(registry.countries),
   regionEntries: confirmedRegionEntriesV158(),
+  adminUnits: adminUnitsV158(registry),
 });
 
 const scopingApplies = shouldScopeTextV158(DISPLAYED_ISO3, AUTHORED_ISO3);

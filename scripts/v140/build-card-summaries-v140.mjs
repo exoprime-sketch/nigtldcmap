@@ -57,6 +57,10 @@ const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
 const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
 const COUNTRY_ENTRY = countryEntryV158(ROOT, COUNTRY_ISO3);
 const COUNTRY_NAME_KO = COUNTRY_ENTRY.nameKo;
+// V158-B2b: the country's own word for its level-1 unit (registry
+// `adm.level1.label`, Bangladesh "Division"); the default country keeps its
+// reviewed wording.
+const REGION_WORD = IS_DEFAULT_COUNTRY ? "성·시" : COUNTRY_ENTRY.adm?.level1?.label || "지역";
 // A non-default country's own reports never overwrite Viet Nam's committed review/build files.
 const REPORT_SUFFIX = IS_DEFAULT_COUNTRY ? "" : `-${COUNTRY_ISO3.toLowerCase()}`;
 const outOverrideIndex = argv.indexOf("--out");
@@ -184,12 +188,13 @@ const ENTITY_RULES = {
   "C-009": { unit: "법령·문서", kind: "documents" },
   "C-010": { unit: "법령·문서", kind: "documents" },
   "C-011": { unit: "항목", kind: "facts" },
-  "C-012": { unit: "항목", kind: "facts", note: "개편 후 34개 성·시 단위 값 · 63개로 합산·순위화하지 않음" },
+  // The two notes below describe the default country's 34/63 province systems.
+  "C-012": { unit: "항목", kind: "facts", note: IS_DEFAULT_COUNTRY ? "개편 후 34개 성·시 단위 값 · 63개로 합산·순위화하지 않음" : undefined },
   "C-013": { unit: "항목", kind: "facts" },
   "C-014": { unit: "항목", kind: "facts" },
   "C-015": { unit: "원문 링크", kind: "facts" },
   "C-017": { unit: "항목", kind: "facts" },
-  "C-019": { unit: "항목", kind: "facts", note: "명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음" },
+  "C-019": { unit: "항목", kind: "facts", note: IS_DEFAULT_COUNTRY ? "명부의 시설 수는 34개 단위 · 성·시로 합산하지 않음" : undefined },
   "C-022": { unit: "항목", kind: "facts", note: "같은 명부의 업종별 수 · 합산하지 않음" },
   "C-024": { unit: "항목", kind: "facts" },
   "C-025": { unit: "프로젝트", groupBy: "standard", kind: "bars" },
@@ -530,11 +535,11 @@ function levelOrLine(elementId, item, contract, measure, series, override, rows)
     const scope = Number.isFinite(point?.year) ? `${point.year}년` : point?.period || periodOf(item);
     return {
       kind: "spatial",
-      headline: { value: `${formatNumber(parts[0].value)} ${unit}`, label: `${measure.labelKo} 최대 · ${parts[0].label} · ${parts.length}개 성·시 중 · ${scope}` },
-      preview: { parts: parts.slice(0, 5).map(({ label, value }) => ({ label, value })), unit, scope: `${measure.labelKo} 상위 5개 성·시`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: parts.length },
+      headline: { value: `${formatNumber(parts[0].value)} ${unit}`, label: `${measure.labelKo} 최대 · ${parts[0].label} · ${parts.length}개 ${REGION_WORD} 중 · ${scope}` },
+      preview: { parts: parts.slice(0, 5).map(({ label, value }) => ({ label, value })), unit, scope: `${measure.labelKo} 상위 5개 ${REGION_WORD}`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: parts.length },
       period: periodOf(item, yearsOf(provinceSeries.flatMap((s) => s.rows))),
       selection: selectionFor(measure.key, parts[0].series, Number.isFinite(point?.year) ? point.year : null, point?.period || null, contract),
-      basis: { unit: "성·시 값", rule: `${measure.labelKo}(${unit}) ${parts.length}개 성·시 값 · ${scope} · 최대값과 중앙값·10~90분위 · 합산하지 않음` },
+      basis: { unit: `${REGION_WORD} 값`, rule: `${measure.labelKo}(${unit}) ${parts.length}개 ${REGION_WORD} 값 · ${scope} · 최대값과 중앙값·10~90분위 · 합산하지 않음` },
       measure: { key: measure.key, label: measure.labelKo, unit },
     };
   }
@@ -868,7 +873,7 @@ function entityCard(elementId, item, pack, contract, rule) {
       preview: { parts: parts.slice(0, 6), unit: "구역 수", scope: "등급별", omitted: 0 },
       period,
       selection,
-      basis: { unit: rule.unit, rule: "평가구역(유역×성×대수층) 1행 = 1구역 · 등급별 구역 수 · 성·시로 합치지 않음" },
+      basis: { unit: rule.unit, rule: IS_DEFAULT_COUNTRY ? "평가구역(유역×성×대수층) 1행 = 1구역 · 등급별 구역 수 · 성·시로 합치지 않음" : `평가구역 1행 = 1구역 · 등급별 구역 수 · ${REGION_WORD} 값으로 합치지 않음` },
       measure: null,
     };
   }
@@ -948,13 +953,13 @@ function regionalCard(elementId, item, pack, contract) {
     // National series rows in these layers are separate indicators (yearly
     // proxies, wind roses), not a total of the province column; the card
     // leads with the largest province and states the distribution.
-    headline: { value: `${formatNumber(top.value)} ${unit}`, label: `${chosen.label} 최대 · ${top.label} · ${byProvince.size}개 성·시 중 · ${period}` },
-    preview: { parts: parts.slice(0, 5), unit, scope: `${chosen.label} 상위 5개 성·시`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: byProvince.size },
+    headline: { value: `${formatNumber(top.value)} ${unit}`, label: `${chosen.label} 최대 · ${top.label} · ${byProvince.size}개 ${REGION_WORD} 중 · ${period}` },
+    preview: { parts: parts.slice(0, 5), unit, scope: `${chosen.label} 상위 5개 ${REGION_WORD}`, median: median(values), range: { min: quantile(values, 0), p10: quantile(values, 0.1), p90: quantile(values, 0.9), max: quantile(values, 1) }, provinces: byProvince.size },
     period,
     // The province screen (PublicRegionScenarioSummaryV138) reads its measure
     // from dim.regionMeasure; B-040 opened on 심도 2km while the card showed 1km.
     selection: { measure: null, sex: null, year: null, period: null, dimensions: { regionMeasure: chosen.sourceKey } },
-    basis: { unit: "성·시 값", rule: `${chosen.label}(${unit}) ${byProvince.size}개 성·시 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만` },
+    basis: { unit: `${REGION_WORD} 값`, rule: `${chosen.label}(${unit}) ${byProvince.size}개 ${REGION_WORD} 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만` },
     measure: { key: chosen.sourceKey, label: chosen.label, unit },
   };
 }
@@ -989,8 +994,8 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
   const scenarioLabel = scenario ? scenario.replace(/^ssp(\d)(\d)(\d)$/u, "SSP$1-$2.$3") : "관측 기반";
   return {
     kind: "spatial-trend",
-    headline: { value: `${formatNumber(anchor.value, 1)} ${unit}`, label: `${chosen.label} · 63개 성·시 중앙값 · ${anchor.year}년${scenario ? ` · ${scenarioLabel}` : ""}` },
-    preview: { points: points.filter((point, index) => index % Math.max(1, Math.floor(points.length / 40)) === 0 || point === anchor), unit, seriesLabel: `${scenarioLabel} · 성·시 중앙값`, range: { p10: quantile(anchorValues, 0.1), p90: quantile(anchorValues, 0.9) }, scenarios: scenarios.length, provinces: new Set(scenarioRows.map((row) => row.normalizedAttributes?.지역명_로마자 || row.name)).size, historicalUntil: options.observed ? null : 2014 },
+    headline: { value: `${formatNumber(anchor.value, 1)} ${unit}`, label: `${chosen.label} · ${anchorValues.length}개 ${REGION_WORD} 중앙값 · ${anchor.year}년${scenario ? ` · ${scenarioLabel}` : ""}` },
+    preview: { points: points.filter((point, index) => index % Math.max(1, Math.floor(points.length / 40)) === 0 || point === anchor), unit, seriesLabel: `${scenarioLabel} · ${REGION_WORD} 중앙값`, range: { p10: quantile(anchorValues, 0.1), p90: quantile(anchorValues, 0.9) }, scenarios: scenarios.length, provinces: new Set(scenarioRows.map((row) => row.normalizedAttributes?.지역명_로마자 || row.name)).size, historicalUntil: options.observed ? null : 2014 },
     period: (() => {
       const allYears = rows.map(yearOf).filter(Number.isFinite);
       const minYear = Math.min(...allYears);
@@ -998,7 +1003,7 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
       return options.observed ? `${minYear}–${maxYear}년` : `${minYear}–${maxYear}년 (과거 모형 ${minYear}–2014 · 전망 2015–${maxYear})`;
     })(),
     selection: { measure: null, sex: null, year: anchor.year, period: null, dimensions: scenario ? { regionMeasure: chosen.sourceKey, scenario } : { regionMeasure: chosen.sourceKey } },
-    basis: { unit: "성·시 값", rule: `${chosen.label} ${scenario ? `${scenarioLabel} 시나리오의 ` : ""}63개 성·시 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님${scenario ? " · 과거(historical)와 SSP 구간은 잇지 않음" : ""}` },
+    basis: { unit: `${REGION_WORD} 값`, rule: `${chosen.label} ${scenario ? `${scenarioLabel} 시나리오의 ` : ""}${anchorValues.length}개 ${REGION_WORD} 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님${scenario ? " · 과거(historical)와 SSP 구간은 잇지 않음" : ""}` },
     measure: { key: chosen.sourceKey, label: chosen.label, unit },
   };
 }

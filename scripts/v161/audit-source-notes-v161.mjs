@@ -89,10 +89,12 @@ export const CONTENT_ALLOWLIST_V161 = [
   [/수집현황\s*현지조사/gu, "E-004 데이터 값(수집 현황 분류)"],
   // "해당없음" as a data value (not a source): scoped to the element whose
   // detail shows it, so the same word in any other place still fails.
-  [/해당없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
+  // Bangladesh's delivery writes the same value with a space (V158-B2b).
+  [/해당\s?없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
   [/(?<=\d{4})해당 없음/gu, "E-012 표의 결측 사유 열 값('해당 없음' = 결측 아님)", ["E-012"]],
   [/해당 없음\(NMA 자체가/gu, "C-007 데이터 값(host 여부 설명)", ["C-007"]],
   [/한국 관련:\s*해당없음/gu, "A-029 데이터 값(협정의 한국 관련 여부)", ["A-029"]],
+  [/발효일:\s*해당 없음\(미발효\)/gu, "A-029 데이터 값(미발효 협정의 발효일 — 발효 전이라 날짜가 없음)", ["A-029"]],
 ];
 const URL_PATTERN_V161 = /https?:\/\/[^\s"'<>]+/gu;
 

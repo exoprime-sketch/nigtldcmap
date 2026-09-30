@@ -209,3 +209,27 @@ describe("otherCountryTermsV158: platform sources, no fetch required", () => {
     expect(otherCountryTermsV158("BGD")).toBe(otherCountryTermsV158("BGD"));
   });
 });
+
+describe("buildOtherCountryTermsV158: another country's level-1 word (V158-B2b)", () => {
+  const ADMIN_UNITS = [
+    { iso3: "XTS", label: "시험도" },
+    { iso3: "YYA", label: "가상주" },
+    { iso3: "ZZB", label: "Province" },
+  ];
+
+  it("counts another country's Korean level-1 word, never the displayed country's own", () => {
+    const terms = buildOtherCountryTermsV158({ displayedIso3: "XTS", countries: FAKE_COUNTRIES, regionEntries: [], adminUnits: ADMIN_UNITS });
+    expect(terms.find((t) => t.term === "가상주")).toEqual({ term: "가상주", script: "hangul", iso3: "YYA", kind: "admin-unit" });
+    expect(terms.map((t) => t.term)).not.toContain("시험도");
+  });
+
+  it("ignores a word that is not Korean and one the displayed country shares", () => {
+    const terms = buildOtherCountryTermsV158({
+      displayedIso3: "XTS",
+      countries: FAKE_COUNTRIES,
+      regionEntries: [],
+      adminUnits: [...ADMIN_UNITS, { iso3: "XTS", label: "가상주" }],
+    });
+    expect(terms.filter((t) => t.kind === "admin-unit")).toEqual([]);
+  });
+});

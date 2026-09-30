@@ -46,12 +46,10 @@
     {
       "axisGroupKey": "measure-e17bff1f7df0|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "category": "소각 실적",
-        "technology": "해당없음"
+        "category": "소각 실적"
       },
       "dimensions": {
-        "category": "소각 실적",
-        "technology": "해당없음"
+        "category": "소각 실적"
       },
       "displayLabel": "탄소크레딧 발행·소각 실적 · registry_summary",
       "indicatorId": "C-025_registry_summary",
@@ -62,7 +60,7 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-e17bff1f7df0|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=소각 실적|technology=해당없음|C-025_registry_summary",
+      "seriesKey": "measure-e17bff1f7df0|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=소각 실적|C-025_registry_summary",
       "sourceCaveat": "[raw] ([raw]\\C-025\\) C-025_탄소크레딧 발행·소각 실적_Berkeley_VROD_v2026-06_BGD.csv · C-025_탄소크레딧 발행·소각 실적_BGD_CarbonMarketFramework_DoE_MoEFCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 4개(C-025_project_name·_issued_volume·_retired_volume 및 출처 접미사 _unfccc·_berkeley)를 레코드 유형 2개로 통합하고, 범용 속성 열(속성1~속성23)에 들어 있던 값을 의미가 드러나는 속성 열로 옮김. [정의·범위] 1행 = 집계 항목 1건(8행) — CDM 관련 4건(정부 자체 집계 3 + 등록부 기준 1, 미확보) + 자발적시장 4건(VCS 건수 · GS 건수 · 소각 누계 · 발행 누계). [출처 구분 필수] 「[집계] 출처 구분」 열로 정부 자체 집계와 등록부·VROD 집계를 구분함 — 기준시점(정부 CER 집계는 2020년 기준)과 집계정의가 달라 서로 대체하거나 합산하면 안 됨. [검산] 소각 누계 11,835,135 tCO₂e와 발행 누계 43,087,455 tCO₂e는 C-025_credit_project 177행의 합계와 일치함. 발행 누계는 구서식에 없던 항목으로 프로젝트 행 합계로 산출하여 추가함. [정합] 「제6.4조 전환 승인 11건」은 정부 발표값이며, UNFCCC 전환목록상 실제 전환 완료 7건(C-006 참조)과 다름 — 두 수치를 각각 원문대로 수록하고 차이를 비고에 남김.",
       "sourceLabel": "탄소크레딧 발행·소각 실적",
       "sourceLabelEn": "Carbon Credit Issuance and Retirement",
