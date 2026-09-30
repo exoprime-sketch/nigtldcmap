@@ -20,7 +20,8 @@
 - CLAUDE.md에 2줄을 추가했습니다(보고 전 게이트 실행, gate-lock).
 
 ## Preview
-PREVIEW_URL
+https://nigtldcmap-e6622aj3q-exoprime-5142s-projects.vercel.app
+- 확인 경로 예: https://nigtldcmap-e6622aj3q-exoprime-5142s-projects.vercel.app/?view=data&country=VNM&element=A-027 → '자료 출처·상세 데이터' 펼치기 → 원자료 표
 
 ## 판정표(qa:acceptance:v162, VNM + BGD 폴백)
 | 국가 | 영역 | 검사 | 판정 | 실측 |
