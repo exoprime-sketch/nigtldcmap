@@ -334,9 +334,9 @@ function main() {
       description: applyOverride(elementId, "description", text(row[c("상세 설명")])),
       usage: applyOverride(elementId, "usage", text(row[c("활용 방법")])),
       definitionKo: text(row[c("정의(국문)")]),
-      sourceOrg: text(row[c("출처기관")]),
-      refLink: text(row[c("참고문헌 링크")]),
-      refApa: text(row[c("참고문헌(APA)")]),
+      sourceOrg: applyOverride(elementId, "sourceOrg", text(row[c("출처기관")])),
+      refLink: applyOverride(elementId, "refLink", text(row[c("참고문헌 링크")])),
+      refApa: applyOverride(elementId, "refApa", text(row[c("참고문헌(APA)")])),
       checkedAt: text(row[c("확인일자")]).slice(0, 10),
       decision: text(row[c("금년도 최종 결정")]) || null,
       decisionNote: decisionNote(text(row[c("처리방향")])),
@@ -536,7 +536,7 @@ function writeCorrections() {
   writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
 }
 
-const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터" };
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
 
 function mdCell(value) {
   return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");

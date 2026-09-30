@@ -117,10 +117,12 @@ export default function PublicSourcePanelV126({
     populatedYears.length > 0
       ? populatedYears
       : uniquePublicValuesV126(indicators.map((item) => item.referenceYear));
+  // V161: "해당없음" is the delivery's way of saying there is no unit - left
+  // out like any unstated value, not printed as a unit.
   const units = uniquePublicValuesV126([
     ...indicators.map((item) => item.unit),
     ...observations.map((item) => item.unit),
-  ]);
+  ]).filter((unit) => !/^해당\s*없음$/u.test(unit));
   const licenses = uniquePublicValuesV126([
     // V161: a licence line can end with a working note ("다운로드 제공 대상은 …
     // 용역사가 재편집한 표준서식 자료임.") - judged like every source display.

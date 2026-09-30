@@ -34,7 +34,7 @@ describe("the finder's source filter never lists an internal review note", () =>
   });
 
   test("no public source name still carries a status placeholder or a compiler note", () => {
-    const marker = /확인필요|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d/u;
+    const marker = /확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|생성\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d/u;
     const offenders = CATALOG.elements.flatMap((element) => publicSourceOrganizations(element.elementId).filter((name) => marker.test(name)).map((name) => `${element.elementId}: ${name}`));
     expect(offenders).toEqual([]);
   });
@@ -47,6 +47,8 @@ describe("the finder's source filter never lists an internal review note", () =>
     ["E-018", "NIGT 취합"],
     ["E-019", "NIGT 취합"],
     ["E-020", "KEITI 외"],
+    // "해당없음 — 공개 원천 부재. … 생성 예정": a plan, not a source (V161-5)
+    ["E-011", "Portulans Institute"],
   ])("%s: every recorded organisation was a note, so the card's own source name (%s) is used", (elementId, sourceLabel) => {
     expect(publicSourceOrganizations(elementId)).toEqual([sourceLabel]);
   });

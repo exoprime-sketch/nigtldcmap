@@ -43,6 +43,9 @@ describe("publicSourceOrganizationV136_1 - the project's working notes (V161)", 
     expect(publicSourceOrganizationV136_1("확인필요")).toBeNull();
     // the card summary builder's own placeholder for "no organisation" (C-021)
     expect(publicSourceOrganizationV136_1("제공기관 확인")).toBeNull();
+    // a source written as a plan (E-011) and a plan for the attribution
+    expect(publicSourceOrganizationV136_1("해당없음 — 공개 원천 부재. 전문가 평가·현장조사로 생성 예정")).toBeNull();
+    expect(publicSourceOrganizationV136_1("현지조사 수행 시 동의 범위에 따라 기재 예정")).toBeNull();
     expect(publicSourceOrganizationV136_1("연구진 설정(발주처 협의 예정)")).toBeNull();
     expect(publicSourceOrganizationV136_1("현지조사(예정)")).toBeNull();
   });
