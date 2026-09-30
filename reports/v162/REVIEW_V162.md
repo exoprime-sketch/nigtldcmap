@@ -174,7 +174,17 @@ e2e `detail-all`의 A-002·A-019 "첫 선택 상자가 화면을 바꾸지 않�
 
 ## 검증
 
-VERIFY_TABLE
+| 항목 | 결과 |
+|---|---|
+| tsc | 오류 0 |
+| test:unit | 614/614 |
+| 1층 컨트롤 전수 점검(146) | 수정 전 29건(28개 요소) → 수정 후 0건, 실행 오류 0 (`reports/v162/layer-controls-audit-v162*.md`) |
+| e2e detail-all(146 + 제외 6) | 152/152 (A-002·A-019 포함). 수정 전 main은 A-002·A-019 실패 |
+| production 빌드(CI=true, 경고=오류) | 성공 |
+| finalize:v151(1차) | 실패 — public-copy:v134가 미입고 3개의 '자료 수집 상태' 제목을 기대(c로 제거). 릴리스 감사는 첫 실패에서 멈춰 이후 단계 미실행 |
+| 이후 단계 개별 실행 | 20개 중 19 PASS, detail-hierarchy:v135만 같은 원인 → 기대값 변경(사유 `EXPECTATION_CHANGES_V162.md`) |
+| finalize:v151(2차, 마지막) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 35(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 24/24 |
+| 게이트 반복 | 2회(규칙 한도 이내) |
 
 ## 캡처(1440px)
 
