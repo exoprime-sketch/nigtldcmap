@@ -23,6 +23,7 @@
  */
 import { spawnSync } from "node:child_process";
 import { exclusionDecisionsV158 } from "../v158/exclusion-decisions-v158.mjs";
+import { readZipMembersV158 } from "../v158/download-zip-v158.mjs";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -193,17 +194,13 @@ function decisionNote(direction) {
 }
 
 // ---------------------------------------------------------------- caution countries
+// Countries the platform publishes (status "live" in the country registry).
+// A country whose data tree is being prepared (BGD since V158) is not one of
+// them: until it goes live the use-case cautions, shared by every country
+// screen, keep "일부 나라" for it instead of its name.
 function registryCountries() {
-  const dataRoot = resolve(ROOT, "public/data");
-  const iso3 = new Set();
-  for (const entry of readdirSync(dataRoot, { withFileTypes: true })) {
-    const manifest = resolve(dataRoot, entry.name, "v2/manifest.json");
-    if (!entry.isDirectory() || !existsSync(manifest)) continue;
-    const parsed = JSON.parse(readFileSync(manifest, "utf8"));
-    const code = parsed.countryIso3 || parsed.country?.iso3;
-    if (code) iso3.add(String(code).toUpperCase());
-  }
-  return iso3;
+  const registry = JSON.parse(readFileSync(resolve(ROOT, "public/data/countries.json"), "utf8"));
+  return new Set((registry.countries || []).filter((country) => country.status === "live").map((country) => String(country.iso3).toUpperCase()));
 }
 
 function priorityCountries() {
@@ -246,15 +243,53 @@ function particleFor(word, particle) {
 }
 
 // ---------------------------------------------------------------- indicators
+// The indicator ids the downloads carry. Since V158 each element's download is
+// a ZIP holding `<id>.json` (read through the V158 reader); a loose `<id>.json`
+// from before V158 is still read.
 function catalogIndicators() {
   const dir = resolve(ROOT, "public/data/vietnam/v2/downloads");
   const ids = new Set();
+  const collect = (parsed) => {
+    for (const indicator of parsed?.indicators || []) if (indicator.indicatorId) ids.add(indicator.indicatorId);
+  };
   for (const file of readdirSync(dir)) {
-    if (!file.endsWith(".json")) continue;
-    const parsed = JSON.parse(readFileSync(resolve(dir, file), "utf8"));
-    for (const indicator of parsed.indicators || []) if (indicator.indicatorId) ids.add(indicator.indicatorId);
+    if (file.endsWith(".zip")) {
+      const member = readZipMembersV158(resolve(dir, file)).get(file.replace(/\.zip$/, ".json"));
+      if (member) collect(JSON.parse(member.toString("utf8")));
+    } else if (file.endsWith(".json")) {
+      collect(JSON.parse(readFileSync(resolve(dir, file), "utf8")));
+    }
   }
+  if (!ids.size) throw new Error(`no indicator ids under ${dir} - the download format changed?`);
   return ids;
+}
+
+// A re-import must not lose use-case data mappings: every indicator that was
+// mapped (exact or prefix) in the committed useCasesV159.json has to stay mapped.
+function lostMappings(cases) {
+  const path = resolve(OUT_DIR, "useCasesV159.json");
+  if (!existsSync(path)) return { previous: 0, next: 0, lost: [] };
+  const isMapped = (item) => item.mapped === "exact" || item.mapped === "prefix";
+  const key = (item, entry) => `${item.elementId}#${item.caseNo}#${entry.indicatorId}`;
+  const nextMapped = new Set();
+  let next = 0;
+  for (const item of cases) {
+    for (const entry of item.dataUsed || []) {
+      if (!isMapped(entry)) continue;
+      next += 1;
+      nextMapped.add(key(item, entry));
+    }
+  }
+  const lost = [];
+  let previous = 0;
+  for (const item of JSON.parse(readFileSync(path, "utf8")).cases || []) {
+    for (const entry of item.dataUsed || []) {
+      if (!isMapped(entry)) continue;
+      previous += 1;
+      if (!nextMapped.has(key(item, entry))) lost.push(`${item.elementId} 사례 ${item.caseNo}: ${entry.indicatorId} (${entry.mapped})`);
+    }
+  }
+  return { previous, next, lost };
 }
 
 function parseDataUsed(source, catalog) {
@@ -485,6 +520,13 @@ function main() {
     "useCasesV159.json": { schemaVersion: "v159-use-cases-1", generatedFrom, registryCountries: [...registry], cases },
     "datasetTypologyV159.json": { schemaVersion: "v159-typology-1", generatedFrom, displayTypes: Object.values(DISPLAY_TYPES), structures: STRUCTURES, rows: typology },
   };
+
+  const mappingGuard = lostMappings(cases);
+  if (mappingGuard.lost.length || mappingGuard.next < mappingGuard.previous) {
+    console.error(`use-case data mappings dropped: ${mappingGuard.previous} -> ${mappingGuard.next} (nothing written)`);
+    for (const line of mappingGuard.lost) console.error(`  lost: ${line}`);
+    process.exit(1);
+  }
 
   if (CHECK) {
     let stale = 0;
