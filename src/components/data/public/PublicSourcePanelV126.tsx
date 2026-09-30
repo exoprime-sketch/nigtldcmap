@@ -15,11 +15,7 @@ import {
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import { useEffect, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
-import periodStatementsV162 from "../../../data/visualization/periodStatementsV162.json";
-
-type PeriodStatementV162 = { kind: "data" | "reference" | "plan"; text: string };
-const PERIOD_STATEMENTS_V162 = periodStatementsV162.elements as Record<string, PeriodStatementV162>;
-const PERIOD_LABELS_V162 = periodStatementsV162.labels as Record<PeriodStatementV162["kind"], string>;
+import { periodStatementV162 } from "../../../data/visualization/periodStatementV162";
 import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
@@ -151,8 +147,8 @@ export default function PublicSourcePanelV126({
   // V162: an element whose period was decided from its source fields states
   // it with its own label - '기준 시점 2026-08-14 수집' for a list collected
   // on that date - instead of the years the rows happen to carry.
-  const statement = elementId && dataCountryV158 === periodStatementsV162.country ? PERIOD_STATEMENTS_V162[elementId] : undefined;
-  const periodLabel = statement ? PERIOD_LABELS_V162[statement.kind] : "자료기간";
+  const statement = periodStatementV162(elementId, dataCountryV158);
+  const periodLabel = statement ? statement.label : "자료기간";
   const period = pending ? "" : statement ? statement.text : summarizeYearsV126(years);
   const sourceLine = (
     pending
