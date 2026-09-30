@@ -93,25 +93,33 @@ const tableHeadLine = `| ${header.join(" | ")} |`;
 const tableRuleLine = `|${header.map(() => "---").join("|")}|`;
 const tableRows = [];
 let notProvidedVnm = 0, notProvidedBgd = 0, onMapVnm = 0, onMapBgd = 0;
+let excludedVnm = 0, excludedBgd = 0;
+const preparingVnm = [], preparingBgd = [];
 for (const elementId of rows) {
   const typologyRow = typologyById.get(elementId);
   const name = VNM.byElement.get(elementId)?.elementLabel || BGD?.byElement.get(elementId)?.elementLabel || "";
   const su = typologyRow ? `${typologyRow.structure}·${typologyRow.displayType}` : "?";
   const vnmCell = cellFor(VNM, elementId);
   const bgdCell = cellFor(BGD, elementId);
-  if (vnmCell.startsWith("미입고")) notProvidedVnm += 1;
-  if (bgdCell.startsWith("미입고")) notProvidedBgd += 1;
+  if (vnmCell.startsWith("미입고")) { notProvidedVnm += 1; preparingVnm.push(elementId); }
+  if (bgdCell.startsWith("미입고")) { notProvidedBgd += 1; preparingBgd.push(elementId); }
   if (vnmCell.includes("지도○")) onMapVnm += 1;
   if (bgdCell.includes("지도○")) onMapBgd += 1;
+  if (VNM.byElement.get(elementId)?.publicStatus === "excluded") excludedVnm += 1;
+  if (BGD?.byElement.get(elementId)?.publicStatus === "excluded") excludedBgd += 1;
   tableRows.push(`| ${elementId} | ${String(name).replace(/\|/gu, "/")} | ${su} | ${vnmCell} | ${bgdCell} |`);
 }
 lines.push(tableHeadLine, tableRuleLine, ...tableRows);
 lines.push("");
 lines.push("## 집계");
 lines.push("");
-lines.push(`- 요소 수: ${rows.length}`);
-lines.push(`- VNM 지도 표출(활성 레이어): ${onMapVnm} · 미입고: ${notProvidedVnm}`);
-lines.push(`- BGD 지도 표출(활성 레이어): ${onMapBgd}${BGD ? "" : "(국가 미등록)"} · 미입고: ${notProvidedBgd}`);
+lines.push(`- 요소 수(프레임워크 전체): ${rows.length}`);
+// 공개 = 전체 - 제외(publicStatus "excluded", 목록·집계에서 완전히 빠짐). '데이터
+// 준비 중'(not-provided)은 공개 목록에는 있고 값만 없는 상태라 따로 뺀다.
+lines.push(`- VNM 공개: ${rows.length - excludedVnm}(전체 ${rows.length} - 제외 ${excludedVnm}) · 그중 데이터 준비 중: ${notProvidedVnm}${preparingVnm.length ? `(${preparingVnm.join("·")})` : ""}`);
+lines.push(`- BGD 공개: ${BGD ? rows.length - excludedBgd : "–"}${BGD ? `(전체 ${rows.length} - 제외 ${excludedBgd})` : "(국가 미등록)"} · 그중 데이터 준비 중: ${notProvidedBgd}${preparingBgd.length ? `(${preparingBgd.slice(0, 10).join("·")}${preparingBgd.length > 10 ? ` 외 ${preparingBgd.length - 10}건` : ""})` : ""}`);
+lines.push(`- VNM 지도 표출(활성 레이어): ${onMapVnm}`);
+lines.push(`- BGD 지도 표출(활성 레이어): ${onMapBgd}${BGD ? "" : "(국가 미등록)"}`);
 
 mkdirSync(resolve(ROOT, "reports/p5"), { recursive: true });
 const previewPath = resolve(ROOT, "reports/p5/tracker-preview.md");
@@ -134,8 +142,8 @@ if (WRITE_TRACKER) {
 process.stdout.write(
   `${JSON.stringify({
     type: "summary", schema: "p5-tracker-preview", elements: rows.length,
-    vnm: { onMap: onMapVnm, notProvided: notProvidedVnm },
-    bgd: BGD ? { onMap: onMapBgd, notProvided: notProvidedBgd } : "국가 미등록",
+    vnm: { published: rows.length - excludedVnm, excluded: excludedVnm, onMap: onMapVnm, notProvided: notProvidedVnm },
+    bgd: BGD ? { published: rows.length - excludedBgd, excluded: excludedBgd, onMap: onMapBgd, notProvided: notProvidedBgd } : "국가 미등록",
     preview: previewPath.replace(ROOT, "").replace(/\\/gu, "/"),
     trackerWritten,
   })}\n`
