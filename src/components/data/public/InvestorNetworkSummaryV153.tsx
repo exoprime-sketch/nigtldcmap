@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
@@ -54,14 +55,16 @@ export default function InvestorNetworkSummaryV153({ entities }: Props) {
       abroad: sortByTitle(titled.filter((row) => row.location === ABROAD)),
     };
   }, [entities]);
+  // V162 (P12-B): a city (or a "; " list of them) as "한글명 (현지명)".
+  const regionText = useRegionTextV162("E-006");
   const cityRows = useMemo(() => {
     const counts = new Map<string, number>();
     entities.forEach((entity) => {
       const city = String(entity.normalizedAttributes?.city || "도시 미기재");
       counts.set(city, (counts.get(city) || 0) + 1);
     });
-    return [...counts].sort((a, b) => b[1] - a[1]).map(([city, count]) => ({ id: city, label: city, value: count }));
-  }, [entities]);
+    return [...counts].sort((a, b) => b[1] - a[1]).map(([city, count]) => ({ id: city, label: regionText(city), value: count }));
+  }, [entities, regionText]);
   const selectedRow = [...groups.inVietnam, ...groups.abroad].find((row) => row.entity.recordId === selected) || null;
 
   const list = (rows: typeof groups.inVietnam, testId: string) => (

@@ -67,7 +67,7 @@ export default function PppProcurementSummaryV153({ entities, indicators }: Prop
               <tbody>
                 {model.provinces.map((row) => (
                   <tr key={row.recordId}>
-                    <th scope="row">{row.region}{row.region !== row.regionSource ? `(${row.regionSource})` : ""}</th>
+                    <th scope="row">{row.region}</th>
                     <td className="num">{row.count === null ? "—" : row.count.toLocaleString("ko-KR")}</td>
                     <td>{row.period || "—"}</td>
                     <td><PublicTermTextV134 text={row.sectors || "—"} /></td>

@@ -17,6 +17,7 @@ import {
   publicDownloadStatusV128,
 } from "../data/publicPlatformV128";
 import { isPreparingStatusV160 } from "../data/finderSortV160";
+import { RegionCountryContextV162 } from "../data/geo/regionDisplayV162";
 import type {
   VietnamElementMetaBundleV124,
   VietnamEntityV124,
@@ -998,6 +999,7 @@ export default function CountryDataElementPage({
     ? publicDownloadStatusV128(catalogItem)
     : null;
   return (
+    <RegionCountryContextV162.Provider value={provider.countryIso3}>
     <div
       className="page-shell cdp-page cdp-detail-page-v146"
       data-detail-prepare-ms={prepareMs === null ? undefined : prepareMs}
@@ -1220,5 +1222,6 @@ export default function CountryDataElementPage({
         </>
       )}
     </div>
+    </RegionCountryContextV162.Provider>
   );
 }

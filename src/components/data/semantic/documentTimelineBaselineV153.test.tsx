@@ -10,6 +10,7 @@ import type { ElementVisualizationContractV125 } from "../../../data/visualizati
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 import { countryPublicDirV158 } from "../../../data/countryContext";
 import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
+import { RegionCountryContextV162 } from "../../../data/geo/regionDisplayV162";
 
 /**
  * V153-D3 adds a platform-edited description under the timeline entries of
@@ -36,10 +37,20 @@ let root: Root;
 beforeEach(() => { container = document.createElement("div"); document.body.appendChild(container); root = createRoot(container); });
 afterEach(() => { act(() => root.unmount()); container.remove(); });
 
-function renderTimeline(elementId: string): HTMLElement {
+/**
+ * V162 (P12-B) shows a document's 지역 as "한글명 (현지명)" through the region
+ * dictionary. The baseline measures the renderer, so it is taken with a
+ * country that has no dictionary (the value stays as delivered, as before);
+ * the region display itself is checked by its own test below.
+ */
+const NO_REGION_DICTIONARY_V162 = "ZZZ";
+
+function renderTimeline(elementId: string, regionCountry = NO_REGION_DICTIONARY_V162): HTMLElement {
   const contract = contracts.find((candidate) => candidate.elementId === elementId)!;
   act(() => root.render(
-    <SemanticContractRendererV125 contract={contract} rows={[]} contextRows={[]} entities={entitiesOf(elementId)} countryNameKo="베트남" showRawTable={false} />
+    <RegionCountryContextV162.Provider value={regionCountry}>
+      <SemanticContractRendererV125 contract={contract} rows={[]} contextRows={[]} entities={entitiesOf(elementId)} countryNameKo="베트남" showRawTable={false} />
+    </RegionCountryContextV162.Provider>
   ));
   return container.querySelector<HTMLElement>('[data-testid="document-timeline-v140"]')!;
 }
@@ -75,6 +86,18 @@ function withoutDescription(entry: Element): string {
   clone.normalize();
   return clone.outerHTML;
 }
+
+describe("document timeline region names (V162 P12-B)", () => {
+  test("a document's 지역 reads 한글명 (현지명) for Viet Nam", () => {
+    const timeline = renderTimeline("C-009", "VNM");
+    const regions = [...timeline.querySelectorAll("dt")]
+      .filter((dt) => dt.textContent === "지역")
+      .map((dt) => dt.nextElementSibling?.textContent || "");
+    expect(regions).toContain("다낭 (Da Nang city)");
+    expect(regions).toContain("잘라이 (Gia Lai)");
+    expect(regions.every((value) => !/^(Da Nang city|Gia Lai|Quang Ninh|Nghe An|Ha Noi)$/u.test(value))).toBe(true);
+  });
+});
 
 describe("document timeline around the V153 description line", () => {
   test("C-016 has no description keys and its markup is byte-identical to the pre-V153 renderer", () => {

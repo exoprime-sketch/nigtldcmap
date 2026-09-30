@@ -10,6 +10,7 @@ import regionNames from "./regionNamesV161.json";
 import {
   composeRegionNameV161,
   formatRegionName,
+  formatRegionTextV162,
   regionMergeNoteV161,
   regionNameEntryV161,
   regionNameKeyV161,
@@ -106,6 +107,21 @@ describe("display form", () => {
     expect(formatRegionName({ country: "VNM", raw: "" })).toBe("");
   });
 
+  // V162 (user decision 2026-09-29): a rule-based name under review is never
+  // shown in Korean - the local spelling alone, in both display modes.
+  test("a pending name shows the local spelling only", () => {
+    expect(formatRegionName({ country: "VNM", raw: "Ba Đình" })).toBe("Ba Đình");
+    expect(formatRegionName({ country: "VNM", raw: "Ba Đình", mode: "label" })).toBe("Ba Đình");
+    expect(regionNameKo({ country: "VNM", raw: "Ba Đình" })).toBe("바딘");
+  });
+
+  test("a list is split and each place formatted on its own", () => {
+    expect(formatRegionTextV162({ country: "VNM", raw: "ThanhHóa · NghệAn", level: "adm1-63" })).toBe("타인호아 (ThanhHóa) · 응에안 (NghệAn)");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Ho Chi Minh City; Hanoi" })).toBe("호찌민 (Ho Chi Minh City); 하노이 (Hanoi)");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Hanoi 외 8개 지역" })).toBe("Hanoi 외 8개 지역");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Singapore · Ba Đình" })).toBe("Singapore · Ba Đình");
+  });
+
   test("a pre-2025 province carries the unit it merged into", () => {
     expect(regionMergeNoteV161({ country: "VNM", raw: "Yên Bái" })).toBe("2025.7.1 라오까이로 통합");
     expect(regionMergeNoteV161({ country: "VNM", raw: "Bình Dương" })).toBe("2025.7.1 호찌민으로 통합");
@@ -138,8 +154,13 @@ describe("Bangladesh", () => {
     expect(divisions.every((entry) => entry.reviewStatus === "confirmed")).toBe(true);
     expect(districts).toHaveLength(64);
     expect(districts.every((entry) => Object.keys(DIVISIONS).includes(entry.parent || ""))).toBe(true);
-    expect(formatRegionName({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("콕스바자르 (Cox's Bazar)");
-    expect(formatRegionName({ country: "BGD", raw: "Jashore", level: "district" })).toBe("조쇼르 (Jashore)");
+    // Cox's Bazar is a pending district (Korean Wikipedia spelling, not yet
+    // reviewed): V162 shows the local spelling only; the proposal stays in
+    // the dictionary for review.
+    expect(formatRegionName({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("Cox's Bazar");
+    expect(regionNameKo({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("콕스바자르");
+    expect(formatRegionName({ country: "BGD", raw: "Jashore", level: "district" })).toBe("Jashore");
+    expect(regionNameKo({ country: "BGD", raw: "Jashore", level: "district" })).toBe("조쇼르");
   });
 });
 

@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo, useState } from "react";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -92,6 +93,9 @@ export default function ProvinceSeriesAnalysisV140({
   primaryTitle,
 }: Props) {
   const regionKey = useMemo(() => provinceDimensionKeyV140(rows) || "detail", [rows]);
+  // V162 (P12-B): a province as the reader sees it; the source spelling stays
+  // the selector value and the key.
+  const regionText = useRegionTextV162(elementId);
   const numeric = useMemo(() => rows.filter(isNumericRow), [rows]);
 
   // Measures that actually carry numbers, in the contract's order of appearance.
@@ -195,7 +199,7 @@ export default function ProvinceSeriesAnalysisV140({
   );
   const yearPoints = regionSeries.filter((entry) => isYearTime(entry.time));
   const chartSeries: TimeSeriesV127[] = measure && yearPoints.length >= 3
-    ? [{ id: region, label: `${region} · ${measure.label}`, unit: measure.unit, points: yearPoints.map((entry) => ({ id: entry.time, x: Number(entry.time), value: entry.value })) }]
+    ? [{ id: region, label: `${regionText(region)} · ${measure.label}`, unit: measure.unit, points: yearPoints.map((entry) => ({ id: entry.time, x: Number(entry.time), value: entry.value })) }]
     : [];
 
   // Other measures at the same region and time (C-016: the technologies).
@@ -274,7 +278,7 @@ export default function ProvinceSeriesAnalysisV140({
           <select value={region} onChange={(event) => update({ region: event.target.value })} data-testid="psa140-region">
             <option value={ALL_REGIONS}>전체 성·시 비교</option>
             {regions.map((name) => (
-              <option key={name} value={name}>{name}</option>
+              <option key={name} value={name}>{regionText(name)}</option>
             ))}
           </select>
         </label>
@@ -306,7 +310,7 @@ export default function ProvinceSeriesAnalysisV140({
             <PublicTermTextV134
               text={
                 region
-                  ? chartSeries.length ? `${region} ${measure.label} 추이` : `${region} ${measure.label} · ${timeLabel}`
+                  ? chartSeries.length ? `${regionText(region)} ${measure.label} 추이` : `${regionText(region)} ${measure.label} · ${timeLabel}`
                   : primaryTitle || `${elementTitle} 성·시별 비교 · ${timeLabel}`
               }
             />
@@ -315,7 +319,7 @@ export default function ProvinceSeriesAnalysisV140({
         {tableOpen ? (
           <div className="psa140__table-wrap" data-testid="psa140-table">
             <table>
-              <caption>{region ? `${region} · ${measure.label} (${unit})` : `${measure.label} (${unit}) · ${timeLabel} · 성·시별`}</caption>
+              <caption>{region ? `${regionText(region)} · ${measure.label} (${unit})` : `${measure.label} (${unit}) · ${timeLabel} · 성·시별`}</caption>
               <thead>
                 <tr>
                   <th scope="col">{region ? (isYearTime(time) ? "연도" : "기간") : "성·시"}</th>
@@ -333,7 +337,7 @@ export default function ProvinceSeriesAnalysisV140({
                     ))
                   : comparison.map((entry, index) => (
                       <tr key={entry.region}>
-                        <th scope="row">{entry.region}</th>
+                        <th scope="row">{regionText(entry.region)}</th>
                         <td>{format(entry.row.value)}</td>
                         <td>{index + 1}</td>
                       </tr>
@@ -343,7 +347,7 @@ export default function ProvinceSeriesAnalysisV140({
           </div>
         ) : region && chartSeries.length ? (
           <InteractiveTimeSeriesChartV127
-            ariaLabel={`${region} ${measure.label} 추이`}
+            ariaLabel={`${regionText(region)} ${measure.label} 추이`}
             series={chartSeries}
             unit={unit}
             xAxisTitle="연도"
@@ -356,7 +360,7 @@ export default function ProvinceSeriesAnalysisV140({
             zoom={{ enabled: yearPoints.length > 8, minimumSpan: 4, showRangeBrush: false }}
           />
         ) : region ? (
-          <><ChartAxesV150 x={measure.label} y="기준기간" unit={unit} /><ul className="psa140__bars" data-testid="psa140-region-periods" aria-label={`${region} 기간별 값`}>
+          <><ChartAxesV150 x={measure.label} y="기준기간" unit={unit} /><ul className="psa140__bars" data-testid="psa140-region-periods" aria-label={`${regionText(region)} 기간별 값`}>
             {regionSeries.map((entry) => (
               <li key={entry.time}>
                 <span>{entry.time}</span>
@@ -369,7 +373,7 @@ export default function ProvinceSeriesAnalysisV140({
           <>{rankNoticeV160(false)}<ChartAxesV150 x={measure.label} y="성·시" unit={unit} /><ul className="psa140__bars" data-testid="psa140-comparison" aria-label={`${timeLabel} 성·시별 ${measure.label}`}>
             {comparison.map((entry, index) => (
               <li key={entry.region} {...rankFold.rowProps(index)}>
-                <span>{index + 1}. {entry.region}</span>
+                <span>{index + 1}. {regionText(entry.region)}</span>
                 <SignedBarV146 value={entry.row.value} values={values} />
                 <strong>{format(entry.row.value)}</strong>
               </li>
@@ -382,7 +386,7 @@ export default function ProvinceSeriesAnalysisV140({
         <section className="psa140__panel" aria-labelledby={`psa140-secondary-${elementId}`} data-analysis-block="region-bar">
           <header className="psa140__heading">
             <span>보조 비교</span>
-            <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {region} 위치</h3>
+            <h3 id={`psa140-secondary-${elementId}`}>{timeLabel} 성·시별 비교 · {regionText(region)} 위치</h3>
           </header>
           {rankNoticeV160(true)}
           <ChartAxesV150 x={measure.label} y="성·시" unit={unit} />
@@ -390,7 +394,7 @@ export default function ProvinceSeriesAnalysisV140({
             {comparison.map((entry, index) => {
               return (
                 <li key={entry.region} className={entry.region === region ? "is-selected" : undefined} {...rankFold.rowProps(index, entry.region === region)}>
-                  <span>{index + 1}. {entry.region}</span>
+                  <span>{index + 1}. {regionText(entry.region)}</span>
                   <SignedBarV146 value={entry.row.value} values={values} />
                   <strong>{format(entry.row.value)}</strong>
                 </li>
@@ -408,7 +412,7 @@ export default function ProvinceSeriesAnalysisV140({
         <section className="psa140__panel" aria-labelledby={`psa140-measures-${elementId}`} data-analysis-block="category-bar">
           <header className="psa140__heading">
             <span>항목 비교</span>
-            <h3 id={`psa140-measures-${elementId}`}>{region} · {timeLabel} · 항목별 값</h3>
+            <h3 id={`psa140-measures-${elementId}`}>{regionText(region)} · {timeLabel} · 항목별 값</h3>
           </header>
           <ChartAxesV150 x="값" y="지표" unit={unit} />
           <ul className="psa140__bars" data-testid="psa140-across-measures">
@@ -423,7 +427,7 @@ export default function ProvinceSeriesAnalysisV140({
         </section>
       )}
       <section data-analysis-block="table"><AnalysisSummaryTableV146 title={`${timeLabel} · ${measure.label} 비교표`} rows={[
-        ...(selectedRow ? [{ label: region, value: selectedRow.value, unit, context: `${timeLabel} · ${comparison.length}개 성·시 중 ${rank}위` }] : []),
+        ...(selectedRow ? [{ label: regionText(region), value: selectedRow.value, unit, context: `${timeLabel} · ${comparison.length}개 성·시 중 ${rank}위` }] : []),
         ...(total !== null ? [{ label: `${comparison.length}개 성·시 합계`, value: total, unit, context: `${timeLabel} · 계획 용량(설치 실적 아님)` }] : []),
         ...(median !== null ? [{ label: `${comparison.length}개 성·시 중앙값`, value: median, unit, context: timeLabel }] : []),
       ]} /></section>

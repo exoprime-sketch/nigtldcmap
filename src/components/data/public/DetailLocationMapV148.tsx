@@ -1,3 +1,4 @@
+import { publicRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CountryEntityV122, CountryMapLayerV122 } from "../../../data/countries/countryDataTypesV122";
 import { loadCountryElementEntitiesV122, loadCountryMapIndexV122 } from "../../../data/countries/countryDataFacadeV122";
@@ -115,7 +116,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const extent = [...base.features, ...(geometry?.features || [])].flatMap((f) => coordinatePairsV148(f.geometry.coordinates));
     points.forEach((r) => extent.push([r.longitude!, r.latitude!]));
     const project = overviewProjectionV148(extent, compact ? 360 : 460, 400);
-    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: v.adm1Name, value: v.value, sourceRegion: v.sourceRegion }))
+    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: publicRegionTextV162(v.adm1Name, elementId, countryIso3), value: v.value, sourceRegion: v.sourceRegion }))
       : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || `${f.properties.voltageKv || ""} kV 선로 ${i + 1}`), value: null, sourceRegion: undefined }))
       : points.map((r) => ({ id: r.recordId, label: resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title, value: null, sourceRegion: undefined }));
     const layerColor = LAYER_COLORS[layer.elementId] || "#176a4b";
@@ -124,7 +125,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const categories = new Map(points.map((r, index) => [r.recordId, iconKit ? iconKit.mapIconCategoryV152(layer.elementId, iconProperties[index], layerColor) : null]));
     const iconLegend = iconKit ? iconKit.mapIconLegendEntriesV152(layer.elementId, iconProperties, layerColor, layerTitle) : [];
     return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend };
-  }, [runtime, slice, selection.dimensions, compact, iconKit]);
+  }, [runtime, slice, selection.dimensions, compact, iconKit, elementId, countryIso3]);
 
   if (unavailable) return null;
   if (error) return <section className="detail-map148"><h3>위치·분포</h3><p>지도를 불러오지 못했습니다.</p><button type="button" onClick={() => setRetry((v) => v + 1)}>다시 시도</button></section>;
@@ -175,7 +176,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             const v = model.byCode.get(id);
             const color = data ? mapColorV148(v ? finiteMapValueV148(v.value) : null, model.min, model.max) : lineColorV152(Number(f.properties.voltageKv || f.properties.voltage));
             if (f.geometry.type === "Point") { const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy); if (!iconKit) return <circle key={id} cx={x} cy={y} r={picked === id ? 5 : 3} fill="#a95025" onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>; return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id="world"><circle r={picked === id ? 10 : 8.5} fill="#fff" stroke={picked === id ? "#c04721" : LAYER_COLORS[layer.elementId] || "#a95025"} strokeWidth="2" /><use href={`#${iconKit.mapIconImageIdV152("world")}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} /><title>{model.options.find((o) => o.id === id)?.label}</title></g>; }
-            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${v.adm1Name}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
+            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${publicRegionTextV162(v.adm1Name, elementId, countryIso3)}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
           })}
           {!geometry && model.points.map((r) => {
             const [x, y] = model.project([r.longitude!, r.latitude!]);

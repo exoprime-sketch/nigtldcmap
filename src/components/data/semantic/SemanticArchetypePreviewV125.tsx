@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo } from "react";
 import type {
@@ -147,6 +148,9 @@ export default function SemanticArchetypePreviewV125({
   // asks for the region bars; the national series follows (V153).
   const v153 = useAnalysisContractV153();
   const regionalFirst = contract.elementId === "B-021" && v153?.primary.type === "region-bar";
+  // V162 (P12-B): a place among the dimension values (B-009's provinces)
+  // reads "한글명 (현지명)"; the option value stays the source spelling.
+  const regionText = useRegionTextV162(contract.elementId);
   // Unit per indicator, so entity rows can tell a phone number from a rate
   // before anything is compared (V142).
   const indicatorUnits = useMemo<IndicatorUnitsV142>(
@@ -539,7 +543,7 @@ export default function SemanticArchetypePreviewV125({
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
                 <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
-                <strong><PublicTermTextV134 text={dimensionValueLabelV125(dimension.key, values[0])} /></strong>
+                <strong><PublicTermTextV134 text={regionText(dimensionValueLabelV125(dimension.key, values[0]))} /></strong>
               </p>
             );
           }
@@ -575,7 +579,7 @@ export default function SemanticArchetypePreviewV125({
               )}
               {values.map((value) => (
                 <option key={value} value={value}>
-                  {publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value)}
+                  {regionText(publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value))}
                 </option>
               ))}
             </select>
@@ -652,7 +656,7 @@ export default function SemanticArchetypePreviewV125({
             measureOptions.find((measure) => measure.key === measureKey)?.unit,
             ...additionalDimensions.map((dimension) => {
               const value = dimensions[dimension.key];
-              return value ? dimensionValueLabelV125(dimension.key, value) : "";
+              return value ? regionText(dimensionValueLabelV125(dimension.key, value)) : "";
             }),
             period || "",
           ].filter(Boolean).join(" · ")}

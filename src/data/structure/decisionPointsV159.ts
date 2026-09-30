@@ -1,3 +1,4 @@
+import { formatRegionName } from "../geo/regionNameV161";
 import { displayUnitV150 } from "../visualization/unitDisplayV150";
 import { CLIMATE_TECHNOLOGIES } from "../climateTechnologyCatalog";
 import type { DisplayTypeV159 } from "../spec/specTypesV159";
@@ -201,8 +202,17 @@ function decisionPointsU2(
   const basis = `${atLatestYear[0].label}${atLatestYear[0].period ? ` · ${atLatestYear[0].period}` : latestYear !== null ? ` · ${latestYear}년` : ""}`;
   const sorted = [...atLatestYear].sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
+  // V162 (P12-B): each place is formatted on its own before the list is
+  // joined - "한글명 (현지명)" for a reviewed province, the source spelling
+  // otherwise; the level is the row's own region system (63 or 34 units).
+  const regionDisplay = (row: S2RegionObservationV159) => {
+    const name = row.regionName || row.regionKey || "";
+    return row.regionSystem === "adm1-34" || row.regionSystem === "adm1-63"
+      ? formatRegionName({ country: opts.countryIso3, raw: name, level: row.regionSystem })
+      : name;
+  };
   const formatRegion = (row: S2RegionObservationV159) =>
-    `${row.regionName || row.regionKey}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
+    `${regionDisplay(row)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
 
   const points: DecisionPointV159[] = [];
   const top = sorted.slice(0, 3);

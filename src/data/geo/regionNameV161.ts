@@ -105,12 +105,33 @@ export function composeRegionNameV161(ko: string | null | undefined, local: stri
 /**
  * The display form. `mode: "label"` gives the Korean name alone, for map labels
  * where space is short; a name the dictionary does not know stays as written.
+ * A name still under review (`pending`: rule-based transliterations of
+ * districts and localities) is shown in the local spelling only - an
+ * unreviewed Korean name never reaches the screen (user decision 2026-09-29).
  */
 export function formatRegionName(query: RegionNameQueryV161 & { readonly mode?: "full" | "label" }): string {
   const local = regionNameLocal(query.raw);
-  const ko = regionNameKo(query);
+  const entry = regionNameEntryV161(query);
+  const ko = entry && entry.reviewStatus === "confirmed" ? entry.ko : null;
   if (query.mode === "label") return ko || local;
   return composeRegionNameV161(ko, local);
+}
+
+/** Separators of a place list as the data writes one ("ThanhHóa · NghệAn", "Ho Chi Minh City; Hanoi"). */
+const REGION_LIST_SEPARATOR_V162 = /(\s+·\s+|\s*;\s*)/u;
+
+/**
+ * V162: a region value as shown on a card or a detail screen. A list is split
+ * and each place formatted on its own; the separators are kept. Text that is
+ * not a known place (a sentence, "Hanoi 외 8개 지역") comes back unchanged.
+ */
+export function formatRegionTextV162(query: RegionNameQueryV161): string {
+  const text = String(query.raw ?? "");
+  if (!text.trim()) return text;
+  return text
+    .split(REGION_LIST_SEPARATOR_V162)
+    .map((part, index) => (index % 2 === 1 ? part : part.trim() ? formatRegionName({ ...query, raw: part }) : part))
+    .join("");
 }
 
 function particleRo(word: string): string {

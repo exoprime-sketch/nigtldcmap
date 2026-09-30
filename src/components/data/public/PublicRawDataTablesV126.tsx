@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { useEffect, useMemo, useState } from "react";
 import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -35,12 +36,18 @@ const CONTEXT_DIMENSION_KEYS_V126 = new Set([
   "scenario",
 ]);
 
+/** Entity columns that name a place (V162 P12-B). */
+const PLACE_COLUMNS_V162 = new Set(["city", "regionName", "siteName", "adm1Name34", "adm1Name63"]);
+
 export default function PublicRawDataTablesV126({
   elementId,
   observations,
   entities,
   detailTemplate,
 }: Props) {
+  // V162 (P12-B): places in the table read "한글명 (현지명)" (reviewed names
+  // only); the download keeps the source columns.
+  const regionText = useRegionTextV162(elementId);
   const total = observations.length + entities.length;
   const paginated = total > 500;
   const [open, setOpen] = useState(false);
@@ -135,12 +142,12 @@ export default function PublicRawDataTablesV126({
                       !["year", "period"].includes(key) &&
                       !CONTEXT_DIMENSION_KEYS_V126.has(key)
                   )
-                  .map(([key, value]) => publicDimensionValueV134(key, value))
+                  .map(([key, value]) => regionText(publicDimensionValueV134(key, value)))
                   .filter(Boolean)
                   .join(" · ");
                 const context = dimensions
                   .filter(([key]) => CONTEXT_DIMENSION_KEYS_V126.has(key))
-                  .map(([key, value]) => publicDimensionValueV134(key, value))
+                  .map(([key, value]) => regionText(publicDimensionValueV134(key, value)))
                   .filter(Boolean)
                   .join(" · ");
                 const sourceUrl = publicSourceUrlV126(
@@ -207,10 +214,10 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={titleResolution.title} /></td>
+                    <td><PublicTermTextV134 text={regionText(titleResolution.title)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
-                      <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(attributes[column])} /></td>
+                      <td key={column}><PublicTermTextV134 text={PLACE_COLUMNS_V162.has(column) ? regionText(publicAttributeValueV126(attributes[column])) : publicAttributeValueV126(attributes[column])} /></td>
                     ))}
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
@@ -64,6 +65,8 @@ export default function SeaLevelStationAnalysisV138({
   selectorState,
   onSelectorStateChange,
 }: Props) {
+  // V162 (P12-B): a station named after a province reads "한글명 (현지명)".
+  const regionText = useRegionTextV162("B-008");
   const stations = useMemo(() => {
     const byId = new Map<string, { id: string; label: string; location: string; rows: VietnamEntityV124[] }>();
     for (const entity of entities) {
@@ -73,7 +76,7 @@ export default function SeaLevelStationAnalysisV138({
       const current = byId.get(id) || {
         id,
         label:
-          STATION_NAME_KEYS.map((key) => text(attributes[key])).find(Boolean) || `관측소 ${id}`,
+          regionText(STATION_NAME_KEYS.map((key) => text(attributes[key])).find(Boolean) || "") || `관측소 ${id}`,
         location: text(attributes[LOCATION_KEY]),
         rows: [],
       };
@@ -81,7 +84,7 @@ export default function SeaLevelStationAnalysisV138({
       byId.set(id, current);
     }
     return [...byId.values()].sort((a, b) => a.label.localeCompare(b.label, "vi"));
-  }, [entities]);
+  }, [entities, regionText]);
 
   const requestedStation = selectorState.dimensions.station || "";
   const station =

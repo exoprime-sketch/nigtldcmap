@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
@@ -7,7 +8,12 @@ import "./detail-analysis-v146.css";
 import { useRankFoldV160 } from "./RankFoldV160";
 
 export default function CarbonMarketRegionsV146({ elementId, entities, initialRegion }: { elementId: string; entities: VietnamEntityV124[]; initialRegion?: string }) {
-  const model = useMemo(() => facilityRegionsV146(entities), [entities]);
+  // V162 (P12-B): the 34 post-2025 units as "한글명 (현지명)"; codes stay the keys.
+  const regionText = useRegionTextV162(elementId);
+  const model = useMemo(() => {
+    const source = facilityRegionsV146(entities);
+    return { ...source, regions: source.regions.map((row) => ({ ...row, region: regionText(row.region) })) };
+  }, [entities, regionText]);
   const [region, setRegion] = useState(initialRegion || "all");
   const [date, setDate] = useState(model.dates[0] || "");
   const rows = model.regions.filter((row) => row.date === date).sort((a, b) => b.count - a.count);

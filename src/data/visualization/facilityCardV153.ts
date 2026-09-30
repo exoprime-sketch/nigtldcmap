@@ -1,6 +1,6 @@
+import { formatRegionName, formatRegionTextV162 } from "../geo/regionNameV161";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
-import { PROVINCE_KO_34_V151 } from "../map/adminBoundaryV151";
 import { formatPublicNumberV126 } from "./publicNumberFormatV126";
 import { publicSourceUrlV126 } from "./publicFieldPolicyV126";
 
@@ -137,13 +137,15 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     const current = text(attributes.adm1Name34);
     const former = text(attributes.adm1Name63);
     if (current) {
-      const korean = PROVINCE_KO_34_V151[String(attributes.adm1Code34 || "")];
-      const named = korean ? `${korean}(${current})` : current;
-      const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${former}` : " · 개편 후 34개 기준";
+      // V162 (P12-B): "한글명 (현지명)" from the region dictionary, the unit's
+      // own vintage for each name (34 now, 63 before the 2025 reform).
+      const named = formatRegionName({ country: "VNM", raw: current, level: "adm1-34" });
+      const formerNamed = former ? formatRegionName({ country: "VNM", raw: former, level: "adm1-63" }) : "";
+      const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${formerNamed}` : " · 개편 후 34개 기준";
       return { key: field.key, label: field.label, value: `${named}${suffix}`, missing: false };
     }
     const fallback = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
-    return fallback ? { key: field.key, label: field.label, value: `${fallback} (성·시 경계 밖 · 원문 표기)`, missing: false } : { ...missing, value: `${FACILITY_CARD_MISSING_V153}(성·시 경계 밖)` };
+    return fallback ? { key: field.key, label: field.label, value: `${formatRegionTextV162({ country: "VNM", raw: fallback })} (성·시 경계 밖 · 원문 표기)`, missing: false } : { ...missing, value: `${FACILITY_CARD_MISSING_V153}(성·시 경계 밖)` };
   }
   if (field.format === "source") {
     // A-023: the registry's own name and year, then the row's link.

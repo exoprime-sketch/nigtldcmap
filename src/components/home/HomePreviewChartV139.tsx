@@ -2,6 +2,8 @@ import type { HomePreviewCardV139 } from "../../data/homePreviewV139";
 import { homePreviewSvgUrlV139 } from "../../data/homePreviewV139";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import ChartAxesV150 from "../charts/ChartAxesV150";
+import { formatRegionName } from "../../data/geo/regionNameV161";
+import { publicRegionTextV162, regionLevelForElementV162 } from "../../data/geo/regionDisplayV162";
 
 export default function HomePreviewChartV139({ card }: { card: HomePreviewCardV139 }) {
   return <>
@@ -81,7 +83,7 @@ function Line({ card }: { card: Extract<HomePreviewCardV139, { kind: "line" }> }
     <svg
       viewBox={`0 0 ${W} ${H}`}
       role="img"
-      aria-label={`${card.seriesLabel ? `${card.seriesLabel}. ` : ""}${first.year}년 ${fmt(first.value, 1)}에서 ${last.year}년 ${fmt(last.value, 1)} (${card.unit})`}
+      aria-label={`${card.seriesLabel ? `${publicRegionTextV162(card.seriesLabel, card.elementId)}. ` : ""}${first.year}년 ${fmt(first.value, 1)}에서 ${last.year}년 ${fmt(last.value, 1)} (${card.unit})`}
       className="home-chart-v139"
     >
       <line x1={x0} x2={x1} y1={y1} y2={y1} stroke="#c9d6df" />
@@ -175,7 +177,10 @@ function Bars({ card }: { card: Extract<HomePreviewCardV139, { kind: "bars" }> }
   const labelW = 84;
   const plotW = W - labelW - 52;
   const height = card.bars.length * rowH + 4;
-  const summary = card.bars.map((bar) => `${bar.label} ${fmt(bar.value)}`).join(", ");
+  // V162: C-016's provinces - the Korean name alone in the 84px label column
+  // (a reviewed name only; otherwise the source spelling), both in the summary.
+  const shortLabel = (label: string) => formatRegionName({ country: "VNM", raw: label, level: regionLevelForElementV162(card.elementId), mode: "label" });
+  const summary = card.bars.map((bar) => `${publicRegionTextV162(bar.label, card.elementId)} ${fmt(bar.value)}`).join(", ");
   return (
     <svg viewBox={`0 0 ${W} ${height}`} role="img" aria-label={`${card.period} ${card.unit}: ${summary}`} className="home-chart-v139">
       {card.bars.map((bar, index) => {
@@ -183,7 +188,7 @@ function Bars({ card }: { card: Extract<HomePreviewCardV139, { kind: "bars" }> }
         const width = (bar.value / max) * plotW;
         return (
           <g key={bar.label}>
-            <text x={labelW - 8} y={y + 12} textAnchor="end" fontSize={11} fill={INK}>{bar.label}</text>
+            <text x={labelW - 8} y={y + 12} textAnchor="end" fontSize={11} fill={INK}>{shortLabel(bar.label)}</text>
             <rect x={labelW} y={y + 3} width={Math.max(width, 1)} height={rowH - 8} rx={2} fill={SERIES[0]} />
             <text x={labelW + width + 4} y={y + 12} fontSize={10.5} fill={MUTED}>{fmt(bar.value)}</text>
           </g>

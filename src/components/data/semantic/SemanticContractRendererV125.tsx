@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { allowsRelativeChangeV147, changeUnitV147 } from "../../../data/visualization/detailModelsV147";
@@ -1051,6 +1052,8 @@ function ChartRowsTableV141({
 }
 
 function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
+  // V162 (P12-B): a bar named after a place reads "한글명 (현지명)".
+  const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   if (rows.length === 0) return null;
   // V162: bars from several years (D-008: 2012·2013·2020) with a 연도 selector
   // whose values table is below - the bars of the chosen year are marked, so
@@ -1075,9 +1078,9 @@ function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV
   });
   const barLabel = (row: NumericRowV125) => {
     const label = rowLabel(row);
-    if ((labelCounts.get(label) || 0) < 2) return label;
+    if ((labelCounts.get(label) || 0) < 2) return regionText(label);
     const qualifier = comparisonQualifierV137(row, label);
-    return qualifier ? `${label} · ${qualifier}` : label;
+    return regionText(qualifier ? `${label} · ${qualifier}` : label);
   };
   // "항목별 값" says nothing about what is on the chart. Where every bar carries
   // the same measure and the same period, those are the title.
@@ -1342,6 +1345,8 @@ function documentTimelineEntriesV140(entities: VietnamEntityV124[]): DocumentTim
 }
 
 function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
+  // V162 (P12-B): a document's 지역 reads "한글명 (현지명)" (reviewed names only).
+  const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   // V160: the most recent document first; the first ten open (ListFoldV160).
   const entries = documentTimelineEntriesV140(entities).reverse();
   if (entries.length === 0) return null;
@@ -1367,7 +1372,7 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
                   {entry.attributes.map((attribute) => (
                     <div key={`${attribute.label}:${attribute.value}`}>
                       <dt><PublicTermTextV134 text={attribute.label} /></dt>
-                      <dd><PublicTermTextV134 text={attribute.value} /></dd>
+                      <dd><PublicTermTextV134 text={attribute.label === "지역" ? regionText(attribute.value) : attribute.value} /></dd>
                     </div>
                   ))}
                 </dl>
