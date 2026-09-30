@@ -22,6 +22,7 @@ import {
   waitForValue,
 } from "./v125/browser-runtime.mjs";
 import { mapUrlV129 } from "./v129/audit-helpers.mjs";
+import { readDownloadJsonV158 } from "./v158/download-zip-v158.mjs";
 import { finishAuditV132 } from "./v132/audit-helpers.mjs";
 import { activateMapDatasetV135 } from "./v135/audit-helpers.mjs";
 
@@ -53,9 +54,14 @@ const popupSource = readFileSync(resolve(PROJECT_ROOT, "src/components/map/mapFe
 const tooltipHookPresent = mapSource.includes('testId: "a023-map-tooltip-v132"') || popupSource.includes('testid = "a023-map-tooltip-v132"');
 const mapCopyResult = readJson(resolve(PROJECT_ROOT, "reports/v131/map-copy-audit-v131.json"));
 const mapCopySummary = mapCopyResult.value?.summary || {};
-const a023DownloadResult = readJson(
-  resolve(V2_ROOT, "downloads/a-023.json")
-);
+// V158: the download JSON ships inside downloads/a-023.zip.
+const a023DownloadResult = (() => {
+  try {
+    return { value: readDownloadJsonV158(V2_ROOT, "A-023") };
+  } catch (error) {
+    return { value: null, error: error instanceof Error ? error.message : String(error) };
+  }
+})();
 const a023Entities = Array.isArray(a023DownloadResult.value?.entities)
   ? a023DownloadResult.value.entities
   : [];

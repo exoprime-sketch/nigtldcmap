@@ -1,0 +1,74 @@
+# REVIEW V158-ZIP — 요소별 다운로드 사전 압축 (feat/v158-download-zip)
+
+작성 2026-09-30 · 기준 origin/main `5b82ea6`(#44·#46 병합 뒤) · 사용자 결정(2026-09-30): ② 사전 압축 채택, 기존 다운로드 주소 404 허용, 구현은 별도 PR(결정적 ZIP, 카탈로그·integrity·감사 조정, 기대값 변경 사유 기록, 배포 크기 전후)
+
+## 요약
+- 요소별 다운로드를 `downloads/<id>.zip` 하나로 배포한다(안에 `<id>.json`·`<id>.csv`). 베트남 147개, 방글라데시 85개.
+- **배포 1회 948.7 MB → 164.4 MB(5.77배), 파일 867 → 635개, 가장 큰 파일 86.5 → 12.3 MB.**
+- **레코드 변화 0**: 베트남은 지난 갱신과 같은 인자로 `refresh:data`를 다시 돌렸고, 값 비교에서 152요소 모두 변화가 없다(값 변경·관측 증감 0). ZIP 안 CSV는 전환 전 파일과 바이트 단위로 같고, JSON은 요소 행의 `downloadAssets`만 다르다.
+- **화면 변화 0**: 화면은 정적 다운로드 파일을 쓰지 않는다(다운로드 화면은 팩에서 파일을 만든다). 화면 서명으로 확인했다(아래).
+- 기존 주소 `downloads/<id>.json·csv`는 404다. 검토에서 Vercel의 CRA 기본 라우팅이 없는 파일을 index.html(200)로 돌려준다는 지적을 받아, `vercel.json`에 `routes` 두 줄(파일시스템 확인 → 없는 `/data/**`는 404)을 넣었다. `ignoreCommand`는 그대로이고, 그 밖의 경로는 프레임워크 기본 규칙(정적 파일 캐시·SPA 폴백)이 그대로 처리한다.
+
+## 변경
+### 데이터 생성
+- `tools/etl/download_zip_v158.py`(신규): 결정적 ZIP(이름순, 1980-01-01, 고정 파일 모드·생성 시스템, 레벨 9). 같은 입력이면 운영체제와 관계없이 같은 바이트.
+- 베트남 ETL·방글라데시 빌더: 다운로드를 ZIP으로 쓰고, 카탈로그 `downloadAssets`에 ZIP 1개와 `entries`(안쪽 파일명·형식·레코드 수·크기·해시)를 싣는다. 배달 목록(`delivery-manifest.json`)은 ZIP 단위.
+- 재생성
+  - 베트남: `refresh:data --source 베트남데이터/20260922 --adopt A-002,B-015,B-022,E-001,E-010`(지난 갱신과 같은 인자, 스테이징 `v158zip`) → 반영 단계(반영 → semantic → 디렉터리 → integrity → 카드 요약 → integrity).
+  - 방글라데시: `build_country_v2.py --country bgd`.
+  - 반영은 스테이징에 없는 파일을 지우지 않으므로, ZIP으로 대체된 옛 JSON·CSV 294개는 손으로 지웠다(모두 ZIP 짝 확인).
+- 카드 요약: 팩 파일명·원본 해시·생성 시각만 바뀌고 카드 내용은 같다(검증).
+- 데이터 디렉터리: `updatedAt` 규칙을 고쳐 포장 전환 커밋(ZIP 추가 + 같은 요소 JSON·CSV 삭제)을 갱신일로 보지 않는다. 갱신일은 147요소 모두 그대로이고, 기존 이력에서 새 규칙과 이전 규칙의 날짜가 149요소 모두 같다.
+- 대기 지도 자산 2개(`spatial/pending-v155/b-008-slr-zones.json`·`d-022-locations.json`)의 출처 항목: CSV 주소 → `"csv": "<안쪽 파일명>"`·`"download": "<ZIP 주소>"`. 만드는 도구(`tools/vietnam_spatial/…v155.py`)도 ZIP 안 CSV를 읽고 같은 값을 쓴다.
+
+### 함께 고친 파이프라인 결함(#46 불일치의 원인)
+- 스테이징 체인은 체인 밖 지도 레이어 없이 semantic을 만들어, 반영하면 지도 연결 30요소가 꺼지고 `src` TS 모듈도 되돌아갔다. `refresh-data-v156`의 반영 단계에 semantic 재생성을 넣었다. 이번 반영 뒤 semantic 계약·TS 모듈은 main과 같다.
+
+### 읽는 쪽
+- `scripts/v158/download-zip-v158.mjs`(스크립트), `src/data/testing/downloadZipV158.ts`(테스트), BGD 검증기 내장 읽기 함수: Node 내장 zlib만 쓴다.
+- 게이트(`finalize:v151`) 감사: 생성 데이터(v133)·지도 툴팁(v132)·analysis QA·role-split QA. CI 감사: 배포·보안(v128, 보안은 카탈로그에 등록된 다운로드 ZIP만 원자료 판정에서 제외). 게이트 밖: 탐색·찾기(v125). 수동 도구: 배달 목록 검사(ZIP 안 파일 대조 추가)·왕복 검증·원자료 값 비교·v138/v144/v148/v153 도구.
+- 로컬 정적 서버(`scripts/v125/browser-runtime.mjs`)에 `.zip` → `application/zip`.
+- 카탈로그 타입 `VietnamDownloadAssetV124`에 `entries`(선택) 추가. 화면 코드는 바뀌지 않았다.
+- 기대값 변경 12건: `reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`
+
+## 검증
+| 항목 | 결과 |
+|---|---|
+| `npx tsc --noEmit` | 0 |
+| `npm run test:unit` | 589/589(ZIP 목록 대조 테스트 2건 추가) |
+| 원자료 값 비교(`source-diff`, 현재 ↔ 스테이징) | 152요소 변화 0 · 값 변경 0 · 관측 증감 0 |
+| ZIP 안 파일 대조(147개) | CSV 147 바이트 동일, JSON 147 `downloadAssets` 외 동일 |
+| 배달 목록 검사(베트남·방글라데시) | PASS(ZIP 안 파일 크기·해시 = 카탈로그) |
+| 왕복 검증(다운로드 = 팩 레코드) | PASS |
+| 방글라데시 검증기 | 52/52(커밋 뒤, 기준 트리 불변 포함) |
+| 화면 서명(#46 빌드 vs 이 PR 빌드) | 151화면(홈·찾기·지도·다운로드·이용안내·상세 146) 차이 0 |
+| CI 감사(로컬) | 보안 13/13 · 배포 9/9 · 성능은 CI에서도 참고용(초기 번들 회귀는 이번 PR과 무관, 아래) |
+| `finalize:v151` | 통과(2회째) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41 이내, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24. 1회째는 생성 데이터 감사의 `DOWNLOAD_ROW_RECONCILIATION`이 ZIP을 세지 않아(0건) 실패 → 감사 수정 후 재실행 |
+| 배포 용량 | 948.7 → 164.4 MB(`reports/v158/download-zip-size-v158.md`). 기준 빌드는 #46 head 빌드(main `5b82ea6`과 앱·데이터 동일, #44는 문서만) |
+
+## 없는 `/data` 파일 404(검토 수정)
+- 운영 확인(수정 전): `/data/vietnam/v2/downloads/not-a-file.csv` → 200 `text/html`(CRA 프리셋 폴백, `s-maxage=0`), `/static/*` → `s-maxage=31536000, immutable`.
+- 수정: `vercel.json` `routes`: `{ handle: filesystem }` → `^/data/.*$` 404. 있는 `/data` 파일은 파일시스템 단계에서 그대로 서빙된다.
+- 로컬 확인(`scripts/v158/data-404-routing-check-v158.mjs`, 같은 순서의 라우팅을 흉내 낸 서버, `reports/v158/data-404-routing-v158.json`): 홈·찾기·지도·상세 A-001·다운로드에서 앱이 읽은 `/data` 요청 33건 모두 실제 파일(200), HTML 폴백 0, 콘솔·페이지 오류 0. 옛 csv·json 404, zip 200, 앱 경로(`/no/such/page`) 200 index.html.
+- 앱 로더는 모두 응답 상태를 먼저 확인하고 HTML 검사는 방어용이라, 404와 HTML 폴백을 같은 '없음'으로 처리한다(선택 파일에 폴백을 기대는 코드 없음).
+- Vercel 쪽 동작은 Preview(로그인 필요)에서 검토자가 확인한다. 무시 명령 검증 PASS(결함 0).
+
+## 성능 감사 초기 번들 — main 비교(사용자 요청)
+`audit:performance:v128` `INITIAL_BUNDLE_REGRESSION`: 진입 파일(JS·CSS) gzip 합계를 기준값과 비교(허용 10% 이내). 두 빌드는 같은 명령(`npm run build`)으로 각 체크아웃에서 만들고 같은 감사 스크립트로 쟀다.
+
+| 빌드 | 커밋 | JS gzip | CSS gzip | 합계 | 기준 대비 |
+|---|---|---|---|---|---|
+| 기준 | d66b83e (2026-08-31, V128-A) | 200,287 | 26,356 | 226,643 | — |
+| main | origin/main 5b82ea6 | 472,931 | 41,735 | 514,666 | +127.08% |
+| 이 PR | feat/v158-download-zip f23d0e6 | 472,904 | 41,735 | 514,639 | +127.07% |
+
+- 이 PR − main: -27 바이트(gzip). CSS는 같고, JS는 원본 크기가 같다(2,295,162바이트). gzip 차이는 앱에 들어가는 데이터 디렉터리 사본(`src/data/datasetDirectoryV149.json`)의 지문 값이 바뀐 것뿐이다.
+- **+127%는 main에도 있는 기존 상태다.** 이 감사는 CI에서도 참고용(`continue-on-error`)이다.
+- main 체크아웃에서만 `DEPLOYMENT_SOURCE_MAP_POLICY`가 실패한 것은 새 체크아웃에 배포 감사 산출물이 없어서(`artifactCount: null`)이고, 코드 차이가 아니다(이 PR 트리에서는 PASS).
+
+## 게이트 밖 감사
+- 탐색·찾기(v125)·다운로드 공개(v126)·성능(v128)의 남은 실패는 이번 변경과 무관하다(`reports/v158/EXPECTATION_CHANGES_V158-ZIP.md` 해당 절). 다운로드 관련 검사(탐색 `BROKEN_DOWNLOAD_LINK` 147건 등)는 통과한다.
+
+## 미완료와 사유
+- Hobby 비상업 조건: 사용자 판단 대기(결정안 7절 3, 보류).
+- 반영 스크립트가 대체된 파일을 자동으로 지우게 하는 것은 이번 한 번뿐이라 넣지 않았다(런북에 절차 기록).

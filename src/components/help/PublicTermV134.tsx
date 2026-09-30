@@ -17,7 +17,7 @@ import type {
   PublicTermTokenV134,
   ResolvedPublicTermV134,
 } from "../../utils/publicTermTokenizerV134";
-import { publicTextV126 } from "../../data/visualization/publicFieldPolicyV126";
+import { publicTextV126, publicUnstatedWordingV161 } from "../../data/visualization/publicFieldPolicyV126";
 import PublicTermTooltipV134 from "./PublicTermTooltipV134";
 import "./public-term-v134.css";
 
@@ -243,7 +243,8 @@ export function PublicTermTextV134({
   className,
   firstOccurrenceOnly = false,
 }: PublicTermTextV134Props) {
-  const tokens = tokenizePublicTermsV134(publicTextV126(text) || "", {
+  // V161: the delivery's "원천 미기재" reads 미기재 on every public text.
+  const tokens = tokenizePublicTermsV134(publicUnstatedWordingV161(publicTextV126(text) || ""), {
     firstOccurrenceOnly,
   });
   return (
@@ -305,7 +306,7 @@ export function PublicTermExpandedTextV134({
   className,
   firstOccurrenceOnly = false,
 }: PublicTermTextV134Props) {
-  const plain = publicTextV126(text) || "";
+  const plain = publicUnstatedWordingV161(publicTextV126(text) || "");
   const tokens = tokenizePublicTermsV134(plain, {
     firstOccurrenceOnly,
   });

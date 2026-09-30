@@ -9,6 +9,7 @@ import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import type { ElementVisualizationContractV125 } from "../../../data/visualization/semanticTypesV125";
 import SemanticContractRendererV125 from "./SemanticContractRendererV125";
 import { countryPublicDirV158 } from "../../../data/countryContext";
+import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
 /**
  * V153-D3 adds a platform-edited description under the timeline entries of
@@ -22,7 +23,7 @@ const ROOT = resolve(__dirname, "../../../..");
 const DATA = resolve(ROOT, `${countryPublicDirV158("VNM")}`);
 const contracts = JSON.parse(readFileSync(resolve(DATA, "semantic/element-visualization-contracts-v125.json"), "utf8")).contracts as ElementVisualizationContractV125[];
 const entitiesOf = (elementId: string): VietnamEntityV124[] =>
-  JSON.parse(readFileSync(resolve(DATA, `downloads/${elementId.toLowerCase()}.json`), "utf8")).entities;
+  readDownloadJsonV158(elementId).entities;
 
 /** sha256 of the timeline and of each entry, captured before the V153 line was added. */
 const BASELINE: Record<string, { timeline: string; entries: string[] }> = JSON.parse(

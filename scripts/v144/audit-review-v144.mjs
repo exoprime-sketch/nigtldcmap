@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { readDownloadJsonV158 } from "../v158/download-zip-v158.mjs";
 
 // Checks captured browser evidence against downloads. This deliberately does
 // not certify all controls, all arithmetic or the full analytical adequacy.
@@ -25,7 +26,8 @@ check("30 responsive smoke cases have no horizontal page overflow", () => {
   assert.equal(browser.responsive.length, 30);
   assert(browser.responsive.every((row) => row.state === "ready" && !row.overflow));
 });
-const unemployment = read("public/data/vietnam/v2/downloads/a-006.json");
+// V158: the download JSON ships inside downloads/<id>.zip.
+const unemployment = readDownloadJsonV158("public/data/vietnam/v2", "A-006");
 const unemploymentEvidence = browser.scenarioChecks.find((row) => row.id === "A-006");
 check("A006 four displayed selections match exact downloaded observations", () => {
   const expected = [["A-006_unemp_total_ilo", 2025], ["A-006_unemp_total_ilo", 2024], ["A-006_unemp_total_national", 2024], ["A-006_unemp_youth_national", 2024]];
@@ -38,7 +40,7 @@ check("A006 four displayed selections match exact downloaded observations", () =
   assert.equal(unemploymentEvidence.redundantDetailSelector, 0);
   assert(unemploymentEvidence.table.includes("2024\t1.529\t%"));
 });
-const research = read("public/data/vietnam/v2/downloads/e-008.json");
+const research = readDownloadJsonV158("public/data/vietnam/v2", "E-008");
 const researchEvidence = browser.scenarioChecks.find((row) => row.id === "E-008");
 check("E008 actual card preserves document count, period and source scope", () => {
   assert(researchEvidence.cardText.includes("144건"));

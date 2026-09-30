@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   INTERNAL_TOKEN,
   candidateExcludedElements,
+  PERIOD_NOT_STATED_V161,
   candidatePreparingElementIds,
   candidatePublicElementIds,
   collectPageErrors,
@@ -51,7 +52,10 @@ test.describe("detail screens", () => {
       expect(sourceText).toContain("제공기관");
       // V156-E: a dataset not yet delivered states no data period (the line is
       // hidden rather than filled with '미기재').
-      if (PREPARING_IDS.has(elementId)) expect(sourceText).not.toContain("자료기간");
+      // V161: a delivered dataset whose data states no period (D-018) leaves
+      // the line out too - never '자료기간 미기재', never a borrowed year.
+      expect(sourceText).not.toMatch(/(?:자료기간|단위)\s*미기재/u);
+      if (PREPARING_IDS.has(elementId) || PERIOD_NOT_STATED_V161.has(elementId)) expect(sourceText).not.toContain("자료기간");
       else expect(sourceText).toContain("자료기간");
 
       const selects = page.locator('[data-testid="public-selector"] select');

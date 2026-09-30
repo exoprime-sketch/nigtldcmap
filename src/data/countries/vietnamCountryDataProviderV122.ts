@@ -32,6 +32,22 @@ import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPoli
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { publicDatasetDescriptionV135 } from "../visualization/publicDatasetDescriptionV135";
 import { countryAssetPathV158 } from "../countryContext";
+import { getCardSpecV159 } from "../spec/datasetSpecV159";
+
+/**
+ * The public organisation names for a catalogue item's source filter/meta:
+ * the raw list with compiler notes removed, or - when that leaves nothing,
+ * because every recorded organisation was such a note - the one source name
+ * the framework spec (v5.38) already gives the element's card.
+ */
+function sourceOrganizationsForCatalogV122(item: VietnamCatalogElementV124): string[] {
+  const named = item.sourceOrganizations
+    .map((organization) => publicSourceOrganizationV136_1(organization))
+    .filter((organization): organization is string => organization !== null);
+  if (named.length > 0) return named;
+  const sourceLabel = getCardSpecV159(item.elementId)?.sourceLabel;
+  return sourceLabel ? [sourceLabel] : [];
+}
 
 function toCatalogItem(
   item: VietnamCatalogElementV124
@@ -74,12 +90,19 @@ function toCatalogItem(
     groupCode: item.groupCode,
     groupLabel: item.groupLabel,
     latestYear: item.latestYear,
-    // Some organisation names arrive with the compiler's own note about which
-    // sheet column varies per row. That note is not a source, and it reached
-    // the finder's source filter as a selectable value.
-    sourceOrganizations: item.sourceOrganizations
-      .map((organization) => publicSourceOrganizationV136_1(organization))
-      .filter((organization): organization is string => organization !== null),
+    // Some organisation names arrive with the compiler's own note - which
+    // sheet column varies per row, a project-status placeholder ("확인필요",
+    // "…(발주처 협의 예정)"), or which internal team assembled a public list
+    // ("…(용역사 취합)"). None of those is a source, and they reached the
+    // finder's source filter, the download list and the source panel as
+    // selectable values (publicSourceOrganizationV136_1 drops them).
+    //
+    // When every organisation on record for an element turns out to be one of
+    // those notes, the framework spec (db_status_framework_v5.38) still names
+    // its public source in the card's own source line - the same name already
+    // shown there - so that is what the filter and the fallback card meta use
+    // instead of leaving the source unstated (2026-09-29).
+    sourceOrganizations: sourceOrganizationsForCatalogV122(item),
     sourceUrls: item.sourceUrls,
     technologyIds: item.technologyIds,
     publicStatus: item.publicStatus,

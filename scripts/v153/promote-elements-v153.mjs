@@ -8,7 +8,7 @@
  * dataset-directory.json), and a parallel session owns map-index.json and the
  * spatial layers. So this copies, for the elements named:
  *
- *   downloads/<id>.json, downloads/<id>.csv, semantic/elements/<id>.json,
+ *   downloads/<id>.zip, semantic/elements/<id>.json,
  *   interpretation/elements/<id>.json (when the run wrote one),
  *   every pack shard (hash-named; stale shards are removed) and
  *   packs/bundle-index-v124.json, downloads/delivery-manifest.json,
@@ -84,8 +84,8 @@ const copy = (rel) => {
 
 for (const id of IDS) {
   const token = id.toLowerCase();
-  copy(`downloads/${token}.json`);
-  copy(`downloads/${token}.csv`);
+  // V158: one download ZIP per element.
+  copy(`downloads/${token}.zip`);
   copy(`semantic/elements/${token}.json`);
   copy(`interpretation/elements/${token}.json`);
 }

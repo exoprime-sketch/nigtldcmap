@@ -50,6 +50,7 @@ import { resolve } from "node:path";
 import { PROJECT_ROOT } from "../v125/audit-utils.mjs";
 import { startStaticBuildServer } from "../v125/browser-runtime.mjs";
 import { recordRoleOf } from "./card-model-v140.mjs";
+import { readZipMembersV158 } from "../v158/download-zip-v158.mjs";
 import { EXCLUDED_NOTICE_SNAPSHOT_V156, excludedNoticeVerdictV156, isPubliclyListedV156 } from "../v156/exclusions-audit-v156.mjs";
 
 const argv = process.argv.slice(2);
@@ -267,12 +268,15 @@ function findClaimOnScreen(claim, candidates) {
 
 /** The figure recomputed from the public download file, apart from the card generator. */
 function recompute(card) {
-  const path = resolve(DATA, `downloads/${card.elementId.toLowerCase()}.json`);
+  // V158: the download JSON ships inside downloads/<id>.zip.
+  const token = card.elementId.toLowerCase();
+  const path = resolve(DATA, `downloads/${token}.zip`);
   if (!existsSync(path)) return { status: "no-download-file" };
   const claim = claimOf(card);
   const need = claim.numbers.filter((n) => !n.derived)[0];
   if (!need) return { status: "not-applicable", reason: "no number on the card" };
-  const download = parse(readFileSync(path, "utf8"));
+  const member = readZipMembersV158(path).get(`${token}.json`);
+  const download = member ? parse(member.toString("utf8")) : null;
   if (!download) return { status: "unreadable" };
   const observations = download.observations || [];
   const entities = download.entities || [];

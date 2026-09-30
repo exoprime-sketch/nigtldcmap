@@ -1,12 +1,10 @@
 import { test, expect } from "@jest/globals";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import { monthlyClimateV147, nationalSeriesV147, burInventoryV147, uniqueNumericV147, allowsRelativeChangeV147, changeUnitV147 } from "./detailModelsV147";
 import type { SemanticObservationV125 } from "./semanticTypesV125";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
-import { countryPublicDirV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
-const source = (id: string) => JSON.parse(readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/${id}.json`), "utf8"));
+const source = (id: string) => readDownloadJsonV158(id);
 
 test("month order and values come from explicit monthly indicators, not 1991 observations", () => {
   const m = monthlyClimateV147(source("b-001").observations);

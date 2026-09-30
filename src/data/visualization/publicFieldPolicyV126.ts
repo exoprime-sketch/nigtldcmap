@@ -862,8 +862,23 @@ export function publicTextV126(value: unknown): string | null {
  * notes address whoever maintains the sheet, not a reader picking a source
  * filter, and they surfaced verbatim on the finder, the download list and the
  * source panel. The organisation name in front of the note is real and stays.
+ *
+ * A second kind of note is the project team's own working text (2026-09-29):
+ * a status placeholder ("확인필요", "…(발주처 협의 예정)"), the contractor that
+ * compiled a list ("…(용역사 취합)", the contractor's name STADT), a field
+ * survey working file ("현지 컨설턴트 현지조사(Field Survey Items_…_v2.0)"),
+ * a working-file name or version, or a placeholder for a missing source
+ * ("원천 미기재"). There is no real name inside such a part to keep, so the part
+ * goes as a whole - a source line is judged part by part (" / " and " | "
+ * separate the parts), and only the parts that name a real source remain.
  */
 const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+const SOURCE_WORKING_NOTE_V161 =
+  /확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
+/** Parts of one source line: "A / B", "공개 원천: A | 현지조사: B". */
+const SOURCE_PART_SEPARATOR_V161 = /(\s+[|/]\s+)/u;
+/** The compiler's label in front of a part ("공개 원천: CTCN"). */
+const SOURCE_PART_LABEL_V161 = /^공개\s*원천\s*:\s*/u;
 
 const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
   // a bracketed aside about the sheet: "(레코드별 상이 - attr_19 참조)"
@@ -896,22 +911,83 @@ export function publicNoticeWordingV136_1(value: unknown): string | null {
   return text === "" ? null : text;
 }
 
+/** A sentence boundary inside a licence or attribution line. */
+const SOURCE_SENTENCE_BOUNDARY_V161 = /(?<=[.。])\s+/u;
+
+/** One part of a source line, or null when the part is a note. */
+function publicSourcePartV161(part: string): string | null {
+  // A licence line can carry a working note as one of its sentences ("…출처표시
+  // 조건. 다운로드 제공 대상은 … 용역사가 재편집한 표준서식 자료임."): only that
+  // sentence goes, the terms stay.
+  const sentences = part.split(SOURCE_SENTENCE_BOUNDARY_V161);
+  if (sentences.length > 1 && sentences.some((sentence) => SOURCE_WORKING_NOTE_V161.test(sentence))) {
+    const kept = sentences.filter((sentence) => !SOURCE_WORKING_NOTE_V161.test(sentence));
+    return kept.length === 0 ? null : publicSourcePartV161(kept.join(" "));
+  }
+  let text = part;
+  for (const pattern of SOURCE_NOTE_PATTERNS_V136_1) {
+    text = text.replace(pattern, "");
+  }
+  text = text.replace(/\s*[-—–,·]\s*$/u, "").replace(SOURCE_PART_LABEL_V161, "").trim();
+  // A part that is a note through and through names no source at all.
+  if (text === "" || SOURCE_NOTE_MARKER_V136_1.test(text) || SOURCE_WORKING_NOTE_V161.test(text)) return null;
+  return text;
+}
+
 /**
  * The public form of a source organisation or attribution line: the cited
- * names, with the sheet-keeping notes removed. Returns null when the value was
- * nothing but a note, so a caller can fall back to its own wording.
+ * names, with the sheet-keeping notes and the project's working notes removed
+ * part by part. Returns null when nothing but notes was there, so a caller can
+ * fall back to the spec's source name or hide the line.
+ *
+ * Every public source display - finder and home cards, the detail's source
+ * lines and source panel, the download page, the map legend and popups - reads
+ * its source text through this one function (V161).
  */
 export function publicSourceOrganizationV136_1(value: unknown): string | null {
   const normalized = normalizeTextV126(value);
   if (normalized === null) return null;
-  let text = normalized;
-  for (const pattern of SOURCE_NOTE_PATTERNS_V136_1) {
-    text = text.replace(pattern, "");
+  // split() with a capture group interleaves parts (even) and separators (odd).
+  const pieces = normalized.split(SOURCE_PART_SEPARATOR_V161);
+  let text = "";
+  for (let index = 0; index < pieces.length; index += 2) {
+    const part = publicSourcePartV161(pieces[index]);
+    if (part === null) continue;
+    // A kept part after the first keeps the separator written before it.
+    text += text === "" ? part : `${pieces[index - 1]}${part}`;
   }
-  text = text.replace(/\s*[-—–,·]\s*$/u, "").trim();
-  // A value that is a note through and through names no source at all.
-  if (text === "" || SOURCE_NOTE_MARKER_V136_1.test(text)) return null;
-  return text;
+  return text === "" ? null : text;
+}
+
+/** A source citation inside a record note: "출처: …". */
+const RECORD_NOTE_SOURCE_V161 = /^\s*출처\s*:\s*/u;
+
+/**
+ * A record's note as a reader sees it (V161). A note can cite the record's
+ * source ("출처: 현지조사(Field Survey Items_…, 현지 컨설턴트)"); that citation is
+ * judged like any other source line, and dropped when nothing but a working
+ * note is left. The rest of a note is the record's own content and stays.
+ */
+export function publicRecordNoteV161(value: unknown): string | null {
+  const normalized = normalizeTextV126(value);
+  if (normalized === null) return null;
+  const parts = normalized.split(/\s+·\s+/u).flatMap((part) => {
+    if (!RECORD_NOTE_SOURCE_V161.test(part)) return [part];
+    const source = publicSourceOrganizationV136_1(part.replace(RECORD_NOTE_SOURCE_V161, ""));
+    return source ? [`출처: ${source}`] : [];
+  });
+  const text = parts.join(" · ").trim();
+  return text === "" ? null : text;
+}
+
+/**
+ * A data value the source left empty is written "원천 미기재" in the delivery -
+ * the compiler's phrasing for "the source does not state it". On the screen it
+ * reads 미기재 (V161); the delivered value and the download keep the original.
+ */
+const SOURCE_UNSTATED_WORDING_V161 = /원천\s*미기재/gu;
+export function publicUnstatedWordingV161(value: string): string {
+  return value.replace(SOURCE_UNSTATED_WORDING_V161, "미기재");
 }
 
 export function publicSourceUrlV126(value: unknown): string | null {

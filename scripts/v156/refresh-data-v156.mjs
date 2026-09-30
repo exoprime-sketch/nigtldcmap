@@ -99,6 +99,12 @@ const STEPS = [
 ];
 const APPLY_STEPS = [
   ["apply", node, ["scripts/v156/apply-staged-data-v156.mjs", "--from", `${STAGING}/public/data/vietnam/v2`, "--apply", "--report", `${OUT}/apply-staged-data-${VERSION}.json`]],
+  // V158: the staging chain builds the semantic contracts before the preserved
+  // map layers (geometry/**, spatial/**) are beside it, so every map-linked
+  // element came out "panel-only" and the applied tree - and the TS module in
+  // src - lost its map links (fixed once by hand in #46). Rebuilt here on the
+  // applied tree, where the layers are.
+  ["semantic", python, ["tools/vietnam_semantic/build_semantic_v125.py"]],
   // The chain does not write these two, so they are rebuilt on the applied tree.
   // Each one rewrites asset-integrity afterwards.
   ["dataset-directory", node, ["scripts/v150-1/dataset-directory-v150-1.mjs", "build"]],

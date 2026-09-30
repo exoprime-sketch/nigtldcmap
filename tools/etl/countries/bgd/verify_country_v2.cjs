@@ -95,9 +95,42 @@ const ref = loadTree(refRoot);
 const records = (payloads, section) => Object.values(payloads).flatMap((payload) => payload[section].records);
 
 // ---------------------------------------------------------------- A. schema parity
-const refDownloadJson = walk(path.join(refRoot, "downloads")).find((file) => file.endsWith(".json") && !file.endsWith("delivery-manifest.json"));
-const ourDownloadJsons = walk(path.join(root, "downloads")).filter((file) => file.endsWith(".json") && !file.endsWith("delivery-manifest.json"));
-const refCsv = walk(path.join(refRoot, "downloads")).find((file) => file.endsWith(".csv"));
+// V158: the downloads ship as one ZIP per element holding <id>.json and
+// <id>.csv (tools/etl/download_zip_v158.py); both trees are read through it.
+function zipMembers(file) {
+  const buffer = fs.readFileSync(file);
+  let end = -1;
+  for (let at = buffer.length - 22; at >= Math.max(0, buffer.length - 22 - 0xffff); at -= 1) {
+    if (buffer.readUInt32LE(at) === 0x06054b50) { end = at; break; }
+  }
+  if (end < 0) throw new Error(`ZIP_END_NOT_FOUND: ${file}`);
+  const members = new Map();
+  let offset = buffer.readUInt32LE(end + 16);
+  for (let index = 0; index < buffer.readUInt16LE(end + 10); index += 1) {
+    const method = buffer.readUInt16LE(offset + 10);
+    const compressedSize = buffer.readUInt32LE(offset + 20);
+    const nameLength = buffer.readUInt16LE(offset + 28);
+    const local = buffer.readUInt32LE(offset + 42);
+    const name = buffer.toString("utf8", offset + 46, offset + 46 + nameLength);
+    const start = local + 30 + buffer.readUInt16LE(local + 26) + buffer.readUInt16LE(local + 28);
+    const raw = buffer.subarray(start, start + compressedSize);
+    members.set(name, method === 0 ? Buffer.from(raw) : zlib.inflateRawSync(raw));
+    offset += 46 + nameLength + buffer.readUInt16LE(offset + 30) + buffer.readUInt16LE(offset + 32);
+  }
+  return members;
+}
+const downloadMembers = (treeRoot) =>
+  walk(path.join(treeRoot, "downloads"))
+    .filter((file) => file.endsWith(".zip"))
+    .map((file) => {
+      const token = path.basename(file, ".zip");
+      const members = zipMembers(file);
+      return { token, file, members, json: members.get(`${token}.json`), csv: members.get(`${token}.csv`) };
+    });
+const refDownloads = downloadMembers(refRoot);
+const ourDownloads = downloadMembers(root);
+const BOM = new RegExp("^" + String.fromCharCode(0xfeff), "u");
+const csvHeaderText = (text) => text.replace(BOM, "").split(/\r?\n/u, 1)[0].split(",");
 const csvHeader = (file) => fs.readFileSync(file, "utf8").replace(/^\ufeff/u, "").split(/\r?\n/u, 1)[0].split(",");
 const sameKeys = (name, ours, theirs) => check(name, JSON.stringify(ours) === JSON.stringify(theirs), { ours, theirs }, "same key set");
 sameKeys("SCHEMA_ENVELOPE_KEYS", unionKeys(tree.packContents.map((p) => p.envelope)), unionKeys(ref.packContents.map((p) => p.envelope)));
@@ -123,17 +156,18 @@ check("SCHEMA_PROVENANCE_KEYS_SUBSET",
   missingFrom(unionKeys([...ourObs, ...ourEnt].map((r) => r.provenance)), unionKeys([...records(ref.payloads, "observations"), ...records(ref.payloads, "entities")].map((r) => r.provenance))), []);
 sameKeys("SCHEMA_SEARCH_KEYS", [...Object.keys(tree.search).sort(), "|", ...unionKeys(tree.search.elements)], [...Object.keys(ref.search).sort(), "|", ...unionKeys(ref.search.elements)]);
 sameKeys("SCHEMA_SOURCE_REGISTRY_KEYS", [...Object.keys(tree.sources).sort(), "|", ...unionKeys(tree.sources.sources)], [...Object.keys(ref.sources).sort(), "|", ...unionKeys(ref.sources.sources)]);
-if (refDownloadJson && ourDownloadJsons.length) {
-  sameKeys("SCHEMA_DOWNLOAD_JSON_KEYS", unionKeys(ourDownloadJsons.map((file) => readJson(file))).filter((k) => k !== "recordDefaults"), Object.keys(readJson(refDownloadJson)).filter((k) => k !== "recordDefaults").sort());
+if (refDownloads.length && ourDownloads.length) {
+  const parse = (member) => JSON.parse(member.toString("utf8"));
+  sameKeys("SCHEMA_DOWNLOAD_JSON_KEYS", unionKeys(ourDownloads.map((row) => parse(row.json))).filter((k) => k !== "recordDefaults"), Object.keys(parse(refDownloads[0].json)).filter((k) => k !== "recordDefaults").sort());
 }
 sameKeys("SCHEMA_DELIVERY_MANIFEST_KEYS", Object.keys(readJson(path.join(root, "downloads/delivery-manifest.json"))).sort(), Object.keys(readJson(path.join(refRoot, "downloads/delivery-manifest.json"))).sort());
 for (const file of ["quality-report.json", "framework-coverage.json", "rights-matrix.json", "publication-decisions.json", "map-index.json", "manifest.json"]) {
   sameKeys(`SCHEMA_TOP_KEYS_${file}`, Object.keys(readJson(path.join(root, file))).sort(), Object.keys(readJson(path.join(refRoot, file))).sort());
 }
 check("SCHEMA_MANIFEST_ASSET_KEYS_SUBSET", missingFrom(Object.keys(tree.manifest.assets), Object.keys(ref.manifest.assets)).length === 0, missingFrom(Object.keys(tree.manifest.assets), Object.keys(ref.manifest.assets)), []);
-const ourCsvs = walk(path.join(root, "downloads")).filter((file) => file.endsWith(".csv"));
-const expectedHeader = [...csvHeader(refCsv), "지역명_한글"];
-check("SCHEMA_CSV_HEADER", ourCsvs.every((file) => JSON.stringify(csvHeader(file)) === JSON.stringify(expectedHeader)), ourCsvs.filter((file) => JSON.stringify(csvHeader(file)) !== JSON.stringify(expectedHeader)).map((f) => path.basename(f)), expectedHeader);
+const expectedHeader = [...csvHeaderText(refDownloads[0].csv.toString("utf8")), "지역명_한글"];
+const csvHeaderMismatch = ourDownloads.filter((row) => JSON.stringify(csvHeaderText(row.csv.toString("utf8"))) !== JSON.stringify(expectedHeader));
+check("SCHEMA_CSV_HEADER", ourDownloads.length > 0 && csvHeaderMismatch.length === 0, csvHeaderMismatch.map((row) => `${row.token}.csv`), expectedHeader);
 
 // ---------------------------------------------------------------- B. counts and statuses
 const staged = readJson(config.source.manifest);
@@ -255,10 +289,11 @@ const downloadProblems = [];
 for (const element of tree.catalog.filter((row) => row.downloadAssets)) {
   const payload = tree.payloads[element.elementId];
   const eligible = new Set([...payload.observations.records, ...payload.entities.records].filter((row) => row.downloadEligible).map((row) => row.recordId));
-  const document = readJson(path.join(root, "downloads", `${element.elementId.toLowerCase()}.json`));
+  const zipped = ourDownloads.find((row) => row.token === element.elementId.toLowerCase());
+  const document = JSON.parse(zipped.json.toString("utf8"));
   const ids = new Set([...(document.observations || []), ...(document.entities || [])].map((row) => row.recordId));
   if (ids.size !== eligible.size || [...ids].some((id) => !eligible.has(id))) downloadProblems.push({ elementId: element.elementId, file: ids.size, eligible: eligible.size });
-  const csvRows = fs.readFileSync(path.join(root, "downloads", `${element.elementId.toLowerCase()}.csv`), "utf8").replace(/^\ufeff/u, "");
+  const csvRows = zipped.csv.toString("utf8").replace(BOM, "");
   const parsed = parseCsv(csvRows);
   if (parsed.length - 1 !== eligible.size) downloadProblems.push({ elementId: element.elementId, csvRows: parsed.length - 1, eligible: eligible.size });
 }
@@ -287,6 +322,12 @@ for (const element of tree.catalog) {
     const bytes = fs.readFileSync(resolveUrl(asset.url));
     const delivery = deliveryManifest.assets.find((row) => row.elementId === element.elementId && row.format === asset.format);
     if (bytes.length !== asset.byteSize || sha256(bytes) !== asset.sha256 || !delivery || delivery.sha256 !== asset.sha256) catalogAssetProblems.push({ elementId: element.elementId, format: asset.format });
+    // V158: each file inside the ZIP is the one the catalog lists.
+    const members = asset.format === "ZIP" ? zipMembers(resolveUrl(asset.url)) : null;
+    for (const entry of (members && asset.entries) || []) {
+      const member = members.get(entry.fileName);
+      if (!member || member.length !== entry.byteSize || sha256(member) !== entry.sha256) catalogAssetProblems.push({ elementId: element.elementId, entry: entry.fileName });
+    }
   }
 }
 check("DOWNLOAD_ASSET_HASHES", catalogAssetProblems.length === 0, catalogAssetProblems, []);
@@ -357,8 +398,9 @@ let divisionRows = 0;
 let divisionHits = 0;
 let nonLatinInRegion = 0;
 const nonLatinSourceCells = {};
-for (const file of ourCsvs) {
-  const rows = parseCsv(fs.readFileSync(file, "utf8").replace(/^\ufeff/u, ""));
+for (const download of ourDownloads) {
+  const file = `${download.token}.csv`;
+  const rows = parseCsv(download.csv.toString("utf8").replace(BOM, ""));
   const header = rows[0];
   const at = (row, name) => row[header.indexOf(name)];
   for (const row of rows.slice(1)) {

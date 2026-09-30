@@ -6,12 +6,23 @@ import type {
   TypologyRowV159,
   UseCaseV159,
 } from "./specTypesV159";
+import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPolicyV126";
 
 const TYPOLOGY_V159 = new Map<string, TypologyRowV159>(
   (typologyJson.rows as TypologyRowV159[]).map((row) => [row.elementId, row])
 );
+/**
+ * V161: the spec's source name is a public source display like any other - it
+ * is judged by the same function, and a name that is a working note (the
+ * contractor's name for A-025) becomes empty, so the source line is hidden
+ * instead of naming the contractor. The spec JSON itself is unchanged.
+ */
+function publicSourceLabelV161<T extends { sourceLabel: string }>(row: T): T {
+  return { ...row, sourceLabel: publicSourceOrganizationV136_1(row.sourceLabel) || "" };
+}
+
 const CARD_SPEC_V159 = new Map<string, DatasetCardSpecV159>(
-  (cardSpecJson.rows as DatasetCardSpecV159[]).map((row) => [row.elementId, row])
+  (cardSpecJson.rows as DatasetCardSpecV159[]).map((row) => [row.elementId, publicSourceLabelV161(row)])
 );
 
 export function getTypologyV159(elementId: string): TypologyRowV159 | null {
@@ -42,7 +53,10 @@ function loadSpecChunkV159() {
     specChunkV159 = Promise.all([import("./datasetSpecV159.json"), import("./useCasesV159.json")]).then(
       ([specModule, casesModule]) => {
         const spec = new Map<string, DatasetSpecRowV159>(
-          ((specModule.default || specModule).rows as DatasetSpecRowV159[]).map((row) => [row.elementId, row])
+          ((specModule.default || specModule).rows as DatasetSpecRowV159[]).map((row) => [
+            row.elementId,
+            { ...publicSourceLabelV161(row), sourceOrg: publicSourceOrganizationV136_1(row.sourceOrg) || "" },
+          ])
         );
         const cases = new Map<string, UseCaseV159[]>();
         for (const item of (casesModule.default || casesModule).cases as UseCaseV159[]) {
