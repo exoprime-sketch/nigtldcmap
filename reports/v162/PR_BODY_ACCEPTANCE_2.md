@@ -10,7 +10,8 @@
 | 5 | 운영 smoke 국가별(`smoke:production:v128 --country`) | VNM PASS · BGD 건너뜀(공개 후 실행) |
 
 ## Preview
-PREVIEW_URL
+https://nigtldcmap-gsi4wyv4e-exoprime-5142s-projects.vercel.app
+- 확인 경로: https://nigtldcmap-gsi4wyv4e-exoprime-5142s-projects.vercel.app/?view=data&country=VNM&element=A-027#element-detail → '데이터 설명' 펼치기 → '활용 사례' 펼치기
 
 ## 결정 필요: 다른 나라 국명 34건
 34건 · 33곳: A-022, B-001, B-003, B-004, B-006, B-007, B-016, B-021, B-031, B-034, B-038, B-039, B-048, C-003, C-004, C-005, C-008, C-009, C-010, C-012, C-013, C-014, C-016, C-017, C-018, C-019, C-025, D-005, D-008, D-009, D-023, E-010, guide
