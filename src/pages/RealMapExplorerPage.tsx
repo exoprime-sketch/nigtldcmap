@@ -5882,6 +5882,14 @@ export default function RealMapExplorerPage({
                                     <dt>{periodStatementV162(elementId, countryIso3)!.label}</dt>
                                     <dd>{periodStatementV162(elementId, countryIso3)!.text}</dd>
                                   </div>
+                                  {/* A basis the values are counted on ("승인일 기준", D-018)
+                                      is not a period: it stays when it names no year. */}
+                                  {target.period && !/\d{4}/u.test(target.period) ? (
+                                    <div>
+                                      <dt>집계 기준</dt>
+                                      <dd><PublicTermTextV134 text={target.period} /></dd>
+                                    </div>
+                                  ) : null}
                                 </>
                               ) : target.unit || target.period ? (
                                 <div>
