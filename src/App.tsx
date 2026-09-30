@@ -25,6 +25,7 @@ import {
   resolveCountryElementIdV122,
 } from "./data/countries/countryDataFacadeV122";
 import { ensureCountryRegistryLoadedV158 } from "./data/countries/countryDataProviderRegistryV122";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
 import type { CategoryCode } from "./data/publicTaxonomy";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
 import DataGuidePage from "./pages/DataGuidePage";
@@ -369,7 +370,7 @@ function resolveLegacyDatasetElementV128(
   const dataset = DATASETS.find((item) => item.id === datasetId);
   if (!dataset) return null;
   return resolveCountryElementIdV122(
-    "VNM",
+    DEFAULT_COUNTRY_ISO3_V158,
     getAuthoritativeElementIdV88(dataset)
   );
 }
@@ -396,7 +397,7 @@ export default function App() {
     initialParams.get("from")
   );
   const initialCountryParam = initialLegacyElementId
-    ? "VNM"
+    ? DEFAULT_COUNTRY_ISO3_V158
     : initialParams.get("country")?.toUpperCase() ?? null;
   const initialDataCountryIso3 = hasCountryDataProviderV122(initialCountryParam)
     ? initialCountryParam
@@ -531,7 +532,7 @@ export default function App() {
             : "explorer"
           : locationView;
       const countryParam = legacyElementId
-        ? "VNM"
+        ? DEFAULT_COUNTRY_ISO3_V158
         : params.get("country")?.toUpperCase() ?? null;
 
       setView(nextView);
@@ -1211,7 +1212,7 @@ export default function App() {
             <RealMapExplorerPage
               onOpenElement={openElement}
               onOpenDataFinder={() =>
-                openExplorerFromGlobalSearch("", "VNM", null)
+                openExplorerFromGlobalSearch("", DEFAULT_COUNTRY_ISO3_V158, null)
               }
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);

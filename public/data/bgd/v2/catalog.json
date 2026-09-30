@@ -2574,6 +2574,14 @@
       "elementLabel": "LCOE(균등화 발전비용)",
       "emptyReason": null,
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "partial-records",
+        "measuredStatus": "partial",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "A.2.a",
       "groupLabel": "에너지·전력 정보",
       "hasWarnings": false,
@@ -2585,7 +2593,7 @@
       "observationCount": 72,
       "packageReason": "요소별 Excel 파일 제공",
       "packageStatus": "provided",
-      "publicStatus": "partial",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",
@@ -13691,6 +13699,14 @@
       "elementLabel": "GHG 감축 사업 타당성 기초 정보",
       "emptyReason": "not-provided",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-provided",
+        "measuredStatus": "not-provided",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -13702,7 +13718,7 @@
       "observationCount": 0,
       "packageReason": "20260923 입고분에 원자료 없음 · 2026 수집 대상 아님",
       "packageStatus": "not-provided",
-      "publicStatus": "not-provided",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",
@@ -13765,6 +13781,14 @@
       "elementLabel": "VCM 프로젝트 파이프라인",
       "emptyReason": "not-provided",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-provided",
+        "measuredStatus": "not-provided",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "C.4.b",
       "groupLabel": "GHG 감축 사업 타당성 검증 기초 정보",
       "hasWarnings": false,
@@ -13776,7 +13800,7 @@
       "observationCount": 0,
       "packageReason": "20260923 입고분에 원자료 없음 · 2026 수집 대상 아님",
       "packageStatus": "not-provided",
-      "publicStatus": "not-provided",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",
@@ -17090,10 +17114,10 @@
       ],
       "detailTemplate": "entity",
       "displayAllowed": true,
-      "downloadAllowed": true,
+      "downloadAllowed": false,
       "downloadAssets": [
         {
-          "byteSize": 220564,
+          "byteSize": 220688,
           "deliveryMode": "repository",
           "entries": [
             {
@@ -17105,18 +17129,18 @@
               "sha256": "7415d0bab9713e24ee2159da05e7cbb55848dce97191f9eb1180dbdeb9484b8c"
             },
             {
-              "byteSize": 2861824,
+              "byteSize": 2862085,
               "fileName": "e-008.json",
               "format": "JSON",
               "mediaType": "application/json",
               "recordCount": 545,
-              "sha256": "5eac771e714c0f7b4b3b3d1fdab3d4e217e87322e450ce45f19538882643c859"
+              "sha256": "288f95e30afda8259041c1696db8a6d14f32ce55dda72378086d9aeaf798d31d"
             }
           ],
           "format": "ZIP",
           "mediaType": "application/zip",
           "recordCount": 545,
-          "sha256": "cc8d4acec35c519d8c1c7b58060b8ed6ef09c952482620c7099b9ba2af1432e8",
+          "sha256": "14037fedb543c909aab5ea371cbf5efe41b51867a66cff0106d4dc5bc1f0a333",
           "uploadState": "NOT_REQUIRED",
           "url": "/data/bgd/v2/downloads/e-008.zip"
         }
@@ -17126,6 +17150,14 @@
       "elementLabel": "논문·특허[논문·특허명, 기후기술 분야, 특허 출원인 국적, 특허 출원 연구기관·대학명, 논문 국제 공저 비율, 한국과의 공동 출원·공저 여부]",
       "emptyReason": null,
       "entityCount": 544,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "actual-records",
+        "measuredStatus": "actual",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.2.b",
       "groupLabel": "논문·특허",
       "hasWarnings": true,
@@ -17137,7 +17169,7 @@
       "observationCount": 1,
       "packageReason": "요소별 Excel 파일 제공",
       "packageStatus": "provided",
-      "publicStatus": "actual",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",
@@ -18012,6 +18044,14 @@
       "elementLabel": "한국 기후기술 TRL",
       "emptyReason": "not-provided",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-provided",
+        "measuredStatus": "not-provided",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",
       "hasWarnings": false,
@@ -18023,7 +18063,7 @@
       "observationCount": 0,
       "packageReason": "20260923 입고분에 원자료 없음 · 2026 수집 대상 아님",
       "packageStatus": "not-provided",
-      "publicStatus": "not-provided",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",
@@ -18086,6 +18126,14 @@
       "elementLabel": "한국-경쟁국 기후기술 비교우위",
       "emptyReason": "not-provided",
       "entityCount": 0,
+      "exclusion": {
+        "basis": "본부장 결정",
+        "decidedAt": "2026-09-29",
+        "measuredPresence": "not-provided",
+        "measuredStatus": "not-provided",
+        "publicNotice": "2026년 제공 대상이 아닌 데이터입니다.",
+        "reason": "2026년 미적용 — 본부장 결정 2026-09-29"
+      },
       "groupCode": "E.4.a",
       "groupLabel": "한국 기후기술 역량",
       "hasWarnings": false,
@@ -18097,7 +18145,7 @@
       "observationCount": 0,
       "packageReason": "20260923 입고분에 원자료 없음 · 2026 수집 대상 아님",
       "packageStatus": "not-provided",
-      "publicStatus": "not-provided",
+      "publicStatus": "excluded",
       "publicationDecision": {
         "approvedAt": "2026-09-29",
         "approvedByRole": "project-owner",

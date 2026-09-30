@@ -94,19 +94,25 @@ describe("country spec layer V158", () => {
     expect(title.length).toBeGreaterThan(0);
   });
 
-  test("the default country's status notice does not carry over; the country's own catalog decides", () => {
-    // An element the default country excluded but this country delivered.
-    const noticed = otherCatalog.find((row) => {
-      const base = getTypologyV159(row.elementId as string);
-      return base?.statusNotice && row.publicStatus !== "not-provided" && row.publicStatus !== "excluded";
-    }) as Record<string, unknown>;
+  test("the exclusions common to every country show the same notice on this country's screen", () => {
+    const common = JSON.parse(readFileSync(resolve(ROOT, "config/data-publication/common-exclusions-v158.json"), "utf8")).exclusions as { elementId: string }[];
+    expect(common.length).toBeGreaterThan(0);
+    for (const { elementId } of common) {
+      expect(itemFor(elementId).publicStatus).toBe("excluded");
+      expect(getTypologyForCountryV158(elementId, other.iso3, itemFor(elementId))?.statusNotice).toBe("excluded");
+    }
+  });
+
+  test("the notice follows the country's own catalog, not the default country's", () => {
+    // An element the default country shows with a notice, read for a country
+    // whose catalog publishes it: no notice, the spec type kept.
+    const noticed = otherCatalog.find((row) => getTypologyV159(row.elementId as string)?.statusNotice) as Record<string, unknown>;
     const elementId = noticed.elementId as string;
-    const base = getTypologyV159(elementId);
-    const row = getTypologyForCountryV158(elementId, other.iso3, itemFor(elementId));
+    const published = { ...itemFor(elementId), publicStatus: "actual" };
+    const row = getTypologyForCountryV158(elementId, other.iso3, published);
     expect(row?.statusNotice).toBeNull();
     expect(row?.status).toBe("공개");
-    expect(row?.displayType).toBe(base?.displayType);
-    expect(getCardSpecForCountryV158(elementId, other.iso3, itemFor(elementId))?.statusNotice).toBeNull();
+    expect(row?.displayType).toBe(getTypologyV159(elementId)?.displayType);
   });
 
   test("an element the country did not deliver shows '데이터 준비 중' and keeps its type", () => {

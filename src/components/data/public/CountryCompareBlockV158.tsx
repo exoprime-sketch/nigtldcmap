@@ -96,6 +96,17 @@ function sourceNoteTextV158(rows: CountryCompareSeriesV158[]): string | null {
  * mismatch is different - the reader asked for a comparison and cannot have one,
  * so the note says which country states which unit.
  */
+/**
+ * Two units are the same unit when they differ only in spacing or in writing
+ * a power as a superscript ("km2" and "km²"). Nothing else is folded: a
+ * different unit is still a different unit.
+ */
+export function sameUnitV158(left: string | null | undefined, right: string | null | undefined): boolean {
+  const fold = (unit: string | null | undefined) =>
+    String(unit ?? "").trim().replace(/²/gu, "2").replace(/³/gu, "3").replace(/ +/gu, " ");
+  return fold(left) === fold(right);
+}
+
 export default function CountryCompareBlockV158({
   elementId,
   title,
@@ -104,8 +115,8 @@ export default function CountryCompareBlockV158({
   mode = "auto",
 }: CountryCompareBlockPropsV158) {
   const model = useMemo(() => {
-    const matched = series.filter((row) => row.unit.trim() === compareKey.unit.trim());
-    const mismatched = series.filter((row) => row.unit.trim() !== compareKey.unit.trim());
+    const matched = series.filter((row) => sameUnitV158(row.unit, compareKey.unit));
+    const mismatched = series.filter((row) => !sameUnitV158(row.unit, compareKey.unit));
     const years = commonYearsV158(matched);
     const shape =
       mode !== "auto"

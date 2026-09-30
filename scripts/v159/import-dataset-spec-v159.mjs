@@ -22,6 +22,7 @@
  *   node scripts/v159/import-dataset-spec-v159.mjs [--xlsx <path>] [--check]
  */
 import { spawnSync } from "node:child_process";
+import { exclusionDecisionsV158 } from "../v158/exclusion-decisions-v158.mjs";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -49,7 +50,8 @@ const appliedOverrides = new Set();
 // the decision file the ETL reads. The spec sheet's status column records the
 // decision as it stood (제외 0918/0923); the decision file says whether it still
 // stands, and for a lifted one whether there is data and which screen it gets.
-const EXCLUSION_DECISION = JSON.parse(readFileSync(resolve(ROOT, "config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
+// V158: the decision common to every country plus the default country's own.
+const EXCLUSION_DECISION = exclusionDecisionsV158(ROOT, "VNM");
 const ACTIVE_EXCLUSIONS = new Map(EXCLUSION_DECISION.exclusions.map((row) => [row.elementId, row]));
 const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) => [row.elementId, row]));
 

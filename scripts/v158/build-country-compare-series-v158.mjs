@@ -24,6 +24,13 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
+import { countryRegistryV158 } from "./country-context-v158.mjs";
+
+/** Same rule as sameUnitV158 (CountryCompareBlockV158): spacing and superscript powers only. */
+const sameUnit = (left, right) => {
+  const fold = (unit) => String(unit ?? "").trim().replace(/²/gu, "2").replace(/³/gu, "3").replace(/ +/gu, " ");
+  return fold(left) === fold(right);
+};
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, "../..");
@@ -129,7 +136,7 @@ function pairStatus(countryA, countryB) {
   if (!left.present || !right.present) {
     return { countries: [left.countryIso3, right.countryIso3], status: "missing-in-country" };
   }
-  if (left.unit !== right.unit) {
+  if (!sameUnit(left.unit, right.unit)) {
     return { countries: [left.countryIso3, right.countryIso3], status: "unit-mismatch" };
   }
   const leftYears = new Set(left.points.map((point) => point.year));
@@ -153,38 +160,33 @@ function worstStatus(pairs) {
   return pairs[0]?.status ?? "missing-in-country";
 }
 
-/** Admin-1 place names, used only to flag a compare key that names one place. */
+/**
+ * Admin-1 place names, used only to flag a compare key that names one place.
+ * Every registry country's own level-1 boundary (`adm.level1.asset`) is read;
+ * no country is named here.
+ */
 function placeNameGazetteer() {
   const entries = [];
-  try {
-    const vnm = readJson(resolve(ROOT, "public/data/vietnam/v2/geometry/vnm-adm1-34.geojson"));
-    for (const feature of vnm.features || []) {
-      const props = feature.properties || {};
-      const names = new Set([props.name, ...(Array.isArray(props.memberNames) ? props.memberNames : [])].filter(Boolean));
-      for (const name of names) {
-        const idToken = String(props.normalizedName || name)
-          .toLowerCase()
-          .trim()
-          .replace(/\s+/g, "_");
-        entries.push({ display: name, idToken, textToken: name });
+  for (const country of countryRegistryV158(ROOT).countries) {
+    const asset = country.adm?.level1?.asset;
+    if (!asset) continue;
+    try {
+      const geometry = readJson(resolve(ROOT, `public${asset}`));
+      for (const feature of geometry.features || []) {
+        const props = feature.properties || {};
+        const latin = [props.name, props.nameEn, ...(Array.isArray(props.memberNames) ? props.memberNames : [])].filter(Boolean);
+        for (const name of new Set(latin)) {
+          const idToken = String(name === props.name && props.normalizedName ? props.normalizedName : name)
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, "_");
+          entries.push({ display: name, idToken, textToken: name });
+        }
+        if (props.nameKo) entries.push({ display: props.nameKo, idToken: null, textToken: props.nameKo });
       }
+    } catch {
+      // Geometry not published yet: the gazetteer just stays smaller.
     }
-  } catch {
-    // Geometry not published yet: the gazetteer just stays smaller.
-  }
-  try {
-    const bgd = readJson(resolve(ROOT, "public/data/bgd/v2/geometry/bgd-adm1-8.geojson"));
-    for (const feature of bgd.features || []) {
-      const props = feature.properties || {};
-      if (props.nameEn) {
-        entries.push({ display: props.nameEn, idToken: String(props.nameEn).toLowerCase(), textToken: props.nameEn });
-      }
-      if (props.nameKo) {
-        entries.push({ display: props.nameKo, idToken: null, textToken: props.nameKo });
-      }
-    }
-  } catch {
-    // Same as above.
   }
   // A short token matches too much by accident to be worth carrying.
   return entries.filter((entry) => (entry.idToken?.length ?? 0) >= 4 || entry.textToken.length >= 3);
@@ -219,7 +221,7 @@ function headlineReasons(compareKey, countries, gazetteer) {
     }
   }
   for (const country of Object.values(countries)) {
-    if (country.present && country.unit && country.unit !== compareKey.unit.trim()) {
+    if (country.present && country.unit && !sameUnit(country.unit, compareKey.unit)) {
       reasons.push(
         `${country.countryNameKo} 단위(${country.unit})가 계약 단위(${compareKey.unit})와 다름`
       );

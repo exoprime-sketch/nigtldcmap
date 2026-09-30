@@ -32,7 +32,7 @@ describe("E-008 delivered list analysis", () => {
     if (element.publicStatus === "excluded") {
       expect(card).toBeUndefined();
       expect(element.exclusion?.reason).toBeTruthy();
-      const decision = JSON.parse(readFileSync(resolve(__dirname, "../../../../config/data-publication/vietnam-exclusions-v156.json"), "utf8"));
+      const decision = JSON.parse(readFileSync(resolve(__dirname, "../../../../config/data-publication/common-exclusions-v158.json"), "utf8"));
       const decided = decision.exclusions.find((entry: { elementId: string }) => entry.elementId === "E-008");
       expect(decided).toBeDefined();
       expect(element.exclusion?.decidedAt).toBe(decided.decidedAt);

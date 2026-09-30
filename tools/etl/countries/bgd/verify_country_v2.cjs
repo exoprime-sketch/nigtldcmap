@@ -175,14 +175,24 @@ const delivered = new Set(staged.files.map((file) => file.elementId));
 const framework = tree.catalog.map((row) => row.elementId);
 const notProvided = framework.filter((id) => !delivered.has(id));
 check("COUNT_FRAMEWORK", framework.length === tree.bundle.elementCount && framework.length === Object.keys(tree.payloads).length, { catalog: framework.length, bundle: tree.bundle.elementCount, payloads: Object.keys(tree.payloads).length }, "equal");
-check("COUNT_DELIVERED", tree.catalog.filter((row) => row.publicStatus !== "not-provided").every((row) => delivered.has(row.elementId)) && delivered.size === staged.workbookCount, { delivered: delivered.size }, staged.workbookCount);
+// V158: an excluded element keeps its measured status beside the decision.
+const measuredStatus = (row) => row.exclusion?.measuredStatus ?? row.publicStatus;
+check("COUNT_DELIVERED", tree.catalog.filter((row) => measuredStatus(row) !== "not-provided").every((row) => delivered.has(row.elementId)) && delivered.size === staged.workbookCount, { delivered: delivered.size }, staged.workbookCount);
 const badNotProvided = notProvided.filter((id) => {
   const row = tree.catalog.find((item) => item.elementId === id);
   const payload = tree.payloads[id];
-  return row.publicStatus !== "not-provided" || row.downloadAssets || payload.meta.indicators.length || payload.observations.recordCount || payload.entities.recordCount;
+  return measuredStatus(row) !== "not-provided" || row.downloadAssets || payload.meta.indicators.length || payload.observations.recordCount || payload.entities.recordCount;
 });
 check("NOT_PROVIDED_HAS_NOTHING", badNotProvided.length === 0, { notProvided: notProvided.length, bad: badNotProvided }, "no indicator, record or download");
-check("NO_EXCLUDED", tree.catalog.every((row) => row.publicStatus !== "excluded"), tree.catalog.filter((row) => row.publicStatus === "excluded").map((row) => row.elementId), []);
+// V158 (user decision 2026-09-30): the exclusions common to every country
+// apply here too - exactly those elements, each with the decision's public notice.
+const commonExclusions = readJson(path.join(REPO, "config/data-publication/common-exclusions-v158.json")).exclusions || [];
+const excludedRows = tree.catalog.filter((row) => row.publicStatus === "excluded");
+const exclusionMismatch = [
+  ...commonExclusions.filter((decision) => !excludedRows.some((row) => row.elementId === decision.elementId && row.exclusion?.publicNotice === decision.publicNotice && !row.downloadAllowed)).map((decision) => decision.elementId),
+  ...excludedRows.filter((row) => !commonExclusions.some((decision) => decision.elementId === row.elementId)).map((row) => row.elementId),
+];
+check("EXCLUSIONS_MATCH_COMMON_DECISION", exclusionMismatch.length === 0, { excluded: excludedRows.map((row) => row.elementId), mismatch: exclusionMismatch }, commonExclusions.map((row) => row.elementId));
 const statusCounts = {};
 tree.catalog.forEach((row) => { statusCounts[row.publicStatus] = (statusCounts[row.publicStatus] || 0) + 1; });
 check("STATUS_COUNTS_MATCH", JSON.stringify(Object.fromEntries(Object.entries(statusCounts).sort())) === JSON.stringify(tree.manifest.publicStatusCounts), statusCounts, tree.manifest.publicStatusCounts);
