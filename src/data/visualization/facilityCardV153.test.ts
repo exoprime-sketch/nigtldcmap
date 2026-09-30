@@ -39,7 +39,7 @@ test("A-023 OSM plant card prints 미기재 for what OSM does not state, never h
   expect(card.capacity.value).toBe("520 MW");
   expect(card.year.value).toBe("미기재");
   expect(card.year.missing).toBe(true);
-  expect(card.location.value).toContain("선라(Sơn La)");
+  expect(card.location.value).toContain("선라 (Sơn La)");
   expect(card.source.value).toContain("OSM 추출 (2026)");
   expect(card.source.href).toBe("https://www.openstreetmap.org/node/9316748175");
 });
@@ -49,7 +49,7 @@ test("E-006 cards separate a Vietnam office from a head office abroad", () => {
   const ifc = entities.find((row: never) => String((row as { name?: string }).name).startsWith("International Finance"))!;
   const patamar = entities.find((row: never) => (row as { name?: string }).name === "Patamar Capital")!;
   expect(byKey(facilityCardRowsV153("E-006", ifc)).location.value).toContain("Washington, D.C.");
-  expect(byKey(facilityCardRowsV153("E-006", patamar)).location.value).toContain("호찌민(Hồ Chí Minh)");
+  expect(byKey(facilityCardRowsV153("E-006", patamar)).location.value).toContain("호찌민 (Hồ Chí Minh)");
   expect(byKey(facilityCardRowsV153("E-006", patamar)).hq.value).toBe("USA");
 });
 

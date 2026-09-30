@@ -44,14 +44,19 @@ export function candidatePublicElementIds(): string[] {
 const PREPARING_STATUSES = new Set(["not-collected", "data-entry-planned", "schema-only"]);
 
 /**
- * V161: delivered elements whose data states no period. The source line
- * leaves the period out instead of printing '자료기간 미기재', and no year is
- * borrowed from elsewhere. D-018: every record's 기준연도 (attr_23) is empty
- * and its observations carry no year; the catalogue's 2026 is the year the
- * project list was exported (2026-07-15), not a data period
- * (reports/v160/SOURCE_FILTER_INTERNAL_MEMO_V161.md).
+ * V162: the label a detail states its period with. An element whose period
+ * was decided from its source fields (src/data/visualization/
+ * periodStatementsV162.json) states '기준 시점' (a list collected on a date,
+ * e.g. D-018 '2026-07 수집', whose rows carry no data year) or '계획기간';
+ * every other delivered element states '자료기간'.
  */
-export const PERIOD_NOT_STATED_V161: ReadonlySet<string> = new Set(["D-018"]);
+const PERIOD_STATEMENTS_V162 = JSON.parse(
+  readFileSync(resolve(__dirname, "../src/data/visualization/periodStatementsV162.json"), "utf8")
+) as { labels: Record<string, string>; elements: Record<string, { kind: string }> };
+export function periodLabelV162(elementId: string): string {
+  const statement = PERIOD_STATEMENTS_V162.elements[elementId];
+  return statement ? PERIOD_STATEMENTS_V162.labels[statement.kind] : "자료기간";
+}
 export function candidatePreparingElementIds(): Set<string> {
   return new Set(candidateCatalog().filter((row) => PREPARING_STATUSES.has(String(row.publicStatus || ""))).map((row) => row.elementId));
 }

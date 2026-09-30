@@ -1,3 +1,4 @@
+import { publicRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CountryEntityV122, CountryMapLayerV122 } from "../../../data/countries/countryDataTypesV122";
 import { loadCountryElementEntitiesV122, loadCountryMapIndexV122 } from "../../../data/countries/countryDataFacadeV122";
@@ -122,7 +123,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     // province name, and a bare code must never reach the screen. Name first, then
     // the unit's own label, then the province the code stands for.
     const regionLabelV157 = (row: { adm1Code: string; adm1Name?: string; label?: string }) =>
-      row.adm1Name ||
+      (row.adm1Name ? publicRegionTextV162(row.adm1Name, elementId, countryIso3) : "") ||
       row.label ||
       (PROVINCE_KO_V150[row.adm1Code]
         ? formatRegionName({ country: "VNM", raw: PROVINCE_KO_V150[row.adm1Code] })
@@ -137,7 +138,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const categories = new Map(points.map((r, index) => [r.recordId, iconKit ? iconKit.mapIconCategoryV152(layer.elementId, iconProperties[index], layerColor) : null]));
     const iconLegend = iconKit ? iconKit.mapIconLegendEntriesV152(layer.elementId, iconProperties, layerColor, layerTitle) : [];
     return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend };
-  }, [runtime, slice, selection.dimensions, compact, iconKit]);
+  }, [runtime, slice, selection.dimensions, compact, iconKit, elementId, countryIso3]);
 
   // V157: a dataset the review named a map target but the data cannot place says so
   // here, with the contract's reason, instead of leaving the reader to wonder.
@@ -202,7 +203,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             const v = model.byCode.get(id);
             const color = data ? mapColorV148(v ? finiteMapValueV148(v.value) : null, model.min, model.max) : lineColorV152(Number(f.properties.voltageKv || f.properties.voltage));
             if (f.geometry.type === "Point") { const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy); if (!iconKit) return <circle key={id} cx={x} cy={y} r={picked === id ? 5 : 3} fill="#a95025" onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>; return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id="world"><circle r={picked === id ? 10 : 8.5} fill="#fff" stroke={picked === id ? "#c04721" : LAYER_COLORS[layer.elementId] || "#a95025"} strokeWidth="2" /><use href={`#${iconKit.mapIconImageIdV152("world")}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} /><title>{model.options.find((o) => o.id === id)?.label}</title></g>; }
-            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${v.adm1Name}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
+            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${model.options.find((o) => o.id === id)?.label || ""}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
           })}
           {!geometry && model.points.map((r) => {
             const [x, y] = model.project([r.longitude!, r.latitude!]);

@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useEffect, useMemo } from "react";
 import type {
@@ -148,6 +149,9 @@ export default function SemanticArchetypePreviewV125({
   // asks for the region bars; the national series follows (V153).
   const v153 = useAnalysisContractV153();
   const regionalFirst = contract.elementId === "B-021" && v153?.primary.type === "region-bar";
+  // V162 (P12-B): a place among the dimension values (B-009's provinces)
+  // reads "한글명 (현지명)"; the option value stays the source spelling.
+  const regionText = useRegionTextV162(contract.elementId);
   // Unit per indicator, so entity rows can tell a phone number from a rate
   // before anything is compared (V142).
   const indicatorUnits = useMemo<IndicatorUnitsV142>(
@@ -441,6 +445,11 @@ export default function SemanticArchetypePreviewV125({
       {/* The V126 intro card restated the page title and the record counts
           above the selectors; the page's hero and the core figures row now
           say both once (V153). */}
+      {/* V162: B-021 opens on the regional comparison, which draws every
+          region with its own 권역 비교 연도 control. The selectors below drive
+          the trend and values table that follow, so they come after it -
+          above the first chart they moved nothing a reader could see. */}
+      {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
@@ -535,7 +544,7 @@ export default function SemanticArchetypePreviewV125({
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
                 <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
-                <strong><PublicTermTextV134 text={publicUnstatedWordingV161(dimensionValueLabelV125(dimension.key, values[0]))} /></strong>
+                <strong><PublicTermTextV134 text={regionText(publicUnstatedWordingV161(dimensionValueLabelV125(dimension.key, values[0])))} /></strong>
               </p>
             );
           }
@@ -571,7 +580,7 @@ export default function SemanticArchetypePreviewV125({
               )}
               {values.map((value) => (
                 <option key={value} value={value}>
-                  {publicUnstatedWordingV161(publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value))}
+                  {regionText(publicUnstatedWordingV161(publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value)))}
                 </option>
               ))}
             </select>
@@ -648,7 +657,7 @@ export default function SemanticArchetypePreviewV125({
             measureOptions.find((measure) => measure.key === measureKey)?.unit,
             ...additionalDimensions.map((dimension) => {
               const value = dimensions[dimension.key];
-              return value ? dimensionValueLabelV125(dimension.key, value) : "";
+              return value ? regionText(dimensionValueLabelV125(dimension.key, value)) : "";
             }),
             period || "",
           ].filter(Boolean).join(" · ")}
@@ -656,7 +665,6 @@ export default function SemanticArchetypePreviewV125({
       </div>
 
 
-      {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
 
       {(numericRows.length > 0 ||
         textRows.length > 0 ||

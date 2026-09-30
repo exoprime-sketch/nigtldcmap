@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { allowsRelativeChangeV147, changeUnitV147 } from "../../../data/visualization/detailModelsV147";
@@ -310,7 +311,10 @@ function renderObservationPanelV125(
                 <TrendPanelV125 elementId={elementId} rows={contextRows} />
               </>
             ) : (
-              <TrendPanelV125 elementId={elementId} rows={contextRows} />
+              // V162: the 연도 selector chooses the year of the values table
+              // below; the trend marks that year, so the control changes what
+              // the reader sees before the fold (A-019 and 26 more).
+              <TrendPanelV125 elementId={elementId} rows={contextRows} markedYear={singleYearV162(numericRows)} />
             )
           ) : (
             numericRows.length > 0 && <CategoryComparisonV125 rows={numericRows} />
@@ -716,12 +720,20 @@ function comparableYearCountV135(rows: NumericRowV125[]): number {
   return maximum;
 }
 
+/** The one year every selected row shares, or null (V162). */
+function singleYearV162(rows: NumericRowV125[]): number | null {
+  const year = rows[0]?.year;
+  return typeof year === "number" && rows.every((row) => row.year === year) ? year : null;
+}
+
 function TrendPanelV125({
   rows,
   elementId,
+  markedYear = null,
 }: {
   rows: SemanticObservationV125[];
   elementId: string;
+  markedYear?: number | null;
 }) {
   const numericRows = rows.filter(
     (row): row is NumericRowV125 =>
@@ -732,7 +744,7 @@ function TrendPanelV125({
   const depth = comparableYearCountV135(numericRows);
 
   if (depth <= 1) {
-    return <CategoryComparisonV125 rows={numericRows} />;
+    return <CategoryComparisonV125 rows={numericRows} markedYear={markedYear} />;
   }
 
   if (depth === 2) {
@@ -758,6 +770,7 @@ function TrendPanelV125({
             key={unit || "no-unit"}
             rows={unitRows}
             unit={unit}
+            markedYear={markedYear}
           />
         ) : (
           <CategoryComparisonV125 key={unit || "no-unit"} rows={unitRows} />
@@ -852,10 +865,12 @@ function TrendUnitV125({
   rows,
   unit,
   elementId,
+  markedYear = null,
 }: {
   rows: NumericRowV125[];
   unit: string;
   elementId: string;
+  markedYear?: number | null;
 }) {
   const sourceSeries = Array.from(
     rows.reduce((map, row) => {
@@ -925,6 +940,8 @@ function TrendUnitV125({
         unit={publicUnit}
         xAxisTitle="연도"
         yAxisTitle={measureLabel || "값"}
+        markedX={markedYear}
+        markedLabel={markedYear === null ? undefined : `선택 ${markedYear}년`}
         zoom={{
           enabled: maxYear > minYear,
           minimumSpan: Math.max(1, Math.floor((maxYear - minYear) / 5)),
@@ -1036,8 +1053,15 @@ function ChartRowsTableV141({
   );
 }
 
-function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
+function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
+  // V162 (P12-B): a bar named after a place reads "한글명 (현지명)".
+  const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   if (rows.length === 0) return null;
+  // V162: bars from several years (D-008: 2012·2013·2020) with a 연도 selector
+  // whose values table is below - the bars of the chosen year are marked, so
+  // the selector changes what the reader sees before the fold.
+  const yearsShown = new Set(rows.map((row) => row.year).filter((year) => typeof year === "number"));
+  const markYear = markedYear !== null && yearsShown.size > 1 && yearsShown.has(markedYear) ? markedYear : null;
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
@@ -1056,9 +1080,9 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
   });
   const barLabel = (row: NumericRowV125) => {
     const label = rowLabel(row);
-    if ((labelCounts.get(label) || 0) < 2) return label;
+    if ((labelCounts.get(label) || 0) < 2) return regionText(label);
     const qualifier = comparisonQualifierV137(row, label);
-    return qualifier ? `${label} · ${qualifier}` : label;
+    return regionText(qualifier ? `${label} · ${qualifier}` : label);
   };
   // "항목별 값" says nothing about what is on the chart. Where every bar carries
   // the same measure and the same period, those are the title.
@@ -1073,12 +1097,12 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
     : "항목별 값";
   return (
     <VisualizationFrameV125 eyebrow="항목" title={frameTitle} block="category-bar">
-      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} />)}
+      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} markedYear={markYear} />)}
     </VisualizationFrameV125>
   );
 }
 
-function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string }) {
+function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = null }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string; markedYear?: number | null }) {
   // What each bar is, from the dataset's contract when this is its bar screen (V153).
   const comparisonContract = useAnalysisContractV153();
   const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
@@ -1113,7 +1137,12 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
                     value={formatValueV121(row.value)}
                     unit={unit}
                   >
-                    <strong><PublicTermTextV134 text={barLabel(row)} /></strong>
+                    <strong>
+                      <PublicTermTextV134 text={barLabel(row)} />
+                      {markedYear !== null && row.year === markedYear ? (
+                        <em className="sv162-marked-year" data-testid="bar-marked-year-v162"> 선택 {markedYear}년</em>
+                      ) : null}
+                    </strong>
                     <span
                       aria-hidden="true"
                       className={scale.signed ? "sv125-contract-track--signed" : undefined}
@@ -1318,6 +1347,8 @@ function documentTimelineEntriesV140(entities: VietnamEntityV124[]): DocumentTim
 }
 
 function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
+  // V162 (P12-B): a document's 지역 reads "한글명 (현지명)" (reviewed names only).
+  const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   // V160: the most recent document first; the first ten open (ListFoldV160).
   const entries = documentTimelineEntriesV140(entities).reverse();
   if (entries.length === 0) return null;
@@ -1343,7 +1374,7 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
                   {entry.attributes.map((attribute) => (
                     <div key={`${attribute.label}:${attribute.value}`}>
                       <dt><PublicTermTextV134 text={attribute.label} /></dt>
-                      <dd><PublicTermTextV134 text={attribute.value} /></dd>
+                      <dd><PublicTermTextV134 text={attribute.label === "지역" ? regionText(attribute.value) : attribute.value} /></dd>
                     </div>
                   ))}
                 </dl>

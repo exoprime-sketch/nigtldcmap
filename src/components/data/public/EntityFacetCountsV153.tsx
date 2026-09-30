@@ -1,6 +1,7 @@
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicCountDistributionV143 from "./PublicCountDistributionV143";
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 
 /**
  * V153-D1: a registry or directory opens on how many entries fall in each
@@ -49,11 +50,14 @@ export function entityFacetCountsV153(entities: VietnamEntityV124[]): EntityFace
 }
 
 export default function EntityFacetCountsV153({ entities, recordLabel = "항목" }: { entities: VietnamEntityV124[]; recordLabel?: string }) {
+  // V162 (P12-B): cities (or "; " lists of them) read "한글명 (현지명)".
+  const regionText = useRegionTextV162();
   const facet = entityFacetCountsV153(entities);
   if (!facet) return null;
+  const rows = facet.key === "city" ? facet.rows.map((row) => ({ ...row, label: regionText(row.label) })) : facet.rows;
   return (
     <section className="d153-block" data-analysis-block="category-bar" data-testid="entity-facet-counts-v153" data-facet={facet.key}>
-      <PublicCountDistributionV143 title={`${facet.label}별 ${recordLabel} 수`} rows={facet.rows} unit={facet.noun} xAxis={`${recordLabel} 수`} yAxis={facet.label} testId="entity-facet-distribution-v153" />
+      <PublicCountDistributionV143 title={`${facet.label}별 ${recordLabel} 수`} rows={rows} unit={facet.noun} xAxis={`${recordLabel} 수`} yAxis={facet.label} testId="entity-facet-distribution-v153" />
     </section>
   );
 }

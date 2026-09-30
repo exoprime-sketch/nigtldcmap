@@ -62,6 +62,9 @@ const CITATION_V157 = [
   /\bv\d{4}-\d{2}-\d{2}\b/gu,
   // a contact address the directory datasets publish
   /[\w.+-]+@[\w.-]*/gu,
+  // V162: a source value kept in brackets after its Korean label, as the
+  // download writes it - "협궤 철도 (narrow_gauge)". Anywhere else it still counts.
+  /(?<=[가-힣]) \([a-z][a-z0-9]*(?:_[a-z0-9]+)+\)/gu,
 ];
 
 /** The text a reader sees, with its citations lifted out. */
@@ -125,22 +128,8 @@ const HYPHENS_COUNT_V157 = (where) => where !== "detail";
  * a place to hide findings. An exception is reported, and counted, separately.
  */
 const EXCEPTIONS_V157 = [
-  {
-    elementId: "A-027",
-    where: "detail",
-    tokens: ["narrow_gauge", "miniature_railway", "light_rail", "subway", "monorail", "funicular", "fclass"],
-    reason: "OSM이 배포한 분류값과 지표 설명(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
-    until: "세션4 PR 2 — 표시 라벨 대응표",
-  },
-  {
-    elementId: "B-026",
-    where: "detail",
-    // Every province spelling the delivery runs together; the tokens are whatever
-    // the concatenation produced, so the kind is what identifies them.
-    kinds: ["camelCase"],
-    reason: "원자료가 성·시 표기를 띄어쓰기 없이 수록(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
-    until: "세션4 PR 2 — 표시 라벨 대응표",
-  },
+  // V162 (PR 2 e): A-027's OSM class values read "협궤 철도 (narrow_gauge)" and
+  // B-026's run-together province spellings are spaced - both exceptions ended.
 ];
 
 /** Is this finding one of the recorded exceptions? */

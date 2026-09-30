@@ -756,3 +756,16 @@
 .sv125-policy-timeline li > div > p {
   overflow-wrap: anywhere;
 }
+
+/* V162: the bars of the year chosen in the 연도 selector (values table below). */
+.sv162-marked-year {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--cdp-brand-soft, #e6f2ed);
+  color: var(--cdp-brand-strong, #0f6b4f);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
+}

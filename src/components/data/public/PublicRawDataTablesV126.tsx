@@ -1,3 +1,5 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
+import { publicOsmIndicatorLabelV162 } from "../../../data/visualization/osmClassLabelsV162";
 import { useEffect, useMemo, useState } from "react";
 import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -37,12 +39,21 @@ const CONTEXT_DIMENSION_KEYS_V126 = new Set([
   "scenario",
 ]);
 
+/** Entity columns that name a place (V162 P12-B). */
+const PLACE_COLUMNS_V162 = new Set(["city", "regionName", "siteName", "adm1Name34", "adm1Name63"]);
+
 export default function PublicRawDataTablesV126({
   elementId,
   observations,
   entities,
   detailTemplate,
 }: Props) {
+  // V162 (P12-B): places in the table read "한글명 (현지명)" (reviewed names
+  // only); the download keeps the source columns.
+  const regionText = useRegionTextV162(elementId);
+  // V162: A-027's OpenStreetMap class values and field names read in Korean
+  // with the source value in brackets (the download keeps the source).
+  const osmText = (text: string) => (elementId === "A-027" ? publicOsmIndicatorLabelV162(text) : text);
   // V158: region-name cells of a country other than the default show a
   // Latin-only bracket; nothing changes for the default country.
   const presentationV158 = useCountryPresentationV158(useDataCountryV158());
@@ -140,12 +151,12 @@ export default function PublicRawDataTablesV126({
                       !["year", "period"].includes(key) &&
                       !CONTEXT_DIMENSION_KEYS_V126.has(key)
                   )
-                  .map(([key, value]) => publicDimensionValueV134(key, value))
+                  .map(([key, value]) => regionText(publicDimensionValueV134(key, value)))
                   .filter(Boolean)
                   .join(" · ");
                 const context = dimensions
                   .filter(([key]) => CONTEXT_DIMENSION_KEYS_V126.has(key))
-                  .map(([key, value]) => publicDimensionValueV134(key, value))
+                  .map(([key, value]) => regionText(publicDimensionValueV134(key, value)))
                   .filter(Boolean)
                   .join(" · ");
                 const sourceUrl = publicSourceUrlV126(
@@ -153,8 +164,8 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={publicMeasureLabelV126(row.semanticMeasure.labelKo)} /></td>
-                    <td><PublicTermTextV134 text={category} /></td>
+                    <td><PublicTermTextV134 text={osmText(publicMeasureLabelV126(row.semanticMeasure.labelKo))} /></td>
+                    <td><PublicTermTextV134 text={osmText(category)} /></td>
                     <td><PublicTermTextV134 text={context} /></td>
                     <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(displayUnitV150(row.unit || row.semanticMeasure.unit)) || ""} /></td>
@@ -212,10 +223,17 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={titleResolution.title} /></td>
+                    <td><PublicTermTextV134 text={regionText(titleResolution.title)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
-                      <td key={column}><PublicTermTextV134 text={publicAttributeValueV126(displayRegionCellV158(column, attributes[column], attributes, presentationV158))} /></td>
+                      <td key={column}><PublicTermTextV134 text={(() => {
+                        const shown = displayRegionCellV158(column, attributes[column], attributes, presentationV158);
+                        // V162: the default country's places read "한글명 (현지명)"; another
+                        // country's region cells are already formatted by its presentation.
+                        return PLACE_COLUMNS_V162.has(column) && shown === attributes[column]
+                          ? regionText(publicAttributeValueV126(shown))
+                          : publicAttributeValueV126(shown);
+                      })()} /></td>
                     ))}
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>

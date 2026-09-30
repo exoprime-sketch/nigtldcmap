@@ -3,6 +3,7 @@ import type { SemanticObservationV125 } from "../../../data/visualization/semant
 import { finiteV147 } from "../../../data/visualization/detailModelsV147";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
+import { OSM_CLASS_KO_V162, osmClassLabelV162, publicOsmIndicatorLabelV162 } from "../../../data/visualization/osmClassLabelsV162";
 
 const LAYERS: Record<string, string> = { roads: "도로", railways: "철도", transport: "교통시설", traffic: "교통시설", waterways: "수로", natural: "자연지형·지물" };
 const CLASSES: Record<string, string> = { residential: "주거지역 도로", service: "시설 진입·내부 도로", track: "농로·임도", footway: "보행로", unclassified: "기타 일반도로", path: "소로", tertiary: "3차 도로", secondary: "2차 도로", trunk: "간선도로", primary: "주요 도로", construction: "공사 중 도로", motorway: "고속도로", tree: "나무", peak: "봉우리", cave_entrance: "동굴 입구", beach: "해변", spring: "샘", volcano: "화산", cliff: "절벽", stream: "작은 하천", canal: "운하·용수로", river: "하천", drain: "배수로" };
@@ -12,7 +13,8 @@ export default function InfrastructureCoverageV147({ rows }: { rows: SemanticObs
   const [selected, setSelected] = useState("");
   const group = groups.find((g) => g.key === selected) || groups.find((g) => rows.some((r) => r.indicatorId.includes(`_${g.key}_fclass_`))) || groups[0];
   const classes = rows.filter((r) => r.indicatorId.includes(`_${group?.key}_fclass_`) && r.indicatorId.endsWith("_count") && finiteV147(r.value));
-  const label = (r: SemanticObservationV125) => { const key = r.indicatorId.split("_fclass_")[1]?.replace(/_count$/u, ""); return CLASSES[key] || r.displayLabel; };
+  // V162: every class as "한글 (원값)" - the download keeps the source value.
+  const label = (r: SemanticObservationV125) => { const key = r.indicatorId.split("_fclass_")[1]?.replace(/_count$/u, "") || ""; return OSM_CLASS_KO_V162[key] ? osmClassLabelV162(key) : CLASSES[key] ? `${CLASSES[key]} (${key})` : publicOsmIndicatorLabelV162(r.displayLabel || key); };
   return <section className="detail146" data-testid="infrastructure-coverage-v147">
     <h3>공간자료에 수록된 지물의 종류와 규모</h3>
     <p className="detail146-note">OpenStreetMap 자료에 기록된 구간·지점 수입니다. 실제 도로·하천·시설의 개수나 총연장으로 해석하지 않습니다.</p>

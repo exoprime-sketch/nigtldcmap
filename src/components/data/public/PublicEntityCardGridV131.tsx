@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import {
   approvedEntityAttributesV126,
   publicSourceUrlV126,
@@ -426,11 +427,18 @@ function disambiguatedCardTitleV131(
   return details.length > 0 ? `${baseTitle} · ${details.join(" · ")}` : baseTitle;
 }
 
+/** Facts that name a place (a city, a region, a gauging site) - V162 P12-B. */
+const PLACE_FACT_LABELS_V162 = new Set(["위치", "지역", "지점·유역"]);
+
 function FactV131({ fact }: { fact: PublicCardFactV131 }) {
+  // A place reads "한글명 (현지명)" (reviewed names only); an address or a
+  // sentence is not a dictionary name and stays as written.
+  const regionText = useRegionTextV162();
+  const value = PLACE_FACT_LABELS_V162.has(fact.label) ? regionText(fact.value) : fact.value;
   return (
     <div>
       <dt><PublicTermTextV134 text={fact.label} /></dt>
-      <dd><PublicTermTextV134 text={fact.value} /></dd>
+      <dd><PublicTermTextV134 text={value} /></dd>
     </div>
   );
 }

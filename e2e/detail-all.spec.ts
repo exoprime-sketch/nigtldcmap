@@ -2,9 +2,9 @@ import { expect, test } from "@playwright/test";
 import {
   INTERNAL_TOKEN,
   candidateExcludedElements,
-  PERIOD_NOT_STATED_V161,
   candidatePreparingElementIds,
   candidatePublicElementIds,
+  periodLabelV162,
   collectPageErrors,
   detailUrl,
   openDetail,
@@ -55,8 +55,9 @@ test.describe("detail screens", () => {
       // V161: a delivered dataset whose data states no period (D-018) leaves
       // the line out too - never '자료기간 미기재', never a borrowed year.
       expect(sourceText).not.toMatch(/(?:자료기간|단위)\s*미기재/u);
-      if (PREPARING_IDS.has(elementId) || PERIOD_NOT_STATED_V161.has(elementId)) expect(sourceText).not.toContain("자료기간");
-      else expect(sourceText).toContain("자료기간");
+      // V162: a list collected on a date states '기준 시점', a plan '계획기간'.
+      if (PREPARING_IDS.has(elementId)) expect(sourceText).not.toMatch(/자료기간|기준 시점|계획기간/u);
+      else expect(sourceText).toContain(periodLabelV162(elementId));
 
       const selects = page.locator('[data-testid="public-selector"] select');
       const count = await selects.count();

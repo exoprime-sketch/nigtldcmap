@@ -3,6 +3,7 @@ import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import { countryAssetPathV158 } from "./countryContext";
 import { publicSourceOrganizationV136_1, publicUnstatedWordingV161 } from "./visualization/publicFieldPolicyV126";
 import { getCardSpecV159 } from "./spec/datasetSpecV159";
+import { publicRegionTextV162 } from "./geo/regionDisplayV162";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -83,6 +84,11 @@ export interface CardSummaryV140 {
   headline: CardHeadlineV140;
   preview: CardPreviewV140;
   period: string;
+  /**
+   * V162: what `period` is when it is not an observed span - '기준 시점' (the
+   * point a list was collected) or '계획기간' (a plan's span). Absent = 자료기간.
+   */
+  periodLabel?: string;
   provider: string;
   selection: DataFinderSelectorStateV125 | null;
   basis: { unit: string; rule: string };
@@ -110,19 +116,30 @@ export interface CardSummariesV140 {
  * hidden) when that is a working note too. A category the source left unstated
  * ("원천 미기재") reads 미기재.
  */
-function publicCardSummaryV161(card: CardSummaryV140): CardSummaryV140 {
+function publicCardSummaryV161(card: CardSummaryV140, countryIso3 = "VNM"): CardSummaryV140 {
   const provider =
     publicSourceOrganizationV136_1(card.provider) ||
     publicSourceOrganizationV136_1(getCardSpecV159(card.elementId)?.sourceLabel) ||
     "";
-  const preview = card.preview as CardSummaryV140["preview"] & { parts?: Array<{ label: string }> };
-  const parts = Array.isArray(preview?.parts)
-    ? preview.parts.map((part) => ({ ...part, label: publicUnstatedWordingV161(String(part.label ?? "")) }))
-    : undefined;
+  // V162 (P12-B): a place named by the data reads "한글명 (현지명)" - a
+  // reviewed name only; anything else keeps its source spelling.
+  const region = (text: string) => publicRegionTextV162(text, card.elementId, countryIso3);
+  const preview = card.preview as CardPreviewV140 | undefined;
+  const nextPreview: CardPreviewV140 | undefined = preview
+    ? {
+        ...preview,
+        ...(Array.isArray(preview.parts) ? { parts: preview.parts.map((part) => ({ ...part, label: region(publicUnstatedWordingV161(String(part.label ?? ""))) })) } : {}),
+        ...(Array.isArray(preview.facts) ? { facts: preview.facts.map((fact) => ({ ...fact, label: region(String(fact.label ?? "")) })) } : {}),
+        ...(Array.isArray(preview.others) ? { others: preview.others.map((other) => ({ ...other, label: region(String(other.label ?? "")) })) } : {}),
+        ...(typeof preview.scope === "string" ? { scope: region(preview.scope) } : {}),
+        ...(typeof preview.seriesLabel === "string" ? { seriesLabel: region(preview.seriesLabel) } : {}),
+      }
+    : preview;
   return {
     ...card,
     provider,
-    preview: (parts ? { ...preview, parts } : card.preview) as CardSummaryV140["preview"],
+    headline: card.headline ? { ...card.headline, label: region(card.headline.label) } : card.headline,
+    preview: nextPreview as CardSummaryV140["preview"],
   };
 }
 
@@ -148,7 +165,7 @@ export function loadCardSummariesV140(countryIso3: string = "VNM"): Promise<Map<
         if (value.schemaVersion !== "v140-card-summaries-1" || !Array.isArray(value.cards)) {
           throw new Error("card summaries schema mismatch");
         }
-        return new Map(value.cards.map((card) => [card.elementId, publicCardSummaryV161(card)]));
+        return new Map(value.cards.map((card) => [card.elementId, publicCardSummaryV161(card, iso3)]));
       });
     cacheByCountry.set(iso3, cache);
     cache.catch(() => cacheByCountry.delete(iso3));

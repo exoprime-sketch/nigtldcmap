@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
@@ -5770,11 +5771,18 @@ export default function RealMapExplorerPage({
                                 <PublicTermExpandedTextV134
                                   text={
                                     available
-                                      ? `${publicMapDataItemSummaryV136(elementId)} · ${
-                                          layer
-                                            ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
-                                            : target.period
-                                        }`
+                                      ? (() => {
+                                          // V162 (d): a list collected at a point carries no year in
+                                          // the list (its 기준 시점 is in the info panel); a corrected
+                                          // span or a plan period comes from the element's statement.
+                                          const tag = listPeriodTagV162(elementId, countryIso3);
+                                          const period = tag !== null
+                                            ? tag
+                                            : layer
+                                              ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
+                                              : target.period;
+                                          return period ? `${publicMapDataItemSummaryV136(elementId)} · ${period}` : publicMapDataItemSummaryV136(elementId);
+                                        })()
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
                                         : MAP_PENDING_SUMMARY_V140
@@ -5860,7 +5868,30 @@ export default function RealMapExplorerPage({
                                   <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
                                 </div>
                               ) : null}
-                              {target.unit || target.period ? (
+                              {periodStatementV162(elementId, countryIso3) ? (
+                                <>
+                                  {/* V162 (d): the element's own period statement -
+                                      '기준 시점 2026-07 수집', '자료기간 2010–2023년'. */}
+                                  {target.unit ? (
+                                    <div>
+                                      <dt>단위</dt>
+                                      <dd><PublicTermTextV134 text={target.unit} /></dd>
+                                    </div>
+                                  ) : null}
+                                  <div data-testid="map-catalog-period-v162">
+                                    <dt>{periodStatementV162(elementId, countryIso3)!.label}</dt>
+                                    <dd>{periodStatementV162(elementId, countryIso3)!.text}</dd>
+                                  </div>
+                                  {/* A basis the values are counted on ("승인일 기준", D-018)
+                                      is not a period: it stays when it names no year. */}
+                                  {target.period && !/\d{4}/u.test(target.period) ? (
+                                    <div>
+                                      <dt>집계 기준</dt>
+                                      <dd><PublicTermTextV134 text={target.period} /></dd>
+                                    </div>
+                                  ) : null}
+                                </>
+                              ) : target.unit || target.period ? (
                                 <div>
                                   <dt>단위·기간</dt>
                                   <dd><PublicTermTextV134 text={[target.unit, target.period].filter(Boolean).join(" · ")} /></dd>
