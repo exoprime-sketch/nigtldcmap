@@ -12,5 +12,8 @@ describe("A-027 OpenStreetMap class labels (V162)", () => {
   test("the indicator wording names the class, not the field", () => {
     expect(publicOsmIndicatorLabelV162("분류별 피처 수(miniature_railway) — fclass 분류값별 지물 건수")).toBe("분류별 지물 수 · 소형 관광 철도 (miniature_railway)");
     expect(publicOsmIndicatorLabelV162("철도 레이어")).toBe("철도 레이어");
+    // the raw-data table joins the two dimension labels with " · "
+    expect(publicOsmIndicatorLabelV162("분류별 피처 수(narrow_gauge) · fclass 분류값별 지물 건수")).toBe("분류별 지물 수 · 협궤 철도 (narrow_gauge)");
+    expect(publicOsmIndicatorLabelV162("피처 수 · OSM 철도 레이어의 지물 건수")).toBe("지물 수 · OSM 철도 레이어의 지물 건수");
   });
 });

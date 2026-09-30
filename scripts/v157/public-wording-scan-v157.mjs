@@ -62,15 +62,24 @@ const CITATION_V157 = [
   /\bv\d{4}-\d{2}-\d{2}\b/gu,
   // a contact address the directory datasets publish
   /[\w.+-]+@[\w.-]*/gu,
-  // V162: a source value kept in brackets after its Korean label, as the
-  // download writes it - "협궤 철도 (narrow_gauge)". Anywhere else it still counts.
-  /(?<=[가-힣]) \([a-z][a-z0-9]*(?:_[a-z0-9]+)+\)/gu,
 ];
+
+/**
+ * V162: a source value may stand in brackets only right after the Korean label
+ * the platform's dictionary gives it - "협궤 철도 (narrow_gauge)" (A-027's 19
+ * OpenStreetMap classes, src/data/visualization/osmClassLabelsV162.json). Any
+ * other word before the bracket ("피처 수(narrow_gauge)") leaves the value an
+ * identifier on the screen, and it counts.
+ */
+const DICTIONARY_CITATIONS_V162 = Object.entries(
+  JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/osmClassLabelsV162.json"), "utf8")).labels
+).map(([value, ko]) => `${ko} (${value})`);
 
 /** The text a reader sees, with its citations lifted out. */
 function withoutCitationsV157(text) {
   let value = String(text || "").normalize("NFC");
   for (const pattern of CITATION_V157) value = value.replace(pattern, " ");
+  for (const citation of DICTIONARY_CITATIONS_V162) value = value.split(citation).join(" ");
   return value;
 }
 
@@ -79,6 +88,10 @@ const CAMEL_CASE_V157 = /\b[a-z][a-z0-9]*[A-Z][A-Za-z0-9]*\b/gu;
 const SNAKE_CASE_V157 = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/gu;
 const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
+// V162 (user decision 2026-09-30): a file name in the text a reader sees - a
+// link's href is not text, and a URL is masked as a citation above - is a
+// working file on the screen (C-003 "nap_report_eng_small.pdf").
+const FILE_NAME_V162 = /[\w.-]+\.(?:pdf|xlsx?|csv|docx?|hwpx?|pptx?|zip|json|geojson|shp|txt)\b/giu;
 // 제안서 is a document a project has; 제안 on its own is how we write to each other.
 const NOTE_WORDS_V157 = /렌더러|폴리곤|조인\s*키|\bkind\b|choropleth|boundaryPolicy|후속|제안(?![\uAC00-\uD7A3])/gu;
 // 2차 검토(2026-09-30): 우리끼리 쓰는 한국어 어휘. 읽는 사람에게는 과업 용어다.
@@ -93,9 +106,16 @@ const WORK_WORDS_V157 =
  * read as something left behind.
  */
 function findingsIn(text, { hyphens = true, notes = true } = {}) {
-  const value = withoutCitationsV157(text);
+  let value = withoutCitationsV157(text);
   if (!value.trim()) return [];
   const hits = [];
+  // A file name counts once, as a file name - not again as snake_case.
+  FILE_NAME_V162.lastIndex = 0;
+  for (const match of value.matchAll(FILE_NAME_V162)) {
+    const at = match.index ?? value.indexOf(match[0]);
+    hits.push({ kind: "file-name", token: match[0], context: value.slice(Math.max(0, at - 70), at + match[0].length + 50).replace(/\s+/gu, " ").trim() });
+  }
+  value = value.replace(FILE_NAME_V162, " ");
   for (const [kind, pattern] of [
     ["camelCase", CAMEL_CASE_V157],
     ["snake_case", SNAKE_CASE_V157],
@@ -300,17 +320,33 @@ if (!flag("skip-detail")) {
   const targets = JSON.parse(
     readFileSync(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json"), "utf8")
   );
-  for (const target of targets.targets || targets) {
-    await page.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
+  // V162: a detail page with every section open is heavy - the pages are read
+  // in batches of 20, each batch in its own browser context that is closed
+  // before the next one opens, one page at a time.
+  const DETAIL_BATCH_V162 = 20;
+  const allTargets = targets.targets || targets;
+  for (let start = 0; start < allTargets.length; start += DETAIL_BATCH_V162) {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, locale: "ko-KR" });
+    const detailPage = await context.newPage();
+    for (const target of allTargets.slice(start, start + DETAIL_BATCH_V162)) {
+    await detailPage.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
       waitUntil: "domcontentloaded",
     });
-    await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
-    await page.waitForTimeout(400);
-    const text = await page.evaluate(() => {
+    await detailPage.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
+    await detailPage.waitForTimeout(400);
+    const text = await detailPage.evaluate(async () => {
       const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
-      return tidy(document.querySelector('[data-testid="public-analysis-root"]')?.innerText || document.body.innerText);
+      // V162: a closed table (the raw-data table in 'Detail data') is text a
+      // reader opens with one click - open every <details> before reading.
+      const root = document.querySelector('[data-testid="public-analysis-root"]');
+      (root || document).querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
+      await new Promise((done) => setTimeout(done, 300));
+      return tidy(root?.innerText || document.body.innerText);
     });
     record(report, "detail", target.elementId, "analysis", text);
+    }
+    await detailPage.close();
+    await context.close();
   }
 }
 
