@@ -1,0 +1,535 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-016",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2024년 기준",
+    "defaultVariable": "d-016-located-count",
+    "periods": [
+      "2024년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-016-located-count",
+        "measureId": "d-016-located-count",
+        "measureKey": "d-016-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2024년 기준"
+        ],
+        "maxFeatureCount": 14
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00005",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cao Bằng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00071",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00090",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00177",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00177",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00219",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "d-016-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-016_ministry_local_project_registry",
+      "sourceRecordId": "v124-d-016-entity-00219",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-HN": [
+      {
+        "recordId": "v124-d-016-entity-00004",
+        "label": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00203",
+        "label": "베트남 하노이 좋은마음학교 조성사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00228",
+        "label": "베트남 하노이 국립이비인후과병원 의료기기 관리운영체계 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-04": [
+      {
+        "recordId": "v124-d-016-entity-00005",
+        "label": "(베트남) 까오방 마을 상수도 구축 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cao Bằng",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-016-entity-00009",
+        "label": "베트남 라오까이성 조리용 스토브를 활용한 온수 시스템 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00191",
+        "label": "개도국정보이용환경개선(베트남(라오까이) 정보접근센터 유지보수)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-016-entity-00009",
+        "label": "베트남 라오까이성 조리용 스토브를 활용한 온수 시스템 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00191",
+        "label": "개도국정보이용환경개선(베트남(라오까이) 정보접근센터 유지보수)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-d-016-entity-00012",
+        "label": "베트남 까마우성 재난위험경감 및 기후변화대비 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00013",
+        "label": "베트남 메콩 삼각주 까마우성 기후변화 대응 및 재난위험경감 관리 역량 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-d-016-entity-00012",
+        "label": "베트남 까마우성 재난위험경감 및 기후변화대비 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00013",
+        "label": "베트남 메콩 삼각주 까마우성 기후변화 대응 및 재난위험경감 관리 역량 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-d-016-entity-00071",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-d-016-entity-00071",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-d-016-entity-00071",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-d-016-entity-00090",
+        "label": "응에안성 빈곤여성 쉼터 건립 및 역량강화",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-d-016-entity-00194",
+        "label": "베트남 다낭시 도시교통 마스터플랜 수립",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00180",
+        "label": "베트남 꽝남성 지역 실크 방직기 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-d-016-entity-00194",
+        "label": "베트남 다낭시 도시교통 마스터플랜 수립",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      },
+      {
+        "recordId": "v124-d-016-entity-00180",
+        "label": "베트남 꽝남성 지역 실크 방직기 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "v124-d-016-entity-00219",
+        "label": "아시아 개도국 빈곤감소사업(푸옌성 지뢰행동 통합관리 거버넌스 구축 지원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-016-entity-00219",
+        "label": "아시아 개도국 빈곤감소사업(푸옌성 지뢰행동 통합관리 거버넌스 구축 지원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-016_ministry_local_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-016-located-count",
+      "period": "2024년 기준",
+      "expectedCount": 63,
+      "matchedCount": 14,
+      "missingCount": 49,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "출처: 한국국제협력단(KOICA)·한국수출입은행(EDCF)·ODA Korea, 공공누리 제1유형."
+    ],
+    "licenses": [
+      "공공누리 제1유형(출처표시)"
+    ],
+    "organizations": [
+      "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 14,
+    "maxSeriesFeatureCount": 14,
+    "missingAdm1Count": 49,
+    "providedZeroCount": 0,
+    "publishedValueCount": 14,
+    "sourceValueCount": 14,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 8
+  }
+}

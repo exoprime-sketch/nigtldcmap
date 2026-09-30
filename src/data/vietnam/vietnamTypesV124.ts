@@ -332,7 +332,11 @@ export type VietnamMapRendererV124 =
   | "line"
   | "admin1-choropleth"
   | "partial-choropleth"
-  | "regional-scope";
+  | "regional-scope"
+  // V157: areas that are not provinces (B-017's Aqueduct assessment zones), and
+  // a geometry asset that mixes polygons with points (A-028's dams and ports).
+  | "unit-choropleth"
+  | "point-and-polygon";
 
 export interface VietnamMapSelectorOptionV124 {
   key: string;

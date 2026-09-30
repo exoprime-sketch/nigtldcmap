@@ -1,0 +1,121 @@
+/* V161-C: the selected feature's card. Name first, then its own values, then
+   where it sits, then what to do; the layer's metadata is the last line. */
+.sp161 {
+  display: grid;
+  gap: 8px;
+}
+.sp161__head {
+  display: grid;
+  gap: 2px;
+}
+.sp161__title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.sp161__kind {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #4b5a55;
+}
+.sp161__lines,
+.sp161__comparison {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.sp161__lines > li,
+.sp161__comparison > li {
+  display: grid;
+  grid-template-columns: minmax(84px, 34%) 1fr;
+  gap: 8px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.sp161__comparison {
+  padding-top: 6px;
+  border-top: 1px solid #dfe7e3;
+}
+.sp161__label {
+  color: #4b5a55;
+  overflow-wrap: anywhere;
+}
+.sp161__value {
+  color: #17211e;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.sp161__note {
+  grid-column: 1 / -1;
+  font-size: 0.74rem;
+  color: #5f6d67;
+}
+.sp161__members {
+  display: grid;
+  gap: 4px;
+}
+.sp161__members-title {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #4b5a55;
+}
+.sp161__members ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 3px;
+  max-height: 172px;
+  overflow-y: auto;
+}
+.sp161__members li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 0.8rem;
+}
+.sp161__member-button {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: #0f5c40;
+  text-align: left;
+  text-decoration: underline;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.sp161__member-kind,
+.sp161__member-size {
+  font-size: 0.74rem;
+  color: #5f6d67;
+}
+.sp161__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sp161__meta {
+  margin: 0;
+  padding-top: 6px;
+  border-top: 1px solid #dfe7e3;
+  font-size: 0.74rem;
+  color: #5f6d67;
+  overflow-wrap: anywhere;
+}
+.sp161--compact .sp161__lines > li,
+.sp161--compact .sp161__comparison > li {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (max-width: 520px) {
+  .sp161__lines > li,
+  .sp161__comparison > li {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

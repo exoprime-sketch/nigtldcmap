@@ -100,13 +100,24 @@ async function openDrawerIfCollapsed(page) {
 
 async function tick(page, elementId) {
   await openDrawerIfCollapsed(page);
-  await page.evaluate((id) => {
-    const input = document.querySelector(`[data-testid="map-all-data-layer-v135"][data-element-id="${id}"]`);
-    const group = input?.closest("[data-map-group-v135]");
-    const toggle = group?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
-    if (toggle && toggle.getAttribute("aria-expanded") !== "true") toggle.click();
-  }, elementId);
+  const expandGroup = () =>
+    page.evaluate((id) => {
+      const input = document.querySelector(`[data-testid="map-all-data-layer-v135"][data-element-id="${id}"]`);
+      const group = input?.closest("[data-map-group-v135]");
+      const toggle = group?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
+      if (toggle && toggle.getAttribute("aria-expanded") !== "true") toggle.click();
+    }, elementId);
+  await expandGroup();
   const input = page.locator(`[data-testid="map-all-data-layer-v135"][data-element-id="${elementId}"]`);
+  // The group folds shut when the sweep clears the selection, and React needs a
+  // render before the row is visible. Wait for it, and ask once more if the first
+  // click landed before the toggle was there.
+  try {
+    await input.waitFor({ state: "visible", timeout: 5000 });
+  } catch {
+    await expandGroup();
+    await input.waitFor({ state: "visible", timeout: 15000 });
+  }
   await input.scrollIntoViewIfNeeded();
   await input.click();
 }
@@ -212,8 +223,10 @@ const INTERNAL_PHRASE_PATTERN =
   await page.waitForSelector('[data-testid="map-all-data-layer-v135"]', { state: "attached", timeout: 60000 });
   await page.waitForTimeout(2000);
 
-  // Multi-select: three datasets of different kinds.
-  for (const id of ["B-004", "A-023", "B-008", "C-019"]) {
+  // Multi-select: four datasets of different kinds. V157 moved C-019 off the map
+  // (2026-09-22 전수검토: 지도 비표출), so the area layer in this scenario is C-013,
+  // which is registered and, like C-019 was, a native-34 region choropleth.
+  for (const id of ["B-004", "A-023", "B-008", "C-013"]) {
     await tick(page, id);
     await waitRendered(page, id, 25000);
   }
@@ -228,8 +241,8 @@ const INTERNAL_PHRASE_PATTERN =
   };
   await page.screenshot({ path: resolve(SHOTS, "multi-select-1440.png") });
 
-  // Colour source switch: C-019 becomes the colour map, nothing else dropped.
-  await page.selectOption('[data-testid="map-colour-source-v138"] select', "C-019");
+  // Colour source switch: C-013 becomes the colour map, nothing else dropped.
+  await page.selectOption('[data-testid="map-colour-source-v138"] select', "C-013");
   await page.waitForTimeout(2500);
   state = await rootState(page);
   report.interactions.colourSwitch = { primary: state.primary, contexts: state.contexts, rendered: state.rendered };

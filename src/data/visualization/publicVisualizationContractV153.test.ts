@@ -109,10 +109,13 @@ describe("V153 visualization contract", () => {
     }
   });
 
-  test("map roles follow the map index; B-017 stays pending", () => {
+  // V157: B-017's boundary asset arrived (PR #24) and the layer is registered, so
+  // no element is "pending" any more - the rule is the map index, for every row.
+  // A ⓪ status-note row shows no map whatever the index says (V159 typology).
+  test("map roles follow the map index", () => {
     for (const row of VISUALIZATION_CONTRACT_V153) {
-      if (row.elementId === "B-017") {
-        expect(row.mapRole).toBe("pending");
+      if (row.archetype === "status-note") {
+        expect(row.mapRole).toBe("none");
         continue;
       }
       expect(row.mapRole).toBe(mapIds.has(row.elementId) ? "beside-primary" : "none");

@@ -1,0 +1,2512 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-015",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2024년 기준",
+    "defaultVariable": "d-015-located-count",
+    "periods": [
+      "2024년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-015-located-count",
+        "measureId": "d-015-located-count",
+        "measureKey": "d-015-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2024년 기준"
+        ],
+        "maxFeatureCount": 45
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00006",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00006",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00006",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00009",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tây Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 21,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00025",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00035",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "An Giang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00035",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "An Giang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00049",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00049",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hưng Yên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00061",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cao Bằng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00067",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00067",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00070",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00070",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00076",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00076",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00082",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 11,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00082",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00126",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00126",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00188",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00188",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00188",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00218",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00229",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00229",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00279",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Huế",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00298",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00298",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00298",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00302",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00302",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00309",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00407",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00407",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00597",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "d-015-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2024년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-015_oda_korea_project_registry",
+      "sourceRecordId": "v124-d-015-entity-00597",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-24": [
+      {
+        "recordId": "v124-d-015-entity-00003",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00100",
+        "label": "베트남 꽝찌성 새마을운동 사업(꽝찌성 행복프로그램)('14-'17/967만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00151",
+        "label": "베트남 중부지역 꽝빈성 평화마을 농촌개발 프로그램('21-'26/1,000만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00208",
+        "label": "꽝빈성 직업전문대학 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00209",
+        "label": "꽝빈성 직업전문대학 개선사업(소액차관)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00327",
+        "label": "베트남 꽝찌성 초등학교 과학교육 개선 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00613",
+        "label": "베트남 꽝찌성 장애인 종합재활센터 설립사업('22-'26/1,200만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-d-015-entity-00003",
+        "label": "꽝빈성 태양광 발전사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00100",
+        "label": "베트남 꽝찌성 새마을운동 사업(꽝찌성 행복프로그램)('14-'17/967만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00151",
+        "label": "베트남 중부지역 꽝빈성 평화마을 농촌개발 프로그램('21-'26/1,000만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00208",
+        "label": "꽝빈성 직업전문대학 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00209",
+        "label": "꽝빈성 직업전문대학 개선사업(소액차관)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00327",
+        "label": "베트남 꽝찌성 초등학교 과학교육 개선 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00613",
+        "label": "베트남 꽝찌성 장애인 종합재활센터 설립사업('22-'26/1,200만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-d-015-entity-00006",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00034",
+        "label": "호아빈 상수도 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00403",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00404",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00638",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-d-015-entity-00006",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00034",
+        "label": "호아빈 상수도 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00403",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00404",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00638",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-d-015-entity-00006",
+        "label": "빈푹 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00034",
+        "label": "호아빈 상수도 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00403",
+        "label": "호아빈성 락뚜이 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00404",
+        "label": "호아빈성 락뚜이 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00638",
+        "label": "호아빈성 도로확장 및 제방구축 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-d-015-entity-00008",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00154",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-d-015-entity-00008",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00154",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-d-015-entity-00008",
+        "label": "닌빈 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00154",
+        "label": "베트남 닌빈성 양돈 고품질화 스마트팜 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-d-015-entity-00010",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00056",
+        "label": "하이즈엉성 탱하현 탱안면 기초보건 위생시설 및 인식개선 구축사업(2014-2016/281백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00193",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00205",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00221",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00304",
+        "label": "베트남 하이퐁시(Hai Phong) 취약아동의 조부모들을 위한 지원",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00349",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00368",
+        "label": "베트남 하이퐁시(Hai Phong) 취약아동의 조부모들을 위한 지원('14/2차 사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00458",
+        "label": "베트남 하이퐁 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-d-015-entity-00010",
+        "label": "하이퐁 고체폐기물 처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00056",
+        "label": "하이즈엉성 탱하현 탱안면 기초보건 위생시설 및 인식개선 구축사업(2014-2016/281백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00193",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00205",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00221",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00304",
+        "label": "베트남 하이퐁시(Hai Phong) 취약아동의 조부모들을 위한 지원",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00349",
+        "label": "하이퐁시 산부인과병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00368",
+        "label": "베트남 하이퐁시(Hai Phong) 취약아동의 조부모들을 위한 지원('14/2차 사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00458",
+        "label": "베트남 하이퐁 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "v124-d-015-entity-00017",
+        "label": "베트남 메콩유역 롱안성 생활폐기물 분리배출 및 자원순환 촉진 사업('24-'28/1,083만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "v124-d-015-entity-00017",
+        "label": "베트남 메콩유역 롱안성 생활폐기물 분리배출 및 자원순환 촉진 사업('24-'28/1,083만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-d-015-entity-00025",
+        "label": "베트남 하노이 도시철도 8호선 건설 예비타당성조사(Pre-F/S) 사업(`18-`20/400만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00026",
+        "label": "베트남 하노이 도시철도 8호선 건설 예비타당성조사(Pre-F/S) 사업('18-'22/400만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00028",
+        "label": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00193",
+        "label": "하노이-하이퐁 고속도로 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00205",
+        "label": "하노이-하이퐁 고속도로 건설사업(제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00221",
+        "label": "하노이-하이퐁 고속도로 건설사업 (제10구간)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00292",
+        "label": "베트남 하노이 빈곤층 장애인재활 및 사회통합 지원 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00295",
+        "label": "베트남 하노이 직업훈련원  지원사업 사후관리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00331",
+        "label": "베트남 하노이 지역 장애인을 위한 정보격차 해소 지원 환경 구축",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00362",
+        "label": "베트남 하노이 개방대학교 개선사업(`14-`19/300만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00440",
+        "label": "하노이 약학대학 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00566",
+        "label": "베트남 하노이 좋은마음학교 조성사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00573",
+        "label": "베트남 하노이 장애청년 직업재활 사업(2021-2023/250백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00585",
+        "label": "베트남 하노이시 아동ㆍ청소년을 위한 구강건강 모니터링 시스템 구축 12개월/300백만원",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00605",
+        "label": "베트남 하노이 장애청년 경제 자립 지원 강화 사업(3단계)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00610",
+        "label": "베트남 하노이 AI 교육을 통한 인력 양성 및 일자리 창출 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00622",
+        "label": "베트남 하노이 국립이비인후과병원 의료기기 관리운영체계 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00649",
+        "label": "베트남 하노이 시각장애인 바리스타 일자리사업(2024-2026/535백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-44": [
+      {
+        "recordId": "v124-d-015-entity-00035",
+        "label": "베트남 끼엔장성 우밍 및 빙빙남지역 식수개발사업(베트남 끼엔장성 식수개발사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "An Giang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-47": [
+      {
+        "recordId": "v124-d-015-entity-00035",
+        "label": "베트남 끼엔장성 우밍 및 빙빙남지역 식수개발사업(베트남 끼엔장성 식수개발사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "An Giang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "v124-d-015-entity-00050",
+        "label": "흥옌시 폐수처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00051",
+        "label": "흥옌시 폐수처리시설 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "v124-d-015-entity-00050",
+        "label": "흥옌시 폐수처리사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00051",
+        "label": "흥옌시 폐수처리시설 건설사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hưng Yên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-04": [
+      {
+        "recordId": "v124-d-015-entity-00061",
+        "label": "(베트남) 까오방 마을 상수도 구축 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cao Bằng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00643",
+        "label": "베트남 까오방성 소수민족학교 교육환경 개선 지원",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cao Bằng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-015-entity-00067",
+        "label": "베트남 라오까이성 조리용 스토브를 활용한 온수 시스템 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00101",
+        "label": "베트남 라오까이성 새마을운동 사업(라오까이성 행복프로그램) (`14-`19/1,400만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00212",
+        "label": "베트남 옌바이 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00213",
+        "label": "옌바이 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00265",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00553",
+        "label": "개도국정보이용환경개선(베트남(라오까이) 정보접근센터 유지보수)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00631",
+        "label": "베트남 옌바이성 소수민족 아동 교육환경 개선 지원 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-015-entity-00067",
+        "label": "베트남 라오까이성 조리용 스토브를 활용한 온수 시스템 개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00101",
+        "label": "베트남 라오까이성 새마을운동 사업(라오까이성 행복프로그램) (`14-`19/1,400만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00212",
+        "label": "베트남 옌바이 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00213",
+        "label": "옌바이 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00265",
+        "label": "라오까이 종합병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00553",
+        "label": "개도국정보이용환경개선(베트남(라오까이) 정보접근센터 유지보수)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00631",
+        "label": "베트남 옌바이성 소수민족 아동 교육환경 개선 지원 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "v124-d-015-entity-00070",
+        "label": "베트남 타이응우옌성 동히현 학교 내 지속가능한 WASH 개선사업('23-'24/200백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "v124-d-015-entity-00070",
+        "label": "베트남 타이응우옌성 동히현 학교 내 지속가능한 WASH 개선사업('23-'24/200백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-d-015-entity-00076",
+        "label": "베트남 까마우성 재난위험경감 및 기후변화대비 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00078",
+        "label": "베트남 메콩 삼각주 까마우성 기후변화 대응 및 재난위험경감 관리 역량 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00214",
+        "label": "까마우성 종합병원 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00215",
+        "label": "베트남 까마우성 종합병원 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-d-015-entity-00076",
+        "label": "베트남 까마우성 재난위험경감 및 기후변화대비 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00078",
+        "label": "베트남 메콩 삼각주 까마우성 기후변화 대응 및 재난위험경감 관리 역량 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00214",
+        "label": "까마우성 종합병원 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00215",
+        "label": "베트남 까마우성 종합병원 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-d-015-entity-00082",
+        "label": "베트남 다낭시 스마트 통합 도시재난관리센터 구축 및 재난대응 역량강화 사업('20-'25/1,050만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00299",
+        "label": "꽝남성 어린이 병원 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00330",
+        "label": "베트남 중부지역 초등학교 지원사업(꽝남성)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00371",
+        "label": "베트남 중부지역 초등학교 지원사업-꽝남성 10개 초등학교 대상 사후관리(2차사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00480",
+        "label": "베트남 다낭 IT전문인력 양성 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00483",
+        "label": "베트남 꽝남, 옌베이 지역 소수민족아동 교육지원 사업(2018-2020/1,725백만원/세이브더칠드런)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00556",
+        "label": "베트남 다낭시 도시교통 마스터플랜 수립",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00534",
+        "label": "베트남 꽝남성 지역 실크 방직기 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00543",
+        "label": "베트남 꽝남성 땀끼시 스마트시티 구축 지원사업('20-'25/900만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00648",
+        "label": "베트남 꽝남성 지역사회기반 장애아동 재활치료 소외 감소 및 삶의 질 개선 사업 2단계(2024-2026/1,598백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-d-015-entity-00082",
+        "label": "베트남 다낭시 스마트 통합 도시재난관리센터 구축 및 재난대응 역량강화 사업('20-'25/1,050만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00299",
+        "label": "꽝남성 어린이 병원 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00330",
+        "label": "베트남 중부지역 초등학교 지원사업(꽝남성)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00371",
+        "label": "베트남 중부지역 초등학교 지원사업-꽝남성 10개 초등학교 대상 사후관리(2차사업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00480",
+        "label": "베트남 다낭 IT전문인력 양성 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00483",
+        "label": "베트남 꽝남, 옌베이 지역 소수민족아동 교육지원 사업(2018-2020/1,725백만원/세이브더칠드런)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00556",
+        "label": "베트남 다낭시 도시교통 마스터플랜 수립",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00534",
+        "label": "베트남 꽝남성 지역 실크 방직기 사후관리 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00543",
+        "label": "베트남 꽝남성 땀끼시 스마트시티 구축 지원사업('20-'25/900만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00648",
+        "label": "베트남 꽝남성 지역사회기반 장애아동 재활치료 소외 감소 및 삶의 질 개선 사업 2단계(2024-2026/1,598백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "v124-d-015-entity-00126",
+        "label": "베트남 뚜옌꽝성 포용적 농촌개발 프로그램(`19-`23/1,500만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00160",
+        "label": "뚜옌꽝성 농산물 가치사슬 구축을 통한 지속가능한 농업개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-d-015-entity-00126",
+        "label": "베트남 뚜옌꽝성 포용적 농촌개발 프로그램(`19-`23/1,500만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00160",
+        "label": "뚜옌꽝성 농산물 가치사슬 구축을 통한 지속가능한 농업개발사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-d-015-entity-00189",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-d-015-entity-00189",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-d-015-entity-00189",
+        "label": "닥농성 종합병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-d-015-entity-00218",
+        "label": "하띤성 중등직업학교 개선사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00219",
+        "label": "하띤성 중등직업학교 개선사업(소액차관)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00406",
+        "label": "하띤성 둑토 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-d-015-entity-00229",
+        "label": "베트남 박장성 한베기술대학 설립사업('10-'13/1,000만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-d-015-entity-00229",
+        "label": "베트남 박장성 한베기술대학 설립사업('10-'13/1,000만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-d-015-entity-00279",
+        "label": "베트남 후에시 마스터플랜 개선사업('11-'13/350만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00575",
+        "label": "베트남 후에시 문화관광 스마트시티 조성 지원사업('21-'25/1,398만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-d-015-entity-00298",
+        "label": "베트남 빈롱시(Vinh Long) 지역 빈곤계층을 위한 마이크로파이낸스 및 지역정부 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00353",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00359",
+        "label": "베트남 빈롱성(Vinh Long province) 빈곤가구 소득증대 및 지역정부 역량강화 사업(2014-2016/623백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00410",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00450",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2017-2019/753백만원/열매나눔인터내셔널)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00548",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2020-2021/711백만원/열매나눔인터내셔널/4단계)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-d-015-entity-00298",
+        "label": "베트남 빈롱시(Vinh Long) 지역 빈곤계층을 위한 마이크로파이낸스 및 지역정부 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00353",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00359",
+        "label": "베트남 빈롱성(Vinh Long province) 빈곤가구 소득증대 및 지역정부 역량강화 사업(2014-2016/623백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00410",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00450",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2017-2019/753백만원/열매나눔인터내셔널)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00548",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2020-2021/711백만원/열매나눔인터내셔널/4단계)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-d-015-entity-00298",
+        "label": "베트남 빈롱시(Vinh Long) 지역 빈곤계층을 위한 마이크로파이낸스 및 지역정부 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00353",
+        "label": "짜빈성 튜껀 종합병원 앞 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00359",
+        "label": "베트남 빈롱성(Vinh Long province) 빈곤가구 소득증대 및 지역정부 역량강화 사업(2014-2016/623백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00410",
+        "label": "벤째성 종합병원 건립사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00450",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2017-2019/753백만원/열매나눔인터내셔널)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00548",
+        "label": "베트남 빈롱성 빈곤가구 소득증대 및 지역정부 역량강화 사업(2020-2021/711백만원/열매나눔인터내셔널/4단계)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "v124-d-015-entity-00302",
+        "label": "베트남 동나이성 빈곤지역 청년직업 역량 강화를 위한 용접직업학교 설립 및 운영사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "v124-d-015-entity-00302",
+        "label": "베트남 동나이성 빈곤지역 청년직업 역량 강화를 위한 용접직업학교 설립 및 운영사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-d-015-entity-00309",
+        "label": "응에안성 빈곤여성 쉼터 건립 및 역량강화",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00332",
+        "label": "베트남 응에안성 지역여성을 위한 직업교육",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-d-015-entity-00407",
+        "label": "빈딘성 꾸이년병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00629",
+        "label": "베트남 잘라이성 전문사범대학 역량강화를 통한 소수민족 유아교육의 질 향상('23-'24/200백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-d-015-entity-00407",
+        "label": "빈딘성 꾸이년병원 의료기자재 공급사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "v124-d-015-entity-00629",
+        "label": "베트남 잘라이성 전문사범대학 역량강화를 통한 소수민족 유아교육의 질 향상('23-'24/200백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "v124-d-015-entity-00597",
+        "label": "아시아 개도국 빈곤감소사업(푸옌성 지뢰행동 통합관리 거버넌스 구축 지원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-015-entity-00597",
+        "label": "아시아 개도국 빈곤감소사업(푸옌성 지뢰행동 통합관리 거버넌스 구축 지원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-015-located-count",
+      "period": "2024년 기준",
+      "expectedCount": 63,
+      "matchedCount": 45,
+      "missingCount": 18,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "출처: 한국국제협력단(KOICA)·한국수출입은행(EDCF)·ODA Korea, 공공누리 제1유형."
+    ],
+    "licenses": [
+      "공공누리 제1유형(출처표시)"
+    ],
+    "organizations": [
+      "국무조정실 ODA Korea 통합 통계(OECD CRS 보고 원자료) — 한국수출입은행(EDCF)·한국국제협력단(KOICA)·정부부처·지방자치단체 제출분"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 45,
+    "maxSeriesFeatureCount": 45,
+    "missingAdm1Count": 18,
+    "providedZeroCount": 0,
+    "publishedValueCount": 45,
+    "sourceValueCount": 107,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 23
+  }
+}

@@ -1,0 +1,1650 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "B-026",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "complete",
+  "selectors": {
+    "defaultPeriod": "2022년 기준",
+    "defaultVariable": "dominant-flow-direction-share",
+    "periods": [
+      "2022년 기준"
+    ],
+    "variables": [
+      {
+        "key": "dominant-flow-direction-share",
+        "measureId": "b026-dominant-flow-share",
+        "measureKey": "dominant-flow-direction-share",
+        "scenario": null,
+        "label": "우세 유향 격자 비율",
+        "unit": "%",
+        "periods": [
+          "2022년 기준"
+        ],
+        "maxFeatureCount": 63
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.96,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00001",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.65,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00002",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21.02,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00003",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 22.13,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00004",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-04",
+      "adm1Name": "Cao Bằng",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 16.64,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00005",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.26,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00006",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.71,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00007",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 22.41,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00008",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.82,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00009",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.64,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00010",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.31,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00011",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 22.39,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00012",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00013",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.34,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00014",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.33,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00015",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.63,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00016",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.61,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00017",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.15,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00018",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.72,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00019",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.05,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00020",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21.09,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00021",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 16.37,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00022",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.41,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00023",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.02,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00024",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.11,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00025",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 16.79,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00026",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.47,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00027",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.87,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00028",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21.3,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00029",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 16.82,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00030",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.85,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00031",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.24,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00032",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.7,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00033",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.76,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00034",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.32,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00035",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 23.28,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00036",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.17,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00037",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.45,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00038",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.63,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00039",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.65,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00040",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21.42,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00041",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.6,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00042",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.5,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00043",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.38,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00044",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.37,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00045",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.24,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00046",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.42,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00047",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.44,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00048",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.87,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00049",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.05,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00050",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 16.85,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00051",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.67,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00052",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.5,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00053",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.88,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00054",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 17.34,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00055",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.96,
+      "unit": "%",
+      "categoryLabel": "N 북",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00056",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.63,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00057",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 20.21,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00058",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.52,
+      "unit": "%",
+      "categoryLabel": "E 동",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00059",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 21.98,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00060",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.14,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00061",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 18.42,
+      "unit": "%",
+      "categoryLabel": "W 서",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00062",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "dominant-flow-direction-share",
+      "variableLabel": "우세 유향 격자 비율",
+      "period": "2022년 기준",
+      "value": 19.8,
+      "unit": "%",
+      "categoryLabel": "S 남",
+      "sourceIndicatorId": "B-026_flowdir_adm1",
+      "sourceRecordId": "v124-b-026-entity-00063",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-47": [
+      {
+        "recordId": "v124-b-026-entity-00001",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.96",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-44": [
+      {
+        "recordId": "v124-b-026-entity-00002",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.65",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-b-026-entity-00003",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "21.02",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-b-026-entity-00004",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "22.13",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-04": [
+      {
+        "recordId": "v124-b-026-entity-00005",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "16.64",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-b-026-entity-00006",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "20.26",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-b-026-entity-00007",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "18.71",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "v124-b-026-entity-00008",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "22.41",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "v124-b-026-entity-00009",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "17.82",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "v124-b-026-entity-00010",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.64",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "v124-b-026-entity-00011",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.31",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "v124-b-026-entity-00012",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "22.39",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-b-026-entity-00013",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "21",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-b-026-entity-00014",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "17.34",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-b-026-entity-00015",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "20.33",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "v124-b-026-entity-00016",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "17.63",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "v124-b-026-entity-00017",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.61",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-b-026-entity-00018",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "18.15",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-b-026-entity-00019",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "19.72",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-b-026-entity-00020",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.05",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-b-026-entity-00021",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "21.09",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-b-026-entity-00022",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "16.37",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "v124-b-026-entity-00023",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "19.41",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-b-026-entity-00024",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "20.02",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-01": [
+      {
+        "recordId": "v124-b-026-entity-00025",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "18.11",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-b-026-entity-00026",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "16.79",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-b-026-entity-00027",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "17.47",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-b-026-entity-00028",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.87",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-b-026-entity-00029",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "21.3",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-b-026-entity-00030",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "16.82",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-09": [
+      {
+        "recordId": "v124-b-026-entity-00031",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.85",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-b-026-entity-00032",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "18.24",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-b-026-entity-00033",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.7",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-b-026-entity-00034",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "17.76",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-b-026-entity-00035",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "18.32",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-b-026-entity-00036",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "23.28",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-b-026-entity-00037",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "18.17",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-b-026-entity-00038",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "20.45",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-28": [
+      {
+        "recordId": "v124-b-026-entity-00039",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "18.63",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-29": [
+      {
+        "recordId": "v124-b-026-entity-00040",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "18.65",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "v124-b-026-entity-00041",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "21.42",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-b-026-entity-00042",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "18.6",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-b-026-entity-00043",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "19.5",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-05": [
+      {
+        "recordId": "v124-b-026-entity-00044",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "17.38",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-b-026-entity-00045",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "17.37",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "v124-b-026-entity-00046",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "17.24",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "v124-b-026-entity-00047",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "20.42",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-b-026-entity-00048",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "18.44",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "v124-b-026-entity-00049",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "17.87",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "v124-b-026-entity-00050",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.05",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "v124-b-026-entity-00051",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "16.85",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-b-026-entity-00052",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "17.67",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-b-026-entity-00053",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "17.5",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-b-026-entity-00054",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "17.88",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "v124-b-026-entity-00055",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "17.34",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-b-026-entity-00056",
+        "label": "N 북",
+        "date": "",
+        "status": "",
+        "value": "18.96",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-b-026-entity-00057",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "18.63",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-b-026-entity-00058",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "20.21",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "v124-b-026-entity-00059",
+        "label": "E 동",
+        "date": "",
+        "status": "",
+        "value": "18.52",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "v124-b-026-entity-00060",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "21.98",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "v124-b-026-entity-00061",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "19.14",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-45": [
+      {
+        "recordId": "v124-b-026-entity-00062",
+        "label": "W 서",
+        "date": "",
+        "status": "",
+        "value": "18.42",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ],
+    "VN-46": [
+      {
+        "recordId": "v124-b-026-entity-00063",
+        "label": "S 남",
+        "date": "",
+        "status": "",
+        "value": "19.8",
+        "url": "",
+        "indicatorId": "B-026_flowdir_adm1"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "dominant-flow-direction-share",
+      "period": "2022년 기준",
+      "expectedCount": 63,
+      "matchedCount": 63,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "HydroSHEDS v1 Flow Direction (DIR 15s) — 기관 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "licenses": [
+      "기관 이용약관"
+    ],
+    "organizations": [
+      "HydroSHEDS v1 Flow Direction (DIR 15s)"
+    ],
+    "urls": [
+      "https://www.hydrosheds.org/hydrosheds-core-downloads"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 63,
+    "maxSeriesFeatureCount": 63,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 63,
+    "sourceValueCount": 63,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 22,
+    "zeroImputationCount": 0
+  }
+}
