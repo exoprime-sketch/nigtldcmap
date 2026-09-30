@@ -35,7 +35,10 @@ export const CATEGORY_COLORS_V157 = [
 ] as const;
 
 export interface CategoryLegendEntryV157 {
+  /** The band as the source writes it; the map's paint expression matches on this. */
   label: string;
+  /** The same band as the reader reads it: Korean name, source range beside it. */
+  text: string;
   color: string;
   featureCount: number;
 }
@@ -119,11 +122,16 @@ export function unitChoroplethCollectionV157(
     minimum: numeric.length ? Math.min(...numeric) : 0,
     maximum: numeric.length ? Math.max(...numeric) : 1,
     collection: { type: "FeatureCollection", features },
-    categories: categoryOrder.map((label, index) => ({
-      label,
-      color: CATEGORY_COLORS_V157[index % CATEGORY_COLORS_V157.length],
-      featureCount: categoryCounts.get(label) ?? 0,
-    })),
+    // Worst band first, each one named for the reader (severityLabelV157).
+    categories: [...categoryOrder]
+      .map((label) => ({ label, ...severityLabelV157(label) }))
+      .sort((left, right) => left.rank - right.rank)
+      .map((entry, index) => ({
+        label: entry.label,
+        text: entry.text,
+        color: CATEGORY_COLORS_V157[index % CATEGORY_COLORS_V157.length],
+        featureCount: categoryCounts.get(entry.label) ?? 0,
+      })),
   };
 }
 
@@ -133,6 +141,55 @@ export function unitChoroplethCollectionV157(
  * Used for the layer legend and for the fill expression, so both read the same
  * order and a category keeps its colour while the reader pans around.
  */
+/**
+ * The severity bands, worst first, and what each is called in Korean.
+ *
+ * WRI writes the band and its range in one string ("High (3-4)"); the reader gets the
+ * band in Korean with the source's range unchanged beside it.
+ */
+const SEVERITY_BANDS_V157: ReadonlyArray<{ readonly match: string; readonly ko: string }> = [
+  { match: "extremely high", ko: "매우 높음" },
+  { match: "high", ko: "높음" },
+  { match: "medium - high", ko: "중간–높음" },
+  { match: "medium-high", ko: "중간–높음" },
+  { match: "medium", ko: "중간" },
+  { match: "low - medium", ko: "낮음–중간" },
+  { match: "low-medium", ko: "낮음–중간" },
+  { match: "low", ko: "낮음" },
+  { match: "arid and low water use", ko: "건조·용수 사용 적음" },
+  { match: "no risk", ko: "위험 없음" },
+  { match: "no data", ko: "자료 없음" },
+];
+/** Worst first; the order the table is written in. */
+const SEVERITY_ORDER_V157 = [
+  "매우 높음",
+  "높음",
+  "중간–높음",
+  "중간",
+  "낮음–중간",
+  "낮음",
+  "건조·용수 사용 적음",
+  "위험 없음",
+  "자료 없음",
+];
+
+/** The band's name and range as the reader reads them, or the label unchanged. */
+export function severityLabelV157(label: string): { text: string; rank: number } {
+  const stated = String(label || "").trim();
+  const open = stated.indexOf("(");
+  const band = (open >= 0 ? stated.slice(0, open) : stated).trim().toLowerCase();
+  const range = open >= 0 ? stated.slice(open).trim() : "";
+  // Longest match first, so "low - medium" is not read as "low".
+  const hit = [...SEVERITY_BANDS_V157]
+    .sort((left, right) => right.match.length - left.match.length)
+    .find((entry) => band === entry.match);
+  if (!hit) return { text: stated, rank: SEVERITY_ORDER_V157.length };
+  return {
+    text: range ? `${hit.ko} ${range}` : hit.ko,
+    rank: SEVERITY_ORDER_V157.indexOf(hit.ko),
+  };
+}
+
 export function categoryLegendV157(
   collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>
 ): CategoryLegendEntryV157[] {
@@ -144,10 +201,17 @@ export function categoryLegendV157(
     if (!counts.has(label)) order.push(label);
     counts.set(label, (counts.get(label) ?? 0) + 1);
   }
-  return order.map((label, index) => ({
-    label,
+  // A severity scale is read worst-first; anything the table does not know keeps the
+  // order it arrived in, after the bands it does.
+  const ranked = order.map((label) => ({ label, ...severityLabelV157(label) }));
+  const sorted = ranked.some((entry) => entry.rank < SEVERITY_ORDER_V157.length)
+    ? [...ranked].sort((left, right) => left.rank - right.rank)
+    : ranked;
+  return sorted.map((entry, index) => ({
+    label: entry.label,
+    text: entry.text,
     color: CATEGORY_COLORS_V157[index % CATEGORY_COLORS_V157.length],
-    featureCount: counts.get(label) ?? 0,
+    featureCount: counts.get(entry.label) ?? 0,
   }));
 }
 

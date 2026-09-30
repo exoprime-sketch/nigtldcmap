@@ -65,7 +65,7 @@ export function mapCompanionElementIdsV157(): string[] {
 }
 
 function headlineTextV157(headline: CompanionHeadlineV157): string {
-  if (headline.value === null || headline.value === undefined) return "원천 미제공";
+  if (headline.value === null || headline.value === undefined) return "값 없음";
   const unit = headline.unit ? ` ${headline.unit}` : "";
   return `${formatPublicNumberV126(headline.value, headline.unit || "")}${unit}`;
 }

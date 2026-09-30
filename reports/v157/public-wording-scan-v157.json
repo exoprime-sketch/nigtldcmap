@@ -1,11 +1,14 @@
 {
   "schema": "public-wording-scan-v157",
-  "generatedAt": "2026-09-30T02:11:00.327Z",
+  "generatedAt": "2026-09-30T04:40:45.947Z",
   "base": "http://127.0.0.1:4358",
   "activeLayers": 60,
-  "scanned": 768,
-  "findings": [
+  "scanned": 778,
+  "findings": [],
+  "exceptions": [
     {
+      "reason": "OSM이 배포한 분류값과 지표 설명(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
+      "until": "세션4 PR 2 — 표시 라벨 대응표",
       "where": "detail",
       "elementId": "A-027",
       "field": "analysis",
@@ -22,6 +25,8 @@
       "text": "육상교통 인프라의 지역별 차이와 범위 공간자료에 수록된 지물의 종류와 규모 OpenStreetMap 자료에 기록된 구간·지점 수입니다. 실제 도로·하천·시설의 개수나 총연장으로 해석하지 않습니다. 자료 종류별 수록 지물 수 가로: 자료 종류별 수록 지물 수 세로: 자료 종류(도로/철도) 단위: 건 철도 3,720 도로 3,118,565 0을 기준으로 표시합니다. 자료 종류별 수록 지물 수 자료 종류 수록 지물 수(건) 자료연도"
     },
     {
+      "reason": "원자료가 성·시 표기를 띄어쓰기 없이 수록(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
+      "until": "세션4 PR 2 — 표시 라벨 대응표",
       "where": "detail",
       "elementId": "B-026",
       "field": "analysis",
@@ -109,6 +114,7 @@
     }
   ],
   "listedRows": 72,
-  "findingCount": 2,
-  "status": "FAIL"
+  "findingCount": 0,
+  "exceptionCount": 2,
+  "status": "PASS"
 }

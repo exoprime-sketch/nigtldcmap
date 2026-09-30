@@ -38,6 +38,7 @@ const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const contract = readJson(resolve(DATA, "map-content-contract-v157.json"));
 const catalog = readJson(resolve(DATA, "catalog.json"));
 const mapIndex = readJson(resolve(DATA, "map-index.json"));
+const targets = readJson(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json"));
 const catalogByElement = new Map(catalog.elements.map((row) => [row.elementId, row]));
 const registered = new Set(
   mapIndex.layers.filter((row) => row.active !== false && row.enabled !== false).map((row) => row.elementId)
@@ -79,7 +80,7 @@ function headlineFor(elementId) {
     (row) => typeof row.value === "number" && Number.isFinite(row.value)
   );
   if (rows.length === 0) {
-    return { value: null, reason: "원천에 수치 관측값이 없습니다(문서·목록형 자료)" };
+    return { value: null, reason: "원자료에 수치 값이 없습니다(문서·목록형 자료)" };
   }
   const withYear = rows.filter((row) => Number.isFinite(Number(row.year)));
   const latestYear = withYear.length
@@ -105,6 +106,44 @@ function headlineFor(elementId) {
   };
 }
 
+/**
+ * What each companion card says, written for the reader.
+ *
+ * Keyed `"<보여줄 자료>@<옆에 놓이는 지도 자료>"`, because the same dataset can sit
+ * beside more than one layer. The form is "<지도 자료>와 함께 볼 <값>".
+ */
+const PUBLIC_COMPANION_NOTE_V157 = {
+  "A-022@A-024": "송전망과 함께 볼 전력공급 신뢰도의 국가 단위 값",
+  "B-002@B-003": "기후대와 함께 볼 유형별 국토 면적 비율(국가 단위 값)",
+  "A-013@B-008": "해수면 상승과 함께 볼 국가계획 원문(해당 조치 인용)",
+  "A-013@B-012": "재해 이력과 함께 볼 국가계획 원문(해당 조치 인용)",
+  "B-024@B-017": "물 스트레스와 함께 볼 농업용수 지표의 국가 단위 값",
+  "B-035@B-037": "토지피복과 함께 볼 토지이용 면적의 국가 단위 값",
+  "B-036@B-037": "토지피복과 함께 볼 토지이용 변화율의 국가 단위 값",
+  "B-044@B-048": "광산과 함께 볼 광종별 부존 현황(국가 단위 값)",
+  "B-046@B-048": "광산과 함께 볼 광종별 매장량(국가 단위 값)",
+  "B-047@B-048": "광산과 함께 볼 광종별 생산량(국가 단위 값)",
+  "C-003@C-016": "재생에너지 지역계획과 함께 볼 국가적응계획의 지역 과제",
+  "C-017@C-016": "재생에너지 지역계획과 함께 볼 지역 발전가격·지원 제도",
+  "C-006@C-025": "탄소크레딧 사업과 함께 볼 JCM 사업 현황",
+};
+
+/** The card's sentence, or a stop: a placement note is not a description. */
+function publicCompanionNoteV157(elementId, hostElementId) {
+  const line = PUBLIC_COMPANION_NOTE_V157[`${elementId}@${hostElementId}`];
+  if (!line) {
+    throw new Error(
+      `PUBLIC_COMPANION_NOTE_MISSING: ${elementId}@${hostElementId} — 연관 카드 문구 1문장을 PUBLIC_COMPANION_NOTE_V157에 추가하세요(기획 메모 사용 금지)`
+    );
+  }
+  return line;
+}
+
+/** The reader's reason a dataset is not on the map, as the targets file states it. */
+const PUBLIC_REASON_BY_ELEMENT_V157 = new Map(
+  (targets.targets ?? []).map((target) => [target.elementId, target.build?.reason ?? ""])
+);
+
 const companionsByLayer = new Map();
 const rows = [];
 for (const row of contract.rows) {
@@ -116,11 +155,12 @@ for (const row of contract.rows) {
       publicName: row.targetName,
       role: companion.role,
       form: companion.form,
-      note: companion.note,
+      note: publicCompanionNoteV157(row.elementId, companion.elementId),
       ...(companion.matchOn ? { matchOn: companion.matchOn } : {}),
       ...(companion.quotationOnly ? { quotationOnly: true } : {}),
       status: row.status,
-      statusReason: row.statusReason,
+      // The public sentence; the contract keeps the working status of its own.
+      statusReason: PUBLIC_REASON_BY_ELEMENT_V157.get(row.elementId) || row.statusReason,
       headline,
       detailUrl: `/?view=data&country=${COUNTRY}&element=${row.elementId}#element-detail`,
       recordCount: entry?.entityCount ?? 0,

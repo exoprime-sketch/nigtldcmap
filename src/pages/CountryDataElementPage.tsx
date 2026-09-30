@@ -1004,11 +1004,6 @@ export default function CountryDataElementPage({
           이 자료는 <strong>지도에 표시하지 않습니다</strong>.{" "}
           <PublicTermTextV134 text={notMappedReasonV157} />
         </p>
-        {notMappedTargetV157?.build?.requiredAsset ? (
-          <p className="detail-map148-note">
-            지도에 올리려면: <PublicTermTextV134 text={String(notMappedTargetV157.build.requiredAsset)} />
-          </p>
-        ) : null}
       </section>
     </aside>
   ) : null;

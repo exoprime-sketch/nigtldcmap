@@ -3700,7 +3700,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
-      ? `${focusedSeriesCoverage.missingCount}개 성·시 원천 미제공 · 0으로 대체하지 않음`
+      ? `${focusedSeriesCoverage.missingCount}개 성·시는 원자료에 값 없음 · 0으로 대체하지 않음`
       : (focusedLayer.missingRegions ?? []).length
       ? (focusedLayer.missingRegions ?? []).join(" · ")
       : "없음"
@@ -3870,7 +3870,7 @@ export default function RealMapExplorerPage({
       amount:
         currentType === "adaptation" && adaptationAmount > 0
           ? `USD ${formatPublicNumberV126(adaptationAmount, "USD")}`
-          : "원천의 사업별 금액 범위",
+          : "원자료의 사업별 금액 범위",
       count:
         currentType === "adaptation"
           ? adaptationProjects.size
@@ -3962,7 +3962,7 @@ export default function RealMapExplorerPage({
       });
       rendered.categories.forEach((category) =>
         summaryRows.push({
-          label: category.label,
+          label: category.text || category.label,
           value: `${category.featureCount.toLocaleString()}개 단위`,
         })
       );
@@ -4171,7 +4171,7 @@ export default function RealMapExplorerPage({
       summaryRows.push({
         label: focusedLayer.featureIdentity.memberLabel
           ? `${focusedLayer.featureIdentity.memberLabel} 행`
-          : "원천 행",
+          : "원자료 건수",
         value: `${focusedLayer.memberRowCount.toLocaleString()}행`,
       });
     }
@@ -4591,7 +4591,7 @@ export default function RealMapExplorerPage({
         lines.push(
           ...selectionLineV161(
             measureLabel,
-            valueText || "원천 미제공",
+            valueText || "값 없음",
             selectedOwningVariablePresentationV129?.directionLabel ||
               selectedOwningVariablePresentationV129?.aggregationNotice ||
               undefined
@@ -4630,7 +4630,7 @@ export default function RealMapExplorerPage({
               country: countryIso3,
               level: "adm1-34",
             }),
-            "원천이 적은 소속 성·시이며, 값을 성·시로 합치지 않습니다."
+            "원자료가 적어 둔 소속 성·시이며, 값을 성·시로 합치지 않습니다."
           )
         );
       }
@@ -4927,7 +4927,7 @@ export default function RealMapExplorerPage({
       series,
       note: `관측소별 상대해수면 전망입니다. 기준면은 1995–2014 평균(2005년 기준)이며 침수 범위가 아닙니다. 분위는 모형 불확실성 범위이고${
         confidence.size ? ` 신뢰수준 ${[...confidence].join("·")}` : ""
-      } · 원천 IPCC AR6 해수면 전망 도구.`,
+      } · 출처 IPCC AR6 해수면 전망 도구.`,
     };
   }, [memberSeriesQuantileV138, selected, selectedEntityTitleResolutionV131, selectedLayer, selectedMembersV138]);
   const keyboardMapFeaturesV129 = useMemo<KeyboardMapFeatureV129[]>(() => {
@@ -5848,30 +5848,45 @@ export default function RealMapExplorerPage({
                                 <dt>지도 표시</dt>
                                 <dd><PublicTermTextV134 text={target.displaySpatialUnit} /></dd>
                               </div>
-                              <div>
-                                <dt>원자료 공간단위</dt>
-                                <dd><PublicTermTextV134 text={target.sourceSpatialUnit} /></dd>
-                              </div>
-                              <div>
-                                <dt>선택 항목</dt>
-                                <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
-                              </div>
-                              <div>
-                                <dt>단위·기간</dt>
-                                <dd><PublicTermTextV134 text={`${target.unit} · ${target.period}`} /></dd>
-                              </div>
-                              <div>
-                                <dt>유의사항</dt>
-                                <dd><PublicTermTextV134 text={target.limitation} /></dd>
-                              </div>
+                              {target.sourceSpatialUnit ? (
+                                <div>
+                                  <dt>원자료 공간단위</dt>
+                                  <dd><PublicTermTextV134 text={target.sourceSpatialUnit} /></dd>
+                                </div>
+                              ) : null}
+                              {target.selectableVariables ? (
+                                <div>
+                                  <dt>선택 항목</dt>
+                                  <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
+                                </div>
+                              ) : null}
+                              {target.unit || target.period ? (
+                                <div>
+                                  <dt>단위·기간</dt>
+                                  <dd><PublicTermTextV134 text={[target.unit, target.period].filter(Boolean).join(" · ")} /></dd>
+                                </div>
+                              ) : null}
+                              {/* An empty cell says nothing; a dataset that is not on
+                                  the map has its one sentence in the status cell. */}
+                              {target.limitation ? (
+                                <div>
+                                  <dt>유의사항</dt>
+                                  <dd><PublicTermTextV134 text={target.limitation} /></dd>
+                                </div>
+                              ) : null}
                               {!available && (
                                 <div>
                                   <dt>{MAP_PENDING_LABEL_V140} 사유</dt>
                                   <dd data-testid="map-catalog-unavailable-reason-v138">
-                                    {layer?.disabledReason || target.build.reason || "위치·경계 자료가 확인되지 않았습니다."}
-                                    {target.build.requiredAsset
-                                      ? ` 필요한 자료: ${target.build.requiredAsset}`
-                                      : ""}
+                                    {/* What the provider still has to send is in the
+                                        re-delivery request, not on a public panel. */}
+                                    <PublicTermTextV134
+                                      text={
+                                        layer?.disabledReason ||
+                                        target.build.reason ||
+                                        "위치·경계 자료가 확인되지 않았습니다."
+                                      }
+                                    />
                                   </dd>
                                 </div>
                               )}
@@ -6254,6 +6269,12 @@ export default function RealMapExplorerPage({
                     <PublicTermTextV134
                       text={
                         focusedLayer.analysisItemLabel ||
+                        // A layer drawn from its own asset counts features on the map;
+                        // the delivered table's measure name ("도로 레이어") describes
+                        // that table, not what the reader is looking at.
+                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                          ? focusedLayer.legend.title
+                          : null) ||
                         focusedVariablePresentationV129?.label ||
                         (focusedLayer.layerId.startsWith("vnm-v138-")
                           ? focusedVariable?.label
@@ -7325,6 +7346,11 @@ export default function RealMapExplorerPage({
                   <dd>
                     <PublicTermTextV134
                       text={
+                        // A layer drawn from its own asset is named by what it draws;
+                        // the delivered table's measure name describes that table.
+                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                          ? focusedLayer.legend.title
+                          : null) ||
                         focusedVariablePresentationV129?.label ||
                         focusedSemantic?.measureLabel ||
                         focusedLayer.legend.title
@@ -7555,7 +7581,7 @@ export default function RealMapExplorerPage({
                         style={{ background: entry.color }}
                         aria-hidden="true"
                       />
-                      <PublicTermTextV134 text={entry.label} />
+                      <PublicTermTextV134 text={entry.text || entry.label} />
                       <span className="cdp-map-legend__count">
                         {entry.featureCount.toLocaleString()}개
                       </span>
@@ -7638,6 +7664,11 @@ export default function RealMapExplorerPage({
                     label="항목"
                     value={
                       focusedLayer.analysisItemLabel ||
+                      // An asset layer is named by what it draws (see the layer
+                      // meta above); the delivered table's measure name is not it.
+                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                        ? focusedLayer.legend.title
+                        : null) ||
                       focusedVariablePresentationV129?.label ||
                       (focusedLayer.layerId.startsWith("vnm-v138-")
                         ? focusedVariable?.label
@@ -7653,6 +7684,9 @@ export default function RealMapExplorerPage({
                   {(() => {
                     const item =
                       focusedLayer.analysisItemLabel ||
+                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                        ? focusedLayer.legend.title
+                        : null) ||
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.measureLabel ||
                       focusedLayer.legend.title;
@@ -7915,7 +7949,7 @@ export default function RealMapExplorerPage({
                         label="세부 활동지역"
                         value={publicMapFeatureNameV126(
                           selectedSpatial.properties.verifiedActivityAreas,
-                          "원천 미제공"
+                          "원자료에 없음"
                         )}
                       />
                       <Evidence

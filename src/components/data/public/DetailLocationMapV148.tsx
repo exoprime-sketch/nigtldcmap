@@ -151,11 +151,6 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         <p className="detail-map148-note">
           이 자료는 <strong>지도에 표시하지 않습니다</strong>. <PublicTermTextV134 text={reason} />
         </p>
-        {target?.build?.requiredAsset ? (
-          <p className="detail-map148-note">
-            지도에 올리려면: <PublicTermTextV134 text={String(target.build.requiredAsset)} />
-          </p>
-        ) : null}
       </section>
     );
   }

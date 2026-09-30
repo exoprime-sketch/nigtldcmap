@@ -479,6 +479,39 @@ function publicDisplayUnitV157(elementId) {
   return line;
 }
 
+/**
+ * The sentence a reader gets for a dataset that is not on the map.
+ *
+ * One per element, written from the reader's side: what their data does not contain.
+ * The working detail (which column, which re-delivery, what is forbidden) stays in
+ * `build.internalReason` / `build.requiredAsset` for the re-delivery request.
+ */
+const PUBLIC_UNMAPPED_REASON_V157 = {
+  "A-013": "원문의 지역 표현(해안·삼각주 등)이 공식 경계와 대응되지 않습니다.",
+  "A-022": "원자료가 전력회사 그룹 전체의 값이어서 성·시별로 나눌 수 없습니다.",
+  "B-002": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-024": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-035": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-036": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-044": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-046": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "B-047": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+  "C-003": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다.",
+  "C-006": "원자료에 사업 지역 정보가 없습니다.",
+  "C-017": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다.",
+};
+
+/** The reader's sentence, or a stop: a working note is not an explanation. */
+function publicUnmappedReasonV157(elementId) {
+  const line = PUBLIC_UNMAPPED_REASON_V157[elementId];
+  if (!line) {
+    throw new Error(
+      `PUBLIC_UNMAPPED_REASON_MISSING: ${elementId} — 지도에 올리지 않는 자료의 공개 사유 1문장을 PUBLIC_UNMAPPED_REASON_V157에 추가하세요(작업 메모 사용 금지)`
+    );
+  }
+  return line;
+}
+
 /** A row the data cannot place on a map yet: the reason is the row's content. */
 function unmappedTarget(row, entry) {
   const REQUIRED_ASSET = {
@@ -494,16 +527,18 @@ function unmappedTarget(row, entry) {
     category: mapCategoryFor(row.elementId),
     publicName: row.targetName,
     sourceFields: row.popupFields.map((field) => field.key),
-    sourceSpatialUnit: row.criteriaEvidence.entityRows > 0 ? "레코드 단위(지역 미확인)" : "국가 단위",
-    displaySpatialUnit: "미정(경계·좌표 미확보)",
+    sourceSpatialUnit: row.criteriaEvidence.entityRows > 0 ? "자료 한 건 단위(지역 미기재)" : "국가 단위",
+    displaySpatialUnit: "지도 표시 없음 · 국가 값 카드로 제공",
     representation: "none",
     build: {
       kind: "none",
-      reason: row.statusReason,
+      // What the reader is told; the working detail keeps its own field.
+      reason: publicUnmappedReasonV157(row.elementId),
+      internalReason: row.statusReason,
       requiredAsset: REQUIRED_ASSET[row.status] ?? "해당 공간 자산",
       forbidden: "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현",
     },
-    selectableVariables: `(상세 화면) ${row.pdfContent}`,
+    selectableVariables: row.pdfContent,
     unit: "",
     period: periodTextFor(entry),
     representativeItem: row.pdfContent,
@@ -511,7 +546,9 @@ function unmappedTarget(row, entry) {
       row.criteriaEvidence.entityRows > 0
         ? `개체 ${row.criteriaEvidence.entityRows}건 · 성·시 확인 0건`
         : `관측값 ${row.criteriaEvidence.observationRows}건(국가 단위)`,
-    limitation: `${row.statusReason} 연관 레이어와 함께 국가값 카드로만 표시합니다.`,
+    // The status cell already carries the reason; a second cell saying the same
+    // thing in working words is what the reviewer read as a memo.
+    limitation: "",
   };
 }
 

@@ -21,21 +21,22 @@
         "typeOfInformation",
         "provenance.sourceOrg"
       ],
-      "sourceSpatialUnit": "레코드 단위(지역 미확인)",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "sourceSpatialUnit": "자료 한 건 단위(지역 미기재)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+        "reason": "원문의 지역 표현(해안·삼각주 등)이 공식 경계와 대응되지 않습니다.",
+        "internalReason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
         "requiredAsset": "원문 지역어에 대응하는 공식 경계 정의",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 삼각주 산림보전·관개개선 계획",
+      "selectableVariables": "삼각주 산림보전·관개개선 계획",
       "unit": "",
       "period": "2016년 기준",
       "representativeItem": "삼각주 산림보전·관개개선 계획",
       "evidence": "개체 365건 · 성·시 확인 0건",
-      "limitation": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -44,20 +45,21 @@
       "publicName": "전력공급 신뢰도",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
+        "reason": "원자료가 전력회사 그룹 전체의 값이어서 성·시별로 나눌 수 없습니다.",
+        "internalReason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
         "requiredAsset": "EVN 5개 총공사 관할표(성별 출처 URL 포함)",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 전력회사 관할별 정전시간·빈도",
+      "selectableVariables": "전력회사 관할별 정전시간·빈도",
       "unit": "",
       "period": "2025~2026년",
       "representativeItem": "전력회사 관할별 정전시간·빈도",
       "evidence": "관측값 54건(국가 단위)",
-      "limitation": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -115,8 +117,8 @@
       "unit": "MW(설비용량)",
       "period": "2026(OSM 추출)·WRI v1.3.0",
       "representativeItem": "발전소 위치 1,889곳",
-      "evidence": "원천 좌표 1,889건(WRI 236 + OSM 1,653); 좌표 없는 74행 미표시",
-      "limitation": "WRI·OSM 동일시설은 원천 ID·명칭·좌표로 후보만 표시하고 자동 통합하지 않음. 용량은 값이 있는 475건만 합산 가능."
+      "evidence": "원자료 좌표 1,889건(WRI 236 + OSM 1,653) · 좌표 없는 74건은 표시하지 않음",
+      "limitation": "WRI·OSM에 같은 시설이 겹칠 수 있으며 합치지 않고 각각 표시합니다. 설비용량 합계는 값이 있는 475건만 더한 값입니다."
     },
     {
       "elementId": "A-024",
@@ -143,7 +145,7 @@
       "period": "2016",
       "representativeItem": "송전 선로 606구간",
       "evidence": "지도 606구간은 World Bank 2016 geometry, 상세 722행은 PDP8 계획선로 116행 포함",
-      "limitation": "선로 교차는 전기적 접속을 뜻하지 않음. 변전소·접속 정보는 원천에 없음."
+      "limitation": "선로 교차는 전기적 접속을 뜻하지 않음. 변전소·접속 정보는 원자료에 없습니다."
     },
     {
       "elementId": "A-025",
@@ -205,7 +207,7 @@
         "class",
         "lengthKm"
       ],
-      "sourceSpatialUnit": "전국 · 8,114개 선형(way 50,748개 병합)",
+      "sourceSpatialUnit": "노선 8,114개",
       "displaySpatialUnit": "도로·철도 노선 그대로(원자료 선형)",
       "representation": "line",
       "build": {
@@ -260,20 +262,21 @@
       "publicName": "기후대",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 성별 기후대·유형별 면적비율",
+      "selectableVariables": "성별 기후대·유형별 면적비율",
       "unit": "",
       "period": "1930~2099년",
       "representativeItem": "성별 기후대·유형별 면적비율",
       "evidence": "관측값 19건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -289,7 +292,7 @@
         "레코드_키(GADM GID_1)"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -354,7 +357,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -412,7 +415,7 @@
       "period": "1950~2100",
       "representativeItem": "SSP2-4.5 연평균 기온 2050",
       "evidence": "성·시 63개 × 6 시나리오 × 연도(31,185행)",
-      "limitation": "과거 모형값(historical)은 관측이 아님. 지역 간 분포와 모형 불확실성은 별개(원천은 앙상블 중앙값 1개 계열만 제공)."
+      "limitation": "과거 모형값(historical)은 관측이 아님. 지역 간 분포와 모형 불확실성은 별개(원자료는 앙상블 중앙값 1개 계열만 제공)."
     },
     {
       "elementId": "B-005",
@@ -425,7 +428,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -479,7 +482,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -560,7 +563,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -711,7 +714,7 @@
         "value",
         "unit"
       ],
-      "sourceSpatialUnit": "원천 워크북 Adm1 시트의 개편 전 63개 성 단위 값 · 지표 4종",
+      "sourceSpatialUnit": "원자료 표의 개편 전 63개 성 단위 값 · 지표 4종",
       "displaySpatialUnit": "63개 성 경계에 그대로 표시(34개 체계 전환 시 구성 성 값 유지)",
       "representation": "admin1-choropleth",
       "build": {
@@ -762,7 +765,7 @@
       "period": "2024~2026년",
       "representativeItem": "An Giang WWF BRF 물리적 위험(Scape Physical)",
       "evidence": "성 단위 관측값 252건 · 지표 4종",
-      "limitation": "성 단위 값은 원천이 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다.",
+      "limitation": "성 단위 값은 원자료가 제공한 값이며 국가값(면적가중 평균)과 다릅니다. 성 값을 합산해 국가값을 만들지 않습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -919,7 +922,7 @@
       "period": "2023 기준선(Aqueduct 4.0)",
       "representativeItem": "평가구역 443개 중 물 스트레스 등급 분포",
       "evidence": "자산 피처 442개 · MultiPolygon",
-      "limitation": "평가구역 경계는 원천 GADM 4.1 기준이라 성·시 경계와 정확히 겹치지 않습니다."
+      "limitation": "평가구역 경계는 원자료(GADM 4.1) 기준이라 성·시 경계와 정확히 겹치지 않습니다."
     },
     {
       "elementId": "B-021",
@@ -1038,20 +1041,21 @@
       "publicName": "농업용수 대리지표",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 성별 벼 재배면적·용수배분 추정",
+      "selectableVariables": "성별 벼 재배면적·용수배분 추정",
       "unit": "",
       "period": "2023년 기준",
       "representativeItem": "성별 벼 재배면적·용수배분 추정",
       "evidence": "관측값 205건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -1193,7 +1197,7 @@
       "selectableVariables": "성 클릭 → 8방향 비율·우세 유향(우세_유향)",
       "unit": "%",
       "period": "2022년 기준",
-      "representativeItem": "W 서",
+      "representativeItem": "(레코드 없음)",
       "evidence": "성 단위 행 74건 · 성·시 34개",
       "limitation": "값은 우세 유향이 차지하는 격자 비율이며 유량이 아닙니다. 통합된 성·시는 구성 성의 우세 유향이 다를 수 있어 단일값을 만들지 않고 범위만 표시합니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -1288,7 +1292,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 이탄지(Global Peatland Map 2022)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1347,7 +1351,7 @@
         "기간"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1415,7 +1419,7 @@
         "수관밀도_임계"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "existing",
@@ -1444,7 +1448,7 @@
         "수관밀도_임계"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "existing",
@@ -1471,7 +1475,7 @@
         "수관밀도_임계"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "existing",
@@ -1500,7 +1504,7 @@
         "산림탄소_순플럭스_Mg_CO2e_yr"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "existing",
@@ -1523,20 +1527,21 @@
       "publicName": "토지이용 면적",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 성별 토지이용 면적 시계열",
+      "selectableVariables": "성별 토지이용 면적 시계열",
       "unit": "",
       "period": "2024~2025년",
       "representativeItem": "성별 토지이용 면적 시계열",
       "evidence": "관측값 1764건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -1545,20 +1550,21 @@
       "publicName": "토지이용 변화율",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 성별 기간별 토지이용 면적 변화율",
+      "selectableVariables": "성별 기간별 토지이용 면적 변화율",
       "unit": "",
       "period": "2022~2024년",
       "representativeItem": "성별 기간별 토지이용 면적 변화율",
       "evidence": "관측값 48건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -1579,7 +1585,7 @@
         "연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1678,7 +1684,7 @@
         "기준연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1735,7 +1741,7 @@
         "기준연도"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — 격자 집계",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1805,7 +1811,7 @@
         "기준기간"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Solar Atlas 격자 집계",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1869,7 +1875,7 @@
         "격자_원천"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) — Global Wind Atlas 100m 격자 집계",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -1936,20 +1942,21 @@
       "publicName": "핵심광물 부존",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 광산 소재지역·광종",
+      "selectableVariables": "광산 소재지역·광종",
       "unit": "",
       "period": "2026년 기준",
       "representativeItem": "광산 소재지역·광종",
       "evidence": "관측값 26건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -1958,20 +1965,21 @@
       "publicName": "광물 매장량",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 광산 소재지역·니켈·리튬 매장 범위",
+      "selectableVariables": "광산 소재지역·니켈·리튬 매장 범위",
       "unit": "",
       "period": "2026년 기준",
       "representativeItem": "광산 소재지역·니켈·리튬 매장 범위",
       "evidence": "관측값 13건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -1980,20 +1988,21 @@
       "publicName": "광물 생산량",
       "sourceFields": [],
       "sourceSpatialUnit": "국가 단위",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
+        "internalReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
         "requiredAsset": "성·시 단위로 분해된 값(제공자 재납품) 또는 해당 경계 자산",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 라오까이 구리 생산량 범위",
+      "selectableVariables": "라오까이 구리 생산량 범위",
       "unit": "",
       "period": "2025년 기준",
       "representativeItem": "라오까이 구리 생산량 범위",
       "evidence": "관측값 21건(국가 단위)",
-      "limitation": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -2039,21 +2048,22 @@
         "속성19_원문URL",
         "provenance.sourceOrg"
       ],
-      "sourceSpatialUnit": "레코드 단위(지역 미확인)",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "sourceSpatialUnit": "자료 한 건 단위(지역 미기재)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+        "reason": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다.",
+        "internalReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
         "requiredAsset": "지역 열이 채워진 재납품",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 권역별 적응조치·이행기간",
+      "selectableVariables": "권역별 적응조치·이행기간",
       "unit": "",
       "period": "2020~2050년",
       "representativeItem": "권역별 적응조치·이행기간",
       "evidence": "개체 96건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -2068,21 +2078,22 @@
         "속성19_원문URL",
         "provenance.sourceOrg"
       ],
-      "sourceSpatialUnit": "레코드 단위(지역 미확인)",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "sourceSpatialUnit": "자료 한 건 단위(지역 미기재)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
+        "reason": "원자료에 사업 지역 정보가 없습니다.",
+        "internalReason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
         "requiredAsset": "사업별 실시 지역(성·시)이 채워진 재납품",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 사업지역·기술·등록상태",
+      "selectableVariables": "사업지역·기술·등록상태",
       "unit": "",
       "period": "2023~2026년",
       "representativeItem": "사업지역·기술·등록상태",
       "evidence": "개체 50건 · 성·시 확인 0건",
-      "limitation": "사업지역 세분화 전 — 성 단위 가능하면 등록 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -2090,11 +2101,7 @@
       "category": "정책·사업여건",
       "publicName": "국제 이니셔티브",
       "sourceFields": [
-        "name",
-        "속성1_레코드명",
-        "속성3_값",
-        "속성4_시점",
-        "속성19_원문URL"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2115,11 +2122,11 @@
         "defaultMeasure": "c-008-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "속성1_레코드명",
-          "valueKey": "속성3_값",
-          "dateKey": "속성4_시점",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
           "statusKey": null,
-          "urlKey": "속성19_원문URL"
+          "urlKey": null
         },
         "boundaryPolicy34": {
           "kind": "native-34"
@@ -2128,7 +2135,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "1994~2050년",
-      "representativeItem": "British International School Ho Chi Minh City (Hồ Chí Minh)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 235건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2243,7 +2250,7 @@
         "기간"
       ],
       "sourceSpatialUnit": "성·시(총리 결정 768/QĐ-TTg 부속표)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "existing",
@@ -2272,21 +2279,22 @@
         "속성19_원문URL",
         "provenance.sourceOrg"
       ],
-      "sourceSpatialUnit": "레코드 단위(지역 미확인)",
-      "displaySpatialUnit": "미정(경계·좌표 미확보)",
+      "sourceSpatialUnit": "자료 한 건 단위(지역 미기재)",
+      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+        "reason": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다.",
+        "internalReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
         "requiredAsset": "지역 열이 채워진 재납품",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
-      "selectableVariables": "(상세 화면) 권역별 가격상한·닌투언 특례",
+      "selectableVariables": "권역별 가격상한·닌투언 특례",
       "unit": "",
       "period": "2016~2026년",
       "representativeItem": "권역별 가격상한·닌투언 특례",
       "evidence": "개체 52건 · 성·시 확인 0건",
-      "limitation": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요) 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -2371,7 +2379,7 @@
         "속성4_시점"
       ],
       "sourceSpatialUnit": "FCPF ERPA 대상 성(개편 전 63개 성 이름)",
-      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글)",
+      "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "admin1-attributes",
@@ -2440,7 +2448,7 @@
       "period": "2005~2026",
       "representativeItem": "검증된 사업 위치 262건",
       "evidence": "좌표 있는 262건(전체 388행; 발행 거래 행은 사업 수에 포함하지 않음)",
-      "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원천 ID로만 판단."
+      "limitation": "사업·설비·발행 거래는 서로 다른 집계단위. 등록부 간 같은 사업은 원자료의 등록번호로만 판단합니다."
     },
     {
       "elementId": "D-008",
@@ -2473,9 +2481,7 @@
       "publicName": "외국기업 진출",
       "sourceFields": [
         "name",
-        "비고",
-        "명칭",
-        "대표금액"
+        "비고"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2496,8 +2502,8 @@
         "defaultMeasure": "d-012-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "대표금액",
+          "labelKey": null,
+          "valueKey": null,
           "dateKey": null,
           "statusKey": null,
           "urlKey": null
@@ -2509,7 +2515,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "Super Energy - Thinh Long Phu Yen 태양광 (Đắk Lắk)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 22건 중 성·시 확인 11건 · 성·시 10개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2519,11 +2525,7 @@
       "category": "국제사업·재원",
       "publicName": "EDCF 사업",
       "sourceFields": [
-        "name",
-        "명칭",
-        "약정액_합계",
-        "보고연도",
-        "상태"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2544,10 +2546,10 @@
         "defaultMeasure": "d-014-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "약정액_합계",
-          "dateKey": "보고연도",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2557,7 +2559,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
-      "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 164건 중 성·시 확인 43건 · 성·시 12개 · 복수 성 4건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2567,11 +2569,7 @@
       "category": "국제사업·재원",
       "publicName": "한국 ODA 사업",
       "sourceFields": [
-        "name",
-        "명칭",
-        "약정액_합계",
-        "보고연도",
-        "상태"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2592,10 +2590,10 @@
         "defaultMeasure": "d-015-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "약정액_합계",
-          "dateKey": "보고연도",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2605,7 +2603,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
-      "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 650건 중 성·시 확인 103건 · 성·시 23개 · 복수 성 4건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2615,11 +2613,7 @@
       "category": "국제사업·재원",
       "publicName": "부처·지자체 ODA",
       "sourceFields": [
-        "name",
-        "명칭",
-        "약정액_합계",
-        "보고연도",
-        "상태"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2640,10 +2634,10 @@
         "defaultMeasure": "d-016-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "약정액_합계",
-          "dateKey": "보고연도",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2653,7 +2647,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
-      "representativeItem": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략 (Hà Nội)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 232건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2663,11 +2657,7 @@
       "category": "국제사업·재원",
       "publicName": "사업 입찰·공모",
       "sourceFields": [
-        "name",
-        "명칭",
-        "예산",
-        "공고일",
-        "상태"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2688,10 +2678,10 @@
         "defaultMeasure": "d-017-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "예산",
-          "dateKey": "공고일",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2701,7 +2691,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역 (Đắk Lắk)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 10건 중 성·시 확인 4건 · 성·시 3개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2742,11 +2732,7 @@
       "category": "국제사업·재원",
       "publicName": "기술지원 사업",
       "sourceFields": [
-        "name",
-        "명칭",
-        "예산",
-        "기간",
-        "지원단계"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2767,10 +2753,10 @@
         "defaultMeasure": "d-019-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "예산",
-          "dateKey": "기간",
-          "statusKey": "지원단계",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2780,7 +2766,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2025년 기준",
-      "representativeItem": "Strengthening hai phong city’s climate adaptation and dis… (Hải Phòng)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 10건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2790,11 +2776,7 @@
       "category": "국제사업·재원",
       "publicName": "GCF 사업",
       "sourceFields": [
-        "대상지역",
-        "명칭",
-        "대표금액",
-        "사업기간",
-        "상태"
+        "대상지역"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2815,10 +2797,10 @@
         "defaultMeasure": "d-020-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "대표금액",
-          "dateKey": "사업기간",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2828,7 +2810,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "Vietnam REDD-plus results-based payments for results peri… (Tuyên Quang)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 9건 중 성·시 확인 2건 · 성·시 7개 · 복수 성 1건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2838,10 +2820,7 @@
       "category": "국제사업·재원",
       "publicName": "국제기구·MDB 사업",
       "sourceFields": [
-        "name",
-        "명칭",
-        "대표금액",
-        "사업기간"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2862,9 +2841,9 @@
         "defaultMeasure": "d-021-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "대표금액",
-          "dateKey": "사업기간",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
           "statusKey": null,
           "urlKey": null
         },
@@ -2875,7 +2854,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project) (Đắk Lắk)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 640건 중 성·시 확인 71건 · 성·시 27개 · 복수 성 15건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2915,11 +2894,7 @@
       "publicName": "기후기금 사업",
       "sourceFields": [
         "대상지역",
-        "name",
-        "명칭",
-        "대표금액",
-        "사업기간",
-        "상태"
+        "name"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2940,10 +2915,10 @@
         "defaultMeasure": "d-023-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "대표금액",
-          "dateKey": "사업기간",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -2953,7 +2928,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2013~2026년",
-      "representativeItem": "Hanoi Sustainable Urban Transport (Hà Nội)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 73건 중 성·시 확인 5건 · 성·시 9개 · 복수 성 1건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -2965,11 +2940,7 @@
       "sourceFields": [
         "위치",
         "name",
-        "스폰서",
-        "명칭",
-        "민간_투자액_자체_산출",
-        "Financial_Close",
-        "상태"
+        "스폰서"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 119건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2990,10 +2961,10 @@
         "defaultMeasure": "d-025-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "민간_투자액_자체_산출",
-          "dateKey": "Financial_Close",
-          "statusKey": "상태",
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
           "urlKey": null
         },
         "boundaryPolicy34": {
@@ -3003,7 +2974,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
-      "representativeItem": "Bau Ngu Lake Solar Power Plant (Khánh Hòa)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 132건 중 성·시 확인 119건 · 성·시 28개 · 복수 성 5건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -3014,12 +2985,7 @@
       "publicName": "보증 지원사업",
       "sourceFields": [
         "name",
-        "비고",
-        "명칭",
-        "대표금액",
-        "보증_기간",
-        "상태",
-        "링크"
+        "비고"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -3040,11 +3006,11 @@
         "defaultMeasure": "d-026-located-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "명칭",
-          "valueKey": "대표금액",
-          "dateKey": "보증_기간",
-          "statusKey": "상태",
-          "urlKey": "링크"
+          "labelKey": null,
+          "valueKey": null,
+          "dateKey": null,
+          "statusKey": null,
+          "urlKey": null
         },
         "boundaryPolicy34": {
           "kind": "native-34"
@@ -3053,7 +3019,7 @@
       "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2018년 기준",
-      "representativeItem": "Hanoi-Haiphong Expressway (Hải Phòng)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 14건 중 성·시 확인 2건 · 성·시 4개 · 복수 성 2건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -3063,8 +3029,7 @@
       "category": "협력기관·기업",
       "publicName": "CTCN 참여기관",
       "sourceFields": [
-        "note",
-        "recordSourceUrl"
+        "note"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -3089,7 +3054,7 @@
           "valueKey": null,
           "dateKey": null,
           "statusKey": null,
-          "urlKey": "recordSourceUrl"
+          "urlKey": null
         },
         "boundaryPolicy34": {
           "kind": "native-34"
@@ -3098,7 +3063,7 @@
       "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "네트워크 회원(민간기업) (Hà Nội)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 18건 중 성·시 확인 6건 · 성·시 1개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -3108,9 +3073,7 @@
       "category": "협력기관·기업",
       "publicName": "DNA 협력창구",
       "sourceFields": [
-        "officeAddress",
-        "a64Status",
-        "recordSourceUrl"
+        "officeAddress"
       ],
       "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -3134,8 +3097,8 @@
           "labelKey": null,
           "valueKey": null,
           "dateKey": null,
-          "statusKey": "a64Status",
-          "urlKey": "recordSourceUrl"
+          "statusKey": null,
+          "urlKey": null
         },
         "boundaryPolicy34": {
           "kind": "native-34"
@@ -3144,7 +3107,7 @@
       "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "Department of Climate Change (기후변화국) (Hà Nội)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 1건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
@@ -3587,7 +3550,7 @@
       "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
-      "representativeItem": "한국환경산업기술원(KEITI) (Đồng Nai)",
+      "representativeItem": "(레코드 없음)",
       "evidence": "개체 7건 중 성·시 확인 2건 · 성·시 2개 · 복수 성 0건",
       "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"

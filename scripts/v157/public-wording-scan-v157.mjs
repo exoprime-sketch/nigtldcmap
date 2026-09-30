@@ -78,6 +78,9 @@ const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
 // 제안서 is a document a project has; 제안 on its own is how we write to each other.
 const NOTE_WORDS_V157 = /렌더러|폴리곤|조인\s*키|\bkind\b|choropleth|boundaryPolicy|후속|제안(?![\uAC00-\uD7A3])/gu;
+// 2차 검토(2026-09-30): 우리끼리 쓰는 한국어 어휘. 읽는 사람에게는 과업 용어다.
+const WORK_WORDS_V157 =
+  /재납품|납품|필요한\s*자료|금지|가능하면|등록\s*필요|카드로만|옆\s*카드로|레이어|표출|원천|병합|미정|토글|열\s*\d+개/gu;
 
 /**
  * Every finding in one string, with what matched and the words around it.
@@ -95,7 +98,7 @@ function findingsIn(text, { hyphens = true, notes = true } = {}) {
     ["snake_case", SNAKE_CASE_V157],
     ...(hyphens ? [["kebab-case", KEBAB_CASE_V157]] : []),
     ["tag-syntax", TAG_SYNTAX_V157],
-    ...(notes ? [["note-word", NOTE_WORDS_V157]] : []),
+    ...(notes ? [["note-word", NOTE_WORDS_V157], ["work-word", WORK_WORDS_V157]] : []),
   ]) {
     pattern.lastIndex = 0;
     for (const match of value.matchAll(pattern)) {
@@ -115,6 +118,47 @@ function findingsIn(text, { hyphens = true, notes = true } = {}) {
 /** The provider's prose lives on the detail screen; our own strings elsewhere. */
 const HYPHENS_COUNT_V157 = (where) => where !== "detail";
 
+/**
+ * A finding that is the provider's own label, not our wording.
+ *
+ * Each one says why it stands and what will end it, so the list cannot quietly become
+ * a place to hide findings. An exception is reported, and counted, separately.
+ */
+const EXCEPTIONS_V157 = [
+  {
+    elementId: "A-027",
+    where: "detail",
+    tokens: ["narrow_gauge", "miniature_railway", "light_rail", "subway", "monorail", "funicular", "fclass"],
+    reason: "OSM이 배포한 분류값과 지표 설명(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
+    until: "세션4 PR 2 — 표시 라벨 대응표",
+  },
+  {
+    elementId: "B-026",
+    where: "detail",
+    // Every province spelling the delivery runs together; the tokens are whatever
+    // the concatenation produced, so the kind is what identifies them.
+    kinds: ["camelCase"],
+    reason: "원자료가 성·시 표기를 띄어쓰기 없이 수록(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
+    until: "세션4 PR 2 — 표시 라벨 대응표",
+  },
+];
+
+/** Is this finding one of the recorded exceptions? */
+function exceptionFor(where, elementId, tokens) {
+  return (
+    EXCEPTIONS_V157.find(
+      (row) =>
+        row.elementId === elementId &&
+        row.where === where &&
+        tokens.every((entry) =>
+          row.kinds
+            ? row.kinds.includes(entry.split(":")[0])
+            : row.tokens.some((token) => entry.split(":").slice(1).join(":").includes(token))
+        )
+    ) || null
+  );
+}
+
 const record = (report, where, elementId, field, text) => {
   const hits = findingsIn(text, {
     hyphens: HYPHENS_COUNT_V157(where),
@@ -122,7 +166,10 @@ const record = (report, where, elementId, field, text) => {
   });
   report.scanned += 1;
   if (!hits.length) return;
-  report.findings.push({
+  const tokens = [...new Set(hits.map((hit) => `${hit.kind}:${hit.token}`))];
+  const exception = exceptionFor(where, elementId, tokens);
+  (exception ? report.exceptions : report.findings).push({
+    ...(exception ? { reason: exception.reason, until: exception.until } : {}),
     where,
     elementId,
     field,
@@ -149,6 +196,7 @@ const report = {
   activeLayers: activeIds.length,
   scanned: 0,
   findings: [],
+  exceptions: [],
 };
 
 // ---- 1. the map list, every group expanded, every info panel open
@@ -225,6 +273,39 @@ for (const elementId of activeIds) {
   }
 }
 
+// ---- 2b. the companion cards each host layer carries
+const companions = JSON.parse(readFileSync(resolve(ROOT, "src/data/map/mapCompanionsV157.json"), "utf8"));
+for (const host of companions.layers || []) {
+  await page.goto(`${base}/?view=map&country=${COUNTRY}#map`, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector('[data-testid="map-all-data-layer-v135"]', { state: "attached", timeout: 90_000 });
+  await page.waitForTimeout(1200);
+  const drawn = await page.evaluate((id) => {
+    const input = document.querySelector(`[data-testid="map-all-data-layer-v135"][data-element-id="${id}"]`);
+    if (!input || input.disabled) return false;
+    const toggle = input.closest("[data-map-group-v135]")?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
+    if (toggle && toggle.getAttribute("aria-expanded") !== "true") toggle.click();
+    input.click();
+    return true;
+  }, host.elementId);
+  if (!drawn) continue;
+  await page.waitForTimeout(3000);
+  const cards = await page.evaluate(() => {
+    const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
+    const section = document.querySelector('[data-testid="map-companions-v157"]');
+    if (!section) return { section: "", cards: [] };
+    // Everything the reader can reach: the folded ones are opened first.
+    [...section.querySelectorAll("button")].forEach((button) => {
+      if (/더 보기/u.test(button.textContent || "")) button.click();
+    });
+    return {
+      section: tidy(section.innerText),
+      cards: [...section.querySelectorAll("li")].map((card) => tidy(card.innerText)),
+    };
+  });
+  record(report, "companion-section", host.elementId, "section", cards.section);
+  cards.cards.forEach((card, index) => record(report, "companion-card", host.elementId, `card ${index + 1}`, card));
+}
+
 // ---- 3. each map dataset's detail text
 if (!flag("skip-detail")) {
   const targets = JSON.parse(
@@ -245,11 +326,12 @@ if (!flag("skip-detail")) {
 }
 
 report.findingCount = report.findings.length;
+report.exceptionCount = report.exceptions.length;
 report.status = report.findingCount === 0 ? "PASS" : "FAIL";
 writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
 await browser.close();
 if (server) await server.close();
 process.stdout.write(
-  `${JSON.stringify({ type: "summary", schema: report.schema, status: report.status, scanned: report.scanned, listedRows: report.listedRows, activeLayers: report.activeLayers, findings: report.findingCount, elements: [...new Set(report.findings.map((f) => f.elementId))] })}\n`
+  `${JSON.stringify({ type: "summary", schema: report.schema, status: report.status, scanned: report.scanned, listedRows: report.listedRows, activeLayers: report.activeLayers, findings: report.findingCount, exceptions: report.exceptionCount, elements: [...new Set(report.findings.map((f) => f.elementId))] })}\n`
 );
 process.exitCode = report.status === "PASS" ? 0 : 1;
