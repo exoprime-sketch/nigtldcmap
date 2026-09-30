@@ -89,7 +89,11 @@ describe("display form", () => {
   test("한글명 (현지명), the local name exactly as given", () => {
     expect(formatRegionName({ country: "VNM", raw: "Bà Rịa-Vũng Tàu", level: "adm1-63" })).toBe("바리아붕따우 (Bà Rịa-Vũng Tàu)");
     expect(formatRegionName({ country: "vnm", raw: "Thành phố Hồ Chí Minh" })).toBe("호찌민 (Thành phố Hồ Chí Minh)");
-    expect(formatRegionName({ country: "VNM", raw: "  QuảngBình ", level: "adm1-63" })).toBe("꽝빈 (QuảngBình)");
+    // V162: a known place written without its word space is spaced (the scan
+    // of public wording read "QuảngBình" as an identifier).
+    expect(formatRegionName({ country: "VNM", raw: "  QuảngBình ", level: "adm1-63" })).toBe("꽝빈 (Quảng Bình)");
+    expect(formatRegionName({ country: "VNM", raw: "KiênGiang", level: "adm1-63" })).toBe("끼엔장 (Kiên Giang)");
+    expect(formatRegionName({ country: "VNM", raw: "McDonaldTown" })).toBe("McDonaldTown");
     expect(formatRegionName({ country: "VNM", raw: "tỉnh Lâm Đồng" })).toBe("럼동 (tỉnh Lâm Đồng)");
   });
 
@@ -116,7 +120,7 @@ describe("display form", () => {
   });
 
   test("a list is split and each place formatted on its own", () => {
-    expect(formatRegionTextV162({ country: "VNM", raw: "ThanhHóa · NghệAn", level: "adm1-63" })).toBe("타인호아 (ThanhHóa) · 응에안 (NghệAn)");
+    expect(formatRegionTextV162({ country: "VNM", raw: "ThanhHóa · NghệAn", level: "adm1-63" })).toBe("타인호아 (Thanh Hóa) · 응에안 (Nghệ An)");
     expect(formatRegionTextV162({ country: "VNM", raw: "Ho Chi Minh City; Hanoi" })).toBe("호찌민 (Ho Chi Minh City); 하노이 (Hanoi)");
     expect(formatRegionTextV162({ country: "VNM", raw: "Hanoi 외 8개 지역" })).toBe("Hanoi 외 8개 지역");
     expect(formatRegionTextV162({ country: "VNM", raw: "Singapore · Ba Đình" })).toBe("Singapore · Ba Đình");

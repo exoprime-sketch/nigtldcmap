@@ -110,8 +110,12 @@ export function composeRegionNameV161(ko: string | null | undefined, local: stri
  * unreviewed Korean name never reaches the screen (user decision 2026-09-29).
  */
 export function formatRegionName(query: RegionNameQueryV161 & { readonly mode?: "full" | "label" }): string {
-  const local = regionNameLocal(query.raw);
   const entry = regionNameEntryV161(query);
+  // V162: a known place written without its word spaces ("KiênGiang",
+  // "QuảngBình" in the delivery's romanised columns) is spaced as it is
+  // spelled; text the dictionary does not know is left exactly as written.
+  const written = regionNameLocal(query.raw);
+  const local = entry ? written.replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2") : written;
   const ko = entry && entry.reviewStatus === "confirmed" ? entry.ko : null;
   if (query.mode === "label") return ko || local;
   return composeRegionNameV161(ko, local);

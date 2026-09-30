@@ -1,4 +1,5 @@
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
+import { publicOsmIndicatorLabelV162 } from "../../../data/visualization/osmClassLabelsV162";
 import { useEffect, useMemo, useState } from "react";
 import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -48,6 +49,9 @@ export default function PublicRawDataTablesV126({
   // V162 (P12-B): places in the table read "한글명 (현지명)" (reviewed names
   // only); the download keeps the source columns.
   const regionText = useRegionTextV162(elementId);
+  // V162: A-027's OpenStreetMap class values and field names read in Korean
+  // with the source value in brackets (the download keeps the source).
+  const osmText = (text: string) => (elementId === "A-027" ? publicOsmIndicatorLabelV162(text) : text);
   const total = observations.length + entities.length;
   const paginated = total > 500;
   const [open, setOpen] = useState(false);
@@ -155,8 +159,8 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={publicMeasureLabelV126(row.semanticMeasure.labelKo)} /></td>
-                    <td><PublicTermTextV134 text={category} /></td>
+                    <td><PublicTermTextV134 text={osmText(publicMeasureLabelV126(row.semanticMeasure.labelKo))} /></td>
+                    <td><PublicTermTextV134 text={osmText(category)} /></td>
                     <td><PublicTermTextV134 text={context} /></td>
                     <td><PublicTermTextV134 text={publicObservationValueV126(row.value)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(displayUnitV150(row.unit || row.semanticMeasure.unit)) || ""} /></td>
