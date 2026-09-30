@@ -32,7 +32,7 @@
 - +127%는 main에도 있는 기존 상태다(이 PR − main = −27 바이트, 데이터 디렉터리 지문 값 변경). CI에서도 참고용(`continue-on-error`). 자세한 내용: `reports/v158/performance-bundle-main-vs-pr-v158.md`
 
 ## Preview·확인 경로
-- Preview: PREVIEW_URL
+- Preview: https://nigtldcmap-clmsib3fn-exoprime-5142s-projects.vercel.app (커밋 `ae2e85c`, Vercel 로그인 필요)
 - **화면 변화 0**: 공개 화면은 정적 다운로드 파일을 쓰지 않는다(다운로드 화면은 팩에서 파일을 만든다).
 - 확인할 수 있는 것: Preview에서 `/data/vietnam/v2/downloads/a-002.zip`을 받으면 `a-002.csv`·`a-002.json`이 들어 있다. 옛 주소 `/data/vietnam/v2/downloads/a-002.csv`는 404다.
 
