@@ -106,6 +106,9 @@ https://nigtldcmap-gsi4wyv4e-exoprime-5142s-projects.vercel.app
   - 용어 풀이 2곳: 이용안내의 IEPMP(방글라데시 정부 계획), C-008 상세의 CCAC('UNEP과 방글라데시 등 6개 창립국').
 - 이 판정은 `finalize:v151`에 들어 있습니다. 그래서 병합 뒤에는 문구를 고치거나 예상 실패로 지정하기 전까지 `finalize:v151`이 실패합니다.
 
+## 병합 전 추가(사용자 결정 2026-10-01)
+- `finalize:v151:steps`의 acceptance 단계에 `--expect-fail other-country-names`를 추가했습니다. V162 게이트가 막히지 않게 하려는 것입니다. 국가 중립 문구 PR(feat/v162-country-neutral)에서 34건을 고치면서 이 표시를 없앱니다.
+
 병합은 검토 후 "PR 병합" 지시가 있을 때만.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
