@@ -113,6 +113,22 @@ test("native-34 requires every present member to agree, else conflict with a nul
   expect(disagree.conflict).toBe(true);
 });
 
+test("group-constant: same arithmetic as native-34, for a value broadcast from an external grouping", () => {
+  // P8-2 (지도 12): A-022's value comes from an EVN corporation, not the province
+  // itself. A 34-unit whose members share a corporation shows that value; one that
+  // spans two corporations conflicts rather than averaging them.
+  const agree = aggregateTo34V151([mkRow("VN-A", 0.95), mkRow("VN-B", 0.95)], "group-constant", { units: FAKE_UNITS })[0];
+  expect(agree.value).toBe(0.95);
+  expect(agree.conflict).toBe(false);
+  expect(agree.partial).toBe(false);
+
+  const splitAcrossGroups = aggregateTo34V151([mkRow("VN-A", 0.95), mkRow("VN-B", 1.4)], "group-constant", { units: FAKE_UNITS })[0];
+  expect(splitAcrossGroups.value).toBeNull();
+  expect(splitAcrossGroups.conflict).toBe(true);
+
+  expect(isAggregatingKindV151("group-constant")).toBe(true);
+});
+
 test("range-only, six-region-only and none never build a 34-unit value", () => {
   const rows = [mkRow("VN-A", 5), mkRow("VN-B", 7)];
   expect(aggregateTo34V151(rows, "range-only", { units: FAKE_UNITS })).toEqual([]);

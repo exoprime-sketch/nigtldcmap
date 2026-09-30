@@ -15,10 +15,14 @@
 | --- | --- | --- | --- |
 | **EVN**(A-022) | 5개 총공사 공식 '소속 단위' 페이지 + EVN 개요(`www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002`) | 63/63, 중복 0 — NPC 27·CPC 13·SPC 19·HCMC 3·HANOI 1 | 0건 |
 | **6대 권역**(A-013·C-003) | Nghị quyết 81/2023/QH15 Điều 3(국가 종합계획, 2023-01-09) | 63/63 — 14·11·14·5·6·13 | 7건: 박닌·닥락·잘라이·럼동·푸토·꽝응아이·떠이닌 |
-| **C-017 북·중·남** | Thông tư 09/2025/TT-BCT(25/2025/TT-BCT 개정) Điều 3 khoản 7·8 | 63/63 — 북 25·중 19·남 19 | 0건 |
+| **C-017 북·중·남** | Thông tư 09/2025/TT-BCT(25/2025/TT-BCT 개정) Điều 3 khoản 7·8 | 63/63 — 북 28·중 13·남 22 | 0건 |
 
-- **C-017 대체 규칙**(사용자 결정 2026-09-30): 가격 문서가 miền별 성 목록을 싣지 않아 6건(타인호아·응에안·하띤·럼동·닌투언·빈투언)이 비어 있었다. `scripts/v157-2/build-c017-regions-v157-2.mjs`로 6대 권역을 둘씩 묶어(북=북부 산악+홍강 삼각주, 중=북중부·중부 해안+중부 고원, 남=동남부+메콩 삼각주) 확정, 6건 모두 **중부**로 결정. 화면 문구: "국가 종합계획의 6대 권역을 둘씩 묶은 기준입니다…".
-- **V162 조정 반영**: 새 입고 데이터에 C-017 레코드 단위 '권역' 열이 직접 있음(북/중/남 + 닌투언·카인호아 특례 각 1). 등록 시 **레코드의 권역 값을 최우선**으로 쓰고, 권역 열이 없는 레코드만 이 대응표로 보완한다(§4 계획 참조). 닌투언·카인호아는 지도·패널에서 강조 표시.
+- **C-017 규칙 정정**(사용자 정정 2026-09-30 16:15): 먼저 결정한 "6대 권역을 둘씩 묶기"는 **철회**했다(가격 규정과 무관한 별도 문서에 기댄 근거였다). 두 단계로 재판정했다.
+  1. **원문 문언 직접 적용**: Điều 3 khoản 7·8 전문을 표 머리에 인용하고 직접 읽었다. khoản 8은 미엔 경계를 정할 때 따를 **기준 3가지**(사회경제 권역 구분·전력개발계획·성·시 통합 결정)를 지정할 뿐, **성을 하나도 나열하지 않는다**(부록·대응표 없음, 원문 확인). 그래서 이 단계로 결정되는 성은 **0건** — 없는 것을 있다고 하지 않고 그대로 기록했다.
+  2. **EVN 관할 묶음**(사용자 지시): 검증된 `evn-jurisdiction.json`(현재·2025-07-01 이후 관할)을 그대로 재사용해 북=NPC+HANOI, 중=CPC, 남=SPC+HCMC로 63개 성 전부를 결정. 6개 미정 성: 타인호아·응에안·하띤(NPC→북), 럼동·빈투언(SPC→남), 닌투언(CPC→중). 화면 문구는 **"이 성의 권역은 EVN 관할 기준으로 정해졌습니다"** 한 줄(원문이 직접 정한 성이 생기면 "가격 규정의 권역 기준"으로 바뀐다). '6대 권역' 문구는 삭제했다.
+  - 재검증(`scripts/v157-2/verify-tables-v157-2.mjs`) 21/21 유지, 34개 보기에서 걸치는 단위 0건.
+  - 부수 확인: 원래 "일치"로 분류돼 있던 닥농(Đắk Nông)도 현재 관할로 다시 계산하니 중부→남부로 바뀐다(2025-07-01 CPC→SPC 이관, 근거는 §1 EVN 표와 동일). 근거 있는 변경이라 그대로 반영했다.
+- **V162 조정 반영**: 새 입고 데이터에 C-017 레코드 단위 '권역' 열이 직접 있음(북/중/남 + 닌투언·카인호아 특례 각 1). 등록 시 **레코드의 권역 값을 최우선**으로 쓰고, 권역 열이 없는 레코드만 이 대응표(EVN 관할 기준)로 보완한다(§4 계획 참조). 닌투언·카인호아는 지도·패널에서 강조 표시.
 - 6대 권역의 **34개 단위 공식 정의**(NQ 252/2025/QH15·NQ 306/NQ-CP)가 별도로 있으나, 63 기준 정의 유지 + 34 보기에서 '복수 권역' 표기 방식을 그대로 쓴다(사용자 지시 2026-09-30, 재확인 없으면 변경 없음).
 
 ## 2. JCM(C-006) 대응표 — 완료, 세션5 집계와 일치
@@ -53,22 +57,34 @@ distinct provinces63 among counted: 27
 | B-002·B-035·B-036 | admin1-choropleth | admin1-choropleth | TBD(V162 데이터로 sum/area-weighted-mean 확정) | V162 |
 | B-024 | admin1-choropleth | admin1-choropleth | TBD(면적 → sum 유력) | V162, NSO 97행 |
 
-### 신규 boundaryPolicy 종류: `group-constant`
+### 신규 boundaryPolicy 종류: `group-constant` — 구현·단위 테스트 완료
 
-기존 10종(`sum`·`area-weighted-mean`·`member-max`·`member-min`·`range-only`·`count-sum`·`membership-or`·`native-34`·`six-region-only`·`none`, `src/data/map/boundaryPolicyV151.ts`) 중 이 모양(전력회사 관할·가격권역·6대권역처럼 34개 병합 위계와 무관한 외부 그룹에 **같은 값을 그대로 부여**)에 맞는 것이 없다. `native-34`는 "63개 구성원이 우연히 같은 값이면 채택"이라 성격이 다르다. 구현 시 `BoundaryPolicyKindV151` 유니언에 `"group-constant"`를 추가하고, 34개 보기에서 그룹이 갈리는 단위는 값을 나누지 않고 "복수 관할/권역"으로 표시한다.
+기존 10종(`sum`·`area-weighted-mean`·`member-max`·`member-min`·`range-only`·`count-sum`·`membership-or`·`native-34`·`six-region-only`·`none`) 중 이 모양(전력회사 관할·가격권역처럼 34개 병합 위계와 무관한 외부 그룹에 **같은 값을 그대로 부여**)에 맞는 것이 없어, `BoundaryPolicyKindV151` 유니언에 추가했다. 대기하지 않고 지금(사용자 지시 2026-09-30) 완성:
 
-### 신규 빌드 종류: `entity-attribute-join`(B-044·B-046·B-047)
+- `src/data/map/boundaryPolicyV151.ts`: `"group-constant"` 케이스 추가(`native-34`와 같은 산술 — 구성원이 모두 같은 값이면 채택, 갈리면 conflict+null·평균 내지 않음) + 34개 단위 안내 문구.
+- `src/data/map/groupConstantV157_2.ts`(신규): `broadcastGroupValuesV157_2` — 그룹별 값 → 63개 성 행으로 전개(값 없는 그룹의 성은 행 자체가 없음, 0 채움 없음). `groupsWithoutValueV157_2`로 누락 그룹 확인.
+- 4곳의 병렬 선언을 모두 갱신(하나라도 빠지면 게이트가 신규 종류를 "미지의 kind"로 거부한다): `src/data/vietnam/vietnamTypesV124.ts`(`VietnamBoundaryPolicyKindV151`), `scripts/v151-2/boundary-policy-build-v151-2.mjs`(`BOUNDARY_POLICY_KINDS`·`AGGREGATING_KINDS`·`NOTES`), `scripts/v151-2/audit-boundary-policy-v151-2.mjs`(`KINDS`).
+- **단위 테스트**: `boundaryPolicyV151.test.ts`에 합의/충돌 케이스 추가. `groupConstantV157_2.test.ts`는 **검증된 실제 EVN 표**(63/63, 공식 URL)를 읽어 63개 성 배정을 확인하고, 실제 `crosswalk34`(34개 단위)로 `aggregateTo34V151`까지 통과시켜 **충돌 0건**을 재확인 — 현재 main 데이터만으로 실행·통과(V162 불필요). `finalize:v151`의 `audit:boundary-policy:v151-2` 25/25 변동 없음(재확인).
+
+### 신규 빌드 종류: `entity-attribute-join`(B-044·B-046·B-047) — 구현·단위 테스트 완료
 
 지도 레이어를 새로 그리지 않고 B-048(광산) 기존 지점에 광종이 일치하면 전국 값 1줄을 붙인다. P8-2 1단계 지시("B-048 광산 지점을 광종으로 조인, 값은 '국가 전체'로 명시")를 그대로 반영했다.
+
+- `src/data/map/entityAttributeJoinV157_2.ts`(신규): `joinNationalMineAttributesV157_2` — 광산의 **자기 `광종` 값과 정확히 일치**할 때만 부착(부분 문자열 금지 — Núi Pháo의 `"텅스텐(+형석·비스무트·구리)"`에 구리가 괄호 속 부산물로 들어 있어, 부분 일치였다면 B-047의 라오까이 구리 값이 엉뚱하게 붙었을 것).
+- **단위 테스트**: `entityAttributeJoinV157_2.test.ts`가 **실제 B-048 8개 광산**(`packs/`에서 화면과 같은 방식으로 로드)을 대상으로 실행 — 정상 조인, 불일치 시 빈 목록(추정 없음), 괄호 속 부산물 오조인 방지, 광산 1개에 대상 2개 동시 부착, 8건 전수 누락 없음, 공개 문구(`nationalMineAttributeLineV157_2`)까지 확인. 현재 main 데이터만으로 실행·통과.
+
+`npm run test:unit` **747/747**, `npx tsc --noEmit` 오류 0, `node scripts/v151-2/audit-boundary-policy-v151-2.mjs` 25/25(main 데이터 기준 회귀 없음).
 
 ## 5. 남은 일
 
 1. **V162 병합 대기**: B-002/B-024/B-035/B-036의 실제 성별 값, C-017 레코드의 '권역' 열 실제 스키마.
-2. V162 병합 후: `origin/main` merge(rebase 금지) → `prepare-map12-v157-2.py --source <새 경로>` 재실행 → C-017 빌더에 레코드 '권역' 우선 규칙 반영 → `group-constant`/`entity-attribute-join` 구현 → map-layers-v138 등록(12건) → 연관 카드·준비 중 사유 표에서 12건 제거 → 공개 문구 표(§4) 적용.
+2. V162 병합 후에는 **플러밍만 남는다**(설계·빌드 종류·경계 정책·조인 로직은 이미 구현·테스트됨): `origin/main` merge(rebase 금지) → `prepare-map12-v157-2.py --source <새 경로>` 재실행 → C-017 빌더에 레코드 '권역' 우선 규칙 반영 → `map-layers-v138`에서 `broadcastGroupValuesV157_2`/`joinNationalMineAttributesV157_2` 호출해 12건 등록 → 연관 카드·준비 중 사유 표에서 12건 제거 → 공개 문구 표(§4) 적용.
 3. 게이트 1회(최대 2회) → PR → Preview. 병합은 사용자가 "PR #N 병합"이라고 할 때만.
 
-## 6. 검증 스크립트
+## 6. 검증 스크립트·모듈
 
 - `node scripts/v157-2/verify-tables-v157-2.mjs` — EVN·6대 권역·C-017 21검사.
 - `node scripts/v157-2/verify-jcm-v157-2.mjs [--write]` — JCM 20개 사업 위치 재검증.
-- `node scripts/v157-2/build-c017-regions-v157-2.mjs [--check]` — C-017 6대 권역 묶음 규칙 적용(대체 6건).
+- `node scripts/v157-2/build-c017-regions-v157-2.mjs [--check]` — C-017 권역 재판정(문언 우선 → EVN 관할 대체).
+- `src/data/map/groupConstantV157_2.ts` + `.test.ts` — 그룹값 → 63개 성 전개, `aggregateTo34V151("group-constant", …)`.
+- `src/data/map/entityAttributeJoinV157_2.ts` + `.test.ts` — B-048 광종 조인.

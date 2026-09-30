@@ -62,856 +62,6 @@
     "quote": "7. Khung giá phát điện loại hình nhà máy điện gió được xây dựng theo các miền, khu vực biển trên cơ sở kết quả điều tra tài nguyên điện gió theo quy định của pháp luật, cụ thể như sau: a) Khung giá phát điện loại hình điện gió trên đất liền, điện gió gần bờ được xây dựng theo 03 (ba) miền: miền Bắc, miền Trung và miền Nam. b) Việc xác định các khu vực để xây dựng khung giá phát điện loại hình điện gió ngoài khơi căn cứ theo: b1) Quy hoạch không gian biển quốc gia; b2) Quy hoạch phát triển điện lực quốc gia. Giai đoạn 2025 - 2035, khung giá phát điện loại hình nhà máy điện gió ngoài khơi được xây dựng theo 03 (ba) khu vực biển: khu vực Bắc Bộ, khu vực Nam Trung Bộ và khu vực Nam Bộ. 8. Việc xác định các miền để xây dựng khung giá phát điện đối với loại hình nhà máy điện mặt trời và nhà máy điện gió trên đất liền, nhà máy điện gió gần bờ căn cứ theo: a) Phân vùng kinh tế - xã hội tại Quy hoạch tổng thể quốc gia; b) Quy hoạch phát triển điện lực quốc gia; c) Chủ trương, quyết định của cấp có thẩm quyền về việc sắp xếp, sáp nhập, hợp nhất các đơn vị hành chính cấp tỉnh.",
     "criticalCaveat": "IMPORTANT: this text states the CRITERIA for building the miền/khu vực biển boundaries (socio-economic zoning + power development plan + provincial-merger decisions); it does NOT itself enumerate which provinces fall in miền Bắc/Trung/Nam or in each sea area. Thông tư 09/2025/TT-BCT (original, read in full, 16 pages) and its predecessor Thông tư 19/2023/TT-BCT (read in full, 17 pages, the first circular to introduce the 3-miền solar/wind price method) were both checked directly and neither contains a province list or appendix mapping provinces to miền. No BCT circular/decision with an explicit province-to-miền crosswalk for the price frame was found."
   },
-  "provinceMappingMethodology": "Because no BCT text lists provinces per miền, provinces63[].region below is INFERRED (not verbatim-sourced) by combining the 6 'vùng kinh tế - xã hội' of Nghị quyết 81/2023/QH15 (Quy hoạch tổng thể quốc gia, the document explicitly named in khoản 8.a above) two-by-two, the only geographically coherent way to fold 6 zones into 3: mien Bac = 'Trung du và miền núi phía Bắc' (14 tỉnh) + 'Đồng bằng sông Hồng' (11 tỉnh) = 25 tỉnh; mien Trung = 'Bắc Trung Bộ và duyên hải miền Trung' (14 tỉnh) + 'Tây Nguyên' (5 tỉnh) = 19 tỉnh; mien Nam = 'Đông Nam Bộ' (6 tỉnh) + 'Đồng bằng sông Cửu Long' (13 tỉnh) = 19 tỉnh. This is corroborated (not proven) by: (1) the offshore-wind reference/standard-plant locations reported for Quyết định 1824/QĐ-BCT (Quảng Ninh/Hải Phòng/Thái Bình -> Bắc Bộ; Bình Thuận -> Nam Trung Bộ; Bà Rịa-Vũng Tàu -> Nam Bộ), which fall on the same side of this 6-to-3 split; and (2) every one of the 34 post-2025 merged units (Nghị quyết 202/2025/QH15) turns out to combine provinces that are on the same side of this split (none of the 34 units is 'mixed'), consistent with mergers respecting the same regional logic. This is treated as a reasoned, source-linked inference, not a confirmed legal fact -- see 'unconfirmed'.",
-  "provinces63": [
-    {
-      "adm1Code": "VN-01",
-      "name": "Lai Châu",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-02",
-      "name": "Lào Cai",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-03",
-      "name": "Hà Giang",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-04",
-      "name": "Cao Bằng",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-05",
-      "name": "Sơn La",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-06",
-      "name": "Yên Bái",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-07",
-      "name": "Tuyên Quang",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-09",
-      "name": "Lạng Sơn",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-13",
-      "name": "Quảng Ninh",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-14",
-      "name": "Hòa Bình",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-18",
-      "name": "Ninh Bình",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-20",
-      "name": "Thái Bình",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-21",
-      "name": "Thanh Hóa",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "north",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-22",
-      "name": "Nghệ An",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "north",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-23",
-      "name": "Hà Tĩnh",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "north",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-24",
-      "name": "Quảng Bình",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-25",
-      "name": "Quảng Trị",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-26",
-      "name": "Thừa Thiên Huế",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-27",
-      "name": "Quảng Nam",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-28",
-      "name": "Kon Tum",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-29",
-      "name": "Quảng Ngãi",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-30",
-      "name": "Gia Lai",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-31",
-      "name": "Bình Định",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-32",
-      "name": "Phú Yên",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-33",
-      "name": "Đắk Lắk",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-34",
-      "name": "Khánh Hòa",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-35",
-      "name": "Lâm Đồng",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "south",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-36",
-      "name": "Ninh Thuận",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "south",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-37",
-      "name": "Tây Ninh",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-39",
-      "name": "Đồng Nai",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-40",
-      "name": "Bình Thuận",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "south",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-41",
-      "name": "Long An",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-43",
-      "name": "Bà Rịa–Vũng Tàu",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-44",
-      "name": "An Giang",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-45",
-      "name": "Đồng Tháp",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-46",
-      "name": "Tiền Giang",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-47",
-      "name": "Kiên Giang",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-49",
-      "name": "Vĩnh Long",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-50",
-      "name": "Bến Tre",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-51",
-      "name": "Trà Vinh",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-52",
-      "name": "Sóc Trăng",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-53",
-      "name": "Bắc Kạn",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-54",
-      "name": "Bắc Giang",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-55",
-      "name": "Bạc Liêu",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-56",
-      "name": "Bắc Ninh",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-57",
-      "name": "Bình Dương",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-58",
-      "name": "Bình Phước",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-59",
-      "name": "Cà Mau",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-61",
-      "name": "Hải Dương",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-63",
-      "name": "Hà Nam",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-66",
-      "name": "Hưng Yên",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-67",
-      "name": "Nam Định",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-68",
-      "name": "Phú Thọ",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-69",
-      "name": "Thái Nguyên",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-70",
-      "name": "Vĩnh Phúc",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-71",
-      "name": "Điện Biên",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-72",
-      "name": "Đắk Nông",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-73",
-      "name": "Hậu Giang",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-CT",
-      "name": "Cần Thơ",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-DN",
-      "name": "Đà Nẵng",
-      "regionByZones": "central",
-      "regionByEvnPre2025": "central",
-      "region": "central",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-HN",
-      "name": "Hà Nội",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-HP",
-      "name": "Hải Phòng",
-      "regionByZones": "north",
-      "regionByEvnPre2025": "north",
-      "region": "north",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    },
-    {
-      "adm1Code": "VN-SG",
-      "name": "Hồ Chí Minh",
-      "regionByZones": "south",
-      "regionByEvnPre2025": "south",
-      "region": "south",
-      "status": "six-region-grouping",
-      "regionBasis": "six-region-grouping"
-    }
-  ],
-  "provinces63RegionCounts": {
-    "north": 25,
-    "central": 19,
-    "south": 19
-  },
-  "units34": [
-    {
-      "unitCode": "VN34-44",
-      "name": "An Giang",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-56",
-      "name": "Bắc Ninh",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-59",
-      "name": "Cà Mau",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-CT",
-      "name": "Cần Thơ",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-04",
-      "name": "Cao Bằng",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-DN",
-      "name": "Đà Nẵng",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-33",
-      "name": "Đắk Lắk",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-71",
-      "name": "Điện Biên",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-39",
-      "name": "Đồng Nai",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-45",
-      "name": "Đồng Tháp",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-30",
-      "name": "Gia Lai",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-HN",
-      "name": "Hà Nội",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-23",
-      "name": "Hà Tĩnh",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-HP",
-      "name": "Hải Phòng",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-SG",
-      "name": "Hồ Chí Minh",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-26",
-      "name": "Huế",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-66",
-      "name": "Hưng Yên",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-34",
-      "name": "Khánh Hòa",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-01",
-      "name": "Lai Châu",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-35",
-      "name": "Lâm Đồng",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-09",
-      "name": "Lạng Sơn",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-02",
-      "name": "Lào Cai",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-22",
-      "name": "Nghệ An",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-18",
-      "name": "Ninh Bình",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-68",
-      "name": "Phú Thọ",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-29",
-      "name": "Quảng Ngãi",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-13",
-      "name": "Quảng Ninh",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-25",
-      "name": "Quảng Trị",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-05",
-      "name": "Sơn La",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-37",
-      "name": "Tây Ninh",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-69",
-      "name": "Thái Nguyên",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-21",
-      "name": "Thanh Hóa",
-      "regions": [
-        "central"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-07",
-      "name": "Tuyên Quang",
-      "regions": [
-        "north"
-      ],
-      "status": "single"
-    },
-    {
-      "unitCode": "VN34-49",
-      "name": "Vĩnh Long",
-      "regions": [
-        "south"
-      ],
-      "status": "single"
-    }
-  ],
-  "units34Summary": "Under the inferred provinces63 mapping, all 34 post-2025 merged units are 'single' (no unit spans two price regions); every 2025 provincial merger (Nghị quyết 202/2025/QH15) paired provinces on the same side of the inferred Bắc/Trung/Nam split. Treat this as corroboration of the inference, not as an independently confirmed fact.",
   "offshoreAreas": [
     {
       "area": "Khu vực Bắc Bộ",
@@ -1018,25 +168,867 @@
     ]
   },
   "regionGrouping": {
-    "basis": "six-region-grouping",
-    "rule": {
-      "north": [
-        "northern-midlands-mountains",
-        "red-river-delta"
-      ],
-      "central": [
-        "north-central-central-coast",
-        "central-highlands"
-      ],
-      "south": [
-        "southeast",
-        "mekong-river-delta"
-      ]
-    },
-    "publicNote": "국가 종합계획의 6대 권역을 둘씩 묶은 기준입니다(북부=북부 산악·중산간+홍강 삼각주, 중부=북중부·중부 해안+중부 고원, 남부=동남부+메콩강 삼각주).",
-    "sourceOfSixRegions": "Nghị quyết 81/2023/QH15 (Quốc hội, 09/01/2023, Quy hoạch tổng thể quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050)",
-    "sourceUrl": "https://vanban.chinhphu.vn/?pageid=27160&docid=207352&classid=1&orggroupid=1",
-    "reason": "MOIT의 가격 문서가 miền별 성 목록을 싣지 않아, 성별 추정 대신 국가 종합계획의 6대 권역을 둘씩 묶어 정의한다(사용자 결정 2026-09-30)."
+    "basis": "circular-text-then-evn-jurisdiction",
+    "circularQuote": "7. Khung giá phát điện loại hình nhà máy điện gió được xây dựng theo các miền, khu vực biển trên cơ sở kết quả điều tra tài nguyên điện gió theo quy định của pháp luật, cụ thể như sau: a) Khung giá phát điện loại hình điện gió trên đất liền, điện gió gần bờ được xây dựng theo 03 (ba) miền: miền Bắc, miền Trung và miền Nam. b) Việc xác định các khu vực để xây dựng khung giá phát điện loại hình điện gió ngoài khơi căn cứ theo: b1) Quy hoạch không gian biển quốc gia; b2) Quy hoạch phát triển điện lực quốc gia. Giai đoạn 2025 - 2035, khung giá phát điện loại hình nhà máy điện gió ngoài khơi được xây dựng theo 03 (ba) khu vực biển: khu vực Bắc Bộ, khu vực Nam Trung Bộ và khu vực Nam Bộ. 8. Việc xác định các miền để xây dựng khung giá phát điện đối với loại hình nhà máy điện mặt trời và nhà máy điện gió trên đất liền, nhà máy điện gió gần bờ căn cứ theo: a) Phân vùng kinh tế - xã hội tại Quy hoạch tổng thể quốc gia; b) Quy hoạch phát triển điện lực quốc gia; c) Chủ trương, quyết định của cấp có thẩm quyền về việc sắp xếp, sáp nhập, hợp nhất các đơn vị hành chính cấp tỉnh.",
+    "circularReadingNote": "Điều 3 khoản 8은 미엔 경계를 정할 때 따를 기준 3가지(사회경제 권역 구분·전력개발계획·성·시 통합 결정)를 지정할 뿐, 성을 직접 나열하지 않는다(원문 확인, 부록·대응표 없음). 그래서 63개 성 전부가 2단계(EVN 관할 기준)로 결정된다.",
+    "fallback": "EVN jurisdiction (verified, evn-jurisdiction.json): 북=NPC+HANOI, 중=CPC, 남=SPC+HCMC",
+    "publicNote": "이 성의 권역은 {basisLabel}으로 정해졌습니다.",
+    "sourceUrl": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf",
+    "reason": "가격 규정 원문이 성을 나열하지 않아, 원문이 인용하는 전력계통 권역(EVN 관할)으로 정한다(사용자 결정 2026-09-30 16:15 — 6대 권역 묶음 규칙 철회).",
+    "withdrawn": {
+      "rule": "6대 권역을 둘씩 묶는 방식(2026-09-30 최초 결정)",
+      "withdrawnAt": "2026-09-30 16:15",
+      "reason": "가격 규정과 무관한 별도 문서(국가 종합계획)에 의존해 근거가 약함"
+    }
   },
+  "provinces63": [
+    {
+      "adm1Code": "VN-01",
+      "name": "Lai Châu",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-02",
+      "name": "Lào Cai",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-03",
+      "name": "Hà Giang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-04",
+      "name": "Cao Bằng",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-05",
+      "name": "Sơn La",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-06",
+      "name": "Yên Bái",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-07",
+      "name": "Tuyên Quang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-09",
+      "name": "Lạng Sơn",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-13",
+      "name": "Quảng Ninh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-14",
+      "name": "Hòa Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-18",
+      "name": "Ninh Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-20",
+      "name": "Thái Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-21",
+      "name": "Thanh Hóa",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-22",
+      "name": "Nghệ An",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-23",
+      "name": "Hà Tĩnh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-24",
+      "name": "Quảng Bình",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-25",
+      "name": "Quảng Trị",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-26",
+      "name": "Thừa Thiên Huế",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-27",
+      "name": "Quảng Nam",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-28",
+      "name": "Kon Tum",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-29",
+      "name": "Quảng Ngãi",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-30",
+      "name": "Gia Lai",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-31",
+      "name": "Bình Định",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-32",
+      "name": "Phú Yên",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-33",
+      "name": "Đắk Lắk",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-34",
+      "name": "Khánh Hòa",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-35",
+      "name": "Lâm Đồng",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-36",
+      "name": "Ninh Thuận",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-37",
+      "name": "Tây Ninh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-39",
+      "name": "Đồng Nai",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-40",
+      "name": "Bình Thuận",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-41",
+      "name": "Long An",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-43",
+      "name": "Bà Rịa–Vũng Tàu",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-44",
+      "name": "An Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-45",
+      "name": "Đồng Tháp",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-46",
+      "name": "Tiền Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-47",
+      "name": "Kiên Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-49",
+      "name": "Vĩnh Long",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-50",
+      "name": "Bến Tre",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-51",
+      "name": "Trà Vinh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-52",
+      "name": "Sóc Trăng",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-53",
+      "name": "Bắc Kạn",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-54",
+      "name": "Bắc Giang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-55",
+      "name": "Bạc Liêu",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-56",
+      "name": "Bắc Ninh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-57",
+      "name": "Bình Dương",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-58",
+      "name": "Bình Phước",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-59",
+      "name": "Cà Mau",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-61",
+      "name": "Hải Dương",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-63",
+      "name": "Hà Nam",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-66",
+      "name": "Hưng Yên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-67",
+      "name": "Nam Định",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-68",
+      "name": "Phú Thọ",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-69",
+      "name": "Thái Nguyên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-70",
+      "name": "Vĩnh Phúc",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-71",
+      "name": "Điện Biên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-72",
+      "name": "Đắk Nông",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-73",
+      "name": "Hậu Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "name": "Cần Thơ",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-DN",
+      "name": "Đà Nẵng",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-HN",
+      "name": "Hà Nội",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhanoi",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-HP",
+      "name": "Hải Phòng",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-SG",
+      "name": "Hồ Chí Minh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    }
+  ],
+  "provinces63RegionCounts": {
+    "north": 28,
+    "central": 13,
+    "south": 22
+  },
+  "units34": [
+    {
+      "unitCode": "an giang",
+      "name": "An Giang",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "bac ninh",
+      "name": "Bắc Ninh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "cao bang",
+      "name": "Cao Bằng",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ca mau",
+      "name": "Cà Mau",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "can tho",
+      "name": "Cần Thơ",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "gia lai",
+      "name": "Gia Lai",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hue",
+      "name": "Huế",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ha noi",
+      "name": "Hà Nội",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ha tinh",
+      "name": "Hà Tĩnh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hung yen",
+      "name": "Hưng Yên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hai phong",
+      "name": "Hải Phòng",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ho chi minh",
+      "name": "Hồ Chí Minh",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "khanh hoa",
+      "name": "Khánh Hòa",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lai chau",
+      "name": "Lai Châu",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lao cai",
+      "name": "Lào Cai",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lam dong",
+      "name": "Lâm Đồng",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lang son",
+      "name": "Lạng Sơn",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "nghe an",
+      "name": "Nghệ An",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ninh binh",
+      "name": "Ninh Bình",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "phu tho",
+      "name": "Phú Thọ",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang ngai",
+      "name": "Quảng Ngãi",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang ninh",
+      "name": "Quảng Ninh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang tri",
+      "name": "Quảng Trị",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "son la",
+      "name": "Sơn La",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "thanh hoa",
+      "name": "Thanh Hóa",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "thai nguyen",
+      "name": "Thái Nguyên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "tuyen quang",
+      "name": "Tuyên Quang",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "tay ninh",
+      "name": "Tây Ninh",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "vinh long",
+      "name": "Vĩnh Long",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dien bien",
+      "name": "Điện Biên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "da nang",
+      "name": "Đà Nẵng",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dak lak",
+      "name": "Đắk Lắk",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dong nai",
+      "name": "Đồng Nai",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dong thap",
+      "name": "Đồng Tháp",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    }
+  ],
+  "mixedUnits34": [],
   "generatedBy": "scripts/v157-2/build-c017-regions-v157-2.mjs"
 }

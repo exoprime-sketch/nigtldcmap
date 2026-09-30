@@ -499,6 +499,7 @@ export type VietnamBoundaryPolicyKindV151 =
   | "membership-or"
   | "native-34"
   | "six-region-only"
+  | "group-constant"
   | "none";
 
 export interface VietnamBoundaryPolicyV151 {

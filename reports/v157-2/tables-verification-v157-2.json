@@ -1,6 +1,6 @@
 {
   "schema": "tables-verification-v157-2",
-  "generatedAt": "2026-09-30T07:10:49.382Z",
+  "generatedAt": "2026-09-30T10:42:56.474Z",
   "checks": [
     {
       "table": "evn-jurisdiction",
@@ -183,14 +183,14 @@
       "name": "COUNTS_MATCH_TABLE",
       "status": "PASS",
       "actual": {
-        "north": 25,
-        "central": 19,
-        "south": 19
+        "north": 28,
+        "central": 13,
+        "south": 22
       },
       "expected": {
-        "north": 25,
-        "central": 19,
-        "south": 19
+        "north": 28,
+        "central": 13,
+        "south": 22
       }
     }
   ],
@@ -501,9 +501,9 @@
   },
   "c017": {
     "counts": {
-      "north": 25,
-      "central": 19,
-      "south": 19
+      "north": 28,
+      "central": 13,
+      "south": 22
     },
     "mixedUnits34": []
   },
