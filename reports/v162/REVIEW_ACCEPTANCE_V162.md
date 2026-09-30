@@ -67,4 +67,45 @@
 
 ## 검증
 
-GATE_RESULT
+## 판정표(qa:acceptance:v162, VNM + BGD 폴백)
+| 국가 | 영역 | 검사 | 판정 | 실측 |
+|---|---|---|---|---|
+| VNM | finder | 찾기 목록 = 카탈로그 공개 요소 | PASS | {"total": 146, "cards": 146} |
+| VNM | finder | 2026년 제외 요소 비노출(찾기) | PASS | [] |
+| VNM | finder | '데이터 준비 중' 카드 = 카탈로그 미입고 상태 | PASS | ["C-023", "E-011", "E-013"] |
+| VNM | finder | 미입고 상세의 '데이터 준비 중' 안내 | PASS | ["C-023", "E-011", "E-013"] |
+| VNM | finder | 명세 유형의 data-pending = 카탈로그 미입고(단일 출처) | PASS | ["C-023", "E-011", "E-013"] |
+| VNM | finder | 제외 요소 전 화면 비노출(audit:exclusions:v156) | PASS | {"status": "PASS", "failedChecks": []} |
+| VNM | map | 지도 대상·연결 수 = map-index 실측 | PASS | {"target": 72, "connected": 60, "pending": 12, "pendingBadges": 12} |
+| VNM | map | 지도 '준비 중' 0 (예상 실패 허용 12건) | 예상 실패 | {"pending": 12, "badges": 12, "ids": ["A-013", "A-022", "B-002", "B-024", "B-035", "B-036", "B-044", "B-046", "B-047", " |
+| VNM | map | 활성 레이어 전부 렌더·클릭(qa:map:v138) | PASS | {"active": 60, "rendered": 60, "clicked": 60, "internalPhraseLayers": [], "consoleErrors": 0, "httpFailuresExceptTiles": |
+| VNM | wording | 내부 작업 메모 0(홈·찾기·상세·다운로드·지도, #42) | PASS | {"findings": 0, "detailPages": 146, "runtimeErrors": 0} |
+| VNM | wording | 식별자·파일명·작업 어휘 0(지도 목록·정보·선택 패널·연관 카드·상세, #47) | PASS | {"findings": 0, "elements": [], "exceptions": 0, "scanned": 798} |
+| VNM | wording | C-003 상세의 파일명 0(V162에서 수정) | 예상 실패 | ["file-name:NAP_Vietnam_2025_EN.pdf", "file-name:NAP_Vietnam_2025_VN.pdf", "file-name:nap_report_eng_small.pdf"] |
+| VNM | numbers | 홈 전체 데이터 항목 = 카탈로그 공개 요소 | PASS | 146개 |
+| VNM | numbers | 홈 지도 제공 항목 = map-index 활성 레이어 | PASS | 60개 |
+| VNM | numbers | 홈 다운로드 가능 항목 = manifest | PASS | 143개 |
+| VNM | numbers | 다운로드 목록 = 카탈로그 공개 요소(제외 0) | PASS | 146 |
+| VNM | numbers | 데이터 기준일 = 원자료 입고일 | 예상 실패 | {"shown": "2026.08.27", "manifestGeneratedAt": "2026-08-27T00:00:00Z"} |
+| VNM | widths | 6폭(320·390·768·1024·1440·1920) 가로 넘침 0 | PASS | {"combinations": 42, "overflowing": 0, "failing": []} |
+| BGD | country | ?country=BGD: 공개 전 폴백 · 다른 나라 표현 0 | PASS | [] |
+| BGD | country | ?country=BGD: 기본 국가 목록으로 폴백 | PASS | 146 |
+
+**PASS** — 통과 17 · 실패 0 · 예상 실패 3 (총 20)
+
+예상 실패 인자(`finalize:v151:steps`): `--expect-pending 12 --expect-fail data-date,c003-filename`
+
+| 인자 | 사유 | 제거 시점 |
+|---|---|---|
+| `--expect-pending 12` | 지도 대상 72개 중 12개 미연결 | 지도 12 PR 병합 후 |
+| `data-date` | 홈 기준일이 manifest 생성일(2026-08-27)이고, 입고일(2026-09-22)은 공개 트리에 없음 | V162(세션5) 병합 후 |
+| `c003-filename` | C-003 상세에 문서 파일명 3건 | V162(세션5) 병합 후 |
+
+## 게이트 실행 기록(단계별 통과로 인정 — 사용자 결정)
+| 실행 | 결과 |
+|---|---|
+| finalize:v151 1차(3298818) | release:v136 80/80 · role-split 53/53 · analysis QA 필수 34(기준선 41)·신규 0 · boundary-34 21 통과 · boundary-policy 25/25 · acceptance: 공개 문구 1건(B-039·B-040 INTL.txt) 실패 → 수정 |
+| finalize:v151 2차(e2754ad) | release:v136 80/80·role-split 통과 뒤, analysis QA 도중 **메모리 부족으로 Claude Code가 중단**(명령 실패 아님) |
+| 3차 | 실행하지 않음(사용자 결정). 대신 아래 2개 단계를 한 번씩 단독 실행 |
+| (a) qa:analysis:v140:baseline 단독 | 필수 34(기준선 41 이내) · 신규 0 · **PASS**(묶음 처리 추가 불필요) |
+| (b) qa:acceptance:v162 단독 | PASS — 통과 17 · 실패 0 · 예상 실패 3(지도 준비 중 12 · C-003 파일명 · 데이터 기준일) |
