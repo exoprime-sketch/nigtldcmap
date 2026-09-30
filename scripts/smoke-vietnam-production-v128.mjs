@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
   mkdtempSync,
+  readFileSync,
   readdirSync,
   rmSync,
   statSync,
@@ -11,6 +13,7 @@ import {
 } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { tmpdir } from "node:os";
+import { fileURLToPath } from "node:url";
 import { AuditV125, PROJECT_ROOT } from "./v125/audit-utils.mjs";
 import {
   evaluateValue,
@@ -20,12 +23,81 @@ import {
   waitForValue,
 } from "./v125/browser-runtime.mjs";
 
+// V162: one smoke per country. `--country VNM,BGD` (default: every live
+// country in public/data/countries.json) runs the smoke once per country in
+// its own process; a country that is not live yet is reported and skipped
+// (it is smoked once it is published).
+const argv = process.argv.slice(2);
+const countryArgIndex = argv.indexOf("--country");
+const registryV162 = JSON.parse(
+  readFileSync(resolve(PROJECT_ROOT, "public/data/countries.json"), "utf8")
+).countries || [];
+const liveCountriesV162 = registryV162.filter((row) => row.status === "live").map((row) => row.iso3);
+const requestedCountriesV162 = (countryArgIndex >= 0 ? String(argv[countryArgIndex + 1] || "") : "")
+  .split(",")
+  .map((value) => value.trim().toUpperCase())
+  .filter(Boolean);
+const countriesV162 = requestedCountriesV162.length ? requestedCountriesV162 : liveCountriesV162;
+if (countriesV162.length > 1) {
+  let failed = 0;
+  for (const iso3 of countriesV162) {
+    const child = spawnSync(process.execPath, [fileURLToPath(import.meta.url), "--country", iso3], {
+      stdio: "inherit",
+      env: process.env,
+    });
+    if (child.status !== 0) failed += 1;
+  }
+  process.exit(failed ? 1 : 0);
+}
+const COUNTRY_V162 = countriesV162[0] || "VNM";
+const countryEntryV162 = registryV162.find((row) => row.iso3 === COUNTRY_V162);
+if (!countryEntryV162 || countryEntryV162.status !== "live") {
+  console.log(
+    JSON.stringify({
+      type: "summary",
+      audit: "production-smoke:v128",
+      country: COUNTRY_V162,
+      status: "SKIPPED",
+      reason: countryEntryV162
+        ? `not live yet (status ${countryEntryV162.status}); smoked once published`
+        : "not in the country registry",
+    })
+  );
+  process.exit(countryEntryV162 ? 0 : 1);
+}
+const IS_DEFAULT_V162 = COUNTRY_V162 === "VNM";
+const dataRootV162 = String(countryEntryV162.dataRoot || "/data/vietnam/v2").replace(/^\/+/u, "");
+const localTreeV162 = resolve(PROJECT_ROOT, "public", dataRootV162);
+const catalogV162 = JSON.parse(readFileSync(resolve(localTreeV162, "catalog.json"), "utf8")).elements || [];
+const mapIndexV162 = existsSync(resolve(localTreeV162, "map-index.json"))
+  ? JSON.parse(readFileSync(resolve(localTreeV162, "map-index.json"), "utf8"))
+  : null;
+const withDataV162 = catalogV162
+  .filter((element) => !["excluded", "not-provided", "not-collected", "data-entry-planned", "schema-only"].includes(element.publicStatus))
+  .map((element) => element.elementId);
+// The default country keeps its original pages; another country smokes the
+// same pages with ?country= and elements its catalog actually has.
+const countryQueryV162 = IS_DEFAULT_V162 ? "" : `?country=${COUNTRY_V162}`;
+const detailIdsV162 = [
+  ...["A-002", "E-012"].filter((id) => withDataV162.includes(id)),
+  ...withDataV162.filter((id) => id !== "A-002" && id !== "E-012"),
+].slice(0, 2);
+const finderQueryV162 = withDataV162.includes("A-002")
+  ? "CPIA"
+  : String(catalogV162.find((element) => element.elementId === detailIdsV162[0])?.publicTitle || "").split(/\s+/u)[0];
+const powerLayerV162 = (mapIndexV162?.layers || []).some(
+  (layer) => layer.elementId === "A-024" && layer.active !== false
+);
+
 const audit = new AuditV125("production-smoke:v128");
 const configuredUrl = String(
   process.env.PRODUCTION_URL || process.env.V128_PRODUCTION_URL || ""
 ).trim();
 const reportRoot = resolve(PROJECT_ROOT, "reports/v128");
-const reportPath = resolve(reportRoot, "production-smoke-v128.json");
+const reportPath = resolve(
+  reportRoot,
+  IS_DEFAULT_V162 ? "production-smoke-v128.json" : `production-smoke-v128-${COUNTRY_V162.toLowerCase()}.json`
+);
 const buildRoot = resolve(PROJECT_ROOT, "build");
 
 function normalizedBaseUrl(value) {
@@ -89,14 +161,24 @@ try {
     };
   }
 
-  const requiredAssets = [
-    "data/vietnam/v2/manifest.json",
-    "data/vietnam/v2/catalog.json",
-    "data/vietnam/v2/map-index.json",
-    "data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-    "data/vietnam/v2/geometry/vnm-transmission-network.geojson",
-    "data/vietnam/v2/semantic/indicator-semantics-v125.json",
-  ];
+  const requiredAssets = IS_DEFAULT_V162
+    ? [
+        "data/vietnam/v2/manifest.json",
+        "data/vietnam/v2/catalog.json",
+        "data/vietnam/v2/map-index.json",
+        "data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+        "data/vietnam/v2/geometry/vnm-transmission-network.geojson",
+        "data/vietnam/v2/semantic/indicator-semantics-v125.json",
+      ]
+    : [
+        // the country's own tree: what the local build ships must answer
+        ...["manifest.json", "catalog.json", "map-index.json"]
+          .filter((name) => existsSync(resolve(localTreeV162, name)))
+          .map((name) => `${dataRootV162}/${name}`),
+        ...(countryEntryV162.adm?.level1?.asset
+          ? [String(countryEntryV162.adm.level1.asset).replace(/^\/+/u, "")]
+          : []),
+      ];
   for (const path of requiredAssets) {
     const response = await fetch(at(baseUrl, path), { cache: "no-store" });
     const contentType = response.headers.get("content-type") || "";
@@ -153,7 +235,7 @@ try {
     }
   });
 
-  await navigate(browser.cdp, `${baseUrl}#home`);
+  await navigate(browser.cdp, `${baseUrl}${countryQueryV162}#home`);
   await waitForValue(
     browser.cdp,
     `Boolean(document.querySelector('[data-v128-home]')?.textContent?.includes('152'))`,
@@ -167,26 +249,35 @@ try {
     }))()`
   );
 
-  await navigate(browser.cdp, `${baseUrl}?q=CPIA#explorer`);
+  // V162: the search must list the searched dataset's card. Since V159 the
+  // card shows the dataset name without the source acronym ('CPIA' is typed,
+  // not shown), so the page text no longer carries the query itself.
+  const searchedIdJson = JSON.stringify(detailIdsV162[0] || "");
+  await navigate(
+    browser.cdp,
+    `${baseUrl}?${IS_DEFAULT_V162 ? "" : `country=${COUNTRY_V162}&`}q=${encodeURIComponent(finderQueryV162)}#explorer`
+  );
   await waitForValue(
     browser.cdp,
-    `Boolean(document.querySelector('h1')?.textContent?.includes('데이터 찾기') && document.body.textContent?.includes('CPIA'))`,
+    `Boolean(document.querySelector('h1')?.textContent?.includes('데이터 찾기') && document.querySelector('[data-testid="public-finder-card-v135"][data-element-id=' + JSON.stringify(${searchedIdJson}) + ']'))`,
     { timeoutMs: 30_000 }
   );
   const finder = await evaluateValue(
     browser.cdp,
     `(() => ({
       mounted: document.querySelector('h1')?.textContent?.includes('데이터 찾기') || false,
-      searchResult: document.body.textContent?.includes('CPIA') || false
+      query: ${JSON.stringify(finderQueryV162)},
+      results: Number(document.querySelector('[data-testid="finder-results-v136"]')?.getAttribute('data-total-count') || 0),
+      searchResult: Boolean(document.querySelector('[data-testid="public-finder-card-v135"][data-element-id=' + JSON.stringify(${searchedIdJson}) + ']'))
     }))()`
   );
 
   const detailResults = {};
   let tooltip = false;
-  for (const elementId of ["A-002", "E-012"]) {
+  for (const elementId of detailIdsV162) {
     await navigate(
       browser.cdp,
-      `${baseUrl}?country=VNM&element=${encodeURIComponent(elementId)}#element-detail`
+      `${baseUrl}?country=${COUNTRY_V162}&element=${encodeURIComponent(elementId)}#element-detail`
     );
     await waitForValue(
       browser.cdp,
@@ -228,28 +319,40 @@ try {
     }
   }
 
-  await navigate(browser.cdp, `${baseUrl}?country=VNM#map`);
+  await navigate(browser.cdp, `${baseUrl}?country=${COUNTRY_V162}#map`);
   await waitForValue(browser.cdp, `Boolean(document.querySelector('.cdp-map-page'))`, {
     timeoutMs: 30_000,
   });
-  await waitForValue(
-    browser.cdp,
-    `Boolean(document.querySelector('[data-map-element="A-024"]') && document.querySelector('[data-preset-id="POWER_INFRASTRUCTURE"]'))`,
-    { timeoutMs: 30_000 }
-  );
-  await evaluateValue(
-    browser.cdp,
-    `(() => {
-      const button = document.querySelector('[data-preset-id="POWER_INFRASTRUCTURE"]');
-      button?.click();
-      return Boolean(button);
-    })()`
-  );
-  await waitForValue(
-    browser.cdp,
-    `document.querySelector('.cdp-map-page')?.getAttribute('data-primary-element') === 'A-024'`,
-    { timeoutMs: 30_000 }
-  );
+  // The power layer (A-024) is smoked where the country's map has it. V162: the
+  // map no longer has preset buttons (data-preset-id); the layer is chosen from
+  // the data list the way a reader does - open its group and tick it.
+  if (powerLayerV162) {
+    await waitForValue(
+      browser.cdp,
+      `Boolean(document.querySelector('[data-testid="map-all-data-layer-v135"][data-element-id="A-024"]'))`,
+      { timeoutMs: 30_000 }
+    );
+    await evaluateValue(
+      browser.cdp,
+      `(async () => {
+        const panelToggle = document.querySelector('[data-testid="map-layer-panel"] .cdp-map-panel-toggle');
+        if (panelToggle && panelToggle.getAttribute('aria-expanded') === 'false') panelToggle.click();
+        const find = () => document.querySelector('[data-testid="map-all-data-layer-v135"][data-element-id="A-024"]');
+        const groupToggle = find()?.closest('[data-map-group-v135]')?.querySelector('[data-testid="map-catalog-group-toggle-v138"]');
+        if (groupToggle && groupToggle.getAttribute('aria-expanded') !== 'true') groupToggle.click();
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        find()?.click();
+        return Boolean(find());
+      })()`
+    );
+    await waitForValue(
+      browser.cdp,
+      `document.querySelector('.cdp-map-page')?.getAttribute('data-primary-element') === 'A-024'`,
+      { timeoutMs: 30_000 }
+    );
+  } else {
+    await wait(3000);
+  }
   const map = await evaluateValue(
     browser.cdp,
     `(() => {
@@ -275,7 +378,7 @@ try {
     })()`
   );
 
-  await navigate(browser.cdp, `${baseUrl}#download`);
+  await navigate(browser.cdp, `${baseUrl}${countryQueryV162}#download`);
   await waitForValue(
     browser.cdp,
     `Boolean(document.querySelector('h1')?.textContent?.includes('데이터 다운로드') && document.querySelector('input[type="checkbox"]:not(:disabled)'))`,
@@ -377,6 +480,7 @@ const allConsoleErrors = [...(browser?.runtimeErrors || []), ...consoleErrors];
 const report = {
   schemaVersion: "v128-production-smoke-1",
   generatedAt: new Date().toISOString(),
+  country: COUNTRY_V162,
   target: configuredUrl ? "configured-production-url" : "local-production-build",
   baseUrl,
   runtimeFailure,
@@ -397,26 +501,43 @@ audit.check("REQUIRED_ASSET_HTTP_200", networkFailures.length === 0, networkFail
 audit.check("HTML_RETURNED_FOR_JSON", htmlForJson.length === 0, htmlForJson, []);
 audit.check("HOME_LIVE_COUNT", uiResult?.home?.liveCount === true, uiResult?.home, { liveCount: true });
 audit.check("FINDER_SEARCH", uiResult?.finder?.searchResult === true, uiResult?.finder, { searchResult: true });
+// The default country smokes A-002 (with its chart tooltip) and E-012; another
+// country smokes two elements its own catalog has.
+const detailsMounted =
+  detailIdsV162.length > 0 &&
+  detailIdsV162.every(
+    (id) => uiResult?.details?.[id]?.mounted === true && uiResult?.details?.[id]?.alert === false
+  );
 audit.check(
-  "DETAIL_A002_E012",
-  uiResult?.details?.["A-002"]?.mounted === true &&
-    uiResult?.details?.["E-012"]?.mounted === true &&
-    uiResult?.details?.["A-002"]?.alert === false &&
-    uiResult?.details?.["E-012"]?.alert === false,
+  IS_DEFAULT_V162 ? "DETAIL_A002_E012" : "DETAIL_TWO_ELEMENTS",
+  detailsMounted,
   uiResult?.details || null,
-  { "A-002": "mounted", "E-012": "mounted" }
+  Object.fromEntries(detailIdsV162.map((id) => [id, "mounted"]))
 );
-audit.check("CHART_TOOLTIP", uiResult?.tooltip === true, uiResult?.tooltip ?? null, true);
-audit.check(
-  "MAP_POWER_PRESET",
-  uiResult?.map?.mounted === true &&
-    uiResult?.map?.primary === "A-024" &&
-    uiResult?.map?.powerPreset === "POWER_INFRASTRUCTURE" &&
-    uiResult?.map?.blank === false &&
-    uiResult?.map?.legend === true,
-  uiResult?.map || null,
-  { mounted: true, primary: "A-024", powerPreset: "POWER_INFRASTRUCTURE", blank: false, legend: true }
-);
+if (detailIdsV162.includes("A-002")) {
+  audit.check("CHART_TOOLTIP", uiResult?.tooltip === true, uiResult?.tooltip ?? null, true);
+}
+if (powerLayerV162) {
+  // V162: was MAP_POWER_PRESET. The preset buttons are gone from the map, so
+  // the power layer is ticked in the data list and judged the same way
+  // (primary A-024, drawn, legend) minus the preset attribute.
+  audit.check(
+    "MAP_POWER_LAYER",
+    uiResult?.map?.mounted === true &&
+      uiResult?.map?.primary === "A-024" &&
+      uiResult?.map?.blank === false &&
+      uiResult?.map?.legend === true,
+    uiResult?.map || null,
+    { mounted: true, primary: "A-024", blank: false, legend: true }
+  );
+} else {
+  audit.check(
+    "MAP_MOUNTED",
+    uiResult?.map?.mounted === true && uiResult?.map?.blank === false,
+    uiResult?.map || null,
+    { mounted: true, blank: false }
+  );
+}
 audit.check(
   "DOWNLOAD_ONE_ELEMENT",
   uiResult?.download?.mounted === true &&
@@ -433,13 +554,11 @@ audit.check("SMOKE_RUNTIME", runtimeFailure === null, runtimeFailure, null);
 
 audit.finish({
   target: configuredUrl ? "production" : "local-production",
+  country: COUNTRY_V162,
   baseUrl,
   homeResult: uiResult?.home?.liveCount === true ? "PASS" : "FAIL",
   finderResult: uiResult?.finder?.searchResult === true ? "PASS" : "FAIL",
-  detailResult:
-    uiResult?.details?.["A-002"]?.mounted && uiResult?.details?.["E-012"]?.mounted
-      ? "PASS"
-      : "FAIL",
+  detailResult: detailsMounted ? "PASS" : "FAIL",
   mapResult: uiResult?.map?.blank === false ? "PASS" : "FAIL",
   downloadResult:
     uiResult?.download?.selected === true &&

@@ -1801,31 +1801,31 @@
       "caseNo": 1,
       "purpose": "도로 등급 구성으로 주요 도로망 기록 윤곽 살피기",
       "purposeEn": "Road Network Profile",
-      "logic": "오픈스트리트맵(자원봉사자가 함께 만드는 공개 지도)에는 도로가 고속도로·간선·1차·2차도로 같은 등급별 피처(지도에 입력된 선 하나하나)로 기록돼 있다. 전체 도로 피처 가운데 고속도로·간선도로가 차지하는 비중을 보면 그 나라 지도에 담긴 주요 도로망의 윤곽을 대략 볼 수 있어, 물류·수송 사업의 현지 실사 전 참고 자료로 쓴다. 함께 쓰는 요소 A-031의 인프라 점수와 나란히 보면 도로 여건을 한 번 더 확인할 수 있다.",
+      "logic": "오픈스트리트맵(자원봉사자가 함께 만드는 공개 지도)에는 도로가 고속도로·간선·1차·2차도로 같은 등급별 지물(지도에 입력된 선 하나하나)로 기록돼 있다. 전체 도로 지물 가운데 고속도로·간선도로가 차지하는 비중을 보면 그 나라 지도에 담긴 주요 도로망의 윤곽을 대략 볼 수 있어, 물류·수송 사업의 현지 실사 전 참고 자료로 쓴다. 함께 쓰는 요소 A-031의 인프라 점수와 나란히 보면 도로 여건을 한 번 더 확인할 수 있다.",
       "dataUsed": [
         {
           "indicatorId": "A-027_roads_fclass_motorway_count",
-          "label": "도로 등급별 피처 수",
+          "label": "도로 등급별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_roads_fclass_trunk_count",
-          "label": "도로 등급별 피처 수",
+          "label": "도로 등급별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_roads_fclass_primary_count",
-          "label": "도로 등급별 피처 수",
+          "label": "도로 등급별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_roads_fclass_secondary_count",
-          "label": "도로 등급별 피처 수",
+          "label": "도로 등급별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_roads_feature_count",
-          "label": "도로 전체 피처 수",
+          "label": "도로 전체 지물 수",
           "mapped": "exact"
         },
         {
@@ -1834,7 +1834,7 @@
           "mapped": "exact"
         }
       ],
-      "storyline": "\"OO국 지도에 기록된 도로 피처 가운데 고속도로·간선도로는 OO%로, 현지 실사 때 주요 도로망 여건을 함께 확인할 계획이다.\"",
+      "storyline": "\"OO국 지도에 기록된 도로 지물 가운데 고속도로·간선도로는 OO%로, 현지 실사 때 주요 도로망 여건을 함께 확인할 계획이다.\"",
       "users": [
         "기업",
         "연구자"
@@ -1853,17 +1853,17 @@
       "dataUsed": [
         {
           "indicatorId": "A-027_railways_fclass_subway_count",
-          "label": "철도 분류별 피처 수",
+          "label": "철도 분류별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_railways_fclass_light_rail_count",
-          "label": "철도 분류별 피처 수",
+          "label": "철도 분류별 지물 수",
           "mapped": "exact"
         },
         {
           "indicatorId": "A-027_railways_fclass_monorail_count",
-          "label": "철도 분류별 피처 수",
+          "label": "철도 분류별 지물 수",
           "mapped": "exact"
         }
       ],

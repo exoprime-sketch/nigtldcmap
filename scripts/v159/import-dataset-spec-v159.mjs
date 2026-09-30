@@ -58,7 +58,7 @@ const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) =>
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
-// Use-case fields (caution, dataUsed) name the case: `caseNo` in the override.
+// Use-case fields (caution, dataUsed, logic, storyline) name the case: `caseNo` in the override.
 function applyOverride(elementId, field, value, caseNo = null) {
   let out = value;
   OVERRIDES.forEach((item, index) => {
@@ -399,9 +399,9 @@ function main() {
         caseNo: Number(text(row[u("사례 번호")])),
         purpose: en ? purposeRaw.slice(0, en.index).trim() : purposeRaw,
         purposeEn: en ? en[1].trim() : "",
-        logic: text(row[u("논리 구조")]),
+        logic: applyOverride(elementId, "logic", text(row[u("논리 구조")]), caseNo),
         dataUsed: parseDataUsed(applyOverride(elementId, "dataUsed", text(row[u("쓰는 데이터")]), caseNo), catalog),
-        storyline: text(row[u("스토리라인 예시")]),
+        storyline: applyOverride(elementId, "storyline", text(row[u("스토리라인 예시")]), caseNo),
         users: text(row[u("주 사용자")]).split(/\s*·\s*/).filter(Boolean),
         caution,
         cautionDisplay: display.value,
@@ -573,17 +573,17 @@ function writeCorrections() {
     "",
     "| 요소 | 명세서 열 | 원문 | 플랫폼 표시 | 사유 | 기록일 |",
     "|---|---|---|---|---|---|",
-    ...OVERRIDES.map((item) => `| ${item.elementId} | ${FIELD_COLUMN[item.field] || item.field} | ${mdCell(item.from)} | ${mdCell(item.to)} | ${mdCell(item.reason)} | ${item.date} |`),
+    ...OVERRIDES.map((item) => `| ${item.elementId} | ${FIELD_COLUMN[item.field] || item.field} | ${mdCell(item.from)} | ${mdCell(item.to) || "(삭제)"} | ${mdCell(item.reason)} | ${item.date} |`),
     "",
   ];
   mkdirSync(dirname(CORRECTIONS_DOC), { recursive: true });
   writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
 }
 
-const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", logic: "활용 사례 · 논리 구조", storyline: "활용 사례 · 스토리라인 예시", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
 
 function mdCell(value) {
-  return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");
+  return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
 }
 
 function writeReviews({ nameReview, cardReview, cautionReview, mapping, typology, cases }) {
