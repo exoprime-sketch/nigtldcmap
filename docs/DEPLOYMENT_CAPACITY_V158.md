@@ -121,7 +121,7 @@
 | 방글라데시 다운로드 | 145.3 MB · 170개 | 4.4 MB · 85개 |
 | 가장 큰 파일 | 86.5 MB(b-006.json) | 12.3 MB(지도 경계 GeoJSON) |
 
-- 기존 주소 `downloads/<id>.json·csv`는 404다(7절 2 결정). `vercel.json`은 바꾸지 않았다.
+- 기존 주소 `downloads/<id>.json·csv`는 404다(7절 2 결정). CRA 프리셋이 없는 경로를 index.html로 돌려주므로, `vercel.json`에 `routes`(파일시스템 확인 → 없는 `/data/**` 404)를 넣었다. `ignoreCommand`와 리다이렉트는 없다.
 
 ## 측정 재현
 ```powershell

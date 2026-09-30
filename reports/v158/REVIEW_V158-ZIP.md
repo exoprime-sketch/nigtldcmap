@@ -7,7 +7,7 @@
 - **배포 1회 948.7 MB → 164.4 MB(5.77배), 파일 867 → 635개, 가장 큰 파일 86.5 → 12.3 MB.**
 - **레코드 변화 0**: 베트남은 지난 갱신과 같은 인자로 `refresh:data`를 다시 돌렸고, 값 비교에서 152요소 모두 변화가 없다(값 변경·관측 증감 0). ZIP 안 CSV는 전환 전 파일과 바이트 단위로 같고, JSON은 요소 행의 `downloadAssets`만 다르다.
 - **화면 변화 0**: 화면은 정적 다운로드 파일을 쓰지 않는다(다운로드 화면은 팩에서 파일을 만든다). 화면 서명으로 확인했다(아래).
-- 기존 주소 `downloads/<id>.json·csv`는 404다(결정). `vercel.json`은 바꾸지 않았다.
+- 기존 주소 `downloads/<id>.json·csv`는 404다. 검토에서 Vercel의 CRA 기본 라우팅이 없는 파일을 index.html(200)로 돌려준다는 지적을 받아, `vercel.json`에 `routes` 두 줄(파일시스템 확인 → 없는 `/data/**`는 404)을 넣었다. `ignoreCommand`는 그대로이고, 그 밖의 경로는 프레임워크 기본 규칙(정적 파일 캐시·SPA 폴백)이 그대로 처리한다.
 
 ## 변경
 ### 데이터 생성
@@ -45,6 +45,13 @@
 | CI 감사(로컬) | 보안 13/13 · 배포 9/9 · 성능은 CI에서도 참고용(초기 번들 회귀는 이번 PR과 무관, 아래) |
 | `finalize:v151` | 통과(2회째) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41 이내, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24. 1회째는 생성 데이터 감사의 `DOWNLOAD_ROW_RECONCILIATION`이 ZIP을 세지 않아(0건) 실패 → 감사 수정 후 재실행 |
 | 배포 용량 | 948.7 → 164.4 MB(`reports/v158/download-zip-size-v158.md`). 기준 빌드는 #46 head 빌드(main `5b82ea6`과 앱·데이터 동일, #44는 문서만) |
+
+## 없는 `/data` 파일 404(검토 수정)
+- 운영 확인(수정 전): `/data/vietnam/v2/downloads/not-a-file.csv` → 200 `text/html`(CRA 프리셋 폴백, `s-maxage=0`), `/static/*` → `s-maxage=31536000, immutable`.
+- 수정: `vercel.json` `routes`: `{ handle: filesystem }` → `^/data/.*$` 404. 있는 `/data` 파일은 파일시스템 단계에서 그대로 서빙된다.
+- 로컬 확인(`scripts/v158/data-404-routing-check-v158.mjs`, 같은 순서의 라우팅을 흉내 낸 서버, `reports/v158/data-404-routing-v158.json`): 홈·찾기·지도·상세 A-001·다운로드에서 앱이 읽은 `/data` 요청 33건 모두 실제 파일(200), HTML 폴백 0, 콘솔·페이지 오류 0. 옛 csv·json 404, zip 200, 앱 경로(`/no/such/page`) 200 index.html.
+- 앱 로더는 모두 응답 상태를 먼저 확인하고 HTML 검사는 방어용이라, 404와 HTML 폴백을 같은 '없음'으로 처리한다(선택 파일에 폴백을 기대는 코드 없음).
+- Vercel 쪽 동작은 Preview(로그인 필요)에서 검토자가 확인한다. 무시 명령 검증 PASS(결함 0).
 
 ## 성능 감사 초기 번들 — main 비교(사용자 요청)
 `audit:performance:v128` `INITIAL_BUNDLE_REGRESSION`: 진입 파일(JS·CSS) gzip 합계를 기준값과 비교(허용 10% 이내). 두 빌드는 같은 명령(`npm run build`)으로 각 체크아웃에서 만들고 같은 감사 스크립트로 쟀다.

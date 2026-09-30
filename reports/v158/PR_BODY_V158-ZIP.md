@@ -34,7 +34,8 @@
 ## Preview·확인 경로
 - Preview: https://nigtldcmap-clmsib3fn-exoprime-5142s-projects.vercel.app (커밋 `ae2e85c`, Vercel 로그인 필요)
 - **화면 변화 0**: 공개 화면은 정적 다운로드 파일을 쓰지 않는다(다운로드 화면은 팩에서 파일을 만든다).
-- 확인할 수 있는 것: Preview에서 `/data/vietnam/v2/downloads/a-002.zip`을 받으면 `a-002.csv`·`a-002.json`이 들어 있다. 옛 주소 `/data/vietnam/v2/downloads/a-002.csv`는 404다.
+- 확인할 수 있는 것: Preview에서 `/data/vietnam/v2/downloads/a-002.zip`(200)을 받으면 `a-002.csv`·`a-002.json`이 들어 있다. 옛 주소 `…/a-002.csv`·`…/a-002.json`은 404(`vercel.json` `routes`로 없는 `/data/**`만 SPA 폴백에서 제외, 검토 수정).
+- 홈·찾기·지도·상세·다운로드는 그대로다(로컬에서 같은 라우팅으로 `/data` 요청 전부 실제 파일·콘솔 오류 0 확인, `reports/v158/data-404-routing-v158.json`).
 
 ## 남은 것
 - Hobby 비상업 조건: 사용자 판단 대기(보류)
