@@ -185,9 +185,19 @@ for (const [surface, path, ready] of [
 // ---- detail: every public element, all layers open
 const queue = [...DETAIL_IDS];
 async function worker() {
-  const { context, tab } = await page();
+  // V162: a fresh browser context every 20 detail pages - a page with every
+  // layer open is heavy, and one context held for all of them ran the
+  // machine out of memory.
+  let { context, tab } = await page();
+  let pagesInContext = 0;
   while (queue.length) {
     const id = queue.shift();
+    if (pagesInContext >= 20) {
+      await context.close();
+      ({ context, tab } = await page());
+      pagesInContext = 0;
+    }
+    pagesInContext += 1;
     try {
       await tab.goto(`${base}/?view=data&country=${COUNTRY}&element=${id}&detailLayers=all#element-detail`, { waitUntil: "domcontentloaded", timeout: scaledTimeoutMsV150(90_000) });
       await tab.waitForFunction(() => document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") === "ready", null, { timeout: scaledTimeoutMsV150(60_000) }).catch(() => null);

@@ -62,10 +62,6 @@ const CITATION_V157 = [
   /\bv\d{4}-\d{2}-\d{2}\b/gu,
   // a contact address the directory datasets publish
   /[\w.+-]+@[\w.-]*/gu,
-  // V162: the file name of a published document the record cites
-  // ("nap_report_eng_small.pdf", C-003) - the source's name for the document,
-  // as #42 kept public documents' file names in their links.
-  /[\w.-]+\.pdf/giu,
 ];
 
 /**
@@ -92,6 +88,10 @@ const CAMEL_CASE_V157 = /\b[a-z][a-z0-9]*[A-Z][A-Za-z0-9]*\b/gu;
 const SNAKE_CASE_V157 = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/gu;
 const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
+// V162 (user decision 2026-09-30): a file name in the text a reader sees - a
+// link's href is not text, and a URL is masked as a citation above - is a
+// working file on the screen (C-003 "nap_report_eng_small.pdf").
+const FILE_NAME_V162 = /[\w.-]+\.(?:pdf|xlsx?|csv|docx?|hwpx?|pptx?|zip|json|geojson|shp|txt)\b/giu;
 // 제안서 is a document a project has; 제안 on its own is how we write to each other.
 const NOTE_WORDS_V157 = /렌더러|폴리곤|조인\s*키|\bkind\b|choropleth|boundaryPolicy|후속|제안(?![\uAC00-\uD7A3])/gu;
 // 2차 검토(2026-09-30): 우리끼리 쓰는 한국어 어휘. 읽는 사람에게는 과업 용어다.
@@ -106,9 +106,16 @@ const WORK_WORDS_V157 =
  * read as something left behind.
  */
 function findingsIn(text, { hyphens = true, notes = true } = {}) {
-  const value = withoutCitationsV157(text);
+  let value = withoutCitationsV157(text);
   if (!value.trim()) return [];
   const hits = [];
+  // A file name counts once, as a file name - not again as snake_case.
+  FILE_NAME_V162.lastIndex = 0;
+  for (const match of value.matchAll(FILE_NAME_V162)) {
+    const at = match.index ?? value.indexOf(match[0]);
+    hits.push({ kind: "file-name", token: match[0], context: value.slice(Math.max(0, at - 70), at + match[0].length + 50).replace(/\s+/gu, " ").trim() });
+  }
+  value = value.replace(FILE_NAME_V162, " ");
   for (const [kind, pattern] of [
     ["camelCase", CAMEL_CASE_V157],
     ["snake_case", SNAKE_CASE_V157],
@@ -313,13 +320,21 @@ if (!flag("skip-detail")) {
   const targets = JSON.parse(
     readFileSync(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json"), "utf8")
   );
-  for (const target of targets.targets || targets) {
-    await page.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
+  // V162: a detail page with every section open is heavy - the pages are read
+  // in batches of 20, each batch in its own browser context that is closed
+  // before the next one opens, one page at a time.
+  const DETAIL_BATCH_V162 = 20;
+  const allTargets = targets.targets || targets;
+  for (let start = 0; start < allTargets.length; start += DETAIL_BATCH_V162) {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, locale: "ko-KR" });
+    const detailPage = await context.newPage();
+    for (const target of allTargets.slice(start, start + DETAIL_BATCH_V162)) {
+    await detailPage.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
       waitUntil: "domcontentloaded",
     });
-    await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
-    await page.waitForTimeout(400);
-    const text = await page.evaluate(async () => {
+    await detailPage.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
+    await detailPage.waitForTimeout(400);
+    const text = await detailPage.evaluate(async () => {
       const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
       // V162: a closed table (the raw-data table in 'Detail data') is text a
       // reader opens with one click - open every <details> before reading.
@@ -329,6 +344,9 @@ if (!flag("skip-detail")) {
       return tidy(root?.innerText || document.body.innerText);
     });
     record(report, "detail", target.elementId, "analysis", text);
+    }
+    await detailPage.close();
+    await context.close();
   }
 }
 

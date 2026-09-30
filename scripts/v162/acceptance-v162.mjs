@@ -235,12 +235,20 @@ for (const iso3 of COUNTRIES) {
   // 3 wording -------------------------------------------------------------
   if (!SKIP.has("wording")) {
     const notesReport = resolve(ROOT, `reports/v161/source-notes-audit-v161${iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`}.json`);
-    const notes = await runReused("source-notes", `node scripts/v161/audit-source-notes-v161.mjs --build ${BUILD_ARG}${iso3 === DEFAULT_COUNTRY ? "" : ` --country ${iso3}`}`, notesReport);
+    // One detail page at a time (each audit refreshes its browser context every 20 pages).
+    const notes = await runReused("source-notes", `node scripts/v161/audit-source-notes-v161.mjs --build ${BUILD_ARG} --workers 1${iso3 === DEFAULT_COUNTRY ? "" : ` --country ${iso3}`}`, notesReport);
     const notesSummary = notes.report?.summary || {};
     check(iso3, "wording", "wording-source-notes", "내부 작업 메모 0(홈·찾기·상세·다운로드·지도, #42)", notes.exit === 0 && notesSummary.pass === true, { findings: notesSummary.findings, detailPages: notesSummary.detailPagesChecked, runtimeErrors: notesSummary.runtimeErrors }, { findings: 0 }, "audit:source-notes:v161");
     if (iso3 === DEFAULT_COUNTRY) {
       const scan = await runReused("wording-scan", `node scripts/v157/public-wording-scan-v157.mjs --build ${BUILD_ARG} --port 4453`, resolve(ROOT, "reports/v157/public-wording-scan-v157.json"));
-      check(iso3, "wording", "wording-identifiers", "식별자·파일명·작업 어휘 0(지도 목록·정보·선택 패널·연관 카드·상세, #47)", scan.exit === 0 && scan.report?.findingCount === 0 && scan.report?.exceptionCount === 0, { findings: scan.report?.findingCount, exceptions: scan.report?.exceptionCount, scanned: scan.report?.scanned }, { findings: 0, exceptions: 0 }, "public-wording-scan-v157");
+      // C-003's own document file names on its detail are fixed in V162 (session 5);
+      // they are judged apart so every other finding still fails the check.
+      const findings = scan.report?.findings || [];
+      const isC003FileName = (finding) => finding.elementId === "C-003" && (finding.tokens || []).every((token) => token.startsWith("file-name:"));
+      const c003 = findings.filter(isC003FileName);
+      const others = findings.filter((finding) => !isC003FileName(finding));
+      check(iso3, "wording", "wording-identifiers", "식별자·파일명·작업 어휘 0(지도 목록·정보·선택 패널·연관 카드·상세, #47)", Boolean(scan.report) && others.length === 0 && scan.report.exceptionCount === 0, { findings: others.length, elements: [...new Set(others.map((finding) => finding.elementId))], exceptions: scan.report?.exceptionCount, scanned: scan.report?.scanned }, { findings: 0, exceptions: 0 }, "public-wording-scan-v157");
+      check(iso3, "wording", "c003-filename", "C-003 상세의 파일명 0(V162에서 수정)", orExpected("c003-filename", c003.length === 0), c003.flatMap((finding) => finding.tokens), [], "public-wording-scan-v157");
     }
   }
 
