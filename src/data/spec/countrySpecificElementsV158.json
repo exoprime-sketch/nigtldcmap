@@ -1,0 +1,5 @@
+{
+  "schemaVersion": "country-specific-elements-v158",
+  "note": "Elements whose name and source differ by country. A country other than the one the spec was authored for shows these from its own delivery (2_meta_info 요소_KR and source_org). The first eleven are the contractor's standard (user, 2026-09-29); C-015 was added on review because its name and source are country-specific as well. tools/etl/countries/*/country.json declares the same list (unit-tested).",
+  "elementIds": ["A-029", "A-030", "B-025", "C-004", "C-009", "C-010", "C-015", "C-016", "C-017", "C-018", "D-003", "D-006"]
+}

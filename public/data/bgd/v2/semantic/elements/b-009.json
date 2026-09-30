@@ -1,0 +1,1201 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "지원 서비스(Enabling)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 4,
+      "values": [
+        "ADM1 단위",
+        "Scape Physical Risk",
+        "Scape Regulatory Deficiency Risk",
+        "Scape Reputational Risk"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 8,
+      "values": [
+        "Barishal",
+        "Chattogram",
+        "Dhaka",
+        "Khulna",
+        "Mymensingh",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    }
+  ],
+  "elementId": "B-009",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 35,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Barishal",
+      "indicatorId": "B-009_brf_prov_sph_barishal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Barishal|technology=범용|B-009_brf_prov_sph_barishal",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Barishal",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Chattogram",
+      "indicatorId": "B-009_brf_prov_sph_chattogram",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Chattogram|technology=범용|B-009_brf_prov_sph_chattogram",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Chattogram",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Dhaka",
+      "indicatorId": "B-009_brf_prov_sph_dhaka",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Dhaka|technology=범용|B-009_brf_prov_sph_dhaka",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Dhaka",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Khulna",
+      "indicatorId": "B-009_brf_prov_sph_khulna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Khulna|technology=범용|B-009_brf_prov_sph_khulna",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Khulna",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Mymensingh",
+      "indicatorId": "B-009_brf_prov_sph_mymensingh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Mymensingh|technology=범용|B-009_brf_prov_sph_mymensingh",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Mymensingh",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Rajshahi",
+      "indicatorId": "B-009_brf_prov_sph_rajshahi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Rajshahi|technology=범용|B-009_brf_prov_sph_rajshahi",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Rajshahi",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Rangpur",
+      "indicatorId": "B-009_brf_prov_sph_rangpur",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Rangpur|technology=범용|B-009_brf_prov_sph_rangpur",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Rangpur",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e6301164f105|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Sylhet",
+      "indicatorId": "B-009_brf_prov_sph_sylhet",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e6301164f105",
+        "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-e6301164f105|점|detail=ADM1 단위|detail_2=Sylhet|technology=범용|B-009_brf_prov_sph_sylhet",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 물리적 위험(Scape Physical) — ADM1 단위 — Sylhet",
+      "sourceLabelEn": "WWF BRF Scape Physical Risk by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 37,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Barishal",
+      "indicatorId": "B-009_brf_prov_src1_barishal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Barishal|technology=범용|B-009_brf_prov_src1_barishal",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Barishal",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Chattogram",
+      "indicatorId": "B-009_brf_prov_src1_chattogram",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Chattogram|technology=범용|B-009_brf_prov_src1_chattogram",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Chattogram",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Dhaka",
+      "indicatorId": "B-009_brf_prov_src1_dhaka",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Dhaka|technology=범용|B-009_brf_prov_src1_dhaka",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Dhaka",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Khulna",
+      "indicatorId": "B-009_brf_prov_src1_khulna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Khulna|technology=범용|B-009_brf_prov_src1_khulna",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Khulna",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Mymensingh",
+      "indicatorId": "B-009_brf_prov_src1_mymensingh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Mymensingh|technology=범용|B-009_brf_prov_src1_mymensingh",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Mymensingh",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Rajshahi",
+      "indicatorId": "B-009_brf_prov_src1_rajshahi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Rajshahi|technology=범용|B-009_brf_prov_src1_rajshahi",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Rajshahi",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Rangpur",
+      "indicatorId": "B-009_brf_prov_src1_rangpur",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Rangpur|technology=범용|B-009_brf_prov_src1_rangpur",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Rangpur",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 34,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-cb1027dfafc6|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Sylhet",
+      "indicatorId": "B-009_brf_prov_src1_sylhet",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb1027dfafc6",
+        "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-cb1027dfafc6|점|detail=ADM1 단위|detail_2=Sylhet|technology=범용|B-009_brf_prov_src1_sylhet",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 제공 서비스(Provisioning) — ADM1 단위 — Sylhet",
+      "sourceLabelEn": "WWF BRF Provisioning Services by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 38,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Barishal",
+      "indicatorId": "B-009_brf_prov_src2_barishal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Barishal|technology=범용|B-009_brf_prov_src2_barishal",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Barishal",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Chattogram",
+      "indicatorId": "B-009_brf_prov_src2_chattogram",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Chattogram|technology=범용|B-009_brf_prov_src2_chattogram",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Chattogram",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Dhaka",
+      "indicatorId": "B-009_brf_prov_src2_dhaka",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Dhaka|technology=범용|B-009_brf_prov_src2_dhaka",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Dhaka",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Khulna",
+      "indicatorId": "B-009_brf_prov_src2_khulna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Khulna|technology=범용|B-009_brf_prov_src2_khulna",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Khulna",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Mymensingh",
+      "indicatorId": "B-009_brf_prov_src2_mymensingh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Mymensingh|technology=범용|B-009_brf_prov_src2_mymensingh",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Mymensingh",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Rajshahi",
+      "indicatorId": "B-009_brf_prov_src2_rajshahi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Rajshahi|technology=범용|B-009_brf_prov_src2_rajshahi",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Rajshahi",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Rangpur",
+      "indicatorId": "B-009_brf_prov_src2_rangpur",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Rangpur|technology=범용|B-009_brf_prov_src2_rangpur",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Rangpur",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 35,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7cc081331dce|점",
+      "dimensionLabels": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "지원 서비스(Enabling)",
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Sylhet",
+      "indicatorId": "B-009_brf_prov_src2_sylhet",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7cc081331dce",
+        "labelKo": "WWF BRF 조절",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-7cc081331dce|점|category=지원 서비스(Enabling)|detail=ADM1 단위|detail_2=Sylhet|technology=범용|B-009_brf_prov_src2_sylhet",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절·지원 서비스(Enabling) — ADM1 단위 — Sylhet",
+      "sourceLabelEn": "WWF BRF Regulating & Supporting - Enabling by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 39,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Barishal",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Barishal",
+      "indicatorId": "B-009_brf_prov_src3_barishal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Barishal|technology=범용|B-009_brf_prov_src3_barishal",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Barishal",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Chattogram",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Chattogram",
+      "indicatorId": "B-009_brf_prov_src3_chattogram",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Chattogram|technology=범용|B-009_brf_prov_src3_chattogram",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Chattogram",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Dhaka",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Dhaka",
+      "indicatorId": "B-009_brf_prov_src3_dhaka",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Dhaka|technology=범용|B-009_brf_prov_src3_dhaka",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Dhaka",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Khulna",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Khulna",
+      "indicatorId": "B-009_brf_prov_src3_khulna",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Khulna|technology=범용|B-009_brf_prov_src3_khulna",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Khulna",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Mymensingh",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Mymensingh",
+      "indicatorId": "B-009_brf_prov_src3_mymensingh",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Mymensingh|technology=범용|B-009_brf_prov_src3_mymensingh",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Mymensingh",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rajshahi",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Rajshahi",
+      "indicatorId": "B-009_brf_prov_src3_rajshahi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Rajshahi|technology=범용|B-009_brf_prov_src3_rajshahi",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Rajshahi",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Rangpur",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Rangpur",
+      "indicatorId": "B-009_brf_prov_src3_rangpur",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Rangpur|technology=범용|B-009_brf_prov_src3_rangpur",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Rangpur",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 36,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-81082b435201|점",
+      "dimensionLabels": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "ADM1 단위",
+        "detail_2": "Sylhet",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Sylhet",
+      "indicatorId": "B-009_brf_prov_src3_sylhet",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-81082b435201",
+        "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-81082b435201|점|detail=ADM1 단위|detail_2=Sylhet|technology=범용|B-009_brf_prov_src3_sylhet",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF 조절 서비스(Mitigating) — ADM1 단위 — Sylhet",
+      "sourceLabelEn": "WWF BRF Regulating Services - Mitigating by province",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [3차 검수 — 발주처 요청 대응] WWF Biodiversity Risk Filter 원본 워크북의 Adm1 시트에 방글라데시 8개 관구 단위 값이 이미 수록되어 있어 별도 수집 없이 반영. 국가값(면적가중 평균)과 ADM1 단위 값을 함께 보면 리스크가 집중된 지역을 특정할 수 있음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin1) — 8개 관구 전량 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 40,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f462c891a528|지수",
+      "dimensionLabels": {
+        "detail": "Scape Physical Risk",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Scape Physical Risk",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF — Scape Physical Risk",
+      "indicatorId": "B-009_wwf_brf_physical",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f462c891a528",
+        "labelKo": "WWF BRF",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f462c891a528|지수|detail=Scape Physical Risk|technology=범용|B-009_wwf_brf_physical",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [수록 범위] ND-GAIN 취약성 부문값 계열은 본 요소의 요구 원천(WWF Biodiversity Risk Filter)이 아니어서 수록하지 않았습니다. / [수집 완료] riskfilter.org 계정 발급 후 \"Download all national and sub-national data\"로 확보. RFS V3.0 Country and Administrative Division Profiles 2026 · Country Risk 시트의 SPH 열. 값은 면적가중 평균 위험도이며 원천 관측 범위는 전세계 1.25~4.00(1~5 척도, 클수록 위험 높음), 세계 중앙값 2.84. 동 파일에 세계 순위(55위)도 있으나 동점이 많아 순위값이 1~127로 압축되어 있어 순위는 지표로 수록하지 않고 여기에만 기록. 경계 기준은 World Bank Official Boundaries(2025-09-10 갱신). Adm1 시트에 방글라데시 8개 관구 단위 값도 함께 확보되어 있어 지역 단위 확장 확정 시 즉시 사용 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 성(province) 단위 점수 제공 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF — Scape Physical Risk",
+      "sourceLabelEn": "WWF Biodiversity Risk Filter: Scape physical risk",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [수록 범위] ND-GAIN 취약성 부문값 계열은 본 요소의 요구 원천(WWF Biodiversity Risk Filter)이 아니어서 수록하지 않았습니다. / [수집 완료] riskfilter.org 계정 발급 후 \"Download all national and sub-national data\"로 확보. RFS V3.0 Country and Administrative Division Profiles 2026 · Country Risk 시트의 SPH 열. 값은 면적가중 평균 위험도이며 원천 관측 범위는 전세계 1.25~4.00(1~5 척도, 클수록 위험 높음), 세계 중앙값 2.84. 동 파일에 세계 순위(55위)도 있으나 동점이 많아 순위값이 1~127로 압축되어 있어 순위는 지표로 수록하지 않고 여기에만 기록. 경계 기준은 World Bank Official Boundaries(2025-09-10 갱신). Adm1 시트에 방글라데시 8개 관구 단위 값도 함께 확보되어 있어 지역 단위 확장 확정 시 즉시 사용 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — 성(province) 단위 점수 제공 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f462c891a528|지수",
+      "dimensionLabels": {
+        "detail": "Scape Regulatory Deficiency Risk",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Scape Regulatory Deficiency Risk",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF — Scape Regulatory Deficiency Risk",
+      "indicatorId": "B-009_wwf_brf_regulatory",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f462c891a528",
+        "labelKo": "WWF BRF",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f462c891a528|지수|detail=Scape Regulatory Deficiency Risk|technology=범용|B-009_wwf_brf_regulatory",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [수집 완료] 상동 파일 SRG 열. 전세계 관측 범위 1.00~4.50, 세계 중앙값 3.25로 방글라데시(2.75)은 규제 미비 위험이 세계 중앙값보다 낮은 편. 순위는 6위이나 동점이 많아 전체 순위값이 1~16으로 압축되어 있으므로 순위 해석에 주의가 필요하여 지표로는 수록하지 않음. 결측 국가가 30개국(235/265)으로 SPH·SRP보다 커버리지가 낮음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — Adm1 시트에 방글라데시 8개 관구 단위 값 수록 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF — Scape Regulatory Deficiency Risk",
+      "sourceLabelEn": "WWF BRF: Scape regulatory deficiency risk",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [수집 완료] 상동 파일 SRG 열. 전세계 관측 범위 1.00~4.50, 세계 중앙값 3.25로 방글라데시(2.75)은 규제 미비 위험이 세계 중앙값보다 낮은 편. 순위는 6위이나 동점이 많아 전체 순위값이 1~16으로 압축되어 있으므로 순위 해석에 주의가 필요하여 지표로는 수록하지 않음. 결측 국가가 30개국(235/265)으로 SPH·SRP보다 커버리지가 낮음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — Adm1 시트에 방글라데시 8개 관구 단위 값 수록 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f462c891a528|지수",
+      "dimensionLabels": {
+        "detail": "Scape Reputational Risk",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Scape Reputational Risk",
+        "technology": "범용"
+      },
+      "displayLabel": "WWF BRF — Scape Reputational Risk",
+      "indicatorId": "B-009_wwf_brf_reputational",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f462c891a528",
+        "labelKo": "WWF BRF",
+        "unit": "지수",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f462c891a528|지수|detail=Scape Reputational Risk|technology=범용|B-009_wwf_brf_reputational",
+      "sourceCaveat": "[값의 성격] 지수(WWF BRF) / [수집 완료] 상동 파일 SRP 열. 전세계 관측 범위 1.58~4.58, 세계 중앙값 3.25로 방글라데시(3.71)은 3개 위험군 중 평판 위험이 가장 높고 세계 중앙값도 상회. 순위 113위(순위값 1~141로 압축). Adm1 시트에 방글라데시 8개 관구 단위 값 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — Adm1 시트에 방글라데시 8개 관구 단위 값 수록 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceLabel": "WWF BRF — Scape Reputational Risk",
+      "sourceLabelEn": "WWF BRF: Scape reputational risk",
+      "sourceNote": "[값의 성격] 지수(WWF BRF) / [수집 완료] 상동 파일 SRP 열. 전세계 관측 범위 1.58~4.58, 세계 중앙값 3.25로 방글라데시(3.71)은 3개 위험군 중 평판 위험이 가장 높고 세계 중앙값도 상회. 순위 113위(순위값 1~141로 압축). Adm1 시트에 방글라데시 8개 관구 단위 값 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin) 가능 — Adm1 시트에 방글라데시 8개 관구 단위 값 수록 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] WWF Risk Filter Suite Terms of Use — \"Source - WWF Risk Filter Suite: riskfilter.org\" 출처표기 의무. [정밀화 2026-08-28] 약관 원문을 다시 확인한 결과 상충하는 두 조항이 함께 있습니다. (a) 금지 — \"copying, reproducing, displaying, publicly performing, downloading, posting, distributing, broadcasting or transmitting or otherwise using the Services … for any public or commercial purpose\" 및 \"modify, translate, or create derivative works based on the Services\". (b) 허용 — 이용자는 출처를 표기하면 지도·그래픽을 포함한 자신의 리스크 평가 결과를 외부에 공표할 수 있습니다. 본 납품은 공표된 ADM1(관구) 단위 점수를 가공 없이 원형 그대로 수록하므로 (b)의 「결과 공표」로 볼 여지가 크지만, 점수표 자체를 데이터 테이블로 재배포하는 형태는 (a)의 \"distributing … for any public purpose\" 에 걸릴 소지가 있습니다. ★법률 검토가 필요한 사안으로 판단을 보류하고 재배포 「제한」을 유지합니다 — 값 가공·재산출은 하지 않았음을 명기합니다. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [행정구역] 방글라데시는 GADM 4.1 ADM1 8개 관구(Division) 기준이며, WWF BRF 의 Adm1 표기(Barishal·Chattogram)는 신 로마자 표기로 GADM(Barisal·Chittagong)과 철자만 다릅니다. 값은 WWF 가 공표한 Adm1 Risk 를 그대로 옮긴 원본값이며 재집계하지 않았습니다.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-f462c891a528",
+      "labelKo": "WWF BRF",
+      "recordCount": 3,
+      "unit": "지수",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-e6301164f105",
+      "labelKo": "WWF BRF 물리적 위험(Scape Physical)",
+      "recordCount": 8,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-cb1027dfafc6",
+      "labelKo": "WWF BRF 제공 서비스(Provisioning)",
+      "recordCount": 8,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-7cc081331dce",
+      "labelKo": "WWF BRF 조절",
+      "recordCount": 8,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 8,
+      "key": "measure-81082b435201",
+      "labelKo": "WWF BRF 조절 서비스(Mitigating)",
+      "recordCount": 8,
+      "unit": "점",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 35,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

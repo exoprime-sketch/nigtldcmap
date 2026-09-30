@@ -1,0 +1,123 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "기관_유형_org_category",
+      "labelKo": "기관 유형",
+      "valueCount": 7,
+      "values": [
+        "NDE(국가지정기구)",
+        "TA 제안기관(비영리 금융기관)",
+        "TA 제안기관(정부기관)",
+        "네트워크 회원",
+        "네트워크 회원(NGO)",
+        "네트워크 회원(대학 부설 연구소)",
+        "네트워크 회원(연구기관)"
+      ]
+    }
+  ],
+  "elementId": "E-001",
+  "entityCount": 11,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CTCN NDE(국가지정기구) · NDE list – Bangladesh · ctcn_nde",
+      "indicatorId": "E-001_ctcn_nde",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음||E-001_ctcn_nde",
+      "sourceCaveat": "CTCN NDE·네트워크 회원·기술지원(TA) 제안기관을 공개 원천에서 그대로 수집함. 담당자·연락처가 원천에 게시되지 않은 기관은 임의 보완하지 않고 결측(M01)으로 표기함. CTCN 등재 웹사이트가 실효된 2건(KOTHOWAIN·Eakok)은 접속 불가 사실을 비고에 명시함.이므로 베트남과 달리 현지 확인 정보는 포함되지 않음. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "공개 원천에 담당자명 또는 연락처가 게시되지 않은 기관이 있음 — 레코드별 결측사유코드·비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {
+        "technology": "02 · 17 · 19 · 29 · 30 · 32 · 33 · 34 · 35 · 37 · 38"
+      },
+      "dimensions": {
+        "technology": "02,17,19,29,30,32,33,34,35,37,38"
+      },
+      "displayLabel": "CTCN NDE(국가지정기구) · CTCN Network Members – Bangladesh · ctcn_network_member",
+      "indicatorId": "E-001_ctcn_network_member",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음|technology=02,17,19,29,30,32,33,34,35,37,38|E-001_ctcn_network_member",
+      "sourceCaveat": "CTCN NDE·네트워크 회원·기술지원(TA) 제안기관을 공개 원천에서 그대로 수집함. 담당자·연락처가 원천에 게시되지 않은 기관은 임의 보완하지 않고 결측(M01)으로 표기함. CTCN 명부 기재 웹사이트가 접속되지 않는 2건(KOTHOWAIN·Eakok)은 그 사실을 레코드 비고에 적었다.이므로 베트남과 달리 현지 확인 정보는 포함되지 않음. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "CTCN 네트워크 방글라데시 회원 8곳을 공식 회원기관 명부에서 수집했다. 명부에 담당자·연락처 열이 없어 해당 항목 전건 결측(M01)이다. KOTHOWAIN·Eakok 은 명부 기재 웹사이트가 접속되지 않아 그 사실을 레코드 비고에 적었다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-58f937f5dfae|해당없음",
+      "dimensionLabels": {
+        "technology": "27 · 29 · 32 · 33"
+      },
+      "dimensions": {
+        "technology": "27,29,32,33"
+      },
+      "displayLabel": "CTCN NDE(국가지정기구) · CTCN Technical Assistance requests – Bangladesh · ctcn_ta_proponent",
+      "indicatorId": "E-001_ctcn_ta_proponent",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-58f937f5dfae",
+        "labelKo": "CTCN NDE(국가지정기구)",
+        "unit": "해당없음",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-58f937f5dfae|해당없음|technology=27,29,32,33|E-001_ctcn_ta_proponent",
+      "sourceCaveat": "CTCN NDE·네트워크 회원·기술지원(TA) 제안기관을 공개 원천에서 그대로 수집함. 담당자·연락처가 원천에 게시되지 않은 기관은 임의 보완하지 않고 결측(M01)으로 표기함. CTCN 등재 웹사이트가 실효된 2건(KOTHOWAIN·Eakok)은 접속 불가 사실을 비고에 명시함.이므로 베트남과 달리 현지 확인 정보는 포함되지 않음. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "CTCN NDE(국가지정기구)",
+      "sourceLabelEn": "CTCN National Designated Entity (NDE)",
+      "sourceNote": "공개 원천에 담당자명 또는 연락처가 게시되지 않은 기관이 있음 — 레코드별 결측사유코드·비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-58f937f5dfae",
+      "labelKo": "CTCN NDE(국가지정기구)",
+      "recordCount": 0,
+      "unit": "해당없음",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

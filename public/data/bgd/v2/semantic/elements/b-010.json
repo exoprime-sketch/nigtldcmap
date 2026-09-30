@@ -1,0 +1,257 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "CRI 2026 본문",
+        "HDI 보정"
+      ]
+    },
+    {
+      "key": "detail_2",
+      "labelKo": "detail_2",
+      "valueCount": 2,
+      "values": [
+        "1995–2024년 누적",
+        "2024년 단년"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2023",
+        "2024"
+      ]
+    }
+  ],
+  "elementId": "B-010",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-e19a3da06ed0|사건",
+      "dimensionLabels": {
+        "detail": "CRI 2026 본문",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "CRI 2026 본문",
+        "technology": "범용"
+      },
+      "displayLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_01",
+      "indicatorId": "B-010_cri_event_2024_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e19a3da06ed0",
+        "labelKo": "2024년 최대 피해 극한기상 사건",
+        "unit": "사건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-e19a3da06ed0|사건|detail=CRI 2026 본문|technology=범용|B-010_cri_event_2024_01",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
+      "sourceLabelEn": "Major extreme weather event 2024",
+      "sourceNote": "CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e19a3da06ed0|사건",
+      "dimensionLabels": {
+        "detail": "CRI 2026 본문",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "CRI 2026 본문",
+        "technology": "범용"
+      },
+      "displayLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문 · CRI 2026 full report · cri_event_2024_02",
+      "indicatorId": "B-010_cri_event_2024_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e19a3da06ed0",
+        "labelKo": "2024년 최대 피해 극한기상 사건",
+        "unit": "사건",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-e19a3da06ed0|사건|detail=CRI 2026 본문|technology=범용|B-010_cri_event_2024_02",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
+      "sourceLabelEn": "Major extreme weather event 2024",
+      "sourceNote": "CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f20de2f62bc7|순위",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "CRI 종합 순위",
+      "indicatorId": "B-010_cri_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f20de2f62bc7",
+        "labelKo": "CRI 종합 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f20de2f62bc7|순위|technology=범용|B-010_cri_rank",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [추출 완료] Germanwatch CRI 2026 full report 부속표에서 방글라데시 단년 순위를 추출함. 동 부속표는 국가별로 4개 순위(Rank 2024 · Rank 1995–2024 · Rank 2023 · Rank 1994–2023)만 제공하며 CRI 지수값과 피해통계(사망자수·경제손실액)는 국가별로 수록하지 않음 — 해당 항목은 별도 원천 필요. ND-GAIN(B-011)과 달리 순위가 낮을수록 피해가 크다는 점에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "CRI 종합 순위",
+      "sourceLabelEn": "Climate Risk Index rank",
+      "sourceNote": "[값의 성격] 지수(CRI) / [추출 완료] Germanwatch CRI 2026 full report 부속표에서 방글라데시 단년 순위를 추출함. 동 부속표는 국가별로 4개 순위(Rank 2024 · Rank 1995–2024 · Rank 2023 · Rank 1994–2023)만 제공하며 CRI 지수값과 피해통계(사망자수·경제손실액)는 국가별로 수록하지 않음 — 해당 항목은 별도 원천 필요. ND-GAIN(B-011)과 달리 순위가 낮을수록 피해가 크다는 점에 유의. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c58378d6d03f|순위",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "CRI 30년 누적 순위",
+      "indicatorId": "B-010_cri_rank_30y",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c58378d6d03f",
+        "labelKo": "CRI 30년 누적 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c58378d6d03f|순위|technology=범용|B-010_cri_rank_30y",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [신설] 단년 순위와 30년 누적 순위는 대상기간이 달라 별도 지표로 분리함. 방글라데시은 단년 순위(2024년 10위)와 누적 순위(14위)가 모두 상위권으로 만성적 고위험국에 해당. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "CRI 30년 누적 순위",
+      "sourceLabelEn": "Climate Risk Index 30-year rank",
+      "sourceNote": "[값의 성격] 지수(CRI) / [신설] 단년 순위와 30년 누적 순위는 대상기간이 달라 별도 지표로 분리함. 방글라데시은 단년 순위(2024년 10위)와 누적 순위(14위)가 모두 상위권으로 만성적 고위험국에 해당. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-292f961bb3ac|순위",
+      "dimensionLabels": {
+        "detail": "HDI 보정",
+        "detail_2": "1995–2024년 누적",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "HDI 보정",
+        "detail_2": "1995–2024년 누적",
+        "technology": "범용"
+      },
+      "displayLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
+      "indicatorId": "B-010_cri_rank_hdi_1995_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-292f961bb3ac",
+        "labelKo": "CRI 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=1995–2024년 누적|technology=범용|B-010_cri_rank_hdi_1995_2024",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [신규 수록] 보유 원자료 CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 방글라데시의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [정의 밖 참고 계열 · 2026-09-17] 본 지표는 발주처 「데이터 요소」 정의(기후 리스크 지수(CRI))에 직접 대응하지 않으나 지정 원천의 동일 산출물 표에 함께 실린 부속 열이어서 참고용으로 유지합니다. 요소 값의 대표 지표가 아니며, 국가 간 비교·집계에는 정의 지표를 사용하십시오. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "CRI 순위 — HDI 보정 — 1995–2024년 누적",
+      "sourceLabelEn": "Climate Risk Index rank (HDI-corrected)",
+      "sourceNote": "[값의 성격] 지수(CRI) / [신규 수록] 보유 원자료 CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 방글라데시의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [정의 밖 참고 계열 · 2026-09-17] 본 지표는 발주처 「데이터 요소」 정의(기후 리스크 지수(CRI))에 직접 대응하지 않으나 지정 원천의 동일 산출물 표에 함께 실린 부속 열이어서 참고용으로 유지합니다. 요소 값의 대표 지표가 아니며, 국가 간 비교·집계에는 정의 지표를 사용하십시오. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-292f961bb3ac|순위",
+      "dimensionLabels": {
+        "detail": "HDI 보정",
+        "detail_2": "2024년 단년",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "HDI 보정",
+        "detail_2": "2024년 단년",
+        "technology": "범용"
+      },
+      "displayLabel": "CRI 순위 — HDI 보정 — 2024년 단년",
+      "indicatorId": "B-010_cri_rank_hdi_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-292f961bb3ac",
+        "labelKo": "CRI 순위",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-292f961bb3ac|순위|detail=HDI 보정|detail_2=2024년 단년|technology=범용|B-010_cri_rank_hdi_2024",
+      "sourceCaveat": "[값의 성격] 지수(CRI) / [신규 수록] 보유 원자료 CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 방글라데시의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [정의 밖 참고 계열 · 2026-09-17] 본 지표는 발주처 「데이터 요소」 정의(기후 리스크 지수(CRI))에 직접 대응하지 않으나 지정 원천의 동일 산출물 표에 함께 실린 부속 열이어서 참고용으로 유지합니다. 요소 값의 대표 지표가 아니며, 국가 간 비교·집계에는 정의 지표를 사용하십시오. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceLabel": "CRI 순위 — HDI 보정 — 2024년 단년",
+      "sourceLabelEn": "Climate Risk Index rank (HDI-corrected)",
+      "sourceNote": "[값의 성격] 지수(CRI) / [신규 수록] 보유 원자료 CRI 2026 보고서 본문 Figure 11·12에 있으나 미수록이던 값. 보정 전 순위와 함께 보면 방글라데시의 피해가 절대 규모로는 상위권이나 개발 수준을 감안한 상대 피해는 다소 완화된다는 해석이 가능함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CRI 2026 COP30 발간 / [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 원본 순위·수치만 표출, 지수 재가공 금지. [라이선스 근거] Germanwatch CRI 페이지에 \"CC BY-NC-ND 4.0\" 명시 확인. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] CRI 2026 부속표(Annex, 인쇄 쪽 70–72)의 방글라데시 행에서 4개 순위를 직접 옮겼습니다 — Rank 2024=13 · Rank 1995–2024=13 · Rank 2023=21 · Rank 1994–2023=13. HDI 보정 순위는 Figure 11·12 의 20개국 막대그래프 내 순번(각 12위·14위)입니다. CRI 2026 본문(2.2절 「Countries most affected in 2024」 및 4장)에 방글라데시 개별 극한기상 사건에 대한 서술이 없어(본문 사례가 일부 국가에 한정) 작성하지 못했습니다. 방글라데시의 2024년 개별 재해 사건은 B-012(EM-DAT 재해 이력)에 수록되어 있습니다. / [정의 밖 참고 계열 · 2026-09-17] 본 지표는 발주처 「데이터 요소」 정의(기후 리스크 지수(CRI))에 직접 대응하지 않으나 지정 원천의 동일 산출물 표에 함께 실린 부속 열이어서 참고용으로 유지합니다. 요소 값의 대표 지표가 아니며, 국가 간 비교·집계에는 정의 지표를 사용하십시오. / [출처 문구 2026-09-20] 처리규칙 8 에 따라 attribution_text 를 원천이 지정한 인용 문구(원문)로 교체. / [라이선스 정비 2026-09-20] Germanwatch CRI 보고서는 공개 페이지에서 내려받을 수 있고(배포처 고지 「Downloads or copies of this publication are for private, non-commercial use only」), 재배포는 제한 - 다운로드 항목을 「불가」에서 「가능」으로 정정(원문 보관본 기준).",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-e19a3da06ed0",
+      "labelKo": "2024년 최대 피해 극한기상 사건",
+      "recordCount": 2,
+      "unit": "사건",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c58378d6d03f",
+      "labelKo": "CRI 30년 누적 순위",
+      "recordCount": 2,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-292f961bb3ac",
+      "labelKo": "CRI 순위",
+      "recordCount": 2,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f20de2f62bc7",
+      "labelKo": "CRI 종합 순위",
+      "recordCount": 2,
+      "unit": "순위",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 8,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -109,6 +109,21 @@ describe("publicRecordNoteV161 - a record note's own source citation", () => {
     expect(publicRecordNoteV161("출처: World Bank")).toBe("출처: World Bank");
     expect(publicRecordNoteV161("2026-08-14 기준 미제출")).toBe("2026-08-14 기준 미제출");
   });
+
+  it("drops the pointer to the delivered file the note was written from (V158)", () => {
+    expect(
+      publicRecordNoteV161("UNFCCC CDM 활동의 파리협정 제6.4조 전환 목록(2026-08-19 수집분). raw: C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv")
+    ).toBe("UNFCCC CDM 활동의 파리협정 제6.4조 전환 목록(2026-08-19 수집분).");
+    expect(publicRecordNoteV161("raw: C-001_NDC (국가 온실가스 감축 목표)_Bangladesh_NDC3.0_UNFCCC_2025-09-29.pdf")).toBeNull();
+    expect(publicRecordNoteV161("raw: C-001_a_2025.pdf · C-001_b_2026.json")).toBeNull();
+  });
+
+  it("drops the compiler's sentence on why no technology code was given, keeping the record's content (V158)", () => {
+    expect(
+      publicRecordNoteV161("해당 없음 — 본 레코드에는 38대 기후기술을 지목할 근거가 없어 코드를 부여하지 않음(억지 매핑 금지 원칙). [연계 일련번호: 100] SDG7 · 세부목표 7.2")
+    ).toBe("[연계 일련번호: 100] SDG7 · 세부목표 7.2");
+    expect(publicRecordNoteV161("세부목표 7.2 · 부문: Renewable Energy")).toBe("세부목표 7.2 · 부문: Renewable Energy");
+  });
 });
 
 describe("publicUnstatedWordingV161", () => {

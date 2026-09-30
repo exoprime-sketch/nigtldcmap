@@ -22,7 +22,12 @@ export type VietnamElementPublicStatusV124 =
    * 152 elements and the data files stay; the public listing, search, counts and
    * sitemap leave it out, and its own page states the decision.
    */
-  | "excluded";
+  | "excluded"
+  /**
+   * V158: a framework element the country's delivery did not include. A
+   * measurement of the delivery, not a decision; nothing is published for it.
+   */
+  | "not-provided";
 
 /** The decision behind `publicStatus: "excluded"`, as the catalog records it. */
 export interface VietnamElementExclusionV156 {

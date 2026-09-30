@@ -1,0 +1,397 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 7,
+      "values": [
+        "거래소 개설",
+        "법적 근거",
+        "시멘트 공장",
+        "시행 규정",
+        "철강 사업장",
+        "합계(3개 부문)",
+        "화력발전소"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2025"
+      ]
+    }
+  ],
+  "elementId": "B-015",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 11,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-ea2218b800d5|tCO₂e",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "배출권 할당량",
+      "indicatorId": "B-015_allowance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ea2218b800d5",
+        "labelKo": "배출권 할당량",
+        "unit": "tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-ea2218b800d5|tCO₂e|technology=범용|B-015_allowance",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "배출권 할당량",
+      "sourceLabelEn": "GHG allowance allocation",
+      "sourceNote": "ETS 미시행으로 배출권 할당 없음",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-1b326c752ad8|USD/tCO₂e",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "탄소 가격(실효 가격)",
+      "indicatorId": "B-015_carbon_price",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-1b326c752ad8",
+        "labelKo": "탄소 가격(실효 가격)",
+        "unit": "USD/tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-1b326c752ad8|USD/tCO₂e|technology=범용|B-015_carbon_price",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [재수집 계획] 국내 탄소가격 제도가 도입되어 공표 가격이 생기면 월별 가중평균 체결가격·거래량을 수집해 시계열을 구축할 예정입니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. · [표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가. [DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "탄소 가격(실효 가격)",
+      "sourceLabelEn": "Effective carbon price",
+      "sourceNote": "국내 탄소거래소가 없어 공표 체결가격이 존재하지 않음",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-561318239a0a|USD/tCO₂e",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "탄소세",
+      "indicatorId": "B-015_carbon_tax",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-561318239a0a",
+        "labelKo": "탄소세",
+        "unit": "USD/tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-561318239a0a|USD/tCO₂e|technology=범용|B-015_carbon_tax",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / 환경보호세(Environmental Protection Tax, 연료 종량세)는 명시적 탄소가격으로 분류되지 않음. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "탄소세",
+      "sourceLabelEn": "Carbon tax",
+      "sourceNote": "2026년: 방글라데시에 명시적 탄소세 제도가 존재하지 않음(대상 없음)",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "화력발전소",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "화력발전소",
+        "technology": "범용"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 화력발전소",
+      "indicatorId": "B-015_covered_facilities_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=화력발전소|technology=범용|B-015_covered_facilities_01",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "ETS 대상 시설 수 — 화력발전소",
+      "sourceLabelEn": "Covered facilities",
+      "sourceNote": "ETS 미시행으로 대상 사업장 없음",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "철강 사업장",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "철강 사업장",
+        "technology": "범용"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 철강 사업장",
+      "indicatorId": "B-015_covered_facilities_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=철강 사업장|technology=범용|B-015_covered_facilities_02",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "ETS 대상 시설 수 — 철강 사업장",
+      "sourceLabelEn": "Covered facilities",
+      "sourceNote": "ETS 미시행으로 대상 사업장 없음",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "시멘트 공장",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "시멘트 공장",
+        "technology": "범용"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 시멘트 공장",
+      "indicatorId": "B-015_covered_facilities_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=시멘트 공장|technology=범용|B-015_covered_facilities_03",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "ETS 대상 시설 수 — 시멘트 공장",
+      "sourceLabelEn": "Covered facilities",
+      "sourceNote": "ETS 미시행으로 대상 사업장 없음",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "합계(3개 부문)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "합계(3개 부문)",
+        "technology": "범용"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 합계(3개 부문)",
+      "indicatorId": "B-015_covered_facilities_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=합계(3개 부문)|technology=범용|B-015_covered_facilities_04",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets. / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "ETS 대상 시설 수 — 합계(3개 부문)",
+      "sourceLabelEn": "Covered facilities",
+      "sourceNote": "ETS 미시행으로 대상 사업장 없음",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bd2027f50da8|상태",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "국내 배출권거래제(ETS) 운영 상태",
+      "indicatorId": "B-015_ets_status_01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bd2027f50da8",
+        "labelKo": "국내 배출권거래제(ETS) 운영 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bd2027f50da8|상태|technology=범용|B-015_ets_status_01",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [수록 범위] 원천에 국가 크레딧 메커니즘·파리협정 제6조 협력 현황 계열이 있으나 요소 정의(탄소 가격 수준)에 해당하지 않아 수록하지 않았습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "국내 배출권거래제(ETS) 운영 상태",
+      "sourceLabelEn": "Domestic ETS status",
+      "sourceNote": "[값의 성격] 실측(제도·가격) / [수록 범위] 원천에 국가 크레딧 메커니즘·파리협정 제6조 협력 현황 계열이 있으나 요소 정의(탄소 가격 수준)에 해당하지 않아 수록하지 않았습니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bd2027f50da8|상태",
+      "dimensionLabels": {
+        "detail": "법적 근거",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "법적 근거",
+        "technology": "범용"
+      },
+      "displayLabel": "국내 배출권거래제(ETS) 운영 상태 — 법적 근거",
+      "indicatorId": "B-015_ets_status_02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bd2027f50da8",
+        "labelKo": "국내 배출권거래제(ETS) 운영 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bd2027f50da8|상태|detail=법적 근거|technology=범용|B-015_ets_status_02",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "국내 배출권거래제(ETS) 운영 상태 — 법적 근거",
+      "sourceLabelEn": "Domestic ETS status",
+      "sourceNote": "World Bank Carbon Pricing Dashboard 전 시트 미등재 — 해당 제도 없음 — 후속 단계 없음",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bd2027f50da8|상태",
+      "dimensionLabels": {
+        "detail": "시행 규정",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "시행 규정",
+        "technology": "범용"
+      },
+      "displayLabel": "국내 배출권거래제(ETS) 운영 상태 — 시행 규정",
+      "indicatorId": "B-015_ets_status_03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bd2027f50da8",
+        "labelKo": "국내 배출권거래제(ETS) 운영 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bd2027f50da8|상태|detail=시행 규정|technology=범용|B-015_ets_status_03",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "국내 배출권거래제(ETS) 운영 상태 — 시행 규정",
+      "sourceLabelEn": "Domestic ETS status",
+      "sourceNote": "World Bank Carbon Pricing Dashboard 전 시트 미등재 — 해당 제도 없음 — 후속 단계 없음",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bd2027f50da8|상태",
+      "dimensionLabels": {
+        "detail": "거래소 개설",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "거래소 개설",
+        "technology": "범용"
+      },
+      "displayLabel": "국내 배출권거래제(ETS) 운영 상태 — 거래소 개설",
+      "indicatorId": "B-015_ets_status_04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bd2027f50da8",
+        "labelKo": "국내 배출권거래제(ETS) 운영 상태",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-bd2027f50da8|상태|detail=거래소 개설|technology=범용|B-015_ets_status_04",
+      "sourceCaveat": "[값의 성격] 실측(제도·가격) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] World Bank Carbon Pricing Dashboard 갱신 시점 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [원천 등재 여부] World Bank Carbon Pricing Dashboard(자료 기준 2025-04, Crediting/Article 6 시트는 2025-05 갱신)의 7개 시트 — Compliance_Gen Info · Compliance_Emissions · Compliance_Revenue · Compliance_Price · Crediting_Detail · Crediting_Issuance · Cooperative Approaches — 를 전수 조회한 결과 방글라데시 등재가 0건이었습니다. 따라서 시행 중인 배출권거래제·탄소세·크레딧 메커니즘·제6조 협정이 없는 것으로 판정했습니다. ★확인 필요 — 방글라데시가 국가 탄소시장 프레임워크를 \"pre-launch\" 하고 향후 제6조 거래를 목표로 한다는 2차 보도(Carbon Pulse, 유료 기사)가 있으나 원천 대시보드에 아직 반영되지 않았고 1차 자료(정부 고시)를 확인하지 못해 값으로 기입하지 않았습니다. 다음 대시보드 갱신본으로 재확인이 필요합니다.",
+      "sourceLabel": "국내 배출권거래제(ETS) 운영 상태 — 거래소 개설",
+      "sourceLabelEn": "Domestic ETS status",
+      "sourceNote": "World Bank Carbon Pricing Dashboard 전 시트 미등재 — 해당 제도 없음 — 후속 단계 없음",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-e7c7cd02a63b",
+      "labelKo": "ETS 대상 시설 수",
+      "recordCount": 4,
+      "unit": "개소",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-bd2027f50da8",
+      "labelKo": "국내 배출권거래제(ETS) 운영 상태",
+      "recordCount": 4,
+      "unit": "상태",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ea2218b800d5",
+      "labelKo": "배출권 할당량",
+      "recordCount": 1,
+      "unit": "tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-1b326c752ad8",
+      "labelKo": "탄소 가격(실효 가격)",
+      "recordCount": 1,
+      "unit": "USD/tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-561318239a0a",
+      "labelKo": "탄소세",
+      "recordCount": 1,
+      "unit": "USD/tCO₂e",
+      "unitFamily": "emissions"
+    }
+  ],
+  "observationCount": 11,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

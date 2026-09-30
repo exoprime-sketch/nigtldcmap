@@ -1,0 +1,372 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "공공",
+        "민간",
+        "외부(대외) 지원"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 3,
+      "values": [
+        "2025",
+        "2030",
+        "2050"
+      ]
+    }
+  ],
+  "elementId": "B-022",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-82708b28b15c|십억 USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "적응 투자 필요액",
+      "indicatorId": "B-022_adaptation_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-82708b28b15c",
+        "labelKo": "적응 투자 필요액",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-82708b28b15c|십억 USD|technology=범용|B-022_adaptation_investment",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [정의] \"적응 투자 필요\"는 기후 영향에 대한 **회복력 확보(Resilient pathway)에 필요한 투자**로, 해안·삼각주 방재, 농업 전환, 인프라 보강 등 적응 조치에 한정된 금액. \"총 투자 필요\"는 여기에 탈탄소(Decarbonizing pathway) 투자를 더한 개념으로 정의가 상이함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "적응 투자 필요액",
+      "sourceLabelEn": "Adaptation investment need",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [정의] \"적응 투자 필요\"는 기후 영향에 대한 **회복력 확보(Resilient pathway)에 필요한 투자**로, 해안·삼각주 방재, 농업 전환, 인프라 보강 등 적응 조치에 한정된 금액. \"총 투자 필요\"는 여기에 탈탄소(Decarbonizing pathway) 투자를 더한 개념으로 정의가 상이함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5a69d68b924a|명",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "추가 극빈곤 인구",
+      "indicatorId": "B-022_extreme_poor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5a69d68b924a",
+        "labelKo": "추가 극빈곤 인구",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5a69d68b924a|명|technology=범용|B-022_extreme_poor",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "추가 극빈곤 인구",
+      "sourceLabelEn": "Additional people in extreme poverty",
+      "sourceNote": "CCDR 방글라데시편은 기후변화로 인한 극빈층 증가 인원(명)을 정량 제시하지 않아 작성하지 못했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "공공",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "공공",
+        "technology": "범용"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 공공 · CCDR Table 9 — Budget reprioritization · financing_source_g01",
+      "indicatorId": "B-022_financing_source_g01",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=공공|technology=범용|B-022_financing_source_g01",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 투자 재원 구성 — 공공",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "민간",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "민간",
+        "technology": "범용"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 민간",
+      "indicatorId": "B-022_financing_source_g02",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=민간|technology=범용|B-022_financing_source_g02",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 투자 재원 구성 — 민간",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "외부(대외) 지원",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "외부(대외) 지원",
+        "technology": "범용"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 외부(대외) 지원 · CCDR Table 9 — External financing · financing_source_g03",
+      "indicatorId": "B-022_financing_source_g03",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=외부(대외) 지원|technology=범용|B-022_financing_source_g03",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 투자 재원 구성 — 외부(대외) 지원",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "외부(대외) 지원",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "외부(대외) 지원",
+        "technology": "범용"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 외부(대외) 지원 · CCDR Table 9 — Private investment · financing_source_g04",
+      "indicatorId": "B-022_financing_source_g04",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=외부(대외) 지원|technology=범용|B-022_financing_source_g04",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 투자 재원 구성 — 외부(대외) 지원",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-165518c98ba5|십억 US$",
+      "dimensionLabels": {
+        "detail": "공공",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "공공",
+        "technology": "범용"
+      },
+      "displayLabel": "기후 투자 재원 구성 — 공공 · CCDR Table 9 — Total · financing_source_total",
+      "indicatorId": "B-022_financing_source_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-165518c98ba5",
+        "labelKo": "기후 투자 재원 구성",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-165518c98ba5|십억 US$|detail=공공|technology=범용|B-022_financing_source_total",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 투자 재원 구성 — 공공",
+      "sourceLabelEn": "Climate financing needs by source",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [신규 수록 — 발주처 지적 대응] 검토의견의 「적응 투자 필요와 총 투자 필요에 대한 설명」에 대한 조치. CCDR 원문 Figure 6이 총 368십억 US$를 민간·공공·외부 재원으로 분해해 제시하고 있어 수록함. 총액만으로는 \"누가 부담하는가\"가 드러나지 않으나, 절반(184십억)이 민간 재원 전제라는 점이 정책·기술협력 설계에 직접 영향을 줌. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재 / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d3df35520c94|% of GDP/yr",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "indicatorId": "B-022_gdp_loss_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d3df35520c94",
+        "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-d3df35520c94|% of GDP/yr|technology=범용|B-022_gdp_loss_max",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "sourceLabelEn": "Economic loss from climate impacts (no adaptation)",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-bb28582e989e|% of GDP/yr",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "indicatorId": "B-022_gdp_loss_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-bb28582e989e",
+        "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-bb28582e989e|% of GDP/yr|technology=범용|B-022_gdp_loss_min",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [수록 범위] 원천에 탈탄소 경로 투자 구성 계열이 있으나 요소 정의(기후 피해 경제적 비용)에 해당하지 않아 수록하지 않았습니다. / [정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "sourceLabelEn": "Economic loss from climate impacts (no adaptation)",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [수록 범위] 원천에 탈탄소 경로 투자 구성 계열이 있으나 요소 정의(기후 피해 경제적 비용)에 해당하지 않아 수록하지 않았습니다. / [정의 명확화] 종전 파일의 \"총 경제손실 12–14.5\"와 \"최대손실 14.5\"는 별개 지표가 아니라 **동일 추정치의 범위와 그 상한**이었음. 중복을 해소하고 하한(value_min)·상한(value_max) 2개 열로 분리 수록. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-23352841c3ec|십억 USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "총 투자 필요액(적응+탈탄소)",
+      "indicatorId": "B-022_total_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23352841c3ec",
+        "labelKo": "총 투자 필요액(적응+탈탄소)",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-23352841c3ec|십억 USD|technology=범용|B-022_total_investment",
+      "sourceCaveat": "[값의 성격] 모델(CCDR) / [정의·추출 완료] 적응(Resilient) + 탈탄소(Decarbonizing) 두 경로의 투자 소요 합계. CCDR 본문에 \"Investments to the tune of $368 billion (in net present value terms) between 2022 and 2040\"으로 명시되어 있으며, 구성은 Resilient pathway 254십억 USD(≈4.7%GDP/yr) + Decarbonizing pathway 114십억 USD(≈2.1%GDP/yr). 할인율 6%(World Bank 경제성 분석 지침) 기준 현재가치이므로 명목 총액과 다름 — 10개국 비교 시 이 점을 반드시 맞춰야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceLabel": "총 투자 필요액(적응+탈탄소)",
+      "sourceLabelEn": "Total investment need",
+      "sourceNote": "[값의 성격] 모델(CCDR) / [정의·추출 완료] 적응(Resilient) + 탈탄소(Decarbonizing) 두 경로의 투자 소요 합계. CCDR 본문에 \"Investments to the tune of $368 billion (in net present value terms) between 2022 and 2040\"으로 명시되어 있으며, 구성은 Resilient pathway 254십억 USD(≈4.7%GDP/yr) + Decarbonizing pathway 114십억 USD(≈2.1%GDP/yr). 할인율 6%(World Bank 경제성 분석 지침) 기준 현재가치이므로 명목 총액과 다름 — 10개국 비교 시 이 점을 반드시 맞춰야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) 입니다. 경제손실은 CCDR 5.1절의 RCP4.5·RCP8.5 두 시나리오(하천홍수 피해 + 기온상승에 따른 농업·노동 생산성 저하)를 하한·상한으로 두었습니다. 투자 소요는 Table 2(BDP2100·NDC·MCPP)와 Table 9(2025년 기준 재원조달)에서 옮겼으며, 표준서식의 Resilient/Decarbonizing pathway 구분과는 계획 체계가 달라 지표ID 접미사를 계획별로 재정의했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-165518c98ba5",
+      "labelKo": "기후 투자 재원 구성",
+      "recordCount": 5,
+      "unit": "십억 US$",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d3df35520c94",
+      "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 상한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-bb28582e989e",
+      "labelKo": "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-82708b28b15c",
+      "labelKo": "적응 투자 필요액",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-23352841c3ec",
+      "labelKo": "총 투자 필요액(적응+탈탄소)",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5a69d68b924a",
+      "labelKo": "추가 극빈곤 인구",
+      "recordCount": 1,
+      "unit": "명",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 10,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

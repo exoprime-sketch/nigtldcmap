@@ -4,10 +4,19 @@
 The builder reads the immutable V124 catalog and compressed element packs. It
 does not rewrite V124 source records. Free-text and source-label interpretation
 happens here once; the React runtime consumes structured element shards.
+
+V158: a second country has its own data root (public/data/countries.json) and
+no bundled TypeScript module (Viet Nam is the only country CRA imports from
+src/). `--country <iso3>` (default VNM) resolves the data root from the
+registry; `--data`/`VIETNAM_DATA_ROOT` still win outright for the staging
+runbook. A non-default country never touches
+generatedVisualizationContractsV125.ts - it gets an equivalent JSON asset
+under its own semantic/ folder instead (`--summaries-json` to relocate it).
 """
 
 from __future__ import annotations
 
+import argparse
 import base64
 import csv
 import gzip
@@ -21,26 +30,87 @@ from pathlib import Path
 from typing import Any
 
 
+def _read_json_static(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--country", default="VNM", help="ISO3 in public/data/countries.json (default: VNM)")
+    parser.add_argument("--data", default=None, help="explicit data root; wins over --country and VIETNAM_DATA_ROOT (staging trees)")
+    parser.add_argument("--out-root", default=None, help="write semantic/ under this root instead of the data root (byte-identity checks); input is still read from the data root")
+    parser.add_argument(
+        "--summaries-json",
+        default=None,
+        help="for a non-default country: write the element-visualization summary JSON at this path instead of the default semantic/element-visualization-summaries-v125.json",
+    )
+    parser.add_argument("--generated-ts", default=None, help="write the Viet Nam TypeScript module at this path instead (byte-identity checks)")
+    return parser.parse_args()
+
+
+_ARGS = _parse_args()
+COUNTRY_ISO3 = str(_ARGS.country or "VNM").strip().upper()
+IS_DEFAULT_COUNTRY = COUNTRY_ISO3 == "VNM"
+
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def _country_data_root(iso3: str) -> Path:
+    registry = _read_json_static(ROOT / "public" / "data" / "countries.json")
+    for row in registry["countries"]:
+        if row["iso3"] == iso3:
+            return (ROOT / "public" / row["dataRoot"].lstrip("/")).resolve()
+    raise RuntimeError(f"UNKNOWN_COUNTRY: {iso3}")
+
+
+def _public_url_prefix(data_root: Path) -> str:
+    """The published URL prefix for a data root, e.g. /data/bgd/v2/.
+
+    A data root always ends in data/<slug>/v2 (the registry's own shape, kept
+    the same under a staging tree), so the last three path segments are it -
+    no need to know whether the root sits under this repository's public/ or
+    a .staging/<name>/public/.
+    """
+    return "/" + "/".join(data_root.parts[-3:]) + "/"
+
+
 # A candidate build runs the whole pipeline against a staging tree, so every
-# stage has to be pointed at the same root. Unset, this is the published path.
-DATA_ROOT = (
-    Path(os.environ["VIETNAM_DATA_ROOT"]).resolve()
-    if os.environ.get("VIETNAM_DATA_ROOT")
-    else ROOT / "public" / "data" / "vietnam" / "v2"
-)
-SEMANTIC_ROOT = DATA_ROOT / "semantic"
+# stage has to be pointed at the same root. `--data` (and the legacy
+# VIETNAM_DATA_ROOT env var the staging runbook already sets) wins outright;
+# otherwise the country registry says where the published tree is. Unset and
+# no --country, this is Viet Nam - unchanged from before V158.
+if _ARGS.data:
+    DATA_ROOT = Path(_ARGS.data).resolve()
+elif os.environ.get("VIETNAM_DATA_ROOT"):
+    DATA_ROOT = Path(os.environ["VIETNAM_DATA_ROOT"]).resolve()
+else:
+    DATA_ROOT = _country_data_root(COUNTRY_ISO3)
+DATA_URL_PREFIX = _public_url_prefix(DATA_ROOT)
+# --out-root only moves where semantic/ (and its report) land, for a
+# byte-identity check against the committed tree; the data itself is always
+# read from DATA_ROOT above.
+SEMANTIC_OUT_ROOT = Path(_ARGS.out_root).resolve() if _ARGS.out_root else DATA_ROOT
+SEMANTIC_ROOT = SEMANTIC_OUT_ROOT / "semantic"
 SEMANTIC_ELEMENT_ROOT = SEMANTIC_ROOT / "elements"
-REPORT_ROOT = ROOT / "reports" / "v125"
+if _ARGS.out_root:
+    # A byte-identity check redirects the report the same way as semantic/: it
+    # must never touch the committed reports/v125 tree while probing what the
+    # current data would produce.
+    REPORT_ROOT = SEMANTIC_OUT_ROOT / "reports-v125"
+elif IS_DEFAULT_COUNTRY:
+    REPORT_ROOT = ROOT / "reports" / "v125"
+else:
+    REPORT_ROOT = ROOT / "reports" / "v125" / COUNTRY_ISO3.lower()
 CATALOG_PATH = DATA_ROOT / "catalog.json"
 PACK_INDEX_PATH = DATA_ROOT / "packs" / "bundle-index-v124.json"
 PRESENTATION_REGISTRY_PATH = ROOT / "src" / "data" / "elementPresentationRegistryV100.ts"
 GENERATED_TS_PATH = (
-    ROOT
-    / "src"
-    / "data"
-    / "visualization"
-    / "generatedVisualizationContractsV125.ts"
+    Path(_ARGS.generated_ts).resolve()
+    if _ARGS.generated_ts
+    else ROOT / "src" / "data" / "visualization" / "generatedVisualizationContractsV125.ts"
+)
+SUMMARIES_JSON_PATH = (
+    Path(_ARGS.summaries_json).resolve() if _ARGS.summaries_json else SEMANTIC_ROOT / "element-visualization-summaries-v125.json"
 )
 
 SCHEMA_VERSION = "v125"
@@ -227,7 +297,7 @@ def load_element_payloads() -> dict[str, dict[str, Any]]:
     index = read_json(PACK_INDEX_PATH)
     payloads: dict[str, dict[str, Any]] = {}
     for pack in sorted(index["packs"], key=lambda item: item["shardId"]):
-        pack_path = DATA_ROOT / pack["packUrl"].removeprefix("/data/vietnam/v2/")
+        pack_path = DATA_ROOT / pack["packUrl"].removeprefix(DATA_URL_PREFIX)
         envelope = read_json(pack_path)
         compressed = base64.b64decode("".join(envelope["payloadChunks"]))
         content = gzip.decompress(compressed)
@@ -466,10 +536,27 @@ def deduplicate_indicators(
             and {nfc(item.get("unit")) for item in values} == {"m³/s"}
         )
         if not accepted_b028:
-            raise RuntimeError(
-                f"Ambiguous duplicate indicator metadata: {element_id} {indicator_id} "
-                + json.dumps(labels, ensure_ascii=False)
+            if IS_DEFAULT_COUNTRY:
+                raise RuntimeError(
+                    f"Ambiguous duplicate indicator metadata: {element_id} {indicator_id} "
+                    + json.dumps(labels, ensure_ascii=False)
+                )
+            # A country outside Viet Nam has no reviewed disambiguation for a
+            # repeated id; keep the last metadata row (V124's own tie-break)
+            # and record it instead of failing the whole build, so the report
+            # can flag it for review.
+            result.append(values[-1])
+            decisions.append(
+                {
+                    "elementId": element_id,
+                    "indicatorId": indicator_id,
+                    "sourceRows": [item.get("provenance", {}).get("sourceRow") for item in values],
+                    "sourceLabels": labels,
+                    "semanticIndicatorPolicy": "generic-last-metadata-row-no-reviewed-disambiguation",
+                    "recordDimensionPolicy": "not-modelled",
+                }
             )
+            continue
         result.append(values[-1])
         decisions.append(
             {
@@ -524,6 +611,7 @@ def make_indicator_semantics(
     element_id: str,
     indicators: list[dict[str, Any]],
     observations: list[dict[str, Any]],
+    e012_scheme: bool = True,
 ) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]:
     source_label_counts = Counter(
         (nfc(item.get("labelKo")), nfc(item.get("unit"))) for item in indicators
@@ -538,7 +626,7 @@ def make_indicator_semantics(
         indicator_id = indicator["indicatorId"]
         unit = nfc(indicator.get("unit")) or observation_units.get(indicator_id) or "—"
         source_label = nfc(indicator.get("labelKo")) or indicator_id
-        if element_id == "E-012":
+        if element_id == "E-012" and e012_scheme:
             measure_key, dimensions, dimension_labels = e012_decode_id(indicator_id)
             measure = e012_measure(measure_key, unit)
             display_suffix = " · ".join(dimension_labels.values())
@@ -736,12 +824,32 @@ def entity_dimension_values(entities: list[dict[str, Any]]) -> dict[str, set[str
     }
 
 
+# A delivered column's key written as "<header>_<english_key>" - Bangladesh's
+# "부문별_Tier_tier_by_sector" - is the column's own header joined to its
+# English key. The header itself sits in the field definition as
+# "부문별 Tier(tier_by_sector)"; the reader's label is that header without the key.
+DELIVERED_KEY_HANGUL = re.compile(r"[\uac00-\ud7a3]")
+DELIVERED_LABEL_ASCII_KEY = re.compile(r"\s*\([A-Za-z0-9_ .-]+\)\s*$")
+
+
+def delivered_field_label(key: str, field_definitions: list[dict[str, Any]] | None) -> str | None:
+    if not field_definitions or not DELIVERED_KEY_HANGUL.search(key):
+        return None
+    for item in field_definitions:
+        if nfc(item.get("normalizedKey")) != key:
+            continue
+        label = DELIVERED_LABEL_ASCII_KEY.sub("", nfc(item.get("label"))).strip()
+        return label or None
+    return None
+
+
 def summarize_semantics(
     indicators: list[dict[str, Any]],
     indicator_semantics: list[dict[str, Any]],
     record_semantics: list[dict[str, Any]],
     observations: list[dict[str, Any]],
     entities: list[dict[str, Any]],
+    field_definitions: list[dict[str, Any]] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     indicator_record_counts = Counter(item["indicatorId"] for item in observations)
     measures: dict[tuple[str, str], dict[str, Any]] = {}
@@ -787,7 +895,7 @@ def summarize_semantics(
     dimensions = [
         {
             "key": key,
-            "labelKo": dimension_labels.get(key, key),
+            "labelKo": dimension_labels.get(key) or delivered_field_label(key, field_definitions) or key,
             "values": sorted_values(values),
             "valueCount": len(values),
         }
@@ -964,7 +1072,9 @@ def duplicate_report(
     ]
 
 
-def write_generated_ts(contracts: list[dict[str, Any]], catalog_by_id: dict[str, dict[str, Any]]) -> None:
+def build_element_visualization_summaries(
+    contracts: list[dict[str, Any]], catalog_by_id: dict[str, dict[str, Any]]
+) -> list[dict[str, Any]]:
     summaries = []
     for contract in contracts:
         element = catalog_by_id[contract["elementId"]]
@@ -987,6 +1097,11 @@ def write_generated_ts(contracts: list[dict[str, Any]], catalog_by_id: dict[str,
                 "noDataReason": contract["noDataReason"],
             }
         )
+    return summaries
+
+
+def write_generated_ts(summaries: list[dict[str, Any]]) -> None:
+    """Viet Nam only: the bundled TypeScript module CRA imports from src/."""
     json_literal = json.dumps(summaries, ensure_ascii=False, indent=2, sort_keys=True)
     source = (
         'import type { ElementVisualizationSummaryV125 } from "./semanticTypesV125";\n\n'
@@ -997,6 +1112,22 @@ def write_generated_ts(contracts: list[dict[str, Any]], catalog_by_id: dict[str,
         + ";\n"
     )
     GENERATED_TS_PATH.write_text(source, encoding="utf-8", newline="\n")
+
+
+def write_summaries_json(summaries: list[dict[str, Any]]) -> None:
+    """A country without a bundled TS module gets the same content as JSON,
+    under its own semantic/ folder - never under src/."""
+    write_json(
+        SUMMARIES_JSON_PATH,
+        {
+            "schemaVersion": SCHEMA_VERSION,
+            "generatedAt": GENERATED_AT,
+            "countryIso3": COUNTRY_ISO3,
+            "note": "Holds what src/data/visualization/generatedVisualizationContractsV125.ts holds for Viet Nam; this country has no bundled TypeScript copy.",
+            "elementCount": len(summaries),
+            "elements": summaries,
+        },
+    )
 
 
 def main() -> None:
@@ -1024,6 +1155,7 @@ def main() -> None:
     total_observations = 0
     duplicate_indicator_decisions: list[dict[str, Any]] = []
     e012_summary: dict[str, Any] | None = None
+    country_fallbacks: list[dict[str, Any]] = []
 
     for element in sorted(catalog, key=lambda item: item["elementId"]):
         element_id = element["elementId"]
@@ -1035,10 +1167,37 @@ def main() -> None:
         duplicate_indicator_decisions.extend(element_duplicate_decisions)
         observations = payload["observations"]["records"]
         entities = payload["entities"]["records"]
+        element_e012_scheme = False
         if element_id == "E-012":
-            e012_summary = validate_e012_notes(indicators, observations)
+            if IS_DEFAULT_COUNTRY:
+                e012_summary = validate_e012_notes(indicators, observations)
+                element_e012_scheme = True
+            else:
+                # A country outside Viet Nam is not guaranteed to share Viet
+                # Nam's exact E-012 indicator-id vocabulary (occupation and
+                # sex codes were reviewed against Viet Nam's own delivery);
+                # probe it and fall back to the generic indicator reading
+                # instead of failing the whole build.
+                decode_error = None
+                for raw in indicators:
+                    try:
+                        e012_decode_id(raw["indicatorId"])
+                    except Exception as exc:  # noqa: BLE001 - reported, not re-raised
+                        decode_error = str(exc)
+                        break
+                if decode_error is None:
+                    e012_summary = validate_e012_notes(indicators, observations)
+                    element_e012_scheme = True
+                else:
+                    country_fallbacks.append(
+                        {
+                            "elementId": element_id,
+                            "reason": f"E-012 indicator ids do not match the reviewed Viet Nam scheme: {decode_error}",
+                            "fallback": "generic-indicator-structure",
+                        }
+                    )
         indicator_semantics, by_indicator = make_indicator_semantics(
-            element_id, indicators, observations
+            element_id, indicators, observations, e012_scheme=element_e012_scheme
         )
         record_semantics = make_record_semantics(observations, by_indicator)
         record_overrides = sparse_record_overrides(record_semantics, by_indicator)
@@ -1048,6 +1207,7 @@ def main() -> None:
             record_semantics,
             observations,
             entities,
+            payload["meta"].get("fieldDefinitions", []),
         )
         contract = make_contract(
             element,
@@ -1074,7 +1234,7 @@ def main() -> None:
         write_json(SEMANTIC_ELEMENT_ROOT / asset_name, shard)
         index_entries[element_id] = {
             "elementId": element_id,
-            "assetUrl": f"/data/vietnam/v2/semantic/elements/{asset_name}",
+            "assetUrl": f"{DATA_URL_PREFIX}semantic/elements/{asset_name}",
             "indicatorCount": len(indicators),
             "observationCount": len(observations),
             "entityCount": len(entities),
@@ -1172,7 +1332,7 @@ def main() -> None:
         source_indicator_metadata_rows += len(raw_indicators)
         total_observations += len(observations)
 
-    if e012_summary is None:
+    if IS_DEFAULT_COUNTRY and e012_summary is None:
         raise RuntimeError("E-012 summary was not generated")
     if any(not item["resolved"] for item in duplicate_groups):
         raise RuntimeError("Unresolved duplicate visible labels remain")
@@ -1215,6 +1375,12 @@ def main() -> None:
         "recordReconciliation": "PASS",
         "e012": e012_summary,
     }
+    if not IS_DEFAULT_COUNTRY:
+        # Additive only: a country outside Viet Nam can report ids the
+        # reviewed Viet Nam vocabulary does not cover without changing the
+        # shape of Viet Nam's own (always-empty-here) integrity file.
+        semantic_integrity["countryIso3"] = COUNTRY_ISO3
+        semantic_integrity["countryFallbacks"] = country_fallbacks
     write_json(SEMANTIC_ROOT / "indicator-semantics-v125.json", semantics_index)
     write_json(
         SEMANTIC_ROOT / "element-visualization-contracts-v125.json",
@@ -1282,10 +1448,15 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=list(audit_csv_rows[0]))
         writer.writeheader()
         writer.writerows(audit_csv_rows)
-    write_generated_ts(contracts, catalog_by_id)
+    summaries = build_element_visualization_summaries(contracts, catalog_by_id)
+    if IS_DEFAULT_COUNTRY:
+        write_generated_ts(summaries)
+    else:
+        write_summaries_json(summaries)
     print(
         json.dumps(
             {
+                "country": COUNTRY_ISO3,
                 "elementContracts": len(contracts),
                 "indicatorSemantics": total_indicators,
                 "semanticObservations": total_observations,
@@ -1293,9 +1464,15 @@ def main() -> None:
                 "duplicateVisibleLabels": 0,
                 "mixedUnitAxis": 0,
                 "zeroImputation": 0,
-                "e012Measures": len(e012_summary["measureKeys"]),
-                "e012Occupations": len(e012_summary["occupations"]),
-                "e012Sexes": len(e012_summary["sexes"]),
+                "e012Measures": len(e012_summary["measureKeys"]) if e012_summary else 0,
+                "e012Occupations": len(e012_summary["occupations"]) if e012_summary else 0,
+                "e012Sexes": len(e012_summary["sexes"]) if e012_summary else 0,
+                "countryFallbackCount": len(country_fallbacks),
+                "duplicateIndicatorFallbackCount": sum(
+                    1
+                    for item in duplicate_indicator_decisions
+                    if item.get("semanticIndicatorPolicy") == "generic-last-metadata-row-no-reviewed-disambiguation"
+                ),
             },
             ensure_ascii=False,
             indent=2,

@@ -19,16 +19,36 @@
 
 ## 완료
 - B1(#38)·Vercel 단일화(#40) 병합
-- PR-A 작성: `docs/DEPLOYMENT_CAPACITY_V158.md`, `scripts/v158/deployment-capacity-v158.mjs`, `reports/v158/deployment-capacity-v158.json`
+- PR-A(#44, `docs/v158-b2a-deploy-capacity`) push·Preview·보고 — "PR #44 병합" 대기
   - build 948.7 MB, 10개국 2.19~7.12 GB → 압축 시 0.28~1.19 GB
+- PR-B 구현(`feat/v158-b2b-country-layer`, PR-A 위에 쌓음)
+  - 커밋 `1700032`(일반화 계층·BGD 파생 자산) → main(#43) merge `651406b` → 비교 시계열 재생성
+  - #43(⓪ 폐지·statusNotice) 반영: 국가별 유형은 그 나라 카탈로그 상태로 안내(미입고 → 데이터 준비 중)
+  - 추가 수정: 처음 연 `?country=` 재해석(App), 국가 목록 갱신 훅(찾기·상세·다운로드), 자기 국가 없는 비교 블록 숨김
+  - 점검 스크립트: `country-qa-v158`(BGD 화면 QA), `fake-country-check-v158`(가짜 3번째 국가), 화면 서명 해시 경로 수정
+  - 검증: tsc 0 · 단위 658/658 · 가짜 3번째 국가 11/11(merge 전 빌드)
 
-## 진행 중
-- PR-A push·PR·보고
+## 완료(2026-09-30)
+- #46(VNM 파생 불일치 fix)·#44(배포 결정안)·#48(다운로드 ZIP, `/data/**` 404 라우팅) 병합, #42(출처 표기) 병합 확인(main `9d9a862`)
+
+## 진행 중(2026-09-30) — B2b PR(사용자 지시 "B2b 시작")
+- 수용기준: ① 국가별 값은 레지스트리에서만(국가 레이어 리터럴 0) ② 2026년 제외 6 = 국가 공통 결정 1곳, BGD 포함 목록 제외·안내 1줄 ③ 국가 비교 대표 지표 1개·제외 4·54개·전후 표 ④ BGD 146개 출처 메모 0(#42 기준) · PR-D 금지·BGD preparing 유지
+- 현재 단계
+  - main merge `ee6c336` → 커밋 `355071d`(공통 제외·비교 54·국가 문자열) → `fbace04`(출처 메모 0·행정단위 레지스트리화·B-021) → `1aac49a`(BGD integrity)
+  - 검증: VNM 서명 151 차이 0 · VNM/BGD 출처 메모 0 · BGD QA 7/7 · 가짜 국가 통과 · BGD 검증기 52/52
+  - `finalize:v151`: 1회차 drought 소스 원문 검사 실패 → `4b01463` → 2회차 통과(release 80/80·role-split 53/53·analysis 35/41·boundary 21/22·24/24)
+  - push → PR #50 → Preview Ready → 사용자 "PR #50 병합"(2026-09-30)
+- 다음: PR-C(BGD 지도 43)는 사용자 지시 뒤
 
 ## 대기·결정 필요
-- PR-A 결정 3건: 압축안 채택, 기존 다운로드 주소 처리, Hobby 비상업 조건
-- 동시 작업과 겹치는 파일
-  - P8(`RealMapExplorerPage`·`DetailLocationMapV148`·`publicMapWorkspaceV126`·v138 빌더)
-  - #42(`vietnamCountryDataProviderV122`)
-  - ②(라우터·출처 패널·템플릿 변형·추적표)
-  - 상대 PR이 병합된 뒤 main을 merge해서 푼다.
+- **PR-D는 사용자 결정 전 착수 금지.** 재개 시 이 파일부터 읽고 대기
+- Hobby 비상업 조건(보류, 사용자 판단)
+- PR-D로 넘긴 것: 전역 검색 국가 범위, 홈 `?country=` 보존, BGD 홈 지도 기본 요소
+
+## PR-D 사전 답변(사용자 2026-09-30, 기록만 — 지금 구현하지 않음)
+1. BGD 행정단위 표기: '주(Division)'. 예) '8개 주(Division)'. `public/data/countries.json` BGD `adm.level1.label` 값으로 반영
+2. 국가 비교 대표 지표(A-010·A-011·A-015·A-018·B-018·B-019)
+   - 국가 합계·전체 값 지표가 있으면 그것을 대표 지표로
+   - 세부 분류 지표만 있으면 헤드라인 유지 + 비교 화면에 분류명 표시
+   - 요소별 판단표를 PR-D 보고에 첨부
+3. 마스터 인계서 6장 C 원문은 프로젝트 문서에 있음. 적용한 기준(대표 지표 1개·제외 4·54개)이 맞음

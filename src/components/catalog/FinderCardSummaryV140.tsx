@@ -5,6 +5,7 @@ import type { HomePreviewCardV139 } from "../../data/homePreviewV139";
 import HomePreviewChartV139 from "../home/HomePreviewChartV139";
 import ChartAxesV150 from "../charts/ChartAxesV150";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
+import { regionWordV158 } from "../../data/countries/countryLevel1V158";
 import "./finder-card-summary-v140.css";
 
 /**
@@ -125,8 +126,10 @@ function HomeCardPreview({ elementId }: { elementId: string }) {
   return <HomePreviewChartV139 card={card} />;
 }
 
-export default function FinderCardSummaryV140({ summary }: { summary: CardSummaryV140 }) {
+export default function FinderCardSummaryV140({ summary, country }: { summary: CardSummaryV140; country?: string }) {
   const { kind, headline, preview } = summary;
+  // The card's country's level-1 word (V158-B2b); the default country when none is given.
+  const { word: regionWord } = regionWordV158(country);
   return (
     <div className="fcs140" data-testid="finder-card-summary-v140" data-card-kind={kind}>
       <p className="fcs140-headline" data-testid="finder-card-headline-v140">
@@ -136,7 +139,7 @@ export default function FinderCardSummaryV140({ summary }: { summary: CardSummar
       <div className="fcs140-preview">
         {!preview.home && ["line", "spatial-trend", "bars", "spatial", "composition"].includes(kind) && <ChartAxesV150
           x={kind === "line" || kind === "spatial-trend" ? "연도" : kind === "composition" ? undefined : summary.measure?.label || "값"}
-          y={kind === "line" || kind === "spatial-trend" ? summary.measure?.label || "값" : kind === "composition" ? undefined : kind === "spatial" ? "성·시" : "항목"}
+          y={kind === "line" || kind === "spatial-trend" ? summary.measure?.label || "값" : kind === "composition" ? undefined : kind === "spatial" ? regionWord : "항목"}
           unit={preview.unit || summary.measure?.unit || ""} composition={kind === "composition"} />}
         {preview.home ? (
           <HomeCardPreview elementId={summary.elementId} />
@@ -151,7 +154,7 @@ export default function FinderCardSummaryV140({ summary }: { summary: CardSummar
             <Line points={preview.points} unit={preview.unit} seriesLabel={preview.seriesLabel} historicalUntil={preview.historicalUntil} />
             {preview.range && preview.range.p10 !== null && preview.range.p10 !== undefined && (
               <p className="fcs140-note">
-                성·시 간 분포 10~90분위 {fmt(preview.range.p10)}–{fmt(preview.range.p90 ?? preview.range.p10)} {preview.unit} · 시나리오 {preview.scenarios}개는 상세에서 선택
+                {regionWord} 간 분포 10~90분위 {fmt(preview.range.p10)}–{fmt(preview.range.p90 ?? preview.range.p10)} {preview.unit} · 시나리오 {preview.scenarios}개는 상세에서 선택
               </p>
             )}
           </>
@@ -161,7 +164,7 @@ export default function FinderCardSummaryV140({ summary }: { summary: CardSummar
             <Bars parts={preview.parts} unit={preview.unit} signedColour />
             {(preview.omitted || 0) > 0 && <p className="fcs140-note">외 {preview.omitted}개 항목은 상세에서</p>}
             {kind === "spatial" && preview.median !== null && preview.median !== undefined && (
-              <p className="fcs140-note">{preview.provinces}개 성·시 중앙값 {fmt(preview.median)} {preview.unit}</p>
+              <p className="fcs140-note">{preview.provinces}개 {regionWord} 중앙값 {fmt(preview.median)} {preview.unit}</p>
             )}
             {(preview.unlabelled || 0) > 0 && <p className="fcs140-note">분류 미기재 {preview.unlabelled}건</p>}
           </>

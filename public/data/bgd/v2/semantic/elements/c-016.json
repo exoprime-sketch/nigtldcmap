@@ -1,0 +1,178 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-016",
+  "entityCount": 32,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "01"
+      },
+      "dimensions": {
+        "technology": "01"
+      },
+      "displayLabel": "재생에너지 발주 및 확대 계획 · auction_package",
+      "indicatorId": "C-016_auction_package",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01|C-016_auction_package",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 입찰 패키지 1건(11행) — 2026년 진행중 10건(합계 495 MW AC) + 2026-06-25 추가 공고 중 확인된 1건. [서식 핵심] 구서식은 10개 패키지를 1행의 문자열(\"01 Bajitpur 25MW · 02 Lohagara 30MW …\")로 나열했으나, 신서식에서는 패키지 1건 = 1행으로 분해하여 소재지·용량·공고번호를 각각 열로 두었음. [집계행 삭제] 구서식의 「입찰 패키지 수」·「입찰 용량 합계」 행은 행 수·열 합으로 산출되는 파생값이므로 삭제함. [지역] 입찰 패키지는 사업 소재지가 있는 유일한 레코드 유형이므로 「[지역] 지역명」에 원문 소재지를 기입했으며, COD-AB 미확보로 P-code는 부여하지 못함.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "패키지별 마감일 일부와 zila 단위 P-code는 미확보(M06).",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 발주 및 확대 계획 · data_availability",
+      "indicatorId": "C-016_data_availability",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-016_data_availability",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 자료 공표 상태 1건(2행). 값 대신 \"왜 값이 없는지\"와 재확보 경로를 기록하는 레코드임. [대체 금지] SREDA 공식 수치와 IRENA 통계는 집계 정의가 달라 서로 대체하지 않음 — 본 행은 IRENA 값을 공식 수치로 읽지 않도록 두는 안전장치임.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "SREDA NDRE는 봇 차단으로, 추가 입찰 1건은 공고문 판독 실패로 각각 M06.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "01 · 03 · 05 · 08"
+      },
+      "dimensions": {
+        "technology": "01,03,05,08"
+      },
+      "displayLabel": "재생에너지 발주 및 확대 계획 · installed_capacity",
+      "indicatorId": "C-016_installed_capacity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01,03,05,08|C-016_installed_capacity",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 1개 연도(10행, 2016-2025). 구서식은 부문·연도 조합마다 1행을 두어 70행이었으나, 신서식에서는 연도를 행으로 두고 부문을 열로 두어 10행으로 정리함. [합산 금지] 「오프그리드 합계」는 계통연계 설비용량(합계)과 별개 집계이며 합계에 포함되지 않음 — 두 값을 더하면 중복·오류가 됨. [출처 구분] 본 계열은 IRENA 집계이며 국가 공식 통계(SREDA NDRE)와 집계 정의가 달라 서로 대체하지 않음 — 공식 통계 미취득 사유는 C-016_data_availability 행에 수록. [기술분류] 1행에 4개 부문이 열로 들어 있어 행 tech_id를 부여하지 않고 meta tech_ids(태양광 1 · 풍력 3 · 수력 5 · 바이오에너지 8)로 관리함.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 1개 연도(10행, 2016-2025). 구서식은 부문·연도 조합마다 1행을 두어 70행이었으나, 신서식에서는 연도를 행으로 두고 부문을 열로 두어 10행으로 정리함. [합산 금지] 「오프그리드 합계」는 계통연계 설비용량(합계)과 별개 집계이며 합계에 포함되지 않음 — 두 값을 더하면 중복·오류가 됨. [출처 구분] 본 계열은 IRENA 집계이며 국가 공식 통계(SREDA NDRE)와 집계 정의가 달라 서로 대체하지 않음 — 공식 통계 미취득 사유는 C-016_data_availability 행에 수록. [기술분류] 1행에 4개 부문이 열로 들어 있어 행 tech_id를 부여하지 않고 meta tech_ids(태양광 1 · 풍력 3 · 수력 5 · 바이오에너지 8)로 관리함.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 발주 및 확대 계획 · procurement_rule",
+      "indicatorId": "C-016_procurement_rule",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-016_procurement_rule",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 발주 제도 항목 1건(5행) — 로드맵 수립 의무 / 발주 기관 / 기본 발주 방식 / 대체 발주 방식 / 매입요금 결정 방식. [정합] 매입요금이 경쟁입찰 기반이며 FIT가 아니라는 사실은 C-017·C-019에도 동일하게 수록되어 있음.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 발주 제도 항목 1건(5행) — 로드맵 수립 의무 / 발주 기관 / 기본 발주 방식 / 대체 발주 방식 / 매입요금 결정 방식. [정합] 매입요금이 경쟁입찰 기반이며 FIT가 아니라는 사실은 C-017·C-019에도 동일하게 수록되어 있음.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 발주 및 확대 계획 · re_target",
+      "indicatorId": "C-016_re_target",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-016_re_target",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 목표 1건(3행) — 2030년 20%, 2040년 30%, 설비용량(MW) 목표 부존. [오인용 주의] 2차 자료에서 널리 인용되는 \"2030년 6,145MW / 2041년 17,470MW\"는 정본에 없는 수치이고 목표연도(2041)도 정본(2040)과 불일치하므로 기재하지 않음 — 부존 사실 자체를 행으로 남겨 재조사 시 같은 오인용이 반복되지 않도록 함. [요소 간 정합] 같은 목표가 C-019(재생에너지 목표)에도 수록되어 있으며 값이 일치함.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "MW 단위 설비용량 목표는 정본에 조항 자체가 없어 M03(구조적 부존).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 발주 및 확대 계획 · rpo_rec",
+      "indicatorId": "C-016_rpo_rec",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c2b251a272a7",
+        "labelKo": "재생에너지 발주 및 확대 계획",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c2b251a272a7|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-016_rpo_rec",
+      "sourceCaveat": "[raw] ([raw]\\C-016\\) C-016_재생에너지 발주 및 확대 계획_BGD_RE_Policy_2025_PowerDivision.pdf · C-016_재생에너지 발주 및 확대 계획_IRENA_RenewableCapacityStatistics_2026.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-016_re_capacity_target·_procuring_entity·_investor_selection·_target_technology·_auction_schedule 및 출처 접미사 _bdgov·_irena)를 레코드 유형 6개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = RPO·REC 도입 상태 1건. 구서식의 도입 상태 행과 의무비율 행을 1행의 속성 열로 합쳐, 「원칙만 있고 비율은 없음」이 한 행에서 읽히도록 함.",
+      "sourceLabel": "재생에너지 발주 및 확대 계획",
+      "sourceLabelEn": "Renewable Energy Procurement and Expansion Plan",
+      "sourceNote": "RPO 의무비율은 도입 메커니즘 미개발로 값 자체가 존재하지 않음(M03).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 6,
+      "key": "measure-c2b251a272a7",
+      "labelKo": "재생에너지 발주 및 확대 계획",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -1,0 +1,214 @@
+{
+  "dimensions": [
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 5,
+      "values": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020"
+      ]
+    }
+  ],
+  "elementId": "E-009",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 6,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-315d9123945d|명(FTE)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연구자 수(절대수)",
+      "indicatorId": "E-009_researcher_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-315d9123945d",
+        "labelKo": "연구자 수(절대수)",
+        "unit": "명(FTE)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-315d9123945d|명(FTE)||E-009_researcher_count",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천에 수록 값이 없어 결측으로 처리했다. [사유 구분: 산출 기반 부재] 백만명당 연구자 수가 원천에 없어 산출할 수 없다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 연구자 수는 FTE(상근환산) 기준이다. 연구자 절대수는 백만명당 값에 총인구를 곱한 FTE 환산치이며 실인원(headcount)이 아니다. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "연구자 수(절대수)",
+      "sourceLabelEn": "Researchers in R&D (headcount / FTE)",
+      "sourceNote": "[사유 구분: 산출 기반 부재] 백만명당 연구자 수가 원천에 없어 산출할 수 없다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-351fd006e334|명/백만명(FTE)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연구자 수(백만명당)",
+      "indicatorId": "E-009_researchers_per_million",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-351fd006e334",
+        "labelKo": "연구자 수(백만명당)",
+        "unit": "명/백만명(FTE)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-351fd006e334|명/백만명(FTE)||E-009_researchers_per_million",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천에 수록 값이 없어 결측으로 처리했다. [사유 구분: 원천 미제공] World Bank SP.POP.SCIE.RD.P6 (원자료 UNESCO UIS, FTE 기준) 와 원자료 UNESCO UIS 양쪽 모두 해당 국가 관측치 0건 E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 연구자 수는 FTE(상근환산) 기준이다. 연구자 절대수는 백만명당 값에 총인구를 곱한 FTE 환산치이며 실인원(headcount)이 아니다. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "연구자 수(백만명당)",
+      "sourceLabelEn": "Researchers in R&D (per million people)",
+      "sourceNote": "[사유 구분: 원천 미제공] World Bank SP.POP.SCIE.RD.P6 (원자료 UNESCO UIS, FTE 기준) 와 원자료 UNESCO UIS 양쪽 모두 해당 국가 관측치 0건",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-52b24a618d30|명",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업자 수(절대수)",
+      "indicatorId": "E-009_stem_grad_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-52b24a618d30",
+        "labelKo": "STEM 졸업자 수(절대수)",
+        "unit": "명",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-52b24a618d30|명||E-009_stem_grad_count",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천에 수록 값이 없어 결측으로 처리했다. [사유 구분: 원천 시리즈 부재] UNESCO UIS 공개 지표 5,063건 전수 확인 결과 STEM 졸업자 절대수 시리즈가 없다. 제공되는 것은 비중(FOSGP·FGP 계열, %)과 총졸업률(GGR 계열, %)뿐이어서 절대수는 원천에서 산출할 수 없다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. [사유 구분: 원천 시리즈 부재] UNESCO UIS 공개 지표 5,063건 전수 확인 결과 STEM 졸업자 절대수 시리즈가 없다. 제공되는 것은 비중(FOSGP·FGP 계열, %)과 총졸업률(GGR 계열, %)뿐이어서 절대수는 원천에서 산출할 수 없다. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "STEM 졸업자 수(절대수)",
+      "sourceLabelEn": "Graduates from STEM programmes, tertiary (headcount)",
+      "sourceNote": "[사유 구분: 원천 시리즈 부재] UNESCO UIS 공개 지표 5,063건 전수 확인 결과 STEM 졸업자 절대수 시리즈가 없다. 제공되는 것은 비중(FOSGP·FGP 계열, %)과 총졸업률(GGR 계열, %)뿐이어서 절대수는 원천에서 산출할 수 없다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-0aaf37a2b769|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(전체)",
+      "indicatorId": "E-009_stem_grad_share",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0aaf37a2b769",
+        "labelKo": "STEM 졸업 비중(전체)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0aaf37a2b769|%||E-009_stem_grad_share",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "STEM 졸업 비중(전체)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary (total)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-e67e1496b556|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(여성)",
+      "indicatorId": "E-009_stem_grad_share_female",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e67e1496b556",
+        "labelKo": "STEM 졸업 비중(여성)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-e67e1496b556|%||E-009_stem_grad_share_female",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "STEM 졸업 비중(여성)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary, female",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-33733e6335a3|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "STEM 졸업 비중(남성)",
+      "indicatorId": "E-009_stem_grad_share_male",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33733e6335a3",
+        "labelKo": "STEM 졸업 비중(남성)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-33733e6335a3|%||E-009_stem_grad_share_male",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceLabel": "STEM 졸업 비중(남성)",
+      "sourceLabelEn": "Share of graduates from STEM programmes, tertiary, male",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 원천이 제공하는 전 기간을 연 단위로 수록했다(2016~2020, 5개 연도). 이 지표의 기준연도(최신 관측연도)는 2020년이다. E-009 는 지표마다 원천 최신 관측연도가 달라 기준연도가 일치하지 않는다 — stem_grad_share 2020 / stem_grad_share_male 2020 / stem_grad_share_female 2020. 라이선스 판정: UNESCO UIS·World Bank 모두 출처표시 조건으로 이용 가능하므로 표출·다운로드 모두 '가능'.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-33733e6335a3",
+      "labelKo": "STEM 졸업 비중(남성)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e67e1496b556",
+      "labelKo": "STEM 졸업 비중(여성)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0aaf37a2b769",
+      "labelKo": "STEM 졸업 비중(전체)",
+      "recordCount": 5,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-52b24a618d30",
+      "labelKo": "STEM 졸업자 수(절대수)",
+      "recordCount": 1,
+      "unit": "명",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-351fd006e334",
+      "labelKo": "연구자 수(백만명당)",
+      "recordCount": 1,
+      "unit": "명/백만명(FTE)",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-315d9123945d",
+      "labelKo": "연구자 수(절대수)",
+      "recordCount": 1,
+      "unit": "명(FTE)",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 18,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

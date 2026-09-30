@@ -59,6 +59,9 @@ PACK_ELEMENT_COUNT = v2.PACK_ELEMENT_COUNT
 SOLO_PACK_CONTENT_BYTES = v2.SOLO_PACK_CONTENT_BYTES
 
 # Paths this builder owns inside the output tree. geometry/ is not one of them.
+# tech_ids values that mean "no technology" in the delivery.
+NO_TECHNOLOGY_V158 = frozenset({"해당없음", "해당 없음", "없음"})
+
 OWNED_FILES = (
     "catalog.json",
     "manifest.json",
@@ -67,6 +70,7 @@ OWNED_FILES = (
     "publication-decisions.json",
     "rights-matrix.json",
     "map-index.json",
+    "presentation-v158.json",
     "asset-integrity.json",
 )
 OWNED_DIRS = ("packs", "downloads")
@@ -310,7 +314,12 @@ def _indicators(workbook: Mapping[str, Any], observations: list[Mapping[str, Any
         for column, key in META_TO_INDICATOR.items():
             value = row.get(column)
             indicator[key] = None if value in (None, "") else value
-        indicator["technologyIds"] = v2.normalize_technology_ids_v153(row.get("tech_ids"))
+        # V158: the delivery writes "해당없음" in tech_ids for an indicator tied to
+        # no technology; that is no technology, as in Viet Nam's catalog, not a
+        # technology called "해당없음" (it surfaced as a dimension on screen).
+        indicator["technologyIds"] = [
+            tid for tid in v2.normalize_technology_ids_v153(row.get("tech_ids")) if tid not in NO_TECHNOLOGY_V158
+        ]
         indicator["extraMeta"] = {column: row.get(column) for column in META_EXTRA if row.get(column) not in (None, "")}
         unknown = sorted(set(row) - META_HANDLED - set(META_TO_INDICATOR) - set(META_EXTRA))
         for column in unknown:
@@ -507,6 +516,10 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "sourceLicensePreserved": bool(decision["sourceLicensePreserved"]),
         "sourceAttributionRequired": bool(decision["sourceAttributionRequired"]),
     }
+    # V158 (user decision 2026-09-30): the exclusions common to every country
+    # (plus any of the country's own) - the same loader and the same catalog
+    # shape as Viet Nam's builder.
+    exclusions = v2.load_exclusion_decisions(REPO, config)
 
     if out.exists():
         for name in OWNED_FILES:
@@ -630,6 +643,21 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             "countryElementLabels": column_accounting.get(element_id, {}).get("elementNameValues", []),
             "collectionPlanned": {"Y": True, "N": False}.get(collection),
         }
+        exclusion = exclusions.get(element_id)
+        if exclusion:
+            # As in Viet Nam's catalog: the offer is withdrawn (no download is
+            # offered), the files and the measured status stay, and the public
+            # notice travels with the decision.
+            element["publicStatus"] = "excluded"
+            element["downloadAllowed"] = False
+            element["exclusion"] = {
+                "reason": str(exclusion.get("reason") or ""),
+                "basis": str(exclusion.get("basis") or ""),
+                "decidedAt": str(exclusion.get("decidedAt") or ""),
+                "publicNotice": str(exclusion.get("publicNotice") or ""),
+                "measuredStatus": status,
+                "measuredPresence": presence,
+            }
         if download_allowed:
             token = element_id.lower()
             # V158: one deterministic ZIP per element (tools/etl/download_zip_v158.py).
@@ -918,6 +946,18 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
     v2._write_json(out / "publication-decisions.json", publication_decisions)
     v2._write_json(out / "rights-matrix.json", rights_matrix)
     v2._write_json(out / "map-index.json", map_index)
+    # V158-B2: which entity columns hold region names, for the screens. A column
+    # listed here is shown as "한글명 (로마자)" and never with a non-Latin local
+    # name; the delivered value itself stays as it is in the packs.
+    v2._write_json(
+        out / "presentation-v158.json",
+        {
+            "schemaVersion": "country-presentation-v158",
+            "countryIso3": iso3,
+            "regionColumns": region_columns,
+            "listSeparator": region_separator,
+        },
+    )
 
     assets = {
         "catalog": f"{data_root}/catalog.json",
@@ -966,7 +1006,10 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "publicStatusCounts": status_counts,
         "mapLayerCount": 0,
         "mapFeatureCount": 0,
-        "downloadableElementCount": sum(bool(row.get("downloadAssets")) for row in catalog),
+        # Counts the offer: an excluded element keeps its files but is not offered.
+        "downloadableElementCount": sum(
+            bool(row.get("downloadAssets")) and row.get("publicStatus") != "excluded" for row in catalog
+        ),
         "downloadDelivery": {
             key: download_manifest[key]
             for key in ("assetCount", "repositoryAssetCount", "externalAssetCount", "externalByteTotal", "uploadedCount", "pendingUploadCount", "adapter", "adapterConfigured")

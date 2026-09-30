@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import TemplateShellV159 from "./TemplateShellV159";
 import type { TemplateContextV159 } from "./TemplateShellV159";
+import { useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
 
 /**
  * V159 ② 지역·입지: where in the country is favourable or at risk - the
@@ -18,10 +19,12 @@ interface Props {
 }
 
 export default function U2RegionalV159({ context, nationalOnly, children }: Props) {
+  // The page's own country's level-1 word (V158-B2b).
+  const { word } = useRegionWordV158();
   return (
     <TemplateShellV159
       context={context}
-      notice={nationalOnly ? "성·시 단위 값이 납품되지 않아 전국 기준값을 보여 줍니다." : null}
+      notice={nationalOnly ? `${word} 단위 값이 납품되지 않아 전국 기준값을 보여 줍니다.` : null}
     >
       {children}
     </TemplateShellV159>

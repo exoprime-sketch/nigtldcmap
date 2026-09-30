@@ -20,8 +20,8 @@
   },
   "regionColumns": "tools/etl/countries/bgd/region-columns.json",
   "countrySpecificElements": {
-    "note": "명칭·출처가 국가마다 다른 요소(사용자 2026-09-29, 용역사 기준서와 동일). 화면은 국가별 2_meta_info의 요소_KR·source_org로 표시하며, 빌더는 그 값을 지표 labelKo·sourceOrg에 원문 그대로 둔다.",
-    "elementIds": ["A-029", "A-030", "B-025", "C-004", "C-009", "C-010", "C-016", "C-017", "C-018", "D-003", "D-006"]
+    "note": "명칭·출처가 국가마다 다른 요소(사용자 2026-09-29, 용역사 기준서와 동일). 화면은 국가별 2_meta_info의 요소_KR·source_org로 표시하며, 빌더는 그 값을 지표 labelKo·sourceOrg에 원문 그대로 둔다. C-015는 명칭·출처가 나라마다 달라 V158-B2에서 추가(용역사 기준서 11개와 다름, 화면 목록 src/data/spec/countrySpecificElementsV158.json과 같아야 함).",
+    "elementIds": ["A-029", "A-030", "B-025", "C-004", "C-009", "C-010", "C-015", "C-016", "C-017", "C-018", "D-003", "D-006"]
   },
   "boundaries": {
     "provider": "geoBoundaries",

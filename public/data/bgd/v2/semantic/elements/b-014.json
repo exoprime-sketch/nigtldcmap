@@ -1,0 +1,604 @@
+{
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "NZP-no-reforms",
+        "NZP-with-measures"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2030",
+        "2040"
+      ]
+    }
+  ],
+  "elementId": "B-014",
+  "entityCount": 0,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 18,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-f3fb8b4b017f|USD/tCO₂e",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "권고 탄소가격 경로",
+      "indicatorId": "B-014_carbon_price_path",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f3fb8b4b017f",
+        "labelKo": "권고 탄소가격 경로",
+        "unit": "USD/tCO₂e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-f3fb8b4b017f|USD/tCO₂e|technology=범용|B-014_carbon_price_path",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / 출처 문서명: World Bank(2022) \"방글라데시 Country Climate and Development Report\". 해당 수치는 탄소가격 정책 시나리오 절. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "권고 탄소가격 경로",
+      "sourceLabelEn": "Recommended carbon price path",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / 출처 문서명: World Bank(2022) \"방글라데시 Country Climate and Development Report\". 해당 수치는 탄소가격 정책 시나리오 절. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — CO2 reduction below 2030 baseline · emission_reduction_ct10",
+      "indicatorId": "B-014_emission_reduction_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_emission_reduction_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-with-measures",
+      "indicatorId": "B-014_emission_reduction_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-with-measures|technology=범용|B-014_emission_reduction_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-with-measures",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_coal_ct10",
+      "indicatorId": "B-014_energy_price_increase_coal_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_coal_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_coal_ct25",
+      "indicatorId": "B-014_energy_price_increase_coal_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_coal_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_electricity_ct10",
+      "indicatorId": "B-014_energy_price_increase_electricity_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_electricity_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_electricity_ct25",
+      "indicatorId": "B-014_energy_price_increase_electricity_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_electricity_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gas_ct10",
+      "indicatorId": "B-014_energy_price_increase_gas_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_gas_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gas_ct25",
+      "indicatorId": "B-014_energy_price_increase_gas_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_gas_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gasoline_ct10",
+      "indicatorId": "B-014_energy_price_increase_gasoline_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_gasoline_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-195d31a84a4c|%",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gasoline_ct25",
+      "indicatorId": "B-014_energy_price_increase_gasoline_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-195d31a84a4c",
+        "labelKo": "배출 감소율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-195d31a84a4c|%|detail=NZP-no-reforms|technology=범용|B-014_energy_price_increase_gasoline_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "배출 감소율 — NZP-no-reforms",
+      "sourceLabelEn": "Emission reduction rate",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5 \"The net-zero pathway (NZP), with and without supportive measures\"에서 시나리오 2종 × 시점 2개(2030·2040)의 기준선 대비 배출 변화율을 추출. 지원조치 병행 시나리오의 감축폭이 다소 작은 것은 성장률이 높아 배출이 함께 늘기 때문이며, GDP 영향 지표(gdp_impact)와 함께 보아야 함. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5876ff1adc3|%p (GDP 성장률)",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "GDP 영향 — NZP-no-reforms · CCDR Table 8 — Cost (percent of GDP growth) · gdp_impact_ct10",
+      "indicatorId": "B-014_gdp_impact_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5876ff1adc3",
+        "labelKo": "GDP 영향",
+        "unit": "%p (GDP 성장률)",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b5876ff1adc3|%p (GDP 성장률)|detail=NZP-no-reforms|technology=범용|B-014_gdp_impact_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "GDP 영향 — NZP-no-reforms",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5876ff1adc3|%p (GDP 성장률)",
+      "dimensionLabels": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "displayLabel": "GDP 영향 — NZP-with-measures · CCDR Table 8 — Cost (percent of GDP growth) · gdp_impact_ct25",
+      "indicatorId": "B-014_gdp_impact_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5876ff1adc3",
+        "labelKo": "GDP 영향",
+        "unit": "%p (GDP 성장률)",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b5876ff1adc3|%p (GDP 성장률)|detail=NZP-with-measures|technology=범용|B-014_gdp_impact_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "GDP 영향 — NZP-with-measures",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5876ff1adc3|%p (GDP 성장률)",
+      "dimensionLabels": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-no-reforms",
+        "technology": "범용"
+      },
+      "displayLabel": "GDP 영향 — NZP-no-reforms · CCDR Table 8 — Net benefit (percent of GDP growth) · gdp_net_benefit_ct10",
+      "indicatorId": "B-014_gdp_net_benefit_ct10",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5876ff1adc3",
+        "labelKo": "GDP 영향",
+        "unit": "%p (GDP 성장률)",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b5876ff1adc3|%p (GDP 성장률)|detail=NZP-no-reforms|technology=범용|B-014_gdp_net_benefit_ct10",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "GDP 영향 — NZP-no-reforms",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-b5876ff1adc3|%p (GDP 성장률)",
+      "dimensionLabels": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "NZP-with-measures",
+        "technology": "범용"
+      },
+      "displayLabel": "GDP 영향 — NZP-with-measures · CCDR Table 8 — Net benefit (percent of GDP growth) · gdp_net_benefit_ct25",
+      "indicatorId": "B-014_gdp_net_benefit_ct25",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b5876ff1adc3",
+        "labelKo": "GDP 영향",
+        "unit": "%p (GDP 성장률)",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b5876ff1adc3|%p (GDP 성장률)|detail=NZP-with-measures|technology=범용|B-014_gdp_net_benefit_ct25",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "GDP 영향 — NZP-with-measures",
+      "sourceLabelEn": "GDP impact",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [추출 완료] CCDR Figure 5에서 시나리오 2종 × 2030·2040 시점의 기준선 대비 GDP 변화율을 추출. 개혁이 동반되지 않으면 GDP가 기준선 대비 감소(2040년 -2.2%)하나, 지원조치를 병행하면 오히려 증가(+3.3%)한다는 것이 CCDR의 핵심 메시지. 그래프 표기값이므로 산출유형은 전망치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2ff22836a17a|십억 USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "누적 추가 세수",
+      "indicatorId": "B-014_revenue_cumulative",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2ff22836a17a",
+        "labelKo": "누적 추가 세수",
+        "unit": "십억 USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2ff22836a17a|십억 USD|technology=범용|B-014_revenue_cumulative",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "누적 추가 세수",
+      "sourceLabelEn": "Cumulative additional fiscal revenue",
+      "sourceNote": "CCDR 방글라데시편은 탄소가격 누적 재정수입 총액(십억 USD)을 제시하지 않음",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-3a9a86388734|% of GDP/yr",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "연간 세수(GDP 대비) (범위 상한)",
+      "indicatorId": "B-014_revenue_gdp_share_max",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3a9a86388734",
+        "labelKo": "연간 세수(GDP 대비) (범위 상한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3a9a86388734|% of GDP/yr|technology=범용|B-014_revenue_gdp_share_max",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "연간 세수(GDP 대비) (범위 상한)",
+      "sourceLabelEn": "Annual revenue (% of GDP)",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ca151feccf73|% of GDP/yr",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "연간 세수(GDP 대비) (범위 하한)",
+      "indicatorId": "B-014_revenue_gdp_share_min",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ca151feccf73",
+        "labelKo": "연간 세수(GDP 대비) (범위 하한)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ca151feccf73|% of GDP/yr|technology=범용|B-014_revenue_gdp_share_min",
+      "sourceCaveat": "[값의 성격] 모델(CCDR 시뮬레이션) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceLabel": "연간 세수(GDP 대비) (범위 하한)",
+      "sourceLabelEn": "Annual revenue (% of GDP)",
+      "sourceNote": "[값의 성격] 모델(CCDR 시뮬레이션) / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] CCDR 2022 발간 / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [기술코드] 1.1_observation 의 tech_id 열에 2_meta_info 의 tech_ids 와 동일한 값을, attr_1(기후기술 연계 근거) 열에 판정 근거와 근거자료를 지표별로 기입했습니다. 요소↔기술 매핑의 관계 유형·근거는 별첨2 「31_map_element_tech 기술매핑대장」 참조. [방글라데시] 원천은 World Bank Bangladesh CCDR(2022) Table 8 「Impact of Carbon Tax, 2030」 입니다. 방글라데시 CCDR 은 탄소가격 US$10/tCO2 · US$25/tCO2 두 수준을 제시하므로, 지표ID 접미사를 ct10·ct25 로 두어 시나리오를 구분했습니다. 배출 감축률과 GDP 성장률 비용은 원표의 부호(감소·비용)를 반영해 음수로 기입했습니다.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-b5876ff1adc3",
+      "labelKo": "GDP 영향",
+      "recordCount": 4,
+      "unit": "%p (GDP 성장률)",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f3fb8b4b017f",
+      "labelKo": "권고 탄소가격 경로",
+      "recordCount": 2,
+      "unit": "USD/tCO₂e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2ff22836a17a",
+      "labelKo": "누적 추가 세수",
+      "recordCount": 1,
+      "unit": "십억 USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 10,
+      "key": "measure-195d31a84a4c",
+      "labelKo": "배출 감소율",
+      "recordCount": 10,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3a9a86388734",
+      "labelKo": "연간 세수(GDP 대비) (범위 상한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ca151feccf73",
+      "labelKo": "연간 세수(GDP 대비) (범위 하한)",
+      "recordCount": 1,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    }
+  ],
+  "observationCount": 19,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

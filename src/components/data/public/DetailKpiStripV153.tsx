@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import type { CardSummaryV140 } from "../../../data/cardSummariesV140";
 import type {
   VietnamEntityV124,
@@ -95,10 +96,11 @@ export function kpiTilesV153(
 
 export default function DetailKpiStripV153({ elementId, observations, entities, indicatorFamilyCount }: Props) {
   const [card, setCard] = useState<CardSummaryV140 | null | undefined>(undefined);
+  const dataCountryV158 = useDataCountryV158();
   useEffect(() => {
     let cancelled = false;
     setCard(undefined);
-    loadCardSummariesV140()
+    loadCardSummariesV140(dataCountryV158)
       .then((cards) => {
         if (!cancelled) setCard(cards.get(elementId) ?? null);
       })
@@ -108,7 +110,7 @@ export default function DetailKpiStripV153({ elementId, observations, entities, 
     return () => {
       cancelled = true;
     };
-  }, [elementId]);
+  }, [dataCountryV158, elementId]);
   const tiles = useMemo(
     () => kpiTilesV153(card ?? null, observations, entities, indicatorFamilyCount),
     [card, entities, indicatorFamilyCount, observations]

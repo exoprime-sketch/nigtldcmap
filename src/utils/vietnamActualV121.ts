@@ -39,6 +39,8 @@ export const VIETNAM_PUBLIC_STATUS_LABEL_V124: Record<
   "data-entry-planned": "입력 예정",
   "not-collected": "원자료 미수집",
   quarantined: "형식 검토 필요",
+  // V158: the country's delivery did not include the element.
+  "not-provided": "미제공",
 };
 
 const FIELD_LABELS: Record<string, string> = {
