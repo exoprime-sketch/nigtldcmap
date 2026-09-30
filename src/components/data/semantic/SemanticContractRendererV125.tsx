@@ -741,7 +741,7 @@ function TrendPanelV125({
   const depth = comparableYearCountV135(numericRows);
 
   if (depth <= 1) {
-    return <CategoryComparisonV125 rows={numericRows} />;
+    return <CategoryComparisonV125 rows={numericRows} markedYear={markedYear} />;
   }
 
   if (depth === 2) {
@@ -1050,8 +1050,13 @@ function ChartRowsTableV141({
   );
 }
 
-function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
+function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
   if (rows.length === 0) return null;
+  // V162: bars from several years (D-008: 2012·2013·2020) with a 연도 selector
+  // whose values table is below - the bars of the chosen year are marked, so
+  // the selector changes what the reader sees before the fold.
+  const yearsShown = new Set(rows.map((row) => row.year).filter((year) => typeof year === "number"));
+  const markYear = markedYear !== null && yearsShown.size > 1 && yearsShown.has(markedYear) ? markedYear : null;
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
@@ -1087,12 +1092,12 @@ function CategoryComparisonV125({ rows }: { rows: NumericRowV125[] }) {
     : "항목별 값";
   return (
     <VisualizationFrameV125 eyebrow="항목" title={frameTitle} block="category-bar">
-      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} />)}
+      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} markedYear={markYear} />)}
     </VisualizationFrameV125>
   );
 }
 
-function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string }) {
+function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = null }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string; markedYear?: number | null }) {
   // What each bar is, from the dataset's contract when this is its bar screen (V153).
   const comparisonContract = useAnalysisContractV153();
   const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
@@ -1127,7 +1132,12 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title }: { rows: Num
                     value={formatValueV121(row.value)}
                     unit={unit}
                   >
-                    <strong><PublicTermTextV134 text={barLabel(row)} /></strong>
+                    <strong>
+                      <PublicTermTextV134 text={barLabel(row)} />
+                      {markedYear !== null && row.year === markedYear ? (
+                        <em className="sv162-marked-year" data-testid="bar-marked-year-v162"> 선택 {markedYear}년</em>
+                      ) : null}
+                    </strong>
                     <span
                       aria-hidden="true"
                       className={scale.signed ? "sv125-contract-track--signed" : undefined}

@@ -62,6 +62,9 @@ const readLayers = (tab) =>
     const clean = (html) => html.replace(/\s(?:data-v162-control|aria-describedby|tabindex|data-tooltip[\w-]*)="[^"]*"/gu, "");
     const clone = primary.cloneNode(true);
     clone.querySelectorAll("[data-v160-rest]").forEach((node) => node.remove());
+    // The controls themselves (and the help line that echoes the choice) are
+    // not a result: a control that only rewrote its own echo changed nothing.
+    clone.querySelectorAll('[data-testid="public-selector"], .sv125-controls, label, select').forEach((node) => node.remove());
     const fold = Array.from(primary.querySelectorAll("[data-v160-rest]"))
       .filter((node) => !node.parentElement?.closest("[data-v160-rest]"))
       .map((node) => node.outerHTML)

@@ -440,6 +440,11 @@ export default function SemanticArchetypePreviewV125({
       {/* The V126 intro card restated the page title and the record counts
           above the selectors; the page's hero and the core figures row now
           say both once (V153). */}
+      {/* V162: B-021 opens on the regional comparison, which draws every
+          region with its own 권역 비교 연도 control. The selectors below drive
+          the trend and values table that follow, so they come after it -
+          above the first chart they moved nothing a reader could see. */}
+      {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
@@ -655,7 +660,6 @@ export default function SemanticArchetypePreviewV125({
       </div>
 
 
-      {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
 
       {(numericRows.length > 0 ||
         textRows.length > 0 ||

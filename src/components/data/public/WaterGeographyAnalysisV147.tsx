@@ -30,7 +30,6 @@ export function BasinAreaAnalysisV147({ entities }: { entities: VietnamEntityV12
   const label = BASIN_MEASURES.find(([k]) => k === measure)![1];
   return <section className="detail146" data-testid="basin-area-v147">
     <h3>유역 전체 면적과 베트남 내 면적</h3><p className="detail146-note"><PublicTermTextV134 text="국경을 넘는 유역 전체와 베트남에 속한 면적을 구분합니다. 문헌 값과 GIS 산출값은 계산 기준이 달라 별도로 제공합니다." /></p>
-    <label className="detail146-select">면적 기준<select aria-label="유역 면적 기준" value={measure} onChange={(e) => setMeasure(e.target.value)}>{BASIN_MEASURES.map(([key, title]) => <option key={key} value={key}>{title}</option>)}</select></label>
     {/* Each basin holds its whole area and the part inside Viet Nam: a pair
         on one axis (V153 contract: dumbbell). Rows missing either value stay
         in the bars and the table below, never invented. */}
@@ -48,6 +47,9 @@ export function BasinAreaAnalysisV147({ entities }: { entities: VietnamEntityV12
         </section>
       ) : null;
     })()}
+    {/* V162: the area basis picks the bars below, not the pair chart above -
+        so it sits here, beside the chart it changes. */}
+    <label className="detail146-select">면적 기준<select aria-label="유역 면적 기준" value={measure} onChange={(e) => setMeasure(e.target.value)}>{BASIN_MEASURES.map(([key, title]) => <option key={key} value={key}>{title}</option>)}</select></label>
     <section className="d153-block" data-analysis-block="category-bar"><AnalysisBarsV147 title={label} unit="km²" rows={rows.map((r) => ({ id: r.recordId, label: r.name || "유역명 미기재", value: finiteV147(r.normalizedAttributes?.[measure]) ? r.normalizedAttributes[measure] as number : null }))} /></section>
     <div className="detail146-table" data-analysis-block="table"><table><caption>8대 유역 면적 비교 · km² · 전국 집계 행 제외</caption><thead><tr><th scope="col">유역</th>{BASIN_MEASURES.map(([k,t]) => <th key={k} scope="col">{t}</th>)}<th scope="col">국경 공유</th></tr></thead><tbody>{rows.map((r) => <tr key={r.recordId}><th scope="row">{r.name}</th>{BASIN_MEASURES.map(([k]) => <td key={k}>{formatValueV121(r.normalizedAttributes?.[k])}</td>)}<td>{String(r.normalizedAttributes?.["국경_공유"] || "미기재")}</td></tr>)}</tbody></table></div>
     <p className="detail146-note">현재 지도에는 유역 경계가 제공되지 않습니다. 대표 위치를 유역 전체 범위로 해석하지 마세요.</p>
