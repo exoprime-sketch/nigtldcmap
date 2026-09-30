@@ -1,364 +1,406 @@
 {
- "schema": "jcm-projects-v157-2",
- "retrievedAt": "2026-09-30T00:00:00Z",
- "registryUrl": "https://www.jcm.go.jp/jc/vn-projects",
- "csvUrl": "https://www.jcm.go.jp/jc/wp-content/uploads/sites/3/JCM_Projects_data.csv",
- "totalRegisteredProjects": 20,
- "note": "Registry CSV (JCM_Projects_data.csv, column 'Location of project') contains 4 sub-lines per row: country / province-or-N/A / site address / GPS coordinates. Province is read from whichever sub-line names it (the dedicated province line, or the site-address line when the province line is 'N/A'). No project beyond VN020 is registered for Viet Nam as of retrieval (vn-projects list page and CSV both list exactly VN001-VN020).",
- "projects": [
-  {
-   "id": "VN001",
-   "title": "Eco-Driving by Utilizing Digital Tachograph System",
-   "locationText": "[Hanoi Operations] Hanoi (site: Quang Minh IP, Me Linh); [Ho Chi Minh City Operations] Binh Duong Province (site: Song Than II Industrial Zone, Di An District)",
-   "provinces63": [
-    "VN-HN",
-    "VN-57"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn001/",
-   "deliveredLocation": "[Hanoi Operations] Hanoi                         [Ho Chi Minh City Operations] Binh Duong Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN002",
-   "title": "Promotion of green hospitals by improving efficiency / environment in national hospitals in Vietnam",
-   "locationText": "Province/state field = N/A; site address names [Location 1] Ho Chi Minh City / Ward 12, District 10 (People's Hospital 115) and [Location 2] Hanoi / Hoan Kiem District (Viet Duc Hospital)",
-   "provinces63": [
-    "VN-SG",
-    "VN-HN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn002/",
-   "deliveredLocation": "N/A",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN003",
-   "title": "Low carbon hotel project in Vietnam: Improving the energy efficiency of commercial buildings by utilization of high efficiency equipment",
-   "locationText": "Province/state field = N/A; site address names [Location1] Hotel Nikko Hanoi, 84 Tran Nhan Tong Street, Hanoi and [Location2] Renaissance Riverside Hotel Saigon, 8-15 Ton Duc Thang Street, District 1, Ho Chi Minh City",
-   "provinces63": [
-    "VN-HN",
-    "VN-SG"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn003/",
-   "deliveredLocation": "N/A",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN004",
-   "title": "Introduction of amorphous high efficiency transformers in power distribution systems in the southern part of Viet Nam",
-   "locationText": "(1)An Giang Province; (2)Ba Ria-Vung Tau Province; (3)Bac Lieu Province; (4)Ben Tre Province; (5)Binh Duong Province; (6)Binh Phuoc Province; (7)Binh Thuan Province; (8)Ca Mau Province; (9)Can Tho City; (10)Dong Thap Province; (11)Hau Giang Province; (12)Kien Giang Province; (13)Long An Province; (14)Ninh Thuan Province; (15)Soc Trang Province; (16)Tay Ninh Province; (17)Tien Giang Province; (18)Tra Vinh Province; (19)Vinh Long Province -- EVN Southern Power Corporation (EVNSPC) service area",
-   "provinces63": [
-    "VN-44",
-    "VN-43",
-    "VN-55",
-    "VN-50",
-    "VN-57",
-    "VN-58",
-    "VN-40",
-    "VN-59",
-    "VN-CT",
-    "VN-45",
-    "VN-73",
-    "VN-47",
-    "VN-41",
-    "VN-36",
-    "VN-52",
-    "VN-37",
-    "VN-46",
-    "VN-51",
-    "VN-49"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn004/",
-   "deliveredLocation": "(1)An Giang Province; (2)Ba Ria-Vung Tau Province; (3)Bac Lieu Province; (4)Ben Tre Province; (5)Binh Duong Province; (6)Binh Phuoc Province; (7)Binh Thuan Prov",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN005",
-   "title": "Introduction of High Efficiency Air-conditioning in Hotel",
-   "locationText": "Province/state field = N/A; site address: Hanoi City",
-   "provinces63": [
-    "VN-HN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn005/",
-   "deliveredLocation": "N/A",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN006",
-   "title": "Energy saving and work efficiency improvement by introducing a new chip-on-board LED system in Vietnam",
-   "locationText": "Quang Tri Province; site address: Dong Ha",
-   "provinces63": [
-    "VN-25"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn006/",
-   "deliveredLocation": "Quang Tri Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN007",
-   "title": "Introduction of Solar PV System at shopping mall in Ho Chi Minh",
-   "locationText": "Site-address line: Lot PT1, Hi-tech Healthcare Park, 532A Kinh Duong Vuong, Binh Tri Dong B ward, Binh Tan District; city line (given after the address in this row): Ho Chi Minh City",
-   "provinces63": [
-    "VN-SG"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn007/",
-   "deliveredLocation": "Lot PT1, Hi-tech Healthcare Park, 532A Kinh Duong Vuong, Binh Tri Dong B ward, Binh Tan District",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN008",
-   "title": "Introduction of Amorphous High Efficiency Transformers in Southern and Central Power Grids",
-   "locationText": "\"Province/City etc. corresponding to the location of headquarters of each regional power corporations and district power companies involved\": 1.An Giang; 2.Ba Ria Vung Tau; 3.Bac Lieu; 4.Ben Tre; 5.Binh Duong; 6.Binh Phuoc; 7.Binh Thuan; 8.Ca Mau; 9.Can Tho City; 10.Dong Thap; 11.Hau Giang; 12.Kien Giang; 13.Lam Dong; 14.Long An; 15.Ninh Thuan; 16.Soc Trang; 17.Tay Ninh; 18.Tien Giang; 19.Tra Vinh; 20.Vinh Long; 21.Ho Chi Minh City; 22.Binh Dinh; 23.Dak Lak; 24.Dak Nong; 25.Gia Lai; 26.Kon Tum; 27.Phu Yen; 28.Quang Binh; 29.Quang Nam; 30.Quang Ngai; 31.Quang Tri; 32.Thua Thien Hue; 33.Ho Chi Minh City; 34.Da Nang City. NOTE: this list is headquarters locations of the partner power corporations/district companies, not a confirmed as-built map of transformer installation sites.",
-   "provinces63": [
-    "VN-44",
-    "VN-43",
-    "VN-55",
-    "VN-50",
-    "VN-57",
-    "VN-58",
-    "VN-40",
-    "VN-59",
-    "VN-CT",
-    "VN-45",
-    "VN-73",
-    "VN-47",
-    "VN-35",
-    "VN-41",
-    "VN-36",
-    "VN-52",
-    "VN-37",
-    "VN-46",
-    "VN-51",
-    "VN-49",
-    "VN-SG",
-    "VN-31",
-    "VN-33",
-    "VN-72",
-    "VN-30",
-    "VN-28",
-    "VN-32",
-    "VN-24",
-    "VN-27",
-    "VN-29",
-    "VN-25",
-    "VN-26",
-    "VN-DN"
-   ],
-   "status": "location-unconfirmed",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn008/",
-   "deliveredLocation": "Province/City etc. corresponding to the location of headquarters of each regional power corporations and district power companies involved: 1. An Giang Province",
-   "matchesDelivered": true,
-   "mapUse": "list-only",
-   "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)"
-  },
-  {
-   "id": "VN009",
-   "title": "Introduction of Energy-Efficient Air Conditioners in RICOH IMAGING PRODUCTS (Vietnam) CO., LTD",
-   "locationText": "Hanoi; site address: Plot A7, Sai Dong B Industrial Zone, Long Bien District",
-   "provinces63": [
-    "VN-HN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn009/",
-   "deliveredLocation": "Hanoi",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN010",
-   "title": "Installation of Container Formation Facility at Lead Acid Battery Factory of Hitachi Chemical Energy Technology (Vietnam) Co., Ltd.",
-   "locationText": "Dong Nai Province; site address: Nhon Trach 3 IP, Second Phase, Nhon Trach District",
-   "provinces63": [
-    "VN-39"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn010/",
-   "deliveredLocation": "Dong Nai Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN011",
-   "title": "Installation of Energy Saving Equipment in Lens Factory",
-   "locationText": "Binh Duong Province; site address: 20 VSIP 2 Street 4, Viet Nam Singapore Industrial Park 2, Hoa Phu Ward, Thu Dau Mot City",
-   "provinces63": [
-    "VN-57"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn011/",
-   "deliveredLocation": "Binh Duong Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN012",
-   "title": "Introduction of High Efficiency Water Pumps in Da Nang City",
-   "locationText": "Province/state field = N/A; site address: Da Nang city, Cam Le district, West Hoa ward",
-   "provinces63": [
-    "VN-DN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn012/",
-   "deliveredLocation": "N/A",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN013",
-   "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids",
-   "locationText": "\"Province/state/province etc. corresponding to the location of headquarters of four partner companies\": 1. EVN Southern Power Corporation (EVNSPC) - Ho Chi Minh City; 2. EVN Hanoi (EVNHN) - Hanoi; 3. Khanh Hoa Power Joint Stock Company (KHPC) - Khanh Hoa Province; 4. Dong Nai Power Company (Dong Nai PC) - Dong Nai Province. NOTE: headquarters locations of the four partner companies, not a confirmed as-built map of transformer installation sites.",
-   "provinces63": [
-    "VN-SG",
-    "VN-HN",
-    "VN-34",
-    "VN-39"
-   ],
-   "status": "location-unconfirmed",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn013/",
-   "deliveredLocation": "Province/state/province etc. corresponding to the location of headquarters of four partner companies: 1. EVN Southern Power Corporation (EVNSPC) Ho Chi Minh Cit",
-   "matchesDelivered": true,
-   "mapUse": "list-only",
-   "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)"
-  },
-  {
-   "id": "VN014",
-   "title": "Introduction of high-efficient wire stranding machines to the factory of YAZAKI EDS VIETNAM Co., LTD.",
-   "locationText": "Province/state field = N/A; site address: Lot C3-2, Block C3, Tan Phu Trung I.P, Tan Phu Trung Commune, Cu Chi District, Ho Chi Minh City",
-   "provinces63": [
-    "VN-SG"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn014/",
-   "deliveredLocation": "N/A",
-   "matchesDelivered": false,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN015",
-   "title": "Energy Saving in Factories with Air-Conditioning Control System",
-   "locationText": "Ho Chi Minh City; site addresses: Saigon High-Tech Park, District 9 (x4 sites); Tan Thuan Export Processing Zone, District 7 (x2 sites)",
-   "provinces63": [
-    "VN-SG"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn015/",
-   "deliveredLocation": "Ho Chi Minh City",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN016",
-   "title": "Installation of High Efficiency Kiln in Sanitary Ware Manufacturing Factory",
-   "locationText": "Hung Yen Province; site address: Lot M7,M8,N3&RE8 Thang Long Industrial Park II, Phung Chi Kien Ward, My Hao Town",
-   "provinces63": [
-    "VN-66"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn016/",
-   "deliveredLocation": "Hung Yen Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN017",
-   "title": "106MW Solar Power Project in An Giang Province",
-   "locationText": "An Giang Province; site address: An Hao Commune, Tinh Bien District",
-   "provinces63": [
-    "VN-44"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn017/",
-   "deliveredLocation": "An Giang Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN018",
-   "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids II",
-   "locationText": "1. Khanh Hoa Province (Nha Trang City); 2. Dong Nai Province (Bien Hoa City); 3. Hanoi (Hoan Kiem District)",
-   "provinces63": [
-    "VN-34",
-    "VN-39",
-    "VN-HN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn018/",
-   "deliveredLocation": "1. Khanh Hoa Province; 2. Dong Nai Province; 3. Hanoi",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN019",
-   "title": "Introduction of 2.5MW Rooftop Solar Power System to Food Factory and Garment Factory in Vietnam",
-   "locationText": "LOTTE VIETNAM: Binh Duong Province (Thu Dau Mot City, Phu Tho Ward); AN NAM MATSUOKA GARMENT: Nghe An Province (Hung Nguyen District, Hung Tay Commune)",
-   "provinces63": [
-    "VN-57",
-    "VN-22"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn019/",
-   "deliveredLocation": "LOTTE VIETNAM: Binh Duong Province; AN NAM MATSUOKA GARMENT: Nghe An Province",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  },
-  {
-   "id": "VN020",
-   "title": "Introduction of 0.4MW Rooftop Solar Power System to Aluminum Wheel Manufacturing Factory in Hanoi, Vietnam",
-   "locationText": "Hanoi; site address: Dong Anh District",
-   "provinces63": [
-    "VN-HN"
-   ],
-   "status": "province",
-   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn020/",
-   "deliveredLocation": "Hanoi",
-   "matchesDelivered": true,
-   "mapUse": "count"
-  }
- ],
- "unconfirmed": [],
- "mismatches": [
-  {
-   "id": "VN002",
-   "reason": "Delivered text = 'N/A' (from the CSV's dedicated province field). Source's site-address field names Ho Chi Minh City and Hanoi explicitly."
-  },
-  {
-   "id": "VN003",
-   "reason": "Delivered text = 'N/A' (province field). Source's site-address field names Hanoi and Ho Chi Minh City explicitly."
-  },
-  {
-   "id": "VN005",
-   "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Hanoi City' explicitly."
-  },
-  {
-   "id": "VN007",
-   "reason": "Delivered text carries the street-address line, not the province-name line. Source's separate line names 'Ho Chi Minh City' explicitly."
-  },
-  {
-   "id": "VN012",
-   "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Da Nang city' explicitly."
-  },
-  {
-   "id": "VN014",
-   "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Ho Chi Minh City' explicitly."
-  }
- ],
- "caveats": [
-  "VN008 and VN013 location fields list the headquarters locations of the partner power corporations/companies involved in a multi-province grid project, not a confirmed as-built map of where transformers were actually installed. Provinces63 for these two follow the source text as written per the task's mapping rule, but this is a proxy, not a site-level confirmation.",
-  "VN004's and VN008's delivered location text in the input file is truncated (cut off mid-list); provinces63 here uses the full untruncated list from the registry CSV/project page, and matchesDelivered is true because the truncated portion is consistent with the full source list."
- ],
- "reviewedAt": "2026-09-30",
- "reviewedBy": "main session: registry CSV re-fetched and compared (20 rows, VN001-VN020)"
+  "schema": "jcm-projects-v157-2",
+  "retrievedAt": "2026-09-30T00:00:00Z",
+  "registryUrl": "https://www.jcm.go.jp/jc/vn-projects",
+  "csvUrl": "https://www.jcm.go.jp/jc/wp-content/uploads/sites/3/JCM_Projects_data.csv",
+  "totalRegisteredProjects": 20,
+  "note": "Registry CSV (JCM_Projects_data.csv, column 'Location of project') contains 4 sub-lines per row: country / province-or-N/A / site address / GPS coordinates. Province is read from whichever sub-line names it (the dedicated province line, or the site-address line when the province line is 'N/A'). No project beyond VN020 is registered for Viet Nam as of retrieval (vn-projects list page and CSV both list exactly VN001-VN020).",
+  "projects": [
+    {
+      "id": "VN001",
+      "title": "Eco-Driving by Utilizing Digital Tachograph System",
+      "locationText": "[Hanoi Operations] Hanoi [Ho Chi Minh City Operations] Binh Duong Province | [Hanoi Operations] Quang Minh IP, Me Linh [Ho Chi Minh City Operations] Song Than II Industrial Zone, Di An District",
+      "provinces63": [
+        "VN-57",
+        "VN-HN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn001/",
+      "deliveredLocation": "[Hanoi Operations] Hanoi                         [Ho Chi Minh City Operations] Binh Duong Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN002",
+      "title": "Promotion of green hospitals by improving efficiency / environment in national hospitals in Vietnam",
+      "locationText": "[Location 1] Ho Chi Minh City / Ward 12, District 10, [Location 2] Hanoi / Hoan Kiem District",
+      "provinces63": [
+        "VN-HN",
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn002/",
+      "deliveredLocation": "N/A",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN003",
+      "title": "Low carbon hotel project in Vietnam: Improving the energy efficiency of commercial buildings by utilization of high efficiency equipment",
+      "locationText": "[Location1] Hotel Nikko Hanoi: 84 Tran Nhan Tong Street, Hanoi; [Location2] Renaissance Riverside Hotel Saigon: 8-15 Ton Duc Thang Street, District 1, Ho Chi Minh City",
+      "provinces63": [
+        "VN-HN",
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn003/",
+      "deliveredLocation": "N/A",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN004",
+      "title": "Introduction of amorphous high efficiency transformers in power distribution systems in the southern part of Viet Nam",
+      "locationText": "(1)An Giang Province; (2)Ba Ria-Vung Tau Province; (3)Bac Lieu Province; (4)Ben Tre Province; (5)Binh Duong Province; (6)Binh Phuoc Province; (7)Binh Thuan Province; (8)Ca Mau Province; (9)Can Tho City; (10)Dong Thap Province; (11)Hau Giang Province; (12)Kien Giang Province; (13)Long An Province; (14)Ninh Thuan Province; (15)Soc Trang Province; (16)Tay Ninh Province; (17)Tien Giang Province; (18)Tra Vinh Province; (19)Vinh Long Province | (1)Xuyen City; (2)Vung Tau City; (3)Bac Lieu City; (4)Chau Thanh District; (5)Thu Dau Mot City; (6)Dong Xoai Town; (7)Phan Thiet City; (8)Ca Mau City; (9)Ninh Kieu District; (10)Cao Lanh City; (11)Vi Thanh City; (12)Tach Gia City; (13)Tan An City; (14)Phan Rang-Thap Cham City; (15)Soc Trang City; (16)Tay Ninh Town; (17)My Tho City; (18)Tra Vinh City; (19)Vinh Long City",
+      "provinces63": [
+        "VN-36",
+        "VN-37",
+        "VN-40",
+        "VN-41",
+        "VN-43",
+        "VN-44",
+        "VN-45",
+        "VN-46",
+        "VN-47",
+        "VN-49",
+        "VN-50",
+        "VN-51",
+        "VN-52",
+        "VN-55",
+        "VN-57",
+        "VN-58",
+        "VN-59",
+        "VN-73",
+        "VN-CT"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn004/",
+      "deliveredLocation": "(1)An Giang Province; (2)Ba Ria-Vung Tau Province; (3)Bac Lieu Province; (4)Ben Tre Province; (5)Binh Duong Province; (6)Binh Phuoc Province; (7)Binh Thuan Prov",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN005",
+      "title": "Introduction of High Efficiency Air-conditioning in Hotel",
+      "locationText": "Hanoi City",
+      "provinces63": [
+        "VN-HN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn005/",
+      "deliveredLocation": "N/A",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN006",
+      "title": "Energy saving and work efficiency improvement by introducing a new chip-on-board LED system in Vietnam",
+      "locationText": "Quang Tri Province | Dong ha",
+      "provinces63": [
+        "VN-25"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn006/",
+      "deliveredLocation": "Quang Tri Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN007",
+      "title": "Introduction of Solar PV System at shopping mall in Ho Chi Minh",
+      "locationText": "Lot PT1, Hi-tech Healthcare Park, 532A Kinh Duong Vuong, Binh Tri Dong B ward, Binh Tan District | Ho Chi Minh City",
+      "provinces63": [
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn007/",
+      "deliveredLocation": "Lot PT1, Hi-tech Healthcare Park, 532A Kinh Duong Vuong, Binh Tri Dong B ward, Binh Tan District",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN008",
+      "title": "Introduction of Amorphous High Efficiency Transformers in Southern and Central Power Grids",
+      "locationText": "Province/City etc. corresponding to the location of headquarters of each regional power corporations and district power companies involved: 1. An Giang Province; 2. Ba Ria Vung Tau Province; 3. Bac Lieu Province; 4. Ben Tre Province; 5. Binh Duong Province; 6. Binh Phuoc Province; 7. Binh Thuan Province; 8. Ca Mau Province; 9. Can Tho City; 10. Dong Thap; 11. Hau Giang; 12. Kien Giang; 13. Lam Dong Province; 14. Long An Province; 15. Ninh Thuan Province; 16. Soc Trang Province; 17. Tay Ninh Province; 18. Tien Giang Province; 19. Tra Vinh Province; 20. Vinh Long Province; 21. Ho Chi Minh City; 22. Binh Dinh Province; 23. Dak lak Province; 24. Dak Nong Province; 25. Gia Lai Province; 26. Kon Tum Province; 27. Phu Yen Province; 28. Quang Binh Province; 29. Quang Nam Province; 30. Quang Ngai Province; 31. Quang Tri Province; 32. Thua Thien Hue Province; 33. Ho Chi Minh City; 34. Da Nang City. | 1. Xuyen City; 2. Vung Tau City; 3. Bac Lieu City; 4. Chau Thanh District; 5. Thu Dau Mot City; 6. Dong Xoai Town; 7. Phan Thiet City; 8. Ca Mau City; 9. Ninh Kieu District; 10. Cao Lanh City; 11. Vi Thanh City; 12. Tach Gia City; 13. Da Lat City; 14. Tan An City; 15. Phan Rang-Thap Cham City; 16. Soc Trang City; 17. Tay Ninh Town; 18. My Tho City; 19. Tra Vinh City; 20. Vinh Long City; 21. Thu Duc District; 22. Quy Nhon City; 23. Buon Ma Thuat City; 24. Gia Nghia Town; 25. Pleiku City; 26. Kon Tum City; 27. Tuy Hoa City; 28. Dong Hoi City; 29. Tam Ky City; 30. Quang Ngai City; 31. Dong Ha City; 32. Hue City; 33. District 1; 34. Hai Chau District.",
+      "provinces63": [
+        "VN-24",
+        "VN-25",
+        "VN-26",
+        "VN-27",
+        "VN-28",
+        "VN-29",
+        "VN-30",
+        "VN-31",
+        "VN-32",
+        "VN-33",
+        "VN-35",
+        "VN-36",
+        "VN-37",
+        "VN-40",
+        "VN-41",
+        "VN-43",
+        "VN-44",
+        "VN-45",
+        "VN-46",
+        "VN-47",
+        "VN-49",
+        "VN-50",
+        "VN-51",
+        "VN-52",
+        "VN-55",
+        "VN-57",
+        "VN-58",
+        "VN-59",
+        "VN-72",
+        "VN-73",
+        "VN-CT",
+        "VN-DN",
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn008/",
+      "deliveredLocation": "Province/City etc. corresponding to the location of headquarters of each regional power corporations and district power companies involved: 1. An Giang Province",
+      "matchesDelivered": true,
+      "mapUse": "list-only",
+      "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)",
+      "locationStatedAs": "headquarters",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN009",
+      "title": "Introduction of Energy-Efficient Air Conditioners in RICOH IMAGING PRODUCTS (Vietnam) CO., LTD",
+      "locationText": "Hanoi | Plot A7, Sai Dong B Industrial Zone, Long Bien District",
+      "provinces63": [
+        "VN-HN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn009/",
+      "deliveredLocation": "Hanoi",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN010",
+      "title": "Installation of Container Formation Facility at Lead Acid Battery Factory of Hitachi Chemical Energy Technology (Vietnam) Co., Ltd.",
+      "locationText": "Dong Nai Province | Nhon Trach 3 IP, Second Phase, Nhon Trach District",
+      "provinces63": [
+        "VN-39"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn010/",
+      "deliveredLocation": "Dong Nai Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN011",
+      "title": "Installation of Energy Saving Equipment in Lens Factory",
+      "locationText": "Binh Duong Province | 20 VSIP 2 Street 4, Viet Nam Singapore Industrial Park 2, Hoa Phu Ward, Thu Dau Mot City",
+      "provinces63": [
+        "VN-57"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn011/",
+      "deliveredLocation": "Binh Duong Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN012",
+      "title": "Introduction of High Efficiency Water Pumps in Da Nang City",
+      "locationText": "Da Nang city, Cam Le district, West Hoa ward",
+      "provinces63": [
+        "VN-DN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn012/",
+      "deliveredLocation": "N/A",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN013",
+      "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids",
+      "locationText": "Province/state/province etc. corresponding to the location of headquarters of four partner companies: 1. EVN Southern Power Corporation (EVNSPC) Ho Chi Minh City; 2. EVN Hanoi (EVNHN) Hanoi; 3. Khanh Hoa Power Joint Stock Company (KHPC) Khanh Hoa Province; 4. Dong Nai Power Company (Dong Nai PC) Dong Nai Province | 1. EVN Southern Power Corporation (EVNSPC) Ward, District 1, HCMC; 2. EVN Hanoi (EVNHN) Hoan Kiem District, Hanoi; 3. Khanh Hoa Power Joint Stock Company (KHPC) Nha Trang City; 4. Dong Nai Power Company (Dong Nai PC) Bien Hoa City",
+      "provinces63": [
+        "VN-34",
+        "VN-39",
+        "VN-HN",
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn013/",
+      "deliveredLocation": "Province/state/province etc. corresponding to the location of headquarters of four partner companies: 1. EVN Southern Power Corporation (EVNSPC) Ho Chi Minh Cit",
+      "matchesDelivered": true,
+      "mapUse": "list-only",
+      "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)",
+      "locationStatedAs": "headquarters",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN014",
+      "title": "Introduction of high-efficient wire stranding machines to the factory of YAZAKI EDS VIETNAM Co., LTD.",
+      "locationText": "N/A | Lot C3-2, Block C3, Tan Phu Trung I.P, Tan Phu Trung Commune, Cu Chi District, Ho Chi Minh City",
+      "provinces63": [
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn014/",
+      "deliveredLocation": "N/A",
+      "matchesDelivered": false,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN015",
+      "title": "Energy Saving in Factories with Air-Conditioning Control System",
+      "locationText": "Ho Chi Minh City | (1) Saigon High-Tech Park, District 9; (2) Saigon High-Tech Park, District 9; (3) Saigon High-Tech Park, District 9; (4) Saigon High-Tech Park, District 9: (5) Tan Thuan Export Processing Zone, District 7; (6) Tan Thuan Export Processing Zone, District 7",
+      "provinces63": [
+        "VN-SG"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn015/",
+      "deliveredLocation": "Ho Chi Minh City",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN016",
+      "title": "Installation of High Efficiency Kiln in Sanitary Ware Manufacturing Factory",
+      "locationText": "Hung Yen Province | Lot M7,M8,N3&RE8 Thang Long Industrial Park II, Phung Chi Kien Ward, My Hao Town",
+      "provinces63": [
+        "VN-66"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn016/",
+      "deliveredLocation": "Hung Yen Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN017",
+      "title": "106MW Solar Power Project in An Giang Province",
+      "locationText": "An Giang Province | An Hao Commune, Tinh Bien District",
+      "provinces63": [
+        "VN-44"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn017/",
+      "deliveredLocation": "An Giang Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN018",
+      "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids II",
+      "locationText": "1. Khanh Hoa Province; 2. Dong Nai Province; 3. Hanoi | 1. Nha Trang City; 2. Bien Hoa City; 3. Hoan Kiem District, Hanoi",
+      "provinces63": [
+        "VN-34",
+        "VN-39",
+        "VN-HN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn018/",
+      "deliveredLocation": "1. Khanh Hoa Province; 2. Dong Nai Province; 3. Hanoi",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN019",
+      "title": "Introduction of 2.5MW Rooftop Solar Power System to Food Factory and Garment Factory in Vietnam",
+      "locationText": "LOTTE VIETNAM: Binh Duong Province; AN NAM MATSUOKA GARMENT: Nghe An Province | LOTTE VIETNAM: Thu Dau Mot City, Phu Tho Ward; AN NAM MATSUOKA GARMENT: Hung Nguyen District, Hung Tay Commune",
+      "provinces63": [
+        "VN-22",
+        "VN-57"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn019/",
+      "deliveredLocation": "LOTTE VIETNAM: Binh Duong Province; AN NAM MATSUOKA GARMENT: Nghe An Province",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    },
+    {
+      "id": "VN020",
+      "title": "Introduction of 0.4MW Rooftop Solar Power System to Aluminum Wheel Manufacturing Factory in Hanoi, Vietnam",
+      "locationText": "Hanoi | Dong Anh District",
+      "provinces63": [
+        "VN-HN"
+      ],
+      "status": "province-verified",
+      "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn020/",
+      "deliveredLocation": "Hanoi",
+      "matchesDelivered": true,
+      "mapUse": "count",
+      "locationStatedAs": "project site",
+      "verifiedAt": "2026-09-30"
+    }
+  ],
+  "unconfirmed": [],
+  "mismatches": [
+    {
+      "id": "VN002",
+      "reason": "Delivered text = 'N/A' (from the CSV's dedicated province field). Source's site-address field names Ho Chi Minh City and Hanoi explicitly."
+    },
+    {
+      "id": "VN003",
+      "reason": "Delivered text = 'N/A' (province field). Source's site-address field names Hanoi and Ho Chi Minh City explicitly."
+    },
+    {
+      "id": "VN005",
+      "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Hanoi City' explicitly."
+    },
+    {
+      "id": "VN007",
+      "reason": "Delivered text carries the street-address line, not the province-name line. Source's separate line names 'Ho Chi Minh City' explicitly."
+    },
+    {
+      "id": "VN012",
+      "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Da Nang city' explicitly."
+    },
+    {
+      "id": "VN014",
+      "reason": "Delivered text = 'N/A' (province field). Source's site-address field names 'Ho Chi Minh City' explicitly."
+    }
+  ],
+  "caveats": [
+    "VN008 and VN013 location fields list the headquarters locations of the partner power corporations/companies involved in a multi-province grid project, not a confirmed as-built map of where transformers were actually installed. Provinces63 for these two follow the source text as written per the task's mapping rule, but this is a proxy, not a site-level confirmation.",
+    "VN004's and VN008's delivered location text in the input file is truncated (cut off mid-list); provinces63 here uses the full untruncated list from the registry CSV/project page, and matchesDelivered is true because the truncated portion is consistent with the full source list."
+  ],
+  "reviewedAt": "2026-09-30",
+  "reviewedBy": "main session: registry CSV re-fetched and compared (20 rows, VN001-VN020)",
+  "verifiedAgainst": "each project's own page (map12/jcm-location-evidence-v157-2.json)",
+  "verifiedAt": "2026-09-30"
 }

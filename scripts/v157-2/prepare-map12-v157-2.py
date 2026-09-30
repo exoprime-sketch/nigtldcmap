@@ -1,9 +1,9 @@
-"""P8-2: map-ready tables for the 12 'map pending' elements (data preparation only).
+"""P8-2 (지도 12): map-ready tables for the 12 "map pending" elements.
 
-Reads the 09-22 processed_data workbooks (the 1-pager's basis) and the current
-V156 public packs, and writes one prepared table per element under
-tools/etl/countries/vnm/map12/prepared/. Nothing in public/ changes; map
-registration happens after #47 is merged.
+STATUS 2026-09-30 (세션2): the 09-22 vintage prepared/*.json this script used to write
+were removed before this branch was ever pushed (old-vintage values are not committed,
+per user instruction). Re-run this with --source pointed at the V162-refreshed data
+once feat/v162-data-refresh merges into origin/main - not before.
 
 Rules kept here (user, 2026-09-30):
 - Only rows the source itself states per province/region/site. A national
@@ -11,6 +11,19 @@ Rules kept here (user, 2026-09-30):
   allocation ("[추정치(배분)]") are excluded and listed.
 - Every crosswalk carries official URLs (tools/etl/countries/vnm/map12/*.json).
 - A name that cannot be resolved to a 63 or 34 code stops the build.
+
+V162 diff notes (세션5, 2026-09-30) confirmed against this script and the verified
+reference tables (reports/v157-2/REVIEW_V157-2.md, sections 2-3):
+- B-024: prepare_b024() already keeps only the rows whose "값의 성격" is NOT both
+  "배분" and "추정" - the NSO rice-cultivation-area rows (97 of the new delivery's 194).
+  No code change needed; re-run with the new --source.
+- C-017: the new delivery carries a per-record region column (북/중/남 + Ninh Thuan and
+  Khanh Hoa marked as special cases). When this script adds a C-017 builder, read that
+  column first; fall back to map12/c017-price-regions.json (six-region grouping, see
+  build-c017-regions-v157-2.mjs) only for a record the column leaves blank. Flag the
+  two special-case provinces on the map and in the panel.
+- C-006: session5's tally (18 projects / 27 provinces) matches verify-jcm-v157-2.mjs's
+  output exactly (mapUse === "count" rows) - no per-project reconciliation needed.
 
     python scripts/v157-2/prepare-map12-v157-2.py [--source <processed_data dir>] [--only B-002,B-024]
 """
