@@ -1,0 +1,101 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-008",
+  "entityCount": 96,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "Cooperative Climate Initiative 참여 현황 · actor",
+      "indicatorId": "C-008_actor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6241788cb128",
+        "labelKo": "Cooperative Climate Initiative 참여 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-008_actor",
+      "sourceCaveat": "[raw] ([raw]\\C-008\\) C-008_Cooperative Climate Initiative 참여 현황_nazca_actors_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-008_participant_list·_initiative_name·_theme·_participation_status·_participation_year·_climate_field)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NAZCA 등재 행위자 1건(78행 전수) — 국가 1 · 기업 51 · 기관 14 · 도시 9 · 투자자 3. [결측 해소] 구서식에서는 이 78건이 전부 값 없는 결측 행(NP·M01)으로 남고 행위자명·유형·참여 건수는 비고 문자열에만 들어 있었으나, 신서식에서는 해당 값을 속성 열로 옮겨 값 있는 레코드로 전환하고 결측 표시를 해제함 — 요소의 실질 수록 건수가 0건에서 78건으로 바뀐 부분임. [집계 대체] 구서식의 유형별·업종별 분포 행(기업 51 · 기관 14 · 도시 9 · 투자자 3 · 국가 1 · 지역 0, 업종 9종)은 본 레코드에서 직접 집계할 수 있으므로 별도 집계행을 두지 않음. [업종] 업종은 포털 원문(businessActivity) 표기를 그대로 두었으며, 미기재 행위자 45건은 공란임(값 없음이 아니라 원문 미기재). [지역구분] 포털이 행위자 소재지를 제공하지 않아 전부 「전국 / BGD」.",
+      "sourceLabel": "Cooperative Climate Initiative 참여 현황",
+      "sourceLabelEn": "Cooperative Climate Initiative Participation",
+      "sourceNote": "행위자별 참여 이니셔티브명·참여상태·참여연도는 행위자 단위 스냅샷에 포함되지 않아 M06.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "Cooperative Climate Initiative 참여 현황 · aggregate",
+      "indicatorId": "C-008_aggregate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6241788cb128",
+        "labelKo": "Cooperative Climate Initiative 참여 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-008_aggregate",
+      "sourceCaveat": "[raw] ([raw]\\C-008\\) C-008_Cooperative Climate Initiative 참여 현황_nazca_actors_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-008_participant_list·_initiative_name·_theme·_participation_status·_participation_year·_climate_field)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 포털 집계 항목 1건(15행). 포털이 직접 제공하는 stats 값과 actors[] 합산값을 함께 두되 「[집계] 산출 근거」 열에 각각 어떤 필드에서 나온 값인지 명시함. [중복 주의] 행위자 행(C-008_actor)에서 다시 집계하면 같은 값이 나오는 항목이 있으므로, 두 레코드 유형을 함께 합산하지 말 것. [국가 식별자] NAZCA 내부 countryId 14는 포털 API 재조회에 필요한 값이어서 집계 항목으로 남김.",
+      "sourceLabel": "Cooperative Climate Initiative 참여 현황",
+      "sourceLabelEn": "Cooperative Climate Initiative Participation",
+      "sourceNote": "[raw] ([raw]\\C-008\\) C-008_Cooperative Climate Initiative 참여 현황_nazca_actors_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-008_participant_list·_initiative_name·_theme·_participation_status·_participation_year·_climate_field)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 포털 집계 항목 1건(15행). 포털이 직접 제공하는 stats 값과 actors[] 합산값을 함께 두되 「[집계] 산출 근거」 열에 각각 어떤 필드에서 나온 값인지 명시함. [중복 주의] 행위자 행(C-008_actor)에서 다시 집계하면 같은 값이 나오는 항목이 있으므로, 두 레코드 유형을 함께 합산하지 말 것. [국가 식별자] NAZCA 내부 countryId 14는 포털 API 재조회에 필요한 값이어서 집계 항목으로 남김.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "Cooperative Climate Initiative 참여 현황 · unavailable",
+      "indicatorId": "C-008_unavailable",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6241788cb128",
+        "labelKo": "Cooperative Climate Initiative 참여 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-6241788cb128|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-008_unavailable",
+      "sourceCaveat": "[raw] ([raw]\\C-008\\) C-008_Cooperative Climate Initiative 참여 현황_nazca_actors_BGD_2026-08-19.json [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-008_participant_list·_initiative_name·_theme·_participation_status·_participation_year·_climate_field)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 미확보 항목 1건(3행). 값 대신 \"왜 값이 없는지\"와 재확보 경로를 기록하는 레코드임. [사유 구분] 엔드포인트는 있으나 응답이 비어 못 받은 경우(M06)와, 원 데이터 구조에 필드 자체가 없는 경우(M01)를 구분함. [코드 정정] 구서식은 참여 상태·참여 개시 연도에 NO/M01 조합을 부여했으나 표준서식 v3.2의 코드 짝 규칙(NO↔M03, NP↔M01)에 맞지 않으므로 NP/M01로 바로잡음 — 원 데이터에 필드가 없는 경우는 제도 부존(NO)이 아니라 원자료 결측(NP)에 해당함.",
+      "sourceLabel": "Cooperative Climate Initiative 참여 현황",
+      "sourceLabelEn": "Cooperative Climate Initiative Participation",
+      "sourceNote": "이니셔티브 단위 메타데이터는 엔드포인트 응답이 비어 미취득(M06). 참여 상태·참여 개시 연도는 원 데이터에 필드 자체가 없음(M01).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-6241788cb128",
+      "labelKo": "Cooperative Climate Initiative 참여 현황",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

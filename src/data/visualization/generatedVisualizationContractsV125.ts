@@ -3074,7 +3074,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "레코드 유형",
-      "기술분야_Sectors"
+      "기술분야"
     ],
     "downloadAvailable": true,
     "elementId": "D-019",

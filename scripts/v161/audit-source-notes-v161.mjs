@@ -23,6 +23,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { startStaticBuildServer, scaledTimeoutMsV150 } from "../v125/browser-runtime.mjs";
+import { countryPublicDirV158, countryRegistryV158, resolveCountryIso3V158, DEFAULT_COUNTRY_ISO3_V158 } from "../v158/country-context-v158.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const args = process.argv.slice(2);
@@ -33,10 +34,23 @@ const opt = (name, fallback) => {
 const BUILD = resolve(ROOT, opt("--build", "build"));
 const WORKERS = Number(opt("--workers", "3"));
 const ONLY = opt("--ids", null)?.split(",").map((id) => id.trim()).filter(Boolean) || null;
-const OUT = resolve(ROOT, "reports/v161/source-notes-audit-v161.json");
+// V158: another country's screens with the same patterns. --country picks the
+// catalog and the ?country= of every URL; --registry-live answers
+// data/countries.json in the browser with that country live (a country still
+// preparing is walked as published; nothing on disk changes);
+// --include-not-provided also reads the detail pages of elements the country
+// did not deliver. Without these options the run is the default country's, as before.
+const COUNTRY = resolveCountryIso3V158({ argv: args });
+const IS_DEFAULT = COUNTRY === DEFAULT_COUNTRY_ISO3_V158;
+const REGISTRY_LIVE = args.includes("--registry-live");
+const INCLUDE_NOT_PROVIDED = args.includes("--include-not-provided");
+const COUNTRY_QUERY = IS_DEFAULT ? "" : `?country=${COUNTRY}`;
+const OUT = resolve(ROOT, `reports/v161/source-notes-audit-v161${IS_DEFAULT ? "" : `-${COUNTRY.toLowerCase()}`}.json`);
 
-const catalog = JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/catalog.json"), "utf8")).elements;
-const PUBLIC_IDS = catalog.filter((element) => !["excluded", "not-provided"].includes(element.publicStatus)).map((element) => element.elementId);
+const catalog = JSON.parse(readFileSync(resolve(ROOT, countryPublicDirV158(ROOT, COUNTRY), "catalog.json"), "utf8")).elements;
+const PUBLIC_IDS = catalog
+  .filter((element) => element.publicStatus !== "excluded" && (INCLUDE_NOT_PROVIDED || element.publicStatus !== "not-provided"))
+  .map((element) => element.elementId);
 const DETAIL_IDS = ONLY ? PUBLIC_IDS.filter((id) => ONLY.includes(id)) : PUBLIC_IDS;
 
 /** The note patterns (same families the screen's judge function removes). */
@@ -75,10 +89,12 @@ export const CONTENT_ALLOWLIST_V161 = [
   [/수집현황\s*현지조사/gu, "E-004 데이터 값(수집 현황 분류)"],
   // "해당없음" as a data value (not a source): scoped to the element whose
   // detail shows it, so the same word in any other place still fails.
-  [/해당없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
+  // Bangladesh's delivery writes the same value with a space (V158-B2b).
+  [/해당\s?없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
   [/(?<=\d{4})해당 없음/gu, "E-012 표의 결측 사유 열 값('해당 없음' = 결측 아님)", ["E-012"]],
   [/해당 없음\(NMA 자체가/gu, "C-007 데이터 값(host 여부 설명)", ["C-007"]],
   [/한국 관련:\s*해당없음/gu, "A-029 데이터 값(협정의 한국 관련 여부)", ["A-029"]],
+  [/발효일:\s*해당 없음\(미발효\)/gu, "A-029 데이터 값(미발효 협정의 발효일 — 발효 전이라 날짜가 없음)", ["A-029"]],
 ];
 const URL_PATTERN_V161 = /https?:\/\/[^\s"'<>]+/gu;
 
@@ -114,6 +130,11 @@ const runtimeErrors = [];
 
 async function page() {
   const context = await browser.newContext({ locale: "ko-KR", viewport: { width: 1440, height: 1000 } });
+  if (REGISTRY_LIVE) {
+    const registry = countryRegistryV158(ROOT);
+    const live = { ...registry, countries: registry.countries.map((row) => (row.iso3 === COUNTRY ? { ...row, status: "live" } : row)) };
+    await context.route((url) => url.pathname.endsWith("/data/countries.json"), (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(live) }));
+  }
   const tab = await context.newPage();
   return { context, tab };
 }
@@ -122,7 +143,7 @@ const mainText = (tab) => tab.evaluate(() => (document.querySelector("main") || 
 // ---- finder: every card
 {
   const { context, tab } = await page();
-  await tab.goto(`${base}/#explorer`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(90_000) });
+  await tab.goto(`${base}/${COUNTRY_QUERY}#explorer`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(90_000) });
   await tab.waitForSelector('[data-testid="public-finder-card-v135"]', { timeout: scaledTimeoutMsV150(60_000) });
   for (let guard = 0; guard < 20; guard += 1) {
     const shown = await tab.$$eval('[data-testid="public-finder-card-v135"]', (nodes) => nodes.length);
@@ -142,9 +163,9 @@ const mainText = (tab) => tab.evaluate(() => (document.querySelector("main") || 
 
 // ---- home, download, map list
 for (const [surface, path, ready] of [
-  ["home", "/", ".home-featured-v139__card"],
-  ["download", "/?country=VNM#download", ".cdp-download-item[data-element-id]"],
-  ["map", "/?country=VNM&mapList=all#map", ".cdp-map-catalog-v138__item[data-map-element]"],
+  ["home", `/${COUNTRY_QUERY}`, ".home-featured-v139__card"],
+  ["download", `/?country=${COUNTRY}#download`, ".cdp-download-item[data-element-id]"],
+  ["map", `/?country=${COUNTRY}&mapList=all#map`, ".cdp-map-catalog-v138__item[data-map-element]"],
 ]) {
   const { context, tab } = await page();
   try {
@@ -168,7 +189,7 @@ async function worker() {
   while (queue.length) {
     const id = queue.shift();
     try {
-      await tab.goto(`${base}/?view=data&country=VNM&element=${id}&detailLayers=all#element-detail`, { waitUntil: "domcontentloaded", timeout: scaledTimeoutMsV150(90_000) });
+      await tab.goto(`${base}/?view=data&country=${COUNTRY}&element=${id}&detailLayers=all#element-detail`, { waitUntil: "domcontentloaded", timeout: scaledTimeoutMsV150(90_000) });
       await tab.waitForFunction(() => document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute("data-analysis-state") === "ready", null, { timeout: scaledTimeoutMsV150(60_000) }).catch(() => null);
       await tab.waitForTimeout(1200);
       const text = await mainText(tab);
@@ -192,6 +213,7 @@ for (const hit of findings) {
   byElement[key].add(`${hit.surface}: ${hit.match}`);
 }
 const summary = {
+  country: COUNTRY,
   publicElements: PUBLIC_IDS.length,
   detailPagesChecked: coverage.detailPages,
   finderCardsChecked: coverage.finderCards,

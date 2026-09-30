@@ -1,5 +1,6 @@
 import { Fragment, useMemo } from "react";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
+import { subjectParticleV158, useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
 import { useAnalysisContractV153 } from "./analysisContractContextV153";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
@@ -85,6 +86,16 @@ const ALL_SCENARIOS = "__all__";
 const NATIONAL_KEY = "__national__";
 const UNSTATED_YEAR = -1;
 const NATIONAL_REGION = /^(viet\s*nam|vietnam|vnm|전국)$/iu;
+/**
+ * A row the delivery itself marks as the national one (V158-B2b: Bangladesh's
+ * "Bangladesh" row carries 행정단위 "Country") - the card generator's rule.
+ */
+const NATIONAL_LEVEL = /^(전국|country)$/iu;
+
+/** True for the national row: named so, or marked so by the delivery. */
+function isNationalRowV158(attributes: Record<string, unknown>, region: string): boolean {
+  return NATIONAL_REGION.test(region) || NATIONAL_LEVEL.test(text(attributes["행정단위"]));
+}
 const ROW_UNIT_KEYS = ["레코드_키_string_id", "HydroBASINS_lvl6_코드_pfaf_id"];
 
 const text = (value: unknown): string => {
@@ -162,7 +173,7 @@ export function regionScenarioShapeV138(
   for (const entity of entities) {
     const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
     const region = firstKey(attributes, REGION_KEYS);
-    const isNational = Boolean(region) && NATIONAL_REGION.test(region);
+    const isNational = Boolean(region) && isNationalRowV158(attributes, region);
     if (isNational) national = true;
     else if (region) {
       regions.set(
@@ -369,7 +380,7 @@ export default function PublicRegionScenarioSummaryV138({
       const statedYear = numeric(firstKey(attributes, YEAR_KEYS));
       const year = statedYear === null ? UNSTATED_YEAR : statedYear;
       const rowRegion = firstKey(attributes, REGION_KEYS);
-      const isNational = NATIONAL_REGION.test(rowRegion);
+      const isNational = isNationalRowV158(attributes, rowRegion);
       if (region === ALL_REGIONS) {
         if (isNational) continue;
       } else if (region === NATIONAL_KEY) {
@@ -427,7 +438,7 @@ export default function PublicRegionScenarioSummaryV138({
     for (const entity of entities) {
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
       const rowRegion = firstKey(attributes, REGION_KEYS);
-      if (!rowRegion || NATIONAL_REGION.test(rowRegion)) continue;
+      if (!rowRegion || isNationalRowV158(attributes, rowRegion)) continue;
       const value = numeric(attributes[measure]);
       if (value === null) continue;
       const rowScenario = text(attributes[SCENARIO_KEY]);
@@ -461,7 +472,7 @@ export default function PublicRegionScenarioSummaryV138({
     for (const entity of entities) {
       const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
       const rowRegion = firstKey(attributes, REGION_KEYS);
-      if (!rowRegion || NATIONAL_REGION.test(rowRegion)) continue;
+      if (!rowRegion || isNationalRowV158(attributes, rowRegion)) continue;
       if (region !== ALL_REGIONS && rowRegion !== region) continue;
       const grade = text(attributes[gradeKey]);
       if (!grade) continue;
@@ -477,18 +488,22 @@ export default function PublicRegionScenarioSummaryV138({
       });
   }, [entities, measureMeta.gradeKey, region]);
 
+  // V158: the level-1 unit the regions are counted in - the default country's
+  // wording, another country's own from the registry (Bangladesh: Division).
+  const { word: regionWord, level1: regionLevelV158 } = useRegionWordV158();
+
   if (!shape || !measure || !series.length) return null;
 
   const unit = displayUnitV150(measureMeta.unit || "");
   const distribution = region === ALL_REGIONS;
-  const rowUnitLabel = contract?.rowUnit?.label || (shape.rowIsSubRegion ? "평가구역" : "성·시");
+  const rowUnitLabel = contract?.rowUnit?.label || (shape.rowIsSubRegion ? "평가구역" : regionWord);
   const rowIsSubRegion = Boolean(contract?.rowUnit) || shape.rowIsSubRegion;
   const regionCount = shape.regions.length;
   const regionLabel =
     region === ALL_REGIONS
       ? rowIsSubRegion
-        ? `${regionCount}개 성·시 · ${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 분포`
-        : `${regionCount}개 성·시 분포`
+        ? `${regionCount}개 ${regionWord} · ${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 분포`
+        : `${regionCount}개 ${regionWord} 분포`
       : region === NATIONAL_KEY
         ? "전국"
         : shape.regions.find((item) => item.key === region)?.label || region;
@@ -578,8 +593,10 @@ export default function PublicRegionScenarioSummaryV138({
       <p className="prs137__lede">
         {distribution
           ? (rowIsSubRegion
-              ? `${regionCount}개 성·시에 걸친 ${rowUnitLabel}별 값의 분포입니다. 값은 ${rowUnitLabel} 단위로 제공되며 성·시 값으로 합치지 않습니다. `
-              : `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, `) +
+              ? `${regionCount}개 ${regionWord}에 걸친 ${rowUnitLabel}별 값의 분포입니다. 값은 ${rowUnitLabel} 단위로 제공되며 ${regionWord} 값으로 합치지 않습니다. `
+              : regionLevelV158
+                ? `${regionCount}개 ${regionWord}${subjectParticleV158(regionWord)} 가진 값의 분포입니다. ${regionWord} 값을 평균한 전국값은 만들지 않고, `
+                : `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, `) +
             (multiYear
               ? "연도별 중앙값과 10~90 분위(지역 간 분포)를 보여줍니다. 지역을 고르면 그 지역의 원천값을 잇습니다."
               : "중앙값과 10~90 분위를 보여주고, 아래에서 지역별 값을 순위로 비교합니다.")
@@ -618,8 +635,8 @@ export default function PublicRegionScenarioSummaryV138({
           >
             <option value={ALL_REGIONS}>
               {rowIsSubRegion
-                ? `${regionCount}개 성·시 · ${rowUnitLabel} 전체 분포`
-                : `${regionCount}개 성·시 전체 분포`}
+                ? `${regionCount}개 ${regionWord} · ${rowUnitLabel} 전체 분포`
+                : `${regionCount}개 ${regionWord} 전체 분포`}
             </option>
             {shape.hasNationalRow && <option value={NATIONAL_KEY}>전국 값</option>}
             {shape.regions.map((item) => (
@@ -655,7 +672,7 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
         <div>
           <dt>단위</dt>
-          <dd>{unit ? <PublicTermTextV134 text={unit} /> : "원천 미기재"}</dd>
+          <dd>{unit ? <PublicTermTextV134 text={unit} /> : regionLevelV158 ? "—" : "원천 미기재"}</dd>
         </div>
         {measureMeta.direction && (
           <div>
@@ -669,7 +686,15 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
         <div>
           <dt>값의 단위</dt>
-          <dd>{rowIsSubRegion ? `${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 (개편 전 63개 성·시로 분류)` : "성·시(개편 전 63개)"}</dd>
+          <dd>
+            {regionLevelV158
+              ? rowIsSubRegion
+                ? `${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 (${regionCount}개 ${regionWord}로 분류)`
+                : `${regionWord}(${regionLevelV158.count}개)`
+              : rowIsSubRegion
+                ? `${rowUnitLabel} ${shape.rowUnitCount.toLocaleString("ko-KR")}개 (개편 전 63개 성·시로 분류)`
+                : "성·시(개편 전 63개)"}
+          </dd>
         </div>
       </dl>
 
@@ -742,7 +767,7 @@ export default function PublicRegionScenarioSummaryV138({
               <th scope="col">{distribution ? "중앙값" : "값"}</th>
               {distribution && <th scope="col">10분위</th>}
               {distribution && <th scope="col">90분위</th>}
-              <th scope="col">성·시 수</th>
+              <th scope="col">{regionWord} 수</th>
               {rowIsSubRegion && <th scope="col">{rowUnitLabel} 수</th>}
             </tr>
           </thead>
@@ -801,7 +826,7 @@ export default function PublicRegionScenarioSummaryV138({
       {rankedRegions.length > 1 && <section className="detail146" data-testid="region-comparison-v148" data-analysis-block="region-bar">
         <h3>{rowIsSubRegion ? `${rowUnitLabel}별 비교` : "같은 시점의 지역별 비교"}</h3>
         {comparisonYears.filter((y) => y !== UNSTATED_YEAR).length > 1 && <label>비교연도 <select aria-label="지역 비교연도" value={comparisonYear} onChange={(event) => onSelectorStateChange({ ...selectorState, year: Number(event.target.value), period: null })}>{comparisonYears.filter((y) => y !== UNSTATED_YEAR).map((y) => <option key={y} value={y}>{y}년</option>)}</select></label>}
-        <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} xAxis={measureMeta.label} yAxis={rowIsSubRegion ? rowUnitLabel : "성·시"} rows={rankedRegions.map((r) => ({ id: r.label, label: r.label, value: r.value }))} rankFold rankEdge={v153?.primary.type === "region-bar" ? 5 : undefined} />
+        <AnalysisBarsV147 title={`${measureMeta.label} · ${comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · ${scenarioLabel(comparisonScenario)}`} unit={unit} xAxis={measureMeta.label} yAxis={rowIsSubRegion ? rowUnitLabel : regionWord} rows={rankedRegions.map((r) => ({ id: r.label, label: r.label, value: r.value }))} rankFold rankEdge={v153?.primary.type === "region-bar" ? 5 : undefined} />
         <p className="detail146-note">같은 항목·시나리오·시점의 값만 비교합니다.{rankedRegions.length > (v153?.primary.type === "region-bar" ? 10 : 20) ? ` 값이 큰 ${v153?.primary.type === "region-bar" ? 5 : 10}개와 작은 ${v153?.primary.type === "region-bar" ? 5 : 10}개를 먼저 표시하며, '전체 보기'나 아래 표에서 모든 지역을 확인할 수 있습니다.` : ""} 값의 크기는 우수성이나 사업 적합성 순위를 뜻하지 않습니다.</p>
       </section>}
           </>) },
@@ -809,7 +834,7 @@ export default function PublicRegionScenarioSummaryV138({
       {rankedRegions.length > 1 && (
         <details className="prs138__ranked" data-analysis-block="table" data-testid="region-scenario-ranked-v138" open={!multiYear}>
           <summary>
-            표로 보기 · {rowIsSubRegion ? `${rankedRegions.length.toLocaleString("ko-KR")}개 ${rowUnitLabel}` : `${rankedRegions.length}개 성·시`} · {comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · {scenarioLabel(comparisonScenario)}
+            표로 보기 · {rowIsSubRegion ? `${rankedRegions.length.toLocaleString("ko-KR")}개 ${rowUnitLabel}` : `${rankedRegions.length}개 ${regionWord}`} · {comparisonYear === UNSTATED_YEAR ? periodText : `${comparisonYear}년`} · {scenarioLabel(comparisonScenario)}
           </summary>
           <div className="cdp-table-wrap">
             <table className="cdp-table prs137__table">
@@ -819,7 +844,7 @@ export default function PublicRegionScenarioSummaryV138({
               <thead>
                 <tr>
                   <th scope="col">순위</th>
-                  <th scope="col">{rowIsSubRegion ? `성·시 · ${rowUnitLabel}` : "성·시"}</th>
+                  <th scope="col">{rowIsSubRegion ? `${regionWord} · ${rowUnitLabel}` : regionWord}</th>
                   <th scope="col">값</th>
                 </tr>
               </thead>

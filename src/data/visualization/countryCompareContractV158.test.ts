@@ -2,6 +2,9 @@ import { describe, expect, test } from "@jest/globals";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
+import { sameUnitV158 } from "../../components/data/public/CountryCompareBlockV158";
+import { countryPublicDirV158, DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
+
 /**
  * V158: the visualization contract now states, per element, whether it can be
  * compared across countries and on what key. The compare block reads this, so a
@@ -68,3 +71,45 @@ describe("country compare contract V158", () => {
 function comparableCount(): number {
   return CONTRACT.rows.filter((row) => row.countryCompare?.comparable).length;
 }
+
+// V158 fix-forward (user decision 2026-09-30): representative indicator, 54 compared.
+const ROOT = resolve(__dirname, "../../..");
+const readJson = (path: string) => JSON.parse(readFileSync(resolve(ROOT, path), "utf8"));
+
+const contractV158 = readJson("src/data/visualization/publicVisualizationContractV153.json") as {
+  rows: { elementId: string; countryCompare?: { comparable: boolean; reason?: string; compareKey?: { indicatorId: string } } }[];
+};
+const exclusions = readJson("config/data-publication/country-compare-exclusions-v158.json").excluded as { elementId: string }[];
+
+describe("country compare contract V158 (fix-forward 2026-09-30)", () => {
+  test("54 elements are compared, as in the contractor's standard v1.1", () => {
+    expect(contractV158.rows.filter((row) => row.countryCompare?.comparable).length).toBe(54);
+  });
+
+  test("the elements kept out of the comparison are not compared", () => {
+    expect(exclusions.map((row) => row.elementId).sort()).toEqual(["D-004", "D-006", "D-008", "E-012"]);
+    for (const { elementId } of exclusions) {
+      expect(contractV158.rows.find((row) => row.elementId === elementId)?.countryCompare?.comparable).toBe(false);
+    }
+  });
+
+  test("the compare key is the indicator the element's card states, where the card names one", () => {
+    const cards = readJson(`${countryPublicDirV158(DEFAULT_COUNTRY_ISO3_V158)}/home/card-summaries-v140.json`).cards as {
+      elementId: string;
+      provenance?: { headlineIndicatorIds?: string[] };
+    }[];
+    const headline = new Map(cards.map((card) => [card.elementId, card.provenance?.headlineIndicatorIds?.[0]]));
+    const differing = contractV158.rows
+      .filter((row) => row.countryCompare?.comparable && headline.get(row.elementId))
+      .filter((row) => row.countryCompare?.compareKey?.indicatorId !== headline.get(row.elementId))
+      .map((row) => row.elementId);
+    expect(differing).toEqual([]);
+  });
+
+  test("units that differ only in a superscript power are the same unit", () => {
+    expect(sameUnitV158("km2", "km²")).toBe(true);
+    expect(sameUnitV158(" m3 ", "m³")).toBe(true);
+    expect(sameUnitV158("km", "km²")).toBe(false);
+    expect(sameUnitV158("십억 US$", "십억 US$")).toBe(true);
+  });
+});

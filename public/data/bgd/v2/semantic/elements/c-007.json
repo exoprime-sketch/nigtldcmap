@@ -1,0 +1,78 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-007",
+  "entityCount": 2,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-09dd20462706|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "파리협정 제6.8조 비시장 접근법 참여 현황 · participation",
+      "indicatorId": "C-007_participation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-09dd20462706",
+        "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-09dd20462706|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-007_participation",
+      "sourceCaveat": "[raw] ([raw]\\C-007\\) C-007_파리협정 제6.8조 비시장 접근법 참여 현황_UNFCCC_GCNMA8_secretariat_update_2025-11-12.pdf [정의·범위] 1행 = 국가 참여 상태 1건. framework 속성(참여 여부·등록된 활동명·대상 분야·참여 기관·등록 일자·원본 링크)에 대응. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-007_participation_status_unfccc·_participating_body_unfccc·_registered_activity_unfccc·_activity_scope_unfccc·_registration_date_unfccc·_source_link_unfccc)를 레코드 유형 단위로 통합하고 범용 열의 값을 속성별 명명 열로 전개함. [출처 변경] 수집현황 v5.29의 지정 URL(.../cooperative-implementation/non-market-approaches)은 2026-08-19 기준 HTTP 404로 무효이며 현행 주소(unfccc.int/nma-platform)로 대체함. [지역구분] framework 「지역 구분 필요」 미지정 — 국가 단위. [기술분류] 행별 태깅 대상이나 등재 활동이 0건이라 부여할 기술이 없어 meta tech_ids를 「범용」으로 둠.",
+      "sourceLabel": "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "sourceLabelEn": "Participation in Article 6.8 Non-market Approaches",
+      "sourceNote": "등록된 활동명·대상 분야·등록 일자 — 방글라데시 명의 등재 NMA가 0건이어서 산출할 활동 자체가 부존(M03). 타국 등재 NMA 3건의 참여 당사국 해당 여부는 플랫폼 상세 레코드 미취득으로 미확인(M06).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-09dd20462706|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "파리협정 제6.8조 비시장 접근법 참여 현황 · platform_status",
+      "indicatorId": "C-007_platform_status",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-09dd20462706",
+        "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-09dd20462706|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-007_platform_status",
+      "sourceCaveat": "[raw] ([raw]\\C-007\\) C-007_파리협정 제6.8조 비시장 접근법 참여 현황_UNFCCC_GCNMA8_secretariat_update_2025-11-12.pdf [정의·범위] 1행 = 플랫폼 전체 집계 1건(GCNMA 8 기준). 방글라데시 미참여의 맥락(전체 등재가 3건에 불과)을 함께 보이기 위한 참고 레코드.",
+      "sourceLabel": "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "sourceLabelEn": "Participation in Article 6.8 Non-market Approaches",
+      "sourceNote": "[raw] ([raw]\\C-007\\) C-007_파리협정 제6.8조 비시장 접근법 참여 현황_UNFCCC_GCNMA8_secretariat_update_2025-11-12.pdf [정의·범위] 1행 = 플랫폼 전체 집계 1건(GCNMA 8 기준). 방글라데시 미참여의 맥락(전체 등재가 3건에 불과)을 함께 보이기 위한 참고 레코드.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-09dd20462706",
+      "labelKo": "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

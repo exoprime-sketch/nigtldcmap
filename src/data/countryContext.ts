@@ -49,17 +49,19 @@ export interface CountryRegistryV158 {
 export const DEFAULT_COUNTRY_ISO3_V158 = "VNM";
 
 /**
- * Data roots known at build time. The registry file is authoritative at runtime;
- * this exists so the first render can resolve a path and a `?country=` value
- * without waiting for a fetch. `countryContext.test.ts` asserts it matches.
+ * Data roots known at build time: the default country only. The registry file
+ * is authoritative at runtime and names every other country; this exists so the
+ * first render can resolve the default country's paths without waiting for a
+ * fetch. V158: other countries are no longer listed here, so adding a country
+ * takes the registry alone. `countryContext.test.ts` asserts this stays a
+ * subset of `countries.json`.
  */
 const BUNDLED_DATA_ROOTS_V158: Record<string, string> = {
-  VNM: "/data/vietnam/v2",
-  BGD: "/data/bgd/v2",
+  [DEFAULT_COUNTRY_ISO3_V158]: "/data/vietnam/v2",
 };
 
-/** Countries offered right now. Bangladesh joins when its ingest is published. */
-const BUNDLED_LIVE_ISO3_V158 = ["VNM"];
+/** Countries offered before the registry is read: the default country. */
+const BUNDLED_LIVE_ISO3_V158 = [DEFAULT_COUNTRY_ISO3_V158];
 
 export const COUNTRY_REGISTRY_URL_V158 = "data/countries.json";
 

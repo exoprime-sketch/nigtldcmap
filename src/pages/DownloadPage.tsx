@@ -8,8 +8,8 @@ import {
 import {
   getCountryDataProviderByIdV122,
   getCountryDataProviderV122,
-  listCountryDataProvidersV122,
 } from "../data/countries/countryDataProviderRegistryV122";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import {
   PublicTermHelpV134,
@@ -139,7 +139,7 @@ export default function DownloadPage({
   initialElementId = null,
   initialCountryIso3 = null,
 }: DownloadPageProps) {
-  const providers = useMemo(() => listCountryDataProvidersV122(), []);
+  const providers = useCountryDataProvidersV158();
   const normalizedInitialCountry = initialCountryIso3?.toUpperCase() || "";
   const [countrySelection, setCountrySelection] = useState(
     getCountryDataProviderV122(normalizedInitialCountry)
@@ -324,7 +324,8 @@ export default function DownloadPage({
             element.countryIso3,
             element.elementId
           ),
-          semantics: await loadElementIndicatorSemanticsV125(element.elementId),
+          // V158: the semantics of the element's own country.
+          semantics: await loadElementIndicatorSemanticsV125(element.elementId, undefined, element.countryIso3),
         }))
       );
       const prepared: PreparedDownload[] = [];

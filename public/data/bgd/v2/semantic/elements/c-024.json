@@ -1,0 +1,140 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-024",
+  "entityCount": 7,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 4,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "23"
+      },
+      "dimensions": {
+        "technology": "23"
+      },
+      "displayLabel": "REDD+ 현황 · frel_submission",
+      "indicatorId": "C-024_frel_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ce65c089ea4c",
+        "labelKo": "REDD+ 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=23|C-024_frel_submission",
+      "sourceCaveat": "[raw] ([raw]\\C-024\\) C-024_REDD+ 현황_UNFCCC_REDD_platform_Bangladesh_submissions_2026-08-19.html · C-024_REDD+ 현황_UNFCCC_FCCC-TAR-2019-BGD_FRL_TechnicalAssessment.pdf · C-024_REDD+ 현황_UNFCCC_Lima_REDD_InformationHub_2026-08-19.html · C-024_REDD+ 현황_BGD_FRL_submission_original_2019-01-03.pdf · C-024_REDD+ 현황_BGD_FRL_submission_modified_2019-07-17.pdf · C-024_REDD+ 현황_BGD_FAO_FRA2020_CountryReport_ca9972en.pdf [정의·범위] 1행 = 산림기준배출량 제출 1건. framework 속성 「FREL 제출 여부 · FREL 제출년」에 대응. 원 제출값(295,451)과 기술평가 후 값(374,253)을 각각 열로 수록. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 6개(C-024_redd_strategy_unfccc·_frel_submission_unfccc·_rbp_result_unfccc·_participating_fund_wbg·_safeguard_system_unfccc·_redd_strategy_faolex)를 레코드 유형 4개로 정리하고, 「속성1(레코드명)·속성3(값)」에 흩어져 있던 값을 속성별 명명 열로 전개함. [framework 정합] 구서식에 있던 FAO FRA 2020 산림 기초자료(산림면적 시계열 1990~2020 · 국토면적 · 산림률 · 임목축적 · 기타임지 9행)는 본 요소의 framework 속성(REDD+ 전략·FREL·RBP·SIS·참여 기금) 밖이어서 수록하지 않음 — 값은 raw(FAO FRA 2020 국가보고서)에 보존됨. [지역구분] framework 「지역 구분 필요 = 지역(admin / point)」 — 방글라데시는 국가 단위 제출만 있고 하위 사업 구역 지정이 없어 전 행 「전국 / BGD」. [기술분류] framework 「데이터셋 전체」 — 산림·탄소흡수원 부문이므로 meta tech_ids에 23(탄소흡수원 기술)을 기입.",
+      "sourceLabel": "REDD+ 현황",
+      "sourceLabelEn": "REDD+ Status",
+      "sourceNote": "[raw] ([raw]\\C-024\\) C-024_REDD+ 현황_UNFCCC_REDD_platform_Bangladesh_submissions_2026-08-19.html · C-024_REDD+ 현황_UNFCCC_FCCC-TAR-2019-BGD_FRL_TechnicalAssessment.pdf · C-024_REDD+ 현황_UNFCCC_Lima_REDD_InformationHub_2026-08-19.html · C-024_REDD+ 현황_BGD_FRL_submission_original_2019-01-03.pdf · C-024_REDD+ 현황_BGD_FRL_submission_modified_2019-07-17.pdf · C-024_REDD+ 현황_BGD_FAO_FRA2020_CountryReport_ca9972en.pdf [정의·범위] 1행 = 산림기준배출량 제출 1건. framework 속성 「FREL 제출 여부 · FREL 제출년」에 대응. 원 제출값(295,451)과 기술평가 후 값(374,253)을 각각 열로 수록. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 6개(C-024_redd_strategy_unfccc·_frel_submission_unfccc·_rbp_result_unfccc·_participating_fund_wbg·_safeguard_system_unfccc·_redd_strategy_faolex)를 레코드 유형 4개로 정리하고, 「속성1(레코드명)·속성3(값)」에 흩어져 있던 값을 속성별 명명 열로 전개함. [framework 정합] 구서식에 있던 FAO FRA 2020 산림 기초자료(산림면적 시계열 1990~2020 · 국토면적 · 산림률 · 임목축적 · 기타임지 9행)는 본 요소의 framework 속성(REDD+ 전략·FREL·RBP·SIS·참여 기금) 밖이어서 수록하지 않음 — 값은 raw(FAO FRA 2020 국가보고서)에 보존됨. [지역구분] framework 「지역 구분 필요 = 지역(admin / point)」 — 방글라데시는 국가 단위 제출만 있고 하위 사업 구역 지정이 없어 전 행 「전국 / BGD」. [기술분류] framework 「데이터셋 전체」 — 산림·탄소흡수원 부문이므로 meta tech_ids에 23(탄소흡수원 기술)을 기입.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "23"
+      },
+      "dimensions": {
+        "technology": "23"
+      },
+      "displayLabel": "REDD+ 현황 · participating_fund",
+      "indicatorId": "C-024_participating_fund",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ce65c089ea4c",
+        "labelKo": "REDD+ 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=23|C-024_participating_fund",
+      "sourceCaveat": "[raw] ([raw]\\C-024\\) C-024_REDD+ 현황_UNFCCC_REDD_platform_Bangladesh_submissions_2026-08-19.html · C-024_REDD+ 현황_UNFCCC_FCCC-TAR-2019-BGD_FRL_TechnicalAssessment.pdf · C-024_REDD+ 현황_UNFCCC_Lima_REDD_InformationHub_2026-08-19.html · C-024_REDD+ 현황_BGD_FRL_submission_original_2019-01-03.pdf · C-024_REDD+ 현황_BGD_FRL_submission_modified_2019-07-17.pdf · C-024_REDD+ 현황_BGD_FAO_FRA2020_CountryReport_ca9972en.pdf [정의·범위] 1행 = 참여 기금 1건. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 6개(C-024_redd_strategy_unfccc·_frel_submission_unfccc·_rbp_result_unfccc·_participating_fund_wbg·_safeguard_system_unfccc·_redd_strategy_faolex)를 레코드 유형 4개로 정리하고, 「속성1(레코드명)·속성3(값)」에 흩어져 있던 값을 속성별 명명 열로 전개함. [framework 정합] 구서식에 있던 FAO FRA 2020 산림 기초자료(산림면적 시계열 1990~2020 · 국토면적 · 산림률 · 임목축적 · 기타임지 9행)는 본 요소의 framework 속성(REDD+ 전략·FREL·RBP·SIS·참여 기금) 밖이어서 수록하지 않음 — 값은 raw(FAO FRA 2020 국가보고서)에 보존됨. [지역구분] framework 「지역 구분 필요 = 지역(admin / point)」 — 방글라데시는 국가 단위 제출만 있고 하위 사업 구역 지정이 없어 전 행 「전국 / BGD」. [기술분류] framework 「데이터셋 전체」 — 산림·탄소흡수원 부문이므로 meta tech_ids에 23(탄소흡수원 기술)을 기입.",
+      "sourceLabel": "REDD+ 현황",
+      "sourceLabelEn": "REDD+ Status",
+      "sourceNote": "FCPF 참여 여부 — 방글라데시 R-PP 원본이 공개 리포지토리에 게재되어 있지 않아 지정 출처로 확인 불가(M01). GCF·BioCF 참여 여부도 동일 사유로 미확인.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "23"
+      },
+      "dimensions": {
+        "technology": "23"
+      },
+      "displayLabel": "REDD+ 현황 · rbp_result",
+      "indicatorId": "C-024_rbp_result",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ce65c089ea4c",
+        "labelKo": "REDD+ 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=23|C-024_rbp_result",
+      "sourceCaveat": "[raw] ([raw]\\C-024\\) C-024_REDD+ 현황_UNFCCC_REDD_platform_Bangladesh_submissions_2026-08-19.html · C-024_REDD+ 현황_UNFCCC_FCCC-TAR-2019-BGD_FRL_TechnicalAssessment.pdf · C-024_REDD+ 현황_UNFCCC_Lima_REDD_InformationHub_2026-08-19.html · C-024_REDD+ 현황_BGD_FRL_submission_original_2019-01-03.pdf · C-024_REDD+ 현황_BGD_FRL_submission_modified_2019-07-17.pdf · C-024_REDD+ 현황_BGD_FAO_FRA2020_CountryReport_ca9972en.pdf [정의·범위] 1행 = 결과기반지불 실적 1건. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 6개(C-024_redd_strategy_unfccc·_frel_submission_unfccc·_rbp_result_unfccc·_participating_fund_wbg·_safeguard_system_unfccc·_redd_strategy_faolex)를 레코드 유형 4개로 정리하고, 「속성1(레코드명)·속성3(값)」에 흩어져 있던 값을 속성별 명명 열로 전개함. [framework 정합] 구서식에 있던 FAO FRA 2020 산림 기초자료(산림면적 시계열 1990~2020 · 국토면적 · 산림률 · 임목축적 · 기타임지 9행)는 본 요소의 framework 속성(REDD+ 전략·FREL·RBP·SIS·참여 기금) 밖이어서 수록하지 않음 — 값은 raw(FAO FRA 2020 국가보고서)에 보존됨. [지역구분] framework 「지역 구분 필요 = 지역(admin / point)」 — 방글라데시는 국가 단위 제출만 있고 하위 사업 구역 지정이 없어 전 행 「전국 / BGD」. [기술분류] framework 「데이터셋 전체」 — 산림·탄소흡수원 부문이므로 meta tech_ids에 23(탄소흡수원 기술)을 기입.",
+      "sourceLabel": "REDD+ 현황",
+      "sourceLabelEn": "REDD+ Status",
+      "sourceNote": "성과 제출량·성과기반지불 수령 실적 — 플랫폼 Results 칸이 「-」이고 정보허브에 방글라데시 등재가 없어 실적 자체가 부존(M03).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "23"
+      },
+      "dimensions": {
+        "technology": "23"
+      },
+      "displayLabel": "REDD+ 현황 · readiness_element",
+      "indicatorId": "C-024_readiness_element",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ce65c089ea4c",
+        "labelKo": "REDD+ 현황",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ce65c089ea4c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=23|C-024_readiness_element",
+      "sourceCaveat": "[raw] ([raw]\\C-024\\) C-024_REDD+ 현황_UNFCCC_REDD_platform_Bangladesh_submissions_2026-08-19.html · C-024_REDD+ 현황_UNFCCC_FCCC-TAR-2019-BGD_FRL_TechnicalAssessment.pdf · C-024_REDD+ 현황_UNFCCC_Lima_REDD_InformationHub_2026-08-19.html · C-024_REDD+ 현황_BGD_FRL_submission_original_2019-01-03.pdf · C-024_REDD+ 현황_BGD_FRL_submission_modified_2019-07-17.pdf · C-024_REDD+ 현황_BGD_FAO_FRA2020_CountryReport_ca9972en.pdf [정의·범위] 1행 = 바르샤바 REDD+ 프레임워크 요소 1건(4행). 상태는 플랫폼 표기(Not reported · Assessed)를 원문 그대로 옮김. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 6개(C-024_redd_strategy_unfccc·_frel_submission_unfccc·_rbp_result_unfccc·_participating_fund_wbg·_safeguard_system_unfccc·_redd_strategy_faolex)를 레코드 유형 4개로 정리하고, 「속성1(레코드명)·속성3(값)」에 흩어져 있던 값을 속성별 명명 열로 전개함. [framework 정합] 구서식에 있던 FAO FRA 2020 산림 기초자료(산림면적 시계열 1990~2020 · 국토면적 · 산림률 · 임목축적 · 기타임지 9행)는 본 요소의 framework 속성(REDD+ 전략·FREL·RBP·SIS·참여 기금) 밖이어서 수록하지 않음 — 값은 raw(FAO FRA 2020 국가보고서)에 보존됨. [지역구분] framework 「지역 구분 필요 = 지역(admin / point)」 — 방글라데시는 국가 단위 제출만 있고 하위 사업 구역 지정이 없어 전 행 「전국 / BGD」. [기술분류] framework 「데이터셋 전체」 — 산림·탄소흡수원 부문이므로 meta tech_ids에 23(탄소흡수원 기술)을 기입.",
+      "sourceLabel": "REDD+ 현황",
+      "sourceLabelEn": "REDD+ Status",
+      "sourceNote": "국가전략·NFMS·세이프가드 3개 요소 — UNFCCC 플랫폼에 제출 기록이 없어 구조적 부존(M03). 「미보고」는 등재 여부 기준 판정이며 국내 제도 부재를 뜻하지 않음.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 4,
+      "key": "measure-ce65c089ea4c",
+      "labelKo": "REDD+ 현황",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

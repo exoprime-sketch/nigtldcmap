@@ -14,6 +14,8 @@ export interface CountryCompareSeriesV158 {
   countryNameKo: string;
   unit: string;
   points: { year: number; value: number | null }[];
+  /** Who published the series. Stated so a footnote can flag differing sources. */
+  sourceOrg?: string;
 }
 
 export interface CountryCompareKeyV158 {
@@ -56,6 +58,36 @@ function valueAtV158(row: CountryCompareSeriesV158, year: number): number | null
   return typeof point?.value === "number" && Number.isFinite(point.value) ? point.value : null;
 }
 
+interface LatestPointV158 {
+  year: number;
+  value: number;
+}
+
+/** A country's most recent year with a stated value, or null if it never has one. */
+function latestPointV158(row: CountryCompareSeriesV158): LatestPointV158 | null {
+  let best: LatestPointV158 | null = null;
+  for (const point of row.points) {
+    if (typeof point.value !== "number" || !Number.isFinite(point.value)) continue;
+    if (!best || point.year > best.year) best = { year: point.year, value: point.value };
+  }
+  return best;
+}
+
+/**
+ * A footnote naming each source, shown only when every drawn country states one
+ * and they are not all the same. A silent shared axis would read as one method;
+ * when a country left its source unstated there is nothing honest to compare it
+ * against, so the note is withheld rather than shown half-filled.
+ */
+function sourceNoteTextV158(rows: CountryCompareSeriesV158[]): string | null {
+  const sources = rows.map((row) => row.sourceOrg?.trim() || "");
+  if (sources.some((source) => !source)) return null;
+  if (new Set(sources).size < 2) return null;
+  return `출처가 나라마다 달라 함께 표시합니다 · ${rows
+    .map((row, index) => `${row.countryNameKo} ${sources[index]}`)
+    .join(" · ")}`;
+}
+
 /**
  * Compares one element across countries, or renders nothing.
  *
@@ -64,6 +96,17 @@ function valueAtV158(row: CountryCompareSeriesV158, year: number): number | null
  * mismatch is different - the reader asked for a comparison and cannot have one,
  * so the note says which country states which unit.
  */
+/**
+ * Two units are the same unit when they differ only in spacing or in writing
+ * a power as a superscript ("km2" and "km²"). Nothing else is folded: a
+ * different unit is still a different unit.
+ */
+export function sameUnitV158(left: string | null | undefined, right: string | null | undefined): boolean {
+  const fold = (unit: string | null | undefined) =>
+    String(unit ?? "").trim().replace(/²/gu, "2").replace(/³/gu, "3").replace(/ +/gu, " ");
+  return fold(left) === fold(right);
+}
+
 export default function CountryCompareBlockV158({
   elementId,
   title,
@@ -72,8 +115,8 @@ export default function CountryCompareBlockV158({
   mode = "auto",
 }: CountryCompareBlockPropsV158) {
   const model = useMemo(() => {
-    const matched = series.filter((row) => row.unit.trim() === compareKey.unit.trim());
-    const mismatched = series.filter((row) => row.unit.trim() !== compareKey.unit.trim());
+    const matched = series.filter((row) => sameUnitV158(row.unit, compareKey.unit));
+    const mismatched = series.filter((row) => !sameUnitV158(row.unit, compareKey.unit));
     const years = commonYearsV158(matched);
     const shape =
       mode !== "auto"
@@ -88,6 +131,64 @@ export default function CountryCompareBlockV158({
   // never carry a value for the same year. Say so only when a country was
   // dropped for its unit - otherwise the block adds nothing to the page.
   if (model.matched.length < 2 || model.years.length === 0) {
+    // Two or more countries state the unit but never share a year: fall back to
+    // each country's own latest value rather than showing nothing, as long as at
+    // least two of them actually have one to show.
+    if (model.years.length === 0 && model.matched.length >= 2) {
+      const latestEach = model.matched
+        .map((row) => ({ row, latest: latestPointV158(row) }))
+        .filter(
+          (entry): entry is { row: CountryCompareSeriesV158; latest: LatestPointV158 } =>
+            entry.latest !== null
+        );
+      if (latestEach.length >= 2) {
+        const sourceNote = sourceNoteTextV158(latestEach.map((entry) => entry.row));
+        return (
+          <section
+            className="ccb158"
+            data-testid="country-compare-v158"
+            data-element-id={elementId}
+            data-state="latest-each"
+            data-year-rule={compareKey.yearRule}
+          >
+            <h4 className="ccb158__title">{title}</h4>
+            <ul className="ccb158__chips" aria-label="비교 국가">
+              {latestEach.map(({ row }, index) => (
+                <li key={row.countryIso3} data-testid="country-compare-chip-v158">
+                  <span
+                    className="ccb158__swatch"
+                    style={{ background: COLORS_V158[index % COLORS_V158.length] }}
+                    aria-hidden="true"
+                  />
+                  {row.countryNameKo}
+                </li>
+              ))}
+            </ul>
+            <p className="ccb158__latest-each" data-testid="country-compare-latest-each-v158">
+              {latestEach
+                .map(
+                  ({ row, latest }) =>
+                    `${row.countryNameKo} ${latest.value.toLocaleString("ko-KR")} (${latest.year})`
+                )
+                .join(" · ")}
+            </p>
+            {model.mismatched.length > 0 ? (
+              <p className="ccb158__note" data-testid="country-compare-unit-note-v158">
+                단위가 달라 제외: {model.mismatched.map((row) => `${row.countryNameKo} ${row.unit}`).join(" · ")}
+              </p>
+            ) : null}
+            <p className="ccb158__note">
+              비교 국가에 공통 연도가 없어 각 나라의 최신 값을 연도와 함께 표시합니다
+            </p>
+            {sourceNote ? (
+              <p className="ccb158__note" data-testid="country-compare-source-note-v158">
+                {sourceNote}
+              </p>
+            ) : null}
+          </section>
+        );
+      }
+    }
     if (model.mismatched.length === 0) return null;
     return (
       <section
@@ -113,6 +214,7 @@ export default function CountryCompareBlockV158({
   const max = values.length > 0 ? Math.max(...values) : 0;
   const min = values.length > 0 ? Math.min(0, ...values) : 0;
   const span = max - min || 1;
+  const sourceNote = sourceNoteTextV158(model.matched);
 
   return (
     <section
@@ -194,6 +296,11 @@ export default function CountryCompareBlockV158({
       {model.mismatched.length > 0 ? (
         <p className="ccb158__note" data-testid="country-compare-unit-note-v158">
           단위가 달라 제외: {model.mismatched.map((row) => `${row.countryNameKo} ${row.unit}`).join(" · ")}
+        </p>
+      ) : null}
+      {sourceNote ? (
+        <p className="ccb158__note" data-testid="country-compare-source-note-v158">
+          {sourceNote}
         </p>
       ) : null}
       <p className="ccb158__note">

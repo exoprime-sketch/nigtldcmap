@@ -1,0 +1,151 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-005",
+  "entityCount": 36,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 5,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "TNA (기술 수요 평가) · barrier",
+      "indicatorId": "C-005_barrier",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-49b95dc8195f",
+        "labelKo": "TNA (기술 수요 평가)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-005_barrier",
+      "sourceCaveat": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 장벽 유형 1건(4행) — 투자·재정 / 역량 / 조직·행태 / 정책·법제. [집계 성격] 각 행의 내용은 감축·적응 보고서의 장벽 분석을 유형별로 묶은 것이며, 기술별 개별 장벽은 본 요소에 수록하지 않음.",
+      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabelEn": "Technology Needs Assessment",
+      "sourceNote": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 장벽 유형 1건(4행) — 투자·재정 / 역량 / 조직·행태 / 정책·법제. [집계 성격] 각 행의 내용은 감축·적응 보고서의 장벽 분석을 유형별로 묶은 것이며, 기술별 개별 장벽은 본 요소에 수록하지 않음.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "TNA (기술 수요 평가) · priority_sector",
+      "indicatorId": "C-005_priority_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-49b95dc8195f",
+        "labelKo": "TNA (기술 수요 평가)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-005_priority_sector",
+      "sourceCaveat": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 우선 분야 1건(3행) — 감축 1개(전력 생산·이용), 적응 2개(수자원 · 농업). 구서식은 적응 2개 분야를 1행에 \"·\"로 나열했으나 신서식에서는 분야 1건 = 1행으로 분해함.",
+      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabelEn": "Technology Needs Assessment",
+      "sourceNote": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 우선 분야 1건(3행) — 감축 1개(전력 생산·이용), 적응 2개(수자원 · 농업). 구서식은 적응 2개 분야를 1행에 \"·\"로 나열했으나 신서식에서는 분야 1건 = 1행으로 분해함.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "01 · 10 · 16 · 19 · 27 · 33 · 34"
+      },
+      "dimensions": {
+        "technology": "01,10,16,19,27,33,34"
+      },
+      "displayLabel": "TNA (기술 수요 평가) · priority_technology",
+      "indicatorId": "C-005_priority_technology",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-49b95dc8195f",
+        "labelKo": "TNA (기술 수요 평가)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01,10,16,19,27,33,34|C-005_priority_technology",
+      "sourceCaveat": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 우선순위 기술 1건(23행 전수) — 감축 발전 8건 · 감축 전력이용 2건 · 적응 수자원 6건 · 적응 농업 7건. [서식 핵심] 구서식은 기술 1건을 「순위」 행과 「가중점수」 행 2행으로 나누어 두어 같은 기술명이 두 번 나타났으나, 신서식에서는 1행 = 기술 1건으로 두고 순위·가중점수를 각각 열로 두었음. [집계행 삭제] 구서식의 「선정 기술 수 7」 행은 행 수로 산출되는 파생값이므로 삭제함. [점수 기준] 감축 발전 부문 점수는 TAP Table 2의 \"Weighted score (With PV)\" 열 기준이며, 천연가스 복합화력은 PV 제외 시 78.91점으로 값이 달라짐 — 산정 기준을 「[기술] 가중점수 산정 기준」 열에 명시함. [원문 순위 이상] 감축 발전 부문 7위(67.91점)가 6위(67.45점)보다 점수가 높으나 원문 표 순위를 보정하지 않고 그대로 수록함. [기술분류] framework 「행별 태깅」 — 태양광 1, 청정 석탄·가스화 10, 발전효율 16, 건물효율 19, 기후 감시·조기경보 27, 연안·재해 대응 33, 농축수산 34.",
+      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabelEn": "Technology Needs Assessment",
+      "sourceNote": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = 우선순위 기술 1건(23행 전수) — 감축 발전 8건 · 감축 전력이용 2건 · 적응 수자원 6건 · 적응 농업 7건. [서식 핵심] 구서식은 기술 1건을 「순위」 행과 「가중점수」 행 2행으로 나누어 두어 같은 기술명이 두 번 나타났으나, 신서식에서는 1행 = 기술 1건으로 두고 순위·가중점수를 각각 열로 두었음. [집계행 삭제] 구서식의 「선정 기술 수 7」 행은 행 수로 산출되는 파생값이므로 삭제함. [점수 기준] 감축 발전 부문 점수는 TAP Table 2의 \"Weighted score (With PV)\" 열 기준이며, 천연가스 복합화력은 PV 제외 시 78.91점으로 값이 달라짐 — 산정 기준을 「[기술] 가중점수 산정 기준」 열에 명시함. [원문 순위 이상] 감축 발전 부문 7위(67.91점)가 6위(67.45점)보다 점수가 높으나 원문 표 순위를 보정하지 않고 그대로 수록함. [기술분류] framework 「행별 태깅」 — 태양광 1, 청정 석탄·가스화 10, 발전효율 16, 건물효율 19, 기후 감시·조기경보 27, 연안·재해 대응 33, 농축수산 34.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "TNA (기술 수요 평가) · source_document",
+      "indicatorId": "C-005_source_document",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-49b95dc8195f",
+        "labelKo": "TNA (기술 수요 평가)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-005_source_document",
+      "sourceCaveat": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = TNA·TAP 보고서 1건(4행 전수) — 감축 Part I·II, 적응 Part I·II. 구서식의 C-005_source_link 4행을 문서 레코드로 유지하되 문서명·유형·발간 시점을 속성 열로 분해함.",
+      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabelEn": "Technology Needs Assessment",
+      "sourceNote": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = TNA·TAP 보고서 1건(4행 전수) — 감축 Part I·II, 적응 Part I·II. 구서식의 C-005_source_link 4행을 문서 레코드로 유지하되 문서명·유형·발간 시점을 속성 열로 분해함.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "TNA (기술 수요 평가) · tna_cycle",
+      "indicatorId": "C-005_tna_cycle",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-49b95dc8195f",
+        "labelKo": "TNA (기술 수요 평가)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-49b95dc8195f|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-005_tna_cycle",
+      "sourceCaveat": "[raw] ([raw]\\C-005\\) C-005_TNA (기술 수요 평가)_BGD_TNA_Mitigation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TNA_Adaptation_PartI_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Mitigation_PartII_UNFCCC.pdf · C-005_TNA (기술 수요 평가)_BGD_TAP_Adaptation_PartII_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 5개(C-005_tna_status·_tap_status·_priority_sector·_priority_tech_list·_barrier_analysis·_source_link)를 레코드 유형 5개로 통합함. [정의·범위] 1행 = TNA 사이클 1건(2행) — Phase I(수행) / 2차 사이클(미수행). 구서식의 TNA 실시·감축 TNA·적응 TNA·기술실행계획 4행을 Phase I 1행의 속성 열로 통합함. [미수행 판정] UNEP-CCC Phase III·IV 참여국 명단에 방글라데시가 없음을 확인한 것이므로 자료 미수집(M06)이 아닌 구조적 부존(M03).",
+      "sourceLabel": "TNA (기술 수요 평가)",
+      "sourceLabelEn": "Technology Needs Assessment",
+      "sourceNote": "2차 사이클은 참여국 명단 대조 결과 미참여로 확인되어 M03(구조적 부존).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-49b95dc8195f",
+      "labelKo": "TNA (기술 수요 평가)",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

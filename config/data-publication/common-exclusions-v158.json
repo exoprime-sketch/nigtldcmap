@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "common-exclusions-v158",
+  "scope": "all-countries",
+  "note": "모든 국가에 적용하는 공개 제외 결정 1곳(용역사 기준서 '공개 구분 국가 공통'과 일치). 국가별 결정 파일에는 그 나라에만 해당하는 제외만 둔다. ETL·유형표 가져오기·제외 감사는 이 파일과 국가 파일을 합쳐 읽고, 같은 요소가 두 곳에 있으면 멈춘다. 2026-09-30 사용자 결정으로 베트남 결정 파일의 2026년 제외 6건(본부장 결정 2026-09-29, 2026년 미적용)을 옮겼다. 행은 바꾸지 않았고 공개 문구(publicNotice)도 같다. 상세 화면에는 publicNotice 한 줄만 보이고, 사유·근거·결정일은 이 기록에만 남는다(기준서 v1.1 표 13).",
+  "movedAt": "2026-09-30",
+  "movedFrom": "config/data-publication/vietnam-exclusions-v156.json",
+  "exclusionCount": 6,
+  "exclusions": [
+    {
+      "elementId": "A-017",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    },
+    {
+      "elementId": "C-020",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    },
+    {
+      "elementId": "C-021",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    },
+    {
+      "elementId": "E-008",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    },
+    {
+      "elementId": "E-016",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    },
+    {
+      "elementId": "E-017",
+      "reason": "2026년 미적용 — 본부장 결정 2026-09-29",
+      "basis": "본부장 결정",
+      "decidedAt": "2026-09-29",
+      "publicNotice": "2026년 제공 대상이 아닌 데이터입니다."
+    }
+  ]
+}
