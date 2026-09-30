@@ -1,0 +1,50 @@
+{
+  "schema": "download-zip-size-v158",
+  "before": {
+    "build": "../nigt-wt-d3/tmp/build-drift-pr2",
+    "totalBytes": 948681177,
+    "totalFiles": 867,
+    "countries": {
+      "bgd": {
+        "treeBytes": 154908937,
+        "treeFiles": 209,
+        "downloadBytes": 145274787,
+        "downloadFiles": 170
+      },
+      "vietnam": {
+        "treeBytes": 771430161,
+        "treeFiles": 555,
+        "downloadBytes": 662346341,
+        "downloadFiles": 294
+      }
+    },
+    "largest": {
+      "rel": "data/vietnam/v2/downloads/b-006.json",
+      "bytes": 86468654
+    }
+  },
+  "after": {
+    "build": "tmp/build-zip-pr",
+    "totalBytes": 164381620,
+    "totalFiles": 635,
+    "countries": {
+      "bgd": {
+        "treeBytes": 14010647,
+        "treeFiles": 124,
+        "downloadBytes": 4397715,
+        "downloadFiles": 85
+      },
+      "vietnam": {
+        "treeBytes": 128028894,
+        "treeFiles": 408,
+        "downloadBytes": 18998415,
+        "downloadFiles": 147
+      }
+    },
+    "largest": {
+      "rel": "data/vietnam/v2/geometry/vnm-slr-lowland-le2m.geojson",
+      "bytes": 12260983
+    }
+  },
+  "ratio": 5.77
+}

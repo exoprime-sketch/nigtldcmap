@@ -1,0 +1,35 @@
+{
+  "schema": "performance-bundle-main-vs-pr-v158",
+  "metric": "entrypoint total gzip bytes (audit:performance:v128)",
+  "build": "npm run build (release gate와 같은 명령)",
+  "rows": {
+    "baseline": {
+      "ref": "d66b83e (2026-08-31, V128-A)",
+      "js": 200287,
+      "css": 26356,
+      "jsRaw": 999706,
+      "cssRaw": 149988,
+      "total": 226643,
+      "regressionPercent": 0.0
+    },
+    "main": {
+      "ref": "origin/main 5b82ea6",
+      "js": 472931,
+      "css": 41735,
+      "jsRaw": 2295162,
+      "cssRaw": 236063,
+      "total": 514666,
+      "regressionPercent": 127.082
+    },
+    "pr": {
+      "ref": "feat/v158-download-zip f23d0e6",
+      "js": 472904,
+      "css": 41735,
+      "jsRaw": 2295162,
+      "cssRaw": 236063,
+      "total": 514639,
+      "regressionPercent": 127.07
+    }
+  },
+  "prMinusMain": -27
+}

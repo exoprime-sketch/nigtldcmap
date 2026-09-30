@@ -1,11 +1,9 @@
 import { test, expect } from "@jest/globals";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import { mineralModelV153, percentChangeV153, remarkOf } from "./mineralResourcesV153";
-import { countryPublicDirV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 const source = (id: string) =>
-  JSON.parse(readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/${id}.json`), "utf8"));
+  readDownloadJsonV158(id);
 
 function inflate(bundle: { observations: Record<string, unknown>[]; recordDefaults?: { observations?: Record<string, unknown> } }) {
   const defaults = bundle.recordDefaults?.observations || {};

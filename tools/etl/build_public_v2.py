@@ -29,6 +29,7 @@ from .download_delivery_v137 import (
     build_manifest as build_download_manifest,
     describe_asset as describe_download_asset,
 )
+from .download_zip_v158 import write_element_zip, zip_download_asset
 from .d018_facts_v137 import (
     AGGREGATES as D018_AGGREGATES,
     derive_d018_facts,
@@ -2249,19 +2250,10 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 )
         if download_allowed:
             token = element_id.lower()
+            # V158 (user decision 2026-09-30): one pre-compressed ZIP per
+            # element holding its CSV and JSON; the catalog lists what is inside.
             element["downloadAssets"] = [
-                {
-                    "format": "JSON",
-                    "url": f"/data/vietnam/v2/downloads/{token}.json",
-                    "mediaType": "application/json",
-                    "recordCount": downloadable_count,
-                },
-                {
-                    "format": "CSV",
-                    "url": f"/data/vietnam/v2/downloads/{token}.csv",
-                    "mediaType": "text/csv; charset=utf-8",
-                    "recordCount": downloadable_count,
-                },
+                zip_download_asset("/data/vietnam/v2/downloads", token, downloadable_count)
             ]
         else:
             element["downloadAssets"] = None
@@ -2360,8 +2352,6 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         payload = payloads[element["elementId"]]
         observations, entities = _download_rows(payload)
         token = element["elementId"].lower()
-        json_path = out / "downloads" / f"{token}.json"
-        csv_path = out / "downloads" / f"{token}.csv"
         # Compact serialization. Same keys, same order, same values - only the
         # indentation goes. A 33,232-row download does not become more readable
         # for having 2-space indents; it becomes 20% larger.
@@ -2401,23 +2391,26 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "observations": observation_defaults,
                 "entities": entity_defaults,
             }
-        _write_json(json_path, document, pretty=False)
-        csv_path.write_bytes(_download_csv(element, observations, entities))
+        # V158: the same JSON and CSV bytes as before, shipped in one
+        # deterministic ZIP (tools/etl/download_zip_v158.py).
+        zip_path = write_element_zip(
+            out / "downloads",
+            token,
+            _json_bytes(document, pretty=False),
+            _download_csv(element, observations, entities),
+            element["downloadAssets"][0],
+        )
         record_count = int(element.get("downloadableRecordCount") or 0)
-        for fmt, media_type, path in (
-            ("JSON", "application/json", json_path),
-            ("CSV", "text/csv; charset=utf-8", csv_path),
-        ):
-            download_assets.append(
-                describe_download_asset(
-                    element["elementId"],
-                    fmt,
-                    media_type,
-                    record_count,
-                    path,
-                    f"/data/vietnam/v2/downloads/{path.name}",
-                )
+        download_assets.append(
+            describe_download_asset(
+                element["elementId"],
+                "ZIP",
+                "application/zip",
+                record_count,
+                zip_path,
+                f"/data/vietnam/v2/downloads/{zip_path.name}",
             )
+        )
 
     # Where each of those files is served from. Size, digest and record count
     # are recorded for every asset; an asset too large for the repository is

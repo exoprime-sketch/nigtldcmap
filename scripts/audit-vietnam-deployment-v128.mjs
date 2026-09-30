@@ -70,7 +70,10 @@ async function verifyAssets(serverUrl, paths) {
     try {
       const response = await fetch(url, { cache: "no-store" });
       const contentType = response.headers.get("content-type") || "";
-      const text = await response.text();
+      const raw = Buffer.from(await response.arrayBuffer());
+      const text = raw.toString("utf8");
+      // V158: a download ZIP is checked by its signature, not parsed as JSON.
+      const zip = raw.length > 3 && raw.readUInt32LE(0) === 0x04034b50;
       let parsed = null;
       let parseError = null;
       try {
@@ -85,6 +88,7 @@ async function verifyAssets(serverUrl, paths) {
         contentType,
         bytes: Buffer.byteLength(text),
         json: parsed !== null,
+        zip,
         parseError,
         html: /text\/html/iu.test(contentType) || /^\s*<!doctype\s+html/iu.test(text),
         durationMs: Date.now() - startedAt,
@@ -117,7 +121,8 @@ const requiredAssets = [
   "/data/vietnam/v2/packs/bundle-index-v124.json",
   "/data/vietnam/v2/semantic/indicator-semantics-v125.json",
   "/data/vietnam/v2/semantic/element-visualization-contracts-v125.json",
-  "/data/vietnam/v2/downloads/a-002.json",
+  // V158: one download ZIP per element.
+  "/data/vietnam/v2/downloads/a-002.zip",
   "/data/vietnam/v2/map-index.json",
   "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
   "/data/vietnam/v2/geometry/vnm-transmission-network.geojson",
@@ -308,7 +313,11 @@ try {
 
 function failedAssets(entries) {
   return entries.filter(
-    (entry) => entry.status !== 200 || !entry.json || entry.html || entry.bytes <= 0
+    (entry) =>
+      entry.status !== 200 ||
+      (/[.]zip$/u.test(entry.path) ? !entry.zip : !entry.json) ||
+      entry.html ||
+      entry.bytes <= 0
   );
 }
 const rootAssetFailures = failedAssets(rootAssets);

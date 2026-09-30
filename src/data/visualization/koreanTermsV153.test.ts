@@ -1,8 +1,6 @@
 import { test, expect } from "@jest/globals";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import { climateZoneLabelV153, isUntranslatedV153, koreanTermV153 } from "./koreanTermsV153";
-import { countryPublicDirV158 } from "../countryContext";
+import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 test("English terms print Korean first with the source wording in parentheses", () => {
   expect(koreanTermV153("BOT(Build-Operate-Transfer)")).toBe("건설·운영·이전(BOT(Build-Operate-Transfer))");
@@ -23,9 +21,7 @@ test("climate zone labels are Korean(code)", () => {
 });
 
 test("every C-012 item name and value the source states is covered", () => {
-  const bundle = JSON.parse(
-    readFileSync(resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/downloads/c-012.json`), "utf8")
-  ) as { entities: { normalizedAttributes: Record<string, unknown> }[] };
+  const bundle = readDownloadJsonV158("c-012") as { entities: { normalizedAttributes: Record<string, unknown> }[] };
   const untranslated = new Set<string>();
   for (const entity of bundle.entities) {
     for (const key of ["속성1_레코드명", "속성3_값", "속성6_분류", "속성7_상태"]) {

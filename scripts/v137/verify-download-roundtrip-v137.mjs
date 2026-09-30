@@ -16,6 +16,7 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { resolve, relative, sep } from "node:path";
 import { gunzipSync } from "node:zlib";
+import { readDownloadJsonV158, readDownloadMemberV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const argv = process.argv.slice(2);
@@ -79,7 +80,8 @@ function main() {
     if (!element.downloadAssets) continue;
     const elementId = element.elementId;
     const token = elementId.toLowerCase();
-    const document = readJson(resolve(DATA, "downloads", `${token}.json`));
+    // V158: the download JSON ships inside downloads/<id>.zip.
+    const document = readDownloadJsonV158(DATA, elementId);
     const payload = packs.get(elementId) || {};
     checkedElements += 1;
 
@@ -141,7 +143,7 @@ function main() {
 
     // The CSV schema is unchanged, so its row count must still equal the
     // published record count.
-    const csv = readFileSync(resolve(DATA, "downloads", `${token}.csv`), "utf8").replace(/^﻿/u, "");
+    const csv = readDownloadMemberV158(DATA, elementId, "csv").toString("utf8").replace(/^﻿/u, "");
     const csvRows = csvDataRowCount(csv);
     const published =
       (document.observations || []).length + (document.entities || []).length;

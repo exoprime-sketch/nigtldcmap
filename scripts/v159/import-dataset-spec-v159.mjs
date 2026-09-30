@@ -55,10 +55,12 @@ const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) =>
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
-function applyOverride(elementId, field, value) {
+// Use-case fields (caution, dataUsed) name the case: `caseNo` in the override.
+function applyOverride(elementId, field, value, caseNo = null) {
   let out = value;
   OVERRIDES.forEach((item, index) => {
     if (item.elementId !== elementId || item.field !== field) return;
+    if (item.caseNo !== undefined && item.caseNo !== caseNo) return;
     const count = out.split(item.from).length - 1;
     if (count !== 1) throw new Error(`${elementId}.${field}: override 'from' found ${count} times`);
     out = out.replace(item.from, item.to);
@@ -332,9 +334,9 @@ function main() {
       description: applyOverride(elementId, "description", text(row[c("상세 설명")])),
       usage: applyOverride(elementId, "usage", text(row[c("활용 방법")])),
       definitionKo: text(row[c("정의(국문)")]),
-      sourceOrg: text(row[c("출처기관")]),
-      refLink: text(row[c("참고문헌 링크")]),
-      refApa: text(row[c("참고문헌(APA)")]),
+      sourceOrg: applyOverride(elementId, "sourceOrg", text(row[c("출처기관")])),
+      refLink: applyOverride(elementId, "refLink", text(row[c("참고문헌 링크")])),
+      refApa: applyOverride(elementId, "refApa", text(row[c("참고문헌(APA)")])),
       checkedAt: text(row[c("확인일자")]).slice(0, 10),
       decision: text(row[c("금년도 최종 결정")]) || null,
       decisionNote: decisionNote(text(row[c("처리방향")])),
@@ -351,7 +353,8 @@ function main() {
       const elementId = text(row[u("코드")]);
       const purposeRaw = text(row[u("활용 목적")]);
       const en = purposeRaw.match(/\s*\(([A-Za-z][^()]*)\)\s*$/);
-      const caution = text(row[u("유의점")]);
+      const caseNo = Number(text(row[u("사례 번호")]));
+      const caution = applyOverride(elementId, "caution", text(row[u("유의점")]), caseNo);
       const display = cautionForRegistry(caution, countries, registry);
       if (display.replacements.length) cautionReview.push({ elementId, caseNo: Number(text(row[u("사례 번호")])), caution, cautionDisplay: display.value, rule: display.rule, replacements: display.replacements });
       return {
@@ -360,7 +363,7 @@ function main() {
         purpose: en ? purposeRaw.slice(0, en.index).trim() : purposeRaw,
         purposeEn: en ? en[1].trim() : "",
         logic: text(row[u("논리 구조")]),
-        dataUsed: parseDataUsed(text(row[u("쓰는 데이터")]), catalog),
+        dataUsed: parseDataUsed(applyOverride(elementId, "dataUsed", text(row[u("쓰는 데이터")]), caseNo), catalog),
         storyline: text(row[u("스토리라인 예시")]),
         users: text(row[u("주 사용자")]).split(/\s*·\s*/).filter(Boolean),
         caution,
@@ -533,7 +536,7 @@ function writeCorrections() {
   writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
 }
 
-const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법" };
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
 
 function mdCell(value) {
   return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");

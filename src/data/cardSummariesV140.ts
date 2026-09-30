@@ -1,6 +1,8 @@
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import { countryAssetPathV158 } from "./countryContext";
+import { publicSourceOrganizationV136_1, publicUnstatedWordingV161 } from "./visualization/publicFieldPolicyV126";
+import { getCardSpecV159 } from "./spec/datasetSpecV159";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -98,6 +100,32 @@ export interface CardSummariesV140 {
   cards: CardSummaryV140[];
 }
 
+/**
+ * A card summary as every public screen reads it (V161). The provider line was
+ * compiled with the project's working notes - "현지 컨설턴트 현지조사(Field Survey
+ * Items_…_v2.0)", "…(용역사 취합)" - and each card, the home, the source panel
+ * and the KPI strip printed it as is. It is judged here, once, by the same
+ * function as every other source display; when nothing real is left it falls
+ * back to the framework spec's (v5.38) source name, and to nothing (the line is
+ * hidden) when that is a working note too. A category the source left unstated
+ * ("원천 미기재") reads 미기재.
+ */
+function publicCardSummaryV161(card: CardSummaryV140): CardSummaryV140 {
+  const provider =
+    publicSourceOrganizationV136_1(card.provider) ||
+    publicSourceOrganizationV136_1(getCardSpecV159(card.elementId)?.sourceLabel) ||
+    "";
+  const preview = card.preview as CardSummaryV140["preview"] & { parts?: Array<{ label: string }> };
+  const parts = Array.isArray(preview?.parts)
+    ? preview.parts.map((part) => ({ ...part, label: publicUnstatedWordingV161(String(part.label ?? "")) }))
+    : undefined;
+  return {
+    ...card,
+    provider,
+    preview: (parts ? { ...preview, parts } : card.preview) as CardSummaryV140["preview"],
+  };
+}
+
 const cacheByCountry = new Map<string, Promise<Map<string, CardSummaryV140>>>();
 
 /**
@@ -120,7 +148,7 @@ export function loadCardSummariesV140(countryIso3: string = "VNM"): Promise<Map<
         if (value.schemaVersion !== "v140-card-summaries-1" || !Array.isArray(value.cards)) {
           throw new Error("card summaries schema mismatch");
         }
-        return new Map(value.cards.map((card) => [card.elementId, card]));
+        return new Map(value.cards.map((card) => [card.elementId, publicCardSummaryV161(card)]));
       });
     cacheByCountry.set(iso3, cache);
     cache.catch(() => cacheByCountry.delete(iso3));

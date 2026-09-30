@@ -9,7 +9,7 @@
  * card builder count the same things (V141).
  */
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
-import { publicTextV126 } from "./publicFieldPolicyV126";
+import { publicRecordNoteV161, publicTextV126 } from "./publicFieldPolicyV126";
 
 export type CTemplateBoundV141 = "min" | "max" | null;
 
@@ -68,7 +68,9 @@ export function cleanCTemplateNoteV141(note: unknown): string {
   COMPILER_REMARK_V141.forEach((pattern) => {
     value = value.replace(pattern, "");
   });
-  return value.replace(/\s+/gu, " ").trim();
+  // V161: a note's own source citation ("출처: 현지조사(Field Survey …)") is
+  // judged like every source display.
+  return publicRecordNoteV161(value.replace(/\s+/gu, " ").trim()) || "";
 }
 
 function boundOf(note: string, name: string): CTemplateBoundV141 {

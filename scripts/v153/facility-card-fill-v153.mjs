@@ -15,6 +15,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readDownloadJsonV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
@@ -45,7 +46,8 @@ const FIELDS = {
 const filled = (value) => value !== null && value !== undefined && String(value).trim() !== "" && String(value) !== "(미표기)";
 
 function load(id) {
-  const bundle = JSON.parse(readFileSync(resolve(ROOT, `public/data/vietnam/v2/downloads/${id.toLowerCase()}.json`), "utf8"));
+  // V158: the download JSON ships inside downloads/<id>.zip.
+  const bundle = readDownloadJsonV158(resolve(ROOT, "public/data/vietnam/v2"), id);
   const defaults = bundle.recordDefaults?.entities || {};
   return bundle.entities.map((row) => ({ ...defaults, ...row }));
 }

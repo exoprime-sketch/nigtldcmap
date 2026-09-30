@@ -4,8 +4,9 @@ import { resolve } from "path";
 import { nationalPublicationTrendV132, researchRecordV132, researchCollaborationLabelV144 } from "./ResearchPatentAnalysisV132";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { countryPublicDirV158 } from "../../../data/countryContext";
+import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
-const source = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/e-008.json`), "utf8"));
+const source = readDownloadJsonV158("e-008");
 const records = (source.entities as VietnamEntityV124[]).map((entity) => researchRecordV132(entity)!).filter(Boolean);
 
 describe("E-008 delivered list analysis", () => {

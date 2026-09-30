@@ -122,7 +122,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
             {card ? <FinderCardSummaryV140 summary={card} /> : <p className="home-featured-v139__preparing" role="status">데이터 준비 중</p>}
             <dl className="home-featured-v139__meta">
               <div><dt>자료기간</dt><dd><PublicTermTextV134 text={card?.period || publicReferencePeriodV128(item)} /></dd></div>
-              <div><dt>제공기관</dt><dd><PublicTermTextV134 text={card?.provider || item.sourceOrganizations.join(" · ")} /></dd></div>
+              {(card?.provider || item.sourceOrganizations.length > 0) && <div><dt>제공기관</dt><dd><PublicTermTextV134 text={card?.provider || item.sourceOrganizations.join(" · ")} /></dd></div>}
               {sort === "latest" && date && <div><dt>갱신일</dt><dd><time dateTime={date}>{new Date(date).toLocaleDateString("ko-KR", {timeZone:"Asia/Seoul"})}</time></dd></div>}
             </dl>
             <button type="button" className="home-featured-v139__open" data-testid="home-card-open-v140" onClick={() => onOpenElement(item.elementId, countryIso3, card?.selection || undefined)} aria-label={title + " 상세보기"}>상세보기 →</button>

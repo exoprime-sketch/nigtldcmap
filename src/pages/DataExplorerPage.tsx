@@ -190,7 +190,8 @@ function referenceYearRangeV125(item: CountryCatalogItemV122): string {
     .map(Number)
     .filter(Number.isFinite)
     .sort((left, right) => left - right);
-  if (years.length === 0) return latestYearLabel(item.latestYear) || "미기재";
+  // V161: no stated period - the card leaves the row out, no placeholder.
+  if (years.length === 0) return latestYearLabel(item.latestYear) || "";
   return years[0] === years[years.length - 1]
     ? String(years[0])
     : `${years[0]}–${years[years.length - 1]}`;
@@ -1002,22 +1003,25 @@ export default function DataExplorerPage({
               ) : null
             ) : (
             <dl className="cdp-card__facts cdp-card__facts--public-v135">
-              <div>
-                <dt>자료기간</dt>
-                <dd>{summary?.period && summary.kind !== "status" ? <PublicTermTextV134 text={summary.period} /> : semanticYearRange}</dd>
-              </div>
-              <div>
-                <dt>제공기관</dt>
-                <dd>
-                  <PublicTermTextV134
-                    text={
-                      summary?.provider || (item.sourceOrganizations.length > 0
-                        ? item.sourceOrganizations.slice(0, 2).join(" · ")
-                        : "—")
-                    }
-                  />
-                </dd>
-              </div>
+              {(summary?.period && summary.kind !== "status") || semanticYearRange ? (
+                <div>
+                  <dt>자료기간</dt>
+                  <dd>{summary?.period && summary.kind !== "status" ? <PublicTermTextV134 text={summary.period} /> : semanticYearRange}</dd>
+                </div>
+              ) : null}
+              {/* V161: provider and organisations arrive judged (working notes
+                  removed, spec source name as fallback); with nothing real left
+                  the row is not shown rather than filled with a placeholder. */}
+              {(summary?.provider || item.sourceOrganizations.length > 0) && (
+                <div>
+                  <dt>제공기관</dt>
+                  <dd>
+                    <PublicTermTextV134
+                      text={summary?.provider || item.sourceOrganizations.slice(0, 2).join(" · ")}
+                    />
+                  </dd>
+                </div>
+              )}
             </dl>
             )}
             <div className="cdp-card__actions">

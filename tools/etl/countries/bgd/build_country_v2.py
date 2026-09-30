@@ -43,6 +43,7 @@ REPO = pathlib.Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO))
 
 from tools.etl import build_public_v2 as v2  # noqa: E402  (pure helpers only)
+from tools.etl.download_zip_v158 import write_element_zip, zip_download_asset  # noqa: E402
 from tools.etl.download_delivery_v137 import (  # noqa: E402
     DELIVERY_EXTERNAL,
     NullObjectStorageAdapter,
@@ -651,10 +652,8 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             }
         if download_allowed:
             token = element_id.lower()
-            element["downloadAssets"] = [
-                {"format": "JSON", "url": f"{data_root}/downloads/{token}.json", "mediaType": "application/json", "recordCount": len(downloadable)},
-                {"format": "CSV", "url": f"{data_root}/downloads/{token}.csv", "mediaType": "text/csv; charset=utf-8", "recordCount": len(downloadable)},
-            ]
+            # V158: one deterministic ZIP per element (tools/etl/download_zip_v158.py).
+            element["downloadAssets"] = [zip_download_asset(f"{data_root}/downloads", token, len(downloadable))]
         else:
             element["downloadAssets"] = None
         meta = {
@@ -718,8 +717,6 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         payload = payloads[element["elementId"]]
         obs_rows, ent_rows = v2._download_rows(payload)
         token = element["elementId"].lower()
-        json_path = out / "downloads" / f"{token}.json"
-        csv_path = out / "downloads" / f"{token}.csv"
         obs_defaults, obs_out = v2._hoist_record_defaults(obs_rows)
         ent_defaults, ent_out = v2._hoist_record_defaults(ent_rows)
         document: dict[str, Any] = {
@@ -740,10 +737,14 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
                 "observations": obs_defaults,
                 "entities": ent_defaults,
             }
-        v2._write_json(json_path, document, pretty=False)
-        csv_path.write_bytes(_download_csv(element, obs_rows, ent_rows, names, region_columns, region_separator))
-        for fmt, media_type, path in (("JSON", "application/json", json_path), ("CSV", "text/csv; charset=utf-8", csv_path)):
-            download_assets.append(describe_download_asset(element["elementId"], fmt, media_type, int(element["downloadableRecordCount"]), path, f"{data_root}/downloads/{path.name}"))
+        zip_path = write_element_zip(
+            out / "downloads",
+            token,
+            v2._json_bytes(document, pretty=False),
+            _download_csv(element, obs_rows, ent_rows, names, region_columns, region_separator),
+            element["downloadAssets"][0],
+        )
+        download_assets.append(describe_download_asset(element["elementId"], "ZIP", "application/zip", int(element["downloadableRecordCount"]), zip_path, f"{data_root}/downloads/{zip_path.name}"))
     download_manifest = build_download_manifest(download_assets, out / "downloads", NullObjectStorageAdapter())
     v2._write_json(out / "downloads" / "delivery-manifest.json", download_manifest)
     delivery = {(row["elementId"], row["format"]): row for row in download_manifest["assets"]}

@@ -15,6 +15,7 @@ import {
   approvedEntityAttributesV126,
   publicEntityAttributeLabelV126,
   publicMissingReasonLabelV126,
+  publicRecordNoteV161,
   publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
@@ -2561,7 +2562,8 @@ function entityMatrixRowV137(
   elementEmissionUnit: string | null = null,
   siblings: VietnamEntityV124[] = []
 ) {
-  const note = publicTextV126(entity.note);
+  // V161: a note's own source citation is judged like every source display.
+  const note = publicRecordNoteV161(entity.note);
   const name = publicEntityTitleV131(entity);
   const rawResult =
     entityFieldV125(entity, [
@@ -2646,7 +2648,7 @@ function entityMatrixRowV137(
  * heading of a disaster in a timeline.
  */
 function publicDescriptionNoteV137(note: unknown): string | null {
-  const text = publicTextV126(note);
+  const text = publicRecordNoteV161(note);
   if (!text || /^\[\s*좌표/u.test(text)) return null;
   // The same coordinate derivation sat at the end of thirty-four rows of one
   // screen. It belongs with the map's accuracy statement, not under every item.

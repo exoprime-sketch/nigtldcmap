@@ -16,12 +16,36 @@
 - 카드 요약 C-007: 등재 건수 행이 없는 납품을 '0건'으로 보이지 않고 일반 항목 카드로(결측 0 대체 금지).
 - `screen-signature-v158`: 찾기·지도·다운로드·이용안내를 해시 경로로 찍는다(이전에는 모두 홈으로 찍혔다).
 
+## Unreleased — V158-ZIP 요소별 다운로드 사전 압축 (PR 후보, 화면 변화 0)
+
+### Changed
+
+- 요소별 다운로드를 `downloads/<id>.zip` 하나로 배포한다(안에 `<id>.json`·`<id>.csv`, 결정적 ZIP). 베트남 147개·방글라데시 85개. 배포 1회 948.7 MB → 164.4 MB, 파일 867 → 635개. 기존 주소 `<id>.json·csv`는 404(사용자 결정 2026-09-30): `vercel.json` `routes`로 없는 `/data/**`를 SPA 폴백에서 제외.
+- 카탈로그 `downloadAssets`: ZIP 1개와 안쪽 파일 목록·크기·해시(`entries`). 레코드 변화 0(원자료 값 비교 152요소 변화 0).
+- 감사·QA·테스트·도구가 ZIP 안 파일을 읽는다. 기대값 변경 12건(`reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`).
+- 데이터 디렉터리 갱신일은 포장 전환 커밋을 제외한다(갱신일 변화 0).
+
+### Fixed
+
+- `refresh:data` 반영 단계에 semantic 재생성 추가: 스테이징 체인이 지도 레이어 없이 semantic을 만들어 반영 때 지도 연결 30요소가 꺼지던 문제(#46 불일치의 원인).
+
 ## Unreleased — V158-B2a 배포 용량 예측·데이터 배포 방식 결정안 (PR 후보)
 
 ### Added
 
-- `docs/DEPLOYMENT_CAPACITY_V158.md`: Vercel(Hobby) 공식 한도, 10개국 배포 1회 예측(2.19~7.12 GB), 지연 로드·사전 압축·외부 저장 비교, 권고(요소별 다운로드 사전 압축 → 0.28~1.19 GB), 외부 저장 전환 조건, 결정 필요 3건
+- `docs/DEPLOYMENT_CAPACITY_V158.md`: Vercel(Hobby) 공식 한도, 10개국 배포 1회 예측(2.19~7.12 GB), 지연 로드·사전 압축·외부 저장 비교, 권고(요소별 다운로드 사전 압축 → 0.28~1.19 GB), 외부 저장 전환 조건, 사용자 결정(2026-09-30: ② 사전 압축 채택·구현 별도 PR, 기존 다운로드 주소 404 허용, Hobby 비상업 조건 보류)
 - `scripts/v158/deployment-capacity-v158.mjs`(읽기 전용 실측: 국가·범주별 크기, 파일 수, 최대 파일, 요소별 ZIP 크기)와 결과 `reports/v158/deployment-capacity-v158.json`. 국가·대상국 수는 레지스트리·우선국가 목록에서 읽음
+
+## Unreleased — V158-SYNC 베트남 파생 자산을 생성기 출력과 맞춤 (PR 후보, 화면 변화 0)
+
+### Fixed
+
+- 커밋본이 생성기 출력보다 뒤처졌던 베트남 파생 자산 4개 파일을 재생성했다: semantic 계약 30요소 `mapLinkage`, 생성 TS 모듈 30요소 `spatiallyLinked`, dataset-directory 6요소 `updatedAt`. integrity 갱신. 공개 화면은 두 값을 읽지 않아 화면 서명 151화면 차이 0.
+- `screen-signature-v158`: 찾기·지도·다운로드·이용안내를 해시 경로로 찍는다(이전에는 `?view=` 주소라 모두 홈으로 찍혔다).
+
+### Added
+
+- `scripts/v158/derived-sync-table-v158.py`: 커밋본 ↔ 재생성 결과 대조표(요소·필드 단위).
 
 ## Unreleased — V158 배포 단일화: GitHub Pages 배포 중단, Vercel 하나로 (PR 후보)
 

@@ -11,6 +11,8 @@ import {
 } from "node:fs";
 import { extname, relative, resolve } from "node:path";
 import { AuditV125, PROJECT_ROOT } from "./v125/audit-utils.mjs";
+import { createHash } from "node:crypto";
+import { readZipMembersV158 } from "./v158/download-zip-v158.mjs";
 
 const audit = new AuditV125("security:v128");
 const reportRoot = resolve(PROJECT_ROOT, "reports/v128");
@@ -42,10 +44,35 @@ const candidateFiles = String(candidateResult.stdout || "")
   .filter(Boolean);
 
 const trackedEnv = trackedFiles.filter((path) => /(?:^|\/)\.env(?:$|\.)/u.test(path));
+// V158 (user decision 2026-09-30): the per-element download ZIPs are published
+// data, not raw sources. Only a ZIP at data/<country>/v2/downloads/<id>.zip that
+// the country's catalog lists with the same SHA-256, and that holds exactly
+// <id>.json and <id>.csv, is exempt; any other archive (a raw delivery, a ZIP
+// with a workbook inside) is still a raw source.
+const publishedZipShas = new Map();
+for (const country of JSON.parse(readFileSync(resolve(PROJECT_ROOT, "public/data/countries.json"), "utf8")).countries || []) {
+  const catalogPath = resolve(PROJECT_ROOT, `public${country.dataRoot}`, "catalog.json");
+  if (!existsSync(catalogPath)) continue;
+  for (const element of JSON.parse(readFileSync(catalogPath, "utf8")).elements || []) {
+    for (const asset of element.downloadAssets || []) {
+      if (asset.format === "ZIP") publishedZipShas.set(String(asset.url).replace(/^[/]/u, ""), asset.sha256);
+    }
+  }
+}
+function isPublishedDownloadZip(path, absolutePath) {
+  const match = path.match(/^(?:public|build)[/](data[/][^/]+[/]v2[/]downloads[/]([a-e]-[0-9]{3})[.]zip)$/u);
+  if (!match || !publishedZipShas.has(match[1]) || !existsSync(absolutePath)) return false;
+  const bytes = readFileSync(absolutePath);
+  if (createHash("sha256").update(bytes).digest("hex") !== publishedZipShas.get(match[1])) return false;
+  const names = [...readZipMembersV158(bytes).keys()].sort();
+  return JSON.stringify(names) === JSON.stringify([`${match[2]}.csv`, `${match[2]}.json`]);
+}
+
 const trackedRawSource = trackedFiles.filter(
   (path) =>
-    /(?:^|\/)_source(?:\/|$)/u.test(path) ||
-    /\.(?:zip|7z|rar|xlsx?|xlsm)$/iu.test(path)
+    (/(?:^|\/)_source(?:\/|$)/u.test(path) ||
+      /\.(?:zip|7z|rar|xlsx?|xlsm)$/iu.test(path)) &&
+    !isPublishedDownloadZip(path, resolve(PROJECT_ROOT, path))
 );
 const trackedNodeModules = trackedFiles.filter((path) =>
   /(?:^|\/)node_modules(?:\/|$)/u.test(path)
@@ -65,8 +92,9 @@ function rawSourceFiles(root) {
     .map((path) => relative(PROJECT_ROOT, path).replace(/\\/gu, "/"))
     .filter(
       (path) =>
-        /(?:^|\/)_source(?:\/|$)/u.test(path) ||
-        /\.(?:zip|7z|rar|xlsx?|xlsm)$/iu.test(path)
+        (/(?:^|\/)_source(?:\/|$)/u.test(path) ||
+          /\.(?:zip|7z|rar|xlsx?|xlsm)$/iu.test(path)) &&
+        !isPublishedDownloadZip(path, resolve(PROJECT_ROOT, path))
     );
 }
 

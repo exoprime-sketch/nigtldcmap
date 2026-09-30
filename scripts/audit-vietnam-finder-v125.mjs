@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, statSync } from "node:fs";
+import { readZipMembersV158 } from "./v158/download-zip-v158.mjs";
 import { createServer } from "node:http";
 import { resolve } from "node:path";
 import ts from "typescript";
@@ -223,6 +224,22 @@ for (const element of catalog) {
       let records = null;
       if (format === "JSON") records = jsonDownloadRecordCount(JSON.parse(text.value));
       if (format === "CSV") records = parseCsv(text.value).length;
+      if (format === "ZIP") {
+        // V158: one ZIP per element; its JSON and CSV must both hold the records.
+        const members = readZipMembersV158(path);
+        const counts = (asset.entries || []).map((entry) => {
+          const member = members.get(entry.fileName);
+          if (!member) throw new Error(`missing ${entry.fileName} in the ZIP`);
+          const entryFormat = String(entry.format || "").toUpperCase();
+          return entryFormat === "JSON"
+            ? jsonDownloadRecordCount(JSON.parse(member.toString("utf8")))
+            : entryFormat === "CSV"
+            ? parseCsv(member.toString("utf8")).length
+            : NaN;
+        });
+        if (!counts.length || counts.some((count) => count !== counts[0])) throw new Error(`ZIP members disagree: ${counts.join(",")}`);
+        records = counts[0];
+      }
       if (records === null) throw new Error("unsupported download format");
       if (records !== Number(asset.recordCount)) {
         throw new Error(`record count ${records} != ${asset.recordCount}`);

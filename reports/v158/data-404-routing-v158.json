@@ -1,0 +1,74 @@
+{
+  "schema": "data-404-routing-v158",
+  "build": "tmp/build-zip-pr",
+  "ok": true,
+  "screens": [
+    {
+      "screen": "home",
+      "url": "/",
+      "mainTextLength": 2319,
+      "dataRequests": 10,
+      "dataProblems": [],
+      "errors": []
+    },
+    {
+      "screen": "finder",
+      "url": "/?country=VNM#explorer",
+      "mainTextLength": 7939,
+      "dataRequests": 5,
+      "dataProblems": [],
+      "errors": []
+    },
+    {
+      "screen": "map",
+      "url": "/?country=VNM#map",
+      "mainTextLength": 1735,
+      "dataRequests": 7,
+      "dataProblems": [],
+      "errors": []
+    },
+    {
+      "screen": "detail A-001",
+      "url": "/?country=VNM&element=A-001#element-detail",
+      "mainTextLength": 745,
+      "dataRequests": 8,
+      "dataProblems": [],
+      "errors": []
+    },
+    {
+      "screen": "download",
+      "url": "/?country=VNM#download",
+      "mainTextLength": 26182,
+      "dataRequests": 3,
+      "dataProblems": [],
+      "errors": []
+    }
+  ],
+  "direct": [
+    {
+      "path": "/data/vietnam/v2/downloads/a-002.csv",
+      "status": 404,
+      "type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/data/vietnam/v2/downloads/a-002.json",
+      "status": 404,
+      "type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/data/vietnam/v2/downloads/a-002.zip",
+      "status": 200,
+      "type": "application/zip"
+    },
+    {
+      "path": "/data/vietnam/v2/catalog.json",
+      "status": 200,
+      "type": "application/json"
+    },
+    {
+      "path": "/no/such/page",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    }
+  ]
+}

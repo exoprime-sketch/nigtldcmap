@@ -17,6 +17,7 @@ import {
 } from "../components/help/PublicTermV134";
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
+import { isPreparingStatusV160 } from "../data/finderSortV160";
 import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
@@ -232,7 +233,9 @@ export default function DownloadPage({
   );
   const years = useMemo(
     () =>
-      unique(catalog.flatMap((item) => item.raw.referenceYears))
+      // V161: a not-yet-delivered element's year is when its data is due to be
+      // entered, not a data year - never offered as one (cards, detail alike).
+      unique(catalog.filter((item) => !isPreparingStatusV160(item.publicStatus)).flatMap((item) => item.raw.referenceYears))
         .map(Number)
         .filter(Number.isInteger)
         .sort((a, b) => b - a),
@@ -615,7 +618,7 @@ export default function DownloadPage({
                       <PublicTermTextV134
                         text={[
                           providers.length > 1 ? item.countryNameKo : null,
-                          item.latestYear,
+                          isPreparingStatusV160(item.publicStatus) ? null : item.latestYear,
                           item.sourceOrganizations[0],
                         ]
                           .filter(Boolean)

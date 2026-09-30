@@ -25,9 +25,11 @@ from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
 import re
 import time
+import zipfile
 from collections import defaultdict
 from typing import Any
 
@@ -37,7 +39,8 @@ from osm_common_v155 import GEOMETRY_DIR, REPORT_DIR, REPOSITORY_ROOT, V2_ROOT, 
 
 
 ELEMENT_ID = "D-022"
-CSV_PATH = V2_ROOT / "downloads" / "d-022.csv"
+# V158: the download ships as downloads/d-022.zip holding d-022.csv.
+ZIP_PATH = V2_ROOT / "downloads" / "d-022.zip"
 CROSSWALK_PATH = REPOSITORY_ROOT / "reports" / "v138" / "map-targets-build-v138.json"
 REVIEW_PATH = REPOSITORY_ROOT / "tools" / "vietnam_spatial" / "source" / "d-022-review-v155.json"
 COLLECT_PATH = REPORT_DIR / "d-022-iati-locations-v155.json"
@@ -52,7 +55,8 @@ AGGREGATION_RULE = "다수 성 사업은 각 성에 사업 수 1건·승인액 �
 
 def load_records() -> list[dict[str, Any]]:
     records = []
-    with CSV_PATH.open(encoding="utf-8-sig", newline="") as handle:
+    csv_text = zipfile.ZipFile(ZIP_PATH).read("d-022.csv").decode("utf-8-sig")
+    with io.StringIO(csv_text, newline="") as handle:
         for row in csv.DictReader(handle):
             attributes = json.loads(row["attributes_json"])
             link = attributes.get("링크") or ""
@@ -357,7 +361,8 @@ def finalize() -> None:
             "coordinatesPublished": False,
         },
         "source": {
-            "csv": "/data/vietnam/v2/downloads/d-022.csv",
+            "csv": "d-022.csv",
+            "download": "/data/vietnam/v2/downloads/d-022.zip",
             "locationSource": "IATI Registry — d-portal (World Bank 보고 activity location, precision 2)",
             "locationApi": DPORTAL_Q.replace("{aid}", "<iati-identifier>"),
             "projectPages": WB_PAGE.replace("{pid}", "<P-number>"),
