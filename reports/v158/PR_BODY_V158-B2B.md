@@ -41,7 +41,7 @@
 | `finalize:v151` | 통과(2회차) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24. 1회차는 drought 감사의 소스 원문 검사 1건(검수 문장 원문 복원, 감사 무변경) |
 
 ## Preview·확인 경로
-- Preview: PREVIEW_URL
+- Preview: https://nigtldcmap-oh3d30gk5-exoprime-5142s-projects.vercel.app (커밋 `6eb9f2b`, Vercel 로그인 필요)
 - **화면 변화 0**: 베트남 공개 화면(홈·찾기·상세·지도·다운로드·이용안내)은 그대로다(151화면 서명 비교 차이 0). BGD는 `preparing`이라 `?country=BGD`도 베트남 화면으로 열린다
 - 이번 수정이 보이는 곳은 BGD 공개(PR-D) 뒤의 BGD 화면이다
 
