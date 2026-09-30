@@ -222,6 +222,8 @@ export function InteractiveTimeSeriesChartV127({
   className = "",
   testId = "interactive-time-series-chart",
   onRangeChange,
+  markedX = null,
+  markedLabel,
 }: InteractiveTimeSeriesChartV127Props) {
   const rootRef = useRef<HTMLElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
@@ -919,6 +921,19 @@ export function InteractiveTimeSeriesChartV127({
           </text>
 
           <g clipPath={`url(#${clipId})`}>
+            {markedX !== null && Number.isFinite(markedX) && markedX >= visibleXDomain[0] && markedX <= visibleXDomain[1] ? (
+              <g className="v127-interactive-chart__marked" data-testid="chart-marked-x" data-marked-x={markedX} pointerEvents="none">
+                <line
+                  x1={xScale(markedX)}
+                  x2={xScale(markedX)}
+                  y1={padding.top}
+                  y2={safeHeight - padding.bottom}
+                />
+                <text x={xScale(markedX) + 6} y={padding.top + 12}>
+                  {markedLabel || formatX(markedX)}
+                </text>
+              </g>
+            ) : null}
             {plottedSeries.map((item) => (
               <g
                 className="v127-interactive-chart__series"

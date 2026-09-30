@@ -308,7 +308,10 @@ function renderObservationPanelV125(
                 <TrendPanelV125 elementId={elementId} rows={contextRows} />
               </>
             ) : (
-              <TrendPanelV125 elementId={elementId} rows={contextRows} />
+              // V162: the 연도 selector chooses the year of the values table
+              // below; the trend marks that year, so the control changes what
+              // the reader sees before the fold (A-019 and 26 more).
+              <TrendPanelV125 elementId={elementId} rows={contextRows} markedYear={singleYearV162(numericRows)} />
             )
           ) : (
             numericRows.length > 0 && <CategoryComparisonV125 rows={numericRows} />
@@ -714,12 +717,20 @@ function comparableYearCountV135(rows: NumericRowV125[]): number {
   return maximum;
 }
 
+/** The one year every selected row shares, or null (V162). */
+function singleYearV162(rows: NumericRowV125[]): number | null {
+  const year = rows[0]?.year;
+  return typeof year === "number" && rows.every((row) => row.year === year) ? year : null;
+}
+
 function TrendPanelV125({
   rows,
   elementId,
+  markedYear = null,
 }: {
   rows: SemanticObservationV125[];
   elementId: string;
+  markedYear?: number | null;
 }) {
   const numericRows = rows.filter(
     (row): row is NumericRowV125 =>
@@ -756,6 +767,7 @@ function TrendPanelV125({
             key={unit || "no-unit"}
             rows={unitRows}
             unit={unit}
+            markedYear={markedYear}
           />
         ) : (
           <CategoryComparisonV125 key={unit || "no-unit"} rows={unitRows} />
@@ -850,10 +862,12 @@ function TrendUnitV125({
   rows,
   unit,
   elementId,
+  markedYear = null,
 }: {
   rows: NumericRowV125[];
   unit: string;
   elementId: string;
+  markedYear?: number | null;
 }) {
   const sourceSeries = Array.from(
     rows.reduce((map, row) => {
@@ -923,6 +937,8 @@ function TrendUnitV125({
         unit={publicUnit}
         xAxisTitle="연도"
         yAxisTitle={measureLabel || "값"}
+        markedX={markedYear}
+        markedLabel={markedYear === null ? undefined : `선택 ${markedYear}년`}
         zoom={{
           enabled: maxYear > minYear,
           minimumSpan: Math.max(1, Math.floor((maxYear - minYear) / 5)),
