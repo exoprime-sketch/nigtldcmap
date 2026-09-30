@@ -1,3 +1,4 @@
+import { publicProcessWordingV162 } from "./processWordingV162";
 import type { CountryCatalogItemV122 } from "../countries/countryDataTypesV122";
 import type {
   VietnamEntityV124,
@@ -779,6 +780,10 @@ const INTERNAL_REVIEW_NOTES_V137: readonly RegExp[] = [
   /\s*[-—–]\s*[A-E]-\d{3}\s*폴리곤\s*재사용\s*/gu,
 ];
 
+const KEPT_SOURCE_FILE_V162 = /보관\s*원자료\s+(?!https?:)[^\s()（）]+\.pdf\b/gu;
+
+const OWN_FILE_ROW_POINTER_V162 = [/\s*\(\s*본\s*파일\s*r\d+[^)]*\)/gu, /\s*,\s*본\s*파일\s*r\d+/gu] as const;
+
 const UNMATCHED_CLOSING_BRACKET_V137 = /^([^[\]]*)\]\s*/u;
 
 const LEADING_ROW_IDENTIFIER_V137 =
@@ -798,6 +803,13 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(INTERNAL_REVIEW_NOTES_V137[5], "")
     .replace(INTERNAL_REVIEW_NOTES_V137[6], "")
     .replace(INTERNAL_REVIEW_NOTES_V137[7], "")
+    // V162: a kept source file named by its file name ("보관 원자료
+    // Germanwatch_CRI2026_full_report.pdf 판권면") - the report is named instead.
+    .replace(KEPT_SOURCE_FILE_V162, "원문 보고서")
+    // V162: a pointer to a row of the compiler's own file ("(본 파일 r5 Decree
+    // 119/2025/ND-CP, r23 …)", ", 본 파일 r23"); the cited law stays elsewhere.
+    .replace(OWN_FILE_ROW_POINTER_V162[0], "")
+    .replace(OWN_FILE_ROW_POINTER_V162[1], "")
     // "[M01·원자료 결측]" - the code addresses the compiler, the phrase after it
     // is the reason a reader needs.
     .replace(/\[\s*M\d{2}\s*·\s*/gu, "[")
@@ -850,7 +862,9 @@ function normalizeTextV126(value: unknown): string | null {
 }
 
 export function publicTextV126(value: unknown): string | null {
-  return normalizeTextV126(value);
+  // V162: the supplier's process word reads as the block titles name it.
+  const text = normalizeTextV126(value);
+  return text === null ? null : publicProcessWordingV162(text);
 }
 
 /**
@@ -994,10 +1008,31 @@ const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
  * judged like any other source line, and dropped when nothing but a working
  * note is left. The rest of a note is the record's own content and stays.
  */
+/**
+ * V162: the 2026-09-30 delivery's own migration log, written into the record
+ * note when rows moved to the wide template: "[구분자 통일] 구서식 구분자
+ * 「C-002_report_submission」 [열→행 전개] 구서식 열 「[재원] …」 (레코드ID
+ * VNM-C002-BTR1)", "· 구서식 「[기후] 관측·전망 기간」 1958-2018" and "…은
+ * C-002_inventory_timeseries 행에 수록." It records how the sheet was rebuilt,
+ * not what the data says; the note's own sentences stay.
+ */
+const RECORD_NOTE_MIGRATION_LOG_V162: readonly RegExp[] = [
+  // the tag and what follows it, a quoted 「…」 (which may hold brackets) included
+  /\s*\[\s*(?:구분자\s*통일|열\s*→\s*행\s*전개)\s*\][^[「]*(?:「[^」]*」[^[「]*)*/gu,
+  /\s*\(\s*(?:레코드|자료)\s*ID\s+[^)]*\)/gu,
+  /\s*·?\s*구서식\s*「[^」]*」[^·.[]*/gu,
+  /[^.。]*\b[A-E]-\d{3}_[a-z0-9_]+\s*행에\s*수록\.?/gu,
+];
+/** A file name outside a URL ("보관 원자료 Germanwatch_CRI2026_full_report.pdf"). */
+const RECORD_NOTE_BARE_FILE_V162 = /(^|[\s(（])(?!https?:)[^\s()（）]+\.(?:pdf|md|xlsx?|csv|docx?|hwpx?)\b/giu;
+
 export function publicRecordNoteV161(value: unknown): string | null {
   const normalized = normalizeTextV126(value);
   if (normalized === null) return null;
-  const withoutPointer = normalized
+  const withoutLog = RECORD_NOTE_MIGRATION_LOG_V162.reduce((text, pattern) => text.replace(pattern, ""), normalized)
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+  const withoutPointer = withoutLog
     .replace(RECORD_NOTE_FILE_POINTER_V158, "")
     .replace(RECORD_NOTE_SURVEY_CITATION_V162, "")
     .replace(RECORD_NOTE_SURVEY_TAG_V162, "")
@@ -1018,8 +1053,14 @@ export function publicRecordNoteV161(value: unknown): string | null {
     const source = publicSourceOrganizationV136_1(part.replace(RECORD_NOTE_SOURCE_V161, ""));
     return source ? [`출처: ${source}`] : [];
   });
-  const text = parts.join(" · ").trim();
-  return text === "" ? null : text;
+  // A file name the rules above did not already take out with its sentence.
+  const text = parts
+    .join(" · ")
+    .replace(RECORD_NOTE_BARE_FILE_V162, "$1")
+    .replace(/\(\s*\)/gu, "")
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+  return text === "" ? null : publicProcessWordingV162(text);
 }
 
 /**

@@ -211,3 +211,28 @@ describe("withoutFileNamesV162 (V162: file names never on screen)", () => {
     expect(sourceLinkTextV162("https://x.org/page")).toBe("원문");
   });
 });
+
+describe("V162 public wording of the supplier's process and migration log", () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { publicProcessWordingV162 } = require("./wideRecordsV162");
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { publicRecordNoteV161 } = require("./publicFieldPolicyV126");
+  it("names a field-survey record the way its block title does", () => {
+    expect(publicProcessWordingV162("현지조사, A. Physical Security & Violent Crime")).toBe("현장 확인 — A. Physical Security & Violent Crime");
+    expect(publicProcessWordingV162("현지조사 필요 항목")).toBe("현장 확인 항목");
+    expect(publicProcessWordingV162("NIP 2016으로 표기. 개별 업종은 BGD-C013-EQ-RSV-01~04 · CTL-01~22 행으로 전개")).toBe("NIP 2016으로 표기.");
+    expect(publicProcessWordingV162("게시 파일명이 Bangladesh_BTR1_Interim.pdf 로 잠정본 성격이며")).toBe("게시 파일명상 잠정본 성격이며");
+  });
+  it("drops the delivery's migration log from a record note, keeping its statements", () => {
+    expect(
+      publicRecordNoteV161(
+        "최신 제출본은 BUR3(2021-04-16). [구분자 통일] 구서식 구분자 「C-002_report_submission」 [열→행 전개] 구서식 열 「[재원] BTR1 준비 지원액」 (레코드ID VNM-C002-BTR1)"
+      )
+    ).toBe("최신 제출본은 BUR3(2021-04-16).");
+    expect(publicRecordNoteV161("재계산 결과. 공표 인벤토리 시계열(1994·2000)은 C-002_inventory_timeseries 행에 수록.")).toBe("재계산 결과.");
+    expect(publicRecordNoteV161("Decree 119/2025/ND-CP 로 도입(본 파일 r5). Thông tư 11/2026(2026-02-13 서명, 본 파일 r23).")).toBe(
+      "Decree 119/2025/ND-CP 로 도입. Thông tư 11/2026(2026-02-13 서명)."
+    );
+    expect(publicRecordNoteV161("판권면을 재확인한 결과 Germanwatch_CRI2026_full_report.pdf 에 CC 표기가 없다.")).toBe("판권면을 재확인한 결과 에 CC 표기가 없다.");
+  });
+});

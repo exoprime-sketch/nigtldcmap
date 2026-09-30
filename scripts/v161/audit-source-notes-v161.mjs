@@ -97,7 +97,7 @@ export const CONTENT_ALLOWLIST_V161 = [
   // "해당없음" as a data value (not a source): scoped to the element whose
   // detail shows it, so the same word in any other place still fails.
   // Bangladesh's delivery writes the same value with a space (V158-B2b).
-  [/해당\s?없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
+  [/해당\s?없음 — 사무소 미설치/gu, "E-019·E-004 데이터 값(해외사무소 소재지·연락 유형 — 사무소 없는 기관; E-004는 V162 입고에서 같은 값)", ["E-019", "E-004"]],
   [/(?<=\d{4})해당 없음/gu, "E-012 표의 결측 사유 열 값('해당 없음' = 결측 아님)", ["E-012"]],
   [/해당 없음\(NMA 자체가/gu, "C-007 데이터 값(host 여부 설명)", ["C-007"]],
   [/한국 관련:\s*해당없음/gu, "A-029 데이터 값(협정의 한국 관련 여부)", ["A-029"]],
@@ -133,7 +133,8 @@ function findNotes(rawText, elementId = null) {
   return hits;
 }
 
-const server = await startStaticBuildServer(BUILD, { port: 4401 });
+// --port: another session may hold the default port on a shared machine.
+const server = await startStaticBuildServer(BUILD, { port: Number(opt("--port", "4401")) });
 const base = server.url.replace(/\/$/u, "");
 const browser = await chromium.launch(process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {});
 const findings = [];

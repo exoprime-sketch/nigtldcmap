@@ -1,3 +1,4 @@
+import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamElementMetaBundleV124, VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicRecordNoteV161, publicSourceUrlV126, publicUnstatedWordingV161 } from "./publicFieldPolicyV126";
 
@@ -63,6 +64,8 @@ export interface WideRecordV162 {
 
 type FieldDefinitionsV162 = VietnamElementMetaBundleV124["fieldDefinitions"];
 
+export { publicProcessWordingV162 };
+
 const HEADER_V162 = /^\[([^\]]+)\]\s*(.+)$/u;
 /** Blocks that only keep the supplier's books: never a section on screen. */
 const BOOKKEEPING_BLOCKS_V162 = new Set(["식별", "기술", "결측"]);
@@ -70,7 +73,8 @@ const SOURCE_BLOCK_V162 = "출처";
 /** Block names that carry the supplier's process, shown under a reader's name. */
 const BLOCK_TITLES_V162: Record<string, string> = { 현지조사: "현장 확인 자료" };
 /** Attributes that are codes or record keys, in any block. */
-const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)/iu;
+// V162: the supplier's own file bookkeeping ("[링크] raw 보유 여부", "raw 파일명").
+const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b/iu;
 /** A value that names a delivered or working file rather than stating anything. */
 const FILE_VALUE_V162 =
   /(^raw\s*`)|`[^`]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)`|(?:^|[\s(])[A-E]-\d{3}_[^\s]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)\b|내부자료|Items_/iu;
@@ -135,6 +139,9 @@ export function sourceLinkTextV162(url: string, title?: string | null): string {
   return /\.pdf(?:$|[?#])/iu.test(url) ? "원문 PDF" : "원문";
 }
 
+/** A citation that points into the supplier's workbook ("Dataset C 시트 22행"). */
+const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행/u;
+
 /** Attributes that hold free-text notes, where the supplier's memo sentences can sit. */
 const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;
 
@@ -147,7 +154,7 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   const text = cellText(value);
   if (!text || FILE_VALUE_V162.test(text)) return "";
   const cleaned = NOTE_ATTRIBUTE_V162.test(attribute) ? publicRecordNoteV161(text) || "" : text;
-  return withoutFileNamesV162(publicUnstatedWordingV161(cleaned));
+  return publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)));
 }
 
 export function readWideRecordsV162(
@@ -193,7 +200,10 @@ export function readWideRecordsV162(
         document: read(documentField) || null,
         url: urlField ? publicSourceUrlV126(read(urlField)) : null,
         pageUrl: pageField ? publicSourceUrlV126(read(pageField)) : null,
-        citation: read(citationField) || null,
+        citation: (() => {
+          const citation = read(citationField);
+          return citation && !WORKBOOK_CITATION_V162.test(citation) ? citation : null;
+        })(),
       },
       get(block: string, attribute: string) {
         const field = lookup.get(`${block}\u0000${attribute}`);

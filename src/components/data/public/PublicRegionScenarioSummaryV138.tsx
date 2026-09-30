@@ -281,6 +281,12 @@ function fallbackMeasureLabel(key: string): string {
 }
 
 function fallbackUnit(key: string): string {
+  // V162: the 2026-09-30 columns print the unit, then a basis, at the end:
+  // "사망자_명", "총피해액_천USD_명목", "상대해수면_상승_m_2005년_기준".
+  if (/_명$/u.test(key)) return "명";
+  if (/_천USD_명목$/u.test(key)) return "천 USD(명목)";
+  if (/_천USD_(\d{4})실질$/u.test(key)) return `천 USD(${key.match(/_천USD_(\d{4})실질$/u)![1]}년 실질)`;
+  if (/_m_\d{4}년_기준$/u.test(key)) return "m";
   if (/_일$/u.test(key)) return "일";
   if (/_mm$/iu.test(key)) return "mm";
   if (/_km$/u.test(key)) return "km²";
@@ -693,7 +699,7 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
         <div>
           <dt>단위</dt>
-          <dd>{unit ? <PublicTermTextV134 text={unit} /> : regionLevelV158 ? "—" : "원천 미기재"}</dd>
+          <dd>{unit ? <PublicTermTextV134 text={unit} /> : regionLevelV158 ? "—" : "미기재"}</dd>
         </div>
         {measureMeta.direction && (
           <div>

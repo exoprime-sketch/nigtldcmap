@@ -1,3 +1,4 @@
+import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 import {
@@ -635,7 +636,19 @@ function publicRecordTypeV131(
   return templateType || "공개 데이터 항목";
 }
 
+/**
+ * V162: a record named by the supplier's process ("현지조사, A. …") reads under
+ * the reader's word for it, like its block title (processWordingV162).
+ */
 export function resolvePublicEntityTitleV131(
+  entity: VietnamEntityV124,
+  options: PublicEntityTitleOptionsV131 = {}
+): PublicEntityTitleResolutionV131 {
+  const resolved = resolvePublicEntityTitleBaseV131(entity, options);
+  return { ...resolved, title: publicProcessWordingV162(resolved.title) };
+}
+
+function resolvePublicEntityTitleBaseV131(
   entity: VietnamEntityV124,
   options: PublicEntityTitleOptionsV131 = {}
 ): PublicEntityTitleResolutionV131 {
