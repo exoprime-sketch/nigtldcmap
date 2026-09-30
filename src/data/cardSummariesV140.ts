@@ -83,6 +83,11 @@ export interface CardSummaryV140 {
   headline: CardHeadlineV140;
   preview: CardPreviewV140;
   period: string;
+  /**
+   * V162: what `period` is when it is not an observed span - '기준 시점' (the
+   * point a list was collected) or '계획기간' (a plan's span). Absent = 자료기간.
+   */
+  periodLabel?: string;
   provider: string;
   selection: DataFinderSelectorStateV125 | null;
   basis: { unit: string; rule: string };

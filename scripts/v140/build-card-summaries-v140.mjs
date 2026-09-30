@@ -980,6 +980,11 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
 
 // ------------------------------------------------------------------ assemble
 const reviewedIndicatorCopyV144 = JSON.parse(readFileSync(resolve("src/data/visualization/publicIndicatorCopyV144.json"), "utf8"));
+// V162: what the card's period is - an observed/published span (자료기간), the
+// point a list was collected (기준 시점: no year on the headline or the
+// comparison wording) or a plan's span (계획기간). Decided from the source
+// fields per element; elements not listed keep their 자료기간.
+const periodStatementsV162 = JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/periodStatementsV162.json"), "utf8"));
 const cards = [];
 const review = [];
 // V156: a card is an offer to read the element; an element decided not to be
@@ -1074,6 +1079,22 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     if (card.preview?.note === original && short) card.preview.note = short;
   }
   card.headline.label = card.headline.label.split(" · ").map((part) => part.trim()).filter(Boolean).join(" · ");
+  const periodStatement = periodStatementsV162.elements[elementId];
+  if (periodStatement) {
+    const previous = card.period;
+    if (periodStatement.kind === "reference") {
+      card.headline.label = card.headline.label.split(" · ").filter((part) => part !== previous).join(" · ");
+      if (card.preview?.scope === previous) delete card.preview.scope;
+      card.basis.rule = card.basis.rule.split(`${previous} 기준으로 `).join("");
+      if ([card.headline.label, card.preview?.scope || "", card.basis.rule].some((text) => text.includes(previous))) warn(elementId, `collection year still on the card: ${previous}`);
+    } else {
+      card.headline.label = card.headline.label.split(" · ").map((part) => (part === previous ? periodStatement.text : part)).join(" · ");
+      if (card.preview?.scope === previous) card.preview.scope = periodStatement.text;
+      card.basis.rule = card.basis.rule.split(previous).join(periodStatement.text);
+    }
+    card.period = periodStatement.text;
+    card.periodLabel = periodStatementsV162.labels[periodStatement.kind];
+  }
   const entry = {
     elementId,
     title: item.elementLabel,
