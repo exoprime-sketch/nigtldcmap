@@ -17,6 +17,7 @@
   - D-018: '기준 시점 2026-07 수집'
   - 판정 불가 3개(B-025·C-006·C-011)는 현행 유지
 
+- **추가(#47 병합 후)**: 지도 목록 연도 꼬리표·정보 패널에 자료기간 규칙(수집 시점은 목록에 연도 없음, 패널 '기준 시점 2026-07 수집'), A-027 OSM 분류값 '협궤 철도 (narrow_gauge)'·B-026 붙은 지명 띄어쓰기, #47 스캔 예외 2건 삭제(findings 0·exceptions 0). main #47·#50 병합, 자료기간 계약은 베트남 한정, #50 벵골 문자 지명에도 검토 대기 규칙
 상세: `reports/v162/REVIEW_V162.md`(전수 목록·분류표·검증), 기대값 변경 사유: `reports/v162/EXPECTATION_CHANGES_V162.md`
 
 ## Preview
@@ -33,6 +34,8 @@ PREVIEW_URL
 | 상세 지역명 | `…element=B-031…`, `B-003`, `C-019`, `B-026`, `C-012` | 성·시·도시 이름 '한글명 (현지명)', C-012 이중 괄호 해소 |
 | 상세 미입고 | `…element=C-023…`, `E-011`, `E-013` | 제목 아래 '데이터 준비 중' 1줄만 |
 | 찾기 카드·상세 출처 줄 | `/#explorer` → E-001·D-018·D-014·C-003 카드, 각 상세 '자료 출처·상세 데이터' | '기준 시점 2026-08-14 수집'·'2026-07 수집', D-014 '자료기간 2010–2023년', C-003 '계획기간' |
+| 지도 목록·정보 패널 | `/?country=VNM#map` → '모두 펼치기' → 적응기금 사업(D-018)·E-001 행의 i | 목록에 연도 없음, 패널 '기준 시점 2026-07 수집'·'집계 기준 승인일 기준' |
+| 상세 A-027·B-026 | `…element=A-027…` → '차트 더 보기' 분류별 막대, `…element=B-026…` | '협궤 철도 (narrow_gauge)' 등, '끼엔장 (Kiên Giang)' |
 
 ## 1440px 캡처(전: 운영 main / 후: 이 브랜치 production 빌드)
 | 대상 | 전 | 후 |
@@ -58,6 +61,10 @@ PREVIEW_URL
 | D-014 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-D-014-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-D-014-source.png) |
 | D-018 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-D-018-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-D-018-source.png) |
 | E-001 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-E-001-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-E-001-source.png) |
+| 지도 목록 D-018 행·정보 패널 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-map-D-018-row-info.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-map-D-018-row-info.png) |
+| 지도 목록 E-001 행·정보 패널 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-map-E-001-row-info.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-map-E-001-row-info.png) |
+| A-027 상세(OSM 분류 한글 라벨) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-e-A-027.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-e-A-027.png) |
+| B-026 상세(지역명) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-e-B-026.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-e-B-026.png) |
 
 ## 검증
 | 항목 | 결과 |
@@ -71,6 +78,12 @@ PREVIEW_URL
 | 이후 단계 개별 실행 | 20개 중 19 PASS, detail-hierarchy:v135만 같은 원인 → 기대값 변경(사유 `EXPECTATION_CHANGES_V162.md`) |
 | finalize:v151(2차, 마지막) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 35(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 24/24 |
 | 게이트 반복 | 2회(규칙 한도 이내) |
+| **추가 범위 후(main #47·#50 병합)** | |
+| test:unit | 739/739(main의 새 테스트 포함) |
+| 공개 문구 스캔(#47, 예외 0) | findings 0 · exceptions 0 · 검사 797 · 목록 72행 · 활성 60 |
+| e2e 전체(214) | 213 통과 · 1 실패 = visual `detail-a016`: main에서도 같은 차이(48,873픽셀) — 기준 이미지 노후, 이 PR 무관 |
+| production 빌드(CI=true) | 성공 |
+| finalize:v151(병합 후 1회) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 34(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 25/25 |
 
 병합은 Preview 검토 후 "PR #N 병합" 지시가 있을 때만.
 
