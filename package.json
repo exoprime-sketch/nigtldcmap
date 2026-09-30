@@ -25,6 +25,8 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
+    "p5:final": "node scripts/p5/run-p5.mjs",
+    "p5:tracker": "node scripts/p5/build-tracker-p5.mjs",
     "prebuild": "node scripts/v150-1/dataset-directory-v150-1.mjs verify",
     "build:country-compare:v158": "node scripts/v158/build-country-compare-contract-v158.mjs",
     "build:map-contract:v157": "node scripts/v157/build-map-content-contract-v157.mjs",
