@@ -594,7 +594,9 @@ export default function PublicRegionScenarioSummaryV138({
         {distribution
           ? (rowIsSubRegion
               ? `${regionCount}개 ${regionWord}에 걸친 ${rowUnitLabel}별 값의 분포입니다. 값은 ${rowUnitLabel} 단위로 제공되며 ${regionWord} 값으로 합치지 않습니다. `
-              : `${regionCount}개 ${regionWord}${subjectParticleV158(regionWord)} 가진 값의 분포입니다. ${regionWord} 값을 평균한 전국값은 만들지 않고, `) +
+              : regionLevelV158
+                ? `${regionCount}개 ${regionWord}${subjectParticleV158(regionWord)} 가진 값의 분포입니다. ${regionWord} 값을 평균한 전국값은 만들지 않고, `
+                : `${regionCount}개 성·시가 가진 값의 분포입니다. 성·시 값을 평균한 전국값은 만들지 않고, `) +
             (multiYear
               ? "연도별 중앙값과 10~90 분위(지역 간 분포)를 보여줍니다. 지역을 고르면 그 지역의 원천값을 잇습니다."
               : "중앙값과 10~90 분위를 보여주고, 아래에서 지역별 값을 순위로 비교합니다.")
