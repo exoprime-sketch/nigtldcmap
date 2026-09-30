@@ -46,6 +46,15 @@ const headingModule = require(
 );
 const headings = headingModule.PUBLIC_ANALYSIS_HEADINGS_V134 || [];
 const headingById = new Map(headings.map((row) => [row.elementId, row]));
+// V162 (user decision 2026-09-30, reports/v162/EXPECTATION_CHANGES_V162.md):
+// a data-pending element (C-023, E-011, E-013) states '데이터 준비 중' once and
+// has no separate analysis heading ("… 자료 수집 상태" repeated the state). Its
+// title is the page's own (public-data-title sits on the h1), so the title is
+// expected to be the page title and the page/analysis distinction does not apply.
+const typologyRowsV162 = JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8"));
+const DATA_PENDING_V162 = new Set(
+  (Array.isArray(typologyRowsV162) ? typologyRowsV162 : typologyRowsV162.rows || []).filter((row) => row.statusNotice === "data-pending").map((row) => row.elementId)
+);
 const catalogResult = readJson(resolve(V2_ROOT, "catalog.json"));
 const catalog = catalogElements(catalogResult.value);
 const duplicateIds = headings
@@ -200,10 +209,12 @@ try {
       inspectedRoutes += 1;
       if (snapshot?.alert) routeFailures.push({ elementId, alert: snapshot.alert });
       if (snapshot?.generic?.length) genericHits.push({ elementId, tokens: snapshot.generic });
-      if (snapshot?.title !== expected?.publicAnalysisTitle) {
-        titleMismatches.push({ elementId, actual: snapshot?.title, expected: expected?.publicAnalysisTitle });
+      const pendingV162 = DATA_PENDING_V162.has(elementId);
+      const expectedTitle = pendingV162 ? snapshot?.pageTitle : expected?.publicAnalysisTitle;
+      if (!expectedTitle || snapshot?.title !== expectedTitle) {
+        titleMismatches.push({ elementId, actual: snapshot?.title, expected: expectedTitle });
       }
-      if (snapshot?.title && snapshot.title === snapshot.pageTitle) {
+      if (!pendingV162 && snapshot?.title && snapshot.title === snapshot.pageTitle) {
         repeatedRuntimeHeadings.push({ elementId, title: snapshot.title });
       }
       console.log(JSON.stringify({ type: "progress", audit: audit.name, route: elementId, elapsedMs: Date.now() - started }));
