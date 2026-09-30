@@ -110,4 +110,11 @@ export type InteractiveTimeSeriesChartV127Props = {
   className?: string;
   testId?: string;
   onRangeChange?: (event: ChartRangeChangeV127) => void;
+  /**
+   * V162: an x value the page has chosen elsewhere (the 연도 selector whose
+   * values table sits below the chart), drawn as a labelled guide so the
+   * chart shows which year the rest of the analysis reads.
+   */
+  markedX?: number | null;
+  markedLabel?: string;
 };

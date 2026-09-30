@@ -10,6 +10,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { isAggregatingKind } from "./boundary-policy-build-v151-2.mjs";
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const argv = process.argv.slice(2);
 const arg = (name, fallback) => {
@@ -35,7 +37,9 @@ const QUANTILE = /분위|중앙값|상위\s*\d+\s*%|하위\s*\d+\s*%|백분위|�
 const mapIndex = readJson(resolve(DATA, "map-index.json"));
 const contract = readJson(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json"));
 const layers = mapIndex.layers;
-equal("LAYER_COUNT", layers.length, 42);
+// V157: the map's size is the contract's business, so the audit compares the two
+// instead of carrying a literal that every registration round has to edit.
+equal("LAYER_COUNT", layers.length, mapIndex.mapTargetContract?.connectedCount ?? 42);
 equal("LAYERS_WITHOUT_POLICY", layers.filter((layer) => !layer.boundaryPolicy).map((layer) => layer.elementId), []);
 equal(
   "POLICY_KINDS_KNOWN",
@@ -43,9 +47,29 @@ equal(
   []
 );
 const areaLayers = layers.filter((layer) => /choropleth/u.test(layer.renderer));
+// The rule is about administrative areas: a value shown on a province must say how
+// it survives the 63->34 merge. A choropleth over non-administrative units
+// (V157/B-017: Aqueduct assessment zones, joined on the source's own unit id) is
+// untouched by the merge, so "none" is the honest policy there.
+const administrativeAreaLayers = areaLayers.filter(
+  (layer) =>
+    /^adm1Code/u.test(String(layer.joinKey || "")) ||
+    /vnm-adm1-/u.test(String(layer.geometryUrl || ""))
+);
 equal(
   "AREA_LAYERS_NOT_NONE",
-  areaLayers.filter((layer) => layer.boundaryPolicy.kind === "none").map((layer) => layer.elementId),
+  administrativeAreaLayers
+    .filter((layer) => layer.boundaryPolicy.kind === "none")
+    .map((layer) => layer.elementId),
+  []
+);
+// And a non-administrative area layer must not claim an aggregating policy either.
+equal(
+  "NON_ADMIN_AREA_LAYERS_NOT_AGGREGATING",
+  areaLayers
+    .filter((layer) => !administrativeAreaLayers.includes(layer))
+    .filter((layer) => isAggregatingKind(layer.boundaryPolicy.kind))
+    .map((layer) => layer.elementId),
   []
 );
 const quantileViolations = [];
@@ -79,10 +103,21 @@ equal(
   { "wind-speed-top10-100m": "range-only", "wind-power-density-top10-100m": "range-only" }
 );
 equal("B021_SIX_REGION", layers.find((l) => l.elementId === "B-021")?.boundaryPolicy.kind, "six-region-only");
+// V157: 15 project/institution layers state their values per 2025 unit, so the
+// list is no longer hand-kept - a native-34 layer must be one the contract declares
+// native-34, and nothing may claim the policy on its own.
+const declaredNative34 = contract.targets
+  .filter(
+    (target) =>
+      (target.build?.boundaryPolicy34 || target.build?.patch?.boundaryPolicy34)?.kind ===
+      "native-34"
+  )
+  .map((target) => target.elementId)
+  .sort();
 equal(
   "NATIVE_34_LAYERS",
   layers.filter((l) => l.boundaryPolicy.kind === "native-34").map((l) => l.elementId).sort(),
-  ["C-012", "C-013", "C-019", "C-022"]
+  declaredNative34
 );
 
 // ---------------------------------------------------------------- derived boundary assets
@@ -124,7 +159,12 @@ for (const name of ["vnm-adm1-34.geojson", "vnm-region-6.geojson", "vnm-country-
 equal("DERIVED_ASSETS_IN_INTEGRITY", integrityMismatch, []);
 
 // ---------------------------------------------------------------- point locations
-const pointLayers = layers.filter((layer) => /point|cluster/u.test(layer.renderer));
+// A point layer that draws records has a location sidecar saying which province
+// each coordinate falls in. A layer drawn straight from a geometry asset (OSM
+// roads, ports) has no records to locate, so it is not asked for one.
+const pointLayers = layers.filter(
+  (layer) => /point|cluster/u.test(layer.renderer) && Boolean(layer.dataUrl)
+);
 equal("POINT_LAYERS_WITH_SIDECAR", pointLayers.filter((l) => !l.locationsUrl).map((l) => l.elementId), []);
 const sidecarProblems = [];
 for (const layer of pointLayers) {

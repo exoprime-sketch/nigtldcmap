@@ -14,7 +14,7 @@
  *   map      one count everywhere: home stat = list lede = guide = finder map
  *            filter = map-index active layers = manifest.mapLayerCount;
  *            targets without a layer are marked 준비 중, disabled, and drawn
- *            nowhere (B-017)
+ *            nowhere (the contract's first unbuilt target; B-017 until PR #24)
  *   A-002    the detail opens under the home title and mounts its analysis
  *   download the download hub builds a file for A-002 and the static asset
  *            answers
@@ -196,7 +196,23 @@ check(
   report.assets,
   "manifest.mapLayerCount = map-index.activeMapLayerCount = active layers"
 );
-check("B017_NOT_IN_MAP_INDEX", !indexIds.has("B-017"), indexIds.has("B-017"), false);
+// V157: the pending example is whichever target the contract does not build - the
+// platform's own statement of what is not on the map, rather than a fixed id.
+const mapTargetsV157 = JSON.parse(
+  readFileSync(resolve(PROJECT_ROOT, "src/data/visualization/publicMapTargetsV138.json"), "utf8")
+);
+const pendingTargetV157 =
+  (mapTargetsV157.targets || []).find(
+    (target) => target.build?.kind === "none" && !indexIds.has(target.elementId)
+  ) || null;
+const PENDING_ID_V157 = pendingTargetV157?.elementId || "";
+const PENDING_GROUP_V157 = pendingTargetV157?.category || "";
+check(
+  "PENDING_EXAMPLE_FROM_CONTRACT",
+  Boolean(PENDING_ID_V157) && !indexIds.has(PENDING_ID_V157),
+  { elementId: PENDING_ID_V157, group: PENDING_GROUP_V157, inIndex: indexIds.has(PENDING_ID_V157) },
+  { inIndex: false }
+);
 
 // ------------------------------------------------------------ home
 await section("HOME", async () => {
@@ -324,14 +340,35 @@ await section("FINDER", async () => {
   await page.waitForTimeout(400);
   const totalDownload = await total();
   await page.selectOption('[data-testid="finder-delivery-filter-v140"]', "all");
-  await page.fill(".cdp-input", "물 스트레스");
-  await page
-    .waitForFunction(() => Boolean(document.querySelector('[data-testid="public-finder-card-v135"][data-element-id="B-017"]')), null, { timeout: 30_000 })
-    .catch(() => null);
+  await page.fill(".cdp-input", "");
+  await page.waitForTimeout(400);
+  // V157: the finder is one alphabetical list that adds rows as the reader scrolls
+  // (PR #41), so the pending dataset is not on the first screen. Bring the list's own
+  // sentinel into view until its card is in the DOM, or until the sentinel says there
+  // is nothing left to load - the same way a reader reaches it.
+  const pendingCardReach = await page.evaluate(async (id) => {
+    const card = () => document.querySelector(`[data-testid="public-finder-card-v135"][data-element-id="${id}"]`);
+    const sentinel = () => document.querySelector('[data-testid="finder-scroll-sentinel-v136"]');
+    let passes = 0;
+    while (!card() && passes < 60) {
+      const node = sentinel();
+      if (!node) break;
+      if (Number(node.getAttribute("data-remaining") || 0) <= 0) break;
+      node.scrollIntoView({ block: "end" });
+      await new Promise((done) => setTimeout(done, 200));
+      passes += 1;
+    }
+    return {
+      found: Boolean(card()),
+      passes,
+      cards: document.querySelectorAll('[data-testid="public-finder-card-v135"]').length,
+      remaining: Number(sentinel()?.getAttribute("data-remaining") || 0),
+    };
+  }, PENDING_ID_V157);
   const b017Buttons = await page
-    .$eval('[data-testid="public-finder-card-v135"][data-element-id="B-017"]', (card) => [...card.querySelectorAll("button")].map((button) => String(button.textContent || "").trim()))
+    .$eval(`[data-testid="public-finder-card-v135"][data-element-id="${PENDING_ID_V157}"]`, (card) => [...card.querySelectorAll("button")].map((button) => String(button.textContent || "").trim()))
     .catch(() => null);
-  report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons };
+  report.finder = { totalAll, totalMap, totalDownload, visibleCards, finderTitles, labels, b017Buttons, pendingCardReach };
   // The check keeps its name; its count is the public set (152 when all were public).
   check("FINDER_TOTAL_152", totalAll === PUBLIC_COUNT_V156 && totalAll === homeTotalCount, { totalAll, homeTotalCount }, PUBLIC_COUNT_V156);
   check(
@@ -349,7 +386,12 @@ await section("FINDER", async () => {
     FEATURED.map((id) => ({ id, home: homeTitle(id), finder: finderTitles[id] })),
     "same public title"
   );
-  check("FINDER_B017_NO_MAP_BUTTON", Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)), b017Buttons, "no 지도에서 보기 on B-017");
+  check(
+    "FINDER_PENDING_NO_MAP_BUTTON",
+    Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)),
+    { elementId: PENDING_ID_V157, buttons: b017Buttons, reach: pendingCardReach },
+    `no 지도에서 보기 on ${PENDING_ID_V157}`
+  );
   await page.close();
 });
 // ------------------------------------------------------------ map
@@ -389,14 +431,14 @@ await section("MAP", async () => {
   await page.waitForTimeout(300);
   map.guideCount = clean(await page.$eval('[data-testid="map-data-guide-count-v140"]', (node) => node.textContent).catch(() => ""));
   // Clicking a pending row must not draw anything.
-  map.b017Click = await page.evaluate(() => {
-    const toggle = document.querySelector('[data-map-group-v135="물·자원"] [data-testid="map-catalog-group-toggle-v138"]');
+  map.b017Click = await page.evaluate(({ id, group }) => {
+    const toggle = document.querySelector(`[data-map-group-v135="${group}"] [data-testid="map-catalog-group-toggle-v138"]`);
     if (toggle && toggle.getAttribute("aria-expanded") !== "true") toggle.click();
-    const input = document.querySelector('.cdp-map-catalog-v138__item[data-map-element="B-017"] input');
+    const input = document.querySelector(`.cdp-map-catalog-v138__item[data-map-element="${id}"] input`);
     if (!input) return { found: false };
     input.click();
     return { found: true, checked: input.checked, drawn: input.closest(".cdp-map-catalog-v138__item")?.getAttribute("data-map-drawn") };
-  });
+  }, { id: PENDING_ID_V157, group: PENDING_GROUP_V157 });
   await page.waitForTimeout(300);
   const waterGroup = await page.$('[data-map-group-v135="물·자원"]');
   if (waterGroup) await captureV150(waterGroup, resolve(SHOTS, "map-water-group.png"));
@@ -431,12 +473,20 @@ await section("MAP", async () => {
     map.pendingRows,
     "badge, disabled checkbox, dashed border, 위치자료 미확보"
   );
-  check("MAP_B017_PENDING", map.pendingRows.some((row) => row.id === "B-017"), map.pendingRows.map((row) => row.id), ["B-017"]);
   check(
-    "MAP_B017_NEVER_DRAWN",
-    map.b017Click.found && !map.b017Click.checked && map.b017Click.drawn !== "true" && !map.drawn.includes("B-017"),
+    "MAP_PENDING_ROW_SHOWN",
+    map.pendingRows.some((row) => row.id === PENDING_ID_V157),
+    map.pendingRows.map((row) => row.id),
+    [PENDING_ID_V157]
+  );
+  check(
+    "MAP_PENDING_NEVER_DRAWN",
+    map.b017Click.found &&
+      !map.b017Click.checked &&
+      map.b017Click.drawn !== "true" &&
+      !map.drawn.includes(PENDING_ID_V157),
     map.b017Click,
-    "clicking B-017 draws nothing"
+    "clicking the pending dataset draws nothing"
   );
   check(
     "MAP_GROUP_COUNTS_NAME_PENDING",
@@ -526,9 +576,11 @@ await section("DOWNLOAD", async () => {
   check("DOWNLOAD_A002_STATIC_ASSET", head.status === 200, head.status, 200);
   await page.close();
 });
-// ------------------------------------------------------------ B-017 detail: no location claim
+// ------------------------------------- the pending dataset's detail: no location claim
 await section("B017_DETAIL", async () => {
-  const page = await open("/?view=data&country=VNM&element=B-017&detailLayers=all#element-detail", "h1");
+  // The pending dataset comes from the contract (V157); detailLayers=all opens the
+  // detail's folded layers (V160) so the notice is in the text either way.
+  const page = await open(`/?view=data&country=VNM&element=${PENDING_ID_V157}&detailLayers=all#element-detail`, "h1");
   await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
   await page.waitForTimeout(500);
   const b017 = await page.evaluate(() => {
@@ -540,7 +592,7 @@ await section("B017_DETAIL", async () => {
     };
   });
   report.b017Detail = b017;
-  check("B017_DETAIL_NO_LOCATION_CLAIM", b017.mapLinks === 0 && !b017.mapEngine && b017.statesNotOnMap, b017, "no map link, no map, states it is not on the map");
+  check("PENDING_DETAIL_NO_LOCATION_CLAIM", b017.mapLinks === 0 && !b017.mapEngine && b017.statesNotOnMap, b017, "no map link, no map, states it is not on the map");
   await page.close();
 });
 await browser.close();

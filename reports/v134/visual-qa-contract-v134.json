@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v134-visual-qa-contract-1",
-  "generatedAt": "2026-09-29T06:17:53.554Z",
+  "generatedAt": "2026-09-30T05:43:38.866Z",
   "audit": "visual-qa-contract:v134",
   "checks": [
     {
@@ -52,19 +52,15 @@
       }
     },
     {
-      "name": "PAGES_BLOCKING_RELEASE_JOB",
+      "name": "PAGES_WORKFLOW_RETIRED",
       "status": "PASS",
       "actual": {
-        "finalizeCurrentGate": true,
-        "productionBuild": true,
-        "noScreenshotCapture": true,
-        "currentReports": true
+        "pagesWorkflowRetired": true,
+        "pagesDeployingWorkflows": []
       },
       "expected": {
-        "finalizeCurrentGate": true,
-        "productionBuild": true,
-        "noScreenshotCapture": true,
-        "currentReports": true
+        "pagesWorkflowRetired": true,
+        "pagesDeployingWorkflows": []
       }
     },
     {
@@ -94,8 +90,7 @@
     "SCREENSHOT_CAPTURE_IS_RELEASE_BLOCKER": false,
     "FUNCTIONAL_BROWSER_AUDIT_IS_RELEASE_BLOCKER": true,
     "releaseWorkflows": [
-      ".github/workflows/ci.yml",
-      ".github/workflows/pages.yml"
+      ".github/workflows/ci.yml"
     ],
     "visualQaWorkflow": ".github/workflows/visual-qa.yml",
     "blockingEntryPoint": "npm run finalize:v136",
@@ -139,12 +134,7 @@
       "noScreenshotCapture": true,
       "currentReports": true
     },
-    "pagesContract": {
-      "finalizeCurrentGate": true,
-      "productionBuild": true,
-      "noScreenshotCapture": true,
-      "currentReports": true
-    },
+    "pagesWorkflowRetired": true,
     "visualWorkflowContract": {
       "separateWorkflow": true,
       "productionBuild": true,

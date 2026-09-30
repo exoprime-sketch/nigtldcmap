@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
@@ -45,8 +45,14 @@ try {
       brokenAssets.push({ url: response.url, status: response.status });
     }
   });
+  // V162 (user decision 2026-09-30, reports/v162/EXPECTATION_CHANGES_V162.md):
+  // a data-pending element (C-023, E-011, E-013) has no analysis heading - it
+  // states '데이터 준비 중' once - so its public title is the page's h1.
+  const typologyV162 = JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8"));
+  const dataPendingV162 = new Set((Array.isArray(typologyV162) ? typologyV162 : typologyV162.rows || []).filter((row) => row.statusNotice === "data-pending").map((row) => row.elementId));
   for (const element of publicListedElementsV156(catalog)) {
     const elementId = String(element.elementId || "");
+    const pageTitleFallbackV162 = dataPendingV162.has(elementId);
     try {
       await navigate(browser.cdp, detailUrlV135(server.url, elementId));
       await waitForValue(
@@ -71,7 +77,7 @@ try {
           const portfolioSummary = root?.querySelector('[data-testid*="portfolio-summary"], [data-testid*="portfolio-analysis"], [data-public-portfolio-summary-v135]');
           const portfolioList = root?.querySelector('[data-testid*="portfolio-list"], [data-testid*="entity-list"], [data-public-portfolio-list-v135]');
           return {
-            title: String(root?.querySelector('h1, [data-testid="public-data-title"]')?.textContent || '').trim(),
+            title: String((root?.querySelector('h1, [data-testid="public-data-title"]') || (${JSON.stringify(pageTitleFallbackV162)} ?document.querySelector('main h1[data-testid="public-data-title"]') : null))?.textContent || '').trim(),
             primary: Boolean(primary),
             metadata: Boolean(metadata),
             primaryBeforeMetadata: before(primary, metadata),

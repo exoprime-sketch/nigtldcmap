@@ -432,30 +432,52 @@
   }
 }
 
-/* V160: the core group first; the rest behind '더 많은 레이어'. */
-.cdp-map-catalog-v138__group.is-core-v160 > .cdp-map-catalog-v138__group-toggle {
-  font-weight: 700;
-}
-.cdp-map-catalog-v160__more {
+/* V157: a categorical layer's legend - one swatch per category, with how many
+   areas carry it. Wraps at narrow widths so the panel never overflows. */
+.cdp-map-legend__categories {
   display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cdp-map-legend__categories li {
+  display: inline-flex;
   align-items: center;
-  width: 100%;
-  min-height: 44px;
-  margin: 6px 0 2px;
-  padding: 8px 10px;
-  border: 1px dashed #b9cfc6;
-  border-radius: 9px;
-  background: #f6faf8;
-  color: #24483c;
-  font: inherit;
-  font-weight: 600;
-  text-align: left;
+  gap: 5px;
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.cdp-map-legend__swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+}
+.cdp-map-legend__count {
+  color: #4b5a55;
+  white-space: nowrap;
+}
+
+/* V161-C: the layer summary folds to its title while a selection is open. */
+.cdp-map-summary-fold-v161 {
   cursor: pointer;
+  list-style: none;
 }
-.cdp-map-catalog-v160__more[aria-expanded="true"] {
-  border-style: solid;
+.cdp-map-summary-fold-v161::-webkit-details-marker {
+  display: none;
 }
-.cdp-map-catalog-v160__more:focus-visible {
-  outline: 2px solid #0f766e;
-  outline-offset: 2px;
+.cdp-map-summary-fold-v161 h3 {
+  display: inline;
+}
+.cdp-map-summary-fold-v161::after {
+  content: " ▾";
+  color: #5f6d67;
+  font-size: 0.8em;
+}
+details[open] > .cdp-map-summary-fold-v161::after {
+  content: " ▴";
 }

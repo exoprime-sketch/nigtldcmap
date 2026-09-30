@@ -544,7 +544,10 @@ export default function PublicDataAnalysisRouterV126({
     <>
       {/* The title is stated once, by the page; the analysis heading is kept
           only where it adds a reading ("배출량 변화와 구성") (V153). */}
-      {!sameTitleV153(pageTitle, analysisTitle) &&
+      {/* V162: a data-pending element states '데이터 준비 중' once - no
+          "… 자료 수집 상태" heading above the notice (the page's h1 carries
+          public-data-title instead). */}
+      {!sameTitleV153(pageTitle, analysisTitle) && typology?.statusNotice !== "data-pending" &&
         (heroSlotV160
           ? createPortal(
               <h2 className="pav126-hero-heading" data-testid="public-data-title">

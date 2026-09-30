@@ -32,29 +32,15 @@
       }
     },
     {
-      "name": "PAGES_WORKFLOW_CURRENT_RELEASE_GATE",
+      "name": "PAGES_WORKFLOW_RETIRED",
       "status": "PASS",
       "actual": {
-        "finalize": true,
-        "build": true,
-        "publicUrl": true,
-        "deploy": true,
-        "smoke": true,
-        "currentReports": true,
-        "screenshotCaptureSeparated": true,
-        "noLegacyGate": true,
-        "noLocalSourceAudit": true
+        "pagesWorkflowRetired": true,
+        "pagesDeployingWorkflows": []
       },
       "expected": {
-        "finalize": true,
-        "build": true,
-        "publicUrl": true,
-        "deploy": true,
-        "smoke": true,
-        "currentReports": true,
-        "screenshotCaptureSeparated": true,
-        "noLegacyGate": true,
-        "noLocalSourceAudit": true
+        "pagesWorkflowRetired": true,
+        "pagesDeployingWorkflows": []
       }
     },
     {

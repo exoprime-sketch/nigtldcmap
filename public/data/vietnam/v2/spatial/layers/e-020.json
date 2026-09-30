@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "E-020",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "e-020-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "e-020-located-count",
+        "measureId": "e-020-located-count",
+        "measureKey": "e-020-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 기관 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 3
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "e-020-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "E-020_kr_support",
+      "sourceRecordId": "v124-e-020-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "e-020-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "E-020_kr_support",
+      "sourceRecordId": "v124-e-020-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "e-020-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "E-020_kr_support",
+      "sourceRecordId": "v124-e-020-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-39": [
+      {
+        "recordId": "v124-e-020-entity-00002",
+        "label": "한국환경산업기술원(KEITI)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "E-020_kr_support"
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "v124-e-020-entity-00002",
+        "label": "한국환경산업기술원(KEITI)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "E-020_kr_support"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-e-020-entity-00007",
+        "label": "한국환경산업기술원(KEITI)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "E-020_kr_support"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "e-020-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 3,
+      "missingCount": 60,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [],
+    "licenses": [],
+    "organizations": [
+      "NIGT·과기정통부·한국에너지공단·KIAT·KEITI·KOICA·KOTRA·한국수출입은행 등 각 기관 공식 웹사이트(용역사 취합)",
+      "한국에너지공단·KOTRA·KEITI·KIAT·한국수출입은행·기후에너지환경부 등 공식 공고 및 언론 보도(용역사 취합)"
+    ],
+    "urls": [
+      "레코드별 상이 → 1.2_entity(레코드형) 시트 attr_8_source_url 열 참조"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 3,
+    "maxSeriesFeatureCount": 3,
+    "missingAdm1Count": 60,
+    "providedZeroCount": 0,
+    "publishedValueCount": 3,
+    "sourceValueCount": 2,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 2
+  }
+}

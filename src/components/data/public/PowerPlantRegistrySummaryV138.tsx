@@ -1,3 +1,4 @@
+import { formatRegionName } from "../../../data/geo/regionNameV161";
 import { useMemo, useState } from "react";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
@@ -8,7 +9,6 @@ import { resolvePublicEntityTitleV131 } from "../../../data/visualization/public
 import { publicSourceUrlV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
-import { PROVINCE_KO_34_V151 } from "../../../data/map/adminBoundaryV151";
 import FacilityCardV153 from "./FacilityCardV153";
 import "./public-portfolio-summary-v132.css";
 import "./detail-analysis-v153.css";
@@ -109,8 +109,8 @@ export default function PowerPlantRegistrySummaryV138({ entities: sourceEntities
   const provinceOf = (a: Record<string, unknown>) => {
     const name = String(a.adm1Name34 || "");
     if (!name) return "미기재";
-    const korean = PROVINCE_KO_34_V151[String(a.adm1Code34 || "")];
-    return korean ? `${korean}(${name})` : name;
+    // V162 (P12-B): the region dictionary's "한글명 (현지명)", 34 units.
+    return formatRegionName({ country: "VNM", raw: name, level: "adm1-34" });
   };
 
   const registries: Array<"wri" | "osm"> = registry === "all" ? ["wri", "osm"] : [registry];

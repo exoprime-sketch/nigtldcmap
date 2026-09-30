@@ -5,7 +5,6 @@ import {
   formatRegionName,
   regionNameEntryV161,
   regionNameKeyV161,
-  regionNameKo,
   regionNameLocal,
   type RegionLevelV161,
 } from "./regionNameV161";
@@ -125,10 +124,17 @@ export function formatRegionForDisplayV158(input: RegionDisplayInputV158): Regio
     (dictionaryEntry?.local && !hasNonLatinLetterV158(dictionaryEntry.local) && dictionaryEntry.local) || null;
   const substitute = parenLatinFragmentV158(local) ?? romanisedClean ?? dictionaryLocal;
 
+  // V162 (P12-B): a name still under review is never shown in Korean - only
+  // a confirmed dictionary entry gives the Korean name.
+  const confirmedKo = (raw: string | null): string | null => {
+    if (!raw) return null;
+    const entry = regionNameEntryV161({ country: input.country, raw, level });
+    return entry && entry.reviewStatus === "confirmed" ? entry.ko : null;
+  };
   const ko =
-    (substitute ? regionNameKo({ country: input.country, raw: substitute, level }) : null) ??
-    regionNameKo({ country: input.country, raw: local, level }) ??
-    dictionaryEntry?.ko ??
+    confirmedKo(substitute) ??
+    confirmedKo(local) ??
+    (dictionaryEntry && dictionaryEntry.reviewStatus === "confirmed" ? dictionaryEntry.ko : null) ??
     null;
 
   if (!substitute) {

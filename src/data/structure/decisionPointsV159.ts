@@ -1,4 +1,7 @@
 import { displayUnitV150 } from "../visualization/unitDisplayV150";
+import { PROVINCE_KO_V150 } from "../map/mapBackdropV150";
+import { PROVINCE_KO_34_V151 } from "../map/adminBoundaryV151";
+import { formatRegionName } from "../geo/regionNameV161";
 import { CLIMATE_TECHNOLOGIES } from "../climateTechnologyCatalog";
 import type { DisplayTypeV159 } from "../spec/specTypesV159";
 import type {
@@ -8,6 +11,28 @@ import type {
   S4EntityV159,
   StructureRowsV159,
 } from "./structureTypesV159";
+
+/**
+ * The region's name as a reader should see it, or null when the platform cannot
+ * name it. A region key ("VN-45", "VN34-SG") is an internal identifier: it is
+ * resolved through the province dictionary, and never printed as it stands.
+ */
+function regionDisplayNameV159(row: {
+  regionName?: string | null;
+  regionKey?: string | null;
+  regionSystem?: string | null;
+}, country = "VNM"): string | null {
+  const stated = String(row.regionName ?? "").trim();
+  // V162 (P12-B): the row's own boundary system picks the dictionary level
+  // (63 pre-2025 provinces or the 34 units) for a name both lists share.
+  const level = row.regionSystem === "adm1-34" || row.regionSystem === "adm1-63" ? row.regionSystem : undefined;
+  if (stated && !/^VN3?4?-?[0-9A-Z]{2}$/u.test(stated)) {
+    return formatRegionName({ country, raw: stated, level });
+  }
+  const key = String(row.regionKey ?? "").trim();
+  const korean = PROVINCE_KO_V150[key] || PROVINCE_KO_34_V151[key];
+  return korean ? formatRegionName({ country: "VNM", raw: korean }) : null;
+}
 
 export interface DecisionPointV159 {
   key: string;
@@ -202,14 +227,16 @@ function decisionPointsU2(
   const sorted = [...atLatestYear].sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
   const formatRegion = (row: S2RegionObservationV159) =>
-    `${row.regionName || row.regionKey}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
+    `${regionDisplayNameV159(row, opts.countryIso3)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
 
   const points: DecisionPointV159[] = [];
-  const top = sorted.slice(0, 3);
+  // A row whose region cannot be named is left out: a code is not a region name.
+  const nameable = sorted.filter((row) => regionDisplayNameV159(row, opts.countryIso3) !== null);
+  const top = nameable.slice(0, 3);
   if (top.length > 0) {
     points.push({ key: "top-regions", label: "상위 3개 지역", value: top.map(formatRegion).join(" · "), detail: basis });
   }
-  const bottom = sorted.slice(-3).reverse();
+  const bottom = nameable.slice(-3).reverse();
   if (bottom.length > 0) {
     points.push({ key: "bottom-regions", label: "하위 3개 지역", value: bottom.map(formatRegion).join(" · "), detail: basis });
   }

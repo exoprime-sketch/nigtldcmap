@@ -1,3 +1,4 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { Fragment, useMemo } from "react";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { subjectParticleV158, useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
@@ -327,7 +328,14 @@ export default function PublicRegionScenarioSummaryV138({
   selectorState,
   onSelectorStateChange,
 }: Props) {
-  const shape = useMemo(() => regionScenarioShapeV138(entities), [entities]);
+  // V162 (P12-B): region labels as the reader sees them ("한글명 (현지명)",
+  // reviewed names only); the keys stay the source spelling.
+  const regionText = useRegionTextV162(elementId);
+  const sourceShape = useMemo(() => regionScenarioShapeV138(entities), [entities]);
+  const shape = useMemo(
+    () => (sourceShape ? { ...sourceShape, regions: sourceShape.regions.map((item) => ({ ...item, label: regionText(item.label) })) } : sourceShape),
+    [sourceShape, regionText]
+  );
   const contract = useMemo(() => publicRegionScenarioContractV138(elementId), [elementId]);
   const v153 = useAnalysisContractV153();
 

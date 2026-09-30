@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
@@ -189,6 +190,26 @@ import {
   selectorForLayer,
 } from "../map/layers/contract";
 import {
+  assetFeatureCollectionV157,
+  categoryLegendV157,
+  isAreaRendererV152,
+  unitChoroplethCollectionV157,
+} from "../map/layers";
+import MapCompanionsV157 from "../components/map/MapCompanionsV157";
+import SelectionPanelV161 from "../components/map/SelectionPanelV161";
+import {
+  DRAWING_LABEL_V161,
+  categoryShareLinesV161,
+  formatRegionListV161,
+  metaLineV161,
+  rankLinesV161,
+  selectionLineV161,
+} from "../data/map/mapSelectionModelV161";
+import type {
+  MapSelectionCardV161,
+  MapSelectionLineV161,
+} from "../data/map/mapSelectionModelV161";
+import {
   areaKm2ByAdm1CodeV151,
   choroplethFeatureCollectionV151,
   featureCollection,
@@ -197,7 +218,6 @@ import {
   statisticalRepresentativePointsV133,
 } from "../map/layers/features";
 import { publicMapSymbolShapeV129 } from "../map/layers/symbols";
-import mapDefaultLayersV160 from "../data/map/mapDefaultLayersV160.json";
 import { applyBoundaryReferenceV152 } from "../map/layers/boundaryLayer";
 import {
   mountAreaLayerV152,
@@ -206,8 +226,6 @@ import {
   preparePointLayerV152,
 } from "../map/layers";
 
-/** V160: the group holding the core map datasets (mapDefaultLayersV160.json). */
-const MAP_CORE_GROUP_V160 = "핵심 레이어";
 
 interface RealMapExplorerPageProps {
   onOpenElement: (
@@ -271,6 +289,37 @@ function selectedFeatureNounV139(layer: CountryMapLayerV122): string {
     "E-018": "사업지",
   };
   return nouns[layer.elementId] || layer.featureIdentity?.label || "시설";
+}
+
+/** V161-C: the extent of one geometry, for "이 위치로 확대". */
+function geometryBoundsV161(
+  geometry: GeoJSON.Geometry | null | undefined
+): [[number, number], [number, number]] | null {
+  if (!geometry || !("coordinates" in geometry)) return null;
+  let west = Infinity;
+  let south = Infinity;
+  let east = -Infinity;
+  let north = -Infinity;
+  const walk = (node: unknown) => {
+    if (!Array.isArray(node)) return;
+    if (typeof node[0] === "number") {
+      const lng = Number(node[0]);
+      const lat = Number(node[1]);
+      if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
+      west = Math.min(west, lng);
+      east = Math.max(east, lng);
+      south = Math.min(south, lat);
+      north = Math.max(north, lat);
+      return;
+    }
+    node.forEach(walk);
+  };
+  walk((geometry as { coordinates: unknown }).coordinates);
+  if (!Number.isFinite(west) || !Number.isFinite(north)) return null;
+  return [
+    [west, south],
+    [east, north],
+  ];
 }
 
 /**
@@ -497,15 +546,15 @@ function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
     .replace(/피처/gu, "위치자료");
 }
 
+/**
+ * Whether the layer draws a published spatial asset rather than entity records.
+ *
+ * V157: the list is the renderers' own (`isAreaRendererV152`), so a new area
+ * renderer is fetched as well as drawn - B-017 and A-028 were mounted but never
+ * asked for their asset, which left them out of the map's rendered list.
+ */
 function isExternalSpatialLayer(layer: CountryMapLayerV122): boolean {
-  return [
-    "line",
-    "admin1-choropleth",
-    "partial-choropleth",
-    "regional-scope",
-  ].includes(
-    rendererOf(layer)
-  );
+  return isAreaRendererV152(rendererOf(layer));
 }
 
 function optionalFiniteNumberV130(value: unknown): number | null {
@@ -1513,10 +1562,14 @@ export default function RealMapExplorerPage({
       const visualRank = (elementId: string) => {
         const layer = layers.find((item) => item.elementId === elementId);
         const renderer = layer ? rendererOf(layer) : "point";
+        // Areas are drawn under points; V157's unit choropleth and the
+        // polygon half of an asset layer belong with them.
         const isArea =
           renderer === "admin1-choropleth" ||
           renderer === "partial-choropleth" ||
-          renderer === "regional-scope";
+          renderer === "regional-scope" ||
+          renderer === "unit-choropleth" ||
+          renderer === "point-and-polygon";
         const isPrimary = elementId === primaryLayerId;
         if (isArea) return isPrimary ? 0 : 1;
         return isPrimary ? 3 : 2;
@@ -1706,7 +1759,25 @@ export default function RealMapExplorerPage({
           });
         return;
       }
-      const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
+      // V157: an assessment-unit layer joins on its own key, and a geometry asset
+      // has no values to join at all. The fallback draws their polygons; A-028's
+      // 1,321 points are left to the canvas (the panel says so).
+      const rendererV157 = rendererOf(layer);
+      const result =
+        rendererV157 === "unit-choropleth"
+          ? unitChoroplethCollectionV157(layer, asset, selector)
+          : rendererV157 === "point-and-polygon"
+            ? {
+                collection: {
+                  type: "FeatureCollection" as const,
+                  features: assetFeatureCollectionV157(layer, asset, filters).features.filter(
+                    (feature) => /polygon/iu.test(feature.geometry.type)
+                  ),
+                },
+                minimum: 0,
+                maximum: 1,
+              }
+            : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
       if (isBudgetContext) {
         statisticalRepresentativePointsV133(result.collection).features.forEach(
           (feature, featureIndex) => {
@@ -2642,12 +2713,8 @@ export default function RealMapExplorerPage({
         : contextLayerIds.indexOf(elementId);
       const roleOpacity = isPrimary ? 0.88 : 0.36;
 
-      if (
-        renderer === "line" ||
-        renderer === "admin1-choropleth" ||
-        renderer === "partial-choropleth" ||
-        renderer === "regional-scope"
-      ) {
+      // V157: the area renderers are listed once, in src/map/layers.
+      if (isAreaRendererV152(renderer)) {
         const asset = spatialByElement[elementId];
         if (!asset) return;
         const prepared = prepareAreaLayerV152({
@@ -3141,8 +3208,9 @@ export default function RealMapExplorerPage({
             const feature = event.features?.[0];
             if (!feature || feature.geometry.type !== "Point") return;
             const count = Number(feature.properties?.point_count || 0);
+            const clusterId = feature.properties?.cluster_id;
             setSelected(null);
-            setSelectedSpatial({
+            const selectionBase = {
               elementId,
               adm1Name: `${publicMapLayerTitleV126(
                 elementId,
@@ -3152,9 +3220,52 @@ export default function RealMapExplorerPage({
               unit: "개 위치",
               period: String(layer.sourceYear || ""),
               variableLabel: "위치 수",
-              selectionKey: `cluster:${feature.properties?.cluster_id || ""}`,
-              properties: { category: "위치 묶음" },
+              selectionKey: `cluster:${clusterId || ""}`,
+            };
+            setSelectedSpatial({
+              ...selectionBase,
+              properties: { category: "위치 묶음", pointCount: count, clusterLeaves: [] },
             });
+            // What is inside the cluster, as the source itself lists it. Up to ten,
+            // because the card lists at most ten; the count stays the cluster's own.
+            const clusterSource = map.getSource(ids.source) as GeoJSONSource | undefined;
+            if (clusterSource && typeof clusterId === "number") {
+              // maplibre-gl types this as a promise in v5; both shapes are handled.
+              const leavesResult = (
+                clusterSource as unknown as {
+                  getClusterLeaves: (
+                    id: number,
+                    limit: number,
+                    offset: number
+                  ) => Promise<GeoJSON.Feature[]>;
+                }
+              ).getClusterLeaves(clusterId, 10, 0);
+              void Promise.resolve(leavesResult).then((leaves: GeoJSON.Feature[] | undefined) => {
+                if (!leaves) return;
+                setSelectedSpatial((current) =>
+                  current && current.selectionKey === `cluster:${clusterId}`
+                    ? {
+                        ...current,
+                        properties: {
+                          ...current.properties,
+                          clusterLeaves: leaves.map((leaf: GeoJSON.Feature) => {
+                            const properties = (leaf.properties || {}) as Record<string, unknown>;
+                            return {
+                              name: String(properties.name || properties.title || ""),
+                              kind: String(properties.__legendKey || properties.kindLabel || ""),
+                              size: String(properties.factSummary || ""),
+                              recordId: String(properties.recordId || ""),
+                            };
+                          }),
+                        },
+                      }
+                    : current
+                );
+              }).catch(() => {
+                // A cluster whose leaves cannot be read keeps its count and says
+                // nothing about its members, rather than showing an empty list.
+              });
+            }
             if (!isPrimary) {
               setRoleNotice(
                 `선택한 보조 데이터 · ${publicMapLayerTitleV126(
@@ -3314,28 +3425,6 @@ export default function RealMapExplorerPage({
       ),
     })).filter((group) => group.rows.length > 0);
   }, [layers]);
-  // V160: the core datasets (src/data/map/mapDefaultLayersV160.json) form the
-  // first group, open by default; every other layer stays in its category
-  // under '더 많은 레이어', folded until asked for (or `mapList=all` in the URL).
-  // map-index.json, the builder and the renderers are unchanged.
-  const mapCatalogGroupsV160 = useMemo(() => {
-    const core = new Set<string>(mapDefaultLayersV160.defaultElementIds);
-    const rowByElement = new Map(mapTargetGroupsV138.flatMap((group) => group.rows).map((row) => [row.target.elementId, row]));
-    const coreRows = mapDefaultLayersV160.defaultElementIds
-      .map((id) => rowByElement.get(id))
-      .filter((row): row is NonNullable<typeof row> => Boolean(row));
-    const others = mapTargetGroupsV138
-      .map((group) => ({ ...group, rows: group.rows.filter((row) => !core.has(row.target.elementId)), core: false }))
-      .filter((group) => group.rows.length > 0);
-    return [{ category: MAP_CORE_GROUP_V160, rows: coreRows, core: true }, ...others];
-  }, [mapTargetGroupsV138]);
-  const [moreLayersOpenV160, setMoreLayersOpenV160] = useState<boolean>(() => {
-    try {
-      return new URLSearchParams(window.location.search).get("mapList") === "all";
-    } catch {
-      return false;
-    }
-  });
   // V140: the list's counts come from the map index, the same file the home
   // counts from, so "지도 자료 N개" is one number on every screen. Targets
   // the contract names but the index does not carry are counted as pending.
@@ -3357,17 +3446,15 @@ export default function RealMapExplorerPage({
     const targetsByElement = new Map(
       PUBLIC_MAP_TARGETS_V138.map((target) => [target.elementId, target.category])
     );
-    const coreIds = new Set<string>(mapDefaultLayersV160.defaultElementIds);
-    // A selected layer outside the core group unfolds '더 많은 레이어'.
-    if (activeIds.some((id) => !coreIds.has(id) && targetsByElement.has(id))) setMoreLayersOpenV160(true);
     setOpenCategoriesV138((current) => {
       const next = new Set(current);
       activeIds.forEach((id) => {
-        const category = coreIds.has(id) ? MAP_CORE_GROUP_V160 : targetsByElement.get(id);
+        const category = targetsByElement.get(id);
         if (category) next.add(category);
       });
-      // V160: the core group is the one that opens by default.
-      if (next.size === 0) next.add(MAP_CORE_GROUP_V160);
+      if (next.size === 0 && PUBLIC_MAP_TARGET_CATEGORIES_V138.length) {
+        next.add(PUBLIC_MAP_TARGET_CATEGORIES_V138[0]);
+      }
       return next;
     });
   }, [activeIds]);
@@ -3426,6 +3513,14 @@ export default function RealMapExplorerPage({
       } else if (renderer === "regional-scope") {
         if (!asset) return null;
         geoJson = asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+      } else if (renderer === "point-and-polygon") {
+        if (!asset) return null;
+        geoJson = assetFeatureCollectionV157(layer, asset, filters);
+      } else if (renderer === "unit-choropleth") {
+        if (!asset) return null;
+        const result = unitChoroplethCollectionV157(layer, asset, selector);
+        geoJson = result.collection;
+        valueDomain = { maximum: result.maximum, minimum: result.minimum };
       } else {
         if (!asset) return null;
         const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
@@ -3598,7 +3693,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedSeriesCoverage =
     focusedLayer && focusedSelector
-      ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage.find(
+      ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage?.find(
           (row) =>
             row.variable === focusedSelector.variable &&
             row.period === focusedSelector.period
@@ -3606,9 +3701,9 @@ export default function RealMapExplorerPage({
       : null;
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
-      ? `${focusedSeriesCoverage.missingCount}개 성·시 원천 미제공 · 0으로 대체하지 않음`
-      : focusedLayer.missingRegions.length
-      ? focusedLayer.missingRegions.join(" · ")
+      ? `${focusedSeriesCoverage.missingCount}개 성·시는 원자료에 값 없음 · 0으로 대체하지 않음`
+      : (focusedLayer.missingRegions ?? []).length
+      ? (focusedLayer.missingRegions ?? []).join(" · ")
       : "없음"
     : "";
   const focusedPublicCopy = focusedLayer
@@ -3653,6 +3748,36 @@ export default function RealMapExplorerPage({
       publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
     );
   }, [boundaryContextV151.system, filters, focusedLayer, locationsByElementV151, recordsByElement]);
+  /**
+   * V157: the focused layer's categories, when it is drawn by category rather
+   * than by value. Read from the features the map drew, under the same filters.
+   */
+  const focusedCategoryLegendV157 = useMemo(() => {
+    if (!focusedLayer || !focusedSelector) return [];
+    const asset = spatialByElement[focusedLayer.elementId];
+    if (!asset) return [];
+    const renderer = rendererOf(focusedLayer);
+    const collection =
+      renderer === "unit-choropleth"
+        ? unitChoroplethCollectionV157(focusedLayer, asset, focusedSelector).collection
+        : renderer === "point-and-polygon"
+          ? assetFeatureCollectionV157(focusedLayer, asset, filters)
+          : renderer === "admin1-choropleth" || renderer === "partial-choropleth"
+            ? choroplethFeatureCollectionV151(
+                focusedLayer,
+                asset,
+                focusedSelector,
+                boundaryContextV151
+              ).collection
+            : null;
+    return collection ? categoryLegendV157(collection) : [];
+  }, [
+    boundaryContextV151,
+    filters,
+    focusedLayer,
+    focusedSelector,
+    spatialByElement,
+  ]);
   const activeLegendIdentitiesV129 = useMemo(() => {
     const ordered = [
       ...(primaryLayerId ? [primaryLayerId] : []),
@@ -3746,7 +3871,7 @@ export default function RealMapExplorerPage({
       amount:
         currentType === "adaptation" && adaptationAmount > 0
           ? `USD ${formatPublicNumberV126(adaptationAmount, "USD")}`
-          : "원천의 사업별 금액 범위",
+          : "원자료의 사업별 금액 범위",
       count:
         currentType === "adaptation"
           ? adaptationProjects.size
@@ -3824,6 +3949,50 @@ export default function RealMapExplorerPage({
         value: String(focusedLayer.sourceYear || focusedSelector.period),
       });
       return { ...empty, summaryRows, unit: "구간" };
+    }
+    if (renderer === "unit-choropleth") {
+      const asset = spatialByElement[focusedLayer.elementId];
+      if (!asset) return empty;
+      const rendered = unitChoroplethCollectionV157(focusedLayer, asset, focusedSelector);
+      const withValue = rendered.collection.features.filter(
+        (feature) => feature.properties?.hasValue
+      );
+      summaryRows.push({
+        label: "값이 있는 단위",
+        value: `${withValue.length.toLocaleString()}개 / 전체 ${rendered.collection.features.length.toLocaleString()}개`,
+      });
+      rendered.categories.forEach((category) =>
+        summaryRows.push({
+          label: category.text || category.label,
+          value: `${category.featureCount.toLocaleString()}개 단위`,
+        })
+      );
+      summaryRows.push({
+        label: "기준연도",
+        value: String(focusedLayer.sourceYear || focusedSelector.period),
+      });
+      return { ...empty, summaryRows, unit: String(focusedLayer.unit || "") };
+    }
+    if (renderer === "point-and-polygon") {
+      const asset = spatialByElement[focusedLayer.elementId];
+      if (!asset) return empty;
+      const features = assetFeatureCollectionV157(focusedLayer, asset, filters).features;
+      const byKind = new Map<string, number>();
+      features.forEach((feature) => {
+        const kind = String(feature.properties?.kindLabel || feature.properties?.categoryLabel || "미표기");
+        byKind.set(kind, (byKind.get(kind) || 0) + 1);
+      });
+      summaryRows.push({ label: "표시 대상", value: `${features.length.toLocaleString()}개` });
+      [...byKind.entries()]
+        .sort(([, left], [, right]) => right - left)
+        .forEach(([kind, count]) =>
+          summaryRows.push({ label: kind, value: `${count.toLocaleString()}개` })
+        );
+      summaryRows.push({
+        label: "기준연도",
+        value: String(focusedLayer.sourceYear || focusedSelector.period),
+      });
+      return { ...empty, summaryRows, unit: String(focusedLayer.unit || "") };
     }
     if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
       const asset = spatialByElement[focusedLayer.elementId];
@@ -4003,7 +4172,7 @@ export default function RealMapExplorerPage({
       summaryRows.push({
         label: focusedLayer.featureIdentity.memberLabel
           ? `${focusedLayer.featureIdentity.memberLabel} 행`
-          : "원천 행",
+          : "원자료 건수",
         value: `${focusedLayer.memberRowCount.toLocaleString()}행`,
       });
     }
@@ -4316,6 +4485,363 @@ export default function RealMapExplorerPage({
       selected.recordId
     );
   }, [recordsByElement, selected, selectedLayer]);
+  /**
+   * V161-C: the card for the current selection.
+   *
+   * One model for every kind of selection, so the panel does not decide what a
+   * thing is; the renderer and the selection do. Peers for a rank come from the
+   * values the map drew for the same variable and period, never from another
+   * period or another layer.
+   */
+  const mapSelectionCardV161 = useMemo((): MapSelectionCardV161 | null => {
+    if (selectedSpatial && selectedOwningLayer) {
+      const renderer = rendererOf(selectedOwningLayer);
+      const properties = selectedSpatial.properties || {};
+      const isLine = renderer === "line";
+      const isUnit = renderer === "unit-choropleth";
+      const isAsset = renderer === "point-and-polygon";
+      const isScope = renderer === "regional-scope";
+      const isRegion = Boolean(selectedSpatial.adm1Code) && !isUnit && !isAsset && !isLine;
+      const isCluster =
+        properties.category === "위치 묶음" || String(selectedSpatial.selectionKey || "").startsWith("cluster:");
+      const kind = isCluster
+        ? "cluster"
+        : isScope
+        ? "project-scope"
+        : isLine
+          ? "line"
+          : isUnit
+            ? "unit"
+            : isAsset
+              ? "asset-feature"
+              : "region";
+      // A region's name is written "한글명 (현지명)"; a unit, a line or an asset
+      // feature keeps the name its source gave it.
+      const title = isRegion
+        ? formatRegionListV161(selectedSpatial.adm1Name, {
+            country: countryIso3,
+            level:
+              properties.boundarySystem === "post-2025-34" ? "adm1-34" : "adm1-63",
+          }) || selectedSpatial.adm1Name
+        : publicMapFeatureNameV126(
+            (isScope
+              ? properties.projectTitle || selectedSpatial.adm1Name
+              : properties.unitLabel || properties.name || selectedSpatial.adm1Name) as string,
+            "선택 항목"
+          );
+      const measureLabel =
+        publicTextV126(properties.variableLabel) ||
+        selectedSpatial.variableLabel ||
+        selectedOwningVariablePresentationV129?.label ||
+        selectedOwningSemantic?.measureLabel ||
+        selectedOwningLayer.legend.title;
+      const unit =
+        selectedOwningVariablePresentationV129?.unit ||
+        selectedSpatial.unit ||
+        selectedOwningSemantic?.unit ||
+        selectedOwningLayer.unit ||
+        "";
+      const lines: MapSelectionLineV161[] = [];
+      if (isCluster) {
+        // "이 위치 묶음 · 발전소 5곳": the cluster's own count, the layer's noun.
+        const pointCount = Number(properties.pointCount ?? selectedSpatial.value ?? 0);
+        const leaves = Array.isArray(properties.clusterLeaves)
+          ? (properties.clusterLeaves as { name: string; kind?: string; size?: string; recordId?: string }[])
+          : [];
+        const byKind = new Map<string, number>();
+        leaves.forEach((leaf) => {
+          const key = leaf.kind || "분류 미표기";
+          byKind.set(key, (byKind.get(key) ?? 0) + 1);
+        });
+        [...byKind.entries()]
+          .sort(([, left], [, right]) => right - left)
+          .forEach(([kindLabel, count]) =>
+            lines.push(...selectionLineV161(kindLabel, `${count.toLocaleString()}곳`))
+          );
+        return {
+          kind: "cluster",
+          title: `이 위치 묶음 · ${selectedFeatureNounV139(selectedOwningLayer)} ${pointCount.toLocaleString()}곳`,
+          subtitle: publicMapLayerTitleV126(
+            selectedOwningLayer.elementId,
+            selectedOwningLayer.publicShortTitle
+          ),
+          lines,
+          comparison: [],
+          actions: [{ key: "zoom" as const, label: "확대해서 모두 보기" }],
+          meta: metaLineV161({
+            period: selectedSpatial.period,
+            source: selectedOwningLayer.source,
+            drawing: DRAWING_LABEL_V161.cluster,
+          }),
+          members: leaves
+            .filter((leaf) => leaf.name)
+            .map((leaf) => ({
+              name: leaf.name,
+              ...(leaf.kind ? { kind: leaf.kind } : {}),
+              ...(leaf.size ? { size: leaf.size } : {}),
+              ...(leaf.recordId ? { recordId: leaf.recordId } : {}),
+            })),
+          memberCount: pointCount,
+        };
+      }
+      if (!isLine && !isAsset) {
+        const valueText =
+          selectedSpatial.value === null || selectedSpatial.value === undefined
+            ? ""
+            : `${formatPublicNumberV126(selectedSpatial.value, unit)}${unit ? ` ${unit}` : ""}`;
+        lines.push(
+          ...selectionLineV161(
+            measureLabel,
+            valueText || "값 없음",
+            selectedOwningVariablePresentationV129?.directionLabel ||
+              selectedOwningVariablePresentationV129?.aggregationNotice ||
+              undefined
+          )
+        );
+      }
+      if (properties.categoryLabel) {
+        lines.push(...selectionLineV161("분류", properties.categoryLabel));
+      }
+      // How this area's value came about, when it is not the area's own figure:
+      // a six-region value is the region's, and a merged 2025 unit's value covers
+      // every constituent province. The reader sees this on the value, not in a
+      // hover tooltip.
+      if (properties.policyKind === "six-region-only" || properties.boundarySystem === "gdl-six-region") {
+        lines.push(
+          ...selectionLineV161(
+            "자료 설명",
+            `${selectedSpatial.adm1Name}의 개별 추정값이 아니라 ${publicVietnamSourceRegionV126(
+              publicTextV126(properties.sourceRegion) || undefined
+            )} ${regionUnitLabelV138(selectedOwningLayer)}의 값을 표시합니다.`
+          )
+        );
+      } else if (properties.boundarySystem === "post-2025-34" && selectedMemberSummaryV151) {
+        lines.push(
+          ...selectionLineV161(
+            "자료 설명",
+            `2025년 개편 후 ${selectedMemberSummaryV151.unitNameKo || selectedMemberSummaryV151.unitName} 전체의 값이며 소속 성·시에 같은 값을 표시합니다.`
+          )
+        );
+      }
+      if (isUnit) {
+        lines.push(
+          ...selectionLineV161(
+            "소속 성·시(2025 기준)",
+            formatRegionListV161(properties.adm1Name34Primary, {
+              country: countryIso3,
+              level: "adm1-34",
+            }),
+            "원자료가 적어 둔 소속 성·시이며, 값을 성·시로 합치지 않습니다."
+          )
+        );
+      }
+      if (isLine || isAsset) {
+        lines.push(...selectionLineV161("전압", properties.voltageKv ? `${properties.voltageKv} kV` : ""));
+        lines.push(...selectionLineV161("구간 길이", properties.lengthKm ? `${properties.lengthKm} km` : ""));
+        lines.push(...selectionLineV161("운영 상태", properties.status));
+        lines.push(...selectionLineV161("면적", properties.areaKm2 ? `${properties.areaKm2} km²` : ""));
+        lines.push(
+          ...selectionLineV161(
+            "소재 성·시(2025 기준)",
+            formatRegionListV161(properties.adm1Name34, {
+              country: countryIso3,
+              level: "adm1-34",
+            })
+          )
+        );
+      }
+      if (selectedMemberSummaryV151) {
+        lines.push(
+          ...selectionLineV161(
+            "집계 방식",
+            typeof selectedOwningLayer.boundaryPolicy === "object"
+              ? selectedOwningLayer.boundaryPolicy?.note
+              : "",
+            selectedMemberSummaryV151.conflict ? "구성 성·시의 값이 서로 다릅니다." : undefined
+          )
+        );
+        lines.push(
+          ...selectionLineV161(
+            "구성 성·시",
+            `${selectedMemberSummaryV151.memberCount}개 중 ${selectedMemberSummaryV151.valueCount}개 값 있음`
+          )
+        );
+      }
+      // Where it sits in the whole: the same layer, the same variable, the same
+      // period - the values the map is drawing right now.
+      const comparison: MapSelectionLineV161[] = [];
+      const asset = spatialByElement[selectedOwningLayer.elementId];
+      const drawn =
+        asset && selectedOwningSelector
+          ? isUnit
+            ? unitChoroplethCollectionV157(selectedOwningLayer, asset, selectedOwningSelector)
+                .collection
+            : isAsset
+              ? assetFeatureCollectionV157(selectedOwningLayer, asset, filters)
+              : isLine || isScope
+                ? null
+                : choroplethFeatureCollectionV151(
+                    selectedOwningLayer,
+                    asset,
+                    selectedOwningSelector,
+                    boundaryContextV151
+                  ).collection
+          : null;
+      if (drawn) {
+        const peers = drawn.features
+          .map((feature) => feature.properties?.value)
+          .filter((value): value is number => typeof value === "number" && Number.isFinite(value));
+        comparison.push(
+          ...rankLinesV161({
+            value: selectedSpatial.value ?? null,
+            peers,
+            unit,
+            peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : "성·시",
+          })
+        );
+        const categoryCounts: Record<string, number> = {};
+        drawn.features.forEach((feature) => {
+          const label = String(feature.properties?.categoryLabel || "");
+          if (label) categoryCounts[label] = (categoryCounts[label] ?? 0) + 1;
+        });
+        comparison.push(
+          ...categoryShareLinesV161(
+            String(properties.categoryLabel || ""),
+            categoryCounts,
+            isUnit ? "평가구역" : isAsset ? "대상" : "성·시"
+          )
+        );
+      }
+      if (selectedB021RegionRankV129) {
+        comparison.push({ label: "권역 비교", value: selectedB021RegionRankV129 });
+      }
+      const detailHref = `/?view=data&country=${countryIso3}&element=${selectedOwningLayer.elementId}#element-detail`;
+      const sourceUrl = String(properties.officialSource || properties.sourceUrl || "");
+      return {
+        kind,
+        title,
+        subtitle: `${publicMapLayerTitleV126(
+          selectedOwningLayer.elementId,
+          selectedOwningLayer.publicShortTitle
+        )} · ${isRegion ? "성·시" : isUnit ? "평가구역" : isLine ? "구간" : isAsset ? "시설·구역" : "사업 범위"}`,
+        lines,
+        comparison,
+        actions: [
+          { key: "zoom" as const, label: "이 위치로 확대" },
+          { key: "detail" as const, label: "데이터 상세보기", href: detailHref },
+          ...(isHttpUrlV121(sourceUrl)
+            ? [{ key: "source" as const, label: "공식 출처", href: sourceUrl }]
+            : []),
+        ],
+        meta: metaLineV161({
+          period: selectedSpatial.period || properties.period,
+          source: mapIndicatorSourceV148(
+            String(properties.sourceIndicatorId || ""),
+            selectedSpatial.adm1Code ? "" : selectedOwningLayer.source
+          ),
+          drawing: DRAWING_LABEL_V161[renderer],
+        }),
+      };
+    }
+    if (selected && selectedLayer) {
+      const title =
+        selectedEntityTitleResolutionV131?.title ||
+        publicMapEntityTitleV131(selected, selectedLayer);
+      // The facts themselves are shown by the record's own block below the card
+      // (the V153 facility card where one exists), so the card says where the
+      // record is and how it compares, without repeating them.
+      const lines: MapSelectionLineV161[] = [];
+      const locatedIn = locationsByElementV151[selectedLayer.elementId]?.byRecordId?.[
+        selected.recordId
+      ];
+      if (locatedIn) {
+        lines.push(
+          ...selectionLineV161(
+            "소재 성·시",
+            formatRegionListV161(locatedIn.adm1Name, {
+              country: countryIso3,
+              level: "adm1-63",
+            }),
+            selectedApproximateV138
+              ? "소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
+              : undefined
+          )
+        );
+      }
+      return {
+        kind: "facility",
+        title,
+        subtitle: publicMapLayerTitleV126(
+          selectedLayer.elementId,
+          selectedLayer.publicShortTitle
+        ),
+        lines,
+        comparison: [],
+        actions: [
+          { key: "zoom" as const, label: "이 위치로 확대" },
+          {
+            key: "detail" as const,
+            label: "데이터 상세보기",
+            href: `/?view=data&country=${countryIso3}&element=${selectedLayer.elementId}#element-detail`,
+          },
+        ],
+        meta: metaLineV161({
+          period: selectedLayer.sourceYear,
+          // The record's own source, sanitised the same way the rest of the screen
+          // does: a layer's `source` string can carry collection notes with
+          // internal attribute keys, which must not reach a public line.
+          source: mapIndicatorSourceV148(
+            selected.indicatorId,
+            selected.provenance?.sourceOrg || ""
+          ),
+          drawing: DRAWING_LABEL_V161[rendererOf(selectedLayer)],
+        }),
+      };
+    }
+    return null;
+  }, [
+    boundaryContextV151,
+    countryIso3,
+    filters,
+    locationsByElementV151,
+    selected,
+    selectedApproximateV138,
+    selectedB021RegionRankV129,
+    selectedEntityTitleResolutionV131,
+    selectedLayer,
+    selectedMemberSummaryV151,
+    selectedOwningLayer,
+    selectedOwningSelector,
+    selectedOwningSemantic,
+    selectedOwningVariablePresentationV129,
+    selectedSpatial,
+    spatialByElement,
+  ]);
+  /**
+   * V161-C: "이 위치로 확대" - fit the map to whatever is selected.
+   *
+   * A point gets a close view around its own coordinate; an area is fitted to its
+   * own geometry. Nothing moves when the selection has no geometry to fit.
+   */
+  const zoomToSelectionV161 = useCallback(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    if (selected && typeof selected.latitude === "number" && typeof selected.longitude === "number") {
+      map.easeTo({ center: [selected.longitude, selected.latitude], zoom: Math.max(map.getZoom(), 9), duration: 400 });
+      return;
+    }
+    if (!selectedSpatial || !selectedOwningLayer) return;
+    const asset = spatialByElement[selectedOwningLayer.elementId];
+    const key = selectedSpatial.selectionKey || selectedSpatial.adm1Code || "";
+    const feature = asset?.geometry?.features.find((candidate) => {
+      const properties = (candidate.properties || {}) as Record<string, unknown>;
+      return [properties.selectionKey, properties.adm1Code, properties.stringId, properties.featureId]
+        .map((value) => String(value ?? ""))
+        .includes(String(key));
+    });
+    const bounds = feature ? geometryBoundsV161(feature.geometry as GeoJSON.Geometry) : null;
+    if (bounds) map.fitBounds(bounds, { padding: 56, duration: 400 });
+  }, [selected, selectedOwningLayer, selectedSpatial, spatialByElement]);
   // Hydrological sites: each member row is one named indicator with its own unit.
   const selectedMemberFactsV138 = useMemo(() => {
     const contract = selectedLayer?.memberFacts;
@@ -4402,7 +4928,7 @@ export default function RealMapExplorerPage({
       series,
       note: `관측소별 상대해수면 전망입니다. 기준면은 1995–2014 평균(2005년 기준)이며 침수 범위가 아닙니다. 분위는 모형 불확실성 범위이고${
         confidence.size ? ` 신뢰수준 ${[...confidence].join("·")}` : ""
-      } · 원천 IPCC AR6 해수면 전망 도구.`,
+      } · 출처 IPCC AR6 해수면 전망 도구.`,
     };
   }, [memberSeriesQuantileV138, selected, selectedEntityTitleResolutionV131, selectedLayer, selectedMembersV138]);
   const keyboardMapFeaturesV129 = useMemo<KeyboardMapFeatureV129[]>(() => {
@@ -4444,8 +4970,13 @@ export default function RealMapExplorerPage({
         renderer === "line"
           ? lineFeatureCollection(layer, asset, selector, filters)
           : renderer === "regional-scope"
-          ? asset.geometry
-          : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151).collection;
+            ? asset.geometry
+            : renderer === "point-and-polygon"
+              ? assetFeatureCollectionV157(layer, asset, filters)
+              : renderer === "unit-choropleth"
+                ? unitChoroplethCollectionV157(layer, asset, selector).collection
+                : choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151)
+                    .collection;
       collection.features.forEach((feature, featureIndex) => {
         const properties = (feature.properties || {}) as Record<string, unknown>;
         const rawLength = properties.lengthKm ?? properties.length;
@@ -4454,8 +4985,14 @@ export default function RealMapExplorerPage({
             ? Number.NaN
             : Number(rawLength);
         const name =
+          // V157/V161: the transmission helper names A-024's segments by voltage;
+          // another line layer (A-027's roads and railways) has its own names.
           renderer === "line"
-            ? publicTransmissionSegmentTitleV131(properties)
+            ? elementId === "A-024"
+              ? publicTransmissionSegmentTitleV131(properties)
+              : publicMapFeatureNameV126(properties.name || properties.ref, "구간")
+            : renderer === "point-and-polygon"
+              ? publicMapFeatureNameV126(properties.name || properties.kindLabel, "시설·구역")
             : renderer === "regional-scope"
             ? `${publicMapFeatureNameV126(
                 properties.displayLabel,
@@ -5090,16 +5627,16 @@ export default function RealMapExplorerPage({
                 <button
                   type="button"
                   className="cdp-button cdp-button--secondary cdp-button--compact"
-                  aria-expanded={
-                    moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category))
+                  aria-expanded={openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length}
+                  onClick={() =>
+                    setOpenCategoriesV138(
+                      openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
+                        ? new Set()
+                        : new Set(PUBLIC_MAP_TARGET_CATEGORIES_V138)
+                    )
                   }
-                  onClick={() => {
-                    const allOpen = moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category));
-                    setOpenCategoriesV138(allOpen ? new Set() : new Set(mapCatalogGroupsV160.map((group) => group.category)));
-                    setMoreLayersOpenV160(!allOpen);
-                  }}
                 >
-                  {moreLayersOpenV160 && mapCatalogGroupsV160.every((group) => openCategoriesV138.has(group.category))
+                  {openCategoriesV138.size === PUBLIC_MAP_TARGET_CATEGORIES_V138.length
                     ? "모두 접기"
                     : "모두 펼치기"}
                 </button>
@@ -5137,9 +5674,8 @@ export default function RealMapExplorerPage({
                 </label>
               </div>
             )}
-            {mapCatalogGroupsV160.map(({ category, rows, core }, groupIndex) => {
+            {mapTargetGroupsV138.map(({ category, rows }) => {
               const open = openCategoriesV138.has(category);
-              const firstMoreGroup = !core && groupIndex === 1;
               const selectedCount = rows.filter((row) =>
                 activeIds.includes(row.target.elementId)
               ).length;
@@ -5150,23 +5686,10 @@ export default function RealMapExplorerPage({
               const groupId = `map-catalog-group-${category.replace(/[^0-9A-Za-z가-힣]+/gu, "-")}`;
               return (
                 <Fragment key={category}>
-                {firstMoreGroup ? (
-                  <button
-                    type="button"
-                    className="cdp-map-catalog-v160__more"
-                    data-testid="map-more-layers-v160"
-                    aria-expanded={moreLayersOpenV160}
-                    onClick={() => setMoreLayersOpenV160((current) => !current)}
-                  >
-                    더 많은 레이어 · {mapCatalogGroupsV160.slice(1).reduce((sum, group) => sum + group.rows.length, 0)}개
-                  </button>
-                ) : null}
                 <div
-                  className={`cdp-map-catalog-v138__group ${open ? "is-open" : ""} ${core ? "is-core-v160" : ""}`}
+                  className={`cdp-map-catalog-v138__group ${open ? "is-open" : ""}`}
                   data-map-group-v135={category}
                   data-map-group-selected={selectedCount}
-                  data-map-core-v160={core ? "true" : undefined}
-                  hidden={!core && !moreLayersOpenV160}
                 >
                   <button
                     type="button"
@@ -5248,11 +5771,18 @@ export default function RealMapExplorerPage({
                                 <PublicTermExpandedTextV134
                                   text={
                                     available
-                                      ? `${publicMapDataItemSummaryV136(elementId)} · ${
-                                          layer
-                                            ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
-                                            : target.period
-                                        }`
+                                      ? (() => {
+                                          // V162 (d): a list collected at a point carries no year in
+                                          // the list (its 기준 시점 is in the info panel); a corrected
+                                          // span or a plan period comes from the element's statement.
+                                          const tag = listPeriodTagV162(elementId, countryIso3);
+                                          const period = tag !== null
+                                            ? tag
+                                            : layer
+                                              ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
+                                              : target.period;
+                                          return period ? `${publicMapDataItemSummaryV136(elementId)} · ${period}` : publicMapDataItemSummaryV136(elementId);
+                                        })()
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
                                         : MAP_PENDING_SUMMARY_V140
@@ -5326,30 +5856,68 @@ export default function RealMapExplorerPage({
                                 <dt>지도 표시</dt>
                                 <dd><PublicTermTextV134 text={target.displaySpatialUnit} /></dd>
                               </div>
-                              <div>
-                                <dt>원자료 공간단위</dt>
-                                <dd><PublicTermTextV134 text={target.sourceSpatialUnit} /></dd>
-                              </div>
-                              <div>
-                                <dt>선택 항목</dt>
-                                <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
-                              </div>
-                              <div>
-                                <dt>단위·기간</dt>
-                                <dd><PublicTermTextV134 text={`${target.unit} · ${target.period}`} /></dd>
-                              </div>
-                              <div>
-                                <dt>유의사항</dt>
-                                <dd><PublicTermTextV134 text={target.limitation} /></dd>
-                              </div>
+                              {target.sourceSpatialUnit ? (
+                                <div>
+                                  <dt>원자료 공간단위</dt>
+                                  <dd><PublicTermTextV134 text={target.sourceSpatialUnit} /></dd>
+                                </div>
+                              ) : null}
+                              {target.selectableVariables ? (
+                                <div>
+                                  <dt>선택 항목</dt>
+                                  <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
+                                </div>
+                              ) : null}
+                              {periodStatementV162(elementId, countryIso3) ? (
+                                <>
+                                  {/* V162 (d): the element's own period statement -
+                                      '기준 시점 2026-07 수집', '자료기간 2010–2023년'. */}
+                                  {target.unit ? (
+                                    <div>
+                                      <dt>단위</dt>
+                                      <dd><PublicTermTextV134 text={target.unit} /></dd>
+                                    </div>
+                                  ) : null}
+                                  <div data-testid="map-catalog-period-v162">
+                                    <dt>{periodStatementV162(elementId, countryIso3)!.label}</dt>
+                                    <dd>{periodStatementV162(elementId, countryIso3)!.text}</dd>
+                                  </div>
+                                  {/* A basis the values are counted on ("승인일 기준", D-018)
+                                      is not a period: it stays when it names no year. */}
+                                  {target.period && !/\d{4}/u.test(target.period) ? (
+                                    <div>
+                                      <dt>집계 기준</dt>
+                                      <dd><PublicTermTextV134 text={target.period} /></dd>
+                                    </div>
+                                  ) : null}
+                                </>
+                              ) : target.unit || target.period ? (
+                                <div>
+                                  <dt>단위·기간</dt>
+                                  <dd><PublicTermTextV134 text={[target.unit, target.period].filter(Boolean).join(" · ")} /></dd>
+                                </div>
+                              ) : null}
+                              {/* An empty cell says nothing; a dataset that is not on
+                                  the map has its one sentence in the status cell. */}
+                              {target.limitation ? (
+                                <div>
+                                  <dt>유의사항</dt>
+                                  <dd><PublicTermTextV134 text={target.limitation} /></dd>
+                                </div>
+                              ) : null}
                               {!available && (
                                 <div>
                                   <dt>{MAP_PENDING_LABEL_V140} 사유</dt>
                                   <dd data-testid="map-catalog-unavailable-reason-v138">
-                                    {layer?.disabledReason || target.build.reason || "위치·경계 자료가 확인되지 않았습니다."}
-                                    {target.build.requiredAsset
-                                      ? ` 필요한 자료: ${target.build.requiredAsset}`
-                                      : ""}
+                                    {/* What the provider still has to send is in the
+                                        re-delivery request, not on a public panel. */}
+                                    <PublicTermTextV134
+                                      text={
+                                        layer?.disabledReason ||
+                                        target.build.reason ||
+                                        "위치·경계 자료가 확인되지 않았습니다."
+                                      }
+                                    />
                                   </dd>
                                 </div>
                               )}
@@ -5732,6 +6300,12 @@ export default function RealMapExplorerPage({
                     <PublicTermTextV134
                       text={
                         focusedLayer.analysisItemLabel ||
+                        // A layer drawn from its own asset counts features on the map;
+                        // the delivered table's measure name ("도로 레이어") describes
+                        // that table, not what the reader is looking at.
+                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                          ? focusedLayer.legend.title
+                          : null) ||
                         focusedVariablePresentationV129?.label ||
                         (focusedLayer.layerId.startsWith("vnm-v138-")
                           ? focusedVariable?.label
@@ -6803,6 +7377,11 @@ export default function RealMapExplorerPage({
                   <dd>
                     <PublicTermTextV134
                       text={
+                        // A layer drawn from its own asset is named by what it draws;
+                        // the delivered table's measure name describes that table.
+                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                          ? focusedLayer.legend.title
+                          : null) ||
                         focusedVariablePresentationV129?.label ||
                         focusedSemantic?.measureLabel ||
                         focusedLayer.legend.title
@@ -6981,8 +7560,9 @@ export default function RealMapExplorerPage({
                   </span>
                   <p>국가 대표좌표는 실제 사업 위치로 표시하지 않습니다.</p>
                 </div>
-              ) : rendererOf(focusedLayer) === "admin1-choropleth" ||
-                rendererOf(focusedLayer) === "partial-choropleth" ? (
+              ) : (rendererOf(focusedLayer) === "admin1-choropleth" ||
+                  rendererOf(focusedLayer) === "partial-choropleth") &&
+                focusedCategoryLegendV157.length === 0 ? (
                 <div className="cdp-map-legend__scale">
                   <span className="cdp-map-legend__gradient" aria-label="낮은 값에서 높은 값">
                     <i
@@ -7019,6 +7599,26 @@ export default function RealMapExplorerPage({
                     값 있음 {focusedAnalysisV126.dataRegionCount}개 · 결측 {focusedAnalysisV126.missingRegionCount}개
                   </p>
                 </div>
+              ) : focusedCategoryLegendV157.length ? (
+                <ul
+                  className="cdp-map-legend__categories"
+                  data-testid="map-category-legend-v157"
+                  aria-label="분류별 색과 대상 수"
+                >
+                  {focusedCategoryLegendV157.map((entry) => (
+                    <li key={entry.label}>
+                      <span
+                        className="cdp-map-legend__swatch"
+                        style={{ background: entry.color }}
+                        aria-hidden="true"
+                      />
+                      <PublicTermTextV134 text={entry.text || entry.label} />
+                      <span className="cdp-map-legend__count">
+                        {entry.featureCount.toLocaleString()}개
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               ) : focusedIconLegendV152.length ? (
                 <div className="cdp-map-legend__icons" aria-label="기호와 분류별 위치 수">
                   <MapIconLegendV152 entries={focusedIconLegendV152} compact />
@@ -7095,6 +7695,11 @@ export default function RealMapExplorerPage({
                     label="항목"
                     value={
                       focusedLayer.analysisItemLabel ||
+                      // An asset layer is named by what it draws (see the layer
+                      // meta above); the delivered table's measure name is not it.
+                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                        ? focusedLayer.legend.title
+                        : null) ||
                       focusedVariablePresentationV129?.label ||
                       (focusedLayer.layerId.startsWith("vnm-v138-")
                         ? focusedVariable?.label
@@ -7110,6 +7715,9 @@ export default function RealMapExplorerPage({
                   {(() => {
                     const item =
                       focusedLayer.analysisItemLabel ||
+                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
+                        ? focusedLayer.legend.title
+                        : null) ||
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.measureLabel ||
                       focusedLayer.legend.title;
@@ -7171,8 +7779,17 @@ export default function RealMapExplorerPage({
                   </section>
                 )}
 
-              <section data-testid="map-national-summary">
-                <h3>{["admin1-choropleth", "partial-choropleth"].includes(rendererOf(focusedLayer)) ? "지역별 비교" : "현재 표시 자료 요약"}</h3>
+              {/* V161-C: with something selected, the layer summary folds to its
+                  title so the reader's own selection is what the panel answers
+                  with. Unselecting opens it again. */}
+              <section
+                data-testid="map-national-summary"
+                data-folded-for-selection={mapSelectionCardV161 ? "true" : "false"}
+              >
+                <details open={!mapSelectionCardV161}>
+                  <summary className="cdp-map-summary-fold-v161">
+                    <h3>{["admin1-choropleth", "partial-choropleth"].includes(rendererOf(focusedLayer)) ? "지역별 비교" : "현재 표시 자료 요약"}</h3>
+                  </summary>
                 <p className="map148-summary-context">{focusedPublicCopy?.titleKo} · {layerDisplayedPeriodV142(focusedLayer, filters, focusedSelector.period)}{focusedVariable && focusedVariable.key !== "locations" ? ` · ${focusedVariablePresentationV129?.label || focusedVariable.label}` : ""}</p>
                 <div className="cdp-map-summary-list">
                   {focusedAnalysisV126.summaryRows.filter((row) => !/행$|지도 미표시|위치자료 미확보|필터로 가려진|근사 위치/u.test(row.label)).map((row, index) => (
@@ -7208,7 +7825,18 @@ export default function RealMapExplorerPage({
                     통계입니다.
                   </p>
                 )}
+                </details>
               </section>
+
+              {/* V157: the datasets that travel with this layer because the
+                  delivery states no region for them. */}
+              <MapCompanionsV157
+                elementId={focusedLayer.elementId}
+                layerTitle={publicMapLayerTitleV126(
+                  focusedLayer.elementId,
+                  focusedLayer.publicShortTitle
+                )}
+              />
 
               {/* The panel names which record it is describing, so a second
                   facility sharing a name is never read as the one that was
@@ -7352,7 +7980,7 @@ export default function RealMapExplorerPage({
                         label="세부 활동지역"
                         value={publicMapFeatureNameV126(
                           selectedSpatial.properties.verifiedActivityAreas,
-                          "원천 미제공"
+                          "원자료에 없음"
                         )}
                       />
                       <Evidence
@@ -7391,207 +8019,12 @@ export default function RealMapExplorerPage({
                   </div>
                 ) : selectedSpatial && selectedOwningLayer ? (
                   <div data-testid="map-feature-detail">
-                    <h4>{publicMapFeatureNameV126(selectedSpatial.adm1Name, "선택 항목")}</h4>
-                    <div className="cdp-evidence-grid">
-                      <Evidence
-                        label="데이터명"
-                        value={publicMapLayerTitleV126(
-                          selectedOwningLayer.elementId,
-                          selectedOwningLayer.publicShortTitle
-                        )}
+                    {mapSelectionCardV161 && (
+                      <SelectionPanelV161
+                        card={mapSelectionCardV161}
+                        onZoom={() => zoomToSelectionV161()}
                       />
-                      <Evidence
-                        label="항목"
-                        value={
-                          publicTextV126(selectedSpatial.properties.variableLabel) ||
-                          selectedSpatial.variableLabel ||
-                          selectedOwningVariablePresentationV129?.label ||
-                          selectedOwningSemantic?.measureLabel ||
-                          selectedOwningLayer.legend.title
-                        }
-                      />
-                      {selectedOwningLayer.elementId !== "A-024" && <Evidence
-                        label="값"
-                        value={
-                          selectedSpatial.value === null ||
-                          selectedSpatial.value === undefined
-                            ? "원천 미제공"
-                            : formatPublicNumberV126(
-                                selectedSpatial.value,
-                                selectedSpatial.unit || ""
-                              ) +
-                              (selectedOwningLayer.elementId === "B-021" &&
-                              selectedOwningSelector?.variable === "gvi-6"
-                                ? " / 100"
-                                : "")
-                        }
-                      />}
-                      {selectedOwningLayer.elementId !== "A-024" && <Evidence
-                        label="단위"
-                        value={
-                          selectedOwningVariablePresentationV129?.unit ||
-                          selectedSpatial.unit ||
-                          selectedOwningSemantic?.unit ||
-                          selectedOwningVariable?.unit ||
-                          selectedOwningLayer.unit
-                        }
-                      />}
-                      <Evidence
-                        label="자료연도"
-                        value={
-                          selectedOwningLayer.elementId === "A-023"
-                            ? layerDisplayedPeriodV142(selectedOwningLayer, filters, selectedOwningSelector?.period || "")
-                            : selectedSpatial.period ||
-                              selectedOwningSelector?.period ||
-                              selectedOwningLayer.selectors?.defaultPeriod ||
-                              String(selectedOwningLayer.latestYear || "")
-                        }
-                      />
-                      {selectedOwningVariablePresentationV129?.directionLabel && (
-                        <Evidence
-                          label="값 해석"
-                          value={
-                            selectedOwningVariablePresentationV129.directionLabel
-                          }
-                        />
-                      )}
-                      {selectedOwningVariablePresentationV129?.aggregationNotice &&
-                        !publicTextV126(
-                          selectedSpatial.properties.sourceRegion
-                        ) && (
-                          <Evidence
-                            label="비교·공간단위"
-                            value={
-                              selectedOwningVariablePresentationV129.aggregationNotice
-                            }
-                          />
-                        )}
-                      {selectedSpatial.adm1Code && (
-                        <Evidence
-                          label="지역"
-                          value={
-                            selectedSpatial.unitCode
-                              ? `${selectedSpatial.adm1Name} · 2025-07-01 시행 34개 성·시 기준`
-                              : selectedSpatial.adm1Name
-                          }
-                        />
-                      )}
-                      {selectedMemberSummaryV151 && selectedOwningLayer && (
-                        <>
-                          <Evidence
-                            label="집계 방식"
-                            value={boundaryPolicyNoticeV151(
-                              boundarySystemV151State,
-                              selectedOwningLayer.boundaryPolicy,
-                              selectedMemberSummaryV151.kind
-                            )}
-                          />
-                          <Evidence
-                            label="구성 성·시"
-                            value={`${selectedMemberSummaryV151.memberCount}개 중 ${selectedMemberSummaryV151.valueCount}개 값 있음${
-                              selectedMemberSummaryV151.partial ? " · 부분 결측" : ""
-                            }${selectedMemberSummaryV151.conflict ? " · 구성 값 불일치" : ""} — ${selectedMemberSummaryV151.members
-                              .map(
-                                (member) =>
-                                  `${publicMapFeatureNameV126(member.adm1Name, member.adm1Code)} ${
-                                    member.value === null
-                                      ? "결측"
-                                      : formatPublicNumberV126(member.value, selectedSpatial.unit || "")
-                                  }`
-                              )
-                              .join(" · ")}`}
-                          />
-                        </>
-                      )}
-                      {publicTextV126(selectedSpatial.properties.sourceRegion) && (
-                        <>
-                          <Evidence
-                            label="비교·공간단위"
-                            value={`${publicVietnamSourceRegionV126(
-                              publicTextV126(
-                                selectedSpatial.properties.sourceRegion
-                              ) || undefined
-                            )} ${selectedOwningLayer ? regionUnitLabelV138(selectedOwningLayer) : "권역"}의 값 · 개편 전 성·시 단위 독립값이 아님`}
-                          />
-                          <Evidence
-                            label="자료 설명"
-                            value={
-                              selectedOwningLayer?.aggregationLevel === "post-2025-34-unit"
-                                ? (() => {
-                                    const unit = publicVietnamSourceRegionV126(
-                                      publicTextV126(selectedSpatial.properties.sourceRegion) || undefined
-                                    );
-                                    // "Lai Châu은(는) 2025년 개편으로 Lai Châu에 속합니다" said
-                                    // nothing: a province the reorganisation left alone is its
-                                    // own unit.
-                                    return unit === selectedSpatial.adm1Name
-                                      ? `${selectedSpatial.adm1Name}은(는) 2025년 개편 후에도 같은 이름의 성·시로 유지됩니다. 값은 개편 후 단위 기준입니다.`
-                                      : `${selectedSpatial.adm1Name}은(는) 2025년 개편으로 ${unit}에 속합니다. 값은 개편 후 ${unit} 전체의 값이며 소속 성·시에 같은 값을 표시합니다.`;
-                                  })()
-                                : `${selectedSpatial.adm1Name}의 개별 추정값이 아니라 ${publicVietnamSourceRegionV126(
-                                    publicTextV126(
-                                      selectedSpatial.properties.sourceRegion
-                                    ) || undefined
-                                  )} 권역의 값을 표시합니다.`
-                            }
-                          />
-                        </>
-                      )}
-                      {selectedB021RegionRankV129 && (
-                        <Evidence
-                          label="권역 비교"
-                          value={selectedB021RegionRankV129}
-                        />
-                      )}
-                      {selectedOwningLayer.elementId === "D-008" &&
-                        selectedFeatureRoleV129 === "context" && (
-                          <Evidence
-                            label="공간단위"
-                            value="성·시 단위 통계 대표점 · 실제 사업 위치가 아님"
-                          />
-                        )}
-                      {Object.entries(selectedSpatial.properties)
-                        .filter(
-                          ([key, value]) =>
-                            ["voltageKv", "status", "lengthKm"].includes(key) &&
-                            value !== null &&
-                            value !== undefined &&
-                            value !== ""
-                        )
-                        .map(([key, value]) => (
-                          <Evidence
-                            key={key}
-                            label={
-                              key === "voltageKv"
-                                ? "전압"
-                                : key === "lengthKm"
-                                ? "구간 길이"
-                                : "운영 상태"
-                            }
-                            value={
-                              key === "voltageKv"
-                                ? `${formatValueV121(value)} kV`
-                                : key === "lengthKm"
-                                ? `${formatPublicNumberV126(Number(value), "km")} km`
-                                : String(value) === "existing"
-                                ? "운영 중"
-                                : publicTextV126(formatValueV121(value)) || "미표기"
-                            }
-                          />
-                        ))}
-                      <Evidence label="출처" value={mapIndicatorSourceV148(String(selectedSpatial.properties.sourceIndicatorId || ""), selectedSpatial.adm1Code ? "" : selectedOwningLayer.source)} />
-                      {/* What the symbol stands for on the ground (V138 map contract). */}
-                      <Evidence
-                        label="지도 표시"
-                        value={`${publicMapTargetV138(selectedOwningLayer.elementId)?.displaySpatialUnit || "기호"} · ${
-                          selectedSpatial.adm1Code
-                            ? "성·시 경계 값"
-                            : rendererOf(selectedOwningLayer) === "line"
-                            ? "선로 경로 좌표"
-                            : "위치 좌표"
-                        }`}
-                      />
-                    </div>
+                    )}
                     {selectedOwningLayer.sharedObjectsWith && selectedMemberRecordsV138.length === 0 && (
                       <p className="cdp-map-region-trend-v132__notice" data-testid="map-shared-register-note-v138">
                         {selectedOwningLayer.sharedObjectKind === "document"
@@ -7716,48 +8149,48 @@ export default function RealMapExplorerPage({
                       selectedLayer.elementId === "A-023" ? "true" : undefined
                     }
                   >
-                    <h4>{selectedEntityTitleResolutionV131?.title}</h4>
                     {selectedApproximateV138 && <p className="cdp-map-region-trend-v132__notice">{["B-023", "B-025", "B-028"].includes(selected.elementId) ? "유역의 대표 위치입니다. 유역 경계나 영향 범위를 나타내지 않습니다." : "소재 지역을 나타내는 점이며, 건물 위치는 아닙니다."}</p>}
-                    <div className="cdp-evidence-grid">
-                      {selectedEntityTitleResolutionV131?.secondaryNote && (
-                        <Evidence
-                          label="개별 명칭"
-                          value={selectedEntityTitleResolutionV131.secondaryNote}
-                        />
+                    {mapSelectionCardV161 && (
+                      <SelectionPanelV161
+                        card={mapSelectionCardV161}
+                        onZoom={() => zoomToSelectionV161()}
+                      />
+                    )}
+                    {/* The record's own facts: the V153 facility card where one is
+                        defined, else the layer's public fact fields. The metadata
+                        rows moved into the card's closing meta line (P12-C). */}
+                    <div
+                      className="cdp-map-a023-key-facts-v132"
+                      data-testid={
+                        selected.elementId === "A-023"
+                          ? "a023-map-selected-key-facts-v132"
+                          : "map-selected-facts-v148"
+                      }
+                    >
+                      {facilityCardSpecV153(selected.elementId) ? (
+                        <FacilityCardV153 elementId={selected.elementId} entity={selected} compact />
+                      ) : (
+                        mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
+                          .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
+                          .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)
                       )}
                       <Evidence
-                        label="데이터명"
-                        value={publicMapLayerTitleV126(
-                          selectedLayer.elementId,
-                          selectedLayer.publicShortTitle
-                        )}
+                        label="자료연도"
+                        value={
+                          ["B-023", "B-028"].includes(selected.elementId)
+                            ? "관측값별 시점 참조"
+                            : String(
+                                selected.provenance.referenceYear ||
+                                  selectedLayer.selectors?.defaultPeriod ||
+                                  selectedLayer.latestYear ||
+                                  ""
+                              )
+                        }
                       />
-                      <div className="cdp-map-a023-key-facts-v132"
-                        data-testid={selected.elementId === "A-023" ? "a023-map-selected-key-facts-v132" : "map-selected-facts-v148"}>
-                        {facilityCardSpecV153(selected.elementId) ? (
-                          <FacilityCardV153 elementId={selected.elementId} entity={selected} compact />
-                        ) : (
-                          mapFactsV148(selectedLayer, selected.normalizedAttributes || {})
-                            .filter((fact) => !["sourceLabel", "referenceYear"].includes(fact.key))
-                            .map((fact) => <Evidence key={fact.key} label={fact.label} value={fact.value} />)
-                        )}
-                        <Evidence label="자료연도" value={["B-023", "B-028"].includes(selected.elementId) ? "관측값별 시점 참조" : String(selected.provenance.referenceYear || selectedLayer.selectors?.defaultPeriod || selectedLayer.latestYear || "")} />
-                      </div>
-                      {selectedMemberFactsV138.map((fact) => (
-                        <Evidence
-                          key={fact.label}
-                          label={fact.label}
-                          value={fact.value}
-                        />
-                      ))}
-                      {/* The row's source line carries the compiler's column
-                          note ("attr_19 참조"); the organisations stay. */}
-                      <Evidence
-                        label="출처"
-                        value={mapIndicatorSourceV148(selected.indicatorId, selected.provenance.sourceOrg || "")}
-                      />
-                      <Evidence label="지도 표시" value={`${publicMapTargetV138(selected.elementId)?.displaySpatialUnit || "기호"} · 위치 좌표`} />
                     </div>
+                    {selectedMemberFactsV138.map((fact) => (
+                      <Evidence key={fact.label} label={fact.label} value={fact.value} />
+                    ))}
                     {selectedMemberSeriesV138 && (
                       <section
                         className="cdp-map-region-trend-v132"

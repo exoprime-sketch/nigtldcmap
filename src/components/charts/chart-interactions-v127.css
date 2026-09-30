@@ -183,6 +183,20 @@
   opacity: 0.7;
 }
 
+/* V162: the year chosen in the 연도 selector (its values table is below). */
+.v127-interactive-chart__marked line {
+  stroke: var(--cdp-brand-strong, #0f6b4f);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  vector-effect: non-scaling-stroke;
+}
+
+.v127-interactive-chart__marked text {
+  fill: var(--cdp-brand-strong, #0f6b4f);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .v127-interactive-chart__tick,
 .v127-interactive-chart__axis-title {
   fill: var(--cdp-muted, #5f716a);
