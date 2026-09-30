@@ -32,18 +32,24 @@ const URL_PATTERN = /https?:\/\/[^\s"'<>]+/gu;
 
 const server = await startStaticBuildServer(BUILD, { port: Number(opt("--port", "4462")) });
 const after = server.url.replace(/\/$/u, "");
+// --before-build: a local build of an earlier commit instead of the live site
+// (the new delivery before a fix, which the live site never showed).
+const beforeBuild = opt("--before-build", null);
+const beforeServer = beforeBuild ? await startStaticBuildServer(resolve(ROOT, beforeBuild), { port: Number(opt("--port", "4462")) + 1 }) : null;
+const beforeBase = beforeServer ? beforeServer.url.replace(/\/$/u, "") : BEFORE;
+const TAG = opt("--tag", "v162");
 const browser = await chromium.launch(process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {});
 const results = [];
 try {
   for (const id of IDS) {
-    for (const [side, base] of [["before", BEFORE], ["after", after]]) {
+    for (const [side, base] of [["before", beforeBase], ["after", after]]) {
       const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, locale: "ko-KR" });
       const url = `${base}/?view=data&country=VNM&element=${id}#element-detail`;
       await page.goto(url, { waitUntil: "networkidle", timeout: 90000 }).catch(() => {});
       await page.waitForTimeout(2500);
       const text = await page.evaluate(() => document.body.textContent || "");
       const masked = text.replace(URL_PATTERN, " ");
-      const path = resolve(OUT, `${side}-v162-${id}.png`);
+      const path = resolve(OUT, `${side}-${TAG}-${id}.png`);
       await page.screenshot({ path, fullPage: true, clip: { x: 0, y: 0, width: 1440, height: 2600 } }).catch(async () => {
         await page.screenshot({ path, fullPage: false });
       });
@@ -62,7 +68,8 @@ try {
 } finally {
   await browser.close();
   await server.close?.();
+  await beforeServer?.close?.();
 }
-writeFileSync(resolve(OUT, "before-after-v162.json"), `${JSON.stringify(results, null, 2)}\n`, "utf8");
+writeFileSync(resolve(OUT, `before-after-${TAG}.json`), `${JSON.stringify(results, null, 2)}\n`, "utf8");
 console.log(JSON.stringify(results.map(({ id, side, recordIdHits, pdfNameHits, regionCountPhrases }) => ({ id, side, recordIdHits, pdf: pdfNameHits.length, regionCountPhrases }))));
 process.exit(0);
