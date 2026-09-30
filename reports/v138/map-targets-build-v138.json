@@ -1,15 +1,15 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-30T12:15:46.411Z",
+  "generatedAt": "2026-09-30T21:11:27.014Z",
   "dataRoot": "/public/data/vietnam/v2",
   "targetCount": 72,
   "counts": {
     "implemented": 31,
-    "partial": 28,
-    "notConnected": 13
+    "partial": 29,
+    "notConnected": 12
   },
-  "activeMapLayerCount": 59,
-  "mapFeatureCount": 15233,
+  "activeMapLayerCount": 60,
+  "mapFeatureCount": 15289,
   "crosswalk34": [
     {
       "region": "An Giang",
@@ -1018,12 +1018,32 @@
     },
     {
       "elementId": "C-012",
-      "status": "not-connected",
-      "representation": "none",
-      "build": "none",
-      "reason": "원자료에 성·시별 PPP 사업 행이 없어 지도에 표시하지 않습니다(전국 요약·법령 자료).",
-      "requiredAsset": "성·시별 PPP 사업 집계 행",
-      "forbidden": "전국 값을 성·시에 배분하거나 이전 입고의 지역값을 재사용하는 표현"
+      "status": "partial",
+      "representation": "region-choropleth",
+      "build": "region-membership",
+      "sourceRowCount": 173,
+      "publishedValueCount": 56,
+      "seriesCount": 1,
+      "variableCount": 1,
+      "periodCount": 1,
+      "matchedAdm1Count": 56,
+      "unmatchedRegionNames": [],
+      "rowsWithoutRegion": 30,
+      "linkage": {
+        "sourceElementId": "D-025",
+        "indicatorIds": [
+          "D-025_ppi_project_registry"
+        ],
+        "distinctBy": "PPI_프로젝트키_중복_트랜치_합산용",
+        "sourceRows": 173,
+        "distinctProjects": 164,
+        "rowsWithoutRegion": 30,
+        "tranchesCountedOnce": 7
+      },
+      "sourceRegionCount": 29,
+      "duplicateValueCount": 0,
+      "valueTable": false,
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-012.json"
     },
     {
       "elementId": "C-013",
@@ -1548,5 +1568,5 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json"
     }
   ],
-  "mapIndexSha256": "4e0965b021dc5847e07b88697380ad268cc987c6607d2d9b5a5e219f62cbdd15"
+  "mapIndexSha256": "f102c29859a7d53380c8436641fa3ac691999dcc768e9877bc60c8ab47e3db73"
 }

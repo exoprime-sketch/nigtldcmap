@@ -16,7 +16,7 @@
 | 매트릭스(A-013·C-005·B-044) | 히트맵·정렬표 | 이번 라운드는 문장값 비교표/카드로 열림(예외, 히트맵 후속 P4) |
 | 상태 안내(C-020·C-021·C-023·E-011·E-013) | 문구만(`status-note`) | 차트 0 |
 
-## 집계: 표준 109 · 보존 11 · 예외 32 · 지도 옆 59 · 지도 보류 0
+## 집계: 표준 109 · 보존 11 · 예외 32 · 지도 옆 60 · 지도 보류 0
 
 | ID | 유형 | 1순위 | 제목 | 가로축 | 세로축 | 단위 | 2순위 | 지도 | 상태 | 참고 사례 | 사유·비고 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -112,7 +112,7 @@
 | C-009 | 정책·문서 | `timeline` | 기후 법제도 시행 연혁 | — | — | — | `table` | 없음 | 표준 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
 | C-010 | 정책·문서 | `timeline` | 환경 법제도 시행 연혁 | — | — | — | `table` | 없음 | 표준 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
 | C-011 | 정책·문서 | `comparison-table` | 현지 안전정보·연락처 | — | — | — | `table` | 없음 | 표준 | [공공데이터포털](https://www.data.go.kr/tcs/dss/selectDataSetList.do) · [IEA Policies database](https://www.iea.org/policies) |  |
-| C-012 | 정책·문서 | `comparison-table` | PPP 법제도·조달조건 | — | — | — | `table` | 없음 | 보존 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
+| C-012 | 정책·문서 | `comparison-table` | PPP 법제도·조달조건 | — | — | — | `table` | 1순위 옆 | 보존 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
 | C-013 | 정책·문서 | `comparison-table` | 외국인투자 규정조건 | — | — | — | `table` | 1순위 옆 | 표준 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
 | C-014 | 정책·문서 | `comparison-table` | 인허가 절차·기간·비용 | — | — | — | `table` | 없음 | 표준 | [Climate Change Laws of the World](https://climate-laws.org/) · [IEA Policies database](https://www.iea.org/policies) |  |
 | C-015 | 정책·문서 | `comparison-table` | 정책 원문 링크 목록 | — | — | — | `table` | 없음 | 표준 | [공공데이터포털](https://www.data.go.kr/tcs/dss/selectDataSetList.do) · [IEA Policies database](https://www.iea.org/policies) |  |

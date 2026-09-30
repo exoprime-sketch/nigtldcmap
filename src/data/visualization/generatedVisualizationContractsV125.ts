@@ -2384,7 +2384,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 20,
     "primaryRenderer": "evidence-matrix",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null

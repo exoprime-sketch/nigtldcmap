@@ -2240,24 +2240,51 @@
       "category": "정책·사업여건",
       "publicName": "PPP 사업 이력",
       "sourceFields": [
-        "지역_지역명_현행"
+        "D-025: 명칭",
+        "D-025: 위치·사업지_행정구역(사업 위치)",
+        "D-025: PPI_프로젝트키_중복_트랜치_합산용",
+        "D-025: Financial_Close",
+        "D-025: 상태"
       ],
-      "sourceSpatialUnit": "자료 한 건 단위(지역 행 없음)",
-      "displaySpatialUnit": "지도 표시 없음 · 국가 값 카드로 제공",
-      "representation": "none",
+      "sourceSpatialUnit": "World Bank PPI 사업(2026-09-30 입고에서 D-025 PPI 사업 등록부로 이관)의 사업 위치를 개편 후 34개 성·시로 집계",
+      "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+      "representation": "region-choropleth",
       "build": {
-        "kind": "none",
-        "reason": "원자료에 성·시별 PPP 사업 행이 없어 지도에 표시하지 않습니다(전국 요약·법령 자료).",
-        "internalReason": "2026-09-30 입고 C-012는 법령 13·PPI 요약 6·국가 요약 1행이며 지역(현행) 칸이 모두 '전국' — 지역별 사업 집계행(이전 29행) 없음",
-        "requiredAsset": "성·시별 PPP 사업 집계 행",
-        "forbidden": "전국 값을 성·시에 배분하거나 이전 입고의 지역값을 재사용하는 표현"
+        "kind": "region-membership",
+        "sourceElementId": "D-025",
+        "indicatorIds": [
+          "D-025_ppi_project_registry"
+        ],
+        "regionSidecar": "reports/v157/record-regions/d-025.json",
+        "distinctBy": "PPI_프로젝트키_중복_트랜치_합산용",
+        "periodFixed": "1994–2024(재무종결)",
+        "measures": [
+          {
+            "key": "ppp-project-count",
+            "aggregate": "count",
+            "label": "PPP 사업 수(PPI 수록)",
+            "unit": "건",
+            "measureId": "c012-ppi-count"
+          }
+        ],
+        "defaultMeasure": "ppp-project-count",
+        "coverageKind": "partial",
+        "memberRecords": {
+          "labelKey": "명칭",
+          "statusKey": "상태",
+          "dateKey": "Financial_Close",
+          "valueKey": "섹터"
+        },
+        "boundaryPolicy34": {
+          "kind": "native-34"
+        }
       },
-      "selectableVariables": "",
+      "selectableVariables": "성·시(34개 체계) 클릭 → 사업 목록(명칭·재무종결·상태·부문)",
       "unit": "건",
       "period": "1997~2024",
       "representativeItem": "",
       "evidence": "개체 20건 · 지역 행 0건(2026-09-30 입고)",
-      "limitation": ""
+      "limitation": "사업 수는 World Bank PPI 사업(트랜치는 1건)이며 투자액이 아님. 사업 위치가 확인되지 않은 사업은 지도에 두지 않고 D-025 목록·다운로드에서 확인."
     },
     {
       "elementId": "C-013",

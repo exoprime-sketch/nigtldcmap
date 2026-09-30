@@ -590,8 +590,20 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
  */
 function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalog, report) {
   const { build } = target;
-  const element = packs.get(target.elementId);
-  const entry = catalogEntry(catalog, target.elementId);
+  // V162: a layer may count another element's records - C-012's PPP projects
+  // moved into D-025's PPI project register with the 2026-09-30 delivery. The
+  // layer stays C-012's (its detail, title); its source is the register's.
+  const element = packs.get(build.sourceElementId || target.elementId);
+  const ownEntry = catalogEntry(catalog, target.elementId);
+  const sourceEntry = build.sourceElementId ? catalogEntry(catalog, build.sourceElementId) : null;
+  const entry = sourceEntry
+    ? {
+        ...ownEntry,
+        rights: sourceEntry.rights,
+        sourceOrganizations: sourceEntry.sourceOrganizations,
+        sourceUrls: sourceEntry.sourceUrls,
+      }
+    : ownEntry;
   const records = (element?.entities?.records || []).filter(
     (record) =>
       (!build.indicatorIds || build.indicatorIds.includes(record.indicatorId)) &&
@@ -651,8 +663,14 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
     return [{ key, membership }];
   };
 
+  // V162: rows that are tranches of one project count once per unit
+  // (build.distinctBy names the project key the source states).
+  const countedDistinct = new Set();
+  const distinctProjects = new Set();
+  let distinctSkipped = 0;
   for (const record of records) {
     const attributes = record.normalizedAttributes || {};
+    if (build.distinctBy) distinctProjects.add(text(attributes[build.distinctBy]) || record.recordId);
     const memberships = membershipsFor(record, attributes);
     if (memberships.length === 0) {
       // A national or unlocated row in the same indicator; not a join failure.
@@ -660,6 +678,14 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
       continue;
     }
     for (const { key: parentKey, membership } of memberships) {
+    if (build.distinctBy) {
+      const distinctKey = `${parentKey}|${text(attributes[build.distinctBy]) || record.recordId}`;
+      if (countedDistinct.has(distinctKey)) {
+        distinctSkipped += 1;
+        continue;
+      }
+      countedDistinct.add(distinctKey);
+    }
     regionsSeen.add(parentKey);
     const period = build.periodFixed
       ? build.periodFixed
@@ -742,6 +768,19 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
       sourceRowCount: records.length,
       sourceRegionCount: regionsSeen.size,
       rowsWithoutRegion,
+      ...(build.sourceElementId || build.distinctBy
+        ? {
+            linkage: {
+              sourceElementId: build.sourceElementId || target.elementId,
+              indicatorIds: build.indicatorIds || null,
+              distinctBy: build.distinctBy || null,
+              sourceRows: records.length,
+              distinctProjects: build.distinctBy ? distinctProjects.size : null,
+              rowsWithoutRegion,
+              tranchesCountedOnce: distinctSkipped,
+            },
+          }
+        : {}),
     },
     aggregationLevel: "post-2025-34-unit",
     spatialScopeType: "region",
@@ -1036,6 +1075,7 @@ function finishChoroplethLayer({
     matchedAdm1Count: matchedCodes.size,
     unmatchedRegionNames: [...stats.unmatched.entries()],
     rowsWithoutRegion: stats.rowsWithoutRegion || 0,
+    ...(stats.linkage ? { linkage: stats.linkage } : {}),
     sourceRegionCount: stats.sourceRegionCount,
     duplicateValueCount: stats.duplicateValueCount,
     valueTable: useTable,

@@ -1,5 +1,5 @@
 {
-  "activeMapLayerCount": 59,
+  "activeMapLayerCount": 60,
   "countryIso3": "VNM",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-01T00:00:00Z",
@@ -9412,6 +9412,129 @@
     },
     {
       "category": "정책·사업여건",
+      "detailElementId": "C-012",
+      "detailUrl": "/?element=c-012&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 20,
+      "elementId": "C-012",
+      "label": "PPP 사업 이력",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "publicShortTitle": "PPP 사업 이력",
+      "rawLabel": "PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상/비공개), 계약 유형(BOT/BOO/Concession), VfM 평가 의무 여부, PPP 프로젝트 이력]",
+      "source": "World Bank Private Participation in Infrastructure (PPI) Database",
+      "sourceOrganizations": [
+        "World Bank Private Participation in Infrastructure (PPI) Database"
+      ],
+      "sourceUrls": [
+        "https://ppi.worldbank.org/en/ppidata"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "World Bank PPI 사업(2026-09-30 입고에서 D-025 PPI 사업 등록부로 이관)의 사업 위치를 개편 후 34개 성·시로 집계",
+        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
+        "limitation": "사업 수는 World Bank PPI 사업(트랜치는 1건)이며 투자액이 아님. 사업 위치가 확인되지 않은 사업은 지도에 두지 않고 D-025 목록·다운로드에서 확인.",
+        "evidence": "개체 20건 · 지역 행 0건(2026-09-30 입고)",
+        "representativeItem": ""
+      },
+      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "native-34",
+        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+        "valueSystem": "post-2025-34"
+      },
+      "active": true,
+      "aggregationLevel": "post-2025-34-unit",
+      "assetRef": {
+        "elementId": "C-012",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-012.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 56,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 56,
+        "missingCount": 7,
+        "requiredCount": 63
+      },
+      "latestYear": "1994–2024(재무종결)",
+      "layerId": "vnm-v138-c-012",
+      "legend": {
+        "note": "단위 건 · 결측 7개 성·시(개편 전 63개 기준)",
+        "title": "PPP 사업 수(PPI 수록)"
+      },
+      "mapBenefit": "성·시(34개 체계) 클릭 → 사업 목록(명칭·재무종결·상태·부문)",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Cao Bằng",
+        "Lạng Sơn",
+        "Thái Bình",
+        "Thừa Thiên Huế",
+        "An Giang",
+        "Kiên Giang",
+        "Hưng Yên"
+      ],
+      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "1994–2024(재무종결)",
+      "spatialCoverage": "개편 후 34개 성·시 중 29개 값(34개 경계 직접 표시)",
+      "spatialLimitation": "사업 수는 World Bank PPI 사업(트랜치는 1건)이며 투자액이 아님. 사업 위치가 확인되지 않은 사업은 지도에 두지 않고 D-025 목록·다운로드에서 확인.",
+      "spatialScopeType": "region",
+      "selectors": {
+        "defaultPeriod": "1994–2024(재무종결)",
+        "defaultVariable": "ppp-project-count",
+        "periods": [
+          "1994–2024(재무종결)"
+        ],
+        "variables": [
+          {
+            "key": "ppp-project-count",
+            "measureId": "c012-ppi-count",
+            "measureKey": "ppp-project-count",
+            "scenario": null,
+            "label": "PPP 사업 수(PPI 수록)",
+            "unit": "건",
+            "periods": [
+              "1994–2024(재무종결)"
+            ],
+            "maxFeatureCount": 56
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 173,
+      "unit": "건",
+      "memberRecordsInAsset": true
+    },
+    {
+      "category": "정책·사업여건",
       "detailElementId": "C-013",
       "detailUrl": "/?element=c-013&country=VNM#element-detail",
       "downloadStatus": "available",
@@ -14040,13 +14163,13 @@
       "memberRecordsInAsset": true
     }
   ],
-  "mapFeatureCount": 15233,
+  "mapFeatureCount": 15289,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {
     "schemaVersion": "public-map-targets-v157",
     "targetCount": 72,
-    "connectedCount": 59,
+    "connectedCount": 60,
     "notConnected": [
       {
         "elementId": "A-013",
@@ -14091,10 +14214,6 @@
       {
         "elementId": "C-006",
         "reason": "원자료에 사업 지역 정보가 없습니다."
-      },
-      {
-        "elementId": "C-012",
-        "reason": "원자료에 성·시별 PPP 사업 행이 없어 지도에 표시하지 않습니다(전국 요약·법령 자료)."
       },
       {
         "elementId": "C-017",
