@@ -3831,7 +3831,7 @@ map,map,map-all-data-v135,CCS,SPAN
 map,map,map-all-data-v135,( 탄소포집·저장 ),SPAN
 map,map,map-all-data-v135,시설·후보지 점 · 2026,SMALL
 map,map,map-all-data-v135,교통 인프라(도로·철도),STRONG
-map,map,map-all-data-v135,network-segment · 2026,SMALL
+map,map,map-all-data-v135,도로·철도 노선 그대로(원자료 선형) · 2026,SMALL
 map,map,map-all-data-v135,수력 이론 잠재량,STRONG
 map,map,map-all-data-v135,성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 2017,SMALL
 map,map,map-all-data-v135,지열 자원(심도별 지온),STRONG
@@ -3865,7 +3865,7 @@ map,map,map-data-guide-details-v135,지도,STRONG
 map,map,map-data-guide-count-v140,지도 자료 60 개 · 준비 중 12개 (지도 대상 72개 중 위치·경계가 확인된 자료만 지도에 표시),SPAN
 map,map,map-data-guide-boundary-v151,"행정경계: geoBoundaries VNM ADM1(CC BY 4.0) · 34개 단위는 결의 202/2025/QH15 통합 대응표로 위상 병합 . 경계선 기준은 지도 위 '행정경계 기준'에서 바꿀 수 있으며, 바꿔도 값은 달라지지 않습니다. 경계선은 2025-07-01 시행 34개 성·시입니다. 값은 원자료 기준(대부분 개편 전 63개 성·시)으로 발표되며, 자료를 선택하면 34개 경계에 적용되는 집계 규칙을 여기에 표시합니다.",P
 map,map,map-data-guide-details-v135,에너지·인프라,H3
-map,map,map-data-guide-missing-v138,"준비 중 (위치자료 미확보, 지도 표시 제외): 전력공급 신뢰도 — EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",P
+map,map,map-data-guide-missing-v138,"준비 중 (위치자료 미확보, 지도 표시 제외): 전력공급 신뢰도 — EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",P
 map,map,map-data-guide-details-v135,데이터명,TH
 map,map,map-data-guide-details-v135,지도 표시,TH
 map,map,map-data-guide-details-v135,기준기간,TH
@@ -3966,11 +3966,11 @@ map,map,map-data-guide-details-v135,평가구역 경계는 원천 4.1 기준이�
 map,map,map-data-guide-details-v135,GADM,BUTTON
 map,map,map-data-guide-details-v135,건기·우기 유량 차이,TH
 map,map,map-data-guide-details-v135,"지점 클릭 → 건기·우기 유량, 유량비, 비중 등 지표값",TD
-map,map,map-data-guide-details-v135,국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤( 8대 유역)은 원자료에 미포함이라 대표점만 표시.,TD
+map,map,map-data-guide-details-v135,국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 8대 유역의 경계면( )은 원자료에 없어 유역별 대표점만 표시.,TD
 map,map,map-data-guide-details-v135,HydroSHEDS,BUTTON
 map,map,map-data-guide-details-v135,유역면적,TH
 map,map,map-data-guide-details-v135,유역 클릭 → 총면적·베트남 내 면적·비중,TD
-map,map,map-data-guide-details-v135,유역 경계 폴리곤은 원자료 파일([공통]VNM_river_basins_8_HydroSHEDS.geojson)이 전달되지 않아 대표점만 표시. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값.,TD
+map,map,map-data-guide-details-v135,유역 경계면은 원자료에 포함되지 않아 유역별 대표점만 표시합니다. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값입니다.,TD
 map,map,map-data-guide-details-v135,흐름방향,TH
 map,map,map-data-guide-details-v135,2022년 기준,TD
 map,map,map-data-guide-details-v135,성 클릭 → 8방향 비율·우세 유향(우세_유향),TD
@@ -4013,7 +4013,7 @@ map,map,map-data-guide-details-v135,정책·사업여건,H3
 map,map,map-data-guide-missing-v138,"준비 중 (위치자료 미확보, 지도 표시 제외): 국가적응계획 지역과제 — 지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요) / JCM 사업 — 사업지역 세분화 전 — 성 단위 가능하면 등록 / 지역 발전가격·지원 — 지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",P
 map,map,map-data-guide-details-v135,기후협력 이니셔티브,TH
 map,map,map-data-guide-details-v135,1994~2050년,TD
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(속성1_자료명·속성3_값·속성4_시점),TD
+map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록,TD
 map,map,map-data-guide-details-v135,건수는 성·시가 확인된 자료 수이며 금액·규모의 합이 아닙니다. 복수 성 자료는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 자료는 지도에 올리지 않고 목록·다운로드에만 남습니다.,TD
 map,map,map-data-guide-details-v135,·조달,TH
 map,map,map-data-guide-details-v135,PPP,BUTTON
@@ -4039,13 +4039,11 @@ map,map,map-data-guide-details-v135,3개 성·시 자료만 있으며 나머지�
 map,map,map-data-guide-details-v135,사업,TH
 map,map,map-data-guide-details-v135,EDCF,BUTTON
 map,map,map-data-guide-details-v135,2024년 기준,TD
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태),TD
 map,map,map-data-guide-details-v135,한국 사업,TH
 map,map,map-data-guide-details-v135,ODA,BUTTON
 map,map,map-data-guide-details-v135,정부·지자체 사업,TH
 map,map,map-data-guide-details-v135,기획·입찰,TH
 map,map,map-data-guide-details-v135,2026년 기준,TD
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·예산·공고일·상태),TD
 map,map,map-data-guide-details-v135,적응기금 사업,TH
 map,map,map-data-guide-details-v135,참여국 범위·검증 활동지점,TD
 map,map,map-data-guide-details-v135,적응사업 참여지역·활동지역 확인,TD
@@ -4053,29 +4051,22 @@ map,map,map-data-guide-details-v135,국가 경계는 정밀 사업구역이 아�
 map,map,map-data-guide-details-v135,기술지원,TH
 map,map,map-data-guide-details-v135,CTCN,BUTTON
 map,map,map-data-guide-details-v135,2025년 기준,TD
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·예산·기간·지원단계),TD
 map,map,map-data-guide-details-v135,GCF,BUTTON
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태),TD
 map,map,map-data-guide-details-v135,국제기구· 사업,TH
 map,map,map-data-guide-details-v135,MDB,BUTTON
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·대표금액·사업기간),TD
 map,map,map-data-guide-details-v135,개발금융· 사업,TH
 map,map,map-data-guide-details-v135,개발금융 사업이 어느 성·시에 집중되는지 물 스트레스·저지대·인프라 레이어와 함께 볼 수 있습니다.,TD
 map,map,map-data-guide-details-v135,회랑형 사업(남부 수로)은 문서에 명시된 양단 시만 대응하고 경유 성은 미표시. 컨셉 단계 사업은 범위가 바뀔 수 있음.,TD
 map,map,map-data-guide-details-v135,국제협력·기후재원,TH
 map,map,map-data-guide-details-v135,2013~2026년,TD
 map,map,map-data-guide-details-v135,민간 인프라 투자,TH
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·민간_투자액_자체_산출·Financial_Close·상태),TD
 map,map,map-data-guide-details-v135,정치적 위험 보증,TH
 map,map,map-data-guide-details-v135,2018년 기준,TD
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·대표금액·보증_기간·상태),TD
 map,map,map-data-guide-details-v135,협력기관·기업,H3
 map,map,map-data-guide-details-v135,외국기업 진출,TH
-map,map,map-data-guide-details-v135,성·시 클릭 → 사업 목록(명칭·대표금액),TD
 map,map,map-data-guide-details-v135,NDE,BUTTON
-map,map,map-data-guide-details-v135,성·시 클릭 → 기관 목록(명칭),TD
+map,map,map-data-guide-details-v135,성·시 클릭 → 기관 목록,TD
 map,map,map-data-guide-details-v135,DNA,BUTTON
-map,map,map-data-guide-details-v135,성·시 클릭 → 기관 목록(a64Status),TD
 map,map,map-data-guide-details-v135,국제기구 사무소,TH
 map,map,map-data-guide-details-v135,기관 유형·도시 필터,TD
 map,map,map-data-guide-details-v135,(미설치)· (종료)는 지도 제외. '중심점' 정밀도 기록은 건물 위치가 아니라 도시·행정구역 대표점.,TD
@@ -4197,7 +4188,7 @@ A-001,detail,indicator-notes-v144,지표 설명·자료 기준,SUMMARY
 A-001,detail,indicator-notes-v144,"국제투명성기구 부패인식지수 점수(0=매우 부패, 100=매우 청렴)",LI
 A-001,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-001,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-001,detail,detail-source-line-v153,출처 Transparency International · 자료기간 1997~2025 · 단위 점 · 위 · 건,P
+A-001,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1997~2025 · 단위 점 · 위 · 건,P
 A-001,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-001,detail,public-source-panel,자료정보,SPAN
 A-001,detail,public-source-panel,출처와 이용조건,H3
@@ -4318,14 +4309,6 @@ A-001,detail,public-raw-table,1.3998,TD
 A-001,detail,public-raw-table,1.5804,TD
 A-001,detail,public-raw-table,1.7167,TD
 A-001,detail,detail-layer-v160,데이터 설명,SUMMARY
-A-001,detail,detail-kpi-tile-v153,41 점,STRONG
-A-001,detail,detail-kpi-tile-v153,점수 · 2025년,SPAN
-A-001,detail,detail-kpi-tile-v153,2012–2025년,STRONG
-A-001,detail,detail-kpi-tile-v153,자료기간,SPAN
-A-001,detail,detail-kpi-tile-v153,114건,STRONG
-A-001,detail,detail-kpi-tile-v153,공개 관측값,SPAN
-A-001,detail,detail-kpi-tile-v153,8종,STRONG
-A-001,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-001,detail,data-description-v159,상세 설명,H3
 A-001,detail,data-description-v159,"국제투명성기구(Transparency International)가 전문가와 기업인을 상대로 한 여러 조사를 종합해 각국 공공부문의 부패 수준을 인식 기준으로 정량화한 지수다. 0~100점 척도의 점수와 조사대상국 중 순위를 중심으로, 점수 추정의 표준오차와 90% 신뢰구간 상·하한, 점수 산출에 투입된 원천 조사 건수가 함께 담긴다. 2011년 이전 방법론에 따른 0~10점 척도의 점수와 순위는 별도 계열로 구분해 수록한다.",P
 A-001,detail,data-description-v159,활용 방법,H3
@@ -4967,7 +4950,7 @@ A-003,detail,indicator-notes-v144,지표 설명·자료 기준,SUMMARY
 A-003,detail,indicator-notes-v144,경상 미달러 기준 국내총생산,LI
 A-003,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-003,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-003,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1985~2025 · 단위 · % · 국제달러,P
+A-003,detail,detail-source-line-v153,출처 World Bank 국가 통계 · 자료기간 1985~2025 · 단위 · % · 국제달러,P
 A-003,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-003,detail,public-source-panel,자료정보,SPAN
 A-003,detail,public-source-panel,출처와 이용조건,H3
@@ -5241,6 +5224,14 @@ A-003,detail,public-raw-table,"1,430,563,116,070.538",TD
 A-003,detail,public-raw-table,"1,600,452,078,876.743",TD
 A-003,detail,public-raw-table,"1,786,022,723,580.501",TD
 A-003,detail,detail-layer-v160,데이터 설명,SUMMARY
+A-003,detail,detail-kpi-tile-v153,514.7,STRONG
+A-003,detail,detail-kpi-tile-v153,10억 미국달러 · 2025년 명목 국내총생산,SPAN
+A-003,detail,detail-kpi-tile-v153,1985–2025년,STRONG
+A-003,detail,detail-kpi-tile-v153,자료기간,SPAN
+A-003,detail,detail-kpi-tile-v153,272건,STRONG
+A-003,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+A-003,detail,detail-kpi-tile-v153,7종,STRONG
+A-003,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-003,detail,data-description-v159,상세 설명,H3
 A-003,detail,data-description-v159,"일정 기간 한 나라의 경제영토 안에서 생산된 재화와 서비스의 최종 가치를 집계해 경제 규모와 소득 수준을 나타낸 지표다. 당해 연도 시장가격 기준 명목 총액(경상 미달러), 불변가격 기준 실질 성장률(연 %), 구매력평가 기준 총액과 국민총소득(경상 국제달러), 그리고 명목·구매력평가 기준 1인당 값과 1인당 실질 성장률까지 일곱 개 연간 계열로 이뤄진다.",P
 A-003,detail,data-description-v159,활용 방법,H3
@@ -5346,7 +5337,7 @@ A-004,detail,indicator-notes-v144,지표 설명·자료 기준,SUMMARY
 A-004,detail,indicator-notes-v144,1일 3.00달러(2021 ) 미만 인구 비율,LI
 A-004,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-004,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-004,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1992~2022 · 단위 %,P
+A-004,detail,detail-source-line-v153,출처 World Bank · 자료기간 1992~2022 · 단위 %,P
 A-004,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-004,detail,public-source-panel,자료정보,SPAN
 A-004,detail,public-source-panel,출처와 이용조건,H3
@@ -5411,6 +5402,14 @@ A-004,detail,public-raw-table,4.8,TD
 A-004,detail,public-raw-table,4.4,TD
 A-004,detail,public-raw-table,4.2,TD
 A-004,detail,detail-layer-v160,데이터 설명,SUMMARY
+A-004,detail,detail-kpi-tile-v153,4.2 %,STRONG
+A-004,detail,detail-kpi-tile-v153,빈곤율 · 국가빈곤선 · 2022년,SPAN
+A-004,detail,detail-kpi-tile-v153,1992–2022년,STRONG
+A-004,detail,detail-kpi-tile-v153,자료기간,SPAN
+A-004,detail,detail-kpi-tile-v153,29건,STRONG
+A-004,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+A-004,detail,detail-kpi-tile-v153,2종,STRONG
+A-004,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-004,detail,data-description-v159,상세 설명,H3
 A-004,detail,data-description-v159,"전체 인구 가운데 경제적 취약 상태에 놓인 인구의 비중을 재어 한 나라의 소득 결핍과 분배 상태를 보여 주는 사회 지표다. 각국이 자국 실정에 맞춰 정한 국가 빈곤선 이하 인구 비율과, 나라끼리 견줄 수 있도록 2021년 구매력평가 기준 하루 3.00달러를 적용한 국제 극빈곤율 두 계열로 이뤄지며 값은 모두 전체 인구 대비 %다. 가구조사가 있는 해에만 값이 생겨 연간 계열이 듬성듬성하다.",P
 A-004,detail,data-description-v159,활용 방법,H3
@@ -5666,7 +5665,7 @@ A-005,detail,composition-time-analysis-v132,11.64 %,STRONG
 A-005,detail,composition-time-analysis-v132,제조업은 광공업·건설의 하위항목이므로 농림어업·광공업·건설·서비스업과 함께 100% 구성항목으로 더하지 않습니다.,P
 A-005,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-005,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-005,detail,detail-source-line-v153,출처 World Bank · 자료기간 1986~2025 · 단위 %,P
+A-005,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1986~2025 · 단위 %,P
 A-005,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-005,detail,public-source-panel,자료정보,SPAN
 A-005,detail,public-source-panel,출처와 이용조건,H3
@@ -5836,14 +5835,6 @@ A-005,detail,public-raw-table,42.2803,TD
 A-005,detail,public-raw-table,42.3542,TD
 A-005,detail,public-raw-table,42.7438,TD
 A-005,detail,detail-layer-v160,데이터 설명,SUMMARY
-A-005,detail,detail-kpi-tile-v153,42.7 %,STRONG
-A-005,detail,detail-kpi-tile-v153,산업구조 최대 · 서비스업 · 2025년,SPAN
-A-005,detail,detail-kpi-tile-v153,1986–2025년,STRONG
-A-005,detail,detail-kpi-tile-v153,자료기간,SPAN
-A-005,detail,detail-kpi-tile-v153,141건,STRONG
-A-005,detail,detail-kpi-tile-v153,공개 관측값,SPAN
-A-005,detail,detail-kpi-tile-v153,4종,STRONG
-A-005,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-005,detail,data-description-v159,상세 설명,H3
 A-005,detail,data-description-v159,"국제표준산업분류에 따라 산업 부문별 부가가치가 국내총생산에서 차지하는 비중을 재어 그 나라 경제의 구조를 보여 주는 거시경제 지표다. 농업·임업·어업, 광업·제조·전기·수도·건설업, 제조업, 서비스업 네 지표로 이뤄지며 값은 모두 국내총생산 대비 %다. 제조업은 광업·제조·전기·수도·건설업에 포함되는 일부이며, 부가가치는 생산액에서 원재료·중간재 비용을 뺀 값이다",P
 A-005,detail,data-description-v159,활용 방법,H3
@@ -7701,7 +7692,7 @@ A-011,detail,emissions-latest-composition-v132,2.19 MtCO₂e,STRONG
 A-011,detail,emissions-latest-composition-v132,0.4 %,SMALL
 A-011,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-011,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-011,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1970~2024 · 단위,P
+A-011,detail,detail-source-line-v153,"출처 European Commission, Joint Research Centre ( ) — · 자료기간 1970~2024 · 단위",P
 A-011,detail,detail-source-line-v153,Mt CO2eq,BUTTON
 A-011,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-011,detail,public-source-panel,자료정보,SPAN
@@ -8291,6 +8282,14 @@ A-011,detail,public-raw-table,17.9909,TD
 A-011,detail,public-raw-table,18.5149,TD
 A-011,detail,public-raw-table,19.0564,TD
 A-011,detail,detail-layer-v160,데이터 설명,SUMMARY
+A-011,detail,detail-kpi-tile-v153,202,STRONG
+A-011,detail,detail-kpi-tile-v153,발전 · 2024년 · 9개 부분 합계 584,SPAN
+A-011,detail,detail-kpi-tile-v153,1970–2024년,STRONG
+A-011,detail,detail-kpi-tile-v153,자료기간,SPAN
+A-011,detail,detail-kpi-tile-v153,495건,STRONG
+A-011,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+A-011,detail,detail-kpi-tile-v153,9종,STRONG
+A-011,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-011,detail,data-description-v159,상세 설명,H3
 A-011,detail,data-description-v159,"국가 온실가스 배출량을 배출이 일어나는 활동 부문별로 나눈 통계로, 토지이용·토지이용변화·임업 부문은 제외한다. 농업, 산업연소, 발전, 폐기물, 수송, 산업공정( ), 연료 채굴·수송 누출, 건물, 기타(간접 ) 아홉 개 부문으로 이뤄지며 값은 모두 -100 를 적용한 다. 부문 구분은 2006 지침의 분류 코드에 따라 원자료의 상세 행을 합산해 만들었다.",P
 A-011,detail,data-description-v159,GWP,BUTTON
@@ -8648,7 +8647,7 @@ A-013,detail,detail-map-not-mapped-v157,이 자료는 . 지역이 성·시 이�
 A-013,detail,detail-map-not-mapped-v157,지도에 표시하지 않습니다,STRONG
 A-013,detail,detail-map-not-mapped-v157,지도에 올리려면: 원문 지역어에 대응하는 공식 경계 정의,P
 A-013,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-013,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2016 · 단위 건,P
+A-013,detail,detail-source-line-v153,출처 World Resources Institute — Climate Watch · 자료기간 2016 · 단위 건,P
 A-013,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-013,detail,public-source-panel,자료정보,SPAN
 A-013,detail,public-source-panel,출처와 이용조건,H3
@@ -9407,7 +9406,7 @@ A-015,detail,sdg-indicators-v147,1일 3.00달러 미만 빈곤율,TH
 A-015,detail,sdg-indicators-v147,97.921,TD
 A-015,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-015,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-015,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2011~2026 · 단위 점,P
+A-015,detail,detail-source-line-v153,출처 Sustainable Development Solutions Network ( ) · 자료기간 2011~2026 · 단위 점,P
 A-015,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-015,detail,public-source-panel,자료정보,SPAN
 A-015,detail,public-source-panel,출처와 이용조건,H3
@@ -9671,6 +9670,14 @@ A-015,detail,public-raw-table,97.088,TD
 A-015,detail,public-raw-table,THE 상위 3개 대학 점수 · 정규화 달성도 점수(0~100),TD
 A-015,detail,public-raw-table,84.9,TD
 A-015,detail,detail-layer-v160,데이터 설명,SUMMARY
+A-015,detail,detail-kpi-tile-v153,93.9 점,STRONG
+A-015,detail,detail-kpi-tile-v153,세부지표 달성도 · 1일 4.20달러 미만 빈곤율 · 정규화 달성도 점수(0~100) · 2026년,SPAN
+A-015,detail,detail-kpi-tile-v153,2026년,STRONG
+A-015,detail,detail-kpi-tile-v153,자료기간,SPAN
+A-015,detail,detail-kpi-tile-v153,99건,STRONG
+A-015,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+A-015,detail,detail-kpi-tile-v153,101종,STRONG
+A-015,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-015,detail,data-description-v159,상세 설명,H3
 A-015,detail,data-description-v159,"지속가능발전목표( ) 지수 체계에서 목표 아래 개별 세부지표마다 산출한 달성 수준이다. 빈곤율, 영양부족 인구 비율, 모성사망비처럼 단위가 제각각인 원자료를 0(최저)에서 100(최고) 사이로 정규화해 같은 척도에 올려놓은 점수이며, 백여 개 세부지표가 목표별로 묶여 담긴다. 지표마다 원자료의 기준연도가 달라 한 해로 맞춰진 단면이 아니다.",P
 A-015,detail,data-description-v159,활용 방법,H3
@@ -11137,12 +11144,12 @@ A-022,detail,indicator-notes-v144,연간 고객당 순간정전 횟수,LI
 A-022,detail,public-analytical-view,결측 4 건,STRONG
 A-022,detail,public-analytical-view,원천 기관이 공개하지 않음,SPAN
 A-022,detail,detail-map-not-mapped-v157,위치·분포,H3
-A-022,detail,detail-map-not-mapped-v157,"이 자료는 . 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",P
+A-022,detail,detail-map-not-mapped-v157,이 자료는 . 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출,P
 A-022,detail,detail-map-not-mapped-v157,지도에 표시하지 않습니다,STRONG
 A-022,detail,detail-map-not-mapped-v157,지도에 올리려면: 5개 총공사 관할표(성별 출처 URL 포함),P
 A-022,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-022,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-022,detail,detail-source-line-v153,출처 Vietnam Electricity ( ) · 자료기간 2015~2026 · 단위 회/고객 · 분/고객,P
+A-022,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2015~2026 · 단위 회/고객 · 분/고객,P
 A-022,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-022,detail,public-source-panel,자료정보,SPAN
 A-022,detail,public-source-panel,출처와 이용조건,H3
@@ -11221,14 +11228,6 @@ A-022,detail,public-raw-table,EVNNPC(북부) · 연간 고객당 지속정전 �
 A-022,detail,public-raw-table,(남부) · 연간 고객당 지속정전 횟수,TD
 A-022,detail,public-raw-table,1.64,TD
 A-022,detail,detail-layer-v160,데이터 설명,SUMMARY
-A-022,detail,detail-kpi-tile-v153,1.25 회/고객,STRONG
-A-022,detail,detail-kpi-tile-v153,· 그룹 전체 · 순간정전 · 2024년,SPAN
-A-022,detail,detail-kpi-tile-v153,2015–2024년,STRONG
-A-022,detail,detail-kpi-tile-v153,자료기간,SPAN
-A-022,detail,detail-kpi-tile-v153,39건,STRONG
-A-022,detail,detail-kpi-tile-v153,공개 관측값,SPAN
-A-022,detail,detail-kpi-tile-v153,21종,STRONG
-A-022,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-022,detail,data-description-v159,상세 설명,H3
 A-022,detail,data-description-v159,"전력 공급의 신뢰도를 고객 한 명이 겪은 정전으로 환산해 나타낸 지표다. 연간 고객당 총 정전시간( )과 지속정전 횟수( )가 두 축이다. 베트남은 현지조사로 확보한 베트남전력공사( ) 공시값으로, 전국 12개년 계열에 순간정전 횟수( )와 6개 권역 전력공사별 1개년 값을 더했다. 8개국은 세계은행(World Bank) 기업환경평가(Doing Business)의 2014~2019년 값으로 각국 최대 상업도시 기준이다. 방글라데시는 · 값이 없다. 정전시간 단위는 시간이 아니라 분/고객이다.",P
 A-022,detail,data-description-v159,활용 방법,H3
@@ -11452,6 +11451,7 @@ A-023,detail,power-plant-list-v148,86,TD
 A-023,detail,power-plant-list-v148,시설명을 누르면 국가·명칭·발전원·소유·운영·설비용량·가동 연도·소재지·자료 출처 카드가 열립니다.,P
 A-023,detail,power-plant-list-v148,이전 시설,BUTTON
 A-023,detail,power-plant-list-v148,다음 시설,BUTTON
+A-023,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 A-023,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-023,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 A-023,detail,detail-source-line-v153,출처 World Resources Institute · OpenStreetMap 기여자 · 자료기간 2021 · 단위 건 ·,P
@@ -11575,17 +11575,7 @@ A-024,detail,transmission-plan-table-v140,54,TD
 A-024,detail,transmission-plan-table-v140,48,TD
 A-024,detail,transmission-plan-table-v140,68,TD
 A-024,detail,transmission-plan-table-v140,기존·계획 구분은 원천의 선로상태 열을 그대로 옮긴 것입니다. 계획 행은 설치 실적이 아닙니다.,P
-A-024,detail,detail-location-map-v148,송전선 경로,H3
-A-024,detail,detail-location-map-v148,전체 전압 · 2016,P
-A-024,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-A-024,detail,minimap-zoom-in-v152,+,BUTTON
-A-024,detail,minimap-zoom-out-v152,−,BUTTON
-A-024,detail,minimap-reset-v152,전체 보기,BUTTON
-A-024,detail,minimap-backdrop-v152,배경지도,BUTTON
-A-024,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-A-024,detail,detail-location-map-v148,지역·대상 선택,LABEL
-A-024,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-A-024,detail,detail-location-map-v148,geoBoundaries,A
+A-024,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 A-024,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-024,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 A-024,detail,detail-source-line-v153,출처 World Bank (ENERGYDATA.INFO) · 자료기간 2016 · 단위 % · 건 ·,P
@@ -11935,6 +11925,7 @@ A-027,detail,infrastructure-coverage-v147,4,TD
 A-027,detail,infrastructure-coverage-v147,철도 레이어 · 분류별 피처 수(light_rail) — fclass 분류값별 지물 건수,TH
 A-027,detail,infrastructure-coverage-v147,2,TD
 A-027,detail,infrastructure-coverage-v147,공개된 분류만 비교합니다. 일부 자료의 분류별 합계는 전체 수록 건수와 다를 수 있습니다. 파일 형식·속성별 결측률은 아래 원자료에서 확인할 수 있습니다.,P
+A-027,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 A-027,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-027,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 A-027,detail,detail-source-line-v153,출처 OpenStreetMap contributors · 자료기간 2026 · 단위 건 · 코드 · 개 외 1종,P
@@ -12134,7 +12125,6 @@ A-028,detail,infrastructure-coverage-v147,18,TD
 A-028,detail,infrastructure-coverage-v147,절벽,TH
 A-028,detail,infrastructure-coverage-v147,3,TD
 A-028,detail,infrastructure-coverage-v147,공개된 분류만 비교합니다. 일부 자료의 분류별 합계는 전체 수록 건수와 다를 수 있습니다. 파일 형식·속성별 결측률은 아래 원자료에서 확인할 수 있습니다.,P
-A-028,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 A-028,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-028,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 A-028,detail,detail-source-line-v153,출처 OpenStreetMap contributors · 자료기간 2026 · 단위 건 · 코드 · 개 외 1종,P
@@ -13140,7 +13130,7 @@ A-033,detail,indicator-notes-v144,정기선 해운 연결성 지수(Q3 분기값
 A-033,detail,indicator-notes-v144,정기선 해운 연결성 지수(Q4 분기값),LI
 A-033,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 A-033,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-A-033,detail,detail-source-line-v153,출처 United Nations Conference on Trade and Development ( ) · 자료기간 2006~2026 · 단위 지수,P
+A-033,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2006~2026 · 단위 지수,P
 A-033,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 A-033,detail,public-source-panel,자료정보,SPAN
 A-033,detail,public-source-panel,출처와 이용조건,H3
@@ -13172,14 +13162,6 @@ A-033,detail,public-raw-table,Q2 · 정기선 해운 연결성 지수(Q2 분기�
 A-033,detail,public-raw-table,Q3 · 정기선 해운 연결성 지수(Q3 분기값),TD
 A-033,detail,public-raw-table,Q4 · 정기선 해운 연결성 지수(Q4 분기값),TD
 A-033,detail,detail-layer-v160,데이터 설명,SUMMARY
-A-033,detail,detail-kpi-tile-v153,479 지수,STRONG
-A-033,detail,detail-kpi-tile-v153,해운 연결성 지수( ) · Q1 · 2026년,SPAN
-A-033,detail,detail-kpi-tile-v153,2006–2026년,STRONG
-A-033,detail,detail-kpi-tile-v153,자료기간,SPAN
-A-033,detail,detail-kpi-tile-v153,82건,STRONG
-A-033,detail,detail-kpi-tile-v153,공개 관측값,SPAN
-A-033,detail,detail-kpi-tile-v153,4종,STRONG
-A-033,detail,detail-kpi-tile-v153,지표 수,SPAN
 A-033,detail,data-description-v159,상세 설명,H3
 A-033,detail,data-description-v159,"한 나라가 세계 정기선 해운 네트워크에 얼마나 통합되어 있는지를 기항 선박 수와 선복량, 운항 서비스와 취항 선사 수, 선박 규모 등을 종합해 나타낸 지수다. 값은 무차원 상대지수로 2023년 1분기 전 세계 평균을 100으로 두며, 1분기부터 4분기까지 분기별 계열 네 개로 나뉘어 2006년부터의 값을 담는다.",P
 A-033,detail,data-description-v159,활용 방법,H3
@@ -14261,7 +14243,7 @@ B-004,detail,region-scenario-summary-v137,연도별 전체 값과 원자료 정�
 B-004,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-004,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-004,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-004,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2014~2100 · 단위 지표별 상이 · % · mm 외 3종,P
+B-004,detail,detail-source-line-v153,출처 World Bank ( x0.25) · 자료기간 2014~2100 · 단위 지표별 상이 · % · mm 외 3종,P
 B-004,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 B-004,detail,public-source-panel,자료정보,SPAN
 B-004,detail,public-source-panel,출처와 이용조건,H3
@@ -14291,6 +14273,12 @@ B-004,detail,public-source-panel,World Bank ( x0.25) · 연강수(pr) 확인,A
 B-004,detail,public-source-panel,공식 원문 10 건 중 4건을 표시합니다,SPAN
 B-004,detail,public-raw-table-summary,"상세 데이터 · 목록 33,232건",SUMMARY
 B-004,detail,detail-layer-v160,데이터 설명,SUMMARY
+B-004,detail,detail-kpi-tile-v153,26.8,STRONG
+B-004,detail,detail-kpi-tile-v153,연평균 기온 · 63개 성·시 중앙값 · 2100년 ·,SPAN
+B-004,detail,detail-kpi-tile-v153,1950–2100년 (과거 모형 1950–2014 · 전망 2015–2100),STRONG
+B-004,detail,detail-kpi-tile-v153,자료기간,SPAN
+B-004,detail,detail-kpi-tile-v153,"33,232건",STRONG
+B-004,detail,detail-kpi-tile-v153,공개 목록,SPAN
 B-004,detail,data-description-v159,상세 설명,H3
 B-004,detail,data-description-v159,"세계은행(World Bank) 기후지식포털( )이 기후모델 상호비교사업( ) 앙상블의 과거 모의값과 배출·사회경제 시나리오별 미래 전망을 0.25° 격자로 상세화·보정해 제공하는 기후 변수 묶음이다. 성(省) 단위 계열은 지표 5종을 속성 열로 나눠 담고, 시나리오는 과거재현과 · · · · 여섯 갈래이며 기간은 1950~2100년이다. 지표마다 단위가 달라 값과 단위를 속성 열에 짝지어 수록한다.",P
 B-004,detail,data-description-v159,활용 방법,H3
@@ -15472,7 +15460,7 @@ B-007,detail,region-scenario-summary-v137,연도별 전체 값과 원자료 정�
 B-007,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-007,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-007,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-007,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2014~2100 · 단위 지표별 상이 · 일 · mm,P
+B-007,detail,detail-source-line-v153,출처 World Bank ( x0.25) · 자료기간 2014~2100 · 단위 지표별 상이 · 일 · mm,P
 B-007,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 B-007,detail,public-source-panel,자료정보,SPAN
 B-007,detail,public-source-panel,출처와 이용조건,H3
@@ -15499,6 +15487,12 @@ B-007,detail,public-source-panel,World Bank ( x0.25) · 연속 습윤일수 확�
 B-007,detail,public-source-panel,CWD,SPAN
 B-007,detail,public-raw-table-summary,"상세 데이터 · 목록 32,370건",SUMMARY
 B-007,detail,detail-layer-v160,데이터 설명,SUMMARY
+B-007,detail,detail-kpi-tile-v153,71.1 mm,STRONG
+B-007,detail,detail-kpi-tile-v153,최대 1일 강수량( ) · 63개 성·시 중앙값 · 2100년 ·,SPAN
+B-007,detail,detail-kpi-tile-v153,1950–2100년 (과거 모형 1950–2014 · 전망 2015–2100),STRONG
+B-007,detail,detail-kpi-tile-v153,자료기간,SPAN
+B-007,detail,detail-kpi-tile-v153,"32,370건",STRONG
+B-007,detail,detail-kpi-tile-v153,공개 목록,SPAN
 B-007,detail,data-description-v159,상세 설명,H3
 B-007,detail,data-description-v159,"세계은행(World Bank) 기후지식포털( )이 0.25° 앙상블 중앙값에서 산출한 극한강수지수 묶음이다. 1일 최대 강수량( )과 연속 5일 최대 누적 강수량( )은 밀리미터, 일강수 20mm 이상·50mm 이상 호우일수( · )와 연속 습윤일수( )는 연간 일수로 담기며 지표 5종을 속성 열로 나눠 수록한다. 과거재현과 다섯 개 시나리오에 걸쳐 1950~2100년을 연 단위로 제공한다.",P
 B-007,detail,data-description-v159,RX5day,BUTTON
@@ -16897,6 +16891,7 @@ B-012,detail,public-primary-visualization,"Lao Cai, Yen Bai, Quang Ninh, Hai Pho
 B-012,detail,public-primary-visualization,Quảng Bình province,P
 B-012,detail,public-primary-visualization,"Quang Binh, Quang Nam, Quang Tri provinces",P
 B-012,detail,public-primary-visualization,"Can Duoc, Can Giuoc areas (Long An province); U Minh and Tran Van Thoi districts (Ca Mau province); Tien Giang, Ben Tre, Soc Trang, Bac Lieu and Kien Giang provinces",P
+B-012,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-012,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-012,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-012,detail,detail-source-line-v153,"출처 Archive v2026-04-30 ( /UCLouvain, Brussels) · 좌표보정 4.1 · 자료기간 2024 · 단위 명 · 천 US$ · 건",P
@@ -18512,7 +18507,7 @@ B-017,detail,region-scenario-ranked-v138,Kiên Giang · 유역 443033 · 대수�
 B-017,detail,region-scenario-constraints-v138,"값의 단위는 Aqueduct 4.0 평가구역( 6단계 유역 × 성 × 대수층 교차 구역)이며, 각 구역은 소속 성·시로만 분류됩니다. 성·시 값으로 합치거나 평균하지 않습니다.",LI
 B-017,detail,region-scenario-constraints-v138,HydroBASINS,BUTTON
 B-017,detail,region-scenario-constraints-v138,"원값은 원천의 실제 비율·지수이고, 점수(0~5)와 등급은 가 원값을 구간으로 나눈 것입니다. 원값과 점수를 같은 축에 두지 않습니다.",LI
-B-017,detail,region-scenario-constraints-v138,"평가구역 경계 폴리곤은 원천 지오데이터베이스 파일에만 있어 이 플랫폼에 포함되지 않았고, 지도에는 연결하지 않았습니다.",LI
+B-017,detail,region-scenario-constraints-v138,"평가구역 경계는 Aqueduct 4.0이 배포한 구역 도형을 좌표 그대로 사용하며, 값은 구역 단위로만 표시하고 성·시 단위로 합치지 않습니다.",LI
 B-017,detail,region-scenario-summary-v137,원천이 제공하는 기간은 Aqueduct 4.0 기준선(2023년판)이며 연도별 값은 제공되지 않습니다. 평가구역별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.,P
 B-017,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-017,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
@@ -18746,13 +18741,13 @@ B-018,detail,analysis-values-table-v146,전년 대비,TH
 B-018,detail,analysis-values-table-v146,비교 자료 없음,TD
 B-018,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-018,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-018,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 1980~2100 · 단위 2017년 구매력평가 기준 미국달러/인 · 2017년 구매력평가 기준 10억 미국달러/년,P
+B-018,detail,detail-source-line-v153,출처 Database v3.1 ( ENV-Growth 2023) · 자료기간 1980~2100 · 단위 2017년 구매력평가 기준 미국달러/인 · 2017년 구매력평가 기준 10억 미국달러/년,P
+B-018,detail,detail-source-line-v153,OECD,BUTTON
 B-018,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 B-018,detail,public-source-panel,자료정보,SPAN
 B-018,detail,public-source-panel,출처와 이용조건,H3
 B-018,detail,public-source-panel,제공기관,DT
 B-018,detail,public-source-panel,Database v3.1 ( ENV-Growth 2023) · Database v3.1 · Database v3.1 ( 2023),DD
-B-018,detail,public-source-panel,OECD,BUTTON
 B-018,detail,public-source-panel,자료기간,DT
 B-018,detail,public-source-panel,1980~2100,DD
 B-018,detail,public-source-panel,단위,DT
@@ -18983,6 +18978,14 @@ B-018,detail,public-raw-table,"8,047",TD
 B-018,detail,public-raw-table,"4,788",TD
 B-018,detail,public-raw-table,"10,295",TD
 B-018,detail,detail-layer-v160,데이터 설명,SUMMARY
+B-018,detail,detail-kpi-tile-v153,"7,364 2017년 구매력평가 기준 10억 미국달러/년",STRONG
+B-018,detail,detail-kpi-tile-v153,( ) 전 구간 · · 2100년,SPAN
+B-018,detail,detail-kpi-tile-v153,2020–2100년,STRONG
+B-018,detail,detail-kpi-tile-v153,자료기간,SPAN
+B-018,detail,detail-kpi-tile-v153,282건,STRONG
+B-018,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+B-018,detail,detail-kpi-tile-v153,24종,STRONG
+B-018,detail,detail-kpi-tile-v153,지표 수,SPAN
 B-018,detail,data-description-v159,상세 설명,H3
 B-018,detail,data-description-v159,"국제응용시스템분석연구소( )의 데이터베이스 3.1판이 제공하는 국가 국내총생산( ) 장기 전망이다. 지속가능 발전( )부터 화석연료 기반 고성장( )까지 다섯 서사별 구매력평가 기준 총액(2017년 구매력평가 기준 10억 미국달러/년)과 1인당 값(2017년 구매력평가 기준 미국달러/인)으로 이뤄지며, 2020~2100년 5년 간격 전망과 1980~2020년 과거 실적이 함께 담긴다. 총액은 ENV-Growth 2023 모형 산출이고 1인당 값은 총액을 인구 전망으로 나눠 구한다.",P
 B-018,detail,data-description-v159,활용 방법,H3
@@ -19941,8 +19944,6 @@ B-023,detail,minimap-zoom-out-v152,−,BUTTON
 B-023,detail,minimap-reset-v152,전체 보기,BUTTON
 B-023,detail,minimap-backdrop-v152,배경지도,BUTTON
 B-023,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-023,detail,map-icon-legend-v152,건기·우기 유량 차이,SPAN
-B-023,detail,map-icon-legend-v152,3 개,SPAN
 B-023,detail,detail-location-map-v148,지역·대상 선택,LABEL
 B-023,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
 B-023,detail,detail-location-map-v148,관측지점 또는 대표 위치입니다. 유역 경계와 영향 범위를 나타내지 않습니다.,P
@@ -20518,31 +20519,20 @@ B-025,detail,basin-area-v147,"28,400",TD
 B-025,detail,basin-area-v147,"17,653",TD
 B-025,detail,basin-area-v147,"18,985",TD
 B-025,detail,basin-area-v147,현재 지도에는 유역 경계가 제공되지 않습니다. 대표 위치를 유역 전체 범위로 해석하지 마세요.,P
-B-025,detail,detail-location-map-v148,위치 살펴보기,H3
-B-025,detail,detail-location-map-v148,유역 대표점·면적 · 2026,P
-B-025,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-B-025,detail,minimap-zoom-in-v152,+,BUTTON
-B-025,detail,minimap-zoom-out-v152,−,BUTTON
-B-025,detail,minimap-reset-v152,전체 보기,BUTTON
-B-025,detail,minimap-backdrop-v152,배경지도,BUTTON
-B-025,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-025,detail,detail-location-map-v148,지역·대상 선택,LABEL
-B-025,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-B-025,detail,detail-location-map-v148,관측지점 또는 대표 위치입니다. 유역 경계와 영향 범위를 나타내지 않습니다.,P
-B-025,detail,detail-location-map-v148,HydroBASINS,BUTTON
-B-025,detail,detail-location-map-v148,WEPA,BUTTON
-B-025,detail,detail-location-map-v148,VNMC,BUTTON
-B-025,detail,detail-location-map-v148,geoBoundaries,A
+B-025,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-025,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-025,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-025,detail,detail-source-line-v153,출처 via (2024) / · Table 2.13.2 via Outlook 2024 · · 15s(v1.1) · admin0 · 자료기간 2024~2026 · 단위 km²,P
-B-025,detail,detail-source-line-v153,HydroSHEDS DIR,BUTTON
-B-025,detail,detail-source-line-v153,OSM,BUTTON
+B-025,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2024~2026 · 단위 km²,P
 B-025,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 B-025,detail,public-source-panel,자료정보,SPAN
 B-025,detail,public-source-panel,출처와 이용조건,H3
 B-025,detail,public-source-panel,제공기관,DT
 B-025,detail,public-source-panel,/ v1.c · via (2024) / · via (2024) · Table 2.13.2 via Outlook 2024 · · 15s(v1.1) · admin0,DD
+B-025,detail,public-source-panel,HydroBASINS,BUTTON
+B-025,detail,public-source-panel,WEPA,BUTTON
+B-025,detail,public-source-panel,VNMC,BUTTON
+B-025,detail,public-source-panel,HydroSHEDS DIR,BUTTON
+B-025,detail,public-source-panel,OSM,BUTTON
 B-025,detail,public-source-panel,자료기간,DT
 B-025,detail,public-source-panel,2024~2026,DD
 B-025,detail,public-source-panel,단위,DT
@@ -20580,12 +20570,6 @@ B-025,detail,v125-entity-table-fallback,세산,TD
 B-025,detail,v125-entity-table-fallback,동나이,TD
 B-025,detail,v125-entity-table-fallback,마,TD
 B-025,detail,detail-layer-v160,데이터 설명,SUMMARY
-B-025,detail,detail-kpi-tile-v153,"86,253 km²",STRONG
-B-025,detail,detail-kpi-tile-v153,홍–타이빈 · 베트남 내 면적 km 산출 최대,SPAN
-B-025,detail,detail-kpi-tile-v153,2024–2026년,STRONG
-B-025,detail,detail-kpi-tile-v153,자료기간,SPAN
-B-025,detail,detail-kpi-tile-v153,9건,STRONG
-B-025,detail,detail-kpi-tile-v153,공개 목록,SPAN
 B-025,detail,data-description-v159,상세 설명,H3
 B-025,detail,data-description-v159,"베트남 천연자원환경부( )가 2024년 자료로 공표한 주요 하천유역 면적 문헌값과, 15초 흐름방향 격자에서 추적으로 직접 산출한 유역 면적을 함께 담은 자료다. 한 행이 주요 하천유역 하나에 해당하며 문헌값과 산출값을 각각 다른 속성 열에 나눠 수록하고 단위는 제곱킬로미터다. 유출점은 국내 셀 가운데 하류 셀이 국외인 셀을 집수면적 순으로 골라 정했고 전국 합계도 별도 개체로 담긴다.",P
 B-025,detail,data-description-v159,D8,BUTTON
@@ -20673,6 +20657,7 @@ B-026,detail,flow-direction-v147,서,TH
 B-026,detail,flow-direction-v147,19.96,TD
 B-026,detail,flow-direction-v147,북서,TH
 B-026,detail,flow-direction-v147,7.91,TD
+B-026,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-026,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-026,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-026,detail,detail-source-line-v153,출처 v1 Flow Direction (DIR 15s) · 자료기간 2022 · 단위 % · 방위,P
@@ -22757,23 +22742,7 @@ B-032,detail,analysis-summary-table-v146,63개 성·시 중앙값,TH
 B-032,detail,analysis-summary-table-v146,41.81,TD
 B-032,detail,analysis-summary-table-v146,%,TD
 B-032,detail,analysis-summary-table-v146,2010년,TD
-B-032,detail,detail-location-map-v148,지역별 분포,H3
-B-032,detail,detail-location-map-v148,성(省)별 수관 피복률 — 임계 30% · 2010 · %,P
-B-032,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-B-032,detail,detail-location-map-v148,지도 표시 항목,LABEL
-B-032,detail,detail-location-map-v148,지도 기준시점,LABEL
-B-032,detail,detail-location-map-v148,선택: 성(省)별 수관 피복률 — 임계 30% · 2010,P
-B-032,detail,minimap-zoom-in-v152,+,BUTTON
-B-032,detail,minimap-zoom-out-v152,−,BUTTON
-B-032,detail,minimap-reset-v152,전체 보기,BUTTON
-B-032,detail,minimap-backdrop-v152,배경지도,BUTTON
-B-032,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-032,detail,detail-location-map-v148,0.1,SPAN
-B-032,detail,detail-location-map-v148,85.1 %,SPAN
-B-032,detail,detail-location-map-v148,회색: 자료 없음,SMALL
-B-032,detail,detail-location-map-v148,지역·대상 선택,LABEL
-B-032,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-B-032,detail,detail-location-map-v148,geoBoundaries,A
+B-032,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-032,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-032,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-032,detail,detail-source-line-v153,출처 Global Forest Watch / Hansen et al.(2013) · 자료기간 2010 · 단위 %,P
@@ -23106,7 +23075,6 @@ B-033,detail,analysis-summary-table-v146,기준,TH
 B-033,detail,analysis-summary-table-v146,62개 성·시 중앙값,TH
 B-033,detail,analysis-summary-table-v146,"1,362.544",TD
 B-033,detail,analysis-summary-table-v146,2024년,TD
-B-033,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-033,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-033,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-033,detail,detail-source-line-v153,출처 Global Forest Watch ( / ) · 자료기간 2001~2024 · 단위,P
@@ -23242,26 +23210,10 @@ B-034,detail,analysis-summary-table-v146,63개 성·시 중앙값,TH
 B-034,detail,analysis-summary-table-v146,"-83,747",TD
 B-034,detail,analysis-summary-table-v146,Mg,TD
 B-034,detail,analysis-summary-table-v146,2001–2024,TD
-B-034,detail,detail-location-map-v148,지역별 분포,H3
-B-034,detail,detail-location-map-v148,산림탄소 순플럭스(연평균) · 2001–2024 · Mg,P
-B-034,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-B-034,detail,detail-location-map-v148,지도 표시 항목,LABEL
-B-034,detail,detail-location-map-v148,지도 기준시점,LABEL
-B-034,detail,detail-location-map-v148,선택: 산림탄소 순플럭스(연평균) · 2001–2024,P
-B-034,detail,minimap-zoom-in-v152,+,BUTTON
-B-034,detail,minimap-zoom-out-v152,−,BUTTON
-B-034,detail,minimap-reset-v152,전체 보기,BUTTON
-B-034,detail,minimap-backdrop-v152,배경지도,BUTTON
-B-034,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-034,detail,detail-location-map-v148,"-3,261,471",SPAN
-B-034,detail,detail-location-map-v148,"2,923,480 Mg CO2e/yr",SPAN
-B-034,detail,detail-location-map-v148,회색: 자료 없음,SMALL
-B-034,detail,detail-location-map-v148,지역·대상 선택,LABEL
-B-034,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-B-034,detail,detail-location-map-v148,geoBoundaries,A
+B-034,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-034,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-034,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-034,detail,detail-source-line-v153,출처 Global Forest Watch (Harris et al. 2021) · 자료기간 2000~2024 · 단위 Mg C · Mg C/ · Mg 외 2종,P
+B-034,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2000~2024 · 단위 Mg C · Mg C/ · Mg 외 2종,P
 B-034,detail,detail-source-line-v153,ha,BUTTON
 B-034,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 B-034,detail,public-source-panel,자료정보,SPAN
@@ -23278,14 +23230,6 @@ B-034,detail,public-source-panel,국가,DD
 B-034,detail,public-source-panel,Global Forest Watch (Harris et al. 2021) 확인,A
 B-034,detail,public-raw-table-summary,상세 데이터 · 전체 608행 · 값 있음 362행 · 결측 0행 · 목록 246건,SUMMARY
 B-034,detail,detail-layer-v160,데이터 설명,SUMMARY
-B-034,detail,detail-kpi-tile-v153,292만 Mg,STRONG
-B-034,detail,detail-kpi-tile-v153,산림탄소 순플럭스(연평균) 최대 · Kon Tum · 63개 성·시 중 · 2001–2024,SPAN
-B-034,detail,detail-kpi-tile-v153,2000–2025년,STRONG
-B-034,detail,detail-kpi-tile-v153,자료기간,SPAN
-B-034,detail,detail-kpi-tile-v153,362건,STRONG
-B-034,detail,detail-kpi-tile-v153,공개 관측값,SPAN
-B-034,detail,detail-kpi-tile-v153,11종,STRONG
-B-034,detail,detail-kpi-tile-v153,지표 수,SPAN
 B-034,detail,data-description-v159,상세 설명,H3
 B-034,detail,data-description-v159,"글로벌포레스트워치( )가 배포하는 해리스 외(2021) 산림 탄소 자료다. 성(省)마다 지상부 탄소 저장량과 탄소 밀도, 배출·흡수·순플럭스 다섯 지표를 속성 열에 나눠 담고 저장량 단위는 메가그램 탄소(Mg C)이며, 전국 계열은 지표마다 단위가 달라 값과 단위를 속성 열에 짝지어 수록한다. 기준연도는 2000년이고 30m 격자를 4.1 기준 성 경계로 집계해 산출한다.",P
 B-034,detail,data-description-v159,GFW,BUTTON
@@ -24955,7 +24899,12 @@ B-039,detail,national-series-table-v147,88.723,TD
 B-039,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-039,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-039,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-B-039,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2017~2030 · 단위 · /yr · 십억 /yr 외 4종,P
+B-039,detail,detail-source-line-v153,출처 Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · · · Energy Institute · U.S. · World Bank/ · 베트남 총리 Decision 768/ · 자료기간 2017~2030 · 단위 · /yr · 십억 /yr 외 4종,P
+B-039,detail,detail-source-line-v153,IHA,BUTTON
+B-039,detail,detail-source-line-v153,EVN,BUTTON
+B-039,detail,detail-source-line-v153,EIA,BUTTON
+B-039,detail,detail-source-line-v153,ESMAP,BUTTON
+B-039,detail,detail-source-line-v153,QĐ-TTg,BUTTON
 B-039,detail,detail-source-line-v153,MW,BUTTON
 B-039,detail,detail-source-line-v153,kWh,BUTTON
 B-039,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
@@ -24963,13 +24912,8 @@ B-039,detail,public-source-panel,자료정보,SPAN
 B-039,detail,public-source-panel,출처와 이용조건,H3
 B-039,detail,public-source-panel,제공기관,DT
 B-039,detail,public-source-panel,/ · International Hydropower Association ( ) · Vietnam Electricity ( ) · International Hydropower Association ( 2024) · Energy Institute Statistical Review of World Energy · U.S. International Energy Statistics (Bulk File INTL.txt) · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 4.1 · · · Energy Institute · U.S. · World Bank/ · 베트남 총리 Decision 768/ · 베트남 총리 Decision 768/ (2025) — 개정 · World Bank / (2017) · International Hydropower Association ( ) /,DD
-B-039,detail,public-source-panel,IHA,BUTTON
-B-039,detail,public-source-panel,EVN,BUTTON
-B-039,detail,public-source-panel,EIA,BUTTON
 B-039,detail,public-source-panel,GADM,BUTTON
 B-039,detail,public-source-panel,ADM1,BUTTON
-B-039,detail,public-source-panel,ESMAP,BUTTON
-B-039,detail,public-source-panel,QĐ-TTg,BUTTON
 B-039,detail,public-source-panel,PDP8,BUTTON
 B-039,detail,public-source-panel,자료기간,DT
 B-039,detail,public-source-panel,2017~2030,DD
@@ -25243,6 +25187,12 @@ B-039,detail,v125-entity-table-fallback,34667,TD
 B-039,detail,v125-entity-table-fallback,개정 2030 목표 (범위 하한),TD
 B-039,detail,v125-entity-table-fallback,33294,TD
 B-039,detail,detail-layer-v160,데이터 설명,SUMMARY
+B-039,detail,detail-kpi-tile-v153,"16,904 /년",STRONG
+B-039,detail,detail-kpi-tile-v153,이론 총잠재량 최대 · Gia Lai · 63개 성·시 중 · 2017(Hoes et al.),SPAN
+B-039,detail,detail-kpi-tile-v153,2017(Hoes et al.),STRONG
+B-039,detail,detail-kpi-tile-v153,자료기간,SPAN
+B-039,detail,detail-kpi-tile-v153,228건,STRONG
+B-039,detail,detail-kpi-tile-v153,공개 목록,SPAN
 B-039,detail,data-description-v159,상세 설명,H3
 B-039,detail,data-description-v159,"호스 외 연구진(Hoes et al., 2017)의 전지구 총수력잠재량 자료에서 산출한 이론적 수력 잠재량이다. 성(省)마다 하천 격자점의 이론 총잠재량 합계와 격자점 수, 최대 격자값, 90분위값을 속성 열에 나눠 담고 단위는 연간 테라와트시와 기가와트시다. 전국 계열은 국제수력협회·베트남전력공사·미국 에너지정보청·세계은행 등 문헌과 총리 결정문에서 뽑은 기술 잠재량·개발가능 잠재량 등을 · /yr·백만 kW로 담는다.",P
 B-039,detail,data-description-v159,활용 방법,H3
@@ -26520,23 +26470,6 @@ B-042,detail,region-scenario-ranked-v138,Lai Châu,TH
 B-042,detail,region-scenario-ranked-v138,2.54,TD
 B-042,detail,region-scenario-constraints-v138,Global Wind Atlas 고도 100m 값(2008–2017 장기평균)입니다. 다른 고도의 풍속과 직접 비교하지 않습니다.,LI
 B-042,detail,region-scenario-summary-v137,원천이 제공하는 기간은 2008–2017년 장기평균 · 고도 100m이며 연도별 값은 제공되지 않습니다. 성·시별 값은 아래 상세 데이터와 다운로드에서 확인할 수 있습니다.,P
-B-042,detail,detail-location-map-v148,지역별 분포,H3
-B-042,detail,detail-location-map-v148,풍속 평균(고도 100m) · 2008–2017 장기평균( 기반) · m/s,P
-B-042,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-B-042,detail,detail-location-map-v148,지도 표시 항목,LABEL
-B-042,detail,detail-location-map-v148,지도 기준시점,LABEL
-B-042,detail,detail-location-map-v148,선택: 풍속 평균(고도 100m) · 2008–2017 장기평균( 기반),P
-B-042,detail,minimap-zoom-in-v152,+,BUTTON
-B-042,detail,minimap-zoom-out-v152,−,BUTTON
-B-042,detail,minimap-reset-v152,전체 보기,BUTTON
-B-042,detail,minimap-backdrop-v152,배경지도,BUTTON
-B-042,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-042,detail,detail-location-map-v148,2.54,SPAN
-B-042,detail,detail-location-map-v148,5.68 m/s,SPAN
-B-042,detail,detail-location-map-v148,회색: 자료 없음,SMALL
-B-042,detail,detail-location-map-v148,지역·대상 선택,LABEL
-B-042,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-B-042,detail,detail-location-map-v148,geoBoundaries,A
 B-042,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-042,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-042,detail,detail-source-line-v153,출처 Global Wind Atlas 3.x · 자료기간 2017 · 단위 · m/s · · 지표별 상이 외 2종,P
@@ -27772,18 +27705,7 @@ B-048,detail,public-entity-card-title,Nui Phao,H5
 B-048,detail,public-entity-card-title,Sin Quyen,H5
 B-048,detail,public-entity-card-title,Tan Rai,H5
 B-048,detail,public-entity-card-title,Yen Phu,H5
-B-048,detail,detail-location-map-v148,위치 살펴보기,H3
-B-048,detail,detail-location-map-v148,광산 위치·광종 · 2022,P
-B-048,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-B-048,detail,minimap-zoom-in-v152,+,BUTTON
-B-048,detail,minimap-zoom-out-v152,−,BUTTON
-B-048,detail,minimap-reset-v152,전체 보기,BUTTON
-B-048,detail,minimap-backdrop-v152,배경지도,BUTTON
-B-048,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-B-048,detail,map-icon-legend-v152,1 개,SPAN
-B-048,detail,detail-location-map-v148,지역·대상 선택,LABEL
-B-048,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-B-048,detail,detail-location-map-v148,geoBoundaries,A
+B-048,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 B-048,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 B-048,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 B-048,detail,detail-source-line-v153,출처 Minerals Yearbook Vietnam 2022 (Table 2); · 자료기간 2016~2022 · 단위 도(decimal degrees) · 개소,P
@@ -28876,7 +28798,7 @@ C-004,detail,public-primary-visualization,이전,BUTTON
 C-004,detail,public-primary-visualization,1 / 3 페이지,SPAN
 C-004,detail,public-primary-visualization,다음,BUTTON
 C-004,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-C-004,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2022~2050 · 단위 /년 이상 · · (순) 외 11종,P
+C-004,detail,detail-source-line-v153,출처 베트남 총리실 (Quyết định 896/ ) / World Bank · Quyết định số 896/ — Phê duyệt Chiến lược quốc gia về biến đổi khí hậu giai đoạn đến năm 2050 · 자료기간 2022~2050 · 단위 /년 이상 · · (순) 외 11종,P
 C-004,detail,detail-source-line-v153,tCO2e,BUTTON
 C-004,detail,detail-source-line-v153,MtCO2e,BUTTON
 C-004,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
@@ -31082,7 +31004,7 @@ C-009,detail,policy-description-v153,전력 생산·송배전·판매 사업자 
 C-009,detail,policy-description-v153,"2004-12-03 국회 통과, 2005-07-01 시행, 이후 61/2024/ 로 대체",LI
 C-009,detail,public-primary-visualization,10건만 보기,BUTTON
 C-009,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-C-009,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2005~2050 · 단위 기관 · 년 · 기간 외 26종,P
+C-009,detail,detail-source-line-v153,출처 기관별 공식 출처 10개(상세 자료정보 참조) · 자료기간 2005~2050 · 단위 기관 · 년 · 기간 외 26종,P
 C-009,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 C-009,detail,public-source-panel,자료정보,SPAN
 C-009,detail,public-source-panel,출처와 이용조건,H3
@@ -32546,6 +32468,7 @@ C-012,detail,ppp-provinces-v153,2011-2011,TD
 C-012,detail,ppp-provinces-v153,하노이(Ha Noi) (Ha Noi),TH
 C-012,detail,ppp-provinces-v153,상하수(Water and sewerage) 1건,TD
 C-012,detail,ppp-procurement-v153,"낙찰방식별 건수 5행은 원자료에 방식 열이 없어 값만 표시합니다(원천 결함, 데이터 확보 항목으로 기록).",P
+C-012,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 C-012,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 C-012,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 C-012,detail,detail-source-line-v153,출처 기관별 공식 출처 4개(상세 자료정보 참조) · 자료기간 2000~2026 · 단위 단계 · 계약유형 · 종 외 15종,P
@@ -33046,11 +32969,6 @@ C-013,detail,v125-entity-table-fallback,재정의무(법인세 등) 완납 후 �
 C-013,detail,v125-entity-table-fallback,경로,TD
 C-013,detail,v125-entity-table-fallback,국내거래 의무·대외송금 인가 외환기관 경유,TD
 C-013,detail,detail-layer-v160,데이터 설명,SUMMARY
-C-013,detail,detail-kpi-tile-v153,64건,STRONG
-C-013,detail,detail-kpi-tile-v153,항목 · 2016–2026년,SPAN
-C-013,detail,detail-kpi-tile-v153,2016–2026년,STRONG
-C-013,detail,detail-kpi-tile-v153,자료기간,SPAN
-C-013,detail,detail-kpi-tile-v153,공개 목록,SPAN
 C-013,detail,data-description-v159,상세 설명,H3
 C-013,detail,data-description-v159,"외국인 투자에 적용되는 규제를 기술하는 정보군이다. 업종별 외국인 지분 보유 한도(%), 세제 혜택·경제특구 같은 투자 인센티브, 투자보호협정( ) 체결 상태, 수익 송금 규정으로 이뤄진다. 여덟 나라는 미국 국무부 투자환경보고서 2025년판에서 가져왔고, 베트남은 국회·정부 공보 법령 원문을 중심으로, 방글라데시는 중앙은행·법무부·국세청 자료와 유엔무역개발회의( ) 국제투자협정 자료를 썼다. 전국 규정이 기본이며 베트남만 성(省)·시 단위 특별 메커니즘을 함께 담는다.",P
 C-013,detail,data-description-v159,BIT,BUTTON
@@ -33408,7 +33326,7 @@ C-015,detail,evidence-matrix-v138,법인세법 시행령,TH
 C-015,detail,evidence-matrix-v138,320/2025/,TD
 C-015,detail,evidence-matrix-v138,2025-12-15 · Decree 320/2025/ — 우대 대상·기간 세부,TD
 C-015,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-C-015,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2016~2026 · 단위 URL,P
+C-015,detail,detail-source-line-v153,출처 기관별 공식 출처 4개(상세 자료정보 참조) · 자료기간 2016~2026 · 단위 URL,P
 C-015,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 C-015,detail,public-source-panel,자료정보,SPAN
 C-015,detail,public-source-panel,출처와 이용조건,H3
@@ -33597,6 +33515,7 @@ C-016,detail,analysis-summary-table-v146,2031-2035 · 계획 용량(설치 실�
 C-016,detail,analysis-summary-table-v146,38개 성·시 중앙값,TH
 C-016,detail,analysis-summary-table-v146,0,TD
 C-016,detail,analysis-summary-table-v146,2031-2035,TD
+C-016,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 C-016,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 C-016,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 C-016,detail,detail-source-line-v153,"출처 베트남 총리실 · 산업무역부( ), 개정 부록 II · 자료기간 2025~2035 · 단위",P
@@ -35738,13 +35657,13 @@ C-025,detail,portfolio-entity-list-v132,다음,BUTTON
 C-025,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 C-025,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 C-025,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-C-025,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2024~2026 · 단위 · 건 · /년 외 1종,P
+C-025,detail,detail-source-line-v153,출처 기관별 공식 출처 5개(상세 자료정보 참조) · 자료기간 2024~2026 · 단위 · 건 · /년 외 1종,P
 C-025,detail,detail-source-line-v153,tCO₂e,BUTTON
 C-025,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 C-025,detail,public-source-panel,자료정보,SPAN
 C-025,detail,public-source-panel,출처와 이용조건,H3
 C-025,detail,public-source-panel,제공기관,DT
-C-025,detail,public-source-panel,"Verra Registry · Gold Standard Registry · Insights · Global Carbon Council ( ) · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · — Projects Interactive Map (projectsLocationAll.xml) · Berkeley Carbon Trading Project, University of California, Berkeley — Voluntary Registry Offsets Database v2026-06 · 일본 환경성( ) 공식 등록부 — Viet Nam-Japan",DD
+C-025,detail,public-source-panel,"Verra Registry · Gold Standard Registry · Insights · Global Carbon Council ( ) · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · — Projects Interactive Map · Berkeley Carbon Trading Project, University of California, Berkeley — Voluntary Registry Offsets Database v2026-06 · 일본 환경성( ) 공식 등록부 — Viet Nam-Japan",DD
 C-025,detail,public-source-panel,UNFCCC,BUTTON
 C-025,detail,public-source-panel,MOEJ,BUTTON
 C-025,detail,public-source-panel,자료기간,DT
@@ -36594,6 +36513,11 @@ C-025,detail,v125-entity-table-fallback,Approved Projects(REGISTERED) 전수 계
 C-025,detail,v125-entity-table-fallback,등록 프로젝트 검증 연간 감축량 합계,TD
 C-025,detail,v125-entity-table-fallback,3205906,TD
 C-025,detail,detail-layer-v160,데이터 설명,SUMMARY
+C-025,detail,detail-kpi-tile-v153,388건,STRONG
+C-025,detail,detail-kpi-tile-v153,프로젝트 수 · 2025–2026년,SPAN
+C-025,detail,detail-kpi-tile-v153,2025–2026년,STRONG
+C-025,detail,detail-kpi-tile-v153,자료기간,SPAN
+C-025,detail,detail-kpi-tile-v153,공개 목록,SPAN
 C-025,detail,data-description-v159,상세 설명,H3
 C-025,detail,data-description-v159,"탄소크레딧 등록부에 기록된 크레딧의 발행·소각 실적을 사업 단위로 모은 대장이다. 소각(retirement)은 크레딧이 상쇄에 쓰여 다시 쓸 수 없도록 등록부에서 제거되는 절차를 말한다. 사업마다 사업명, 등록부, 등록 번호, 기술 분야, 사업 규모가 붙고, 등록부별 등록 사업 수와 검증된 연간 감축량·소각량( )을 모아 적는다. 위치가 확인되는 청정개발체제( ) 사업은 좌표와 성(省) 코드까지 남긴다. 10개국 공통 원천은 버클리 탄소거래 프로젝트의 자발적 등록부 자료이고, 베트남은 글로벌탄소위원회( )·일본 공동크레딧메커니즘( ) 등, 방글라데시는 청정개발체제 자료가 더해진다.",P
 C-025,detail,data-description-v159,활용 방법,H3
@@ -37292,14 +37216,14 @@ D-005,detail,d005-specialized-renderer,보고서에 공개되지 않은 구분�
 D-005,detail,d005-specialized-renderer,미공개,STRONG
 D-005,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 D-005,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-D-005,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2010~2020 · 단위 %,P
+D-005,detail,detail-source-line-v153,출처 World Bank — Viet Nam Country Climate and Development Report ( ) 2022 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부( ) — 2022 · United Nations Development Programme · 베트남 기획투자부( ) — Viet Nam Climate Public Expenditure and Investment Review ( ) 2015 · 자료기간 2010~2020 · 단위 %,P
+D-005,detail,detail-source-line-v153,CCDR,BUTTON
+D-005,detail,detail-source-line-v153,MPI,BUTTON
 D-005,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 D-005,detail,public-source-panel,자료정보,SPAN
 D-005,detail,public-source-panel,출처와 이용조건,H3
 D-005,detail,public-source-panel,제공기관,DT
 D-005,detail,public-source-panel,World Bank — Viet Nam Country Climate and Development Report ( ) 2022 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부( ) — 2022 · United Nations Development Programme · 베트남 기획투자부( ) — Viet Nam Climate Public Expenditure and Investment Review ( ) 2015,DD
-D-005,detail,public-source-panel,CCDR,BUTTON
-D-005,detail,public-source-panel,MPI,BUTTON
 D-005,detail,public-source-panel,자료기간,DT
 D-005,detail,public-source-panel,2010~2020,DD
 D-005,detail,public-source-panel,단위,DT
@@ -37354,6 +37278,14 @@ D-005,detail,public-raw-table,22,TD
 D-005,detail,public-raw-table,감축 · 총 기후변화 지출 대비 비중(대표값),TD
 D-005,detail,public-raw-table,2,TD
 D-005,detail,detail-layer-v160,데이터 설명,SUMMARY
+D-005,detail,detail-kpi-tile-v153,88 %,STRONG
+D-005,detail,detail-kpi-tile-v153,적응 · 2013년 · 3개 부분 합계 100 %,SPAN
+D-005,detail,detail-kpi-tile-v153,2010·2013·2020년,STRONG
+D-005,detail,detail-kpi-tile-v153,자료기간,SPAN
+D-005,detail,detail-kpi-tile-v153,8건,STRONG
+D-005,detail,detail-kpi-tile-v153,공개 관측값,SPAN
+D-005,detail,detail-kpi-tile-v153,9종,STRONG
+D-005,detail,detail-kpi-tile-v153,지표 수,SPAN
 D-005,detail,data-description-v159,상세 설명,H3
 D-005,detail,data-description-v159,"세계은행(World Bank) 국가기후개발보고서( )와 유엔개발계획( )·기획투자부( )의 기후 공공지출·투자검토( )가 기후 관련 공공지출을 감축, 적응, 두 목적을 함께 갖는 동시기여로 갈라 각 구분이 차지하는 몫을 나타낸 값이다. 분모에 따라 공공 자본지출 대비, 중앙부처 기후예산 대비, 28개 성과 껀터시의 성 단위 기후예산 대비, 총 기후변화 지출 대비, 경상예산 대비 다섯 갈래로 나뉘며 단위는 퍼센트(%)다. 대상 기간은 2010~2013년과 2016~2020년이다.",P
 D-005,detail,data-description-v159,활용 방법,H3
@@ -39316,15 +39248,15 @@ D-014,detail,portfolio-entity-list-v132,다음,BUTTON
 D-014,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 D-014,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 D-014,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-D-014,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2024 · 단위 · 건,P
+D-014,detail,detail-source-line-v153,출처 국무조정실 Korea 통합 통계( 보고 원자료) — 한국수출입은행( )·한국국제협력단( )·정부부처·지방자치단체 제출분 · 자료기간 2024 · 단위 · 건,P
+D-014,detail,detail-source-line-v153,OECD,BUTTON
+D-014,detail,detail-source-line-v153,CRS,BUTTON
+D-014,detail,detail-source-line-v153,KOICA,BUTTON
 D-014,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 D-014,detail,public-source-panel,자료정보,SPAN
 D-014,detail,public-source-panel,출처와 이용조건,H3
 D-014,detail,public-source-panel,제공기관,DT
 D-014,detail,public-source-panel,국무조정실 Korea 통합 통계( 보고 원자료) — 한국수출입은행( )·한국국제협력단( )·정부부처·지방자치단체 제출분,DD
-D-014,detail,public-source-panel,OECD,BUTTON
-D-014,detail,public-source-panel,CRS,BUTTON
-D-014,detail,public-source-panel,KOICA,BUTTON
 D-014,detail,public-source-panel,자료기간,DT
 D-014,detail,public-source-panel,2024,DD
 D-014,detail,public-source-panel,단위,DT
@@ -39973,6 +39905,11 @@ D-014,detail,v125-entity-table-fallback,2023-12-29~2029-12-31,TD
 D-014,detail,v125-entity-table-fallback,"67,099,000",TD
 D-014,detail,v125-entity-table-fallback,22ED00025,TD
 D-014,detail,detail-layer-v160,데이터 설명,SUMMARY
+D-014,detail,detail-kpi-tile-v153,164건,STRONG
+D-014,detail,detail-kpi-tile-v153,사업 수 · 2024년 · 개별 사업 행 기준,SPAN
+D-014,detail,detail-kpi-tile-v153,2024년,STRONG
+D-014,detail,detail-kpi-tile-v153,자료기간,SPAN
+D-014,detail,detail-kpi-tile-v153,공개 목록,SPAN
 D-014,detail,data-description-v159,상세 설명,H3
 D-014,detail,data-description-v159,"국무조정실 Korea 통합 통계 가운데 자료제출기관이 한국수출입은행 대외경제협력기금( )인 유상원조 사업을 사업 1건당 한 행으로 기록한 대장이다. 사업명, 협력 대상국, 개발원조위원회( ) 분야코드, 약정액과 지출액, 금리·상환방식 같은 차관 조건, 사업 기간, 시행기관, 진행 상태, 기후목적 표시(리우마커)가 행마다 붙는다. 금액은 미국 달러( )로 적었고 2010~2024년 보고분을 담았으며 수록 건수는 나라마다 다르다.",P
 D-014,detail,data-description-v159,DAC,BUTTON
@@ -42272,7 +42209,6 @@ D-020,detail,public-entity-card-title,Mekong Earth Regeneration Fund ( ),H5
 D-020,detail,public-entity-card-title,Collaborative R&DB Programme for Promoting the Innovation of Climate Technopreneurship,H5
 D-020,detail,portfolio-aggregate-rows-v140,원천의 집계·설명 행 1 건 (목록 건수에서 제외),SUMMARY
 D-020,detail,portfolio-aggregate-rows-v140,GCF 승인액 총계 · 베트남 — 국가 포트폴리오 게재 GCF 승인 재원 총액,LI
-D-020,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 D-020,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 D-020,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 D-020,detail,detail-source-line-v153,출처 Green Climate Fund · 자료기간 2026 · 단위 · 건,P
@@ -42495,21 +42431,21 @@ D-021,detail,portfolio-entity-list-v132,다음,BUTTON
 D-021,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 D-021,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 D-021,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-D-021,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2026 · 단위 건 ·,P
+D-021,detail,detail-source-line-v153,"출처 Registry — d-portal 집계(World Bank, , , , , , , -Habitat, , , , , 등 보고분) · 자료기간 2026 · 단위 건 ·",P
+D-021,detail,detail-source-line-v153,ADB,BUTTON
+D-021,detail,detail-source-line-v153,IFC,BUTTON
+D-021,detail,detail-source-line-v153,FAO,BUTTON
+D-021,detail,detail-source-line-v153,UNESCO,BUTTON
+D-021,detail,detail-source-line-v153,UN,BUTTON
+D-021,detail,detail-source-line-v153,UNEP,BUTTON
+D-021,detail,detail-source-line-v153,IFAD,BUTTON
+D-021,detail,detail-source-line-v153,UNIDO,BUTTON
 D-021,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 D-021,detail,public-source-panel,자료정보,SPAN
 D-021,detail,public-source-panel,출처와 이용조건,H3
 D-021,detail,public-source-panel,제공기관,DT
 D-021,detail,public-source-panel,"Registry — d-portal 집계(국제기구· 보고분) · Datastore ( Secretariat) — 국제기구· 보고 활동 원자료 · Registry — d-portal 집계(World Bank, , , , , , , -Habitat, , , , , 등 보고분)",DD
 D-021,detail,public-source-panel,MDB,BUTTON
-D-021,detail,public-source-panel,ADB,BUTTON
-D-021,detail,public-source-panel,IFC,BUTTON
-D-021,detail,public-source-panel,FAO,BUTTON
-D-021,detail,public-source-panel,UNESCO,BUTTON
-D-021,detail,public-source-panel,UN,BUTTON
-D-021,detail,public-source-panel,UNEP,BUTTON
-D-021,detail,public-source-panel,IFAD,BUTTON
-D-021,detail,public-source-panel,UNIDO,BUTTON
 D-021,detail,public-source-panel,자료기간,DT
 D-021,detail,public-source-panel,2026,DD
 D-021,detail,public-source-panel,단위,DT
@@ -42526,6 +42462,11 @@ D-021,detail,public-source-panel,( 다자개발은행 ),SPAN
 D-021,detail,public-source-panel,Datastore ( Secretariat) — 국제기구· 보고 활동 원자료 확인,A
 D-021,detail,public-raw-table-summary,상세 데이터 · 목록 640건,SUMMARY
 D-021,detail,detail-layer-v160,데이터 설명,SUMMARY
+D-021,detail,detail-kpi-tile-v153,640건,STRONG
+D-021,detail,detail-kpi-tile-v153,지원 활동 수 · 2026년 · 개별 사업 행 기준,SPAN
+D-021,detail,detail-kpi-tile-v153,2026년,STRONG
+D-021,detail,detail-kpi-tile-v153,자료기간,SPAN
+D-021,detail,detail-kpi-tile-v153,공개 목록,SPAN
 D-021,detail,data-description-v159,상세 설명,H3
 D-021,detail,data-description-v159,"다자개발은행과 유엔 기구 등이 대상국에서 추진한 개발협력 사업을 사업 1건당 한 행으로 기록한 대장이다. 각 행에는 사업명과 대표금액이 기본 속성으로 붙고 자금을 댄 기관, 지원 분야 코드, 약정액과 집행액, 활동 상태, 사업기간, 실행기관, 기후 목적 표시인 리우마커, 사업 상세 링크가 함께 실린다. 베트남은 국제원조투명성기구( ) 등록소에 세계은행·아시아개발은행·유엔개발계획 등 13개 기관이 보고한 활동을, 다른 나라는 세계은행 사업 자료만 모아 나라마다 담긴 기관 범위가 다르다.",P
 D-021,detail,data-description-v159,활용 방법,H3
@@ -42700,6 +42641,7 @@ D-022,detail,public-entity-card-shared-note,개발금융 투자사업,P
 D-022,detail,portfolio-entity-list-v132,이전,BUTTON
 D-022,detail,portfolio-entity-list-v132,1 / 2,SPAN
 D-022,detail,portfolio-entity-list-v132,다음,BUTTON
+D-022,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 D-022,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 D-022,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 D-022,detail,detail-source-line-v153,출처 Registry — d-portal 집계(World Bank· · 등 · 보고분) · 자료기간 2026 · 단위 · 건,P
@@ -44113,7 +44055,6 @@ E-002,detail,public-entity-card-facts,"No. 10 Ton That Thuyet Street, Nam Tu Lie
 E-002,detail,public-entity-card-facts,담당자,DT
 E-002,detail,public-entity-card-facts,Nguyen Tuan Quang,DD
 E-002,detail,public-entity-card-v131,공식 원문,A
-E-002,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 E-002,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 E-002,detail,detail-source-line-v153,출처 United Nations Framework Convention on Climate Change ( ) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0) · 자료기간 2026 · 단위 해당없음,P
 E-002,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
@@ -44741,16 +44682,15 @@ E-005,detail,public-entity-card-title,CSRD,BUTTON
 E-005,detail,public-entity-card-facts,Hue,DD
 E-005,detail,public-entity-card-facts,info@csrd.vn / +84 234 3837714,DD
 E-005,detail,public-primary-visualization,대표 12 건을 표시합니다. 전체 20 건은 아래 상세 데이터에서 확인할 수 있습니다.,P
-E-005,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 E-005,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 E-005,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-E-005,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2026 · 단위 기관(건),P
+E-005,detail,detail-source-line-v153,출처 각 기관 공식 웹사이트 및 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0) · 자료기간 2026 · 단위 기관(건),P
+E-005,detail,detail-source-line-v153,CTCN,BUTTON
 E-005,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 E-005,detail,public-source-panel,자료정보,SPAN
 E-005,detail,public-source-panel,출처와 이용조건,H3
 E-005,detail,public-source-panel,제공기관,DT
 E-005,detail,public-source-panel,각 기관 공식 웹사이트 및 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0) · 각 기관 공식 웹사이트 및 네트워크 회원 정보(용역사 취합),DD
-E-005,detail,public-source-panel,CTCN,BUTTON
 E-005,detail,public-source-panel,자료기간,DT
 E-005,detail,public-source-panel,2026,DD
 E-005,detail,public-source-panel,단위,DT
@@ -44832,6 +44772,12 @@ E-005,detail,v125-entity-table-fallback,+84 28 3865 1132,TD
 E-005,detail,v125-entity-table-fallback,Live & Learn Vietnam (Thế Hệ Xanh),TD
 E-005,detail,v125-entity-table-fallback,thehexanh@livelearn.org,TD
 E-005,detail,detail-layer-v160,데이터 설명,SUMMARY
+E-005,detail,detail-kpi-tile-v153,20곳,STRONG
+E-005,detail,detail-kpi-tile-v153,기관 수 · 2026년,SPAN
+E-005,detail,detail-kpi-tile-v153,2026년,STRONG
+E-005,detail,detail-kpi-tile-v153,자료기간,SPAN
+E-005,detail,detail-kpi-tile-v153,20건,STRONG
+E-005,detail,detail-kpi-tile-v153,공개 목록,SPAN
 E-005,detail,data-description-v159,상세 설명,H3
 E-005,detail,data-description-v159,"협력 대상국에서 기후·에너지·환경·농업 분야의 연구개발 또는 관련 활동을 수행하는 대학·연구기관·비영리 민간단체를 기록한 기관 대장이다. 여기서 연구개발은 지식의 총량을 늘리고 그 지식의 새로운 활용을 고안하기 위해 체계적으로 수행하는 창의적 활동을 말한다. 기관명, 기관 유형, 도시, 전문 분야, 주요 연구역량, 국제 협력 실적, 연락처, 좌표, 기후기술 분류로 이뤄지고 기관 한 곳이 한 행이다. 원천 이용조건상 표출할 수 없는 기관은 기관 수 집계와 원문 링크로 제공한다.",P
 E-005,detail,data-description-v159,활용 방법,H3
@@ -44948,20 +44894,6 @@ E-006,detail,investor-list-abroad-v153,responsAbility Investments AG,BUTTON
 E-006,detail,investor-list-abroad-v153,임팩트투자 · Zurich · 본부 스위스,SPAN
 E-006,detail,investor-list-abroad-v153,"아시아 기후금융(C&I 태양광, 에너지효율)",SMALL
 E-006,detail,investor-network-v153,본부 도시 좌표만 확인된 기관은 베트남 지도에 표시하지 않습니다.,P
-E-006,detail,detail-location-map-v148,위치 살펴보기,H3
-E-006,detail,detail-location-map-v148,베트남 내 투자자 거점 · 2026,P
-E-006,detail,detail-map-open-v152,큰 지도에서 비교,BUTTON
-E-006,detail,minimap-zoom-in-v152,+,BUTTON
-E-006,detail,minimap-zoom-out-v152,−,BUTTON
-E-006,detail,minimap-reset-v152,전체 보기,BUTTON
-E-006,detail,minimap-backdrop-v152,배경지도,BUTTON
-E-006,detail,minimap-help-v152,마우스를 올리거나 누르면 확대·이동할 수 있습니다,P
-E-006,detail,detail-location-map-v148,지역·대상 선택,LABEL
-E-006,detail,detail-location-map-v148,위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.,P
-E-006,detail,detail-location-map-v148,IFC,BUTTON
-E-006,detail,detail-location-map-v148,EAAIF,BUTTON
-E-006,detail,detail-location-map-v148,PIDG,BUTTON
-E-006,detail,detail-location-map-v148,geoBoundaries,A
 E-006,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 E-006,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 E-006,detail,detail-source-line-v153,출처 기관별 공식 출처 4개(상세 자료정보 참조) · 자료기간 2026 · 단위 (백만),P
@@ -44971,6 +44903,9 @@ E-006,detail,public-source-panel,자료정보,SPAN
 E-006,detail,public-source-panel,출처와 이용조건,H3
 E-006,detail,public-source-panel,제공기관,DT
 E-006,detail,public-source-panel,"Climate Investment Funds, , ( ), Proparco · 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조) · International Finance Corporation ( ) · DealStreetAsia (언론) · 각 운용사·투자사 공식 웹사이트 및 언론",DD
+E-006,detail,public-source-panel,IFC,BUTTON
+E-006,detail,public-source-panel,EAAIF,BUTTON
+E-006,detail,public-source-panel,PIDG,BUTTON
 E-006,detail,public-source-panel,자료기간,DT
 E-006,detail,public-source-panel,2026,DD
 E-006,detail,public-source-panel,단위,DT
@@ -46412,13 +46347,13 @@ E-018,detail,portfolio-entity-list-v132,다음,BUTTON
 E-018,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 E-018,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 E-018,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
-E-018,detail,detail-source-line-v153,출처 제공기관은 아래 자료정보 참조 · 자료기간 2026 · 단위 개사(기업),P
+E-018,detail,detail-source-line-v153,출처 각 기업 공식 웹사이트 · 각 언론사 보도 · 한국에너지기술평가원( ) 글로벌에너지정보 · 자료기간 2026 · 단위 개사(기업),P
+E-018,detail,detail-source-line-v153,KETEP,BUTTON
 E-018,detail,detail-metadata-v135,자료정보·이용조건,SUMMARY
 E-018,detail,public-source-panel,자료정보,SPAN
 E-018,detail,public-source-panel,출처와 이용조건,H3
 E-018,detail,public-source-panel,제공기관,DT
 E-018,detail,public-source-panel,각 기업 공식 웹사이트(자료별 상이 —참조) · 각 언론사 보도(자료별 상이 —참조) · 한국에너지기술평가원( ) 글로벌에너지정보 · 각 기업 공식 웹사이트 및 언론 보도(용역사 취합),DD
-E-018,detail,public-source-panel,KETEP,BUTTON
 E-018,detail,public-source-panel,자료기간,DT
 E-018,detail,public-source-panel,2026,DD
 E-018,detail,public-source-panel,단위,DT
@@ -46570,6 +46505,12 @@ E-018,detail,v125-entity-table-fallback,T. +82-2-2121-5114 / F. +82-2-2121-7001 
 E-018,detail,v125-entity-table-fallback,2026-05 착공,TD
 E-018,detail,v125-entity-table-fallback,컨소시엄,TD
 E-018,detail,detail-layer-v160,데이터 설명,SUMMARY
+E-018,detail,detail-kpi-tile-v153,24곳,STRONG
+E-018,detail,detail-kpi-tile-v153,기업 수 · 2026년,SPAN
+E-018,detail,detail-kpi-tile-v153,2026년,STRONG
+E-018,detail,detail-kpi-tile-v153,자료기간,SPAN
+E-018,detail,detail-kpi-tile-v153,24건,STRONG
+E-018,detail,detail-kpi-tile-v153,공개 목록,SPAN
 E-018,detail,data-description-v159,상세 설명,H3
 E-018,detail,data-description-v159,"국내 기업이 개발도상국에 진출해 수행 중인 사업과 설립한 현지 법인의 현황을 기업 단위로 기록한 대장이다. 기업명, 진출국, 업종(재생에너지·에너지효율·폐기물·수처리), 진출 형태(법인·지사·프로젝트), 설립 연도, 연락처, 38대 기후기술 분류 매칭으로 이뤄지며 기업 한 곳이 한 행이다. 각 기업 공식 웹사이트와 언론 보도, 공공기관 자료로 확인된 진출 기업만 담았고, 경쟁국 민간기업 진출 현황과 같은 서식의 한 대장에서 한국 기업을 가려 보여 준다.",P
 E-018,detail,data-description-v159,활용 방법,H3
@@ -46666,7 +46607,6 @@ E-019,detail,directory-not-installed-v138,현지 사무소가 없는 기관 3 �
 E-019,detail,directory-not-installed-v138,한국수자원공사(K-water) — 해당없음 — 사무소 미설치 · 한국에너지공단 — 해당없음 — 사무소 미설치 · 한국전력공사( ) — 해당없음 — 사무소 미설치,SPAN
 E-019,detail,directory-not-installed-v138,KEPCO,BUTTON
 E-019,detail,directory-not-installed-v138,"지도에는 표시하지 않으며, 본부·공식 안내 페이지는 상세 데이터의 출처 링크로 확인합니다.",SPAN
-E-019,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 E-019,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 E-019,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 E-019,detail,detail-source-line-v153,출처 각 기관 공식 웹사이트(용역사 취합) · 자료기간 2026 · 단위 개소(사무소),P
@@ -46867,7 +46807,6 @@ E-020,detail,public-entity-card-facts,USD,BUTTON
 E-020,detail,public-entity-card-facts,기업(㈜비엘프로세스),DD
 E-020,detail,public-entity-card-title,개도국 환경개선 마스터플랜 수립지원( ) — 하띤성 하수관리 및 하천수질개선 마스터플랜,H5
 E-020,detail,public-entity-card-facts,기업(㈜유신),DD
-E-020,detail,detail-map-slot-v153,작은 지도를 불러오는 중입니다.,P
 E-020,detail,detail-layer-v160-more,추가 차트 접기,BUTTON
 E-020,detail,detail-layer-v160,자료 출처·상세 데이터,SUMMARY
 E-020,detail,detail-source-line-v153,출처 한국환경산업기술원( ) 해외진출지원 실적표 / 한국수출입은행 승인현황 / 기술지원 프로젝트 / 국가녹색기술연구소( ) 실적 / 한국에너지공단 · 자료기간 2026 · 단위 건(프로그램) · 건(사업),P

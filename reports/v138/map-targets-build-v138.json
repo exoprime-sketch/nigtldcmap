@@ -1,6 +1,6 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-29T23:07:01.077Z",
+  "generatedAt": "2026-09-30T01:28:11.074Z",
   "dataRoot": "/public/data/vietnam/v2",
   "targetCount": 72,
   "counts": {
@@ -294,7 +294,7 @@
       "status": "not-connected",
       "representation": "none",
       "build": "none",
-      "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",
+      "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
       "requiredAsset": "EVN 5개 총공사 관할표(성별 출처 URL 포함)",
       "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
     },
@@ -1482,5 +1482,5 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json"
     }
   ],
-  "mapIndexSha256": "ac7d62203df50958a94c284204c02d210cc54924b155fb08c75e95f4d8547cb4"
+  "mapIndexSha256": "68a427ed2c0d737f1f9c8e8e646c3b4e1202a1699cd4139882f375da775f6770"
 }

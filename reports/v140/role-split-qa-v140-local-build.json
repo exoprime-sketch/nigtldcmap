@@ -1,7 +1,7 @@
 {
   "label": "local-build",
-  "base": "http://127.0.0.1:51567",
-  "generatedAt": "2026-09-29T23:31:29.405Z",
+  "base": "http://127.0.0.1:61040",
+  "generatedAt": "2026-09-30T01:53:31.373Z",
   "checks": [
     {
       "id": "MANIFEST_OK",
@@ -87,7 +87,7 @@
             },
             {
               "elementId": "A-022",
-              "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
+              "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출"
             },
             {
               "elementId": "B-002",
@@ -793,7 +793,7 @@
         },
         {
           "elementId": "A-022",
-          "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
+          "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출"
         },
         {
           "elementId": "B-002",
