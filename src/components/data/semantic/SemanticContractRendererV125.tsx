@@ -1,3 +1,5 @@
+import WideRecordCardsV162 from "../public/WideRecordCardsV162";
+import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
@@ -350,6 +352,11 @@ function renderEntityPanelV125(
   indicatorUnits: IndicatorUnitsV142 = {}
 ) {
   if (entities.length === 0) return null;
+  // V162: the wide record template ('[블록] 속성' columns, one row per record)
+  // reads as block cards whatever the renderer; record ids, working files and
+  // the supplier's note never reach the screen (wideRecordsV162).
+  const wideRecords = wideRecordsOfEntitiesV162(entities);
+  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} />;
   if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
     return (
       <PortfolioEntitiesV125

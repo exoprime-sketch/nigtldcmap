@@ -192,6 +192,10 @@ class RegionNames:
         self.levels: list[str] = list(block["levels"])
         self.index: dict[str, dict[str, str]] = {level: {} for level in self.levels}
         for entry in block["entries"]:
+            # V162: a name still under review never reaches a public file, as on
+            # the screen (formatRegionName shows the local spelling instead).
+            if entry.get("reviewStatus") != "confirmed":
+                continue
             for key in entry["keys"]:
                 self.index.setdefault(entry["level"], {}).setdefault(key, entry["ko"])
         self.country_keys = {region_key(country_entry.get("nameEn")), region_key(country_entry.get("iso3"))}
@@ -536,6 +540,7 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
     rights_rows: list[dict[str, Any]] = []
     source_rows: dict[str, dict[str, Any]] = {}
     column_accounting: dict[str, Any] = {}
+    row_exclusions_v162: dict[str, Any] = {}
     for element_id in framework_ids:
         frame = framework[element_id]
         workbook = workbooks.get(element_id)
@@ -559,6 +564,13 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             indicators = _indicators(workbook, observations)
             observation_extras = _observation_extras(workbook, observations, indicators)
             entity_extras = _entity_extras(workbook, entities, field_definitions)
+            # V162: declared non-public source rows, the same rule file as every
+            # country (config/data-publication/row-exclusions-v162.json).
+            entities, excluded_by_rule = v2._apply_row_exclusions_v162(
+                element_id, entities, field_definitions, v2._load_row_exclusions_v162(REPO)
+            )
+            if excluded_by_rule:
+                row_exclusions_v162[element_id] = excluded_by_rule
             column_accounting[element_id] = {
                 "observationExtraColumns": observation_extras,
                 "entityExtraColumns": entity_extras,
@@ -902,6 +914,8 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "generatedAt": generated_at,
         "summary": {
             **totals,
+            # V162: declared non-public source rows (config/data-publication/row-exclusions-v162.json).
+            "rowExclusions": row_exclusions_v162,
             "authorizedElementCount": 0,
             "authorizedObservationRows": 0,
             "authorizedEntityRows": 0,
@@ -986,8 +1000,10 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "assetLayoutVersion": "gzip-base64-json-envelope-v2",
         "generatedAt": generated_at,
         "country": {"iso3": iso3, "nameKo": entry.get("nameKo"), "nameEn": entry.get("nameEn")},
-        "sourcePackage": f"{pathlib.PurePosixPath(config['source']['directory']).parent.name}/{config['source']['delivery']}",
+        "sourcePackage": _source_package_v162(config),
         "sourcePackageSha256": analysis["sourceZip"]["sha256"].lower(),
+        # V162: the home's 데이터 기준일 is the date this country's source arrived.
+        "provenance": {"sourceDeliveredAt": _delivered_at_v162(config)},
         "workbookFiles": totals["workbookCount"],
         "frameworkElements": len(framework_ids),
         "accountedElements": len(coverage),
@@ -1063,8 +1079,23 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "sources": len(sources),
         "assetCount": len(rows),
         "columnAccounting": column_accounting,
+        "rowExclusions": row_exclusions_v162,
     }
 
+
+
+def _source_package_v162(config: dict) -> str:
+    """"방글라데시데이터/20260930": the delivery folder and its date, whether the
+    folder is dated (…/방글라데시데이터/20260923) or not (…/방글라데시데이터)."""
+    directory = pathlib.PurePosixPath(str(config["source"]["directory"]))
+    delivery = str(config["source"]["delivery"])
+    folder = directory.parent.name if directory.name == delivery else directory.name
+    return f"{folder}/{delivery}"
+
+def _delivered_at_v162(config: dict) -> str | None:
+    """country.json source.delivery ("20260930") as YYYY-MM-DD."""
+    stated = str((config.get("source") or {}).get("delivery") or "")
+    return f"{stated[:4]}-{stated[4:6]}-{stated[6:8]}" if re.fullmatch(r"\d{8}", stated) else None
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)

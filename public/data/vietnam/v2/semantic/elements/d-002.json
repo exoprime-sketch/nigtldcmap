@@ -3,10 +3,13 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 8,
+      "valueCount": 11,
       "values": [
         "바이오에너지 기술",
         "수력 기술",
+        "재생에너지 발전량 비중",
+        "재생에너지 발전량 비중 CAGR",
+        "재생에너지 설비용량 비중",
         "전력 통합 기술(BESS)",
         "전력 통합 기술(양수)",
         "태양광 기술",
@@ -39,8 +42,34 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 27,
       "values": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
         "2030"
       ]
     }
@@ -48,7 +77,7 @@
   "elementId": "D-002",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 8,
+  "indicatorCount": 11,
   "indicators": [
     {
       "axisGroupKey": "measure-62de91e6eba5|%",
@@ -321,19 +350,91 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "재생에너지 설비용량 비중"
+      },
+      "dimensions": {
+        "category": "재생에너지 설비용량 비중"
+      },
+      "displayLabel": "시장 성장률 · 재생에너지 설비용량 비중",
+      "indicatorId": "D-002_re_share_electricity_capacity_pct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=재생에너지 설비용량 비중|D-002_re_share_electricity_capacity_pct",
+      "sourceCaveat": null,
+      "sourceLabel": "시장 성장률 · 재생에너지 설비용량 비중",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "재생에너지 발전량 비중"
+      },
+      "dimensions": {
+        "category": "재생에너지 발전량 비중"
+      },
+      "displayLabel": "시장 성장률 · 재생에너지 발전량 비중",
+      "indicatorId": "D-002_re_share_electricity_generation_pct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=재생에너지 발전량 비중|D-002_re_share_electricity_generation_pct",
+      "sourceCaveat": null,
+      "sourceLabel": "시장 성장률 · 재생에너지 발전량 비중",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-62de91e6eba5|%",
+      "dimensionLabels": {
+        "category": "재생에너지 발전량 비중 CAGR"
+      },
+      "dimensions": {
+        "category": "재생에너지 발전량 비중 CAGR"
+      },
+      "displayLabel": "시장 성장률 · 재생에너지 발전량 비중 CAGR",
+      "indicatorId": "D-002_re_share_generation_cagr_2015_2025_pct",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-62de91e6eba5",
+        "labelKo": "시장 성장률",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-62de91e6eba5|%|category=재생에너지 발전량 비중 CAGR|D-002_re_share_generation_cagr_2015_2025_pct",
+      "sourceCaveat": null,
+      "sourceLabel": "시장 성장률 · 재생에너지 발전량 비중 CAGR",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
-      "indicatorCount": 8,
+      "indicatorCount": 11,
       "key": "measure-62de91e6eba5",
       "labelKo": "시장 성장률",
-      "recordCount": 8,
+      "recordCount": 59,
       "unit": "%",
       "unitFamily": "percent"
     }
   ],
-  "observationCount": 8,
+  "observationCount": 59,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

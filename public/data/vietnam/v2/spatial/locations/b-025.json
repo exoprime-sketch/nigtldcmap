@@ -4,47 +4,597 @@
   "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
   "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
   "counts": {
-    "located": 8,
+    "located": 118,
     "outside": 0,
-    "withoutCoordinate": 1
+    "withoutCoordinate": 2
   },
   "byRecordId": {
-    "v124-b-025-entity-00002": {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "unitCode": "VN34-02"
-    },
     "v124-b-025-entity-00003": {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "unitCode": "VN34-33"
-    },
-    "v124-b-025-entity-00004": {
-      "adm1Code": "VN-73",
-      "adm1Name": "Hậu Giang",
-      "unitCode": "VN34-CT"
-    },
-    "v124-b-025-entity-00005": {
       "adm1Code": "VN-09",
       "adm1Name": "Lạng Sơn",
       "unitCode": "VN34-09"
     },
+    "v124-b-025-entity-00004": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00005": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
     "v124-b-025-entity-00006": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00007": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00008": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00009": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00010": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00011": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00012": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00013": {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "unitCode": "VN34-13"
+    },
+    "v124-b-025-entity-00014": {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00015": {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00016": {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00017": {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00018": {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00019": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": "VN34-09"
+    },
+    "v124-b-025-entity-00020": {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00021": {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "unitCode": "VN34-HP"
+    },
+    "v124-b-025-entity-00022": {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "unitCode": "VN34-66"
+    },
+    "v124-b-025-entity-00023": {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "unitCode": "VN34-66"
+    },
+    "v124-b-025-entity-00024": {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "unitCode": "VN34-66"
+    },
+    "v124-b-025-entity-00025": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": "VN34-02"
+    },
+    "v124-b-025-entity-00026": {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "unitCode": "VN34-18"
+    },
+    "v124-b-025-entity-00027": {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "unitCode": "VN34-18"
+    },
+    "v124-b-025-entity-00028": {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "unitCode": "VN34-18"
+    },
+    "v124-b-025-entity-00029": {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "unitCode": "VN34-68"
+    },
+    "v124-b-025-entity-00030": {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "unitCode": "VN34-18"
+    },
+    "v124-b-025-entity-00031": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00032": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00033": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00034": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00035": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00036": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00037": {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "unitCode": "VN34-21"
+    },
+    "v124-b-025-entity-00038": {
       "adm1Code": "VN-22",
       "adm1Name": "Nghệ An",
       "unitCode": "VN34-22"
     },
-    "v124-b-025-entity-00007": {
+    "v124-b-025-entity-00039": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00040": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00041": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00042": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00043": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00044": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00045": {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "unitCode": "VN34-23"
+    },
+    "v124-b-025-entity-00046": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00047": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00048": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00049": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00050": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00051": {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00052": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": "VN34-25"
+    },
+    "v124-b-025-entity-00053": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": "VN34-26"
+    },
+    "v124-b-025-entity-00054": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": "VN34-26"
+    },
+    "v124-b-025-entity-00055": {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "unitCode": "VN34-26"
+    },
+    "v124-b-025-entity-00056": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": "VN34-DN"
+    },
+    "v124-b-025-entity-00057": {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "unitCode": "VN34-DN"
+    },
+    "v124-b-025-entity-00058": {
       "adm1Code": "VN-28",
       "adm1Name": "Kon Tum",
       "unitCode": "VN34-29"
     },
-    "v124-b-025-entity-00008": {
+    "v124-b-025-entity-00059": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": "VN34-29"
+    },
+    "v124-b-025-entity-00060": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": "VN34-29"
+    },
+    "v124-b-025-entity-00061": {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "unitCode": "VN34-29"
+    },
+    "v124-b-025-entity-00062": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00063": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00064": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00065": {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00066": {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "unitCode": "VN34-33"
+    },
+    "v124-b-025-entity-00067": {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "unitCode": "VN34-33"
+    },
+    "v124-b-025-entity-00068": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00069": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": "VN34-34"
+    },
+    "v124-b-025-entity-00070": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": "VN34-34"
+    },
+    "v124-b-025-entity-00071": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": "VN34-34"
+    },
+    "v124-b-025-entity-00072": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": "VN34-34"
+    },
+    "v124-b-025-entity-00073": {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "unitCode": "VN34-34"
+    },
+    "v124-b-025-entity-00074": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00075": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00076": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00077": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00078": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00079": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00080": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00081": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00082": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00083": {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "unitCode": "VN34-35"
+    },
+    "v124-b-025-entity-00084": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": "VN34-39"
+    },
+    "v124-b-025-entity-00085": {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "unitCode": "VN34-SG"
+    },
+    "v124-b-025-entity-00086": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": "VN34-39"
+    },
+    "v124-b-025-entity-00087": {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "unitCode": "VN34-37"
+    },
+    "v124-b-025-entity-00088": {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "unitCode": "VN34-37"
+    },
+    "v124-b-025-entity-00089": {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00090": {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00091": {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00092": {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00093": {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00094": {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "unitCode": "VN34-45"
+    },
+    "v124-b-025-entity-00095": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00096": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00097": {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "unitCode": "VN34-49"
+    },
+    "v124-b-025-entity-00098": {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "unitCode": "VN34-30"
+    },
+    "v124-b-025-entity-00099": {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "unitCode": "VN34-CT"
+    },
+    "v124-b-025-entity-00100": {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "unitCode": "VN34-CT"
+    },
+    "v124-b-025-entity-00101": {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "unitCode": "VN34-59"
+    },
+    "v124-b-025-entity-00102": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": "VN34-59"
+    },
+    "v124-b-025-entity-00103": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": "VN34-59"
+    },
+    "v124-b-025-entity-00104": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": "VN34-59"
+    },
+    "v124-b-025-entity-00105": {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "unitCode": "VN34-59"
+    },
+    "v124-b-025-entity-00106": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00107": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00108": {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00109": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00110": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00111": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00112": {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "unitCode": "VN34-44"
+    },
+    "v124-b-025-entity-00113": {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "unitCode": "VN34-02"
+    },
+    "v124-b-025-entity-00114": {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "unitCode": "VN34-33"
+    },
+    "v124-b-025-entity-00115": {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "unitCode": "VN34-CT"
+    },
+    "v124-b-025-entity-00116": {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "unitCode": "VN34-09"
+    },
+    "v124-b-025-entity-00117": {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "unitCode": "VN34-22"
+    },
+    "v124-b-025-entity-00118": {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "unitCode": "VN34-29"
+    },
+    "v124-b-025-entity-00119": {
       "adm1Code": "VN-35",
       "adm1Name": "Lâm Đồng",
       "unitCode": "VN34-35"
     },
-    "v124-b-025-entity-00009": {
+    "v124-b-025-entity-00120": {
       "adm1Code": "VN-21",
       "adm1Name": "Thanh Hóa",
       "unitCode": "VN34-21"

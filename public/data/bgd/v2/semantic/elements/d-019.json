@@ -1,12 +1,281 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 6,
+      "values": [
+        "감축 분야 건수",
+        "완료 건수",
+        "요청 건수",
+        "요청건 예산 합계",
+        "적응 분야 건수",
+        "한국 기관 수행 건수"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
+    },
+    {
+      "key": "기술분야_Sectors",
+      "labelKo": "기술분야",
+      "valueCount": 5,
+      "values": [
+        "Agriculture and forestry",
+        "Coastal zones",
+        "Energy efficiency",
+        "Transport",
+        "Water"
+      ]
+    }
+  ],
   "elementId": "D-019",
-  "entityCount": 0,
+  "entityCount": 7,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 7,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5bc9cf65db2a|USD",
+      "dimensionLabels": {
+        "category": "요청건 예산 합계",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "요청건 예산 합계",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 요청건 예산 합계",
+      "indicatorId": "D-019_budget_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5bc9cf65db2a",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5bc9cf65db2a|USD|category=요청건 예산 합계|technology=범용|D-019_budget_total",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 요청건 예산 합계",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 요청건 예산 합계",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "요청건 레지스트리"
+      },
+      "dimensions": {
+        "category": "요청건 레지스트리"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 요청건 레지스트리",
+      "indicatorId": "D-019_ctcn_ta_request_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=요청건 레지스트리|D-019_ctcn_ta_request_registry",
+      "sourceCaveat": "[★검토의견 반영 2026-09-24] 전체 공개 CSV를 재추출하여 국가별 재분할. 필리핀·인도·이집트는 원천 자체에 요청건이 없어 M01(원천 미제공)로 확정.",
+      "sourceLabel": "CTCN 기술지원 요청 · 요청건 레지스트리",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 요청건 레지스트리",
+      "sourceNote": "[★검토의견 반영 2026-09-24] 전체 공개 CSV를 재추출하여 국가별 재분할. 필리핀·인도·이집트는 원천 자체에 요청건이 없어 M01(원천 미제공)로 확정.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "요청 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "요청 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 요청 건수",
+      "indicatorId": "D-019_request_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=요청 건수|technology=범용|D-019_request_count",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 요청 건수",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 요청 건수",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "적응 분야 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "적응 분야 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 적응 분야 건수",
+      "indicatorId": "D-019_request_count_adaptation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=적응 분야 건수|technology=범용|D-019_request_count_adaptation",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 적응 분야 건수",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 적응 분야 건수",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "완료 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "완료 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 완료 건수",
+      "indicatorId": "D-019_request_count_completed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=완료 건수|technology=범용|D-019_request_count_completed",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 완료 건수",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 완료 건수",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "한국 기관 수행 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "한국 기관 수행 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 한국 기관 수행 건수",
+      "indicatorId": "D-019_request_count_korean_implementor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=한국 기관 수행 건수|technology=범용|D-019_request_count_korean_implementor",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 한국 기관 수행 건수",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 한국 기관 수행 건수",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "감축 분야 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "감축 분야 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 감축 분야 건수",
+      "indicatorId": "D-019_request_count_mitigation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=감축 분야 건수|technology=범용|D-019_request_count_mitigation",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceLabel": "CTCN 기술지원 요청 · 감축 분야 건수",
+      "sourceLabelEn": "CTCN 기술지원 요청 · 감축 분야 건수",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 시 메타가 함께 삭제되어 복원한 집계 지표.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5bc9cf65db2a",
+      "labelKo": "CTCN 기술지원 요청",
+      "recordCount": 1,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 6,
+      "key": "measure-646a4a09318f",
+      "labelKo": "CTCN 기술지원 요청",
+      "recordCount": 5,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 6,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -10,10 +10,34 @@
     }
   ],
   "elementId": "D-022",
-  "entityCount": 15,
+  "entityCount": 247,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 4,
+  "indicatorCount": 7,
   "indicators": [
+    {
+      "axisGroupKey": "measure-4ad9880e39b0|건",
+      "dimensionLabels": {
+        "category": "DFI · PPP 투자 프로젝트 · AIIB 사업"
+      },
+      "dimensions": {
+        "category": "DFI · PPP 투자 프로젝트 · AIIB 사업"
+      },
+      "displayLabel": "MDB·DFI·PPP 투자 프로젝트 · AIIB 사업",
+      "indicatorId": "D-022_aiib_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4ad9880e39b0",
+        "labelKo": "MDB",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4ad9880e39b0|건|category=DFI · PPP 투자 프로젝트 · AIIB 사업|D-022_aiib_project_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "MDB·DFI·PPP 투자 프로젝트 · AIIB 사업",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-6bccef632200|USD",
       "dimensionLabels": {
@@ -81,6 +105,54 @@
         "sourceRow": 8,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-4ad9880e39b0|건",
+      "dimensionLabels": {
+        "category": "DFI · PPP 투자 프로젝트 · IFC 투자사업"
+      },
+      "dimensions": {
+        "category": "DFI · PPP 투자 프로젝트 · IFC 투자사업"
+      },
+      "displayLabel": "MDB·DFI·PPP 투자 프로젝트 · IFC 투자사업",
+      "indicatorId": "D-022_ifc_investment_services_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-4ad9880e39b0",
+        "labelKo": "MDB",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-4ad9880e39b0|건|category=DFI · PPP 투자 프로젝트 · IFC 투자사업|D-022_ifc_investment_services_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "MDB·DFI·PPP 투자 프로젝트 · IFC 투자사업",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f0715eaa79cd|건",
+      "dimensionLabels": {
+        "category": "JICA 엔차관 레지스트리"
+      },
+      "dimensions": {
+        "category": "JICA 엔차관 레지스트리"
+      },
+      "displayLabel": "MDB/DFI/PPP 투자 프로젝트 · JICA 엔차관 레지스트리",
+      "indicatorId": "D-022_jica_oda_loan_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f0715eaa79cd",
+        "labelKo": "MDB/DFI/PPP 투자 프로젝트",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-f0715eaa79cd|건|category=JICA 엔차관 레지스트리|D-022_jica_oda_loan_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "MDB/DFI/PPP 투자 프로젝트 · JICA 엔차관 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f0715eaa79cd|건",
@@ -154,6 +226,14 @@
   "measures": [
     {
       "indicatorCount": 2,
+      "key": "measure-4ad9880e39b0",
+      "labelKo": "MDB",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 2,
       "key": "measure-6bccef632200",
       "labelKo": "MDB/DFI/PPP 투자 프로젝트",
       "recordCount": 0,
@@ -161,12 +241,12 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "key": "measure-f0715eaa79cd",
       "labelKo": "MDB/DFI/PPP 투자 프로젝트",
       "recordCount": 0,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
   "observationCount": 0,

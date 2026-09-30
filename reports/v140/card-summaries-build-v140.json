@@ -1,19 +1,72 @@
 {
-  "generatedAt": "2026-09-30T01:40:56.871Z",
+  "generatedAt": "2026-09-30T10:30:06.212Z",
   "cards": 146,
   "kinds": {
-    "line": 33,
+    "line": 35,
     "signed-bars": 1,
-    "bars": 38,
+    "bars": 30,
     "composition": 5,
-    "level": 17,
+    "facts": 41,
+    "level": 16,
     "grouped-bars": 1,
     "map": 1,
-    "facts": 31,
     "spatial-trend": 5,
-    "spatial": 11,
-    "status": 3
+    "spatial": 9,
+    "status": 2
   },
-  "warnings": [],
-  "bytes": 227674
+  "warnings": [
+    {
+      "elementId": "B-014",
+      "message": "entity element without a reviewed rule; facts card"
+    },
+    {
+      "elementId": "B-025",
+      "message": "builder failed: Cannot read properties of undefined (reading 'value')"
+    },
+    {
+      "elementId": "B-025",
+      "message": "no card could be built"
+    },
+    {
+      "elementId": "B-046",
+      "message": "entity element without a reviewed rule; facts card"
+    },
+    {
+      "elementId": "B-047",
+      "message": "entity element without a reviewed rule; facts card"
+    },
+    {
+      "elementId": "C-001",
+      "message": "builder failed: C-001 reviewed targets changed"
+    },
+    {
+      "elementId": "C-001",
+      "message": "no card could be built"
+    },
+    {
+      "elementId": "C-018",
+      "message": "builder failed: Cannot read properties of undefined (reading 'min')"
+    },
+    {
+      "elementId": "C-018",
+      "message": "no card could be built"
+    },
+    {
+      "elementId": "C-019",
+      "message": "builder failed: No reviewed facility-region rows"
+    },
+    {
+      "elementId": "C-019",
+      "message": "no card could be built"
+    },
+    {
+      "elementId": "C-022",
+      "message": "builder failed: No reviewed facility-region rows"
+    },
+    {
+      "elementId": "C-022",
+      "message": "no card could be built"
+    }
+  ],
+  "bytes": 301796
 }

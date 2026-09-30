@@ -288,6 +288,8 @@ export interface VietnamManifestV124 {
   runtimeVersion: typeof VIETNAM_DATA_RUNTIME_VERSION_V124;
   assetLayoutVersion: "gzip-base64-json-envelope-v2";
   generatedAt: string;
+  /** V162: when the published source arrived (the home's 데이터 기준일). */
+  provenance?: { sourceDeliveredAt?: string | null };
   country: { iso3: "VNM"; nameKo: string; nameEn: string };
   sourcePackage: string;
   workbookFiles: number;

@@ -105,7 +105,13 @@ export function getCardSpecForCountryV158(
   item?: CountrySpecItemV158 | null
 ): DatasetCardSpecV159 | null {
   const base = getCardSpecV159(elementId);
-  if (!specNeedsCountryScopeV158(country)) return base;
+  if (!specNeedsCountryScopeV158(country)) {
+    // V162: the default country's card keeps its reviewed name and source; its
+    // notice follows the catalog like every other country's.
+    if (!base || !item) return base;
+    const statusNotice = statusNoticeFromCatalogV162(item.publicStatus);
+    return statusNotice === base.statusNotice ? base : { ...base, statusNotice };
+  }
   const iso3 = normalizeCountryIso3V158(country);
   // A finder card asks several times per render; the answer depends on the
   // catalog item only, so the same item gets the same card.
@@ -175,15 +181,24 @@ const COUNTRY_STATUS_V158: Record<"data-pending" | "excluded" | "public", string
  * status notice is the country's own - the default country's publication
  * decisions and missing deliveries are its own and do not carry over.
  */
+/** The catalog's publicStatus as a screen notice. */
+export function statusNoticeFromCatalogV162(publicStatus: string | null | undefined): StatusNoticeV159 {
+  if (publicStatus === "not-provided" || publicStatus === "not-collected" || publicStatus === "schema-only" || publicStatus === "data-entry-planned") return "data-pending";
+  if (publicStatus === "excluded") return "excluded";
+  return null;
+}
+
 export function getTypologyForCountryV158(
   elementId: string,
   country: string | null | undefined,
   item?: CountrySpecItemV158 | null
 ): TypologyRowV159 | null {
   const row = getTypologyV159(elementId);
-  if (!row || !specNeedsCountryScopeV158(country) || !item) return row;
-  const statusNotice: StatusNoticeV159 =
-    item.publicStatus === "not-provided" ? "data-pending" : item.publicStatus === "excluded" ? "excluded" : null;
+  // V162: the notice ('데이터 준비 중' · 제외) is decided by the catalog alone, for
+  // every country including the default one - the typology file only supplies
+  // the display type. A delivery that arrives (E-011) opens without editing it.
+  if (!row || !item) return row;
+  const statusNotice = statusNoticeFromCatalogV162(item.publicStatus);
   return { ...row, statusNotice, status: COUNTRY_STATUS_V158[statusNotice ?? "public"] };
 }
 

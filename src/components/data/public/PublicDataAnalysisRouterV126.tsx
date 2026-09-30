@@ -1,3 +1,5 @@
+import WideRecordCardsV162 from "./WideRecordCardsV162";
+import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
@@ -154,6 +156,14 @@ const ADAPTER_RENDERER_V126: Record<
   "status-only": "status-only",
 };
 
+/** Variants written for the old long C template (속성1_레코드명 … 속성23_설명). */
+const LONG_TEMPLATE_VARIANTS_V162 = new Set<TemplateVariantKeyV159>([
+  "ndc-targets",
+  "cooperation-checklist",
+  "security-safety",
+  "ppp-procurement",
+] as TemplateVariantKeyV159[]);
+
 export default function PublicDataAnalysisRouterV126({
   elementId,
   contract,
@@ -172,6 +182,7 @@ export default function PublicDataAnalysisRouterV126({
   // V159: the display type picks the template, the element's variant the body.
   // V158: the type and variant as seen from the page's country.
   const typology = useCountryTypologyV158(elementId);
+  const wideRecordsV162 = useMemo(() => wideRecordsOfEntitiesV162(allEntities), [allEntities]);
   const dataCountryV158 = useDataCountryV158();
   const variantEntry = variantForCountryV158(elementId, dataCountryV158);
   const cardSpec = useCountryCardSpecV158(elementId);
@@ -289,6 +300,12 @@ export default function PublicDataAnalysisRouterV126({
   // The registry maps each variant only to the elements its component was
   // written for, so the narrowed element ids below hold (templateVariantsV159).
   const renderVariantV159 = (variant: TemplateVariantKeyV159): ReactNode | null => {
+    // V162: these variants read the old long C template row by row. On the
+    // wide template (one row per record, '[블록] 속성' columns) the common
+    // block cards take their place; primary-chart variants read it themselves.
+    if (wideRecordsV162.length > 0 && LONG_TEMPLATE_VARIANTS_V162.has(variant)) {
+      return <WideRecordCardsV162 records={wideRecordsV162} />;
+    }
     switch (variant) {
       case "building-metadata":
         return metadataOnlyBuildingsV144(semanticRows) ? (

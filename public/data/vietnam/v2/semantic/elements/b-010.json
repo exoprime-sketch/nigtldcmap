@@ -26,8 +26,16 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 2,
+      "valueCount": 10,
       "values": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
         "2023",
         "2024"
       ]
@@ -36,7 +44,7 @@
   "elementId": "B-010",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 10,
+  "indicatorCount": 14,
   "indicators": [
     {
       "axisGroupKey": "measure-e19a3da06ed0|사건",
@@ -221,6 +229,86 @@
       }
     },
     {
+      "axisGroupKey": "measure-c50813ff9637|순위",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 과거판 단년 순위(구 방법론)",
+      "indicatorId": "B-010_cri_past_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c50813ff9637",
+        "labelKo": "CRI 과거판 단년 순위(구 방법론)",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c50813ff9637|순위||B-010_cri_past_rank",
+      "sourceCaveat": null,
+      "sourceLabel": "CRI 과거판 단년 순위(구 방법론)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-76c833d35768|순위",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 과거판 20년 누적 순위(구 방법론)",
+      "indicatorId": "B-010_cri_past_rank_20y",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-76c833d35768",
+        "labelKo": "CRI 과거판 20년 누적 순위(구 방법론)",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-76c833d35768|순위||B-010_cri_past_rank_20y",
+      "sourceCaveat": null,
+      "sourceLabel": "CRI 과거판 20년 누적 순위(구 방법론)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f2da63dc07fe|점수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 과거판 단년 점수(구 방법론)",
+      "indicatorId": "B-010_cri_past_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f2da63dc07fe",
+        "labelKo": "CRI 과거판 단년 점수(구 방법론)",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-f2da63dc07fe|점수||B-010_cri_past_score",
+      "sourceCaveat": null,
+      "sourceLabel": "CRI 과거판 단년 점수(구 방법론)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-fb33c53aa72b|점수",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CRI 과거판 20년 누적 점수(구 방법론)",
+      "indicatorId": "B-010_cri_past_score_20y",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-fb33c53aa72b",
+        "labelKo": "CRI 과거판 20년 누적 점수(구 방법론)",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-fb33c53aa72b|점수||B-010_cri_past_score_20y",
+      "sourceCaveat": null,
+      "sourceLabel": "CRI 과거판 20년 누적 점수(구 방법론)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-f20de2f62bc7|순위",
       "dimensionLabels": {},
       "dimensions": {},
@@ -355,6 +443,38 @@
       "unitFamily": "other"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-76c833d35768",
+      "labelKo": "CRI 과거판 20년 누적 순위(구 방법론)",
+      "recordCount": 8,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-fb33c53aa72b",
+      "labelKo": "CRI 과거판 20년 누적 점수(구 방법론)",
+      "recordCount": 8,
+      "unit": "점수",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c50813ff9637",
+      "labelKo": "CRI 과거판 단년 순위(구 방법론)",
+      "recordCount": 8,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f2da63dc07fe",
+      "labelKo": "CRI 과거판 단년 점수(구 방법론)",
+      "recordCount": 8,
+      "unit": "점수",
+      "unitFamily": "score"
+    },
+    {
       "indicatorCount": 4,
       "key": "measure-9eab64683e5b",
       "labelKo": "CRI 본문 수록 피해통계(2024년)",
@@ -379,7 +499,7 @@
       "unitFamily": "other"
     }
   ],
-  "observationCount": 12,
+  "observationCount": 44,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -1,12 +1,953 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 16,
+      "values": [
+        "명시적 보조금 (GDP 대비)",
+        "명시적 보조금 (금액)",
+        "명시적 보조금 연료별",
+        "석유화력 발전 보조금",
+        "암묵적 보조금 (GDP 대비)",
+        "암묵적 보조금 (금액)",
+        "암묵적 보조금 외부성별",
+        "전력 · 비료 보조금(FY2023-24)",
+        "전력 · 비료 보조금(FY2024-25)",
+        "전력보조금 상한(FY2024-25)",
+        "전력보조금 총지출(FY2024-25)",
+        "전력부문 수입부족분",
+        "정부 예산상 비료 보조금",
+        "정부 예산상 전력 보조금",
+        "총 보조금 (GDP 대비)",
+        "총 보조금 (금액)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 13,
+      "values": [
+        "FY2024-25 금액",
+        "FY2024-25 총액",
+        "IMF Article IV 기준",
+        "교통사고",
+        "국지 대기오염",
+        "도로 손상",
+        "미징수 VAT",
+        "석유",
+        "석탄",
+        "전력",
+        "지구온난화",
+        "천연가스",
+        "혼잡"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 16,
+      "values": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030"
+      ]
+    }
+  ],
   "elementId": "D-010",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 28,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5b4fa03ea53f|십억 BDT",
+      "dimensionLabels": {
+        "category": "정부 예산상 비료 보조금",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "정부 예산상 비료 보조금",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 정부 예산상 비료 보조금",
+      "indicatorId": "D-010_budget_subsidy_fertilizer",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5b4fa03ea53f",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "십억 BDT",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5b4fa03ea53f|십억 BDT|category=정부 예산상 비료 보조금|technology=범용|D-010_budget_subsidy_fertilizer",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Country Report No. 26/24 (2025년 Article IV) Table 3a. 방글라데시 정부 재정통계 기준 예산상 보조금으로, IMF 화석연료보조금 DB(가격격차법)와 정의·범위가 달라 합산 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 정부 예산상 비료 보조금",
+      "sourceLabelEn": "Budgetary fertilizer subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Country Report No. 26/24 (2025년 Article IV) Table 3a. 방글라데시 정부 재정통계 기준 예산상 보조금으로, IMF 화석연료보조금 DB(가격격차법)와 정의·범위가 달라 합산 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-5b4fa03ea53f|십억 BDT",
+      "dimensionLabels": {
+        "category": "정부 예산상 전력 보조금",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "정부 예산상 전력 보조금",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 정부 예산상 전력 보조금",
+      "indicatorId": "D-010_budget_subsidy_power",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5b4fa03ea53f",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "십억 BDT",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5b4fa03ea53f|십억 BDT|category=정부 예산상 전력 보조금|technology=범용|D-010_budget_subsidy_power",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Country Report No. 26/24 (2025년 Article IV) Table 3a. 방글라데시 정부 재정통계 기준 예산상 보조금으로, IMF 화석연료보조금 DB(가격격차법)와 정의·범위가 달라 합산 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 정부 예산상 전력 보조금",
+      "sourceLabelEn": "Budgetary power subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Country Report No. 26/24 (2025년 Article IV) Table 3a. 방글라데시 정부 재정통계 기준 예산상 보조금으로, IMF 화석연료보조금 DB(가격격차법)와 정의·범위가 달라 합산 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "명시적 보조금 연료별",
+        "detail": "석탄",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 연료별",
+        "detail": "석탄",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 석탄",
+      "indicatorId": "D-010_explicit_by_fuel_coal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=명시적 보조금 연료별|detail=석탄|technology=범용|D-010_explicit_by_fuel_coal",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 석탄",
+      "sourceLabelEn": "Explicit fossil fuel subsidy by fuel — Coal",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "명시적 보조금 연료별",
+        "detail": "전력",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 연료별",
+        "detail": "전력",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 전력",
+      "indicatorId": "D-010_explicit_by_fuel_electricity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=명시적 보조금 연료별|detail=전력|technology=범용|D-010_explicit_by_fuel_electricity",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.194014944840071%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 전력",
+      "sourceLabelEn": "Explicit fossil fuel subsidy by fuel — Electricity",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.194014944840071%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "명시적 보조금 연료별",
+        "detail": "천연가스",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 연료별",
+        "detail": "천연가스",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 천연가스",
+      "indicatorId": "D-010_explicit_by_fuel_natural_gas",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=명시적 보조금 연료별|detail=천연가스|technology=범용|D-010_explicit_by_fuel_natural_gas",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 3.24990809624042%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 천연가스",
+      "sourceLabelEn": "Explicit fossil fuel subsidy by fuel — Natural gas",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 3.24990809624042%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "명시적 보조금 연료별",
+        "detail": "석유",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 연료별",
+        "detail": "석유",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 석유",
+      "indicatorId": "D-010_explicit_by_fuel_petroleum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=명시적 보조금 연료별|detail=석유|technology=범용|D-010_explicit_by_fuel_petroleum",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0441301919778499%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 연료별 — 석유",
+      "sourceLabelEn": "Explicit fossil fuel subsidy by fuel — Petroleum",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0441301919778499%. 명시적 보조금의 절대다수가 천연가스(국내 저가 공급에 따른 가격격차)로 계상됨. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cd465cbc4ee|% of GDP",
+      "dimensionLabels": {
+        "category": "명시적 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 (GDP 대비)",
+      "indicatorId": "D-010_explicit_total_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cd465cbc4ee",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6cd465cbc4ee|% of GDP|category=명시적 보조금 (GDP 대비)|technology=범용|D-010_explicit_total_gdp",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 (GDP 대비)",
+      "sourceLabelEn": "Fossil fuel subsidy, Explicit fossil fuel subsidy, share of GDP",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "명시적 보조금 (금액)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "명시적 보조금 (금액)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 명시적 보조금 (금액)",
+      "indicatorId": "D-010_explicit_total_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=명시적 보조금 (금액)|technology=범용|D-010_explicit_total_usd",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 명시적 보조금 (금액)",
+      "sourceLabelEn": "Fossil fuel subsidy, Explicit fossil fuel subsidy, USD",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "교통사고",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "교통사고",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 교통사고",
+      "indicatorId": "D-010_implicit_by_externality_accidents",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=교통사고|technology=범용|D-010_implicit_by_externality_accidents",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 1.08220989457418%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 교통사고",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Accidents",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 1.08220989457418%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "혼잡",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "혼잡",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 혼잡",
+      "indicatorId": "D-010_implicit_by_externality_congestion",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=혼잡|technology=범용|D-010_implicit_by_externality_congestion",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0211414863589916%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 혼잡",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Congestion",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0211414863589916%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "미징수 VAT",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "미징수 VAT",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 미징수 VAT",
+      "indicatorId": "D-010_implicit_by_externality_foregone_vat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=미징수 VAT|technology=범용|D-010_implicit_by_externality_foregone_vat",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.218844408919844%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 미징수 VAT",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Foregone VAT",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.218844408919844%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "지구온난화",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "지구온난화",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 지구온난화",
+      "indicatorId": "D-010_implicit_by_externality_global_warming",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=지구온난화|technology=범용|D-010_implicit_by_externality_global_warming",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 1.38280751824503%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 지구온난화",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Global warming",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 1.38280751824503%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "국지 대기오염",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "국지 대기오염",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 국지 대기오염",
+      "indicatorId": "D-010_implicit_by_externality_local_air_pollution",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=국지 대기오염|technology=범용|D-010_implicit_by_externality_local_air_pollution",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.49331937610031%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 국지 대기오염",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Local air pollution",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.49331937610031%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "도로 손상",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 외부성별",
+        "detail": "도로 손상",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 도로 손상",
+      "indicatorId": "D-010_implicit_by_externality_road_damage",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 외부성별|detail=도로 손상|technology=범용|D-010_implicit_by_externality_road_damage",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0410592697455325%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 외부성별 — 도로 손상",
+      "sourceLabelEn": "Implicit fossil fuel subsidy by externality — Road damage",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2022년 실측. GDP 대비 0.0410592697455325%. IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · D010_implicit_by_fuel_coal · implicit_by_fuel_coal",
+      "indicatorId": "D-010_implicit_by_fuel_coal",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|technology=범용|D-010_implicit_by_fuel_coal",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모",
+      "sourceLabelEn": "Budgetary fertilizer subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · D010_implicit_by_fuel_electricity · implicit_by_fuel_electricity",
+      "indicatorId": "D-010_implicit_by_fuel_electricity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|technology=범용|D-010_implicit_by_fuel_electricity",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모",
+      "sourceLabelEn": "Budgetary fertilizer subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · D010_implicit_by_fuel_natural_gas · implicit_by_fuel_natural_gas",
+      "indicatorId": "D-010_implicit_by_fuel_natural_gas",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|technology=범용|D-010_implicit_by_fuel_natural_gas",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모",
+      "sourceLabelEn": "Budgetary fertilizer subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · D010_implicit_by_fuel_petroleum · implicit_by_fuel_petroleum",
+      "indicatorId": "D-010_implicit_by_fuel_petroleum",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|technology=범용|D-010_implicit_by_fuel_petroleum",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모",
+      "sourceLabelEn": "Budgetary fertilizer subsidy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] IMF 원천에서 명시적 보조금의 연료별 내역 합계는 명시적 합계(EX.ALL)와 일치하지 않는다(전력 보조금이 투입연료와 중복 계상되어 총계에서 상계). 대표값은 EX.ALL·IM.ALL 을 사용한다. 암묵적 보조금은 연료별·외부비용별 내역이 합계와 정확히 일치한다. [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cd465cbc4ee|% of GDP",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 (GDP 대비)",
+      "indicatorId": "D-010_implicit_total_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cd465cbc4ee",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6cd465cbc4ee|% of GDP|category=암묵적 보조금 (GDP 대비)|technology=범용|D-010_implicit_total_gdp",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 (GDP 대비)",
+      "sourceLabelEn": "Fossil fuel subsidy, Implicit fossil fuel subsidy, share of GDP",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "암묵적 보조금 (금액)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "암묵적 보조금 (금액)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 암묵적 보조금 (금액)",
+      "indicatorId": "D-010_implicit_total_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=암묵적 보조금 (금액)|technology=범용|D-010_implicit_total_usd",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 암묵적 보조금 (금액)",
+      "sourceLabelEn": "Fossil fuel subsidy, Implicit fossil fuel subsidy, USD",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "석유화력 발전 보조금",
+        "detail": "FY2024-25 금액"
+      },
+      "dimensions": {
+        "category": "석유화력 발전 보조금",
+        "detail": "FY2024-25 금액"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 석유화력 발전 보조금 — FY2024-25 금액",
+      "indicatorId": "D-010_oil_fired_power_subsidy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=석유화력 발전 보조금|detail=FY2024-25 금액|D-010_oil_fired_power_subsidy",
+      "sourceCaveat": "[라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. 발행처별 저작권 유보. 출처표시 후 개별 수치 인용은 가능하나 표·데이터셋 통째 재수록은 발행처 허락 대상. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 석유화력 발전 보조금 — FY2024-25 금액",
+      "sourceLabelEn": "Subsidy for oil-fired power generation, FY2024-25",
+      "sourceNote": "[라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. 발행처별 저작권 유보. 출처표시 후 개별 수치 인용은 가능하나 표·데이터셋 통째 재수록은 발행처 허락 대상. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "전력 · 비료 보조금(FY2023-24)",
+        "detail": "IMF Article IV 기준"
+      },
+      "dimensions": {
+        "category": "전력 · 비료 보조금(FY2023-24)",
+        "detail": "IMF Article IV 기준"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 전력·비료 보조금(FY2023-24) — IMF Article IV 기준",
+      "indicatorId": "D-010_power_fertiliser_subsidy_share_gdp_fy2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=전력 · 비료 보조금(FY2023-24)|detail=IMF Article IV 기준|D-010_power_fertiliser_subsidy_share_gdp_fy2024",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 전력·비료 보조금(FY2023-24) — IMF Article IV 기준",
+      "sourceLabelEn": "Power and fertiliser subsidy as % of GDP, FY2023-24",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-f89153b46866|%",
+      "dimensionLabels": {
+        "category": "전력 · 비료 보조금(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "dimensions": {
+        "category": "전력 · 비료 보조금(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 전력·비료 보조금(FY2024-25) — IMF Article IV 기준",
+      "indicatorId": "D-010_power_fertiliser_subsidy_share_gdp_fy2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f89153b46866",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f89153b46866|%|category=전력 · 비료 보조금(FY2024-25)|detail=IMF Article IV 기준|D-010_power_fertiliser_subsidy_share_gdp_fy2025",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 전력·비료 보조금(FY2024-25) — IMF Article IV 기준",
+      "sourceLabelEn": "Power and fertiliser subsidy as % of GDP, FY2024-25",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "전력부문 수입부족분",
+        "detail": "FY2024-25 총액"
+      },
+      "dimensions": {
+        "category": "전력부문 수입부족분",
+        "detail": "FY2024-25 총액"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 전력부문 수입부족분 — FY2024-25 총액",
+      "indicatorId": "D-010_power_sector_revenue_shortfall",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=전력부문 수입부족분|detail=FY2024-25 총액|D-010_power_sector_revenue_shortfall",
+      "sourceCaveat": "[라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. 발행처별 저작권 유보. 출처표시 후 개별 수치 인용은 가능하나 표·데이터셋 통째 재수록은 발행처 허락 대상. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 전력부문 수입부족분 — FY2024-25 총액",
+      "sourceLabelEn": "Power sector revenue shortfall, FY2024-25",
+      "sourceNote": "[라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. 발행처별 저작권 유보. 출처표시 후 개별 수치 인용은 가능하나 표·데이터셋 통째 재수록은 발행처 허락 대상. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d6dfd90002d8|BDT",
+      "dimensionLabels": {
+        "category": "전력보조금 상한(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "dimensions": {
+        "category": "전력보조금 상한(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 전력보조금 상한(FY2024-25) — IMF Article IV 기준",
+      "indicatorId": "D-010_power_subsidy_ceiling_fy2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d6dfd90002d8",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "BDT",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d6dfd90002d8|BDT|category=전력보조금 상한(FY2024-25)|detail=IMF Article IV 기준|D-010_power_subsidy_ceiling_fy2025",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 전력보조금 상한(FY2024-25) — IMF Article IV 기준",
+      "sourceLabelEn": "Power subsidy ceiling, FY2024-25",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d6dfd90002d8|BDT",
+      "dimensionLabels": {
+        "category": "전력보조금 총지출(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "dimensions": {
+        "category": "전력보조금 총지출(FY2024-25)",
+        "detail": "IMF Article IV 기준"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 전력보조금 총지출(FY2024-25) — IMF Article IV 기준",
+      "indicatorId": "D-010_power_subsidy_total_fy2025",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d6dfd90002d8",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "BDT",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d6dfd90002d8|BDT|category=전력보조금 총지출(FY2024-25)|detail=IMF Article IV 기준|D-010_power_subsidy_total_fy2025",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 전력보조금 총지출(FY2024-25) — IMF Article IV 기준",
+      "sourceLabelEn": "Total power subsidy expenditure including arrears, FY2024-25",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [정의·범위] 방글라데시의 화석연료 보조금은 예산상 별도 항목이 아니라 (1) 전력부문 수입부족분(revenue shortfall) 보전과 (2) 전력·비료 보조금 예산지출로 나타남. IEEFA 추정치는 전력부문 재무자료 기반이고, IMF Article IV 수치는 정부 재정통계 기준이어서 정의·분모가 서로 달라 직접 합산하거나 비교할 수 없음. 지표를 원천별로 분리하여 수록함. [IMF 국가별 DB 미확보] IMF Fossil Fuel Subsidies Data 2025 Update(WP/25/270)는 세계 총액(2024년 7.4조 USD, 세계 GDP 6.4%)만 본문에 제시하고 방글라데시 개별 행은 국가별 스프레드시트(.xlsb)에만 존재하여 본 데이터셋에서는 확보하지 못함. [연도 미표기 값 제외] Green Fiscal Policy Network가 게재한 방글라데시 보조금 값(pre-tax 10.5억 USD, GDP 대비 -0.4%, 외부효과 포함 3.38%)은 기준연도가 명시되어 있지 않아 수록하지 않음. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-6cd465cbc4ee|% of GDP",
+      "dimensionLabels": {
+        "category": "총 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "총 보조금 (GDP 대비)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 총 보조금 (GDP 대비)",
+      "indicatorId": "D-010_total_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6cd465cbc4ee",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-6cd465cbc4ee|% of GDP|category=총 보조금 (GDP 대비)|technology=범용|D-010_total_gdp",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 총 보조금 (GDP 대비)",
+      "sourceLabelEn": "Fossil fuel subsidy, Total fossil fuel subsidy, share of GDP",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 32,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-465d4d66c9ba|USD",
+      "dimensionLabels": {
+        "category": "총 보조금 (금액)",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "총 보조금 (금액)",
+        "technology": "범용"
+      },
+      "displayLabel": "화석연료 보조금 규모 · 총 보조금 (금액)",
+      "indicatorId": "D-010_total_usd",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-465d4d66c9ba",
+        "labelKo": "화석연료 보조금 규모",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-465d4d66c9ba|USD|category=총 보조금 (금액)|technology=범용|D-010_total_usd",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "화석연료 보조금 규모 · 총 보조금 (금액)",
+      "sourceLabelEn": "Fossil fuel subsidy, Total fossil fuel subsidy, USD",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). IMF Fossil Fuel Subsidies 2023 Update(Black·Liu·Parry·Vernon, WP/23/169) 기준. 2022년까지 실측, 2023년 이후는 투영치. 2025 Update(WP/25/270)의 국가별 파일은 .xlsb 로 판독 불가. IMF 약관 — 재배포·상업 이용 모두 허용(출처표시 조건). [보완 중(최신성)] 실적 최신연도 2015 — 최근 5개년(2021~2025) 미충족. 사유: 원천의 최신 공표연도가 2015년. 완료 예정일 2026-11-28. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 33,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 2,
+      "key": "measure-f89153b46866",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 2,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-6cd465cbc4ee",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 27,
+      "unit": "% of GDP",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-d6dfd90002d8",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 2,
+      "unit": "BDT",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 19,
+      "key": "measure-465d4d66c9ba",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 103,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-5b4fa03ea53f",
+      "labelKo": "화석연료 보조금 규모",
+      "recordCount": 6,
+      "unit": "십억 BDT",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 140,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

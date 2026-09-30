@@ -1,6 +1,6 @@
 {
   "schema": "map-content-contract-build-v157",
-  "generatedAt": "2026-09-30T00:21:59.255Z",
+  "generatedAt": "2026-09-30T10:13:21.781Z",
   "country": "VNM",
   "rowCount": 72,
   "provinceDictionary": {
@@ -9,18 +9,15 @@
     "warnings": []
   },
   "byStatus": {
-    "region-text-generic": 1,
+    "asset-missing": 10,
     "reference-mapping-pending": 1,
     "registered": 60,
-    "national-only": 7,
-    "region-fields-empty": 2,
     "data-pending": 1
   },
   "criteriaCounts": {
-    "none": 12,
-    "①": 53,
-    "②": 57,
-    "③": 12
+    "none": 39,
+    "②": 2,
+    "①": 31
   },
   "withoutGeometry": [
     "A-013",
@@ -39,7 +36,7 @@
   "companionPlacements": [
     {
       "elementId": "A-013",
-      "status": "region-text-generic",
+      "status": "asset-missing",
       "companions": [
         "B-012(A)",
         "B-008(A)"
@@ -54,56 +51,56 @@
     },
     {
       "elementId": "B-002",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-003(A)"
       ]
     },
     {
       "elementId": "B-024",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-017(A)"
       ]
     },
     {
       "elementId": "B-035",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-037(A)"
       ]
     },
     {
       "elementId": "B-036",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-037(A)"
       ]
     },
     {
       "elementId": "B-044",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-048(C)"
       ]
     },
     {
       "elementId": "B-046",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-048(C)"
       ]
     },
     {
       "elementId": "B-047",
-      "status": "national-only",
+      "status": "asset-missing",
       "companions": [
         "B-048(C)"
       ]
     },
     {
       "elementId": "C-003",
-      "status": "region-fields-empty",
+      "status": "asset-missing",
       "companions": [
         "C-016(A)"
       ]
@@ -117,31 +114,31 @@
     },
     {
       "elementId": "C-017",
-      "status": "region-fields-empty",
+      "status": "asset-missing",
       "companions": [
         "C-016(A)"
       ]
     }
   ],
   "labelsPending": [
-    "field_890a80ed",
-    "typeOfInformation"
+    "annualReduction",
+    "standard"
   ],
-  "disagreementCount": 12,
+  "disagreementCount": 54,
   "disagreements": [
     {
       "elementId": "A-013",
       "targetName": "NDC-SDG 지역조치",
       "pdf": "③",
       "computed": [],
-      "status": "region-text-generic",
-      "statusReason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
-        "descriptiveAttributes": 2,
+        "descriptiveAttributes": 0,
         "regionScopedTextRows": 0
       }
     },
@@ -155,7 +152,55 @@
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
-        "observationProvinces": 1,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "A-023",
+      "targetName": "발전소",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "A-024",
+      "targetName": "송전망",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "A-025",
+      "targetName": "CCS 시설·사업 계획",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
         "entityProvinces": 0,
         "descriptiveAttributes": 0,
         "regionScopedTextRows": 0
@@ -166,8 +211,136 @@
       "targetName": "기후대",
       "pdf": "①",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-003",
+      "targetName": "연평균 기온·강수",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-004",
+      "targetName": "미래기후 전망",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-005",
+      "targetName": "가뭄",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-006",
+      "targetName": "폭염",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-007",
+      "targetName": "극한강수",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-008",
+      "targetName": "해수면 상승 전망",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-012",
+      "targetName": "재해 이력",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-023",
+      "targetName": "건기·우기 유량",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -182,8 +355,40 @@
       "targetName": "농업용수 대리지표",
       "pdf": "①",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-025",
+      "targetName": "유역면적",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-028",
+      "targetName": "하천유량",
+      "pdf": "①",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -198,8 +403,8 @@
       "targetName": "토지이용 면적",
       "pdf": "①",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -214,8 +419,8 @@
       "targetName": "토지이용 변화율",
       "pdf": "①",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -230,8 +435,8 @@
       "targetName": "핵심광물 부존",
       "pdf": "②",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -246,8 +451,8 @@
       "targetName": "광물 매장량",
       "pdf": "②",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -262,8 +467,24 @@
       "targetName": "광물 생산량",
       "pdf": "②",
       "computed": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "B-048",
+      "targetName": "주요 광산",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -278,14 +499,14 @@
       "targetName": "국가적응계획 지역과제",
       "pdf": "③",
       "computed": [],
-      "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
-        "descriptiveAttributes": 4,
+        "descriptiveAttributes": 0,
         "regionScopedTextRows": 0
       }
     },
@@ -301,7 +522,75 @@
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
-        "descriptiveAttributes": 4,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-008",
+      "targetName": "국제 이니셔티브",
+      "pdf": "③",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 6,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-012",
+      "targetName": "PPP 사업",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-013",
+      "targetName": "지역 투자 특례",
+      "pdf": "③",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-016",
+      "targetName": "재생에너지 지역계획",
+      "pdf": "③",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 63,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
         "regionScopedTextRows": 0
       }
     },
@@ -310,17 +599,427 @@
       "targetName": "지역 발전가격·지원",
       "pdf": "③",
       "computed": [],
-      "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
-        "descriptiveAttributes": 6,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-022",
+      "targetName": "탄소시장 대상시설",
+      "pdf": "③",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-024",
+      "targetName": "REDD+ 사업",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "C-025",
+      "targetName": "탄소크레딧 사업",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-012",
+      "targetName": "외국기업 진출",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 22,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-014",
+      "targetName": "EDCF 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 26,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-015",
+      "targetName": "한국 ODA 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 45,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-016",
+      "targetName": "부처·지자체 ODA",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 14,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-017",
+      "targetName": "사업 입찰·공모",
+      "pdf": "③",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 4,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-018",
+      "targetName": "적응기금 사업",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-019",
+      "targetName": "기술지원 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 2,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-020",
+      "targetName": "GCF 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 11,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-021",
+      "targetName": "국제기구·MDB 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 53,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-022",
+      "targetName": "MDB·DFI 금융",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 12,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-023",
+      "targetName": "기후기금 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 15,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-025",
+      "targetName": "민간 인프라 사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 54,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "D-026",
+      "targetName": "보증 지원사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 8,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-001",
+      "targetName": "CTCN 참여기관",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 1,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-002",
+      "targetName": "DNA 협력창구",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 1,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-004",
+      "targetName": "국제기구 사무소",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-005",
+      "targetName": "대학·연구기관·NGO",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-006",
+      "targetName": "현지 투자자 네트워크",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-018",
+      "targetName": "한국 기업 진출",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-019",
+      "targetName": "한국 기관 사무소",
+      "pdf": "②",
+      "computed": [],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 0,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
+        "regionScopedTextRows": 0
+      }
+    },
+    {
+      "elementId": "E-020",
+      "targetName": "한국 지원사업",
+      "pdf": "②",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "evidence": {
+        "regionKeys": 3,
+        "coordinateRows": 0,
+        "observationProvinces": 0,
+        "entityProvinces": 0,
+        "descriptiveAttributes": 0,
         "regionScopedTextRows": 0
       }
     }
   ],
-  "changed": true
+  "changed": false
 }

@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-009",
-  "entityCount": 182,
+  "entityCount": 19,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 208,
+  "indicatorCount": 183,
   "indicators": [
     {
       "axisGroupKey": "measure-4a5616b7929f|—",
@@ -255,26 +255,6 @@
         "sourceRow": 146,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-7562ed619cab|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "시행 연도 · effective_year_climatelaws",
-      "indicatorId": "C-009_effective_year_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7562ed619cab",
-        "labelKo": "시행 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7562ed619cab|일자||C-009_effective_year_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "시행 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-7562ed619cab|일자",
@@ -720,26 +700,6 @@
     },
     {
       "axisGroupKey": "measure-7562ed619cab|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "시행 연도 · effective_year_faolex_fao",
-      "indicatorId": "C-009_effective_year_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7562ed619cab",
-        "labelKo": "시행 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7562ed619cab|일자||C-009_effective_year_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "시행 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7562ed619cab|일자",
       "dimensionLabels": {
         "category": "환경보호법",
         "detail": "시행(발효)일",
@@ -771,26 +731,6 @@
         "sourceRow": 47,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-7562ed619cab|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "시행 연도 · effective_year_vanban_chinhphu",
-      "indicatorId": "C-009_effective_year_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7562ed619cab",
-        "labelKo": "시행 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7562ed619cab|일자||C-009_effective_year_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "시행 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-ec822543f208|—",
@@ -1447,6 +1387,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-23f241e9d5f0|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기후 법제도 현황",
+      "indicatorId": "C-009_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-23f241e9d5f0",
+        "labelKo": "기후 법제도 현황",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-23f241e9d5f0|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-009_law",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 법제도 현황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-849fd1c21589|—",
       "dimensionLabels": {
         "category": "개정 이력 Nghị định 243/2026/NĐ-CP",
@@ -1479,66 +1439,6 @@
         "sourceRow": 186,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_climatelaws",
-      "indicatorId": "C-009_law_name_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-009_law_name_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_danang",
-      "indicatorId": "C-009_law_name_danang",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-009_law_name_danang",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_datafiles_chinhphu",
-      "indicatorId": "C-009_law_name_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-009_law_name_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
@@ -1995,46 +1895,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-f46f228a73bc|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명",
-      "indicatorId": "C-009_law_name_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f46f228a73bc",
-        "labelKo": "법령명",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f46f228a73bc|일자||C-009_law_name_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_faolex_fao_2",
-      "indicatorId": "C-009_law_name_faolex_fao_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-009_law_name_faolex_fao_2",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
       "dimensionLabels": {
         "category": "환경보호법",
@@ -2067,166 +1927,6 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_vanban_chinhphu",
-      "indicatorId": "C-009_law_name_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-009_law_name_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-aa10ec88cad6|상태",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상태(시행중/폐지/계류) · law_status_climatelaws",
-      "indicatorId": "C-009_law_status_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-aa10ec88cad6",
-        "labelKo": "상태(시행중/폐지/계류)",
-        "unit": "상태",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-aa10ec88cad6|상태||C-009_law_status_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "상태(시행중/폐지/계류)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-aa10ec88cad6|상태",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상태(시행중/폐지/계류) · law_status_faolex_fao",
-      "indicatorId": "C-009_law_status_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-aa10ec88cad6",
-        "labelKo": "상태(시행중/폐지/계류)",
-        "unit": "상태",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-aa10ec88cad6|상태||C-009_law_status_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "상태(시행중/폐지/계류)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-aa10ec88cad6|상태",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상태(시행중/폐지/계류) · law_status_vanban_chinhphu",
-      "indicatorId": "C-009_law_status_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-aa10ec88cad6",
-        "labelKo": "상태(시행중/폐지/계류)",
-        "unit": "상태",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-aa10ec88cad6|상태||C-009_law_status_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "상태(시행중/폐지/계류)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5ef7762cc86d|위계",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "유형(법률/시행령/규제/인센티브) · law_type_climatelaws",
-      "indicatorId": "C-009_law_type_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5ef7762cc86d",
-        "labelKo": "유형(법률/시행령/규제/인센티브)",
-        "unit": "위계",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-5ef7762cc86d|위계||C-009_law_type_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "유형(법률/시행령/규제/인센티브)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5ef7762cc86d|위계",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "유형(법률/시행령/규제/인센티브) · law_type_faolex_fao",
-      "indicatorId": "C-009_law_type_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5ef7762cc86d",
-        "labelKo": "유형(법률/시행령/규제/인센티브)",
-        "unit": "위계",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-5ef7762cc86d|위계||C-009_law_type_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "유형(법률/시행령/규제/인센티브)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5ef7762cc86d|위계",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "유형(법률/시행령/규제/인센티브) · law_type_vanban_chinhphu",
-      "indicatorId": "C-009_law_type_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5ef7762cc86d",
-        "labelKo": "유형(법률/시행령/규제/인센티브)",
-        "unit": "위계",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-5ef7762cc86d|위계||C-009_law_type_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "유형(법률/시행령/규제/인센티브)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a95e34aff1b3|부처",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주관 부처 · lead_ministry_climatelaws",
-      "indicatorId": "C-009_lead_ministry_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a95e34aff1b3",
-        "labelKo": "주관 부처",
-        "unit": "부처",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a95e34aff1b3|부처||C-009_lead_ministry_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "주관 부처",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-1b3f8a0ff25a|—",
@@ -2671,26 +2371,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-a95e34aff1b3|부처",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주관 부처 · lead_ministry_faolex_fao",
-      "indicatorId": "C-009_lead_ministry_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a95e34aff1b3",
-        "labelKo": "주관 부처",
-        "unit": "부처",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a95e34aff1b3|부처||C-009_lead_ministry_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "주관 부처",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-1b3f8a0ff25a|—",
       "dimensionLabels": {
         "category": "환경보호법",
@@ -2723,26 +2403,6 @@
         "sourceRow": 75,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-a95e34aff1b3|부처",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주관 부처 · lead_ministry_vanban_chinhphu",
-      "indicatorId": "C-009_lead_ministry_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a95e34aff1b3",
-        "labelKo": "주관 부처",
-        "unit": "부처",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a95e34aff1b3|부처||C-009_lead_ministry_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "주관 부처",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-9b42f1c960d4|일자",
@@ -4771,66 +4431,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_climatelaws",
-      "indicatorId": "C-009_source_link_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-009_source_link_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_climatepolicydatabase",
-      "indicatorId": "C-009_source_link_climatepolicydatabase",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-009_source_link_climatepolicydatabase",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_datafiles_chinhphu",
-      "indicatorId": "C-009_source_link_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-009_source_link_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "Decision 13/2024/QĐ-TTg",
@@ -5237,26 +4837,6 @@
         "sourceRow": 160,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_vanban_chinhphu",
-      "indicatorId": "C-009_source_link_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-009_source_link_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-1ac6eff2f80a|—",
@@ -5735,46 +5315,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-0359b90fd5da|분야",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 분야(감축/적응/에너지/산업) · 대상 분야(감축/적응/에너지/산업) [분야]",
-      "indicatorId": "C-009_target_sector_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-0359b90fd5da",
-        "labelKo": "대상 분야(감축/적응/에너지/산업)",
-        "unit": "분야",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-0359b90fd5da|분야||C-009_target_sector_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 분야(감축/적응/에너지/산업)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7121e9184c97|개소",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 분야(감축/적응/에너지/산업) · 대상 분야(감축/적응/에너지/산업) [개소]",
-      "indicatorId": "C-009_target_sector_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7121e9184c97",
-        "labelKo": "대상 분야(감축/적응/에너지/산업)",
-        "unit": "개소",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7121e9184c97|개소||C-009_target_sector_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 분야(감축/적응/에너지/산업)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-1d76abf8c8d5|—",
       "dimensionLabels": {
         "category": "Decision 01/2022/QĐ-TTg",
@@ -6217,26 +5757,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-2e25fae6e2a0|%(2030)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 분야(감축/적응/에너지/산업) · 대상 분야(감축/적응/에너지/산업) [%(2030)]",
-      "indicatorId": "C-009_target_sector_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-2e25fae6e2a0",
-        "labelKo": "대상 분야(감축/적응/에너지/산업)",
-        "unit": "%(2030)",
-        "unitFamily": "percent"
-      },
-      "seriesKey": "measure-2e25fae6e2a0|%(2030)||C-009_target_sector_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 분야(감축/적응/에너지/산업)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-1d76abf8c8d5|—",
       "dimensionLabels": {
         "category": "환경보호법",
@@ -6269,26 +5789,6 @@
         "sourceRow": 33,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-cd0582b8806c|GW(2030)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 분야(감축/적응/에너지/산업) · 대상 분야(감축/적응/에너지/산업) [GW(2030)]",
-      "indicatorId": "C-009_target_sector_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-cd0582b8806c",
-        "labelKo": "대상 분야(감축/적응/에너지/산업)",
-        "unit": "GW(2030)",
-        "unitFamily": "capacity"
-      },
-      "seriesKey": "measure-cd0582b8806c|GW(2030)||C-009_target_sector_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 분야(감축/적응/에너지/산업)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-8882c057aebb|—",
@@ -6849,43 +6349,19 @@
       "unitFamily": "other"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-23f241e9d5f0",
+      "labelKo": "기후 법제도 현황",
+      "recordCount": 0,
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    },
+    {
       "indicatorCount": 14,
       "key": "measure-1d76abf8c8d5",
       "labelKo": "대상 분야 (감축 / 적응 / 에너지 / 산업)",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-2e25fae6e2a0",
-      "labelKo": "대상 분야(감축/적응/에너지/산업)",
-      "recordCount": 0,
-      "unit": "%(2030)",
-      "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-cd0582b8806c",
-      "labelKo": "대상 분야(감축/적응/에너지/산업)",
-      "recordCount": 0,
-      "unit": "GW(2030)",
-      "unitFamily": "capacity"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-7121e9184c97",
-      "labelKo": "대상 분야(감축/적응/에너지/산업)",
-      "recordCount": 0,
-      "unit": "개소",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-0359b90fd5da",
-      "labelKo": "대상 분야(감축/적응/에너지/산업)",
-      "recordCount": 0,
-      "unit": "분야",
       "unitFamily": "text"
     },
     {
@@ -6905,19 +6381,11 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 19,
+      "indicatorCount": 14,
       "key": "measure-4a4fa1d911b8",
       "labelKo": "법령명",
       "recordCount": 0,
       "unit": "법령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-f46f228a73bc",
-      "labelKo": "법령명",
-      "recordCount": 0,
-      "unit": "일자",
       "unitFamily": "text"
     },
     {
@@ -6929,15 +6397,7 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 3,
-      "key": "measure-aa10ec88cad6",
-      "labelKo": "상태(시행중/폐지/계류)",
-      "recordCount": 0,
-      "unit": "상태",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 17,
+      "indicatorCount": 14,
       "key": "measure-7562ed619cab",
       "labelKo": "시행 연도",
       "recordCount": 0,
@@ -6953,27 +6413,11 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 4,
-      "key": "measure-92ed3a9b9108",
-      "labelKo": "원본 링크(URL)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 14,
       "key": "measure-8882c057aebb",
       "labelKo": "유형 (법률 / 시행령 / 규제 / 인센티브)",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-5ef7762cc86d",
-      "labelKo": "유형(법률/시행령/규제/인센티브)",
-      "recordCount": 0,
-      "unit": "위계",
       "unitFamily": "text"
     },
     {
@@ -7062,14 +6506,6 @@
       "labelKo": "주관 부처",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-a95e34aff1b3",
-      "labelKo": "주관 부처",
-      "recordCount": 0,
-      "unit": "부처",
       "unitFamily": "text"
     },
     {

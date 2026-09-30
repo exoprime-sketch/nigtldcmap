@@ -219,7 +219,9 @@ export async function loadPublicOverviewV161(countryIso3: string): Promise<Publi
       downloadableElementCount: manifest.downloadableElementCount,
       mapLayerCount: activeLayers.length,
       mapElementIds: activeLayers.map((layer) => layer.elementId),
-      releaseDate: publicReleaseDateV128(manifest.generatedAt),
+      // V162: the date the source arrived, per country; the build time only when a
+      // tree predates the provenance field.
+      releaseDate: publicReleaseDateV128(manifest.provenance?.sourceDeliveredAt || manifest.generatedAt),
     };
   })();
   overviewCacheV161.set(iso3, promise);

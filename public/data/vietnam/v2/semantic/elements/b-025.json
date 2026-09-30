@@ -7,12 +7,23 @@
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "개체_구분_Basin_Country",
+      "labelKo": "개체 구분(Basin／Country)",
+      "valueCount": 4,
+      "values": [
+        "Basin",
+        "Basin(국가 문헌)",
+        "Country",
+        "Country(국가 문헌)"
+      ]
     }
   ],
   "elementId": "B-025",
-  "entityCount": 9,
+  "entityCount": 120,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 21,
+  "indicatorCount": 23,
   "indicators": [
     {
       "axisGroupKey": "measure-46c98029faf3|km²",
@@ -89,6 +100,30 @@
         "sourceRow": 20,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-aeb1de1dc80d|km²",
+      "dimensionLabels": {
+        "detail": "국가 문헌(보조)"
+      },
+      "dimensions": {
+        "detail": "국가 문헌(보조)"
+      },
+      "displayLabel": "전국 유역면적 — 국가 문헌(보조)",
+      "indicatorId": "B-025_basin_area_national_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aeb1de1dc80d",
+        "labelKo": "전국 유역면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-aeb1de1dc80d|km²|detail=국가 문헌(보조)|B-025_basin_area_national_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "전국 유역면적 — 국가 문헌(보조)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-e6ec7a61b431|km²",
@@ -635,9 +670,41 @@
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-35af30a36ab2|km²",
+      "dimensionLabels": {
+        "detail": "국가 문헌 유역표(보조)"
+      },
+      "dimensions": {
+        "detail": "국가 문헌 유역표(보조)"
+      },
+      "displayLabel": "유역 면적 — 국가 문헌 유역표(보조)",
+      "indicatorId": "B-025_river_basin_national_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-35af30a36ab2",
+        "labelKo": "유역 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-35af30a36ab2|km²|detail=국가 문헌 유역표(보조)|B-025_river_basin_national_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "유역 면적 — 국가 문헌 유역표(보조)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-35af30a36ab2",
+      "labelKo": "유역 면적",
+      "recordCount": 0,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
     {
       "indicatorCount": 1,
       "key": "measure-46c98029faf3",
@@ -666,6 +733,14 @@
       "indicatorCount": 8,
       "key": "measure-d4d13686f27c",
       "labelKo": "유역 총면적(국경 포함)",
+      "recordCount": 0,
+      "unit": "km²",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-aeb1de1dc80d",
+      "labelKo": "전국 유역면적",
       "recordCount": 0,
       "unit": "km²",
       "unitFamily": "area"

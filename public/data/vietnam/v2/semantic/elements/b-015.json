@@ -3,16 +3,12 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 8,
+      "valueCount": 4,
       "values": [
-        "2020-11-17 제정",
-        "2022-01-07",
-        "2026-03-03",
-        "2026-06-29 개장, 시범단계 2028년말",
-        "시멘트 공장",
-        "철강 사업장",
-        "합계(3개 부문)",
-        "화력발전소"
+        "발전(화력)",
+        "시멘트",
+        "철강",
+        "합계"
       ]
     },
     {
@@ -30,7 +26,7 @@
   "elementId": "B-015",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 14,
+  "indicatorCount": 19,
   "indicators": [
     {
       "axisGroupKey": "measure-ea2218b800d5|tCO₂e",
@@ -291,6 +287,102 @@
       }
     },
     {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "시멘트"
+      },
+      "dimensions": {
+        "detail": "시멘트"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 시멘트",
+      "indicatorId": "B-015_covered_facilities_cement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=시멘트|B-015_covered_facilities_cement",
+      "sourceCaveat": null,
+      "sourceLabel": "ETS 대상 시설 수 — 시멘트",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "발전(화력)"
+      },
+      "dimensions": {
+        "detail": "발전(화력)"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 발전(화력)",
+      "indicatorId": "B-015_covered_facilities_power",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=발전(화력)|B-015_covered_facilities_power",
+      "sourceCaveat": null,
+      "sourceLabel": "ETS 대상 시설 수 — 발전(화력)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "철강"
+      },
+      "dimensions": {
+        "detail": "철강"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 철강",
+      "indicatorId": "B-015_covered_facilities_steel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=철강|B-015_covered_facilities_steel",
+      "sourceCaveat": null,
+      "sourceLabel": "ETS 대상 시설 수 — 철강",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-e7c7cd02a63b|개소",
+      "dimensionLabels": {
+        "detail": "합계"
+      },
+      "dimensions": {
+        "detail": "합계"
+      },
+      "displayLabel": "ETS 대상 시설 수 — 합계",
+      "indicatorId": "B-015_covered_facilities_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e7c7cd02a63b",
+        "labelKo": "ETS 대상 시설 수",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-e7c7cd02a63b|개소|detail=합계|B-015_covered_facilities_total",
+      "sourceCaveat": null,
+      "sourceLabel": "ETS 대상 시설 수 — 합계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-50b876c9f6ac|상태",
       "dimensionLabels": {},
       "dimensions": {},
@@ -315,6 +407,26 @@
         "sourceRow": 15,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-b6a4ec57b6e4|상태",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "국내 배출권거래제(ETS) 운영 상태(연도별 주요 단계)",
+      "indicatorId": "B-015_ets_status",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b6a4ec57b6e4",
+        "labelKo": "국내 배출권거래제(ETS) 운영 상태(연도별 주요 단계)",
+        "unit": "상태",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b6a4ec57b6e4|상태||B-015_ets_status",
+      "sourceCaveat": null,
+      "sourceLabel": "국내 배출권거래제(ETS) 운영 상태(연도별 주요 단계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-bd2027f50da8|상태",
@@ -439,7 +551,7 @@
   ],
   "measures": [
     {
-      "indicatorCount": 4,
+      "indicatorCount": 8,
       "key": "measure-e7c7cd02a63b",
       "labelKo": "ETS 대상 시설 수",
       "recordCount": 4,
@@ -458,7 +570,15 @@
       "indicatorCount": 4,
       "key": "measure-bd2027f50da8",
       "labelKo": "국내 배출권거래제(ETS) 운영 상태",
-      "recordCount": 4,
+      "recordCount": 0,
+      "unit": "상태",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-b6a4ec57b6e4",
+      "labelKo": "국내 배출권거래제(ETS) 운영 상태(연도별 주요 단계)",
+      "recordCount": 3,
       "unit": "상태",
       "unitFamily": "text"
     },
@@ -495,7 +615,7 @@
       "unitFamily": "text"
     }
   ],
-  "observationCount": 12,
+  "observationCount": 11,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

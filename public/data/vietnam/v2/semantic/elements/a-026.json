@@ -3,30 +3,36 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 7,
+      "valueCount": 12,
       "values": [
+        "건물 수",
+        "명칭 결측률",
         "속성 필드 수",
         "수록 신뢰도 하한",
         "신뢰도 0.80 이상 피처 수",
+        "용도 결측률",
         "좌표계",
         "총 건물바닥면적",
+        "총 바닥면적",
         "평균 건물바닥면적",
+        "평균 바닥면적",
         "피처 수"
       ]
     },
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 2,
       "values": [
-        "2023"
+        "2023",
+        "2026"
       ]
     }
   ],
   "elementId": "A-026",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 12,
+  "indicatorCount": 19,
   "indicators": [
     {
       "axisGroupKey": "measure-3b05385433c5|score",
@@ -37,7 +43,7 @@
         "category": "수록 신뢰도 하한"
       },
       "displayLabel": "건물 풋프린트 · 수록 신뢰도 하한",
-      "indicatorId": "A-026_building_footprint_confidence_min",
+      "indicatorId": "A-026_aux_gob_confidence_min",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-3b05385433c5",
@@ -45,7 +51,7 @@
         "unit": "score",
         "unitFamily": "score"
       },
-      "seriesKey": "measure-3b05385433c5|score|category=수록 신뢰도 하한|A-026_building_footprint_confidence_min",
+      "seriesKey": "measure-3b05385433c5|score|category=수록 신뢰도 하한|A-026_aux_gob_confidence_min",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 수록 신뢰도 하한",
       "sourceLabelEn": null,
@@ -61,7 +67,7 @@
         "category": "피처 수"
       },
       "displayLabel": "건물 풋프린트 · 피처 수",
-      "indicatorId": "A-026_building_footprint_count",
+      "indicatorId": "A-026_aux_gob_count",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-a8518d9b1c64",
@@ -69,7 +75,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-a8518d9b1c64|건|category=피처 수|A-026_building_footprint_count",
+      "seriesKey": "measure-a8518d9b1c64|건|category=피처 수|A-026_aux_gob_count",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 피처 수",
       "sourceLabelEn": null,
@@ -85,7 +91,7 @@
         "category": "신뢰도 0.80 이상 피처 수"
       },
       "displayLabel": "건물 풋프린트 · 신뢰도 0.80 이상 피처 수",
-      "indicatorId": "A-026_building_footprint_count_conf_ge_080",
+      "indicatorId": "A-026_aux_gob_count_conf_ge_080",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-a8518d9b1c64",
@@ -93,7 +99,7 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-a8518d9b1c64|건|category=신뢰도 0.80 이상 피처 수|A-026_building_footprint_count_conf_ge_080",
+      "seriesKey": "measure-a8518d9b1c64|건|category=신뢰도 0.80 이상 피처 수|A-026_aux_gob_count_conf_ge_080",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 신뢰도 0.80 이상 피처 수",
       "sourceLabelEn": null,
@@ -109,7 +115,7 @@
         "category": "좌표계"
       },
       "displayLabel": "건물 풋프린트 · 좌표계",
-      "indicatorId": "A-026_building_footprint_crs",
+      "indicatorId": "A-026_aux_gob_crs",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-80b527a8f546",
@@ -117,7 +123,7 @@
         "unit": "EPSG 코드",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-80b527a8f546|EPSG 코드|category=좌표계|A-026_building_footprint_crs",
+      "seriesKey": "measure-80b527a8f546|EPSG 코드|category=좌표계|A-026_aux_gob_crs",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 좌표계",
       "sourceLabelEn": null,
@@ -133,7 +139,7 @@
         "category": "속성 필드 수"
       },
       "displayLabel": "건물 풋프린트 · 속성 필드 수",
-      "indicatorId": "A-026_building_footprint_field_count",
+      "indicatorId": "A-026_aux_gob_field_count",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-781972ab4e75",
@@ -141,7 +147,7 @@
         "unit": "개",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-781972ab4e75|개|category=속성 필드 수|A-026_building_footprint_field_count",
+      "seriesKey": "measure-781972ab4e75|개|category=속성 필드 수|A-026_aux_gob_field_count",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 속성 필드 수",
       "sourceLabelEn": null,
@@ -157,7 +163,7 @@
         "category": "평균 건물바닥면적"
       },
       "displayLabel": "건물 풋프린트 · 평균 건물바닥면적",
-      "indicatorId": "A-026_building_footprint_mean_area",
+      "indicatorId": "A-026_aux_gob_mean_area",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-efb82ef7ad6f",
@@ -165,7 +171,7 @@
         "unit": "m2",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-efb82ef7ad6f|m2|category=평균 건물바닥면적|A-026_building_footprint_mean_area",
+      "seriesKey": "measure-efb82ef7ad6f|m2|category=평균 건물바닥면적|A-026_aux_gob_mean_area",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 평균 건물바닥면적",
       "sourceLabelEn": null,
@@ -181,7 +187,7 @@
         "category": "총 건물바닥면적"
       },
       "displayLabel": "건물 풋프린트 · 총 건물바닥면적",
-      "indicatorId": "A-026_building_footprint_total_area",
+      "indicatorId": "A-026_aux_gob_total_area",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-efb82ef7ad6f",
@@ -189,7 +195,7 @@
         "unit": "m2",
         "unitFamily": "area"
       },
-      "seriesKey": "measure-efb82ef7ad6f|m2|category=총 건물바닥면적|A-026_building_footprint_total_area",
+      "seriesKey": "measure-efb82ef7ad6f|m2|category=총 건물바닥면적|A-026_aux_gob_total_area",
       "sourceCaveat": null,
       "sourceLabel": "건물 풋프린트 · 총 건물바닥면적",
       "sourceLabelEn": null,
@@ -365,6 +371,174 @@
         "sourceRow": 8,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-8c204e462957|건",
+      "dimensionLabels": {
+        "category": "건물 수"
+      },
+      "dimensions": {
+        "category": "건물 수"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 건물 수",
+      "indicatorId": "A-026_osm_building_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8c204e462957",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-8c204e462957|건|category=건물 수|A-026_osm_building_count",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 건물 수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-c4ce80cdd19b|EPSG 코드",
+      "dimensionLabels": {
+        "category": "좌표계"
+      },
+      "dimensions": {
+        "category": "좌표계"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 좌표계",
+      "indicatorId": "A-026_osm_building_crs",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c4ce80cdd19b",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "EPSG 코드",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-c4ce80cdd19b|EPSG 코드|category=좌표계|A-026_osm_building_crs",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 좌표계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-3a707ae8561c|개",
+      "dimensionLabels": {
+        "category": "속성 필드 수"
+      },
+      "dimensions": {
+        "category": "속성 필드 수"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 속성 필드 수",
+      "indicatorId": "A-026_osm_building_field_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3a707ae8561c",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "개",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3a707ae8561c|개|category=속성 필드 수|A-026_osm_building_field_count",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 속성 필드 수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-da199ba72884|m2",
+      "dimensionLabels": {
+        "category": "평균 바닥면적"
+      },
+      "dimensions": {
+        "category": "평균 바닥면적"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 평균 바닥면적",
+      "indicatorId": "A-026_osm_building_mean_area_m2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-da199ba72884",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "m2",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-da199ba72884|m2|category=평균 바닥면적|A-026_osm_building_mean_area_m2",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 평균 바닥면적",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-b0dcbc2f5368|%",
+      "dimensionLabels": {
+        "category": "명칭 결측률"
+      },
+      "dimensions": {
+        "category": "명칭 결측률"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 명칭 결측률",
+      "indicatorId": "A-026_osm_building_null_rate_name",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b0dcbc2f5368",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b0dcbc2f5368|%|category=명칭 결측률|A-026_osm_building_null_rate_name",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 명칭 결측률",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-b0dcbc2f5368|%",
+      "dimensionLabels": {
+        "category": "용도 결측률"
+      },
+      "dimensions": {
+        "category": "용도 결측률"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 용도 결측률",
+      "indicatorId": "A-026_osm_building_null_rate_type",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b0dcbc2f5368",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-b0dcbc2f5368|%|category=용도 결측률|A-026_osm_building_null_rate_type",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 용도 결측률",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-da199ba72884|m2",
+      "dimensionLabels": {
+        "category": "총 바닥면적"
+      },
+      "dimensions": {
+        "category": "총 바닥면적"
+      },
+      "displayLabel": "건물 풋프린트(OSM 참고) · 총 바닥면적",
+      "indicatorId": "A-026_osm_building_total_area_m2",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-da199ba72884",
+        "labelKo": "건물 풋프린트(OSM 참고)",
+        "unit": "m2",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-da199ba72884|m2|category=총 바닥면적|A-026_osm_building_total_area_m2",
+      "sourceCaveat": null,
+      "sourceLabel": "건물 풋프린트(OSM 참고) · 총 바닥면적",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -439,9 +613,49 @@
       "recordCount": 0,
       "unit": "건",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-b0dcbc2f5368",
+      "labelKo": "건물 풋프린트(OSM 참고)",
+      "recordCount": 2,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c4ce80cdd19b",
+      "labelKo": "건물 풋프린트(OSM 참고)",
+      "recordCount": 1,
+      "unit": "EPSG 코드",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-da199ba72884",
+      "labelKo": "건물 풋프린트(OSM 참고)",
+      "recordCount": 2,
+      "unit": "m2",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3a707ae8561c",
+      "labelKo": "건물 풋프린트(OSM 참고)",
+      "recordCount": 1,
+      "unit": "개",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8c204e462957",
+      "labelKo": "건물 풋프린트(OSM 참고)",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 7,
+  "observationCount": 14,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

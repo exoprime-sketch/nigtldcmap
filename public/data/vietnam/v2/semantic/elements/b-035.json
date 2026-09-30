@@ -3,11 +3,9 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 5,
+      "valueCount": 3,
       "values": [
         "목초지",
-        "목초지 비율(농지 대비)",
-        "목초지 비율(육지면적 대비)",
         "수산 이용 내수면 면적",
         "인증 농지"
       ]
@@ -32,6 +30,14 @@
         "자연재생림",
         "정주지(Settlements)",
         "조림지"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
       ]
     },
     {
@@ -116,10 +122,82 @@
     }
   ],
   "elementId": "B-035",
-  "entityCount": 0,
+  "entityCount": 3038,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 41,
+  "indicatorCount": 44,
   "indicators": [
+    {
+      "axisGroupKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "비율(성×연도 개체 목록)"
+      },
+      "dimensions": {
+        "category": "비율(성×연도 개체 목록)"
+      },
+      "displayLabel": "토지피복 기반 면적·비율(성×연도 개체 목록)",
+      "indicatorId": "B-035_lc_adm1_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33a742bae2a7",
+        "labelKo": "토지피복 기반 면적",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)|category=비율(성×연도 개체 목록)|B-035_lc_adm1_year",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 면적·비율(성×연도 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "비율(성×연도 개체 목록) - 2025년 34개 체계"
+      },
+      "dimensions": {
+        "category": "비율(성×연도 개체 목록) - 2025년 34개 체계"
+      },
+      "displayLabel": "토지피복 기반 면적·비율(성×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-035_lc_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33a742bae2a7",
+        "labelKo": "토지피복 기반 면적",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)|category=비율(성×연도 개체 목록) - 2025년 34개 체계|B-035_lc_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 면적·비율(성×연도 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "비율(전국, 성 합계)"
+      },
+      "dimensions": {
+        "category": "비율(전국, 성 합계)"
+      },
+      "displayLabel": "토지피복 기반 면적·비율(전국, 성 합계)",
+      "indicatorId": "B-035_lc_national_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-33a742bae2a7",
+        "labelKo": "토지피복 기반 면적",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-33a742bae2a7|지표별 상이(속성 열 참조)|category=비율(전국, 성 합계)|B-035_lc_national_year",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 면적·비율(전국, 성 합계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-6cc58a4ad1bf|1000 ha",
       "dimensionLabels": {
@@ -1300,7 +1378,7 @@
       "indicatorCount": 1,
       "key": "measure-a6dff20f1447",
       "labelKo": "1인당 경작지 면적",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "ha/cap",
       "unitFamily": "area"
     },
@@ -1308,7 +1386,7 @@
       "indicatorCount": 1,
       "key": "measure-9139f0cab73e",
       "labelKo": "가경지 비율(농지 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1316,7 +1394,7 @@
       "indicatorCount": 1,
       "key": "measure-899e90e642b5",
       "labelKo": "경작지 비율(농지 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1324,7 +1402,7 @@
       "indicatorCount": 1,
       "key": "measure-348afe547071",
       "labelKo": "경작지 비율(육지면적 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1332,7 +1410,7 @@
       "indicatorCount": 1,
       "key": "measure-a739c3d98df3",
       "labelKo": "관개 정비면적 비율(경작지 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1348,7 +1426,7 @@
       "indicatorCount": 1,
       "key": "measure-c1b2a46c5be3",
       "labelKo": "농지 단위면적당 농업생산액",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "USD_PPP/ha",
       "unitFamily": "area"
     },
@@ -1356,7 +1434,7 @@
       "indicatorCount": 1,
       "key": "measure-df239d17fd03",
       "labelKo": "농지 비율(육지면적 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1364,7 +1442,7 @@
       "indicatorCount": 1,
       "key": "measure-e3b498437c70",
       "labelKo": "산림 비율(육지면적 대비)",
-      "recordCount": 35,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1372,7 +1450,7 @@
       "indicatorCount": 1,
       "key": "measure-84f0524edc52",
       "labelKo": "산림 탄소저장량(FAO)",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "백만 톤 C",
       "unitFamily": "other"
     },
@@ -1388,7 +1466,7 @@
       "indicatorCount": 2,
       "key": "measure-56417bcafa62",
       "labelKo": "영구 초지",
-      "recordCount": 128,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1396,7 +1474,7 @@
       "indicatorCount": 1,
       "key": "measure-bf751bc8d2fb",
       "labelKo": "영년생 작물 비율(농지 대비)",
-      "recordCount": 64,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1412,7 +1490,7 @@
       "indicatorCount": 1,
       "key": "measure-42fcaa1c42d0",
       "labelKo": "유기농 농지 비율(농지 대비)",
-      "recordCount": 20,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1484,7 +1562,7 @@
       "indicatorCount": 1,
       "key": "measure-5df309b3dea3",
       "labelKo": "자연재생림 비율(산림 대비)",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1492,7 +1570,7 @@
       "indicatorCount": 1,
       "key": "measure-d7653481c93d",
       "labelKo": "조림지 비율(산림 대비)",
-      "recordCount": 36,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1503,9 +1581,17 @@
       "recordCount": 756,
       "unit": "1000 ha",
       "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-33a742bae2a7",
+      "labelKo": "토지피복 기반 면적",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
     }
   ],
-  "observationCount": 1764,
+  "observationCount": 961,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

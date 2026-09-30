@@ -974,6 +974,18 @@ const RECORD_NOTE_FILE_NAME_V158 = /^[A-E]-\d{3}_.+\.(?:pdf|csv|xlsx?|json|md|tx
  * 부여하지 않음(억지 매핑 금지 원칙).") - a note on the coding, not on the record.
  */
 const RECORD_NOTE_CODING_MEMO_V158 = /억지\s*매핑|코드를\s*부여하지\s*않|tech_ids?\b/u;
+/**
+ * V162: memo sentences the 2026-09-30 delivery added to record notes - a
+ * sentence that cites a delivered working file (`C-013_…_2026-07-28.csv`의 …
+ * 행 기준) or a correction of the field survey's own sheet (현지조사 원본 …
+ * 반영 / … 오기). The note's other sentences stay.
+ */
+const RECORD_NOTE_MEMO_SENTENCE_V162 =
+  /`[^`]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)`|(?:^|[\s(])[A-E]-\d{3}_[^\s]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)\b|현지조사\s*원본/iu;
+/** A field-survey citation written inside a sentence: "출처: 현지조사(Field Survey Items_…, 현지 컨설턴트)". */
+const RECORD_NOTE_SURVEY_CITATION_V162 = /\s*출처\s*:\s*현지조사\s*\([^)]*(?:Items_|컨설턴트|_v\d)[^)]*\)/gu;
+/** "(현지조사 결과)" appended to a statement: the supplier's attribution tag. */
+const RECORD_NOTE_SURVEY_TAG_V162 = /\s*\(현지조사\s*결과\)/gu;
 const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
 
 /**
@@ -985,12 +997,18 @@ const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
 export function publicRecordNoteV161(value: unknown): string | null {
   const normalized = normalizeTextV126(value);
   if (normalized === null) return null;
-  const withoutPointer = normalized.replace(RECORD_NOTE_FILE_POINTER_V158, "");
+  const withoutPointer = normalized
+    .replace(RECORD_NOTE_FILE_POINTER_V158, "")
+    .replace(RECORD_NOTE_SURVEY_CITATION_V162, "")
+    .replace(RECORD_NOTE_SURVEY_TAG_V162, "")
+    // A removed citation can leave its " · " separator at either end.
+    .replace(/^\s*·\s*|\s*·\s*$/gu, "");
   // A note without a coding memo keeps its own spacing.
-  const withoutMemo = RECORD_NOTE_CODING_MEMO_V158.test(withoutPointer)
+  const isMemo = (sentence: string) => RECORD_NOTE_CODING_MEMO_V158.test(sentence) || RECORD_NOTE_MEMO_SENTENCE_V162.test(sentence);
+  const withoutMemo = isMemo(withoutPointer)
     ? withoutPointer
         .split(RECORD_NOTE_SENTENCE_V158)
-        .filter((sentence) => !RECORD_NOTE_CODING_MEMO_V158.test(sentence))
+        .filter((sentence) => !isMemo(sentence))
         .join(" ")
         .trim()
     : withoutPointer;

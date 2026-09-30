@@ -1,16 +1,16 @@
 {
   "schemaVersion": "v156",
   "generator": "scripts/v156/source-structure-v156.py",
-  "generatedAt": "2026-09-30T07:11:51Z",
+  "generatedAt": "2026-09-30T10:23:53Z",
   "workbooks": "C:\\Users\\user\\Documents\\nigt-wt-d3\\_source\\vietnam\\v162\\workbooks",
   "publishedCatalog": "C:\\Users\\user\\Documents\\nigt-wt-d3\\public\\data\\vietnam\\v2\\catalog.json",
   "totals": {
     "deliveredElements": 145,
     "publishedElements": 152,
     "notDelivered": 7,
-    "shapeChanged": 23,
-    "observationRowsDropped": 11,
-    "entityRowsAppeared": 10,
+    "shapeChanged": 6,
+    "observationRowsDropped": 6,
+    "entityRowsAppeared": 0,
     "withErrors": 0,
     "withWarnings": 89
   },
@@ -556,12 +556,12 @@
       "elementId": "A-013",
       "file": "A-013_Climate Watch NDC-SDG linkage.xlsx",
       "shape": {
-        "before": "mixed",
+        "before": "entity",
         "after": "entity",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 1,
+        "published": 0,
         "delivered": 0
       },
       "entityRows": {
@@ -952,12 +952,12 @@
       "elementId": "A-023",
       "file": "A-023_발전소[위치, 용량].xlsx",
       "shape": {
-        "before": "mixed",
+        "before": "entity",
         "after": "entity",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 1,
+        "published": 0,
         "delivered": 0
       },
       "entityRows": {
@@ -1049,7 +1049,7 @@
         "delivered": 1
       },
       "entityRows": {
-        "published": 5,
+        "published": 1,
         "delivered": 1
       },
       "attributeLabels": [
@@ -1090,7 +1090,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 7,
+        "published": 14,
         "delivered": 14
       },
       "entityRows": {
@@ -1134,7 +1134,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 35,
+        "published": 61,
         "delivered": 61
       },
       "entityRows": {
@@ -1175,16 +1175,16 @@
       "elementId": "A-028",
       "file": "A-028_해안 인프라; 수자원 인프라.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 19,
+        "published": 23,
         "delivered": 23
       },
       "entityRows": {
-        "published": 0,
+        "published": 7014,
         "delivered": 7014
       },
       "attributeLabels": [
@@ -1230,7 +1230,7 @@
         "delivered": 1
       },
       "entityRows": {
-        "published": 19,
+        "published": 30,
         "delivered": 30
       },
       "attributeLabels": [
@@ -1270,7 +1270,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 16,
+        "published": 148,
         "delivered": 148
       },
       "entityRows": {
@@ -1482,16 +1482,16 @@
       "elementId": "B-002",
       "file": "B-002_기후대(Climate zone).xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 19,
+        "published": 64,
         "delivered": 64
       },
       "entityRows": {
-        "published": 0,
+        "published": 1427,
         "delivered": 1427
       },
       "attributeLabels": [
@@ -1554,7 +1554,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 8371,
+        "published": 12621,
         "delivered": 12621
       },
       "attributeLabels": [
@@ -1610,7 +1610,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 33232,
+        "published": 91596,
         "delivered": 91596
       },
       "attributeLabels": [
@@ -1678,16 +1678,16 @@
       "elementId": "B-005",
       "file": "B-005_가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분].xlsx",
       "shape": {
-        "before": "entity",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 0,
+        "published": 35,
         "delivered": 35
       },
       "entityRows": {
-        "published": 31688,
+        "published": 54692,
         "delivered": 54692
       },
       "attributeLabels": [
@@ -1758,7 +1758,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 32608,
+        "published": 80071,
         "delivered": 80071
       },
       "attributeLabels": [
@@ -1832,7 +1832,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 32370,
+        "published": 80070,
         "delivered": 80070
       },
       "attributeLabels": [
@@ -1957,7 +1957,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 435,
+        "published": 255,
         "delivered": 255
       },
       "entityRows": {
@@ -1998,7 +1998,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 12,
+        "published": 44,
         "delivered": 44
       },
       "entityRows": {
@@ -2173,16 +2173,16 @@
       "elementId": "B-014",
       "file": "B-014_CCDR 탄소세 시뮬레이션 결과[배출감소율, GDP 영향, 세수 효과].xlsx",
       "shape": {
-        "before": "observation",
+        "before": "entity",
         "after": "entity",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 13,
+        "published": 0,
         "delivered": 0
       },
       "entityRows": {
-        "published": 0,
+        "published": 12,
         "delivered": 12
       },
       "attributeLabels": [
@@ -2230,7 +2230,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 12,
+        "published": 11,
         "delivered": 11
       },
       "entityRows": {
@@ -2316,7 +2316,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 2032,
+        "published": 4867,
         "delivered": 4867
       },
       "attributeLabels": [
@@ -2606,7 +2606,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 11,
+        "published": 382,
         "delivered": 382
       },
       "attributeLabels": [
@@ -2653,16 +2653,16 @@
       "elementId": "B-024",
       "file": "B-024_농업 용수 비중.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 205,
+        "published": 68,
         "delivered": 68
       },
       "entityRows": {
-        "published": 0,
+        "published": 97,
         "delivered": 194
       },
       "attributeLabels": [
@@ -2724,7 +2724,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 9,
+        "published": 120,
         "delivered": 120
       },
       "attributeLabels": [
@@ -2782,7 +2782,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 74,
+        "published": 165,
         "delivered": 165
       },
       "attributeLabels": [
@@ -2892,7 +2892,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 16,
+        "published": 25,
         "delivered": 25
       },
       "attributeLabels": [
@@ -2949,7 +2949,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 231,
+        "published": 483,
         "delivered": 483
       },
       "attributeLabels": [
@@ -3013,7 +3013,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 100,
+        "published": 134,
         "delivered": 134
       },
       "attributeLabels": [
@@ -3072,7 +3072,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 71,
+        "published": 105,
         "delivered": 105
       },
       "attributeLabels": [
@@ -3125,11 +3125,11 @@
         "changed": true
       },
       "observationRows": {
-        "published": 63,
+        "published": 126,
         "delivered": 0
       },
       "entityRows": {
-        "published": 68,
+        "published": 166,
         "delivered": 166
       },
       "attributeLabels": [
@@ -3185,7 +3185,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 2056,
+        "published": 4784,
         "delivered": 4784
       },
       "attributeLabels": [
@@ -3237,11 +3237,11 @@
         "changed": true
       },
       "observationRows": {
-        "published": 362,
+        "published": 299,
         "delivered": 0
       },
       "entityRows": {
-        "published": 246,
+        "published": 1251,
         "delivered": 1251
       },
       "attributeLabels": [
@@ -3294,16 +3294,16 @@
       "elementId": "B-035",
       "file": "B-035_LULUCF 관련 면적 변화.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 1764,
+        "published": 961,
         "delivered": 961
       },
       "entityRows": {
-        "published": 0,
+        "published": 3038,
         "delivered": 3038
       },
       "attributeLabels": [
@@ -3358,16 +3358,16 @@
       "elementId": "B-036",
       "file": "B-036_토지이용 변화율.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
         "published": 48,
         "delivered": 48
       },
       "entityRows": {
-        "published": 0,
+        "published": 392,
         "delivered": 392
       },
       "attributeLabels": [
@@ -3436,7 +3436,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 747,
+        "published": 781,
         "delivered": 781
       },
       "attributeLabels": [
@@ -3496,7 +3496,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 190,
+        "published": 399,
         "delivered": 399
       },
       "entityRows": {
@@ -3541,7 +3541,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 228,
+        "published": 263,
         "delivered": 263
       },
       "attributeLabels": [
@@ -3601,7 +3601,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 165,
+        "published": 199,
         "delivered": 199
       },
       "attributeLabels": [
@@ -3667,7 +3667,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 113,
+        "published": 147,
         "delivered": 147
       },
       "attributeLabels": [
@@ -3735,7 +3735,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 205,
+        "published": 533,
         "delivered": 533
       },
       "attributeLabels": [
@@ -3794,7 +3794,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 274,
+        "published": 128,
         "delivered": 128
       },
       "entityRows": {
@@ -3830,16 +3830,16 @@
       "elementId": "B-044",
       "file": "B-044_광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석].xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 26,
+        "published": 2,
         "delivered": 2
       },
       "entityRows": {
-        "published": 0,
+        "published": 21,
         "delivered": 21
       },
       "attributeLabels": [
@@ -3897,7 +3897,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 46,
+        "published": 224,
         "delivered": 224
       },
       "entityRows": {
@@ -3933,16 +3933,16 @@
       "elementId": "B-046",
       "file": "B-046_매장량[확인, 추정].xlsx",
       "shape": {
-        "before": "observation",
+        "before": "entity",
         "after": "entity",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 13,
+        "published": 0,
         "delivered": 0
       },
       "entityRows": {
-        "published": 0,
+        "published": 64,
         "delivered": 64
       },
       "attributeLabels": [
@@ -3990,16 +3990,16 @@
       "elementId": "B-047",
       "file": "B-047_연간 생산량.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "entity",
         "after": "entity",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 21,
+        "published": 0,
         "delivered": 0
       },
       "entityRows": {
-        "published": 0,
+        "published": 81,
         "delivered": 81
       },
       "attributeLabels": [
@@ -4056,7 +4056,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 8,
+        "published": 41,
         "delivered": 41
       },
       "attributeLabels": [
@@ -4104,7 +4104,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 49,
+        "published": 110,
         "delivered": 110
       },
       "attributeLabels": [
@@ -4235,7 +4235,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 82,
+        "published": 34,
         "delivered": 34
       },
       "attributeLabels": [
@@ -4347,7 +4347,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 96,
+        "published": 272,
         "delivered": 272
       },
       "attributeLabels": [
@@ -4492,7 +4492,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 58,
+        "published": 71,
         "delivered": 71
       },
       "attributeLabels": [
@@ -4591,7 +4591,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 135,
+        "published": 408,
         "delivered": 408
       },
       "attributeLabels": [
@@ -4681,7 +4681,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 50,
+        "published": 38,
         "delivered": 38
       },
       "attributeLabels": [
@@ -4805,7 +4805,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 32,
+        "published": 7,
         "delivered": 7
       },
       "attributeLabels": [
@@ -4892,7 +4892,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 235,
+        "published": 117,
         "delivered": 117
       },
       "attributeLabels": [
@@ -4993,7 +4993,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 182,
+        "published": 19,
         "delivered": 19
       },
       "attributeLabels": [
@@ -5072,7 +5072,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 59,
+        "published": 19,
         "delivered": 19
       },
       "attributeLabels": [
@@ -5158,7 +5158,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 44,
+        "published": 38,
         "delivered": 38
       },
       "attributeLabels": [
@@ -5269,7 +5269,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 120,
+        "published": 20,
         "delivered": 20
       },
       "attributeLabels": [
@@ -5366,7 +5366,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 64,
+        "published": 129,
         "delivered": 129
       },
       "attributeLabels": [
@@ -5477,7 +5477,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 93,
+        "published": 46,
         "delivered": 46
       },
       "attributeLabels": [
@@ -5612,7 +5612,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 21,
+        "published": 24,
         "delivered": 24
       },
       "attributeLabels": [
@@ -5695,7 +5695,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 817,
+        "published": 777,
         "delivered": 777
       },
       "attributeLabels": [
@@ -5829,7 +5829,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 52,
+        "published": 56,
         "delivered": 56
       },
       "attributeLabels": [
@@ -5901,7 +5901,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 121,
+        "published": 69,
         "delivered": 69
       },
       "attributeLabels": [
@@ -6018,7 +6018,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 128,
+        "published": 56,
         "delivered": 56
       },
       "attributeLabels": [
@@ -6148,7 +6148,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 98,
+        "published": 61,
         "delivered": 61
       },
       "attributeLabels": [
@@ -6259,7 +6259,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 20,
+        "published": 13,
         "delivered": 13
       },
       "attributeLabels": [
@@ -6368,7 +6368,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 388,
+        "published": 1190,
         "delivered": 1190
       },
       "attributeLabels": [
@@ -6528,7 +6528,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 8,
+        "published": 59,
         "delivered": 59
       },
       "entityRows": {
@@ -6600,16 +6600,16 @@
       "elementId": "D-003",
       "file": "D-003_예상 감축량.xlsx",
       "shape": {
-        "before": "observation",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 12,
+        "published": 14,
         "delivered": 14
       },
       "entityRows": {
-        "published": 0,
+        "published": 454,
         "delivered": 454
       },
       "attributeLabels": [
@@ -6850,7 +6850,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 45,
+        "published": 279,
         "delivered": 279
       },
       "entityRows": {
@@ -7079,7 +7079,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 7,
+        "published": 9,
         "delivered": 9
       },
       "entityRows": {
@@ -7312,7 +7312,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 22,
+        "published": 1168,
         "delivered": 1168
       },
       "attributeLabels": [
@@ -7400,7 +7400,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 21,
+        "published": 24,
         "delivered": 24
       },
       "entityRows": {
@@ -7480,7 +7480,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 164,
+        "published": 168,
         "delivered": 168
       },
       "attributeLabels": [
@@ -7584,7 +7584,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 650,
+        "published": 1050,
         "delivered": 1050
       },
       "attributeLabels": [
@@ -7684,7 +7684,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 232,
+        "published": 632,
         "delivered": 632
       },
       "attributeLabels": [
@@ -7785,7 +7785,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 10,
+        "published": 305,
         "delivered": 305
       },
       "attributeLabels": [
@@ -8257,7 +8257,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 15,
+        "published": 247,
         "delivered": 247
       },
       "attributeLabels": [
@@ -8360,16 +8360,16 @@
       "elementId": "D-023",
       "file": "D-023_ODA 및 기후기금(GCF, GEF, AF) 재원.xlsx",
       "shape": {
-        "before": "entity",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 0,
+        "published": 2,
         "delivered": 2
       },
       "entityRows": {
-        "published": 73,
+        "published": 112,
         "delivered": 112
       },
       "attributeLabels": [
@@ -8475,16 +8475,16 @@
       "elementId": "D-024",
       "file": "D-024_VC·임팩트 투자 현황.xlsx",
       "shape": {
-        "before": "entity",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 0,
+        "published": 1,
         "delivered": 1
       },
       "entityRows": {
-        "published": 12,
+        "published": 26,
         "delivered": 26
       },
       "attributeLabels": [
@@ -8591,7 +8591,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 132,
+        "published": 173,
         "delivered": 173
       },
       "attributeLabels": [
@@ -8689,7 +8689,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 14,
+        "published": 13,
         "delivered": 13
       },
       "attributeLabels": [
@@ -8831,7 +8831,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 1,
+        "published": 46,
         "delivered": 46
       },
       "attributeLabels": [
@@ -9132,7 +9132,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 19,
+        "published": 22,
         "delivered": 22
       },
       "attributeLabels": [
@@ -9178,16 +9178,16 @@
       "elementId": "E-008",
       "file": "E-008_논문,특허.xlsx",
       "shape": {
-        "before": "entity",
+        "before": "mixed",
         "after": "mixed",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 0,
+        "published": 1,
         "delivered": 1
       },
       "entityRows": {
-        "published": 144,
+        "published": 6790,
         "delivered": 6790
       },
       "attributeLabels": [
@@ -9238,7 +9238,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 6,
+        "published": 39,
         "delivered": 39
       },
       "entityRows": {
@@ -9280,7 +9280,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 31,
+        "published": 185,
         "delivered": 185
       },
       "entityRows": {
@@ -9317,12 +9317,12 @@
       "elementId": "E-011",
       "file": "E-011_네트워크 준비도 지수(NRI).xlsx",
       "shape": {
-        "before": "empty",
+        "before": "observation",
         "after": "observation",
-        "changed": true
+        "changed": false
       },
       "observationRows": {
-        "published": 0,
+        "published": 50,
         "delivered": 50
       },
       "entityRows": {
@@ -9364,7 +9364,7 @@
         "changed": false
       },
       "observationRows": {
-        "published": 92,
+        "published": 2161,
         "delivered": 2161
       },
       "entityRows": {
@@ -9514,7 +9514,7 @@
         "delivered": 0
       },
       "entityRows": {
-        "published": 24,
+        "published": 36,
         "delivered": 36
       },
       "attributeLabels": [

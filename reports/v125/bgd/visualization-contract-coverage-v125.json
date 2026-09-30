@@ -1,9 +1,9 @@
 {
   "contractCount": 152,
   "contractStatusCounts": {
-    "archetype": 115,
+    "archetype": 140,
     "specialized": 1,
-    "status-only": 36
+    "status-only": 11
   },
   "coverageResult": "PASS",
   "elements": [
@@ -120,11 +120,11 @@
       "primaryRenderer": "composition"
     },
     {
-      "contractStatus": "archetype",
-      "dataPresenceStatus": "partial-records",
+      "contractStatus": "status-only",
+      "dataPresenceStatus": "not-provided",
       "elementId": "A-017",
-      "populatedRecordCount": 54,
-      "primaryRenderer": "category-comparison"
+      "populatedRecordCount": 0,
+      "primaryRenderer": "status-only"
     },
     {
       "contractStatus": "archetype",
@@ -249,7 +249,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-002",
-      "populatedRecordCount": 43,
+      "populatedRecordCount": 125,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -263,28 +263,28 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-004",
-      "populatedRecordCount": 4455,
+      "populatedRecordCount": 8424,
       "primaryRenderer": "scenario-range"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-005",
-      "populatedRecordCount": 4485,
+      "populatedRecordCount": 5057,
       "primaryRenderer": "category-comparison"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-006",
-      "populatedRecordCount": 4455,
+      "populatedRecordCount": 7290,
       "primaryRenderer": "category-comparison"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-007",
-      "populatedRecordCount": 4455,
+      "populatedRecordCount": 7290,
       "primaryRenderer": "category-comparison"
     },
     {
@@ -305,7 +305,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "partial-records",
       "elementId": "B-010",
-      "populatedRecordCount": 6,
+      "populatedRecordCount": 38,
       "primaryRenderer": "score-benchmark"
     },
     {
@@ -331,7 +331,7 @@
     },
     {
       "contractStatus": "archetype",
-      "dataPresenceStatus": "partial-records",
+      "dataPresenceStatus": "actual-records",
       "elementId": "B-014",
       "populatedRecordCount": 18,
       "primaryRenderer": "scenario-range"
@@ -403,7 +403,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-024",
-      "populatedRecordCount": 48,
+      "populatedRecordCount": 40,
       "primaryRenderer": "composition"
     },
     {
@@ -417,7 +417,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-026",
-      "populatedRecordCount": 17,
+      "populatedRecordCount": 49,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -431,14 +431,14 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-028",
-      "populatedRecordCount": 8,
+      "populatedRecordCount": 73,
       "primaryRenderer": "spatial-summary"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-029",
-      "populatedRecordCount": 165,
+      "populatedRecordCount": 181,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -459,7 +459,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-032",
-      "populatedRecordCount": 9,
+      "populatedRecordCount": 18,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -473,7 +473,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-034",
-      "populatedRecordCount": 13,
+      "populatedRecordCount": 89,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -529,7 +529,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-042",
-      "populatedRecordCount": 82,
+      "populatedRecordCount": 106,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -543,7 +543,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "B-044",
-      "populatedRecordCount": 6,
+      "populatedRecordCount": 22,
       "primaryRenderer": "spatial-summary"
     },
     {
@@ -554,18 +554,18 @@
       "primaryRenderer": "status-only"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "no-populated-record",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "B-046",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 21,
+      "primaryRenderer": "spatial-summary"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "no-populated-record",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "B-047",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 21,
+      "primaryRenderer": "spatial-summary"
     },
     {
       "contractStatus": "archetype",
@@ -578,28 +578,28 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-001",
-      "populatedRecordCount": 69,
+      "populatedRecordCount": 86,
       "primaryRenderer": "evidence-matrix"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-002",
-      "populatedRecordCount": 51,
+      "populatedRecordCount": 76,
       "primaryRenderer": "evidence-matrix"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-003",
-      "populatedRecordCount": 13,
+      "populatedRecordCount": 27,
       "primaryRenderer": "evidence-matrix"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-004",
-      "populatedRecordCount": 2,
+      "populatedRecordCount": 38,
       "primaryRenderer": "evidence-matrix"
     },
     {
@@ -648,21 +648,21 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-011",
-      "populatedRecordCount": 53,
+      "populatedRecordCount": 54,
       "primaryRenderer": "score-benchmark"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-012",
-      "populatedRecordCount": 37,
+      "populatedRecordCount": 75,
       "primaryRenderer": "evidence-matrix"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-013",
-      "populatedRecordCount": 51,
+      "populatedRecordCount": 77,
       "primaryRenderer": "evidence-matrix"
     },
     {
@@ -683,7 +683,7 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-016",
-      "populatedRecordCount": 32,
+      "populatedRecordCount": 92,
       "primaryRenderer": "policy-timeline"
     },
     {
@@ -697,14 +697,14 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-018",
-      "populatedRecordCount": 8,
+      "populatedRecordCount": 48,
       "primaryRenderer": "scenario-range"
     },
     {
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "elementId": "C-019",
-      "populatedRecordCount": 43,
+      "populatedRecordCount": 44,
       "primaryRenderer": "evidence-matrix"
     },
     {
@@ -764,11 +764,11 @@
       "primaryRenderer": "status-only"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-003",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 272,
+      "primaryRenderer": "category-comparison"
     },
     {
       "contractStatus": "status-only",
@@ -778,158 +778,158 @@
       "primaryRenderer": "status-only"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-005",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 28,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-006",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 346,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-007",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 20,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-008",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 16,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-009",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 108,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-010",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 140,
+      "primaryRenderer": "multi-metric-trend"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-011",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 480,
+      "primaryRenderer": "category-comparison"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-012",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 128,
+      "primaryRenderer": "category-comparison"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-013",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 30,
+      "primaryRenderer": "score-benchmark"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-014",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 99,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-015",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 1432,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-016",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 376,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-017",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 300,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-018",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 16,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-019",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 12,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-020",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 22,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-021",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 546,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "partial-records",
       "elementId": "D-022",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 339,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-023",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 132,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-024",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 29,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-025",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 116,
+      "primaryRenderer": "portfolio"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "D-026",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 26,
+      "primaryRenderer": "portfolio"
     },
     {
       "contractStatus": "archetype",
@@ -998,15 +998,15 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "partial-records",
       "elementId": "E-010",
-      "populatedRecordCount": 22,
+      "populatedRecordCount": 176,
       "primaryRenderer": "score-benchmark"
     },
     {
-      "contractStatus": "status-only",
-      "dataPresenceStatus": "not-provided",
+      "contractStatus": "archetype",
+      "dataPresenceStatus": "actual-records",
       "elementId": "E-011",
-      "populatedRecordCount": 0,
-      "primaryRenderer": "status-only"
+      "populatedRecordCount": 50,
+      "primaryRenderer": "capability-scorecard"
     },
     {
       "contractStatus": "specialized",
@@ -1075,21 +1075,22 @@
   "frameworkElementCount": 152,
   "generatedAt": "2026-08-27T00:00:00Z",
   "primaryRendererCounts": {
-    "capability-scorecard": 4,
-    "category-comparison": 6,
+    "capability-scorecard": 5,
+    "category-comparison": 8,
     "composition": 6,
     "directory": 7,
     "document-library": 1,
     "evidence-matrix": 14,
     "kpi-trend": 13,
+    "multi-metric-trend": 6,
     "paired-category-comparison": 1,
     "policy-timeline": 7,
-    "portfolio": 5,
+    "portfolio": 18,
     "scenario-range": 6,
-    "score-benchmark": 15,
+    "score-benchmark": 16,
     "seasonality": 2,
-    "spatial-summary": 29,
-    "status-only": 36
+    "spatial-summary": 31,
+    "status-only": 11
   },
   "schemaVersion": "v125",
   "unassignedContractCount": 0

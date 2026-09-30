@@ -108,6 +108,14 @@ const APPLY_STEPS = [
   // element came out "panel-only" and the applied tree - and the TS module in
   // src - lost its map links (fixed once by hand in #46). Rebuilt here on the
   // applied tree, where the layers are.
+  // V162: the staging tree has no spatial/pending-v155 (chain-outside), so its
+  // map index dropped the prepared layers #47 registered (A-027 · A-028 · B-017
+  // · D-022). The layers and the home preview are rebuilt on the applied tree,
+  // then #47's map content contract and companions, before semantic reads them.
+  ["map-layers", node, ["scripts/v138/build-map-layers-v138.mjs", "--data", "public/data/vietnam/v2"]],
+  ["home-preview", node, ["scripts/v139/build-home-preview-v139.mjs", "--data", "public/data/vietnam/v2"]],
+  ["map-contract", node, ["scripts/v157/build-map-content-contract-v157.mjs"]],
+  ["map-companions", node, ["scripts/v157/build-map-companions-v157.mjs"]],
   ["semantic", python, ["tools/vietnam_semantic/build_semantic_v125.py"]],
   // The chain does not write these two, so they are rebuilt on the applied tree.
   // Each one rewrites asset-integrity afterwards.

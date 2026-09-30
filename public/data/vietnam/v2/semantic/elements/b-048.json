@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-048",
-  "entityCount": 8,
+  "entityCount": 41,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 11,
+  "indicatorCount": 12,
   "indicators": [
     {
       "axisGroupKey": "measure-75c152288655|도(decimal degrees)",
@@ -353,6 +353,30 @@
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-b8ca5739f7f0|개소",
+      "dimensionLabels": {
+        "detail": "국가 주요 광산 목록(보조)"
+      },
+      "dimensions": {
+        "detail": "국가 주요 광산 목록(보조)"
+      },
+      "displayLabel": "주요 광산 위치(개체 목록) — 국가 주요 광산 목록(보조)",
+      "indicatorId": "B-048_mine_site_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b8ca5739f7f0",
+        "labelKo": "주요 광산 위치(개체 목록)",
+        "unit": "개소",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-b8ca5739f7f0|개소|detail=국가 주요 광산 목록(보조)|B-048_mine_site_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "주요 광산 위치(개체 목록) — 국가 주요 광산 목록(보조)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -381,7 +405,7 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-b8ca5739f7f0",
       "labelKo": "주요 광산 위치(개체 목록)",
       "recordCount": 0,

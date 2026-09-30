@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "row-exclusions-v162",
+  "decidedAt": "2026-09-30",
+  "decidedBy": "사용자 결정(V162)",
+  "note": "원천 행 가운데 공개하지 않는 행. 값을 만들거나 바꾸지 않고 행만 뺀다. 빠진 행 수는 ETL 요약(rowExclusions)에 남는다.",
+  "rules": [
+    {
+      "elementId": "B-024",
+      "column": "값의 성격",
+      "contains": "배분",
+      "reason": "국가 농업용수 비중을 성별 벼 재배면적 비율로 나눈 추정(배분) 값 — 성별 실측·통계가 아니므로 비공개. 공개는 통계청(NSO) 성별 벼 재배면적 97행(대리지표)만"
+    }
+  ]
+}

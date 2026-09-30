@@ -10,10 +10,34 @@
     }
   ],
   "elementId": "C-019",
-  "entityCount": 128,
+  "entityCount": 56,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 113,
+  "indicatorCount": 98,
   "indicators": [
+    {
+      "axisGroupKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "예산"
+      },
+      "dimensions": {
+        "category": "예산"
+      },
+      "displayLabel": "탄소 시장 관련 법률·예산 · budget",
+      "indicatorId": "C-019_budget",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a6d294b45733",
+        "labelKo": "탄소 시장 관련 법률",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=예산|C-019_budget",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소 시장 관련 법률·예산",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-ef99159e774a|—",
       "dimensionLabels": {
@@ -1409,141 +1433,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-1de4996882a6|VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 관련 예산 규모",
-      "indicatorId": "C-019_carbon_market_budget",
+      "axisGroupKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "예산"
+      },
+      "dimensions": {
+        "category": "예산"
+      },
+      "displayLabel": "탄소 시장 관련 법률·예산 · carbon_tax",
+      "indicatorId": "C-019_carbon_tax",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1de4996882a6",
-        "labelKo": "탄소시장 관련 예산 규모",
-        "unit": "VND",
-        "unitFamily": "currency"
+        "key": "measure-a6d294b45733",
+        "labelKo": "탄소 시장 관련 법률",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-1de4996882a6|VND||C-019_carbon_market_budget",
+      "seriesKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=예산|C-019_carbon_tax",
       "sourceCaveat": null,
-      "sourceLabel": "탄소시장 관련 예산 규모",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-c67e23a7bcd3|VND/tCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "가격",
-      "indicatorId": "C-019_carbon_price",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-c67e23a7bcd3",
-        "labelKo": "가격",
-        "unit": "VND/tCO₂e",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-c67e23a7bcd3|VND/tCO₂e||C-019_carbon_price",
-      "sourceCaveat": null,
-      "sourceLabel": "가격",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-c4bb369f9ffa|đồng/L",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소세 도입 여부 및 세율(USD/tCO₂) · 탄소세 도입 여부 및 세율(USD/tCO₂) [đồng/L]",
-      "indicatorId": "C-019_carbon_tax_congbao_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-c4bb369f9ffa",
-        "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-        "unit": "đồng/L",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-c4bb369f9ffa|đồng/L||C-019_carbon_tax_congbao_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-fbe66e90c74b|đồng/kg",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소세 도입 여부 및 세율(USD/tCO₂) · 탄소세 도입 여부 및 세율(USD/tCO₂) [đồng/kg]",
-      "indicatorId": "C-019_carbon_tax_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-fbe66e90c74b",
-        "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-        "unit": "đồng/kg",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-fbe66e90c74b|đồng/kg||C-019_carbon_tax_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-9127f6cd9c3b|USD/tCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소세 도입 여부 및 세율(USD/tCO₂) · 탄소세 도입 여부 및 세율(USD/tCO₂) [USD/tCO₂e]",
-      "indicatorId": "C-019_carbon_tax_documents1_worldbank",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9127f6cd9c3b",
-        "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-        "unit": "USD/tCO₂e",
-        "unitFamily": "emissions"
-      },
-      "seriesKey": "measure-9127f6cd9c3b|USD/tCO₂e||C-019_carbon_tax_documents1_worldbank",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-8aa621da3a72|여부",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소세 도입 여부 및 세율(USD/tCO₂) · 탄소세 도입 여부 및 세율(USD/tCO₂) [여부]",
-      "indicatorId": "C-019_carbon_tax_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-8aa621da3a72",
-        "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-        "unit": "여부",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-8aa621da3a72|여부||C-019_carbon_tax_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-3bd3bae0d019|VND/L",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소세 도입 여부 및 세율(USD/tCO₂) · 탄소세 도입 여부 및 세율(USD/tCO₂) [VND/L]",
-      "indicatorId": "C-019_carbon_tax_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-3bd3bae0d019",
-        "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-        "unit": "VND/L",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-3bd3bae0d019|VND/L||C-019_carbon_tax_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소세 도입 여부 및 세율(USD/tCO₂)",
+      "sourceLabel": "탄소 시장 관련 법률·예산",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -2501,6 +2409,30 @@
       }
     },
     {
+      "axisGroupKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "예산"
+      },
+      "dimensions": {
+        "category": "예산"
+      },
+      "displayLabel": "탄소 시장 관련 법률·예산 · ets_design",
+      "indicatorId": "C-019_ets_design",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a6d294b45733",
+        "labelKo": "탄소 시장 관련 법률",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=예산|C-019_ets_design",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소 시장 관련 법률·예산",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-1caf2deab413|—",
       "dimensionLabels": {
         "category": "상쇄 규정 이월(Banking)",
@@ -2671,181 +2603,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-fa25f781c02e|구분",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 부문 · 대상 부문 [구분]",
-      "indicatorId": "C-019_ets_scope_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-fa25f781c02e",
-        "labelKo": "대상 부문",
-        "unit": "구분",
-        "unitFamily": "text"
+      "axisGroupKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "예산"
       },
-      "seriesKey": "measure-fa25f781c02e|구분||C-019_ets_scope_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 부문",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-9c8de8f1a5ab|년",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "대상 부문 · 대상 부문 [년]",
-      "indicatorId": "C-019_ets_scope_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9c8de8f1a5ab",
-        "labelKo": "대상 부문",
-        "unit": "년",
-        "unitFamily": "text"
+      "dimensions": {
+        "category": "예산"
       },
-      "seriesKey": "measure-9c8de8f1a5ab|년||C-019_ets_scope_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "대상 부문",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5984219578d1|%",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [%]",
-      "indicatorId": "C-019_ets_status_carbonpricingdashboard",
+      "displayLabel": "탄소 시장 관련 법률·예산 · law",
+      "indicatorId": "C-019_law",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-5984219578d1",
-        "labelKo": "ETS 도입 여부",
-        "unit": "%",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-5984219578d1|%||C-019_ets_status_carbonpricingdashboard",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-ef3fec32c2c6|개사",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [개사]",
-      "indicatorId": "C-019_ets_status_hnx",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ef3fec32c2c6",
-        "labelKo": "ETS 도입 여부",
-        "unit": "개사",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ef3fec32c2c6|개사||C-019_ets_status_hnx",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-92ac2a1dda75|VND/tCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [VND/tCO₂e]",
-      "indicatorId": "C-019_ets_status_hnx_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ac2a1dda75",
-        "labelKo": "ETS 도입 여부",
-        "unit": "VND/tCO₂e",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ac2a1dda75|VND/tCO₂e||C-019_ets_status_hnx_2",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-ed041a9a748c|기간",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [기간]",
-      "indicatorId": "C-019_ets_status_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ed041a9a748c",
-        "labelKo": "ETS 도입 여부",
-        "unit": "기간",
+        "key": "measure-a6d294b45733",
+        "labelKo": "탄소 시장 관련 법률",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-ed041a9a748c|기간||C-019_ets_status_mae",
+      "seriesKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=예산|C-019_law",
       "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-474debf23d6e|결정번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [결정번호]",
-      "indicatorId": "C-019_ets_status_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-474debf23d6e",
-        "labelKo": "ETS 도입 여부",
-        "unit": "결정번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-474debf23d6e|결정번호||C-019_ets_status_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-306e4bce3690|MtCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [MtCO₂e]",
-      "indicatorId": "C-019_ets_status_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-306e4bce3690",
-        "labelKo": "ETS 도입 여부",
-        "unit": "MtCO₂e",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-306e4bce3690|MtCO₂e||C-019_ets_status_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-491d58559ae1|개소",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "ETS 도입 여부 · ETS 도입 여부 [개소]",
-      "indicatorId": "C-019_ets_status_vanban_chinhphu_3",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-491d58559ae1",
-        "labelKo": "ETS 도입 여부",
-        "unit": "개소",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-491d58559ae1|개소||C-019_ets_status_vanban_chinhphu_3",
-      "sourceCaveat": null,
-      "sourceLabel": "ETS 도입 여부",
+      "sourceLabel": "탄소 시장 관련 법률·예산",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -3395,81 +3171,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-619d25c62bba|여부",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "FIT/FIP/RPS 도입 여부 · FIT/FIP/RPS 도입 여부 [여부]",
-      "indicatorId": "C-019_re_support_scheme_carbonpricingdashboard",
+      "axisGroupKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "예산"
+      },
+      "dimensions": {
+        "category": "예산"
+      },
+      "displayLabel": "탄소 시장 관련 법률·예산 · re_support",
+      "indicatorId": "C-019_re_support",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-619d25c62bba",
-        "labelKo": "FIT/FIP/RPS 도입 여부",
-        "unit": "여부",
+        "key": "measure-a6d294b45733",
+        "labelKo": "탄소 시장 관련 법률",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-619d25c62bba|여부||C-019_re_support_scheme_carbonpricingdashboard",
+      "seriesKey": "measure-a6d294b45733|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=예산|C-019_re_support",
       "sourceCaveat": null,
-      "sourceLabel": "FIT/FIP/RPS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-c16b4641f842|VND/kWh",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "FIT/FIP/RPS 도입 여부 · FIT/FIP/RPS 도입 여부 [VND/kWh]",
-      "indicatorId": "C-019_re_support_scheme_erea",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-c16b4641f842",
-        "labelKo": "FIT/FIP/RPS 도입 여부",
-        "unit": "VND/kWh",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-c16b4641f842|VND/kWh||C-019_re_support_scheme_erea",
-      "sourceCaveat": null,
-      "sourceLabel": "FIT/FIP/RPS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-0d89d68d1c18|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "FIT/FIP/RPS 도입 여부 · FIT/FIP/RPS 도입 여부 [일자]",
-      "indicatorId": "C-019_re_support_scheme_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-0d89d68d1c18",
-        "labelKo": "FIT/FIP/RPS 도입 여부",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-0d89d68d1c18|일자||C-019_re_support_scheme_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "FIT/FIP/RPS 도입 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-e2387112e9c7|시행령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "FIT/FIP/RPS 도입 여부 · FIT/FIP/RPS 도입 여부 [시행령번호]",
-      "indicatorId": "C-019_re_support_scheme_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-e2387112e9c7",
-        "labelKo": "FIT/FIP/RPS 도입 여부",
-        "unit": "시행령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-e2387112e9c7|시행령번호||C-019_re_support_scheme_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "FIT/FIP/RPS 도입 여부",
+      "sourceLabel": "탄소 시장 관련 법률·예산",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -3797,62 +3517,6 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-5984219578d1",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "%",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-306e4bce3690",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "MtCO₂e",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-92ac2a1dda75",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "VND/tCO₂e",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-ef3fec32c2c6",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "개사",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-491d58559ae1",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "개소",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-474debf23d6e",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "결정번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-ed041a9a748c",
-      "labelKo": "ETS 도입 여부",
-      "recordCount": 0,
-      "unit": "기간",
-      "unitFamily": "other"
-    },
-    {
       "indicatorCount": 2,
       "key": "measure-f126d5c9704b",
       "labelKo": "ETS 유연성",
@@ -3877,38 +3541,6 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-c16b4641f842",
-      "labelKo": "FIT/FIP/RPS 도입 여부",
-      "recordCount": 0,
-      "unit": "VND/kWh",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-e2387112e9c7",
-      "labelKo": "FIT/FIP/RPS 도입 여부",
-      "recordCount": 0,
-      "unit": "시행령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-619d25c62bba",
-      "labelKo": "FIT/FIP/RPS 도입 여부",
-      "recordCount": 0,
-      "unit": "여부",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-0d89d68d1c18",
-      "labelKo": "FIT/FIP/RPS 도입 여부",
-      "recordCount": 0,
-      "unit": "일자",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 3,
       "key": "measure-2e88d3b31940",
       "labelKo": "MRV(모니터링",
@@ -3923,30 +3555,6 @@
       "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-c67e23a7bcd3",
-      "labelKo": "가격",
-      "recordCount": 0,
-      "unit": "VND/tCO₂e",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-fa25f781c02e",
-      "labelKo": "대상 부문",
-      "recordCount": 0,
-      "unit": "구분",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-9c8de8f1a5ab",
-      "labelKo": "대상 부문",
-      "recordCount": 0,
-      "unit": "년",
-      "unitFamily": "text"
     },
     {
       "indicatorCount": 3,
@@ -3989,52 +3597,12 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-9127f6cd9c3b",
-      "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
+      "indicatorCount": 5,
+      "key": "measure-a6d294b45733",
+      "labelKo": "탄소 시장 관련 법률",
       "recordCount": 0,
-      "unit": "USD/tCO₂e",
-      "unitFamily": "emissions"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-3bd3bae0d019",
-      "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "recordCount": 0,
-      "unit": "VND/L",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-c4bb369f9ffa",
-      "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "recordCount": 0,
-      "unit": "đồng/L",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-fbe66e90c74b",
-      "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "recordCount": 0,
-      "unit": "đồng/kg",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-8aa621da3a72",
-      "labelKo": "탄소세 도입 여부 및 세율(USD/tCO₂)",
-      "recordCount": 0,
-      "unit": "여부",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-1de4996882a6",
-      "labelKo": "탄소시장 관련 예산 규모",
-      "recordCount": 0,
-      "unit": "VND",
-      "unitFamily": "currency"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     }
   ],
   "observationCount": 0,

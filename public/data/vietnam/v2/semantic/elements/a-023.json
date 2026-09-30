@@ -54,14 +54,6 @@
       ]
     },
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 1,
-      "values": [
-        "GPPD 수록 발전소 총 기수"
-      ]
-    },
-    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 2,
@@ -101,45 +93,13 @@
         "waste",
         "wind"
       ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2021"
-      ]
     }
   ],
   "elementId": "A-023",
   "entityCount": 1963,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 3,
+  "indicatorCount": 2,
   "indicators": [
-    {
-      "axisGroupKey": "measure-abbef01dfb86|건",
-      "dimensionLabels": {
-        "detail": "GPPD 수록 발전소 총 기수"
-      },
-      "dimensions": {
-        "detail": "GPPD 수록 발전소 총 기수"
-      },
-      "displayLabel": "발전소 개체 수 — GPPD 수록 발전소 총 기수",
-      "indicatorId": "A-023_power_plant_count",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-abbef01dfb86",
-        "labelKo": "발전소 개체 수",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-abbef01dfb86|건|detail=GPPD 수록 발전소 총 기수|A-023_power_plant_count",
-      "sourceCaveat": null,
-      "sourceLabel": "발전소 개체 수 — GPPD 수록 발전소 총 기수",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
     {
       "axisGroupKey": "measure-e5647010075d|MW",
       "dimensionLabels": {
@@ -211,14 +171,6 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
-      "key": "measure-abbef01dfb86",
-      "labelKo": "발전소 개체 수",
-      "recordCount": 1,
-      "unit": "건",
-      "unitFamily": "count"
-    },
-    {
       "indicatorCount": 2,
       "key": "measure-e5647010075d",
       "labelKo": "발전소 목록",
@@ -227,7 +179,7 @@
       "unitFamily": "capacity"
     }
   ],
-  "observationCount": 1,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

@@ -1,284 +1,16 @@
 {
   "schema": "map-targets-build-v138",
-  "generatedAt": "2026-09-30T06:33:48.671Z",
+  "generatedAt": "2026-09-30T10:29:19.500Z",
   "dataRoot": "/public/data/vietnam/v2",
   "targetCount": 72,
   "counts": {
-    "implemented": 31,
-    "partial": 29,
-    "notConnected": 12
+    "implemented": 32,
+    "partial": 24,
+    "notConnected": 16
   },
   "activeMapLayerCount": 60,
-  "mapFeatureCount": 14920,
-  "crosswalk34": [
-    {
-      "region": "An Giang",
-      "key": "an giang",
-      "memberAdm1Codes": [
-        "VN-44",
-        "VN-47"
-      ]
-    },
-    {
-      "region": "Bắc Ninh",
-      "key": "bac ninh",
-      "memberAdm1Codes": [
-        "VN-54",
-        "VN-56"
-      ]
-    },
-    {
-      "region": "Cao Bằng",
-      "key": "cao bang",
-      "memberAdm1Codes": [
-        "VN-04"
-      ]
-    },
-    {
-      "region": "Cà Mau",
-      "key": "ca mau",
-      "memberAdm1Codes": [
-        "VN-55",
-        "VN-59"
-      ]
-    },
-    {
-      "region": "Cần Thơ",
-      "key": "can tho",
-      "memberAdm1Codes": [
-        "VN-52",
-        "VN-73",
-        "VN-CT"
-      ]
-    },
-    {
-      "region": "Gia Lai",
-      "key": "gia lai",
-      "memberAdm1Codes": [
-        "VN-30",
-        "VN-31"
-      ]
-    },
-    {
-      "region": "Huế",
-      "key": "hue",
-      "memberAdm1Codes": [
-        "VN-26"
-      ]
-    },
-    {
-      "region": "Hà Nội",
-      "key": "ha noi",
-      "memberAdm1Codes": [
-        "VN-HN"
-      ]
-    },
-    {
-      "region": "Hà Tĩnh",
-      "key": "ha tinh",
-      "memberAdm1Codes": [
-        "VN-23"
-      ]
-    },
-    {
-      "region": "Hưng Yên",
-      "key": "hung yen",
-      "memberAdm1Codes": [
-        "VN-20",
-        "VN-66"
-      ]
-    },
-    {
-      "region": "Hải Phòng",
-      "key": "hai phong",
-      "memberAdm1Codes": [
-        "VN-61",
-        "VN-HP"
-      ]
-    },
-    {
-      "region": "Hồ Chí Minh",
-      "key": "ho chi minh",
-      "memberAdm1Codes": [
-        "VN-43",
-        "VN-57",
-        "VN-SG"
-      ]
-    },
-    {
-      "region": "Khánh Hòa",
-      "key": "khanh hoa",
-      "memberAdm1Codes": [
-        "VN-34",
-        "VN-36"
-      ]
-    },
-    {
-      "region": "Lai Châu",
-      "key": "lai chau",
-      "memberAdm1Codes": [
-        "VN-01"
-      ]
-    },
-    {
-      "region": "Lào Cai",
-      "key": "lao cai",
-      "memberAdm1Codes": [
-        "VN-02",
-        "VN-06"
-      ]
-    },
-    {
-      "region": "Lâm Đồng",
-      "key": "lam dong",
-      "memberAdm1Codes": [
-        "VN-35",
-        "VN-40",
-        "VN-72"
-      ]
-    },
-    {
-      "region": "Lạng Sơn",
-      "key": "lang son",
-      "memberAdm1Codes": [
-        "VN-09"
-      ]
-    },
-    {
-      "region": "Nghệ An",
-      "key": "nghe an",
-      "memberAdm1Codes": [
-        "VN-22"
-      ]
-    },
-    {
-      "region": "Ninh Bình",
-      "key": "ninh binh",
-      "memberAdm1Codes": [
-        "VN-18",
-        "VN-63",
-        "VN-67"
-      ]
-    },
-    {
-      "region": "Phú Thọ",
-      "key": "phu tho",
-      "memberAdm1Codes": [
-        "VN-14",
-        "VN-68",
-        "VN-70"
-      ]
-    },
-    {
-      "region": "Quảng Ngãi",
-      "key": "quang ngai",
-      "memberAdm1Codes": [
-        "VN-28",
-        "VN-29"
-      ]
-    },
-    {
-      "region": "Quảng Ninh",
-      "key": "quang ninh",
-      "memberAdm1Codes": [
-        "VN-13"
-      ]
-    },
-    {
-      "region": "Quảng Trị",
-      "key": "quang tri",
-      "memberAdm1Codes": [
-        "VN-24",
-        "VN-25"
-      ]
-    },
-    {
-      "region": "Sơn La",
-      "key": "son la",
-      "memberAdm1Codes": [
-        "VN-05"
-      ]
-    },
-    {
-      "region": "Thanh Hóa",
-      "key": "thanh hoa",
-      "memberAdm1Codes": [
-        "VN-21"
-      ]
-    },
-    {
-      "region": "Thái Nguyên",
-      "key": "thai nguyen",
-      "memberAdm1Codes": [
-        "VN-53",
-        "VN-69"
-      ]
-    },
-    {
-      "region": "Tuyên Quang",
-      "key": "tuyen quang",
-      "memberAdm1Codes": [
-        "VN-03",
-        "VN-07"
-      ]
-    },
-    {
-      "region": "Tây Ninh",
-      "key": "tay ninh",
-      "memberAdm1Codes": [
-        "VN-37",
-        "VN-41"
-      ]
-    },
-    {
-      "region": "Vĩnh Long",
-      "key": "vinh long",
-      "memberAdm1Codes": [
-        "VN-49",
-        "VN-50",
-        "VN-51"
-      ]
-    },
-    {
-      "region": "Điện Biên",
-      "key": "dien bien",
-      "memberAdm1Codes": [
-        "VN-71"
-      ]
-    },
-    {
-      "region": "Đà Nẵng",
-      "key": "da nang",
-      "memberAdm1Codes": [
-        "VN-27",
-        "VN-DN"
-      ]
-    },
-    {
-      "region": "Đắk Lắk",
-      "key": "dak lak",
-      "memberAdm1Codes": [
-        "VN-32",
-        "VN-33"
-      ]
-    },
-    {
-      "region": "Đồng Nai",
-      "key": "dong nai",
-      "memberAdm1Codes": [
-        "VN-39",
-        "VN-58"
-      ]
-    },
-    {
-      "region": "Đồng Tháp",
-      "key": "dong thap",
-      "memberAdm1Codes": [
-        "VN-45",
-        "VN-46"
-      ]
-    }
-  ],
+  "mapFeatureCount": 17362,
+  "crosswalk34": [],
   "targets": [
     {
       "elementId": "A-013",
@@ -328,25 +60,14 @@
       "status": "implemented",
       "representation": "point",
       "build": "entities",
-      "sourceRowCount": 5,
-      "sourceCoordinateCount": 3,
-      "featureCount": 3,
-      "memberRowCount": 3,
+      "sourceRowCount": 1,
+      "sourceCoordinateCount": 1,
+      "featureCount": 1,
+      "memberRowCount": 1,
       "approximateCount": 0,
-      "excludedCount": 2,
-      "excluded": [
-        {
-          "recordId": "v124-a-025-entity-00003",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-a-025-entity-00004",
-          "reason": "no-coordinate"
-        }
-      ],
-      "filters": [
-        "구분(3)"
-      ]
+      "excludedCount": 0,
+      "excluded": [],
+      "filters": []
     },
     {
       "elementId": "A-027",
@@ -430,7 +151,7 @@
       "representation": "admin1-choropleth",
       "build": "admin1-attributes",
       "sourceRowCount": 31185,
-      "publishedValueCount": 30241,
+      "publishedValueCount": 19563,
       "seriesCount": 624,
       "variableCount": 36,
       "periodCount": 32,
@@ -465,7 +186,7 @@
       "build": "entities",
       "sourceRowCount": 1575,
       "sourceCoordinateCount": 1575,
-      "featureCount": 5,
+      "featureCount": 1575,
       "memberRowCount": 1575,
       "approximateCount": 0,
       "excludedCount": 0,
@@ -477,14 +198,14 @@
       "status": "partial",
       "representation": "admin1-choropleth",
       "build": "observation-dimension",
-      "sourceRowCount": 435,
+      "sourceRowCount": 255,
       "publishedValueCount": 252,
       "seriesCount": 4,
       "variableCount": 4,
       "periodCount": 1,
       "matchedAdm1Count": 63,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 183,
+      "rowsWithoutRegion": 3,
       "sourceRegionCount": 63,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -567,19 +288,17 @@
     },
     {
       "elementId": "B-023",
-      "status": "partial",
+      "status": "implemented",
       "representation": "point",
       "build": "entities",
-      "sourceRowCount": 11,
-      "sourceCoordinateCount": 11,
-      "featureCount": 3,
-      "memberRowCount": 11,
-      "approximateCount": 1,
-      "excludedCount": 0,
+      "sourceRowCount": 382,
+      "sourceCoordinateCount": 382,
+      "featureCount": 2,
+      "memberRowCount": 372,
+      "approximateCount": 0,
+      "excludedCount": 10,
       "excluded": [],
-      "filters": [
-        "공간 단위(2)"
-      ]
+      "filters": []
     },
     {
       "elementId": "B-024",
@@ -595,23 +314,21 @@
       "status": "partial",
       "representation": "point",
       "build": "entities",
-      "sourceRowCount": 9,
-      "sourceCoordinateCount": 8,
-      "featureCount": 8,
-      "memberRowCount": 8,
-      "approximateCount": 8,
-      "excludedCount": 1,
+      "sourceRowCount": 120,
+      "sourceCoordinateCount": 118,
+      "featureCount": 110,
+      "memberRowCount": 110,
+      "approximateCount": 110,
+      "excludedCount": 10,
       "excluded": [],
-      "filters": [
-        "수계 구분(6)"
-      ]
+      "filters": []
     },
     {
       "elementId": "B-026",
       "status": "partial",
       "representation": "admin1-choropleth",
       "build": "admin1-attributes",
-      "sourceRowCount": 74,
+      "sourceRowCount": 165,
       "publishedValueCount": 63,
       "seriesCount": 1,
       "variableCount": 1,
@@ -619,8 +336,256 @@
       "matchedAdm1Count": 63,
       "unmatchedRegionNames": [
         [
-          "Việt Nam",
-          11
+          "ongNai",
+          1
+        ],
+        [
+          "akLak",
+          1
+        ],
+        [
+          "ongThap",
+          1
+        ],
+        [
+          "Lamong",
+          1
+        ],
+        [
+          "aNang",
+          1
+        ],
+        [
+          "ienBien",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061144860",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017120",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061100320",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016810",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017030",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017110",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061071320",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061005540",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061138600",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016840",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060014260",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061128180",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015000",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060995260",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061100360",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061015380",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061138550",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061128090",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061015370",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060014940",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061005660",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061130840",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060014930",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060986930",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061128130",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017490",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061000720",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061022740",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015260",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060995320",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061023270",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016830",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015100",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061009750",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015420",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061022750",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060987170",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017500",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015780",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061043590",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015430",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061000830",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060987020",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016210",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015010",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015270",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016220",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060017020",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061023260",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015790",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061009800",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060016820",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015910",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015090",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015110",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4060015920",
+          1
+        ],
+        [
+          "HydroBASINS lvl6 4061130800",
+          1
         ],
         [
           "Viet Nam",
@@ -628,42 +593,23 @@
         ]
       ],
       "rowsWithoutRegion": 0,
-      "duplicateValueCount": 0,
+      "duplicateValueCount": 28,
       "valueTable": false,
       "dataUrl": "/data/vietnam/v2/spatial/layers/b-026.json"
     },
     {
       "elementId": "B-028",
-      "status": "partial",
+      "status": "implemented",
       "representation": "point",
       "build": "entities",
-      "sourceRowCount": 16,
-      "sourceCoordinateCount": 12,
-      "featureCount": 4,
-      "memberRowCount": 12,
-      "approximateCount": 2,
-      "excludedCount": 4,
-      "excluded": [
-        {
-          "recordId": "v124-b-028-entity-00008",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-b-028-entity-00013",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-b-028-entity-00014",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-b-028-entity-00015",
-          "reason": "no-coordinate"
-        }
-      ],
-      "filters": [
-        "공간 단위(2)"
-      ]
+      "sourceRowCount": 25,
+      "sourceCoordinateCount": 21,
+      "featureCount": 2,
+      "memberRowCount": 2,
+      "approximateCount": 0,
+      "excludedCount": 23,
+      "excluded": [],
+      "filters": []
     },
     {
       "elementId": "B-029",
@@ -876,7 +822,7 @@
       "status": "implemented",
       "representation": "point",
       "build": "existing",
-      "featureCount": 2,
+      "featureCount": 37,
       "patched": [
         "analysisItemLabel",
         "countNoun",
@@ -906,51 +852,51 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 235,
-      "publishedValueCount": 17,
+      "sourceRowCount": 117,
+      "publishedValueCount": 6,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
-      "matchedAdm1Count": 17,
+      "matchedAdm1Count": 6,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 221,
-      "sourceRegionCount": 8,
+      "rowsWithoutRegion": 112,
+      "sourceRegionCount": 3,
       "duplicateValueCount": 0,
       "valueTable": false,
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-008.json"
     },
     {
       "elementId": "C-012",
-      "status": "partial",
+      "status": "not-connected",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 57,
-      "publishedValueCount": 56,
-      "seriesCount": 1,
-      "variableCount": 1,
-      "periodCount": 1,
-      "matchedAdm1Count": 56,
+      "sourceRowCount": 0,
+      "publishedValueCount": 0,
+      "seriesCount": 0,
+      "variableCount": 0,
+      "periodCount": 0,
+      "matchedAdm1Count": 0,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 28,
-      "sourceRegionCount": 29,
+      "rowsWithoutRegion": 0,
+      "sourceRegionCount": 0,
       "duplicateValueCount": 0,
       "valueTable": false,
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-012.json"
     },
     {
       "elementId": "C-013",
-      "status": "partial",
+      "status": "not-connected",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 15,
-      "publishedValueCount": 14,
-      "seriesCount": 1,
-      "variableCount": 1,
-      "periodCount": 1,
-      "matchedAdm1Count": 14,
+      "sourceRowCount": 0,
+      "publishedValueCount": 0,
+      "seriesCount": 0,
+      "variableCount": 0,
+      "periodCount": 0,
+      "matchedAdm1Count": 0,
       "unmatchedRegionNames": [],
       "rowsWithoutRegion": 0,
-      "sourceRegionCount": 8,
+      "sourceRegionCount": 0,
       "duplicateValueCount": 0,
       "valueTable": false,
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-013.json"
@@ -976,33 +922,33 @@
     },
     {
       "elementId": "C-022",
-      "status": "implemented",
+      "status": "not-connected",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 58,
-      "publishedValueCount": 252,
-      "seriesCount": 4,
-      "variableCount": 4,
-      "periodCount": 1,
-      "matchedAdm1Count": 63,
+      "sourceRowCount": 0,
+      "publishedValueCount": 0,
+      "seriesCount": 0,
+      "variableCount": 0,
+      "periodCount": 0,
+      "matchedAdm1Count": 0,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 24,
-      "sourceRegionCount": 34,
+      "rowsWithoutRegion": 0,
+      "sourceRegionCount": 0,
       "duplicateValueCount": 0,
       "valueTable": false,
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-022.json"
     },
     {
       "elementId": "C-024",
-      "status": "partial",
+      "status": "not-connected",
       "representation": "admin1-choropleth",
       "build": "admin1-attributes",
-      "sourceRowCount": 6,
-      "publishedValueCount": 6,
-      "seriesCount": 1,
-      "variableCount": 1,
-      "periodCount": 1,
-      "matchedAdm1Count": 6,
+      "sourceRowCount": 0,
+      "publishedValueCount": 0,
+      "seriesCount": 0,
+      "variableCount": 0,
+      "periodCount": 0,
+      "matchedAdm1Count": 0,
       "unmatchedRegionNames": [],
       "rowsWithoutRegion": 0,
       "duplicateValueCount": 0,
@@ -1014,7 +960,7 @@
       "status": "implemented",
       "representation": "point",
       "build": "existing",
-      "featureCount": 262,
+      "featureCount": 1133,
       "patched": [
         "analysisItemLabel",
         "countNoun",
@@ -1036,14 +982,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 22,
+      "sourceRowCount": 1168,
       "publishedValueCount": 22,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 22,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 11,
+      "rowsWithoutRegion": 1157,
       "sourceRegionCount": 10,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1054,14 +1000,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 164,
+      "sourceRowCount": 168,
       "publishedValueCount": 26,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 26,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 121,
+      "rowsWithoutRegion": 125,
       "sourceRegionCount": 12,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1072,14 +1018,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 650,
+      "sourceRowCount": 1050,
       "publishedValueCount": 45,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 45,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 547,
+      "rowsWithoutRegion": 947,
       "sourceRegionCount": 23,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1090,14 +1036,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 232,
+      "sourceRowCount": 632,
       "publishedValueCount": 14,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 14,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 218,
+      "rowsWithoutRegion": 618,
       "sourceRegionCount": 8,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1108,14 +1054,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 10,
+      "sourceRowCount": 305,
       "publishedValueCount": 4,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 4,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 6,
+      "rowsWithoutRegion": 301,
       "sourceRegionCount": 3,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1198,14 +1144,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 73,
+      "sourceRowCount": 112,
       "publishedValueCount": 15,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 15,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 68,
+      "rowsWithoutRegion": 107,
       "sourceRegionCount": 9,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1216,14 +1162,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 132,
+      "sourceRowCount": 173,
       "publishedValueCount": 54,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 54,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 13,
+      "rowsWithoutRegion": 54,
       "sourceRegionCount": 28,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1234,14 +1180,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 14,
+      "sourceRowCount": 13,
       "publishedValueCount": 8,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 8,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 12,
+      "rowsWithoutRegion": 11,
       "sourceRegionCount": 4,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1270,14 +1216,14 @@
       "status": "partial",
       "representation": "region-choropleth",
       "build": "region-membership",
-      "sourceRowCount": 1,
+      "sourceRowCount": 46,
       "publishedValueCount": 1,
       "seriesCount": 1,
       "variableCount": 1,
       "periodCount": 1,
       "matchedAdm1Count": 1,
       "unmatchedRegionNames": [],
-      "rowsWithoutRegion": 0,
+      "rowsWithoutRegion": 45,
       "sourceRegionCount": 1,
       "duplicateValueCount": 0,
       "valueTable": false,
@@ -1339,27 +1285,7 @@
       "excludedCount": 7,
       "excluded": [
         {
-          "recordId": "v124-e-006-entity-00001",
-          "reason": "outside-country",
-          "name": "International Finance Corporation (IFC)"
-        },
-        {
-          "recordId": "v124-e-006-entity-00002",
-          "reason": "outside-country",
-          "name": "Asian Development Bank (ADB)"
-        },
-        {
-          "recordId": "v124-e-006-entity-00003",
-          "reason": "outside-country",
-          "name": "Emerging Africa & Asia Infrastructure Fund (EAAIF)"
-        },
-        {
-          "recordId": "v124-e-006-entity-00004",
-          "reason": "outside-country",
-          "name": "Proparco"
-        },
-        {
-          "recordId": "v124-e-006-entity-00007",
+          "recordId": "v124-e-006-entity-00008",
           "reason": "outside-country",
           "name": "Clime Capital Management"
         },
@@ -1367,6 +1293,26 @@
           "recordId": "v124-e-006-entity-00009",
           "reason": "outside-country",
           "name": "responsAbility Investments AG"
+        },
+        {
+          "recordId": "v124-e-006-entity-00010",
+          "reason": "outside-country",
+          "name": "Proparco"
+        },
+        {
+          "recordId": "v124-e-006-entity-00011",
+          "reason": "outside-country",
+          "name": "Emerging Africa & Asia Infrastructure Fund (EAAIF)"
+        },
+        {
+          "recordId": "v124-e-006-entity-00012",
+          "reason": "outside-country",
+          "name": "International Finance Corporation (IFC)"
+        },
+        {
+          "recordId": "v124-e-006-entity-00013",
+          "reason": "outside-country",
+          "name": "Asian Development Bank (ADB)"
         },
         {
           "recordId": "v124-e-006-entity-00014",
@@ -1383,52 +1329,24 @@
       "status": "partial",
       "representation": "point",
       "build": "entities",
-      "sourceRowCount": 24,
-      "sourceCoordinateCount": 15,
-      "featureCount": 14,
-      "memberRowCount": 14,
-      "approximateCount": 9,
-      "excludedCount": 10,
+      "sourceRowCount": 36,
+      "sourceCoordinateCount": 34,
+      "featureCount": 33,
+      "memberRowCount": 33,
+      "approximateCount": 3,
+      "excludedCount": 3,
       "excluded": [
         {
           "recordId": "v124-e-018-entity-00001",
           "reason": "no-coordinate"
         },
         {
-          "recordId": "v124-e-018-entity-00002",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00004",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00005",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00011",
-          "reason": "no-coordinate"
-        },
-        {
           "recordId": "v124-e-018-entity-00013",
-          "reason": "excluded:진출_상태=철수 — 2025-08 현지법인 매각 완료",
-          "name": "두산에너빌리티 (상태 변경)"
+          "reason": "excluded:진출_상태=철수",
+          "name": "포스코 인터내셔널 베트남 (POSCO INTERNATIONAL VN CO.,LTD) 외 1개 거점"
         },
         {
-          "recordId": "v124-e-018-entity-00018",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00019",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00021",
-          "reason": "no-coordinate"
-        },
-        {
-          "recordId": "v124-e-018-entity-00023",
+          "recordId": "v124-e-018-entity-00029",
           "reason": "no-coordinate"
         }
       ],
@@ -1447,15 +1365,15 @@
       "excludedCount": 3,
       "excluded": [
         {
-          "recordId": "v124-e-019-entity-00005",
-          "reason": "no-coordinate"
-        },
-        {
           "recordId": "v124-e-019-entity-00007",
           "reason": "no-coordinate"
         },
         {
           "recordId": "v124-e-019-entity-00008",
+          "reason": "no-coordinate"
+        },
+        {
+          "recordId": "v124-e-019-entity-00009",
           "reason": "no-coordinate"
         }
       ],
@@ -1482,5 +1400,5 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/e-020.json"
     }
   ],
-  "mapIndexSha256": "82f093ab1a440386c49b744c47f0105914c47d6b5477b31d4d7cccb52b77e625"
+  "mapIndexSha256": "be66c1e6576633c6cf95bcf8f1a7f8c8d263922753110ebf3e57b491ca541a3f"
 }

@@ -1,12 +1,395 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 8,
+      "values": [
+        "2024년 신규 투자액",
+        "2024년 신규 프로젝트 수",
+        "ICT 부문 투자액",
+        "상하수도 부문 투자액",
+        "수송 부문 투자액",
+        "에너지 부문 투자액",
+        "연간 사업 건수",
+        "프로젝트 건수(누적)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 2,
+      "values": [
+        "1990~2024 누적 프로젝트 수",
+        "전 섹터 합계"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 2,
+      "values": [
+        "01,03,05,08,15,18,24",
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 24,
+      "values": [
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2022",
+        "2023",
+        "2024"
+      ]
+    }
+  ],
   "elementId": "D-025",
-  "entityCount": 0,
+  "entityCount": 67,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · D025_ppi_investment_annual · ppi_investment_annual",
+      "indicatorId": "D-025_ppi_investment_annual",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|technology=범용|D-025_ppi_investment_annual",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] PPI 투자액은 금융종결 시점 명목 USD 누계이며 실제 집행액과 다를 수 있다. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI)",
+      "sourceLabelEn": "PPI investment, energy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] PPI 투자액은 금융종결 시점 명목 USD 누계이며 실제 집행액과 다를 수 있다. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "category": "에너지 부문 투자액",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "에너지 부문 투자액",
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 에너지 부문 투자액",
+      "indicatorId": "D-025_ppi_investment_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|category=에너지 부문 투자액|technology=범용|D-025_ppi_investment_energy",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 에너지 부문 투자액",
+      "sourceLabelEn": "PPI investment, energy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · D025_ppi_investment_energy_renewable · ppi_investment_energy_renewable",
+      "indicatorId": "D-025_ppi_investment_energy_renewable",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|technology=범용|D-025_ppi_investment_energy_renewable",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] PPI 투자액은 금융종결 시점 명목 USD 누계이며 실제 집행액과 다를 수 있다. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI)",
+      "sourceLabelEn": "PPI investment, energy",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] PPI 투자액은 금융종결 시점 명목 USD 누계이며 실제 집행액과 다를 수 있다. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "category": "ICT 부문 투자액",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "ICT 부문 투자액",
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · ICT 부문 투자액",
+      "indicatorId": "D-025_ppi_investment_ict",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|category=ICT 부문 투자액|technology=범용|D-025_ppi_investment_ict",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · ICT 부문 투자액",
+      "sourceLabelEn": "PPI investment, ict",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "category": "수송 부문 투자액",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "수송 부문 투자액",
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 수송 부문 투자액",
+      "indicatorId": "D-025_ppi_investment_transport",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|category=수송 부문 투자액|technology=범용|D-025_ppi_investment_transport",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 수송 부문 투자액",
+      "sourceLabelEn": "PPI investment, transport",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "category": "상하수도 부문 투자액",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "상하수도 부문 투자액",
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 상하수도 부문 투자액",
+      "indicatorId": "D-025_ppi_investment_water",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|category=상하수도 부문 투자액|technology=범용|D-025_ppi_investment_water",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 상하수도 부문 투자액",
+      "sourceLabelEn": "PPI investment, water",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). PPI 연차보고서 대조 — 2022년 합계 991백만 USD(2건), 2023년 508.6백만 USD(3건), 2024년 24백만 USD(1건)로 일치. 값이 없는 연도는 해당 부문 PPI 실적 없음. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-2c2221cce0c4|USD",
+      "dimensionLabels": {
+        "category": "2024년 신규 투자액",
+        "detail": "전 섹터 합계",
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24"
+      },
+      "dimensions": {
+        "category": "2024년 신규 투자액",
+        "detail": "전 섹터 합계",
+        "technology": "01,03,05,08,15,18,24"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 2024년 신규 투자액 — 전 섹터 합계",
+      "indicatorId": "D-025_ppi_new_investment_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-2c2221cce0c4",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "USD",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-2c2221cce0c4|USD|category=2024년 신규 투자액|detail=전 섹터 합계|technology=01,03,05,08,15,18,24|D-025_ppi_new_investment_2024",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원자료 상태] raw 폴더의 PPI Custom Query 내려받기본은 베트남 필터본(132행)이며 방글라데시 사업이 포함되어 있지 않음을 확인함(2026-08-18). 따라서 프로젝트 단위 레지스트리는 결측(M06)으로 두고 조회경로를 기재함. [대체 확보분] 프로젝트 단위 정보 대신, 동일한 PPI 데이터를 원천으로 하는 World Bank Indicator API의 섹터별 민간참여 투자액 시계열(IE.PPI.ENGY.CD / IE.PPI.TRAN.CD / IE.PPI.WATR.CD / IE.PPI.ICTI.CD, 지표 갱신일 2026-07-13)과 PPI Annual Report 2024의 방글라데시 연간 수치를 1.1 측정값으로 수록함. [결측 처리] World Bank Indicator API에서 값이 null인 연도는 0으로 간주하지 않고 수록하지 않음(해당 연도에 신규 Financial Close가 없었거나 미보고인 경우가 혼재하며 원천이 이를 구분하지 않음). [PPI Annual Report] 2024년 방글라데시 신규 PPI 투자는 24백만 USD·1건으로, 남아시아 전체(5,724백만 USD·28건)의 0.5% 미만임(Annex 1 Table 5, p.31). Indicator API의 2024년 에너지 값 24.3백만 USD와 정합함. [조회 방식 주의] ppi.worldbank.org의 Custom Query와 국가 스냅샷 페이지는 AngularJS 기반 POST 폼이어서 `?country=BGD` 형태의 딥링크가 존재하지 않으며 백엔드 API는 403을 반환함. 기계적 재현에는 World Bank Indicator API 경로가 안정적임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 2024년 신규 투자액 — 전 섹터 합계",
+      "sourceLabelEn": "New PPI investment commitments, 2024",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원자료 상태] raw 폴더의 PPI Custom Query 내려받기본은 베트남 필터본(132행)이며 방글라데시 사업이 포함되어 있지 않음을 확인함(2026-08-18). 따라서 프로젝트 단위 레지스트리는 결측(M06)으로 두고 조회경로를 기재함. [대체 확보분] 프로젝트 단위 정보 대신, 동일한 PPI 데이터를 원천으로 하는 World Bank Indicator API의 섹터별 민간참여 투자액 시계열(IE.PPI.ENGY.CD / IE.PPI.TRAN.CD / IE.PPI.WATR.CD / IE.PPI.ICTI.CD, 지표 갱신일 2026-07-13)과 PPI Annual Report 2024의 방글라데시 연간 수치를 1.1 측정값으로 수록함. [결측 처리] World Bank Indicator API에서 값이 null인 연도는 0으로 간주하지 않고 수록하지 않음(해당 연도에 신규 Financial Close가 없었거나 미보고인 경우가 혼재하며 원천이 이를 구분하지 않음). [PPI Annual Report] 2024년 방글라데시 신규 PPI 투자는 24백만 USD·1건으로, 남아시아 전체(5,724백만 USD·28건)의 0.5% 미만임(Annex 1 Table 5, p.31). Indicator API의 2024년 에너지 값 24.3백만 USD와 정합함. [조회 방식 주의] ppi.worldbank.org의 Custom Query와 국가 스냅샷 페이지는 AngularJS 기반 POST 폼이어서 `?country=BGD` 형태의 딥링크가 존재하지 않으며 백엔드 API는 403을 반환함. 기계적 재현에는 World Bank Indicator API 경로가 안정적임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a501770280ff|건",
+      "dimensionLabels": {
+        "category": "2024년 신규 프로젝트 수",
+        "detail": "전 섹터 합계",
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24"
+      },
+      "dimensions": {
+        "category": "2024년 신규 프로젝트 수",
+        "detail": "전 섹터 합계",
+        "technology": "01,03,05,08,15,18,24"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 2024년 신규 프로젝트 수 — 전 섹터 합계",
+      "indicatorId": "D-025_ppi_new_project_count_2024",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a501770280ff",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a501770280ff|건|category=2024년 신규 프로젝트 수|detail=전 섹터 합계|technology=01,03,05,08,15,18,24|D-025_ppi_new_project_count_2024",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원자료 상태] raw 폴더의 PPI Custom Query 내려받기본은 베트남 필터본(132행)이며 방글라데시 사업이 포함되어 있지 않음을 확인함(2026-08-18). 따라서 프로젝트 단위 레지스트리는 결측(M06)으로 두고 조회경로를 기재함. [대체 확보분] 프로젝트 단위 정보 대신, 동일한 PPI 데이터를 원천으로 하는 World Bank Indicator API의 섹터별 민간참여 투자액 시계열(IE.PPI.ENGY.CD / IE.PPI.TRAN.CD / IE.PPI.WATR.CD / IE.PPI.ICTI.CD, 지표 갱신일 2026-07-13)과 PPI Annual Report 2024의 방글라데시 연간 수치를 1.1 측정값으로 수록함. [결측 처리] World Bank Indicator API에서 값이 null인 연도는 0으로 간주하지 않고 수록하지 않음(해당 연도에 신규 Financial Close가 없었거나 미보고인 경우가 혼재하며 원천이 이를 구분하지 않음). [PPI Annual Report] 2024년 방글라데시 신규 PPI 투자는 24백만 USD·1건으로, 남아시아 전체(5,724백만 USD·28건)의 0.5% 미만임(Annex 1 Table 5, p.31). Indicator API의 2024년 에너지 값 24.3백만 USD와 정합함. [조회 방식 주의] ppi.worldbank.org의 Custom Query와 국가 스냅샷 페이지는 AngularJS 기반 POST 폼이어서 `?country=BGD` 형태의 딥링크가 존재하지 않으며 백엔드 API는 403을 반환함. 기계적 재현에는 World Bank Indicator API 경로가 안정적임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 2024년 신규 프로젝트 수 — 전 섹터 합계",
+      "sourceLabelEn": "Number of new PPI projects, 2024",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원자료 상태] raw 폴더의 PPI Custom Query 내려받기본은 베트남 필터본(132행)이며 방글라데시 사업이 포함되어 있지 않음을 확인함(2026-08-18). 따라서 프로젝트 단위 레지스트리는 결측(M06)으로 두고 조회경로를 기재함. [대체 확보분] 프로젝트 단위 정보 대신, 동일한 PPI 데이터를 원천으로 하는 World Bank Indicator API의 섹터별 민간참여 투자액 시계열(IE.PPI.ENGY.CD / IE.PPI.TRAN.CD / IE.PPI.WATR.CD / IE.PPI.ICTI.CD, 지표 갱신일 2026-07-13)과 PPI Annual Report 2024의 방글라데시 연간 수치를 1.1 측정값으로 수록함. [결측 처리] World Bank Indicator API에서 값이 null인 연도는 0으로 간주하지 않고 수록하지 않음(해당 연도에 신규 Financial Close가 없었거나 미보고인 경우가 혼재하며 원천이 이를 구분하지 않음). [PPI Annual Report] 2024년 방글라데시 신규 PPI 투자는 24백만 USD·1건으로, 남아시아 전체(5,724백만 USD·28건)의 0.5% 미만임(Annex 1 Table 5, p.31). Indicator API의 2024년 에너지 값 24.3백만 USD와 정합함. [조회 방식 주의] ppi.worldbank.org의 Custom Query와 국가 스냅샷 페이지는 AngularJS 기반 POST 폼이어서 `?country=BGD` 형태의 딥링크가 존재하지 않으며 백엔드 API는 403을 반환함. 기계적 재현에는 World Bank Indicator API 경로가 안정적임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a501770280ff|건",
+      "dimensionLabels": {
+        "category": "연간 사업 건수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "연간 사업 건수",
+        "technology": "범용"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 연간 사업 건수",
+      "indicatorId": "D-025_ppi_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a501770280ff",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a501770280ff|건|category=연간 사업 건수|technology=범용|D-025_ppi_project_count",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2023년은 남아시아 3위(인도·스리랑카 다음), IDA 국가 중 2위. 2024년은 인도 제외 남아시아에서 네팔과 함께 유이한 투자확약국. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 연간 사업 건수",
+      "sourceLabelEn": "PPI project count",
+      "sourceNote": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). 2023년은 남아시아 3위(인도·스리랑카 다음), IDA 국가 중 2위. 2024년은 인도 제외 남아시아에서 네팔과 함께 유이한 투자확약국. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a501770280ff|건",
+      "dimensionLabels": {
+        "category": "프로젝트 건수(누적)",
+        "detail": "1990~2024 누적 프로젝트 수",
+        "technology": "01 · 03 · 05 · 08 · 15 · 18 · 24"
+      },
+      "dimensions": {
+        "category": "프로젝트 건수(누적)",
+        "detail": "1990~2024 누적 프로젝트 수",
+        "technology": "01,03,05,08,15,18,24"
+      },
+      "displayLabel": "민간 인프라 투자(PPI) · 프로젝트 건수(누적) — 1990~2024 누적 프로젝트 수",
+      "indicatorId": "D-025_ppi_project_registry_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a501770280ff",
+        "labelKo": "민간 인프라 투자(PPI)",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a501770280ff|건|category=프로젝트 건수(누적)|detail=1990~2024 누적 프로젝트 수|technology=01,03,05,08,15,18,24|D-025_ppi_project_registry_count",
+      "sourceCaveat": "[라이선스 · 원본배포: 가능 / 집계표출: 가능] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원자료 상태] raw 폴더의 PPI Custom Query 내려받기본은 베트남 필터본(132행)이며 방글라데시 사업이 포함되어 있지 않음을 확인함(2026-08-18). 따라서 프로젝트 단위 레지스트리는 결측(M06)으로 두고 조회경로를 기재함. [대체 확보분] 프로젝트 단위 정보 대신, 동일한 PPI 데이터를 원천으로 하는 World Bank Indicator API의 섹터별 민간참여 투자액 시계열(IE.PPI.ENGY.CD / IE.PPI.TRAN.CD / IE.PPI.WATR.CD / IE.PPI.ICTI.CD, 지표 갱신일 2026-07-13)과 PPI Annual Report 2024의 방글라데시 연간 수치를 1.1 측정값으로 수록함. [결측 처리] World Bank Indicator API에서 값이 null인 연도는 0으로 간주하지 않고 수록하지 않음(해당 연도에 신규 Financial Close가 없었거나 미보고인 경우가 혼재하며 원천이 이를 구분하지 않음). [PPI Annual Report] 2024년 방글라데시 신규 PPI 투자는 24백만 USD·1건으로, 남아시아 전체(5,724백만 USD·28건)의 0.5% 미만임(Annex 1 Table 5, p.31). Indicator API의 2024년 에너지 값 24.3백만 USD와 정합함. [조회 방식 주의] ppi.worldbank.org의 Custom Query와 국가 스냅샷 페이지는 AngularJS 기반 POST 폼이어서 `?country=BGD` 형태의 딥링크가 존재하지 않으며 백엔드 API는 403을 반환함. 기계적 재현에는 World Bank Indicator API 경로가 안정적임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. CC BY 4.0 §4 — 데이터베이스의 상당 부분 재배포 허용. §3(a) 출처표시·라이선스 링크·URI·변경사실 표시 의무. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용). [C-012 연계 정리 2026-09-29] 발주처 검토의견(2026-09-23)에 따라 C-012 PPP 법제도·조달 체계에 실려 있던 World Bank PPI 개별 사업 레코드는 D-025로 이관하고, C-012에는 집계값(총 건수·총 투자액·최근 재무종결 연도·부문별 건수)만 남겼다. C-012 [실적] 집계는 본 요소와 동일 원천·동일 값이므로 두 요소의 값을 합산하지 않는다. D-022 MDB/DFI·PPP 투자 프로젝트는 JICA·ADB·IFC·AIIB·World Bank 등의 공적 재원 약정액으로, D-025의 민간 참여(private participation) 거래와 재원 성격이 다르다. 동일 설비가 양쪽에 나타나더라도 서로 다른 거래이므로 중복 수록이 아니며, 두 값을 합산하면 이중계상이 된다(합산 금지).",
+      "sourceLabel": "민간 인프라 투자(PPI) · 프로젝트 건수(누적) — 1990~2024 누적 프로젝트 수",
+      "sourceLabelEn": "Cumulative number of PPI projects, 1990-2024",
+      "sourceNote": "[해소 2026-09-28] World Bank PPI Database 방글라데시 Custom Query 원본을 확보해 프로젝트 단위 목록 67건(금융종결 2000–2024)을 1.2 레코드형 시트에 수록하고 누적 건수를 기입함.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 7,
+      "key": "measure-2c2221cce0c4",
+      "labelKo": "민간 인프라 투자(PPI)",
+      "recordCount": 44,
+      "unit": "USD",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 3,
+      "key": "measure-a501770280ff",
+      "labelKo": "민간 인프라 투자(PPI)",
+      "recordCount": 5,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 49,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

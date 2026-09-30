@@ -1,15 +1,12 @@
-# V162 기대값 변경 기록
+# 기대값 변경 — V162 (2026-09-30 입고 데이터 갱신)
 
-모두 사용자 지시(2026-09-30, PR 2 '상세 마무리' a–d)에 따른 화면 변경이다. 현재값에 맞춰 통과시킨 변경은 없다. 각 항목은 무엇을 여전히 검사하는지 함께 적는다.
-
-| 파일 | 이전 기대 | 이후 기대 | 사유 | 계속 검사하는 것 |
-|---|---|---|---|---|
-| `scripts/audit-vietnam-public-copy-v134.mjs` | 미입고 3개(C-023·E-011·E-013)의 `public-data-title` = 분석 제목 '… 자료 수집 상태', 페이지 제목과 달라야 함 | 이 3개는 `public-data-title` = 페이지 제목(h1). 제목 구분 검사는 제외 | c: '자료 수집 상태' 제목은 상태를 되풀이하는 문구로, 사용자 지시에 따라 제거('데이터 준비 중' 1줄만) | 나머지 143개의 분석 제목 일치·페이지 제목과의 구분, 3개의 제목 존재 |
-| `scripts/audit-vietnam-detail-hierarchy-v135.mjs` | 모든 상세의 공개 제목을 분석 영역(`public-analysis-root`) 안에서 찾음 | 미입고 3개만 페이지 제목(h1, `public-data-title`)을 공개 제목으로 인정 | c: 분석 제목('… 자료 수집 상태') 제거로 분석 영역 안 제목이 없어짐 | 143개는 분석 영역 안 제목 필수, 3개도 공개 제목 존재 필수, 분석 순서·메타 위치 검사 전부 |
-| `src/data/geo/regionDisplayV158.test.ts`(#50) | 벵골 문자 Cox's Bazar → '콕스바자르 (Cox's Bazar)' | 'Cox's Bazar'(검토 대기 구는 로마자만) | b: 검토 대기 지명은 한글 비표시(#50 경로에도 같은 규칙) | 확정 이름의 '한글 (로마자)', 로마자 없음 표시 |
-| `src/data/geo/regionNameV161.test.ts` | 'QuảngBình' → '꽝빈 (QuảngBình)' | '꽝빈 (Quảng Bình)'(사전에 있는 붙은 이름은 띄어 씀), 사전 밖 'McDonaldTown'은 그대로 | e: 공개 문구 스캔이 붙은 현지명을 식별자로 판정(B-026) | 사전 적중·표기 형식·목록 분리 |
-| `scripts/v157/public-wording-scan-v157.mjs`(#47) | 예외 2건(A-027 OSM 분류값, B-026 붙은 지명) | 예외 0건. 한글 라벨 바로 뒤 괄호 속 snake_case 원값만 원값 인용으로 인정 | e: 사용자 지시(예외 삭제, 한글 라벨·원값 괄호) | 그 밖의 식별자·작업 어휘 전부, 예외 기록 장치는 유지 |
-| `e2e/detail-all.spec.ts`·`e2e/helpers.ts` | 미입고가 아닌 요소는 출처 패널에 '자료기간'(D-018만 예외 목록) | 요소별 판정 계약(`periodStatementsV162.json`)의 표기('자료기간'·'기준 시점'·'계획기간')를 요구. 미입고는 셋 다 없어야 함 | d: 41개 자료기간 규칙(수집 시점은 '기준 시점', 계획 문서는 '계획기간') | 모든 상세의 기간 표기 존재, '자료기간/단위 미기재' 자리표시 금지 |
-| `src/data/geo/regionNameV161.test.ts` | BGD 검토 대기 구 Cox's Bazar·Jashore → '한글명 (현지명)' | 현지명만. 한글 제안은 `regionNameKo`로 사전에 남아 있음을 확인 | b: 검토 대기 지명은 현지명만(사용자 2026-09-29) | 확정 이름 병기 형식, 63·34·도시 적중 |
-| `src/data/visualization/facilityCardV153.test.ts` | 소재지 '선라(Sơn La)'·'호찌민(Hồ Chí Minh)'(공백 없음) | '선라 (Sơn La)'·'호찌민 (Hồ Chí Minh)' | b: 지역명 표기를 모듈 표준 '한글명 (현지명)'으로 통일 | 소재지 값·개편 전 이름 병기 |
-| `src/components/data/semantic/documentTimelineBaselineV153.test.tsx` | C-009·C-010 연표 바이트 비교(지역 원문 포함) | 바이트 비교는 지역 사전이 없는 국가로 렌더(렌더러 비교 유지) + 지역 표기('다낭 (Da Nang city)' 등)는 새 테스트로 확인 | b: 문서 연표의 '지역'에 지역명 표기 적용 | 연표 항목 바이트 동일성, 설명 카드 위치·개수 |
+| 대상 | 이전 기대 | 새 기대 | 사유 |
+|---|---|---|---|
+| `tools/etl/countries/bgd/verify_country_v2.cjs` `ROWS_PUBLISHED_EQUAL_SOURCE` | 요소별 원천 행 = 공개 행 | 원천 행 − 선언된 비공개 행(`quality-report.summary.rowExclusions`) = 공개 행 | 사용자 결정(V162): B-024 배분 추정 행 비공개. 규칙은 `config/data-publication/row-exclusions-v162.json` 1곳(모든 국가)이고, 빠진 행 수를 보고서에 남긴다 — 조용히 빠지는 행은 여전히 실패 |
+| 같은 검증기 `NO_SOURCE_CELL_DROPPED` | 모든 요소의 개체 칸 수 일치 | 선언된 비공개 행이 있는 요소는 개체 칸 비교 제외(행 수 검사가 대신 셈) | 행 전체를 빼면 그 행의 칸도 빠진다. 다른 요소는 그대로 검사 |
+| BGD 다운로드 `지역명_한글` | 사전의 모든 이름(검토 중 포함) | 확정(confirmed) 이름만, 없으면 원문 표기 | 화면(`formatRegionName`)은 검토 중 이름을 쓰지 않는다(사용자 2026-09-29). 다운로드도 같게 — B-012 신규 district 행(Cox's Bazar 등)에서 처음 드러남 |
+| `scripts/v161/audit-source-notes-v161.mjs` 허용 목록 4건 | — | B-038 '현지조사 기준', E-004 '해당 없음 — 기관 운영 종료', E-007 '해당 없음 — 재정지원 과제', E-007 '[상충] 현지조사(… 결과 전달)는' | 새 자료의 데이터 값·값의 기준 구분(요소 한정). 출처 줄·다른 요소의 같은 말은 계속 실패 |
+| E-012 semantic(`e012_decode_id`) | ILOSTAT 90개 지표 | + NSO(`_nat`)·ILO USD(`_usd`)·군인(ISCO 0)·분류불능(ISCO X), `source`·`currency` 차원 | 새 자료가 두 원천·두 통화를 함께 납품. 전용 화면은 ILOSTAT·VND만 비교(원천을 한 차트에 섞지 않음) |
+| E-012 주석 검증(`validate_e012_notes`) | '직군: …·성별: …' 서식 | 위 서식 또는 새 서식('[원본: ILOSTAT …] … (ISCO-08 n) / 성별') | 새 납품의 주석 서식. 검증 강도는 같다(직군 번호·성별 일치) |
+| '데이터 준비 중' 판정 | 기본 국가는 유형 명세(JSON) 고정값 | 모든 국가에서 catalog `publicStatus`로 판정 | 사용자 결정(V162): 판정은 catalog 1곳. 현 VNM 트리에서 판정 결과 차이 0(대조), E-011은 입고로 공개 전환 |
+| 홈 '데이터 기준일' | `manifest.generatedAt`(ETL 고정값 2026-08-27) | `manifest.provenance.sourceDeliveredAt`(원자료 입고일, 국가별) | 사용자 결정(V162) |

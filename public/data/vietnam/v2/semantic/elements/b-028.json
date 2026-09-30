@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-028",
-  "entityCount": 16,
+  "entityCount": 25,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 16,
+  "indicatorCount": 18,
   "indicators": [
     {
       "axisGroupKey": "measure-8c63feed7431|%",
@@ -203,25 +203,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-a5bb9f20399d|m³/s",
-      "dimensionLabels": {
-        "detail": "격자/유역 단위(GIS)"
-      },
-      "dimensions": {
-        "detail": "격자/유역 단위(GIS)"
-      },
-      "displayLabel": "하천 유량 — 격자/유역 단위(GIS)",
+      "axisGroupKey": "measure-46b0ce8a14a3|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "하천 유량 - 유역(GIS) 집계 지표(GloFAS v4 격자 → B-025 유역 출구 대표값)",
       "indicatorId": "B-028_discharge_gis",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-a5bb9f20399d",
-        "labelKo": "하천 유량",
-        "unit": "m³/s",
+        "key": "measure-46b0ce8a14a3",
+        "labelKo": "하천 유량 - 유역(GIS) 집계 지표(GloFAS v4 격자 → B-025 유역 출구 대표값)",
+        "unit": "지표별 상이(속성 열 참조)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-a5bb9f20399d|m³/s|detail=격자/유역 단위(GIS)|B-028_discharge_gis",
+      "seriesKey": "measure-46b0ce8a14a3|지표별 상이(속성 열 참조)||B-028_discharge_gis",
       "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(admin)·유역 단위 산출 가능 / [원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
-      "sourceLabel": "하천 유량 — 격자/유역 단위(GIS)",
+      "sourceLabel": "하천 유량 - 유역(GIS) 집계 지표(GloFAS v4 격자 → B-025 유역 출구 대표값)",
       "sourceLabelEn": "River discharge (gridded/basin)",
       "sourceNote": "2026년: GloFAS 격자 유량 집계 미수행 — 절차 확정 후 진행",
       "sourceProvenance": {
@@ -389,25 +385,45 @@
       }
     },
     {
-      "axisGroupKey": "measure-13123e8ee1dc|지표별 상이(속성 열 참조)",
-      "dimensionLabels": {
-        "category": "유역 개체 목록)"
-      },
-      "dimensions": {
-        "category": "유역 개체 목록)"
-      },
-      "displayLabel": "하천 유량(지점·유역 개체 목록)",
+      "axisGroupKey": "measure-f721acc6b4ca|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "하천 유량 - 기본 지표(GloFAS 지점 연평균, 10개국 공통 원천)",
       "indicatorId": "B-028_hydro_site",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-13123e8ee1dc",
-        "labelKo": "하천 유량(지점",
+        "key": "measure-f721acc6b4ca",
+        "labelKo": "하천 유량 - 기본 지표(GloFAS 지점 연평균, 10개국 공통 원천)",
         "unit": "지표별 상이(속성 열 참조)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-13123e8ee1dc|지표별 상이(속성 열 참조)|category=유역 개체 목록)|B-028_hydro_site",
+      "seriesKey": "measure-f721acc6b4ca|지표별 상이(속성 열 참조)||B-028_hydro_site",
       "sourceCaveat": null,
-      "sourceLabel": "하천 유량(지점·유역 개체 목록)",
+      "sourceLabel": "하천 유량 - 기본 지표(GloFAS 지점 연평균, 10개국 공통 원천)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5265258d432b|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "기관 보고 값)"
+      },
+      "dimensions": {
+        "category": "기관 보고 값)"
+      },
+      "displayLabel": "하천 유량 - 보조 지표(문헌·기관 보고 값)",
+      "indicatorId": "B-028_hydro_site_lit_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5265258d432b",
+        "labelKo": "하천 유량 - 보조 지표(문헌",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5265258d432b|지표별 상이(속성 열 참조)|category=기관 보고 값)|B-028_hydro_site_lit_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "하천 유량 - 보조 지표(문헌·기관 보고 값)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -471,6 +487,30 @@
         "sourceRow": 4,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-7fcfac207c5c|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "환산값)"
+      },
+      "dimensions": {
+        "category": "환산값)"
+      },
+      "displayLabel": "하천 유량 - 보조 지표(AQUASTAT 국가 수자원 통계·환산값)",
+      "indicatorId": "B-028_water_resources_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7fcfac207c5c",
+        "labelKo": "하천 유량 - 보조 지표(AQUASTAT 국가 수자원 통계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-7fcfac207c5c|지표별 상이(속성 열 참조)|category=환산값)|B-028_water_resources_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "하천 유량 - 보조 지표(AQUASTAT 국가 수자원 통계·환산값)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -523,7 +563,7 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 6,
+      "indicatorCount": 5,
       "key": "measure-a5bb9f20399d",
       "labelKo": "하천 유량",
       "recordCount": 0,
@@ -532,8 +572,32 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-13123e8ee1dc",
-      "labelKo": "하천 유량(지점",
+      "key": "measure-f721acc6b4ca",
+      "labelKo": "하천 유량 - 기본 지표(GloFAS 지점 연평균, 10개국 공통 원천)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-7fcfac207c5c",
+      "labelKo": "하천 유량 - 보조 지표(AQUASTAT 국가 수자원 통계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-5265258d432b",
+      "labelKo": "하천 유량 - 보조 지표(문헌",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-46b0ce8a14a3",
+      "labelKo": "하천 유량 - 유역(GIS) 집계 지표(GloFAS v4 격자 → B-025 유역 출구 대표값)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

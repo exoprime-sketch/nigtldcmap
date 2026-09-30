@@ -26,7 +26,7 @@
   "elementId": "D-019",
   "entityCount": 10,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 6,
+  "indicatorCount": 7,
   "indicators": [
     {
       "axisGroupKey": "measure-5bc9cf65db2a|USD",
@@ -61,6 +61,30 @@
         "sourceRow": 10,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-646a4a09318f|건",
+      "dimensionLabels": {
+        "category": "요청건 레지스트리"
+      },
+      "dimensions": {
+        "category": "요청건 레지스트리"
+      },
+      "displayLabel": "CTCN 기술지원 요청 · 요청건 레지스트리",
+      "indicatorId": "D-019_ctcn_ta_request_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-646a4a09318f",
+        "labelKo": "CTCN 기술지원 요청",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-646a4a09318f|건|category=요청건 레지스트리|D-019_ctcn_ta_request_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "CTCN 기술지원 요청 · 요청건 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-646a4a09318f|건",
@@ -243,12 +267,12 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 5,
+      "indicatorCount": 6,
       "key": "measure-646a4a09318f",
       "labelKo": "CTCN 기술지원 요청",
       "recordCount": 0,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
   "observationCount": 0,

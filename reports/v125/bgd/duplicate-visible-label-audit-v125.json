@@ -2,62 +2,6 @@
   "generatedAt": "2026-08-27T00:00:00Z",
   "groups": [
     {
-      "elementId": "B-002",
-      "indicatorIds": [
-        "B-002_koppen_area_am_tropical_monsoon",
-        "B-002_koppen_area_aw_tropical_savanna",
-        "B-002_koppen_area_cwa"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "기후대별 점유 면적 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_area_am_tropical_monsoon",
-        "기후대별 점유 면적 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_area_aw_tropical_savanna",
-        "기후대별 점유 면적 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_area_cwa"
-      ],
-      "sourceLabel": "기후대별 점유 면적 — Af (열대우림)",
-      "units": [
-        "km2"
-      ]
-    },
-    {
-      "elementId": "B-002",
-      "indicatorIds": [
-        "B-002_koppen_share_am_tropical_monsoon",
-        "B-002_koppen_share_aw_tropical_savanna",
-        "B-002_koppen_share_cwa"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "기후대별 점유 비율 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_share_am_tropical_monsoon",
-        "기후대별 점유 비율 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_share_aw_tropical_savanna",
-        "기후대별 점유 비율 — Af (열대우림) · koppen_geiger_tif/1991_2020/koppen_geiger_0p00833333.tif · koppen_share_cwa"
-      ],
-      "sourceLabel": "기후대별 점유 비율 — Af (열대우림)",
-      "units": [
-        "%"
-      ]
-    },
-    {
-      "elementId": "B-002",
-      "indicatorIds": [
-        "B-002_koppen_tropical_share_1901_1930",
-        "B-002_koppen_tropical_share_1991_2020",
-        "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
-        "B-002_koppen_tropical_share_2071_2099_ssp5_8_5"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측 · koppen_geiger_tif — 1901_1930 / 1991_2020 / 2071_2099(ssp245·ssp585) · koppen_tropical_share_1901_1930",
-        "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측 · koppen_geiger_tif — 1901_1930 / 1991_2020 / 2071_2099(ssp245·ssp585) · koppen_tropical_share_1991_2020",
-        "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측 · koppen_geiger_tif — 1901_1930 / 1991_2020 / 2071_2099(ssp245·ssp585) · koppen_tropical_share_2071_2099_ssp2_4_5",
-        "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측 · koppen_geiger_tif — 1901_1930 / 1991_2020 / 2071_2099(ssp245·ssp585) · koppen_tropical_share_2071_2099_ssp5_8_5"
-      ],
-      "sourceLabel": "열대기후(A군) 국토 점유 비율 — 시기·시나리오별 — 1901–1930 관측",
-      "units": [
-        "%"
-      ]
-    },
-    {
       "elementId": "B-010",
       "indicatorIds": [
         "B-010_cri_event_2024_01",
@@ -71,68 +15,6 @@
       "sourceLabel": "2024년 최대 피해 극한기상 사건 — CRI 2026 본문",
       "units": [
         "사건"
-      ]
-    },
-    {
-      "elementId": "B-014",
-      "indicatorIds": [
-        "B-014_gdp_impact_ct10",
-        "B-014_gdp_net_benefit_ct10"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "GDP 영향 — NZP-no-reforms · CCDR Table 8 — Cost (percent of GDP growth) · gdp_impact_ct10",
-        "GDP 영향 — NZP-no-reforms · CCDR Table 8 — Net benefit (percent of GDP growth) · gdp_net_benefit_ct10"
-      ],
-      "sourceLabel": "GDP 영향 — NZP-no-reforms",
-      "units": [
-        "%p (GDP 성장률)"
-      ]
-    },
-    {
-      "elementId": "B-014",
-      "indicatorIds": [
-        "B-014_gdp_impact_ct25",
-        "B-014_gdp_net_benefit_ct25"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "GDP 영향 — NZP-with-measures · CCDR Table 8 — Cost (percent of GDP growth) · gdp_impact_ct25",
-        "GDP 영향 — NZP-with-measures · CCDR Table 8 — Net benefit (percent of GDP growth) · gdp_net_benefit_ct25"
-      ],
-      "sourceLabel": "GDP 영향 — NZP-with-measures",
-      "units": [
-        "%p (GDP 성장률)"
-      ]
-    },
-    {
-      "elementId": "B-014",
-      "indicatorIds": [
-        "B-014_emission_reduction_ct10",
-        "B-014_energy_price_increase_coal_ct10",
-        "B-014_energy_price_increase_coal_ct25",
-        "B-014_energy_price_increase_electricity_ct10",
-        "B-014_energy_price_increase_electricity_ct25",
-        "B-014_energy_price_increase_gas_ct10",
-        "B-014_energy_price_increase_gas_ct25",
-        "B-014_energy_price_increase_gasoline_ct10",
-        "B-014_energy_price_increase_gasoline_ct25"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — CO2 reduction below 2030 baseline · emission_reduction_ct10",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_coal_ct10",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_coal_ct25",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_electricity_ct10",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_electricity_ct25",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gas_ct10",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gas_ct25",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gasoline_ct10",
-        "배출 감소율 — NZP-no-reforms · CCDR Table 8 — Energy price increase · energy_price_increase_gasoline_ct25"
-      ],
-      "sourceLabel": "배출 감소율 — NZP-no-reforms",
-      "units": [
-        "%"
       ]
     },
     {
@@ -1460,12 +1342,12 @@
     {
       "elementId": "B-022",
       "indicatorIds": [
-        "B-022_financing_source_g01",
+        "B-022_financing_public",
         "B-022_financing_source_total"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "기후 투자 재원 구성 — 공공 · CCDR Table 9 — Budget reprioritization · financing_source_g01",
+        "기후 투자 재원 구성 — 공공 · CCDR Table 9 — Budget reprioritization · financing_public",
         "기후 투자 재원 구성 — 공공 · CCDR Table 9 — Total · financing_source_total"
       ],
       "sourceLabel": "기후 투자 재원 구성 — 공공",
@@ -1476,12 +1358,12 @@
     {
       "elementId": "B-022",
       "indicatorIds": [
-        "B-022_financing_source_g03",
+        "B-022_financing_external",
         "B-022_financing_source_g04"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "기후 투자 재원 구성 — 외부(대외) 지원 · CCDR Table 9 — External financing · financing_source_g03",
+        "기후 투자 재원 구성 — 외부(대외) 지원 · CCDR Table 9 — External financing · financing_external",
         "기후 투자 재원 구성 — 외부(대외) 지원 · CCDR Table 9 — Private investment · financing_source_g04"
       ],
       "sourceLabel": "기후 투자 재원 구성 — 외부(대외) 지원",
@@ -1492,8 +1374,7 @@
     {
       "elementId": "C-001",
       "indicatorIds": [
-        "C-001_adaptation_sector",
-        "C-001_adaptation_summary",
+        "C-001_adaptation",
         "C-001_finance",
         "C-001_non_ghg_target",
         "C-001_sdg_linkage",
@@ -1505,8 +1386,7 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "NDC (국가 온실가스 감축 목표) · adaptation_sector",
-        "NDC (국가 온실가스 감축 목표) · adaptation_summary",
+        "NDC (국가 온실가스 감축 목표) · adaptation",
         "NDC (국가 온실가스 감축 목표) · finance",
         "NDC (국가 온실가스 감축 목표) · non_ghg_target",
         "NDC (국가 온실가스 감축 목표) · sdg_linkage",
@@ -1528,7 +1408,6 @@
         "C-002_climate_outlook",
         "C-002_ghg_inventory",
         "C-002_ndc_reduction",
-        "C-002_ndc_reduction_sector",
         "C-002_submission",
         "C-002_unavailable"
       ],
@@ -1538,7 +1417,6 @@
         "BTR (격년투명성보고서, 舊 BUR) · climate_outlook",
         "BTR (격년투명성보고서, 舊 BUR) · ghg_inventory",
         "BTR (격년투명성보고서, 舊 BUR) · ndc_reduction",
-        "BTR (격년투명성보고서, 舊 BUR) · ndc_reduction_sector",
         "BTR (격년투명성보고서, 舊 BUR) · submission",
         "BTR (격년투명성보고서, 舊 BUR) · unavailable"
       ],
@@ -1550,17 +1428,39 @@
     {
       "elementId": "C-003",
       "indicatorIds": [
+        "C-003_composition",
+        "C-003_finance",
         "C-003_governance_body",
         "C-003_nap_submission",
-        "C-003_priority_sector"
+        "C-003_sector_vulnerability"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
+        "NAP (국가 적응 계획) · composition",
+        "NAP (국가 적응 계획) · finance",
         "NAP (국가 적응 계획) · governance_body",
         "NAP (국가 적응 계획) · nap_submission",
-        "NAP (국가 적응 계획) · priority_sector"
+        "NAP (국가 적응 계획) · sector_vulnerability"
       ],
       "sourceLabel": "NAP (국가 적응 계획)",
+      "units": [
+        "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조"
+      ]
+    },
+    {
+      "elementId": "C-004",
+      "indicatorIds": [
+        "C-004_finance",
+        "C-004_scenario",
+        "C-004_submission"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "LT-LEDS (장기 저탄소 발전 전략) · finance",
+        "LT-LEDS (장기 저탄소 발전 전략) · scenario",
+        "LT-LEDS (장기 저탄소 발전 전략) · submission"
+      ],
+      "sourceLabel": "LT-LEDS (장기 저탄소 발전 전략)",
       "units": [
         "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조"
       ]
@@ -1570,7 +1470,7 @@
       "indicatorIds": [
         "C-005_barrier",
         "C-005_priority_sector",
-        "C-005_priority_technology",
+        "C-005_priority_tech",
         "C-005_source_document",
         "C-005_tna_cycle"
       ],
@@ -1578,7 +1478,7 @@
       "resolvedDisplayLabels": [
         "TNA (기술 수요 평가) · barrier",
         "TNA (기술 수요 평가) · priority_sector",
-        "TNA (기술 수요 평가) · priority_technology",
+        "TNA (기술 수요 평가) · priority_tech",
         "TNA (기술 수요 평가) · source_document",
         "TNA (기술 수요 평가) · tna_cycle"
       ],
@@ -1590,15 +1490,15 @@
     {
       "elementId": "C-006",
       "indicatorIds": [
+        "C-006_activity",
         "C-006_bilateral_agreement",
-        "C-006_domestic_framework",
-        "C-006_transition_activity"
+        "C-006_domestic_framework"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
+        "파리협정 제6.2조·제6.4조 이행 체계·현황 · activity",
         "파리협정 제6.2조·제6.4조 이행 체계·현황 · bilateral_agreement",
-        "파리협정 제6.2조·제6.4조 이행 체계·현황 · domestic_framework",
-        "파리협정 제6.2조·제6.4조 이행 체계·현황 · transition_activity"
+        "파리협정 제6.2조·제6.4조 이행 체계·현황 · domestic_framework"
       ],
       "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "units": [
@@ -1660,9 +1560,9 @@
       "indicatorIds": [
         "C-011_alert_history",
         "C-011_alert_scale",
+        "C-011_crime_stat",
         "C-011_emergency_contact",
-        "C-011_homicide_rate",
-        "C-011_notice",
+        "C-011_safety_notice",
         "C-011_security_assessment",
         "C-011_statistics_availability",
         "C-011_travel_alert"
@@ -1671,9 +1571,9 @@
       "resolvedDisplayLabels": [
         "치안·안전 정보 · alert_history",
         "치안·안전 정보 · alert_scale",
+        "치안·안전 정보 · crime_stat",
         "치안·안전 정보 · emergency_contact",
-        "치안·안전 정보 · homicide_rate",
-        "치안·안전 정보 · notice",
+        "치안·안전 정보 · safety_notice",
         "치안·안전 정보 · security_assessment",
         "치안·안전 정보 · statistics_availability",
         "치안·안전 정보 · travel_alert"
@@ -1686,19 +1586,13 @@
     {
       "elementId": "C-012",
       "indicatorIds": [
-        "C-012_framework_provision",
-        "C-012_ppi_investment",
-        "C-012_ppp_agency",
-        "C-012_ppp_document",
-        "C-012_procurement_method"
+        "C-012_law",
+        "C-012_ppi_summary"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "PPP 법제도·조달 체계 · framework_provision",
-        "PPP 법제도·조달 체계 · ppi_investment",
-        "PPP 법제도·조달 체계 · ppp_agency",
-        "PPP 법제도·조달 체계 · ppp_document",
-        "PPP 법제도·조달 체계 · procurement_method"
+        "PPP 법제도·조달 체계 · law",
+        "PPP 법제도·조달 체계 · ppi_summary"
       ],
       "sourceLabel": "PPP 법제도·조달 체계",
       "units": [
@@ -1735,6 +1629,7 @@
         "C-014_ec_fee",
         "C-014_land_acquisition_rule",
         "C-014_legal_basis",
+        "C-014_permit_step",
         "C-014_tariff_rule"
       ],
       "resolved": true,
@@ -1744,6 +1639,7 @@
         "인허가 프로세스 · ec_fee",
         "인허가 프로세스 · land_acquisition_rule",
         "인허가 프로세스 · legal_basis",
+        "인허가 프로세스 · permit_step",
         "인허가 프로세스 · tariff_rule"
       ],
       "sourceLabel": "인허가 프로세스",
@@ -1754,49 +1650,23 @@
     {
       "elementId": "C-016",
       "indicatorIds": [
-        "C-016_auction_package",
         "C-016_data_availability",
         "C-016_installed_capacity",
-        "C-016_procurement_rule",
-        "C-016_re_target",
-        "C-016_rpo_rec"
+        "C-016_national_target",
+        "C-016_procurement",
+        "C-016_rpo_rec",
+        "C-016_tender_round"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "재생에너지 발주 및 확대 계획 · auction_package",
         "재생에너지 발주 및 확대 계획 · data_availability",
         "재생에너지 발주 및 확대 계획 · installed_capacity",
-        "재생에너지 발주 및 확대 계획 · procurement_rule",
-        "재생에너지 발주 및 확대 계획 · re_target",
-        "재생에너지 발주 및 확대 계획 · rpo_rec"
+        "재생에너지 발주 및 확대 계획 · national_target",
+        "재생에너지 발주 및 확대 계획 · procurement",
+        "재생에너지 발주 및 확대 계획 · rpo_rec",
+        "재생에너지 발주 및 확대 계획 · tender_round"
       ],
       "sourceLabel": "재생에너지 발주 및 확대 계획",
-      "units": [
-        "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조"
-      ]
-    },
-    {
-      "elementId": "C-017",
-      "indicatorIds": [
-        "C-017_deployment_status",
-        "C-017_implementing_agency",
-        "C-017_incentive_instrument",
-        "C-017_net_metering_rule",
-        "C-017_policy_scope",
-        "C-017_target_technology",
-        "C-017_tax_exemption_rate"
-      ],
-      "resolved": true,
-      "resolvedDisplayLabels": [
-        "재생에너지 투자 인센티브 · deployment_status",
-        "재생에너지 투자 인센티브 · implementing_agency",
-        "재생에너지 투자 인센티브 · incentive_instrument",
-        "재생에너지 투자 인센티브 · net_metering_rule",
-        "재생에너지 투자 인센티브 · policy_scope",
-        "재생에너지 투자 인센티브 · target_technology",
-        "재생에너지 투자 인센티브 · tax_exemption_rate"
-      ],
-      "sourceLabel": "재생에너지 투자 인센티브",
       "units": [
         "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조"
       ]
@@ -1827,26 +1697,20 @@
         "C-019_budget",
         "C-019_carbon_pricing",
         "C-019_eligible_mechanism",
+        "C-019_ets_design",
         "C-019_fee",
-        "C-019_fee_rule",
-        "C-019_framework_document",
-        "C-019_governance",
-        "C-019_re_support",
-        "C-019_re_target",
-        "C-019_registry_status"
+        "C-019_law",
+        "C-019_re_support"
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
         "탄소 시장 관련 법률·예산 · budget",
         "탄소 시장 관련 법률·예산 · carbon_pricing",
         "탄소 시장 관련 법률·예산 · eligible_mechanism",
+        "탄소 시장 관련 법률·예산 · ets_design",
         "탄소 시장 관련 법률·예산 · fee",
-        "탄소 시장 관련 법률·예산 · fee_rule",
-        "탄소 시장 관련 법률·예산 · framework_document",
-        "탄소 시장 관련 법률·예산 · governance",
-        "탄소 시장 관련 법률·예산 · re_support",
-        "탄소 시장 관련 법률·예산 · re_target",
-        "탄소 시장 관련 법률·예산 · registry_status"
+        "탄소 시장 관련 법률·예산 · law",
+        "탄소 시장 관련 법률·예산 · re_support"
       ],
       "sourceLabel": "탄소 시장 관련 법률·예산",
       "units": [
@@ -1905,6 +1769,301 @@
       "sourceLabel": "탄소크레딧 발행·소각 실적",
       "units": [
         "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조"
+      ]
+    },
+    {
+      "elementId": "D-005",
+      "indicatorIds": [
+        "D-005_adaptation_finance_requirement_share_gdp",
+        "D-005_combined_adaptation_mitigation_expenditure_share_gdp",
+        "D-005_mitigation_finance_requirement_conditional_share_gdp",
+        "D-005_mitigation_finance_requirement_ndc_total_usd",
+        "D-005_mitigation_finance_requirement_unconditional_share_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "감축적응 구분별 예산 배분 비율 · D005_adaptation_finance_requirement_share_gdp · adaptation_finance_requirement_share_gdp",
+        "감축적응 구분별 예산 배분 비율 · 감축적응 구분별 예산 배분 비율 [% of GDP]",
+        "감축적응 구분별 예산 배분 비율 · D005_mitigation_finance_requirement_conditional_share_gdp · mitigation_finance_requirement_conditional_share_gdp",
+        "감축적응 구분별 예산 배분 비율 · 감축적응 구분별 예산 배분 비율 [US$ billion (2021-2030)]",
+        "감축적응 구분별 예산 배분 비율 · D005_mitigation_finance_requirement_unconditional_share_gdp · mitigation_finance_requirement_unconditional_share_gdp"
+      ],
+      "sourceLabel": "감축적응 구분별 예산 배분 비율",
+      "units": [
+        "% of GDP",
+        "% of GDP (annual)",
+        "US$ billion (2021-2030)"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_carbon_tax_introduction_status",
+        "D-006_carbon_tax_revenue_projection_usd10_share_gdp",
+        "D-006_carbon_tax_revenue_projection_usd25_amount",
+        "D-006_carbon_tax_revenue_projection_usd25_share_gdp",
+        "D-006_environmental_tax_revenue_lcu",
+        "D-006_environmental_tax_revenue_pct_gdp",
+        "D-006_environmental_tax_transport_lcu",
+        "D-006_environmental_tax_transport_pct_gdp",
+        "D-006_fossil_fuel_subsidy_negative_carbon_price_share_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · 기후 관련 조세 수입 [구분]",
+        "기후 관련 조세 수입 · D006_carbon_tax_revenue_projection_usd10_share_gdp · carbon_tax_revenue_projection_usd10_share_gdp",
+        "기후 관련 조세 수입 · 기후 관련 조세 수입 [US$ billion]",
+        "기후 관련 조세 수입 · D006_carbon_tax_revenue_projection_usd25_share_gdp · carbon_tax_revenue_projection_usd25_share_gdp",
+        "기후 관련 조세 수입 · D006_environmental_tax_revenue_lcu · environmental_tax_revenue_lcu",
+        "기후 관련 조세 수입 · D006_environmental_tax_revenue_pct_gdp · environmental_tax_revenue_pct_gdp",
+        "기후 관련 조세 수입 · D006_environmental_tax_transport_lcu · environmental_tax_transport_lcu",
+        "기후 관련 조세 수입 · D006_environmental_tax_transport_pct_gdp · environmental_tax_transport_pct_gdp",
+        "기후 관련 조세 수입 · D006_fossil_fuel_subsidy_negative_carbon_price_share_gdp · fossil_fuel_subsidy_negative_carbon_price_share_gdp"
+      ],
+      "sourceLabel": "기후 관련 조세 수입",
+      "units": [
+        "% of GDP",
+        "% of GDP (annual)",
+        "BDT",
+        "US$ billion",
+        "구분"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_ecgte_lcu",
+        "D-006_ecgte_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · Environmental Taxes · 기후 관련 조세 수입 [현지통화]",
+        "기후 관련 조세 수입 · Environmental Taxes · 기후 관련 조세 수입 [% of GDP]"
+      ],
+      "sourceLabel": "기후 관련 조세 수입 · Environmental Taxes",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_ecgten_lcu",
+        "D-006_ecgten_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport) · 기후 관련 조세 수입 [현지통화]",
+        "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport) · 기후 관련 조세 수입 [% of GDP]"
+      ],
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport)",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_ecgtep_lcu",
+        "D-006_ecgtep_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · Taxes on Pollution · 기후 관련 조세 수입 [현지통화]",
+        "기후 관련 조세 수입 · Taxes on Pollution · 기후 관련 조세 수입 [% of GDP]"
+      ],
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Pollution",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_ecgter_lcu",
+        "D-006_ecgter_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · Taxes on Resources · 기후 관련 조세 수입 [현지통화]",
+        "기후 관련 조세 수입 · Taxes on Resources · 기후 관련 조세 수입 [% of GDP]"
+      ],
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Resources",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-006",
+      "indicatorIds": [
+        "D-006_ecgtet_lcu",
+        "D-006_ecgtet_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport) · 기후 관련 조세 수입 [현지통화]",
+        "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport) · 기후 관련 조세 수입 [% of GDP]"
+      ],
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport)",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-007",
+      "indicatorIds": [
+        "D-007_bcff_budget_integration_requirement",
+        "D-007_bcff_maturity_limitation",
+        "D-007_climate_change_trust_fund_extrabudgetary",
+        "D-007_climate_fiscal_framework_bcff_adoption",
+        "D-007_climate_fiscal_framework_undp_support_start",
+        "D-007_cpeir_conducted_status",
+        "D-007_cpeir_institutional_capacity_limitation",
+        "D-007_cpeir_methodology_limitation_off_budget"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_bcff_budget_integration_requirement · bcff_budget_integration_requirement",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_bcff_maturity_limitation · bcff_maturity_limitation",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_climate_change_trust_fund_extrabudgetary · climate_change_trust_fund_extrabudgetary",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_climate_fiscal_framework_bcff_adoption · climate_fiscal_framework_bcff_adoption",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_climate_fiscal_framework_undp_support_start · climate_fiscal_framework_undp_support_start",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_cpeir_conducted_status · cpeir_conducted_status",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_cpeir_institutional_capacity_limitation · cpeir_institutional_capacity_limitation",
+        "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준 · D007_cpeir_methodology_limitation_off_budget · cpeir_methodology_limitation_off_budget"
+      ],
+      "sourceLabel": "기후예산태깅(CBT, Climate Budget Tagging) 도입 여부 및 수준",
+      "units": [
+        "구분"
+      ]
+    },
+    {
+      "elementId": "D-008",
+      "indicatorIds": [
+        "D-008_climate_change_trust_fund_allocation_via_ministries",
+        "D-008_ministries_with_climate_relevant_expenditure_count",
+        "D-008_ministry_of_disaster_management_and_relief_climate_budget_share",
+        "D-008_ministry_of_disaster_management_and_relief_social_protection_share",
+        "D-008_ministry_of_water_resources_budget_insufficiency"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "주관 부처별 기후 예산 규모 · 주관 부처별 기후 예산 규모 [billion BDT (Tk, 2009-2021 누계)]",
+        "주관 부처별 기후 예산 규모 · 주관 부처별 기후 예산 규모 [개 부처·부서(57개 중)]",
+        "주관 부처별 기후 예산 규모 · 주관 부처별 기후 예산 규모 [% of climate-relevant budget allocation]",
+        "주관 부처별 기후 예산 규모 · 주관 부처별 기후 예산 규모 [% of social protection expenditures]",
+        "주관 부처별 기후 예산 규모 · 주관 부처별 기후 예산 규모 [구분]"
+      ],
+      "sourceLabel": "주관 부처별 기후 예산 규모",
+      "units": [
+        "% of climate-relevant budget allocation",
+        "% of social protection expenditures",
+        "billion BDT (Tk, 2009-2021 누계)",
+        "개 부처·부서(57개 중)",
+        "구분"
+      ]
+    },
+    {
+      "elementId": "D-009",
+      "indicatorIds": [
+        "D-009_gen_g14_lcu",
+        "D-009_gen_g14_pct_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후대응 정부 예산 · Expenditure on environment protection · 기후대응 정부 예산 [현지통화]",
+        "기후대응 정부 예산 · Expenditure on environment protection · 기후대응 정부 예산 [% of GDP]"
+      ],
+      "sourceLabel": "기후대응 정부 예산 · Expenditure on environment protection",
+      "units": [
+        "% of GDP",
+        "현지통화"
+      ]
+    },
+    {
+      "elementId": "D-009",
+      "indicatorIds": [
+        "D-009_adp_allocation_bdp2100_share_gdp",
+        "D-009_adp_allocation_bdp2100_usd",
+        "D-009_budget_reprioritization_climate_financing_share_gdp",
+        "D-009_climate_investment_requirement_range_share_gdp",
+        "D-009_climate_related_government_budgeted_expenditure_share",
+        "D-009_delta_related_expenditure_share_gdp",
+        "D-009_environmental_protection_expenditure_lcu",
+        "D-009_environmental_protection_expenditure_pct_gdp",
+        "D-009_government_adaptation_spending_share_gdp",
+        "D-009_government_adaptation_spending_usd",
+        "D-009_highly_relevant_climate_government_budgeted_expenditure_share",
+        "D-009_public_capital_expenditure_share_gdp",
+        "D-009_total_potential_climate_financing_share_gdp"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "기후대응·기후기술 관련 정부 예산 · D009_adp_allocation_bdp2100_share_gdp · adp_allocation_bdp2100_share_gdp",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [US$ billion]",
+        "기후대응·기후기술 관련 정부 예산 · D009_budget_reprioritization_climate_financing_share_gdp · budget_reprioritization_climate_financing_share_gdp",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [% of GDP (범위 3.3-7.0)]",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [% of government budgeted expenditure (범위 5.5-7.2)]",
+        "기후대응·기후기술 관련 정부 예산 · D009_delta_related_expenditure_share_gdp · delta_related_expenditure_share_gdp",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [BDT]",
+        "기후대응·기후기술 관련 정부 예산 · D009_environmental_protection_expenditure_pct_gdp · environmental_protection_expenditure_pct_gdp",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [% of GDP (annual)]",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [US$ billion (annual)]",
+        "기후대응·기후기술 관련 정부 예산 · 기후대응 [% of government budgeted expenditure]",
+        "기후대응·기후기술 관련 정부 예산 · D009_public_capital_expenditure_share_gdp · public_capital_expenditure_share_gdp",
+        "기후대응·기후기술 관련 정부 예산 · D009_total_potential_climate_financing_share_gdp · total_potential_climate_financing_share_gdp"
+      ],
+      "sourceLabel": "기후대응·기후기술 관련 정부 예산",
+      "units": [
+        "% of GDP",
+        "% of GDP (annual)",
+        "% of GDP (범위 3.3-7.0)",
+        "% of government budgeted expenditure",
+        "% of government budgeted expenditure (범위 5.5-7.2)",
+        "BDT",
+        "US$ billion",
+        "US$ billion (annual)"
+      ]
+    },
+    {
+      "elementId": "D-010",
+      "indicatorIds": [
+        "D-010_implicit_by_fuel_coal",
+        "D-010_implicit_by_fuel_electricity",
+        "D-010_implicit_by_fuel_natural_gas",
+        "D-010_implicit_by_fuel_petroleum"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "화석연료 보조금 규모 · D010_implicit_by_fuel_coal · implicit_by_fuel_coal",
+        "화석연료 보조금 규모 · D010_implicit_by_fuel_electricity · implicit_by_fuel_electricity",
+        "화석연료 보조금 규모 · D010_implicit_by_fuel_natural_gas · implicit_by_fuel_natural_gas",
+        "화석연료 보조금 규모 · D010_implicit_by_fuel_petroleum · implicit_by_fuel_petroleum"
+      ],
+      "sourceLabel": "화석연료 보조금 규모",
+      "units": [
+        "USD"
+      ]
+    },
+    {
+      "elementId": "D-025",
+      "indicatorIds": [
+        "D-025_ppi_investment_annual",
+        "D-025_ppi_investment_energy_renewable"
+      ],
+      "resolved": true,
+      "resolvedDisplayLabels": [
+        "민간 인프라 투자(PPI) · D025_ppi_investment_annual · ppi_investment_annual",
+        "민간 인프라 투자(PPI) · D025_ppi_investment_energy_renewable · ppi_investment_energy_renewable"
+      ],
+      "sourceLabel": "민간 인프라 투자(PPI)",
+      "units": [
+        "USD"
       ]
     },
     {
@@ -2035,8 +2194,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 남성 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_male",
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 남성 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_male"
+        "고용 구성비 · 기타·미정의(군인) · 남성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_male",
+        "고용 구성비 · 기타·미정의(분류불능) · 남성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_male"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 남성",
       "units": [
@@ -2051,8 +2210,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 여성 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_female",
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 여성 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_female"
+        "고용 구성비 · 기타·미정의(군인) · 여성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_female",
+        "고용 구성비 · 기타·미정의(분류불능) · 여성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_female"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 여성",
       "units": [
@@ -2067,8 +2226,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 전체 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_total",
-        "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 전체 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_total"
+        "고용 구성비 · 기타·미정의(군인) · 전체 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_armed_total",
+        "고용 구성비 · 기타·미정의(분류불능) · 전체 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_share_unclass_total"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군 구성비 — 기타·미정의 · 전체",
       "units": [
@@ -2083,8 +2242,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 여성 비중 — 기타·미정의 · EMP_TEMP_SEX_OCU_NB_A · occupation_female_share_armed",
-        "직군별 종사자 수·임금 — 직군별 여성 비중 — 기타·미정의 · EMP_TEMP_SEX_OCU_NB_A · occupation_female_share_unclass"
+        "직군 내 여성 비중 · 기타·미정의(군인) · 여성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_female_share_armed",
+        "직군 내 여성 비중 · 기타·미정의(분류불능) · 여성 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_female_share_unclass"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 여성 비중 — 기타·미정의",
       "units": [
@@ -2099,8 +2258,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 종사자 수 — 기타·미정의 · 전체 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_armed_total",
-        "직군별 종사자 수·임금 — 직군별 종사자 수 — 기타·미정의 · 전체 · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_unclass_total"
+        "직군별 종사자 수 · 기타·미정의(군인) · 전체 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_armed_total",
+        "직군별 종사자 수 · 기타·미정의(분류불능) · 전체 · ILOSTAT · EMP_TEMP_SEX_OCU_NB_A · occupation_employment_unclass_total"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 종사자 수 — 기타·미정의 · 전체",
       "units": [
@@ -2115,8 +2274,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 관리자 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 관리자 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 남성",
       "units": [
@@ -2132,8 +2291,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 관리자 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 관리자 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 여성",
       "units": [
@@ -2149,8 +2308,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 관리자 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 관리자 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 관리자 · 전체",
       "units": [
@@ -2166,8 +2325,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기능원·관련직 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기능원·관련직 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 남성",
       "units": [
@@ -2183,8 +2342,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기능원·관련직 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기능원·관련직 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 여성",
       "units": [
@@ -2200,8 +2359,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기능원·관련직 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기능원·관련직 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기능원·관련직 · 전체",
       "units": [
@@ -2217,8 +2376,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기술공·준전문가 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기술공·준전문가 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 남성",
       "units": [
@@ -2234,8 +2393,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기술공·준전문가 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기술공·준전문가 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 여성",
       "units": [
@@ -2251,8 +2410,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 기술공·준전문가 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 기술공·준전문가 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기술공·준전문가 · 전체",
       "units": [
@@ -2270,10 +2429,10 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_male",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_male_usd",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_male",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_male_usd"
+        "직군별 월평균 임금 · 기타·미정의(군인) · 남성 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_male",
+        "직군별 월평균 임금 · 기타·미정의(군인) · 남성 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_male_usd",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 남성 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_male",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 남성 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_male_usd"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 남성",
       "units": [
@@ -2291,10 +2450,10 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_female",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_female_usd",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_female",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_female_usd"
+        "직군별 월평균 임금 · 기타·미정의(군인) · 여성 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_female",
+        "직군별 월평균 임금 · 기타·미정의(군인) · 여성 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_female_usd",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 여성 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_female",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 여성 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_female_usd"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 여성",
       "units": [
@@ -2312,10 +2471,10 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_total",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_total_usd",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_total",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체 · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_total_usd"
+        "직군별 월평균 임금 · 기타·미정의(군인) · 전체 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_total",
+        "직군별 월평균 임금 · 기타·미정의(군인) · 전체 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_armed_total_usd",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 전체 · VND · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_total",
+        "직군별 월평균 임금 · 기타·미정의(분류불능) · 전체 · USD · ILOSTAT · EAR_EMTA_SEX_OCU_CUR_NB_A · occupation_wage_unclass_total_usd"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 기타·미정의 · 전체",
       "units": [
@@ -2331,8 +2490,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 농림어업 숙련직 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 농림어업 숙련직 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 남성",
       "units": [
@@ -2348,8 +2507,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 농림어업 숙련직 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 농림어업 숙련직 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 여성",
       "units": [
@@ -2365,8 +2524,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 농림어업 숙련직 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 농림어업 숙련직 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 농림어업 숙련직 · 전체",
       "units": [
@@ -2382,8 +2541,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 단순노무직 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 단순노무직 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 남성",
       "units": [
@@ -2399,8 +2558,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 단순노무직 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 단순노무직 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 여성",
       "units": [
@@ -2416,8 +2575,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 단순노무직 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 단순노무직 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 단순노무직 · 전체",
       "units": [
@@ -2433,8 +2592,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 사무직 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 사무직 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 남성",
       "units": [
@@ -2450,8 +2609,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 사무직 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 사무직 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 여성",
       "units": [
@@ -2467,8 +2626,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 사무직 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 사무직 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 사무직 · 전체",
       "units": [
@@ -2484,8 +2643,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 서비스·판매직 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 서비스·판매직 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 남성",
       "units": [
@@ -2501,8 +2660,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 서비스·판매직 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 서비스·판매직 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 여성",
       "units": [
@@ -2518,8 +2677,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 서비스·판매직 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 서비스·판매직 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 서비스·판매직 · 전체",
       "units": [
@@ -2535,8 +2694,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 남성",
       "units": [
@@ -2552,8 +2711,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 여성",
       "units": [
@@ -2569,8 +2728,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 장치·기계 조작·조립원 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 장치·기계 조작·조립원 · 전체",
       "units": [
@@ -2586,8 +2745,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전문가 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전문가 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 남성",
       "units": [
@@ -2603,8 +2762,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전문가 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전문가 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 여성",
       "units": [
@@ -2620,8 +2779,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전문가 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전문가 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 전문가 · 전체",
       "units": [
@@ -2637,8 +2796,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 남성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 남성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전체 직군 · 남성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전체 직군 · 남성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 남성",
       "units": [
@@ -2654,8 +2813,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 여성 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 여성 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전체 직군 · 여성 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전체 직군 · 여성 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 여성",
       "units": [
@@ -2671,8 +2830,8 @@
       ],
       "resolved": true,
       "resolvedDisplayLabels": [
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 전체 · 직군별 종사자 수 [BDT]",
-        "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 전체 · 직군별 종사자 수 [USD]"
+        "직군별 월평균 임금 · 전체 직군 · 전체 · VND · ILOSTAT",
+        "직군별 월평균 임금 · 전체 직군 · 전체 · USD · ILOSTAT"
       ],
       "sourceLabel": "직군별 종사자 수·임금 — 직군별 평균 월임금 — 합계 · 전체",
       "units": [
@@ -2682,6 +2841,6 @@
     }
   ],
   "schemaVersion": "v125",
-  "sourceDuplicateGroupCount": 122,
+  "sourceDuplicateGroupCount": 129,
   "unresolvedDuplicateCount": 0
 }

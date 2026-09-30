@@ -202,9 +202,13 @@
     },
     {
       "classificationDimensionKeys": [],
-      "dimensionCount": 1,
+      "dimensionCount": 5,
       "dimensionKeys": [
-        "entityType"
+        "document_type",
+        "entityType",
+        "implementation_status",
+        "information_type",
+        "ndc_sector"
       ],
       "elementId": "A-013",
       "measureCount": 1,
@@ -268,23 +272,15 @@
       "semanticRecordCount": 427
     },
     {
-      "classificationDimensionKeys": [
-        "category",
-        "technology"
-      ],
-      "dimensionCount": 4,
-      "dimensionKeys": [
-        "category",
-        "detail",
-        "technology",
-        "year"
-      ],
+      "classificationDimensionKeys": [],
+      "dimensionCount": 0,
+      "dimensionKeys": [],
       "elementId": "A-017",
-      "measureCount": 1,
+      "measureCount": 0,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 72,
-      "semanticRecordCount": 72
+      "recordCount": 0,
+      "semanticRecordCount": 0
     },
     {
       "classificationDimensionKeys": [
@@ -594,11 +590,11 @@
         "year"
       ],
       "elementId": "B-002",
-      "measureCount": 5,
+      "measureCount": 6,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 43,
-      "semanticRecordCount": 43
+      "recordCount": 125,
+      "semanticRecordCount": 125
     },
     {
       "classificationDimensionKeys": [],
@@ -620,11 +616,11 @@
         "entityType"
       ],
       "elementId": "B-004",
-      "measureCount": 2,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 4455,
-      "semanticRecordCount": 4455
+      "recordCount": 8424,
+      "semanticRecordCount": 8424
     },
     {
       "classificationDimensionKeys": [
@@ -637,11 +633,11 @@
         "year"
       ],
       "elementId": "B-005",
-      "measureCount": 3,
+      "measureCount": 5,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 4485,
-      "semanticRecordCount": 4485
+      "recordCount": 5057,
+      "semanticRecordCount": 5057
     },
     {
       "classificationDimensionKeys": [],
@@ -650,11 +646,11 @@
         "entityType"
       ],
       "elementId": "B-006",
-      "measureCount": 2,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 4455,
-      "semanticRecordCount": 4455
+      "recordCount": 7290,
+      "semanticRecordCount": 7290
     },
     {
       "classificationDimensionKeys": [],
@@ -663,11 +659,11 @@
         "entityType"
       ],
       "elementId": "B-007",
-      "measureCount": 2,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 4455,
-      "semanticRecordCount": 4455
+      "recordCount": 7290,
+      "semanticRecordCount": 7290
     },
     {
       "classificationDimensionKeys": [],
@@ -714,11 +710,11 @@
         "year"
       ],
       "elementId": "B-010",
-      "measureCount": 4,
+      "measureCount": 8,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 8,
-      "semanticRecordCount": 8
+      "recordCount": 40,
+      "semanticRecordCount": 40
     },
     {
       "classificationDimensionKeys": [
@@ -769,21 +765,17 @@
       "semanticRecordCount": 35
     },
     {
-      "classificationDimensionKeys": [
-        "technology"
-      ],
-      "dimensionCount": 3,
+      "classificationDimensionKeys": [],
+      "dimensionCount": 1,
       "dimensionKeys": [
-        "detail",
-        "technology",
-        "year"
+        "entityType"
       ],
       "elementId": "B-014",
       "measureCount": 6,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 19,
-      "semanticRecordCount": 19
+      "recordCount": 18,
+      "semanticRecordCount": 18
     },
     {
       "classificationDimensionKeys": [
@@ -799,8 +791,8 @@
       "measureCount": 5,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 11,
-      "semanticRecordCount": 11
+      "recordCount": 8,
+      "semanticRecordCount": 8
     },
     {
       "classificationDimensionKeys": [
@@ -945,8 +937,8 @@
       "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 48,
-      "semanticRecordCount": 48
+      "recordCount": 40,
+      "semanticRecordCount": 40
     },
     {
       "classificationDimensionKeys": [],
@@ -969,11 +961,11 @@
         "entityType"
       ],
       "elementId": "B-026",
-      "measureCount": 2,
+      "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 17,
-      "semanticRecordCount": 17
+      "recordCount": 49,
+      "semanticRecordCount": 49
     },
     {
       "classificationDimensionKeys": [
@@ -1004,8 +996,8 @@
       "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 8,
-      "semanticRecordCount": 8
+      "recordCount": 73,
+      "semanticRecordCount": 73
     },
     {
       "classificationDimensionKeys": [],
@@ -1014,11 +1006,11 @@
         "entityType"
       ],
       "elementId": "B-029",
-      "measureCount": 2,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 165,
-      "semanticRecordCount": 165
+      "recordCount": 181,
+      "semanticRecordCount": 181
     },
     {
       "classificationDimensionKeys": [],
@@ -1056,8 +1048,8 @@
       "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 9,
-      "semanticRecordCount": 9
+      "recordCount": 18,
+      "semanticRecordCount": 18
     },
     {
       "classificationDimensionKeys": [],
@@ -1079,11 +1071,11 @@
         "entityType"
       ],
       "elementId": "B-034",
-      "measureCount": 2,
+      "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 13,
-      "semanticRecordCount": 13
+      "recordCount": 89,
+      "semanticRecordCount": 89
     },
     {
       "classificationDimensionKeys": [
@@ -1162,7 +1154,7 @@
         "entityType"
       ],
       "elementId": "B-039",
-      "measureCount": 2,
+      "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
       "recordCount": 160,
@@ -1201,11 +1193,11 @@
         "entityType"
       ],
       "elementId": "B-042",
-      "measureCount": 2,
+      "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 82,
-      "semanticRecordCount": 82
+      "recordCount": 106,
+      "semanticRecordCount": 106
     },
     {
       "classificationDimensionKeys": [
@@ -1229,15 +1221,15 @@
       "classificationDimensionKeys": [],
       "dimensionCount": 2,
       "dimensionKeys": [
-        "detail",
+        "entityType",
         "year"
       ],
       "elementId": "B-044",
-      "measureCount": 1,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 6,
-      "semanticRecordCount": 6
+      "recordCount": 22,
+      "semanticRecordCount": 22
     },
     {
       "classificationDimensionKeys": [],
@@ -1254,35 +1246,30 @@
       "semanticRecordCount": 24
     },
     {
-      "classificationDimensionKeys": [
-        "category"
-      ],
-      "dimensionCount": 3,
+      "classificationDimensionKeys": [],
+      "dimensionCount": 1,
       "dimensionKeys": [
-        "category",
-        "detail",
-        "year"
+        "entityType"
       ],
       "elementId": "B-046",
-      "measureCount": 2,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 6,
-      "semanticRecordCount": 6
+      "recordCount": 21,
+      "semanticRecordCount": 21
     },
     {
       "classificationDimensionKeys": [],
-      "dimensionCount": 2,
+      "dimensionCount": 1,
       "dimensionKeys": [
-        "detail",
-        "year"
+        "entityType"
       ],
       "elementId": "B-047",
-      "measureCount": 2,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 6,
-      "semanticRecordCount": 6
+      "recordCount": 21,
+      "semanticRecordCount": 21
     },
     {
       "classificationDimensionKeys": [],
@@ -1307,8 +1294,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 69,
-      "semanticRecordCount": 69
+      "recordCount": 86,
+      "semanticRecordCount": 86
     },
     {
       "classificationDimensionKeys": [],
@@ -1320,8 +1307,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 51,
-      "semanticRecordCount": 51
+      "recordCount": 76,
+      "semanticRecordCount": 76
     },
     {
       "classificationDimensionKeys": [],
@@ -1333,8 +1320,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 13,
-      "semanticRecordCount": 13
+      "recordCount": 27,
+      "semanticRecordCount": 27
     },
     {
       "classificationDimensionKeys": [],
@@ -1346,8 +1333,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 2,
-      "semanticRecordCount": 2
+      "recordCount": 38,
+      "semanticRecordCount": 38
     },
     {
       "classificationDimensionKeys": [],
@@ -1437,8 +1424,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 53,
-      "semanticRecordCount": 53
+      "recordCount": 54,
+      "semanticRecordCount": 54
     },
     {
       "classificationDimensionKeys": [],
@@ -1450,8 +1437,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 37,
-      "semanticRecordCount": 37
+      "recordCount": 75,
+      "semanticRecordCount": 75
     },
     {
       "classificationDimensionKeys": [],
@@ -1463,8 +1450,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 51,
-      "semanticRecordCount": 51
+      "recordCount": 77,
+      "semanticRecordCount": 77
     },
     {
       "classificationDimensionKeys": [],
@@ -1473,7 +1460,7 @@
         "entityType"
       ],
       "elementId": "C-014",
-      "measureCount": 2,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
       "recordCount": 54,
@@ -1502,8 +1489,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 32,
-      "semanticRecordCount": 32
+      "recordCount": 92,
+      "semanticRecordCount": 92
     },
     {
       "classificationDimensionKeys": [],
@@ -1528,8 +1515,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 8,
-      "semanticRecordCount": 8
+      "recordCount": 48,
+      "semanticRecordCount": 48
     },
     {
       "classificationDimensionKeys": [],
@@ -1541,8 +1528,8 @@
       "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 43,
-      "semanticRecordCount": 43
+      "recordCount": 44,
+      "semanticRecordCount": 44
     },
     {
       "classificationDimensionKeys": [],
@@ -1639,15 +1626,24 @@
       "semanticRecordCount": 0
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-003",
-      "measureCount": 0,
+      "measureCount": 7,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 272,
+      "semanticRecordCount": 272
     },
     {
       "classificationDimensionKeys": [],
@@ -1661,246 +1657,428 @@
       "semanticRecordCount": 0
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-005",
-      "measureCount": 0,
+      "measureCount": 6,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 28,
+      "semanticRecordCount": 28
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-006",
-      "measureCount": 0,
+      "measureCount": 10,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 347,
+      "semanticRecordCount": 347
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-007",
-      "measureCount": 0,
+      "measureCount": 5,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 20,
+      "semanticRecordCount": 20
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-008",
-      "measureCount": 0,
+      "measureCount": 9,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 17,
+      "semanticRecordCount": 17
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-009",
-      "measureCount": 0,
+      "measureCount": 17,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 108,
+      "semanticRecordCount": 108
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-010",
-      "measureCount": 0,
+      "measureCount": 5,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 140,
+      "semanticRecordCount": 140
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-011",
-      "measureCount": 0,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 552,
+      "semanticRecordCount": 552
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-012",
-      "measureCount": 0,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 128,
+      "semanticRecordCount": 128
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-013",
-      "measureCount": 0,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 30,
+      "semanticRecordCount": 30
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-014",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 99,
+      "semanticRecordCount": 99
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-015",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 1432,
+      "semanticRecordCount": 1432
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-016",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 376,
+      "semanticRecordCount": 376
     },
     {
       "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "dimensionCount": 1,
+      "dimensionKeys": [
+        "entityType"
+      ],
       "elementId": "D-017",
-      "measureCount": 0,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 300,
+      "semanticRecordCount": 300
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-018",
-      "measureCount": 0,
+      "measureCount": 3,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 17,
+      "semanticRecordCount": 17
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "entityType",
+        "technology",
+        "year",
+        "기술분야_Sectors"
+      ],
       "elementId": "D-019",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 13,
+      "semanticRecordCount": 13
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-020",
-      "measureCount": 0,
+      "measureCount": 5,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 22,
+      "semanticRecordCount": 22
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-021",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 546,
+      "semanticRecordCount": 546
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-022",
-      "measureCount": 0,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 340,
+      "semanticRecordCount": 340
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-023",
-      "measureCount": 0,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 132,
+      "semanticRecordCount": 132
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-024",
-      "measureCount": 0,
+      "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 29,
+      "semanticRecordCount": 29
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 5,
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-025",
-      "measureCount": 0,
+      "measureCount": 2,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 116,
+      "semanticRecordCount": 116
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
+      "classificationDimensionKeys": [
+        "category",
+        "technology"
+      ],
+      "dimensionCount": 4,
+      "dimensionKeys": [
+        "category",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-026",
-      "measureCount": 0,
+      "measureCount": 1,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 26,
+      "semanticRecordCount": 26
     },
     {
       "classificationDimensionKeys": [],
@@ -1918,12 +2096,9 @@
     },
     {
       "classificationDimensionKeys": [],
-      "dimensionCount": 4,
+      "dimensionCount": 1,
       "dimensionKeys": [
-        "entityType",
-        "승인절차_기재_구분_approval_procedure_status",
-        "제6_4조_전환_상태_a64_status",
-        "현행여부_record_status"
+        "entityType"
       ],
       "elementId": "E-002",
       "measureCount": 2,
@@ -2039,9 +2214,12 @@
       "semanticRecordCount": 545
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 1,
+      "classificationDimensionKeys": [
+        "technology"
+      ],
+      "dimensionCount": 2,
       "dimensionKeys": [
+        "technology",
         "year"
       ],
       "elementId": "E-009",
@@ -2052,43 +2230,55 @@
       "semanticRecordCount": 18
     },
     {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 2,
+      "classificationDimensionKeys": [
+        "technology"
+      ],
+      "dimensionCount": 3,
       "dimensionKeys": [
         "detail",
+        "technology",
         "year"
       ],
       "elementId": "E-010",
       "measureCount": 4,
       "missingFromContract": [],
       "reconciled": true,
-      "recordCount": 24,
-      "semanticRecordCount": 24
-    },
-    {
-      "classificationDimensionKeys": [],
-      "dimensionCount": 0,
-      "dimensionKeys": [],
-      "elementId": "E-011",
-      "measureCount": 0,
-      "missingFromContract": [],
-      "reconciled": true,
-      "recordCount": 0,
-      "semanticRecordCount": 0
+      "recordCount": 178,
+      "semanticRecordCount": 178
     },
     {
       "classificationDimensionKeys": [
-        "category"
+        "technology"
       ],
-      "dimensionCount": 4,
+      "dimensionCount": 3,
       "dimensionKeys": [
-        "category",
         "detail",
-        "detail_2",
+        "technology",
+        "year"
+      ],
+      "elementId": "E-011",
+      "measureCount": 2,
+      "missingFromContract": [],
+      "reconciled": true,
+      "recordCount": 50,
+      "semanticRecordCount": 50
+    },
+    {
+      "classificationDimensionKeys": [
+        "occupation",
+        "sex"
+      ],
+      "dimensionCount": 6,
+      "dimensionKeys": [
+        "classification",
+        "currency",
+        "occupation",
+        "sex",
+        "source",
         "year"
       ],
       "elementId": "E-012",
-      "measureCount": 4,
+      "measureCount": 9,
       "missingFromContract": [],
       "reconciled": true,
       "recordCount": 759,
@@ -2124,10 +2314,9 @@
     },
     {
       "classificationDimensionKeys": [],
-      "dimensionCount": 2,
+      "dimensionCount": 1,
       "dimensionKeys": [
-        "entityType",
-        "가입_상태_구분_membership_status"
+        "entityType"
       ],
       "elementId": "E-015",
       "measureCount": 1,

@@ -33,6 +33,14 @@
       ]
     },
     {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
       "key": "year",
       "labelKo": "연도",
       "valueCount": 3,
@@ -44,9 +52,9 @@
     }
   ],
   "elementId": "B-036",
-  "entityCount": 0,
+  "entityCount": 392,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 34,
+  "indicatorCount": 37,
   "indicators": [
     {
       "axisGroupKey": "measure-f8b75d5987f8|%/yr",
@@ -1067,6 +1075,66 @@
         "sourceRow": 37,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-6fa3d09f88f9|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "토지피복 기반 변화율(성×기간 개체 목록)",
+      "indicatorId": "B-036_lc_cagr_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-6fa3d09f88f9",
+        "labelKo": "토지피복 기반 변화율(성×기간 개체 목록)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-6fa3d09f88f9|지표별 상이(속성 열 참조)||B-036_lc_cagr_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 변화율(성×기간 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-c67e3a176185|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "토지피복 기반 변화율(성×기간 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-036_lc_cagr_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c67e3a176185",
+        "labelKo": "토지피복 기반 변화율(성×기간 개체 목록) - 2025년 34개 체계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c67e3a176185|지표별 상이(속성 열 참조)||B-036_lc_cagr_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 변화율(성×기간 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a7b9236776f6|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "토지피복 기반 변화율(전국, 성 합계)",
+      "indicatorId": "B-036_lc_cagr_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a7b9236776f6",
+        "labelKo": "토지피복 기반 변화율(전국, 성 합계)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a7b9236776f6|지표별 상이(속성 열 참조)||B-036_lc_cagr_national",
+      "sourceCaveat": null,
+      "sourceLabel": "토지피복 기반 변화율(전국, 성 합계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -1077,6 +1145,30 @@
       "recordCount": 28,
       "unit": "%/yr",
       "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-6fa3d09f88f9",
+      "labelKo": "토지피복 기반 변화율(성×기간 개체 목록)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c67e3a176185",
+      "labelKo": "토지피복 기반 변화율(성×기간 개체 목록) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a7b9236776f6",
+      "labelKo": "토지피복 기반 변화율(전국, 성 합계)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 11,

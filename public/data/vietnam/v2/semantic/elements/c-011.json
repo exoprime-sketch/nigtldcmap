@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-011",
-  "entityCount": 44,
+  "entityCount": 38,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 53,
+  "indicatorCount": 49,
   "indicators": [
     {
       "axisGroupKey": "measure-0b829adb9c34|지수",
@@ -47,101 +47,49 @@
       }
     },
     {
-      "axisGroupKey": "measure-3da14475172e|건/10만명",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "범죄 통계 · 범죄 통계 [건/10만명]",
-      "indicatorId": "C-011_crime_statistics_api_worldbank",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-3da14475172e",
-        "labelKo": "범죄 통계",
-        "unit": "건/10만명",
-        "unitFamily": "count"
+      "axisGroupKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "안전 정보"
       },
-      "seriesKey": "measure-3da14475172e|건/10만명||C-011_crime_statistics_api_worldbank",
-      "sourceCaveat": null,
-      "sourceLabel": "범죄 통계",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-9ad53885a53c|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "범죄 통계 · 범죄 통계 [URL]",
-      "indicatorId": "C-011_crime_statistics_dataunodc_un",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9ad53885a53c",
-        "labelKo": "범죄 통계",
-        "unit": "URL",
-        "unitFamily": "text"
+      "dimensions": {
+        "category": "안전 정보"
       },
-      "seriesKey": "measure-9ad53885a53c|URL||C-011_crime_statistics_dataunodc_un",
-      "sourceCaveat": null,
-      "sourceLabel": "범죄 통계",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-0787fe2bcdd8|지수",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "범죄 통계 · 범죄 통계 [지수]",
-      "indicatorId": "C-011_crime_statistics_gso",
+      "displayLabel": "치안·안전 정보 · crime_stat",
+      "indicatorId": "C-011_crime_stat",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-0787fe2bcdd8",
-        "labelKo": "범죄 통계",
-        "unit": "지수",
+        "key": "measure-645c995778c7",
+        "labelKo": "치안",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-0787fe2bcdd8|지수||C-011_crime_statistics_gso",
+      "seriesKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=안전 정보|C-011_crime_stat",
       "sourceCaveat": null,
-      "sourceLabel": "범죄 통계",
+      "sourceLabel": "치안·안전 정보",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-8e669c8b3ef9|전화",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [전화]",
-      "indicatorId": "C-011_local_security_status_0404",
+      "axisGroupKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "안전 정보"
+      },
+      "dimensions": {
+        "category": "안전 정보"
+      },
+      "displayLabel": "치안·안전 정보 · field_survey",
+      "indicatorId": "C-011_field_survey",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-8e669c8b3ef9",
-        "labelKo": "현지 치안 상황",
-        "unit": "전화",
-        "unitFamily": "text"
+        "key": "measure-645c995778c7",
+        "labelKo": "치안",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-8e669c8b3ef9|전화||C-011_local_security_status_0404",
+      "seriesKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=안전 정보|C-011_field_survey",
       "sourceCaveat": null,
-      "sourceLabel": "현지 치안 상황",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-1b5da2e33136|구분",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [구분]",
-      "indicatorId": "C-011_local_security_status_bocongan",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-1b5da2e33136",
-        "labelKo": "현지 치안 상황",
-        "unit": "구분",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-1b5da2e33136|구분||C-011_local_security_status_bocongan",
-      "sourceCaveat": null,
-      "sourceLabel": "현지 치안 상황",
+      "sourceLabel": "치안·안전 정보",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -239,26 +187,6 @@
         "sourceRow": 22,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-87a21a377335|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "현지 치안 상황 · 현지 치안 상황 [URL]",
-      "indicatorId": "C-011_local_security_status_osac",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-87a21a377335",
-        "labelKo": "현지 치안 상황",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-87a21a377335|URL||C-011_local_security_status_osac",
-      "sourceCaveat": null,
-      "sourceLabel": "현지 치안 상황",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-bf5054fe17d3|위협등급",
@@ -825,6 +753,54 @@
       }
     },
     {
+      "axisGroupKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "안전 정보"
+      },
+      "dimensions": {
+        "category": "안전 정보"
+      },
+      "displayLabel": "치안·안전 정보 · safety_notice",
+      "indicatorId": "C-011_safety_notice",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-645c995778c7",
+        "labelKo": "치안",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=안전 정보|C-011_safety_notice",
+      "sourceCaveat": null,
+      "sourceLabel": "치안·안전 정보",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "안전 정보"
+      },
+      "dimensions": {
+        "category": "안전 정보"
+      },
+      "displayLabel": "치안·안전 정보 · security_assessment",
+      "indicatorId": "C-011_security_assessment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-645c995778c7",
+        "labelKo": "치안",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=안전 정보|C-011_security_assessment",
+      "sourceCaveat": null,
+      "sourceLabel": "치안·안전 정보",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "외교부 해외안전여행 베트남 국가페이지",
@@ -1017,41 +993,25 @@
       }
     },
     {
-      "axisGroupKey": "measure-47c9abf1f47f|등급",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [등급]",
-      "indicatorId": "C-011_travel_alert_level_0404",
+      "axisGroupKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "안전 정보"
+      },
+      "dimensions": {
+        "category": "안전 정보"
+      },
+      "displayLabel": "치안·안전 정보 · travel_alert",
+      "indicatorId": "C-011_travel_alert",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-47c9abf1f47f",
-        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-        "unit": "등급",
-        "unitFamily": "text"
+        "key": "measure-645c995778c7",
+        "labelKo": "치안",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-47c9abf1f47f|등급||C-011_travel_alert_level_0404",
+      "seriesKey": "measure-645c995778c7|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=안전 정보|C-011_travel_alert",
       "sourceCaveat": null,
-      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-eb2f81aefa15|경보색상",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [경보색상]",
-      "indicatorId": "C-011_travel_alert_level_0404_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-eb2f81aefa15",
-        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-        "unit": "경보색상",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-eb2f81aefa15|경보색상||C-011_travel_alert_level_0404_2",
-      "sourceCaveat": null,
-      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
+      "sourceLabel": "치안·안전 정보",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1215,26 +1175,6 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-ed718bd51999|등급(1~4)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) · 경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지) [등급(1~4)]",
-      "indicatorId": "C-011_travel_alert_level_travel_state",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ed718bd51999",
-        "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-        "unit": "등급(1~4)",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ed718bd51999|등급(1~4)||C-011_travel_alert_level_travel_state",
-      "sourceCaveat": null,
-      "sourceLabel": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-23da34bf5a89|전화번호",
@@ -1594,54 +1534,6 @@
   "measures": [
     {
       "indicatorCount": 1,
-      "key": "measure-eb2f81aefa15",
-      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "recordCount": 0,
-      "unit": "경보색상",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-47c9abf1f47f",
-      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "recordCount": 0,
-      "unit": "등급",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-ed718bd51999",
-      "labelKo": "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "recordCount": 0,
-      "unit": "등급(1~4)",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-9ad53885a53c",
-      "labelKo": "범죄 통계",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-3da14475172e",
-      "labelKo": "범죄 통계",
-      "recordCount": 0,
-      "unit": "건/10만명",
-      "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-0787fe2bcdd8",
-      "labelKo": "범죄 통계",
-      "recordCount": 0,
-      "unit": "지수",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-fdace1319db9",
       "labelKo": "범죄 통계 (정량지표)",
       "recordCount": 0,
@@ -1753,28 +1645,12 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-87a21a377335",
-      "labelKo": "현지 치안 상황",
+      "indicatorCount": 5,
+      "key": "measure-645c995778c7",
+      "labelKo": "치안",
       "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-1b5da2e33136",
-      "labelKo": "현지 치안 상황",
-      "recordCount": 0,
-      "unit": "구분",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-8e669c8b3ef9",
-      "labelKo": "현지 치안 상황",
-      "recordCount": 0,
-      "unit": "전화",
-      "unitFamily": "text"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,

@@ -1,30 +1,231 @@
 {
   "contractCount": 152,
-  "countryFallbacks": [
-    {
-      "elementId": "E-012",
-      "fallback": "generic-indicator-structure",
-      "reason": "E-012 indicator ids do not match the reviewed Viet Nam scheme: Unrecognized E-012 indicator id: E-012_occupation_employment_armed_total"
-    }
-  ],
+  "countryFallbacks": [],
   "countryIso3": "BGD",
   "duplicateIndicatorDecisions": [],
   "duplicateIndicatorMetadataCount": 0,
   "duplicateVisibleLabelCount": 0,
-  "e012": null,
+  "e012": {
+    "idNoteMismatchCount": 0,
+    "indicatorCount": 134,
+    "measureKeys": [
+      "employment_rate",
+      "employed_persons",
+      "average_monthly_wage",
+      "occupation_employment_count",
+      "occupation_employment_share",
+      "occupation_female_share",
+      "occupation_wage"
+    ],
+    "missingOtherWageCount": 0,
+    "missingOtherWageLabelled": false,
+    "observationCount": 759,
+    "occupationOptions": [
+      {
+        "labelKo": "전체 직군",
+        "sortOrder": 0,
+        "sourceCode": "all",
+        "value": "all"
+      },
+      {
+        "labelKo": "관리자",
+        "sortOrder": 1,
+        "sourceCode": "mgr",
+        "value": "manager"
+      },
+      {
+        "labelKo": "전문가",
+        "sortOrder": 2,
+        "sourceCode": "prof",
+        "value": "professional"
+      },
+      {
+        "labelKo": "기술공·준전문가",
+        "sortOrder": 3,
+        "sourceCode": "tech",
+        "value": "technician"
+      },
+      {
+        "labelKo": "사무직",
+        "sortOrder": 4,
+        "sourceCode": "clerk",
+        "value": "clerk"
+      },
+      {
+        "labelKo": "서비스·판매직",
+        "sortOrder": 5,
+        "sourceCode": "service",
+        "value": "service_sales"
+      },
+      {
+        "labelKo": "농림어업 숙련직",
+        "sortOrder": 6,
+        "sourceCode": "agri",
+        "value": "skilled_agriculture"
+      },
+      {
+        "labelKo": "기능원·관련직",
+        "sortOrder": 7,
+        "sourceCode": "craft",
+        "value": "craft"
+      },
+      {
+        "labelKo": "장치·기계 조작·조립원",
+        "sortOrder": 8,
+        "sourceCode": "operator",
+        "value": "machine_operator"
+      },
+      {
+        "labelKo": "단순노무직",
+        "sortOrder": 9,
+        "sourceCode": "elem",
+        "value": "elementary"
+      },
+      {
+        "labelKo": "기타·미정의",
+        "sortOrder": 10,
+        "sourceCode": "other",
+        "value": "other"
+      },
+      {
+        "labelKo": "기타·미정의(군인)",
+        "sortOrder": 11,
+        "sourceCode": "armed",
+        "value": "armed_forces"
+      },
+      {
+        "labelKo": "기타·미정의(분류불능)",
+        "sortOrder": 12,
+        "sourceCode": "unclass",
+        "value": "unclassified"
+      }
+    ],
+    "occupations": [
+      {
+        "labelKo": "관리자",
+        "sortOrder": 1,
+        "sourceCode": "mgr",
+        "value": "manager"
+      },
+      {
+        "labelKo": "전문가",
+        "sortOrder": 2,
+        "sourceCode": "prof",
+        "value": "professional"
+      },
+      {
+        "labelKo": "기술공·준전문가",
+        "sortOrder": 3,
+        "sourceCode": "tech",
+        "value": "technician"
+      },
+      {
+        "labelKo": "사무직",
+        "sortOrder": 4,
+        "sourceCode": "clerk",
+        "value": "clerk"
+      },
+      {
+        "labelKo": "서비스·판매직",
+        "sortOrder": 5,
+        "sourceCode": "service",
+        "value": "service_sales"
+      },
+      {
+        "labelKo": "농림어업 숙련직",
+        "sortOrder": 6,
+        "sourceCode": "agri",
+        "value": "skilled_agriculture"
+      },
+      {
+        "labelKo": "기능원·관련직",
+        "sortOrder": 7,
+        "sourceCode": "craft",
+        "value": "craft"
+      },
+      {
+        "labelKo": "장치·기계 조작·조립원",
+        "sortOrder": 8,
+        "sourceCode": "operator",
+        "value": "machine_operator"
+      },
+      {
+        "labelKo": "단순노무직",
+        "sortOrder": 9,
+        "sourceCode": "elem",
+        "value": "elementary"
+      },
+      {
+        "labelKo": "기타·미정의",
+        "sortOrder": 10,
+        "sourceCode": "other",
+        "value": "other"
+      },
+      {
+        "labelKo": "기타·미정의(군인)",
+        "sortOrder": 11,
+        "sourceCode": "armed",
+        "value": "armed_forces"
+      },
+      {
+        "labelKo": "기타·미정의(분류불능)",
+        "sortOrder": 12,
+        "sourceCode": "unclass",
+        "value": "unclassified"
+      }
+    ],
+    "sexes": [
+      {
+        "labelKo": "전체",
+        "sortOrder": 0,
+        "value": "total"
+      },
+      {
+        "labelKo": "남성",
+        "sortOrder": 1,
+        "value": "male"
+      },
+      {
+        "labelKo": "여성",
+        "sortOrder": 2,
+        "value": "female"
+      }
+    ],
+    "tableRecordReconciliation": "PASS",
+    "totalRowSeparated": true,
+    "years": [
+      1984,
+      1985,
+      1986,
+      1989,
+      1991,
+      1996,
+      2003,
+      2005,
+      2006,
+      2010,
+      2011,
+      2013,
+      2016,
+      2017,
+      2022,
+      2023,
+      2024
+    ]
+  },
   "elementCount": 152,
   "generatedAt": "2026-08-27T00:00:00Z",
   "mixedUnitAxisCount": 0,
   "recordReconciliation": "PASS",
   "schemaVersion": "v125",
   "semanticDimensionLossCount": 0,
-  "semanticIndicatorCount": 1747,
-  "semanticObservationCount": 20381,
-  "separatedMixedUnitMeasureGroupCount": 0,
-  "sourceDuplicateLabelGroupCount": 122,
-  "sourceIndicatorMetadataRowCount": 1747,
-  "sourceObservationCount": 20381,
-  "sourceUniqueIndicatorCount": 1747,
+  "semanticIndicatorCount": 2230,
+  "semanticObservationCount": 21979,
+  "separatedMixedUnitMeasureGroupCount": 2,
+  "sourceDuplicateLabelGroupCount": 129,
+  "sourceIndicatorMetadataRowCount": 2230,
+  "sourceObservationCount": 21979,
+  "sourceUniqueIndicatorCount": 2230,
   "unassignedContractCount": 0,
   "zeroImputationCount": 0
 }
