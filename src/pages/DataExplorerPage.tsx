@@ -5,14 +5,17 @@ import {
   loadSearchIndexForCountrySelectionV122,
   publicCountryDataErrorMessageV122,
 } from "../data/countries/countryDataFacadeV122";
-import { listCountryDataProvidersV122 } from "../data/countries/countryDataProviderRegistryV122";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import { loadCardSummariesV140 } from "../data/cardSummariesV140";
 import type { CardSummaryV140 } from "../data/cardSummariesV140";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
-import { getElementVisualizationSummaryV125 } from "../data/visualization/elementVisualizationRegistryV125";
+import {
+  ensureElementVisualizationSummariesV158,
+  getElementVisualizationSummaryV125,
+} from "../data/visualization/elementVisualizationRegistryV125";
 import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
 import {
@@ -24,7 +27,7 @@ import {
   technologyLabelV121,
 } from "../utils/vietnamActualV121";
 import { matchesTechnologyV153, normalizeTechnologyIdV153, normalizeTechnologyIdsV153, technologyOptionsV153 } from "../utils/technologyIdV153";
-import { getCardSpecV159, getTypologyV159 } from "../data/spec/datasetSpecV159";
+import { getCardSpecForCountryV158, getTypologyForCountryV158 } from "../data/spec/countrySpecV158";
 import { statusNoticeLabelV159 } from "../components/data/templates/StatusNoticeV159";
 import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 } from "../data/spec/specTypesV159";
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
@@ -153,7 +156,7 @@ type FinderSortModeV128 = "name" | "views";
 
 /** The name the card shows (V159 base name, else the catalogue title) - the key of 가나다순. */
 function finderDisplayTitleV160(item: CountryCatalogItemV122): string {
-  return getCardSpecV159(item.elementId)?.baseName || item.publicTitle;
+  return getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.baseName || item.publicTitle;
 }
 /** A dataset not yet delivered is listed last, marked '데이터 준비 중'. */
 function isPreparingV160(item: CountryCatalogItemV122): boolean {
@@ -247,18 +250,37 @@ export default function DataExplorerPage({
   // V140: one pre-built file summarises all 152 datasets; a card never opens
   // its pack. Without the file the cards still list, without a summary.
   const [cardSummaries, setCardSummaries] = useState<Map<string, CardSummaryV140> | null>(null);
+  // V158: the offered countries, again once the registry has been read.
+  const providers = useCountryDataProvidersV158();
+  const providerCountriesV158 = Array.from(new Set(providers.map((provider) => provider.countryIso3))).join(",");
+  // V158: each live country has its own summaries file; the cards read them
+  // under `${country}::${elementId}`.
   useEffect(() => {
     let cancelled = false;
-    void loadCardSummariesV140()
-      .then((value) => {
-        if (!cancelled) setCardSummaries(value);
+    const countries = providerCountriesV158.split(",").filter(Boolean);
+    // Year ranges read each country's semantic summaries (the default
+    // country's are bundled); they are in memory before the cards re-render.
+    void Promise.allSettled(countries.map((iso3) => ensureElementVisualizationSummariesV158(iso3)))
+      .then(() =>
+        Promise.allSettled(
+          countries.map((iso3) => loadCardSummariesV140(iso3).then((value) => [iso3, value] as const))
+        )
+      )
+      .then((results) => {
+        if (cancelled) return;
+        const merged = new Map<string, CardSummaryV140>();
+        results.forEach((result) => {
+          if (result.status !== "fulfilled") return;
+          const [iso3, value] = result.value;
+          value.forEach((card, elementId) => merged.set(`${iso3}::${elementId}`, card));
+        });
+        if (merged.size > 0) setCardSummaries(merged);
       })
-      .catch(() => undefined)
       .finally(() => { if (!cancelled) setSummariesReady(true); });
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [providerCountriesV158]);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
   const [autoLoading, setAutoLoading] = useState(false);
   const sentinelRefV136 = useRef<HTMLDivElement | null>(null);
@@ -273,7 +295,6 @@ export default function DataExplorerPage({
 
   const normalizedCountry = countryIso3 === "all" ? "all" : countryIso3;
   const normalizedQuery = normalizedSearchV121(query);
-  const providers = useMemo(() => listCountryDataProvidersV122(), []);
 
   useEffect(() => {
     let cancelled = false;
@@ -409,7 +430,7 @@ export default function DataExplorerPage({
       }
       if (deliveryFilter === "map" && !item.hasMapData) return false;
       if (userFilter !== "all" || typeFilter !== "all") {
-        const card = getCardSpecV159(item.elementId);
+        const card = getCardSpecForCountryV158(item.elementId, item.countryIso3, item);
         if (userFilter !== "all" && !card?.users.includes(userFilter)) return false;
         if (typeFilter !== "all" && card?.displayType !== typeFilter) return false;
       }
@@ -427,9 +448,9 @@ export default function DataExplorerPage({
           [
             item.publicTitle,
             item.publicDescription,
-            getCardSpecV159(item.elementId)?.sourceLabel || "",
-            getCardSpecV159(item.elementId)?.baseName || "",
-            getCardSpecV159(item.elementId)?.shortDefinitionCard || "",
+            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.sourceLabel || "",
+            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.baseName || "",
+            getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.shortDefinitionCard || "",
             item.categoryLabel,
             item.sectionLabel,
             item.groupLabel,
@@ -916,7 +937,7 @@ export default function DataExplorerPage({
         data-finder-restore-state={restoreStateV136}
       >
         {visibleItems.map((item) => {
-          const contract = getElementVisualizationSummaryV125(item.elementId);
+          const contract = getElementVisualizationSummaryV125(item.elementId, item.countryIso3);
           const downloadStatus = publicDownloadStatusV128(item);
           const semanticYearRange = contract
             ? contract.yearRange.start === null
@@ -925,7 +946,7 @@ export default function DataExplorerPage({
               ? String(contract.yearRange.start)
                 : `${contract.yearRange.start}–${contract.yearRange.end}`
             : referenceYearRangeV125(item);
-          const summary = cardSummaries?.get(item.elementId) ?? null;
+          const summary = cardSummaries?.get(`${item.countryIso3}::${item.elementId}`) ?? null;
           return (
           <article
             className="cdp-dataset-card"
@@ -948,8 +969,8 @@ export default function DataExplorerPage({
             )}
             {/* V159: source line, the dataset's own name and the spec's short
                 definition; the catalogue's title stays the fallback. */}
-            {getCardSpecV159(item.elementId) ? (
-              <DatasetCardTitleV159 card={getCardSpecV159(item.elementId)!} titleAs="h2" />
+            {getCardSpecForCountryV158(item.elementId, item.countryIso3, item) ? (
+              <DatasetCardTitleV159 card={getCardSpecForCountryV158(item.elementId, item.countryIso3, item)!} titleAs="h2" />
             ) : (
               <>
                 <h2><PublicTermTextV134 text={item.publicTitle} /></h2>
@@ -960,23 +981,23 @@ export default function DataExplorerPage({
             )}
             {/* V159: an excluded or not-yet-delivered dataset shows its
                 status on the card ('데이터 준비 중'), not a figure. */}
-            {getCardSpecV159(item.elementId)?.statusNotice ? (
+            {getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.statusNotice ? (
               <p className="cdp-card__status-v159" data-testid="finder-card-status-v159">
-                <span className="cdp-chip">{statusNoticeLabelV159(getTypologyV159(item.elementId) || { status: "", statusNotice: null })}</span>
+                <span className="cdp-chip">{statusNoticeLabelV159(getTypologyForCountryV158(item.elementId, item.countryIso3, item) || { status: "", statusNotice: null })}</span>
               </p>
             ) : (
-              summary && <FinderCardSummaryV140 summary={summary} />
+              summary && <FinderCardSummaryV140 summary={summary} country={item.countryIso3} />
             )}
-            {getCardSpecV159(item.elementId)?.statusNotice === "data-pending" ? (
+            {getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.statusNotice === "data-pending" ? (
               // V159 data-pending (spec v8): no stand-in text ("미기재",
               // "제공기관 확인"). The period line is left out - nothing has
               // been delivered - and the provider is the spec's source field,
               // or no line at all.
-              getCardSpecV159(item.elementId)?.sourceLabel ? (
+              getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.sourceLabel ? (
                 <dl className="cdp-card__facts cdp-card__facts--public-v135" data-testid="finder-card-facts-pending-v159">
                   <div>
                     <dt>제공기관</dt>
-                    <dd><PublicTermTextV134 text={getCardSpecV159(item.elementId)?.sourceLabel || ""} /></dd>
+                    <dd><PublicTermTextV134 text={getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.sourceLabel || ""} /></dd>
                   </div>
                 </dl>
               ) : null

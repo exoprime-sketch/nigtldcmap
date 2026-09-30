@@ -1,0 +1,105 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-003",
+  "entityCount": 13,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 3,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NAP (국가 적응 계획) · governance_body",
+      "indicatorId": "C-003_governance_body",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a14985d58f5a",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-003_governance_body",
+      "sourceCaveat": "[raw] ([raw]\\C-003\\) C-003_NAP (국가 적응 계획)_Bangladesh_NAP_2023-2050_MoEFCC_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 8개(C-003_submission_history·_source_link·_adaptation_measure_list·_adaptation_priority_sector·_sector_vulnerability·_adaptation_finance_need·_adaptation_governance·_me_framework·_stakeholder_gender)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NAP 이행 거버넌스 기구 1건(4행 전수). National Council on Environment and Climate Change(최상위 총괄) · Interministerial Steering Committee on Climate Change(부처간 조정) · National Technical Advisory Committee(기술자문, 신설 제안) · Technical Working Group on NAP Implementation(실무, 신설 제안). [설치 상태] 원문이 뒤 2개 기구를 신설 제안으로 기술하고 있어 「[거버넌스] 설치 상태」 열로 구분함 — 기설치 기구와 혼동하지 않도록 함. [지역구분] 국가 기구이므로 「전국 / BGD」. [기술분류] 거버넌스 행은 특정 기후기술을 지목하지 않아 tech_id 공란.",
+      "sourceLabel": "NAP (국가 적응 계획)",
+      "sourceLabelEn": "National Adaptation Plan",
+      "sourceNote": "[raw] ([raw]\\C-003\\) C-003_NAP (국가 적응 계획)_Bangladesh_NAP_2023-2050_MoEFCC_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 8개(C-003_submission_history·_source_link·_adaptation_measure_list·_adaptation_priority_sector·_sector_vulnerability·_adaptation_finance_need·_adaptation_governance·_me_framework·_stakeholder_gender)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NAP 이행 거버넌스 기구 1건(4행 전수). National Council on Environment and Climate Change(최상위 총괄) · Interministerial Steering Committee on Climate Change(부처간 조정) · National Technical Advisory Committee(기술자문, 신설 제안) · Technical Working Group on NAP Implementation(실무, 신설 제안). [설치 상태] 원문이 뒤 2개 기구를 신설 제안으로 기술하고 있어 「[거버넌스] 설치 상태」 열로 구분함 — 기설치 기구와 혼동하지 않도록 함. [지역구분] 국가 기구이므로 「전국 / BGD」. [기술분류] 거버넌스 행은 특정 기후기술을 지목하지 않아 tech_id 공란.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "NAP (국가 적응 계획) · nap_submission",
+      "indicatorId": "C-003_nap_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a14985d58f5a",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-003_nap_submission",
+      "sourceCaveat": "[raw] ([raw]\\C-003\\) C-003_NAP (국가 적응 계획)_Bangladesh_NAP_2023-2050_MoEFCC_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 8개(C-003_submission_history·_source_link·_adaptation_measure_list·_adaptation_priority_sector·_sector_vulnerability·_adaptation_finance_need·_adaptation_governance·_me_framework·_stakeholder_gender)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NAP 판 1건(1행). 구서식에서 제출일·문서분량·과제 수·재원·M&E·이해관계자 항목이 각각 1행씩 흩어져 있던 것을 속성 열로 통합함. [집계행 삭제] 구서식의 「원본 링크(C-003_source_link)」 행과 「부문 수 8」 행은 각각 「[출처] 원문 URL」 열과 C-003_priority_sector 행 수로 대체되므로 삭제함. [원문 표기] 협의 횟수 35·인터뷰 100은 원문이 \"more than\"으로 기재한 최소값, 참여자 5,000명은 \"about\"의 근사값임 — 원문 표기를 그대로 수록하고 반올림·추정하지 않음. [지역구분] 국가 계획 문서이므로 「전국 / BGD」. 기후스트레스 지역 11개는 개수만 원문에 제시되어 지역 목록은 수록하지 못함. [기술분류] 문서 행은 특정 기후기술을 지목하지 않아 tech_id 공란.",
+      "sourceLabel": "NAP (국가 적응 계획)",
+      "sourceLabelEn": "National Adaptation Plan",
+      "sourceNote": "부문별 취약성 등급표는 NAP 제2장에서 등급 형태의 값을 확정하지 못해 M06(미수집).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "technology": "32 · 33 · 34 · 35 · 38"
+      },
+      "dimensions": {
+        "technology": "32,33,34,35,38"
+      },
+      "displayLabel": "NAP (국가 적응 계획) · priority_sector",
+      "indicatorId": "C-003_priority_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a14985d58f5a",
+        "labelKo": "NAP (국가 적응 계획)",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-a14985d58f5a|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=32,33,34,35,38|C-003_priority_sector",
+      "sourceCaveat": "[raw] ([raw]\\C-003\\) C-003_NAP (국가 적응 계획)_Bangladesh_NAP_2023-2050_MoEFCC_UNFCCC.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 8개(C-003_submission_history·_source_link·_adaptation_measure_list·_adaptation_priority_sector·_sector_vulnerability·_adaptation_finance_need·_adaptation_governance·_me_framework·_stakeholder_gender)를 레코드 유형 3개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = NAP 주제 부문 1건(8행 전수) — 수자원(WRM) · 재난·사회안전·안보(CDM) · 농업(CSA) · 수산·양식·축산(CFL) · 생태계·습지·생물다양성(EWB) · 도시지역(CRC) · 정책·제도(PIN) · 역량개발·연구·혁신(CDR). [기술분류] framework 「행별 태깅」 — 부문 정의 기준으로 수자원 32(물 부문), 재난·도시 33(국토연안 부문), 농업·수산 34(농축수산 부문), 생태계 35(산림), 정책·제도 및 역량개발 38(기후변화 적응기반 기술)을 태깅함. [지역구분] 부문별 지역 구분이 원문에 없어 「전국 / BGD」.",
+      "sourceLabel": "NAP (국가 적응 계획)",
+      "sourceLabelEn": "National Adaptation Plan",
+      "sourceNote": "부문별 사업비(Table 3.3 분해)는 표 레이아웃 추출 한계로 미수집(M06). 임의 배분하지 않음.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 3,
+      "key": "measure-a14985d58f5a",
+      "labelKo": "NAP (국가 적응 계획)",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

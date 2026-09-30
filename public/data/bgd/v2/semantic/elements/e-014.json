@@ -1,0 +1,94 @@
+{
+  "dimensions": [
+    {
+      "key": "agreement_type",
+      "labelKo": "agreement_type",
+      "valueCount": 2,
+      "values": [
+        "공동크레딧제도(JCM) — 양자 탄소상쇄 협정(파리협정 6.2조 협력적 접근법)",
+        "파리협정 제6조 이행 양해각서(MOU)"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "status",
+      "labelKo": "status",
+      "valueCount": 1,
+      "values": [
+        "이행 중"
+      ]
+    },
+    {
+      "key": "문서_유형_document_type",
+      "labelKo": "문서 유형",
+      "valueCount": 2,
+      "values": [
+        "양해각서(MOU·MoC)",
+        "조약·협정"
+      ]
+    },
+    {
+      "key": "협력_상대_구분_partner_type",
+      "labelKo": "협력 상대 구분",
+      "valueCount": 2,
+      "values": [
+        "제3국 양자",
+        "한국 관련"
+      ]
+    }
+  ],
+  "elementId": "E-014",
+  "entityCount": 2,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5fe34e112d41|건(협정)",
+      "dimensionLabels": {
+        "technology": "38"
+      },
+      "dimensions": {
+        "technology": "38"
+      },
+      "displayLabel": "양자협정 현황",
+      "indicatorId": "E-014_bilateral_agreement",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5fe34e112d41",
+        "labelKo": "양자협정 현황",
+        "unit": "건(협정)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-5fe34e112d41|건(협정)|technology=38|E-014_bilateral_agreement",
+      "sourceCaveat": "[현지조사 구분] 해당국은 현지조사 미수행이며, 현지조사항목 ver1.0 은 E.3.a 양자협정을 「한국 측 자료라 국내 기관 협조로 확보(현지조사 아님)」로 분류한다. 수록 값은 전건 공개 원천에서 별도 수집했다. 한-방글라데시 제6조 MOU는 산업통상자원부 공식 보도자료 원문이 확인되지 않아 언론 보도 2건 교차확인 결과로 수록(M02). 체결 시점 표기가 매체별로 상이하여 복수 매체가 일치한 2025-06 서명을 채택. 기후기술코드(tech_ids) : 해당없음. 수록 협정 2건은 탄소시장·크레딧 제도 협력 협정으로 대상기술을 지정하지 않는다. 억지 매핑 금지 원칙에 따라 부여하지 않았다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "양자협정 현황",
+      "sourceLabelEn": "Bilateral climate cooperation agreements",
+      "sourceNote": "최종갱신일·검증자 미확인(M01). 레코드 값 자체의 결측은 없음.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5fe34e112d41",
+      "labelKo": "양자협정 현황",
+      "recordCount": 0,
+      "unit": "건(협정)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

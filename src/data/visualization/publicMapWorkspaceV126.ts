@@ -10,10 +10,12 @@ import publicMapTargetsContractV138 from "./publicMapTargetsV138.json";
  * outline, points or lines beside it. The old contract quietly dropped the
  * second companion a reader ticked; the limit now only bounds the map index.
  */
+// V157: the contract holds 72 targets, so the bound has to allow every one of them
+// to be ticked at once - one colours the map and the rest are drawn beside it.
 export const PUBLIC_MAP_WORKSPACE_LIMITS_V126 = {
   primaryLayers: 1,
-  contextLayers: 64,
-  activeLayers: 65,
+  contextLayers: 71,
+  activeLayers: 72,
   selectedFeatures: 1,
 } as const;
 

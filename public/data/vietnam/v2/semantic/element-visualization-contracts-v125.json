@@ -6291,9 +6291,9 @@
       "elementId": "A-027",
       "entityCount": 0,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "panel-only",
+        "enabled": true,
+        "featureCount": 8114,
+        "mapMode": "line",
         "stateParameters": [
           "element",
           "measure",
@@ -6543,9 +6543,9 @@
       "elementId": "A-028",
       "entityCount": 0,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "panel-only",
+        "enabled": true,
+        "featureCount": 1558,
+        "mapMode": "point",
         "stateParameters": [
           "element",
           "measure",
@@ -10720,9 +10720,9 @@
       "elementId": "B-009",
       "entityCount": 0,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 63,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -12455,9 +12455,9 @@
       "elementId": "B-017",
       "entityCount": 2032,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 442,
+        "mapMode": "choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -15024,9 +15024,9 @@
       "elementId": "B-026",
       "entityCount": 74,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "panel-only",
+        "enabled": true,
+        "featureCount": 63,
+        "mapMode": "choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -23355,9 +23355,9 @@
       "elementId": "C-008",
       "entityCount": 235,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 17,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -23800,9 +23800,9 @@
       "elementId": "C-009",
       "entityCount": 182,
       "mapLinkage": {
-        "enabled": true,
-        "featureCount": 4,
-        "mapMode": "choropleth",
+        "enabled": false,
+        "featureCount": 0,
+        "mapMode": "panel-only",
         "stateParameters": [
           "element",
           "measure",
@@ -24343,9 +24343,9 @@
       "elementId": "C-010",
       "entityCount": 59,
       "mapLinkage": {
-        "enabled": true,
-        "featureCount": 4,
-        "mapMode": "choropleth",
+        "enabled": false,
+        "featureCount": 0,
+        "mapMode": "panel-only",
         "stateParameters": [
           "element",
           "measure",
@@ -27554,9 +27554,9 @@
       "elementId": "C-019",
       "entityCount": 128,
       "mapLinkage": {
-        "enabled": true,
-        "featureCount": 63,
-        "mapMode": "region-choropleth",
+        "enabled": false,
+        "featureCount": 0,
+        "mapMode": "panel-only",
         "stateParameters": [
           "element",
           "measure",
@@ -31141,9 +31141,9 @@
       "elementId": "D-012",
       "entityCount": 22,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 22,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -31414,9 +31414,9 @@
       "elementId": "D-014",
       "entityCount": 164,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 26,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -31539,9 +31539,9 @@
       "elementId": "D-015",
       "entityCount": 650,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 45,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -31661,9 +31661,9 @@
       "elementId": "D-016",
       "entityCount": 232,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 14,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -31784,9 +31784,9 @@
       "elementId": "D-017",
       "entityCount": 10,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 4,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32064,7 +32064,7 @@
         },
         {
           "key": "기술분야_Sectors",
-          "labelKo": "기술분야_Sectors",
+          "labelKo": "기술분야",
           "valueCount": 7,
           "values": [
             "Agriculture",
@@ -32080,9 +32080,9 @@
       "elementId": "D-019",
       "entityCount": 10,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 2,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32136,7 +32136,7 @@
         {
           "defaultValue": "Agriculture",
           "key": "기술분야_Sectors",
-          "labelKo": "기술분야_Sectors",
+          "labelKo": "기술분야",
           "values": [
             "Agriculture",
             "Coastal zones",
@@ -32217,9 +32217,9 @@
       "elementId": "D-020",
       "entityCount": 9,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 11,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32353,9 +32353,9 @@
       "elementId": "D-021",
       "entityCount": 640,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 53,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32477,9 +32477,9 @@
       "elementId": "D-022",
       "entityCount": 15,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 12,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32607,9 +32607,9 @@
       "elementId": "D-023",
       "entityCount": 73,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "panel-only",
+        "enabled": true,
+        "featureCount": 15,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -32892,9 +32892,9 @@
       "elementId": "D-025",
       "entityCount": 132,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 54,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -33021,9 +33021,9 @@
       "elementId": "D-026",
       "entityCount": 14,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 8,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -33166,9 +33166,9 @@
       "elementId": "E-001",
       "entityCount": 18,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 1,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -33293,9 +33293,9 @@
       "elementId": "E-002",
       "entityCount": 1,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 1,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",
@@ -36050,9 +36050,9 @@
       "elementId": "E-020",
       "entityCount": 7,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
-        "mapMode": "country-aggregate",
+        "enabled": true,
+        "featureCount": 3,
+        "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
           "measure",

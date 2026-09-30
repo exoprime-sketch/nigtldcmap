@@ -24,7 +24,7 @@
  *   node scripts/v138/build-map-layers-v138.mjs [--data public/data/vietnam/v2]
  */
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -55,6 +55,9 @@ const REPORT_PATH = resolve(ROOT, "reports/v138/map-targets-build-v138.json");
 const GENERATED_AT = "2026-09-01T00:00:00Z";
 const GEOMETRY_URL = "/data/vietnam/v2/geometry/vnm-adm1-63.geojson";
 const LAYER_ID_PREFIX = "vnm-v138-";
+const PENDING_LAYER_ID_PREFIX = "vnm-v155-";
+/** The published prefix a declared asset URL already uses ("/data/vietnam/v2/"). */
+const publishedPrefix = (url) => String(url).slice(0, String(url).indexOf("spatial/"));
 // Rows above this go out as a value table; the runtime expands them.
 const VALUE_TABLE_THRESHOLD = 4000;
 // Approximate land extent of Viet Nam. Used only to keep a foreign head office
@@ -398,6 +401,12 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
         period,
         value,
         unit: measure.unit,
+        // V157: a province table may state a category alongside its number
+        // (B-026's dominant flow direction). The map colours by the category and
+        // keeps the number for the popup; the category is copied, not derived.
+        ...(build.categoryKey && text(attributes[build.categoryKey])
+          ? { categoryLabel: text(attributes[build.categoryKey]) }
+          : {}),
         sourceIndicatorId: record.indicatorId,
         sourceRecordId: record.recordId,
         sourceSpatialUnit: "admin1",
@@ -461,20 +470,42 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
     return numeric(raw);
   };
 
+  // V157: the region may come from the extraction sidecar instead of a column.
+  const sidecar = build.regionSidecar ? readJson(resolve(ROOT, build.regionSidecar)) : null;
+
+  /**
+   * The 2025 units a record belongs to, as memberships this builder can use.
+   * A sidecar row already names the unit and its member 63-codes, so it is used
+   * as stated; a column row is looked up in the delivery's own crosswalk.
+   */
+  const membershipsFor = (record, attributes) => {
+    if (sidecar) {
+      const units = sidecar.byRecordId?.[record.recordId] ?? [];
+      return units.map((unit) => ({
+        key: normalizeAdministrativeName(unit.name),
+        membership: { label: unit.name, codes: new Set(unit.adm1Codes63) },
+      }));
+    }
+    const regionName = text(attributes[build.regionNameKey]);
+    if (!regionName) return [];
+    const key = normalizeAdministrativeName(regionName);
+    const membership = crosswalk.membersByParent.get(key);
+    if (!membership) {
+      unmatched.set(regionName, (unmatched.get(regionName) || 0) + 1);
+      return [];
+    }
+    return [{ key, membership }];
+  };
+
   for (const record of records) {
     const attributes = record.normalizedAttributes || {};
-    const regionName = text(attributes[build.regionNameKey]);
-    if (!regionName) {
+    const memberships = membershipsFor(record, attributes);
+    if (memberships.length === 0) {
       // A national or unlocated row in the same indicator; not a join failure.
       rowsWithoutRegion += 1;
       continue;
     }
-    const parentKey = normalizeAdministrativeName(regionName);
-    const membership = crosswalk.membersByParent.get(parentKey);
-    if (!membership) {
-      unmatched.set(regionName, (unmatched.get(regionName) || 0) + 1);
-      continue;
-    }
+    for (const { key: parentKey, membership } of memberships) {
     regionsSeen.add(parentKey);
     const period = build.periodFixed
       ? build.periodFixed
@@ -531,10 +562,13 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
           sourceRecordId: record.recordId,
           sourceSpatialUnit: "region",
           sourceRegion: membership.label,
-          mappingMethod: "explicit-2025-34-unit-membership",
+          mappingMethod: sidecar
+            ? "value-stated-2025-unit-membership"
+            : "explicit-2025-34-unit-membership",
           imputed: false,
         });
       }
+    }
     }
   }
 
@@ -1072,6 +1106,247 @@ function buildEntityLayer(target, packs, catalog, report, locator) {
 
 // ---------------------------------------------------------------- existing layers
 
+/**
+ * A province choropleth whose region is a dimension of the observation's
+ * indicator, not a column: B-009's source workbook carries an Adm1 sheet, so the
+ * delivery states 63 province values per measure with the province name in the
+ * indicator's `detail_2` dimension. The measure label and unit come from the
+ * element's semantic asset, never from this script.
+ */
+function buildObservationDimensionLayer(target, packs, boundaries, catalog, report) {
+  const { build } = target;
+  const element = packs.get(target.elementId);
+  const entry = catalogEntry(catalog, target.elementId);
+  const semantic = readJson(
+    resolve(DATA, `semantic/elements/${target.elementId.toLowerCase()}.json`)
+  );
+  const indicatorById = new Map(
+    (semantic.indicators || []).map((indicator) => [indicator.indicatorId, indicator])
+  );
+  const measureByKey = new Map(build.measures.map((measure) => [measure.key, measure]));
+  const unmatched = new Map();
+  const series = new Map();
+  const seriesMeta = new Map();
+  let sourceValueCount = 0;
+  let duplicateValueCount = 0;
+  let providedZeroCount = 0;
+  let rowsWithoutRegion = 0;
+  const regionsSeen = new Set();
+
+  for (const record of element?.observations?.records || []) {
+    if (!numeric(record.value)) continue;
+    const indicator = indicatorById.get(record.indicatorId);
+    const regionName = text(indicator?.dimensionLabels?.[build.regionDimension]);
+    if (!indicator || !regionName) {
+      rowsWithoutRegion += 1;
+      continue;
+    }
+    const measure = measureByKey.get(indicator.measure?.key);
+    if (!measure) {
+      rowsWithoutRegion += 1;
+      continue;
+    }
+    // A source spelling the contract declares as the same province ("Bac Can").
+    const aliased = build.regionAliases?.[regionName] ?? regionName;
+    const region = boundaries.lookup.get(normalizePlace(aliased));
+    if (!region) {
+      unmatched.set(regionName, (unmatched.get(regionName) || 0) + 1);
+      continue;
+    }
+    regionsSeen.add(region.adm1Code);
+    const period = periodKeyOf(record.year ?? record.period) || "미기재";
+    const key = `${measure.key} ${period}`;
+    let bucket = series.get(key);
+    if (!bucket) {
+      bucket = new Map();
+      series.set(key, bucket);
+      seriesMeta.set(key, {
+        variable: measure.key,
+        period,
+        measure,
+        scenario: "",
+        label: measure.label,
+      });
+    }
+    if (bucket.has(region.adm1Code)) {
+      duplicateValueCount += 1;
+      continue;
+    }
+    sourceValueCount += 1;
+    if (record.value === 0) providedZeroCount += 1;
+    bucket.set(region.adm1Code, {
+      adm1Code: region.adm1Code,
+      adm1Name: region.adm1Name,
+      variable: measure.key,
+      variableLabel: measure.label,
+      period,
+      value: record.value,
+      unit: record.unit || measure.unit,
+      sourceIndicatorId: record.indicatorId,
+      sourceRecordId: record.recordId,
+      sourceSpatialUnit: "province",
+      sourceRegion: regionName,
+      mappingMethod: "source-province-value",
+      imputed: false,
+    });
+  }
+
+  return finishChoroplethLayer({
+    target,
+    entry,
+    series,
+    seriesMeta,
+    members: new Map(),
+    boundaries,
+    report,
+    stats: {
+      sourceValueCount,
+      duplicateValueCount,
+      providedZeroCount,
+      unmatched,
+      sourceRowCount: (element?.observations?.records || []).length,
+      sourceRegionCount: regionsSeen.size,
+      rowsWithoutRegion,
+    },
+    aggregationLevel: "pre-2025-63-province",
+    spatialScopeType: "region",
+    mappingMethod: "source-province-value",
+  });
+}
+
+/**
+ * A layer prepared in V155 whose asset now exists (P6b).
+ *
+ * The declaration is published as written - renderer, selectors, notices and
+ * field labels were reviewed with the asset - and only the data URL moves, from
+ * `spatial/pending-v155/` to `spatial/layers/`, so the layer reads from the same
+ * place as every other registered layer.
+ */
+function registerPendingLayer(target, pendingLayers, report, catalog) {
+  const declared = pendingLayers.get(target.elementId);
+  if (!declared) {
+    report.push({
+      elementId: target.elementId,
+      status: "not-connected",
+      build: "pending-v155",
+      reason: "pending-layers-v155.json에 선언이 없습니다",
+    });
+    return null;
+  }
+  const layer = { ...declared };
+  // The contract decides which map group a layer appears in; the V155 declaration
+  // predates the V157 grouping and may name a catalog category the screen has no
+  // group for.
+  layer.category = target.category;
+  delete layer.dataUrlRegistrationTarget;
+  delete layer.mapTargetV138;
+  if (declared.dataUrl) {
+    const from = resolve(DATA, declared.dataUrl.replace(/^\/data\/[^/]+\/v2\//u, ""));
+    const target_ = `spatial/layers/${target.elementId.toLowerCase()}.json`;
+    const to = resolve(DATA, target_);
+    if (existsSync(from)) {
+      const payload = readJson(from);
+      // Published, so it states the runtime's contract and stops calling itself
+      // pending. The substantive caveat lives on the layer (accuracyNotice ·
+      // publicSpatialNotice · spatialLimitation), which is what a reader sees.
+      // The panel reads seriesCoverage to say how many units the source left out.
+      // Computed from the asset's own values, per variable and period.
+      const joinKey = payload.joinKey || declared.joinKey || "adm1Code";
+      const expectedCount = /34/u.test(joinKey) ? 34 : 63;
+      const coverage = new Map();
+      for (const row of payload.values || []) {
+        if (typeof row.value !== "number" || !Number.isFinite(row.value)) continue;
+        const key = `${row.variable} ${row.period}`;
+        const seen = coverage.get(key) || { variable: row.variable, period: row.period, keys: new Set() };
+        seen.keys.add(String(row[joinKey] ?? row.adm1Code ?? row.stringId ?? ""));
+        coverage.set(key, seen);
+      }
+      const seriesCoverage =
+        payload.seriesCoverage ||
+        [...coverage.values()].map((row) => ({
+          variable: row.variable,
+          period: row.period,
+          expectedCount,
+          matchedCount: row.keys.size,
+          missingCount: Math.max(0, expectedCount - row.keys.size),
+          failureCount: 0,
+        }));
+      const published = {
+        ...payload,
+        seriesCoverage,
+        schemaVersion: "v124",
+        pending: undefined,
+        pendingNotice: undefined,
+        publishedFrom: declared.dataUrl,
+        sourceNotice: payload.pendingNotice ?? payload.sourceNotice,
+      };
+      writeJson(to, published);
+      layer.dataUrl = `${publishedPrefix(declared.dataUrl)}${target_}`;
+    } else if (!existsSync(to)) {
+      report.push({
+        elementId: target.elementId,
+        status: "not-connected",
+        build: "pending-v155",
+        reason: `준비 데이터 파일이 없습니다: ${declared.dataUrl}`,
+      });
+      return null;
+    } else {
+      layer.dataUrl = `${publishedPrefix(declared.dataUrl)}${target_}`;
+    }
+  }
+  // The declaration states its policy as a bare kind; the published layer carries
+  // the same object every other layer does, so the boundary audit reads one shape.
+  layer.boundaryPolicy = boundaryPolicyForLayer(
+    target,
+    layer,
+    (layer.selectors?.variables || []).map((option) => option.measureId || option.key)
+  );
+  // The panel reads these on every layer. A declaration written before
+  // registration has none of them, so they are filled from the asset: every
+  // feature the asset carries is drawn, nothing is missing and nothing imputed.
+  const featureCount = Number(layer.featureCount ?? 0);
+  const drawsPoints = /point|line/iu.test(String(layer.renderer || "")) ||
+    (layer.geometryTypes || []).some((type) => /point|line/iu.test(type));
+  const entry = catalogEntry(catalog, target.elementId);
+  layer.missingRegions = layer.missingRegions ?? [];
+  layer.join = layer.join ?? {
+    requiredCount: featureCount,
+    matchedCount: featureCount,
+    missingCount: 0,
+    failures: [],
+  };
+  layer.fakeGeometryCount = layer.fakeGeometryCount ?? 0;
+  layer.zeroImputationCount = layer.zeroImputationCount ?? 0;
+  layer.totalEntityCount = layer.totalEntityCount ?? featureCount;
+  layer.sourceCoordinateCount = layer.sourceCoordinateCount ?? (drawsPoints ? featureCount : 0);
+  layer.displayedCoordinateCount =
+    layer.displayedCoordinateCount ?? (drawsPoints ? featureCount : 0);
+  layer.downloadStatus =
+    layer.downloadStatus ?? (entry?.downloadAllowed ? "available" : "source-restricted");
+  layer.downloadableRecordCount =
+    layer.downloadableRecordCount ?? (entry?.downloadableRecordCount ?? 0);
+  layer.mapTargetV138 = {
+    publicName: target.publicName,
+    sourceSpatialUnit: target.sourceSpatialUnit,
+    displaySpatialUnit: target.displaySpatialUnit,
+    selectableVariables: target.selectableVariables,
+    unit: target.unit,
+    period: target.period,
+    representativeItem: target.representativeItem,
+    evidence: target.evidence,
+    limitation: target.limitation,
+  };
+  report.push({
+    elementId: target.elementId,
+    status: "implemented",
+    build: "pending-v155",
+    layerId: layer.layerId,
+    featureCount: layer.featureCount ?? null,
+    registeredFrom: "spatial/pending-layers-v155.json",
+  });
+  return layer;
+}
+
 function patchExistingLayer(layer, target, report, packs, locator) {
   const patch = target.build.patch || {};
   const next = { ...layer };
@@ -1157,6 +1432,12 @@ function main() {
   const boundaries = loadBoundaries();
   const crosswalk = buildReorganisationCrosswalk(packs, boundaries);
   const locator = loadProvinceLocator(DATA);
+  const pendingLayers = new Map(
+    (existsSync(resolve(DATA, "spatial/pending-layers-v155.json"))
+      ? readJson(resolve(DATA, "spatial/pending-layers-v155.json")).layers || []
+      : []
+    ).map((layer) => [layer.elementId, layer])
+  );
   const report = [];
   const existingByElement = new Map(mapIndex.layers.map((layer) => [layer.elementId, layer]));
   // A layer this script wrote in an earlier run is rebuilt, never carried over.
@@ -1187,12 +1468,21 @@ function main() {
       });
       continue;
     }
+    // A V155 layer is republished from its declaration, not patched as if the
+    // ETL had produced it: a rerun must not depend on what an earlier run wrote.
+    if (kind === "pending-v155") {
+      const layer = registerPendingLayer(target, pendingLayers, report, catalog);
+      if (layer) layers.push(layer);
+      continue;
+    }
     if (etlByElement.has(target.elementId)) {
       // The ETL's own layer wins over a derived one.
       layers.push(patchExistingLayer(etlByElement.get(target.elementId), target, report, packs, locator));
       continue;
     }
-    if (kind === "admin1-attributes") {
+    if (kind === "observation-dimension") {
+      layers.push(buildObservationDimensionLayer(target, packs, boundaries, catalog, report));
+    } else if (kind === "admin1-attributes") {
       layers.push(buildAdmin1Layer(target, packs, boundaries, catalog, report));
     } else if (kind === "region-membership") {
       layers.push(buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalog, report));
@@ -1202,8 +1492,14 @@ function main() {
       throw new Error(`unknown build kind ${kind} for ${target.elementId}`);
     }
   }
-  // ETL layers outside the 43 (none today) are kept so nothing published is lost.
+  // ETL layers outside the contract are kept so nothing published is lost - but
+  // a target the contract drops (C-009·C-010·C-019 in V157) is dropped on purpose.
+  const droppedByContract = new Set(
+    (contract.droppedElementIds || []).map((elementId) => String(elementId))
+  );
   for (const layer of etlLayers) {
+    if (droppedByContract.has(layer.elementId)) continue;
+    if (contract.targets.every((target) => target.elementId !== layer.elementId)) continue;
     if (!layers.some((item) => item.elementId === layer.elementId)) layers.push(layer);
   }
 
@@ -1234,15 +1530,31 @@ function main() {
         ? "regional-scope"
         : layer.mapMode === "region-choropleth"
           ? "region-choropleth"
-          : layer.renderer === "admin1-choropleth" || layer.renderer === "partial-choropleth"
+          : layer.renderer === "admin1-choropleth" ||
+              layer.renderer === "partial-choropleth" ||
+              layer.renderer === "unit-choropleth"
             ? "choropleth"
             : layer.renderer === "cluster"
               ? "cluster"
               : "point";
+  // V157: a target the contract dropped keeps no map claim in the catalog - the
+  // finder's "지도 있음" filter reads this, and it counted the three dropped layers
+  // until the value was cleared here.
+  for (const elementId of droppedByContract) {
+    const item = catalog.elements.find((row) => row.elementId === elementId);
+    if (!item) continue;
+    item.mapMode = "panel-only";
+    item.mapFeatureCount = 0;
+  }
   for (const item of catalog.elements) {
     const layer = layerByElement.get(item.elementId);
     if (!layer || layer.enabled === false) continue;
-    if (String(layer.layerId).startsWith(LAYER_ID_PREFIX)) {
+    // Layers this script owns: the ones it builds, and the V155 assets it
+    // registers in P6b. An ETL layer keeps the catalog values the ETL wrote.
+    if (
+      String(layer.layerId).startsWith(LAYER_ID_PREFIX) ||
+      String(layer.layerId).startsWith(PENDING_LAYER_ID_PREFIX)
+    ) {
       item.mapMode = catalogModeFor(layer);
       item.mapFeatureCount = layer.featureCount;
     }

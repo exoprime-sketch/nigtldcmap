@@ -21,11 +21,13 @@ import { AuditV125, PROJECT_ROOT, V2_ROOT, catalogElements, readJson } from "./v
 import { evaluateValue, launchHeadlessBrowser, navigate, setViewport, startStaticBuildServer, waitForValue } from "./v125/browser-runtime.mjs";
 import { detailUrlV135, finderUrlV135 } from "./v135/audit-helpers.mjs";
 import { auditExcludedNoticesV156, excludedElementsV156, publicListedElementsV156 } from "./v156/exclusions-audit-v156.mjs";
+import { exclusionDecisionsV158 } from "./v158/exclusion-decisions-v158.mjs";
 
 const audit = new AuditV125("exclusions:v156");
 const catalog = catalogElements(readJson(resolve(V2_ROOT, "catalog.json")).value);
 const manifest = readJson(resolve(V2_ROOT, "manifest.json")).value || {};
-const decisionDoc = readJson(resolve(PROJECT_ROOT, "config/data-publication/vietnam-exclusions-v156.json")).value || {};
+// V158: the decision common to every country plus the default country's own.
+const decisionDoc = exclusionDecisionsV158(PROJECT_ROOT, "VNM");
 const cardDoc = readJson(resolve(V2_ROOT, "home/card-summaries-v140.json")).value || {};
 const homePreview = readJson(resolve(V2_ROOT, "home/home-preview-v139.json")).value || {};
 

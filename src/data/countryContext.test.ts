@@ -18,16 +18,16 @@ const registry = JSON.parse(
 ) as CountryRegistryV158;
 
 describe("country registry V158", () => {
-  test("the bundled view matches public/data/countries.json", () => {
-    const bundled = new Map(
-      bundledCountryRegistryV158().countries.map((row) => [row.iso3, row])
-    );
-    expect([...bundled.keys()].sort()).toEqual(
-      registry.countries.map((row) => row.iso3).sort()
-    );
-    registry.countries.forEach((row) => {
-      expect(bundled.get(row.iso3)?.dataRoot).toBe(row.dataRoot);
-      expect(bundled.get(row.iso3)?.status).toBe(row.status);
+  // V158-B2: the bundled view holds the default country only, so a country is
+  // added by public/data/countries.json alone. What it holds must still agree
+  // with the registry (reports/v158/EXPECTATION_CHANGES_V158-B2.md).
+  test("the bundled view is the default country, as public/data/countries.json has it", () => {
+    const bundled = bundledCountryRegistryV158().countries;
+    expect(bundled.map((row) => row.iso3)).toEqual([DEFAULT_COUNTRY_ISO3_V158]);
+    const byIso3 = new Map(registry.countries.map((row) => [row.iso3, row]));
+    bundled.forEach((row) => {
+      expect(byIso3.get(row.iso3)?.dataRoot).toBe(row.dataRoot);
+      expect(byIso3.get(row.iso3)?.status).toBe(row.status);
     });
   });
 

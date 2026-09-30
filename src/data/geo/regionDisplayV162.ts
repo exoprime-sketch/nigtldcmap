@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext } from "react";
 import { formatRegionTextV162 } from "./regionNameV161";
+import { useDataCountryV158 } from "../countries/DataCountryContextV158";
 import type { RegionLevelV161 } from "./regionNameV161";
 
 /**
@@ -32,11 +33,17 @@ export function publicRegionTextV162(text: string | null | undefined, elementId?
   return formatRegionTextV162({ country, raw: text, level: regionLevelForElementV162(elementId, country) });
 }
 
-/** The data country of the detail screen being read (its provider's ISO3). */
-export const RegionCountryContextV162 = createContext<string>("VNM");
+/**
+ * An override of the screen's data country for the region display only (a
+ * test renders with a country that has no dictionary). Screens set their
+ * country with `DataCountryProviderV158`, which this reads by default.
+ */
+export const RegionCountryContextV162 = createContext<string | null>(null);
 
-/** `publicRegionTextV162` bound to the screen's country and an element. */
+/** `publicRegionTextV162` bound to the screen's data country and an element. */
 export function useRegionTextV162(elementId?: string | null): (text: string | null | undefined) => string {
-  const country = useContext(RegionCountryContextV162);
+  const override = useContext(RegionCountryContextV162);
+  const dataCountry = useDataCountryV158();
+  const country = override || dataCountry;
   return useCallback((text: string | null | undefined) => publicRegionTextV162(text, elementId, country), [elementId, country]);
 }

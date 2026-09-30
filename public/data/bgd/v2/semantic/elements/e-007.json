@@ -1,0 +1,113 @@
+{
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 8,
+      "values": [
+        "검증",
+        "대상",
+        "등록부",
+        "보고",
+        "인벤토리",
+        "제도",
+        "지원",
+        "탄소시장"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "부문별_Tier_tier_by_sector",
+      "labelKo": "부문별 Tier",
+      "valueCount": 4,
+      "values": [
+        "부문별 Tier 원천 미기재",
+        "부문별 일괄 미명시 — 대부분 Tier 1, LULUCF=Tier 2·3",
+        "부문별 일괄 미명시 — 대부분 부문 Tier 1, 자료가 상세한 경우 상위 Tier (예: Barind 지역 장내발효 Tier 2)",
+        "핵심범주 분석 수준=Tier 1 (산정 Tier 아님)"
+      ]
+    },
+    {
+      "key": "표준_분류_category_std",
+      "labelKo": "표준 분류",
+      "valueCount": 9,
+      "values": [
+        "감축목표·적응(NDC·NAP)",
+        "검증(제3자·QA/QC)",
+        "레지스트리",
+        "법·제도·거버넌스",
+        "보고(NC·BUR·BTR)",
+        "시설단위 MRV",
+        "인벤토리(Tier·방법론)",
+        "지원(CBIT 등)",
+        "탄소시장·가격제도"
+      ]
+    },
+    {
+      "key": "확인_상태_구분_verification_status",
+      "labelKo": "확인 상태 구분",
+      "valueCount": 3,
+      "values": [
+        "미확인",
+        "제도 부재",
+        "확인됨"
+      ]
+    }
+  ],
+  "elementId": "E-007",
+  "entityCount": 31,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-b2b62b29699a|건(제도·근거 문서)",
+      "dimensionLabels": {
+        "category": "근거 문서 목록",
+        "technology": "01 · 19"
+      },
+      "dimensions": {
+        "category": "근거 문서 목록",
+        "technology": "01,19"
+      },
+      "displayLabel": "MRV 제도·근거 문서 목록",
+      "indicatorId": "E-007_mrv_system",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-b2b62b29699a",
+        "labelKo": "MRV 제도",
+        "unit": "건(제도·근거 문서)",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-b2b62b29699a|건(제도·근거 문서)|category=근거 문서 목록|technology=01,19|E-007_mrv_system",
+      "sourceCaveat": "[중요] 방글라데시는 온실가스 보고를 의무화하는 법률·시행령이 없다. 인벤토리는 환경청(DoE)이 GEF CBIT 로 구축한 National MRV Platform 기반으로 작성하며, 시설단위 의무보고·국내 배출권거래제·국가 탄소 등록부는 모두 미도입 상태다. 출처등급이 [준공식]인 레코드(Article 6 Readiness Roadmap, 관보 고시)는 정부 파일저장소 호스팅본으로 도메인 검증이 완료되지 않았으므로 인용 시 원문 소재 확인 필요. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [표준 분류·명세서 항목] attr_14 는 국가마다 다른 category 를 9개 표준 분류(법·제도·거버넌스 / 시설단위 MRV / 인벤토리(Tier·방법론) / 레지스트리 / 검증(제3자·QA/QC) / 보고(NC·BUR·BTR) / 지원(CBIT 등) / 탄소시장·가격제도 / 감축목표·적응(NDC·NAP))로 대응시킨 값이고, attr_15 는 데이터_명세서 5개 항목(Tier(인벤토리 산정 수준)·국가 레지스트리·제3자 검증·BTR 제출 이력·CBIT 수혜) 가운데 그 행이 근거가 되는 항목이다. CBIT 수혜는 GEF 사업 DB 에서 CBIT 표기가 Yes 인 국가 사업 기준이며, BTR 작성 지원(Enabling Activity)·글로벌 CBIT-GSP 지원과 구분해 적었다. GEF 사업 DB 이용조건은 세계은행그룹 이용약관(비상업적 이용 허용·2차적저작물 및 상업적 이용 금지)을 따르며 사업 ID·명칭·금액·상태 등 사실 정보만 옮겼다.",
+      "sourceLabel": "MRV 제도·근거 문서 목록",
+      "sourceLabelEn": "GHG MRV legal and institutional basis (record list)",
+      "sourceNote": "M01 — 시설단위 의무보고 제도·독립 제3자 검증·제6조 감사인 인정제도가 부재하고, 한국 등 일부 양자협력은 출처 간 정보가 상충해 수록하지 않았다. M02 — 제6조 거버넌스 관보 원문과 검증기관 인정 스킴 세부 스코프를 확보하지 못했다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-b2b62b29699a",
+      "labelKo": "MRV 제도",
+      "recordCount": 0,
+      "unit": "건(제도·근거 문서)",
+      "unitFamily": "text"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

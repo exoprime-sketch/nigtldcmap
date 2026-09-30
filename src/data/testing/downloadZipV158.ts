@@ -9,7 +9,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { inflateRawSync } from "node:zlib";
 
-import { countryPublicDirV158 } from "../countryContext";
+import { countryPublicDirV158, DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
 
 const REPO_ROOT = resolve(__dirname, "../../..");
 
@@ -44,8 +44,7 @@ export function readZipMembersV158(path: string): Map<string, Buffer> {
 }
 
 /** The download JSON document of an element (default country unless given). */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function readDownloadJsonV158(elementId: string, country: string = "VNM"): any {
+export function readDownloadJsonV158(elementId: string, country: string = DEFAULT_COUNTRY_ISO3_V158): any {
   const token = elementId.toLowerCase();
   const path = resolve(REPO_ROOT, countryPublicDirV158(country), "downloads", `${token}.zip`);
   const member = readZipMembersV158(path).get(`${token}.json`);

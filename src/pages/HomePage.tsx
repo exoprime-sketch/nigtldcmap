@@ -11,7 +11,7 @@ import { datasetDatesV149, mapDatasetIdsV149, sortHomeItemsV149, usePublicUsageV
 import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125, type DataFinderSelectorStateV125 } from "../types/dataFinderV125";
 import FinderCardSummaryV140 from "../components/catalog/FinderCardSummaryV140";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
-import { getCardSpecV159 } from "../data/spec/datasetSpecV159";
+import { getCardSpecForCountryV158 } from "../data/spec/countrySpecV158";
 import "../styles/home-final-v13.css";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 
@@ -63,7 +63,8 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
     || (overview?.mapElementIds.includes(DEFAULT_MAP_ELEMENT_V139) ? DEFAULT_MAP_ELEMENT_V139 : null)
     || overview?.mapElementIds[0] || null;
   // V159 naming: the dataset's own name (source line apart), as on the finder and detail.
-  const mapTitle = mapElement ? getCardSpecV159(mapElement)?.baseName || overview?.catalog.find(item => item.elementId === mapElement)?.publicTitle || "" : "";
+  const mapItem = mapElement ? overview?.catalog.find(item => item.elementId === mapElement) || null : null;
+  const mapTitle = mapElement ? getCardSpecForCountryV158(mapElement, countryIso3, mapItem)?.baseName || mapItem?.publicTitle || "" : "";
   const mapSelection = (mapElement && summaries.get(mapElement)?.selection) || EMPTY_DATA_FINDER_SELECTOR_STATE_V125;
 
   return <div className="home-v139" data-v128-home>
@@ -113,7 +114,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
         {items.map(item => {
           const card = summaries.get(item.elementId);
           const date = datasetDatesV149.get(item.elementId);
-          const spec = getCardSpecV159(item.elementId);
+          const spec = getCardSpecForCountryV158(item.elementId, item.countryIso3, item);
           const title = spec?.baseName || item.publicTitle;
           return <article key={item.elementId} className="home-featured-v139__card" data-element-id={item.elementId} aria-labelledby={"home-card-" + item.elementId}>
             {spec?.sourceLabel ? <div className="home-featured-v139__source" data-testid="home-card-source-v159"><PublicTermTextV134 text={spec.sourceLabel} /></div> : null}

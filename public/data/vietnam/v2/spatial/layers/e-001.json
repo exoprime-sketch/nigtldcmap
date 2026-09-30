@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "E-001",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "e-001-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "e-001-located-count",
+        "measureId": "e-001-located-count",
+        "measureKey": "e-001-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 기관 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 1
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "e-001-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "E-001_ctcn_network_member",
+      "sourceRecordId": "v124-e-001-entity-00007",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-HN": [
+      {
+        "recordId": "v124-e-001-entity-00014",
+        "label": "네트워크 회원(민간기업)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "E-001_ctcn_network_member"
+      },
+      {
+        "recordId": "v124-e-001-entity-00009",
+        "label": "Mai Van Trinh",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "E-001_ctcn_network_member"
+      },
+      {
+        "recordId": "v124-e-001-entity-00016",
+        "label": "네트워크 회원(연구기관)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "E-001_ctcn_network_member"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "e-001-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 1,
+      "missingCount": 62,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: Climate Technology Centre & Network (CTCN)"
+    ],
+    "licenses": [
+      "CTCN 웹사이트 이용약관(Disclaimer)"
+    ],
+    "organizations": [
+      "Climate Technology Centre and Network (CTCN)"
+    ],
+    "urls": [
+      "https://www.ctc-n.org/about-ctcn/national-designated-entities/ministry-natural-resources-and-environment-vietnam",
+      "https://www.ctc-n.org/network/network-members",
+      "https://www.ctc-n.org/networking-and-collaboration/collaboration/ta-proponents"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 1,
+    "maxSeriesFeatureCount": 1,
+    "missingAdm1Count": 62,
+    "providedZeroCount": 0,
+    "publishedValueCount": 1,
+    "sourceValueCount": 6,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 1
+  }
+}

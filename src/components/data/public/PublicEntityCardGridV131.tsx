@@ -521,8 +521,10 @@ function reviewedElementCardAttributesV131(
   const aliases = PUBLIC_CARD_ELEMENT_ATTRIBUTE_ALIASES_V131[entity.elementId];
   if (!aliases) return {};
   const entries: Array<[string, PublicAttributeValueV126]> = [];
+  const literalKeys = new Set<string>();
   Object.entries(aliases).forEach(([publicKey, sourceKey]) => {
     if (sourceKey.startsWith("literal:")) {
+      literalKeys.add(publicKey);
       entries.push([publicKey, sourceKey.slice("literal:".length)]);
       return;
     }
@@ -534,7 +536,11 @@ function reviewedElementCardAttributesV131(
     const safeValue = publicTextV126(value);
     if (safeValue) entries.push([publicKey, safeValue]);
   });
-  return Object.fromEntries(entries);
+  // V158: a constant describes the columns this rule was reviewed on (B-025's
+  // unit for the in-country area). A row carrying none of them - another
+  // country's delivery of the element - gets no constant either.
+  const fromColumns = entries.some(([key]) => !literalKeys.has(key));
+  return Object.fromEntries(fromColumns ? entries : []);
 }
 
 function badgeValuesV131(

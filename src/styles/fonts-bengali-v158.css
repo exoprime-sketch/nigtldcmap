@@ -1,0 +1,26 @@
+/*
+ * V158-B2 WP3: a self-hosted Noto Sans Bengali subset (Bengali block only),
+ * loaded on demand. `unicode-range` tells the browser which codepoints this
+ * face covers; a face is only fetched once the page needs to paint a
+ * character in that range, so a page with no Bengali text (every Vietnam
+ * screen) never requests these files. See
+ * src/assets/fonts/README-NotoSansBengali.md for source, version and
+ * checksums; src/styles.css lists "Noto Sans Bengali" in the body font stack.
+ */
+@font-face {
+  font-family: "Noto Sans Bengali";
+  src: url("../assets/fonts/NotoSansBengali-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0980-09FF, U+200C-200D, U+25CC;
+}
+
+@font-face {
+  font-family: "Noto Sans Bengali";
+  src: url("../assets/fonts/NotoSansBengali-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0980-09FF, U+200C-200D, U+25CC;
+}

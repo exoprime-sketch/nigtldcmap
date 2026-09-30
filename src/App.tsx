@@ -24,6 +24,8 @@ import {
   publicCountryElementTokenV122,
   resolveCountryElementIdV122,
 } from "./data/countries/countryDataFacadeV122";
+import { ensureCountryRegistryLoadedV158 } from "./data/countries/countryDataProviderRegistryV122";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
 import type { CategoryCode } from "./data/publicTaxonomy";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
 import DataGuidePage from "./pages/DataGuidePage";
@@ -368,7 +370,7 @@ function resolveLegacyDatasetElementV128(
   const dataset = DATASETS.find((item) => item.id === datasetId);
   if (!dataset) return null;
   return resolveCountryElementIdV122(
-    "VNM",
+    DEFAULT_COUNTRY_ISO3_V158,
     getAuthoritativeElementIdV88(dataset)
   );
 }
@@ -395,7 +397,7 @@ export default function App() {
     initialParams.get("from")
   );
   const initialCountryParam = initialLegacyElementId
-    ? "VNM"
+    ? DEFAULT_COUNTRY_ISO3_V158
     : initialParams.get("country")?.toUpperCase() ?? null;
   const initialDataCountryIso3 = hasCountryDataProviderV122(initialCountryParam)
     ? initialCountryParam
@@ -470,6 +472,11 @@ export default function App() {
       : null
   );
 
+  // V158: the address the page was opened at, before the first render rewrote
+  // it. A country other than the default is only known once the registry has
+  // been read; if the address named such a country, it is resolved again then.
+  const openedLocationRef = useRef(`${window.location.search}${window.location.hash}`);
+  const openedCountryParamRef = useRef(initialCountryParam);
   const historyModeRef = useRef<HistoryMode>("replace");
   const restoringHistoryRef = useRef(false);
   const mainRef = useRef<HTMLElement>(null);
@@ -525,7 +532,7 @@ export default function App() {
             : "explorer"
           : locationView;
       const countryParam = legacyElementId
-        ? "VNM"
+        ? DEFAULT_COUNTRY_ISO3_V158
         : params.get("country")?.toUpperCase() ?? null;
 
       setView(nextView);
@@ -588,6 +595,26 @@ export default function App() {
 
     return () => {
       window.removeEventListener("popstate", restoreFromLocation);
+    };
+  }, []);
+
+  // V158: a `?country=` naming a registry country other than the default is
+  // unknown at the first render (the bundled registry holds the default only),
+  // so the first render fell back. Once the registry says the country is
+  // offered, the opened address is restored and read again through the same
+  // path as back/forward. The default country and a country still preparing
+  // never reach the restore.
+  useEffect(() => {
+    const country = openedCountryParamRef.current;
+    if (!country || hasCountryDataProviderV122(country)) return undefined;
+    let alive = true;
+    void ensureCountryRegistryLoadedV158().then(() => {
+      if (!alive || !hasCountryDataProviderV122(country)) return;
+      window.history.replaceState(window.history.state, "", `${window.location.pathname}${openedLocationRef.current}`);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    });
+    return () => {
+      alive = false;
     };
   }, []);
 
@@ -1185,7 +1212,7 @@ export default function App() {
             <RealMapExplorerPage
               onOpenElement={openElement}
               onOpenDataFinder={() =>
-                openExplorerFromGlobalSearch("", "VNM", null)
+                openExplorerFromGlobalSearch("", DEFAULT_COUNTRY_ISO3_V158, null)
               }
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);

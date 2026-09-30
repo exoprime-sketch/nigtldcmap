@@ -1,0 +1,55 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "C-015",
+  "entityCount": 10,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-d19e970c30f9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "재생에너지 법제도 원본 링크",
+      "indicatorId": "C-015_policy_document",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d19e970c30f9",
+        "labelKo": "재생에너지 법제도 원본 링크",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d19e970c30f9|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-015_policy_document",
+      "sourceCaveat": "[raw] ([raw]\\C-015\\) C-015_재생에너지 법제도 원본 링크_BGD_RE_Policy_2025_PowerDivision.pdf · C-015_재생에너지 법제도 원본 링크_BGD_SREDA_Act_2012_Act48of2012_EN.pdf · C-015_재생에너지 법제도 원본 링크_BGD_BERC_Act_2003_Act13of2003_EN_FAOLEX.pdf · C-015_재생에너지 법제도 원본 링크_BGD_BERC_AmendmentAct_2023_Act6of2023_BN_FAOLEX.pdf · C-015_재생에너지 법제도 원본 링크_BGD_IEPMP_2023_JICA_FinalReport.pdf · C-015_재생에너지 법제도 원본 링크_BGD_MCPP_2022_2041_MoEFCC.pdf · C-015_재생에너지 법제도 원본 링크_BGD_ElectricityAct_2018_EN_SRO28Law2019.pdf · C-015_재생에너지 법제도 원본 링크_BGD_PSMP2016_Summary_EN.pdf · C-015_재생에너지 법제도 원본 링크_BGD_NetMetering_Guidelines_2018_EN.pdf · C-015_재생에너지 법제도 원본 링크_BGD_RE_Policy_2008_EN.pdf [정의·범위] 1행 = 재생에너지 관련 정책·법령 문서 1건(10건). framework 속성 「상기 문서들의 원본 링크(URL)」에 대응하며, 문서번호·발행기관·시행연도 등은 그 링크를 특정하기 위한 부속 정보임. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 출처별 구분자 4개(C-015_policy_document_link_bdgov·_faolex·_nolicense·_private)를 레코드 유형 단위 1개로 통합하고, 「속성1(레코드명)·속성3(값)·속성4(시점)」 범용 열에 담겨 있던 값을 속성별 명명 열로 전개함. [라이선스] FAOLEX 게재본 2건(BERC법 2003·개정 2023)은 FAO 이용약관 적용 — 법령명·법령번호·제정/시행연도 등 사실정보만 수록하고 원문 텍스트·표·파일은 재배포하지 않으며 원본 링크로 연결함. [현지조사] 현지조사 대상 요소이나 전달받은 조사표(Field Survey Items vIDGcmt_260408_vF)는 베트남 대상 조사 결과여서 방글라데시 조사 행은 수록하지 않음. [지역구분] framework 「지역 구분 필요」 미지정 요소 — 국가 단위 문서. [기술분류] framework 「기술 분류 필요 = 데이터셋 전체」 — meta tech_ids를 「범용」으로 두고(베트남 확정본과 동일) 행별 tech_id는 부여하지 않음 — 문서 링크 레코드는 특정 기술을 지목하지 않기 때문.",
+      "sourceLabel": "재생에너지 법제도 원본 링크",
+      "sourceLabelEn": "Renewable Energy Legal Framework — Source Links",
+      "sourceNote": "넷미터링 지침 2025년 개정판 — S.R.O. 211-Ain/Aykar-2/2026이 인용하나 원본을 확보하지 못함(M06). 확보 시 반영 예정.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-d19e970c30f9",
+      "labelKo": "재생에너지 법제도 원본 링크",
+      "recordCount": 0,
+      "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

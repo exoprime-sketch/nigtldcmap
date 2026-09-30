@@ -1,21 +1,21 @@
 {
   "summary": {
     "label": "local-build",
-    "base": "http://127.0.0.1:54761",
-    "generatedAt": "2026-09-29T06:42:11.383Z",
+    "base": "http://127.0.0.1:55032",
+    "generatedAt": "2026-09-30T06:18:05.103Z",
     "version": {
       "local": {
-        "cardSummaries": "685bbaf7c1b271fc",
-        "cardGeneratedAt": "2026-09-29T05:36:15.094Z",
-        "sourceHash": "5836b5b3e5096243",
+        "cardSummaries": "98ef46f956d58cb2",
+        "cardGeneratedAt": "2026-09-29T23:13:04.778Z",
+        "sourceHash": "d0658dee48f14dc0",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
-        "mapLayerCount": 42
+        "mapLayerCount": 60
       },
       "remote": {
-        "cardSummaries": "685bbaf7c1b271fc",
-        "cardGeneratedAt": "2026-09-29T05:36:15.094Z",
+        "cardSummaries": "98ef46f956d58cb2",
+        "cardGeneratedAt": "2026-09-29T23:13:04.778Z",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z",
-        "mapLayerCount": 42
+        "mapLayerCount": 60
       },
       "match": true
     },
@@ -61,8 +61,8 @@
       "notApplicable": 0
     },
     "cardValueVerified": {
-      "pass": 121,
-      "fail": 19,
+      "pass": 122,
+      "fail": 18,
       "notApplicable": 12
     },
     "recomputed": {
@@ -98,9 +98,9 @@
     },
     "internalWording": [],
     "mapSymbolVerified": {
-      "pass": 42,
+      "pass": 60,
       "fail": 0,
-      "notApplicable": 110
+      "notApplicable": 92
     },
     "controlsVerified": {
       "pass": 118,
@@ -121,12 +121,12 @@
       "row-count-differs": 12
     },
     "mapHandoffVerified": {
-      "pass": 42,
+      "pass": 60,
       "fail": 0,
-      "notApplicable": 110
+      "notApplicable": 92
     },
-    "withRemainingIssues": 34,
-    "requiredFailures": 35,
+    "withRemainingIssues": 33,
+    "requiredFailures": 34,
     "requiredFailureIds": [
       "A-006",
       "A-010",
@@ -144,7 +144,6 @@
       "B-001",
       "B-023",
       "B-024",
-      "B-026",
       "B-028",
       "C-003",
       "C-004",
@@ -1452,7 +1451,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "항목별 내용과 기준"
+          "항목별 내용과 기준",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -1487,7 +1487,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "항목별 내용과 기준"
+            "항목별 내용과 기준",
+            "위치·분포"
           ]
         },
         "table": {
@@ -2330,7 +2331,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "MAIFI · 2015~2024년 추이"
+          "MAIFI · 2015~2024년 추이",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -2374,7 +2376,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "MAIFI · 2015~2024년 추이"
+            "MAIFI · 2015~2024년 추이",
+            "위치·분포"
           ]
         },
         "table": {
@@ -2463,10 +2466,8 @@
         "panel": {
           "title": "선택 발전소",
           "rows": [
-            "데이터명: 발전소",
             "자료연도: 2021",
-            "출처: World Resources Institute",
-            "지도 표시: 시설 점 · 위치 좌표"
+            "소재 성·시꼰뚬 (Kon Tum)"
           ],
           "coverage": ""
         },
@@ -2597,14 +2598,9 @@
         "panel": {
           "title": "선택 선로",
           "rows": [
-            "데이터명: 베트남 송전망",
-            "항목: 송전망 선로",
-            "자료연도: 2016",
-            "구간 길이: 116.9 km",
-            "운영 상태: 운영 중",
-            "전압: 110 kV",
-            "출처: World Bank Group / ENERGYDATA.INFO",
-            "지도 표시: 선로 · 선로 경로 좌표"
+            "전압110 kV",
+            "구간 길이116.87798 km",
+            "운영 상태existing"
           ],
           "coverage": ""
         },
@@ -2702,10 +2698,7 @@
         "panel": {
           "title": "선택 시설·후보지",
           "rows": [
-            "데이터명: CCS 시설·실증 및 후보지역",
-            "자료연도: 2026",
-            "출처: STADT(공개 1차 출처 정리)",
-            "지도 표시: 시설·후보지 점 · 위치 좌표"
+            "자료연도: 2026"
           ],
           "coverage": ""
         },
@@ -2865,19 +2858,37 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "공간자료에 수록된 지물의 종류와 규모"
+          "공간자료에 수록된 지물의 종류와 규모",
+          "송전선 경로"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 시설",
+          "rows": [
+            "구간 길이0.146 km"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [
         "detail does not show the card's selection: year 2026 not shown; selection \"피처 수\" not shown; selection \"OSM 도로 레이어의 지물 건수\" not shown; measure \"도로 레이어\" not named"
       ],
-      "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
-      ],
+      "notApplicable": [],
       "evidence": {
         "finderHeadline": "312만 건",
         "finderStatusBadge": "",
@@ -2900,7 +2911,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "공간자료에 수록된 지물의 종류와 규모"
+            "공간자료에 수록된 지물의 종류와 규모",
+            "송전선 경로"
           ]
         },
         "table": {
@@ -2918,7 +2930,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (교통 인프라(도로·철도))"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -2952,19 +2965,39 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "공간자료에 수록된 지물의 종류와 규모"
+          "공간자료에 수록된 지물의 종류와 규모",
+          "위치 살펴보기"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "분류항만",
+            "소재 성·시(2025 기준)하이퐁 (Hải Phòng)",
+            "같은 분류 비중항만 66개 / 대상 1,558개 (4.2%)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [
         "detail does not show the card's selection: year 2026 not shown; selection \"피처 수\" not shown; selection \"OSM 수로 레이어의 지물 건수\" not shown; measure \"수로 레이어\" not named"
       ],
-      "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
-      ],
+      "notApplicable": [],
       "evidence": {
         "finderHeadline": "38,001 건",
         "finderStatusBadge": "",
@@ -2987,7 +3020,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "공간자료에 수록된 지물의 종류와 규모"
+            "공간자료에 수록된 지물의 종류와 규모",
+            "위치 살펴보기"
           ]
         },
         "table": {
@@ -3005,7 +3039,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (수자원 시설)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -3658,7 +3693,9 @@
         ],
         "missing": [],
         "pass": true,
-        "headings": []
+        "headings": [
+          "위치·분포"
+        ]
       },
       "controlsVerified": null,
       "tableValuesVerified": true,
@@ -3692,7 +3729,9 @@
           ],
           "missing": [],
           "pass": true,
-          "headings": []
+          "headings": [
+            "위치·분포"
+          ]
         },
         "table": {
           "status": "match",
@@ -3754,16 +3793,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 연평균 기온·강수",
-            "항목: 연평균 기온",
-            "값: 28.05",
-            "단위: °C",
-            "자료연도: 2025",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 28.05 · Kiên Giang 28.05",
-            "출처: World Bank CCKP (CRU TS 4.10) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "연평균 기온28.05 °C",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위5위 / 34개",
+            "성·시 평균 대비+3.1 °C (평균 24.95 °C)"
           ],
           "coverage": ""
         },
@@ -3903,16 +3938,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 미래기후 전망(CMIP6)",
-            "항목: 연평균 기온 · SSP2-4.5",
-            "값: 29.73",
-            "단위: °C",
-            "자료연도: 2100",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 30.02 · Kiên Giang 29.57",
-            "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "연평균 기온 · SSP2-4.529.73 °C",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위4위 / 34개",
+            "성·시 평균 대비+3.18 °C (평균 26.56 °C)"
           ],
           "coverage": ""
         },
@@ -4061,16 +4092,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 가뭄",
-            "항목: 연속 건조일수(CDD) · SSP2-4.5",
-            "값: 24.93",
-            "단위: 일",
-            "자료연도: 2100",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 27.82 · Kiên Giang 23.28",
-            "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "연속 건조일수(CDD) · SSP2-4.524.93 일",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위11위 / 34개",
+            "성·시 평균 대비+3.13 일 (평균 21.8 일)"
           ],
           "coverage": ""
         },
@@ -4219,17 +4246,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 폭염",
-            "항목: 폭염일수(최고기온 35°C 이상) · SSP2-4.5",
-            "값: 45.26",
-            "단위: 일",
-            "자료연도: 2100",
-            "값 해석: 일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 76.75 · Kiên Giang 27.33",
-            "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "폭염일수(최고기온 35°C 이상) · SSP2-4.545.26 일일수가 많을수록 해당 폭염·열대야 조건에 노출되는 기간이 김",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위14위 / 34개",
+            "성·시 평균 대비+8.7 일 (평균 36.57 일)"
           ],
           "coverage": ""
         },
@@ -4378,16 +4400,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 극한강수",
-            "항목: 최대 1일 강수량(RX1day) · SSP2-4.5",
-            "값: 37.18",
-            "단위: mm",
-            "자료연도: 2100",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 32.73 · Kiên Giang 39.71",
-            "출처: World Bank CCKP (CMIP6 x0.25) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "최대 1일 강수량(RX1day) · SSP2-4.537.18 mm",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위30위 / 34개",
+            "성·시 평균 대비−29.87 mm (평균 67.05 mm)"
           ],
           "coverage": ""
         },
@@ -4533,12 +4551,9 @@
         "panel": {
           "title": "선택 관측소",
           "rows": [
-            "데이터명: 해수면 상승 전망",
             "소재: 중부 — 다낭",
             "관측소(베트남어): Đà Nẵng",
-            "자료연도: 2100",
-            "출처: IPCC AR6 Sea Level Projection Tool (NASA/IPCC)",
-            "지도 표시: 관측소 점 · 위치 좌표"
+            "자료연도: 2100"
           ],
           "coverage": ""
         },
@@ -4651,17 +4666,40 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "ND-GAIN 취약성 · 1995~2024년 추이"
+          "ND-GAIN 취약성 · 1995~2024년 추이",
+          "지역별 분포"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "WWF BRF 물리적 위험(Scape Physical)3.06 점",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위10위 / 34개",
+            "성·시 평균 대비+0.24 점 (평균 2.82 점)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
-      "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
-      ],
+      "notApplicable": [],
       "evidence": {
         "finderHeadline": "0.592 지수",
         "finderStatusBadge": "",
@@ -4692,7 +4730,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "ND-GAIN 취약성 · 1995~2024년 추이"
+            "ND-GAIN 취약성 · 1995~2024년 추이",
+            "지역별 분포"
           ]
         },
         "table": {
@@ -4726,7 +4765,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (생물다양성 위험)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -4990,14 +5030,12 @@
         "panel": {
           "title": "선택 재해",
           "rows": [
-            "데이터명: 재해 이력",
             "재해유형: 폭풍·태풍",
             "시작일: 1952-10-15",
             "종료일: 1952-10-26",
             "세부유형: Tropical cyclone",
             "자료연도: 2024",
-            "출처: EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1",
-            "지도 표시: 사건 점 · 위치 좌표"
+            "소재 성·시꼰뚬 (Kon Tum)"
           ],
           "coverage": ""
         },
@@ -5518,18 +5556,42 @@
         "pass": true,
         "headings": [
           "63개 성·시 · 평가구역 443개 분포",
-          "평가구역별 비교"
+          "평가구역별 비교",
+          "지역별 분포"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": false,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "종합 물 리스크(기본 가중)3.08 점",
+            "분류High (3-4)",
+            "소속 성·시(2025 기준)까오방 (Cao Bằng)원자료가 적어 둔 소속 성·시이며, 값을 성·시로 합치지 않습니다.",
+            "평가구역 중 순위259위 / 387개",
+            "평가구역 평균 대비−0.27 점 (평균 3.35 점)",
+            "같은 분류 비중High (3-4) 155개 / 평가구역 387개 (40.1%)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "443개 평가구역",
@@ -5556,7 +5618,8 @@
           "pass": true,
           "headings": [
             "63개 성·시 · 평가구역 443개 분포",
-            "평가구역별 비교"
+            "평가구역별 비교",
+            "지역별 분포"
           ]
         },
         "table": {
@@ -5581,7 +5644,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (물 스트레스)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -5967,18 +6031,11 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 지역 취약성",
-            "항목: GVI 취약성 지수 — 지역(6권역)",
-            "값: 41.4 / 100",
-            "단위: 0–100 지수",
-            "자료연도: 2023",
-            "값 해석: 높을수록 사회경제적 취약성이 큼",
-            "지역: 중부고원",
-            "비교·공간단위: 중부고원 권역의 값 · 개편 전 성·시 단위 독립값이 아님",
-            "자료 설명: 중부고원의 개별 추정값이 아니라 중부고원 권역의 값을 표시합니다.",
-            "권역 비교: 베트남 6개 권역 중 2위 · 현재 값이 큰 순서",
-            "출처: Global Data Lab GVI (Huisman et al., 2025)",
-            "지도 표시: 권역 소속 성·시 경계(권역값 동일 표시) · 성·시 경계 값"
+            "GVI 취약성 지수 — 지역(6권역)41.4 0–100 지수높을수록 사회경제적 취약성이 큼",
+            "자료 설명중부고원의 개별 추정값이 아니라 중부고원 권역의 값을 표시합니다.",
+            "성·시 중 순위2위 / 6개",
+            "성·시 평균 대비+2.63 0–100 지수 (평균 38.77 0–100 지수)",
+            "권역 비교베트남 6개 권역 중 2위 · 현재 값이 큰 순서"
           ],
           "coverage": ""
         },
@@ -6246,14 +6303,12 @@
         "panel": {
           "title": "선택 관측지점",
           "rows": [
-            "데이터명: 건기·우기 유량 차이",
             "위치 설명: 8대 하천유역",
             "자료연도: 관측값별 시점 참조",
             "메콩델타 건기 유량 비중 · 2004년: 10 %",
             "메콩델타 우기 유량 비중 · 2009년: 90 %",
             "유역 단위 건우기 유량차(GIS 기반 산출) · 2026년: 자료 미제공",
-            "출처: MRC (2009) / Le et al. (2014)",
-            "지도 표시: 관측지점 점 · 유역 대표점 · 위치 좌표"
+            "소재 성·시허우장 (Hậu Giang)소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
           ],
           "coverage": ""
         },
@@ -6350,7 +6405,8 @@
         "headings": [
           "연도별 구성 변화",
           "농업 용수 취수 비중 추이",
-          "선택연도 상세"
+          "선택연도 상세",
+          "위치·분포"
         ]
       },
       "controlsVerified": false,
@@ -6394,7 +6450,8 @@
           "headings": [
             "연도별 구성 변화",
             "농업 용수 취수 비중 추이",
-            "선택연도 상세"
+            "선택연도 상세",
+            "위치·분포"
           ]
         },
         "table": {
@@ -6471,7 +6528,6 @@
         "panel": {
           "title": "선택 유역",
           "rows": [
-            "데이터명: 유역면적",
             "총 유역면적: 169,000 km²",
             "베트남 내 면적(문헌): 88,860 km²",
             "베트남 내 면적(GIS 산출): 86,253 km²",
@@ -6480,8 +6536,7 @@
             "수계 구분: 홍강 수계",
             "유역명(영문): Hong – Thai Binh (Red River)",
             "자료연도: 2026",
-            "출처: MONRE Table 2.13.2 via WEPA Outlook 2024 · VNMC · HydroSHEDS DIR 15s(v1.1) · OSM admin0",
-            "지도 표시: 유역 대표점 · 위치 좌표"
+            "소재 성·시옌바이 (Yên Bái)소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
           ],
           "coverage": ""
         },
@@ -6560,7 +6615,7 @@
       "homeCardClicked": null,
       "selectionUrlPreserved": true,
       "screenLoaded": true,
-      "cardValueVerified": false,
+      "cardValueVerified": true,
       "recomputed": {
         "status": "match",
         "computed": 23.28,
@@ -6585,19 +6640,39 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "선택 성·시의 8방향 비율"
+          "선택 성·시의 8방향 비율",
+          "지역별 분포"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": false,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
-      "remainingIssue": [
-        "card value 23.3 % (%) not stated as such on the detail"
-      ],
-      "notApplicable": [
-        "mapHandoffVerified: not a map dataset"
-      ],
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "우세 유향 격자 비율18.1 %",
+            "분류S 남",
+            "성·시 중 순위40위 / 63개",
+            "성·시 평균 대비−0.83 % (평균 18.94 %)",
+            "같은 분류 비중S 남 20개 / 성·시 63개 (31.7%)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
+      "remainingIssue": [],
+      "notApplicable": [],
       "evidence": {
         "finderHeadline": "23.3 %",
         "finderStatusBadge": "",
@@ -6607,6 +6682,7 @@
           "유향 지역=KiênGiang"
         ],
         "url": "?view=data&element=yuhyang-flow-direction&country=VNM&from=explorer&dim.regionMeasure=우세_유향_비율&detailLayers=all",
+        "cardValue": "23.3 % = analysis-4:FIGCAPTION: 16.4 23.3 % 회색: 자료 없음",
         "fit": "selectors, heading and KPI state the selection",
         "analysisFit": {
           "kind": "spatial",
@@ -6623,7 +6699,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "선택 성·시의 8방향 비율"
+            "선택 성·시의 8방향 비율",
+            "지역별 분포"
           ]
         },
         "table": {
@@ -6639,7 +6716,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (흐름방향)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -6796,15 +6874,13 @@
         "panel": {
           "title": "선택 관측지점",
           "rows": [
-            "데이터명: 하천유량",
             "위치 설명: 홍강 본류 · 하노이 서부 · VNMC/MONRE 상설 수문관측소. 홍강 삼각주 진입 직전 기준지점",
             "자료연도: 관측값별 시점 참조",
             "홍강(Sơn Tây) 연평균 유량 (범위 하한) · 2010년: 106 km³/yr",
             "홍강(Sơn Tây) 연평균 유량 (범위 상한) · 2010년: 116 km³/yr",
             "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 후 · 2010년: 3,350 m³/s",
             "하천 유량 — m³/s 기준 — 홍강(Son Tay 지점) — 댐 건설 전 · 2010년: 3,740 m³/s",
-            "출처: FAO AQUASTAT",
-            "지도 표시: 관측지점 점 · 유역 대표점 · 위치 좌표"
+            "소재 성·시하노이 (Hà Nội)"
           ],
           "coverage": ""
         },
@@ -6912,16 +6988,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 이탄지 면적(산림 유형별 면적 중)",
-            "항목: 이탄지 면적 합계",
-            "값: 406.8",
-            "단위: km²",
-            "자료연도: 2022",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 0 · Kiên Giang 406.8",
-            "출처: Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "이탄지 면적 합계406.8 km²",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위2위 / 34개",
+            "성·시 평균 대비+321.61 km² (평균 85.16 km²)"
           ],
           "coverage": ""
         },
@@ -7056,16 +7128,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 산림 이득",
-            "항목: 수관 이득(2000–2020 누적)",
-            "값: 4,544",
-            "단위: ha",
-            "자료연도: 2000–2020",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 1,847 · Kiên Giang 2,697",
-            "출처: Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "수관 이득(2000–2020 누적)4,544 ha",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위30위 / 34개",
+            "성·시 평균 대비−25,007.86 ha (평균 29,551.76 ha)"
           ],
           "coverage": ""
         },
@@ -7190,16 +7258,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 산림 총면적",
-            "항목: 성(省)별 수관 면적(2010)",
-            "값: 145,569",
-            "단위: ha",
-            "자료연도: 2010",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 31,815 · Kiên Giang 113,754",
-            "출처: Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen et al.(2013), UMD",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "성(省)별 수관 면적(2010)145,569 ha",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위25위 / 34개",
+            "성·시 평균 대비−335,931.12 ha (평균 481,500.12 ha)"
           ],
           "coverage": ""
         },
@@ -7324,16 +7388,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 수관 피복률",
-            "항목: 성(省)별 수관 피복률 — 임계 30%",
-            "값: 12.7",
-            "단위: %",
-            "자료연도: 2010",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 10.9 · Kiên Giang 13.8",
-            "출처: Global Forest Watch / Hansen et al.(2013)",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "성(省)별 수관 피복률 — 임계 30%12.7 %",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위26위 / 34개",
+            "성·시 평균 대비−30.87 % (평균 43.61 %)"
           ],
           "coverage": ""
         },
@@ -7450,16 +7510,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 연간 산림손실",
-            "항목: 연간 수관 손실 — 성(省) 단위",
-            "값: 223.9",
-            "단위: ha",
-            "자료연도: 2024",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 10.14 · Kiên Giang 213.8",
-            "출처: Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD)",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "연간 수관 손실 — 성(省) 단위223.9 ha",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위28위 / 34개",
+            "성·시 평균 대비−3,554.38 ha (평균 3,778.28 ha)"
           ],
           "coverage": ""
         },
@@ -7586,16 +7642,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 산림 탄소",
-            "항목: 산림탄소 순플럭스(연평균)",
-            "값: -790,865",
-            "단위: Mg CO2e/yr",
-            "자료연도: 2001–2024",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang -327,911 · Kiên Giang -462,954",
-            "출처: Global Forest Watch (Harris et al. 2021)",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "산림탄소 순플럭스(연평균)-790,865 Mg CO2e/yr",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위26위 / 34개",
+            "성·시 평균 대비−662,587.82 Mg CO2e/yr (평균 -128,277.18 Mg CO2e/yr)"
           ],
           "coverage": ""
         },
@@ -7718,7 +7770,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "1인당 경작지 면적 · 1961~2024년 추이"
+          "1인당 경작지 면적 · 1961~2024년 추이",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -7758,7 +7811,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "1인당 경작지 면적 · 1961~2024년 추이"
+            "1인당 경작지 면적 · 1961~2024년 추이",
+            "위치·분포"
           ]
         },
         "table": {
@@ -7964,16 +8018,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 토지피복 분류별 면적",
-            "항목: 경작지 면적",
-            "값: 6,153",
-            "단위: km²",
-            "자료연도: 2021",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 2,575 · Kiên Giang 3,578",
-            "출처: ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "경작지 면적6,153 km²",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위1위 / 34개",
+            "성·시 평균 대비+4,636.28 km² (평균 1,516.74 km²)"
           ],
           "coverage": ""
         },
@@ -8215,16 +8265,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 수력 이론 잠재량",
-            "항목: 이론 총잠재량",
-            "값: 58.09",
-            "단위: GWh/년",
-            "자료연도: 2017",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 8.03 · Kiên Giang 50.06",
-            "출처: Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "이론 총잠재량58.09 GWh/년",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위31위 / 34개",
+            "성·시 평균 대비−6,538.54 GWh/년 (평균 6,596.63 GWh/년)"
           ],
           "coverage": ""
         },
@@ -8360,16 +8406,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 지열 자원(심도별 지온)",
-            "항목: 심도 2km 지온(평균)",
-            "값: 84.78",
-            "단위: °C",
-            "자료연도: 2026",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 73.55 · Kiên Giang 91.17",
-            "출처: IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "심도 2km 지온(평균)84.78 °C",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위4위 / 34개",
+            "성·시 평균 대비+7.15 °C (평균 77.63 °C)"
           ],
           "coverage": ""
         },
@@ -8504,16 +8546,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 태양광 자원",
-            "항목: 수평면 전일사량(GHI, 평균)",
-            "값: 4.82",
-            "단위: kWh/m²/일",
-            "자료연도: 1999–2018 장기평균(LTA)",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 4.95 · Kiên Giang 4.74",
-            "출처: Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "수평면 전일사량(GHI, 평균)4.82 kWh/m²/일",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위8위 / 34개",
+            "성·시 평균 대비+0.67 kWh/m²/일 (평균 4.15 kWh/m²/일)"
           ],
           "coverage": ""
         },
@@ -8638,16 +8676,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 풍력 자원",
-            "항목: 풍속 평균(고도 100m)",
-            "값: 4.97",
-            "단위: m/s",
-            "자료연도: 2008–2017 장기평균(ERA5 기반)",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위(최소~최대)를 함께 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 4.82 · Kiên Giang 5.05",
-            "출처: Global Wind Atlas 3.x",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "풍속 평균(고도 100m)4.97 m/s",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위10위 / 34개",
+            "성·시 평균 대비+0.63 m/s (평균 4.33 m/s)"
           ],
           "coverage": ""
         },
@@ -8866,7 +8900,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "구조화된 확인 내용"
+          "구조화된 확인 내용",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -8903,7 +8938,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "구조화된 확인 내용"
+            "구조화된 확인 내용",
+            "위치·분포"
           ]
         },
         "table": {
@@ -9079,7 +9115,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "USGS 미수록 광종 · 5종"
+          "USGS 미수록 광종 · 5종",
+          "위치·분포"
         ]
       },
       "controlsVerified": null,
@@ -9115,7 +9152,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "USGS 미수록 광종 · 5종"
+            "USGS 미수록 광종 · 5종",
+            "위치·분포"
           ]
         },
         "table": {
@@ -9161,7 +9199,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "원천 미보고 광종 · 2종"
+          "원천 미보고 광종 · 2종",
+          "위치·분포"
         ]
       },
       "controlsVerified": null,
@@ -9197,7 +9236,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "원천 미보고 광종 · 2종"
+            "원천 미보고 광종 · 2종",
+            "위치·분포"
           ]
         },
         "table": {
@@ -9256,10 +9296,8 @@
         "panel": {
           "title": "선택 광산",
           "rows": [
-            "데이터명: 주요 광산",
             "자료연도: 2022",
-            "출처: USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS",
-            "지도 표시: 광산 점 · 위치 좌표"
+            "소재 성·시선라 (Sơn La)"
           ],
           "coverage": ""
         },
@@ -9535,7 +9573,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "항목별 내용과 기준"
+          "항목별 내용과 기준",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -9572,7 +9611,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "항목별 내용과 기준"
+            "항목별 내용과 기준",
+            "위치·분포"
           ]
         },
         "table": {
@@ -9811,7 +9851,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "항목별 내용과 기준"
+          "항목별 내용과 기준",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -9848,7 +9889,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "항목별 내용과 기준"
+            "항목별 내용과 기준",
+            "위치·분포"
           ]
         },
         "table": {
@@ -9994,14 +10036,35 @@
       },
       "controlsVerified": null,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
         "detailAnalysisFit: card carries no selection",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "32개",
@@ -10035,7 +10098,8 @@
           "table": "이니셔티브별 베트남 참여 비교 · 32개",
           "cell": "row count 32",
           "key": "row-count"
-        }
+        },
+        "map": "layer drawn as primary (국제 이니셔티브)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -10074,46 +10138,19 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "법령·문서별 시행 시점과 핵심 사항",
-          "지역별 분포"
+          "법령·문서별 시행 시점과 핵심 사항"
         ]
       },
       "controlsVerified": null,
       "tableValuesVerified": false,
-      "mapHandoffVerified": true,
-      "mapSymbolVerified": {
-        "selected": true,
-        "panel": {
-          "title": "선택 지역",
-          "rows": [
-            "데이터명: 기후 법제도(지방 문서)",
-            "항목: 지방 기후 법제도 문서 수",
-            "값: 원천 미제공",
-            "단위: 건",
-            "자료연도: 2021–2025",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
-          ],
-          "coverage": ""
-        },
-        "checks": {
-          "ownLayer": true,
-          "valueOrFact": true,
-          "unitOrMeasure": true,
-          "time": true,
-          "source": true,
-          "spatialMeaning": true
-        },
-        "pass": true,
-        "missing": []
-      },
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
         "detailAnalysisFit: card carries no selection",
-        "controlsVerified: no selectable control in the primary analysis"
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
         "finderHeadline": "54건",
@@ -10138,16 +10175,14 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "법령·문서별 시행 시점과 핵심 사항",
-            "지역별 분포"
+            "법령·문서별 시행 시점과 핵심 사항"
           ]
         },
         "table": {
           "status": "row-count-differs",
           "reason": "no table states or holds 54 rows (182 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
-        },
-        "map": "layer drawn as primary (기후 법제도(지방 문서))"
+        }
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -10186,46 +10221,19 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "법령·문서별 시행 시점과 핵심 사항",
-          "지역별 분포"
+          "법령·문서별 시행 시점과 핵심 사항"
         ]
       },
       "controlsVerified": null,
       "tableValuesVerified": false,
-      "mapHandoffVerified": true,
-      "mapSymbolVerified": {
-        "selected": true,
-        "panel": {
-          "title": "선택 지역",
-          "rows": [
-            "데이터명: 환경 법제도(지방 문서)",
-            "항목: 지방 환경 법제도 문서 수",
-            "값: 원천 미제공",
-            "단위: 건",
-            "자료연도: 2021–2025",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 문서 수의 합계입니다.",
-            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
-          ],
-          "coverage": ""
-        },
-        "checks": {
-          "ownLayer": true,
-          "valueOrFact": true,
-          "unitOrMeasure": true,
-          "time": true,
-          "source": true,
-          "spatialMeaning": true
-        },
-        "pass": true,
-        "missing": []
-      },
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
         "detailAnalysisFit: card carries no selection",
-        "controlsVerified: no selectable control in the primary analysis"
+        "controlsVerified: no selectable control in the primary analysis",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
         "finderHeadline": "41건",
@@ -10250,16 +10258,14 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "법령·문서별 시행 시점과 핵심 사항",
-            "지역별 분포"
+            "법령·문서별 시행 시점과 핵심 사항"
           ]
         },
         "table": {
           "status": "row-count-differs",
           "reason": "no table states or holds 41 rows (59 rows)",
           "note": "the detail groups rows (documents, organisations, zones); the count is verified on screen"
-        },
-        "map": "layer drawn as primary (환경 법제도(지방 문서))"
+        }
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -10397,15 +10403,10 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: PPP 사업 이력",
-            "항목: PPP 사업 수(PPI 수록)",
-            "값: 원천 미제공",
-            "단위: 건",
-            "자료연도: 1997–2024",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
-            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
+            "PPP 사업 수(PPI 수록)값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
           ],
           "coverage": ""
         },
@@ -10508,15 +10509,10 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 외국인 투자 규정(지역 특별 인센티브)",
-            "항목: 지역 특별 인센티브 근거 행 수",
-            "값: 원천 미제공",
-            "단위: 건",
-            "자료연도: 2014–2025",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
-            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
+            "지역 특별 인센티브 근거 행 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
           ],
           "coverage": ""
         },
@@ -10804,16 +10800,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 재생에너지 지역계획",
-            "항목: 옥상태양광(ĐMT mái nhà) 계획용량",
-            "값: 100",
-            "단위: MW",
-            "자료연도: 2025-2030",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 50 · Kiên Giang 50",
-            "출처: 베트남 총리실 (Quyết định 768/QĐ-TTg) / 산업무역부(MOIT)",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "옥상태양광(ĐMT mái nhà) 계획용량100 MW",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위23위 / 34개",
+            "성·시 평균 대비−675.76 MW (평균 775.76 MW)"
           ],
           "coverage": ""
         },
@@ -10932,7 +10924,8 @@
         "missing": [],
         "pass": true,
         "headings": [
-          "항목별 내용과 기준"
+          "항목별 내용과 기준",
+          "위치·분포"
         ]
       },
       "controlsVerified": true,
@@ -10969,7 +10962,8 @@
           "missing": [],
           "pass": true,
           "headings": [
-            "항목별 내용과 기준"
+            "항목별 내용과 기준",
+            "위치·분포"
           ]
         },
         "table": {
@@ -11131,46 +11125,17 @@
         "headings": [
           "탄소시장 제도·세율·시행 일정",
           "항목별 내용과 기준",
-          "온실가스 인벤토리 대상 시설 · 성·시별",
-          "지역별 분포"
+          "온실가스 인벤토리 대상 시설 · 성·시별"
         ]
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": true,
-      "mapSymbolVerified": {
-        "selected": true,
-        "panel": {
-          "title": "선택 지역",
-          "rows": [
-            "데이터명: 탄소시장 대상시설(인벤토리 의무)",
-            "항목: 온실가스 인벤토리 의무 대상 시설 수",
-            "값: 27",
-            "단위: 개",
-            "자료연도: 2026",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 27 · Kiên Giang 27",
-            "출처: Chính phủ / 베트남 정부 공보",
-            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
-          ],
-          "coverage": ""
-        },
-        "checks": {
-          "ownLayer": true,
-          "valueOrFact": true,
-          "unitOrMeasure": true,
-          "time": true,
-          "source": true,
-          "spatialMeaning": true,
-          "reviewCase": true
-        },
-        "pass": true,
-        "missing": []
-      },
+      "mapHandoffVerified": null,
+      "mapSymbolVerified": null,
       "remainingIssue": [],
       "notApplicable": [
-        "detailAnalysisFit: card carries no selection"
+        "detailAnalysisFit: card carries no selection",
+        "mapHandoffVerified: not a map dataset"
       ],
       "evidence": {
         "finderHeadline": "479개소",
@@ -11198,8 +11163,7 @@
           "headings": [
             "탄소시장 제도·세율·시행 일정",
             "항목별 내용과 기준",
-            "온실가스 인벤토리 대상 시설 · 성·시별",
-            "지역별 분포"
+            "온실가스 인벤토리 대상 시설 · 성·시별"
           ]
         },
         "table": {
@@ -11217,8 +11181,7 @@
             "numbersChanged": true,
             "subjectChanged": false
           }
-        ],
-        "map": "layer drawn as primary (탄소시장 대상시설(인벤토리 의무))"
+        ]
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -11379,16 +11342,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 탄소시장 대상시설 업종 구성",
-            "항목: 대상시설 수 — 공상(산업·무역)",
-            "값: 7",
-            "단위: 개",
-            "자료연도: 2026",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-            "구성 성·시: 2개 중 2개 값 있음 — An Giang 7 · Kiên Giang 7",
-            "출처: Chính phủ / 베트남 정부 공보",
-            "지도 표시: 34개 성·시 값을 소속 63개 경계에 동일 표시 · 성·시 경계 값"
+            "대상시설 수 — 공상(산업·무역)7 개",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위25위 / 34개",
+            "성·시 평균 대비−49.35 개 (평균 56.35 개)"
           ],
           "coverage": ""
         },
@@ -11571,15 +11530,10 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: REDD+ 사업 참여지역",
-            "항목: FCPF ERPA(북중부 6개 성) 참여",
-            "값: 원천 미제공",
-            "단위: 참여 프로그램 수",
-            "자료연도: 2022",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
-            "구성 성·시: 2개 중 0개 값 있음 — An Giang 결측 · Kiên Giang 결측",
-            "지도 표시: 성·시 경계(개편 후 34개 기본 · 개편 전 63개 토글) · 성·시 경계 값"
+            "FCPF ERPA(북중부 6개 성) 참여값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
           ],
           "coverage": ""
         },
@@ -11694,10 +11648,8 @@
         "panel": {
           "title": "선택 사업",
           "rows": [
-            "데이터명: 탄소크레딧 사업",
             "자료연도: 2026",
-            "출처: UNFCCC — CDM Projects Interactive Map (projectsLocationAll.xml)",
-            "지도 표시: 사업 점 · 위치 좌표"
+            "소재 성·시잘라이 (Gia Lai)"
           ],
           "coverage": ""
         },
@@ -12535,16 +12487,12 @@
         "panel": {
           "title": "선택 지역",
           "rows": [
-            "데이터명: 지역 기후예산",
-            "항목: 성 단위 기후변화 지출 누계",
-            "값: 179,000,000,000",
-            "단위: VND",
-            "자료연도: 2010-2013",
-            "지역: An Giang · 2025-07-01 시행 34개 성·시 기준",
-            "집계 방식: 34개 성·시 값은 구성 성·시 값의 합계입니다. 일부 성·시가 결측이면 '부분 결측'으로 표시합니다.",
-            "구성 성·시: 2개 중 1개 값 있음 · 부분 결측 — An Giang 179,000,000,000 · Kiên Giang 결측",
-            "출처: United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015",
-            "지도 표시: 성·시 경계(3개, 나머지 미표시) · 성·시 경계 값"
+            "성 단위 기후변화 지출 누계179,000,000,000 VND",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+            "구성 성·시2개 중 1개 값 있음",
+            "성·시 중 순위3위 / 3개",
+            "성·시 평균 대비−324,333,333,333.33 VND (평균 503,333,333,333.33 VND)"
           ],
           "coverage": ""
         },
@@ -12986,13 +12934,36 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수1 건",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위2위 / 10개",
+            "성·시 평균 대비−0.1 건 (평균 1.1 건)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "22곳",
@@ -13047,7 +13018,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (외국기업 진출)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13206,13 +13178,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "164건",
@@ -13267,7 +13260,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (EDCF(대외경제협력기금) 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13312,13 +13306,36 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수1 건",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 2개 값 있음",
+            "성·시 중 순위18위 / 23개",
+            "성·시 평균 대비−3.65 건 (평균 4.65 건)"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "650건",
@@ -13373,7 +13390,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (한국 ODA(공적개발원조) 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13418,13 +13436,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "232건",
@@ -13479,7 +13518,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (부처·지자체 ODA(공적개발원조))"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13524,13 +13564,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "10건",
@@ -13585,7 +13646,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (사업 입찰·공모)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13778,11 +13840,11 @@
       "analysisFit": {
         "kind": "bars",
         "expected": [
-          "compared categories named (4/4)",
+          "compared categories named (3/4)",
           "comparison drawn or tabled"
         ],
         "found": [
-          "compared categories named (4/4)",
+          "compared categories named (3/4)",
           "comparison drawn or tabled"
         ],
         "missing": [],
@@ -13796,13 +13858,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "10건",
@@ -13815,15 +13898,15 @@
           "기술분야=전체"
         ],
         "url": "?view=data&element=ctcn-gisuljiweon-yoceong-yoceong-gugga-nde-gigwanmyeong-gisul-bunya-sectors-jiweon-dangye&country=VNM&from=explorer&detailLayers=all",
-        "cardValue": "10건 = text-0:P: 검색어 연도 전체 기간 2025년 2023년 2022년 2021년 2020년 2019년 2016년 2015년 기술분야 전체 원천 미기재 Biomass power Cement production Integrated solid waste management 선택 초기화 전체 자료 · 기술지",
+        "cardValue": "10건 = text-0:P: 검색어 연도 전체 기간 2025년 2023년 2022년 2021년 2020년 2019년 2016년 2015년 기술분야 전체 미기재 Biomass power Cement production Integrated solid waste management 선택 초기화 전체 자료 · 기술지원 요",
         "analysisFit": {
           "kind": "bars",
           "expected": [
-            "compared categories named (4/4)",
+            "compared categories named (3/4)",
             "comparison drawn or tabled"
           ],
           "found": [
-            "compared categories named (4/4)",
+            "compared categories named (3/4)",
             "comparison drawn or tabled"
           ],
           "missing": [],
@@ -13861,12 +13944,13 @@
           {
             "control": "기술분야",
             "from": "전체",
-            "to": "원천 미기재",
+            "to": "미기재",
             "changed": true,
             "numbersChanged": true,
             "subjectChanged": false
           }
-        ]
+        ],
+        "map": "layer drawn as primary (기술지원 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -13911,13 +13995,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": false,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "8건",
@@ -13971,7 +14076,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (GCF(녹색기후기금) 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14016,13 +14122,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "640건",
@@ -14077,7 +14204,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (국제기구·MDB(다자개발은행) 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14122,13 +14250,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "사업 수(소재 성 기준)값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "15건",
@@ -14183,7 +14332,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (MDB(다자개발은행)·DFI(개발금융기관) 금융)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14230,13 +14380,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "71건",
@@ -14293,7 +14464,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (기후기금 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14443,13 +14615,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "132건",
@@ -14504,7 +14697,8 @@
             "numbersChanged": true,
             "subjectChanged": false
           }
-        ]
+        ],
+        "map": "layer drawn as primary (민간 인프라 사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14549,13 +14743,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": false,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 사업 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "9건",
@@ -14609,7 +14824,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (보증 지원사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14654,13 +14870,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 기관 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "18곳",
@@ -14706,7 +14943,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (CTCN(기후기술센터·네트워크) 참여기관)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14744,19 +14982,41 @@
         "pass": true,
         "headings": [
           "기관 디렉터리 · 1곳",
-          "Department of Climate Change (기후변화국)"
+          "Department of Climate Change (기후변화국)",
+          "지역별 분포"
         ]
       },
       "controlsVerified": null,
       "tableValuesVerified": true,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 기관 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
         "detailAnalysisFit: card carries no selection",
-        "controlsVerified: no selectable control in the primary analysis",
-        "mapHandoffVerified: not a map dataset"
+        "controlsVerified: no selectable control in the primary analysis"
       ],
       "evidence": {
         "finderHeadline": "1곳",
@@ -14780,7 +15040,8 @@
           "pass": true,
           "headings": [
             "기관 디렉터리 · 1곳",
-            "Department of Climate Change (기후변화국)"
+            "Department of Climate Change (기후변화국)",
+            "지역별 분포"
           ]
         },
         "table": {
@@ -14788,7 +15049,8 @@
           "table": "상세 데이터 · 목록 1건",
           "cell": "row count 1",
           "key": "row-count"
-        }
+        },
+        "map": "layer drawn as primary (DNA(파리협정/탄소시장 국가 지정기관) 협력창구)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,
@@ -14936,10 +15198,8 @@
         "panel": {
           "title": "선택 기관",
           "rows": [
-            "데이터명: 국제기구 현지사무소",
             "자료연도: 2026",
-            "출처: Asian Development Bank (ADB)",
-            "지도 표시: 사무소 점(정밀도 표시) · 위치 좌표"
+            "소재 성·시하노이 (Hà Nội)"
           ],
           "coverage": ""
         },
@@ -15090,10 +15350,8 @@
         "panel": {
           "title": "선택 기관",
           "rows": [
-            "데이터명: 대학·연구기관·NGO",
             "자료연도: 2026",
-            "출처: 각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합) / 현지 컨설턴트 현지조사(Field Survey Items_vIDGcmt_260408_v2.0)",
-            "지도 표시: 기관 점(정밀도 표시) · 위치 좌표"
+            "소재 성·시호찌민 (Hồ Chí Minh)"
           ],
           "coverage": ""
         },
@@ -15217,10 +15475,8 @@
         "panel": {
           "title": "선택 기관",
           "rows": [
-            "데이터명: 현지 투자자 네트워크",
             "자료연도: 2026",
-            "출처: 각 운용사·투자사 공식 웹사이트(자료별 상이 —참조)",
-            "지도 표시: 거점 점(정밀도 표시) · 위치 좌표"
+            "소재 성·시호찌민 (Hồ Chí Minh)소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
           ],
           "coverage": ""
         },
@@ -16213,10 +16469,8 @@
         "panel": {
           "title": "선택 사업지",
           "rows": [
-            "데이터명: 한국 기업 진출",
             "자료연도: 2026",
-            "출처: 각 기업 공식 웹사이트(자료별 상이 —참조)",
-            "지도 표시: 사업지 점(진출 상태·정밀도 표시) · 위치 좌표"
+            "소재 성·시하이퐁 (Hải Phòng)소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
           ],
           "coverage": ""
         },
@@ -16331,10 +16585,8 @@
         "panel": {
           "title": "선택 기관",
           "rows": [
-            "데이터명: 한국 기관 사무소",
             "자료연도: 2026",
-            "출처: 각 기관 공식 웹사이트(용역사 취합)",
-            "지도 표시: 사무소 점(정밀도 표시) · 위치 좌표"
+            "소재 성·시하노이 (Hà Nội)"
           ],
           "coverage": ""
         },
@@ -16443,13 +16695,34 @@
       },
       "controlsVerified": true,
       "tableValuesVerified": false,
-      "mapHandoffVerified": null,
-      "mapSymbolVerified": null,
+      "mapHandoffVerified": true,
+      "mapSymbolVerified": {
+        "selected": true,
+        "panel": {
+          "title": "선택 지역",
+          "rows": [
+            "지역이 확인된 기관 수값 없음",
+            "자료 설명2025년 개편 후 안장 전체의 값이며 소속 성·시에 같은 값을 표시합니다.",
+            "집계 방식원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
+            "구성 성·시2개 중 0개 값 있음"
+          ],
+          "coverage": ""
+        },
+        "checks": {
+          "ownLayer": true,
+          "valueOrFact": true,
+          "unitOrMeasure": true,
+          "time": true,
+          "source": true,
+          "spatialMeaning": true
+        },
+        "pass": true,
+        "missing": []
+      },
       "remainingIssue": [],
       "notApplicable": [
         "selectionUrlPreserved: card carries no selection",
-        "detailAnalysisFit: card carries no selection",
-        "mapHandoffVerified: not a map dataset"
+        "detailAnalysisFit: card carries no selection"
       ],
       "evidence": {
         "finderHeadline": "3개",
@@ -16505,7 +16778,8 @@
             "numbersChanged": true,
             "subjectChanged": true
           }
-        ]
+        ],
+        "map": "layer drawn as primary (한국 지원사업)"
       },
       "internalWording": null,
       "detailTilesAbsent": true,

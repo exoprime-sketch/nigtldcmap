@@ -20,6 +20,7 @@ import periodStatementsV162 from "../../../data/visualization/periodStatementsV1
 type PeriodStatementV162 = { kind: "data" | "reference" | "plan"; text: string };
 const PERIOD_STATEMENTS_V162 = periodStatementsV162.elements as Record<string, PeriodStatementV162>;
 const PERIOD_LABELS_V162 = periodStatementsV162.labels as Record<PeriodStatementV162["kind"], string>;
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
   /** For the usage notes filed under the collapsed terms (V153). */
@@ -51,11 +52,12 @@ export default function PublicSourcePanelV126({
   pending = false,
 }: Props) {
   const [provider, setProvider] = useState<string>("");
+  const dataCountryV158 = useDataCountryV158();
   useEffect(() => {
     let cancelled = false;
     setProvider("");
     if (!elementId) return undefined;
-    loadCardSummariesV140()
+    loadCardSummariesV140(dataCountryV158)
       .then((cards) => {
         if (!cancelled) setProvider(cards.get(elementId)?.provider || "");
       })
@@ -63,7 +65,7 @@ export default function PublicSourcePanelV126({
     return () => {
       cancelled = true;
     };
-  }, [elementId]);
+  }, [dataCountryV158, elementId]);
   // Organisation names arrive with the compiler's note about which sheet column
   // varies per row - "(레코드별 상이 - attr_19 참조)". The names are real; the
   // notes were never meant for a reader.
@@ -149,7 +151,7 @@ export default function PublicSourcePanelV126({
   // V162: an element whose period was decided from its source fields states
   // it with its own label - '기준 시점 2026-08-14 수집' for a list collected
   // on that date - instead of the years the rows happen to carry.
-  const statement = elementId ? PERIOD_STATEMENTS_V162[elementId] : undefined;
+  const statement = elementId && dataCountryV158 === periodStatementsV162.country ? PERIOD_STATEMENTS_V162[elementId] : undefined;
   const periodLabel = statement ? PERIOD_LABELS_V162[statement.kind] : "자료기간";
   const period = pending ? "" : statement ? statement.text : summarizeYearsV126(years);
   const sourceLine = (

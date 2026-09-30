@@ -1,0 +1,185 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "금액_상태_amount_status",
+      "labelKo": "금액 상태",
+      "valueCount": 1,
+      "values": [
+        "공표"
+      ]
+    },
+    {
+      "key": "금액_종류_amount_type",
+      "labelKo": "금액 종류",
+      "valueCount": 7,
+      "values": [
+        "AUM(운용자산)",
+        "기금·제도 규모",
+        "대출·여신액",
+        "승인액",
+        "자본금",
+        "투자·약정액",
+        "펀드 규모(조성·목표)"
+      ]
+    },
+    {
+      "key": "도시_city",
+      "labelKo": "도시",
+      "valueCount": 6,
+      "values": [
+        "Beijing",
+        "Dhaka",
+        "Incheon (Songdo)",
+        "Manila",
+        "Singapore",
+        "Washington, D.C."
+      ]
+    },
+    {
+      "key": "수집_상태_collection_status",
+      "labelKo": "수집 상태",
+      "valueCount": 1,
+      "values": [
+        "수집현황"
+      ]
+    },
+    {
+      "key": "실제_본사_소재국_hq_country_iso3",
+      "labelKo": "실제 본사 소재국",
+      "valueCount": 7,
+      "values": [
+        "BGD",
+        "CHN",
+        "GBR",
+        "KOR",
+        "PHL",
+        "SGP",
+        "USA"
+      ]
+    },
+    {
+      "key": "좌표_소재_구분_coord_location_type",
+      "labelKo": "좌표 소재 구분",
+      "valueCount": 7,
+      "values": [
+        "해외 본부 소재지(CHN)",
+        "해외 본부 소재지(GBR)",
+        "해외 본부 소재지(KOR)",
+        "해외 본부 소재지(PHL)",
+        "해외 본부 소재지(SGP)",
+        "해외 본부 소재지(USA)",
+        "현지(대상국) 소재"
+      ]
+    },
+    {
+      "key": "출처_유형_record_source_type",
+      "labelKo": "출처 유형",
+      "valueCount": 1,
+      "values": [
+        "기관 공식"
+      ]
+    },
+    {
+      "key": "투자_분야_invest_sector",
+      "labelKo": "투자 분야",
+      "valueCount": 16,
+      "values": [
+        "감축·적응 전 분야(에너지효율, 재생에너지, 연안 회복력)",
+        "그린 인프라, 에너지효율·재생에너지(태양광·풍력·바이오매스), 여성기업",
+        "그린 인프라, 재생·저탄소 전력 온렌딩",
+        "그린 재금융(재생에너지·에너지효율·폐수처리), 그린본드 시장조성",
+        "기후스마트 제조·그린파이낸스, 기후펀드 LP 출자",
+        "기후적응·연안 회복력, 소액금융 도매금융",
+        "기후회복력 SME 성장자본, 청정에너지·물",
+        "기후회복력 농업·물·생계, 소셜벤처 초기투자",
+        "딥테크·지속가능성(전기이륜차 배터리교환 등)",
+        "오프그리드 태양광·P2P 전력거래, 젠더렌즈 임팩트투자",
+        "유틸리티급 태양광, 청정에너지 인프라",
+        "재생에너지 확대(SREP), 청정기술(CTF), 기후회복력(PPCR)",
+        "재생에너지(태양광 홈시스템·미니그리드·태양광 관개), 에너지효율, 인프라 PPP",
+        "재생에너지, 금융기관 기후대출, MSME 금융",
+        "초기단계 기술 스타트업(전기차 등 지속가능 모빌리티 포함)",
+        "클린테크·청정에너지, 지속가능 모빌리티, 기후 애그테크"
+      ]
+    },
+    {
+      "key": "펀드_소속그룹_fund_or_affiliate",
+      "labelKo": "펀드·소속그룹",
+      "valueCount": 15,
+      "values": [
+        "Accelerating Asia 액셀러레이터 펀드",
+        "ADB Ventures Investment Fund 1 (VIF1) / ADB",
+        "CTF / SREP / PPCR (6개 MDB 통해 집행)",
+        "GCF DAE / 적응기금(AF) 국가이행기구",
+        "Green Transformation Fund(GTF), 환경친화제품 재금융제도",
+        "IIX Growth Fund / IIX Impact Partners",
+        "SAJIDA Impact Partners / Climate Innovation Fund (British Asian Trust 공동)",
+        "Small Enterprise Assistance Funds (SEAF) 운용",
+        "UNFCCC 재정메커니즘 운영주체",
+        "Wavemaker Impact(기후테크 벤처빌더) 계열",
+        "World Bank Group",
+        "민간부문운영국(PSOD) / Bangladesh Resident Mission",
+        "방글라데시 정부 소유 NBFI / GCF 국가직접접근기구(DAE)",
+        "영국 정부(FCDO) 100% 소유",
+        "재무부 재무국 100% 소유 / AFD EEREWEF 라인"
+      ]
+    }
+  ],
+  "elementId": "E-006",
+  "entityCount": 16,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-5f64c524f78d|USD(백만)",
+      "dimensionLabels": {
+        "detail": "민간 운용사(기관 공식 웹사이트)",
+        "technology": "01 · 03 · 05 · 07 · 08 · 13 · 14 · 15 · 16 · 17 · 18 · 19 · 20 · 21 · 23 · 24 · 25 · 30 · 32 · 33 · 34"
+      },
+      "dimensions": {
+        "detail": "민간 운용사(기관 공식 웹사이트)",
+        "technology": "01,03,05,07,08,13,14,15,16,17,18,19,20,21,23,24,25,30,32,33,34"
+      },
+      "displayLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
+      "indicatorId": "E-006_investor",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f64c524f78d",
+        "labelKo": "현지 투자자 네트워크",
+        "unit": "USD(백만)",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-5f64c524f78d|USD(백만)|detail=민간 운용사(기관 공식 웹사이트)|technology=01,03,05,07,08,13,14,15,16,17,18,19,20,21,23,24,25,30,32,33,34|E-006_investor",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 기관 공식 웹사이트 및 GCF·CIF 등 공공 공시를 원천으로 하고, 금액은 공식 공표 수치만 기재함. 언론 보도를 근거로 한 항목은 출처 유형을 '민간·언론'으로 표시하고 매체명을 금액 부연에 적음. 게시되지 않은 이메일·전화·주소는 패턴 추정 없이 결측(M01). 기관 유형(framework)은 022 이슈로그 데이터 요소의 6종(VC/PE/DFI/상업은행/임팩트투자/AC)으로만 기재 — 원본 표기는 attr_1 참조 위경도는 OpenStreetMap(Nominatim) 지오코딩 결과이며 라이선스는 ODbL 1.0(출처표시 + 동일조건변경허락)이다. 표출 시 '© OpenStreetMap contributors' 표기가 필요하다. 기관 건물이 OSM에 등재되지 않은 건은 주소의 도로 또는 행정구역 중심점으로 낮춰 기입했으며, 레코드별 조회 기준과 정밀도는 '좌표 정밀도·출처' 열에 기재했다. 기술코드 근거 : E-008 서식과 같이 '기술코드 판단근거 유형'과 '기술코드 근거문구' 두 열로 기재했다. 판단근거 유형은 참조DB 31_map_element_tech 의 basis 값(NDC 명시 / TNA 명시 / 원천 자체 분류 / 사업 역추적 / 키워드 / 연구진 판단)을 따르며, 기후기술코드가 없는 레코드는 '비해당'으로 표기했다. 억지 매핑 금지 원칙에 따라 단일 기술이 특정되지 않는 레코드에는 코드를 부여하지 않았다. 라이선스 판정: 해당 원천은 이용약관·저작권정책을 게시하지 않는다. 명시적 이용허락이 없으므로 기본 저작권에 따라 플랫폼 표출 '불가'로 확정. 재게시가 필요하면 원천기관에 서면 허락을 받아야 함. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다.",
+      "sourceLabel": "현지 투자자 네트워크 — 민간 운용사(기관 공식 웹사이트)",
+      "sourceLabelEn": "Local investor network (climate finance)",
+      "sourceNote": "레코드 16행. 이메일 6건·전화번호 6건·보조이메일 15건·다카 사무소 주소 8건 미확보. 사유는 두 갈래다 — (가) 현지 금융기관·개발금융기관이 담당자 연락처를 누리집에 게시하지 않는 경우(M01, 현지 방문·전화로 확보 가능), (나) IFC 등 국제기구가 연락처 디렉터리를 JavaScript 로딩 구조로 제공해 본문을 확보하지 못한 경우(M02, 본부 정책상 직원 연락처 비공개). 기후기술코드는 16건 중 8건 기입.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-5f64c524f78d",
+      "labelKo": "현지 투자자 네트워크",
+      "recordCount": 0,
+      "unit": "USD(백만)",
+      "unitFamily": "currency"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

@@ -8,8 +8,8 @@ import {
 } from "../data/countries/countryDataFacadeV122";
 import {
   getCountryDataProviderV122,
-  listCountryDataProvidersV122,
 } from "../data/countries/countryDataProviderRegistryV122";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import type { CountryCatalogItemV122 } from "../data/countries/countryDataTypesV122";
 import {
   publicDataStatusLabelV128,
@@ -17,7 +17,6 @@ import {
   publicDownloadStatusV128,
 } from "../data/publicPlatformV128";
 import { isPreparingStatusV160 } from "../data/finderSortV160";
-import { RegionCountryContextV162 } from "../data/geo/regionDisplayV162";
 import type {
   VietnamElementMetaBundleV124,
   VietnamEntityV124,
@@ -33,7 +32,14 @@ import CountryElementVisualizationV123, { indicatorFamilyCountV153 } from "../co
 import DetailKpiStripV153 from "../components/data/public/DetailKpiStripV153";
 const DetailLocationMapV148 = lazy(() => import("../components/data/public/DetailLocationMapV148"));
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
-import { getCardSpecV159, getTypologyV159, loadDatasetSpecV159 } from "../data/spec/datasetSpecV159";
+import {
+  getCardSpecForCountryV158,
+  getTypologyForCountryV158,
+  loadDatasetSpecForCountryV158,
+} from "../data/spec/countrySpecV158";
+import { DataCountryProviderV158 } from "../data/countries/DataCountryContextV158";
+import DetailCountryCompareV158 from "../components/data/public/DetailCountryCompareV158";
+import { publicMapTargetV138 } from "../data/visualization/publicMapWorkspaceV126";
 import type { DatasetSpecBundleV159 } from "../data/spec/datasetSpecV159";
 import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
@@ -694,7 +700,19 @@ function emptyStateCopyV124(item: CountryCatalogItemV122 | null): {
  */
 const EXCLUSION_PUBLIC_NOTICE_FALLBACK_V156 = "제공 대상이 아닌 데이터입니다.";
 
-export default function CountryDataElementPage({
+/**
+ * V158: the page sets the country its data comes from for everything below it
+ * (KPI strip, source panel, analysis templates, status note).
+ */
+export default function CountryDataElementPage(props: Props) {
+  return (
+    <DataCountryProviderV158 country={props.countryIso3}>
+      <CountryDataElementPageV122 {...props} />
+    </DataCountryProviderV158>
+  );
+}
+
+function CountryDataElementPageV122({
   elementId,
   countryIso3,
   onBack,
@@ -706,7 +724,7 @@ export default function CountryDataElementPage({
   selectorState,
   onSelectorStateChange,
 }: Props) {
-  const providers = useMemo(() => listCountryDataProvidersV122(), []);
+  const providers = useCountryDataProvidersV158();
   const provider = getCountryDataProviderV122(countryIso3);
   const [catalogItem, setCatalogItem] = useState<CountryCatalogItemV122 | null>(
     null
@@ -794,13 +812,18 @@ export default function CountryDataElementPage({
 
   // V159: the framework workbook's description, usage and cases (a lazy
   // chunk), and the display type's decision points from the loaded rows.
-  const typologyV159 = elementId ? getTypologyV159(elementId) : null;
+  // V158: the type as seen from this country (memoised: a country other than
+  // the default gets a derived row, and the row is an effect dependency).
+  const typologyV159 = useMemo(
+    () => (elementId ? getTypologyForCountryV158(elementId, countryIso3, catalogItem) : null),
+    [catalogItem, countryIso3, elementId]
+  );
   const [specBundleV159, setSpecBundleV159] = useState<DatasetSpecBundleV159 | null>(null);
   useEffect(() => {
     let alive = true;
     setSpecBundleV159(null);
     if (!elementId) return undefined;
-    void loadDatasetSpecV159(elementId)
+    void loadDatasetSpecForCountryV158(elementId, countryIso3)
       .then((loaded) => {
         if (alive) setSpecBundleV159(loaded);
       })
@@ -810,7 +833,7 @@ export default function CountryDataElementPage({
     return () => {
       alive = false;
     };
-  }, [elementId]);
+  }, [countryIso3, elementId]);
   // ② elements whose province values arrive as the map's layer, not as pack
   // rows: the decision points read the layer the map opens on.
   const [layerRowsV159, setLayerRowsV159] = useState<S2RegionObservationV159[]>([]);
@@ -897,7 +920,7 @@ export default function CountryDataElementPage({
   if (catalogItem?.publicStatus === "excluded") {
     // The heading follows the V159 naming rule like every other detail: the
     // source line and the dataset's own name from the framework spec.
-    const excludedSpecV156 = getCardSpecV159(catalogItem.elementId);
+    const excludedSpecV156 = getCardSpecForCountryV158(catalogItem.elementId, countryIso3, catalogItem);
     return (
       <div className="page-shell cdp-page cdp-detail-page-v146" data-detail-excluded-v156="true">
         <button
@@ -977,17 +1000,35 @@ export default function CountryDataElementPage({
   }
 
   const meta = bundle?.meta;
-  const cardSpec = getCardSpecV159(elementId);
+  const cardSpec = getCardSpecForCountryV158(elementId, countryIso3, catalogItem);
   const pageTitle = cardSpec?.baseName || catalogItem?.publicTitle || meta?.element.elementLabel || "";
   const hasMap = Boolean(meta && (catalogItem?.hasMapData || meta.element.mapFeatureCount > 0));
   // V153: the small map is handed to the analysis frame, which sets it beside
   // the first analysis block; the component itself is unchanged.
+  // V157: a dataset the review named a map target but the delivery cannot place
+  // (build.kind "none") states that here, with the contract's own reason. Without it
+  // the slot was simply empty and the reader could not tell the two cases apart.
+  const notMappedTargetV157 = publicMapTargetV138(elementId);
+  const notMappedReasonV157 =
+    !hasMap && notMappedTargetV157?.build?.kind === "none"
+      ? notMappedTargetV157.build.reason || ""
+      : "";
   const mapSlot = meta && hasMap ? (
     <aside className="dl153-map-slot" data-testid="detail-map-slot-v153" aria-label="위치·분포 지도">
       <Suspense fallback={<p role="status">작은 지도를 불러오는 중입니다.</p>}>
         <DetailLocationMapV148 key={`${provider.countryIso3}:${elementId}`} elementId={elementId}
           countryIso3={provider.countryIso3} selection={selectorState} onOpenMap={onOpenMapElement} />
       </Suspense>
+    </aside>
+  ) : meta && notMappedReasonV157 ? (
+    <aside className="dl153-map-slot" aria-label="위치·분포">
+      <section className="detail-map148" data-testid="detail-map-not-mapped-v157">
+        <h3>위치·분포</h3>
+        <p className="detail-map148-note">
+          이 자료는 <strong>지도에 표시하지 않습니다</strong>.{" "}
+          <PublicTermTextV134 text={notMappedReasonV157} />
+        </p>
+      </section>
     </aside>
   ) : null;
   const emptyStateCopy = emptyStateCopyV124(catalogItem);
@@ -999,7 +1040,7 @@ export default function CountryDataElementPage({
     ? publicDownloadStatusV128(catalogItem)
     : null;
   return (
-    <RegionCountryContextV162.Provider value={provider.countryIso3}>
+    <DataCountryProviderV158 country={countryIso3} item={catalogItem}>
     <div
       className="page-shell cdp-page cdp-detail-page-v146"
       data-detail-prepare-ms={prepareMs === null ? undefined : prepareMs}
@@ -1171,6 +1212,10 @@ export default function CountryDataElementPage({
               )}
           </section>
 
+          {/* V158: the same indicator across the live countries; draws nothing
+              while fewer than two countries are live. */}
+          <DetailCountryCompareV158 elementId={elementId} countryIso3={provider.countryIso3} />
+
           {/* Layer 2 (collapsed): the core-figure strip, then 데이터 설명 -
               the framework workbook's description, usage and cases (absent
               without a spec). */}
@@ -1222,6 +1267,6 @@ export default function CountryDataElementPage({
         </>
       )}
     </div>
-    </RegionCountryContextV162.Provider>
+    </DataCountryProviderV158>
   );
 }

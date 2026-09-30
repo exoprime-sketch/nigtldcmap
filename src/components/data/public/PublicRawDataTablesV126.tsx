@@ -18,6 +18,8 @@ import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
+import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
+import { displayRegionCellV158, useCountryPresentationV158 } from "../../../data/countries/countryPresentationV158";
 
 interface Props {
   elementId: string;
@@ -52,6 +54,9 @@ export default function PublicRawDataTablesV126({
   // V162: A-027's OpenStreetMap class values and field names read in Korean
   // with the source value in brackets (the download keeps the source).
   const osmText = (text: string) => (elementId === "A-027" ? publicOsmIndicatorLabelV162(text) : text);
+  // V158: region-name cells of a country other than the default show a
+  // Latin-only bracket; nothing changes for the default country.
+  const presentationV158 = useCountryPresentationV158(useDataCountryV158());
   const total = observations.length + entities.length;
   const paginated = total > 500;
   const [open, setOpen] = useState(false);
@@ -221,7 +226,14 @@ export default function PublicRawDataTablesV126({
                     <td><PublicTermTextV134 text={regionText(titleResolution.title)} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
-                      <td key={column}><PublicTermTextV134 text={PLACE_COLUMNS_V162.has(column) ? regionText(publicAttributeValueV126(attributes[column])) : publicAttributeValueV126(attributes[column])} /></td>
+                      <td key={column}><PublicTermTextV134 text={(() => {
+                        const shown = displayRegionCellV158(column, attributes[column], attributes, presentationV158);
+                        // V162: the default country's places read "한글명 (현지명)"; another
+                        // country's region cells are already formatted by its presentation.
+                        return PLACE_COLUMNS_V162.has(column) && shown === attributes[column]
+                          ? regionText(publicAttributeValueV126(shown))
+                          : publicAttributeValueV126(shown);
+                      })()} /></td>
                     ))}
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>
                     <td>

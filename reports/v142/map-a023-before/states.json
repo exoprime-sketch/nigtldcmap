@@ -1,0 +1,781 @@
+{
+  "errors": [],
+  "states": [
+    {
+      "name": "01-default",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2021&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&measure=measure-abbef01dfb86#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ]
+    },
+    {
+      "name": "02-default-selected",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2021&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&measure=measure-abbef01dfb86#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "데이터명: 발전소",
+        "발전원: 수력",
+        "용량: 1 MW",
+        "자료연도: 2021",
+        "출처: World Resources Institute",
+        "공간 정확도: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "지도 표시 범위: 발전소 위치 1,889개",
+        "값 제공 여부: 원천 미제공: 운영자 · 가동 시작 · OSM 객체 ID"
+      ]
+    },
+    {
+      "name": "03-source-all",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ]
+    },
+    {
+      "name": "04-source-all-selected",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "데이터명: 발전소",
+        "발전원: 수력",
+        "용량: 1 MW",
+        "자료연도: 2021",
+        "출처: World Resources Institute",
+        "공간 정확도: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "지도 표시 범위: 발전소 위치 1,889개",
+        "값 제공 여부: 원천 미제공: 운영자 · 가동 시작 · OSM 객체 ID"
+      ]
+    },
+    {
+      "name": "03-source-wri",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026&dim.sourceKey=wri#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ]
+    },
+    {
+      "name": "04-source-wri-selected",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026&dim.sourceKey=wri#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "WRI GPPD (2021)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: WRI GPPD (2021)",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 236곳 · WRI GPPD (2021) · 좌표 보유 1,889곳 중",
+        "데이터명: 발전소",
+        "발전원: 수력",
+        "용량: 1 MW",
+        "자료연도: 2021",
+        "출처: World Resources Institute",
+        "공간 정확도: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "지도 표시 범위: 발전소 위치 1,889개",
+        "값 제공 여부: 원천 미제공: 운영자 · 가동 시작 · OSM 객체 ID"
+      ]
+    },
+    {
+      "name": "03-source-osm",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026&dim.sourceKey=osm#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "OSM 추출 (2026)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: OSM 추출 (2026)",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중"
+      ]
+    },
+    {
+      "name": "04-source-osm-selected",
+      "url": "http://127.0.0.1:4318/?layer=electricityGap&layers=baljeonso-wici-yongryang&layerOpacities=0.78&focusLayer=baljeonso-wici-yongryang&primaryLayer=baljeonso-wici-yongryang&contextLayers=none&mapSelectors=%7B%22baljeonso-wici-yongryang%22%3A%7B%22variable%22%3A%22locations%22%2C%22period%22%3A%222026%22%7D%7D&layerYears=2026&scope=priority&year=2026&country=VNM&baseOpacity=0.58&element=baljeonso-wici-yongryang&period=2026&dim.sourceKey=osm#map",
+      "selects": [
+        {
+          "label": "국가베트남방글라데시 · 준비 중필리핀 · 준비 중캄보디아 · 준비 중인도네시아 · 준비 중라오스 · 준비 중스리랑카 · 준비 중인도 · 준비 중말레이시아 · 준비 중이집트 · 준비 중",
+          "value": "베트남",
+          "options": [
+            "베트남",
+            "방글라데시 · 준비 중",
+            "필리핀 · 준비 중",
+            "캄보디아 · 준비 중",
+            "인도네시아 · 준비 중",
+            "라오스 · 준비 중",
+            "스리랑카 · 준비 중",
+            "인도 · 준비 중",
+            "말레이시아 · 준비 중",
+            "이집트 · 준비 중"
+          ]
+        },
+        {
+          "label": "항목발전소 위치·발전원",
+          "value": "발전소 위치·발전원",
+          "options": [
+            "발전소 위치·발전원"
+          ]
+        },
+        {
+          "label": "기준연도2026",
+          "value": "2026",
+          "options": [
+            "2026"
+          ]
+        },
+        {
+          "label": "발전원전체가스가스·석유바이오매스석유석탄수력태양광폐기물풍력",
+          "value": "전체",
+          "options": [
+            "전체",
+            "가스",
+            "가스·석유",
+            "바이오매스",
+            "석유",
+            "석탄",
+            "수력",
+            "태양광",
+            "폐기물",
+            "풍력"
+          ]
+        },
+        {
+          "label": "용량구간전체100~499MW10MW 미만10~99MW500MW 이상",
+          "value": "전체",
+          "options": [
+            "전체",
+            "100~499MW",
+            "10MW 미만",
+            "10~99MW",
+            "500MW 이상"
+          ]
+        },
+        {
+          "label": "출처두 출처 함께 · 같은 시설 중복 미통합WRI GPPD (2021)OSM 추출 (2026)",
+          "value": "OSM 추출 (2026)",
+          "options": [
+            "두 출처 함께 · 같은 시설 중복 미통합",
+            "WRI GPPD (2021)",
+            "OSM 추출 (2026)"
+          ]
+        }
+      ],
+      "dl": [
+        "항목: 발전소 위치·발전원",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중",
+        "결측지역: 없음",
+        "출처: OpenStreetMap contributors · World Resources Institute",
+        "정확도 한계: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "항목: 발전소 개체 수",
+        "단위: 곳",
+        "자료연도: OSM 추출 (2026)",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중"
+      ],
+      "rows": [
+        "데이터명: 발전소",
+        "항목: 발전소 위치·발전원",
+        "선택 변수: 발전소 위치·발전원",
+        "자료연도: 2026",
+        "단위: 곳(개수) · 값 단위는 항목별",
+        "공간 단위: 시설 좌표(WRI GPPD·OSM) → 시설 점",
+        "지도 표시 범위: 표시 1,653곳 · OSM 추출 (2026) · 좌표 보유 1,889곳 중",
+        "데이터명: 발전소",
+        "발전원: 수력",
+        "용량: 520 MW",
+        "자료연도: 2026",
+        "출처: OpenStreetMap contributors",
+        "공간 정확도: 원천이 제공한 좌표만 표시하며 좌표가 없는 자료는 지도에 투영하지 않습니다.",
+        "지도 표시 범위: 발전소 위치 1,889개",
+        "값 제공 여부: 표시 항목 모두 값 있음"
+      ]
+    }
+  ]
+}

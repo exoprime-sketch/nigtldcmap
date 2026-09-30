@@ -885,6 +885,8 @@ const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
   /\s*[([][^()[\]]*(?:레코드별|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
   // everything from a dash or arrow onwards, once the tail turns into a note
   /\s*[-—–→]\s*[^-—–→]*(?:레코드별|attr_|시트|열\s*참조)[\s\S]*$/u,
+  // the file the provider shipped it in: "(projectsLocationAll.xml)"
+  /\s*[([][^()[\]]*\.(?:xml|csv|json|xlsx?|geojson|zip|pdf)\s*[)\]]/giu,
 ];
 
 /**
@@ -959,6 +961,20 @@ export function publicSourceOrganizationV136_1(value: unknown): string | null {
 
 /** A source citation inside a record note: "출처: …". */
 const RECORD_NOTE_SOURCE_V161 = /^\s*출처\s*:\s*/u;
+/**
+ * The compiler's pointer to the delivered file a note was written from
+ * ("raw: C-006_…_2026-08-19.csv"), up to the file's extension, and a part that
+ * is only such a file name (a second file after " · ").
+ */
+const RECORD_NOTE_FILE_POINTER_V158 = /\s*\braw\s*:\s*.+?\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|pptx?|zip)\b/giu;
+const RECORD_NOTE_FILE_NAME_V158 = /^[A-E]-\d{3}_.+\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|pptx?|zip)$/iu;
+/**
+ * A sentence explaining why the compiler gave the record no climate-technology
+ * code ("해당 없음 — 본 레코드에는 38대 기후기술을 지목할 근거가 없어 코드를
+ * 부여하지 않음(억지 매핑 금지 원칙).") - a note on the coding, not on the record.
+ */
+const RECORD_NOTE_CODING_MEMO_V158 = /억지\s*매핑|코드를\s*부여하지\s*않|tech_ids?\b/u;
+const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
 
 /**
  * A record's note as a reader sees it (V161). A note can cite the record's
@@ -969,7 +985,17 @@ const RECORD_NOTE_SOURCE_V161 = /^\s*출처\s*:\s*/u;
 export function publicRecordNoteV161(value: unknown): string | null {
   const normalized = normalizeTextV126(value);
   if (normalized === null) return null;
-  const parts = normalized.split(/\s+·\s+/u).flatMap((part) => {
+  const withoutPointer = normalized.replace(RECORD_NOTE_FILE_POINTER_V158, "");
+  // A note without a coding memo keeps its own spacing.
+  const withoutMemo = RECORD_NOTE_CODING_MEMO_V158.test(withoutPointer)
+    ? withoutPointer
+        .split(RECORD_NOTE_SENTENCE_V158)
+        .filter((sentence) => !RECORD_NOTE_CODING_MEMO_V158.test(sentence))
+        .join(" ")
+        .trim()
+    : withoutPointer;
+  const parts = withoutMemo.split(/\s+·\s+/u).flatMap((part) => {
+    if (RECORD_NOTE_FILE_NAME_V158.test(part.trim())) return [];
     if (!RECORD_NOTE_SOURCE_V161.test(part)) return [part];
     const source = publicSourceOrganizationV136_1(part.replace(RECORD_NOTE_SOURCE_V161, ""));
     return source ? [`출처: ${source}`] : [];

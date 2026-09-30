@@ -76,11 +76,10 @@ import { setDetailLayerOpenV160, useDetailLayerOpenV160 } from "../layers/detail
 import { useDetailFoldV160 } from "./detailFoldContextV160";
 import { metadataOnlyBuildingsV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { visualizationContractV153 } from "../../../data/visualization/publicVisualizationContractV153";
-import { getCardSpecV159, getTypologyV159 } from "../../../data/spec/datasetSpecV159";
-import {
-  elementVariantV159,
-  GENERIC_BODY_VARIANTS_V159,
-} from "../templates/templateVariantsV159";
+import { useCountryCardSpecV158, useCountryTypologyV158, useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
+import { variantForCountryV158 } from "../templates/variantCountryScopeV158";
+import { headingsForCountryV158 } from "../../../data/countries/countryCopyV158";
+import { GENERIC_BODY_VARIANTS_V159 } from "../templates/templateVariantsV159";
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
 import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
@@ -171,8 +170,11 @@ export default function PublicDataAnalysisRouterV126({
   mapSlot,
 }: Props) {
   // V159: the display type picks the template, the element's variant the body.
-  const typology = getTypologyV159(elementId);
-  const variantEntry = elementVariantV159(elementId);
+  // V158: the type and variant as seen from the page's country.
+  const typology = useCountryTypologyV158(elementId);
+  const dataCountryV158 = useDataCountryV158();
+  const variantEntry = variantForCountryV158(elementId, dataCountryV158);
+  const cardSpec = useCountryCardSpecV158(elementId);
   // The shared climate-technology filter narrows the rows before any body
   // reads them, so every variant sees the same selection.
   const presentIndicatorIds = useMemo(
@@ -210,8 +212,8 @@ export default function PublicDataAnalysisRouterV126({
   );
   const summary = getPublicVisualizationSummaryV126(elementId);
   const publicRenderer = summary?.primaryRenderer || "structured-table";
-  const copy = publicElementCopyV126(elementId, publicRenderer);
-  const headings = getPublicAnalysisHeadingsV134(elementId);
+  const copy = publicElementCopyV126(elementId, publicRenderer, dataCountryV158);
+  const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), dataCountryV158);
   const analysisTitle = headings?.publicAnalysisTitle || copy.title;
   const semanticRows = useMemo(
     () =>
@@ -595,7 +597,7 @@ export default function PublicDataAnalysisRouterV126({
           spatialUnit={spatialUnit}
           aggregationBasis={aggregationBasis}
           pending={typology?.statusNotice === "data-pending"}
-          pendingSourceLabel={typology?.statusNotice === "data-pending" ? getCardSpecV159(elementId)?.sourceLabel : null}
+          pendingSourceLabel={typology?.statusNotice === "data-pending" ? cardSpec?.sourceLabel : null}
         />
         {/* A status screen states the decision only; its rows are not tabled (V159). */}
         {elementId !== "D-011" && !isStatusV159 ? (

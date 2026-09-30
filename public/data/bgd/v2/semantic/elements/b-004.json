@@ -1,0 +1,94 @@
+{
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
+  "elementId": "B-004",
+  "entityCount": 4455,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "indicatorCount": 2,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-343fb00e94cb|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "CMIP6 기반 과거／미래 기후(관구×시나리오×연도 개체 목록)",
+      "indicatorId": "B-004_climate_adm1_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-343fb00e94cb",
+        "labelKo": "CMIP6 기반 과거／미래 기후(관구×시나리오×연도 개체 목록)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-343fb00e94cb|지표별 상이(속성 열 참조)|technology=범용|B-004_climate_adm1_year",
+      "sourceCaveat": "[값의 성격] 모델(CMIP6) / [지역구분] 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1 단위 GIS 개체로 재구성. [변경] v3.0 은 국가 단일값(0.25° 면적평균)만 보유했으나 CCKP 포털의 Sub-national first level 집계를 재수집하여 관구 8개 × 시나리오 6종 × 연도 조합 3960건을 신규 확보. 기존 전국 시계열은 값 변경 없이 병존 수록. [시나리오 범위] historical · ssp119 · ssp126 · ssp245 · ssp370 · ssp585. 원천이 일부 지표에 ssp119 를 제공하지 않아 지표별 시나리오 수가 다를 수 있으며, 해당 조합은 값이 공란입니다. [행정구역 기준] GADM 4.1 ADM1(8개 관구). / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [요소 구성] 데이터 요소 중 풍속(sfcWind)·일사량(rsds)은 원천(World Bank CCKP CMIP6 시계열)이 해당 변수를 제공하지 않아 본 요소에 수록하지 않았습니다. 대체 원천 기준 값은 B-042(풍력 자원 — Global Wind Atlas 3.x 풍속)·B-041(태양광 관련 지표 — Global Solar Atlas 2.0 GHI)에 행정구역 단위로 수록되어 있습니다. / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인). / [추가 변수 2026-09-20] 풍속·일사량 열은 Copernicus CDS CMIP6 5개 모델 중앙값으로, 다른 열(CCKP 0.25° 앙상블 중앙값)과 모델 구성·해상도가 다르므로 변수 간 직접 결합 시 유의. 소면적 단위는 모델 격자(약 1~2.5°) 1~2개 값에 좌우됨. [값의 성격] 모델(CMIP6). 인용: Copernicus Climate Change Service, Climate Data Store (2021): CMIP6 climate projections. DOI: 10.24381/cds.c866074c",
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(관구×시나리오×연도 개체 목록)",
+      "sourceLabelEn": "CMIP6 climate indices by province",
+      "sourceNote": "[값의 성격] 모델(CMIP6) / [지역구분] 이슈로그 「지역 구분 필요 = 지역(admin)」 대상 — ADM1 단위 GIS 개체로 재구성. [변경] v3.0 은 국가 단일값(0.25° 면적평균)만 보유했으나 CCKP 포털의 Sub-national first level 집계를 재수집하여 관구 8개 × 시나리오 6종 × 연도 조합 3960건을 신규 확보. 기존 전국 시계열은 값 변경 없이 병존 수록. [시나리오 범위] historical · ssp119 · ssp126 · ssp245 · ssp370 · ssp585. 원천이 일부 지표에 ssp119 를 제공하지 않아 지표별 시나리오 수가 다를 수 있으며, 해당 조합은 값이 공란입니다. [행정구역 기준] GADM 4.1 ADM1(8개 관구). / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [요소 구성] 데이터 요소 중 풍속(sfcWind)·일사량(rsds)은 원천(World Bank CCKP CMIP6 시계열)이 해당 변수를 제공하지 않아 본 요소에 수록하지 않았습니다. 대체 원천 기준 값은 B-042(풍력 자원 — Global Wind Atlas 3.x 풍속)·B-041(태양광 관련 지표 — Global Solar Atlas 2.0 GHI)에 행정구역 단위로 수록되어 있습니다. / [경계 기준] 지역 값은 GADM 4.1 ADM1 경계(2022-07 배포) 기준으로 집계·매칭. 행정구역 개편: GADM 4.1 배포(2022-07) 이후 ADM1 개편 없음(2026-09 확인). / [추가 변수 2026-09-20] 풍속·일사량 열은 Copernicus CDS CMIP6 5개 모델 중앙값으로, 다른 열(CCKP 0.25° 앙상블 중앙값)과 모델 구성·해상도가 다르므로 변수 간 직접 결합 시 유의. 소면적 단위는 모델 격자(약 1~2.5°) 1~2개 값에 좌우됨. [값의 성격] 모델(CMIP6). 인용: Copernicus Climate Change Service, Climate Data Store (2021): CMIP6 climate projections. DOI: 10.24381/cds.c866074c",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-716bd9e257bd|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
+      "displayLabel": "CMIP6 기반 과거／미래 기후(전국)",
+      "indicatorId": "B-004_climate_national_year",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-716bd9e257bd",
+        "labelKo": "CMIP6 기반 과거／미래 기후(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-716bd9e257bd|지표별 상이(속성 열 참조)|technology=범용|B-004_climate_national_year",
+      "sourceCaveat": "[값의 성격] 모델(CMIP6) / 전국 집계값. ADM1 단위 신규 수집분과 동일 원천·동일 앙상블 설정. / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [요소 구성] 데이터 요소 중 풍속(sfcWind)·일사량(rsds)은 원천(World Bank CCKP CMIP6 시계열)이 해당 변수를 제공하지 않아 본 요소에 수록하지 않았습니다. 대체 원천 기준 값은 B-042(풍력 자원 — Global Wind Atlas 3.x 풍속)·B-041(태양광 관련 지표 — Global Solar Atlas 2.0 GHI)에 행정구역 단위로 수록되어 있습니다. / [추가 변수 2026-09-20] 풍속·일사량 열은 Copernicus CDS CMIP6 5개 모델 중앙값으로, 다른 열(CCKP 0.25° 앙상블 중앙값)과 모델 구성·해상도가 다르므로 변수 간 직접 결합 시 유의. 소면적 단위는 모델 격자(약 1~2.5°) 1~2개 값에 좌우됨. [값의 성격] 모델(CMIP6). 인용: Copernicus Climate Change Service, Climate Data Store (2021): CMIP6 climate projections. DOI: 10.24381/cds.c866074c",
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(전국)",
+      "sourceLabelEn": "CMIP6 climate indices, national",
+      "sourceNote": "[값의 성격] 모델(CMIP6) / 전국 집계값. ADM1 단위 신규 수집분과 동일 원천·동일 앙상블 설정. / [라이선스 근거] World Bank Terms of Use for Datasets — 종전 표기가 원천과 일치(정정 없음). / [요소 구성] 데이터 요소 중 풍속(sfcWind)·일사량(rsds)은 원천(World Bank CCKP CMIP6 시계열)이 해당 변수를 제공하지 않아 본 요소에 수록하지 않았습니다. 대체 원천 기준 값은 B-042(풍력 자원 — Global Wind Atlas 3.x 풍속)·B-041(태양광 관련 지표 — Global Solar Atlas 2.0 GHI)에 행정구역 단위로 수록되어 있습니다. / [추가 변수 2026-09-20] 풍속·일사량 열은 Copernicus CDS CMIP6 5개 모델 중앙값으로, 다른 열(CCKP 0.25° 앙상블 중앙값)과 모델 구성·해상도가 다르므로 변수 간 직접 결합 시 유의. 소면적 단위는 모델 격자(약 1~2.5°) 1~2개 값에 좌우됨. [값의 성격] 모델(CMIP6). 인용: Copernicus Climate Change Service, Climate Data Store (2021): CMIP6 climate projections. DOI: 10.24381/cds.c866074c",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-343fb00e94cb",
+      "labelKo": "CMIP6 기반 과거／미래 기후(관구×시나리오×연도 개체 목록)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-716bd9e257bd",
+      "labelKo": "CMIP6 기반 과거／미래 기후(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    }
+  ],
+  "observationCount": 0,
+  "recordSemanticsMode": "sparse-overrides",
+  "records": [],
+  "schemaVersion": "v125"
+}

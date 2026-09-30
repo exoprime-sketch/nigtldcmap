@@ -23,6 +23,7 @@ import {
   publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
+  publicUnstatedWordingV161,
 } from "../../../data/visualization/publicFieldPolicyV126";
 import {
   publicDimensionLabelV126,
@@ -543,7 +544,7 @@ export default function SemanticArchetypePreviewV125({
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
                 <span>{publicDimensionLabelV126(dimension.key, dimension.labelKo)}</span>
-                <strong><PublicTermTextV134 text={regionText(dimensionValueLabelV125(dimension.key, values[0]))} /></strong>
+                <strong><PublicTermTextV134 text={regionText(publicUnstatedWordingV161(dimensionValueLabelV125(dimension.key, values[0])))} /></strong>
               </p>
             );
           }
@@ -579,7 +580,7 @@ export default function SemanticArchetypePreviewV125({
               )}
               {values.map((value) => (
                 <option key={value} value={value}>
-                  {regionText(publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value))}
+                  {regionText(publicUnstatedWordingV161(publicIndicatorDimensionV144(contract.elementId, dimensionValueLabelV125(dimension.key, value)) || dimensionValueLabelV125(dimension.key, value)))}
                 </option>
               ))}
             </select>

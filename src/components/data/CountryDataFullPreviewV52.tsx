@@ -3,7 +3,9 @@ import type { ReactNode } from "react";
 import {
   getElementVisualizationSummaryV125,
   loadElementIndicatorSemanticsV125,
+  loadElementVisualizationSummaryV158,
 } from "../../data/visualization/elementVisualizationRegistryV125";
+import { useDataCountryV158 } from "../../data/countries/DataCountryContextV158";
 import { getPublicVisualizationSummaryV126 } from "../../data/visualization/publicVisualizationRegistryV126";
 import { resolvePublicTemporalDepthV135 } from "../../data/visualization/publicTemporalDepthV135";
 import type {
@@ -68,31 +70,36 @@ export default function CountryDataFullPreviewV52({
   mapSlot,
 }: Props) {
   const [runtime, setRuntime] = useState<SemanticRuntimeV125 | null>(null);
+  const dataCountryV158 = useDataCountryV158();
   const [error, setError] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
     setRuntime(null);
     setError("");
-    const summary = getElementVisualizationSummaryV125(elementId);
-    if (!summary) {
-      setError("분석 구성을 확인할 수 없습니다");
-      return () => controller.abort();
-    }
-    void loadElementIndicatorSemanticsV125(elementId, controller.signal)
-      .then((semantics) =>
-        setRuntime({
-          contract: runtimeContractV125(summary, semantics),
-          semantics,
-        })
-      )
+    // V158: the summary and semantics of the country on screen; the default
+    // country's summaries are bundled, another country's load on first use.
+    void loadElementVisualizationSummaryV158(elementId, dataCountryV158)
+      .then((summary) => {
+        if (controller.signal.aborted) return undefined;
+        if (!summary) {
+          setError("분석 구성을 확인할 수 없습니다");
+          return undefined;
+        }
+        return loadElementIndicatorSemanticsV125(elementId, controller.signal, dataCountryV158).then((semantics) =>
+          setRuntime({
+            contract: runtimeContractV125(summary, semantics),
+            semantics,
+          })
+        );
+      })
       .catch((reason: unknown) => {
         if (controller.signal.aborted) return;
         console.error("Public data analysis load failed", reason);
         setError("분석에 필요한 데이터를 불러오지 못했습니다");
       });
     return () => controller.abort();
-  }, [elementId]);
+  }, [dataCountryV158, elementId]);
 
   const visibleObservations = useMemo(
     () =>
