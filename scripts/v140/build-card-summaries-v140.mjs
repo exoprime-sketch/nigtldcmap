@@ -927,11 +927,34 @@ function yearsFromEntities(rows) {
 }
 
 // ------------------------------------------------------------------ provinces
+/**
+ * V162: the province rows of one administrative system. The 2026-09-30
+ * delivery files the 63 pre-2025 provinces and the 34 post-2025 units in the
+ * same sheet; a card over both counted 97 "성·시". A sheet with pre-reform rows
+ * gives those rows only (B-026's basin rows are another unit); any other sheet
+ * gives its non-national rows. Same rule as src/data/geo/regionSystemV162.ts.
+ */
+function regionSystemOfRowV162(row) {
+  if (row.regionSystem) return row.regionSystem;
+  const unit = text(row.normalizedAttributes?.행정단위);
+  if (/_adm34$/u.test(text(row.indicatorId)) || /개편 후|체계/u.test(unit)) return "adm1";
+  if (/^(전국|country)$/iu.test(unit)) return "country";
+  if (/^(province|city|province\/city)$/iu.test(unit)) return "adm1-prev";
+  return null;
+}
+
+function provinceRowsOfOneSystemV162(records) {
+  const regional = records.filter((row) => regionSystemOfRowV162(row) !== "country" && !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)));
+  return regional.some((row) => regionSystemOfRowV162(row) === "adm1-prev")
+    ? regional.filter((row) => regionSystemOfRowV162(row) === "adm1-prev")
+    : regional;
+}
+
 function regionalCard(elementId, item, pack, contract) {
   const target = mapTargetById.get(elementId);
   const measures = REGIONAL_ENTITY_MEASURE[elementId] ? [REGIONAL_ENTITY_MEASURE[elementId]] : (target?.build?.measures || []).filter((measure) => measure.sourceKey);
   const all = pack.entities.records;
-  const rows = all.filter((row) => !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)));
+  const rows = provinceRowsOfOneSystemV162(all);
   const chosen = measures.find((measure) => rows.some((row) => numberOf(row.normalizedAttributes?.[measure.sourceKey]) !== null));
   if (!chosen) return null;
   const byProvince = new Map();
@@ -940,7 +963,7 @@ function regionalCard(elementId, item, pack, contract) {
     if (value === null) continue;
     // The detail names a province by its Vietnamese name, else the romanised
     // name split at case changes ("BinhThuan" → "Binh Thuan").
-    const name = (text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
+    const name = (text(row.normalizedAttributes?.["지역명_현지어"]) || text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["개편_후_소속_단위"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
     if (!byProvince.has(name)) byProvince.set(name, value);
   }
   const values = [...byProvince.values()];
@@ -971,7 +994,7 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
   const defaultKey = block.match(/defaultMeasure:\s*"([^"]+)"/u)?.[1];
   const measures = (target?.build?.measures || []).filter((measure) => measure.sourceKey);
   const chosen = measures.find((measure) => measure.sourceKey === defaultKey) || { sourceKey: defaultKey, label: defaultKey, unit: "" };
-  const rows = pack.entities.records.filter((row) => !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)) && numberOf(row.normalizedAttributes?.[chosen.sourceKey]) !== null);
+  const rows = provinceRowsOfOneSystemV162(pack.entities.records).filter((row) => numberOf(row.normalizedAttributes?.[chosen.sourceKey]) !== null);
   const scenarioOf = (row) => text(row.normalizedAttributes?.시나리오);
   const yearOf = (row) => Number(row.normalizedAttributes?.연도);
   const scenarios = [...new Set(rows.map(scenarioOf))].filter(Boolean);

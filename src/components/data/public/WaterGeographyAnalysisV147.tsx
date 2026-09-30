@@ -7,10 +7,12 @@ import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { publicRegionNameV138 } from "./PublicRegionScenarioSummaryV138";
+import { firstAttributeV162, REGION_NAME_KEYS_V162, rowsForPreReformViewV162 } from "../../../data/geo/regionSystemV162";
 
 const DIRECTIONS = [["N_북_비율", "북"], ["NE_북동_비율", "북동"], ["E_동_비율", "동"], ["SE_남동_비율", "남동"], ["S_남_비율", "남"], ["SW_남서_비율", "남서"], ["W_서_비율", "서"], ["NW_북서_비율", "북서"]];
 export function FlowDirectionAnalysisV147({ entities }: { entities: VietnamEntityV124[] }) {
-  const regions = entities.filter((r) => DIRECTIONS.some(([key]) => finiteV147(r.normalizedAttributes?.[key])));
+  // V162: the 63-unit rows only; the sheet's 34-unit rows are the other system.
+  const regions = rowsForPreReformViewV162(entities).filter((r) => DIRECTIONS.some(([key]) => finiteV147(r.normalizedAttributes?.[key])));
   const [selected, setSelected] = useState("");
   // V162 (P12-B): B-026's provinces are the 63 pre-2025 units; "AnGiang"
   // is spaced as the source means it, then shown "한글명 (현지명)".
@@ -18,7 +20,7 @@ export function FlowDirectionAnalysisV147({ entities }: { entities: VietnamEntit
   const own = regions.find((r) => r.recordId === selected) || regions[0];
   if (!own) return <p>현재 방향별 비율 자료가 없습니다.</p>;
   const a = own.normalizedAttributes || {};
-  const regionLabel = (r: VietnamEntityV124) => regionText(publicRegionNameV138(String(r.normalizedAttributes?.["지역명_베트남어"] || r.normalizedAttributes?.["지역명_로마자"] || r.name)));
+  const regionLabel = (r: VietnamEntityV124) => regionText(publicRegionNameV138(String(firstAttributeV162(r.normalizedAttributes, REGION_NAME_KEYS_V162) || r.name)));
   const values = DIRECTIONS.map(([key, label]) => ({ id: key, label, value: finiteV147(a[key]) ? a[key] as number : null }));
   return <section className="detail146" data-testid="flow-direction-v147">
     <h3>선택 성·시의 8방향 비율</h3><p className="detail146-note">지형 격자에서 물이 흘러가는 방향의 비율입니다. 하천의 유량이나 강수량은 아닙니다. 원자료의 개편 전 63개 성·시 경계를 기준으로 합니다.</p>

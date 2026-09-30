@@ -139,8 +139,10 @@ def _resolve_region(
 ) -> tuple[dict[str, Any], str | None]:
     gadm = _text(attributes.get("레코드_키"))
     roman = _text(attributes.get("지역명_로마자"))
-    vietnamese = _text(attributes.get("지역명_베트남어"))
-    reorganised = _text(attributes.get("2025_개편_후_소속_34개_체계"))
+    # V162: the common column names first; the older Viet Nam-specific names
+    # for deliveries before 2026-09-30.
+    vietnamese = _text(attributes.get("지역명_현지어")) or _text(attributes.get("지역명_베트남어"))
+    reorganised = _text(attributes.get("개편_후_소속_단위")) or _text(attributes.get("2025_개편_후_소속_34개_체계"))
 
     # Only the province's own names may resolve it. The 2025 column names the
     # 34-unit successor a province was folded into, so matching on it would map

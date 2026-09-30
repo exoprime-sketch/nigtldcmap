@@ -100,6 +100,38 @@ function cellText(value: unknown): string {
   return String(value).replace(/\s+/gu, " ").trim();
 }
 
+const FILE_EXTENSION_V162 = "pdf|csv|xlsx?|json|docx?|hwpx?|zip";
+/** A cell that is only a file name, optionally with a page count: "…_Vietnam.pdf(3쪽)". */
+const FILE_NAME_ONLY_V162 = new RegExp(String.raw`^(?!https?:)[^\n]*\.(?:${FILE_EXTENSION_V162})\s*(?:[(（][^)）]*[)）])?$`, "iu");
+/** A parenthesis that only names a file: "부록 II(C-016_…_pl1-2.pdf)". */
+const FILE_NAME_PAREN_V162 = new RegExp(String.raw`\s*[(（][^()（）]*\.(?:${FILE_EXTENSION_V162})\b[^()（）]*[)）]`, "giu");
+/** A bare file-name token outside a URL. */
+const FILE_NAME_TOKEN_V162 = new RegExp(String.raw`(^|\s)(?!https?:)[^\s()（）]+\.(?:${FILE_EXTENSION_V162})\b`, "giu");
+
+/**
+ * V162: file names never reach the screen (user decision 2026-09-30). A cell
+ * that is only a file name is empty; a file name inside a sentence or a
+ * citation is removed with its parenthesis. URLs are left whole - a link keeps
+ * its address in href, and its text is set by the caller.
+ */
+export function withoutFileNamesV162(text: string): string {
+  if (!text || /^https?:\/\//iu.test(text.trim())) return text;
+  if (FILE_NAME_ONLY_V162.test(text.trim())) return "";
+  return text
+    .replace(FILE_NAME_PAREN_V162, "")
+    .replace(FILE_NAME_TOKEN_V162, "$1")
+    .replace(/\s{2,}/gu, " ")
+    .replace(/\s+([,.;·)])/gu, "$1")
+    .replace(/^[\s,;·]+|[\s,;·]+$/gu, "")
+    .trim();
+}
+
+/** The link text for a source address: the document's title, else what it is. */
+export function sourceLinkTextV162(url: string, title?: string | null): string {
+  if (title) return title;
+  return /\.pdf(?:$|[?#])/iu.test(url) ? "원문 PDF" : "원문";
+}
+
 /** Attributes that hold free-text notes, where the supplier's memo sentences can sit. */
 const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;
 
@@ -112,7 +144,7 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   const text = cellText(value);
   if (!text || FILE_VALUE_V162.test(text)) return "";
   const cleaned = NOTE_ATTRIBUTE_V162.test(attribute) ? publicRecordNoteV161(text) || "" : text;
-  return publicUnstatedWordingV161(cleaned);
+  return withoutFileNamesV162(publicUnstatedWordingV161(cleaned));
 }
 
 export function readWideRecordsV162(

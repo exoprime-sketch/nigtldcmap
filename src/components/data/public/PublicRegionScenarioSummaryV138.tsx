@@ -1,4 +1,10 @@
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
+import {
+  assertSingleRegionSystemV162,
+  REGION_NAME_KEYS_V162,
+  REORGANISED_UNIT_KEYS_V162,
+  rowsForPreReformViewV162,
+} from "../../../data/geo/regionSystemV162";
 import { Fragment, useMemo } from "react";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { subjectParticleV158, useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
@@ -47,8 +53,9 @@ interface Props {
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
 }
 
-const REGION_KEYS = ["지역명_로마자", "지역명_베트남어", "2025_개편_후_소속_34개_체계"];
-const REGION_DISPLAY_KEYS = ["지역명_베트남어", "지역명_로마자"];
+// V162: the common column names first, then the pre-V162 Viet Nam names.
+const REGION_KEYS = ["지역명_로마자", "지역명_현지어", "지역명_베트남어", ...REORGANISED_UNIT_KEYS_V162];
+const REGION_DISPLAY_KEYS: string[] = [...REGION_NAME_KEYS_V162];
 const SCENARIO_KEY = "시나리오";
 const YEAR_KEYS = ["연도", "기준연도"];
 
@@ -159,8 +166,12 @@ export interface RegionScenarioShapeV138 {
  * in at least two different years, or differ between provinces in one.
  */
 export function regionScenarioShapeV138(
-  entities: VietnamEntityV124[]
+  sourceEntities: VietnamEntityV124[]
 ): RegionScenarioShapeV138 | null {
+  // V162: one system per summary - a sheet with the 63 pre-2025 provinces
+  // reads those rows only; its 34-unit rows would count each place twice.
+  const entities = rowsForPreReformViewV162(sourceEntities);
+  assertSingleRegionSystemV162(entities, "region summary");
   if (entities.length < 2) return null;
   const provinceYearsByMeasure = new Map<string, Set<number>>();
   const valuesByMeasureRegion = new Map<string, Map<string, Set<number>>>();
@@ -323,11 +334,13 @@ interface SeriesPoint {
 
 export default function PublicRegionScenarioSummaryV138({
   elementId,
-  entities,
+  entities: sourceEntities,
   elementTitle,
   selectorState,
   onSelectorStateChange,
 }: Props) {
+  // V162: the same one-system rows as the shape (see regionScenarioShapeV138).
+  const entities = useMemo(() => rowsForPreReformViewV162(sourceEntities), [sourceEntities]);
   // V162 (P12-B): region labels as the reader sees them ("한글명 (현지명)",
   // reviewed names only); the keys stay the source spelling.
   const regionText = useRegionTextV162(elementId);

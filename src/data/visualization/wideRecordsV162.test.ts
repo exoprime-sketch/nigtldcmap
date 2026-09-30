@@ -169,7 +169,7 @@ describe("readWideRecordsV162 - not the wide template", () => {
 });
 
 describe("readWideRecordsV162 - a real 2026-09-30 C-017 delivery record", () => {
-  // Decoded from .staging/v162/public/data/vietnam/v2/packs (one C-017-FIT
+  // Decoded from the V162 staging packs (one C-017-FIT
   // record's meta.fieldDefinitions and normalizedAttributes), copied into
   // __fixtures__/wideRecordC017V162.json rather than re-decoded per test run.
   const fixtureEntity = entity({
@@ -184,5 +184,30 @@ describe("readWideRecordsV162 - a real 2026-09-30 C-017 delivery record", () => 
     const rendered = JSON.stringify({ name: record.name, type: record.type, blocks: record.blocks, source: record.source });
     expect(rendered).not.toMatch(/VNM-C\d{3}-/u);
     expect(rendered).not.toMatch(/raw\s*`/u);
+  });
+});
+
+describe("withoutFileNamesV162 (V162: file names never on screen)", () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { withoutFileNamesV162, sourceLinkTextV162 } = require("./wideRecordsV162");
+  it("empties a cell that is only a file name", () => {
+    expect(withoutFileNamesV162("C-012_PPP 법제도·조달 체계_WB_PPP_Legal_Framework_Snapshot_Vietnam.pdf(3쪽)")).toBe("");
+  });
+  it("removes a file name in a parenthesis or as a token, keeping the sentence", () => {
+    expect(withoutFileNamesV162("768/QĐ-TTg 부록 II(C-016_재생에너지 발주 및 확대 계획_pl1-2.pdf) Bảng 1~5, 「Bắc Giang」 행")).toBe(
+      "768/QĐ-TTg 부록 II Bảng 1~5, 「Bắc Giang」 행"
+    );
+    expect(withoutFileNamesV162("SB61 일본 제출문서(4.SB61_Art.6.8_Japan.pdf)·GCNMA-8 사무국 자료")).toBe("SB61 일본 제출문서·GCNMA-8 사무국 자료");
+  });
+  it("leaves URLs and ordinary text alone", () => {
+    expect(withoutFileNamesV162("https://unfccc.int/sites/default/files/resource/NAP_Vietnam_2025_EN.pdf")).toBe(
+      "https://unfccc.int/sites/default/files/resource/NAP_Vietnam_2025_EN.pdf"
+    );
+    expect(withoutFileNamesV162("국가 적응계획(NAP) 2021–2030")).toBe("국가 적응계획(NAP) 2021–2030");
+  });
+  it("names a link by the document title, else as the original PDF", () => {
+    expect(sourceLinkTextV162("https://x.org/a.pdf", "국가 적응계획")).toBe("국가 적응계획");
+    expect(sourceLinkTextV162("https://x.org/a.pdf")).toBe("원문 PDF");
+    expect(sourceLinkTextV162("https://x.org/page")).toBe("원문");
   });
 });

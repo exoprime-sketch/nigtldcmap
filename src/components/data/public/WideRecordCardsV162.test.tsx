@@ -76,7 +76,8 @@ test("renders one card per record, with its blocks and source line", () => {
   expect(sourceLine.textContent).toContain("제3조");
   const link = sourceLine.querySelector("a")!;
   expect(link.getAttribute("href")).toBe("https://example.org/a.pdf");
-  expect(link.textContent).toBe("원문");
+  // V162: the document title is the link text; the file name stays in href only.
+  expect(link.textContent).toBe("결정문");
   expect(link.getAttribute("target")).toBe("_blank");
   expect(link.getAttribute("rel")).toBe("noopener noreferrer");
   // No source stated for the second record: no source line at all.

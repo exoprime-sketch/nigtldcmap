@@ -1157,7 +1157,7 @@
       "category": "물·자원",
       "publicName": "흐름방향",
       "sourceFields": [
-        "지역명_베트남어",
+        "지역명_현지어",
         "지역명_로마자",
         "우세_유향_비율",
         "우세_유향",
@@ -1169,7 +1169,7 @@
       "build": {
         "kind": "admin1-attributes",
         "regionKeys": [
-          "지역명_베트남어",
+          "지역명_현지어",
           "지역명_로마자"
         ],
         "categoryKey": "우세_유향",
@@ -1429,6 +1429,28 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-031_forest_extent_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "analysis-area",
+              "sourceKey": "분석대상_면적_ha",
+              "period": "2000"
+            },
+            {
+              "variable": "tree-cover-area-2000",
+              "sourceKey": "수관_면적_2000_ha",
+              "period": "2000"
+            },
+            {
+              "variable": "tree-cover-area-2010",
+              "sourceKey": "수관_면적_2010_ha",
+              "period": "2010"
+            }
+          ]
         }
       },
       "selectableVariables": "수관 면적 2000·2010, 분석대상 면적",
@@ -1456,6 +1478,21 @@
           "boundaryPolicy34": {
             "kind": "area-weighted-mean"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-032_canopy_cover_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "canopy-cover-30",
+              "sourceKey": "수관_피복률",
+              "periodKey": "기준연도",
+              "where": {
+                "수관밀도_임계": "30"
+              }
+            }
+          ]
         }
       },
       "selectableVariables": "수관 피복률(임계 30%)",
@@ -1483,6 +1520,18 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-033_loss_adm1_year_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "annual-tree-cover-loss",
+              "sourceKey": "수관_손실_ha",
+              "periodKey": "연도"
+            }
+          ]
         }
       },
       "selectableVariables": "연간 수관 손실, 연도(2001~2024)",
@@ -1512,6 +1561,23 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-034_forest_carbon_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variableLabel": "지상부 탄소밀도",
+              "sourceKey": "지상부_탄소밀도_Mg_C_ha",
+              "period": "2000"
+            },
+            {
+              "variableLabel": "지상부 탄소저장량",
+              "sourceKey": "지상부_탄소저장량_Mg_C",
+              "period": "2000"
+            }
+          ]
         }
       },
       "selectableVariables": "저장량·밀도·연간 배출·흡수·순플럭스(단위별 분리)",

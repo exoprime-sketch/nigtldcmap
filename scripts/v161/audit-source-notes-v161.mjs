@@ -72,6 +72,13 @@ export const SOURCE_NOTE_PATTERNS_V161 = [
   // (A-028: "OpenStreetMap (멤버1); 미특정 (멤버2)").
   ["internal member notation", /멤버\s*\d|미특정/u],
   ["working file / version", /Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu],
+  // V162 (user decision 2026-09-30): a PDF's file name is never on screen - a
+  // link shows the document title or '원문 PDF' and keeps the file in href.
+  // URLs are masked first, so a cited address is not a hit.
+  ["PDF file name", /[^\s/()（）]+\.pdf\b/iu],
+  // The delivery's internal record ids ("VNM-C017-FIT-001") and working paths.
+  ["record id", /\b(?:VNM|BGD)-[A-E]\d{3}-/u],
+  ["raw working path", /raw_data|raw는|raw\s*파일/iu],
 ];
 
 /**

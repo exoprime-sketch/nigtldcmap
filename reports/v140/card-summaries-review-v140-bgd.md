@@ -1,6 +1,6 @@
 # 공개 카드 요약 검토표 (V140)
 
-생성 2026-09-30T10:22:55.211Z · 데이터 2026-09-29T00:00:00Z
+생성 2026-09-30T11:24:47.569Z · 데이터 2026-09-29T00:00:00Z
 
 종류별: line 34 · level 27 · bars 14 · composition 2 · facts 57 · spatial-trend 5 · spatial 1 · status 1
 

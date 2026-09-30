@@ -199,6 +199,9 @@ export function getTypologyForCountryV158(
   // the display type. A delivery that arrives (E-011) opens without editing it.
   if (!row || !item) return row;
   const statusNotice = statusNoticeFromCatalogV162(item.publicStatus);
+  // Same notice: the reviewed row as it is (the default country's cards and
+  // their tests compare by identity).
+  if (statusNotice === row.statusNotice) return row;
   return { ...row, statusNotice, status: COUNTRY_STATUS_V158[statusNotice ?? "public"] };
 }
 

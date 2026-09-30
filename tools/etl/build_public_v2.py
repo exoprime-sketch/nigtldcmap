@@ -563,6 +563,50 @@ def _slot_order(source_field: str) -> int:
     return int(match.group()) if match else 9999
 
 
+# V162: the 2026-09-30 delivery renamed the region columns; older deliveries
+# and the published trees used the Viet Nam-specific names. Every country's
+# column is published under the common name (user decision 2026-09-30).
+REGION_COLUMN_ALIASES_V162 = {
+    "2025_개편_후_소속_34개_체계": "개편_후_소속_단위",
+    "지역명_베트남어": "지역명_현지어",
+}
+
+
+def _registry_entry_v162(country_iso3: str) -> Mapping[str, Any]:
+    path = pathlib.Path(__file__).resolve().parents[2] / "public" / "data" / "countries.json"
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8")).get("countries") or []
+    except OSError:
+        return {}
+    return next((row for row in rows if str(row.get("iso3") or "").upper() == country_iso3.upper()), {})
+
+
+def region_system_v162(level: Any, country_iso3: str) -> str | None:
+    """The row's administrative system: adm1 (current level 1), adm1-prev (the
+    level 1 that a dated boundary reform replaced), adm2, country, or None.
+
+    Same values as the contractor's 10-country rule. A country whose registry
+    boundaryEpoch is a date reformed its level 1 on that date, so a row the
+    delivery labels by the older unit (Province/City) is adm1-prev and a row it
+    labels by the new system ("… (2025년 34개 체계)") is adm1."""
+    text = nfc_text(str(level or "")).strip()
+    if not text:
+        return None
+    lowered = text.lower()
+    if "개편 후" in text or "체계" in text:
+        return "adm1"
+    if lowered in {"country", "전국", "국가"}:
+        return "country"
+    if lowered in {"district", "군", "구"}:
+        return "adm2"
+    if lowered in {"division", "주"}:
+        return "adm1"
+    if lowered in {"province", "city", "province/city", "tỉnh", "thành phố"}:
+        epoch = str(_registry_entry_v162(country_iso3).get("boundaryEpoch") or "")
+        return "adm1-prev" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", epoch) else "adm1"
+    return None
+
+
 def _safe_field_definitions(
     workbook: Mapping[str, Any], base_payload: Mapping[str, Any]
 ) -> list[dict[str, str]]:
@@ -619,7 +663,8 @@ def _safe_field_definitions(
             or re.sub(r"[^A-Za-z0-9가-힣]+", "_", labels[source_field]).strip("_")
             or source_field
         )
-        key = base_key
+        # V162: the region columns under one name for every country and delivery.
+        key = base_key = REGION_COLUMN_ALIASES_V162.get(base_key, base_key)
         suffix = 2
         while key in used:
             key = f"{base_key}{suffix}"
@@ -716,6 +761,7 @@ def _authorized_entities(
     decision: Mapping[str, Any],
     field_definitions: list[dict[str, str]],
     rights: Mapping[str, Any] | None = None,
+    country_iso3: str | None = None,
 ) -> list[dict[str, Any]]:
     metadata = _indicator_by_id(base_payload)
     decision_ref = _decision_ref(decision)
@@ -783,6 +829,12 @@ def _authorized_entities(
                 "geometry": None,
                 "normalizedAttributes": normalized_attributes,
                 "rawAttributes": raw_attributes,
+                # V162: which administrative system the row belongs to, so a
+                # 63-unit view never counts a 34-unit row (and vice versa).
+                "regionSystem": region_system_v162(
+                    normalized_attributes.get("행정단위"),
+                    country_iso3 or str(raw.get("country_iso3") or "VNM"),
+                ),
                 "missingReasonCode": raw.get("missing_reason_code"),
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),

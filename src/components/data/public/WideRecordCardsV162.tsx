@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
+import { sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./wide-record-cards-v162.css";
 
@@ -29,21 +30,26 @@ function typeCountsV162(records: WideRecordV162[]): Array<{ type: string; count:
   return [...counts].map(([type, count]) => ({ type, count }));
 }
 
-/** The source line's parts: a document name, a citation, then its links, joined with " · ". */
+/**
+ * The source line's parts: the document (its title is the link text when it
+ * has an address - V162: the file name stays in href only, never as text),
+ * a citation, then the document page link, joined with " · ".
+ */
 function SourceLineV162({ source }: { source: WideRecordV162["source"] }) {
   const parts: { key: string; node: ReactNode }[] = [];
-  if (source.document) parts.push({ key: "doc", node: <PublicTermTextV134 text={source.document} /> });
-  if (source.citation) parts.push({ key: "citation", node: <PublicTermTextV134 text={source.citation} /> });
   if (source.url) {
     parts.push({
       key: "url",
       node: (
         <a href={source.url} target="_blank" rel="noopener noreferrer">
-          원문
+          {sourceLinkTextV162(source.url, source.document)}
         </a>
       ),
     });
+  } else if (source.document) {
+    parts.push({ key: "doc", node: <PublicTermTextV134 text={source.document} /> });
   }
+  if (source.citation) parts.push({ key: "citation", node: <PublicTermTextV134 text={source.citation} /> });
   if (source.pageUrl) {
     parts.push({
       key: "page",
@@ -87,7 +93,7 @@ function WideRecordCardV162({ record }: { record: WideRecordV162 }) {
                 <dd>
                   {value.href ? (
                     <a href={value.href} target="_blank" rel="noopener noreferrer">
-                      {value.value}
+                      {/\.pdf(?:$|[?#])/iu.test(value.href) ? sourceLinkTextV162(value.href) : value.value}
                     </a>
                   ) : (
                     <PublicTermTextV134 text={value.value} />

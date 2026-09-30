@@ -271,13 +271,22 @@ function regionYearCompositeV137(
   entity: VietnamEntityV124
 ): FactualTitleV131 | null {
   const attributes = entity.normalizedAttributes || {};
-  const region =
+  // V162: common column names first (지역명_현지어, 개편_후_소속_단위), then
+  // the pre-V162 Viet Nam names. A row of the post-2025 34-unit system says so,
+  // so it never reads as the pre-2025 province of the same name.
+  const regionName =
     titleTextV131(attributes["지역명_로마자"]) ||
+    titleTextV131(attributes["지역명_현지어"]) ||
     titleTextV131(attributes["지역명_베트남어"]) ||
+    titleTextV131(attributes["개편_후_소속_단위"]) ||
     titleTextV131(attributes["2025_개편_후_소속_34개_체계"]) ||
     // B-008's rows are tide-gauge stations, not provinces.
     titleTextV131(attributes["관측소명_PSMSL"]) ||
     titleTextV131(attributes["관측소명"]);
+  const region =
+    regionName && /개편 후|체계/u.test(titleTextV131(attributes["행정단위"]) || "")
+      ? `${regionName}(2025년 개편 후)`
+      : regionName;
   // Several deliveries carry a national series alongside the province rows and
   // name what each row measures in its own column. Without it B-029 listed six
   // different forest and mangrove areas for 2001 as six cards reading
@@ -449,6 +458,7 @@ function factualCompositeV131(
       // The delivery's unit is a HydroBASINS level-6 basin crossed with a
       // province, and it says both in columns of its own.
       const region =
+        normalizedFieldV131(entity, "개편_후_소속_단위") ||
         normalizedFieldV131(entity, "2025_개편_후_소속_34개_체계") ||
         normalizedFieldV131(entity, "지역명_로마자");
       const basin = normalizedFieldV131(entity, "HydroBASINS_lvl6_코드_pfaf_id");

@@ -24,6 +24,7 @@ import {
   policyKindForVariableV151,
   type BoundaryPolicyKindV151,
 } from "../data/map/boundaryPolicyV151";
+import { source34ValuesForSelectorV162 } from "../data/geo/regionSystemV162";
 import {
   ADM1_34_GEOMETRY_PATH_V151,
   ADM1_34_UNITS_V151,
@@ -3651,7 +3652,14 @@ export default function RealMapExplorerPage({
   // V151-2: the rule the focused layer follows under the current outline.
   const focusedBoundaryPolicyKindV151: BoundaryPolicyKindV151 | null =
     focusedLayer && focusedSelector
-      ? policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
+      ? boundarySystemV151State === "post-2025-34" &&
+        source34ValuesForSelectorV162(
+          spatialByElement[focusedLayer.elementId]?.data,
+          focusedSelector.variable,
+          focusedSelector.period
+        ).length
+        ? "native-34"
+        : policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
       : null;
   const focusedVariablePresentationV129 =
     focusedLayer && focusedSelector
@@ -4353,19 +4361,40 @@ export default function RealMapExplorerPage({
     const trendKind = policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector.variable);
     let sourceRows: VietnamSpatialLayerAssetV124["values"] = data.values;
     if (selectedSpatial.unitCode) {
-      if (!isAggregatingKindV151(trendKind)) return null;
+      // V162: a period the source states for this 34-unit itself is taken as
+      // printed; the aggregation fills only the periods it does not state.
+      const stated34 = (data.values34 || []).filter(
+        (row) => row.unitCode === selectedSpatial.unitCode && variableKeys.includes(row.variable)
+      );
+      if (!isAggregatingKindV151(trendKind) && !stated34.length) return null;
       const areas = areaKm2ByAdm1CodeV151(adm1Geometry34V151) || undefined;
-      if (trendKind === "area-weighted-mean" && !areas) return null;
+      if (trendKind === "area-weighted-mean" && !areas && !stated34.length) return null;
+      const statedKeys = new Set(stated34.map((row) => `${row.variable}|${row.period}`));
+      sourceRows = stated34.map((row) => ({
+        adm1Code: selectedSpatial.adm1Code || row.unitCode,
+        adm1Name: row.unitName,
+        variable: row.variable,
+        variableLabel: row.variableLabel,
+        period: row.period,
+        value: row.value,
+        unit: row.unit,
+        sourceIndicatorId: row.sourceIndicatorId,
+        sourceRecordId: row.sourceRecordId,
+        sourceSpatialUnit: "admin1",
+        imputed: false,
+      }));
+      const canAggregateTrend =
+        isAggregatingKindV151(trendKind) && (trendKind !== "area-weighted-mean" || Boolean(areas));
       const memberSet = new Set(selectedSpatial.memberAdm1Codes || []);
       const buckets = new Map<string, VietnamSpatialLayerAssetV124["values"]>();
-      for (const row of data.values) {
+      for (const row of canAggregateTrend ? data.values : []) {
         if (!memberSet.has(row.adm1Code) || !variableKeys.includes(row.variable)) continue;
         const key = `${row.variable}|${row.period}`;
+        if (statedKeys.has(key)) continue;
         const list = buckets.get(key) || [];
         list.push(row);
         buckets.set(key, list);
       }
-      sourceRows = [];
       for (const rows of buckets.values()) {
         const aggregated = aggregateTo34V151(rows, trendKind, { areaKm2ByAdm1Code: areas }).find(
           (row) => row.unitCode === selectedSpatial.unitCode
