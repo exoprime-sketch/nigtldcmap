@@ -922,6 +922,8 @@ export function publicNoticeWordingV136_1(value: unknown): string | null {
 const SOURCE_SENTENCE_BOUNDARY_V161 = /(?<=[.。])\s+/u;
 
 /** One part of a source line, or null when the part is a note. */
+const SOURCE_FILE_NAME_BRACKET_V162 = /\s*\((?:[^()]*\s)?[\w.-]+\.(?:pdf|xlsx?|csv|docx?|hwpx?|pptx?|zip|json|txt)\)/giu;
+
 function publicSourcePartV161(part: string): string | null {
   // A licence line can carry a working note as one of its sentences ("…출처표시
   // 조건. 다운로드 제공 대상은 … 용역사가 재편집한 표준서식 자료임."): only that
@@ -931,7 +933,10 @@ function publicSourcePartV161(part: string): string | null {
     const kept = sentences.filter((sentence) => !SOURCE_WORKING_NOTE_V161.test(sentence));
     return kept.length === 0 ? null : publicSourcePartV161(kept.join(" "));
   }
-  let text = part;
+  // V162: a file name in brackets after the cited source ("U.S. EIA
+  // International Energy Statistics (Bulk File INTL.txt)") is the file the
+  // team downloaded, not the source - the source stays, the file goes.
+  let text = part.replace(SOURCE_FILE_NAME_BRACKET_V162, "");
   for (const pattern of SOURCE_NOTE_PATTERNS_V136_1) {
     text = text.replace(pattern, "");
   }
