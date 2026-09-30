@@ -1,7 +1,7 @@
 {
   "schemaVersion": "map-companions-v157",
   "countryIso3": "VNM",
-  "generatedAt": "2026-09-30T04:00:54.157Z",
+  "generatedAt": "2026-09-30T05:26:21.263Z",
   "generator": "scripts/v157/build-map-companions-v157.mjs",
   "source": "public/data/vietnam/v2/map-content-contract-v157.json (companionLayers)",
   "note": "지도에 올릴 수 없는 요소를 연관 레이어와 함께 보여 주기 위한 계약입니다. 카드 값은 공개 다운로드에서 읽은 값이며 화면에 숫자를 직접 적지 않습니다.",
@@ -18,8 +18,15 @@
           "status": "reference-mapping-pending",
           "statusReason": "원자료가 전력회사 그룹 전체의 값이어서 성·시별로 나눌 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "MAIFI",
+            "value": 0.95,
+            "unit": "회/고객",
+            "period": "2026",
+            "indicatorId": "A-022_maifi_evnhanoi",
+            "source": "Vietnam Electricity (EVN)",
+            "sourceUrl": "https://en.evn.com.vn/c3/documents/Annual-Report-9-15.aspx",
+            "otherIndicatorCount": 8,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=A-022#element-detail",
           "recordCount": 0,
@@ -39,8 +46,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "열대기후(A군) 국토 점유 비율",
+            "value": 74.02,
+            "unit": "%",
+            "period": "2099",
+            "indicatorId": "B-002_koppen_tropical_share_2071_2099_ssp2_4_5",
+            "source": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
+            "sourceUrl": "https://www.gloh2o.org/koppen/",
+            "otherIndicatorCount": 1,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-002#element-detail",
           "recordCount": 0,
@@ -61,8 +75,15 @@
           "status": "region-text-generic",
           "statusReason": "원문의 지역 표현(해안·삼각주 등)이 공식 경계와 대응되지 않습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "NDC-SDG 연계 건수",
+            "value": 365,
+            "unit": "건",
+            "period": "2016",
+            "indicatorId": "A-013_ndc_sdg_linkage_count",
+            "source": "World Resources Institute — Climate Watch",
+            "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg",
+            "otherIndicatorCount": 0,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=A-013#element-detail",
           "recordCount": 365,
@@ -83,8 +104,15 @@
           "status": "region-text-generic",
           "statusReason": "원문의 지역 표현(해안·삼각주 등)이 공식 경계와 대응되지 않습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "NDC-SDG 연계 건수",
+            "value": 365,
+            "unit": "건",
+            "period": "2016",
+            "indicatorId": "A-013_ndc_sdg_linkage_count",
+            "source": "World Resources Institute — Climate Watch",
+            "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg",
+            "otherIndicatorCount": 0,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=A-013#element-detail",
           "recordCount": 365,
@@ -104,8 +132,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "농업 용수 취수 비중",
+            "value": 94.7824,
+            "unit": "%",
+            "period": "2023",
+            "indicatorId": "B-024_agri_water_share",
+            "source": "FAO AQUASTAT",
+            "sourceUrl": "https://data.apps.fao.org/aquastat/?lang=en&country=VNM",
+            "otherIndicatorCount": 5,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-024#element-detail",
           "recordCount": 0,
@@ -125,8 +160,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "산림 탄소저장량(FAO)",
+            "value": 777.07,
+            "unit": "백만 톤 C",
+            "period": "2025",
+            "indicatorId": "B-035_lu_forest_carbon_stock",
+            "source": "FAOSTAT Land Use (RL)",
+            "sourceUrl": "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip",
+            "otherIndicatorCount": 6,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-035#element-detail",
           "recordCount": 0,
@@ -141,8 +183,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "토지이용 변화율",
+            "value": 1.789,
+            "unit": "%/yr",
+            "period": "2024",
+            "indicatorId": "B-036_cagr_lu_agricultural_land",
+            "source": "FAO FAOSTAT Land Use (RL)",
+            "sourceUrl": "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip",
+            "otherIndicatorCount": 22,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-036#element-detail",
           "recordCount": 0,
@@ -180,8 +229,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "확인 매장량",
+            "value": 3500000,
+            "unit": "t REO",
+            "period": "2026",
+            "indicatorId": "B-046_reserves_0",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "sourceUrl": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+            "otherIndicatorCount": 7,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-046#element-detail",
           "recordCount": 0,
@@ -197,8 +253,15 @@
           "status": "national-only",
           "statusReason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다.",
           "headline": {
-            "value": null,
-            "reason": "원자료에 수치 값이 없습니다(문서·목록형 자료)"
+            "indicatorLabel": "광산 생산량",
+            "value": 3000,
+            "unit": "t (W 함량)",
+            "period": "2025",
+            "indicatorId": "B-047_production_0",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "sourceUrl": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+            "otherIndicatorCount": 8,
+            "reason": null
           },
           "detailUrl": "/?view=data&country=VNM&element=B-047#element-detail",
           "recordCount": 0,

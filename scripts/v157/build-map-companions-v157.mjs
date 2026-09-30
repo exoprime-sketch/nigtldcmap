@@ -17,6 +17,7 @@
  * Usage: node scripts/v157/build-map-companions-v157.mjs [--check]
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { gunzipSync } from "node:zlib";
 import { resolve } from "node:path";
 
 import {
@@ -63,11 +64,30 @@ function indicatorLabelsFor(elementId) {
   );
 }
 
-/** The download's observations, or an empty list when the element has none. */
+/** The element bundle the screens read (packs/, gzip+base64 envelope). */
+const bundleIndexV157 = readJson(resolve(DATA, "packs/bundle-index-v124.json"));
+const bundleCacheV157 = new Map();
+
+function elementBundleV157(elementId) {
+  if (bundleCacheV157.has(elementId)) return bundleCacheV157.get(elementId);
+  const entry = bundleIndexV157.elements?.[elementId];
+  if (!entry) {
+    throw new Error(
+      `COMPANION_BUNDLE_MISSING: ${elementId} — packs/bundle-index-v124.json에 항목이 없습니다`
+    );
+  }
+  const envelope = readJson(resolve(ROOT, "public", entry.packUrl.slice(1)));
+  const payload = JSON.parse(
+    gunzipSync(Buffer.from(envelope.payloadChunks.join(""), "base64")).toString("utf8")
+  );
+  const bundle = payload.elements?.[elementId] ?? null;
+  bundleCacheV157.set(elementId, bundle);
+  return bundle;
+}
+
+/** The element's observation rows, as the screens receive them. */
 function observationsFor(elementId) {
-  const path = resolve(DATA, `downloads/${elementId}.json`);
-  if (!existsSync(path)) return [];
-  return readJson(path).observations ?? [];
+  return elementBundleV157(elementId)?.observations?.records ?? [];
 }
 
 /**
