@@ -8,7 +8,7 @@
 
 - 요소별 다운로드를 `downloads/<id>.zip` 하나로 배포한다(안에 `<id>.json`·`<id>.csv`, 결정적 ZIP). 베트남 147개·방글라데시 85개. 배포 1회 948.7 MB → 164.4 MB, 파일 867 → 635개. 기존 주소 `<id>.json·csv`는 404(사용자 결정 2026-09-30).
 - 카탈로그 `downloadAssets`: ZIP 1개와 안쪽 파일 목록·크기·해시(`entries`). 레코드 변화 0(원자료 값 비교 152요소 변화 0).
-- 감사·QA·테스트·도구가 ZIP 안 파일을 읽는다. 기대값 변경 10건(`reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`).
+- 감사·QA·테스트·도구가 ZIP 안 파일을 읽는다. 기대값 변경 12건(`reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`).
 - 데이터 디렉터리 갱신일은 포장 전환 커밋을 제외한다(갱신일 변화 0).
 
 ### Fixed

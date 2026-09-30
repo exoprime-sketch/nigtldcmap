@@ -26,10 +26,10 @@
 
 ### 읽는 쪽
 - `scripts/v158/download-zip-v158.mjs`(스크립트), `src/data/testing/downloadZipV158.ts`(테스트), BGD 검증기 내장 읽기 함수: Node 내장 zlib만 쓴다.
-- 게이트 감사: 탐색(v125)·찾기(v125)·배포(v128)·지도 툴팁(v132)·analysis QA·role-split QA. 수동 도구: 배달 목록 검사(ZIP 안 파일 대조 추가)·왕복 검증·원자료 값 비교·v138/v144/v148/v153 도구.
+- 게이트(`finalize:v151`) 감사: 생성 데이터(v133)·지도 툴팁(v132)·analysis QA·role-split QA. CI 감사: 배포·보안(v128, 보안은 카탈로그에 등록된 다운로드 ZIP만 원자료 판정에서 제외). 게이트 밖: 탐색·찾기(v125). 수동 도구: 배달 목록 검사(ZIP 안 파일 대조 추가)·왕복 검증·원자료 값 비교·v138/v144/v148/v153 도구.
 - 로컬 정적 서버(`scripts/v125/browser-runtime.mjs`)에 `.zip` → `application/zip`.
 - 카탈로그 타입 `VietnamDownloadAssetV124`에 `entries`(선택) 추가. 화면 코드는 바뀌지 않았다.
-- 기대값 변경 10건: `reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`
+- 기대값 변경 12건: `reports/v158/EXPECTATION_CHANGES_V158-ZIP.md`
 
 ## 검증
 | 항목 | 결과 |
@@ -40,10 +40,27 @@
 | ZIP 안 파일 대조(147개) | CSV 147 바이트 동일, JSON 147 `downloadAssets` 외 동일 |
 | 배달 목록 검사(베트남·방글라데시) | PASS(ZIP 안 파일 크기·해시 = 카탈로그) |
 | 왕복 검증(다운로드 = 팩 레코드) | PASS |
-| 방글라데시 검증기 | SIGNATURE_BGD |
-| 화면 서명(#46 빌드 vs 이 PR 빌드) | SIGNATURE_RESULT |
-| `finalize:v151` | FINALIZE_RESULT |
+| 방글라데시 검증기 | 52/52(커밋 뒤, 기준 트리 불변 포함) |
+| 화면 서명(#46 빌드 vs 이 PR 빌드) | 151화면(홈·찾기·지도·다운로드·이용안내·상세 146) 차이 0 |
+| CI 감사(로컬) | 보안 13/13 · 배포 9/9 · 성능은 CI에서도 참고용(초기 번들 회귀는 이번 PR과 무관, 아래) |
+| `finalize:v151` | 통과(2회째) — release 80/80 · role-split 53/53 · analysis QA 필수 실패 35(기준선 41 이내, 새 실패 0) · boundary-34 21/22(브라우저 1건 생략) · boundary-policy 24/24. 1회째는 생성 데이터 감사의 `DOWNLOAD_ROW_RECONCILIATION`이 ZIP을 세지 않아(0건) 실패 → 감사 수정 후 재실행 |
 | 배포 용량 | 948.7 → 164.4 MB(`reports/v158/download-zip-size-v158.md`). 기준 빌드는 #46 head 빌드(main `5b82ea6`과 앱·데이터 동일, #44는 문서만) |
+
+## 성능 감사 초기 번들 — main 비교(사용자 요청)
+`audit:performance:v128` `INITIAL_BUNDLE_REGRESSION`: 진입 파일(JS·CSS) gzip 합계를 기준값과 비교(허용 10% 이내). 두 빌드는 같은 명령(`npm run build`)으로 각 체크아웃에서 만들고 같은 감사 스크립트로 쟀다.
+
+| 빌드 | 커밋 | JS gzip | CSS gzip | 합계 | 기준 대비 |
+|---|---|---|---|---|---|
+| 기준 | d66b83e (2026-08-31, V128-A) | 200,287 | 26,356 | 226,643 | — |
+| main | origin/main 5b82ea6 | 472,931 | 41,735 | 514,666 | +127.08% |
+| 이 PR | feat/v158-download-zip f23d0e6 | 472,904 | 41,735 | 514,639 | +127.07% |
+
+- 이 PR − main: -27 바이트(gzip). CSS는 같고, JS는 원본 크기가 같다(2,295,162바이트). gzip 차이는 앱에 들어가는 데이터 디렉터리 사본(`src/data/datasetDirectoryV149.json`)의 지문 값이 바뀐 것뿐이다.
+- **+127%는 main에도 있는 기존 상태다.** 이 감사는 CI에서도 참고용(`continue-on-error`)이다.
+- main 체크아웃에서만 `DEPLOYMENT_SOURCE_MAP_POLICY`가 실패한 것은 새 체크아웃에 배포 감사 산출물이 없어서(`artifactCount: null`)이고, 코드 차이가 아니다(이 PR 트리에서는 PASS).
+
+## 게이트 밖 감사
+- 탐색·찾기(v125)·다운로드 공개(v126)·성능(v128)의 남은 실패는 이번 변경과 무관하다(`reports/v158/EXPECTATION_CHANGES_V158-ZIP.md` 해당 절). 다운로드 관련 검사(탐색 `BROKEN_DOWNLOAD_LINK` 147건 등)는 통과한다.
 
 ## 미완료와 사유
 - Hobby 비상업 조건: 사용자 판단 대기(결정안 7절 3, 보류).
