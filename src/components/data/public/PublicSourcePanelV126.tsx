@@ -117,12 +117,16 @@ export default function PublicSourcePanelV126({
     populatedYears.length > 0
       ? populatedYears
       : uniquePublicValuesV126(indicators.map((item) => item.referenceYear));
+  // V161: "해당없음" is the delivery's way of saying there is no unit - left
+  // out like any unstated value, not printed as a unit.
   const units = uniquePublicValuesV126([
     ...indicators.map((item) => item.unit),
     ...observations.map((item) => item.unit),
-  ]);
+  ]).filter((unit) => !/^해당\s*없음$/u.test(unit));
   const licenses = uniquePublicValuesV126([
-    ...indicators.map((item) => item.licenseCode),
+    // V161: a licence line can end with a working note ("다운로드 제공 대상은 …
+    // 용역사가 재편집한 표준서식 자료임.") - judged like every source display.
+    ...indicators.map((item) => publicSourceOrganizationV136_1(item.licenseCode)),
     // Attribution lines carry the same per-row sheet note as the organisation
     // names - "Source: 각 기관 공식 웹사이트 및 공개 보도 (레코드별 상이)".
     ...indicators.map((item) => publicSourceOrganizationV136_1(item.attributionText)),
@@ -135,13 +139,18 @@ export default function PublicSourcePanelV126({
   // carry the compiler's notes.
   const unitText = units.length > 3 ? `${units.slice(0, 3).join(" · ")} 외 ${units.length - 3}종` : units.join(" · ");
   const pendingProvider = publicTextV126(pendingSourceLabel) || "";
-  const sourceLine = pending
-    ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`].filter(Boolean).join(" · ")
-    : [
-        `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
-        `자료기간 ${summarizeYearsV126(years)}`,
-        `단위 ${unitText || "미기재"}`,
-      ].join(" · ");
+  // V161: a period or unit the data does not state is left out of the line
+  // and the panel, never filled with a placeholder ("자료기간 미기재").
+  const period = pending ? "" : summarizeYearsV126(years);
+  const sourceLine = (
+    pending
+      ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`]
+      : [
+          `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
+          period && `자료기간 ${period}`,
+          unitText && `단위 ${unitText}`,
+        ]
+  ).filter(Boolean).join(" · ");
   return (
     <div className="pav126-source-frame-v153" data-testid="detail-source-frame-v153">
     {sourceLine ? (
@@ -180,17 +189,17 @@ export default function PublicSourcePanelV126({
             </dd>
           </div>
         )}
-        {pending ? null : (
+        {period && (
           <div>
             <dt>자료기간</dt>
-            <dd>{summarizeYearsV126(years)}</dd>
+            <dd>{period}</dd>
           </div>
         )}
-        {pending && units.length === 0 ? null : (
+        {units.length > 0 && (
           <div>
             <dt>단위</dt>
             <dd>
-              <PublicTermTextV134 text={units.join(" · ") || "미기재"} />
+              <PublicTermTextV134 text={units.join(" · ")} />
             </dd>
           </div>
         )}
@@ -293,7 +302,7 @@ function summarizeYearsV126(values: string[]): string {
     .map(Number)
     .filter(Number.isFinite)
     .sort((left, right) => left - right);
-  if (years.length === 0) return values.slice(0, 8).join(" · ") || "미기재";
+  if (years.length === 0) return values.slice(0, 8).join(" · ");
   const first = years[0];
   const last = years[years.length - 1];
   return first === last ? String(first) : `${first}~${last}`;

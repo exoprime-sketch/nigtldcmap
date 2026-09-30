@@ -220,6 +220,7 @@
     "finalize:v151": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser && npm run audit:boundary-policy:v151-2",
     "build:adm1-34:v151": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "audit:boundary-policy:v151-2": "node scripts/v151-2/audit-boundary-policy-v151-2.mjs",
+    "audit:source-notes:v161": "node scripts/v161/audit-source-notes-v161.mjs",
     "build:geometry:v151-2": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && python3 tools/vietnam_spatial/build_region_6_v151_2.py && python3 tools/vietnam_spatial/build_country_outline_v151_2.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "repack:packs:v151-2": "python -m tools.etl.repack_packs_v151_2 --data public/data/vietnam/v2 && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "qa:viewport:v151-2": "node scripts/v151-2/viewport-preserve-v151-2.mjs",

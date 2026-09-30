@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
-import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { publicTextV126, publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicEntityCardGridV131 from "./PublicEntityCardGridV131";
 import {
   publicPortfolioFacetV132,
@@ -168,7 +168,8 @@ export default function PublicPortfolioListV132({
           >
             <option value="all">전체</option>
             {categories.map((option) => (
-              <option key={option} value={option}>{option}</option>
+              // V161: the value stays the delivery's; the label reads 미기재.
+              <option key={option} value={option}>{publicUnstatedWordingV161(option)}</option>
             ))}
           </select>
         </label>

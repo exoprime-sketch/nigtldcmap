@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicPortfolioSummaryV132, { publicPortfolioFacetV132, publicPortfolioRecordLabelV138 } from "./PublicPortfolioSummaryV132";
 import PublicPortfolioListV132, { publicPortfolioCategoryLabelV140 } from "./PublicPortfolioListV132";
 import "./public-analysis-workspace-v143.css";
@@ -42,7 +43,7 @@ export default function PublicPortfolioWorkspaceV143(props: Props) {
     <div className="paw143-filters" role="search" aria-label={`${noun} 분석 조건`}>
       <label><span>검색어</span><input type="search" placeholder="제목·기관·분야 검색" value={selection.query} onChange={(event) => update("query", event.target.value)} /></label>
       {model.years.length > 0 && <label><span>연도</span><select value={selection.year} onChange={(event) => update("year", event.target.value)}><option value="all">전체 기간</option>{model.years.map((year) => <option key={year} value={year}>{year}년</option>)}</select></label>}
-      {model.categories.length > 0 && <label><span>{publicPortfolioCategoryLabelV140(props.elementId)}</span><select value={selection.category} onChange={(event) => update("category", event.target.value)}><option value="all">전체</option>{model.categories.map((category) => <option key={category} value={category}>{category}</option>)}</select></label>}
+      {model.categories.length > 0 && <label><span>{publicPortfolioCategoryLabelV140(props.elementId)}</span><select value={selection.category} onChange={(event) => update("category", event.target.value)}><option value="all">전체</option>{model.categories.map((category) => <option key={category} value={category}>{publicUnstatedWordingV161(category)}</option>)}</select></label>}
       <button type="button" onClick={() => setSelection(EMPTY_PORTFOLIO_SELECTION_V143)} disabled={!active}>선택 초기화</button>
     </div>
     <p className="paw143-selection" role="status" data-testid="portfolio-selection-count-v143">{active ? "선택한 조건" : "전체 자료"} · {noun} {model.filtered.length.toLocaleString("ko-KR")}건 / 전체 {model.total.toLocaleString("ko-KR")}건<span>아래 현황·차트·목록에 같은 조건이 적용됩니다.</span></p>
