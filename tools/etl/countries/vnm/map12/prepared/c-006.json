@@ -1,0 +1,739 @@
+{
+ "schema": "map12-prepared-v157-2",
+ "elementId": "C-006",
+ "mapForm": "count-choropleth-with-list",
+ "mapFormNote": "성·시별 JCM 등록 사업 건수 + 지역 패널 사업 목록(사업명·참여기업·기간·등록부 URL). 여러 성 사업은 각 성에 1건(금액·감축량 합산 없음)",
+ "method": "JCM 공식 등록부(jcm.go.jp) 사업별 'Location of project'에서 성·시 확인. 본사 소재지만 적힌 사업은 '지역 미확인' 목록",
+ "source": {
+  "kind": "jcm-registry",
+  "registryUrl": "https://www.jcm.go.jp/jc/vn-projects",
+  "csvUrl": "https://www.jcm.go.jp/jc/wp-content/uploads/sites/3/JCM_Projects_data.csv",
+  "retrievedAt": "2026-09-30T00:00:00Z",
+  "delivered0922": "C-006 1.2_entity '[사업] 소재지'(VN001–VN020) — 불일치 6건은 등록부 우선",
+  "crosswalk": "tools/etl/countries/vnm/map12/jcm-projects.json"
+ },
+ "coverage": {
+  "projects": 20,
+  "counted": 18,
+  "adm1_63": 27,
+  "adm1_34": 15,
+  "locationUnconfirmed": [
+   "VN008",
+   "VN013"
+  ]
+ },
+ "projects": [
+  {
+   "id": "VN001",
+   "title": "Eco-Driving by Utilizing Digital Tachograph System",
+   "provinces63": [
+    "VN-HN",
+    "VN-57"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn001/",
+   "locationText": "[Hanoi Operations] Hanoi (site: Quang Minh IP, Me Linh); [Ho Chi Minh City Operations] Binh Duong Province (site: Song Than II Industrial Zone, Di An District)",
+   "reviewNote": null
+  },
+  {
+   "id": "VN002",
+   "title": "Promotion of green hospitals by improving efficiency / environment in national hospitals in Vietnam",
+   "provinces63": [
+    "VN-SG",
+    "VN-HN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn002/",
+   "locationText": "Province/state field = N/A; site address names [Location 1] Ho Chi Minh City / Ward 12, District 10 (People's Hospital 115) and [Location 2] Hanoi / Hoan Kiem District (Viet Duc Hospital)",
+   "reviewNote": null
+  },
+  {
+   "id": "VN003",
+   "title": "Low carbon hotel project in Vietnam: Improving the energy efficiency of commercial buildings by utilization of high efficiency equipment",
+   "provinces63": [
+    "VN-HN",
+    "VN-SG"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn003/",
+   "locationText": "Province/state field = N/A; site address names [Location1] Hotel Nikko Hanoi, 84 Tran Nhan Tong Street, Hanoi and [Location2] Renaissance Riverside Hotel Saigon, 8-15 Ton Duc Thang Street, District 1, Ho Chi Minh City",
+   "reviewNote": null
+  },
+  {
+   "id": "VN004",
+   "title": "Introduction of amorphous high efficiency transformers in power distribution systems in the southern part of Viet Nam",
+   "provinces63": [
+    "VN-44",
+    "VN-43",
+    "VN-55",
+    "VN-50",
+    "VN-57",
+    "VN-58",
+    "VN-40",
+    "VN-59",
+    "VN-CT",
+    "VN-45",
+    "VN-73",
+    "VN-47",
+    "VN-41",
+    "VN-36",
+    "VN-52",
+    "VN-37",
+    "VN-46",
+    "VN-51",
+    "VN-49"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn004/",
+   "locationText": "(1)An Giang Province; (2)Ba Ria-Vung Tau Province; (3)Bac Lieu Province; (4)Ben Tre Province; (5)Binh Duong Province; (6)Binh Phuoc Province; (7)Binh Thuan Province; (8)Ca Mau Province; (9)Can Tho City; (10)Dong Thap Province; (11)Hau Giang Province; (12)Kien Giang Province; (13)Long An Province; (14)Ninh Thuan Province; (15)Soc Trang Province; (16)Tay Ninh Province; (17)Tien Giang Province; (18)Tra Vinh Province; (19)Vinh Long Province -- EVN Southern Power Corporation (EVNSPC) service area",
+   "reviewNote": null
+  },
+  {
+   "id": "VN005",
+   "title": "Introduction of High Efficiency Air-conditioning in Hotel",
+   "provinces63": [
+    "VN-HN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn005/",
+   "locationText": "Province/state field = N/A; site address: Hanoi City",
+   "reviewNote": null
+  },
+  {
+   "id": "VN006",
+   "title": "Energy saving and work efficiency improvement by introducing a new chip-on-board LED system in Vietnam",
+   "provinces63": [
+    "VN-25"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn006/",
+   "locationText": "Quang Tri Province; site address: Dong Ha",
+   "reviewNote": null
+  },
+  {
+   "id": "VN007",
+   "title": "Introduction of Solar PV System at shopping mall in Ho Chi Minh",
+   "provinces63": [
+    "VN-SG"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn007/",
+   "locationText": "Site-address line: Lot PT1, Hi-tech Healthcare Park, 532A Kinh Duong Vuong, Binh Tri Dong B ward, Binh Tan District; city line (given after the address in this row): Ho Chi Minh City",
+   "reviewNote": null
+  },
+  {
+   "id": "VN008",
+   "title": "Introduction of Amorphous High Efficiency Transformers in Southern and Central Power Grids",
+   "provinces63": [
+    "VN-44",
+    "VN-43",
+    "VN-55",
+    "VN-50",
+    "VN-57",
+    "VN-58",
+    "VN-40",
+    "VN-59",
+    "VN-CT",
+    "VN-45",
+    "VN-73",
+    "VN-47",
+    "VN-35",
+    "VN-41",
+    "VN-36",
+    "VN-52",
+    "VN-37",
+    "VN-46",
+    "VN-51",
+    "VN-49",
+    "VN-SG",
+    "VN-31",
+    "VN-33",
+    "VN-72",
+    "VN-30",
+    "VN-28",
+    "VN-32",
+    "VN-24",
+    "VN-27",
+    "VN-29",
+    "VN-25",
+    "VN-26",
+    "VN-DN"
+   ],
+   "status": "location-unconfirmed",
+   "mapUse": "list-only",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn008/",
+   "locationText": "\"Province/City etc. corresponding to the location of headquarters of each regional power corporations and district power companies involved\": 1.An Giang; 2.Ba Ria Vung Tau; 3.Bac Lieu; 4.Ben Tre; 5.Binh Duong; 6.Binh Phuoc; 7.Binh Thuan; 8.Ca Mau; 9.Can Tho City; 10.Dong Thap; 11.Hau Giang; 12.Kien Giang; 13.Lam Dong; 14.Long An; 15.Ninh Thuan; 16.Soc Trang; 17.Tay Ninh; 18.Tien Giang; 19.Tra Vinh; 20.Vinh Long; 21.Ho Chi Minh City; 22.Binh Dinh; 23.Dak Lak; 24.Dak Nong; 25.Gia Lai; 26.Kon Tum; 27.Phu Yen; 28.Quang Binh; 29.Quang Nam; 30.Quang Ngai; 31.Quang Tri; 32.Thua Thien Hue; 33.Ho Chi Minh City; 34.Da Nang City. NOTE: this list is headquarters locations of the partner power corporations/district companies, not a confirmed as-built map of transformer installation sites.",
+   "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)"
+  },
+  {
+   "id": "VN009",
+   "title": "Introduction of Energy-Efficient Air Conditioners in RICOH IMAGING PRODUCTS (Vietnam) CO., LTD",
+   "provinces63": [
+    "VN-HN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn009/",
+   "locationText": "Hanoi; site address: Plot A7, Sai Dong B Industrial Zone, Long Bien District",
+   "reviewNote": null
+  },
+  {
+   "id": "VN010",
+   "title": "Installation of Container Formation Facility at Lead Acid Battery Factory of Hitachi Chemical Energy Technology (Vietnam) Co., Ltd.",
+   "provinces63": [
+    "VN-39"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn010/",
+   "locationText": "Dong Nai Province; site address: Nhon Trach 3 IP, Second Phase, Nhon Trach District",
+   "reviewNote": null
+  },
+  {
+   "id": "VN011",
+   "title": "Installation of Energy Saving Equipment in Lens Factory",
+   "provinces63": [
+    "VN-57"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn011/",
+   "locationText": "Binh Duong Province; site address: 20 VSIP 2 Street 4, Viet Nam Singapore Industrial Park 2, Hoa Phu Ward, Thu Dau Mot City",
+   "reviewNote": null
+  },
+  {
+   "id": "VN012",
+   "title": "Introduction of High Efficiency Water Pumps in Da Nang City",
+   "provinces63": [
+    "VN-DN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn012/",
+   "locationText": "Province/state field = N/A; site address: Da Nang city, Cam Le district, West Hoa ward",
+   "reviewNote": null
+  },
+  {
+   "id": "VN013",
+   "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids",
+   "provinces63": [
+    "VN-SG",
+    "VN-HN",
+    "VN-34",
+    "VN-39"
+   ],
+   "status": "location-unconfirmed",
+   "mapUse": "list-only",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn013/",
+   "locationText": "\"Province/state/province etc. corresponding to the location of headquarters of four partner companies\": 1. EVN Southern Power Corporation (EVNSPC) - Ho Chi Minh City; 2. EVN Hanoi (EVNHN) - Hanoi; 3. Khanh Hoa Power Joint Stock Company (KHPC) - Khanh Hoa Province; 4. Dong Nai Power Company (Dong Nai PC) - Dong Nai Province. NOTE: headquarters locations of the four partner companies, not a confirmed as-built map of transformer installation sites.",
+   "reviewNote": "등록부 'Location of project'가 참여 전력회사 본사 소재지로 명시 — 설치 지역 아님 → 지도 집계에서 제외, '지역 미확인' 목록(2026-09-30 검토)"
+  },
+  {
+   "id": "VN014",
+   "title": "Introduction of high-efficient wire stranding machines to the factory of YAZAKI EDS VIETNAM Co., LTD.",
+   "provinces63": [
+    "VN-SG"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn014/",
+   "locationText": "Province/state field = N/A; site address: Lot C3-2, Block C3, Tan Phu Trung I.P, Tan Phu Trung Commune, Cu Chi District, Ho Chi Minh City",
+   "reviewNote": null
+  },
+  {
+   "id": "VN015",
+   "title": "Energy Saving in Factories with Air-Conditioning Control System",
+   "provinces63": [
+    "VN-SG"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn015/",
+   "locationText": "Ho Chi Minh City; site addresses: Saigon High-Tech Park, District 9 (x4 sites); Tan Thuan Export Processing Zone, District 7 (x2 sites)",
+   "reviewNote": null
+  },
+  {
+   "id": "VN016",
+   "title": "Installation of High Efficiency Kiln in Sanitary Ware Manufacturing Factory",
+   "provinces63": [
+    "VN-66"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn016/",
+   "locationText": "Hung Yen Province; site address: Lot M7,M8,N3&RE8 Thang Long Industrial Park II, Phung Chi Kien Ward, My Hao Town",
+   "reviewNote": null
+  },
+  {
+   "id": "VN017",
+   "title": "106MW Solar Power Project in An Giang Province",
+   "provinces63": [
+    "VN-44"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn017/",
+   "locationText": "An Giang Province; site address: An Hao Commune, Tinh Bien District",
+   "reviewNote": null
+  },
+  {
+   "id": "VN018",
+   "title": "Introduction of Amorphous High Efficiency Transformers in Northern, Central and Southern Power Grids II",
+   "provinces63": [
+    "VN-34",
+    "VN-39",
+    "VN-HN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn018/",
+   "locationText": "1. Khanh Hoa Province (Nha Trang City); 2. Dong Nai Province (Bien Hoa City); 3. Hanoi (Hoan Kiem District)",
+   "reviewNote": null
+  },
+  {
+   "id": "VN019",
+   "title": "Introduction of 2.5MW Rooftop Solar Power System to Food Factory and Garment Factory in Vietnam",
+   "provinces63": [
+    "VN-57",
+    "VN-22"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn019/",
+   "locationText": "LOTTE VIETNAM: Binh Duong Province (Thu Dau Mot City, Phu Tho Ward); AN NAM MATSUOKA GARMENT: Nghe An Province (Hung Nguyen District, Hung Tay Commune)",
+   "reviewNote": null
+  },
+  {
+   "id": "VN020",
+   "title": "Introduction of 0.4MW Rooftop Solar Power System to Aluminum Wheel Manufacturing Factory in Hanoi, Vietnam",
+   "provinces63": [
+    "VN-HN"
+   ],
+   "status": "province",
+   "mapUse": "count",
+   "sourceUrl": "https://www.jcm.go.jp/jc/projects/vn020/",
+   "locationText": "Hanoi; site address: Dong Anh District",
+   "reviewNote": null
+  }
+ ],
+ "rows": [
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-22",
+   "name": "Nghệ An",
+   "projectCount": 1,
+   "projectIds": [
+    "VN019"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-25",
+   "name": "Quảng Trị",
+   "projectCount": 1,
+   "projectIds": [
+    "VN006"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-34",
+   "name": "Khánh Hòa",
+   "projectCount": 1,
+   "projectIds": [
+    "VN018"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-36",
+   "name": "Ninh Thuận",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-37",
+   "name": "Tây Ninh",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-39",
+   "name": "Đồng Nai",
+   "projectCount": 2,
+   "projectIds": [
+    "VN010",
+    "VN018"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-40",
+   "name": "Bình Thuận",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-41",
+   "name": "Long An",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-43",
+   "name": "Bà Rịa–Vũng Tàu",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-44",
+   "name": "An Giang",
+   "projectCount": 2,
+   "projectIds": [
+    "VN004",
+    "VN017"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-45",
+   "name": "Đồng Tháp",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-46",
+   "name": "Tiền Giang",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-47",
+   "name": "Kiên Giang",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-49",
+   "name": "Vĩnh Long",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-50",
+   "name": "Bến Tre",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-51",
+   "name": "Trà Vinh",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-52",
+   "name": "Sóc Trăng",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-55",
+   "name": "Bạc Liêu",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-57",
+   "name": "Bình Dương",
+   "projectCount": 4,
+   "projectIds": [
+    "VN001",
+    "VN004",
+    "VN011",
+    "VN019"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-58",
+   "name": "Bình Phước",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-59",
+   "name": "Cà Mau",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-66",
+   "name": "Hưng Yên",
+   "projectCount": 1,
+   "projectIds": [
+    "VN016"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-73",
+   "name": "Hậu Giang",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-CT",
+   "name": "Cần Thơ",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-DN",
+   "name": "Đà Nẵng",
+   "projectCount": 1,
+   "projectIds": [
+    "VN012"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-HN",
+   "name": "Hà Nội",
+   "projectCount": 7,
+   "projectIds": [
+    "VN001",
+    "VN002",
+    "VN003",
+    "VN005",
+    "VN009",
+    "VN018",
+    "VN020"
+   ]
+  },
+  {
+   "system": "adm1-63",
+   "adm1Code": "VN-SG",
+   "name": "Hồ Chí Minh",
+   "projectCount": 5,
+   "projectIds": [
+    "VN002",
+    "VN003",
+    "VN007",
+    "VN014",
+    "VN015"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-22",
+   "name": "Nghệ An",
+   "projectCount": 1,
+   "projectIds": [
+    "VN019"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-25",
+   "name": "Quảng Trị",
+   "projectCount": 1,
+   "projectIds": [
+    "VN006"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-34",
+   "name": "Khánh Hòa",
+   "projectCount": 2,
+   "projectIds": [
+    "VN004",
+    "VN018"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-35",
+   "name": "Lâm Đồng",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-37",
+   "name": "Tây Ninh",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-39",
+   "name": "Đồng Nai",
+   "projectCount": 3,
+   "projectIds": [
+    "VN004",
+    "VN010",
+    "VN018"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-44",
+   "name": "An Giang",
+   "projectCount": 2,
+   "projectIds": [
+    "VN004",
+    "VN017"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-45",
+   "name": "Đồng Tháp",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-49",
+   "name": "Vĩnh Long",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-59",
+   "name": "Cà Mau",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-66",
+   "name": "Hưng Yên",
+   "projectCount": 1,
+   "projectIds": [
+    "VN016"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-CT",
+   "name": "Cần Thơ",
+   "projectCount": 1,
+   "projectIds": [
+    "VN004"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-DN",
+   "name": "Đà Nẵng",
+   "projectCount": 1,
+   "projectIds": [
+    "VN012"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-HN",
+   "name": "Hà Nội",
+   "projectCount": 7,
+   "projectIds": [
+    "VN001",
+    "VN002",
+    "VN003",
+    "VN005",
+    "VN009",
+    "VN018",
+    "VN020"
+   ]
+  },
+  {
+   "system": "adm1-34",
+   "unitCode": "VN34-SG",
+   "name": "Hồ Chí Minh",
+   "projectCount": 9,
+   "projectIds": [
+    "VN001",
+    "VN002",
+    "VN003",
+    "VN004",
+    "VN007",
+    "VN011",
+    "VN014",
+    "VN015",
+    "VN019"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,717 @@
+{
+ "schema": "map12-prepared-v157-2",
+ "elementId": "B-044",
+ "mapForm": "mine-points-and-provinces",
+ "mapFormNote": "광종별 부존 상태 — 해당 광종 광산 지점·소재 성",
+ "method": "B-048 주요 광산을 광종으로 조인. 좌표가 있으면 지점(USGS MRDS 검증 좌표 또는 납품 09-22 OSM 지물 대표점=추정 좌표), 없으면 소재 성 강조. 값은 국가 전체 값으로 패널에만 표시(광산·성에 나눠 배분하지 않음)",
+ "source": {
+  "kind": "v156-public-pack",
+  "elementId": "B-044",
+  "manifestGeneratedAt": "2026-08-27T00:00:00Z",
+  "join": "B-048 (09-22 + V156)",
+  "b048Workbook": "B-048_주요 광산 위치(가용 시 좌표).xlsx",
+  "b048Sha256": "b697c8e8891ba932e143648e4a43101c220b56a55ecdb9a1b4db75526d9b42ad"
+ },
+ "coverage": {
+  "mines": 8,
+  "minePoints": 4,
+  "mineProvinces": 8,
+  "mineralsWithMines": 7,
+  "mineralsNationalOnly": [
+   "antimony",
+   "chromite",
+   "cobalt",
+   "graphite",
+   "iron",
+   "lead_zinc",
+   "lithium",
+   "manganese",
+   "phosphate",
+   "tin"
+  ]
+ },
+ "mines": [
+  {
+   "mine": "Tan Rai",
+   "mineralText": "보크사이트/알루미나",
+   "minerals": [
+    {
+     "key": "bauxite",
+     "coProduct": false
+    },
+    {
+     "key": "alumina",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-35",
+   "provinceName": "Lâm Đồng",
+   "unitCode": "VN34-35",
+   "coordinate": {
+    "lat": 11.6559222,
+    "lon": 107.796971,
+    "basis": "[추정 좌표] OpenStreetMap 산업용지 지물(way/352918414, 명칭 Nhà Máy Alumin Tân Rai)의 대표점",
+    "estimated": true,
+    "inPublishedLayer": false
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Nhan Co",
+   "mineralText": "보크사이트/알루미나",
+   "minerals": [
+    {
+     "key": "bauxite",
+     "coProduct": false
+    },
+    {
+     "key": "alumina",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-72",
+   "provinceName": "Đắk Nông",
+   "unitCode": "VN34-35",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Nui Phao",
+   "mineralText": "텅스텐(+형석·비스무트·구리)",
+   "minerals": [
+    {
+     "key": "tungsten",
+     "coProduct": false
+    },
+    {
+     "key": "fluorspar",
+     "coProduct": true
+    },
+    {
+     "key": "copper",
+     "coProduct": true
+    }
+   ],
+   "adm1Code": "VN-69",
+   "provinceName": "Thái Nguyên",
+   "unitCode": "VN34-69",
+   "coordinate": {
+    "lat": 21.64861,
+    "lon": 105.66861,
+    "basis": "[추정 좌표] OpenStreetMap 광산 지물(way/595838860, 2026-09-18 검색)과 Wikipedia 「Núi Pháo mine」 좌표(21.64861°N 105.66861°E)가 일치하여 채택. 광구 대표점이며 정밀도 약 1 km. 좌표계 EPSG:4326.",
+    "estimated": true,
+    "inPublishedLayer": false
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Dong Pao",
+   "mineralText": "희토류",
+   "minerals": [
+    {
+     "key": "rare_earths",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-01",
+   "provinceName": "Lai Châu",
+   "unitCode": "VN34-01",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Yen Phu",
+   "mineralText": "희토류",
+   "minerals": [
+    {
+     "key": "rare_earths",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-06",
+   "provinceName": "Yên Bái",
+   "unitCode": "VN34-02",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Binh Thuan",
+   "mineralText": "티타늄(ilmenite·leucoxene)",
+   "minerals": [
+    {
+     "key": "titanium",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-40",
+   "provinceName": "Bình Thuận",
+   "unitCode": "VN34-35",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Sin Quyen",
+   "mineralText": "구리",
+   "minerals": [
+    {
+     "key": "copper",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-02",
+   "provinceName": "Lào Cai",
+   "unitCode": "VN34-02",
+   "coordinate": {
+    "lat": 22.5827,
+    "lon": 104.083,
+    "basis": "USGS MRDS(Edition 20160315) 지점 좌표",
+    "estimated": false,
+    "inPublishedLayer": true
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Ban Phuc",
+   "mineralText": "니켈",
+   "minerals": [
+    {
+     "key": "nickel",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-05",
+   "provinceName": "Sơn La",
+   "unitCode": "VN34-05",
+   "coordinate": {
+    "lat": 21.19952,
+    "lon": 103.54971,
+    "basis": "USGS MRDS(Edition 20160315) 지점 좌표",
+    "estimated": false,
+    "inPublishedLayer": true
+   },
+   "representation": "point"
+  }
+ ],
+ "minerals": [
+  {
+   "mineral": "antimony",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_antimony",
+     "label": "핵심광물 부존 상태 — 안티모니",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "bauxite",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_bauxite",
+     "label": "핵심광물 부존 상태 — 보크사이트",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Tan Rai",
+     "coProduct": false
+    },
+    {
+     "mine": "Nhan Co",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "chromite",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_g05",
+     "label": "원광 수출규제 대상 광종 — 크로마이트",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_g12",
+     "label": "핵심광물 부존 상태 — 크로마이트",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "cobalt",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_cobalt",
+     "label": "핵심광물 부존 상태 — 코발트",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "copper",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_copper",
+     "label": "핵심광물 부존 상태 — 구리",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Nui Phao",
+     "coProduct": true
+    },
+    {
+     "mine": "Sin Quyen",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "fluorspar",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_fluorspar",
+     "label": "핵심광물 부존 상태 — 형석",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Nui Phao",
+     "coProduct": true
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "graphite",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_graphite",
+     "label": "핵심광물 부존 상태 — 흑연",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "iron",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_g04",
+     "label": "원광 수출규제 대상 광종 — 철",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_g10",
+     "label": "핵심광물 부존 상태 — 철",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "lead_zinc",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_g01",
+     "label": "원광 수출규제 대상 광종 — 납-아연",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_g02",
+     "label": "핵심광물 부존 상태 — 납-아연",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "lithium",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_lithium",
+     "label": "핵심광물 부존 상태 — 리튬",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "manganese",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_manganese",
+     "label": "원광 수출규제 대상 광종 — 망간",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_manganese",
+     "label": "핵심광물 부존 상태 — 망간",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "nickel",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_nickel",
+     "label": "핵심광물 부존 상태 — 니켈",
+     "year": 2026,
+     "value": "부존 확인 — 정량 미수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Ban Phuc",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "phosphate",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_g03",
+     "label": "원광 수출규제 대상 광종 — 인광석(아파타이트)",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_phosphate",
+     "label": "핵심광물 부존 상태 — 인광석",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "rare_earths",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_rare_earths",
+     "label": "원광 수출규제 대상 광종 — 희토류",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_rare_earths",
+     "label": "핵심광물 부존 상태 — 희토류",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Dong Pao",
+     "coProduct": false
+    },
+    {
+     "mine": "Yen Phu",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "tin",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_tin",
+     "label": "핵심광물 부존 상태 — 주석",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [],
+   "mapStatus": "national-only"
+  },
+  {
+   "mineral": "titanium",
+   "series": [
+    {
+     "indicatorId": "B-044_export_ban_minerals_g06",
+     "label": "원광 수출규제 대상 광종 — 티타늄광물(미가공)",
+     "year": 2026,
+     "value": "수출금지(원광) 대상",
+     "unit": "해당 여부",
+     "scope": "국가 전체 값"
+    },
+    {
+     "indicatorId": "B-044_mineral_presence_titanium",
+     "label": "핵심광물 부존 상태 — 티타늄광물",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Binh Thuan",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  },
+  {
+   "mineral": "tungsten",
+   "series": [
+    {
+     "indicatorId": "B-044_mineral_presence_tungsten",
+     "label": "핵심광물 부존 상태 — 텅스텐",
+     "year": 2026,
+     "value": "부존 확인 — 정량 수록",
+     "unit": "상태",
+     "scope": "국가 전체 값"
+    }
+   ],
+   "mines": [
+    {
+     "mine": "Nui Phao",
+     "coProduct": false
+    }
+   ],
+   "mapStatus": "mines"
+  }
+ ],
+ "rows": [
+  {
+   "mine": "Tan Rai",
+   "mineralText": "보크사이트/알루미나",
+   "minerals": [
+    {
+     "key": "bauxite",
+     "coProduct": false
+    },
+    {
+     "key": "alumina",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-35",
+   "provinceName": "Lâm Đồng",
+   "unitCode": "VN34-35",
+   "coordinate": {
+    "lat": 11.6559222,
+    "lon": 107.796971,
+    "basis": "[추정 좌표] OpenStreetMap 산업용지 지물(way/352918414, 명칭 Nhà Máy Alumin Tân Rai)의 대표점",
+    "estimated": true,
+    "inPublishedLayer": false
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Nhan Co",
+   "mineralText": "보크사이트/알루미나",
+   "minerals": [
+    {
+     "key": "bauxite",
+     "coProduct": false
+    },
+    {
+     "key": "alumina",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-72",
+   "provinceName": "Đắk Nông",
+   "unitCode": "VN34-35",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Nui Phao",
+   "mineralText": "텅스텐(+형석·비스무트·구리)",
+   "minerals": [
+    {
+     "key": "tungsten",
+     "coProduct": false
+    },
+    {
+     "key": "fluorspar",
+     "coProduct": true
+    },
+    {
+     "key": "copper",
+     "coProduct": true
+    }
+   ],
+   "adm1Code": "VN-69",
+   "provinceName": "Thái Nguyên",
+   "unitCode": "VN34-69",
+   "coordinate": {
+    "lat": 21.64861,
+    "lon": 105.66861,
+    "basis": "[추정 좌표] OpenStreetMap 광산 지물(way/595838860, 2026-09-18 검색)과 Wikipedia 「Núi Pháo mine」 좌표(21.64861°N 105.66861°E)가 일치하여 채택. 광구 대표점이며 정밀도 약 1 km. 좌표계 EPSG:4326.",
+    "estimated": true,
+    "inPublishedLayer": false
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Dong Pao",
+   "mineralText": "희토류",
+   "minerals": [
+    {
+     "key": "rare_earths",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-01",
+   "provinceName": "Lai Châu",
+   "unitCode": "VN34-01",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Yen Phu",
+   "mineralText": "희토류",
+   "minerals": [
+    {
+     "key": "rare_earths",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-06",
+   "provinceName": "Yên Bái",
+   "unitCode": "VN34-02",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Binh Thuan",
+   "mineralText": "티타늄(ilmenite·leucoxene)",
+   "minerals": [
+    {
+     "key": "titanium",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-40",
+   "provinceName": "Bình Thuận",
+   "unitCode": "VN34-35",
+   "coordinate": null,
+   "representation": "province"
+  },
+  {
+   "mine": "Sin Quyen",
+   "mineralText": "구리",
+   "minerals": [
+    {
+     "key": "copper",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-02",
+   "provinceName": "Lào Cai",
+   "unitCode": "VN34-02",
+   "coordinate": {
+    "lat": 22.5827,
+    "lon": 104.083,
+    "basis": "USGS MRDS(Edition 20160315) 지점 좌표",
+    "estimated": false,
+    "inPublishedLayer": true
+   },
+   "representation": "point"
+  },
+  {
+   "mine": "Ban Phuc",
+   "mineralText": "니켈",
+   "minerals": [
+    {
+     "key": "nickel",
+     "coProduct": false
+    }
+   ],
+   "adm1Code": "VN-05",
+   "provinceName": "Sơn La",
+   "unitCode": "VN34-05",
+   "coordinate": {
+    "lat": 21.19952,
+    "lon": 103.54971,
+    "basis": "USGS MRDS(Edition 20160315) 지점 좌표",
+    "estimated": false,
+    "inPublishedLayer": true
+   },
+   "representation": "point"
+  }
+ ]
+}
