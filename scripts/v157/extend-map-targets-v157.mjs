@@ -223,7 +223,9 @@ function sidecarTarget(row, entry) {
       ...columnsUsed,
       ...[labelKey, valueKey, dateKey, statusKey, urlKey].filter(Boolean),
     ].filter((value, index, all) => all.indexOf(value) === index),
-    sourceSpatialUnit: `원자료 값에 성·시가 적힌 ${sidecar?.counts.located ?? 0}건(개편 후 34개 체계) · 추출 열 ${columnsUsed.join("·") || "없음"}`,
+    // The columns the region was read from are recorded in the contract's evidence
+    // and in the re-delivery request; the public line states the fact, not the keys.
+    sourceSpatialUnit: `원자료 값에 성·시가 적힌 ${sidecar?.counts.located ?? 0}건(개편 후 34개 체계)`,
     displaySpatialUnit: "34개 성·시 값을 소속 63개 경계에 동일 표시",
     representation: "region-choropleth",
     build: {
@@ -250,7 +252,9 @@ function sidecarTarget(row, entry) {
       },
       boundaryPolicy34: { kind: "native-34" },
     },
-    selectableVariables: `성·시 클릭 → ${isInstitution ? "기관" : "사업"} 목록(${[labelKey, valueKey, dateKey, statusKey].filter(Boolean).join("·") || "명칭"})`,
+    // The columns behind the list are the app's business (memberRecords above);
+    // the public line says what the reader gets when they click.
+    selectableVariables: `성·시 클릭 → ${isInstitution ? "기관" : "사업"} 목록`,
     unit: "건",
     period: periodTextFor(entry),
     representativeItem: representativeItemFor(row.elementId, labelKey),
@@ -404,6 +408,29 @@ function entityPointTarget(row, entry) {
   };
 }
 
+/**
+ * What the map draws, said for a reader, for each V155 asset.
+ *
+ * The declaration's own `rendererNote` answers a different question - which renderer
+ * and which join key - and a reviewer found it on the public info panel. These lines
+ * answer the reader's question: what shape carries the value, at what unit. A V155
+ * asset without an entry stops the build rather than falling back to the note.
+ */
+const PUBLIC_DISPLAY_UNIT_V157 = {
+  "A-027": "도로·철도 노선 그대로(원자료 선형)",
+  "A-028": "항만·댐은 지점, 저수지는 수면 범위로 표시",
+  "B-017": "물 스트레스 평가구역(유역과 성·시가 겹치는 구역) 경계에 값 표시",
+  "D-022": "2025-07-01 시행 34개 성·시 경계에 값 표시(63개 보기에서는 구성 성·시에 같은 값)",
+};
+
+/**
+ * A limitation stated in the source's own vocabulary, rewritten for the reader.
+ * The original stays in the V155 declaration.
+ */
+const PUBLIC_LIMITATION_V157 = {
+  "A-027": "고속도로·간선도로·주요도로와 철도 본선만 표시하며 램프·지선·서비스 선로는 제외합니다.",
+};
+
 /** A V155 asset that P6b moves into map-index as it was prepared. */
 function pendingTarget(row, entry) {
   const layer = pending.get(row.elementId);
@@ -413,7 +440,7 @@ function pendingTarget(row, entry) {
     publicName: row.targetName,
     sourceFields: layer.tooltipFields ?? [],
     sourceSpatialUnit: layer.spatialCoverage ?? layer.aggregationLevel ?? "V155 준비 자산",
-    displaySpatialUnit: layer.rendererNote ?? layer.aggregationLevel ?? "준비된 경계 자산 그대로",
+    displaySpatialUnit: publicDisplayUnitV157(row.elementId),
     representation: layer.renderer,
     build: {
       kind: "pending-v155",
@@ -436,8 +463,19 @@ function pendingTarget(row, entry) {
     period: periodTextFor(entry),
     representativeItem: layer.publicShortTitle ?? row.targetName,
     evidence: `자산 피처 ${layer.featureCount ?? 0}개 · ${(layer.geometryTypes ?? []).join("·")}`,
-    limitation: layer.spatialLimitation ?? layer.accuracyNotice ?? "",
+    limitation: PUBLIC_LIMITATION_V157[row.elementId] ?? layer.spatialLimitation ?? layer.accuracyNotice ?? "",
   };
+}
+
+/** The reader's line for a V155 asset, or a stop: a note is not a description. */
+function publicDisplayUnitV157(elementId) {
+  const line = PUBLIC_DISPLAY_UNIT_V157[elementId];
+  if (!line) {
+    throw new Error(
+      `PUBLIC_DISPLAY_UNIT_MISSING: ${elementId} — 지도 표시 문구를 PUBLIC_DISPLAY_UNIT_V157에 추가하세요(렌더러 메모 사용 금지)`
+    );
+  }
+  return line;
 }
 
 /** A row the data cannot place on a map yet: the reason is the row's content. */
@@ -572,6 +610,12 @@ if ([...droppedNow].sort().join(",") !== DROPPED_V157.join(",")) {
   throw new Error(
     `unexpected dropped targets: ${[...droppedNow].join(",")}`
   );
+}
+
+// Whoever wrote the row, the public "지도 표시" line comes from the table above.
+for (const target of nextTargets) {
+  const line = PUBLIC_DISPLAY_UNIT_V157[target.elementId];
+  if (line) target.displaySpatialUnit = line;
 }
 
 const nextDocument = {

@@ -834,13 +834,13 @@
       "mapTargetV138": {
         "publicName": "교통 인프라(도로·철도)",
         "sourceSpatialUnit": "전국 · 8,114개 선형(way 50,748개 병합)",
-        "displaySpatialUnit": "network-segment",
+        "displaySpatialUnit": "도로·철도 노선 그대로(원자료 선형)",
         "selectableVariables": "전체(고속도로·간선·주요도로·철도) · 고속도로 · 간선도로 · 주요도로 · 철도",
         "unit": "km",
         "period": "2026년 기준",
         "representativeItem": "도로·철도망",
         "evidence": "자산 피처 8114개 · MultiLineString",
-        "limitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다."
+        "limitation": "고속도로·간선도로·주요도로와 철도 본선만 표시하며 램프·지선·서비스 선로는 제외합니다."
       }
     },
     {
@@ -1076,7 +1076,7 @@
       "mapTargetV138": {
         "publicName": "수자원 시설",
         "sourceSpatialUnit": "전국 · 항만 66 · 댐 1,255 · 저수지 237",
-        "displaySpatialUnit": "point 렌더러 + 저수지 폴리곤(fill) 결합. 기존 렌더러에 폴리곤 kind 가 없으면 저수지는 representativeLon/Lat 로 점 표시 후 폴리곤은 후속.",
+        "displaySpatialUnit": "항만·댐은 지점, 저수지는 수면 범위로 표시",
         "selectableVariables": "전체 · 항만 · 댐 · 저수지(≥1 km²)",
         "unit": "곳",
         "period": "2026년 기준",
@@ -6646,7 +6646,7 @@
       "mapTargetV138": {
         "sourceSpatialUnit": "수문관측지점 좌표(MRC·VNMC) 및 8대 유역 대표점",
         "displaySpatialUnit": "관측지점 점 · 유역 대표점",
-        "limitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤(HydroSHEDS 8대 유역)은 원자료에 미포함이라 대표점만 표시.",
+        "limitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 8대 유역의 경계면(HydroSHEDS)은 원자료에 없어 유역별 대표점만 표시.",
         "evidence": "지점·유역 11행, 좌표 11건(관측소 2곳 + 메콩델타 유역 대표점)",
         "representativeItem": "Kratie(캄보디아) 건기 최저유량 2,290 m³/s"
       },
@@ -6765,7 +6765,7 @@
       "sourceCoordinateCount": 11,
       "sourceYear": "2026",
       "spatialCoverage": "관측지점 점 · 유역 대표점 3곳",
-      "spatialLimitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤(HydroSHEDS 8대 유역)은 원자료에 미포함이라 대표점만 표시.",
+      "spatialLimitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 8대 유역의 경계면(HydroSHEDS)은 원자료에 없어 유역별 대표점만 표시.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
@@ -6841,9 +6841,9 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "HydroSHEDS 8대 유역 폴리곤(원자료 파일 미포함) 대표점",
+        "sourceSpatialUnit": "HydroSHEDS 8대 유역의 대표점(경계면은 원자료에 없음)",
         "displaySpatialUnit": "유역 대표점",
-        "limitation": "유역 경계 폴리곤은 원자료 파일([공통]VNM_river_basins_8_HydroSHEDS.geojson)이 전달되지 않아 대표점만 표시. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값.",
+        "limitation": "유역 경계면은 원자료에 포함되지 않아 유역별 대표점만 표시합니다. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값입니다.",
         "evidence": "유역 8개 대표점 + 전국 합계 1행(좌표 없음)",
         "representativeItem": "메콩(끄우롱) 총 유역면적 795,000 km², 베트남 내 36,226 km²"
       },
@@ -6992,7 +6992,7 @@
       "sourceCoordinateCount": 8,
       "sourceYear": "2026",
       "spatialCoverage": "유역 대표점 8곳",
-      "spatialLimitation": "유역 경계 폴리곤은 원자료 파일([공통]VNM_river_basins_8_HydroSHEDS.geojson)이 전달되지 않아 대표점만 표시. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값.",
+      "spatialLimitation": "유역 경계면은 원자료에 포함되지 않아 유역별 대표점만 표시합니다. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값입니다.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
@@ -9277,7 +9277,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 235건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
@@ -9321,7 +9321,7 @@
         "note": "단위 건 · 결측 46개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(속성1_레코드명·속성3_값·속성4_시점)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -10660,7 +10660,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계) · 추출 열 name·비고",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 22건 중 성·시 확인 11건 · 성·시 10개 · 복수 성 0건",
@@ -10704,7 +10704,7 @@
         "note": "단위 건 · 결측 41개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -10817,7 +10817,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 164건 중 성·시 확인 43건 · 성·시 12개 · 복수 성 4건",
@@ -10861,7 +10861,7 @@
         "note": "단위 건 · 결측 37개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -10970,7 +10970,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 650건 중 성·시 확인 103건 · 성·시 23개 · 복수 성 4건",
@@ -11014,7 +11014,7 @@
         "note": "단위 건 · 결측 18개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -11104,7 +11104,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 232건 중 성·시 확인 14건 · 성·시 8개 · 복수 성 0건",
@@ -11148,7 +11148,7 @@
         "note": "단위 건 · 결측 49개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -11269,7 +11269,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 10건 중 성·시 확인 4건 · 성·시 3개 · 복수 성 0건",
@@ -11313,7 +11313,7 @@
         "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·예산·공고일·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -11575,7 +11575,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 10건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
@@ -11619,7 +11619,7 @@
         "note": "단위 건 · 결측 61개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·예산·기간·지원단계)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -11752,7 +11752,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 대상지역",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 9건 중 성·시 확인 2건 · 성·시 7개 · 복수 성 1건",
@@ -11796,7 +11796,7 @@
         "note": "단위 건 · 결측 52개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Cao Bằng",
@@ -11923,7 +11923,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계) · 추출 열 name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 640건 중 성·시 확인 71건 · 성·시 27개 · 복수 성 15건",
@@ -11967,7 +11967,7 @@
         "note": "단위 건 · 결측 10개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -12162,7 +12162,7 @@
       "mapTargetV138": {
         "publicName": "MDB·DFI 금융",
         "sourceSpatialUnit": "성·시 34개 중 12개 · 사업 15건(성 확인 7·전국 8·미확인 0)",
-        "displaySpatialUnit": "조인 키가 adm1Code(63)가 아니라 adm1Code34(2025 34 단위)이고 경계 자산이 vnm-adm1-34 입니다. 63 토글 시에는 memberAdm1Codes 로 같은 값을 펼쳐 칠하는 것을 제안(값 분할 없음).",
+        "displaySpatialUnit": "2025-07-01 시행 34개 성·시 경계에 값 표시(63개 보기에서는 구성 성·시에 같은 값)",
         "selectableVariables": "사업 수(소재 성 기준) · 승인액 합계(USD, 다수 성 사업 전액 계상)",
         "unit": "건",
         "period": "2026년 기준",
@@ -12207,7 +12207,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계) · 추출 열 대상지역·name",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 73건 중 성·시 확인 5건 · 성·시 9개 · 복수 성 1건",
@@ -12251,7 +12251,7 @@
         "note": "단위 건 · 결측 48개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Cao Bằng",
@@ -12371,7 +12371,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 119건(개편 후 34개 체계) · 추출 열 위치·name·스폰서",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 119건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 132건 중 성·시 확인 119건 · 성·시 28개 · 복수 성 5건",
@@ -12415,7 +12415,7 @@
         "note": "단위 건 · 결측 9개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·민간_투자액_자체_산출·Financial_Close·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Cao Bằng",
@@ -12496,7 +12496,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 name·비고",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 14건 중 성·시 확인 2건 · 성·시 4개 · 복수 성 2건",
@@ -12540,7 +12540,7 @@
         "note": "단위 건 · 결측 55개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
-      "mapBenefit": "성·시 클릭 → 사업 목록(명칭·대표금액·보증_기간·상태)",
+      "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -12669,7 +12669,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계) · 추출 열 note",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 18건 중 성·시 확인 6건 · 성·시 1개 · 복수 성 0건",
@@ -12713,7 +12713,7 @@
         "note": "단위 건 · 결측 62개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 기관 수"
       },
-      "mapBenefit": "성·시 클릭 → 기관 목록(명칭)",
+      "mapBenefit": "성·시 클릭 → 기관 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -12847,7 +12847,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 officeAddress",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 1건 중 성·시 확인 1건 · 성·시 1개 · 복수 성 0건",
@@ -12891,7 +12891,7 @@
         "note": "단위 건 · 결측 62개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 기관 수"
       },
-      "mapBenefit": "성·시 클릭 → 기관 목록(a64Status)",
+      "mapBenefit": "성·시 클릭 → 기관 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
@@ -14073,7 +14073,7 @@
       "regionalProject": false,
       "spatialStatus": "ready",
       "mapTargetV138": {
-        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 field_01856451",
+        "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
         "evidence": "개체 7건 중 성·시 확인 2건 · 성·시 2개 · 복수 성 0건",
@@ -14117,7 +14117,7 @@
         "note": "단위 건 · 결측 60개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 기관 수"
       },
-      "mapBenefit": "성·시 클릭 → 기관 목록(명칭)",
+      "mapBenefit": "성·시 클릭 → 기관 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",

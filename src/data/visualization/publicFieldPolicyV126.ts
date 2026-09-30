@@ -870,6 +870,8 @@ const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
   /\s*[([][^()[\]]*(?:레코드별|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
   // everything from a dash or arrow onwards, once the tail turns into a note
   /\s*[-—–→]\s*[^-—–→]*(?:레코드별|attr_|시트|열\s*참조)[\s\S]*$/u,
+  // the file the provider shipped it in: "(projectsLocationAll.xml)"
+  /\s*[([][^()[\]]*\.(?:xml|csv|json|xlsx?|geojson|zip|pdf)\s*[)\]]/giu,
 ];
 
 /**

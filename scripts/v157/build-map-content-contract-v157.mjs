@@ -542,7 +542,9 @@ function statusFor(elementId, geometry, evidence) {
     return {
       status: "reference-mapping-pending",
       reason:
-        "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",
+        // The file this table will live in is a repository path, not something a
+        // reader needs; the request names it (docs/handoff/v157).
+        "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
     };
   }
   if (elementId === "C-006") {

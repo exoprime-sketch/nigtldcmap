@@ -48,7 +48,7 @@
       "representation": "none",
       "build": {
         "kind": "none",
-        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출",
+        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
         "requiredAsset": "EVN 5개 총공사 관할표(성별 출처 URL 포함)",
         "forbidden": "지역 정보가 없는 값을 성·시에 배치하거나 경계·좌표를 생성하는 표현"
       },
@@ -57,7 +57,7 @@
       "period": "2025~2026년",
       "representativeItem": "전력회사 관할별 정전시간·빈도",
       "evidence": "관측값 54건(국가 단위)",
-      "limitation": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출 연관 레이어와 함께 국가값 카드로만 표시합니다.",
+      "limitation": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출 연관 레이어와 함께 국가값 카드로만 표시합니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -206,7 +206,7 @@
         "lengthKm"
       ],
       "sourceSpatialUnit": "전국 · 8,114개 선형(way 50,748개 병합)",
-      "displaySpatialUnit": "network-segment",
+      "displaySpatialUnit": "도로·철도 노선 그대로(원자료 선형)",
       "representation": "line",
       "build": {
         "kind": "pending-v155",
@@ -221,7 +221,7 @@
       "period": "2026년 기준",
       "representativeItem": "도로·철도망",
       "evidence": "자산 피처 8114개 · MultiLineString",
-      "limitation": "highway=motorway/trunk/primary 와 railway=rail 만 표시하며 램프·지선·서비스 선로는 제외합니다.",
+      "limitation": "고속도로·간선도로·주요도로와 철도 본선만 표시하며 램프·지선·서비스 선로는 제외합니다.",
       "generatedBy": "scripts/v157/extend-map-targets-v157.mjs"
     },
     {
@@ -236,7 +236,7 @@
         "adm1Name34"
       ],
       "sourceSpatialUnit": "전국 · 항만 66 · 댐 1,255 · 저수지 237",
-      "displaySpatialUnit": "point 렌더러 + 저수지 폴리곤(fill) 결합. 기존 렌더러에 폴리곤 kind 가 없으면 저수지는 representativeLon/Lat 로 점 표시 후 폴리곤은 후속.",
+      "displaySpatialUnit": "항만·댐은 지점, 저수지는 수면 범위로 표시",
       "representation": "point-and-polygon",
       "build": {
         "kind": "pending-v155",
@@ -903,7 +903,7 @@
         "Aqueduct_단위면적_km"
       ],
       "sourceSpatialUnit": "평가구역 443개 중 도형 442개 · 변수별 값 5~391개",
-      "displaySpatialUnit": "admin1-choropleth 와 같은 값→색 규칙이지만 조인 키가 adm1Code 가 아니라 stringId 이고 경계 자산이 평가구역 폴리곤입니다. 34/63 경계 전환·boundaryPolicy 의 영향을 받지 않습니다.",
+      "displaySpatialUnit": "물 스트레스 평가구역(유역과 성·시가 겹치는 구역) 경계에 값 표시",
       "representation": "unit-choropleth",
       "build": {
         "kind": "pending-v155",
@@ -1030,7 +1030,7 @@
       "period": "지표별 기준연도",
       "representativeItem": "Kratie(캄보디아) 건기 최저유량 2,290 m³/s",
       "evidence": "지점·유역 11행, 좌표 11건(관측소 2곳 + 메콩델타 유역 대표점)",
-      "limitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 유역 폴리곤(HydroSHEDS 8대 유역)은 원자료에 미포함이라 대표점만 표시."
+      "limitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 8대 유역의 경계면(HydroSHEDS)은 원자료에 없어 유역별 대표점만 표시."
     },
     {
       "elementId": "B-024",
@@ -1067,7 +1067,7 @@
         "국경_공유",
         "수계_구분"
       ],
-      "sourceSpatialUnit": "HydroSHEDS 8대 유역 폴리곤(원자료 파일 미포함) 대표점",
+      "sourceSpatialUnit": "HydroSHEDS 8대 유역의 대표점(경계면은 원자료에 없음)",
       "displaySpatialUnit": "유역 대표점",
       "representation": "point",
       "build": {
@@ -1146,7 +1146,7 @@
       "period": "MONRE/WEPA 2024 · HydroSHEDS v1.1",
       "representativeItem": "메콩(끄우롱) 총 유역면적 795,000 km², 베트남 내 36,226 km²",
       "evidence": "유역 8개 대표점 + 전국 합계 1행(좌표 없음)",
-      "limitation": "유역 경계 폴리곤은 원자료 파일([공통]VNM_river_basins_8_HydroSHEDS.geojson)이 전달되지 않아 대표점만 표시. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값."
+      "limitation": "유역 경계면은 원자료에 포함되지 않아 유역별 대표점만 표시합니다. 전체면적·베트남 내 면적·전국 합계는 서로 다른 값입니다."
     },
     {
       "elementId": "B-026",
@@ -2096,7 +2096,7 @@
         "속성4_시점",
         "속성19_원문URL"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2125,7 +2125,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(속성1_레코드명·속성3_값·속성4_시점)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "1994~2050년",
       "representativeItem": "British International School Ho Chi Minh City (Hồ Chí Minh)",
@@ -2477,7 +2477,7 @@
         "명칭",
         "대표금액"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계) · 추출 열 name·비고",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 11건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2506,7 +2506,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·대표금액)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "Super Energy - Thinh Long Phu Yen 태양광 (Đắk Lắk)",
@@ -2525,7 +2525,7 @@
         "보고연도",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 43건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2554,7 +2554,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
       "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
@@ -2573,7 +2573,7 @@
         "보고연도",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 103건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2602,7 +2602,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
       "representativeItem": "꽝빈성 태양광 발전사업 (Quảng Trị)",
@@ -2621,7 +2621,7 @@
         "보고연도",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 14건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2650,7 +2650,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·약정액_합계·보고연도·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
       "representativeItem": "(21/22 KSP) 베트남 하노이 도시철도 분야 PPP 사업 추진 전략 (Hà Nội)",
@@ -2669,7 +2669,7 @@
         "공고일",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 4건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2698,7 +2698,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·예산·공고일·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역 (Đắk Lắk)",
@@ -2748,7 +2748,7 @@
         "기간",
         "지원단계"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2777,7 +2777,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·예산·기간·지원단계)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2025년 기준",
       "representativeItem": "Strengthening hai phong city’s climate adaptation and dis… (Hải Phòng)",
@@ -2796,7 +2796,7 @@
         "사업기간",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 대상지역",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2825,7 +2825,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "Vietnam REDD-plus results-based payments for results peri… (Tuyên Quang)",
@@ -2843,7 +2843,7 @@
         "대표금액",
         "사업기간"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계) · 추출 열 name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 71건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2872,7 +2872,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "B.Grimm Viet Nam Solar Power Project (Phu Yen Project) (Đắk Lắk)",
@@ -2891,7 +2891,7 @@
         "recordIds"
       ],
       "sourceSpatialUnit": "성·시 34개 중 12개 · 사업 15건(성 확인 7·전국 8·미확인 0)",
-      "displaySpatialUnit": "조인 키가 adm1Code(63)가 아니라 adm1Code34(2025 34 단위)이고 경계 자산이 vnm-adm1-34 입니다. 63 토글 시에는 memberAdm1Codes 로 같은 값을 펼쳐 칠하는 것을 제안(값 분할 없음).",
+      "displaySpatialUnit": "2025-07-01 시행 34개 성·시 경계에 값 표시(63개 보기에서는 구성 성·시에 같은 값)",
       "representation": "admin1-choropleth",
       "build": {
         "kind": "pending-v155",
@@ -2921,7 +2921,7 @@
         "사업기간",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계) · 추출 열 대상지역·name",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 5건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -2950,7 +2950,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·대표금액·사업기간·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2013~2026년",
       "representativeItem": "Hanoi Sustainable Urban Transport (Hà Nội)",
@@ -2971,7 +2971,7 @@
         "Financial_Close",
         "상태"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 119건(개편 후 34개 체계) · 추출 열 위치·name·스폰서",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 119건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -3000,7 +3000,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·민간_투자액_자체_산출·Financial_Close·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2024년 기준",
       "representativeItem": "Bau Ngu Lake Solar Power Plant (Khánh Hòa)",
@@ -3021,7 +3021,7 @@
         "상태",
         "링크"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 name·비고",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -3050,7 +3050,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 사업 목록(명칭·대표금액·보증_기간·상태)",
+      "selectableVariables": "성·시 클릭 → 사업 목록",
       "unit": "건",
       "period": "2018년 기준",
       "representativeItem": "Hanoi-Haiphong Expressway (Hải Phòng)",
@@ -3066,7 +3066,7 @@
         "note",
         "recordSourceUrl"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계) · 추출 열 note",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 6건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -3095,7 +3095,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 기관 목록(명칭)",
+      "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "네트워크 회원(민간기업) (Hà Nội)",
@@ -3112,7 +3112,7 @@
         "a64Status",
         "recordSourceUrl"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계) · 추출 열 officeAddress",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 1건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -3141,7 +3141,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 기관 목록(a64Status)",
+      "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "Department of Climate Change (기후변화국) (Hà Nội)",
@@ -3555,7 +3555,7 @@
       "sourceFields": [
         "field_01856451"
       ],
-      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계) · 추출 열 field_01856451",
+      "sourceSpatialUnit": "원자료 값에 성·시가 적힌 2건(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
@@ -3584,7 +3584,7 @@
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시 클릭 → 기관 목록(명칭)",
+      "selectableVariables": "성·시 클릭 → 기관 목록",
       "unit": "건",
       "period": "2026년 기준",
       "representativeItem": "한국환경산업기술원(KEITI) (Đồng Nai)",
