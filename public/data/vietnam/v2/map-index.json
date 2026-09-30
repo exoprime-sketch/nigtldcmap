@@ -6007,7 +6007,7 @@
       "mapTargetV138": {
         "publicName": "물 스트레스",
         "sourceSpatialUnit": "평가구역 443개 중 도형 442개 · 변수별 값 5~391개",
-        "displaySpatialUnit": "admin1-choropleth 와 같은 값→색 규칙이지만 조인 키가 adm1Code 가 아니라 stringId 이고 경계 자산이 평가구역 폴리곤입니다. 34/63 경계 전환·boundaryPolicy 의 영향을 받지 않습니다.",
+        "displaySpatialUnit": "평가구역(유역과 성·시가 겹치는 구역) 경계에 값 표시",
         "selectableVariables": "종합 물 리스크(기본 가중) · 기준 물 스트레스 · 기준 물 고갈 · 연간 변동성 · 계절 변동성 · 지하수위 하강 · 하천 홍수 위험 · 연안 홍수 위험 · 가뭄 위험",
         "unit": "점",
         "period": "2023 기준선(Aqueduct 4.0)",
@@ -14234,7 +14234,7 @@
       },
       {
         "elementId": "A-022",
-        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사 관할표(tools/etl/countries/vnm/evn-jurisdiction.json, 성별 출처 URL 필수)를 만든 뒤 표출"
+        "reason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출"
       },
       {
         "elementId": "B-002",

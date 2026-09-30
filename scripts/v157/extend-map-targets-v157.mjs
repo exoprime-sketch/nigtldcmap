@@ -419,7 +419,8 @@ function entityPointTarget(row, entry) {
 const PUBLIC_DISPLAY_UNIT_V157 = {
   "A-027": "도로·철도 노선 그대로(원자료 선형)",
   "A-028": "항만·댐은 지점, 저수지는 수면 범위로 표시",
-  "B-017": "물 스트레스 평가구역(유역과 성·시가 겹치는 구역) 경계에 값 표시",
+  // The row's title already says 물 스트레스; the line says where the value sits.
+  "B-017": "평가구역(유역과 성·시가 겹치는 구역) 경계에 값 표시",
   "D-022": "2025-07-01 시행 34개 성·시 경계에 값 표시(63개 보기에서는 구성 성·시에 같은 값)",
 };
 
