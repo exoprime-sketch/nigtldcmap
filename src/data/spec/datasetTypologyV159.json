@@ -345,7 +345,7 @@
       "structure": "S4",
       "structureLabel": "비공간 개체",
       "flags": {
-        "region": false,
+        "region": true,
         "tech": false,
         "geometry": false,
         "categorical": false,
@@ -354,7 +354,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "매트릭스(NDC 부문×SDG) + 삼각주 조치 지도",
+      "variant": "매트릭스(NDC 부문×SDG) + 지도: 6대 권역 group-constant(원문 명시 권역만 연결)",
       "dedicated": "ndc-sdg-matrix",
       "coverage": {
         "VNM": "○",
@@ -570,7 +570,7 @@
       "structure": "S1",
       "structureLabel": "국가×연도 관측값",
       "flags": {
-        "region": false,
+        "region": true,
         "tech": true,
         "geometry": false,
         "categorical": false,
@@ -579,7 +579,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "지도: EVN 관할 T4 변형",
+      "variant": "지도: 관할별(총공사) 관측값 있으면 S2·②(관할 단위 동일값·분할 금지)로 전환, 없으면 S1·①·group-constant 유지(EVN 관할 T4 변형) — V162 확인 후 확정",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -895,7 +895,7 @@
       "structure": "S2",
       "structureLabel": "지역×연도 관측값",
       "flags": {
-        "region": false,
+        "region": true,
         "tech": false,
         "geometry": false,
         "categorical": true,
@@ -904,7 +904,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "범주형(최다 기후대)+구성비 파이",
+      "variant": "단계구분도(범주): 성별 최다 기후대 + 기후대별 점유 면적 막대",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -1454,7 +1454,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "",
+      "variant": "단계구분도: 성별 벼 재배면적(대리지표) + 국가 농업용수 취수 비중 추이",
       "dedicated": null,
       "coverage": {
         "VNM": "✕",
@@ -1729,7 +1729,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "보조 T2(그룹 누적·추세)",
+      "variant": "단계구분도: 성별 토지피복 면적 + 유형별 추이",
       "dedicated": null,
       "coverage": {
         "VNM": "✕",
@@ -1754,7 +1754,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "",
+      "variant": "단계구분도: 성별 토지피복 변화율",
       "dedicated": null,
       "coverage": {
         "VNM": "✕",
@@ -1954,7 +1954,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "B-046 통합 절",
+      "variant": "B-046 통합 절 · B-048 광산 지점에 광종으로 연결해 지도 표시(값은 국가 전체)",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -2004,7 +2004,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "순위·비중 막대 + 광종 소형 다중",
+      "variant": "순위·비중 막대 + 광종 소형 다중 · B-048 광산 지점에 광종으로 연결해 지도 표시(값은 국가 전체)",
       "dedicated": "mineral-resources",
       "coverage": {
         "VNM": "○",
@@ -2029,7 +2029,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "순위·비중 막대 + 광종 소형 다중",
+      "variant": "순위·비중 막대 + 광종 소형 다중 · B-048 광산 지점에 광종으로 연결해 지도 표시(값은 국가 전체)",
       "dedicated": "mineral-resources",
       "coverage": {
         "VNM": "○",
@@ -2120,7 +2120,7 @@
       "structure": "S4",
       "structureLabel": "비공간 개체",
       "flags": {
-        "region": false,
+        "region": true,
         "tech": true,
         "geometry": false,
         "categorical": false,
@@ -2129,7 +2129,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "권역 태그(6개 권역 지도)",
+      "variant": "권역 태그 + 지도: 6대 권역 group-constant(six-region-only 추출 규칙)",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -2195,7 +2195,7 @@
       "structure": "S4",
       "structureLabel": "비공간 개체",
       "flags": {
-        "region": false,
+        "region": true,
         "tech": false,
         "geometry": false,
         "categorical": false,
@@ -2204,7 +2204,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "",
+      "variant": "지도: 성·시별 JCM 등록 사업 건수(membership-or, 18개 사업·27개 성)",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -2479,7 +2479,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "",
+      "variant": "지도: 가격 규정 권역 기준(문언 우선, 원문에 성 나열 없음) → EVN 관할 기준 대체",
       "dedicated": null,
       "coverage": {
         "VNM": "✕",
