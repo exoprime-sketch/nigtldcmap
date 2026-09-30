@@ -205,7 +205,7 @@
 | A-028 | 상세 참고문헌 | …/Tag:landuse%3Dharbour (미확보 — 해당 없음) | …/Tag:landuse%3Dharbour |
 | A-028 | 상세 참고문헌 출처 | OpenStreetMap (멤버1); 미특정 (멤버2) | OpenStreetMap |
 
-- 결과: 수정 후 전수 감사 146개(카드·상세·필터 선택지·홈·다운로드·지도) **0건**, 실행 오류 0 · test:unit 609/609 · e2e detail-all 150 통과 · 2 실패(A-002·A-019 기존 결함, 다음 PR a)
+- 결과: 수정 후 전수 감사 146개(카드·상세·필터 선택지·홈·다운로드·지도) **0건**, 실행 오류 0 · test:unit 609/609 · e2e detail-all 150 통과 · 2 실패(A-002·A-019 기존 결함, 다음 PR a) · audit:release:v136 PASS 80/80
 
 ## 남겨 둔 '현지조사'(내용 — 결정: 유지)
 
