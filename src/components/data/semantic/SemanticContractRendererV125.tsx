@@ -138,6 +138,12 @@ export default function SemanticContractRendererV125({
     if (categories.size !== 1 || years.size < 3) return null;
     return numeric;
   }, [renderer, seriesRows]);
+  // V162: the wide record template ('[블록] 속성' columns, one row per record)
+  // reads as block cards before any renderer-specific body runs. The
+  // policy-timeline body (below) reads the pre-V162 long-C row scheme
+  // (속성1_레코드명 …) directly and finds nothing on the wide delivery, so it
+  // has to be checked here rather than only inside renderEntityPanelV125.
+  const wideRecordsTopV162 = useMemo(() => wideRecordsOfEntitiesV162(entities), [entities]);
 
   return (
     <section
@@ -149,7 +155,9 @@ export default function SemanticContractRendererV125({
         publicHeadings?.primaryChartTitle || rendererLabelV125(renderer)
       } 주 분석`}
     >
-      {renderer === "policy-timeline" ? (
+      {wideRecordsTopV162.length > 0 ? (
+        <WideRecordCardsV162 records={wideRecordsTopV162} elementTitle={elementTitle} elementId={contract.elementId} />
+      ) : renderer === "policy-timeline" ? (
         <>
           {/* A numeric measure with several categories at one time (B-015's
               ETS facility counts by sector) is a comparison; the timeline
@@ -356,7 +364,7 @@ function renderEntityPanelV125(
   // reads as block cards whatever the renderer; record ids, working files and
   // the supplier's note never reach the screen (wideRecordsV162).
   const wideRecords = wideRecordsOfEntitiesV162(entities);
-  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} />;
+  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} elementId={contract.elementId} />;
   if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
     return (
       <PortfolioEntitiesV125

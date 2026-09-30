@@ -1200,7 +1200,7 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "A-030_trade_total",
+          "indicatorId": "A-030_aux_kita_trade_total",
           "unit": "10억 USD",
           "yearRule": "latest-common"
         }
@@ -1408,7 +1408,7 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-002_koppen_area_cwa",
+          "indicatorId": "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
           "unit": "km²",
           "yearRule": "latest-common"
         }
@@ -1684,7 +1684,7 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-009_ndgain_ecosystems",
+          "indicatorId": "B-009_wwf_brf_physical",
           "unit": "지수",
           "yearRule": "latest-common"
         }
@@ -2195,7 +2195,7 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-022_financing_source_g02",
+          "indicatorId": "B-022_financing_private",
           "unit": "십억 US$",
           "yearRule": "latest-common"
         }
@@ -2617,9 +2617,9 @@
       "primary": {
         "type": "region-bar",
         "title": "성·시별 산림탄소 순플럭스",
-        "xAxis": "산림탄소 순플럭스(연평균)",
+        "xAxis": "산림탄소 순플럭스(2001–2024 누계)",
         "yAxis": "성·시",
-        "unit": "Mg CO2e/yr"
+        "unit": "Mg CO2e"
       },
       "secondary": [
         {
@@ -2679,8 +2679,8 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-035_lu_cropland_area_per_capita",
-          "unit": "ha/cap",
+          "indicatorId": "B-035_lu_agriculture",
+          "unit": "1000 ha",
           "yearRule": "latest-common"
         }
       }
@@ -2795,8 +2795,8 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-038_msw_percap",
-          "unit": "kg/인/일",
+          "indicatorId": "B-038_aux_msw_collection_pop",
+          "unit": "% 인구",
           "yearRule": "latest-common"
         }
       }
@@ -2979,8 +2979,8 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-043_rp_ratio_g03",
-          "unit": "년",
+          "indicatorId": "B-043_oil_reserves",
+          "unit": "십억 배럴",
           "yearRule": "latest-common"
         }
       }
@@ -3095,8 +3095,8 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "B-046_reserves_4",
-          "unit": "t (Sb 함량)",
+          "indicatorId": "B-046_reserves_7",
+          "unit": "천 t (아파타이트)",
           "yearRule": "latest-common"
         }
       }
@@ -3586,7 +3586,7 @@
           "title": "조달방식·계약유형 표"
         }
       ],
-      "mapRole": "beside-primary",
+      "mapRole": "none",
       "benchmarks": [
         {
           "name": "Climate Change Laws of the World",
@@ -4135,7 +4135,7 @@
       "countryCompare": {
         "comparable": true,
         "compareKey": {
-          "indicatorId": "D-002_market_cagr_biomass",
+          "indicatorId": "D-002_re_share_electricity_capacity_pct",
           "unit": "%",
           "yearRule": "latest-common"
         }

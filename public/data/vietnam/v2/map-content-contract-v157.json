@@ -1,7 +1,7 @@
 {
   "schemaVersion": "map-content-contract-v157",
   "countryIso3": "VNM",
-  "generatedAt": "2026-09-30T11:20:42.085Z",
+  "generatedAt": "2026-09-30T12:16:05.064Z",
   "generator": "scripts/v157/build-map-content-contract-v157.mjs",
   "source": {
     "selection": "docs/plan/map-selection-20260922.json",
@@ -1648,8 +1648,8 @@
       },
       "publishedLayer": {
         "layerId": "vnm-v138-b-008",
-        "mapMode": "cluster",
-        "renderer": "cluster",
+        "mapMode": "point",
+        "renderer": "point",
         "coordinateMeaning": "verified-physical-site",
         "spatialScopeType": "multi-site",
         "aggregationLevel": "관측소",
@@ -2425,7 +2425,7 @@
         "layerId": "vnm-v138-b-023",
         "mapMode": "point",
         "renderer": "point",
-        "coordinateMeaning": "verified-physical-site",
+        "coordinateMeaning": "first-source-coordinate",
         "spatialScopeType": "facility-site",
         "aggregationLevel": "관측지점·유역",
         "unit": "source-provided location"
@@ -2872,7 +2872,7 @@
         "layerId": "vnm-v138-b-028",
         "mapMode": "point",
         "renderer": "point",
-        "coordinateMeaning": "verified-physical-site",
+        "coordinateMeaning": "first-source-coordinate",
         "spatialScopeType": "facility-site",
         "aggregationLevel": "관측지점·유역",
         "unit": "source-provided location"
@@ -2916,6 +2916,12 @@
         {
           "key": "referenceYear",
           "label": "기준연도",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "valueNature",
+          "label": "값의 성격",
           "labelSource": "map-index",
           "source": "map-index"
         },
@@ -3750,7 +3756,7 @@
           "coverageKind": "full",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
           "regionKeyCount": 63,
-          "valueRows": 126
+          "valueRows": 315
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -3793,7 +3799,7 @@
         "coordinateMeaning": "source-region-value",
         "spatialScopeType": "admin1",
         "aggregationLevel": "admin1",
-        "unit": "Mg C/ha"
+        "unit": "Mg CO2e"
       },
       "sourceColumns": {
         "region": "adm1Code",
@@ -3805,9 +3811,9 @@
         "legacyFields": [
           "지상부_탄소저장량_Mg_C",
           "지상부_탄소밀도_Mg_C_ha",
-          "산림탄소_총배출_Mg_CO2e_yr",
-          "산림탄소_총흡수_Mg_CO2_yr",
-          "산림탄소_순플럭스_Mg_CO2e_yr"
+          "산림탄소_총배출_Mg_CO2e",
+          "산림탄소_총흡수_Mg_CO2",
+          "산림탄소_순플럭스_Mg_CO2e"
         ]
       },
       "popupFields": [
@@ -3854,7 +3860,7 @@
           "label": "지표",
           "labelSource": "contract",
           "source": "map-index",
-          "note": "기본 선택: 지상부 탄소밀도"
+          "note": "기본 선택: 산림탄소 순플럭스(누계)"
         },
         {
           "key": "value",
@@ -3867,7 +3873,7 @@
           "label": "단위",
           "labelSource": "contract",
           "source": "map-index",
-          "note": "계약 단위: Mg C/ha"
+          "note": "계약 단위: Mg CO2e"
         },
         {
           "key": "period",
@@ -5286,8 +5292,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 6,
-          "valueRows": 6
+          "regionKeyCount": 17,
+          "valueRows": 17
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -5471,23 +5477,10 @@
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
-      "geometry": "region-choropleth",
-      "geometrySource": "publicMapTargetsV138",
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "native-34",
-        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-        "valueSystem": "post-2025-34"
-      },
-      "publishedLayer": {
-        "layerId": "vnm-v138-c-012",
-        "mapMode": "region-choropleth",
-        "renderer": "partial-choropleth",
-        "coordinateMeaning": "source-region-value",
-        "spatialScopeType": "region",
-        "aggregationLevel": "post-2025-34-unit",
-        "unit": "건"
-      },
+      "geometry": null,
+      "geometrySource": "undetermined",
+      "boundaryPolicy": "pre-2025-63",
+      "publishedLayer": null,
       "sourceColumns": {
         "region": "adm1Code",
         "regionColumnKind": null,
@@ -5496,83 +5489,47 @@
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성3_값(사업 수)",
-          "속성6_분류(분야별 건수)",
-          "속성7_상태",
-          "속성4_시점(기간)"
+          "지역_지역명_현행"
         ]
       },
-      "popupFields": [
+      "popupFields": [],
+      "regionPanelFields": [
         {
           "key": "adm1Name",
           "label": "지역",
-          "labelSource": "layer-schema",
-          "source": "map-index"
-        },
-        {
-          "key": "value",
-          "label": "값",
-          "labelSource": "layer-schema",
-          "source": "map-index"
-        },
-        {
-          "key": "unit",
-          "label": "단위",
-          "labelSource": "layer-schema",
-          "source": "map-index"
-        },
-        {
-          "key": "period",
-          "label": "시점",
-          "labelSource": "layer-schema",
-          "source": "map-index"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
           "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
-      "regionPanelFields": [
-        {
-          "key": "adm1Code",
-          "label": "지역",
-          "labelSource": "contract",
-          "source": "map-index"
+          "source": "spatial-layer"
         },
         {
-          "key": "variable",
+          "key": "variableLabel",
           "label": "지표",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "spatial-layer"
         },
         {
           "key": "value",
           "label": "값",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "spatial-layer"
         },
         {
           "key": "unit",
           "label": "단위",
           "labelSource": "contract",
-          "source": "map-index",
-          "note": "계약 단위: 건"
+          "source": "spatial-layer"
         },
         {
           "key": "period",
           "label": "시점",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "spatial-layer"
         },
         {
-          "key": "aggregation",
-          "label": "집계 방식",
+          "key": "mappingMethod",
+          "label": "산출 방법",
           "labelSource": "contract",
-          "source": "map-index",
-          "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다."
+          "source": "spatial-layer",
+          "note": "모형·추정·대리지표를 구분해 표기"
         },
         {
           "key": "provenance.sourceOrg",
@@ -5582,18 +5539,19 @@
         }
       ],
       "caveats": [
-        "일부 지역만 값이 있어 부분 표출",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+        "일부 지역만 값이 있어 부분 표출"
       ],
-      "status": "registered",
-      "statusReason": null,
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": []
     },
     {
       "elementId": "C-013",
       "targetName": "지역 투자 특례",
       "pdfContent": "적용지역·지원내용·조건",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -5601,8 +5559,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 0,
-          "valueRows": 0
+          "regionKeyCount": 14,
+          "valueRows": 14
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -5629,7 +5587,7 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -5655,10 +5613,10 @@
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성6_분류",
-          "속성3_값(근거 결의)",
-          "속성19_원문URL"
+          "지역_지역명_현행",
+          "식별_레코드명",
+          "인센티브_인센티브_유형",
+          "출처_원문_URL"
         ]
       },
       "popupFields": [
@@ -5704,7 +5662,8 @@
           "key": "variable",
           "label": "지표",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "map-index",
+          "note": "기본 선택: 지역 특별 인센티브 근거 행 수"
         },
         {
           "key": "value",
@@ -5978,16 +5937,18 @@
       "elementId": "C-022",
       "targetName": "탄소시장 대상시설",
       "pdfContent": "성별 대상시설 수·업종(시행예정)",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
         "spatialLayer": {
           "joinKey": "adm1Code",
           "boundarySystem": "pre-2025-63",
-          "coverageKind": "partial",
+          "coverageKind": "full",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 0,
-          "valueRows": 0
+          "regionKeyCount": 63,
+          "valueRows": 252
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -6014,7 +5975,7 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -6026,7 +5987,7 @@
       "publishedLayer": {
         "layerId": "vnm-v138-c-022",
         "mapMode": "region-choropleth",
-        "renderer": "partial-choropleth",
+        "renderer": "admin1-choropleth",
         "coordinateMeaning": "source-region-value",
         "spatialScopeType": "region",
         "aggregationLevel": "post-2025-34-unit",
@@ -6040,9 +6001,11 @@
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성6_분류(업종별 시설 수)",
-          "속성4_시점"
+          "지역_지역명_현행",
+          "인벤토리_부속서_II_산업무역부_소관_개",
+          "인벤토리_부속서_III_A_건설부_소관_교통_개",
+          "인벤토리_부속서_III_B_건설부_소관_건설_개",
+          "인벤토리_부속서_IV_농업환경부_소관_개"
         ]
       },
       "popupFields": [
@@ -6088,7 +6051,8 @@
           "key": "variable",
           "label": "지표",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "map-index",
+          "note": "기본 선택: 대상시설 수 — 공상(산업·무역)"
         },
         {
           "key": "value",
@@ -6124,7 +6088,6 @@
         }
       ],
       "caveats": [
-        "일부 지역만 값이 있어 부분 표출",
         "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
@@ -6135,7 +6098,9 @@
       "elementId": "C-024",
       "targetName": "REDD+ 사업",
       "pdfContent": "참여지역·산림보전·감축사업",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -6143,8 +6108,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 0,
-          "valueRows": 0
+          "regionKeyCount": 6,
+          "valueRows": 6
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -6171,7 +6136,7 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
+      "criteriaPrimary": "①",
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -6197,10 +6162,10 @@
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성6_분류",
-          "속성4_시점"
+          "식별_레코드명",
+          "지역_지역명_개편_전",
+          "RBP_기금_프로그램",
+          "RBP_계약_승인일_YYYY_MM_DD"
         ]
       },
       "popupFields": [
@@ -6246,7 +6211,8 @@
           "key": "variable",
           "label": "지표",
           "labelSource": "contract",
-          "source": "map-index"
+          "source": "map-index",
+          "note": "기본 선택: FCPF ERPA(북중부 6개 성) 참여"
         },
         {
           "key": "value",
@@ -6366,32 +6332,56 @@
         },
         {
           "key": "standard",
-          "label": null,
-          "labelSource": "pending-publicFieldPolicyV126",
+          "label": "등록표준",
+          "labelSource": "map-index",
           "source": "map-index"
         },
         {
           "key": "technologyField",
-          "label": "기술 분야",
-          "labelSource": "publicFieldPolicyV126",
+          "label": "기술분야",
+          "labelSource": "map-index",
           "source": "map-index"
         },
         {
           "key": "status",
           "label": "상태",
-          "labelSource": "publicFieldPolicyV126",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "regionName",
+          "label": "소재 지역",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "proponent",
+          "label": "사업자·기관",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "methodology",
+          "label": "방법론",
+          "labelSource": "map-index",
           "source": "map-index"
         },
         {
           "key": "annualReduction",
-          "label": null,
-          "labelSource": "pending-publicFieldPolicyV126",
+          "label": "연간 예상감축량",
+          "labelSource": "map-index",
           "source": "map-index"
         },
         {
-          "key": "creditingPeriod",
-          "label": "크레딧 기간",
-          "labelSource": "publicFieldPolicyV126",
+          "key": "recordCode",
+          "label": "원천 식별번호",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "officialSource",
+          "label": "공식 원문",
+          "labelSource": "map-index",
           "source": "map-index"
         },
         {
@@ -6579,8 +6569,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 22,
-          "valueRows": 22
+          "regionKeyCount": 62,
+          "valueRows": 62
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -6738,8 +6728,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 26,
-          "valueRows": 26
+          "regionKeyCount": 31,
+          "valueRows": 31
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -6896,8 +6886,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 45,
-          "valueRows": 45
+          "regionKeyCount": 52,
+          "valueRows": 52
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -7054,8 +7044,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 14,
-          "valueRows": 14
+          "regionKeyCount": 25,
+          "valueRows": 25
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -7212,8 +7202,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 4,
-          "valueRows": 4
+          "regionKeyCount": 38,
+          "valueRows": 38
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -7862,8 +7852,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 53,
-          "valueRows": 53
+          "regionKeyCount": 49,
+          "valueRows": 49
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -8193,8 +8183,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 15,
-          "valueRows": 15
+          "regionKeyCount": 18,
+          "valueRows": 18
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -8352,8 +8342,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 54,
-          "valueRows": 54
+          "regionKeyCount": 56,
+          "valueRows": 56
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -8512,8 +8502,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 8,
-          "valueRows": 8
+          "regionKeyCount": 3,
+          "valueRows": 3
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -8817,7 +8807,9 @@
       "elementId": "E-002",
       "targetName": "DNA 협력창구",
       "pdfContent": "창구 위치·승인업무",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -8825,8 +8817,8 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 1,
-          "valueRows": 1
+          "regionKeyCount": 32,
+          "valueRows": 32
         },
         "entityRows": 0,
         "observationRows": 0,
@@ -8853,7 +8845,7 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {

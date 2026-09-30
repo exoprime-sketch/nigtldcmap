@@ -5,9 +5,12 @@ import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 const source = (id: string) =>
   readDownloadJsonV158(id);
 
-function inflate(bundle: { observations: Record<string, unknown>[]; recordDefaults?: { observations?: Record<string, unknown> } }) {
-  const defaults = bundle.recordDefaults?.observations || {};
-  return bundle.observations.map((row) => ({ ...defaults, ...row }));
+// The 2026-09-30 delivery moved B-046/B-047 from the `observations` array
+// (now empty) to `entities` (one per-mineral "entity(레코드형)" row); inflate
+// merges each entity's shared per-section defaults, same as before.
+function inflate(bundle: { entities: Record<string, unknown>[]; recordDefaults?: { entities?: Record<string, unknown> } }) {
+  const defaults = bundle.recordDefaults?.entities || {};
+  return bundle.entities.map((row) => ({ ...defaults, ...row }));
 }
 
 test("B-046 names all eight reported minerals and the five USGS does not list", () => {

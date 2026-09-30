@@ -101,10 +101,14 @@ export const FACILITY_CARD_SPECS_V153: Record<string, FacilityCardSpecV153> = {
     noun: "광산",
     fields: [COUNTRY, { key: "name", label: "명칭", sources: ["광산명", "@name"] }, { key: "type", label: "광종", sources: ["광종"] }, { key: "note", label: "기후기술 연계", sources: ["기후기술_연계_근거"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "소재_행정구역_성"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["좌표_산출근거", "@sourceUrl"], format: "url" }],
   },
+  // 2026-09-30 delivery: C-025 moved to the wide "[블록] 속성" template
+  // (wideRecordsV162.ts), one row per project ("크레딧 사업") or per issuance
+  // ("발행 기록"); the old "속성N_…" keys are kept as a fallback only, since a
+  // few rows may still carry them.
   "C-025": {
     elementId: "C-025",
     noun: "탄소사업",
-    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["속성1_레코드명", "@name"] }, { key: "type", label: "등록 제도", sources: ["standard"] }, { key: "owner", label: "사업자", sources: ["proponent", "속성8_사업자_기관"] }, { key: "scale", label: "규모", sources: ["속성14_연간예상감축_tCO2e"], format: "number", unit: "tCO₂e/년" }, { key: "year", label: "시점", sources: ["속성4_시점"] }, { key: "status", label: "상태", sources: ["status", "속성7_상태"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "속성21_지역_현행"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["속성19_원문URL"], format: "url" }],
+    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["식별_프로젝트명", "속성1_레코드명", "@name"] }, { key: "type", label: "등록 제도", sources: ["식별_등록_표준", "standard"] }, { key: "owner", label: "사업자", sources: ["사업_사업자_기관", "proponent", "속성8_사업자_기관"] }, { key: "scale", label: "규모", sources: ["사업_연간_예상_감축량_tCO_e_년", "속성14_연간예상감축_tCO2e"], format: "number", unit: "tCO₂e/년" }, { key: "year", label: "시점", sources: ["실적_최초_빈티지_년", "발행기록_연도_년", "속성4_시점"] }, { key: "status", label: "상태", sources: ["식별_등재_상태", "status", "속성7_상태"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "지역_지역명_현행", "속성21_지역_현행"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["출처_원문_URL", "속성19_원문URL"], format: "url" }],
   },
   "E-004": { elementId: "E-004", noun: "기관", fields: orgFields(["orgType"], [{ key: "program", label: "담당·프로그램", sources: ["officeProgram"] }, { key: "contact", label: "연락처", sources: ["email", "phone"] }]) },
   "E-005": { elementId: "E-005", noun: "기관", fields: orgFields(["orgType"], [{ key: "domain", label: "분야", sources: ["domain"] }, { key: "contact", label: "연락처", sources: ["contact"] }]) },

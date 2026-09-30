@@ -9,8 +9,8 @@
     "records": 640,
     "located": 71,
     "withoutRegion": 569,
-    "multiUnit": 15,
-    "units": 27,
+    "multiUnit": 1,
+    "units": 25,
     "unplacedByReason": {
       "unresolved": 0,
       "subProvincePlace": 0,
@@ -26,8 +26,12 @@
   "unresolvedValues": [],
   "columnsUsed": [
     {
+      "column": "사업지_행정구역",
+      "records": 47
+    },
+    {
       "column": "name",
-      "records": 87
+      "records": 25
     }
   ],
   "byRecordId": {
@@ -56,8 +60,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00022": [
@@ -69,8 +73,8 @@
         ],
         "spelling": "ha noi",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00023": [
@@ -84,8 +88,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00024": [
@@ -99,8 +103,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00025": [
@@ -112,8 +116,8 @@
         ],
         "spelling": "ha noi",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00026": [
@@ -127,8 +131,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00027": [
@@ -140,8 +144,8 @@
         ],
         "spelling": "ha noi",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00033": [
@@ -155,19 +159,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-HN",
-        "name": "Hà Nội",
-        "adm1Codes63": [
-          "VN-HN"
-        ],
-        "spelling": "ha noi",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00049": [
@@ -181,8 +174,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00056": [
@@ -194,8 +187,8 @@
         ],
         "spelling": "nghe an",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00066": [
@@ -209,8 +202,8 @@
         ],
         "spelling": "can tho",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00071": [
@@ -239,8 +232,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00081": [
@@ -252,19 +245,8 @@
         ],
         "spelling": "thanh hoa",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-22",
-        "name": "Nghệ An",
-        "adm1Codes63": [
-          "VN-22"
-        ],
-        "spelling": "nghe an",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00087": [
@@ -276,8 +258,8 @@
         ],
         "spelling": "thanh hoa",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00090": [
@@ -306,8 +288,8 @@
         ],
         "spelling": "can tho",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00092": [
@@ -321,8 +303,8 @@
         ],
         "spelling": "can tho",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00093": [
@@ -336,8 +318,8 @@
         ],
         "spelling": "vinh long",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00094": [
@@ -392,8 +374,8 @@
         ],
         "spelling": "quang ngai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00105": [
@@ -421,8 +403,8 @@
         ],
         "spelling": "ca mau",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00120": [
@@ -434,8 +416,8 @@
         ],
         "spelling": "thanh hoa",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00138": [
@@ -475,8 +457,8 @@
         ],
         "spelling": "ha tinh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00143": [
@@ -489,8 +471,8 @@
         ],
         "spelling": "tuyen quang",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00144": [
@@ -503,8 +485,8 @@
         ],
         "spelling": "tuyen quang",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00148": [
@@ -549,19 +531,6 @@
     ],
     "v124-d-021-entity-00152": [
       {
-        "unitCode34": "VN34-49",
-        "name": "Vĩnh Long",
-        "adm1Codes63": [
-          "VN-49",
-          "VN-50",
-          "VN-51"
-        ],
-        "spelling": "tra vinh",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
         "unitCode34": "VN34-23",
         "name": "Hà Tĩnh",
         "adm1Codes63": [
@@ -569,24 +538,12 @@
         ],
         "spelling": "ha tinh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00155": [
       {
-        "unitCode34": "VN34-25",
-        "name": "Quảng Trị",
-        "adm1Codes63": [
-          "VN-24",
-          "VN-25"
-        ],
-        "spelling": "quang binh",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
         "unitCode34": "VN34-23",
         "name": "Hà Tĩnh",
         "adm1Codes63": [
@@ -594,8 +551,8 @@
         ],
         "spelling": "ha tinh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00156": [
@@ -622,20 +579,8 @@
         ],
         "spelling": "cao bang",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-69",
-        "name": "Thái Nguyên",
-        "adm1Codes63": [
-          "VN-53",
-          "VN-69"
-        ],
-        "spelling": "bac kan",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00159": [
@@ -663,32 +608,8 @@
         ],
         "spelling": "tuyen quang",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-34",
-        "name": "Khánh Hòa",
-        "adm1Codes63": [
-          "VN-34",
-          "VN-36"
-        ],
-        "spelling": "ninh thuan",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-30",
-        "name": "Gia Lai",
-        "adm1Codes63": [
-          "VN-30",
-          "VN-31"
-        ],
-        "spelling": "gia lai",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00177": [
@@ -743,8 +664,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00298": [
@@ -776,18 +697,6 @@
     ],
     "v124-d-021-entity-00322": [
       {
-        "unitCode34": "VN34-HP",
-        "name": "Hải Phòng",
-        "adm1Codes63": [
-          "VN-61",
-          "VN-HP"
-        ],
-        "spelling": "haiphong",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
         "unitCode34": "VN34-02",
         "name": "Lào Cai",
         "adm1Codes63": [
@@ -796,8 +705,8 @@
         ],
         "spelling": "lao cai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00330": [
@@ -811,8 +720,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00335": [
@@ -826,8 +735,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00350": [
@@ -840,8 +749,8 @@
         ],
         "spelling": "bac ninh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00361": [
@@ -910,20 +819,8 @@
         ],
         "spelling": "quang ngai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-DN",
-        "name": "Đà Nẵng",
-        "adm1Codes63": [
-          "VN-27",
-          "VN-DN"
-        ],
-        "spelling": "da nang",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00410": [
@@ -948,23 +845,11 @@
         ],
         "spelling": "nghe an",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00418": [
-      {
-        "unitCode34": "VN34-HP",
-        "name": "Hải Phòng",
-        "adm1Codes63": [
-          "VN-61",
-          "VN-HP"
-        ],
-        "spelling": "haiphong",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
       {
         "unitCode34": "VN34-02",
         "name": "Lào Cai",
@@ -974,8 +859,8 @@
         ],
         "spelling": "lao cai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00426": [
@@ -988,8 +873,8 @@
         ],
         "spelling": "tay ninh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00441": [
@@ -1001,19 +886,8 @@
         ],
         "spelling": "lang son",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-HN",
-        "name": "Hà Nội",
-        "adm1Codes63": [
-          "VN-HN"
-        ],
-        "spelling": "ha noi",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00447": [
@@ -1026,20 +900,8 @@
         ],
         "spelling": "quang ngai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
-        "unitCode34": "VN34-DN",
-        "name": "Đà Nẵng",
-        "adm1Codes63": [
-          "VN-27",
-          "VN-DN"
-        ],
-        "spelling": "da nang",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00454": [
@@ -1064,8 +926,8 @@
         ],
         "spelling": "ha noi",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00521": [
@@ -1079,8 +941,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00529": [
@@ -1092,8 +954,8 @@
         ],
         "spelling": "ha noi",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00558": [
@@ -1106,24 +968,12 @@
         ],
         "spelling": "thai nguyen",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00570": [
       {
-        "unitCode34": "VN34-HP",
-        "name": "Hải Phòng",
-        "adm1Codes63": [
-          "VN-61",
-          "VN-HP"
-        ],
-        "spelling": "haiphong",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
         "unitCode34": "VN34-02",
         "name": "Lào Cai",
         "adm1Codes63": [
@@ -1132,24 +982,12 @@
         ],
         "spelling": "lao cai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00582": [
       {
-        "unitCode34": "VN34-HP",
-        "name": "Hải Phòng",
-        "adm1Codes63": [
-          "VN-61",
-          "VN-HP"
-        ],
-        "spelling": "haiphong",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
-      {
         "unitCode34": "VN34-02",
         "name": "Lào Cai",
         "adm1Codes63": [
@@ -1158,8 +996,8 @@
         ],
         "spelling": "lao cai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00596": [
@@ -1172,8 +1010,8 @@
         ],
         "spelling": "hung yen",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00616": [
@@ -1187,23 +1025,11 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-021-entity-00628": [
-      {
-        "unitCode34": "VN34-HP",
-        "name": "Hải Phòng",
-        "adm1Codes63": [
-          "VN-61",
-          "VN-HP"
-        ],
-        "spelling": "haiphong",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      },
       {
         "unitCode34": "VN34-02",
         "name": "Lào Cai",
@@ -1213,8 +1039,8 @@
         ],
         "spelling": "lao cai",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ]
   }

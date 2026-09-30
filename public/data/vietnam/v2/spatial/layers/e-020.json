@@ -31,6 +31,21 @@
   },
   "values": [
     {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "e-020-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "E-020_kr_support",
+      "sourceRecordId": "v124-e-020-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
       "adm1Code": "VN-39",
       "adm1Name": "Đồng Nai",
       "variable": "e-020-located-count",
@@ -39,7 +54,7 @@
       "value": 1,
       "unit": "건",
       "sourceIndicatorId": "E-020_kr_support",
-      "sourceRecordId": "v124-e-020-entity-00002",
+      "sourceRecordId": "v124-e-020-entity-00003",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Đồng Nai",
       "mappingMethod": "value-stated-2025-unit-membership",
@@ -54,32 +69,29 @@
       "value": 1,
       "unit": "건",
       "sourceIndicatorId": "E-020_kr_support",
-      "sourceRecordId": "v124-e-020-entity-00002",
+      "sourceRecordId": "v124-e-020-entity-00003",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Đồng Nai",
-      "mappingMethod": "value-stated-2025-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-23",
-      "adm1Name": "Hà Tĩnh",
-      "variable": "e-020-located-count",
-      "variableLabel": "지역이 확인된 기관 수",
-      "period": "2026년 기준",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "E-020_kr_support",
-      "sourceRecordId": "v124-e-020-entity-00007",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hà Tĩnh",
       "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     }
   ],
   "memberRecords": {
-    "VN-39": [
+    "VN-23": [
       {
         "recordId": "v124-e-020-entity-00002",
+        "label": "한국환경산업기술원(KEITI)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "E-020_kr_support"
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "v124-e-020-entity-00003",
         "label": "한국환경산업기술원(KEITI)",
         "date": "",
         "status": "",
@@ -91,25 +103,13 @@
     ],
     "VN-58": [
       {
-        "recordId": "v124-e-020-entity-00002",
+        "recordId": "v124-e-020-entity-00003",
         "label": "한국환경산업기술원(KEITI)",
         "date": "",
         "status": "",
         "value": "",
         "url": "",
         "region": "Đồng Nai",
-        "indicatorId": "E-020_kr_support"
-      }
-    ],
-    "VN-23": [
-      {
-        "recordId": "v124-e-020-entity-00007",
-        "label": "한국에너지공단(KEA)",
-        "date": "",
-        "status": "",
-        "value": "",
-        "url": "",
-        "region": "Hà Tĩnh",
         "indicatorId": "E-020_kr_support"
       }
     ]

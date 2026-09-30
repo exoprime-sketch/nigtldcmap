@@ -4,11 +4,11 @@
   "countryIso3": "VNM",
   "method": "province-dictionary-v157 value match (region column > record title > other; URL never; organisation column only for organisation records)",
   "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
-  "recordsAreOrganisations": false,
+  "recordsAreOrganisations": true,
   "counts": {
-    "records": 235,
+    "records": 117,
     "located": 14,
-    "withoutRegion": 221,
+    "withoutRegion": 103,
     "multiUnit": 0,
     "units": 8,
     "unplacedByReason": {
@@ -17,9 +17,9 @@
       "regionGroup": 0,
       "unnamedProvinceSet": 0,
       "crossCountry": 0,
-      "nationwide": 0,
+      "nationwide": 103,
       "codeOnly": 0,
-      "noRegionStated": 221
+      "noRegionStated": 0
     }
   },
   "corruptedMatches": [],
@@ -31,77 +31,7 @@
     }
   ],
   "byRecordId": {
-    "v124-c-008-entity-00052": [
-      {
-        "unitCode34": "VN34-SG",
-        "name": "Hồ Chí Minh",
-        "adm1Codes63": [
-          "VN-43",
-          "VN-57",
-          "VN-SG"
-        ],
-        "spelling": "ho chi minh",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      }
-    ],
-    "v124-c-008-entity-00053": [
-      {
-        "unitCode34": "VN34-HN",
-        "name": "Hà Nội",
-        "adm1Codes63": [
-          "VN-HN"
-        ],
-        "spelling": "hanoi",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      }
-    ],
-    "v124-c-008-entity-00058": [
-      {
-        "unitCode34": "VN34-SG",
-        "name": "Hồ Chí Minh",
-        "adm1Codes63": [
-          "VN-43",
-          "VN-57",
-          "VN-SG"
-        ],
-        "spelling": "ho chi minh",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      }
-    ],
-    "v124-c-008-entity-00095": [
-      {
-        "unitCode34": "VN34-66",
-        "name": "Hưng Yên",
-        "adm1Codes63": [
-          "VN-20",
-          "VN-66"
-        ],
-        "spelling": "thai binh",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      }
-    ],
-    "v124-c-008-entity-00104": [
-      {
-        "unitCode34": "VN34-HN",
-        "name": "Hà Nội",
-        "adm1Codes63": [
-          "VN-HN"
-        ],
-        "spelling": "ha noi",
-        "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
-      }
-    ],
-    "v124-c-008-entity-00131": [
+    "v124-c-008-entity-00001": [
       {
         "unitCode34": "VN34-CT",
         "name": "Cần Thơ",
@@ -116,7 +46,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00132": [
+    "v124-c-008-entity-00002": [
       {
         "unitCode34": "VN34-DN",
         "name": "Đà Nẵng",
@@ -130,7 +60,62 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00133": [
+    "v124-c-008-entity-00009": [
+      {
+        "unitCode34": "VN34-SG",
+        "name": "Hồ Chí Minh",
+        "adm1Codes63": [
+          "VN-43",
+          "VN-57",
+          "VN-SG"
+        ],
+        "spelling": "ho chi minh",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-c-008-entity-00010": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "hanoi",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-c-008-entity-00014": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "ha noi",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-c-008-entity-00057": [
+      {
+        "unitCode34": "VN34-66",
+        "name": "Hưng Yên",
+        "adm1Codes63": [
+          "VN-20",
+          "VN-66"
+        ],
+        "spelling": "thai binh",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-c-008-entity-00062": [
       {
         "unitCode34": "VN34-26",
         "name": "Huế",
@@ -143,7 +128,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00134": [
+    "v124-c-008-entity-00063": [
       {
         "unitCode34": "VN34-25",
         "name": "Quảng Trị",
@@ -157,7 +142,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00135": [
+    "v124-c-008-entity-00064": [
       {
         "unitCode34": "VN34-25",
         "name": "Quảng Trị",
@@ -171,7 +156,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00136": [
+    "v124-c-008-entity-00067": [
       {
         "unitCode34": "VN34-26",
         "name": "Huế",
@@ -184,7 +169,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00139": [
+    "v124-c-008-entity-00071": [
       {
         "unitCode34": "VN34-18",
         "name": "Ninh Bình",
@@ -199,7 +184,7 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00140": [
+    "v124-c-008-entity-00072": [
       {
         "unitCode34": "VN34-HN",
         "name": "Hà Nội",
@@ -212,7 +197,22 @@
         "columnKind": "name"
       }
     ],
-    "v124-c-008-entity-00141": [
+    "v124-c-008-entity-00073": [
+      {
+        "unitCode34": "VN34-SG",
+        "name": "Hồ Chí Minh",
+        "adm1Codes63": [
+          "VN-43",
+          "VN-57",
+          "VN-SG"
+        ],
+        "spelling": "ho chi minh",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-c-008-entity-00089": [
       {
         "unitCode34": "VN34-SG",
         "name": "Hồ Chí Minh",

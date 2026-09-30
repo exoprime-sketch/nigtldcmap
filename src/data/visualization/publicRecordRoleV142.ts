@@ -5,10 +5,16 @@ import { publicTextV126 } from "./publicFieldPolicyV126";
 /**
  * What a delivered row is (V142).
  *
- * D-026 delivered fourteen rows marked 레코드구분=개별: nine MIGA guarantees
- * and five descriptions of the covers those guarantees combine (계약위반,
- * 비이행보증, 수용, 이전제한, 전쟁·내란). Counted alike, the screen said
- * "사업 14건". The role is read from the row's own columns under a rule
+ * D-026 used to deliver fourteen rows marked 레코드구분=개별: nine MIGA
+ * guarantees and five descriptions of the covers those guarantees combine
+ * (계약위반, 비이행보증, 수용, 이전제한, 전쟁·내란). Counted alike, the screen
+ * said "사업 14건". The 2026-09-30 delivery replaced this element outright:
+ * it now ships 13 rows, all MIGA 보증사업 records, and the five cover
+ * descriptions are gone (per the ETL note, that classification now lives
+ * only inside each project's own Guarantee Summary document). The D-026
+ * rule in publicRecordRoleRulesV142.json is kept so it can catch such rows
+ * again if a future delivery reintroduces them, but it matches nothing
+ * today. The role is read from the row's own columns under a rule
  * written per element in publicRecordRoleRulesV142.json, with the source
  * basis beside it; a numeric-looking identifier alone never decides. The
  * card builder and the analysis QA evaluate the same JSON.

@@ -49,6 +49,10 @@ PROVINCE_MEASURE_CONTRACT: tuple[dict[str, Any], ...] = (
     },
     {
         "sourceLabel": "산림탄소 총배출(Mg CO2e/yr)",
+        # V162: the 2026-09-30 delivery prints this column without "/yr" and its
+        # note states "배출·흡수·순플럭스는 2001–2024 누계": a period total, not a
+        # mean. The printed label decides which one a value is.
+        "alternates": ({"sourceLabel": "산림탄소 총배출(Mg CO2e)", "statisticType": "period-total"},),
         "measureId": "b034-forest-carbon-gross-emissions",
         "publicLabel": "산림탄소 총배출",
         "quantityType": "flux",
@@ -59,6 +63,10 @@ PROVINCE_MEASURE_CONTRACT: tuple[dict[str, Any], ...] = (
     },
     {
         "sourceLabel": "산림탄소 총흡수(Mg CO2/yr)",
+        # V162: the 2026-09-30 delivery prints this column without "/yr" and its
+        # note states "배출·흡수·순플럭스는 2001–2024 누계": a period total, not a
+        # mean. The printed label decides which one a value is.
+        "alternates": ({"sourceLabel": "산림탄소 총흡수(Mg CO2)", "statisticType": "period-total"},),
         "measureId": "b034-forest-carbon-gross-removals",
         "publicLabel": "산림탄소 총흡수",
         "quantityType": "flux",
@@ -69,6 +77,10 @@ PROVINCE_MEASURE_CONTRACT: tuple[dict[str, Any], ...] = (
     },
     {
         "sourceLabel": "산림탄소 순플럭스(Mg CO2e/yr)",
+        # V162: the 2026-09-30 delivery prints this column without "/yr" and its
+        # note states "배출·흡수·순플럭스는 2001–2024 누계": a period total, not a
+        # mean. The printed label decides which one a value is.
+        "alternates": ({"sourceLabel": "산림탄소 순플럭스(Mg CO2e)", "statisticType": "period-total"},),
         "measureId": "b034-forest-carbon-net-flux",
         "publicLabel": "산림탄소 순플럭스",
         "quantityType": "flux",
@@ -177,6 +189,19 @@ def _unit_from_label(label: str) -> str:
     return normalize_unit(inner[-1]) if inner else ""
 
 
+def _contract_for_row(
+    workbook: Mapping[str, Any], attributes: Mapping[str, Any], contract: Mapping[str, Any]
+) -> Mapping[str, Any]:
+    """The contract as the delivery prints it: the declared label if that column
+    exists, else the first alternate label that does (with its own statistic)."""
+    if resolve_attribute_key(workbook, attributes, contract["sourceLabel"]) is not None:
+        return contract
+    for alternate in contract.get("alternates", ()):
+        if resolve_attribute_key(workbook, attributes, alternate["sourceLabel"]) is not None:
+            return {**contract, **alternate}
+    return contract
+
+
 def attribute_key_by_label(
     workbook: Mapping[str, Any], attributes: Mapping[str, Any]
 ) -> dict[str, str]:
@@ -269,7 +294,8 @@ def derive_b034_facts(
                 unmatched_regions.append(region["regionNameRoman"] or region["sourceRegionKey"])
             threshold_match = THRESHOLD_RE.search(classification)
             threshold = f"{threshold_match.group(1)}%" if threshold_match else None
-            for contract in PROVINCE_MEASURE_CONTRACT:
+            for base_contract in PROVINCE_MEASURE_CONTRACT:
+                contract = _contract_for_row(workbook, attributes, base_contract)
                 attr_key = labels.get(contract["sourceLabel"])
                 # Bind by printed label; a column that is absent is absent, not
                 # the next column along.

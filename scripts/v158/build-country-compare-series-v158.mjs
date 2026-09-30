@@ -19,6 +19,7 @@
  *
  *   node scripts/v158/build-country-compare-series-v158.mjs [--check]
  */
+import { statedRecordSeriesV162 } from "./compare-stated-records-v162.mjs";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -95,11 +96,21 @@ function openCountryTree(country) {
  */
 function indicatorSeries(payload, indicatorId) {
   if (!payload) return null;
-  const indicator = (payload.meta?.indicators || []).find(
+  let indicator = (payload.meta?.indicators || []).find(
     (row) => String(row.indicatorId) === indicatorId
   );
+  let observations = payload.observations?.records || [];
+  // V162: a delivery that states the series in record rows (B-046): used
+  // only when no observation carries this indicator.
+  if (!observations.some((row) => String(row.indicatorId) === indicatorId)) {
+    const stated = statedRecordSeriesV162(payload.entities).filter((row) => row.indicatorId === indicatorId);
+    if (stated.length) {
+      indicator = indicator || { indicatorId, unit: stated[0].unit, labelKo: null };
+      observations = stated;
+    }
+  }
   if (!indicator) return null;
-  const points = (payload.observations?.records || [])
+  const points = observations
     .filter((row) => String(row.indicatorId) === indicatorId)
     .map((row) => ({ year: Number(row.year), value: row.value }))
     .filter(

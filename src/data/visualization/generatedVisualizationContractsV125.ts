@@ -1673,16 +1673,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "B-034",
     "measureLabels": [
+      "산림탄소 순플럭스(누계)",
       "산림탄소 순플럭스(연평균)",
+      "산림탄소 총배출(누계)",
       "산림탄소 총배출(연간)",
       "산림탄소 총배출(연평균)",
+      "산림탄소 총흡수(누계)",
       "산림탄소 총흡수(연평균)",
-      "수관 면적",
-      "지상부 탄소밀도",
-      "지상부 탄소저장량"
+      "수관 면적"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 1550,
+    "populatedRecordCount": 1739,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2410,7 +2411,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 129,
     "primaryRenderer": "evidence-matrix",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2625,7 +2626,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 61,
     "primaryRenderer": "capability-scorecard",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2668,7 +2669,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 13,
     "primaryRenderer": "capability-scorecard",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null

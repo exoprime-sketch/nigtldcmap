@@ -9,11 +9,184 @@
   "boundarySystem": "pre-2025-63",
   "coverageKind": "partial",
   "selectors": {
-    "periods": [],
-    "variables": []
+    "defaultPeriod": "2022",
+    "defaultVariable": "fcpf-erpa-participation",
+    "periods": [
+      "2022"
+    ],
+    "variables": [
+      {
+        "key": "fcpf-erpa-participation",
+        "measureId": "c024-erpa",
+        "measureKey": "fcpf-erpa-participation",
+        "scenario": null,
+        "label": "FCPF ERPA(북중부 6개 성) 참여",
+        "unit": "참여 프로그램 수",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 6
+      }
+    ]
   },
-  "values": [],
-  "seriesCoverage": [],
+  "values": [
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00001",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00002",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00003",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00004",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00005",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "fcpf-erpa-participation",
+      "variableLabel": "FCPF ERPA(북중부 6개 성) 참여",
+      "period": "2022",
+      "value": 1,
+      "unit": "참여 프로그램 수",
+      "sourceIndicatorId": "C-024_erpa_province",
+      "sourceRecordId": "v124-c-024-entity-00006",
+      "sourceSpatialUnit": "admin1",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-21": [
+      {
+        "recordId": "v124-c-024-entity-00001",
+        "label": "FCPF ERPA 대상 성, Thanh Hóa",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-024-entity-00002",
+        "label": "FCPF ERPA 대상 성, Nghệ An",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-c-024-entity-00003",
+        "label": "FCPF ERPA 대상 성, Hà Tĩnh",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-c-024-entity-00004",
+        "label": "FCPF ERPA 대상 성, Quảng Bình",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-c-024-entity-00005",
+        "label": "FCPF ERPA 대상 성, Quảng Trị",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-c-024-entity-00006",
+        "label": "FCPF ERPA 대상 성, Thừa Thiên Huế",
+        "date": "2022-12-28",
+        "status": "",
+        "value": "",
+        "url": "",
+        "indicatorId": "C-024_erpa_province"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "fcpf-erpa-participation",
+      "period": "2022",
+      "expectedCount": 63,
+      "matchedCount": 6,
+      "missingCount": 57,
+      "failureCount": 0
+    }
+  ],
   "source": {
     "attribution": [
       "Source: Green Climate Fund (GCF)",
@@ -43,12 +216,12 @@
     "expectedAdm1Count": 63,
     "fakeGeometryCount": 0,
     "joinFailureCount": 0,
-    "matchedAdm1Count": 0,
-    "maxSeriesFeatureCount": 0,
-    "missingAdm1Count": 63,
+    "matchedAdm1Count": 6,
+    "maxSeriesFeatureCount": 6,
+    "missingAdm1Count": 57,
     "providedZeroCount": 0,
-    "publishedValueCount": 0,
-    "sourceValueCount": 0,
+    "publishedValueCount": 6,
+    "sourceValueCount": 6,
     "suppressedValueCount": 0,
     "unmatchedSourceNameCount": 0,
     "zeroImputationCount": 0

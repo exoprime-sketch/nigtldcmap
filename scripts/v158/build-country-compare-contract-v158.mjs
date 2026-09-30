@@ -35,6 +35,7 @@ import {
   resolveCountryIso3V158,
 } from "./country-context-v158.mjs";
 import { readDownloadJsonV158 } from "./download-zip-v158.mjs";
+import { statedRecordIndicatorsV162, statedRecordSeriesV162 } from "./compare-stated-records-v162.mjs";
 
 const ROOT = repoRootV158(import.meta.dirname);
 const argv = process.argv.slice(2);
@@ -84,8 +85,13 @@ function headlineIndicator(elementId) {
   } catch {
     return null;
   }
-  const indicators = Array.isArray(payload?.indicators) ? payload.indicators : [];
-  const observations = Array.isArray(payload?.observations) ? payload.observations : [];
+  let indicators = Array.isArray(payload?.indicators) ? payload.indicators : [];
+  let observations = Array.isArray(payload?.observations) ? payload.observations : [];
+  // V162: a delivery that states the series in record rows (B-046).
+  if (!observations.length) {
+    observations = statedRecordSeriesV162(payload?.entities);
+    if (observations.length) indicators = statedRecordIndicatorsV162(observations);
+  }
   const withValues = new Set(
     observations
       .filter((row) => typeof row?.value === "number" && Number.isFinite(row.value))

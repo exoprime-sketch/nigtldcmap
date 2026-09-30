@@ -1,9 +1,6 @@
-import { readFileSync } from "fs";
 import { describe, expect, it } from "@jest/globals";
-import { resolve } from "path";
 
 import { classifyStatedValueV142, comparableStatedValuesV142 } from "./statedValueRoleV142";
-import { countryPublicDirV158 } from "../countryContext";
 import { readDownloadJsonV158 } from "../testing/downloadZipV158";
 
 /**
@@ -57,31 +54,46 @@ describe("classifyStatedValueV142 — C-011's values are not one axis", () => {
     expect(classifyStatedValueV142({ raw: 42, title: "어떤 항목", indicatorUnit: "구분", indicatorUnitFamily: "text" }).role).toBe("categorical");
   });
 
+  // 2026-09-30 재적재: C-011이 "가로형" 넓은 레코드로 전면 재구성되며(속성3_값/속성4_시점
+  // 같은 레코드 공통 컬럼이 사라지고, crime_stat·field_survey·safety_notice·
+  // security_assessment·travel_alert 유형별로 서로 다른 컬럼군을 쓴다), 종전에 있던
+  // 연락처 레코드(응급신고 113·114·115, 대사관·총영사관 전화)가 이번 납품에 없다(38개 행
+  // 전체에 연락처_값이 채워진 행이 하나도 없음). 고의살인율(공식 통계)은 이제 2001~2011년
+  // 11개 연도 전체가 오고(종전엔 2011년 1개만), 같은 값 컬럼을 쓰는 Numbeo 행은 원천이
+  // 스스로 "크라우드소싱 인식조사(공식 통계 아님)"라고 밝혀 비교 대상에서 제외한다.
   it("does not build a comparison out of the C-011 download", () => {
-    const semanticsFile = resolve(__dirname, `../../../${countryPublicDirV158("VNM")}/semantic/elements/c-011.json`);
     const download = readDownloadJsonV158("c-011");
-    const semantics = JSON.parse(readFileSync(semanticsFile, "utf8"));
-    const units = new Map<string, { unit: string; unitFamily: string }>(
-      semantics.indicators.map((indicator: { indicatorId: string; measure: { unit: string; unitFamily: string } }) => [indicator.indicatorId, indicator.measure])
-    );
-    const rows = download.entities.map((entity: { recordId: string; name: string; indicatorId: string; normalizedAttributes: Record<string, unknown> }) => {
-      const indicator = units.get(entity.indicatorId) || { unit: "", unitFamily: "" };
+    type EntityC011 = { recordId: string; name: string; indicatorId: string; normalizedAttributes: Record<string, unknown> };
+    const stated = (entity: EntityC011): { raw: unknown; indicatorUnit?: string; indicatorUnitFamily?: string; period?: unknown; measureName?: unknown } => {
+      const attributes = entity.normalizedAttributes;
+      if (entity.indicatorId === "C-011_crime_stat" && String(attributes["통계_자료_성격"] || "").includes("공식 통계")) {
+        return { raw: attributes["통계_값_건_10만_명"], indicatorUnit: "건/10만명", indicatorUnitFamily: "count", period: attributes["통계_연도_년"], measureName: attributes["통계_지표명_국문"] };
+      }
+      if (entity.indicatorId === "C-011_safety_notice") return { raw: attributes["공지_게시일_YYYY_MM_DD"] };
+      if (entity.indicatorId === "C-011_travel_alert") return { raw: attributes["경보_현재_등급_단계"] };
+      // C-011_crime_stat(Numbeo, crowdsourced), C-011_field_survey, C-011_security_assessment:
+      // this delivery states no single stated-value column for these record types.
+      return { raw: null };
+    };
+    const rows = download.entities.map((entity: EntityC011) => {
+      const fact = stated(entity);
       const classified = classifyStatedValueV142({
-        raw: entity.normalizedAttributes["속성3_값"],
+        raw: fact.raw,
         title: entity.name,
-        period: entity.normalizedAttributes["속성4_시점"],
-        indicatorUnit: indicator.unit,
-        indicatorUnitFamily: indicator.unitFamily,
+        period: fact.period,
+        indicatorUnit: fact.indicatorUnit,
+        indicatorUnitFamily: fact.indicatorUnitFamily,
+        measureName: fact.measureName as string | undefined,
         elementId: "C-011",
       });
       return { recordId: entity.recordId, title: entity.name, ...classified };
     });
     const byValue = (value: unknown) => rows.filter((row: { role: string; value: number | null }) => row.value === value);
     const measured = rows.filter((row: { role: string; value: number | null }) => row.role === "measure" && row.value !== null);
-    expect(measured.map((row: { value: number }) => row.value)).toEqual([1.54]);
+    expect(measured.map((row: { value: number }) => row.value)).toEqual([1.29, 1.35, 1.33, 1.32, 1.3, 1.28, 1.4, 1.28, 1.43, 1.53, 1.54]);
     expect(comparableStatedValuesV142(measured)).toEqual([]);
     [113, 114, 115, 2020, 2023, 11, 3].forEach((value) => expect(byValue(value)).toEqual([]));
-    expect(rows.filter((row: { role: string }) => row.role === "telephone").length).toBe(9);
+    expect(rows.filter((row: { role: string }) => row.role === "telephone").length).toBe(0);
   });
 });
 

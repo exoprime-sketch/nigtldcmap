@@ -304,7 +304,7 @@ export default function PublicDataAnalysisRouterV126({
     // wide template (one row per record, '[블록] 속성' columns) the common
     // block cards take their place; primary-chart variants read it themselves.
     if (wideRecordsV162.length > 0 && LONG_TEMPLATE_VARIANTS_V162.has(variant)) {
-      return <WideRecordCardsV162 records={wideRecordsV162} />;
+      return <WideRecordCardsV162 records={wideRecordsV162} elementId={elementId} />;
     }
     switch (variant) {
       case "building-metadata":
@@ -342,7 +342,7 @@ export default function PublicDataAnalysisRouterV126({
           section rendered nothing at all. Where the specialised view has no
           observations to draw, the archetype shows the records that are there.
         */
-        if (entities.length > 0) return <ReportedInventoryAnalysisV147 entities={entities} />;
+        if (entities.length > 0) return <ReportedInventoryAnalysisV147 entities={entities} indicators={indicators} />;
         if (semanticRows.length > 0) {
           return (
             <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
@@ -463,7 +463,8 @@ export default function PublicDataAnalysisRouterV126({
         return <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
       case "mineral-resources":
         // Minerals by name, in their own units; the bar is USGS's world share (V153).
-        return <MineralResourceSummaryV153 elementId={elementId as "B-046" | "B-047"} observations={observations} indicators={indicators} />;
+        // V162: the 2026-09-30 delivery states B-046/B-047 as records, not observations.
+        return <MineralResourceSummaryV153 elementId={elementId as "B-046" | "B-047"} observations={observations} entities={entities} indicators={indicators} />;
       case "investor-network":
         // Investors with a Vietnam office apart from head offices abroad (V153).
         return <InvestorNetworkSummaryV153 entities={entities} />;

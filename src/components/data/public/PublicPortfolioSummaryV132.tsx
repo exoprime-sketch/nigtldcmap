@@ -298,9 +298,12 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     categoryKeys: ["portfolioCategory", "technologyField", "status", "entryMode"],
   },
   "D-026": {
+    // V162: the 2026-09-30 MIGA export states amounts in US$ million (e.g.
+    // BT20 대표금액 "500" with its own text "$500 million"), not in USD.
+    // The unit is stated, never multiplied.
     amountKeys: [
-      { key: "financeAmountUsd", currency: "USD" },
-      { key: "financeAmountText", currency: "USD" },
+      { key: "financeAmountUsd", currency: "백만 USD" },
+      { key: "financeAmountText", currency: "백만 USD" },
     ],
     amountLabel: "보증금액 합계",
     // Nine MIGA guarantees; the five cover descriptions are definitions and

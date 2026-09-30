@@ -121,7 +121,10 @@ export function withoutFileNamesV162(text: string): string {
     .replace(FILE_NAME_PAREN_V162, "")
     .replace(FILE_NAME_TOKEN_V162, "$1")
     .replace(/\s{2,}/gu, " ")
-    .replace(/\s+([,.;·)])/gu, "$1")
+    // "·" is a mid-sentence list separator ("베트남 총리(승인·공포) · 산업무역부
+    // (작성)"), not closing punctuation - collapsing the space before it too
+    // (as for ",.;)" ) joined the two sides of a real "A · B" list together.
+    .replace(/\s+([,.;)])/gu, "$1")
     .replace(/^[\s,;·]+|[\s,;·]+$/gu, "")
     .trim();
 }

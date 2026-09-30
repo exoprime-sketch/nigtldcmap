@@ -9231,8 +9231,8 @@
       "entityCount": 1575,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 1575,
-        "mapMode": "cluster",
+        "featureCount": 5,
+        "mapMode": "point",
         "stateParameters": [
           "element",
           "measure",
@@ -15030,7 +15030,7 @@
       "entityCount": 382,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 2,
+        "featureCount": 4,
         "mapMode": "point",
         "stateParameters": [
           "element",
@@ -16046,7 +16046,7 @@
       "entityCount": 25,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 2,
+        "featureCount": 13,
         "mapMode": "point",
         "stateParameters": [
           "element",
@@ -17665,11 +17665,12 @@
         {
           "key": "period",
           "labelKo": "기간",
-          "valueCount": 26,
+          "valueCount": 27,
           "values": [
             "2000",
             "2001",
             "2001-2024",
+            "2001–2024",
             "2002",
             "2003",
             "2004",
@@ -17745,11 +17746,27 @@
       },
       "measures": [
         {
+          "indicatorCount": 63,
+          "key": "measure-346324a32a6a",
+          "labelKo": "산림탄소 순플럭스(누계)",
+          "recordCount": 63,
+          "unit": "Mg CO2e",
+          "unitFamily": "emissions"
+        },
+        {
           "indicatorCount": 4,
           "key": "measure-ef59b2b71a01",
           "labelKo": "산림탄소 순플럭스(연평균)",
           "recordCount": 67,
           "unit": "Mg CO2e/yr",
+          "unitFamily": "emissions"
+        },
+        {
+          "indicatorCount": 63,
+          "key": "measure-b2d5451c9959",
+          "labelKo": "산림탄소 총배출(누계)",
+          "recordCount": 63,
+          "unit": "Mg CO2e",
           "unitFamily": "emissions"
         },
         {
@@ -17766,6 +17783,14 @@
           "labelKo": "산림탄소 총배출(연평균)",
           "recordCount": 4,
           "unit": "Mg CO2e/yr",
+          "unitFamily": "emissions"
+        },
+        {
+          "indicatorCount": 63,
+          "key": "measure-4b7ae56a7e9a",
+          "labelKo": "산림탄소 총흡수(누계)",
+          "recordCount": 63,
+          "unit": "Mg CO2",
           "unitFamily": "emissions"
         },
         {
@@ -17804,8 +17829,8 @@
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
       "missingRecordCount": 0,
       "noDataReason": null,
-      "observationCount": 299,
-      "populatedRecordCount": 1550,
+      "observationCount": 488,
+      "populatedRecordCount": 1739,
       "primaryLabelFields": [
         "displayLabel"
       ],
@@ -17813,13 +17838,16 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-ef59b2b71a01",
+          "defaultValue": "measure-346324a32a6a",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
+            "measure-346324a32a6a",
             "measure-ef59b2b71a01",
+            "measure-b2d5451c9959",
             "measure-2c8d956ae261",
             "measure-de231b2a2012",
+            "measure-4b7ae56a7e9a",
             "measure-9e8ef7dceab0",
             "measure-3a55c6906d9a",
             "measure-5fe032f96d11",
@@ -17908,6 +17936,7 @@
             "2000",
             "2001",
             "2001-2024",
+            "2001–2024",
             "2002",
             "2003",
             "2004",
@@ -24271,7 +24300,7 @@
       "entityCount": 117,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 6,
+        "featureCount": 17,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -25850,7 +25879,7 @@
       "mapLinkage": {
         "enabled": false,
         "featureCount": 0,
-        "mapMode": "region-choropleth",
+        "mapMode": "country-aggregate",
         "stateParameters": [
           "element",
           "measure",
@@ -26215,8 +26244,8 @@
       "elementId": "C-013",
       "entityCount": 129,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
+        "enabled": true,
+        "featureCount": 14,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -28841,8 +28870,8 @@
       "elementId": "C-022",
       "entityCount": 61,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
+        "enabled": true,
+        "featureCount": 63,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -29241,8 +29270,8 @@
       "elementId": "C-024",
       "entityCount": 13,
       "mapLinkage": {
-        "enabled": false,
-        "featureCount": 0,
+        "enabled": true,
+        "featureCount": 6,
         "mapMode": "choropleth",
         "stateParameters": [
           "element",
@@ -32303,7 +32332,7 @@
       "entityCount": 1168,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 22,
+        "featureCount": 62,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -32659,7 +32688,7 @@
       "entityCount": 168,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 26,
+        "featureCount": 31,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -32822,7 +32851,7 @@
       "entityCount": 1050,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 45,
+        "featureCount": 52,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -32981,7 +33010,7 @@
       "entityCount": 632,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 14,
+        "featureCount": 25,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -33141,7 +33170,7 @@
       "entityCount": 305,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 4,
+        "featureCount": 38,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -33833,7 +33862,7 @@
       "entityCount": 640,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 53,
+        "featureCount": 49,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -34181,7 +34210,7 @@
       "entityCount": 112,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 15,
+        "featureCount": 18,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -34557,7 +34586,7 @@
       "entityCount": 173,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 54,
+        "featureCount": 56,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -34714,7 +34743,7 @@
       "entityCount": 13,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 8,
+        "featureCount": 3,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",
@@ -35015,7 +35044,7 @@
       "entityCount": 46,
       "mapLinkage": {
         "enabled": true,
-        "featureCount": 1,
+        "featureCount": 32,
         "mapMode": "region-choropleth",
         "stateParameters": [
           "element",

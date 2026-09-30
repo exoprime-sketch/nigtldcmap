@@ -19,6 +19,14 @@ import "./hydro-station-observations-v142.css";
  * same year, one dry-season row and one wet-season row (Kratie 2004: 2,290 vs
  * 36,700 m³/s, with the delivered ratio 16 beside them). Everything else is
  * tabled per station with its year, and national aggregates sit apart (V142).
+ *
+ * The delivery also carries a GloFAS hydrological-model reanalysis series
+ * (note prefixed "[모델·GloFAS") alongside the literature-reported station
+ * values this element was reviewed against. That series is a different
+ * measure and source — a multi-decade grid-cell mean flow, not the reviewed
+ * seasonal extremes/statistics — so it is treated the same as a placeholder
+ * here: excluded from the comparison table so it is never merged or paired
+ * with the reviewed values (V158-3 data refresh).
  */
 interface Props {
   elementId: "B-023" | "B-028";
@@ -67,6 +75,8 @@ interface SeasonPair {
 
 const NATIONAL_SITE = /^(?:Việt Nam|Viet Nam|베트남|전국|National)/iu;
 const RANGE_SUFFIX = /\s*\((?:범위\s*)?(하한|상한)\)\s*$/u;
+/** GloFAS model-reanalysis rows: a different measure/source than the reviewed values. */
+const MODEL_SOURCE_NOTE = /^\[모델·GloFAS/u;
 
 function text(value: unknown): string {
   return publicTextV126(value) || "";
@@ -81,7 +91,9 @@ export function parseHydroRowV142(entity: VietnamEntityV124): ObservationRow {
   const rawYear = attributes["기준연도"];
   const year = rawYear === null || rawYear === undefined || String(rawYear).trim() === "" ? NaN : Number(rawYear);
   const site = text(attributes["지점_유역명"]) || "지점 미기재";
-  const placeholder = rawValue === null || rawValue === undefined || String(rawValue).trim() === "" || !Number.isFinite(value);
+  const noValue = rawValue === null || rawValue === undefined || String(rawValue).trim() === "" || !Number.isFinite(value);
+  const modeledSource = MODEL_SOURCE_NOTE.test(text(entity.note));
+  const placeholder = noValue || modeledSource;
   return {
     recordId: entity.recordId,
     site,
@@ -89,7 +101,7 @@ export function parseHydroRowV142(entity: VietnamEntityV124): ObservationRow {
     measure,
     base: measure.replace(RANGE_SUFFIX, "").trim(),
     bound: boundMatch ? (boundMatch[1] === "하한" ? "min" : "max") : null,
-    value: placeholder || !Number.isFinite(value) ? null : value,
+    value: noValue ? null : value,
     unit: text(attributes["단위"]),
     year: Number.isFinite(year) ? year : null,
     season: /건기/u.test(measure) ? "dry" : /우기/u.test(measure) ? "wet" : null,
@@ -274,7 +286,7 @@ export default function HydroStationObservationsV142({ elementId, entities }: Pr
         <li>계절별 극값 비교 외에는 지점·관측 항목·단위·연도가 다른 값을 합하거나 하나의 축에서 비교하지 않습니다.</li>
         <li>지도는 관측지점 대표점만 표시하며 유역 경계는 원천에 없습니다.</li>
         {model.placeholders.length > 0 && (
-          <li><PublicTermTextV134 text={`격자·유역 단위(GIS) 산출값 ${model.placeholders.length}건은 원천이 값을 제공하지 않아 표에서 제외했습니다.`} /></li>
+          <li><PublicTermTextV134 text={`원천이 값을 제공하지 않은 항목과 수문모형(GloFAS) 재분석값처럼 관측·문헌 비교와 다른 방식으로 산출된 항목 ${model.placeholders.length}건은 표에서 제외했습니다.`} /></li>
         )}
       </ul>
     </section>

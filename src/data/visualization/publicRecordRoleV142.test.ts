@@ -11,24 +11,22 @@ const download = (elementId: string) =>
 describe("publicRecordRoleV142 — D-026 guarantees vs cover definitions", () => {
   const entities = download("D-026").entities;
 
-  it("reads nine guarantees and five cover definitions out of fourteen 개별 rows", () => {
+  // 2026-09-30 재적재: D-026이 13행 전부 레코드구분=MIGA 보증사업으로 전면 교체됨.
+  // 과거 5건의 '보증 유형 설명' 행(계약위반·비이행보증·수용·이전제한·전쟁내란)은 이번
+  // 납품에 없다(ETL 비고: 그 구분은 이제 개별 Guarantee Summary 문서에만 존재).
+  it("reads all thirteen rows as guarantees now that the source ships no cover-type rows", () => {
     const roles = entities.map((entity) => publicRecordRoleV142(entity));
-    expect(roles.filter((role) => role.role === "individual")).toHaveLength(9);
-    expect(roles.filter((role) => role.role === "definition")).toHaveLength(5);
+    expect(roles.filter((role) => role.role === "individual")).toHaveLength(13);
+    expect(roles.filter((role) => role.role === "definition")).toHaveLength(0);
     expect(roles.filter((role) => role.role === "aggregate")).toHaveLength(0);
-    expect(publicRecordRoleRuleV142("D-026")?.expected).toEqual({ matches: 5, sourceRows: 14 });
+    expect(publicRecordRoleRuleV142("D-026")?.expected).toEqual({ matches: 0, sourceRows: 13 });
   });
 
-  it("names the definitions and keeps their description", () => {
+  it("keeps the definition rule dormant (no cover-type rows in the current delivery)", () => {
     const definitions = entities.filter((entity) => publicRecordRoleV142(entity).role === "definition");
-    expect(definitions.map((entity) => entity.name).sort()).toEqual([
-      "Breach of Contract",
-      "Expropriation",
-      "Non-Honoring of Sovereign Financial Obligations (NHSFO)",
-      "Transfer Restriction / Currency Inconvertibility",
-      "War and Civil Disturbance",
-    ]);
-    expect(publicRecordRoleV142(definitions[0]).label).toBe("보증 유형 안내");
+    expect(definitions).toHaveLength(0);
+    // The rule still labels a matching row correctly if one ever reappears (see
+    // "does not classify by the shape of the identifier alone" below).
   });
 
   it("does not classify by the shape of the identifier alone", () => {
@@ -39,10 +37,13 @@ describe("publicRecordRoleV142 — D-026 guarantees vs cover definitions", () =>
     expect(publicRecordRoleV142(withoutFacts).role).toBe("definition");
   });
 
-  it("sums the guarantee amounts over the nine guarantees only", () => {
+  // 대표금액은 이번 납품부터 USD 백만 단위로 온다(원자료 문서 비고: "MIGA issued a
+  // guarantee of $239.7 million" 등 개별 서술과 정확히 일치). 원천이 밝힌 단위를 그대로
+  // 쓰며 임의로 곱해 원 단위로 바꾸지 않는다.
+  it("sums the guarantee amounts over all thirteen guarantee rows, in the USD millions the source states", () => {
     const individual = entities.filter((entity) => publicRecordRoleV142(entity).role === "individual");
     const total = individual.reduce((sum, entity) => sum + Number(entity.normalizedAttributes["대표금액"] || 0), 0);
-    expect(total).toBe(4121600000);
+    expect(total).toBe(4716);
   });
 });
 

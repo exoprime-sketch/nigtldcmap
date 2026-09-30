@@ -1591,6 +1591,20 @@ function patchExistingLayer(layer, target, report, packs, locator, boundaries34)
     ];
   }
   if (patch.periodLabel) next.periodLabel = patch.periodLabel;
+  // V162: one map object per stated identity (C-025: one project, its
+  // issuance records as members) - the count is recounted from the records.
+  if (patch.featureIdentity) {
+    next.featureIdentity = patch.featureIdentity;
+    const records = (packs?.get(target.elementId)?.entities?.records || []).filter((record) => record.mapEligible);
+    const keys = new Set(
+      records.map(
+        (record) =>
+          patch.featureIdentity.sources.map((key) => text(record.normalizedAttributes?.[key])).filter(Boolean).join("|") ||
+          record.recordId
+      )
+    );
+    next.featureCount = keys.size;
+  }
   if (patch.defaultVariableMeasureId) {
     const wanted = layer.selectors.variables.find((option) => option.measureId === patch.defaultVariableMeasureId);
     const current = layer.selectors.variables.find((option) => option.key === layer.selectors.defaultVariable);

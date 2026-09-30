@@ -3,13 +3,20 @@ import type { ReactNode } from "react";
 import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
 import { sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import "./wide-record-cards-v162.css";
 
 interface Props {
   records: WideRecordV162[];
   /** Named by the caller when the list needs its own heading context (e.g. "지원 요율"). */
   elementTitle?: string;
+  /** V162 (P12-B): which element's 지역 dictionary vintage to read a place name against. */
+  elementId?: string;
 }
+
+/** A [지역] block's place-name attributes ("지역명 (원문)", "지역명 (현행)" …), not its codes. */
+const REGION_NAME_ATTRIBUTE_V162 = /지역명/u;
 
 const INITIAL_VISIBLE_V162 = 20;
 
@@ -74,7 +81,11 @@ function SourceLineV162({ source }: { source: WideRecordV162["source"] }) {
   );
 }
 
-function WideRecordCardV162({ record }: { record: WideRecordV162 }) {
+function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; elementId?: string }) {
+  // V162 (P12-B): a [지역] block's place name reads "한글명 (현지명)"; its own
+  // administrative code stays as delivered (regionText only rewrites the name
+  // attributes, matched by REGION_NAME_ATTRIBUTE_V162).
+  const regionText = useRegionTextV162(elementId);
   return (
     <article className="wide162-card" data-testid="wide-record-card-v162">
       <header className="wide162-card-head">
@@ -87,23 +98,33 @@ function WideRecordCardV162({ record }: { record: WideRecordV162 }) {
         <section className="wide162-block" key={block.block}>
           <h5 className="wide162-block-title">{block.title}</h5>
           <dl className="wide162-rows">
-            {block.values.map((value) => (
-              <div className="wide162-row" key={`${block.block}-${value.attribute}`}>
-                <dt>{value.attribute}</dt>
-                <dd>
-                  {value.href ? (
-                    <a href={value.href} target="_blank" rel="noopener noreferrer">
-                      {/\.pdf(?:$|[?#])/iu.test(value.href) ? sourceLinkTextV162(value.href) : value.value}
-                    </a>
-                  ) : (
-                    <PublicTermTextV134 text={value.value} />
-                  )}
-                </dd>
-              </div>
-            ))}
+            {block.values.map((value) => {
+              const displayValue =
+                block.block === "지역" && REGION_NAME_ATTRIBUTE_V162.test(value.attribute)
+                  ? regionText(value.value)
+                  : value.value;
+              return (
+                <div className="wide162-row" key={`${block.block}-${value.attribute}`}>
+                  <dt>{value.attribute}</dt>
+                  <dd>
+                    {value.href ? (
+                      <a href={value.href} target="_blank" rel="noopener noreferrer">
+                        {/\.pdf(?:$|[?#])/iu.test(value.href) ? sourceLinkTextV162(value.href) : value.value}
+                      </a>
+                    ) : (
+                      <PublicTermTextV134 text={displayValue} />
+                    )}
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </section>
       ))}
+      {/* V162: a policy document keeps the platform's reviewed description
+          (V153 C-009/C-010) now that the wide cards show it; nothing when the
+          document has no entry. */}
+      {elementId ? <PolicyDocumentDescriptionV153 elementId={elementId} name={record.name} /> : null}
       <SourceLineV162 source={record.source} />
     </article>
   );
@@ -115,7 +136,7 @@ function WideRecordCardV162({ record }: { record: WideRecordV162 }) {
  * style (FacilityCardV153) applied to a record that carries several blocks
  * instead of one flat row.
  */
-export default function WideRecordCardsV162({ records, elementTitle }: Props) {
+export default function WideRecordCardsV162({ records, elementTitle, elementId }: Props) {
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_V162);
@@ -184,7 +205,7 @@ export default function WideRecordCardsV162({ records, elementTitle }: Props) {
       ) : (
         <div className="wide162-grid">
           {visible.map((record, index) => (
-            <WideRecordCardV162 key={`${index}-${record.name}`} record={record} />
+            <WideRecordCardV162 key={`${index}-${record.name}`} record={record} elementId={elementId} />
           ))}
         </div>
       )}

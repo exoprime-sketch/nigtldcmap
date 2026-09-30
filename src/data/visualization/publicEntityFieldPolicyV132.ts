@@ -221,21 +221,34 @@ const REVIEWED_ENTITY_ALIASES_V132: Record<string, ReviewedAliasV132[]> = {
     // 총_투자액 is written in 백만 USD ("50.8 백만 USD") and 계약기간 is a term in
     // years ("20"). Neither can be read as a plain amount or a year.
   ],
+  // 2026-09-30 재적재: MIGA 데이터가 최신판으로 전면 교체되며 회계연도_FY→회계연도,
+  // 섹터→섹터_원문(영문 원어)으로 컬럼명이 바뀌었고 보증_금액·보증_유형 컬럼은 더 이상
+  // 오지 않는다(개별 Guarantee Summary 문서에만 있음). guaranteeType은 값이 없을 뿐
+  // 조회는 안전해 그대로 둔다.
   "D-026": [
     { publicKey: "financeAmountUsd", sourceKey: "대표금액" },
-    { publicKey: "financeAmountText", sourceKey: "보증_금액" },
-    { publicKey: "fiscalYear", sourceKey: "회계연도_FY" },
-    { publicKey: "portfolioCategory", sourceKey: "섹터" },
+    { publicKey: "financeAmountText", sourceKey: "보증_총노출액_상한_USD" },
+    { publicKey: "fiscalYear", sourceKey: "회계연도" },
+    { publicKey: "portfolioCategory", sourceKey: "섹터_원문" },
     { publicKey: "guaranteeType", sourceKey: "보증_유형" },
     { publicKey: "status", sourceKey: "상태" },
   ],
+  // V162 (2026-09-30 delivery): the source workbook's column order/headers
+  // changed again, which reassigns every field_<hash> key (the hash is
+  // derived from the column, not a stable id). documentType/documentTitle/
+  // institution/collaboration/documentUrl/doi kept their prior hashes by
+  // coincidence; publicationYear's did not - it is no longer field_d7e5fb05,
+  // and the new delivery gives it an unhashed name instead. technologyField
+  // has no column of its own in this delivery at all (no candidate key holds
+  // free-text technology field values); researchRecordV132 already falls
+  // back to the CTIS-derived technologyClasses when it is empty, so it is
+  // dropped here rather than pointed at a guess.
   "E-008": [
     { publicKey: "documentType", sourceKey: "field_3b639c78" },
     { publicKey: "documentTitle", sourceKey: "field_98c97d76" },
-    { publicKey: "technologyField", sourceKey: "field_7b4b6a82" },
     { publicKey: "institution", sourceKey: "field_9ccdc9f9" },
     { publicKey: "collaboration", sourceKey: "field_34f87908" },
-    { publicKey: "publicationYear", sourceKey: "field_d7e5fb05" },
+    { publicKey: "publicationYear", sourceKey: "기준연도_논문_발행연도_특허_최초_출원연도" },
     { publicKey: "documentUrl", sourceKey: "field_efec870d", kind: "url" },
     { publicKey: "doi", sourceKey: "field_f108b738" },
     // The source's own justification for the CTIS technology code it assigned

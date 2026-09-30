@@ -9,11 +9,418 @@
   "boundarySystem": "pre-2025-63",
   "coverageKind": "partial",
   "selectors": {
-    "periods": [],
-    "variables": []
+    "defaultPeriod": "2014–2025",
+    "defaultVariable": "special-incentive-provision-count",
+    "periods": [
+      "2014–2025"
+    ],
+    "variables": [
+      {
+        "key": "special-incentive-provision-count",
+        "measureId": "c013-provisions",
+        "measureKey": "special-incentive-provision-count",
+        "scenario": null,
+        "label": "지역 특별 인센티브 근거 행 수",
+        "unit": "건",
+        "periods": [
+          "2014–2025"
+        ],
+        "maxFeatureCount": 14
+      }
+    ]
   },
-  "values": [],
-  "seriesCoverage": [],
+  "values": [
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00013",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thanh Hóa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00014",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00014",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Khánh Hòa",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00015",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00016",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00016",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00018",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00018",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-09",
+      "adm1Name": "Lạng Sơn",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00019",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lạng Sơn",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00020",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "special-incentive-provision-count",
+      "variableLabel": "지역 특별 인센티브 근거 행 수",
+      "period": "2014–2025",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "C-013_incentive",
+      "sourceRecordId": "v124-c-013-entity-00020",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "explicit-2025-34-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-21": [
+      {
+        "recordId": "v124-c-013-entity-00013",
+        "label": "타인호아성 특별 메커니즘 결의",
+        "date": "2022-01-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Thanh Hóa",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "v124-c-013-entity-00014",
+        "label": "카인호아성 특별 메커니즘 결의",
+        "date": "2022-08-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "v124-c-013-entity-00014",
+        "label": "카인호아성 특별 메커니즘 결의",
+        "date": "2022-08-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Khánh Hòa",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-c-013-entity-00015",
+        "label": "호치민시 특별 시범 메커니즘 결의",
+        "date": "2023-08-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-c-013-entity-00015",
+        "label": "호치민시 특별 시범 메커니즘 결의",
+        "date": "2023-08-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-c-013-entity-00015",
+        "label": "호치민시 특별 시범 메커니즘 결의",
+        "date": "2023-08-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-c-013-entity-00016",
+        "label": "다낭시 특별 메커니즘 결의",
+        "date": "2025-01-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-c-013-entity-00016",
+        "label": "다낭시 특별 메커니즘 결의",
+        "date": "2025-01-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Đà Nẵng",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-c-013-entity-00017",
+        "label": "응에안성 특별 메커니즘 결의",
+        "date": "2025-01-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Nghệ An",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-c-013-entity-00018",
+        "label": "하이퐁시 특별 메커니즘 결의",
+        "date": "2025-07-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Hải Phòng",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-c-013-entity-00018",
+        "label": "하이퐁시 특별 메커니즘 결의",
+        "date": "2025-07-01",
+        "status": "",
+        "value": "지방 특별 메커니즘(국회 결의)",
+        "url": "https://vanban.chinhphu.vn/",
+        "region": "Hải Phòng",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-09": [
+      {
+        "recordId": "v124-c-013-entity-00019",
+        "label": "랑선성 비조세 투자지원(성 인민의회 결의)",
+        "date": "",
+        "status": "",
+        "value": "지방 비조세 투자지원(hỗ trợ đầu tư)",
+        "url": "https://vbpl.vn/",
+        "region": "Lạng Sơn",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-c-013-entity-00020",
+        "label": "박닌성 비조세 투자지원(성 인민의회 결의)",
+        "date": "",
+        "status": "",
+        "value": "지방 비조세 투자지원(hỗ trợ đầu tư)",
+        "url": "https://itpc.bacninh.gov.vn/chinh-sach-ho-tro-cua-ubnd-tinh",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-013_incentive"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-c-013-entity-00020",
+        "label": "박닌성 비조세 투자지원(성 인민의회 결의)",
+        "date": "",
+        "status": "",
+        "value": "지방 비조세 투자지원(hỗ trợ đầu tư)",
+        "url": "https://itpc.bacninh.gov.vn/chinh-sach-ho-tro-cua-ubnd-tinh",
+        "region": "Bắc Ninh",
+        "indicatorId": "C-013_incentive"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "special-incentive-provision-count",
+      "period": "2014–2025",
+      "expectedCount": 63,
+      "matchedCount": 14,
+      "missingCount": 49,
+      "failureCount": 0
+    }
+  ],
   "source": {
     "attribution": [
       "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
@@ -63,16 +470,16 @@
     "expectedAdm1Count": 63,
     "fakeGeometryCount": 0,
     "joinFailureCount": 0,
-    "matchedAdm1Count": 0,
-    "maxSeriesFeatureCount": 0,
-    "missingAdm1Count": 63,
+    "matchedAdm1Count": 14,
+    "maxSeriesFeatureCount": 14,
+    "missingAdm1Count": 49,
     "providedZeroCount": 0,
-    "publishedValueCount": 0,
-    "sourceValueCount": 0,
+    "publishedValueCount": 14,
+    "sourceValueCount": 8,
     "suppressedValueCount": 0,
-    "unmatchedSourceNameCount": 0,
+    "unmatchedSourceNameCount": 6,
     "zeroImputationCount": 0,
     "mappingMethod": "explicit-2025-34-unit-membership",
-    "sourceRegionCount": 0
+    "sourceRegionCount": 8
   }
 }

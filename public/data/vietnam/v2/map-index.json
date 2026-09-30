@@ -1,5 +1,5 @@
 {
-  "activeMapLayerCount": 60,
+  "activeMapLayerCount": 59,
   "countryIso3": "VNM",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-01T00:00:00Z",
@@ -5244,38 +5244,41 @@
         "provider": "vietnam-v121",
         "section": "entities"
       },
-      "cluster": true,
+      "cluster": false,
       "coordinateMeaning": "verified-physical-site",
-      "displayedCoordinateCount": 1575,
+      "displayedCoordinateCount": 5,
       "enabled": true,
-      "featureCount": 1575,
+      "featureCount": 5,
       "factFields": [
         {
           "key": "stationNameVi",
           "label": "관측소(베트남어)",
           "sources": [
-            "관측소명_베트남어"
+            "관측소명_베트남어",
+            "관측소명_로마자"
           ],
-          "recordCount": 1575,
-          "filledRecordCount": 0
+          "recordCount": 5,
+          "filledRecordCount": 5
         },
         {
           "key": "location",
           "label": "소재",
           "sources": [
-            "소재"
+            "소재",
+            "소재_설명"
           ],
-          "recordCount": 1575,
-          "filledRecordCount": 0
+          "recordCount": 5,
+          "filledRecordCount": 5
         },
         {
           "key": "psmslId",
           "label": "PSMSL 관측소 ID",
           "sources": [
-            "PSMSL_관측소_ID"
+            "PSMSL_관측소_ID",
+            "PSMSL_관측소_ID_격자점은_grid"
           ],
-          "recordCount": 1575,
-          "filledRecordCount": 0
+          "recordCount": 5,
+          "filledRecordCount": 5
         },
         {
           "key": "coordinateBasis",
@@ -5283,8 +5286,8 @@
           "sources": [
             "좌표_출처"
           ],
-          "recordCount": 1575,
-          "filledRecordCount": 1575
+          "recordCount": 5,
+          "filledRecordCount": 5
         }
       ],
       "fieldLabels": {
@@ -5299,8 +5302,8 @@
       ],
       "join": {
         "failures": [],
-        "matchedCount": 1575,
-        "requiredCount": 1575
+        "matchedCount": 5,
+        "requiredCount": 5
       },
       "latestYear": "2100",
       "layerId": "vnm-v138-b-008",
@@ -5309,10 +5312,10 @@
         "note": "자료연도 2100"
       },
       "mapBenefit": "관측소 클릭 → 시나리오(SSP1-1.9~5-8.5)·분위(5·17·50·83·95)별 연도 전망",
-      "mapMode": "cluster",
+      "mapMode": "point",
       "missingRegions": [],
       "publicSpatialNotice": "관측소 점",
-      "renderer": "cluster",
+      "renderer": "point",
       "selectors": {
         "defaultPeriod": "2100",
         "defaultVariable": "locations",
@@ -5332,7 +5335,7 @@
       },
       "sourceCoordinateCount": 1575,
       "sourceYear": "2100",
-      "spatialCoverage": "관측소 점 1,575곳",
+      "spatialCoverage": "관측소 점 5곳",
       "spatialLimitation": "관측소별 상대해수면 전망이며 침수 범위가 아님. 기준면은 1995–2014 평균(2005년 기준).",
       "spatialScopeType": "multi-site",
       "tooltipFields": [
@@ -5348,7 +5351,8 @@
       "analysisItemLabel": "조위 관측소·해수면 전망",
       "featureIdentity": {
         "sources": [
-          "PSMSL_관측소_ID"
+          "PSMSL_관측소_ID",
+          "PSMSL_관측소_ID_격자점은_grid"
         ],
         "label": "관측소",
         "memberLabel": "시나리오·분위·연도 전망값"
@@ -6640,7 +6644,7 @@
         "evidence": "지점·유역 11행, 좌표 11건(관측소 2곳 + 메콩델타 유역 대표점)",
         "representativeItem": "Kratie(캄보디아) 건기 최저유량 2,290 m³/s"
       },
-      "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
+      "accuracyNotice": "좌표가 있는 레코드만 표시합니다. 1건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다.",
       "active": true,
       "aggregationLevel": "관측지점·유역",
       "assetRef": {
@@ -6649,10 +6653,10 @@
         "section": "entities"
       },
       "cluster": false,
-      "coordinateMeaning": "verified-physical-site",
-      "displayedCoordinateCount": 2,
+      "coordinateMeaning": "first-source-coordinate",
+      "displayedCoordinateCount": 4,
       "enabled": true,
-      "featureCount": 2,
+      "featureCount": 4,
       "factFields": [
         {
           "key": "spatialUnit",
@@ -6660,8 +6664,8 @@
           "sources": [
             "공간_단위"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2,
+          "recordCount": 4,
+          "filledRecordCount": 4,
           "filterable": true,
           "valueMap": {
             "point": "관측지점",
@@ -6674,8 +6678,8 @@
           "sources": [
             "위치_설명"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2
+          "recordCount": 4,
+          "filledRecordCount": 4
         },
         {
           "key": "referenceYear",
@@ -6683,8 +6687,8 @@
           "sources": [
             "기준연도"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2
+          "recordCount": 4,
+          "filledRecordCount": 4
         },
         {
           "key": "coordinateBasis",
@@ -6692,8 +6696,8 @@
           "sources": [
             "좌표_경계_산출근거"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2
+          "recordCount": 4,
+          "filledRecordCount": 4
         }
       ],
       "fieldLabels": {
@@ -6702,14 +6706,27 @@
         "referenceYear": "기준연도",
         "coordinateBasis": "좌표·경계 산출근거"
       },
-      "filters": [],
+      "filters": [
+        {
+          "field": "공간_단위",
+          "label": "공간 단위",
+          "values": [
+            "basin",
+            "point"
+          ],
+          "valueLabels": {
+            "basin": "유역 대표점",
+            "point": "관측지점"
+          }
+        }
+      ],
       "geometryTypes": [
         "point"
       ],
       "join": {
         "failures": [],
-        "matchedCount": 2,
-        "requiredCount": 2
+        "matchedCount": 4,
+        "requiredCount": 4
       },
       "latestYear": "2026",
       "layerId": "vnm-v138-b-023",
@@ -6741,7 +6758,7 @@
       },
       "sourceCoordinateCount": 382,
       "sourceYear": "2026",
-      "spatialCoverage": "관측지점 점 · 유역 대표점 2곳",
+      "spatialCoverage": "관측지점 점 · 유역 대표점 4곳",
       "spatialLimitation": "국외 상류 관측소(Kratie)는 실제 위치(캄보디아)에 표시. 8대 유역의 경계면(HydroSHEDS)은 원자료에 없어 유역별 대표점만 표시.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
@@ -6771,7 +6788,7 @@
         "valueKey": "값",
         "unitKey": "단위"
       },
-      "memberRowCount": 372,
+      "memberRowCount": 382,
       "locationsUrl": "/data/vietnam/v2/spatial/locations/b-023.json",
       "locationCounts": {
         "located": 379,
@@ -7148,7 +7165,7 @@
         "evidence": "좌표 12건(전체 16행)",
         "representativeItem": "Sơn Tây(홍강) 관측소 유량"
       },
-      "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
+      "accuracyNotice": "좌표가 있는 레코드만 표시합니다. 10건은 도시·행정구역 대표점 등 근사 위치이며 속이 빈 기호로 구분합니다.",
       "active": true,
       "aggregationLevel": "관측지점·유역",
       "assetRef": {
@@ -7157,10 +7174,10 @@
         "section": "entities"
       },
       "cluster": false,
-      "coordinateMeaning": "verified-physical-site",
-      "displayedCoordinateCount": 2,
+      "coordinateMeaning": "first-source-coordinate",
+      "displayedCoordinateCount": 13,
       "enabled": true,
-      "featureCount": 2,
+      "featureCount": 13,
       "factFields": [
         {
           "key": "spatialUnit",
@@ -7168,8 +7185,8 @@
           "sources": [
             "공간_단위"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2,
+          "recordCount": 13,
+          "filledRecordCount": 13,
           "filterable": true,
           "valueMap": {
             "point": "관측지점",
@@ -7183,8 +7200,8 @@
           "sources": [
             "위치_설명"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2
+          "recordCount": 13,
+          "filledRecordCount": 13
         },
         {
           "key": "referenceYear",
@@ -7192,23 +7209,46 @@
           "sources": [
             "기준연도"
           ],
-          "recordCount": 2,
-          "filledRecordCount": 2
+          "recordCount": 13,
+          "filledRecordCount": 13
+        },
+        {
+          "key": "valueNature",
+          "label": "값의 성격",
+          "sources": [
+            "값_성격_실측_모델"
+          ],
+          "recordCount": 13,
+          "filledRecordCount": 13
         }
       ],
       "fieldLabels": {
         "spatialUnit": "공간 단위",
         "locationNote": "위치 설명",
-        "referenceYear": "기준연도"
+        "referenceYear": "기준연도",
+        "valueNature": "값의 성격"
       },
-      "filters": [],
+      "filters": [
+        {
+          "field": "공간_단위",
+          "label": "공간 단위",
+          "values": [
+            "basin",
+            "point"
+          ],
+          "valueLabels": {
+            "basin": "유역 대표점",
+            "point": "관측지점"
+          }
+        }
+      ],
       "geometryTypes": [
         "point"
       ],
       "join": {
         "failures": [],
-        "matchedCount": 2,
-        "requiredCount": 2
+        "matchedCount": 13,
+        "requiredCount": 13
       },
       "latestYear": "2026",
       "layerId": "vnm-v138-b-028",
@@ -7240,14 +7280,15 @@
       },
       "sourceCoordinateCount": 21,
       "sourceYear": "2026",
-      "spatialCoverage": "관측지점 점 · 유역 대표점 2곳",
+      "spatialCoverage": "관측지점 점 · 유역 대표점 13곳",
       "spatialLimitation": "m³/s(순간 유량)와 km³/년(연간 유출량)은 별도 지표로 비교. 전국 합계 행은 지도 미표시.",
       "spatialScopeType": "facility-site",
       "tooltipFields": [
         "name",
         "spatialUnit",
         "locationNote",
-        "referenceYear"
+        "referenceYear",
+        "valueNature"
       ],
       "totalEntityCount": 25,
       "unit": "source-provided location",
@@ -7269,7 +7310,7 @@
         "valueKey": "값",
         "unitKey": "단위"
       },
-      "memberRowCount": 2,
+      "memberRowCount": 21,
       "locationsUrl": "/data/vietnam/v2/spatial/locations/b-028.json",
       "locationCounts": {
         "located": 18,
@@ -8008,7 +8049,7 @@
       "detailUrl": "/?element=b-034&country=VNM#element-detail",
       "displayedCoordinateCount": 0,
       "downloadStatus": "available",
-      "downloadableRecordCount": 1550,
+      "downloadableRecordCount": 1739,
       "elementId": "B-034",
       "enabled": true,
       "fakeGeometryCount": 0,
@@ -8026,11 +8067,11 @@
         "requiredCount": 63
       },
       "label": "탄소 저장량",
-      "latestYear": "2000",
+      "latestYear": "2001–2024",
       "layerId": "vnm-v124-b-034",
       "legend": {
-        "note": "단위 Mg C/ha · 결측 0개 성·시",
-        "title": "지상부 탄소밀도"
+        "note": "단위 Mg CO2e · 결측 0개 성·시",
+        "title": "산림탄소 순플럭스(누계)"
       },
       "licenses": [],
       "mapBenefit": "성·시별 산림 탄소의 공간 차이를 비교할 수 있습니다.",
@@ -8045,12 +8086,43 @@
         "VNM"
       ],
       "selectors": {
-        "defaultPeriod": "2000",
-        "defaultVariable": "88477334b35c",
+        "defaultPeriod": "2001–2024",
+        "defaultVariable": "9f3e05c5996c",
         "periods": [
-          "2000"
+          "2000",
+          "2001–2024"
         ],
         "variables": [
+          {
+            "key": "9f3e05c5996c",
+            "label": "산림탄소 순플럭스(누계)",
+            "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_net_flux",
+            "periods": [
+              "2001–2024"
+            ],
+            "unit": "Mg CO2e"
+          },
+          {
+            "key": "b5faab215a04",
+            "label": "산림탄소 총배출(누계)",
+            "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_gross_emissions",
+            "periods": [
+              "2001–2024"
+            ],
+            "unit": "Mg CO2e"
+          },
+          {
+            "key": "2b2f0595dc99",
+            "label": "산림탄소 총흡수(누계)",
+            "maxFeatureCount": 63,
+            "measureId": "prov_forest_carbon_gross_removals",
+            "periods": [
+              "2001–2024"
+            ],
+            "unit": "Mg CO2"
+          },
           {
             "key": "88477334b35c",
             "label": "지상부 탄소밀도",
@@ -8079,7 +8151,7 @@
         "ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (Harris et al. 2021) - 배포 30m 래스터(aboveground carbon stock 2000 v20230222, forest carbon gross emissions v20250430 · gross removals v20250416 · net flux v20250430) · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1)"
       ],
       "sourceUrls": [],
-      "sourceYear": "2000",
+      "sourceYear": "2001–2024",
       "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개",
       "spatialLimitation": "개편 전 63개 성·시 통계 경계를 사용합니다.",
       "spatialScopeType": "admin1",
@@ -8090,8 +8162,8 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 126,
-      "unit": "Mg C/ha",
+      "totalEntityCount": 315,
+      "unit": "Mg CO2e",
       "zeroImputationCount": 0,
       "boundaryPolicy": {
         "schema": "boundary-policy-v151-2",
@@ -8102,7 +8174,7 @@
       "mapTargetV138": {
         "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
         "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
-        "limitation": "저장량(재고)과 연간 플럭스는 단위와 시점이 달라 같은 축에 두지 않음.",
+        "limitation": "저장량(재고)과 2001–2024 누계 플럭스는 단위와 시점이 달라 같은 축에 두지 않음.",
         "evidence": "성·시 63개 × 5 지표",
         "representativeItem": "성·시별 지상부 탄소저장량"
       }
@@ -9231,7 +9303,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-008.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 6,
+      "featureCount": 17,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -9240,14 +9312,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 6,
-        "missingCount": 57,
+        "matchedCount": 17,
+        "missingCount": 46,
         "requiredCount": 63
       },
       "latestYear": "1994~2050년",
       "layerId": "vnm-v138-c-008",
       "legend": {
-        "note": "단위 건 · 결측 57개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 46개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -9263,14 +9335,9 @@
         "Lạng Sơn",
         "Quảng Ninh",
         "Hòa Bình",
-        "Ninh Bình",
         "Thanh Hóa",
         "Nghệ An",
         "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
         "Gia Lai",
@@ -9291,7 +9358,6 @@
         "Vĩnh Long",
         "Bến Tre",
         "Trà Vinh",
-        "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
         "Bạc Liêu",
@@ -9299,23 +9365,18 @@
         "Bình Phước",
         "Cà Mau",
         "Hải Dương",
-        "Hà Nam",
-        "Nam Định",
         "Phú Thọ",
         "Thái Nguyên",
         "Vĩnh Phúc",
         "Điện Biên",
         "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
         "Hải Phòng"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "1994~2050년",
-      "spatialCoverage": "개편 후 34개 성·시 중 3개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -9335,7 +9396,7 @@
             "periods": [
               "1994~2050년"
             ],
-            "maxFeatureCount": 6
+            "maxFeatureCount": 17
           }
         ]
       },
@@ -9348,189 +9409,6 @@
       "totalEntityCount": 117,
       "unit": "건",
       "memberRecordsInAsset": true
-    },
-    {
-      "category": "정책·사업여건",
-      "detailElementId": "C-012",
-      "detailUrl": "/?element=c-012&country=VNM#element-detail",
-      "downloadStatus": "available",
-      "downloadableRecordCount": 20,
-      "elementId": "C-012",
-      "label": "PPP 사업 이력",
-      "licenses": [
-        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
-        "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
-        "베트남 정부 공보 이용약관",
-        "베트남 정부 포털 공개정보 — 출처 표기 조건",
-        "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
-        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
-      ],
-      "publicShortTitle": "PPP 사업 이력",
-      "rawLabel": "PPP 법제도·조달 체계[PPP 법률 유무, PPP 법률 명칭, PPP 전담 기관, 조달 방식(경쟁입찰/협상/비공개), 계약 유형(BOT/BOO/Concession), VfM 평가 의무 여부, PPP 프로젝트 이력]",
-      "source": "베트남 국회·정부 공보 / World Bank PPP Legal Framework · 베트남 재무부(Bộ Tài chính) 투자 포털 · 베트남 정부 — Nghị định 243/2025/NĐ-CP",
-      "sourceOrganizations": [
-        "베트남 국회·정부 공보 / World Bank PPP Legal Framework",
-        "베트남 재무부(Bộ Tài chính) 투자 포털",
-        "베트남 정부 — Nghị định 243/2025/NĐ-CP"
-      ],
-      "sourceUrls": [
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/07/64.signed.pdf",
-        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/123-vbhn-vpqh.pdf",
-        "https://luatnguyen.vn/van-ban-phap-luat/nghi-dinh-243-2025-nd-cp-1921.html",
-        "https://luatvietnam.vn/dau-tu/nghi-dinh-243-2025-nd-cp-quy-dinh-chi-tiet-luat-dau-tu-theo-phuong-thuc-doi-tac-cong-tu-411082-d1.html",
-        "https://ppi.worldbank.org/en/customquery",
-        "https://ppi.worldbank.org/en/methodology/ppi-methodology",
-        "https://ppi.worldbank.org/en/snapshots/country/vietnam",
-        "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-vietnam",
-        "https://ppp.worldbank.org/library/ppp-unit-vietnam",
-        "https://ppp.worldbank.org/sites/default/files/2024-08/PPP_Legal_Framework_Snapshot_Vietnam_EN_Aug2016_0.pdf",
-        "https://tapchicongthuong.vn/cac-du-an-ppp-moi-deu-la-cac-du-an-trong-diem--quy-mo-lon-cua-quoc-gia-107378.htm",
-        "https://thuvienphapluat.vn/van-ban/Dau-tu/Van-ban-hop-nhat-123-VBHN-VPQH-2025-Luat-Dau-tu-theo-phuong-thuc-doi-tac-cong-tu-672449.aspx",
-        "https://thuvienphapluat.vn/van-ban/EN/Dau-tu/Law-64-2020-QH14-on-Public-Private-Partnership-Investment/449829/tieng-anh.aspx",
-        "https://vanban.chinhphu.vn/?docid=215319&pageid=27160",
-        "https://www.kingandwood.com/global/en/insights/latest-thinking/public-private-partnerships-in-asia-vietnam-guide-2025.html",
-        "https://www.mof.gov.vn/bo-tai-chinh/dau-tu"
-      ],
-      "scopeCountries": [
-        "VNM"
-      ],
-      "defaultOverlay": false,
-      "defaultPrimary": false,
-      "fakeGeometryCount": 0,
-      "zeroImputationCount": 0,
-      "regionalProject": false,
-      "spatialStatus": "ready",
-      "mapTargetV138": {
-        "sourceSpatialUnit": "2025년 개편 후 34개 성·시(World Bank PPI 사업을 지역별 집계)",
-        "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
-        "limitation": "지역값은 개편 후 34개 성·시 단위이며 소속 63개 성·시 경계에 같은 값을 표시함(성·시별 독립값 아님).",
-        "evidence": "지역 집계행 29건(개편 후 34개 체계). 계약방식·법령 행은 집계하지 않음",
-        "representativeItem": "Đồng Nai PPP 사업 6건"
-      },
-      "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
-      "boundaryPolicy": {
-        "schema": "boundary-policy-v151-2",
-        "kind": "native-34",
-        "note": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
-        "valueSystem": "post-2025-34"
-      },
-      "active": true,
-      "aggregationLevel": "post-2025-34-unit",
-      "assetRef": {
-        "elementId": "C-012",
-        "provider": "vietnam-v124",
-        "section": "spatial"
-      },
-      "cluster": false,
-      "coordinateMeaning": "source-region-value",
-      "dataUrl": "/data/vietnam/v2/spatial/layers/c-012.json",
-      "displayedCoordinateCount": 0,
-      "enabled": true,
-      "featureCount": 0,
-      "filters": [],
-      "geometryTypes": [
-        "Polygon",
-        "MultiPolygon"
-      ],
-      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-      "join": {
-        "failures": [],
-        "matchedCount": 0,
-        "missingCount": 63,
-        "requiredCount": 63
-      },
-      "latestYear": null,
-      "layerId": "vnm-v138-c-012",
-      "legend": {
-        "note": "단위 건 · 결측 63개 성·시(개편 전 63개 기준)",
-        "title": "PPP 사업 이력"
-      },
-      "mapBenefit": "성·시(34개 체계) 클릭 → 분야별 건수·상태·기간",
-      "mapMode": "region-choropleth",
-      "missingRegions": [
-        "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
-        "Cao Bằng",
-        "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
-        "Lạng Sơn",
-        "Quảng Ninh",
-        "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
-        "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
-        "Kon Tum",
-        "Quảng Ngãi",
-        "Gia Lai",
-        "Bình Định",
-        "Phú Yên",
-        "Đắk Lắk",
-        "Khánh Hòa",
-        "Lâm Đồng",
-        "Ninh Thuận",
-        "Tây Ninh",
-        "Đồng Nai",
-        "Bình Thuận",
-        "Long An",
-        "Bà Rịa–Vũng Tàu",
-        "An Giang",
-        "Đồng Tháp",
-        "Tiền Giang",
-        "Kiên Giang",
-        "Vĩnh Long",
-        "Bến Tre",
-        "Trà Vinh",
-        "Sóc Trăng",
-        "Bắc Kạn",
-        "Bắc Giang",
-        "Bạc Liêu",
-        "Bắc Ninh",
-        "Bình Dương",
-        "Bình Phước",
-        "Cà Mau",
-        "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
-        "Phú Thọ",
-        "Thái Nguyên",
-        "Vĩnh Phúc",
-        "Điện Biên",
-        "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
-      ],
-      "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
-      "renderer": "partial-choropleth",
-      "sourceCoordinateCount": 0,
-      "sourceYear": null,
-      "spatialCoverage": "개편 후 34개 성·시 중 0개 값(34개 경계 직접 표시)",
-      "spatialLimitation": "지역값은 개편 후 34개 성·시 단위이며 소속 63개 성·시 경계에 같은 값을 표시함(성·시별 독립값 아님).",
-      "spatialScopeType": "region",
-      "selectors": {
-        "periods": [],
-        "variables": []
-      },
-      "tooltipFields": [
-        "adm1Name",
-        "value",
-        "unit",
-        "period"
-      ],
-      "totalEntityCount": 0,
-      "unit": "건"
     },
     {
       "category": "정책·사업여건",
@@ -9592,7 +9470,7 @@
         "sourceSpatialUnit": "특정 성·시가 명시된 특별메커니즘·지방 인센티브(개편 후 34개 체계)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "행 수는 근거 항목 수이며 인센티브 금액·건수가 아님. 전국 적용 규정은 지도화하지 않음.",
-        "evidence": "지역이 명시된 15행(전국 규정 49행은 지도 객체 없음)",
+        "evidence": "지역이 명시된 인센티브 8행(전국 규정은 지도 객체 없음)",
         "representativeItem": "Hồ Chí Minh 특별메커니즘(Nghị quyết 98/2023/QH15)"
       },
       "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
@@ -9614,7 +9492,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-013.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 0,
+      "featureCount": 14,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -9623,15 +9501,15 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 0,
-        "missingCount": 63,
+        "matchedCount": 14,
+        "missingCount": 49,
         "requiredCount": 63
       },
-      "latestYear": null,
+      "latestYear": "2014–2025",
       "layerId": "vnm-v138-c-013",
       "legend": {
-        "note": "단위 건 · 결측 63개 성·시(개편 전 63개 기준)",
-        "title": "외국인 투자 규정(지역 특별 인센티브)"
+        "note": "단위 건 · 결측 49개 성·시(개편 전 63개 기준)",
+        "title": "지역 특별 인센티브 근거 행 수"
       },
       "mapBenefit": "성·시 클릭 → 특별메커니즘·비조세 지원 근거 목록",
       "mapMode": "region-choropleth",
@@ -9643,32 +9521,25 @@
         "Sơn La",
         "Yên Bái",
         "Tuyên Quang",
-        "Lạng Sơn",
         "Quảng Ninh",
         "Hòa Bình",
         "Ninh Bình",
         "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
         "Hà Tĩnh",
         "Quảng Bình",
         "Quảng Trị",
         "Thừa Thiên Huế",
-        "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
         "Gia Lai",
         "Bình Định",
         "Phú Yên",
         "Đắk Lắk",
-        "Khánh Hòa",
         "Lâm Đồng",
-        "Ninh Thuận",
         "Tây Ninh",
         "Đồng Nai",
         "Bình Thuận",
         "Long An",
-        "Bà Rịa–Vũng Tàu",
         "An Giang",
         "Đồng Tháp",
         "Tiền Giang",
@@ -9678,13 +9549,9 @@
         "Trà Vinh",
         "Sóc Trăng",
         "Bắc Kạn",
-        "Bắc Giang",
         "Bạc Liêu",
-        "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
         "Cà Mau",
-        "Hải Dương",
         "Hà Nam",
         "Hưng Yên",
         "Nam Định",
@@ -9695,21 +9562,35 @@
         "Đắk Nông",
         "Hậu Giang",
         "Cần Thơ",
-        "Đà Nẵng",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Hà Nội"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
-      "sourceYear": null,
-      "spatialCoverage": "개편 후 34개 성·시 중 0개 값(34개 경계 직접 표시)",
+      "sourceYear": "2014–2025",
+      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
       "spatialLimitation": "행 수는 근거 항목 수이며 인센티브 금액·건수가 아님. 전국 적용 규정은 지도화하지 않음.",
       "spatialScopeType": "region",
       "selectors": {
-        "periods": [],
-        "variables": []
+        "defaultPeriod": "2014–2025",
+        "defaultVariable": "special-incentive-provision-count",
+        "periods": [
+          "2014–2025"
+        ],
+        "variables": [
+          {
+            "key": "special-incentive-provision-count",
+            "measureId": "c013-provisions",
+            "measureKey": "special-incentive-provision-count",
+            "scenario": null,
+            "label": "지역 특별 인센티브 근거 행 수",
+            "unit": "건",
+            "periods": [
+              "2014–2025"
+            ],
+            "maxFeatureCount": 14
+          }
+        ]
       },
       "tooltipFields": [
         "adm1Name",
@@ -9717,8 +9598,9 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 0,
-      "unit": "건"
+      "totalEntityCount": 14,
+      "unit": "건",
+      "memberRecordsInAsset": true
     },
     {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 개편 전 63개 행정구역 기준입니다.",
@@ -9957,8 +9839,8 @@
         "sourceSpatialUnit": "2025년 개편 후 34개 성·시(동일 대상시설 명부의 업종 구성)",
         "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
         "limitation": "국가 준비도 체크리스트 점수(82.1)는 지역값이 아니므로 지도화하지 않음.",
-        "evidence": "34개 지역 × 4 업종",
-        "representativeItem": "Hồ Chí Minh 공상 430개"
+        "evidence": "34개 지역 × 4 부속서(업종)",
+        "representativeItem": "Ho Chi Minh city 공상 430개"
       },
       "accuracyNotice": "원자료가 개편 후 34개 성·시 기준으로 발표한 값입니다. 기본 34개 경계에 직접 표시하고, 개편 전 63개 토글에서는 소속 성·시 경계에 동일하게 표시하며 성·시별 독립값이 아닙니다. 누락값은 투명 처리하고 0으로 대체하지 않습니다.",
       "boundaryPolicy": {
@@ -9979,7 +9861,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-022.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 0,
+      "featureCount": 63,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -9988,93 +9870,82 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 0,
-        "missingCount": 63,
+        "matchedCount": 63,
+        "missingCount": 0,
         "requiredCount": 63
       },
-      "latestYear": null,
+      "latestYear": "2026-08-10 명부",
       "layerId": "vnm-v138-c-022",
       "legend": {
-        "note": "단위 개 · 결측 63개 성·시(개편 전 63개 기준)",
-        "title": "탄소시장 대상시설 업종 구성"
+        "note": "단위 개 · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "대상시설 수 — 공상(산업·무역)"
       },
       "mapBenefit": "업종(공상·교통운송·건설·농업·환경)별 시설 수",
       "mapMode": "region-choropleth",
-      "missingRegions": [
-        "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
-        "Cao Bằng",
-        "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
-        "Lạng Sơn",
-        "Quảng Ninh",
-        "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
-        "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
-        "Kon Tum",
-        "Quảng Ngãi",
-        "Gia Lai",
-        "Bình Định",
-        "Phú Yên",
-        "Đắk Lắk",
-        "Khánh Hòa",
-        "Lâm Đồng",
-        "Ninh Thuận",
-        "Tây Ninh",
-        "Đồng Nai",
-        "Bình Thuận",
-        "Long An",
-        "Bà Rịa–Vũng Tàu",
-        "An Giang",
-        "Đồng Tháp",
-        "Tiền Giang",
-        "Kiên Giang",
-        "Vĩnh Long",
-        "Bến Tre",
-        "Trà Vinh",
-        "Sóc Trăng",
-        "Bắc Kạn",
-        "Bắc Giang",
-        "Bạc Liêu",
-        "Bắc Ninh",
-        "Bình Dương",
-        "Bình Phước",
-        "Cà Mau",
-        "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
-        "Phú Thọ",
-        "Thái Nguyên",
-        "Vĩnh Phúc",
-        "Điện Biên",
-        "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
-      ],
+      "missingRegions": [],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
-      "renderer": "partial-choropleth",
+      "renderer": "admin1-choropleth",
       "sourceCoordinateCount": 0,
-      "sourceYear": null,
-      "spatialCoverage": "개편 후 34개 성·시 중 0개 값(34개 경계 직접 표시)",
+      "sourceYear": "2026-08-10 명부",
+      "spatialCoverage": "개편 후 34개 성·시 중 34개 값(34개 경계 직접 표시)",
       "spatialLimitation": "국가 준비도 체크리스트 점수(82.1)는 지역값이 아니므로 지도화하지 않음.",
       "spatialScopeType": "region",
       "selectors": {
-        "periods": [],
-        "variables": []
+        "defaultPeriod": "2026-08-10 명부",
+        "defaultVariable": "facilities-industry-trade",
+        "periods": [
+          "2026-08-10 명부"
+        ],
+        "variables": [
+          {
+            "key": "facilities-industry-trade",
+            "measureId": "c022-industry",
+            "measureKey": "facilities-industry-trade",
+            "scenario": null,
+            "label": "대상시설 수 — 공상(산업·무역)",
+            "unit": "개",
+            "periods": [
+              "2026-08-10 명부"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "facilities-transport",
+            "measureId": "c022-transport",
+            "measureKey": "facilities-transport",
+            "scenario": null,
+            "label": "대상시설 수 — 교통운송",
+            "unit": "개",
+            "periods": [
+              "2026-08-10 명부"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "facilities-construction",
+            "measureId": "c022-construction",
+            "measureKey": "facilities-construction",
+            "scenario": null,
+            "label": "대상시설 수 — 건설",
+            "unit": "개",
+            "periods": [
+              "2026-08-10 명부"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "facilities-agri-environment",
+            "measureId": "c022-agri-env",
+            "measureKey": "facilities-agri-environment",
+            "scenario": null,
+            "label": "대상시설 수 — 농업·환경",
+            "unit": "개",
+            "periods": [
+              "2026-08-10 명부"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
       },
       "tooltipFields": [
         "adm1Name",
@@ -10082,7 +9953,7 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 0,
+      "totalEntityCount": 34,
       "unit": "개",
       "sharedObjectsWith": "C-019",
       "sharedObjectKind": "facility-register"
@@ -10149,7 +10020,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/c-024.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 0,
+      "featureCount": 6,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -10158,15 +10029,15 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 0,
-        "missingCount": 63,
+        "matchedCount": 6,
+        "missingCount": 57,
         "requiredCount": 63
       },
-      "latestYear": null,
+      "latestYear": "2022",
       "layerId": "vnm-v138-c-024",
       "legend": {
-        "note": "단위 참여 프로그램 수 · 결측 63개 성·시(개편 전 63개 기준)",
-        "title": "REDD+ 사업 참여지역"
+        "note": "단위 참여 프로그램 수 · 결측 57개 성·시(개편 전 63개 기준)",
+        "title": "FCPF ERPA(북중부 6개 성) 참여"
       },
       "mapBenefit": "성·시 클릭 → 참여 프로그램",
       "mapMode": "choropleth",
@@ -10183,12 +10054,6 @@
         "Hòa Bình",
         "Ninh Bình",
         "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
-        "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Thừa Thiên Huế",
         "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
@@ -10238,13 +10103,30 @@
       "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
-      "sourceYear": null,
-      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 0개(34개 경계에서는 구성 성·시 집계값)",
+      "sourceYear": "2022",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 6개(34개 경계에서는 구성 성·시 집계값)",
       "spatialLimitation": "참여 범위이며 개별 사업지가 아님. 같은 프로그램의 범위가 겹쳐도 한 번만 셈.",
       "spatialScopeType": "admin1",
       "selectors": {
-        "periods": [],
-        "variables": []
+        "defaultPeriod": "2022",
+        "defaultVariable": "fcpf-erpa-participation",
+        "periods": [
+          "2022"
+        ],
+        "variables": [
+          {
+            "key": "fcpf-erpa-participation",
+            "measureId": "c024-erpa",
+            "measureKey": "fcpf-erpa-participation",
+            "scenario": null,
+            "label": "FCPF ERPA(북중부 6개 성) 참여",
+            "unit": "참여 프로그램 수",
+            "periods": [
+              "2022"
+            ],
+            "maxFeatureCount": 6
+          }
+        ]
       },
       "tooltipFields": [
         "adm1Name",
@@ -10252,8 +10134,9 @@
         "unit",
         "period"
       ],
-      "totalEntityCount": 0,
-      "unit": "참여 프로그램 수"
+      "totalEntityCount": 6,
+      "unit": "참여 프로그램 수",
+      "memberRecordsInAsset": true
     },
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
@@ -10276,23 +10159,137 @@
       "downloadableRecordCount": 5,
       "elementId": "C-025",
       "enabled": true,
+      "factFields": [
+        {
+          "filledRecordCount": 1133,
+          "filterable": true,
+          "key": "standard",
+          "label": "등록표준",
+          "recordCount": 1133,
+          "sources": [
+            "식별_등록_표준"
+          ]
+        },
+        {
+          "filledRecordCount": 342,
+          "filterable": true,
+          "key": "technologyField",
+          "label": "기술분야",
+          "recordCount": 1133,
+          "sources": [
+            "사업_기술_분야_등록부_분류"
+          ]
+        },
+        {
+          "filledRecordCount": 343,
+          "filterable": true,
+          "key": "status",
+          "label": "상태",
+          "recordCount": 1133,
+          "sources": [
+            "식별_등재_상태"
+          ]
+        },
+        {
+          "filledRecordCount": 1133,
+          "filterable": true,
+          "key": "regionName",
+          "label": "소재 지역",
+          "recordCount": 1133,
+          "sources": [
+            "지역_지역명_현행"
+          ]
+        },
+        {
+          "filledRecordCount": 304,
+          "key": "proponent",
+          "label": "사업자·기관",
+          "recordCount": 1133,
+          "sources": [
+            "사업_사업자_기관"
+          ]
+        },
+        {
+          "filledRecordCount": 333,
+          "key": "methodology",
+          "label": "방법론",
+          "recordCount": 1133,
+          "sources": [
+            "사업_방법론"
+          ]
+        },
+        {
+          "filledRecordCount": 327,
+          "key": "annualReduction",
+          "label": "연간 예상감축량",
+          "recordCount": 1133,
+          "sources": [
+            "사업_연간_예상_감축량_tCO_e_년"
+          ],
+          "unit": "tCO2e"
+        },
+        {
+          "filledRecordCount": 1133,
+          "key": "recordCode",
+          "label": "원천 식별번호",
+          "recordCount": 1133,
+          "sources": [
+            "식별_등록부_프로젝트ID"
+          ]
+        },
+        {
+          "filledRecordCount": 1133,
+          "key": "officialSource",
+          "label": "공식 원문",
+          "recordCount": 1133,
+          "sources": [
+            "출처_원문_URL"
+          ]
+        }
+      ],
       "fakeGeometryCount": 0,
-      "featureCount": 1133,
+      "featureCount": 343,
+      "fieldLabels": {
+        "annualReduction": "연간 예상감축량",
+        "methodology": "방법론",
+        "officialSource": "공식 원문",
+        "proponent": "사업자·기관",
+        "recordCode": "원천 식별번호",
+        "regionName": "소재 지역",
+        "standard": "등록표준",
+        "status": "상태",
+        "technologyField": "기술분야"
+      },
       "filters": [
         {
           "field": "standard",
-          "label": "표준",
+          "label": "등록표준",
           "values": [
-            "Gold Standard"
+            "CDM",
+            "GCC",
+            "Gold Standard",
+            "Verra VCS"
           ]
         },
         {
           "field": "technologyField",
           "label": "기술분야",
           "values": [
+            "Bundled Energy Efficiency",
+            "CTIS-01 태양광 기술",
             "CTIS-03 풍력 기술",
             "CTIS-05 수력 기술",
-            "CTIS-08 바이오에너지 기술"
+            "CTIS-08 바이오에너지 기술",
+            "CTIS-15 폐자원 기술",
+            "CTIS-17 산업효율 기술",
+            "CTIS-18 수송효율 기술",
+            "CTIS-19 건물효율 기술",
+            "CTIS-23 탄소흡수원 기술",
+            "CTIS-34 농축수산 부문 기술",
+            "Composting",
+            "Hydropower",
+            "Methane Recovery in Wastewater",
+            "Wind"
           ]
         },
         {
@@ -10300,7 +10297,55 @@
           "label": "상태",
           "values": [
             "GOLD_STANDARD_CERTIFIED_DESIGN",
-            "GOLD_STANDARD_CERTIFIED_PROJECT"
+            "GOLD_STANDARD_CERTIFIED_PROJECT",
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "LISTED",
+            "Late to verify",
+            "Listed",
+            "Registered",
+            "Registration requested",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested",
+            "Withdrawn"
+          ]
+        },
+        {
+          "field": "regionName",
+          "label": "소재 지역",
+          "values": [
+            "An Giang",
+            "Bac Ninh",
+            "Ca Mau",
+            "Can Tho city",
+            "Cao Bang",
+            "Da Nang city",
+            "Dak Lak",
+            "Dien Bien",
+            "Dong Nai",
+            "Dong Thap",
+            "Gia Lai",
+            "Ha Noi",
+            "Ha Tinh",
+            "Ho Chi Minh city",
+            "Hue",
+            "Khanh Hoa",
+            "Lai Chau",
+            "Lam Dong",
+            "Lang Son",
+            "Lao Cai",
+            "Nghe An",
+            "Phu Tho",
+            "Quang Ngai",
+            "Quang Tri",
+            "Son La",
+            "Tay Ninh",
+            "Thai Nguyen",
+            "Thanh Hoa",
+            "Tuyen Quang",
+            "Vinh Long"
           ]
         }
       ],
@@ -10371,8 +10416,12 @@
         "standard",
         "technologyField",
         "status",
+        "regionName",
+        "proponent",
+        "methodology",
         "annualReduction",
-        "creditingPeriod"
+        "recordCode",
+        "officialSource"
       ],
       "totalEntityCount": 146,
       "unit": "source-provided location",
@@ -10391,6 +10440,13 @@
       },
       "analysisItemLabel": "사업 위치·유형",
       "countNoun": "건",
+      "featureIdentity": {
+        "sources": [
+          "식별_등록부_프로젝트ID"
+        ],
+        "label": "탄소크레딧 사업",
+        "memberLabel": "사업·발행 기록"
+      },
       "mapTargetV138": {
         "sourceSpatialUnit": "사업 좌표(등록부·지오코딩)",
         "displaySpatialUnit": "사업 점",
@@ -10573,7 +10629,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-012.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 22,
+      "featureCount": 62,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -10582,66 +10638,26 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 22,
-        "missingCount": 41,
+        "matchedCount": 62,
+        "missingCount": 1,
         "requiredCount": 63
       },
       "latestYear": "2026년 기준",
       "layerId": "vnm-v138-d-012",
       "legend": {
-        "note": "단위 건 · 결측 41개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 1개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
-        "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
-        "Cao Bằng",
-        "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
-        "Lạng Sơn",
-        "Quảng Ninh",
-        "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
-        "Hà Tĩnh",
-        "Thừa Thiên Huế",
-        "Quảng Nam",
-        "Kon Tum",
-        "Quảng Ngãi",
-        "Đồng Nai",
-        "Bà Rịa–Vũng Tàu",
-        "Đồng Tháp",
-        "Tiền Giang",
-        "Bắc Kạn",
-        "Bắc Giang",
-        "Bạc Liêu",
-        "Bắc Ninh",
-        "Bình Dương",
-        "Bình Phước",
-        "Cà Mau",
-        "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
-        "Phú Thọ",
-        "Thái Nguyên",
-        "Vĩnh Phúc",
-        "Điện Biên",
-        "Đà Nẵng",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Lạng Sơn"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 10개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 33개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -10661,7 +10677,7 @@
             "periods": [
               "2026년 기준"
             ],
-            "maxFeatureCount": 22
+            "maxFeatureCount": 62
           }
         ]
       },
@@ -10730,7 +10746,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-014.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 26,
+      "featureCount": 31,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -10739,14 +10755,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 26,
-        "missingCount": 37,
+        "matchedCount": 31,
+        "missingCount": 32,
         "requiredCount": 63
       },
       "latestYear": "2024년 기준",
       "layerId": "vnm-v138-d-014",
       "legend": {
-        "note": "단위 건 · 결측 37개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 32개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -10762,7 +10778,6 @@
         "Thanh Hóa",
         "Nghệ An",
         "Thừa Thiên Huế",
-        "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
         "Phú Yên",
@@ -10772,7 +10787,6 @@
         "Tây Ninh",
         "Đồng Nai",
         "Long An",
-        "Bà Rịa–Vũng Tàu",
         "An Giang",
         "Đồng Tháp",
         "Tiền Giang",
@@ -10781,20 +10795,17 @@
         "Bắc Kạn",
         "Bắc Giang",
         "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
         "Thái Nguyên",
         "Điện Biên",
         "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hồ Chí Minh"
+        "Cần Thơ"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2024년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 12개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 14개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -10814,7 +10825,7 @@
             "periods": [
               "2024년 기준"
             ],
-            "maxFeatureCount": 26
+            "maxFeatureCount": 31
           }
         ]
       },
@@ -10883,7 +10894,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-015.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 45,
+      "featureCount": 52,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -10892,14 +10903,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 45,
-        "missingCount": 18,
+        "matchedCount": 52,
+        "missingCount": 11,
         "requiredCount": 63
       },
       "latestYear": "2024년 기준",
       "layerId": "vnm-v138-d-015",
       "legend": {
-        "note": "단위 건 · 결측 18개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 11개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -10914,21 +10925,14 @@
         "Quảng Ngãi",
         "Khánh Hòa",
         "Ninh Thuận",
-        "Bà Rịa–Vũng Tàu",
         "Đồng Tháp",
-        "Tiền Giang",
-        "Sóc Trăng",
-        "Bình Dương",
-        "Điện Biên",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Hồ Chí Minh"
+        "Tiền Giang"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2024년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 23개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 26개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -10948,7 +10952,7 @@
             "periods": [
               "2024년 기준"
             ],
-            "maxFeatureCount": 45
+            "maxFeatureCount": 52
           }
         ]
       },
@@ -11017,7 +11021,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-016.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 14,
+      "featureCount": 25,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -11026,14 +11030,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 14,
-        "missingCount": 49,
+        "matchedCount": 25,
+        "missingCount": 38,
         "requiredCount": 63
       },
       "latestYear": "2024년 기준",
       "layerId": "vnm-v138-d-016",
       "legend": {
-        "note": "단위 건 · 결측 49개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 38개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -11043,7 +11047,6 @@
         "Hà Giang",
         "Sơn La",
         "Tuyên Quang",
-        "Lạng Sơn",
         "Quảng Ninh",
         "Hòa Bình",
         "Thái Bình",
@@ -11063,19 +11066,12 @@
         "Đồng Nai",
         "Bình Thuận",
         "Long An",
-        "Bà Rịa–Vũng Tàu",
-        "An Giang",
-        "Đồng Tháp",
-        "Tiền Giang",
-        "Kiên Giang",
         "Vĩnh Long",
         "Bến Tre",
         "Trà Vinh",
-        "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
         "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
         "Hải Dương",
         "Hưng Yên",
@@ -11084,16 +11080,13 @@
         "Vĩnh Phúc",
         "Điện Biên",
         "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Hải Phòng"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2024년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 8개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 13개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -11113,7 +11106,7 @@
             "periods": [
               "2024년 기준"
             ],
-            "maxFeatureCount": 14
+            "maxFeatureCount": 25
           }
         ]
       },
@@ -11182,7 +11175,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-017.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 4,
+      "featureCount": 38,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -11191,84 +11184,50 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 4,
-        "missingCount": 59,
+        "matchedCount": 38,
+        "missingCount": 25,
         "requiredCount": 63
       },
       "latestYear": "2026년 기준",
       "layerId": "vnm-v138-d-017",
       "legend": {
-        "note": "단위 건 · 결측 59개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 25개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
-        "Cao Bằng",
         "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
         "Lạng Sơn",
         "Quảng Ninh",
-        "Hòa Bình",
-        "Ninh Bình",
-        "Thái Bình",
         "Thanh Hóa",
         "Nghệ An",
-        "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
-        "Quảng Nam",
         "Kon Tum",
         "Quảng Ngãi",
         "Gia Lai",
         "Bình Định",
         "Khánh Hòa",
-        "Lâm Đồng",
         "Ninh Thuận",
-        "Tây Ninh",
         "Đồng Nai",
-        "Bình Thuận",
-        "Long An",
-        "Bà Rịa–Vũng Tàu",
         "An Giang",
         "Đồng Tháp",
         "Tiền Giang",
         "Kiên Giang",
-        "Vĩnh Long",
-        "Bến Tre",
-        "Trà Vinh",
         "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
-        "Bạc Liêu",
         "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
-        "Cà Mau",
-        "Hải Dương",
-        "Hà Nam",
-        "Hưng Yên",
-        "Nam Định",
-        "Phú Thọ",
         "Thái Nguyên",
-        "Vĩnh Phúc",
-        "Đắk Nông",
         "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hà Nội",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Cần Thơ"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 3개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 19개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -11288,7 +11247,7 @@
             "periods": [
               "2026년 기준"
             ],
-            "maxFeatureCount": 4
+            "maxFeatureCount": 38
           }
         ]
       },
@@ -11836,7 +11795,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-021.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 53,
+      "featureCount": 49,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -11845,14 +11804,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 53,
-        "missingCount": 10,
+        "matchedCount": 49,
+        "missingCount": 14,
         "requiredCount": 63
       },
       "latestYear": "2026년 기준",
       "layerId": "vnm-v138-d-021",
       "legend": {
-        "note": "단위 건 · 결측 10개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 14개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -11861,6 +11820,10 @@
         "Lai Châu",
         "Sơn La",
         "Quảng Ninh",
+        "Gia Lai",
+        "Bình Định",
+        "Khánh Hòa",
+        "Ninh Thuận",
         "Đồng Nai",
         "An Giang",
         "Đồng Tháp",
@@ -11873,7 +11836,7 @@
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 27개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 25개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -11893,7 +11856,7 @@
             "periods": [
               "2026년 기준"
             ],
-            "maxFeatureCount": 53
+            "maxFeatureCount": 49
           }
         ]
       },
@@ -12120,7 +12083,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-023.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 15,
+      "featureCount": 18,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -12129,14 +12092,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 15,
-        "missingCount": 48,
+        "matchedCount": 18,
+        "missingCount": 45,
         "requiredCount": 63
       },
       "latestYear": "2013~2026년",
       "layerId": "vnm-v138-d-023",
       "legend": {
-        "note": "단위 건 · 결측 48개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 45개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -12170,9 +12133,6 @@
         "Đồng Tháp",
         "Tiền Giang",
         "Kiên Giang",
-        "Vĩnh Long",
-        "Bến Tre",
-        "Trà Vinh",
         "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
@@ -12195,7 +12155,7 @@
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2013~2026년",
-      "spatialCoverage": "개편 후 34개 성·시 중 9개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 10개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -12215,7 +12175,7 @@
             "periods": [
               "2013~2026년"
             ],
-            "maxFeatureCount": 15
+            "maxFeatureCount": 18
           }
         ]
       },
@@ -12284,7 +12244,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-025.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 54,
+      "featureCount": 56,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -12293,14 +12253,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 54,
-        "missingCount": 9,
+        "matchedCount": 56,
+        "missingCount": 7,
         "requiredCount": 63
       },
       "latestYear": "2024년 기준",
       "layerId": "vnm-v138-d-025",
       "legend": {
-        "note": "단위 건 · 결측 9개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 7개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -12311,8 +12271,6 @@
         "Thái Bình",
         "Thừa Thiên Huế",
         "An Giang",
-        "Đồng Tháp",
-        "Tiền Giang",
         "Kiên Giang",
         "Hưng Yên"
       ],
@@ -12320,7 +12278,7 @@
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2024년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 28개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 29개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -12340,7 +12298,7 @@
             "periods": [
               "2024년 기준"
             ],
-            "maxFeatureCount": 54
+            "maxFeatureCount": 56
           }
         ]
       },
@@ -12409,7 +12367,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/d-026.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 8,
+      "featureCount": 3,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -12418,14 +12376,14 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 8,
-        "missingCount": 55,
+        "matchedCount": 3,
+        "missingCount": 60,
         "requiredCount": 63
       },
       "latestYear": "2018년 기준",
       "layerId": "vnm-v138-d-026",
       "legend": {
-        "note": "단위 건 · 결측 55개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 60개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 사업 수"
       },
       "mapBenefit": "성·시 클릭 → 사업 목록",
@@ -12457,8 +12415,11 @@
         "Phú Yên",
         "Đắk Lắk",
         "Khánh Hòa",
+        "Lâm Đồng",
         "Ninh Thuận",
         "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
         "Long An",
         "Bà Rịa–Vũng Tàu",
         "An Giang",
@@ -12474,6 +12435,7 @@
         "Bạc Liêu",
         "Bắc Ninh",
         "Bình Dương",
+        "Bình Phước",
         "Cà Mau",
         "Hà Nam",
         "Hưng Yên",
@@ -12482,6 +12444,7 @@
         "Thái Nguyên",
         "Vĩnh Phúc",
         "Điện Biên",
+        "Đắk Nông",
         "Hậu Giang",
         "Cần Thơ",
         "Đà Nẵng",
@@ -12491,7 +12454,7 @@
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2018년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 4개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 2개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -12511,7 +12474,7 @@
             "periods": [
               "2018년 기준"
             ],
-            "maxFeatureCount": 8
+            "maxFeatureCount": 3
           }
         ]
       },
@@ -12760,7 +12723,7 @@
       "dataUrl": "/data/vietnam/v2/spatial/layers/e-002.json",
       "displayedCoordinateCount": 0,
       "enabled": true,
-      "featureCount": 1,
+      "featureCount": 32,
       "filters": [],
       "geometryTypes": [
         "Polygon",
@@ -12769,52 +12732,30 @@
       "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
       "join": {
         "failures": [],
-        "matchedCount": 1,
-        "missingCount": 62,
+        "matchedCount": 32,
+        "missingCount": 31,
         "requiredCount": 63
       },
       "latestYear": "2026년 기준",
       "layerId": "vnm-v138-e-002",
       "legend": {
-        "note": "단위 건 · 결측 62개 성·시(개편 전 63개 기준)",
+        "note": "단위 건 · 결측 31개 성·시(개편 전 63개 기준)",
         "title": "지역이 확인된 기관 수"
       },
       "mapBenefit": "성·시 클릭 → 기관 목록",
       "mapMode": "region-choropleth",
       "missingRegions": [
         "Lai Châu",
-        "Lào Cai",
-        "Hà Giang",
         "Cao Bằng",
-        "Sơn La",
-        "Yên Bái",
-        "Tuyên Quang",
-        "Lạng Sơn",
         "Quảng Ninh",
         "Hòa Bình",
         "Ninh Bình",
         "Thái Bình",
-        "Thanh Hóa",
-        "Nghệ An",
         "Hà Tĩnh",
-        "Quảng Bình",
-        "Quảng Trị",
         "Thừa Thiên Huế",
-        "Quảng Nam",
-        "Kon Tum",
-        "Quảng Ngãi",
-        "Gia Lai",
-        "Bình Định",
-        "Phú Yên",
-        "Đắk Lắk",
-        "Khánh Hòa",
-        "Lâm Đồng",
-        "Ninh Thuận",
         "Tây Ninh",
         "Đồng Nai",
-        "Bình Thuận",
         "Long An",
-        "Bà Rịa–Vũng Tàu",
         "An Giang",
         "Đồng Tháp",
         "Tiền Giang",
@@ -12822,14 +12763,10 @@
         "Vĩnh Long",
         "Bến Tre",
         "Trà Vinh",
-        "Sóc Trăng",
         "Bắc Kạn",
         "Bắc Giang",
-        "Bạc Liêu",
         "Bắc Ninh",
-        "Bình Dương",
         "Bình Phước",
-        "Cà Mau",
         "Hải Dương",
         "Hà Nam",
         "Hưng Yên",
@@ -12838,18 +12775,13 @@
         "Thái Nguyên",
         "Vĩnh Phúc",
         "Điện Biên",
-        "Đắk Nông",
-        "Hậu Giang",
-        "Cần Thơ",
-        "Đà Nẵng",
-        "Hải Phòng",
-        "Hồ Chí Minh"
+        "Hải Phòng"
       ],
       "publicSpatialNotice": "개편 후 34개 성·시 값을 34개 경계에 직접 표시합니다(개편 전 63개 토글 시 소속 경계에 동일 표시).",
       "renderer": "partial-choropleth",
       "sourceCoordinateCount": 0,
       "sourceYear": "2026년 기준",
-      "spatialCoverage": "개편 후 34개 성·시 중 1개 값(34개 경계 직접 표시)",
+      "spatialCoverage": "개편 후 34개 성·시 중 17개 값(34개 경계 직접 표시)",
       "spatialLimitation": "건수는 성·시가 확인된 레코드 수이며 금액·규모의 합이 아닙니다. 복수 성 레코드는 각 성에 1건으로 세고 금액은 합산하지 않습니다. 성·시 표기가 없는 레코드는 지도에 올리지 않고 목록·다운로드에만 남습니다.",
       "spatialScopeType": "region",
       "selectors": {
@@ -12869,7 +12801,7 @@
             "periods": [
               "2026년 기준"
             ],
-            "maxFeatureCount": 1
+            "maxFeatureCount": 32
           }
         ]
       },
@@ -14108,13 +14040,13 @@
       "memberRecordsInAsset": true
     }
   ],
-  "mapFeatureCount": 17362,
+  "mapFeatureCount": 15233,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {
     "schemaVersion": "public-map-targets-v157",
     "targetCount": 72,
-    "connectedCount": 56,
+    "connectedCount": 59,
     "notConnected": [
       {
         "elementId": "A-013",
@@ -14162,23 +14094,11 @@
       },
       {
         "elementId": "C-012",
-        "reason": ""
-      },
-      {
-        "elementId": "C-013",
-        "reason": ""
+        "reason": "원자료에 성·시별 PPP 사업 행이 없어 지도에 표시하지 않습니다(전국 요약·법령 자료)."
       },
       {
         "elementId": "C-017",
         "reason": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다."
-      },
-      {
-        "elementId": "C-022",
-        "reason": ""
-      },
-      {
-        "elementId": "C-024",
-        "reason": ""
       }
     ]
   }

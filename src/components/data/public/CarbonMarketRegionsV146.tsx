@@ -65,5 +65,5 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
 /** The records that are not a region count: block cards on the wide template (V162). */
 function OtherRecordsV162({ entities }: { entities: Parameters<typeof wideRecordsOfEntitiesV162>[0] }) {
   const wide = wideRecordsOfEntitiesV162(entities);
-  return wide.length > 0 ? <WideRecordCardsV162 records={wide} /> : <EvidenceMatrixV125 rows={[]} entities={entities} />;
+  return wide.length > 0 ? <WideRecordCardsV162 records={wide} elementId={entities[0]?.elementId} /> : <EvidenceMatrixV125 rows={[]} entities={entities} />;
 }

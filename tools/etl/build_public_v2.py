@@ -887,7 +887,8 @@ def _b034_projection(
             if fact["periodStart"] == fact["periodEnd"]
             else f"{fact['periodStart']}–{fact['periodEnd']}"
         )
-        statistic = "연평균" if fact["statisticType"] == "annual-mean" else None
+        # V162: a 2001–2024 total says so; a mean says 연평균.
+        statistic = {"annual-mean": "연평균", "period-total": "누계"}.get(fact["statisticType"])
         variable_label = (
             f"{fact['publicLabel']}({statistic})" if statistic else fact["publicLabel"]
         )
