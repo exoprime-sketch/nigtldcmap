@@ -14,9 +14,9 @@
   - 닫힌 표(`<details>`)까지 읽습니다.
 - **메모리**: 상세 페이지를 20개 묶음으로 처리하고 묶음마다 브라우저 컨텍스트를 닫습니다(동시 1개). source-notes 감사는 `--workers 1`로 실행하고 20쪽마다 컨텍스트를 새로 엽니다.
 - **gate-lock**: `scripts/gate-lock.mjs`(`~/.nigt-gate.lock`)가 무거운 게이트를 한 번에 1개만 돌립니다.
-  - 적용: `finalize:v151`·`qa:acceptance:v162`·`e2e`
+  - 적용: `finalize:v151`·`qa:acceptance:v162`·`p5:final`·`e2e`
   - 대기 30초, 2시간 지난 잠금은 만료 처리, 게이트 안에서 부른 게이트는 잠금을 이어받음
-  - `p5:final`은 main에 없어 적용하지 못했습니다.
+  - `p5:final`은 작업 중 main에 들어온 #51 러너입니다(origin/main을 merge해 가져옴, rebase 없음). 러너가 `qa:acceptance`라는 이름을 찾아 '미병합'으로 건너뛰던 것을 `qa:acceptance:v162`로 연결했고, 제한 시간을 10분에서 120분으로 늘렸습니다(전체 실행 40분 이상). dry-run으로 연결을 확인했습니다.
 - CLAUDE.md에 2줄을 추가했습니다(보고 전 게이트 실행, gate-lock).
 
 ## Preview
