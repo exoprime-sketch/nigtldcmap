@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, readFileSync, statSync } from "node:fs";
+import { readZipMembersV158 } from "./v158/download-zip-v158.mjs";
 import { resolve } from "node:path";
 import ts from "typescript";
 import {
@@ -82,6 +83,32 @@ for (const element of catalog) {
       continue;
     }
     const text = readFileSync(path, "utf8");
+    // V158: one ZIP per element - it must be a ZIP (not the HTML fallback), and
+    // each file inside must parse and hold the stated record count.
+    if (String(asset.format || "").toUpperCase() === "ZIP") {
+      try {
+        const raw = readFileSync(path);
+        if (raw.length < 4 || raw.readUInt32LE(0) !== 0x04034b50) throw new Error("not a ZIP file");
+        const members = readZipMembersV158(raw);
+        for (const entry of asset.entries || []) {
+          const member = members.get(entry.fileName);
+          if (!member) throw new Error(`missing ${entry.fileName} in the ZIP`);
+          const entryFormat = String(entry.format || "").toUpperCase();
+          const count =
+            entryFormat === "JSON"
+              ? jsonRecordCount(JSON.parse(member.toString("utf8")))
+              : entryFormat === "CSV"
+              ? parseCsv(member.toString("utf8")).length
+              : null;
+          if (count === null) throw new Error(`unsupported member format ${entry.format}`);
+          if (count !== Number(entry.recordCount)) throw new Error(`${entry.fileName} record count ${count} != ${entry.recordCount}`);
+        }
+        if (!(asset.entries || []).length) throw new Error("ZIP asset lists no files");
+      } catch (error) {
+        downloadFailures.push({ elementId: element.elementId, url: asset.url, error: error instanceof Error ? error.message : String(error) });
+      }
+      continue;
+    }
     if (/^\s*(?:<!doctype\s+html|<html)/iu.test(text)) {
       if (String(asset.format).toUpperCase() === "JSON") htmlReturnedForJson += 1;
       downloadFailures.push({
@@ -480,11 +507,12 @@ try {
         '/data/vietnam/v2/geometry/vnm-adm1-63.geojson',
         '/data/vietnam/v2/geometry/vnm-transmission-network.geojson',
         '/data/vietnam/v2/semantic/elements/c-016.json',
-        '/data/vietnam/v2/downloads/c-016.json'
+        '/data/vietnam/v2/downloads/c-016.zip'
       ];
       return Promise.all(urls.map(async (url) => {
         const response = await fetch(url, { cache: 'no-store' });
-        const text = await response.text();
+        const bytes = new Uint8Array(await response.arrayBuffer());
+        const text = new TextDecoder().decode(bytes);
         let json = false;
         try { JSON.parse(text); json = true; } catch {}
         return {
@@ -493,6 +521,7 @@ try {
           contentType: response.headers.get('content-type'),
           html: /^\\s*(?:<!doctype\\s+html|<html)/i.test(text),
           json,
+          zip: bytes.length > 3 && bytes[0] === 0x50 && bytes[1] === 0x4b && bytes[2] === 0x03 && bytes[3] === 0x04,
         };
       }));
     })()`
@@ -518,12 +547,14 @@ const expectedReturnedState = (state) =>
   state?.period === C016_STATE.period &&
   state?.category?.normalize("NFC") === C016_STATE.category.normalize("NFC") &&
   typeof state?.element === "string" && state.element.length > 0;
-const runtimeAssetFailures = (runtimeResult?.httpAssets || []).filter(
-  (asset) =>
-    asset.status !== 200 ||
-    asset.html === true ||
-    asset.json !== true ||
-    !/(?:application\/json|application\/geo\+json)/iu.test(asset.contentType || "")
+// V158: the download is a ZIP (served as application/zip); every other asset is JSON.
+const runtimeAssetFailures = (runtimeResult?.httpAssets || []).filter((asset) =>
+  /\.zip$/u.test(asset.url)
+    ? asset.status !== 200 || asset.html === true || asset.zip !== true || !/application\/zip/iu.test(asset.contentType || "")
+    : asset.status !== 200 ||
+      asset.html === true ||
+      asset.json !== true ||
+      !/(?:application\/json|application\/geo\+json)/iu.test(asset.contentType || "")
 );
 const runtimeNavigationPass =
   runtimeFailure === null &&

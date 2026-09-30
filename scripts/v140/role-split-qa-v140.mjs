@@ -518,8 +518,9 @@ await section("DOWNLOAD", async () => {
   } catch (error) {
     file = { error: error instanceof Error ? error.message : String(error) };
   }
-  const head = await fetch(`${base}/data/vietnam/v2/downloads/a-002.csv`, { method: "HEAD", headers: bypassHeaders });
-  report.download = { summary, file, staticCsvStatus: head.status, staticCsvBytes: head.headers.get("content-length") };
+  // V158: the static download is one ZIP per element (the CSV and JSON inside).
+  const head = await fetch(`${base}/data/vietnam/v2/downloads/a-002.zip`, { method: "HEAD", headers: bypassHeaders });
+  report.download = { summary, file, staticZipStatus: head.status, staticZipBytes: head.headers.get("content-length") };
   check("DOWNLOAD_A002_PRESELECTED", /선택한 데이터 1개/u.test(summary), summary, "선택한 데이터 1개 · …");
   check("DOWNLOAD_A002_FILE", Boolean(file?.name) && (file.bytes ?? 1) > 0, file, "a file is produced");
   check("DOWNLOAD_A002_STATIC_ASSET", head.status === 200, head.status, 200);

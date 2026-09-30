@@ -1,4 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "bash scripts/vercel-ignore-build.sh"
+  "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "^/data/.*$", "status": 404, "dest": "/404.html" }
+  ]
 }

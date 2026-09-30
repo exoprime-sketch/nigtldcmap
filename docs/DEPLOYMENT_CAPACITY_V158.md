@@ -108,6 +108,21 @@
 3. **Hobby 비상업 조건 — 보류**(사용자 판단 대기)
    - 상업 용도에 해당하면 Pro로 전환해야 한다. 전환해도 업로드 한도(CLI)와 전송 할당만 달라지고 1·2의 결정은 그대로다.
 
+## 8. 구현 결과 (V158-ZIP, 2026-09-30)
+- ETL(베트남 `tools/etl/build_public_v2.py`, 방글라데시 `tools/etl/countries/bgd/build_country_v2.py`)이 요소별 `downloads/<id>.zip`을 쓴다. 안의 JSON·CSV는 전환 전 파일과 같은 방식으로 만들고, 카탈로그 `downloadAssets`는 ZIP 1개와 안쪽 파일 목록·크기·해시를 싣는다. 결정적 ZIP이다(`tools/etl/download_zip_v158.py`: 이름순, 1980-01-01 시각, 고정 파일 모드, 레벨 9).
+- 베트남은 `refresh:data`를 지난 갱신과 같은 인자로 다시 돌렸다. 값 비교 결과 152요소 모두 변화 0(값 변경·관측 증감 0)이다. ZIP 147개의 안쪽 CSV는 전환 전 파일과 바이트 단위로 같고, JSON은 요소 행의 `downloadAssets`만 다르다.
+- 5절 정정: 팩은 요소 행의 복사본(`meta.element`)에 `downloadAssets`를 싣기 때문에 팩 해시가 바뀐다. 레코드는 바뀌지 않았다.
+- 배포 용량(production 빌드 실측, `reports/v158/download-zip-size-v158.md`)
+
+| 항목 | 전 | 후 |
+|---|---|---|
+| 배포 전체 | 948.7 MB · 867개 | 164.4 MB · 635개 |
+| 베트남 다운로드 | 662.3 MB · 294개 | 19.0 MB · 147개 |
+| 방글라데시 다운로드 | 145.3 MB · 170개 | 4.4 MB · 85개 |
+| 가장 큰 파일 | 86.5 MB(b-006.json) | 12.3 MB(지도 경계 GeoJSON) |
+
+- 기존 주소 `downloads/<id>.json·csv`는 404다(7절 2 결정). CRA 프리셋이 없는 경로를 index.html로 돌려주므로, `vercel.json`에 `routes`(파일시스템 확인 → 없는 `/data/**` 404)를 넣었다. `ignoreCommand`와 리다이렉트는 없다.
+
 ## 측정 재현
 ```powershell
 $env:GENERATE_SOURCEMAP = "false"; $env:BUILD_PATH = "tmp/build-v158b2a"; npm run build

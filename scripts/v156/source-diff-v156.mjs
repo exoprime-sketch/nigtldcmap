@@ -13,6 +13,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { readDownloadJsonV158 } from "../v158/download-zip-v158.mjs";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const argv = process.argv.slice(2);
@@ -44,7 +45,9 @@ function catalogRows(tree) {
 
 function downloadPayload(tree, elementId) {
   const path = resolve(tree, "downloads", `${elementId.toLowerCase()}.json`);
-  return existsSync(path) ? readJson(path) : null;
+  if (existsSync(path)) return readJson(path);
+  // V158: the download JSON ships inside downloads/<id>.zip.
+  return readDownloadJsonV158(tree, elementId);
 }
 
 /** One comparable value per (indicator, year, period) - the reader's grain. */

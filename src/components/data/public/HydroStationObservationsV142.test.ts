@@ -1,11 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { parseHydroRowV142, mergeHydroRowsV142, hydroSeasonPairsV142 } from "./HydroStationObservationsV142";
-import { countryPublicDirV158 } from "../../../data/countryContext";
+import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
-const source = (id: string): VietnamEntityV124[] => JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/downloads/${id}.json`), "utf8")).entities;
+const source = (id: string): VietnamEntityV124[] => readDownloadJsonV158(id).entities;
 
 describe("Hydro observations: keep source meaning and values", () => {
   it("compares two reviewed seasonal extreme pairs, never different years or shares", () => {

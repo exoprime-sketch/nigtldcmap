@@ -37,7 +37,14 @@ npm run refresh:data -- --source 베트남데이터/<YYYYMMDD> --hold A-023,B-03
 | build | `scripts/v137/build-final-data-v137.mjs` | etl→semantic→interpretation→temporal→map-targets→home-preview→asset-integrity 순서가 어긋나는 것 |
 | diff | `scripts/v156/source-diff-v156.mjs` | 값·지표·단위·최신연도·결측률 변화를 모르고 반영하는 것 |
 | apply | `scripts/v156/apply-staged-data-v156.mjs` | mirror 방식 반영이 체인 밖 자산(`geometry/**`·`spatial/**`·`dataset-directory.json`·`home/card-summaries-v140.json`)을 삭제하는 것 |
+| semantic(V158) | `tools/vietnam_semantic/build_semantic_v125.py` | 스테이징 체인은 체인 밖 지도 레이어(`geometry/**`·`spatial/**`) 없이 semantic을 만들어 지도 연결(`mapLinkage`)이 꺼진 채 반영되던 것(#46에서 한 번 손으로 맞춤). 반영된 트리에서 다시 만든다. `src`의 생성 TS 모듈도 이 단계가 다시 쓴다 |
 | dataset-directory · card-summaries | `scripts/v150-1/…`, `scripts/v140/…` | 데이터는 새것인데 디렉터리·카드 요약이 낡아 analysis QA가 낡은 기준과 비교하는 것 |
+
+## 다운로드 파일(V158)
+- 요소별 다운로드는 `downloads/<id>.zip` 하나다(안에 `<id>.json`·`<id>.csv`, 결정적 ZIP — `tools/etl/download_zip_v158.py`). 카탈로그 `downloadAssets`는 ZIP 1개와 안쪽 파일 목록·크기·해시를 싣는다.
+- 스크립트·감사·테스트는 `scripts/v158/download-zip-v158.mjs`(JS)·`src/data/testing/downloadZipV158.ts`(테스트)로 ZIP 안 파일을 읽는다.
+- 반영(`apply`)은 스테이징에 없는 파일을 지우지 않는다(`UNEXPLAINED_TARGET_FILES`로 보고만 한다). JSON·CSV → ZIP 전환 때처럼 파일 이름이 바뀌면, 대체된 옛 파일은 손으로 지우고 integrity를 다시 만든다(V158-ZIP에서 294개).
+- 스테이징만 돌리는 검토 실행(`--apply` 없음)도 semantic 단계가 `src/data/visualization/generatedVisualizationContractsV125.ts`를 다시 쓴다. 반영하지 않을 때는 이 파일을 되돌린다.
 
 ## 반영 후 게이트
 

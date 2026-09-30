@@ -51,15 +51,37 @@ function gitDates() {
   const dates = new Map();
   let history = "";
   try {
-    history = execFileSync("git", ["log", "--format=@%aI", "--name-only", "--", "public/data/vietnam/v2/downloads"], { cwd: ROOT, encoding: "utf8", maxBuffer: 20e6 });
+    history = execFileSync("git", ["log", "--format=@%aI", "--name-status", "--", "public/data/vietnam/v2/downloads"], { cwd: ROOT, encoding: "utf8", maxBuffer: 20e6 });
   } catch {
     return { dates, available: false };
   }
-  let date = null;
+  // V158: the downloads moved from <id>.json/.csv into one <id>.zip. A commit
+  // that adds an element's ZIP while deleting its JSON/CSV only repackaged the
+  // same data, so it is not the dataset's update date; any other change to the
+  // files (a modified or new ZIP, a JSON/CSV added, changed or removed) is, as
+  // before the move.
+  const commits = [];
   for (const line of history.split(/\r?\n/u)) {
-    if (line.startsWith("@")) date = line.slice(1);
-    const id = line.match(/downloads\/([a-e]-\d{3})\.(?:json|csv)$/iu)?.[1]?.toUpperCase();
-    if (id && date && !dates.has(id)) dates.set(id, date);
+    if (line.startsWith("@")) {
+      commits.push({ date: line.slice(1), changes: [] });
+      continue;
+    }
+    const match = line.match(/^([AMD])\S*\t.*downloads\/([a-e]-\d{3})\.(json|csv|zip)$/iu);
+    if (match && commits.length) {
+      commits[commits.length - 1].changes.push({ status: match[1].toUpperCase(), id: match[2].toUpperCase(), ext: match[3].toLowerCase() });
+    }
+  }
+  for (const { date, changes } of commits) {
+    const repackaged = new Set(
+      changes
+        .filter((change) => change.ext === "zip" && change.status === "A")
+        .map((change) => change.id)
+        .filter((id) => changes.some((change) => change.id === id && change.ext !== "zip" && change.status === "D"))
+    );
+    for (const change of changes) {
+      if (repackaged.has(change.id)) continue;
+      if (!dates.has(change.id)) dates.set(change.id, date);
+    }
   }
   return { dates, available: true };
 }
