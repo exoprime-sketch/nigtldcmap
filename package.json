@@ -189,7 +189,7 @@
     "audit:screen-usability:v136-4": "node scripts/audit-vietnam-screen-usability-v136-4.mjs",
     "capture:screen-usability:v136-4": "node scripts/capture-vietnam-screen-usability-v136-4.mjs",
     "report:screen-review:v136-4": "node scripts/build-screen-review-record-v136-4.mjs",
-    "e2e": "playwright test",
+    "e2e": "node scripts/gate-lock.mjs --name e2e -- playwright test",
     "e2e:detail": "playwright test e2e/detail-all.spec.ts",
     "e2e:update-visual": "playwright test e2e/visual.spec.ts --update-snapshots",
     "build:candidate:v137": "node scripts/v137/build-candidate-v137.mjs",
@@ -220,7 +220,7 @@
     "verify:ignore-command:v140": "node scripts/v140/verify-ignore-command-v140.mjs",
     "storage:ledger:v140": "node scripts/v140/deployment-storage-ledger-v140.mjs",
     "audit:boundary-34:v151": "node scripts/v151/audit-boundary-34-v151.mjs",
-    "finalize:v151": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser && npm run audit:boundary-policy:v151-2 && npm run qa:acceptance:v162 -- --expect-pending 12 --expect-fail data-date,c003-filename",
+    "finalize:v151": "node scripts/gate-lock.mjs --name finalize:v151 -- npm run finalize:v151:steps",
     "build:adm1-34:v151": "python3 tools/vietnam_spatial/build_adm1_34_v151.py && node scripts/generate-vietnam-asset-integrity-v133.mjs --data public/data/vietnam/v2",
     "audit:boundary-policy:v151-2": "node scripts/v151-2/audit-boundary-policy-v151-2.mjs",
     "audit:source-notes:v161": "node scripts/v161/audit-source-notes-v161.mjs",
@@ -230,7 +230,8 @@
     "qa:labels:v151-2": "node scripts/v151-2/label-dedup-v151-2.mjs",
     "measure:backdrop:v151-2": "node scripts/v151-2/measure-backdrop-v151-2.mjs",
     "measure:detail-prepare:v151-2": "node scripts/v151-2/measure-detail-prepare-v151-2.mjs",
-    "qa:acceptance:v162": "node scripts/v162/acceptance-v162.mjs"
+    "qa:acceptance:v162": "node scripts/gate-lock.mjs --name qa:acceptance:v162 -- node scripts/v162/acceptance-v162.mjs",
+    "finalize:v151:steps": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser && npm run audit:boundary-policy:v151-2 && npm run qa:acceptance:v162 -- --expect-pending 12 --expect-fail data-date,c003-filename"
   },
   "browserslist": [
     ">0.2%",
