@@ -268,9 +268,10 @@ for (const iso3 of COUNTRIES) {
     check(iso3, "numbers", "download-list", "다운로드 목록 = 카탈로그 공개 요소(제외 0)", downloadIds.length === data.publicIds.length && !downloadIds.some((id) => data.excludedIds.includes(id)), downloadIds.length, data.publicIds.length);
     // The data date on the home is the day the source was delivered (입고일).
     const refresh = iso3 === DEFAULT_COUNTRY && existsSync(resolve(ROOT, "reports/v156/refresh-v156.json")) ? readJson(resolve(ROOT, "reports/v156/refresh-v156.json")) : null;
-    const delivered = data.manifest?.deliveredAt || refresh?.deliveredAt || null;
+    // V162: the ETL states the delivery date in manifest.provenance (both countries).
+    const delivered = data.manifest?.provenance?.sourceDeliveredAt || data.manifest?.deliveredAt || refresh?.deliveredAt || null;
     const shownDate = figures["데이터 기준일"] || "";
-    check(iso3, "numbers", "data-date", "데이터 기준일 = 원자료 입고일", orExpected("data-date", Boolean(delivered) && digits(shownDate) === digits(delivered)), { shown: shownDate, manifestGeneratedAt: data.manifest?.generatedAt || null }, { deliveredAt: delivered, source: data.manifest?.deliveredAt ? "manifest.deliveredAt" : "reports/v156/refresh-v156.json" });
+    check(iso3, "numbers", "data-date", "데이터 기준일 = 원자료 입고일", orExpected("data-date", Boolean(delivered) && digits(shownDate) === digits(delivered)), { shown: shownDate, manifestGeneratedAt: data.manifest?.generatedAt || null }, { deliveredAt: delivered, source: data.manifest?.provenance?.sourceDeliveredAt ? "manifest.provenance.sourceDeliveredAt" : data.manifest?.deliveredAt ? "manifest.deliveredAt" : "reports/v156/refresh-v156.json" });
   }
 
   // 5 widths --------------------------------------------------------------
