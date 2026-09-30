@@ -28,13 +28,13 @@
 - `datasetTypologyV159.json`: `geometry`가 21개 요소는 false → true, 3개 요소는 true → false로 바뀝니다. `reports/v159/spec-import-v159.json`의 geometry도 42 → 60으로 바뀝니다. #47에서 지도 활성 레이어가 60개로 늘어난 결과입니다.
 - `reports/v159/short-definition-card-review.md`: A-025 한 줄(규칙 no-org-name → no-subject). 원자료 문구가 바뀐 결과입니다.
 - `docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md`: A-028 두 줄(바꿀 문구 칸의 공백·'(삭제)' 표기).
-- 위 차이 때문에 `import-dataset-spec-v159.mjs --check`는 main에서도 stale로 실패합니다. 이 명령은 게이트·CI에서 쓰이지 않습니다.
+- 이 PR을 적용한 뒤에도 `import-dataset-spec-v159.mjs --check`는 `stale: datasetTypologyV159.json` 1건으로 exit 1입니다(확인함). 이 명령은 게이트·CI에서 쓰이지 않습니다.
 
 ## 화면 변화
 **화면 변화 0**. 스크립트만 바뀌었고, 앱이 읽는 데이터 파일은 바뀌지 않았습니다.
 
 ## Preview
-PREVIEW_URL
+https://nigtldcmap-jztghcz03-exoprime-5142s-projects.vercel.app (화면 변화 0)
 
 병합은 검토 후 "PR 병합" 지시가 있을 때만.
 
