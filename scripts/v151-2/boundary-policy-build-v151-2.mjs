@@ -116,7 +116,10 @@ export function boundaryPolicyForLayer(target, layer, measureKeys) {
     schema: BOUNDARY_POLICY_SCHEMA,
     kind: declared.kind,
     ...(Object.keys(byVariable).length ? { byVariable } : {}),
-    note: NOTES[declared.kind],
+    // A layer whose unit is not an administrative one explains itself: B-017's
+    // values are Aqueduct assessment zones, where the default note about points
+    // and lines would be wrong. The kind still comes from the shared list.
+    note: declared.note || NOTES[declared.kind],
     valueSystem: valueSystemFor(declared.kind, target),
   };
 }

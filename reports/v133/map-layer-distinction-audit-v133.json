@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v133-ci-map-analysis-audit-1",
-  "generatedAt": "2026-09-29T06:13:41.498Z",
+  "generatedAt": "2026-09-30T05:39:33.120Z",
   "audit": "map-layer-distinction:v133",
   "status": "PASS",
   "summary": {
@@ -11,7 +11,7 @@
     "failed": 0,
     "total": 13,
     "failedChecks": [],
-    "mapLayerCount": 42,
+    "mapLayerCount": 60,
     "visibleMapSymbolWithoutLegend": 0,
     "climateSnapshot": {
       "primaryElement": "B-021",
@@ -171,7 +171,7 @@
           "shape": "square"
         }
       ],
-      "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원천의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
+      "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원자료의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
     },
     "financeCarbon": {
       "primaryElement": "C-025",
@@ -243,8 +243,8 @@
       "name": "MAP_LAYER_COUNT",
       "status": "PASS",
       "actual": {
-        "active": 42,
-        "declared": 42
+        "active": 60,
+        "declared": 60
       },
       "expected": "declared active count, at least the twelve ETL layers"
     },
@@ -259,10 +259,13 @@
     {
       "type": "check",
       "audit": "map-layer-distinction:v133",
-      "name": "D023_DUPLICATE_MAP_FEATURE",
+      "name": "D023_NOT_A_SITE_LAYER",
       "status": "PASS",
-      "actual": 0,
-      "expected": 0
+      "actual": {
+        "renderer": "partial-choropleth",
+        "mapMode": "region-choropleth"
+      },
+      "expected": "absent, or a region choropleth - never project-site points"
     },
     {
       "type": "check",
@@ -519,7 +522,7 @@
             "shape": "square"
           }
         ],
-        "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원천의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
+        "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원자료의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
       },
       "expected": "D-018 primary + C-025 companion, nothing from the previous preset"
     },
@@ -595,7 +598,7 @@
       "audit": "map-layer-distinction:v133",
       "name": "FINANCE_PORTFOLIO_SUMMARY",
       "status": "PASS",
-      "actual": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원천의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위",
+      "actual": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원자료의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위",
       "expected": "project count, amount, verified location/scope count"
     },
     {
@@ -623,7 +626,7 @@
       "expected": []
     }
   ],
-  "mapLayerCount": 42,
+  "mapLayerCount": 60,
   "visibleMapSymbolWithoutLegend": 0,
   "climateSnapshot": {
     "primaryElement": "B-021",
@@ -783,7 +786,7 @@
         "shape": "square"
       }
     ],
-    "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원천의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
+    "summaryText": "기후재원 사업사업 유형적응기금탄소크레딧비교해서 보기사업 수2건승인·발행 관련 핵심금액원자료의 사업별 금액 범위위치 또는 참여범위 확인2건◇ 적응기금 사업·지역 협력범위"
   },
   "financeCarbon": {
     "primaryElement": "C-025",

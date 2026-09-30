@@ -205,7 +205,14 @@ const hoverRequired = {
 const detailRequired = {
   selectedArea: /선택 지역/u.test(detailSnapshot?.panelText || detailText),
   value: /현재 값|값/u.test(detailText),
-  unit: /단위/u.test(detailText),
+  // V161-C: the `단위` row is retired; the unit is written with the number
+  // ("41.4 지수"), so the check looks for the layer's own unit in the detail.
+  unit: new RegExp(
+    (readJson(resolve(V2_ROOT, "map-index.json")).value?.layers?.find(
+      (layer) => layer.elementId === "B-021"
+    )?.unit || "단위").replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"),
+    "u"
+  ).test(detailText),
   period: /자료연도|기준연도|기간/u.test(detailText),
   rank: /베트남\s*6개\s*권역\s*중\s*\d+위/u.test(detailText),
   spatialUnit: /권역|공간단위|성 단위 독립 추정값/u.test(detailText),

@@ -131,6 +131,9 @@ export function choroplethFeatureCollection(
             adm1Name: value?.adm1Name || feature.properties?.name || adm1Code,
             value: value?.value ?? null,
             hasValue: Boolean(value),
+            // V157: a province table may state a category as well as a number
+            // (B-026's dominant flow direction); the map colours by it.
+            categoryLabel: (value as { categoryLabel?: string } | undefined)?.categoryLabel ?? "",
             unit: value?.unit || "",
             period: selector.period,
             variable: selector.variable,

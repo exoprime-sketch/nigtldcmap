@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-020",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "d-020-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-020-located-count",
+        "measureId": "d-020-located-count",
+        "measureKey": "d-020-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 11
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Điện Biên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lai Châu",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00003",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Sơn La",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "d-020-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-020_project_registry",
+      "sourceRecordId": "v124-d-020-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Huế",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-03": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Điện Biên",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-01": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-05": [
+      {
+        "recordId": "v124-d-020-entity-00003",
+        "label": "Vietnam REDD-plus results-based payments for results period of 2014",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sơn La",
+        "indicatorId": "D-020_project_registry"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-d-020-entity-00004",
+        "label": "Climate Adaptation and Resilience in Thua Thien Hue Province Vietnam (CARe Hue)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-020_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-020-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 11,
+      "missingCount": 52,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "First published by the Green Climate Fund — https://greenclimate.fund/"
+    ],
+    "licenses": [
+      "GCF Terms and conditions (기관 이용약관)"
+    ],
+    "organizations": [
+      "Green Climate Fund"
+    ],
+    "urls": [
+      "https://www.greenclimate.fund/countries/viet-nam"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 11,
+    "maxSeriesFeatureCount": 11,
+    "missingAdm1Count": 52,
+    "providedZeroCount": 0,
+    "publishedValueCount": 11,
+    "sourceValueCount": 7,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 7
+  }
+}

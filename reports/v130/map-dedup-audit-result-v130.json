@@ -23,14 +23,15 @@
     },
     {
       "type": "check",
-      "name": "D023_ACTIVE_MAP_LAYER_REMOVED",
+      "name": "D023_SHARED_PROJECTS_DRAWN_BY_D018_ONLY",
       "status": "PASS",
       "actual": {
-        "activeLayers": 0,
-        "catalogMapMode": "panel-only",
-        "semanticMapMode": "panel-only"
+        "sharedProjectsDrawnByD023": [],
+        "activeLayers": 1,
+        "catalogMapMode": "region-choropleth",
+        "semanticMapMode": "region-choropleth"
       },
-      "expected": "no active layer or preset type; catalog/semantic panel-only"
+      "expected": "no shared project drawn by D-023; detail linkage panel-only; no preset names it"
     },
     {
       "type": "check",

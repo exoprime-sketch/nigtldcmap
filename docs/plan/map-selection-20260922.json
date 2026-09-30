@@ -1,0 +1,542 @@
+{
+ "source": "베트남 데이터 지도표출 선정결과(전수검토) 2026-09-22 (1쪽 PDF) — 표를 그대로 전사. criteriaProvisional은 PDF에 코드별 표기가 없어 기준 정의(①지역별 비교 ②시설·사업·기관 위치+설명 ③지역별 계획·규정·지원+내용)에 따라 잠정 배정한 값이며 계약 작성 시 원자료 열로 확정할 것.",
+ "summary": {
+  "provided": 145,
+  "selected": 71,
+  "excluded": 74,
+  "notProvided": [
+   "C-020",
+   "C-021",
+   "C-023",
+   "E-011",
+   "E-013",
+   "E-016",
+   "E-017"
+  ],
+  "changesFromPrevious43": {
+   "kept": 40,
+   "added": 31,
+   "removed": {
+    "C-009": "지역내용 미확인",
+    "C-010": "지역내용 미확인",
+    "C-019": "전국 제도"
+   }
+  },
+  "userAddition20260923": {
+   "A-027": "육상교통 — 지도 포함(xlsx 검토), PDF 제외분을 사용자 결정으로 추가 → 72개"
+  }
+ },
+ "criteria": {
+  "①": "지역별 비교 — 같은 지표를 여러 지역·유역에서 비교할 수 있는가(기후위험·자원량·산림·지역예산)",
+  "②": "시설·사업·기관의 위치 — 어디에 있는지/어느 지역에서 활동하는지 + 그 대상에 대한 설명이 있는가(두 질문 모두 예)",
+  "③": "지역별 계획·규정·지원 — 어느 지역에 적용되는지 + 그 지역의 목표·규제·지원 내용이 있는가(두 질문 모두 예)"
+ },
+ "displayRules": [
+  "지역·위치 확인 행만 사용",
+  "지역 대표점·선로 시점은 실제 시설·경로와 구분",
+  "기관 주소를 사업지역으로 전용하지 않음",
+  "개편 전 63성·개편 후 34성의 원래 경계·적용범위 유지",
+  "모형·추정·대리지표를 구분",
+  "복수지역 총량·중복사업의 중복합산 금지",
+  "전국 공통 값·규정은 지도에서 제외"
+ ],
+ "items": [
+  {
+   "elementId": "A-013",
+   "targetName": "NDC-SDG 지역조치",
+   "pdfContent": "삼각주 산림보전·관개개선 계획",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "A-022",
+   "targetName": "전력공급 신뢰도",
+   "pdfContent": "전력회사 관할별 정전시간·빈도",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "A-023",
+   "targetName": "발전소",
+   "pdfContent": "발전소 위치·발전원·설비용량",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "A-024",
+   "targetName": "송전망",
+   "pdfContent": "송전구간 시점·전압·연장",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "A-025",
+   "targetName": "CCS 시설·사업 계획",
+   "pdfContent": "사업의 소재지역·규모·상태",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "A-028",
+   "targetName": "수자원 시설",
+   "pdfContent": "운하·배수로 시점·유형·연장",
+   "criteriaProvisional": "②",
+   "note": "A-028: 자료 내 표출제한으로 공개 보류(PDF)"
+  },
+  {
+   "elementId": "B-002",
+   "targetName": "기후대",
+   "pdfContent": "성별 기후대·유형별 면적비율",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-003",
+   "targetName": "연평균 기온·강수",
+   "pdfContent": "성별 기온·강수량 및 연도별 변화",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-004",
+   "targetName": "미래기후 전망",
+   "pdfContent": "성별 시나리오·기간별 기후 전망",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-005",
+   "targetName": "가뭄",
+   "pdfContent": "성별 연속건조일수·가뭄지수",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-006",
+   "targetName": "폭염",
+   "pdfContent": "성별 폭염일수·열대야 등 고온지표",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-007",
+   "targetName": "극한강수",
+   "pdfContent": "성별 극한강수량·호우일수",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-008",
+   "targetName": "해수면 상승 전망",
+   "pdfContent": "관측소별 시나리오·기간별 전망",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-009",
+   "targetName": "생물다양성 위험",
+   "pdfContent": "성별 위험도·구성지표",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-012",
+   "targetName": "재해 이력",
+   "pdfContent": "발생·피해지역별 재해유형·이력",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-017",
+   "targetName": "물 스트레스",
+   "pdfContent": "유역·평가구역별 물부족 위험",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-021",
+   "targetName": "지역 취약성",
+   "pdfContent": "6개 권역별 취약성·구성지표",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-023",
+   "targetName": "건기·우기 유량",
+   "pdfContent": "지점별 건기·우기 유량 차이",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-024",
+   "targetName": "농업용수 대리지표",
+   "pdfContent": "성별 벼 재배면적·용수배분 추정",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-025",
+   "targetName": "유역면적",
+   "pdfContent": "하천유역별 경계 식별·면적",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-026",
+   "targetName": "흐름방향",
+   "pdfContent": "성별 우세유향·방위별 비율",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-028",
+   "targetName": "하천유량",
+   "pdfContent": "수문지점·유역별 유량",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-029",
+   "targetName": "산림유형(이탄지)",
+   "pdfContent": "성별 이탄지 유형·면적",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-030",
+   "targetName": "산림 증가",
+   "pdfContent": "성별 기준기간 내 수관 증가면적",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-031",
+   "targetName": "산림면적(수관면적)",
+   "pdfContent": "성별 수관면적·연도별 변화",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-032",
+   "targetName": "수관피복률",
+   "pdfContent": "성별 수관피복률",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-033",
+   "targetName": "산림손실",
+   "pdfContent": "성별 연간·누적 수관손실",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-034",
+   "targetName": "산림탄소",
+   "pdfContent": "성별 탄소 저장·배출·흡수",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-035",
+   "targetName": "토지이용 면적",
+   "pdfContent": "성별 토지이용 면적 시계열",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-036",
+   "targetName": "토지이용 변화율",
+   "pdfContent": "성별 기간별 토지이용 면적 변화율",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-037",
+   "targetName": "토지피복 면적",
+   "pdfContent": "성별 경작지·산림·수체 등 구성",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-039",
+   "targetName": "수력 잠재량",
+   "pdfContent": "성별 이론 수력 잠재량",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-040",
+   "targetName": "지열 자원",
+   "pdfContent": "성별 심도별 지온",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-041",
+   "targetName": "태양광 자원",
+   "pdfContent": "성별 일사량·태양광 자원",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-042",
+   "targetName": "풍력 자원",
+   "pdfContent": "성별 고도별 풍속·풍력밀도",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "B-044",
+   "targetName": "핵심광물 부존",
+   "pdfContent": "광산 소재지역·광종",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "B-046",
+   "targetName": "광물 매장량",
+   "pdfContent": "광산 소재지역·니켈·리튬 매장 범위",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "B-047",
+   "targetName": "광물 생산량",
+   "pdfContent": "라오까이 구리 생산량 범위",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "B-048",
+   "targetName": "주요 광산",
+   "pdfContent": "광산 소재지역·광종",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "C-003",
+   "targetName": "국가적응계획 지역과제",
+   "pdfContent": "권역별 적응조치·이행기간",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-006",
+   "targetName": "JCM 사업",
+   "pdfContent": "사업지역·기술·등록상태",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "C-008",
+   "targetName": "국제 이니셔티브",
+   "pdfContent": "도시·성별 참여·공약 건수",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-012",
+   "targetName": "PPP 사업",
+   "pdfContent": "사업 소재지역·분야·투자액",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "C-013",
+   "targetName": "지역 투자 특례",
+   "pdfContent": "적용지역·지원내용·조건",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-016",
+   "targetName": "재생에너지 지역계획",
+   "pdfContent": "성별 전원·기간별 확대용량",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-017",
+   "targetName": "지역 발전가격·지원",
+   "pdfContent": "권역별 가격상한·닌투언 특례",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-022",
+   "targetName": "탄소시장 대상시설",
+   "pdfContent": "성별 대상시설 수·업종(시행예정)",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "C-024",
+   "targetName": "REDD+ 사업",
+   "pdfContent": "참여지역·산림보전·감축사업",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "C-025",
+   "targetName": "탄소크레딧 사업",
+   "pdfContent": "사업지역·유형·발행·소각 실적",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-008",
+   "targetName": "지역 기후예산",
+   "pdfContent": "자료가 있는 성별 기후지출",
+   "criteriaProvisional": "①",
+   "note": ""
+  },
+  {
+   "elementId": "D-012",
+   "targetName": "외국기업 진출",
+   "pdfContent": "사업지역·분야·진출형태",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-014",
+   "targetName": "EDCF 사업",
+   "pdfContent": "사업지역·분야·차관정보",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-015",
+   "targetName": "한국 ODA 사업",
+   "pdfContent": "사업지역·내용·재원",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-016",
+   "targetName": "부처·지자체 ODA",
+   "pdfContent": "사업지역·분야·지원내용",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-017",
+   "targetName": "사업 입찰·공모",
+   "pdfContent": "대상지역·사업내용·기간",
+   "criteriaProvisional": "③",
+   "note": ""
+  },
+  {
+   "elementId": "D-018",
+   "targetName": "적응기금 사업",
+   "pdfContent": "확인된 활동지역·지원내용",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-019",
+   "targetName": "기술지원 사업",
+   "pdfContent": "활동지역·기술지원 내용",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-020",
+   "targetName": "GCF 사업",
+   "pdfContent": "사업지역·내용·기금정보",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-021",
+   "targetName": "국제기구·MDB 사업",
+   "pdfContent": "사업지역·분야·재원",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-022",
+   "targetName": "MDB·DFI 금융",
+   "pdfContent": "사업지역·금융형태·규모",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-023",
+   "targetName": "기후기금 사업",
+   "pdfContent": "사업지역·재원·기금유형",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-025",
+   "targetName": "민간 인프라 사업",
+   "pdfContent": "사업지역·분야·투자액",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "D-026",
+   "targetName": "보증 지원사업",
+   "pdfContent": "대상지역·사업규모·보증유형",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-001",
+   "targetName": "CTCN 참여기관",
+   "pdfContent": "기관 소재지역·역할·전문분야",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-002",
+   "targetName": "DNA 협력창구",
+   "pdfContent": "창구 위치·승인업무",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-004",
+   "targetName": "국제기구 사무소",
+   "pdfContent": "현지 사무소 위치·협력분야",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-005",
+   "targetName": "대학·연구기관·NGO",
+   "pdfContent": "소재지역·전문분야·수행역량",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-006",
+   "targetName": "현지 투자자 네트워크",
+   "pdfContent": "베트남 내 거점·투자분야",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-018",
+   "targetName": "한국 기업 진출",
+   "pdfContent": "사업지역·기술분야·진출상태",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-019",
+   "targetName": "한국 기관 사무소",
+   "pdfContent": "현지 사무소 위치·지원업무",
+   "criteriaProvisional": "②",
+   "note": ""
+  },
+  {
+   "elementId": "E-020",
+   "targetName": "한국 지원사업",
+   "pdfContent": "확인된 활동지역·지원내용",
+   "criteriaProvisional": "②",
+   "note": ""
+  }
+ ]
+}

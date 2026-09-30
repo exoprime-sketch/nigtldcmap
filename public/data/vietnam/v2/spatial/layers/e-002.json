@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "E-002",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "e-002-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "e-002-located-count",
+        "measureId": "e-002-located-count",
+        "measureKey": "e-002-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 기관 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 1
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "e-002-located-count",
+      "variableLabel": "지역이 확인된 기관 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "E-002_dna",
+      "sourceRecordId": "v124-e-002-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-HN": [
+      {
+        "recordId": "v124-e-002-entity-00001",
+        "label": "Department of Climate Change (기후변화국)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "E-002_dna"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "e-002-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 1,
+      "missingCount": 62,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Source: UNFCCC — A6.4 Host Party Prior Requirements (Viet Nam) / CDM DNA database"
+    ],
+    "licenses": [
+      "UNFCCC 웹사이트 이용약관"
+    ],
+    "organizations": [
+      "United Nations Framework Convention on Climate Change (UNFCCC)"
+    ],
+    "urls": [
+      "https://unfccc.int/sites/default/files/resource/A6.4_HPPR_Viet%20Nam.pdf"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 1,
+    "maxSeriesFeatureCount": 1,
+    "missingAdm1Count": 62,
+    "providedZeroCount": 0,
+    "publishedValueCount": 1,
+    "sourceValueCount": 1,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 1
+  }
+}

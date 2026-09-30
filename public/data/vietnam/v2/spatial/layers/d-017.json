@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "D-017",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026년 기준",
+    "defaultVariable": "d-017-located-count",
+    "periods": [
+      "2026년 기준"
+    ],
+    "variables": [
+      {
+        "key": "d-017-located-count",
+        "measureId": "d-017-located-count",
+        "measureKey": "d-017-located-count",
+        "scenario": null,
+        "label": "지역이 확인된 사업 수",
+        "unit": "건",
+        "periods": [
+          "2026년 기준"
+        ],
+        "maxFeatureCount": 4
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "d-017-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-017_pcp_tender_registry",
+      "sourceRecordId": "v124-d-017-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "d-017-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-017_pcp_tender_registry",
+      "sourceRecordId": "v124-d-017-entity-00001",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "variable": "d-017-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-017_pcp_tender_registry",
+      "sourceRecordId": "v124-d-017-entity-00002",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Điện Biên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "d-017-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2026년 기준",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-017_pcp_tender_registry",
+      "sourceRecordId": "v124-d-017-entity-00004",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Huế",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    }
+  ],
+  "memberRecords": {
+    "VN-32": [
+      {
+        "recordId": "v124-d-017-entity-00001",
+        "label": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-017_pcp_tender_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-017-entity-00001",
+        "label": "베트남 닥락성 부온호현 하수처리시설 건립사업 PMC 용역",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-017_pcp_tender_registry"
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "v124-d-017-entity-00002",
+        "label": "베트남 디엔비엔성 소외지역 전력인프라 구축을 통한 농촌 자립역량 강화사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Điện Biên",
+        "indicatorId": "D-017_pcp_tender_registry"
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "v124-d-017-entity-00004",
+        "label": "베트남 후에시 문화관광 스마트시티 조성 지원사업 PMC 용역",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-017_pcp_tender_registry"
+      },
+      {
+        "recordId": "v124-d-017-entity-00005",
+        "label": "(긴급) 베트남 후에시 문화관광 스마트시티 조성 지원사업 스마트 스트리트 구축 기자재 공급업체 선정",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-017_pcp_tender_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-017-located-count",
+      "period": "2026년 기준",
+      "expectedCount": 63,
+      "matchedCount": 4,
+      "missingCount": 59,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "출처: 한국국제협력단(KOICA)·한국수출입은행(EDCF)·ODA Korea, 공공누리 제1유형."
+    ],
+    "licenses": [
+      "공공누리 제1유형(출처표시)"
+    ],
+    "organizations": [
+      "KOICA 전자조달시스템 · 조달청 나라장터(G2B) · ODA Korea 통합 입찰공고"
+    ],
+    "urls": [
+      "https://nebid.koica.go.kr/oep/masc/mainPageForm.do"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 4,
+    "maxSeriesFeatureCount": 4,
+    "missingAdm1Count": 59,
+    "providedZeroCount": 0,
+    "publishedValueCount": 4,
+    "sourceValueCount": 4,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "explicit-2025-34-unit-membership",
+    "sourceRegionCount": 3
+  }
+}
