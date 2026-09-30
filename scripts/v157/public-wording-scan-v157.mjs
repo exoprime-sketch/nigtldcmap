@@ -62,15 +62,28 @@ const CITATION_V157 = [
   /\bv\d{4}-\d{2}-\d{2}\b/gu,
   // a contact address the directory datasets publish
   /[\w.+-]+@[\w.-]*/gu,
-  // V162: a source value kept in brackets after its Korean label, as the
-  // download writes it - "협궤 철도 (narrow_gauge)". Anywhere else it still counts.
-  /(?<=[가-힣]) \([a-z][a-z0-9]*(?:_[a-z0-9]+)+\)/gu,
+  // V162: the file name of a published document the record cites
+  // ("nap_report_eng_small.pdf", C-003) - the source's name for the document,
+  // as #42 kept public documents' file names in their links.
+  /[\w.-]+\.pdf/giu,
 ];
+
+/**
+ * V162: a source value may stand in brackets only right after the Korean label
+ * the platform's dictionary gives it - "협궤 철도 (narrow_gauge)" (A-027's 19
+ * OpenStreetMap classes, src/data/visualization/osmClassLabelsV162.json). Any
+ * other word before the bracket ("피처 수(narrow_gauge)") leaves the value an
+ * identifier on the screen, and it counts.
+ */
+const DICTIONARY_CITATIONS_V162 = Object.entries(
+  JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/osmClassLabelsV162.json"), "utf8")).labels
+).map(([value, ko]) => `${ko} (${value})`);
 
 /** The text a reader sees, with its citations lifted out. */
 function withoutCitationsV157(text) {
   let value = String(text || "").normalize("NFC");
   for (const pattern of CITATION_V157) value = value.replace(pattern, " ");
+  for (const citation of DICTIONARY_CITATIONS_V162) value = value.split(citation).join(" ");
   return value;
 }
 
@@ -306,9 +319,14 @@ if (!flag("skip-detail")) {
     });
     await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
     await page.waitForTimeout(400);
-    const text = await page.evaluate(() => {
+    const text = await page.evaluate(async () => {
       const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
-      return tidy(document.querySelector('[data-testid="public-analysis-root"]')?.innerText || document.body.innerText);
+      // V162: a closed table (the raw-data table in 'Detail data') is text a
+      // reader opens with one click - open every <details> before reading.
+      const root = document.querySelector('[data-testid="public-analysis-root"]');
+      (root || document).querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
+      await new Promise((done) => setTimeout(done, 300));
+      return tidy(root?.innerText || document.body.innerText);
     });
     record(report, "detail", target.elementId, "analysis", text);
   }

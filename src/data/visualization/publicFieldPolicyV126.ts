@@ -543,6 +543,13 @@ const PUBLIC_ENTITY_ATTRIBUTE_OUTPUT_KEYS_V126: Record<string, string> = {
 };
 
 const PUBLIC_ENTITY_ATTRIBUTE_LABELS_V126: Record<string, string> = {
+  // V162: E-006 investor register columns (the detail's raw-data table headed
+  // them with the field names).
+  hqCountryIso3: "본부 국가",
+  investSector: "투자 분야",
+  fundOrAffiliate: "펀드·계열사",
+  locationClass: "소재 구분",
+  adm1Name34: "성·시(개편 후 34개)",
   koreaTechnologyLevel: "한국 기술수준",
   technologyGapYears: "기술격차(년)",
   leadingCountry: "최고(선도)국",

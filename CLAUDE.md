@@ -27,6 +27,7 @@ npm run qa:map:v138 / npm run review:screens:v138 / npm run qa:analysis:v140
 npm run release:vietnam-pilot    # PR 전 최종
 ```
 - 화면 검증은 production 형식 빌드(`GENERATE_SOURCEMAP=false`, `BUILD_PATH=tmp/build-v15x-review`)를 정적 서버로 띄워 실제 브라우저(Playwright Chromium)로 한다. 루트 ready 신호만으로 합격 처리하지 않는다.
+- 보고 전에는 통합 인수 게이트 `npm run qa:acceptance:v162 -- --build <빌드>`(국가별, `finalize:v151`에 포함)를 실행하고 `reports/v162/acceptance-v162.md`의 실패·예상 실패를 보고에 적는다.
 - 반응형은 320/390/768/1024/1440/1920px 6폭에서 문서 가로 넘침 0을 확인한다.
 
 ## 속도 규칙(세션당 목표 ≤3시간)

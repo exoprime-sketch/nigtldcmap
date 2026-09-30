@@ -4,6 +4,7 @@ import { countryAssetPathV158 } from "./countryContext";
 import { publicSourceOrganizationV136_1, publicUnstatedWordingV161 } from "./visualization/publicFieldPolicyV126";
 import { getCardSpecV159 } from "./spec/datasetSpecV159";
 import { publicRegionTextV162 } from "./geo/regionDisplayV162";
+import { publicOsmIndicatorLabelV162 } from "./visualization/osmClassLabelsV162";
 
 /**
  * The finder's pre-built card summaries (scripts/v140/build-card-summaries-v140.mjs).
@@ -123,7 +124,10 @@ function publicCardSummaryV161(card: CardSummaryV140, countryIso3 = "VNM"): Card
     "";
   // V162 (P12-B): a place named by the data reads "한글명 (현지명)" - a
   // reviewed name only; anything else keeps its source spelling.
-  const region = (text: string) => publicRegionTextV162(text, card.elementId, countryIso3);
+  // A-027's OpenStreetMap wording ("피처 수", class values) reads as on its
+  // detail table - "지물 수", "협궤 철도 (narrow_gauge)" (V162).
+  const osm = (text: string) => (card.elementId === "A-027" || card.elementId === "A-028" ? publicOsmIndicatorLabelV162(text) : text);
+  const region = (text: string) => osm(publicRegionTextV162(text, card.elementId, countryIso3));
   const preview = card.preview as CardPreviewV140 | undefined;
   const nextPreview: CardPreviewV140 | undefined = preview
     ? {
