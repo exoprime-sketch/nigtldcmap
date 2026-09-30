@@ -172,6 +172,47 @@ e2e `detail-all`의 A-002·A-019 "첫 선택 상자가 화면을 바꾸지 않�
 
 (헤드라인 원문은 카드 요약 JSON 기준. 화면에서는 b의 지역명 표기가 추가로 적용됨)
 
+## 추가 범위(#47 병합 후) — 지도 자료기간·A-027/B-026 표시 라벨
+
+main 병합(rebase 없음): #47(95c119e)·#50(b9b4547). 충돌 8개 파일 해소.
+
+- 두 쪽 기능을 함께 유지: 지도 단위 레이어 라벨(#47), 국가 컨텍스트(#50)
+- 지역명 표시가 #50의 국가 컨텍스트(`DataCountryProviderV158`)를 따르도록 통합
+- main이 새로 쓰는 지역명 경로 2곳에도 검토 대기 규칙 적용
+  - #50의 방글라데시 벵골 문자 표기(`regionDisplayV158`): 이제 확정 이름만 한글
+  - 판단 포인트(`regionDisplayNameV159`)
+- 자료기간 계약은 **베트남 한정**(`"country": "VNM"`). 방글라데시의 같은 번호 요소에는 적용하지 않음(카드 생성기·상세·지도 모두)
+
+### d. 지도 목록 연도 꼬리표·정보 패널
+
+| 구분 | 목록 꼬리표 | 정보 패널 |
+|---|---|---|
+| 기준 시점(수집·내려받은 시점, 13개 지도 레이어) | 연도 없음 | '기준 시점 2026-07 수집' 등 |
+| 자료기간 정정(D-014~017·019·025) | '2010–2023년' 등 계약 기간 | '자료기간 …' |
+| 계획기간(C-003) | '계획기간 2020–2050년' | '계획기간 …' |
+| 그 밖 | 기존 그대로 | 기존 '단위·기간' |
+
+- 연도가 없는 집계 기준(D-018 '승인일 기준')은 정보 패널 '집계 기준'으로 유지
+
+### e. A-027·B-026 상세 표시 라벨
+
+- A-027 OSM 분류값 19개(철도 7·도로 12) → '협궤 철도 (narrow_gauge)'처럼 한글 라벨(원값 괄호)
+  - 적용 위치: 막대·표·원자료 표
+  - 지표 설명 '분류별 피처 수(…) — fclass 분류값별 지물 건수' → '분류별 지물 수 · 한글 (원값)'
+  - 다운로드는 원값 유지
+- B-026 붙은 현지명(KiênGiang 등) → 지역명 모듈에서 사전에 있는 이름만 띄어 씀('끼엔장 (Kiên Giang)'). 사전 밖 텍스트는 그대로
+- #47 공개 문구 스캔 예외 2건 삭제
+  - 한글 라벨 뒤 괄호 속 원값('협궤 철도 (narrow_gauge)')은 원값 인용으로 인정
+  - 다른 곳의 식별자는 그대로 실패
+  - 결과: **findings 0 · exceptions 0**(검사 797, 목록 72행, 활성 60)
+
+### 추가 발견(이 PR 범위 밖, 보고만)
+
+- **main 카드 요약 불일치**: main의 카드 요약 JSON이 #47 이후 생성기와 맞지 않음
+  - 재생성하면 `mapConnected` 여러 건, B-026 '2022년 기준'이 바뀜
+  - 이 PR은 main 파일을 그대로 두고 자료기간 변경분만 반영(세션 2 범위)
+- **e2e visual 기준 이미지**: `detail-a016`이 main에서도 같은 차이로 실패(48,873픽셀). 기준 이미지가 #18(V150) 이후 갱신되지 않음. 이 PR 무관
+
 ## 검증
 
 | 항목 | 결과 |
@@ -185,6 +226,12 @@ e2e `detail-all`의 A-002·A-019 "첫 선택 상자가 화면을 바꾸지 않�
 | 이후 단계 개별 실행 | 20개 중 19 PASS, detail-hierarchy:v135만 같은 원인 → 기대값 변경(사유 `EXPECTATION_CHANGES_V162.md`) |
 | finalize:v151(2차, 마지막) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 35(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 24/24 |
 | 게이트 반복 | 2회(규칙 한도 이내) |
+| **추가 범위 후(main #47·#50 병합)** | |
+| test:unit | 739/739(main의 새 테스트 포함) |
+| 공개 문구 스캔(#47, 예외 0) | findings 0 · exceptions 0 · 검사 797 · 목록 72행 · 활성 60 |
+| e2e 전체(214) | 213 통과 · 1 실패 = visual `detail-a016`: main에서도 같은 차이(48,873픽셀) — 기준 이미지 노후, 이 PR 무관 |
+| production 빌드(CI=true) | 성공 |
+| finalize:v151(병합 후 1회) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 34(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 25/25 |
 
 ## 캡처(1440px)
 
@@ -213,3 +260,7 @@ e2e `detail-all`의 A-002·A-019 "첫 선택 상자가 화면을 바꾸지 않�
 | D-014 출처 줄 | [전](screens/before-d-D-014-source.png) | [후](screens/after-d-D-014-source.png) |
 | D-018 출처 줄 | [전](screens/before-d-D-018-source.png) | [후](screens/after-d-D-018-source.png) |
 | E-001 출처 줄 | [전](screens/before-d-E-001-source.png) | [후](screens/after-d-E-001-source.png) |
+| 지도 목록 D-018 행·정보 패널 | [전](screens/before-map-D-018-row-info.png) | [후](screens/after-map-D-018-row-info.png) |
+| 지도 목록 E-001 행·정보 패널 | [전](screens/before-map-E-001-row-info.png) | [후](screens/after-map-E-001-row-info.png) |
+| A-027 상세(OSM 분류 한글 라벨) | [전](screens/before-e-A-027.png) | [후](screens/after-e-A-027.png) |
+| B-026 상세(지역명) | [전](screens/before-e-B-026.png) | [후](screens/after-e-B-026.png) |
