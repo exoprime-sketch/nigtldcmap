@@ -85,8 +85,10 @@ describe("publicSourceOrganizationV136_1 - the project's working notes (V161)", 
     expect(publicSourceOrganizationV136_1("Global Forest Watch (분자) / FAOSTAT Land Use (분모)")).toBe(
       "Global Forest Watch (분자) / FAOSTAT Land Use (분모)"
     );
+    // V162 (user decision 2026-09-30): a file name outside a link is a working
+    // file on the screen - the bracketed bulk-file name goes, the source stays.
     expect(publicSourceOrganizationV136_1("U.S. EIA International Energy Statistics (Bulk File INTL.txt)")).toBe(
-      "U.S. EIA International Energy Statistics (Bulk File INTL.txt)"
+      "U.S. EIA International Energy Statistics"
     );
   });
 

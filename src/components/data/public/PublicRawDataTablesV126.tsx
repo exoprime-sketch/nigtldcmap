@@ -1,5 +1,6 @@
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import { publicOsmIndicatorLabelV162 } from "../../../data/visualization/osmClassLabelsV162";
+import { publicFieldWordingV162 } from "../../../data/visualization/publicFieldWordingV162";
 import { useEffect, useMemo, useState } from "react";
 import { publicDimensionValueV134 } from "../../../data/visualization/publicCopyRegistryV126";
 import type { SemanticObservationV125 } from "../../../data/visualization/semanticTypesV125";
@@ -53,7 +54,7 @@ export default function PublicRawDataTablesV126({
   const regionText = useRegionTextV162(elementId);
   // V162: A-027's OpenStreetMap class values and field names read in Korean
   // with the source value in brackets (the download keeps the source).
-  const osmText = (text: string) => (elementId === "A-027" ? publicOsmIndicatorLabelV162(text) : text);
+  const osmText = (text: string) => publicFieldWordingV162(elementId === "A-027" || elementId === "A-028" ? publicOsmIndicatorLabelV162(text) : text);
   // V158: region-name cells of a country other than the default show a
   // Latin-only bracket; nothing changes for the default country.
   const presentationV158 = useCountryPresentationV158(useDataCountryV158());
@@ -223,7 +224,7 @@ export default function PublicRawDataTablesV126({
                 );
                 return (
                   <tr key={row.recordId}>
-                    <td><PublicTermTextV134 text={regionText(titleResolution.title)} /></td>
+                    <td><PublicTermTextV134 text={osmText(regionText(titleResolution.title))} /></td>
                     <td><PublicTermTextV134 text={publicTextV126(row.entityType) || ""} /></td>
                     {entityColumns.map((column) => (
                       <td key={column}><PublicTermTextV134 text={(() => {
@@ -232,7 +233,7 @@ export default function PublicRawDataTablesV126({
                         // country's region cells are already formatted by its presentation.
                         return PLACE_COLUMNS_V162.has(column) && shown === attributes[column]
                           ? regionText(publicAttributeValueV126(shown))
-                          : publicAttributeValueV126(shown);
+                          : osmText(publicAttributeValueV126(shown));
                       })()} /></td>
                     ))}
                     <td><PublicTermTextV134 text={publicSourceOrganizationV136_1(row.provenance.sourceOrg) || ""} /></td>

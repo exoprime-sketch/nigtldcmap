@@ -62,7 +62,7 @@ describe("the finder's source filter never lists an internal review note", () =>
     // judged part by part, the ministry is a real source and stays.
     ["E-014", ["대한민국 외교부(MOFA)"]],
     // "… / 현지조사": the field-survey part goes, the FAOSTAT derivation stays.
-    ["B-038", ["FAO — FAOSTAT Crops and livestock products (QCL), Live Animals / Stocks", "FAOSTAT 임산물 생산량 기반 산출", "FAOSTAT 작물 생산량 기반 잔재계수 산출", "FAOSTAT 축종별 사육두수 기반 산출", "IRENA Renewable Capacity Statistics 2026", "IRENA Renewable Energy Statistics 2025", "U.S. EIA International Energy Statistics (Bulk File INTL.txt)", "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)"]],
+    ["B-038", ["FAO — FAOSTAT Crops and livestock products (QCL), Live Animals / Stocks", "FAOSTAT 임산물 생산량 기반 산출", "FAOSTAT 작물 생산량 기반 잔재계수 산출", "FAOSTAT 축종별 사육두수 기반 산출", "IRENA Renewable Capacity Statistics 2026", "IRENA Renewable Energy Statistics 2025", "U.S. EIA International Energy Statistics", "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)"]],
   ])("%s: the note is dropped, the real organisations stay", (elementId, expected) => {
     expect(publicSourceOrganizations(elementId)).toEqual(expected);
   });

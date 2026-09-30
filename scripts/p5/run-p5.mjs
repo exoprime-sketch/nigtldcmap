@@ -102,7 +102,9 @@ step("(1) build", () =>
 );
 
 // ---------------------------------------------------------------- (2) qa:acceptance
-const hasAcceptanceScript = Boolean(npmPackage.scripts?.["qa:acceptance"]);
+// The gate landed as qa:acceptance:v162; the bare name is kept as a fallback.
+const acceptanceScript = ["qa:acceptance:v162", "qa:acceptance"].find((name) => npmPackage.scripts?.[name]);
+const hasAcceptanceScript = Boolean(acceptanceScript);
 step("(2) qa:acceptance", () => {
   if (!hasAcceptanceScript) {
     return skipStep(
@@ -114,8 +116,9 @@ step("(2) qa:acceptance", () => {
   return runStep(
     "(2) qa:acceptance",
     process.platform === "win32" ? "npm.cmd" : "npm",
-    ["run", "qa:acceptance", "--", "--country", countryArg],
-    { timeoutMs: 10 * 60_000 }
+    ["run", acceptanceScript, "--", "--country", countryArg],
+    // a full run (map, wording scan over every detail page, six widths) takes 40+ min
+    { timeoutMs: 120 * 60_000 }
   );
 });
 
