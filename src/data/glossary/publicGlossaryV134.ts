@@ -1,4 +1,6 @@
 import { CLIMATE_GLOSSARY_V74 } from "../../utils/climateGlossaryV74";
+import { PRIORITY_COUNTRIES } from "../priorityCountries";
+import { PLATFORM_COUNTRY_ISO3_V162 } from "../countries/platformCountriesV162";
 
 export type PublicGlossaryCategoryV134 =
   | "development-finance"
@@ -20,6 +22,13 @@ export interface PublicGlossaryEntryV134 {
   category: PublicGlossaryCategoryV134;
   aliases: readonly string[];
   catalogVisible?: boolean;
+  /**
+   * V162: the platform countries the entry is about (a ministry, a national
+   * plan, a body founded with a country named in it). A term tagged with
+   * countries is explained only on those countries' screens; untagged terms
+   * everywhere. Derived from the entry's own names and definition.
+   */
+  countries?: readonly string[];
 }
 
 type PublicGlossarySeedV134 = Omit<PublicGlossaryEntryV134, "aliases"> & {
@@ -1242,6 +1251,50 @@ const LEGACY_PUBLIC_GLOSSARY_V134: PublicGlossaryEntryV134[] =
     })
   );
 
+// V162: target-country names a glossary entry is read for (Korean from the
+// target list, English as the entries spell them).
+const COUNTRY_ENGLISH_NAMES_V162: Record<string, readonly string[]> = {
+  VNM: ["Viet Nam", "Vietnam"],
+  BGD: ["Bangladesh"],
+  PHL: ["Philippines"],
+  KHM: ["Cambodia"],
+  IDN: ["Indonesia"],
+  LAO: ["Lao PDR", "Laos"],
+  LKA: ["Sri Lanka"],
+  IND: ["India"],
+  MYS: ["Malaysia"],
+  EGY: ["Egypt"],
+};
+// Only the platform's countries tag a term (as in the spec text rules): a
+// term about another target country (e.g. ASEAN-India FTA) stays common.
+const COUNTRY_NAME_PATTERNS_V162 = PRIORITY_COUNTRIES.filter((country) => PLATFORM_COUNTRY_ISO3_V162.includes(country.iso3)).map((country) => ({
+  iso3: country.iso3 as string,
+  pattern: new RegExp(
+    [
+      // '인도' (India) never inside '인도네시아', '인도양', '인도주의', '인도적', '인도지원' ...
+      country.nameKo === "인도" ? "인도(?!네시아|양|주의|적|지원|차이나|교|되|하|받)" : country.nameKo,
+      ...(COUNTRY_ENGLISH_NAMES_V162[country.iso3] || []).map((name) => `\\b${name}\\b`),
+    ].join("|"),
+    "u"
+  ),
+}));
+
+/** The platform countries an entry names in its term, names or definition. */
+export function glossaryCountriesV162(
+  entry: Pick<PublicGlossaryEntryV134, "term" | "englishName" | "koreanName" | "definition">
+): string[] {
+  const text = [entry.term, entry.englishName, entry.koreanName, entry.definition].join(" ");
+  return COUNTRY_NAME_PATTERNS_V162.filter(({ pattern }) => pattern.test(text)).map(({ iso3 }) => iso3);
+}
+
+/** Whether the entry is explained on a country's screens. */
+export function glossaryShownForCountryV162(
+  entry: Pick<PublicGlossaryEntryV134, "countries">,
+  country: string
+): boolean {
+  return !entry.countries || entry.countries.length === 0 || entry.countries.includes(country);
+}
+
 /** Public directory and tooltip registry (required seed first, catalog additions after). */
 export const PUBLIC_GLOSSARY_V134: readonly PublicGlossaryEntryV134[] = [
   ...REQUIRED_PUBLIC_GLOSSARY_V134,
@@ -1249,7 +1302,12 @@ export const PUBLIC_GLOSSARY_V134: readonly PublicGlossaryEntryV134[] = [
   ...LEGACY_PUBLIC_GLOSSARY_V134.filter(
     (entry) => !REQUIRED_IDS_V134.has(entry.id)
   ),
-].sort((left, right) => left.term.localeCompare(right.term, "en"));
+]
+  .map((entry) => {
+    const countries = glossaryCountriesV162(entry);
+    return countries.length ? { ...entry, countries } : entry;
+  })
+  .sort((left, right) => left.term.localeCompare(right.term, "en"));
 
 export const PUBLIC_GLOSSARY_BY_ID_V134 = new Map(
   PUBLIC_GLOSSARY_V134.map((entry) => [entry.id, entry])

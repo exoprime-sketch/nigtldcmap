@@ -167,17 +167,17 @@ test("the pending badge only shows on a case whose verified status is 'pending'"
   expect(cards[1].textContent).toContain("검증 대기");
 });
 
-test("the caution tooltip only appears when the displayed text differs from the source text", () => {
+test("the caution shows the country's view only, never the workbook's source text", () => {
+  // V162: the source caution may name other countries, so it is no longer a
+  // tooltip (it was one up to V161).
   act(() =>
     root.render(
       <DataDescriptionV159 availableIndicatorIds={AVAILABLE} cases={CASES} spec={SPEC} />
     )
   );
   const cards = container.querySelectorAll('[data-testid="use-case-card-v159"]');
-  const diffCaution = cards[0].querySelector("[data-caution-original]");
-  expect(diffCaution).not.toBeNull();
-  expect(diffCaution!.getAttribute("title")).toBe("원문 유의점 문구");
-  expect(diffCaution!.textContent).toContain("대체된 유의점 문구");
-  const sameCaution = cards[1].querySelector(".dd159-caution")!;
-  expect(sameCaution.querySelector("[data-caution-original]")).toBeNull();
+  const caution = cards[0].querySelector(".dd159-caution")!;
+  expect(caution.textContent).toContain("대체된 유의점 문구");
+  expect(container.innerHTML).not.toContain("원문 유의점 문구");
+  expect(container.querySelector("[data-caution-original]")).toBeNull();
 });

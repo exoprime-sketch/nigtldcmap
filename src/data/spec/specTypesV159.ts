@@ -118,12 +118,17 @@ export interface UseCaseV159 {
   dataUsed: UseCaseDataRefV159[];
   storyline: string;
   users: string[];
-  /** Source text; shown as the tooltip when cautionDisplay differs. */
+  /** Source text as the workbook has it; never shown (V162: it may name other countries). */
   caution: string;
-  /** Countries outside the platform registry replaced (see reports/v159). */
+  /** The default country's caution: country views applied (V162), other names replaced (see reports/v159). */
   cautionDisplay: string;
   verified: "verified" | "pending";
   verificationResult: string;
+  /**
+   * V162: the platform countries whose screens show this case, when not all
+   * of them (a case about one country's own data). Absent = every country.
+   */
+  countries?: string[];
 }
 
 export interface DatasetCardSpecV159 {
