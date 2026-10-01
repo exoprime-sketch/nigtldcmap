@@ -722,6 +722,9 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
   };
   const identify = (feature: maplibregl.MapGeoJSONFeature) => {
     const properties = (feature.properties || {}) as Record<string, unknown>;
+    // V162: a cluster is selected as "cluster:<id>" (onClusterClick); report
+    // the key the panel will carry, not the bare MapLibre cluster id.
+    const clusterKey = properties.cluster ? `cluster:${String(properties.cluster_id ?? "")}` : null;
     return {
       layerId: feature.layer.id,
       geometryType: feature.geometry?.type ?? null,
@@ -729,7 +732,7 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
         properties.selectionKey ??
           properties.recordId ??
           properties.adm1Code ??
-          properties.cluster_id ??
+          clusterKey ??
           feature.id ??
           ""
       ),
