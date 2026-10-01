@@ -259,6 +259,11 @@ async function otherCountryWalk(iso3, publicIds, words) {
       await new Promise((done) => setTimeout(done, 300));
       const body = document.body.cloneNode(true);
       body.querySelectorAll("script, style, noscript, select, option, [data-country-picker], [aria-label*='국가 선택'], [data-testid='country-compare-v158']").forEach((node) => node.remove());
+      // V162 (user decision 2026-10-02): a value a delivered record states is the
+      // country's own data, not platform wording - C-013 lists Viet Nam's treaty
+      // "Bangladesh - Viet Nam BIT (2005)". Record cards, wide record cards and
+      // the raw-data tables are left out; every platform sentence is still read.
+      body.querySelectorAll("[data-testid='wide-record-card-v162'], [data-testid='public-entity-card-v131'], details[data-testid='public-raw-data'], details[data-testid='public-raw-table'], details[data-testid='public-entity-table'], details[data-testid='public-observation-table']").forEach((node) => node.remove());
       const text = (body.textContent || "").replace(/\s+/gu, " ");
       return terms.filter((term) => text.includes(term)).map((term) => {
         const at = text.indexOf(term);
