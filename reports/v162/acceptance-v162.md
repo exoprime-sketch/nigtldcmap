@@ -1,6 +1,6 @@
 # 통합 인수 게이트 결과(qa:acceptance:v162)
 
-- 판정: **FAIL** · 통과 21 · 실패 1 · 예상 실패 3 · 건너뜀 1 (총 26)
+- 판정: **PASS** · 통과 22 · 실패 0 · 예상 실패 3 · 건너뜀 1 (총 26)
 - 국가: VNM · 공개 전 폴백 검사: BGD
 - 예상 실패 허용: 지도 준비 중 12건 · data-date, c003-filename
 
@@ -20,7 +20,7 @@
 | VNM | wording | 내부 작업 메모 0(홈·찾기·상세·다운로드·지도, #42) | PASS | {"findings":0,"detailPages":146,"runtimeErrors":0} | {"findings":0} | audit:source-notes:v161 |
 | VNM | wording | 식별자·파일명·작업 어휘 0(지도 목록·정보·선택 패널·연관 카드·상세, #47) | PASS | {"findings":0,"elements":[],"exceptions":0,"scanned":798} | {"findings":0,"exceptions":0} | public-wording-scan-v157 |
 | VNM | wording | C-003 상세의 파일명 0(V162에서 수정) | 예상 실패 | ["file-name:NAP_Vietnam_2025_EN.pdf","file-name:NAP_Vietnam_2025_VN.pdf","file-name:nap_report_eng_small.pdf"] | [] | public-wording-scan-v157 |
-| VNM | wording | 다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외) | FAIL | {"hits":34,"detailPages":146,"first":["guide:방글라데시 «획Integrated Energy and Power Master Plan방글라데시 정부가 수립한 에너지·전력 부문 중장기 기본계획입니다.IFAD국제농업개»","detail:A-022:방글라데시 «iness)의 2014~2019년 값으로 각국 최대 상업도시 기준이다. 방글라데시는 SAIDI·SAIFI  | {"hits":0,"terms":["방글라데시","Bangladesh"]} | reports/v162/other-country-names-v162.json |
+| VNM | wording | 다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외) | PASS | {"hits":0,"detailPages":146,"first":[]} | {"hits":0,"terms":["방글라데시","Bangladesh"]} | reports/v162/other-country-names-v162.json |
 | VNM | wording | '핵심' 표현 0(지도 화면, scan-core-word-v157) | PASS | {"hits":[],"layers":72} | {"hits":[]} | scan-core-word-v157 |
 | VNM | numbers | 홈 전체 데이터 항목 = 카탈로그 공개 요소 | PASS | 146개 | 146 |  |
 | VNM | numbers | 홈 지도 제공 항목 = map-index 활성 레이어 | PASS | 60개 | 60 |  |

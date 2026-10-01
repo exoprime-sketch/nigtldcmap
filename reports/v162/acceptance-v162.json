@@ -1,23 +1,21 @@
 {
-  "generatedAt": "2026-09-30T21:58:37.447Z",
+  "generatedAt": "2026-10-01T03:14:56.238Z",
   "summary": {
     "type": "summary",
     "audit": "acceptance:v162",
-    "status": "FAIL",
+    "status": "PASS",
     "countries": [
       "VNM"
     ],
     "notLiveChecked": [
       "BGD"
     ],
-    "passed": 21,
-    "failed": 1,
+    "passed": 22,
+    "failed": 0,
     "expected": 3,
     "skipped": 1,
     "total": 26,
-    "failedChecks": [
-      "VNM:other-country-names"
-    ],
+    "failedChecks": [],
     "expectedChecks": [
       "VNM:map-pending",
       "VNM:c003-filename",
@@ -289,17 +287,11 @@
       "area": "wording",
       "id": "other-country-names",
       "title": "다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외)",
-      "status": "FAIL",
+      "status": "PASS",
       "actual": {
-        "hits": 34,
+        "hits": 0,
         "detailPages": 146,
-        "first": [
-          "guide:방글라데시 «획Integrated Energy and Power Master Plan방글라데시 정부가 수립한 에너지·전력 부문 중장기 기본계획입니다.IFAD국제농업개»",
-          "detail:A-022:방글라데시 «iness)의 2014~2019년 값으로 각국 최대 상업도시 기준이다. 방글라데시는 SAIDI·SAIFI 값이 없다. 정전시간 단위는 시간이 아니라 분/»",
-          "detail:B-001:방글라데시 «꺼번에 구분한 것이라 지역마다 다른 우기 시기는 담기지 않으며, 베트남·방글라데시 2개국에만 있다.월별 평년 강수·기온으로 계절별 운영 여건 가늠Seas»",
-          "detail:B-003:방글라데시 «보 지역의 기후 조건을 확인할 수 있다.\"주 사용자기업연구자유의점베트남·방글라데시 2개국에만 있고, 베트남 성 경계는 2025년 행정구역 개편 이전 63»",
-          "detail:B-004:방글라데시 «에 따른 모델 추정치라 특정 연도의 실측값으로 읽으면 안 되고, 베트남·방글라데시 2개국에만 있다.강수·습도 변화 방향으로 물·농업 적응 협력 논의Dir»"
-        ]
+        "first": []
       },
       "expected": {
         "hits": 0,
