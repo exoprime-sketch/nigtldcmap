@@ -603,6 +603,15 @@ def deduplicate_indicators(
 
 def generic_indicator_structure(indicator: dict[str, Any]) -> tuple[str, dict[str, str], dict[str, str]]:
     label = nfc(indicator.get("labelKo")) or indicator["indicatorId"]
+    # V162: the 2026-09-30 delivery tags supplementary rows with a leading
+    # bracket ("[산출 투입·참고자료] 1인당 도시폐기물 발생량", "[보조] 한-베트남
+    # 교역 · …"). The tag says what kind of row it is, not what is measured:
+    # split on "·" it became the measure "[산출 투입". It is kept as the first
+    # part of the row's category, so the tagged rows stay a series of their own.
+    tag_match = re.match(r"^\[([^\]]+)\]\s*(.+)$", label)
+    row_tag = nfc(tag_match.group(1)) if tag_match else ""
+    if tag_match:
+        label = nfc(tag_match.group(2))
     # Only the em dash separates a measure from its qualifiers. An en dash is
     # part of a name here - "Bà Rịa–Vũng Tàu" is one province, and splitting on
     # it truncated the province to "Bà Rịa" and invented a detail_2 dimension
@@ -612,8 +621,9 @@ def generic_indicator_structure(indicator: dict[str, Any]) -> tuple[str, dict[st
     measure_label = lead_parts[0] if lead_parts else label
     dimensions: dict[str, str] = {}
     labels: dict[str, str] = {}
-    if len(lead_parts) > 1:
-        dimensions["category"] = " · ".join(lead_parts[1:])
+    category_parts = ([row_tag] if row_tag else []) + lead_parts[1:]
+    if category_parts:
+        dimensions["category"] = " · ".join(category_parts)
         labels["category"] = dimensions["category"]
     for index, part in enumerate(dash_parts[1:], start=1):
         key = "detail" if index == 1 else f"detail_{index}"

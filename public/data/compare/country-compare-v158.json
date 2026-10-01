@@ -11,14 +11,14 @@
       "VNM"
     ],
     "contractPath": "src/data/visualization/publicVisualizationContractV153.json",
-    "contractSha256": "5ab892f358954141a261d7e64dc7df6693726685ebbb0b380e229e8f08c04bd6"
+    "contractSha256": "672833ec437e687018f68efc5d2e3e0c16d9e28f1aa7f48a9733346e73a1e609"
   },
   "elementCount": 54,
   "statusCounts": {
-    "common-year": 37,
-    "latest-each": 2,
+    "common-year": 39,
+    "latest-each": 1,
     "unit-mismatch": 0,
-    "missing-in-country": 15
+    "missing-in-country": 14
   },
   "elements": {
     "A-001": {
@@ -6005,7 +6005,7 @@
     "A-030": {
       "elementId": "A-030",
       "compareKey": {
-        "indicatorId": "A-030_aux_kita_trade_total",
+        "indicatorId": "A-030_trade_total",
         "unit": "10억 USD",
         "yearRule": "latest-common"
       },
@@ -6013,31 +6013,296 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "10억 USD",
+          "labelKo": "한-방글라데시 교역 · 총 교역액 — 수출액과 수입액의 합",
+          "sourceOrg": "World Bank WITS (원자료: UN Comtrade)",
+          "points": [
+            {
+              "year": 1988,
+              "value": 0.174932
+            },
+            {
+              "year": 1989,
+              "value": 0.208418
+            },
+            {
+              "year": 1990,
+              "value": 0.278643
+            },
+            {
+              "year": 1991,
+              "value": 0.294065
+            },
+            {
+              "year": 1992,
+              "value": 0.338406
+            },
+            {
+              "year": 1993,
+              "value": 0.37313
+            },
+            {
+              "year": 1994,
+              "value": 0.462987
+            },
+            {
+              "year": 1995,
+              "value": 0.576283
+            },
+            {
+              "year": 1996,
+              "value": 0.528143
+            },
+            {
+              "year": 1997,
+              "value": 0.597401
+            },
+            {
+              "year": 1998,
+              "value": 0.50817
+            },
+            {
+              "year": 1999,
+              "value": 0.522893
+            },
+            {
+              "year": 2000,
+              "value": 0.648252
+            },
+            {
+              "year": 2001,
+              "value": 0.682561
+            },
+            {
+              "year": 2002,
+              "value": 0.528105
+            },
+            {
+              "year": 2003,
+              "value": 0.573146
+            },
+            {
+              "year": 2004,
+              "value": 0.661974
+            },
+            {
+              "year": 2005,
+              "value": 0.656632
+            },
+            {
+              "year": 2006,
+              "value": 0.71721
+            },
+            {
+              "year": 2007,
+              "value": 0.753345
+            },
+            {
+              "year": 2008,
+              "value": 1.264051
+            },
+            {
+              "year": 2009,
+              "value": 1.185792
+            },
+            {
+              "year": 2010,
+              "value": 1.693618
+            },
+            {
+              "year": 2011,
+              "value": 1.871825
+            },
+            {
+              "year": 2012,
+              "value": 1.75394
+            },
+            {
+              "year": 2013,
+              "value": 1.759682
+            },
+            {
+              "year": 2014,
+              "value": 1.581496
+            },
+            {
+              "year": 2015,
+              "value": 1.544058
+            },
+            {
+              "year": 2016,
+              "value": 1.451533
+            },
+            {
+              "year": 2017,
+              "value": 1.562076
+            },
+            {
+              "year": 2018,
+              "value": 1.584807
+            },
+            {
+              "year": 2019,
+              "value": 1.687045
+            },
+            {
+              "year": 2020,
+              "value": 1.426249
+            },
+            {
+              "year": 2021,
+              "value": 2.187467
+            },
+            {
+              "year": 2022,
+              "value": 3.034232
+            },
+            {
+              "year": 2023,
+              "value": 2.273725
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
           "unit": "10억 USD",
-          "labelKo": "[보조] 한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액",
-          "sourceOrg": "한국무역협회(Korea International Trade Association)",
+          "labelKo": "한-베트남 교역 · 총 교역액 — 수출액과 수입액의 합",
+          "sourceOrg": "World Bank WITS (원자료: UN Comtrade)",
           "points": [
             {
+              "year": 1991,
+              "value": 0.240085
+            },
+            {
+              "year": 1992,
+              "value": 0.493491
+            },
+            {
+              "year": 1993,
+              "value": 0.818872
+            },
+            {
+              "year": 1994,
+              "value": 1.141108
+            },
+            {
+              "year": 1995,
+              "value": 1.544576
+            },
+            {
+              "year": 1996,
+              "value": 1.831158
+            },
+            {
+              "year": 1997,
+              "value": 1.84165
+            },
+            {
+              "year": 1998,
+              "value": 1.502897
+            },
+            {
+              "year": 1999,
+              "value": 1.709367
+            },
+            {
+              "year": 2000,
+              "value": 2.008461
+            },
+            {
+              "year": 2001,
+              "value": 2.117336
+            },
+            {
+              "year": 2002,
+              "value": 2.710496
+            },
+            {
+              "year": 2003,
+              "value": 3.071934
+            },
+            {
+              "year": 2004,
+              "value": 3.928874
+            },
+            {
+              "year": 2005,
+              "value": 4.125697
+            },
+            {
+              "year": 2006,
+              "value": 4.852333
+            },
+            {
+              "year": 2007,
+              "value": 7.151642
+            },
+            {
+              "year": 2008,
+              "value": 9.841883
+            },
+            {
+              "year": 2009,
+              "value": 9.519447
+            },
+            {
+              "year": 2010,
+              "value": 12.982888
+            },
+            {
+              "year": 2011,
+              "value": 18.549168
+            },
+            {
+              "year": 2012,
+              "value": 21.665218
+            },
+            {
+              "year": 2013,
+              "value": 28.262775
+            },
+            {
+              "year": 2014,
+              "value": 30.321559
+            },
+            {
+              "year": 2015,
+              "value": 37.575581
+            },
+            {
+              "year": 2016,
+              "value": 45.125612
+            },
+            {
+              "year": 2017,
+              "value": 63.930829
+            },
+            {
+              "year": 2018,
+              "value": 68.26548
+            },
+            {
+              "year": 2019,
+              "value": 69.249305
+            },
+            {
+              "year": 2020,
+              "value": 69.089162
+            },
+            {
               "year": 2021,
-              "value": 80.73
+              "value": 80.694239
             },
             {
               "year": 2022,
-              "value": 87.7
+              "value": 87.688397
             },
             {
-              "year": 2024,
-              "value": 86.7
+              "year": 2023,
+              "value": 79.415369
             }
           ]
         }
@@ -6048,10 +6313,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2023
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "A-031": {
       "elementId": "A-031",
@@ -8873,8 +9139,8 @@
     "B-038": {
       "elementId": "B-038",
       "compareKey": {
-        "indicatorId": "B-038_aux_msw_collection_pop",
-        "unit": "% 인구",
+        "indicatorId": "B-038_aux_msw_percap",
+        "unit": "kg/인/일",
         "yearRule": "latest-common"
       },
       "countries": {
@@ -8882,13 +9148,29 @@
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
           "present": true,
-          "unit": "% 인구",
-          "labelKo": "[산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율)",
+          "unit": "kg/인/일",
+          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
           "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
           "points": [
             {
               "year": 2021,
-              "value": 77.01
+              "value": 0.5
+            },
+            {
+              "year": 2022,
+              "value": 0.515
+            },
+            {
+              "year": 2030,
+              "value": 0.5304
+            },
+            {
+              "year": 2040,
+              "value": 0.5464
+            },
+            {
+              "year": 2050,
+              "value": 0.6481
             }
           ]
         },
@@ -8896,13 +9178,29 @@
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
-          "unit": "% 인구",
-          "labelKo": "[산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율)",
+          "unit": "kg/인/일",
+          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
           "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
           "points": [
             {
               "year": 2015,
-              "value": 75
+              "value": 0.5643
+            },
+            {
+              "year": 2022,
+              "value": 0.5812
+            },
+            {
+              "year": 2030,
+              "value": 0.5986
+            },
+            {
+              "year": 2040,
+              "value": 0.7379
+            },
+            {
+              "year": 2050,
+              "value": 0.8204
             }
           ]
         }
@@ -8913,10 +9211,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "latest-each"
+          "status": "common-year",
+          "commonYear": 2050
         }
       ],
-      "status": "latest-each"
+      "status": "common-year"
     },
     "B-043": {
       "elementId": "B-043",

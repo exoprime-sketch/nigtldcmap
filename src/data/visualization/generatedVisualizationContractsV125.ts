@@ -709,7 +709,6 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "A-030",
     "measureLabels": [
-      "[보조] 한-베트남 교역",
       "한-베트남 교역"
     ],
     "noDataReason": null,
@@ -1788,10 +1787,10 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-038",
     "measureLabels": [
       "1인당 도시폐기물 발생량",
-      "[산출 투입",
       "농업잔재 자원량",
       "도시폐기물 발생량",
       "도시폐기물 수거율(참고)",
+      "도시폐기물 수거율(참고, 인구 기준",
       "도시폐기물 중 유기성 자원량(산출)",
       "도시폐기물 중 음식물",
       "도시폐기물 처리경로별 비중"

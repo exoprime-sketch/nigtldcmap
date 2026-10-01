@@ -129,6 +129,9 @@ const OVERRIDES = {
   "B-002": { kind: "bars", year: 2020 },
   // V162: the 2026-09-30 layer sheets add default-value shares (%) and length
   // (km) per layer; the card keeps the layer's feature count, as before.
+  // V162: the delivery's "[보조]" KITA rows now sit in the same measure as the
+  // main trade series, told apart by category; the card keeps the main total.
+  "A-030": { series: { match: /^총 교역액$/u } },
   "A-027": { measure: { label: "도로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
   "A-028": { measure: { label: "수로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
   "B-010": { measure: { label: "CRI 종합 순위" } },

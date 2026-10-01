@@ -1,7 +1,7 @@
 # 국가 비교 지표 검토 (V158)
 
 생성 기준 계약: `src/data/visualization/publicVisualizationContractV153.json`(2026-09-22) · 데이터 트리 보유 국가: BGD, VNM
-비교 가능 요소 54개 · 쌍 상태: common-year 37 · latest-each 2 · unit-mismatch 0 · missing-in-country 15
+비교 가능 요소 54개 · 쌍 상태: common-year 39 · latest-each 1 · unit-mismatch 0 · missing-in-country 14
 
 이 표는 자동 판정 결과이며 키를 바꾸지 않는다. 대표지표로 보이지 않는 항목은 아래 별도 절에 모아 사용자 승인을 기다린다.
 
@@ -30,7 +30,7 @@
 | A-020 | A-020_renewable_share_capacity | common-year | 재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중 | 재생에너지 비중 · 설비용량 기준 — 전력 부문 재생에너지 비중 | - |
 | A-021 | A-021_electricity_access_total | common-year | 전력 접근률 · 전체 — 전기를 이용할 수 있는 인구 비율 | 전력 접근률 · 전체 — 전기를 이용할 수 있는 인구 비율 | - |
 | A-022 | A-022_maifi_evn_group | missing-in-country | (데이터 없음) | MAIFI · EVN 그룹 전체 — 연간 고객당 순간정전 횟수 | - |
-| A-030 | A-030_aux_kita_trade_total | missing-in-country | (데이터 없음) | [보조] 한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액 | - |
+| A-030 | A-030_trade_total | common-year | 한-방글라데시 교역 · 총 교역액 — 수출액과 수입액의 합 | 한-베트남 교역 · 총 교역액 — 수출액과 수입액의 합 | - |
 | A-031 | A-031_lpi_customs | common-year | 물류성과지수(LPI) · 통관 — 통관 부문 점수(1=낮음 ~ 5=높음) | 물류성과지수(LPI) · 통관 — 통관 부문 점수(1=낮음 ~ 5=높음) | - |
 | A-032 | A-032_intermediate_dva_share_in_exports | common-year | 중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products | 중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products | - |
 | A-033 | A-033_lsci_q1 | common-year | 해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값) | 해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값) | - |
@@ -49,7 +49,7 @@
 | B-027 | B-027_exploitable_gw | missing-in-country | (데이터 없음) | 이용가능(정규 재생) 지하수 | - |
 | B-035 | B-035_lu_agriculture | common-year | 농업 총면적(Agriculture) | 농업 총면적(Agriculture) | - |
 | B-036 | B-036_cagr_lu_planted_forest | common-year | 토지이용 변화율 — 조림지 | 토지이용 변화율 — 조림지 | - |
-| B-038 | B-038_aux_msw_collection_pop | latest-each | [산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율) | [산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율) | - |
+| B-038 | B-038_aux_msw_percap | common-year | [산출 투입·참고자료] 1인당 도시폐기물 발생량 | [산출 투입·참고자료] 1인당 도시폐기물 발생량 | - |
 | B-043 | B-043_oil_reserves | missing-in-country | (데이터 없음) | 석유 확인매장량 | - |
 | B-045 | B-045_reserve_share_bauxite | missing-in-country | (데이터 없음) | 세계 매장량 비중 — 보크사이트 | - |
 | B-046 | B-046_reserves_7 | missing-in-country | (데이터 없음) | 확인 매장량 — 인광석 | - |

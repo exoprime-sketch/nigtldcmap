@@ -3,11 +3,15 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 4,
+      "valueCount": 8,
       "values": [
         "대베트남 수입액",
         "대베트남 수출액",
         "무역수지",
+        "보조 · 대베트남 수입액",
+        "보조 · 대베트남 수출액",
+        "보조 · 무역수지",
+        "보조 · 총 교역액",
         "총 교역액"
       ]
     },
@@ -74,25 +78,25 @@
   "indicatorCount": 8,
   "indicators": [
     {
-      "axisGroupKey": "measure-949717b1de52|10억 USD",
+      "axisGroupKey": "measure-fe46d9d1d4c2|10억 USD",
       "dimensionLabels": {
-        "category": "무역수지",
+        "category": "보조 · 무역수지",
         "detail": "한국 기준 대베트남 무역수지"
       },
       "dimensions": {
-        "category": "무역수지",
+        "category": "보조 · 무역수지",
         "detail": "한국 기준 대베트남 무역수지"
       },
       "displayLabel": "[보조] 한-베트남 교역 · 무역수지 — 한국 기준 대베트남 무역수지",
       "indicatorId": "A-030_aux_kita_trade_balance",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-949717b1de52",
-        "labelKo": "[보조] 한-베트남 교역",
+        "key": "measure-fe46d9d1d4c2",
+        "labelKo": "한-베트남 교역",
         "unit": "10억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-949717b1de52|10억 USD|category=무역수지|detail=한국 기준 대베트남 무역수지|A-030_aux_kita_trade_balance",
+      "seriesKey": "measure-fe46d9d1d4c2|10억 USD|category=보조 · 무역수지|detail=한국 기준 대베트남 무역수지|A-030_aux_kita_trade_balance",
       "sourceCaveat": null,
       "sourceLabel": "[보조] 한-베트남 교역 · 무역수지 — 한국 기준 대베트남 무역수지",
       "sourceLabelEn": null,
@@ -100,25 +104,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-949717b1de52|10억 USD",
+      "axisGroupKey": "measure-fe46d9d1d4c2|10억 USD",
       "dimensionLabels": {
-        "category": "대베트남 수출액",
+        "category": "보조 · 대베트남 수출액",
         "detail": "한국 기준 대베트남 대베트남 수출액"
       },
       "dimensions": {
-        "category": "대베트남 수출액",
+        "category": "보조 · 대베트남 수출액",
         "detail": "한국 기준 대베트남 대베트남 수출액"
       },
       "displayLabel": "[보조] 한-베트남 교역 · 대베트남 수출액 — 한국 기준 대베트남 대베트남 수출액",
       "indicatorId": "A-030_aux_kita_trade_korea_exports",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-949717b1de52",
-        "labelKo": "[보조] 한-베트남 교역",
+        "key": "measure-fe46d9d1d4c2",
+        "labelKo": "한-베트남 교역",
         "unit": "10억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-949717b1de52|10억 USD|category=대베트남 수출액|detail=한국 기준 대베트남 대베트남 수출액|A-030_aux_kita_trade_korea_exports",
+      "seriesKey": "measure-fe46d9d1d4c2|10억 USD|category=보조 · 대베트남 수출액|detail=한국 기준 대베트남 대베트남 수출액|A-030_aux_kita_trade_korea_exports",
       "sourceCaveat": null,
       "sourceLabel": "[보조] 한-베트남 교역 · 대베트남 수출액 — 한국 기준 대베트남 대베트남 수출액",
       "sourceLabelEn": null,
@@ -126,25 +130,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-949717b1de52|10억 USD",
+      "axisGroupKey": "measure-fe46d9d1d4c2|10억 USD",
       "dimensionLabels": {
-        "category": "대베트남 수입액",
+        "category": "보조 · 대베트남 수입액",
         "detail": "한국 기준 대베트남 대베트남 수입액"
       },
       "dimensions": {
-        "category": "대베트남 수입액",
+        "category": "보조 · 대베트남 수입액",
         "detail": "한국 기준 대베트남 대베트남 수입액"
       },
       "displayLabel": "[보조] 한-베트남 교역 · 대베트남 수입액 — 한국 기준 대베트남 대베트남 수입액",
       "indicatorId": "A-030_aux_kita_trade_korea_imports",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-949717b1de52",
-        "labelKo": "[보조] 한-베트남 교역",
+        "key": "measure-fe46d9d1d4c2",
+        "labelKo": "한-베트남 교역",
         "unit": "10억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-949717b1de52|10억 USD|category=대베트남 수입액|detail=한국 기준 대베트남 대베트남 수입액|A-030_aux_kita_trade_korea_imports",
+      "seriesKey": "measure-fe46d9d1d4c2|10억 USD|category=보조 · 대베트남 수입액|detail=한국 기준 대베트남 대베트남 수입액|A-030_aux_kita_trade_korea_imports",
       "sourceCaveat": null,
       "sourceLabel": "[보조] 한-베트남 교역 · 대베트남 수입액 — 한국 기준 대베트남 대베트남 수입액",
       "sourceLabelEn": null,
@@ -152,25 +156,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-949717b1de52|10억 USD",
+      "axisGroupKey": "measure-fe46d9d1d4c2|10억 USD",
       "dimensionLabels": {
-        "category": "총 교역액",
+        "category": "보조 · 총 교역액",
         "detail": "한국 기준 대베트남 총 교역액"
       },
       "dimensions": {
-        "category": "총 교역액",
+        "category": "보조 · 총 교역액",
         "detail": "한국 기준 대베트남 총 교역액"
       },
       "displayLabel": "[보조] 한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액",
       "indicatorId": "A-030_aux_kita_trade_total",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-949717b1de52",
-        "labelKo": "[보조] 한-베트남 교역",
+        "key": "measure-fe46d9d1d4c2",
+        "labelKo": "한-베트남 교역",
         "unit": "10억 USD",
         "unitFamily": "currency"
       },
-      "seriesKey": "measure-949717b1de52|10억 USD|category=총 교역액|detail=한국 기준 대베트남 총 교역액|A-030_aux_kita_trade_total",
+      "seriesKey": "measure-fe46d9d1d4c2|10억 USD|category=보조 · 총 교역액|detail=한국 기준 대베트남 총 교역액|A-030_aux_kita_trade_total",
       "sourceCaveat": null,
       "sourceLabel": "[보조] 한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액",
       "sourceLabelEn": null,
@@ -308,18 +312,10 @@
   ],
   "measures": [
     {
-      "indicatorCount": 4,
-      "key": "measure-949717b1de52",
-      "labelKo": "[보조] 한-베트남 교역",
-      "recordCount": 16,
-      "unit": "10억 USD",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 4,
+      "indicatorCount": 8,
       "key": "measure-fe46d9d1d4c2",
       "labelKo": "한-베트남 교역",
-      "recordCount": 132,
+      "recordCount": 148,
       "unit": "10억 USD",
       "unitFamily": "currency"
     }

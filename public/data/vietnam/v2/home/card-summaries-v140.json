@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-10-01T08:28:04.270Z",
+ "generatedAt": "2026-10-01T09:22:54.654Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -3046,57 +3046,177 @@
    "elementId": "A-030",
    "title": "한-개도국 교역액",
    "headline": {
-    "value": "86.7 10억 USD",
-    "label": "[보조] 한-베트남 교역 · 총 교역액 · 한국 기준 대베트남 총 교역액 · 2024년"
+    "value": "79.4 10억 USD",
+    "label": "한-베트남 교역 · 총 교역액 · 수출액과 수입액의 합 · 2023년"
    },
-   "period": "2021·2022·2024년",
+   "period": "1991–2023년",
    "selection": {
-    "measure": "measure-949717b1de52",
+    "measure": "measure-fe46d9d1d4c2",
     "sex": null,
-    "year": 2024,
+    "year": 2023,
     "period": null,
     "dimensions": {
      "category": "총 교역액",
-     "detail": "한국 기준 대베트남 총 교역액"
+     "detail": "수출액과 수입액의 합"
     }
    },
    "measure": {
-    "key": "measure-949717b1de52",
-    "label": "[보조] 한-베트남 교역",
+    "key": "measure-fe46d9d1d4c2",
+    "label": "한-베트남 교역",
     "unit": "10억 USD"
    },
    "kind": "line",
    "preview": {
     "points": [
      {
+      "year": 1991,
+      "value": 0.240085
+     },
+     {
+      "year": 1992,
+      "value": 0.493491
+     },
+     {
+      "year": 1993,
+      "value": 0.818872
+     },
+     {
+      "year": 1994,
+      "value": 1.141108
+     },
+     {
+      "year": 1995,
+      "value": 1.544576
+     },
+     {
+      "year": 1996,
+      "value": 1.831158
+     },
+     {
+      "year": 1997,
+      "value": 1.84165
+     },
+     {
+      "year": 1998,
+      "value": 1.502897
+     },
+     {
+      "year": 1999,
+      "value": 1.709367
+     },
+     {
+      "year": 2000,
+      "value": 2.008461
+     },
+     {
+      "year": 2001,
+      "value": 2.117336
+     },
+     {
+      "year": 2002,
+      "value": 2.710496
+     },
+     {
+      "year": 2003,
+      "value": 3.071934
+     },
+     {
+      "year": 2004,
+      "value": 3.928874
+     },
+     {
+      "year": 2005,
+      "value": 4.125697
+     },
+     {
+      "year": 2006,
+      "value": 4.852333
+     },
+     {
+      "year": 2007,
+      "value": 7.151642
+     },
+     {
+      "year": 2008,
+      "value": 9.841883
+     },
+     {
+      "year": 2009,
+      "value": 9.519447
+     },
+     {
+      "year": 2010,
+      "value": 12.982888
+     },
+     {
+      "year": 2011,
+      "value": 18.549168
+     },
+     {
+      "year": 2012,
+      "value": 21.665218
+     },
+     {
+      "year": 2013,
+      "value": 28.262775
+     },
+     {
+      "year": 2014,
+      "value": 30.321559
+     },
+     {
+      "year": 2015,
+      "value": 37.575581
+     },
+     {
+      "year": 2016,
+      "value": 45.125612
+     },
+     {
+      "year": 2017,
+      "value": 63.930829
+     },
+     {
+      "year": 2018,
+      "value": 68.26548
+     },
+     {
+      "year": 2019,
+      "value": 69.249305
+     },
+     {
+      "year": 2020,
+      "value": 69.089162
+     },
+     {
       "year": 2021,
-      "value": 80.73
+      "value": 80.694239
      },
      {
       "year": 2022,
-      "value": 87.7
+      "value": 87.688397
      },
      {
-      "year": 2024,
-      "value": 86.7
+      "year": 2023,
+      "value": 79.415369
      }
     ],
     "unit": "10억 USD",
-    "seriesLabel": "총 교역액 · 한국 기준 대베트남 총 교역액",
+    "seriesLabel": "총 교역액 · 수출액과 수입액의 합",
     "first": {
-     "year": 2021,
-     "value": 80.73
+     "year": 1991,
+     "value": 0.240085
     },
     "latest": {
-     "year": 2024,
-     "value": 86.7
+     "year": 2023,
+     "value": 79.415369
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "[보조] 한-베트남 교역(10억 USD) 총 교역액 · 한국 기준 대베트남 총 교역액 계열 · 3개 연도 · 최신 2024년 값을 대표값으로"
+    "rule": "한-베트남 교역(10억 USD) 총 교역액 · 수출액과 수입액의 합 계열 · 33개 연도 · 최신 2023년 값을 대표값으로"
    },
-   "provider": "한국무역협회(Korea International Trade Association)",
+   "provider": "한국무역협회(Korea International Trade Association) · World Bank WITS (원자료: UN Comtrade)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -3107,10 +3227,14 @@
      "A-030_aux_kita_trade_balance",
      "A-030_aux_kita_trade_korea_exports",
      "A-030_aux_kita_trade_korea_imports",
-     "A-030_aux_kita_trade_total"
+     "A-030_aux_kita_trade_total",
+     "A-030_trade_balance",
+     "A-030_trade_korea_exports",
+     "A-030_trade_korea_imports",
+     "A-030_trade_total"
     ],
     "headlineIndicatorIds": [
-     "A-030_aux_kita_trade_total"
+     "A-030_trade_total"
     ]
    }
   },
@@ -14325,32 +14449,60 @@
    "elementId": "B-038",
    "title": "바이오매스 자원 가용량[농업잔재, 임업잔재, 도시폐기물, 축산폐기물]",
    "headline": {
-    "value": "75 % 인구",
-    "label": "[산출 투입 · 참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율) · 2015년"
+    "value": "0.82 kg/인/일",
+    "label": "1인당 도시폐기물 발생량 · 산출 투입·참고자료 · 2050년"
    },
-   "period": "2015년",
+   "period": "2015–2050년",
    "selection": {
-    "measure": "measure-2552e0c53444",
+    "measure": "measure-13e56f3e0776",
     "sex": null,
-    "year": 2015,
+    "year": 2050,
     "period": null,
     "dimensions": {}
    },
    "measure": {
-    "key": "measure-2552e0c53444",
-    "label": "[산출 투입",
-    "unit": "% 인구"
+    "key": "measure-13e56f3e0776",
+    "label": "1인당 도시폐기물 발생량",
+    "unit": "kg/인/일"
    },
-   "kind": "level",
+   "kind": "line",
    "preview": {
-    "unit": "% 인구",
-    "seriesLabel": "참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율)",
-    "others": [],
-    "note": "단일 시점 값"
+    "points": [
+     {
+      "year": 2015,
+      "value": 0.5643
+     },
+     {
+      "year": 2022,
+      "value": 0.5812
+     },
+     {
+      "year": 2030,
+      "value": 0.5986
+     },
+     {
+      "year": 2040,
+      "value": 0.7379
+     },
+     {
+      "year": 2050,
+      "value": 0.8204
+     }
+    ],
+    "unit": "kg/인/일",
+    "seriesLabel": "산출 투입·참고자료",
+    "first": {
+     "year": 2015,
+     "value": 0.5643
+    },
+    "latest": {
+     "year": 2050,
+     "value": 0.8204
+    }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "[산출 투입(% 인구) 참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율) · 단일 시점이므로 추이를 그리지 않음"
+    "rule": "1인당 도시폐기물 발생량(kg/인/일) 산출 투입·참고자료 계열 · 5개 연도 · 최신 2050년 값을 대표값으로"
    },
    "provider": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
    "mapConnected": false,
@@ -14360,10 +14512,10 @@
     "observationCount": 399,
     "entityCount": 0,
     "indicatorIds": [
-     "B-038_aux_msw_collection_pop"
+     "B-038_aux_msw_percap"
     ],
     "headlineIndicatorIds": [
-     "B-038_aux_msw_collection_pop"
+     "B-038_aux_msw_percap"
     ]
    }
   },

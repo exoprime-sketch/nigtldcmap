@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -17,6 +18,7 @@ import {
   waitForValue,
 } from "./v125/browser-runtime.mjs";
 import { detailUrlV129 } from "./v129/audit-helpers.mjs";
+import { excludedElementIdsV156 } from "./v156/exclusions-audit-v156.mjs";
 import {
   V132_GENERATED_AT,
   V132_REPORT_ROOT,
@@ -30,6 +32,16 @@ const generatorPath = resolve(PROJECT_ROOT, "scripts/generate-v132-visualization
 await import(`${pathToFileURL(generatorPath).href}?runtime=${Date.now()}`);
 const contractResult = readJson(
   resolve(V132_REPORT_ROOT, "final-public-visualization-contract-v132.json")
+);
+const SPECIALIZED_MARKERS_V162 = {
+  "A-002": "a002-cpia-analysis",
+  "A-016": "a016-energy-analysis-v132",
+  "D-005": "d005-specialized-renderer",
+  "E-008": "e008-research-analysis-v132",
+  "E-012": "e012-semantic-preview",
+};
+const EXCLUDED_V162 = new Set(
+  excludedElementIdsV156(JSON.parse(readFileSync(resolve(PROJECT_ROOT, "public/data/vietnam/v2/catalog.json"), "utf8")).elements)
 );
 const contracts = Array.isArray(contractResult.value?.elements)
   ? contractResult.value.elements
@@ -69,7 +81,9 @@ function snapshotExpression(contract) {
     const emissionsBreakdown = Boolean(primary?.querySelector('[data-testid="emissions-breakdown-trend-v132"]'));
     const emissionsLatestComposition = Boolean(primary?.querySelector('[data-testid="emissions-latest-composition-v132"]'));
     const portfolioSummary = Boolean(primary?.querySelector('[data-testid="portfolio-analysis-summary-v132"]'));
-    const portfolioFilters = Boolean(primary?.querySelector('[data-testid="portfolio-list-filters-v132"]'));
+    // V143 moved the register filters from the list to the workspace above the
+    // summary (PublicPortfolioWorkspaceV143, role="search"); either form counts.
+    const portfolioFilters = Boolean(primary?.querySelector('[data-testid="portfolio-list-filters-v132"], [data-testid="portfolio-workspace-v143"] [role="search"]'));
     const entityList = primary?.querySelector('[data-testid="public-entity-card-grid-v131"], [data-testid="portfolio-entity-list-v132"], [data-testid="e008-list"]');
     const entityListTop = entityList?.getBoundingClientRect().top ?? null;
     const summaryNode = primary?.querySelector('[data-testid="portfolio-analysis-summary-v132"], [data-testid="e008-kpis"]');
@@ -186,11 +200,43 @@ try {
   for (const contract of contracts) {
     try {
       await navigate(browser.cdp, detailUrlV129(server.url, contract.elementId));
+      // V156/V162: an element decided not to be offered (A-017, C-020, C-021,
+      // E-008, E-016, E-017 in 2026) has no analysis to wait for; its URL shows
+      // the exclusion notice. It is verified as that screen: the notice card,
+      // and no analysis root or chart (audit:exclusions:v156 checks the wording).
+      if (EXCLUDED_V162.has(contract.elementId)) {
+        await waitForValue(browser.cdp, `Boolean(document.querySelector('[data-testid="detail-excluded-v156"]'))`, { timeoutMs: 25_000 });
+        const notice = await evaluateValue(
+          browser.cdp,
+          `(() => { const page = document.querySelector('[data-detail-excluded-v156="true"]'); const card = document.querySelector('[data-testid="detail-excluded-v156"]'); return { elementId: ${JSON.stringify(contract.elementId)}, excludedNotice: Boolean(card), statusOnly: Boolean(card), headings: [...(page?.querySelectorAll('h1, h2, h3, h4') || [])].map((node) => String(node.textContent || '').replace(/\\s+/g, ' ').trim()).filter(Boolean), rawAfterAnalysis: !page?.querySelector('details[data-testid="public-raw-data"], details[data-testid="public-observation-table"], details[data-testid="public-entity-table"]'), analysisRoot: Boolean(document.querySelector('[data-testid="public-analysis-root"]')), charts: page ? page.querySelectorAll('svg[role="img"], canvas, [data-analysis-block]').length : 0 }; })()`
+        );
+        const verified = notice.excludedNotice && notice.headings.length > 0 && !notice.analysisRoot && notice.charts === 0;
+        routeResults.push({ ...notice, verified });
+        if (!verified) routeFailures.push({ contract, result: notice });
+        continue;
+      }
       await waitForValue(
         browser.cdp,
         `document.querySelector('[data-testid="public-analysis-root"]')?.getAttribute('data-analysis-state') === 'ready'`,
         { timeoutMs: 25_000 }
       );
+      // A dedicated screen draws after the root reports ready (E-012 builds
+      // its occupation model first); wait for its own marker before reading.
+      // …and the primary's own headings, which a chart-heavy screen (D-011,
+      // A-024) renders a moment after the ready state.
+      await waitForValue(
+        browser.cdp,
+        `Boolean(document.querySelector('[data-testid="public-analysis-primary"]')?.querySelector('h2,h3,h4,[data-testid="public-status-only"]'))`,
+        { timeoutMs: 5_000 }
+      ).catch(() => null);
+      const specializedMarker = SPECIALIZED_MARKERS_V162[contract.elementId];
+      if (specializedMarker) {
+        await waitForValue(
+          browser.cdp,
+          `Boolean(document.querySelector('[data-testid="public-analysis-primary"] [data-testid="${specializedMarker}"]'))`,
+          { timeoutMs: 15_000 }
+        ).catch(() => null);
+      }
       const result = await evaluateValue(browser.cdp, snapshotExpression(contract));
       const verified = rendererSatisfied(contract, result);
       routeResults.push({ ...result, verified });
@@ -221,10 +267,14 @@ try {
     }
   }
 
+  // V162: A-017 (technology comparison) and E-008 (research register) are
+  // excluded from publication in 2026 and show a notice only; the same kinds
+  // of screen stand in for them - A-030 (technology comparison) and E-009
+  // (dedicated science-workforce screen) - so 21 routes x 5 widths remain.
   const responsiveRoutes = [
-    "A-002", "A-003", "A-005", "A-010", "A-016", "A-017", "A-018",
+    "A-002", "A-003", "A-005", "A-010", "A-016", "A-030", "A-018",
     "A-023", "B-004", "B-021", "B-033", "B-034", "C-016", "C-019",
-    "D-005", "D-018", "E-008", "E-012", "E-018", "E-019", "E-020",
+    "D-005", "D-018", "E-009", "E-012", "E-018", "E-019", "E-020",
   ];
   for (const width of [390, 768, 1024, 1440, 1920]) {
     await setViewport(browser.cdp, width, 1000);
@@ -248,7 +298,7 @@ try {
             ready: root?.getAttribute('data-analysis-state') === 'ready',
             primary: Boolean(primary) && String(primary.textContent || '').trim().length > 0,
             alert: String(root?.querySelector('[role="alert"]')?.textContent || ''),
-            chartOrAnalysis: Boolean(primary?.querySelector('[data-testid="public-primary-visualization"],[data-testid="d005-specialized-renderer"],[data-testid="region-scenario-summary-v137"],svg[role="img"],[data-testid*="analysis"],[data-testid*="trend"],[data-testid*="timeline"],[data-testid*="scorecard"],[data-testid*="portfolio"]')),
+            chartOrAnalysis: Boolean(primary?.querySelector('[data-testid="public-primary-visualization"],[data-testid="d005-specialized-renderer"],[data-testid="region-scenario-summary-v137"],svg[role="img"],[data-testid*="analysis"],[data-testid*="trend"],[data-testid*="timeline"],[data-testid*="scorecard"],[data-testid*="portfolio"],[data-analysis-block]')),
           };
         })()`
       );

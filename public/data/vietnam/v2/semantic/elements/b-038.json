@@ -3,14 +3,10 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 6,
+      "valueCount": 2,
       "values": [
-        "참고자료] 1인당 도시폐기물 발생량",
-        "참고자료] 도시폐기물 수거율(참고, 인구 기준",
-        "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-        "참고자료] 바이오매스 발전 설비목표(2030)",
-        "참고자료] 사육두수",
-        "참고자료] 폐자원 발전 설비목표(2030)"
+        "산출 투입·참고자료",
+        "산출 투입·참고자료 · 유기성 비중"
       ]
     },
     {
@@ -267,23 +263,23 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-f8c3b05ddc42|MW",
+      "axisGroupKey": "measure-0f1baab9337f|MW",
       "dimensionLabels": {
-        "category": "참고자료] 바이오매스 발전 설비목표(2030)"
+        "category": "산출 투입·참고자료"
       },
       "dimensions": {
-        "category": "참고자료] 바이오매스 발전 설비목표(2030)"
+        "category": "산출 투입·참고자료"
       },
       "displayLabel": "[산출 투입·참고자료] 바이오매스 발전 설비목표(2030)",
       "indicatorId": "B-038_aux_capacity_target_biomass_2030",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-f8c3b05ddc42",
-        "labelKo": "[산출 투입",
+        "key": "measure-0f1baab9337f",
+        "labelKo": "바이오매스 발전 설비목표(2030)",
         "unit": "MW",
         "unitFamily": "capacity"
       },
-      "seriesKey": "measure-f8c3b05ddc42|MW|category=참고자료] 바이오매스 발전 설비목표(2030)|B-038_aux_capacity_target_biomass_2030",
+      "seriesKey": "measure-0f1baab9337f|MW|category=산출 투입·참고자료|B-038_aux_capacity_target_biomass_2030",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 바이오매스 발전 설비목표(2030)",
       "sourceLabelEn": null,
@@ -291,23 +287,23 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-f8c3b05ddc42|MW",
+      "axisGroupKey": "measure-8a01df9d58bd|MW",
       "dimensionLabels": {
-        "category": "참고자료] 폐자원 발전 설비목표(2030)"
+        "category": "산출 투입·참고자료"
       },
       "dimensions": {
-        "category": "참고자료] 폐자원 발전 설비목표(2030)"
+        "category": "산출 투입·참고자료"
       },
       "displayLabel": "[산출 투입·참고자료] 폐자원 발전 설비목표(2030)",
       "indicatorId": "B-038_aux_capacity_target_wte_2030",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-f8c3b05ddc42",
-        "labelKo": "[산출 투입",
+        "key": "measure-8a01df9d58bd",
+        "labelKo": "폐자원 발전 설비목표(2030)",
         "unit": "MW",
         "unitFamily": "capacity"
       },
-      "seriesKey": "measure-f8c3b05ddc42|MW|category=참고자료] 폐자원 발전 설비목표(2030)|B-038_aux_capacity_target_wte_2030",
+      "seriesKey": "measure-8a01df9d58bd|MW|category=산출 투입·참고자료|B-038_aux_capacity_target_wte_2030",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 폐자원 발전 설비목표(2030)",
       "sourceLabelEn": null,
@@ -315,25 +311,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-2552e0c53444|% 인구",
+      "axisGroupKey": "measure-1c9e1466aac1|% 인구",
       "dimensionLabels": {
-        "category": "참고자료] 도시폐기물 수거율(참고, 인구 기준",
+        "category": "산출 투입·참고자료",
         "detail": "수거 서비스를 받는 인구 비율)"
       },
       "dimensions": {
-        "category": "참고자료] 도시폐기물 수거율(참고, 인구 기준",
+        "category": "산출 투입·참고자료",
         "detail": "수거 서비스를 받는 인구 비율)"
       },
       "displayLabel": "[산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율)",
       "indicatorId": "B-038_aux_msw_collection_pop",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-2552e0c53444",
-        "labelKo": "[산출 투입",
+        "key": "measure-1c9e1466aac1",
+        "labelKo": "도시폐기물 수거율(참고, 인구 기준",
         "unit": "% 인구",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-2552e0c53444|% 인구|category=참고자료] 도시폐기물 수거율(참고, 인구 기준|detail=수거 서비스를 받는 인구 비율)|B-038_aux_msw_collection_pop",
+      "seriesKey": "measure-1c9e1466aac1|% 인구|category=산출 투입·참고자료|detail=수거 서비스를 받는 인구 비율)|B-038_aux_msw_collection_pop",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 도시폐기물 수거율(참고, 인구 기준 — 수거 서비스를 받는 인구 비율)",
       "sourceLabelEn": null,
@@ -341,23 +337,23 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-22ac0ea3403a|% 중량",
+      "axisGroupKey": "measure-cd737328bac0|% 중량",
       "dimensionLabels": {
-        "category": "참고자료] 도시폐기물 중 음식물 · 유기성 비중"
+        "category": "산출 투입·참고자료 · 유기성 비중"
       },
       "dimensions": {
-        "category": "참고자료] 도시폐기물 중 음식물 · 유기성 비중"
+        "category": "산출 투입·참고자료 · 유기성 비중"
       },
       "displayLabel": "[산출 투입·참고자료] 도시폐기물 중 음식물·유기성 비중",
       "indicatorId": "B-038_aux_msw_organic_share",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-22ac0ea3403a",
-        "labelKo": "[산출 투입",
+        "key": "measure-cd737328bac0",
+        "labelKo": "도시폐기물 중 음식물",
         "unit": "% 중량",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-22ac0ea3403a|% 중량|category=참고자료] 도시폐기물 중 음식물 · 유기성 비중|B-038_aux_msw_organic_share",
+      "seriesKey": "measure-cd737328bac0|% 중량|category=산출 투입·참고자료 · 유기성 비중|B-038_aux_msw_organic_share",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 도시폐기물 중 음식물·유기성 비중",
       "sourceLabelEn": null,
@@ -365,23 +361,23 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-a5170524e4e6|kg/인/일",
+      "axisGroupKey": "measure-13e56f3e0776|kg/인/일",
       "dimensionLabels": {
-        "category": "참고자료] 1인당 도시폐기물 발생량"
+        "category": "산출 투입·참고자료"
       },
       "dimensions": {
-        "category": "참고자료] 1인당 도시폐기물 발생량"
+        "category": "산출 투입·참고자료"
       },
       "displayLabel": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
       "indicatorId": "B-038_aux_msw_percap",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-a5170524e4e6",
-        "labelKo": "[산출 투입",
+        "key": "measure-13e56f3e0776",
+        "labelKo": "1인당 도시폐기물 발생량",
         "unit": "kg/인/일",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-a5170524e4e6|kg/인/일|category=참고자료] 1인당 도시폐기물 발생량|B-038_aux_msw_percap",
+      "seriesKey": "measure-13e56f3e0776|kg/인/일|category=산출 투입·참고자료|B-038_aux_msw_percap",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
       "sourceLabelEn": null,
@@ -389,25 +385,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "axisGroupKey": "measure-efdceb96360b|두",
       "dimensionLabels": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "물소(산출 투입자료)"
       },
       "dimensions": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "물소(산출 투입자료)"
       },
       "displayLabel": "[산출 투입·참고자료] 사육두수 — 물소(산출 투입자료)",
       "indicatorId": "B-038_aux_stock_buffalo",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1dfbcc7c9550",
-        "labelKo": "[산출 투입",
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
         "unit": "두",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=물소(산출 투입자료)|B-038_aux_stock_buffalo",
+      "seriesKey": "measure-efdceb96360b|두|category=산출 투입·참고자료|detail=물소(산출 투입자료)|B-038_aux_stock_buffalo",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 사육두수 — 물소(산출 투입자료)",
       "sourceLabelEn": null,
@@ -415,25 +411,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "axisGroupKey": "measure-efdceb96360b|두",
       "dimensionLabels": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "소(산출 투입자료)"
       },
       "dimensions": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "소(산출 투입자료)"
       },
       "displayLabel": "[산출 투입·참고자료] 사육두수 — 소(산출 투입자료)",
       "indicatorId": "B-038_aux_stock_cattle",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1dfbcc7c9550",
-        "labelKo": "[산출 투입",
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
         "unit": "두",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=소(산출 투입자료)|B-038_aux_stock_cattle",
+      "seriesKey": "measure-efdceb96360b|두|category=산출 투입·참고자료|detail=소(산출 투입자료)|B-038_aux_stock_cattle",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 사육두수 — 소(산출 투입자료)",
       "sourceLabelEn": null,
@@ -441,25 +437,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "axisGroupKey": "measure-efdceb96360b|두",
       "dimensionLabels": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "돼지(산출 투입자료)"
       },
       "dimensions": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "돼지(산출 투입자료)"
       },
       "displayLabel": "[산출 투입·참고자료] 사육두수 — 돼지(산출 투입자료)",
       "indicatorId": "B-038_aux_stock_pig",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1dfbcc7c9550",
-        "labelKo": "[산출 투입",
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
         "unit": "두",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=돼지(산출 투입자료)|B-038_aux_stock_pig",
+      "seriesKey": "measure-efdceb96360b|두|category=산출 투입·참고자료|detail=돼지(산출 투입자료)|B-038_aux_stock_pig",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 사육두수 — 돼지(산출 투입자료)",
       "sourceLabelEn": null,
@@ -467,25 +463,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-1dfbcc7c9550|두",
+      "axisGroupKey": "measure-efdceb96360b|두",
       "dimensionLabels": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "닭(산출 투입자료)"
       },
       "dimensions": {
-        "category": "참고자료] 사육두수",
+        "category": "산출 투입·참고자료",
         "detail": "닭(산출 투입자료)"
       },
       "displayLabel": "[산출 투입·참고자료] 사육두수 — 닭(산출 투입자료)",
       "indicatorId": "B-038_aux_stock_poultry",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1dfbcc7c9550",
-        "labelKo": "[산출 투입",
+        "key": "measure-efdceb96360b",
+        "labelKo": "사육두수",
         "unit": "두",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1dfbcc7c9550|두|category=참고자료] 사육두수|detail=닭(산출 투입자료)|B-038_aux_stock_poultry",
+      "seriesKey": "measure-efdceb96360b|두|category=산출 투입·참고자료|detail=닭(산출 투입자료)|B-038_aux_stock_poultry",
       "sourceCaveat": null,
       "sourceLabel": "[산출 투입·참고자료] 사육두수 — 닭(산출 투입자료)",
       "sourceLabelEn": null,
@@ -1301,51 +1297,11 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-13e56f3e0776",
       "labelKo": "1인당 도시폐기물 발생량",
-      "recordCount": 0,
-      "unit": "kg/인/일",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-2552e0c53444",
-      "labelKo": "[산출 투입",
-      "recordCount": 1,
-      "unit": "% 인구",
-      "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-22ac0ea3403a",
-      "labelKo": "[산출 투입",
-      "recordCount": 1,
-      "unit": "% 중량",
-      "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-f8c3b05ddc42",
-      "labelKo": "[산출 투입",
-      "recordCount": 2,
-      "unit": "MW",
-      "unitFamily": "capacity"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-a5170524e4e6",
-      "labelKo": "[산출 투입",
       "recordCount": 5,
       "unit": "kg/인/일",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 4,
-      "key": "measure-1dfbcc7c9550",
-      "labelKo": "[산출 투입",
-      "recordCount": 240,
-      "unit": "두",
       "unitFamily": "other"
     },
     {
@@ -1374,6 +1330,14 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-1c9e1466aac1",
+      "labelKo": "도시폐기물 수거율(참고, 인구 기준",
+      "recordCount": 1,
+      "unit": "% 인구",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-f206688f0259",
       "labelKo": "도시폐기물 중 유기성 자원량(산출)",
       "recordCount": 5,
@@ -1381,10 +1345,10 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
       "key": "measure-cd737328bac0",
       "labelKo": "도시폐기물 중 음식물",
-      "recordCount": 0,
+      "recordCount": 1,
       "unit": "% 중량",
       "unitFamily": "percent"
     },
@@ -1410,6 +1374,14 @@
       "labelKo": "바이오매스",
       "recordCount": 0,
       "unit": "백만 kW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0f1baab9337f",
+      "labelKo": "바이오매스 발전 설비목표(2030)",
+      "recordCount": 1,
+      "unit": "MW",
       "unitFamily": "capacity"
     },
     {
@@ -1445,10 +1417,10 @@
       "unitFamily": "capacity"
     },
     {
-      "indicatorCount": 4,
+      "indicatorCount": 8,
       "key": "measure-efdceb96360b",
       "labelKo": "사육두수",
-      "recordCount": 0,
+      "recordCount": 240,
       "unit": "두",
       "unitFamily": "other"
     },
@@ -1499,6 +1471,14 @@
       "recordCount": 60,
       "unit": "Mt VS/yr",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8a01df9d58bd",
+      "labelKo": "폐자원 발전 설비목표(2030)",
+      "recordCount": 1,
+      "unit": "MW",
+      "unitFamily": "capacity"
     }
   ],
   "observationCount": 399,

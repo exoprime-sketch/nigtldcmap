@@ -6935,11 +6935,15 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 4,
+          "valueCount": 8,
           "values": [
             "대베트남 수입액",
             "대베트남 수출액",
             "무역수지",
+            "보조 · 대베트남 수입액",
+            "보조 · 대베트남 수출액",
+            "보조 · 무역수지",
+            "보조 · 총 교역액",
             "총 교역액"
           ]
         },
@@ -7017,18 +7021,10 @@
       },
       "measures": [
         {
-          "indicatorCount": 4,
-          "key": "measure-949717b1de52",
-          "labelKo": "[보조] 한-베트남 교역",
-          "recordCount": 16,
-          "unit": "10억 USD",
-          "unitFamily": "currency"
-        },
-        {
-          "indicatorCount": 4,
+          "indicatorCount": 8,
           "key": "measure-fe46d9d1d4c2",
           "labelKo": "한-베트남 교역",
-          "recordCount": 132,
+          "recordCount": 148,
           "unit": "10억 USD",
           "unitFamily": "currency"
         }
@@ -7045,15 +7041,6 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-949717b1de52",
-          "key": "measure",
-          "labelKo": "측정항목",
-          "values": [
-            "measure-949717b1de52",
-            "measure-fe46d9d1d4c2"
-          ]
-        },
-        {
           "defaultValue": "대베트남 수입액",
           "key": "category",
           "labelKo": "분류",
@@ -7061,6 +7048,10 @@
             "대베트남 수입액",
             "대베트남 수출액",
             "무역수지",
+            "보조 · 대베트남 수입액",
+            "보조 · 대베트남 수출액",
+            "보조 · 무역수지",
+            "보조 · 총 교역액",
             "총 교역액"
           ]
         },
@@ -19031,14 +19022,10 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 6,
+          "valueCount": 2,
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고, 인구 기준",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 바이오매스 발전 설비목표(2030)",
-            "참고자료] 사육두수",
-            "참고자료] 폐자원 발전 설비목표(2030)"
+            "산출 투입·참고자료",
+            "산출 투입·참고자료 · 유기성 비중"
           ]
         },
         {
@@ -19156,51 +19143,11 @@
       },
       "measures": [
         {
-          "indicatorCount": 1,
+          "indicatorCount": 2,
           "key": "measure-13e56f3e0776",
           "labelKo": "1인당 도시폐기물 발생량",
-          "recordCount": 0,
-          "unit": "kg/인/일",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-2552e0c53444",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 인구",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-22ac0ea3403a",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 중량",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 2,
-          "key": "measure-f8c3b05ddc42",
-          "labelKo": "[산출 투입",
-          "recordCount": 2,
-          "unit": "MW",
-          "unitFamily": "capacity"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-a5170524e4e6",
-          "labelKo": "[산출 투입",
           "recordCount": 5,
           "unit": "kg/인/일",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 4,
-          "key": "measure-1dfbcc7c9550",
-          "labelKo": "[산출 투입",
-          "recordCount": 240,
-          "unit": "두",
           "unitFamily": "other"
         },
         {
@@ -19229,6 +19176,14 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-1c9e1466aac1",
+          "labelKo": "도시폐기물 수거율(참고, 인구 기준",
+          "recordCount": 1,
+          "unit": "% 인구",
+          "unitFamily": "percent"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-f206688f0259",
           "labelKo": "도시폐기물 중 유기성 자원량(산출)",
           "recordCount": 5,
@@ -19236,10 +19191,10 @@
           "unitFamily": "other"
         },
         {
-          "indicatorCount": 1,
+          "indicatorCount": 2,
           "key": "measure-cd737328bac0",
           "labelKo": "도시폐기물 중 음식물",
-          "recordCount": 0,
+          "recordCount": 1,
           "unit": "% 중량",
           "unitFamily": "percent"
         },
@@ -19265,6 +19220,14 @@
           "labelKo": "바이오매스",
           "recordCount": 0,
           "unit": "백만 kW",
+          "unitFamily": "capacity"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-0f1baab9337f",
+          "labelKo": "바이오매스 발전 설비목표(2030)",
+          "recordCount": 1,
+          "unit": "MW",
           "unitFamily": "capacity"
         },
         {
@@ -19300,10 +19263,10 @@
           "unitFamily": "capacity"
         },
         {
-          "indicatorCount": 4,
+          "indicatorCount": 8,
           "key": "measure-efdceb96360b",
           "labelKo": "사육두수",
-          "recordCount": 0,
+          "recordCount": 240,
           "unit": "두",
           "unitFamily": "other"
         },
@@ -19354,6 +19317,14 @@
           "recordCount": 60,
           "unit": "Mt VS/yr",
           "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 1,
+          "key": "measure-8a01df9d58bd",
+          "labelKo": "폐자원 발전 설비목표(2030)",
+          "recordCount": 1,
+          "unit": "MW",
+          "unitFamily": "capacity"
         }
       ],
       "missingDataPolicy": "preserve-null-show-source-reason-never-impute-zero",
@@ -19373,19 +19344,16 @@
           "labelKo": "측정항목",
           "values": [
             "measure-13e56f3e0776",
-            "measure-2552e0c53444",
-            "measure-22ac0ea3403a",
-            "measure-f8c3b05ddc42",
-            "measure-a5170524e4e6",
-            "measure-1dfbcc7c9550",
             "measure-76bf52d804b4",
             "measure-d74aff6e6eb3",
             "measure-a1c76d6d4e02",
+            "measure-1c9e1466aac1",
             "measure-f206688f0259",
             "measure-cd737328bac0",
             "measure-4cb7b5447f5a",
             "measure-9c0d857558df",
             "measure-8643816ff83c",
+            "measure-0f1baab9337f",
             "measure-c1cecaf34657",
             "measure-561a654603fb",
             "measure-44865662c365",
@@ -19396,20 +19364,17 @@
             "measure-34b5f36d14cf",
             "measure-684bafb2a64b",
             "measure-d58e7b07454a",
-            "measure-ccc9e008a799"
+            "measure-ccc9e008a799",
+            "measure-8a01df9d58bd"
           ]
         },
         {
-          "defaultValue": "참고자료] 1인당 도시폐기물 발생량",
+          "defaultValue": "산출 투입·참고자료",
           "key": "category",
           "labelKo": "분류",
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고, 인구 기준",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 바이오매스 발전 설비목표(2030)",
-            "참고자료] 사육두수",
-            "참고자료] 폐자원 발전 설비목표(2030)"
+            "산출 투입·참고자료",
+            "산출 투입·참고자료 · 유기성 비중"
           ]
         },
         {
