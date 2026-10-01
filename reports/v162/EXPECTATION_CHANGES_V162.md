@@ -87,3 +87,4 @@
 | 이용조건 문장(코드 수정) | — | '[원천 정정]'·'[DoD …]'·원천 열 이름(source_…/license_…) 문장 제외 | B-040 이용조건에 공급사 정정 메모 노출 |
 | 식별자 스캔(`public-wording-scan-v157`) | — | 원문 고유 표기 2건을 주변 단어째로 인용 처리(A-025 시설 원명 'Vung Ang II coal-fired power plant', B-029 기관명 'Aberystwyth Univ. · soloEO') | 프로그램 식별자가 아닌 원천 표기. 같은 토큰이 다른 곳에 나오면 계속 잡힘 |
 | 인수 게이트 '다른 나라 국명 0'(`acceptance-v162.mjs`) | 화면 전체 문자열 | 납품 레코드 값(레코드 카드·가로형 카드·원자료 표)은 제외, 플랫폼 문구는 그대로 0건 | 사용자 결정(2026-10-02). C-013 원자료의 베트남 양자투자협정 상대국 'Bangladesh - Viet Nam BIT (2005)'는 사실값 — 숨기면 데이터 삭제 |
+| `audit:public-naming:v131` 모듈 로더(검사 도구) | 상대 import는 모두 TypeScript로 변환 | src/ 안의 .json import는 데이터로 읽음(그 외 규칙 동일: src 밖 import 거부) | A-028 제목이 OSM 분류 사전(JSON)을 읽게 되어 로더가 'Output generation failed'로 정책 모듈을 못 불러옴(CI 5회차). 판정 규칙 변경 없음, 로컬 10/10 |
