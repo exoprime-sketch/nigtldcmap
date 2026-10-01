@@ -162,6 +162,52 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   return publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)));
 }
 
+/**
+ * V162: records sharing one name ("장벽" ×275 in C-005, where the sheet names a
+ * barrier by its type; two "넷제로 목표연도" in C-004 from two documents) are
+ * told apart by what they state: up to two short values that differ inside the
+ * group (대상 기술, 분류, the source document …), appended to the name. Nothing
+ * is invented; a group the values cannot separate keeps its name.
+ */
+function disambiguateWideNamesV162(records: WideRecordV162[]): WideRecordV162[] {
+  const groups = new Map<string, number[]>();
+  records.forEach((record, index) => groups.set(record.name, [...(groups.get(record.name) || []), index]));
+  const suffixes: string[][] = records.map(() => []);
+  groups.forEach((indexes) => {
+    if (indexes.length < 2) return;
+    const candidates = new Map<string, string[]>();
+    indexes.forEach((index, position) => {
+      const record = records[index];
+      const pairs: Array<[string, string]> = record.blocks.flatMap((block) => block.values.filter((value) => !value.href).map((value) => [`${block.block}\u0000${value.attribute}`, value.value] as [string, string]));
+      if (record.source.document) pairs.push(["source\u0000document", record.source.document]);
+      for (const [key, value] of pairs) {
+        if (!value || value.length > 40 || value === record.name) continue;
+        const list = candidates.get(key) || indexes.map(() => "");
+        list[position] = value;
+        candidates.set(key, list);
+      }
+    });
+    const chosen: string[] = [];
+    for (let round = 0; round < 2; round += 1) {
+      const signature = (position: number, keys: string[]) => keys.map((key) => candidates.get(key)?.[position] || "").join("\u0001");
+      const distinctWith = (keys: string[]) => new Set(indexes.map((_, position) => signature(position, keys))).size;
+      if (chosen.length && distinctWith(chosen) === indexes.length) break;
+      let best: { key: string; distinct: number } | null = null;
+      candidates.forEach((values, key) => {
+        if (chosen.includes(key) || values.some((value) => !value)) return;
+        const distinct = distinctWith([...chosen, key]);
+        if (distinct > (chosen.length ? distinctWith(chosen) : 1) && (!best || distinct > best.distinct)) best = { key, distinct };
+      });
+      if (!best) break;
+      chosen.push((best as { key: string }).key);
+    }
+    indexes.forEach((index, position) => {
+      suffixes[index] = chosen.map((key) => candidates.get(key)?.[position] || "").filter(Boolean);
+    });
+  });
+  return records.map((record, index) => (suffixes[index].length ? { ...record, name: [record.name, ...suffixes[index]].join(" · ") } : record));
+}
+
 export function readWideRecordsV162(
   entities: VietnamEntityV124[],
   fieldDefinitions: FieldDefinitionsV162
@@ -176,7 +222,7 @@ export function readWideRecordsV162(
   const pageField = sourceField(/문서\s*페이지\s*URL|페이지\s*URL/iu);
   const citationField = sourceField(/인용\s*위치/u);
 
-  return entities.map((entity) => {
+  return disambiguateWideNamesV162(entities.map((entity) => {
     const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
     const read = (field: WideFieldV162 | undefined) => (field ? publicWideValueV162(attributes[field.key], field.attribute) : "");
     const byBlock = new Map<string, WideValueV162[]>();
@@ -215,7 +261,7 @@ export function readWideRecordsV162(
         return field && !HIDDEN_ATTRIBUTE_V162.test(field.attribute) ? read(field) || null : null;
       },
     };
-  });
+  }));
 }
 
 // ---------------------------------------------------------------------------
