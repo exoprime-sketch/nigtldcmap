@@ -14,7 +14,7 @@
 | 관측소 | 덤벨(`dumbbell`, 지점별 두 값 한 축) | 지점별 단위가 다르면 정렬표 예외 |
 | 정책·문서 | 타임라인(`timeline`) 또는 비교표(`comparison-table`) | 숫자 차트 금지 |
 | 매트릭스(A-013·C-005·B-044) | 히트맵·정렬표 | 이번 라운드는 문장값 비교표/카드로 열림(예외, 히트맵 후속 P4) |
-| 상태 안내(C-020·C-021·C-023·E-011·E-013) | 문구만(`status-note`) | 차트 0 |
+| 상태 안내(C-020·C-021·C-023·E-013) | 문구만(`status-note`) | 차트 0 |
 
 ## 집계: 표준 95 · 보존 11 · 예외 46 · 지도 옆 60 · 지도 보류 0
 
@@ -162,7 +162,7 @@
 | E-008 | 등록부 | `category-bar` | 논문 목록의 발행연도별 건수 | 건수 | 발행연도 | 건 | `table` | 없음 | 표준 | [WIPO IP Statistics](https://www.wipo.int/en/web/ip-statistics/about) · [UNESCO UIS Data Browser](https://databrowser.uis.unesco.org/) |  |
 | E-009 | 국가 시계열 | `category-bar` | STEM 졸업 비중 | STEM 전공 비중 | 연도 | % | `table` | 없음 | 예외 | [UNESCO UIS Data Browser](https://databrowser.uis.unesco.org/) · [ILOSTAT](https://ilostat.ilo.org/dataviz/getyouth/) | 원자료에 2016년 단일 관측값만 존재해 연도축 line 대신 category-bar로 표시함 |
 | E-010 | 국가 시계열 | `line` | GERD 연구개발비 비중 추이 | 연도 | GERD | % | `table` | 없음 | 표준 | [WIPO IP Statistics](https://www.wipo.int/en/web/ip-statistics/about) · [UNESCO UIS Data Browser](https://databrowser.uis.unesco.org/) |  |
-| E-011 | 상태 안내 | `status-note` | 기술준비수준 자료 안내 | — | — | — | — | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
+| E-011 | 국가 시계열 | `line` | 네트워크 준비지수(NRI) 추이 | 연도 | NRI | 점수 | `table` | 없음 | 표준 | [Portulans Institute Network Readiness Index](https://networkreadinessindex.org/) · [WIPO Global Innovation Index](https://www.wipo.int/global_innovation_index/en/) | V162: 2026-09-30 납품으로 NRI 2021–2025(종합·4개 부문 점수·순위) 입고 — 상태 안내에서 국가 시계열로 |
 | E-012 | 국가 시계열 | `category-bar` | 직군별 종사자 수 | 종사자 수 | 직군 | 천명 | `table` | 없음 | 보존 | [ILOSTAT](https://ilostat.ilo.org/dataviz/getyouth/) · [World Bank WDI](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=VN&view=chart) |  |
 | E-013 | 상태 안내 | `status-note` | 운영유지보수 역량 안내 | — | — | — | — | 없음 | 표준 | [CTCN NDE / technical assistance directory](https://www.ctc-n.org/file-download/download/public/25589) · [UNFCCC Designated National Authorities](https://unfccc.int/es/node/627860) |  |
 | E-014 | 정책·문서 | `timeline` | 한국-베트남 양자협정 연혁 | — | — | — | `table` | 없음 | 표준 | [UNFCCC NDC Registry](https://unfccc.int/NDCREG) · [IEA Policies database](https://www.iea.org/policies) |  |

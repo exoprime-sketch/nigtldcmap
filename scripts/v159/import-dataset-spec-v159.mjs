@@ -60,6 +60,14 @@ const appliedOverrides = new Set();
 // V158: the decision common to every country plus the default country's own.
 const EXCLUSION_DECISION = exclusionDecisionsV158(ROOT, "VNM");
 const ACTIVE_EXCLUSIONS = new Map(EXCLUSION_DECISION.exclusions.map((row) => [row.elementId, row]));
+const CATALOG_V162 = JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/catalog.json"), "utf8"));
+const PENDING_PUBLIC_STATUSES_V162 = new Set(["not-provided", "not-collected", "schema-only", "data-entry-planned"]);
+const DELIVERED_IN_CATALOG_V162 = new Set(
+  CATALOG_V162.elements.filter((element) => !PENDING_PUBLIC_STATUSES_V162.has(String(element.publicStatus || ""))).map((element) => element.elementId)
+);
+const DELIVERED_AT_V162 = String(
+  JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/manifest.json"), "utf8")).provenance?.sourceDeliveredAt || ""
+).slice(0, 10);
 const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) => [row.elementId, row]));
 
 // A recorded minimal correction replaces the workbook text only where its
@@ -523,6 +531,14 @@ function main() {
         if (liftType?.code !== type.code) throw new Error(`${row.elementId}: lift decision type differs from the assignment table`);
         status = `공개(제외 해제 ${lift.liftedAt.slice(5).replace("-", "")})`;
       }
+    }
+    // V162 (user decision 2026-09-30): whether data is pending is the
+    // catalog's call alone. A row the spec table still lists as 미입고 but
+    // the default country's catalog publishes (E-011, delivered 2026-09-30)
+    // is no longer a notice screen.
+    if (statusNotice === "data-pending" && DELIVERED_IN_CATALOG_V162.has(row.elementId)) {
+      status = `공개(${DELIVERED_AT_V162} 입고)`;
+      statusNotice = null;
     }
     const scenario = SCENARIO_V8.has(row.elementId) || [...catalog].some((id) => id.startsWith(`${row.elementId}_`) && /(^|_)(ssp\d|rcp\d|scenario)/i.test(id));
     return {

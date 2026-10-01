@@ -106,6 +106,22 @@ function renderTimeline(elementId: string, entities: VietnamEntityV124[], region
  * was taken (MONRE, MAE, FIT ...) stay wrapped and are still compared.
  */
 const TERMS_ADDED_AFTER_BASELINE_V151_2 = ["qd-ttg", "nd-cp", "qh15", "moej", "cru-ts", "hydrosheds-dir"];
+/**
+ * V162 glossary additions for the 2026-09-30 delivery's wording. C-016's
+ * "EVN(EPTC)" gained a term button; peeled the same way (reports/v162/
+ * EXPECTATION_CHANGES_V162.md).
+ */
+const TERMS_ADDED_AFTER_BASELINE_V162 = ["eptc"];
+const PEELED_TERMS_SELECTOR = [...TERMS_ADDED_AFTER_BASELINE_V151_2, ...TERMS_ADDED_AFTER_BASELINE_V162]
+  .map((id) => `[data-public-term-v134="${id}"]`)
+  .join(",");
+
+/** Term buttons defined after the baseline, peeled back to their text. */
+function withoutLaterTerms(element: Element): Element {
+  element.querySelectorAll(PEELED_TERMS_SELECTOR).forEach((node) => node.replaceWith(document.createTextNode(node.textContent ?? "")));
+  element.normalize();
+  return element;
+}
 
 /**
  * V160 lists the documents most recent first (decision 2026-09-29); the
@@ -123,11 +139,7 @@ function inBaselineOrder(timeline: HTMLElement): HTMLElement {
 function withoutDescription(entry: Element): string {
   const clone = entry.cloneNode(true) as Element;
   clone.querySelectorAll('[data-testid="policy-description-v153"]').forEach((node) => node.remove());
-  clone
-    .querySelectorAll(TERMS_ADDED_AFTER_BASELINE_V151_2.map((id) => `[data-public-term-v134="${id}"]`).join(","))
-    .forEach((node) => node.replaceWith(document.createTextNode(node.textContent ?? "")));
-  clone.normalize();
-  return clone.outerHTML;
+  return withoutLaterTerms(clone).outerHTML;
 }
 
 /** A rendered entry's own document name (the <strong> under its date). */
@@ -166,7 +178,7 @@ describe("document timeline around the V153 description line (pre-refresh delive
   test("C-016 has no description keys and its markup is byte-identical to the pre-V153 renderer", () => {
     const timeline = renderTimeline("C-016", legacyC016 as unknown as VietnamEntityV124[]);
     expect(timeline.querySelectorAll('[data-testid="policy-description-v153"]')).toHaveLength(0);
-    expect(sha256(inBaselineOrder(timeline).outerHTML)).toBe(BASELINE["C-016"].timeline);
+    expect(sha256(withoutLaterTerms(inBaselineOrder(timeline)).outerHTML)).toBe(BASELINE["C-016"].timeline);
   });
 
   test.each([

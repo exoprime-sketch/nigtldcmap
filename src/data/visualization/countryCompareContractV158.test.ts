@@ -87,7 +87,9 @@ describe("country compare contract V158 (fix-forward 2026-09-30)", () => {
   });
 
   test("the elements kept out of the comparison are not compared", () => {
-    expect(exclusions.map((row) => row.elementId).sort()).toEqual(["D-004", "D-006", "D-008", "E-012"]);
+    // V162: E-011 (NRI) arrived on 2026-09-30, after the standard's 54 were
+    // fixed; it is held out until the PR-D decision table says otherwise.
+    expect(exclusions.map((row) => row.elementId).sort()).toEqual(["D-004", "D-006", "D-008", "E-011", "E-012"]);
     for (const { elementId } of exclusions) {
       expect(contractV158.rows.find((row) => row.elementId === elementId)?.countryCompare?.comparable).toBe(false);
     }

@@ -7,7 +7,8 @@ import {
 } from "../../data/visualization/elementVisualizationRegistryV125";
 import { useDataCountryV158 } from "../../data/countries/DataCountryContextV158";
 import { getPublicVisualizationSummaryV126 } from "../../data/visualization/publicVisualizationRegistryV126";
-import { resolvePublicTemporalDepthV135 } from "../../data/visualization/publicTemporalDepthV135";
+import { maxComparableYearCountV135, resolvePublicTemporalDepthV135 } from "../../data/visualization/publicTemporalDepthV135";
+import { visualizationContractV153 } from "../../data/visualization/publicVisualizationContractV153";
 import type {
   ElementIndicatorSemanticsV125,
   ElementVisualizationContractV125,
@@ -127,10 +128,17 @@ export default function CountryDataFullPreviewV52({
   // V135: the visualization a screen is allowed to show follows from how many
   // years the source data can actually compare, so the depth is derived from
   // the loaded observations rather than declared per element.
-  const temporalDepthV135 = useMemo(
-    () => resolvePublicTemporalDepthV135(visibleObservations, indicators),
-    [indicators, visibleObservations]
-  );
+  // V162: a register (D-023, D-024) can carry its own stated totals as
+  // observations of one year ("승인사업 39건"). Those are a snapshot of the
+  // register, not a series; the register's time chart counts records by
+  // year. Such a screen has no observation time depth.
+  const temporalDepthV135 = useMemo(() => {
+    const registryTotalsOnly =
+      visualizationContractV153(elementId)?.archetype === "registry" &&
+      visibleEntities.length > 0 &&
+      maxComparableYearCountV135(visibleObservations) <= 1;
+    return registryTotalsOnly ? "non-temporal" : resolvePublicTemporalDepthV135(visibleObservations, indicators);
+  }, [elementId, indicators, visibleEntities, visibleObservations]);
   const publicSummary = getPublicVisualizationSummaryV126(elementId);
   const presentationTier = publicSummary?.presentationKind || "generic-fallback";
 

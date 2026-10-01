@@ -68,7 +68,10 @@ export { publicProcessWordingV162 };
 
 const HEADER_V162 = /^\[([^\]]+)\]\s*(.+)$/u;
 /** Blocks that only keep the supplier's books: never a section on screen. */
-const BOOKKEEPING_BLOCKS_V162 = new Set(["식별", "기술", "결측"]);
+// V162: [기술] is not bookkeeping as a whole - C-005 states each priority
+// technology's name, stage and score there. Its technology-code judgement
+// columns are, and are hidden by attribute below.
+const BOOKKEEPING_BLOCKS_V162 = new Set(["식별", "결측"]);
 const SOURCE_BLOCK_V162 = "출처";
 /** Block names that carry the supplier's process, shown under a reader's name. */
 const BLOCK_TITLES_V162: Record<string, string> = { 현지조사: "현장 확인 자료" };
@@ -76,7 +79,7 @@ const BLOCK_TITLES_V162: Record<string, string> = { 현지조사: "현장 확인
 // V162: the supplier's own file bookkeeping ("[링크] raw 보유 여부", "raw 파일명").
 // V162: also the identifier columns ("GCAP NAZCA ID") and the field survey's
 // own table reference ("[현지조사] 표" = "ELEMENT C-014 표").
-const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b|\bID$|^표$/iu;
+const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b|\bID$|^표$|기술코드/iu;
 /** A format hint in the column label ("시행일 (YYYY-MM-DD)", "시행 연도 (년)"). */
 const FORMAT_HINT_V162 = /\s*\((?:YYYY(?:[-.]MM(?:[-.]DD)?)?|년|월|일)\)\s*$/u;
 /** A value that names a delivered or working file rather than stating anything. */
@@ -144,8 +147,10 @@ export function sourceLinkTextV162(url: string, title?: string | null): string {
 }
 
 /** A citation that points into the supplier's workbook ("Dataset C 시트 22행"). */
-// …or names a raw column key ("SOURCE_ORGANIZATION") or an internal sheet.
-const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행|\b[A-Z]{3,}_[A-Z_]{3,}\b|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\b/u;
+// …or names a raw column key ("SOURCE_ORGANIZATION") or an internal sheet,
+// or (V162, C-008) the supplier's own file ("C-008_… 참여 현황_….csv") and a
+// raw key=value pointer into it ("public_id=GCAP14444").
+const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행|\b[A-Z]{3,}_[A-Z_]{3,}\b|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\b|(?:^|[^A-Za-z0-9])[A-E]-\d{3}_|\b[a-z]+_id=/u;
 
 /** Attributes that hold free-text notes, where the supplier's memo sentences can sit. */
 const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;
@@ -162,50 +167,69 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   return publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)));
 }
 
+const SHORT_VALUE_V162 = 40;
+
+/** Up to two values that tell the records at `indexes` apart, per record. */
+function distinguishingValuesV162(records: WideRecordV162[], indexes: number[], allowLong: boolean): string[][] {
+  const candidates = new Map<string, string[]>();
+  indexes.forEach((index, position) => {
+    const record = records[index];
+    const pairs: Array<[string, string]> = record.blocks.flatMap((block) => block.values.filter((value) => !value.href).map((value) => [`${block.block}\u0000${value.attribute}`, value.value] as [string, string]));
+    if (record.source.document) pairs.push(["source\u0000document", record.source.document]);
+    if (record.source.citation) pairs.push(["source\u0000citation", record.source.citation]);
+    for (const [key, raw] of pairs) {
+      if (!raw || raw === record.name) continue;
+      if (raw.length > SHORT_VALUE_V162 && !allowLong) continue;
+      // A long value is cut at a word boundary and marked as cut; never reworded.
+      const value = raw.length > SHORT_VALUE_V162 ? `${raw.slice(0, SHORT_VALUE_V162).replace(/\s+\S*$/u, "")}…` : raw;
+      const list = candidates.get(key) || indexes.map(() => "");
+      list[position] = value;
+      candidates.set(key, list);
+    }
+  });
+  const chosen: string[] = [];
+  const signature = (position: number, keys: string[]) => keys.map((key) => candidates.get(key)?.[position] || "").join("\u0001");
+  const distinctWith = (keys: string[]) => new Set(indexes.map((_, position) => signature(position, keys))).size;
+  for (let round = 0; round < 2; round += 1) {
+    if (chosen.length && distinctWith(chosen) === indexes.length) break;
+    let best: { key: string; distinct: number } | null = null;
+    candidates.forEach((values, key) => {
+      // The short pass uses only values every record states; the long pass
+      // also a value some records leave blank (a blank adds nothing).
+      if (chosen.includes(key) || (!allowLong && values.some((value) => !value))) return;
+      const distinct = distinctWith([...chosen, key]);
+      if (distinct > (chosen.length ? distinctWith(chosen) : 1) && (!best || distinct > best.distinct)) best = { key, distinct };
+    });
+    if (!best) break;
+    chosen.push((best as { key: string }).key);
+  }
+  return indexes.map((_, position) => chosen.map((key) => candidates.get(key)?.[position] || "").filter(Boolean));
+}
+
 /**
  * V162: records sharing one name ("장벽" ×275 in C-005, where the sheet names a
  * barrier by its type; two "넷제로 목표연도" in C-004 from two documents) are
  * told apart by what they state: up to two short values that differ inside the
- * group (대상 기술, 분류, the source document …), appended to the name. Nothing
- * is invented; a group the values cannot separate keeps its name.
+ * group (대상 기술, 분류, the source document …), appended to the name. A group
+ * those cannot separate (C-005's barriers share technology and class; only the
+ * barrier text differs) is then told apart by its longer stated values, cut at
+ * 40 characters. Nothing is invented; records stating the same values keep the
+ * same name.
  */
 function disambiguateWideNamesV162(records: WideRecordV162[]): WideRecordV162[] {
-  const groups = new Map<string, number[]>();
-  records.forEach((record, index) => groups.set(record.name, [...(groups.get(record.name) || []), index]));
-  const suffixes: string[][] = records.map(() => []);
-  groups.forEach((indexes) => {
-    if (indexes.length < 2) return;
-    const candidates = new Map<string, string[]>();
-    indexes.forEach((index, position) => {
-      const record = records[index];
-      const pairs: Array<[string, string]> = record.blocks.flatMap((block) => block.values.filter((value) => !value.href).map((value) => [`${block.block}\u0000${value.attribute}`, value.value] as [string, string]));
-      if (record.source.document) pairs.push(["source\u0000document", record.source.document]);
-      for (const [key, value] of pairs) {
-        if (!value || value.length > 40 || value === record.name) continue;
-        const list = candidates.get(key) || indexes.map(() => "");
-        list[position] = value;
-        candidates.set(key, list);
-      }
-    });
-    const chosen: string[] = [];
-    for (let round = 0; round < 2; round += 1) {
-      const signature = (position: number, keys: string[]) => keys.map((key) => candidates.get(key)?.[position] || "").join("\u0001");
-      const distinctWith = (keys: string[]) => new Set(indexes.map((_, position) => signature(position, keys))).size;
-      if (chosen.length && distinctWith(chosen) === indexes.length) break;
-      let best: { key: string; distinct: number } | null = null;
-      candidates.forEach((values, key) => {
-        if (chosen.includes(key) || values.some((value) => !value)) return;
-        const distinct = distinctWith([...chosen, key]);
-        if (distinct > (chosen.length ? distinctWith(chosen) : 1) && (!best || distinct > best.distinct)) best = { key, distinct };
+  const names = records.map((record) => record.name);
+  for (const allowLong of [false, true, true]) {
+    const groups = new Map<string, number[]>();
+    names.forEach((name, index) => groups.set(name, [...(groups.get(name) || []), index]));
+    groups.forEach((indexes) => {
+      if (indexes.length < 2) return;
+      const suffixes = distinguishingValuesV162(records, indexes, allowLong);
+      indexes.forEach((index, position) => {
+        if (suffixes[position].length) names[index] = [names[index], ...suffixes[position]].join(" · ");
       });
-      if (!best) break;
-      chosen.push((best as { key: string }).key);
-    }
-    indexes.forEach((index, position) => {
-      suffixes[index] = chosen.map((key) => candidates.get(key)?.[position] || "").filter(Boolean);
     });
-  });
-  return records.map((record, index) => (suffixes[index].length ? { ...record, name: [record.name, ...suffixes[index]].join(" · ") } : record));
+  }
+  return records.map((record, index) => (names[index] !== record.name ? { ...record, name: names[index] } : record));
 }
 
 export function readWideRecordsV162(
@@ -257,7 +281,11 @@ export function readWideRecordsV162(
         })(),
       },
       get(block: string, attribute: string) {
-        const field = lookup.get(`${block}\u0000${attribute}`);
+        // A caller may name the column as the sheet prints it ("대상 연도 (년)");
+        // the format hint is not part of the attribute.
+        const field =
+          lookup.get(`${block}\u0000${attribute}`) ||
+          lookup.get(`${block}\u0000${attribute.replace(FORMAT_HINT_V162, "")}`);
         return field && !HIDDEN_ATTRIBUTE_V162.test(field.attribute) ? read(field) || null : null;
       },
     };

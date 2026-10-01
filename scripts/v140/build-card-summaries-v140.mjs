@@ -142,6 +142,9 @@ const OVERRIDES = {
   "D-013": { kind: "bars", series: { match: /차원\(dimension\) 점수/u } },
   "D-018": { kind: "bars", headlineSeries: /베트남 단독/u },
   "E-010": { measure: { label: "GERD" } },
+  // V162: NRI arrived with the overall index and four pillars, scores and
+  // ranks; the card leads with the overall score, as the detail does.
+  "E-011": { measure: { label: "NRI 2025", unit: "점수" }, series: { match: /^종합 점수$/u } },
   // The detail's 총 취업자 수 KPI is the all-occupation total (2024, 천명); the
   // 백만명 series stops at 2023 and would open the detail on a year with no
   // occupation rows.

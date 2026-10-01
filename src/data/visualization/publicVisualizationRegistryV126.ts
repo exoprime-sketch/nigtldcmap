@@ -95,6 +95,9 @@ const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
     // the province flux is the 2001–2024 total ("(누계)"); the "(연평균)"
     // measure is now the national series.
     "B-034": "measure-346324a32a6a",
+    // NRI 점수 - V162 delivered NRI scores and ranks under one label; the
+    // score is the index, the rank its position (as the home card).
+    "E-011": "measure-12a7feb401ad",
     // 총인구
     "A-007": "measure-be793786b249",
     // 총 GHG 배출량 · LULUCF 제외

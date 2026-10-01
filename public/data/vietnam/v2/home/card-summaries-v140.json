@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-10-01T07:09:25.887Z",
+ "generatedAt": "2026-10-01T07:33:19.480Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -18838,62 +18838,62 @@
    "elementId": "E-011",
    "title": "기술준비수준(TRL)",
    "headline": {
-    "value": "60 순위",
-    "label": "NRI 2025 · Governance 부문 순위 · 2025년"
+    "value": "56 점수",
+    "label": "NRI 2025 · 종합 점수 · 2025년"
    },
    "period": "2021–2025년",
    "selection": {
-    "measure": "measure-aa48265c21da",
+    "measure": "measure-12a7feb401ad",
     "sex": null,
     "year": 2025,
     "period": null,
     "dimensions": {
-     "detail": "Governance 부문 순위"
+     "detail": "종합 점수"
     }
    },
    "measure": {
-    "key": "measure-aa48265c21da",
+    "key": "measure-12a7feb401ad",
     "label": "NRI 2025",
-    "unit": "순위"
+    "unit": "점수"
    },
    "kind": "line",
    "preview": {
     "points": [
      {
       "year": 2021,
-      "value": 73
+      "value": 51.08
      },
      {
       "year": 2022,
-      "value": 76
+      "value": 51.07
      },
      {
       "year": 2023,
-      "value": 74
+      "value": 51.19
      },
      {
       "year": 2024,
-      "value": 67
+      "value": 54.96
      },
      {
       "year": 2025,
-      "value": 60
+      "value": 56
      }
     ],
-    "unit": "순위",
-    "seriesLabel": "Governance 부문 순위",
+    "unit": "점수",
+    "seriesLabel": "종합 점수",
     "first": {
      "year": 2021,
-     "value": 73
+     "value": 51.08
     },
     "latest": {
      "year": 2025,
-     "value": 60
+     "value": 56
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "NRI 2025(순위) Governance 부문 순위 계열 · 5개 연도 · 최신 2025년 값을 대표값으로"
+    "rule": "NRI 2025(점수) 종합 점수 계열 · 5개 연도 · 최신 2025년 값을 대표값으로"
    },
    "provider": "Portulans Institute",
    "mapConnected": false,
@@ -18903,14 +18903,14 @@
     "observationCount": 50,
     "entityCount": 0,
     "indicatorIds": [
-     "E-011_nri_governance_rank",
-     "E-011_nri_impact_rank",
-     "E-011_nri_overall_rank",
-     "E-011_nri_people_rank",
-     "E-011_nri_technology_rank"
+     "E-011_nri_governance_score",
+     "E-011_nri_impact_score",
+     "E-011_nri_overall_score",
+     "E-011_nri_people_score",
+     "E-011_nri_technology_score"
     ],
     "headlineIndicatorIds": [
-     "E-011_nri_governance_rank"
+     "E-011_nri_overall_score"
     ]
    }
   },

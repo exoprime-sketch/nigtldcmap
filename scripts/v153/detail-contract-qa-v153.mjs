@@ -51,7 +51,9 @@ const EXCLUDED_V156 = new Set(excludedElementIdsV156(JSON.parse(readFileSync(res
 const rows = contract.rows.filter((row) => (!ONLY || ONLY.includes(row.elementId)) && !EXCLUDED_V156.has(row.elementId));
 const AXIS_TYPES = new Set(["line", "stacked-area", "region-bar", "category-bar", "dumbbell", "heatmap"]);
 const NUMERIC_TYPES = AXIS_TYPES;
-const STATUS_IDS = new Set(["C-020", "C-021", "C-023", "E-011", "E-013"]);
+// V162: the status-note rows of the contract itself (E-011 left them when its
+// data arrived on 2026-09-30), not a fixed list.
+const STATUS_IDS = new Set(contract.rows.filter((row) => row.archetype === "status-note").map((row) => row.elementId));
 const unitAliases = JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/unitDisplayV150.json"), "utf8")).aliases || {};
 const displayUnit = (unit) => (unit ? unitAliases[unit] || unit : "");
 

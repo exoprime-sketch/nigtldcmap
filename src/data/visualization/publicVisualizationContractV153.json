@@ -5481,31 +5481,36 @@
       "elementId": "E-011",
       "displayType": "U1",
       "structure": "S1",
-      "archetype": "status-note",
+      "archetype": "national-series",
       "primary": {
-        "type": "status-note",
-        "title": "기술준비수준 자료 안내",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "line",
+        "title": "네트워크 준비지수(NRI) 추이",
+        "xAxis": "연도",
+        "yAxis": "NRI",
+        "unit": "점수"
       },
-      "secondary": [],
+      "secondary": [
+        {
+          "type": "table",
+          "title": "연도별 값"
+        }
+      ],
       "mapRole": "none",
       "benchmarks": [
         {
-          "name": "CTCN NDE / technical assistance directory",
-          "url": "https://www.ctc-n.org/file-download/download/public/25589"
+          "name": "Portulans Institute Network Readiness Index",
+          "url": "https://networkreadinessindex.org/"
         },
         {
-          "name": "UNFCCC Designated National Authorities",
-          "url": "https://unfccc.int/es/node/627860"
+          "name": "WIPO Global Innovation Index",
+          "url": "https://www.wipo.int/global_innovation_index/en/"
         }
       ],
       "status": "standard",
-      "note": "",
+      "note": "V162: 2026-09-30 납품으로 NRI 2021–2025(종합·4개 부문 점수·순위) 입고 — 상태 안내에서 국가 시계열로",
       "countryCompare": {
         "comparable": false,
-        "reason": "상태 안내만 있어 비교할 값이 없음"
+        "reason": "2026-09-30 신규 입고(기준서 v1.1의 54개 밖) — 비교 포함 여부는 PR-D 판단표에서 결정"
       }
     },
     {

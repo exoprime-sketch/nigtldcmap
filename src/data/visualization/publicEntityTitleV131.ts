@@ -460,6 +460,19 @@ function factualCompositeV131(
         ]),
       };
     }
+    case "B-044": {
+      // V162: the 2026-09-30 delivery names each row by its record key
+      // ("VNM_구리"); the mineral is in 광종(표준), filed under the 20-mineral
+      // list or as "기타(20종 외) - 구리".
+      const standard = normalizedFieldV131(entity, "광종_표준");
+      const mineral = standard ? standard.split(" - ").pop()!.trim() : null;
+      if (!mineral) return null;
+      return {
+        title: mineral,
+        nameAvailability: "available",
+        secondaryNote: `원천 광종 분류: ${standard}`,
+      };
+    }
     case "B-025": {
       // V162: 110 of the delivery's basins carry no name, only the HydroBASINS
       // main-basin id; the national row sums them. The id is the source's own
