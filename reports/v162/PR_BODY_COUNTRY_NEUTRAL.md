@@ -8,7 +8,7 @@
 | 3 나라별 문장 | 한 문장에 여러 나라 고유 내용이 섞인 23문장은 **국가 키별 문구**(`src/data/spec/countryTextSplitV162.json`, 원문의 그 나라 절만 남기고 어미만 맞춤)에서 현재 나라 것만 표시합니다. 다른 나라만 다룬 문장·괄호 설명·칩은 그 나라 화면에서만 보입니다. D-005 사례 2(방글라데시 예산)는 `countries: ["BGD"]`, D-008 '방글라데시: 부처별 기후예산' 칩은 BGD 화면에만 있습니다. 베트남 문구가 없으면 VNM 화면에 표시하지 않습니다. |
 | 4 국가 한정 용어 | 용어 풀이 항목에 **국가 태그**를 붙입니다(이름·정의에 나온 플랫폼 국가에서 자동 산출, 79개: VNM 78 · BGD 1). 태그가 있는 용어는 그 나라 화면에서만 풀이와 목록에 나옵니다(IEPMP → BGD). CCAC는 용어가 아니라 **정책 설명**(`policyDescriptionsV153.json`)에서 걸렸습니다. 같은 규칙을 설명 줄 단위로 적용했습니다(`policyDescriptionViewsV162.json`). 'UNEP과 방글라데시 등 6개 창립국' → 'UNEP과 6개 창립국'이 되고, '베트남 2017년 파트너로 가입' 줄은 VNM 화면에만 남습니다. |
 | 5 정정 기록 | 바뀐 문장 241건의 나라별 전후는 `docs/handoff/v162/COUNTRY_TEXT_VIEWS_V162.md`(v1.2 정정표 원천)와 `reports/v162/country-text-views-v162.json`에 있습니다. `SPEC_TEXT_CORRECTIONS.md`에 V162 절과 안내를 넣었습니다. |
-| 6 게이트 | `finalize:v151`에서 `--expect-fail other-country-names`를 지웠습니다. |
+| 6 게이트 | `finalize:v151`에서 `--expect-fail other-country-names`를 지웠습니다. **게이트는 CI로 옮겼습니다**: `ci.yml`의 `gate` 작업(pull_request·workflow_dispatch)이 npm ci → 빌드 → `finalize:v151`(acceptance 포함)을 돌리고, timeout은 150분입니다. Playwright·Chrome 설정은 기존 작업 것을 썼습니다. `acceptance-v162.json`과 finalize 로그는 artifact로 올라가고, gate-lock은 CI(`CI=true`)에서 잠금 없이 통과합니다. CLAUDE.md 규칙도 바꿨습니다(전체 게이트는 PR의 CI `gate`로, 로컬은 필터 검사만). |
 
 ## Preview
 PREVIEW_URL
@@ -75,7 +75,10 @@ PREVIEW_URL
 - C-008 정책 설명(CCAC 줄), 이용안내 용어 목록(IEPMP 1개 제외)
 
 ## 그 밖에
-- **gate-lock 보완**: 보유 프로세스가 살아 있는 잠금은 2시간이 지나도 만료하지 않고, 프로세스가 끝난 잠금은 바로 만료합니다. 아래 '게이트 실행 기록'의 사고 때문입니다.
+- **gate-lock 보완**:
+  - 보유 프로세스가 살아 있는 잠금은 2시간이 지나도 만료하지 않고, 프로세스가 끝난 잠금은 바로 만료합니다.
+  - 사고 경위: 로컬 게이트 대기 작업을 멈췄을 때 node 자식(옛 코드)이 남았고, 다른 세션의 실행 중 잠금을 2시간 만료로 지운 뒤 함께 실행됐습니다. 즉시 종료했고, 잠금 파일은 지시대로 그대로 두었습니다.
+  - 로컬 게이트는 이후 돌리지 않았습니다(메모리 부족으로 대기 작업도 중단됨).
 - **V162와 겹치는 파일**: `package.json`(다른 줄)·`countrySpecV158.ts`(V162는 카드·유형 함수, 이 PR은 명세 문구 로더)로 덩어리가 서로 다릅니다.
 - **남은 제한**:
   - ASAP 정책 설명의 '방글라데시·부탄·…·베트남 등에서 …' 줄은 목록에 대상 밖 나라(부탄·네팔)가 섞여 나라 수 문장으로 바꿀 수 없습니다. 그래서 VNM 화면에서 뺐습니다.

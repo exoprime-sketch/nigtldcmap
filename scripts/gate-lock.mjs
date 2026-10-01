@@ -20,6 +20,8 @@
  * - A command already running inside a lock (a gate that calls another gate,
  *   e.g. finalize:v151 -> qa:acceptance:v162) inherits it through
  *   NIGT_GATE_LOCK_HELD and does not wait for itself.
+ * - In CI (CI=true, a fresh runner per job) there is no other gate on the
+ *   machine: the command runs at once, without a lock (V162 'gate' job).
  */
 import { spawn, execSync } from "node:child_process";
 import { closeSync, existsSync, openSync, readFileSync, unlinkSync, writeSync } from "node:fs";
@@ -124,7 +126,9 @@ async function acquire() {
   }
 }
 
-const inherited = Boolean(process.env.NIGT_GATE_LOCK_HELD);
+const inCi = process.env.CI === "true" || process.env.GITHUB_ACTIONS === "true";
+const inherited = Boolean(process.env.NIGT_GATE_LOCK_HELD) || inCi;
+if (inCi && !process.env.NIGT_GATE_LOCK_HELD) console.log(`[gate-lock] CI: running "${name}" without a lock`);
 if (!inherited) {
   await acquire();
   console.log(`[gate-lock] acquired for "${name}" (${LOCK_PATH})`);
