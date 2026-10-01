@@ -170,7 +170,9 @@ export function regionScenarioShapeV138(
 ): RegionScenarioShapeV138 | null {
   // V162: one system per summary - a sheet with the 63 pre-2025 provinces
   // reads those rows only; its 34-unit rows would count each place twice.
-  const entities = rowsForPreReformViewV162(sourceEntities);
+  // …and annual rows only: the monthly normals the 2026-09-30 delivery adds
+  // (indicator *_monthly_clim_*) are a seasonal cycle, not a year series.
+  const entities = rowsForPreReformViewV162(sourceEntities).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || "")));
   assertSingleRegionSystemV162(entities, "region summary");
   if (entities.length < 2) return null;
   const provinceYearsByMeasure = new Map<string, Set<number>>();
@@ -346,7 +348,10 @@ export default function PublicRegionScenarioSummaryV138({
   onSelectorStateChange,
 }: Props) {
   // V162: the same one-system rows as the shape (see regionScenarioShapeV138).
-  const entities = useMemo(() => rowsForPreReformViewV162(sourceEntities), [sourceEntities]);
+  const entities = useMemo(
+    () => rowsForPreReformViewV162(sourceEntities).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || ""))),
+    [sourceEntities]
+  );
   // V162 (P12-B): region labels as the reader sees them ("한글명 (현지명)",
   // reviewed names only); the keys stay the source spelling.
   const regionText = useRegionTextV162(elementId);

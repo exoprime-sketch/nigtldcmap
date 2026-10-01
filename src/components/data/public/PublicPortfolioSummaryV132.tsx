@@ -359,6 +359,11 @@ export default function PublicPortfolioSummaryV132({
         {analysis.categories.length > 0 && (
           <section className="d153-block" data-analysis-block="category-bar">
             <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+            {analysis.uncategorizedCount > 0 ? (
+              <p className="pps132-note" data-testid="portfolio-uncategorized-v162">
+                {analysis.categoryKeyLabel || "분류"}가 기재되지 않은 {analysis.uncategorizedCount.toLocaleString("ko-KR")}건은 이 구성에 넣지 않았습니다.
+              </p>
+            ) : null}
           </section>
         )}
         {analysis.years.length > 0 && (
@@ -459,16 +464,36 @@ function portfolioAnalysisV132(
   const definitionCount = roles.filter((role) => role.role === "definition").length;
   const definitionLabel = roles.find((role) => role.role === "definition")?.label || null;
 
+  // V162: one classification per chart. The column is chosen for the element
+  // (the first reviewed key any record states as a name, not a code), and a
+  // record without it is counted apart - never under the next column. D-022's
+  // AIIB and IFC rows (2026-09-30) carry no DAC sector and had been charted by
+  // their 투자 유형 ("차관") among the DAC sectors.
+  const elementCategoryKeyV162 = (PORTFOLIO_CONFIG_V132[elementId]?.categoryKeys || []).find((key) =>
+    individual.some((entity) => {
+      const value = publicTextV126(publicPortfolioFacetV132(elementId, entity, detailTemplate).attributes?.[key]);
+      return Boolean(value) && !isNumericCodeListV136_2(value as string);
+    })
+  );
+  let uncategorizedCount = 0;
+
   individual.forEach((entity) => {
     const facet = publicPortfolioFacetV132(elementId, entity, detailTemplate);
     const year = facet.year;
     if (year) years.set(String(year), (years.get(String(year)) || 0) + 1);
 
-    const category = facet.category;
+    const elementValue = elementCategoryKeyV162 ? publicTextV126(facet.attributes?.[elementCategoryKeyV162]) : null;
+    const category = elementCategoryKeyV162
+      ? elementValue && !isNumericCodeListV136_2(elementValue)
+        ? elementValue
+        : null
+      : facet.category;
     if (category) {
       // Counted under the source's own value. Turning that into something a
       // reader recognises happens later, on the way to the screen.
       categories.set(category, (categories.get(category) || 0) + 1);
+    } else if (elementCategoryKeyV162) {
+      uncategorizedCount += 1;
     }
     (PORTFOLIO_CONFIG_V132[elementId]?.categoryKeys || []).forEach((key) => {
       const value = publicTextV126(facet.attributes?.[key]);
@@ -497,6 +522,8 @@ function portfolioAnalysisV132(
     sourceRowCount: entities.length,
     years: yearRows,
     categories: categoryRowsV136_3(categories),
+    uncategorizedCount,
+    categoryKeyLabel: elementCategoryKeyV162 ? portfolioCategoryKeyLabelV142(elementId, elementCategoryKeyV162) : null,
     categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: portfolioCategoryKeyLabelV142(elementId, key), rows: categoryRowsV136_3(counts) }))
       .filter((entry): entry is { key: string; label: string; rows: CountRowV132[] } => entry.label !== null && entry.rows.length >= 2),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),

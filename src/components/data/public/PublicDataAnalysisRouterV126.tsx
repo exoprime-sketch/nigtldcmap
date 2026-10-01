@@ -34,6 +34,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
+import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125 } from "../../../types/dataFinderV125";
 import SemanticArchetypePreviewV125 from "../semantic/SemanticArchetypePreviewV125";
 import type {
   E012OccupationMeasureKeyV125,
@@ -228,6 +229,9 @@ export default function PublicDataAnalysisRouterV126({
   const copy = publicElementCopyV126(elementId, publicRenderer, dataCountryV158);
   const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), dataCountryV158);
   const analysisTitle = headings?.publicAnalysisTitle || copy.title;
+  const [nationalSeriesSelectorV162, setNationalSeriesSelectorV162] = useState<DataFinderSelectorStateV125>(
+    EMPTY_DATA_FINDER_SELECTOR_STATE_V125
+  );
   const semanticRows = useMemo(
     () =>
       buildSemanticObservationsV125(
@@ -553,6 +557,8 @@ export default function PublicDataAnalysisRouterV126({
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
+  // The national series below the distribution keeps its own selection, so
+  // choosing a measure in one view never resets the other.
   const regionWithNationalSeriesV162 =
     !earlyBody && regionScenarioSummary && semanticRows.length > 0 && publicRegionScenarioContractV138(elementId) ? (
       <>
@@ -565,8 +571,8 @@ export default function PublicDataAnalysisRouterV126({
           countryNameKo={countryNameKo}
           detailTemplate={detailTemplate}
           elementTitle={copy.title}
-          selectorState={selectorState}
-          onSelectorStateChange={onSelectorStateChange}
+          selectorState={nationalSeriesSelectorV162}
+          onSelectorStateChange={setNationalSeriesSelectorV162}
           showRawTable={false}
         />
       </>
