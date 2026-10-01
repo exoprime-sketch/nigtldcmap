@@ -624,6 +624,10 @@ const PUBLIC_GEOGRAPHIC_OR_DOCUMENT_FRAGMENTS_V134 = Object.freeze([
   // V162: section numbers of the cited strategy (C-004 "§III.2.b") and the
   // JETP Political Declaration, printed as "PD" beside its full title.
   "III.2",
+  // V162: annex section numbers of Decision 42/2026/QĐ-TTg on C-022's card
+  // ("부속서 III.A 건설부 소관 교통"), printed as the decision numbers them.
+  "III.A",
+  "III.B",
   "IV.2",
   "PD",
   "II",

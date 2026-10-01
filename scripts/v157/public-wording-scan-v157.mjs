@@ -75,11 +75,21 @@ const DICTIONARY_CITATIONS_V162 = Object.entries(
   JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/osmClassLabelsV162.json"), "utf8")).labels
 ).map(([value, ko]) => `${ko} (${value})`);
 
+/**
+ * V162: words the sources themselves print that only look like identifiers -
+ * an English compound in a facility's own name (A-025 "VAPCO Vung Ang II
+ * coal-fired power plant") and an organisation's own spelling in a dataset
+ * credit (B-029 "Aberystwyth Univ. · soloEO · Wetlands International"). Each
+ * is matched with the words around it, so the same token elsewhere still counts.
+ */
+const SOURCE_PROPER_WORDING_V162 = ["Vung Ang II coal-fired power plant", "Aberystwyth Univ. · soloEO"];
+
 /** The text a reader sees, with its citations lifted out. */
 function withoutCitationsV157(text) {
   let value = String(text || "").normalize("NFC");
   for (const pattern of CITATION_V157) value = value.replace(pattern, " ");
   for (const citation of DICTIONARY_CITATIONS_V162) value = value.split(citation).join(" ");
+  for (const wording of SOURCE_PROPER_WORDING_V162) value = value.split(wording).join(" ");
   return value;
 }
 

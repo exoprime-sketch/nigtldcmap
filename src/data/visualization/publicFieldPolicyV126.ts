@@ -894,8 +894,11 @@ export function publicTextV126(value: unknown): string | null {
  * separate the parts), and only the parts that name a real source remain.
  */
 const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+// V162: the 2026-09-30 attribution lines add the compiler's correction and
+// review memos - "[원천 정정] 종전 source_series_id …", "[DoD S-07 잠정] …
+// 재판정", "(근거: source_url …)" - written with the sheet's column names.
 const SOURCE_WORKING_NOTE_V161 =
-  /확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
+  /\[원천\s*정정\]|\[DoD\b|\b(?:source|license)_[a-z_]+\b|확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
 /** Parts of one source line: "A / B", "공개 원천: A | 현지조사: B". */
 const SOURCE_PART_SEPARATOR_V161 = /(\s+[|/]\s+)/u;
 /** The compiler's label in front of a part ("공개 원천: CTCN"). */

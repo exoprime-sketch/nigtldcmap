@@ -2,7 +2,7 @@ import { formatRegionName, formatRegionTextV162 } from "../geo/regionNameV161";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
 import { formatPublicNumberV126 } from "./publicNumberFormatV126";
-import { publicSourceUrlV126 } from "./publicFieldPolicyV126";
+import { publicRecordNoteV161, publicSourceUrlV126 } from "./publicFieldPolicyV126";
 
 /**
  * V153: one label-form card for every facility, organisation and project.
@@ -180,7 +180,9 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     const href = publicSourceUrlV126(text(raw)) || undefined;
     return href ? { key: field.key, label: field.label, value: href.replace(/^https?:\/\//u, "").replace(/\/$/u, ""), href, missing: false } : missing;
   }
-  const value = text(raw);
+  // V162: a note field reads like any record note - the compiler's coding
+  // memo ("tech_id 공란(별첨2 R4: 억지 매핑 금지)") is not the record's content.
+  const value = field.key === "note" ? text(publicRecordNoteV161(text(raw) || "")) : text(raw);
   return value ? { key: field.key, label: field.label, value, missing: false } : missing;
 }
 

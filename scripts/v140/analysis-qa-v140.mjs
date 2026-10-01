@@ -370,8 +370,11 @@ function recompute(card) {
     const individual = entities.filter((row) => clean(attr(row, "레코드구분")) === "개별");
     return finish(individual.length, entities.length, "rows with 레코드구분=개별");
   }
-  if (card.elementId === "C-007" && entities.length) {
-    const row = entities.find((entity) => /등재 NMA 건수/u.test(clean(attr(entity, "속성1_레코드명"))));
+  // V162: the 2026-09-30 wide sheet has no "등재 NMA 건수" row; its card
+  // counts records and is recounted by the entity-rows rule below.
+  const c007CountRow = card.elementId === "C-007" ? entities.find((entity) => /등재 NMA 건수/u.test(clean(attr(entity, "속성1_레코드명")))) : null;
+  if (card.elementId === "C-007" && c007CountRow) {
+    const row = c007CountRow;
     const value = numberOf(attr(row, "속성3_값"));
     return value === null ? { status: "no-matching-row", note: "no 등재 NMA 건수 row" } : finish(value, entities.length, "the 참여당사국 등재 NMA 건수 row");
   }

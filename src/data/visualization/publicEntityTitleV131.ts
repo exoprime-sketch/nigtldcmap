@@ -1,3 +1,4 @@
+import { OSM_CLASS_KO_V162, osmClassLabelV162 } from "./osmClassLabelsV162";
 import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
@@ -270,6 +271,24 @@ function koreanInstrumentalV137(text: string): string {
   return finalJamo === 0 || finalJamo === 8 ? "로" : "으로";
 }
 
+/** A place name written without its spaces: "KiênGiang", "HoChiMinh". */
+function squashedNameV162(value: string): boolean {
+  return !/\s/u.test(value) && /\p{Ll}\p{Lu}/u.test(value);
+}
+
+/** The same place once spaces, marks and case are set aside. */
+function sameLettersV162(left: string, right: string): boolean {
+  const letters = (value: string) =>
+    value.normalize("NFD").replace(/\p{M}/gu, "").replace(/[đĐ]/gu, "d").replace(/[^\p{L}]/gu, "").toLowerCase();
+  const a = letters(left);
+  const b = letters(right);
+  return a === b || a.endsWith(b) || b.endsWith(a);
+}
+
+function unsquashNameV162(value: string): string {
+  return value.replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
+}
+
 function regionYearCompositeV137(
   entity: VietnamEntityV124
 ): FactualTitleV131 | null {
@@ -277,18 +296,29 @@ function regionYearCompositeV137(
   // V162: common column names first (지역명_현지어, 개편_후_소속_단위), then
   // the pre-V162 Viet Nam names. A row of the post-2025 34-unit system says so,
   // so it never reads as the pre-2025 province of the same name.
-  const regionName =
-    titleTextV131(attributes["지역명_로마자"]) ||
-    titleTextV131(attributes["지역명_현지어"]) ||
-    titleTextV131(attributes["지역명_베트남어"]) ||
+  // V162: the 2026-09-30 delivery writes some names with the spaces (and a
+  // leading "Đ") dropped - "ongNai", "KiênGiang" in 지역명_로마자/지역명. A
+  // squashed name gives way to a spaced one from another column of the same
+  // row; when every column is squashed, the words are parted where a lower-
+  // case letter meets a capital. Letters are never added.
+  const regionCandidates = [
+    titleTextV131(attributes["지역명_로마자"]),
+    titleTextV131(attributes["지역명_현지어"]),
+    titleTextV131(attributes["지역명_베트남어"]),
     // B-002, B-024, B-035, B-036 name the province in "지역명"; the 34-unit
     // parent below would put a merged province under its successor's name.
-    titleTextV131(attributes["지역명"]) ||
-    titleTextV131(attributes["개편_후_소속_단위"]) ||
-    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]) ||
+    titleTextV131(attributes["지역명"]),
+    titleTextV131(attributes["개편_후_소속_단위"]),
+    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]),
     // B-008's rows are tide-gauge stations, not provinces.
-    titleTextV131(attributes["관측소명_PSMSL"]) ||
-    titleTextV131(attributes["관측소명"]);
+    titleTextV131(attributes["관측소명_PSMSL"]),
+    titleTextV131(attributes["관측소명"]),
+  ].filter((value): value is string => Boolean(value));
+  const firstRegion = regionCandidates[0] || null;
+  const regionName = firstRegion && squashedNameV162(firstRegion)
+    ? regionCandidates.slice(1, 4).find((value) => !squashedNameV162(value) && sameLettersV162(value, firstRegion)) ||
+      unsquashNameV162(firstRegion)
+    : firstRegion;
   const region =
     regionName && /개편 후|체계/u.test(titleTextV131(attributes["행정단위"]) || "")
       ? `${regionName}(2025년 개편 후)`
@@ -458,6 +488,18 @@ function factualCompositeV131(
         identifierFacts: factualIdentifierRowsV131([
           ["EM-DAT 재해번호", normalizedFieldV131(entity, "EM_DAT_재해번호_DisNo")],
         ]),
+      };
+    }
+    case "A-028": {
+      // V162: the 2026-09-30 register names each OSM feature by its class value
+      // only ("cave_entrance", "peak"); it reads as the platform's OSM class
+      // table writes it - "동굴 입구 (cave_entrance)" - as A-027's classes do.
+      const value = titleTextV131(entity.name);
+      if (!value || !OSM_CLASS_KO_V162[value]) return null;
+      return {
+        title: osmClassLabelV162(value),
+        nameAvailability: "available",
+        secondaryNote: "원천이 개별 명칭 대신 OpenStreetMap 분류값으로 행을 구분합니다.",
       };
     }
     case "B-044": {
