@@ -165,7 +165,15 @@ try {
   await waitForValue(cdp, `Boolean(document.querySelector('.global-search-v41-input-wrap input'))`, { timeoutMs: 10_000 });
   const control = publicSet.find((element) => String(element.elementLabel || "").length >= 4);
   if (control) {
-    const ids = await runSearch(String(control.elementLabel));
+    let ids = await runSearch(String(control.elementLabel));
+    // V162 (CI run 6): the first query also loads the search index; on a slow
+    // runner it outlasts the 0.9 s settle. The control waits until its own
+    // element appears (or 20 s pass); the excluded queries below then run
+    // against a loaded index with the same settle as before.
+    if (!ids.includes(control.elementId)) {
+      await waitForValue(cdp, `[...document.querySelectorAll('.global-search-v128-result[data-element-id]')].some((node) => node.getAttribute('data-element-id') === ${JSON.stringify(control.elementId)})`, { timeoutMs: 20_000 }).catch(() => null);
+      ids = await evaluateValue(cdp, `[...document.querySelectorAll('.global-search-v128-result[data-element-id]')].map((node) => node.getAttribute('data-element-id'))`);
+    }
     searchControl = { elementId: control.elementId, query: control.elementLabel, found: ids.includes(control.elementId) };
   }
   for (const element of excluded) {

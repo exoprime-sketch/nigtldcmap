@@ -88,3 +88,4 @@
 | 식별자 스캔(`public-wording-scan-v157`) | — | 원문 고유 표기 2건을 주변 단어째로 인용 처리(A-025 시설 원명 'Vung Ang II coal-fired power plant', B-029 기관명 'Aberystwyth Univ. · soloEO') | 프로그램 식별자가 아닌 원천 표기. 같은 토큰이 다른 곳에 나오면 계속 잡힘 |
 | 인수 게이트 '다른 나라 국명 0'(`acceptance-v162.mjs`) | 화면 전체 문자열 | 납품 레코드 값(레코드 카드·가로형 카드·원자료 표)은 제외, 플랫폼 문구는 그대로 0건 | 사용자 결정(2026-10-02). C-013 원자료의 베트남 양자투자협정 상대국 'Bangladesh - Viet Nam BIT (2005)'는 사실값 — 숨기면 데이터 삭제 |
 | `audit:public-naming:v131` 모듈 로더(검사 도구) | 상대 import는 모두 TypeScript로 변환 | src/ 안의 .json import는 데이터로 읽음(그 외 규칙 동일: src 밖 import 거부) | A-028 제목이 OSM 분류 사전(JSON)을 읽게 되어 로더가 'Output generation failed'로 정책 모듈을 못 불러옴(CI 5회차). 판정 규칙 변경 없음, 로컬 10/10 |
+| `audit:exclusions:v156` 검색 대조(검사 도구, 환경 예산) | 첫 검색 후 0.9초 고정 대기 | 대조 요소(A-001)가 결과에 나타날 때까지 최대 20초 대기(검색 색인 적재), 제외 요소 검색은 그 뒤 기존과 같은 대기 | CI 6회차 러너에서 첫 검색이 색인 적재로 늦어 대조 요소가 '없음'으로 읽힘. 로컬은 13/13. 판정식 동일 |
