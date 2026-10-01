@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T12:32:43.568Z",
+  "generatedAt": "2026-10-01T03:14:56.238Z",
   "summary": {
     "type": "summary",
     "audit": "acceptance:v162",
@@ -10,11 +10,11 @@
     "notLiveChecked": [
       "BGD"
     ],
-    "passed": 17,
+    "passed": 22,
     "failed": 0,
     "expected": 3,
-    "skipped": 0,
-    "total": 20,
+    "skipped": 1,
+    "total": 26,
     "failedChecks": [],
     "expectedChecks": [
       "VNM:map-pending",
@@ -86,6 +86,54 @@
         "E-011",
         "E-013"
       ],
+      "source": null
+    },
+    {
+      "country": "VNM",
+      "area": "finder",
+      "id": "finder-sort-default",
+      "title": "찾기 기본 정렬 = 가나다순(미입고는 끝)",
+      "status": "PASS",
+      "actual": {
+        "mode": "name",
+        "nameSorted": true,
+        "preparingLast": true,
+        "cards": 146,
+        "first": [
+          "A-016",
+          "D-003",
+          "B-005"
+        ]
+      },
+      "expected": {
+        "mode": "name",
+        "nameSorted": true,
+        "preparingLast": true
+      },
+      "source": null
+    },
+    {
+      "country": "VNM",
+      "area": "finder",
+      "id": "finder-sort-views",
+      "title": "조회순 선택 시 조회수 순으로 순서 변경(시험 조회수 주입)",
+      "status": "PASS",
+      "actual": {
+        "enabled": true,
+        "mode": "views",
+        "orderMatches": true,
+        "orderChanged": true,
+        "first": [
+          "E-009",
+          "A-015",
+          "A-013"
+        ]
+      },
+      "expected": {
+        "mode": "views",
+        "orderMatches": true,
+        "orderChanged": true
+      },
       "source": null
     },
     {
@@ -236,6 +284,41 @@
     },
     {
       "country": "VNM",
+      "area": "wording",
+      "id": "other-country-names",
+      "title": "다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외)",
+      "status": "PASS",
+      "actual": {
+        "hits": 0,
+        "detailPages": 146,
+        "first": []
+      },
+      "expected": {
+        "hits": 0,
+        "terms": [
+          "방글라데시",
+          "Bangladesh"
+        ]
+      },
+      "source": "reports/v162/other-country-names-v162.json"
+    },
+    {
+      "country": "VNM",
+      "area": "wording",
+      "id": "core-word",
+      "title": "'핵심' 표현 0(지도 화면, scan-core-word-v157)",
+      "status": "PASS",
+      "actual": {
+        "hits": [],
+        "layers": 72
+      },
+      "expected": {
+        "hits": []
+      },
+      "source": "scan-core-word-v157"
+    },
+    {
+      "country": "VNM",
       "area": "numbers",
       "id": "home-total",
       "title": "홈 전체 데이터 항목 = 카탈로그 공개 요소",
@@ -278,15 +361,15 @@
       "country": "VNM",
       "area": "numbers",
       "id": "data-date",
-      "title": "데이터 기준일 = 원자료 입고일",
+      "title": "데이터 기준일 = 원자료 입고일(국가별 provenance)",
       "status": "EXPECTED",
       "actual": {
         "shown": "2026.08.27",
         "manifestGeneratedAt": "2026-08-27T00:00:00Z"
       },
       "expected": {
-        "deliveredAt": "2026-09-22",
-        "source": "reports/v156/refresh-v156.json"
+        "deliveredAt": null,
+        "source": "(provenance 없음 - V162에서 추가)"
       },
       "source": null
     },
@@ -307,6 +390,24 @@
       "source": "review-runtime-v150 --only responsive"
     },
     {
+      "country": "VNM",
+      "area": "smoke",
+      "id": "production-smoke",
+      "title": "운영 smoke(국가별, 이 빌드)",
+      "status": "PASS",
+      "actual": {
+        "exit": 0,
+        "runtimeFailure": null,
+        "routeFailures": 0,
+        "assetFailures": 0,
+        "consoleErrors": 0
+      },
+      "expected": {
+        "exit": 0
+      },
+      "source": "smoke:production:v128 --country"
+    },
+    {
       "country": "BGD",
       "area": "country",
       "id": "country-fallback-wording",
@@ -325,6 +426,16 @@
       "actual": 146,
       "expected": 146,
       "source": null
+    },
+    {
+      "country": "BGD",
+      "area": "smoke",
+      "id": "production-smoke",
+      "title": "운영 smoke(국가별)",
+      "status": "SKIP",
+      "actual": "공개 전(preparing) - 공개 후 실행",
+      "expected": "live",
+      "source": "smoke:production:v128 --country"
     }
   ]
 }

@@ -3,7 +3,7 @@
 React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 provider는 베트남 파일럿(152개 데이터 항목, 지도 대상 43개 중 42개 활성). 배포는 Vercel(nigtldcmap.vercel.app). 사용자와의 대화·보고서·커밋 본문은 한국어(개조식), 코드 주석은 영어 유지.
 
 ## 절대 규칙
-- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건: 로컬 `finalize:v140` 통과(analysis QA는 41건 기준선 이내) + Vercel Preview Ready + 사용자 승인. GitHub CI는 merge를 막지 않되 **main에서 반드시 녹색**이어야 하며, 빨강이면 다음 PR을 시작하기 전에 fix-forward로 먼저 고친다.
+- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건: PR의 CI `gate` 작업(`finalize:v151`, acceptance 포함) 통과(analysis QA는 41건 기준선 이내) + Vercel Preview Ready + 사용자 승인. GitHub CI는 merge를 막지 않되 **main에서 반드시 녹색**이어야 하며, 빨강이면 다음 PR을 시작하기 전에 fix-forward로 먼저 고친다.
 - **병합은 사용자가 Preview를 직접 검토한 뒤 "PR #N 병합"이라고 명시한 경우에만.** 게이트 통과·검토자 '승인 권고'·앞선 일반 승인만으로 병합하지 않는다. PR 보고에는 ① Preview URL ② 화면이 바뀌는 페이지 목록과 확인 경로(URL·클릭 순서) ③ 바뀐 화면 전후 캡처(1440px)를 넣고, 화면 변화가 없으면 '화면 변화 0'이라고 쓴다. (2026-09-29, #34 운영 수동 복구 후)
 - 게이트·감사 스크립트의 기대값을 현재값으로 바꿔 통과시키지 않는다. 기대값 변경은 사유를 `reports/v15x/`에 기록.
 - 데이터 조작 금지: 결측 0 대체, 임의 경계·좌표 생성, 추정 분야 채움, 출처 간 중복 합산 금지. 원자료에 없는 값은 만들지 않는다.
@@ -28,11 +28,11 @@ npm run release:vietnam-pilot    # PR 전 최종
 ```
 - 화면 검증은 production 형식 빌드(`GENERATE_SOURCEMAP=false`, `BUILD_PATH=tmp/build-v15x-review`)를 정적 서버로 띄워 실제 브라우저(Playwright Chromium)로 한다. 루트 ready 신호만으로 합격 처리하지 않는다.
 - 무거운 게이트는 gate-lock으로 한 번에 1개: `finalize:v151`·`qa:acceptance:v162`·`p5:final`·`e2e`는 `scripts/gate-lock.mjs`(잠금 `~/.nigt-gate.lock`)로 감싸 다른 세션의 게이트가 끝날 때까지 기다린다. 다른 무거운 명령도 `node scripts/gate-lock.mjs -- <명령>`으로 실행한다.
-- 보고 전에는 통합 인수 게이트 `npm run qa:acceptance:v162 -- --build <빌드>`(국가별, `finalize:v151`에 포함)를 실행하고 `reports/v162/acceptance-v162.md`의 실패·예상 실패를 보고에 적는다.
+- **전체 게이트는 PR의 CI `gate` 작업으로(2026-10-01).** `.github/workflows/ci.yml`의 `gate`가 pull_request·workflow_dispatch에서 빌드 → `finalize:v151`(통합 인수 게이트 `qa:acceptance:v162` 포함)을 돌리고 `acceptance-v162.json`·finalize 로그를 artifact로 올린다. 로컬은 `--ids`·`--layers`·`--skip` 같은 필터 검사만 하고 전체 게이트(`finalize:*`·`qa:acceptance:v162` 전체)는 돌리지 않는다. 실패하면 원인만 고쳐 push해 CI를 다시 돌리고, 보고에는 CI 링크와 `acceptance-v162.md`의 실패·예상 실패를 적는다.
 - 반응형은 320/390/768/1024/1440/1920px 6폭에서 문서 가로 넘침 0을 확인한다.
 
 ## 속도 규칙(세션당 목표 ≤3시간)
-- 개발 중 검증은 **바뀐 항목만**: `qa:detail-contract:v153 --ids …`, `review:screens:v138 --ids …`, `qa:map:v138 --layers …`처럼 필터 실행. 전체 `finalize:v140`은 PR 직전 **1회**.
+- 개발 중 검증은 **바뀐 항목만**: `qa:detail-contract:v153 --ids …`, `review:screens:v138 --ids …`, `qa:map:v138 --layers …`처럼 필터 실행. 전체 게이트는 PR의 CI `gate` 작업에서만.
 - GitHub CI는 세션 안에서 기다리거나 반복 수정하지 않는다(merge 조건 아님). 실패는 다음 세션 시작 시 fix-forward. 환경성 실패(러너 속도·파일 쓰기)는 스크립트에 예산·재시도를 넣고 기록.
 - 서로 다른 파일을 만지는 항목 묶음은 **worktree 서브에이전트로 병렬**(Sonnet), 메인(Opus)은 계약·라우터·병합·검수만. 같은 파일(`RealMapExplorerPage.tsx`, 라우터, 계약 JSON)은 메인만 편집.
 - 한 게이트를 2회 넘게 반복하면 멈추고 원인·대안을 보고한다(재시도로 통과 금지).

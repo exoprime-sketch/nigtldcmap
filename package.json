@@ -210,6 +210,7 @@
     "qa:analysis:v140:baseline": "node scripts/v140/analysis-qa-v140.mjs --baseline reports/v150/analysis-qa-baseline-v150.json",
     "qa:detail-contract:v153": "node scripts/v153/detail-contract-qa-v153.mjs",
     "import:spec:v159": "node scripts/v159/import-dataset-spec-v159.mjs",
+    "build:policy-country-views:v162": "node scripts/v162/build-policy-country-views-v162.mjs",
     "check:spec:v159": "node scripts/v159/import-dataset-spec-v159.mjs --check",
     "check:contract-typology:v159": "node scripts/v159/align-contract-typology-v159.mjs --check",
     "build:handoff:v159": "node scripts/v159/build-typology-handoff-v159.mjs",

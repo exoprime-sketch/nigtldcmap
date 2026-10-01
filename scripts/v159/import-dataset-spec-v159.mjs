@@ -24,6 +24,7 @@
 import { spawnSync } from "node:child_process";
 import { exclusionDecisionsV158 } from "../v158/exclusion-decisions-v158.mjs";
 import { readZipMembersV158 } from "../v158/download-zip-v158.mjs";
+import { loadCountryNamesV162, makeCountryViewsV162 } from "../v162/country-neutral-v162.mjs";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -44,6 +45,11 @@ const OUT_DIR = resolve(ROOT, "src/data/spec");
 const REPORT_DIR = resolve(ROOT, "reports/v159");
 const RULES = JSON.parse(readFileSync(resolve(OUT_DIR, "sourceLabelRulesV159.json"), "utf8"));
 const PENDING_CASES_PATH = resolve(OUT_DIR, "useCasesPendingV159.json");
+// V162: the country-keyed wording of sentences that carry several platform
+// countries' own content (country-neutral-v162.mjs rule 3).
+const COUNTRY_SPLIT = JSON.parse(readFileSync(resolve(OUT_DIR, "countryTextSplitV162.json"), "utf8")).entries;
+const COUNTRY_VIEWS_DOC = resolve(ROOT, "docs/handoff/v162/COUNTRY_TEXT_VIEWS_V162.md");
+const DEFAULT_COUNTRY = "VNM";
 const OVERRIDES = JSON.parse(readFileSync(resolve(OUT_DIR, "specTextOverridesV159.json"), "utf8")).overrides;
 const CORRECTIONS_DOC = resolve(ROOT, "docs/handoff/v159/SPEC_TEXT_CORRECTIONS.md");
 const appliedOverrides = new Set();
@@ -58,7 +64,7 @@ const LIFTED_EXCLUSIONS = new Map((EXCLUSION_DECISION.lifted || []).map((row) =>
 
 // A recorded minimal correction replaces the workbook text only where its
 // `from` occurs exactly once in that field; anything else stops the import.
-// Use-case fields (caution, dataUsed) name the case: `caseNo` in the override.
+// Use-case fields (caution, dataUsed, logic, storyline) name the case: `caseNo` in the override.
 function applyOverride(elementId, field, value, caseNo = null) {
   let out = value;
   OVERRIDES.forEach((item, index) => {
@@ -223,13 +229,9 @@ function cautionForRegistry(caution, countries, registry) {
     return `${next}${particle ? particleFor(next, particle) : ""}`;
   });
   if (!replacements.length) return { value: caution, replacements, rule: "unchanged" };
-  // A count next to a shortened list ("베트남·방글라데시 2개국", "나머지 9개국",
-  // "방글라데시 3개소") would become false after the swap; keep the source text.
-  if (/\d+\s?(개국|개소|곳)|두 (곳|나라)|세 나라|나머지/.test(replaced)) return { value: caution, replacements, rule: "keep-original(count)" };
-  // Two placeholders, or a placeholder joined to another name, read as noise.
-  if ((replaced.match(/일부 나라/g) || []).length > 1 || /·일부 나라|일부 나라·|나라[은는] 일부 나라/.test(replaced)) {
-    return { value: caution, replacements, rule: "keep-original(list)" };
-  }
+  // V162: the platform countries are handled before this (country views), so no
+  // list of them is left to keep; the source text is no longer kept for a count
+  // or a list ("국명 남기기" rule removed).
   return { value: replaced, replacements, rule: "replaced" };
 }
 
@@ -342,6 +344,27 @@ function main() {
   const registry = registryCountries();
   const countries = priorityCountries();
   const mapElements = mapLayerElements();
+  // V162: every public text is what the viewing country's screens show.
+  const countryNames = loadCountryNamesV162(ROOT);
+  const countryViews = makeCountryViewsV162(countryNames);
+  const platformIso3 = countryNames.platform.map((row) => row.iso3);
+  const platformSet = new Set(platformIso3);
+  const otherViewers = platformIso3.filter((iso3) => iso3 !== DEFAULT_COUNTRY);
+  const usedSplit = new Set();
+  const viewLog = [];
+  const ownLookup = (elementId, field, caseNo) => (sentence) => {
+    const key = sentence.trim();
+    const index = COUNTRY_SPLIT.findIndex((entry) => entry.elementId === elementId && entry.field === field && (entry.caseNo ?? null) === (caseNo ?? null) && entry.from === key);
+    if (index < 0) return null;
+    usedSplit.add(index);
+    return COUNTRY_SPLIT[index].byCountry;
+  };
+  const viewOf = (value, viewer, elementId, field, caseNo = null) => {
+    const result = countryViews.viewText(value, viewer, ownLookup(elementId, field, caseNo));
+    for (const change of result.changes) viewLog.push({ elementId, field, caseNo, viewer, ...change });
+    return result.text;
+  };
+  const viewsOut = { schemaVersion: "v162-country-text-views-1", defaultCountry: DEFAULT_COUNTRY, countries: otherViewers, spec: {}, cases: {} };
   const typologyRows = readTypologyTable();
 
   // spec sheet
@@ -378,6 +401,15 @@ function main() {
       decision: text(row[c("금년도 최종 결정")]) || null,
       decisionNote: decisionNote(text(row[c("처리방향")])),
     });
+    const specRow = specRows[specRows.length - 1];
+    for (const field of ["description", "usage"]) {
+      const source = specRow[field];
+      specRow[field] = viewOf(source, DEFAULT_COUNTRY, elementId, field);
+      for (const viewer of otherViewers) {
+        const view = viewOf(source, viewer, elementId, field);
+        if (view !== specRow[field]) ((viewsOut.spec[elementId] ??= {})[viewer] ??= {})[field] = view;
+      }
+    }
   }
 
   // use cases
@@ -392,29 +424,71 @@ function main() {
       const en = purposeRaw.match(/\s*\(([A-Za-z][^()]*)\)\s*$/);
       const caseNo = Number(text(row[u("사례 번호")]));
       const caution = applyOverride(elementId, "caution", text(row[u("유의점")]), caseNo);
-      const display = cautionForRegistry(caution, countries, registry);
-      if (display.replacements.length) cautionReview.push({ elementId, caseNo: Number(text(row[u("사례 번호")])), caution, cautionDisplay: display.value, rule: display.rule, replacements: display.replacements });
       return {
         elementId,
         caseNo: Number(text(row[u("사례 번호")])),
         purpose: en ? purposeRaw.slice(0, en.index).trim() : purposeRaw,
         purposeEn: en ? en[1].trim() : "",
-        logic: text(row[u("논리 구조")]),
+        logic: applyOverride(elementId, "logic", text(row[u("논리 구조")]), caseNo),
         dataUsed: parseDataUsed(applyOverride(elementId, "dataUsed", text(row[u("쓰는 데이터")]), caseNo), catalog),
-        storyline: text(row[u("스토리라인 예시")]),
+        storyline: applyOverride(elementId, "storyline", text(row[u("스토리라인 예시")]), caseNo),
         users: text(row[u("주 사용자")]).split(/\s*·\s*/).filter(Boolean),
         caution,
-        cautionDisplay: display.value,
         verified: "verified",
         verificationResult: text(row[u("검증 결과")]),
       };
     });
   const pending = existsSync(PENDING_CASES_PATH) ? JSON.parse(readFileSync(PENDING_CASES_PATH, "utf8")).cases || [] : [];
   for (const item of pending) {
-    cases.push({ ...item, dataUsed: parseDataUsed(item.dataUsedText || "", catalog), cautionDisplay: item.caution, verified: "pending", verificationResult: "검증 대기" });
+    cases.push({ ...item, dataUsed: parseDataUsed(item.dataUsedText || "", catalog), verified: "pending", verificationResult: "검증 대기" });
   }
   for (const item of cases) delete item.dataUsedText;
   cases.sort((a, b) => a.elementId.localeCompare(b.elementId) || a.caseNo - b.caseNo);
+
+  // V162: each case as each platform country's screens show it. A case whose
+  // purpose is another country's own is shown only to the countries that keep
+  // it (`countries`); the stored text is the default country's view, the
+  // others' differences go to countryTextViewsV162.json.
+  const caseView = (item, viewer) => {
+    const at = (field) => viewOf(item[field], viewer, item.elementId, field, item.caseNo);
+    const purpose = at("purpose");
+    if (!purpose) return null;
+    const cautionView = at("caution");
+    const display = cautionForRegistry(cautionView, countries, new Set([...platformSet]));
+    if (viewer === DEFAULT_COUNTRY && display.replacements.length) cautionReview.push({ elementId: item.elementId, caseNo: item.caseNo, caution: item.caution, cautionDisplay: display.value, rule: display.rule, replacements: display.replacements });
+    const dataUsed = [];
+    for (const entry of item.dataUsed || []) {
+      const label = viewOf(entry.label, viewer, item.elementId, "dataUsed", item.caseNo);
+      // A chip is dropped only when its label is another country's own; an empty label stays.
+      if (label || !entry.label) dataUsed.push(label === entry.label ? entry : { ...entry, label });
+    }
+    return { purpose, purposeEn: purpose === item.purpose ? item.purposeEn : at("purposeEn"), logic: at("logic"), storyline: at("storyline"), cautionDisplay: display.value, dataUsed };
+  };
+  for (let index = 0; index < cases.length; index += 1) {
+    const item = cases[index];
+    const views = Object.fromEntries(platformIso3.map((viewer) => [viewer, caseView(item, viewer)]));
+    const shownTo = platformIso3.filter((viewer) => views[viewer]);
+    const baseViewer = views[DEFAULT_COUNTRY] ? DEFAULT_COUNTRY : shownTo[0];
+    const merged = { ...item, ...(baseViewer ? views[baseViewer] : { cautionDisplay: item.caution }) };
+    // Same key order as before V162 (cautionDisplay right after caution).
+    const base = {};
+    for (const key of Object.keys(item)) {
+      base[key] = merged[key];
+      if (key === "caution") base.cautionDisplay = merged.cautionDisplay;
+    }
+    if (shownTo.length !== platformIso3.length) base.countries = shownTo;
+    for (const viewer of otherViewers) {
+      if (!views[viewer] || viewer === baseViewer) continue;
+      const diff = {};
+      for (const [field, value] of Object.entries(views[viewer])) {
+        if (JSON.stringify(value) !== JSON.stringify(base[field])) diff[field] = value;
+      }
+      if (Object.keys(diff).length) (viewsOut.cases[`${item.elementId}#${item.caseNo}`] ??= {})[viewer] = diff;
+    }
+    cases[index] = base;
+  }
+  const staleSplit = COUNTRY_SPLIT.filter((entry, index) => !usedSplit.has(index));
+  if (staleSplit.length) throw new Error(`countryTextSplitV162.json entries match no sentence: ${staleSplit.map((entry) => `${entry.elementId}${entry.caseNo ? `#${entry.caseNo}` : ""}.${entry.field}`).join(", ")}`);
 
   // typology
   const specById = new Map(specRows.map((row) => [row.elementId, row]));
@@ -518,6 +592,7 @@ function main() {
     "datasetCardSpecV159.json": { schemaVersion: "v159-card-spec-1", generatedFrom, rows: cardRows },
     "datasetSpecV159.json": { schemaVersion: "v159-dataset-spec-1", generatedFrom, rows: specRows },
     "useCasesV159.json": { schemaVersion: "v159-use-cases-1", generatedFrom, registryCountries: [...registry], cases },
+    "countryTextViewsV162.json": viewsOut,
     "datasetTypologyV159.json": { schemaVersion: "v159-typology-1", generatedFrom, displayTypes: Object.values(DISPLAY_TYPES), structures: STRUCTURES, rows: typology },
   };
 
@@ -547,6 +622,7 @@ function main() {
   }
   writeReviews({ nameReview, cardReview, cautionReview, mapping, typology, cases });
   writeCorrections();
+  writeCountryViews(viewLog, platformIso3);
 
   const summary = {
     spec: specRows.length,
@@ -573,17 +649,74 @@ function writeCorrections() {
     "",
     "| 요소 | 명세서 열 | 원문 | 플랫폼 표시 | 사유 | 기록일 |",
     "|---|---|---|---|---|---|",
-    ...OVERRIDES.map((item) => `| ${item.elementId} | ${FIELD_COLUMN[item.field] || item.field} | ${mdCell(item.from)} | ${mdCell(item.to)} | ${mdCell(item.reason)} | ${item.date} |`),
+    ...OVERRIDES.map((item) => `| ${item.elementId} | ${FIELD_COLUMN[item.field] || item.field} | ${mdCell(item.from)} | ${mdCell(item.to) || "(삭제)"} | ${mdCell(item.reason)} | ${item.date} |`),
     "",
   ];
   mkdirSync(dirname(CORRECTIONS_DOC), { recursive: true });
   writeFileSync(CORRECTIONS_DOC, lines.join("\n"));
 }
 
-const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
+const FIELD_COLUMN = { shortDefinition: "간략 정의", description: "상세 설명", usage: "활용 방법", caution: "활용 사례 · 유의점", dataUsed: "활용 사례 · 쓰는 데이터", logic: "활용 사례 · 논리 구조", storyline: "활용 사례 · 스토리라인 예시", purpose: "활용 사례 · 활용 목적", purposeEn: "활용 사례 · 활용 목적(영문)", refLink: "참고문헌 링크", refApa: "참고문헌(APA)", sourceOrg: "출처기관" };
+
+const VIEW_RULE_V162 = {
+  count: "나라 수 문장 → 국가 중립 문구",
+  aside: "다른 나라 괄호 설명 제외",
+  "count+aside": "나라 수 문장 + 괄호 제외",
+  own: "다른 나라 고유 문장 → 이 나라 화면 비표시",
+  "own-table": "국가별 문구(countryTextSplitV162.json)",
+};
+
+/**
+ * V162: every sentence the country views changed, per viewing country - the
+ * before/after the workbook owner needs for the v1.2 correction table.
+ * Written to docs/handoff/v162/COUNTRY_TEXT_VIEWS_V162.md and summarised in
+ * the V159 correction request.
+ */
+function writeCountryViews(viewLog, viewers) {
+  const groups = new Map();
+  for (const entry of viewLog) {
+    const key = `${entry.elementId}|${entry.field}|${entry.caseNo ?? ""}|${entry.from}`;
+    if (!groups.has(key)) groups.set(key, { elementId: entry.elementId, field: entry.field, caseNo: entry.caseNo, from: entry.from, views: {} });
+    groups.get(key).views[entry.viewer] = { to: entry.to, rule: entry.rule };
+  }
+  const rows = [...groups.values()].sort((a, b) => a.elementId.localeCompare(b.elementId) || String(a.field).localeCompare(String(b.field)) || (a.caseNo ?? 0) - (b.caseNo ?? 0));
+  const shown = (view) => (!view ? "(원문 그대로)" : view.to === null ? "(표시 안 함)" : mdCell(view.to));
+  const rule = (group) => [...new Set(Object.values(group.views).map((view) => VIEW_RULE_V162[view.rule] || view.rule))].join(" · ");
+  const ruleCounts = {};
+  for (const entry of viewLog) ruleCounts[`${entry.viewer}:${entry.rule}`] = (ruleCounts[`${entry.viewer}:${entry.rule}`] || 0) + 1;
+  const lines = [
+    "# 국가별 문구 화면 (V162)",
+    "",
+    "명세서의 설명·활용 방법·활용 사례·유의점은 모든 나라 화면에 함께 쓰는 문구입니다. 그래서 특정 나라 이름을 담을 수 없습니다. 적재기는 `scripts/v162/country-neutral-v162.mjs`의 규칙으로 문장마다 나라별 화면 문구를 만들고, 원문은 고치지 않습니다.",
+    "",
+    "- **나라 수 문장**: '베트남·방글라데시 2개국에만 있다'처럼 나라 목록으로 수만 말하는 문장은, 목록을 나라 수로 만든 국가 중립 문구('대상 국가 중 2개국에만 있다')로 바꿉니다.",
+    "- **괄호 설명**: 다른 나라를 다룬 괄호 설명('(방글라데시는 타카)')은 그 나라가 아닌 화면에서 뺍니다.",
+    "- **다른 나라 고유 문장**: 괄호를 빼고도 다른 나라가 남는 문장은 그 나라의 고유 문장입니다. 여러 나라 내용이 한 문장에 섞인 경우에는 나라별 문구(`src/data/spec/countryTextSplitV162.json`)가 그 나라 문장을 줍니다. 없으면 표시하지 않습니다.",
+    "- 대상 나라는 국가 레지스트리(`public/data/countries.json`)에서 읽습니다. 나라가 추가되면 다음 적재에서 규칙이 그대로 적용됩니다.",
+    "",
+    `적용 건수(화면 국가:규칙): ${Object.entries(ruleCounts).sort().map(([key, count]) => `${key} ${count}`).join(" · ")}`,
+    "",
+    "`scripts/v159/import-dataset-spec-v159.mjs`가 생성합니다. 명세서 v1.2 정정표를 만들 때 원천으로 씁니다.",
+    "",
+    `| 요소 | 명세서 열 | 사례 | 원문 | ${viewers.map((iso3) => `${iso3} 화면`).join(" | ")} | 규칙 |`,
+    `|---|---|---|---|${viewers.map(() => "---").join("|")}|---|`,
+    ...rows.map((group) => `| ${group.elementId} | ${FIELD_COLUMN[group.field] || group.field} | ${group.caseNo ?? ""} | ${mdCell(group.from)} | ${viewers.map((iso3) => shown(group.views[iso3])).join(" | ")} | ${rule(group)} |`),
+    "",
+  ];
+  mkdirSync(dirname(COUNTRY_VIEWS_DOC), { recursive: true });
+  writeFileSync(COUNTRY_VIEWS_DOC, lines.join("\n"));
+  writeFileSync(resolve(ROOT, "reports/v162/country-text-views-v162.json"), `${JSON.stringify({ viewers, ruleCounts, rows }, null, 2)}\n`);
+  // The V159 request points the workbook owner at the country table.
+  const request = readFileSync(CORRECTIONS_DOC, "utf8");
+  const defaultRows = rows.filter((group) => group.views[DEFAULT_COUNTRY]);
+  writeFileSync(
+    CORRECTIONS_DOC,
+    `${request.replace(/\n+$/u, "")}\n\n## 국가 공통 문구의 나라 이름 (V162)\n\n설명·활용 사례·유의점은 모든 나라 화면에 함께 쓰는 문구라 특정 나라 이름을 담을 수 없습니다. 플랫폼은 규칙으로 나라별 화면 문구를 만들어 표시하고 있습니다. 기본 국가(${DEFAULT_COUNTRY}) 화면에서 바뀐 문장은 ${defaultRows.length}건이고, 나라별 전후 전체는 \`docs/handoff/v162/COUNTRY_TEXT_VIEWS_V162.md\`에 있습니다. 명세서에서 나라 공통 문장과 나라별 문장을 나눠 주시면 규칙 적용이 필요 없어집니다.\n`
+  );
+}
 
 function mdCell(value) {
-  return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");
+  return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
 }
 
 function writeReviews({ nameReview, cardReview, cautionReview, mapping, typology, cases }) {

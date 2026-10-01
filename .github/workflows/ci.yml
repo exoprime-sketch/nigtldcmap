@@ -323,3 +323,86 @@ jobs:
             reports/v140/analysis-qa-v140-*.json
             reports/v140/analysis-qa-v140-*.md
           if-no-files-found: ignore
+
+  # ---------------------------------------------------------------------
+  # 5. gate (V162): the whole PR gate `finalize:v151` - finalize:v140,
+  #    boundary audits and the integrated acceptance gate qa:acceptance:v162 -
+  #    on a runner instead of a workstation (the local runs hit memory and
+  #    overlapped other sessions' gates). PRs and manual runs only; gate-lock
+  #    lets the command through in CI (CI=true, one job per runner).
+  # ---------------------------------------------------------------------
+  gate:
+    name: PR gate finalize:v151 (acceptance included)
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Browsers as the other jobs set them up: the runner's Chrome for the
+      # V125/V136 audits (browser job) and Playwright's Chromium for the
+      # Playwright-driven checks (E2E workflow).
+      - name: Resolve Chrome executable
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [[ -z "$browser_path" ]]; then
+            curl --fail --location --silent --show-error \
+              --output "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb" \
+              https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get update
+            sudo apt-get install --yes "$RUNNER_TEMP/google-chrome-stable_current_amd64.deb"
+            browser_path="$(command -v google-chrome)"
+          fi
+          "$browser_path" --version
+          echo "V125_BROWSER_EXECUTABLE=$browser_path" >> "$GITHUB_ENV"
+
+      - name: Install Playwright's Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        env:
+          GENERATE_SOURCEMAP: "false"
+        run: npm run build
+
+      - name: finalize:v151 (acceptance included)
+        timeout-minutes: 140
+        shell: bash
+        env:
+          GENERATE_SOURCEMAP: "false"
+          V125_TIMEOUT_SCALE: "3"
+        run: |
+          set -o pipefail
+          mkdir -p reports/v162
+          npm run finalize:v151 2>&1 | tee reports/v162/finalize-v151-ci.log
+
+      - name: Upload gate results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: gate-finalize-v151-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/v162/acceptance-v162.json
+            reports/v162/acceptance-v162.md
+            reports/v162/other-country-names-v162*.json
+            reports/v162/core-word-v162*.json
+            reports/v162/responsive-v162.json
+            reports/v162/finalize-v151-ci.log
+            reports/v140/analysis-qa-v140-*.json
+            reports/v140/role-split-qa-v140*.json
+            reports/v136/release-audit-v136.json
+          if-no-files-found: warn
+          retention-days: 30

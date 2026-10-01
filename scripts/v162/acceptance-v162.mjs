@@ -10,20 +10,26 @@
  *
  *   1 finder     public set = catalog, the 2026 exclusions are nowhere, and the
  *                '데이터 준비 중' cards, detail notices and spec typology all equal
- *                the catalog's not-yet-delivered statuses (catalog = single source)
+ *                the catalog's not-yet-delivered statuses (catalog = single source);
+ *                the order is 가나다순 by default and 조회순 reorders by views
  *                  reuses audit:exclusions:v156
  *   2 map        target / connected / pending counts from map-index; every active
  *                layer renders and answers a click; '준비 중' 0
  *                  reuses qa:map:v138 (report read here; it sets no exit code)
- *   3 wording    public wording across home, finder, detail, map, download
+ *   3 wording    public wording across home, finder, detail, map, download; no
+ *                other country's name outside the country-comparison block; no '핵심'
  *                  reuses audit:source-notes:v161 (#42) + public-wording-scan-v157 (#47)
+ *                  + scan-core-word-v157
  *   4 numbers    home total / map / download = catalog / map-index / manifest,
- *                and the data date = the source delivery date
+ *                and the data date = the country's source delivery date (provenance)
  *   5 widths     320·390·768·1024·1440·1920 horizontal overflow 0
  *                  reuses review-runtime-v150 --only responsive
  *   6 countries  a country that is not live: ?country=<iso3> falls back to the
  *                default country with no wording of its own; once live it must
  *                be selectable (and gets checks 1-5 like every live country)
+ *   7 smoke      the production smoke per country (smoke:production:v128 --country),
+ *                against PRODUCTION_URL when set, else this build; a country not
+ *                live yet is smoked once published
  *
  * Expected failures are stated, never hidden: `--expect-pending N` reports up
  * to N map targets still pending as '예상 실패' (the map-12 PR closes them),
@@ -33,6 +39,8 @@
  * Usage:
  *   node scripts/v162/acceptance-v162.mjs [--country VNM|BGD[,...]] [--build build]
  *        [--expect-pending 12] [--expect-fail data-date] [--skip wording,map-runtime]
+ *   --skip areas: finder, map, wording, numbers, widths, smoke; single checks:
+ *   exclusions, map-runtime, finder-sort, source-notes, wording-scan, other-country, core-word
  * Writes reports/v162/acceptance-v162.{json,md}; exit 1 on any failure.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -87,7 +95,8 @@ const orExpected = (id, passed) => (passed ? true : EXPECT_FAIL.has(id) ? "expec
 function countryData(iso3) {
   const row = registryCountries.find((entry) => entry.iso3 === iso3);
   const dir = resolve(ROOT, "public", `.${row?.dataRoot || "/data/vietnam/v2"}`);
-  const catalog = readJson(resolve(dir, "catalog.json")).elements;
+  const catalogDoc = readJson(resolve(dir, "catalog.json"));
+  const catalog = catalogDoc.elements;
   const mapIndex = existsSync(resolve(dir, "map-index.json")) ? readJson(resolve(dir, "map-index.json")) : null;
   const manifest = existsSync(resolve(dir, "manifest.json")) ? readJson(resolve(dir, "manifest.json")) : null;
   const publicIds = catalog.filter((element) => !NON_PUBLIC_STATUSES.has(element.publicStatus)).map((element) => element.elementId);
@@ -95,8 +104,12 @@ function countryData(iso3) {
   const preparingIds = catalog.filter((element) => PREPARING_STATUSES.has(element.publicStatus)).map((element) => element.elementId).sort();
   const layers = (mapIndex?.layers || []).filter((layer) => layer.active !== false && layer.enabled !== false);
   const contract = mapIndex?.mapTargetContract || null;
-  return { row, dir, catalog, mapIndex, manifest, publicIds, excludedIds, preparingIds, layers, contract };
+  return { row, dir, catalogDoc, catalog, mapIndex, manifest, publicIds, excludedIds, preparingIds, layers, contract };
 }
+
+/** Every other registry country's Korean and English name - words a country's own screens must not carry. */
+const otherCountryTerms = (iso3) =>
+  registryCountries.filter((row) => row.iso3 !== iso3).flatMap((row) => [row.nameKo, row.nameEn]).filter(Boolean);
 
 async function runReused(name, command, reportPath, timeoutMs = 1_800_000) {
   const started = Date.now();
@@ -152,6 +165,136 @@ async function homeFigures(page, iso3) {
   });
 }
 
+/** Loads every finder card (the list grows on scroll) and reads id, shown name and the '데이터 준비 중' mark. */
+async function finderCards(page) {
+  for (let guard = 0; guard < 30; guard += 1) {
+    const shown = await page.$$eval('[data-testid="public-finder-card-v135"]', (nodes) => nodes.length);
+    const total = await page.$eval('[data-testid="finder-results-v136"]', (node) => Number(node.getAttribute("data-total-count"))).catch(() => shown);
+    if (shown >= total) break;
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await page.waitForTimeout(600);
+  }
+  return page.$$eval('[data-testid="public-finder-card-v135"]', (nodes) =>
+    nodes.map((node) => ({
+      id: node.getAttribute("data-element-id"),
+      title: (node.querySelector(".dct159-name")?.innerText || "").replace(/\s+/gu, " ").trim(),
+      preparing: /데이터 준비 중/u.test(node.querySelector('[data-testid="finder-card-status-v159"]')?.textContent || ""),
+    }))
+  );
+}
+
+/**
+ * The finder order: 가나다순 by default (datasets not yet delivered last), and
+ * choosing 조회순 reorders by views. A static build has no usage service, so the
+ * check answers /api/usage with test counts that rank the names in reverse;
+ * the default must stay 가나다순 even while 조회순 is available.
+ */
+async function finderSortCheck(page, iso3) {
+  const collator = new Intl.Collator("ko");
+  let mockDetail = [];
+  await page.route("**/api/usage", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ status: "ready", windowDays: 30, from: "2026-09-01", through: "2026-09-30", detail: mockDetail, map: [] }),
+    })
+  );
+  // First pass without counts only to learn the names; the counts follow from them.
+  await page.goto(`${base}/${countryQuery(iso3)}#explorer`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(120_000) });
+  await page.waitForSelector('[data-testid="public-finder-card-v135"]', { timeout: scaledTimeoutMsV150(60_000) });
+  const learned = (await finderCards(page)).filter((card) => !card.preparing);
+  const byName = [...learned].sort((left, right) => collator.compare(left.title, right.title));
+  mockDetail = byName.map((card, index) => ({ elementId: card.id, count: index + 1 }));
+  // A reload, not a goto: the same URL with the same hash would not load the page again.
+  await page.reload({ waitUntil: "networkidle", timeout: scaledTimeoutMsV150(120_000) });
+  await page.waitForSelector('[data-testid="public-finder-card-v135"]', { timeout: scaledTimeoutMsV150(60_000) });
+  await page.waitForFunction(() => document.querySelector('[data-testid="finder-sort-v160"] option[value="views"]')?.disabled === false, null, { timeout: scaledTimeoutMsV150(30_000) }).catch(() => null);
+  const defaultMode = await page.$eval('[data-testid="finder-sort-v160"]', (node) => node.value).catch(() => null);
+  const viewsEnabled = await page.$eval('[data-testid="finder-sort-v160"] option[value="views"]', (node) => !node.disabled).catch(() => false);
+  const defaultCards = await finderCards(page);
+  await page.selectOption('[data-testid="finder-sort-v160"]', "views").catch(() => null);
+  await page.waitForTimeout(800);
+  const viewsMode = await page.$eval('[data-testid="finder-sort-v160"]', (node) => node.value).catch(() => null);
+  const viewsCards = await finderCards(page);
+
+  const preparingLast = (cards) => {
+    const firstPreparing = cards.findIndex((card) => card.preparing);
+    return firstPreparing < 0 || cards.slice(firstPreparing).every((card) => card.preparing);
+  };
+  const delivered = (cards) => cards.filter((card) => !card.preparing);
+  const nameSorted = delivered(defaultCards).every((card, index, all) => index === 0 || collator.compare(all[index - 1].title, card.title) <= 0);
+  const expectedViews = [...byName].reverse().map((card) => card.id);
+  const shownViews = delivered(viewsCards).map((card) => card.id);
+  const defaultIds = delivered(defaultCards).map((card) => card.id);
+  return {
+    defaultOk: defaultMode === "name" && nameSorted && preparingLast(defaultCards) && defaultCards.length === learned.length + defaultCards.filter((card) => card.preparing).length,
+    viewsOk: viewsEnabled && viewsMode === "views" && JSON.stringify(shownViews) === JSON.stringify(expectedViews) && JSON.stringify(shownViews) !== JSON.stringify(defaultIds) && preparingLast(viewsCards),
+    actual: {
+      defaultMode,
+      nameSorted,
+      preparingLastDefault: preparingLast(defaultCards),
+      cards: defaultCards.length,
+      viewsEnabled,
+      viewsMode,
+      viewsOrderMatches: JSON.stringify(shownViews) === JSON.stringify(expectedViews),
+      orderChanged: JSON.stringify(shownViews) !== JSON.stringify(defaultIds),
+      firstByName: defaultIds.slice(0, 3),
+      firstByViews: shownViews.slice(0, 3),
+    },
+  };
+}
+
+/**
+ * Every public text of a country's screens - home, finder (all cards), map
+ * (list expanded), download, guide and each public detail with every layer and
+ * <details> open - searched for other countries' names. The country picker
+ * names every country by design and the country-comparison block compares
+ * countries on purpose; both are left out. Detail pages go 20 to a browser
+ * context, the context closed after each batch (memory).
+ */
+async function otherCountryWalk(iso3, publicIds, words) {
+  const read = (page, words) =>
+    page.evaluate(async (terms) => {
+      document.querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
+      await new Promise((done) => setTimeout(done, 300));
+      const body = document.body.cloneNode(true);
+      body.querySelectorAll("script, style, noscript, select, option, [data-country-picker], [aria-label*='국가 선택'], [data-testid='country-compare-v158']").forEach((node) => node.remove());
+      const text = (body.textContent || "").replace(/\s+/gu, " ");
+      return terms.filter((term) => text.includes(term)).map((term) => {
+        const at = text.indexOf(term);
+        return { term, context: text.slice(Math.max(0, at - 40), at + term.length + 40).trim() };
+      });
+    }, words);
+  const hits = [];
+  const query = countryQuery(iso3);
+  await withPage(async (page) => {
+    for (const [screen, path] of [["home", `/${query}`], ["finder", `/${query}#explorer`], ["map", `/?view=map&country=${iso3}#map`], ["download", `/?country=${iso3}#download`], ["guide", `/${query}#guide`]]) {
+      await page.goto(`${base}${path}`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(120_000) });
+      await page.waitForTimeout(1200);
+      if (screen === "finder") await finderCards(page);
+      if (screen === "map") {
+        await page.evaluate(() => {
+          document.querySelectorAll("button").forEach((button) => { if (/더 많은 레이어|모두 펼치기/u.test(button.textContent || "")) button.click(); });
+          document.querySelectorAll('[data-testid="map-catalog-group-toggle-v138"]').forEach((toggle) => { if (toggle.getAttribute("aria-expanded") !== "true") toggle.click(); });
+        });
+        await page.waitForTimeout(1200);
+      }
+      for (const hit of await read(page, words)) hits.push({ screen, ...hit });
+    }
+  });
+  for (let start = 0; start < publicIds.length; start += 20) {
+    await withPage(async (page) => {
+      for (const id of publicIds.slice(start, start + 20)) {
+        await page.goto(`${base}/?view=data&country=${iso3}&element=${id}&detailLayers=all#element-detail`, { waitUntil: "domcontentloaded", timeout: scaledTimeoutMsV150(90_000) });
+        await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: scaledTimeoutMsV150(60_000) }).catch(() => null);
+        await page.waitForTimeout(600);
+        for (const hit of await read(page, words)) hits.push({ screen: `detail:${id}`, ...hit });
+      }
+    });
+  }
+  return { hits, detailPages: publicIds.length };
+}
+
 const digits = (text) => String(text ?? "").replace(/\D/gu, "");
 const number = (text) => Number(String(text ?? "").replace(/[^\d.]/gu, "")) || NaN;
 
@@ -183,6 +326,9 @@ for (const iso3 of COUNTRIES) {
       return out;
     });
     check(iso3, "finder", "preparing-detail", "미입고 상세의 '데이터 준비 중' 안내", JSON.stringify(noticed) === JSON.stringify(data.preparingIds), noticed, data.preparingIds);
+    const sort = SKIP.has("finder-sort") ? null : await withPage((page) => finderSortCheck(page, iso3));
+    if (sort) check(iso3, "finder", "finder-sort-default", "찾기 기본 정렬 = 가나다순(미입고는 끝)", sort.defaultOk, { mode: sort.actual.defaultMode, nameSorted: sort.actual.nameSorted, preparingLast: sort.actual.preparingLastDefault, cards: sort.actual.cards, first: sort.actual.firstByName }, { mode: "name", nameSorted: true, preparingLast: true });
+    if (sort) check(iso3, "finder", "finder-sort-views", "조회순 선택 시 조회수 순으로 순서 변경(시험 조회수 주입)", sort.viewsOk, { enabled: sort.actual.viewsEnabled, mode: sort.actual.viewsMode, orderMatches: sort.actual.viewsOrderMatches, orderChanged: sort.actual.orderChanged, first: sort.actual.firstByViews }, { mode: "views", orderMatches: true, orderChanged: true });
     if (iso3 === DEFAULT_COUNTRY) {
       const typology = readJson(resolve(ROOT, "src/data/spec/datasetTypologyV159.json"));
       const pendingRows = (Array.isArray(typology) ? typology : typology.rows || []).filter((row) => row.statusNotice === "data-pending").map((row) => row.elementId).sort();
@@ -236,10 +382,10 @@ for (const iso3 of COUNTRIES) {
   if (!SKIP.has("wording")) {
     const notesReport = resolve(ROOT, `reports/v161/source-notes-audit-v161${iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`}.json`);
     // One detail page at a time (each audit refreshes its browser context every 20 pages).
-    const notes = await runReused("source-notes", `node scripts/v161/audit-source-notes-v161.mjs --build ${BUILD_ARG} --workers 1${iso3 === DEFAULT_COUNTRY ? "" : ` --country ${iso3}`}`, notesReport);
-    const notesSummary = notes.report?.summary || {};
-    check(iso3, "wording", "wording-source-notes", "내부 작업 메모 0(홈·찾기·상세·다운로드·지도, #42)", notes.exit === 0 && notesSummary.pass === true, { findings: notesSummary.findings, detailPages: notesSummary.detailPagesChecked, runtimeErrors: notesSummary.runtimeErrors }, { findings: 0 }, "audit:source-notes:v161");
-    if (iso3 === DEFAULT_COUNTRY) {
+    const notes = SKIP.has("source-notes") ? null : await runReused("source-notes", `node scripts/v161/audit-source-notes-v161.mjs --build ${BUILD_ARG} --workers 1${iso3 === DEFAULT_COUNTRY ? "" : ` --country ${iso3}`}`, notesReport);
+    const notesSummary = notes?.report?.summary || {};
+    if (notes) check(iso3, "wording", "wording-source-notes", "내부 작업 메모 0(홈·찾기·상세·다운로드·지도, #42)", notes.exit === 0 && notesSummary.pass === true, { findings: notesSummary.findings, detailPages: notesSummary.detailPagesChecked, runtimeErrors: notesSummary.runtimeErrors }, { findings: 0 }, "audit:source-notes:v161");
+    if (iso3 === DEFAULT_COUNTRY && !SKIP.has("wording-scan")) {
       const scan = await runReused("wording-scan", `node scripts/v157/public-wording-scan-v157.mjs --build ${BUILD_ARG} --port 4453`, resolve(ROOT, "reports/v157/public-wording-scan-v157.json"));
       // C-003's own document file names on its detail are fixed in V162 (session 5);
       // they are judged apart so every other finding still fails the check.
@@ -249,6 +395,19 @@ for (const iso3 of COUNTRIES) {
       const others = findings.filter((finding) => !isC003FileName(finding));
       check(iso3, "wording", "wording-identifiers", "식별자·파일명·작업 어휘 0(지도 목록·정보·선택 패널·연관 카드·상세, #47)", Boolean(scan.report) && others.length === 0 && scan.report.exceptionCount === 0, { findings: others.length, elements: [...new Set(others.map((finding) => finding.elementId))], exceptions: scan.report?.exceptionCount, scanned: scan.report?.scanned }, { findings: 0, exceptions: 0 }, "public-wording-scan-v157");
       check(iso3, "wording", "c003-filename", "C-003 상세의 파일명 0(V162에서 수정)", orExpected("c003-filename", c003.length === 0), c003.flatMap((finding) => finding.tokens), [], "public-wording-scan-v157");
+    }
+    const words = otherCountryTerms(iso3);
+    if (words.length && !SKIP.has("other-country")) {
+      const walk = await otherCountryWalk(iso3, data.publicIds, words);
+      const namesOut = `reports/v162/other-country-names-v162${iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`}.json`;
+      writeFileSync(resolve(ROOT, namesOut), `${JSON.stringify({ generatedAt: new Date().toISOString(), country: iso3, terms: words, detailPages: walk.detailPages, hitCount: walk.hits.length, hits: walk.hits }, null, 2)}\n`);
+      check(iso3, "wording", "other-country-names", "다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외)", orExpected("other-country-names", walk.hits.length === 0), { hits: walk.hits.length, detailPages: walk.detailPages, first: walk.hits.slice(0, 5).map((hit) => `${hit.screen}:${hit.term} «${hit.context}»`) }, { hits: 0, terms: words }, namesOut);
+    }
+    if (data.mapIndex && !SKIP.has("core-word")) {
+      const suffix = iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`;
+      const out = `reports/v162/core-word-v162${suffix}.json`;
+      const core = await runReused("core-word", `node scripts/v157/scan-core-word-v157.mjs ${base} --country ${iso3} --out ${out}`, resolve(ROOT, out));
+      check(iso3, "wording", "core-word", "'핵심' 표현 0(지도 화면, scan-core-word-v157)", core.exit === 0 && core.report?.summary?.pass === true, { hits: core.report?.hits?.map((hit) => hit.text) ?? null, layers: core.report?.layers ?? null }, { hits: [] }, "scan-core-word-v157");
     }
   }
 
@@ -266,12 +425,13 @@ for (const iso3 of COUNTRIES) {
     });
     const downloadIds = [...new Set(downloadList)];
     check(iso3, "numbers", "download-list", "다운로드 목록 = 카탈로그 공개 요소(제외 0)", downloadIds.length === data.publicIds.length && !downloadIds.some((id) => data.excludedIds.includes(id)), downloadIds.length, data.publicIds.length);
-    // The data date on the home is the day the source was delivered (입고일).
-    const refresh = iso3 === DEFAULT_COUNTRY && existsSync(resolve(ROOT, "reports/v156/refresh-v156.json")) ? readJson(resolve(ROOT, "reports/v156/refresh-v156.json")) : null;
-    // V162: the ETL states the delivery date in manifest.provenance (both countries).
-    const delivered = data.manifest?.provenance?.sourceDeliveredAt || data.manifest?.deliveredAt || refresh?.deliveredAt || null;
+    // The data date on the home is the day the country's source was delivered
+    // (입고일), read from the data tree's provenance: the catalog's, or the
+    // manifest's where V162 writes it. No provenance is a failure, not a guess.
+    const provenanceSource = data.catalogDoc?.provenance?.sourceDeliveredAt ? "catalog.provenance.sourceDeliveredAt" : data.manifest?.provenance?.sourceDeliveredAt ? "manifest.provenance.sourceDeliveredAt" : null;
+    const delivered = data.catalogDoc?.provenance?.sourceDeliveredAt || data.manifest?.provenance?.sourceDeliveredAt || null;
     const shownDate = figures["데이터 기준일"] || "";
-    check(iso3, "numbers", "data-date", "데이터 기준일 = 원자료 입고일", orExpected("data-date", Boolean(delivered) && digits(shownDate) === digits(delivered)), { shown: shownDate, manifestGeneratedAt: data.manifest?.generatedAt || null }, { deliveredAt: delivered, source: data.manifest?.provenance?.sourceDeliveredAt ? "manifest.provenance.sourceDeliveredAt" : data.manifest?.deliveredAt ? "manifest.deliveredAt" : "reports/v156/refresh-v156.json" });
+    check(iso3, "numbers", "data-date", "데이터 기준일 = 원자료 입고일(국가별 provenance)", orExpected("data-date", Boolean(delivered) && digits(shownDate) === digits(delivered)), { shown: shownDate, manifestGeneratedAt: data.manifest?.generatedAt || null }, { deliveredAt: delivered, source: provenanceSource || "(provenance 없음 - V162에서 추가)" });
   }
 
   // 5 widths --------------------------------------------------------------
@@ -280,6 +440,21 @@ for (const iso3 of COUNTRIES) {
     const reused = await runReused("responsive", `node scripts/v150/review-runtime-v150.mjs --only responsive --build ${BUILD_ARG} --out ${out}`, resolve(ROOT, out));
     const responsive = reused.report?.responsive || {};
     check(iso3, "widths", "widths-overflow", "6폭(320·390·768·1024·1440·1920) 가로 넘침 0", reused.exit === 0 && responsive.pass === true, { combinations: responsive.combinations, overflowing: responsive.overflowing, failing: (responsive.rows || []).filter((row) => !row.pass).map((row) => `${row.screen}@${row.width}:${row.overflow}`) }, { overflowing: 0 }, "review-runtime-v150 --only responsive");
+  }
+
+  // 7 smoke ---------------------------------------------------------------
+  // The production smoke, per country: against PRODUCTION_URL when it is set
+  // (p5:final), otherwise against the build this run serves.
+  if (!SKIP.has("smoke")) {
+    const previousUrl = process.env.PRODUCTION_URL;
+    const target = previousUrl || base;
+    process.env.PRODUCTION_URL = target;
+    const smokeReport = resolve(ROOT, `reports/v128/production-smoke-v128${iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`}.json`);
+    const smoke = await runReused("smoke", `node scripts/smoke-vietnam-production-v128.mjs --country ${iso3}`, smokeReport);
+    if (previousUrl === undefined) delete process.env.PRODUCTION_URL;
+    else process.env.PRODUCTION_URL = previousUrl;
+    const report = smoke.report || {};
+    check(iso3, "smoke", "production-smoke", `운영 smoke(국가별, ${previousUrl ? "운영 URL" : "이 빌드"})`, smoke.exit === 0, { exit: smoke.exit, runtimeFailure: report.runtimeFailure ?? null, routeFailures: (report.routeFailures || []).length, assetFailures: (report.networkFailures || []).length, consoleErrors: (report.consoleErrors || []).length }, { exit: 0 }, "smoke:production:v128 --country");
   }
 }
 
@@ -309,6 +484,7 @@ for (const iso3 of notLiveWithData) {
   const hits = Object.entries(fallback).flatMap(([name, value]) => value.hits.map((hit) => `${name}:${hit}`));
   check(iso3, "country", "country-fallback-wording", `?country=${iso3}: 공개 전 폴백 · 다른 나라 표현 0`, hits.length === 0, hits, []);
   check(iso3, "country", "country-fallback-content", `?country=${iso3}: 기본 국가 목록으로 폴백`, fallback.finder.finderTotal === defaultPublic, fallback.finder.finderTotal, defaultPublic);
+  if (!SKIP.has("smoke")) check(iso3, "smoke", "production-smoke", "운영 smoke(국가별)", "skip", `공개 전(${entry?.status}) - 공개 후 실행`, "live", "smoke:production:v128 --country");
 }
 // A live country other than the default must be selectable.
 for (const iso3 of liveCountries.filter((iso3) => iso3 !== DEFAULT_COUNTRY && COUNTRIES.includes(iso3))) {
