@@ -1,3 +1,4 @@
+import { publicRegionScenarioContractV138 } from "../../../data/visualization/publicRegionScenarioContractV138";
 import WideRecordCardsV162 from "./WideRecordCardsV162";
 import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
@@ -247,7 +248,10 @@ export default function PublicDataAnalysisRouterV126({
   // to a card grid of record keys. Where that shape is present and the element
   // has no observations of its own to draw, read the rows for what they are.
   const regionScenarioSummary = useMemo(() => {
-    if (semanticRows.length > 0) return null;
+    // V162: a province-distribution element (its own contract) keeps the
+    // distribution even when the delivery adds a national series beside it
+    // (B-005 soil moisture); that series is drawn below, not instead.
+    if (semanticRows.length > 0 && !publicRegionScenarioContractV138(elementId)) return null;
     if (elementId === "B-008" && isSeaLevelStationDeliveryV138(entities)) {
       return (
         <SeaLevelStationAnalysisV138
@@ -364,7 +368,9 @@ export default function PublicDataAnalysisRouterV126({
           </Suspense>
         );
       case "spei-drought":
-        return semanticRows.length > 0 ? (
+        // V162: the 2026-09-30 B-005 ships no SPEI projections (only national
+        // soil moisture), so the drought screen opens only on SPEI rows.
+        return semanticRows.some((row) => /spei/iu.test(String(row.indicatorId || ""))) ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">가뭄 전망을 불러오는 중입니다</div>}>
             <SpeiDroughtScenarioAnalysisV134
               rows={semanticRows}
@@ -536,10 +542,29 @@ export default function PublicDataAnalysisRouterV126({
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
+  const regionWithNationalSeriesV162 =
+    !earlyBody && regionScenarioSummary && semanticRows.length > 0 && publicRegionScenarioContractV138(elementId) ? (
+      <>
+        {regionScenarioSummary}
+        <SemanticArchetypePreviewV125
+          contract={adapterContract}
+          semantics={semantics}
+          observations={observations}
+          entities={[]}
+          countryNameKo={countryNameKo}
+          detailTemplate={detailTemplate}
+          elementTitle={copy.title}
+          selectorState={selectorState}
+          onSelectorStateChange={onSelectorStateChange}
+          showRawTable={false}
+        />
+      </>
+    ) : null;
   const body = isStatusV159 && typology ? (
     <StatusNoticeV159 typology={typology} />
   ) : (
     earlyBody ??
+    regionWithNationalSeriesV162 ??
     renderGenericShapeV159() ??
     lateBody ??
     regionScenarioSummary ?? (

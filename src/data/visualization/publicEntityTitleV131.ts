@@ -71,7 +71,9 @@ const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
   "B-008": [{ key: "관측소명_베트남어" }, { key: "관측소명_PSMSL" }],
   "B-023": [{ key: "지점_유역명" }],
   "B-028": [{ key: "지점_유역명" }],
-  "B-025": [{ key: "유역명_국문" }, { key: "유역명_영문" }],
+  // V162: the 2026-09-30 delivery names a basin in 유역명(원천 표기) where the
+  // source does; the other basins are told apart below by their HydroBASINS id.
+  "B-025": [{ key: "유역명_원천_표기" }, { key: "유역명_국문" }, { key: "유역명_영문" }],
   "B-012": [{ key: "재해세부유형" }, { key: "재해유형" }],
   "E-004": [{ key: "orgName" }],
   "E-005": [{ key: "orgName" }],
@@ -453,6 +455,25 @@ function factualCompositeV131(
         identifierFacts: factualIdentifierRowsV131([
           ["EM-DAT 재해번호", normalizedFieldV131(entity, "EM_DAT_재해번호_DisNo")],
         ]),
+      };
+    }
+    case "B-025": {
+      // V162: 110 of the delivery's basins carry no name, only the HydroBASINS
+      // main-basin id; the national row sums them. The id is the source's own
+      // identifier, stated as such - never the delivery's record key.
+      const kind = normalizedFieldV131(entity, "개체_구분_Basin_Country");
+      const basinId = normalizedFieldV131(entity, "유역_ID_HydroBASINS_MAIN_BAS");
+      if (/^country$/iu.test(kind || "") || basinId === "전국 집계") {
+        const count = normalizedFieldV131(entity, "lev08_폴리곤_수_자국_내_유역_전체");
+        return { title: factualPartsV131(["전국 집계", count]).join(" · "), nameAvailability: "not-provided", secondaryNote: "원천의 전국 집계 행입니다(유역별 값의 합계 행)." };
+      }
+      if (!basinId) return null;
+      const shared = normalizedFieldV131(entity, "유역_구분_국내_완결_국제_공유");
+      const area = publicDecimalV131(entity.normalizedAttributes?.["자국_내_면적_km_GIS_산출"], 1);
+      return {
+        title: factualPartsV131([`HydroBASINS 유역 ${basinId}`, shared, area ? `자국 내 ${area} km²` : null]).join(" · "),
+        nameAvailability: "not-provided",
+        secondaryNote: "원천이 이 유역의 명칭 대신 HydroBASINS 유역 ID로 행을 구분합니다.",
       };
     }
     case "B-017": {
