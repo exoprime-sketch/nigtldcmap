@@ -35,7 +35,7 @@
 | A-032 | A-032_intermediate_dva_share_in_exports | common-year | 중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products | 중간재 교역 · 수출 중 중간재 국내부가가치 비중 — Trade in Value Added: Domestic value added in gross exports of intermediate products | - |
 | A-033 | A-033_lsci_q1 | common-year | 해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값) | 해운 연결성 지수(LSCI) · Q1 — 정기선 해운 연결성 지수(Q1 분기값) | - |
 | B-001 | B-001_pr_month_norm_aug | common-year | 월 평년강수 — 8월 (1991-2020 평년) | 월 평년강수 — 8월 (1991-2020 평년) | - |
-| B-002 | B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5 | common-year | 기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5 | 기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5 | 부문·가스·시나리오 등 세부 하위분류로 보임 |
+| B-002 | B-002_koppen_area_cwa | common-year | 기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) | 기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) | - |
 | B-009 | B-009_wwf_brf_physical | common-year | WWF BRF — Scape Physical Risk | WWF BRF — Scape Physical Risk | - |
 | B-010 | B-010_cri_rank | common-year | CRI 종합 순위 | CRI 종합 순위 | - |
 | B-011 | B-011_ndgain_score | common-year | ND-GAIN 종합점수 | ND-GAIN 종합점수 | - |
@@ -64,12 +64,11 @@
 | E-009 | E-009_stem_grad_share_male | common-year | STEM 졸업 비중(남성) | STEM 졸업 비중(남성) | - |
 | E-010 | E-010_gerd_pct_gdp | missing-in-country | (데이터 없음) | GERD — GDP 대비 R&D 총지출 비율 | - |
 
-## 대표지표로 보이지 않아 확인이 필요한 항목 (7건)
+## 대표지표로 보이지 않아 확인이 필요한 항목 (6건)
 
 - A-010 (`A-010_emissions_ch4_co2eq`): 부문·가스·시나리오 등 세부 하위분류로 보임
 - A-011 (`A-011_emissions_sector_power_industry`): 부문·가스·시나리오 등 세부 하위분류로 보임
 - A-015 (`A-015_sdg1_lmicpov`): 부문·가스·시나리오 등 세부 하위분류로 보임
 - A-018 (`A-018_capacity_coal_ongrid`): 부문·가스·시나리오 등 세부 하위분류로 보임
-- B-002 (`B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5`): 부문·가스·시나리오 등 세부 하위분류로 보임
 - B-018 (`B-018_gdp_ppp_full_ssp2`): 부문·가스·시나리오 등 세부 하위분류로 보임
 - B-019 (`B-019_pop_full_ssp2`): 부문·가스·시나리오 등 세부 하위분류로 보임
