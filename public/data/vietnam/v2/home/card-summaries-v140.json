@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-10-01T07:33:19.480Z",
+ "generatedAt": "2026-10-01T08:11:23.811Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -12853,19 +12853,53 @@
   {
    "elementId": "B-025",
    "title": "유역 면적",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "86,253 km²",
+    "label": "홍–타이빈 · 자국 내 면적 km GIS 산출 최대"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "홍–타이빈",
+      "value": 86253
+     },
+     {
+      "label": "동나이",
+      "value": 38686
+     },
+     {
+      "label": "끄우롱",
+      "value": 36226
+     },
+     {
+      "label": "마",
+      "value": 18985
+     },
+     {
+      "label": "까",
+      "value": 17991
+     },
+     {
+      "label": "스레뽁",
+      "value": 16976
+     }
+    ],
+    "unit": "km²",
+    "scope": "유역별",
+    "omitted": 2
    },
    "period": "2024년",
-   "selection": null,
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {}
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "유역",
+    "rule": "유역 120개의 자국 내 면적 km GIS 산출 비교"
    },
    "measure": null,
    "periodLabel": "자료기간",
@@ -16074,40 +16108,54 @@
    "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
    "kind": "bars",
    "headline": {
-    "value": "69건",
-    "label": "기록 · 유형 4종"
+    "value": "293,088~295,646 MW",
+    "label": "2050년 전원별 설비용량 계획 최대 · 태양광(집중형+옥상) · 개정 PDP8 하한~상한"
    },
    "preview": {
     "parts": [
      {
-      "label": "전원별 설비계획",
-      "value": 36
+      "label": "태양광(집중형+옥상)",
+      "value": 295646
      },
      {
-      "label": "전력수요 전망",
-      "value": 15
+      "label": "해상 풍력",
+      "value": 139097
      },
      {
-      "label": "현장 확인 항목",
-      "value": 9
+      "label": "저장장치(BESS)",
+      "value": 96120
      },
      {
-      "label": "전망 문서·항목",
-      "value": 9
+      "label": "육상·근해 풍력",
+      "value": 91400
+     },
+     {
+      "label": "수력(소수력 포함)",
+      "value": 40624
+     },
+     {
+      "label": "유연성 전원(LNG·유류·수소 등)",
+      "value": 38641
      }
     ],
-    "unit": "건",
-    "scope": "기록 유형별 · 합산하지 않음",
-    "omitted": 0
+    "unit": "MW",
+    "scope": "2050년 계획 상한 · 상위 6개 전원",
+    "omitted": 13
    },
-   "period": "2024–2050년",
-   "selection": null,
+   "period": "계획 2030·2050년",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": 2050,
+    "period": null,
+    "dimensions": {}
+   },
    "basis": {
-    "unit": "기록",
-    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "unit": "계획값",
+    "rule": "개정 PDP8(Quyết định 768/QĐ-TTg) 2050년 전원별 설비용량 계획 19개 전원 · 하한~상한 범위 · 총 설비·배출 전망 행 제외 · 합산하지 않음",
     "count": {
-     "rows": 69,
-     "types": 4
+     "planItems": 19,
+     "rows": 69
     }
    },
    "measure": null,
@@ -16194,45 +16242,45 @@
    "title": "탄소시장 준비도",
    "kind": "bars",
    "headline": {
-    "value": "61건",
-    "label": "기록 · 유형 5종"
+    "value": "479개소",
+    "label": "Ho Chi Minh city · 인벤토리 의무 대상 시설 · 2026-09-25"
    },
    "preview": {
     "parts": [
      {
-      "label": "의무 인벤토리 시설 집계",
-      "value": 34
+      "label": "부속서 II 산업무역부 소관",
+      "value": 430
      },
      {
-      "label": "준비도 체크리스트 항목",
-      "value": 14
+      "label": "부속서 III.A 건설부 소관 교통",
+      "value": 7
      },
      {
-      "label": "현장 확인 항목",
-      "value": 9
+      "label": "부속서 III.B 건설부 소관 건설",
+      "value": 35
      },
      {
-      "label": "MRV 제재 규정",
-      "value": 3
-     },
-     {
-      "label": "준비도 종합",
-      "value": 1
+      "label": "부속서 IV 농업환경부 소관",
+      "value": 7
      }
     ],
-    "unit": "건",
-    "scope": "기록 유형별 · 합산하지 않음",
+    "unit": "개소",
+    "scope": "Ho Chi Minh city · 부속서별 구성",
     "omitted": 0
    },
    "period": "2026년 확인",
-   "selection": null,
-   "basis": {
-    "unit": "기록",
-    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
-    "count": {
-     "rows": 61,
-     "types": 5
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "registryRegion": "v124-c-022-entity-00021"
     }
+   },
+   "basis": {
+    "unit": "시설",
+    "rule": "원자료 성·시별 의무 인벤토리 시설 수 34곳 중 최다 · 부속서별 구성은 원자료 열 그대로 · 재합산하지 않음"
    },
    "measure": null,
    "periodLabel": "기준 시점",
@@ -18024,36 +18072,48 @@
   {
    "elementId": "D-024",
    "title": "VC·임팩트 투자 현황[투자 라운드(Seed/Series A-C), 투자자명, 투자 금액, 대상 기업/기술, 국가, 투자 연도, 기후 분야(RE/효율/모빌리티/AgTech), 공동투자 참여 가능 여부 및 형태]",
+   "kind": "facts",
    "headline": {
-    "value": "15 건",
-    "label": "VC · 임팩트 투자 현황 · DFI 투자 건수"
+    "value": "7건",
+    "label": "투자 건"
+   },
+   "preview": {
+    "facts": [
+     {
+      "label": "Stride",
+      "value": ""
+     },
+     {
+      "label": "CME Solar",
+      "value": ""
+     },
+     {
+      "label": "Dat Bike",
+      "value": ""
+     }
+    ],
+    "more": 1
    },
    "period": "2026년 확인",
    "selection": {
-    "measure": "measure-cb62efeb5ad3",
+    "measure": null,
     "sex": null,
-    "year": 2026,
+    "year": null,
     "period": null,
     "dimensions": {}
    },
-   "measure": {
-    "key": "measure-cb62efeb5ad3",
-    "label": "VC",
-    "unit": "건"
-   },
-   "kind": "level",
-   "preview": {
-    "unit": "건",
-    "seriesLabel": "임팩트 투자 현황 · DFI 투자 건수",
-    "others": [],
-    "note": "단일 시점 값"
-   },
    "basis": {
-    "unit": "관측값",
-    "rule": "VC(건) 임팩트 투자 현황 · DFI 투자 건수 · 단일 시점이므로 추이를 그리지 않음"
+    "unit": "투자 건",
+    "rule": "투자 건 1건 = 원천 1행(레코드구분=개별) · 원천의 집계·설명 행 4건 제외",
+    "count": {
+     "rows": 7,
+     "distinct": 7,
+     "sourceRows": 26
+    }
    },
+   "measure": null,
    "periodLabel": "기준 시점",
-   "provider": "IFC · U.S. DFC",
+   "provider": "IFC · U.S. DFC · New Energy Nexus · RMIT University — Vietnam Climate Tech Funding Ecosystem 2025 (DealStreetAsia·Tracxn 병용)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -18061,10 +18121,9 @@
     "observationCount": 1,
     "entityCount": 26,
     "indicatorIds": [
-     "D-024_dfi_investment_count"
-    ],
-    "headlineIndicatorIds": [
-     "D-024_dfi_investment_count"
+     "D-024_dfi_investment_count",
+     "D-024_dfi_direct_investment_registry",
+     "D-024_vc_impact_investment_deal_registry"
     ]
    }
   },

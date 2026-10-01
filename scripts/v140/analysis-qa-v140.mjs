@@ -310,11 +310,14 @@ function recompute(card) {
   const basis = card.basis || {};
   const rule = basis.rule || "";
 
-  if (card.elementId === "C-001" && entities.length) {
+  // V162: a C card built from the 2026-09-30 wide sheet ("가로형 기록 1건 =
+  // 원천 1행") counts its rows; the rules below read the old 속성N template.
+  const wideCardV162 = /^가로형 기록/u.test(rule);
+  if (card.elementId === "C-001" && entities.length && !wideCardV162) {
     const matches = entities.filter((row) => row.indicatorId === "C-001_mitigation_target" && clean(attr(row, "속성1_레코드명")) === "총량 감축률" && Number(attr(row, "속성4_시점")) === 2030 && numberOf(attr(row, "속성3_값")) === 15.8 && clean(attr(row, "속성19_원문URL")) === "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam_NDC_2022_Eng.pdf");
     return matches.length === 1 ? finish(numberOf(attr(matches[0], "속성3_값")), matches.length, "NDC 2022 Table 3, unconditional target") : { status: "mismatch", reason: "reviewed NDC target not uniquely identified" };
   }
-  if (["C-019", "C-022"].includes(card.elementId) && entities.length) {
+  if (["C-019", "C-022"].includes(card.elementId) && entities.length && !wideCardV162) {
     const rows = entities.filter((row) => /^VN\d+$/u.test(clean(attr(row, "속성22_행정코드P_code"))) && /시설/u.test(row.name || "") && numberOf(attr(row, "속성3_값")) !== null);
     const date = [...new Set(rows.map((row) => clean(attr(row, "속성4_시점"))))].sort().at(-1);
     const selected = rows.filter((row) => clean(attr(row, "속성4_시점")) === date);
@@ -324,7 +327,9 @@ function recompute(card) {
   }
 
   // Observation-backed cards: the headline series at the card's year.
-  if (["line", "level", "spatial", "bars", "composition"].includes(card.kind) && ids.size && observations.length) {
+  // A card the home asset summarises from a register (D-023) is recounted by
+  // its register rule below, not by the register's own stated totals.
+  if (["line", "level", "spatial", "bars", "composition"].includes(card.kind) && ids.size && observations.length && basis.unit !== "홈과 동일") {
     let rows = observations.filter((row) => ids.has(row.indicatorId) && typeof row.value === "number");
     if (claim.year) rows = rows.filter((row) => Number(row.year) === Number(claim.year) || String(row.period) === String(claim.year));
     else if (claim.period) rows = rows.filter((row) => String(row.period) === claim.period);
@@ -400,7 +405,10 @@ function recompute(card) {
     return finish(Math.max(...values), values.length, "max station value, SSP2-4.5 median, 2100");
   }
   if (card.elementId === "B-025" && entities.length) {
-    const values = entities.filter((row) => row.indicatorId === "B-025_river_basin").map((row) => numberOf(attr(row, "베트남_내_면적_km_GIS_산출"))).filter((v) => v !== null);
+    // V162: the named basins (a literature total area) under the renamed
+    // "자국 내" column; the pre-V162 column stays as the fallback.
+    const named = entities.filter((row) => row.indicatorId === "B-025_river_basin" && (numberOf(attr(row, "총_유역면적_km_문헌")) !== null || numberOf(attr(row, "베트남_내_면적_km_GIS_산출")) !== null));
+    const values = named.map((row) => numberOf(attr(row, "자국_내_면적_km_GIS_산출")) ?? numberOf(attr(row, "베트남_내_면적_km_GIS_산출"))).filter((v) => v !== null);
     if (!values.length) return { status: "no-matching-row" };
     return finish(Math.max(...values), values.length, "largest basin area (km², GIS)");
   }

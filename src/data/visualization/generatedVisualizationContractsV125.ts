@@ -3518,7 +3518,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     ],
     "noDataReason": null,
     "populatedRecordCount": 50,
-    "primaryRenderer": "capability-scorecard",
+    "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2025,

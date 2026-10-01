@@ -2104,16 +2104,19 @@ export const ELEMENT_PRESENTATION_SPECS_V100: ElementPresentationSpecV100[] = [
   {
     elementId: "E-011",
     category: "E",
-    titleKo: "기술준비수준 (TRL)",
+    // V162: delivered on 2026-09-30 as the Network Readiness Index (NRI
+    // 2021-2025, overall and four pillars, score and rank) - a score index,
+    // read as E-010 is. The TRL status matrix had no data to show.
+    titleKo: "네트워크 준비지수(NRI)",
     displayType: "categorical",
-    sourcePrimaryView: "capability_matrix",
-    layoutFamily: "capability",
-    primaryVisualKo: "역량 항목별 상태 매트릭스",
-    secondaryVisualKo: "판정근거·기관/문서",
+    sourcePrimaryView: "score_benchmark",
+    layoutFamily: "benchmark",
+    primaryVisualKo: "현재값·순위·최근추세",
+    secondaryVisualKo: "비교표·방법론",
     bundleMode: "none",
     mapRole: "not_required",
     compareRole: "status_or_aggregate_only",
-    rationaleKo: "정성/검증 항목은 점수화보다 상태+근거가 적합",
+    rationaleKo: "단일 점수/지수는 현재값과 추세를 먼저 제공(국가 비교 포함 여부는 PR-D 판단)",
   },
   {
     elementId: "E-012",
