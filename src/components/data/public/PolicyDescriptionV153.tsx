@@ -5,6 +5,8 @@ import {
   policyDocumentDescriptionV153,
 } from "../../../data/visualization/policyDescriptionsV153";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { usePageDataCountryV162 } from "../../../data/countries/DataCountryContextV158";
+import { policyDescriptionLinesV162 } from "../../../data/visualization/policyDescriptionViewsV162";
 import "./policy-description-v153.css";
 
 /**
@@ -43,6 +45,8 @@ export function PolicyDescriptionCardV153({ entry, headingLevel = "p" }: { entry
   const formal = [entry.formalName, entry.shortName].filter((value) => value && value !== entry.title).join(" · ");
   const sources = entry.sourceUrl.filter((url) => HTTP_URL.test(url));
   const labels = sourceLabels(sources);
+  // V162: the lines as this country's screens show them (no other country's own line).
+  const lines = policyDescriptionLinesV162(entry, usePageDataCountryV162());
   return (
     <aside
       className={`pdc153 pdc153--${entry.kind}`}
@@ -59,9 +63,9 @@ export function PolicyDescriptionCardV153({ entry, headingLevel = "p" }: { entry
         {/* The formal line carries the short name, so it needs the same help trigger as the title (V153). */}
         {formal && <span className="pdc153__formal"> (<PublicTermTextV134 text={formal} />)</span>}
       </Heading>
-      {entry.status === "verified" && entry.description.length > 0 ? (
+      {entry.status === "verified" && lines.length > 0 ? (
         <ul className="pdc153__points">
-          {entry.description.map((line) => (
+          {lines.map((line) => (
             <li key={line}><PublicTermTextV134 text={line} /></li>
           ))}
         </ul>

@@ -11,8 +11,11 @@
  * - The lock `~/.nigt-gate.lock` records the session, branch, command and start
  *   time of the holder. It is created atomically (exclusive create).
  * - While another holder has it, this waits and checks again every 30 seconds,
- *   printing who holds it. A lock older than 2 hours is treated as abandoned,
- *   reported and removed.
+ *   printing who holds it. A lock whose holder process has ended is abandoned,
+ *   reported and removed; so is one older than 2 hours whose holder cannot be
+ *   seen from here (another machine). A holder that is still running keeps its
+ *   lock however long it runs (V162: a 2-hour analysis QA run was about to lose
+ *   its lock to a waiting gate while it was still working).
  * - The lock is released when the command ends, fails or is interrupted.
  * - A command already running inside a lock (a gate that calls another gate,
  *   e.g. finalize:v151 -> qa:acceptance:v162) inherits it through
@@ -58,6 +61,17 @@ function readLock() {
 const token = randomUUID();
 let held = false;
 
+/** Whether the holder's process is still running on this machine. */
+function holderAlive(holder) {
+  if (!holder?.pid || (holder.host && holder.host !== hostname())) return null;
+  try {
+    process.kill(holder.pid, 0);
+    return true;
+  } catch (error) {
+    return error.code === "EPERM";
+  }
+}
+
 function tryAcquire() {
   try {
     const fd = openSync(LOCK_PATH, "wx");
@@ -69,6 +83,7 @@ function tryAcquire() {
       branch: branch(),
       cwd: process.cwd(),
       pid: process.pid,
+      host: hostname(),
       startedAt: new Date().toISOString(),
     };
     writeSync(fd, `${JSON.stringify(record, null, 2)}\n`);
@@ -93,7 +108,8 @@ async function acquire() {
     if (tryAcquire()) return;
     const holder = readLock();
     const startedAt = holder?.startedAt ? Date.parse(holder.startedAt) : NaN;
-    if (!holder || !Number.isFinite(startedAt) || Date.now() - startedAt > STALE_MS) {
+    const alive = holderAlive(holder);
+    if (!holder || !Number.isFinite(startedAt) || alive === false || (alive === null && Date.now() - startedAt > STALE_MS)) {
       console.log(`[gate-lock] removing an abandoned lock (${holder ? `${holder.name} · ${holder.branch} · ${holder.startedAt}` : "unreadable"})`);
       try {
         unlinkSync(LOCK_PATH);

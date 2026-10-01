@@ -38,6 +38,7 @@ import type {
   UseCaseV159,
 } from "./specTypesV159";
 import { normalizeCountryIso3V158 } from "../countryContext";
+import { applyCountryTextViewsV162, loadCountryTextViewsV162 } from "./countryTextViewsV162";
 import { SPEC_AUTHORED_COUNTRIES_V158, specNeedsCountryScopeV158 } from "../countries/countryCopyV158";
 import { otherCountryTermsV158 } from "../countries/countryTermsV158";
 import { scopeCasesToCountryV158, scopeTextToCountryV158 } from "../countries/countryTextScopeV158";
@@ -223,7 +224,14 @@ export async function loadDatasetSpecForCountryV158(
   elementId: string,
   country: string | null | undefined
 ): Promise<CountryDatasetSpecBundleV158> {
-  const bundle = await loadDatasetSpecV159(elementId);
+  // V162: the country's own view of the spec text (every country, the default
+  // one included - a case about another country's own data is not shown).
+  const bundle = applyCountryTextViewsV162(
+    await loadDatasetSpecV159(elementId),
+    elementId,
+    normalizeCountryIso3V158(country),
+    await loadCountryTextViewsV162()
+  );
   const hidden: CountrySpecHiddenV158 = { fields: [], cases: [] };
   if (!specNeedsCountryScopeV158(country)) return { ...bundle, hidden };
   const terms = otherCountryTermsV158(normalizeCountryIso3V158(country));
