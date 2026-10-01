@@ -724,6 +724,48 @@ const C_TEMPLATE_CARDS = {
   },
 };
 
+// ------------------------------------------------------------------ V162 wide records
+// The 2026-09-30 C deliveries are wide: one record per row, its type in
+// "[식별] 레코드 유형". The detail lists them as block cards with a chip per
+// type, so the card counts the same records and types (src/data/visualization
+// /wideRecordsV162.ts). Used when a reviewed vertical-template card finds none
+// of its rows in the new sheet.
+function isWideTemplateV162(pack) {
+  const labels = (pack.meta?.fieldDefinitions || []).map((row) => text(row.label));
+  return labels.some((label) => /^\[식별\]\s*레코드명/u.test(label)) && new Set(labels.map((label) => (label.match(/^\[([^\]]+)\]/u) || [])[1]).filter(Boolean)).size >= 2;
+}
+
+// Same public wording as src/data/visualization/processWordingV162.ts.
+const publicProcessWordingV162 = (value) =>
+  text(value)
+    .replace(/현지조사\s*필요\s*항목/gu, "현장 확인 항목")
+    .replace(/^현지조사\s*[,，]\s*/u, "현장 확인 — ")
+    .replace(/현지조사/gu, "현장 확인");
+
+function wideRecordCardV162(item, pack) {
+  const records = pack.entities.records;
+  const byType = new Map();
+  for (const record of records) {
+    const type = publicProcessWordingV162(record.normalizedAttributes?.["식별_레코드_유형"]) || "기타";
+    byType.set(type, (byType.get(type) || 0) + 1);
+  }
+  const parts = [...byType].map(([label, value]) => ({ label, value })).sort((a, b) => b.value - a.value);
+  const many = parts.length > 1;
+  return {
+    kind: many ? "bars" : "facts",
+    headline: { value: `${formatNumber(records.length)}건`, label: many ? `기록 · 유형 ${parts.length}종` : "기록" },
+    preview: many
+      ? { parts: parts.slice(0, 6), unit: "건", scope: "기록 유형별 · 합산하지 않음", omitted: Math.max(0, parts.length - 6) }
+      : { facts: records.slice(0, 3).map((record) => ({ label: publicProcessWordingV162(record.name), value: "" })), more: Math.max(0, records.length - 3) },
+    period: periodOf(item),
+    selection: null,
+    basis: { unit: "기록", rule: "가로형 기록 1건 = 원천 1행 · 기록 유형별 수", count: { rows: records.length, types: parts.length } },
+    measure: null,
+  };
+}
+
+const emptyCardV162 = (card) => !card || card.headline?.value === "—" || /^0(?:[^\d.,]|$)/u.test(text(card.headline?.value));
+
 // ------------------------------------------------------------------ entity cards
 function carbonFacilityCardV146(entities, sectorMode) {
   const regions = entities.filter((entity) => entity.normalizedAttributes?.["속성22_행정코드P_code"] && /시설/u.test(entity.name)).map((entity) => ({ ...cTemplateRow(entity), region: text(entity.normalizedAttributes["속성20_지역_원문"]), code: text(entity.normalizedAttributes["속성22_행정코드P_code"]) })).filter((row) => row.value !== null).sort((a, b) => b.value - a.value);
@@ -1106,6 +1148,10 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     }
   } catch (error) {
     warn(elementId, `builder failed: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  // V162: a wide C sheet whose reviewed card found nothing (or only zeros).
+  if (emptyCardV162(card) && pack.entities?.records?.length && isWideTemplateV162(pack)) {
+    card = wideRecordCardV162(item, pack);
   }
   if (!card) {
     warn(elementId, "no card could be built");

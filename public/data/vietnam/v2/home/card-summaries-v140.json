@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-09-30T21:28:33.572Z",
+ "generatedAt": "2026-10-01T04:18:56.799Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -13669,44 +13669,63 @@
   {
    "elementId": "B-034",
    "title": "탄소 저장량",
+   "kind": "spatial",
    "headline": {
-    "value": "-436만 Mg CO2e/yr",
-    "label": "산림탄소 순플럭스(연평균) · 전국 · 2001-2024"
+    "value": "6,907만 Mg CO2e",
+    "label": "산림탄소 순플럭스(누계) 최대 · Kon Tum · 63개 성·시 중 · 2001–2024"
+   },
+   "preview": {
+    "parts": [
+     {
+      "label": "Kon Tum",
+      "value": 69068861.38
+     },
+     {
+      "label": "Quảng Nam",
+      "value": 50435972.39
+     },
+     {
+      "label": "Quảng Ngãi",
+      "value": 41328380.92
+     },
+     {
+      "label": "Gia Lai",
+      "value": 36481153.79
+     },
+     {
+      "label": "Nghệ An",
+      "value": 34916654.93
+     }
+    ],
+    "unit": "Mg CO2e",
+    "scope": "산림탄소 순플럭스(누계) 상위 5개 성·시",
+    "median": -2458927.81,
+    "range": {
+     "min": -90734585.11,
+     "p10": -28588410.198,
+     "p90": 27851963.930000044,
+     "max": 69068861.38
+    },
+    "provinces": 63
    },
    "period": "2000–2025년",
    "selection": {
-    "measure": "measure-ef59b2b71a01",
+    "measure": "measure-346324a32a6a",
     "sex": null,
     "year": null,
-    "period": "2001-2024",
+    "period": "2001–2024",
     "dimensions": {
-     "detail": "전국"
+     "detail": "Kon Tum"
     }
    },
-   "measure": {
-    "key": "measure-ef59b2b71a01",
-    "label": "산림탄소 순플럭스(연평균)",
-    "unit": "Mg CO2e/yr"
-   },
-   "kind": "level",
-   "preview": {
-    "unit": "Mg CO2e/yr",
-    "seriesLabel": "전국",
-    "others": [
-     {
-      "label": "2001-2024",
-      "value": 85088
-     },
-     {
-      "label": "2001-2024",
-      "value": 733997
-     }
-    ],
-    "note": "기간 단위 값"
-   },
    "basis": {
-    "unit": "관측값",
-    "rule": "산림탄소 순플럭스(연평균)(Mg CO2e/yr) 전국 · 단일 시점이므로 추이를 그리지 않음"
+    "unit": "성·시 값",
+    "rule": "산림탄소 순플럭스(누계)(Mg CO2e) 63개 성·시 값 · 2001–2024 · 최대값과 중앙값·10~90분위 · 합산하지 않음"
+   },
+   "measure": {
+    "key": "measure-346324a32a6a",
+    "label": "산림탄소 순플럭스(누계)",
+    "unit": "Mg CO2e"
    },
    "provider": "ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (Harris et al. 2021) - 배포 30m 래스터(aboveground carbon stock 2000 v20230222, forest carbon gross emissions v20250430 · gross removals v20250416 · net flux v20250430)",
    "mapConnected": true,
@@ -13716,13 +13735,72 @@
     "observationCount": 488,
     "entityCount": 1251,
     "indicatorIds": [
-     "B-034_national_forest_carbon_net_flux",
-     "B-034_national_forest_carbon_net_flux_t30",
-     "B-034_national_forest_carbon_net_flux_t50",
-     "B-034_national_forest_carbon_net_flux_t75"
+     "B-034_prov_forest_carbon_net_flux_vn_22",
+     "B-034_prov_forest_carbon_net_flux_vn_54",
+     "B-034_prov_forest_carbon_net_flux_vn_66",
+     "B-034_prov_forest_carbon_net_flux_vn_36",
+     "B-034_prov_forest_carbon_net_flux_vn_68",
+     "B-034_prov_forest_carbon_net_flux_vn_51",
+     "B-034_prov_forest_carbon_net_flux_vn_hp",
+     "B-034_prov_forest_carbon_net_flux_vn_49",
+     "B-034_prov_forest_carbon_net_flux_vn_hn",
+     "B-034_prov_forest_carbon_net_flux_vn_69",
+     "B-034_prov_forest_carbon_net_flux_vn_52",
+     "B-034_prov_forest_carbon_net_flux_vn_70",
+     "B-034_prov_forest_carbon_net_flux_vn_18",
+     "B-034_prov_forest_carbon_net_flux_vn_67",
+     "B-034_prov_forest_carbon_net_flux_vn_32",
+     "B-034_prov_forest_carbon_net_flux_vn_39",
+     "B-034_prov_forest_carbon_net_flux_vn_56",
+     "B-034_prov_forest_carbon_net_flux_vn_20",
+     "B-034_prov_forest_carbon_net_flux_vn_73",
+     "B-034_prov_forest_carbon_net_flux_vn_14",
+     "B-034_prov_forest_carbon_net_flux_vn_40",
+     "B-034_prov_forest_carbon_net_flux_vn_34",
+     "B-034_prov_forest_carbon_net_flux_vn_25",
+     "B-034_prov_forest_carbon_net_flux_vn_29",
+     "B-034_prov_forest_carbon_net_flux_vn_02",
+     "B-034_prov_forest_carbon_net_flux_vn_26",
+     "B-034_prov_forest_carbon_net_flux_vn_46",
+     "B-034_prov_forest_carbon_net_flux_vn_50",
+     "B-034_prov_forest_carbon_net_flux_vn_45",
+     "B-034_prov_forest_carbon_net_flux_vn_13",
+     "B-034_prov_forest_carbon_net_flux_vn_23",
+     "B-034_prov_forest_carbon_net_flux_vn_31",
+     "B-034_prov_forest_carbon_net_flux_vn_58",
+     "B-034_prov_forest_carbon_net_flux_vn_44",
+     "B-034_prov_forest_carbon_net_flux_vn_07",
+     "B-034_prov_forest_carbon_net_flux_vn_53",
+     "B-034_prov_forest_carbon_net_flux_vn_72",
+     "B-034_prov_forest_carbon_net_flux_vn_sg",
+     "B-034_prov_forest_carbon_net_flux_vn_06",
+     "B-034_prov_forest_carbon_net_flux_vn_04",
+     "B-034_prov_forest_carbon_net_flux_vn_03",
+     "B-034_prov_forest_carbon_net_flux_vn_63",
+     "B-034_prov_forest_carbon_net_flux_vn_33",
+     "B-034_prov_forest_carbon_net_flux_vn_01",
+     "B-034_prov_forest_carbon_net_flux_vn_43",
+     "B-034_prov_forest_carbon_net_flux_vn_09",
+     "B-034_prov_forest_carbon_net_flux_vn_24",
+     "B-034_prov_forest_carbon_net_flux_vn_71",
+     "B-034_prov_forest_carbon_net_flux_vn_41",
+     "B-034_prov_forest_carbon_net_flux_vn_21",
+     "B-034_prov_forest_carbon_net_flux_vn_dn",
+     "B-034_prov_forest_carbon_net_flux_vn_61",
+     "B-034_prov_forest_carbon_net_flux_vn_35",
+     "B-034_prov_forest_carbon_net_flux_vn_30",
+     "B-034_prov_forest_carbon_net_flux_vn_55",
+     "B-034_prov_forest_carbon_net_flux_vn_28",
+     "B-034_prov_forest_carbon_net_flux_vn_59",
+     "B-034_prov_forest_carbon_net_flux_vn_27",
+     "B-034_prov_forest_carbon_net_flux_vn_37",
+     "B-034_prov_forest_carbon_net_flux_vn_05",
+     "B-034_prov_forest_carbon_net_flux_vn_47",
+     "B-034_prov_forest_carbon_net_flux_vn_57",
+     "B-034_prov_forest_carbon_net_flux_vn_ct"
     ],
     "headlineIndicatorIds": [
-     "B-034_national_forest_carbon_net_flux"
+     "B-034_prov_forest_carbon_net_flux_vn_28"
     ]
    }
   },
@@ -14925,19 +15003,47 @@
   {
    "elementId": "C-001",
    "title": "NDC[제출년도, 버전, BAU 배출 전망, 감축 목표(무조건부/조건부), 부문별 감축 전략·수단 목록, NDC-SDG 연계 매핑, 적응 부문 목표, 이행 재원 소요, 기준연도, 대상 GHG, 대상 부문, 원본 링크]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "110건",
+    "label": "기록 · 유형 5종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "부문별 목표",
+      "value": 71
+     },
+     {
+      "label": "재원",
+      "value": 15
+     },
+     {
+      "label": "부문별 감축수단",
+      "value": 15
+     },
+     {
+      "label": "적응",
+      "value": 6
+     },
+     {
+      "label": "NDC 제출",
+      "value": 3
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2014–2030년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 110,
+     "types": 5
+    }
    },
    "measure": null,
    "provider": "UNFCCC NDC Registry / Climate Watch (WRI) NDC Content / 각국 NDC 원문",
@@ -15309,30 +15415,32 @@
    "title": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
    "kind": "bars",
    "headline": {
-    "value": "0개",
-    "label": "이니셔티브 · NAZCA 등재 행위자 0곳 · 0년 확인"
+    "value": "117건",
+    "label": "기록 · 유형 2종"
    },
    "preview": {
-    "parts": [],
-    "unit": "행위자 수",
-    "scope": "NAZCA 등재 행위자 유형별",
+    "parts": [
+     {
+      "label": "NAZCA 등재 행위자",
+      "value": 98
+     },
+     {
+      "label": "협력 이니셔티브",
+      "value": 19
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
     "omitted": 0
    },
-   "period": "0년 확인",
-   "selection": {
-    "measure": null,
-    "sex": null,
-    "year": null,
-    "period": null,
-    "dimensions": {}
-   },
+   "period": "1994–2050년",
+   "selection": null,
    "basis": {
-    "unit": "이니셔티브",
-    "rule": "이니셔티브 1개 = 속성 행의 주제(' — ' 앞) 또는 협력 이니셔티브 행 · 행위자 1곳 = NAZCA 등재 행 · 원천 117행 중 자료 출처 0건은 세지 않음",
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
     "count": {
-     "identities": 0,
-     "actors": 0,
-     "rows": 117
+     "rows": 117,
+     "types": 2
     }
    },
    "measure": null,
@@ -15964,19 +16072,43 @@
   {
    "elementId": "C-018",
    "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "69건",
+    "label": "기록 · 유형 4종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "전원별 설비계획",
+      "value": 36
+     },
+     {
+      "label": "전력수요 전망",
+      "value": 15
+     },
+     {
+      "label": "현장 확인 항목",
+      "value": 9
+     },
+     {
+      "label": "전망 문서·항목",
+      "value": 9
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2024–2050년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 69,
+     "types": 4
+    }
    },
    "measure": null,
    "provider": "각국 전력수급기본계획·에너지기본계획 원문 / IEA·IRENA 국가 전망 자료",
@@ -15998,19 +16130,47 @@
   {
    "elementId": "C-019",
    "title": "탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, FIT 도입 여부, FIP 도입 여부, RPS 도입 여부, 탄소시장 관련 예산 규모]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "56건",
+    "label": "기록 · 유형 5종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "탄소시장 제도 설계",
+      "value": 23
+     },
+     {
+      "label": "탄소세·환경세 과세 항목",
+      "value": 18
+     },
+     {
+      "label": "탄소시장 근거 법령",
+      "value": 11
+     },
+     {
+      "label": "재생에너지 지원제도",
+      "value": 3
+     },
+     {
+      "label": "탄소시장 관련 예산",
+      "value": 1
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2019–2030년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 56,
+     "types": 5
+    }
    },
    "measure": null,
    "provider": "기관별 공식 출처 5개(상세 자료정보 참조)",
@@ -16032,19 +16192,47 @@
   {
    "elementId": "C-022",
    "title": "탄소시장 준비도",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "61건",
+    "label": "기록 · 유형 5종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "의무 인벤토리 시설 집계",
+      "value": 34
+     },
+     {
+      "label": "준비도 체크리스트 항목",
+      "value": 14
+     },
+     {
+      "label": "현장 확인 항목",
+      "value": 9
+     },
+     {
+      "label": "MRV 제재 규정",
+      "value": 3
+     },
+     {
+      "label": "준비도 종합",
+      "value": 1
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2026년 확인",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 61,
+     "types": 5
+    }
    },
    "measure": null,
    "periodLabel": "기준 시점",

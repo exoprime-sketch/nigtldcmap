@@ -163,7 +163,7 @@ export default function WideRecordCardsV162({ records, elementTitle, elementId }
   const headerText = `${elementTitle ? `${elementTitle} ` : ""}${records.length}건`;
 
   return (
-    <section className="wide162" data-testid="wide-record-cards-v162" data-analysis-block="record-cards">
+    <section className="wide162" data-testid="wide-record-cards-v162" data-analysis-block="cards-list">
       <div className="wide162-toolbar">
         <p className="wide162-count">{headerText}</p>
         {showTypeFilter ? (

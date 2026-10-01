@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-09-30T11:24:47.569Z",
+ "generatedAt": "2026-10-01T04:19:15.563Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -13577,19 +13577,51 @@
   {
    "elementId": "C-001",
    "title": "NDC[제출년도, 버전, BAU 배출 전망, 감축 목표(무조건부/조건부), 부문별 감축 전략·수단 목록, NDC-SDG 연계 매핑, 적응 부문 목표, 이행 재원 소요, 기준연도, 대상 GHG, 대상 부문, 원본 링크]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "86건",
+    "label": "기록 · 유형 9종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "부문별 목표",
+      "value": 30
+     },
+     {
+      "label": "비온실가스 정량목표",
+      "value": 17
+     },
+     {
+      "label": "적응",
+      "value": 16
+     },
+     {
+      "label": "SDG 연계",
+      "value": 7
+     },
+     {
+      "label": "부문별 감축수단",
+      "value": 5
+     },
+     {
+      "label": "NDC 제출",
+      "value": 4
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 3
    },
    "period": "2015–2035년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 86,
+     "types": 9
+    }
    },
    "measure": null,
    "provider": "UNFCCC NDC Registry / Climate Watch (WRI) NDC Content / 각국 NDC 원문",
@@ -14515,19 +14547,43 @@
   {
    "elementId": "C-018",
    "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "48건",
+    "label": "기록 · 유형 4종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "설비 확충 계획",
+      "value": 24
+     },
+     {
+      "label": "수요 전망",
+      "value": 20
+     },
+     {
+      "label": "RE 비중 목표",
+      "value": 3
+     },
+     {
+      "label": "전망 문서",
+      "value": 1
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2019–2050년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 48,
+     "types": 4
+    }
    },
    "measure": null,
    "provider": "각국 전력수급기본계획·에너지기본계획 원문 / IEA·IRENA 국가 전망 자료",
@@ -14548,19 +14604,51 @@
   {
    "elementId": "C-019",
    "title": "탄소 시장 법률·예산[탄소세 도입 여부, 탄소세 세율, ETS 도입 여부, ETS 대상 부문, ETS 가격, FIT 도입 여부, FIP 도입 여부, RPS 도입 여부, 탄소시장 관련 예산 규모]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "44건",
+    "label": "기록 · 유형 10종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "수수료 항목",
+      "value": 14
+     },
+     {
+      "label": "적격 메커니즘",
+      "value": 12
+     },
+     {
+      "label": "재생에너지 지원제도",
+      "value": 5
+     },
+     {
+      "label": "수수료 규정",
+      "value": 4
+     },
+     {
+      "label": "탄소시장 관련 예산",
+      "value": 2
+     },
+     {
+      "label": "제도 도입 상태",
+      "value": 2
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 4
    },
    "period": "2024–2026년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 44,
+     "types": 10
+    }
    },
    "measure": null,
    "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
@@ -14584,19 +14672,39 @@
   {
    "elementId": "C-022",
    "title": "탄소시장 준비도",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "14건",
+    "label": "기록 · 유형 3종"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "준비도 체크리스트 항목",
+      "value": 9
+     },
+     {
+      "label": "제도 요소",
+      "value": 4
+     },
+     {
+      "label": "준비도 종합",
+      "value": 1
+     }
+    ],
+    "unit": "건",
+    "scope": "기록 유형별 · 합산하지 않음",
+    "omitted": 0
    },
    "period": "2024–2026년",
    "selection": null,
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "기록",
+    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "count": {
+     "rows": 14,
+     "types": 3
+    }
    },
    "measure": null,
    "provider": "World Bank Carbon Pricing Dashboard / 각국 탄소시장 근거 법령 원문 / Verra·Gold Standard 등 등록부",

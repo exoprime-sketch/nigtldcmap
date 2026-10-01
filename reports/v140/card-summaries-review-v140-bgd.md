@@ -1,8 +1,8 @@
 # 공개 카드 요약 검토표 (V140)
 
-생성 2026-09-30T11:24:47.569Z · 데이터 2026-09-29T00:00:00Z
+생성 2026-10-01T04:19:15.563Z · 데이터 2026-09-29T00:00:00Z
 
-종류별: line 34 · level 27 · bars 14 · composition 2 · facts 57 · spatial-trend 5 · spatial 1 · status 1
+종류별: line 34 · level 27 · bars 18 · composition 2 · facts 53 · spatial-trend 5 · spatial 1 · status 1
 
 | 요소 | 종류 | 핵심값 | 설명 | 자료기간 | 집계 규칙 |
 | --- | --- | --- | --- | --- | --- |
@@ -86,7 +86,7 @@
 | B-046 | facts | 21건 | 항목 · 2026년 | 2026년 | 항목 1건 = 원천 1행 |
 | B-047 | facts | 21건 | 항목 · 2025년 | 2025년 | 항목 1건 = 원천 1행 |
 | B-048 | facts | 3곳 | 광산 · 1961–2026년 | 1961–2026년 | 광산 1건 = 원천 1행 |
-| C-001 | facts | — | 요약 없음 | 2015–2035년 | 규칙 없음 |
+| C-001 | bars | 86건 | 기록 · 유형 9종 | 2015–2035년 | 가로형 기록 1건 = 원천 1행 · 기록 유형별 수 |
 | C-002 | facts | 76건 | 항목 · 2023–2026년 | 2023–2026년 | 항목 1건 = 원천 1행 |
 | C-003 | facts | 27건 | 항목 · 2023–2026년 | 2023–2026년 | 항목 1건 = 원천 1행 |
 | C-004 | facts | 38건 | 항목 · 2012–2050년 | 2012–2050년 | 항목 1건 = 원천 1행 |
@@ -103,9 +103,9 @@
 | C-015 | facts | 10건 | 원문 링크 · 2003–2026년 | 2003–2026년 | 원문 링크 1건 = 원천 1행 |
 | C-016 | facts | 92건 | 항목 · 2025–2040년 | 2025–2040년 | 항목 1건 = 원천 1행 |
 | C-017 | facts | 41건 | 항목 · 2018–2026년 | 2018–2026년 | 항목 1건 = 원천 1행 |
-| C-018 | facts | — | 요약 없음 | 2019–2050년 | 규칙 없음 |
-| C-019 | facts | — | 요약 없음 | 2024–2026년 | 규칙 없음 |
-| C-022 | facts | — | 요약 없음 | 2024–2026년 | 규칙 없음 |
+| C-018 | bars | 48건 | 기록 · 유형 4종 | 2019–2050년 | 가로형 기록 1건 = 원천 1행 · 기록 유형별 수 |
+| C-019 | bars | 44건 | 기록 · 유형 10종 | 2024–2026년 | 가로형 기록 1건 = 원천 1행 · 기록 유형별 수 |
+| C-022 | bars | 14건 | 기록 · 유형 3종 | 2024–2026년 | 가로형 기록 1건 = 원천 1행 · 기록 유형별 수 |
 | C-024 | facts | 7건 | 항목 · 2019–2026년 | 2019–2026년 | 항목 1건 = 원천 1행 |
 | C-025 | facts | 185건 | 프로젝트 · 2014–2026년 | 2014–2026년 | 프로젝트 1건 = 원천 1행 |
 | D-003 | level | 13.9 % | 예상 감축량 · 조건부 감축률 · 2035년 | 2035년 | 예상 감축량(%) 조건부 감축률 · 단일 시점이므로 추이를 그리지 않음 |
@@ -168,12 +168,8 @@
 - B-046: entity element without a reviewed rule; facts card
 - B-047: entity element without a reviewed rule; facts card
 - C-001: builder failed: C-001 reviewed targets changed
-- C-001: no card could be built
 - C-016: entity element without a reviewed rule; facts card
 - C-018: builder failed: Cannot read properties of undefined (reading 'min')
-- C-018: no card could be built
 - C-019: builder failed: No reviewed facility-region rows
-- C-019: no card could be built
 - C-022: builder failed: No reviewed facility-region rows
-- C-022: no card could be built
 - E-010: override measure not found: GERD
