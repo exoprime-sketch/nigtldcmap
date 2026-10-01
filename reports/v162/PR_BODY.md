@@ -96,13 +96,13 @@ PREVIEW_URL
   - C-009/010/016 가로형 경로, 파일명 제거 ' · ' 보존
   - E-008 열·ISO 협력국, 정책 설명 추출기, countrySpec 동일성, 데이터 경로 문자열, 대응표
 - 데이터 기인 기대값 변경: D-026·E-018·C-011·A-026·B-023 순서·E-008·finderSort·문서 타임라인 fixture·정책 설명 JSON·국가 비교 계약 — 사유는 EXPECTATION_CHANGES_V162.md
-- 결과 782/782, 게이트 로직 완화 없음(화면 문구 감사는 패턴 3종 추가)
+- 결과 789/789, 게이트 로직 완화 없음(화면 문구 감사는 패턴 3종 추가)
 
 ## 검증
-- `npx tsc --noEmit` 0 · `npm run test:unit` 782/782
+- `npx tsc --noEmit` 0 · `npm run test:unit` 789/789 · 상세 계약 QA(바뀐 28개) 28/28
 - 화면 문구 감사 VNM 146·BGD 141 상세 0건, 런타임 오류 0
-- BGD 검증기 GATE_RESULT
-- `finalize:v151`(acceptance 포함) GATE_RESULT
+- BGD 검증기 52/52 PASS
+- `finalize:v151`(acceptance 포함): CI 게이트로 판정(로컬 전체 실행 안 함, 사용자 지시 10-01)
 
 ## 미완료·후속
 - 비교 헤드라인 9개(A-030·B-002·B-009·B-022·B-035·B-038·B-043·D-002·B-046)는 PR-D 대표 지표 판단표에서 재검토
