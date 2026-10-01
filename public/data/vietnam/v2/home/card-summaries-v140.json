@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-30T00:00:00Z",
- "generatedAt": "2026-10-01T08:11:23.811Z",
+ "generatedAt": "2026-10-01T08:28:04.270Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -2884,44 +2884,35 @@
    "elementId": "A-027",
    "title": "교통 인프라[railway, road]",
    "headline": {
-    "value": "95.7 %",
-    "label": "도로 레이어 · bridge 기본값 비율 · 원천 기본값으로 채워진 비율"
+    "value": "313만 건",
+    "label": "도로 레이어 · 피처 수 · OSM 도로 레이어의 지물 건수"
    },
    "period": "2026년 추출",
    "selection": {
-    "measure": "measure-8f35104be85d",
+    "measure": "measure-7d9609ecb1c8",
     "sex": null,
     "year": 2026,
     "period": null,
     "dimensions": {
-     "category": "bridge 기본값 비율",
-     "detail": "원천 기본값으로 채워진 비율"
+     "category": "피처 수",
+     "detail": "OSM 도로 레이어의 지물 건수"
     }
    },
    "measure": {
-    "key": "measure-8f35104be85d",
+    "key": "measure-7d9609ecb1c8",
     "label": "도로 레이어",
-    "unit": "%"
+    "unit": "건"
    },
    "kind": "level",
    "preview": {
-    "unit": "%",
-    "seriesLabel": "bridge 기본값 비율 · 원천 기본값으로 채워진 비율",
-    "others": [
-     {
-      "label": "2026년",
-      "value": 95.65
-     },
-     {
-      "label": "2026년",
-      "value": 95.65
-     }
-    ],
+    "unit": "건",
+    "seriesLabel": "피처 수 · OSM 도로 레이어의 지물 건수",
+    "others": [],
     "note": "단일 시점 값"
    },
    "basis": {
     "unit": "관측값",
-    "rule": "도로 레이어(%) bridge 기본값 비율 · 원천 기본값으로 채워진 비율 · 단일 시점이므로 추이를 그리지 않음"
+    "rule": "도로 레이어(건) 피처 수 · OSM 도로 레이어의 지물 건수 · 단일 시점이므로 추이를 그리지 않음"
    },
    "periodLabel": "기준 시점",
    "provider": "OpenStreetMap contributors",
@@ -2932,23 +2923,22 @@
     "observationCount": 61,
     "entityCount": 0,
     "indicatorIds": [
-     "A-027_roads_defaultrate_bridge",
-     "A-027_roads_defaultrate_layer",
-     "A-027_roads_defaultrate_maxspeed",
-     "A-027_roads_defaultrate_oneway",
-     "A-027_roads_defaultrate_tunnel",
-     "A-027_roads_null_rate_bridge",
-     "A-027_roads_null_rate_lanes",
-     "A-027_roads_null_rate_layer",
-     "A-027_roads_null_rate_maxspeed",
-     "A-027_roads_null_rate_name",
-     "A-027_roads_null_rate_oneway",
-     "A-027_roads_null_rate_ref",
-     "A-027_roads_null_rate_surface",
-     "A-027_roads_null_rate_tunnel"
+     "A-027_roads_fclass_construction_count",
+     "A-027_roads_fclass_footway_count",
+     "A-027_roads_fclass_motorway_count",
+     "A-027_roads_fclass_path_count",
+     "A-027_roads_fclass_primary_count",
+     "A-027_roads_fclass_residential_count",
+     "A-027_roads_fclass_secondary_count",
+     "A-027_roads_fclass_service_count",
+     "A-027_roads_fclass_tertiary_count",
+     "A-027_roads_fclass_track_count",
+     "A-027_roads_fclass_trunk_count",
+     "A-027_roads_fclass_unclassified_count",
+     "A-027_roads_feature_count"
     ],
     "headlineIndicatorIds": [
-     "A-027_roads_defaultrate_bridge"
+     "A-027_roads_feature_count"
     ]
    }
   },
@@ -2956,44 +2946,35 @@
    "elementId": "A-028",
    "title": "해안 인프라; 수자원 인프라",
    "headline": {
-    "value": "98.3 %",
-    "label": "수로 레이어 · width 기본값 비율 · 원천 기본값으로 채워진 비율"
+    "value": "38,329 건",
+    "label": "수로 레이어 · 피처 수 · OSM 수로 레이어의 지물 건수"
    },
    "period": "2026년 추출",
    "selection": {
-    "measure": "measure-9602e7ac77f1",
+    "measure": "measure-db2cea55bbcc",
     "sex": null,
     "year": 2026,
     "period": null,
     "dimensions": {
-     "category": "width 기본값 비율",
-     "detail": "원천 기본값으로 채워진 비율"
+     "category": "피처 수",
+     "detail": "OSM 수로 레이어의 지물 건수"
     }
    },
    "measure": {
-    "key": "measure-9602e7ac77f1",
+    "key": "measure-db2cea55bbcc",
     "label": "수로 레이어",
-    "unit": "%"
+    "unit": "건"
    },
    "kind": "level",
    "preview": {
-    "unit": "%",
-    "seriesLabel": "width 기본값 비율 · 원천 기본값으로 채워진 비율",
-    "others": [
-     {
-      "label": "2026년",
-      "value": 98.3
-     },
-     {
-      "label": "2026년",
-      "value": 98.3
-     }
-    ],
+    "unit": "건",
+    "seriesLabel": "피처 수 · OSM 수로 레이어의 지물 건수",
+    "others": [],
     "note": "단일 시점 값"
    },
    "basis": {
     "unit": "관측값",
-    "rule": "수로 레이어(%) width 기본값 비율 · 원천 기본값으로 채워진 비율 · 단일 시점이므로 추이를 그리지 않음"
+    "rule": "수로 레이어(건) 피처 수 · OSM 수로 레이어의 지물 건수 · 단일 시점이므로 추이를 그리지 않음"
    },
    "periodLabel": "기준 시점",
    "provider": "OpenStreetMap contributors",
@@ -3004,11 +2985,14 @@
     "observationCount": 23,
     "entityCount": 7014,
     "indicatorIds": [
-     "A-028_waterways_defaultrate_width",
-     "A-028_waterways_null_rate_name"
+     "A-028_waterways_fclass_canal_count",
+     "A-028_waterways_fclass_drain_count",
+     "A-028_waterways_fclass_river_count",
+     "A-028_waterways_fclass_stream_count",
+     "A-028_waterways_feature_count"
     ],
     "headlineIndicatorIds": [
-     "A-028_waterways_defaultrate_width"
+     "A-028_waterways_feature_count"
     ]
    }
   },
@@ -3533,32 +3517,32 @@
    "kind": "bars",
    "headline": {
     "value": "263 mm",
-    "label": "월 평년강수 최대 · 8월 (1991-2020 평년) · 월별 평년값(1991–2020)"
+    "label": "월 평년강수 최대 · 8월 · 월별 평년값(1991–2020)"
    },
    "preview": {
     "parts": [
      {
-      "label": "8월 (1991-2020 평년)",
+      "label": "8월",
       "value": 263.07
      },
      {
-      "label": "7월 (1991-2020 평년)",
+      "label": "7월",
       "value": 248.08
      },
      {
-      "label": "9월 (1991-2020 평년)",
+      "label": "9월",
       "value": 239.73
      },
      {
-      "label": "10월 (1991-2020 평년)",
+      "label": "10월",
       "value": 218.04
      },
      {
-      "label": "6월 (1991-2020 평년)",
+      "label": "6월",
       "value": 214.08
      },
      {
-      "label": "11월 (1991-2020 평년)",
+      "label": "11월",
       "value": 162.71
      }
     ],
@@ -3626,52 +3610,52 @@
    "title": "기후대(Climate zone)",
    "kind": "bars",
    "headline": {
-    "value": "151,526 km²",
-    "label": "기후대별 점유 면적 최대 · Aw (열대사바나) · 2099년"
+    "value": "138,159 km²",
+    "label": "기후대별 점유 면적 최대 · Cwa (온대·동계건조·고온하계) · 2020년"
    },
    "preview": {
     "parts": [
      {
-      "label": "Aw (열대사바나)",
-      "value": 151526.1
+      "label": "Cwa (온대·동계건조·고온하계)",
+      "value": 138158.9
      },
      {
       "label": "Aw (열대사바나)",
-      "value": 134075.6
+      "value": 92637.2
      },
      {
       "label": "Am (열대몬순)",
-      "value": 125038.5
+      "value": 81017
      },
      {
-      "label": "Am (열대몬순)",
-      "value": 105439.9
+      "label": "Cwb (온대·동계건조·온난하계)",
+      "value": 12422.2
      },
      {
-      "label": "Cwa (온대·동계건조·고온하계)",
-      "value": 77866.7
+      "label": "Af (열대우림)",
+      "value": 2497
      },
      {
-      "label": "Cwa (온대·동계건조·고온하계)",
-      "value": 46883.8
+      "label": "Cfa (온대·연중습윤·고온하계)",
+      "value": 876.8
      }
     ],
     "unit": "km²",
-    "scope": "2099년",
-    "omitted": 8,
+    "scope": "2020년",
+    "omitted": 1,
     "total": null
    },
    "period": "1930·2020·2099년",
    "selection": {
     "measure": "measure-095dc03abb8f",
     "sex": null,
-    "year": 2099,
+    "year": 2020,
     "period": null,
     "dimensions": {}
    },
    "basis": {
     "unit": "관측값",
-    "rule": "기후대별 점유 면적(km²)을 2099년 기준으로 14개 항목에서 비교"
+    "rule": "기후대별 점유 면적(km²)을 2020년 기준으로 7개 항목에서 비교"
    },
    "measure": {
     "key": "measure-095dc03abb8f",
@@ -3716,20 +3700,13 @@
      "B-002_koppen_area_cwb_2071_2099_ssp5_8_5"
     ],
     "headlineIndicatorIds": [
-     "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_cwa_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_cwa_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_cwb_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_af_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_cfa_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_af_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_cwb_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_cfa_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_cfb_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_cfb_2071_2099_ssp5_8_5"
+     "B-002_koppen_area_cwa",
+     "B-002_koppen_area_aw_tropical_savanna",
+     "B-002_koppen_area_am_tropical_monsoon",
+     "B-002_koppen_area_cwb",
+     "B-002_koppen_area_af",
+     "B-002_koppen_area_cfa",
+     "B-002_koppen_area_cfb"
     ]
    }
   },
@@ -13480,9 +13457,44 @@
   {
    "elementId": "B-032",
    "title": "수관 피복률",
+   "kind": "spatial",
    "headline": {
-    "value": "64.8 %",
-    "label": "성(省)별 수관 피복률 · Nghệ An · 2010년"
+    "value": "83.4 %",
+    "label": "성(省)별 수관 피복률 최대 · Bắc Kạn · 63개 성·시 중 · 2010년"
+   },
+   "preview": {
+    "parts": [
+     {
+      "label": "Bắc Kạn",
+      "value": 83.36
+     },
+     {
+      "label": "Quảng Nam",
+      "value": 76.97
+     },
+     {
+      "label": "Quảng Bình",
+      "value": 75.27
+     },
+     {
+      "label": "Kon Tum",
+      "value": 70.89
+     },
+     {
+      "label": "Lâm Đồng",
+      "value": 69.02
+     }
+    ],
+    "unit": "%",
+    "scope": "성(省)별 수관 피복률 상위 5개 성·시",
+    "median": 44.44,
+    "range": {
+     "min": 0.81,
+     "p10": 8.32,
+     "p90": 67.888,
+     "max": 83.36
+    },
+    "provinces": 63
    },
    "period": "2000·2010년",
    "selection": {
@@ -13491,29 +13503,17 @@
     "year": 2010,
     "period": null,
     "dimensions": {
-     "detail": "Nghệ An"
+     "detail": "Bắc Kạn"
     }
+   },
+   "basis": {
+    "unit": "성·시 값",
+    "rule": "성(省)별 수관 피복률(%) 63개 성·시 값 · 2010년 · 최대값과 중앙값·10~90분위 · 합산하지 않음"
    },
    "measure": {
     "key": "measure-15d5f8e7a89f",
     "label": "성(省)별 수관 피복률",
     "unit": "%"
-   },
-   "kind": "level",
-   "preview": {
-    "unit": "%",
-    "seriesLabel": "Nghệ An",
-    "others": [
-     {
-      "label": "2000년",
-      "value": 65.94
-     }
-    ],
-    "note": "두 시점 값 · 추이로 그리지 않음"
-   },
-   "basis": {
-    "unit": "관측값",
-    "rule": "성(省)별 수관 피복률(%) Nghệ An · 두 시점이므로 추이를 그리지 않음"
    },
    "provider": "Global Forest Watch / Hansen et al.(2013) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터",
    "mapConnected": true,
@@ -13588,7 +13588,7 @@
      "B-032_canopy_cover_prov_30_vn_27"
     ],
     "headlineIndicatorIds": [
-     "B-032_canopy_cover_prov_30_vn_22"
+     "B-032_canopy_cover_prov_30_vn_53"
     ]
    }
   },
@@ -14738,36 +14738,45 @@
    "title": "광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석]",
    "kind": "facts",
    "headline": {
-    "value": "광물지질법(Law 42/2024/QH15) 시행 …",
-    "label": "데이터 접근 체계 · 기재 항목 1개"
+    "value": "21건",
+    "label": "광종 · 2026년"
    },
    "preview": {
     "facts": [
      {
-      "label": "데이터 접근 체계",
-      "value": "광물지질법(Law 42/2024/QH15) 시행 · 핵심광물 개발계획 866/QD-TTg"
+      "label": "구리",
+      "value": ""
+     },
+     {
+      "label": "안티모니",
+      "value": ""
+     },
+     {
+      "label": "코발트",
+      "value": ""
      }
     ],
-    "more": 0
+    "more": 18
    },
    "period": "2026년",
    "selection": {
-    "measure": "measure-2c845545edf8",
+    "measure": null,
     "sex": null,
     "year": null,
     "period": null,
     "dimensions": {}
    },
    "basis": {
-    "unit": "항목",
-    "rule": "수치가 아닌 기재 내용을 그대로 보임"
+    "unit": "광종",
+    "rule": "광종 1건 = 원천 1행",
+    "count": {
+     "rows": 21,
+     "distinct": 21,
+     "sourceRows": 21
+    }
    },
-   "measure": {
-    "key": "measure-2c845545edf8",
-    "label": "핵심광물 법",
-    "unit": "상태"
-   },
-   "provider": "National Assembly of Vietnam(2024) Law on Geology and Minerals(Law No. 42/2024/QH15); 총리 결정 866/QD-TTg(2023)",
+   "measure": null,
+   "provider": "National Assembly of Vietnam(2024) Law on Geology and Minerals(Law No. 42/2024/QH15); 총리 결정 866/QD-TTg(2023) · 각국 정부(광업·산업통상·세관 주무부처) 관보·공표, WTO 수량제한(QR) 통보, OECD Inventory of Export Restrictions on Industrial Raw Materials(2025) · USGS Mineral Commodity Summaries 2026; 현지조사(TKV 2024 Annual Report)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -14775,10 +14784,9 @@
     "observationCount": 2,
     "entityCount": 21,
     "indicatorIds": [
-     "B-044_critical_mineral_legal_framework"
-    ],
-    "headlineIndicatorIds": [
-     "B-044_critical_mineral_legal_framework"
+     "B-044_critical_mineral_legal_framework",
+     "B-044_mineral_export_regime",
+     "B-044_mineral_record"
     ]
    }
   },

@@ -16,6 +16,7 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import {
   publicRegionScenarioContractV138,
+  regionSummaryRowsV162,
   type RegionScenarioMeasureV138,
 } from "../../../data/visualization/publicRegionScenarioContractV138";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
@@ -172,7 +173,7 @@ export function regionScenarioShapeV138(
   // reads those rows only; its 34-unit rows would count each place twice.
   // …and annual rows only: the monthly normals the 2026-09-30 delivery adds
   // (indicator *_monthly_clim_*) are a seasonal cycle, not a year series.
-  const entities = rowsForPreReformViewV162(sourceEntities).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || "")));
+  const entities = regionSummaryRowsV162(rowsForPreReformViewV162(sourceEntities)).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || "")));
   assertSingleRegionSystemV162(entities, "region summary");
   if (entities.length < 2) return null;
   const provinceYearsByMeasure = new Map<string, Set<number>>();
@@ -349,7 +350,7 @@ export default function PublicRegionScenarioSummaryV138({
 }: Props) {
   // V162: the same one-system rows as the shape (see regionScenarioShapeV138).
   const entities = useMemo(
-    () => rowsForPreReformViewV162(sourceEntities).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || ""))),
+    () => regionSummaryRowsV162(rowsForPreReformViewV162(sourceEntities)).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || ""))),
     [sourceEntities]
   );
   // V162 (P12-B): region labels as the reader sees them ("한글명 (현지명)",

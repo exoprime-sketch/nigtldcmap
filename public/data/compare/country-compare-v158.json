@@ -11,7 +11,7 @@
       "VNM"
     ],
     "contractPath": "src/data/visualization/publicVisualizationContractV153.json",
-    "contractSha256": "3bc853dd1db331b7444dffba30b8473c9716599ea322f3f740abcee8fb42c7bb"
+    "contractSha256": "5ab892f358954141a261d7e64dc7df6693726685ebbb0b380e229e8f08c04bd6"
   },
   "elementCount": 54,
   "statusCounts": {
@@ -6656,7 +6656,7 @@
     "B-002": {
       "elementId": "B-002",
       "compareKey": {
-        "indicatorId": "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
+        "indicatorId": "B-002_koppen_area_cwa",
         "unit": "km²",
         "yearRule": "latest-common"
       },
@@ -6666,12 +6666,12 @@
           "countryNameKo": "방글라데시",
           "present": true,
           "unit": "km²",
-          "labelKo": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+          "labelKo": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계)",
           "sourceOrg": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
           "points": [
             {
-              "year": 2099,
-              "value": 55679.4
+              "year": 2020,
+              "value": 79402.1
             }
           ]
         },
@@ -6680,12 +6680,12 @@
           "countryNameKo": "베트남",
           "present": true,
           "unit": "km²",
-          "labelKo": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+          "labelKo": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계)",
           "sourceOrg": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
           "points": [
             {
-              "year": 2099,
-              "value": 151526.1
+              "year": 2020,
+              "value": 138158.9
             }
           ]
         }
@@ -6697,7 +6697,7 @@
             "VNM"
           ],
           "status": "common-year",
-          "commonYear": 2099
+          "commonYear": 2020
         }
       ],
       "status": "common-year"

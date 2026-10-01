@@ -121,10 +121,16 @@ const OVERRIDES = {
   "A-011": { kind: "composition", excludeTotal: true },
   "A-016": { kind: "composition", excludeTotal: true },
   "A-018": { kind: "bars", excludeTotal: true, series: { exclude: /^(Total|Fossil fuels|Solar energy|Wind energy|Bioenergy)[(]/u }, note: "상위 합계 항목(화석연료·태양에너지·풍력·바이오에너지 합계)은 제외하고 하위 기술만 비교" },
-  "B-001": { kind: "bars", year: "first", scopeLabel: "월별 평년값(1991–2020)" },
+  "B-001": { kind: "bars", year: "first", scopeLabel: "월별 평년값(1991–2020)", labelStrip: /\s*\(1991-2020 평년\)$/u },
   "A-014": { measure: { label: "SDG Index 종합점수" } },
   "A-017": { kind: "bars", series: { match: /\(기준값\)/u }, year: "first", note: "기준값 · 상한·하한은 상세" },
-  "B-002": { kind: "bars" },
+  // V162: the 2026-09-30 sheet adds the 2071–2099 SSP projections (year 2099);
+  // the card keeps the latest observed normal (1991–2020), not a projection.
+  "B-002": { kind: "bars", year: 2020 },
+  // V162: the 2026-09-30 layer sheets add default-value shares (%) and length
+  // (km) per layer; the card keeps the layer's feature count, as before.
+  "A-027": { measure: { label: "도로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
+  "A-028": { measure: { label: "수로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
   "B-010": { measure: { label: "CRI 종합 순위" } },
   "B-013": { kind: "bars", excludeTotal: true },
   "B-015": { kind: "bars", excludeTotal: true },
@@ -199,6 +205,10 @@ const ENTITY_RULES = {
   // ("VNM_인광석_2020"); the card names it by the mineral and year it holds.
   // Two rows can share a mineral and year (two stated estimates), so the
   // preview lists rows with their values instead of distinct names.
+  // V162: B-044's export-ban readings moved from observations to one record
+  // per mineral (21); its observations are two stated texts. The card counts
+  // the minerals the detail lists, named as the detail names them.
+  "B-044": { unit: "광종", kind: "facts", nameFrom: (row) => text(row.normalizedAttributes?.["광종_표준"]).split(" - ").pop() || row.name },
   "B-046": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
   "B-047": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
   // V162: B-014's rows are named by record key only; the card names each by
@@ -468,7 +478,7 @@ function observationCard(elementId, item, pack, contract, override) {
         !(override?.series?.exclude && Object.values(s.labels).some((label) => override.series.exclude.test(label)))
     );
     const years = yearsOf(usable.flatMap((s) => s.rows));
-    const year = override?.year === "first" ? years[0] : years[years.length - 1];
+    const year = override?.year === "first" ? years[0] : Number.isFinite(override?.year) && years.includes(override.year) ? override.year : years[years.length - 1];
     // Parts are told apart by the dimension that differs between them; a
     // dimension every part shares (the measure's own description) is noise.
     const varyingKeys = Object.keys(usable[0]?.labels || {}).filter(
@@ -558,14 +568,19 @@ function partLabel(series, override) {
   const cleaned = override?.series?.match
     ? label.replace(override.series.match, "").replace(/\(\s*\)/gu, "").replace(/\s*·\s*$/u, "").replace(/^\s*·\s*/u, "").trim()
     : label;
-  return cleaned || label;
+  // V162: a suffix the scope already states ("8월 (1991-2020 평년)" under
+  // "월별 평년값(1991–2020)") is not part of the category's name.
+  const stripped = override?.labelStrip ? (cleaned || label).replace(override.labelStrip, "").trim() : cleaned;
+  return stripped || cleaned || label;
 }
 
 function levelOrLine(elementId, item, contract, measure, series, override, rows) {
   const unit = unitShort(measure.unit);
   const provinceSeries = series.filter((s) => s.rows.some(isNumeric) && !Object.values(s.labels).some((label) => TOTAL_LIKE.test(label)));
-  if (provinceSeries.length >= 20 && yearsOf(provinceSeries.flatMap((s) => s.rows)).length <= 1 && !override?.kind) {
-    // One value per province, one year: a distribution, not a trend.
+  if (provinceSeries.length >= 20 && yearsOf(provinceSeries.flatMap((s) => s.rows)).length <= 2 && !override?.kind) {
+    // One value per province, one year: a distribution, not a trend. V162:
+    // two years (B-032 canopy cover 2000 and 2010) are two snapshots, not a
+    // trend either; the card reads the latest one, as the detail opens on it.
     const parts = provinceSeries
       .map((s) => ({ label: seriesLabel(s), value: latestPoint(s.rows)?.value ?? s.rows.find(isNumeric)?.value, series: s }))
       .filter((part) => Number.isFinite(part.value))

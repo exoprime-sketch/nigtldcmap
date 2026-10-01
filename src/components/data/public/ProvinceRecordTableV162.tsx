@@ -76,17 +76,20 @@ export default function ProvinceRecordTableV162({ elementId, entities }: { eleme
     [rows, spec]
   );
   const [period, setPeriod] = useState<string>("");
+  // The period control belongs to the opened table; a closed fold shows
+  // only its summary line, never a control the reader cannot see.
+  const [open, setOpen] = useState(false);
   const selected = period && periods.includes(period) ? period : periods[periods.length - 1] || "";
   if (!spec || rows.length === 0) return null;
   const shown = spec.periodKey
     ? rows.filter((row) => String(row.normalizedAttributes?.[spec.periodKey!] ?? "").trim() === selected)
     : rows;
   return (
-    <details className="detail146 detail146-details" data-testid="province-record-table-v162" data-record-count={rows.length}>
+    <details className="detail146 detail146-details" data-testid="province-record-table-v162" data-record-count={rows.length} onToggle={(event) => setOpen((event.currentTarget as HTMLDetailsElement).open)}>
       <summary>
         성·시별 원자료 값 · {shown.length.toLocaleString("ko-KR")}개 성·시(개편 전){selected ? ` · ${selected}` : ""}
       </summary>
-      {periods.length > 1 ? (
+      {open && periods.length > 1 ? (
         <label className="detail146-select">
           {spec.periodLabel || "기간"}
           <select aria-label={`성·시 원자료 ${spec.periodLabel || "기간"}`} value={selected} onChange={(event) => setPeriod(event.target.value)}>
@@ -99,7 +102,7 @@ export default function ProvinceRecordTableV162({ elementId, entities }: { eleme
         </label>
       ) : null}
       {/* A native option cannot hold a help button; it sits beside the control. */}
-      {periods.length > 1 ? <PublicTermHelpV134 text={selected} /> : null}
+      {open && periods.length > 1 ? <PublicTermHelpV134 text={selected} /> : null}
       <div className="detail146-table">
         <table>
           <caption>{spec.caption}</caption>
