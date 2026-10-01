@@ -2268,6 +2268,22 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             # The derived measures define themselves; the V1 indicator list
             # described the previous shape and must not stand in for them.
             indicators = derived_indicators
+        # V162: an observation's unit is its indicator's unit as this delivery
+        # states it. Observations took the unit from the 2026-08-27 base
+        # payload, so a new indicator had none and a restated one kept the old
+        # unit (E-012's ILOSTAT wages read 천VND while the delivery says VND).
+        # Rows carried over from a previous projection keep theirs.
+        unit_by_indicator_v162 = {
+            str(indicator.get("indicatorId") or ""): indicator.get("unit")
+            for indicator in indicators
+            if indicator.get("unit")
+        }
+        for row in observations:
+            if row.get("supplementarySource"):
+                continue
+            stated_unit = unit_by_indicator_v162.get(str(row.get("indicatorId") or ""))
+            if stated_unit:
+                row["unit"] = stated_unit
         if is_authorized:
             for indicator in indicators:
                 indicator["publicationDecision"] = decision_ref

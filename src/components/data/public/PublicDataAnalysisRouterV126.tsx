@@ -577,6 +577,19 @@ export default function PublicDataAnalysisRouterV126({
         />
       </>
     ) : null;
+  // V162: an element the 2026-09-30 delivery states as records only (no
+  // observation) opens on what it holds - the record count, the same figure
+  // its finder card and KPI tile state.
+  const recordCountLineV162 =
+    !isStatusV159 &&
+    observations.length === 0 &&
+    entities.length > 0 &&
+    // The block cards already state the count in their own header.
+    !(wideRecordsV162.length > 0 && (!variantEntry || LONG_TEMPLATE_VARIANTS_V162.has(variantEntry.variant))) ? (
+      <p className="pav126-record-count-v162" data-testid="record-count-v162">
+        원천 기록 <strong>{entities.length.toLocaleString("ko-KR")}건</strong>
+      </p>
+    ) : null;
   const body = isStatusV159 && typology ? (
     <StatusNoticeV159 typology={typology} />
   ) : (
@@ -624,7 +637,14 @@ export default function PublicDataAnalysisRouterV126({
           ))}
 
       <section className="pav126-primary" data-testid="public-analysis-primary" id={`pav126-primary-${elementId}`}>
-        {body}
+        {recordCountLineV162 ? (
+          <div className="pav126-body-v162">
+            {recordCountLineV162}
+            {body}
+          </div>
+        ) : (
+          body
+        )}
         {mapSlot}
       </section>
 

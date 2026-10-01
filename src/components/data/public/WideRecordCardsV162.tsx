@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
 import { sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
-import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import "./wide-record-cards-v162.css";
@@ -51,7 +51,8 @@ function SourceLineV162({ source }: { source: WideRecordV162["source"] }) {
       key: "url",
       node: (
         <a href={source.url} target="_blank" rel="noopener noreferrer">
-          {sourceLinkTextV162(source.url, source.document)}
+          {/* A link cannot hold a help button: the meaning is written out. */}
+          <PublicTermExpandedTextV134 text={sourceLinkTextV162(source.url, source.document)} />
         </a>
       ),
     });
@@ -108,11 +109,14 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
                   : value.value;
               return (
                 <div className="wide162-row" key={`${block.block}-${value.attribute}`}>
-                  <dt>{value.attribute}</dt>
+                  <dt>
+                    <PublicTermTextV134 text={value.attribute} />
+                  </dt>
                   <dd>
                     {value.href ? (
                       <a href={value.href} target="_blank" rel="noopener noreferrer">
-                        {/\.pdf(?:$|[?#])/iu.test(value.href) ? sourceLinkTextV162(value.href) : value.value}
+                        {/* A bare address is not link text: the reader sees "원문". */}
+                        <PublicTermExpandedTextV134 text={/\.pdf(?:$|[?#])/iu.test(value.href) || /^https?:\/\//iu.test(value.value) ? sourceLinkTextV162(value.href) : value.value} />
                       </a>
                     ) : (
                       <PublicTermTextV134 text={displayValue} />

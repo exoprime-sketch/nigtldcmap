@@ -168,10 +168,39 @@ const SPECIALISED_SELECTION = {
 };
 
 /** Entity registers: what one row is, and the attribute the card compares across. */
+function mineralYearNameV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const mineral = text(attributes["광종_세부_원천_표기"]) || text(attributes["광종_표준"]);
+  const year = text(attributes["연도"]);
+  return mineral ? `${mineral}${year ? ` ${year}년` : ""}` : row.name;
+}
+
+function scenarioYearNameV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const scenario = text(attributes["시나리오_명칭_원천"]);
+  const year = text(attributes["연도"]);
+  return scenario ? `${scenario}${year ? ` · ${year}년` : ""}` : row.name;
+}
+
+function statedValueV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const value = numberOf(attributes["값"]);
+  return value === null ? "" : `${formatNumber(value)}${text(attributes["단위"]) ? ` ${text(attributes["단위"])}` : ""}`;
+}
+
 const ENTITY_RULES = {
   "A-013": { unit: "연계 항목", kind: "facts" },
   "A-025": { unit: "시설", kind: "facts", nameFrom: (row) => (row.note || "").match(/\[시설명:\s*([^\]]+)\]/u)?.[1] || row.name },
   "A-029": { unit: "문서", kind: "facts" },
+  // V162: the 2026-09-30 mineral sheets name each row by its record key
+  // ("VNM_인광석_2020"); the card names it by the mineral and year it holds.
+  // Two rows can share a mineral and year (two stated estimates), so the
+  // preview lists rows with their values instead of distinct names.
+  "B-046": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
+  "B-047": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
+  // V162: B-014's rows are named by record key only; the card names each by
+  // the source's scenario name and year.
+  "B-014": { unit: "항목", kind: "records", nameFrom: scenarioYearNameV162, valueFrom: statedValueV162 },
   "B-008": { unit: "관측소", kind: "stations" },
   "B-012": { unit: "재해 사건", groupBy: "재해유형", kind: "bars" },
   "B-017": { unit: "평가구역", kind: "grades", gradeKey: "기준_물스트레스_Baseline_Water_Stress_등급" },
@@ -930,6 +959,18 @@ function entityCard(elementId, item, pack, contract, rule) {
       period,
       selection: { ...selection, dimensions: { scenario: "SSP2-4.5" } },
       basis: { unit: rule.unit, rule: "관측소 5곳 · IPCC AR6 상대해수면 전망 · 중앙값(50분위) · 시나리오·분위는 상세에서 선택" },
+      measure: null,
+    };
+  }
+  // V162: rows listed one by one with the value each states.
+  if (rule.kind === "records") {
+    return {
+      kind: "facts",
+      headline: { value: `${formatNumber(rows.length)}건`, label: `${rule.unit} · ${period}` },
+      preview: { facts: rows.slice(0, 3).map((row) => ({ label: text(nameOf(row)), value: rule.valueFrom ? rule.valueFrom(row) : "" })), more: Math.max(0, rows.length - 3) },
+      period,
+      selection,
+      basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${aggregateNote}`, count: { rows: rows.length, distinct: rows.length, sourceRows: pack.entities.records.length } },
       measure: null,
     };
   }

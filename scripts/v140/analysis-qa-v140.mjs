@@ -77,15 +77,19 @@ const summaries = summariesAsset.cards;
 // they show one status notice instead of an analysis, so they are judged by
 // statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus instead of the card
 // value and analysis-fit checks. Every other element is judged as before.
-const STATUS_NOTICE_V159 = new Map(
-  JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
-    .filter((row) => row.statusNotice === "data-pending")
-    .map((row) => [row.elementId, row.statusNotice])
-);
-const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
 // Spec v8 (2026-09-29): the notice is one line; the words it must carry.
 const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제공 대상이 아닌" };
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
+// V162 (user decision 2026-09-30): '데이터 준비 중' is decided by the catalog
+// alone - the rule the screen follows (statusNoticeFromCatalogV162). E-011 was
+// delivered on 2026-09-30 and is no longer a status screen.
+const DATA_PENDING_PUBLIC_STATUSES_V162 = new Set(["not-provided", "not-collected", "schema-only", "data-entry-planned"]);
+const STATUS_NOTICE_V159 = new Map(
+  catalog
+    .filter((element) => DATA_PENDING_PUBLIC_STATUSES_V162.has(String(element.publicStatus || "")))
+    .map((element) => [element.elementId, "data-pending"])
+);
+const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
 const homePreview = JSON.parse(readFileSync(resolve(DATA, "home/home-preview-v139.json"), "utf8"));
@@ -288,6 +292,20 @@ function recompute(card) {
   };
   const attr = (row, key) => row.normalizedAttributes?.[key];
   const isCountryRow = (row) => /^(전국|country)$/iu.test(clean(attr(row, "행정단위")));
+  // V162: the province rows of one administrative system, the rule the card
+  // builder and the screen follow (src/data/geo/regionSystemV162.ts): a sheet
+  // with the 63 pre-2025 provinces is recomputed from those rows only.
+  const regionSystemOf = (row) =>
+    row.regionSystem ||
+    (/_adm34$/u.test(clean(row.indicatorId)) || /개편 후|체계/u.test(clean(attr(row, "행정단위")))
+      ? "adm1"
+      : /^(province|city|province\/city)$/iu.test(clean(attr(row, "행정단위")))
+        ? "adm1-prev"
+        : null);
+  const oneSystemProvinceRows = (rows) => {
+    const regional = rows.filter((row) => !isCountryRow(row));
+    return regional.some((row) => regionSystemOf(row) === "adm1-prev") ? regional.filter((row) => regionSystemOf(row) === "adm1-prev") : regional;
+  };
   const numberOf = (value) => { if (typeof value === "number") return Number.isFinite(value) ? value : null; const n = Number(String(value ?? "").replace(/,/gu, "")); return String(value ?? "").trim() !== "" && Number.isFinite(n) ? n : null; };
   const basis = card.basis || {};
   const rule = basis.rule || "";
@@ -369,7 +387,7 @@ function recompute(card) {
   // Province × scenario × year layers: the median of the province values the card states.
   if (card.kind === "spatial-trend" && mapVariable && entities.length) {
     const scenario = card.selection?.dimensions?.scenario;
-    const rows = entities.filter((row) => !isCountryRow(row) && (!scenario || clean(attr(row, "시나리오")) === scenario) && Number(attr(row, "연도")) === Number(claim.year));
+    const rows = oneSystemProvinceRows(entities).filter((row) => (!scenario || clean(attr(row, "시나리오")) === scenario) && Number(attr(row, "연도")) === Number(claim.year));
     const values = rows.map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null).sort((a, b) => a - b);
     if (!values.length) return { status: "no-matching-row", attribute: mapVariable, year: claim.year, scenario };
     const median = values.length % 2 ? values[(values.length - 1) / 2] : (values[values.length / 2 - 1] + values[values.length / 2]) / 2;
@@ -388,7 +406,7 @@ function recompute(card) {
   }
   // Regional map layers (B-029…B-042): one attribute per province entity, national rows apart.
   if (card.kind === "spatial" && mapVariable && entities.length) {
-    const values = entities.filter((row) => !isCountryRow(row)).map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null);
+    const values = oneSystemProvinceRows(entities).map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null);
     if (!values.length) return { status: "no-matching-row", attribute: mapVariable };
     return finish(Math.max(...values), values.length, `max of ${mapVariable} across province entities`);
   }

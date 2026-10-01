@@ -1,6 +1,6 @@
 # 공개 카드 요약 검토표 (V140)
 
-생성 2026-10-01T05:48:55.529Z · 데이터 2026-09-30T00:00:00Z
+생성 2026-10-01T07:09:25.887Z · 데이터 2026-09-30T00:00:00Z
 
 종류별: line 35 · signed-bars 1 · bars 35 · composition 5 · facts 36 · level 15 · grouped-bars 1 · map 1 · spatial-trend 5 · spatial 10 · status 2
 
@@ -155,11 +155,8 @@
 
 ## 경고
 
-- B-014: entity element without a reviewed rule; facts card
 - B-025: builder failed: Cannot read properties of undefined (reading 'value')
 - B-025: no card could be built
-- B-046: entity element without a reviewed rule; facts card
-- B-047: entity element without a reviewed rule; facts card
 - C-001: builder failed: C-001 reviewed targets changed
 - C-018: builder failed: Cannot read properties of undefined (reading 'min')
 - C-019: builder failed: No reviewed facility-region rows

@@ -9,6 +9,30 @@
  */
 
 const UPPERCASE_SOURCE_WORDING_V134 = Object.freeze([
+  // V162: words of company names the 2026-09-30 delivery prints in capitals
+  // (C-006 JCM partners, E-018 Korean firms' "(... CO., LTD.)" names).
+  "CITY",
+  "CONSTRUCTION",
+  "CONSULTING",
+  "CORP",
+  "CORPORATION",
+  "ELECTRIC",
+  "ENGINEERING",
+  "EXPRESS",
+  "GARMENT",
+  "GLOBAL",
+  "HOLDINGS",
+  "IMAGING",
+  "INC",
+  "INSTITUTE",
+  "LENS",
+  "OFFICE",
+  "PRO",
+  "PRODUCTS",
+  "REPRESENTATIVE",
+  "RETAIL",
+  "TRUST",
+  "WIND",
   "ADVOCACY",
   "AND",
   "ASSISTANCE",
@@ -158,6 +182,57 @@ const UPPERCASE_SOURCE_WORDING_V134 = Object.freeze([
 ]);
 
 const PUBLIC_PROPER_NAMES_OR_FRAGMENTS_V134 = Object.freeze([
+  // V162: company, facility, place and project names in the 2026-09-30 wide
+  // records (C-006, C-007, C-008, D-003, D-012, D-022, D-024, E-002, E-018,
+  // A-025). Organisation short names here are printed beside their full name
+  // ("Danang Water Supply Joint Stock Company (DAWACO)").
+  "AEON",
+  "AN",
+  "BOW",
+  "CATHALAC",
+  "CHI",
+  "CSB",
+  "DAWACO",
+  "DGMV",
+  "DNPC",
+  "DOST",
+  "EAP",
+  "EVNCPC",
+  "EVNHN",
+  "GSV",
+  "HANDONG",
+  "HCMUNRE",
+  "HN",
+  "HO",
+  "HOYA",
+  "HYDROTECH",
+  "KGK",
+  "KHPC",
+  "KN",
+  "KOLON",
+  "KSC",
+  "LOTTE",
+  "MATSUOKA",
+  "MICCO",
+  "MINH",
+  "NIPPON",
+  "NTT",
+  "OCB",
+  "PC",
+  "REE",
+  "RICOH",
+  "SAMSUNG",
+  "SHIFT",
+  "SLAMDAM",
+  "SONAGED",
+  "TCE",
+  "TKV",
+  "TOTO",
+  "UFJ",
+  "VAPCO",
+  "VINATECH",
+  "YAZAKI",
+  "YUKO-KEISO",
   // V141: NAZCA-listed Vietnamese company names on the C-008 screen (원문 표기 조각).
   "CMS",
   "CTY",
@@ -279,6 +354,13 @@ const PUBLIC_PROPER_NAMES_OR_FRAGMENTS_V134 = Object.freeze([
 ]);
 
 const OFFICIAL_PROJECT_OR_DOCUMENT_CODES_V134 = Object.freeze([
+  // V162: Vietnamese legal document numbers in the new C-013/C-014/C-015/C-017
+  // records and D-003's grid-factor letter (1726/BĐKH-PTCBT).
+  "BDTTG",
+  "PTCBT",
+  "QD-BCT",
+  "TT-NHNN",
+  "VBHN-LQ-VPQH",
   // V153: IFAD project short name on C-008, printed after its Korean name
   // ("베트남 메콩델타 기후변화적응사업(AMD)").
   "AMD",
@@ -312,6 +394,10 @@ const OFFICIAL_PROJECT_OR_DOCUMENT_CODES_V134 = Object.freeze([
 ]);
 
 const LITERAL_GEOGRAPHIC_OR_ORDINAL_CODES_V134 = Object.freeze([
+  // V162: a lot number in a C-006 address ("Lot PT1") and the language mark
+  // of an English edition ("... Full Report (EN)").
+  "PT1",
+  "EN",
   // Lot codes inside two institution addresses (C-011), shown verbatim.
   "A1-2",
   "SQ4",
@@ -360,6 +446,54 @@ const PUBLIC_LICENSE_IDENTIFIERS_V134 = Object.freeze([
 ]);
 
 const OFFICIAL_SOURCE_IDENTIFIERS_V134 = Object.freeze([
+  // V162: JCM project and methodology numbers (C-006), a CDM project number
+  // (E-002), UNFCCC document symbols and decision numbers (C-002, C-024), a
+  // World Bank indicator code (C-011), GEF replenishment periods (D-023), a
+  // fiscal year and a dataset version (E-007, D-012), and C-002's missing-
+  // reason code NP printed beside M01.
+  "AVN08-S-01",
+  "CP.19",
+  "FCCC/PA/CMA/2025/16",
+  "FCCC/TAR/2016/VNM",
+  "FCCC/TAR/2021/VNM",
+  "FY2021",
+  "GEF4",
+  "GEF5",
+  "IHR.PSRC.P5",
+  "NP",
+  "V2",
+  "VN002",
+  "VN003",
+  "VN004",
+  "VN005",
+  "VN006",
+  "VN007",
+  "VN008",
+  "VN009",
+  "VN010",
+  "VN011",
+  "VN012",
+  "VN013",
+  "VN015",
+  "VN016",
+  "VN017",
+  "VN018",
+  "VN019",
+  "VN020",
+  "VN_AM001",
+  "VN_AM002",
+  "VN_AM003",
+  "VN_AM005",
+  "VN_AM006",
+  "VN_AM007",
+  "VN_AM008",
+  "VN_AM009",
+  "VN_AM010",
+  "VN_AM011",
+  "VN_AM012",
+  "VN_AM013",
+  "VN_AM014",
+  "VN_AM015",
   "BCT",
   "CF",
   "CF/M02",
@@ -432,6 +566,22 @@ const OFFICIAL_SOURCE_IDENTIFIERS_V134 = Object.freeze([
 // V159: CIFOR, ECOLEX, GLAD and PBL are printed in source credits as the
 // names the bodies use; the sources give no expansion to define.
 const PUBLIC_BRAND_OR_LITERAL_FRAGMENTS_V134 = Object.freeze([
+  // V162: names in source credits and quoted source text the sources give
+  // no expansion for: the B-034 archive credit ("NERC EDS ... CEDA", "GAMMA
+  // Remote Sensing"), report titles ("REDS Progress Report", "Ta Khoa
+  // DFS/PFS", "B-READY"), C-005's quoted "FSC standards" and C-013's source
+  // heading "(DICA)". CEPEA/ is printed after its full name (A-029).
+  "CEDA",
+  "CEPEA/",
+  "DFS/PFS",
+  "DICA",
+  "EDS",
+  "FSC",
+  "GAMMA",
+  "NERC",
+  "PFS",
+  "READY",
+  "REDS",
   "ABC",
   "AG",
   "ASB",
@@ -471,6 +621,11 @@ const PUBLIC_BRAND_OR_LITERAL_FRAGMENTS_V134 = Object.freeze([
 ]);
 
 const PUBLIC_GEOGRAPHIC_OR_DOCUMENT_FRAGMENTS_V134 = Object.freeze([
+  // V162: section numbers of the cited strategy (C-004 "§III.2.b") and the
+  // JETP Political Declaration, printed as "PD" beside its full title.
+  "III.2",
+  "IV.2",
+  "PD",
   "II",
   "III",
   "NE",

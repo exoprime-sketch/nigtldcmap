@@ -361,7 +361,7 @@ export default function PublicPortfolioSummaryV132({
             <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
             {analysis.uncategorizedCount > 0 ? (
               <p className="pps132-note" data-testid="portfolio-uncategorized-v162">
-                {analysis.categoryKeyLabel || "분류"}가 기재되지 않은 {analysis.uncategorizedCount.toLocaleString("ko-KR")}건은 이 구성에 넣지 않았습니다.
+                <PublicTermTextV134 text={`${analysis.categoryKeyLabel || "분류"}가 기재되지 않은 ${analysis.uncategorizedCount.toLocaleString("ko-KR")}건은 이 구성에 넣지 않았습니다.`} />
               </p>
             ) : null}
           </section>

@@ -1,3 +1,4 @@
+import { PublicTermHelpV134 } from "../../help/PublicTermV134";
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
@@ -97,6 +98,8 @@ export default function ProvinceRecordTableV162({ elementId, entities }: { eleme
           </select>
         </label>
       ) : null}
+      {/* A native option cannot hold a help button; it sits beside the control. */}
+      {periods.length > 1 ? <PublicTermHelpV134 text={selected} /> : null}
       <div className="detail146-table">
         <table>
           <caption>{spec.caption}</caption>
