@@ -109,3 +109,10 @@
 
 - main 카드 요약 JSON이 #47 이후 생성기와 불일치(`mapConnected`·B-026 '기준'). 세션 2 범위
 - e2e visual `detail-a016` 기준 이미지 노후(main에서도 실패)
+
+## 2026-10-01 오후 — CI 실패 원인 수정(로컬 커밋 cd3d908, 미push)
+- CI 3회차(bd92d9e): Static·gate 실패 = `audit:benchmark-fit:v132`(v132 보고서 재생성 시 런타임 검증 필드 초기화). E2E는 시각 기준선 4건만(#55에서도 동일 실패, 기존 문제)
+- 로컬 필터 검사: glossary 17/17, duplicate-copy 4/4, temporal-depth 11/11, entity-cards 18/18, generic-detail 20/20, detail-hierarchy·public-copy는 E-011 제목 수정 후 재빌드로 해소 예정
+- analysis QA 기준선 밖 신규 실패 17개 요소 → 17개 모두 해소(probe 2·3)
+- 남은 차단: v132 보고서 체인(생성 → 런타임 감사) — 런타임 감사 실패 4건(경로 시간 초과, B-010·E-009 추세 표시, E-011 옛 v129 판정 'status-only', 대표 QA 미완)
+- 단위 테스트 789/789, tsc 0
