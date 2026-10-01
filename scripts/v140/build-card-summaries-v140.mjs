@@ -1005,7 +1005,7 @@ function regionalCard(elementId, item, pack, contract) {
     if (value === null) continue;
     // The detail names a province by its Vietnamese name, else the romanised
     // name split at case changes ("BinhThuan" → "Binh Thuan").
-    const name = (text(row.normalizedAttributes?.["지역명_현지어"]) || text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["개편_후_소속_단위"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
+    const name = (text(row.normalizedAttributes?.["지역명_현지어"]) || text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["개편_후_소속_단위"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
     if (!byProvince.has(name)) byProvince.set(name, value);
   }
   const values = [...byProvince.values()];

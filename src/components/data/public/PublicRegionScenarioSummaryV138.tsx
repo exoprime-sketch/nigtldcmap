@@ -54,7 +54,7 @@ interface Props {
 }
 
 // V162: the common column names first, then the pre-V162 Viet Nam names.
-const REGION_KEYS = ["지역명_로마자", "지역명_현지어", "지역명_베트남어", ...REORGANISED_UNIT_KEYS_V162];
+const REGION_KEYS = ["지역명_로마자", "지역명_현지어", "지역명_베트남어", "지역명", ...REORGANISED_UNIT_KEYS_V162];
 const REGION_DISPLAY_KEYS: string[] = [...REGION_NAME_KEYS_V162];
 const SCENARIO_KEY = "시나리오";
 const YEAR_KEYS = ["연도", "기준연도"];

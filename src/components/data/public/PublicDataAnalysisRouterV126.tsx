@@ -1,3 +1,4 @@
+import ProvinceRecordTableV162, { PROVINCE_RECORD_TABLES_V162 } from "./ProvinceRecordTableV162";
 import { publicRegionScenarioContractV138 } from "../../../data/visualization/publicRegionScenarioContractV138";
 import WideRecordCardsV162 from "./WideRecordCardsV162";
 import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
@@ -308,7 +309,7 @@ export default function PublicDataAnalysisRouterV126({
     // wide template (one row per record, '[블록] 속성' columns) the common
     // block cards take their place; primary-chart variants read it themselves.
     if (wideRecordsV162.length > 0 && LONG_TEMPLATE_VARIANTS_V162.has(variant)) {
-      return <WideRecordCardsV162 records={wideRecordsV162} elementId={elementId} />;
+      return <WideRecordCardsV162 records={wideRecordsV162} elementId={elementId} recordScope="element" />;
     }
     switch (variant) {
       case "building-metadata":
@@ -479,7 +480,13 @@ export default function PublicDataAnalysisRouterV126({
         return <PppProcurementSummaryV153 entities={entities} indicators={indicators} />;
       case "climate-zone":
         // Köppen zones named Korean(code) with the composition table (V153).
-        return <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />;
+        // V162: the province rows the delivery added are listed below it.
+        return (
+          <>
+            <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />
+            <ProvinceRecordTableV162 elementId={elementId} entities={entities} />
+          </>
+        );
       default:
         return null;
     }
@@ -511,12 +518,16 @@ export default function PublicDataAnalysisRouterV126({
     }
     if (publicRenderer === "composition-trend") {
       return (
-        <PublicCompositionTrendAnalysisV132
-          elementId={elementId}
-          rows={semanticRows}
-          selectorState={selectorState}
-          onSelectorStateChange={onSelectorStateChange}
-        />
+        <>
+          <PublicCompositionTrendAnalysisV132
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
+          {/* V162: B-024's province rows, as the source states them. */}
+          {PROVINCE_RECORD_TABLES_V162[elementId] ? <ProvinceRecordTableV162 elementId={elementId} entities={entities} /> : null}
+        </>
       );
     }
     if (regionScenarioSummary && hasNationalSeriesRows) {

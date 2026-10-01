@@ -1,3 +1,4 @@
+import { regionSystemOfV162 } from "../../../data/geo/regionSystemV162";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import {
   approvedEntityAttributesV126,
@@ -401,7 +402,33 @@ function titleDisambiguationSuffixesV137(
       // A preferred key that already tells every card apart is the answer.
       if (distinct === indexes.length) break;
     }
-    if (!best) return;
+    if (!best) {
+      // V162: rows the 2026-09-30 delivery repeats under one name - the same
+      // province in both administrative systems (B-036), a project and its
+      // issuance records (C-025), a grant reported in two years (D-017,
+      // D-024, D-026). They are told apart by what the source states.
+      const systems = indexes.map((index) => regionSystemOfV162(entities[index]));
+      const bySystem = new Set(systems).size > 1 && systems.every((system) => system === "adm1" || system === "adm1-prev");
+      let stated: { values: string[]; distinct: number } | null = null;
+      for (const [key, label] of STATED_DISAMBIGUATION_KEYS_V162) {
+        const values = indexes.map((index) => compactTextV131(entities[index].normalizedAttributes?.[key], 42));
+        if (values.some((value) => !value)) continue;
+        const distinct = new Set(values).size;
+        if (distinct < 2) continue;
+        const labelled = (values as string[]).map((value) => (label ? `${label} ${value}` : value));
+        if (!stated || distinct > stated.distinct) stated = { values: labelled, distinct };
+        if (distinct === indexes.length) break;
+      }
+      if (!bySystem && !stated) return;
+      indexes.forEach((index, position) => {
+        const parts = [
+          stated ? (stated as { values: string[] }).values[position] : null,
+          bySystem ? (systems[position] === "adm1" ? "2025년 개편 후" : "개편 전") : null,
+        ].filter(Boolean);
+        suffixes[index] = parts.join(" · ");
+      });
+      return;
+    }
     indexes.forEach((index, position) => {
       suffixes[index] = (best as { values: string[] }).values[position];
     });
@@ -409,6 +436,21 @@ function titleDisambiguationSuffixesV137(
 
   return suffixes;
 }
+
+/** Columns the 2026-09-30 delivery states that separate same-named rows, with their label. */
+const STATED_DISAMBIGUATION_KEYS_V162: ReadonlyArray<[string, string]> = [
+  ["회계연도", "회계연도"],
+  ["보고연도", "보고연도"],
+  ["기준연도", "기준연도"],
+  ["연도", ""],
+  ["식별_레코드_유형", ""],
+  ["발행기록_모니터링_기간_종료_YYYY_MM_DD", "모니터링 종료"],
+  ["발행기록_연도_년", "발행"],
+  ["기간", ""],
+  ["기간_시작_종료", ""],
+  ["약정액_USD", "약정액(USD)"],
+  ["대표금액", "금액"],
+];
 
 function disambiguatedCardTitleV131(
   entity: VietnamEntityV124,

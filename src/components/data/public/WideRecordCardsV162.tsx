@@ -13,6 +13,8 @@ interface Props {
   elementTitle?: string;
   /** V162 (P12-B): which element's 지역 dictionary vintage to read a place name against. */
   elementId?: string;
+  /** "element": the cards list every record of the element (checked by the entity-card audit). */
+  recordScope?: "element";
 }
 
 /** A [지역] block's place-name attributes ("지역명 (원문)", "지역명 (현행)" …), not its codes. */
@@ -96,7 +98,8 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
       </header>
       {record.blocks.map((block) => (
         <section className="wide162-block" key={block.block}>
-          <h5 className="wide162-block-title">{block.title}</h5>
+          {/* A label inside the card, not a page heading: every card repeats it. */}
+          <p className="wide162-block-title">{block.title}</p>
           <dl className="wide162-rows">
             {block.values.map((value) => {
               const displayValue =
@@ -136,7 +139,7 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
  * style (FacilityCardV153) applied to a record that carries several blocks
  * instead of one flat row.
  */
-export default function WideRecordCardsV162({ records, elementTitle, elementId }: Props) {
+export default function WideRecordCardsV162({ records, elementTitle, elementId, recordScope }: Props) {
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_V162);
@@ -163,7 +166,7 @@ export default function WideRecordCardsV162({ records, elementTitle, elementId }
   const headerText = `${elementTitle ? `${elementTitle} ` : ""}${records.length}건`;
 
   return (
-    <section className="wide162" data-testid="wide-record-cards-v162" data-analysis-block="cards-list">
+    <section className="wide162" data-testid="wide-record-cards-v162" data-analysis-block="cards-list" data-record-scope={recordScope} data-record-count={records.length}>
       <div className="wide162-toolbar">
         <p className="wide162-count">{headerText}</p>
         {showTypeFilter ? (

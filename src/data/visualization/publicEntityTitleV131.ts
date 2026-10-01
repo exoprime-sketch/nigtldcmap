@@ -281,6 +281,9 @@ function regionYearCompositeV137(
     titleTextV131(attributes["지역명_로마자"]) ||
     titleTextV131(attributes["지역명_현지어"]) ||
     titleTextV131(attributes["지역명_베트남어"]) ||
+    // B-002, B-024, B-035, B-036 name the province in "지역명"; the 34-unit
+    // parent below would put a merged province under its successor's name.
+    titleTextV131(attributes["지역명"]) ||
     titleTextV131(attributes["개편_후_소속_단위"]) ||
     titleTextV131(attributes["2025_개편_후_소속_34개_체계"]) ||
     // B-008's rows are tide-gauge stations, not provinces.

@@ -22,7 +22,8 @@ import type {
 export type RegionSystemV162 = "adm1" | "adm1-prev" | "adm2" | "country";
 
 /** The region name columns, common names first, then the pre-V162 names. */
-export const REGION_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "지역명_로마자"] as const;
+// "지역명" is the column B-002, B-024, B-035 and B-036 use for the province itself.
+export const REGION_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "지역명", "지역명_로마자"] as const;
 /** The column naming the post-reform unit a row belongs to. */
 export const REORGANISED_UNIT_KEYS_V162 = ["개편_후_소속_단위", "2025_개편_후_소속_34개_체계"] as const;
 

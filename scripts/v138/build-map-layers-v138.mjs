@@ -265,7 +265,7 @@ export function regionSystemOfRecord(record) {
 
 // V162: the region columns under the names every country shares, then the
 // Viet Nam-specific names of the deliveries before 2026-09-30.
-const REGION_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "지역명_로마자"];
+const REGION_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "지역명", "지역명_로마자"];
 const UNIT34_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "개편_후_소속_단위", "2025_개편_후_소속_34개_체계", "지역명_로마자"];
 
 /**

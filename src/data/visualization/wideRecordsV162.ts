@@ -74,17 +74,21 @@ const SOURCE_BLOCK_V162 = "출처";
 const BLOCK_TITLES_V162: Record<string, string> = { 현지조사: "현장 확인 자료" };
 /** Attributes that are codes or record keys, in any block. */
 // V162: the supplier's own file bookkeeping ("[링크] raw 보유 여부", "raw 파일명").
-const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b/iu;
+// V162: also the identifier columns ("GCAP NAZCA ID") and the field survey's
+// own table reference ("[현지조사] 표" = "ELEMENT C-014 표").
+const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b|\bID$|^표$/iu;
+/** A format hint in the column label ("시행일 (YYYY-MM-DD)", "시행 연도 (년)"). */
+const FORMAT_HINT_V162 = /\s*\((?:YYYY(?:[-.]MM(?:[-.]DD)?)?|년|월|일)\)\s*$/u;
 /** A value that names a delivered or working file rather than stating anything. */
 const FILE_VALUE_V162 =
-  /(^raw\s*`)|`[^`]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)`|(?:^|[\s(])[A-E]-\d{3}_[^\s]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)\b|내부자료|Items_/iu;
+  /(^raw\s*`)|`[^`]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)`|(?:^|[\s(])[A-E]-\d{3}_[^\s]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)\b|내부자료|Items_|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\s+시트/iu;
 
 export function wideFieldsV162(fieldDefinitions: FieldDefinitionsV162): WideFieldV162[] | null {
   const fields: WideFieldV162[] = [];
   for (const row of fieldDefinitions || []) {
     const match = HEADER_V162.exec(String(row.label || "").trim());
     if (!match) continue;
-    fields.push({ key: row.normalizedKey, label: row.label, block: match[1].trim(), attribute: match[2].trim() });
+    fields.push({ key: row.normalizedKey, label: row.label, block: match[1].trim(), attribute: match[2].trim().replace(FORMAT_HINT_V162, "") || match[2].trim() });
   }
   // The template is recognised by its own header: a record name in [식별] and
   // at least one other block. A sheet with an odd bracketed column is not it.
@@ -140,7 +144,8 @@ export function sourceLinkTextV162(url: string, title?: string | null): string {
 }
 
 /** A citation that points into the supplier's workbook ("Dataset C 시트 22행"). */
-const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행/u;
+// …or names a raw column key ("SOURCE_ORGANIZATION") or an internal sheet.
+const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행|\b[A-Z]{3,}_[A-Z_]{3,}\b|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\b/u;
 
 /** Attributes that hold free-text notes, where the supplier's memo sentences can sit. */
 const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;

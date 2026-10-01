@@ -156,7 +156,7 @@ export default function SemanticContractRendererV125({
       } 주 분석`}
     >
       {wideRecordsTopV162.length > 0 ? (
-        <WideRecordCardsV162 records={wideRecordsTopV162} elementTitle={elementTitle} elementId={contract.elementId} />
+        <WideRecordCardsV162 records={wideRecordsTopV162} elementTitle={elementTitle} elementId={contract.elementId} recordScope="element" />
       ) : renderer === "policy-timeline" ? (
         <>
           {/* A numeric measure with several categories at one time (B-015's
@@ -364,7 +364,7 @@ function renderEntityPanelV125(
   // reads as block cards whatever the renderer; record ids, working files and
   // the supplier's note never reach the screen (wideRecordsV162).
   const wideRecords = wideRecordsOfEntitiesV162(entities);
-  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} elementId={contract.elementId} />;
+  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} elementId={contract.elementId} recordScope="element" />;
   if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
     return (
       <PortfolioEntitiesV125
