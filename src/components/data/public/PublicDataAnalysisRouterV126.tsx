@@ -266,6 +266,9 @@ export default function PublicDataAnalysisRouterV126({
         />
       );
     }
+    // V162: a register (B-012's disaster events) is not a province table even
+    // when its 2026-09-30 rows name the places each event touched.
+    if (visualizationContractV153(elementId)?.archetype === "registry" && !publicRegionScenarioContractV138(elementId)) return null;
     if (!regionScenarioShapeV138(entities)) return null;
     return (
       <PublicRegionScenarioSummaryV138

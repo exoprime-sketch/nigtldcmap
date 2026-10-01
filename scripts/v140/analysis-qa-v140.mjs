@@ -317,6 +317,12 @@ function recompute(card) {
     const matches = entities.filter((row) => row.indicatorId === "C-001_mitigation_target" && clean(attr(row, "속성1_레코드명")) === "총량 감축률" && Number(attr(row, "속성4_시점")) === 2030 && numberOf(attr(row, "속성3_값")) === 15.8 && clean(attr(row, "속성19_원문URL")) === "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam_NDC_2022_Eng.pdf");
     return matches.length === 1 ? finish(numberOf(attr(matches[0], "속성3_값")), matches.length, "NDC 2022 Table 3, unconditional target") : { status: "mismatch", reason: "reviewed NDC target not uniquely identified" };
   }
+  // V162: C-022's wide sheet states one facility count per province in its
+  // own column; the card names the largest, as the screen's region list does.
+  if (card.elementId === "C-022" && entities.length && entities.some((row) => numberOf(attr(row, "인벤토리_의무_인벤토리_시설_수_개")) !== null)) {
+    const counts = entities.map((row) => numberOf(attr(row, "인벤토리_의무_인벤토리_시설_수_개"))).filter((value) => value !== null);
+    return finish(Math.max(...counts), counts.length, "largest province facility count (wide sheet)");
+  }
   if (["C-019", "C-022"].includes(card.elementId) && entities.length && !wideCardV162) {
     const rows = entities.filter((row) => /^VN\d+$/u.test(clean(attr(row, "속성22_행정코드P_code"))) && /시설/u.test(row.name || "") && numberOf(attr(row, "속성3_값")) !== null);
     const date = [...new Set(rows.map((row) => clean(attr(row, "속성4_시점"))))].sort().at(-1);
