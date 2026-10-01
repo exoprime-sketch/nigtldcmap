@@ -490,6 +490,22 @@ function factualCompositeV131(
         ]),
       };
     }
+    case "B-014": {
+      // V162: the 2026-09-30 sheet names each simulation result by record key
+      // only ("VNM_carbon_price_CT_REF_2030"); its own columns state the
+      // scenario, the year and the value with its unit, which tell the rows
+      // apart (the carbon price and the emission change share a scenario).
+      const scenario = normalizedFieldV131(entity, "시나리오_명칭_원천");
+      const year = normalizedFieldV131(entity, "연도");
+      const value = normalizedFieldV131(entity, "값");
+      const unit = normalizedFieldV131(entity, "단위");
+      if (!scenario) return null;
+      return {
+        title: factualPartsV131([scenario, year ? `${year}년` : null, value ? `${value}${unit ? ` ${unit}` : ""}` : null]).join(" · "),
+        nameAvailability: "available",
+        secondaryNote: "원천이 개별 명칭 대신 시나리오·연도로 행을 구분합니다.",
+      };
+    }
     case "A-028": {
       // V162: the 2026-09-30 register names each OSM feature by its class value
       // only ("cave_entrance", "peak"); it reads as the platform's OSM class

@@ -1033,11 +1033,11 @@
       "structure": "S2",
       "archetype": "registry",
       "primary": {
-        "type": "note",
-        "title": "건물 수·면적 자료 미제공",
-        "xAxis": null,
-        "yAxis": null,
-        "unit": null
+        "type": "category-bar",
+        "title": "건물 풋프린트(OSM 참고) 항목별 값",
+        "xAxis": "건물 풋프린트(OSM 참고)",
+        "yAxis": "비교 항목",
+        "unit": "m2"
       },
       "secondary": [],
       "mapRole": "none",
@@ -1051,8 +1051,8 @@
           "url": "https://globalenergymonitor.org/projects/global-integrated-power-tracker"
         }
       ],
-      "status": "exception",
-      "note": "건물 Footprint는 현재 파일 구성 정보만 제공되고 개별 건물·성시 집계 수치가 없어 registry 표준(분류별 막대+목록)을 적용할 수 없음; 안내문(note)으로 대체",
+      "status": "standard",
+      "note": "건물 Footprint는 현재 파일 구성 정보만 제공되고 개별 건물·성시 집계 수치가 없어 registry 표준(분류별 막대+목록)을 적용할 수 없음; 안내문(note)으로 대체 · V162: 2026-09-30 납품이 OSM 건물 풋프린트 값(평균·총 바닥면적 등)을 실어 '자료 미제공' 안내에서 항목 비교로",
       "countryCompare": {
         "comparable": false,
         "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
@@ -1656,10 +1656,10 @@
       "structure": "S2",
       "archetype": "national-series",
       "primary": {
-        "type": "line",
-        "title": "ND-GAIN 취약성 추이",
-        "xAxis": "연도",
-        "yAxis": "ND-GAIN 취약성",
+        "type": "category-bar",
+        "title": "WWF BRF 위험 지수 비교",
+        "xAxis": "WWF BRF",
+        "yAxis": "비교 항목",
         "unit": "지수"
       },
       "secondary": [
@@ -1679,8 +1679,8 @@
           "url": "https://climate.copernicus.eu/copernicus-interactive-climate-atlas-guide-powerful-new-c3s-tool"
         }
       ],
-      "status": "standard",
-      "note": "",
+      "status": "exception",
+      "note": "V162: 새 납품에 ND-GAIN 관측값 0(지표 정의만) — WWF BRF 지수가 자료의 전부",
       "countryCompare": {
         "comparable": true,
         "compareKey": {
@@ -1860,8 +1860,8 @@
       "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "table",
-        "title": "탄소세 시나리오별 GDP 영향",
+        "type": "cards-list",
+        "title": "탄소세 시뮬레이션 결과",
         "xAxis": null,
         "yAxis": null,
         "unit": null
@@ -1879,7 +1879,7 @@
         }
       ],
       "status": "exception",
-      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24)",
+      "note": "V159: 명세 v2 변형 '표 전환' — 시나리오별 추정치를 차트 없이 표로(결정 2026-09-24) · V162: 새 납품이 시나리오 결과를 관측값 대신 기록 12건으로 실음 — 기록 카드(시나리오·연도·값)",
       "countryCompare": {
         "comparable": false,
         "reason": "1순위 단위가 선언되지 않아 단위 일치를 확인할 수 없음"
@@ -2652,10 +2652,10 @@
       "archetype": "national-series",
       "primary": {
         "type": "line",
-        "title": "1인당 경작지 면적 추이",
+        "title": "농업 총면적 추이",
         "xAxis": "연도",
-        "yAxis": "1인당 경작지 면적",
-        "unit": "ha/cap"
+        "yAxis": "농업 총면적(Agriculture)",
+        "unit": "1000 ha"
       },
       "secondary": [
         {
@@ -2675,7 +2675,7 @@
         }
       ],
       "status": "standard",
-      "note": "",
+      "note": "V162: 새 납품에 1인당 경작지 면적 관측값 0 — FAO 토지이용 면적 계열로",
       "countryCompare": {
         "comparable": true,
         "compareKey": {
@@ -2951,11 +2951,11 @@
       "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
-        "title": "자원별 가채연수 비교",
-        "xAxis": "가채연수(R/P ratio)",
-        "yAxis": "자원 종류",
-        "unit": "년"
+        "type": "line",
+        "title": "석유 확인매장량 추이",
+        "xAxis": "연도",
+        "yAxis": "석유 확인매장량",
+        "unit": "십억 배럴"
       },
       "secondary": [
         {
@@ -2974,8 +2974,8 @@
           "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=VN&view=chart"
         }
       ],
-      "status": "exception",
-      "note": "2020년 단일 연도의 자원별 가채연수 비교값만 제공되어 시계열 선 대신 자원별 막대로 표시",
+      "status": "standard",
+      "note": "2020년 단일 연도의 자원별 가채연수 비교값만 제공되어 시계열 선 대신 자원별 막대로 표시 · V162: 새 납품에 가채연수(R/P) 관측값 0 — 확인매장량 연도 계열로",
       "countryCompare": {
         "comparable": true,
         "compareKey": {
@@ -3027,10 +3027,10 @@
       "structure": "S1",
       "archetype": "national-series",
       "primary": {
-        "type": "category-bar",
-        "title": "광물별 세계 매장량 비중",
-        "xAxis": "세계 매장량 비중",
-        "yAxis": "광물",
+        "type": "line",
+        "title": "광물별 세계 매장량 비중 추이",
+        "xAxis": "연도",
+        "yAxis": "세계 매장량 비중",
         "unit": "%"
       },
       "secondary": [
@@ -3050,8 +3050,8 @@
           "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=VN&view=chart"
         }
       ],
-      "status": "exception",
-      "note": "2026년 단일 연도 기준 광물별 세계 비중 비교값만 제공되어 시계열 선 대신 광물별 막대로 표시",
+      "status": "standard",
+      "note": "2026년 단일 연도 기준 광물별 세계 비중 비교값만 제공되어 시계열 선 대신 광물별 막대로 표시 · V162: 새 납품이 광물별 2019–2025년 값을 실어 추이가 첫 분석(카드는 최신 연도 광물 비교 유지)",
       "countryCompare": {
         "comparable": true,
         "compareKey": {
@@ -3143,11 +3143,11 @@
       "structure": "S3",
       "archetype": "registry",
       "primary": {
-        "type": "category-bar",
-        "title": "광종별 광산 수",
-        "xAxis": "항목 수",
-        "yAxis": "광종",
-        "unit": "곳"
+        "type": "cards-list",
+        "title": "광산 목록",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
       },
       "secondary": [
         {
@@ -3170,8 +3170,8 @@
           "url": "https://globalenergymonitor.org/projects/global-integrated-power-tracker"
         }
       ],
-      "status": "standard",
-      "note": "",
+      "status": "exception",
+      "note": "V162: 새 납품 41개 광산이 광종을 여럿 기재(26가지 조합) — 광종별 광산 수는 한 광산을 여러 번 세므로 광산 카드(광종 원문 표기)로",
       "countryCompare": {
         "comparable": false,
         "reason": "레코드 목록이라 국가 간 같은 값으로 견줄 수 없음"
