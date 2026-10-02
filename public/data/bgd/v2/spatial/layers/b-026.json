@@ -1,0 +1,365 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-026",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2022",
+    "defaultVariable": "m-397b38d0d9",
+    "periods": [
+      "2022"
+    ],
+    "variables": [
+      {
+        "key": "m-397b38d0d9",
+        "label": "우세 유향 비율",
+        "measureId": "m-397b38d0d9",
+        "measureKey": "m-397b38d0d9",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-136be5d3ae",
+        "label": "E 동 비율",
+        "measureId": "m-136be5d3ae",
+        "measureKey": "m-136be5d3ae",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-98a614ecc9",
+        "label": "SE 남동 비율",
+        "measureId": "m-98a614ecc9",
+        "measureKey": "m-98a614ecc9",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-e478b273c0",
+        "label": "S 남 비율",
+        "measureId": "m-e478b273c0",
+        "measureKey": "m-e478b273c0",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-ac4dff2816",
+        "label": "SW 남서 비율",
+        "measureId": "m-ac4dff2816",
+        "measureKey": "m-ac4dff2816",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-0565501d42",
+        "label": "W 서 비율",
+        "measureId": "m-0565501d42",
+        "measureKey": "m-0565501d42",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-c482de8c5f",
+        "label": "NW 북서 비율",
+        "measureId": "m-c482de8c5f",
+        "measureKey": "m-c482de8c5f",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-24465bf461",
+        "label": "N 북 비율",
+        "measureId": "m-24465bf461",
+        "measureKey": "m-24465bf461",
+        "unit": "%",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-397b38d0d9",
+        "variableLabel": "우세 유향 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          16.67,
+          22.1,
+          17.41,
+          17.78,
+          17.62,
+          18.21,
+          20.17,
+          17.89
+        ]
+      },
+      {
+        "variable": "m-136be5d3ae",
+        "variableLabel": "E 동 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          14.18,
+          14.73,
+          15.23,
+          15.55,
+          16.35,
+          17.52,
+          11.96,
+          15.48
+        ]
+      },
+      {
+        "variable": "m-98a614ecc9",
+        "variableLabel": "SE 남동 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          9.54,
+          6.76,
+          9.28,
+          8.16,
+          9.74,
+          10.44,
+          7.55,
+          9.3
+        ]
+      },
+      {
+        "variable": "m-e478b273c0",
+        "variableLabel": "S 남 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          14.31,
+          15.15,
+          17.29,
+          15.36,
+          17.18,
+          18.21,
+          16.14,
+          17.89
+        ]
+      },
+      {
+        "variable": "m-ac4dff2816",
+        "variableLabel": "SW 남서 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          8.16,
+          11.2,
+          10.38,
+          10.07,
+          9.89,
+          12.11,
+          9.18,
+          10.83
+        ]
+      },
+      {
+        "variable": "m-0565501d42",
+        "variableLabel": "W 서 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          16.67,
+          22.1,
+          17.41,
+          17.78,
+          17.62,
+          18.13,
+          20.17,
+          15.46
+        ]
+      },
+      {
+        "variable": "m-c482de8c5f",
+        "variableLabel": "NW 북서 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          9.59,
+          7.86,
+          7.07,
+          7.35,
+          7.4,
+          5.01,
+          10.67,
+          6.18
+        ]
+      },
+      {
+        "variable": "m-24465bf461",
+        "variableLabel": "N 북 비율",
+        "unit": "%",
+        "period": "2022",
+        "sourceIndicatorId": "B-026_flowdir_adm1",
+        "values": [
+          14.27,
+          13.36,
+          14.24,
+          14.18,
+          13.13,
+          9.59,
+          16.88,
+          14.95
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-397b38d0d9",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-136be5d3ae",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-98a614ecc9",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e478b273c0",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-ac4dff2816",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-0565501d42",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-c482de8c5f",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-24465bf461",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "HydroSHEDS v1 Flow Direction (DIR 15s)"
+    ],
+    "licenses": [
+      "기관 이용약관"
+    ],
+    "attribution": [
+      "HydroSHEDS v1 Flow Direction (DIR 15s) — 기관 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://www.hydrosheds.org/hydrosheds-core-downloads"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 64,
+    "sourceValueCount": 64,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

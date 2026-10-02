@@ -1,0 +1,365 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-041",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "1999–2018 장기평균(LTA)",
+    "defaultVariable": "m-4a75f3f9f8",
+    "periods": [
+      "1999–2018 장기평균(LTA)"
+    ],
+    "variables": [
+      {
+        "key": "m-4a75f3f9f8",
+        "label": "수평면 전일사량 GHI 평균",
+        "measureId": "m-4a75f3f9f8",
+        "measureKey": "m-4a75f3f9f8",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-5cca38e368",
+        "label": "수평면 전일사량 GHI 최소",
+        "measureId": "m-5cca38e368",
+        "measureKey": "m-5cca38e368",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-8cd6b73d1d",
+        "label": "수평면 전일사량 GHI 최대",
+        "measureId": "m-8cd6b73d1d",
+        "measureKey": "m-8cd6b73d1d",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-69d6507ac9",
+        "label": "직달 일사량 DNI 평균",
+        "measureId": "m-69d6507ac9",
+        "measureKey": "m-69d6507ac9",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-382351d0e3",
+        "label": "직달 일사량 DNI 최소",
+        "measureId": "m-382351d0e3",
+        "measureKey": "m-382351d0e3",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-7d0e4b1fb9",
+        "label": "직달 일사량 DNI 최대",
+        "measureId": "m-7d0e4b1fb9",
+        "measureKey": "m-7d0e4b1fb9",
+        "unit": "kWh/m²/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-4b1c840779",
+        "label": "실용 발전량 PVOUT 평균",
+        "measureId": "m-4b1c840779",
+        "measureKey": "m-4b1c840779",
+        "unit": "kWh/kWp/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-48f4fb1a36",
+        "label": "실용 발전량 PVOUT 최소",
+        "measureId": "m-48f4fb1a36",
+        "measureKey": "m-48f4fb1a36",
+        "unit": "kWh/kWp/일",
+        "periods": [
+          "1999–2018 장기평균(LTA)"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-4a75f3f9f8",
+        "variableLabel": "수평면 전일사량 GHI 평균",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          4.651,
+          4.737,
+          4.559,
+          4.644,
+          4.576,
+          4.43,
+          4.522,
+          4.462
+        ]
+      },
+      {
+        "variable": "m-5cca38e368",
+        "variableLabel": "수평면 전일사량 GHI 최소",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          4.594,
+          3.906,
+          4.42,
+          4.555,
+          4.474,
+          4.263,
+          4.391,
+          4.417
+        ]
+      },
+      {
+        "variable": "m-8cd6b73d1d",
+        "variableLabel": "수평면 전일사량 GHI 최대",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          4.843,
+          4.99,
+          4.67,
+          4.816,
+          4.688,
+          4.534,
+          4.614,
+          4.549
+        ]
+      },
+      {
+        "variable": "m-69d6507ac9",
+        "variableLabel": "직달 일사량 DNI 평균",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          2.967,
+          3.308,
+          2.832,
+          2.875,
+          2.865,
+          2.761,
+          3.094,
+          2.853
+        ]
+      },
+      {
+        "variable": "m-382351d0e3",
+        "variableLabel": "직달 일사량 DNI 최소",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          2.825,
+          2.438,
+          2.667,
+          2.777,
+          2.767,
+          2.496,
+          2.881,
+          2.692
+        ]
+      },
+      {
+        "variable": "m-7d0e4b1fb9",
+        "variableLabel": "직달 일사량 DNI 최대",
+        "unit": "kWh/m²/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          3.367,
+          3.935,
+          3.041,
+          3.174,
+          3.003,
+          2.971,
+          3.359,
+          3.054
+        ]
+      },
+      {
+        "variable": "m-4b1c840779",
+        "variableLabel": "실용 발전량 PVOUT 평균",
+        "unit": "kWh/kWp/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          3.91,
+          4.028,
+          3.84,
+          3.887,
+          3.859,
+          3.769,
+          3.884,
+          3.806
+        ]
+      },
+      {
+        "variable": "m-48f4fb1a36",
+        "variableLabel": "실용 발전량 PVOUT 최소",
+        "unit": "kWh/kWp/일",
+        "period": "1999–2018 장기평균(LTA)",
+        "sourceIndicatorId": "B-041_solar_adm1",
+        "values": [
+          3.848,
+          3.841,
+          3.75,
+          3.818,
+          3.792,
+          3.622,
+          3.81,
+          3.745
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-4a75f3f9f8",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5cca38e368",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8cd6b73d1d",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-69d6507ac9",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-382351d0e3",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-7d0e4b1fb9",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-4b1c840779",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-48f4fb1a36",
+      "period": "1999–2018 장기평균(LTA)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://globalsolaratlas.info/download/bangladesh"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 64,
+    "sourceValueCount": 64,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}
