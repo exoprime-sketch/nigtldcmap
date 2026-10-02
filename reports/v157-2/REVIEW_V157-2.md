@@ -242,3 +242,19 @@ V162 병합을 기다리지 않고 `origin/feat/v162-data-refresh`(1c7aeae)를 �
 2. `finalize:v151` 체인의 `qa:acceptance:v162 -- --expect-pending 12` 제거
 3. push → PR → CI `gate` 판정(새 원인일 때 최대 3회 재실행) → Preview
 4. 보고: 이 §8 표 + 1440px 캡처(지도 12 · 홈 전후 · 상세 12 전후)
+
+## 9. 검사 기대값 변경 — role-split QA 준비 중 검사 5건(2026-10-03, CI 1회차 실패 원인)
+- **원인**
+  - 지도 72/72 등록으로 계약의 준비 중 대상이 0개가 됨
+  - `role-split-qa-v140.mjs`의 준비 중 예시(`pendingTargetV157`)가 비어 다음 5건이 실패
+    - PENDING_EXAMPLE_FROM_CONTRACT
+    - FINDER_PENDING_NO_MAP_BUTTON
+    - MAP_PENDING_ROW_SHOWN
+    - MAP_PENDING_NEVER_DRAWN
+    - SECTION_B017_DETAIL_RUNTIME
+- **변경**: 준비 중 대상이 없을 때는 반대 상태를 같은 엄격도로 확인함
+  - 계약의 모든 대상이 map-index에 있는지 확인(`targetsNotInIndex: []`)
+  - 지도 화면에 준비 중 행이 0개인지 확인
+  - 머리말의 준비 중 수가 0인지 확인
+  - 준비 중 상세 절은 검사할 대상이 없어 건너뛰고, 그 사실을 `PENDING_DETAIL_NO_LOCATION_CLAIM`에 기록함
+- **유지**: 준비 중 대상이 1개라도 생기면 기존 검사가 그대로 적용됨(기대값 완화 아님)
