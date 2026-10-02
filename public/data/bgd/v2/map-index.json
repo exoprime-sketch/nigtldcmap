@@ -1,5 +1,5 @@
 {
-  "activeMapLayerCount": 37,
+  "activeMapLayerCount": 38,
   "countryIso3": "BGD",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-29T00:00:00Z",
@@ -6019,6 +6019,330 @@
       }
     },
     {
+      "elementId": "B-012",
+      "layerId": "bgd-v162-b-012",
+      "label": "재해 이력",
+      "publicShortTitle": "재해 이력",
+      "rawLabel": "재해·재난 이력(EM-DAT)",
+      "category": "기후·위험",
+      "detailElementId": "B-012",
+      "detailUrl": "/?element=b-012&country=BGD#element-detail",
+      "active": true,
+      "enabled": true,
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "cluster": false,
+      "regionalProject": false,
+      "scopeCountries": [
+        "BGD"
+      ],
+      "mapMode": "point",
+      "renderer": "point-and-polygon",
+      "aggregationLevel": "facility",
+      "spatialScopeType": "facility-site",
+      "coordinateMeaning": "source-provided-location",
+      "assetRef": {
+        "elementId": "B-012",
+        "provider": "bgd-v162",
+        "section": "spatial"
+      },
+      "geometryUrl": "/data/bgd/v2/spatial/points/b-012.geojson",
+      "geometryTypes": [
+        "Point"
+      ],
+      "featureCount": 14,
+      "featureCountByKind": {
+        "k-123ee6": 9,
+        "k-9019f4": 4,
+        "k-822ed0": 1
+      },
+      "unit": "곳",
+      "selectors": {
+        "defaultPeriod": "2024",
+        "defaultVariable": "all",
+        "periods": [
+          "2024"
+        ],
+        "variables": [
+          {
+            "key": "all",
+            "label": "전체",
+            "periods": [
+              "2024"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "k-123ee6",
+            "label": "홍수",
+            "periods": [
+              "2024"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "k-9019f4",
+            "label": "지진",
+            "periods": [
+              "2024"
+            ],
+            "unit": "곳"
+          },
+          {
+            "key": "k-822ed0",
+            "label": "폭풍·태풍",
+            "periods": [
+              "2024"
+            ],
+            "unit": "곳"
+          }
+        ]
+      },
+      "filters": [
+        {
+          "field": "kind",
+          "label": "재해유형",
+          "values": [
+            "k-123ee6",
+            "k-9019f4",
+            "k-822ed0"
+          ],
+          "valueLabels": {
+            "k-123ee6": "홍수",
+            "k-9019f4": "지진",
+            "k-822ed0": "폭풍·태풍"
+          }
+        }
+      ],
+      "factFields": [
+        {
+          "key": "kind",
+          "label": "재해유형",
+          "sources": [
+            "kindLabel"
+          ],
+          "filterable": true,
+          "valueMap": {
+            "k-123ee6": "홍수",
+            "k-9019f4": "지진",
+            "k-822ed0": "폭풍·태풍"
+          }
+        },
+        {
+          "key": "name",
+          "label": "이름",
+          "sources": [
+            "name"
+          ]
+        },
+        {
+          "key": "startDate",
+          "label": "시작일",
+          "sources": [
+            "startDate"
+          ],
+          "recordCount": 14,
+          "filledRecordCount": 14
+        },
+        {
+          "key": "disasterSubtype",
+          "label": "세부유형",
+          "sources": [
+            "disasterSubtype"
+          ],
+          "recordCount": 14,
+          "filledRecordCount": 14
+        },
+        {
+          "key": "deaths",
+          "label": "사망자",
+          "sources": [
+            "deaths"
+          ],
+          "unit": "명",
+          "recordCount": 14,
+          "filledRecordCount": 13
+        },
+        {
+          "key": "affectedPeople",
+          "label": "총피해인구",
+          "sources": [
+            "affectedPeople"
+          ],
+          "unit": "명",
+          "recordCount": 14,
+          "filledRecordCount": 14
+        },
+        {
+          "key": "damageUsd2024",
+          "label": "총피해액(2024년 실질)",
+          "sources": [
+            "damageUsd2024"
+          ],
+          "unit": "천 USD",
+          "recordCount": 14,
+          "filledRecordCount": 4
+        },
+        {
+          "key": "endDate",
+          "label": "종료일",
+          "sources": [
+            "endDate"
+          ],
+          "recordCount": 14,
+          "filledRecordCount": 14
+        },
+        {
+          "key": "affectedRegions",
+          "label": "발생지역(원문)",
+          "sources": [
+            "affectedRegions"
+          ],
+          "recordCount": 14,
+          "filledRecordCount": 13
+        },
+        {
+          "key": "coordinateBasis",
+          "label": "좌표 산출근거",
+          "sources": [
+            "coordinateBasis"
+          ],
+          "recordCount": 14,
+          "filledRecordCount": 14
+        }
+      ],
+      "cardFactFields": [
+        {
+          "key": "startDate",
+          "label": "시작일",
+          "unit": null
+        },
+        {
+          "key": "disasterSubtype",
+          "label": "세부유형",
+          "unit": null
+        },
+        {
+          "key": "deaths",
+          "label": "사망자",
+          "unit": "명"
+        },
+        {
+          "key": "affectedPeople",
+          "label": "총피해인구",
+          "unit": "명"
+        }
+      ],
+      "fieldLabels": {
+        "kind": "재해유형",
+        "name": "이름",
+        "startDate": "시작일",
+        "disasterSubtype": "세부유형",
+        "deaths": "사망자",
+        "affectedPeople": "총피해인구",
+        "damageUsd2024": "총피해액(2024년 실질)",
+        "endDate": "종료일",
+        "affectedRegions": "발생지역(원문)",
+        "coordinateBasis": "좌표 산출근거"
+      },
+      "tooltipFields": [
+        "kind",
+        "name",
+        "startDate",
+        "disasterSubtype",
+        "deaths",
+        "affectedPeople",
+        "damageUsd2024",
+        "endDate",
+        "affectedRegions",
+        "coordinateBasis"
+      ],
+      "legend": {
+        "title": "재해 이력",
+        "note": "홍수 9 · 지진 4 · 폭풍·태풍 1 · 자료연도 2024"
+      },
+      "source": "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1",
+      "sourceOrganizations": [
+        "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1"
+      ],
+      "sourceUrls": [
+        "https://doi.org/10.14428/DVN/I0LTPH"
+      ],
+      "sourceYear": "2024",
+      "latestYear": "2024",
+      "licenses": [
+        "CC-BY-NC-ND-4.0"
+      ],
+      "attribution": "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1 — CC-BY-NC-ND-4.0. 이용 시 출처 표기 필수",
+      "accuracyNotice": "좌표가 있는 레코드만 표시합니다. 행정구역 대표점 263건 · 국경 밖 좌표 5건은 지도에 표시하지 않습니다. 행정구역 대표점만 있는 사건은 분석 패널에 주(Division)별 건수로 표시하며, 여러 주(Division)에 걸친 사건은 각 주(Division)에 1건씩 셉니다.",
+      "publicSpatialNotice": "원천이 제공한 좌표를 표시합니다. EM-DAT 원본 좌표가 있는 사건만 점으로 표시합니다. 행정구역 대표점만 있는 사건은 점으로 그리지 않고 주(Division)별 건수로 표시합니다.",
+      "spatialLimitation": "원천이 제공한 좌표를 표시합니다. EM-DAT 원본 좌표가 있는 사건만 점으로 표시합니다. 행정구역 대표점만 있는 사건은 점으로 그리지 않고 주(Division)별 건수로 표시합니다.",
+      "spatialCoverage": "전국 · 14곳",
+      "spatialStatus": "ready",
+      "mapBenefit": "재해 이력의 위치 분포를 볼 수 있습니다.",
+      "missingRegions": [],
+      "join": {
+        "requiredCount": 14,
+        "matchedCount": 14,
+        "missingCount": 0,
+        "failures": []
+      },
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "totalEntityCount": 367,
+      "sourceCoordinateCount": 282,
+      "displayedCoordinateCount": 14,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 367,
+      "regionCounts": {
+        "label": "행정구역 대표점만 있는 사건",
+        "unit": "건",
+        "total": 247,
+        "rows": [
+          {
+            "key": "BGD.1_1",
+            "name": "바리살",
+            "count": 63
+          },
+          {
+            "key": "BGD.2_1",
+            "name": "치타공",
+            "count": 123
+          },
+          {
+            "key": "BGD.3_1",
+            "name": "다카",
+            "count": 68
+          },
+          {
+            "key": "BGD.4_1",
+            "name": "쿨나",
+            "count": 53
+          },
+          {
+            "key": "BGD.5_1",
+            "name": "라지샤히",
+            "count": 72
+          },
+          {
+            "key": "BGD.6_1",
+            "name": "랑푸르",
+            "count": 65
+          },
+          {
+            "key": "BGD.7_1",
+            "name": "실렛",
+            "count": 47
+          },
+          {
+            "key": "BGD.8_1",
+            "name": "마이멘싱",
+            "count": 50
+          }
+        ]
+      }
+    },
+    {
       "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 원자료가 주(Division) 단위로 제공한 값만 표시합니다.",
       "active": true,
       "aggregationLevel": "admin1",
@@ -11749,11 +12073,11 @@
       "downloadableRecordCount": 0
     }
   ],
-  "mapFeatureCount": 3518,
+  "mapFeatureCount": 3532,
   "mapTargetContract": {
     "schemaVersion": "country-map-targets-v162",
-    "targetCount": 37,
-    "connectedCount": 37,
+    "targetCount": 38,
+    "connectedCount": 38,
     "notConnected": [],
     "judgement": "reports/v162/bgd-map-judgement-v162.md"
   },

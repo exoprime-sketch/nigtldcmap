@@ -107,6 +107,19 @@ for (const entry of REGION_DICTIONARY.entries.filter((row) => row.level === "div
 for (const local of new Set(dictionaryDivision.values())) {
   if (!divisionByNameEn.has(local)) throw new Error(`DICTIONARY_GEOMETRY_MISMATCH: dictionary division ${local} not in ${ADM1_URL}`);
 }
+// Dictionary key token -> the division a division or district entry belongs
+// to ("coxsbazar" -> Chittagong). A token two entries place in different
+// divisions is ambiguous and names none.
+const dictionaryParentDivision = new Map();
+for (const entry of REGION_DICTIONARY.entries) {
+  const local = entry.level === "division" ? entry.local : entry.level === "district" ? entry.parent : null;
+  if (!local || !divisionByNameEn.has(local)) continue;
+  for (const key of entry.keys) {
+    const token = normalizeToken(key);
+    const known = dictionaryParentDivision.get(token);
+    dictionaryParentDivision.set(token, known === undefined || known === local ? local : null);
+  }
+}
 const KEY_PATTERN = new RegExp(`^${ISO3}\\.(\\d+)_1(?:_(\\d{4}))?(?=_|$)`, "u");
 
 const outline = readJson(resolve(ROOT, `public${outlineAsset.url}`));
@@ -724,6 +737,43 @@ function factValue(fact, attributes) {
   return value;
 }
 
+/**
+ * Events located only by an administrative representative point are not drawn;
+ * each is counted once in every division its GADM-matched names lie in (a
+ * district counts for its division). Names the dictionary does not place are
+ * reported, never guessed.
+ */
+function countEventsByDivision(rows, from) {
+  const pattern = new RegExp(from.nature, "u");
+  const counts = new Map();
+  const unmatched = new Map();
+  let candidates = 0;
+  let counted = 0;
+  for (const row of rows) {
+    const attributes = row.normalizedAttributes || {};
+    if (!NATURE_FIELDS.some((field) => pattern.test(text(attributes[field])))) continue;
+    candidates += 1;
+    const divisions = new Set();
+    for (const name of text(attributes[from.field]).split(from.split || " · ").map((value) => value.trim()).filter(Boolean)) {
+      const local = dictionaryParentDivision.get(normalizeToken(name));
+      if (local) divisions.add(local);
+      else unmatched.set(name, (unmatched.get(name) || 0) + 1);
+    }
+    if (!divisions.size) continue;
+    counted += 1;
+    for (const local of divisions) counts.set(local, (counts.get(local) || 0) + 1);
+  }
+  return {
+    label: from.label,
+    unit: "건",
+    candidates,
+    counted,
+    notCounted: candidates - counted,
+    rows: DIVISIONS.filter((division) => counts.get(division.nameEn)).map((division) => ({ key: division.key, name: division.nameKo || division.nameEn, count: counts.get(division.nameEn) })),
+    unmatchedNames: Object.fromEntries([...unmatched.entries()].sort((a, b) => b[1] - a[1] || compareText(a[0], b[0]))),
+  };
+}
+
 function buildPoints(target, spec, reference) {
   const elementId = target.elementId;
   const pack = packs.get(elementId);
@@ -825,6 +875,7 @@ function buildPoints(target, spec, reference) {
     ...spec.facts.filter((fact) => factFilled.has(fact.key)).map((fact) => ({ key: fact.key, label: fact.label, sources: [fact.key], ...(fact.unit ? { unit: fact.unit } : {}), recordCount: featureCount, filledRecordCount: factFilled.get(fact.key) })),
   ];
   const cardFactFields = spec.facts.filter((fact) => factFilled.has(fact.key)).slice(0, 4).map((fact) => ({ key: fact.key, label: fact.label, unit: fact.unit || null }));
+  const regionCounts = spec.regionCountsFrom ? countEventsByDivision(rows, spec.regionCountsFrom) : null;
   const droppedTotal = Object.entries(dropped).filter(([reason]) => reason !== "no-coordinate").reduce((sum, [, count]) => sum + count, 0);
   const droppedText = Object.entries(dropped)
     .filter(([reason]) => reason !== "no-coordinate")
@@ -886,7 +937,7 @@ function buildPoints(target, spec, reference) {
     latestYear: sourceYear,
     licenses: source.licenses,
     ...(source.attribution.length ? { attribution: source.attribution.join(" · ") } : {}),
-    accuracyNotice: `${reference ? `${spec.notice} ` : ""}좌표가 있는 레코드만 표시합니다.${droppedTotal ? ` ${droppedText}은 지도에 표시하지 않습니다.` : ""}`,
+    accuracyNotice: `${reference ? `${spec.notice} ` : ""}좌표가 있는 레코드만 표시합니다.${droppedTotal ? ` ${droppedText}은 지도에 표시하지 않습니다.` : ""}${regionCounts ? ` ${regionCounts.label}은 분석 패널에 ${REGION}별 건수로 표시하며, 여러 ${REGION}에 걸친 사건은 각 ${REGION}에 1건씩 셉니다.` : ""}`,
     publicSpatialNotice: notice,
     spatialLimitation: notice,
     spatialCoverage: `전국 · ${formatCount(featureCount)}곳`,
@@ -902,6 +953,9 @@ function buildPoints(target, spec, reference) {
     downloadStatus: downloadStatusOf(item),
     downloadableRecordCount: Number(item?.downloadableRecordCount || 0),
     ...(reference ? { referenceMap: { label: "참고 지도", basis: spec.basis, notice: spec.notice } } : {}),
+    ...(regionCounts
+      ? { regionCounts: { label: regionCounts.label, unit: regionCounts.unit, total: regionCounts.counted, rows: regionCounts.rows.map(({ key, name, count }) => ({ key, name, count })) } }
+      : {}),
   };
   return {
     hold: false,
@@ -917,6 +971,7 @@ function buildPoints(target, spec, reference) {
       featureCount,
       featureCountByKind: Object.fromEntries(kindEntries.map(([key, row]) => [row.label, row.count])),
       droppedRowsByReason: dropped,
+      ...(regionCounts ? { regionCounts } : {}),
     },
   };
 }
@@ -1008,7 +1063,7 @@ for (const target of TARGETS) {
 
 // Public strings must not carry internal codes, file names, raw keys or another country's wording.
 const FORBIDDEN = /_entity\b|용역사|사실\/표현|개인정보|\battr_\d+|\b[A-E]-\d{3}\b|레코드_키|작업표준|처리규칙|별첨|베트남|Viet ?Nam|성·시|省|\.xlsx\b|\.shp\b|gis_osm_|[A-Z]{3}_\d{6,}|[A-Z]{3}\.\d+_1\b|\b[a-z]+_[a-z_]+_[a-z]+\b/u;
-const PUBLIC_LAYER_FIELDS = ["label", "publicShortTitle", "category", "legend", "mapBenefit", "publicSpatialNotice", "spatialLimitation", "spatialCoverage", "accuracyNotice", "source", "sourceOrganizations", "attribution", "licenses", "referenceMap", "factFields", "cardFactFields", "filters", "fieldLabels"];
+const PUBLIC_LAYER_FIELDS = ["label", "publicShortTitle", "category", "legend", "mapBenefit", "publicSpatialNotice", "spatialLimitation", "spatialCoverage", "accuracyNotice", "source", "sourceOrganizations", "attribution", "licenses", "referenceMap", "regionCounts", "factFields", "cardFactFields", "filters", "fieldLabels"];
 const publicStrings = (value) => (typeof value === "string" ? [value] : Array.isArray(value) ? value.flatMap(publicStrings) : value && typeof value === "object" ? Object.entries(value).filter(([key]) => !["sources", "key", "field", "values"].includes(key)).flatMap(([, item]) => publicStrings(item)) : []);
 const leaks = [];
 for (const layer of layers) {
@@ -1102,7 +1157,10 @@ const reasonText = (row) => {
   if (row.kind === "point" || row.kind === "reference") {
     const droppedText = Object.entries(row.droppedRowsByReason).filter(([reason]) => reason !== "no-coordinate").map(([reason, count]) => `${DROP_REASON_KO[reason] || reason} ${formatCount(count)}`).join(" · ");
     const lead = row.kind === "reference" ? `${row.basis}만 표시(실제 형상 아님)` : row.locationNote ? `원천 좌표 — ${row.locationNote}` : "원천 좌표의 실제 위치";
-    return `${lead}${droppedText ? ` — 제외: ${droppedText}` : ""}`;
+    const counted = row.regionCounts
+      ? ` — ${row.regionCounts.label} ${formatCount(row.regionCounts.counted)}건은 ${REGION}별 건수로(${row.regionCounts.rows.length}개 ${REGION}, 주 미확인 ${formatCount(row.regionCounts.notCounted)}건 제외)`
+      : "";
+    return `${lead}${droppedText ? ` — 제외: ${droppedText}` : ""}${counted}`;
   }
   return `${row.reason}${row.conflict ? " (검증 메모: 판정 유지, 보고서 decisionConflicts 참조)" : ""}`;
 };

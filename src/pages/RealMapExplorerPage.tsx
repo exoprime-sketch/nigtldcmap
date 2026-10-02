@@ -4032,6 +4032,20 @@ export default function RealMapExplorerPage({
         .forEach(([kind, count]) =>
           summaryRows.push({ label: kind, value: `${count.toLocaleString()}개` })
         );
+      // V162 PR-D: records located only by an administrative representative
+      // point are not drawn; the layer states them as counts per level-1 unit.
+      const regionCountsV162 = (focusedLayer as {
+        regionCounts?: { label: string; unit: string; total: number; rows: Array<{ key: string; name: string; count: number }> };
+      }).regionCounts;
+      if (regionCountsV162 && regionCountsV162.rows.length) {
+        summaryRows.push({
+          label: regionCountsV162.label,
+          value: `${regionCountsV162.total.toLocaleString()}${regionCountsV162.unit} · 점으로 그리지 않음`,
+        });
+        regionCountsV162.rows.forEach((row) =>
+          summaryRows.push({ label: row.name, value: `${row.count.toLocaleString()}${regionCountsV162.unit}` })
+        );
+      }
       summaryRows.push({
         label: "기준연도",
         value: String(focusedLayer.sourceYear || focusedSelector.period),

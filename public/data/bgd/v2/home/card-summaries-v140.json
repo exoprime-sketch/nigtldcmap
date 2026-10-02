@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-10-02T19:20:27.345Z",
+ "generatedAt": "2026-10-02T20:20:44.357Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -3220,7 +3220,7 @@
    "kind": "spatial",
    "headline": {
     "value": "571,496 건",
-    "label": "도로 레이어 최대 · 피처 수 · OSM 도로 레이어의 지물 건수 · 28개 Division 중 · 2026년"
+    "label": "도로 레이어 최대 · 피처 수 · OSM 도로 레이어의 지물 건수 · 28개 주(Division) 중 · 2026년"
    },
    "preview": {
     "parts": [
@@ -3246,7 +3246,7 @@
      }
     ],
     "unit": "건",
-    "scope": "도로 레이어 상위 5개 Division",
+    "scope": "도로 레이어 상위 5개 주(Division)",
     "median": 813.5,
     "range": {
      "min": 10,
@@ -3268,8 +3268,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "도로 레이어(건) 28개 Division 값 · 2026년 · 최대값과 중앙값·10~90분위 · 합산하지 않음"
+    "unit": "주(Division) 값",
+    "rule": "도로 레이어(건) 28개 주(Division) 값 · 2026년 · 최대값과 중앙값·10~90분위 · 합산하지 않음"
    },
    "measure": {
     "key": "measure-7d9609ecb1c8",
@@ -4196,7 +4196,7 @@
    "kind": "spatial-trend",
    "headline": {
     "value": "25.9 ℃",
-    "label": "연평균 기온 · 8개 Division 중앙값 · 2025년"
+    "label": "연평균 기온 · 8개 주(Division) 중앙값 · 2025년"
    },
    "preview": {
     "points": [
@@ -4374,7 +4374,7 @@
      }
     ],
     "unit": "℃",
-    "seriesLabel": "관측 기반 · Division 중앙값",
+    "seriesLabel": "관측 기반 · 주(Division) 중앙값",
     "range": {
      "p10": 25.124,
      "p90": 26.127999999999997
@@ -4394,8 +4394,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "연평균 기온 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님"
+    "unit": "주(Division) 값",
+    "rule": "연평균 기온 8개 주(Division) 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님"
    },
    "measure": {
     "key": "연평균_기온",
@@ -4421,7 +4421,7 @@
    "kind": "spatial-trend",
    "headline": {
     "value": "27.7 ℃",
-    "label": "연평균 기온 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "label": "연평균 기온 · 8개 주(Division) 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -4603,7 +4603,7 @@
      }
     ],
     "unit": "℃",
-    "seriesLabel": "SSP2-4.5 · Division 중앙값",
+    "seriesLabel": "SSP2-4.5 · 주(Division) 중앙값",
     "range": {
      "p10": 27.114,
      "p90": 28.185
@@ -4624,8 +4624,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "연평균 기온 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "unit": "주(Division) 값",
+    "rule": "연평균 기온 SSP2-4.5 시나리오의 8개 주(Division) 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "연평균_기온",
@@ -4653,7 +4653,7 @@
    "kind": "spatial-trend",
    "headline": {
     "value": "50.8 일",
-    "label": "연속 건조일수 CDD · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "label": "연속 건조일수 CDD · 8개 주(Division) 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -4835,7 +4835,7 @@
      }
     ],
     "unit": "일",
-    "seriesLabel": "SSP2-4.5 · Division 중앙값",
+    "seriesLabel": "SSP2-4.5 · 주(Division) 중앙값",
     "range": {
      "p10": 49.929,
      "p90": 54.12
@@ -4856,8 +4856,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "연속 건조일수 CDD SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "unit": "주(Division) 값",
+    "rule": "연속 건조일수 CDD SSP2-4.5 시나리오의 8개 주(Division) 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "연속_건조일수_CDD_일",
@@ -4886,7 +4886,7 @@
    "kind": "spatial-trend",
    "headline": {
     "value": "59 일",
-    "label": "폭염일수 TX≥35℃ · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "label": "폭염일수 TX≥35℃ · 8개 주(Division) 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -5068,7 +5068,7 @@
      }
     ],
     "unit": "일",
-    "seriesLabel": "SSP2-4.5 · Division 중앙값",
+    "seriesLabel": "SSP2-4.5 · 주(Division) 중앙값",
     "range": {
      "p10": 33.199,
      "p90": 76.34
@@ -5089,8 +5089,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "폭염일수 TX≥35℃ SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "unit": "주(Division) 값",
+    "rule": "폭염일수 TX≥35℃ SSP2-4.5 시나리오의 8개 주(Division) 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "폭염일수_TX_35_일",
@@ -5118,7 +5118,7 @@
    "kind": "spatial-trend",
    "headline": {
     "value": "69.6 mm",
-    "label": "최대 1일 강수 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "label": "최대 1일 강수 · 8개 주(Division) 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -5300,7 +5300,7 @@
      }
     ],
     "unit": "mm",
-    "seriesLabel": "SSP2-4.5 · Division 중앙값",
+    "seriesLabel": "SSP2-4.5 · 주(Division) 중앙값",
     "range": {
      "p10": 59.964999999999996,
      "p90": 82.482
@@ -5321,8 +5321,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "최대 1일 강수 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "unit": "주(Division) 값",
+    "rule": "최대 1일 강수 SSP2-4.5 시나리오의 8개 주(Division) 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "최대_1일_강수_mm",
@@ -10777,7 +10777,7 @@
    },
    "measure": null,
    "provider": "EM-DAT Archive v2026-04-30 (CRED/UCLouvain, Brussels) · 좌표보정 GADM 4.1",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
@@ -11156,7 +11156,7 @@
    },
    "basis": {
     "unit": "평가구역",
-    "rule": "평가구역 1행 = 1구역 · 등급별 구역 수 · Division 값으로 합치지 않음"
+    "rule": "평가구역 1행 = 1구역 · 등급별 구역 수 · 주(Division) 값으로 합치지 않음"
    },
    "measure": null,
    "provider": "WRI Aqueduct 4.0 (2023) · WRI Aqueduct 4.0 (Kuzma et al., 2023)",
@@ -11983,7 +11983,7 @@
    "kind": "spatial",
    "headline": {
     "value": "26 %",
-    "label": "우세 유향 비율 최대 · Hydro BASINS lvl6 4060025450 · 40개 Division 중 · 2022년 기준"
+    "label": "우세 유향 비율 최대 · Hydro BASINS lvl6 4060025450 · 40개 주(Division) 중 · 2022년 기준"
    },
    "preview": {
     "parts": [
@@ -12009,7 +12009,7 @@
      }
     ],
     "unit": "%",
-    "scope": "우세 유향 비율 상위 5개 Division",
+    "scope": "우세 유향 비율 상위 5개 주(Division)",
     "median": 18.77,
     "range": {
      "min": 15.67,
@@ -12030,8 +12030,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "우세 유향 비율(%) 40개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "우세 유향 비율(%) 40개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "우세_유향_비율",
@@ -12307,7 +12307,7 @@
    "kind": "spatial",
    "headline": {
     "value": "1,166 km²",
-    "label": "이탄지 면적 — 이탄 우세 최대 · Khulna · 8개 Division 중 · 2022년 기준"
+    "label": "이탄지 면적 — 이탄 우세 최대 · Khulna · 8개 주(Division) 중 · 2022년 기준"
    },
    "preview": {
     "parts": [
@@ -12333,7 +12333,7 @@
      }
     ],
     "unit": "km²",
-    "scope": "이탄지 면적 — 이탄 우세 상위 5개 Division",
+    "scope": "이탄지 면적 — 이탄 우세 상위 5개 주(Division)",
     "median": 155.12,
     "range": {
      "min": 1.11,
@@ -12354,8 +12354,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "이탄지 면적 — 이탄 우세(km²) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "이탄지 면적 — 이탄 우세(km²) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "이탄지_면적_이탄_우세_km",
@@ -12383,7 +12383,7 @@
    "kind": "spatial",
    "headline": {
     "value": "106,620 ha",
-    "label": "이득 최대 · Chittagong · 7개 Division 중 · 2000–2020"
+    "label": "이득 최대 · Chittagong · 7개 주(Division) 중 · 2000–2020"
    },
    "preview": {
     "parts": [
@@ -12409,7 +12409,7 @@
      }
     ],
     "unit": "ha",
-    "scope": "이득 상위 5개 Division",
+    "scope": "이득 상위 5개 주(Division)",
     "median": 30486.41,
     "range": {
      "min": 25050.91,
@@ -12430,8 +12430,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "이득(ha) 7개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "이득(ha) 7개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "이득_ha",
@@ -13092,7 +13092,7 @@
    "kind": "spatial",
    "headline": {
     "value": "20,507 km²",
-    "label": "수목 면적 최대 · Chittagong · 8개 Division 중 · 2021년 기준"
+    "label": "수목 면적 최대 · Chittagong · 8개 주(Division) 중 · 2021년 기준"
    },
    "preview": {
     "parts": [
@@ -13118,7 +13118,7 @@
      }
     ],
     "unit": "km²",
-    "scope": "수목 면적 상위 5개 Division",
+    "scope": "수목 면적 상위 5개 주(Division)",
     "median": 4638.5355,
     "range": {
      "min": 3065.229,
@@ -13139,8 +13139,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "수목 면적(km²) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "수목 면적(km²) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "수목_면적_km",
@@ -13212,7 +13212,7 @@
    "kind": "spatial",
    "headline": {
     "value": "21,226 GWh/yr",
-    "label": "이론 총잠재량 최대 · Rajshahi · 8개 Division 중 · 2017년 기준"
+    "label": "이론 총잠재량 최대 · Rajshahi · 8개 주(Division) 중 · 2017년 기준"
    },
    "preview": {
     "parts": [
@@ -13238,7 +13238,7 @@
      }
     ],
     "unit": "GWh/yr",
-    "scope": "이론 총잠재량 상위 5개 Division",
+    "scope": "이론 총잠재량 상위 5개 주(Division)",
     "median": 7541.41,
     "range": {
      "min": 67.38,
@@ -13259,8 +13259,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "이론 총잠재량(GWh/yr) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "이론 총잠재량(GWh/yr) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "이론_총잠재량_GWh_yr",
@@ -13287,7 +13287,7 @@
    "kind": "spatial",
    "headline": {
     "value": "53.6 ℃",
-    "label": "심도 1km 지온 — 평균 최대 · Dhaka · 8개 Division 중 · 2026년 기준"
+    "label": "심도 1km 지온 — 평균 최대 · Dhaka · 8개 주(Division) 중 · 2026년 기준"
    },
    "preview": {
     "parts": [
@@ -13313,7 +13313,7 @@
      }
     ],
     "unit": "℃",
-    "scope": "심도 1km 지온 — 평균 상위 5개 Division",
+    "scope": "심도 1km 지온 — 평균 상위 5개 주(Division)",
     "median": 51.78,
     "range": {
      "min": 47.79,
@@ -13334,8 +13334,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "심도 1km 지온 — 평균(℃) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "심도 1km 지온 — 평균(℃) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "심도_1km_지온_평균",
@@ -13361,7 +13361,7 @@
    "kind": "spatial",
    "headline": {
     "value": "4.74 kWh/m²/일",
-    "label": "수평면 전일사량 GHI 평균 최대 · Chittagong · 8개 Division 중 · 1999–2018 장기평균(LTA)"
+    "label": "수평면 전일사량 GHI 평균 최대 · Chittagong · 8개 주(Division) 중 · 1999–2018 장기평균(LTA)"
    },
    "preview": {
     "parts": [
@@ -13387,7 +13387,7 @@
      }
     ],
     "unit": "kWh/m²/일",
-    "scope": "수평면 전일사량 GHI 평균 상위 5개 Division",
+    "scope": "수평면 전일사량 GHI 평균 상위 5개 주(Division)",
     "median": 4.5675,
     "range": {
      "min": 4.43,
@@ -13408,8 +13408,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "수평면 전일사량 GHI 평균(kWh/m²/일) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "수평면 전일사량 GHI 평균(kWh/m²/일) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "수평면_전일사량_GHI_평균",
@@ -13435,7 +13435,7 @@
    "kind": "spatial",
    "headline": {
     "value": "4.59 m/s",
-    "label": "풍속 평균 최대 · Barisal · 8개 Division 중 · 2008–2017 장기평균(ERA5 기반)"
+    "label": "풍속 평균 최대 · Barisal · 8개 주(Division) 중 · 2008–2017 장기평균(ERA5 기반)"
    },
    "preview": {
     "parts": [
@@ -13461,7 +13461,7 @@
      }
     ],
     "unit": "m/s",
-    "scope": "풍속 평균 상위 5개 Division",
+    "scope": "풍속 평균 상위 5개 주(Division)",
     "median": 4.0485,
     "range": {
      "min": 2.972,
@@ -13482,8 +13482,8 @@
     }
    },
    "basis": {
-    "unit": "Division 값",
-    "rule": "풍속 평균(m/s) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "unit": "주(Division) 값",
+    "rule": "풍속 평균(m/s) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "풍속_평균_m_s",

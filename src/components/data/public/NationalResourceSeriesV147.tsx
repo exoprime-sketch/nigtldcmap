@@ -7,10 +7,12 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import "./detail-analysis-v146.css";
 import "./detail-analysis-v147.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
 
 export default function NationalResourceSeriesV147({ entities }: { entities: VietnamEntityV124[] }) {
   const series = useMemo(() => nationalSeriesV147(entities), [entities]);
   const [selected, setSelected] = useState("");
+  const regionWordV162 = useRegionWordV158().word;
   const own = series.find((s) => s.key === selected) || series.find((s) => s.points.filter((p) => p.value !== null).length > 2) || series[0];
   if (!own) return null;
   const numeric = own.points.filter((p) => p.value !== null);
@@ -21,7 +23,7 @@ export default function NationalResourceSeriesV147({ entities }: { entities: Vie
   </section>;
   return <section className="detail146 analysis147-block" data-testid="national-resource-series-v147">
     <h3>전국 자료 · 항목별 연도 변화</h3>
-    <p className="detail146-note">위의 성·시 자료와 별도로 제공되는 전국 값입니다. 조사·위성 자료가 다른 계열은 합치지 않습니다.</p>
+    <p className="detail146-note">위의 {regionWordV162} 자료와 별도로 제공되는 전국 값입니다. 조사·위성 자료가 다른 계열은 합치지 않습니다.</p>
     <label className="detail146-select">전국 자료 항목<select aria-label="전국 자료 항목" value={own.key} onChange={(e) => setSelected(e.target.value)}>{series.map((s) => <option key={s.key} value={s.key}>{s.label} · {s.unit}</option>)}</select></label>
     <p className="detail146-note"><PublicTermTextV134 text={`선택: ${own.label} · 단위 ${own.unit}`} /></p>
     {numeric.length > 1 && numeric.length === own.points.length ? <section className="d153-block" data-analysis-block="line"><InteractiveTimeSeriesChartV127 key={own.key} title={own.label} ariaLabel={`${own.label} 전국 연도별 값`} unit={own.unit} xAxisTitle="연도" yAxisTitle={own.label} formatValue={formatValueV121} minimumVisibleSeries={1} series={[{ id: own.key, label: own.label, unit: own.unit, points: numeric.map((p) => ({ id: p.id, x: p.year, xLabel: `${p.year}년`, value: p.value as number })) }]} /></section> : <p className="detail146-note">{numeric.length ? "한 시점만 있거나 일부 값이 누락되어 연도 추이 대신 표로 제공합니다." : "선택 항목의 수치가 원자료에 없습니다. 0으로 표시하지 않습니다."}</p>}

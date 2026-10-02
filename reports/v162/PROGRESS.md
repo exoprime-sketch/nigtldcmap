@@ -133,3 +133,8 @@
   - 지도 경계 문구 국가별(34/63 선택은 베트남만)
   - BGD 지도 빌더는 서브에이전트가 feat/v162-prd-bgd-map에서 작성 중 → 검수 후 merge
   - 남은 일: 빌더 산출 merge → BGD 인수(필터) → 6폭·출처 메모 → PR 본문·push·CI
+- **2026-10-03 오후**
+  - PR #57: CI 2회차 원인(VNM core-word '핵심 광물' = B-044 데이터명 띄어쓰기) → 2d20149 push(재실행 2회차), Playwright 실패는 시각 기준선 4건(main 동일, P5)
+  - PR #58(feat/v162-prd) 생성: BGD live · 지도 37(판정 72) · 비교 55 · 나라별 문구. 로컬 BGD 인수 18/18, VNM 지도 60/60, 단위 790/790
+  - #57·#58 겹침: RealMapExplorerPage 1곳 충돌(선택 패널 순위 비교) — 해결: map12의 group-constant 조건 유지 + peerLabel은 `regionWordV158(countryIso3).word`
+  - 판단 필요: B-012 decisionConflicts 14행

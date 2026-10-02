@@ -111,6 +111,17 @@ function countryData(iso3) {
 const otherCountryTerms = (iso3) =>
   registryCountries.filter((row) => row.iso3 !== iso3).flatMap((row) => [row.nameKo, row.nameEn]).filter(Boolean);
 
+/**
+ * V162 PR-D (user decision 2026-10-03): every other registry country's own
+ * administrative expressions (`adm.publicTerms` - Viet Nam's "성·시", "개편 전",
+ * Bangladesh's "주(Division)"). Read from the registry, never written here; a
+ * word the country itself also uses is not another country's.
+ */
+const otherAdminTerms = (iso3) => {
+  const own = new Set(registryCountries.find((row) => row.iso3 === iso3)?.adm?.publicTerms || []);
+  return [...new Set(registryCountries.filter((row) => row.iso3 !== iso3).flatMap((row) => row.adm?.publicTerms || []))].filter((term) => term && !own.has(term));
+};
+
 async function runReused(name, command, reportPath, timeoutMs = 1_800_000) {
   const started = Date.now();
   const result = await runAuditCommand(command, { cwd: ROOT, timeoutMs, onProgress: () => undefined });
@@ -252,9 +263,9 @@ async function finderSortCheck(page, iso3) {
  * countries on purpose; both are left out. Detail pages go 20 to a browser
  * context, the context closed after each batch (memory).
  */
-async function otherCountryWalk(iso3, publicIds, words) {
+async function otherCountryWalk(iso3, publicIds, words, properNameWords = []) {
   const read = (page, words) =>
-    page.evaluate(async (terms) => {
+    page.evaluate(async ({ terms, properNameAware }) => {
       document.querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
       await new Promise((done) => setTimeout(done, 300));
       const body = document.body.cloneNode(true);
@@ -265,11 +276,20 @@ async function otherCountryWalk(iso3, publicIds, words) {
       // the raw-data tables are left out; every platform sentence is still read.
       body.querySelectorAll("[data-testid='wide-record-card-v162'], [data-testid='public-entity-card-v131'], details[data-testid='public-raw-data'], details[data-testid='public-raw-table'], details[data-testid='public-entity-table'], details[data-testid='public-observation-table']").forEach((node) => node.remove());
       const text = (body.textContent || "").replace(/\s+/gu, " ");
-      return terms.filter((term) => text.includes(term)).map((term) => {
-        const at = text.indexOf(term);
+      // V162 PR-D: a single Latin administrative word ("Division") inside a
+      // proper name ("United Nations Statistics Division") is that name, not
+      // the country's administrative wording - a capitalised word right before
+      // it marks the name. Every other term is a plain substring.
+      const indexOfTerm = (term) => {
+        if (!properNameAware.includes(term)) return text.indexOf(term);
+        const match = new RegExp(`(?<![A-Z][A-Za-z]* )\\b${term}\\b`, "u").exec(text);
+        return match ? match.index : -1;
+      };
+      return terms.filter((term) => indexOfTerm(term) >= 0).map((term) => {
+        const at = indexOfTerm(term);
         return { term, context: text.slice(Math.max(0, at - 40), at + term.length + 40).trim() };
       });
-    }, words);
+    }, { terms: words, properNameAware: properNameWords });
   const hits = [];
   const query = countryQuery(iso3);
   await withPage(async (page) => {
@@ -402,11 +422,19 @@ for (const iso3 of COUNTRIES) {
       check(iso3, "wording", "c003-filename", "C-003 상세의 파일명 0(V162에서 수정)", orExpected("c003-filename", c003.length === 0), c003.flatMap((finding) => finding.tokens), [], "public-wording-scan-v157");
     }
     const words = otherCountryTerms(iso3);
-    if (words.length && !SKIP.has("other-country")) {
-      const walk = await otherCountryWalk(iso3, data.publicIds, words);
-      const namesOut = `reports/v162/other-country-names-v162${iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`}.json`;
-      writeFileSync(resolve(ROOT, namesOut), `${JSON.stringify({ generatedAt: new Date().toISOString(), country: iso3, terms: words, detailPages: walk.detailPages, hitCount: walk.hits.length, hits: walk.hits }, null, 2)}\n`);
-      check(iso3, "wording", "other-country-names", "다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외)", orExpected("other-country-names", walk.hits.length === 0), { hits: walk.hits.length, detailPages: walk.detailPages, first: walk.hits.slice(0, 5).map((hit) => `${hit.screen}:${hit.term} «${hit.context}»`) }, { hits: 0, terms: words }, namesOut);
+    const adminWords = otherAdminTerms(iso3);
+    if ((words.length || adminWords.length) && !SKIP.has("other-country")) {
+      // One walk reads both word lists (the same screens, the same exclusions).
+      const walk = await otherCountryWalk(iso3, data.publicIds, [...words, ...adminWords], adminWords.filter((term) => /^[A-Za-z]+$/u.test(term)));
+      const nameHits = walk.hits.filter((hit) => words.includes(hit.term));
+      const adminHits = walk.hits.filter((hit) => adminWords.includes(hit.term));
+      const suffix = iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`;
+      const namesOut = `reports/v162/other-country-names-v162${suffix}.json`;
+      writeFileSync(resolve(ROOT, namesOut), `${JSON.stringify({ generatedAt: new Date().toISOString(), country: iso3, terms: words, detailPages: walk.detailPages, hitCount: nameHits.length, hits: nameHits }, null, 2)}\n`);
+      check(iso3, "wording", "other-country-names", "다른 나라 국명 0(홈·찾기·지도·다운로드·이용안내·상세 전체, 국가 비교 절 제외)", orExpected("other-country-names", nameHits.length === 0), { hits: nameHits.length, detailPages: walk.detailPages, first: nameHits.slice(0, 5).map((hit) => `${hit.screen}:${hit.term} «${hit.context}»`) }, { hits: 0, terms: words }, namesOut);
+      const adminOut = `reports/v162/other-country-admin-terms-v162${suffix}.json`;
+      writeFileSync(resolve(ROOT, adminOut), `${JSON.stringify({ generatedAt: new Date().toISOString(), country: iso3, terms: adminWords, source: "public/data/countries.json adm.publicTerms", detailPages: walk.detailPages, hitCount: adminHits.length, hits: adminHits }, null, 2)}\n`);
+      check(iso3, "wording", "other-country-admin-terms", "다른 나라 고유 행정 표현 0(레지스트리 adm.publicTerms, 국명 검사와 같은 화면·예외)", orExpected("other-country-admin-terms", adminHits.length === 0), { hits: adminHits.length, detailPages: walk.detailPages, first: adminHits.slice(0, 5).map((hit) => `${hit.screen}:${hit.term} «${hit.context}»`) }, { hits: 0, terms: adminWords }, adminOut);
     }
     if (data.mapIndex && !SKIP.has("core-word")) {
       const suffix = iso3 === DEFAULT_COUNTRY ? "" : `-${iso3.toLowerCase()}`;

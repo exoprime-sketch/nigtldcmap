@@ -5,6 +5,8 @@ import {
   publicMapLayerTitleV126,
 } from "../../data/visualization/publicMapWorkspaceV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../../data/countryContext";
+import { regionWordV158 } from "../../data/countries/countryLevel1V158";
 import {
   BOUNDARY_ATTRIBUTION_V151,
   boundaryValueNoticeV151,
@@ -17,7 +19,7 @@ import {
 // V138: the seven categories the catalogue uses, in the same order.
 const GROUP_ORDER = PUBLIC_MAP_TARGET_CATEGORIES_V138;
 
-function representation(layer: CountryMapLayerV122): string {
+function representation(layer: CountryMapLayerV122, regionWord = "성·시"): string {
   if (layer.renderer === "regional-scope") return "참여국 범위·검증 활동지점";
   if (layer.renderer === "line") return "선형 네트워크";
   if (layer.renderer === "admin1-choropleth") {
@@ -25,9 +27,9 @@ function representation(layer: CountryMapLayerV122): string {
       ? layer.aggregationLevel === "post-2025-34-unit"
         ? "개편 후 34개 성·시 값을 소속 63개 경계에 표시"
         : "권역값을 연결한 성·시 경계"
-      : "성·시 색상지도";
+      : `${regionWord} 색상지도`;
   }
-  if (layer.renderer === "partial-choropleth") return "일부 성·시 색상지도";
+  if (layer.renderer === "partial-choropleth") return `일부 ${regionWord} 색상지도`;
   if (layer.spatialScopeType === "facility-site") return "검증된 시설 지점";
   return "검증된 사업 지점";
 }
@@ -72,11 +74,14 @@ export default function MapDataGuideV130({
             </span>
           </div>
         </div>
-        <p className="cdp-muted" data-testid="map-data-guide-boundary-v151">
-          {BOUNDARY_ATTRIBUTION_V151}. 경계선 기준은 지도 위 '행정경계 기준'에서
-          바꿀 수 있으며, 바꿔도 값은 달라지지 않습니다.{" "}
-          {boundaryValueNoticeV151("post-2025-34")}
-        </p>
+        {/* V162 PR-D: the 34/63 boundary system is the default country's. */}
+        {!countryIso3 || countryIso3 === DEFAULT_COUNTRY_ISO3_V158 ? (
+          <p className="cdp-muted" data-testid="map-data-guide-boundary-v151">
+            {BOUNDARY_ATTRIBUTION_V151}. 경계선 기준은 지도 위 '행정경계 기준'에서
+            바꿀 수 있으며, 바꿔도 값은 달라지지 않습니다.{" "}
+            {boundaryValueNoticeV151("post-2025-34")}
+          </p>
+        ) : null}
         <div className="cdp-map-data-guide-v130__tables">
           {groups.map(({ group, layers: groupLayers, missing }) => (
             <section key={group} data-map-guide-group={group}>
@@ -110,7 +115,7 @@ export default function MapDataGuideV130({
                           <th scope="row">
                             <PublicTermTextV134 text={layer.publicShortTitle} />
                           </th>
-                          <td data-label="지도 표시">{representation(layer)}</td>
+                          <td data-label="지도 표시">{representation(layer, regionWordV158(countryIso3).word)}</td>
                           <td data-label="기준기간">
                             {layer.latestYear || layer.sourceYear || "미표기"}
                           </td>

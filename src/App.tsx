@@ -26,6 +26,7 @@ import {
 } from "./data/countries/countryDataFacadeV122";
 import { ensureCountryRegistryLoadedV158 } from "./data/countries/countryDataProviderRegistryV122";
 import { DEFAULT_COUNTRY_ISO3_V158 } from "./data/countryContext";
+import { resolveHomeCountryV161 } from "./data/homeCountryV161";
 import type { CategoryCode } from "./data/publicTaxonomy";
 import CountryDataElementPage from "./pages/CountryDataElementPage";
 import DataGuidePage from "./pages/DataGuidePage";
@@ -56,6 +57,19 @@ import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
 import type { MiniMapHandoffV152 } from "./components/map/miniMapStateV152";
 
 const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
+
+/**
+ * V162 PR-D: the finder opens on the reader's current country (the V158-B2
+ * decision - one cooperation country at a time; countries are compared in the
+ * detail's compare block). "전체" stays a choice: the URL keeps it as
+ * `?country=all`. With no country named, the current country is the one the
+ * home resolves (the default country unless the URL names a live one).
+ */
+function finderCountryV162(param: string | null | undefined): string {
+  if (String(param || "").toLowerCase() === "all") return "all";
+  if (hasCountryDataProviderV122(param)) return param as string;
+  return resolveHomeCountryV161(window.location.search)?.iso3 || "all";
+}
 
 function DeferredPageFallback({ label }: { label: string }) {
   return (
@@ -421,10 +435,7 @@ export default function App() {
     initialParams.get("source") ?? "all"
   );
   const [explorerCountryIso3, setExplorerCountryIso3] = useState(
-    initialView === "explorer" &&
-      hasCountryDataProviderV122(initialCountryParam)
-      ? (initialCountryParam as string)
-      : "all"
+    initialView === "explorer" ? finderCountryV162(initialCountryParam) : "all"
   );
   const [category, setCategory] = useState<CategoryCode | "all">(
     (initialParams.get("category") as CategoryCode | null) ?? "all"
@@ -539,9 +550,7 @@ export default function App() {
       setQuery(params.get("q") ?? "");
       setSourceOrganization(params.get("source") ?? "all");
       setExplorerCountryIso3(
-        nextView === "explorer" && hasCountryDataProviderV122(countryParam)
-          ? (countryParam as string)
-          : "all"
+        nextView === "explorer" ? finderCountryV162(countryParam) : "all"
       );
       setCategory((params.get("category") as CategoryCode | null) ?? "all");
 
@@ -632,9 +641,8 @@ export default function App() {
       if (sourceOrganization !== "all") {
         params.set("source", sourceOrganization);
       }
-      if (explorerCountryIso3 !== "all") {
-        params.set("country", explorerCountryIso3);
-      }
+      // V162 PR-D: "전체" is kept in the URL; no country means the current one.
+      params.set("country", explorerCountryIso3);
       if (category !== "all") params.set("category", category);
       if (technologyId !== "all") params.set("technology", technologyId);
       if (explorerGroup) params.set("group", explorerGroup);
@@ -822,10 +830,9 @@ export default function App() {
 
     if (nextView === "explorer") {
       setExplorerCountryIso3(
-        currentContextCountry &&
-          hasCountryDataProviderV122(currentContextCountry)
-          ? currentContextCountry
-          : "all"
+        view === "explorer" && explorerCountryIso3 === "all"
+          ? "all"
+          : finderCountryV162(currentContextCountry)
       );
       if (view !== "explorer" && view !== "element-detail") {
         setExplorerGroup(null);
@@ -994,7 +1001,7 @@ export default function App() {
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSourceOrganization("all");
-    setExplorerCountryIso3("all");
+    setExplorerCountryIso3(finderCountryV162(null));
     setCategory("all");
     setTechnologyId("all");
     setExplorerGroup(null);
@@ -1009,11 +1016,7 @@ export default function App() {
     markNextNavigationAsPush();
     setQuery(nextQuery);
     setSourceOrganization("all");
-    setExplorerCountryIso3(
-      countryIso3 && hasCountryDataProviderV122(countryIso3)
-        ? countryIso3
-        : "all"
-    );
+    setExplorerCountryIso3(finderCountryV162(countryIso3));
     setCategory("all");
     setTechnologyId(technologyParamV153(nextTechnologyId));
     setExplorerGroup(null);
@@ -1079,12 +1082,7 @@ export default function App() {
     markNextNavigationAsPush();
     setQuery("");
     setSourceOrganization("all");
-    setExplorerCountryIso3(
-      planningContextCountryIso3 &&
-        hasCountryDataProviderV122(planningContextCountryIso3)
-        ? planningContextCountryIso3
-        : "all"
-    );
+    setExplorerCountryIso3(finderCountryV162(planningContextCountryIso3));
     setCategory("all");
     setTechnologyId(planningContextTechnologyId ?? "all");
     setExplorerGroup(null);

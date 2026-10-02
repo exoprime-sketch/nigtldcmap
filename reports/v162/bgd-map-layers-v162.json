@@ -13,11 +13,11 @@
   "counts": {
     "targets": 72,
     "choropleth": 22,
-    "point": 12,
+    "point": 13,
     "reference": 3,
-    "hold": 35,
-    "registeredLayers": 37,
-    "mapFeatureCount": 3518
+    "hold": 34,
+    "registeredLayers": 38,
+    "mapFeatureCount": 3532
   },
   "evidenceCheck": {
     "comparedElements": 72,
@@ -43,14 +43,7 @@
       "E-006": 7
     }
   },
-  "decisionConflicts": [
-    {
-      "elementId": "B-012",
-      "decision": "hold:admin-centroid",
-      "finding": "14 coordinate rows inside the outline are not marked as administrative representative points (e.g. 실제 위치(원자료 좌표, EM-DAT))",
-      "resolution": "decision kept"
-    }
-  ],
+  "decisionConflicts": [],
   "catalogChanges": [],
   "expectationChanges": [],
   "layers": [
@@ -833,6 +826,83 @@
       "divisionNamesCrossChecked": 0,
       "publishedValueCount": 32,
       "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "B-012",
+      "publicName": "재해 이력",
+      "decision": "point",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 282,
+      "outsideOutline": 5,
+      "layerId": "bgd-v162-b-012",
+      "kind": "point",
+      "locationNote": "EM-DAT 원본 좌표가 있는 사건만 점으로 표시합니다. 행정구역 대표점만 있는 사건은 점으로 그리지 않고 주(Division)별 건수로 표시합니다.",
+      "keptRows": 14,
+      "featureCount": 14,
+      "featureCountByKind": {
+        "홍수": 9,
+        "지진": 4,
+        "폭풍·태풍": 1
+      },
+      "droppedRowsByReason": {
+        "no-coordinate": 85,
+        "admin-representative-point": 263,
+        "outside-country-outline": 5
+      },
+      "regionCounts": {
+        "label": "행정구역 대표점만 있는 사건",
+        "unit": "건",
+        "candidates": 268,
+        "counted": 247,
+        "notCounted": 21,
+        "rows": [
+          {
+            "key": "BGD.1_1",
+            "name": "바리살",
+            "count": 63
+          },
+          {
+            "key": "BGD.2_1",
+            "name": "치타공",
+            "count": 123
+          },
+          {
+            "key": "BGD.3_1",
+            "name": "다카",
+            "count": 68
+          },
+          {
+            "key": "BGD.4_1",
+            "name": "쿨나",
+            "count": 53
+          },
+          {
+            "key": "BGD.5_1",
+            "name": "라지샤히",
+            "count": 72
+          },
+          {
+            "key": "BGD.6_1",
+            "name": "랑푸르",
+            "count": 65
+          },
+          {
+            "key": "BGD.7_1",
+            "name": "실렛",
+            "count": 47
+          },
+          {
+            "key": "BGD.8_1",
+            "name": "마이멘싱",
+            "count": 50
+          }
+        ],
+        "unmatchedNames": {
+          "Habiga": 1,
+          "Lalmoni": 1,
+          "Thakurg": 1
+        }
+      }
     },
     {
       "elementId": "B-017",
@@ -2437,25 +2507,6 @@
         ]
       },
       "conflict": null
-    },
-    {
-      "elementId": "B-012",
-      "publicName": "재해 이력",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 282,
-        "outsideOutline": 5,
-        "divisionKeys": 8,
-        "districtKeys": 26,
-        "spatialUnits": [
-          "point"
-        ],
-        "coordinateRowsNotAdminRepresentative": 14,
-        "coordinateRowsNotAdminRepresentativeInside": 14
-      },
-      "conflict": "14 coordinate rows inside the outline are not marked as administrative representative points (e.g. 실제 위치(원자료 좌표, EM-DAT))"
     },
     {
       "elementId": "B-021",

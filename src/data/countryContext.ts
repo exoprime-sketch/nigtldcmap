@@ -31,7 +31,12 @@ export interface CountryRegistryEntryV158 {
   nameKo: string;
   nameEn: string;
   dataRoot: string;
-  adm: { level1: CountryAdminLevelV158 };
+  /**
+   * `publicTerms` (V162 PR-D): the country's own administrative expressions
+   * (Viet Nam "성·시", "개편 전"; Bangladesh "주(Division)"). Another country's
+   * screens must not show them; qa:acceptance:v162 reads them from here.
+   */
+  adm: { level1: CountryAdminLevelV158; publicTerms?: string[] };
   bbox: [number, number, number, number];
   defaultZoom: number;
   boundaryEpoch: string;

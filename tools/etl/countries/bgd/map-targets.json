@@ -64,6 +64,27 @@
     "B-042": {}
   },
   "points": {
+    "B-012": {
+      "kind": { "field": "재해유형", "label": "재해유형" },
+      "facts": [
+        { "key": "startDate", "field": "시작일", "label": "시작일" },
+        { "key": "disasterSubtype", "field": "재해세부유형", "label": "세부유형" },
+        { "key": "deaths", "field": "사망자_명", "label": "사망자", "unit": "명" },
+        { "key": "affectedPeople", "field": "총피해인구_명", "label": "총피해인구", "unit": "명" },
+        { "key": "damageUsd2024", "field": "총피해액_천USD_2024실질", "label": "총피해액(2024년 실질)", "unit": "천 USD" },
+        { "key": "endDate", "field": "종료일", "label": "종료일" },
+        { "key": "affectedRegions", "field": "발생지역_원문", "label": "발생지역(원문)" },
+        { "key": "coordinateBasis", "field": "좌표_산출근거", "label": "좌표 산출근거" }
+      ],
+      "locationNote": "EM-DAT 원본 좌표가 있는 사건만 점으로 표시합니다. 행정구역 대표점만 있는 사건은 점으로 그리지 않고 주(Division)별 건수로 표시합니다.",
+      "regionCountsFrom": {
+        "nature": "행정구역 대표점",
+        "field": "행정구역_GADM_매칭",
+        "split": " · ",
+        "label": "행정구역 대표점만 있는 사건"
+      },
+      "why": "user decision 2026-10-03: the 14 EM-DAT source coordinates are drawn as event points (the same display as Viet Nam's B-012: event id name, disaster-type filter, the same facts); rows with only an administrative representative point are not drawn as precise points and are counted per division from their GADM-matched names"
+    },
     "A-023": {
       "nameFromNote": "발전소명",
       "kind": { "field": "속성2_A_013_정보유형_A_023_주연료_A_024_구간연장_km_A_025_추진상태_A_029_발효일", "lowercase": true, "label": "발전원", "values": { "gas": "가스", "oil": "석유", "coal": "석탄", "hydro": "수력", "solar": "태양광", "wind": "풍력", "biomass": "바이오매스", "nuclear": "원자력", "geothermal": "지열", "waste": "폐기물" } },
@@ -216,7 +237,7 @@
     "C-024": "nationwide", "D-026": "nationwide", "E-001": "nationwide", "E-020": "nationwide",
     "A-025": "no-region", "A-027": "no-region", "C-008": "no-region", "C-017": "no-region", "D-008": "no-region",
     "D-018": "no-region", "D-020": "no-region", "D-025": "no-region",
-    "B-012": "admin-centroid", "D-014": "admin-centroid", "D-015": "admin-centroid", "D-016": "admin-centroid",
+    "D-014": "admin-centroid", "D-015": "admin-centroid", "D-016": "admin-centroid",
     "D-017": "admin-centroid", "D-019": "admin-centroid", "D-021": "admin-centroid", "D-022": "admin-centroid",
     "D-023": "admin-centroid",
     "C-016": "district-only",

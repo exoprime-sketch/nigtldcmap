@@ -56,6 +56,7 @@ import DecisionPointsV159 from "../components/data/templates/DecisionPointsV159"
 import DetailLayerV160 from "../components/data/layers/DetailLayerV160";
 import "../styles/country-data-platform-v122.css";
 import "../styles/detail-layout-v153.css";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 
 /**
  * V151-2: detail preparation time = the bundle request to the parsed payload.
@@ -1009,8 +1010,10 @@ function CountryDataElementPageV122({
   // (build.kind "none") states that here, with the contract's own reason. Without it
   // the slot was simply empty and the reader could not tell the two cases apart.
   const notMappedTargetV157 = publicMapTargetV138(elementId);
+  // V162 PR-D: the contract's reasons describe the default country's data; another
+  // country's held elements are recorded in its own judgement table, not here.
   const notMappedReasonV157 =
-    !hasMap && notMappedTargetV157?.build?.kind === "none"
+    !hasMap && provider.countryIso3 === DEFAULT_COUNTRY_ISO3_V158 && notMappedTargetV157?.build?.kind === "none"
       ? notMappedTargetV157.build.reason || ""
       : "";
   const mapSlot = meta && hasMap ? (
