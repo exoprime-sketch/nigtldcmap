@@ -1,0 +1,791 @@
+{
+ "schema": "evn-jurisdiction-v157-2",
+ "retrievedAt": "2026-09-30",
+ "note": "Corporation assigned per province is the CURRENT (post-2025-07-01) jurisdiction. Three provinces changed corporation as part of the 2025-07-01 province merger (Resolution 202/2025/QH15): Binh Duong and Ba Ria-Vung Tau moved from EVNSPC to EVNHCMC; Ninh Thuan moved from EVNSPC to EVNCPC; Dak Nong moved from EVNCPC to EVNSPC. cpc.vn and evnhcmc.vn were unreachable (connection refused) from this research environment on every attempt; where their content was needed, an equivalent evn.com.vn or evnspc.vn official page that WAS fetched successfully is cited instead, and is noted per-entry.",
+ "corporations": [
+  {
+   "id": "evnnpc",
+   "nameEn": "Northern Power Corporation",
+   "nameVi": "Tổng công ty Điện lực miền Bắc",
+   "sourceUrls": [
+    "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+    "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002"
+   ]
+  },
+  {
+   "id": "evncpc",
+   "nameEn": "Central Power Corporation",
+   "nameVi": "Tổng công ty Điện lực miền Trung",
+   "sourceUrls": [
+    "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+    "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002"
+   ]
+  },
+  {
+   "id": "evnspc",
+   "nameEn": "Southern Power Corporation",
+   "nameVi": "Tổng công ty Điện lực miền Nam",
+   "sourceUrls": [
+    "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+    "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien",
+    "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi"
+   ]
+  },
+  {
+   "id": "evnhanoi",
+   "nameEn": "Hanoi Power Corporation",
+   "nameVi": "Tổng công ty Điện lực TP Hà Nội",
+   "sourceUrls": [
+    "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002"
+   ]
+  },
+  {
+   "id": "evnhcmc",
+   "nameEn": "Ho Chi Minh City Power Corporation",
+   "nameVi": "Tổng công ty Điện lực TP Hồ Chí Minh",
+   "sourceUrls": [
+    "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002",
+    "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi"
+   ]
+  }
+ ],
+ "provinces63": [
+  {
+   "adm1Code": "VN-01",
+   "name": "Lai Châu",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Lai Châu — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-02",
+   "name": "Lào Cai",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Lào Cai — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-03",
+   "name": "Hà Giang",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Hà Giang — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-04",
+   "name": "Cao Bằng",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Cao Bằng — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-05",
+   "name": "Sơn La",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Sơn La — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-06",
+   "name": "Yên Bái",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Yên Bái — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-07",
+   "name": "Tuyên Quang",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Tuyên Quang — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-09",
+   "name": "Lạng Sơn",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Lạng Sơn — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-13",
+   "name": "Quảng Ninh",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Quảng Ninh — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-14",
+   "name": "Hòa Bình",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Hòa Bình — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-18",
+   "name": "Ninh Bình",
+   "corporation": "evnnpc",
+   "evidence": "Công ty TNHH MTV Điện lực Ninh Bình — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-20",
+   "name": "Thái Bình",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Thái Bình — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-21",
+   "name": "Thanh Hóa",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Thanh Hóa — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-22",
+   "name": "Nghệ An",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Nghệ An — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-23",
+   "name": "Hà Tĩnh",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Hà Tĩnh — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-24",
+   "name": "Quảng Bình",
+   "corporation": "evncpc",
+   "evidence": "'Các Công ty Điện lực: Quảng Bình, Quảng Trị, Thừa Thiên Huế, Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Gia Lai, Kon Tum, Đăk Lắk, Đắk Nông' — EVNCPC 45th-anniversary article",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-25",
+   "name": "Quảng Trị",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-26",
+   "name": "Thừa Thiên Huế",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-27",
+   "name": "Quảng Nam",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-28",
+   "name": "Kon Tum",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-29",
+   "name": "Quảng Ngãi",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-30",
+   "name": "Gia Lai",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-31",
+   "name": "Bình Định",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-32",
+   "name": "Phú Yên",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-33",
+   "name": "Đắk Lắk",
+   "corporation": "evncpc",
+   "evidence": "Same EVNCPC member-company list quote as Quảng Bình ('Đăk Lắk')",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-34",
+   "name": "Khánh Hòa",
+   "corporation": "evncpc",
+   "evidence": "Article separately names 'Công ty cổ phần Điện lực Khánh Hoà' as one of EVNCPC's 13 jurisdictions",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-35",
+   "name": "Lâm Đồng",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Bình Thuận, Công ty Điện lực Đắk Nông và Công ty Điện lực Lâm Đồng' — new Lâm Đồng PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-36",
+   "name": "Ninh Thuận",
+   "corporation": "evncpc",
+   "formerCorporation": "evnspc",
+   "transferEffectiveDate": "2025-07-01",
+   "evidence": "EVNSPC official notice lists 'Ninh Thuận Power Company' among units handed over to EVNCPC; Ninh Thuận PC renamed Khánh Hòa Power Company, operating alongside the existing Khánh Hòa Power JSC",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi"
+  },
+  {
+   "adm1Code": "VN-37",
+   "name": "Tây Ninh",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Long An và Công ty Điện lực Tây Ninh' — new Tây Ninh PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-39",
+   "name": "Đồng Nai",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Bình Phước và Công ty Điện lực Đồng Nai' — new Đồng Nai PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-40",
+   "name": "Bình Thuận",
+   "corporation": "evnspc",
+   "evidence": "Same Lâm Đồng-merger quote as VN-35",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-41",
+   "name": "Long An",
+   "corporation": "evnspc",
+   "evidence": "Same Tây Ninh-merger quote as VN-37",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-43",
+   "name": "Bà Rịa–Vũng Tàu",
+   "corporation": "evnhcmc",
+   "formerCorporation": "evnspc",
+   "transferEffectiveDate": "2025-07-01",
+   "evidence": "EVNSPC official notice: 'Bà Rịa - Vũng Tàu Power Company' handed over to EVNHCMC; reorganized into regional units (Vũng Tàu, Đất Đỏ) under EVNHCMC",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi"
+  },
+  {
+   "adm1Code": "VN-44",
+   "name": "An Giang",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Kiên Giang và Công ty Điện lực An Giang' — new An Giang PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-45",
+   "name": "Đồng Tháp",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Tiền Giang và Công ty Điện lực Đồng Tháp' — new Đồng Tháp PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-46",
+   "name": "Tiền Giang",
+   "corporation": "evnspc",
+   "evidence": "Same Đồng Tháp-merger quote as VN-45",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-47",
+   "name": "Kiên Giang",
+   "corporation": "evnspc",
+   "evidence": "Same An Giang-merger quote as VN-44",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-49",
+   "name": "Vĩnh Long",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Bến Tre, Công ty Điện lực Trà Vinh và Công ty Điện lực Vĩnh Long' — new Vĩnh Long PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-50",
+   "name": "Bến Tre",
+   "corporation": "evnspc",
+   "evidence": "Same Vĩnh Long-merger quote as VN-49",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-51",
+   "name": "Trà Vinh",
+   "corporation": "evnspc",
+   "evidence": "Same Vĩnh Long-merger quote as VN-49",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-52",
+   "name": "Sóc Trăng",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Sóc Trăng, Công ty Điện lực Hậu Giang và Công ty Điện lực thành phố Cần Thơ' — new Cần Thơ PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-53",
+   "name": "Bắc Kạn",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Bắc Cạn — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-54",
+   "name": "Bắc Giang",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Bắc Giang — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-55",
+   "name": "Bạc Liêu",
+   "corporation": "evnspc",
+   "evidence": "'Sáp nhập Công ty Điện lực Bạc Liêu và Công ty Điện lực Cà Mau' — new Cà Mau PC formed 2025-07-01",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-56",
+   "name": "Bắc Ninh",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Bắc Ninh — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-57",
+   "name": "Bình Dương",
+   "corporation": "evnhcmc",
+   "formerCorporation": "evnspc",
+   "transferEffectiveDate": "2025-07-01",
+   "evidence": "EVNSPC official notice: 'Bình Dương Power Company' handed over to EVNHCMC; reorganized into regional units (Thuận An, Bến Cát, Bình Dương) under EVNHCMC",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi"
+  },
+  {
+   "adm1Code": "VN-58",
+   "name": "Bình Phước",
+   "corporation": "evnspc",
+   "evidence": "Same Đồng Nai-merger quote as VN-39",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-59",
+   "name": "Cà Mau",
+   "corporation": "evnspc",
+   "evidence": "Same Cà Mau-merger quote as VN-55",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-61",
+   "name": "Hải Dương",
+   "corporation": "evnnpc",
+   "evidence": "Công ty TNHH MTV Điện lực Hải Dương — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-63",
+   "name": "Hà Nam",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Hà Nam — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-66",
+   "name": "Hưng Yên",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Hưng Yên — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-67",
+   "name": "Nam Định",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Nam Định — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-68",
+   "name": "Phú Thọ",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Phú Thọ — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-69",
+   "name": "Thái Nguyên",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Thái Nguyên — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-70",
+   "name": "Vĩnh Phúc",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Vĩnh Phúc — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-71",
+   "name": "Điện Biên",
+   "corporation": "evnnpc",
+   "evidence": "Công ty Điện lực Điện Biên — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-72",
+   "name": "Đắk Nông",
+   "corporation": "evnspc",
+   "formerCorporation": "evncpc",
+   "transferEffectiveDate": "2025-07-01",
+   "evidence": "EVNCPC-to-EVNSPC handover meeting (6 Jun 2025) for PC Đắk Nông ('tinh gọn bộ máy tổ chức theo chỉ đạo của EVN'); merged into new Lâm Đồng PC alongside former Lâm Đồng and Bình Thuận companies",
+   "sourceUrl": "https://congthuong.vn/evncpc-va-evnspc-hop-ban-giao-cong-ty-dien-luc-dak-nong-391288.html"
+  },
+  {
+   "adm1Code": "VN-73",
+   "name": "Hậu Giang",
+   "corporation": "evnspc",
+   "evidence": "Same Cần Thơ-merger quote as VN-52",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-CT",
+   "name": "Cần Thơ",
+   "corporation": "evnspc",
+   "evidence": "Same Cần Thơ-merger quote as VN-52",
+   "sourceUrl": "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  },
+  {
+   "adm1Code": "VN-DN",
+   "name": "Đà Nẵng",
+   "corporation": "evncpc",
+   "evidence": "Article separately names 'Công ty TNHH một thành viên Điện lực Đà Nẵng' as one of EVNCPC's 13 jurisdictions",
+   "sourceUrl": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx"
+  },
+  {
+   "adm1Code": "VN-HN",
+   "name": "Hà Nội",
+   "corporation": "evnhanoi",
+   "evidence": "EVN overview page names 'Tổng công ty Điện lực TP. Hà Nội (EVNHANOI)' as one of the 5 electricity retail corporations",
+   "sourceUrl": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002"
+  },
+  {
+   "adm1Code": "VN-HP",
+   "name": "Hải Phòng",
+   "corporation": "evnnpc",
+   "evidence": "Công ty TNHH MTV Điện lực Hải Phòng — listed under 'Các đơn vị trực thuộc' EVNNPC",
+   "sourceUrl": "https://npc.com.vn/cac-don-vi-truc-thuoc.html"
+  },
+  {
+   "adm1Code": "VN-SG",
+   "name": "Hồ Chí Minh",
+   "corporation": "evnhcmc",
+   "evidence": "EVN overview page names 'Tổng công ty Điện lực TP. Hồ Chí Minh (EVNHCMC)' as one of the 5 electricity retail corporations; pre-2025-07-01 territory = Ho Chi Minh City only (see hcmcChange)",
+   "sourceUrl": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002"
+  }
+ ],
+ "units34": [
+  {
+   "unitCode": "VN34-44",
+   "name": "An Giang",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-56",
+   "name": "Bắc Ninh",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-59",
+   "name": "Cà Mau",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-CT",
+   "name": "Cần Thơ",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-04",
+   "name": "Cao Bằng",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-DN",
+   "name": "Đà Nẵng",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-33",
+   "name": "Đắk Lắk",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-71",
+   "name": "Điện Biên",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-39",
+   "name": "Đồng Nai",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-45",
+   "name": "Đồng Tháp",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-30",
+   "name": "Gia Lai",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-HN",
+   "name": "Hà Nội",
+   "corporations": [
+    "evnhanoi"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-23",
+   "name": "Hà Tĩnh",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-HP",
+   "name": "Hải Phòng",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-SG",
+   "name": "Hồ Chí Minh",
+   "corporations": [
+    "evnhcmc"
+   ],
+   "status": "single",
+   "note": "Members Bà Rịa–Vũng Tàu and Bình Dương were EVNSPC until 2025-07-01, transferred to EVNHCMC to align with the province merger; unit is not mixed as of retrievedAt."
+  },
+  {
+   "unitCode": "VN34-26",
+   "name": "Huế",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-66",
+   "name": "Hưng Yên",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-34",
+   "name": "Khánh Hòa",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single",
+   "note": "Member Ninh Thuận was EVNSPC until 2025-07-01, transferred to EVNCPC (renamed Khánh Hòa Power Company) to align with the province merger; unit is not mixed as of retrievedAt."
+  },
+  {
+   "unitCode": "VN34-01",
+   "name": "Lai Châu",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-35",
+   "name": "Lâm Đồng",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single",
+   "note": "Member Đắk Nông was EVNCPC until 2025-07-01, transferred to EVNSPC to align with the province merger; unit is not mixed as of retrievedAt."
+  },
+  {
+   "unitCode": "VN34-09",
+   "name": "Lạng Sơn",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-02",
+   "name": "Lào Cai",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-22",
+   "name": "Nghệ An",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-18",
+   "name": "Ninh Bình",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-68",
+   "name": "Phú Thọ",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-29",
+   "name": "Quảng Ngãi",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-13",
+   "name": "Quảng Ninh",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-25",
+   "name": "Quảng Trị",
+   "corporations": [
+    "evncpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-05",
+   "name": "Sơn La",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-37",
+   "name": "Tây Ninh",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-69",
+   "name": "Thái Nguyên",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-21",
+   "name": "Thanh Hóa",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-07",
+   "name": "Tuyên Quang",
+   "corporations": [
+    "evnnpc"
+   ],
+   "status": "single"
+  },
+  {
+   "unitCode": "VN34-49",
+   "name": "Vĩnh Long",
+   "corporations": [
+    "evnspc"
+   ],
+   "status": "single"
+  }
+ ],
+ "hcmcChange": {
+  "summary": "EVNHCMC's service area changed with the 2025-07-01 merger. Before 2025-07-01 ('evnhcmc_former'), EVNHCMC served only Ho Chi Minh City proper (VN-SG). EVNSPC officially handed over its Bình Dương Power Company and Bà Rịa - Vũng Tàu Power Company to EVNHCMC, which reorganized them into new regional power companies (Thuận An, Bến Cát, Bình Dương in the former Bình Dương area; Vũng Tàu, Đất Đỏ in the former Bà Rịa-Vũng Tàu area). From 2025-07-01 ('evnhcmc_current'), EVNHCMC serves the whole merged Ho Chi Minh City (former HCMC + Bình Dương + Bà Rịa–Vũng Tàu, i.e. all of unit VN34-SG).",
+  "effectiveDate": "2025-07-01",
+  "sourceUrls": [
+   "https://evnspc.vn/bai-viet/ARTICLE25070004/evnspc-dam-bao-dich-vu-dien-khi-chuyen-giao-sap-nhap-cac-cong-ty-dien-luc-theo-dia-gioi-hanh-chinh-moi",
+   "https://evnspc.vn/bai-viet/ARTICLE25070009/tcbc-ve-viec-cac-cong-ty-dien-luc-chinh-thuc-hoat-dong-theo-don-vi-hanh-chinh-cap-tinh-moi-va-thanh-lap-doi-quan-ly-dien"
+  ]
+ },
+ "unconfirmed": [],
+ "reviewedAt": "2026-09-30",
+ "reviewNote": "provinces63[].corporation = 2025-07-01 이후 현행 관할. 이전 관할은 formerCorporation(변경 4개 성). A-022 공시값의 관할 표기('현행 관할')와 일치"
+}

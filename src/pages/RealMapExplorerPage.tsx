@@ -71,6 +71,7 @@ import type {
 } from "../data/vietnam/vietnamDataLoaderV124";
 import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
 import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
+import { applyNationalMineJoinV157_2 } from "../data/map/entityAttributeJoinV157_2";
 import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
 import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
 import MapIconLegendV152 from "../components/map/MapIconLegendV152";
@@ -2599,7 +2600,8 @@ export default function RealMapExplorerPage({
               )
             )
         : Promise.all([
-            loadCountryElementEntitiesV122(countryIso3, elementId),
+            // V157-2: a mineral layer (B-044·B-046·B-047) draws its host's mines.
+            loadCountryElementEntitiesV122(countryIso3, layer.entityJoinV157_2?.hostElementId || elementId),
             // V151-2: the province each point falls in; optional, never blocks the layer.
             layer.locationsUrl
               ? loadVietnamLocationsV151(layer.locationsUrl, controller.signal).catch(
@@ -2613,7 +2615,9 @@ export default function RealMapExplorerPage({
             if (controller.signal.aborted) return;
             setRecordsByElement((current) => ({
               ...current,
-              [elementId]: payload.records,
+              [elementId]: layer.entityJoinV157_2
+                ? applyNationalMineJoinV157_2(payload.records, layer.entityJoinV157_2)
+                : payload.records,
             }));
             if (sidecar) {
               setLocationsByElementV151((current) => ({ ...current, [elementId]: sidecar }));
@@ -4700,6 +4704,18 @@ export default function RealMapExplorerPage({
             )} ${regionUnitLabelV138(selectedOwningLayer)}의 값을 표시합니다.`
           )
         );
+      } else if (
+        policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector?.variable) === "group-constant"
+      ) {
+        // V157-2: the value belongs to a group outside the 63/34 hierarchy.
+        lines.push(
+          ...selectionLineV161(
+            "자료 설명",
+            properties.categoryLabel
+              ? `${properties.categoryLabel} 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다.`
+              : "소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다."
+          )
+        );
       } else if (properties.boundarySystem === "post-2025-34" && selectedMemberSummaryV151) {
         lines.push(
           ...selectionLineV161(
@@ -4791,14 +4807,21 @@ export default function RealMapExplorerPage({
         const peers = drawn.features
           .map((feature) => feature.properties?.value)
           .filter((value): value is number => typeof value === "number" && Number.isFinite(value));
-        comparison.push(
-          ...rankLinesV161({
-            value: selectedSpatial.value ?? null,
-            peers,
-            unit,
-            peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
-          })
-        );
+        // V157-2: a group's value repeats on every member province, so a rank
+        // or an average across provinces would count one figure many times.
+        if (
+          policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector?.variable) !==
+          "group-constant"
+        ) {
+          comparison.push(
+            ...rankLinesV161({
+              value: selectedSpatial.value ?? null,
+              peers,
+              unit,
+              peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
+            })
+          );
+        }
         const categoryCounts: Record<string, number> = {};
         drawn.features.forEach((feature) => {
           const label = String(feature.properties?.categoryLabel || "");

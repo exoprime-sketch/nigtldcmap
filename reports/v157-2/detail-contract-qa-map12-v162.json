@@ -1,0 +1,1332 @@
+{
+  "summary": {
+    "generatedAt": "2026-10-02T17:15:02.347Z",
+    "build": "C:\\Users\\user\\Documents\\nigt-wt-map12\\tmp\\build-v157-2-review",
+    "elements": 12,
+    "pass": 12,
+    "fail": 0,
+    "failedIds": [],
+    "excludedIds": [
+      "A-017",
+      "C-020",
+      "C-021",
+      "E-008",
+      "E-016",
+      "E-017"
+    ],
+    "byStatus": {
+      "standard": 3,
+      "preserved": 2,
+      "exception": 7
+    },
+    "exceptionIds": [
+      "A-013",
+      "B-002",
+      "B-036",
+      "B-044",
+      "C-003",
+      "C-006",
+      "C-017"
+    ],
+    "checks": {
+      "primaryTypeMatch": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "rankOrder": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "axesMatch": {
+        "pass": 6,
+        "fail": 0,
+        "notApplicable": 6
+      },
+      "blockHonesty": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "readingNotesAbsent": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "statusNoteNoChart": {
+        "pass": 0,
+        "fail": 0,
+        "notApplicable": 12
+      },
+      "policyNoNumericChart": {
+        "pass": 3,
+        "fail": 0,
+        "notApplicable": 9
+      },
+      "kpiRow": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "titleOnce": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "sourceLine": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "mapPlacement": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "overflow320": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      },
+      "console": {
+        "pass": 12,
+        "fail": 0,
+        "notApplicable": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "elementId": "A-013",
+      "archetype": "matrix",
+      "status": "exception",
+      "expected": {
+        "type": "comparison-table",
+        "title": "NDC-SDG 연계 정렬표",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "comparison-table",
+              "rank": "1",
+              "top": 588,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 588,
+            "left": 923,
+            "width": 362,
+            "height": 919,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "365건연계 항목 · 2016년"
+            },
+            {
+              "unit": "년",
+              "text": "2016년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "365건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 3874,
+            "left": 31,
+            "width": 328,
+            "height": 950,
+            "mapReady": true
+          },
+          "first": {
+            "type": "comparison-table",
+            "top": 739,
+            "height": 3125
+          },
+          "second": null
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "A-022",
+      "archetype": "national-series",
+      "status": "standard",
+      "expected": {
+        "type": "line",
+        "title": "정전빈도 추이",
+        "xAxis": "연도",
+        "yAxis": "MAIFI",
+        "unit": "회/고객"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "line",
+              "rank": "1",
+              "top": 753,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "연도",
+                "y": "MAIFI",
+                "unit": "회/고객"
+              }
+            },
+            {
+              "type": "table",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 753,
+            "left": 923,
+            "width": 362,
+            "height": 903,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "회/고객",
+              "text": "1.25 회/고객MAIFI · EVN 그룹 전체 · 순간정전 · 2024년"
+            },
+            {
+              "unit": "년",
+              "text": "2015–2024년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "39건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "21종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 1960,
+            "left": 31,
+            "width": 328,
+            "height": 931,
+            "mapReady": true
+          },
+          "first": {
+            "type": "line",
+            "top": 1204,
+            "height": 746
+          },
+          "second": {
+            "type": "table",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-002",
+      "archetype": "national-series",
+      "status": "exception",
+      "expected": {
+        "type": "category-bar",
+        "title": "기후대별 점유 면적",
+        "xAxis": "기후대별 점유 면적",
+        "yAxis": "기후대",
+        "unit": "km²"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "category-bar",
+              "rank": "1",
+              "top": 702,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "기후대별 점유 면적 · 2020년(1991–2020 관측)",
+                "y": "기후대",
+                "unit": "km²"
+              }
+            },
+            {
+              "type": "sorted-table",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            },
+            {
+              "type": "category-bar",
+              "rank": "3",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": {
+                "x": "열대기후(A군) 국토 점유 비율 · 시기·시나리오별",
+                "y": "기후대",
+                "unit": "%"
+              }
+            }
+          ],
+          "slot": {
+            "top": 702,
+            "left": 923,
+            "width": 362,
+            "height": 936,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "km²",
+              "text": "138,159 km²기후대별 점유 면적 최대 · Cwa (온대·동계건조·고온하계) · 2020년"
+            },
+            {
+              "unit": "년",
+              "text": "1930·2020·2099년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "64건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "64종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 1658,
+            "left": 31,
+            "width": 328,
+            "height": 967,
+            "mapReady": true
+          },
+          "first": {
+            "type": "category-bar",
+            "top": 1202,
+            "height": 446
+          },
+          "second": {
+            "type": "sorted-table",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-024",
+      "archetype": "national-series",
+      "status": "standard",
+      "expected": {
+        "type": "line",
+        "title": "농업 용수 취수 비중 추이",
+        "xAxis": "연도",
+        "yAxis": "농업 용수 취수 비중",
+        "unit": "%"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "line",
+              "rank": "1",
+              "top": 602,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "연도",
+                "y": "농업 용수 취수 비중",
+                "unit": "%"
+              }
+            },
+            {
+              "type": "category-bar",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": {
+                "x": "값(막대 길이)",
+                "y": "계열",
+                "unit": "%"
+              }
+            }
+          ],
+          "slot": {
+            "top": 602,
+            "left": 923,
+            "width": 362,
+            "height": 919,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "%",
+              "text": "94.8 %농업 용수 취수 비중 · 2023년"
+            },
+            {
+              "unit": "년",
+              "text": "1990–2023년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "68건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "2종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 1776,
+            "left": 31,
+            "width": 328,
+            "height": 971,
+            "mapReady": true
+          },
+          "first": {
+            "type": "line",
+            "top": 924,
+            "height": 842
+          },
+          "second": {
+            "type": "category-bar",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-035",
+      "archetype": "national-series",
+      "status": "standard",
+      "expected": {
+        "type": "line",
+        "title": "농업 총면적 추이",
+        "xAxis": "연도",
+        "yAxis": "농업 총면적(Agriculture)",
+        "unit": "1000 ha"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "line",
+              "rank": "1",
+              "top": 663,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "연도",
+                "y": "농업 총면적(Agriculture)",
+                "unit": "1000 ha"
+              }
+            },
+            {
+              "type": "table",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            },
+            {
+              "type": "cards-list",
+              "rank": "3",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 663,
+            "left": 923,
+            "width": 362,
+            "height": 889,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "1000 ha",
+              "text": "12,291 1000 ha농업 총면적(Agriculture) · 2024년"
+            },
+            {
+              "unit": "년",
+              "text": "1961–2024년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "960건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "26종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "narrow": {
+          "slot": {
+            "top": 1756,
+            "left": 31,
+            "width": 328,
+            "height": 953,
+            "mapReady": true
+          },
+          "first": {
+            "type": "line",
+            "top": 1066,
+            "height": 681
+          },
+          "second": {
+            "type": "table",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-036",
+      "archetype": "national-series",
+      "status": "exception",
+      "expected": {
+        "type": "category-bar",
+        "title": "토지 유형별 변화율",
+        "xAxis": "토지이용 변화율",
+        "yAxis": "토지 유형",
+        "unit": "%/yr"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "category-bar",
+              "rank": "1",
+              "top": 693,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "토지이용 변화율",
+                "y": "토지 유형",
+                "unit": "%/yr"
+              }
+            },
+            {
+              "type": "category-bar",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            },
+            {
+              "type": "table",
+              "rank": "3",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            },
+            {
+              "type": "cards-list",
+              "rank": "4",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 693,
+            "left": 923,
+            "width": 362,
+            "height": 965,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "%/yr",
+              "text": "4.98 %/yr토지이용 변화율 최대 · 조림지 · 2024년"
+            },
+            {
+              "unit": "년",
+              "text": "2020·2024년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "48건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "34종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "narrow": {
+          "slot": {
+            "top": 2154,
+            "left": 31,
+            "width": 328,
+            "height": 992,
+            "mapReady": true
+          },
+          "first": {
+            "type": "category-bar",
+            "top": 1159,
+            "height": 985
+          },
+          "second": {
+            "type": "category-bar",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-044",
+      "archetype": "matrix",
+      "status": "exception",
+      "expected": {
+        "type": "cards-list",
+        "title": "광물별 자원·규정 조건 정렬표",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": null,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "cards-list",
+              "rank": "1",
+              "top": 518,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            },
+            {
+              "type": "cards-list",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 518,
+            "left": 923,
+            "width": 362,
+            "height": 727,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "21건광종 · 2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "2건공개 관측값"
+            },
+            {
+              "unit": "종",
+              "text": "2종지표 수"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 1
+        },
+        "nestedTagCount": 1,
+        "narrow": {
+          "slot": {
+            "top": 953,
+            "left": 31,
+            "width": 328,
+            "height": 682,
+            "mapReady": true
+          },
+          "first": {
+            "type": "cards-list",
+            "top": 711,
+            "height": 232
+          },
+          "second": {
+            "type": "cards-list",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-046",
+      "archetype": "national-series",
+      "status": "preserved",
+      "expected": {
+        "type": "category-bar",
+        "title": "광물별 세계 매장량 비중",
+        "xAxis": "세계 확인 매장량 비중",
+        "yAxis": "광물",
+        "unit": "%"
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": true,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "match",
+          "blocks": [
+            {
+              "type": "category-bar",
+              "rank": "1",
+              "top": 599,
+              "left": 155,
+              "width": 752,
+              "axes": {
+                "x": "세계 확인 매장량 비중",
+                "y": "광물",
+                "unit": "%"
+              }
+            },
+            {
+              "type": "table",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            },
+            {
+              "type": "status-note",
+              "rank": "3",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 599,
+            "left": 923,
+            "width": 362,
+            "height": 745,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "64건항목 · 2020–2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2020–2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "64건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 1480,
+            "left": 31,
+            "width": 328,
+            "height": 700,
+            "mapReady": true
+          },
+          "first": {
+            "type": "category-bar",
+            "top": 862,
+            "height": 608
+          },
+          "second": {
+            "type": "table",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "B-047",
+      "archetype": "national-series",
+      "status": "preserved",
+      "expected": {
+        "type": "table",
+        "title": "광물별 연간 생산량",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": null,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "table",
+              "rank": "1",
+              "top": 598,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            },
+            {
+              "type": "status-note",
+              "rank": "2",
+              "top": 0,
+              "left": 0,
+              "width": 0,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 598,
+            "left": 923,
+            "width": 362,
+            "height": 762,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "81건항목 · 2018–2025년"
+            },
+            {
+              "unit": "년",
+              "text": "2018–2025년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "81건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 1960,
+            "left": 31,
+            "width": 328,
+            "height": 718,
+            "mapReady": true
+          },
+          "first": {
+            "type": "table",
+            "top": 835,
+            "height": 1115
+          },
+          "second": {
+            "type": "status-note",
+            "top": 0
+          }
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-003",
+      "archetype": "policy-document",
+      "status": "exception",
+      "expected": {
+        "type": "cards-list",
+        "title": "적응 우선 분야·조치 비교",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": true,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "cards-list",
+              "rank": "1",
+              "top": 526,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 526,
+            "left": 923,
+            "width": 362,
+            "height": 943,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "272건항목 · 2020–2050년"
+            },
+            {
+              "unit": "년",
+              "text": "2020–2050년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "272건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 16745,
+            "left": 31,
+            "width": 328,
+            "height": 970,
+            "mapReady": true
+          },
+          "first": {
+            "type": "cards-list",
+            "top": 611,
+            "height": 16124
+          },
+          "second": null
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-006",
+      "archetype": "policy-document",
+      "status": "exception",
+      "expected": {
+        "type": "cards-list",
+        "title": "협정·승인체계 현황",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": true,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "cards-list",
+              "rank": "1",
+              "top": 529,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 529,
+            "left": 923,
+            "width": 362,
+            "height": 880,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "38건항목 · 2023–2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2023–2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "38건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 19395,
+            "left": 31,
+            "width": 328,
+            "height": 884,
+            "mapReady": true
+          },
+          "first": {
+            "type": "cards-list",
+            "top": 763,
+            "height": 18622
+          },
+          "second": null
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    },
+    {
+      "elementId": "C-017",
+      "archetype": "policy-document",
+      "status": "exception",
+      "expected": {
+        "type": "cards-list",
+        "title": "재생에너지 인센티브 조건",
+        "xAxis": null,
+        "yAxis": null,
+        "unit": null
+      },
+      "checks": {
+        "primaryTypeMatch": true,
+        "rankOrder": true,
+        "axesMatch": null,
+        "blockHonesty": true,
+        "readingNotesAbsent": true,
+        "statusNoteNoChart": null,
+        "policyNoNumericChart": true,
+        "kpiRow": true,
+        "titleOnce": true,
+        "sourceLine": true,
+        "nestedTags": true,
+        "mapPlacement": true,
+        "overflow320": true,
+        "console": true
+      },
+      "evidence": {
+        "wide": {
+          "verdict": "match",
+          "axesVerdict": "not-applicable",
+          "blocks": [
+            {
+              "type": "cards-list",
+              "rank": "1",
+              "top": 527,
+              "left": 155,
+              "width": 752,
+              "axes": null
+            }
+          ],
+          "slot": {
+            "top": 527,
+            "left": 923,
+            "width": 362,
+            "height": 1091,
+            "mapReady": true
+          },
+          "split": true,
+          "tiles": [
+            {
+              "unit": "건",
+              "text": "56건항목 · 2016–2026년"
+            },
+            {
+              "unit": "년",
+              "text": "2016–2026년자료기간"
+            },
+            {
+              "unit": "건",
+              "text": "56건공개 목록"
+            }
+          ],
+          "titleCount": 1,
+          "nestedTags": 0
+        },
+        "narrow": {
+          "slot": {
+            "top": 22836,
+            "left": 31,
+            "width": 328,
+            "height": 1096,
+            "mapReady": true
+          },
+          "first": {
+            "type": "cards-list",
+            "top": 754,
+            "height": 22072
+          },
+          "second": null
+        },
+        "overflow320": 0,
+        "console": []
+      },
+      "issues": [],
+      "pass": true
+    }
+  ]
+}

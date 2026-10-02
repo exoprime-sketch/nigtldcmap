@@ -964,7 +964,9 @@ const rows = items
       status,
       statusReason: reason,
       // A target the data cannot map travels with the layer a reader would open.
-      companionLayers: COMPANION_PLACEMENTS_V157[item.elementId] ?? [],
+      // V157-2: a target that is on the map now carries no companion card - the
+      // card stood in for the layer it lacked (P8-2 registered the twelve).
+      companionLayers: registered.has(item.elementId) ? [] : COMPANION_PLACEMENTS_V157[item.elementId] ?? [],
     };
   })
   .sort((left, right) => left.elementId.localeCompare(right.elementId));

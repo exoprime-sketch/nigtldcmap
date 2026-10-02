@@ -1,0 +1,1914 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "A-022",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "saidi",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "saidi",
+        "measureId": "a022-saidi",
+        "measureKey": "saidi",
+        "scenario": null,
+        "label": "평균 정전시간(SAIDI)",
+        "unit": "분/고객",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 36
+      },
+      {
+        "key": "saifi",
+        "measureId": "a022-saifi",
+        "measureKey": "saifi",
+        "scenario": null,
+        "label": "평균 정전횟수(SAIFI)",
+        "unit": "회/고객",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 23
+      },
+      {
+        "key": "maifi",
+        "measureId": "a022-maifi",
+        "measureKey": "maifi",
+        "scenario": null,
+        "label": "순간 정전횟수(MAIFI)",
+        "unit": "회/고객",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 20
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 0.95,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnhanoi",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "하노이전력총공사(EVNHANOI)"
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "maifi",
+      "variableLabel": "순간 정전횟수(MAIFI)",
+      "period": "2026",
+      "value": 1.08,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_maifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-26",
+      "adm1Name": "Thừa Thiên Huế",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-36",
+      "adm1Name": "Ninh Thuận",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 170.86,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evncpc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "중부전력총공사(EVNCPC)"
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 29.81,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnhanoi",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "하노이전력총공사(EVNHANOI)"
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 158,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 158,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 158,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "saidi",
+      "variableLabel": "평균 정전시간(SAIDI)",
+      "period": "2026",
+      "value": 236.78,
+      "unit": "분/고객",
+      "sourceIndicatorId": "A-022_saidi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 0.48,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnhanoi",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "하노이전력총공사(EVNHANOI)"
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.41,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.41,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.41,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnhcmc_current",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "호찌민시전력총공사(EVNHCMC)"
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-37",
+      "adm1Name": "Tây Ninh",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "saifi",
+      "variableLabel": "평균 정전횟수(SAIFI)",
+      "period": "2026",
+      "value": 1.64,
+      "unit": "회/고객",
+      "sourceIndicatorId": "A-022_saifi_evnspc",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "남부전력총공사(EVNSPC)"
+    }
+  ],
+  "memberRecords": {
+    "VN-01": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-04": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-05": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-09": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-26": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-28": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-29": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-30": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-31": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-34": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-36": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-37": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "A-022-evnhcmc",
+        "label": "호찌민시전력총공사(EVNHCMC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002",
+        "indicatorId": ""
+      }
+    ],
+    "VN-44": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-45": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-46": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-47": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "A-022-evnhcmc",
+        "label": "호찌민시전력총공사(EVNHCMC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002",
+        "indicatorId": ""
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "A-022-evnspc",
+        "label": "남부전력총공사(EVNSPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://evnspc.vn/bai-viet/F02WEB-201905-00000021/cac-don-vi-thanh-vien",
+        "indicatorId": ""
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "A-022-evncpc",
+        "label": "중부전력총공사(EVNCPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/d6/news/Ky-niem-45-nam-Ngay-thanh-lap-Tong-cong-ty-Dien-luc-mien-Trung--6-12-26597.aspx",
+        "indicatorId": ""
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "A-022-evnhanoi",
+        "label": "하노이전력총공사(EVNHANOI) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002",
+        "indicatorId": ""
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "A-022-evnnpc",
+        "label": "북부전력총공사(EVNNPC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 값 미공개",
+        "url": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+        "indicatorId": ""
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "A-022-evnhcmc",
+        "label": "호찌민시전력총공사(EVNHCMC) 관할",
+        "date": "",
+        "status": "",
+        "value": "관할 전체 값",
+        "url": "https://www.evn.com.vn/vi-VN/tong-quan/Gioi-thieu-60-3002",
+        "indicatorId": ""
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "maifi",
+      "period": "2026",
+      "expectedCount": 63,
+      "matchedCount": 20,
+      "missingCount": 43,
+      "failureCount": 0
+    },
+    {
+      "variable": "saidi",
+      "period": "2026",
+      "expectedCount": 63,
+      "matchedCount": 36,
+      "missingCount": 27,
+      "failureCount": 0
+    },
+    {
+      "variable": "saifi",
+      "period": "2026",
+      "expectedCount": 63,
+      "matchedCount": 23,
+      "missingCount": 40,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Vietnam Electricity (EVN) Annual Report / official disclosure."
+    ],
+    "licenses": [
+      "기관 공시자료(EVN)"
+    ],
+    "organizations": [
+      "Vietnam Electricity (EVN)"
+    ],
+    "urls": [
+      "https://en.evn.com.vn/c3/documents/Annual-Report-9-15.aspx"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 36,
+    "maxSeriesFeatureCount": 36,
+    "missingAdm1Count": 27,
+    "providedZeroCount": 0,
+    "publishedValueCount": 79,
+    "sourceValueCount": 9,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

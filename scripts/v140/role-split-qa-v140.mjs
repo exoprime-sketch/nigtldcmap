@@ -207,11 +207,18 @@ const pendingTargetV157 =
   ) || null;
 const PENDING_ID_V157 = pendingTargetV157?.elementId || "";
 const PENDING_GROUP_V157 = pendingTargetV157?.category || "";
+// V157-2 (P8-2): once every contract target has a layer there is no pending
+// example. The pending checks then hold the opposite state instead: every
+// target is in the map index and no screen shows a pending row.
+const NO_PENDING_V157_2 = !PENDING_ID_V157;
+const unbuiltTargetsV157_2 = (mapTargetsV157.targets || []).filter((target) => !indexIds.has(target.elementId)).map((target) => target.elementId);
 check(
   "PENDING_EXAMPLE_FROM_CONTRACT",
-  Boolean(PENDING_ID_V157) && !indexIds.has(PENDING_ID_V157),
-  { elementId: PENDING_ID_V157, group: PENDING_GROUP_V157, inIndex: indexIds.has(PENDING_ID_V157) },
-  { inIndex: false }
+  NO_PENDING_V157_2 ? unbuiltTargetsV157_2.length === 0 : !indexIds.has(PENDING_ID_V157),
+  NO_PENDING_V157_2
+    ? { pendingTargets: 0, targetsNotInIndex: unbuiltTargetsV157_2 }
+    : { elementId: PENDING_ID_V157, group: PENDING_GROUP_V157, inIndex: indexIds.has(PENDING_ID_V157) },
+  NO_PENDING_V157_2 ? { targetsNotInIndex: [] } : { inIndex: false }
 );
 
 // ------------------------------------------------------------ home
@@ -388,7 +395,7 @@ await section("FINDER", async () => {
   );
   check(
     "FINDER_PENDING_NO_MAP_BUTTON",
-    Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text)),
+    NO_PENDING_V157_2 || (Array.isArray(b017Buttons) && !b017Buttons.some((text) => /지도/u.test(text))),
     { elementId: PENDING_ID_V157, buttons: b017Buttons, reach: pendingCardReach },
     `no 지도에서 보기 on ${PENDING_ID_V157}`
   );
@@ -475,18 +482,20 @@ await section("MAP", async () => {
   );
   check(
     "MAP_PENDING_ROW_SHOWN",
-    map.pendingRows.some((row) => row.id === PENDING_ID_V157),
+    NO_PENDING_V157_2 ? map.pendingRows.length === 0 : map.pendingRows.some((row) => row.id === PENDING_ID_V157),
     map.pendingRows.map((row) => row.id),
-    [PENDING_ID_V157]
+    NO_PENDING_V157_2 ? [] : [PENDING_ID_V157]
   );
   check(
     "MAP_PENDING_NEVER_DRAWN",
-    map.b017Click.found &&
-      !map.b017Click.checked &&
-      map.b017Click.drawn !== "true" &&
-      !map.drawn.includes(PENDING_ID_V157),
-    map.b017Click,
-    "clicking the pending dataset draws nothing"
+    NO_PENDING_V157_2
+      ? map.pendingRows.length === 0 && map.ledePending === 0
+      : map.b017Click.found &&
+          !map.b017Click.checked &&
+          map.b017Click.drawn !== "true" &&
+          !map.drawn.includes(PENDING_ID_V157),
+    NO_PENDING_V157_2 ? { pendingRows: map.pendingRows.length, ledePending: map.ledePending } : map.b017Click,
+    NO_PENDING_V157_2 ? "no pending dataset on the map" : "clicking the pending dataset draws nothing"
   );
   check(
     "MAP_GROUP_COUNTS_NAME_PENDING",
@@ -578,6 +587,11 @@ await section("DOWNLOAD", async () => {
 });
 // ------------------------------------- the pending dataset's detail: no location claim
 await section("B017_DETAIL", async () => {
+  // V157-2: with no pending target there is no detail to hold to "not on the map".
+  if (NO_PENDING_V157_2) {
+    check("PENDING_DETAIL_NO_LOCATION_CLAIM", true, { pendingTargets: 0 }, "no pending dataset");
+    return;
+  }
   // The pending dataset comes from the contract (V157); detailLayers=all opens the
   // detail's folded layers (V160) so the notice is in the text either way.
   const page = await open(`/?view=data&country=VNM&element=${PENDING_ID_V157}&detailLayers=all#element-detail`, "h1");

@@ -30,7 +30,7 @@ const check = (name, status, actual, expected) => {
 const equal = (name, actual, expected) =>
   check(name, JSON.stringify(actual) === JSON.stringify(expected) ? "PASS" : "FAIL", actual, expected);
 
-const KINDS = ["sum", "area-weighted-mean", "member-max", "member-min", "range-only", "count-sum", "membership-or", "native-34", "six-region-only", "none"];
+const KINDS = ["sum", "area-weighted-mean", "member-max", "member-min", "range-only", "count-sum", "membership-or", "native-34", "six-region-only", "group-constant", "none"];
 const QUANTILE = /분위|중앙값|상위\s*\d+\s*%|하위\s*\d+\s*%|백분위|순위/u;
 
 // ---------------------------------------------------------------- map-index policies

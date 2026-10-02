@@ -8,6 +8,7 @@ import type {
   VietnamMapLayerV121,
   VietnamObservationV121,
 } from "./vietnamTypesV121";
+import type { MineJoinDeclarationV157_2 } from "../map/entityAttributeJoinV157_2";
 
 export type VietnamElementPublicStatusV124 =
   | "actual"
@@ -415,6 +416,8 @@ export type VietnamMapLayerV124 = Omit<VietnamMapLayerV121, "assetRef"> & {
   renderer: VietnamMapRendererV124;
   geometryUrl?: string;
   dataUrl?: string;
+  /** V157-2: national mineral figures drawn on a host element's points (B-048). */
+  entityJoinV157_2?: MineJoinDeclarationV157_2;
   selectors: VietnamMapSelectorsV124;
   unit: string;
   source: string;
@@ -507,6 +510,7 @@ export type VietnamBoundaryPolicyKindV151 =
   | "membership-or"
   | "native-34"
   | "six-region-only"
+  | "group-constant"
   | "none";
 
 export interface VietnamBoundaryPolicyV151 {

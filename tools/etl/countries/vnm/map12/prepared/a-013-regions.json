@@ -1,0 +1,130 @@
+{
+ "schema": "map12-prepared-v157-2",
+ "elementId": "A-013",
+ "mapForm": "group-constant-six-region",
+ "method": "NDC 조치 원문이 6대 사회경제 권역(NQ 81/2023/QH15)을 공식 명칭으로 적은 레코드만 그 권역에 연결. 일반 지역어(해안·북부 산지 등)는 연결하지 않음",
+ "source": {
+  "kind": "delivery-2026-09-30",
+  "file": "A-013_Climate Watch NDC-SDG linkage.xlsx",
+  "sha256": "43e028efa019eeb1b1bdca25fe515d71f08f0b452804d5771ac01ef5dc9a704c",
+  "sheet": "1.2_entity(레코드형)",
+  "indicatorIdsUsed": {
+   "A-013_ndc_sdg_linkage_registry": 365
+  },
+  "indicatorIdsExcluded": {}
+ },
+ "coverage": {
+  "records": 365,
+  "linkedRecords": 8,
+  "regions": {
+   "mekong-river-delta": 4,
+   "red-river-delta": 4
+  }
+ },
+ "rows": [
+  {
+   "sourceRecordId": "6227425",
+   "sdgTarget": "6.4",
+   "sector": "Water",
+   "regions": [
+    "red-river-delta"
+   ],
+   "regionNamesInText": [
+    "Red River Delta"
+   ],
+   "actionText": "repairing and upgrading irrigation systems in the Red River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227426",
+   "sdgTarget": "6.4",
+   "sector": "Infrastructure",
+   "regions": [
+    "red-river-delta"
+   ],
+   "regionNamesInText": [
+    "Red River Delta"
+   ],
+   "actionText": "repairing and upgrading irrigation systems in the Red River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227427",
+   "sdgTarget": "2.4",
+   "sector": "Water",
+   "regions": [
+    "red-river-delta"
+   ],
+   "regionNamesInText": [
+    "Red River Delta"
+   ],
+   "actionText": "repairing and upgrading irrigation systems in the Red River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227428",
+   "sdgTarget": "2.4",
+   "sector": "Infrastructure",
+   "regions": [
+    "red-river-delta"
+   ],
+   "regionNamesInText": [
+    "Red River Delta"
+   ],
+   "actionText": "repairing and upgrading irrigation systems in the Red River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227429",
+   "sdgTarget": "6.4",
+   "sector": "Water",
+   "regions": [
+    "mekong-river-delta"
+   ],
+   "regionNamesInText": [
+    "Mekong River Delta"
+   ],
+   "actionText": "expanding flood drainage canals and regulating sewers in the Mekong River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227430",
+   "sdgTarget": "6.4",
+   "sector": "Infrastructure",
+   "regions": [
+    "mekong-river-delta"
+   ],
+   "regionNamesInText": [
+    "Mekong River Delta"
+   ],
+   "actionText": "expanding flood drainage canals and regulating sewers in the Mekong River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227431",
+   "sdgTarget": "9.1",
+   "sector": "Water",
+   "regions": [
+    "mekong-river-delta"
+   ],
+   "regionNamesInText": [
+    "Mekong River Delta"
+   ],
+   "actionText": "expanding flood drainage canals and regulating sewers in the Mekong River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  },
+  {
+   "sourceRecordId": "6227432",
+   "sdgTarget": "9.1",
+   "sector": "Infrastructure",
+   "regions": [
+    "mekong-river-delta"
+   ],
+   "regionNamesInText": [
+    "Mekong River Delta"
+   ],
+   "actionText": "expanding flood drainage canals and regulating sewers in the Mekong River Delta",
+   "sourceUrl": "https://www.climatewatchdata.org/ndcs-sdg"
+  }
+ ]
+}

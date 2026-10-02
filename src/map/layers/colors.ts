@@ -48,6 +48,20 @@ export const LAYER_COLORS: Record<string, string> = {
   "E-006": "#7a5a1f",
   "E-018": "#9a3c62",
   "E-019": "#a24d2a",
+  // V157-2 (P8-2) targets: climate and land in their families, policy layers in
+  // the purple family, the mineral layers near B-048's brown.
+  "A-013": "#5d4b8c",
+  "A-022": "#a3542a",
+  "B-002": "#b0662e",
+  "B-024": "#2c7894",
+  "B-035": "#477d3c",
+  "B-036": "#5f8a34",
+  "B-044": "#7a5320",
+  "B-046": "#946a2a",
+  "B-047": "#6e4a1c",
+  "C-003": "#6a4f93",
+  "C-006": "#4d5f9a",
+  "C-017": "#8a5a86",
 };
 
 export const A023_FUEL_COLORS_V126: Record<string, string> = {

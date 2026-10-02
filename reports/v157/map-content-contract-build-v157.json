@@ -1,6 +1,6 @@
 {
   "schema": "map-content-contract-build-v157",
-  "generatedAt": "2026-09-30T21:11:43.573Z",
+  "generatedAt": "2026-10-02T16:21:43.337Z",
   "country": "VNM",
   "rowCount": 72,
   "provinceDictionary": {
@@ -9,145 +9,29 @@
     "warnings": []
   },
   "byStatus": {
-    "asset-missing": 10,
-    "reference-mapping-pending": 1,
-    "registered": 60,
-    "data-pending": 1
+    "registered": 72
   },
   "criteriaCounts": {
-    "none": 34,
-    "②": 2,
-    "①": 36
+    "①": 45,
+    "none": 25,
+    "②": 2
   },
-  "withoutGeometry": [
-    "A-013",
-    "A-022",
-    "B-002",
-    "B-024",
-    "B-035",
-    "B-036",
-    "B-044",
-    "B-046",
-    "B-047",
-    "C-003",
-    "C-006",
-    "C-017"
-  ],
-  "companionPlacements": [
-    {
-      "elementId": "A-013",
-      "status": "asset-missing",
-      "companions": [
-        "B-012(A)",
-        "B-008(A)"
-      ]
-    },
-    {
-      "elementId": "A-022",
-      "status": "reference-mapping-pending",
-      "companions": [
-        "A-024(A)"
-      ]
-    },
-    {
-      "elementId": "B-002",
-      "status": "asset-missing",
-      "companions": [
-        "B-003(A)"
-      ]
-    },
-    {
-      "elementId": "B-024",
-      "status": "asset-missing",
-      "companions": [
-        "B-017(A)"
-      ]
-    },
-    {
-      "elementId": "B-035",
-      "status": "asset-missing",
-      "companions": [
-        "B-037(A)"
-      ]
-    },
-    {
-      "elementId": "B-036",
-      "status": "asset-missing",
-      "companions": [
-        "B-037(A)"
-      ]
-    },
-    {
-      "elementId": "B-044",
-      "status": "asset-missing",
-      "companions": [
-        "B-048(C)"
-      ]
-    },
-    {
-      "elementId": "B-046",
-      "status": "asset-missing",
-      "companions": [
-        "B-048(C)"
-      ]
-    },
-    {
-      "elementId": "B-047",
-      "status": "asset-missing",
-      "companions": [
-        "B-048(C)"
-      ]
-    },
-    {
-      "elementId": "C-003",
-      "status": "asset-missing",
-      "companions": [
-        "C-016(A)"
-      ]
-    },
-    {
-      "elementId": "C-006",
-      "status": "data-pending",
-      "companions": [
-        "C-025(A)"
-      ]
-    },
-    {
-      "elementId": "C-017",
-      "status": "asset-missing",
-      "companions": [
-        "C-016(A)"
-      ]
-    }
-  ],
+  "withoutGeometry": [],
+  "companionPlacements": [],
   "labelsPending": [],
-  "disagreementCount": 54,
+  "disagreementCount": 49,
   "disagreements": [
     {
       "elementId": "A-013",
       "targetName": "NDC-SDG 지역조치",
       "pdf": "③",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
-        "regionKeys": 0,
-        "coordinateRows": 0,
-        "observationProvinces": 0,
-        "entityProvinces": 0,
-        "descriptiveAttributes": 0,
-        "regionScopedTextRows": 0
-      }
-    },
-    {
-      "elementId": "A-022",
-      "targetName": "전력공급 신뢰도",
-      "pdf": "①",
-      "computed": [],
-      "status": "reference-mapping-pending",
-      "statusReason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
-      "evidence": {
-        "regionKeys": 0,
+        "regionKeys": 24,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
@@ -194,22 +78,6 @@
       "computed": [],
       "status": "registered",
       "statusReason": null,
-      "evidence": {
-        "regionKeys": 0,
-        "coordinateRows": 0,
-        "observationProvinces": 0,
-        "entityProvinces": 0,
-        "descriptiveAttributes": 0,
-        "regionScopedTextRows": 0
-      }
-    },
-    {
-      "elementId": "B-002",
-      "targetName": "기후대",
-      "pdf": "①",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -348,22 +216,6 @@
       }
     },
     {
-      "elementId": "B-024",
-      "targetName": "농업용수 대리지표",
-      "pdf": "①",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "evidence": {
-        "regionKeys": 0,
-        "coordinateRows": 0,
-        "observationProvinces": 0,
-        "entityProvinces": 0,
-        "descriptiveAttributes": 0,
-        "regionScopedTextRows": 0
-      }
-    },
-    {
       "elementId": "B-025",
       "targetName": "유역면적",
       "pdf": "①",
@@ -396,44 +248,12 @@
       }
     },
     {
-      "elementId": "B-035",
-      "targetName": "토지이용 면적",
-      "pdf": "①",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "evidence": {
-        "regionKeys": 0,
-        "coordinateRows": 0,
-        "observationProvinces": 0,
-        "entityProvinces": 0,
-        "descriptiveAttributes": 0,
-        "regionScopedTextRows": 0
-      }
-    },
-    {
-      "elementId": "B-036",
-      "targetName": "토지이용 변화율",
-      "pdf": "①",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "evidence": {
-        "regionKeys": 0,
-        "coordinateRows": 0,
-        "observationProvinces": 0,
-        "entityProvinces": 0,
-        "descriptiveAttributes": 0,
-        "regionScopedTextRows": 0
-      }
-    },
-    {
       "elementId": "B-044",
       "targetName": "핵심광물 부존",
       "pdf": "②",
       "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -448,8 +268,8 @@
       "targetName": "광물 매장량",
       "pdf": "②",
       "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -464,8 +284,8 @@
       "targetName": "광물 생산량",
       "pdf": "②",
       "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
         "regionKeys": 0,
         "coordinateRows": 0,
@@ -495,11 +315,13 @@
       "elementId": "C-003",
       "targetName": "국가적응계획 지역과제",
       "pdf": "③",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
-        "regionKeys": 0,
+        "regionKeys": 29,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
@@ -511,11 +333,13 @@
       "elementId": "C-006",
       "targetName": "JCM 사업",
       "pdf": "②",
-      "computed": [],
-      "status": "data-pending",
-      "statusReason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
-        "regionKeys": 0,
+        "regionKeys": 27,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,
@@ -599,11 +423,13 @@
       "elementId": "C-017",
       "targetName": "지역 발전가격·지원",
       "pdf": "③",
-      "computed": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
+      "computed": [
+        "①"
+      ],
+      "status": "registered",
+      "statusReason": null,
       "evidence": {
-        "regionKeys": 0,
+        "regionKeys": 63,
         "coordinateRows": 0,
         "observationProvinces": 0,
         "entityProvinces": 0,

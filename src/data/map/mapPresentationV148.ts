@@ -17,6 +17,10 @@ const PRIORITY: Record<string, string[]> = {
   "B-025": ["totalBasinArea", "areaInVietnamLiterature", "areaInVietnamGis", "shareInVietnam", "transboundary", "riverSystem"],
   "B-028": ["locationNote", "referenceYear"],
   "B-048": ["mineral", "regionName", "climateTechBasis"],
+  // V157-2: the mineral layers lead with the joined national figure.
+  "B-044": ["nationalValue", "mineral", "regionName"],
+  "B-046": ["nationalValue", "mineral", "regionName"],
+  "B-047": ["nationalValue", "mineral", "regionName"],
   "C-025": ["standard", "projectId", "technologyField", "annualReduction", "creditingPeriod", "regionName"],
   "E-004": ["officeProgram", "city", "orgType", "officeAddress", "recordStatus"],
   "E-005": ["domain", "city", "orgType", "capability", "intlCoop"],

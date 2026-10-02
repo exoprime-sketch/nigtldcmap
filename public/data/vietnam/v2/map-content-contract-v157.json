@@ -1,7 +1,7 @@
 {
   "schemaVersion": "map-content-contract-v157",
   "countryIso3": "VNM",
-  "generatedAt": "2026-09-30T21:11:43.573Z",
+  "generatedAt": "2026-10-02T16:21:43.337Z",
   "generator": "scripts/v157/build-map-content-contract-v157.mjs",
   "source": {
     "selection": "docs/plan/map-selection-20260922.json",
@@ -28,10 +28,19 @@
       "elementId": "A-013",
       "targetName": "NDC-SDG 지역조치",
       "pdfContent": "삼각주 산림보전·관개개선 계획",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "partial",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 24,
+          "valueRows": 24
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -57,55 +66,140 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-a-013",
+        "mapMode": "choropleth",
+        "renderer": "partial-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "건"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "field_890a80ed",
-          "typeOfInformation",
-          "provenance.sourceOrg"
+          "NDC 조치 원문",
+          "SDG 세부목표 코드"
         ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "B-012",
-          "role": "primary",
-          "form": "A",
-          "note": "NDC 원문 인용 카드만 — 경계·좌표를 만들지 않음",
-          "quotationOnly": true
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
         },
         {
-          "elementId": "B-008",
-          "role": "secondary",
-          "form": "A",
-          "note": "해수면 상승 관련 NDC 조치 인용 카드",
-          "quotationOnly": true
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 권역 명시 NDC 조치 연계"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: 건"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "일부 지역만 값이 있어 부분 표출",
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "A-022",
       "targetName": "전력공급 신뢰도",
       "pdfContent": "전력회사 관할별 정전시간·빈도",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "partial",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 36,
+          "valueRows": 79
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -130,34 +224,125 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaAgreesWithPdf": true,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-a-022",
+        "mapMode": "choropleth",
+        "renderer": "partial-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "분/고객"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "indicatorId",
+          "year",
+          "value",
+          "unit"
+        ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "reference-mapping-pending",
-      "statusReason": "EVN 그룹 전체 값만 존재 — 5개 총공사의 성·시 관할표(성별 출처 URL 포함)를 확보한 뒤 표출",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "A-024",
-          "role": "primary",
-          "form": "A",
-          "note": "EVN 관할표 완성 전까지 송전망 레이어 옆 국가값 카드(MAIFI·SAIDI)"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 평균 정전시간(SAIDI)"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: 분/고객"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "일부 지역만 값이 있어 부분 표출",
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "A-023",
@@ -734,10 +919,19 @@
       "elementId": "B-002",
       "targetName": "기후대",
       "pdfContent": "성별 기후대·유형별 면적비율",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "full",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 63,
+          "valueRows": 1008
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -762,34 +956,126 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaAgreesWithPdf": true,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-002",
+        "mapMode": "choropleth",
+        "renderer": "admin1-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "%"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "우세_기후대",
+          "우세_기후대_점유율",
+          "열대_A군",
+          "건조_B군",
+          "온대_C군",
+          "기간"
+        ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "B-003",
-          "role": "primary",
-          "form": "A",
-          "note": "기후대 국가 면적 구성을 기후 레이어 옆 카드로"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 최다 기후대 점유율"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: %"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-003",
@@ -2496,10 +2782,19 @@
       "elementId": "B-024",
       "targetName": "농업용수 대리지표",
       "pdfContent": "성별 벼 재배면적·용수배분 추정",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "full",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 63,
+          "valueRows": 63
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -2524,34 +2819,124 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaAgreesWithPdf": true,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-024",
+        "mapMode": "choropleth",
+        "renderer": "admin1-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "ha"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "값",
+          "단위",
+          "기준연도",
+          "값의_성격"
+        ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "B-017",
-          "role": "primary",
-          "form": "A",
-          "note": "농업용수 대리지표 국가값을 물 스트레스 레이어 옆 카드로"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 벼 재배면적(농업용수 대리지표)"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: ha"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-025",
@@ -3906,10 +4291,19 @@
       "elementId": "B-035",
       "targetName": "토지이용 면적",
       "pdfContent": "성별 토지이용 면적 시계열",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "full",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 63,
+          "valueRows": 3024
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -3934,43 +4328,150 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaAgreesWithPdf": true,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "byVariable": {
+          "forest-area": "sum",
+          "cropland-area": "sum",
+          "urban-area": "sum"
+        },
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-035",
+        "mapMode": "choropleth",
+        "renderer": "admin1-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "%"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "산림_비율_육지_대비",
+          "농경지_비율_육지_대비",
+          "도시_비율_육지_대비",
+          "산림_면적_km",
+          "농경지_면적_km",
+          "도시_면적_km",
+          "연도"
+        ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "B-037",
-          "role": "primary",
-          "form": "A",
-          "note": "토지이용 면적 국가값을 토지피복 레이어 옆 카드로"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 산림 비율(육지 대비)"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: %"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-036",
       "targetName": "토지이용 변화율",
       "pdfContent": "성별 기간별 토지이용 면적 변화율",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "full",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 63,
+          "valueRows": 1237
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -3995,34 +4496,126 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaAgreesWithPdf": true,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "range-only",
+        "note": "분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-036",
+        "mapMode": "choropleth",
+        "renderer": "admin1-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "%/년"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "산림_CAGR_yr",
+          "농경지_CAGR_yr",
+          "도시_CAGR_yr",
+          "습지_CAGR_yr",
+          "초지_관목_CAGR_yr",
+          "기간_시작_종료"
+        ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "B-037",
-          "role": "primary",
-          "form": "A",
-          "note": "토지이용 변화율 국가값을 토지피복 레이어 옆 카드로"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 산림 연평균 변화율"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: %/년"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-037",
@@ -4880,10 +5473,23 @@
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "geometry": "point",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-044",
+        "mapMode": "point",
+        "renderer": "point",
+        "coordinateMeaning": "verified-physical-site",
+        "spatialScopeType": "facility-site",
+        "aggregationLevel": "facility",
+        "unit": "source-provided location"
+      },
       "sourceColumns": {
         "region": null,
         "regionColumnKind": null,
@@ -4891,22 +5497,45 @@
         "regionCodeColumns": [],
         "regionJoinMethod": null,
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "광종_표준",
+          "광종_USGS_영문",
+          "값",
+          "단위",
+          "연도"
+        ]
       },
-      "popupFields": [],
+      "popupFields": [
+        {
+          "key": "name",
+          "label": "명칭",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "mineral",
+          "label": "광종",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
-        {
-          "elementId": "B-048",
-          "role": "primary",
-          "form": "C",
-          "note": "광종이 일치하는 광산 팝업에 부존 1줄, 일치하지 않는 광종은 패널 카드",
-          "matchOn": "광종"
-        }
-      ]
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-046",
@@ -4942,10 +5571,23 @@
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "geometry": "point",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-046",
+        "mapMode": "point",
+        "renderer": "point",
+        "coordinateMeaning": "verified-physical-site",
+        "spatialScopeType": "facility-site",
+        "aggregationLevel": "facility",
+        "unit": "source-provided location"
+      },
       "sourceColumns": {
         "region": null,
         "regionColumnKind": null,
@@ -4953,22 +5595,45 @@
         "regionCodeColumns": [],
         "regionJoinMethod": null,
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "광종_표준",
+          "광종_USGS_영문",
+          "값",
+          "단위",
+          "연도"
+        ]
       },
-      "popupFields": [],
+      "popupFields": [
+        {
+          "key": "name",
+          "label": "명칭",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "mineral",
+          "label": "광종",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
-        {
-          "elementId": "B-048",
-          "role": "primary",
-          "form": "C",
-          "note": "광종이 일치하는 광산 팝업에 매장량 1줄, 일치하지 않는 광종은 패널 카드",
-          "matchOn": "광종"
-        }
-      ]
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-047",
@@ -5004,10 +5669,23 @@
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "geometry": "point",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-b-047",
+        "mapMode": "point",
+        "renderer": "point",
+        "coordinateMeaning": "verified-physical-site",
+        "spatialScopeType": "facility-site",
+        "aggregationLevel": "facility",
+        "unit": "source-provided location"
+      },
       "sourceColumns": {
         "region": null,
         "regionColumnKind": null,
@@ -5015,22 +5693,45 @@
         "regionCodeColumns": [],
         "regionJoinMethod": null,
         "planText": [],
-        "legacyFields": []
+        "legacyFields": [
+          "광종_표준",
+          "광종_USGS_영문",
+          "값",
+          "단위",
+          "연도"
+        ]
       },
-      "popupFields": [],
+      "popupFields": [
+        {
+          "key": "name",
+          "label": "명칭",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "mineral",
+          "label": "광종",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
-        {
-          "elementId": "B-048",
-          "role": "primary",
-          "form": "C",
-          "note": "광종이 일치하는 광산 팝업에 생산량 1줄, 일치하지 않는 광종은 패널 카드",
-          "matchOn": "광종"
-        }
-      ]
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "B-048",
@@ -5146,10 +5847,19 @@
       "elementId": "C-003",
       "targetName": "국가적응계획 지역과제",
       "pdfContent": "권역별 적응조치·이행기간",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "partial",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 29,
+          "valueRows": 29
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -5175,49 +5885,141 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-c-003",
+        "mapMode": "choropleth",
+        "renderer": "partial-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "건"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "속성3_값",
-          "속성4_시점",
-          "속성1_레코드명",
-          "속성19_원문URL",
-          "provenance.sourceOrg"
+          "식별_레코드명",
+          "과제_세부과제_내용_원문",
+          "과제_주관기관_원문"
         ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "C-016",
-          "role": "primary",
-          "form": "A",
-          "note": "국가적응계획 지역과제를 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 권역 명시 적응 과제·취약성 항목"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: 건"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "일부 지역만 값이 있어 부분 표출",
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "C-006",
       "targetName": "JCM 사업",
       "pdfContent": "사업지역·기술·등록상태",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "partial",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 27,
+          "valueRows": 27
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -5243,40 +6045,122 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "membership-or",
+        "note": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-c-006",
+        "mapMode": "choropleth",
+        "renderer": "partial-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "건"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "속성3_값",
-          "속성4_시점",
-          "속성1_레코드명",
-          "속성19_원문URL",
-          "provenance.sourceOrg"
+          "사업_사업번호",
+          "사업_소재지"
         ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "data-pending",
-      "statusReason": "사업지역 세분화 전 — 성 단위 가능하면 등록",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "C-025",
-          "role": "primary",
-          "form": "A",
-          "note": "JCM 사업 현황을 크레딧 레이어 옆 카드로(사업지역 확인 시 승격)"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: JCM 등록 사업"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: 건"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "일부 지역만 값이 있어 부분 표출",
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "C-008",
@@ -5922,10 +6806,19 @@
       "elementId": "C-017",
       "targetName": "지역 발전가격·지원",
       "pdfContent": "권역별 가격상한·닌투언 특례",
-      "criteria": [],
+      "criteria": [
+        "①"
+      ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
-        "spatialLayer": null,
+        "spatialLayer": {
+          "joinKey": "adm1Code",
+          "boundarySystem": "pre-2025-63",
+          "coverageKind": "full",
+          "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+          "regionKeyCount": 63,
+          "valueRows": 316
+        },
         "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
@@ -5951,40 +6844,124 @@
         "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
-      "criteriaPrimary": null,
-      "geometry": null,
-      "geometrySource": "undetermined",
-      "boundaryPolicy": null,
-      "publishedLayer": null,
+      "criteriaPrimary": "①",
+      "geometry": "admin1-choropleth",
+      "geometrySource": "publicMapTargetsV138",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "publishedLayer": {
+        "layerId": "vnm-v138-c-017",
+        "mapMode": "choropleth",
+        "renderer": "admin1-choropleth",
+        "coordinateMeaning": "source-region-value",
+        "spatialScopeType": "admin1",
+        "aggregationLevel": "admin1",
+        "unit": "VND/kWh"
+      },
       "sourceColumns": {
-        "region": null,
+        "region": "adm1Code",
         "regionColumnKind": null,
         "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": null,
+        "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "속성3_값",
-          "속성4_시점",
-          "속성23_설명",
-          "속성19_원문URL",
-          "provenance.sourceOrg"
+          "지역_권역",
+          "요율_가격_상한",
+          "요율_가격_단위",
+          "기간_시행일_YYYY_MM_DD",
+          "식별_레코드명"
         ]
       },
-      "popupFields": [],
-      "regionPanelFields": [],
-      "caveats": [],
-      "status": "asset-missing",
-      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
-      "companionLayers": [
+      "popupFields": [
         {
-          "elementId": "C-016",
-          "role": "primary",
-          "form": "A",
-          "note": "지역 발전가격·지원을 지역계획 레이어 옆 카드로(지역 열 재납품 시 승격)"
+          "key": "adm1Name",
+          "label": "지역",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "layer-schema",
+          "source": "map-index"
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
         }
-      ]
+      ],
+      "regionPanelFields": [
+        {
+          "key": "adm1Code",
+          "label": "지역",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "variable",
+          "label": "지표",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "기본 선택: 2025년 발전가격 상한 · 부유식 태양광, 저장장치 없음"
+        },
+        {
+          "key": "value",
+          "label": "값",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "unit",
+          "label": "단위",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "계약 단위: VND/kWh"
+        },
+        {
+          "key": "period",
+          "label": "시점",
+          "labelSource": "contract",
+          "source": "map-index"
+        },
+        {
+          "key": "aggregation",
+          "label": "집계 방식",
+          "labelSource": "contract",
+          "source": "map-index",
+          "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다."
+        },
+        {
+          "key": "provenance.sourceOrg",
+          "label": "출처",
+          "labelSource": "contract",
+          "source": "provenance"
+        }
+      ],
+      "caveats": [
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
+      ],
+      "status": "registered",
+      "statusReason": null,
+      "companionLayers": []
     },
     {
       "elementId": "C-022",

@@ -1,10 +1,340 @@
 {
-  "activeMapLayerCount": 60,
+  "activeMapLayerCount": 72,
   "countryIso3": "VNM",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-01T00:00:00Z",
   "geometryManifest": "/data/vietnam/v2/geometry/geometry-manifest.json",
   "layers": [
+    {
+      "category": "기후·위험",
+      "detailElementId": "A-013",
+      "detailUrl": "/?element=a-013&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 365,
+      "elementId": "A-013",
+      "label": "NDC-SDG 지역조치",
+      "licenses": [
+        "CC-BY-NC-4.0"
+      ],
+      "publicShortTitle": "NDC-SDG 지역조치",
+      "rawLabel": "Climate Watch NDC-SDG linkage",
+      "source": "World Resources Institute — Climate Watch",
+      "sourceOrganizations": [
+        "World Resources Institute — Climate Watch"
+      ],
+      "sourceUrls": [
+        "https://www.climatewatchdata.org/ndcs-sdg"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "6대 사회경제 권역(원문이 권역명을 적은 연계)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "권역명이 없는 357건은 전국 단위로 상세 화면에서 제공.",
+        "evidence": "연계 365건 중 원문이 권역명을 적은 8건(홍강 삼각주 4 · 메콩강 삼각주 4)",
+        "representativeItem": "홍강 삼각주 관개시설 개보수"
+      },
+      "accuracyNotice": "NDC 조치 원문이 6대 사회경제 권역의 이름을 직접 적은 연계만 그 권역에 표시합니다. 값은 권역 전체에 해당하며 성·시별로 다르지 않습니다. 해안·산지 같은 일반 지역어는 권역에 연결하지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "A-013",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/a-013.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 24,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 24,
+        "missingCount": 39,
+        "requiredCount": 63
+      },
+      "latestYear": "2016년 기준",
+      "layerId": "vnm-v138-a-013",
+      "legend": {
+        "note": "단위 건 · 결측 39개 성·시(개편 전 63개 기준)",
+        "title": "권역 명시 NDC 조치 연계"
+      },
+      "mapBenefit": "권역별 NDC 조치 연계 건수 · 성 클릭 → 조치 원문·SDG 세부목표",
+      "mapMode": "choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Hòa Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Khánh Hòa",
+        "Lâm Đồng",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Bà Rịa–Vũng Tàu",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bình Dương",
+        "Bình Phước",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Điện Biên",
+        "Đắk Nông",
+        "Đà Nẵng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "6대 권역(결의 81/2023/QH15)의 구성 성·시 경계에 권역 값을 같은 색으로 표시합니다.",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2016년 기준",
+      "spatialCoverage": "개편 전 63개 성·시 중 최대 24개에 그룹 전체 값 표시(34개 경계: 구성 성·시가 같은 그룹이면 같은 값, 걸치면 복수 소속)",
+      "spatialLimitation": "권역명이 없는 357건은 전국 단위로 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2016년 기준",
+        "defaultVariable": "region-linked-actions",
+        "periods": [
+          "2016년 기준"
+        ],
+        "variables": [
+          {
+            "key": "region-linked-actions",
+            "measureId": "a013-region-linked",
+            "measureKey": "region-linked-actions",
+            "scenario": null,
+            "label": "권역 명시 NDC 조치 연계",
+            "unit": "건",
+            "periods": [
+              "2016년 기준"
+            ],
+            "maxFeatureCount": 24
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 8,
+      "unit": "건",
+      "memberRecordsInAsset": true,
+      "groupConstantV157_2": {
+        "groupTable": "six",
+        "basis": "6대 사회경제 권역(Nghị quyết 81/2023/QH15 Điều 3)"
+      }
+    },
+    {
+      "category": "에너지·인프라",
+      "detailElementId": "A-022",
+      "detailUrl": "/?element=a-022&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 54,
+      "elementId": "A-022",
+      "label": "전력공급 신뢰도",
+      "licenses": [
+        "기관 공시자료(EVN)"
+      ],
+      "publicShortTitle": "전력공급 신뢰도",
+      "rawLabel": "정전빈도[SAIDI, SAIFI]",
+      "source": "Vietnam Electricity (EVN)",
+      "sourceOrganizations": [
+        "Vietnam Electricity (EVN)"
+      ],
+      "sourceUrls": [
+        "https://en.evn.com.vn/c3/documents/Annual-Report-9-15.aspx"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "전력총공사 관할(EVN 5개 총공사)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "EVN 그룹 전체 연도별 추이는 상세 화면에서 제공. 북부전력총공사(EVNNPC)는 원문 값 미공개.",
+        "evidence": "관할별 관측값 4곳(EVNCPC·EVNSPC·EVNHANOI·EVNHCMC) · 관할표 63/63(총공사 공식 소속 단위 페이지)",
+        "representativeItem": "전력총공사 관할별 평균 정전시간(SAIDI)"
+      },
+      "accuracyNotice": "이 값은 전력총공사 관할 전체에 적용되는 값이며, 성·시별로 다르지 않습니다. 관할 값이 공개되지 않은 곳(북부전력총공사 등)은 비워 두며 0으로 채우지 않습니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "A-022",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/a-022.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 36,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 36,
+        "missingCount": 27,
+        "requiredCount": 63
+      },
+      "latestYear": "2026",
+      "layerId": "vnm-v138-a-022",
+      "legend": {
+        "note": "단위 분/고객 · 결측 27개 성·시(개편 전 63개 기준)",
+        "title": "평균 정전시간(SAIDI)"
+      },
+      "mapBenefit": "전력총공사 관할별 SAIDI·SAIFI·MAIFI",
+      "mapMode": "choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bắc Ninh",
+        "Hải Dương",
+        "Hà Nam",
+        "Hưng Yên",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Hải Phòng"
+      ],
+      "publicSpatialNotice": "전력총공사 관할 전체 값을 소속 성·시 경계에 같은 색으로 표시합니다. 34개 경계가 두 관할에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026",
+      "spatialCoverage": "개편 전 63개 성·시 중 최대 36개에 그룹 전체 값 표시(34개 경계: 구성 성·시가 같은 그룹이면 같은 값, 걸치면 복수 소속)",
+      "spatialLimitation": "EVN 그룹 전체 연도별 추이는 상세 화면에서 제공. 북부전력총공사(EVNNPC)는 원문 값 미공개.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "saidi",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "saidi",
+            "measureId": "a022-saidi",
+            "measureKey": "saidi",
+            "scenario": null,
+            "label": "평균 정전시간(SAIDI)",
+            "unit": "분/고객",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 36
+          },
+          {
+            "key": "saifi",
+            "measureId": "a022-saifi",
+            "measureKey": "saifi",
+            "scenario": null,
+            "label": "평균 정전횟수(SAIFI)",
+            "unit": "회/고객",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 23
+          },
+          {
+            "key": "maifi",
+            "measureId": "a022-maifi",
+            "measureKey": "maifi",
+            "scenario": null,
+            "label": "순간 정전횟수(MAIFI)",
+            "unit": "회/고객",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 20
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 9,
+      "unit": "분/고객",
+      "memberRecordsInAsset": true,
+      "groupConstantV157_2": {
+        "groupTable": "evn",
+        "basis": "EVN 5개 전력총공사 관할(2025-07-01 이후, 총공사별 공식 소속 단위 페이지)"
+      }
+    },
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
       "active": true,
@@ -1074,6 +1404,171 @@
         "evidence": "자산 피처 1558개 · Point·Polygon·MultiPolygon",
         "limitation": "OSM 태그 기준 수록이라 항만은 전수가 아니며, 이름 없는 댐이 많습니다."
       }
+    },
+    {
+      "category": "기후·위험",
+      "detailElementId": "B-002",
+      "detailUrl": "/?element=b-002&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 1491,
+      "elementId": "B-002",
+      "label": "기후대",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "publicShortTitle": "기후대",
+      "rawLabel": "기후대(Climate zone)",
+      "source": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
+      "sourceOrganizations": [
+        "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)"
+      ],
+      "sourceUrls": [
+        "https://www.gloh2o.org/koppen/"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) · 개편 후 34개 성·시 원자료 값",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "2071–2099는 시나리오 전망값. 성·시의 최다 기후대는 면적 기준이며 성 전체가 그 기후대라는 뜻은 아님.",
+        "evidence": "성·시 63개 × 4기간 + 개편 후 34개 × 4기간(Beck et al. 2023, 1 km 격자 집계)",
+        "representativeItem": "성·시별 최다 기후대(1991–2020)"
+      },
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "B-002",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-002.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2071-2099 SSP5-8.5",
+      "layerId": "vnm-v138-b-002",
+      "legend": {
+        "note": "단위 % · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "최다 기후대 점유율"
+      },
+      "mapBenefit": "성·시별 최다 기후대(분류)·기후대군 면적 비율, 기간(1901–1930 · 1991–2020 · 2071–2099 SSP2-4.5·SSP5-8.5)",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "renderer": "admin1-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2071-2099 SSP5-8.5",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
+      "spatialLimitation": "2071–2099는 시나리오 전망값. 성·시의 최다 기후대는 면적 기준이며 성 전체가 그 기후대라는 뜻은 아님.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2071-2099 SSP5-8.5",
+        "defaultVariable": "dominant-zone-share",
+        "periods": [
+          "1901-1930",
+          "1991-2020",
+          "2071-2099 SSP2-4.5",
+          "2071-2099 SSP5-8.5"
+        ],
+        "variables": [
+          {
+            "key": "dominant-zone-share",
+            "measureId": "b002-dominant-share",
+            "measureKey": "dominant-zone-share",
+            "scenario": null,
+            "label": "최다 기후대 점유율",
+            "unit": "%",
+            "periods": [
+              "1901-1930",
+              "1991-2020",
+              "2071-2099 SSP2-4.5",
+              "2071-2099 SSP5-8.5"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "tropical-share",
+            "measureId": "b002-tropical-share",
+            "measureKey": "tropical-share",
+            "scenario": null,
+            "label": "열대(A군) 면적 비율",
+            "unit": "%",
+            "periods": [
+              "1901-1930",
+              "1991-2020",
+              "2071-2099 SSP2-4.5",
+              "2071-2099 SSP5-8.5"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "temperate-share",
+            "measureId": "b002-temperate-share",
+            "measureKey": "temperate-share",
+            "scenario": null,
+            "label": "온대(C군) 면적 비율",
+            "unit": "%",
+            "periods": [
+              "1901-1930",
+              "1991-2020",
+              "2071-2099 SSP2-4.5",
+              "2071-2099 SSP5-8.5"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "arid-share",
+            "measureId": "b002-arid-share",
+            "measureKey": "arid-share",
+            "scenario": null,
+            "label": "건조(B군) 면적 비율",
+            "unit": "%",
+            "periods": [
+              "1901-1930",
+              "1991-2020",
+              "2071-2099 SSP2-4.5",
+              "2071-2099 SSP5-8.5"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 252,
+      "unit": "%"
     },
     {
       "category": "기후·위험",
@@ -6804,6 +7299,123 @@
     },
     {
       "category": "물·자원",
+      "detailElementId": "B-024",
+      "detailUrl": "/?element=b-024&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 165,
+      "elementId": "B-024",
+      "label": "농업용수 대리지표",
+      "licenses": [
+        "CC-BY-4.0",
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "농업용수 대리지표",
+      "rawLabel": "농업 용수 비중",
+      "source": "FAO AQUASTAT · 베트남 통계청(GSO) 관개면적·수확면적 통계",
+      "sourceOrganizations": [
+        "FAO AQUASTAT",
+        "베트남 통계청(GSO) 관개면적·수확면적 통계"
+      ],
+      "sourceUrls": [
+        "https://data.apps.fao.org/aquastat/?lang=en&country=VNM",
+        "https://www.nso.gov.vn/en/statistical-data/"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) · 개편 후 34개 성·시 원자료 값",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "원자료에 농업용수 비중의 성별 값이 없어 벼 재배면적(대리지표)으로 대신 표시. 국가 농업용수 비중 추이는 상세 화면에서 제공.",
+        "evidence": "베트남 통계청(NSO) 성별 벼 재배면적 63개 + 개편 후 34개 · 배분 추정 97행 제외",
+        "representativeItem": "성·시별 벼 재배면적"
+      },
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "sum",
+        "note": "34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "B-024",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-024.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2024",
+      "layerId": "vnm-v138-b-024",
+      "legend": {
+        "note": "단위 ha · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "벼 재배면적(농업용수 대리지표)"
+      },
+      "mapBenefit": "성·시별 벼 재배면적(농업용수 비중의 대리지표)",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 합계이며 일부 결측이면 부분 결측으로 표시합니다.",
+      "renderer": "admin1-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2024",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
+      "spatialLimitation": "원자료에 농업용수 비중의 성별 값이 없어 벼 재배면적(대리지표)으로 대신 표시. 국가 농업용수 비중 추이는 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2024",
+        "defaultVariable": "paddy-area",
+        "periods": [
+          "2024"
+        ],
+        "variables": [
+          {
+            "key": "paddy-area",
+            "measureId": "b024-paddy-area",
+            "measureKey": "paddy-area",
+            "scenario": null,
+            "label": "벼 재배면적(농업용수 대리지표)",
+            "unit": "ha",
+            "periods": [
+              "2024"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 63,
+      "unit": "ha"
+    },
+    {
+      "category": "물·자원",
       "detailElementId": "B-025",
       "detailUrl": "/?element=b-025&country=VNM#element-detail",
       "downloadStatus": "available",
@@ -8181,6 +8793,419 @@
     },
     {
       "category": "산림·토지",
+      "detailElementId": "B-035",
+      "detailUrl": "/?element=b-035&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 3999,
+      "elementId": "B-035",
+      "label": "토지이용 면적",
+      "licenses": [
+        "CC-BY-4.0",
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "토지이용 면적",
+      "rawLabel": "LULUCF 관련 면적 변화",
+      "source": "FAO FAOSTAT Land Use (RL) · FAOSTAT Land Use (RL)",
+      "sourceOrganizations": [
+        "FAO FAOSTAT Land Use (RL)",
+        "FAOSTAT Land Use (RL)"
+      ],
+      "sourceUrls": [
+        "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) · 개편 후 34개 성·시 원자료 값",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "지도는 5년 간격 연도만 제공. 국가 토지이용(FAO) 추이는 상세 화면에서 제공.",
+        "evidence": "성·시 63개 × 31개 연도 + 개편 후 34개 × 31개 연도(ESA CCI / C3S Land Cover 300 m 격자 집계)",
+        "representativeItem": "성·시별 산림 비율(2022)"
+      },
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "area-weighted-mean",
+        "byVariable": {
+          "forest-area": "sum",
+          "cropland-area": "sum",
+          "urban-area": "sum"
+        },
+        "note": "34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "B-035",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-035.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2022",
+      "layerId": "vnm-v138-b-035",
+      "legend": {
+        "note": "단위 % · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "산림 비율(육지 대비)"
+      },
+      "mapBenefit": "성·시별 토지피복(산림·농경지·도시) 비율·면적, 연도(1992~2022, 5년 간격 + 최신)",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 34개 성·시 값은 구성 성·시 값의 면적가중평균이며 팝업에 구성 범위를 함께 표시합니다.",
+      "renderer": "admin1-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2022",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 성·시 집계값)",
+      "spatialLimitation": "지도는 5년 간격 연도만 제공. 국가 토지이용(FAO) 추이는 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2022",
+        "defaultVariable": "forest-share",
+        "periods": [
+          "1992",
+          "1995",
+          "2000",
+          "2005",
+          "2010",
+          "2015",
+          "2020",
+          "2022"
+        ],
+        "variables": [
+          {
+            "key": "forest-share",
+            "measureId": "b035-forest-share",
+            "measureKey": "forest-share",
+            "scenario": null,
+            "label": "산림 비율(육지 대비)",
+            "unit": "%",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cropland-share",
+            "measureId": "b035-cropland-share",
+            "measureKey": "cropland-share",
+            "scenario": null,
+            "label": "농경지 비율(육지 대비)",
+            "unit": "%",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "urban-share",
+            "measureId": "b035-urban-share",
+            "measureKey": "urban-share",
+            "scenario": null,
+            "label": "도시 비율(육지 대비)",
+            "unit": "%",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "forest-area",
+            "measureId": "b035-forest-area",
+            "measureKey": "forest-area",
+            "scenario": null,
+            "label": "산림 면적",
+            "unit": "km²",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cropland-area",
+            "measureId": "b035-cropland-area",
+            "measureKey": "cropland-area",
+            "scenario": null,
+            "label": "농경지 면적",
+            "unit": "km²",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "urban-area",
+            "measureId": "b035-urban-area",
+            "measureKey": "urban-area",
+            "scenario": null,
+            "label": "도시 면적",
+            "unit": "km²",
+            "periods": [
+              "1992",
+              "1995",
+              "2000",
+              "2005",
+              "2010",
+              "2015",
+              "2020",
+              "2022"
+            ],
+            "maxFeatureCount": 63
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 1953,
+      "unit": "%"
+    },
+    {
+      "category": "산림·토지",
+      "detailElementId": "B-036",
+      "detailUrl": "/?element=b-036&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 440,
+      "elementId": "B-036",
+      "label": "토지이용 변화율",
+      "licenses": [
+        "CC-BY-4.0"
+      ],
+      "publicShortTitle": "토지이용 변화율",
+      "rawLabel": "토지이용 변화율",
+      "source": "FAO FAOSTAT Land Cover (LC), CCI_LC · FAO FAOSTAT Land Cover (LC), MODIS · FAO FAOSTAT Land Use (RL)",
+      "sourceOrganizations": [
+        "FAO FAOSTAT Land Cover (LC), CCI_LC",
+        "FAO FAOSTAT Land Cover (LC), MODIS",
+        "FAO FAOSTAT Land Use (RL)"
+      ],
+      "sourceUrls": [
+        "https://bulks-faostat.fao.org/production/Environment_LandCover_E_All_Data_(Normalized).zip",
+        "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시) · 개편 후 34개 성·시 원자료 값",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "변화율은 합하거나 평균할 수 없어, 34개 경계에서는 원자료가 밝힌 34개 값을 쓰고 없으면 구성 성·시의 범위만 표시.",
+        "evidence": "성·시 63개 × 4기간 + 개편 후 34개 × 4기간(원자료 제공기관이 토지피복 면적에서 산출)",
+        "representativeItem": "성·시별 산림 연평균 변화율(1992–2022)"
+      },
+      "accuracyNotice": "누락값은 투명 처리하며 0으로 대체하지 않습니다. 값은 원자료의 개편 전 63개 성·시 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "range-only",
+        "note": "분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "B-036",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/b-036.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2015-2022",
+      "layerId": "vnm-v138-b-036",
+      "legend": {
+        "note": "단위 %/년 · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "산림 연평균 변화율"
+      },
+      "mapBenefit": "성·시별 토지피복 유형 연평균 변화율, 기간 선택",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "값은 개편 전 63개 성·시 통계 경계 기준이며, 34개 경계에서는 분위·순위형 지표는 34개 단일값을 만들지 않으며 구성 범위만 표시합니다.",
+      "renderer": "admin1-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2015-2022",
+      "spatialCoverage": "개편 전 63개 성·시 중 선택 계열 최대 63개(34개 경계에서는 구성 범위만 표시)",
+      "spatialLimitation": "변화율은 합하거나 평균할 수 없어, 34개 경계에서는 원자료가 밝힌 34개 값을 쓰고 없으면 구성 성·시의 범위만 표시.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2015-2022",
+        "defaultVariable": "forest-cagr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "variables": [
+          {
+            "key": "forest-cagr",
+            "measureId": "b036-forest-cagr",
+            "measureKey": "forest-cagr",
+            "scenario": null,
+            "label": "산림 연평균 변화율",
+            "unit": "%/년",
+            "periods": [
+              "1992-2022",
+              "2000-2022",
+              "2010-2022",
+              "2015-2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cropland-cagr",
+            "measureId": "b036-cropland-cagr",
+            "measureKey": "cropland-cagr",
+            "scenario": null,
+            "label": "농경지 연평균 변화율",
+            "unit": "%/년",
+            "periods": [
+              "1992-2022",
+              "2000-2022",
+              "2010-2022",
+              "2015-2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "urban-cagr",
+            "measureId": "b036-urban-cagr",
+            "measureKey": "urban-cagr",
+            "scenario": null,
+            "label": "도시 연평균 변화율",
+            "unit": "%/년",
+            "periods": [
+              "1992-2022",
+              "2000-2022",
+              "2010-2022",
+              "2015-2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "grassland-cagr",
+            "measureId": "b036-grassland-cagr",
+            "measureKey": "grassland-cagr",
+            "scenario": null,
+            "label": "초지·관목 연평균 변화율",
+            "unit": "%/년",
+            "periods": [
+              "1992-2022",
+              "2000-2022",
+              "2010-2022",
+              "2015-2022"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "wetland-cagr",
+            "measureId": "b036-wetland-cagr",
+            "measureKey": "wetland-cagr",
+            "scenario": null,
+            "label": "습지 연평균 변화율",
+            "unit": "%/년",
+            "periods": [
+              "1992-2022",
+              "2000-2022",
+              "2010-2022",
+              "2015-2022"
+            ],
+            "maxFeatureCount": 58
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 252,
+      "unit": "%/년"
+    },
+    {
+      "category": "산림·토지",
       "detailElementId": "B-037",
       "detailUrl": "/?element=b-037&country=VNM#element-detail",
       "downloadStatus": "available",
@@ -9038,6 +10063,779 @@
       "unit": "m/s"
     },
     {
+      "category": "물·자원",
+      "detailElementId": "B-044",
+      "detailUrl": "/?element=b-044&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 23,
+      "elementId": "B-044",
+      "label": "핵심광물 부존",
+      "licenses": [
+        "Public Domain (U.S. Government Work)",
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "핵심광물 부존",
+      "rawLabel": "광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석]",
+      "source": "USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026; USGS Minerals Yearbook Vietnam 2022 · 연구진 설정(발주처 협의 예정) · 현지조사(예정)",
+      "sourceOrganizations": [
+        "USGS Mineral Commodity Summaries 2026",
+        "USGS Mineral Commodity Summaries 2026; USGS Minerals Yearbook Vietnam 2022",
+        "연구진 설정(발주처 협의 예정)",
+        "현지조사(예정)"
+      ],
+      "sourceUrls": [
+        "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+        "—"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "국가 단위 값 · 주요 광산 지점에 광종으로 연결",
+        "displaySpatialUnit": "광산 점(주요 광산 중 광종 일치)",
+        "limitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+        "evidence": "USGS 상품명 기준 광종 대응표로 주요 광산과 연결",
+        "representativeItem": "광종별 부존 상태(국가 전체)"
+      },
+      "accuracyNotice": "광산 지점은 '주요 광산' 자료의 좌표이며, 표시된 값은 광종별 국가 전체 값입니다. 개별 광산의 값으로 나누지 않습니다.",
+      "active": true,
+      "aggregationLevel": "facility",
+      "assetRef": {
+        "elementId": "B-048",
+        "provider": "vietnam-v121",
+        "section": "entities"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "cluster": false,
+      "coordinateMeaning": "verified-physical-site",
+      "displayedCoordinateCount": 12,
+      "enabled": true,
+      "entityJoinV157_2": {
+        "hostElementId": "B-048",
+        "elementId": "B-044",
+        "attributes": [
+          {
+            "elementId": "B-044",
+            "mineral": "구리",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록(생산 기준) · 생산 30,000~35,000 t Cu cathode/yr",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS · 현지조사자료(Field Survey Items_vIDGcmt_260408_vF)",
+            "oreTypes": [
+              "구리"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "니켈",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록 · 매장량 130,000 t(2024)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS · 현지조사자료(Field Survey Items_vIDGcmt_260408_vF)",
+            "oreTypes": [
+              "니켈"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "코발트",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록 · 매장량 10,000 t(2024)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS · 현지조사자료(Field Survey Items_vIDGcmt_260408_vF)",
+            "oreTypes": [
+              "코발트"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "주석",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 23,000 t (Sn 함량)(2026) · 생산량 11,000 t (Sn 함량)(2025)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS",
+            "oreTypes": [
+              "주석"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "텅스텐",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 170,000 t (W 함량)(2026) · 생산량 3,000 t (W 함량)(2025)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS",
+            "oreTypes": [
+              "텅스텐"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "안티모니",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 54,000 t (Sb 함량)(2026) · 생산량 220 t (Sb 함량)(2025)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS",
+            "oreTypes": [
+              "안티모니"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "희토류",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록 · 매장량 3,500,000 t REO(2026) · 생산량 150 t REO(2025)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS",
+            "oreTypes": [
+              "희토류"
+            ]
+          },
+          {
+            "elementId": "B-044",
+            "mineral": "형석",
+            "label": "부존",
+            "valueText": "부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 16,000 천 t(2026) · 생산량 160 천 t(2025)",
+            "period": "",
+            "source": "USGS Mineral Commodity Summaries 2026 · USGS MRDS",
+            "oreTypes": [
+              "형석"
+            ]
+          }
+        ]
+      },
+      "featureCount": 12,
+      "factFields": [
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "sources": [
+            "국가_전체_값"
+          ],
+          "recordCount": 12,
+          "filledRecordCount": 12
+        },
+        {
+          "filledRecordCount": 37,
+          "filterable": true,
+          "key": "mineral",
+          "label": "광종",
+          "recordCount": 12,
+          "sources": [
+            "광종"
+          ]
+        }
+      ],
+      "fieldLabels": {
+        "nationalValue": "국가 전체 값",
+        "mineral": "광종"
+      },
+      "filters": [
+        {
+          "field": "광종",
+          "label": "광종",
+          "values": [
+            "구리",
+            "구리 / 니켈 / 코발트",
+            "구리 / 아연",
+            "금 / 구리",
+            "니켈",
+            "아연 / 구리 / 납 / 안티모니 / 비소",
+            "안티모니",
+            "주석 / 텅스텐",
+            "주석 / 텅스텐 / 납 / 몰리브덴 / 형석",
+            "텅스텐",
+            "텅스텐 / 주석 / 납 / 몰리브덴"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "join": {
+        "failures": [],
+        "matchedCount": 12,
+        "requiredCount": 12
+      },
+      "latestYear": 2022,
+      "layerId": "vnm-v138-b-044",
+      "legend": {
+        "title": "핵심광물 부존",
+        "note": "광산 지점 · 값은 국가 전체"
+      },
+      "mapBenefit": "광종별 부존 상태(국가 전체) · 광산 클릭 → 광종·국가 전체 값",
+      "mapMode": "point",
+      "missingRegions": [],
+      "publicSpatialNotice": "광산 점(주요 광산 중 광종 일치)",
+      "renderer": "point",
+      "selectors": {
+        "defaultPeriod": "2022",
+        "defaultVariable": "locations",
+        "periods": [
+          "2022"
+        ],
+        "variables": [
+          {
+            "key": "locations",
+            "label": "핵심광물 광산",
+            "periods": [
+              "2022"
+            ],
+            "unit": "곳"
+          }
+        ]
+      },
+      "sourceCoordinateCount": 12,
+      "sourceYear": 2022,
+      "spatialCoverage": "광종이 일치하는 광산 12곳",
+      "spatialLimitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+      "spatialScopeType": "facility-site",
+      "tooltipFields": [
+        "name",
+        "nationalValue",
+        "mineral"
+      ],
+      "totalEntityCount": 14,
+      "unit": "source-provided location",
+      "countNoun": "곳",
+      "analysisItemLabel": "핵심광물 광산",
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
+      "locationCounts": {
+        "located": 35,
+        "outside": 2,
+        "withoutCoordinate": 4
+      }
+    },
+    {
+      "category": "물·자원",
+      "detailElementId": "B-046",
+      "detailUrl": "/?element=b-046&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 64,
+      "elementId": "B-046",
+      "label": "광물 매장량",
+      "licenses": [
+        "Public Domain (U.S. Government Work)",
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "광물 매장량",
+      "rawLabel": "매장량[확인, 추정]",
+      "source": "USGS Mineral Commodity Summaries 2026",
+      "sourceOrganizations": [
+        "USGS Mineral Commodity Summaries 2026"
+      ],
+      "sourceUrls": [
+        "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "국가 단위 값 · 주요 광산 지점에 광종으로 연결",
+        "displaySpatialUnit": "광산 점(주요 광산 중 광종 일치)",
+        "limitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+        "evidence": "USGS 상품명 기준 광종 대응표로 주요 광산과 연결",
+        "representativeItem": "광종별 매장량(국가 전체)"
+      },
+      "accuracyNotice": "광산 지점은 '주요 광산' 자료의 좌표이며, 표시된 값은 광종별 국가 전체 값입니다. 개별 광산의 값으로 나누지 않습니다.",
+      "active": true,
+      "aggregationLevel": "facility",
+      "assetRef": {
+        "elementId": "B-048",
+        "provider": "vietnam-v121",
+        "section": "entities"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "cluster": false,
+      "coordinateMeaning": "verified-physical-site",
+      "displayedCoordinateCount": 16,
+      "enabled": true,
+      "entityJoinV157_2": {
+        "hostElementId": "B-048",
+        "elementId": "B-046",
+        "attributes": [
+          {
+            "elementId": "B-046",
+            "mineral": "인광석",
+            "label": "매장량",
+            "valueText": "30,000 천 t (아파타이트)",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2020",
+            "oreTypes": [
+              "인산염(인)"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "보크사이트",
+            "label": "매장량",
+            "valueText": "3,100,000 천 t (건조 기준)",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2025",
+            "oreTypes": [
+              "알루미늄(보크사이트)",
+              "보크사이트/알루미나"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "니켈",
+            "label": "매장량",
+            "valueText": "130,000 t / 450,000 t",
+            "period": "2024",
+            "source": "Blackstone Minerals(2024) Ta Khoa DFS/PFS; GSV(2023) Mineral Resource Inventory",
+            "oreTypes": [
+              "니켈"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "코발트",
+            "label": "매장량",
+            "valueText": "10,000 t / 25,000 t",
+            "period": "2024",
+            "source": "GSV(2023) Mineral Resource Inventory; Blackstone Minerals(2024) Ta Khoa PFS Report",
+            "oreTypes": [
+              "코발트"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "주석",
+            "label": "매장량",
+            "valueText": "23,000 t (Sn 함량)",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2020",
+            "oreTypes": [
+              "주석"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "텅스텐",
+            "label": "매장량",
+            "valueText": "170,000 t (W 함량)",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2022",
+            "oreTypes": [
+              "텅스텐"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "안티모니",
+            "label": "매장량",
+            "valueText": "54,000 t (Sb 함량)",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2025",
+            "oreTypes": [
+              "안티모니"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "희토류",
+            "label": "매장량",
+            "valueText": "3,500,000 t REO",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2020",
+            "oreTypes": [
+              "희토류"
+            ]
+          },
+          {
+            "elementId": "B-046",
+            "mineral": "형석",
+            "label": "매장량",
+            "valueText": "16,000 천 t",
+            "period": "2026",
+            "source": "USGS Mineral Commodity Summaries 2025",
+            "oreTypes": [
+              "형석"
+            ]
+          }
+        ]
+      },
+      "featureCount": 16,
+      "factFields": [
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "sources": [
+            "국가_전체_값"
+          ],
+          "recordCount": 16,
+          "filledRecordCount": 16
+        },
+        {
+          "filledRecordCount": 37,
+          "filterable": true,
+          "key": "mineral",
+          "label": "광종",
+          "recordCount": 16,
+          "sources": [
+            "광종"
+          ]
+        }
+      ],
+      "fieldLabels": {
+        "nationalValue": "국가 전체 값",
+        "mineral": "광종"
+      },
+      "filters": [
+        {
+          "field": "광종",
+          "label": "광종",
+          "values": [
+            "구리 / 니켈 / 코발트",
+            "니켈",
+            "보크사이트/알루미나",
+            "아연 / 구리 / 납 / 안티모니 / 비소",
+            "안티모니",
+            "알루미늄(보크사이트)",
+            "인산염(인)",
+            "주석 / 텅스텐",
+            "주석 / 텅스텐 / 납 / 몰리브덴 / 형석",
+            "텅스텐",
+            "텅스텐 / 주석 / 납 / 몰리브덴"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "join": {
+        "failures": [],
+        "matchedCount": 16,
+        "requiredCount": 16
+      },
+      "latestYear": 2022,
+      "layerId": "vnm-v138-b-046",
+      "legend": {
+        "title": "광물 매장량",
+        "note": "광산 지점 · 값은 국가 전체"
+      },
+      "mapBenefit": "광종별 매장량(국가 전체) · 광산 클릭 → 광종·국가 전체 값",
+      "mapMode": "point",
+      "missingRegions": [],
+      "publicSpatialNotice": "광산 점(주요 광산 중 광종 일치)",
+      "renderer": "point",
+      "selectors": {
+        "defaultPeriod": "2022",
+        "defaultVariable": "locations",
+        "periods": [
+          "2022"
+        ],
+        "variables": [
+          {
+            "key": "locations",
+            "label": "매장 광물 광산",
+            "periods": [
+              "2022"
+            ],
+            "unit": "곳"
+          }
+        ]
+      },
+      "sourceCoordinateCount": 16,
+      "sourceYear": 2022,
+      "spatialCoverage": "광종이 일치하는 광산 16곳",
+      "spatialLimitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+      "spatialScopeType": "facility-site",
+      "tooltipFields": [
+        "name",
+        "nationalValue",
+        "mineral"
+      ],
+      "totalEntityCount": 19,
+      "unit": "source-provided location",
+      "countNoun": "곳",
+      "analysisItemLabel": "매장 광물 광산",
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
+      "locationCounts": {
+        "located": 35,
+        "outside": 2,
+        "withoutCoordinate": 4
+      }
+    },
+    {
+      "category": "물·자원",
+      "detailElementId": "B-047",
+      "detailUrl": "/?element=b-047&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 81,
+      "elementId": "B-047",
+      "label": "광물 생산량",
+      "licenses": [
+        "Public Domain (U.S. Government Work)",
+        "기관 이용약관"
+      ],
+      "publicShortTitle": "광물 생산량",
+      "rawLabel": "연간 생산량",
+      "source": "USGS Mineral Commodity Summaries 2026 · USGS Mineral Commodity Summaries 2026 / 언론·산업 보고",
+      "sourceOrganizations": [
+        "USGS Mineral Commodity Summaries 2026",
+        "USGS Mineral Commodity Summaries 2026 / 언론·산업 보고"
+      ],
+      "sourceUrls": [
+        "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "국가 단위 값 · 주요 광산 지점에 광종으로 연결",
+        "displaySpatialUnit": "광산 점(주요 광산 중 광종 일치)",
+        "limitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+        "evidence": "USGS 상품명 기준 광종 대응표로 주요 광산과 연결",
+        "representativeItem": "광종별 광산 생산량(국가 전체)"
+      },
+      "accuracyNotice": "광산 지점은 '주요 광산' 자료의 좌표이며, 표시된 값은 광종별 국가 전체 값입니다. 개별 광산의 값으로 나누지 않습니다.",
+      "active": true,
+      "aggregationLevel": "facility",
+      "assetRef": {
+        "elementId": "B-048",
+        "provider": "vietnam-v121",
+        "section": "entities"
+      },
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "none",
+        "note": "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "cluster": false,
+      "coordinateMeaning": "verified-physical-site",
+      "displayedCoordinateCount": 18,
+      "enabled": true,
+      "entityJoinV157_2": {
+        "hostElementId": "B-048",
+        "elementId": "B-047",
+        "attributes": [
+          {
+            "elementId": "B-047",
+            "mineral": "구리",
+            "label": "광산 생산량",
+            "valueText": "30,000 t / 35,000 t",
+            "period": "2023",
+            "source": "Vietnam National Coal-Mineral Industries Holding Corporation(TKV)(2024) Annual Report",
+            "oreTypes": [
+              "구리"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "인광석",
+            "label": "광산 생산량",
+            "valueText": "3,000 천 t (아파타이트)",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2024",
+            "oreTypes": [
+              "인산염(인)"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "보크사이트",
+            "label": "광산 생산량",
+            "valueText": "3,800 천 t (건조)",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2022",
+            "oreTypes": [
+              "알루미늄(보크사이트)",
+              "보크사이트/알루미나"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "주석",
+            "label": "광산 생산량",
+            "valueText": "11,000 t (Sn 함량)",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "oreTypes": [
+              "주석"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "텅스텐",
+            "label": "광산 생산량",
+            "valueText": "3,000 t (W 함량)",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "oreTypes": [
+              "텅스텐"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "안티모니",
+            "label": "광산 생산량",
+            "valueText": "220 t (Sb 함량)",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2026",
+            "oreTypes": [
+              "안티모니"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "희토류",
+            "label": "광산 생산량",
+            "valueText": "150 t REO",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2024",
+            "oreTypes": [
+              "희토류"
+            ]
+          },
+          {
+            "elementId": "B-047",
+            "mineral": "형석",
+            "label": "광산 생산량",
+            "valueText": "160 천 t",
+            "period": "2025",
+            "source": "USGS Mineral Commodity Summaries 2025",
+            "oreTypes": [
+              "형석"
+            ]
+          }
+        ]
+      },
+      "featureCount": 18,
+      "factFields": [
+        {
+          "key": "nationalValue",
+          "label": "국가 전체 값",
+          "sources": [
+            "국가_전체_값"
+          ],
+          "recordCount": 18,
+          "filledRecordCount": 18
+        },
+        {
+          "filledRecordCount": 37,
+          "filterable": true,
+          "key": "mineral",
+          "label": "광종",
+          "recordCount": 18,
+          "sources": [
+            "광종"
+          ]
+        }
+      ],
+      "fieldLabels": {
+        "nationalValue": "국가 전체 값",
+        "mineral": "광종"
+      },
+      "filters": [
+        {
+          "field": "광종",
+          "label": "광종",
+          "values": [
+            "구리",
+            "구리 / 니켈 / 코발트",
+            "구리 / 아연",
+            "금 / 구리",
+            "보크사이트/알루미나",
+            "아연 / 구리 / 납 / 안티모니 / 비소",
+            "안티모니",
+            "알루미늄(보크사이트)",
+            "인산염(인)",
+            "주석 / 텅스텐",
+            "주석 / 텅스텐 / 납 / 몰리브덴 / 형석",
+            "텅스텐",
+            "텅스텐 / 주석 / 납 / 몰리브덴"
+          ]
+        }
+      ],
+      "geometryTypes": [
+        "point"
+      ],
+      "join": {
+        "failures": [],
+        "matchedCount": 18,
+        "requiredCount": 18
+      },
+      "latestYear": 2022,
+      "layerId": "vnm-v138-b-047",
+      "legend": {
+        "title": "광물 생산량",
+        "note": "광산 지점 · 값은 국가 전체"
+      },
+      "mapBenefit": "광종별 광산 생산량(국가 전체) · 광산 클릭 → 광종·국가 전체 값",
+      "mapMode": "point",
+      "missingRegions": [],
+      "publicSpatialNotice": "광산 점(주요 광산 중 광종 일치)",
+      "renderer": "point",
+      "selectors": {
+        "defaultPeriod": "2022",
+        "defaultVariable": "locations",
+        "periods": [
+          "2022"
+        ],
+        "variables": [
+          {
+            "key": "locations",
+            "label": "생산 광물 광산",
+            "periods": [
+              "2022"
+            ],
+            "unit": "곳"
+          }
+        ]
+      },
+      "sourceCoordinateCount": 18,
+      "sourceYear": 2022,
+      "spatialCoverage": "광종이 일치하는 광산 18곳",
+      "spatialLimitation": "값은 광종별 국가 전체 값이며 개별 광산의 값이 아님. 광산이 없는 광종은 상세 화면에서 제공.",
+      "spatialScopeType": "facility-site",
+      "tooltipFields": [
+        "name",
+        "nationalValue",
+        "mineral"
+      ],
+      "totalEntityCount": 21,
+      "unit": "source-provided location",
+      "countNoun": "곳",
+      "analysisItemLabel": "생산 광물 광산",
+      "locationsUrl": "/data/vietnam/v2/spatial/locations/b-048.json",
+      "locationCounts": {
+        "located": 35,
+        "outside": 2,
+        "withoutCoordinate": 4
+      }
+    },
+    {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
       "active": true,
       "aggregationLevel": "facility",
@@ -9224,6 +11022,342 @@
         "limitation": "지도는 좌표가 검증된 2곳만 표시. 나머지 6곳은 상세 목록에서 광종·지역 제공.",
         "evidence": "좌표 검증 2곳(전체 목록 8곳)",
         "representativeItem": "Bản Phúc 니켈 광산"
+      }
+    },
+    {
+      "category": "정책·사업여건",
+      "detailElementId": "C-003",
+      "detailUrl": "/?element=c-003&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 272,
+      "elementId": "C-003",
+      "label": "국가적응계획 지역과제",
+      "licenses": [
+        "UNFCCC 문서 이용약관",
+        "국제기구 공개 발간물 — 출처 표기 조건",
+        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호"
+      ],
+      "publicShortTitle": "국가적응계획 지역과제",
+      "rawLabel": "NAP[제출년도, 문서 링크, 부문별 취약성 평가, 적응 우선 분야, 적응 우선 조치 목록(단기/중기/장기), 부문별 적응 투자 소요, 적응 거버넌스 체계, M&E 지표 체계, 이해관계자·젠더 분석, 원본 링크]",
+      "source": "UNFCCC NAP Central / 베트남 농업환경부(MAE)",
+      "sourceOrganizations": [
+        "UNFCCC NAP Central / 베트남 농업환경부(MAE)"
+      ],
+      "sourceUrls": [
+        "https://en.mae.gov.vn/Pages/chi-tiet-tin-Eng.aspx?ItemID=9015",
+        "https://napcentral.org/submitted-naps",
+        "https://unfccc.int/sites/default/files/resource/NAP-progress-publication-2023.pdf",
+        "https://unfccc.int/sites/default/files/resource/NAP_Vietnam_2025_EN.pdf",
+        "https://unfccc.int/sites/default/files/resource/NAP_Vietnam_2025_VN.pdf",
+        "https://unfccc.int/sites/default/files/resource/NAP_progress_report_2025.pdf",
+        "https://unfccc.int/sites/default/files/resource/Viet%20Nam_NAP_2025.pdf",
+        "https://vanban.chinhphu.vn/?docid=211752&pageid=27160",
+        "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=200561",
+        "https://www.undp.org/sites/g/files/zskgke326/files/2024-11/nap_report_eng_small.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "6대 사회경제 권역(원문이 권역명을 적은 항목)",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "권역명이 없는 항목은 전국 단위로 상세 화면에서 제공.",
+        "evidence": "NAP 레코드 272건 중 원문이 권역명을 적은 11건(메콩강 삼각주 9 · 중부 고원 4 · 홍강 삼각주 2, 두 권역을 함께 적은 항목 포함)",
+        "representativeItem": "메콩강 삼각주 적응 과제"
+      },
+      "accuracyNotice": "국가적응계획 원문이 6대 사회경제 권역의 이름을 직접 적은 과제·취약성 항목만 그 권역에 표시합니다. 값은 권역 전체에 해당하며 성·시별로 다르지 않습니다. 나머지 항목은 전국 단위로 상세 화면에서 제공합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "C-003",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-003.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 29,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 29,
+        "missingCount": 34,
+        "requiredCount": 63
+      },
+      "latestYear": "2021~2030년 계획",
+      "layerId": "vnm-v138-c-003",
+      "legend": {
+        "note": "단위 건 · 결측 34개 성·시(개편 전 63개 기준)",
+        "title": "권역 명시 적응 과제·취약성 항목"
+      },
+      "mapBenefit": "권역별 적응 과제·취약성 항목 수 · 성 클릭 → 항목 목록",
+      "mapMode": "choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Hòa Bình",
+        "Thanh Hóa",
+        "Nghệ An",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Quảng Trị",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Quảng Ngãi",
+        "Bình Định",
+        "Phú Yên",
+        "Khánh Hòa",
+        "Ninh Thuận",
+        "Tây Ninh",
+        "Đồng Nai",
+        "Bình Thuận",
+        "Bà Rịa–Vũng Tàu",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bình Dương",
+        "Bình Phước",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Điện Biên",
+        "Đà Nẵng",
+        "Hồ Chí Minh"
+      ],
+      "publicSpatialNotice": "6대 권역(결의 81/2023/QH15)의 구성 성·시 경계에 권역 값을 같은 색으로 표시합니다.",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2021~2030년 계획",
+      "spatialCoverage": "개편 전 63개 성·시 중 최대 29개에 그룹 전체 값 표시(34개 경계: 구성 성·시가 같은 그룹이면 같은 값, 걸치면 복수 소속)",
+      "spatialLimitation": "권역명이 없는 항목은 전국 단위로 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2021~2030년 계획",
+        "defaultVariable": "region-named-items",
+        "periods": [
+          "2021~2030년 계획"
+        ],
+        "variables": [
+          {
+            "key": "region-named-items",
+            "measureId": "c003-region-named",
+            "measureKey": "region-named-items",
+            "scenario": null,
+            "label": "권역 명시 적응 과제·취약성 항목",
+            "unit": "건",
+            "periods": [
+              "2021~2030년 계획"
+            ],
+            "maxFeatureCount": 29
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 11,
+      "unit": "건",
+      "memberRecordsInAsset": true,
+      "groupConstantV157_2": {
+        "groupTable": "six",
+        "basis": "6대 사회경제 권역(Nghị quyết 81/2023/QH15 Điều 3)"
+      }
+    },
+    {
+      "category": "정책·사업여건",
+      "detailElementId": "C-006",
+      "detailUrl": "/?element=c-006&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 38,
+      "elementId": "C-006",
+      "label": "JCM 사업",
+      "licenses": [
+        "ICAP 저작권 표기 조건부 배포 허용",
+        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+        "UNEP-CCC 공개 데이터베이스 — 출처 표기 조건",
+        "국제기구 공개 발간물 — 출처 표기 조건",
+        "베트남 정부 공보 이용약관",
+        "베트남 지식재산법 제15조 — 법률규범문서 저작권 비보호",
+        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+      ],
+      "publicShortTitle": "JCM 사업",
+      "rawLabel": "ITMO 양자 협정[체결국, 체결 일자, 대상 부문, 대상 기술, 승인 기관(Authorization Body)]; 파리협정 제6.2조/제6.4조 이행 체계[ITMO 이전 실적, 상응조정(Corresponding Adjustment) 체계 구축 여부, 국가 레지스트리 존재 여부, UNFCCC 연동 상태]",
+      "source": "UNEP-CCC (UNEP Copenhagen Climate Centre) — Article 6 Pipeline · UNFCCC / 베트남 정부 공보",
+      "sourceOrganizations": [
+        "UNEP-CCC (UNEP Copenhagen Climate Centre) — Article 6 Pipeline",
+        "UNFCCC / 베트남 정부 공보"
+      ],
+      "sourceUrls": [
+        "https://a6partnership.org/a6-implementation-status/current-developments-in-bilateral-cooperation-and-article-6-4-mechanism",
+        "https://article6pipeline.unepccc.org/global-data/countries/viet-nam",
+        "https://baochinhphu.vn/quy-dinh-ve-trao-doi-chuyen-giao-ket-qua-giam-nhe-phat-thai-khi-nha-kinh-va-tin-chi-cac-bon-102260402150338417.htm",
+        "https://english.luatvietnam.vn/decree-no-112-2026-nd-cp-dated-april-01-2026-of-the-government-on-the-international-transfer-of-greenhouse-gas-emission-mitigation-outcomes-and-carb-430687-doc1.html",
+        "https://english.luatvietnam.vn/tai-nguyen/decree-119-2025-nd-cp-mitigation-of-greenhouse-gas-emissions-402540-d1.html",
+        "https://icapcarbonaction.com/en/news/vietnam-approves-carbon-market-roadmap-pilot-ets-launch-june-2025",
+        "https://unfccc.int/",
+        "https://vanban.chinhphu.vn/?pageid=27160&docid=216694",
+        "https://www.energytransitionpartnership.org/wp-content/uploads/2025/07/Carbon-impact-assessment_Deliverable-4_ETP-commented_revised_clean.pdf"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "JCM 등록부 사업별 소재 성·시",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "등록부가 본사 소재지만 밝힌 2건(VN008·VN013)은 지도에서 제외하고 상세 화면에서 제공.",
+        "evidence": "등록 사업 20건 중 소재 성·시가 확인된 18건 · 27개 성·시(JCM 공식 등록부)",
+        "representativeItem": "성·시별 JCM 등록 사업 수"
+      },
+      "accuracyNotice": "성·시별 JCM(공동크레딧제도) 등록 사업 건수입니다. 여러 성에 걸친 사업은 각 성에 1건으로 세며 감축량·금액은 합산하지 않습니다. 등록부가 본사 소재지만 밝힌 사업은 지도에서 제외합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "membership-or",
+        "note": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "C-006",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-006.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 27,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 27,
+        "missingCount": 36,
+        "requiredCount": 63
+      },
+      "latestYear": "2026",
+      "layerId": "vnm-v138-c-006",
+      "legend": {
+        "note": "단위 건 · 결측 36개 성·시(개편 전 63개 기준)",
+        "title": "JCM 등록 사업"
+      },
+      "mapBenefit": "성·시별 JCM 등록 사업 수 · 성 클릭 → 사업명·등록부 링크",
+      "mapMode": "choropleth",
+      "missingRegions": [
+        "Lai Châu",
+        "Lào Cai",
+        "Hà Giang",
+        "Cao Bằng",
+        "Sơn La",
+        "Yên Bái",
+        "Tuyên Quang",
+        "Lạng Sơn",
+        "Quảng Ninh",
+        "Hòa Bình",
+        "Ninh Bình",
+        "Thái Bình",
+        "Thanh Hóa",
+        "Hà Tĩnh",
+        "Quảng Bình",
+        "Thừa Thiên Huế",
+        "Quảng Nam",
+        "Kon Tum",
+        "Quảng Ngãi",
+        "Gia Lai",
+        "Bình Định",
+        "Phú Yên",
+        "Đắk Lắk",
+        "Lâm Đồng",
+        "Bắc Kạn",
+        "Bắc Giang",
+        "Bắc Ninh",
+        "Hải Dương",
+        "Hà Nam",
+        "Nam Định",
+        "Phú Thọ",
+        "Thái Nguyên",
+        "Vĩnh Phúc",
+        "Điện Biên",
+        "Đắk Nông",
+        "Hải Phòng"
+      ],
+      "publicSpatialNotice": "34개 경계에서는 같은 단위에 속한 성·시의 사업을 중복 없이 셉니다.",
+      "renderer": "partial-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2026",
+      "spatialCoverage": "개편 전 63개 성·시 중 최대 27개에 사업 건수 표시(34개 경계: 단위 안 사업을 중복 없이 집계)",
+      "spatialLimitation": "등록부가 본사 소재지만 밝힌 2건(VN008·VN013)은 지도에서 제외하고 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "jcm-projects",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "jcm-projects",
+            "measureId": "c006-jcm-projects",
+            "measureKey": "jcm-projects",
+            "scenario": null,
+            "label": "JCM 등록 사업",
+            "unit": "건",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 27
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 18,
+      "unit": "건",
+      "memberRecordsInAsset": true,
+      "groupConstantV157_2": {
+        "groupTable": "jcm",
+        "basis": "JCM 공식 등록부의 사업별 소재 성·시(jcm-projects.json, 사업별 등록부 URL)"
       }
     },
     {
@@ -9911,6 +12045,214 @@
         "limitation": "원문 0(계획 없음)과 미제공을 구분. 목표·추가·기존 용량은 기술 라벨로 구분.",
         "evidence": "지역 관측 639건",
         "representativeItem": "성·시별 태양광 계획용량 2030"
+      }
+    },
+    {
+      "category": "정책·사업여건",
+      "detailElementId": "C-017",
+      "detailUrl": "/?element=c-017&country=VNM#element-detail",
+      "downloadStatus": "available",
+      "downloadableRecordCount": 56,
+      "elementId": "C-017",
+      "label": "지역 발전가격·지원",
+      "licenses": [
+        "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
+        "베트남 법령 원문 — 지식재산법 제15조상 저작권 비보호",
+        "베트남 정부 공보 이용약관",
+        "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
+        "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+      ],
+      "publicShortTitle": "지역 발전가격·지원",
+      "rawLabel": "재생에너지 투자 인센티브[인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링), 대상 기술(태양광/풍력/수력/바이오), 시행 기관, 시행 연도, 상태]; 인센티브 조건[가격, 기간, 용량]",
+      "source": "베트남 산업무역부 — Quyết định 1008/QĐ-BCT · 베트남 산업무역부 — Quyết định 1251/QĐ-BCT · 베트남 산업무역부 — Quyết định 1508/QĐ-BCT · 베트남 산업무역부 — Quyết định 1824/QĐ-BCT · 베트남 산업무역부 — Quyết định 21/QĐ-BCT · 베트남 산업무역부 — Quyết định 988/QĐ-BCT · 베트남 정부 — Nghị định 58/2025/NĐ-CP · 베트남 정부 공보 / 산업무역부(MOIT) · 베트남 투자법·법인세법·토지법 체계 및 Nghị quyết 98/2023/QH15",
+      "sourceOrganizations": [
+        "베트남 산업무역부 — Quyết định 1008/QĐ-BCT",
+        "베트남 산업무역부 — Quyết định 1251/QĐ-BCT",
+        "베트남 산업무역부 — Quyết định 1508/QĐ-BCT",
+        "베트남 산업무역부 — Quyết định 1824/QĐ-BCT",
+        "베트남 산업무역부 — Quyết định 21/QĐ-BCT",
+        "베트남 산업무역부 — Quyết định 988/QĐ-BCT",
+        "베트남 정부 — Nghị định 58/2025/NĐ-CP",
+        "베트남 정부 공보 / 산업무역부(MOIT)",
+        "베트남 투자법·법인세법·토지법 체계 및 Nghị quyết 98/2023/QH15"
+      ],
+      "sourceUrls": [
+        "https://baochinhphu.vn/chinh-sach-uu-dai-phat-trien-dien-nang-luong-tai-tao-dien-nang-luong-moi-102250304172509197.htm",
+        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/4/768-ttg.signed.pdf",
+        "https://english.luatvietnam.vn/dat-dai/decree-103-2024-nd-cp-land-use-levy-and-land-rental-361937-d1.html",
+        "https://english.luatvietnam.vn/law-no-107-2016-qh13-on-export-and-import-duties-104851-doc1.html",
+        "https://english.luatvietnam.vn/lawoncorporateincometaxno67-2025-qh15datedjune142025ofthenationalassembly-404386-doc1.html",
+        "https://hethongphapluat.com/quyet-dinh-1008-qd-bct-phe-duyet-khung-gia-phat-dien-nha-may-dien-sinh-khoi-nam-2025-do-bo-truong-bo-cong-thuong-ban-hanh.html",
+        "https://luatvietnam.vn/",
+        "https://moit.gov.vn/van-ban-phap-luat/quyet-dinh-phe-duyet-khung-gia-phat-dien-loai-hinh-nha-may-dien-gio-nam-2025.html",
+        "https://thanhnien.vn/bo-tai-khang-dinh-go-vuong-mac-gia-fit-dien-tai-tao-thuoc-tham-quyen-evn-185250605124042125.htm",
+        "https://thuviennhadat.vn/vbpl/quyet-dinh-1251-qd-bct-2025-phe-duyet-khung-gia-phat-dien-nha-may-dien-chat-thai-655584.html",
+        "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/thong-bao-van-ban-moi/email/76973/quy-dinh-ve-gia-dien-theo-luat-dien-luc-2024",
+        "https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Nghi-dinh-320-2025-ND-CP-huong-dan-Luat-Thue-thu-nhap-doanh-nghiep-665051.aspx",
+        "https://thuvienphapluat.vn/van-ban/Tai-chinh-nha-nuoc/Quyet-dinh-1824-QD-BCT-2025-khung-gia-phat-dien-loai-hinh-nha-may-dien-gio-ngoai-khoi-663582.aspx",
+        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Quyet-dinh-21-QD-BCT-2023-khung-gia-phat-dien-nha-may-dien-mat-troi-dien-gio-chuyen-tiep-549601.aspx",
+        "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Quyet-dinh-988-QD-BCT-2025-khung-gia-phat-dien-nha-may-dien-mat-troi-651205.aspx",
+        "https://vbpl.vn/van-ban/dia-phuong",
+        "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-thi-diem-co-che-chinh-sach-dac-thu-phat-trien-tp-hcm-119230707074903999.htm"
+      ],
+      "scopeCountries": [
+        "VNM"
+      ],
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "fakeGeometryCount": 0,
+      "zeroImputationCount": 0,
+      "regionalProject": false,
+      "spatialStatus": "ready",
+      "mapTargetV138": {
+        "sourceSpatialUnit": "가격 권역(북부·중부·남부) · 닌투언성 특례",
+        "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
+        "limitation": "해역 단위 가격 3건(해상 풍력)과 전국 공통 제도 37건은 성·시에 대응하지 않아 상세 화면에서 제공.",
+        "evidence": "권역 명시 레코드 15건(북부·중부·남부 각 5) + 닌투언성 특례 1건 · 권역의 성 구성 63/63(EVN 관할 기준)",
+        "representativeItem": "권역별 지상형 태양광 발전가격 상한(저장장치 없음)"
+      },
+      "accuracyNotice": "이 값은 권역(북부·중부·남부) 전체에 적용되는 발전가격 상한입니다. 가격 규정 원문은 권역에 속한 성을 나열하지 않아, 성·시의 권역은 EVN 관할 기준으로 정했습니다. 닌투언성은 원문이 따로 정한 특례 가격이 있어 그 성에만 표시하고, 해역 단위 가격(해상 풍력)은 성·시에 대응하지 않아 상세 화면에서 제공합니다.",
+      "boundaryPolicy": {
+        "schema": "boundary-policy-v151-2",
+        "kind": "group-constant",
+        "note": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
+        "valueSystem": "pre-2025-63"
+      },
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "C-017",
+        "provider": "vietnam-v124",
+        "section": "spatial"
+      },
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/vietnam/v2/spatial/layers/c-017.json",
+      "displayedCoordinateCount": 0,
+      "enabled": true,
+      "featureCount": 63,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 63,
+        "missingCount": 0,
+        "requiredCount": 63
+      },
+      "latestYear": "2025",
+      "layerId": "vnm-v138-c-017",
+      "legend": {
+        "note": "단위 VND/kWh · 결측 0개 성·시(개편 전 63개 기준)",
+        "title": "2025년 발전가격 상한 · 지상형 태양광, 저장장치 없음"
+      },
+      "mapBenefit": "2025년 발전원별 가격 상한(태양광 지상형·부유식, 저장장치 유무, 육상 풍력) · 닌투언성 태양광 특례",
+      "mapMode": "choropleth",
+      "missingRegions": [],
+      "publicSpatialNotice": "권역 전체 가격을 소속 성·시 경계에 같은 색으로 표시합니다(성·시별 가격 아님).",
+      "renderer": "admin1-choropleth",
+      "sourceCoordinateCount": 0,
+      "sourceYear": "2025",
+      "spatialCoverage": "개편 전 63개 성·시 중 최대 63개에 그룹 전체 값 표시(34개 경계: 구성 성·시가 같은 그룹이면 같은 값, 걸치면 복수 소속)",
+      "spatialLimitation": "해역 단위 가격 3건(해상 풍력)과 전국 공통 제도 37건은 성·시에 대응하지 않아 상세 화면에서 제공.",
+      "spatialScopeType": "admin1",
+      "selectors": {
+        "defaultPeriod": "2025",
+        "defaultVariable": "cap-2025-sol-g-ns",
+        "periods": [
+          "2020",
+          "2025"
+        ],
+        "variables": [
+          {
+            "key": "cap-2025-sol-f-ns",
+            "measureId": "c017-cap-2025-sol-f-ns",
+            "measureKey": "cap-2025-sol-f-ns",
+            "scenario": null,
+            "label": "2025년 발전가격 상한 · 부유식 태양광, 저장장치 없음",
+            "unit": "VND/kWh",
+            "periods": [
+              "2025"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cap-2025-sol-f-s",
+            "measureId": "c017-cap-2025-sol-f-s",
+            "measureKey": "cap-2025-sol-f-s",
+            "scenario": null,
+            "label": "2025년 발전가격 상한 · 부유식 태양광, 저장장치 있음",
+            "unit": "VND/kWh",
+            "periods": [
+              "2025"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cap-2025-sol-g-ns",
+            "measureId": "c017-cap-2025-sol-g-ns",
+            "measureKey": "cap-2025-sol-g-ns",
+            "scenario": null,
+            "label": "2025년 발전가격 상한 · 지상형 태양광, 저장장치 없음",
+            "unit": "VND/kWh",
+            "periods": [
+              "2025"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cap-2025-sol-g-s",
+            "measureId": "c017-cap-2025-sol-g-s",
+            "measureKey": "cap-2025-sol-g-s",
+            "scenario": null,
+            "label": "2025년 발전가격 상한 · 지상형 태양광, 저장장치 있음",
+            "unit": "VND/kWh",
+            "periods": [
+              "2025"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "cap-2025-won",
+            "measureId": "c017-cap-2025-won",
+            "measureKey": "cap-2025-won",
+            "scenario": null,
+            "label": "2025년 발전가격 상한 · 육상 풍력",
+            "unit": "VND/kWh",
+            "periods": [
+              "2025"
+            ],
+            "maxFeatureCount": 63
+          },
+          {
+            "key": "fit-sol-2020-nt",
+            "measureId": "c017-fit-sol-2020-nt",
+            "measureKey": "fit-sol-2020-nt",
+            "scenario": null,
+            "label": "태양광 FIT(2020) · 닌투언성 특례",
+            "unit": "VND/kWh",
+            "periods": [
+              "2020"
+            ],
+            "maxFeatureCount": 1
+          }
+        ]
+      },
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 16,
+      "unit": "VND/kWh",
+      "memberRecordsInAsset": true,
+      "groupConstantV157_2": {
+        "groupTable": "c017",
+        "basis": "레코드가 밝힌 권역(북부·중부·남부) · 권역의 성 구성은 EVN 관할 기준(가격 규정 원문은 성을 나열하지 않음)"
       }
     },
     {
@@ -14164,62 +16506,13 @@
       "memberRecordsInAsset": true
     }
   ],
-  "mapFeatureCount": 15287,
+  "mapFeatureCount": 15764,
   "platformRelease": "v130",
   "schemaVersion": "v124",
   "mapTargetContract": {
     "schemaVersion": "public-map-targets-v157",
     "targetCount": 72,
-    "connectedCount": 60,
-    "notConnected": [
-      {
-        "elementId": "A-013",
-        "reason": "원문의 지역 표현(해안·삼각주 등)이 공식 경계와 대응되지 않습니다."
-      },
-      {
-        "elementId": "A-022",
-        "reason": "원자료가 전력회사 그룹 전체의 값이어서 성·시별로 나눌 수 없습니다."
-      },
-      {
-        "elementId": "B-002",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-024",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-035",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-036",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-044",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-046",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "B-047",
-        "reason": "원자료가 국가 단위로만 제공되어 성·시별로 표시할 수 없습니다."
-      },
-      {
-        "elementId": "C-003",
-        "reason": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다."
-      },
-      {
-        "elementId": "C-006",
-        "reason": "원자료에 사업 지역 정보가 없습니다."
-      },
-      {
-        "elementId": "C-017",
-        "reason": "원자료의 지역 칸이 비어 있어 성·시를 알 수 없습니다."
-      }
-    ]
+    "connectedCount": 72,
+    "notConnected": []
   }
 }

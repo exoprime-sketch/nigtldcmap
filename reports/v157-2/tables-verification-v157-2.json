@@ -1,0 +1,512 @@
+{
+  "schema": "tables-verification-v157-2",
+  "generatedAt": "2026-09-30T10:42:56.474Z",
+  "checks": [
+    {
+      "table": "evn-jurisdiction",
+      "name": "HEAD_DOCUMENT",
+      "status": "PASS",
+      "actual": "Corporation assigned per province is the CURRENT (post-2025-07-01) jurisdiction. Three provinces changed corporation as part of the 2025-07-01 province merger (Resolution 202/2025/QH15): Binh Duong and Ba Ria-Vung Tau moved from EVNSPC to EVNHCMC; Ninh Thuan moved from EVNSPC to EVNCPC; Dak Nong moved from EVNCPC to EVNSPC. cpc.vn and evnhcmc.vn were unreachable (connection refused) from this research environment on every attempt; where their content was needed, an equivalent evn.com.vn or evnspc.vn official page that WAS fetched successfully is cited instead, and is noted per-entry.",
+      "expected": "a named official document"
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "HEAD_ARTICLE",
+      "status": "PASS",
+      "actual": "evn-jurisdiction-v157-2",
+      "expected": "the article or the quoted clause"
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "HEAD_URL",
+      "status": "PASS",
+      "actual": "https://npc.com.vn/cac-don-vi-truc-thuoc.html",
+      "expected": "a URL"
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "FIVE_CORPORATIONS",
+      "status": "PASS",
+      "actual": [
+        "evnnpc",
+        "evncpc",
+        "evnspc",
+        "evnhanoi",
+        "evnhcmc"
+      ],
+      "expected": "5 retail corporations"
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "COVERS_63_PROVINCES",
+      "status": "PASS",
+      "actual": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      },
+      "expected": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      }
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "GROUPS_FROM_DOCUMENT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "table": "evn-jurisdiction",
+      "name": "EVERY_ROW_CITES_A_SOURCE",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "table": "six-regions",
+      "name": "DEF63_DOCUMENT",
+      "status": "PASS",
+      "actual": "Nghị quyết 81/2023/QH15 (Quốc hội, 09/01/2023, Quy hoạch tổng thể quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050)",
+      "expected": "a named official document"
+    },
+    {
+      "table": "six-regions",
+      "name": "DEF63_ARTICLE",
+      "status": "PASS",
+      "actual": "Điều 3, khoản 1, điểm a — \"Phương hướng tổ chức không gian phát triển\": \"Tổ chức không gian phát triển đất nước thành 06 vùng kinh tế - xã hội\" (English translation used to confirm exact article numbering: \"Article 3, Section 1.a\")",
+      "expected": "the article or the quoted clause"
+    },
+    {
+      "table": "six-regions",
+      "name": "DEF63_URL",
+      "status": "PASS",
+      "actual": "https://vanban.chinhphu.vn/?pageid=27160&docid=207352&classid=1&orggroupid=1",
+      "expected": "a URL"
+    },
+    {
+      "table": "six-regions",
+      "name": "SIX_REGIONS",
+      "status": "PASS",
+      "actual": 6,
+      "expected": 6
+    },
+    {
+      "table": "six-regions",
+      "name": "COVERS_63_PROVINCES",
+      "status": "PASS",
+      "actual": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      },
+      "expected": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      }
+    },
+    {
+      "table": "six-regions",
+      "name": "GROUPS_FROM_DOCUMENT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "table": "six-regions",
+      "name": "UNITS34_DERIVED_FROM_63",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "table": "six-regions",
+      "name": "UNITS34_COUNT",
+      "status": "PASS",
+      "actual": 34,
+      "expected": 34
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "REGION_DEFINITION_DOCUMENT",
+      "status": "PASS",
+      "actual": "Thông tư 09/2025/TT-BCT (01/02/2025), Điều 3 được bổ sung khoản 7, khoản 8 bởi Điều 1 Thông tư 25/2025/TT-BCT (13/05/2025)",
+      "expected": "a named official document"
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "REGION_DEFINITION_ARTICLE",
+      "status": "PASS",
+      "actual": "Điều 3 khoản 7, khoản 8 (Thông tư 09/2025/TT-BCT, bản hợp nhất sau khi Thông tư 25/2025/TT-BCT có hiệu lực từ 13/5/2025)",
+      "expected": "the article or the quoted clause"
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "REGION_DEFINITION_URL",
+      "status": "PASS",
+      "actual": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf",
+      "expected": "a URL"
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "COVERS_63_PROVINCES",
+      "status": "PASS",
+      "actual": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      },
+      "expected": {
+        "assigned": 63,
+        "missing": [],
+        "duplicated": [],
+        "unknown": []
+      }
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "GROUPS_FROM_DOCUMENT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "table": "c017-price-regions",
+      "name": "COUNTS_MATCH_TABLE",
+      "status": "PASS",
+      "actual": {
+        "north": 28,
+        "central": 13,
+        "south": 22
+      },
+      "expected": {
+        "north": 28,
+        "central": 13,
+        "south": 22
+      }
+    }
+  ],
+  "evn": {
+    "perCorporation": {
+      "evnnpc": 27,
+      "evncpc": 13,
+      "evnspc": 19,
+      "evnhanoi": 1,
+      "evnhcmc": 3
+    },
+    "assigned": 63,
+    "units34": [
+      {
+        "unitCode": "an giang",
+        "name": "An Giang",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "bac ninh",
+        "name": "Bắc Ninh",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "cao bang",
+        "name": "Cao Bằng",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "ca mau",
+        "name": "Cà Mau",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "can tho",
+        "name": "Cần Thơ",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "gia lai",
+        "name": "Gia Lai",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "hue",
+        "name": "Huế",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "ha noi",
+        "name": "Hà Nội",
+        "groups": [
+          "evnhanoi"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "ha tinh",
+        "name": "Hà Tĩnh",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "hung yen",
+        "name": "Hưng Yên",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "hai phong",
+        "name": "Hải Phòng",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "ho chi minh",
+        "name": "Hồ Chí Minh",
+        "groups": [
+          "evnhcmc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "khanh hoa",
+        "name": "Khánh Hòa",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "lai chau",
+        "name": "Lai Châu",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "lao cai",
+        "name": "Lào Cai",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "lam dong",
+        "name": "Lâm Đồng",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "lang son",
+        "name": "Lạng Sơn",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "nghe an",
+        "name": "Nghệ An",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "ninh binh",
+        "name": "Ninh Bình",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "phu tho",
+        "name": "Phú Thọ",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "quang ngai",
+        "name": "Quảng Ngãi",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "quang ninh",
+        "name": "Quảng Ninh",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "quang tri",
+        "name": "Quảng Trị",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "son la",
+        "name": "Sơn La",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "thanh hoa",
+        "name": "Thanh Hóa",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "thai nguyen",
+        "name": "Thái Nguyên",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "tuyen quang",
+        "name": "Tuyên Quang",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "tay ninh",
+        "name": "Tây Ninh",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "vinh long",
+        "name": "Vĩnh Long",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "dien bien",
+        "name": "Điện Biên",
+        "groups": [
+          "evnnpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "da nang",
+        "name": "Đà Nẵng",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "dak lak",
+        "name": "Đắk Lắk",
+        "groups": [
+          "evncpc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "dong nai",
+        "name": "Đồng Nai",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      },
+      {
+        "unitCode": "dong thap",
+        "name": "Đồng Tháp",
+        "groups": [
+          "evnspc"
+        ],
+        "status": "single"
+      }
+    ]
+  },
+  "evnMixedUnits34": [],
+  "sixRegions": {
+    "perRegion": {
+      "northern-midlands-mountains": 14,
+      "red-river-delta": 11,
+      "north-central-central-coast": 14,
+      "central-highlands": 5,
+      "southeast": 6,
+      "mekong-river-delta": 13
+    },
+    "mixedUnits34": [
+      "Bắc Ninh",
+      "Đắk Lắk",
+      "Gia Lai",
+      "Lâm Đồng",
+      "Phú Thọ",
+      "Quảng Ngãi",
+      "Tây Ninh"
+    ],
+    "officialDefinition34": "Nghị quyết 252/2025/QH15 (Quốc hội, sửa đổi, bổ sung một số điều của Nghị quyết 81/2023/QH15), Điều 3 khoản 1 điểm a — reorganizes the 6 socio-economic regions to match the 34 post-merger provincial units; implemented earlier at Government level by Nghị quyết 306/NQ-CP (Chính phủ, 05/10/2025, điều chỉnh Quy hoạch tổng thể quốc gia)"
+  },
+  "c017": {
+    "counts": {
+      "north": 28,
+      "central": 13,
+      "south": 22
+    },
+    "mixedUnits34": []
+  },
+  "failed": [],
+  "status": "PASS"
+}

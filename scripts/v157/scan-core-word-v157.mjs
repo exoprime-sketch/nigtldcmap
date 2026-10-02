@@ -40,7 +40,9 @@ const hits = await page.evaluate(() =>
   [...document.querySelectorAll("body *")]
     // '핵심광물' (critical minerals) is a dataset's own name (B-044 핵심광물 부존),
     // not the retired '핵심' label - #47 recorded it as the only expected match.
-    .filter((node) => [...node.childNodes].some((child) => child.nodeType === 3 && /핵심/u.test((child.textContent || "").replace(/핵심광물/gu, ""))))
+    // V157-2: B-044 is on the map now and its public short title is spaced
+    // ('핵심 광물', publicLabelsV122); the same name, so the same exemption.
+    .filter((node) => [...node.childNodes].some((child) => child.nodeType === 3 && /핵심/u.test((child.textContent || "").replace(/핵심\s?광물/gu, ""))))
     .map((node) => ({ tag: node.tagName.toLowerCase(), text: (node.textContent || "").replace(/\s+/gu, " ").trim().slice(0, 80) }))
 );
 const layers = await page.$$eval('[data-testid="map-all-data-layer-v135"]', (nodes) => nodes.length);
