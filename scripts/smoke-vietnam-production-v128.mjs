@@ -82,9 +82,12 @@ const detailIdsV162 = [
   ...["A-002", "E-012"].filter((id) => withDataV162.includes(id)),
   ...withDataV162.filter((id) => id !== "A-002" && id !== "E-012"),
 ].slice(0, 2);
-const finderQueryV162 = withDataV162.includes("A-002")
+// V162 PR-D: the query is the searched element's own name in this country's
+// catalog - Viet Nam's A-002 is CPIA, Bangladesh's is WGI - read up to its
+// first space or bracket ("WGI(Worldwide …)" -> "WGI").
+const finderQueryV162 = IS_DEFAULT_V162 && withDataV162.includes("A-002")
   ? "CPIA"
-  : String(catalogV162.find((element) => element.elementId === detailIdsV162[0])?.publicTitle || "").split(/\s+/u)[0];
+  : String(catalogV162.find((element) => element.elementId === detailIdsV162[0])?.elementLabel || "").split(/[\s(]/u)[0];
 const powerLayerV162 = (mapIndexV162?.layers || []).some(
   (layer) => layer.elementId === "A-024" && layer.active !== false
 );

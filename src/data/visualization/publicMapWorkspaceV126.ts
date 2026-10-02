@@ -4,6 +4,7 @@ import {
   publicTextV126,
 } from "./publicFieldPolicyV126";
 import publicMapTargetsContractV138 from "./publicMapTargetsV138.json";
+import { copyForCountryV158 } from "../countries/countryCopyV158";
 
 /**
  * V138: one dataset colours the map; every other ticked dataset is drawn as
@@ -500,12 +501,25 @@ export function publicMapSpatialTypeV126(
   return "location";
 }
 
+/**
+ * V162 PR-D: the country the map page shows. The reviewed titles were written
+ * for the default country ("베트남 송전망"); on another country's map a title
+ * that names a different country yields to the target's own name. The map page
+ * sets this while mounted and clears it on leaving, so every title it draws -
+ * list, popups, legends - reads the same country without threading it through.
+ */
+let mapTitleCountryV162: string | null = null;
+
+export function setPublicMapTitleCountryV162(country: string | null): void {
+  mapTitleCountryV162 = country;
+}
+
 export function publicMapLayerTitleV126(
   elementId: string,
   fallback?: string | null
 ): string {
   return (
-    PUBLIC_MAP_LAYER_TITLES_V126[elementId] ||
+    copyForCountryV158(PUBLIC_MAP_LAYER_TITLES_V126[elementId], mapTitleCountryV162) ||
     publicMapTargetV138(elementId)?.publicName ||
     publicTextV126(fallback) ||
     "공간자료"

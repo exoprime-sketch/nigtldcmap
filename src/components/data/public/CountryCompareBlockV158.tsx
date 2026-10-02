@@ -303,10 +303,11 @@ export default function CountryCompareBlockV158({
           {sourceNote}
         </p>
       ) : null}
-      <p className="ccb158__note">
-        비교 지표 {compareKey.indicatorId} · 연도 규칙{" "}
-        {compareKey.yearRule === "latest-common" ? "두 국가가 모두 가진 최신 연도" : compareKey.yearRule}
-      </p>
+      {/* V162 PR-D: the measure is named in the block's title; the note states
+          the year rule in words and never the internal indicator key. */}
+      {compareKey.yearRule === "latest-common" ? (
+        <p className="ccb158__note">연도 기준 · 두 국가가 모두 가진 최신 연도</p>
+      ) : null}
     </section>
   );
 }

@@ -106,6 +106,7 @@ import { getElementVisualizationSummaryV125 } from "../data/visualization/elemen
 import {
   PUBLIC_MAP_TARGET_CATEGORIES_V138,
   PUBLIC_MAP_TARGETS_V138,
+  setPublicMapTitleCountryV162,
   PUBLIC_MAP_WORKSPACE_LIMITS_V126,
   PUBLIC_MAP_WORKSPACE_PRESETS_V126,
   createPublicMapWorkspaceStateV126,
@@ -594,7 +595,7 @@ export {
   MAP_SOURCE_IDS_RUNTIME_V115,
   MAP_SOURCE_IDS_RUNTIME_V116,
 } from "../data/map/mapRuntimeContractsV116";
-import { countryAssetPathV158 } from "../data/countryContext";
+import { countryAssetPathV158, DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 
 interface SpatialSelection {
   elementId: string;
@@ -1316,6 +1317,21 @@ function sameStringArray(a: string[], b: string[]): boolean {
   return a.length === b.length && a.every((value, index) => value === b[index]);
 }
 
+/**
+ * V162 PR-D: what another country's list row says it draws. The reviewed
+ * summaries describe the default country's layers (its 34/63 boundaries, its
+ * line geometry); another country's row is described from its own layer - a
+ * level-1 choropleth, a reference map's basis, or its located points.
+ */
+function countryMapItemSummaryV162(layer: CountryMapLayerV122, regionWord: string): string {
+  const reference = (layer as { referenceMap?: { label?: string; basis?: string } }).referenceMap;
+  const count = Number((layer as { displayedCoordinateCount?: number }).displayedCoordinateCount) || 0;
+  const places = count > 0 ? ` ${count.toLocaleString("ko-KR")}곳` : "";
+  if (reference?.basis) return `${reference.label || "참고 지도"} · ${reference.basis}${places}`;
+  if (rendererOf(layer) === "admin1-choropleth") return `${regionWord} 경계`;
+  return `위치${places}`;
+}
+
 export default function RealMapExplorerPage({
   onOpenElement,
   onOpenDataFinder,
@@ -1341,6 +1357,9 @@ export default function RealMapExplorerPage({
   const [countryIso3, setCountryIso3] = useState(() =>
     resolveInitialCountry(initialState.countryIso3)
   );
+  // V162 PR-D: layer titles read the page's country (see publicMapLayerTitleV126).
+  setPublicMapTitleCountryV162(countryIso3);
+  useEffect(() => () => setPublicMapTitleCountryV162(null), []);
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
   // V151-2: which backdrop (지형/위성/도로·지명/없음) sits under the data layers.
   // The v150 on/off preference is migrated on first read.
@@ -3433,13 +3452,16 @@ export default function RealMapExplorerPage({
   // in its own order; a target without a layer stays visible with its reason.
   const mapTargetGroupsV138 = useMemo(() => {
     const layerByElement = new Map(layers.map((layer) => [layer.elementId, layer]));
+    // V162 PR-D: another country's map lists the targets its data supports (its
+    // own map index); the held ones stay in its judgement table, not as rows.
+    const ownTargetsOnly = countryIso3 !== DEFAULT_COUNTRY_ISO3_V158;
     return PUBLIC_MAP_TARGET_CATEGORIES_V138.map((category) => ({
       category,
-      rows: PUBLIC_MAP_TARGETS_V138.filter((target) => target.category === category).map(
-        (target) => ({ target, layer: layerByElement.get(target.elementId) || null })
-      ),
+      rows: PUBLIC_MAP_TARGETS_V138.filter((target) => target.category === category)
+        .map((target) => ({ target, layer: layerByElement.get(target.elementId) || null }))
+        .filter((row) => !ownTargetsOnly || row.layer !== null),
     })).filter((group) => group.rows.length > 0);
-  }, [layers]);
+  }, [countryIso3, layers]);
   // V140: the list's counts come from the map index, the same file the home
   // counts from, so "지도 자료 N개" is one number on every screen. Targets
   // the contract names but the index does not carry are counted as pending.
@@ -3723,7 +3745,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
-      ? `${focusedSeriesCoverage.missingCount}개 성·시는 원자료에 값 없음 · 0으로 대체하지 않음`
+      ? `${focusedSeriesCoverage.missingCount}개 ${level1V162?.label || "성·시"}는 원자료에 값 없음 · 0으로 대체하지 않음`
       : (focusedLayer.missingRegions ?? []).length
       ? (focusedLayer.missingRegions ?? []).join(" · ")
       : "없음"
@@ -4047,8 +4069,13 @@ export default function RealMapExplorerPage({
               };
             })
         : sourceValues;
-      const unitTotalV151 = aggregated34 ? 34 : 63;
-      const unitTotalLabelV151 = aggregated34 ? "34개 성·시(2025-07-01 시행)" : "63개 성·시(개편 전 기준)";
+      // V162 PR-D: another country counts against its registry level-1 units.
+      const countryLevel1 = regionWordV158(countryIso3).level1;
+      const unitTotalV151 = countryLevel1?.count || (aggregated34 ? 34 : 63);
+      const unitTotalLabelV151 = countryLevel1
+        ? `${countryLevel1.count}개 ${countryLevel1.label}`
+        : aggregated34 ? "34개 성·시(2025-07-01 시행)" : "63개 성·시(개편 전 기준)";
+      const unitWordV162 = countryLevel1?.label || "성·시";
       const sourceIsRegional = values.some(
         (row) => row.sourceSpatialUnit === "region"
       );
@@ -4131,7 +4158,7 @@ export default function RealMapExplorerPage({
         label: sourceIsRegional ? `미제공 ${regionUnitLabel}` : "미제공 지역",
         value: sourceIsRegional
           ? `${Math.max(0, regionTotal - ordered.length)}개 ${regionUnitLabel}`
-          : `${missingRegionCount}개 성·시`,
+          : `${missingRegionCount}개 ${unitWordV162}`,
       });
       return {
         capacityRows: empty.capacityRows,
@@ -4242,6 +4269,7 @@ export default function RealMapExplorerPage({
     return { ...empty, summaryRows, unit: noun };
   }, [
     boundaryContextV151,
+    countryIso3,
     filters,
     focusedLayer,
     focusedSelector,
@@ -5839,7 +5867,10 @@ export default function RealMapExplorerPage({
                                             : layer
                                               ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
                                               : target.period;
-                                          return period ? `${publicMapDataItemSummaryV136(elementId)} · ${period}` : publicMapDataItemSummaryV136(elementId);
+                                          const itemSummary = countryIso3 !== DEFAULT_COUNTRY_ISO3_V158 && layer
+                                            ? countryMapItemSummaryV162(layer, regionWordV158(countryIso3).word)
+                                            : publicMapDataItemSummaryV136(elementId);
+                                          return period ? `${itemSummary} · ${period}` : itemSummary;
                                         })()
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"

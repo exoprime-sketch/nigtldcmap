@@ -121,7 +121,7 @@ export default function DetailCountryCompareV158({
       points: entry.points,
       sourceOrg: entry.sourceOrg ?? undefined,
     }));
-    const title = liveEntries[0]?.labelKo || `비교 지표 ${element.compareKey.indicatorId}`;
+    const title = liveEntries[0]?.labelKo || "국가 비교";
     return { compareKey: element.compareKey, series, title };
   }, [doc, elementId, countryIso3]);
 

@@ -130,12 +130,13 @@ describe("CountryCompareBlockV158", () => {
     expect(view.querySelector('[data-testid="country-compare-bars-v158"]')).toBeNull();
   });
 
-  test("the compare indicator and the year rule are stated on screen", () => {
+  test("the year rule is stated on screen and the indicator key is not", () => {
     const view = draw([
       vietnam([{ year: 2024, value: 468 }]),
       bangladesh([{ year: 2024, value: 451 }]),
     ]);
-    expect(view.textContent).toContain("A-003_gdp_current_usd");
+    // V162 PR-D: the internal indicator key is never on screen (the title names the measure).
+    expect(view.textContent).not.toContain("A-003_gdp_current_usd");
     expect(view.textContent).toContain("두 국가가 모두 가진 최신 연도");
   });
 
