@@ -11,6 +11,12 @@
  * static server. Playwright chromium.
  *
  *   node scripts/v138/map-runtime-qa-v138.mjs [--build build] [--port 4331]
+ *        [--layers B-002,C-017] [--shots <dir>]
+ *
+ * --layers sweeps only those layers and skips the interaction and width
+ * passes; its report goes to map-runtime-qa-v138-layers.json so the full
+ * run's report is left as it was. --shots saves one 1440px capture per layer
+ * after its representative feature is selected.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -32,7 +38,16 @@ const SHOTS = resolve(OUT, "screenshots/map");
 mkdirSync(SHOTS, { recursive: true });
 
 const mapIndex = JSON.parse(readFileSync(resolve(ROOT, "public/data/vietnam/v2/map-index.json"), "utf8"));
-const activeLayers = mapIndex.layers.filter((layer) => layer.active !== false && layer.enabled !== false);
+const ONLY_LAYERS = opt("--layers", null) ? opt("--layers").split(",").map((id) => id.trim()).filter(Boolean) : null;
+const LAYER_SHOTS = opt("--shots", null) ? resolve(ROOT, opt("--shots")) : null;
+if (LAYER_SHOTS) mkdirSync(LAYER_SHOTS, { recursive: true });
+const activeLayers = mapIndex.layers.filter(
+  (layer) => layer.active !== false && layer.enabled !== false && (!ONLY_LAYERS || ONLY_LAYERS.includes(layer.elementId))
+);
+if (ONLY_LAYERS && activeLayers.length !== ONLY_LAYERS.length) {
+  const found = new Set(activeLayers.map((layer) => layer.elementId));
+  throw new Error(`--layers not active in map-index: ${ONLY_LAYERS.filter((id) => !found.has(id)).join(", ")}`);
+}
 
 const server = await startStaticBuildServer(BUILD, { port: PORT });
 const base = server.url.replace(/\/$/u, "");
@@ -192,6 +207,7 @@ const INTERNAL_PHRASE_PATTERN =
         row.featureSelected = false;
         row.selectedTitle = null;
       }
+      if (LAYER_SHOTS) await page.screenshot({ path: resolve(LAYER_SHOTS, `${layer.elementId.toLowerCase()}-1440.png`) });
       row.selectors = await page.evaluate(() =>
         [...document.querySelectorAll('[data-testid="map-primary-controls"] select')].map((select) => ({
           id: select.getAttribute("data-testid"),
@@ -217,7 +233,7 @@ const INTERNAL_PHRASE_PATTERN =
 }
 
 // ---------------------------------------------------------------- interactions
-{
+if (!ONLY_LAYERS) {
   const { context, page } = await newPage(1440, 1000, "interactions");
   await page.goto(`${base}/#map`, { waitUntil: "domcontentloaded" });
   await page.waitForSelector('[data-testid="map-all-data-layer-v135"]', { state: "attached", timeout: 60000 });
@@ -397,7 +413,7 @@ const INTERNAL_PHRASE_PATTERN =
 }
 
 // ---------------------------------------------------------------- widths
-for (const width of [390, 768, 1024, 1440, 1920]) {
+for (const width of ONLY_LAYERS ? [] : [390, 768, 1024, 1440, 1920]) {
   const { context, page } = await newPage(width, width < 800 ? 844 : 1000, `width-${width}`);
   await page.goto(`${base}/#map`, { waitUntil: "domcontentloaded" });
   await page.waitForSelector('[data-testid="map-all-data-layer-v135"]', { state: "attached", timeout: 60000 });
@@ -477,5 +493,5 @@ report.summary = {
   widthsWithClippedText: report.widths.filter((row) => row.clipped.length > 0).map((row) => row.width),
   widthsWithDocumentOverflow: report.widths.filter((row) => row.documentOverflow).map((row) => row.width),
 };
-writeFileSync(resolve(OUT, "map-runtime-qa-v138.json"), `${JSON.stringify(report, null, 2)}\n`);
+writeFileSync(resolve(OUT, ONLY_LAYERS ? "map-runtime-qa-v138-layers.json" : "map-runtime-qa-v138.json"), `${JSON.stringify(report, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify(report.summary)}\n`);

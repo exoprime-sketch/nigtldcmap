@@ -1,0 +1,891 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "VNM",
+  "elementId": "A-013",
+  "generatedAt": "2026-09-01T00:00:00Z",
+  "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
+  "joinKey": "adm1Code",
+  "boundarySystem": "pre-2025-63",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2016년 기준",
+    "defaultVariable": "region-linked-actions",
+    "periods": [
+      "2016년 기준"
+    ],
+    "variables": [
+      {
+        "key": "region-linked-actions",
+        "measureId": "a013-region-linked",
+        "measureKey": "region-linked-actions",
+        "scenario": null,
+        "label": "권역 명시 NDC 조치 연계",
+        "unit": "건",
+        "periods": [
+          "2016년 기준"
+        ],
+        "maxFeatureCount": 24
+      }
+    ]
+  },
+  "values": [
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-20",
+      "adm1Name": "Thái Bình",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "홍강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-44",
+      "adm1Name": "An Giang",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-47",
+      "adm1Name": "Kiên Giang",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "region-linked-actions",
+      "variableLabel": "권역 명시 NDC 조치 연계",
+      "period": "2016년 기준",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "A-013_ndc_sdg_linkage_registry",
+      "sourceRecordId": null,
+      "sourceSpatialUnit": "admin1",
+      "imputed": false,
+      "categoryLabel": "메콩강 삼각주 권역"
+    }
+  ],
+  "memberRecords": {
+    "VN-HN": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-66": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-20": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "6227426",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 6.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227428",
+        "label": "repairing and upgrading irrigation systems in the Red River Delta (SDG 2.4)",
+        "date": "",
+        "status": "홍강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-41": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-46": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-44": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-45": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-47": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "6227430",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      },
+      {
+        "recordId": "6227432",
+        "label": "expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1)",
+        "date": "",
+        "status": "메콩강 삼각주 권역",
+        "value": "",
+        "url": "https://www.climatewatchdata.org/ndcs-sdg",
+        "indicatorId": ""
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "region-linked-actions",
+      "period": "2016년 기준",
+      "expectedCount": 63,
+      "matchedCount": 24,
+      "missingCount": 39,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "attribution": [
+      "Northrop, E., H. Biru, S. Lima, M. Bouye, and R. Song. 2016. \"Examining the Alignment between the Intended Nationally Determined Contributions and Sustainable Development Goals.\" Working Paper. Washington, DC: World resources Institute. Available online at: https://www.wri.org/research/examining-alignment-between-intended-nationally-determined-contributions-and-sustainable"
+    ],
+    "licenses": [
+      "CC-BY-NC-4.0"
+    ],
+    "organizations": [
+      "World Resources Institute — Climate Watch"
+    ],
+    "urls": [
+      "https://www.climatewatchdata.org/ndcs-sdg"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 63,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 24,
+    "maxSeriesFeatureCount": 24,
+    "missingAdm1Count": 39,
+    "providedZeroCount": 0,
+    "publishedValueCount": 24,
+    "sourceValueCount": 8,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

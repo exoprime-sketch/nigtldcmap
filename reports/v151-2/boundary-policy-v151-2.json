@@ -7,17 +7,21 @@
     "failed": 0,
     "total": 25,
     "failedChecks": [],
-    "packCount": 26,
+    "packCount": 30,
     "soloPacks": [
+      "A-028",
       "B-003",
       "B-004",
       "B-005",
       "B-006",
       "B-007",
       "B-017",
-      "B-033"
+      "B-033",
+      "B-035",
+      "C-025",
+      "E-008"
     ],
-    "generatedAt": "2026-09-30T10:53:52.038Z"
+    "generatedAt": "2026-10-02T16:50:51.183Z"
   },
   "checks": [
     {
@@ -25,8 +29,8 @@
       "audit": "boundary-policy:v151-2",
       "name": "LAYER_COUNT",
       "status": "PASS",
-      "actual": 60,
-      "expected": 60
+      "actual": 72,
+      "expected": 72
     },
     {
       "type": "check",
@@ -272,16 +276,16 @@
       "name": "PACK_COUNT_CONSISTENT",
       "status": "PASS",
       "actual": [
-        26,
-        26,
-        26,
-        26
+        30,
+        30,
+        30,
+        30
       ],
       "expected": [
-        26,
-        26,
-        26,
-        26
+        30,
+        30,
+        30,
+        30
       ]
     },
     {
@@ -306,13 +310,17 @@
       "name": "SOLO_PACKS_OVER_8MB",
       "status": "PASS",
       "actual": [
+        "A-028",
         "B-003",
         "B-004",
         "B-005",
         "B-006",
         "B-007",
         "B-017",
-        "B-033"
+        "B-033",
+        "B-035",
+        "C-025",
+        "E-008"
       ],
       "expected": "every element whose payload exceeds 8 MB (B-003..B-007 at least)"
     }

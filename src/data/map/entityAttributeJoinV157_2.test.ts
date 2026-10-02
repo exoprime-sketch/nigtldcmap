@@ -3,13 +3,17 @@ import { readFileSync } from "fs";
 import { gunzipSync } from "zlib";
 import { join } from "path";
 import { countryPublicDirV158 } from "../countryContext";
-import { joinNationalMineAttributesV157_2, nationalMineAttributeLineV157_2 } from "./entityAttributeJoinV157_2";
-import type { MinePointV157_2, NationalMineAttributeV157_2 } from "./entityAttributeJoinV157_2";
+import {
+  applyNationalMineJoinV157_2,
+  joinNationalMineAttributesV157_2,
+  nationalMineAttributeLineV157_2,
+  NATIONAL_VALUE_KEY_V157_2,
+  oreEntriesV157_2,
+} from "./entityAttributeJoinV157_2";
+import type { MineJoinDeclarationV157_2, MinePointV157_2, NationalMineAttributeV157_2 } from "./entityAttributeJoinV157_2";
 
 // Read B-048's real published entities the way the screens do (packs/, gzip+base64),
-// the same asset scripts/v157-2/build-map-companions-v157.mjs reads from - so the
-// join is tested against the actual 8 mines and their real 광종 labels, not a fixture
-// that happens to be convenient.
+// so the join is tested against the delivered mines and their real 광종 labels.
 const DATA_ROOT = join(__dirname, `../../../${countryPublicDirV158("VNM")}`);
 const PUBLIC_ROOT = join(__dirname, "../../../public");
 function loadB048Mines(): MinePointV157_2[] {
@@ -26,93 +30,98 @@ function loadB048Mines(): MinePointV157_2[] {
 }
 
 const mines = loadB048Mines();
-
-test("B-048 carries the 8 mines this join is designed against, each with its own 광종", () => {
-  expect(mines).toHaveLength(8);
-  const byName = new Map(mines.map((m) => [m.name, m.normalizedAttributes["광종"]]));
-  expect(byName.get("Ban Phuc")).toBe("니켈");
-  expect(byName.get("Sin Quyen")).toBe("구리");
-  expect(byName.get("Nui Phao")).toBe("텅스텐(+형석·비스무트·구리)");
-});
+const mapIndex = JSON.parse(readFileSync(join(DATA_ROOT, "map-index.json"), "utf8")) as {
+  layers: Array<{ elementId: string; featureCount: number; entityJoinV157_2?: MineJoinDeclarationV157_2 }>;
+};
 
 function mkAttribute(overrides: Partial<NationalMineAttributeV157_2>): NationalMineAttributeV157_2 {
   return {
     elementId: "B-046",
-    label: "확인 매장량",
-    value: 3_500_000,
-    unit: "t REO",
-    period: "2026",
+    mineral: "니켈",
+    label: "매장량",
+    valueText: "130,000 t",
+    period: "2024",
     source: "TEST-SOURCE",
-    oreTypes: ["니켈", "리튬"],
+    oreTypes: ["니켈"],
     ...overrides,
   };
 }
 
-test("a mine whose own 광종 is in the target's ore list is attached the national value", () => {
+test("a mine lists its commodities with ' / '; a parenthesis stays inside its entry", () => {
+  expect(oreEntriesV157_2("구리 / 니켈 / 코발트")).toEqual(["구리", "니켈", "코발트"]);
+  expect(oreEntriesV157_2("텅스텐(+형석·비스무트·구리)")).toEqual(["텅스텐(+형석·비스무트·구리)"]);
+  expect(oreEntriesV157_2("보크사이트/알루미나")).toEqual(["보크사이트/알루미나"]);
+  expect(oreEntriesV157_2(null)).toEqual([]);
+});
+
+test("a mine one of whose own 광종 entries is in the target's ore list is attached the national value", () => {
   const rows = joinNationalMineAttributesV157_2(mines, [mkAttribute({})]);
-  const banPhuc = rows.find((r) => r.name === "Ban Phuc")!;
-  expect(banPhuc.oreType).toBe("니켈");
-  expect(banPhuc.attached).toHaveLength(1);
-  expect(banPhuc.attached[0]).toEqual({
+  const nickel = rows.filter((row) => row.attached.length);
+  expect(nickel.length).toBeGreaterThan(0);
+  for (const row of nickel) expect(row.oreEntries).toContain("니켈");
+  expect(nickel[0].attached[0]).toEqual({
     elementId: "B-046",
-    label: "확인 매장량",
-    value: 3_500_000,
-    unit: "t REO",
-    period: "2026",
+    mineral: "니켈",
+    label: "매장량",
+    valueText: "130,000 t",
+    period: "2024",
     source: "TEST-SOURCE",
     scope: "국가 전체",
   });
 });
 
-test("a mine with no matching ore type is left with an empty list, never a guessed value", () => {
-  const rows = joinNationalMineAttributesV157_2(mines, [mkAttribute({})]);
-  const dongPao = rows.find((r) => r.name === "Dong Pao")!; // 희토류
-  expect(dongPao.oreType).toBe("희토류");
-  expect(dongPao.attached).toEqual([]);
-});
-
 test("a byproduct mentioned in parentheses never matches by substring", () => {
-  // Núi Pháo's own 광종 names copper as a byproduct ("텅스텐(+형석·비스무트·구리)");
-  // it must not pick up B-047's Lào Cai copper figure, which belongs to Sin Quyen.
-  const copperTarget = mkAttribute({ elementId: "B-047", label: "구리 생산량", oreTypes: ["구리"] });
-  const rows = joinNationalMineAttributesV157_2(mines, [copperTarget]);
-  const nuiPhao = rows.find((r) => r.name === "Nui Phao")!;
-  const sinQuyen = rows.find((r) => r.name === "Sin Quyen")!;
+  const copper = mkAttribute({ elementId: "B-047", mineral: "구리", oreTypes: ["구리"] });
+  const rows = joinNationalMineAttributesV157_2(mines, [copper]);
+  const nuiPhao = rows.find((row) => row.oreEntries.includes("텅스텐(+형석·비스무트·구리)"))!;
+  expect(nuiPhao).toBeDefined();
   expect(nuiPhao.attached).toEqual([]);
-  expect(sinQuyen.attached).toHaveLength(1);
-  expect(sinQuyen.attached[0].elementId).toBe("B-047");
+  for (const row of rows.filter((item) => item.attached.length)) expect(row.oreEntries).toContain("구리");
 });
 
-test("two targets can attach to the same mine independently", () => {
-  const nickel = mkAttribute({ elementId: "B-046", oreTypes: ["니켈", "리튬"] });
-  const critical = mkAttribute({
-    elementId: "B-044",
-    label: "핵심광물 부존",
-    value: 1,
-    unit: "건",
-    oreTypes: ["니켈", "희토류", "텅스텐(+형석·비스무트·구리)", "티타늄(ilmenite·leucoxene)", "보크사이트/알루미나"],
-  });
-  const rows = joinNationalMineAttributesV157_2(mines, [nickel, critical]);
-  const banPhuc = rows.find((r) => r.name === "Ban Phuc")!;
-  expect(banPhuc.attached.map((a) => a.elementId).sort()).toEqual(["B-044", "B-046"]);
-});
-
-test("every mine in B-048 is accounted for (no record silently dropped)", () => {
+test("a mine with no matching ore type is left with an empty list, and every mine is accounted for", () => {
   const rows = joinNationalMineAttributesV157_2(mines, [mkAttribute({})]);
-  expect(rows.map((r) => r.name)).toEqual(mines.map((m) => m.name));
+  expect(rows.map((row) => row.recordId)).toEqual(mines.map((mine) => mine.recordId));
+  const iron = rows.filter((row) => row.oreEntries.length === 1 && row.oreEntries[0] === "철");
+  expect(iron.length).toBeGreaterThan(0);
+  for (const row of iron) expect(row.attached).toEqual([]);
 });
 
-test("nationalMineAttributeLineV157_2 states the value, unit, period and that it is national", () => {
+test("applyNationalMineJoinV157_2 keeps only joined mines and never mutates the host's records", () => {
+  const before = JSON.stringify(mines);
+  const joined = applyNationalMineJoinV157_2(mines, { hostElementId: "B-048", attributes: [mkAttribute({})] });
+  expect(JSON.stringify(mines)).toBe(before);
+  expect(joined.length).toBeGreaterThan(0);
+  for (const record of joined) {
+    expect(String(record.normalizedAttributes[NATIONAL_VALUE_KEY_V157_2])).toContain("국가 전체");
+  }
+});
+
+test("the published mineral layers count the same mines the runtime join keeps (build ↔ runtime parity)", () => {
+  const bundleIndex = JSON.parse(readFileSync(join(DATA_ROOT, "packs/bundle-index-v124.json"), "utf8"));
+  const envelope = JSON.parse(readFileSync(join(PUBLIC_ROOT, bundleIndex.elements["B-048"].packUrl.replace(/^\//u, "")), "utf8"));
+  const host = JSON.parse(gunzipSync(Buffer.from(envelope.payloadChunks.join(""), "base64")).toString("utf8")).elements["B-048"].entities.records as Array<
+    MinePointV157_2 & { latitude?: number; longitude?: number; mapEligible?: boolean }
+  >;
+  const layers = mapIndex.layers.filter((layer) => layer.entityJoinV157_2);
+  expect(layers.map((layer) => layer.elementId).sort()).toEqual(["B-044", "B-046", "B-047"]);
+  for (const layer of layers) {
+    const shown = applyNationalMineJoinV157_2(host, layer.entityJoinV157_2!).filter(
+      (record) => typeof record.latitude === "number" && typeof record.longitude === "number" && record.mapEligible !== false
+    );
+    expect(shown.length).toBe(layer.featureCount);
+  }
+});
+
+test("nationalMineAttributeLineV157_2 states the mineral, figure, period and that it is national", () => {
   const line = nationalMineAttributeLineV157_2({
     elementId: "B-047",
-    label: "구리 생산량",
-    value: 3000,
-    unit: "t (W 함량)",
-    period: "2025",
+    mineral: "구리",
+    label: "광산 생산량",
+    valueText: "30,000 t",
+    period: "2023",
     source: "TEST",
     scope: "국가 전체",
   });
-  expect(line).toContain("3,000");
-  expect(line).toContain("국가 전체");
-  expect(line).toContain("2025");
+  expect(line).toBe("구리 광산 생산량 30,000 t(2023) — 국가 전체 값");
 });

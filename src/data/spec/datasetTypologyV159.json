@@ -564,11 +564,11 @@
     },
     {
       "elementId": "A-022",
-      "displayType": "U1",
-      "displayTypeLabel": "국가 수준·추세",
-      "specDisplayType": "U1",
-      "structure": "S1",
-      "structureLabel": "국가×연도 관측값",
+      "displayType": "U2",
+      "displayTypeLabel": "지역·입지",
+      "specDisplayType": "U2",
+      "structure": "S2",
+      "structureLabel": "지역×연도 관측값",
       "flags": {
         "region": true,
         "tech": true,
@@ -579,7 +579,7 @@
       "status": "공개",
       "statusNotice": null,
       "referenceCountryIso3": null,
-      "variant": "지도: 관할별(총공사) 관측값 있으면 S2·②(관할 단위 동일값·분할 금지)로 전환, 없으면 S1·①·group-constant 유지(EVN 관할 T4 변형) — V162 확인 후 확정",
+      "variant": "지도: 전력총공사 관할별 관측값(V162: EVNCPC·EVNSPC·EVNHANOI·EVNHCMC) → 관할 단위 동일값(group-constant, 분할 금지) · 상세: EVN 그룹 전체 추이",
       "dedicated": null,
       "coverage": {
         "VNM": "○",
@@ -1457,7 +1457,7 @@
       "variant": "단계구분도: 성별 벼 재배면적(대리지표) + 국가 농업용수 취수 비중 추이",
       "dedicated": null,
       "coverage": {
-        "VNM": "✕",
+        "VNM": "○",
         "BGD": "✕"
       },
       "specCaseCount": 3
@@ -1732,7 +1732,7 @@
       "variant": "단계구분도: 성별 토지피복 면적 + 유형별 추이",
       "dedicated": null,
       "coverage": {
-        "VNM": "✕",
+        "VNM": "○",
         "BGD": "✕"
       },
       "specCaseCount": 3
@@ -1757,7 +1757,7 @@
       "variant": "단계구분도: 성별 토지피복 변화율",
       "dedicated": null,
       "coverage": {
-        "VNM": "✕",
+        "VNM": "○",
         "BGD": "✕"
       },
       "specCaseCount": 3

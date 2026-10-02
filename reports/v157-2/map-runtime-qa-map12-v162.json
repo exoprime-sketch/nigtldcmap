@@ -1,0 +1,732 @@
+{
+  "schema": "map-runtime-qa-v138",
+  "generatedAt": "2026-10-02T17:13:30.513Z",
+  "build": ".\\tmp\\build-v157-2-review",
+  "layers": [
+    {
+      "elementId": "A-013",
+      "title": "NDC-SDG 지역조치",
+      "renderer": "partial-choropleth",
+      "featureCount": 24,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 529,
+      "primary": "A-013",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 NDC-SDG 지역조치 · 2016년 기준 · NDC–SDG 연계 자료가 있는 지역 13/34개 성·시(2025-07-01 시행) 최솟값 4 건 중앙값(파생) 4 건 최댓값 4 건 값이 가장 작은 지역 An Giang · 4 건 값이 가장 큰 지역 Vĩnh Long · 4 건 미제공 지역 21개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) NDC-SDG 지역조치 · 성·시 권역 명시 NDC 조치 연계 4 건 건수의 많고 적음만으로 정책 성과를 판정하지 않음 자료 설명 소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다. 집계 방식 이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다. 구성 성·시 2개 중 2개 값 있음 이 위치로 확대 데이터 상세보기 자료연도 2016년 기준 · 성·시 색 표시(일부 지역) 이 지역의 수록 자료 2건 expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 6.4) · 메콩강 삼각주 권역 · 공식 원문 expanding flood drainage canals and regulating sewers in the Mekong River Delta (SDG 9.1) · 메콩강 삼각주 권역 · 공식 원문",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": true,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "region-linked-actions",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2016년 기준",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "A-022",
+      "title": "전력공급 신뢰도",
+      "renderer": "partial-choropleth",
+      "featureCount": 36,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 539,
+      "primary": "A-022",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 전력공급 신뢰도 · 2026 · 평균 정전시간(SAIDI) 자료가 있는 지역 17/34개 성·시(2025-07-01 시행) 최솟값 29.81 분/고객 중앙값(파생) 170.9 분/고객 최댓값 236.8 분/고객 값이 가장 작은 지역 Hà Nội · 29.81 분/고객 값이 가장 큰 지역 Vĩnh Long · 236.8 분/고객 미제공 지역 17개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 전력공급 신뢰도 · 성·시 평균 정전시간(SAIDI) 236.8 분/고객 자료 설명 소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다. 집계 방식 이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다. 구성 성·시 2개 중 2개 값 있음 이 위치로 확대 데이터 상세보기 자료연도 2026 · 성·시 색 표시(일부 지역) 이 지역의 수록 자료 1건 남부전력총공사(EVNSPC) 관할 · 관할 전체 값 · 공식 원문",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": true,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "saidi",
+          "options": 3
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-002",
+      "title": "기후대",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 525,
+      "primary": "B-002",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 기후대 · 2071-2099 SSP5-8.5 · 기후대 변화 시나리오 자료가 있는 지역 34/34개 성·시(2025-07-01 시행) 최솟값 35.9 % 중앙값(파생) 73.4 % 최댓값 100 % 값이 가장 작은 지역 Điện Biên · 35.9 % 값이 가장 큰 지역 Vĩnh Long · 100 % 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 기후대 · 성·시 최다 기후대 점유율 79.9 % 같은 기간·시나리오 안에서 국토 비율을 해석 분류 Aw (열대사바나) 성·시 중 순위 15위 / 34개 성·시 평균 대비 +6.91 % (평균 72.97 %) 같은 분류 비중 Aw (열대사바나) 18개 / 성·시 34개 (52.9%) 이 위치로 확대 데이터 상세보기 자료연도 2071-2099 SSP5-8.5 · 성·시 색 표시",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "dominant-zone-share",
+          "options": 4
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2071-2099 SSP5-8.5",
+          "options": 4
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-024",
+      "title": "농업용수 대리지표",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 513,
+      "primary": "B-024",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 농업용수 대리지표 · 2024 · 벼 재배면적(농업용수 대리지표) 자료가 있는 지역 34/34개 성·시(2025-07-01 시행) 최솟값 30,290 ha 중앙값(파생) 126,465 ha 최댓값 1,344,270 ha 값이 가장 작은 지역 Cao Bằng · 30,290 ha 값이 가장 큰 지역 An Giang · 1,344,270 ha 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 농업용수 대리지표 · 성·시 벼 재배면적(농업용수 대리지표) 1,344,270 ha 성·시 중 순위 1위 / 34개 성·시 평균 대비 +1,134,650.59 ha (평균 209,619.41 ha) 이 위치로 확대 데이터 상세보기 자료연도 2024 · 성·시 색 표시",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "paddy-area",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2024",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-035",
+      "title": "토지이용 면적",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 516,
+      "primary": "B-035",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 토지이용 면적 · 2022 · 산림 비율(육지 대비) 자료가 있는 지역 34/34개 성·시(2025-07-01 시행) 최솟값 0.1 % 중앙값(파생) 37.6 % 최댓값 65.8 % 값이 가장 작은 지역 Hưng Yên · 0.1 % 값이 가장 큰 지역 Huế · 65.8 % 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 토지이용 면적 · 성·시 산림 비율(육지 대비) 12.1 % 성·시 중 순위 25위 / 34개 성·시 평균 대비 −19.58 % (평균 31.65 %) 이 위치로 확대 데이터 상세보기 자료연도 2022 · 성·시 색 표시 An Giang 산림 비율(육지 대비) 추이 가로: 연도 세로: 산림 비율(육지 대비) (%) 단위: % 산림 비율(육지 대비) 12.16 11.84 11.53 11.21 10.89 1992 2000 2015 2022 연도 산림 비율(육지 대비) (%) 지도에서 선택한 지역의 공개 관측값만 연결해 표시합니다. 연도별 값 표",
+      "regionTrend": true,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "forest-share",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 8
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-036",
+      "title": "토지이용 변화율",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 515,
+      "primary": "B-036",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 토지이용 변화율 · 2015-2022 · 산림 연평균 변화율 자료가 있는 지역 34/34개 성·시(2025-07-01 시행) 최솟값 -0.4 %/년 중앙값(파생) 0.7 %/년 최댓값 6.2 %/년 값이 가장 작은 지역 Đà Nẵng · -0.4 %/년 값이 가장 큰 지역 Cần Thơ · 6.2 %/년 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 토지이용 변화율 · 성·시 산림 연평균 변화율 1.1 %/년 성·시 중 순위 11위 / 34개 성·시 평균 대비 +0.26 %/년 (평균 0.8 %/년) 이 위치로 확대 데이터 상세보기 자료연도 2015-2022 · 성·시 색 표시",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "forest-cagr",
+          "options": 5
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2015-2022",
+          "options": 4
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-044",
+      "title": "핵심광물 부존",
+      "renderer": "point",
+      "featureCount": 12,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 539,
+      "primary": "B-044",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "현재 표시 자료 요약 핵심광물 부존 · 2022 핵심광물 부존 수(지도 표시) 12곳 안티모니 2곳 구리 1곳 구리 / 니켈 / 코발트 1곳 구리 / 아연 1곳 금 / 구리 1곳 니켈 1곳 아연 / 구리 / 납 / 안티모니 / 비소 1곳 주석 / 텅스텐 1곳 주석 / 텅스텐 / 납 / 몰리브덴 / 형석 1곳 텅스텐 1곳 텅스텐 / 주석 / 납 / 몰리브덴 1곳 자료 범위 확인",
+      "featureSelected": true,
+      "selectedTitle": "Khao Son",
+      "selectedPanel": "선택 시설 Khao Son 핵심광물 부존 소재 성·시 박깐 (Bắc Kạn) 이 위치로 확대 데이터 상세보기 자료연도 2022 · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS · 지점 표시 국가 전체 값 주석 부존 부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 23,000 t (Sn 함량)(2026) · 생산량 11,000 t (Sn 함량)(2025) — 국가 전체 값 · 텅스텐 부존 부존 확인 — 정량 수록(USGS MCS 국가별 표: 매장·생산) · 매장량 170,000 t (W 함량)(2026) · 생산량 3,000 t (W 함량)(2025) — 국가 전체 값 광종 텅스텐 / 주석 / 납 / 몰리브덴 자료연도 2022",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-046",
+      "title": "광물 매장량",
+      "renderer": "point",
+      "featureCount": 16,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 525,
+      "primary": "B-046",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "현재 표시 자료 요약 광물 매장량 · 2022 광물 매장량 수(지도 표시) 16곳 인산염(인) 4곳 안티모니 2곳 알루미늄(보크사이트) 2곳 구리 / 니켈 / 코발트 1곳 니켈 1곳 보크사이트/알루미나 1곳 아연 / 구리 / 납 / 안티모니 / 비소 1곳 주석 / 텅스텐 1곳 주석 / 텅스텐 / 납 / 몰리브덴 / 형석 1곳 텅스텐 1곳 텅스텐 / 주석 / 납 / 몰리브덴 1곳 자료 범위 확인",
+      "featureSelected": true,
+      "selectedTitle": "Khao Son",
+      "selectedPanel": "선택 시설 Khao Son 광물 매장량 소재 성·시 박깐 (Bắc Kạn) 이 위치로 확대 데이터 상세보기 자료연도 2022 · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS · 지점 표시 국가 전체 값 주석 매장량 23,000 t (Sn 함량)(2026) — 국가 전체 값 · 텅스텐 매장량 170,000 t (W 함량)(2026) — 국가 전체 값 광종 텅스텐 / 주석 / 납 / 몰리브덴 자료연도 2022",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "B-047",
+      "title": "광물 생산량",
+      "renderer": "point",
+      "featureCount": 18,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 520,
+      "primary": "B-047",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "현재 표시 자료 요약 광물 생산량 · 2022 광물 생산량 수(지도 표시) 18곳 인산염(인) 4곳 안티모니 2곳 알루미늄(보크사이트) 2곳 구리 1곳 구리 / 니켈 / 코발트 1곳 구리 / 아연 1곳 금 / 구리 1곳 보크사이트/알루미나 1곳 아연 / 구리 / 납 / 안티모니 / 비소 1곳 주석 / 텅스텐 1곳 주석 / 텅스텐 / 납 / 몰리브덴 / 형석 1곳 텅스텐 1곳 텅스텐 / 주석 / 납 / 몰리브덴 1곳 자료 범위 확인",
+      "featureSelected": true,
+      "selectedTitle": "Khao Son",
+      "selectedPanel": "선택 시설 Khao Son 광물 생산량 소재 성·시 박깐 (Bắc Kạn) 이 위치로 확대 데이터 상세보기 자료연도 2022 · USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS · 지점 표시 국가 전체 값 주석 광산 생산량 11,000 t (Sn 함량)(2025) — 국가 전체 값 · 텅스텐 광산 생산량 3,000 t (W 함량)(2025) — 국가 전체 값 광종 텅스텐 / 주석 / 납 / 몰리브덴 자료연도 2022",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "locations",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2022",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-003",
+      "title": "국가적응계획 지역과제",
+      "renderer": "partial-choropleth",
+      "featureCount": 29,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 538,
+      "primary": "C-003",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 국가적응계획 지역과제 · 2021~2030년 계획 · 권역 명시 적응 과제·취약성 항목 자료가 있는 지역 17/34개 성·시(2025-07-01 시행) 최솟값 2 건 중앙값(파생) 4 건 최댓값 9 건 값이 가장 작은 지역 Bắc Ninh · 2 건 값이 가장 큰 지역 Vĩnh Long · 9 건 미제공 지역 17개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 국가적응계획 지역과제 · 성·시 권역 명시 적응 과제·취약성 항목 9 건 자료 설명 소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다. 집계 방식 이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다. 구성 성·시 2개 중 2개 값 있음 이 위치로 확대 데이터 상세보기 자료연도 2021~2030년 계획 · 성·시 색 표시(일부 지역) 이 지역의 수록 자료 9건 지하수 조사·평가, 지하수 취수 관리 및 수질 보호, Investigate and evaluate underground water sources for the c… · 메콩강 삼각주 권역 · 공식 원문 지역 협력·연계 촉진, 주요 농산물 가치사슬 개발, Develop key agricultural centres and key raw material areas … · 메콩강 삼각주 권역 · 공식 원문 작부체계 조정, 집약재배·간작 촉진, Transform the agricultural product",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": true,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "region-named-items",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2021~2030년 계획",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-006",
+      "title": "JCM 사업",
+      "renderer": "partial-choropleth",
+      "featureCount": 27,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 530,
+      "primary": "C-006",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 JCM 사업 · 2026 · JCM 등록 사업 자료가 있는 지역 15/34개 성·시(2025-07-01 시행) 최솟값 1 건 중앙값(파생) 1 건 최댓값 9 건 값이 가장 작은 지역 Cà Mau · 1 건 값이 가장 큰 지역 Hồ Chí Minh · 9 건 미제공 지역 19개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) JCM 사업 · 성·시 JCM 등록 사업 2 건 성·시 중 순위 4위 / 15개 성·시 평균 대비 −0.2 건 (평균 2.2 건) 이 위치로 확대 데이터 상세보기 자료연도 2026 · 성·시 색 표시(일부 지역)",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": false,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "jcm-projects",
+          "options": 1
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2026",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    },
+    {
+      "elementId": "C-017",
+      "title": "지역 발전가격·지원",
+      "renderer": "admin1-choropleth",
+      "featureCount": 63,
+      "rendered": true,
+      "renderAttempts": 2,
+      "renderMs": 543,
+      "primary": "C-017",
+      "analysis": "자료정보 · 현재 분석",
+      "summary": "지역별 비교 지역 발전가격·지원 · 2025 · 2025년 발전가격 상한 · 지상형 태양광, 저장장치 없음 자료가 있는 지역 34/34개 성·시(2025-07-01 시행) 최솟값 1,012 VND/kWh 중앙값(파생) 1,383 VND/kWh 최댓값 1,383 VND/kWh 값이 가장 작은 지역 An Giang · 1,012 VND/kWh 값이 가장 큰 지역 Tuyên Quang · 1,383 VND/kWh 미제공 지역 0개 성·시 중앙값은 값이 있는 지역의 값을 오름차순으로 정렬해 가운데 값을 계산한 파생 통계입니다.",
+      "featureSelected": true,
+      "selectedTitle": "안장 (An Giang)",
+      "selectedPanel": "선택 지역 안장 (An Giang) 지역 발전가격·지원 · 성·시 2025년 발전가격 상한 · 지상형 태양광, 저장장치 없음 1,012 VND/kWh 자료 설명 소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다. 집계 방식 이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다. 구성 성·시 2개 중 2개 값 있음 이 위치로 확대 데이터 상세보기 자료연도 2025 · 성·시 색 표시 이 지역의 수록 자료 1건 남부 권역 · 권역 전체 가격 상한 · 공식 원문",
+      "regionTrend": false,
+      "memberSeries": false,
+      "memberRecords": true,
+      "selectors": [
+        {
+          "id": "map-layer-variable-select",
+          "value": "cap-2025-sol-g-ns",
+          "options": 6
+        },
+        {
+          "id": "map-layer-period-select",
+          "value": "2025",
+          "options": 1
+        }
+      ],
+      "internalPhrases": [],
+      "consoleErrors": 0
+    }
+  ],
+  "interactions": {},
+  "widths": [],
+  "consoleErrors": [],
+  "httpFailures": [
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/24/14.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/24/13.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/24/15.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/25/13.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/25/14.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/25/15.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/26/13.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/26/14.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/5/26/15.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/26.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/27.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/28.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/30.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/29.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/49/31.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/26.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/27.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/29.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/28.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/30.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/50/31.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/26.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/27.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/28.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/30.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/29.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/51/31.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/26.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/28.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/27.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/30.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/29.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/6/52/31.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/56.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/55.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/57.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/58.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/59.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/61.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/100/60.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/55.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/56.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/57.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/59.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/58.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/60.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/55.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/101/61.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/56.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/57.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/58.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/59.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/60.pbf",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "bucket": "layer-sweep",
+      "status": "request-failed",
+      "url": "https://tiles.openfreemap.org/planet/7/102/61.pbf",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "retries": [],
+  "summary": {
+    "activeLayers": 12,
+    "renderedLayers": 12,
+    "featureSelectedLayers": 12,
+    "internalPhraseLayers": [],
+    "consoleErrorCount": 0,
+    "httpFailureCount": 54,
+    "retryCount": 0,
+    "widthsWithClippedText": [],
+    "widthsWithDocumentOverflow": []
+  }
+}

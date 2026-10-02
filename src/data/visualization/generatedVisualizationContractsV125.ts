@@ -304,7 +304,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 365,
     "primaryRenderer": "evidence-matrix",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -520,7 +520,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 39,
     "primaryRenderer": "kpi-trend",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2026,
       "start": 2015
@@ -833,7 +833,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 1491,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2099,
       "start": 1930
@@ -1426,7 +1426,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 165,
     "primaryRenderer": "composition",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2023,
       "start": 1990
@@ -1715,7 +1715,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 3998,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2025,
       "start": 1961
@@ -1742,7 +1742,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 440,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2024,
       "start": 2020
@@ -1964,7 +1964,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 23,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": 2026,
       "start": 2024
@@ -2012,7 +2012,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 64,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2035,7 +2035,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 81,
     "primaryRenderer": "spatial-summary",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2139,7 +2139,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 272,
     "primaryRenderer": "evidence-matrix",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2220,7 +2220,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 38,
     "primaryRenderer": "capability-scorecard",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null
@@ -2512,7 +2512,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "noDataReason": null,
     "populatedRecordCount": 56,
     "primaryRenderer": "evidence-matrix",
-    "spatiallyLinked": false,
+    "spatiallyLinked": true,
     "yearRange": {
       "end": null,
       "start": null

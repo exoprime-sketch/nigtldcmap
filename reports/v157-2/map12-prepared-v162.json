@@ -1,0 +1,113 @@
+{
+ "elements": {
+  "B-002": {
+   "rows": 388,
+   "coverage": {
+    "adm1_63": {
+     "regions": 63,
+     "missing": []
+    },
+    "adm1_34": {
+     "regions": 34,
+     "missing": []
+    }
+   },
+   "used": {
+    "B-002_koppen_adm1": 252,
+    "B-002_koppen_adm1_adm34": 136
+   },
+   "excluded": {
+    "B-002_koppen_class_adm1": 633,
+    "B-002_koppen_class_adm1_adm34": 406
+   },
+   "file": "B-002_기후대(Climate zone).xlsx",
+   "sha256": "3c138690c280f8b2ce90b2846f84a5ad2d0c373beb807a46bbcf2209ae2bde4b"
+  },
+  "B-024": {
+   "rows": 97,
+   "coverage": {
+    "adm1_63": {
+     "regions": 63,
+     "missing": []
+    },
+    "adm1_34": {
+     "regions": 34,
+     "missing": []
+    }
+   },
+   "used": {
+    "B-024_irrigated_area_subnat": 63,
+    "B-024_irrigated_area_subnat_adm34": 34
+   },
+   "excluded": {
+    "B-024_agri_water_share_subnat": 63,
+    "B-024_agri_water_share_subnat_adm34": 34
+   },
+   "file": "B-024_농업 용수 비중.xlsx",
+   "sha256": "91d42ee902c2da44512ff9b2bddc20f3d35efcfe897951cbde165e25215aa0a9"
+  },
+  "B-035": {
+   "rows": 3007,
+   "coverage": {
+    "adm1_63": {
+     "regions": 63,
+     "missing": []
+    },
+    "adm1_34": {
+     "regions": 34,
+     "missing": []
+    }
+   },
+   "used": {
+    "B-035_lc_adm1_year": 1953,
+    "B-035_lc_adm1_year_adm34": 1054
+   },
+   "excluded": {
+    "B-035_lc_national_year": 31
+   },
+   "file": "B-035_LULUCF 관련 면적 변화.xlsx",
+   "sha256": "876d51027b96ce2f08342dac34862c745ecb283987dc60f13752ecedda6ac21b"
+  },
+  "B-036": {
+   "rows": 388,
+   "coverage": {
+    "adm1_63": {
+     "regions": 63,
+     "missing": []
+    },
+    "adm1_34": {
+     "regions": 34,
+     "missing": []
+    }
+   },
+   "used": {
+    "B-036_lc_cagr_adm1": 252,
+    "B-036_lc_cagr_adm1_adm34": 136
+   },
+   "excluded": {
+    "B-036_lc_cagr_national": 4
+   },
+   "file": "B-036_토지이용 변화율.xlsx",
+   "sha256": "1ef1c6f28c8468a0ba0779f2a2ae7205805fd7df183da7770e8979c3969a5751"
+  },
+  "A-013": {
+   "rows": 8,
+   "coverage": {
+    "records": 365,
+    "linkedRecords": 8,
+    "regions": {
+     "mekong-river-delta": 4,
+     "red-river-delta": 4
+    }
+   },
+   "used": {
+    "A-013_ndc_sdg_linkage_registry": 365
+   },
+   "excluded": {},
+   "file": "A-013_Climate Watch NDC-SDG linkage.xlsx",
+   "sha256": "43e028efa019eeb1b1bdca25fe515d71f08f0b452804d5771ac01ef5dc9a704c"
+  }
+ },
+ "schema": "map12-prepared-v162",
+ "source": "delivery-2026-09-30"
+}

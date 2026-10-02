@@ -1,0 +1,24 @@
+{
+  "schema": "mineral-crosswalk-v162",
+  "purpose": "B-044·B-046·B-047의 광종(광종_표준, USGS Mineral Commodity Summaries 표기)과 B-048 광산의 광종 항목(USGS MRDS 표기)을 같은 광물로 연결하는 표. 값을 만들거나 나누지 않으며, 광물 이름의 동일성만 적는다.",
+  "basis": "두 자료 모두 USGS 원천이며, 아래 각 행의 usgsCommodity는 B-04x 레코드의 '광종_USGS_영문' 값이다. MRDS의 광종 항목은 같은 상품명의 국문 표기다.",
+  "matchRule": "B-048 광종을 ' / '로 나눈 각 항목을 통째로 비교한다. 괄호 속 부산물(예: '텅스텐(+형석·비스무트·구리)'의 구리)은 그 항목의 일부라 따로 일치시키지 않는다.",
+  "reviewedAt": "2026-10-03",
+  "minerals": [
+    { "standard": "기타(20종 외) - 구리", "mineral": "구리", "usgsCommodity": "COPPER", "b048Entries": ["구리"] },
+    { "standard": "기타(20종 외) - 인광석", "mineral": "인광석", "usgsCommodity": "PHOSPHATE ROCK", "b048Entries": ["인산염(인)"], "note": "MRDS 'Phosphorus-Phosphates' = MCS 'Phosphate rock'(같은 상품)" },
+    { "standard": "기타(20종 외) - 보크사이트", "mineral": "보크사이트", "usgsCommodity": "BAUXITE AND ALUMINA", "b048Entries": ["알루미늄(보크사이트)", "보크사이트/알루미나"] },
+    { "standard": "티타늄광물", "mineral": "티타늄광물", "usgsCommodity": "TITANIUM MINERAL CONCENTRATES", "b048Entries": ["티타늄", "티타늄(ilmenite·leucoxene)"] },
+    { "standard": "니켈", "mineral": "니켈", "usgsCommodity": "NICKEL", "b048Entries": ["니켈"] },
+    { "standard": "코발트", "mineral": "코발트", "usgsCommodity": "COBALT", "b048Entries": ["코발트"] },
+    { "standard": "주석", "mineral": "주석", "usgsCommodity": "TIN", "b048Entries": ["주석"] },
+    { "standard": "텅스텐", "mineral": "텅스텐", "usgsCommodity": "TUNGSTEN", "b048Entries": ["텅스텐"] },
+    { "standard": "납", "mineral": "납", "usgsCommodity": "LEAD", "b048Entries": ["납"] },
+    { "standard": "아연", "mineral": "아연", "usgsCommodity": "ZINC", "b048Entries": ["아연"] },
+    { "standard": "안티모니", "mineral": "안티모니", "usgsCommodity": "ANTIMONY", "b048Entries": ["안티모니"] },
+    { "standard": "희토류", "mineral": "희토류", "usgsCommodity": "RARE EARTHS", "b048Entries": ["희토류"] },
+    { "standard": "형석", "mineral": "형석", "usgsCommodity": "FLUORSPAR", "b048Entries": ["형석"] },
+    { "standard": "크롬", "mineral": "크롬", "usgsCommodity": "CHROMIUM", "b048Entries": ["크롬"] }
+  ],
+  "withoutMine": "흑연·리튬·망간·마그네슘화합물·나이오븀·백금족·탄탈럼·바나듐·지르코늄하프늄은 B-048에 같은 광종의 광산이 없어 지도에 연결하지 않는다(상세 화면의 국가 값으로 제공)."
+}
