@@ -292,25 +292,22 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "세부 분류",
       "레코드 유형",
-      "typeOfInformation",
-      "연도"
+      "typeOfInformation"
     ],
     "downloadAvailable": true,
     "elementId": "A-013",
     "measureLabels": [
       "NDC-SDG 연계",
-      "NDC-SDG 연계 건수",
       "NDC-SDG 연계 목록"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 366,
+    "populatedRecordCount": 365,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2016,
-      "start": 2016
+      "end": null,
+      "start": null
     }
   },
   {
@@ -535,25 +532,22 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "capacityBand",
       "commissioningYear",
-      "세부 분류",
       "레코드 유형",
       "fuelType",
-      "fuelTypeRaw",
-      "연도"
+      "fuelTypeRaw"
     ],
     "downloadAvailable": true,
     "elementId": "A-023",
     "measureLabels": [
-      "발전소 개체 수",
       "발전소 목록"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 1964,
+    "populatedRecordCount": 1963,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
-      "end": 2021,
-      "start": 2021
+      "end": null,
+      "start": null
     }
   },
   {
@@ -597,7 +591,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "상용 가동 CCS 시설 수"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 6,
+    "populatedRecordCount": 2,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -616,14 +610,15 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "A-026",
     "measureLabels": [
       "건물 풋프린트",
-      "건물 풋프린트 레이어"
+      "건물 풋프린트 레이어",
+      "건물 풋프린트(OSM 참고)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 3,
+    "populatedRecordCount": 10,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2023,
+      "end": 2026,
       "start": 2023
     }
   },
@@ -643,7 +638,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "철도 레이어"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 35,
+    "populatedRecordCount": 59,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -657,17 +652,21 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "분류",
       "세부 분류",
+      "레코드 유형",
       "기술",
       "연도"
     ],
     "downloadAvailable": true,
     "elementId": "A-028",
     "measureLabels": [
+      "기타 자연지형지물 목록",
+      "내륙 수자원 지물 목록",
       "수로 레이어",
-      "자연지형지물 레이어"
+      "자연지형지물 레이어",
+      "해안 지물 목록"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 19,
+    "populatedRecordCount": 7037,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -691,7 +690,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "무역협정 건수"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 20,
+    "populatedRecordCount": 31,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": false,
     "yearRange": {
@@ -713,12 +712,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "한-베트남 교역"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 9,
+    "populatedRecordCount": 141,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2024,
-      "start": 2021
+      "start": 1991
     }
   },
   {
@@ -798,8 +797,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "B-001",
     "measureLabels": [
-      "연 평년강수",
-      "연 평년기온",
+      "연 평년강수 (1991-2020 평년)",
+      "연 평년기온 (1991-2020 평년)",
       "월 평년강수",
       "월 평년기온",
       "월별 건기/우기 구분(전국)"
@@ -819,18 +818,20 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "세부 분류",
       "detail_2",
+      "레코드 유형",
       "연도"
     ],
     "downloadAvailable": true,
     "elementId": "B-002",
     "measureLabels": [
+      "ADM1 단위 기간별 우세 기후대",
       "국가 우세 기후대",
       "기후대별 점유 면적",
       "기후대별 점유 비율",
       "열대기후(A군) 국토 점유 비율"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 19,
+    "populatedRecordCount": 1491,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
@@ -854,7 +855,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "연평균기온(관측)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 8371,
+    "populatedRecordCount": 12621,
     "primaryRenderer": "seasonality",
     "spatiallyLinked": true,
     "yearRange": {
@@ -872,16 +873,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-004",
     "measureLabels": [
       "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록)",
+      "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
       "CMIP6 기반 과거／미래 기후(전국)",
+      "CMIP6 기반 과거／미래 기후(전국) - 월별 평년값(전국)",
       "상대습도(hurs)",
-      "연강수(pr)",
-      "일사량(rsds 대체",
-      "최고기온(tasmax)",
-      "최저기온(tasmin)",
-      "평균기온(tas)"
+      "연강수(pr)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 33232,
+    "populatedRecordCount": 91596,
     "primaryRenderer": "scenario-range",
     "spatiallyLinked": true,
     "yearRange": {
@@ -893,25 +894,29 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "기술",
+      "연도"
     ],
     "downloadAvailable": true,
     "elementId": "B-005",
     "measureLabels": [
       "SPEI12",
       "가뭄(성×시나리오×연도 개체 목록)",
+      "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "가뭄(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
       "가뭄(전국)",
-      "연속 건조일수 CDD",
-      "토양수분(연평균)",
-      "표준강수증발산지수 SPEI12"
+      "가뭄(전국) - 월별 평년값(전국)",
+      "연속 건조일수 CDD"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 31688,
+    "populatedRecordCount": 54727,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": true,
     "yearRange": {
-      "end": null,
-      "start": null
+      "end": 2025,
+      "start": 1991
     }
   },
   {
@@ -929,11 +934,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "열대야 TR29",
       "체감폭염 HI35",
       "폭염(성×시나리오×연도 개체 목록)",
-      "폭염(전국)",
-      "폭염일수 TX35"
+      "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 32608,
+    "populatedRecordCount": 80071,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": true,
     "yearRange": {
@@ -956,10 +961,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "호우일수 R20mm",
       "호우일수 R50mm",
       "홍수(성×시나리오×연도 개체 목록)",
-      "홍수(전국)"
+      "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 32370,
+    "populatedRecordCount": 80070,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1015,12 +1021,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "WWF BRF 조절 서비스(Mitigating)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 435,
+    "populatedRecordCount": 255,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": true,
     "yearRange": {
       "end": 2026,
-      "start": 1995
+      "start": 2026
     }
   },
   {
@@ -1036,17 +1042,20 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "2024년 최대 피해 극한기상 사건",
       "CRI 30년 누적 순위",
+      "CRI 과거판 20년 누적 순위(구 방법론)",
+      "CRI 과거판 20년 누적 점수(구 방법론)",
+      "CRI 과거판 단년 순위(구 방법론)",
+      "CRI 과거판 단년 점수(구 방법론)",
       "CRI 본문 수록 피해통계(2024년)",
-      "CRI 순위",
-      "CRI 종합 순위"
+      "CRI 순위"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 12,
+    "populatedRecordCount": 44,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2024,
-      "start": 2023
+      "start": 2012
     }
   },
   {
@@ -1136,26 +1145,27 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "세부 분류",
-      "연도"
+      "레코드 유형"
     ],
     "downloadAvailable": true,
     "elementId": "B-014",
     "measureLabels": [
+      "GDP 변화율(기준선 대비)",
       "GDP 영향",
       "권고 탄소가격 경로",
       "누적 추가 세수",
       "배출 감소율",
-      "연간 세수(GDP 대비) (범위 상한)",
-      "연간 세수(GDP 대비) (범위 하한)"
+      "배출 변화율(기준선 대비)",
+      "세수 누적액",
+      "연간 세수(GDP 대비) (범위 상한)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 13,
+    "populatedRecordCount": 12,
     "primaryRenderer": "scenario-range",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2040,
-      "start": 2030
+      "end": null,
+      "start": null
     }
   },
   {
@@ -1171,13 +1181,14 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "ETS 대상 시설 수",
       "국가 크레딧 메커니즘 상태",
       "국내 배출권거래제(ETS) 운영 상태",
+      "국내 배출권거래제(ETS) 운영 상태(연도별 주요 단계)",
       "배출권 할당량",
       "탄소 가격(실효 가격)",
       "탄소세",
       "파리협정 제6조 협력 체결 현황"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 10,
+    "populatedRecordCount": 9,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1225,7 +1236,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "물 스트레스(유역×성 개체 목록)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 2032,
+    "populatedRecordCount": 4867,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1349,10 +1360,10 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-022",
     "measureLabels": [
       "기후 투자 재원 구성",
-      "기후 피해 경제손실(적응 부재 시) (범위 상한)",
-      "기후 피해 경제손실(적응 부재 시) (범위 하한)",
+      "기후 피해 GDP 손실(범위 상한)",
+      "기후 피해 GDP 손실(범위 하한)",
       "적응 투자 필요액",
-      "총 투자 필요액(적응+탈탄소)",
+      "총 투자 필요액(적응+완화)",
       "추가 극빈곤 인구",
       "탈탄소 경로 투자 구성"
     ],
@@ -1375,16 +1386,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-023",
     "measureLabels": [
       "건기 최저유량",
-      "건기／우기 유량 차이(지점",
+      "건기／우기 유량 차이 - 보조 지표(문헌값: MRC 2009",
+      "건기／우기 유량 차이(하천 지점 개체 목록)",
       "메콩(Kratie) 건기",
       "메콩델타 건기 유량 비중",
       "메콩델타 우기 유량 비중",
       "우기 최고유량",
-      "유역 단위 건우기 유량차(GIS 기반 산출)",
-      "홍강(Sơn Tây) 건기"
+      "유역 단위 건우기 유량차(GIS 기반 산출)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 11,
+    "populatedRecordCount": 382,
     "primaryRenderer": "kpi-trend",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1396,7 +1407,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "세부 분류",
+      "레코드 유형",
       "기술",
       "연도"
     ],
@@ -1404,13 +1415,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-024",
     "measureLabels": [
       "관개농업 용수생산성 (SDG 6.4.1)",
-      "농업 용수 비중",
+      "농업 용수 비중 - 지역(ADM1) 배분 추정",
+      "농업 용수 비중 - 지역(ADM1) 배분 추정 - 2025년 34개 체계",
       "농업 용수 취수 비중",
       "농업 용수 취수 비중(총 재생가능 수자원 대비)",
-      "용수생산성"
+      "용수생산성",
+      "지역(ADM1) 관개면적 - 배분 기준 원값",
+      "지역(ADM1) 관개면적 - 배분 기준 원값 - 2025년 34개 체계"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 204,
+    "populatedRecordCount": 165,
     "primaryRenderer": "composition",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1422,19 +1436,22 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "개체 구분(Basin／Country)"
     ],
     "downloadAvailable": true,
     "elementId": "B-025",
     "measureLabels": [
+      "유역 면적",
       "유역 면적(HydroBASINS 기반 산출)",
       "유역 면적(베트남 국내분)",
       "유역 면적(유역 개체 목록)",
       "유역 총면적(국경 포함)",
+      "전국 유역면적",
       "전국 유역면적 집계"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 9,
+    "populatedRecordCount": 120,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1454,10 +1471,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "D8 유향 분포(격자 비율)",
       "대권역 우세 유향",
       "유향 D8 분포(성 단위 개체 목록)",
+      "유향 D8 분포(성 단위 개체 목록) - 2025년 34개 체계",
+      "유향 D8 분포(성 단위 개체 목록) - 유역 단위(HydroBASINS lvl6)",
       "유향(전국"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 74,
+    "populatedRecordCount": 165,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1469,6 +1488,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
+      "분류",
       "세부 분류",
       "기술",
       "연도"
@@ -1477,7 +1497,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-027",
     "measureLabels": [
       "이용가능(정규 재생) 지하수",
-      "지하수 잠재량",
+      "지하수 자원량",
       "총 재생가능 지하수 자원량"
     ],
     "noDataReason": null,
@@ -1505,10 +1525,10 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "외부 유입 수자원",
       "총 재생가능 수자원(TRWR)",
       "하천 유량",
-      "하천 유량(지점"
+      "하천 유량 - 기본 지표(GloFAS 지점 연평균, 10개국 공통 원천)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 16,
+    "populatedRecordCount": 25,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1526,16 +1546,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "B-029",
     "measureLabels": [
       "맹그로브 면적",
+      "맹그로브 면적 1996",
       "맹그로브 면적(MODIS)",
       "맹그로브 면적(WorldCover)",
       "산림 유형별 면적(전국)",
-      "습윤열대 1차림 면적(위성 기준)",
-      "원시림 면적",
-      "이탄지 면적",
-      "이탄지 면적(성 단위 개체 목록)"
+      "습윤열대 1차림 면적 2001(ADM1 단위 개체 목록)",
+      "습윤열대 1차림 면적 2001(ADM1 단위 개체 목록) - Province/City (2025년 34개 체계)",
+      "습윤열대 1차림 면적(위성 기준)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 231,
+    "populatedRecordCount": 483,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1559,7 +1579,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "조림지 연간 순증(대리지표)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 100,
+    "populatedRecordCount": 134,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1584,7 +1604,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "성(省)별 수관 면적(2010)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 260,
+    "populatedRecordCount": 294,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1607,12 +1627,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "성(省)별 수관 피복률"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 131,
+    "populatedRecordCount": 292,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
       "end": 2010,
-      "start": 2010
+      "start": 2000
     }
   },
   {
@@ -1631,7 +1651,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "연간 수관 손실"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 3545,
+    "populatedRecordCount": 6273,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1652,16 +1672,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "B-034",
     "measureLabels": [
+      "산림탄소 순플럭스(누계)",
       "산림탄소 순플럭스(연평균)",
+      "산림탄소 총배출(누계)",
       "산림탄소 총배출(연간)",
       "산림탄소 총배출(연평균)",
+      "산림탄소 총흡수(누계)",
       "산림탄소 총흡수(연평균)",
-      "수관 면적",
-      "지상부 탄소밀도",
-      "지상부 탄소저장량"
+      "수관 면적"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 608,
+    "populatedRecordCount": 1739,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1675,6 +1696,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "분류",
       "세부 분류",
+      "레코드 유형",
       "기술",
       "연도"
     ],
@@ -1691,7 +1713,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "농지 비율(육지면적 대비)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 1763,
+    "populatedRecordCount": 3998,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1704,17 +1726,21 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "세부 분류",
+      "레코드 유형",
       "연도"
     ],
     "downloadAvailable": true,
     "elementId": "B-036",
     "measureLabels": [
       "토지이용 변화율",
+      "토지피복 기반 변화율(성×기간 개체 목록)",
+      "토지피복 기반 변화율(성×기간 개체 목록) - 2025년 34개 체계",
+      "토지피복 기반 변화율(전국, 성 합계)",
       "토지피복 변화율",
       "토지피복 변화율(MODIS)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 48,
+    "populatedRecordCount": 440,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1736,10 +1762,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "토지피복 면적(MODIS)",
       "토지피복 면적(WorldCover)",
       "토지피복 분류별 면적(성 단위 개체 목록)",
+      "토지피복 분류별 면적(성 단위 개체 목록) - 2025년 34개 체계",
       "토지피복 분류별 면적(전국)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 747,
+    "populatedRecordCount": 781,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1761,20 +1788,20 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "1인당 도시폐기물 발생량",
       "농업잔재 자원량",
+      "도시폐기물 발생량",
       "도시폐기물 수거율(참고)",
+      "도시폐기물 수거율(참고, 인구 기준",
       "도시폐기물 중 유기성 자원량(산출)",
       "도시폐기물 중 음식물",
-      "도시폐기물 처리경로별 비중",
-      "도시폐기물(MSW) 자원량",
-      "바이오매스"
+      "도시폐기물 처리경로별 비중"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 187,
+    "populatedRecordCount": 399,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2050,
-      "start": 2000
+      "start": 1965
     }
   },
   {
@@ -1796,7 +1823,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기술적 잠재량"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 228,
+    "populatedRecordCount": 263,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1820,10 +1847,10 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "심도 2km 지온",
       "심도 3km 지온",
       "심도별 지온(성 단위 개체 목록)",
-      "온천"
+      "심도별 지온(성 단위 개체 목록) - 2025년 34개 체계"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 165,
+    "populatedRecordCount": 199,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1850,7 +1877,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "실용 발전량 잠재"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 113,
+    "populatedRecordCount": 147,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1870,13 +1897,14 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "평균 풍속(100m)",
       "풍력 에너지 장미도(방위별 에너지 비중)",
       "풍력 에너지밀도(100m)",
-      "풍력 자원(성 단위 개체 목록)",
-      "풍력 자원(전국)",
-      "풍속 장미도(방위별 평균풍속 비중)",
-      "풍향 빈도 장미도"
+      "풍력 자원",
+      "풍력 자원(성 단위 개체 목록) (기준연도 2017)",
+      "풍력 자원(성 단위 개체 목록) (기준연도 2017) - 2025년 34개 체계",
+      "풍력 자원(전국) (기준연도 2017)",
+      "풍속 장미도(방위별 평균풍속 비중)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 205,
+    "populatedRecordCount": 533,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -1906,7 +1934,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "원유 생산량"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 273,
+    "populatedRecordCount": 127,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
@@ -1918,8 +1946,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "세부 분류",
-      "기술",
+      "분류",
+      "레코드 유형",
       "연도"
     ],
     "downloadAvailable": true,
@@ -1927,16 +1955,19 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "10개국 기준광물 목록",
       "원광 수출규제 대상 광종",
+      "핵심광물 법",
       "핵심광물 부존 상태",
+      "핵심광물 부존 상태 - 광종별 레코드(기준 광물 20종 + 기타)",
+      "핵심광물 수출규제 체계(일반) - 광종별 수출규제 여부는 1.2 레코드 열 참조",
       "현지조사 결과 반영"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 24,
+    "populatedRecordCount": 23,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2026,
-      "start": 2026
+      "start": 2024
     }
   },
   {
@@ -1954,64 +1985,60 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "세계 매장량 순위",
       "세계 생산량 비중",
       "세계 생산량 순위",
-      "원문 위치(광종별 페이지)"
+      "인용 쪽"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 46,
+    "populatedRecordCount": 224,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2026,
-      "start": 2026
+      "end": 2025,
+      "start": 2019
     }
   },
   {
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "분류",
-      "세부 분류",
-      "기술",
-      "연도"
+      "레코드 유형"
     ],
     "downloadAvailable": true,
     "elementId": "B-046",
     "measureLabels": [
       "핵심광물 매장량 미수록(리튬",
+      "확인",
       "확인 매장량"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 8,
+    "populatedRecordCount": 64,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2026,
-      "start": 2026
+      "end": null,
+      "start": null
     }
   },
   {
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "분류",
-      "세부 분류",
-      "기술",
-      "연도"
+      "레코드 유형"
     ],
     "downloadAvailable": true,
     "elementId": "B-047",
     "measureLabels": [
       "광산 생산량",
       "생산량 미수록(구리",
+      "연간 생산량 - 광종별 레코드(국가×광종×연도)",
       "희토류 생산 급감(2024→2025) 사유"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 19,
+    "populatedRecordCount": 81,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2025,
-      "start": 2024
+      "end": null,
+      "start": null
     }
   },
   {
@@ -2029,7 +2056,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "주요 광산 위치(개체 목록)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 8,
+    "populatedRecordCount": 41,
     "primaryRenderer": "spatial-summary",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2048,15 +2075,15 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "2b. BAU 2030 부문별 배출량 (5개 부문)",
       "BAU 배출 시나리오 (총량, 2014~2030 시계열)",
-      "BAU 배출 전망(2030, MtCO₂e)",
+      "NDC (국가 온실가스 감축 목표)",
       "NDC-SDG 연계",
-      "NDC-SDG 연계 매핑",
-      "감축 목표(무조건부/조건부, %)",
-      "기준연도",
-      "기준정보 (기준연도"
+      "기준정보 (기준연도",
+      "무조건부 감축목표 (Unconditional Contribution, 2030)",
+      "원본 링크 (URL)",
+      "이행 재원 수요 (적응 부문"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 49,
+    "populatedRecordCount": 110,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2074,16 +2101,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "C-002",
     "measureLabels": [
       "2016년 부문×가스별 GHG 배출량",
-      "GDP 손실 추정(%)",
+      "BTR (격년투명성보고서, 舊 BUR)",
       "GHG 순배출량 (incl. LULUCF)",
       "GHG 총배출량 (excl. LULUCF)",
-      "GHG 총배출량(incl./excl. LULUCF, MtCO₂e, 시계열)",
-      "NDC 감축 달성량(부문별 ktCO₂e)",
-      "SSP별 기온/강수 전망",
-      "가스 종류별 배출량 (2016, 순배출 기준)"
+      "가스 종류별 배출량 (2016, 순배출 기준)",
+      "관측 기후변화 추세 (실측)",
+      "기후 시나리오 전망 (SSP)",
+      "기후변화 경제적 손실 전망"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 82,
+    "populatedRecordCount": 34,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2100,17 +2127,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-003",
     "measureLabels": [
-      "M&E 지표 체계",
+      "NAP (국가 적응 계획)",
       "기후변화 취약성 평가 (부문별 위험도)",
       "모니터링",
-      "부문별 적응 투자 소요(USD)",
       "부문별 취약성 평가 커버리지",
-      "부문별 취약성 평가(등급)",
       "수립 목적 및 법적 근거",
-      "원문 문서 정보"
+      "원문 문서 정보",
+      "이해관계자 참여 및 젠더",
+      "이행 단계"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 96,
+    "populatedRecordCount": 272,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2129,15 +2156,15 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "2030년 부문별 감축 경로 (NCCS 중간목표)",
       "2050년 부문별 감축 경로 (넷제로 경로)",
-      "공정전환 전략",
+      "LT-LEDS (장기 저탄소 발전 전략)",
       "공정전환(Just Transition) 및 국제 이니셔티브",
       "넷제로 목표 및 배출 정점",
-      "넷제로 목표 연도/범위",
-      "부문별 탈탄소 경로",
-      "부문별 탈탄소 전략 (7대 부문 주요 조치)"
+      "부문별 탈탄소 전략 (7대 부문 주요 조치)",
+      "산림피복 목표",
+      "에너지 전환 목표 (재생에너지"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 58,
+    "populatedRecordCount": 71,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2154,17 +2181,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-005",
     "measureLabels": [
-      "TAP(기술실행계획) 유무",
+      "TNA (기술 수요 평가)",
       "감축 TAP(기술실행계획) 구조",
       "감축 부문별 기술이전 장벽",
       "감축 우선기술 MCDA 평가점수",
       "감축 우선기술 목록 (에너지",
       "감축 우선부문 평가 매트릭스",
       "감축(Mitigation) 부문 우선순위 선정 (기준",
-      "감축/적응 우선순위 기술 목록(기술명/부문/우선순위 순위)"
+      "결론 및 향후 전망"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 135,
+    "populatedRecordCount": 408,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2181,17 +2208,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-006",
     "measureLabels": [
-      "ITMO 양자 협정 승인 기관(Authorization Body)",
-      "ITMO 양자 협정 체결국",
-      "ITMO 이전 실적(tCO₂e)",
       "UNFCCC 국제 등록부 연동 현황",
-      "국가 레지스트리 존재 여부 및 UNFCCC 연동 상태",
       "국내 이행 법적 근거 (파리협정 제6.2조",
       "국내 탄소 레지스트리",
-      "대상 부문/기술"
+      "상응조정(Corresponding Adjustment, CA) 체계",
+      "원본 링크 (URL)",
+      "제6.2조 ITMO 이전실적 (Transfer)",
+      "제6.2조 양자협력(ITMO) 협정 체결 현황",
+      "제6.4조(PACM) 이행"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 50,
+    "populatedRecordCount": 38,
     "primaryRenderer": "capability-scorecard",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2210,15 +2237,15 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "measureLabels": [
       "NMA 플랫폼 전체 현황 (글로벌 참고지표, GCNMA-8 기준)",
       "NMA별 참여 지위",
-      "대상 분야(감축/적응/재정/기술/역량)",
-      "등록 일자",
-      "등록된 활동명",
       "베트남 참여 현황",
       "베트남 참여 현황 (Art 6.8 NMA 등록",
-      "원본 링크 (URL)"
+      "원본 링크 (URL)",
+      "참여 상태 코드 체계",
+      "파리협정 제6.8조 비시장 접근법 참여 현황",
+      "플랫폼 역량강화 활동 (글로벌 참고지표, Vietnam 특정 언급 없음)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 32,
+    "populatedRecordCount": 7,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2230,22 +2257,23 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "[이니셔티브] 운영 상태"
     ],
     "downloadAvailable": true,
     "elementId": "C-008",
     "measureLabels": [
+      "Cooperative Climate Initiative 참여 현황",
       "NAZCA 등재 개별 행위자 명부",
       "NAZCA 등재 행위자",
       "NAZCA 참여형태(Engagement) 집계",
       "UNFCCC Party 주요 일자",
       "개별 행위자 목록 확보 가능성",
       "기후 분야 (감축 / 적응)",
-      "기후 분야(감축/적응)",
       "원본 링크 (URL)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 235,
+    "populatedRecordCount": 117,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2265,14 +2293,14 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "GHG 감축 시행령 규정 내용 (Decree 06/2022",
       "GHG 인벤토리 대상",
       "국가기후변화전략 2050",
+      "기후 법제도 현황",
       "대상 분야 (감축 / 적응 / 에너지 / 산업)",
-      "대상 분야(감축/적응/에너지/산업)",
       "법령 제",
       "법령 제정",
       "법령명"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 182,
+    "populatedRecordCount": 19,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2289,17 +2317,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-010",
     "measureLabels": [
+      "기타 환경 관련 법제도 현황",
       "대기",
-      "법령명",
       "법제 개정 현황",
       "법제 목록 개요 (환경보호 관련 법령",
-      "상태",
       "생물다양성 법제 (생물다양성법 20/2008/QH12 + 국가생물다양성전략 2030)",
       "생산자책임재활용(EPR) 제도",
-      "생산자책임재활용(EPR) 제도 (LEP 제54"
+      "생산자책임재활용(EPR) 제도 (LEP 제54",
+      "수자원법 (Law on Water Resources, 28/2023/QH15)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 59,
+    "populatedRecordCount": 19,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2316,17 +2344,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-011",
     "measureLabels": [
-      "경보 등급(1~4단계: 여행유의/자제/철수권고/여행금지)",
-      "범죄 통계",
       "범죄 통계 (정량지표)",
       "베트남 여행경보 현황 및 해외 비교",
       "베트남 현지 긴급신고 번호",
       "성 단위 치안지표",
       "성 단위 치안지표 공표 여부",
-      "여행경보 등급 체계 (외교부 4단계 정의)"
+      "여행경보 등급 체계 (외교부 4단계 정의)",
+      "원본 링크 (URL)",
+      "재외공관 연락처"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 44,
+    "populatedRecordCount": 38,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2344,16 +2372,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "C-012",
     "measureLabels": [
       "PPP 법률 유무",
-      "PPP 법률 유무/명칭",
+      "PPP 법제도",
       "PPP 전담 기관",
       "PPP 프로젝트 이력 (건수)",
-      "PPP 프로젝트 이력(건수)",
-      "VfM 평가 의무 여부",
       "VfM(Value for Money) 평가 의무 여부",
-      "계약 유형 (BOT / BOO / Concession 등)"
+      "계약 유형 (BOT / BOO / Concession 등)",
+      "법령 제",
+      "분쟁해결"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 120,
+    "populatedRecordCount": 20,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2380,7 +2408,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "법인세 면제기간"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 64,
+    "populatedRecordCount": 129,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2398,16 +2426,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "C-014",
     "measureLabels": [
       "건축 허가 절차",
-      "건축 허가 절차[건축]",
       "데이터 출처 및 산정 방법",
-      "비용(USD)[건축]",
-      "비용(USD)[전력]",
-      "비용(USD)[토지]",
-      "소요 기간(일수)[건축]",
-      "소요 기간(일수)[전력]"
+      "원본 링크 (URL)",
+      "인허가 유형별 비교 (절차 수",
+      "인허가 프로세스",
+      "전력 사업 허가 절차",
+      "토지 취득 절차",
+      "품질"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 93,
+    "populatedRecordCount": 46,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2424,12 +2452,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-015",
     "measureLabels": [
-      "상기 문서들의 원본 링크(URL)",
+      "재생에너지 법제도 원본 링크",
       "정책 문서 원본 링크 레지스트리",
       "지정 출처 상태 및 데이터 보완 이력"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 21,
+    "populatedRecordCount": 24,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2458,7 +2486,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "폐기물발전(điện rác) 계획용량"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 1456,
+    "populatedRecordCount": 1416,
     "primaryRenderer": "policy-timeline",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2475,17 +2503,14 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-017",
     "measureLabels": [
-      "대상 기술(태양광/풍력/수력/바이오)",
       "미도입 인센티브 유형",
-      "상태",
       "성별 재생에너지 지원제도",
-      "시행 기관",
       "인센티브 유형",
-      "인센티브 유형(FIT/FIP/RPS/세제/보조금/넷미터링)",
-      "인센티브 조건 (가격 / 기간 / 용량)"
+      "인센티브 조건 (가격 / 기간 / 용량)",
+      "재생에너지 투자 인센티브"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 52,
+    "populatedRecordCount": 56,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2503,16 +2528,16 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "elementId": "C-018",
     "measureLabels": [
       "RE 비중 목표",
-      "RE 비중 목표(%)",
       "도매 전력시장 가격 공표",
       "발전 설비 확충 계획",
-      "발전 설비 확충 계획(기술별 MW)",
       "실적 전력가격",
       "에너지 수요 전망",
-      "에너지원별 수요 전망(TWh/Mtoe, 연도별)"
+      "전력 수요 성장률",
+      "전력 수출입 계획",
+      "전력부문 온실가스(GHG) 배출 전망"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 121,
+    "populatedRecordCount": 69,
     "primaryRenderer": "scenario-range",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2534,12 +2559,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "C-019 ②",
       "C-019 ③",
       "C-019 ④",
-      "ETS 도입 여부",
       "ETS 유연성",
-      "FIT/FIP/RPS 도입 여부"
+      "MRV(모니터링",
+      "법적 근거 체계 (모법"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 128,
+    "populatedRecordCount": 56,
     "primaryRenderer": "evidence-matrix",
     "spatiallyLinked": false,
     "yearRange": {
@@ -2598,7 +2623,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "시장 규제 및 시장설계"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 98,
+    "populatedRecordCount": 61,
     "primaryRenderer": "capability-scorecard",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2631,17 +2656,17 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "C-024",
     "measureLabels": [
-      "FREL 제출 여부/제출년",
       "FREL/FRL 제출 여부",
       "RBP 검증 배출감축량",
       "REDD+ 결과기반지불",
       "REDD+ 국가전략 수립 여부",
-      "REDD+ 전략 수립 여부",
-      "결과기반지불(RBP) 수혜 실적(tCO₂e/USD)",
-      "세이프가드 정보 시스템 구축 여부"
+      "REDD+ 현황",
+      "세이프가드 정보시스템(SIS) 구축 여부",
+      "수정 FRL 값",
+      "참여 기금"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 20,
+    "populatedRecordCount": 13,
     "primaryRenderer": "capability-scorecard",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2669,7 +2694,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "JCM 등록 프로젝트 수"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 388,
+    "populatedRecordCount": 1190,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2716,12 +2741,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "시장 성장률"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 6,
+    "populatedRecordCount": 56,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2030,
-      "start": 2030
+      "start": 2000
     }
   },
   {
@@ -2730,6 +2755,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "분류",
       "세부 분류",
+      "레코드 유형",
       "기술",
       "연도"
     ],
@@ -2739,11 +2765,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "예상 감축량"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 8,
+    "populatedRecordCount": 464,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2023,
+      "end": 2025,
       "start": 2023
     }
   },
@@ -2806,12 +2832,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "기후 관련 조세 수입"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 42,
+    "populatedRecordCount": 276,
     "primaryRenderer": "multi-metric-trend",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2026,
-      "start": 2019
+      "start": 1995
     }
   },
   {
@@ -2869,6 +2895,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "D-009",
     "measureLabels": [
+      "D-009_environmental_protection_expenditure_lcu",
+      "D-009_environmental_protection_expenditure_pct_gdp",
       "기후대응 정부 예산"
     ],
     "noDataReason": null,
@@ -2937,7 +2965,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "경쟁국 민간기업의 개도국 진출 현황"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 22,
+    "populatedRecordCount": 1168,
     "primaryRenderer": "category-comparison",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2959,11 +2987,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "GGGI Green Growth Index"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 21,
+    "populatedRecordCount": 24,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": 2024,
+      "end": 2026,
       "start": 2024
     }
   },
@@ -2979,7 +3007,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "EDCF 프로젝트"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 164,
+    "populatedRecordCount": 168,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -2999,7 +3027,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "ODA Korea 프로젝트"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 650,
+    "populatedRecordCount": 1050,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3019,7 +3047,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "지자체"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 232,
+    "populatedRecordCount": 632,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3039,7 +3067,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "한국 ODA 기관 PCP/입찰 현황"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 10,
+    "populatedRecordCount": 305,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3141,10 +3169,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "downloadAvailable": true,
     "elementId": "D-022",
     "measureLabels": [
+      "MDB",
       "MDB/DFI/PPP 투자 프로젝트"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 15,
+    "populatedRecordCount": 247,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3156,7 +3185,9 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "분류",
+      "레코드 유형",
+      "연도"
     ],
     "downloadAvailable": true,
     "elementId": "D-023",
@@ -3164,19 +3195,21 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "ODA 및 기후기금 재원"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 73,
+    "populatedRecordCount": 114,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
-      "end": null,
-      "start": null
+      "end": 2025,
+      "start": 2025
     }
   },
   {
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "분류",
+      "레코드 유형",
+      "연도"
     ],
     "downloadAvailable": true,
     "elementId": "D-024",
@@ -3184,12 +3217,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "VC"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 12,
+    "populatedRecordCount": 27,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": null,
-      "start": null
+      "end": 2026,
+      "start": 2026
     }
   },
   {
@@ -3204,7 +3237,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "민간 인프라 투자(PPI)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 132,
+    "populatedRecordCount": 173,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3224,7 +3257,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "MIGA 정치적 리스크 보증"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 14,
+    "populatedRecordCount": 13,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3267,7 +3300,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "DNA(국가지정기관)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 1,
+    "populatedRecordCount": 46,
     "primaryRenderer": "directory",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3327,7 +3360,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "city",
       "레코드 유형",
-      "orgType"
+      "orgType",
+      "국제협력 실적 구분"
     ],
     "downloadAvailable": true,
     "elementId": "E-005",
@@ -3375,7 +3409,10 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "분류",
-      "레코드 유형"
+      "레코드 유형",
+      "부문별 Tier",
+      "표준 분류",
+      "확인 상태 구분"
     ],
     "downloadAvailable": true,
     "elementId": "E-007",
@@ -3388,7 +3425,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "제3자 검증 체계 보유 여부"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 19,
+    "populatedRecordCount": 22,
     "primaryRenderer": "capability-scorecard",
     "spatiallyLinked": false,
     "yearRange": {
@@ -3400,20 +3437,22 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "연도"
     ],
     "downloadAvailable": false,
     "elementId": "E-008",
     "measureLabels": [
-      "논문"
+      "논문",
+      "논문,특허"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 144,
+    "populatedRecordCount": 6791,
     "primaryRenderer": "document-library",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": null,
-      "start": null
+      "end": 2026,
+      "start": 2026
     }
   },
   {
@@ -3433,12 +3472,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "연구자 수(절대수)"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 5,
+    "populatedRecordCount": 38,
     "primaryRenderer": "kpi-trend",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2023,
-      "start": 2016
+      "start": 2002
     }
   },
   {
@@ -3455,7 +3494,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "GII 2025"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 31,
+    "populatedRecordCount": 185,
     "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
@@ -3464,21 +3503,25 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     }
   },
   {
-    "contractStatus": "status-only",
-    "dataPresenceStatus": "no-populated-record",
-    "dimensionLabels": [],
-    "downloadAvailable": false,
+    "contractStatus": "archetype",
+    "dataPresenceStatus": "actual-records",
+    "dimensionLabels": [
+      "세부 분류",
+      "연도"
+    ],
+    "downloadAvailable": true,
     "elementId": "E-011",
     "measureLabels": [
+      "NRI 2025",
       "기술준비수준(TRL)"
     ],
-    "noDataReason": "explicit-placeholder-only",
-    "populatedRecordCount": 0,
-    "primaryRenderer": "status-only",
+    "noDataReason": null,
+    "populatedRecordCount": 50,
+    "primaryRenderer": "score-benchmark",
     "spatiallyLinked": false,
     "yearRange": {
-      "end": null,
-      "start": null
+      "end": 2025,
+      "start": 2021
     }
   },
   {
@@ -3489,6 +3532,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "통화",
       "직군",
       "성별",
+      "source",
       "연도"
     ],
     "downloadAvailable": true,
@@ -3503,12 +3547,12 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "평균 월임금"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 89,
+    "populatedRecordCount": 2158,
     "primaryRenderer": "paired-category-comparison",
     "spatiallyLinked": false,
     "yearRange": {
       "end": 2024,
-      "start": 2023
+      "start": 1996
     }
   },
   {
@@ -3539,7 +3583,9 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dimensionLabels": [
       "agreementType",
       "레코드 유형",
-      "status"
+      "status",
+      "문서 유형",
+      "협력 상대 구분"
     ],
     "downloadAvailable": true,
     "elementId": "E-014",
@@ -3622,7 +3668,8 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "contractStatus": "archetype",
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
-      "레코드 유형"
+      "레코드 유형",
+      "좌표 구분"
     ],
     "downloadAvailable": true,
     "elementId": "E-018",
@@ -3630,7 +3677,7 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
       "국내 기업 개도국 진출 현황"
     ],
     "noDataReason": null,
-    "populatedRecordCount": 24,
+    "populatedRecordCount": 36,
     "primaryRenderer": "portfolio",
     "spatiallyLinked": true,
     "yearRange": {
@@ -3643,7 +3690,9 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "city",
-      "레코드 유형"
+      "레코드 유형",
+      "기후·에너지 담당 판정",
+      "행 유형"
     ],
     "downloadAvailable": true,
     "elementId": "E-019",
@@ -3664,7 +3713,11 @@ export const ELEMENT_VISUALIZATION_SUMMARIES_V125: ElementVisualizationSummaryV1
     "dataPresenceStatus": "actual-records",
     "dimensionLabels": [
       "레코드 유형",
-      "supportType"
+      "supportType",
+      "금액 종류",
+      "신청시기 구분",
+      "지원 유형 표준",
+      "지원대상 구분"
     ],
     "downloadAvailable": true,
     "elementId": "E-020",

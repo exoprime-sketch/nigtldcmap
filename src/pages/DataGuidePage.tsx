@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { View } from "../app/navigation";
 import { SERVICE_LINKS } from "../config/serviceLinks";
-import { PUBLIC_GLOSSARY_V134 } from "../data/glossary/publicGlossaryV134";
+import { PUBLIC_GLOSSARY_V134, glossaryShownForCountryV162 } from "../data/glossary/publicGlossaryV134";
+import { usePageDataCountryV162 } from "../data/countries/DataCountryContextV158";
 import { loadVietnamPublicOverviewV128 } from "../data/publicPlatformV128";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/data-guide-v128.css";
@@ -14,10 +15,16 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   const [releaseDate, setReleaseDate] = useState("확인 중");
   const [glossaryQuery, setGlossaryQuery] = useState("");
 
+  // V162: terms about particular countries are listed on those countries' screens only.
+  const pageCountry = usePageDataCountryV162();
+  const countryGlossary = useMemo(
+    () => PUBLIC_GLOSSARY_V134.filter((entry) => glossaryShownForCountryV162(entry, pageCountry)),
+    [pageCountry]
+  );
   const visibleGlossary = useMemo(() => {
     const normalized = glossaryQuery.trim().toLocaleLowerCase("ko-KR");
-    if (!normalized) return PUBLIC_GLOSSARY_V134;
-    return PUBLIC_GLOSSARY_V134.filter((entry) => {
+    if (!normalized) return countryGlossary;
+    return countryGlossary.filter((entry) => {
       const patternAliases =
         entry.id === "spei"
           ? "SPEI3 SPEI6 SPEI12 SPEI-3 SPEI-6 SPEI-12"
@@ -36,7 +43,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         .toLocaleLowerCase("ko-KR")
         .includes(normalized);
     });
-  }, [glossaryQuery]);
+  }, [countryGlossary, glossaryQuery]);
 
   useEffect(() => {
     let cancelled = false;

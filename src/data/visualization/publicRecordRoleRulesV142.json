@@ -11,12 +11,12 @@
       "elementId": "D-026",
       "role": "definition",
       "label": "보증 유형 안내",
-      "basis": "MIGA project DB export (D-026.xlsx, 1.2 레코드형): 14 rows marked 레코드구분=개별. Nine carry a numeric MIGA Project_ID, a guarantee holder, an amount, a fiscal year and a guarantee type. Five (Breach of Contract, Non-Honoring of Sovereign Financial Obligations, Expropriation, Transfer Restriction / Currency Inconvertibility, War and Civil Disturbance) describe MIGA's four political-risk covers and the NHSFO product: their 국가 column reads '4대 PRI' or '신용보강', their 섹터 column holds the product description, and they state no amount, holder, fiscal year or guarantee type. They explain the 보증_유형 values of the nine projects and stay on the screen as that explanation.",
+      "basis": "2026-09-30 재적재로 MIGA project DB export가 전면 교체됨(D-026.xlsx, 1.2 레코드형, ETL 비고 '[추가수집 2026-09-24] MIGA 공개 데이터 최신판으로 전면 교체'): 이제 13개 행이 모두 레코드구분=MIGA 보증사업이며, 국가/보증_금액/회계연도_FY/보증_유형/보증_보유자_Guarantee_Holder 컬럼 자체가 더 이상 오지 않는다. 과거 있던 5건의 '보증 유형 설명'(계약위반·비이행보증(NHSFO)·수용·이전제한·전쟁내란) 행은 이번 납품에 없고, ETL 비고에 따르면 그 위험유형 구분은 이제 개별 Guarantee Summary 문서에만 존재해 행으로 오지 않는다. when 조건은 그런 행이 다시 오면 걸러내도록 남겨두되, 현재 납품 기준으로는 항상 0건 매치한다.",
       "when": {
         "fieldIn": { "field": "국가", "values": ["4대 PRI", "신용보강"] },
         "allEmpty": ["보증_금액", "회계연도_FY", "보증_유형", "보증_보유자_Guarantee_Holder"]
       },
-      "expected": { "matches": 5, "sourceRows": 14 }
+      "expected": { "matches": 0, "sourceRows": 13 }
     }
   ]
 }

@@ -38,6 +38,7 @@ import type {
   UseCaseV159,
 } from "./specTypesV159";
 import { normalizeCountryIso3V158 } from "../countryContext";
+import { applyCountryTextViewsV162, loadCountryTextViewsV162 } from "./countryTextViewsV162";
 import { SPEC_AUTHORED_COUNTRIES_V158, specNeedsCountryScopeV158 } from "../countries/countryCopyV158";
 import { otherCountryTermsV158 } from "../countries/countryTermsV158";
 import { scopeCasesToCountryV158, scopeTextToCountryV158 } from "../countries/countryTextScopeV158";
@@ -105,7 +106,13 @@ export function getCardSpecForCountryV158(
   item?: CountrySpecItemV158 | null
 ): DatasetCardSpecV159 | null {
   const base = getCardSpecV159(elementId);
-  if (!specNeedsCountryScopeV158(country)) return base;
+  if (!specNeedsCountryScopeV158(country)) {
+    // V162: the default country's card keeps its reviewed name and source; its
+    // notice follows the catalog like every other country's.
+    if (!base || !item) return base;
+    const statusNotice = statusNoticeFromCatalogV162(item.publicStatus);
+    return statusNotice === base.statusNotice ? base : { ...base, statusNotice };
+  }
   const iso3 = normalizeCountryIso3V158(country);
   // A finder card asks several times per render; the answer depends on the
   // catalog item only, so the same item gets the same card.
@@ -175,15 +182,27 @@ const COUNTRY_STATUS_V158: Record<"data-pending" | "excluded" | "public", string
  * status notice is the country's own - the default country's publication
  * decisions and missing deliveries are its own and do not carry over.
  */
+/** The catalog's publicStatus as a screen notice. */
+export function statusNoticeFromCatalogV162(publicStatus: string | null | undefined): StatusNoticeV159 {
+  if (publicStatus === "not-provided" || publicStatus === "not-collected" || publicStatus === "schema-only" || publicStatus === "data-entry-planned") return "data-pending";
+  if (publicStatus === "excluded") return "excluded";
+  return null;
+}
+
 export function getTypologyForCountryV158(
   elementId: string,
   country: string | null | undefined,
   item?: CountrySpecItemV158 | null
 ): TypologyRowV159 | null {
   const row = getTypologyV159(elementId);
-  if (!row || !specNeedsCountryScopeV158(country) || !item) return row;
-  const statusNotice: StatusNoticeV159 =
-    item.publicStatus === "not-provided" ? "data-pending" : item.publicStatus === "excluded" ? "excluded" : null;
+  // V162: the notice ('데이터 준비 중' · 제외) is decided by the catalog alone, for
+  // every country including the default one - the typology file only supplies
+  // the display type. A delivery that arrives (E-011) opens without editing it.
+  if (!row || !item) return row;
+  const statusNotice = statusNoticeFromCatalogV162(item.publicStatus);
+  // Same notice: the reviewed row as it is (the default country's cards and
+  // their tests compare by identity).
+  if (statusNotice === row.statusNotice) return row;
   return { ...row, statusNotice, status: COUNTRY_STATUS_V158[statusNotice ?? "public"] };
 }
 
@@ -223,7 +242,14 @@ export async function loadDatasetSpecForCountryV158(
   elementId: string,
   country: string | null | undefined
 ): Promise<CountryDatasetSpecBundleV158> {
-  const bundle = await loadDatasetSpecV159(elementId);
+  // V162: the country's own view of the spec text (every country, the default
+  // one included - a case about another country's own data is not shown).
+  const bundle = applyCountryTextViewsV162(
+    await loadDatasetSpecV159(elementId),
+    elementId,
+    normalizeCountryIso3V158(country),
+    await loadCountryTextViewsV162()
+  );
   const hidden: CountrySpecHiddenV158 = { fields: [], cases: [] };
   if (!specNeedsCountryScopeV158(country)) return { ...bundle, hidden };
   const terms = otherCountryTermsV158(normalizeCountryIso3V158(country));

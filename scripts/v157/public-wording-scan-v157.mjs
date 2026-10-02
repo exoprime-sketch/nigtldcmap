@@ -64,10 +64,32 @@ const CITATION_V157 = [
   /[\w.+-]+@[\w.-]*/gu,
 ];
 
+/**
+ * V162: a source value may stand in brackets only right after the Korean label
+ * the platform's dictionary gives it - "협궤 철도 (narrow_gauge)" (A-027's 19
+ * OpenStreetMap classes, src/data/visualization/osmClassLabelsV162.json). Any
+ * other word before the bracket ("피처 수(narrow_gauge)") leaves the value an
+ * identifier on the screen, and it counts.
+ */
+const DICTIONARY_CITATIONS_V162 = Object.entries(
+  JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/osmClassLabelsV162.json"), "utf8")).labels
+).map(([value, ko]) => `${ko} (${value})`);
+
+/**
+ * V162: words the sources themselves print that only look like identifiers -
+ * an English compound in a facility's own name (A-025 "VAPCO Vung Ang II
+ * coal-fired power plant") and an organisation's own spelling in a dataset
+ * credit (B-029 "Aberystwyth Univ. · soloEO · Wetlands International"). Each
+ * is matched with the words around it, so the same token elsewhere still counts.
+ */
+const SOURCE_PROPER_WORDING_V162 = ["Vung Ang II coal-fired power plant", "Aberystwyth Univ. · soloEO"];
+
 /** The text a reader sees, with its citations lifted out. */
 function withoutCitationsV157(text) {
   let value = String(text || "").normalize("NFC");
   for (const pattern of CITATION_V157) value = value.replace(pattern, " ");
+  for (const citation of DICTIONARY_CITATIONS_V162) value = value.split(citation).join(" ");
+  for (const wording of SOURCE_PROPER_WORDING_V162) value = value.split(wording).join(" ");
   return value;
 }
 
@@ -76,6 +98,10 @@ const CAMEL_CASE_V157 = /\b[a-z][a-z0-9]*[A-Z][A-Za-z0-9]*\b/gu;
 const SNAKE_CASE_V157 = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/gu;
 const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
+// V162 (user decision 2026-09-30): a file name in the text a reader sees - a
+// link's href is not text, and a URL is masked as a citation above - is a
+// working file on the screen (C-003 "nap_report_eng_small.pdf").
+const FILE_NAME_V162 = /[\w.-]+\.(?:pdf|xlsx?|csv|docx?|hwpx?|pptx?|zip|json|geojson|shp|txt)\b/giu;
 // 제안서 is a document a project has; 제안 on its own is how we write to each other.
 const NOTE_WORDS_V157 = /렌더러|폴리곤|조인\s*키|\bkind\b|choropleth|boundaryPolicy|후속|제안(?![\uAC00-\uD7A3])/gu;
 // 2차 검토(2026-09-30): 우리끼리 쓰는 한국어 어휘. 읽는 사람에게는 과업 용어다.
@@ -90,9 +116,16 @@ const WORK_WORDS_V157 =
  * read as something left behind.
  */
 function findingsIn(text, { hyphens = true, notes = true } = {}) {
-  const value = withoutCitationsV157(text);
+  let value = withoutCitationsV157(text);
   if (!value.trim()) return [];
   const hits = [];
+  // A file name counts once, as a file name - not again as snake_case.
+  FILE_NAME_V162.lastIndex = 0;
+  for (const match of value.matchAll(FILE_NAME_V162)) {
+    const at = match.index ?? value.indexOf(match[0]);
+    hits.push({ kind: "file-name", token: match[0], context: value.slice(Math.max(0, at - 70), at + match[0].length + 50).replace(/\s+/gu, " ").trim() });
+  }
+  value = value.replace(FILE_NAME_V162, " ");
   for (const [kind, pattern] of [
     ["camelCase", CAMEL_CASE_V157],
     ["snake_case", SNAKE_CASE_V157],
@@ -125,22 +158,8 @@ const HYPHENS_COUNT_V157 = (where) => where !== "detail";
  * a place to hide findings. An exception is reported, and counted, separately.
  */
 const EXCEPTIONS_V157 = [
-  {
-    elementId: "A-027",
-    where: "detail",
-    tokens: ["narrow_gauge", "miniature_railway", "light_rail", "subway", "monorail", "funicular", "fclass"],
-    reason: "OSM이 배포한 분류값과 지표 설명(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
-    until: "세션4 PR 2 — 표시 라벨 대응표",
-  },
-  {
-    elementId: "B-026",
-    where: "detail",
-    // Every province spelling the delivery runs together; the tokens are whatever
-    // the concatenation produced, so the kind is what identifies them.
-    kinds: ["camelCase"],
-    reason: "원자료가 성·시 표기를 띄어쓰기 없이 수록(제공자 납품 라벨). 다운로드는 원값을 유지한다.",
-    until: "세션4 PR 2 — 표시 라벨 대응표",
-  },
+  // V162 (PR 2 e): A-027's OSM class values read "협궤 철도 (narrow_gauge)" and
+  // B-026's run-together province spellings are spaced - both exceptions ended.
 ];
 
 /** Is this finding one of the recorded exceptions? */
@@ -311,17 +330,33 @@ if (!flag("skip-detail")) {
   const targets = JSON.parse(
     readFileSync(resolve(ROOT, "src/data/visualization/publicMapTargetsV138.json"), "utf8")
   );
-  for (const target of targets.targets || targets) {
-    await page.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
+  // V162: a detail page with every section open is heavy - the pages are read
+  // in batches of 20, each batch in its own browser context that is closed
+  // before the next one opens, one page at a time.
+  const DETAIL_BATCH_V162 = 20;
+  const allTargets = targets.targets || targets;
+  for (let start = 0; start < allTargets.length; start += DETAIL_BATCH_V162) {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, locale: "ko-KR" });
+    const detailPage = await context.newPage();
+    for (const target of allTargets.slice(start, start + DETAIL_BATCH_V162)) {
+    await detailPage.goto(`${base}/?view=data&country=${COUNTRY}&element=${target.elementId}&detailLayers=all#element-detail`, {
       waitUntil: "domcontentloaded",
     });
-    await page.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
-    await page.waitForTimeout(400);
-    const text = await page.evaluate(() => {
+    await detailPage.waitForSelector('[data-testid="public-analysis-root"]', { timeout: 60_000 }).catch(() => null);
+    await detailPage.waitForTimeout(400);
+    const text = await detailPage.evaluate(async () => {
       const tidy = (value) => String(value || "").normalize("NFC").replace(/\s+/gu, " ").trim();
-      return tidy(document.querySelector('[data-testid="public-analysis-root"]')?.innerText || document.body.innerText);
+      // V162: a closed table (the raw-data table in 'Detail data') is text a
+      // reader opens with one click - open every <details> before reading.
+      const root = document.querySelector('[data-testid="public-analysis-root"]');
+      (root || document).querySelectorAll("details:not([open])").forEach((node) => { node.open = true; });
+      await new Promise((done) => setTimeout(done, 300));
+      return tidy(root?.innerText || document.body.innerText);
     });
     record(report, "detail", target.elementId, "analysis", text);
+    }
+    await detailPage.close();
+    await context.close();
   }
 }
 

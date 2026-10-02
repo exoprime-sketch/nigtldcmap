@@ -45,9 +45,15 @@ describe("reviewed public indicator copy", () => {
     expect(publicPercentHeadlineV144(0.00045)).toBe("0.00045");
     expect(publicPercentHeadlineV144(0)).toBe("0");
   });
+  // 2026-09-30 재적재: A-026이 A-026_building_footprint_* 단일 소스에서 A-026_aux_gob_*
+  // (신뢰도 하한·좌표계·필드수만 있고 실제 동수·면적은 null인 메타데이터 전용 서브소스)와
+  // A-026_osm_building_*(실제 건물 1,254,990동·면적·결측률까지 온 실측 서브소스)로 갈라졌다.
   it("identifies the real A-026 metadata-only delivery, but never hides real counts", () => {
     const source = readDownloadJsonV158("a-026");
-    expect(metadataOnlyBuildingsV144(source.observations)).toBe(true);
-    expect(metadataOnlyBuildingsV144([...source.observations, { indicatorId: "A-026_building_footprint_count", value: 0 }])).toBe(false);
+    const auxGobOnly = source.observations.filter((observation: { indicatorId: string }) => observation.indicatorId.startsWith("A-026_aux_gob_"));
+    expect(metadataOnlyBuildingsV144(auxGobOnly)).toBe(true);
+    // osm_building이 실제 동수를 실어 오므로 전체 관측값은 더 이상 메타데이터 전용이 아니다.
+    expect(metadataOnlyBuildingsV144(source.observations)).toBe(false);
+    expect(metadataOnlyBuildingsV144([...auxGobOnly, { indicatorId: "A-026_aux_gob_count", value: 0 }])).toBe(false);
   });
 });

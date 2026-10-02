@@ -18,6 +18,7 @@ import {
   policyKindForVariableV151,
 } from "../../data/map/boundaryPolicyV151";
 import { PROVINCE_KO_V150 } from "../../data/map/mapBackdropV150";
+import { source34ValuesForSelectorV162 } from "../../data/geo/regionSystemV162";
 import { prepareLayerRecordsV138, type PreparedLayerRecordsV138 } from "../../data/map/prepareLayerRecordsV148";
 import { mapIndicatorSourceV148 } from "../../data/map/mapPresentationV148";
 import {
@@ -232,6 +233,58 @@ export function choroplethFeatureCollectionV151(
               selectionKey: regionKey,
               boundarySystem: "gdl-six-region",
               policyKind: kind,
+            },
+          };
+        }),
+      },
+    };
+  }
+
+  // V162: where the source itself states the 34-unit values for this variable
+  // and period, the 34 outline shows them as printed (native-34). The 63-unit
+  // aggregation below is used only where no such row exists.
+  const source34 =
+    context.system === "post-2025-34" && context.geometry34
+      ? source34ValuesForSelectorV162(asset.data, selector.variable, selector.period)
+      : [];
+  if (source34.length && context.geometry34) {
+    const byUnit = new Map(source34.map((row) => [row.unitCode, row]));
+    const numeric = source34.map((row) => row.value).filter(Number.isFinite);
+    return {
+      mode: "34",
+      kind: "native-34",
+      minimum: numeric.length ? Math.min(...numeric) : 0,
+      maximum: numeric.length ? Math.max(...numeric) : 1,
+      collection: {
+        type: "FeatureCollection",
+        features: context.geometry34.features.map((feature) => {
+          const unitCode = String(feature.properties?.unitCode || "");
+          const row = byUnit.get(unitCode);
+          return {
+            type: "Feature" as const,
+            id: unitCode,
+            geometry: feature.geometry as GeoJSON.Geometry,
+            properties: {
+              ...feature.properties,
+              elementId: layer.elementId,
+              unitCode,
+              adm1Code: unitCode,
+              adm1Name: row?.unitName || String(feature.properties?.name || unitCode),
+              value: row?.value ?? null,
+              hasValue: Boolean(row),
+              unit: row?.unit || unit,
+              period: selector.period,
+              variable: selector.variable,
+              variableLabel: row?.variableLabel || variableLabel,
+              categoryLabel: row?.categoryLabel ?? "",
+              sourceRegion: "",
+              sourceIndicatorId: row?.sourceIndicatorId || "",
+              sourceSpatialUnit: "post-2025-34-unit",
+              selectionKey: unitCode,
+              boundarySystem: "post-2025-34",
+              policyKind: "native-34",
+              memberSummary: "",
+              partial: false,
             },
           };
         }),

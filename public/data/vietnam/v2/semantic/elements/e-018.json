@@ -7,10 +7,23 @@
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "좌표_구분_coord_type",
+      "labelKo": "좌표 구분",
+      "valueCount": 6,
+      "values": [
+        "도로 중심선 기준점",
+        "미확보",
+        "실제 사업지(시설 단위)",
+        "지물 대표점(산업단지)",
+        "지물 대표점(인접 시설)",
+        "행정구역 중심점"
+      ]
     }
   ],
   "elementId": "E-018",
-  "entityCount": 24,
+  "entityCount": 36,
   "generatedAt": "2026-08-27T00:00:00Z",
   "indicatorCount": 3,
   "indicators": [
@@ -47,6 +60,30 @@
     {
       "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
       "dimensionLabels": {
+        "detail": "KOTRA 해외진출 한국기업 디렉토리(2024년 조사)"
+      },
+      "dimensions": {
+        "detail": "KOTRA 해외진출 한국기업 디렉토리(2024년 조사)"
+      },
+      "displayLabel": "국내 기업 개도국 진출 현황 — KOTRA 해외진출 한국기업 디렉토리(2024년 조사)",
+      "indicatorId": "E-018_kr_company_entry_kotra",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9c0ba3e8a503",
+        "labelKo": "국내 기업 개도국 진출 현황",
+        "unit": "개사(기업)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=KOTRA 해외진출 한국기업 디렉토리(2024년 조사)|E-018_kr_company_entry_kotra",
+      "sourceCaveat": null,
+      "sourceLabel": "국내 기업 개도국 진출 현황 — KOTRA 해외진출 한국기업 디렉토리(2024년 조사)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
+      "dimensionLabels": {
         "detail": "언론 보도"
       },
       "dimensions": {
@@ -64,30 +101,6 @@
       "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=언론 보도|E-018_kr_company_entry_media",
       "sourceCaveat": null,
       "sourceLabel": "국내 기업 개도국 진출 현황 — 언론 보도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-9c0ba3e8a503|개사(기업)",
-      "dimensionLabels": {
-        "detail": "공공기관 자료"
-      },
-      "dimensions": {
-        "detail": "공공기관 자료"
-      },
-      "displayLabel": "국내 기업 개도국 진출 현황 — 공공기관 자료",
-      "indicatorId": "E-018_kr_company_entry_public",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9c0ba3e8a503",
-        "labelKo": "국내 기업 개도국 진출 현황",
-        "unit": "개사(기업)",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-9c0ba3e8a503|개사(기업)|detail=공공기관 자료|E-018_kr_company_entry_public",
-      "sourceCaveat": null,
-      "sourceLabel": "국내 기업 개도국 진출 현황 — 공공기관 자료",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}

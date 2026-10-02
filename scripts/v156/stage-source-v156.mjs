@@ -11,7 +11,10 @@
  *
  * Duplicate codes: a `_수정안` (revision) file supersedes the plain one. Any
  * other duplicate is reported and nothing is adopted for that code - picking
- * one would be a data decision this script is not allowed to make.
+ * one would be a data decision this script is not allowed to make. V162: a
+ * decision made elsewhere (`--duplicate-decisions`, written by
+ * scripts/v162/resolve-duplicates-v162.py from the user's rule) names the file
+ * to adopt; the rule and the reason travel into the manifest.
  *
  * `--hold` keeps an element's new workbook out of the staged tree on purpose,
  * because a delivery whose shape the current screens and contracts cannot read
@@ -65,6 +68,13 @@ const ADOPTED_ONLY = new Set(
 /** The delivery the published tree was built from; held codes come from here. */
 const CARRY_FROM = opt("--carry-from", "베트남데이터/file");
 const DELIVERED_AT = opt("--delivered-at", basename(SOURCE));
+const DECISIONS_PATH = opt("--duplicate-decisions", "");
+/** elementId -> { adopted, rule } from the duplicate resolver (file names NFC). */
+const DUPLICATE_DECISIONS = new Map(
+  DECISIONS_PATH
+    ? JSON.parse(readFileSync(resolve(ROOT, DECISIONS_PATH), "utf8")).decisions.map((row) => [row.elementId, row])
+    : []
+);
 const OUT_ROOT = resolve(ROOT, "_source/vietnam", VERSION);
 const WORKBOOKS = resolve(OUT_ROOT, "workbooks");
 
@@ -133,6 +143,15 @@ for (const [, rows] of [...groups].sort(([left], [right]) => left.localeCompare(
     adopted.push({ ...revisions[0], adoption: "revision-supersedes" });
     for (const row of rows.filter((row) => !row.revision)) {
       superseded.push({ ...row, adoption: "superseded-by-revision", supersededBy: revisions[0].name });
+    }
+    continue;
+  }
+  const decision = DUPLICATE_DECISIONS.get(rows[0].elementId);
+  const chosen = decision && rows.find((row) => row.name.normalize("NFC") === decision.adopted.normalize("NFC"));
+  if (chosen) {
+    adopted.push({ ...chosen, adoption: `duplicate-decision:${decision.rule}` });
+    for (const row of rows.filter((row) => row !== chosen)) {
+      superseded.push({ ...row, adoption: "superseded-by-decision", supersededBy: chosen.name, rule: decision.rule });
     }
     continue;
   }

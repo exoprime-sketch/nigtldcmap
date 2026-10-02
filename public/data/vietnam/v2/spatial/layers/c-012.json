@@ -9,10 +9,10 @@
   "boundarySystem": "pre-2025-63",
   "coverageKind": "partial",
   "selectors": {
-    "defaultPeriod": "1997–2024",
+    "defaultPeriod": "1994–2024(재무종결)",
     "defaultVariable": "ppp-project-count",
     "periods": [
-      "1997–2024"
+      "1994–2024(재무종결)"
     ],
     "variables": [
       {
@@ -23,7 +23,7 @@
         "label": "PPP 사업 수(PPI 수록)",
         "unit": "건",
         "periods": [
-          "1997–2024"
+          "1994–2024(재무종결)"
         ],
         "maxFeatureCount": 56
       }
@@ -31,393 +31,18 @@
   },
   "values": [
     {
-      "adm1Code": "VN-56",
-      "adm1Name": "Bắc Ninh",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00050",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Bắc Ninh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-54",
-      "adm1Name": "Bắc Giang",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00050",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Bắc Ninh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-55",
-      "adm1Name": "Bạc Liêu",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00051",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Cà Mau",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-59",
-      "adm1Name": "Cà Mau",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00051",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Cà Mau",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-CT",
-      "adm1Name": "Cần Thơ",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00052",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Cần Thơ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-73",
-      "adm1Name": "Hậu Giang",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00052",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Cần Thơ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-52",
-      "adm1Name": "Sóc Trăng",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00052",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Cần Thơ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-DN",
-      "adm1Name": "Đà Nẵng",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00053",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đà Nẵng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-27",
-      "adm1Name": "Quảng Nam",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 4,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00053",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đà Nẵng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-32",
-      "adm1Name": "Phú Yên",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00054",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đắk Lắk",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-33",
-      "adm1Name": "Đắk Lắk",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00054",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đắk Lắk",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-71",
-      "adm1Name": "Điện Biên",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00055",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Điện Biên",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-58",
-      "adm1Name": "Bình Phước",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 6,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00056",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đồng Nai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-39",
-      "adm1Name": "Đồng Nai",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 6,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00056",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đồng Nai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-45",
-      "adm1Name": "Đồng Tháp",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00057",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đồng Tháp",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-46",
-      "adm1Name": "Tiền Giang",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00057",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Đồng Tháp",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-30",
-      "adm1Name": "Gia Lai",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 11,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00058",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Gia Lai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-31",
-      "adm1Name": "Bình Định",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 11,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00058",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Gia Lai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-HN",
-      "adm1Name": "Hà Nội",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00059",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hà Nội",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-23",
-      "adm1Name": "Hà Tĩnh",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00060",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hà Tĩnh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-HP",
-      "adm1Name": "Hải Phòng",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 6,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00061",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hải Phòng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-61",
-      "adm1Name": "Hải Dương",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 6,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00061",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hải Phòng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-57",
-      "adm1Name": "Bình Dương",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 24,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00062",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hồ Chí Minh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-43",
-      "adm1Name": "Bà Rịa–Vũng Tàu",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 24,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00062",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hồ Chí Minh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-SG",
-      "adm1Name": "Hồ Chí Minh",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 24,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00062",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Hồ Chí Minh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
       "adm1Code": "VN-34",
       "adm1Name": "Khánh Hòa",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 12,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00063",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00001",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Khánh Hòa",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -425,299 +50,44 @@
       "adm1Name": "Ninh Thuận",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 12,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00063",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00001",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Khánh Hòa",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
-      "adm1Code": "VN-01",
-      "adm1Name": "Lai Châu",
+      "adm1Code": "VN-30",
+      "adm1Name": "Gia Lai",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00064",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Lai Châu",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-40",
-      "adm1Name": "Bình Thuận",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 11,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00065",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00002",
       "sourceSpatialUnit": "region",
-      "sourceRegion": "Lâm Đồng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
-      "adm1Code": "VN-72",
-      "adm1Name": "Đắk Nông",
+      "adm1Code": "VN-31",
+      "adm1Name": "Bình Định",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 11,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00065",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00002",
       "sourceSpatialUnit": "region",
-      "sourceRegion": "Lâm Đồng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-35",
-      "adm1Name": "Lâm Đồng",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 11,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00065",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Lâm Đồng",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-02",
-      "adm1Name": "Lào Cai",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 10,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00066",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Lào Cai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-06",
-      "adm1Name": "Yên Bái",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 10,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00066",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Lào Cai",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00067",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Nghệ An",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-67",
-      "adm1Name": "Nam Định",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00068",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Ninh Bình",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-63",
-      "adm1Name": "Hà Nam",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00068",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Ninh Bình",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-18",
-      "adm1Name": "Ninh Bình",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00068",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Ninh Bình",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-70",
-      "adm1Name": "Vĩnh Phúc",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 3,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00069",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Phú Thọ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-68",
-      "adm1Name": "Phú Thọ",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 3,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00069",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Phú Thọ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-14",
-      "adm1Name": "Hòa Bình",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 3,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00069",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Phú Thọ",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-28",
-      "adm1Name": "Kon Tum",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00070",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Quảng Ngãi",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-29",
-      "adm1Name": "Quảng Ngãi",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00070",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Quảng Ngãi",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-13",
-      "adm1Name": "Quảng Ninh",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 2,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00071",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Quảng Ninh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-24",
-      "adm1Name": "Quảng Bình",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 8,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00072",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Quảng Trị",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 8,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00072",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Quảng Trị",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 3,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00073",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Sơn La",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "sourceRegion": "Gia Lai",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -725,14 +95,14 @@
       "adm1Name": "Tây Ninh",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 3,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00074",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00006",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Tây Ninh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -740,89 +110,14 @@
       "adm1Name": "Long An",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "value": 3,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00074",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00006",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Tây Ninh",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-53",
-      "adm1Name": "Bắc Kạn",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00075",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Thái Nguyên",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-69",
-      "adm1Name": "Thái Nguyên",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 1,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00075",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Thái Nguyên",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 3,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00076",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Thanh Hóa",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-03",
-      "adm1Name": "Hà Giang",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00077",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Tuyên Quang",
-      "mappingMethod": "explicit-2025-34-unit-membership",
-      "imputed": false
-    },
-    {
-      "adm1Code": "VN-07",
-      "adm1Name": "Tuyên Quang",
-      "variable": "ppp-project-count",
-      "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
-      "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00077",
-      "sourceSpatialUnit": "region",
-      "sourceRegion": "Tuyên Quang",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -830,14 +125,14 @@
       "adm1Name": "Vĩnh Long",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
+      "period": "1994–2024(재무종결)",
+      "value": 7,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00008",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Vĩnh Long",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -845,14 +140,14 @@
       "adm1Name": "Bến Tre",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
+      "period": "1994–2024(재무종결)",
+      "value": 7,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00008",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Vĩnh Long",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     },
     {
@@ -860,695 +155,3940 @@
       "adm1Name": "Trà Vinh",
       "variable": "ppp-project-count",
       "variableLabel": "PPP 사업 수(PPI 수록)",
-      "period": "1997–2024",
-      "value": 5,
+      "period": "1994–2024(재무종결)",
+      "value": 7,
       "unit": "건",
-      "sourceIndicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "sourceRecordId": "v124-c-012-entity-00078",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00008",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Vĩnh Long",
-      "mappingMethod": "explicit-2025-34-unit-membership",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-32",
+      "adm1Name": "Phú Yên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-33",
+      "adm1Name": "Đắk Lắk",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00012",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đắk Lắk",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-54",
+      "adm1Name": "Bắc Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Bắc Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00017",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Nội",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 16,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00019",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-57",
+      "adm1Name": "Bình Dương",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 16,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00019",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 16,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00019",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hồ Chí Minh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-35",
+      "adm1Name": "Lâm Đồng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00020",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-40",
+      "adm1Name": "Bình Thuận",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00020",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-72",
+      "adm1Name": "Đắk Nông",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 12,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00020",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lâm Đồng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-55",
+      "adm1Name": "Bạc Liêu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-59",
+      "adm1Name": "Cà Mau",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00022",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cà Mau",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-24",
+      "adm1Name": "Quảng Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00023",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 8,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00023",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Trị",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-52",
+      "adm1Name": "Sóc Trăng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-73",
+      "adm1Name": "Hậu Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-CT",
+      "adm1Name": "Cần Thơ",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00024",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Cần Thơ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-14",
+      "adm1Name": "Hòa Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00034",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-68",
+      "adm1Name": "Phú Thọ",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00034",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00034",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Phú Thọ",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-02",
+      "adm1Name": "Lào Cai",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00053",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-06",
+      "adm1Name": "Yên Bái",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 9,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00053",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lào Cai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00059",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-58",
+      "adm1Name": "Bình Phước",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 7,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00059",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Nai",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00060",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Sơn La",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-27",
+      "adm1Name": "Quảng Nam",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00062",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-DN",
+      "adm1Name": "Đà Nẵng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 4,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00062",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đà Nẵng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-03",
+      "adm1Name": "Hà Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00064",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-07",
+      "adm1Name": "Tuyên Quang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00064",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Tuyên Quang",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-01",
+      "adm1Name": "Lai Châu",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 6,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00068",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Lai Châu",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-28",
+      "adm1Name": "Kon Tum",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00074",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-29",
+      "adm1Name": "Quảng Ngãi",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00074",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ngãi",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-21",
+      "adm1Name": "Thanh Hóa",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00085",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thanh Hóa",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-22",
+      "adm1Name": "Nghệ An",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00093",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Nghệ An",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-71",
+      "adm1Name": "Điện Biên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00108",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Điện Biên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-61",
+      "adm1Name": "Hải Dương",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00119",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-HP",
+      "adm1Name": "Hải Phòng",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 3,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00119",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hải Phòng",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-18",
+      "adm1Name": "Ninh Bình",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00141",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-63",
+      "adm1Name": "Hà Nam",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00141",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-67",
+      "adm1Name": "Nam Định",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00141",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Ninh Bình",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-13",
+      "adm1Name": "Quảng Ninh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00148",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Quảng Ninh",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-53",
+      "adm1Name": "Bắc Kạn",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00149",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-69",
+      "adm1Name": "Thái Nguyên",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00149",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Thái Nguyên",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-45",
+      "adm1Name": "Đồng Tháp",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00162",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Tháp",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-46",
+      "adm1Name": "Tiền Giang",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00162",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Đồng Tháp",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-23",
+      "adm1Name": "Hà Tĩnh",
+      "variable": "ppp-project-count",
+      "variableLabel": "PPP 사업 수(PPI 수록)",
+      "period": "1994–2024(재무종결)",
+      "value": 2,
+      "unit": "건",
+      "sourceIndicatorId": "D-025_ppi_project_registry",
+      "sourceRecordId": "v124-d-025-entity-00164",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Hà Tĩnh",
+      "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     }
   ],
   "memberRecords": {
-    "VN-56": [
-      {
-        "recordId": "v124-c-012-entity-00050",
-        "label": "Energy 2건",
-        "date": "2010-2021",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Bắc Ninh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-54": [
-      {
-        "recordId": "v124-c-012-entity-00050",
-        "label": "Energy 2건",
-        "date": "2010-2021",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Bắc Ninh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-55": [
-      {
-        "recordId": "v124-c-012-entity-00051",
-        "label": "Energy 4건",
-        "date": "2012-2021",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Cà Mau",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-59": [
-      {
-        "recordId": "v124-c-012-entity-00051",
-        "label": "Energy 4건",
-        "date": "2012-2021",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Cà Mau",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-CT": [
-      {
-        "recordId": "v124-c-012-entity-00052",
-        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
-        "date": "2016-2020",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Cần Thơ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-73": [
-      {
-        "recordId": "v124-c-012-entity-00052",
-        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
-        "date": "2016-2020",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Cần Thơ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-52": [
-      {
-        "recordId": "v124-c-012-entity-00052",
-        "label": "Energy 2건; Water and sewerage 1건; Municipal Solid Waste 1건",
-        "date": "2016-2020",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Cần Thơ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-DN": [
-      {
-        "recordId": "v124-c-012-entity-00053",
-        "label": "Energy 3건; Municipal Solid Waste 1건",
-        "date": "2008-2012",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Đà Nẵng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-27": [
-      {
-        "recordId": "v124-c-012-entity-00053",
-        "label": "Energy 3건; Municipal Solid Waste 1건",
-        "date": "2008-2012",
-        "status": "Active 4건 / 전체 4건",
-        "value": "",
-        "url": "",
-        "region": "Đà Nẵng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-32": [
-      {
-        "recordId": "v124-c-012-entity-00054",
-        "label": "Energy 2건",
-        "date": "2010-2020",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Đắk Lắk",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-33": [
-      {
-        "recordId": "v124-c-012-entity-00054",
-        "label": "Energy 2건",
-        "date": "2010-2020",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Đắk Lắk",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-71": [
-      {
-        "recordId": "v124-c-012-entity-00055",
-        "label": "Energy 1건",
-        "date": "2021-2021",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
-        "url": "",
-        "region": "Điện Biên",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-58": [
-      {
-        "recordId": "v124-c-012-entity-00056",
-        "label": "Energy 5건; Transport 1건",
-        "date": "1997-2024",
-        "status": "Active 6건 / 전체 6건",
-        "value": "",
-        "url": "",
-        "region": "Đồng Nai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-39": [
-      {
-        "recordId": "v124-c-012-entity-00056",
-        "label": "Energy 5건; Transport 1건",
-        "date": "1997-2024",
-        "status": "Active 6건 / 전체 6건",
-        "value": "",
-        "url": "",
-        "region": "Đồng Nai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-45": [
-      {
-        "recordId": "v124-c-012-entity-00057",
-        "label": "Transport 1건",
-        "date": "2019-2019",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
-        "url": "",
-        "region": "Đồng Tháp",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-46": [
-      {
-        "recordId": "v124-c-012-entity-00057",
-        "label": "Transport 1건",
-        "date": "2019-2019",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
-        "url": "",
-        "region": "Đồng Tháp",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-30": [
-      {
-        "recordId": "v124-c-012-entity-00058",
-        "label": "Energy 11건",
-        "date": "2005-2020",
-        "status": "Active 11건 / 전체 11건",
-        "value": "",
-        "url": "",
-        "region": "Gia Lai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-31": [
-      {
-        "recordId": "v124-c-012-entity-00058",
-        "label": "Energy 11건",
-        "date": "2005-2020",
-        "status": "Active 11건 / 전체 11건",
-        "value": "",
-        "url": "",
-        "region": "Gia Lai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-HN": [
-      {
-        "recordId": "v124-c-012-entity-00059",
-        "label": "Water and sewerage 1건",
-        "date": "2019-2019",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
-        "url": "",
-        "region": "Hà Nội",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-23": [
-      {
-        "recordId": "v124-c-012-entity-00060",
-        "label": "Energy 1건; Transport 1건",
-        "date": "2021-2022",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Hà Tĩnh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-HP": [
-      {
-        "recordId": "v124-c-012-entity-00061",
-        "label": "Energy 5건; Water and sewerage 1건",
-        "date": "1996-2024",
-        "status": "Active 6건 / 전체 6건",
-        "value": "",
-        "url": "",
-        "region": "Hải Phòng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-61": [
-      {
-        "recordId": "v124-c-012-entity-00061",
-        "label": "Energy 5건; Water and sewerage 1건",
-        "date": "1996-2024",
-        "status": "Active 6건 / 전체 6건",
-        "value": "",
-        "url": "",
-        "region": "Hải Phòng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-57": [
-      {
-        "recordId": "v124-c-012-entity-00062",
-        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
-        "date": "1996-2022",
-        "status": "Active 23건 / 전체 24건",
-        "value": "",
-        "url": "",
-        "region": "Hồ Chí Minh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-43": [
-      {
-        "recordId": "v124-c-012-entity-00062",
-        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
-        "date": "1996-2022",
-        "status": "Active 23건 / 전체 24건",
-        "value": "",
-        "url": "",
-        "region": "Hồ Chí Minh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-SG": [
-      {
-        "recordId": "v124-c-012-entity-00062",
-        "label": "Energy 9건; Transport 8건; Water and sewerage 6건; Municipal Solid Waste 1건",
-        "date": "1996-2022",
-        "status": "Active 23건 / 전체 24건",
-        "value": "",
-        "url": "",
-        "region": "Hồ Chí Minh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
     "VN-34": [
       {
-        "recordId": "v124-c-012-entity-00063",
-        "label": "Energy 12건",
-        "date": "2005-2022",
-        "status": "Active 12건 / 전체 12건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00001",
+        "label": "Bau Ngu Lake Solar Power Plant",
+        "date": "2018-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Khánh Hòa",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00003",
+        "label": "Solar Power Project BIM 2",
+        "date": "2018-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00004",
+        "label": "Solar Power Project BIM 1",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00005",
+        "label": "Solar Power Project BIM 3",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00007",
+        "label": "Sunseap Solar Plant",
+        "date": "2018-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00010",
+        "label": "Trung Nam solar plant",
+        "date": "2020-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00014",
+        "label": "Ninh Thuan wind farm",
+        "date": "2022-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00026",
+        "label": "Dam Nai Wind Farm Second Phase",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00047",
+        "label": "Loi Hai-2 Wind Farm",
+        "date": "2021-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00055",
+        "label": "Khanh Hoa Power Company",
+        "date": "2005-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00077",
+        "label": "Da Nhim HPP Expansion",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00161",
+        "label": "Van Phong 1 coal-fired power plant",
+        "date": "2019-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-36": [
       {
-        "recordId": "v124-c-012-entity-00063",
-        "label": "Energy 12건",
-        "date": "2005-2022",
-        "status": "Active 12건 / 전체 12건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00001",
+        "label": "Bau Ngu Lake Solar Power Plant",
+        "date": "2018-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Khánh Hòa",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00003",
+        "label": "Solar Power Project BIM 2",
+        "date": "2018-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00004",
+        "label": "Solar Power Project BIM 1",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00005",
+        "label": "Solar Power Project BIM 3",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00007",
+        "label": "Sunseap Solar Plant",
+        "date": "2018-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00010",
+        "label": "Trung Nam solar plant",
+        "date": "2020-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00014",
+        "label": "Ninh Thuan wind farm",
+        "date": "2022-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00026",
+        "label": "Dam Nai Wind Farm Second Phase",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00047",
+        "label": "Loi Hai-2 Wind Farm",
+        "date": "2021-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00055",
+        "label": "Khanh Hoa Power Company",
+        "date": "2005-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00077",
+        "label": "Da Nhim HPP Expansion",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00161",
+        "label": "Van Phong 1 coal-fired power plant",
+        "date": "2019-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Khánh Hòa",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
-    "VN-01": [
+    "VN-30": [
       {
-        "recordId": "v124-c-012-entity-00064",
-        "label": "Energy 5건",
-        "date": "2010-2012",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00002",
+        "label": "Binh Dinh Fujiwara Solar and Wind power",
+        "date": "2018-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lai Châu",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00011",
+        "label": "Phu My Solar Power Plant",
+        "date": "2020-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00018",
+        "label": "Phuong Mai 3 Wind Farm",
+        "date": "2007-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00021",
+        "label": "Phuong Mai I Wind Farm",
+        "date": "2012-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00043",
+        "label": "Gia Lai wind plant I",
+        "date": "2020-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00056",
+        "label": "Vinh Son - Song Hinh Hydropower JSC",
+        "date": "2005-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00058",
+        "label": "Daksrong 3B Hydropower Plant",
+        "date": "2007-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00066",
+        "label": "Daksrong 2 & 2A Hydropower Plants",
+        "date": "2009-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00070",
+        "label": "Vinh Son 3 Hydropower Plant",
+        "date": "2010-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00081",
+        "label": "Se San 4A Hydropower Plant",
+        "date": "2010-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00110",
+        "label": "Gia Lai Biomass Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
-    "VN-40": [
+    "VN-31": [
       {
-        "recordId": "v124-c-012-entity-00065",
-        "label": "Energy 11건",
-        "date": "2005-2023",
-        "status": "Active 11건 / 전체 11건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00002",
+        "label": "Binh Dinh Fujiwara Solar and Wind power",
+        "date": "2018-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lâm Đồng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-72": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00065",
-        "label": "Energy 11건",
-        "date": "2005-2023",
-        "status": "Active 11건 / 전체 11건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00011",
+        "label": "Phu My Solar Power Plant",
+        "date": "2020-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lâm Đồng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-35": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00065",
-        "label": "Energy 11건",
-        "date": "2005-2023",
-        "status": "Active 11건 / 전체 11건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00018",
+        "label": "Phuong Mai 3 Wind Farm",
+        "date": "2007-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lâm Đồng",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-02": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00066",
-        "label": "Energy 10건",
-        "date": "2005-2024",
-        "status": "Active 10건 / 전체 10건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00021",
+        "label": "Phuong Mai I Wind Farm",
+        "date": "2012-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lào Cai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-06": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00066",
-        "label": "Energy 10건",
-        "date": "2005-2024",
-        "status": "Active 10건 / 전체 10건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00043",
+        "label": "Gia Lai wind plant I",
+        "date": "2020-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Lào Cai",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-22": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00067",
-        "label": "Energy 2건",
-        "date": "2011-2012",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00056",
+        "label": "Vinh Son - Song Hinh Hydropower JSC",
+        "date": "2005-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Nghệ An",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-67": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00068",
-        "label": "Energy 1건",
-        "date": "2007-2007",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00058",
+        "label": "Daksrong 3B Hydropower Plant",
+        "date": "2007-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Ninh Bình",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-63": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00068",
-        "label": "Energy 1건",
-        "date": "2007-2007",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00066",
+        "label": "Daksrong 2 & 2A Hydropower Plants",
+        "date": "2009-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Ninh Bình",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-18": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00068",
-        "label": "Energy 1건",
-        "date": "2007-2007",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00070",
+        "label": "Vinh Son 3 Hydropower Plant",
+        "date": "2010-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Ninh Bình",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-70": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00069",
-        "label": "Energy 3건",
-        "date": "2012-2020",
-        "status": "Active 2건 / 전체 3건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00081",
+        "label": "Se San 4A Hydropower Plant",
+        "date": "2010-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Phú Thọ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-68": [
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00069",
-        "label": "Energy 3건",
-        "date": "2012-2020",
-        "status": "Active 2건 / 전체 3건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00110",
+        "label": "Gia Lai Biomass Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Phú Thọ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-14": [
-      {
-        "recordId": "v124-c-012-entity-00069",
-        "label": "Energy 3건",
-        "date": "2012-2020",
-        "status": "Active 2건 / 전체 3건",
-        "value": "",
-        "url": "",
-        "region": "Phú Thọ",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-28": [
-      {
-        "recordId": "v124-c-012-entity-00070",
-        "label": "Energy 2건",
-        "date": "2011-2022",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Quảng Ngãi",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-29": [
-      {
-        "recordId": "v124-c-012-entity-00070",
-        "label": "Energy 2건",
-        "date": "2011-2022",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Quảng Ngãi",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-13": [
-      {
-        "recordId": "v124-c-012-entity-00071",
-        "label": "Transport 1건; Energy 1건",
-        "date": "2010-2011",
-        "status": "Active 2건 / 전체 2건",
-        "value": "",
-        "url": "",
-        "region": "Quảng Ninh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-24": [
-      {
-        "recordId": "v124-c-012-entity-00072",
-        "label": "Energy 8건",
-        "date": "2008-2022",
-        "status": "Active 8건 / 전체 8건",
-        "value": "",
-        "url": "",
-        "region": "Quảng Trị",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-25": [
-      {
-        "recordId": "v124-c-012-entity-00072",
-        "label": "Energy 8건",
-        "date": "2008-2022",
-        "status": "Active 8건 / 전체 8건",
-        "value": "",
-        "url": "",
-        "region": "Quảng Trị",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-05": [
-      {
-        "recordId": "v124-c-012-entity-00073",
-        "label": "Energy 3건",
-        "date": "2007-2010",
-        "status": "Active 3건 / 전체 3건",
-        "value": "",
-        "url": "",
-        "region": "Sơn La",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "region": "Gia Lai",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-37": [
       {
-        "recordId": "v124-c-012-entity-00074",
-        "label": "Energy 3건",
-        "date": "1996-2020",
-        "status": "Active 3건 / 전체 3건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00006",
+        "label": "Dau Tieng 1 & Dau Tieng 2 solar PV power plants",
+        "date": "2018-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Tây Ninh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00009",
+        "label": "Gulf Solar Power Project",
+        "date": "2020-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00016",
+        "label": "Bourbon Sugar Mill Power Plant",
+        "date": "1996-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tây Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-41": [
       {
-        "recordId": "v124-c-012-entity-00074",
-        "label": "Energy 3건",
-        "date": "1996-2020",
-        "status": "Active 3건 / 전체 3건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00006",
+        "label": "Dau Tieng 1 & Dau Tieng 2 solar PV power plants",
+        "date": "2018-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Tây Ninh",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-53": [
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00075",
-        "label": "Energy 1건",
-        "date": "2011-2011",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00009",
+        "label": "Gulf Solar Power Project",
+        "date": "2020-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Thái Nguyên",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-69": [
+        "region": "Tây Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
       {
-        "recordId": "v124-c-012-entity-00075",
-        "label": "Energy 1건",
-        "date": "2011-2011",
-        "status": "Active 1건 / 전체 1건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00016",
+        "label": "Bourbon Sugar Mill Power Plant",
+        "date": "1996-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
-        "region": "Thái Nguyên",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-21": [
-      {
-        "recordId": "v124-c-012-entity-00076",
-        "label": "Energy 3건",
-        "date": "2011-2018",
-        "status": "Active 3건 / 전체 3건",
-        "value": "",
-        "url": "",
-        "region": "Thanh Hóa",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-03": [
-      {
-        "recordId": "v124-c-012-entity-00077",
-        "label": "Energy 5건",
-        "date": "2009-2024",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
-        "url": "",
-        "region": "Tuyên Quang",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
-      }
-    ],
-    "VN-07": [
-      {
-        "recordId": "v124-c-012-entity-00077",
-        "label": "Energy 5건",
-        "date": "2009-2024",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
-        "url": "",
-        "region": "Tuyên Quang",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "region": "Tây Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-49": [
       {
-        "recordId": "v124-c-012-entity-00078",
-        "label": "Energy 5건",
-        "date": "2017-2021",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00008",
+        "label": "Tra Vinh Solar Power Plant",
+        "date": "2019-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Vĩnh Long",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00032",
+        "label": "Mekong Offshore Wind Farm Phase I",
+        "date": "2019-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00036",
+        "label": "Tra Vinh wind farm",
+        "date": "2020-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00037",
+        "label": "Hiep Thanh Wind Power Project",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00038",
+        "label": "Hiep Thanh wind farm",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00049",
+        "label": "Nexif Ben Tre Onshore Wind Farm",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00156",
+        "label": "Duyen Hai 2 Thermal Power Plant",
+        "date": "2017-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-50": [
       {
-        "recordId": "v124-c-012-entity-00078",
-        "label": "Energy 5건",
-        "date": "2017-2021",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00008",
+        "label": "Tra Vinh Solar Power Plant",
+        "date": "2019-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Vĩnh Long",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00032",
+        "label": "Mekong Offshore Wind Farm Phase I",
+        "date": "2019-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00036",
+        "label": "Tra Vinh wind farm",
+        "date": "2020-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00037",
+        "label": "Hiep Thanh Wind Power Project",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00038",
+        "label": "Hiep Thanh wind farm",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00049",
+        "label": "Nexif Ben Tre Onshore Wind Farm",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00156",
+        "label": "Duyen Hai 2 Thermal Power Plant",
+        "date": "2017-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ],
     "VN-51": [
       {
-        "recordId": "v124-c-012-entity-00078",
-        "label": "Energy 5건",
-        "date": "2017-2021",
-        "status": "Active 5건 / 전체 5건",
-        "value": "",
+        "recordId": "v124-d-025-entity-00008",
+        "label": "Tra Vinh Solar Power Plant",
+        "date": "2019-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
         "url": "",
         "region": "Vĩnh Long",
-        "indicatorId": "C-012_ppp_project_history_ppi_worldbank"
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00032",
+        "label": "Mekong Offshore Wind Farm Phase I",
+        "date": "2019-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00036",
+        "label": "Tra Vinh wind farm",
+        "date": "2020-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00037",
+        "label": "Hiep Thanh Wind Power Project",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00038",
+        "label": "Hiep Thanh wind farm",
+        "date": "2020-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00049",
+        "label": "Nexif Ben Tre Onshore Wind Farm",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00156",
+        "label": "Duyen Hai 2 Thermal Power Plant",
+        "date": "2017-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-32": [
+      {
+        "recordId": "v124-d-025-entity-00012",
+        "label": "Phu Yen solar plant",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00073",
+        "label": "Ea Drang 2 Hydropower Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-33": [
+      {
+        "recordId": "v124-d-025-entity-00012",
+        "label": "Phu Yen solar plant",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00073",
+        "label": "Ea Drang 2 Hydropower Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đắk Lắk",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-54": [
+      {
+        "recordId": "v124-d-025-entity-00017",
+        "label": "Cuu Yen Waste-to-Energy Plant",
+        "date": "2021-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00084",
+        "label": "Thac Xang Hydropower Plant",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-56": [
+      {
+        "recordId": "v124-d-025-entity-00017",
+        "label": "Cuu Yen Waste-to-Energy Plant",
+        "date": "2021-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00084",
+        "label": "Thac Xang Hydropower Plant",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Bắc Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-HN": [
+      {
+        "recordId": "v124-d-025-entity-00017",
+        "label": "Cuu Yen Waste-to-Energy Plant",
+        "date": "2021-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00163",
+        "label": "Hanoi Hong River Surface Water Treatment Plant",
+        "date": "2019-January",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-43": [
+      {
+        "recordId": "v124-d-025-entity-00019",
+        "label": "Ba Ria Vung Tau Wind Farm",
+        "date": "2009-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00039",
+        "label": "Thanh Phong Wind Power plant",
+        "date": "2020-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00118",
+        "label": "Ho Chi Minh City Airport Cargo Services",
+        "date": "1996-January",
+        "status": "Active",
+        "value": "Transport/Airports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00122",
+        "label": "Tan Thuan Dong container port",
+        "date": "1997-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00124",
+        "label": "Binh An Water Corp Ltd.",
+        "date": "1998-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00126",
+        "label": "Phu My I Power Plant",
+        "date": "1999-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00127",
+        "label": "Thu Duc Water Project",
+        "date": "2001-July",
+        "status": "Cancelled",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00129",
+        "label": "Nam Con Son Gas Pipeline",
+        "date": "2002-December",
+        "status": "Active",
+        "value": "Energy/Natural Gas/Natural gas transmission",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00130",
+        "label": "Phu My 2.2",
+        "date": "2002-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00133",
+        "label": "Phu My 3",
+        "date": "2003-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00140",
+        "label": "Phu My Bridge",
+        "date": "2006-November",
+        "status": "Active",
+        "value": "Transport/Roads/Bridge",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00142",
+        "label": "Saigon International Terminals Vietnam Ltd",
+        "date": "2007-December",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00143",
+        "label": "Ba Ria Thermal Power Company",
+        "date": "2007-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00144",
+        "label": "Saigon Premier Container Terminal",
+        "date": "2008-January",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00145",
+        "label": "Ba Ria-Vung Tau International Container Terminal",
+        "date": "2008-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00167",
+        "label": "Binh Duong composting plant and WTE facility",
+        "date": "2022-December",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-57": [
+      {
+        "recordId": "v124-d-025-entity-00019",
+        "label": "Ba Ria Vung Tau Wind Farm",
+        "date": "2009-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00039",
+        "label": "Thanh Phong Wind Power plant",
+        "date": "2020-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00118",
+        "label": "Ho Chi Minh City Airport Cargo Services",
+        "date": "1996-January",
+        "status": "Active",
+        "value": "Transport/Airports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00122",
+        "label": "Tan Thuan Dong container port",
+        "date": "1997-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00124",
+        "label": "Binh An Water Corp Ltd.",
+        "date": "1998-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00126",
+        "label": "Phu My I Power Plant",
+        "date": "1999-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00127",
+        "label": "Thu Duc Water Project",
+        "date": "2001-July",
+        "status": "Cancelled",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00129",
+        "label": "Nam Con Son Gas Pipeline",
+        "date": "2002-December",
+        "status": "Active",
+        "value": "Energy/Natural Gas/Natural gas transmission",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00130",
+        "label": "Phu My 2.2",
+        "date": "2002-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00133",
+        "label": "Phu My 3",
+        "date": "2003-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00140",
+        "label": "Phu My Bridge",
+        "date": "2006-November",
+        "status": "Active",
+        "value": "Transport/Roads/Bridge",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00142",
+        "label": "Saigon International Terminals Vietnam Ltd",
+        "date": "2007-December",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00143",
+        "label": "Ba Ria Thermal Power Company",
+        "date": "2007-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00144",
+        "label": "Saigon Premier Container Terminal",
+        "date": "2008-January",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00145",
+        "label": "Ba Ria-Vung Tau International Container Terminal",
+        "date": "2008-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00167",
+        "label": "Binh Duong composting plant and WTE facility",
+        "date": "2022-December",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-SG": [
+      {
+        "recordId": "v124-d-025-entity-00019",
+        "label": "Ba Ria Vung Tau Wind Farm",
+        "date": "2009-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00039",
+        "label": "Thanh Phong Wind Power plant",
+        "date": "2020-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00118",
+        "label": "Ho Chi Minh City Airport Cargo Services",
+        "date": "1996-January",
+        "status": "Active",
+        "value": "Transport/Airports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00122",
+        "label": "Tan Thuan Dong container port",
+        "date": "1997-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00124",
+        "label": "Binh An Water Corp Ltd.",
+        "date": "1998-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00126",
+        "label": "Phu My I Power Plant",
+        "date": "1999-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00127",
+        "label": "Thu Duc Water Project",
+        "date": "2001-July",
+        "status": "Cancelled",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00129",
+        "label": "Nam Con Son Gas Pipeline",
+        "date": "2002-December",
+        "status": "Active",
+        "value": "Energy/Natural Gas/Natural gas transmission",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00130",
+        "label": "Phu My 2.2",
+        "date": "2002-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00133",
+        "label": "Phu My 3",
+        "date": "2003-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00140",
+        "label": "Phu My Bridge",
+        "date": "2006-November",
+        "status": "Active",
+        "value": "Transport/Roads/Bridge",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00142",
+        "label": "Saigon International Terminals Vietnam Ltd",
+        "date": "2007-December",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00143",
+        "label": "Ba Ria Thermal Power Company",
+        "date": "2007-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00144",
+        "label": "Saigon Premier Container Terminal",
+        "date": "2008-January",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00145",
+        "label": "Ba Ria-Vung Tau International Container Terminal",
+        "date": "2008-May",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00167",
+        "label": "Binh Duong composting plant and WTE facility",
+        "date": "2022-December",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-35": [
+      {
+        "recordId": "v124-d-025-entity-00020",
+        "label": "Cau Dat Wind Farm",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00033",
+        "label": "Mui Ne Wind Farm Phase I",
+        "date": "2019-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00050",
+        "label": "Mui Ne Wind Farm Phase II",
+        "date": "2021-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00052",
+        "label": "Asia Dak Song 1 Onshore Wind Farm",
+        "date": "2023-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00057",
+        "label": "Dasiat Hydropower Plant",
+        "date": "2005-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00067",
+        "label": "Dong Nai 2 Hydropower Plant",
+        "date": "2009-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00075",
+        "label": "Bao Loc Hydropower Plant",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00089",
+        "label": "Vinacomin Dong Nai V HPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00097",
+        "label": "Dak Nong II SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00099",
+        "label": "VRG Dak Sin I SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00152",
+        "label": "BT20 National Highway 20",
+        "date": "2013-September",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00153",
+        "label": "Vinh Tan 1 Coal Plant",
+        "date": "2014-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-40": [
+      {
+        "recordId": "v124-d-025-entity-00020",
+        "label": "Cau Dat Wind Farm",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00033",
+        "label": "Mui Ne Wind Farm Phase I",
+        "date": "2019-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00050",
+        "label": "Mui Ne Wind Farm Phase II",
+        "date": "2021-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00052",
+        "label": "Asia Dak Song 1 Onshore Wind Farm",
+        "date": "2023-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00057",
+        "label": "Dasiat Hydropower Plant",
+        "date": "2005-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00067",
+        "label": "Dong Nai 2 Hydropower Plant",
+        "date": "2009-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00075",
+        "label": "Bao Loc Hydropower Plant",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00089",
+        "label": "Vinacomin Dong Nai V HPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00097",
+        "label": "Dak Nong II SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00099",
+        "label": "VRG Dak Sin I SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00152",
+        "label": "BT20 National Highway 20",
+        "date": "2013-September",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00153",
+        "label": "Vinh Tan 1 Coal Plant",
+        "date": "2014-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-72": [
+      {
+        "recordId": "v124-d-025-entity-00020",
+        "label": "Cau Dat Wind Farm",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00033",
+        "label": "Mui Ne Wind Farm Phase I",
+        "date": "2019-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00050",
+        "label": "Mui Ne Wind Farm Phase II",
+        "date": "2021-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00052",
+        "label": "Asia Dak Song 1 Onshore Wind Farm",
+        "date": "2023-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00057",
+        "label": "Dasiat Hydropower Plant",
+        "date": "2005-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00067",
+        "label": "Dong Nai 2 Hydropower Plant",
+        "date": "2009-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00075",
+        "label": "Bao Loc Hydropower Plant",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00089",
+        "label": "Vinacomin Dong Nai V HPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00097",
+        "label": "Dak Nong II SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00099",
+        "label": "VRG Dak Sin I SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00152",
+        "label": "BT20 National Highway 20",
+        "date": "2013-September",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00153",
+        "label": "Vinh Tan 1 Coal Plant",
+        "date": "2014-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lâm Đồng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-55": [
+      {
+        "recordId": "v124-d-025-entity-00022",
+        "label": "Bac Lieu Wind Farm",
+        "date": "2012-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00025",
+        "label": "Bac Lieu Wind Power Project (Phase 3)",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00041",
+        "label": "Kosy Bac Lieu wind farm",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00051",
+        "label": "Tan Thuan Wind Farm",
+        "date": "2021-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-59": [
+      {
+        "recordId": "v124-d-025-entity-00022",
+        "label": "Bac Lieu Wind Farm",
+        "date": "2012-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00025",
+        "label": "Bac Lieu Wind Power Project (Phase 3)",
+        "date": "2018-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00041",
+        "label": "Kosy Bac Lieu wind farm",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00051",
+        "label": "Tan Thuan Wind Farm",
+        "date": "2021-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cà Mau",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-24": [
+      {
+        "recordId": "v124-d-025-entity-00023",
+        "label": "Huong Linh 1 Wind Farm",
+        "date": "2018-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00042",
+        "label": "Quang Binh wind farm",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00063",
+        "label": "La La Hydropower Plant",
+        "date": "2008-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00069",
+        "label": "Dakrong 3 Hydropower Plant",
+        "date": "2010-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00078",
+        "label": "Dak Rong 4 Hydropower Plant",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00095",
+        "label": "Song Bac HPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00165",
+        "label": "Lien Lap, Phong Huy and Phong Nguyen Wind Portfolio",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00169",
+        "label": "Hai Lang LNG-to-power project phase 1",
+        "date": "2022-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-25": [
+      {
+        "recordId": "v124-d-025-entity-00023",
+        "label": "Huong Linh 1 Wind Farm",
+        "date": "2018-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00042",
+        "label": "Quang Binh wind farm",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00063",
+        "label": "La La Hydropower Plant",
+        "date": "2008-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00069",
+        "label": "Dakrong 3 Hydropower Plant",
+        "date": "2010-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00078",
+        "label": "Dak Rong 4 Hydropower Plant",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00095",
+        "label": "Song Bac HPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00165",
+        "label": "Lien Lap, Phong Huy and Phong Nguyen Wind Portfolio",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00169",
+        "label": "Hai Lang LNG-to-power project phase 1",
+        "date": "2022-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Trị",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-52": [
+      {
+        "recordId": "v124-d-025-entity-00024",
+        "label": "Soc Trang Wind Plant",
+        "date": "2018-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00028",
+        "label": "Lac Hoa wind power plant",
+        "date": "2019-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00035",
+        "label": "Soc Trang 3 WPP, phase I",
+        "date": "2020-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00044",
+        "label": "Lac Hoa/ Hoa Dong Wind Power Plants",
+        "date": "2020-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00154",
+        "label": "Aqua One  Song Hau Drinking Water Treatment Plant",
+        "date": "2016-February",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00158",
+        "label": "Can Tho Waste-to-Energy Plant",
+        "date": "2017-June",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-73": [
+      {
+        "recordId": "v124-d-025-entity-00024",
+        "label": "Soc Trang Wind Plant",
+        "date": "2018-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00028",
+        "label": "Lac Hoa wind power plant",
+        "date": "2019-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00035",
+        "label": "Soc Trang 3 WPP, phase I",
+        "date": "2020-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00044",
+        "label": "Lac Hoa/ Hoa Dong Wind Power Plants",
+        "date": "2020-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00154",
+        "label": "Aqua One  Song Hau Drinking Water Treatment Plant",
+        "date": "2016-February",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00158",
+        "label": "Can Tho Waste-to-Energy Plant",
+        "date": "2017-June",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-CT": [
+      {
+        "recordId": "v124-d-025-entity-00024",
+        "label": "Soc Trang Wind Plant",
+        "date": "2018-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00028",
+        "label": "Lac Hoa wind power plant",
+        "date": "2019-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00035",
+        "label": "Soc Trang 3 WPP, phase I",
+        "date": "2020-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00044",
+        "label": "Lac Hoa/ Hoa Dong Wind Power Plants",
+        "date": "2020-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00154",
+        "label": "Aqua One  Song Hau Drinking Water Treatment Plant",
+        "date": "2016-February",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00158",
+        "label": "Can Tho Waste-to-Energy Plant",
+        "date": "2017-June",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Cần Thơ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-14": [
+      {
+        "recordId": "v124-d-025-entity-00034",
+        "label": "Hoa Binh 1 Wind Farm Phases 1 and 2",
+        "date": "2020-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00040",
+        "label": "Hoa Binh 5 wind power plant",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00111",
+        "label": "Phu Tho Biomass Plant",
+        "date": "2012-October",
+        "status": "Cancelled",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-68": [
+      {
+        "recordId": "v124-d-025-entity-00034",
+        "label": "Hoa Binh 1 Wind Farm Phases 1 and 2",
+        "date": "2020-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00040",
+        "label": "Hoa Binh 5 wind power plant",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00111",
+        "label": "Phu Tho Biomass Plant",
+        "date": "2012-October",
+        "status": "Cancelled",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-70": [
+      {
+        "recordId": "v124-d-025-entity-00034",
+        "label": "Hoa Binh 1 Wind Farm Phases 1 and 2",
+        "date": "2020-August",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00040",
+        "label": "Hoa Binh 5 wind power plant",
+        "date": "2020-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00111",
+        "label": "Phu Tho Biomass Plant",
+        "date": "2012-October",
+        "status": "Cancelled",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Phú Thọ",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-02": [
+      {
+        "recordId": "v124-d-025-entity-00053",
+        "label": "Thac Ba Hydropower JSC",
+        "date": "2005-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00082",
+        "label": "Chu Linh and Coc San Hydropower Plants",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00083",
+        "label": "Ngoi Hut 2 Hydropower Plant",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00087",
+        "label": "Nam Luc Hydropower Plant",
+        "date": "2011-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00098",
+        "label": "INTRACOM Ta Loi 2 SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00100",
+        "label": "Minh Luong SHPP",
+        "date": "2012-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00101",
+        "label": "Nam Xay Noi II SHPP",
+        "date": "2012-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00106",
+        "label": "Coc San Hydropower Project",
+        "date": "2014-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00113",
+        "label": "Yen Bai Biomass Power Plant 50MW",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-06": [
+      {
+        "recordId": "v124-d-025-entity-00053",
+        "label": "Thac Ba Hydropower JSC",
+        "date": "2005-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00082",
+        "label": "Chu Linh and Coc San Hydropower Plants",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00083",
+        "label": "Ngoi Hut 2 Hydropower Plant",
+        "date": "2010-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00087",
+        "label": "Nam Luc Hydropower Plant",
+        "date": "2011-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00098",
+        "label": "INTRACOM Ta Loi 2 SHPP",
+        "date": "2012-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00100",
+        "label": "Minh Luong SHPP",
+        "date": "2012-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00101",
+        "label": "Nam Xay Noi II SHPP",
+        "date": "2012-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00106",
+        "label": "Coc San Hydropower Project",
+        "date": "2014-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00113",
+        "label": "Yen Bai Biomass Power Plant 50MW",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lào Cai",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-39": [
+      {
+        "recordId": "v124-d-025-entity-00059",
+        "label": "Thac Mo Hydrpower Company",
+        "date": "2007-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00067",
+        "label": "Dong Nai 2 Hydropower Plant",
+        "date": "2009-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00089",
+        "label": "Vinacomin Dong Nai V HPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00094",
+        "label": "SMA DakGlun SHPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00128",
+        "label": "Hung Nghiep Formosa power plant",
+        "date": "2001-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00152",
+        "label": "BT20 National Highway 20",
+        "date": "2013-September",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00173",
+        "label": "Nhon Trach 3&4 Gas-fired power plants (1.5GW)",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-58": [
+      {
+        "recordId": "v124-d-025-entity-00059",
+        "label": "Thac Mo Hydrpower Company",
+        "date": "2007-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00067",
+        "label": "Dong Nai 2 Hydropower Plant",
+        "date": "2009-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00089",
+        "label": "Vinacomin Dong Nai V HPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00094",
+        "label": "SMA DakGlun SHPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00128",
+        "label": "Hung Nghiep Formosa power plant",
+        "date": "2001-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00152",
+        "label": "BT20 National Highway 20",
+        "date": "2013-September",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00173",
+        "label": "Nhon Trach 3&4 Gas-fired power plants (1.5GW)",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đồng Nai",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-05": [
+      {
+        "recordId": "v124-d-025-entity-00060",
+        "label": "Nam Chien 2 Hydropower Plant",
+        "date": "2007-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Sơn La",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00065",
+        "label": "Suoi Lum 1 Hydropower Plant",
+        "date": "2009-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Sơn La",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00080",
+        "label": "Ta Co Hydropower Plant",
+        "date": "2010-March",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Sơn La",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-27": [
+      {
+        "recordId": "v124-d-025-entity-00062",
+        "label": "Bitexco Dak Mi 4 HPP",
+        "date": "2008-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00091",
+        "label": "Phy Thanh Song Bung IVa HPP",
+        "date": "2011-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00092",
+        "label": "Song Tranh IV HPP",
+        "date": "2011-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00151",
+        "label": "Da Nang Waste-to-Energy Plant Phase I",
+        "date": "2012-May",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-DN": [
+      {
+        "recordId": "v124-d-025-entity-00062",
+        "label": "Bitexco Dak Mi 4 HPP",
+        "date": "2008-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00091",
+        "label": "Phy Thanh Song Bung IVa HPP",
+        "date": "2011-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00092",
+        "label": "Song Tranh IV HPP",
+        "date": "2011-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00151",
+        "label": "Da Nang Waste-to-Energy Plant Phase I",
+        "date": "2012-May",
+        "status": "Active",
+        "value": "Municipal Solid Waste/Treatment/ Disposal/",
+        "url": "",
+        "region": "Đà Nẵng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-03": [
+      {
+        "recordId": "v124-d-025-entity-00064",
+        "label": "Bitexco Nho Que 3 HPP",
+        "date": "2009-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00072",
+        "label": "Song Mien 5 Hydropower Plant",
+        "date": "2010-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00076",
+        "label": "Chiem Hoa HPP",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00090",
+        "label": "VTEC Bac Me HPP",
+        "date": "2011-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00095",
+        "label": "Song Bac HPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00112",
+        "label": "Tuyen Quang Biomass Power Plant 50MW",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-07": [
+      {
+        "recordId": "v124-d-025-entity-00064",
+        "label": "Bitexco Nho Que 3 HPP",
+        "date": "2009-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00072",
+        "label": "Song Mien 5 Hydropower Plant",
+        "date": "2010-February",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00076",
+        "label": "Chiem Hoa HPP",
+        "date": "2010-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00090",
+        "label": "VTEC Bac Me HPP",
+        "date": "2011-July",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00095",
+        "label": "Song Bac HPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00112",
+        "label": "Tuyen Quang Biomass Power Plant 50MW",
+        "date": "2024-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Tuyên Quang",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-01": [
+      {
+        "recordId": "v124-d-025-entity-00068",
+        "label": "Nam Na 2 Hydropower Plant",
+        "date": "2010-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00086",
+        "label": "Thien Nam I-III HPPs",
+        "date": "2011-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00096",
+        "label": "Nam Na 3 Hydropower Plant",
+        "date": "2012-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00103",
+        "label": "Nam Cat SHPP",
+        "date": "2012-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00104",
+        "label": "Nam Si Luong 4 Hydropower Plant",
+        "date": "2012-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00108",
+        "label": "Muong Tung hydropower projects",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Lai Châu",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-28": [
+      {
+        "recordId": "v124-d-025-entity-00074",
+        "label": "Thuong Kon Tum Hydropower Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00088",
+        "label": "Dakrosa II SHPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00109",
+        "label": "Dak Re Thuong hydro power plant",
+        "date": "2022-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-29": [
+      {
+        "recordId": "v124-d-025-entity-00074",
+        "label": "Thuong Kon Tum Hydropower Plant",
+        "date": "2010-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00088",
+        "label": "Dakrosa II SHPP",
+        "date": "2011-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00109",
+        "label": "Dak Re Thuong hydro power plant",
+        "date": "2022-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ngãi",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-21": [
+      {
+        "recordId": "v124-d-025-entity-00085",
+        "label": "Ba Thuoc 1 & 2 Hydropower Plant",
+        "date": "2011-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00107",
+        "label": "Hoi Xuan Hydro Power Plant",
+        "date": "2016-January",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00159",
+        "label": "Nghi Son 2",
+        "date": "2018-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Thanh Hóa",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-22": [
+      {
+        "recordId": "v124-d-025-entity-00093",
+        "label": "Nam Can II HPP",
+        "date": "2011-October",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00105",
+        "label": "Ban Ve Nam Non HPP",
+        "date": "2012-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Nghệ An",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-71": [
+      {
+        "recordId": "v124-d-025-entity-00108",
+        "label": "Muong Tung hydropower projects",
+        "date": "2021-May",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Điện Biên",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-61": [
+      {
+        "recordId": "v124-d-025-entity-00119",
+        "label": "Nomura Haiphong Industrial Zone Power Plant",
+        "date": "1996-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00137",
+        "label": "Pha Lai Thermal Electricity Power JSC",
+        "date": "2005-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00172",
+        "label": "Phu Binh and Thuy Nguyen water treatment plants",
+        "date": "2024-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-HP": [
+      {
+        "recordId": "v124-d-025-entity-00119",
+        "label": "Nomura Haiphong Industrial Zone Power Plant",
+        "date": "1996-June",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00137",
+        "label": "Pha Lai Thermal Electricity Power JSC",
+        "date": "2005-November",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00172",
+        "label": "Phu Binh and Thuy Nguyen water treatment plants",
+        "date": "2024-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Hải Phòng",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-18": [
+      {
+        "recordId": "v124-d-025-entity-00141",
+        "label": "Ninh Binh Thermal Power Company",
+        "date": "2007-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-63": [
+      {
+        "recordId": "v124-d-025-entity-00141",
+        "label": "Ninh Binh Thermal Power Company",
+        "date": "2007-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-67": [
+      {
+        "recordId": "v124-d-025-entity-00141",
+        "label": "Ninh Binh Thermal Power Company",
+        "date": "2007-April",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Ninh Bình",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-13": [
+      {
+        "recordId": "v124-d-025-entity-00148",
+        "label": "Cai Lan International Container Terminal LLC (“CICT”)",
+        "date": "2010-November",
+        "status": "Active",
+        "value": "Transport/Ports/Terminal",
+        "url": "",
+        "region": "Quảng Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00150",
+        "label": "Mong Duong II Thermal Power Generation Project",
+        "date": "2011-September",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Quảng Ninh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-53": [
+      {
+        "recordId": "v124-d-025-entity-00149",
+        "label": "An Khanh 1 Coal Plant",
+        "date": "2011-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00172",
+        "label": "Phu Binh and Thuy Nguyen water treatment plants",
+        "date": "2024-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-69": [
+      {
+        "recordId": "v124-d-025-entity-00149",
+        "label": "An Khanh 1 Coal Plant",
+        "date": "2011-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00172",
+        "label": "Phu Binh and Thuy Nguyen water treatment plants",
+        "date": "2024-July",
+        "status": "Active",
+        "value": "Water and sewerage/Treatment plant/Potable water treatment plant",
+        "url": "",
+        "region": "Thái Nguyên",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-45": [
+      {
+        "recordId": "v124-d-025-entity-00162",
+        "label": "Trung Luong-My Thuan expressway",
+        "date": "2019-December",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Đồng Tháp",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-46": [
+      {
+        "recordId": "v124-d-025-entity-00162",
+        "label": "Trung Luong-My Thuan expressway",
+        "date": "2019-December",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Đồng Tháp",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "VN-23": [
+      {
+        "recordId": "v124-d-025-entity-00164",
+        "label": "Vung Ang 2 coal plant",
+        "date": "2021-December",
+        "status": "Active",
+        "value": "Energy/Electricity/Electricity generation",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "v124-d-025-entity-00168",
+        "label": "Dien Chau - Bai Vot section of the North - South expressway",
+        "date": "2022-February",
+        "status": "Active",
+        "value": "Transport/Roads/Highway",
+        "url": "",
+        "region": "Hà Tĩnh",
+        "indicatorId": "D-025_ppi_project_registry"
       }
     ]
   },
   "seriesCoverage": [
     {
       "variable": "ppp-project-count",
-      "period": "1997–2024",
+      "period": "1994–2024(재무종결)",
       "expectedCount": 63,
       "matchedCount": 56,
       "missingCount": 7,
@@ -1557,43 +4097,16 @@
   ],
   "source": {
     "attribution": [
-      "Analysis reference: law firm publication. Factual citation only.",
-      "Legal document reference: LuatVietnam (INCOM). Factual citation only.",
-      "Legal document reference: ThuVienPhapLuat / LawNet. Factual citation only.",
-      "Press/industry publication reference. Factual citation only.",
-      "Source: 베트남 국회·정부 공보 / World Bank PPP Legal Framework",
-      "Source: 베트남 재무부(Bộ Tài chính)"
+      "World Bank Open Data, licensed under CC BY 4.0. Source: World Bank. Attribution required; changes must be indicated."
     ],
     "licenses": [
-      "INCOM(LuatVietnam) 이용약관 — 서면 허가 필요",
-      "로펌 간행물 저작권 유보 — 인용 시 출처 표기",
-      "베트남 정부 공보 이용약관",
-      "베트남 정부 포털 공개정보 — 출처 표기 조건",
-      "상업 법령DB 이용약관 — 재배포 서면 허가 필요",
-      "언론·전문지 저작권 유보 — 인용 시 출처 표기"
+      "CC-BY-4.0"
     ],
     "organizations": [
-      "베트남 국회·정부 공보 / World Bank PPP Legal Framework",
-      "베트남 재무부(Bộ Tài chính) 투자 포털",
-      "베트남 정부 — Nghị định 243/2025/NĐ-CP"
+      "World Bank Private Participation in Infrastructure (PPI) Database"
     ],
     "urls": [
-      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2020/07/64.signed.pdf",
-      "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/9/123-vbhn-vpqh.pdf",
-      "https://luatnguyen.vn/van-ban-phap-luat/nghi-dinh-243-2025-nd-cp-1921.html",
-      "https://luatvietnam.vn/dau-tu/nghi-dinh-243-2025-nd-cp-quy-dinh-chi-tiet-luat-dau-tu-theo-phuong-thuc-doi-tac-cong-tu-411082-d1.html",
-      "https://ppi.worldbank.org/en/customquery",
-      "https://ppi.worldbank.org/en/methodology/ppi-methodology",
-      "https://ppi.worldbank.org/en/snapshots/country/vietnam",
-      "https://ppp.worldbank.org/library/ppp-laws-concessions-laws-vietnam",
-      "https://ppp.worldbank.org/library/ppp-unit-vietnam",
-      "https://ppp.worldbank.org/sites/default/files/2024-08/PPP_Legal_Framework_Snapshot_Vietnam_EN_Aug2016_0.pdf",
-      "https://tapchicongthuong.vn/cac-du-an-ppp-moi-deu-la-cac-du-an-trong-diem--quy-mo-lon-cua-quoc-gia-107378.htm",
-      "https://thuvienphapluat.vn/van-ban/Dau-tu/Van-ban-hop-nhat-123-VBHN-VPQH-2025-Luat-Dau-tu-theo-phuong-thuc-doi-tac-cong-tu-672449.aspx",
-      "https://thuvienphapluat.vn/van-ban/EN/Dau-tu/Law-64-2020-QH14-on-Public-Private-Partnership-Investment/449829/tieng-anh.aspx",
-      "https://vanban.chinhphu.vn/?docid=215319&pageid=27160",
-      "https://www.kingandwood.com/global/en/insights/latest-thinking/public-private-partnerships-in-asia-vietnam-guide-2025.html",
-      "https://www.mof.gov.vn/bo-tai-chinh/dau-tu"
+      "https://ppi.worldbank.org/en/ppidata"
     ]
   },
   "validation": {
@@ -1606,7 +4119,7 @@
     "missingAdm1Count": 7,
     "providedZeroCount": 0,
     "publishedValueCount": 56,
-    "sourceValueCount": 29,
+    "sourceValueCount": 143,
     "suppressedValueCount": 0,
     "unmatchedSourceNameCount": 0,
     "zeroImputationCount": 0,

@@ -1,4 +1,4 @@
-import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
+import type { VietnamEntityV124, VietnamIndicatorMetaV124 } from "../vietnam/vietnamTypesV124";
 import type { SemanticObservationV125 } from "./semanticTypesV125";
 
 export const finiteV147 = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
@@ -53,20 +53,80 @@ export function nationalSeriesV147(entities: VietnamEntityV124[]): NationalSerie
   return Array.from(groups.values()).map((g) => ({ ...g, points: g.points.sort((a, b) => a.year - b.year) }));
 }
 
+/**
+ * The 2026-09-30 delivery reshaped C-002 into one wide "entity(레코드형)" row
+ * per report/record (`normalizedAttributes["인벤토리_*"]` for the BUR/BTR
+ * rows) and moved the by-sector gas split out of row-level records entirely:
+ * it is now descriptive text on a dedicated "부문별 배출량" indicator per
+ * sector ("CO₂ 46,047.20·N₂O 24.12·HFCs 23.32 / 14.6%" as its `caveat`, one
+ * indicator per report vintage × sector). `totalKey` reads the sector total
+ * from the wide row; `sector` finds that report vintage's matching indicator
+ * for the gas split.
+ */
 const BUR_SECTORS_V147 = [
-  ["Energy(에너지)", "에너지", "BUR3(2016) — 1 Energy(에너지)"],
-  ["IPPU(산업공정 제품사용)", "산업공정·제품사용", "BUR3(2016) — 2 IPPU(산업공정·제품사용)"],
-  ["AFOLU(농업 임업 기타토지이용)", "농업·임업·기타토지이용", "BUR3(2016) — 3 AFOLU(농업·임업·기타토지이용)"],
-  ["Waste(폐기물)", "폐기물", "BUR3(2016) — 4 Waste(폐기물)"],
+  { source: "Energy(에너지)", label: "에너지", totalKey: "인벤토리_에너지", sector: /에너지/u },
+  { source: "IPPU(산업공정 제품사용)", label: "산업공정·제품사용", totalKey: "인벤토리_IPPU", sector: /산업공정/u },
+  { source: "AFOLU(농업 임업 기타토지이용)", label: "농업·임업·기타토지이용", totalKey: "인벤토리_AFOLU_합계", sector: /AFOLU/u },
+  { source: "Waste(폐기물)", label: "폐기물", totalKey: "인벤토리_폐기물", sector: /폐기물/u },
 ] as const;
 export const BUR_GASES_V147 = ["CO2", "CH4", "N2O", "HFCs"] as const;
-export function burInventoryV147(entities: VietnamEntityV124[]) {
-  const rows = entities.filter((r) => r.indicatorId === "C-002_ghg_sector_emission" && String(r.normalizedAttributes?.["속성4_시점"]) === "2016");
-  const value = (name: string) => uniqueNumericV147(rows.filter((r) => r.name === name).map((r) => ({ value: r.normalizedAttributes?.["속성3_값"] })));
-  return BUR_SECTORS_V147.map(([source, label, total]) => ({
-    source, label, total: value(total),
-    gases: Object.fromEntries(BUR_GASES_V147.map((gas) => [gas, value(`${source} - ${gas}`)])) as Record<typeof BUR_GASES_V147[number], number | null>,
-  }));
+type BurGasesV147 = Record<typeof BUR_GASES_V147[number], number | null>;
+const EMPTY_BUR_GASES_V147: BurGasesV147 = { CO2: null, CH4: null, N2O: null, HFCs: null };
+
+/** The single most recent BUR ("격년갱신보고서(BUR)") record, or null when
+ * none exist or the year is ambiguous (a duplicate source row is never
+ * silently deduplicated into a guess). */
+function latestBurEntityV147(entities: VietnamEntityV124[]): VietnamEntityV124 | null {
+  const reports = entities.filter((r) => r.normalizedAttributes?.["식별_레코드_유형"] === "격년갱신보고서(BUR)");
+  let latestYear: number | null = null;
+  for (const r of reports) {
+    const year = r.normalizedAttributes?.["인벤토리_연도_년"];
+    if (typeof year === "number" && (latestYear === null || year > latestYear)) latestYear = year;
+  }
+  if (latestYear === null) return null;
+  const candidates = reports.filter((r) => r.normalizedAttributes?.["인벤토리_연도_년"] === latestYear);
+  return candidates.length === 1 ? candidates[0] : null;
+}
+
+const GAS_LABEL_MAP_V147: Record<string, typeof BUR_GASES_V147[number]> = { "CO₂": "CO2", "CH₄": "CH4", "N₂O": "N2O", HFCs: "HFCs" };
+const GAS_TOKEN_V147 = /(CO₂|CH₄|N₂O|HFCs)\s*(−?[\d,]+(?:\.\d+)?)/gu;
+
+/** A gas the source note does not name is a structural zero-source cell
+ * (e.g. IPPU has no CH₄ source), never a fabricated 0 or a stale value. */
+function parseBurGasesV147(caveat: string | null | undefined): BurGasesV147 {
+  const out: BurGasesV147 = { ...EMPTY_BUR_GASES_V147 };
+  if (!caveat) return out;
+  for (const match of caveat.matchAll(GAS_TOKEN_V147)) {
+    const key = GAS_LABEL_MAP_V147[match[1]];
+    if (key) out[key] = Number(match[2].replace(/,/gu, "").replace(/−/gu, "-"));
+  }
+  return out;
+}
+
+function burSectorGasesV147(indicators: VietnamIndicatorMetaV124[], reviewedYear: number, sectorPattern: RegExp): BurGasesV147 {
+  const yearTag = `(${reviewedYear} 인벤토리)`;
+  const matches = indicators.filter((ind) => {
+    if (!ind.indicatorId.startsWith("C-002_by_sector_emission") || !ind.labelKo.includes(yearTag)) return false;
+    const suffix = ind.labelKo.slice(ind.labelKo.lastIndexOf(" — ") + 3);
+    return sectorPattern.test(suffix);
+  });
+  // More than one sector-indicator match for the same report year is
+  // ambiguous and fails closed, the same as a duplicate source row.
+  return matches.length === 1 ? parseBurGasesV147(matches[0].caveat) : { ...EMPTY_BUR_GASES_V147 };
+}
+
+export function burInventoryV147(entities: VietnamEntityV124[], indicators: VietnamIndicatorMetaV124[] = []) {
+  const entity = latestBurEntityV147(entities);
+  const reviewedYear = entity ? (entity.normalizedAttributes?.["인벤토리_연도_년"] as number) : null;
+  return BUR_SECTORS_V147.map(({ source, label, totalKey, sector }) => {
+    const raw = entity?.normalizedAttributes?.[totalKey];
+    return {
+      source,
+      label,
+      total: typeof raw === "number" ? raw : null,
+      gases: reviewedYear !== null ? burSectorGasesV147(indicators, reviewedYear, sector) : { ...EMPTY_BUR_GASES_V147 },
+    };
+  });
 }
 
 /** A change in a ranking/index is not a relative growth rate. */

@@ -1,8 +1,8 @@
+import { formatRegionName, formatRegionTextV162 } from "../geo/regionNameV161";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
-import { PROVINCE_KO_34_V151 } from "../map/adminBoundaryV151";
 import { formatPublicNumberV126 } from "./publicNumberFormatV126";
-import { publicSourceUrlV126 } from "./publicFieldPolicyV126";
+import { publicRecordNoteV161, publicSourceUrlV126 } from "./publicFieldPolicyV126";
 
 /**
  * V153: one label-form card for every facility, organisation and project.
@@ -101,10 +101,14 @@ export const FACILITY_CARD_SPECS_V153: Record<string, FacilityCardSpecV153> = {
     noun: "광산",
     fields: [COUNTRY, { key: "name", label: "명칭", sources: ["광산명", "@name"] }, { key: "type", label: "광종", sources: ["광종"] }, { key: "note", label: "기후기술 연계", sources: ["기후기술_연계_근거"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "소재_행정구역_성"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["좌표_산출근거", "@sourceUrl"], format: "url" }],
   },
+  // 2026-09-30 delivery: C-025 moved to the wide "[블록] 속성" template
+  // (wideRecordsV162.ts), one row per project ("크레딧 사업") or per issuance
+  // ("발행 기록"); the old "속성N_…" keys are kept as a fallback only, since a
+  // few rows may still carry them.
   "C-025": {
     elementId: "C-025",
     noun: "탄소사업",
-    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["속성1_레코드명", "@name"] }, { key: "type", label: "등록 제도", sources: ["standard"] }, { key: "owner", label: "사업자", sources: ["proponent", "속성8_사업자_기관"] }, { key: "scale", label: "규모", sources: ["속성14_연간예상감축_tCO2e"], format: "number", unit: "tCO₂e/년" }, { key: "year", label: "시점", sources: ["속성4_시점"] }, { key: "status", label: "상태", sources: ["status", "속성7_상태"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "속성21_지역_현행"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["속성19_원문URL"], format: "url" }],
+    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["식별_프로젝트명", "속성1_레코드명", "@name"] }, { key: "type", label: "등록 제도", sources: ["식별_등록_표준", "standard"] }, { key: "owner", label: "사업자", sources: ["사업_사업자_기관", "proponent", "속성8_사업자_기관"] }, { key: "scale", label: "규모", sources: ["사업_연간_예상_감축량_tCO_e_년", "속성14_연간예상감축_tCO2e"], format: "number", unit: "tCO₂e/년" }, { key: "year", label: "시점", sources: ["실적_최초_빈티지_년", "발행기록_연도_년", "속성4_시점"] }, { key: "status", label: "상태", sources: ["status", "식별_등재_상태", "속성7_상태"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "지역_지역명_현행", "속성21_지역_현행"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["출처_원문_URL", "속성19_원문URL"], format: "url" }],
   },
   "E-004": { elementId: "E-004", noun: "기관", fields: orgFields(["orgType"], [{ key: "program", label: "담당·프로그램", sources: ["officeProgram"] }, { key: "contact", label: "연락처", sources: ["email", "phone"] }]) },
   "E-005": { elementId: "E-005", noun: "기관", fields: orgFields(["orgType"], [{ key: "domain", label: "분야", sources: ["domain"] }, { key: "contact", label: "연락처", sources: ["contact"] }]) },
@@ -137,13 +141,15 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     const current = text(attributes.adm1Name34);
     const former = text(attributes.adm1Name63);
     if (current) {
-      const korean = PROVINCE_KO_34_V151[String(attributes.adm1Code34 || "")];
-      const named = korean ? `${korean}(${current})` : current;
-      const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${former}` : " · 개편 후 34개 기준";
+      // V162 (P12-B): "한글명 (현지명)" from the region dictionary, the unit's
+      // own vintage for each name (34 now, 63 before the 2025 reform).
+      const named = formatRegionName({ country: "VNM", raw: current, level: "adm1-34" });
+      const formerNamed = former ? formatRegionName({ country: "VNM", raw: former, level: "adm1-63" }) : "";
+      const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${formerNamed}` : " · 개편 후 34개 기준";
       return { key: field.key, label: field.label, value: `${named}${suffix}`, missing: false };
     }
     const fallback = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
-    return fallback ? { key: field.key, label: field.label, value: `${fallback} (성·시 경계 밖 · 원문 표기)`, missing: false } : { ...missing, value: `${FACILITY_CARD_MISSING_V153}(성·시 경계 밖)` };
+    return fallback ? { key: field.key, label: field.label, value: `${formatRegionTextV162({ country: "VNM", raw: fallback })} (성·시 경계 밖 · 원문 표기)`, missing: false } : { ...missing, value: `${FACILITY_CARD_MISSING_V153}(성·시 경계 밖)` };
   }
   if (field.format === "source") {
     // A-023: the registry's own name and year, then the row's link.
@@ -174,7 +180,9 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     const href = publicSourceUrlV126(text(raw)) || undefined;
     return href ? { key: field.key, label: field.label, value: href.replace(/^https?:\/\//u, "").replace(/\/$/u, ""), href, missing: false } : missing;
   }
-  const value = text(raw);
+  // V162: a note field reads like any record note - the compiler's coding
+  // memo ("tech_id 공란(별첨2 R4: 억지 매핑 금지)") is not the record's content.
+  const value = field.key === "note" ? text(publicRecordNoteV161(text(raw) || "")) : text(raw);
   return value ? { key: field.key, label: field.label, value, missing: false } : missing;
 }
 

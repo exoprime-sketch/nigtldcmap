@@ -47,6 +47,14 @@ function compileModuleV131(path, cache = new Map()) {
     (candidate) => existsSync(candidate) && statSync(candidate).isFile()
   );
   if (!file) throw new Error(`module not found: ${path}`);
+  // V162: a data table the policy imports (osmClassLabelsV162.json, read for
+  // A-028's OSM class names) is data, not code - parsed, never compiled.
+  if (file.endsWith(".json")) {
+    const data = JSON.parse(readFileSync(file, "utf8"));
+    const jsonExports = Object.assign({ default: data }, data);
+    cache.set(resolved, jsonExports);
+    return jsonExports;
+  }
 
   const result = ts.transpileModule(readFileSync(file, "utf8"), {
     compilerOptions: {

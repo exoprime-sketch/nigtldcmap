@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-004",
-  "entityCount": 58,
+  "entityCount": 71,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 69,
+  "indicatorCount": 62,
   "indicators": [
     {
       "axisGroupKey": "measure-34cf97707ad1|tCO2e/년 이상",
@@ -661,46 +661,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-f60f3652fae3|%(이상)",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소 흡수/제거 목표(MtCO₂e)",
-      "indicatorId": "C-004_carbon_removal_target",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f60f3652fae3",
-        "labelKo": "탄소 흡수/제거 목표(MtCO₂e)",
-        "unit": "%(이상)",
-        "unitFamily": "percent"
-      },
-      "seriesKey": "measure-f60f3652fae3|%(이상)||C-004_carbon_removal_target",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소 흡수/제거 목표(MtCO₂e)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-758c1cfab934|십억kWh",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
-      "indicatorId": "C-004_energy_mix_projection",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-758c1cfab934",
-        "labelKo": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
-        "unit": "십억kWh",
-        "unitFamily": "energy"
-      },
-      "seriesKey": "measure-758c1cfab934|십억kWh||C-004_energy_mix_projection",
-      "sourceCaveat": null,
-      "sourceLabel": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a103c4930c54|—",
       "dimensionLabels": {
         "category": "연료원별 발전량 구성비(태양광/풍력/석탄/가스 등)",
@@ -1073,6 +1033,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "LT-LEDS (장기 저탄소 발전 전략) · finance",
+      "indicatorId": "C-004_finance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ba14d8db5f8f",
+        "labelKo": "LT-LEDS (장기 저탄소 발전 전략)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-004_finance",
+      "sourceCaveat": null,
+      "sourceLabel": "LT-LEDS (장기 저탄소 발전 전략)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-e6a4b3462272|%(이상)",
       "dimensionLabels": {
         "category": "산림피복률(2030)",
@@ -1243,26 +1223,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-302d34a37e8c|백만 USD",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "공정전환 전략",
-      "indicatorId": "C-004_just_transition",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-302d34a37e8c",
-        "labelKo": "공정전환 전략",
-        "unit": "백만 USD",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-302d34a37e8c|백만 USD||C-004_just_transition",
-      "sourceCaveat": null,
-      "sourceLabel": "공정전환 전략",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-adfee22e6598|—",
       "dimensionLabels": {
         "category": "Global Coal to Clean Power Transition Statement",
@@ -1365,26 +1325,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-682d8b46101e|개",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "핵심 감축 기술 목록",
-      "indicatorId": "C-004_key_mitigation_tech",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-682d8b46101e",
-        "labelKo": "핵심 감축 기술 목록",
-        "unit": "개",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-682d8b46101e|개||C-004_key_mitigation_tech",
-      "sourceCaveat": null,
-      "sourceLabel": "핵심 감축 기술 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-9e94e7ff850b|—",
       "dimensionLabels": {
         "category": "주요 감축기술 목록",
@@ -1417,26 +1357,6 @@
         "sourceRow": 37,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-33ab719af134|십억 USD",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "장기 투자 소요(USD)",
-      "indicatorId": "C-004_long_term_investment",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-33ab719af134",
-        "labelKo": "장기 투자 소요(USD)",
-        "unit": "십억 USD",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-33ab719af134|십억 USD||C-004_long_term_investment",
-      "sourceCaveat": null,
-      "sourceLabel": "장기 투자 소요(USD)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-288b8c1bf9f7|십억 USD",
@@ -1677,41 +1597,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-97cc397e342c|MtCO2e",
+      "axisGroupKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
-      "indicatorId": "C-004_long_term_pathway",
+      "displayLabel": "LT-LEDS (장기 저탄소 발전 전략) · longterm_target",
+      "indicatorId": "C-004_longterm_target",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-97cc397e342c",
-        "labelKo": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
-        "unit": "MtCO2e",
-        "unitFamily": "emissions"
+        "key": "measure-ba14d8db5f8f",
+        "labelKo": "LT-LEDS (장기 저탄소 발전 전략)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-97cc397e342c|MtCO2e||C-004_long_term_pathway",
+      "seriesKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-004_longterm_target",
       "sourceCaveat": null,
-      "sourceLabel": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-ebb93151549e|년",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "넷제로 목표 연도/범위",
-      "indicatorId": "C-004_net_zero_target",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ebb93151549e",
-        "labelKo": "넷제로 목표 연도/범위",
-        "unit": "년",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ebb93151549e|년||C-004_net_zero_target",
-      "sourceCaveat": null,
-      "sourceLabel": "넷제로 목표 연도/범위",
+      "sourceLabel": "LT-LEDS (장기 저탄소 발전 전략)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1819,21 +1719,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-39ca0bf78d19|정성 목표",
+      "axisGroupKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "부문별 탈탄소 경로",
-      "indicatorId": "C-004_sector_decarbonization",
+      "displayLabel": "LT-LEDS (장기 저탄소 발전 전략) · scenario",
+      "indicatorId": "C-004_scenario",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-39ca0bf78d19",
-        "labelKo": "부문별 탈탄소 경로",
-        "unit": "정성 목표",
-        "unitFamily": "text"
+        "key": "measure-ba14d8db5f8f",
+        "labelKo": "LT-LEDS (장기 저탄소 발전 전략)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-39ca0bf78d19|정성 목표||C-004_sector_decarbonization",
+      "seriesKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-004_scenario",
       "sourceCaveat": null,
-      "sourceLabel": "부문별 탈탄소 경로",
+      "sourceLabel": "LT-LEDS (장기 저탄소 발전 전략)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -1873,26 +1773,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_faolex_fao",
-      "indicatorId": "C-004_source_link_faolex_fao",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_faolex_fao",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "NCCS 2050(Decision 896/QĐ-TTg)",
@@ -1925,26 +1805,6 @@
         "sourceRow": 53,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_openknowledge_worldban",
-      "indicatorId": "C-004_source_link_openknowledge_worldban",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_openknowledge_worldban",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-a2c3c0328922|URL",
@@ -2015,26 +1875,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_vanban_chinhphu",
-      "indicatorId": "C-004_source_link_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-004_source_link_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "World Bank Vietnam CCDR(2022)",
@@ -2067,6 +1907,26 @@
         "sourceRow": 56,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "LT-LEDS (장기 저탄소 발전 전략) · submission",
+      "indicatorId": "C-004_submission",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ba14d8db5f8f",
+        "labelKo": "LT-LEDS (장기 저탄소 발전 전략)",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ba14d8db5f8f|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-004_submission",
+      "sourceCaveat": null,
+      "sourceLabel": "LT-LEDS (장기 저탄소 발전 전략)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-c39d3fa6f9c6|—",
@@ -2255,12 +2115,12 @@
       "unitFamily": "emissions"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-302d34a37e8c",
-      "labelKo": "공정전환 전략",
+      "indicatorCount": 4,
+      "key": "measure-ba14d8db5f8f",
+      "labelKo": "LT-LEDS (장기 저탄소 발전 전략)",
       "recordCount": 0,
-      "unit": "백만 USD",
-      "unitFamily": "currency"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
@@ -2303,22 +2163,6 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-ebb93151549e",
-      "labelKo": "넷제로 목표 연도/범위",
-      "recordCount": 0,
-      "unit": "년",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-39ca0bf78d19",
-      "labelKo": "부문별 탈탄소 경로",
-      "recordCount": 0,
-      "unit": "정성 목표",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 7,
       "key": "measure-a43023108a4a",
       "labelKo": "부문별 탈탄소 전략 (7대 부문 주요 조치)",
@@ -2341,14 +2185,6 @@
       "recordCount": 0,
       "unit": "%(이상)",
       "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-758c1cfab934",
-      "labelKo": "에너지 믹스 전망(2050, RE/화석/원자력 %)",
-      "recordCount": 0,
-      "unit": "십억kWh",
-      "unitFamily": "energy"
     },
     {
       "indicatorCount": 2,
@@ -2392,27 +2228,11 @@
     },
     {
       "indicatorCount": 3,
-      "key": "measure-92ed3a9b9108",
-      "labelKo": "원본 링크(URL)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
       "key": "measure-b8e24fecab57",
       "labelKo": "이행체계 및 모니터링(MRV)",
       "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-97cc397e342c",
-      "labelKo": "장기 배출 경로(2050, BAU/감축/넷제로 시나리오별 MtCO₂e)",
-      "recordCount": 0,
-      "unit": "MtCO2e",
-      "unitFamily": "emissions"
     },
     {
       "indicatorCount": 1,
@@ -2426,14 +2246,6 @@
       "indicatorCount": 6,
       "key": "measure-288b8c1bf9f7",
       "labelKo": "장기 투자",
-      "recordCount": 0,
-      "unit": "십억 USD",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-33ab719af134",
-      "labelKo": "장기 투자 소요(USD)",
       "recordCount": 0,
       "unit": "십억 USD",
       "unitFamily": "currency"
@@ -2456,26 +2268,10 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-f60f3652fae3",
-      "labelKo": "탄소 흡수/제거 목표(MtCO₂e)",
-      "recordCount": 0,
-      "unit": "%(이상)",
-      "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-9e94e7ff850b",
       "labelKo": "핵심 감축 기술",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-682d8b46101e",
-      "labelKo": "핵심 감축 기술 목록",
-      "recordCount": 0,
-      "unit": "개",
       "unitFamily": "text"
     }
   ],

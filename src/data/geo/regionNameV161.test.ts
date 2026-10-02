@@ -10,6 +10,7 @@ import regionNames from "./regionNamesV161.json";
 import {
   composeRegionNameV161,
   formatRegionName,
+  formatRegionTextV162,
   regionMergeNoteV161,
   regionNameEntryV161,
   regionNameKeyV161,
@@ -88,7 +89,11 @@ describe("display form", () => {
   test("한글명 (현지명), the local name exactly as given", () => {
     expect(formatRegionName({ country: "VNM", raw: "Bà Rịa-Vũng Tàu", level: "adm1-63" })).toBe("바리아붕따우 (Bà Rịa-Vũng Tàu)");
     expect(formatRegionName({ country: "vnm", raw: "Thành phố Hồ Chí Minh" })).toBe("호찌민 (Thành phố Hồ Chí Minh)");
-    expect(formatRegionName({ country: "VNM", raw: "  QuảngBình ", level: "adm1-63" })).toBe("꽝빈 (QuảngBình)");
+    // V162: a known place written without its word space is spaced (the scan
+    // of public wording read "QuảngBình" as an identifier).
+    expect(formatRegionName({ country: "VNM", raw: "  QuảngBình ", level: "adm1-63" })).toBe("꽝빈 (Quảng Bình)");
+    expect(formatRegionName({ country: "VNM", raw: "KiênGiang", level: "adm1-63" })).toBe("끼엔장 (Kiên Giang)");
+    expect(formatRegionName({ country: "VNM", raw: "McDonaldTown" })).toBe("McDonaldTown");
     expect(formatRegionName({ country: "VNM", raw: "tỉnh Lâm Đồng" })).toBe("럼동 (tỉnh Lâm Đồng)");
   });
 
@@ -104,6 +109,21 @@ describe("display form", () => {
     expect(formatRegionName({ country: "VNM", raw: "하노이" })).toBe("하노이");
     expect(formatRegionName({ country: "KHM", raw: "Phnom Penh" })).toBe("Phnom Penh");
     expect(formatRegionName({ country: "VNM", raw: "" })).toBe("");
+  });
+
+  // V162 (user decision 2026-09-29): a rule-based name under review is never
+  // shown in Korean - the local spelling alone, in both display modes.
+  test("a pending name shows the local spelling only", () => {
+    expect(formatRegionName({ country: "VNM", raw: "Ba Đình" })).toBe("Ba Đình");
+    expect(formatRegionName({ country: "VNM", raw: "Ba Đình", mode: "label" })).toBe("Ba Đình");
+    expect(regionNameKo({ country: "VNM", raw: "Ba Đình" })).toBe("바딘");
+  });
+
+  test("a list is split and each place formatted on its own", () => {
+    expect(formatRegionTextV162({ country: "VNM", raw: "ThanhHóa · NghệAn", level: "adm1-63" })).toBe("타인호아 (Thanh Hóa) · 응에안 (Nghệ An)");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Ho Chi Minh City; Hanoi" })).toBe("호찌민 (Ho Chi Minh City); 하노이 (Hanoi)");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Hanoi 외 8개 지역" })).toBe("Hanoi 외 8개 지역");
+    expect(formatRegionTextV162({ country: "VNM", raw: "Singapore · Ba Đình" })).toBe("Singapore · Ba Đình");
   });
 
   test("a pre-2025 province carries the unit it merged into", () => {
@@ -138,8 +158,13 @@ describe("Bangladesh", () => {
     expect(divisions.every((entry) => entry.reviewStatus === "confirmed")).toBe(true);
     expect(districts).toHaveLength(64);
     expect(districts.every((entry) => Object.keys(DIVISIONS).includes(entry.parent || ""))).toBe(true);
-    expect(formatRegionName({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("콕스바자르 (Cox's Bazar)");
-    expect(formatRegionName({ country: "BGD", raw: "Jashore", level: "district" })).toBe("조쇼르 (Jashore)");
+    // Cox's Bazar is a pending district (Korean Wikipedia spelling, not yet
+    // reviewed): V162 shows the local spelling only; the proposal stays in
+    // the dictionary for review.
+    expect(formatRegionName({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("Cox's Bazar");
+    expect(regionNameKo({ country: "BGD", raw: "Cox's Bazar", level: "district" })).toBe("콕스바자르");
+    expect(formatRegionName({ country: "BGD", raw: "Jashore", level: "district" })).toBe("Jashore");
+    expect(regionNameKo({ country: "BGD", raw: "Jashore", level: "district" })).toBe("조쇼르");
   });
 });
 

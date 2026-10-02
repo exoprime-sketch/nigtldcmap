@@ -16,6 +16,7 @@ import {
   publicDataStatusKeyV128,
   publicDownloadStatusV128,
 } from "../data/publicPlatformV128";
+import { isPreparingStatusV160 } from "../data/finderSortV160";
 import type {
   VietnamElementMetaBundleV124,
   VietnamEntityV124,
@@ -1031,6 +1032,10 @@ function CountryDataElementPageV122({
     </aside>
   ) : null;
   const emptyStateCopy = emptyStateCopyV124(catalogItem);
+  // V162: a not-yet-delivered element (C-023, E-011, E-013) reads one
+  // '데이터 준비 중' line (the router's notice) - no status/download chips, no
+  // empty-state block, no '다운로드 자료 없음' section repeating it.
+  const preparingV162 = isPreparingStatusV160(catalogItem?.publicStatus);
   const downloadStatus = catalogItem
     ? publicDownloadStatusV128(catalogItem)
     : null;
@@ -1075,7 +1080,7 @@ function CountryDataElementPageV122({
                   />
                 </span>
               </div>
-              {catalogItem && (
+              {catalogItem && !preparingV162 && (
                 <div className="cdp-chip-row" aria-label="데이터 공개 상태">
                   <span
                     className="cdp-chip"
@@ -1102,7 +1107,7 @@ function CountryDataElementPageV122({
                   <PublicTermTextV134 text={cardSpec.sourceLabel} />
                 </p>
               ) : null}
-              <h1>
+              <h1 data-testid={preparingV162 ? "public-data-title" : undefined}>
                 <PublicTermTextV134 text={pageTitle} />
               </h1>
               <p data-testid={cardSpec ? "hero-short-definition-v159" : undefined}>
@@ -1199,7 +1204,7 @@ function CountryDataElementPageV122({
                 mapSlot={mapSlot}
               />
 
-              {observations.length === 0 && entities.length === 0 && (
+              {observations.length === 0 && entities.length === 0 && !preparingV162 && (
                 <div className="cdp-empty">
                   <h3>{emptyStateCopy.title}</h3>
                   <p>{emptyStateCopy.description}</p>
@@ -1240,7 +1245,7 @@ function CountryDataElementPageV122({
               short source/APA line and the download action. */}
           <DetailLayerV160 layer={3} title="다운로드·참고문헌">
             <SourceLineV159 spec={specBundleV159?.spec || null} />
-            <section className="cdp-section cdp-v125-download">
+            {!preparingV162 && <section className="cdp-section cdp-v125-download">
               <h3>다운로드</h3>
               {downloadStatus?.key === "downloadable" ? (
                 <button
@@ -1257,7 +1262,7 @@ function CountryDataElementPageV122({
                   {downloadStatus?.reason && <p>{downloadStatus.reason}</p>}
                 </div>
               )}
-            </section>
+            </section>}
           </DetailLayerV160>
         </>
       )}

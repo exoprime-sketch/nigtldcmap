@@ -6,11 +6,11 @@
   "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
   "recordsAreOrganisations": true,
   "counts": {
-    "records": 1,
-    "located": 1,
-    "withoutRegion": 0,
+    "records": 46,
+    "located": 39,
+    "withoutRegion": 7,
     "multiUnit": 0,
-    "units": 1,
+    "units": 17,
     "unplacedByReason": {
       "unresolved": 0,
       "subProvincePlace": 0,
@@ -19,12 +19,20 @@
       "crossCountry": 0,
       "nationwide": 0,
       "codeOnly": 0,
-      "noRegionStated": 0
+      "noRegionStated": 7
     }
   },
   "corruptedMatches": [],
   "unresolvedValues": [],
   "columnsUsed": [
+    {
+      "column": "유형",
+      "records": 32
+    },
+    {
+      "column": "name",
+      "records": 6
+    },
     {
       "column": "officeAddress",
       "records": 1
@@ -32,6 +40,530 @@
   ],
   "byRecordId": {
     "v124-e-002-entity-00001": [
+      {
+        "unitCode34": "VN34-SG",
+        "name": "Hồ Chí Minh",
+        "adm1Codes63": [
+          "VN-43",
+          "VN-57",
+          "VN-SG"
+        ],
+        "spelling": "ba ria vung tau",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00002": [
+      {
+        "unitCode34": "VN34-22",
+        "name": "Nghệ An",
+        "adm1Codes63": [
+          "VN-22"
+        ],
+        "spelling": "nghe an",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00003": [
+      {
+        "unitCode34": "VN34-59",
+        "name": "Cà Mau",
+        "adm1Codes63": [
+          "VN-55",
+          "VN-59"
+        ],
+        "spelling": "bac lieu",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00004": [
+      {
+        "unitCode34": "VN34-21",
+        "name": "Thanh Hóa",
+        "adm1Codes63": [
+          "VN-21"
+        ],
+        "spelling": "thanh hoa",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00005": [
+      {
+        "unitCode34": "VN34-22",
+        "name": "Nghệ An",
+        "adm1Codes63": [
+          "VN-22"
+        ],
+        "spelling": "nghe an",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00006": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "lao cai",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00007": [
+      {
+        "unitCode34": "VN34-34",
+        "name": "Khánh Hòa",
+        "adm1Codes63": [
+          "VN-34",
+          "VN-36"
+        ],
+        "spelling": "khanh hoa",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00008": [
+      {
+        "unitCode34": "VN34-34",
+        "name": "Khánh Hòa",
+        "adm1Codes63": [
+          "VN-34",
+          "VN-36"
+        ],
+        "spelling": "khanh hoa",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00009": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "quang nam",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00010": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "da nang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00011": [
+      {
+        "unitCode34": "VN34-29",
+        "name": "Quảng Ngãi",
+        "adm1Codes63": [
+          "VN-28",
+          "VN-29"
+        ],
+        "spelling": "kon tum",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00012": [
+      {
+        "unitCode34": "VN34-35",
+        "name": "Lâm Đồng",
+        "adm1Codes63": [
+          "VN-35",
+          "VN-40",
+          "VN-72"
+        ],
+        "spelling": "lam dong",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00013": [
+      {
+        "unitCode34": "VN34-21",
+        "name": "Thanh Hóa",
+        "adm1Codes63": [
+          "VN-21"
+        ],
+        "spelling": "thanh hoa",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00015": [
+      {
+        "unitCode34": "VN34-33",
+        "name": "Đắk Lắk",
+        "adm1Codes63": [
+          "VN-32",
+          "VN-33"
+        ],
+        "spelling": "dak lak",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00016": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00017": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00018": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00019": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00020": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "lao cai",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00021": [
+      {
+        "unitCode34": "VN34-CT",
+        "name": "Cần Thơ",
+        "adm1Codes63": [
+          "VN-52",
+          "VN-73",
+          "VN-CT"
+        ],
+        "spelling": "hau giang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00022": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00023": [
+      {
+        "unitCode34": "VN34-22",
+        "name": "Nghệ An",
+        "adm1Codes63": [
+          "VN-22"
+        ],
+        "spelling": "nghe an",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00024": [
+      {
+        "unitCode34": "VN34-05",
+        "name": "Sơn La",
+        "adm1Codes63": [
+          "VN-05"
+        ],
+        "spelling": "son la",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00027": [
+      {
+        "unitCode34": "VN34-07",
+        "name": "Tuyên Quang",
+        "adm1Codes63": [
+          "VN-03",
+          "VN-07"
+        ],
+        "spelling": "ha giang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00028": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "da nang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00029": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "da nang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00030": [
+      {
+        "unitCode34": "VN34-07",
+        "name": "Tuyên Quang",
+        "adm1Codes63": [
+          "VN-03",
+          "VN-07"
+        ],
+        "spelling": "ha giang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00031": [
+      {
+        "unitCode34": "VN34-07",
+        "name": "Tuyên Quang",
+        "adm1Codes63": [
+          "VN-03",
+          "VN-07"
+        ],
+        "spelling": "ha giang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00032": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "da nang",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00033": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "quang nam",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00035": [
+      {
+        "unitCode34": "VN34-09",
+        "name": "Lạng Sơn",
+        "adm1Codes63": [
+          "VN-09"
+        ],
+        "spelling": "lang son",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00037": [
+      {
+        "unitCode34": "VN34-30",
+        "name": "Gia Lai",
+        "adm1Codes63": [
+          "VN-30",
+          "VN-31"
+        ],
+        "spelling": "gia lai",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00038": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "yen bai",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00039": [
+      {
+        "unitCode34": "VN34-02",
+        "name": "Lào Cai",
+        "adm1Codes63": [
+          "VN-02",
+          "VN-06"
+        ],
+        "spelling": "lao cai",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00040": [
+      {
+        "unitCode34": "VN34-25",
+        "name": "Quảng Trị",
+        "adm1Codes63": [
+          "VN-24",
+          "VN-25"
+        ],
+        "spelling": "quang tri",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-e-002-entity-00043": [
+      {
+        "unitCode34": "VN34-30",
+        "name": "Gia Lai",
+        "adm1Codes63": [
+          "VN-30",
+          "VN-31"
+        ],
+        "spelling": "gia lai",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00044": [
+      {
+        "unitCode34": "VN34-35",
+        "name": "Lâm Đồng",
+        "adm1Codes63": [
+          "VN-35",
+          "VN-40",
+          "VN-72"
+        ],
+        "spelling": "lam dong",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00045": [
+      {
+        "unitCode34": "VN34-DN",
+        "name": "Đà Nẵng",
+        "adm1Codes63": [
+          "VN-27",
+          "VN-DN"
+        ],
+        "spelling": "quang nam",
+        "matchKind": "exact",
+        "column": "유형",
+        "columnKind": "other"
+      }
+    ],
+    "v124-e-002-entity-00046": [
       {
         "unitCode34": "VN34-HN",
         "name": "Hà Nội",

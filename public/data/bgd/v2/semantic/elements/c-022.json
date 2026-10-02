@@ -16,8 +16,12 @@
   "indicators": [
     {
       "axisGroupKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
+      "dimensionLabels": {
+        "technology": "미해당"
+      },
+      "dimensions": {
+        "technology": "미해당"
+      },
       "displayLabel": "탄소시장 준비도 · readiness_element",
       "indicatorId": "C-022_readiness_element",
       "inferenceMethod": "deterministic-source-structure",
@@ -27,11 +31,11 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-022_readiness_element",
-      "sourceCaveat": "[raw] ([raw]\\C-022\\) C-022_탄소시장 준비도_BGD_Article6_ReadinessRoadmap_DoE.pdf · C-022_탄소시장 준비도_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-022_탄소시장 준비도_BGD_SCF_ProgramStandard_2024-08.pdf · C-022_탄소시장 준비도_BGD_DoE_Article6_InstitutionalArrangements_presentation.pdf [정의·범위] 1행 = 탄소시장 제도 요소 1건(4행: DNA 지정 · 준비도 로드맵 · 표준화 크레딧 프레임워크 · 제6.2조 최초보고서). [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 2개(C-022_carbon_market_readiness_bdgov·_unfccc)를 레코드 유형 3개로 나누고, 「속성1(레코드명)·속성3(값)」 범용 열에 담겨 있던 13개 판정값을 항목·판정·근거 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 준비도는 국가 단위 제도이므로 전 행 「전국 / BGD」로 기입하고 성·구 단위 분할은 해당하지 않음. [기술분류] framework 「데이터셋 전체」 — 제도 준비도 레코드로 특정 기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
+      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=미해당|C-022_readiness_element",
+      "sourceCaveat": "탄소시장 제도 요소 1건. 제도 요소명, 상태, 내용, 근거 문서, 기준일을 기록.",
       "sourceLabel": "탄소시장 준비도",
       "sourceLabelEn": "Carbon Market Readiness",
-      "sourceNote": "제6.2조 최초보고서 제출 여부 — 지정 출처인 UNFCCC CARP 보고서 목록을 raw로 확보하지 못해 판정 유보(M06).",
+      "sourceNote": "제6항 「NDC·LT-LEDS 이행 기여」는 원문이 Yes/No로 병기 — LT-LEDS 미제출 때문이며 판정 보류가 아니라 원문 표기를 그대로 옮긴 것.",
       "sourceProvenance": {
         "sourceRow": 8,
         "sourceSheet": "2_meta_info"
@@ -39,8 +43,12 @@
     },
     {
       "axisGroupKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
+      "dimensionLabels": {
+        "technology": "미해당"
+      },
+      "dimensions": {
+        "technology": "미해당"
+      },
       "displayLabel": "탄소시장 준비도 · readiness_item",
       "indicatorId": "C-022_readiness_item",
       "inferenceMethod": "deterministic-source-structure",
@@ -50,8 +58,8 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-022_readiness_item",
-      "sourceCaveat": "[raw] ([raw]\\C-022\\) C-022_탄소시장 준비도_BGD_Article6_ReadinessRoadmap_DoE.pdf · C-022_탄소시장 준비도_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-022_탄소시장 준비도_BGD_SCF_ProgramStandard_2024-08.pdf · C-022_탄소시장 준비도_BGD_DoE_Article6_InstitutionalArrangements_presentation.pdf [정의·범위] 1행 = Article 6 준비도 자체평가 항목 1건(9행). 판정은 원문 표기(Yes·No·Yes/No) 그대로. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 구분자 2개(C-022_carbon_market_readiness_bdgov·_unfccc)를 레코드 유형 3개로 나누고, 「속성1(레코드명)·속성3(값)」 범용 열에 담겨 있던 13개 판정값을 항목·판정·근거 열로 전개함. [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 준비도는 국가 단위 제도이므로 전 행 「전국 / BGD」로 기입하고 성·구 단위 분할은 해당하지 않음. [기술분류] framework 「데이터셋 전체」 — 제도 준비도 레코드로 특정 기술을 지목하지 않아 meta tech_ids를 「범용」으로 둠. [현지조사] 현지조사 대상 요소이나 전달받은 조사표는 베트남 대상 결과여서 방글라데시 조사 행은 수록하지 않음.",
+      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=미해당|C-022_readiness_item",
+      "sourceCaveat": "탄소시장 준비도 체크리스트 항목 1건. 구분, 항목 번호, 항목명(국문·원문), 판정(충족·부분 충족·미충족), 점수·만점, 기준 시점, 판정 근거와 근거 법령·자료를 기록.",
       "sourceLabel": "탄소시장 준비도",
       "sourceLabelEn": "Carbon Market Readiness",
       "sourceNote": "제6항 「NDC·LT-LEDS 이행 기여」는 원문이 Yes/No로 병기 — LT-LEDS 미제출 때문이며 판정 보류가 아니라 원문 표기를 그대로 옮긴 것.",
@@ -62,8 +70,12 @@
     },
     {
       "axisGroupKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
+      "dimensionLabels": {
+        "technology": "미해당"
+      },
+      "dimensions": {
+        "technology": "미해당"
+      },
       "displayLabel": "탄소시장 준비도 · readiness_score",
       "indicatorId": "C-022_readiness_score",
       "inferenceMethod": "deterministic-source-structure",
@@ -73,11 +85,11 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-022_readiness_score",
-      "sourceCaveat": "[raw] ([raw]\\C-022\\) C-022_탄소시장 준비도_BGD_Article6_ReadinessRoadmap_DoE.pdf · C-022_탄소시장 준비도_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-022_탄소시장 준비도_BGD_SCF_ProgramStandard_2024-08.pdf · C-022_탄소시장 준비도_BGD_DoE_Article6_InstitutionalArrangements_presentation.pdf [정의·범위] 1행 = 자체평가 9항목의 종합 1건. 원문에 점수 체계가 없어 「(충족 1점 + 부분 충족 0.5점) ÷ 항목 수」로 산출한 파생값이며 산출식을 열에 명기함.",
+      "seriesKey": "measure-00307c3d3a2c|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=미해당|C-022_readiness_score",
+      "sourceCaveat": "준비도 종합 1건. 항목 수, 충족·부분 충족·미충족 개수, 종합 점수와 산출식을 기록. 평가 항목 수가 다른 국가 간에는 점수를 직접 비교하지 않음.",
       "sourceLabel": "탄소시장 준비도",
       "sourceLabelEn": "Carbon Market Readiness",
-      "sourceNote": "[raw] ([raw]\\C-022\\) C-022_탄소시장 준비도_BGD_Article6_ReadinessRoadmap_DoE.pdf · C-022_탄소시장 준비도_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-022_탄소시장 준비도_BGD_SCF_ProgramStandard_2024-08.pdf · C-022_탄소시장 준비도_BGD_DoE_Article6_InstitutionalArrangements_presentation.pdf [정의·범위] 1행 = 자체평가 9항목의 종합 1건. 원문에 점수 체계가 없어 「(충족 1점 + 부분 충족 0.5점) ÷ 항목 수」로 산출한 파생값이며 산출식을 열에 명기함.",
+      "sourceNote": "제6항 「NDC·LT-LEDS 이행 기여」는 원문이 Yes/No로 병기 — LT-LEDS 미제출 때문이며 판정 보류가 아니라 원문 표기를 그대로 옮긴 것.",
       "sourceProvenance": {
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"

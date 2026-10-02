@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-006",
-  "entityCount": 32608,
+  "entityCount": 80071,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 21,
+  "indicatorCount": 25,
   "indicators": [
     {
       "axisGroupKey": "measure-4fea132ede1e|지표별 상이(속성 열 참조)",
@@ -30,6 +30,86 @@
       "seriesKey": "measure-4fea132ede1e|지표별 상이(속성 열 참조)||B-006_climate_adm1_year",
       "sourceCaveat": null,
       "sourceLabel": "폭염(성×시나리오×연도 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-280c00d34f77|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-006_climate_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-280c00d34f77",
+        "labelKo": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-280c00d34f77|지표별 상이(속성 열 참조)||B-006_climate_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-dd470ab6c09f|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "폭염(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "indicatorId": "B-006_climate_monthly_clim_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dd470ab6c09f",
+        "labelKo": "폭염(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-dd470ab6c09f|지표별 상이(속성 열 참조)||B-006_climate_monthly_clim_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "폭염(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-3544eb48814f|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "indicatorId": "B-006_climate_monthly_clim_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3544eb48814f",
+        "labelKo": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3544eb48814f|지표별 상이(속성 열 참조)||B-006_climate_monthly_clim_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-29727c5dc3cc|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "폭염(전국) - 월별 평년값(전국)",
+      "indicatorId": "B-006_climate_monthly_clim_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-29727c5dc3cc",
+        "labelKo": "폭염(전국) - 월별 평년값(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-29727c5dc3cc|지표별 상이(속성 열 참조)||B-006_climate_monthly_clim_national",
+      "sourceCaveat": null,
+      "sourceLabel": "폭염(전국) - 월별 평년값(전국)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -676,8 +756,40 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-280c00d34f77",
+      "labelKo": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3544eb48814f",
+      "labelKo": "폭염(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-dd470ab6c09f",
+      "labelKo": "폭염(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-f74458338235",
       "labelKo": "폭염(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-29727c5dc3cc",
+      "labelKo": "폭염(전국) - 월별 평년값(전국)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

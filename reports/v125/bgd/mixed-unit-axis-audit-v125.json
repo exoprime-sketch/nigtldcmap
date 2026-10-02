@@ -1,7 +1,34 @@
 {
   "generatedAt": "2026-08-27T00:00:00Z",
-  "groups": [],
+  "groups": [
+    {
+      "axisGroups": [
+        "average_monthly_wage|BDT",
+        "average_monthly_wage|USD"
+      ],
+      "elementId": "E-012",
+      "measureKey": "average_monthly_wage",
+      "resolved": true,
+      "units": [
+        "BDT",
+        "USD"
+      ]
+    },
+    {
+      "axisGroups": [
+        "occupation_wage|BDT",
+        "occupation_wage|USD"
+      ],
+      "elementId": "E-012",
+      "measureKey": "occupation_wage",
+      "resolved": true,
+      "units": [
+        "BDT",
+        "USD"
+      ]
+    }
+  ],
   "mixedUnitAxisCount": 0,
   "schemaVersion": "v125",
-  "separatedMeasureGroupCount": 0
+  "separatedMeasureGroupCount": 2
 }

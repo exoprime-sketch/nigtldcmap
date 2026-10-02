@@ -2,7 +2,7 @@ import { expect, test } from "@jest/globals";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { compareFinderItemsV160, isPreparingStatusV160 } from "./finderSortV160";
-import { allTypologyV159 } from "./spec/datasetSpecV159";
+import { getTypologyForCountryV158 } from "./spec/countrySpecV158";
 import { countryPublicDirV158 } from "./countryContext";
 import type { FinderSortItemV160 } from "./finderSortV160";
 
@@ -45,6 +45,17 @@ test("the catalogue's not-delivered set is the typology's data-pending set", () 
     elements: { elementId: string; publicStatus?: string }[];
   };
   const preparing = catalog.elements.filter((element) => isPreparingStatusV160(element.publicStatus)).map((element) => element.elementId).sort();
-  const pending = allTypologyV159().filter((row) => row.statusNotice === "data-pending").map((row) => row.elementId).sort();
+  // V162: the '데이터 준비 중' notice a card actually shows is decided from the
+  // catalog alone (getTypologyForCountryV158 / statusNoticeFromCatalogV162),
+  // per element, not from datasetTypologyV159.json's own statusNotice field -
+  // that static file only supplies the display type now. A delivery that
+  // arrives (E-011, 2026-09-30) is picked up through the catalog without
+  // editing the typology file, so this compares against the notice the
+  // typology resolves to for each catalog item, not the file's raw content.
+  const pending = catalog.elements
+    .map((element) => getTypologyForCountryV158(element.elementId, "VNM", element))
+    .filter((row) => row?.statusNotice === "data-pending")
+    .map((row) => row!.elementId)
+    .sort();
   expect(preparing).toEqual(pending);
 });

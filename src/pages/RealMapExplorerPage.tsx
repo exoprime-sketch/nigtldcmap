@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
@@ -23,6 +24,7 @@ import {
   policyKindForVariableV151,
   type BoundaryPolicyKindV151,
 } from "../data/map/boundaryPolicyV151";
+import { source34ValuesForSelectorV162 } from "../data/geo/regionSystemV162";
 import {
   ADM1_34_GEOMETRY_PATH_V151,
   ADM1_34_UNITS_V151,
@@ -720,6 +722,9 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
   };
   const identify = (feature: maplibregl.MapGeoJSONFeature) => {
     const properties = (feature.properties || {}) as Record<string, unknown>;
+    // V162: a cluster is selected as "cluster:<id>" (onClusterClick); report
+    // the key the panel will carry, not the bare MapLibre cluster id.
+    const clusterKey = properties.cluster ? `cluster:${String(properties.cluster_id ?? "")}` : null;
     return {
       layerId: feature.layer.id,
       geometryType: feature.geometry?.type ?? null,
@@ -727,7 +732,7 @@ function attachMapObserverV137(map: MapLibreMap, countryIso3: string): void {
         properties.selectionKey ??
           properties.recordId ??
           properties.adm1Code ??
-          properties.cluster_id ??
+          clusterKey ??
           feature.id ??
           ""
       ),
@@ -3650,7 +3655,14 @@ export default function RealMapExplorerPage({
   // V151-2: the rule the focused layer follows under the current outline.
   const focusedBoundaryPolicyKindV151: BoundaryPolicyKindV151 | null =
     focusedLayer && focusedSelector
-      ? policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
+      ? boundarySystemV151State === "post-2025-34" &&
+        source34ValuesForSelectorV162(
+          spatialByElement[focusedLayer.elementId]?.data,
+          focusedSelector.variable,
+          focusedSelector.period
+        ).length
+        ? "native-34"
+        : policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
       : null;
   const focusedVariablePresentationV129 =
     focusedLayer && focusedSelector
@@ -4352,19 +4364,40 @@ export default function RealMapExplorerPage({
     const trendKind = policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector.variable);
     let sourceRows: VietnamSpatialLayerAssetV124["values"] = data.values;
     if (selectedSpatial.unitCode) {
-      if (!isAggregatingKindV151(trendKind)) return null;
+      // V162: a period the source states for this 34-unit itself is taken as
+      // printed; the aggregation fills only the periods it does not state.
+      const stated34 = (data.values34 || []).filter(
+        (row) => row.unitCode === selectedSpatial.unitCode && variableKeys.includes(row.variable)
+      );
+      if (!isAggregatingKindV151(trendKind) && !stated34.length) return null;
       const areas = areaKm2ByAdm1CodeV151(adm1Geometry34V151) || undefined;
-      if (trendKind === "area-weighted-mean" && !areas) return null;
+      if (trendKind === "area-weighted-mean" && !areas && !stated34.length) return null;
+      const statedKeys = new Set(stated34.map((row) => `${row.variable}|${row.period}`));
+      sourceRows = stated34.map((row) => ({
+        adm1Code: selectedSpatial.adm1Code || row.unitCode,
+        adm1Name: row.unitName,
+        variable: row.variable,
+        variableLabel: row.variableLabel,
+        period: row.period,
+        value: row.value,
+        unit: row.unit,
+        sourceIndicatorId: row.sourceIndicatorId,
+        sourceRecordId: row.sourceRecordId,
+        sourceSpatialUnit: "admin1",
+        imputed: false,
+      }));
+      const canAggregateTrend =
+        isAggregatingKindV151(trendKind) && (trendKind !== "area-weighted-mean" || Boolean(areas));
       const memberSet = new Set(selectedSpatial.memberAdm1Codes || []);
       const buckets = new Map<string, VietnamSpatialLayerAssetV124["values"]>();
-      for (const row of data.values) {
+      for (const row of canAggregateTrend ? data.values : []) {
         if (!memberSet.has(row.adm1Code) || !variableKeys.includes(row.variable)) continue;
         const key = `${row.variable}|${row.period}`;
+        if (statedKeys.has(key)) continue;
         const list = buckets.get(key) || [];
         list.push(row);
         buckets.set(key, list);
       }
-      sourceRows = [];
       for (const rows of buckets.values()) {
         const aggregated = aggregateTo34V151(rows, trendKind, { areaKm2ByAdm1Code: areas }).find(
           (row) => row.unitCode === selectedSpatial.unitCode
@@ -5770,11 +5803,18 @@ export default function RealMapExplorerPage({
                                 <PublicTermExpandedTextV134
                                   text={
                                     available
-                                      ? `${publicMapDataItemSummaryV136(elementId)} · ${
-                                          layer
-                                            ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
-                                            : target.period
-                                        }`
+                                      ? (() => {
+                                          // V162 (d): a list collected at a point carries no year in
+                                          // the list (its 기준 시점 is in the info panel); a corrected
+                                          // span or a plan period comes from the element's statement.
+                                          const tag = listPeriodTagV162(elementId, countryIso3);
+                                          const period = tag !== null
+                                            ? tag
+                                            : layer
+                                              ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
+                                              : target.period;
+                                          return period ? `${publicMapDataItemSummaryV136(elementId)} · ${period}` : publicMapDataItemSummaryV136(elementId);
+                                        })()
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
                                         : MAP_PENDING_SUMMARY_V140
@@ -5860,7 +5900,30 @@ export default function RealMapExplorerPage({
                                   <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
                                 </div>
                               ) : null}
-                              {target.unit || target.period ? (
+                              {periodStatementV162(elementId, countryIso3) ? (
+                                <>
+                                  {/* V162 (d): the element's own period statement -
+                                      '기준 시점 2026-07 수집', '자료기간 2010–2023년'. */}
+                                  {target.unit ? (
+                                    <div>
+                                      <dt>단위</dt>
+                                      <dd><PublicTermTextV134 text={target.unit} /></dd>
+                                    </div>
+                                  ) : null}
+                                  <div data-testid="map-catalog-period-v162">
+                                    <dt>{periodStatementV162(elementId, countryIso3)!.label}</dt>
+                                    <dd>{periodStatementV162(elementId, countryIso3)!.text}</dd>
+                                  </div>
+                                  {/* A basis the values are counted on ("승인일 기준", D-018)
+                                      is not a period: it stays when it names no year. */}
+                                  {target.period && !/\d{4}/u.test(target.period) ? (
+                                    <div>
+                                      <dt>집계 기준</dt>
+                                      <dd><PublicTermTextV134 text={target.period} /></dd>
+                                    </div>
+                                  ) : null}
+                                </>
+                              ) : target.unit || target.period ? (
                                 <div>
                                   <dt>단위·기간</dt>
                                   <dd><PublicTermTextV134 text={[target.unit, target.period].filter(Boolean).join(" · ")} /></dd>

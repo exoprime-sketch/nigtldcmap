@@ -39,7 +39,7 @@ test("A-023 OSM plant card prints 미기재 for what OSM does not state, never h
   expect(card.capacity.value).toBe("520 MW");
   expect(card.year.value).toBe("미기재");
   expect(card.year.missing).toBe(true);
-  expect(card.location.value).toContain("선라(Sơn La)");
+  expect(card.location.value).toContain("선라 (Sơn La)");
   expect(card.source.value).toContain("OSM 추출 (2026)");
   expect(card.source.href).toBe("https://www.openstreetmap.org/node/9316748175");
 });
@@ -49,13 +49,15 @@ test("E-006 cards separate a Vietnam office from a head office abroad", () => {
   const ifc = entities.find((row: never) => String((row as { name?: string }).name).startsWith("International Finance"))!;
   const patamar = entities.find((row: never) => (row as { name?: string }).name === "Patamar Capital")!;
   expect(byKey(facilityCardRowsV153("E-006", ifc)).location.value).toContain("Washington, D.C.");
-  expect(byKey(facilityCardRowsV153("E-006", patamar)).location.value).toContain("호찌민(Hồ Chí Minh)");
+  expect(byKey(facilityCardRowsV153("E-006", patamar)).location.value).toContain("호찌민 (Hồ Chí Minh)");
   expect(byKey(facilityCardRowsV153("E-006", patamar)).hq.value).toBe("USA");
 });
 
 test("C-025 card prints 미기재 for an unstated reduction, never 0", () => {
   const entities = inflate(source("c-025")) as Record<string, unknown>[];
-  const key = "속성14_연간예상감축_tCO2e";
+  // 2026-09-30 delivery: the wide "[블록] 속성" template's key for this field
+  // (wideRecordsV162.ts), replacing the old "속성14_연간예상감축_tCO2e".
+  const key = "사업_연간_예상_감축량_tCO_e_년";
   const unstated = entities.find((row) => {
     const value = ((row.normalizedAttributes || {}) as Record<string, unknown>)[key];
     return value === undefined || value === null || String(value).trim() === "";

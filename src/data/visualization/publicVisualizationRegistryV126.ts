@@ -91,8 +91,13 @@ const PUBLIC_DEFAULT_MEASURE_KEYS_V127: Readonly<Record<string, string>> =
     // 집중형 태양광 계획용량 - the home card's technology; the screen opened
     // on 소수력, the first measure alphabetically (V140)
     "C-016": "measure-1f93f6946b11",
-    // 산림탄소 순플럭스(연평균) - the headline flux, not 지상부 탄소저장량 (V140)
-    "B-034": "measure-ef59b2b71a01",
+    // 산림탄소 순플럭스 - the headline flux, not 지상부 탄소저장량 (V140). V162:
+    // the province flux is the 2001–2024 total ("(누계)"); the "(연평균)"
+    // measure is now the national series.
+    "B-034": "measure-346324a32a6a",
+    // NRI 점수 - V162 delivered NRI scores and ranks under one label; the
+    // score is the index, the rank its position (as the home card).
+    "E-011": "measure-12a7feb401ad",
     // 총인구
     "A-007": "measure-be793786b249",
     // 총 GHG 배출량 · LULUCF 제외

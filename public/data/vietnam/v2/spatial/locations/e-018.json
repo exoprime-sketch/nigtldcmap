@@ -4,15 +4,30 @@
   "method": "point-in-polygon against vnm-adm1-63.geojson; unitCode via vnm-adm1-34.geojson membership",
   "notice": "소재 성·시는 원자료 좌표를 개편 전 63개 경계에 대응한 결과이며 좌표를 이동·보정하지 않습니다. 경계 밖 좌표는 null입니다.",
   "counts": {
-    "located": 15,
+    "located": 34,
     "outside": 0,
-    "withoutCoordinate": 9
+    "withoutCoordinate": 2
   },
   "byRecordId": {
+    "v124-e-018-entity-00002": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
     "v124-e-018-entity-00003": {
-      "adm1Code": "VN-HP",
-      "adm1Name": "Hải Phòng",
-      "unitCode": "VN34-HP"
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00004": {
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00005": {
+      "adm1Code": "VN-70",
+      "adm1Name": "Vĩnh Phúc",
+      "unitCode": "VN34-68"
     },
     "v124-e-018-entity-00006": {
       "adm1Code": "VN-56",
@@ -20,69 +35,149 @@
       "unitCode": "VN34-56"
     },
     "v124-e-018-entity-00007": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00008": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00009": {
       "adm1Code": "VN-HN",
       "adm1Name": "Hà Nội",
       "unitCode": "VN34-HN"
     },
-    "v124-e-018-entity-00008": {
-      "adm1Code": "VN-39",
-      "adm1Name": "Đồng Nai",
-      "unitCode": "VN34-39"
-    },
-    "v124-e-018-entity-00009": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
-    },
     "v124-e-018-entity-00010": {
-      "adm1Code": "VN-56",
-      "adm1Name": "Bắc Ninh",
-      "unitCode": "VN34-56"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00011": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
     },
     "v124-e-018-entity-00012": {
-      "adm1Code": "VN-21",
-      "adm1Name": "Thanh Hóa",
-      "unitCode": "VN34-21"
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
     },
     "v124-e-018-entity-00013": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00014": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00015": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00016": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00017": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00018": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00019": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
+    "v124-e-018-entity-00020": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00021": {
       "adm1Code": "VN-29",
       "adm1Name": "Quảng Ngãi",
       "unitCode": "VN34-29"
-    },
-    "v124-e-018-entity-00014": {
-      "adm1Code": "VN-41",
-      "adm1Name": "Long An",
-      "unitCode": "VN34-37"
-    },
-    "v124-e-018-entity-00015": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
-    },
-    "v124-e-018-entity-00016": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
-    },
-    "v124-e-018-entity-00017": {
-      "adm1Code": "VN-25",
-      "adm1Name": "Quảng Trị",
-      "unitCode": "VN34-25"
-    },
-    "v124-e-018-entity-00020": {
-      "adm1Code": "VN-05",
-      "adm1Name": "Sơn La",
-      "unitCode": "VN34-05"
     },
     "v124-e-018-entity-00022": {
       "adm1Code": "VN-HN",
       "adm1Name": "Hà Nội",
       "unitCode": "VN34-HN"
     },
+    "v124-e-018-entity-00023": {
+      "adm1Code": "VN-HN",
+      "adm1Name": "Hà Nội",
+      "unitCode": "VN34-HN"
+    },
     "v124-e-018-entity-00024": {
-      "adm1Code": "VN-22",
-      "adm1Name": "Nghệ An",
-      "unitCode": "VN34-22"
+      "adm1Code": "VN-43",
+      "adm1Name": "Bà Rịa–Vũng Tàu",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00025": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00026": {
+      "adm1Code": "VN-66",
+      "adm1Name": "Hưng Yên",
+      "unitCode": "VN34-66"
+    },
+    "v124-e-018-entity-00027": {
+      "adm1Code": "VN-34",
+      "adm1Name": "Khánh Hòa",
+      "unitCode": "VN34-34"
+    },
+    "v124-e-018-entity-00028": {
+      "adm1Code": "VN-SG",
+      "adm1Name": "Hồ Chí Minh",
+      "unitCode": "VN34-SG"
+    },
+    "v124-e-018-entity-00030": {
+      "adm1Code": "VN-41",
+      "adm1Name": "Long An",
+      "unitCode": "VN34-37"
+    },
+    "v124-e-018-entity-00031": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": "VN34-25"
+    },
+    "v124-e-018-entity-00032": {
+      "adm1Code": "VN-25",
+      "adm1Name": "Quảng Trị",
+      "unitCode": "VN34-25"
+    },
+    "v124-e-018-entity-00033": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": "VN34-39"
+    },
+    "v124-e-018-entity-00034": {
+      "adm1Code": "VN-39",
+      "adm1Name": "Đồng Nai",
+      "unitCode": "VN34-39"
+    },
+    "v124-e-018-entity-00035": {
+      "adm1Code": "VN-56",
+      "adm1Name": "Bắc Ninh",
+      "unitCode": "VN34-56"
+    },
+    "v124-e-018-entity-00036": {
+      "adm1Code": "VN-05",
+      "adm1Name": "Sơn La",
+      "unitCode": "VN34-05"
     }
   }
 }

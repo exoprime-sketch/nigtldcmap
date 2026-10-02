@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-022",
-  "entityCount": 98,
+  "entityCount": 61,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 76,
+  "indicatorCount": 73,
   "indicators": [
     {
       "axisGroupKey": "measure-71b7fc57d46f|%",
@@ -183,166 +183,6 @@
         "sourceRow": 16,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-ac3c13cd2cc6|점",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · 탄소시장 준비도 [점]",
-      "indicatorId": "C-022_carbon_market_readiness_carbonpricingdashboard",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ac3c13cd2cc6",
-        "labelKo": "탄소시장 준비도",
-        "unit": "점",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ac3c13cd2cc6|점||C-022_carbon_market_readiness_carbonpricingdashboard",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-b694b743f5b5|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · carbon_market_readiness_gspp_berkeley",
-      "indicatorId": "C-022_carbon_market_readiness_gspp_berkeley",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b694b743f5b5",
-        "labelKo": "탄소시장 준비도",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b694b743f5b5|URL||C-022_carbon_market_readiness_gspp_berkeley",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-faf067582e8c|개",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · 탄소시장 준비도 [개]",
-      "indicatorId": "C-022_carbon_market_readiness_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-faf067582e8c",
-        "labelKo": "탄소시장 준비도",
-        "unit": "개",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-faf067582e8c|개||C-022_carbon_market_readiness_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-b694b743f5b5|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · carbon_market_readiness_pmiclimate",
-      "indicatorId": "C-022_carbon_market_readiness_pmiclimate",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b694b743f5b5",
-        "labelKo": "탄소시장 준비도",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b694b743f5b5|URL||C-022_carbon_market_readiness_pmiclimate",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-b694b743f5b5|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · carbon_market_readiness_vanban_chinhphu",
-      "indicatorId": "C-022_carbon_market_readiness_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b694b743f5b5",
-        "labelKo": "탄소시장 준비도",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b694b743f5b5|URL||C-022_carbon_market_readiness_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-53313fd040dc|MtCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · 탄소시장 준비도 [MtCO₂e]",
-      "indicatorId": "C-022_carbon_market_readiness_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-53313fd040dc",
-        "labelKo": "탄소시장 준비도",
-        "unit": "MtCO₂e",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-53313fd040dc|MtCO₂e||C-022_carbon_market_readiness_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-3ad68935d7f5|백만 đồng",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · 탄소시장 준비도 [백만 đồng]",
-      "indicatorId": "C-022_carbon_market_readiness_vanban_chinhphu_3",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-3ad68935d7f5",
-        "labelKo": "탄소시장 준비도",
-        "unit": "백만 đồng",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-3ad68935d7f5|백만 đồng||C-022_carbon_market_readiness_vanban_chinhphu_3",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f6468d37cb72|여부",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "탄소시장 준비도 · 탄소시장 준비도 [여부]",
-      "indicatorId": "C-022_carbon_market_readiness_worldbank",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f6468d37cb72",
-        "labelKo": "탄소시장 준비도",
-        "unit": "여부",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f6468d37cb72|여부||C-022_carbon_market_readiness_worldbank",
-      "sourceCaveat": null,
-      "sourceLabel": "탄소시장 준비도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-3188e3d3cc08|—",
@@ -759,6 +599,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소시장 준비도 · field_survey",
+      "indicatorId": "C-022_field_survey",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f3ad50907c5",
+        "labelKo": "탄소시장 준비도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-022_field_survey",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소시장 준비도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-530a88eef48d|—",
       "dimensionLabels": {
         "category": "이월(Banking)",
@@ -1107,6 +967,26 @@
         "sourceRow": 34,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소시장 준비도 · inventory_facility",
+      "indicatorId": "C-022_inventory_facility",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f3ad50907c5",
+        "labelKo": "탄소시장 준비도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-022_inventory_facility",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소시장 준비도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f9cec2a63590|—",
@@ -1653,6 +1533,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소시장 준비도 · mrv_penalty",
+      "indicatorId": "C-022_mrv_penalty",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f3ad50907c5",
+        "labelKo": "탄소시장 준비도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-022_mrv_penalty",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소시장 준비도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-3c427f462f2b|—",
       "dimensionLabels": {
         "category": "인정 메커니즘",
@@ -2197,6 +2097,46 @@
       }
     },
     {
+      "axisGroupKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소시장 준비도 · readiness_item",
+      "indicatorId": "C-022_readiness_item",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f3ad50907c5",
+        "labelKo": "탄소시장 준비도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-022_readiness_item",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소시장 준비도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소시장 준비도 · readiness_score",
+      "indicatorId": "C-022_readiness_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f3ad50907c5",
+        "labelKo": "탄소시장 준비도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-5f3ad50907c5|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-022_readiness_score",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소시장 준비도",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-ac3c13cd2cc6|점",
       "dimensionLabels": {
         "category": "종합 점수",
@@ -2633,22 +2573,6 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-53313fd040dc",
-      "labelKo": "탄소시장 준비도",
-      "recordCount": 0,
-      "unit": "MtCO₂e",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-b694b743f5b5",
-      "labelKo": "탄소시장 준비도",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 14,
       "key": "measure-38c6bb443daa",
       "labelKo": "탄소시장 준비도",
@@ -2657,36 +2581,20 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-faf067582e8c",
+      "indicatorCount": 5,
+      "key": "measure-5f3ad50907c5",
       "labelKo": "탄소시장 준비도",
       "recordCount": 0,
-      "unit": "개",
-      "unitFamily": "text"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-3ad68935d7f5",
-      "labelKo": "탄소시장 준비도",
-      "recordCount": 0,
-      "unit": "백만 đồng",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-f6468d37cb72",
-      "labelKo": "탄소시장 준비도",
-      "recordCount": 0,
-      "unit": "여부",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 2,
       "key": "measure-ac3c13cd2cc6",
       "labelKo": "탄소시장 준비도",
       "recordCount": 0,
       "unit": "점",
-      "unitFamily": "text"
+      "unitFamily": "score"
     },
     {
       "indicatorCount": 1,

@@ -1,11 +1,57 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    }
+  ],
   "elementId": "D-017",
-  "entityCount": 0,
+  "entityCount": 300,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
+  "indicatorCount": 1,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-3bd280373b9a|건",
+      "dimensionLabels": {
+        "category": "발주 · 수행 실적 레지스트리"
+      },
+      "dimensions": {
+        "category": "발주 · 수행 실적 레지스트리"
+      },
+      "displayLabel": "한국 ODA 기관 PCP/입찰 현황 · 발주·수행 실적 레지스트리",
+      "indicatorId": "D-017_korea_oda_award_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3bd280373b9a",
+        "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3bd280373b9a|건|category=발주 · 수행 실적 레지스트리|D-017_korea_oda_award_registry",
+      "sourceCaveat": "[지표 정비 2026-09-28] 본 요소는 10개국 모두 레코드형(1.2) 단일 구성으로 「발주·수행 실적 레지스트리」를 수록하며 측정값 시계열(1.1)은 사용하지 않는다. 방글라데시에만 남아 있던 입찰공고 집계 지표 2종(tender_count · tender_budget_total)은 나라장터·KOICA 전자조달이 자동 조회를 차단해 공고 원본을 수집하지 못한 상태의 자리표시였고, 확보된 레코드 300건은 「발주·수행 실적」으로 공고 집계와 정의가 달라 대체 산출이 불가하다. 국가 간 구성 일관성을 위해 해당 2종을 제거하고 수집 제약은 _개선계획 대장에 이관했다. [★검토의견 반영 2026-09-24] 종전 실데이터 0건. 본 요소는 「PCP/입찰 현황」이나 공개 원천에 입찰공고 단위 데이터가 없어, 발주기관·수행기관·약정액이 확인되는 사업 실적을 발주 레지스트리로 수록. 공고번호·공고일·마감일은 KOICA 전자조달 오픈API(data.go.kr/data/3039908)로 별도 확보 예정.",
+      "sourceLabel": "한국 ODA 기관 PCP/입찰 현황 · 발주·수행 실적 레지스트리",
+      "sourceLabelEn": "한국 ODA 기관 PCP/입찰 현황 · 발주·수행 실적 레지스트리",
+      "sourceNote": "[지표 정비 2026-09-28] 본 요소는 10개국 모두 레코드형(1.2) 단일 구성으로 「발주·수행 실적 레지스트리」를 수록하며 측정값 시계열(1.1)은 사용하지 않는다. 방글라데시에만 남아 있던 입찰공고 집계 지표 2종(tender_count · tender_budget_total)은 나라장터·KOICA 전자조달이 자동 조회를 차단해 공고 원본을 수집하지 못한 상태의 자리표시였고, 확보된 레코드 300건은 「발주·수행 실적」으로 공고 집계와 정의가 달라 대체 산출이 불가하다. 국가 간 구성 일관성을 위해 해당 2종을 제거하고 수집 제약은 _개선계획 대장에 이관했다. [★검토의견 반영 2026-09-24] 종전 실데이터 0건. 본 요소는 「PCP/입찰 현황」이나 공개 원천에 입찰공고 단위 데이터가 없어, 발주기관·수행기관·약정액이 확인되는 사업 실적을 발주 레지스트리로 수록. 공고번호·공고일·마감일은 KOICA 전자조달 오픈API(data.go.kr/data/3039908)로 별도 확보 예정.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-3bd280373b9a",
+      "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
   "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],

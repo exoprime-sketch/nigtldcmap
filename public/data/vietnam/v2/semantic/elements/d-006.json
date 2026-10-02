@@ -3,8 +3,13 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 5,
+      "valueCount": 10,
       "values": [
+        "Environmental Taxes",
+        "Taxes on Energy (including fuel for transport)",
+        "Taxes on Pollution",
+        "Taxes on Resources",
+        "Taxes on Transport (excluding fuel for transport)",
         "환경보호세 실제 적용세율",
         "환경보호세 탄소환산 세율",
         "환경보호세 표준세율",
@@ -35,8 +40,32 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 8,
+      "valueCount": 32,
       "values": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
         "2019",
         "2020",
         "2021",
@@ -51,8 +80,248 @@
   "elementId": "D-006",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 20,
+  "indicatorCount": 30,
   "indicators": [
+    {
+      "axisGroupKey": "measure-f93cfe47ac55|현지통화",
+      "dimensionLabels": {
+        "category": "Environmental Taxes"
+      },
+      "dimensions": {
+        "category": "Environmental Taxes"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Environmental Taxes · 기후 관련 조세 수입 [현지통화]",
+      "indicatorId": "D-006_ecgte_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f93cfe47ac55",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "현지통화",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f93cfe47ac55|현지통화|category=Environmental Taxes|D-006_ecgte_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Environmental Taxes",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-21d8e1a37c00|% of GDP",
+      "dimensionLabels": {
+        "category": "Environmental Taxes"
+      },
+      "dimensions": {
+        "category": "Environmental Taxes"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Environmental Taxes · 기후 관련 조세 수입 [% of GDP]",
+      "indicatorId": "D-006_ecgte_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21d8e1a37c00",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-21d8e1a37c00|% of GDP|category=Environmental Taxes|D-006_ecgte_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Environmental Taxes",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f93cfe47ac55|현지통화",
+      "dimensionLabels": {
+        "category": "Taxes on Energy (including fuel for transport)"
+      },
+      "dimensions": {
+        "category": "Taxes on Energy (including fuel for transport)"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport) · 기후 관련 조세 수입 [현지통화]",
+      "indicatorId": "D-006_ecgten_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f93cfe47ac55",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "현지통화",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f93cfe47ac55|현지통화|category=Taxes on Energy (including fuel for transport)|D-006_ecgten_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-21d8e1a37c00|% of GDP",
+      "dimensionLabels": {
+        "category": "Taxes on Energy (including fuel for transport)"
+      },
+      "dimensions": {
+        "category": "Taxes on Energy (including fuel for transport)"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport) · 기후 관련 조세 수입 [% of GDP]",
+      "indicatorId": "D-006_ecgten_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21d8e1a37c00",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-21d8e1a37c00|% of GDP|category=Taxes on Energy (including fuel for transport)|D-006_ecgten_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Energy (including fuel for transport)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f93cfe47ac55|현지통화",
+      "dimensionLabels": {
+        "category": "Taxes on Pollution"
+      },
+      "dimensions": {
+        "category": "Taxes on Pollution"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Pollution · 기후 관련 조세 수입 [현지통화]",
+      "indicatorId": "D-006_ecgtep_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f93cfe47ac55",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "현지통화",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f93cfe47ac55|현지통화|category=Taxes on Pollution|D-006_ecgtep_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Pollution",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-21d8e1a37c00|% of GDP",
+      "dimensionLabels": {
+        "category": "Taxes on Pollution"
+      },
+      "dimensions": {
+        "category": "Taxes on Pollution"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Pollution · 기후 관련 조세 수입 [% of GDP]",
+      "indicatorId": "D-006_ecgtep_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21d8e1a37c00",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-21d8e1a37c00|% of GDP|category=Taxes on Pollution|D-006_ecgtep_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Pollution",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f93cfe47ac55|현지통화",
+      "dimensionLabels": {
+        "category": "Taxes on Resources"
+      },
+      "dimensions": {
+        "category": "Taxes on Resources"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Resources · 기후 관련 조세 수입 [현지통화]",
+      "indicatorId": "D-006_ecgter_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f93cfe47ac55",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "현지통화",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f93cfe47ac55|현지통화|category=Taxes on Resources|D-006_ecgter_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Resources",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-21d8e1a37c00|% of GDP",
+      "dimensionLabels": {
+        "category": "Taxes on Resources"
+      },
+      "dimensions": {
+        "category": "Taxes on Resources"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Resources · 기후 관련 조세 수입 [% of GDP]",
+      "indicatorId": "D-006_ecgter_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21d8e1a37c00",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-21d8e1a37c00|% of GDP|category=Taxes on Resources|D-006_ecgter_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Resources",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f93cfe47ac55|현지통화",
+      "dimensionLabels": {
+        "category": "Taxes on Transport (excluding fuel for transport)"
+      },
+      "dimensions": {
+        "category": "Taxes on Transport (excluding fuel for transport)"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport) · 기후 관련 조세 수입 [현지통화]",
+      "indicatorId": "D-006_ecgtet_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f93cfe47ac55",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "현지통화",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f93cfe47ac55|현지통화|category=Taxes on Transport (excluding fuel for transport)|D-006_ecgtet_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-21d8e1a37c00|% of GDP",
+      "dimensionLabels": {
+        "category": "Taxes on Transport (excluding fuel for transport)"
+      },
+      "dimensions": {
+        "category": "Taxes on Transport (excluding fuel for transport)"
+      },
+      "displayLabel": "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport) · 기후 관련 조세 수입 [% of GDP]",
+      "indicatorId": "D-006_ecgtet_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-21d8e1a37c00",
+        "labelKo": "기후 관련 조세 수입",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-21d8e1a37c00|% of GDP|category=Taxes on Transport (excluding fuel for transport)|D-006_ecgtet_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "기후 관련 조세 수입 · Taxes on Transport (excluding fuel for transport)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-d4d5bb18840e|VND",
       "dimensionLabels": {
@@ -632,6 +901,14 @@
       "unitFamily": "percent"
     },
     {
+      "indicatorCount": 5,
+      "key": "measure-21d8e1a37c00",
+      "labelKo": "기후 관련 조세 수입",
+      "recordCount": 117,
+      "unit": "% of GDP",
+      "unitFamily": "percent"
+    },
+    {
       "indicatorCount": 3,
       "key": "measure-3dbf90693340",
       "labelKo": "기후 관련 조세 수입",
@@ -662,9 +939,17 @@
       "recordCount": 2,
       "unit": "VND/t",
       "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-f93cfe47ac55",
+      "labelKo": "기후 관련 조세 수입",
+      "recordCount": 117,
+      "unit": "현지통화",
+      "unitFamily": "other"
     }
   ],
-  "observationCount": 45,
+  "observationCount": 279,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

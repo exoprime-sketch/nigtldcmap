@@ -20,10 +20,14 @@ import type {
 function regionDisplayNameV159(row: {
   regionName?: string | null;
   regionKey?: string | null;
-}): string | null {
+  regionSystem?: string | null;
+}, country = "VNM"): string | null {
   const stated = String(row.regionName ?? "").trim();
+  // V162 (P12-B): the row's own boundary system picks the dictionary level
+  // (63 pre-2025 provinces or the 34 units) for a name both lists share.
+  const level = row.regionSystem === "adm1-34" || row.regionSystem === "adm1-63" ? row.regionSystem : undefined;
   if (stated && !/^VN3?4?-?[0-9A-Z]{2}$/u.test(stated)) {
-    return formatRegionName({ country: "VNM", raw: stated });
+    return formatRegionName({ country, raw: stated, level });
   }
   const key = String(row.regionKey ?? "").trim();
   const korean = PROVINCE_KO_V150[key] || PROVINCE_KO_34_V151[key];
@@ -223,11 +227,11 @@ function decisionPointsU2(
   const sorted = [...atLatestYear].sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
   const formatRegion = (row: S2RegionObservationV159) =>
-    `${regionDisplayNameV159(row)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
+    `${regionDisplayNameV159(row, opts.countryIso3)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
 
   const points: DecisionPointV159[] = [];
   // A row whose region cannot be named is left out: a code is not a region name.
-  const nameable = sorted.filter((row) => regionDisplayNameV159(row) !== null);
+  const nameable = sorted.filter((row) => regionDisplayNameV159(row, opts.countryIso3) !== null);
   const top = nameable.slice(0, 3);
   if (top.length > 0) {
     points.push({ key: "top-regions", label: "상위 3개 지역", value: top.map(formatRegion).join(" · "), detail: basis });

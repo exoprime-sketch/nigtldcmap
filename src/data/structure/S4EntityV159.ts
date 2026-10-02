@@ -66,16 +66,30 @@ function normalizeKey(key: string): string {
     .replace(/[_\s]/gu, "");
 }
 
+/**
+ * V162: the 2026-09-30 wide template prefixes each column with its block
+ * ("기간_시행일", "제도_상태", "식별_레코드명"). The block is where the column
+ * sits, not what it means; a key matches a candidate with or without it.
+ * A full-key match still wins over a block-stripped one.
+ */
+function blockStrippedKey(key: string): string | null {
+  const match = key.match(/^[가-힣]+_(.+)$/u);
+  return match ? normalizeKey(match[1]) : null;
+}
+
 function findAttribute(
   attrs: Record<string, unknown>,
   candidates: readonly string[]
 ): { key: string; value: unknown } | null {
   const normalizedCandidates = candidates.map(normalizeKey);
+  let stripped: { key: string; value: unknown } | null = null;
   for (const [key, value] of Object.entries(attrs)) {
     if (value === null || value === undefined || value === "") continue;
     if (normalizedCandidates.includes(normalizeKey(key))) return { key, value };
+    const blockless = blockStrippedKey(key);
+    if (!stripped && blockless && normalizedCandidates.includes(blockless)) stripped = { key, value };
   }
-  return null;
+  return stripped;
 }
 
 function findAllAttributes(
@@ -86,7 +100,8 @@ function findAllAttributes(
   const values: unknown[] = [];
   for (const [key, value] of Object.entries(attrs)) {
     if (value === null || value === undefined || value === "") continue;
-    if (normalizedCandidates.includes(normalizeKey(key))) values.push(value);
+    const blockless = blockStrippedKey(key);
+    if (normalizedCandidates.includes(normalizeKey(key)) || (blockless && normalizedCandidates.includes(blockless))) values.push(value);
   }
   return values;
 }

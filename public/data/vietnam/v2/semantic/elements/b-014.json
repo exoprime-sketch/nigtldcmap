@@ -1,29 +1,39 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 2,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "NZP-no-reforms",
-        "NZP-with-measures"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 2,
-      "values": [
-        "2030",
-        "2040"
+        "entity"
       ]
     }
   ],
   "elementId": "B-014",
-  "entityCount": 0,
+  "entityCount": 12,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 8,
+  "indicatorCount": 13,
   "indicators": [
+    {
+      "axisGroupKey": "measure-aba7603ac556|US$/tCO2e",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소가격",
+      "indicatorId": "B-014_carbon_price",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aba7603ac556",
+        "labelKo": "탄소가격",
+        "unit": "US$/tCO2e",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-aba7603ac556|US$/tCO2e||B-014_carbon_price",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소가격",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-f3fb8b4b017f|USD/tCO₂e",
       "dimensionLabels": {},
@@ -49,6 +59,26 @@
         "sourceRow": 4,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-3d644b40295b|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "배출 변화율(기준선 대비)",
+      "indicatorId": "B-014_emission_change",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3d644b40295b",
+        "labelKo": "배출 변화율(기준선 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-3d644b40295b|%||B-014_emission_change",
+      "sourceCaveat": null,
+      "sourceLabel": "배출 변화율(기준선 대비)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-195d31a84a4c|%",
@@ -109,6 +139,26 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-42d9e0f3e8a4|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "GDP 변화율(기준선 대비)",
+      "indicatorId": "B-014_gdp_change",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-42d9e0f3e8a4",
+        "labelKo": "GDP 변화율(기준선 대비)",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-42d9e0f3e8a4|%||B-014_gdp_change",
+      "sourceCaveat": null,
+      "sourceLabel": "GDP 변화율(기준선 대비)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-bf20bb336833|%",
@@ -247,14 +297,62 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-a87ca74a6746|십억 US$",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "세수 누적액",
+      "indicatorId": "B-014_tax_revenue_cumulative",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a87ca74a6746",
+        "labelKo": "세수 누적액",
+        "unit": "십억 US$",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-a87ca74a6746|십억 US$||B-014_tax_revenue_cumulative",
+      "sourceCaveat": null,
+      "sourceLabel": "세수 누적액",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-585d0bf1bd61|% of GDP/yr",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "탄소세 세수(GDP 대비)",
+      "indicatorId": "B-014_tax_revenue_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-585d0bf1bd61",
+        "labelKo": "탄소세 세수(GDP 대비)",
+        "unit": "% of GDP/yr",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-585d0bf1bd61|% of GDP/yr||B-014_tax_revenue_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "탄소세 세수(GDP 대비)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
     {
+      "indicatorCount": 1,
+      "key": "measure-42d9e0f3e8a4",
+      "labelKo": "GDP 변화율(기준선 대비)",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
       "indicatorCount": 2,
       "key": "measure-bf20bb336833",
       "labelKo": "GDP 영향",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -262,7 +360,7 @@
       "indicatorCount": 1,
       "key": "measure-f3fb8b4b017f",
       "labelKo": "권고 탄소가격 경로",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "USD/tCO₂e",
       "unitFamily": "emissions"
     },
@@ -270,7 +368,7 @@
       "indicatorCount": 1,
       "key": "measure-2ff22836a17a",
       "labelKo": "누적 추가 세수",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "십억 USD",
       "unitFamily": "currency"
     },
@@ -278,15 +376,31 @@
       "indicatorCount": 2,
       "key": "measure-195d31a84a4c",
       "labelKo": "배출 감소율",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-3d644b40295b",
+      "labelKo": "배출 변화율(기준선 대비)",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a87ca74a6746",
+      "labelKo": "세수 누적액",
+      "recordCount": 0,
+      "unit": "십억 US$",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-3a9a86388734",
       "labelKo": "연간 세수(GDP 대비) (범위 상한)",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "% of GDP/yr",
       "unitFamily": "percent"
     },
@@ -294,12 +408,28 @@
       "indicatorCount": 1,
       "key": "measure-ca151feccf73",
       "labelKo": "연간 세수(GDP 대비) (범위 하한)",
-      "recordCount": 1,
+      "recordCount": 0,
+      "unit": "% of GDP/yr",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-aba7603ac556",
+      "labelKo": "탄소가격",
+      "recordCount": 0,
+      "unit": "US$/tCO2e",
+      "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-585d0bf1bd61",
+      "labelKo": "탄소세 세수(GDP 대비)",
+      "recordCount": 0,
       "unit": "% of GDP/yr",
       "unitFamily": "percent"
     }
   ],
-  "observationCount": 13,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

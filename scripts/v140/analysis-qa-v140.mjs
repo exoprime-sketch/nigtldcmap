@@ -77,15 +77,19 @@ const summaries = summariesAsset.cards;
 // they show one status notice instead of an analysis, so they are judged by
 // statusNoticePresent · noDecisionMeta · chartCount0 · cardShowsStatus instead of the card
 // value and analysis-fit checks. Every other element is judged as before.
-const STATUS_NOTICE_V159 = new Map(
-  JSON.parse(readFileSync(resolve(PROJECT_ROOT, "src/data/spec/datasetTypologyV159.json"), "utf8")).rows
-    .filter((row) => row.statusNotice === "data-pending")
-    .map((row) => [row.elementId, row.statusNotice])
-);
-const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
 // Spec v8 (2026-09-29): the notice is one line; the words it must carry.
 const STATUS_NOTICE_WORDS_V159 = { "data-pending": "데이터 준비 중", excluded: "제공 대상이 아닌" };
 const catalog = JSON.parse(readFileSync(resolve(DATA, "catalog.json"), "utf8")).elements;
+// V162 (user decision 2026-09-30): '데이터 준비 중' is decided by the catalog
+// alone - the rule the screen follows (statusNoticeFromCatalogV162). E-011 was
+// delivered on 2026-09-30 and is no longer a status screen.
+const DATA_PENDING_PUBLIC_STATUSES_V162 = new Set(["not-provided", "not-collected", "schema-only", "data-entry-planned"]);
+const STATUS_NOTICE_V159 = new Map(
+  catalog
+    .filter((element) => DATA_PENDING_PUBLIC_STATUSES_V162.has(String(element.publicStatus || "")))
+    .map((element) => [element.elementId, "data-pending"])
+);
+const STATUS_IDS_V159 = new Set(STATUS_NOTICE_V159.keys());
 const localManifest = JSON.parse(readFileSync(resolve(DATA, "manifest.json"), "utf8"));
 const mapIndex = JSON.parse(readFileSync(resolve(DATA, "map-index.json"), "utf8")).layers;
 const homePreview = JSON.parse(readFileSync(resolve(DATA, "home/home-preview-v139.json"), "utf8"));
@@ -288,15 +292,38 @@ function recompute(card) {
   };
   const attr = (row, key) => row.normalizedAttributes?.[key];
   const isCountryRow = (row) => /^(전국|country)$/iu.test(clean(attr(row, "행정단위")));
+  // V162: the province rows of one administrative system, the rule the card
+  // builder and the screen follow (src/data/geo/regionSystemV162.ts): a sheet
+  // with the 63 pre-2025 provinces is recomputed from those rows only.
+  const regionSystemOf = (row) =>
+    row.regionSystem ||
+    (/_adm34$/u.test(clean(row.indicatorId)) || /개편 후|체계/u.test(clean(attr(row, "행정단위")))
+      ? "adm1"
+      : /^(province|city|province\/city)$/iu.test(clean(attr(row, "행정단위")))
+        ? "adm1-prev"
+        : null);
+  const oneSystemProvinceRows = (rows) => {
+    const regional = rows.filter((row) => !isCountryRow(row));
+    return regional.some((row) => regionSystemOf(row) === "adm1-prev") ? regional.filter((row) => regionSystemOf(row) === "adm1-prev") : regional;
+  };
   const numberOf = (value) => { if (typeof value === "number") return Number.isFinite(value) ? value : null; const n = Number(String(value ?? "").replace(/,/gu, "")); return String(value ?? "").trim() !== "" && Number.isFinite(n) ? n : null; };
   const basis = card.basis || {};
   const rule = basis.rule || "";
 
-  if (card.elementId === "C-001" && entities.length) {
+  // V162: a C card built from the 2026-09-30 wide sheet ("가로형 기록 1건 =
+  // 원천 1행") counts its rows; the rules below read the old 속성N template.
+  const wideCardV162 = /^가로형 기록/u.test(rule);
+  if (card.elementId === "C-001" && entities.length && !wideCardV162) {
     const matches = entities.filter((row) => row.indicatorId === "C-001_mitigation_target" && clean(attr(row, "속성1_레코드명")) === "총량 감축률" && Number(attr(row, "속성4_시점")) === 2030 && numberOf(attr(row, "속성3_값")) === 15.8 && clean(attr(row, "속성19_원문URL")) === "https://unfccc.int/sites/default/files/NDC/2022-11/Viet%20Nam_NDC_2022_Eng.pdf");
     return matches.length === 1 ? finish(numberOf(attr(matches[0], "속성3_값")), matches.length, "NDC 2022 Table 3, unconditional target") : { status: "mismatch", reason: "reviewed NDC target not uniquely identified" };
   }
-  if (["C-019", "C-022"].includes(card.elementId) && entities.length) {
+  // V162: C-022's wide sheet states one facility count per province in its
+  // own column; the card names the largest, as the screen's region list does.
+  if (card.elementId === "C-022" && entities.length && entities.some((row) => numberOf(attr(row, "인벤토리_의무_인벤토리_시설_수_개")) !== null)) {
+    const counts = entities.map((row) => numberOf(attr(row, "인벤토리_의무_인벤토리_시설_수_개"))).filter((value) => value !== null);
+    return finish(Math.max(...counts), counts.length, "largest province facility count (wide sheet)");
+  }
+  if (["C-019", "C-022"].includes(card.elementId) && entities.length && !wideCardV162) {
     const rows = entities.filter((row) => /^VN\d+$/u.test(clean(attr(row, "속성22_행정코드P_code"))) && /시설/u.test(row.name || "") && numberOf(attr(row, "속성3_값")) !== null);
     const date = [...new Set(rows.map((row) => clean(attr(row, "속성4_시점"))))].sort().at(-1);
     const selected = rows.filter((row) => clean(attr(row, "속성4_시점")) === date);
@@ -306,7 +333,9 @@ function recompute(card) {
   }
 
   // Observation-backed cards: the headline series at the card's year.
-  if (["line", "level", "spatial", "bars", "composition"].includes(card.kind) && ids.size && observations.length) {
+  // A card the home asset summarises from a register (D-023) is recounted by
+  // its register rule below, not by the register's own stated totals.
+  if (["line", "level", "spatial", "bars", "composition"].includes(card.kind) && ids.size && observations.length && basis.unit !== "홈과 동일") {
     let rows = observations.filter((row) => ids.has(row.indicatorId) && typeof row.value === "number");
     if (claim.year) rows = rows.filter((row) => Number(row.year) === Number(claim.year) || String(row.period) === String(claim.year));
     else if (claim.period) rows = rows.filter((row) => String(row.period) === claim.period);
@@ -341,8 +370,11 @@ function recompute(card) {
     const individual = entities.filter((row) => clean(attr(row, "레코드구분")) === "개별");
     return finish(individual.length, entities.length, "rows with 레코드구분=개별");
   }
-  if (card.elementId === "C-007" && entities.length) {
-    const row = entities.find((entity) => /등재 NMA 건수/u.test(clean(attr(entity, "속성1_레코드명"))));
+  // V162: the 2026-09-30 wide sheet has no "등재 NMA 건수" row; its card
+  // counts records and is recounted by the entity-rows rule below.
+  const c007CountRow = card.elementId === "C-007" ? entities.find((entity) => /등재 NMA 건수/u.test(clean(attr(entity, "속성1_레코드명")))) : null;
+  if (card.elementId === "C-007" && c007CountRow) {
+    const row = c007CountRow;
     const value = numberOf(attr(row, "속성3_값"));
     return value === null ? { status: "no-matching-row", note: "no 등재 NMA 건수 row" } : finish(value, entities.length, "the 참여당사국 등재 NMA 건수 row");
   }
@@ -369,7 +401,7 @@ function recompute(card) {
   // Province × scenario × year layers: the median of the province values the card states.
   if (card.kind === "spatial-trend" && mapVariable && entities.length) {
     const scenario = card.selection?.dimensions?.scenario;
-    const rows = entities.filter((row) => !isCountryRow(row) && (!scenario || clean(attr(row, "시나리오")) === scenario) && Number(attr(row, "연도")) === Number(claim.year));
+    const rows = oneSystemProvinceRows(entities).filter((row) => (!scenario || clean(attr(row, "시나리오")) === scenario) && Number(attr(row, "연도")) === Number(claim.year));
     const values = rows.map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null).sort((a, b) => a - b);
     if (!values.length) return { status: "no-matching-row", attribute: mapVariable, year: claim.year, scenario };
     const median = values.length % 2 ? values[(values.length - 1) / 2] : (values[values.length / 2 - 1] + values[values.length / 2]) / 2;
@@ -382,13 +414,16 @@ function recompute(card) {
     return finish(Math.max(...values), values.length, "max station value, SSP2-4.5 median, 2100");
   }
   if (card.elementId === "B-025" && entities.length) {
-    const values = entities.filter((row) => row.indicatorId === "B-025_river_basin").map((row) => numberOf(attr(row, "베트남_내_면적_km_GIS_산출"))).filter((v) => v !== null);
+    // V162: the named basins (a literature total area) under the renamed
+    // "자국 내" column; the pre-V162 column stays as the fallback.
+    const named = entities.filter((row) => row.indicatorId === "B-025_river_basin" && (numberOf(attr(row, "총_유역면적_km_문헌")) !== null || numberOf(attr(row, "베트남_내_면적_km_GIS_산출")) !== null));
+    const values = named.map((row) => numberOf(attr(row, "자국_내_면적_km_GIS_산출")) ?? numberOf(attr(row, "베트남_내_면적_km_GIS_산출"))).filter((v) => v !== null);
     if (!values.length) return { status: "no-matching-row" };
     return finish(Math.max(...values), values.length, "largest basin area (km², GIS)");
   }
   // Regional map layers (B-029…B-042): one attribute per province entity, national rows apart.
   if (card.kind === "spatial" && mapVariable && entities.length) {
-    const values = entities.filter((row) => !isCountryRow(row)).map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null);
+    const values = oneSystemProvinceRows(entities).map((row) => numberOf(attr(row, mapVariable))).filter((v) => v !== null);
     if (!values.length) return { status: "no-matching-row", attribute: mapVariable };
     return finish(Math.max(...values), values.length, `max of ${mapVariable} across province entities`);
   }

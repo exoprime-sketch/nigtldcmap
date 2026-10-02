@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "D-017",
-  "entityCount": 10,
+  "entityCount": 305,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 3,
+  "indicatorCount": 4,
   "indicators": [
     {
       "axisGroupKey": "measure-494508ded3a0|USD",
@@ -47,6 +47,30 @@
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-3bd280373b9a|건",
+      "dimensionLabels": {
+        "category": "발주 · 수행 실적 레지스트리"
+      },
+      "dimensions": {
+        "category": "발주 · 수행 실적 레지스트리"
+      },
+      "displayLabel": "한국 ODA 기관 PCP/입찰 현황 · 발주·수행 실적 레지스트리",
+      "indicatorId": "D-017_korea_oda_award_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3bd280373b9a",
+        "labelKo": "한국 ODA 기관 PCP/입찰 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-3bd280373b9a|건|category=발주 · 수행 실적 레지스트리|D-017_korea_oda_award_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "한국 ODA 기관 PCP/입찰 현황 · 발주·수행 실적 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-3bd280373b9a|건",
@@ -127,12 +151,12 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "key": "measure-3bd280373b9a",
       "labelKo": "한국 ODA 기관 PCP/입찰 현황",
       "recordCount": 0,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
   "observationCount": 0,

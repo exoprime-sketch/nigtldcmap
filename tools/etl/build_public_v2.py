@@ -554,6 +554,12 @@ _REVIEWED_PUBLIC_KEYS_V137: dict[str, dict[str, str]] = {
         "속성7(상태)": "status",
         "속성8(사업자·기관)": "proponent",
         "속성9(방법론)": "methodology",
+        # V162: the 2026-09-30 wide template labels the same columns this way.
+        "[식별] 등록부 프로젝트ID": "projectId",
+        "[식별] 등록 표준": "standard",
+        "[식별] 등재 상태": "status",
+        "[사업] 사업자·기관": "proponent",
+        "[사업] 방법론": "methodology",
     },
 }
 
@@ -561,6 +567,50 @@ _REVIEWED_PUBLIC_KEYS_V137: dict[str, dict[str, str]] = {
 def _slot_order(source_field: str) -> int:
     match = re.search(r"\d+", source_field)
     return int(match.group()) if match else 9999
+
+
+# V162: the 2026-09-30 delivery renamed the region columns; older deliveries
+# and the published trees used the Viet Nam-specific names. Every country's
+# column is published under the common name (user decision 2026-09-30).
+REGION_COLUMN_ALIASES_V162 = {
+    "2025_개편_후_소속_34개_체계": "개편_후_소속_단위",
+    "지역명_베트남어": "지역명_현지어",
+}
+
+
+def _registry_entry_v162(country_iso3: str) -> Mapping[str, Any]:
+    path = pathlib.Path(__file__).resolve().parents[2] / "public" / "data" / "countries.json"
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8")).get("countries") or []
+    except OSError:
+        return {}
+    return next((row for row in rows if str(row.get("iso3") or "").upper() == country_iso3.upper()), {})
+
+
+def region_system_v162(level: Any, country_iso3: str) -> str | None:
+    """The row's administrative system: adm1 (current level 1), adm1-prev (the
+    level 1 that a dated boundary reform replaced), adm2, country, or None.
+
+    Same values as the contractor's 10-country rule. A country whose registry
+    boundaryEpoch is a date reformed its level 1 on that date, so a row the
+    delivery labels by the older unit (Province/City) is adm1-prev and a row it
+    labels by the new system ("… (2025년 34개 체계)") is adm1."""
+    text = nfc_text(str(level or "")).strip()
+    if not text:
+        return None
+    lowered = text.lower()
+    if "개편 후" in text or "체계" in text:
+        return "adm1"
+    if lowered in {"country", "전국", "국가"}:
+        return "country"
+    if lowered in {"district", "군", "구"}:
+        return "adm2"
+    if lowered in {"division", "주"}:
+        return "adm1"
+    if lowered in {"province", "city", "province/city", "tỉnh", "thành phố"}:
+        epoch = str(_registry_entry_v162(country_iso3).get("boundaryEpoch") or "")
+        return "adm1-prev" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", epoch) else "adm1"
+    return None
 
 
 def _safe_field_definitions(
@@ -619,7 +669,8 @@ def _safe_field_definitions(
             or re.sub(r"[^A-Za-z0-9가-힣]+", "_", labels[source_field]).strip("_")
             or source_field
         )
-        key = base_key
+        # V162: the region columns under one name for every country and delivery.
+        key = base_key = REGION_COLUMN_ALIASES_V162.get(base_key, base_key)
         suffix = 2
         while key in used:
             key = f"{base_key}{suffix}"
@@ -677,6 +728,11 @@ def _entity_name(attributes: Mapping[str, Any], fallback: str, note: Any = None)
         "기관명",
         "속성1_레코드명",
         "레코드명",
+        # V162: the wide record template names a record in its [식별] block.
+        # Without these the loop below took the first column - the record id
+        # ("VNM-BAR-2012-049") - as every C-series record's name.
+        "식별_레코드명",
+        "식별_프로젝트명",
         # B-023 and B-028 name what each row measures in its own column; without
         # it both screens listed their record keys as headings
         # ("discharge_redriver_min_2010").
@@ -696,7 +752,10 @@ def _entity_name(attributes: Mapping[str, Any], fallback: str, note: Any = None)
     from_note = _name_from_note(note)
     if from_note:
         return from_note
-    for value in attributes.values():
+    for key, value in attributes.items():
+        # A record key is never a name (V162).
+        if re.search(r"레코드_?ID|record_?id", str(key), re.IGNORECASE):
+            continue
         if value is not None and not is_placeholder(value):
             return str(value)
     return fallback
@@ -708,6 +767,7 @@ def _authorized_entities(
     decision: Mapping[str, Any],
     field_definitions: list[dict[str, str]],
     rights: Mapping[str, Any] | None = None,
+    country_iso3: str | None = None,
 ) -> list[dict[str, Any]]:
     metadata = _indicator_by_id(base_payload)
     decision_ref = _decision_ref(decision)
@@ -775,6 +835,12 @@ def _authorized_entities(
                 "geometry": None,
                 "normalizedAttributes": normalized_attributes,
                 "rawAttributes": raw_attributes,
+                # V162: which administrative system the row belongs to, so a
+                # 63-unit view never counts a 34-unit row (and vice versa).
+                "regionSystem": region_system_v162(
+                    normalized_attributes.get("행정단위"),
+                    country_iso3 or str(raw.get("country_iso3") or "VNM"),
+                ),
                 "missingReasonCode": raw.get("missing_reason_code"),
                 "note": raw.get("note"),
                 "loadStatus": indicator.get("loadStatus", "published"),
@@ -827,7 +893,8 @@ def _b034_projection(
             if fact["periodStart"] == fact["periodEnd"]
             else f"{fact['periodStart']}–{fact['periodEnd']}"
         )
-        statistic = "연평균" if fact["statisticType"] == "annual-mean" else None
+        # V162: a 2001–2024 total says so; a mean says 연평균.
+        statistic = {"annual-mean": "연평균", "period-total": "누계"}.get(fact["statisticType"])
         variable_label = (
             f"{fact['publicLabel']}({statistic})" if statistic else fact["publicLabel"]
         )
@@ -1665,6 +1732,60 @@ def load_exclusion_decisions(repo: pathlib.Path, country_config: dict[str, Any])
     return exclusions
 
 
+def _source_delivered_at_v162(source_dir: pathlib.Path | None) -> str | None:
+    """V162: the delivery date of the staged source (YYYY-MM-DD).
+
+    The home's 데이터 기준일 is the date the source arrived, not a build
+    constant. VIETNAM_DELIVERED_AT wins; otherwise the stage manifest beside
+    the staged workbooks (source.deliveredAt) states it."""
+    stated = os.environ.get("VIETNAM_DELIVERED_AT", "").strip()
+    if not stated and source_dir is not None:
+        for manifest_path in sorted(source_dir.parent.glob("manifest-*.json")):
+            stated = str((json.loads(manifest_path.read_text(encoding="utf-8")).get("source") or {}).get("deliveredAt") or "")
+            if stated:
+                break
+    return stated if re.fullmatch(r"\d{4}-\d{2}-\d{2}", stated or "") else None
+
+
+def _load_row_exclusions_v162(repo: pathlib.Path) -> list[dict[str, Any]]:
+    """V162: declared source rows that are not published (config/data-publication/row-exclusions-v162.json)."""
+    path = repo / "config" / "data-publication" / "row-exclusions-v162.json"
+    if not path.exists():
+        return []
+    return list(json.loads(path.read_text(encoding="utf-8")).get("rules") or [])
+
+
+def _apply_row_exclusions_v162(
+    element_id: str,
+    entities: list[dict[str, Any]],
+    field_definitions: list[dict[str, str]],
+    rules: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+    """Drop the entity rows a declared rule names; nothing else changes."""
+    mine = [rule for rule in rules if rule.get("elementId") == element_id]
+    if not mine:
+        return entities, None
+    kept: list[dict[str, Any]] = []
+    removed = 0
+    for entity in entities:
+        attributes = entity.get("normalizedAttributes") or {}
+        drop = False
+        for rule in mine:
+            key = next(
+                (d["normalizedKey"] for d in field_definitions if str(d.get("label") or "").strip() == rule["column"]),
+                None,
+            )
+            if key is None:
+                raise ValueError(f"row exclusion column not in {element_id}: {rule['column']}")
+            if rule["contains"] in str(attributes.get(key) or ""):
+                drop = True
+        if drop:
+            removed += 1
+        else:
+            kept.append(entity)
+    return kept, {"removedRows": removed, "keptRows": len(kept), "rules": [r["reason"] for r in mine]}
+
+
 def build(repo: pathlib.Path) -> dict[str, Any]:
     # Three env overrides let the final source be built into a staging tree and
     # diffed before anything under public/ is touched. Unset, every one of them
@@ -1679,6 +1800,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     source_dir_override = os.environ.get("VIETNAM_SOURCE_DIR", "").strip()
     output_override = os.environ.get("VIETNAM_V2_OUTPUT", "").strip()
     expected_workbooks = int(os.environ.get("VIETNAM_EXPECTED_WORKBOOKS", "149"))
+    row_exclusions_v162 = _load_row_exclusions_v162(repo)
+    delivered_at_v162: str | None = None  # resolved once source_dir is known
+    row_exclusion_summary_v162: dict[str, Any] = {}
 
     source_zip = (
         repo
@@ -1688,6 +1812,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     source_dir = pathlib.Path(source_dir_override) if source_dir_override else None
     if source_dir is not None and not source_dir.is_absolute():
         source_dir = (repo / source_dir).resolve()
+    delivered_at_v162 = _source_delivered_at_v162(source_dir)
+    generated_at = f"{delivered_at_v162}T00:00:00Z" if delivered_at_v162 else GENERATED_AT
     v1_root = repo / country_config["baseProjection"]["root"]
     # Staging writes a whole mirror of the public tree somewhere outside public/,
     # so CRA never copies a candidate build into build/ and no asset URL can
@@ -2045,6 +2171,11 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 entities = _authorized_entities(
                     workbook, base_payload, decision, field_definitions, rights
                 )
+            entities, excluded_by_rule = _apply_row_exclusions_v162(
+                element_id, entities, field_definitions, row_exclusions_v162
+            )
+            if excluded_by_rule:
+                row_exclusion_summary_v162[element_id] = excluded_by_rule
             if element_id in RETAIN_MISSING_INDICATOR_ELEMENT_IDS:
                 new_indicator_ids = {
                     str(row.get("indicatorId") or "") for row in observations + entities
@@ -2137,6 +2268,22 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             # The derived measures define themselves; the V1 indicator list
             # described the previous shape and must not stand in for them.
             indicators = derived_indicators
+        # V162: an observation's unit is its indicator's unit as this delivery
+        # states it. Observations took the unit from the 2026-08-27 base
+        # payload, so a new indicator had none and a restated one kept the old
+        # unit (E-012's ILOSTAT wages read 천VND while the delivery says VND).
+        # Rows carried over from a previous projection keep theirs.
+        unit_by_indicator_v162 = {
+            str(indicator.get("indicatorId") or ""): indicator.get("unit")
+            for indicator in indicators
+            if indicator.get("unit")
+        }
+        for row in observations:
+            if row.get("supplementarySource"):
+                continue
+            stated_unit = unit_by_indicator_v162.get(str(row.get("indicatorId") or ""))
+            if stated_unit:
+                row["unit"] = stated_unit
         if is_authorized:
             for indicator in indicators:
                 indicator["publicationDecision"] = decision_ref
@@ -2372,7 +2519,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             # left to be discovered. The CSV keeps its flat one-row-per-record
             # schema untouched.
             "downloadSchemaVersion": DOWNLOAD_SCHEMA_VERSION,
-            "generatedAt": GENERATED_AT,
+            "generatedAt": generated_at,
             "countryIso3": "VNM",
             "element": element,
             "indicators": payload["meta"]["indicators"],
@@ -2646,7 +2793,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     }
     quality_report = {
         "schemaVersion": SCHEMA_VERSION,
-        "generatedAt": GENERATED_AT,
+        "generatedAt": generated_at,
         "summary": {
             **analysis["totals"],
             "authorizedElementCount": len(authorized),
@@ -2694,8 +2841,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "schemaVersion": SCHEMA_VERSION,
         "runtimeVersion": RUNTIME_VERSION,
         "assetLayoutVersion": "gzip-base64-json-envelope-v2",
-        "generatedAt": GENERATED_AT,
+        "generatedAt": generated_at,
         "country": {"iso3": "VNM", "nameKo": "베트남", "nameEn": "Viet Nam"},
+        "provenance": {"sourceDeliveredAt": delivered_at_v162},
         "sourcePackage": SOURCE_PACKAGE_NAME,
         "sourcePackageSha256": analysis["sourceZip"]["sha256"].lower(),
         "workbookFiles": 149,
@@ -2838,6 +2986,7 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "enrichmentV153": enrichment.summary,
         "promotionBlockers": promotion_blockers,
         "promotionBlocked": bool(promotion_blockers),
+        "rowExclusions": row_exclusion_summary_v162,
         "derivationStatus": {
             value: sorted(
                 key for key, item in derivation_status_by_element.items() if item == value

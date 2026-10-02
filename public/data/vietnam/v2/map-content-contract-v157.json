@@ -1,7 +1,7 @@
 {
   "schemaVersion": "map-content-contract-v157",
   "countryIso3": "VNM",
-  "generatedAt": "2026-09-30T00:21:59.255Z",
+  "generatedAt": "2026-09-30T21:11:43.573Z",
   "generator": "scripts/v157/build-map-content-contract-v157.mjs",
   "source": {
     "selection": "docs/plan/map-selection-20260922.json",
@@ -32,8 +32,8 @@
       "criteriaProvisional": "③",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 365,
-        "observationRows": 1,
+        "entityRows": 0,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -44,7 +44,7 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 2,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -52,7 +52,7 @@
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 146,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
@@ -76,36 +76,11 @@
           "provenance.sourceOrg"
         ]
       },
-      "popupFields": [
-        {
-          "key": "name",
-          "label": "명칭",
-          "labelSource": "contract",
-          "source": "entity.name"
-        },
-        {
-          "key": "field_890a80ed",
-          "label": null,
-          "labelSource": "pending-publicFieldPolicyV126",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "typeOfInformation",
-          "label": null,
-          "labelSource": "pending-publicFieldPolicyV126",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
+      "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "region-text-generic",
-      "statusReason": "지역이 성·시 이름이 아니라 원문의 일반 지역어(coastal·delta 등)로만 등장 — 경계 지정 불가(임의 경계 생성 금지)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-012",
@@ -132,7 +107,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 54,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -140,8 +115,8 @@
         "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 3,
-        "observationProvinceCodeCount": 1,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
         "descriptiveAttributeCount": 0,
         "planAttributes": [],
@@ -162,11 +137,11 @@
       "boundaryPolicy": null,
       "publishedLayer": null,
       "sourceColumns": {
-        "region": "observations.indicatorId",
+        "region": null,
         "regionColumnKind": null,
-        "regionRows": 3,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "indicator-id-province-name",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": []
       },
@@ -188,121 +163,36 @@
       "elementId": "A-023",
       "targetName": "발전소",
       "pdfContent": "발전소 위치·발전원·설비용량",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 1963,
-        "observationRows": 1,
-        "coordinateRows": 1889,
-        "provinceRows": 1883,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "adm1Code34",
-          "rows": 1870,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "adm1Code34",
-            "rows": 1870,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Code63",
-            "rows": 1870,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Name34",
-            "rows": 1870,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Name63",
-            "rows": 1870,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 125,
-            "codeCount": 22,
-            "kind": "name"
-          },
-          {
-            "column": "note",
-            "rows": 105,
-            "codeCount": 28,
-            "kind": "name"
-          },
-          {
-            "column": "field_4cf75655",
-            "rows": 23,
-            "codeCount": 16,
-            "kind": "other"
-          },
-          {
-            "column": "operator",
-            "rows": 23,
-            "codeCount": 16,
-            "kind": "institution"
-          },
-          {
-            "column": "owner",
-            "rows": 21,
-            "codeCount": 9,
-            "kind": "other"
-          },
-          {
-            "column": "sourceUrl",
-            "rows": 11,
-            "codeCount": 8,
-            "kind": "url"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "operator",
-            "kind": "institution",
-            "rows": 23
-          },
-          {
-            "column": "sourceUrl",
-            "kind": "url",
-            "rows": 11
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 22,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 180,
-        "freeTextProvinceCodeCount": 28,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
-        "regionCodeColumns": [
-          "adm1Code63"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -321,13 +211,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "adm1Code34",
-        "regionColumnKind": "region",
-        "regionRows": 1870,
-        "regionCodeColumns": [
-          "adm1Code63"
-        ],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "name",
@@ -389,9 +277,7 @@
         }
       ],
       "regionPanelFields": [],
-      "caveats": [
-        "원자료 지역코드(adm1Code63)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
-      ],
+      "caveats": [],
       "status": "registered",
       "statusReason": null,
       "companionLayers": []
@@ -400,15 +286,13 @@
       "elementId": "A-024",
       "targetName": "송전망",
       "pdfContent": "송전구간 시점·전압·연장",
-      "criteria": [
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 722,
-        "observationRows": 1,
-        "coordinateRows": 606,
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
         "provinceColumn": null,
@@ -418,10 +302,8 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 3,
-        "planAttributes": [
-          "속성3_A_024_선로상태_기존_계획"
-        ],
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
         "freeTextFields": [],
@@ -432,8 +314,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "line",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -457,9 +339,7 @@
         "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": null,
-        "planText": [
-          "속성3_A_024_선로상태_기존_계획"
-        ],
+        "planText": [],
         "legacyFields": [
           "kv",
           "km",
@@ -514,15 +394,13 @@
       "elementId": "A-025",
       "targetName": "CCS 시설·사업 계획",
       "pdfContent": "사업의 소재지역·규모·상태",
-      "criteria": [
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 5,
-        "observationRows": 1,
-        "coordinateRows": 2,
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
         "provinceColumn": null,
@@ -532,7 +410,7 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 2,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -544,8 +422,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -618,7 +496,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 35,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -736,7 +614,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 19,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -861,7 +739,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 19,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -902,8 +780,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-003",
@@ -917,10 +795,7 @@
       "elementId": "B-003",
       "targetName": "연평균 기온·강수",
       "pdfContent": "성별 기온·강수량 및 연도별 변화",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -931,43 +806,19 @@
           "regionKeyCount": 0,
           "valueRows": 0
         },
-        "entityRows": 8371,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 7875,
-        "provinceRows": 7875,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 7875,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 7875,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 7750,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 7750,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 14,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -979,8 +830,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1000,8 +851,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 7875,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -1104,10 +955,7 @@
       "elementId": "B-004",
       "targetName": "미래기후 전망",
       "pdfContent": "성별 시나리오·기간별 기후 전망",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -1118,43 +966,19 @@
           "regionKeyCount": 0,
           "valueRows": 0
         },
-        "entityRows": 33232,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 31185,
-        "provinceRows": 31185,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 31185,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 31185,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 15,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -1166,8 +990,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1187,8 +1011,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 31185,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -1292,10 +1116,7 @@
       "elementId": "B-005",
       "targetName": "가뭄",
       "pdfContent": "성별 연속건조일수·가뭄지수",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -1306,43 +1127,19 @@
           "regionKeyCount": 0,
           "valueRows": 0
         },
-        "entityRows": 31688,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 31185,
-        "provinceRows": 31185,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 31185,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 31185,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 12,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -1354,8 +1151,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1375,8 +1172,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 31185,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -1477,10 +1274,7 @@
       "elementId": "B-006",
       "targetName": "폭염",
       "pdfContent": "성별 폭염일수·열대야 등 고온지표",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -1491,43 +1285,19 @@
           "regionKeyCount": 0,
           "valueRows": 0
         },
-        "entityRows": 32608,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 31185,
-        "provinceRows": 31185,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 31185,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 31185,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 16,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -1539,8 +1309,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1560,8 +1330,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 31185,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -1666,10 +1436,7 @@
       "elementId": "B-007",
       "targetName": "극한강수",
       "pdfContent": "성별 극한강수량·호우일수",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -1680,43 +1447,19 @@
           "regionKeyCount": 0,
           "valueRows": 0
         },
-        "entityRows": 32370,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 31185,
-        "provinceRows": 31185,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 31185,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 31185,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 30690,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 15,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -1728,8 +1471,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1749,8 +1492,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 31185,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -1854,50 +1597,23 @@
       "elementId": "B-008",
       "targetName": "해수면 상승 전망",
       "pdfContent": "관측소별 시나리오·기간별 전망",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 1575,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 1575,
-        "provinceRows": 1575,
-        "provinceCodeCount": 5,
-        "provinceColumn": {
-          "column": "소재",
-          "rows": 1575,
-          "codeCount": 5,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "소재",
-            "rows": 1575,
-            "codeCount": 5,
-            "kind": "region"
-          },
-          {
-            "column": "관측소명_PSMSL",
-            "rows": 315,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "관측소명_베트남어",
-            "rows": 315,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 12,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -1920,8 +1636,8 @@
           "boundaryPolicy": "native-34"
         }
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -1940,11 +1656,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "소재",
-        "regionColumnKind": "region",
-        "regionRows": 1575,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "PSMSL_관측소_ID",
@@ -2066,7 +1782,7 @@
           "valueRows": 252
         },
         "entityRows": 0,
-        "observationRows": 435,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -2074,8 +1790,8 @@
         "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 240,
-        "observationProvinceCodeCount": 34,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
         "descriptiveAttributeCount": 0,
         "planAttributes": [],
@@ -2111,7 +1827,7 @@
       "sourceColumns": {
         "region": "adm1Code",
         "regionColumnKind": null,
-        "regionRows": 240,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -2212,71 +1928,36 @@
       "elementId": "B-012",
       "targetName": "재해 이력",
       "pdfContent": "발생·피해지역별 재해유형·이력",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 275,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 263,
-        "provinceRows": 253,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "행정구역_GADM_매칭",
-          "rows": 236,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "행정구역_GADM_매칭",
-            "rows": 236,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "발생지역_원문",
-            "rows": 233,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "note",
-            "rows": 14,
-            "codeCount": 6,
-            "kind": "name"
-          },
-          {
-            "column": "좌표_산출근거",
-            "rows": 14,
-            "codeCount": 6,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 16,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 14,
-        "freeTextProvinceCodeCount": 6,
-        "freeTextFields": [
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 9,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -2295,11 +1976,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "행정구역_GADM_매칭",
-        "regionColumnKind": "region",
-        "regionRows": 236,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "EM_DAT_재해번호_DisNo",
@@ -2364,8 +2045,7 @@
       "targetName": "물 스트레스",
       "pdfContent": "유역·평가구역별 물부족 위험",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -2377,74 +2057,23 @@
           "regionKeyCount": 392,
           "valueRows": 3113
         },
-        "entityRows": 2032,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 443,
-        "provinceRows": 619,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 443,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 443,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 438,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 438,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 176,
-            "codeCount": 8,
-            "kind": "name"
-          },
-          {
-            "column": "note",
-            "rows": 176,
-            "codeCount": 8,
-            "kind": "name"
-          },
-          {
-            "column": "레코드_키_string_id",
-            "rows": 176,
-            "codeCount": 8,
-            "kind": "other"
-          },
-          {
-            "column": "전국_지표명",
-            "rows": 176,
-            "codeCount": 8,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 42,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 352,
-        "freeTextProvinceCodeCount": 8,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
@@ -2484,8 +2113,8 @@
       },
       "sourceColumns": {
         "region": "stringId",
-        "regionColumnKind": "region",
-        "regionRows": 443,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -2611,7 +2240,7 @@
           "valueRows": 21672
         },
         "entityRows": 0,
-        "observationRows": 2970,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -2754,53 +2383,36 @@
       "elementId": "B-023",
       "targetName": "건기·우기 유량",
       "pdfContent": "지점별 건기·우기 유량 차이",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 11,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 11,
-        "provinceRows": 5,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "위치_설명",
-          "rows": 5,
-          "codeCount": 1,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "위치_설명",
-            "rows": 5,
-            "codeCount": 1,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 11,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
         "freeTextFields": [],
         "regionCodeColumns": [],
-        "unitScopedRecords": 3,
-        "spatialUnitValues": [
-          "basin"
-        ],
-        "genericRegionRows": 7,
+        "unitScopedRecords": 0,
+        "spatialUnitValues": [],
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -2819,11 +2431,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "위치_설명",
-        "regionColumnKind": "region",
-        "regionRows": 5,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "지점_유역명",
@@ -2874,47 +2486,8 @@
           "source": "provenance"
         }
       ],
-      "regionPanelFields": [
-        {
-          "key": "지점_유역명",
-          "label": "단위(지점·유역)",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "지표명",
-          "label": "지표",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "값",
-          "label": "값",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "단위",
-          "label": "단위",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "기준연도",
-          "label": "시점",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
-      "caveats": [
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
-      ],
+      "regionPanelFields": [],
+      "caveats": [],
       "status": "registered",
       "statusReason": null,
       "companionLayers": []
@@ -2928,7 +2501,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 205,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -2969,8 +2542,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-017",
@@ -2984,71 +2557,36 @@
       "elementId": "B-025",
       "targetName": "유역면적",
       "pdfContent": "하천유역별 경계 식별·면적",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 9,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 8,
-        "provinceRows": 2,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 2,
-          "codeCount": 2,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "name"
-          },
-          {
-            "column": "유역명_국문",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          },
-          {
-            "column": "유역명_베트남어",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          },
-          {
-            "column": "유역명_영문",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 13,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 2,
-        "freeTextProvinceCodeCount": 2,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 2,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -3067,11 +2605,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "name",
-        "regionColumnKind": "name",
-        "regionRows": 2,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "유역명_국문·영문·베트남어",
@@ -3132,8 +2670,7 @@
       "targetName": "흐름방향",
       "pdfContent": "성별 우세유향·방위별 비율",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -3145,43 +2682,19 @@
           "regionKeyCount": 63,
           "valueRows": 63
         },
-        "entityRows": 74,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 20,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -3189,7 +2702,7 @@
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
@@ -3214,13 +2727,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "지역명_베트남어",
+          "지역명_현지어",
           "지역명_로마자",
           "우세_유향_비율",
           "우세_유향",
@@ -3317,73 +2830,36 @@
       "elementId": "B-028",
       "targetName": "하천유량",
       "pdfContent": "수문지점·유역별 유량",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 16,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 12,
-        "provinceRows": 6,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "위치_설명",
-          "rows": 4,
-          "codeCount": 1,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "위치_설명",
-            "rows": 4,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "지점_유역명",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "지표명",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 11,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 2,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
-        "unitScopedRecords": 6,
-        "spatialUnitValues": [
-          "basin"
-        ],
-        "genericRegionRows": 4,
-        "nationwideRows": 4,
+        "unitScopedRecords": 0,
+        "spatialUnitValues": [],
+        "genericRegionRows": 0,
+        "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "①",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -3402,11 +2878,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "위치_설명",
-        "regionColumnKind": "region",
-        "regionRows": 4,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "지점_유역명",
@@ -3444,42 +2920,10 @@
           "source": "map-index"
         },
         {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
-      "regionPanelFields": [
-        {
-          "key": "지점_유역명",
-          "label": "단위(지점·유역)",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "지표명",
-          "label": "지표",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "값",
-          "label": "값",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "단위",
-          "label": "단위",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "기준연도",
-          "label": "시점",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
+          "key": "valueNature",
+          "label": "값의 성격",
+          "labelSource": "map-index",
+          "source": "map-index"
         },
         {
           "key": "provenance.sourceOrg",
@@ -3488,10 +2932,8 @@
           "source": "provenance"
         }
       ],
-      "caveats": [
-        "전국 공통 4건은 지도에서 제외(표·목록에는 유지)",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
-      ],
+      "regionPanelFields": [],
+      "caveats": [],
       "status": "registered",
       "statusReason": null,
       "companionLayers": []
@@ -3501,8 +2943,7 @@
       "targetName": "산림유형(이탄지)",
       "pdfContent": "성별 이탄지 유형·면적",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -3514,43 +2955,19 @@
           "regionKeyCount": 63,
           "valueRows": 189
         },
-        "entityRows": 231,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 18,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -3583,8 +3000,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -3686,8 +3103,7 @@
       "targetName": "산림 증가",
       "pdfContent": "성별 기준기간 내 수관 증가면적",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -3699,43 +3115,19 @@
           "regionKeyCount": 63,
           "valueRows": 315
         },
-        "entityRows": 100,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 17,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -3768,8 +3160,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -3876,8 +3268,7 @@
       "targetName": "산림면적(수관면적)",
       "pdfContent": "성별 수관면적·연도별 변화",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -3889,43 +3280,19 @@
           "regionKeyCount": 63,
           "valueRows": 189
         },
-        "entityRows": 71,
-        "observationRows": 189,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 189,
-        "observationProvinceCodeCount": 34,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 16,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -3958,8 +3325,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -4061,8 +3428,7 @@
       "targetName": "수관피복률",
       "pdfContent": "성별 수관피복률",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -4072,45 +3438,21 @@
           "coverageKind": "full",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
           "regionKeyCount": 63,
-          "valueRows": 63
+          "valueRows": 126
         },
-        "entityRows": 68,
-        "observationRows": 63,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 63,
-        "observationProvinceCodeCount": 34,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 12,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -4143,8 +3485,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -4245,8 +3587,7 @@
       "targetName": "산림손실",
       "pdfContent": "성별 연간·누적 수관손실",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -4258,43 +3599,19 @@
           "regionKeyCount": 63,
           "valueRows": 1489
         },
-        "entityRows": 2056,
-        "observationRows": 1489,
-        "coordinateRows": 1489,
-        "provinceRows": 1489,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 1489,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 1489,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 1465,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 1465,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 1489,
-        "observationProvinceCodeCount": 34,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 12,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -4327,8 +3644,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 1489,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -4429,8 +3746,7 @@
       "targetName": "산림탄소",
       "pdfContent": "성별 탄소 저장·배출·흡수",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -4442,74 +3758,23 @@
           "regionKeyCount": 63,
           "valueRows": 315
         },
-        "entityRows": 246,
-        "observationRows": 362,
-        "coordinateRows": 63,
-        "provinceRows": 189,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "note",
-            "rows": 126,
-            "codeCount": 34,
-            "kind": "name"
-          },
-          {
-            "column": "구분",
-            "rows": 126,
-            "codeCount": 34,
-            "kind": "other"
-          },
-          {
-            "column": "name",
-            "rows": 110,
-            "codeCount": 33,
-            "kind": "name"
-          },
-          {
-            "column": "레코드_키",
-            "rows": 110,
-            "codeCount": 33,
-            "kind": "other"
-          },
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 315,
-        "observationProvinceCodeCount": 34,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 17,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 236,
-        "freeTextProvinceCodeCount": 34,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
@@ -4534,21 +3799,21 @@
         "coordinateMeaning": "source-region-value",
         "spatialScopeType": "admin1",
         "aggregationLevel": "admin1",
-        "unit": "Mg CO2e/yr"
+        "unit": "Mg CO2e"
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
           "지상부_탄소저장량_Mg_C",
           "지상부_탄소밀도_Mg_C_ha",
-          "산림탄소_총배출_Mg_CO2e_yr",
-          "산림탄소_총흡수_Mg_CO2_yr",
-          "산림탄소_순플럭스_Mg_CO2e_yr"
+          "산림탄소_총배출_Mg_CO2e",
+          "산림탄소_총흡수_Mg_CO2",
+          "산림탄소_순플럭스_Mg_CO2e"
         ]
       },
       "popupFields": [
@@ -4595,7 +3860,7 @@
           "label": "지표",
           "labelSource": "contract",
           "source": "map-index",
-          "note": "기본 선택: 산림탄소 순플럭스(연평균)"
+          "note": "기본 선택: 산림탄소 순플럭스(누계)"
         },
         {
           "key": "value",
@@ -4608,7 +3873,7 @@
           "label": "단위",
           "labelSource": "contract",
           "source": "map-index",
-          "note": "계약 단위: Mg CO2e/yr"
+          "note": "계약 단위: Mg CO2e"
         },
         {
           "key": "period",
@@ -4646,7 +3911,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 1764,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -4687,8 +3952,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-037",
@@ -4707,7 +3972,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 48,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -4748,8 +4013,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-037",
@@ -4764,8 +4029,7 @@
       "targetName": "토지피복 면적",
       "pdfContent": "성별 경작지·산림·수체 등 구성",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -4777,43 +4041,19 @@
           "regionKeyCount": 63,
           "valueRows": 567
         },
-        "entityRows": 747,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 23,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -4821,7 +4061,7 @@
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 8,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
@@ -4846,8 +4086,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -4956,8 +4196,7 @@
       "targetName": "수력 잠재량",
       "pdfContent": "성별 이론 수력 잠재량",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -4969,43 +4208,19 @@
           "regionKeyCount": 63,
           "valueRows": 189
         },
-        "entityRows": 228,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 19,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -5038,8 +4253,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -5144,8 +4359,7 @@
       "targetName": "지열 자원",
       "pdfContent": "성별 심도별 지온",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -5157,43 +4371,19 @@
           "regionKeyCount": 63,
           "valueRows": 315
         },
-        "entityRows": 165,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 25,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -5226,8 +4416,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -5332,8 +4522,7 @@
       "targetName": "태양광 자원",
       "pdfContent": "성별 일사량·태양광 자원",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -5345,43 +4534,19 @@
           "regionKeyCount": 63,
           "valueRows": 252
         },
-        "entityRows": 113,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 27,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -5414,8 +4579,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -5519,8 +4684,7 @@
       "targetName": "풍력 자원",
       "pdfContent": "성별 고도별 풍속·풍력밀도",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "①",
       "criteriaEvidence": {
@@ -5532,43 +4696,19 @@
           "regionKeyCount": 63,
           "valueRows": 315
         },
-        "entityRows": 205,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 63,
-        "provinceRows": 63,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "2025_개편_후_소속_34개_체계",
-          "rows": 63,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "2025_개편_후_소속_34개_체계",
-            "rows": 63,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_로마자",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "지역명_베트남어",
-            "rows": 62,
-            "codeCount": 34,
-            "kind": "region"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 20,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -5605,8 +4745,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 63,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -5715,7 +4855,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 26,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -5756,8 +4896,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-048",
@@ -5777,7 +4917,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 13,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -5818,8 +4958,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-048",
@@ -5839,7 +4979,7 @@
       "criteriaEvidence": {
         "spatialLayer": null,
         "entityRows": 0,
-        "observationRows": 21,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -5880,8 +5020,8 @@
       "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "national-only",
-      "statusReason": "원자료가 국가 단위 값만 제공 — 성·시 분해 없음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "B-048",
@@ -5896,65 +5036,36 @@
       "elementId": "B-048",
       "targetName": "주요 광산",
       "pdfContent": "광산 소재지역·광종",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 8,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 2,
-        "provinceRows": 8,
-        "provinceCodeCount": 5,
-        "provinceColumn": {
-          "column": "소재_행정구역_성",
-          "rows": 8,
-          "codeCount": 5,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "소재_행정구역_성",
-            "rows": 8,
-            "codeCount": 5,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "광산명",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 6,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 1,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 3,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -5973,11 +5084,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "소재_행정구역_성",
-        "regionColumnKind": "region",
-        "regionRows": 8,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "광산명",
@@ -6001,14 +5112,14 @@
           "source": "map-index"
         },
         {
-          "key": "regionName",
-          "label": "소재 성·시",
+          "key": "climateTechBasis",
+          "label": "기후기술 연계 근거",
           "labelSource": "map-index",
           "source": "map-index"
         },
         {
-          "key": "climateTechBasis",
-          "label": "기후기술 연계 근거",
+          "key": "siteNote",
+          "label": "특이사항",
           "labelSource": "map-index",
           "source": "map-index"
         },
@@ -6039,7 +5150,7 @@
       "criteriaProvisional": "③",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 96,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
@@ -6051,7 +5162,7 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 4,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -6059,13 +5170,9 @@
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 8,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
-        "emptyRegionFields": [
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code"
-        ]
+        "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
@@ -6089,48 +5196,11 @@
           "provenance.sourceOrg"
         ]
       },
-      "popupFields": [
-        {
-          "key": "name",
-          "label": "명칭",
-          "labelSource": "contract",
-          "source": "entity.name"
-        },
-        {
-          "key": "속성3_값",
-          "label": "값",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성4_시점",
-          "label": "시점",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성1_레코드명",
-          "label": "레코드명",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성19_원문URL",
-          "label": "원문",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
+      "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "C-016",
@@ -6148,7 +5218,7 @@
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 50,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
@@ -6160,7 +5230,7 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 4,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -6170,11 +5240,7 @@
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
-        "emptyRegionFields": [
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code"
-        ]
+        "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
@@ -6198,44 +5264,7 @@
           "provenance.sourceOrg"
         ]
       },
-      "popupFields": [
-        {
-          "key": "name",
-          "label": "명칭",
-          "labelSource": "contract",
-          "source": "entity.name"
-        },
-        {
-          "key": "속성3_값",
-          "label": "값",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성4_시점",
-          "label": "시점",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성1_레코드명",
-          "label": "레코드명",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성19_원문URL",
-          "label": "원문",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
+      "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
       "status": "data-pending",
@@ -6254,9 +5283,7 @@
       "targetName": "국제 이니셔티브",
       "pdfContent": "도시·성별 참여·공약 건수",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
@@ -6268,59 +5295,32 @@
           "regionKeyCount": 17,
           "valueRows": 17
         },
-        "entityRows": 235,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 14,
-        "provinceCodeCount": 8,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 14,
-          "codeCount": 8,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 14,
-            "codeCount": 8,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 14,
-            "codeCount": 8,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 14,
-        "descriptiveAttributeCount": 9,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 14,
-        "freeTextProvinceCodeCount": 8,
-        "freeTextFields": [
-          "name"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
-        "emptyRegionFields": [
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code"
-        ]
+        "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "③",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -6340,20 +5340,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 14,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "name",
-          "속성1_레코드명",
-          "속성3_값",
-          "속성4_시점",
-          "속성19_원문URL"
+          "name"
         ]
       },
       "popupFields": [
@@ -6448,9 +5441,7 @@
       "targetName": "PPP 사업",
       "pdfContent": "사업 소재지역·분야·투자액",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -6462,89 +5453,32 @@
           "regionKeyCount": 56,
           "valueRows": 56
         },
-        "entityRows": 120,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 29,
-        "provinceRows": 29,
-        "provinceCodeCount": 29,
-        "provinceColumn": {
-          "column": "속성21_지역_현행",
-          "rows": 29,
-          "codeCount": 29,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 29,
-            "codeCount": 29,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 29,
-            "codeCount": 29,
-            "kind": "other"
-          },
-          {
-            "column": "속성21_지역_현행",
-            "rows": 29,
-            "codeCount": 29,
-            "kind": "region"
-          },
-          {
-            "column": "속성20_지역_원문",
-            "rows": 27,
-            "codeCount": 28,
-            "kind": "region"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 14,
-            "codeCount": 12,
-            "kind": "region"
-          },
-          {
-            "column": "속성2_레코드ID",
-            "rows": 14,
-            "codeCount": 12,
-            "kind": "other"
-          },
-          {
-            "column": "note",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 29,
-        "descriptiveAttributeCount": 12,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 30,
-        "freeTextProvinceCodeCount": 29,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code",
-          "속성2_레코드ID"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -6564,23 +5498,17 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 29,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code",
-          "속성2_레코드ID"
-        ],
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성3_값(사업 수)",
-          "속성6_분류(분야별 건수)",
-          "속성7_상태",
-          "속성4_시점(기간)"
+          "D-025: 명칭",
+          "D-025: 위치·사업지_행정구역(사업 위치)",
+          "D-025: PPI_프로젝트키_중복_트랜치_합산용",
+          "D-025: Financial_Close",
+          "D-025: 상태"
         ]
       },
       "popupFields": [
@@ -6664,8 +5592,7 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기",
-        "원자료 지역코드(속성22_행정코드P_code, 속성2_레코드ID)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
       "statusReason": null,
@@ -6676,9 +5603,7 @@
       "targetName": "지역 투자 특례",
       "pdfContent": "적용지역·지원내용·조건",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
@@ -6690,107 +5615,32 @@
           "regionKeyCount": 14,
           "valueRows": 14
         },
-        "entityRows": 64,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 15,
-        "provinceRows": 30,
-        "provinceCodeCount": 8,
-        "provinceColumn": {
-          "column": "속성20_지역_원문",
-          "rows": 15,
-          "codeCount": 8,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 30,
-            "codeCount": 8,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 30,
-            "codeCount": 8,
-            "kind": "other"
-          },
-          {
-            "column": "속성20_지역_원문",
-            "rows": 15,
-            "codeCount": 8,
-            "kind": "region"
-          },
-          {
-            "column": "속성21_지역_현행",
-            "rows": 15,
-            "codeCount": 8,
-            "kind": "region"
-          },
-          {
-            "column": "속성23_설명",
-            "rows": 15,
-            "codeCount": 8,
-            "kind": "other"
-          },
-          {
-            "column": "속성19_원문URL",
-            "rows": 9,
-            "codeCount": 4,
-            "kind": "url"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "region"
-          },
-          {
-            "column": "속성2_레코드ID",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "other"
-          },
-          {
-            "column": "note",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "name"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "속성19_원문URL",
-            "kind": "url",
-            "rows": 9
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 15,
-        "descriptiveAttributeCount": 10,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 36,
-        "freeTextProvinceCodeCount": 8,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code",
-          "속성2_레코드ID"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "③",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -6810,22 +5660,16 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 15,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code",
-          "속성2_레코드ID"
-        ],
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성6_분류",
-          "속성3_값(근거 결의)",
-          "속성19_원문URL"
+          "지역_지역명_현행",
+          "식별_레코드명",
+          "인센티브_인센티브_유형",
+          "출처_원문_URL"
         ]
       },
       "popupFields": [
@@ -6909,8 +5753,7 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기",
-        "원자료 지역코드(속성22_행정코드P_code, 속성2_레코드ID)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
       "statusReason": null,
@@ -6921,9 +5764,7 @@
       "targetName": "재생에너지 지역계획",
       "pdfContent": "성별 전원·기간별 확대용량",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
@@ -6935,75 +5776,32 @@
           "regionKeyCount": 63,
           "valueRows": 639
         },
-        "entityRows": 817,
-        "observationRows": 639,
-        "coordinateRows": 673,
-        "provinceRows": 673,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "속성20_지역_원문",
-          "rows": 673,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "속성20_지역_원문",
-            "rows": 673,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "속성21_지역_현행",
-            "rows": 673,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "속성23_설명",
-            "rows": 673,
-            "codeCount": 34,
-            "kind": "other"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 347,
-            "codeCount": 15,
-            "kind": "region"
-          },
-          {
-            "column": "note",
-            "rows": 10,
-            "codeCount": 1,
-            "kind": "name"
-          }
-        ],
+        "entityRows": 0,
+        "observationRows": 0,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 639,
-        "observationProvinceCodeCount": 34,
-        "regionScopedTextRows": 673,
-        "descriptiveAttributeCount": 9,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 10,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "note"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
         "genericRegionRows": 0,
-        "nationwideRows": 144,
+        "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "③",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -7023,16 +5821,11 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 673,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
           "기술별 계획용량(성·시)",
           "기간"
@@ -7119,9 +5912,7 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "전국 공통 144건은 지도에서 제외(표·목록에는 유지)",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기",
-        "원자료 지역코드(속성22_행정코드P_code)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
       "statusReason": null,
@@ -7135,7 +5926,7 @@
       "criteriaProvisional": "③",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 52,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
@@ -7147,11 +5938,8 @@
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 6,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
         "freeTextFields": [],
@@ -7160,11 +5948,7 @@
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
-        "emptyRegionFields": [
-          "속성20_지역_원문",
-          "속성21_지역_현행",
-          "속성22_행정코드P_code"
-        ]
+        "emptyRegionFields": []
       },
       "criteriaAgreesWithPdf": false,
       "criteriaPrimary": null,
@@ -7178,10 +5962,7 @@
         "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": null,
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
           "name",
           "속성3_값",
@@ -7191,48 +5972,11 @@
           "provenance.sourceOrg"
         ]
       },
-      "popupFields": [
-        {
-          "key": "name",
-          "label": "명칭",
-          "labelSource": "contract",
-          "source": "entity.name"
-        },
-        {
-          "key": "속성3_값",
-          "label": "값",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성4_시점",
-          "label": "시점",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성23_설명",
-          "label": "설명",
-          "labelSource": "column-name-without-ordinal",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "속성19_원문URL",
-          "label": "원문",
-          "labelSource": "contract",
-          "source": "normalizedAttributes"
-        },
-        {
-          "key": "provenance.sourceOrg",
-          "label": "출처",
-          "labelSource": "contract",
-          "source": "provenance"
-        }
-      ],
+      "popupFields": [],
       "regionPanelFields": [],
       "caveats": [],
-      "status": "region-fields-empty",
-      "statusReason": "지역 열은 있으나 값이 전무 — 지역 열 3개가 모두 비어 있음(제공자 재납품 필요)",
+      "status": "asset-missing",
+      "statusReason": "지역 키·좌표·지명 중 어느 것도 원자료에서 확인되지 않음",
       "companionLayers": [
         {
           "elementId": "C-016",
@@ -7247,9 +5991,7 @@
       "targetName": "탄소시장 대상시설",
       "pdfContent": "성별 대상시설 수·업종(시행예정)",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
@@ -7261,81 +6003,32 @@
           "regionKeyCount": 63,
           "valueRows": 252
         },
-        "entityRows": 98,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 34,
-        "provinceRows": 34,
-        "provinceCodeCount": 34,
-        "provinceColumn": {
-          "column": "속성20_지역_원문",
-          "rows": 34,
-          "codeCount": 34,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 34,
-            "codeCount": 34,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 34,
-            "codeCount": 34,
-            "kind": "other"
-          },
-          {
-            "column": "속성20_지역_원문",
-            "rows": 34,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "속성21_지역_현행",
-            "rows": 34,
-            "codeCount": 34,
-            "kind": "region"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 18,
-            "codeCount": 15,
-            "kind": "region"
-          },
-          {
-            "column": "속성2_레코드ID",
-            "rows": 18,
-            "codeCount": 15,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 34,
-        "descriptiveAttributeCount": 11,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 34,
-        "freeTextProvinceCodeCount": 34,
-        "freeTextFields": [
-          "name"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "③",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -7355,20 +6048,17 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 34,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "속성21_지역_현행",
-          "속성6_분류(업종별 시설 수)",
-          "속성4_시점"
+          "지역_지역명_현행",
+          "인벤토리_부속서_II_산업무역부_소관_개",
+          "인벤토리_부속서_III_A_건설부_소관_교통_개",
+          "인벤토리_부속서_III_B_건설부_소관_건설_개",
+          "인벤토리_부속서_IV_농업환경부_소관_개"
         ]
       },
       "popupFields": [
@@ -7451,8 +6141,7 @@
         }
       ],
       "caveats": [
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기",
-        "원자료 지역코드(속성22_행정코드P_code)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
       "statusReason": null,
@@ -7463,9 +6152,7 @@
       "targetName": "REDD+ 사업",
       "pdfContent": "참여지역·산림보전·감축사업",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -7477,80 +6164,32 @@
           "regionKeyCount": 6,
           "valueRows": 6
         },
-        "entityRows": 20,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 6,
-        "provinceRows": 6,
-        "provinceCodeCount": 5,
-        "provinceColumn": {
-          "column": "속성20_지역_원문",
-          "rows": 6,
-          "codeCount": 5,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "other"
-          },
-          {
-            "column": "속성20_지역_원문",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "region"
-          },
-          {
-            "column": "속성21_지역_현행",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "region"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "region"
-          },
-          {
-            "column": "속성2_레코드ID",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 6,
-        "descriptiveAttributeCount": 10,
-        "planAttributes": [
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 6,
-        "freeTextProvinceCodeCount": 5,
-        "freeTextFields": [
-          "name"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
         "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -7570,20 +6209,16 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 6,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "속성6_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "속성1_레코드명",
-          "속성20_지역_원문",
-          "속성6_분류",
-          "속성4_시점"
+          "식별_레코드명",
+          "지역_지역명_개편_전",
+          "RBP_기금_프로그램",
+          "RBP_계약_승인일_YYYY_MM_DD"
         ]
       },
       "popupFields": [
@@ -7667,8 +6302,7 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기",
-        "원자료 지역코드(속성22_행정코드P_code)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
+        "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
       "statusReason": null,
@@ -7678,89 +6312,36 @@
       "elementId": "C-025",
       "targetName": "탄소크레딧 사업",
       "pdfContent": "사업지역·유형·발행·소각 실적",
-      "criteria": [
-        "①",
-        "②",
-        "③"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 388,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 262,
-        "provinceRows": 268,
-        "provinceCodeCount": 31,
-        "provinceColumn": {
-          "column": "속성21_지역_현행",
-          "rows": 262,
-          "codeCount": 31,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "속성21_지역_현행",
-            "rows": 262,
-            "codeCount": 31,
-            "kind": "region"
-          },
-          {
-            "column": "속성22_행정코드P_code",
-            "rows": 139,
-            "codeCount": 12,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 58,
-            "codeCount": 20,
-            "kind": "name"
-          },
-          {
-            "column": "속성1_레코드명",
-            "rows": 58,
-            "codeCount": 20,
-            "kind": "other"
-          },
-          {
-            "column": "속성20_지역_원문",
-            "rows": 36,
-            "codeCount": 15,
-            "kind": "region"
-          },
-          {
-            "column": "proponent",
-            "rows": 5,
-            "codeCount": 5,
-            "kind": "other"
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 267,
-        "descriptiveAttributeCount": 22,
-        "planAttributes": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
-        "freeTextProvinceRows": 58,
-        "freeTextProvinceCodeCount": 20,
-        "freeTextFields": [
-          "name"
-        ],
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
+        "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 2,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -7779,17 +6360,12 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "속성21_지역_현행",
-        "regionColumnKind": "region",
-        "regionRows": 262,
-        "regionCodeColumns": [
-          "속성22_행정코드P_code"
-        ],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
-        "planText": [
-          "속성23_설명",
-          "속성6_분류"
-        ],
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
+        "regionCodeColumns": [],
+        "regionJoinMethod": null,
+        "planText": [],
         "legacyFields": [
           "속성1_레코드명",
           "속성6_분류",
@@ -7808,14 +6384,20 @@
           "source": "map-index"
         },
         {
+          "key": "standard",
+          "label": "등록표준",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
           "key": "technologyField",
           "label": "기술분야",
           "labelSource": "map-index",
           "source": "map-index"
         },
         {
-          "key": "creditingPeriod",
-          "label": "크레딧 기간",
+          "key": "status",
+          "label": "상태",
           "labelSource": "map-index",
           "source": "map-index"
         },
@@ -7826,8 +6408,26 @@
           "source": "map-index"
         },
         {
+          "key": "proponent",
+          "label": "사업자·기관",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "methodology",
+          "label": "방법론",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
           "key": "annualReduction",
           "label": "연간 예상감축량",
+          "labelSource": "map-index",
+          "source": "map-index"
+        },
+        {
+          "key": "recordCode",
+          "label": "원천 식별번호",
           "labelSource": "map-index",
           "source": "map-index"
         },
@@ -7845,9 +6445,7 @@
         }
       ],
       "regionPanelFields": [],
-      "caveats": [
-        "원자료 지역코드(속성22_행정코드P_code)는 GSO 번호 체계로, 경계 자산의 ISO 코드와 직접 대조하지 않고 지명 별칭표로 조인"
-      ],
+      "caveats": [],
       "status": "registered",
       "statusReason": null,
       "companionLayers": []
@@ -7870,7 +6468,7 @@
           "valueRows": 3
         },
         "entityRows": 0,
-        "observationRows": 15,
+        "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
         "provinceCodeCount": 0,
@@ -7878,8 +6476,8 @@
         "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
-        "observationProvinceRows": 3,
-        "observationProvinceCodeCount": 3,
+        "observationProvinceRows": 0,
+        "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
         "descriptiveAttributeCount": 0,
         "planAttributes": [],
@@ -7915,7 +6513,7 @@
       "sourceColumns": {
         "region": "adm1Code",
         "regionColumnKind": null,
-        "regionRows": 3,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -8015,8 +6613,7 @@
       "targetName": "외국기업 진출",
       "pdfContent": "사업지역·분야·진출형태",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -8025,52 +6622,26 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 22,
-          "valueRows": 22
+          "regionKeyCount": 62,
+          "valueRows": 62
         },
-        "entityRows": 22,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 11,
-        "provinceCodeCount": 7,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 7,
-          "codeCount": 7,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 7,
-            "codeCount": 7,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 7,
-            "codeCount": 7,
-            "kind": "other"
-          },
-          {
-            "column": "비고",
-            "rows": 5,
-            "codeCount": 4,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 15,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 7,
-        "freeTextProvinceCodeCount": 7,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
@@ -8078,8 +6649,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -8099,16 +6670,14 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 7,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
           "name",
-          "비고",
-          "명칭",
-          "대표금액"
+          "비고"
         ]
       },
       "popupFields": [
@@ -8203,8 +6772,7 @@
       "targetName": "EDCF 사업",
       "pdfContent": "사업지역·분야·차관정보",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -8213,55 +6781,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 26,
-          "valueRows": 26
+          "regionKeyCount": 31,
+          "valueRows": 31
         },
-        "entityRows": 164,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 43,
-        "provinceCodeCount": 12,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 43,
-          "codeCount": 12,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 43,
-            "codeCount": 12,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 43,
-            "codeCount": 12,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 22,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 43,
-        "freeTextProvinceCodeCount": 12,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 5,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -8281,17 +6829,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 43,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "약정액_합계",
-          "보고연도",
-          "상태"
+          "name"
         ]
       },
       "popupFields": [
@@ -8386,8 +6930,7 @@
       "targetName": "한국 ODA 사업",
       "pdfContent": "사업지역·내용·재원",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -8396,55 +6939,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 45,
-          "valueRows": 45
+          "regionKeyCount": 52,
+          "valueRows": 52
         },
-        "entityRows": 650,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 103,
-        "provinceCodeCount": 23,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 103,
-          "codeCount": 23,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 103,
-            "codeCount": 23,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 103,
-            "codeCount": 23,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 18,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 103,
-        "freeTextProvinceCodeCount": 23,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 49,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -8464,17 +6987,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 103,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "약정액_합계",
-          "보고연도",
-          "상태"
+          "name"
         ]
       },
       "popupFields": [
@@ -8569,8 +7088,7 @@
       "targetName": "부처·지자체 ODA",
       "pdfContent": "사업지역·분야·지원내용",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -8579,55 +7097,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 14,
-          "valueRows": 14
+          "regionKeyCount": 25,
+          "valueRows": 25
         },
-        "entityRows": 232,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 14,
-        "provinceCodeCount": 8,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 14,
-          "codeCount": 8,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 14,
-            "codeCount": 8,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 14,
-            "codeCount": 8,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 19,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 14,
-        "freeTextProvinceCodeCount": 8,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 33,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -8647,17 +7145,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 14,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "약정액_합계",
-          "보고연도",
-          "상태"
+          "name"
         ]
       },
       "popupFields": [
@@ -8752,9 +7246,7 @@
       "targetName": "사업 입찰·공모",
       "pdfContent": "대상지역·사업내용·기간",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "③",
       "criteriaEvidence": {
@@ -8763,57 +7255,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 4,
-          "valueRows": 4
+          "regionKeyCount": 38,
+          "valueRows": 38
         },
-        "entityRows": 10,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 4,
-        "provinceCodeCount": 3,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 4,
-          "codeCount": 3,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 4,
-        "descriptiveAttributeCount": 17,
-        "planAttributes": [
-          "수행기관_자격요건"
-        ],
-        "freeTextProvinceRows": 4,
-        "freeTextProvinceCodeCount": 3,
-        "freeTextFields": [
-          "name"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "③",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -8833,19 +7303,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 4,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "수행기관_자격요건"
-        ],
+        "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "예산",
-          "공고일",
-          "상태"
+          "name"
         ]
       },
       "popupFields": [
@@ -8939,38 +7403,23 @@
       "elementId": "D-018",
       "targetName": "적응기금 사업",
       "pdfContent": "확인된 활동지역·지원내용",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 4,
-        "observationRows": 4,
+        "entityRows": 0,
+        "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 2,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "참고",
-          "rows": 2,
-          "codeCount": 2,
-          "kind": "other"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "참고",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 21,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -8978,12 +7427,12 @@
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "regional-scope",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -9002,11 +7451,11 @@
         "unit": "사업 범위·세부 활동지역"
       },
       "sourceColumns": {
-        "region": "참고",
-        "regionColumnKind": "other",
-        "regionRows": 2,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "명칭",
@@ -9131,9 +7580,7 @@
       "targetName": "기술지원 사업",
       "pdfContent": "활동지역·기술지원 내용",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -9145,73 +7592,32 @@
           "regionKeyCount": 2,
           "valueRows": 2
         },
-        "entityRows": 10,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 2,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 1,
-          "codeCount": 1,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "상세",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "TA_수행내용_결과_요약",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "institution"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "TA_수행내용_결과_요약",
-            "kind": "institution",
-            "rows": 1
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 2,
-        "descriptiveAttributeCount": 18,
-        "planAttributes": [
-          "TA_수행내용_결과_요약",
-          "지원단계"
-        ],
-        "freeTextProvinceRows": 1,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "name"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 2,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -9231,20 +7637,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 1,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "TA_수행내용_결과_요약",
-          "지원단계"
-        ],
+        "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "예산",
-          "기간",
-          "지원단계"
+          "name"
         ]
       },
       "popupFields": [
@@ -9339,8 +7738,7 @@
       "targetName": "GCF 사업",
       "pdfContent": "사업지역·내용·기금정보",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -9352,64 +7750,32 @@
           "regionKeyCount": 11,
           "valueRows": 11
         },
-        "entityRows": 9,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 2,
-        "provinceCodeCount": 7,
-        "provinceColumn": {
-          "column": "대상지역",
-          "rows": 2,
-          "codeCount": 7,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "대상지역",
-            "rows": 2,
-            "codeCount": 7,
-            "kind": "region"
-          },
-          {
-            "column": "비고",
-            "rows": 1,
-            "codeCount": 6,
-            "kind": "other"
-          },
-          {
-            "column": "name",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 26,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 1,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 4,
-        "nationwideRows": 1,
+        "genericRegionRows": 0,
+        "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -9429,17 +7795,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 2,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "대상지역",
-          "명칭",
-          "대표금액",
-          "사업기간",
-          "상태"
+          "대상지역"
         ]
       },
       "popupFields": [
@@ -9523,7 +7885,6 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "전국 공통 1건은 지도에서 제외(표·목록에는 유지)",
         "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
@@ -9535,9 +7896,7 @@
       "targetName": "국제기구·MDB 사업",
       "pdfContent": "사업지역·분야·재원",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -9546,69 +7905,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 53,
-          "valueRows": 53
+          "regionKeyCount": 49,
+          "valueRows": 49
         },
-        "entityRows": 640,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 151,
-        "provinceCodeCount": 27,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 71,
-          "codeCount": 27,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "실행기관",
-            "rows": 105,
-            "codeCount": 27,
-            "kind": "institution"
-          },
-          {
-            "column": "name",
-            "rows": 71,
-            "codeCount": 27,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 71,
-            "codeCount": 27,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "실행기관",
-            "kind": "institution",
-            "rows": 105
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 2,
-        "descriptiveAttributeCount": 20,
-        "planAttributes": [
-          "WB_섹터_World_Bank_자체_분류"
-        ],
-        "freeTextProvinceRows": 71,
-        "freeTextProvinceCodeCount": 27,
-        "freeTextFields": [
-          "name"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 101,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -9628,18 +7953,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 71,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "WB_섹터_World_Bank_자체_분류"
-        ],
+        "planText": [],
         "legacyFields": [
-          "name",
-          "명칭",
-          "대표금액",
-          "사업기간"
+          "name"
         ]
       },
       "popupFields": [
@@ -9734,8 +8054,7 @@
       "targetName": "MDB·DFI 금융",
       "pdfContent": "사업지역·금융형태·규모",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -9747,70 +8066,27 @@
           "regionKeyCount": 12,
           "valueRows": 24
         },
-        "entityRows": 15,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 4,
-        "provinceCodeCount": 3,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 3,
-          "codeCount": 3,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "실행기관",
-            "rows": 4,
-            "codeCount": 4,
-            "kind": "institution"
-          },
-          {
-            "column": "name",
-            "rows": 3,
-            "codeCount": 3,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 3,
-            "codeCount": 3,
-            "kind": "other"
-          },
-          {
-            "column": "실행기관_2",
-            "rows": 3,
-            "codeCount": 3,
-            "kind": "institution"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "실행기관",
-            "kind": "institution",
-            "rows": 4
-          },
-          {
-            "column": "실행기관_2",
-            "kind": "institution",
-            "rows": 3
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 28,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 3,
-        "freeTextProvinceCodeCount": 3,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": [],
         "pendingLayer": {
@@ -9826,8 +8102,8 @@
           "boundaryPolicy": "native-34"
         }
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "admin1-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -9847,8 +8123,8 @@
       },
       "sourceColumns": {
         "region": "adm1Code34",
-        "regionColumnKind": "name",
-        "regionRows": 3,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
@@ -9951,8 +8227,7 @@
       "targetName": "기후기금 사업",
       "pdfContent": "사업지역·재원·기금유형",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -9961,67 +8236,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 15,
-          "valueRows": 15
+          "regionKeyCount": 18,
+          "valueRows": 18
         },
-        "entityRows": 73,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 5,
-        "provinceCodeCount": 7,
-        "provinceColumn": {
-          "column": "대상지역",
-          "rows": 2,
-          "codeCount": 7,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "name"
-          },
-          {
-            "column": "명칭",
-            "rows": 4,
-            "codeCount": 3,
-            "kind": "other"
-          },
-          {
-            "column": "비고",
-            "rows": 2,
-            "codeCount": 7,
-            "kind": "other"
-          },
-          {
-            "column": "대상지역",
-            "rows": 2,
-            "codeCount": 7,
-            "kind": "region"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 53,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 4,
-        "freeTextProvinceCodeCount": 3,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 13,
-        "nationwideRows": 1,
+        "genericRegionRows": 0,
+        "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -10041,18 +8284,14 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 2,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
           "대상지역",
-          "name",
-          "명칭",
-          "대표금액",
-          "사업기간",
-          "상태"
+          "name"
         ]
       },
       "popupFields": [
@@ -10136,7 +8375,6 @@
       ],
       "caveats": [
         "일부 지역만 값이 있어 부분 표출",
-        "전국 공통 1건은 지도에서 제외(표·목록에는 유지)",
         "좌표는 지역 대표점이므로 실제 시설·경로 위치와 구분해 표기"
       ],
       "status": "registered",
@@ -10148,9 +8386,7 @@
       "targetName": "민간 인프라 사업",
       "pdfContent": "사업지역·분야·투자액",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -10159,94 +8395,35 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 54,
-          "valueRows": 54
+          "regionKeyCount": 56,
+          "valueRows": 56
         },
-        "entityRows": 132,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 118,
-        "provinceCodeCount": 28,
-        "provinceColumn": {
-          "column": "위치",
-          "rows": 113,
-          "codeCount": 28,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "위치",
-            "rows": 113,
-            "codeCount": 28,
-            "kind": "region"
-          },
-          {
-            "column": "name",
-            "rows": 26,
-            "codeCount": 15,
-            "kind": "name"
-          },
-          {
-            "column": "PPI_레코드키_행_유일키",
-            "rows": 26,
-            "codeCount": 15,
-            "kind": "other"
-          },
-          {
-            "column": "PPI_프로젝트",
-            "rows": 26,
-            "codeCount": 15,
-            "kind": "other"
-          },
-          {
-            "column": "PPI_프로젝트키_중복_트랜치_합산용",
-            "rows": 26,
-            "codeCount": 15,
-            "kind": "other"
-          },
-          {
-            "column": "명칭",
-            "rows": 26,
-            "codeCount": 15,
-            "kind": "other"
-          },
-          {
-            "column": "스폰서",
-            "rows": 8,
-            "codeCount": 5,
-            "kind": "other"
-          },
-          {
-            "column": "참여_은행",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 24,
-        "descriptiveAttributeCount": 25,
-        "planAttributes": [
-          "다자기구_지원",
-          "양자기구_지원"
-        ],
-        "freeTextProvinceRows": 26,
-        "freeTextProvinceCodeCount": 15,
-        "freeTextFields": [
-          "name"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 4,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -10266,22 +8443,15 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 113,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "다자기구_지원",
-          "양자기구_지원"
-        ],
+        "planText": [],
         "legacyFields": [
           "위치",
           "name",
-          "스폰서",
-          "명칭",
-          "민간_투자액_자체_산출",
-          "Financial_Close",
-          "상태"
+          "스폰서"
         ]
       },
       "popupFields": [
@@ -10376,8 +8546,7 @@
       "targetName": "보증 지원사업",
       "pdfContent": "대상지역·사업규모·보증유형",
       "criteria": [
-        "①",
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -10386,64 +8555,26 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 8,
-          "valueRows": 8
+          "regionKeyCount": 3,
+          "valueRows": 3
         },
-        "entityRows": 14,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 2,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "name",
-          "rows": 1,
-          "codeCount": 2,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "name",
-            "rows": 1,
-            "codeCount": 2,
-            "kind": "name"
-          },
-          {
-            "column": "링크",
-            "rows": 1,
-            "codeCount": 2,
-            "kind": "url"
-          },
-          {
-            "column": "명칭",
-            "rows": 1,
-            "codeCount": 2,
-            "kind": "other"
-          },
-          {
-            "column": "비고",
-            "rows": 1,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "링크",
-            "kind": "url",
-            "rows": 1
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 24,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 1,
-        "freeTextProvinceCodeCount": 2,
-        "freeTextFields": [
-          "name"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
@@ -10451,8 +8582,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -10472,19 +8603,14 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 1,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
           "name",
-          "비고",
-          "명칭",
-          "대표금액",
-          "보증_기간",
-          "상태",
-          "링크"
+          "비고"
         ]
       },
       "popupFields": [
@@ -10578,9 +8704,7 @@
       "elementId": "E-001",
       "targetName": "CTCN 참여기관",
       "pdfContent": "기관 소재지역·역할·전문분야",
-      "criteria": [
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": {
@@ -10591,58 +8715,32 @@
           "regionKeyCount": 1,
           "valueRows": 1
         },
-        "entityRows": 18,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
         "provinceRows": 0,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "note",
-          "rows": 6,
-          "codeCount": 1,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "note",
-            "rows": 6,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "recordSourceUrl",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "url"
-          }
-        ],
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
-        "rejectedRegionColumns": [
-          {
-            "column": "recordSourceUrl",
-            "kind": "url",
-            "rows": 1
-          }
-        ],
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 9,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 6,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -10662,14 +8760,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "name",
-        "regionRows": 6,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "note",
-          "recordSourceUrl"
+          "note"
         ]
       },
       "popupFields": [
@@ -10764,7 +8861,7 @@
       "targetName": "DNA 협력창구",
       "pdfContent": "창구 위치·승인업무",
       "criteria": [
-        "②"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -10773,34 +8870,22 @@
           "boundarySystem": "pre-2025-63",
           "coverageKind": "partial",
           "geometryUrl": "/data/vietnam/v2/geometry/vnm-adm1-63.geojson",
-          "regionKeyCount": 1,
-          "valueRows": 1
+          "regionKeyCount": 32,
+          "valueRows": 32
         },
-        "entityRows": 1,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 1,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "officeAddress",
-          "rows": 1,
-          "codeCount": 1,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "officeAddress",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "region"
-          }
-        ],
-        "recordsAreOrganisations": true,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 16,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -10812,8 +8897,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -10833,15 +8918,13 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "region",
-        "regionRows": 1,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
         "planText": [],
         "legacyFields": [
-          "officeAddress",
-          "a64Status",
-          "recordSourceUrl"
+          "officeAddress"
         ]
       },
       "popupFields": [
@@ -10935,89 +9018,36 @@
       "elementId": "E-004",
       "targetName": "국제기구 사무소",
       "pdfContent": "현지 사무소 위치·협력분야",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 19,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 17,
-        "provinceRows": 17,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "city",
-          "rows": 17,
-          "codeCount": 2,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "city",
-            "rows": 17,
-            "codeCount": 2,
-            "kind": "region"
-          },
-          {
-            "column": "officeAddress",
-            "rows": 16,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "officeProgram",
-            "rows": 4,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "email",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "other"
-          },
-          {
-            "column": "recordSourceUrl",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "url"
-          },
-          {
-            "column": "note",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          }
-        ],
-        "recordsAreOrganisations": true,
-        "rejectedRegionColumns": [
-          {
-            "column": "recordSourceUrl",
-            "kind": "url",
-            "rows": 2
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 16,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 1,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 2,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11036,11 +9066,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "city",
-        "regionColumnKind": "region",
-        "regionRows": 17,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "orgName",
@@ -11100,78 +9130,36 @@
       "elementId": "E-005",
       "targetName": "대학·연구기관·NGO",
       "pdfContent": "소재지역·전문분야·수행역량",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 20,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 20,
-        "provinceRows": 20,
-        "provinceCodeCount": 4,
-        "provinceColumn": {
-          "column": "city",
-          "rows": 20,
-          "codeCount": 4,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "city",
-            "rows": 20,
-            "codeCount": 4,
-            "kind": "region"
-          },
-          {
-            "column": "note",
-            "rows": 4,
-            "codeCount": 6,
-            "kind": "name"
-          },
-          {
-            "column": "name",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "orgName",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "institution"
-          },
-          {
-            "column": "capability",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "other"
-          }
-        ],
-        "recordsAreOrganisations": true,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 10,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 5,
-        "freeTextProvinceCodeCount": 6,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 2,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11190,11 +9178,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "city",
-        "regionColumnKind": "region",
-        "regionRows": 20,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "orgName",
@@ -11255,67 +9243,23 @@
       "elementId": "E-006",
       "targetName": "현지 투자자 네트워크",
       "pdfContent": "베트남 내 거점·투자분야",
-      "criteria": [
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 15,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 8,
-        "provinceRows": 8,
-        "provinceCodeCount": 1,
-        "provinceColumn": {
-          "column": "adm1Code34",
-          "rows": 8,
-          "codeCount": 1,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "adm1Code34",
-            "rows": 8,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Code63",
-            "rows": 8,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Name34",
-            "rows": 8,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "adm1Name63",
-            "rows": 8,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "city",
-            "rows": 8,
-            "codeCount": 2,
-            "kind": "region"
-          },
-          {
-            "column": "field_529ec9f4",
-            "rows": 3,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
-        "recordsAreOrganisations": true,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 27,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
@@ -11327,8 +9271,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11347,11 +9291,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "adm1Code34",
-        "regionColumnKind": "region",
-        "regionRows": 8,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "orgName",
@@ -11411,56 +9355,27 @@
       "elementId": "E-018",
       "targetName": "한국 기업 진출",
       "pdfContent": "사업지역·기술분야·진출상태",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 24,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 15,
-        "provinceRows": 7,
-        "provinceCodeCount": 5,
-        "provinceColumn": {
-          "column": "note",
-          "rows": 6,
-          "codeCount": 5,
-          "kind": "name"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "note",
-            "rows": 6,
-            "codeCount": 5,
-            "kind": "name"
-          },
-          {
-            "column": "contact",
-            "rows": 5,
-            "codeCount": 2,
-            "kind": "other"
-          },
-          {
-            "column": "field_aea118f0",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
-        "recordsAreOrganisations": true,
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 8,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 6,
-        "freeTextProvinceCodeCount": 5,
-        "freeTextFields": [
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
@@ -11468,8 +9383,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11488,11 +9403,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "note",
-        "regionColumnKind": "name",
-        "regionRows": 6,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "companyName",
@@ -11552,90 +9467,36 @@
       "elementId": "E-019",
       "targetName": "한국 기관 사무소",
       "pdfContent": "현지 사무소 위치·지원업무",
-      "criteria": [
-        "①",
-        "②"
-      ],
+      "criteria": [],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
         "spatialLayer": null,
-        "entityRows": 9,
+        "entityRows": 0,
         "observationRows": 0,
-        "coordinateRows": 6,
-        "provinceRows": 6,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "city",
-          "rows": 6,
-          "codeCount": 2,
-          "kind": "region"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "city",
-            "rows": 6,
-            "codeCount": 2,
-            "kind": "region"
-          },
-          {
-            "column": "address",
-            "rows": 3,
-            "codeCount": 1,
-            "kind": "region"
-          },
-          {
-            "column": "sourceUrl",
-            "rows": 3,
-            "codeCount": 2,
-            "kind": "url"
-          },
-          {
-            "column": "name",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "name"
-          },
-          {
-            "column": "organizationName",
-            "rows": 2,
-            "codeCount": 1,
-            "kind": "institution"
-          },
-          {
-            "column": "note",
-            "rows": 1,
-            "codeCount": 1,
-            "kind": "name"
-          }
-        ],
-        "recordsAreOrganisations": true,
-        "rejectedRegionColumns": [
-          {
-            "column": "sourceUrl",
-            "kind": "url",
-            "rows": 3
-          }
-        ],
+        "coordinateRows": 0,
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
+        "recordsAreOrganisations": false,
+        "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
         "regionScopedTextRows": 0,
-        "descriptiveAttributeCount": 8,
+        "descriptiveAttributeCount": 0,
         "planAttributes": [],
-        "freeTextProvinceRows": 3,
-        "freeTextProvinceCodeCount": 1,
-        "freeTextFields": [
-          "name",
-          "note"
-        ],
+        "freeTextProvinceRows": 0,
+        "freeTextProvinceCodeCount": 0,
+        "freeTextFields": [],
         "regionCodeColumns": [],
         "unitScopedRecords": 0,
         "spatialUnitValues": [],
-        "genericRegionRows": 1,
+        "genericRegionRows": 0,
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": null,
       "geometry": "point",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11654,11 +9515,11 @@
         "unit": "source-provided location"
       },
       "sourceColumns": {
-        "region": "city",
-        "regionColumnKind": "region",
-        "regionRows": 6,
+        "region": null,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
-        "regionJoinMethod": "alias-lookup(vnm-adm1-aliases.json)",
+        "regionJoinMethod": null,
         "planText": [],
         "legacyFields": [
           "organizationName",
@@ -11719,9 +9580,7 @@
       "targetName": "한국 지원사업",
       "pdfContent": "확인된 활동지역·지원내용",
       "criteria": [
-        "①",
-        "②",
-        "③"
+        "①"
       ],
       "criteriaProvisional": "②",
       "criteriaEvidence": {
@@ -11733,35 +9592,20 @@
           "regionKeyCount": 3,
           "valueRows": 3
         },
-        "entityRows": 7,
+        "entityRows": 0,
         "observationRows": 0,
         "coordinateRows": 0,
-        "provinceRows": 2,
-        "provinceCodeCount": 2,
-        "provinceColumn": {
-          "column": "field_01856451",
-          "rows": 2,
-          "codeCount": 2,
-          "kind": "other"
-        },
-        "provinceColumnCandidates": [
-          {
-            "column": "field_01856451",
-            "rows": 2,
-            "codeCount": 2,
-            "kind": "other"
-          }
-        ],
+        "provinceRows": 0,
+        "provinceCodeCount": 0,
+        "provinceColumn": null,
+        "provinceColumnCandidates": [],
         "recordsAreOrganisations": false,
         "rejectedRegionColumns": [],
         "observationProvinceRows": 0,
         "observationProvinceCodeCount": 0,
-        "regionScopedTextRows": 2,
-        "descriptiveAttributeCount": 7,
-        "planAttributes": [
-          "supportType",
-          "supportingOrganization"
-        ],
+        "regionScopedTextRows": 0,
+        "descriptiveAttributeCount": 0,
+        "planAttributes": [],
         "freeTextProvinceRows": 0,
         "freeTextProvinceCodeCount": 0,
         "freeTextFields": [],
@@ -11772,8 +9616,8 @@
         "nationwideRows": 0,
         "emptyRegionFields": []
       },
-      "criteriaAgreesWithPdf": true,
-      "criteriaPrimary": "②",
+      "criteriaAgreesWithPdf": false,
+      "criteriaPrimary": "①",
       "geometry": "region-choropleth",
       "geometrySource": "publicMapTargetsV138",
       "boundaryPolicy": {
@@ -11793,14 +9637,11 @@
       },
       "sourceColumns": {
         "region": "adm1Code",
-        "regionColumnKind": "other",
-        "regionRows": 2,
+        "regionColumnKind": null,
+        "regionRows": 0,
         "regionCodeColumns": [],
         "regionJoinMethod": "published-layer-join-key",
-        "planText": [
-          "supportType",
-          "supportingOrganization"
-        ],
+        "planText": [],
         "legacyFields": [
           "field_01856451"
         ]

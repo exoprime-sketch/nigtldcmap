@@ -204,8 +204,9 @@ export const PUBLIC_MAP_WORKSPACE_PRESETS_V126: readonly [
       {
         elementId: "B-034",
         measureId: "prov_forest_carbon_net_flux",
-        variable: "6d25ef451c11",
-        variableLabel: "산림탄소 순플럭스(연평균)",
+        // V162: the 2026-09-30 delivery states the flux as a 2001–2024 total.
+        variable: "9f3e05c5996c",
+        variableLabel: "산림탄소 순플럭스(누계)",
         period: "2001–2024",
       },
     ],

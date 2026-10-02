@@ -7,34 +7,6 @@
       "values": [
         "entity"
       ]
-    },
-    {
-      "key": "승인절차_기재_구분_approval_procedure_status",
-      "labelKo": "승인절차 기재 구분",
-      "valueCount": 1,
-      "values": [
-        "기재"
-      ]
-    },
-    {
-      "key": "제6_4조_전환_상태_a64_status",
-      "labelKo": "제6.4조 전환 상태",
-      "valueCount": 3,
-      "values": [
-        "Pending additional documentation from activity participant",
-        "Registered",
-        "전환 요청 11건(단독 11·다국가 PoA 0) 중 방글라데시 DNA 승인 11건 · 제6.4조 등록 7건 (상태: 제6.4조 등록 완료 7 · 사업참여자 추가서류 대기 4)"
-      ]
-    },
-    {
-      "key": "현행여부_record_status",
-      "labelKo": "현행여부",
-      "valueCount": 3,
-      "values": [
-        "사업참여자 추가서류 대기",
-        "제6.4조 등록 완료",
-        "현행"
-      ]
     }
   ],
   "elementId": "E-002",
@@ -44,8 +16,12 @@
   "indicators": [
     {
       "axisGroupKey": "measure-763feb8142b6|건",
-      "dimensionLabels": {},
-      "dimensions": {},
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
       "displayLabel": "DNA(국가지정기관) · DNA(국가지정기관) [건]",
       "indicatorId": "E-002_cdm_transition",
       "inferenceMethod": "deterministic-source-structure",
@@ -55,11 +31,11 @@
         "unit": "건",
         "unitFamily": "count"
       },
-      "seriesKey": "measure-763feb8142b6|건||E-002_cdm_transition",
-      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "seriesKey": "measure-763feb8142b6|건|technology=범용|E-002_cdm_transition",
+      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다. 좌표: 원천이 사업 부지 위치를 제공하지 않고 사업명에도 행정구역이 표기되지 않아 11건 전부 좌표를 산출하지 않았다. | 레코드별 좌표 중 1차 행정구역 대표점 194건은 UNEP-CCC CDM Pipeline의 Province/State 값을 조회기준으로 산출하였다. 해당 자료에 개방 라이선스가 표기되어 있지 않아 플랫폼 표출 가능 여부를 UNEP-CCC에 확인해야 한다. 발전소·단지 단위 좌표 16건의 원천인 WRI Global Power Plant Database는 CC BY 4.0이다.",
       "sourceLabel": "DNA(국가지정기관)",
       "sourceLabelEn": "CDM activities in transition to Article 6.4",
-      "sourceNote": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "sourceNote": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다. 좌표: 원천이 사업 부지 위치를 제공하지 않고 사업명에도 행정구역이 표기되지 않아 11건 전부 좌표를 산출하지 않았다. | 레코드별 좌표 중 1차 행정구역 대표점 194건은 UNEP-CCC CDM Pipeline의 Province/State 값을 조회기준으로 산출하였다. 해당 자료에 개방 라이선스가 표기되어 있지 않아 플랫폼 표출 가능 여부를 UNEP-CCC에 확인해야 한다. 발전소·단지 단위 좌표 16건의 원천인 WRI Global Power Plant Database는 CC BY 4.0이다.",
       "sourceProvenance": {
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
@@ -67,8 +43,12 @@
     },
     {
       "axisGroupKey": "measure-259fd2435dc6|해당없음",
-      "dimensionLabels": {},
-      "dimensions": {},
+      "dimensionLabels": {
+        "technology": "범용"
+      },
+      "dimensions": {
+        "technology": "범용"
+      },
       "displayLabel": "DNA(국가지정기관) · DNA(국가지정기관) [해당없음]",
       "indicatorId": "E-002_dna",
       "inferenceMethod": "deterministic-source-structure",
@@ -78,8 +58,8 @@
         "unit": "해당없음",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-259fd2435dc6|해당없음||E-002_dna",
-      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다.",
+      "seriesKey": "measure-259fd2435dc6|해당없음|technology=범용|E-002_dna",
+      "sourceCaveat": "UNFCCC 제6.4조 국가지정기관(DNA). 공식 지정문서를 원천으로 사용하며 문서에 없는 항목은 임의 보완하지 않고 결측(M01)으로 둠. 다운로드 판정: 다운로드 제공은 이용자에게 복제물을 남기는 행위로 「저작권법」 제2조제22호·제23호와 제93조제1항이 함께 미치며 화면 표출보다 넓은 이용이다. 원천이 복제·재배포를 출처표시 조건으로 명시 허용한 경우에만 '가능'으로 두고, 그 밖에는 '불가'로 판정한다. [제6.4조 전환 상태] attr_15 는 데이터_명세서 정의(CDM 활동의 파리협정 제6.4조 메커니즘 전환에 대한 유치국 DNA 승인 상태)에 따라 UNFCCC 「List of CDM activities in transition」 CDM activities data(2026-09-21 내려받기) 기준으로 기재한다. attr_22 는 제6.4조 국가지정기관(DNA) 지정 현황, attr_23~25 는 전환 요청·유치국 승인·제6.4조 등록 건수다. 다국가 PoA 는 국가마다 1건으로 세고, 해당국 승인일이 기재된 경우만 승인으로 센다. 유치국 승인 제출 기한은 2026-06-30(결정 20/CMA.7 제V절 제25항)이다. 좌표: 원천 문서가 위경도를 제공하지 않아 기재된 기관 주소를 OpenStreetMap Nominatim 으로 지오코딩해 산출했다(EPSG:4326). 좌표의 기준 단위(건물·도로·도시 등)는 레코드별 「좌표 정밀도·출처」 열에 기재했다.",
       "sourceLabel": "DNA(국가지정기관)",
       "sourceLabelEn": "Designated National Authority (DNA)",
       "sourceNote": "주담당 직함, 부담당자 성명·직함·이메일·전화가 원천 문서에 기재되지 않음.",

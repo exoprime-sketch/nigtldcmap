@@ -44,7 +44,8 @@ const APPLY = argv.includes("--apply");
  * the card summary builder (V140), and they stay untouched here.
  */
 const PRESERVE_PREFIXES = ["geometry/", "spatial/"];
-const PRESERVE_FILES = ["dataset-directory.json", "home/card-summaries-v140.json"];
+// V162: #47's map content contract is built outside the chain as well.
+const PRESERVE_FILES = ["dataset-directory.json", "home/card-summaries-v140.json", "map-content-contract-v157.json"];
 /**
  * The geometry manifest is written by both sides: the ETL registers the three
  * assets it produces (63-unit boundary, aliases, transmission network) and the

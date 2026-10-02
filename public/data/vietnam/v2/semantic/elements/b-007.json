@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-007",
-  "entityCount": 32370,
+  "entityCount": 80070,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 17,
+  "indicatorCount": 21,
   "indicators": [
     {
       "axisGroupKey": "measure-8fc6ba44a3f5|지표별 상이(속성 열 참조)",
@@ -30,6 +30,86 @@
       "seriesKey": "measure-8fc6ba44a3f5|지표별 상이(속성 열 참조)||B-007_climate_adm1_year",
       "sourceCaveat": null,
       "sourceLabel": "홍수(성×시나리오×연도 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-eefa6d0c72d5|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-007_climate_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-eefa6d0c72d5",
+        "labelKo": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-eefa6d0c72d5|지표별 상이(속성 열 참조)||B-007_climate_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a56877276b12|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍수(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "indicatorId": "B-007_climate_monthly_clim_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a56877276b12",
+        "labelKo": "홍수(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a56877276b12|지표별 상이(속성 열 참조)||B-007_climate_monthly_clim_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "홍수(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-a946425caaf4|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "indicatorId": "B-007_climate_monthly_clim_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a946425caaf4",
+        "labelKo": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a946425caaf4|지표별 상이(속성 열 참조)||B-007_climate_monthly_clim_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-08e35a10367b|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "홍수(전국) - 월별 평년값(전국)",
+      "indicatorId": "B-007_climate_monthly_clim_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-08e35a10367b",
+        "labelKo": "홍수(전국) - 월별 평년값(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-08e35a10367b|지표별 상이(속성 열 참조)||B-007_climate_monthly_clim_national",
+      "sourceCaveat": null,
+      "sourceLabel": "홍수(전국) - 월별 평년값(전국)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -556,8 +636,40 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-eefa6d0c72d5",
+      "labelKo": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a946425caaf4",
+      "labelKo": "홍수(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a56877276b12",
+      "labelKo": "홍수(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-b4226b1f1e1b",
       "labelKo": "홍수(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-08e35a10367b",
+      "labelKo": "홍수(전국) - 월별 평년값(전국)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

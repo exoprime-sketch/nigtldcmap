@@ -36,6 +36,12 @@ export interface RegionScenarioContractV138 {
      */
     describe?: (attributes: Record<string, unknown>) => string;
   };
+  /**
+   * V162: the indicator rows the summary reads, where a sheet carries other
+   * tables beside them (B-017's 2026-09-30 delivery adds the province and
+   * country ranking tables to its assessment zones).
+   */
+  indicatorPattern?: RegExp;
   /** The period the source states, where the rows carry none. */
   periodLabel?: string;
   /** Interpretation constraints a reader needs before comparing values. */
@@ -245,6 +251,7 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
       },
     ],
     defaultMeasure: "기준_물스트레스_Baseline_Water_Stress_원값",
+    indicatorPattern: /_basin_adm1$/u,
     rowUnit: {
       label: "평가구역",
       idKeys: ["레코드_키_string_id"],
@@ -325,6 +332,14 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
     ],
   },
 };
+
+/** The rows a region summary reads: those its contract names, else all. */
+export function regionSummaryRowsV162<T extends { elementId?: string; indicatorId?: string | null }>(rows: T[]): T[] {
+  return rows.filter((row) => {
+    const pattern = CONTRACTS[String(row.elementId || "")]?.indicatorPattern;
+    return !pattern || pattern.test(String(row.indicatorId || ""));
+  });
+}
 
 export function publicRegionScenarioContractV138(
   elementId: string

@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-003",
-  "entityCount": 8371,
+  "entityCount": 12621,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 6,
+  "indicatorCount": 7,
   "indicators": [
     {
       "axisGroupKey": "measure-56f2a8018960|℃ / mm",
@@ -34,6 +34,30 @@
       "seriesKey": "measure-56f2a8018960|℃ / mm|category=강수(성×연도 개체 목록)|B-003_climate_adm1_year",
       "sourceCaveat": null,
       "sourceLabel": "연평균 기온·강수(성×연도 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-56f2a8018960|℃ / mm",
+      "dimensionLabels": {
+        "category": "강수(성×연도 개체 목록) - 2025년 34개 체계"
+      },
+      "dimensions": {
+        "category": "강수(성×연도 개체 목록) - 2025년 34개 체계"
+      },
+      "displayLabel": "연평균 기온·강수(성×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-003_climate_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-56f2a8018960",
+        "labelKo": "연평균 기온",
+        "unit": "℃ / mm",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-56f2a8018960|℃ / mm|category=강수(성×연도 개체 목록) - 2025년 34개 체계|B-003_climate_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "연평균 기온·강수(성×연도 개체 목록) - 2025년 34개 체계",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -177,7 +201,7 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "key": "measure-56f2a8018960",
       "labelKo": "연평균 기온",
       "recordCount": 0,

@@ -85,8 +85,10 @@ describe("publicSourceOrganizationV136_1 - the project's working notes (V161)", 
     expect(publicSourceOrganizationV136_1("Global Forest Watch (분자) / FAOSTAT Land Use (분모)")).toBe(
       "Global Forest Watch (분자) / FAOSTAT Land Use (분모)"
     );
+    // V162 (user decision 2026-09-30): a file name outside a link is a working
+    // file on the screen - the bracketed bulk-file name goes, the source stays.
     expect(publicSourceOrganizationV136_1("U.S. EIA International Energy Statistics (Bulk File INTL.txt)")).toBe(
-      "U.S. EIA International Energy Statistics (Bulk File INTL.txt)"
+      "U.S. EIA International Energy Statistics"
     );
   });
 
@@ -123,6 +125,15 @@ describe("publicRecordNoteV161 - a record note's own source citation", () => {
       publicRecordNoteV161("해당 없음 — 본 레코드에는 38대 기후기술을 지목할 근거가 없어 코드를 부여하지 않음(억지 매핑 금지 원칙). [연계 일련번호: 100] SDG7 · 세부목표 7.2")
     ).toBe("[연계 일련번호: 100] SDG7 · 세부목표 7.2");
     expect(publicRecordNoteV161("세부목표 7.2 · 부문: Renewable Energy")).toBe("세부목표 7.2 · 부문: Renewable Energy");
+  });
+
+  it("drops the V162 delivery's working-file and field-survey memos, keeping the statements (V162)", () => {
+    expect(
+      publicRecordNoteV161("미수집(NE·M06)이며 `C-013_외국인 투자 규정_2026-07-28.csv`의 외국인 지분 제한 행 기준. 항공, 물류는 업종법 제한만 확인되었다.")
+    ).toBe("항공, 물류는 업종법 제한만 확인되었다.");
+    expect(publicRecordNoteV161("본값은 법령 기준이다. 출처: 현지조사(Field Survey Items_vIDGcmt_260408_v2.0, 현지 컨설턴트)")).toBe("본값은 법령 기준이다.");
+    expect(publicRecordNoteV161("국제 등록부와 연계가 필요하다(현지조사 결과).")).toBe("국제 등록부와 연계가 필요하다.");
+    expect(publicRecordNoteV161("지상형 1.184,90. 현지조사 원본 1,184.97은 오기")).toBe("지상형 1.184,90.");
   });
 });
 

@@ -408,10 +408,15 @@ function splitPublicListV132(value: string): string[] {
 
 /** The delivered column states countries or an explicit domestic-only status.
  * Never infer international collaboration from a whitelist of country prefixes.
- * These are labels about the supplied country field, not a national statistic. */
+ * These are labels about the supplied country field, not a national statistic.
+ * V162: the 2026-09-30 E-008 delivery states the field as ISO alpha-2 codes
+ * ("VN", "VN;KR") rather than the Korean country names the pre-refresh
+ * delivery used; "VN" alone is exactly the domestic case "베트남" already
+ * covers, so it is matched the same way (exact match only - "VN;KR" still
+ * reads as 해외 협력국 포함, same as "베트남; 일본" does). */
 export function researchCollaborationLabelV144(value: string): string {
   if (!value || /^(?:Y|N|미제공|미상|-)$/iu.test(value.trim())) return "협력국 미제공";
-  if (/^(?:국내|단독)/u.test(value) || /^(?:베트남|Vietnam)$/iu.test(value.trim())) return "국내만 표기";
+  if (/^(?:국내|단독)/u.test(value) || /^(?:베트남|Vietnam|VN)$/iu.test(value.trim())) return "국내만 표기";
   return "해외 협력국 포함";
 }
 

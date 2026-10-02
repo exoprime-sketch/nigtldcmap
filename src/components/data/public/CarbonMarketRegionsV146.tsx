@@ -1,13 +1,21 @@
+import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { facilityRegionsV146 } from "../../../data/visualization/facilityRegionsV146";
 import { EvidenceMatrixV125 } from "../semantic/SemanticContractRendererV125";
+import WideRecordCardsV162 from "./WideRecordCardsV162";
+import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import "./detail-analysis-v146.css";
 import { useRankFoldV160 } from "./RankFoldV160";
 
 export default function CarbonMarketRegionsV146({ elementId, entities, initialRegion }: { elementId: string; entities: VietnamEntityV124[]; initialRegion?: string }) {
-  const model = useMemo(() => facilityRegionsV146(entities), [entities]);
+  // V162 (P12-B): the 34 post-2025 units as "한글명 (현지명)"; codes stay the keys.
+  const regionText = useRegionTextV162(elementId);
+  const model = useMemo(() => {
+    const source = facilityRegionsV146(entities);
+    return { ...source, regions: source.regions.map((row) => ({ ...row, region: regionText(row.region) })) };
+  }, [entities, regionText]);
   const [region, setRegion] = useState(initialRegion || "all");
   const [date, setDate] = useState(model.dates[0] || "");
   const rows = model.regions.filter((row) => row.date === date).sort((a, b) => b.count - a.count);
@@ -27,7 +35,7 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
     return <section className="detail146" data-testid="carbon-market-regions-v146">
       <h3>탄소시장 제도·세율·시행 일정</h3>
       <p className="detail146-note">아래 자료는 각 문서에 기재된 시점과 적용 조건을 기준으로 확인해 주세요. 환경보호세 세율은 배출권 거래가격이 아닙니다.</p>
-      <section className="d153-block" data-analysis-block="comparison-table"><EvidenceMatrixV125 rows={[]} entities={model.other} /></section>
+      <section className="d153-block" data-analysis-block="comparison-table"><OtherRecordsV162 entities={model.other} /></section>
       <h3>온실가스 인벤토리 대상 시설 · 성·시별</h3>
       <p>법령에 수록된 {rows.length}개 성·시의 집계입니다. 배출권 거래제 참여 시설 수와는 구분됩니다.</p>
       <div className="detail146-select"><label>기준일 <select value={date} onChange={(event) => { setDate(event.target.value); setRegion("all"); }}>{model.dates.map((value) => <option key={value}>{value}</option>)}</select></label></div>
@@ -49,7 +57,13 @@ export default function CarbonMarketRegionsV146({ elementId, entities, initialRe
     <details className="detail146-details"><summary>지역별 시설 수 표</summary><div className="detail146-table" data-analysis-block="sorted-table"><table><caption>선택한 기준일·지역 · 개소</caption><thead><tr><th scope="col">지역</th><th scope="col">시설 수</th>{isSector && <th scope="col">부문별 구성</th>}</tr></thead><tbody>{sameDate.map((row) => <tr key={row.code}><th scope="row">{row.region}</th><td>{row.count.toLocaleString("ko-KR")}</td>{isSector && <td>{row.sectors.map((sector) => `${sector.label} ${sector.value}개소`).join(" · ") || "미기재"}</td>}</tr>)}</tbody></table></div></details>
     <details className="detail146-details"><summary>{isSector ? "탄소시장 준비도 평가·제도 근거" : "탄소시장 제도·세율·시행 일정"}</summary>
       <p className="detail146-note">아래 자료는 각 문서에 기재된 시점과 적용 조건을 기준으로 확인해 주세요.{isSector ? " 준비도 점수는 수록된 체크리스트 평가이며 국제 공인 순위가 아닙니다." : " 환경보호세 세율은 배출권 거래가격이 아닙니다."}</p>
-      <section className="d153-block" data-analysis-block="comparison-table"><EvidenceMatrixV125 rows={[]} entities={model.other} /></section>
+      <section className="d153-block" data-analysis-block="comparison-table"><OtherRecordsV162 entities={model.other} /></section>
     </details>
   </section>;
+}
+
+/** The records that are not a region count: block cards on the wide template (V162). */
+function OtherRecordsV162({ entities }: { entities: Parameters<typeof wideRecordsOfEntitiesV162>[0] }) {
+  const wide = wideRecordsOfEntitiesV162(entities);
+  return wide.length > 0 ? <WideRecordCardsV162 records={wide} elementId={entities[0]?.elementId} /> : <EvidenceMatrixV125 rows={[]} entities={entities} />;
 }

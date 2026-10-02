@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-010",
-  "entityCount": 59,
+  "entityCount": 19,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 72,
+  "indicatorCount": 60,
   "indicators": [
     {
       "axisGroupKey": "measure-6cea76b65b00|법령번호",
@@ -911,6 +911,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-ed6bf882d74c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "기타 환경 관련 법제도 현황",
+      "indicatorId": "C-010_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ed6bf882d74c",
+        "labelKo": "기타 환경 관련 법제도 현황",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ed6bf882d74c|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-010_law",
+      "sourceCaveat": null,
+      "sourceLabel": "기타 환경 관련 법제도 현황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-45235168fb09|—",
       "dimensionLabels": {
         "category": "Luật 146/2025/QH15의 환경보호법 개정 범위",
@@ -943,206 +963,6 @@
         "sourceRow": 63,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_datafiles_chinhphu",
-      "indicatorId": "C-010_law_name_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-010_law_name_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_informea",
-      "indicatorId": "C-010_law_name_informea",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-010_law_name_informea",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-4a4fa1d911b8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · law_name_vanban_chinhphu",
-      "indicatorId": "C-010_law_name_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-4a4fa1d911b8",
-        "labelKo": "법령명",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-4a4fa1d911b8|법령번호||C-010_law_name_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-198abba6cdd6|시행일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · 법령명 [시행일]",
-      "indicatorId": "C-010_law_name_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-198abba6cdd6",
-        "labelKo": "법령명",
-        "unit": "시행일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-198abba6cdd6|시행일||C-010_law_name_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a6057aa7e2a2|%",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "법령명 · 법령명 [%]",
-      "indicatorId": "C-010_law_name_vea_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a6057aa7e2a2",
-        "labelKo": "법령명",
-        "unit": "%",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a6057aa7e2a2|%||C-010_law_name_vea_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "법령명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-b52b820f4046|상태",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상태 · law_status_datafiles_chinhphu",
-      "indicatorId": "C-010_law_status_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b52b820f4046",
-        "labelKo": "상태",
-        "unit": "상태",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b52b820f4046|상태||C-010_law_status_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "상태",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-b52b820f4046|상태",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "상태 · law_status_vbpl",
-      "indicatorId": "C-010_law_status_vbpl",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b52b820f4046",
-        "labelKo": "상태",
-        "unit": "상태",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b52b820f4046|상태||C-010_law_status_vbpl",
-      "sourceCaveat": null,
-      "sourceLabel": "상태",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-548648e6179d|위계",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "유형(EIA법/대기질/수질/폐기물/생물다양성) · law_type_vanban_chinhphu",
-      "indicatorId": "C-010_law_type_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-548648e6179d",
-        "labelKo": "유형(EIA법/대기질/수질/폐기물/생물다양성)",
-        "unit": "위계",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-548648e6179d|위계||C-010_law_type_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "유형(EIA법/대기질/수질/폐기물/생물다양성)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-548648e6179d|위계",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "유형(EIA법/대기질/수질/폐기물/생물다양성) · law_type_vbpl",
-      "indicatorId": "C-010_law_type_vbpl",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-548648e6179d",
-        "labelKo": "유형(EIA법/대기질/수질/폐기물/생물다양성)",
-        "unit": "위계",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-548648e6179d|위계||C-010_law_type_vbpl",
-      "sourceCaveat": null,
-      "sourceLabel": "유형(EIA법/대기질/수질/폐기물/생물다양성)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a95e34aff1b3|부처",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주관 부처",
-      "indicatorId": "C-010_lead_ministry",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a95e34aff1b3",
-        "labelKo": "주관 부처",
-        "unit": "부처",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a95e34aff1b3|부처||C-010_lead_ministry",
-      "sourceCaveat": null,
-      "sourceLabel": "주관 부처",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f5e4a58027f0|—",
@@ -2077,66 +1897,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_vanban_chinhphu",
-      "indicatorId": "C-010_source_link_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-010_source_link_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_vanban_chinhphu_2",
-      "indicatorId": "C-010_source_link_vanban_chinhphu_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-010_source_link_vanban_chinhphu_2",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-92ed3a9b9108|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "원본 링크(URL) · source_link_vea_mae",
-      "indicatorId": "C-010_source_link_vea_mae",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-92ed3a9b9108",
-        "labelKo": "원본 링크(URL)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-92ed3a9b9108|URL||C-010_source_link_vea_mae",
-      "sourceCaveat": null,
-      "sourceLabel": "원본 링크(URL)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a2c3c0328922|URL",
       "dimensionLabels": {
         "category": "수자원법(28/2023/QH15)",
@@ -2276,6 +2036,14 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-ed6bf882d74c",
+      "labelKo": "기타 환경 관련 법제도 현황",
+      "recordCount": 0,
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-ea6daddeac93",
       "labelKo": "대기",
       "recordCount": 0,
@@ -2288,30 +2056,6 @@
       "labelKo": "대기",
       "recordCount": 0,
       "unit": "법령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-a6057aa7e2a2",
-      "labelKo": "법령명",
-      "recordCount": 0,
-      "unit": "%",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-4a4fa1d911b8",
-      "labelKo": "법령명",
-      "recordCount": 0,
-      "unit": "법령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-198abba6cdd6",
-      "labelKo": "법령명",
-      "recordCount": 0,
-      "unit": "시행일",
       "unitFamily": "text"
     },
     {
@@ -2344,14 +2088,6 @@
       "labelKo": "법제 목록 개요 (환경보호 관련 법령",
       "recordCount": 0,
       "unit": "법령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-b52b820f4046",
-      "labelKo": "상태",
-      "recordCount": 0,
-      "unit": "상태",
       "unitFamily": "text"
     },
     {
@@ -2440,30 +2176,6 @@
       "labelKo": "원본 링크 (URL)",
       "recordCount": 0,
       "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 3,
-      "key": "measure-92ed3a9b9108",
-      "labelKo": "원본 링크(URL)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-548648e6179d",
-      "labelKo": "유형(EIA법/대기질/수질/폐기물/생물다양성)",
-      "recordCount": 0,
-      "unit": "위계",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-a95e34aff1b3",
-      "labelKo": "주관 부처",
-      "recordCount": 0,
-      "unit": "부처",
       "unitFamily": "text"
     },
     {

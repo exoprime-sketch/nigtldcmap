@@ -11,14 +11,14 @@
       "VNM"
     ],
     "contractPath": "src/data/visualization/publicVisualizationContractV153.json",
-    "contractSha256": "87acd9459e35354a896761916b8857c0fd3ee9ef0479f15884e87209d9120935"
+    "contractSha256": "672833ec437e687018f68efc5d2e3e0c16d9e28f1aa7f48a9733346e73a1e609"
   },
   "elementCount": 54,
   "statusCounts": {
-    "common-year": 35,
+    "common-year": 39,
     "latest-each": 1,
     "unit-mismatch": 0,
-    "missing-in-country": 18
+    "missing-in-country": 14
   },
   "elements": {
     "A-001": {
@@ -4875,24 +4875,11 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": true,
-          "unit": "USD/MWh",
-          "labelKo": "LCOE · 가스복합화력(CCGT)(기준값) — 신규 발전설비 균등화 발전비용",
-          "sourceOrg": "BloombergNEF",
-          "points": [
-            {
-              "year": 2023,
-              "value": 95
-            },
-            {
-              "year": 2030,
-              "value": 94
-            },
-            {
-              "year": 2050,
-              "value": 94
-            }
-          ]
+          "present": false,
+          "unit": null,
+          "labelKo": null,
+          "sourceOrg": null,
+          "points": []
         },
         "VNM": {
           "countryIso3": "VNM",
@@ -4923,11 +4910,10 @@
             "BGD",
             "VNM"
           ],
-          "status": "common-year",
-          "commonYear": 2050
+          "status": "missing-in-country"
         }
       ],
-      "status": "common-year"
+      "status": "missing-in-country"
     },
     "A-018": {
       "elementId": "A-018",
@@ -6183,20 +6169,140 @@
           "countryNameKo": "베트남",
           "present": true,
           "unit": "10억 USD",
-          "labelKo": "한-베트남 교역 · 총 교역액 — 한국 기준 대베트남 총 교역액",
-          "sourceOrg": "한국무역협회(Korea International Trade Association)",
+          "labelKo": "한-베트남 교역 · 총 교역액 — 수출액과 수입액의 합",
+          "sourceOrg": "World Bank WITS (원자료: UN Comtrade)",
           "points": [
             {
+              "year": 1991,
+              "value": 0.240085
+            },
+            {
+              "year": 1992,
+              "value": 0.493491
+            },
+            {
+              "year": 1993,
+              "value": 0.818872
+            },
+            {
+              "year": 1994,
+              "value": 1.141108
+            },
+            {
+              "year": 1995,
+              "value": 1.544576
+            },
+            {
+              "year": 1996,
+              "value": 1.831158
+            },
+            {
+              "year": 1997,
+              "value": 1.84165
+            },
+            {
+              "year": 1998,
+              "value": 1.502897
+            },
+            {
+              "year": 1999,
+              "value": 1.709367
+            },
+            {
+              "year": 2000,
+              "value": 2.008461
+            },
+            {
+              "year": 2001,
+              "value": 2.117336
+            },
+            {
+              "year": 2002,
+              "value": 2.710496
+            },
+            {
+              "year": 2003,
+              "value": 3.071934
+            },
+            {
+              "year": 2004,
+              "value": 3.928874
+            },
+            {
+              "year": 2005,
+              "value": 4.125697
+            },
+            {
+              "year": 2006,
+              "value": 4.852333
+            },
+            {
+              "year": 2007,
+              "value": 7.151642
+            },
+            {
+              "year": 2008,
+              "value": 9.841883
+            },
+            {
+              "year": 2009,
+              "value": 9.519447
+            },
+            {
+              "year": 2010,
+              "value": 12.982888
+            },
+            {
+              "year": 2011,
+              "value": 18.549168
+            },
+            {
+              "year": 2012,
+              "value": 21.665218
+            },
+            {
+              "year": 2013,
+              "value": 28.262775
+            },
+            {
+              "year": 2014,
+              "value": 30.321559
+            },
+            {
+              "year": 2015,
+              "value": 37.575581
+            },
+            {
+              "year": 2016,
+              "value": 45.125612
+            },
+            {
+              "year": 2017,
+              "value": 63.930829
+            },
+            {
+              "year": 2018,
+              "value": 68.26548
+            },
+            {
+              "year": 2019,
+              "value": 69.249305
+            },
+            {
+              "year": 2020,
+              "value": 69.089162
+            },
+            {
               "year": 2021,
-              "value": 80.73
+              "value": 80.694239
             },
             {
               "year": 2022,
-              "value": 87.7
+              "value": 87.688397
             },
             {
-              "year": 2024,
-              "value": 86.7
+              "year": 2023,
+              "value": 79.415369
             }
           ]
         }
@@ -6208,7 +6314,7 @@
             "VNM"
           ],
           "status": "common-year",
-          "commonYear": 2022
+          "commonYear": 2023
         }
       ],
       "status": "common-year"
@@ -6791,7 +6897,7 @@
           "countryNameKo": "베트남",
           "present": true,
           "unit": "mm",
-          "labelKo": "월 평년강수 — 8월",
+          "labelKo": "월 평년강수 — 8월 (1991-2020 평년)",
           "sourceOrg": "World Bank CCKP (CRU TS 4.09)",
           "points": [
             {
@@ -6825,8 +6931,8 @@
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
           "present": true,
-          "unit": "km2",
-          "labelKo": "기후대별 점유 면적 — Af (열대우림)",
+          "unit": "km²",
+          "labelKo": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계)",
           "sourceOrg": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
           "points": [
             {
@@ -6865,7 +6971,7 @@
     "B-009": {
       "elementId": "B-009",
       "compareKey": {
-        "indicatorId": "B-009_ndgain_ecosystems",
+        "indicatorId": "B-009_wwf_brf_physical",
         "unit": "지수",
         "yearRule": "latest-common"
       },
@@ -6873,139 +6979,28 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "지수",
+          "labelKo": "WWF BRF — Scape Physical Risk",
+          "sourceOrg": "WWF Biodiversity Risk Filter",
+          "points": [
+            {
+              "year": 2026,
+              "value": 3.39
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
           "unit": "지수",
-          "labelKo": "ND-GAIN 취약성 — 생태계 부문",
-          "sourceOrg": "University of Notre Dame ND-GAIN Country Index 2026",
+          "labelKo": "WWF BRF — Scape Physical Risk",
+          "sourceOrg": "WWF Biodiversity Risk Filter",
           "points": [
             {
-              "year": 1995,
-              "value": 0.6162
-            },
-            {
-              "year": 1996,
-              "value": 0.6167
-            },
-            {
-              "year": 1997,
-              "value": 0.6176
-            },
-            {
-              "year": 1998,
-              "value": 0.6135
-            },
-            {
-              "year": 1999,
-              "value": 0.6129
-            },
-            {
-              "year": 2000,
-              "value": 0.6127
-            },
-            {
-              "year": 2001,
-              "value": 0.6055
-            },
-            {
-              "year": 2002,
-              "value": 0.5995
-            },
-            {
-              "year": 2003,
-              "value": 0.5982
-            },
-            {
-              "year": 2004,
-              "value": 0.5957
-            },
-            {
-              "year": 2005,
-              "value": 0.5947
-            },
-            {
-              "year": 2006,
-              "value": 0.5929
-            },
-            {
-              "year": 2007,
-              "value": 0.5925
-            },
-            {
-              "year": 2008,
-              "value": 0.5925
-            },
-            {
-              "year": 2009,
-              "value": 0.592
-            },
-            {
-              "year": 2010,
-              "value": 0.592
-            },
-            {
-              "year": 2011,
-              "value": 0.591
-            },
-            {
-              "year": 2012,
-              "value": 0.5902
-            },
-            {
-              "year": 2013,
-              "value": 0.5854
-            },
-            {
-              "year": 2014,
-              "value": 0.5822
-            },
-            {
-              "year": 2015,
-              "value": 0.583
-            },
-            {
-              "year": 2016,
-              "value": 0.5839
-            },
-            {
-              "year": 2017,
-              "value": 0.5848
-            },
-            {
-              "year": 2018,
-              "value": 0.5858
-            },
-            {
-              "year": 2019,
-              "value": 0.5864
-            },
-            {
-              "year": 2020,
-              "value": 0.5871
-            },
-            {
-              "year": 2021,
-              "value": 0.588
-            },
-            {
-              "year": 2022,
-              "value": 0.5899
-            },
-            {
-              "year": 2023,
-              "value": 0.5917
-            },
-            {
-              "year": 2024,
-              "value": 0.5922
+              "year": 2026,
+              "value": 2.74
             }
           ]
         }
@@ -7016,10 +7011,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2026
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "B-010": {
       "elementId": "B-010",
@@ -8129,7 +8125,7 @@
     "B-022": {
       "elementId": "B-022",
       "compareKey": {
-        "indicatorId": "B-022_financing_source_g02",
+        "indicatorId": "B-022_financing_private",
         "unit": "십억 US$",
         "yearRule": "latest-common"
       },
@@ -8533,283 +8529,540 @@
     "B-035": {
       "elementId": "B-035",
       "compareKey": {
-        "indicatorId": "B-035_lu_cropland_area_per_capita",
-        "unit": "ha/cap",
+        "indicatorId": "B-035_lu_agriculture",
+        "unit": "1000 ha",
         "yearRule": "latest-common"
       },
       "countries": {
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "1000 ha",
+          "labelKo": "농업 총면적(Agriculture)",
+          "sourceOrg": "FAOSTAT Land Use (RL)",
+          "points": [
+            {
+              "year": 1961,
+              "value": 9480
+            },
+            {
+              "year": 1962,
+              "value": 9477
+            },
+            {
+              "year": 1963,
+              "value": 9480
+            },
+            {
+              "year": 1964,
+              "value": 9520
+            },
+            {
+              "year": 1965,
+              "value": 9637
+            },
+            {
+              "year": 1966,
+              "value": 9650
+            },
+            {
+              "year": 1967,
+              "value": 9695
+            },
+            {
+              "year": 1968,
+              "value": 9669
+            },
+            {
+              "year": 1969,
+              "value": 9675
+            },
+            {
+              "year": 1970,
+              "value": 9697
+            },
+            {
+              "year": 1971,
+              "value": 9695
+            },
+            {
+              "year": 1972,
+              "value": 9991
+            },
+            {
+              "year": 1973,
+              "value": 9989
+            },
+            {
+              "year": 1974,
+              "value": 9989
+            },
+            {
+              "year": 1975,
+              "value": 10004
+            },
+            {
+              "year": 1976,
+              "value": 9998
+            },
+            {
+              "year": 1977,
+              "value": 9991
+            },
+            {
+              "year": 1978,
+              "value": 9987
+            },
+            {
+              "year": 1979,
+              "value": 9983
+            },
+            {
+              "year": 1980,
+              "value": 9987
+            },
+            {
+              "year": 1981,
+              "value": 9981
+            },
+            {
+              "year": 1982,
+              "value": 9978
+            },
+            {
+              "year": 1983,
+              "value": 9964
+            },
+            {
+              "year": 1984,
+              "value": 10060
+            },
+            {
+              "year": 1985,
+              "value": 10027
+            },
+            {
+              "year": 1986,
+              "value": 10041
+            },
+            {
+              "year": 1987,
+              "value": 10115
+            },
+            {
+              "year": 1988,
+              "value": 10427
+            },
+            {
+              "year": 1989,
+              "value": 10443
+            },
+            {
+              "year": 1990,
+              "value": 10386
+            },
+            {
+              "year": 1991,
+              "value": 10320
+            },
+            {
+              "year": 1992,
+              "value": 9549
+            },
+            {
+              "year": 1993,
+              "value": 9446
+            },
+            {
+              "year": 1994,
+              "value": 9358
+            },
+            {
+              "year": 1995,
+              "value": 9374
+            },
+            {
+              "year": 1996,
+              "value": 9327
+            },
+            {
+              "year": 1997,
+              "value": 9365
+            },
+            {
+              "year": 1998,
+              "value": 9434
+            },
+            {
+              "year": 1999,
+              "value": 9486
+            },
+            {
+              "year": 2000,
+              "value": 9400
+            },
+            {
+              "year": 2001,
+              "value": 9403
+            },
+            {
+              "year": 2002,
+              "value": 9353
+            },
+            {
+              "year": 2003,
+              "value": 9328
+            },
+            {
+              "year": 2004,
+              "value": 9323
+            },
+            {
+              "year": 2005,
+              "value": 9311
+            },
+            {
+              "year": 2006,
+              "value": 9280
+            },
+            {
+              "year": 2007,
+              "value": 9266
+            },
+            {
+              "year": 2008,
+              "value": 9253
+            },
+            {
+              "year": 2009,
+              "value": 9246
+            },
+            {
+              "year": 2010,
+              "value": 9241
+            },
+            {
+              "year": 2011,
+              "value": 9128
+            },
+            {
+              "year": 2012,
+              "value": 9120
+            },
+            {
+              "year": 2013,
+              "value": 9108
+            },
+            {
+              "year": 2014,
+              "value": 9099
+            },
+            {
+              "year": 2015,
+              "value": 9162.24
+            },
+            {
+              "year": 2016,
+              "value": 9194.21
+            },
+            {
+              "year": 2017,
+              "value": 9187.33
+            },
+            {
+              "year": 2018,
+              "value": 9202.3
+            },
+            {
+              "year": 2019,
+              "value": 9397
+            },
+            {
+              "year": 2020,
+              "value": 9430
+            },
+            {
+              "year": 2021,
+              "value": 9418
+            },
+            {
+              "year": 2022,
+              "value": 9427
+            },
+            {
+              "year": 2023,
+              "value": 9399
+            },
+            {
+              "year": 2024,
+              "value": 9399
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
-          "unit": "ha/cap",
-          "labelKo": "1인당 경작지 면적",
-          "sourceOrg": "FAO FAOSTAT Land Use (RL)",
+          "unit": "1000 ha",
+          "labelKo": "농업 총면적(Agriculture)",
+          "sourceOrg": "FAOSTAT Land Use (RL)",
           "points": [
             {
               "year": 1961,
-              "value": 0.18
+              "value": 6292
             },
             {
               "year": 1962,
-              "value": 0.18
+              "value": 6297
             },
             {
               "year": 1963,
-              "value": 0.17
+              "value": 6302
             },
             {
               "year": 1964,
-              "value": 0.17
+              "value": 6307
             },
             {
               "year": 1965,
-              "value": 0.16
+              "value": 6312
             },
             {
               "year": 1966,
-              "value": 0.16
+              "value": 6317
             },
             {
               "year": 1967,
-              "value": 0.16
+              "value": 6342
             },
             {
               "year": 1968,
-              "value": 0.15
+              "value": 6367
             },
             {
               "year": 1969,
-              "value": 0.15
+              "value": 6382
             },
             {
               "year": 1970,
-              "value": 0.15
+              "value": 6417
             },
             {
               "year": 1971,
-              "value": 0.14
+              "value": 6422
             },
             {
               "year": 1972,
-              "value": 0.14
+              "value": 6447
             },
             {
               "year": 1973,
-              "value": 0.14
+              "value": 6482
             },
             {
               "year": 1974,
-              "value": 0.14
+              "value": 6507
             },
             {
               "year": 1975,
-              "value": 0.13
+              "value": 6512
             },
             {
               "year": 1976,
-              "value": 0.14
+              "value": 6722
             },
             {
               "year": 1977,
-              "value": 0.13
+              "value": 6812
             },
             {
               "year": 1978,
-              "value": 0.13
+              "value": 6836
             },
             {
               "year": 1979,
-              "value": 0.13
+              "value": 6850
             },
             {
               "year": 1980,
-              "value": 0.13
+              "value": 6858
             },
             {
               "year": 1981,
-              "value": 0.12
+              "value": 6876
             },
             {
               "year": 1982,
-              "value": 0.12
+              "value": 6884
             },
             {
               "year": 1983,
-              "value": 0.12
+              "value": 6902
             },
             {
               "year": 1984,
-              "value": 0.11
+              "value": 6910
             },
             {
               "year": 1985,
-              "value": 0.11
+              "value": 6750
             },
             {
               "year": 1986,
-              "value": 0.11
+              "value": 6725
             },
             {
               "year": 1987,
-              "value": 0.1
+              "value": 6710
             },
             {
               "year": 1988,
-              "value": 0.1
+              "value": 6710
             },
             {
               "year": 1989,
-              "value": 0.1
+              "value": 6715
             },
             {
               "year": 1990,
-              "value": 0.1
+              "value": 6726
             },
             {
               "year": 1991,
-              "value": 0.1
+              "value": 6751
             },
             {
               "year": 1992,
-              "value": 0.1
+              "value": 7025
             },
             {
               "year": 1993,
-              "value": 0.1
+              "value": 7087
             },
             {
               "year": 1994,
-              "value": 0.1
+              "value": 7140
             },
             {
               "year": 1995,
-              "value": 0.09
+              "value": 7079
             },
             {
               "year": 1996,
-              "value": 0.1
+              "value": 7682
             },
             {
               "year": 1997,
-              "value": 0.1
+              "value": 7844
             },
             {
               "year": 1998,
-              "value": 0.1
+              "value": 8055
             },
             {
               "year": 1999,
-              "value": 0.1
+              "value": 8471.33
             },
             {
               "year": 2000,
-              "value": 0.11
+              "value": 8933.67
             },
             {
               "year": 2001,
-              "value": 0.11
+              "value": 9483
             },
             {
               "year": 2002,
-              "value": 0.11
+              "value": 9455
             },
             {
               "year": 2003,
-              "value": 0.11
+              "value": 9537
             },
             {
               "year": 2004,
-              "value": 0.11
+              "value": 9795.55
             },
             {
               "year": 2005,
-              "value": 0.12
+              "value": 10054.1
             },
             {
               "year": 2006,
-              "value": 0.11
+              "value": 10078
             },
             {
               "year": 2007,
-              "value": 0.11
+              "value": 10062.6
             },
             {
               "year": 2008,
-              "value": 0.11
+              "value": 10240.8
             },
             {
               "year": 2009,
-              "value": 0.11
+              "value": 10500.45
             },
             {
               "year": 2010,
-              "value": 0.12
+              "value": 10760.1
             },
             {
               "year": 2011,
-              "value": 0.11
+              "value": 10768.6
             },
             {
               "year": 2012,
-              "value": 0.11
+              "value": 10793.3
             },
             {
               "year": 2013,
-              "value": 0.11
+              "value": 10852.8
             },
             {
               "year": 2014,
-              "value": 0.11
+              "value": 10873.7
             },
             {
               "year": 2015,
-              "value": 0.12
+              "value": 12147.8
             },
             {
               "year": 2016,
-              "value": 0.12
+              "value": 12172.2
             },
             {
               "year": 2017,
-              "value": 0.12
+              "value": 12168.8
             },
             {
               "year": 2018,
-              "value": 0.12
+              "value": 12140.5
             },
             {
               "year": 2019,
-              "value": 0.12
+              "value": 12388
             },
             {
               "year": 2020,
-              "value": 0.12
+              "value": 12360
             },
             {
               "year": 2021,
-              "value": 0.12
+              "value": 12337.5
             },
             {
               "year": 2022,
-              "value": 0.12
+              "value": 12315
             },
             {
               "year": 2023,
-              "value": 0.12
+              "value": 12291.04
             },
             {
               "year": 2024,
-              "value": 0.12
+              "value": 12291.04
             }
           ]
         }
@@ -8820,10 +9073,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2024
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "B-036": {
       "elementId": "B-036",
@@ -8885,7 +9139,7 @@
     "B-038": {
       "elementId": "B-038",
       "compareKey": {
-        "indicatorId": "B-038_msw_percap",
+        "indicatorId": "B-038_aux_msw_percap",
         "unit": "kg/인/일",
         "yearRule": "latest-common"
       },
@@ -8893,18 +9147,39 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "kg/인/일",
+          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
+          "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
+          "points": [
+            {
+              "year": 2021,
+              "value": 0.5
+            },
+            {
+              "year": 2022,
+              "value": 0.515
+            },
+            {
+              "year": 2030,
+              "value": 0.5304
+            },
+            {
+              "year": 2040,
+              "value": 0.5464
+            },
+            {
+              "year": 2050,
+              "value": 0.6481
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
           "unit": "kg/인/일",
-          "labelKo": "1인당 도시폐기물 발생량",
+          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
           "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
           "points": [
             {
@@ -8936,16 +9211,17 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2050
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "B-043": {
       "elementId": "B-043",
       "compareKey": {
-        "indicatorId": "B-043_rp_ratio_g03",
-        "unit": "년",
+        "indicatorId": "B-043_oil_reserves",
+        "unit": "십억 배럴",
         "yearRule": "latest-common"
       },
       "countries": {
@@ -8953,22 +9229,22 @@
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
           "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
+          "unit": "십억 배럴",
+          "labelKo": "석유 확인매장량",
+          "sourceOrg": "Energy Institute Statistical Review of World Energy",
           "points": []
         },
         "VNM": {
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
-          "unit": "년",
-          "labelKo": "가채연수(R/P ratio) — 천연가스",
+          "unit": "십억 배럴",
+          "labelKo": "석유 확인매장량",
           "sourceOrg": "Energy Institute Statistical Review of World Energy",
           "points": [
             {
               "year": 2020,
-              "value": 74.14
+              "value": 4.4
             }
           ]
         }
@@ -9010,7 +9286,31 @@
           "sourceOrg": "USGS Mineral Commodity Summaries 2026",
           "points": [
             {
-              "year": 2026,
+              "year": 2019,
+              "value": 12.3333
+            },
+            {
+              "year": 2020,
+              "value": 12.3333
+            },
+            {
+              "year": 2021,
+              "value": 18.125
+            },
+            {
+              "year": 2022,
+              "value": 18.7097
+            },
+            {
+              "year": 2023,
+              "value": 19.3333
+            },
+            {
+              "year": 2024,
+              "value": 10.6897
+            },
+            {
+              "year": 2025,
               "value": 10.69
             }
           ]
@@ -9030,8 +9330,8 @@
     "B-046": {
       "elementId": "B-046",
       "compareKey": {
-        "indicatorId": "B-046_reserves_4",
-        "unit": "t (Sb 함량)",
+        "indicatorId": "B-046_reserves_7",
+        "unit": "천 t (아파타이트)",
         "yearRule": "latest-common"
       },
       "countries": {
@@ -9048,13 +9348,37 @@
           "countryIso3": "VNM",
           "countryNameKo": "베트남",
           "present": true,
-          "unit": "t (Sb 함량)",
-          "labelKo": "확인 매장량 — 안티모니",
+          "unit": "천 t (아파타이트)",
+          "labelKo": "확인 매장량 — 인광석",
           "sourceOrg": "USGS Mineral Commodity Summaries 2026",
           "points": [
             {
+              "year": 2020,
+              "value": 30000
+            },
+            {
+              "year": 2021,
+              "value": 30000
+            },
+            {
+              "year": 2022,
+              "value": 30000
+            },
+            {
+              "year": 2023,
+              "value": 30000
+            },
+            {
+              "year": 2024,
+              "value": 30000
+            },
+            {
+              "year": 2025,
+              "value": 30000
+            },
+            {
               "year": 2026,
-              "value": 54000
+              "value": 30000
             }
           ]
         }
@@ -9116,7 +9440,7 @@
     "D-002": {
       "elementId": "D-002",
       "compareKey": {
-        "indicatorId": "D-002_market_cagr_biomass",
+        "indicatorId": "D-002_re_share_electricity_capacity_pct",
         "unit": "%",
         "yearRule": "latest-common"
       },
@@ -9135,12 +9459,112 @@
           "countryNameKo": "베트남",
           "present": true,
           "unit": "%",
-          "labelKo": "시장 성장률 · 바이오에너지 기술 — 2023→2030 설비용량 연평균성장률(CAGR)",
-          "sourceOrg": "The Shiv (베트남 산업 전문지) — 총리결정 768/QĐ-TTg(개정 PDP8) 해설",
+          "labelKo": "시장 성장률 · 재생에너지 설비용량 비중",
+          "sourceOrg": "International Renewable Energy Agency (IRENA) · IRENASTAT",
           "points": [
             {
-              "year": 2030,
-              "value": 22.8
+              "year": 2000,
+              "value": 51.12
+            },
+            {
+              "year": 2001,
+              "value": 50.22
+            },
+            {
+              "year": 2002,
+              "value": 47.37
+            },
+            {
+              "year": 2003,
+              "value": 45.36
+            },
+            {
+              "year": 2004,
+              "value": 35.32
+            },
+            {
+              "year": 2005,
+              "value": 34.63
+            },
+            {
+              "year": 2006,
+              "value": 35.85
+            },
+            {
+              "year": 2007,
+              "value": 37.65
+            },
+            {
+              "year": 2008,
+              "value": 40.06
+            },
+            {
+              "year": 2009,
+              "value": 38
+            },
+            {
+              "year": 2010,
+              "value": 34.21
+            },
+            {
+              "year": 2011,
+              "value": 36.66
+            },
+            {
+              "year": 2012,
+              "value": 43.66
+            },
+            {
+              "year": 2013,
+              "value": 45.71
+            },
+            {
+              "year": 2014,
+              "value": 46.69
+            },
+            {
+              "year": 2015,
+              "value": 43.66
+            },
+            {
+              "year": 2016,
+              "value": 43.77
+            },
+            {
+              "year": 2017,
+              "value": 41.67
+            },
+            {
+              "year": 2018,
+              "value": 41.08
+            },
+            {
+              "year": 2019,
+              "value": 47.69
+            },
+            {
+              "year": 2020,
+              "value": 55.79
+            },
+            {
+              "year": 2021,
+              "value": 56.21
+            },
+            {
+              "year": 2022,
+              "value": 56.69
+            },
+            {
+              "year": 2023,
+              "value": 57.57
+            },
+            {
+              "year": 2024,
+              "value": 57.92
+            },
+            {
+              "year": 2025,
+              "value": 57.8
             }
           ]
         }
@@ -9179,7 +9603,7 @@
           "present": true,
           "unit": "tCO2/20년·MW",
           "labelKo": "예상 감축량 · 바이오에너지 기술 — 1MW당 20년 누적 온실가스 감축량",
-          "sourceOrg": "베트남전력공사(EVN) · 베트남 기후변화국(DCC)",
+          "sourceOrg": "베트남 기후변화국(MONRE/DCC) 전력망 배출계수 공문 1726/BĐKH-PTCBT · 베트남전력공사(EVN) 발전량 실적",
           "points": [
             {
               "year": 2023,
@@ -9347,11 +9771,32 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "USD",
+          "labelKo": "개도국 내 각국별 ODA 규모 · Official donors — 대방글라데시 ODA 총지출액",
+          "sourceOrg": "OECD DAC Creditor Reporting System (CRS)",
+          "points": [
+            {
+              "year": 2020,
+              "value": 6493338590
+            },
+            {
+              "year": 2021,
+              "value": 6156280624
+            },
+            {
+              "year": 2022,
+              "value": 6620056407
+            },
+            {
+              "year": 2023,
+              "value": 7210521247
+            },
+            {
+              "year": 2024,
+              "value": 6582769681
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
@@ -9390,10 +9835,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2024
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "D-013": {
       "elementId": "D-013",
@@ -9406,11 +9852,16 @@
         "BGD": {
           "countryIso3": "BGD",
           "countryNameKo": "방글라데시",
-          "present": false,
-          "unit": null,
-          "labelKo": null,
-          "sourceOrg": null,
-          "points": []
+          "present": true,
+          "unit": "점",
+          "labelKo": "GGGI Green Growth Index · 사회 통합(SI) — 차원 점수",
+          "sourceOrg": "Global Green Growth Institute (GGGI) — Green Growth Index 2024",
+          "points": [
+            {
+              "year": 2024,
+              "value": 59.1
+            }
+          ]
         },
         "VNM": {
           "countryIso3": "VNM",
@@ -9433,10 +9884,11 @@
             "BGD",
             "VNM"
           ],
-          "status": "missing-in-country"
+          "status": "common-year",
+          "commonYear": 2024
         }
       ],
-      "status": "missing-in-country"
+      "status": "common-year"
     },
     "E-009": {
       "elementId": "E-009",
@@ -9484,6 +9936,34 @@
           "labelKo": "STEM 졸업 비중(남성)",
           "sourceOrg": "UNESCO Institute for Statistics (UIS)",
           "points": [
+            {
+              "year": 2005,
+              "value": 29.51
+            },
+            {
+              "year": 2007,
+              "value": 27.57
+            },
+            {
+              "year": 2008,
+              "value": 26.93
+            },
+            {
+              "year": 2009,
+              "value": 26.63
+            },
+            {
+              "year": 2010,
+              "value": 23.23
+            },
+            {
+              "year": 2012,
+              "value": 28.55
+            },
+            {
+              "year": 2015,
+              "value": 30.59
+            },
             {
               "year": 2016,
               "value": 31.19

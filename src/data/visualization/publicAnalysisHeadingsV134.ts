@@ -229,11 +229,13 @@ const SPECIALIZED_HEADINGS_V134: Readonly<
     secondaryChartTitle: "향후 비교 기준",
     publicQuestion: "현재 공개된 한계저감비용 값이 없으며, 향후 동일 가격연도와 산정가정으로 수집해야 할 상태를 안내합니다.",
   },
+  // V162: the 2026-09-30 delivery publishes E-011 as the Network Readiness
+  // Index (NRI 2025) - scores and ranks overall and by pillar.
   "E-011": {
-    publicAnalysisTitle: "기술준비수준 입력 준비 상태",
-    primaryChartTitle: "입력 예정 항목",
-    secondaryChartTitle: "평가·조사 계획",
-    publicQuestion: "현재 공개된 평가값은 없으며, 전문가 평가와 현장조사 후 입력할 예정인 항목을 안내합니다.",
+    publicAnalysisTitle: "네트워크 준비지수(NRI) 점수와 순위",
+    primaryChartTitle: "NRI 종합·부문별 점수",
+    secondaryChartTitle: "종합·부문별 순위",
+    publicQuestion: "베트남의 네트워크 준비지수(NRI 2025) 종합 점수와 부문별 점수·순위를 확인합니다. 점수와 순위는 단위가 달라 같은 축에 두지 않습니다.",
   },
   "E-013": {
     publicAnalysisTitle: "운영·유지보수 역량 입력 양식",

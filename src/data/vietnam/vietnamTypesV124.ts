@@ -92,6 +92,12 @@ export type VietnamObservationV124 = VietnamObservationV121 & {
 
 export type VietnamEntityV124 = VietnamEntityV121 & {
   publicationDecision?: VietnamPublicationDecisionRefV124 | null;
+  /**
+   * V162: the row's administrative system, stamped at load time (ETL). adm1 =
+   * the current level 1 (Viet Nam: the 34 post-2025 units), adm1-prev = the
+   * level 1 a dated reform replaced (the 63 pre-2025 units).
+   */
+  regionSystem?: "adm1" | "adm1-prev" | "adm2" | "country" | null;
 };
 
 export type VietnamIndicatorMetaV124 = VietnamIndicatorMetaV121 & {
@@ -288,6 +294,8 @@ export interface VietnamManifestV124 {
   runtimeVersion: typeof VIETNAM_DATA_RUNTIME_VERSION_V124;
   assetLayoutVersion: "gzip-base64-json-envelope-v2";
   generatedAt: string;
+  /** V162: when the published source arrived (the home's 데이터 기준일). */
+  provenance?: { sourceDeliveredAt?: string | null };
   country: { iso3: "VNM"; nameKo: string; nameEn: string };
   sourcePackage: string;
   workbookFiles: number;
@@ -536,6 +544,22 @@ export interface VietnamSpatialValueV124 {
   imputed: false;
 }
 
+export interface VietnamSpatialValue34V162 {
+  unitCode: string;
+  unitName: string;
+  variable: string;
+  variableLabel: string;
+  period: string;
+  value: number;
+  unit: string | null;
+  sourceIndicatorId: string | null;
+  sourceRecordId: string | null;
+  sourceSpatialUnit: "admin1-34";
+  /** The category the source states beside the number (B-026 flow direction). */
+  categoryLabel?: string;
+  imputed: false;
+}
+
 export interface VietnamSpatialLayerAssetV124 {
   schemaVersion: "v124";
   assetSchemaVersion: "v124-spatial-layer-1";
@@ -578,6 +602,12 @@ export interface VietnamSpatialLayerAssetV124 {
       indicatorId?: string;
     }>
   >;
+  /**
+   * V162: values the source states for the 34 post-2025 units itself. The 34
+   * outline shows these where they exist for the selected variable and period
+   * and aggregates the 63-unit values only where they do not.
+   */
+  values34?: VietnamSpatialValue34V162[];
   seriesCoverage: Array<{
     variable: string;
     period: string;

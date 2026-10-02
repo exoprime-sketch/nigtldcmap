@@ -218,30 +218,14 @@ export default function CpiaPolicyCapacityAnalysisV126({
   return (
     <div className="cpia126" data-testid="a002-cpia-analysis">
       {/*
-        The year and the displayed value drive the cards and the chart above,
-        so they are read before them. Sitting in the third section they were
-        2,100px down the page: a reader met six cards and a trend for a year
-        nothing on screen let them choose.
+        V162: a control sits beside the chart it drives. '표시 값' changes the
+        trend below, so it is read before it; '기준연도' (and the CPIA cluster)
+        only change the comparison in '보조 분석', so they sit there - a
+        control above the first chart that moved only the folded part read
+        as broken (A-002 in the e2e detail run).
       */}
-      <div className="cpia126__selectors" data-testid="public-selector">
-        <label>
-          <span>기준연도</span>
-          <select
-            aria-label={wgiMode ? "거버넌스 지표 기준연도 선택" : "CPIA 기준연도 선택"}
-            value={selectedYear}
-            onChange={(event) =>
-              onSelectorStateChange({
-                ...selectorState,
-                year: Number(event.target.value),
-              })
-            }
-          >
-            {availableYears.map((year) => (
-              <option key={year} value={year}>{year}</option>
-            ))}
-          </select>
-        </label>
-        {wgiMode ? (
+      {wgiMode ? (
+        <div className="cpia126__selectors" data-testid="public-selector">
           <label>
             <span>표시 값</span>
             <select
@@ -262,30 +246,8 @@ export default function CpiaPolicyCapacityAnalysisV126({
               ))}
             </select>
           </label>
-        ) : (
-          <label>
-            <span>세부항목 클러스터</span>
-            <select
-              aria-label="CPIA 세부항목 클러스터 선택"
-              value={selectedCluster.key}
-              onChange={(event) =>
-                onSelectorStateChange({
-                  ...selectorState,
-                  dimensions: {
-                    ...selectorState.dimensions,
-                    cpiaCluster: event.target.value,
-                  },
-                })
-              }
-            >
-              {CPIA_CLUSTERS_V126.map((cluster) => (
-                <option key={cluster.key} value={cluster.key}>{cluster.label}</option>
-              ))}
-            </select>
-          </label>
-        )}
-      </div>
-
+        </div>
+      ) : null}
 
       <section className="cpia126__panel" data-analysis-block="line" data-testid="a002-cpia-trend">
         <div className="pav126-section-heading">
@@ -305,6 +267,47 @@ export default function CpiaPolicyCapacityAnalysisV126({
             {selectedYear}년{" "}
             {wgiMode ? "부문별 비교" : "클러스터와 세부항목"}
           </h3>
+        </div>
+        <div className="cpia126__selectors" data-testid="public-selector">
+          <label>
+            <span>기준연도</span>
+            <select
+              aria-label={wgiMode ? "거버넌스 지표 기준연도 선택" : "CPIA 기준연도 선택"}
+              value={selectedYear}
+              onChange={(event) =>
+                onSelectorStateChange({
+                  ...selectorState,
+                  year: Number(event.target.value),
+                })
+              }
+            >
+              {availableYears.map((year) => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+          </label>
+          {wgiMode ? null : (
+            <label>
+              <span>세부항목 클러스터</span>
+              <select
+                aria-label="CPIA 세부항목 클러스터 선택"
+                value={selectedCluster.key}
+                onChange={(event) =>
+                  onSelectorStateChange({
+                    ...selectorState,
+                    dimensions: {
+                      ...selectorState.dimensions,
+                      cpiaCluster: event.target.value,
+                    },
+                  })
+                }
+              >
+                {CPIA_CLUSTERS_V126.map((cluster) => (
+                  <option key={cluster.key} value={cluster.key}>{cluster.label}</option>
+                ))}
+              </select>
+            </label>
+          )}
         </div>
         <ChartAxesV150 x="값(막대 길이)" y={wgiMode ? "부문" : "클러스터"} unit={activeUnit} />
 

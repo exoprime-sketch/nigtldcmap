@@ -10,9 +10,11 @@ describe("Hydro observations: keep source meaning and values", () => {
     const parsed = source("b-023").map(parseHydroRowV142);
     expect(parsed.filter((row) => !row.placeholder)).toHaveLength(10);
     const pairs = hydroSeasonPairsV142(mergeHydroRowsV142(parsed.filter((row) => !row.placeholder)));
+    // Pair order follows the delivered row order (Sơn Tây literature rows now
+    // precede Kratie's in the 2026-09-30 delivery); values are unchanged.
     expect(pairs.map((pair) => [pair.site, pair.year, pair.dry.central, pair.wet.central, pair.ratio?.central])).toEqual([
-      ["Kratie (Krâchéh)", 2004, 2290, 36700, 16],
       ["Sơn Tây", 2010, 700, 23000, 30],
+      ["Kratie (Krâchéh)", 2004, 2290, 36700, 16],
     ]);
     expect(pairs.every((pair) => pair.unit === "m³/s")).toBe(true);
   });
@@ -28,7 +30,9 @@ describe("Hydro observations: keep source meaning and values", () => {
   });
 
   it("does not turn missing time/value into zero or duplicate estimates into a range", () => {
-    const base = source("b-028")[3];
+    // A literature-reported, unbounded central estimate (not a min/max bound
+    // row, not the GloFAS model-reanalysis series prepended in the delivery).
+    const base = source("b-028").find((row) => row.normalizedAttributes?.["값"] === 14750)!;
     const empty = parseHydroRowV142({ ...base, normalizedAttributes: { ...base.normalizedAttributes, 값: null, 기준연도: null } });
     expect(empty.year).toBeNull();
     expect(empty.value).toBeNull();

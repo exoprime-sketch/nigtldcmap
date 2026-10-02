@@ -50,7 +50,7 @@ const lines = [
   "| 관측소 | 덤벨(`dumbbell`, 지점별 두 값 한 축) | 지점별 단위가 다르면 정렬표 예외 |",
   "| 정책·문서 | 타임라인(`timeline`) 또는 비교표(`comparison-table`) | 숫자 차트 금지 |",
   "| 매트릭스(A-013·C-005·B-044) | 히트맵·정렬표 | 이번 라운드는 문장값 비교표/카드로 열림(예외, 히트맵 후속 P4) |",
-  "| 상태 안내(C-020·C-021·C-023·E-011·E-013) | 문구만(`status-note`) | 차트 0 |",
+  "| 상태 안내(C-020·C-021·C-023·E-013) | 문구만(`status-note`) | 차트 0 |",
   "",
   `## 집계: 표준 ${count("status", "standard")} · 보존 ${count("status", "preserved")} · 예외 ${count("status", "exception")} · 지도 옆 ${count("mapRole", "beside-primary")} · 지도 보류 ${count("mapRole", "pending")}`,
   "",

@@ -10,15 +10,32 @@ const source = readDownloadJsonV158("e-008");
 const records = (source.entities as VietnamEntityV124[]).map((entity) => researchRecordV132(entity)!).filter(Boolean);
 
 describe("E-008 delivered list analysis", () => {
-  it("never renders two empty national series as an existing trend", () => {
-    expect(source.observations).toHaveLength(0);
+  // V162 (2026-09-30 delivery): E-008 grew from 144 to 6790 entity rows and
+  // gained one real observation (the international co-authorship rate,
+  // E-008_paper_intl_coauth_rate) - not a code path change, the delivery is
+  // simply bigger now. E-008 stays excluded from the public site in 2026
+  // (본부장 결정 2026-09-29), so none of this reaches a reader; these counts
+  // exist to keep the analysis code honest against the delivery it will read
+  // if E-008 is re-included.
+  it("carries one real observation now, not an empty series", () => {
+    expect(source.observations).toHaveLength(1);
     expect(nationalPublicationTrendV132([])).toEqual([]);
   });
-  it("reconciles publication-year counts to the actual 144 records", () => {
-    expect(records).toHaveLength(144);
-    expect(records.filter((record) => record.type === "논문")).toHaveLength(114);
-    expect(records.filter((record) => record.type === "특허")).toHaveLength(30);
-    expect(records.every((record) => record.year && record.year >= 2021 && record.year <= 2026)).toBe(true);
+  it("reconciles publication-year counts to the actual 6790 records", () => {
+    expect(records).toHaveLength(6790);
+    expect(records.filter((record) => record.type === "논문")).toHaveLength(6761);
+    expect(records.filter((record) => record.type === "특허")).toHaveLength(29);
+    // The stated collection window is 2021-2026 (수집_기준_절차_DB_검색어_연도),
+    // but a patent's own year is its first filing year, which can predate
+    // when the delivery collected it; 13 patents predate the window, the
+    // earliest at 2016. Every record still has a year (never null/NaN).
+    expect(records.every((record) => typeof record.year === "number")).toBe(true);
+    expect(Math.min(...records.map((record) => record.year as number))).toBe(2016);
+    expect(Math.max(...records.map((record) => record.year as number))).toBe(2026);
+    expect(records.filter((record) => (record.year as number) < 2021 || (record.year as number) > 2026)).toHaveLength(13);
+    expect(
+      records.filter((record) => (record.year as number) < 2021 || (record.year as number) > 2026).every((record) => record.type === "특허")
+    ).toBe(true);
   });
   it("uses actual document years and types in the generated card, not stale catalogue metadata", () => {
     const cards = JSON.parse(readFileSync(resolve(__dirname, `../../../../${countryPublicDirV158("VNM")}/home/card-summaries-v140.json`), "utf8"));
@@ -48,17 +65,26 @@ describe("E-008 delivered list analysis", () => {
     expect(researchCollaborationLabelV144("베트남; 일본")).toBe("해외 협력국 포함");
     expect(researchCollaborationLabelV144("단독출원(국내)")).toBe("국내만 표기");
     expect(researchCollaborationLabelV144("Y")).toBe("협력국 미제공");
+    // V162: the 2026-09-30 delivery states this field as ISO alpha-2 codes
+    // ("VN", "VN;KR;SG") rather than the Korean country names the pre-refresh
+    // delivery used - "VN" alone is the domestic case, same as "베트남".
+    expect(researchCollaborationLabelV144("VN")).toBe("국내만 표기");
+    expect(researchCollaborationLabelV144("VN;KR")).toBe("해외 협력국 포함");
     const domestic = records.filter((record) => researchCollaborationLabelV144(record.collaboration) === "국내만 표기");
-    expect(domestic).toHaveLength(63);
-    expect(records.filter((record) => researchCollaborationLabelV144(record.collaboration) === "해외 협력국 포함")).toHaveLength(81);
+    expect(domestic).toHaveLength(2678);
+    expect(records.filter((record) => researchCollaborationLabelV144(record.collaboration) === "해외 협력국 포함")).toHaveLength(4112);
   });
   it("preserves the delivered field names instead of joining codes to another taxonomy", () => {
-    expect(records[0].technologyClasses).toEqual(["기후변화 취약성·위험성 평가"]);
-    expect(records[1].technologyClasses).toEqual(["기후변화 감시·진단"]);
-    const agriculture = records.find((record) => record.entity.recordId === "v124-e-008-entity-00009")!;
-    const forest = records.find((record) => record.entity.recordId === "v124-e-008-entity-00018")!;
+    // V162: the 2026-09-30 delivery is an entirely new 6790-row export (the
+    // pre-refresh recordIds 00009/00018 now name different documents), so
+    // this is pinned to the current delivery's own first two records and one
+    // clean single-class example per category instead of the old ids.
+    expect(records[0].technologyClasses).toEqual(["건강"]);
+    expect(records[1].technologyClasses).toEqual(["바이오에너지"]);
+    const agriculture = records.find((record) => record.entity.recordId === "v124-e-008-entity-00128")!;
+    const forest = records.find((record) => record.entity.recordId === "v124-e-008-entity-00115")!;
     expect(agriculture.technologyClasses).toEqual(["농축수산"]);
     expect(forest.technologyClasses).toEqual(["산림·생태계"]);
-    expect(records.flatMap((record) => record.technologyClasses)).toHaveLength(144);
+    expect(records.flatMap((record) => record.technologyClasses)).toHaveLength(7840);
   });
 });

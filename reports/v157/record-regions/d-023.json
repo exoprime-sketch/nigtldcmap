@@ -6,24 +6,29 @@
   "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
   "recordsAreOrganisations": false,
   "counts": {
-    "records": 73,
-    "located": 5,
-    "withoutRegion": 68,
+    "records": 112,
+    "located": 11,
+    "withoutRegion": 101,
     "multiUnit": 1,
-    "units": 9,
+    "units": 10,
     "unplacedByReason": {
-      "unresolved": 0,
+      "unresolved": 3,
       "subProvincePlace": 0,
       "regionGroup": 2,
       "unnamedProvinceSet": 1,
       "crossCountry": 2,
       "nationwide": 1,
       "codeOnly": 0,
-      "noRegionStated": 62
+      "noRegionStated": 92
     }
   },
   "corruptedMatches": [],
-  "unresolvedValues": [],
+  "unresolvedValues": [
+    {
+      "value": "행정구역_개편근거=국회 결의 제202/2025/QH15호 (Nghị quyết số 202/2025/QH15) · 시행 2025-07-01 (결의 효력 2025-06-12) — 개편 대상국이나 해당 레코드의 소재 성(省)이 좌표만으로 확정되지 않음(다지점·광역 사업). 원문 사업지 확인 필요.",
+      "records": 3
+    }
+  ],
   "columnsUsed": [
     {
       "column": "대상지역",
@@ -31,7 +36,11 @@
     },
     {
       "column": "name",
-      "records": 3
+      "records": 5
+    },
+    {
+      "column": "사업지_행정구역",
+      "records": 4
     }
   ],
   "byRecordId": {
@@ -59,8 +68,8 @@
         ],
         "spelling": "ho chi minh",
         "matchKind": "exact",
-        "column": "name",
-        "columnKind": "name"
+        "column": "사업지_행정구역",
+        "columnKind": "region"
       }
     ],
     "v124-d-023-entity-00018": [
@@ -156,6 +165,88 @@
           "VN-HN"
         ],
         "spelling": "hanoi",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-023-entity-00076": [
+      {
+        "unitCode34": "VN34-SG",
+        "name": "Hồ Chí Minh",
+        "adm1Codes63": [
+          "VN-43",
+          "VN-57",
+          "VN-SG"
+        ],
+        "spelling": "ho chi minh",
+        "matchKind": "exact",
+        "column": "사업지_행정구역",
+        "columnKind": "region"
+      }
+    ],
+    "v124-d-023-entity-00077": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "ha noi",
+        "matchKind": "exact",
+        "column": "사업지_행정구역",
+        "columnKind": "region"
+      }
+    ],
+    "v124-d-023-entity-00078": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "ha noi",
+        "matchKind": "exact",
+        "column": "사업지_행정구역",
+        "columnKind": "region"
+      }
+    ],
+    "v124-d-023-entity-00079": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "hanoi",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-023-entity-00090": [
+      {
+        "unitCode34": "VN34-49",
+        "name": "Vĩnh Long",
+        "adm1Codes63": [
+          "VN-49",
+          "VN-50",
+          "VN-51"
+        ],
+        "spelling": "tra vinh",
+        "matchKind": "exact",
+        "column": "name",
+        "columnKind": "name"
+      }
+    ],
+    "v124-d-023-entity-00095": [
+      {
+        "unitCode34": "VN34-26",
+        "name": "Huế",
+        "adm1Codes63": [
+          "VN-26"
+        ],
+        "spelling": "thua thien hue",
         "matchKind": "exact",
         "column": "name",
         "columnKind": "name"

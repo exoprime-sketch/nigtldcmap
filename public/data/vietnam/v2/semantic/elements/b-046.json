@@ -1,54 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "코발트 · 니켈 · 구리 · 망간)"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 13,
-      "values": [
-        "구리",
-        "니켈",
-        "리튬",
-        "망간",
-        "보크사이트",
-        "안티모니",
-        "인광석",
-        "주석",
-        "코발트",
-        "텅스텐",
-        "형석",
-        "흑연",
-        "희토류"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "01,03,18,24"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 1,
-      "values": [
-        "2026"
+        "entity"
       ]
     }
   ],
   "elementId": "B-046",
-  "entityCount": 0,
+  "entityCount": 64,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 13,
+  "indicatorCount": 14,
   "indicators": [
     {
       "axisGroupKey": "measure-0d37ac614ce3|t REO",
@@ -465,6 +429,30 @@
         "sourceRow": 13,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-caab115b31b7|광종별 상이 - 「단위」 열 참조 (t REO / t (W 함량) / 천 t (건조 기준) / t (천연) / t (Sb 함량) / t (Sn 함량) / 천 t / 천 t (아파타이트) …)",
+      "dimensionLabels": {
+        "category": "추정 매장량 - 광종별 레코드(국가×광종×연도)"
+      },
+      "dimensions": {
+        "category": "추정 매장량 - 광종별 레코드(국가×광종×연도)"
+      },
+      "displayLabel": "확인·추정 매장량 - 광종별 레코드(국가×광종×연도)",
+      "indicatorId": "B-046_reserves_record",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-caab115b31b7",
+        "labelKo": "확인",
+        "unit": "광종별 상이 - 「단위」 열 참조 (t REO / t (W 함량) / 천 t (건조 기준) / t (천연) / t (Sb 함량) / t (Sn 함량) / 천 t / 천 t (아파타이트) …)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-caab115b31b7|광종별 상이 - 「단위」 열 참조 (t REO / t (W 함량) / 천 t (건조 기준) / t (천연) / t (Sb 함량) / t (Sn 함량) / 천 t / 천 t (아파타이트) …)|category=추정 매장량 - 광종별 레코드(국가×광종×연도)|B-046_reserves_record",
+      "sourceCaveat": null,
+      "sourceLabel": "확인·추정 매장량 - 광종별 레코드(국가×광종×연도)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -472,15 +460,23 @@
       "indicatorCount": 5,
       "key": "measure-96ef1ebf118a",
       "labelKo": "핵심광물 매장량 미수록(리튬",
-      "recordCount": 5,
+      "recordCount": 0,
       "unit": "t",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-caab115b31b7",
+      "labelKo": "확인",
+      "recordCount": 0,
+      "unit": "광종별 상이 - 「단위」 열 참조 (t REO / t (W 함량) / 천 t (건조 기준) / t (천연) / t (Sb 함량) / t (Sn 함량) / 천 t / 천 t (아파타이트) …)",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-080d04348d93",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t (Sb 함량)",
       "unitFamily": "other"
     },
@@ -488,7 +484,7 @@
       "indicatorCount": 1,
       "key": "measure-df52641260d9",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t (Sn 함량)",
       "unitFamily": "other"
     },
@@ -496,7 +492,7 @@
       "indicatorCount": 1,
       "key": "measure-13c2efac5bc5",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t (W 함량)",
       "unitFamily": "other"
     },
@@ -504,7 +500,7 @@
       "indicatorCount": 1,
       "key": "measure-19b2eff5ac74",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t (천연)",
       "unitFamily": "other"
     },
@@ -512,7 +508,7 @@
       "indicatorCount": 1,
       "key": "measure-0d37ac614ce3",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "t REO",
       "unitFamily": "other"
     },
@@ -520,7 +516,7 @@
       "indicatorCount": 1,
       "key": "measure-ca3cf59a6c8a",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "천 t",
       "unitFamily": "other"
     },
@@ -528,7 +524,7 @@
       "indicatorCount": 1,
       "key": "measure-1b13946b70c0",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "천 t (건조 기준)",
       "unitFamily": "count"
     },
@@ -536,12 +532,12 @@
       "indicatorCount": 1,
       "key": "measure-6d37016d2efa",
       "labelKo": "확인 매장량",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "천 t (아파타이트)",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 13,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

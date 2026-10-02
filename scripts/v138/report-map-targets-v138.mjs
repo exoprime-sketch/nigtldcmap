@@ -106,7 +106,7 @@ const lines = [
     .filter((row) => row.status === "not-connected")
     .map((row) => `- ${row.code} ${row.publicName}: ${row.reason} 필요한 자료: ${row.requiredAsset || "미기재"}`),
   "",
-  "## 34개 체계 → 63개 경계 대응표(원자료 '2025_개편_후_소속_34개_체계' 열에서 도출)",
+  "## 34개 체계 → 63개 경계 대응표(공식 대응표 — 결의 202/2025/QH15, 34개 경계의 구성 성·시)",
   "",
   ...build.crosswalk34.map((item) => `- ${item.region}: ${item.memberAdm1Codes.join(", ")}`),
   "",

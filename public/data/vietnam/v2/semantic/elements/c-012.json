@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-012",
-  "entityCount": 120,
+  "entityCount": 20,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 103,
+  "indicatorCount": 93,
   "indicators": [
     {
       "axisGroupKey": "measure-944723321d79|단계",
@@ -109,26 +109,6 @@
         "sourceRow": 72,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-ae200ca9a65d|계약유형",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "계약 유형(BOT/BOO/Concession",
-      "indicatorId": "C-012_contract_type",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ae200ca9a65d",
-        "labelKo": "계약 유형(BOT/BOO/Concession",
-        "unit": "계약유형",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ae200ca9a65d|계약유형||C-012_contract_type",
-      "sourceCaveat": null,
-      "sourceLabel": "계약 유형(BOT/BOO/Concession",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-afaee2afe91a|계약유형",
@@ -707,6 +687,30 @@
       }
     },
     {
+      "axisGroupKey": "measure-db6e0292437d|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "조달 체계"
+      },
+      "dimensions": {
+        "category": "조달 체계"
+      },
+      "displayLabel": "PPP 법제도·조달 체계",
+      "indicatorId": "C-012_law",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-db6e0292437d",
+        "labelKo": "PPP 법제도",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-db6e0292437d|속성별, 1.2_entity 3행 머리글 괄호 표기 참조|category=조달 체계|C-012_law",
+      "sourceCaveat": null,
+      "sourceLabel": "PPP 법제도·조달 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-e3e0ed6bca60|시행일",
       "dimensionLabels": {
         "category": "개정 이력 Luật Đường bộ 35/2024/QH15(도로법)",
@@ -1027,26 +1031,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-1dd64351befb|기관",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 전담 기관",
-      "indicatorId": "C-012_ppp_agency",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-1dd64351befb",
-        "labelKo": "PPP 전담 기관",
-        "unit": "기관",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-1dd64351befb|기관||C-012_ppp_agency",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 전담 기관",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-fe5c3d2985c7|—",
       "dimensionLabels": {
         "category": "권한기관 정의",
@@ -1143,26 +1127,6 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-30aee682e4a1|시행일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 법률 유무/명칭 · PPP 법률 유무/명칭 [시행일]",
-      "indicatorId": "C-012_ppp_law_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-30aee682e4a1",
-        "labelKo": "PPP 법률 유무/명칭",
-        "unit": "시행일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-30aee682e4a1|시행일||C-012_ppp_law_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 법률 유무/명칭",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-c593e9b1a643|문서번호",
@@ -1291,26 +1255,6 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-f2106450bf18|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 법률 유무/명칭 · PPP 법률 유무/명칭 [URL]",
-      "indicatorId": "C-012_ppp_law_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f2106450bf18",
-        "labelKo": "PPP 법률 유무/명칭",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-f2106450bf18|URL||C-012_ppp_law_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 법률 유무/명칭",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-398a6bd9a586|건",
@@ -1953,26 +1897,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-00810e21485d|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 프로젝트 이력(건수) · ppp_project_history_mof",
-      "indicatorId": "C-012_ppp_project_history_mof",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-00810e21485d",
-        "labelKo": "PPP 프로젝트 이력(건수)",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-00810e21485d|건||C-012_ppp_project_history_mof",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 프로젝트 이력(건수)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-398a6bd9a586|건",
       "dimensionLabels": {
         "category": "참여유형별 건수",
@@ -2211,26 +2135,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-00810e21485d|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 프로젝트 이력(건수) · ppp_project_history_ppi_worldbank",
-      "indicatorId": "C-012_ppp_project_history_ppi_worldbank",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-00810e21485d",
-        "labelKo": "PPP 프로젝트 이력(건수)",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-00810e21485d|건||C-012_ppp_project_history_ppi_worldbank",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 프로젝트 이력(건수)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-398a6bd9a586|건",
       "dimensionLabels": {
         "category": "상태별 건수",
@@ -2395,26 +2299,6 @@
         "sourceRow": 60,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-711375e465e9|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "PPP 프로젝트 이력(건수)",
-      "indicatorId": "C-012_ppp_project_history_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-711375e465e9",
-        "labelKo": "PPP 프로젝트 이력(건수)",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-711375e465e9|URL||C-012_ppp_project_history_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "PPP 프로젝트 이력(건수)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-df3de83c1b9e|건",
@@ -2619,26 +2503,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-b41018923233|방식",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "조달 방식(경쟁입찰/협상/비공개) · 조달 방식(경쟁입찰/협상/비공개) [방식]",
-      "indicatorId": "C-012_procurement_method_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b41018923233",
-        "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
-        "unit": "방식",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-b41018923233|방식||C-012_procurement_method_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "조달 방식(경쟁입찰/협상/비공개)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-6d1466fe7df6|방식",
       "dimensionLabels": {
         "category": "투자자 지명(Chỉ định nhà đầu tư)",
@@ -2701,26 +2565,6 @@
         "sourceRow": 12,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-95b75be551f1|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "조달 방식(경쟁입찰/협상/비공개) · 조달 방식(경쟁입찰/협상/비공개) [건]",
-      "indicatorId": "C-012_procurement_method_ppi_worldbank",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-95b75be551f1",
-        "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
-        "unit": "건",
-        "unitFamily": "count"
-      },
-      "seriesKey": "measure-95b75be551f1|건||C-012_procurement_method_ppi_worldbank",
-      "sourceCaveat": null,
-      "sourceLabel": "조달 방식(경쟁입찰/협상/비공개)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-6d1466fe7df6|방식",
@@ -3209,46 +3053,6 @@
         "sourceRow": 28,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-ac679f966ff9|여부",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "VfM 평가 의무 여부 · vfm_requirement_datafiles_chinhphu",
-      "indicatorId": "C-012_vfm_requirement_datafiles_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ac679f966ff9",
-        "labelKo": "VfM 평가 의무 여부",
-        "unit": "여부",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ac679f966ff9|여부||C-012_vfm_requirement_datafiles_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "VfM 평가 의무 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-ac679f966ff9|여부",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "VfM 평가 의무 여부 · vfm_requirement_vanban_chinhphu",
-      "indicatorId": "C-012_vfm_requirement_vanban_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-ac679f966ff9",
-        "labelKo": "VfM 평가 의무 여부",
-        "unit": "여부",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-ac679f966ff9|여부||C-012_vfm_requirement_vanban_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "VfM 평가 의무 여부",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -3286,19 +3090,11 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-f2106450bf18",
-      "labelKo": "PPP 법률 유무/명칭",
+      "key": "measure-db6e0292437d",
+      "labelKo": "PPP 법제도",
       "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-30aee682e4a1",
-      "labelKo": "PPP 법률 유무/명칭",
-      "recordCount": 0,
-      "unit": "시행일",
-      "unitFamily": "text"
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
@@ -3309,7 +3105,7 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 3,
+      "indicatorCount": 2,
       "key": "measure-1dd64351befb",
       "labelKo": "PPP 전담 기관",
       "recordCount": 0,
@@ -3349,30 +3145,6 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-711375e465e9",
-      "labelKo": "PPP 프로젝트 이력(건수)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-00810e21485d",
-      "labelKo": "PPP 프로젝트 이력(건수)",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-ac679f966ff9",
-      "labelKo": "VfM 평가 의무 여부",
-      "recordCount": 0,
-      "unit": "여부",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 2,
       "key": "measure-f34970bf649a",
       "labelKo": "VfM(Value for Money) 평가 의무 여부",
@@ -3394,14 +3166,6 @@
       "labelKo": "계약 유형 (BOT / BOO / Concession 등)",
       "recordCount": 0,
       "unit": "종",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-ae200ca9a65d",
-      "labelKo": "계약 유형(BOT/BOO/Concession",
-      "recordCount": 0,
-      "unit": "계약유형",
       "unitFamily": "text"
     },
     {
@@ -3480,22 +3244,6 @@
       "indicatorCount": 4,
       "key": "measure-6d1466fe7df6",
       "labelKo": "조달 방식 (경쟁입찰 / 협상 / 지명)",
-      "recordCount": 0,
-      "unit": "방식",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-95b75be551f1",
-      "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "count"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-b41018923233",
-      "labelKo": "조달 방식(경쟁입찰/협상/비공개)",
       "recordCount": 0,
       "unit": "방식",
       "unitFamily": "text"

@@ -43,7 +43,11 @@ test("national values do not merge products or accept duplicate years", () => {
   expect(nationalSeriesV147([row,row])[0].points[0]).toMatchObject({value:null, conflict:true});
 });
 test("BUR sectors neither double count totals nor hide negative sinks/missing cells", () => {
-  const b = burInventoryV147(source("c-002").entities);
+  // 2026-09-30 delivery: sector totals are wide-row columns on the "최신"
+  // BUR entity; the by-sector gas split moved to a "부문별 배출량" indicator
+  // per sector, so both entities and indicators are needed here.
+  const bundle = source("c-002");
+  const b = burInventoryV147(bundle.entities, bundle.indicators);
   expect(b.map((r)=>r.total)).toEqual([205832.2,46094.64,44069.74,20738.38]);
   expect(b.reduce((n,r)=>n+r.total!,0)).toBeCloseTo(316734.96,2);
   expect(b[2].gases.CO2).toBe(-37489.34);
@@ -57,9 +61,12 @@ test("a count incorrectly labelled MW is flagged without silently changing sourc
   expect(own?.unitConflict).toBe(true);
 });
 test("BUR duplicate source rows fail closed", () => {
-  const rows: VietnamEntityV124[] = source("c-002").entities;
-  const row=rows.find((r)=>r.name === "BUR3(2016) — 1 Energy(에너지)")!;
-  expect(burInventoryV147([...rows,row])[0].total).toBeNull();
+  const bundle = source("c-002");
+  const rows: VietnamEntityV124[] = bundle.entities;
+  // The 최신(latest) BUR wide row (BUR3, 2016); duplicating it makes the
+  // "most recent BUR year" ambiguous, so every sector total fails closed.
+  const row = rows.find((r) => r.normalizedAttributes?.["식별_레코드_유형"] === "격년갱신보고서(BUR)" && r.normalizedAttributes?.["인벤토리_연도_년"] === 2016)!;
+  expect(burInventoryV147([...rows,row], bundle.indicators)[0].total).toBeNull();
 });
 test("ordinal and percentage-point changes preserve meaning", () => {
   expect(allowsRelativeChangeV147("순위")).toBe(false);

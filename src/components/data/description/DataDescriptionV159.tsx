@@ -68,7 +68,6 @@ interface UseCaseCardV159Props {
 }
 
 function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onToggleChip }: UseCaseCardV159Props) {
-  const cautionDiffers = caseItem.caution !== caseItem.cautionDisplay;
   return (
     <article
       className="dd159-case"
@@ -118,16 +117,14 @@ function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onTog
             ))}
           </ul>
         </div>
-        <p className="dd159-case-field dd159-caution">
-          <span className="dd159-case-field-label">유의점</span>
-          {cautionDiffers ? (
-            <span data-caution-original={caseItem.caution} title={caseItem.caution}>
-              <PublicTermTextV134 text={caseItem.cautionDisplay} />
-            </span>
-          ) : (
+        {/* V162: only the country's own view of the caution; the workbook's
+            source text may name other countries and is no longer a tooltip. */}
+        {caseItem.cautionDisplay ? (
+          <p className="dd159-case-field dd159-caution">
+            <span className="dd159-case-field-label">유의점</span>
             <PublicTermTextV134 text={caseItem.cautionDisplay} />
-          )}
-        </p>
+          </p>
+        ) : null}
       </div>
     </article>
   );

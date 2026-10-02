@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-004",
-  "entityCount": 33232,
+  "entityCount": 91596,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 29,
+  "indicatorCount": 33,
   "indicators": [
     {
       "axisGroupKey": "measure-8330be392a68|지표별 상이(속성 열 참조)",
@@ -30,6 +30,86 @@
       "seriesKey": "measure-8330be392a68|지표별 상이(속성 열 참조)||B-004_climate_adm1_year",
       "sourceCaveat": null,
       "sourceLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-69dc938a6afb|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-004_climate_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-69dc938a6afb",
+        "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-69dc938a6afb|지표별 상이(속성 열 참조)||B-004_climate_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8d1fda867633|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "indicatorId": "B-004_climate_monthly_clim_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8d1fda867633",
+        "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-8d1fda867633|지표별 상이(속성 열 참조)||B-004_climate_monthly_clim_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-120c5ba504e1|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "indicatorId": "B-004_climate_monthly_clim_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-120c5ba504e1",
+        "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-120c5ba504e1|지표별 상이(속성 열 참조)||B-004_climate_monthly_clim_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-c1cd3b5c21b6|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "CMIP6 기반 과거／미래 기후(전국) - 월별 평년값(전국)",
+      "indicatorId": "B-004_climate_monthly_clim_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-c1cd3b5c21b6",
+        "labelKo": "CMIP6 기반 과거／미래 기후(전국) - 월별 평년값(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-c1cd3b5c21b6|지표별 상이(속성 열 참조)||B-004_climate_monthly_clim_national",
+      "sourceCaveat": null,
+      "sourceLabel": "CMIP6 기반 과거／미래 기후(전국) - 월별 평년값(전국)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -880,8 +960,40 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-69dc938a6afb",
+      "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-120c5ba504e1",
+      "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8d1fda867633",
+      "labelKo": "CMIP6 기반 과거／미래 기후(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-716bd9e257bd",
       "labelKo": "CMIP6 기반 과거／미래 기후(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-c1cd3b5c21b6",
+      "labelKo": "CMIP6 기반 과거／미래 기후(전국) - 월별 평년값(전국)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

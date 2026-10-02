@@ -15,7 +15,7 @@
     "regionalProjectGeometry": "/data/vietnam/v2/spatial/projects/d-018-regional.geojson",
     "rightsMatrix": "/data/vietnam/v2/rights-matrix.json",
     "searchIndex": [
-      "/data/vietnam/v2/packs/search-index-v124-1fbe22e6.json"
+      "/data/vietnam/v2/packs/search-index-v124-f2f0c530.json"
     ],
     "sourceRegistry": "/data/vietnam/v2/packs/source-registry-v124-68d4d85c.json",
     "spatialLayers": [
@@ -31,13 +31,12 @@
   },
   "authorizedElementCount": 20,
   "authorizedRows": {
-    "entities": 302,
-    "found": 441,
-    "observations": 139,
-    "published": 441,
+    "entities": 7008,
+    "found": 9454,
+    "observations": 2446,
+    "published": 9454,
     "suppressed": 0,
     "withoutPopulatedRows": [
-      "E-011",
       "E-013"
     ]
   },
@@ -50,52 +49,55 @@
   "downloadDelivery": {
     "adapter": "null",
     "adapterConfigured": false,
-    "assetCount": 147,
+    "assetCount": 148,
     "externalAssetCount": 0,
     "externalByteTotal": 0,
     "pendingUploadCount": 0,
-    "repositoryAssetCount": 147,
+    "repositoryAssetCount": 148,
     "uploadedCount": 0
   },
-  "downloadableElementCount": 143,
+  "downloadableElementCount": 144,
   "frameworkElements": 152,
-  "generatedAt": "2026-08-27T00:00:00Z",
-  "mapFeatureCount": 14920,
+  "generatedAt": "2026-09-30T00:00:00Z",
+  "mapFeatureCount": 15287,
   "mapLayerCount": 60,
-  "packCount": 26,
+  "packCount": 30,
+  "provenance": {
+    "sourceDeliveredAt": "2026-09-30"
+  },
   "publicStatusCounts": {
     "actual": 125,
-    "data-entry-planned": 1,
+    "data-entry-planned": 0,
     "excluded": 6,
     "not-collected": 1,
     "partial": 3,
-    "public-authorized": 15,
+    "public-authorized": 16,
     "quarantined": 0,
     "schema-only": 1
   },
   "rawRows": {
-    "entities": 153079,
-    "metadata": 2219,
-    "nonstandardRows": 310,
-    "normalizedCoreRows": 171565,
-    "observations": 16267,
-    "total": 171875
+    "entities": 364536,
+    "metadata": 2249,
+    "nonstandardRows": 380,
+    "normalizedCoreRows": 384981,
+    "observations": 18196,
+    "total": 385361
   },
   "rowBalance": {
-    "explicitPlaceholderRows": 19,
+    "explicitPlaceholderRows": 90,
     "formOrAuxiliaryRows": 0,
     "matches": true,
-    "processedCoreRows": 171565,
-    "processedNonstandardRows": 310,
-    "processedRows": 171875,
-    "sourceOriginalRows": 171875,
-    "supplementalSourceRows": 291
+    "processedCoreRows": 384981,
+    "processedNonstandardRows": 380,
+    "processedRows": 385361,
+    "sourceOriginalRows": 385361,
+    "supplementalSourceRows": 290
   },
   "runtimeVersion": "v124-gzip-json-envelope-v1",
   "schemaVersion": "v124",
-  "shardCount": 26,
+  "shardCount": 30,
   "sourcePackage": "vietnam-data(4).zip",
-  "sourcePackageSha256": "9e3feb01519e4887c8384f3e0f34d566a3859c4e311fd2f2002025d4072859e3",
+  "sourcePackageSha256": "295adaf079b543a11957c887735fb0ce09514b84e79aae0ecac62829c8e172bf",
   "unexplainedElements": 0,
   "workbookFiles": 149
 }

@@ -1,18 +1,34 @@
 {
   "dimensions": [
     {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 1,
+      "values": [
+        "임팩트 투자 현황 · DFI 투자 건수"
+      ]
+    },
+    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
     }
   ],
   "elementId": "D-024",
-  "entityCount": 12,
+  "entityCount": 26,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 6,
+  "indicatorCount": 8,
   "indicators": [
     {
       "axisGroupKey": "measure-698a3100e366|USD",
@@ -187,6 +203,54 @@
     {
       "axisGroupKey": "measure-cb62efeb5ad3|건",
       "dimensionLabels": {
+        "category": "임팩트 투자 현황 · DFI 직접투자 레지스트리"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · DFI 직접투자 레지스트리"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · DFI 직접투자 레지스트리",
+      "indicatorId": "D-024_dfi_direct_investment_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb62efeb5ad3",
+        "labelKo": "VC",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-cb62efeb5ad3|건|category=임팩트 투자 현황 · DFI 직접투자 레지스트리|D-024_dfi_direct_investment_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "VC·임팩트 투자 현황 · DFI 직접투자 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-cb62efeb5ad3|건",
+      "dimensionLabels": {
+        "category": "임팩트 투자 현황 · DFI 투자 건수"
+      },
+      "dimensions": {
+        "category": "임팩트 투자 현황 · DFI 투자 건수"
+      },
+      "displayLabel": "VC·임팩트 투자 현황 · DFI 투자 건수",
+      "indicatorId": "D-024_dfi_investment_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb62efeb5ad3",
+        "labelKo": "VC",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-cb62efeb5ad3|건|category=임팩트 투자 현황 · DFI 투자 건수|D-024_dfi_investment_count",
+      "sourceCaveat": null,
+      "sourceLabel": "VC·임팩트 투자 현황 · DFI 투자 건수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-cb62efeb5ad3|건",
+      "dimensionLabels": {
         "category": "임팩트 투자 현황 · 개별 투자거래 레지스트리",
         "detail": "베트남 기후기술",
         "technology": "01 · 03 · 08 · 15 · 17 · 18 · 19 · 32 · 34"
@@ -237,15 +301,15 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
+      "indicatorCount": 3,
       "key": "measure-cb62efeb5ad3",
       "labelKo": "VC",
-      "recordCount": 0,
+      "recordCount": 1,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 0,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

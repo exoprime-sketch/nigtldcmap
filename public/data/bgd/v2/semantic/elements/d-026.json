@@ -1,12 +1,353 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 9,
+      "values": [
+        "guarantee_amount_total_active",
+        "guarantee_amount_total_not_active",
+        "guarantee_amount_total_proposed",
+        "guarantee_count_active",
+        "guarantee_count_climate_finance",
+        "guarantee_count_not_active",
+        "guarantee_count_power_sector",
+        "guarantee_count_proposed",
+        "guarantee_count_total"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2022"
+      ]
+    }
+  ],
   "elementId": "D-026",
-  "entityCount": 0,
+  "entityCount": 17,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_amount_total_active",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_amount_total_active",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_active",
+      "indicatorId": "D-026_guarantee_amount_total_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_amount_total_active|technology=범용|D-026_guarantee_amount_total_active",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_active",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_amount_total_not_active",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_amount_total_not_active",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_not_active",
+      "indicatorId": "D-026_guarantee_amount_total_not_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_amount_total_not_active|technology=범용|D-026_guarantee_amount_total_not_active",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_not_active",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_amount_total_proposed",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_amount_total_proposed",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_proposed",
+      "indicatorId": "D-026_guarantee_amount_total_proposed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_amount_total_proposed|technology=범용|D-026_guarantee_amount_total_proposed",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_amount_total_proposed",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_active",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_active",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_active",
+      "indicatorId": "D-026_guarantee_count_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_active|technology=범용|D-026_guarantee_count_active",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_active",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_climate_finance",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_climate_finance",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_climate_finance",
+      "indicatorId": "D-026_guarantee_count_climate_finance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_climate_finance|technology=범용|D-026_guarantee_count_climate_finance",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_climate_finance",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_not_active",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_not_active",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_not_active",
+      "indicatorId": "D-026_guarantee_count_not_active",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_not_active|technology=범용|D-026_guarantee_count_not_active",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_not_active",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_power_sector",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_power_sector",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_power_sector",
+      "indicatorId": "D-026_guarantee_count_power_sector",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_power_sector|technology=범용|D-026_guarantee_count_power_sector",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_power_sector",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_proposed",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_proposed",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_proposed",
+      "indicatorId": "D-026_guarantee_count_proposed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_proposed|technology=범용|D-026_guarantee_count_proposed",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_proposed",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "guarantee_count_total",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "guarantee_count_total",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · guarantee_count_total",
+      "indicatorId": "D-026_guarantee_count_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=guarantee_count_total|technology=범용|D-026_guarantee_count_total",
+      "sourceCaveat": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · guarantee_count_total",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[정비 2026-09-24] 레지스트리 재구축 과정에서 삭제된 메타를 같은 요소의 메타를 준거로 복원. 값·출처는 본문 비고 참조.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-7f0cd709cfc5|건",
+      "dimensionLabels": {
+        "category": "보증사업 레지스트리",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "보증사업 레지스트리",
+        "technology": "범용"
+      },
+      "displayLabel": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "indicatorId": "D-026_miga_guarantee_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7f0cd709cfc5",
+        "labelKo": "MIGA 정치적 리스크 보증",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7f0cd709cfc5|건|category=보증사업 레지스트리|technology=범용|D-026_miga_guarantee_registry",
+      "sourceCaveat": "[★검토의견 반영 2026-09-24] 「보증유형」 열에 문서 유형이 들어가던 문제를 「MIGA 공개문서 유형」으로 라벨 정정. 명세서가 요구한 보증위험 유형·보증 기간은 공개 데이터셋에 없고 사업별 Guarantee Summary(https://www.miga.org/project-disclosures)에만 있어 별도 확보 예정.",
+      "sourceLabel": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceLabelEn": "MIGA 정치적 리스크 보증 · 보증사업 레지스트리",
+      "sourceNote": "[★검토의견 반영 2026-09-24] 「보증유형」 열에 문서 유형이 들어가던 문제를 「MIGA 공개문서 유형」으로 라벨 정정. 명세서가 요구한 보증위험 유형·보증 기간은 공개 데이터셋에 없고 사업별 Guarantee Summary(https://www.miga.org/project-disclosures)에만 있어 별도 확보 예정.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 10,
+      "key": "measure-7f0cd709cfc5",
+      "labelKo": "MIGA 정치적 리스크 보증",
+      "recordCount": 9,
+      "unit": "건",
+      "unitFamily": "count"
+    }
+  ],
+  "observationCount": 9,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

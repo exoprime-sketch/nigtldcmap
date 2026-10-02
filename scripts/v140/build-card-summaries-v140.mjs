@@ -121,10 +121,19 @@ const OVERRIDES = {
   "A-011": { kind: "composition", excludeTotal: true },
   "A-016": { kind: "composition", excludeTotal: true },
   "A-018": { kind: "bars", excludeTotal: true, series: { exclude: /^(Total|Fossil fuels|Solar energy|Wind energy|Bioenergy)[(]/u }, note: "상위 합계 항목(화석연료·태양에너지·풍력·바이오에너지 합계)은 제외하고 하위 기술만 비교" },
-  "B-001": { kind: "bars", year: "first", scopeLabel: "월별 평년값(1991–2020)" },
+  "B-001": { kind: "bars", year: "first", scopeLabel: "월별 평년값(1991–2020)", labelStrip: /\s*\(1991-2020 평년\)$/u },
   "A-014": { measure: { label: "SDG Index 종합점수" } },
   "A-017": { kind: "bars", series: { match: /\(기준값\)/u }, year: "first", note: "기준값 · 상한·하한은 상세" },
-  "B-002": { kind: "bars" },
+  // V162: the 2026-09-30 sheet adds the 2071–2099 SSP projections (year 2099);
+  // the card keeps the latest observed normal (1991–2020), not a projection.
+  "B-002": { kind: "bars", year: 2020 },
+  // V162: the 2026-09-30 layer sheets add default-value shares (%) and length
+  // (km) per layer; the card keeps the layer's feature count, as before.
+  // V162: the delivery's "[보조]" KITA rows now sit in the same measure as the
+  // main trade series, told apart by category; the card keeps the main total.
+  "A-030": { series: { match: /^총 교역액$/u } },
+  "A-027": { measure: { label: "도로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
+  "A-028": { measure: { label: "수로 레이어", unit: "건" }, series: { match: /^피처 수$/u } },
   "B-010": { measure: { label: "CRI 종합 순위" } },
   "B-013": { kind: "bars", excludeTotal: true },
   "B-015": { kind: "bars", excludeTotal: true },
@@ -142,6 +151,9 @@ const OVERRIDES = {
   "D-013": { kind: "bars", series: { match: /차원\(dimension\) 점수/u } },
   "D-018": { kind: "bars", headlineSeries: /베트남 단독/u },
   "E-010": { measure: { label: "GERD" } },
+  // V162: NRI arrived with the overall index and four pillars, scores and
+  // ranks; the card leads with the overall score, as the detail does.
+  "E-011": { measure: { label: "NRI 2025", unit: "점수" }, series: { match: /^종합 점수$/u } },
   // The detail's 총 취업자 수 KPI is the all-occupation total (2024, 천명); the
   // 백만명 series stops at 2023 and would open the detail on a year with no
   // occupation rows.
@@ -168,15 +180,56 @@ const SPECIALISED_SELECTION = {
 };
 
 /** Entity registers: what one row is, and the attribute the card compares across. */
+function mineralYearNameV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const mineral = text(attributes["광종_세부_원천_표기"]) || text(attributes["광종_표준"]);
+  const year = text(attributes["연도"]);
+  return mineral ? `${mineral}${year ? ` ${year}년` : ""}` : row.name;
+}
+
+function scenarioYearNameV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const scenario = text(attributes["시나리오_명칭_원천"]);
+  const year = text(attributes["연도"]);
+  return scenario ? `${scenario}${year ? ` · ${year}년` : ""}` : row.name;
+}
+
+function statedValueV162(row) {
+  const attributes = row.normalizedAttributes || {};
+  const value = numberOf(attributes["값"]);
+  return value === null ? "" : `${formatNumber(value)}${text(attributes["단위"]) ? ` ${text(attributes["단위"])}` : ""}`;
+}
+
 const ENTITY_RULES = {
   "A-013": { unit: "연계 항목", kind: "facts" },
   "A-025": { unit: "시설", kind: "facts", nameFrom: (row) => (row.note || "").match(/\[시설명:\s*([^\]]+)\]/u)?.[1] || row.name },
   "A-029": { unit: "문서", kind: "facts" },
+  // V162: the 2026-09-30 mineral sheets name each row by its record key
+  // ("VNM_인광석_2020"); the card names it by the mineral and year it holds.
+  // Two rows can share a mineral and year (two stated estimates), so the
+  // preview lists rows with their values instead of distinct names.
+  // V162: B-044's export-ban readings moved from observations to one record
+  // per mineral (21); its observations are two stated texts. The card counts
+  // the minerals the detail lists, named as the detail names them.
+  "B-044": { unit: "광종", kind: "facts", nameFrom: (row) => text(row.normalizedAttributes?.["광종_표준"]).split(" - ").pop() || row.name },
+  "B-046": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
+  "B-047": { unit: "항목", kind: "records", nameFrom: mineralYearNameV162, valueFrom: statedValueV162 },
+  // V162: B-014's rows are named by record key only; the card names each by
+  // the source's scenario name and year.
+  "B-014": { unit: "항목", kind: "records", nameFrom: scenarioYearNameV162, valueFrom: statedValueV162 },
   "B-008": { unit: "관측소", kind: "stations" },
   "B-012": { unit: "재해 사건", groupBy: "재해유형", kind: "bars" },
   "B-017": { unit: "평가구역", kind: "grades", gradeKey: "기준_물스트레스_Baseline_Water_Stress_등급" },
   "B-023": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명", rowLabel: "관측값" },
-  "B-025": { unit: "유역", kind: "bars", valueKey: "베트남_내_면적_km_GIS_산출", labelKey: "유역명_국문", valueUnit: "km²" },
+  // V162: the 2026-09-30 sheet names the column "자국 내 …" and adds 110
+  // unnamed HydroBASINS main basins; the card compares the source's named
+  // basins (those with a literature area), as the detail's bars do, under the
+  // Korean part of the source's own name ("Sông Hồng – … · 홍–타이빈").
+  "B-025": {
+    unit: "유역", kind: "bars", valueKey: "자국_내_면적_km_GIS_산출", valueUnit: "km²",
+    rowFilter: (attributes) => numberOf(attributes["총_유역면적_km_문헌"]) !== null && !/전국 집계|National aggregate/iu.test(text(attributes["유역명_원천_표기"])),
+    labelFrom: (attributes) => text(attributes["유역명_원천_표기"]).split(" · ").pop(),
+  },
   "B-028": { unit: "관측지점", kind: "facts", distinctBy: "지점_유역명", rowLabel: "관측값" },
   "B-048": { unit: "광산", kind: "facts", nameFrom: (row) => `${row.normalizedAttributes?.광산명 || row.name} (${row.normalizedAttributes?.광종 || ""})` },
   "C-001": { unit: "항목", kind: "facts" },
@@ -428,7 +481,7 @@ function observationCard(elementId, item, pack, contract, override) {
         !(override?.series?.exclude && Object.values(s.labels).some((label) => override.series.exclude.test(label)))
     );
     const years = yearsOf(usable.flatMap((s) => s.rows));
-    const year = override?.year === "first" ? years[0] : years[years.length - 1];
+    const year = override?.year === "first" ? years[0] : Number.isFinite(override?.year) && years.includes(override.year) ? override.year : years[years.length - 1];
     // Parts are told apart by the dimension that differs between them; a
     // dimension every part shares (the measure's own description) is noise.
     const varyingKeys = Object.keys(usable[0]?.labels || {}).filter(
@@ -518,14 +571,19 @@ function partLabel(series, override) {
   const cleaned = override?.series?.match
     ? label.replace(override.series.match, "").replace(/\(\s*\)/gu, "").replace(/\s*·\s*$/u, "").replace(/^\s*·\s*/u, "").trim()
     : label;
-  return cleaned || label;
+  // V162: a suffix the scope already states ("8월 (1991-2020 평년)" under
+  // "월별 평년값(1991–2020)") is not part of the category's name.
+  const stripped = override?.labelStrip ? (cleaned || label).replace(override.labelStrip, "").trim() : cleaned;
+  return stripped || cleaned || label;
 }
 
 function levelOrLine(elementId, item, contract, measure, series, override, rows) {
   const unit = unitShort(measure.unit);
   const provinceSeries = series.filter((s) => s.rows.some(isNumeric) && !Object.values(s.labels).some((label) => TOTAL_LIKE.test(label)));
-  if (provinceSeries.length >= 20 && yearsOf(provinceSeries.flatMap((s) => s.rows)).length <= 1 && !override?.kind) {
-    // One value per province, one year: a distribution, not a trend.
+  if (provinceSeries.length >= 20 && yearsOf(provinceSeries.flatMap((s) => s.rows)).length <= 2 && !override?.kind) {
+    // One value per province, one year: a distribution, not a trend. V162:
+    // two years (B-032 canopy cover 2000 and 2010) are two snapshots, not a
+    // trend either; the card reads the latest one, as the detail opens on it.
     const parts = provinceSeries
       .map((s) => ({ label: seriesLabel(s), value: latestPoint(s.rows)?.value ?? s.rows.find(isNumeric)?.value, series: s }))
       .filter((part) => Number.isFinite(part.value))
@@ -647,7 +705,7 @@ const C_TEMPLATE_CARDS = {
     return { kind: "bars", headline: { value: "15.8 %", label: "2030년 자체 이행 감축목표 · 국제지원 시 전체 43.5%" }, preview: { parts: [{ label: "자체 이행", value: 15.8 }, { label: "국제지원 시 전체", value: 43.5 }], unit: "%", scope: "2030년 BAU 대비 · 두 목표를 합산하지 않음" }, period: "2022년 제출 · 2030년 목표", selection: null, basis: { unit: "감축률", rule: "NDC 2022 표 3의 무조건부·조건부 감축률" }, measure: null, headlineIndicatorIds: ["C-001_mitigation_target"] };
   },
   "C-019": (entities) => carbonFacilityCardV146(entities, false),
-  "C-022": (entities) => carbonFacilityCardV146(entities, true),
+  "C-022": (entities, item, pack) => (isWideTemplateV162(pack) ? inventoryFacilityCardWideV162(entities, pack) : carbonFacilityCardV146(entities, true)),
   // Article 6.8 NMAs: the card states Viet Nam's place, not a count of statements.
   "C-007": (entities, item) => {
     const rows = entities.map(cTemplateRow);
@@ -700,7 +758,8 @@ const C_TEMPLATE_CARDS = {
     };
   },
   // Revised PDP8: the 2050 capacity plan by technology, as the plan's bounds.
-  "C-018": (entities, item) => {
+  "C-018": (entities, item, pack) => {
+    if (isWideTemplateV162(pack)) return capacityPlanCardWideV162(entities);
     const rows = entities.map(cTemplateRow).filter((row) => row.indicatorId === "C-018_generation_capacity_plan" && !/배출|^총 설비/u.test(row.name) && row.value !== null && row.year === 2050);
     const byTech = new Map();
     rows.forEach((row) => { const entry = byTech.get(row.name) || []; entry.push(row); byTech.set(row.name, entry); });
@@ -723,6 +782,110 @@ const C_TEMPLATE_CARDS = {
     };
   },
 };
+
+// ------------------------------------------------------------------ V162 wide records
+// The 2026-09-30 C deliveries are wide: one record per row, its type in
+// "[식별] 레코드 유형". The detail lists them as block cards with a chip per
+// type, so the card counts the same records and types (src/data/visualization
+// /wideRecordsV162.ts). Used when a reviewed vertical-template card finds none
+// of its rows in the new sheet.
+function isWideTemplateV162(pack) {
+  const labels = (pack.meta?.fieldDefinitions || []).map((row) => text(row.label));
+  return labels.some((label) => /^\[식별\]\s*레코드명/u.test(label)) && new Set(labels.map((label) => (label.match(/^\[([^\]]+)\]/u) || [])[1]).filter(Boolean)).size >= 2;
+}
+
+// Same public wording as src/data/visualization/processWordingV162.ts.
+const publicProcessWordingV162 = (value) =>
+  text(value)
+    .replace(/현지조사\s*필요\s*항목/gu, "현장 확인 항목")
+    .replace(/^현지조사\s*[,，]\s*/u, "현장 확인 — ")
+    .replace(/현지조사/gu, "현장 확인");
+
+function wideRecordCardV162(item, pack) {
+  const records = pack.entities.records;
+  const byType = new Map();
+  for (const record of records) {
+    const type = publicProcessWordingV162(record.normalizedAttributes?.["식별_레코드_유형"]) || "기타";
+    byType.set(type, (byType.get(type) || 0) + 1);
+  }
+  const parts = [...byType].map(([label, value]) => ({ label, value })).sort((a, b) => b.value - a.value);
+  const many = parts.length > 1;
+  return {
+    kind: many ? "bars" : "facts",
+    headline: { value: `${formatNumber(records.length)}건`, label: many ? `기록 · 유형 ${parts.length}종` : "기록" },
+    preview: many
+      ? { parts: parts.slice(0, 6), unit: "건", scope: "기록 유형별 · 합산하지 않음", omitted: Math.max(0, parts.length - 6) }
+      : { facts: records.slice(0, 3).map((record) => ({ label: publicProcessWordingV162(record.name), value: "" })), more: Math.max(0, records.length - 3) },
+    period: periodOf(item),
+    selection: null,
+    basis: { unit: "기록", rule: "가로형 기록 1건 = 원천 1행 · 기록 유형별 수", count: { rows: records.length, types: parts.length } },
+    measure: null,
+  };
+}
+
+// V162: C-018 and C-022 keep their dedicated screens on the wide sheet
+// (EnergyOutlookPlanAnalysisV141 / facilityRegionsV146 read the same columns),
+// so their cards keep the dedicated readings, from the wide columns.
+function capacityPlanCardWideV162(entities) {
+  const attr = (row, key) => row.normalizedAttributes?.[key];
+  const rows = entities.filter((row) => text(attr(row, "식별_레코드_유형")) === "전원별 설비계획" && Number(attr(row, "설비_대상_연도_년")) === 2050 && !/배출|^총 설비/u.test(text(attr(row, "설비_전원_국문"))));
+  const ranges = rows.flatMap((row) => {
+    const point = numberOf(attr(row, "설비_설비용량_MW"));
+    const low = numberOf(attr(row, "설비_설비용량_하한_MW")) ?? point;
+    const high = numberOf(attr(row, "설비_설비용량_상한_MW")) ?? point;
+    if (low === null || high === null) return [];
+    return [{ label: text(attr(row, "설비_전원_국문")), min: Math.min(low, high), max: Math.max(low, high) }];
+  }).sort((a, b) => b.max - a.max);
+  const top = ranges[0];
+  if (!top) return null;
+  const range = top.min === top.max ? formatNumber(top.max) : `${formatNumber(top.min)}~${formatNumber(top.max)}`;
+  return {
+    kind: "bars",
+    headline: { value: `${range} MW`, label: `2050년 전원별 설비용량 계획 최대 · ${top.label} · 개정 PDP8 하한~상한` },
+    preview: { parts: ranges.slice(0, 6).map((entry) => ({ label: entry.label, value: entry.max })), unit: "MW", scope: "2050년 계획 상한 · 상위 6개 전원", omitted: Math.max(0, ranges.length - 6) },
+    period: "계획 2030·2050년",
+    selection: { measure: null, sex: null, year: 2050, period: null, dimensions: {} },
+    basis: { unit: "계획값", rule: `개정 PDP8(Quyết định 768/QĐ-TTg) 2050년 전원별 설비용량 계획 ${ranges.length}개 전원 · 하한~상한 범위 · 총 설비·배출 전망 행 제외 · 합산하지 않음`, count: { planItems: ranges.length, rows: entities.length } },
+    measure: null,
+  };
+}
+
+function inventoryFacilityCardWideV162(entities, pack) {
+  const attr = (row, key) => row.normalizedAttributes?.[key];
+  const sectorFields = (pack.meta?.fieldDefinitions || []).filter((field) => /^\[인벤토리\]\s*부속서/u.test(text(field.label)));
+  const regions = entities.flatMap((row) => {
+    const count = numberOf(attr(row, "인벤토리_의무_인벤토리_시설_수_개"));
+    const region = text(attr(row, "지역_지역명_현행")) || text(attr(row, "지역_지역명_개편_전"));
+    if (count === null || !region) return [];
+    const dates = [...text(attr(row, "인벤토리_근거")).matchAll(/(\d{4}-\d{2}-\d{2})/gu)].map((match) => match[1]);
+    const sectors = sectorFields.flatMap((field) => {
+      const value = numberOf(attr(row, field.normalizedKey));
+      return value === null ? [] : [{ label: text(field.label).replace(/^\[인벤토리\]\s*/u, "").replace(/\s*\(개\)\s*$/u, ""), value }];
+    });
+    return [{ recordId: row.recordId, region, count, date: dates[dates.length - 1] || "", sectors }];
+  }).sort((a, b) => b.count - a.count);
+  const top = regions[0];
+  if (!top) return null;
+  return {
+    kind: "bars",
+    headline: { value: `${formatNumber(top.count)}개소`, label: `${top.region} · 인벤토리 의무 대상 시설${top.date ? ` · ${top.date}` : ""}` },
+    preview: { parts: top.sectors.slice(0, 6), unit: "개소", scope: `${top.region} · 부속서별 구성`, omitted: Math.max(0, top.sectors.length - 6) },
+    period: top.date ? `${top.date} 기준` : periodOf({}),
+    selection: { measure: null, sex: null, year: null, period: null, dimensions: { registryRegion: top.recordId } },
+    basis: { unit: "시설", rule: `원자료 성·시별 의무 인벤토리 시설 수 ${regions.length}곳 중 최다 · 부속서별 구성은 원자료 열 그대로 · 재합산하지 않음` },
+    measure: null,
+  };
+}
+
+// The registers whose 2026-09-24 supplement added a stated total that is not
+// what the card counts (D-024: "IFC 6건 + US DFC 9건" beside the 26 records).
+const REGISTER_TOTALS_V162 = new Set(["D-024"]);
+function registryTotalsOnlyV162(observations) {
+  const years = new Set(observations.filter(isNumeric).map((row) => Number(row.year)).filter(Number.isFinite));
+  return observations.length > 0 && observations.length <= 3 && years.size === 1;
+}
+
+const emptyCardV162 = (card) => !card || card.headline?.value === "—" || /^0(?:[^\d.,]|$)/u.test(text(card.headline?.value));
 
 // ------------------------------------------------------------------ entity cards
 function carbonFacilityCardV146(entities, sectorMode) {
@@ -829,7 +992,8 @@ function entityCard(elementId, item, pack, contract, rule) {
   }
   if (rule.kind === "bars" && rule.valueKey) {
     const parts = rows
-      .map((row) => ({ label: text(row.normalizedAttributes?.[rule.labelKey] || row.name), value: Number(row.normalizedAttributes?.[rule.valueKey]) }))
+      .filter((row) => !rule.rowFilter || rule.rowFilter(row.normalizedAttributes || {}))
+      .map((row) => ({ label: rule.labelFrom ? rule.labelFrom(row.normalizedAttributes || {}) : text(row.normalizedAttributes?.[rule.labelKey] || row.name), value: Number(row.normalizedAttributes?.[rule.valueKey]) }))
       .filter((part) => Number.isFinite(part.value) && !TOTAL_LIKE.test(part.label) && !/전국|합계/u.test(part.label))
       .sort((a, b) => b.value - a.value);
     return {
@@ -891,6 +1055,18 @@ function entityCard(elementId, item, pack, contract, rule) {
       measure: null,
     };
   }
+  // V162: rows listed one by one with the value each states.
+  if (rule.kind === "records") {
+    return {
+      kind: "facts",
+      headline: { value: `${formatNumber(rows.length)}건`, label: `${rule.unit} · ${period}` },
+      preview: { facts: rows.slice(0, 3).map((row) => ({ label: text(nameOf(row)), value: rule.valueFrom ? rule.valueFrom(row) : "" })), more: Math.max(0, rows.length - 3) },
+      period,
+      selection,
+      basis: { unit: rule.unit, rule: `${rule.unit} 1건 = 원천 1행${aggregateNote}`, count: { rows: rows.length, distinct: rows.length, sourceRows: pack.entities.records.length } },
+      measure: null,
+    };
+  }
   // facts: what the register holds. When rows are grouped (3 sites in 11
   // observation rows) the detail lists the rows, so the card leads with the
   // rows and states the group count beside them.
@@ -927,11 +1103,34 @@ function yearsFromEntities(rows) {
 }
 
 // ------------------------------------------------------------------ provinces
+/**
+ * V162: the province rows of one administrative system. The 2026-09-30
+ * delivery files the 63 pre-2025 provinces and the 34 post-2025 units in the
+ * same sheet; a card over both counted 97 "성·시". A sheet with pre-reform rows
+ * gives those rows only (B-026's basin rows are another unit); any other sheet
+ * gives its non-national rows. Same rule as src/data/geo/regionSystemV162.ts.
+ */
+function regionSystemOfRowV162(row) {
+  if (row.regionSystem) return row.regionSystem;
+  const unit = text(row.normalizedAttributes?.행정단위);
+  if (/_adm34$/u.test(text(row.indicatorId)) || /개편 후|체계/u.test(unit)) return "adm1";
+  if (/^(전국|country)$/iu.test(unit)) return "country";
+  if (/^(province|city|province\/city)$/iu.test(unit)) return "adm1-prev";
+  return null;
+}
+
+function provinceRowsOfOneSystemV162(records) {
+  const regional = records.filter((row) => regionSystemOfRowV162(row) !== "country" && !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)));
+  return regional.some((row) => regionSystemOfRowV162(row) === "adm1-prev")
+    ? regional.filter((row) => regionSystemOfRowV162(row) === "adm1-prev")
+    : regional;
+}
+
 function regionalCard(elementId, item, pack, contract) {
   const target = mapTargetById.get(elementId);
   const measures = REGIONAL_ENTITY_MEASURE[elementId] ? [REGIONAL_ENTITY_MEASURE[elementId]] : (target?.build?.measures || []).filter((measure) => measure.sourceKey);
   const all = pack.entities.records;
-  const rows = all.filter((row) => !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)));
+  const rows = provinceRowsOfOneSystemV162(all);
   const chosen = measures.find((measure) => rows.some((row) => numberOf(row.normalizedAttributes?.[measure.sourceKey]) !== null));
   if (!chosen) return null;
   const byProvince = new Map();
@@ -940,7 +1139,7 @@ function regionalCard(elementId, item, pack, contract) {
     if (value === null) continue;
     // The detail names a province by its Vietnamese name, else the romanised
     // name split at case changes ("BinhThuan" → "Binh Thuan").
-    const name = (text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
+    const name = (text(row.normalizedAttributes?.["지역명_현지어"]) || text(row.normalizedAttributes?.["지역명_베트남어"]) || text(row.normalizedAttributes?.["지역명"]) || text(row.normalizedAttributes?.["지역명_로마자"] || row.normalizedAttributes?.["개편_후_소속_단위"] || row.normalizedAttributes?.["2025_개편_후_소속_34개_체계"] || row.name)).replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
     if (!byProvince.has(name)) byProvince.set(name, value);
   }
   const values = [...byProvince.values()];
@@ -971,7 +1170,7 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
   const defaultKey = block.match(/defaultMeasure:\s*"([^"]+)"/u)?.[1];
   const measures = (target?.build?.measures || []).filter((measure) => measure.sourceKey);
   const chosen = measures.find((measure) => measure.sourceKey === defaultKey) || { sourceKey: defaultKey, label: defaultKey, unit: "" };
-  const rows = pack.entities.records.filter((row) => !/^(전국|country)$/iu.test(text(row.normalizedAttributes?.행정단위)) && numberOf(row.normalizedAttributes?.[chosen.sourceKey]) !== null);
+  const rows = provinceRowsOfOneSystemV162(pack.entities.records).filter((row) => numberOf(row.normalizedAttributes?.[chosen.sourceKey]) !== null);
   const scenarioOf = (row) => text(row.normalizedAttributes?.시나리오);
   const yearOf = (row) => Number(row.normalizedAttributes?.연도);
   const scenarios = [...new Set(rows.map(scenarioOf))].filter(Boolean);
@@ -1010,6 +1209,11 @@ function regionScenarioCard(elementId, item, pack, contract, options) {
 
 // ------------------------------------------------------------------ assemble
 const reviewedIndicatorCopyV144 = JSON.parse(readFileSync(resolve("src/data/visualization/publicIndicatorCopyV144.json"), "utf8"));
+// V162: what the card's period is - an observed/published span (자료기간), the
+// point a list was collected (기준 시점: no year on the headline or the
+// comparison wording) or a plan's span (계획기간). Decided from the source
+// fields per element; elements not listed keep their 자료기간.
+const periodStatementsV162 = JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/periodStatementsV162.json"), "utf8"));
 const cards = [];
 const review = [];
 // V156: a card is an offer to read the element; an element decided not to be
@@ -1060,6 +1264,11 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
       };
     } else if (REGION_SCENARIO[elementId]) {
       card = regionScenarioCard(elementId, item, pack, contract, REGION_SCENARIO[elementId]);
+    } else if (REGISTER_TOTALS_V162.has(elementId) && ENTITY_RULES[elementId] && entities.length && registryTotalsOnlyV162(observations)) {
+      // V162: a register whose only observations are its own stated totals of
+      // one year (D-024 "DFI 투자 건수 15") is summarised from its records, as
+      // its detail is; the stated total is not a series.
+      card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
     } else if (observations.length && !(ENTITY_RULES[elementId] && !observations.some(isNumeric))) {
       card = observationCard(elementId, item, pack, contract, OVERRIDES[elementId]);
       if (!card && entities.length && ENTITY_RULES[elementId]) card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
@@ -1068,7 +1277,7 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     } else if (C_TEMPLATE_CARDS[elementId]) {
       // V158: a reviewed template that finds none of its rows in a delivery
       // (another country's sheet) hands over to the generic facts card.
-      card = C_TEMPLATE_CARDS[elementId](pack.entities.records, item)
+      card = C_TEMPLATE_CARDS[elementId](pack.entities.records, item, pack)
         || (entities.length ? entityCard(elementId, item, pack, contract, { unit: "항목", kind: "facts" }) : null);
     } else if (ENTITY_RULES[elementId]) {
       card = entityCard(elementId, item, pack, contract, ENTITY_RULES[elementId]);
@@ -1078,6 +1287,10 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     }
   } catch (error) {
     warn(elementId, `builder failed: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  // V162: a wide C sheet whose reviewed card found nothing (or only zeros).
+  if (emptyCardV162(card) && pack.entities?.records?.length && isWideTemplateV162(pack)) {
+    card = wideRecordCardV162(item, pack);
   }
   if (!card) {
     warn(elementId, "no card could be built");
@@ -1107,6 +1320,24 @@ for (const item of [...catalog].filter((row) => !NON_PUBLIC_STATUSES_V156.has(ro
     if (card.preview?.note === original && short) card.preview.note = short;
   }
   card.headline.label = card.headline.label.split(" · ").map((part) => part.trim()).filter(Boolean).join(" · ");
+  // The statements were decided from Viet Nam's source fields; another
+  // country's element of the same number is not covered by them.
+  const periodStatement = periodStatementsV162.country === COUNTRY_ISO3 ? periodStatementsV162.elements[elementId] : undefined;
+  if (periodStatement) {
+    const previous = card.period;
+    if (periodStatement.kind === "reference") {
+      card.headline.label = card.headline.label.split(" · ").filter((part) => part !== previous).join(" · ");
+      if (card.preview?.scope === previous) delete card.preview.scope;
+      card.basis.rule = card.basis.rule.split(`${previous} 기준으로 `).join("");
+      if ([card.headline.label, card.preview?.scope || "", card.basis.rule].some((text) => text.includes(previous))) warn(elementId, `collection year still on the card: ${previous}`);
+    } else {
+      card.headline.label = card.headline.label.split(" · ").map((part) => (part === previous ? periodStatement.text : part)).join(" · ");
+      if (card.preview?.scope === previous) card.preview.scope = periodStatement.text;
+      card.basis.rule = card.basis.rule.split(previous).join(periodStatement.text);
+    }
+    card.period = periodStatement.text;
+    card.periodLabel = periodStatementsV162.labels[periodStatement.kind];
+  }
   const entry = {
     elementId,
     title: item.elementLabel,

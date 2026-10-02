@@ -3,43 +3,26 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 12,
+      "valueCount": 6,
       "values": [
-        "10개국 대조",
         "기준시점 대조",
         "대체 최신 출처(석유·가스)",
-        "석유",
-        "석탄",
         "시계열(EIA)",
         "연도별 시계열",
-        "연도별(EIA)",
         "원자료 단위(단수톤)",
-        "천연가스",
-        "최신 생산량 기준",
         "탄종별"
       ]
     },
     {
       "key": "detail_2",
       "labelKo": "detail_2",
-      "valueCount": 16,
+      "valueCount": 5,
       "values": [
         "2000년말",
         "2010년말",
         "2019년말",
-        "라오스",
-        "말레이시아",
         "무연탄·역청탄",
-        "미얀마",
-        "베트남",
-        "석유",
-        "석탄",
-        "아역청탄·갈탄",
-        "인도네시아",
-        "천연가스",
-        "캄보디아",
-        "태국",
-        "필리핀"
+        "아역청탄·갈탄"
       ]
     },
     {
@@ -54,7 +37,7 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 47,
+      "valueCount": 45,
       "values": [
         "1980",
         "1981",
@@ -100,8 +83,6 @@
         "2021",
         "2022",
         "2023",
-        "2024",
-        "2025",
         "2026"
       ]
     }
@@ -1289,7 +1270,7 @@
       "indicatorCount": 3,
       "key": "measure-961575bc9f6b",
       "labelKo": "가채연수(R/P ratio)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1297,7 +1278,7 @@
       "indicatorCount": 3,
       "key": "measure-03f6751ef99e",
       "labelKo": "가채연수(R/P)",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "년",
       "unitFamily": "other"
     },
@@ -1321,7 +1302,7 @@
       "indicatorCount": 1,
       "key": "measure-99f0f3aaf4d2",
       "labelKo": "석탄 생산량",
-      "recordCount": 45,
+      "recordCount": 0,
       "unit": "1000 t",
       "unitFamily": "other"
     },
@@ -1337,7 +1318,7 @@
       "indicatorCount": 12,
       "key": "measure-91a3be638e79",
       "labelKo": "석탄 확인매장량",
-      "recordCount": 27,
+      "recordCount": 19,
       "unit": "백만 톤",
       "unitFamily": "other"
     },
@@ -1345,7 +1326,7 @@
       "indicatorCount": 3,
       "key": "measure-43cfef48a4d9",
       "labelKo": "세계 확인매장량 비중",
-      "recordCount": 3,
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1353,7 +1334,7 @@
       "indicatorCount": 1,
       "key": "measure-7f488068380b",
       "labelKo": "원유 생산량",
-      "recordCount": 39,
+      "recordCount": 0,
       "unit": "천 배럴/일",
       "unitFamily": "other"
     },
@@ -1361,7 +1342,7 @@
       "indicatorCount": 1,
       "key": "measure-c99dbe8afc3f",
       "labelKo": "천연가스 생산량",
-      "recordCount": 45,
+      "recordCount": 0,
       "unit": "십억 ft³",
       "unitFamily": "other"
     },
@@ -1390,7 +1371,7 @@
       "unitFamily": "other"
     }
   ],
-  "observationCount": 274,
+  "observationCount": 128,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

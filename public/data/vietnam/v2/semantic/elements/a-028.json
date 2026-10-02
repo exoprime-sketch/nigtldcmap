@@ -3,8 +3,9 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 15,
+      "valueCount": 17,
       "values": [
+        "width 기본값 비율",
         "명칭 결측률",
         "분류별 피처 수(beach)",
         "분류별 피처 수(canal)",
@@ -19,13 +20,14 @@
         "분류별 피처 수(volcano)",
         "속성 필드 수",
         "좌표계",
+        "총 연장",
         "피처 수"
       ]
     },
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 7,
+      "valueCount": 9,
       "values": [
         ".dbf 속성 테이블의 필드 개수",
         "fclass 분류값별 지물 건수",
@@ -33,7 +35,17 @@
         "OSM 수로 레이어의 좌표참조체계",
         "OSM 수로 레이어의 지물 건수",
         "OSM 자연지형지물 레이어의 좌표참조체계",
-        "OSM 자연지형지물 레이어의 지물 건수"
+        "OSM 자연지형지물 레이어의 지물 건수",
+        "원천 기본값으로 채워진 비율",
+        "지오메트리 실측 연장"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
       ]
     },
     {
@@ -54,10 +66,34 @@
     }
   ],
   "elementId": "A-028",
-  "entityCount": 0,
+  "entityCount": 7014,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 19,
+  "indicatorCount": 24,
   "indicators": [
+    {
+      "axisGroupKey": "measure-278a67fcc2c3|건",
+      "dimensionLabels": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "dimensions": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "displayLabel": "해안 지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "indicatorId": "A-028_coastal_feature_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-278a67fcc2c3",
+        "labelKo": "해안 지물 목록",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-278a67fcc2c3|건|detail=명칭이 부여된 지물의 위치·유형·규모|A-028_coastal_feature_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "해안 지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-ef7beb813414|EPSG 코드",
       "dimensionLabels": {
@@ -365,6 +401,30 @@
       }
     },
     {
+      "axisGroupKey": "measure-0d1b920b821a|건",
+      "dimensionLabels": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "dimensions": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "displayLabel": "기타 자연지형지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "indicatorId": "A-028_natural_feature_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0d1b920b821a",
+        "labelKo": "기타 자연지형지물 목록",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-0d1b920b821a|건|detail=명칭이 부여된 지물의 위치·유형·규모|A-028_natural_feature_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "기타 자연지형지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-98c364f971c0|개",
       "dimensionLabels": {
         "category": "속성 필드 수",
@@ -433,6 +493,30 @@
       }
     },
     {
+      "axisGroupKey": "measure-12413be47ab3|건",
+      "dimensionLabels": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "dimensions": {
+        "detail": "명칭이 부여된 지물의 위치·유형·규모"
+      },
+      "displayLabel": "내륙 수자원 지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "indicatorId": "A-028_water_feature_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12413be47ab3",
+        "labelKo": "내륙 수자원 지물 목록",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-12413be47ab3|건|detail=명칭이 부여된 지물의 위치·유형·규모|A-028_water_feature_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "내륙 수자원 지물 목록 — 명칭이 부여된 지물의 위치·유형·규모",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-779c0f36475c|EPSG 코드",
       "dimensionLabels": {
         "category": "좌표계",
@@ -465,6 +549,32 @@
         "sourceRow": 17,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-9602e7ac77f1|%",
+      "dimensionLabels": {
+        "category": "width 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "width 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "수로 레이어 · width 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-028_waterways_defaultrate_width",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9602e7ac77f1",
+        "labelKo": "수로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9602e7ac77f1|%|category=width 기본값 비율|detail=원천 기본값으로 채워진 비율|A-028_waterways_defaultrate_width",
+      "sourceCaveat": null,
+      "sourceLabel": "수로 레이어 · width 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-db2cea55bbcc|건",
@@ -671,6 +781,32 @@
       }
     },
     {
+      "axisGroupKey": "measure-e60b8f5e3fa0|km",
+      "dimensionLabels": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "dimensions": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "displayLabel": "수로 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "indicatorId": "A-028_waterways_length_km",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-e60b8f5e3fa0",
+        "labelKo": "수로 레이어",
+        "unit": "km",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-e60b8f5e3fa0|km|category=총 연장|detail=지오메트리 실측 연장|A-028_waterways_length_km",
+      "sourceCaveat": null,
+      "sourceLabel": "수로 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-9602e7ac77f1|%",
       "dimensionLabels": {
         "category": "명칭 결측률",
@@ -708,9 +844,25 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-0d1b920b821a",
+      "labelKo": "기타 자연지형지물 목록",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-12413be47ab3",
+      "labelKo": "내륙 수자원 지물 목록",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 2,
       "key": "measure-9602e7ac77f1",
       "labelKo": "수로 레이어",
-      "recordCount": 1,
+      "recordCount": 4,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -721,6 +873,14 @@
       "recordCount": 1,
       "unit": "EPSG 코드",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-e60b8f5e3fa0",
+      "labelKo": "수로 레이어",
+      "recordCount": 1,
+      "unit": "km",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
@@ -769,9 +929,17 @@
       "recordCount": 8,
       "unit": "건",
       "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-278a67fcc2c3",
+      "labelKo": "해안 지물 목록",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 19,
+  "observationCount": 23,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

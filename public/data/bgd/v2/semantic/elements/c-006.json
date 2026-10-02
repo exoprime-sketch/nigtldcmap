@@ -17,10 +17,41 @@
     {
       "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "category": "제6.4조 이행 체계 · 현황"
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
       },
       "dimensions": {
-        "category": "제6.4조 이행 체계 · 현황"
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
+      },
+      "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · activity",
+      "indicatorId": "C-006_activity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-51c1e9269570",
+        "labelKo": "파리협정 제6.2조",
+        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=미해당|C-006_activity",
+      "sourceCaveat": "[정의·범위] 1행 = 개별 감축활동·사업 1건(JCM, 제6.4조 활동, CDM 전환 활동 등). 수량은 원문 단위 표기를 그대로 두고 임의 환산하지 않음.",
+      "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
+      "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",
+      "sourceNote": "상응조정 산정방법(미선택)·ITMO 이전 실적(CARP 미등재)은 원자료가 생성되지 않아 M01, 국내 레지스트리·국제 레지스트리 연동은 제도 자체가 부존하여 M03.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
+      },
+      "dimensions": {
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
       },
       "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · bilateral_agreement",
       "indicatorId": "C-006_bilateral_agreement",
@@ -29,13 +60,13 @@
         "key": "measure-51c1e9269570",
         "labelKo": "파리협정 제6.2조",
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
+        "unitFamily": "text"
       },
-      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_bilateral_agreement",
-      "sourceCaveat": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = 제6.2조 협력적 접근법 양자문서 1건(3행). 방글라데시 DoE가 공식 열거한 일본 JCM·대한민국 MoU·세계은행 Ci-Dev HCA 3건이며, 이 중 세계은행은 국가가 아닌 국제기구임. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자(C-006_bilateral_party·_bilateral_date·_bilateral_scope)를 레코드 유형 1개로 통합하고, 협정 1건이 상대국 행·체결일 행으로 흩어져 있던 것을 1행 = 협정 1건으로 재구조화함. [집계행 삭제] 구서식의 「체결 건수 3」 행은 행 수로 산출되는 파생값이므로 삭제함(신서식 행 수 3과 동일). [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 국가 간 협정이므로 「전국 / BGD」. [기술분류] 협정 행은 특정 기후기술을 지목하지 않아 tech_id 공란(판단 유형·근거는 「[기술]」 열).",
+      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=미해당|C-006_bilateral_agreement",
+      "sourceCaveat": "[정의·범위] 1행 = 파리협정 제6.2조 양자협정·MoU·이행협정 1건. 체결일·발효 상태·양측 승인기관을 원문 표기대로 기재하고, ITMO 이전 실적은 같은 행의 [실적] 열에 원문 단위로 둠.",
       "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",
-      "sourceNote": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = 제6.2조 협력적 접근법 양자문서 1건(3행). 방글라데시 DoE가 공식 열거한 일본 JCM·대한민국 MoU·세계은행 Ci-Dev HCA 3건이며, 이 중 세계은행은 국가가 아닌 국제기구임. [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자(C-006_bilateral_party·_bilateral_date·_bilateral_scope)를 레코드 유형 1개로 통합하고, 협정 1건이 상대국 행·체결일 행으로 흩어져 있던 것을 1행 = 협정 1건으로 재구조화함. [집계행 삭제] 구서식의 「체결 건수 3」 행은 행 수로 산출되는 파생값이므로 삭제함(신서식 행 수 3과 동일). [지역구분] framework 「지역 구분 필요 = 지역(admin)」 — 국가 간 협정이므로 「전국 / BGD」. [기술분류] 협정 행은 특정 기후기술을 지목하지 않아 tech_id 공란(판단 유형·근거는 「[기술]」 열).",
+      "sourceNote": "상응조정 산정방법(미선택)·ITMO 이전 실적(CARP 미등재)은 원자료가 생성되지 않아 M01, 국내 레지스트리·국제 레지스트리 연동은 제도 자체가 부존하여 M03.",
       "sourceProvenance": {
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
@@ -44,10 +75,12 @@
     {
       "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "category": "제6.4조 이행 체계 · 현황"
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
       },
       "dimensions": {
-        "category": "제6.4조 이행 체계 · 현황"
+        "category": "제6.4조 이행 체계 · 현황",
+        "technology": "미해당"
       },
       "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · domestic_framework",
       "indicatorId": "C-006_domestic_framework",
@@ -58,42 +91,13 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|C-006_domestic_framework",
-      "sourceCaveat": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = 국내 이행체계 구성요소 1건(6행) — 제6.4조 호스트국 참여요건 제출 / DNA 설립 / 상응조정 산정방법 / 국내 탄소 레지스트리 / UNFCCC 국제 레지스트리·CARP 연동 / ITMO 이전 실적. [서식] 구서식에서 참여요건 서식의 체크 항목(파리협정 당사국·NDC·DNA 지정·DNA 기관·대표자·전환 승인 건수)이 6행으로 흩어져 있던 것을 제출 레코드 1행의 「[제출]」 속성 열로 통합함. [수치 유의] 「호스트국 전환 승인 건수 11」(DoE 발표)과 UNFCCC 전환목록상 실제 전환 완료 7건은 서로 다른 수치이며, 차이 사유는 원문에 설명이 없어 양쪽을 각각 원문대로 수록함(11은 본 레코드, 7은 C-006_transition_activity 행 수). [지역구분] 국가 단위 제도이므로 「전국 / BGD」. [기술분류] 제도 행은 특정 기후기술을 지목하지 않아 tech_id 공란.",
+      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=미해당|C-006_domestic_framework",
+      "sourceCaveat": "[정의·범위] 1행 = 제6조 이행 국내 근거 법령·규정 1건.",
       "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
       "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",
       "sourceNote": "상응조정 산정방법(미선택)·ITMO 이전 실적(CARP 미등재)은 원자료가 생성되지 않아 M01, 국내 레지스트리·국제 레지스트리 연동은 제도 자체가 부존하여 M03.",
       "sourceProvenance": {
         "sourceRow": 7,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "19 · 21 · 32"
-      },
-      "dimensions": {
-        "category": "제6.4조 이행 체계 · 현황",
-        "technology": "19,21,32"
-      },
-      "displayLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황 · transition_activity",
-      "indicatorId": "C-006_transition_activity",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-51c1e9269570",
-        "labelKo": "파리협정 제6.2조",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-51c1e9269570|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|category=제6.4조 이행 체계 · 현황|technology=19,21,32|C-006_transition_activity",
-      "sourceCaveat": "[raw] ([raw]\\C-006\\) C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_BGD_A6.4_FORM_GOV-001_HostParty_2025-01-06.pdf · C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_transitioned_to_A6.4_2026-08-19.csv [정의·범위] 1행 = CDM→제6.4조 전환 활동 1건(7행 전수) — 프로그램활동(PoA) 2건, 프로젝트활동(PA) 5건. 전세계 PoA 15건 중 2건, PA 19건 중 5건이 방글라데시 호스트임. [서식] 구서식에서 활동 1건이 C-006_bilateral_scope 구분자의 설명 문자열(유형=·방법론=·부문=·협력국= 결합값)로 들어가 있던 것을 속성 열로 분해하여 1행 = 활동 1건으로 재구조화함. [집계행 삭제] 구서식의 파생 집계행(프로젝트활동 5 · 프로그램활동 2 · 전환 완료 합계 7 · 한국 관련 5 · 방법론 수 3 · 부문 수 3)은 행에서 산출되는 값이므로 삭제함. [수치 정정] 구서식의 「전환 활동 연간 감축량 합계 7,912,790 tCO₂e」는 원자료와 대조한 결과 오기임 — UNFCCC 전환목록 Reductions 열의 방글라데시 5건 합계는 8,312,790 tCO₂e(99,868 + 447,367 + 945,623 + 2,441,426 + 4,378,506)이며, 신서식에서는 합계행을 두지 않고 행별 원값을 수록함. [협력 당사국] Other Party 열 기준 대한민국 관련 5건(가스배관 누출저감 4건 + 개량화덕 PoA 1건), 덴마크 1건, 표기 없음 1건. [지역구분] CDM 전환목록에 사업 소재지·좌표가 기재되어 있지 않아 「전국 / BGD」로 두고 배관망 명칭(Pashchimanchal·Jalalabad·Karnaphuli·Bakhrabad·Titas)을 활동명에 보존함. [기술분류] framework 「행별 태깅」 — 방법론·대상 부문 기준으로 정수·식수공급 32, 가정용 취사기기 효율 19, 천연가스 배관 누출 저감 21을 태깅함.",
-      "sourceLabel": "파리협정 제6.2조·제6.4조 이행 체계·현황",
-      "sourceLabelEn": "Paris Agreement Article 6.2·6.4 Implementation Framework and Status",
-      "sourceNote": "PoA 2건은 전환목록 Reductions 열 표기값이 0이어서 연간 추정 감축량을 공란 처리(M01). PoA 등록취소일은 목록에 표기되지 않아 M06.",
-      "sourceProvenance": {
-        "sourceRow": 8,
         "sourceSheet": "2_meta_info"
       }
     }
@@ -105,7 +109,7 @@
       "labelKo": "파리협정 제6.2조",
       "recordCount": 0,
       "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "unitFamily": "other"
+      "unitFamily": "text"
     }
   ],
   "observationCount": 0,

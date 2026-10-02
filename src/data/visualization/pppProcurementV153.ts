@@ -1,3 +1,4 @@
+import { formatRegionName } from "../geo/regionNameV161";
 import type { VietnamEntityV124, VietnamIndicatorMetaV124 } from "../vietnam/vietnamTypesV124";
 import { koreanTermV153 } from "./koreanTermsV153";
 
@@ -104,7 +105,10 @@ export function pppModelV153(entities: VietnamEntityV124[], indicators: VietnamI
       const count = Number(a["속성3_값"]);
       provinces.push({
         recordId: entity.recordId,
-        region: koreanTermV153(regionSource),
+        // V162 (P12-B): the region dictionary's "한글명 (현지명)" for the
+        // pre-2025 province the source counts by (the old glossary form
+        // "박닌(Bac Ninh)" plus the table's own bracket read twice).
+        region: formatRegionName({ country: "VNM", raw: regionSource, level: "adm1-63" }),
         regionSource,
         count: Number.isFinite(count) ? count : null,
         period: text(a["속성4_시점"]),

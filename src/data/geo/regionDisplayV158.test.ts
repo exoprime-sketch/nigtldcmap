@@ -40,7 +40,9 @@ describe("formatRegionForDisplayV158: Bengali source text", () => {
     // enough for regionNameV161's own key normalisation to find the entry.
     expect(
       formatRegionForDisplayV158({ country: "BGD", raw: "কক্সবাজার Cox's Bazar", level: "district" })
-    ).toEqual({ text: "콕스바자르 (Cox's Bazar)", romanisedMissing: false });
+    ).toEqual({ text: "Cox's Bazar", romanisedMissing: false });
+    // V162 (P12-B): Cox's Bazar is a pending district - the Latin spelling
+    // alone until its Korean name is reviewed; a confirmed name keeps "한글명 (Latin)".
   });
 
   test("nothing usable anywhere: the raw local name is shown and romanisedMissing is set (never invented)", () => {

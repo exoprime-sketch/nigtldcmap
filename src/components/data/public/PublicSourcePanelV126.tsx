@@ -15,6 +15,7 @@ import {
 import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import { useEffect, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
+import { periodStatementV162 } from "../../../data/visualization/periodStatementV162";
 import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
@@ -143,13 +144,18 @@ export default function PublicSourcePanelV126({
   const pendingProvider = publicTextV126(pendingSourceLabel) || "";
   // V161: a period or unit the data does not state is left out of the line
   // and the panel, never filled with a placeholder ("자료기간 미기재").
-  const period = pending ? "" : summarizeYearsV126(years);
+  // V162: an element whose period was decided from its source fields states
+  // it with its own label - '기준 시점 2026-08-14 수집' for a list collected
+  // on that date - instead of the years the rows happen to carry.
+  const statement = periodStatementV162(elementId, dataCountryV158);
+  const periodLabel = statement ? statement.label : "자료기간";
+  const period = pending ? "" : statement ? statement.text : summarizeYearsV126(years);
   const sourceLine = (
     pending
       ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`]
       : [
           `출처 ${provider || "제공기관은 아래 자료정보 참조"}`,
-          period && `자료기간 ${period}`,
+          period && `${periodLabel} ${period}`,
           unitText && `단위 ${unitText}`,
         ]
   ).filter(Boolean).join(" · ");
@@ -193,7 +199,7 @@ export default function PublicSourcePanelV126({
         )}
         {period && (
           <div>
-            <dt>자료기간</dt>
+            <dt>{periodLabel}</dt>
             <dd>{period}</dd>
           </div>
         )}

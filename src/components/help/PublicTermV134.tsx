@@ -19,6 +19,8 @@ import type {
 } from "../../utils/publicTermTokenizerV134";
 import { publicTextV126, publicUnstatedWordingV161 } from "../../data/visualization/publicFieldPolicyV126";
 import PublicTermTooltipV134 from "./PublicTermTooltipV134";
+import { glossaryShownForCountryV162 } from "../../data/glossary/publicGlossaryV134";
+import { usePageDataCountryV162 } from "../../data/countries/DataCountryContextV158";
 import "./public-term-v134.css";
 
 type PublicTermOpenModeV134 = "hover" | "focus" | "pinned" | null;
@@ -44,7 +46,10 @@ export default function PublicTermV134({
   className = "",
 }: PublicTermV134Props) {
   const visibleValue = term ?? (typeof children === "string" ? children : "");
-  const entry = entryProp ?? resolvePublicTermV134(visibleValue);
+  const resolved = entryProp ?? resolvePublicTermV134(visibleValue);
+  // V162: a term about particular countries is explained only on their screens.
+  const pageCountry = usePageDataCountryV162();
+  const entry = resolved && glossaryShownForCountryV162(resolved, pageCountry) ? resolved : null;
   const [openMode, setOpenMode] = useState<PublicTermOpenModeV134>(null);
   const [position, setPosition] = useState<TooltipPositionV134 | null>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);

@@ -138,6 +138,7 @@ for (const row of aliases) {
 // Fields that hold one place name, or a list of them with the separator given.
 const PLACE_FIELDS = [
   ["regionLabel"],
+  ["normalizedAttributes.지역명_현지어"],
   ["normalizedAttributes.지역명_베트남어"],
   ["normalizedAttributes.지역명_로마자"],
   ["normalizedAttributes.행정구역_GADM_매칭", /\s*·\s*/u],

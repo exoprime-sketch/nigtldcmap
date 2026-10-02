@@ -23,10 +23,10 @@ A-021,전력 접근률,false,false,true,Polygon/MultiPolygon (scope only),countr
 A-022,정전 빈도와 지속시간,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 A-023,발전소 현황,true,true,true,point,facility-site,verified-physical-site,facility,facility-site,point,true,발전소의 입지와 설비 분포를 비교할 수 있습니다.,,point
 A-024,베트남 송전망,true,true,true,MultiLineString,network,verified-network-geometry,network-segment,network,line,true,송전망의 연결 구조와 발전소 접근성을 함께 분석할 수 있습니다.,,line
-A-025,탄소포집·저장 시설,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,nation · point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+A-025,탄소포집·저장 시설,true,false,true,point,facility-site,verified-physical-site,facility,facility-site,point,true,구분(주입 실증·가스전·저장 후보) 필터,,point
 A-026,건물 분포,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-A-027,육상교통 인프라,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-A-028,해안·수자원 인프라,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+A-027,육상교통 인프라,true,false,true,MultiLineString,network,verified-network-geometry,network-segment,network,line,true,발전소·송전망·산업단지와 육상 교통 접근성을 함께 볼 수 있습니다.,,line
+A-028,해안·수자원 인프라,true,false,true,Point/Polygon/MultiPolygon,facility,verified-facility-location,facility,facility,point,true,수자원·해안 시설의 분포를 물 스트레스·홍수 위험과 함께 볼 수 있습니다.,,point
 A-029,자유무역협정 체결 현황,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 A-030,한국과의 교역 규모,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 A-031,물류성과지수,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
@@ -34,46 +34,46 @@ A-032,중간재 교역 규모,false,false,true,Polygon/MultiPolygon (scope only)
 A-033,해운 연결성,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-001,건기와 우기,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-002,기후대,false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-003,평균 기온과 강수량,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-004,과거·미래 기후전망(CMIP6),false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-005,가뭄 위험,false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-006,폭염 위험,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-007,홍수·호우 위험,false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-008,해수면 상승 전망,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-009,생물다양성·기후 위험,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-003,평균 기온과 강수량,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"기온(평균·최고·최저)·연강수량, 연도(1901~2025, 5년 간격 + 최신)",,admin1
+B-004,과거·미래 기후전망(CMIP6),true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"기후변수 5종 × 시나리오(과거 모형·SSP1-1.9·1-2.6·2-4.5·3-7.0·5-8.5), 연도(1950~2100, 5년 간격)",,admin1
+B-005,가뭄 위험,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"CDD·SPEI-12 × 시나리오, 연도(5년 간격)",,admin1
+B-006,폭염 위험,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"폭염·열대야·Heat Index 지표 6종(임계온도 명시) × 시나리오, 연도(5년 간격)",,admin1
+B-007,홍수·호우 위험,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"극한강수 지표 5종 × 시나리오, 연도(5년 간격)",,admin1
+B-008,해수면 상승 전망,true,false,true,point,multi-site,verified-physical-site,관측소,multi-site,point,true,관측소 클릭 → 시나리오(SSP1-1.9~5-8.5)·분위(5·17·50·83·95)별 연도 전망,,point
+B-009,생물다양성·기후 위험,true,false,true,Polygon/MultiPolygon,region,source-region-value,pre-2025-63-province,region,admin1,true,지표 4종 선택 → 성별 값 비교,,admin1
 B-010,기후위험지수,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-011,기후취약성지수,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-012,재해·재난 이력,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,nation · point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-012,재해·재난 이력,true,false,true,point,facility-site,first-source-coordinate,재해 사건,facility-site,point,true,재해유형 필터,,point
 B-013,탄소국경조정제도 영향,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-014,탄소세 도입 효과 전망,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-015,탄소가격 수준,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-016,화석연료 의존도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-017,물 스트레스,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-017,물 스트레스,true,false,true,MultiPolygon,assessment-unit,source-unit-value,aqueduct40-unit,assessment-unit,point,true,물 스트레스·홍수·가뭄 위험을 유역 단위로 비교하고 성·시 경계와 겹쳐 볼 수 있습니다.,,point
 B-018,장기 국내총생산 전망,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-019,장기 인구 전망,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-020,복합 위험지수,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-021,취약성지수,true,true,true,Polygon/MultiPolygon,region,source-region-value,six-region,region,admin1,true,6개 권역의 취약성 차이를 행정경계 위에서 비교할 수 있습니다.,,regional-scope
 B-022,기후피해의 경제적 비용,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-023,건기/우기 유량 차이,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,basin · point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-023,건기/우기 유량 차이,true,false,true,point,facility-site,first-source-coordinate,관측지점·유역,facility-site,point,true,"지점 클릭 → 건기·우기 유량, 유량비, 비중 등 지표값",,point
 B-024,농업 용수 비중,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-025,유역 면적,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,basin · nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-026,유향(flow direction),false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-025,유역 면적,true,false,true,point,facility-site,representative-coordinate,facility,facility-site,point,true,유역 클릭 → 총면적·베트남 내 면적·비중,,point
+B-026,유향(flow direction),true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성 클릭 → 8방향 비율·우세 유향(우세_유향),,admin1
 B-027,지하수 잠재량,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-028,하천 유량,false,false,true,unknown,unknown,unknown,non-spatial-or-unverified,basin · nation · point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-029,산림 유형별 면적,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-030,산림 이득,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-028,하천 유량,true,false,true,point,facility-site,first-source-coordinate,관측지점·유역,facility-site,point,true,지점 클릭 → 유량(m³/s)·연간 유출량(km³/년) 지표값,,point
+B-029,산림 유형별 면적,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,이탄지 면적(합계·우세·모자이크),,admin1
+B-030,산림 이득,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,이득·손실·순변화·순변화율·교란 후 회복(모두 2000–2020 누적),,admin1
 B-031,산림 총면적,true,true,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성·시별 산림면적 차이를 비교할 수 있습니다.,,admin1
 B-032,수관 피복률,true,true,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성·시별 수관 피복 차이를 비교할 수 있습니다.,,admin1
 B-033,연간 산림손실,true,true,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성·시별 산림손실의 공간 분포를 비교할 수 있습니다.,,admin1
 B-034,탄소 저장량,true,true,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성·시별 산림 탄소의 공간 차이를 비교할 수 있습니다.,,admin1
 B-035,LULUCF 관련 면적 변화,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-036,토지이용 변화율,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-037,토지피복 구성,false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-037,토지피복 구성,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,토지피복 9개 분류 면적(같은 분류체계),,admin1
 B-038,바이오매스 자원 가용량,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-039,수력 잠재량,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,basin · nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-040,지열 잠재량,false,false,true,Raster,raster,unknown,raster,nation · point · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-041,태양광 자원,false,false,true,Raster,raster,unknown,raster,raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-B-042,풍력 자원,false,false,true,Raster,raster,unknown,raster,nation · raster,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+B-039,수력 잠재량,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,이론 총잠재량·전국 대비 비중·최대 단일격자,,admin1
+B-040,지열 잠재량,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"심도(1·2·3km) 지온 평균, 지온경사",,admin1
+B-041,태양광 자원,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,GHI·DNI·PVOUT·최적 경사각(성·시 평균),,admin1
+B-042,풍력 자원,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,"풍속·풍력밀도(평균·상위 10%), 6m/s 이상 면적비율 — 모두 고도 100m",,admin1
 B-043,화석연료 자원량,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-044,핵심 광물 종류,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 B-045,광물자원 국제순위,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
@@ -87,12 +87,12 @@ C-004,장기 저탄소 발전전략,false,false,true,Polygon/MultiPolygon (scope
 C-005,기후기술 수요 및 우선기술,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-006,파리협정 제6조 양자협력 체계,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-007,파리협정 비시장 접근,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-C-008,국제 기후협력 이니셔티브,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+C-008,국제 기후협력 이니셔티브,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
 C-009,기후변화 법·제도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-010,환경 법·제도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-011,치안·안전 정보,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-C-012,민관협력·조달 제도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-C-013,외국인 투자제도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+C-012,민관협력·조달 제도,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시(34개 체계) 클릭 → 사업 목록(명칭·재무종결·상태·부문),,admin1
+C-013,외국인 투자제도,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 특별메커니즘·비조세 지원 근거 목록,,admin1
 C-014,사업 인허가 절차,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-015,정책·제도 원문자료,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-016,재생에너지 발주·확대계획,true,true,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,공개된 성·시별 재생에너지 계획의 공간 차이를 비교할 수 있습니다.,,admin1
@@ -101,9 +101,9 @@ C-018,중장기 에너지 전망,false,false,true,Polygon/MultiPolygon (scope on
 C-019,탄소시장 법·제도와 예산,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 C-020,온실가스 감축사업 기초정보,false,false,false,unknown,unknown,unknown,non-spatial-or-unverified,unknown,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,공개 가능한 공간 geometry 또는 검증 위치가 없음,panel-only
 C-021,자발적 탄소시장 사업목록,false,false,false,unknown,unknown,unknown,non-spatial-or-unverified,unknown,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,공개 가능한 공간 geometry 또는 검증 위치가 없음,panel-only
-C-022,탄소시장 준비도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+C-022,탄소시장 준비도,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,업종(공상·교통운송·건설·농업·환경)별 시설 수,,admin1
 C-023,한계저감비용,false,false,false,unknown,unknown,unknown,non-spatial-or-unverified,unknown,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,공개 가능한 공간 geometry 또는 검증 위치가 없음,panel-only
-C-024,산림전용 방지 및 산림보전(REDD+),false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+C-024,산림전용 방지 및 산림보전(REDD+),true,false,true,Polygon/MultiPolygon,admin1,source-region-value,admin1,admin1,admin1,true,성·시 클릭 → 참여 프로그램,,admin1
 C-025,탄소크레딧 사업 및 발행실적,true,true,true,point,project-site,verified-physical-site,project-site,project-site,point,true,검증된 탄소크레딧 사업지의 기술·입지 분포를 비교할 수 있습니다.,,point
 D-001,단위 사업당 CAPEX,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 D-002,시장 성장률,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
@@ -116,27 +116,27 @@ D-008,주관 부처별 기후 예산 규모,true,true,true,Polygon/MultiPolygon,
 D-009,기후대응·기후기술 관련 정부 예산,false,false,true,Polygon/MultiPolygon (scope only),admin1,source-region-value,admin1,admin1 · nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 D-010,화석연료 보조금 규모,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 D-011,개도국 내 각국별 ODA 규모,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-012,경쟁국 민간기업의 개도국 진출 현황,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+D-012,경쟁국 민간기업의 개도국 진출 현황,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
 D-013,녹색성장지수,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-014,대외경제협력기금 사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-015,한국 공적개발원조 사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-016,정부·지방자치단체 협력사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-017,한국 ODA 사업기획·입찰,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+D-014,대외경제협력기금 사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-015,한국 공적개발원조 사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-016,정부·지방자치단체 협력사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-017,한국 ODA 사업기획·입찰,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
 D-018,적응기금 사업,true,true,true,MultiPolygon/Point,multi-country-regional,project-country-scope,regional-project,multi-country-regional,participating-country-scope-and-verified-activity-site,true,초국경 적응사업의 참여국과 베트남 참여 여부를 한눈에 확인할 수 있습니다.,,regional-scope
-D-019,CTCN 기술지원,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-020,녹색기후기금 사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-021,국제기구·개발은행 사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-022,개발금융·민관협력 투자사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-023,국제협력·기후재원 사업,false,true,true,unknown,unknown,unknown,non-spatial-or-unverified,nation · point,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,프로젝트 레코드 중 검증된 세부 위치가 없거나 다른 활성 레이어와 중복되어 패널에서만 제공,panel-only
+D-019,CTCN 기술지원,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-020,녹색기후기금 사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-021,국제기구·개발은행 사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-022,개발금융·민관협력 투자사업,true,false,true,Polygon/MultiPolygon,admin1,source-region-value,post-2025-34-unit,admin1,admin1,true,개발금융 사업이 어느 성·시에 집중되는지 물 스트레스·저지대·인프라 레이어와 함께 볼 수 있습니다.,,admin1
+D-023,국제협력·기후재원 사업,true,true,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
 D-024,벤처·임팩트 투자,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-025,민간 인프라 투자,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-D-026,정치적 위험 보증사업,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-001,CTCN 국가지정기구,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-002,파리협정 국가지정기관,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+D-025,민간 인프라 투자,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+D-026,정치적 위험 보증사업,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 사업 목록,,admin1
+E-001,CTCN 국가지정기구,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 기관 목록,,admin1
+E-002,파리협정 국가지정기관,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 기관 목록,,admin1
 E-003,녹색기후기금 국가지정기관,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-004,국제기구 현지사무소,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-005,대학·연구기관·시민사회,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-006,현지 투자자 네트워크,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+E-004,국제기구 현지사무소,true,false,true,point,facility-site,first-source-coordinate,facility,facility-site,point,true,기관 유형·도시 필터,,point
+E-005,대학·연구기관·시민사회,true,false,true,point,facility-site,first-source-coordinate,기관,facility-site,point,true,기관 유형·도시 필터,,point
+E-006,현지 투자자 네트워크,true,false,true,point,facility-site,first-source-coordinate,기관,facility-site,point,true,거점 도시 필터,,point
 E-007,온실가스 산정·보고·검증 체계,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 E-008,기후기술 논문·특허,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 E-009,과학기술 인력,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
@@ -148,6 +148,6 @@ E-014,기후·녹색성장 양자협정,false,false,true,Polygon/MultiPolygon (s
 E-015,NDC 파트너십 참여,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 E-016,한국 기후기술 성숙도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
 E-017,한국 기후기술 비교우위,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-018,한국 기업의 현지 진출,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-019,한국 기관 현지사무소,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
-E-020,한국의 공공·민간 지원제도,false,false,true,Polygon/MultiPolygon (scope only),country,source-region-value,country,nation,panel-only,true,데이터 찾기·상세 패널에서 원천 집계수준을 유지하는 편이 정확함,국가 집계·패널 분석이 더 적합하거나 지도에서 추가 분석 이득을 주는 검증 공간표현이 없음,panel-only
+E-018,한국 기업의 현지 진출,true,false,true,point,facility-site,first-source-coordinate,facility,facility-site,point,true,진출 상태(운영·협약·검토) 필터,,point
+E-019,한국 기관 현지사무소,true,false,true,point,facility-site,first-source-coordinate,facility,facility-site,point,true,도시 필터,,point
+E-020,한국의 공공·민간 지원제도,true,false,true,Polygon/MultiPolygon,region,source-region-value,post-2025-34-unit,region,admin1,true,성·시 클릭 → 기관 목록,,admin1

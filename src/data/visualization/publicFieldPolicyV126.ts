@@ -1,3 +1,4 @@
+import { publicProcessWordingV162 } from "./processWordingV162";
 import type { CountryCatalogItemV122 } from "../countries/countryDataTypesV122";
 import type {
   VietnamEntityV124,
@@ -543,6 +544,13 @@ const PUBLIC_ENTITY_ATTRIBUTE_OUTPUT_KEYS_V126: Record<string, string> = {
 };
 
 const PUBLIC_ENTITY_ATTRIBUTE_LABELS_V126: Record<string, string> = {
+  // V162: E-006 investor register columns (the detail's raw-data table headed
+  // them with the field names).
+  hqCountryIso3: "본부 국가",
+  investSector: "투자 분야",
+  fundOrAffiliate: "펀드·계열사",
+  locationClass: "소재 구분",
+  adm1Name34: "성·시(개편 후 34개)",
   koreaTechnologyLevel: "한국 기술수준",
   technologyGapYears: "기술격차(년)",
   leadingCountry: "최고(선도)국",
@@ -779,6 +787,10 @@ const INTERNAL_REVIEW_NOTES_V137: readonly RegExp[] = [
   /\s*[-—–]\s*[A-E]-\d{3}\s*폴리곤\s*재사용\s*/gu,
 ];
 
+const KEPT_SOURCE_FILE_V162 = /보관\s*원자료\s+(?!https?:)[^\s()（）]+\.pdf\b/gu;
+
+const OWN_FILE_ROW_POINTER_V162 = [/\s*\(\s*본\s*파일\s*r\d+[^)]*\)/gu, /\s*,\s*본\s*파일\s*r\d+/gu] as const;
+
 const UNMATCHED_CLOSING_BRACKET_V137 = /^([^[\]]*)\]\s*/u;
 
 const LEADING_ROW_IDENTIFIER_V137 =
@@ -798,6 +810,13 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(INTERNAL_REVIEW_NOTES_V137[5], "")
     .replace(INTERNAL_REVIEW_NOTES_V137[6], "")
     .replace(INTERNAL_REVIEW_NOTES_V137[7], "")
+    // V162: a kept source file named by its file name ("보관 원자료
+    // Germanwatch_CRI2026_full_report.pdf 판권면") - the report is named instead.
+    .replace(KEPT_SOURCE_FILE_V162, "원문 보고서")
+    // V162: a pointer to a row of the compiler's own file ("(본 파일 r5 Decree
+    // 119/2025/ND-CP, r23 …)", ", 본 파일 r23"); the cited law stays elsewhere.
+    .replace(OWN_FILE_ROW_POINTER_V162[0], "")
+    .replace(OWN_FILE_ROW_POINTER_V162[1], "")
     // "[M01·원자료 결측]" - the code addresses the compiler, the phrase after it
     // is the reason a reader needs.
     .replace(/\[\s*M\d{2}\s*·\s*/gu, "[")
@@ -850,7 +869,9 @@ function normalizeTextV126(value: unknown): string | null {
 }
 
 export function publicTextV126(value: unknown): string | null {
-  return normalizeTextV126(value);
+  // V162: the supplier's process word reads as the block titles name it.
+  const text = normalizeTextV126(value);
+  return text === null ? null : publicProcessWordingV162(text);
 }
 
 /**
@@ -873,8 +894,11 @@ export function publicTextV126(value: unknown): string | null {
  * separate the parts), and only the parts that name a real source remain.
  */
 const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+// V162: the 2026-09-30 attribution lines add the compiler's correction and
+// review memos - "[원천 정정] 종전 source_series_id …", "[DoD S-07 잠정] …
+// 재판정", "(근거: source_url …)" - written with the sheet's column names.
 const SOURCE_WORKING_NOTE_V161 =
-  /확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
+  /\[원천\s*정정\]|\[DoD\b|\b(?:source|license)_[a-z_]+\b|확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
 /** Parts of one source line: "A / B", "공개 원천: A | 현지조사: B". */
 const SOURCE_PART_SEPARATOR_V161 = /(\s+[|/]\s+)/u;
 /** The compiler's label in front of a part ("공개 원천: CTCN"). */
@@ -915,6 +939,8 @@ export function publicNoticeWordingV136_1(value: unknown): string | null {
 const SOURCE_SENTENCE_BOUNDARY_V161 = /(?<=[.。])\s+/u;
 
 /** One part of a source line, or null when the part is a note. */
+const SOURCE_FILE_NAME_BRACKET_V162 = /\s*\((?:[^()]*\s)?[\w.-]+\.(?:pdf|xlsx?|csv|docx?|hwpx?|pptx?|zip|json|txt)\)/giu;
+
 function publicSourcePartV161(part: string): string | null {
   // A licence line can carry a working note as one of its sentences ("…출처표시
   // 조건. 다운로드 제공 대상은 … 용역사가 재편집한 표준서식 자료임."): only that
@@ -924,7 +950,10 @@ function publicSourcePartV161(part: string): string | null {
     const kept = sentences.filter((sentence) => !SOURCE_WORKING_NOTE_V161.test(sentence));
     return kept.length === 0 ? null : publicSourcePartV161(kept.join(" "));
   }
-  let text = part;
+  // V162: a file name in brackets after the cited source ("U.S. EIA
+  // International Energy Statistics (Bulk File INTL.txt)") is the file the
+  // team downloaded, not the source - the source stays, the file goes.
+  let text = part.replace(SOURCE_FILE_NAME_BRACKET_V162, "");
   for (const pattern of SOURCE_NOTE_PATTERNS_V136_1) {
     text = text.replace(pattern, "");
   }
@@ -974,6 +1003,18 @@ const RECORD_NOTE_FILE_NAME_V158 = /^[A-E]-\d{3}_.+\.(?:pdf|csv|xlsx?|json|md|tx
  * 부여하지 않음(억지 매핑 금지 원칙).") - a note on the coding, not on the record.
  */
 const RECORD_NOTE_CODING_MEMO_V158 = /억지\s*매핑|코드를\s*부여하지\s*않|tech_ids?\b/u;
+/**
+ * V162: memo sentences the 2026-09-30 delivery added to record notes - a
+ * sentence that cites a delivered working file (`C-013_…_2026-07-28.csv`의 …
+ * 행 기준) or a correction of the field survey's own sheet (현지조사 원본 …
+ * 반영 / … 오기). The note's other sentences stay.
+ */
+const RECORD_NOTE_MEMO_SENTENCE_V162 =
+  /`[^`]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)`|(?:^|[\s(])[A-E]-\d{3}_[^\s]*\.(?:pdf|csv|xlsx?|json|md|txt|docx?|hwpx?|zip)\b|현지조사\s*원본/iu;
+/** A field-survey citation written inside a sentence: "출처: 현지조사(Field Survey Items_…, 현지 컨설턴트)". */
+const RECORD_NOTE_SURVEY_CITATION_V162 = /\s*출처\s*:\s*현지조사\s*\([^)]*(?:Items_|컨설턴트|_v\d)[^)]*\)/gu;
+/** "(현지조사 결과)" appended to a statement: the supplier's attribution tag. */
+const RECORD_NOTE_SURVEY_TAG_V162 = /\s*\(현지조사\s*결과\)/gu;
 const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
 
 /**
@@ -982,15 +1023,42 @@ const RECORD_NOTE_SENTENCE_V158 = /(?<=[.。])\s+/u;
  * judged like any other source line, and dropped when nothing but a working
  * note is left. The rest of a note is the record's own content and stays.
  */
+/**
+ * V162: the 2026-09-30 delivery's own migration log, written into the record
+ * note when rows moved to the wide template: "[구분자 통일] 구서식 구분자
+ * 「C-002_report_submission」 [열→행 전개] 구서식 열 「[재원] …」 (레코드ID
+ * VNM-C002-BTR1)", "· 구서식 「[기후] 관측·전망 기간」 1958-2018" and "…은
+ * C-002_inventory_timeseries 행에 수록." It records how the sheet was rebuilt,
+ * not what the data says; the note's own sentences stay.
+ */
+const RECORD_NOTE_MIGRATION_LOG_V162: readonly RegExp[] = [
+  // the tag and what follows it, a quoted 「…」 (which may hold brackets) included
+  /\s*\[\s*(?:구분자\s*통일|열\s*→\s*행\s*전개)\s*\][^[「]*(?:「[^」]*」[^[「]*)*/gu,
+  /\s*\(\s*(?:레코드|자료)\s*ID\s+[^)]*\)/gu,
+  /\s*·?\s*구서식\s*「[^」]*」[^·.[]*/gu,
+  /[^.。]*\b[A-E]-\d{3}_[a-z0-9_]+\s*행에\s*수록\.?/gu,
+];
+/** A file name outside a URL ("보관 원자료 Germanwatch_CRI2026_full_report.pdf"). */
+const RECORD_NOTE_BARE_FILE_V162 = /(^|[\s(（])(?!https?:)[^\s()（）]+\.(?:pdf|md|xlsx?|csv|docx?|hwpx?)\b/giu;
+
 export function publicRecordNoteV161(value: unknown): string | null {
   const normalized = normalizeTextV126(value);
   if (normalized === null) return null;
-  const withoutPointer = normalized.replace(RECORD_NOTE_FILE_POINTER_V158, "");
+  const withoutLog = RECORD_NOTE_MIGRATION_LOG_V162.reduce((text, pattern) => text.replace(pattern, ""), normalized)
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+  const withoutPointer = withoutLog
+    .replace(RECORD_NOTE_FILE_POINTER_V158, "")
+    .replace(RECORD_NOTE_SURVEY_CITATION_V162, "")
+    .replace(RECORD_NOTE_SURVEY_TAG_V162, "")
+    // A removed citation can leave its " · " separator at either end.
+    .replace(/^\s*·\s*|\s*·\s*$/gu, "");
   // A note without a coding memo keeps its own spacing.
-  const withoutMemo = RECORD_NOTE_CODING_MEMO_V158.test(withoutPointer)
+  const isMemo = (sentence: string) => RECORD_NOTE_CODING_MEMO_V158.test(sentence) || RECORD_NOTE_MEMO_SENTENCE_V162.test(sentence);
+  const withoutMemo = isMemo(withoutPointer)
     ? withoutPointer
         .split(RECORD_NOTE_SENTENCE_V158)
-        .filter((sentence) => !RECORD_NOTE_CODING_MEMO_V158.test(sentence))
+        .filter((sentence) => !isMemo(sentence))
         .join(" ")
         .trim()
     : withoutPointer;
@@ -1000,8 +1068,14 @@ export function publicRecordNoteV161(value: unknown): string | null {
     const source = publicSourceOrganizationV136_1(part.replace(RECORD_NOTE_SOURCE_V161, ""));
     return source ? [`출처: ${source}`] : [];
   });
-  const text = parts.join(" · ").trim();
-  return text === "" ? null : text;
+  // A file name the rules above did not already take out with its sentence.
+  const text = parts
+    .join(" · ")
+    .replace(RECORD_NOTE_BARE_FILE_V162, "$1")
+    .replace(/\(\s*\)/gu, "")
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+  return text === "" ? null : publicProcessWordingV162(text);
 }
 
 /**

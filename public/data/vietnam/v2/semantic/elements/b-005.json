@@ -7,12 +7,62 @@
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "32"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 35,
+      "values": [
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
     }
   ],
   "elementId": "B-005",
-  "entityCount": 31688,
+  "entityCount": 54692,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 9,
+  "indicatorCount": 13,
   "indicators": [
     {
       "axisGroupKey": "measure-41acd7149182|일",
@@ -125,6 +175,86 @@
       "sourceProvenance": {}
     },
     {
+      "axisGroupKey": "measure-689ec31870a2|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-005_climate_adm1_year_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-689ec31870a2",
+        "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-689ec31870a2|지표별 상이(속성 열 참조)||B-005_climate_adm1_year_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-cb5693685ba3|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "가뭄(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "indicatorId": "B-005_climate_monthly_clim_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-cb5693685ba3",
+        "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-cb5693685ba3|지표별 상이(속성 열 참조)||B-005_climate_monthly_clim_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "가뭄(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-ac7ec3206e76|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "indicatorId": "B-005_climate_monthly_clim_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ac7ec3206e76",
+        "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-ac7ec3206e76|지표별 상이(속성 열 참조)||B-005_climate_monthly_clim_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f2542f75d76d|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "가뭄(전국) - 월별 평년값(전국)",
+      "indicatorId": "B-005_climate_monthly_clim_national",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f2542f75d76d",
+        "labelKo": "가뭄(전국) - 월별 평년값(전국)",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-f2542f75d76d|지표별 상이(속성 열 참조)||B-005_climate_monthly_clim_national",
+      "sourceCaveat": null,
+      "sourceLabel": "가뭄(전국) - 월별 평년값(전국)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-01ad3987e7b7|지표별 상이(속성 열 참조)",
       "dimensionLabels": {},
       "dimensions": {},
@@ -145,25 +275,25 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-92ef64ba0ddd|m³/m³",
+      "axisGroupKey": "measure-3cc93645b027|m³/m³",
       "dimensionLabels": {
         "technology": "32"
       },
       "dimensions": {
         "technology": "32"
       },
-      "displayLabel": "토양수분(연평균)",
+      "displayLabel": "토양수분(전국 연평균)",
       "indicatorId": "B-005_soil_moisture",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-92ef64ba0ddd",
-        "labelKo": "토양수분(연평균)",
+        "key": "measure-3cc93645b027",
+        "labelKo": "토양수분(전국 연평균)",
         "unit": "m³/m³",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-92ef64ba0ddd|m³/m³|technology=32|B-005_soil_moisture",
+      "seriesKey": "measure-3cc93645b027|m³/m³|technology=32|B-005_soil_moisture",
       "sourceCaveat": "재분석 자료(관측 아님) — 산출유형 추정치 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
-      "sourceLabel": "토양수분(연평균)",
+      "sourceLabel": "토양수분(전국 연평균)",
       "sourceLabelEn": "Volumetric soil water (annual mean)",
       "sourceNote": "재분석 자료(관측 아님) — 산출유형 추정치 / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
       "sourceProvenance": {
@@ -284,8 +414,40 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-689ec31870a2",
+      "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ac7ec3206e76",
+      "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 2025년 34개 체계 - 월별 평년값(개편 후 ADM1 34개 체계)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-cb5693685ba3",
+      "labelKo": "가뭄(성×시나리오×연도 개체 목록) - 월별 평년값(ADM1, GADM 4.1)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-01ad3987e7b7",
       "labelKo": "가뭄(전국)",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-f2542f75d76d",
+      "labelKo": "가뭄(전국) - 월별 평년값(전국)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"
@@ -300,9 +462,9 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-92ef64ba0ddd",
-      "labelKo": "토양수분(연평균)",
-      "recordCount": 0,
+      "key": "measure-3cc93645b027",
+      "labelKo": "토양수분(전국 연평균)",
+      "recordCount": 35,
       "unit": "m³/m³",
       "unitFamily": "other"
     },
@@ -315,7 +477,7 @@
       "unitFamily": "other"
     }
   ],
-  "observationCount": 0,
+  "observationCount": 35,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

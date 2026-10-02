@@ -1,3 +1,5 @@
+import { OSM_CLASS_KO_V162, osmClassLabelV162 } from "./osmClassLabelsV162";
+import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicCategoryLabelV136_2 } from "./publicCategoryLabelV136_2";
 import {
@@ -70,7 +72,9 @@ const ELEMENT_TITLE_FIELDS_V131: Record<string, EntityTitleFieldV131[]> = {
   "B-008": [{ key: "관측소명_베트남어" }, { key: "관측소명_PSMSL" }],
   "B-023": [{ key: "지점_유역명" }],
   "B-028": [{ key: "지점_유역명" }],
-  "B-025": [{ key: "유역명_국문" }, { key: "유역명_영문" }],
+  // V162: the 2026-09-30 delivery names a basin in 유역명(원천 표기) where the
+  // source does; the other basins are told apart below by their HydroBASINS id.
+  "B-025": [{ key: "유역명_원천_표기" }, { key: "유역명_국문" }, { key: "유역명_영문" }],
   "B-012": [{ key: "재해세부유형" }, { key: "재해유형" }],
   "E-004": [{ key: "orgName" }],
   "E-005": [{ key: "orgName" }],
@@ -267,17 +271,58 @@ function koreanInstrumentalV137(text: string): string {
   return finalJamo === 0 || finalJamo === 8 ? "로" : "으로";
 }
 
+/** A place name written without its spaces: "KiênGiang", "HoChiMinh". */
+function squashedNameV162(value: string): boolean {
+  return !/\s/u.test(value) && /\p{Ll}\p{Lu}/u.test(value);
+}
+
+/** The same place once spaces, marks and case are set aside. */
+function sameLettersV162(left: string, right: string): boolean {
+  const letters = (value: string) =>
+    value.normalize("NFD").replace(/\p{M}/gu, "").replace(/[đĐ]/gu, "d").replace(/[^\p{L}]/gu, "").toLowerCase();
+  const a = letters(left);
+  const b = letters(right);
+  return a === b || a.endsWith(b) || b.endsWith(a);
+}
+
+function unsquashNameV162(value: string): string {
+  return value.replace(/(\p{Ll})(\p{Lu})/gu, "$1 $2");
+}
+
 function regionYearCompositeV137(
   entity: VietnamEntityV124
 ): FactualTitleV131 | null {
   const attributes = entity.normalizedAttributes || {};
-  const region =
-    titleTextV131(attributes["지역명_로마자"]) ||
-    titleTextV131(attributes["지역명_베트남어"]) ||
-    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]) ||
+  // V162: common column names first (지역명_현지어, 개편_후_소속_단위), then
+  // the pre-V162 Viet Nam names. A row of the post-2025 34-unit system says so,
+  // so it never reads as the pre-2025 province of the same name.
+  // V162: the 2026-09-30 delivery writes some names with the spaces (and a
+  // leading "Đ") dropped - "ongNai", "KiênGiang" in 지역명_로마자/지역명. A
+  // squashed name gives way to a spaced one from another column of the same
+  // row; when every column is squashed, the words are parted where a lower-
+  // case letter meets a capital. Letters are never added.
+  const regionCandidates = [
+    titleTextV131(attributes["지역명_로마자"]),
+    titleTextV131(attributes["지역명_현지어"]),
+    titleTextV131(attributes["지역명_베트남어"]),
+    // B-002, B-024, B-035, B-036 name the province in "지역명"; the 34-unit
+    // parent below would put a merged province under its successor's name.
+    titleTextV131(attributes["지역명"]),
+    titleTextV131(attributes["개편_후_소속_단위"]),
+    titleTextV131(attributes["2025_개편_후_소속_34개_체계"]),
     // B-008's rows are tide-gauge stations, not provinces.
-    titleTextV131(attributes["관측소명_PSMSL"]) ||
-    titleTextV131(attributes["관측소명"]);
+    titleTextV131(attributes["관측소명_PSMSL"]),
+    titleTextV131(attributes["관측소명"]),
+  ].filter((value): value is string => Boolean(value));
+  const firstRegion = regionCandidates[0] || null;
+  const regionName = firstRegion && squashedNameV162(firstRegion)
+    ? regionCandidates.slice(1, 4).find((value) => !squashedNameV162(value) && sameLettersV162(value, firstRegion)) ||
+      unsquashNameV162(firstRegion)
+    : firstRegion;
+  const region =
+    regionName && /개편 후|체계/u.test(titleTextV131(attributes["행정단위"]) || "")
+      ? `${regionName}(2025년 개편 후)`
+      : regionName;
   // Several deliveries carry a national series alongside the province rows and
   // name what each row measures in its own column. Without it B-029 listed six
   // different forest and mangrove areas for 2001 as six cards reading
@@ -445,10 +490,71 @@ function factualCompositeV131(
         ]),
       };
     }
+    case "B-014": {
+      // V162: the 2026-09-30 sheet names each simulation result by record key
+      // only ("VNM_carbon_price_CT_REF_2030"); its own columns state the
+      // scenario, the year and the value with its unit, which tell the rows
+      // apart (the carbon price and the emission change share a scenario).
+      const scenario = normalizedFieldV131(entity, "시나리오_명칭_원천");
+      const year = normalizedFieldV131(entity, "연도");
+      const value = normalizedFieldV131(entity, "값");
+      const unit = normalizedFieldV131(entity, "단위");
+      if (!scenario) return null;
+      return {
+        title: factualPartsV131([scenario, year ? `${year}년` : null, value ? `${value}${unit ? ` ${unit}` : ""}` : null]).join(" · "),
+        nameAvailability: "available",
+        secondaryNote: "원천이 개별 명칭 대신 시나리오·연도로 행을 구분합니다.",
+      };
+    }
+    case "A-028": {
+      // V162: the 2026-09-30 register names each OSM feature by its class value
+      // only ("cave_entrance", "peak"); it reads as the platform's OSM class
+      // table writes it - "동굴 입구 (cave_entrance)" - as A-027's classes do.
+      const value = titleTextV131(entity.name);
+      if (!value || !OSM_CLASS_KO_V162[value]) return null;
+      return {
+        title: osmClassLabelV162(value),
+        nameAvailability: "available",
+        secondaryNote: "원천이 개별 명칭 대신 OpenStreetMap 분류값으로 행을 구분합니다.",
+      };
+    }
+    case "B-044": {
+      // V162: the 2026-09-30 delivery names each row by its record key
+      // ("VNM_구리"); the mineral is in 광종(표준), filed under the 20-mineral
+      // list or as "기타(20종 외) - 구리".
+      const standard = normalizedFieldV131(entity, "광종_표준");
+      const mineral = standard ? standard.split(" - ").pop()!.trim() : null;
+      if (!mineral) return null;
+      return {
+        title: mineral,
+        nameAvailability: "available",
+        secondaryNote: `원천 광종 분류: ${standard}`,
+      };
+    }
+    case "B-025": {
+      // V162: 110 of the delivery's basins carry no name, only the HydroBASINS
+      // main-basin id; the national row sums them. The id is the source's own
+      // identifier, stated as such - never the delivery's record key.
+      const kind = normalizedFieldV131(entity, "개체_구분_Basin_Country");
+      const basinId = normalizedFieldV131(entity, "유역_ID_HydroBASINS_MAIN_BAS");
+      if (/^country$/iu.test(kind || "") || basinId === "전국 집계") {
+        const count = normalizedFieldV131(entity, "lev08_폴리곤_수_자국_내_유역_전체");
+        return { title: factualPartsV131(["전국 집계", count]).join(" · "), nameAvailability: "not-provided", secondaryNote: "원천의 전국 집계 행입니다(유역별 값의 합계 행)." };
+      }
+      if (!basinId) return null;
+      const shared = normalizedFieldV131(entity, "유역_구분_국내_완결_국제_공유");
+      const area = publicDecimalV131(entity.normalizedAttributes?.["자국_내_면적_km_GIS_산출"], 1);
+      return {
+        title: factualPartsV131([`HydroBASINS 유역 ${basinId}`, shared, area ? `자국 내 ${area} km²` : null]).join(" · "),
+        nameAvailability: "not-provided",
+        secondaryNote: "원천이 이 유역의 명칭 대신 HydroBASINS 유역 ID로 행을 구분합니다.",
+      };
+    }
     case "B-017": {
       // The delivery's unit is a HydroBASINS level-6 basin crossed with a
       // province, and it says both in columns of its own.
       const region =
+        normalizedFieldV131(entity, "개편_후_소속_단위") ||
         normalizedFieldV131(entity, "2025_개편_후_소속_34개_체계") ||
         normalizedFieldV131(entity, "지역명_로마자");
       const basin = normalizedFieldV131(entity, "HydroBASINS_lvl6_코드_pfaf_id");
@@ -625,7 +731,19 @@ function publicRecordTypeV131(
   return templateType || "공개 데이터 항목";
 }
 
+/**
+ * V162: a record named by the supplier's process ("현지조사, A. …") reads under
+ * the reader's word for it, like its block title (processWordingV162).
+ */
 export function resolvePublicEntityTitleV131(
+  entity: VietnamEntityV124,
+  options: PublicEntityTitleOptionsV131 = {}
+): PublicEntityTitleResolutionV131 {
+  const resolved = resolvePublicEntityTitleBaseV131(entity, options);
+  return { ...resolved, title: publicProcessWordingV162(resolved.title) };
+}
+
+function resolvePublicEntityTitleBaseV131(
   entity: VietnamEntityV124,
   options: PublicEntityTitleOptionsV131 = {}
 ): PublicEntityTitleResolutionV131 {

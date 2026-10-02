@@ -99,24 +99,28 @@ FACILITY_FACTS_V137: dict[str, tuple[Fact, ...]] = {
         _fact("siteNote", "특이사항", ("특이사항",)),
         _fact("coordinateBasis", "좌표 산출근거", ("좌표_산출근거",)),
     ),
+    # V162: the 2026-09-30 delivery moved C-025 to the wide "[블록] 속성"
+    # template; its keys come first, the vertical template's after.
     "C-025": (
-        _fact("standard", "등록표준", ("속성5_등록표준_출처",), filterable=True),
-        _fact("technologyField", "기술분야", ("속성6_분류",), filterable=True),
-        _fact("status", "상태", ("속성7_상태",), filterable=True),
+        _fact("standard", "등록표준", ("standard", "식별_등록_표준", "속성5_등록표준_출처"), filterable=True),
+        _fact("technologyField", "기술분야", ("사업_기술_분야_등록부_분류", "속성6_분류"), filterable=True),
+        _fact("status", "상태", ("status", "식별_등재_상태", "속성7_상태"), filterable=True),
         # The source dates the crediting period, not a separate project period.
         # Labelling it 사업기간 would state something the delivery does not.
         _fact("creditingPeriod", "크레딧 기간", ("속성17_크레딧기간",)),
-        _fact("regionName", "소재 지역", ("속성21_지역_현행", "속성20_지역_원문"), filterable=True),
-        _fact("proponent", "사업자·기관", ("속성8_사업자_기관",)),
-        _fact("methodology", "방법론", ("속성9_방법론",)),
+        _fact("regionName", "소재 지역", ("지역_지역명_현행", "속성21_지역_현행", "속성20_지역_원문"), filterable=True),
+        _fact("proponent", "사업자·기관", ("proponent", "사업_사업자_기관", "속성8_사업자_기관")),
+        _fact("methodology", "방법론", ("methodology", "사업_방법론", "속성9_방법론")),
         _fact(
             "annualReduction",
             "연간 예상감축량",
-            ("속성14_연간예상감축_tCO2e",),
+            ("사업_연간_예상_감축량_tCO_e_년", "속성14_연간예상감축_tCO2e"),
             unit="tCO2e",
         ),
-        _fact("recordCode", "원천 식별번호", ("속성2_레코드ID",)),
-        _fact("officialSource", "공식 원문", ("속성19_원문URL",)),
+        # The registry's own project number (CDM Ref / VCS ID), not the
+        # delivery's internal record id.
+        _fact("recordCode", "원천 식별번호", ("projectId", "식별_등록부_프로젝트ID", "속성2_레코드ID")),
+        _fact("officialSource", "공식 원문", ("출처_원문_URL", "속성19_원문URL")),
     ),
 }
 

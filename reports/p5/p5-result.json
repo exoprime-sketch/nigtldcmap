@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-09-30T11:54:02.451Z",
+  "dryRun": true,
+  "country": "VNM,BGD",
+  "overall": "부분 완료(건너뜀 있음)",
+  "steps": [
+    {
+      "name": "(1) build",
+      "command": "npm.cmd run build",
+      "status": "dry-run",
+      "startedAt": "2026-09-30T11:54:02.449Z",
+      "finishedAt": "2026-09-30T11:54:02.449Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "실행하지 않음(--dry-run)"
+    },
+    {
+      "name": "(2) qa:acceptance",
+      "command": "npm run qa:acceptance -- --country VNM,BGD",
+      "status": "skipped",
+      "startedAt": "2026-09-30T11:54:02.450Z",
+      "finishedAt": "2026-09-30T11:54:02.450Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "미병합 — package.json에 qa:acceptance 스크립트가 없음(세션4 PR 병합 대기)"
+    },
+    {
+      "name": "(3) e2e 기준 이미지 갱신(4개)",
+      "command": "npx.cmd playwright test e2e/visual.spec.ts --grep ^(home|finder|detail-a016|detail-d011) matches its baseline$ --update-snapshots",
+      "status": "dry-run",
+      "startedAt": "2026-09-30T11:54:02.450Z",
+      "finishedAt": "2026-09-30T11:54:02.450Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "실행하지 않음(--dry-run)"
+    },
+    {
+      "name": "(4) e2e 전체",
+      "command": "npx.cmd playwright test",
+      "status": "dry-run",
+      "startedAt": "2026-09-30T11:54:02.450Z",
+      "finishedAt": "2026-09-30T11:54:02.450Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "실행하지 않음(--dry-run)"
+    },
+    {
+      "name": "(5) finalize:v151",
+      "command": "npm.cmd run finalize:v151",
+      "status": "dry-run",
+      "startedAt": "2026-09-30T11:54:02.450Z",
+      "finishedAt": "2026-09-30T11:54:02.450Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "실행하지 않음(--dry-run)"
+    },
+    {
+      "name": "(6) smoke:production:v128",
+      "command": "npm run smoke:production:v128",
+      "status": "skipped",
+      "startedAt": "2026-09-30T11:54:02.450Z",
+      "finishedAt": "2026-09-30T11:54:02.450Z",
+      "durationMs": 0,
+      "exitCode": null,
+      "tail": [],
+      "note": "PRODUCTION_URL 미설정 — 배포 전이거나 이 실행에서 배포를 확인하지 않음"
+    }
+  ]
+}

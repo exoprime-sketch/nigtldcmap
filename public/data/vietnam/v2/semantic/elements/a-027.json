@@ -3,8 +3,13 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 32,
+      "valueCount": 38,
       "values": [
+        "bridge 기본값 비율",
+        "layer 기본값 비율",
+        "maxspeed 기본값 비율",
+        "oneway 기본값 비율",
+        "tunnel 기본값 비율",
         "교량(bridge) 결측률",
         "노면(surface) 결측률",
         "노선번호(ref) 결측률",
@@ -35,6 +40,7 @@
         "제한속도(maxspeed) 결측률",
         "좌표계",
         "차로수(lanes) 결측률",
+        "총 연장",
         "터널(tunnel) 결측률",
         "피처 수"
       ]
@@ -42,7 +48,7 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 10,
+      "valueCount": 12,
       "values": [
         ".dbf 속성 테이블의 필드 개수",
         "fclass 분류값별 지물 건수",
@@ -53,7 +59,9 @@
         "OSM 철도 레이어의 좌표참조체계",
         "OSM 철도 레이어의 지물 건수",
         "결측률을 측정한 속성 필드 개수",
-        "속성 태그 미보유 비율"
+        "속성 태그 미보유 비율",
+        "원천 기본값으로 채워진 비율",
+        "지오메트리 실측 연장"
       ]
     },
     {
@@ -76,7 +84,7 @@
   "elementId": "A-027",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 35,
+  "indicatorCount": 45,
   "indicators": [
     {
       "axisGroupKey": "measure-22c73ee94b33|EPSG 코드",
@@ -111,6 +119,84 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-0ff4ec179e3f|%",
+      "dimensionLabels": {
+        "category": "bridge 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "bridge 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "철도 레이어 · bridge 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_railways_defaultrate_bridge",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0ff4ec179e3f",
+        "labelKo": "철도 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0ff4ec179e3f|%|category=bridge 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_railways_defaultrate_bridge",
+      "sourceCaveat": null,
+      "sourceLabel": "철도 레이어 · bridge 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0ff4ec179e3f|%",
+      "dimensionLabels": {
+        "category": "layer 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "layer 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "철도 레이어 · layer 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_railways_defaultrate_layer",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0ff4ec179e3f",
+        "labelKo": "철도 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0ff4ec179e3f|%|category=layer 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_railways_defaultrate_layer",
+      "sourceCaveat": null,
+      "sourceLabel": "철도 레이어 · layer 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0ff4ec179e3f|%",
+      "dimensionLabels": {
+        "category": "tunnel 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "tunnel 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "철도 레이어 · tunnel 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_railways_defaultrate_tunnel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0ff4ec179e3f",
+        "labelKo": "철도 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-0ff4ec179e3f|%|category=tunnel 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_railways_defaultrate_tunnel",
+      "sourceCaveat": null,
+      "sourceLabel": "철도 레이어 · tunnel 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-277ea4d09a7b|건",
@@ -419,6 +505,32 @@
       }
     },
     {
+      "axisGroupKey": "measure-895399eef689|km",
+      "dimensionLabels": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "dimensions": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "displayLabel": "철도 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "indicatorId": "A-027_railways_length_km",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-895399eef689",
+        "labelKo": "철도 레이어",
+        "unit": "km",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-895399eef689|km|category=총 연장|detail=지오메트리 실측 연장|A-027_railways_length_km",
+      "sourceCaveat": null,
+      "sourceLabel": "철도 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-0ff4ec179e3f|%",
       "dimensionLabels": {
         "category": "명칭 결측률",
@@ -485,6 +597,136 @@
         "sourceRow": 17,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "bridge 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "bridge 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "도로 레이어 · bridge 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_roads_defaultrate_bridge",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=bridge 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_roads_defaultrate_bridge",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · bridge 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "layer 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "layer 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "도로 레이어 · layer 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_roads_defaultrate_layer",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=layer 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_roads_defaultrate_layer",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · layer 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "maxspeed 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "maxspeed 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "도로 레이어 · maxspeed 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_roads_defaultrate_maxspeed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=maxspeed 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_roads_defaultrate_maxspeed",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · maxspeed 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "oneway 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "oneway 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "도로 레이어 · oneway 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_roads_defaultrate_oneway",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=oneway 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_roads_defaultrate_oneway",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · oneway 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8f35104be85d|%",
+      "dimensionLabels": {
+        "category": "tunnel 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "dimensions": {
+        "category": "tunnel 기본값 비율",
+        "detail": "원천 기본값으로 채워진 비율"
+      },
+      "displayLabel": "도로 레이어 · tunnel 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "indicatorId": "A-027_roads_defaultrate_tunnel",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8f35104be85d",
+        "labelKo": "도로 레이어",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-8f35104be85d|%|category=tunnel 기본값 비율|detail=원천 기본값으로 채워진 비율|A-027_roads_defaultrate_tunnel",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · tunnel 기본값 비율 — 원천 기본값으로 채워진 비율",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-7d9609ecb1c8|건",
@@ -963,6 +1205,32 @@
       }
     },
     {
+      "axisGroupKey": "measure-90039abe6990|km",
+      "dimensionLabels": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "dimensions": {
+        "category": "총 연장",
+        "detail": "지오메트리 실측 연장"
+      },
+      "displayLabel": "도로 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "indicatorId": "A-027_roads_length_km",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-90039abe6990",
+        "labelKo": "도로 레이어",
+        "unit": "km",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-90039abe6990|km|category=총 연장|detail=지오메트리 실측 연장|A-027_roads_length_km",
+      "sourceCaveat": null,
+      "sourceLabel": "도로 레이어 · 총 연장 — 지오메트리 실측 연장",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-8f35104be85d|%",
       "dimensionLabels": {
         "category": "교량(bridge) 결측률",
@@ -1271,10 +1539,10 @@
   ],
   "measures": [
     {
-      "indicatorCount": 9,
+      "indicatorCount": 14,
       "key": "measure-8f35104be85d",
       "labelKo": "도로 레이어",
-      "recordCount": 9,
+      "recordCount": 24,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1285,6 +1553,14 @@
       "recordCount": 1,
       "unit": "EPSG 코드",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-90039abe6990",
+      "labelKo": "도로 레이어",
+      "recordCount": 1,
+      "unit": "km",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
@@ -1303,10 +1579,10 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
+      "indicatorCount": 4,
       "key": "measure-0ff4ec179e3f",
       "labelKo": "철도 레이어",
-      "recordCount": 1,
+      "recordCount": 10,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1317,6 +1593,14 @@
       "recordCount": 1,
       "unit": "EPSG 코드",
       "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-895399eef689",
+      "labelKo": "철도 레이어",
+      "recordCount": 1,
+      "unit": "km",
+      "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
@@ -1335,7 +1619,7 @@
       "unitFamily": "count"
     }
   ],
-  "observationCount": 35,
+  "observationCount": 61,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

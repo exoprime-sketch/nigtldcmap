@@ -54,9 +54,16 @@ export function publicPercentHeadlineV144(value: number): string {
     ? { maximumSignificantDigits: 2 } : { maximumFractionDigits: 2 }).format(value);
 }
 
-/** Metadata is not a measured building stock. New actual counts automatically restore analysis. */
+/**
+ * Metadata is not a measured building stock. New actual counts automatically restore analysis.
+ *
+ * 2026-09-30 재적재로 A-026이 A-026_building_footprint_* 단일 소스에서 서브소스별
+ * (A-026_aux_gob_*, A-026_osm_building_*) 컬럼군으로 바뀌었다. 접두는 소스마다 달라도
+ * confidence_min/crs/field_count는 여전히 건물 동수를 재는 값이 아니라 그 소스 자체에 대한
+ * 메타데이터(신뢰도 하한·좌표계·필드수)이므로, 접두를 가리지 않고 그 접미만 확인한다.
+ */
 export function metadataOnlyBuildingsV144(rows: ReadonlyArray<{ indicatorId: string; value: unknown }>): boolean {
   const present = rows.filter((row) => row.value !== null && row.value !== undefined && row.value !== "");
   return present.length > 0 && present.every((row) =>
-    /^A-026_building_footprint_(confidence_min|crs|field_count)$/u.test(row.indicatorId));
+    /^A-026_[a-z0-9_]+_(confidence_min|crs|field_count)$/u.test(row.indicatorId));
 }
