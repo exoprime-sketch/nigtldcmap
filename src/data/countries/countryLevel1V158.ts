@@ -19,7 +19,7 @@ export function countryLevel1V158(country: string): CountryLevel1V158 | null {
 
 /**
  * V162 PR-D: the level-1 boundary file the registry names for a country
- * ("/data/bgd/v2/geometry/bgd-adm1-8.geojson"), or null.
+ * (`adm.level1.asset`, the boundary GeoJSON under its data root), or null.
  */
 export function countryLevel1AssetUrlV162(country: string): string | null {
   const registry = countryRegistryCacheV158() ?? bundledCountryRegistryV158();

@@ -1585,6 +1585,12 @@ export default function RealMapExplorerPage({
   );
 
   const provider = getCountryDataProviderV122(countryIso3);
+  // V162 PR-D: the boundary the map names. Viet Nam keeps its 34/63 system;
+  // another country names its registry level-1 unit ("방글라데시 주(Division) 8개").
+  const level1V162 = regionWordV158(countryIso3).level1;
+  const boundaryPhraseV162 = level1V162
+    ? `${provider?.countryNameKo || ""} ${level1V162.label}${level1V162.count ? ` ${level1V162.count}개` : ""}`.trim()
+    : `베트남 ${boundarySystemLabelV151(boundarySystemV151State)}`;
   const fallbackBounds: FallbackBounds = provider?.mapView.bounds || [
     [-180, -85],
     [180, 85],
@@ -6471,7 +6477,7 @@ export default function RealMapExplorerPage({
               preserveAspectRatio="xMidYMid meet"
               role="group"
               aria-hidden={baseMapStatus === "ready" ? true : undefined}
-              aria-label="베트남 로컬 경계 대체 지도"
+              aria-label={`${provider?.countryNameKo || "국가"} 로컬 경계 대체 지도`}
             >
               <g className="cdp-map-fallback__grid" aria-hidden="true">
                 {[100, 200, 300, 400, 500, 600, 700, 800, 900].map(
@@ -6510,9 +6516,7 @@ export default function RealMapExplorerPage({
               <g
                 className="cdp-map-fallback__adm1-reference"
                 data-testid="map-adm1-base-outline"
-                aria-label={`베트남 ${boundarySystemLabelV151(
-                  boundarySystemV151State
-                )} 기준 경계`}
+                aria-label={`${boundaryPhraseV162} 기준 경계`}
               >
                 {fallbackAdm1Paths.map((row) => (
                   <path key={row.code} d={row.path} fill="none">
@@ -7164,8 +7168,7 @@ export default function RealMapExplorerPage({
               })}
             </svg>
           <span className="cdp-map-fallback__attribution">
-              Natural Earth · 국가 외곽선 | geoBoundaries · 베트남{" "}
-              {boundarySystemLabelV151(boundarySystemV151State)} (CC BY 4.0)
+              Natural Earth · 국가 외곽선 | geoBoundaries · {boundaryPhraseV162} (CC BY 4.0)
           </span>
           </div>
           <div
@@ -7211,7 +7214,7 @@ export default function RealMapExplorerPage({
             >
               geoBoundaries
             </a>{" "}
-            · 베트남 {boundarySystemLabelV151(boundarySystemV151State)} (CC BY
+            · {boundaryPhraseV162} (CC BY
             4.0)
           </span>
           {/* V151: one stack, so the boundary picker keeps its place when the
@@ -7240,6 +7243,7 @@ export default function RealMapExplorerPage({
               <span role="status">배경지도 타일을 불러오지 못해 &lsquo;없음&rsquo;으로 전환했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>
             )}
           </div>
+          {!level1V162 && (
           <div
             className="cdp-map-boundary-system-v151"
             data-boundary-system={boundarySystemV151State}
@@ -7272,6 +7276,7 @@ export default function RealMapExplorerPage({
                 : boundaryValueNoticeV151(boundarySystemV151State)}
             </p>
           </div>
+          )}
           </div>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
@@ -7295,9 +7300,7 @@ export default function RealMapExplorerPage({
                 ? loadingIds.includes(focusedLayer.elementId)
                   ? "불러오는 중입니다"
                   : "선로·시설·지역을 선택하면 세부정보를 볼 수 있습니다"
-                : `배경지도와 베트남 ${boundarySystemLabelV151(
-                    boundarySystemV151State
-                  )} 경계가 준비되어 있습니다`}
+                : `배경지도와 ${boundaryPhraseV162} 경계가 준비되어 있습니다`}
             </div>
             {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
               <div

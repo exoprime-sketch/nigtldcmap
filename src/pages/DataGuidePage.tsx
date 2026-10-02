@@ -146,9 +146,11 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         <section id="guide-scope">
           <h2>데이터 제공 범위</h2>
           <p>
-            현재 {scopeCountry && scopeCountry.live.length > 0 ? scopeCountry.live.map((item) => item.nameKo).join("·") : "공개 국가"} 데이터를 제공합니다. 정책·제도, 에너지,
+            {/* V162 PR-D: the page's own country only; the picker above names the others. */}
+            현재 {scopeCountry?.nameKo || "선택한 나라"} 데이터를 제공합니다. 정책·제도, 에너지,
             온실가스, 산림·토지, 기후사업·재원, 연구·협력기관 자료를 데이터
             항목 단위로 확인할 수 있습니다.
+            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '현재 제공 국가'에서 고릅니다." : null}
           </p>
         </section>
 

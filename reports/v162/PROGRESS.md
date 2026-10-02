@@ -122,3 +122,14 @@
 - 5회차 전 로컬 필터 acceptance: 지도 60/60, 6폭 0, 스모크, 식별자 스캔 0, 국명 0(원자료 레코드 값 제외 — 사용자 결정 10-02)
 - 5회차(e2273fc): 명칭 감사 로더가 새 JSON import(OSM 분류 사전)를 TS로 컴파일하다 실패 — 로컬 수정 567baa5(미push), 명칭 10/10
 - 로컬 재확인: glossary 17/17, entity-cards 18/18, duplicate-copy 4/4, generic-detail 20/20, 단위 789/789
+
+## 2026-10-03 — 세션5 단독(PR-D + P8-2)
+- PR #56 병합(a8dbbf7), 운영 확인: 데이터 146 · 지도 60 · 기준일 2026.09.30
+- **P8-2(PR #57, feat/v157-2-map12, 워크트리 nigt-wt-map12)**
+  - origin/main merge(58cbd30), `--expect-pending 12` 제거(0d7c350)
+  - CI 1회차 실패: role-split QA 준비 중 검사 5건(준비 중 대상 0개 상태 미대응) → 1001280에서 수정, 사유 REVIEW_V157-2.md §9
+- **PR-D(feat/v162-prd, 워크트리 nigt-wt-d3)**
+  - 로컬 커밋 cb146da(미push): BGD live·주(Division)·비교 55·국가 선택 링크·다운로드 국가 초기값·용어 국가 필터·지도 런타임 국가화
+  - 지도 경계 문구 국가별(34/63 선택은 베트남만)
+  - BGD 지도 빌더는 서브에이전트가 feat/v162-prd-bgd-map에서 작성 중 → 검수 후 merge
+  - 남은 일: 빌더 산출 merge → BGD 인수(필터) → 6폭·출처 메모 → PR 본문·push·CI
