@@ -1,7 +1,7 @@
 # 국가 비교 지표 검토 (V158)
 
 생성 기준 계약: `src/data/visualization/publicVisualizationContractV153.json`(2026-09-22) · 데이터 트리 보유 국가: BGD, VNM
-비교 가능 요소 54개 · 쌍 상태: common-year 39 · latest-each 1 · unit-mismatch 0 · missing-in-country 14
+비교 가능 요소 55개 · 쌍 상태: common-year 40 · latest-each 1 · unit-mismatch 0 · missing-in-country 14
 
 이 표는 자동 판정 결과이며 키를 바꾸지 않는다. 대표지표로 보이지 않는 항목은 아래 별도 절에 모아 사용자 승인을 기다린다.
 
@@ -49,7 +49,7 @@
 | B-027 | B-027_exploitable_gw | missing-in-country | (데이터 없음) | 이용가능(정규 재생) 지하수 | - |
 | B-035 | B-035_lu_agriculture | common-year | 농업 총면적(Agriculture) | 농업 총면적(Agriculture) | - |
 | B-036 | B-036_cagr_lu_planted_forest | common-year | 토지이용 변화율 — 조림지 | 토지이용 변화율 — 조림지 | - |
-| B-038 | B-038_aux_msw_percap | common-year | [산출 투입·참고자료] 1인당 도시폐기물 발생량 | [산출 투입·참고자료] 1인당 도시폐기물 발생량 | - |
+| B-038 | B-038_aux_msw_percap | common-year | 1인당 도시폐기물 발생량 (산출 투입·참고자료) | 1인당 도시폐기물 발생량 (산출 투입·참고자료) | - |
 | B-043 | B-043_oil_reserves | missing-in-country | (데이터 없음) | 석유 확인매장량 | - |
 | B-045 | B-045_reserve_share_bauxite | missing-in-country | (데이터 없음) | 세계 매장량 비중 — 보크사이트 | - |
 | B-046 | B-046_reserves_7 | missing-in-country | (데이터 없음) | 확인 매장량 — 인광석 | - |
@@ -63,6 +63,7 @@
 | D-013 | D-013_dimension_score_si | common-year | GGGI Green Growth Index · 사회 통합(SI) — 차원 점수 | GGGI Green Growth Index · 사회 통합(Social Inclusion) — 차원(dimension) 점수 | - |
 | E-009 | E-009_stem_grad_share_male | common-year | STEM 졸업 비중(남성) | STEM 졸업 비중(남성) | - |
 | E-010 | E-010_gerd_pct_gdp | missing-in-country | (데이터 없음) | GERD — GDP 대비 R&D 총지출 비율 | - |
+| E-011 | E-011_nri_overall_score | common-year | NRI 2025 — 종합 점수 | NRI 2025 — 종합 점수 | - |
 
 ## 대표지표로 보이지 않아 확인이 필요한 항목 (6건)
 

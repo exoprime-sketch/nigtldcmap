@@ -119,7 +119,10 @@ export function choroplethFeatureCollection(
     collection: {
       type: "FeatureCollection",
       features: asset.geometry.features.map((feature) => {
-        const adm1Code = String(feature.properties?.adm1Code || "");
+        // V162 PR-D: the boundary file's own key names the unit the values are
+        // keyed by ("divisionKey" for Bangladesh); Viet Nam's is adm1Code.
+        const joinKey = String((asset.data as { joinKey?: string } | undefined)?.joinKey || "adm1Code");
+        const adm1Code = String(feature.properties?.[joinKey] || feature.properties?.adm1Code || "");
         const value = valueByCode.get(adm1Code);
         return {
           type: "Feature" as const,

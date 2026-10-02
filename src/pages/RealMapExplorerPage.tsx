@@ -1,3 +1,5 @@
+import { countryDataLoaderV158 } from "../data/countries/countryDataLoaderV158";
+import { countryLevel1AssetUrlV162, regionWordV158 } from "../data/countries/countryLevel1V158";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
@@ -63,7 +65,6 @@ import type {
 import {
   loadVietnamLocationsV151,
   loadVietnamSpatialGeoJsonV124,
-  loadVietnamSpatialLayerV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
 import type {
   VietnamMapGeoJsonV124,
@@ -2543,18 +2544,22 @@ export default function RealMapExplorerPage({
       loadControllersRef.current.get(requestKey)?.abort();
       loadControllersRef.current.set(requestKey, controller);
       const request = externalSpatial
-        ? countryIso3 === "VNM" && layer.geometryUrl
+        ? layer.geometryUrl
           ? Promise.all([
               // All Admin-1 layers share the loader's resolved JSON cache.
               // The unique A-024 transmission geometry remains abortable.
-              loadVietnamSpatialGeoJsonV124(
+              // V162 PR-D: any live country's own map assets load through its
+              // loader (it refuses another country's URLs); Viet Nam's path is
+              // the same loader as before.
+              countryDataLoaderV158(countryIso3).loadSpatialGeoJson(
                 layer.geometryUrl,
-                layer.geometryUrl.endsWith("vnm-adm1-63.geojson")
+                layer.geometryUrl.endsWith("vnm-adm1-63.geojson") ||
+                  layer.geometryUrl === countryLevel1AssetUrlV162(countryIso3)
                   ? undefined
                   : controller.signal
               ),
               layer.dataUrl
-                ? loadVietnamSpatialLayerV124(layer.dataUrl, controller.signal)
+                ? countryDataLoaderV158(countryIso3).loadSpatialLayer(layer.dataUrl, controller.signal)
                 : Promise.resolve(undefined),
             ]).then(([geometry, data]) => {
               if (controller.signal.aborted) return;
@@ -3433,8 +3438,8 @@ export default function RealMapExplorerPage({
   // counts from, so "지도 자료 N개" is one number on every screen. Targets
   // the contract names but the index does not carry are counted as pending.
   const mapAvailabilityV140 = useMemo(
-    () => summarizeMapAvailabilityV140(layers),
-    [layers]
+    () => summarizeMapAvailabilityV140(layers, countryIso3),
+    [layers, countryIso3]
   );
   const [openCategoriesV138, setOpenCategoriesV138] = useState<Set<string>>(
     () => new Set<string>()
@@ -4682,6 +4687,21 @@ export default function RealMapExplorerPage({
           )
         );
       }
+      // V162 PR-D: a layer that names its own card facts (Bangladesh point
+      // layers) shows them as stated, with the unit the layer gives; a
+      // representative-point map says what the point stands for.
+      const layerCardV162 = selectedOwningLayer as {
+        cardFactFields?: Array<{ key: string; label: string; unit?: string }>;
+        referenceMap?: { label?: string; notice?: string };
+      };
+      (layerCardV162.cardFactFields || []).forEach((field) => {
+        const raw = properties[field.key];
+        const text = raw === null || raw === undefined || raw === "" ? "" : `${raw}${field.unit ? ` ${field.unit}` : ""}`;
+        lines.push(...selectionLineV161(field.label, text));
+      });
+      if (layerCardV162.referenceMap?.notice) {
+        lines.push(...selectionLineV161(layerCardV162.referenceMap.label || "참고 지도", layerCardV162.referenceMap.notice));
+      }
       if (selectedMemberSummaryV151) {
         lines.push(
           ...selectionLineV161(
@@ -4728,7 +4748,7 @@ export default function RealMapExplorerPage({
             value: selectedSpatial.value ?? null,
             peers,
             unit,
-            peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : "성·시",
+            peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
           })
         );
         const categoryCounts: Record<string, number> = {};
@@ -4740,7 +4760,7 @@ export default function RealMapExplorerPage({
           ...categoryShareLinesV161(
             String(properties.categoryLabel || ""),
             categoryCounts,
-            isUnit ? "평가구역" : isAsset ? "대상" : "성·시"
+            isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word
           )
         );
       }
@@ -4755,7 +4775,7 @@ export default function RealMapExplorerPage({
         subtitle: `${publicMapLayerTitleV126(
           selectedOwningLayer.elementId,
           selectedOwningLayer.publicShortTitle
-        )} · ${isRegion ? "성·시" : isUnit ? "평가구역" : isLine ? "구간" : isAsset ? "시설·구역" : "사업 범위"}`,
+        )} · ${isRegion ? regionWordV158(countryIso3).word : isUnit ? "평가구역" : isLine ? "구간" : isAsset ? "시설·구역" : "사업 범위"}`,
         lines,
         comparison,
         actions: [
@@ -5627,7 +5647,7 @@ export default function RealMapExplorerPage({
             className="cdp-map-catalog-v138"
             data-testid="map-all-data-v135"
             data-selected-count={activeIds.length}
-            data-target-count={PUBLIC_MAP_TARGETS_V138.length}
+            data-target-count={mapAvailabilityV140.targetCount}
             data-hidden-count={hiddenIdsV138.length}
             aria-labelledby="map-all-data-title-v135"
           >
@@ -6122,6 +6142,7 @@ export default function RealMapExplorerPage({
           )}
 
           <MapDataGuideV130
+            countryIso3={countryIso3}
             layers={layers}
             onOpenDataFinder={onOpenDataFinder}
           />

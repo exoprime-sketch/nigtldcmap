@@ -562,10 +562,12 @@ export interface VietnamSpatialValue34V162 {
 export interface VietnamSpatialLayerAssetV124 {
   schemaVersion: "v124";
   assetSchemaVersion: "v124-spatial-layer-1";
-  countryIso3: "VNM";
+  /** V162 PR-D: any live country's spatial asset ("VNM", "BGD"). */
+  countryIso3: string;
   elementId: string;
   geometryUrl: string;
-  joinKey: "adm1Code";
+  /** V162 PR-D: "adm1Code" for Viet Nam, "divisionKey" for Bangladesh. */
+  joinKey: string;
   boundarySystem: "pre-2025-63";
   coverageKind: "full" | "partial";
   selectors: VietnamMapSelectorsV124;

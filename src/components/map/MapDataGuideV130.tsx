@@ -35,14 +35,17 @@ function representation(layer: CountryMapLayerV122): string {
 interface MapDataGuideV130Props {
   layers: CountryMapLayerV122[];
   onOpenDataFinder: () => void;
+  /** V162 PR-D: the map's country (another country has no pending list). */
+  countryIso3?: string;
 }
 
 export default function MapDataGuideV130({
   layers,
   onOpenDataFinder,
+  countryIso3,
 }: MapDataGuideV130Props) {
   // V140: the same count the home and the list state, from the map index.
-  const availability = summarizeMapAvailabilityV140(layers);
+  const availability = summarizeMapAvailabilityV140(layers, countryIso3);
   const groups = GROUP_ORDER.map((group) => ({
     group,
     layers: layers.filter((layer) => layer.category === group),

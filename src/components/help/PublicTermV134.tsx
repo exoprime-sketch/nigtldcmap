@@ -312,9 +312,16 @@ export function PublicTermExpandedTextV134({
   firstOccurrenceOnly = false,
 }: PublicTermTextV134Props) {
   const plain = publicUnstatedWordingV161(publicTextV126(text) || "");
+  // V162 PR-D: like the help button, a term about another country is not
+  // expanded on this country's screen ("VCCI(베트남상공회의소)" on Bangladesh).
+  const pageCountry = usePageDataCountryV162();
   const tokens = tokenizePublicTermsV134(plain, {
     firstOccurrenceOnly,
-  });
+  }).map((token) =>
+    token.type === "term" && !glossaryShownForCountryV162(token.entry, pageCountry)
+      ? ({ type: "text", value: token.value } as PublicTermTokenV134)
+      : token
+  );
   return (
     <>
       {tokens.map((token, index) =>
@@ -364,10 +371,12 @@ export function PublicTermExpandedTextV134({
 
 /** Adjacent help triggers for native selects and other controls that cannot nest buttons. */
 export function PublicTermHelpV134({ text }: { text: string }) {
+  const pageCountry = usePageDataCountryV162();
   const terms = tokenizePublicTermsV134(publicTextV126(text) || "", {
     firstOccurrenceOnly: true,
   })
-    .filter((token): token is Extract<PublicTermTokenV134, { type: "term" }> => token.type === "term");
+    .filter((token): token is Extract<PublicTermTokenV134, { type: "term" }> => token.type === "term")
+    .filter((token) => glossaryShownForCountryV162(token.entry, pageCountry));
   if (terms.length === 0) return null;
   return (
     <span className="public-term-help-v134" aria-label="현재 선택값 용어 도움말">

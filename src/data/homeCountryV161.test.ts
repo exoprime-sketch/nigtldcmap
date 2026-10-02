@@ -19,9 +19,16 @@ describe("home current country (?country= + registry)", () => {
     expect(current?.nameKo).toBe(defaultLive.nameKo);
   });
 
-  test("a country still being prepared (BGD) → back to the default public country", () => {
-    expect(REGISTRY.find((country) => country.iso3 === "BGD")?.status).toBe("preparing");
-    expect(resolveHomeCountryV161("?country=BGD", REGISTRY)?.iso3).toBe(defaultLive.iso3);
+  // V162 PR-D (2026-10-03): Bangladesh is public. The fallback for a country
+  // still being prepared is checked on a registry row marked so.
+  test("a public second country (BGD) is kept", () => {
+    expect(REGISTRY.find((country) => country.iso3 === "BGD")?.status).toBe("live");
+    expect(resolveHomeCountryV161("?country=BGD", REGISTRY)?.iso3).toBe("BGD");
+  });
+
+  test("a country still being prepared → back to the default public country", () => {
+    const preparing = REGISTRY.map((country) => (country.iso3 === "BGD" ? { ...country, status: "preparing" as const } : country));
+    expect(resolveHomeCountryV161("?country=BGD", preparing)?.iso3).toBe(defaultLive.iso3);
   });
 
   test("an unknown code → the default public country", () => {

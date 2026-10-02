@@ -236,16 +236,19 @@ try {
   });
 
   await navigate(browser.cdp, `${baseUrl}${countryQueryV162}#home`);
+  // V162 PR-D: the home has loaded when its status strip states the item
+  // count. '152' only matched Viet Nam's home by chance (a map label "110 kV
+  // 선로 152"); a country's home states its own public count.
   await waitForValue(
     browser.cdp,
-    `Boolean(document.querySelector('[data-v128-home]')?.textContent?.includes('152'))`,
+    `/전체 데이터 항목\\s*\\d+개/u.test(document.querySelector('[data-v128-home]')?.textContent || '')`,
     { timeoutMs: 30_000 }
   );
   const home = await evaluateValue(
     browser.cdp,
     `(() => ({
       mounted: Boolean(document.querySelector('[data-v128-home]')),
-      liveCount: document.querySelector('[data-v128-home]')?.textContent?.includes('152') || false
+      liveCount: /전체 데이터 항목\\s*\\d+개/u.test(document.querySelector('[data-v128-home]')?.textContent || '')
     }))()`
   );
 

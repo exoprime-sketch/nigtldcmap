@@ -7,7 +7,8 @@
   max-width: 820px;
 }
 
-.data-guide-v128__hero > span {
+.data-guide-v128__hero > span,
+.data-guide-v128__scope {
   color: var(--blue-700);
   font-size: 12px;
   font-weight: 900;
@@ -335,4 +336,13 @@
   .data-guide-v134__glossary-heading > span {
     width: fit-content;
   }
+}
+
+/* V162 PR-D: the public countries as links, set like the former label. */
+.data-guide-v128__scope {
+  margin: 0;
+}
+
+.data-guide-v128__scope a {
+  color: inherit;
 }

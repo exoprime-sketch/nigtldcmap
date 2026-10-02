@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "v128-production-smoke-1",
+  "generatedAt": "2026-10-02T18:49:35.797Z",
+  "country": "BGD",
+  "target": "configured-production-url",
+  "baseUrl": "http://127.0.0.1:4451/",
+  "runtimeFailure": "condition timeout; last value: false",
+  "failureSnapshot": {
+    "url": "http://127.0.0.1:4451/#home",
+    "readyState": "complete",
+    "title": "개도국 기후기술 협력 플랫폼",
+    "rootMounted": true,
+    "heading": "개도국 기후기술 협력 플랫폼",
+    "bodyTextLength": 2661
+  },
+  "routes": {
+    "home": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "finder": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "map": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "download": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "guide": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    }
+  },
+  "routeFailures": [],
+  "assets": [
+    {
+      "path": "data/bgd/v2/manifest.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 2565,
+      "json": true,
+      "html": false
+    },
+    {
+      "path": "data/bgd/v2/catalog.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 663094,
+      "json": true,
+      "html": false
+    },
+    {
+      "path": "data/bgd/v2/map-index.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 322,
+      "json": true,
+      "html": false
+    },
+    {
+      "path": "data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "status": 200,
+      "contentType": "application/geo+json; charset=utf-8",
+      "bytes": 1490163,
+      "json": true,
+      "html": false
+    }
+  ],
+  "networkFailures": [],
+  "htmlForJson": [],
+  "consoleErrors": [],
+  "ui": null
+}

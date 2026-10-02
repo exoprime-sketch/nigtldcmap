@@ -82,14 +82,14 @@ const contractV158 = readJson("src/data/visualization/publicVisualizationContrac
 const exclusions = readJson("config/data-publication/country-compare-exclusions-v158.json").excluded as { elementId: string }[];
 
 describe("country compare contract V158 (fix-forward 2026-09-30)", () => {
-  test("54 elements are compared, as in the contractor's standard v1.1", () => {
-    expect(contractV158.rows.filter((row) => row.countryCompare?.comparable).length).toBe(54);
+  // V162 PR-D (user decision 2026-10-03): the standard's 54 plus E-011 (NRI),
+  // delivered on 2026-09-30.
+  test("55 elements are compared: the contractor's standard v1.1 plus E-011", () => {
+    expect(contractV158.rows.filter((row) => row.countryCompare?.comparable).length).toBe(55);
   });
 
   test("the elements kept out of the comparison are not compared", () => {
-    // V162: E-011 (NRI) arrived on 2026-09-30, after the standard's 54 were
-    // fixed; it is held out until the PR-D decision table says otherwise.
-    expect(exclusions.map((row) => row.elementId).sort()).toEqual(["D-004", "D-006", "D-008", "E-011", "E-012"]);
+    expect(exclusions.map((row) => row.elementId).sort()).toEqual(["D-004", "D-006", "D-008", "E-012"]);
     for (const { elementId } of exclusions) {
       expect(contractV158.rows.find((row) => row.elementId === elementId)?.countryCompare?.comparable).toBe(false);
     }
