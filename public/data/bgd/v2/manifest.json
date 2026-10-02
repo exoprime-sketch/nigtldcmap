@@ -13,9 +13,9 @@
     "qualityReport": "/data/bgd/v2/quality-report.json",
     "rightsMatrix": "/data/bgd/v2/rights-matrix.json",
     "searchIndex": [
-      "/data/bgd/v2/packs/search-index-v124-5a658814.json"
+      "/data/bgd/v2/packs/search-index-v124-3e3890ee.json"
     ],
-    "sourceRegistry": "/data/bgd/v2/packs/source-registry-v124-ff31b129.json",
+    "sourceRegistry": "/data/bgd/v2/packs/source-registry-v124-0e2e3580.json",
     "spatialLayers": []
   },
   "authorizedElementCount": 0,
@@ -36,49 +36,52 @@
   "downloadDelivery": {
     "adapter": "null",
     "adapterConfigured": false,
-    "assetCount": 85,
+    "assetCount": 101,
     "externalAssetCount": 0,
     "externalByteTotal": 0,
     "pendingUploadCount": 0,
-    "repositoryAssetCount": 85,
+    "repositoryAssetCount": 101,
     "uploadedCount": 0
   },
-  "downloadableElementCount": 84,
+  "downloadableElementCount": 100,
   "frameworkElements": 152,
   "generatedAt": "2026-09-29T00:00:00Z",
   "mapFeatureCount": 0,
   "mapLayerCount": 0,
   "packCount": 24,
+  "provenance": {
+    "sourceDeliveredAt": "2026-09-30"
+  },
   "publicStatusCounts": {
-    "actual": 90,
+    "actual": 111,
     "excluded": 6,
-    "not-provided": 29,
-    "partial": 24,
-    "schema-only": 3
+    "not-provided": 5,
+    "partial": 29,
+    "schema-only": 1
   },
   "rawRows": {
-    "entities": 28697,
-    "metadata": 1747,
-    "nonstandardRows": 304,
-    "normalizedCoreRows": 50825,
-    "observations": 20381,
-    "total": 51129
+    "entities": 43168,
+    "metadata": 2230,
+    "nonstandardRows": 362,
+    "normalizedCoreRows": 67377,
+    "observations": 21979,
+    "total": 67739
   },
   "rowBalance": {
-    "explicitPlaceholderRows": 66,
+    "explicitPlaceholderRows": 76,
     "formOrAuxiliaryRows": 0,
     "matches": true,
-    "processedCoreRows": 50825,
-    "processedNonstandardRows": 304,
-    "processedRows": 51129,
-    "sourceOriginalRows": 51129,
-    "supplementalSourceRows": 238
+    "processedCoreRows": 67377,
+    "processedNonstandardRows": 362,
+    "processedRows": 67739,
+    "sourceOriginalRows": 67739,
+    "supplementalSourceRows": 286
   },
   "runtimeVersion": "v124-gzip-json-envelope-v1",
   "schemaVersion": "v124",
   "shardCount": 24,
-  "sourcePackage": "방글라데시데이터/20260923",
-  "sourcePackageSha256": "fb6ff895cbda9536fb6b3c908403f48772c365650a2013d30cfc62abc77fb4ef",
+  "sourcePackage": "방글라데시데이터/20260930",
+  "sourcePackageSha256": "606a04071f566542bab83035d9ff07dc0e72ce301bd4632969a0d7061e2b9458",
   "unexplainedElements": 0,
-  "workbookFiles": 119
+  "workbookFiles": 142
 }

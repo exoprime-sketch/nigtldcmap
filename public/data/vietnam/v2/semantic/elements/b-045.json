@@ -11,9 +11,9 @@
         "알루미나",
         "인광석",
         "주석",
+        "천연흑연",
         "텅스텐",
         "형석",
-        "흑연",
         "희토류"
       ]
     },
@@ -28,9 +28,15 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 7,
       "values": [
-        "2026"
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
       ]
     }
   ],
@@ -202,14 +208,14 @@
     {
       "axisGroupKey": "measure-7048e6eac20b|순위",
       "dimensionLabels": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01 · 03 · 18 · 24"
       },
       "dimensions": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "세계 생산량 순위 — 흑연",
+      "displayLabel": "세계 생산량 순위 — 천연흑연",
       "indicatorId": "B-045_production_rank_graphite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -218,9 +224,9 @@
         "unit": "순위",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-7048e6eac20b|순위|detail=흑연|technology=01,03,18,24|B-045_production_rank_graphite",
+      "seriesKey": "measure-7048e6eac20b|순위|detail=천연흑연|technology=01,03,18,24|B-045_production_rank_graphite",
       "sourceCaveat": "[전량 재산출] 종전에는 광종별로 순위·비중이 일부만 채워져 있었으나, USGS MCS 2026 PDF 원문 표를 직접 판독하여 생산 10개 광종·매장 8개 광종 전량을 산출·수록함. 범위 표기(\"2~3위\", \"6~7위\")와 서술 표기(\"상위권\")는 모두 단일 정수 순위로 대체하고 원표기는 note에 보존. 비중의 분모는 동일 판본의 공표 세계 합계로 통일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "세계 생산량 순위 — 흑연",
+      "sourceLabel": "세계 생산량 순위 — 천연흑연",
       "sourceLabelEn": "World mine production rank",
       "sourceNote": "[전량 재산출] 종전에는 광종별로 순위·비중이 일부만 채워져 있었으나, USGS MCS 2026 PDF 원문 표를 직접 판독하여 생산 10개 광종·매장 8개 광종 전량을 산출·수록함. 범위 표기(\"2~3위\", \"6~7위\")와 서술 표기(\"상위권\")는 모두 단일 정수 순위로 대체하고 원표기는 note에 보존. 비중의 분모는 동일 판본의 공표 세계 합계로 통일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -522,14 +528,14 @@
     {
       "axisGroupKey": "measure-49de79d3637e|%",
       "dimensionLabels": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01 · 03 · 18 · 24"
       },
       "dimensions": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "세계 생산량 비중 — 흑연",
+      "displayLabel": "세계 생산량 비중 — 천연흑연",
       "indicatorId": "B-045_production_share_graphite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -538,9 +544,9 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-49de79d3637e|%|detail=흑연|technology=01,03,18,24|B-045_production_share_graphite",
+      "seriesKey": "measure-49de79d3637e|%|detail=천연흑연|technology=01,03,18,24|B-045_production_share_graphite",
       "sourceCaveat": "[정합성 확보] B-047 생산량과 동일 표·동일 판본의 공표 세계 합계를 분모로 재산출. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "세계 생산량 비중 — 흑연",
+      "sourceLabel": "세계 생산량 비중 — 천연흑연",
       "sourceLabelEn": "World mine production share",
       "sourceNote": "[정합성 확보] B-047 생산량과 동일 표·동일 판본의 공표 세계 합계를 분모로 재산출. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -778,14 +784,14 @@
     {
       "axisGroupKey": "measure-49bb1b5855fe|순위",
       "dimensionLabels": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01 · 03 · 18 · 24"
       },
       "dimensions": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "세계 매장량 순위 — 흑연",
+      "displayLabel": "세계 매장량 순위 — 천연흑연",
       "indicatorId": "B-045_reserve_rank_graphite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -794,9 +800,9 @@
         "unit": "순위",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-49bb1b5855fe|순위|detail=흑연|technology=01,03,18,24|B-045_reserve_rank_graphite",
+      "seriesKey": "measure-49bb1b5855fe|순위|detail=천연흑연|technology=01,03,18,24|B-045_reserve_rank_graphite",
       "sourceCaveat": "[전량 재산출] 종전에는 광종별로 순위·비중이 일부만 채워져 있었으나, USGS MCS 2026 PDF 원문 표를 직접 판독하여 생산 10개 광종·매장 8개 광종 전량을 산출·수록함. 범위 표기(\"2~3위\", \"6~7위\")와 서술 표기(\"상위권\")는 모두 단일 정수 순위로 대체하고 원표기는 note에 보존. 비중의 분모는 동일 판본의 공표 세계 합계로 통일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "세계 매장량 순위 — 흑연",
+      "sourceLabel": "세계 매장량 순위 — 천연흑연",
       "sourceLabelEn": "World reserves rank",
       "sourceNote": "[전량 재산출] 종전에는 광종별로 순위·비중이 일부만 채워져 있었으나, USGS MCS 2026 PDF 원문 표를 직접 판독하여 생산 10개 광종·매장 8개 광종 전량을 산출·수록함. 범위 표기(\"2~3위\", \"6~7위\")와 서술 표기(\"상위권\")는 모두 단일 정수 순위로 대체하고 원표기는 note에 보존. 비중의 분모는 동일 판본의 공표 세계 합계로 통일. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1034,14 +1040,14 @@
     {
       "axisGroupKey": "measure-47af40a32a99|%",
       "dimensionLabels": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01 · 03 · 18 · 24"
       },
       "dimensions": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "세계 매장량 비중 — 흑연",
+      "displayLabel": "세계 매장량 비중 — 천연흑연",
       "indicatorId": "B-045_reserve_share_graphite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
@@ -1050,9 +1056,9 @@
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-47af40a32a99|%|detail=흑연|technology=01,03,18,24|B-045_reserve_share_graphite",
+      "seriesKey": "measure-47af40a32a99|%|detail=천연흑연|technology=01,03,18,24|B-045_reserve_share_graphite",
       "sourceCaveat": "[정합성 확보] B-046 매장량과 동일 표·동일 판본의 공표 세계 합계를 분모로 재산출하여 B-045·B-046 간 수치가 일치하도록 맞춤. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "세계 매장량 비중 — 흑연",
+      "sourceLabel": "세계 매장량 비중 — 천연흑연",
       "sourceLabelEn": "World reserves share",
       "sourceNote": "[정합성 확보] B-046 매장량과 동일 표·동일 판본의 공표 세계 합계를 분모로 재산출하여 B-045·B-046 간 수치가 일치하도록 맞춤. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1192,7 +1198,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "알루미나",
         "technology": "01 · 03 · 18 · 24"
@@ -1201,18 +1207,18 @@
         "detail": "알루미나",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 알루미나",
+      "displayLabel": "인용 쪽 — 알루미나",
       "indicatorId": "B-045_source_page_alumina",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=알루미나|technology=01,03,18,24|B-045_source_page_alumina",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=알루미나|technology=01,03,18,24|B-045_source_page_alumina",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 알루미나",
+      "sourceLabel": "인용 쪽 — 알루미나",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1224,7 +1230,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "안티모니",
         "technology": "01 · 03 · 18 · 24"
@@ -1233,18 +1239,18 @@
         "detail": "안티모니",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 안티모니",
+      "displayLabel": "인용 쪽 — 안티모니",
       "indicatorId": "B-045_source_page_antimony",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=안티모니|technology=01,03,18,24|B-045_source_page_antimony",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=안티모니|technology=01,03,18,24|B-045_source_page_antimony",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 안티모니",
+      "sourceLabel": "인용 쪽 — 안티모니",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1256,7 +1262,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "보크사이트",
         "technology": "01 · 03 · 18 · 24"
@@ -1265,18 +1271,18 @@
         "detail": "보크사이트",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 보크사이트",
+      "displayLabel": "인용 쪽 — 보크사이트",
       "indicatorId": "B-045_source_page_bauxite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=보크사이트|technology=01,03,18,24|B-045_source_page_bauxite",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=보크사이트|technology=01,03,18,24|B-045_source_page_bauxite",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 보크사이트",
+      "sourceLabel": "인용 쪽 — 보크사이트",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1288,7 +1294,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "시멘트",
         "technology": "01 · 03 · 18 · 24"
@@ -1297,18 +1303,18 @@
         "detail": "시멘트",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 시멘트",
+      "displayLabel": "인용 쪽 — 시멘트",
       "indicatorId": "B-045_source_page_cement",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=시멘트|technology=01,03,18,24|B-045_source_page_cement",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=시멘트|technology=01,03,18,24|B-045_source_page_cement",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 시멘트",
+      "sourceLabel": "인용 쪽 — 시멘트",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1320,7 +1326,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "형석",
         "technology": "01 · 03 · 18 · 24"
@@ -1329,18 +1335,18 @@
         "detail": "형석",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 형석",
+      "displayLabel": "인용 쪽 — 형석",
       "indicatorId": "B-045_source_page_fluorspar",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=형석|technology=01,03,18,24|B-045_source_page_fluorspar",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=형석|technology=01,03,18,24|B-045_source_page_fluorspar",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 형석",
+      "sourceLabel": "인용 쪽 — 형석",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1352,27 +1358,27 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01 · 03 · 18 · 24"
       },
       "dimensions": {
-        "detail": "흑연",
+        "detail": "천연흑연",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 흑연",
+      "displayLabel": "인용 쪽 — 천연흑연",
       "indicatorId": "B-045_source_page_graphite",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=흑연|technology=01,03,18,24|B-045_source_page_graphite",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=천연흑연|technology=01,03,18,24|B-045_source_page_graphite",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 흑연",
+      "sourceLabel": "인용 쪽 — 천연흑연",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1384,7 +1390,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "인광석",
         "technology": "01 · 03 · 18 · 24"
@@ -1393,18 +1399,18 @@
         "detail": "인광석",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 인광석",
+      "displayLabel": "인용 쪽 — 인광석",
       "indicatorId": "B-045_source_page_phosphate",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=인광석|technology=01,03,18,24|B-045_source_page_phosphate",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=인광석|technology=01,03,18,24|B-045_source_page_phosphate",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 인광석",
+      "sourceLabel": "인용 쪽 — 인광석",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1416,7 +1422,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "희토류",
         "technology": "01 · 03 · 18 · 24"
@@ -1425,18 +1431,18 @@
         "detail": "희토류",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 희토류",
+      "displayLabel": "인용 쪽 — 희토류",
       "indicatorId": "B-045_source_page_rare_earths",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=희토류|technology=01,03,18,24|B-045_source_page_rare_earths",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=희토류|technology=01,03,18,24|B-045_source_page_rare_earths",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 희토류",
+      "sourceLabel": "인용 쪽 — 희토류",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1448,7 +1454,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "주석",
         "technology": "01 · 03 · 18 · 24"
@@ -1457,18 +1463,18 @@
         "detail": "주석",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 주석",
+      "displayLabel": "인용 쪽 — 주석",
       "indicatorId": "B-045_source_page_tin",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=주석|technology=01,03,18,24|B-045_source_page_tin",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=주석|technology=01,03,18,24|B-045_source_page_tin",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 주석",
+      "sourceLabel": "인용 쪽 — 주석",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1480,7 +1486,7 @@
       }
     },
     {
-      "axisGroupKey": "measure-1500e0dcbf65|쪽",
+      "axisGroupKey": "measure-ccf5accad347|쪽(PDF)",
       "dimensionLabels": {
         "detail": "텅스텐",
         "technology": "01 · 03 · 18 · 24"
@@ -1489,18 +1495,18 @@
         "detail": "텅스텐",
         "technology": "01,03,18,24"
       },
-      "displayLabel": "원문 위치(광종별 페이지) — 텅스텐",
+      "displayLabel": "인용 쪽 — 텅스텐",
       "indicatorId": "B-045_source_page_tungsten",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-1500e0dcbf65",
-        "labelKo": "원문 위치(광종별 페이지)",
-        "unit": "쪽",
+        "key": "measure-ccf5accad347",
+        "labelKo": "인용 쪽",
+        "unit": "쪽(PDF)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-1500e0dcbf65|쪽|detail=텅스텐|technology=01,03,18,24|B-045_source_page_tungsten",
+      "seriesKey": "measure-ccf5accad347|쪽(PDF)|detail=텅스텐|technology=01,03,18,24|B-045_source_page_tungsten",
       "sourceCaveat": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
-      "sourceLabel": "원문 위치(광종별 페이지) — 텅스텐",
+      "sourceLabel": "인용 쪽 — 텅스텐",
       "sourceLabelEn": "Source page by commodity",
       "sourceNote": "[출처 위치 명시] B-045~B-047이 인용한 값의 보고서 내 정확한 위치를 광종별로 매핑하여 수록. 베트남 행은 각 표의 국가 목록 중 알파벳 순 마지막 부근(Other countries 직전)에 위치. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
       "sourceProvenance": {
@@ -1517,7 +1523,7 @@
       "indicatorCount": 8,
       "key": "measure-47af40a32a99",
       "labelKo": "세계 매장량 비중",
-      "recordCount": 8,
+      "recordCount": 47,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1525,7 +1531,7 @@
       "indicatorCount": 8,
       "key": "measure-49bb1b5855fe",
       "labelKo": "세계 매장량 순위",
-      "recordCount": 8,
+      "recordCount": 47,
       "unit": "순위",
       "unitFamily": "other"
     },
@@ -1533,7 +1539,7 @@
       "indicatorCount": 10,
       "key": "measure-49de79d3637e",
       "labelKo": "세계 생산량 비중",
-      "recordCount": 10,
+      "recordCount": 60,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -1541,20 +1547,20 @@
       "indicatorCount": 10,
       "key": "measure-7048e6eac20b",
       "labelKo": "세계 생산량 순위",
-      "recordCount": 10,
+      "recordCount": 60,
       "unit": "순위",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 10,
-      "key": "measure-1500e0dcbf65",
-      "labelKo": "원문 위치(광종별 페이지)",
+      "key": "measure-ccf5accad347",
+      "labelKo": "인용 쪽",
       "recordCount": 10,
-      "unit": "쪽",
+      "unit": "쪽(PDF)",
       "unitFamily": "other"
     }
   ],
-  "observationCount": 46,
+  "observationCount": 224,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

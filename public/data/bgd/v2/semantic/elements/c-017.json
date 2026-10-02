@@ -12,18 +12,18 @@
   "elementId": "C-017",
   "entityCount": 41,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 7,
+  "indicatorCount": 1,
   "indicators": [
     {
       "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {
-        "technology": "01"
+        "technology": "01 · 미해당"
       },
       "dimensions": {
-        "technology": "01"
+        "technology": "01,미해당"
       },
-      "displayLabel": "재생에너지 투자 인센티브 · deployment_status",
-      "indicatorId": "C-017_deployment_status",
+      "displayLabel": "재생에너지 투자 인센티브",
+      "indicatorId": "C-017_incentive",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
         "key": "measure-d98c0107a51d",
@@ -31,58 +31,8 @@
         "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01|C-017_deployment_status",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 보급 실적 1건. IDCOL 태양광 홈시스템 프로그램의 누적 보급 기수·파트너기관 수·총투자액. [시점 유의] 2019년 1월 기준값이며 이후 갱신치가 공표되지 않아 현행 보급량과 다를 수 있음 — 「[실적] 기준 시점」 열에 명시함.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "2019년 1월 이후 갱신치가 공표되지 않아 현행 보급량은 미수집(M06).",
-      "sourceProvenance": {
-        "sourceRow": 12,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "재생에너지 투자 인센티브 · implementing_agency",
-      "indicatorId": "C-017_implementing_agency",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-017_implementing_agency",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 이행 기관 1건(10행) — 정책 총괄 / 전담 기관 / 규제 기관 / 송전·계통 / 금융 기관 / 연구개발 / 인력양성 / 관개 부문 / 전담 재원 / 우선순위 결정. [근거] 모든 행이 RE Policy 2025 제4조 각 항 및 제5.1조의 조문 표기이며 조항 번호를 「[기관] 근거 조항」 열에 남김.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 이행 기관 1건(10행) — 정책 총괄 / 전담 기관 / 규제 기관 / 송전·계통 / 금융 기관 / 연구개발 / 인력양성 / 관개 부문 / 전담 재원 / 우선순위 결정. [근거] 모든 행이 RE Policy 2025 제4조 각 항 및 제5.1조의 조문 표기이며 조항 번호를 「[기관] 근거 조항」 열에 남김.",
-      "sourceProvenance": {
-        "sourceRow": 11,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "01"
-      },
-      "dimensions": {
-        "technology": "01"
-      },
-      "displayLabel": "재생에너지 투자 인센티브 · incentive_instrument",
-      "indicatorId": "C-017_incentive_instrument",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01|C-017_incentive_instrument",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 인센티브 제도·고시 1건(8행) — FIT 미도입 / FIP 미도입 / 소득세 감면 고시 2024 / 태양광 소득세 감면 고시 2026 / 관세 고시 2026 / 관세 고시 개정 2026 / 넷미터링 지침 2018 / 넷미터링 지침 2025. [미도입 판정] FIT·FIP는 자료를 찾지 못한 것이 아니라 RE Policy 2025 정본 전문 대조로 제도 부존을 확인한 것이므로 M06(미수집)이 아닌 M03(구조적 부존)으로 기입함. [적용창 유의] 소득세 감면은 상업생산 개시일이 2025-07-01 ~ 2030-06-30 사이인 사업에만 적용됨 — 이 요건을 「[제도] 적용 개시 요건」 열에 별도로 두어 감면기간(15년)과 혼동하지 않도록 함. [기술분류] framework 「행별 태깅」 — 태양광 전용 고시 3건에 tech_id 1을 태깅하고 나머지 제도 행은 공란.",
+      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01,미해당|C-017_incentive",
+      "sourceCaveat": "[정의·범위] 1행 = 재생에너지 투자 인센티브 제도 1건 × 적용 대상 1건. 같은 제도가 전원·용량 구간별로 다른 요율을 적용하면 대상별로 행을 분리함. [단위 표기] 요율·세율은 원문 통화·단위 표기를 그대로 두고 임의 환산하지 않으며 단위는 별도 열에 둠. [결측 처리] 원문에 요율표가 없으면 값 열을 공란으로 두고 M06(원문 미수집) 또는 M07(현지조사 필요)을 부여하며, 2차 자료 수치로 대체 기재하지 않음. [머리글] 구서식의 「속성N(...)」 머리글을 「[블록] 속성명」 형태로 전환하고 2행에 attr_N 식별자를 두었으며, 기술코드 2열을 결측·검토 열 앞으로 이동함(10개국 공통).",
       "sourceLabel": "재생에너지 투자 인센티브",
       "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
       "sourceNote": "FIT·FIP는 RE Policy 2025 원문에 제도 자체가 없어 M03(구조적 부존). 넷미터링 지침 2025는 존재가 확인되나 원문 미확보로 M06.",
@@ -90,111 +40,11 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "01"
-      },
-      "dimensions": {
-        "technology": "01"
-      },
-      "displayLabel": "재생에너지 투자 인센티브 · net_metering_rule",
-      "indicatorId": "C-017_net_metering_rule",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01|C-017_net_metering_rule",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 넷미터링 운영 규정 1건. 구서식의 용량 상한 3행·정산주기 1행·기말 정산 1행·상계 순서 1행을 1행의 속성 열로 통합함. [기준 상이] 계약전력 대비 70%(제3.3조 ii항)와 중전압 수용가 70%(제3.3조 iv항)는 기준이 서로 달라(수용가 계약전력 vs 배전변압기 정격용량) 별도 열로 분리함. [기말 정산] \"단순 소멸\"이 아니라 유틸리티가 벌크요금(BERC 33kV)으로 매입한 뒤 크레딧을 초기화하는 구조임 — 해석 오류가 잦은 지점이므로 본문에 명시함.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "넷미터링 지침 2025 원문 미확보로 본 행의 값은 2018년판 기준임(M06).",
-      "sourceProvenance": {
-        "sourceRow": 8,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "재생에너지 투자 인센티브 · policy_scope",
-      "indicatorId": "C-017_policy_scope",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-017_policy_scope",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 정책 적용범위 조항 1건. 제2조는 제3.1~3.5조가 개별 규정한 기술군보다 넓은 범위(지열·해양조력·그린수소·에너지저장장치 포함)를 정하고 있어 별도 레코드로 분리함 — 대상 기술 행 수(17)와 혼동하지 않도록 함. [기술분류] 다수 기술을 포괄하여 단일 tech_id를 지목할 수 없으므로 공란.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 정책 적용범위 조항 1건. 제2조는 제3.1~3.5조가 개별 규정한 기술군보다 넓은 범위(지열·해양조력·그린수소·에너지저장장치 포함)를 정하고 있어 별도 레코드로 분리함 — 대상 기술 행 수(17)와 혼동하지 않도록 함. [기술분류] 다수 기술을 포괄하여 단일 tech_id를 지목할 수 없으므로 공란.",
-      "sourceProvenance": {
-        "sourceRow": 10,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {
-        "technology": "01 · 03 · 05 · 08 · 15"
-      },
-      "dimensions": {
-        "technology": "01,03,05,08,15"
-      },
-      "displayLabel": "재생에너지 투자 인센티브 · target_technology",
-      "indicatorId": "C-017_target_technology",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조|technology=01,03,05,08,15|C-017_target_technology",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 정책 대상 기술·설비 유형 1건(17행) — 태양에너지 설비 13종(제3.1조) + 풍력·바이오매스·폐자원에너지·수력 4개 기술군(제3.2~3.5조). [집계행 삭제] 구서식의 「태양에너지 대상 설비 유형 수 13」 행은 행 수로 산출되는 파생값이므로 삭제함. [기술분류] framework 「행별 태깅」 — 태양광 1, 풍력 3, 수력 5, 바이오에너지 8, 폐자원 15.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 정책 대상 기술·설비 유형 1건(17행) — 태양에너지 설비 13종(제3.1조) + 풍력·바이오매스·폐자원에너지·수력 4개 기술군(제3.2~3.5조). [집계행 삭제] 구서식의 「태양에너지 대상 설비 유형 수 13」 행은 행 수로 산출되는 파생값이므로 삭제함. [기술분류] framework 「행별 태깅」 — 태양광 1, 풍력 3, 수력 5, 바이오에너지 8, 폐자원 15.",
-      "sourceProvenance": {
-        "sourceRow": 9,
-        "sourceSheet": "2_meta_info"
-      }
-    },
-    {
-      "axisGroupKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "재생에너지 투자 인센티브 · tax_exemption_rate",
-      "indicatorId": "C-017_tax_exemption_rate",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d98c0107a51d",
-        "labelKo": "재생에너지 투자 인센티브",
-        "unit": "속성별 — 1.2_entity 3행 머리글 괄호 표기 참조",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-d98c0107a51d|속성별 — 1.2_entity 3행 머리글 괄호 표기 참조||C-017_tax_exemption_rate",
-      "sourceCaveat": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 소득세 감면 연차 구간 1건(3행 전수) — 1~10년차 100% / 11~13년차 50% / 14~15년차 25%. [기산 시점] 연차는 상업생산(বাণিজ্যিক উৎপাদন) 개시 시점 기준이며 고시일·준공일 기준이 아님. [집계행 삭제] 구서식의 「소득세 감면 총기간 15」 행은 구간 합으로 산출되는 파생값이므로 삭제하고 제도 행의 「[제도] 적용 기간」에 남김.",
-      "sourceLabel": "재생에너지 투자 인센티브",
-      "sourceLabelEn": "Incentive Types (FIT/FIP/RPS/Tax/Subsidy/Net Metering)",
-      "sourceNote": "[raw] ([raw]\\C-017\\) C-017_재생에너지 투자 인센티브_BGD_RE_Policy_2025_PowerDivision.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_400_Ain_Aykar_54_2024_RE_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_211_Ain_Aykar_2_2026_Solar_IncomeTax.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_159_Ain_2026_14_Customs_Solar.pdf · C-017_재생에너지 투자 인센티브_BGD_NBR_SRO_241_Ain_2026_71_Customs_Solar_Amendment.pdf · C-017_재생에너지 투자 인센티브_BGD_NetMetering_Guidelines_2018_EN.pdf [서식] 감독관 9/14 의견(신서식)에 따라 구서식의 속성별 구분자 6개(C-017_incentive_type·_incentive_condition·_incentive_status·_target_technology·_implementing_agency 및 출처 접미사 _bdgov·_nolicense)를 레코드 유형 7개로 통합하고, 값 1개가 1행을 차지하던 구조를 1행 = 실물 1건으로 재구조화함. [정의·범위] 1행 = 소득세 감면 연차 구간 1건(3행 전수) — 1~10년차 100% / 11~13년차 50% / 14~15년차 25%. [기산 시점] 연차는 상업생산(বাণিজ্যিক উৎপাদন) 개시 시점 기준이며 고시일·준공일 기준이 아님. [집계행 삭제] 구서식의 「소득세 감면 총기간 15」 행은 구간 합으로 산출되는 파생값이므로 삭제하고 제도 행의 「[제도] 적용 기간」에 남김.",
-      "sourceProvenance": {
-        "sourceRow": 7,
-        "sourceSheet": "2_meta_info"
-      }
     }
   ],
   "measures": [
     {
-      "indicatorCount": 7,
+      "indicatorCount": 1,
       "key": "measure-d98c0107a51d",
       "labelKo": "재생에너지 투자 인센티브",
       "recordCount": 0,

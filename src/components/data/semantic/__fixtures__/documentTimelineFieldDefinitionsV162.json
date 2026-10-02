@@ -1,0 +1,918 @@
+{
+  "C-009": [
+    {
+      "label": "[식별] 레코드ID",
+      "normalizedKey": "식별_레코드ID",
+      "sourceField": "attr_1"
+    },
+    {
+      "label": "[식별] 레코드명",
+      "normalizedKey": "식별_레코드명",
+      "sourceField": "attr_2"
+    },
+    {
+      "label": "[식별] 레코드 유형",
+      "normalizedKey": "식별_레코드_유형",
+      "sourceField": "attr_3"
+    },
+    {
+      "label": "[식별] 문서 ID (CCLW slug)",
+      "normalizedKey": "식별_문서_ID_CCLW_slug",
+      "sourceField": "attr_4"
+    },
+    {
+      "label": "[식별] 행정 수준",
+      "normalizedKey": "식별_행정_수준",
+      "sourceField": "attr_5"
+    },
+    {
+      "label": "[법령] 법령명 (국문)",
+      "normalizedKey": "법령_법령명_국문",
+      "sourceField": "attr_6"
+    },
+    {
+      "label": "[법령] 법령명 (원문)",
+      "normalizedKey": "법령_법령명_원문",
+      "sourceField": "attr_7"
+    },
+    {
+      "label": "[법령] 법령명 (현지어)",
+      "normalizedKey": "법령_법령명_현지어",
+      "sourceField": "attr_8"
+    },
+    {
+      "label": "[법령] 문서번호",
+      "normalizedKey": "법령_문서번호",
+      "sourceField": "attr_9"
+    },
+    {
+      "label": "[법령] 유형 (공통 분류)",
+      "normalizedKey": "법령_유형_공통_분류",
+      "sourceField": "attr_10"
+    },
+    {
+      "label": "[법령] 유형 (원문 표기)",
+      "normalizedKey": "법령_유형_원문_표기",
+      "sourceField": "attr_11"
+    },
+    {
+      "label": "[법령] 공포일 (YYYY-MM-DD)",
+      "normalizedKey": "법령_공포일_YYYY_MM_DD",
+      "sourceField": "attr_12"
+    },
+    {
+      "label": "[법령] 시행일 (YYYY-MM-DD)",
+      "normalizedKey": "법령_시행일_YYYY_MM_DD",
+      "sourceField": "attr_13"
+    },
+    {
+      "label": "[법령] 시행 연도 (년)",
+      "normalizedKey": "법령_시행_연도_년",
+      "sourceField": "attr_14"
+    },
+    {
+      "label": "[법령] 시행 연도 원문 표기",
+      "normalizedKey": "법령_시행_연도_원문_표기",
+      "sourceField": "attr_15"
+    },
+    {
+      "label": "[법령] 관보·재가일",
+      "normalizedKey": "법령_관보_재가일",
+      "sourceField": "attr_16"
+    },
+    {
+      "label": "[법령] 상태",
+      "normalizedKey": "법령_상태",
+      "sourceField": "attr_17"
+    },
+    {
+      "label": "[법령] 주관 부처",
+      "normalizedKey": "법령_주관_부처",
+      "sourceField": "attr_18"
+    },
+    {
+      "label": "[법령] 대상 분야",
+      "normalizedKey": "법령_대상_분야",
+      "sourceField": "attr_19"
+    },
+    {
+      "label": "[법령] 대상 분야 (원문 표기)",
+      "normalizedKey": "법령_대상_분야_원문_표기",
+      "sourceField": "attr_20"
+    },
+    {
+      "label": "[법령] 감축·적응 구분",
+      "normalizedKey": "법령_감축_적응_구분",
+      "sourceField": "attr_21"
+    },
+    {
+      "label": "[법령] 정책수단",
+      "normalizedKey": "법령_정책수단",
+      "sourceField": "attr_22"
+    },
+    {
+      "label": "[법령] 기후 목적",
+      "normalizedKey": "법령_기후_목적",
+      "sourceField": "attr_23"
+    },
+    {
+      "label": "[법령] 대체·개정 관계",
+      "normalizedKey": "법령_대체_개정_관계",
+      "sourceField": "attr_24"
+    },
+    {
+      "label": "[법령] 주요 내용 (한 줄 설명)",
+      "normalizedKey": "법령_주요_내용_한_줄_설명",
+      "sourceField": "attr_25"
+    },
+    {
+      "label": "[법령] 주요 내용 상세",
+      "normalizedKey": "법령_주요_내용_상세",
+      "sourceField": "attr_26"
+    },
+    {
+      "label": "[지역] 지역명 (원문)",
+      "normalizedKey": "지역_지역명_원문",
+      "sourceField": "attr_27"
+    },
+    {
+      "label": "[지역] 지역명 (개편 전)",
+      "normalizedKey": "지역_지역명_개편_전",
+      "sourceField": "attr_28"
+    },
+    {
+      "label": "[지역] 행정코드 (개편 전)",
+      "normalizedKey": "지역_행정코드_개편_전",
+      "sourceField": "attr_29"
+    },
+    {
+      "label": "[지역] 지역명 (현행)",
+      "normalizedKey": "지역_지역명_현행",
+      "sourceField": "attr_30"
+    },
+    {
+      "label": "[지역] 행정코드 (현행)",
+      "normalizedKey": "지역_행정코드_현행",
+      "sourceField": "attr_31"
+    },
+    {
+      "label": "[출처] 원문 문서명",
+      "normalizedKey": "출처_원문_문서명",
+      "sourceField": "attr_32"
+    },
+    {
+      "label": "[출처] 원문 URL",
+      "normalizedKey": "출처_원문_URL",
+      "sourceField": "attr_33"
+    },
+    {
+      "label": "[출처] 게재처",
+      "normalizedKey": "출처_게재처",
+      "sourceField": "attr_34"
+    },
+    {
+      "label": "[출처] raw 보유 여부",
+      "normalizedKey": "출처_raw_보유_여부",
+      "sourceField": "attr_35"
+    },
+    {
+      "label": "[출처] raw 파일명",
+      "normalizedKey": "출처_raw_파일명",
+      "sourceField": "attr_36"
+    },
+    {
+      "label": "[출처] 인용 위치",
+      "normalizedKey": "출처_인용_위치",
+      "sourceField": "attr_37"
+    },
+    {
+      "label": "[기술] 기술코드 판단 유형",
+      "normalizedKey": "기술_기술코드_판단_유형",
+      "sourceField": "attr_38"
+    },
+    {
+      "label": "[기술] 기술코드 판단 근거",
+      "normalizedKey": "기술_기술코드_판단_근거",
+      "sourceField": "attr_39"
+    },
+    {
+      "label": "[결측] framework 필수 속성 결측 (코드·사유)",
+      "normalizedKey": "결측_framework_필수_속성_결측_코드_사유",
+      "sourceField": "attr_40"
+    }
+  ],
+  "C-010": [
+    {
+      "label": "[식별] 레코드ID",
+      "normalizedKey": "식별_레코드ID",
+      "sourceField": "attr_1"
+    },
+    {
+      "label": "[식별] 레코드명",
+      "normalizedKey": "식별_레코드명",
+      "sourceField": "attr_2"
+    },
+    {
+      "label": "[식별] 레코드 유형",
+      "normalizedKey": "식별_레코드_유형",
+      "sourceField": "attr_3"
+    },
+    {
+      "label": "[식별] 문서 ID (CCLW slug)",
+      "normalizedKey": "식별_문서_ID_CCLW_slug",
+      "sourceField": "attr_4"
+    },
+    {
+      "label": "[식별] 행정 수준",
+      "normalizedKey": "식별_행정_수준",
+      "sourceField": "attr_5"
+    },
+    {
+      "label": "[법령] 법령명 (국문)",
+      "normalizedKey": "법령_법령명_국문",
+      "sourceField": "attr_6"
+    },
+    {
+      "label": "[법령] 법령명 (원문)",
+      "normalizedKey": "법령_법령명_원문",
+      "sourceField": "attr_7"
+    },
+    {
+      "label": "[법령] 문서번호",
+      "normalizedKey": "법령_문서번호",
+      "sourceField": "attr_8"
+    },
+    {
+      "label": "[법령] 유형 (공통 분류)",
+      "normalizedKey": "법령_유형_공통_분류",
+      "sourceField": "attr_9"
+    },
+    {
+      "label": "[법령] 유형 (원문 표기)",
+      "normalizedKey": "법령_유형_원문_표기",
+      "sourceField": "attr_10"
+    },
+    {
+      "label": "[법령] 공포일 (YYYY-MM-DD)",
+      "normalizedKey": "법령_공포일_YYYY_MM_DD",
+      "sourceField": "attr_11"
+    },
+    {
+      "label": "[법령] 시행일 (YYYY-MM-DD)",
+      "normalizedKey": "법령_시행일_YYYY_MM_DD",
+      "sourceField": "attr_12"
+    },
+    {
+      "label": "[법령] 시행 연도 (년)",
+      "normalizedKey": "법령_시행_연도_년",
+      "sourceField": "attr_13"
+    },
+    {
+      "label": "[법령] 관보·재가일",
+      "normalizedKey": "법령_관보_재가일",
+      "sourceField": "attr_14"
+    },
+    {
+      "label": "[법령] 상태",
+      "normalizedKey": "법령_상태",
+      "sourceField": "attr_15"
+    },
+    {
+      "label": "[법령] 주관 부처",
+      "normalizedKey": "법령_주관_부처",
+      "sourceField": "attr_16"
+    },
+    {
+      "label": "[법령] 대상 분야",
+      "normalizedKey": "법령_대상_분야",
+      "sourceField": "attr_17"
+    },
+    {
+      "label": "[법령] 대상 분야 (원문 표기)",
+      "normalizedKey": "법령_대상_분야_원문_표기",
+      "sourceField": "attr_18"
+    },
+    {
+      "label": "[법령] 감축·적응 구분",
+      "normalizedKey": "법령_감축_적응_구분",
+      "sourceField": "attr_19"
+    },
+    {
+      "label": "[법령] 정책수단",
+      "normalizedKey": "법령_정책수단",
+      "sourceField": "attr_20"
+    },
+    {
+      "label": "[법령] 상위법·근거 조항",
+      "normalizedKey": "법령_상위법_근거_조항",
+      "sourceField": "attr_21"
+    },
+    {
+      "label": "[법령] 대체·개정 관계",
+      "normalizedKey": "법령_대체_개정_관계",
+      "sourceField": "attr_22"
+    },
+    {
+      "label": "[법령] 개정 이력",
+      "normalizedKey": "법령_개정_이력",
+      "sourceField": "attr_23"
+    },
+    {
+      "label": "[법령] 정본 언어",
+      "normalizedKey": "법령_정본_언어",
+      "sourceField": "attr_24"
+    },
+    {
+      "label": "[법령] 주요 내용 (한 줄 설명)",
+      "normalizedKey": "법령_주요_내용_한_줄_설명",
+      "sourceField": "attr_25"
+    },
+    {
+      "label": "[법령] 주요 내용 상세",
+      "normalizedKey": "법령_주요_내용_상세",
+      "sourceField": "attr_26"
+    },
+    {
+      "label": "[법령] 유형 (주제 분류)",
+      "normalizedKey": "법령_유형_주제_분류",
+      "sourceField": "attr_27"
+    },
+    {
+      "label": "[법령] 유형 (주제 분류 원문 표기)",
+      "normalizedKey": "법령_유형_주제_분류_원문_표기",
+      "sourceField": "attr_28"
+    },
+    {
+      "label": "[대조] 지정 DB",
+      "normalizedKey": "대조_지정_DB",
+      "sourceField": "attr_29"
+    },
+    {
+      "label": "[대조] 대조 결과",
+      "normalizedKey": "대조_대조_결과",
+      "sourceField": "attr_30"
+    },
+    {
+      "label": "[대조] 판정",
+      "normalizedKey": "대조_판정",
+      "sourceField": "attr_31"
+    },
+    {
+      "label": "[대조] 대체 출처",
+      "normalizedKey": "대조_대체_출처",
+      "sourceField": "attr_32"
+    },
+    {
+      "label": "[지역] 지역명 (원문)",
+      "normalizedKey": "지역_지역명_원문",
+      "sourceField": "attr_33"
+    },
+    {
+      "label": "[지역] 지역명 (개편 전)",
+      "normalizedKey": "지역_지역명_개편_전",
+      "sourceField": "attr_34"
+    },
+    {
+      "label": "[지역] 행정코드 (개편 전)",
+      "normalizedKey": "지역_행정코드_개편_전",
+      "sourceField": "attr_35"
+    },
+    {
+      "label": "[지역] 지역명 (현행)",
+      "normalizedKey": "지역_지역명_현행",
+      "sourceField": "attr_36"
+    },
+    {
+      "label": "[지역] 행정코드 (현행)",
+      "normalizedKey": "지역_행정코드_현행",
+      "sourceField": "attr_37"
+    },
+    {
+      "label": "[출처] 원문 문서명",
+      "normalizedKey": "출처_원문_문서명",
+      "sourceField": "attr_38"
+    },
+    {
+      "label": "[출처] 원문 URL",
+      "normalizedKey": "출처_원문_URL",
+      "sourceField": "attr_39"
+    },
+    {
+      "label": "[출처] 게재처",
+      "normalizedKey": "출처_게재처",
+      "sourceField": "attr_40"
+    },
+    {
+      "label": "[출처] 문서페이지 URL",
+      "normalizedKey": "출처_문서페이지_URL",
+      "sourceField": "attr_41"
+    },
+    {
+      "label": "[출처] raw 보유 여부",
+      "normalizedKey": "출처_raw_보유_여부",
+      "sourceField": "attr_42"
+    },
+    {
+      "label": "[출처] raw 파일명",
+      "normalizedKey": "출처_raw_파일명",
+      "sourceField": "attr_43"
+    },
+    {
+      "label": "[출처] 인용 위치",
+      "normalizedKey": "출처_인용_위치",
+      "sourceField": "attr_44"
+    },
+    {
+      "label": "[기술] 기술코드 판단 유형",
+      "normalizedKey": "기술_기술코드_판단_유형",
+      "sourceField": "attr_45"
+    },
+    {
+      "label": "[기술] 기술코드 판단 근거",
+      "normalizedKey": "기술_기술코드_판단_근거",
+      "sourceField": "attr_46"
+    },
+    {
+      "label": "[결측] framework 필수 속성 결측 (코드·사유)",
+      "normalizedKey": "결측_framework_필수_속성_결측_코드_사유",
+      "sourceField": "attr_47"
+    }
+  ],
+  "C-016": [
+    {
+      "label": "[식별] 레코드ID",
+      "normalizedKey": "식별_레코드ID",
+      "sourceField": "attr_1"
+    },
+    {
+      "label": "[식별] 레코드명",
+      "normalizedKey": "식별_레코드명",
+      "sourceField": "attr_2"
+    },
+    {
+      "label": "[식별] 레코드 유형",
+      "normalizedKey": "식별_레코드_유형",
+      "sourceField": "attr_3"
+    },
+    {
+      "label": "[식별] 행정 수준",
+      "normalizedKey": "식별_행정_수준",
+      "sourceField": "attr_4"
+    },
+    {
+      "label": "[설비] 연도 (년)",
+      "normalizedKey": "설비_연도_년",
+      "sourceField": "attr_5"
+    },
+    {
+      "label": "[설비] 전원 (원문)",
+      "normalizedKey": "설비_전원_원문",
+      "sourceField": "attr_6"
+    },
+    {
+      "label": "[설비] 전원 (국문)",
+      "normalizedKey": "설비_전원_국문",
+      "sourceField": "attr_7"
+    },
+    {
+      "label": "[설비] 계통 구분",
+      "normalizedKey": "설비_계통_구분",
+      "sourceField": "attr_8"
+    },
+    {
+      "label": "[설비] 용량 (MW)",
+      "normalizedKey": "설비_용량_MW",
+      "sourceField": "attr_9"
+    },
+    {
+      "label": "[설비] 비중 (%)",
+      "normalizedKey": "설비_비중",
+      "sourceField": "attr_10"
+    },
+    {
+      "label": "[목표] 구분",
+      "normalizedKey": "목표_구분",
+      "sourceField": "attr_11"
+    },
+    {
+      "label": "[목표] 전원 (원문)",
+      "normalizedKey": "목표_전원_원문",
+      "sourceField": "attr_12"
+    },
+    {
+      "label": "[목표] 전원 (국문)",
+      "normalizedKey": "목표_전원_국문",
+      "sourceField": "attr_13"
+    },
+    {
+      "label": "[목표] 목표연도 (년)",
+      "normalizedKey": "목표_목표연도_년",
+      "sourceField": "attr_14"
+    },
+    {
+      "label": "[목표] 용량 (MW)",
+      "normalizedKey": "목표_용량_MW",
+      "sourceField": "attr_15"
+    },
+    {
+      "label": "[목표] 용량 하한 (MW)",
+      "normalizedKey": "목표_용량_하한_MW",
+      "sourceField": "attr_16"
+    },
+    {
+      "label": "[목표] 용량 상한 (MW)",
+      "normalizedKey": "목표_용량_상한_MW",
+      "sourceField": "attr_17"
+    },
+    {
+      "label": "[목표] 비중 (%)",
+      "normalizedKey": "목표_비중",
+      "sourceField": "attr_18"
+    },
+    {
+      "label": "[목표] 비중 하한 (%)",
+      "normalizedKey": "목표_비중_하한",
+      "sourceField": "attr_19"
+    },
+    {
+      "label": "[목표] 비중 상한 (%)",
+      "normalizedKey": "목표_비중_상한",
+      "sourceField": "attr_20"
+    },
+    {
+      "label": "[목표] 비중 기준",
+      "normalizedKey": "목표_비중_기준",
+      "sourceField": "attr_21"
+    },
+    {
+      "label": "[목표] 목표값",
+      "normalizedKey": "목표_목표값",
+      "sourceField": "attr_22"
+    },
+    {
+      "label": "[목표] 목표 단위·기준",
+      "normalizedKey": "목표_목표_단위_기준",
+      "sourceField": "attr_23"
+    },
+    {
+      "label": "[목표] 조건·단서",
+      "normalizedKey": "목표_조건_단서",
+      "sourceField": "attr_24"
+    },
+    {
+      "label": "[목표] 근거 조항",
+      "normalizedKey": "목표_근거_조항",
+      "sourceField": "attr_25"
+    },
+    {
+      "label": "[배분] 전원 (원문)",
+      "normalizedKey": "배분_전원_원문",
+      "sourceField": "attr_26"
+    },
+    {
+      "label": "[배분] 전원 (국문)",
+      "normalizedKey": "배분_전원_국문",
+      "sourceField": "attr_27"
+    },
+    {
+      "label": "[배분] 대상 기간",
+      "normalizedKey": "배분_대상_기간",
+      "sourceField": "attr_28"
+    },
+    {
+      "label": "[배분] 용량 (MW)",
+      "normalizedKey": "배분_용량_MW",
+      "sourceField": "attr_29"
+    },
+    {
+      "label": "[배분] 근거",
+      "normalizedKey": "배분_근거",
+      "sourceField": "attr_30"
+    },
+    {
+      "label": "[입찰] 라운드명 (원문)",
+      "normalizedKey": "입찰_라운드명_원문",
+      "sourceField": "attr_31"
+    },
+    {
+      "label": "[입찰] 라운드명 (국문)",
+      "normalizedKey": "입찰_라운드명_국문",
+      "sourceField": "attr_32"
+    },
+    {
+      "label": "[입찰] 회차",
+      "normalizedKey": "입찰_회차",
+      "sourceField": "attr_33"
+    },
+    {
+      "label": "[입찰] 패키지 번호",
+      "normalizedKey": "입찰_패키지_번호",
+      "sourceField": "attr_34"
+    },
+    {
+      "label": "[입찰] 사업명·소재지 (원문)",
+      "normalizedKey": "입찰_사업명_소재지_원문",
+      "sourceField": "attr_35"
+    },
+    {
+      "label": "[입찰] 대상 기술",
+      "normalizedKey": "입찰_대상_기술",
+      "sourceField": "attr_36"
+    },
+    {
+      "label": "[입찰] 공고 문서번호",
+      "normalizedKey": "입찰_공고_문서번호",
+      "sourceField": "attr_37"
+    },
+    {
+      "label": "[입찰] 공고일 (YYYY-MM-DD)",
+      "normalizedKey": "입찰_공고일_YYYY_MM_DD",
+      "sourceField": "attr_38"
+    },
+    {
+      "label": "[입찰] 입찰 마감일 (YYYY-MM-DD)",
+      "normalizedKey": "입찰_입찰_마감일_YYYY_MM_DD",
+      "sourceField": "attr_39"
+    },
+    {
+      "label": "[입찰] 낙찰 발표일 (YYYY-MM-DD)",
+      "normalizedKey": "입찰_낙찰_발표일_YYYY_MM_DD",
+      "sourceField": "attr_40"
+    },
+    {
+      "label": "[입찰] 공고 용량 (MW)",
+      "normalizedKey": "입찰_공고_용량_MW",
+      "sourceField": "attr_41"
+    },
+    {
+      "label": "[입찰] 낙찰 용량 (MW)",
+      "normalizedKey": "입찰_낙찰_용량_MW",
+      "sourceField": "attr_42"
+    },
+    {
+      "label": "[입찰] 저장 용량 (MWh)",
+      "normalizedKey": "입찰_저장_용량_MWh",
+      "sourceField": "attr_43"
+    },
+    {
+      "label": "[입찰] 낙찰가 하한",
+      "normalizedKey": "입찰_낙찰가_하한",
+      "sourceField": "attr_44"
+    },
+    {
+      "label": "[입찰] 낙찰가 상한",
+      "normalizedKey": "입찰_낙찰가_상한",
+      "sourceField": "attr_45"
+    },
+    {
+      "label": "[입찰] 가격 상한",
+      "normalizedKey": "입찰_가격_상한",
+      "sourceField": "attr_46"
+    },
+    {
+      "label": "[입찰] 가격 단위",
+      "normalizedKey": "입찰_가격_단위",
+      "sourceField": "attr_47"
+    },
+    {
+      "label": "[입찰] 낙찰 사업자 수 (건)",
+      "normalizedKey": "입찰_낙찰_사업자_수_건",
+      "sourceField": "attr_48"
+    },
+    {
+      "label": "[입찰] 입찰 단계",
+      "normalizedKey": "입찰_입찰_단계",
+      "sourceField": "attr_49"
+    },
+    {
+      "label": "[입찰] 입찰 조건",
+      "normalizedKey": "입찰_입찰_조건",
+      "sourceField": "attr_50"
+    },
+    {
+      "label": "[입찰] 진행 상태",
+      "normalizedKey": "입찰_진행_상태",
+      "sourceField": "attr_51"
+    },
+    {
+      "label": "[조달] 항목",
+      "normalizedKey": "조달_항목",
+      "sourceField": "attr_52"
+    },
+    {
+      "label": "[조달] 내용",
+      "normalizedKey": "조달_내용",
+      "sourceField": "attr_53"
+    },
+    {
+      "label": "[조달] 선정 방식",
+      "normalizedKey": "조달_선정_방식",
+      "sourceField": "attr_54"
+    },
+    {
+      "label": "[조달] 근거 법령",
+      "normalizedKey": "조달_근거_법령",
+      "sourceField": "attr_55"
+    },
+    {
+      "label": "[조달] 조항",
+      "normalizedKey": "조달_조항",
+      "sourceField": "attr_56"
+    },
+    {
+      "label": "[조달] 시행연도 (년)",
+      "normalizedKey": "조달_시행연도_년",
+      "sourceField": "attr_57"
+    },
+    {
+      "label": "[조달] 시점 (YYYY-MM-DD)",
+      "normalizedKey": "조달_시점_YYYY_MM_DD",
+      "sourceField": "attr_58"
+    },
+    {
+      "label": "[제도] 제도 항목",
+      "normalizedKey": "제도_제도_항목",
+      "sourceField": "attr_59"
+    },
+    {
+      "label": "[제도] 내용",
+      "normalizedKey": "제도_내용",
+      "sourceField": "attr_60"
+    },
+    {
+      "label": "[제도] 근거 조항",
+      "normalizedKey": "제도_근거_조항",
+      "sourceField": "attr_61"
+    },
+    {
+      "label": "[RPO] 도입 상태",
+      "normalizedKey": "RPO_도입_상태",
+      "sourceField": "attr_62"
+    },
+    {
+      "label": "[RPO] 의무비율 (%)",
+      "normalizedKey": "RPO_의무비율",
+      "sourceField": "attr_63"
+    },
+    {
+      "label": "[RPO] 근거 조항",
+      "normalizedKey": "RPO_근거_조항",
+      "sourceField": "attr_64"
+    },
+    {
+      "label": "[기관] 기관명 (원문)",
+      "normalizedKey": "기관_기관명_원문",
+      "sourceField": "attr_65"
+    },
+    {
+      "label": "[기관] 기관명 (국문)",
+      "normalizedKey": "기관_기관명_국문",
+      "sourceField": "attr_66"
+    },
+    {
+      "label": "[기관] 법정 역할·권한 범위",
+      "normalizedKey": "기관_법정_역할_권한_범위",
+      "sourceField": "attr_67"
+    },
+    {
+      "label": "[기관] 기관 간 협조 사항",
+      "normalizedKey": "기관_기관_간_협조_사항",
+      "sourceField": "attr_68"
+    },
+    {
+      "label": "[공표] 자료명",
+      "normalizedKey": "공표_자료명",
+      "sourceField": "attr_69"
+    },
+    {
+      "label": "[공표] 공표 상태",
+      "normalizedKey": "공표_공표_상태",
+      "sourceField": "attr_70"
+    },
+    {
+      "label": "[공표] 확인 결과",
+      "normalizedKey": "공표_확인_결과",
+      "sourceField": "attr_71"
+    },
+    {
+      "label": "[공표] 재확보 대상 출처",
+      "normalizedKey": "공표_재확보_대상_출처",
+      "sourceField": "attr_72"
+    },
+    {
+      "label": "[현지조사] 표",
+      "normalizedKey": "현지조사_표",
+      "sourceField": "attr_73"
+    },
+    {
+      "label": "[현지조사] 항목",
+      "normalizedKey": "현지조사_항목",
+      "sourceField": "attr_74"
+    },
+    {
+      "label": "[현지조사] 내용",
+      "normalizedKey": "현지조사_내용",
+      "sourceField": "attr_75"
+    },
+    {
+      "label": "[현지조사] 단계명",
+      "normalizedKey": "현지조사_단계명",
+      "sourceField": "attr_76"
+    },
+    {
+      "label": "[현지조사] 표준 절차·요건",
+      "normalizedKey": "현지조사_표준_절차_요건",
+      "sourceField": "attr_77"
+    },
+    {
+      "label": "[현지조사] 평가 기준·관문 요건",
+      "normalizedKey": "현지조사_평가_기준_관문_요건",
+      "sourceField": "attr_78"
+    },
+    {
+      "label": "[현지조사] 예상 소요기간",
+      "normalizedKey": "현지조사_예상_소요기간",
+      "sourceField": "attr_79"
+    },
+    {
+      "label": "[현지조사] 참고 문헌",
+      "normalizedKey": "현지조사_참고_문헌",
+      "sourceField": "attr_80"
+    },
+    {
+      "label": "[지역] 지역명 (원문)",
+      "normalizedKey": "지역_지역명_원문",
+      "sourceField": "attr_81"
+    },
+    {
+      "label": "[지역] 지역명 (개편 전)",
+      "normalizedKey": "지역_지역명_개편_전",
+      "sourceField": "attr_82"
+    },
+    {
+      "label": "[지역] 행정코드 (개편 전)",
+      "normalizedKey": "지역_행정코드_개편_전",
+      "sourceField": "attr_83"
+    },
+    {
+      "label": "[지역] 지역명 (현행)",
+      "normalizedKey": "지역_지역명_현행",
+      "sourceField": "attr_84"
+    },
+    {
+      "label": "[지역] 행정코드 (현행)",
+      "normalizedKey": "지역_행정코드_현행",
+      "sourceField": "attr_85"
+    },
+    {
+      "label": "[지역] 권역",
+      "normalizedKey": "지역_권역",
+      "sourceField": "attr_86"
+    },
+    {
+      "label": "[출처] 원문 문서명",
+      "normalizedKey": "출처_원문_문서명",
+      "sourceField": "attr_87"
+    },
+    {
+      "label": "[출처] 원문 URL",
+      "normalizedKey": "출처_원문_URL",
+      "sourceField": "attr_88"
+    },
+    {
+      "label": "[출처] 문서페이지 URL",
+      "normalizedKey": "출처_문서페이지_URL",
+      "sourceField": "attr_89"
+    },
+    {
+      "label": "[출처] raw 파일명",
+      "normalizedKey": "출처_raw_파일명",
+      "sourceField": "attr_90"
+    },
+    {
+      "label": "[출처] 인용 위치",
+      "normalizedKey": "출처_인용_위치",
+      "sourceField": "attr_91"
+    },
+    {
+      "label": "[출처] 출처 구분",
+      "normalizedKey": "출처_출처_구분",
+      "sourceField": "attr_92"
+    },
+    {
+      "label": "[기술] 기술코드 판단 유형",
+      "normalizedKey": "기술_기술코드_판단_유형",
+      "sourceField": "attr_93"
+    },
+    {
+      "label": "[기술] 기술코드 판단 근거",
+      "normalizedKey": "기술_기술코드_판단_근거",
+      "sourceField": "attr_94"
+    },
+    {
+      "label": "[결측] framework 필수 속성 결측 (코드·사유)",
+      "normalizedKey": "결측_framework_필수_속성_결측_코드_사유",
+      "sourceField": "attr_95"
+    }
+  ]
+}

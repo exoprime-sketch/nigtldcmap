@@ -44,15 +44,17 @@ const HTTPS = /^https:\/\/[^\s"'<>]+$/u;
  * names three acts only through an attribute row whose 속성6_분류 carries the
  * act, so those entries are matched by that row's name.
  */
-const ENTRY_NAME_EXCLUDE = /의 환경보호법 개정 범위$|^LEP 제54/u;
-const EXTRA_ENTRY_NAMES = {
-  // The circular has no row of its own; the row that names the EPR system's
-  // three instruments is where a reader meets it.
-  "02-2022-tt-btnmt": ["LEP 제54 55조 + Decree 08/2022/ND-CP + Circular 02/2022/TT-BTNMT"],
-  "20-2008-qh": ["법률"],
-  "28-2023-qh": ["법률 전면개정(구법 대체)"],
-  "149-qd-ttg": ["총리 결정(전략), 비전 2050"],
-};
+const ENTRY_NAME_EXCLUDE = /의 환경보호법 개정 범위$/u;
+/**
+ * V162: on the pre-refresh row-per-attribute delivery, three C-010 acts were
+ * named only through an attribute row (속성6_분류) rather than a row of their
+ * own, so their names had to be supplied here. The 2026-09-30 wide delivery
+ * gives 20-2008-qh, 28-2023-qh and 149-qd-ttg their own [법령] row (extracted
+ * directly by extract-policy-targets-v153.mjs), so those three overrides are
+ * gone; 02-2022-tt-btnmt still has no row of its own in either delivery (the
+ * extractor injects its pre-refresh composite name as a static target).
+ */
+const EXTRA_ENTRY_NAMES = {};
 
 const text = (value) => (typeof value === "string" ? value.replace(/\s+/gu, " ").trim() : "");
 // Editorial pass: the signing official's name is not part of what a law does.

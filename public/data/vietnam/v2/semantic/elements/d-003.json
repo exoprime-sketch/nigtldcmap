@@ -3,8 +3,10 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 6,
+      "valueCount": 8,
       "values": [
+        "CDM 등록사업 수",
+        "CDM 연간 감축량 합계",
         "바이오에너지 기술",
         "수력 기술",
         "태양광 기술",
@@ -23,6 +25,14 @@
       ]
     },
     {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
+      ]
+    },
+    {
       "key": "technology",
       "labelKo": "기술",
       "valueCount": 5,
@@ -37,17 +47,90 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 2,
       "values": [
-        "2023"
+        "2023",
+        "2025"
       ]
     }
   ],
   "elementId": "D-003",
-  "entityCount": 0,
+  "entityCount": 454,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 12,
+  "indicatorCount": 17,
   "indicators": [
+    {
+      "axisGroupKey": "measure-5daa738e65ab|tCO2/y",
+      "dimensionLabels": {
+        "category": "CDM 연간 감축량 합계"
+      },
+      "dimensions": {
+        "category": "CDM 연간 감축량 합계"
+      },
+      "displayLabel": "예상 감축량 · CDM 연간 감축량 합계",
+      "indicatorId": "D-003_cdm_annual_er_total",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5daa738e65ab",
+        "labelKo": "예상 감축량",
+        "unit": "tCO2/y",
+        "unitFamily": "emissions"
+      },
+      "seriesKey": "measure-5daa738e65ab|tCO2/y|category=CDM 연간 감축량 합계|D-003_cdm_annual_er_total",
+      "sourceCaveat": null,
+      "sourceLabel": "예상 감축량 · CDM 연간 감축량 합계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-7c33e3bc5667|건",
+      "dimensionLabels": {
+        "category": "CDM 등록사업 레지스트리"
+      },
+      "dimensions": {
+        "category": "CDM 등록사업 레지스트리"
+      },
+      "displayLabel": "예상 감축량 · CDM 등록사업 레지스트리",
+      "indicatorId": "D-003_cdm_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7c33e3bc5667",
+        "labelKo": "예상 감축량",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7c33e3bc5667|건|category=CDM 등록사업 레지스트리|D-003_cdm_project_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "예상 감축량 · CDM 등록사업 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-7c33e3bc5667|건",
+      "dimensionLabels": {
+        "category": "CDM 등록사업 수"
+      },
+      "dimensions": {
+        "category": "CDM 등록사업 수"
+      },
+      "displayLabel": "예상 감축량 · CDM 등록사업 수",
+      "indicatorId": "D-003_cdm_registered_project_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7c33e3bc5667",
+        "labelKo": "예상 감축량",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7c33e3bc5667|건|category=CDM 등록사업 수|D-003_cdm_registered_project_count",
+      "sourceCaveat": null,
+      "sourceLabel": "예상 감축량 · CDM 등록사업 수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-d3b4eabbfb70|tCO2/20년·MW",
       "dimensionLabels": {
@@ -455,6 +538,54 @@
         "sourceRow": 7,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-7c33e3bc5667|건",
+      "dimensionLabels": {
+        "category": "Gold Standard 등록사업 레지스트리"
+      },
+      "dimensions": {
+        "category": "Gold Standard 등록사업 레지스트리"
+      },
+      "displayLabel": "예상 감축량 · Gold Standard 등록사업 레지스트리",
+      "indicatorId": "D-003_gs_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7c33e3bc5667",
+        "labelKo": "예상 감축량",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7c33e3bc5667|건|category=Gold Standard 등록사업 레지스트리|D-003_gs_project_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "예상 감축량 · Gold Standard 등록사업 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-7c33e3bc5667|건",
+      "dimensionLabels": {
+        "category": "VCS 등록사업 레지스트리"
+      },
+      "dimensions": {
+        "category": "VCS 등록사업 레지스트리"
+      },
+      "displayLabel": "예상 감축량 · VCS 등록사업 레지스트리",
+      "indicatorId": "D-003_vcs_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-7c33e3bc5667",
+        "labelKo": "예상 감축량",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-7c33e3bc5667|건|category=VCS 등록사업 레지스트리|D-003_vcs_project_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "예상 감축량 · VCS 등록사업 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -467,15 +598,31 @@
       "unitFamily": "emissions"
     },
     {
+      "indicatorCount": 1,
+      "key": "measure-5daa738e65ab",
+      "labelKo": "예상 감축량",
+      "recordCount": 1,
+      "unit": "tCO2/y",
+      "unitFamily": "emissions"
+    },
+    {
       "indicatorCount": 6,
       "key": "measure-bc66780056cc",
       "labelKo": "예상 감축량",
       "recordCount": 6,
       "unit": "tCO2/년·MW",
       "unitFamily": "emissions"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-7c33e3bc5667",
+      "labelKo": "예상 감축량",
+      "recordCount": 1,
+      "unit": "건",
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 12,
+  "observationCount": 14,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

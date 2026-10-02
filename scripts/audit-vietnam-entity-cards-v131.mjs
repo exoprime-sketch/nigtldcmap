@@ -109,10 +109,15 @@ function cardSnapshotExpression(elementId, expectedEntityCount = 0) {
     // card - the records are shown, just not as a card grid. Recognising the
     // container alone would pass an empty list, so count the rows and require
     // every record the catalog states: 8 in Vietnam + 7 abroad = 15.
-    const listedRecordRenderer = document.querySelector('[data-testid="investor-network-v153"]') ? 'investor-network-v153' : null;
-    const listedRecordCount = listedRecordRenderer
+    // V162: the wide-template record cards list every record of the element
+    // (data-record-scope="element"); their count must equal the catalog's.
+    const wideCards = document.querySelector('[data-testid="wide-record-cards-v162"][data-record-scope="element"]');
+    const listedRecordRenderer = document.querySelector('[data-testid="investor-network-v153"]') ? 'investor-network-v153' : wideCards ? 'wide-record-cards-v162' : null;
+    const listedRecordCount = listedRecordRenderer === 'investor-network-v153'
       ? [...document.querySelectorAll('[data-testid="investor-list-vietnam-v153"] > li, [data-testid="investor-list-abroad-v153"] > li')].length
-      : null;
+      : listedRecordRenderer === 'wide-record-cards-v162'
+        ? Number(wideCards.getAttribute('data-record-count'))
+        : null;
     const listedRecordExpected = ${JSON.stringify(expectedEntityCount)};
     const listedRecordShowsEveryRecord =
       listedRecordCount !== null && listedRecordExpected > 0 && listedRecordCount === listedRecordExpected;
@@ -161,7 +166,7 @@ function cardSnapshotExpression(elementId, expectedEntityCount = 0) {
       // V148: A-023 reads its plants as a searchable list under the fuel
       // distribution and A-024 its lines as voltage/plan tables - the records
       // are shown, but not as cards.
-      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"]')) || listedRecordShowsEveryRecord || specializedTable?.valid === true,
+      distributionSummary: Boolean(document.querySelector('[data-testid="region-scenario-summary-v137"], [data-testid="sea-level-station-analysis-v138"], [data-testid="province-series-analysis-v140"], [data-testid="cooperation-checklist-v141"], [data-testid="energy-outlook-plan-v141"], [data-testid="power-plant-list-v148"], [data-testid="transmission-voltage-table-v140"], [data-testid="infrastructure-coverage-v147"], [data-testid^="mineral-resources-v153-"], [data-testid="province-record-table-v162"]')) || listedRecordShowsEveryRecord || specializedTable?.valid === true,
       listedRecordCount,
       listedRecordExpected,
       listedRecordRenderer,
@@ -278,7 +283,13 @@ audit.check("ENTITY_CARD_RESPONSIVE", responsiveFailures.length === 0, responsiv
 audit.check("ENTITY_CARD_COLUMNS_MAX", routeResults.every((row) => Number(row?.columns || 0) <= 4), Math.max(0, ...routeResults.map((row) => Number(row?.columns || 0))), "<= 4");
 audit.check("ENTITY_CARD_FACT_LIMIT", routeResults.every((row) => (row?.invalid || []).every((item) => Number(item.factCount || 0) <= 6)), routeResults.flatMap((row) => row?.invalid || []).filter((item) => Number(item.factCount || 0) > 6).length, 0);
 audit.check("ENTITY_CARD_ROUTE_RENDERING", missingCardRoutes.length === 0, missingCardRoutes.length, 0, missingCardRoutes);
-audit.check("SPECIALIZED_ENTITY_TABLES", ["B-023", "B-028", "C-011"].every((id) => routeResults.find((row) => row.elementId === id)?.specializedTable?.valid === true), routeResults.filter((row) => row.specializedTable).map((row) => ({ elementId: row.elementId, ...row.specializedTable })), "three populated, titled tables with value/context columns");
+// V162: C-011 moved to the wide template (user decision 2026-09-30): its
+// records are block cards, and the cards must list every record instead.
+const c011WideAllRecords = (() => {
+  const row = routeResults.find((item) => item.elementId === "C-011");
+  return row?.listedRecordRenderer === "wide-record-cards-v162" && Number(row.listedRecordCount) === Number(row.listedRecordExpected) && Number(row.listedRecordCount) > 0;
+})();
+audit.check("SPECIALIZED_ENTITY_TABLES", ["B-023", "B-028"].every((id) => routeResults.find((row) => row.elementId === id)?.specializedTable?.valid === true) && (routeResults.find((row) => row.elementId === "C-011")?.specializedTable?.valid === true || c011WideAllRecords), routeResults.filter((row) => row.specializedTable).map((row) => ({ elementId: row.elementId, ...row.specializedTable })), "B-023/B-028 populated, titled tables with value/context columns; C-011 the same table or every record as wide cards (V162)");
 audit.check(
   "ENTITY_RECORDS_SHOWN_SOMEHOW",
   routeResults.every(

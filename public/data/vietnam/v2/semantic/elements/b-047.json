@@ -1,53 +1,18 @@
 {
   "dimensions": [
     {
-      "key": "category",
-      "labelKo": "분류",
+      "key": "entityType",
+      "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
-        "망간)"
-      ]
-    },
-    {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 11,
-      "values": [
-        "구리",
-        "망간",
-        "보크사이트",
-        "시멘트",
-        "알루미나",
-        "인광석",
-        "주석",
-        "텅스텐",
-        "형석",
-        "흑연",
-        "희토류"
-      ]
-    },
-    {
-      "key": "technology",
-      "labelKo": "기술",
-      "valueCount": 1,
-      "values": [
-        "01,03,18,24"
-      ]
-    },
-    {
-      "key": "year",
-      "labelKo": "연도",
-      "valueCount": 2,
-      "values": [
-        "2024",
-        "2025"
+        "entity"
       ]
     }
   ],
   "elementId": "B-047",
-  "entityCount": 0,
+  "entityCount": 81,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 12,
+  "indicatorCount": 13,
   "indicators": [
     {
       "axisGroupKey": "measure-018560d0bcaf|t (W 함량)",
@@ -402,6 +367,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-35b74ed73d42|광종별 상이 - 「단위」 열 참조 (t (W 함량) / 천 t (건조) / t (Sn 함량) / 천 t / t REO / t (천연) / 천 t (아파타이트) / t …)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "연간 생산량 - 광종별 레코드(국가×광종×연도)",
+      "indicatorId": "B-047_production_record",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-35b74ed73d42",
+        "labelKo": "연간 생산량 - 광종별 레코드(국가×광종×연도)",
+        "unit": "광종별 상이 - 「단위」 열 참조 (t (W 함량) / 천 t (건조) / t (Sn 함량) / 천 t / t REO / t (천연) / 천 t (아파타이트) / t …)",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-35b74ed73d42|광종별 상이 - 「단위」 열 참조 (t (W 함량) / 천 t (건조) / t (Sn 함량) / 천 t / t REO / t (천연) / 천 t (아파타이트) / t …)||B-047_production_record",
+      "sourceCaveat": null,
+      "sourceLabel": "연간 생산량 - 광종별 레코드(국가×광종×연도)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-a3e629cf6486|—",
       "dimensionLabels": {},
       "dimensions": {},
@@ -433,7 +418,7 @@
       "indicatorCount": 1,
       "key": "measure-3fda9946012e",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "t (Sn 함량)",
       "unitFamily": "other"
     },
@@ -441,7 +426,7 @@
       "indicatorCount": 1,
       "key": "measure-018560d0bcaf",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "t (W 함량)",
       "unitFamily": "other"
     },
@@ -449,7 +434,7 @@
       "indicatorCount": 1,
       "key": "measure-a0b89d4f4c72",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "t (천연)",
       "unitFamily": "other"
     },
@@ -457,7 +442,7 @@
       "indicatorCount": 1,
       "key": "measure-d093490b24b3",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "t REO",
       "unitFamily": "other"
     },
@@ -465,7 +450,7 @@
       "indicatorCount": 2,
       "key": "measure-8379792883fd",
       "labelKo": "광산 생산량",
-      "recordCount": 4,
+      "recordCount": 0,
       "unit": "천 t",
       "unitFamily": "other"
     },
@@ -473,7 +458,7 @@
       "indicatorCount": 1,
       "key": "measure-6c271f260dc0",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "천 t (건조)",
       "unitFamily": "count"
     },
@@ -481,7 +466,7 @@
       "indicatorCount": 1,
       "key": "measure-e8c62da3f955",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "천 t (아파타이트)",
       "unitFamily": "other"
     },
@@ -489,7 +474,7 @@
       "indicatorCount": 1,
       "key": "measure-21febf21fabf",
       "labelKo": "광산 생산량",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "천 t (정제)",
       "unitFamily": "other"
     },
@@ -497,20 +482,28 @@
       "indicatorCount": 2,
       "key": "measure-6ed8768ea117",
       "labelKo": "생산량 미수록(구리",
-      "recordCount": 2,
+      "recordCount": 0,
       "unit": "t",
       "unitFamily": "other"
     },
     {
       "indicatorCount": 1,
+      "key": "measure-35b74ed73d42",
+      "labelKo": "연간 생산량 - 광종별 레코드(국가×광종×연도)",
+      "recordCount": 0,
+      "unit": "광종별 상이 - 「단위」 열 참조 (t (W 함량) / 천 t (건조) / t (Sn 함량) / 천 t / t REO / t (천연) / 천 t (아파타이트) / t …)",
+      "unitFamily": "count"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-a3e629cf6486",
       "labelKo": "희토류 생산 급감(2024→2025) 사유",
-      "recordCount": 1,
+      "recordCount": 0,
       "unit": "—",
       "unitFamily": "text"
     }
   ],
-  "observationCount": 21,
+  "observationCount": 0,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

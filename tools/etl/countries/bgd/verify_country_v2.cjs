@@ -217,8 +217,10 @@ check("PROVENANCE_FROM_STAGED_FILES", [...ourObs, ...ourEnt].every((row) => stag
 
 // ---------------------------------------------------------------- D. nothing dropped
 const quality = readJson(path.join(root, "quality-report.json"));
+// V162: rows the publication rule declares non-public are counted out, never silently.
+const declaredExclusions = quality.summary.rowExclusions || {};
 const rowMismatches = quality.workbooks
-  .map((book) => ({ id: book.elementId, source: Number(book.observationRowCount) + Number(book.entityRowCount), published: tree.payloads[book.elementId].observations.recordCount + tree.payloads[book.elementId].entities.recordCount }))
+  .map((book) => ({ id: book.elementId, source: Number(book.observationRowCount) + Number(book.entityRowCount) - Number(declaredExclusions[book.elementId]?.removedRows || 0), published: tree.payloads[book.elementId].observations.recordCount + tree.payloads[book.elementId].entities.recordCount }))
   .filter((row) => row.source !== row.published);
 const publishedTotal = ourObs.length + ourEnt.length;
 check("ROWS_PUBLISHED_EQUAL_SOURCE", rowMismatches.length === 0 && quality.summary.rowBalance.matches, { mismatches: rowMismatches, publishedTotal }, "per element equal, row balance matches");
@@ -265,7 +267,8 @@ const cellProblems = [];
 for (const [elementId, payload] of Object.entries(tree.payloads)) {
   const source = sourceCells.entities[elementId] || 0;
   const kept = payload.entities.records.reduce((sum, row) => sum + Object.values(row.normalizedAttributes || {}).filter(filled).length, 0);
-  if (kept !== source) cellProblems.push({ elementId, section: "entities", source, kept });
+  // A declared row exclusion removes whole rows; its cells are accounted for by the row count above.
+  if (kept !== source && !declaredExclusions[elementId]) cellProblems.push({ elementId, section: "entities", source, kept });
 }
 for (const [elementId, counts] of Object.entries(sourceCells.observations)) {
   const payload = tree.payloads[elementId];

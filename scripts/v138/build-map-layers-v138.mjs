@@ -202,33 +202,156 @@ function loadBoundaries() {
 }
 
 /**
- * The 2025 reorganisation, as the delivery states it.
+ * The 2025 reorganisation: the official 63 -> 34 table.
  *
- * Every climate row names the 34-unit successor its 63-unit province was folded
- * into. That column is the only crosswalk in the delivery between the two
- * systems, so a value filed under a 34-unit name is shown on the union of its
- * member 63-unit boundaries - the same explicit-membership rule B-021 already
- * uses for the six GDL regions - and never redistributed.
+ * V162: read from the published 34-unit boundary (memberAdm1Codes, Resolution
+ * 202/2025/QH15), not from a data column. The 2026-09-30 delivery renamed the
+ * column B-003 used to carry and also files 34-unit rows in the same sheet, so
+ * deriving the table from the data left it empty. The delivery's own table
+ * matched this one 34/34 (reports/v162/crosswalk34-compare-v162.json).
+ * A value filed under a 34-unit name is shown on the union of its member
+ * 63-unit boundaries and never redistributed.
  */
-function buildReorganisationCrosswalk(packs, boundaries) {
+function buildReorganisationCrosswalk(boundaries34) {
   const membersByParent = new Map();
   const parentByCode = new Map();
-  const b003 = packs.get("B-003");
-  for (const record of b003?.entities?.records || []) {
-    const attributes = record.normalizedAttributes || {};
-    if (text(attributes["행정단위"]) === "Country") continue;
-    const parent = text(attributes["2025_개편_후_소속_34개_체계"]);
-    const match =
-      boundaries.lookup.get(normalizePlace(attributes["지역명_베트남어"])) ||
-      boundaries.lookup.get(normalizePlace(attributes["지역명_로마자"]));
-    if (!parent || !match) continue;
-    const parentKey = normalizeAdministrativeName(parent);
-    parentByCode.set(match.adm1Code, { key: parentKey, label: parent });
-    const members = membersByParent.get(parentKey) || { label: parent, codes: new Set() };
-    members.codes.add(match.adm1Code);
-    membersByParent.set(parentKey, members);
+  for (const unit of boundaries34.units) {
+    const parentKey = normalizeAdministrativeName(unit.name);
+    membersByParent.set(parentKey, { label: unit.name, codes: new Set(unit.memberAdm1Codes) });
+    for (const code of unit.memberAdm1Codes) parentByCode.set(code, { key: parentKey, label: unit.name });
+  }
+  if (membersByParent.size !== 34 || parentByCode.size !== 63) {
+    throw new Error(`63->34 table must cover 34 units and 63 members, got ${membersByParent.size}/${parentByCode.size}`);
   }
   return { membersByParent, parentByCode };
+}
+
+/** The 34 post-2025 units, looked up by their own name only. */
+function loadBoundaries34() {
+  // The 34-unit boundary is not an ETL output, so a staging tree lacks it; the
+  // published one is the same legal table (Resolution 202/2025/QH15).
+  const staged = resolve(DATA, "geometry/vnm-adm1-34.geojson");
+  const geometry = readJson(
+    existsSync(staged) ? staged : resolve(ROOT, "public/data/vietnam/v2/geometry/vnm-adm1-34.geojson")
+  );
+  const units = geometry.features.map((feature) => ({
+    unitCode: feature.properties.unitCode,
+    name: feature.properties.name,
+    memberAdm1Codes: feature.properties.memberAdm1Codes || [],
+  }));
+  if (units.length !== 34) throw new Error(`expected 34 boundary features, got ${units.length}`);
+  const lookup = new Map();
+  for (const unit of units) {
+    for (const key of [normalizePlace(unit.name), normalizeAdministrativeName(unit.name)]) {
+      if (key) lookup.set(key, unit);
+    }
+  }
+  return { units, lookup };
+}
+
+/**
+ * V162: the administrative system of one source row - adm1 (post-2025 34),
+ * adm1-prev (pre-2025 63), country, or null. The ETL stamps `regionSystem`;
+ * older trees are read from the row's own 행정단위 and indicator.
+ */
+export function regionSystemOfRecord(record) {
+  if (record?.regionSystem) return record.regionSystem;
+  const unit = text(record?.normalizedAttributes?.["행정단위"]);
+  if (/_adm34$/u.test(String(record?.indicatorId || "")) || /개편 후|체계/u.test(unit)) return "adm1";
+  if (/^country$/iu.test(unit)) return "country";
+  if (/^(province|city|province\/city)$/iu.test(unit)) return "adm1-prev";
+  return null;
+}
+
+// V162: the region columns under the names every country shares, then the
+// Viet Nam-specific names of the deliveries before 2026-09-30.
+const REGION_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "지역명", "지역명_로마자"];
+const UNIT34_NAME_KEYS_V162 = ["지역명_현지어", "지역명_베트남어", "개편_후_소속_단위", "2025_개편_후_소속_34개_체계", "지역명_로마자"];
+
+/**
+ * V162: the values a sheet states for the 34 post-2025 units itself.
+ *
+ * `specs` say which column holds which map variable; the rows are the sheet's
+ * 34-unit rows only. A value is copied as printed - nothing is derived from the
+ * 63-unit rows here (that is the runtime aggregation, used only where no row
+ * below exists for the selected variable and period).
+ */
+function buildSource34Values(records, specs, boundaries34) {
+  const byKey = new Map();
+  const unmatched = new Map();
+  let duplicateValueCount = 0;
+  for (const record of records) {
+    const attributes = record.normalizedAttributes || {};
+    let unit = null;
+    for (const key of UNIT34_NAME_KEYS_V162) {
+      const raw = text(attributes[key]);
+      if (!raw) continue;
+      unit = boundaries34.lookup.get(normalizePlace(raw)) || boundaries34.lookup.get(normalizeAdministrativeName(raw));
+      if (unit) break;
+    }
+    if (!unit) {
+      const label = text(attributes["지역명_현지어"]) || text(attributes["지역명_로마자"]) || text(record.recordId);
+      unmatched.set(label, (unmatched.get(label) || 0) + 1);
+      continue;
+    }
+    for (const spec of specs) {
+      if (spec.where && Object.entries(spec.where).some(([key, wanted]) => text(attributes[key]) !== text(wanted))) continue;
+      const value = numeric(attributes[spec.sourceKey]);
+      if (value === null) continue;
+      const variable = spec.variableOf(attributes);
+      const period = spec.periodOf(attributes);
+      if (!variable || !period) continue;
+      const key = `${variable} ${period} ${unit.unitCode}`;
+      if (byKey.has(key)) {
+        duplicateValueCount += 1;
+        continue;
+      }
+      byKey.set(key, {
+        unitCode: unit.unitCode,
+        unitName: unit.name,
+        variable,
+        variableLabel: spec.labelOf(attributes),
+        period,
+        value,
+        unit: spec.unit,
+        sourceIndicatorId: record.indicatorId,
+        sourceRecordId: record.recordId,
+        sourceSpatialUnit: "admin1-34",
+        ...(spec.categoryKey && text(attributes[spec.categoryKey]) ? { categoryLabel: text(attributes[spec.categoryKey]) } : {}),
+        imputed: false,
+      });
+    }
+  }
+  return { rows: [...byKey.values()], unmatched, duplicateValueCount, sourceRowCount: records.length };
+}
+
+/** Keep the 34-unit values for the variable/period pairs the layer offers. */
+function source34Section(source34, selectors) {
+  if (!source34) return null;
+  const offered = new Set(
+    (selectors?.variables || []).flatMap((option) => option.periods.map((period) => `${option.key} ${period}`))
+  );
+  const rows = source34.rows
+    .filter((row) => offered.has(`${row.variable} ${row.period}`))
+    .sort((a, b) => a.variable.localeCompare(b.variable) || a.period.localeCompare(b.period) || a.unitCode.localeCompare(b.unitCode));
+  const series = new Map();
+  for (const row of rows) series.set(`${row.variable} ${row.period}`, (series.get(`${row.variable} ${row.period}`) || 0) + 1);
+  return {
+    rows,
+    validation: {
+      sourceRowCount: source34.sourceRowCount,
+      publishedValueCount: rows.length,
+      seriesCount: series.size,
+      duplicateValueCount: source34.duplicateValueCount,
+      unmatchedSourceNameCount: [...source34.unmatched.values()].reduce((sum, count) => sum + count, 0),
+      unmatchedSourceNames: [...source34.unmatched.keys()].sort(),
+    },
+  };
+}
+
+/** Rows of one system; a sheet that files both never lends one to the other. */
+function rowsOfSystem(records, system) {
+  return records.filter((record) => regionSystemOfRecord(record) === system);
 }
 
 // ---------------------------------------------------------------- catalog facts
@@ -294,12 +417,17 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
   const { build } = target;
   const element = packs.get(target.elementId);
   const entry = catalogEntry(catalog, target.elementId);
-  const records = (element?.entities?.records || []).filter(
+  const allRecords = element?.entities?.records || [];
+  // V162: the 63-unit map reads the 63-unit (adm1-prev) rows only. A sheet
+  // that also files 34-unit rows keeps them for the 34 outline below.
+  const hasPrevRows = allRecords.some((record) => regionSystemOfRecord(record) === "adm1-prev");
+  const records = allRecords.filter(
     (record) =>
+      (hasPrevRows ? regionSystemOfRecord(record) === "adm1-prev" : regionSystemOfRecord(record) !== "adm1") &&
       (!build.indicatorIds || build.indicatorIds.includes(record.indicatorId)) &&
       (!build.requireCoordinates || (typeof record.latitude === "number" && typeof record.longitude === "number"))
   );
-  const regionKeys = build.regionKeys || ["지역명_베트남어", "지역명_로마자"];
+  const regionKeys = build.regionKeys || REGION_NAME_KEYS_V162;
   const unmatched = new Map();
   const members = new Map(); // adm1Code -> member records (documents etc.)
   // series key -> Map<adm1Code, row>
@@ -415,6 +543,31 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
     }
   }
 
+  // V162: the same measures read from the sheet's own 34-unit rows (indicator
+  // `<id>_adm34`). Counts are not re-counted here; the runtime sums them.
+  const rows34 = rowsOfSystem(allRecords, "adm1").filter(
+    (record) => !build.indicatorIds || build.indicatorIds.includes(String(record.indicatorId).replace(/_adm34$/u, ""))
+  );
+  const scenarioOf = (attributes) => (build.scenarioKey ? text(attributes[build.scenarioKey]).toLowerCase() : "");
+  const source34 = rows34.length
+    ? buildSource34Values(
+        rows34,
+        build.measures
+          .filter((measure) => measure.aggregate !== "count")
+          .map((measure) => ({
+            sourceKey: measure.sourceKey,
+            unit: measure.unit,
+            categoryKey: build.categoryKey,
+            variableOf: (attributes) => (scenarioOf(attributes) ? `${measure.key}--${scenarioOf(attributes)}` : measure.key),
+            labelOf: (attributes) => measureLabelWithScenario(measure, scenarioOf(attributes)),
+            periodOf: (attributes) =>
+              build.periodFixed ||
+              (build.periodKey ? periodKeyOf(attributes[build.periodKey]) || "미기재" : "미기재"),
+          })),
+        boundaries.boundaries34
+      )
+    : null;
+
   return finishChoroplethLayer({
     target,
     entry,
@@ -427,6 +580,7 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
     aggregationLevel: "admin1",
     spatialScopeType: "admin1",
     mappingMethod: null,
+    source34,
   });
 }
 
@@ -436,8 +590,20 @@ function buildAdmin1Layer(target, packs, boundaries, catalog, report) {
  */
 function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalog, report) {
   const { build } = target;
-  const element = packs.get(target.elementId);
-  const entry = catalogEntry(catalog, target.elementId);
+  // V162: a layer may count another element's records - C-012's PPP projects
+  // moved into D-025's PPI project register with the 2026-09-30 delivery. The
+  // layer stays C-012's (its detail, title); its source is the register's.
+  const element = packs.get(build.sourceElementId || target.elementId);
+  const ownEntry = catalogEntry(catalog, target.elementId);
+  const sourceEntry = build.sourceElementId ? catalogEntry(catalog, build.sourceElementId) : null;
+  const entry = sourceEntry
+    ? {
+        ...ownEntry,
+        rights: sourceEntry.rights,
+        sourceOrganizations: sourceEntry.sourceOrganizations,
+        sourceUrls: sourceEntry.sourceUrls,
+      }
+    : ownEntry;
   const records = (element?.entities?.records || []).filter(
     (record) =>
       (!build.indicatorIds || build.indicatorIds.includes(record.indicatorId)) &&
@@ -497,8 +663,14 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
     return [{ key, membership }];
   };
 
+  // V162: rows that are tranches of one project count once per unit
+  // (build.distinctBy names the project key the source states).
+  const countedDistinct = new Set();
+  const distinctProjects = new Set();
+  let distinctSkipped = 0;
   for (const record of records) {
     const attributes = record.normalizedAttributes || {};
+    if (build.distinctBy) distinctProjects.add(text(attributes[build.distinctBy]) || record.recordId);
     const memberships = membershipsFor(record, attributes);
     if (memberships.length === 0) {
       // A national or unlocated row in the same indicator; not a join failure.
@@ -506,6 +678,14 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
       continue;
     }
     for (const { key: parentKey, membership } of memberships) {
+    if (build.distinctBy) {
+      const distinctKey = `${parentKey}|${text(attributes[build.distinctBy]) || record.recordId}`;
+      if (countedDistinct.has(distinctKey)) {
+        distinctSkipped += 1;
+        continue;
+      }
+      countedDistinct.add(distinctKey);
+    }
     regionsSeen.add(parentKey);
     const period = build.periodFixed
       ? build.periodFixed
@@ -588,6 +768,19 @@ function buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalo
       sourceRowCount: records.length,
       sourceRegionCount: regionsSeen.size,
       rowsWithoutRegion,
+      ...(build.sourceElementId || build.distinctBy
+        ? {
+            linkage: {
+              sourceElementId: build.sourceElementId || target.elementId,
+              indicatorIds: build.indicatorIds || null,
+              distinctBy: build.distinctBy || null,
+              sourceRows: records.length,
+              distinctProjects: build.distinctBy ? distinctProjects.size : null,
+              rowsWithoutRegion,
+              tranchesCountedOnce: distinctSkipped,
+            },
+          }
+        : {}),
     },
     aggregationLevel: "post-2025-34-unit",
     spatialScopeType: "region",
@@ -607,6 +800,7 @@ function finishChoroplethLayer({
   aggregationLevel,
   spatialScopeType,
   mappingMethod,
+  source34 = null,
 }) {
   const { build } = target;
   const elementId = target.elementId;
@@ -727,6 +921,7 @@ function finishChoroplethLayer({
 
   const useTable = values.length > VALUE_TABLE_THRESHOLD;
   const adm1Codes = [...boundaries.nameByCode.keys()];
+  const values34 = source34Section(source34, selectors);
   const asset = {
     schemaVersion: "v124",
     assetSchemaVersion: "v124-spatial-layer-1",
@@ -773,6 +968,7 @@ function finishChoroplethLayer({
           ),
         }
       : {}),
+    ...(values34?.rows.length ? { values34: values34.rows } : {}),
     seriesCoverage,
     source: {
       attribution: entry?.rights?.attributionTexts || [],
@@ -795,6 +991,7 @@ function finishChoroplethLayer({
       unmatchedSourceNameCount: [...stats.unmatched.values()].reduce((sum, count) => sum + count, 0),
       zeroImputationCount: 0,
       ...(mappingMethod ? { mappingMethod, sourceRegionCount: stats.sourceRegionCount } : {}),
+      ...(values34 ? { source34: values34.validation } : {}),
     },
   };
   const dataUrl = `/data/vietnam/v2/spatial/layers/${elementId.toLowerCase()}.json`;
@@ -878,9 +1075,11 @@ function finishChoroplethLayer({
     matchedAdm1Count: matchedCodes.size,
     unmatchedRegionNames: [...stats.unmatched.entries()],
     rowsWithoutRegion: stats.rowsWithoutRegion || 0,
+    ...(stats.linkage ? { linkage: stats.linkage } : {}),
     sourceRegionCount: stats.sourceRegionCount,
     duplicateValueCount: stats.duplicateValueCount,
     valueTable: useTable,
+    ...(values34 ? { source34: values34.validation } : {}),
     dataUrl,
   });
   return layer;
@@ -1347,9 +1546,49 @@ function registerPendingLayer(target, pendingLayers, report, catalog) {
   return layer;
 }
 
-function patchExistingLayer(layer, target, report, packs, locator) {
+/**
+ * V162: an ETL-written choropleth (B-031..B-034) gets the sheet's 34-unit
+ * values the same way. The target declares which column feeds which variable
+ * (`build.source34`); the variable is named by key or by its public label.
+ */
+function attachSource34ToEtlAsset(layer, target, packs, boundaries34) {
+  const spec = target.build.source34;
+  if (!spec || !layer.dataUrl) return null;
+  // The asset under the tree being built (a staging tree in a refresh).
+  const assetPath = resolve(DATA, layer.dataUrl.replace(/^\/data\/vietnam\/v2\//u, ""));
+  if (!existsSync(assetPath)) return null;
+  const asset = readJson(assetPath);
+  const variables = asset.selectors?.variables || [];
+  const records = rowsOfSystem(packs?.get(target.elementId)?.entities?.records || [], "adm1").filter(
+    (record) => !spec.indicatorIds || spec.indicatorIds.includes(record.indicatorId)
+  );
+  const specs = spec.measures.map((measure) => {
+    const option = variables.find((row) => row.key === measure.variable || row.label === measure.variableLabel);
+    if (!option) throw new Error(`${target.elementId}: source34 variable ${measure.variable || measure.variableLabel} is not on the layer`);
+    return {
+      sourceKey: measure.sourceKey,
+      unit: option.unit,
+      where: measure.where,
+      variableOf: () => option.key,
+      labelOf: () => option.label,
+      periodOf: (attributes) => measure.period || periodKeyOf(attributes[measure.periodKey]) || "",
+    };
+  });
+  const section = source34Section(buildSource34Values(records, specs, boundaries34), asset.selectors);
+  const { values34: _previous, ...rest } = asset;
+  const nextAsset = {
+    ...rest,
+    ...(section.rows.length ? { values34: section.rows } : {}),
+    validation: { ...(asset.validation || {}), source34: section.validation },
+  };
+  writeJson(assetPath, nextAsset);
+  return section.validation;
+}
+
+function patchExistingLayer(layer, target, report, packs, locator, boundaries34) {
   const patch = target.build.patch || {};
   const next = { ...layer };
+  const source34 = boundaries34 ? attachSource34ToEtlAsset(layer, target, packs, boundaries34) : null;
   // V151-2: the 34-unit policy and, for point layers, the province each
   // source coordinate falls in.
   next.boundaryPolicy = boundaryPolicyForLayer(
@@ -1392,6 +1631,20 @@ function patchExistingLayer(layer, target, report, packs, locator) {
     ];
   }
   if (patch.periodLabel) next.periodLabel = patch.periodLabel;
+  // V162: one map object per stated identity (C-025: one project, its
+  // issuance records as members) - the count is recounted from the records.
+  if (patch.featureIdentity) {
+    next.featureIdentity = patch.featureIdentity;
+    const records = (packs?.get(target.elementId)?.entities?.records || []).filter((record) => record.mapEligible);
+    const keys = new Set(
+      records.map(
+        (record) =>
+          patch.featureIdentity.sources.map((key) => text(record.normalizedAttributes?.[key])).filter(Boolean).join("|") ||
+          record.recordId
+      )
+    );
+    next.featureCount = keys.size;
+  }
   if (patch.defaultVariableMeasureId) {
     const wanted = layer.selectors.variables.find((option) => option.measureId === patch.defaultVariableMeasureId);
     const current = layer.selectors.variables.find((option) => option.key === layer.selectors.defaultVariable);
@@ -1417,6 +1670,7 @@ function patchExistingLayer(layer, target, report, packs, locator) {
     build: "existing",
     featureCount: layer.featureCount,
     patched: Object.keys(patch),
+    ...(source34 ? { source34 } : {}),
   });
   return next;
 }
@@ -1430,7 +1684,8 @@ function main() {
   const manifest = readJson(resolve(DATA, "manifest.json"));
   const packs = loadPacks();
   const boundaries = loadBoundaries();
-  const crosswalk = buildReorganisationCrosswalk(packs, boundaries);
+  boundaries.boundaries34 = loadBoundaries34();
+  const crosswalk = buildReorganisationCrosswalk(boundaries.boundaries34);
   const locator = loadProvinceLocator(DATA);
   const pendingLayers = new Map(
     (existsSync(resolve(DATA, "spatial/pending-layers-v155.json"))
@@ -1453,7 +1708,7 @@ function main() {
         report.push({ elementId: target.elementId, status: "not-connected", build: "existing", reason: "ETL layer missing from map-index" });
         continue;
       }
-      layers.push(patchExistingLayer(layer, target, report, packs, locator));
+      layers.push(patchExistingLayer(layer, target, report, packs, locator, boundaries.boundaries34));
       continue;
     }
     if (kind === "none") {
@@ -1477,7 +1732,7 @@ function main() {
     }
     if (etlByElement.has(target.elementId)) {
       // The ETL's own layer wins over a derived one.
-      layers.push(patchExistingLayer(etlByElement.get(target.elementId), target, report, packs, locator));
+      layers.push(patchExistingLayer(etlByElement.get(target.elementId), target, report, packs, locator, boundaries.boundaries34));
       continue;
     }
     if (kind === "observation-dimension") {

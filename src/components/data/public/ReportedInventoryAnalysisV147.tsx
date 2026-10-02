@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
+import type { VietnamEntityV124, VietnamIndicatorMetaV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { burInventoryV147, BUR_GASES_V147 } from "../../../data/visualization/detailModelsV147";
 import { formatValueV121 } from "../../../utils/vietnamActualV121";
 import { EvidenceMatrixV125 } from "../semantic/SemanticContractRendererV125";
@@ -14,8 +14,9 @@ const GAS_LABELS = { CO2: "이산화탄소(CO₂)", CH4: "메탄(CH₄)", N2O: "
  * figures follow as KPI tiles and the source table. A ⑥ screen draws no
  * numeric chart (decision 2026-09-24).
  */
-export default function ReportedInventoryAnalysisV147({ entities }: { entities: VietnamEntityV124[] }) {
-  const inventory = useMemo(() => burInventoryV147(entities), [entities]);
+export default function ReportedInventoryAnalysisV147({ entities, indicators = [] }: { entities: VietnamEntityV124[]; indicators?: VietnamIndicatorMetaV124[] }) {
+  // V162: the gas split per sector is stated in the indicators' caveats.
+  const inventory = useMemo(() => burInventoryV147(entities, indicators), [entities, indicators]);
   return <section className="detail146" data-testid="reported-inventory-v147">
     <h3><PublicTermTextV134 text="격년투명성보고서 제출 이력·내용" /></h3>
     <section className="d153-block" data-analysis-block="comparison-table"><EvidenceMatrixV125 rows={[]} entities={entities} /></section>

@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "C-014",
-  "entityCount": 93,
+  "entityCount": 46,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 109,
+  "indicatorCount": 97,
   "indicators": [
     {
       "axisGroupKey": "measure-b632787a3f8b|절차",
@@ -455,106 +455,6 @@
         "sourceRow": 75,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-228400722532|절차",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "건축 허가 절차[건축]",
-      "indicatorId": "C-014_construction_permit",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-228400722532",
-        "labelKo": "건축 허가 절차[건축]",
-        "unit": "절차",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-228400722532|절차||C-014_construction_permit",
-      "sourceCaveat": null,
-      "sourceLabel": "건축 허가 절차[건축]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-bdd347eef9b3|VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "비용(USD)[건축]",
-      "indicatorId": "C-014_construction_permit_cost",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-bdd347eef9b3",
-        "labelKo": "비용(USD)[건축]",
-        "unit": "VND",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-bdd347eef9b3|VND||C-014_construction_permit_cost",
-      "sourceCaveat": null,
-      "sourceLabel": "비용(USD)[건축]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5ed29f9a0054|일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[건축] · 소요 기간(일수)[건축] [일]",
-      "indicatorId": "C-014_construction_permit_duration_archive_doingbusiness",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5ed29f9a0054",
-        "labelKo": "소요 기간(일수)[건축]",
-        "unit": "일",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-5ed29f9a0054|일||C-014_construction_permit_duration_archive_doingbusiness",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[건축]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-bb822484517e|절차",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[건축] · 소요 기간(일수)[건축] [절차]",
-      "indicatorId": "C-014_construction_permit_duration_congbao_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-bb822484517e",
-        "labelKo": "소요 기간(일수)[건축]",
-        "unit": "절차",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-bb822484517e|절차||C-014_construction_permit_duration_congbao_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[건축]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a3f58e57f078|VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[건축] · 소요 기간(일수)[건축] [VND]",
-      "indicatorId": "C-014_construction_permit_duration_thuvienphapluat",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a3f58e57f078",
-        "labelKo": "소요 기간(일수)[건축]",
-        "unit": "VND",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a3f58e57f078|VND||C-014_construction_permit_duration_thuvienphapluat",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[건축]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-9c433bc9ec09|일",
@@ -1509,6 +1409,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인허가 프로세스 · db_indicator",
+      "indicatorId": "C-014_db_indicator",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d2849e8d91bb",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-014_db_indicator",
+      "sourceCaveat": null,
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-065e2d26c0d8|일",
       "dimensionLabels": {
         "category": "심사 법정 상한",
@@ -1713,26 +1633,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-d79438beb4d7|/15",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "환경영향평가(EIA) 절차 · 환경영향평가(EIA) 절차 [/15]",
-      "indicatorId": "C-014_eia_procedure_archive_doingbusiness",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-d79438beb4d7",
-        "labelKo": "환경영향평가(EIA) 절차",
-        "unit": "/15",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-d79438beb4d7|/15||C-014_eia_procedure_archive_doingbusiness",
-      "sourceCaveat": null,
-      "sourceLabel": "환경영향평가(EIA) 절차",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-a312a38edafc|—",
       "dimensionLabels": {
         "category": "근거 법령",
@@ -1765,26 +1665,6 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-065e2d26c0d8|일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "환경영향평가(EIA) 절차 · 환경영향평가(EIA) 절차 [일]",
-      "indicatorId": "C-014_eia_procedure_congbao_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-065e2d26c0d8",
-        "labelKo": "환경영향평가(EIA) 절차",
-        "unit": "일",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-065e2d26c0d8|일||C-014_eia_procedure_congbao_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "환경영향평가(EIA) 절차",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-4422dfc53888|절차",
@@ -1923,26 +1803,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-b9f5f5ec0203|백만 VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "환경영향평가(EIA) 절차 · 환경영향평가(EIA) 절차 [백만 VND]",
-      "indicatorId": "C-014_eia_procedure_thuvienphapluat",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-b9f5f5ec0203",
-        "labelKo": "환경영향평가(EIA) 절차",
-        "unit": "백만 VND",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-b9f5f5ec0203|백만 VND||C-014_eia_procedure_thuvienphapluat",
-      "sourceCaveat": null,
-      "sourceLabel": "환경영향평가(EIA) 절차",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-ab4245e189e1|VND",
       "dimensionLabels": {
         "category": "총 비용",
@@ -2045,61 +1905,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-594b7e3ba958|절차",
+      "axisGroupKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "토지 취득 절차[토지]",
-      "indicatorId": "C-014_land_acquisition",
+      "displayLabel": "인허가 프로세스 · field_survey",
+      "indicatorId": "C-014_field_survey",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-594b7e3ba958",
-        "labelKo": "토지 취득 절차[토지]",
-        "unit": "절차",
+        "key": "measure-d2849e8d91bb",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-594b7e3ba958|절차||C-014_land_acquisition",
+      "seriesKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-014_field_survey",
       "sourceCaveat": null,
-      "sourceLabel": "토지 취득 절차[토지]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-93ef45d7c26f|VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "비용(USD)[토지]",
-      "indicatorId": "C-014_land_acquisition_cost",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-93ef45d7c26f",
-        "labelKo": "비용(USD)[토지]",
-        "unit": "VND",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-93ef45d7c26f|VND||C-014_land_acquisition_cost",
-      "sourceCaveat": null,
-      "sourceLabel": "비용(USD)[토지]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-2e01bd63b181|일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[토지]",
-      "indicatorId": "C-014_land_acquisition_duration",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-2e01bd63b181",
-        "labelKo": "소요 기간(일수)[토지]",
-        "unit": "일",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-2e01bd63b181|일||C-014_land_acquisition_duration",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[토지]",
+      "sourceLabel": "인허가 프로세스",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -2579,6 +2399,26 @@
         "sourceRow": 52,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인허가 프로세스 · permit_step",
+      "indicatorId": "C-014_permit_step",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d2849e8d91bb",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-014_permit_step",
+      "sourceCaveat": null,
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-ab16eb16073d|일",
@@ -3227,106 +3067,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-84cf3526ca40|절차",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "전력 사업 허가 절차[전력] · 전력 사업 허가 절차[전력] [절차]",
-      "indicatorId": "C-014_power_permit_archive_doingbusiness",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-84cf3526ca40",
-        "labelKo": "전력 사업 허가 절차[전력]",
-        "unit": "절차",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-84cf3526ca40|절차||C-014_power_permit_archive_doingbusiness",
-      "sourceCaveat": null,
-      "sourceLabel": "전력 사업 허가 절차[전력]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-526ea2629133|년",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "전력 사업 허가 절차[전력] · 전력 사업 허가 절차[전력] [년]",
-      "indicatorId": "C-014_power_permit_congbao_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-526ea2629133",
-        "labelKo": "전력 사업 허가 절차[전력]",
-        "unit": "년",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-526ea2629133|년||C-014_power_permit_congbao_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "전력 사업 허가 절차[전력]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7341e1e7dab4|VND",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "비용(USD)[전력]",
-      "indicatorId": "C-014_power_permit_cost",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7341e1e7dab4",
-        "labelKo": "비용(USD)[전력]",
-        "unit": "VND",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-7341e1e7dab4|VND||C-014_power_permit_cost",
-      "sourceCaveat": null,
-      "sourceLabel": "비용(USD)[전력]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f3a2cbd841eb|일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[전력] · power_permit_duration_archive_doingbusiness",
-      "indicatorId": "C-014_power_permit_duration_archive_doingbusiness",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f3a2cbd841eb",
-        "labelKo": "소요 기간(일수)[전력]",
-        "unit": "일",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-f3a2cbd841eb|일||C-014_power_permit_duration_archive_doingbusiness",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[전력]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-f3a2cbd841eb|일",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "소요 기간(일수)[전력] · power_permit_duration_congbao_chinhphu",
-      "indicatorId": "C-014_power_permit_duration_congbao_chinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-f3a2cbd841eb",
-        "labelKo": "소요 기간(일수)[전력]",
-        "unit": "일",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-f3a2cbd841eb|일||C-014_power_permit_duration_congbao_chinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "소요 기간(일수)[전력]",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-fc5ad9ef8726|/15",
       "dimensionLabels": {
         "category": "신뢰성 지수 건축 허가",
@@ -3495,6 +3235,26 @@
         "sourceRow": 84,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "인허가 프로세스 · statutory_deadline",
+      "indicatorId": "C-014_statutory_deadline",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d2849e8d91bb",
+        "labelKo": "인허가 프로세스",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-d2849e8d91bb|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-014_statutory_deadline",
+      "sourceCaveat": null,
+      "sourceLabel": "인허가 프로세스",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -3531,14 +3291,6 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-228400722532",
-      "labelKo": "건축 허가 절차[건축]",
-      "recordCount": 0,
-      "unit": "절차",
-      "unitFamily": "other"
-    },
-    {
       "indicatorCount": 2,
       "key": "measure-60adace42d54",
       "labelKo": "데이터 출처 및 산정 방법",
@@ -3561,70 +3313,6 @@
       "recordCount": 0,
       "unit": "통화",
       "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-bdd347eef9b3",
-      "labelKo": "비용(USD)[건축]",
-      "recordCount": 0,
-      "unit": "VND",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-7341e1e7dab4",
-      "labelKo": "비용(USD)[전력]",
-      "recordCount": 0,
-      "unit": "VND",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-93ef45d7c26f",
-      "labelKo": "비용(USD)[토지]",
-      "recordCount": 0,
-      "unit": "VND",
-      "unitFamily": "currency"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-a3f58e57f078",
-      "labelKo": "소요 기간(일수)[건축]",
-      "recordCount": 0,
-      "unit": "VND",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-5ed29f9a0054",
-      "labelKo": "소요 기간(일수)[건축]",
-      "recordCount": 0,
-      "unit": "일",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-bb822484517e",
-      "labelKo": "소요 기간(일수)[건축]",
-      "recordCount": 0,
-      "unit": "절차",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 2,
-      "key": "measure-f3a2cbd841eb",
-      "labelKo": "소요 기간(일수)[전력]",
-      "recordCount": 0,
-      "unit": "일",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-2e01bd63b181",
-      "labelKo": "소요 기간(일수)[토지]",
-      "recordCount": 0,
-      "unit": "일",
-      "unitFamily": "other"
     },
     {
       "indicatorCount": 3,
@@ -3656,6 +3344,14 @@
       "labelKo": "인허가 유형별 비교 (절차 수",
       "recordCount": 0,
       "unit": "절차",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 4,
+      "key": "measure-d2849e8d91bb",
+      "labelKo": "인허가 프로세스",
+      "recordCount": 0,
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "unitFamily": "other"
     },
     {
@@ -3708,22 +3404,6 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-526ea2629133",
-      "labelKo": "전력 사업 허가 절차[전력]",
-      "recordCount": 0,
-      "unit": "년",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-84cf3526ca40",
-      "labelKo": "전력 사업 허가 절차[전력]",
-      "recordCount": 0,
-      "unit": "절차",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-451748bdc8ee",
       "labelKo": "토지 취득 절차",
       "recordCount": 0,
@@ -3764,14 +3444,6 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-594b7e3ba958",
-      "labelKo": "토지 취득 절차[토지]",
-      "recordCount": 0,
-      "unit": "절차",
-      "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
       "key": "measure-fc5ad9ef8726",
       "labelKo": "품질",
       "recordCount": 0,
@@ -3785,14 +3457,6 @@
       "recordCount": 0,
       "unit": "/8",
       "unitFamily": "other"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-d79438beb4d7",
-      "labelKo": "환경영향평가(EIA) 절차",
-      "recordCount": 0,
-      "unit": "/15",
-      "unitFamily": "text"
     },
     {
       "indicatorCount": 1,
@@ -3811,7 +3475,7 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 3,
+      "indicatorCount": 2,
       "key": "measure-b9f5f5ec0203",
       "labelKo": "환경영향평가(EIA) 절차",
       "recordCount": 0,
@@ -3819,7 +3483,7 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 5,
+      "indicatorCount": 4,
       "key": "measure-065e2d26c0d8",
       "labelKo": "환경영향평가(EIA) 절차",
       "recordCount": 0,

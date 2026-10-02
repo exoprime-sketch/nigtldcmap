@@ -72,6 +72,13 @@ export const SOURCE_NOTE_PATTERNS_V161 = [
   // (A-028: "OpenStreetMap (멤버1); 미특정 (멤버2)").
   ["internal member notation", /멤버\s*\d|미특정/u],
   ["working file / version", /Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu],
+  // V162 (user decision 2026-09-30): a PDF's file name is never on screen - a
+  // link shows the document title or '원문 PDF' and keeps the file in href.
+  // URLs are masked first, so a cited address is not a hit.
+  ["PDF file name", /[^\s/()（）]+\.pdf\b/iu],
+  // The delivery's internal record ids ("VNM-C017-FIT-001") and working paths.
+  ["record id", /\b(?:VNM|BGD)-[A-E]\d{3}-/u],
+  ["raw working path", /raw_data|raw는|raw\s*파일/iu],
 ];
 
 /**
@@ -90,11 +97,16 @@ export const CONTENT_ALLOWLIST_V161 = [
   // "해당없음" as a data value (not a source): scoped to the element whose
   // detail shows it, so the same word in any other place still fails.
   // Bangladesh's delivery writes the same value with a space (V158-B2b).
-  [/해당\s?없음 — 사무소 미설치/gu, "E-019 데이터 값(해외사무소 소재지 — 사무소 없는 기관)", ["E-019"]],
+  [/해당\s?없음 — 사무소 미설치/gu, "E-019·E-004 데이터 값(해외사무소 소재지·연락 유형 — 사무소 없는 기관; E-004는 V162 입고에서 같은 값)", ["E-019", "E-004"]],
   [/(?<=\d{4})해당 없음/gu, "E-012 표의 결측 사유 열 값('해당 없음' = 결측 아님)", ["E-012"]],
   [/해당 없음\(NMA 자체가/gu, "C-007 데이터 값(host 여부 설명)", ["C-007"]],
   [/한국 관련:\s*해당없음/gu, "A-029 데이터 값(협정의 한국 관련 여부)", ["A-029"]],
   [/발효일:\s*해당 없음\(미발효\)/gu, "A-029 데이터 값(미발효 협정의 발효일 — 발효 전이라 날짜가 없음)", ["A-029"]],
+  // V162 (2026-09-30 delivery): data values and the data's own basis, scoped.
+  [/현지조사 기준/gu, "B-038 데이터 값(값의 기준 구분 — 같은 지표의 두 값 가운데 현지조사 기준 값)", ["B-038"]],
+  [/해당 없음 — 기관 운영 종료/gu, "E-004 데이터 값(연락 유형 — 운영이 끝난 기관)", ["E-004"]],
+  [/해당 없음 — 재정지원 과제/gu, "E-007 데이터 값(등록 여부 — 재정지원 과제라 등록 대상 아님)", ["E-007"]],
+  [/\[상충\] 현지조사(?:\s*결과)?\(\d{4}-\d{2}-\d{2}[^)]*\)는/gu, "E-007 기록 본문의 상충 설명(현지조사 결과와 법령 일정 차이, V162 표기)", ["E-007"]],
 ];
 const URL_PATTERN_V161 = /https?:\/\/[^\s"'<>]+/gu;
 
@@ -121,7 +133,8 @@ function findNotes(rawText, elementId = null) {
   return hits;
 }
 
-const server = await startStaticBuildServer(BUILD, { port: 4401 });
+// --port: another session may hold the default port on a shared machine.
+const server = await startStaticBuildServer(BUILD, { port: Number(opt("--port", "4401")) });
 const base = server.url.replace(/\/$/u, "");
 const browser = await chromium.launch(process.env.V125_BROWSER_EXECUTABLE ? { executablePath: process.env.V125_BROWSER_EXECUTABLE } : {});
 const findings = [];

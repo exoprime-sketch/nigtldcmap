@@ -5,9 +5,23 @@ import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 export default function ScienceWorkforceAnalysisV147({ rows }: { rows: SemanticObservationV125[] }) {
-  const own = (id: string) => rows.filter((r) => r.indicatorId === `E-009_${id}`);
-  const value = (id: string) => uniqueNumericV147(own(id));
+  const all = (id: string) => rows.filter((r) => r.indicatorId === `E-009_${id}`);
   const shares = [["stem_grad_share", "전체"], ["stem_grad_share_male", "남성"], ["stem_grad_share_female", "여성"]];
+  // V162: the 2026-09-30 delivery states each share for eight years (2005-2016)
+  // and the researcher counts for seven. The shares are compared in the latest
+  // year all three state; each researcher figure is its own latest year.
+  const yearsOf = (id: string) => new Set(all(id).filter((r) => typeof r.year === "number").map((r) => r.year as number));
+  const commonYears = [...yearsOf(shares[0][0])].filter((year) => shares.every(([id]) => yearsOf(id).has(year))).sort((a, b) => a - b);
+  const multiYear = shares.some(([id]) => yearsOf(id).size > 1);
+  const shareYear = multiYear ? commonYears[commonYears.length - 1] ?? null : null;
+  const latestYearOf = (id: string) => Math.max(...yearsOf(id));
+  const own = (id: string) => {
+    const rowsOf = all(id);
+    if (yearsOf(id).size <= 1) return rowsOf;
+    const year = shares.some(([share]) => share === id) && shareYear !== null ? shareYear : latestYearOf(id);
+    return rowsOf.filter((r) => r.year === year);
+  };
+  const value = (id: string) => uniqueNumericV147(own(id));
   const years = new Set(shares.flatMap(([id]) => own(id).map((r) => r.year)));
   const comparable = years.size === 1 && !years.has(null) && shares.every(([id]) => own(id).length === 1 && own(id)[0].unit === "%");
   const selectedYear = comparable ? [...years][0] : null;

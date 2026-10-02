@@ -25,7 +25,7 @@
         "periods": [
           "2013~2026년"
         ],
-        "maxFeatureCount": 15
+        "maxFeatureCount": 18
       }
     ]
   },
@@ -36,7 +36,7 @@
       "variable": "d-023-located-count",
       "variableLabel": "지역이 확인된 사업 수",
       "period": "2013~2026년",
-      "value": 2,
+      "value": 5,
       "unit": "건",
       "sourceIndicatorId": "D-023_climate_fund_finance_registry",
       "sourceRecordId": "v124-d-023-entity-00011",
@@ -51,7 +51,7 @@
       "variable": "d-023-located-count",
       "variableLabel": "지역이 확인된 사업 수",
       "period": "2013~2026년",
-      "value": 1,
+      "value": 2,
       "unit": "건",
       "sourceIndicatorId": "D-023_climate_fund_finance_registry",
       "sourceRecordId": "v124-d-023-entity-00012",
@@ -66,7 +66,7 @@
       "variable": "d-023-located-count",
       "variableLabel": "지역이 확인된 사업 수",
       "period": "2013~2026년",
-      "value": 1,
+      "value": 2,
       "unit": "건",
       "sourceIndicatorId": "D-023_climate_fund_finance_registry",
       "sourceRecordId": "v124-d-023-entity-00012",
@@ -81,7 +81,7 @@
       "variable": "d-023-located-count",
       "variableLabel": "지역이 확인된 사업 수",
       "period": "2013~2026년",
-      "value": 1,
+      "value": 2,
       "unit": "건",
       "sourceIndicatorId": "D-023_climate_fund_finance_registry",
       "sourceRecordId": "v124-d-023-entity-00012",
@@ -246,12 +246,57 @@
       "variable": "d-023-located-count",
       "variableLabel": "지역이 확인된 사업 수",
       "period": "2013~2026년",
-      "value": 1,
+      "value": 2,
       "unit": "건",
       "sourceIndicatorId": "D-023_climate_fund_finance_registry",
       "sourceRecordId": "v124-d-023-entity-00029",
       "sourceSpatialUnit": "region",
       "sourceRegion": "Huế",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-49",
+      "adm1Name": "Vĩnh Long",
+      "variable": "d-023-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2013~2026년",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-023_climate_fund_project_registry",
+      "sourceRecordId": "v124-d-023-entity-00090",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-50",
+      "adm1Name": "Bến Tre",
+      "variable": "d-023-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2013~2026년",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-023_climate_fund_project_registry",
+      "sourceRecordId": "v124-d-023-entity-00090",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
+      "mappingMethod": "value-stated-2025-unit-membership",
+      "imputed": false
+    },
+    {
+      "adm1Code": "VN-51",
+      "adm1Name": "Trà Vinh",
+      "variable": "d-023-located-count",
+      "variableLabel": "지역이 확인된 사업 수",
+      "period": "2013~2026년",
+      "value": 1,
+      "unit": "건",
+      "sourceIndicatorId": "D-023_climate_fund_project_registry",
+      "sourceRecordId": "v124-d-023-entity-00090",
+      "sourceSpatialUnit": "region",
+      "sourceRegion": "Vĩnh Long",
       "mappingMethod": "value-stated-2025-unit-membership",
       "imputed": false
     }
@@ -269,14 +314,34 @@
         "indicatorId": "D-023_climate_fund_finance_registry"
       },
       {
-        "recordId": "v124-d-023-entity-00058",
+        "recordId": "v124-d-023-entity-00079",
         "label": "Hanoi Urban Transport Development",
         "date": "",
         "status": "",
         "value": "",
         "url": "",
         "region": "Hà Nội",
-        "indicatorId": "D-023_climate_fund_finance_registry"
+        "indicatorId": "D-023_climate_fund_project_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00077",
+        "label": "Ha Noi Sustainable Urban Transport Program - Project 2: Strengthening Sustainable Urban Transport for Hanoi Metro Line 3",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00078",
+        "label": "Ha Noi Sustainable Urban Transport Program - Project 1: Ha Noi Metro System Line 3",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hà Nội",
+        "indicatorId": "D-023_climate_fund_project_registry"
       }
     ],
     "VN-43": [
@@ -289,6 +354,16 @@
         "url": "",
         "region": "Hồ Chí Minh",
         "indicatorId": "D-023_climate_fund_finance_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00076",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit (MRT) Line 2 Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-023_climate_fund_project_registry"
       }
     ],
     "VN-57": [
@@ -301,6 +376,16 @@
         "url": "",
         "region": "Hồ Chí Minh",
         "indicatorId": "D-023_climate_fund_finance_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00076",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit (MRT) Line 2 Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-023_climate_fund_project_registry"
       }
     ],
     "VN-SG": [
@@ -313,6 +398,16 @@
         "url": "",
         "region": "Hồ Chí Minh",
         "indicatorId": "D-023_climate_fund_finance_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00076",
+        "label": "Sustainable Urban Transport for Ho Chi Minh City Mass Rapid Transit (MRT) Line 2 Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Hồ Chí Minh",
+        "indicatorId": "D-023_climate_fund_project_registry"
       }
     ],
     "VN-03": [
@@ -445,6 +540,52 @@
         "url": "",
         "region": "Huế",
         "indicatorId": "D-023_climate_fund_finance_registry"
+      },
+      {
+        "recordId": "v124-d-023-entity-00095",
+        "label": "(SAP040) Climate Adaptation and Resilience in Thua Thien Hue Province Vietnam (CARe Hue)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Huế",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      }
+    ],
+    "VN-49": [
+      {
+        "recordId": "v124-d-023-entity-00090",
+        "label": "Project for Adaptation to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      }
+    ],
+    "VN-50": [
+      {
+        "recordId": "v124-d-023-entity-00090",
+        "label": "Project for Adaptation to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      }
+    ],
+    "VN-51": [
+      {
+        "recordId": "v124-d-023-entity-00090",
+        "label": "Project for Adaptation to Climate Change in the Mekong Delta in Ben Tre and Tra Vinh Provinces",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Vĩnh Long",
+        "indicatorId": "D-023_climate_fund_project_registry"
       }
     ]
   },
@@ -453,8 +594,8 @@
       "variable": "d-023-located-count",
       "period": "2013~2026년",
       "expectedCount": 63,
-      "matchedCount": 15,
-      "missingCount": 48,
+      "matchedCount": 18,
+      "missingCount": 45,
       "failureCount": 0
     }
   ],
@@ -484,16 +625,16 @@
     "expectedAdm1Count": 63,
     "fakeGeometryCount": 0,
     "joinFailureCount": 0,
-    "matchedAdm1Count": 15,
-    "maxSeriesFeatureCount": 15,
-    "missingAdm1Count": 48,
+    "matchedAdm1Count": 18,
+    "maxSeriesFeatureCount": 18,
+    "missingAdm1Count": 45,
     "providedZeroCount": 0,
-    "publishedValueCount": 15,
-    "sourceValueCount": 10,
+    "publishedValueCount": 18,
+    "sourceValueCount": 16,
     "suppressedValueCount": 0,
     "unmatchedSourceNameCount": 0,
     "zeroImputationCount": 0,
     "mappingMethod": "explicit-2025-34-unit-membership",
-    "sourceRegionCount": 9
+    "sourceRegionCount": 10
   }
 }

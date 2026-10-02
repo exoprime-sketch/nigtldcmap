@@ -1,14 +1,11 @@
 {
   "dimensions": [
     {
-      "key": "detail",
-      "labelKo": "세부 분류",
-      "valueCount": 4,
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
       "values": [
-        "산업 (SDG 6.4.1)",
-        "서비스 (SDG 6.4.1)",
-        "전체 (SDG 6.4.1)",
-        "지역 단위(추정)"
+        "entity"
       ]
     },
     {
@@ -62,9 +59,9 @@
     }
   ],
   "elementId": "B-024",
-  "entityCount": 0,
+  "entityCount": 97,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 7,
+  "indicatorCount": 10,
   "indicators": [
     {
       "axisGroupKey": "measure-357fd35f6277|%",
@@ -97,25 +94,21 @@
       }
     },
     {
-      "axisGroupKey": "measure-ec7e036da091|%",
-      "dimensionLabels": {
-        "detail": "지역 단위(추정)"
-      },
-      "dimensions": {
-        "detail": "지역 단위(추정)"
-      },
-      "displayLabel": "농업 용수 비중 — 지역 단위(추정)",
+      "axisGroupKey": "measure-cb46bd546c80|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농업 용수 비중 - 지역(ADM1) 배분 추정",
       "indicatorId": "B-024_agri_water_share_subnat",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-ec7e036da091",
-        "labelKo": "농업 용수 비중",
+        "key": "measure-cb46bd546c80",
+        "labelKo": "농업 용수 비중 - 지역(ADM1) 배분 추정",
         "unit": "%",
         "unitFamily": "percent"
       },
-      "seriesKey": "measure-ec7e036da091|%|detail=지역 단위(추정)|B-024_agri_water_share_subnat",
+      "seriesKey": "measure-cb46bd546c80|%||B-024_agri_water_share_subnat",
       "sourceCaveat": "[주의] 추정값이므로 AQUASTAT 국가값과 접속하지 않고 별도 지표로 분리. 2025년 행정구역 개편으로 성 경계가 변경되었으므로 어느 시점 기준인지 명시 필요(Q-020). / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
-      "sourceLabel": "농업 용수 비중 — 지역 단위(추정)",
+      "sourceLabel": "농업 용수 비중 - 지역(ADM1) 배분 추정",
       "sourceLabelEn": "Agri. water share by province (estimated)",
       "sourceNote": "2023년: GSO 관개·수확면적 기반 성 단위 추정 미수행 — 절차 확정 후 진행",
       "sourceProvenance": {
@@ -125,6 +118,26 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-9761ec34f6a4|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "농업 용수 비중 - 지역(ADM1) 배분 추정 - 2025년 34개 체계",
+      "indicatorId": "B-024_agri_water_share_subnat_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-9761ec34f6a4",
+        "labelKo": "농업 용수 비중 - 지역(ADM1) 배분 추정 - 2025년 34개 체계",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-9761ec34f6a4|%||B-024_agri_water_share_subnat_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "농업 용수 비중 - 지역(ADM1) 배분 추정 - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-531231004ae8|%",
@@ -155,6 +168,46 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-0ea03cc414a8|ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "지역(ADM1) 관개면적 - 배분 기준 원값",
+      "indicatorId": "B-024_irrigated_area_subnat",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0ea03cc414a8",
+        "labelKo": "지역(ADM1) 관개면적 - 배분 기준 원값",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-0ea03cc414a8|ha||B-024_irrigated_area_subnat",
+      "sourceCaveat": null,
+      "sourceLabel": "지역(ADM1) 관개면적 - 배분 기준 원값",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-8daa9cfefb99|ha",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "지역(ADM1) 관개면적 - 배분 기준 원값 - 2025년 34개 체계",
+      "indicatorId": "B-024_irrigated_area_subnat_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-8daa9cfefb99",
+        "labelKo": "지역(ADM1) 관개면적 - 배분 기준 원값 - 2025년 34개 체계",
+        "unit": "ha",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-8daa9cfefb99|ha||B-024_irrigated_area_subnat_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "지역(ADM1) 관개면적 - 배분 기준 원값 - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-b106b0e28ac3|US$/m³",
@@ -278,15 +331,23 @@
       "indicatorCount": 1,
       "key": "measure-6d7408256783",
       "labelKo": "관개농업 용수생산성 (SDG 6.4.1)",
-      "recordCount": 34,
+      "recordCount": 0,
       "unit": "US$/m³",
       "unitFamily": "currency"
     },
     {
       "indicatorCount": 1,
-      "key": "measure-ec7e036da091",
-      "labelKo": "농업 용수 비중",
-      "recordCount": 1,
+      "key": "measure-cb46bd546c80",
+      "labelKo": "농업 용수 비중 - 지역(ADM1) 배분 추정",
+      "recordCount": 0,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-9761ec34f6a4",
+      "labelKo": "농업 용수 비중 - 지역(ADM1) 배분 추정 - 2025년 34개 체계",
+      "recordCount": 0,
       "unit": "%",
       "unitFamily": "percent"
     },
@@ -310,12 +371,28 @@
       "indicatorCount": 3,
       "key": "measure-b106b0e28ac3",
       "labelKo": "용수생산성",
-      "recordCount": 102,
+      "recordCount": 0,
       "unit": "US$/m³",
       "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-0ea03cc414a8",
+      "labelKo": "지역(ADM1) 관개면적 - 배분 기준 원값",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-8daa9cfefb99",
+      "labelKo": "지역(ADM1) 관개면적 - 배분 기준 원값 - 2025년 34개 체계",
+      "recordCount": 0,
+      "unit": "ha",
+      "unitFamily": "area"
     }
   ],
-  "observationCount": 205,
+  "observationCount": 68,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

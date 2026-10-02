@@ -234,7 +234,7 @@
     "measure:backdrop:v151-2": "node scripts/v151-2/measure-backdrop-v151-2.mjs",
     "measure:detail-prepare:v151-2": "node scripts/v151-2/measure-detail-prepare-v151-2.mjs",
     "qa:acceptance:v162": "node scripts/gate-lock.mjs --name qa:acceptance:v162 -- node scripts/v162/acceptance-v162.mjs",
-    "finalize:v151:steps": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser && npm run audit:boundary-policy:v151-2 && npm run qa:acceptance:v162 -- --expect-pending 12 --expect-fail data-date,c003-filename"
+    "finalize:v151:steps": "npm run finalize:v140 && npm run audit:boundary-34:v151 -- --skip-browser && npm run audit:boundary-policy:v151-2 && npm run qa:acceptance:v162 -- --expect-pending 12"
   },
   "browserslist": [
     ">0.2%",

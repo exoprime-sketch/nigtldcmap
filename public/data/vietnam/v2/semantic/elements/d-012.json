@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "D-012",
-  "entityCount": 22,
+  "entityCount": 1168,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 15,
+  "indicatorCount": 16,
   "indicators": [
     {
       "axisGroupKey": "measure-613f6ac771a3|MW",
@@ -523,6 +523,30 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-a10134839d48|건",
+      "dimensionLabels": {
+        "category": "GEM 발전설비 레지스트리"
+      },
+      "dimensions": {
+        "category": "GEM 발전설비 레지스트리"
+      },
+      "displayLabel": "경쟁국 민간기업의 개도국 진출 현황 · GEM 발전설비 레지스트리",
+      "indicatorId": "D-012_gem_power_asset_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a10134839d48",
+        "labelKo": "경쟁국 민간기업의 개도국 진출 현황",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-a10134839d48|건|category=GEM 발전설비 레지스트리|D-012_gem_power_asset_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "경쟁국 민간기업의 개도국 진출 현황 · GEM 발전설비 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     }
   ],
   "measures": [
@@ -535,7 +559,7 @@
       "unitFamily": "capacity"
     },
     {
-      "indicatorCount": 14,
+      "indicatorCount": 15,
       "key": "measure-a10134839d48",
       "labelKo": "경쟁국 민간기업의 개도국 진출 현황",
       "recordCount": 0,

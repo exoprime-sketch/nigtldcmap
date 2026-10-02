@@ -1,4 +1,10 @@
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
+import {
+  assertSingleRegionSystemV162,
+  REGION_NAME_KEYS_V162,
+  REORGANISED_UNIT_KEYS_V162,
+  rowsForPreReformViewV162,
+} from "../../../data/geo/regionSystemV162";
 import { Fragment, useMemo } from "react";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { subjectParticleV158, useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
@@ -10,6 +16,7 @@ import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV12
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import {
   publicRegionScenarioContractV138,
+  regionSummaryRowsV162,
   type RegionScenarioMeasureV138,
 } from "../../../data/visualization/publicRegionScenarioContractV138";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
@@ -47,8 +54,9 @@ interface Props {
   onSelectorStateChange: (state: DataFinderSelectorStateV125) => void;
 }
 
-const REGION_KEYS = ["지역명_로마자", "지역명_베트남어", "2025_개편_후_소속_34개_체계"];
-const REGION_DISPLAY_KEYS = ["지역명_베트남어", "지역명_로마자"];
+// V162: the common column names first, then the pre-V162 Viet Nam names.
+const REGION_KEYS = ["지역명_로마자", "지역명_현지어", "지역명_베트남어", "지역명", ...REORGANISED_UNIT_KEYS_V162];
+const REGION_DISPLAY_KEYS: string[] = [...REGION_NAME_KEYS_V162];
 const SCENARIO_KEY = "시나리오";
 const YEAR_KEYS = ["연도", "기준연도"];
 
@@ -159,8 +167,14 @@ export interface RegionScenarioShapeV138 {
  * in at least two different years, or differ between provinces in one.
  */
 export function regionScenarioShapeV138(
-  entities: VietnamEntityV124[]
+  sourceEntities: VietnamEntityV124[]
 ): RegionScenarioShapeV138 | null {
+  // V162: one system per summary - a sheet with the 63 pre-2025 provinces
+  // reads those rows only; its 34-unit rows would count each place twice.
+  // …and annual rows only: the monthly normals the 2026-09-30 delivery adds
+  // (indicator *_monthly_clim_*) are a seasonal cycle, not a year series.
+  const entities = regionSummaryRowsV162(rowsForPreReformViewV162(sourceEntities)).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || "")));
+  assertSingleRegionSystemV162(entities, "region summary");
   if (entities.length < 2) return null;
   const provinceYearsByMeasure = new Map<string, Set<number>>();
   const valuesByMeasureRegion = new Map<string, Map<string, Set<number>>>();
@@ -270,6 +284,12 @@ function fallbackMeasureLabel(key: string): string {
 }
 
 function fallbackUnit(key: string): string {
+  // V162: the 2026-09-30 columns print the unit, then a basis, at the end:
+  // "사망자_명", "총피해액_천USD_명목", "상대해수면_상승_m_2005년_기준".
+  if (/_명$/u.test(key)) return "명";
+  if (/_천USD_명목$/u.test(key)) return "천 USD(명목)";
+  if (/_천USD_(\d{4})실질$/u.test(key)) return `천 USD(${key.match(/_천USD_(\d{4})실질$/u)![1]}년 실질)`;
+  if (/_m_\d{4}년_기준$/u.test(key)) return "m";
   if (/_일$/u.test(key)) return "일";
   if (/_mm$/iu.test(key)) return "mm";
   if (/_km$/u.test(key)) return "km²";
@@ -323,11 +343,16 @@ interface SeriesPoint {
 
 export default function PublicRegionScenarioSummaryV138({
   elementId,
-  entities,
+  entities: sourceEntities,
   elementTitle,
   selectorState,
   onSelectorStateChange,
 }: Props) {
+  // V162: the same one-system rows as the shape (see regionScenarioShapeV138).
+  const entities = useMemo(
+    () => regionSummaryRowsV162(rowsForPreReformViewV162(sourceEntities)).filter((row) => !/_monthly_clim/u.test(String(row.indicatorId || ""))),
+    [sourceEntities]
+  );
   // V162 (P12-B): region labels as the reader sees them ("한글명 (현지명)",
   // reviewed names only); the keys stay the source spelling.
   const regionText = useRegionTextV162(elementId);
@@ -680,7 +705,7 @@ export default function PublicRegionScenarioSummaryV138({
         </div>
         <div>
           <dt>단위</dt>
-          <dd>{unit ? <PublicTermTextV134 text={unit} /> : regionLevelV158 ? "—" : "원천 미기재"}</dd>
+          <dd>{unit ? <PublicTermTextV134 text={unit} /> : regionLevelV158 ? "—" : "미기재"}</dd>
         </div>
         {measureMeta.direction && (
           <div>

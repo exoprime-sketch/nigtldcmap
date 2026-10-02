@@ -1,3 +1,7 @@
+import ProvinceRecordTableV162, { PROVINCE_RECORD_TABLES_V162 } from "./ProvinceRecordTableV162";
+import { publicRegionScenarioContractV138 } from "../../../data/visualization/publicRegionScenarioContractV138";
+import WideRecordCardsV162 from "./WideRecordCardsV162";
+import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
@@ -30,6 +34,7 @@ import type {
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../../../types/dataFinderV125";
+import { EMPTY_DATA_FINDER_SELECTOR_STATE_V125 } from "../../../types/dataFinderV125";
 import SemanticArchetypePreviewV125 from "../semantic/SemanticArchetypePreviewV125";
 import type {
   E012OccupationMeasureKeyV125,
@@ -154,6 +159,14 @@ const ADAPTER_RENDERER_V126: Record<
   "status-only": "status-only",
 };
 
+/** Variants written for the old long C template (속성1_레코드명 … 속성23_설명). */
+const LONG_TEMPLATE_VARIANTS_V162 = new Set<TemplateVariantKeyV159>([
+  "ndc-targets",
+  "cooperation-checklist",
+  "security-safety",
+  "ppp-procurement",
+] as TemplateVariantKeyV159[]);
+
 export default function PublicDataAnalysisRouterV126({
   elementId,
   contract,
@@ -172,6 +185,7 @@ export default function PublicDataAnalysisRouterV126({
   // V159: the display type picks the template, the element's variant the body.
   // V158: the type and variant as seen from the page's country.
   const typology = useCountryTypologyV158(elementId);
+  const wideRecordsV162 = useMemo(() => wideRecordsOfEntitiesV162(allEntities), [allEntities]);
   const dataCountryV158 = useDataCountryV158();
   const variantEntry = variantForCountryV158(elementId, dataCountryV158);
   const cardSpec = useCountryCardSpecV158(elementId);
@@ -215,6 +229,9 @@ export default function PublicDataAnalysisRouterV126({
   const copy = publicElementCopyV126(elementId, publicRenderer, dataCountryV158);
   const headings = headingsForCountryV158(getPublicAnalysisHeadingsV134(elementId), dataCountryV158);
   const analysisTitle = headings?.publicAnalysisTitle || copy.title;
+  const [nationalSeriesSelectorV162, setNationalSeriesSelectorV162] = useState<DataFinderSelectorStateV125>(
+    EMPTY_DATA_FINDER_SELECTOR_STATE_V125
+  );
   const semanticRows = useMemo(
     () =>
       buildSemanticObservationsV125(
@@ -236,7 +253,10 @@ export default function PublicDataAnalysisRouterV126({
   // to a card grid of record keys. Where that shape is present and the element
   // has no observations of its own to draw, read the rows for what they are.
   const regionScenarioSummary = useMemo(() => {
-    if (semanticRows.length > 0) return null;
+    // V162: a province-distribution element (its own contract) keeps the
+    // distribution even when the delivery adds a national series beside it
+    // (B-005 soil moisture); that series is drawn below, not instead.
+    if (semanticRows.length > 0 && !publicRegionScenarioContractV138(elementId)) return null;
     if (elementId === "B-008" && isSeaLevelStationDeliveryV138(entities)) {
       return (
         <SeaLevelStationAnalysisV138
@@ -246,6 +266,9 @@ export default function PublicDataAnalysisRouterV126({
         />
       );
     }
+    // V162: a register (B-012's disaster events) is not a province table even
+    // when its 2026-09-30 rows name the places each event touched.
+    if (visualizationContractV153(elementId)?.archetype === "registry" && !publicRegionScenarioContractV138(elementId)) return null;
     if (!regionScenarioShapeV138(entities)) return null;
     return (
       <PublicRegionScenarioSummaryV138
@@ -289,6 +312,12 @@ export default function PublicDataAnalysisRouterV126({
   // The registry maps each variant only to the elements its component was
   // written for, so the narrowed element ids below hold (templateVariantsV159).
   const renderVariantV159 = (variant: TemplateVariantKeyV159): ReactNode | null => {
+    // V162: these variants read the old long C template row by row. On the
+    // wide template (one row per record, '[블록] 속성' columns) the common
+    // block cards take their place; primary-chart variants read it themselves.
+    if (wideRecordsV162.length > 0 && LONG_TEMPLATE_VARIANTS_V162.has(variant)) {
+      return <WideRecordCardsV162 records={wideRecordsV162} elementId={elementId} recordScope="element" />;
+    }
     switch (variant) {
       case "building-metadata":
         return metadataOnlyBuildingsV144(semanticRows) ? (
@@ -325,7 +354,7 @@ export default function PublicDataAnalysisRouterV126({
           section rendered nothing at all. Where the specialised view has no
           observations to draw, the archetype shows the records that are there.
         */
-        if (entities.length > 0) return <ReportedInventoryAnalysisV147 entities={entities} />;
+        if (entities.length > 0) return <ReportedInventoryAnalysisV147 entities={entities} indicators={indicators} />;
         if (semanticRows.length > 0) {
           return (
             <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">배출량 분석을 불러오는 중입니다</div>}>
@@ -347,7 +376,9 @@ export default function PublicDataAnalysisRouterV126({
           </Suspense>
         );
       case "spei-drought":
-        return semanticRows.length > 0 ? (
+        // V162: the 2026-09-30 B-005 ships no SPEI projections (only national
+        // soil moisture), so the drought screen opens only on SPEI rows.
+        return semanticRows.some((row) => /spei/iu.test(String(row.indicatorId || ""))) ? (
           <Suspense fallback={<div className="pav126-empty" role="status" data-testid="public-analysis-pending">가뭄 전망을 불러오는 중입니다</div>}>
             <SpeiDroughtScenarioAnalysisV134
               rows={semanticRows}
@@ -446,7 +477,8 @@ export default function PublicDataAnalysisRouterV126({
         return <PowerPlantRegistrySummaryV138 entities={entities} selectorState={selectorState} onSelectorStateChange={onSelectorStateChange} />;
       case "mineral-resources":
         // Minerals by name, in their own units; the bar is USGS's world share (V153).
-        return <MineralResourceSummaryV153 elementId={elementId as "B-046" | "B-047"} observations={observations} indicators={indicators} />;
+        // V162: the 2026-09-30 delivery states B-046/B-047 as records, not observations.
+        return <MineralResourceSummaryV153 elementId={elementId as "B-046" | "B-047"} observations={observations} entities={entities} indicators={indicators} />;
       case "investor-network":
         // Investors with a Vietnam office apart from head offices abroad (V153).
         return <InvestorNetworkSummaryV153 entities={entities} />;
@@ -455,7 +487,13 @@ export default function PublicDataAnalysisRouterV126({
         return <PppProcurementSummaryV153 entities={entities} indicators={indicators} />;
       case "climate-zone":
         // Köppen zones named Korean(code) with the composition table (V153).
-        return <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />;
+        // V162: the province rows the delivery added are listed below it.
+        return (
+          <>
+            <ClimateZoneSummaryV153 observations={observations} indicators={indicators} />
+            <ProvinceRecordTableV162 elementId={elementId} entities={entities} />
+          </>
+        );
       default:
         return null;
     }
@@ -487,12 +525,16 @@ export default function PublicDataAnalysisRouterV126({
     }
     if (publicRenderer === "composition-trend") {
       return (
-        <PublicCompositionTrendAnalysisV132
-          elementId={elementId}
-          rows={semanticRows}
-          selectorState={selectorState}
-          onSelectorStateChange={onSelectorStateChange}
-        />
+        <>
+          <PublicCompositionTrendAnalysisV132
+            elementId={elementId}
+            rows={semanticRows}
+            selectorState={selectorState}
+            onSelectorStateChange={onSelectorStateChange}
+          />
+          {/* V162: B-024's province rows, as the source states them. */}
+          {PROVINCE_RECORD_TABLES_V162[elementId] ? <ProvinceRecordTableV162 elementId={elementId} entities={entities} /> : null}
+        </>
       );
     }
     if (regionScenarioSummary && hasNationalSeriesRows) {
@@ -518,10 +560,44 @@ export default function PublicDataAnalysisRouterV126({
     variantEntry?.phase === "late" && !GENERIC_BODY_VARIANTS_V159.has(variantEntry.variant)
       ? renderVariantV159(variantEntry.variant)
       : null;
+  // The national series below the distribution keeps its own selection, so
+  // choosing a measure in one view never resets the other.
+  const regionWithNationalSeriesV162 =
+    !earlyBody && regionScenarioSummary && semanticRows.length > 0 && publicRegionScenarioContractV138(elementId) ? (
+      <>
+        {regionScenarioSummary}
+        <SemanticArchetypePreviewV125
+          contract={adapterContract}
+          semantics={semantics}
+          observations={observations}
+          entities={[]}
+          countryNameKo={countryNameKo}
+          detailTemplate={detailTemplate}
+          elementTitle={copy.title}
+          selectorState={nationalSeriesSelectorV162}
+          onSelectorStateChange={setNationalSeriesSelectorV162}
+          showRawTable={false}
+        />
+      </>
+    ) : null;
+  // V162: an element the 2026-09-30 delivery states as records only (no
+  // observation) opens on what it holds - the record count, the same figure
+  // its finder card and KPI tile state.
+  const recordCountLineV162 =
+    !isStatusV159 &&
+    observations.length === 0 &&
+    entities.length > 0 &&
+    // The block cards already state the count in their own header.
+    !(wideRecordsV162.length > 0 && (!variantEntry || LONG_TEMPLATE_VARIANTS_V162.has(variantEntry.variant))) ? (
+      <p className="pav126-record-count-v162" data-testid="record-count-v162">
+        원천 기록 <strong>{entities.length.toLocaleString("ko-KR")}건</strong>
+      </p>
+    ) : null;
   const body = isStatusV159 && typology ? (
     <StatusNoticeV159 typology={typology} />
   ) : (
     earlyBody ??
+    regionWithNationalSeriesV162 ??
     renderGenericShapeV159() ??
     lateBody ??
     regionScenarioSummary ?? (
@@ -564,7 +640,14 @@ export default function PublicDataAnalysisRouterV126({
           ))}
 
       <section className="pav126-primary" data-testid="public-analysis-primary" id={`pav126-primary-${elementId}`}>
-        {body}
+        {recordCountLineV162 ? (
+          <div className="pav126-body-v162">
+            {recordCountLineV162}
+            {body}
+          </div>
+        ) : (
+          body
+        )}
         {mapSlot}
       </section>
 

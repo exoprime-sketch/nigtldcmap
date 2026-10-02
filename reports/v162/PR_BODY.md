@@ -1,92 +1,136 @@
 ## 요약
-상세 마무리(PR 2) — 사용자 지시 2026-09-30의 a–d를 한 PR로.
-- **a. 1층 컨트롤 결함**: 1층 선택 상자가 접힌 2층만 바꾸던 29건(28개 요소)을 전수 점검·수정 → 0건
-  - A-002: '기준연도'를 보조 분석 옆으로
-  - 일반 '연도 선택'(A-019 등 24개): 추이 차트에 선택 연도 점선 표시
-  - D-008: 선택 연도 막대 표시
-  - B-021: 권역 비교를 선택기 위로
-  - B-025: 면적 기준을 막대 옆으로
-- **b. 지역명(P12-B, 카드·상세)**
-  - 검토 대기 지명은 현지명만, 확정분만 '한글명 (현지명)'
-  - ' · '·';' 목록은 나눠서 표기, 카드 6곳·상세 23곳 적용
-  - 선택 값·키·다운로드는 원문 그대로
-  - C-012 PPP 이중 괄호 수정
-  - 지도 14곳은 별도(세션 2 P8과 같은 파일)
-- **c. 미입고 3개**(C-023·E-011·E-013): 상태 칩·'자료 수집 상태' 제목·'자료가 아직 수집되지 않았습니다'·'다운로드 자료 없음' 제거 → '데이터 준비 중' 1줄 + 출처·간략 정의·데이터 설명
-- **d. 자료기간 규칙(41개 전수)**: 원천 필드 판정으로 '자료기간'·'기준 시점'(수집 시점, 헤드라인 연도 제거)·'계획기간'
-  - D-018: '기준 시점 2026-07 수집'
-  - 판정 불가 3개(B-025·C-006·C-011)는 현행 유지
+2026-09-30 입고 데이터 전면 갱신(VNM·BGD) — V162 PR-1. 병합 후 데이터 동결.
 
-- **추가(#47 병합 후)**: 지도 목록 연도 꼬리표·정보 패널에 자료기간 규칙(수집 시점은 목록에 연도 없음, 패널 '기준 시점 2026-07 수집'), A-027 OSM 분류값 '협궤 철도 (narrow_gauge)'·B-026 붙은 지명 띄어쓰기, #47 스캔 예외 2건 삭제(findings 0·exceptions 0). main #47·#50 병합, 자료기간 계약은 베트남 한정, #50 벵골 문자 지명에도 검토 대기 규칙
-상세: `reports/v162/REVIEW_V162.md`(전수 목록·분류표·검증), 기대값 변경 사유: `reports/v162/EXPECTATION_CHANGES_V162.md`
+- **적용**: VNM 149 워크북(입고 145 + 이월 4) · BGD 142 워크북. 제외 6 유지, E-011 공개 전환, B-024는 통계청 97행만 공개(배분 추정 비공개)
+- **홈 '데이터 기준일'** = 원자료 입고일(`manifest.provenance.sourceDeliveredAt`, 국가별) → 2026.09.30
+- **'데이터 준비 중'** 판정은 catalog 1곳
+- **C 계열 새 가로형 서식**: 공통 리더 1개(`wideRecordsV162`) + 블록 카드
+  - [식별]·레코드 ID·raw 파일 셀은 구조적으로 비노출, [출처]는 출처 줄
+  - 링크 글자는 문서 제목(없으면 '원문 PDF'), 파일명은 href에만
+  - 전용 화면(C-016·C-018·C-022·C-002·C-009/010 등)은 가로형 경로 추가, C-009/010 정책 설명 카드 유지
+- **B 계열 지역 열(결정 반영)**
+  - 적재 1곳에서 열 별칭(지역명_현지어·개편_후_소속_단위)과 행마다 `regionSystem`(adm1·adm1-prev)
+  - 63개 보기·지도·카드는 adm1-prev 행만. 34개 보기는 원자료 34 값 우선, 없을 때만 V151-2 집계
+  - 63→34 대응표는 공식 34개 경계(main 대응표와 34/34 동일)
+  - 두 체계 혼합 assert 단위 테스트
+- **새 서식 fix-forward**
+  - B-034 플럭스는 2001–2024 누계(원자료 비고)
+  - C-012 지도는 D-025 PPI 사업 등록부로 이관된 사업에서 복원(아래 표)
+  - C-013·C-022·C-024 지도 새 열
+  - C-025 사업 단위 점(1,133→341)
+  - B-008 관측소 묶음, B-023·B-028 분할 지표
+  - V157 레코드 지역 사이드카 재추출
+  - 국가 비교 54 유지(B-046 레코드 계열). E-011(NRI, 9/30 입고)은 비교 보류 목록 — PR-D에서 포함(55)
+- **공개 문구**
+  - 공급사 이전 메모('[열→행 전개] 구서식 열…', '(레코드ID …)', '본 파일 rN')·파일명 비노출
+  - '현지조사' → '현장 확인'(블록 제목과 같은 말)
+  - D-026 금액 '백만 USD'
+- **게이트**: `--expect-fail data-date,c003-filename` 제거
+
+상세: `reports/v162/PROGRESS.md` · 기대값 변경 사유: `reports/v162/EXPECTATION_CHANGES_V162.md`
 
 ## Preview
-PREVIEW_URL
+https://nigtldcmap-git-feat-v162-data-refresh-exoprime-5142s-projects.vercel.app
 
 ## 화면이 바뀌는 페이지와 확인 경로
 | 페이지 | 확인 경로 | 바뀌는 점 |
 |---|---|---|
-| 상세 A-002 | `/?view=data&country=VNM&element=A-002#element-detail` | 1층 위 선택기는 '표시 값'만. '기준연도'는 '차트 N개 더 보기' → 보조 분석 옆 |
-| 상세 A-019(및 연도 선택 24개) | `…element=A-019…` → 1층 '연도' 선택 변경 | 추이 차트에 '선택 ○○○○년' 점선 |
-| 상세 D-008 | `…element=D-008…` → '연도' 선택 | 해당 연도 막대에 '선택 ○○○○년' 표시 |
-| 상세 B-021·B-025 | `…element=B-021…`, `…element=B-025…` | 첫 차트가 먼저, 선택기는 바꾸는 차트 옆 |
-| 찾기·홈 카드 | `/#explorer` → B-031·E-005·C-022·C-016 카드 | 지역명 '한글명 (현지명)' |
-| 상세 지역명 | `…element=B-031…`, `B-003`, `C-019`, `B-026`, `C-012` | 성·시·도시 이름 '한글명 (현지명)', C-012 이중 괄호 해소 |
-| 상세 미입고 | `…element=C-023…`, `E-011`, `E-013` | 제목 아래 '데이터 준비 중' 1줄만 |
-| 찾기 카드·상세 출처 줄 | `/#explorer` → E-001·D-018·D-014·C-003 카드, 각 상세 '자료 출처·상세 데이터' | '기준 시점 2026-08-14 수집'·'2026-07 수집', D-014 '자료기간 2010–2023년', C-003 '계획기간' |
-| 지도 목록·정보 패널 | `/?country=VNM#map` → '모두 펼치기' → 적응기금 사업(D-018)·E-001 행의 i | 목록에 연도 없음, 패널 '기준 시점 2026-07 수집'·'집계 기준 승인일 기준' |
-| 상세 A-027·B-026 | `…element=A-027…` → '차트 더 보기' 분류별 막대, `…element=B-026…` | '협궤 철도 (narrow_gauge)' 등, '끼엔장 (Kiên Giang)' |
+| 홈 | `/` | 데이터 기준일 2026.09.30, 카드 수치(새 데이터) |
+| 찾기 | `/?view=data&country=VNM#explorer` | E-011 공개 카드, 카드 요약 재생성(B-003~007 '63개 성·시') |
+| C 계열 상세(가로형 17개) | `/?view=data&country=VNM&element=C-017#element-detail` (C-001·C-005·C-007·C-008·C-009·C-010·C-011·C-013·C-014·C-015·C-016·C-018·C-019·C-022·C-024·C-025 동일) | 블록 카드, 레코드 ID·파일명 0, 출처 링크 글자 |
+| C-009·C-010 | `…element=C-009…` | 가로형 카드 + 플랫폼 정책 설명 카드 |
+| B-003~B-007·B-026·B-029~B-042 | `…element=B-003…` | 주 분석·카드가 63개 성·시만(이전 70·97·127) |
+| 지도 34개 보기 | `/?view=map&country=VNM` → 레이어 B-030(또는 B-003·B-031~034) → 경계 '개편 후 34' | 원자료 34 값이 있는 계열은 그 값(native-34) |
+| B-034 | `…element=B-034…`, 지도 B-034 | 플럭스 3종 '(누계)' 2001–2024 |
+| C-012 | `…element=C-012…` → 지역별 분포 | D-025 PPI 사업 기준 사업 수·사업 목록 |
+| C-025 | 지도 C-025 | 사업 1곳 1점(341), 등록표준 필터 |
+| D-026 | `…element=D-026…` | 보증사업 13건, 금액 '백만 USD' |
+| C-011·C-013·C-014·C-018·C-022 | 각 상세 | 현장 확인 항목('현장 확인 — A. …') |
 
-## 1440px 캡처(전: 운영 main / 후: 이 브랜치 production 빌드)
-| 대상 | 전 | 후 |
-|---|---|---|
-| A-002 1층(표시 값만 추이 위, 기준연도는 보조 분석 옆) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-A-002-layer1.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-A-002-layer1.png) |
-| A-019 1층 추이 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-A-019-layer1.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-A-019-layer1.png) |
-| A-019 연도 선택 변경 → 추이에 선택 연도 표시 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-A-019-year-changed.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-A-019-year-changed.png) |
-| B-021 1층(권역 비교가 먼저) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-B-021-layer1.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-B-021-layer1.png) |
-| B-025 1층(쌍 막대, 면적 기준은 아래 막대 옆) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-B-025-layer1.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-B-025-layer1.png) |
-| D-008 1층(선택 연도 막대 표시) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-a-D-008-layer1.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-a-D-008-layer1.png) |
-| B-031 상세(성·시 비교) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-b-B-031-detail.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-b-B-031-detail.png) |
-| C-012 상세(PPP 표 이중 괄호) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-b-C-012-detail.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-b-C-012-detail.png) |
-| C-023 상세 상단(데이터 준비 중 1줄) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-c-C-023-top.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-c-C-023-top.png) |
-| E-011 상세 상단 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-c-E-011-top.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-c-E-011-top.png) |
-| 찾기 카드 B-031(성 이름) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-B-031.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-B-031.png) |
-| 찾기 카드 C-003(계획기간) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-C-003.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-C-003.png) |
-| 찾기 카드 C-022(34 단위) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-C-022.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-C-022.png) |
-| 찾기 카드 D-014(자료기간 정정) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-D-014.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-D-014.png) |
-| 찾기 카드 D-018(기준 시점) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-D-018.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-D-018.png) |
-| 찾기 카드 E-001(기준 시점) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-E-001.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-E-001.png) |
-| 찾기 카드 E-005(도시) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-card-E-005.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-card-E-005.png) |
-| C-003 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-C-003-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-C-003-source.png) |
-| D-014 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-D-014-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-D-014-source.png) |
-| D-018 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-D-018-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-D-018-source.png) |
-| E-001 출처 줄 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-d-E-001-source.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-d-E-001-source.png) |
-| 지도 목록 D-018 행·정보 패널 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-map-D-018-row-info.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-map-D-018-row-info.png) |
-| 지도 목록 E-001 행·정보 패널 | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-map-E-001-row-info.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-map-E-001-row-info.png) |
-| A-027 상세(OSM 분류 한글 라벨) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-e-A-027.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-e-A-027.png) |
-| B-026 상세(지역명) | [전](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/before-e-B-026.png) | [후](https://github.com/exoprime-sketch/nigtldcmap/blob/fix/v162-detail-finish/reports/v162/screens/after-e-B-026.png) |
+## 전후 캡처(1440px, `reports/v162/screens/`)
+- C 계열 3개: `before-v162-C-017.png` → `after-v162-C-017.png`, C-016, C-009 (전 = 운영 사이트)
+- 레코드 ID 노출 0 증거: `before-after-v162.json`(recordIdHits 0·PDF 0) + 화면 문구 감사 VNM 146·BGD 141 상세 0건(`source-notes-audit-{vnm,bgd}-v162.json`)
+- B 계열 63/34: `before-v162-bseries-B-003.png`('70개 성·시 분포') → `after-v162-bseries-B-003.png`(63개). 전 = 새 데이터 적용·처리 전 빌드(d5d5df2)
+- C-012 지도 복원: `after-v162-c012-C-012.png`
+
+## C-012 지도 복원(D-025 연계)
+| 항목 | 값 |
+|---|---|
+| 근거 | D-025 비고 '[…이관 2026-09-29] C-012 PPP 법제도·조달 체계에서 분리한 PPI 개별 사업'(36개 사업) + 기존 에너지 132행 — 옛 C-012 지도(PPI 수록 PPP 사업 수)의 모집단 |
+| 연결 키 | 지표 `D-025_ppi_project_registry`, 사업 키 `PPI_프로젝트키_중복_트랜치_합산용` |
+| 건수 | 173행 = 사업 164건(트랜치 9행 묶음) · 위치 확인 136건 · 위치 미확인 28건(D-025 목록·다운로드만) |
+| 지도 | 34개 체계 29개 단위(63개 경계 56개), 여러 성 사업 7건은 각 성에 1건 |
+| 위치 열 | 위치 139 · 사업지_행정구역 6 · 명칭 4 · 스폰서 1 (V157 사이드카 규칙) |
+| 금지 준수 | 옛 입고 값 재사용·전국값 배분 없음 |
+
+## 중복 파일 판정
+| 국가 | 요소 | 채택 | 규칙 | 값 충돌 |
+|---|---|---|---|---|
+| VNM | D-022 | (2) | 셀 단위 포함 | 0 |
+| VNM | D-025 | (2) | 셀 단위 포함(+C-012 이관분) | 0 |
+| BGD | D-022 | (2) | 셀 단위 포함 | 0 |
+| BGD | D-025 | (2) | 셀 단위 포함 | 0 |
+
+63to34 대조표: 34행 모두 기존 대응표와 일치(차이 0).
+
+## 지도 준비 중 12개 — 새 데이터의 지역 값 유무(세션2용)
+| 요소 | 관측 | 레코드 | 좌표 있는 행 | 지역이 적힌 행 | 서로 다른 지역 | 행정 체계 |
+|---|---|---|---|---|---|---|
+| A-013 | 0 | 365 | 0 | 0 | 0 | — |
+| A-022 | 54 | 0 | 0 | 0 | 0 | — |
+| B-002 | 64 | 1427 | 1427 | 1427 | 95 | adm1-prev 885, adm1 542 |
+| B-024 | 68 | 97 | 97 | 97 | 97 | adm1-prev 63, adm1 34 |
+| B-035 | 961 | 3038 | 3038 | 3038 | 98 | adm1-prev 1953, adm1 1054, country 31 |
+| B-036 | 48 | 392 | 392 | 392 | 98 | adm1-prev 252, adm1 136, country 4 |
+| B-044 | 2 | 21 | 0 | 0 | 0 | — |
+| B-046 | 0 | 64 | 0 | 0 | 0 | — |
+| B-047 | 0 | 81 | 0 | 0 | 0 | — |
+| C-003 | 0 | 272 | 0 | 0 | 0 | — |
+| C-006 | 0 | 38 | 0 | 0 | 0 | — |
+| C-017 | 0 | 56 | 0 | 1 | 1 | — |
+
+## 이번 PR에서 고친 화면 결함(새 납품 기인)
+- C-018 전원별 설비용량 막대가 비던 회귀('(년)' 표기 제거 뒤 열 조회 실패)
+- C-005 '우선순위 기술' 카드에 기술명·평가 점수 미표시([기술] 블록 전체 숨김)
+- C-005 장벽 404/408건·C-004·C-014 카드 제목 중복 → 원문 값으로 구분
+- B-012 재해 유형 분석 대신 '192개 성·시 분포'가 나오던 결함(등록부는 지역 요약 제외)
+- B-017 평가구역 4,664개로 잘못 셈(순위표 행 혼입) → 443개
+- E-009 연도별 값 입고 후 표 값 '—'·막대 사라짐 → 최신 공통 연도(2016)
+- E-011 옛 TRL '역량 상태 카드' → NRI 점수·순위 추세, 분석 제목 표시
+- B-038 측정항목명 '[산출 투입 · % 인구' 깨짐 → 꼬리표를 분류로
+- 찾기 카드 B-014·B-046·B-047·B-044 레코드 키(VNM_…) 노출, C-008 출처 파일명·public_id 노출 제거
+- 카드-상세 불일치 복원: B-001·B-002·B-025·B-032·A-027·A-028·A-030·C-018·C-022·D-024
+- 용어: 새 문구 약어 44개 용어집 등록, 링크·속성명 풀이
+- 지역 레코드 제목의 띄어쓰기 빠진 이름('ongNai', 'KiênGiang') → 'Đồng Nai', 'Kiên Giang'
+- A-028 OSM 분류값 'cave_entrance' → '동굴 입구 (cave_entrance)', B-048 지도 패널 코딩 메모·B-040 이용조건 정정 메모 비노출
+- C 계열 상세 상단 '판단 포인트'(상태 건수 등)가 사라지던 회귀(블록 접두 열 이름) → C-017·C-009·C-013 복원
+
+## CI 판정 기록
+- **7회차(1c7aeae) 녹색**: PR gate finalize:v151(acceptance 통과 24·실패 0·예상 실패 1(지도 준비 중 12)), analysis QA 필수 18(기준선 41, 신규 0), 상세 계약 QA, 브라우저 샤드 4/4, Static, Vercel. E2E는 시각 기준 이미지 4장만(main 공통 → P5 재생성)
+- 1~3회차 실패 원인: B-025 제목·B-005·E2E 값(1·2회차), 개체 카드·가뭄·D-022 분류 등(2회차), v132 보고서 런타임 필드 초기화(3회차)
+- 4회차: v132 보고서를 현재 화면 계약 기준으로 생성 + 런타임 감사 152/152(로컬 1회 통과 결과 동봉). 결과: analysis QA 기준선 41 → 필수 실패 19(23건 해소), 신규 1(C-007 검사 규칙) · 용어 2건(부속서 번호)
+- 5회차: 명칭 감사 로더(JSON import) → 수정. 6회차: Static 통과·analysis QA 기준선 통과(필수 18, 신규 0), 제외 감사 검색 대기·상세 계약 9건 → 수정(B-014 카드 제목 원자료 키 노출 포함)
+- 5회차 전 로컬 필터 점검(acceptance 영역별): 지도 60/60 렌더·클릭, 6폭 넘침 0, 스모크 통과, 식별자 스캔 0, 국명 0(원자료 레코드 값 제외 — 사용자 결정 10-02)
+- E2E 시각 기준 이미지 4장(홈·찾기·A-016·D-011): main(#55)에서도 같은 실패 — 기준 이미지가 V139 화면. 이 PR 범위 밖, P5(p5:final)에서 재생성(사용자 결정 10-01)
+
+## 단위 테스트 42건 분류
+- 파손(코드 수정)
+  - D-026 열 별칭, A-026 메타데이터 판정, 수문 모델행 분리, B-046/B-047 레코드
+  - C-002 부문·가스, C-025 카드·지도 사실·아이콘, B-048 광종
+  - C-009/010/016 가로형 경로, 파일명 제거 ' · ' 보존
+  - E-008 열·ISO 협력국, 정책 설명 추출기, countrySpec 동일성, 데이터 경로 문자열, 대응표
+- 데이터 기인 기대값 변경: D-026·E-018·C-011·A-026·B-023 순서·E-008·finderSort·문서 타임라인 fixture·정책 설명 JSON·국가 비교 계약 — 사유는 EXPECTATION_CHANGES_V162.md
+- 결과 789/789, 게이트 로직 완화 없음(화면 문구 감사는 패턴 3종 추가)
 
 ## 검증
-| 항목 | 결과 |
-|---|---|
-| tsc | 오류 0 |
-| test:unit | 614/614 |
-| 1층 컨트롤 전수 점검(146) | 수정 전 29건(28개 요소) → 수정 후 0건, 실행 오류 0 (`reports/v162/layer-controls-audit-v162*.md`) |
-| e2e detail-all(146 + 제외 6) | 152/152 (A-002·A-019 포함). 수정 전 main은 A-002·A-019 실패 |
-| production 빌드(CI=true, 경고=오류) | 성공 |
-| finalize:v151(1차) | 실패 — public-copy:v134가 미입고 3개의 '자료 수집 상태' 제목을 기대(c로 제거). 릴리스 감사는 첫 실패에서 멈춰 이후 단계 미실행 |
-| 이후 단계 개별 실행 | 20개 중 19 PASS, detail-hierarchy:v135만 같은 원인 → 기대값 변경(사유 `EXPECTATION_CHANGES_V162.md`) |
-| finalize:v151(2차, 마지막) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 35(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 24/24 |
-| 게이트 반복 | 2회(규칙 한도 이내) |
-| **추가 범위 후(main #47·#50 병합)** | |
-| test:unit | 739/739(main의 새 테스트 포함) |
-| 공개 문구 스캔(#47, 예외 0) | findings 0 · exceptions 0 · 검사 797 · 목록 72행 · 활성 60 |
-| e2e 전체(214) | 213 통과 · 1 실패 = visual `detail-a016`: main에서도 같은 차이(48,873픽셀) — 기준 이미지 노후, 이 PR 무관 |
-| production 빌드(CI=true) | 성공 |
-| finalize:v151(병합 후 1회) | **PASS** — release:v136 80/80, role-split 53/53, analysis QA 필수 34(기준선 41 이내)·신규 0, boundary-34 21 통과·1 건너뜀, boundary-policy 25/25 |
+- `npx tsc --noEmit` 0 · `npm run test:unit` 789/789 · 상세 계약 QA(바뀐 28개) 28/28
+- 화면 문구 감사 VNM 146·BGD 141 상세 0건, 런타임 오류 0
+- BGD 검증기 52/52 PASS
+- `finalize:v151`(acceptance 포함): CI 게이트로 판정(로컬 전체 실행 안 함, 사용자 지시 10-01)
 
-병합은 Preview 검토 후 "PR #N 병합" 지시가 있을 때만.
+## 미완료·후속
+- 비교 헤드라인 9개(A-030·B-002·B-009·B-022·B-035·B-038·B-043·D-002·B-046)는 PR-D 대표 지표 판단표에서 재검토
+- 지도 준비 중 12개는 세션2
+- `extend-map-targets-v157 --check`는 main에서도 B-009 사유 누락으로 실패(새 데이터 기인, 이 PR 범위 밖)
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-https://claude.ai/code/session_01V68y43MvVho6XhCXbfyvLp

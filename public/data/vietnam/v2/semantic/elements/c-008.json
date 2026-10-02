@@ -7,29 +7,38 @@
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "이니셔티브_운영_상태_NAZCA_status",
+      "labelKo": "[이니셔티브] 운영 상태",
+      "valueCount": 2,
+      "values": [
+        "Active",
+        "Unknown"
+      ]
     }
   ],
   "elementId": "C-008",
-  "entityCount": 235,
+  "entityCount": 117,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 159,
+  "indicatorCount": 140,
   "indicators": [
     {
-      "axisGroupKey": "measure-6298ed0c9009|분야",
+      "axisGroupKey": "measure-40ef78589ef3|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "기후 분야(감축/적응)",
-      "indicatorId": "C-008_climate_field",
+      "displayLabel": "Cooperative Climate Initiative 참여 현황 · actor",
+      "indicatorId": "C-008_actor",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-6298ed0c9009",
-        "labelKo": "기후 분야(감축/적응)",
-        "unit": "분야",
-        "unitFamily": "text"
+        "key": "measure-40ef78589ef3",
+        "labelKo": "Cooperative Climate Initiative 참여 현황",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
       },
-      "seriesKey": "measure-6298ed0c9009|분야||C-008_climate_field",
+      "seriesKey": "measure-40ef78589ef3|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-008_actor",
       "sourceCaveat": null,
-      "sourceLabel": "기후 분야(감축/적응)",
+      "sourceLabel": "Cooperative Climate Initiative 참여 현황",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -809,6 +818,26 @@
       }
     },
     {
+      "axisGroupKey": "measure-40ef78589ef3|속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "Cooperative Climate Initiative 참여 현황 · initiative",
+      "indicatorId": "C-008_initiative",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-40ef78589ef3",
+        "labelKo": "Cooperative Climate Initiative 참여 현황",
+        "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-40ef78589ef3|속성별, 1.2_entity 3행 머리글 괄호 표기 참조||C-008_initiative",
+      "sourceCaveat": null,
+      "sourceLabel": "Cooperative Climate Initiative 참여 현황",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-36bac33fe171|일자",
       "dimensionLabels": {
         "category": "이행목표 Glasgow Forests Declaration",
@@ -1391,106 +1420,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-7a52200e7a32|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명 · initiative_name_ccacoalition",
-      "indicatorId": "C-008_initiative_name_ccacoalition",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a52200e7a32",
-        "labelKo": "이니셔티브 명",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7a52200e7a32|URL||C-008_initiative_name_ccacoalition",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-a7be1e465fec|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명",
-      "indicatorId": "C-008_initiative_name_climateaction_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-a7be1e465fec",
-        "labelKo": "이니셔티브 명",
-        "unit": "건",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-a7be1e465fec|건||C-008_initiative_name_climateaction_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7a52200e7a32|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명 · initiative_name_climatelaws",
-      "indicatorId": "C-008_initiative_name_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a52200e7a32",
-        "labelKo": "이니셔티브 명",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7a52200e7a32|URL||C-008_initiative_name_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7a52200e7a32|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명 · initiative_name_ec_europa",
-      "indicatorId": "C-008_initiative_name_ec_europa",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a52200e7a32",
-        "labelKo": "이니셔티브 명",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7a52200e7a32|URL||C-008_initiative_name_ec_europa",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-7a52200e7a32|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명 · initiative_name_en_baochinhphu",
-      "indicatorId": "C-008_initiative_name_en_baochinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a52200e7a32",
-        "labelKo": "이니셔티브 명",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7a52200e7a32|URL||C-008_initiative_name_en_baochinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-3fe90bd9e1f8|—",
       "dimensionLabels": {
         "category": "Glasgow Forests Declaration",
@@ -1591,26 +1520,6 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-7a52200e7a32|URL",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "이니셔티브 명 · initiative_name_govuk",
-      "indicatorId": "C-008_initiative_name_govuk",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-7a52200e7a32",
-        "labelKo": "이니셔티브 명",
-        "unit": "URL",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-7a52200e7a32|URL||C-008_initiative_name_govuk",
-      "sourceCaveat": null,
-      "sourceLabel": "이니셔티브 명",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-3fe90bd9e1f8|—",
@@ -2611,102 +2520,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-00dacc64705a|기관",
-      "dimensionLabels": {
-        "category": "기관 목록"
-      },
-      "dimensions": {
-        "category": "기관 목록"
-      },
-      "displayLabel": "참여 국가·기관 목록 · participant_list_ccacoalition",
-      "indicatorId": "C-008_participant_list_ccacoalition",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-00dacc64705a",
-        "labelKo": "참여 국가",
-        "unit": "기관",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-00dacc64705a|기관|category=기관 목록|C-008_participant_list_ccacoalition",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 국가·기관 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-00dacc64705a|기관",
-      "dimensionLabels": {
-        "category": "기관 목록"
-      },
-      "dimensions": {
-        "category": "기관 목록"
-      },
-      "displayLabel": "참여 국가·기관 목록 · participant_list_climateaction_unfccc",
-      "indicatorId": "C-008_participant_list_climateaction_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-00dacc64705a",
-        "labelKo": "참여 국가",
-        "unit": "기관",
-        "unitFamily": "other"
-      },
-      "seriesKey": "measure-00dacc64705a|기관|category=기관 목록|C-008_participant_list_climateaction_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 국가·기관 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-e58664b59469|방식",
-      "dimensionLabels": {
-        "category": "기관 목록"
-      },
-      "dimensions": {
-        "category": "기관 목록"
-      },
-      "displayLabel": "참여 국가·기관 목록",
-      "indicatorId": "C-008_participant_list_climateaction_unfccc_2",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-e58664b59469",
-        "labelKo": "참여 국가",
-        "unit": "방식",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-e58664b59469|방식|category=기관 목록|C-008_participant_list_climateaction_unfccc_2",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 국가·기관 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-00dacc64705a|기관",
-      "dimensionLabels": {
-        "category": "기관 목록"
-      },
-      "dimensions": {
-        "category": "기관 목록"
-      },
-      "displayLabel": "참여 국가·기관 목록 · participant_list_govuk",
-      "indicatorId": "C-008_participant_list_govuk",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-00dacc64705a",
-        "labelKo": "참여 국가",
-        "unit": "기관",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-00dacc64705a|기관|category=기관 목록|C-008_participant_list_govuk",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 국가·기관 목록",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-cfa405d10ae2|—",
       "dimensionLabels": {
         "category": "기관 목록 CCAC",
@@ -3161,26 +2974,6 @@
         "sourceRow": 89,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-05710e615d47|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "참여 상태(Active/Completed)",
-      "indicatorId": "C-008_participation_status",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-05710e615d47",
-        "labelKo": "참여 상태(Active/Completed)",
-        "unit": "건",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-05710e615d47|건||C-008_participation_status",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 상태(Active/Completed)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-152464e49ee7|—",
@@ -3829,26 +3622,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-8df05782e538|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "참여 연도 · participation_year_baochinhphu",
-      "indicatorId": "C-008_participation_year_baochinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-8df05782e538",
-        "labelKo": "참여 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-8df05782e538|일자||C-008_participation_year_baochinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-e69bd6edc4a7|—",
       "dimensionLabels": {
         "category": "CCAC",
@@ -3881,26 +3654,6 @@
         "sourceRow": 47,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-8df05782e538|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "참여 연도 · participation_year_climateaction_unfccc",
-      "indicatorId": "C-008_participation_year_climateaction_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-8df05782e538",
-        "labelKo": "참여 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-8df05782e538|일자||C-008_participation_year_climateaction_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-e69bd6edc4a7|—",
@@ -4003,26 +3756,6 @@
         "sourceRow": 44,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-8df05782e538|일자",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "참여 연도 · participation_year_govuk",
-      "indicatorId": "C-008_participation_year_govuk",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-8df05782e538",
-        "labelKo": "참여 연도",
-        "unit": "일자",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-8df05782e538|일자||C-008_participation_year_govuk",
-      "sourceCaveat": null,
-      "sourceLabel": "참여 연도",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-8df05782e538|일자",
@@ -4433,26 +4166,6 @@
       }
     },
     {
-      "axisGroupKey": "measure-312741290cc3|백만 tCO₂e",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [백만 tCO₂e]",
-      "indicatorId": "C-008_theme_caselaw",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-312741290cc3",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "백만 tCO₂e",
-        "unitFamily": "emissions"
-      },
-      "seriesKey": "measure-312741290cc3|백만 tCO₂e||C-008_theme_caselaw",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
       "axisGroupKey": "measure-b5dd29b196e5|—",
       "dimensionLabels": {
         "category": "CCAC",
@@ -4485,86 +4198,6 @@
         "sourceRow": 74,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-9c04deae22fa|건",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [건]",
-      "indicatorId": "C-008_theme_climateaction_unfccc",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-9c04deae22fa",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "건",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-9c04deae22fa|건||C-008_theme_climateaction_unfccc",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-062d5ba4beb8|법령번호",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [법령번호]",
-      "indicatorId": "C-008_theme_climatelaws",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-062d5ba4beb8",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "법령번호",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-062d5ba4beb8|법령번호||C-008_theme_climatelaws",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-de484de01608|MtCO₂",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [MtCO₂]",
-      "indicatorId": "C-008_theme_ec_europa",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-de484de01608",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "MtCO₂",
-        "unitFamily": "text"
-      },
-      "seriesKey": "measure-de484de01608|MtCO₂||C-008_theme_ec_europa",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
-    },
-    {
-      "axisGroupKey": "measure-5867273eb4b8|%",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [%]",
-      "indicatorId": "C-008_theme_en_baochinhphu",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-5867273eb4b8",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "%",
-        "unitFamily": "percent"
-      },
-      "seriesKey": "measure-5867273eb4b8|%||C-008_theme_en_baochinhphu",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-b5dd29b196e5|—",
@@ -4667,26 +4300,6 @@
         "sourceRow": 71,
         "sourceSheet": "2_meta_info"
       }
-    },
-    {
-      "axisGroupKey": "measure-89284b436a69|억 USD",
-      "dimensionLabels": {},
-      "dimensions": {},
-      "displayLabel": "주제(에너지/산림/수송/도시 등) · 주제(에너지/산림/수송/도시 등) [억 USD]",
-      "indicatorId": "C-008_theme_govuk",
-      "inferenceMethod": "deterministic-source-structure",
-      "measure": {
-        "key": "measure-89284b436a69",
-        "labelKo": "주제(에너지/산림/수송/도시 등)",
-        "unit": "억 USD",
-        "unitFamily": "currency"
-      },
-      "seriesKey": "measure-89284b436a69|억 USD||C-008_theme_govuk",
-      "sourceCaveat": null,
-      "sourceLabel": "주제(에너지/산림/수송/도시 등)",
-      "sourceLabelEn": null,
-      "sourceNote": null,
-      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-b5dd29b196e5|—",
@@ -5181,6 +4794,14 @@
   ],
   "measures": [
     {
+      "indicatorCount": 2,
+      "key": "measure-40ef78589ef3",
+      "labelKo": "Cooperative Climate Initiative 참여 현황",
+      "recordCount": 0,
+      "unit": "속성별, 1.2_entity 3행 머리글 괄호 표기 참조",
+      "unitFamily": "other"
+    },
+    {
       "indicatorCount": 1,
       "key": "measure-84b8c9a67c0c",
       "labelKo": "NAZCA 등재 개별 행위자 명부",
@@ -5237,25 +4858,9 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-6298ed0c9009",
-      "labelKo": "기후 분야(감축/적응)",
-      "recordCount": 0,
-      "unit": "분야",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 8,
       "key": "measure-a2c3c0328922",
       "labelKo": "원본 링크 (URL)",
-      "recordCount": 0,
-      "unit": "URL",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 5,
-      "key": "measure-7a52200e7a32",
-      "labelKo": "이니셔티브 명",
       "recordCount": 0,
       "unit": "URL",
       "unitFamily": "text"
@@ -5266,14 +4871,6 @@
       "labelKo": "이니셔티브 명",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-a7be1e465fec",
-      "labelKo": "이니셔티브 명",
-      "recordCount": 0,
-      "unit": "건",
       "unitFamily": "text"
     },
     {
@@ -5357,54 +4954,6 @@
       "unitFamily": "count"
     },
     {
-      "indicatorCount": 1,
-      "key": "measure-5867273eb4b8",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "%",
-      "unitFamily": "percent"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-de484de01608",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "MtCO₂",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-9c04deae22fa",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "건",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-312741290cc3",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "백만 tCO₂e",
-      "unitFamily": "emissions"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-062d5ba4beb8",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "법령번호",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-89284b436a69",
-      "labelKo": "주제(에너지/산림/수송/도시 등)",
-      "recordCount": 0,
-      "unit": "억 USD",
-      "unitFamily": "currency"
-    },
-    {
       "indicatorCount": 4,
       "key": "measure-cfa405d10ae2",
       "labelKo": "참여 국가",
@@ -5429,35 +4978,11 @@
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 3,
-      "key": "measure-00dacc64705a",
-      "labelKo": "참여 국가",
-      "recordCount": 0,
-      "unit": "기관",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-e58664b59469",
-      "labelKo": "참여 국가",
-      "recordCount": 0,
-      "unit": "방식",
-      "unitFamily": "text"
-    },
-    {
       "indicatorCount": 19,
       "key": "measure-152464e49ee7",
       "labelKo": "참여 상태 (Active / Completed)",
       "recordCount": 0,
       "unit": "—",
-      "unitFamily": "text"
-    },
-    {
-      "indicatorCount": 1,
-      "key": "measure-05710e615d47",
-      "labelKo": "참여 상태(Active/Completed)",
-      "recordCount": 0,
-      "unit": "건",
       "unitFamily": "text"
     },
     {
@@ -5469,7 +4994,7 @@
       "unitFamily": "other"
     },
     {
-      "indicatorCount": 4,
+      "indicatorCount": 1,
       "key": "measure-8df05782e538",
       "labelKo": "참여 연도",
       "recordCount": 0,

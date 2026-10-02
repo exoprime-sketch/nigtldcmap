@@ -18,6 +18,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { gunzipSync } from "node:zlib";
 
 import {
   countryPublicDirV158,
@@ -205,16 +206,35 @@ const undeclaredCandidates = contract.rows
     column: row.criteriaEvidence.provinceColumn?.column ?? "name/note",
   }));
 
+/**
+ * V162: the element's published records. Downloads became per-element ZIPs
+ * (V158), so the records are read from the element's pack - the same records
+ * the download is built from - and the old downloads/<id>.json is used only
+ * where a tree still has it.
+ */
+const packShards = new Map();
+function publishedEntities(elementId) {
+  const downloadPath = resolve(DATA, `downloads/${elementId}.json`);
+  if (existsSync(downloadPath)) return readJson(downloadPath).entities ?? null;
+  const index = readJson(resolve(DATA, "packs/bundle-index-v124.json"));
+  const entry = index.elements?.[elementId];
+  if (!entry) return null;
+  const path = resolve(DATA, entry.packUrl.replace(/^\/data\/[^/]+\/v2\//u, ""));
+  if (!packShards.has(path)) {
+    const envelope = readJson(path);
+    packShards.set(path, JSON.parse(gunzipSync(Buffer.from(envelope.payloadChunks.join(""), "base64")).toString("utf8")));
+  }
+  return packShards.get(path).elements?.[elementId]?.entities?.records ?? null;
+}
+
 mkdirSync(OUT_DIR, { recursive: true });
 const summary = [];
 for (const row of rows) {
-  const downloadPath = resolve(DATA, `downloads/${row.elementId}.json`);
-  if (!existsSync(downloadPath)) {
+  const records = publishedEntities(row.elementId);
+  if (!records) {
     summary.push({ elementId: row.elementId, status: "download-missing" });
     continue;
   }
-  const payload = readJson(downloadPath);
-  const records = payload.entities ?? [];
   const recordsAreOrganisations = records.some((record) =>
     Object.keys(record.normalizedAttributes ?? {}).some((key) => ORGANISATION_RECORD_KEYS.test(key))
   );

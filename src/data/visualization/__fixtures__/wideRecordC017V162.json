@@ -1,0 +1,204 @@
+{
+  "fieldDefinitions": [
+    {
+      "label": "[식별] 레코드ID",
+      "normalizedKey": "식별_레코드ID",
+      "sourceField": "attr_1"
+    },
+    {
+      "label": "[식별] 레코드명",
+      "normalizedKey": "식별_레코드명",
+      "sourceField": "attr_2"
+    },
+    {
+      "label": "[식별] 레코드 유형",
+      "normalizedKey": "식별_레코드_유형",
+      "sourceField": "attr_3"
+    },
+    {
+      "label": "[제도] 제도명 + 적용 대상",
+      "normalizedKey": "제도_제도명_적용_대상",
+      "sourceField": "attr_4"
+    },
+    {
+      "label": "[제도] 유형",
+      "normalizedKey": "제도_유형",
+      "sourceField": "attr_5"
+    },
+    {
+      "label": "[제도] 상태",
+      "normalizedKey": "제도_상태",
+      "sourceField": "attr_6"
+    },
+    {
+      "label": "[제도] 시행 기관",
+      "normalizedKey": "제도_시행_기관",
+      "sourceField": "attr_7"
+    },
+    {
+      "label": "[제도] 근거 법령 (번호 + 국문 명칭)",
+      "normalizedKey": "제도_근거_법령_번호_국문_명칭",
+      "sourceField": "attr_8"
+    },
+    {
+      "label": "[제도] 적용 조건 (용량·기한 등 사업 요건)",
+      "normalizedKey": "제도_적용_조건_용량_기한_등_사업_요건",
+      "sourceField": "attr_9"
+    },
+    {
+      "label": "[요율] 가격 하한",
+      "normalizedKey": "요율_가격_하한",
+      "sourceField": "attr_10"
+    },
+    {
+      "label": "[요율] 가격 상한",
+      "normalizedKey": "요율_가격_상한",
+      "sourceField": "attr_11"
+    },
+    {
+      "label": "[요율] 가격 단위",
+      "normalizedKey": "요율_가격_단위",
+      "sourceField": "attr_12"
+    },
+    {
+      "label": "[세제] 세율 (%)",
+      "normalizedKey": "세제_세율",
+      "sourceField": "attr_13"
+    },
+    {
+      "label": "[세제] 적용 기간 (년)",
+      "normalizedKey": "세제_적용_기간_년",
+      "sourceField": "attr_14"
+    },
+    {
+      "label": "[세제] 면제 기간 (년)",
+      "normalizedKey": "세제_면제_기간_년",
+      "sourceField": "attr_15"
+    },
+    {
+      "label": "[세제] 감면 기간 (년)",
+      "normalizedKey": "세제_감면_기간_년",
+      "sourceField": "attr_16"
+    },
+    {
+      "label": "[세제] 감면율 (%)",
+      "normalizedKey": "세제_감면율",
+      "sourceField": "attr_17"
+    },
+    {
+      "label": "[세제] 기타 비율 (%)",
+      "normalizedKey": "세제_기타_비율",
+      "sourceField": "attr_18"
+    },
+    {
+      "label": "[기간] 시행일 (YYYY-MM-DD)",
+      "normalizedKey": "기간_시행일_YYYY_MM_DD",
+      "sourceField": "attr_19"
+    },
+    {
+      "label": "[기간] 적용 기한 (YYYY-MM-DD)",
+      "normalizedKey": "기간_적용_기한_YYYY_MM_DD",
+      "sourceField": "attr_20"
+    },
+    {
+      "label": "[지역] 권역",
+      "normalizedKey": "지역_권역",
+      "sourceField": "attr_21"
+    },
+    {
+      "label": "[지역] 지역 요건 판정",
+      "normalizedKey": "지역_지역_요건_판정",
+      "sourceField": "attr_22"
+    },
+    {
+      "label": "[지역] 지역명 (개편 전)",
+      "normalizedKey": "지역_지역명_개편_전",
+      "sourceField": "attr_23"
+    },
+    {
+      "label": "[지역] 행정코드 (개편 전)",
+      "normalizedKey": "지역_행정코드_개편_전",
+      "sourceField": "attr_24"
+    },
+    {
+      "label": "[지역] 지역명 (현행)",
+      "normalizedKey": "지역_지역명_현행",
+      "sourceField": "attr_25"
+    },
+    {
+      "label": "[지역] 행정코드 (현행)",
+      "normalizedKey": "지역_행정코드_현행",
+      "sourceField": "attr_26"
+    },
+    {
+      "label": "[출처] 원문 문서명",
+      "normalizedKey": "출처_원문_문서명",
+      "sourceField": "attr_27"
+    },
+    {
+      "label": "[출처] 원문 URL",
+      "normalizedKey": "출처_원문_URL",
+      "sourceField": "attr_28"
+    },
+    {
+      "label": "[출처] raw 파일명",
+      "normalizedKey": "출처_raw_파일명",
+      "sourceField": "attr_29"
+    },
+    {
+      "label": "[출처] 인용 위치",
+      "normalizedKey": "출처_인용_위치",
+      "sourceField": "attr_30"
+    },
+    {
+      "label": "[기술] 기술코드 판단 유형",
+      "normalizedKey": "기술_기술코드_판단_유형",
+      "sourceField": "attr_31"
+    },
+    {
+      "label": "[기술] 기술코드 판단 근거",
+      "normalizedKey": "기술_기술코드_판단_근거",
+      "sourceField": "attr_32"
+    },
+    {
+      "label": "[결측] framework 필수 속성 결측 (코드·사유)",
+      "normalizedKey": "결측_framework_필수_속성_결측_코드_사유",
+      "sourceField": "attr_33"
+    }
+  ],
+  "normalizedAttributes": {
+    "결측_framework_필수_속성_결측_코드_사유": null,
+    "기간_시행일_YYYY_MM_DD": "2017-06-01",
+    "기간_적용_기한_YYYY_MM_DD": "2019-06-30",
+    "기술_기술코드_판단_근거": "원문이 điện mặt trời(태양광)을 대상 전원으로 명시",
+    "기술_기술코드_판단_유형": "직접, 원천 자체 분류",
+    "세제_감면_기간_년": null,
+    "세제_감면율": null,
+    "세제_기타_비율": null,
+    "세제_면제_기간_년": null,
+    "세제_세율": null,
+    "세제_적용_기간_년": 20,
+    "식별_레코드ID": "VNM-C017-FIT-SOL-2017",
+    "식별_레코드_유형": "지원 요율",
+    "식별_레코드명": "태양광 FIT(2017) - 계통연계 태양광 전 유형",
+    "요율_가격_단위": "VND/kWh",
+    "요율_가격_상한": 2086,
+    "요율_가격_하한": 2086,
+    "제도_근거_법령_번호_국문_명칭": "Quyết định 11/2017/QĐ-TTg (총리 결정, 태양광 발전 개발 지원 메커니즘)",
+    "제도_상태": "종료",
+    "제도_시행_기관": "총리 결정, 산업무역부(MOIT), 베트남전력공사(EVN, 매수)",
+    "제도_유형": "FIT",
+    "제도_적용_조건_용량_기한_등_사업_요건": "2019-06-30 이전 COD 사업, 부가세 제외, 9.35 USc/kWh 등가(SBV 중심환율, 환율 변동 시 조정), 제12조",
+    "제도_제도명_적용_대상": "태양광 FIT(2017) - 계통연계 태양광 전 유형",
+    "지역_권역": "전국",
+    "지역_지역_요건_판정": null,
+    "지역_지역명_개편_전": null,
+    "지역_지역명_현행": "전국",
+    "지역_행정코드_개편_전": null,
+    "지역_행정코드_현행": "VN",
+    "출처_raw_파일명": null,
+    "출처_원문_URL": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2017/04/11.signed.pdf",
+    "출처_원문_문서명": null,
+    "출처_인용_위치": null
+  }
+}

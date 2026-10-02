@@ -5,7 +5,7 @@
   "duplicateVisibleLabelCount": 0,
   "e012": {
     "idNoteMismatchCount": 0,
-    "indicatorCount": 90,
+    "indicatorCount": 229,
     "measureKeys": [
       "employment_rate",
       "employed_persons",
@@ -17,7 +17,7 @@
     ],
     "missingOtherWageCount": 3,
     "missingOtherWageLabelled": true,
-    "observationCount": 92,
+    "observationCount": 2161,
     "occupationOptions": [
       {
         "labelKo": "전체 직군",
@@ -84,6 +84,18 @@
         "sortOrder": 10,
         "sourceCode": "other",
         "value": "other"
+      },
+      {
+        "labelKo": "기타·미정의(군인)",
+        "sortOrder": 11,
+        "sourceCode": "armed",
+        "value": "armed_forces"
+      },
+      {
+        "labelKo": "기타·미정의(분류불능)",
+        "sortOrder": 12,
+        "sourceCode": "unclass",
+        "value": "unclassified"
       }
     ],
     "occupations": [
@@ -146,6 +158,18 @@
         "sortOrder": 10,
         "sourceCode": "other",
         "value": "other"
+      },
+      {
+        "labelKo": "기타·미정의(군인)",
+        "sortOrder": 11,
+        "sourceCode": "armed",
+        "value": "armed_forces"
+      },
+      {
+        "labelKo": "기타·미정의(분류불능)",
+        "sortOrder": 12,
+        "sourceCode": "unclass",
+        "value": "unclassified"
       }
     ],
     "sexes": [
@@ -168,6 +192,30 @@
     "tableRecordReconciliation": "PASS",
     "totalRowSeparated": true,
     "years": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2007,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
       2023,
       2024
     ]
@@ -178,13 +226,13 @@
   "recordReconciliation": "PASS",
   "schemaVersion": "v125",
   "semanticDimensionLossCount": 0,
-  "semanticIndicatorCount": 7072,
-  "semanticObservationCount": 19007,
-  "separatedMixedUnitMeasureGroupCount": 1,
-  "sourceDuplicateLabelGroupCount": 106,
-  "sourceIndicatorMetadataRowCount": 7072,
-  "sourceObservationCount": 19007,
-  "sourceUniqueIndicatorCount": 7072,
+  "semanticIndicatorCount": 7253,
+  "semanticObservationCount": 21126,
+  "separatedMixedUnitMeasureGroupCount": 2,
+  "sourceDuplicateLabelGroupCount": 170,
+  "sourceIndicatorMetadataRowCount": 7253,
+  "sourceObservationCount": 21126,
+  "sourceUniqueIndicatorCount": 7253,
   "unassignedContractCount": 0,
   "zeroImputationCount": 0
 }

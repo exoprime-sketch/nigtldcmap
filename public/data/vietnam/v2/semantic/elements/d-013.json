@@ -3,7 +3,7 @@
     {
       "key": "category",
       "labelKo": "분류",
-      "valueCount": 21,
+      "valueCount": 24,
       "values": [
         "기초 서비스 · 자원 접근성",
         "녹색 고용(Green Employment)",
@@ -14,6 +14,9 @@
         "문화 · 사회적 가치",
         "물 효율 · 지속가능성",
         "물질 이용 효율",
+        "보조지표 생태계 활력",
+        "보조지표 환경보건",
+        "보조지표 환경성과지수 종합",
         "사회 보호(Social Protection)",
         "사회 통합(Social Inclusion)",
         "사회 형평(Social Equity)",
@@ -41,16 +44,17 @@
     {
       "key": "year",
       "labelKo": "연도",
-      "valueCount": 1,
+      "valueCount": 2,
       "values": [
-        "2024"
+        "2024",
+        "2026"
       ]
     }
   ],
   "elementId": "D-013",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 21,
+  "indicatorCount": 24,
   "indicators": [
     {
       "axisGroupKey": "measure-36c8b59e695d|점",
@@ -179,6 +183,78 @@
         "sourceRow": 21,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 생태계 활력"
+      },
+      "dimensions": {
+        "category": "보조지표 생태계 활력"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 생태계 활력",
+      "indicatorId": "D-013_epi_eco",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 생태계 활력|D-013_epi_eco",
+      "sourceCaveat": null,
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 생태계 활력",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 환경성과지수 종합"
+      },
+      "dimensions": {
+        "category": "보조지표 환경성과지수 종합"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 환경성과지수 종합",
+      "indicatorId": "D-013_epi_epi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 환경성과지수 종합|D-013_epi_epi",
+      "sourceCaveat": null,
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 환경성과지수 종합",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 환경보건"
+      },
+      "dimensions": {
+        "category": "보조지표 환경보건"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 환경보건",
+      "indicatorId": "D-013_epi_hlt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 환경보건|D-013_epi_hlt",
+      "sourceCaveat": null,
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 환경보건",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-36c8b59e695d|점",
@@ -727,15 +803,15 @@
   ],
   "measures": [
     {
-      "indicatorCount": 21,
+      "indicatorCount": 24,
       "key": "measure-36c8b59e695d",
       "labelKo": "GGGI Green Growth Index",
-      "recordCount": 21,
+      "recordCount": 24,
       "unit": "점",
       "unitFamily": "score"
     }
   ],
-  "observationCount": 21,
+  "observationCount": 24,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

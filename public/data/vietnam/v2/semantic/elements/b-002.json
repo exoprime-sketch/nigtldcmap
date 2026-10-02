@@ -3,8 +3,11 @@
     {
       "key": "detail",
       "labelKo": "세부 분류",
-      "valueCount": 8,
+      "valueCount": 11,
       "values": [
+        "1901-1930",
+        "2071-2099 SSP2-4.5",
+        "2071-2099 SSP5-8.5",
         "Af (열대우림)",
         "Am (열대몬순)",
         "Aw (열대사바나)",
@@ -18,12 +21,23 @@
     {
       "key": "detail_2",
       "labelKo": "detail_2",
-      "valueCount": 4,
+      "valueCount": 7,
       "values": [
+        "1901-1930",
         "1901–1930 관측",
         "1991–2020 관측",
+        "2071-2099 SSP2-4.5",
+        "2071-2099 SSP5-8.5",
         "2071–2099 SSP2-4.5",
         "2071–2099 SSP5-8.5"
+      ]
+    },
+    {
+      "key": "entityType",
+      "labelKo": "레코드 유형",
+      "valueCount": 1,
+      "values": [
+        "entity"
       ]
     },
     {
@@ -38,10 +52,58 @@
     }
   ],
   "elementId": "B-002",
-  "entityCount": 0,
+  "entityCount": 1427,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 19,
+  "indicatorCount": 68,
   "indicators": [
+    {
+      "axisGroupKey": "measure-ecdcda6a26f3|구분·%",
+      "dimensionLabels": {
+        "category": "기후대군 비율(개체 목록)"
+      },
+      "dimensions": {
+        "category": "기후대군 비율(개체 목록)"
+      },
+      "displayLabel": "ADM1 단위 기간별 우세 기후대·기후대군 비율(개체 목록)",
+      "indicatorId": "B-002_koppen_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ecdcda6a26f3",
+        "labelKo": "ADM1 단위 기간별 우세 기후대",
+        "unit": "구분·%",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ecdcda6a26f3|구분·%|category=기후대군 비율(개체 목록)|B-002_koppen_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "ADM1 단위 기간별 우세 기후대·기후대군 비율(개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-ecdcda6a26f3|구분·%",
+      "dimensionLabels": {
+        "category": "기후대군 비율(개체 목록) - 2025년 34개 체계"
+      },
+      "dimensions": {
+        "category": "기후대군 비율(개체 목록) - 2025년 34개 체계"
+      },
+      "displayLabel": "ADM1 단위 기간별 우세 기후대·기후대군 비율(개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-002_koppen_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ecdcda6a26f3",
+        "labelKo": "ADM1 단위 기간별 우세 기후대",
+        "unit": "구분·%",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-ecdcda6a26f3|구분·%|category=기후대군 비율(개체 목록) - 2025년 34개 체계|B-002_koppen_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "ADM1 단위 기간별 우세 기후대·기후대군 비율(개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
       "dimensionLabels": {
@@ -71,6 +133,84 @@
         "sourceRow": 12,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Af (열대우림) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_af_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Af (열대우림)|detail_2=1901-1930|B-002_koppen_area_af_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Af (열대우림) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Af (열대우림) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_af_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Af (열대우림)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_af_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Af (열대우림) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Af (열대우림) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_af_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Af (열대우림)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_af_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Af (열대우림) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
@@ -105,6 +245,84 @@
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
       "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Am (열대몬순) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_am_tropical_monsoon_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Am (열대몬순)|detail_2=1901-1930|B-002_koppen_area_am_tropical_monsoon_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Am (열대몬순) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Am (열대몬순) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Am (열대몬순)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Am (열대몬순) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Am (열대몬순) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Am (열대몬순)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Am (열대몬순) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
         "detail": "Aw (열대사바나)"
       },
       "dimensions": {
@@ -131,6 +349,84 @@
         "sourceRow": 14,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Aw (열대사바나) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_aw_tropical_savanna_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Aw (열대사바나)|detail_2=1901-1930|B-002_koppen_area_aw_tropical_savanna_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Aw (열대사바나) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Aw (열대사바나)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Aw (열대사바나)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
@@ -165,6 +461,84 @@
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
       "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_cfa_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfa (온대·연중습윤·고온하계)|detail_2=1901-1930|B-002_koppen_area_cfa_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_cfa_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfa (온대·연중습윤·고온하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_cfa_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_cfa_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfa (온대·연중습윤·고온하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_cfa_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
         "detail": "Cfb (온대·연중습윤·온난하계)"
       },
       "dimensions": {
@@ -191,6 +565,84 @@
         "sourceRow": 16,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_cfb_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfb (온대·연중습윤·온난하계)|detail_2=1901-1930|B-002_koppen_area_cfb_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_cfb_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfb (온대·연중습윤·온난하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_cfb_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_cfb_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cfb (온대·연중습윤·온난하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_cfb_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
@@ -225,6 +677,84 @@
     {
       "axisGroupKey": "measure-095dc03abb8f|km²",
       "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_cwa_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwa (온대·동계건조·고온하계)|detail_2=1901-1930|B-002_koppen_area_cwa_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_cwa_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwa (온대·동계건조·고온하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_cwa_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_cwa_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwa (온대·동계건조·고온하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_cwa_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
         "detail": "Cwb (온대·동계건조·온난하계)"
       },
       "dimensions": {
@@ -253,6 +783,84 @@
       }
     },
     {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_area_cwb_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwb (온대·동계건조·온난하계)|detail_2=1901-1930|B-002_koppen_area_cwb_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_area_cwb_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwb (온대·동계건조·온난하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_area_cwb_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-095dc03abb8f|km²",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_area_cwb_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-095dc03abb8f",
+        "labelKo": "기후대별 점유 면적",
+        "unit": "km²",
+        "unitFamily": "area"
+      },
+      "seriesKey": "measure-095dc03abb8f|km²|detail=Cwb (온대·동계건조·온난하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_area_cwb_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 면적 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
       "axisGroupKey": "measure-dc9435ecb81e|구분",
       "dimensionLabels": {},
       "dimensions": {},
@@ -277,6 +885,126 @@
         "sourceRow": 4,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-dc9435ecb81e|구분",
+      "dimensionLabels": {
+        "detail": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "1901-1930"
+      },
+      "displayLabel": "국가 우세 기후대 — 1901-1930",
+      "indicatorId": "B-002_koppen_class_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dc9435ecb81e",
+        "labelKo": "국가 우세 기후대",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-dc9435ecb81e|구분|detail=1901-1930|B-002_koppen_class_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "국가 우세 기후대 — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-dc9435ecb81e|구분",
+      "dimensionLabels": {
+        "detail": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "국가 우세 기후대 — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_class_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dc9435ecb81e",
+        "labelKo": "국가 우세 기후대",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-dc9435ecb81e|구분|detail=2071-2099 SSP2-4.5|B-002_koppen_class_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "국가 우세 기후대 — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-dc9435ecb81e|구분",
+      "dimensionLabels": {
+        "detail": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "국가 우세 기후대 — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_class_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-dc9435ecb81e",
+        "labelKo": "국가 우세 기후대",
+        "unit": "구분",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-dc9435ecb81e|구분|detail=2071-2099 SSP5-8.5|B-002_koppen_class_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "국가 우세 기후대 — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-3b45710aa52f|% · km²",
+      "dimensionLabels": {
+        "category": "면적(지역×기간×기후대 개체 목록)"
+      },
+      "dimensions": {
+        "category": "면적(지역×기간×기후대 개체 목록)"
+      },
+      "displayLabel": "기후대별 점유 비율·면적(지역×기간×기후대 개체 목록)",
+      "indicatorId": "B-002_koppen_class_adm1",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b45710aa52f",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "% · km²",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-3b45710aa52f|% · km²|category=면적(지역×기간×기후대 개체 목록)|B-002_koppen_class_adm1",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율·면적(지역×기간×기후대 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-3b45710aa52f|% · km²",
+      "dimensionLabels": {
+        "category": "면적(지역×기간×기후대 개체 목록) - 개편 후 34체계"
+      },
+      "dimensions": {
+        "category": "면적(지역×기간×기후대 개체 목록) - 개편 후 34체계"
+      },
+      "displayLabel": "기후대별 점유 비율·면적(지역×기간×기후대 개체 목록) - 개편 후 34체계",
+      "indicatorId": "B-002_koppen_class_adm1_adm34",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b45710aa52f",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "% · km²",
+        "unitFamily": "text"
+      },
+      "seriesKey": "measure-3b45710aa52f|% · km²|category=면적(지역×기간×기후대 개체 목록) - 개편 후 34체계|B-002_koppen_class_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율·면적(지역×기간×기후대 개체 목록) - 개편 후 34체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
@@ -311,6 +1039,84 @@
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
       "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Af (열대우림) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_af_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Af (열대우림)|detail_2=1901-1930|B-002_koppen_share_af_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Af (열대우림) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Af (열대우림) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_af_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Af (열대우림)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_af_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Af (열대우림) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Af (열대우림)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Af (열대우림) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_af_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Af (열대우림)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_af_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Af (열대우림) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
         "detail": "Am (열대몬순)"
       },
       "dimensions": {
@@ -337,6 +1143,84 @@
         "sourceRow": 6,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Am (열대몬순) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_am_tropical_monsoon_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Am (열대몬순)|detail_2=1901-1930|B-002_koppen_share_am_tropical_monsoon_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Am (열대몬순) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Am (열대몬순) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_am_tropical_monsoon_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Am (열대몬순)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_am_tropical_monsoon_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Am (열대몬순) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Am (열대몬순)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Am (열대몬순) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_am_tropical_monsoon_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Am (열대몬순)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_am_tropical_monsoon_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Am (열대몬순) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
@@ -371,6 +1255,84 @@
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
       "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Aw (열대사바나) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_aw_tropical_savanna_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Aw (열대사바나)|detail_2=1901-1930|B-002_koppen_share_aw_tropical_savanna_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Aw (열대사바나) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Aw (열대사바나) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_aw_tropical_savanna_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Aw (열대사바나)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_aw_tropical_savanna_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Aw (열대사바나) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Aw (열대사바나)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_aw_tropical_savanna_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Aw (열대사바나)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_aw_tropical_savanna_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Aw (열대사바나) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
         "detail": "Cfa (온대·연중습윤·고온하계)"
       },
       "dimensions": {
@@ -397,6 +1359,84 @@
         "sourceRow": 8,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_cfa_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfa (온대·연중습윤·고온하계)|detail_2=1901-1930|B-002_koppen_share_cfa_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_cfa_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfa (온대·연중습윤·고온하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_cfa_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cfa (온대·연중습윤·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_cfa_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfa (온대·연중습윤·고온하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_cfa_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfa (온대·연중습윤·고온하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
@@ -431,6 +1471,84 @@
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
       "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_cfb_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfb (온대·연중습윤·온난하계)|detail_2=1901-1930|B-002_koppen_share_cfb_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_cfb_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfb (온대·연중습윤·온난하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_cfb_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cfb (온대·연중습윤·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_cfb_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cfb (온대·연중습윤·온난하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_cfb_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cfb (온대·연중습윤·온난하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
         "detail": "Cwa (온대·동계건조·고온하계)"
       },
       "dimensions": {
@@ -461,6 +1579,84 @@
     {
       "axisGroupKey": "measure-f886ea70efa0|%",
       "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_cwa_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwa (온대·동계건조·고온하계)|detail_2=1901-1930|B-002_koppen_share_cwa_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_cwa_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwa (온대·동계건조·고온하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_cwa_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cwa (온대·동계건조·고온하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_cwa_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwa (온대·동계건조·고온하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_cwa_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwa (온대·동계건조·고온하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
         "detail": "Cwb (온대·동계건조·온난하계)"
       },
       "dimensions": {
@@ -487,6 +1683,84 @@
         "sourceRow": 11,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "1901-1930"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 1901-1930",
+      "indicatorId": "B-002_koppen_share_cwb_1901_1930",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwb (온대·동계건조·온난하계)|detail_2=1901-1930|B-002_koppen_share_cwb_1901_1930",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 1901-1930",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP2-4.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP2-4.5",
+      "indicatorId": "B-002_koppen_share_cwb_2071_2099_ssp2_4_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwb (온대·동계건조·온난하계)|detail_2=2071-2099 SSP2-4.5|B-002_koppen_share_cwb_2071_2099_ssp2_4_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP2-4.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f886ea70efa0|%",
+      "dimensionLabels": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "dimensions": {
+        "detail": "Cwb (온대·동계건조·온난하계)",
+        "detail_2": "2071-2099 SSP5-8.5"
+      },
+      "displayLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP5-8.5",
+      "indicatorId": "B-002_koppen_share_cwb_2071_2099_ssp5_8_5",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f886ea70efa0",
+        "labelKo": "기후대별 점유 비율",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-f886ea70efa0|%|detail=Cwb (온대·동계건조·온난하계)|detail_2=2071-2099 SSP5-8.5|B-002_koppen_share_cwb_2071_2099_ssp5_8_5",
+      "sourceCaveat": null,
+      "sourceLabel": "기후대별 점유 비율 — Cwb (온대·동계건조·온난하계) — 2071-2099 SSP5-8.5",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-cbe45ba5c300|%",
@@ -619,28 +1893,44 @@
   ],
   "measures": [
     {
-      "indicatorCount": 1,
+      "indicatorCount": 2,
+      "key": "measure-ecdcda6a26f3",
+      "labelKo": "ADM1 단위 기간별 우세 기후대",
+      "recordCount": 0,
+      "unit": "구분·%",
+      "unitFamily": "text"
+    },
+    {
+      "indicatorCount": 4,
       "key": "measure-dc9435ecb81e",
       "labelKo": "국가 우세 기후대",
-      "recordCount": 1,
+      "recordCount": 4,
       "unit": "구분",
       "unitFamily": "text"
     },
     {
-      "indicatorCount": 7,
+      "indicatorCount": 28,
       "key": "measure-095dc03abb8f",
       "labelKo": "기후대별 점유 면적",
-      "recordCount": 7,
+      "recordCount": 28,
       "unit": "km²",
       "unitFamily": "area"
     },
     {
-      "indicatorCount": 7,
+      "indicatorCount": 28,
       "key": "measure-f886ea70efa0",
       "labelKo": "기후대별 점유 비율",
-      "recordCount": 7,
+      "recordCount": 28,
       "unit": "%",
       "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-3b45710aa52f",
+      "labelKo": "기후대별 점유 비율",
+      "recordCount": 0,
+      "unit": "% · km²",
+      "unitFamily": "text"
     },
     {
       "indicatorCount": 4,
@@ -651,7 +1941,7 @@
       "unitFamily": "percent"
     }
   ],
-  "observationCount": 19,
+  "observationCount": 64,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

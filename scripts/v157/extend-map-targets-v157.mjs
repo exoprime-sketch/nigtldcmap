@@ -341,7 +341,7 @@ function provinceAttributeTarget(row, entry) {
     category: mapCategoryFor(row.elementId),
     publicName: row.targetName,
     sourceFields: [
-      "지역명_베트남어",
+      "지역명_현지어",
       "지역명_로마자",
       declared.measure.sourceKey,
       declared.categoryKey,
@@ -352,7 +352,7 @@ function provinceAttributeTarget(row, entry) {
     representation: "admin1-choropleth",
     build: {
       kind: "admin1-attributes",
-      regionKeys: ["지역명_베트남어", "지역명_로마자"],
+      regionKeys: ["지역명_현지어", "지역명_로마자"],
       // The map colours by this column's value (범주형 단계구분도) and keeps the
       // measure for the popup.
       categoryKey: declared.categoryKey,
@@ -388,7 +388,7 @@ function entityPointTarget(row, entry) {
       "위도",
       "경도",
       ...[labelKey].filter(Boolean),
-      "2025_개편_후_소속_34개_체계",
+      "개편_후_소속_단위",
     ],
     sourceSpatialUnit: `원자료 좌표가 있는 격자·지점 ${row.criteriaEvidence.coordinateRows}건`,
     displaySpatialUnit: "원자료 좌표 그대로(이동·보정 없음)",

@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-039",
-  "entityCount": 228,
+  "entityCount": 263,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 20,
+  "indicatorCount": 23,
   "indicators": [
     {
       "axisGroupKey": "measure-6bd0c5a1b0ce|MW",
@@ -415,21 +415,93 @@
       "sourceProvenance": {}
     },
     {
-      "axisGroupKey": "measure-a49f99f25ada|MW / TWh/yr / 백만 kW",
+      "axisGroupKey": "measure-2bd10ca4428f|TWh/yr · GWh/yr",
       "dimensionLabels": {},
       "dimensions": {},
-      "displayLabel": "수력 잠재량(전국)",
-      "indicatorId": "B-039_hydropower_national",
+      "displayLabel": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+      "indicatorId": "B-039_gross_potential_adm1_adm34",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-a49f99f25ada",
-        "labelKo": "수력 잠재량(전국)",
+        "key": "measure-2bd10ca4428f",
+        "labelKo": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+        "unit": "TWh/yr · GWh/yr",
+        "unitFamily": "energy"
+      },
+      "seriesKey": "measure-2bd10ca4428f|TWh/yr · GWh/yr||B-039_gross_potential_adm1_adm34",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f4f899d0535e|MW / TWh/yr / 백만 kW",
+      "dimensionLabels": {
+        "category": "설비(전국) - 보조 지표(국가 문헌: IHA · EVN · PDP8 등)"
+      },
+      "dimensions": {
+        "category": "설비(전국) - 보조 지표(국가 문헌: IHA · EVN · PDP8 등)"
+      },
+      "displayLabel": "수력 잠재량·설비(전국) - 보조 지표(국가 문헌: IHA·EVN·PDP8 등)",
+      "indicatorId": "B-039_hydropower_national_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-f4f899d0535e",
+        "labelKo": "수력 잠재량",
         "unit": "MW / TWh/yr / 백만 kW",
         "unitFamily": "capacity"
       },
-      "seriesKey": "measure-a49f99f25ada|MW / TWh/yr / 백만 kW||B-039_hydropower_national",
+      "seriesKey": "measure-f4f899d0535e|MW / TWh/yr / 백만 kW|category=설비(전국) - 보조 지표(국가 문헌: IHA · EVN · PDP8 등)|B-039_hydropower_national_aux",
       "sourceCaveat": null,
-      "sourceLabel": "수력 잠재량(전국)",
+      "sourceLabel": "수력 잠재량·설비(전국) - 보조 지표(국가 문헌: IHA·EVN·PDP8 등)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-32dab02ee5a5|MW / TWh/yr / 백만 kW",
+      "dimensionLabels": {
+        "category": "발전량(전국) - 실적 계열"
+      },
+      "dimensions": {
+        "category": "발전량(전국) - 실적 계열"
+      },
+      "displayLabel": "수력 설비용량·발전량(전국) - 실적 계열",
+      "indicatorId": "B-039_hydropower_national_installed",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-32dab02ee5a5",
+        "labelKo": "수력 설비용량",
+        "unit": "MW / TWh/yr / 백만 kW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-32dab02ee5a5|MW / TWh/yr / 백만 kW|category=발전량(전국) - 실적 계열|B-039_hydropower_national_installed",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 설비용량·발전량(전국) - 실적 계열",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-683e77060b30|MW / TWh/yr / 백만 kW",
+      "dimensionLabels": {
+        "category": "계획 계열"
+      },
+      "dimensions": {
+        "category": "계획 계열"
+      },
+      "displayLabel": "수력 잠재량(전국) - 잠재량·계획 계열",
+      "indicatorId": "B-039_hydropower_national_potential",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-683e77060b30",
+        "labelKo": "수력 잠재량(전국) - 잠재량",
+        "unit": "MW / TWh/yr / 백만 kW",
+        "unitFamily": "capacity"
+      },
+      "seriesKey": "measure-683e77060b30|MW / TWh/yr / 백만 kW|category=계획 계열|B-039_hydropower_national_potential",
+      "sourceCaveat": null,
+      "sourceLabel": "수력 잠재량(전국) - 잠재량·계획 계열",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -708,8 +780,24 @@
     },
     {
       "indicatorCount": 1,
+      "key": "measure-32dab02ee5a5",
+      "labelKo": "수력 설비용량",
+      "recordCount": 0,
+      "unit": "MW / TWh/yr / 백만 kW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-9b457cc4f86b",
       "labelKo": "수력 이론 총잠재량(성 단위 개체 목록)",
+      "recordCount": 0,
+      "unit": "TWh/yr · GWh/yr",
+      "unitFamily": "energy"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-2bd10ca4428f",
+      "labelKo": "수력 이론 총잠재량(성 단위 개체 목록) - 2025년 34개 체계",
       "recordCount": 0,
       "unit": "TWh/yr · GWh/yr",
       "unitFamily": "energy"
@@ -724,8 +812,16 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-a49f99f25ada",
-      "labelKo": "수력 잠재량(전국)",
+      "key": "measure-f4f899d0535e",
+      "labelKo": "수력 잠재량",
+      "recordCount": 0,
+      "unit": "MW / TWh/yr / 백만 kW",
+      "unitFamily": "capacity"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-683e77060b30",
+      "labelKo": "수력 잠재량(전국) - 잠재량",
       "recordCount": 0,
       "unit": "MW / TWh/yr / 백만 kW",
       "unitFamily": "capacity"

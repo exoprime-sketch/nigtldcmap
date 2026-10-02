@@ -55,7 +55,9 @@ test("E-006 cards separate a Vietnam office from a head office abroad", () => {
 
 test("C-025 card prints 미기재 for an unstated reduction, never 0", () => {
   const entities = inflate(source("c-025")) as Record<string, unknown>[];
-  const key = "속성14_연간예상감축_tCO2e";
+  // 2026-09-30 delivery: the wide "[블록] 속성" template's key for this field
+  // (wideRecordsV162.ts), replacing the old "속성14_연간예상감축_tCO2e".
+  const key = "사업_연간_예상_감축량_tCO_e_년";
   const unstated = entities.find((row) => {
     const value = ((row.normalizedAttributes || {}) as Record<string, unknown>)[key];
     return value === undefined || value === null || String(value).trim() === "";

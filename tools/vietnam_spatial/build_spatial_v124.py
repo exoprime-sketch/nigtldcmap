@@ -644,7 +644,7 @@ def _build_spatial_documents(
             payloads["B-034"],
             _build_b034(payloads["B-034"], resolver),
             coverage_kind="full",
-            preferred_variable_text="산림탄소 순플럭스(연평균)",
+            preferred_variable_text="산림탄소 순플럭스",
         ),
         "C-016": _spatial_document(
             "C-016",

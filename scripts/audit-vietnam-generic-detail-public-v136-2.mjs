@@ -11,7 +11,7 @@
  * changes the selectors, because the dump came back when the selection changed.
  */
 
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import {
@@ -137,6 +137,14 @@ function screenReadingExpression() {
         .filter(visible)
         .map((node) => clean(node.textContent))
         .filter(Boolean),
+      // V162: per card, so a fact is checked on the card it belongs to.
+      entityCards: [...document.querySelectorAll('[data-testid="public-entity-card-v131"]')]
+        .filter(visible)
+        .map((card) => ({
+          title: clean(card.querySelector('[data-testid="public-entity-card-title"]')?.textContent),
+          facts: [...card.querySelectorAll('[data-testid="public-entity-card-facts"] dt')].map((node) => clean(node.textContent)),
+        })),
+      portfolioUncategorized: Number((document.querySelector('[data-testid="portfolio-uncategorized-v162"]')?.textContent || '').replace(/,/g, '').match(/(\\d+)건/)?.[1] || 0),
       entityCardFactLabels: [
         ...document.querySelectorAll('[data-testid="public-entity-card-facts"] dt'),
       ]
@@ -405,6 +413,14 @@ const sourceCategoryTotal = [...sourceCategoryCounts.values()].reduce(
   (sum, value) => sum + value,
   0
 );
+// V162: the 2026-09-30 delivery adds AIIB and IFC rows that state no DAC
+// sector. They are not a category; the screen says how many it left out.
+const sourceUncategorized = d022Records.length - sourceCategoryTotal;
+// The platform's verified Korean names for World Bank projects: a card titled
+// by one of them must also show the official English name.
+const registryDisplayTitles = new Set(
+  [...readFileSync(resolve(PROJECT_ROOT, "src/data/visualization/publicProjectTitleRegistryV136_3.ts"), "utf8").matchAll(/entryV136_3\("[^"]+",\s*"[^"]*",\s*"([^"]+)"\)/gu)].map((match) => match[1])
+);
 
 // A code standing in front of a name, or an activity number, inside a heading.
 const TITLE_INTERNAL_IDENTIFIER = /\d{4,}\s*[—–-]\s*\S|\b\d{4,}-P\d{6}\b|\bP\d{6}\b/u;
@@ -452,8 +468,17 @@ for (const { state, reading } of portfolioReadings) {
   }
 }
 
+// V162: card by card - every card titled with a verified Korean name carries
+// "공식 영문명". A card titled by the source's own English name (the AIIB, IFC
+// and JICA rows) is its official name already.
+const registryCardsShown = portfolioReadings.flatMap((entry) =>
+  (entry.reading.entityCards || []).filter((card) => registryDisplayTitles.has(card.title)).map((card) => ({ state: entry.state, ...card }))
+);
+const registryCardsWithoutOfficialTitle = registryCardsShown.filter((card) => !card.facts.includes("공식 영문명"));
 const verifiedTitleStates = portfolioReadings.filter((entry) =>
-  (entry.reading.entityCardFactLabels || []).includes("공식 영문명")
+  (entry.reading.entityCards || [])
+    .filter((card) => registryDisplayTitles.has(card.title))
+    .every((card) => card.facts.includes("공식 영문명"))
 );
 
 audit.check("D022_SOURCE_RECORDS", d022Records.length > 0, d022Records.length, ">0");
@@ -465,9 +490,9 @@ audit.check(
 );
 audit.check(
   "D022_OFFICIAL_TITLE_FACT_PRESENT",
-  portfolioReadings.length > 0 && verifiedTitleStates.length === portfolioReadings.length,
-  { states: portfolioReadings.length, withOfficialTitle: verifiedTitleStates.length },
-  { states: portfolioReadings.length, withOfficialTitle: portfolioReadings.length }
+  portfolioReadings.length > 0 && verifiedTitleStates.length === portfolioReadings.length && registryCardsWithoutOfficialTitle.length === 0,
+  { states: portfolioReadings.length, withOfficialTitle: verifiedTitleStates.length, registryCardsShown: registryCardsShown.length, registryCardsWithoutOfficialTitle },
+  { states: portfolioReadings.length, withOfficialTitle: portfolioReadings.length, registryCardsWithoutOfficialTitle: [] }
 );
 audit.check(
   "CATEGORY_GROUPING_PRESERVED",
@@ -477,9 +502,10 @@ audit.check(
 );
 audit.check(
   "CATEGORY_SOURCE_TOTAL_RECONCILED",
-  sourceCategoryTotal === d022Records.length,
-  { sourceCategoryTotal, records: d022Records.length },
-  { sourceCategoryTotal: d022Records.length, records: d022Records.length }
+  sourceCategoryTotal + sourceUncategorized === d022Records.length &&
+    portfolioReadings.every((entry) => Number(entry.reading.portfolioUncategorized || 0) === sourceUncategorized),
+  { sourceCategoryTotal, sourceUncategorized, shownUncategorized: portfolioReadings.map((entry) => entry.reading.portfolioUncategorized || 0), records: d022Records.length },
+  { sourceCategoryTotal: d022Records.length - sourceUncategorized, shownUncategorized: sourceUncategorized, records: d022Records.length }
 );
 audit.check("CONSOLE_ERROR", runtimeErrors.length === 0, runtimeErrors, []);
 

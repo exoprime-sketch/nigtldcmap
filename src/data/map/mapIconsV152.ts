@@ -188,6 +188,14 @@ function carbonIconCategoryV152(properties: Record<string, unknown>): MapIconCat
 // ------------------------------------------------------------------ B-048 mines
 
 const B048_OTHER_LABEL_V152 = "기타 광종";
+/**
+ * Colour by named mineral (icon glyph stays "pick" for every B-048 site).
+ * The 2026-09-30 delivery widened USGS MRDS coverage past the original 6
+ * minerals and started listing co-located minerals at one site as a single
+ * "A / B / C" value (e.g. "텅스텐 / 주석 / 납 / 몰리브덴"); a value not found
+ * verbatim here is matched by its first-listed mineral, so a compound site
+ * still gets a real category colour instead of falling back to "기타 광종".
+ */
 const B048_MINERAL_COLORS_V152: Record<string, string> = {
   니켈: "#5f7f3a",
   구리: "#b5651d",
@@ -195,11 +203,25 @@ const B048_MINERAL_COLORS_V152: Record<string, string> = {
   "보크사이트/알루미나": "#c0504d",
   "티타늄(ilmenite·leucoxene)": "#607d8b",
   "텅스텐(+형석·비스무트·구리)": "#37474f",
+  텅스텐: "#37474f",
+  몰리브덴: "#8d6e63",
+  티타늄: "#607d8b",
+  주석: "#546e7a",
+  아연: "#00897b",
+  납: "#616161",
+  은: "#9e9e9e",
+  금: "#c9a227",
+  철: "#8b4513",
+  크롬: "#4527a0",
+  안티모니: "#ad1457",
+  "인산염(인)": "#558b2f",
+  "알루미늄(보크사이트)": "#c0504d",
 };
 
 function mineralIconCategoryV152(properties: Record<string, unknown>, layerColor: string): MapIconCategoryV152 {
   const raw = firstNonEmpty(properties.mineral, properties["광종"]);
-  const color = raw ? B048_MINERAL_COLORS_V152[raw] : undefined;
+  const primary = raw ? raw.split(/\s*\/\s*/u)[0] : null;
+  const color = raw ? B048_MINERAL_COLORS_V152[raw] ?? (primary ? B048_MINERAL_COLORS_V152[primary] : undefined) : undefined;
   if (raw && color) return { iconId: "pick", key: raw, label: raw, color, fallback: false };
   return { iconId: "pick", key: B048_OTHER_LABEL_V152, label: B048_OTHER_LABEL_V152, color: layerColor, fallback: true };
 }

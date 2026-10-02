@@ -22,6 +22,7 @@
  * `vietnam/vietnamDataLoaderV124.ts` keeps its exported names and delegates to
  * the default country's instance, so its callers are unchanged.
  */
+import { registerFieldDefinitionsV162 } from "../visualization/wideRecordsV162";
 import { isVietnamElementIdV121, elementIdFromPublicSlugV121 } from "../vietnam/vietnamElementSlugsV121";
 import { isPublicAssetWithinV128, publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { VIETNAM_DATA_RUNTIME_VERSION_V124 } from "../vietnam/vietnamTypesV124";
@@ -658,6 +659,8 @@ function createCountryDataLoaderV158(iso3: string): CountryDataLoaderV158 {
           { elementId, packUrl: entry.packUrl }
         );
       }
+      // V162: the wide record template is read from the sheet's own header.
+      registerFieldDefinitionsV162(iso3, elementId, payload.meta.fieldDefinitions);
       return payload;
     })().catch((error) => {
       elementCache.delete(key);

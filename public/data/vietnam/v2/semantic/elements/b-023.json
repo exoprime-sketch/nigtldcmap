@@ -10,9 +10,9 @@
     }
   ],
   "elementId": "B-023",
-  "entityCount": 11,
+  "entityCount": 382,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 12,
+  "indicatorCount": 13,
   "indicators": [
     {
       "axisGroupKey": "measure-61dfb5ce7b23|m³/s",
@@ -193,25 +193,45 @@
       }
     },
     {
-      "axisGroupKey": "measure-36c823fbd96b|지표별 상이(속성 열 참조)",
-      "dimensionLabels": {
-        "category": "유역 개체 목록)"
-      },
-      "dimensions": {
-        "category": "유역 개체 목록)"
-      },
-      "displayLabel": "건기／우기 유량 차이(지점·유역 개체 목록)",
+      "axisGroupKey": "measure-a5c9c3b074dc|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "건기／우기 유량 차이(하천 지점 개체 목록)",
       "indicatorId": "B-023_hydro_site",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-36c823fbd96b",
-        "labelKo": "건기／우기 유량 차이(지점",
+        "key": "measure-a5c9c3b074dc",
+        "labelKo": "건기／우기 유량 차이(하천 지점 개체 목록)",
         "unit": "지표별 상이(속성 열 참조)",
         "unitFamily": "other"
       },
-      "seriesKey": "measure-36c823fbd96b|지표별 상이(속성 열 참조)|category=유역 개체 목록)|B-023_hydro_site",
+      "seriesKey": "measure-a5c9c3b074dc|지표별 상이(속성 열 참조)||B-023_hydro_site",
       "sourceCaveat": null,
-      "sourceLabel": "건기／우기 유량 차이(지점·유역 개체 목록)",
+      "sourceLabel": "건기／우기 유량 차이(하천 지점 개체 목록)",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-0b9b22822ffe|지표별 상이(속성 열 참조)",
+      "dimensionLabels": {
+        "category": "Vinh et al. 2014)"
+      },
+      "dimensions": {
+        "category": "Vinh et al. 2014)"
+      },
+      "displayLabel": "건기／우기 유량 차이 - 보조 지표(문헌값: MRC 2009 · Vinh et al. 2014)",
+      "indicatorId": "B-023_hydro_site_lit_aux",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-0b9b22822ffe",
+        "labelKo": "건기／우기 유량 차이 - 보조 지표(문헌값: MRC 2009",
+        "unit": "지표별 상이(속성 열 참조)",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-0b9b22822ffe|지표별 상이(속성 열 참조)|category=Vinh et al. 2014)|B-023_hydro_site_lit_aux",
+      "sourceCaveat": null,
+      "sourceLabel": "건기／우기 유량 차이 - 보조 지표(문헌값: MRC 2009 · Vinh et al. 2014)",
       "sourceLabelEn": null,
       "sourceNote": null,
       "sourceProvenance": {}
@@ -370,8 +390,16 @@
     },
     {
       "indicatorCount": 1,
-      "key": "measure-36c823fbd96b",
-      "labelKo": "건기／우기 유량 차이(지점",
+      "key": "measure-0b9b22822ffe",
+      "labelKo": "건기／우기 유량 차이 - 보조 지표(문헌값: MRC 2009",
+      "recordCount": 0,
+      "unit": "지표별 상이(속성 열 참조)",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-a5c9c3b074dc",
+      "labelKo": "건기／우기 유량 차이(하천 지점 개체 목록)",
       "recordCount": 0,
       "unit": "지표별 상이(속성 열 참조)",
       "unitFamily": "other"

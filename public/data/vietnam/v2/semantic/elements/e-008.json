@@ -7,35 +7,41 @@
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2026"
+      ]
     }
   ],
   "elementId": "E-008",
-  "entityCount": 144,
+  "entityCount": 6790,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 26,
+  "indicatorCount": 27,
   "indicators": [
     {
-      "axisGroupKey": "measure-bb2c50075d03|건",
+      "axisGroupKey": "measure-f6289d42d6c5|건",
       "dimensionLabels": {
-        "category": "특허",
         "technology": "확인필요"
       },
       "dimensions": {
-        "category": "특허",
         "technology": "확인필요"
       },
-      "displayLabel": "논문·특허 · 베트남 기후기술 논문 8편(선별 표본) · paper",
+      "displayLabel": "논문,특허 · 베트남 기후기술 논문 8편(선별 표본) · paper",
       "indicatorId": "E-008_paper",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-bb2c50075d03",
-        "labelKo": "논문",
+        "key": "measure-f6289d42d6c5",
+        "labelKo": "논문,특허",
         "unit": "건",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-bb2c50075d03|건|category=특허|technology=확인필요|E-008_paper",
+      "seriesKey": "measure-f6289d42d6c5|건|technology=확인필요|E-008_paper",
       "sourceCaveat": null,
-      "sourceLabel": "논문·특허",
+      "sourceLabel": "논문,특허",
       "sourceLabelEn": "Publications and patents (climate technology)",
       "sourceNote": null,
       "sourceProvenance": {
@@ -47,27 +53,45 @@
       }
     },
     {
-      "axisGroupKey": "measure-bb2c50075d03|건",
+      "axisGroupKey": "measure-ef91cff01e68|%",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "논문,특허",
+      "indicatorId": "E-008_paper_intl_coauth_rate",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ef91cff01e68",
+        "labelKo": "논문,특허",
+        "unit": "%",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ef91cff01e68|%||E-008_paper_intl_coauth_rate",
+      "sourceCaveat": null,
+      "sourceLabel": "논문,특허",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-f6289d42d6c5|건",
       "dimensionLabels": {
-        "category": "특허",
         "technology": "확인필요"
       },
       "dimensions": {
-        "category": "특허",
         "technology": "확인필요"
       },
-      "displayLabel": "논문·특허 · 베트남 기후기술 특허 5건(선별 표본) · patent",
+      "displayLabel": "논문,특허 · 베트남 기후기술 특허 5건(선별 표본) · patent",
       "indicatorId": "E-008_patent",
       "inferenceMethod": "deterministic-source-structure",
       "measure": {
-        "key": "measure-bb2c50075d03",
-        "labelKo": "논문",
+        "key": "measure-f6289d42d6c5",
+        "labelKo": "논문,특허",
         "unit": "건",
         "unitFamily": "text"
       },
-      "seriesKey": "measure-bb2c50075d03|건|category=특허|technology=확인필요|E-008_patent",
+      "seriesKey": "measure-f6289d42d6c5|건|technology=확인필요|E-008_patent",
       "sourceCaveat": "① 5건 모두 미국 특허청(USPTO) 등록 건으로, 베트남 자국 특허청(IP Viet Nam) 출원은 포함되지 않음 — '특허 출원 연구기관' 집계 시 범위 한정에 유의.",
-      "sourceLabel": "논문·특허",
+      "sourceLabel": "논문,특허",
       "sourceLabelEn": "Publications and patents (climate technology)",
       "sourceNote": "① 5건 모두 미국 특허청(USPTO) 등록 건으로, 베트남 자국 특허청(IP Viet Nam) 출원은 포함되지 않음 — '특허 출원 연구기관' 집계 시 범위 한정에 유의.",
       "sourceProvenance": {
@@ -909,12 +933,12 @@
   ],
   "measures": [
     {
-      "indicatorCount": 21,
+      "indicatorCount": 19,
       "key": "measure-bb2c50075d03",
       "labelKo": "논문",
       "recordCount": 0,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     },
     {
       "indicatorCount": 1,
@@ -947,9 +971,25 @@
       "recordCount": 0,
       "unit": "지수",
       "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ef91cff01e68",
+      "labelKo": "논문,특허",
+      "recordCount": 1,
+      "unit": "%",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 2,
+      "key": "measure-f6289d42d6c5",
+      "labelKo": "논문,특허",
+      "recordCount": 0,
+      "unit": "건",
+      "unitFamily": "text"
     }
   ],
-  "observationCount": 0,
+  "observationCount": 1,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

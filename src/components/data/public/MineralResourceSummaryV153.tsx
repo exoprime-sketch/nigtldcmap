@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { VietnamIndicatorMetaV124, VietnamObservationV124 } from "../../../data/vietnam/vietnamTypesV124";
+import type { VietnamEntityV124, VietnamIndicatorMetaV124, VietnamObservationV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { mineralModelV153, percentChangeV153 } from "../../../data/visualization/mineralResourcesV153";
 import type { MineralRowV153 } from "../../../data/visualization/mineralResourcesV153";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
@@ -11,6 +11,8 @@ import "./detail-analysis-v153.css";
 interface Props {
   elementId: "B-046" | "B-047";
   observations: VietnamObservationV124[];
+  /** V162: the delivery's records, read when it states no observations. */
+  entities?: VietnamEntityV124[];
   indicators: VietnamIndicatorMetaV124[];
 }
 
@@ -30,8 +32,11 @@ function valueText(value: number | null, unit: string): string {
  * states, the only figure comparable across minerals. Minerals the source
  * does not list for Vietnam are shown apart, with the source's reason.
  */
-export default function MineralResourceSummaryV153({ elementId, observations, indicators }: Props) {
-  const model = useMemo(() => mineralModelV153(observations, indicators), [observations, indicators]);
+export default function MineralResourceSummaryV153({ elementId, observations, entities, indicators }: Props) {
+  const model = useMemo(
+    () => mineralModelV153(observations.length ? observations : entities || [], indicators),
+    [observations, entities, indicators]
+  );
   const isReserves = elementId === "B-046";
   const latestYear = model.years[model.years.length - 1] ?? null;
   const earlierYear = model.years.length > 1 ? model.years[model.years.length - 2] : null;

@@ -31,12 +31,21 @@ const fitResult = readJson(
 const acceptanceResult = readJson(
   resolve(PROJECT_ROOT, "reports/v128/vietnam-data-release-acceptance-v128.json")
 );
+// V162 (user decision 2026-10-01): the screen contract the detail is built and
+// checked against (qa:detail-contract:v153) decides what a screen is - a status
+// notice or an analysis, and whether it draws a time axis. The v129 semantic-fit
+// report is a pre-V153 snapshot (E-011 was still "status-only" there); its
+// renderer names stay only as the vocabulary for screens the contract agrees on.
+const screenContractResult = readJson(
+  resolve(PROJECT_ROOT, "src/data/visualization/publicVisualizationContractV153.json")
+);
 
 for (const [name, result] of Object.entries({
   catalog: catalogResult,
   contracts: contractResult,
   semanticFit: fitResult,
   acceptance: acceptanceResult,
+  screenContract: screenContractResult,
 })) {
   if (result.error) throw new Error(`${name}: ${result.error}`);
 }
@@ -54,6 +63,24 @@ const fitById = new Map(fitRows.map((item) => [item.elementId, item]));
 const acceptanceById = new Map(
   acceptanceRows.map((item) => [item.elementId, item])
 );
+const screenContractById = new Map(
+  (screenContractResult.value?.rows || []).map((row) => [row.elementId, row])
+);
+const TIME_AXIS_PRIMARY_V162 = new Set(["line", "stacked-area"]);
+/** The renderer name for a screen, decided by its current screen contract. */
+function rendererFromScreenContractV162(row, snapshotRenderer) {
+  if (!row) return snapshotRenderer || "structured-table";
+  if (row.archetype === "status-note") return "status-only";
+  if (snapshotRenderer && snapshotRenderer !== "status-only") return snapshotRenderer;
+  const type = row.primary?.type;
+  if (type === "line") return "kpi-trend";
+  if (type === "stacked-area") return "composition-trend";
+  if (row.archetype === "province-distribution" || type === "region-bar") return "spatial-analysis";
+  if (row.archetype === "registry") return "portfolio-dashboard";
+  if (row.archetype === "policy-document") return "policy-timeline";
+  if (row.archetype === "matrix") return "evidence-matrix";
+  return "structured-table";
+}
 const pack = loadPackPayloads();
 
 const registrySource = readFileSync(
@@ -70,8 +97,14 @@ const specializedComponents = Object.freeze({
   "A-016": "PrimaryEnergyCompositionAnalysisV132",
   "D-005": "ClimateBudgetAllocationAnalysisV129",
   "E-008": "ResearchPatentAnalysisV132",
+  // V162: E-009's dedicated screen (templateVariantsV159 "science-workforce").
+  "E-009": "ScienceWorkforceAnalysisV147",
   "E-012": "OccupationEmploymentWagePreviewV125",
 });
+const templateVariantsSource = readFileSync(
+  resolve(PROJECT_ROOT, "src/components/data/templates/templateVariantsV159.ts"),
+  "utf8"
+);
 
 const finalRendererOverridesV132 = Object.freeze({
   "B-003": "multi-metric-trend",
@@ -211,10 +244,12 @@ const elementRows = catalog.map((element) => {
   const contract = contractById.get(element.elementId) || {};
   const fit = fitById.get(element.elementId) || {};
   const acceptance = acceptanceById.get(element.elementId) || {};
-  const renderer =
-    finalRendererOverridesV132[element.elementId] ||
-    fit.primaryRenderer ||
-    "structured-table";
+  const screenContract = screenContractById.get(element.elementId) || null;
+  // An element decided not to be offered shows one notice and no analysis.
+  const renderer = element.publicStatus === "excluded"
+    ? "status-only"
+    : finalRendererOverridesV132[element.elementId] ||
+      rendererFromScreenContractV162(screenContract, fit.primaryRenderer);
   const statusOnly = renderer === "status-only";
   const specializedRenderer = specializedComponents[element.elementId] || null;
   const benchmark = benchmarkFor(element.elementId, renderer);
@@ -241,15 +276,19 @@ const elementRows = catalog.map((element) => {
     0,
     ...Array.from(numericYearsBySeries.values()).map((bucket) => bucket.size)
   );
+  // A time axis is expected only where the screen contract draws one (line or
+  // stacked area). B-010 (CRI rank comparison) and E-009 (STEM shares) are
+  // category comparisons in the contract, though their data spans many years.
   const continuousTimeSeriesExpected = Boolean(
-    fit.continuousTimeSeriesEligible === true &&
+    (screenContract ? TIME_AXIS_PRIMARY_V162.has(screenContract.primary?.type) : fit.continuousTimeSeriesEligible === true) &&
     fit.sameMethodologyAcrossTime !== false &&
     maxComparableYearCount >= 3
   );
   const expectedPrimary = primaryVisualization(element.elementId, renderer, statusOnly);
   const expectedSecondary = secondaryVisualization(element.elementId, renderer, statusOnly);
   const specializedWired = !specializedRenderer ||
-    (registrySource.includes(element.elementId) && routerSource.includes(specializedRenderer));
+    ((registrySource.includes(element.elementId) || templateVariantsSource.includes(`"${element.elementId}"`)) &&
+      routerSource.includes(specializedRenderer));
   return {
     elementId: element.elementId,
     publicTitle,

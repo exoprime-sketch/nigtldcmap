@@ -1,3 +1,5 @@
+import WideRecordCardsV162 from "../public/WideRecordCardsV162";
+import { wideRecordsOfEntitiesV162 } from "../../../data/visualization/wideRecordsV162";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { publicIndicatorSeriesV144, previousYearChangeV144 } from "../../../data/visualization/publicIndicatorCopyV144";
@@ -122,6 +124,9 @@ export default function SemanticContractRendererV125({
   const textRows = presentRows.filter(
     (row) => typeof row.value !== "number"
   );
+  // A register's stated totals follow its analysis unless the contract opens
+  // the screen on that table (D-018's country comparison values).
+  const registerTotalsAfterPortfolio = renderer === "portfolio" && entities.length > 0 && primaryType !== "table";
   const publicHeadings = headingsForCountryV158(getPublicAnalysisHeadingsV134(contract.elementId), useDataCountryV158());
   // One selected category over many periods: B-033 with a province chosen
   // showed a single bar for the chosen year, not the 2001-2024 series the
@@ -136,6 +141,12 @@ export default function SemanticContractRendererV125({
     if (categories.size !== 1 || years.size < 3) return null;
     return numeric;
   }, [renderer, seriesRows]);
+  // V162: the wide record template ('[블록] 속성' columns, one row per record)
+  // reads as block cards before any renderer-specific body runs. The
+  // policy-timeline body (below) reads the pre-V162 long-C row scheme
+  // (속성1_레코드명 …) directly and finds nothing on the wide delivery, so it
+  // has to be checked here rather than only inside renderEntityPanelV125.
+  const wideRecordsTopV162 = useMemo(() => wideRecordsOfEntitiesV162(entities), [entities]);
 
   return (
     <section
@@ -147,7 +158,9 @@ export default function SemanticContractRendererV125({
         publicHeadings?.primaryChartTitle || rendererLabelV125(renderer)
       } 주 분석`}
     >
-      {renderer === "policy-timeline" ? (
+      {wideRecordsTopV162.length > 0 ? (
+        <WideRecordCardsV162 records={wideRecordsTopV162} elementTitle={elementTitle} elementId={contract.elementId} recordScope="element" />
+      ) : renderer === "policy-timeline" ? (
         <>
           {/* A numeric measure with several categories at one time (B-015's
               ETS facility counts by sector) is a comparison; the timeline
@@ -189,7 +202,10 @@ export default function SemanticContractRendererV125({
               {
                 type: (renderer === "category-comparison" ? "category-bar" : "line") as AnalysisBlockTypeV153,
                 key: "observation",
-                node: renderObservationPanelV125(
+                // V162: a register's own stated totals (D-023 "승인액 513 USD 백만",
+                // D-024 "DFI 투자 건수 15") follow the register's analysis instead
+                // of opening the screen ahead of it.
+                node: registerTotalsAfterPortfolio ? null : renderObservationPanelV125(
                   contract.elementId,
                   renderer,
                   presentRows,
@@ -213,6 +229,9 @@ export default function SemanticContractRendererV125({
             elementTitle,
             indicatorUnits
           )}
+          {registerTotalsAfterPortfolio
+            ? renderObservationPanelV125(contract.elementId, renderer, presentRows, numericRows, textRows, contextRows)
+            : null}
         </>
       )}
       {showRawTable && entities.length > 0 && (
@@ -350,6 +369,11 @@ function renderEntityPanelV125(
   indicatorUnits: IndicatorUnitsV142 = {}
 ) {
   if (entities.length === 0) return null;
+  // V162: the wide record template ('[블록] 속성' columns, one row per record)
+  // reads as block cards whatever the renderer; record ids, working files and
+  // the supplier's note never reach the screen (wideRecordsV162).
+  const wideRecords = wideRecordsOfEntitiesV162(entities);
+  if (wideRecords.length > 0) return <WideRecordCardsV162 records={wideRecords} elementTitle={elementTitle} elementId={contract.elementId} recordScope="element" />;
   if (PUBLIC_PORTFOLIO_ELEMENTS_V132.has(contract.elementId)) {
     return (
       <PortfolioEntitiesV125

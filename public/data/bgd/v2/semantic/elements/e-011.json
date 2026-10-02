@@ -1,12 +1,358 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 10,
+      "values": [
+        "Governance 부문 순위",
+        "Governance 부문 점수",
+        "Impact 부문 순위",
+        "Impact 부문 점수",
+        "People 부문 순위",
+        "People 부문 점수",
+        "Technology 부문 순위",
+        "Technology 부문 점수",
+        "종합 순위",
+        "종합 점수"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 5,
+      "values": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ]
+    }
+  ],
   "elementId": "E-011",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 10,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-aa48265c21da|순위",
+      "dimensionLabels": {
+        "detail": "Governance 부문 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Governance 부문 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Governance 부문 순위",
+      "indicatorId": "E-011_nri_governance_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aa48265c21da",
+        "labelKo": "NRI 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-aa48265c21da|순위|detail=Governance 부문 순위|technology=범용|E-011_nri_governance_rank",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Governance 부문 순위",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12a7feb401ad|점수",
+      "dimensionLabels": {
+        "detail": "Governance 부문 점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Governance 부문 점수",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Governance 부문 점수",
+      "indicatorId": "E-011_nri_governance_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12a7feb401ad",
+        "labelKo": "NRI 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-12a7feb401ad|점수|detail=Governance 부문 점수|technology=범용|E-011_nri_governance_score",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Governance 부문 점수",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aa48265c21da|순위",
+      "dimensionLabels": {
+        "detail": "Impact 부문 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Impact 부문 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Impact 부문 순위",
+      "indicatorId": "E-011_nri_impact_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aa48265c21da",
+        "labelKo": "NRI 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-aa48265c21da|순위|detail=Impact 부문 순위|technology=범용|E-011_nri_impact_rank",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Impact 부문 순위",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12a7feb401ad|점수",
+      "dimensionLabels": {
+        "detail": "Impact 부문 점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Impact 부문 점수",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Impact 부문 점수",
+      "indicatorId": "E-011_nri_impact_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12a7feb401ad",
+        "labelKo": "NRI 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-12a7feb401ad|점수|detail=Impact 부문 점수|technology=범용|E-011_nri_impact_score",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Impact 부문 점수",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aa48265c21da|순위",
+      "dimensionLabels": {
+        "detail": "종합 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "종합 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — 종합 순위",
+      "indicatorId": "E-011_nri_overall_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aa48265c21da",
+        "labelKo": "NRI 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-aa48265c21da|순위|detail=종합 순위|technology=범용|E-011_nri_overall_rank",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — 종합 순위",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12a7feb401ad|점수",
+      "dimensionLabels": {
+        "detail": "종합 점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "종합 점수",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — 종합 점수",
+      "indicatorId": "E-011_nri_overall_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12a7feb401ad",
+        "labelKo": "NRI 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-12a7feb401ad|점수|detail=종합 점수|technology=범용|E-011_nri_overall_score",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — 종합 점수",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aa48265c21da|순위",
+      "dimensionLabels": {
+        "detail": "People 부문 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "People 부문 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — People 부문 순위",
+      "indicatorId": "E-011_nri_people_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aa48265c21da",
+        "labelKo": "NRI 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-aa48265c21da|순위|detail=People 부문 순위|technology=범용|E-011_nri_people_rank",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — People 부문 순위",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12a7feb401ad|점수",
+      "dimensionLabels": {
+        "detail": "People 부문 점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "People 부문 점수",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — People 부문 점수",
+      "indicatorId": "E-011_nri_people_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12a7feb401ad",
+        "labelKo": "NRI 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-12a7feb401ad|점수|detail=People 부문 점수|technology=범용|E-011_nri_people_score",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — People 부문 점수",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-aa48265c21da|순위",
+      "dimensionLabels": {
+        "detail": "Technology 부문 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Technology 부문 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Technology 부문 순위",
+      "indicatorId": "E-011_nri_technology_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-aa48265c21da",
+        "labelKo": "NRI 2025",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-aa48265c21da|순위|detail=Technology 부문 순위|technology=범용|E-011_nri_technology_rank",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Technology 부문 순위",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-12a7feb401ad|점수",
+      "dimensionLabels": {
+        "detail": "Technology 부문 점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "detail": "Technology 부문 점수",
+        "technology": "범용"
+      },
+      "displayLabel": "NRI 2025 — Technology 부문 점수",
+      "indicatorId": "E-011_nri_technology_score",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-12a7feb401ad",
+        "labelKo": "NRI 2025",
+        "unit": "점수",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-12a7feb401ad|점수|detail=Technology 부문 점수|technology=범용|E-011_nri_technology_score",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceLabel": "NRI 2025 — Technology 부문 점수",
+      "sourceLabelEn": "Network Readiness Index (NRI)",
+      "sourceNote": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다. [라이선스 표출 범위] CC BY-NC-ND 3.0 — 출처(Portulans Institute) 표기 시 복제·배포·공개 표출이 가능하다. 상업적 이용은 불가하며, 개작·번역·수정에는 Portulans Institute 의 명시적 허가가 필요하다. 지표값을 원형 그대로 표출·인용하는 범위에서 사용한다. [모집단 변동] NRI 2021 130개 · 2022 131개 · 2023 134개 · 2024 133개 · 2025 127개 경제 기준이므로 연도 간 순위 단순비교는 불가하다. [기술 분류] 국가 단위 종합지수이므로 38대 기후기술 분류 대상이 아니다. [산출 관계] NRI 방법론상 종합 점수는 4개 부문 점수의 단순평균이다. [수집 범위] NRI 2021~2025 5개 편. 지표는 종합·4개 부문의 점수와 순위 10종이다.",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 5,
+      "key": "measure-aa48265c21da",
+      "labelKo": "NRI 2025",
+      "recordCount": 25,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 5,
+      "key": "measure-12a7feb401ad",
+      "labelKo": "NRI 2025",
+      "recordCount": 25,
+      "unit": "점수",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 50,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

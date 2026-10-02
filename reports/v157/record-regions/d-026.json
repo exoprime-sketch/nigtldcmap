@@ -6,11 +6,11 @@
   "notice": "성·시는 원자료 값에 적힌 표기를 사전으로 대응한 결과이며, 표기가 없는 레코드는 지도에 올리지 않습니다. 복수 성 레코드는 각 성에 1건으로 세고 금액·규모는 합산하지 않습니다.",
   "recordsAreOrganisations": false,
   "counts": {
-    "records": 14,
+    "records": 13,
     "located": 2,
-    "withoutRegion": 12,
-    "multiUnit": 2,
-    "units": 4,
+    "withoutRegion": 11,
+    "multiUnit": 1,
+    "units": 2,
     "unplacedByReason": {
       "unresolved": 0,
       "subProvincePlace": 0,
@@ -19,7 +19,7 @@
       "crossCountry": 0,
       "nationwide": 0,
       "codeOnly": 0,
-      "noRegionStated": 12
+      "noRegionStated": 11
     }
   },
   "corruptedMatches": [],
@@ -30,12 +30,25 @@
       "records": 2
     },
     {
-      "column": "비고",
-      "records": 2
+      "column": "사업_내용",
+      "records": 1
     }
   ],
   "byRecordId": {
-    "v124-d-026-entity-00008": [
+    "v124-d-026-entity-00006": [
+      {
+        "unitCode34": "VN34-HN",
+        "name": "Hà Nội",
+        "adm1Codes63": [
+          "VN-HN"
+        ],
+        "spelling": "hanoi",
+        "matchKind": "exact",
+        "column": "사업_내용",
+        "columnKind": "other"
+      }
+    ],
+    "v124-d-026-entity-00012": [
       {
         "unitCode34": "VN34-HP",
         "name": "Hải Phòng",
@@ -58,33 +71,6 @@
         "matchKind": "exact",
         "column": "name",
         "columnKind": "name"
-      }
-    ],
-    "v124-d-026-entity-00009": [
-      {
-        "unitCode34": "VN34-39",
-        "name": "Đồng Nai",
-        "adm1Codes63": [
-          "VN-39",
-          "VN-58"
-        ],
-        "spelling": "동나이",
-        "matchKind": "exact",
-        "column": "비고",
-        "columnKind": "other"
-      },
-      {
-        "unitCode34": "VN34-35",
-        "name": "Lâm Đồng",
-        "adm1Codes63": [
-          "VN-35",
-          "VN-40",
-          "VN-72"
-        ],
-        "spelling": "럼동",
-        "matchKind": "exact",
-        "column": "비고",
-        "columnKind": "other"
       }
     ]
   }

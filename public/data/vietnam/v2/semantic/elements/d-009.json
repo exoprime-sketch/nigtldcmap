@@ -37,7 +37,7 @@
   "elementId": "D-009",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 5,
+  "indicatorCount": 7,
   "indicators": [
     {
       "axisGroupKey": "measure-ec76b1280745|%",
@@ -70,6 +70,46 @@
         "sourceRow": 9,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-a9735cb2e42c|LCU",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "D-009_environmental_protection_expenditure_lcu",
+      "indicatorId": "D-009_environmental_protection_expenditure_lcu",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-a9735cb2e42c",
+        "labelKo": "D-009_environmental_protection_expenditure_lcu",
+        "unit": "LCU",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-a9735cb2e42c|LCU||D-009_environmental_protection_expenditure_lcu",
+      "sourceCaveat": null,
+      "sourceLabel": "D-009_environmental_protection_expenditure_lcu",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-ad9735e50f28|% of GDP",
+      "dimensionLabels": {},
+      "dimensions": {},
+      "displayLabel": "D-009_environmental_protection_expenditure_pct_gdp",
+      "indicatorId": "D-009_environmental_protection_expenditure_pct_gdp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-ad9735e50f28",
+        "labelKo": "D-009_environmental_protection_expenditure_pct_gdp",
+        "unit": "% of GDP",
+        "unitFamily": "percent"
+      },
+      "seriesKey": "measure-ad9735e50f28|% of GDP||D-009_environmental_protection_expenditure_pct_gdp",
+      "sourceCaveat": null,
+      "sourceLabel": "D-009_environmental_protection_expenditure_pct_gdp",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-2ad1ffad839d|VND",
@@ -203,6 +243,22 @@
   "measures": [
     {
       "indicatorCount": 1,
+      "key": "measure-a9735cb2e42c",
+      "labelKo": "D-009_environmental_protection_expenditure_lcu",
+      "recordCount": 1,
+      "unit": "LCU",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-ad9735e50f28",
+      "labelKo": "D-009_environmental_protection_expenditure_pct_gdp",
+      "recordCount": 1,
+      "unit": "% of GDP",
+      "unitFamily": "percent"
+    },
+    {
+      "indicatorCount": 1,
       "key": "measure-ec76b1280745",
       "labelKo": "기후대응 정부 예산",
       "recordCount": 1,
@@ -226,7 +282,7 @@
       "unitFamily": "currency"
     }
   ],
-  "observationCount": 7,
+  "observationCount": 9,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

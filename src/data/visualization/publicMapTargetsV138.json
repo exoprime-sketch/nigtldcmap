@@ -648,7 +648,8 @@
         ],
         "identity": {
           "sources": [
-            "PSMSL_관측소_ID"
+            "PSMSL_관측소_ID",
+            "PSMSL_관측소_ID_격자점은_grid"
           ],
           "label": "관측소",
           "memberLabel": "시나리오·분위·연도 전망값"
@@ -658,21 +659,24 @@
             "key": "stationNameVi",
             "label": "관측소(베트남어)",
             "sources": [
-              "관측소명_베트남어"
+              "관측소명_베트남어",
+              "관측소명_로마자"
             ]
           },
           {
             "key": "location",
             "label": "소재",
             "sources": [
-              "소재"
+              "소재",
+              "소재_설명"
             ]
           },
           {
             "key": "psmslId",
             "label": "PSMSL 관측소 ID",
             "sources": [
-              "PSMSL_관측소_ID"
+              "PSMSL_관측소_ID",
+              "PSMSL_관측소_ID_격자점은_grid"
             ]
           },
           {
@@ -969,7 +973,8 @@
       "build": {
         "kind": "entities",
         "indicatorIds": [
-          "B-023_hydro_site"
+          "B-023_hydro_site",
+          "B-023_hydro_site_lit_aux"
         ],
         "identity": {
           "sources": [
@@ -1157,7 +1162,7 @@
       "category": "물·자원",
       "publicName": "흐름방향",
       "sourceFields": [
-        "지역명_베트남어",
+        "지역명_현지어",
         "지역명_로마자",
         "우세_유향_비율",
         "우세_유향",
@@ -1169,7 +1174,7 @@
       "build": {
         "kind": "admin1-attributes",
         "regionKeys": [
-          "지역명_베트남어",
+          "지역명_현지어",
           "지역명_로마자"
         ],
         "categoryKey": "우세_유향",
@@ -1221,7 +1226,9 @@
       "build": {
         "kind": "entities",
         "indicatorIds": [
-          "B-028_hydro_site"
+          "B-028_hydro_site",
+          "B-028_hydro_site_lit_aux",
+          "B-028_discharge_gis"
         ],
         "identity": {
           "sources": [
@@ -1256,6 +1263,13 @@
             "label": "기준연도",
             "sources": [
               "기준연도"
+            ]
+          },
+          {
+            "key": "valueNature",
+            "label": "값의 성격",
+            "sources": [
+              "값_성격_실측_모델"
             ]
           }
         ],
@@ -1429,6 +1443,28 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-031_forest_extent_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "analysis-area",
+              "sourceKey": "분석대상_면적_ha",
+              "period": "2000"
+            },
+            {
+              "variable": "tree-cover-area-2000",
+              "sourceKey": "수관_면적_2000_ha",
+              "period": "2000"
+            },
+            {
+              "variable": "tree-cover-area-2010",
+              "sourceKey": "수관_면적_2010_ha",
+              "period": "2010"
+            }
+          ]
         }
       },
       "selectableVariables": "수관 면적 2000·2010, 분석대상 면적",
@@ -1456,6 +1492,21 @@
           "boundaryPolicy34": {
             "kind": "area-weighted-mean"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-032_canopy_cover_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "canopy-cover-30",
+              "sourceKey": "수관_피복률",
+              "periodKey": "기준연도",
+              "where": {
+                "수관밀도_임계": "30"
+              }
+            }
+          ]
         }
       },
       "selectableVariables": "수관 피복률(임계 30%)",
@@ -1483,6 +1534,18 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-033_loss_adm1_year_adm34"
+          ],
+          "measures": [
+            {
+              "variable": "annual-tree-cover-loss",
+              "sourceKey": "수관_손실_ha",
+              "periodKey": "연도"
+            }
+          ]
         }
       },
       "selectableVariables": "연간 수관 손실, 연도(2001~2024)",
@@ -1499,9 +1562,9 @@
       "sourceFields": [
         "지상부_탄소저장량_Mg_C",
         "지상부_탄소밀도_Mg_C_ha",
-        "산림탄소_총배출_Mg_CO2e_yr",
-        "산림탄소_총흡수_Mg_CO2_yr",
-        "산림탄소_순플럭스_Mg_CO2e_yr"
+        "산림탄소_총배출_Mg_CO2e",
+        "산림탄소_총흡수_Mg_CO2",
+        "산림탄소_순플럭스_Mg_CO2e"
       ],
       "sourceSpatialUnit": "GADM 4.1 ADM1(63개 성·시)",
       "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
@@ -1512,14 +1575,46 @@
           "boundaryPolicy34": {
             "kind": "sum"
           }
+        },
+        "source34": {
+          "indicatorIds": [
+            "B-034_forest_carbon_adm1_adm34"
+          ],
+          "measures": [
+            {
+              "variableLabel": "지상부 탄소밀도",
+              "sourceKey": "지상부_탄소밀도_Mg_C_ha",
+              "period": "2000"
+            },
+            {
+              "variableLabel": "지상부 탄소저장량",
+              "sourceKey": "지상부_탄소저장량_Mg_C",
+              "period": "2000"
+            },
+            {
+              "variableLabel": "산림탄소 총배출(누계)",
+              "sourceKey": "산림탄소_총배출_Mg_CO2e",
+              "period": "2001–2024"
+            },
+            {
+              "variableLabel": "산림탄소 총흡수(누계)",
+              "sourceKey": "산림탄소_총흡수_Mg_CO2",
+              "period": "2001–2024"
+            },
+            {
+              "variableLabel": "산림탄소 순플럭스(누계)",
+              "sourceKey": "산림탄소_순플럭스_Mg_CO2e",
+              "period": "2001–2024"
+            }
+          ]
         }
       },
-      "selectableVariables": "저장량·밀도·연간 배출·흡수·순플럭스(단위별 분리)",
-      "unit": "Mg C · Mg C/ha · Mg CO2e/yr",
-      "period": "2000 저장량 · 2001–2023 연평균 플럭스",
+      "selectableVariables": "저장량·밀도·배출·흡수·순플럭스(2001–2024 누계, 단위별 분리)",
+      "unit": "Mg C · Mg C/ha · Mg CO2e",
+      "period": "2000 저장량 · 2001–2024 누계 플럭스",
       "representativeItem": "성·시별 지상부 탄소저장량",
       "evidence": "성·시 63개 × 5 지표",
-      "limitation": "저장량(재고)과 연간 플럭스는 단위와 시점이 달라 같은 축에 두지 않음."
+      "limitation": "저장량(재고)과 2001–2024 누계 플럭스는 단위와 시점이 달라 같은 축에 두지 않음."
     },
     {
       "elementId": "B-035",
@@ -2145,28 +2240,28 @@
       "category": "정책·사업여건",
       "publicName": "PPP 사업 이력",
       "sourceFields": [
-        "속성21_지역_현행",
-        "속성3_값(사업 수)",
-        "속성6_분류(분야별 건수)",
-        "속성7_상태",
-        "속성4_시점(기간)"
+        "D-025: 명칭",
+        "D-025: 위치·사업지_행정구역(사업 위치)",
+        "D-025: PPI_프로젝트키_중복_트랜치_합산용",
+        "D-025: Financial_Close",
+        "D-025: 상태"
       ],
-      "sourceSpatialUnit": "2025년 개편 후 34개 성·시(World Bank PPI 사업을 지역별 집계)",
+      "sourceSpatialUnit": "World Bank PPI 사업(2026-09-30 입고에서 D-025 PPI 사업 등록부로 이관)의 사업 위치를 개편 후 34개 성·시로 집계",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
       "representation": "region-choropleth",
       "build": {
         "kind": "region-membership",
+        "sourceElementId": "D-025",
         "indicatorIds": [
-          "C-012_ppp_project_history_ppi_worldbank"
+          "D-025_ppi_project_registry"
         ],
-        "regionNameKey": "속성21_지역_현행",
-        "regionSystem": "post-2025-34",
-        "periodFixed": "1997–2024",
+        "regionSidecar": "reports/v157/record-regions/d-025.json",
+        "distinctBy": "PPI_프로젝트키_중복_트랜치_합산용",
+        "periodFixed": "1994–2024(재무종결)",
         "measures": [
           {
             "key": "ppp-project-count",
-            "sourceKey": "속성3_값",
-            "parse": "number",
+            "aggregate": "count",
             "label": "PPP 사업 수(PPI 수록)",
             "unit": "건",
             "measureId": "c012-ppi-count"
@@ -2175,30 +2270,31 @@
         "defaultMeasure": "ppp-project-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "속성6_분류",
-          "statusKey": "속성7_상태",
-          "dateKey": "속성4_시점"
+          "labelKey": "명칭",
+          "statusKey": "상태",
+          "dateKey": "Financial_Close",
+          "valueKey": "섹터"
         },
         "boundaryPolicy34": {
           "kind": "native-34"
         }
       },
-      "selectableVariables": "성·시(34개 체계) 클릭 → 분야별 건수·상태·기간",
+      "selectableVariables": "성·시(34개 체계) 클릭 → 사업 목록(명칭·재무종결·상태·부문)",
       "unit": "건",
       "period": "1997~2024",
-      "representativeItem": "Đồng Nai PPP 사업 6건",
-      "evidence": "지역 집계행 29건(개편 후 34개 체계). 계약방식·법령 행은 집계하지 않음",
-      "limitation": "지역값은 개편 후 34개 성·시 단위이며 소속 63개 성·시 경계에 같은 값을 표시함(성·시별 독립값 아님)."
+      "representativeItem": "",
+      "evidence": "개체 20건 · 지역 행 0건(2026-09-30 입고)",
+      "limitation": "사업 수는 World Bank PPI 사업(트랜치는 1건)이며 투자액이 아님. 사업 위치가 확인되지 않은 사업은 지도에 두지 않고 D-025 목록·다운로드에서 확인."
     },
     {
       "elementId": "C-013",
       "category": "정책·사업여건",
       "publicName": "외국인 투자 규정(지역 특별 인센티브)",
       "sourceFields": [
-        "속성21_지역_현행",
-        "속성6_분류",
-        "속성3_값(근거 결의)",
-        "속성19_원문URL"
+        "지역_지역명_현행",
+        "식별_레코드명",
+        "인센티브_인센티브_유형",
+        "출처_원문_URL"
       ],
       "sourceSpatialUnit": "특정 성·시가 명시된 특별메커니즘·지방 인센티브(개편 후 34개 체계)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2206,12 +2302,9 @@
       "build": {
         "kind": "region-membership",
         "indicatorIds": [
-          "C-013_investment_incentive_hotropldn_thainguyen",
-          "C-013_investment_incentive_vanban_chinhphu",
-          "C-013_investment_incentive_xaydungchinhsach_chinh"
+          "C-013_incentive"
         ],
-        "requireCoordinates": true,
-        "regionNameKey": "속성21_지역_현행",
+        "regionNameKey": "지역_지역명_현행",
         "regionSystem": "post-2025-34",
         "periodFixed": "2014–2025",
         "measures": [
@@ -2226,9 +2319,10 @@
         "defaultMeasure": "special-incentive-provision-count",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "속성6_분류",
-          "valueKey": "속성3_값",
-          "urlKey": "속성19_원문URL"
+          "labelKey": "식별_레코드명",
+          "valueKey": "인센티브_인센티브_유형",
+          "dateKey": "법령_시행일_YYYY_MM_DD",
+          "urlKey": "출처_원문_URL"
         },
         "boundaryPolicy34": {
           "kind": "native-34"
@@ -2238,7 +2332,7 @@
       "unit": "건",
       "period": "2014~2025",
       "representativeItem": "Hồ Chí Minh 특별메커니즘(Nghị quyết 98/2023/QH15)",
-      "evidence": "지역이 명시된 15행(전국 규정 49행은 지도 객체 없음)",
+      "evidence": "지역이 명시된 인센티브 8행(전국 규정은 지도 객체 없음)",
       "limitation": "행 수는 근거 항목 수이며 인센티브 금액·건수가 아님. 전국 적용 규정은 지도화하지 않음."
     },
     {
@@ -2302,9 +2396,11 @@
       "category": "정책·사업여건",
       "publicName": "탄소시장 대상시설 업종 구성",
       "sourceFields": [
-        "속성21_지역_현행",
-        "속성6_분류(업종별 시설 수)",
-        "속성4_시점"
+        "지역_지역명_현행",
+        "인벤토리_부속서_II_산업무역부_소관_개",
+        "인벤토리_부속서_III_A_건설부_소관_교통_개",
+        "인벤토리_부속서_III_B_건설부_소관_건설_개",
+        "인벤토리_부속서_IV_농업환경부_소관_개"
       ],
       "sourceSpatialUnit": "2025년 개편 후 34개 성·시(동일 대상시설 명부의 업종 구성)",
       "displaySpatialUnit": "34개 성·시 값을 소속 63개 경계에 동일 표시",
@@ -2312,44 +2408,39 @@
       "build": {
         "kind": "region-membership",
         "indicatorIds": [
-          "C-022_carbon_market_readiness_vanban_chinhphu"
+          "C-022_inventory_facility"
         ],
-        "regionNameKey": "속성21_지역_현행",
+        "regionNameKey": "지역_지역명_현행",
         "regionSystem": "post-2025-34",
-        "periodKey": "속성4_시점",
         "measures": [
           {
             "key": "facilities-industry-trade",
-            "sourceKey": "속성6_분류",
-            "parse": "sector-composition",
-            "sector": "공상",
+            "sourceKey": "인벤토리_부속서_II_산업무역부_소관_개",
+            "parse": "number",
             "label": "대상시설 수 — 공상(산업·무역)",
             "unit": "개",
             "measureId": "c022-industry"
           },
           {
             "key": "facilities-transport",
-            "sourceKey": "속성6_분류",
-            "parse": "sector-composition",
-            "sector": "교통운송",
+            "sourceKey": "인벤토리_부속서_III_A_건설부_소관_교통_개",
+            "parse": "number",
             "label": "대상시설 수 — 교통운송",
             "unit": "개",
             "measureId": "c022-transport"
           },
           {
             "key": "facilities-construction",
-            "sourceKey": "속성6_분류",
-            "parse": "sector-composition",
-            "sector": "건설",
+            "sourceKey": "인벤토리_부속서_III_B_건설부_소관_건설_개",
+            "parse": "number",
             "label": "대상시설 수 — 건설",
             "unit": "개",
             "measureId": "c022-construction"
           },
           {
             "key": "facilities-agri-environment",
-            "sourceKey": "속성6_분류",
-            "parse": "sector-composition",
-            "sector": "농업·환경",
+            "sourceKey": "인벤토리_부속서_IV_농업환경부_소관_개",
+            "parse": "number",
             "label": "대상시설 수 — 농업·환경",
             "unit": "개",
             "measureId": "c022-agri-env"
@@ -2359,13 +2450,14 @@
         "sharedFacilityRegisterWith": "C-019",
         "boundaryPolicy34": {
           "kind": "native-34"
-        }
+        },
+        "periodFixed": "2026-08-10 명부"
       },
       "selectableVariables": "업종(공상·교통운송·건설·농업·환경)별 시설 수",
       "unit": "개",
       "period": "2026-08-10 명부",
-      "representativeItem": "Hồ Chí Minh 공상 430개",
-      "evidence": "34개 지역 × 4 업종",
+      "representativeItem": "Ho Chi Minh city 공상 430개",
+      "evidence": "34개 지역 × 4 부속서(업종)",
       "limitation": "국가 준비도 체크리스트 점수(82.1)는 지역값이 아니므로 지도화하지 않음."
     },
     {
@@ -2373,10 +2465,10 @@
       "category": "산림·토지",
       "publicName": "REDD+ 사업 참여지역",
       "sourceFields": [
-        "속성1_레코드명",
-        "속성20_지역_원문",
-        "속성6_분류",
-        "속성4_시점"
+        "식별_레코드명",
+        "지역_지역명_개편_전",
+        "RBP_기금_프로그램",
+        "RBP_계약_승인일_YYYY_MM_DD"
       ],
       "sourceSpatialUnit": "FCPF ERPA 대상 성(개편 전 63개 성 이름)",
       "displaySpatialUnit": "성·시 경계(개편 후 34개 기본 · 개편 전 63개 전환)",
@@ -2384,11 +2476,11 @@
       "build": {
         "kind": "admin1-attributes",
         "indicatorIds": [
-          "C-024_rbp_result_vanban_chinhphu"
+          "C-024_erpa_province"
         ],
         "requireCoordinates": true,
         "regionKeys": [
-          "속성20_지역_원문"
+          "지역_지역명_개편_전"
         ],
         "periodFixed": "2022",
         "measures": [
@@ -2403,8 +2495,8 @@
         "defaultMeasure": "fcpf-erpa-participation",
         "coverageKind": "partial",
         "memberRecords": {
-          "labelKey": "속성1_레코드명",
-          "dateKey": "속성4_시점"
+          "labelKey": "식별_레코드명",
+          "dateKey": "RBP_계약_승인일_YYYY_MM_DD"
         },
         "boundaryPolicy34": {
           "kind": "membership-or"
@@ -2440,6 +2532,14 @@
           "countNoun": "건",
           "boundaryPolicy34": {
             "kind": "none"
+          },
+          "featureIdentity": {
+            "sources": [
+              "projectId",
+              "식별_등록부_프로젝트ID"
+            ],
+            "label": "탄소크레딧 사업",
+            "memberLabel": "사업·발행 기록"
           }
         }
       },

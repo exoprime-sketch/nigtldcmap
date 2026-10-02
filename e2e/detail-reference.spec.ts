@@ -114,23 +114,25 @@ test("B-034 keeps one item per measure and names its provider", async ({ page })
 test("D-022 counts what it says it counts", async ({ page }) => {
   await openDetail(page, "D-022");
   const analysis = page.getByTestId("public-analysis-primary");
-  await expect(analysis).toContainText("사업 15건 / 전체 15건");
+  // V162 (2026-09-30 delivery): 247 projects, every one with a stated amount.
+  await expect(analysis).toContainText("사업 247건 / 전체 247건");
   await expect(analysis).toContainText("통화가 확인된 금액만 통화별로 합산합니다");
   // V146: the totals live in the inspectable summary table.
   const summary = analysis.getByTestId("analysis-summary-table-v146");
   await summary.evaluate((el: HTMLDetailsElement) => { el.open = true; });
   await expect(summary).toContainText("사업 수");
-  await expect(summary).toContainText("1,876,471,402");
-  await expect(summary).toContainText("금액이 기재된 15건");
+  await expect(summary).toContainText("3,606,306,918");
+  await expect(summary).toContainText("금액이 기재된 247건");
 });
 
 test("D-025 separates the record count from the amounts it could total", async ({ page }) => {
   await openDetail(page, "D-025");
   const analysis = page.getByTestId("public-analysis-primary");
-  await expect(analysis).toContainText("사업 132건 / 전체 132건");
-  // 132 projects, of which 125 carry an amount in a stated currency.
+  // V162: 173 PPI rows (energy 132 + 41 moved in from C-012), 162 with an
+  // amount in a stated currency; the total matches C-012's 34,908.2 백만 USD.
+  await expect(analysis).toContainText("사업 173건 / 전체 173건");
   const summary = analysis.getByTestId("analysis-summary-table-v146");
   await summary.evaluate((el: HTMLDetailsElement) => { el.open = true; });
-  await expect(summary).toContainText("28,967,130,000");
-  await expect(summary).toContainText("금액이 기재된 125건");
+  await expect(summary).toContainText("34,908,220,000");
+  await expect(summary).toContainText("금액이 기재된 162건");
 });

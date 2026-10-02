@@ -525,7 +525,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
                     "stringId": string_id,
                     "gadmName1": str(properties["name_1"]),
                     "areaKm2Source": float(properties["area_km2"]),
-                    "csvAdm34Name": joined["attributes"].get("2025_개편_후_소속_34개_체계") if joined else None,
+                    "csvAdm34Name": (joined["attributes"].get("개편_후_소속_단위") or joined["attributes"].get("2025_개편_후_소속_34개_체계")) if joined else None,
                 }
             )
             continue
@@ -577,7 +577,7 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             validation["adm34PrimaryMethodCounts"].get(primary_method, 0) + 1
         )
 
-        csv_adm34_name = joined["attributes"].get("2025_개편_후_소속_34개_체계") if joined else None
+        csv_adm34_name = (joined["attributes"].get("개편_후_소속_단위") or joined["attributes"].get("2025_개편_후_소속_34개_체계")) if joined else None
         if joined is not None:
             if normalize_text(csv_adm34_name or "") != normalize_text(primary["name"]) or (
                 crosswalk_unit["unitCode"] != primary["unitCode"]

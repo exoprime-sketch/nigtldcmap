@@ -39,6 +39,8 @@ const EXPECTED_WORKBOOKS = opt("--expected-workbooks", "149");
 const STAGING = opt("--staging", `.staging/${VERSION}`);
 const OUT = opt("--out", `reports/${VERSION}`);
 const APPLY = argv.includes("--apply");
+/** V162: which file to adopt where the delivery holds several for one code. */
+const DUPLICATE_DECISIONS = opt("--duplicate-decisions", "");
 
 // Without this, `--help` looked like an unknown flag and the whole pipeline ran.
 if (argv.includes("--help") || argv.includes("-h")) {
@@ -54,6 +56,7 @@ if (argv.includes("--help") || argv.includes("-h")) {
       "  --expected-workbooks  carry-over 후 워크북 수 (기본 149)",
       "  --staging <dir>       .staging/ 하위여야 함 (기본 .staging/<version>)",
       "  --out <dir>           보고서 디렉터리 (기본 reports/<version>)",
+      "  --duplicate-decisions <json>  같은 코드 중복 파일의 채택 결정 (scripts/v162/resolve-duplicates-v162.py 출력)",
       "  --apply               공개 트리에 반영 (없으면 diff까지만)",
       "",
       "자세한 절차·게이트: docs/DATA_REFRESH_RUNBOOK_V156.md",
@@ -85,6 +88,7 @@ const STEPS = [
       "--carry-from", CARRY_FROM,
       ...(HOLD ? ["--hold", HOLD] : []),
       ...(ADOPT ? ["--adopt", ADOPT] : []),
+      ...(DUPLICATE_DECISIONS ? ["--duplicate-decisions", DUPLICATE_DECISIONS] : []),
     ],
   ],
   // A delivery may document its collection method with a live key in it. The
@@ -104,6 +108,14 @@ const APPLY_STEPS = [
   // element came out "panel-only" and the applied tree - and the TS module in
   // src - lost its map links (fixed once by hand in #46). Rebuilt here on the
   // applied tree, where the layers are.
+  // V162: the staging tree has no spatial/pending-v155 (chain-outside), so its
+  // map index dropped the prepared layers #47 registered (A-027 · A-028 · B-017
+  // · D-022). The layers and the home preview are rebuilt on the applied tree,
+  // then #47's map content contract and companions, before semantic reads them.
+  ["map-layers", node, ["scripts/v138/build-map-layers-v138.mjs", "--data", "public/data/vietnam/v2"]],
+  ["home-preview", node, ["scripts/v139/build-home-preview-v139.mjs", "--data", "public/data/vietnam/v2"]],
+  ["map-contract", node, ["scripts/v157/build-map-content-contract-v157.mjs"]],
+  ["map-companions", node, ["scripts/v157/build-map-companions-v157.mjs"]],
   ["semantic", python, ["tools/vietnam_semantic/build_semantic_v125.py"]],
   // The chain does not write these two, so they are rebuilt on the applied tree.
   // Each one rewrites asset-integrity afterwards.

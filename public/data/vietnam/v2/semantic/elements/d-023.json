@@ -1,19 +1,84 @@
 {
   "dimensions": [
     {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 2,
+      "values": [
+        "기후기금 승인사업 수",
+        "기후기금 승인액"
+      ]
+    },
+    {
       "key": "entityType",
       "labelKo": "레코드 유형",
       "valueCount": 1,
       "values": [
         "entity"
       ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 1,
+      "values": [
+        "2025"
+      ]
     }
   ],
   "elementId": "D-023",
-  "entityCount": 73,
+  "entityCount": 112,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 9,
+  "indicatorCount": 12,
   "indicators": [
+    {
+      "axisGroupKey": "measure-13d753606369|USD 백만",
+      "dimensionLabels": {
+        "category": "기후기금 승인액"
+      },
+      "dimensions": {
+        "category": "기후기금 승인액"
+      },
+      "displayLabel": "ODA 및 기후기금 재원 · 기후기금 승인액",
+      "indicatorId": "D-023_climate_fund_approved_usd_mn",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-13d753606369",
+        "labelKo": "ODA 및 기후기금 재원",
+        "unit": "USD 백만",
+        "unitFamily": "currency"
+      },
+      "seriesKey": "measure-13d753606369|USD 백만|category=기후기금 승인액|D-023_climate_fund_approved_usd_mn",
+      "sourceCaveat": null,
+      "sourceLabel": "ODA 및 기후기금 재원 · 기후기금 승인액",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
+    {
+      "axisGroupKey": "measure-5f7ffb1c83d1|건",
+      "dimensionLabels": {
+        "category": "기후기금 승인사업 수"
+      },
+      "dimensions": {
+        "category": "기후기금 승인사업 수"
+      },
+      "displayLabel": "ODA 및 기후기금 재원 · 기후기금 승인사업 수",
+      "indicatorId": "D-023_climate_fund_count",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f7ffb1c83d1",
+        "labelKo": "ODA 및 기후기금 재원",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5f7ffb1c83d1|건|category=기후기금 승인사업 수|D-023_climate_fund_count",
+      "sourceCaveat": null,
+      "sourceLabel": "ODA 및 기후기금 재원 · 기후기금 승인사업 수",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
+    },
     {
       "axisGroupKey": "measure-5f7ffb1c83d1|건",
       "dimensionLabels": {
@@ -47,6 +112,30 @@
         "sourceRow": 5,
         "sourceSheet": "2_meta_info"
       }
+    },
+    {
+      "axisGroupKey": "measure-5f7ffb1c83d1|건",
+      "dimensionLabels": {
+        "category": "기후기금 승인사업 레지스트리"
+      },
+      "dimensions": {
+        "category": "기후기금 승인사업 레지스트리"
+      },
+      "displayLabel": "ODA 및 기후기금 재원 · 기후기금 승인사업 레지스트리",
+      "indicatorId": "D-023_climate_fund_project_registry",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-5f7ffb1c83d1",
+        "labelKo": "ODA 및 기후기금 재원",
+        "unit": "건",
+        "unitFamily": "count"
+      },
+      "seriesKey": "measure-5f7ffb1c83d1|건|category=기후기금 승인사업 레지스트리|D-023_climate_fund_project_registry",
+      "sourceCaveat": null,
+      "sourceLabel": "ODA 및 기후기금 재원 · 기후기금 승인사업 레지스트리",
+      "sourceLabelEn": null,
+      "sourceNote": null,
+      "sourceProvenance": {}
     },
     {
       "axisGroupKey": "measure-9f4cceb741a2|USD",
@@ -331,15 +420,23 @@
       "unitFamily": "currency"
     },
     {
-      "indicatorCount": 4,
+      "indicatorCount": 1,
+      "key": "measure-13d753606369",
+      "labelKo": "ODA 및 기후기금 재원",
+      "recordCount": 1,
+      "unit": "USD 백만",
+      "unitFamily": "currency"
+    },
+    {
+      "indicatorCount": 6,
       "key": "measure-5f7ffb1c83d1",
       "labelKo": "ODA 및 기후기금 재원",
-      "recordCount": 0,
+      "recordCount": 1,
       "unit": "건",
-      "unitFamily": "text"
+      "unitFamily": "count"
     }
   ],
-  "observationCount": 0,
+  "observationCount": 2,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"

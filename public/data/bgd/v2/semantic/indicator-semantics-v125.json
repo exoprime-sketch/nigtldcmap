@@ -215,7 +215,11 @@
     "A-013": {
       "assetUrl": "/data/bgd/v2/semantic/elements/a-013.json",
       "dimensionKeys": [
-        "entityType"
+        "document_type",
+        "entityType",
+        "implementation_status",
+        "information_type",
+        "ndc_sector"
       ],
       "elementId": "A-013",
       "entityCount": 220,
@@ -292,19 +296,12 @@
     },
     "A-017": {
       "assetUrl": "/data/bgd/v2/semantic/elements/a-017.json",
-      "dimensionKeys": [
-        "category",
-        "detail",
-        "technology",
-        "year"
-      ],
+      "dimensionKeys": [],
       "elementId": "A-017",
       "entityCount": 0,
-      "indicatorCount": 24,
-      "measureKeys": [
-        "measure-353011f9421d"
-      ],
-      "observationCount": 72
+      "indicatorCount": 0,
+      "measureKeys": [],
+      "observationCount": 0
     },
     "A-018": {
       "assetUrl": "/data/bgd/v2/semantic/elements/a-018.json",
@@ -609,16 +606,17 @@
         "year"
       ],
       "elementId": "B-002",
-      "entityCount": 32,
-      "indicatorCount": 12,
+      "entityCount": 93,
+      "indicatorCount": 34,
       "measureKeys": [
-        "measure-0ab1a632d1bc",
+        "measure-095dc03abb8f",
+        "measure-3b45710aa52f",
         "measure-cbe45ba5c300",
         "measure-dc9435ecb81e",
         "measure-ecdcda6a26f3",
         "measure-f886ea70efa0"
       ],
-      "observationCount": 11
+      "observationCount": 32
     },
     "B-003": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-003.json",
@@ -639,11 +637,13 @@
         "entityType"
       ],
       "elementId": "B-004",
-      "entityCount": 4455,
-      "indicatorCount": 2,
+      "entityCount": 8424,
+      "indicatorCount": 4,
       "measureKeys": [
         "measure-343fb00e94cb",
-        "measure-716bd9e257bd"
+        "measure-3dec1225a910",
+        "measure-716bd9e257bd",
+        "measure-c1cd3b5c21b6"
       ],
       "observationCount": 0
     },
@@ -655,14 +655,16 @@
         "year"
       ],
       "elementId": "B-005",
-      "entityCount": 4455,
-      "indicatorCount": 3,
+      "entityCount": 5022,
+      "indicatorCount": 5,
       "measureKeys": [
         "measure-01ad3987e7b7",
-        "measure-324aefebcd8b",
-        "measure-c7f7887e5dbe"
+        "measure-3cc93645b027",
+        "measure-60ba8a1c5d25",
+        "measure-c7f7887e5dbe",
+        "measure-f2542f75d76d"
       ],
-      "observationCount": 30
+      "observationCount": 35
     },
     "B-006": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-006.json",
@@ -670,10 +672,12 @@
         "entityType"
       ],
       "elementId": "B-006",
-      "entityCount": 4455,
-      "indicatorCount": 2,
+      "entityCount": 7290,
+      "indicatorCount": 4,
       "measureKeys": [
+        "measure-29727c5dc3cc",
         "measure-7684c4bdfcae",
+        "measure-89664bf1a163",
         "measure-f74458338235"
       ],
       "observationCount": 0
@@ -684,9 +688,11 @@
         "entityType"
       ],
       "elementId": "B-007",
-      "entityCount": 4455,
-      "indicatorCount": 2,
+      "entityCount": 7290,
+      "indicatorCount": 4,
       "measureKeys": [
+        "measure-08e35a10367b",
+        "measure-265933b15d22",
         "measure-b3681f355370",
         "measure-b4226b1f1e1b"
       ],
@@ -736,14 +742,18 @@
       ],
       "elementId": "B-010",
       "entityCount": 0,
-      "indicatorCount": 6,
+      "indicatorCount": 10,
       "measureKeys": [
         "measure-292f961bb3ac",
+        "measure-76c833d35768",
+        "measure-c50813ff9637",
         "measure-c58378d6d03f",
         "measure-e19a3da06ed0",
-        "measure-f20de2f62bc7"
+        "measure-f20de2f62bc7",
+        "measure-f2da63dc07fe",
+        "measure-fb33c53aa72b"
       ],
-      "observationCount": 8
+      "observationCount": 40
     },
     "B-011": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-011.json",
@@ -809,22 +819,20 @@
     "B-014": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-014.json",
       "dimensionKeys": [
-        "detail",
-        "technology",
-        "year"
+        "entityType"
       ],
       "elementId": "B-014",
-      "entityCount": 0,
-      "indicatorCount": 18,
+      "entityCount": 18,
+      "indicatorCount": 6,
       "measureKeys": [
-        "measure-195d31a84a4c",
-        "measure-2ff22836a17a",
-        "measure-3a9a86388734",
-        "measure-b5876ff1adc3",
-        "measure-ca151feccf73",
-        "measure-f3fb8b4b017f"
+        "measure-3d49d2fc2c14",
+        "measure-3d644b40295b",
+        "measure-42d9e0f3e8a4",
+        "measure-585d0bf1bd61",
+        "measure-aba7603ac556",
+        "measure-f7f60c6ef4be"
       ],
-      "observationCount": 19
+      "observationCount": 0
     },
     "B-015": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-015.json",
@@ -835,15 +843,15 @@
       ],
       "elementId": "B-015",
       "entityCount": 0,
-      "indicatorCount": 11,
+      "indicatorCount": 8,
       "measureKeys": [
         "measure-1b326c752ad8",
         "measure-561318239a0a",
-        "measure-bd2027f50da8",
+        "measure-b6a4ec57b6e4",
         "measure-e7c7cd02a63b",
         "measure-ea2218b800d5"
       ],
-      "observationCount": 11
+      "observationCount": 8
     },
     "B-016": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-016.json",
@@ -980,11 +988,11 @@
       "indicatorCount": 10,
       "measureKeys": [
         "measure-165518c98ba5",
-        "measure-23352841c3ec",
         "measure-5a69d68b924a",
-        "measure-82708b28b15c",
-        "measure-bb28582e989e",
-        "measure-d3df35520c94"
+        "measure-84dc712bc1ec",
+        "measure-932638e7be84",
+        "measure-aedc028441aa",
+        "measure-f8deda7322e7"
       ],
       "observationCount": 10
     },
@@ -1009,7 +1017,7 @@
         "year"
       ],
       "elementId": "B-024",
-      "entityCount": 16,
+      "entityCount": 8,
       "indicatorCount": 4,
       "measureKeys": [
         "measure-0ea03cc414a8",
@@ -1040,11 +1048,12 @@
         "entityType"
       ],
       "elementId": "B-026",
-      "entityCount": 17,
-      "indicatorCount": 2,
+      "entityCount": 49,
+      "indicatorCount": 3,
       "measureKeys": [
         "measure-3c435d9c0e52",
-        "measure-476b68c2b0d7"
+        "measure-476b68c2b0d7",
+        "measure-a02f965ae511"
       ],
       "observationCount": 0
     },
@@ -1072,10 +1081,10 @@
         "entityType"
       ],
       "elementId": "B-028",
-      "entityCount": 8,
+      "entityCount": 73,
       "indicatorCount": 3,
       "measureKeys": [
-        "measure-75111d911b3d",
+        "measure-46b0ce8a14a3",
         "measure-7fcfac207c5c",
         "measure-f721acc6b4ca"
       ],
@@ -1087,11 +1096,13 @@
         "entityType"
       ],
       "elementId": "B-029",
-      "entityCount": 165,
-      "indicatorCount": 2,
+      "entityCount": 181,
+      "indicatorCount": 4,
       "measureKeys": [
         "measure-0473db465754",
-        "measure-8553f206ddfd"
+        "measure-3c5ffd27b1fd",
+        "measure-8553f206ddfd",
+        "measure-cfe6a5c0a125"
       ],
       "observationCount": 0
     },
@@ -1118,8 +1129,8 @@
       "entityCount": 9,
       "indicatorCount": 2,
       "measureKeys": [
-        "measure-625d7be5a1b6",
-        "measure-92fbd197a303"
+        "measure-467050440f0b",
+        "measure-625d7be5a1b6"
       ],
       "observationCount": 0
     },
@@ -1129,11 +1140,11 @@
         "entityType"
       ],
       "elementId": "B-032",
-      "entityCount": 9,
+      "entityCount": 18,
       "indicatorCount": 2,
       "measureKeys": [
         "measure-1f81db14f357",
-        "measure-6a474c92d604"
+        "measure-33bbd4dcfaf4"
       ],
       "observationCount": 0
     },
@@ -1160,11 +1171,12 @@
         "entityType"
       ],
       "elementId": "B-034",
-      "entityCount": 13,
-      "indicatorCount": 2,
+      "entityCount": 89,
+      "indicatorCount": 3,
       "measureKeys": [
-        "measure-20b9b9e9e6ce",
-        "measure-42c320cc80c0"
+        "measure-42c320cc80c0",
+        "measure-eb612900724d",
+        "measure-ef55d90ca600"
       ],
       "observationCount": 0
     },
@@ -1262,9 +1274,10 @@
       ],
       "elementId": "B-039",
       "entityCount": 160,
-      "indicatorCount": 2,
+      "indicatorCount": 3,
       "measureKeys": [
-        "measure-a49f99f25ada",
+        "measure-32dab02ee5a5",
+        "measure-683e77060b30",
         "measure-eb1873b9ba41"
       ],
       "observationCount": 0
@@ -1303,9 +1316,10 @@
         "entityType"
       ],
       "elementId": "B-042",
-      "entityCount": 82,
-      "indicatorCount": 2,
+      "entityCount": 106,
+      "indicatorCount": 3,
       "measureKeys": [
+        "measure-14c12094ee31",
         "measure-23cac7ae3394",
         "measure-dc84aab6e88a"
       ],
@@ -1336,16 +1350,17 @@
     "B-044": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-044.json",
       "dimensionKeys": [
-        "detail",
+        "entityType",
         "year"
       ],
       "elementId": "B-044",
-      "entityCount": 0,
-      "indicatorCount": 6,
+      "entityCount": 21,
+      "indicatorCount": 2,
       "measureKeys": [
-        "measure-796bc07af80c"
+        "measure-69f8addd8c6f",
+        "measure-a89f687bdacc"
       ],
-      "observationCount": 6
+      "observationCount": 1
     },
     "B-045": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-045.json",
@@ -1358,42 +1373,37 @@
       "indicatorCount": 24,
       "measureKeys": [
         "measure-47af40a32a99",
+        "measure-49bb1b5855fe",
         "measure-49de79d3637e",
-        "measure-a7149ff1ce77",
-        "measure-abdec69fd9fa"
+        "measure-7048e6eac20b"
       ],
       "observationCount": 24
     },
     "B-046": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-046.json",
       "dimensionKeys": [
-        "category",
-        "detail",
-        "year"
+        "entityType"
       ],
       "elementId": "B-046",
-      "entityCount": 0,
-      "indicatorCount": 6,
+      "entityCount": 21,
+      "indicatorCount": 1,
       "measureKeys": [
-        "measure-22f082a6227f",
-        "measure-3683b420e75c"
+        "measure-f4d4bcaa841a"
       ],
-      "observationCount": 6
+      "observationCount": 0
     },
     "B-047": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-047.json",
       "dimensionKeys": [
-        "detail",
-        "year"
+        "entityType"
       ],
       "elementId": "B-047",
-      "entityCount": 0,
-      "indicatorCount": 6,
+      "entityCount": 21,
+      "indicatorCount": 1,
       "measureKeys": [
-        "measure-12a87807006c",
-        "measure-d093490b24b3"
+        "measure-267da07e8fd5"
       ],
-      "observationCount": 6
+      "observationCount": 0
     },
     "B-048": {
       "assetUrl": "/data/bgd/v2/semantic/elements/b-048.json",
@@ -1414,8 +1424,8 @@
         "entityType"
       ],
       "elementId": "C-001",
-      "entityCount": 69,
-      "indicatorCount": 10,
+      "entityCount": 86,
+      "indicatorCount": 9,
       "measureKeys": [
         "measure-ca593452ed2f"
       ],
@@ -1427,8 +1437,8 @@
         "entityType"
       ],
       "elementId": "C-002",
-      "entityCount": 51,
-      "indicatorCount": 7,
+      "entityCount": 76,
+      "indicatorCount": 6,
       "measureKeys": [
         "measure-11d5ee64cbdb"
       ],
@@ -1440,8 +1450,8 @@
         "entityType"
       ],
       "elementId": "C-003",
-      "entityCount": 13,
-      "indicatorCount": 3,
+      "entityCount": 27,
+      "indicatorCount": 5,
       "measureKeys": [
         "measure-a14985d58f5a"
       ],
@@ -1453,8 +1463,8 @@
         "entityType"
       ],
       "elementId": "C-004",
-      "entityCount": 2,
-      "indicatorCount": 1,
+      "entityCount": 38,
+      "indicatorCount": 3,
       "measureKeys": [
         "measure-87129985469c"
       ],
@@ -1544,7 +1554,7 @@
         "entityType"
       ],
       "elementId": "C-011",
-      "entityCount": 53,
+      "entityCount": 54,
       "indicatorCount": 8,
       "measureKeys": [
         "measure-c15df424aa69"
@@ -1557,8 +1567,8 @@
         "entityType"
       ],
       "elementId": "C-012",
-      "entityCount": 37,
-      "indicatorCount": 5,
+      "entityCount": 75,
+      "indicatorCount": 2,
       "measureKeys": [
         "measure-21b02d172aba"
       ],
@@ -1570,7 +1580,7 @@
         "entityType"
       ],
       "elementId": "C-013",
-      "entityCount": 51,
+      "entityCount": 77,
       "indicatorCount": 5,
       "measureKeys": [
         "measure-065ce4b6f2c9"
@@ -1586,7 +1596,6 @@
       "entityCount": 54,
       "indicatorCount": 7,
       "measureKeys": [
-        "measure-7d90ac73b2d7",
         "measure-9e6ed063a780"
       ],
       "observationCount": 0
@@ -1610,7 +1619,7 @@
         "entityType"
       ],
       "elementId": "C-016",
-      "entityCount": 32,
+      "entityCount": 92,
       "indicatorCount": 6,
       "measureKeys": [
         "measure-c2b251a272a7"
@@ -1624,7 +1633,7 @@
       ],
       "elementId": "C-017",
       "entityCount": 41,
-      "indicatorCount": 7,
+      "indicatorCount": 1,
       "measureKeys": [
         "measure-d98c0107a51d"
       ],
@@ -1636,7 +1645,7 @@
         "entityType"
       ],
       "elementId": "C-018",
-      "entityCount": 8,
+      "entityCount": 48,
       "indicatorCount": 4,
       "measureKeys": [
         "measure-612c11be933f"
@@ -1649,8 +1658,8 @@
         "entityType"
       ],
       "elementId": "C-019",
-      "entityCount": 43,
-      "indicatorCount": 10,
+      "entityCount": 44,
+      "indicatorCount": 7,
       "measureKeys": [
         "measure-0fba0e08d182"
       ],
@@ -1742,12 +1751,26 @@
     },
     "D-003": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-003.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-003",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 207,
+      "indicatorCount": 68,
+      "measureKeys": [
+        "measure-5994f6e30f8b",
+        "measure-5daa738e65ab",
+        "measure-7c33e3bc5667",
+        "measure-9a352c8d415a",
+        "measure-a7e3241c59bc",
+        "measure-b177741773f9",
+        "measure-b2699582ea0f"
+      ],
+      "observationCount": 65
     },
     "D-004": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-004.json",
@@ -1760,201 +1783,434 @@
     },
     "D-005": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-005.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-005",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 28,
+      "measureKeys": [
+        "measure-53067a45d54b",
+        "measure-68a5286dbe3a",
+        "measure-90762b49ce04",
+        "measure-a7c43c49fe43",
+        "measure-caafd39769a4",
+        "measure-def614dc741d"
+      ],
+      "observationCount": 28
     },
     "D-006": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-006.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-006",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 31,
+      "measureKeys": [
+        "measure-21d8e1a37c00",
+        "measure-52eb74eda3fd",
+        "measure-67f83ffd0675",
+        "measure-8461b81b02f5",
+        "measure-a049db3d4441",
+        "measure-aead78fd8314",
+        "measure-b3366eea8f27",
+        "measure-c376ea46cd6b",
+        "measure-d3376d2f8658",
+        "measure-f93cfe47ac55"
+      ],
+      "observationCount": 347
     },
     "D-007": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-007.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-007",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 20,
+      "measureKeys": [
+        "measure-464ee9ead0dd",
+        "measure-8cc428bc2fba",
+        "measure-b7e3643daa12",
+        "measure-ce9d5eed7e4b",
+        "measure-f23fdc3a02fd"
+      ],
+      "observationCount": 20
     },
     "D-008": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-008.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-008",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 17,
+      "measureKeys": [
+        "measure-0e1d35157cb1",
+        "measure-1658538c67b4",
+        "measure-1dd78f50bddc",
+        "measure-61a2a4efc555",
+        "measure-64a622147b49",
+        "measure-814a4680c652",
+        "measure-8f6d937bae5f",
+        "measure-a66bc0db27be",
+        "measure-b2412b536fab"
+      ],
+      "observationCount": 17
     },
     "D-009": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-009.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-009",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 48,
+      "measureKeys": [
+        "measure-045ad20207ed",
+        "measure-06d42e023905",
+        "measure-0dc230b4ae4e",
+        "measure-285eb42dffda",
+        "measure-5c40f7bbca32",
+        "measure-6c7e15d2b055",
+        "measure-6cde60243045",
+        "measure-8f23098e1b7a",
+        "measure-b7dc14af4a93",
+        "measure-c75557e25167",
+        "measure-cbdaf099f138",
+        "measure-cfad9cb8b170",
+        "measure-d302e1b710c5",
+        "measure-d3638bcb518c",
+        "measure-dff57e548fd7",
+        "measure-ec76b1280745",
+        "measure-f45c91e9977d"
+      ],
+      "observationCount": 108
     },
     "D-010": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-010.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-010",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 28,
+      "measureKeys": [
+        "measure-465d4d66c9ba",
+        "measure-5b4fa03ea53f",
+        "measure-6cd465cbc4ee",
+        "measure-d6dfd90002d8",
+        "measure-f89153b46866"
+      ],
+      "observationCount": 140
     },
     "D-011": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-011.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-011",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 110,
+      "measureKeys": [
+        "measure-8149e560b53b"
+      ],
+      "observationCount": 552
     },
     "D-012": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-012.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-012",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 122,
+      "indicatorCount": 8,
+      "measureKeys": [
+        "measure-a10134839d48"
+      ],
+      "observationCount": 6
     },
     "D-013": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-013.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "D-013",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 26,
+      "measureKeys": [
+        "measure-36c8b59e695d",
+        "measure-39b1b7050d20",
+        "measure-3b24cd55a703",
+        "measure-d76b312bfbc2"
+      ],
+      "observationCount": 30
     },
     "D-014": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-014.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-014",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 94,
+      "indicatorCount": 6,
+      "measureKeys": [
+        "measure-1bb7e10d4ef8",
+        "measure-43458a5c4b72"
+      ],
+      "observationCount": 5
     },
     "D-015": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-015.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-015",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 1427,
+      "indicatorCount": 6,
+      "measureKeys": [
+        "measure-42fea0427a59",
+        "measure-a7fab541fc17"
+      ],
+      "observationCount": 5
     },
     "D-016": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-016.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-016",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 370,
+      "indicatorCount": 7,
+      "measureKeys": [
+        "measure-8a51b0acd4b8",
+        "measure-b30eca6779f1"
+      ],
+      "observationCount": 6
     },
     "D-017": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-017.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "entityType"
+      ],
       "elementId": "D-017",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
+      "entityCount": 300,
+      "indicatorCount": 1,
+      "measureKeys": [
+        "measure-3bd280373b9a"
+      ],
       "observationCount": 0
     },
     "D-018": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-018.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-018",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 4,
+      "indicatorCount": 14,
+      "measureKeys": [
+        "measure-2aa34c218045",
+        "measure-9f17595645ec",
+        "measure-a07cad4bafe6"
+      ],
+      "observationCount": 13
     },
     "D-019": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-019.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "entityType",
+        "technology",
+        "year",
+        "기술분야_Sectors"
+      ],
       "elementId": "D-019",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 7,
+      "indicatorCount": 7,
+      "measureKeys": [
+        "measure-5bc9cf65db2a",
+        "measure-646a4a09318f"
+      ],
+      "observationCount": 6
     },
     "D-020": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-020.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-020",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 10,
+      "indicatorCount": 13,
+      "measureKeys": [
+        "measure-486d043acf68",
+        "measure-49599f2abb4f",
+        "measure-a7dca010284b",
+        "measure-af54066be68d",
+        "measure-e39c35e86efc"
+      ],
+      "observationCount": 12
     },
     "D-021": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-021.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-021",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 542,
+      "indicatorCount": 5,
+      "measureKeys": [
+        "measure-6567f7354984",
+        "measure-877800bb9c2d"
+      ],
+      "observationCount": 4
     },
     "D-022": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-022.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-022",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 336,
+      "indicatorCount": 8,
+      "measureKeys": [
+        "measure-4ad9880e39b0",
+        "measure-6bccef632200",
+        "measure-c6bc3ad4f67b",
+        "measure-f0715eaa79cd"
+      ],
+      "observationCount": 4
     },
     "D-023": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-023.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-023",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 119,
+      "indicatorCount": 15,
+      "measureKeys": [
+        "measure-13d753606369",
+        "measure-359a28199698",
+        "measure-5f7ffb1c83d1",
+        "measure-9f4cceb741a2"
+      ],
+      "observationCount": 13
     },
     "D-024": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-024.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-024",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 21,
+      "indicatorCount": 10,
+      "measureKeys": [
+        "measure-698a3100e366",
+        "measure-8d70a6e8cab6",
+        "measure-91615c155f8e",
+        "measure-cb62efeb5ad3"
+      ],
+      "observationCount": 8
     },
     "D-025": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-025.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "detail",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-025",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 67,
+      "indicatorCount": 10,
+      "measureKeys": [
+        "measure-2c2221cce0c4",
+        "measure-a501770280ff"
+      ],
+      "observationCount": 49
     },
     "D-026": {
       "assetUrl": "/data/bgd/v2/semantic/elements/d-026.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "category",
+        "entityType",
+        "technology",
+        "year"
+      ],
       "elementId": "D-026",
-      "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "entityCount": 17,
+      "indicatorCount": 10,
+      "measureKeys": [
+        "measure-7f0cd709cfc5"
+      ],
+      "observationCount": 9
     },
     "E-001": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-001.json",
@@ -1973,10 +2229,7 @@
     "E-002": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-002.json",
       "dimensionKeys": [
-        "entityType",
-        "승인절차_기재_구분_approval_procedure_status",
-        "제6_4조_전환_상태_a64_status",
-        "현행여부_record_status"
+        "entityType"
       ],
       "elementId": "E-002",
       "entityCount": 12,
@@ -2093,6 +2346,7 @@
     "E-009": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-009.json",
       "dimensionKeys": [
+        "technology",
         "year"
       ],
       "elementId": "E-009",
@@ -2112,6 +2366,7 @@
       "assetUrl": "/data/bgd/v2/semantic/elements/e-010.json",
       "dimensionKeys": [
         "detail",
+        "technology",
         "year"
       ],
       "elementId": "E-010",
@@ -2123,33 +2378,45 @@
         "measure-6f94f67e75e4",
         "measure-8118ac1e0789"
       ],
-      "observationCount": 24
+      "observationCount": 178
     },
     "E-011": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-011.json",
-      "dimensionKeys": [],
+      "dimensionKeys": [
+        "detail",
+        "technology",
+        "year"
+      ],
       "elementId": "E-011",
       "entityCount": 0,
-      "indicatorCount": 0,
-      "measureKeys": [],
-      "observationCount": 0
+      "indicatorCount": 10,
+      "measureKeys": [
+        "measure-12a7feb401ad",
+        "measure-aa48265c21da"
+      ],
+      "observationCount": 50
     },
     "E-012": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-012.json",
       "dimensionKeys": [
-        "category",
-        "detail",
-        "detail_2",
+        "classification",
+        "currency",
+        "occupation",
+        "sex",
+        "source",
         "year"
       ],
       "elementId": "E-012",
       "entityCount": 0,
       "indicatorCount": 134,
       "measureKeys": [
-        "measure-07eb82922651",
-        "measure-c90444d51f76",
-        "measure-d2c42ca652d3",
-        "measure-f4227d73951c"
+        "average_monthly_wage",
+        "employed_persons",
+        "employment_rate",
+        "occupation_employment_count",
+        "occupation_employment_share",
+        "occupation_female_share",
+        "occupation_wage"
       ],
       "observationCount": 759
     },
@@ -2182,8 +2449,7 @@
     "E-015": {
       "assetUrl": "/data/bgd/v2/semantic/elements/e-015.json",
       "dimensionKeys": [
-        "entityType",
-        "가입_상태_구분_membership_status"
+        "entityType"
       ],
       "elementId": "E-015",
       "entityCount": 4,
@@ -2259,7 +2525,7 @@
     }
   },
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 1747,
-  "observationCount": 20381,
+  "indicatorCount": 2230,
+  "observationCount": 21979,
   "schemaVersion": "v125"
 }

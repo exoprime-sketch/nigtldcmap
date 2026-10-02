@@ -1,19 +1,28 @@
 {
-  "generatedAt": "2026-09-30T01:40:56.871Z",
+  "generatedAt": "2026-10-01T09:22:54.654Z",
   "cards": 146,
   "kinds": {
-    "line": 33,
+    "line": 36,
     "signed-bars": 1,
-    "bars": 38,
+    "bars": 36,
     "composition": 5,
-    "level": 17,
+    "facts": 36,
+    "level": 12,
     "grouped-bars": 1,
     "map": 1,
-    "facts": 31,
     "spatial-trend": 5,
     "spatial": 11,
-    "status": 3
+    "status": 2
   },
-  "warnings": [],
-  "bytes": 227674
+  "warnings": [
+    {
+      "elementId": "C-001",
+      "message": "builder failed: C-001 reviewed targets changed"
+    },
+    {
+      "elementId": "C-019",
+      "message": "builder failed: No reviewed facility-region rows"
+    }
+  ],
+  "bytes": 308044
 }

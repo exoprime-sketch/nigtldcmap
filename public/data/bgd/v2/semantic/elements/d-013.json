@@ -1,12 +1,861 @@
 {
-  "dimensions": [],
+  "dimensions": [
+    {
+      "key": "category",
+      "labelKo": "분류",
+      "valueCount": 26,
+      "values": [
+        "Green Growth Index 종합점수",
+        "기초 서비스 · 자원 접근성",
+        "녹색 고용",
+        "녹색 무역",
+        "녹색 투자",
+        "녹색 혁신",
+        "녹색경제 기회(GEO)",
+        "문화 · 사회적 가치",
+        "물 효율 · 지속가능성",
+        "물질 이용 효율",
+        "보조지표 생태계 활력",
+        "보조지표 환경보건",
+        "보조지표 환경성과지수 종합",
+        "사회 보호",
+        "사회 통합(SI)",
+        "사회 형평",
+        "생물다양성 · 생태계 보호",
+        "성 평등",
+        "아시아 순위",
+        "아시아 역내 순위",
+        "에너지 효율 · 지속가능성",
+        "온실가스 감축",
+        "자연자본 보호(NCP)",
+        "지속가능한 토지 이용",
+        "환경질",
+        "효율 · 지속가능 자원이용(ESRU)"
+      ]
+    },
+    {
+      "key": "detail",
+      "labelKo": "세부 분류",
+      "valueCount": 3,
+      "values": [
+        "부문 점수",
+        "종합지수 순위",
+        "차원 점수"
+      ]
+    },
+    {
+      "key": "technology",
+      "labelKo": "기술",
+      "valueCount": 1,
+      "values": [
+        "범용"
+      ]
+    },
+    {
+      "key": "year",
+      "labelKo": "연도",
+      "valueCount": 2,
+      "values": [
+        "2024",
+        "2026"
+      ]
+    }
+  ],
   "elementId": "D-013",
   "entityCount": 0,
   "generatedAt": "2026-08-27T00:00:00Z",
-  "indicatorCount": 0,
-  "indicators": [],
-  "measures": [],
-  "observationCount": 0,
+  "indicatorCount": 26,
+  "indicators": [
+    {
+      "axisGroupKey": "measure-3b24cd55a703|위",
+      "dimensionLabels": {
+        "category": "아시아 순위",
+        "detail": "종합지수 순위"
+      },
+      "dimensions": {
+        "category": "아시아 순위",
+        "detail": "종합지수 순위"
+      },
+      "displayLabel": "GGGI Green Growth Index · 아시아 순위 — 종합지수 순위",
+      "indicatorId": "D-013_asia_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-3b24cd55a703",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-3b24cd55a703|위|category=아시아 순위|detail=종합지수 순위|D-013_asia_rank",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 아시아 순위 — 종합지수 순위",
+      "sourceLabelEn": "Green Growth Index — rank among Asian countries",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 6,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "효율 · 지속가능 자원이용(ESRU)",
+        "detail": "차원 점수"
+      },
+      "dimensions": {
+        "category": "효율 · 지속가능 자원이용(ESRU)",
+        "detail": "차원 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 효율·지속가능 자원이용(ESRU) — 차원 점수",
+      "indicatorId": "D-013_dimension_score_esru",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=효율 · 지속가능 자원이용(ESRU)|detail=차원 점수|D-013_dimension_score_esru",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 효율·지속가능 자원이용(ESRU) — 차원 점수",
+      "sourceLabelEn": "Green Growth Index — Efficient and Sustainable Resource Use dimension",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 7,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색경제 기회(GEO)",
+        "detail": "차원 점수"
+      },
+      "dimensions": {
+        "category": "녹색경제 기회(GEO)",
+        "detail": "차원 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색경제 기회(GEO) — 차원 점수",
+      "indicatorId": "D-013_dimension_score_geo",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색경제 기회(GEO)|detail=차원 점수|D-013_dimension_score_geo",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 녹색경제 기회(GEO) — 차원 점수",
+      "sourceLabelEn": "Green Growth Index — Green Economic Opportunities dimension",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 8,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "자연자본 보호(NCP)",
+        "detail": "차원 점수"
+      },
+      "dimensions": {
+        "category": "자연자본 보호(NCP)",
+        "detail": "차원 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 자연자본 보호(NCP) — 차원 점수",
+      "indicatorId": "D-013_dimension_score_ncp",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=자연자본 보호(NCP)|detail=차원 점수|D-013_dimension_score_ncp",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 자연자본 보호(NCP) — 차원 점수",
+      "sourceLabelEn": "Green Growth Index — Natural Capital Protection dimension",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 9,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 통합(SI)",
+        "detail": "차원 점수"
+      },
+      "dimensions": {
+        "category": "사회 통합(SI)",
+        "detail": "차원 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 통합(SI) — 차원 점수",
+      "indicatorId": "D-013_dimension_score_si",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 통합(SI)|detail=차원 점수|D-013_dimension_score_si",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 사회 통합(SI) — 차원 점수",
+      "sourceLabelEn": "Green Growth Index — Social Inclusion dimension",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 10,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 생태계 활력",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "보조지표 생태계 활력",
+        "technology": "범용"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 생태계 활력",
+      "indicatorId": "D-013_epi_eco",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 생태계 활력|technology=범용|D-013_epi_eco",
+      "sourceCaveat": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 생태계 활력",
+      "sourceLabelEn": "GGGI Green Growth Index · 보조지표 생태계 활력",
+      "sourceNote": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceProvenance": {
+        "sourceRow": 31,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 환경성과지수 종합",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "보조지표 환경성과지수 종합",
+        "technology": "범용"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 환경성과지수 종합",
+      "indicatorId": "D-013_epi_epi",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 환경성과지수 종합|technology=범용|D-013_epi_epi",
+      "sourceCaveat": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 환경성과지수 종합",
+      "sourceLabelEn": "GGGI Green Growth Index · 보조지표 환경성과지수 종합",
+      "sourceNote": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceProvenance": {
+        "sourceRow": 29,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "보조지표 환경보건",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "보조지표 환경보건",
+        "technology": "범용"
+      },
+      "displayLabel": "GGGI Green Growth Index · 보조지표 환경보건",
+      "indicatorId": "D-013_epi_hlt",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=보조지표 환경보건|technology=범용|D-013_epi_hlt",
+      "sourceCaveat": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceLabel": "GGGI Green Growth Index · 보조지표 환경보건",
+      "sourceLabelEn": "GGGI Green Growth Index · 보조지표 환경보건",
+      "sourceNote": "[추가수집 2026-09-24] GGGI 지수 단일 의존을 보완하는 보조지수. GGGI와 산출체계가 달라 직접 비교 불가.",
+      "sourceProvenance": {
+        "sourceRow": 30,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-d76b312bfbc2|점수(0~100)",
+      "dimensionLabels": {
+        "category": "Green Growth Index 종합점수",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "Green Growth Index 종합점수",
+        "technology": "범용"
+      },
+      "displayLabel": "GGGI Green Growth Index · Green Growth Index 종합점수",
+      "indicatorId": "D-013_green_growth_index",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-d76b312bfbc2",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점수(0~100)",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-d76b312bfbc2|점수(0~100)|category=Green Growth Index 종합점수|technology=범용|D-013_green_growth_index",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). [원문 이중값] Table 1에 지수·순위 쌍이 두 벌 게재되어 있으며 구분 기준이 원문에 명시되지 않음. 보정하지 않고 두 번째 쌍을 수록하고 첫 번째 쌍을 1.1 비고에 병기함. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · Green Growth Index 종합점수",
+      "sourceLabelEn": "GGGI Green Growth Index — Green Growth Index",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). [원문 이중값] Table 1에 지수·순위 쌍이 두 벌 게재되어 있으며 구분 기준이 원문에 명시되지 않음. 보정하지 않고 두 번째 쌍을 수록하고 첫 번째 쌍을 1.1 비고에 병기함. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 11,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "기초 서비스 · 자원 접근성",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "기초 서비스 · 자원 접근성",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 기초 서비스·자원 접근성 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_access_to_basic_services",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=기초 서비스 · 자원 접근성|detail=부문 점수|D-013_pillar_score_access_to_basic_services",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 기초 서비스·자원 접근성 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Access to basic services and resources pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 12,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "생물다양성 · 생태계 보호",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "생물다양성 · 생태계 보호",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 생물다양성·생태계 보호 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_biodiversity_ecosystem_protection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=생물다양성 · 생태계 보호|detail=부문 점수|D-013_pillar_score_biodiversity_ecosystem_protection",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 생물다양성·생태계 보호 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Biodiversity and ecosystem protection pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 13,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "문화 · 사회적 가치",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "문화 · 사회적 가치",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 문화·사회적 가치 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_cultural_social_value",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=문화 · 사회적 가치|detail=부문 점수|D-013_pillar_score_cultural_social_value",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 문화·사회적 가치 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Cultural and social value pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 14,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "에너지 효율 · 지속가능성",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "에너지 효율 · 지속가능성",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 에너지 효율·지속가능성 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_efficient_sustainable_energy",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=에너지 효율 · 지속가능성|detail=부문 점수|D-013_pillar_score_efficient_sustainable_energy",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 에너지 효율·지속가능성 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Efficient and sustainable energy pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 15,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "물 효율 · 지속가능성",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "물 효율 · 지속가능성",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 물 효율·지속가능성 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_efficient_sustainable_water",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=물 효율 · 지속가능성|detail=부문 점수|D-013_pillar_score_efficient_sustainable_water",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 물 효율·지속가능성 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Efficient and sustainable water use pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 16,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "환경질",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "환경질",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 환경질 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_environmental_quality",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=환경질|detail=부문 점수|D-013_pillar_score_environmental_quality",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 환경질 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Environmental quality pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 17,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "성 평등",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "성 평등",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 성 평등 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_gender_balance",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=성 평등|detail=부문 점수|D-013_pillar_score_gender_balance",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 성 평등 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Gender balance pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 18,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "온실가스 감축",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "온실가스 감축",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 온실가스 감축 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_ghg_emission_reduction",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=온실가스 감축|detail=부문 점수|D-013_pillar_score_ghg_emission_reduction",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 온실가스 감축 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — GHG emissions reduction pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 19,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 고용",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "녹색 고용",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 고용 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_green_employment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 고용|detail=부문 점수|D-013_pillar_score_green_employment",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 고용 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Green employment pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 20,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 혁신",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "녹색 혁신",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 혁신 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_green_innovation",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 혁신|detail=부문 점수|D-013_pillar_score_green_innovation",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 혁신 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Green innovation pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 21,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 투자",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "녹색 투자",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 투자 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_green_investment",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 투자|detail=부문 점수|D-013_pillar_score_green_investment",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 투자 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Green investment pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 22,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "녹색 무역",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "녹색 무역",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 녹색 무역 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_green_trade",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=녹색 무역|detail=부문 점수|D-013_pillar_score_green_trade",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 녹색 무역 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Green trade pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 23,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "물질 이용 효율",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "물질 이용 효율",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 물질 이용 효율 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_material_use_efficiency",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=물질 이용 효율|detail=부문 점수|D-013_pillar_score_material_use_efficiency",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 물질 이용 효율 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Material use efficiency pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 24,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 형평",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "사회 형평",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 형평 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_social_equity",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 형평|detail=부문 점수|D-013_pillar_score_social_equity",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 사회 형평 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Social equity pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 25,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "사회 보호",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "사회 보호",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 사회 보호 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_social_protection",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=사회 보호|detail=부문 점수|D-013_pillar_score_social_protection",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 사회 보호 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Social protection pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 26,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-36c8b59e695d|점",
+      "dimensionLabels": {
+        "category": "지속가능한 토지 이용",
+        "detail": "부문 점수"
+      },
+      "dimensions": {
+        "category": "지속가능한 토지 이용",
+        "detail": "부문 점수"
+      },
+      "displayLabel": "GGGI Green Growth Index · 지속가능한 토지 이용 — 부문 점수",
+      "indicatorId": "D-013_pillar_score_sustainable_land_use",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-36c8b59e695d",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "점",
+        "unitFamily": "score"
+      },
+      "seriesKey": "measure-36c8b59e695d|점|category=지속가능한 토지 이용|detail=부문 점수|D-013_pillar_score_sustainable_land_use",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 지속가능한 토지 이용 — 부문 점수",
+      "sourceLabelEn": "Green Growth Index — Sustainable land use pillar",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 측정값형 · 지표(variable_id) 단위 태깅 · 근거 지표별 기술 구분 · 기술 미명시 지표 제외. [원본 버전] GGGI Green Growth Index 2024 보고서 원본 PDF에서 방글라데시 행을 직접 판독함. [정의·범위] 종합지수와 순위는 아시아 국가표(Table 10) 기준이며, 4개 차원(dimension)과 16개 부문(pillar) 점수는 각각 Table 13~16의 방글라데시 행에서 확인함. 모두 0~100 척도이며 높을수록 우수함. [원문 자체 표기 차이 — 보정하지 않음] 보고서 Table 1(국가 대시보드, p.23)의 방글라데시 행에는 지수·순위 쌍이 두 벌 (48.88/24위, 47.93/29위) 제시되어 있고 Table 10(아시아 국가표, p.111)에는 47.93/29위만 제시됨. 두 쌍의 구분 기준이 원문에 명시되어 있지 않아 보정하거나 임의로 선택하지 않고, 아시아 국가표(Table 10) 값을 지표로 수록하고 Table 1의 다른 값은 본 유의사항에 기록함. [결측] Table 21(지표별 데이터 공백)에서 방글라데시의 데이터 공백률은 전 차원 0%임. 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 27,
+        "sourceSheet": "2_meta_info"
+      }
+    },
+    {
+      "axisGroupKey": "measure-39b1b7050d20|순위",
+      "dimensionLabels": {
+        "category": "아시아 역내 순위",
+        "technology": "범용"
+      },
+      "dimensions": {
+        "category": "아시아 역내 순위",
+        "technology": "범용"
+      },
+      "displayLabel": "GGGI Green Growth Index · 아시아 역내 순위",
+      "indicatorId": "D-013_regional_rank",
+      "inferenceMethod": "deterministic-source-structure",
+      "measure": {
+        "key": "measure-39b1b7050d20",
+        "labelKo": "GGGI Green Growth Index",
+        "unit": "순위",
+        "unitFamily": "other"
+      },
+      "seriesKey": "measure-39b1b7050d20|순위|category=아시아 역내 순위|technology=범용|D-013_regional_rank",
+      "sourceCaveat": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). [원문 이중값] Table 1에 지수·순위 쌍이 두 벌 게재되어 있으며 구분 기준이 원문에 명시되지 않음. 보정하지 않고 두 번째 쌍을 수록하고 첫 번째 쌍을 1.1 비고에 병기함. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceLabel": "GGGI Green Growth Index · 아시아 역내 순위",
+      "sourceLabelEn": "GGGI Green Growth Index — Rank within region",
+      "sourceNote": "[★검토의견 반영 2026-09-23] GGGI Green Growth Index 2024 원표는 지수·순위 쌍이 두 벌 제시됨. 본 데이터셋은 두 번째 쌍(2024년 갱신판 기준)을 수록하며, 선정 근거는 원표 주석의 \"2024 edition\" 표기와 10개국 전체에 동일 쌍을 적용해 국가 간 비교가능성을 확보하기 위함. 10개국 동일 기준 적용. [라이선스 · 원본배포: 불가 / 집계표출: 제한] [tech_ids] 범용 · 특정 기술 없음 · 전략판단 배경데이터(참조DB 90_코드값목록). [원문 이중값] Table 1에 지수·순위 쌍이 두 벌 게재되어 있으며 구분 기준이 원문에 명시되지 않음. 보정하지 않고 두 번째 쌍을 수록하고 첫 번째 쌍을 1.1 비고에 병기함. [지역값 ①] 원천이 국가 단위로만 공표 — 지역 값 부재. 배분 추정 미실시(규칙2-③ 미적용).",
+      "sourceProvenance": {
+        "sourceRow": 28,
+        "sourceSheet": "2_meta_info"
+      }
+    }
+  ],
+  "measures": [
+    {
+      "indicatorCount": 1,
+      "key": "measure-39b1b7050d20",
+      "labelKo": "GGGI Green Growth Index",
+      "recordCount": 1,
+      "unit": "순위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-3b24cd55a703",
+      "labelKo": "GGGI Green Growth Index",
+      "recordCount": 1,
+      "unit": "위",
+      "unitFamily": "other"
+    },
+    {
+      "indicatorCount": 23,
+      "key": "measure-36c8b59e695d",
+      "labelKo": "GGGI Green Growth Index",
+      "recordCount": 27,
+      "unit": "점",
+      "unitFamily": "score"
+    },
+    {
+      "indicatorCount": 1,
+      "key": "measure-d76b312bfbc2",
+      "labelKo": "GGGI Green Growth Index",
+      "recordCount": 1,
+      "unit": "점수(0~100)",
+      "unitFamily": "score"
+    }
+  ],
+  "observationCount": 30,
   "recordSemanticsMode": "sparse-overrides",
   "records": [],
   "schemaVersion": "v125"
