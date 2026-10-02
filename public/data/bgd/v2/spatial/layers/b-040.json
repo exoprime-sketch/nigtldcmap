@@ -1,0 +1,365 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-040",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "m-ad19af5eda",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "m-ad19af5eda",
+        "label": "심도 1km 지온 — 평균",
+        "measureId": "m-ad19af5eda",
+        "measureKey": "m-ad19af5eda",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-7e462a84af",
+        "label": "심도 1km 지온 — 최소",
+        "measureId": "m-7e462a84af",
+        "measureKey": "m-7e462a84af",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-ae7c7b364a",
+        "label": "심도 1km 지온 — 최대",
+        "measureId": "m-ae7c7b364a",
+        "measureKey": "m-ae7c7b364a",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-670f92b5a8",
+        "label": "심도 2km 지온 — 평균",
+        "measureId": "m-670f92b5a8",
+        "measureKey": "m-670f92b5a8",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-e9fd51553a",
+        "label": "심도 2km 지온 — 최소",
+        "measureId": "m-e9fd51553a",
+        "measureKey": "m-e9fd51553a",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-2065337b75",
+        "label": "심도 2km 지온 — 최대",
+        "measureId": "m-2065337b75",
+        "measureKey": "m-2065337b75",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-cec364e0d1",
+        "label": "심도 3km 지온 — 평균",
+        "measureId": "m-cec364e0d1",
+        "measureKey": "m-cec364e0d1",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-ae4cb79de4",
+        "label": "심도 3km 지온 — 최소",
+        "measureId": "m-ae4cb79de4",
+        "measureKey": "m-ae4cb79de4",
+        "unit": "℃",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-ad19af5eda",
+        "variableLabel": "심도 1km 지온 — 평균",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          53.05,
+          52.82,
+          53.59,
+          53.11,
+          50.74,
+          47.79,
+          50.56,
+          50.44
+        ]
+      },
+      {
+        "variable": "m-7e462a84af",
+        "variableLabel": "심도 1km 지온 — 최소",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          52.16,
+          49.17,
+          50.43,
+          51.65,
+          46.48,
+          43.19,
+          47.02,
+          47.04
+        ]
+      },
+      {
+        "variable": "m-ae7c7b364a",
+        "variableLabel": "심도 1km 지온 — 최대",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          54.04,
+          56.67,
+          55.62,
+          54.74,
+          54.86,
+          50.84,
+          54.55,
+          53.08
+        ]
+      },
+      {
+        "variable": "m-670f92b5a8",
+        "variableLabel": "심도 2km 지온 — 평균",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          79.71,
+          79.95,
+          81.26,
+          79.67,
+          75.55,
+          69.98,
+          75.74,
+          75.38
+        ]
+      },
+      {
+        "variable": "m-e9fd51553a",
+        "variableLabel": "심도 2km 지온 — 최소",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          77.9,
+          73.68,
+          75.38,
+          76.78,
+          66.92,
+          60.78,
+          68.81,
+          68.72
+        ]
+      },
+      {
+        "variable": "m-2065337b75",
+        "variableLabel": "심도 2km 지온 — 최대",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          81.86,
+          87.15,
+          85.06,
+          83.12,
+          83.59,
+          76.03,
+          83.86,
+          80.59
+        ]
+      },
+      {
+        "variable": "m-cec364e0d1",
+        "variableLabel": "심도 3km 지온 — 평균",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          105.94,
+          106.52,
+          108.48,
+          105.78,
+          99.52,
+          90.91,
+          100.48,
+          99.87
+        ]
+      },
+      {
+        "variable": "m-ae4cb79de4",
+        "variableLabel": "심도 3km 지온 — 최소",
+        "unit": "℃",
+        "period": "2026",
+        "sourceIndicatorId": "B-040_geotemp_adm1",
+        "values": [
+          103.2,
+          97.38,
+          99.9,
+          101.48,
+          85.48,
+          77.61,
+          90.22,
+          90
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-ad19af5eda",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-7e462a84af",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-ae7c7b364a",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-670f92b5a8",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e9fd51553a",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-2065337b75",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-cec364e0d1",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-ae4cb79de4",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "기관 이용약관"
+    ],
+    "attribution": [
+      "IRENA Global Atlas (HDR Subsurface Thermal Profiles) · 경계 GADM 4.1 ADM1 — 기관 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://globalatlas.irena.org/"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 64,
+    "sourceValueCount": 64,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

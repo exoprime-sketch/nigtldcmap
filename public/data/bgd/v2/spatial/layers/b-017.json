@@ -1,0 +1,453 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-017",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2023",
+    "defaultVariable": "m-7bf58305c3",
+    "periods": [
+      "2023",
+      "2030",
+      "2050",
+      "2080"
+    ],
+    "variables": [
+      {
+        "key": "m-7bf58305c3",
+        "label": "기준 물스트레스(Baseline Water Stress) — 기준연도 — 전체 가중",
+        "measureId": "m-7bf58305c3",
+        "measureKey": "m-7bf58305c3",
+        "unit": "점",
+        "periods": [
+          "2023"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-3dec2ebfd5",
+        "label": "기준 물스트레스(Baseline Water Stress) — 현행유지(BAU) — 전체 가중",
+        "measureId": "m-3dec2ebfd5",
+        "measureKey": "m-3dec2ebfd5",
+        "unit": "점",
+        "periods": [
+          "2030",
+          "2050",
+          "2080"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-9391045c78",
+        "label": "기준 물스트레스(Baseline Water Stress) — 낙관(Optimistic) — 전체 가중",
+        "measureId": "m-9391045c78",
+        "measureKey": "m-9391045c78",
+        "unit": "점",
+        "periods": [
+          "2030",
+          "2050",
+          "2080"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-5ee2bbdf1c",
+        "label": "기준 물스트레스(Baseline Water Stress) — 비관(Pessimistic) — 전체 가중",
+        "measureId": "m-5ee2bbdf1c",
+        "measureKey": "m-5ee2bbdf1c",
+        "unit": "점",
+        "periods": [
+          "2030",
+          "2050",
+          "2080"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-c11ee5ca1a",
+        "label": "가뭄위험(Drought Risk) — 기준연도 — 전체 가중",
+        "measureId": "m-c11ee5ca1a",
+        "measureKey": "m-c11ee5ca1a",
+        "unit": "점",
+        "periods": [
+          "2023"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-d81ed18e4e",
+        "label": "하천 홍수위험(Riverine Flood Risk) — 기준연도 — 인구 가중",
+        "measureId": "m-d81ed18e4e",
+        "measureKey": "m-d81ed18e4e",
+        "unit": "점",
+        "periods": [
+          "2023"
+        ],
+        "maxFeatureCount": 7
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-7bf58305c3",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 기준연도 — 전체 가중",
+        "unit": "점",
+        "period": "2023",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.375077348,
+          2.267209805,
+          2.982790515,
+          0.375077348,
+          4.528791604,
+          2.144120379,
+          2.720062513,
+          null
+        ]
+      },
+      {
+        "variable": "m-3dec2ebfd5",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 현행유지(BAU) — 전체 가중",
+        "unit": "점",
+        "period": "2030",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.367881344,
+          2.382069553,
+          2.970036311,
+          0.367881344,
+          4.441684109,
+          2.083894319,
+          2.821207413,
+          null
+        ]
+      },
+      {
+        "variable": "m-3dec2ebfd5",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 현행유지(BAU) — 전체 가중",
+        "unit": "점",
+        "period": "2050",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.522666771,
+          2.484967818,
+          3.069912232,
+          0.522666771,
+          4.454099322,
+          2.338998295,
+          2.937749868,
+          null
+        ]
+      },
+      {
+        "variable": "m-3dec2ebfd5",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 현행유지(BAU) — 전체 가중",
+        "unit": "점",
+        "period": "2080",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.435677418,
+          2.443537786,
+          3.048396417,
+          0.435677418,
+          4.433745737,
+          2.321389332,
+          2.827213902,
+          null
+        ]
+      },
+      {
+        "variable": "m-9391045c78",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 낙관(Optimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2030",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.448398289,
+          2.326245236,
+          2.952312407,
+          0.448398289,
+          4.478157031,
+          2.181594524,
+          2.80137673,
+          null
+        ]
+      },
+      {
+        "variable": "m-9391045c78",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 낙관(Optimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2050",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.529850772,
+          2.395160244,
+          3.078335312,
+          0.529850772,
+          4.451932283,
+          2.347210307,
+          2.760655276,
+          null
+        ]
+      },
+      {
+        "variable": "m-9391045c78",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 낙관(Optimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2080",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.777740233,
+          2.532144863,
+          3.215334778,
+          0.777740233,
+          4.484425276,
+          2.480653188,
+          2.886093092,
+          null
+        ]
+      },
+      {
+        "variable": "m-5ee2bbdf1c",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 비관(Pessimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2030",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.496513436,
+          2.32564848,
+          2.934060166,
+          0.496513436,
+          4.461162186,
+          2.06366647,
+          2.675192341,
+          null
+        ]
+      },
+      {
+        "variable": "m-5ee2bbdf1c",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 비관(Pessimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2050",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.650136503,
+          2.396050695,
+          3.05831121,
+          0.650136503,
+          4.478422617,
+          2.339443979,
+          2.835397765,
+          null
+        ]
+      },
+      {
+        "variable": "m-5ee2bbdf1c",
+        "variableLabel": "기준 물스트레스(Baseline Water Stress) — 비관(Pessimistic) — 전체 가중",
+        "unit": "점",
+        "period": "2080",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          0.427909518,
+          2.674847954,
+          3.088850388,
+          0.427909518,
+          4.531976612,
+          2.346930793,
+          2.899286045,
+          null
+        ]
+      },
+      {
+        "variable": "m-c11ee5ca1a",
+        "variableLabel": "가뭄위험(Drought Risk) — 기준연도 — 전체 가중",
+        "unit": "점",
+        "period": "2023",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          3.72011225,
+          3.193737195,
+          4.06240192,
+          3.80806548,
+          4.21776651,
+          4.31930695,
+          3.686188785,
+          null
+        ]
+      },
+      {
+        "variable": "m-d81ed18e4e",
+        "variableLabel": "하천 홍수위험(Riverine Flood Risk) — 기준연도 — 인구 가중",
+        "unit": "점",
+        "period": "2023",
+        "sourceIndicatorId": "B-017_adm1_ranking",
+        "values": [
+          3.736873935,
+          4.190548973,
+          4.120856908,
+          4.31055099,
+          4.167234048,
+          3.542929102,
+          4.391499795,
+          null
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-7bf58305c3",
+      "period": "2023",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-3dec2ebfd5",
+      "period": "2030",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-3dec2ebfd5",
+      "period": "2050",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-3dec2ebfd5",
+      "period": "2080",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9391045c78",
+      "period": "2030",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9391045c78",
+      "period": "2050",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9391045c78",
+      "period": "2080",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5ee2bbdf1c",
+      "period": "2030",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5ee2bbdf1c",
+      "period": "2050",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5ee2bbdf1c",
+      "period": "2080",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-c11ee5ca1a",
+      "period": "2023",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d81ed18e4e",
+      "period": "2023",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "WRI Aqueduct 4.0 (2023)"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "WRI Aqueduct 4.0 (2023) — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip",
+      "https://www.wri.org/data/aqueduct-global-maps-40-data"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 7,
+    "maxSeriesFeatureCount": 7,
+    "missingAdm1Count": 1,
+    "providedZeroCount": 0,
+    "publishedValueCount": 84,
+    "sourceValueCount": 84,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

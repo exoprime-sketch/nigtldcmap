@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-10-01T05:48:59.580Z",
+ "generatedAt": "2026-10-02T19:20:27.345Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -3062,7 +3062,7 @@
    },
    "measure": null,
    "provider": "World Resources Institute",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
@@ -3105,7 +3105,7 @@
     "rule": "송전 선로 구간 수(건) OSM 전력선 레이어의 구간 건수 · 단일 시점이므로 추이를 그리지 않음"
    },
    "provider": "OpenStreetMap contributors",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
@@ -3217,45 +3217,64 @@
   {
    "elementId": "A-027",
    "title": "교통 인프라[railway, road]",
+   "kind": "spatial",
    "headline": {
-    "value": "95.7 %",
-    "label": "도로 레이어 · bridge 기본값 비율 · 원천 기본값으로 채워진 비율 · 2026년"
+    "value": "571,496 건",
+    "label": "도로 레이어 최대 · 피처 수 · OSM 도로 레이어의 지물 건수 · 28개 Division 중 · 2026년"
+   },
+   "preview": {
+    "parts": [
+     {
+      "label": "피처 수 · OSM 도로 레이어의 지물 건수",
+      "value": 571496
+     },
+     {
+      "label": "분류별 피처 수(residential) · highway 분류값별 지물 건수",
+      "value": 282363
+     },
+     {
+      "label": "분류별 피처 수(unclassified) · highway 분류값별 지물 건수",
+      "value": 113455
+     },
+     {
+      "label": "분류별 피처 수(path) · highway 분류값별 지물 건수",
+      "value": 42553
+     },
+     {
+      "label": "분류별 피처 수(track) · highway 분류값별 지물 건수",
+      "value": 40719
+     }
+    ],
+    "unit": "건",
+    "scope": "도로 레이어 상위 5개 Division",
+    "median": 813.5,
+    "range": {
+     "min": 10,
+     "p10": 21.5,
+     "p90": 63823.60000000005,
+     "max": 571496
+    },
+    "provinces": 28
    },
    "period": "2026년",
    "selection": {
-    "measure": "measure-8f35104be85d",
+    "measure": "measure-7d9609ecb1c8",
     "sex": null,
     "year": 2026,
     "period": null,
     "dimensions": {
-     "category": "bridge 기본값 비율",
-     "detail": "원천 기본값으로 채워진 비율"
+     "category": "피처 수",
+     "detail": "OSM 도로 레이어의 지물 건수"
     }
    },
-   "measure": {
-    "key": "measure-8f35104be85d",
-    "label": "도로 레이어",
-    "unit": "%"
-   },
-   "kind": "level",
-   "preview": {
-    "unit": "%",
-    "seriesLabel": "bridge 기본값 비율 · 원천 기본값으로 채워진 비율",
-    "others": [
-     {
-      "label": "2026년",
-      "value": 95.69
-     },
-     {
-      "label": "2026년",
-      "value": 95.69
-     }
-    ],
-    "note": "단일 시점 값"
-   },
    "basis": {
-    "unit": "관측값",
-    "rule": "도로 레이어(%) bridge 기본값 비율 · 원천 기본값으로 채워진 비율 · 단일 시점이므로 추이를 그리지 않음"
+    "unit": "Division 값",
+    "rule": "도로 레이어(건) 28개 Division 값 · 2026년 · 최대값과 중앙값·10~90분위 · 합산하지 않음"
+   },
+   "measure": {
+    "key": "measure-7d9609ecb1c8",
+    "label": "도로 레이어",
+    "unit": "건"
    },
    "provider": "OpenStreetMap contributors",
    "mapConnected": false,
@@ -3265,21 +3284,37 @@
     "observationCount": 69,
     "entityCount": 0,
     "indicatorIds": [
-     "A-027_roads_defaultrate_bridge",
-     "A-027_roads_defaultrate_layer",
-     "A-027_roads_defaultrate_maxspeed",
-     "A-027_roads_defaultrate_oneway",
-     "A-027_roads_defaultrate_tunnel",
-     "A-027_roads_null_rate_bridge",
-     "A-027_roads_null_rate_layer",
-     "A-027_roads_null_rate_maxspeed",
-     "A-027_roads_null_rate_name",
-     "A-027_roads_null_rate_oneway",
-     "A-027_roads_null_rate_ref",
-     "A-027_roads_null_rate_tunnel"
+     "A-027_roads_fclass_bridleway_count",
+     "A-027_roads_fclass_cycleway_count",
+     "A-027_roads_fclass_footway_count",
+     "A-027_roads_fclass_living_street_count",
+     "A-027_roads_fclass_motorway_count",
+     "A-027_roads_fclass_motorway_link_count",
+     "A-027_roads_fclass_path_count",
+     "A-027_roads_fclass_pedestrian_count",
+     "A-027_roads_fclass_primary_count",
+     "A-027_roads_fclass_primary_link_count",
+     "A-027_roads_fclass_residential_count",
+     "A-027_roads_fclass_secondary_count",
+     "A-027_roads_fclass_secondary_link_count",
+     "A-027_roads_fclass_service_count",
+     "A-027_roads_fclass_steps_count",
+     "A-027_roads_fclass_tertiary_count",
+     "A-027_roads_fclass_tertiary_link_count",
+     "A-027_roads_fclass_track_count",
+     "A-027_roads_fclass_track_grade1_count",
+     "A-027_roads_fclass_track_grade2_count",
+     "A-027_roads_fclass_track_grade3_count",
+     "A-027_roads_fclass_track_grade4_count",
+     "A-027_roads_fclass_track_grade5_count",
+     "A-027_roads_fclass_trunk_count",
+     "A-027_roads_fclass_trunk_link_count",
+     "A-027_roads_fclass_unclassified_count",
+     "A-027_roads_fclass_unknown_count",
+     "A-027_roads_feature_count"
     ],
     "headlineIndicatorIds": [
-     "A-027_roads_defaultrate_bridge"
+     "A-027_roads_feature_count"
     ]
    }
   },
@@ -3287,58 +3322,52 @@
    "elementId": "A-028",
    "title": "해안 인프라; 수자원 인프라",
    "headline": {
-    "value": "99.2 %",
-    "label": "수로 레이어 · width 기본값 비율 · 원천 기본값으로 채워진 비율 · 2026년"
+    "value": "38,632 건",
+    "label": "수로 레이어 · 피처 수 · OSM 수로 레이어의 지물 건수 · 2026년"
    },
    "period": "2026년",
    "selection": {
-    "measure": "measure-9602e7ac77f1",
+    "measure": "measure-db2cea55bbcc",
     "sex": null,
     "year": 2026,
     "period": null,
     "dimensions": {
-     "category": "width 기본값 비율",
-     "detail": "원천 기본값으로 채워진 비율"
+     "category": "피처 수",
+     "detail": "OSM 수로 레이어의 지물 건수"
     }
    },
    "measure": {
-    "key": "measure-9602e7ac77f1",
+    "key": "measure-db2cea55bbcc",
     "label": "수로 레이어",
-    "unit": "%"
+    "unit": "건"
    },
    "kind": "level",
    "preview": {
-    "unit": "%",
-    "seriesLabel": "width 기본값 비율 · 원천 기본값으로 채워진 비율",
-    "others": [
-     {
-      "label": "2026년",
-      "value": 99.18
-     },
-     {
-      "label": "2026년",
-      "value": 99.18
-     }
-    ],
+    "unit": "건",
+    "seriesLabel": "피처 수 · OSM 수로 레이어의 지물 건수",
+    "others": [],
     "note": "단일 시점 값"
    },
    "basis": {
     "unit": "관측값",
-    "rule": "수로 레이어(%) width 기본값 비율 · 원천 기본값으로 채워진 비율 · 단일 시점이므로 추이를 그리지 않음"
+    "rule": "수로 레이어(건) 피처 수 · OSM 수로 레이어의 지물 건수 · 단일 시점이므로 추이를 그리지 않음"
    },
    "provider": "OpenStreetMap contributors",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
     "observationCount": 20,
     "entityCount": 2102,
     "indicatorIds": [
-     "A-028_waterways_defaultrate_width",
-     "A-028_waterways_null_rate_name"
+     "A-028_waterways_fclass_canal_count",
+     "A-028_waterways_fclass_drain_count",
+     "A-028_waterways_fclass_river_count",
+     "A-028_waterways_fclass_stream_count",
+     "A-028_waterways_feature_count"
     ],
     "headlineIndicatorIds": [
-     "A-028_waterways_defaultrate_width"
+     "A-028_waterways_feature_count"
     ]
    }
   },
@@ -3401,8 +3430,8 @@
    "elementId": "A-030",
    "title": "한-개도국 교역액",
    "headline": {
-    "value": "0.976 10억 USD",
-    "label": "한-방글라데시 교역 · 무역수지 · 수출액에서 수입액을 뺀 값 · 2023년"
+    "value": "2.27 10억 USD",
+    "label": "한-방글라데시 교역 · 총 교역액 · 수출액과 수입액의 합 · 2023년"
    },
    "period": "1988–2023년",
    "selection": {
@@ -3411,8 +3440,8 @@
     "year": 2023,
     "period": null,
     "dimensions": {
-     "category": "무역수지",
-     "detail": "수출액에서 수입액을 뺀 값"
+     "category": "총 교역액",
+     "detail": "수출액과 수입액의 합"
     }
    },
    "measure": {
@@ -3425,163 +3454,163 @@
     "points": [
      {
       "year": 1988,
-      "value": 0.161597
+      "value": 0.174932
      },
      {
       "year": 1989,
-      "value": 0.20506
+      "value": 0.208418
      },
      {
       "year": 1990,
-      "value": 0.273593
+      "value": 0.278643
      },
      {
       "year": 1991,
-      "value": 0.287329
+      "value": 0.294065
      },
      {
       "year": 1992,
-      "value": 0.326797
+      "value": 0.338406
      },
      {
       "year": 1993,
-      "value": 0.360485
+      "value": 0.37313
      },
      {
       "year": 1994,
-      "value": 0.441738
+      "value": 0.462987
      },
      {
       "year": 1995,
-      "value": 0.55898
+      "value": 0.576283
      },
      {
       "year": 1996,
-      "value": 0.50712
+      "value": 0.528143
      },
      {
       "year": 1997,
-      "value": 0.578012
+      "value": 0.597401
      },
      {
       "year": 1998,
-      "value": 0.490921
+      "value": 0.50817
      },
      {
       "year": 1999,
-      "value": 0.495907
+      "value": 0.522893
      },
      {
       "year": 2000,
-      "value": 0.604137
+      "value": 0.648252
      },
      {
       "year": 2001,
-      "value": 0.627012
+      "value": 0.682561
      },
      {
       "year": 2002,
-      "value": 0.483231
+      "value": 0.528105
      },
      {
       "year": 2003,
-      "value": 0.515001
+      "value": 0.573146
      },
      {
       "year": 2004,
-      "value": 0.578974
+      "value": 0.661974
      },
      {
       "year": 2005,
-      "value": 0.565642
+      "value": 0.656632
      },
      {
       "year": 2006,
-      "value": 0.579422
+      "value": 0.71721
      },
      {
       "year": 2007,
-      "value": 0.469704
+      "value": 0.753345
      },
      {
       "year": 2008,
-      "value": 0.925982
+      "value": 1.264051
      },
      {
       "year": 2009,
-      "value": 0.941903
+      "value": 1.185792
      },
      {
       "year": 2010,
-      "value": 1.415016
+      "value": 1.693618
      },
      {
       "year": 2011,
-      "value": 1.383416
+      "value": 1.871825
      },
      {
       "year": 2012,
-      "value": 1.163843
+      "value": 1.75394
      },
      {
       "year": 2013,
-      "value": 1.094726
+      "value": 1.759682
      },
      {
       "year": 2014,
-      "value": 0.890919
+      "value": 1.581496
      },
      {
       "year": 2015,
-      "value": 0.873531
+      "value": 1.544058
      },
      {
       "year": 2016,
-      "value": 0.865309
+      "value": 1.451533
      },
      {
       "year": 2017,
-      "value": 0.990563
+      "value": 1.562076
      },
      {
       "year": 2018,
-      "value": 0.891792
+      "value": 1.584807
      },
      {
       "year": 2019,
-      "value": 0.877639
+      "value": 1.687045
      },
      {
       "year": 2020,
-      "value": 0.640413
+      "value": 1.426249
      },
      {
       "year": 2021,
-      "value": 1.08424
+      "value": 2.187467
      },
      {
       "year": 2022,
-      "value": 1.679686
+      "value": 3.034232
      },
      {
       "year": 2023,
-      "value": 0.975981
+      "value": 2.273725
      }
     ],
     "unit": "10억 USD",
-    "seriesLabel": "무역수지 · 수출액에서 수입액을 뺀 값",
+    "seriesLabel": "총 교역액 · 수출액과 수입액의 합",
     "first": {
      "year": 1988,
-     "value": 0.161597
+     "value": 0.174932
     },
     "latest": {
      "year": 2023,
-     "value": 0.975981
+     "value": 2.273725
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "한-방글라데시 교역(10억 USD) 무역수지 · 수출액에서 수입액을 뺀 값 계열 · 36개 연도 · 최신 2023년 값을 대표값으로"
+    "rule": "한-방글라데시 교역(10억 USD) 총 교역액 · 수출액과 수입액의 합 계열 · 36개 연도 · 최신 2023년 값을 대표값으로"
    },
    "provider": "World Bank WITS (원자료: UN Comtrade)",
    "mapConnected": false,
@@ -3597,7 +3626,7 @@
      "A-030_trade_total"
     ],
     "headlineIndicatorIds": [
-     "A-030_trade_balance"
+     "A-030_trade_total"
     ]
    }
   },
@@ -4000,32 +4029,32 @@
    "kind": "bars",
    "headline": {
     "value": "478 mm",
-    "label": "월 평년강수 최대 · 7월 (1991-2020 평년) · 월별 평년값(1991–2020)"
+    "label": "월 평년강수 최대 · 7월 · 월별 평년값(1991–2020)"
    },
    "preview": {
     "parts": [
      {
-      "label": "7월 (1991-2020 평년)",
+      "label": "7월",
       "value": 478.46
      },
      {
-      "label": "8월 (1991-2020 평년)",
+      "label": "8월",
       "value": 388.87
      },
      {
-      "label": "6월 (1991-2020 평년)",
+      "label": "6월",
       "value": 367.91
      },
      {
-      "label": "9월 (1991-2020 평년)",
+      "label": "9월",
       "value": 299.76
      },
      {
-      "label": "5월 (1991-2020 평년)",
+      "label": "5월",
       "value": 225.36
      },
      {
-      "label": "10월 (1991-2020 평년)",
+      "label": "10월",
       "value": 190.33
      }
     ],
@@ -4093,38 +4122,26 @@
    "title": "기후대(Climate zone)",
    "kind": "bars",
    "headline": {
-    "value": "83,298 km²",
-    "label": "기후대별 점유 면적 최대 · Am (열대몬순) · 2099년"
+    "value": "79,402 km²",
+    "label": "기후대별 점유 면적 최대 · Cwa (온대·동계건조·고온하계) · 2020년"
    },
    "preview": {
     "parts": [
      {
-      "label": "Am (열대몬순)",
-      "value": 83298.3
-     },
-     {
-      "label": "Aw (열대사바나)",
-      "value": 73510.1
+      "label": "Cwa (온대·동계건조·고온하계)",
+      "value": 79402.1
      },
      {
       "label": "Am (열대몬순)",
-      "value": 65409.7
+      "value": 32998.2
      },
      {
       "label": "Aw (열대사바나)",
-      "value": 55679.4
-     },
-     {
-      "label": "Cwa (온대·동계건조·고온하계)",
-      "value": 57.9
-     },
-     {
-      "label": "Cwa (온대·동계건조·고온하계)",
-      "value": 0
+      "value": 26577.4
      }
     ],
     "unit": "km²",
-    "scope": "2099년",
+    "scope": "2020년",
     "omitted": 0,
     "total": null
    },
@@ -4132,13 +4149,13 @@
    "selection": {
     "measure": "measure-095dc03abb8f",
     "sex": null,
-    "year": 2099,
+    "year": 2020,
     "period": null,
     "dimensions": {}
    },
    "basis": {
     "unit": "관측값",
-    "rule": "기후대별 점유 면적(km²)을 2099년 기준으로 6개 항목에서 비교"
+    "rule": "기후대별 점유 면적(km²)을 2020년 기준으로 3개 항목에서 비교"
    },
    "measure": {
     "key": "measure-095dc03abb8f",
@@ -4146,7 +4163,7 @@
     "unit": "km²"
    },
    "provider": "Beck et al.(2023) — High-resolution (1 km) Köppen-Geiger maps for 1901–2099 (Scientific Data 10, 724)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
@@ -4167,12 +4184,9 @@
      "B-002_koppen_area_cwa_2071_2099_ssp5_8_5"
     ],
     "headlineIndicatorIds": [
-     "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_am_tropical_monsoon_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_aw_tropical_savanna_2071_2099_ssp5_8_5",
-     "B-002_koppen_area_cwa_2071_2099_ssp2_4_5",
-     "B-002_koppen_area_cwa_2071_2099_ssp5_8_5"
+     "B-002_koppen_area_cwa",
+     "B-002_koppen_area_am_tropical_monsoon",
+     "B-002_koppen_area_aw_tropical_savanna"
     ]
    }
   },
@@ -4181,8 +4195,8 @@
    "title": "연평균 기온; 연평균 강수",
    "kind": "spatial-trend",
    "headline": {
-    "value": "25.9 ",
-    "label": "연평균_기온 · 8개 Division 중앙값 · 2025년"
+    "value": "25.9 ℃",
+    "label": "연평균 기온 · 8개 Division 중앙값 · 2025년"
    },
    "preview": {
     "points": [
@@ -4359,7 +4373,7 @@
       "value": 25.89
      }
     ],
-    "unit": "",
+    "unit": "℃",
     "seriesLabel": "관측 기반 · Division 중앙값",
     "range": {
      "p10": 25.124,
@@ -4381,15 +4395,15 @@
    },
    "basis": {
     "unit": "Division 값",
-    "rule": "연평균_기온 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님"
+    "rule": "연평균 기온 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님"
    },
    "measure": {
     "key": "연평균_기온",
-    "label": "연평균_기온",
-    "unit": ""
+    "label": "연평균 기온",
+    "unit": "℃"
    },
    "provider": "World Bank CCKP (CRU TS 4.10) · World Bank CCKP (CRU TS 4.09)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
@@ -4406,8 +4420,8 @@
    "title": "CMIP6 기반 과거/미래 기후[기온(tas), 최고기온(tasmax), 최저기온(tasmin), 강수(pr), 풍속(sfcWind), 일사량(rsds), 상대습도(hurs)]",
    "kind": "spatial-trend",
    "headline": {
-    "value": "27.7 ",
-    "label": "연평균_기온 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "value": "27.7 ℃",
+    "label": "연평균 기온 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -4588,7 +4602,7 @@
       "value": 27.7
      }
     ],
-    "unit": "",
+    "unit": "℃",
     "seriesLabel": "SSP2-4.5 · Division 중앙값",
     "range": {
      "p10": 27.114,
@@ -4611,15 +4625,15 @@
    },
    "basis": {
     "unit": "Division 값",
-    "rule": "연평균_기온 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "rule": "연평균 기온 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "연평균_기온",
-    "label": "연평균_기온",
-    "unit": ""
+    "label": "연평균 기온",
+    "unit": "℃"
    },
    "provider": "World Bank CCKP (CMIP6 x0.25) · World Bank CCKP (CMIP6 x0.25) / Copernicus CDS CMIP6(풍속·일사량)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-004-b543cde8.json",
@@ -4638,8 +4652,8 @@
    "title": "가뭄[연속 건조일수(CDD), 표준강수지수(SPEI12), 토양수분]",
    "kind": "spatial-trend",
    "headline": {
-    "value": "50.8 ",
-    "label": "연속_건조일수_CDD_일 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "value": "50.8 일",
+    "label": "연속 건조일수 CDD · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -4820,7 +4834,7 @@
       "value": 50.775
      }
     ],
-    "unit": "",
+    "unit": "일",
     "seriesLabel": "SSP2-4.5 · Division 중앙값",
     "range": {
      "p10": 49.929,
@@ -4843,15 +4857,15 @@
    },
    "basis": {
     "unit": "Division 값",
-    "rule": "연속_건조일수_CDD_일 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "rule": "연속 건조일수 CDD SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "연속_건조일수_CDD_일",
-    "label": "연속_건조일수_CDD_일",
-    "unit": ""
+    "label": "연속 건조일수 CDD",
+    "unit": "일"
    },
    "provider": "World Bank CCKP (CMIP6 x0.25) · Copernicus ERA5-Land (ECMWF/C3S)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-005-13d39a5d.json",
@@ -4871,8 +4885,8 @@
    "title": "폭염[폭염일수(TX35), 폭염일수(TX40), 열대야(TR20), 열대야(TR25), Heat Index(HI35)]",
    "kind": "spatial-trend",
    "headline": {
-    "value": "59 ",
-    "label": "폭염일수_TX_35_일 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "value": "59 일",
+    "label": "폭염일수 TX≥35℃ · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -5053,7 +5067,7 @@
       "value": 59.025000000000006
      }
     ],
-    "unit": "",
+    "unit": "일",
     "seriesLabel": "SSP2-4.5 · Division 중앙값",
     "range": {
      "p10": 33.199,
@@ -5076,15 +5090,15 @@
    },
    "basis": {
     "unit": "Division 값",
-    "rule": "폭염일수_TX_35_일 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "rule": "폭염일수 TX≥35℃ SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "폭염일수_TX_35_일",
-    "label": "폭염일수_TX_35_일",
-    "unit": ""
+    "label": "폭염일수 TX≥35℃",
+    "unit": "일"
    },
    "provider": "World Bank CCKP (CMIP6 x0.25)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-006-f6ec9b7b.json",
@@ -5103,8 +5117,8 @@
    "title": "홍수[최대 1일 강수(RX1day), 최대 5일 강수(RX5day), 호우일수(R20mm), 호우일수(R50mm), 연속 습윤일수(CWD)]",
    "kind": "spatial-trend",
    "headline": {
-    "value": "69.6 ",
-    "label": "최대_1일_강수_mm · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
+    "value": "69.6 mm",
+    "label": "최대 1일 강수 · 8개 Division 중앙값 · 2100년 · SSP2-4.5"
    },
    "preview": {
     "points": [
@@ -5285,7 +5299,7 @@
       "value": 69.565
      }
     ],
-    "unit": "",
+    "unit": "mm",
     "seriesLabel": "SSP2-4.5 · Division 중앙값",
     "range": {
      "p10": 59.964999999999996,
@@ -5308,15 +5322,15 @@
    },
    "basis": {
     "unit": "Division 값",
-    "rule": "최대_1일_강수_mm SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
+    "rule": "최대 1일 강수 SSP2-4.5 시나리오의 8개 Division 값 중앙값 추이 · 10~90분위는 지역 간 분포이며 모형 불확실성이 아님 · 과거(historical)와 SSP 구간은 잇지 않음"
    },
    "measure": {
     "key": "최대_1일_강수_mm",
-    "label": "최대_1일_강수_mm",
-    "unit": ""
+    "label": "최대 1일 강수",
+    "unit": "mm"
    },
    "provider": "World Bank CCKP (CMIP6 x0.25)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-007-f4e000bf.json",
@@ -10419,7 +10433,7 @@
    },
    "measure": null,
    "provider": "IPCC AR6 Sea Level Projection Tool (NASA/IPCC)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
@@ -10464,7 +10478,7 @@
     "rule": "WWF BRF(지수) Scape Physical Risk · 단일 시점이므로 추이를 그리지 않음"
    },
    "provider": "WWF Biodiversity Risk Filter",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
@@ -10837,16 +10851,16 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD_carbon_price_CT_REF_2030",
-      "value": ""
+      "label": "탄소세 US$10/tCO2(저수준) · 2030년",
+      "value": "10 US$/tCO2e"
      },
      {
-      "label": "BGD_carbon_price_CT_HIGH_2030",
-      "value": ""
+      "label": "탄소세 US$25/tCO2(고수준) · 2030년",
+      "value": "25 US$/tCO2e"
      },
      {
-      "label": "BGD_emission_change_CT_REF_2030",
-      "value": ""
+      "label": "탄소세 US$10/tCO2(저수준) · 2030년",
+      "value": "-13.7 %"
      }
     ],
     "more": 15
@@ -11146,7 +11160,7 @@
    },
    "measure": null,
    "provider": "WRI Aqueduct 4.0 (2023) · WRI Aqueduct 4.0 (Kuzma et al., 2023)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
@@ -11803,7 +11817,7 @@
    },
    "measure": null,
    "provider": "Copernicus Emergency Management Service — GloFAS v4 (Open-Meteo Global Flood API 경유)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
@@ -11951,7 +11965,7 @@
    },
    "measure": null,
    "provider": "WWF HydroSHEDS — HydroBASINS v1.c (level 08)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -11969,7 +11983,7 @@
    "kind": "spatial",
    "headline": {
     "value": "26 %",
-    "label": "우세 유향 비율 최대 · Hydro BASINS lvl6 4060025450 · 40개 Division 중 · 2022–2026년"
+    "label": "우세 유향 비율 최대 · Hydro BASINS lvl6 4060025450 · 40개 Division 중 · 2022년 기준"
    },
    "preview": {
     "parts": [
@@ -12005,7 +12019,7 @@
     },
     "provinces": 40
    },
-   "period": "2022–2026년",
+   "period": "2022년 기준",
    "selection": {
     "measure": null,
     "sex": null,
@@ -12025,7 +12039,7 @@
     "unit": "%"
    },
    "provider": "HydroSHEDS v1 Flow Direction (DIR 15s)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -12274,7 +12288,7 @@
    },
    "measure": null,
    "provider": "Copernicus Emergency Management Service - GloFAS v4 (격자 래스터, EWDS) · Copernicus Emergency Management Service - GloFAS v4 (Open-Meteo Global Flood API 경유) · FAO AQUASTAT",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -12290,23 +12304,66 @@
   {
    "elementId": "B-029",
    "title": "산림 유형별 면적[열대우림, 맹그로브, 이탄지 등]",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "1,166 km²",
+    "label": "이탄지 면적 — 이탄 우세 최대 · Khulna · 8개 Division 중 · 2022년 기준"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Khulna",
+      "value": 1166.04
+     },
+     {
+      "label": "Chittagong",
+      "value": 863.71
+     },
+     {
+      "label": "Dhaka",
+      "value": 474.98
+     },
+     {
+      "label": "Barisal",
+      "value": 194.1
+     },
+     {
+      "label": "Rangpur",
+      "value": 116.14
+     }
+    ],
+    "unit": "km²",
+    "scope": "이탄지 면적 — 이탄 우세 상위 5개 Division",
+    "median": 155.12,
+    "range": {
+     "min": 1.11,
+     "p10": 5.793,
+     "p90": 954.409,
+     "max": 1166.04
+    },
+    "provinces": 8
    },
-   "period": "1990–2026년",
-   "selection": null,
+   "period": "2022년 기준",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "이탄지_면적_이탄_우세_km"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "이탄지 면적 — 이탄 우세(km²) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "이탄지_면적_이탄_우세_km",
+    "label": "이탄지 면적 — 이탄 우세",
+    "unit": "km²"
+   },
    "provider": "기관별 공식 출처 4개(상세 자료정보 참조)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -12323,23 +12380,66 @@
   {
    "elementId": "B-030",
    "title": "산림 이득",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "106,620 ha",
+    "label": "이득 최대 · Chittagong · 7개 Division 중 · 2000–2020"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Chittagong",
+      "value": 106620.26
+     },
+     {
+      "label": "Dhaka",
+      "value": 66117.17
+     },
+     {
+      "label": "Rajshahi",
+      "value": 34015.17
+     },
+     {
+      "label": "Rangpur",
+      "value": 30486.41
+     },
+     {
+      "label": "Barisal",
+      "value": 28069.31
+     }
+    ],
+    "unit": "ha",
+    "scope": "이득 상위 5개 Division",
+    "median": 30486.41,
+    "range": {
+     "min": 25050.91,
+     "p10": 26522.158,
+     "p90": 82318.40600000002,
+     "max": 106620.26
+    },
+    "provinces": 7
    },
-   "period": "2000–2026년",
-   "selection": null,
+   "period": "2000–2020",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "이득_ha"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "이득(ha) 7개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "이득_ha",
+    "label": "이득",
+    "unit": "ha"
+   },
    "provider": "Global Forest Watch / UMD (Potapov et al. 2022)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -12395,7 +12495,7 @@
    },
    "measure": null,
    "provider": "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · Global Forest Watch / Hansen et al.(2013), UMD",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
@@ -12451,7 +12551,7 @@
    },
    "measure": null,
    "provider": "Global Forest Watch / Hansen et al.(2013)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -12507,7 +12607,7 @@
    },
    "measure": null,
    "provider": "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · Global Forest Watch / Hansen (UMD) · Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -12566,7 +12666,7 @@
    },
    "measure": null,
    "provider": "ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 · Global Forest Watch (Harris et al. 2021)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -12875,7 +12975,7 @@
     "rule": "농업 총면적(Agriculture)(1000 ha) 64개 연도 · 최신 2024년 값을 대표값으로"
    },
    "provider": "FAOSTAT Land Use (RL)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -12947,7 +13047,7 @@
     "unit": "%/yr"
    },
    "provider": "FAO FAOSTAT Land Use (RL)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -12989,23 +13089,66 @@
   {
    "elementId": "B-037",
    "title": "토지피복 분류별 면적[경작지, 산림, 초지, 건물, 수체, 나지]",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "20,507 km²",
+    "label": "수목 면적 최대 · Chittagong · 8개 Division 중 · 2021년 기준"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Chittagong",
+      "value": 20507.48
+     },
+     {
+      "label": "Dhaka",
+      "value": 7074.958
+     },
+     {
+      "label": "Khulna",
+      "value": 5632.33
+     },
+     {
+      "label": "Rajshahi",
+      "value": 5012.361
+     },
+     {
+      "label": "Rangpur",
+      "value": 4264.71
+     }
+    ],
+    "unit": "km²",
+    "scope": "수목 면적 상위 5개 Division",
+    "median": 4638.5355,
+    "range": {
+     "min": 3065.229,
+     "p10": 3426.1154,
+     "p90": 11104.714599999998,
+     "max": 20507.48
+    },
+    "provinces": 8
    },
-   "period": "1992–2026년",
-   "selection": null,
+   "period": "2021년 기준",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "수목_면적_km"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "수목 면적(km²) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "수목_면적_km",
+    "label": "수목 면적",
+    "unit": "km²"
+   },
    "provider": "ESA WorldCover 10 m v200 (2021) · FAO FAOSTAT Land Cover (LC) — CCI_LC · MODIS · CGLS · WorldCover 국가 집계",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -13066,23 +13209,66 @@
   {
    "elementId": "B-039",
    "title": "수력 잠재량",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "21,226 GWh/yr",
+    "label": "이론 총잠재량 최대 · Rajshahi · 8개 Division 중 · 2017년 기준"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Rajshahi",
+      "value": 21226.38
+     },
+     {
+      "label": "Rangpur",
+      "value": 12204.28
+     },
+     {
+      "label": "Dhaka",
+      "value": 9213.36
+     },
+     {
+      "label": "Mymensingh",
+      "value": 7787.36
+     },
+     {
+      "label": "Chittagong",
+      "value": 7295.46
+     }
+    ],
+    "unit": "GWh/yr",
+    "scope": "이론 총잠재량 상위 5개 Division",
+    "median": 7541.41,
+    "range": {
+     "min": 67.38,
+     "p10": 2546.8990000000003,
+     "p90": 14910.91,
+     "max": 21226.38
+    },
+    "provinces": 8
    },
-   "period": "1965–2026년",
-   "selection": null,
+   "period": "2017년 기준",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "이론_총잠재량_GWh_yr"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "이론 총잠재량(GWh/yr) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "이론_총잠재량_GWh_yr",
+    "label": "이론 총잠재량",
+    "unit": "GWh/yr"
+   },
    "provider": "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · U.S. EIA International Energy Statistics · Energy Institute Statistical Review · IHA · Energy Institute · U.S. EIA · World Bank/ESMAP",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
@@ -13098,23 +13284,66 @@
   {
    "elementId": "B-040",
    "title": "지열 잠재량",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "53.6 ℃",
+    "label": "심도 1km 지온 — 평균 최대 · Dhaka · 8개 Division 중 · 2026년 기준"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Dhaka",
+      "value": 53.59
+     },
+     {
+      "label": "Khulna",
+      "value": 53.11
+     },
+     {
+      "label": "Barisal",
+      "value": 53.05
+     },
+     {
+      "label": "Chittagong",
+      "value": 52.82
+     },
+     {
+      "label": "Rajshahi",
+      "value": 50.74
+     }
+    ],
+    "unit": "℃",
+    "scope": "심도 1km 지온 — 평균 상위 5개 Division",
+    "median": 51.78,
+    "range": {
+     "min": 47.79,
+     "p10": 49.644999999999996,
+     "p90": 53.254,
+     "max": 53.59
+    },
+    "provinces": 8
    },
-   "period": "2026년",
-   "selection": null,
+   "period": "2026년 기준",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "심도_1km_지온_평균"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "심도 1km 지온 — 평균(℃) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "심도_1km_지온_평균",
+    "label": "심도 1km 지온 — 평균",
+    "unit": "℃"
+   },
    "provider": "IRENA Global Atlas (HDR Subsurface Thermal Profiles)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
@@ -13129,23 +13358,66 @@
   {
    "elementId": "B-041",
    "title": "태양광 관련 지표[GHI, DNI]",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "4.74 kWh/m²/일",
+    "label": "수평면 전일사량 GHI 평균 최대 · Chittagong · 8개 Division 중 · 1999–2018 장기평균(LTA)"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Chittagong",
+      "value": 4.737
+     },
+     {
+      "label": "Barisal",
+      "value": 4.651
+     },
+     {
+      "label": "Khulna",
+      "value": 4.644
+     },
+     {
+      "label": "Rajshahi",
+      "value": 4.576
+     },
+     {
+      "label": "Dhaka",
+      "value": 4.559
+     }
+    ],
+    "unit": "kWh/m²/일",
+    "scope": "수평면 전일사량 GHI 평균 상위 5개 Division",
+    "median": 4.5675,
+    "range": {
+     "min": 4.43,
+     "p10": 4.4524,
+     "p90": 4.6768,
+     "max": 4.737
+    },
+    "provinces": 8
    },
-   "period": "2018–2026년",
-   "selection": null,
+   "period": "1999–2018 장기평균(LTA)",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "수평면_전일사량_GHI_평균"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "수평면 전일사량 GHI 평균(kWh/m²/일) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "수평면_전일사량_GHI_평균",
+    "label": "수평면 전일사량 GHI 평균",
+    "unit": "kWh/m²/일"
+   },
    "provider": "Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
@@ -13160,23 +13432,66 @@
   {
    "elementId": "B-042",
    "title": "풍력 자원[풍속, 에너지밀도]",
-   "kind": "facts",
+   "kind": "spatial",
    "headline": {
-    "value": "—",
-    "label": "요약 없음"
+    "value": "4.59 m/s",
+    "label": "풍속 평균 최대 · Barisal · 8개 Division 중 · 2008–2017 장기평균(ERA5 기반)"
    },
    "preview": {
-    "facts": []
+    "parts": [
+     {
+      "label": "Barisal",
+      "value": 4.59
+     },
+     {
+      "label": "Khulna",
+      "value": 4.373
+     },
+     {
+      "label": "Dhaka",
+      "value": 4.165
+     },
+     {
+      "label": "Rajshahi",
+      "value": 4.143
+     },
+     {
+      "label": "Rangpur",
+      "value": 3.954
+     }
+    ],
+    "unit": "m/s",
+    "scope": "풍속 평균 상위 5개 Division",
+    "median": 4.0485,
+    "range": {
+     "min": 2.972,
+     "p10": 3.4851,
+     "p90": 4.4381,
+     "max": 4.59
+    },
+    "provinces": 8
    },
-   "period": "2017–2026년",
-   "selection": null,
+   "period": "2008–2017 장기평균(ERA5 기반)",
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {
+     "regionMeasure": "풍속_평균_m_s"
+    }
+   },
    "basis": {
-    "unit": "—",
-    "rule": "규칙 없음"
+    "unit": "Division 값",
+    "rule": "풍속 평균(m/s) 8개 Division 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
-   "measure": null,
+   "measure": {
+    "key": "풍속_평균_m_s",
+    "label": "풍속 평균",
+    "unit": "m/s"
+   },
    "provider": "Global Wind Atlas 3.x",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
@@ -13312,36 +13627,45 @@
    "title": "광물명[리튬, 코발트, 니켈, 망간, 흑연, 주석, 납, 아연, 마그네슘화합물, 텅스텐, 바나듐, 크롬, 나이오븀, 탄탈럼, 티타늄광물, 지르코늄하프늄, 안티모니, 희토류, 백금족, 형석]",
    "kind": "facts",
    "headline": {
-    "value": "방글라데시의 광물 수출은 상무부(Ministry …",
-    "label": "핵심광물 수출규제 체계(일반) - 광종별 수출규제 여부는 1.2 레코드 열 참조 · 기재 항목 1개"
+    "value": "21건",
+    "label": "광종 · 2026년"
    },
    "preview": {
     "facts": [
      {
-      "label": "핵심광물 수출규제 체계(일반) - 광종별 수출규제 여부는 1.2 레코드 열 참조",
-      "value": "방글라데시의 광물 수출은 상무부(Ministry of Commerce)의 Export Policy 2024-"
+      "label": "구리",
+      "value": ""
+     },
+     {
+      "label": "코발트",
+      "value": ""
+     },
+     {
+      "label": "리튬",
+      "value": ""
      }
     ],
-    "more": 0
+    "more": 18
    },
    "period": "2026년",
    "selection": {
-    "measure": "measure-a89f687bdacc",
+    "measure": null,
     "sex": null,
     "year": null,
     "period": null,
     "dimensions": {}
    },
    "basis": {
-    "unit": "항목",
-    "rule": "수치가 아닌 기재 내용을 그대로 보임"
+    "unit": "광종",
+    "rule": "광종 1건 = 원천 1행",
+    "count": {
+     "rows": 21,
+     "distinct": 21,
+     "sourceRows": 21
+    }
    },
-   "measure": {
-    "key": "measure-a89f687bdacc",
-    "label": "핵심광물 수출규제 체계(일반) - 광종별 수출규제 여부는 1.2 레코드 열 참조",
-    "unit": "텍스트"
-   },
-   "provider": "각국 정부(광업·산업통상·세관 주무부처) 관보·공표, WTO 수량제한(QR) 통보, OECD Inventory of Export Restrictions on Industrial Raw Materials(2025)",
+   "measure": null,
+   "provider": "각국 정부(광업·산업통상·세관 주무부처) 관보·공표, WTO 수량제한(QR) 통보, OECD Inventory of Export Restrictions on Industrial Raw Materials(2025) · USGS Mineral Commodity Summaries 2026 · USGS Minerals Yearbook 2020–21 (Bangladesh)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -13349,10 +13673,8 @@
     "observationCount": 1,
     "entityCount": 21,
     "indicatorIds": [
-     "B-044_mineral_export_regime"
-    ],
-    "headlineIndicatorIds": [
-     "B-044_mineral_export_regime"
+     "B-044_mineral_export_regime",
+     "B-044_mineral_record"
     ]
    }
   },
@@ -13420,15 +13742,15 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD_구리_2026",
+      "label": "구리 2026년",
       "value": ""
      },
      {
-      "label": "BGD_코발트_2026",
+      "label": "코발트 2026년",
       "value": ""
      },
      {
-      "label": "BGD_리튬_2026",
+      "label": "리튬 2026년",
       "value": ""
      }
     ],
@@ -13475,15 +13797,15 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD_구리_2025",
+      "label": "구리 2025년",
       "value": ""
      },
      {
-      "label": "BGD_코발트_2025",
+      "label": "코발트 2025년",
       "value": ""
      },
      {
-      "label": "BGD_리튬_2025",
+      "label": "리튬 2025년",
       "value": ""
      }
     ],
@@ -13563,7 +13885,7 @@
    },
    "measure": null,
    "provider": "USGS MRDS (Mineral Resources Data System, Edition 20160315)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
@@ -14547,42 +14869,43 @@
   {
    "elementId": "C-018",
    "title": "중장기 에너지 전망[전망 기관(IEA/현지 정부), 전망 시나리오명, 에너지원별 수요 전망, 기술별 발전 설비 확충 계획, RE 비중 목표, 전력 수요 성장률]",
-   "kind": "bars",
+   "kind": "facts",
    "headline": {
     "value": "48건",
-    "label": "기록 · 유형 4종"
+    "label": "항목 · 2019–2050년"
    },
    "preview": {
-    "parts": [
+    "facts": [
      {
-      "label": "설비 확충 계획",
-      "value": 24
+      "label": "발전설비 확충 계획 — ATS × In-Between",
+      "value": ""
      },
      {
-      "label": "수요 전망",
-      "value": 20
+      "label": "발전설비 확충 계획 — ATS × PP2041",
+      "value": ""
      },
      {
-      "label": "RE 비중 목표",
-      "value": 3
-     },
-     {
-      "label": "전망 문서",
-      "value": 1
+      "label": "재생에너지 설비 확충 계획 — 현대 바이오매스(폐기물 발전) / Modern biomass (Waste to Energy)",
+      "value": ""
      }
     ],
-    "unit": "건",
-    "scope": "기록 유형별 · 합산하지 않음",
-    "omitted": 0
+    "more": 24
    },
    "period": "2019–2050년",
-   "selection": null,
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {}
+   },
    "basis": {
-    "unit": "기록",
-    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "unit": "항목",
+    "rule": "항목 1건 = 원천 1행",
     "count": {
      "rows": 48,
-     "types": 4
+     "distinct": 48,
+     "sourceRows": 48
     }
    },
    "measure": null,
@@ -14672,38 +14995,43 @@
   {
    "elementId": "C-022",
    "title": "탄소시장 준비도",
-   "kind": "bars",
+   "kind": "facts",
    "headline": {
     "value": "14건",
-    "label": "기록 · 유형 3종"
+    "label": "항목 · 2024–2026년"
    },
    "preview": {
-    "parts": [
+    "facts": [
      {
-      "label": "준비도 체크리스트 항목",
-      "value": 9
+      "label": "제6.4조 국가지정기구(DNA) 지정",
+      "value": ""
      },
      {
-      "label": "제도 요소",
-      "value": 4
+      "label": "Article 6 준비도 로드맵",
+      "value": ""
      },
      {
-      "label": "준비도 종합",
-      "value": 1
+      "label": "표준화 크레딧 프레임워크(SCF)",
+      "value": ""
      }
     ],
-    "unit": "건",
-    "scope": "기록 유형별 · 합산하지 않음",
-    "omitted": 0
+    "more": 11
    },
    "period": "2024–2026년",
-   "selection": null,
+   "selection": {
+    "measure": null,
+    "sex": null,
+    "year": null,
+    "period": null,
+    "dimensions": {}
+   },
    "basis": {
-    "unit": "기록",
-    "rule": "가로형 기록 1건 = 원천 1행 · 기록 유형별 수",
+    "unit": "항목",
+    "rule": "항목 1건 = 원천 1행",
     "count": {
      "rows": 14,
-     "types": 3
+     "distinct": 14,
+     "sourceRows": 14
     }
    },
    "measure": null,
@@ -14823,7 +15151,7 @@
    },
    "measure": null,
    "provider": "Berkeley Carbon Trading Project — Voluntary Registry Offsets Database (VROD) v2026-06",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
@@ -15562,7 +15890,7 @@
     "rule": "경쟁국 민간기업의 개도국 진출 현황(건) 중국계 개발사 수 · 등재 기업 수 · 단일 시점이므로 추이를 그리지 않음"
    },
    "provider": "EnergyTransitionBD 인프라 데이터베이스 · 각 사업주체 공식 페이지 및 업계 보도 종합",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
@@ -16520,7 +16848,7 @@
    },
    "measure": null,
    "provider": "기관별 공식 출처 19개(상세 자료정보 참조)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
@@ -16599,7 +16927,7 @@
    },
    "measure": null,
    "provider": "각 기관 공식 웹사이트 및 CTCN 네트워크 회원 정보(용역사 취합)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
@@ -16654,7 +16982,7 @@
    },
    "measure": null,
    "provider": "각 운용사·투자사 공식 웹사이트",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
@@ -16911,62 +17239,62 @@
    "elementId": "E-011",
    "title": "기술준비수준(TRL)",
    "headline": {
-    "value": "94 순위",
-    "label": "NRI 2025 · Governance 부문 순위 · 2025년"
+    "value": "44.9 점수",
+    "label": "NRI 2025 · 종합 점수 · 2025년"
    },
    "period": "2021–2025년",
    "selection": {
-    "measure": "measure-aa48265c21da",
+    "measure": "measure-12a7feb401ad",
     "sex": null,
     "year": 2025,
     "period": null,
     "dimensions": {
-     "detail": "Governance 부문 순위"
+     "detail": "종합 점수"
     }
    },
    "measure": {
-    "key": "measure-aa48265c21da",
+    "key": "measure-12a7feb401ad",
     "label": "NRI 2025",
-    "unit": "순위"
+    "unit": "점수"
    },
    "kind": "line",
    "preview": {
     "points": [
      {
       "year": 2021,
-      "value": 92
+      "value": 40.93
      },
      {
       "year": 2022,
-      "value": 101
+      "value": 42.74
      },
      {
       "year": 2023,
-      "value": 100
+      "value": 41.04
      },
      {
       "year": 2024,
-      "value": 102
+      "value": 43.56
      },
      {
       "year": 2025,
-      "value": 94
+      "value": 44.9
      }
     ],
-    "unit": "순위",
-    "seriesLabel": "Governance 부문 순위",
+    "unit": "점수",
+    "seriesLabel": "종합 점수",
     "first": {
      "year": 2021,
-     "value": 92
+     "value": 40.93
     },
     "latest": {
      "year": 2025,
-     "value": 94
+     "value": 44.9
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "NRI 2025(순위) Governance 부문 순위 계열 · 5개 연도 · 최신 2025년 값을 대표값으로"
+    "rule": "NRI 2025(점수) 종합 점수 계열 · 5개 연도 · 최신 2025년 값을 대표값으로"
    },
    "provider": "Portulans Institute",
    "mapConnected": false,
@@ -16976,14 +17304,14 @@
     "observationCount": 50,
     "entityCount": 0,
     "indicatorIds": [
-     "E-011_nri_governance_rank",
-     "E-011_nri_impact_rank",
-     "E-011_nri_overall_rank",
-     "E-011_nri_people_rank",
-     "E-011_nri_technology_rank"
+     "E-011_nri_governance_score",
+     "E-011_nri_impact_score",
+     "E-011_nri_overall_score",
+     "E-011_nri_people_score",
+     "E-011_nri_technology_score"
     ],
     "headlineIndicatorIds": [
-     "E-011_nri_governance_rank"
+     "E-011_nri_overall_score"
     ]
    }
   },
@@ -17226,7 +17554,7 @@
    },
    "measure": null,
    "provider": "한국에너지기술평가원(KETEP) 세계에너지시장정보 — 해외진출 국내기업 정보 · 대한무역투자진흥공사(KOTRA)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": true,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
@@ -17283,7 +17611,7 @@
    },
    "measure": null,
    "provider": "각 기관 공식 웹사이트(KOTRA·KOICA·한국수출입은행·KITA·KEITI·KEPCO)",
-   "mapConnected": false,
+   "mapConnected": true,
    "downloadable": false,
    "provenance": {
     "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",

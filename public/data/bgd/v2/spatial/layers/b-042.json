@@ -1,0 +1,365 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-042",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2008–2017 장기평균(ERA5 기반)",
+    "defaultVariable": "m-52edf64264",
+    "periods": [
+      "2008–2017 장기평균(ERA5 기반)"
+    ],
+    "variables": [
+      {
+        "key": "m-52edf64264",
+        "label": "풍속 평균",
+        "measureId": "m-52edf64264",
+        "measureKey": "m-52edf64264",
+        "unit": "m/s",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-6752e24711",
+        "label": "풍속 최소",
+        "measureId": "m-6752e24711",
+        "measureKey": "m-6752e24711",
+        "unit": "m/s",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-5bbd033d22",
+        "label": "풍속 최대",
+        "measureId": "m-5bbd033d22",
+        "measureKey": "m-5bbd033d22",
+        "unit": "m/s",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-0ec17d78cb",
+        "label": "풍속 상위10%",
+        "measureId": "m-0ec17d78cb",
+        "measureKey": "m-0ec17d78cb",
+        "unit": "m/s",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-8d17af507a",
+        "label": "에너지밀도 평균",
+        "measureId": "m-8d17af507a",
+        "measureKey": "m-8d17af507a",
+        "unit": "W/m²",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-eae227a721",
+        "label": "에너지밀도 최소",
+        "measureId": "m-eae227a721",
+        "measureKey": "m-eae227a721",
+        "unit": "W/m²",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-82914e12ad",
+        "label": "에너지밀도 최대",
+        "measureId": "m-82914e12ad",
+        "measureKey": "m-82914e12ad",
+        "unit": "W/m²",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-8dfc0e2dab",
+        "label": "에너지밀도 상위10%",
+        "measureId": "m-8dfc0e2dab",
+        "measureKey": "m-8dfc0e2dab",
+        "unit": "W/m²",
+        "periods": [
+          "2008–2017 장기평균(ERA5 기반)"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-52edf64264",
+        "variableLabel": "풍속 평균",
+        "unit": "m/s",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          4.59,
+          3.942,
+          4.165,
+          4.373,
+          4.143,
+          3.954,
+          2.972,
+          3.705
+        ]
+      },
+      {
+        "variable": "m-6752e24711",
+        "variableLabel": "풍속 최소",
+        "unit": "m/s",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          3.661,
+          1.163,
+          3.209,
+          3.571,
+          3.264,
+          2.843,
+          1.343,
+          2.74
+        ]
+      },
+      {
+        "variable": "m-5bbd033d22",
+        "variableLabel": "풍속 최대",
+        "unit": "m/s",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          6.094,
+          6.751,
+          5.416,
+          5.57,
+          4.894,
+          4.998,
+          4.073,
+          4.759
+        ]
+      },
+      {
+        "variable": "m-0ec17d78cb",
+        "variableLabel": "풍속 상위10%",
+        "unit": "m/s",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          5.165,
+          4.87,
+          4.604,
+          4.924,
+          4.354,
+          4.338,
+          3.467,
+          3.995
+        ]
+      },
+      {
+        "variable": "m-8d17af507a",
+        "variableLabel": "에너지밀도 평균",
+        "unit": "W/m²",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          92.747,
+          68.921,
+          72.839,
+          80.832,
+          70.063,
+          64.005,
+          33.472,
+          54.733
+        ]
+      },
+      {
+        "variable": "m-eae227a721",
+        "variableLabel": "에너지밀도 최소",
+        "unit": "W/m²",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          44.214,
+          2.673,
+          32.581,
+          41.139,
+          34.05,
+          26.417,
+          4.057,
+          24.484
+        ]
+      },
+      {
+        "variable": "m-82914e12ad",
+        "variableLabel": "에너지밀도 최대",
+        "unit": "W/m²",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          207.212,
+          410.297,
+          159.311,
+          167.336,
+          116.818,
+          127.994,
+          75.603,
+          114.531
+        ]
+      },
+      {
+        "variable": "m-8dfc0e2dab",
+        "variableLabel": "에너지밀도 상위10%",
+        "unit": "W/m²",
+        "period": "2008–2017 장기평균(ERA5 기반)",
+        "sourceIndicatorId": "B-042_wind_adm1",
+        "values": [
+          132.139,
+          112.075,
+          95.312,
+          111.405,
+          82.929,
+          81.374,
+          48.502,
+          67.179
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-52edf64264",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-6752e24711",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5bbd033d22",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-0ec17d78cb",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8d17af507a",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-eae227a721",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-82914e12ad",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8dfc0e2dab",
+      "period": "2008–2017 장기평균(ERA5 기반)",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Wind Atlas 3.x"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "Global Wind Atlas 3.x — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://globalwindatlas.info/en/area/방글라데시"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 64,
+    "sourceValueCount": 64,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

@@ -1,0 +1,1372 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-033",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2024",
+    "defaultVariable": "m-e8f3048a0c",
+    "periods": [
+      "2001",
+      "2002",
+      "2003",
+      "2004",
+      "2005",
+      "2006",
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "m-e8f3048a0c",
+        "label": "수관 손실 · 연간 산림 손실",
+        "measureId": "m-e8f3048a0c",
+        "measureKey": "m-e8f3048a0c",
+        "unit": "ha",
+        "periods": [
+          "2001",
+          "2002",
+          "2003",
+          "2004",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-826ff58075",
+        "label": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "measureId": "m-826ff58075",
+        "measureKey": "m-826ff58075",
+        "unit": "ha",
+        "periods": [
+          "2002",
+          "2003",
+          "2004",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "maxFeatureCount": 5
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2001",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.14,
+          3814.3,
+          59.67,
+          8.38,
+          42.85,
+          72.11,
+          373.11,
+          216.72
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2002",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.29,
+          3185.11,
+          225,
+          7.89,
+          32.03,
+          68.24,
+          299.51,
+          177.28
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2003",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.71,
+          1962.86,
+          44.8,
+          1.64,
+          8.13,
+          4.02,
+          123.19,
+          14.11
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2004",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.92,
+          2825.35,
+          116.27,
+          14.8,
+          31.04,
+          19.29,
+          1067.64,
+          206.16
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2005",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.64,
+          2820.63,
+          81.55,
+          10.22,
+          19.56,
+          33.66,
+          142.95,
+          183.75
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2006",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          4.34,
+          5878.5,
+          115.82,
+          5.97,
+          25.95,
+          32.72,
+          450.37,
+          349.14
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2007",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          5.13,
+          2885.15,
+          78.13,
+          29.67,
+          55.28,
+          28.57,
+          672.32,
+          241.13
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2008",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          4.91,
+          3785.58,
+          92.71,
+          14.76,
+          38.21,
+          30.65,
+          295.68,
+          217.66
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2009",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.99,
+          4684.63,
+          46.49,
+          5.05,
+          10.73,
+          19.18,
+          700.24,
+          156.46
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2010",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          2.35,
+          3642.39,
+          292.35,
+          18.92,
+          29.95,
+          20.04,
+          577.08,
+          84.66
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2011",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          3.48,
+          3328.34,
+          180.77,
+          42.33,
+          12.56,
+          31.89,
+          484.17,
+          97.55
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2012",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          3.06,
+          4796.63,
+          95.21,
+          5.77,
+          4.9,
+          28.68,
+          309.01,
+          116.19
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2013",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.07,
+          5876.26,
+          30.07,
+          0.07,
+          null,
+          2.35,
+          75.33,
+          36.84
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2014",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.07,
+          11718.55,
+          89.42,
+          0.07,
+          0.14,
+          8.95,
+          150.34,
+          93.37
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2015",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          null,
+          12417.52,
+          12.08,
+          0.14,
+          null,
+          1.32,
+          99.02,
+          73.33
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2016",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1,
+          20664.73,
+          163.55,
+          null,
+          0.35,
+          26.99,
+          222.31,
+          117.45
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2017",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          4.98,
+          27639.46,
+          188.54,
+          null,
+          0.63,
+          2.91,
+          358.86,
+          181.74
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2018",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          0.5,
+          18805.56,
+          71.86,
+          6.82,
+          1.54,
+          6.39,
+          281.59,
+          168.55
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2019",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.07,
+          21662.66,
+          30.12,
+          1.35,
+          1.68,
+          2.01,
+          277.85,
+          102.01
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2020",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.28,
+          20957.73,
+          43.86,
+          4.89,
+          0.14,
+          6.12,
+          315.71,
+          145.85
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2021",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          1.07,
+          17007.71,
+          42.47,
+          9.13,
+          0.28,
+          10.36,
+          351.78,
+          164.48
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2022",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          2.14,
+          13187.45,
+          91.66,
+          4.35,
+          2.1,
+          8.14,
+          409.23,
+          93.18
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2023",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          57.26,
+          17137.05,
+          185.8,
+          11.23,
+          4.54,
+          17.39,
+          330.41,
+          43.48
+        ]
+      },
+      {
+        "variable": "m-e8f3048a0c",
+        "variableLabel": "수관 손실 · 연간 산림 손실",
+        "unit": "ha",
+        "period": "2024",
+        "sourceIndicatorId": "B-033_loss_adm1_year",
+        "values": [
+          14.16,
+          15281.24,
+          227.36,
+          8.26,
+          1.26,
+          9.32,
+          318.8,
+          68.16
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2002",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          606,
+          0,
+          0,
+          null,
+          null,
+          13,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2003",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          259,
+          0,
+          0,
+          null,
+          null,
+          8,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2004",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          235,
+          0,
+          0,
+          null,
+          null,
+          113,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2005",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          284,
+          0,
+          0,
+          null,
+          null,
+          21,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2006",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          658,
+          0,
+          0,
+          null,
+          null,
+          19,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2007",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          307,
+          0,
+          10,
+          null,
+          null,
+          52,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2008",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          212,
+          0,
+          2,
+          null,
+          null,
+          27,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2009",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          496,
+          0,
+          0,
+          null,
+          null,
+          62,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2010",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          202,
+          0,
+          1,
+          null,
+          null,
+          32,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2011",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          219,
+          0,
+          0,
+          null,
+          null,
+          44,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2012",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          304,
+          0,
+          0,
+          null,
+          null,
+          22,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2013",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          184,
+          0,
+          0,
+          null,
+          null,
+          4,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2014",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          457,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2015",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          202,
+          0,
+          0,
+          null,
+          null,
+          3,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2016",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          340,
+          0,
+          0,
+          null,
+          null,
+          5,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2017",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          404,
+          0,
+          0,
+          null,
+          null,
+          11,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2018",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          336,
+          0,
+          0,
+          null,
+          null,
+          22,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2019",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          382,
+          0,
+          0,
+          null,
+          null,
+          6,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2020",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          446,
+          0,
+          0,
+          null,
+          null,
+          13,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2021",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          301,
+          0,
+          3,
+          null,
+          null,
+          5,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2022",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          299,
+          0,
+          0,
+          null,
+          null,
+          8,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2023",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          1,
+          728,
+          0,
+          0,
+          null,
+          null,
+          14,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2024",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          446,
+          0,
+          0,
+          null,
+          null,
+          22,
+          null
+        ]
+      },
+      {
+        "variable": "m-826ff58075",
+        "variableLabel": "수관 손실 · 습윤열대 1차림 연간 손실",
+        "unit": "ha",
+        "period": "2025",
+        "sourceIndicatorId": "B-033_primary_loss_adm1_year",
+        "values": [
+          0,
+          502,
+          0,
+          0,
+          null,
+          null,
+          5,
+          null
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2001",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2002",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2003",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2004",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2005",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2006",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2007",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2008",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2009",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2011",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2012",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2013",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2014",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2015",
+      "expectedCount": 8,
+      "matchedCount": 6,
+      "missingCount": 2,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2016",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2018",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2019",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2020",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2023",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e8f3048a0c",
+      "period": "2024",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2002",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2003",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2004",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2005",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2006",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2007",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2008",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2009",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2011",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2012",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2013",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2014",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2015",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2016",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2018",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2019",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2020",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2023",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2024",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-826ff58075",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018)",
+      "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) — CC-BY-4.0. 이용 시 출처 표기 필수",
+      "Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://data-api.globalforestwatch.org/dataset/gadm__tcl__adm1_change",
+      "https://www.globalforestwatch.org/dashboards/country/BGD/"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 67,
+    "publishedValueCount": 307,
+    "sourceValueCount": 307,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

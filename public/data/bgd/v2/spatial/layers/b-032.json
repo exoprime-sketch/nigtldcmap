@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-032",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2010",
+    "defaultVariable": "m-0821a20b60",
+    "periods": [
+      "2000",
+      "2010"
+    ],
+    "variables": [
+      {
+        "key": "m-0821a20b60",
+        "label": "수관 피복률",
+        "measureId": "m-0821a20b60",
+        "measureKey": "m-0821a20b60",
+        "unit": "%",
+        "periods": [
+          "2000",
+          "2010"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-9c199d99e9",
+        "label": "수관 면적",
+        "measureId": "m-9c199d99e9",
+        "measureKey": "m-9c199d99e9",
+        "unit": "ha",
+        "periods": [
+          "2000",
+          "2010"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-a3c625f780",
+        "label": "분석대상 면적",
+        "measureId": "m-a3c625f780",
+        "measureKey": "m-a3c625f780",
+        "unit": "ha",
+        "periods": [
+          "2000",
+          "2010"
+        ],
+        "maxFeatureCount": 7
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-0821a20b60",
+        "variableLabel": "수관 피복률",
+        "unit": "%",
+        "period": "2000",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          10.41,
+          40.84,
+          2.96,
+          15.97,
+          0.41,
+          0.6,
+          10.4,
+          null
+        ]
+      },
+      {
+        "variable": "m-0821a20b60",
+        "variableLabel": "수관 피복률",
+        "unit": "%",
+        "period": "2010",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          19.68,
+          42.87,
+          6.91,
+          16.1,
+          0.1,
+          0.32,
+          11.12,
+          null
+        ]
+      },
+      {
+        "variable": "m-9c199d99e9",
+        "variableLabel": "수관 면적",
+        "unit": "ha",
+        "period": "2000",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          102313.03,
+          1267576.4,
+          91690.18,
+          331745.71,
+          7467.04,
+          9722.45,
+          128443.03,
+          null
+        ]
+      },
+      {
+        "variable": "m-9c199d99e9",
+        "variableLabel": "수관 면적",
+        "unit": "ha",
+        "period": "2010",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          193398.69,
+          1330318.04,
+          214162.45,
+          334491.75,
+          1825.61,
+          5197.09,
+          137351.59,
+          null
+        ]
+      },
+      {
+        "variable": "m-a3c625f780",
+        "variableLabel": "분석대상 면적",
+        "unit": "ha",
+        "period": "2000",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          982748.15,
+          3103428.53,
+          3097287.49,
+          2077871.73,
+          1821148.76,
+          1621049.07,
+          1234903.61,
+          null
+        ]
+      },
+      {
+        "variable": "m-a3c625f780",
+        "variableLabel": "분석대상 면적",
+        "unit": "ha",
+        "period": "2010",
+        "sourceIndicatorId": "B-032_canopy_cover_adm1",
+        "values": [
+          982748.15,
+          3103428.53,
+          3097287.49,
+          2077871.73,
+          1821148.76,
+          1621049.07,
+          1234903.61,
+          null
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-0821a20b60",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-0821a20b60",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9c199d99e9",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9c199d99e9",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a3c625f780",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a3c625f780",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Forest Watch / Hansen et al.(2013)"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "Global Forest Watch / Hansen et al.(2013) — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://www.globalforestwatch.org/dashboards/country/BGD/"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 7,
+    "maxSeriesFeatureCount": 7,
+    "missingAdm1Count": 1,
+    "providedZeroCount": 0,
+    "publishedValueCount": 42,
+    "sourceValueCount": 42,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

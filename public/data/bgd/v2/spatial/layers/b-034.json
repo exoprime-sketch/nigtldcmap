@@ -1,0 +1,848 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-034",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2000",
+    "defaultVariable": "m-cf18121a55",
+    "periods": [
+      "2000",
+      "2001–2024",
+      "2007",
+      "2010",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+    ],
+    "variables": [
+      {
+        "key": "m-cf18121a55",
+        "label": "지상부 탄소저장량",
+        "measureId": "m-cf18121a55",
+        "measureKey": "m-cf18121a55",
+        "unit": "Mg C",
+        "periods": [
+          "2000"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-3fd7d83ca3",
+        "label": "지상부 탄소밀도",
+        "measureId": "m-3fd7d83ca3",
+        "measureKey": "m-3fd7d83ca3",
+        "unit": "Mg C/ha",
+        "periods": [
+          "2000"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-903a12a202",
+        "label": "산림탄소 총배출",
+        "measureId": "m-903a12a202",
+        "measureKey": "m-903a12a202",
+        "unit": "Mg CO2e",
+        "periods": [
+          "2001–2024"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-a5a50fd516",
+        "label": "산림탄소 총흡수",
+        "measureId": "m-a5a50fd516",
+        "measureKey": "m-a5a50fd516",
+        "unit": "Mg CO2",
+        "periods": [
+          "2001–2024"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-8aed7f8503",
+        "label": "산림탄소 순플럭스",
+        "measureId": "m-8aed7f8503",
+        "measureKey": "m-8aed7f8503",
+        "unit": "Mg CO2e",
+        "periods": [
+          "2001–2024"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-baea91f78f",
+        "label": "수관 면적 2000",
+        "measureId": "m-baea91f78f",
+        "measureKey": "m-baea91f78f",
+        "unit": "ha",
+        "periods": [
+          "2000"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-d945af094c",
+        "label": "지상부 바이오매스 AGB(ESA CCI)",
+        "measureId": "m-d945af094c",
+        "measureKey": "m-d945af094c",
+        "unit": "Mg",
+        "periods": [
+          "2007",
+          "2010",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-def914edb1",
+        "label": "지상부 바이오매스 밀도(ESA CCI)",
+        "measureId": "m-def914edb1",
+        "measureKey": "m-def914edb1",
+        "unit": "Mg/ha",
+        "periods": [
+          "2007",
+          "2010",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-cf18121a55",
+        "variableLabel": "지상부 탄소저장량",
+        "unit": "Mg C",
+        "period": "2000",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          7570477.49,
+          121821440.92,
+          5887138.45,
+          27809044.12,
+          486125.12,
+          654595.57,
+          9932324.18,
+          null
+        ]
+      },
+      {
+        "variable": "m-3fd7d83ca3",
+        "variableLabel": "지상부 탄소밀도",
+        "unit": "Mg C/ha",
+        "period": "2000",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          73.99,
+          96.11,
+          64.21,
+          83.83,
+          65.1,
+          67.33,
+          77.33,
+          null
+        ]
+      },
+      {
+        "variable": "m-903a12a202",
+        "variableLabel": "산림탄소 총배출",
+        "unit": "Mg CO2e",
+        "period": "2001–2024",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          16256.97,
+          117550158.49,
+          2264137.4,
+          118604.06,
+          118005.88,
+          207624.3,
+          3605090.47,
+          null
+        ]
+      },
+      {
+        "variable": "m-a5a50fd516",
+        "variableLabel": "산림탄소 총흡수",
+        "unit": "Mg CO2",
+        "period": "2001–2024",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          16789469.58,
+          165824770.37,
+          13983416.36,
+          206012889.78,
+          4467835.63,
+          4234161.29,
+          18356299.66,
+          null
+        ]
+      },
+      {
+        "variable": "m-8aed7f8503",
+        "variableLabel": "산림탄소 순플럭스",
+        "unit": "Mg CO2e",
+        "period": "2001–2024",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          -16773213.21,
+          -48274612.22,
+          -11719278.96,
+          -205894297.17,
+          -4349829.75,
+          -4026536.99,
+          -14751209.19,
+          null
+        ]
+      },
+      {
+        "variable": "m-baea91f78f",
+        "variableLabel": "수관 면적 2000",
+        "unit": "ha",
+        "period": "2000",
+        "sourceIndicatorId": "B-034_forest_carbon_adm1",
+        "values": [
+          102313.03,
+          1267576.4,
+          91690.18,
+          331745.71,
+          7467.04,
+          9722.45,
+          128443.03,
+          null
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2007",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17463370.6,
+          189965730.25,
+          15245791,
+          24611900.25,
+          3934632.89,
+          5501101.15,
+          12477859.49,
+          5186335.83
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2010",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18747917.91,
+          186843853.59,
+          16228247.6,
+          26043761.29,
+          4245502.49,
+          5761157.4,
+          12577845.21,
+          4664739.56
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2015",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17819220.61,
+          190056331.5,
+          19541886.31,
+          27759407.49,
+          11858441.49,
+          15039891.21,
+          15834594.29,
+          10666124.08
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2016",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17705557.24,
+          191349512.29,
+          18814617.35,
+          27514141.64,
+          6845736.79,
+          9721328.87,
+          15408888.89,
+          8968466.96
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2017",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17411399.37,
+          190512664.78,
+          19764585.23,
+          29092156.61,
+          8611493.33,
+          9853579.87,
+          14812350.79,
+          8685097.01
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2018",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17409657.04,
+          190740924,
+          18679818.19,
+          27574517.84,
+          6004113.27,
+          8699556.77,
+          15082108.67,
+          8153320.67
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2019",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17903975,
+          190377040.13,
+          20394599.62,
+          28303119.77,
+          7365487,
+          8845267.5,
+          14795421.66,
+          8444435.46
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2020",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17641288.36,
+          192676178.17,
+          20557751.41,
+          28152708.58,
+          7856110.21,
+          10165439.99,
+          13775186.39,
+          8794516.25
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2021",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17979383.31,
+          195398269.84,
+          20923126.87,
+          28359169.13,
+          7748389.45,
+          11004886.02,
+          16820930.22,
+          10001713.96
+        ]
+      },
+      {
+        "variable": "m-d945af094c",
+        "variableLabel": "지상부 바이오매스 AGB(ESA CCI)",
+        "unit": "Mg",
+        "period": "2022",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18024647.31,
+          200530409.43,
+          25649309.99,
+          32548701.33,
+          15151812.45,
+          16398398.93,
+          19578265.08,
+          14478724.4
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2007",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17.79,
+          61.22,
+          7.46,
+          11.85,
+          2.16,
+          3.39,
+          10.1,
+          4.92
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2010",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          19.1,
+          60.21,
+          7.94,
+          12.54,
+          2.33,
+          3.55,
+          10.18,
+          4.43
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2015",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18.15,
+          61.25,
+          9.56,
+          13.36,
+          6.51,
+          9.28,
+          12.82,
+          10.13
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2016",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18.04,
+          61.66,
+          9.21,
+          13.24,
+          3.76,
+          6,
+          12.48,
+          8.51
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2017",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17.74,
+          61.39,
+          9.67,
+          14,
+          4.73,
+          6.08,
+          11.99,
+          8.25
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2018",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17.73,
+          61.47,
+          9.14,
+          13.27,
+          3.3,
+          5.37,
+          12.21,
+          7.74
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2019",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18.24,
+          61.35,
+          9.98,
+          13.62,
+          4.04,
+          5.46,
+          11.98,
+          8.02
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2020",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          17.97,
+          62.09,
+          10.06,
+          13.55,
+          4.31,
+          6.27,
+          11.15,
+          8.35
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2021",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18.31,
+          62.97,
+          10.24,
+          13.65,
+          4.25,
+          6.79,
+          13.62,
+          9.49
+        ]
+      },
+      {
+        "variable": "m-def914edb1",
+        "variableLabel": "지상부 바이오매스 밀도(ESA CCI)",
+        "unit": "Mg/ha",
+        "period": "2022",
+        "sourceIndicatorId": "B-034_cci_agb_adm1",
+        "values": [
+          18.36,
+          64.62,
+          12.55,
+          15.67,
+          8.32,
+          10.11,
+          15.85,
+          13.75
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-cf18121a55",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-3fd7d83ca3",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-903a12a202",
+      "period": "2001–2024",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a5a50fd516",
+      "period": "2001–2024",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8aed7f8503",
+      "period": "2001–2024",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-baea91f78f",
+      "period": "2000",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2007",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2015",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2016",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2018",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2019",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2020",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d945af094c",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2007",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2010",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2015",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2016",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2018",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2019",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2020",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-def914edb1",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포",
+      "Global Forest Watch (Harris et al. 2021)"
+    ],
+    "licenses": [
+      "CC-BY-4.0",
+      "기관 이용약관"
+    ],
+    "attribution": [
+      "ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 — 기관 이용약관. 이용 시 출처 표기 필수",
+      "Global Forest Watch (Harris et al. 2021) — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://catalogue.ceda.ac.uk/uuid/95913ffb6467447ca72c4e9d8cf30501/",
+      "https://www.globalforestwatch.org/dashboards/country/BGD/"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 202,
+    "sourceValueCount": 202,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

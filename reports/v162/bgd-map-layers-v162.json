@@ -1,0 +1,3005 @@
+{
+  "schema": "country-map-layers-v162",
+  "countryIso3": "BGD",
+  "dataRoot": "/data/bgd/v2",
+  "inputs": {
+    "evidence": "reports/v162/bgd-map-evidence-v162.json",
+    "decisions": "tools/etl/countries/bgd/map-targets.json",
+    "targets": "src/data/visualization/publicMapTargetsV138.json",
+    "adm1": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+    "outline": "/data/bgd/v2/geometry/bgd-country-outline.geojson",
+    "outlineBufferDeg": 0.05
+  },
+  "counts": {
+    "targets": 72,
+    "choropleth": 22,
+    "point": 12,
+    "reference": 3,
+    "hold": 35,
+    "registeredLayers": 37,
+    "mapFeatureCount": 3518
+  },
+  "evidenceCheck": {
+    "comparedElements": 72,
+    "coordinateRowsAndOutsideCountsMatch": true,
+    "publishedFewerRowsThanWorkbook": [
+      {
+        "elementId": "B-024",
+        "workbookCoordinateRows": 16,
+        "publishedCoordinateRows": 8
+      }
+    ],
+    "outsideOutline": {
+      "A-023": 1,
+      "A-028": 36,
+      "B-008": 315,
+      "B-012": 5,
+      "B-025": 6,
+      "B-048": 1,
+      "C-025": 1,
+      "D-012": 2,
+      "D-021": 1,
+      "D-022": 7,
+      "E-006": 7
+    }
+  },
+  "decisionConflicts": [
+    {
+      "elementId": "B-012",
+      "decision": "hold:admin-centroid",
+      "finding": "14 coordinate rows inside the outline are not marked as administrative representative points (e.g. 실제 위치(원자료 좌표, EM-DAT))",
+      "resolution": "decision kept"
+    }
+  ],
+  "catalogChanges": [],
+  "expectationChanges": [],
+  "layers": [
+    {
+      "elementId": "A-023",
+      "publicName": "발전소",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 57,
+      "outsideOutline": 1,
+      "layerId": "bgd-v162-a-023",
+      "kind": "point",
+      "keptRows": 56,
+      "featureCount": 56,
+      "featureCountByKind": {
+        "가스": 27,
+        "석유": 26,
+        "석탄": 1,
+        "수력": 1,
+        "태양광": 1
+      },
+      "droppedRowsByReason": {
+        "outside-country-outline": 1
+      }
+    },
+    {
+      "elementId": "A-024",
+      "publicName": "송전망",
+      "decision": "reference",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 984,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-a-024",
+      "kind": "reference",
+      "basis": "구간 중간점",
+      "keptRows": 984,
+      "featureCount": 946,
+      "featureCountByKind": {
+        "고압 송전선": 896,
+        "배전급 전력선": 48,
+        "고압 송전선 · 배전급 전력선": 2
+      },
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "A-028",
+      "publicName": "수자원 시설",
+      "decision": "reference",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 2102,
+      "outsideOutline": 36,
+      "layerId": "bgd-v162-a-028",
+      "kind": "reference",
+      "basis": "시작점",
+      "keptRows": 2066,
+      "featureCount": 2055,
+      "featureCountByKind": {
+        "내륙 수자원 지물": 1921,
+        "기타 자연지형지물": 116,
+        "해안 지물": 18
+      },
+      "droppedRowsByReason": {
+        "outside-country-outline": 36
+      }
+    },
+    {
+      "elementId": "B-002",
+      "publicName": "기후대",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 93,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-002",
+      "kind": "choropleth",
+      "measure": {
+        "column": "열대_A군",
+        "rule": "reviewed-override",
+        "defaultVariable": "열대 A군",
+        "defaultPeriod": "1991-2020",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-002_koppen_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "열대 A군",
+          "unit": "%",
+          "periods": 2,
+          "column": "열대_A군",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "온대 C군",
+          "unit": "%",
+          "periods": 2,
+          "column": "온대_C군",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "기후대 수",
+          "unit": "",
+          "periods": 2,
+          "column": "기후대_수",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "열대 A군 · SSP2-4.5",
+          "unit": "%",
+          "periods": 1,
+          "column": "열대_A군",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "온대 C군 · SSP2-4.5",
+          "unit": "%",
+          "periods": 1,
+          "column": "온대_C군",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "기후대 수 · SSP2-4.5",
+          "unit": "",
+          "periods": 1,
+          "column": "기후대_수",
+          "indicatorId": "B-002_koppen_adm1"
+        },
+        {
+          "label": "기후대 수 · SSP5-8.5",
+          "unit": "",
+          "periods": 1,
+          "column": "기후대_수",
+          "indicatorId": "B-002_koppen_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [
+        {
+          "series": "entity|B-002_koppen_adm1|건조_B군|SSP2-4.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|건조_B군|SSP5-8.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|건조_B군||",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|냉대_D군|SSP2-4.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|냉대_D군|SSP5-8.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|냉대_D군||",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|열대_A군|SSP5-8.5|",
+          "reason": "same-value-in-every-division",
+          "value": 100
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|온대_C군|SSP5-8.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|한대_E군|SSP2-4.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|한대_E군|SSP5-8.5|",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_adm1|한대_E군||",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_면적_km|SSP2-4.5|",
+          "reason": "several-values-per-division-and-period",
+          "cells": 7
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_면적_km|SSP5-8.5|",
+          "reason": "several-values-per-division-and-period",
+          "cells": 5
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_면적_km||",
+          "reason": "several-values-per-division-and-period",
+          "cells": 9
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_비율|SSP2-4.5|",
+          "reason": "several-values-per-division-and-period",
+          "cells": 7
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_비율|SSP5-8.5|",
+          "reason": "several-values-per-division-and-period",
+          "cells": 5
+        },
+        {
+          "series": "entity|B-002_koppen_class_adm1|기후대_점유_비율||",
+          "reason": "several-values-per-division-and-period",
+          "cells": 9
+        }
+      ],
+      "sourceRows": 93,
+      "divisionNamesCrossChecked": 93,
+      "publishedValueCount": 80,
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "B-003",
+      "publicName": "연평균 기온·강수",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 1000,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-003",
+      "kind": "choropleth",
+      "measure": {
+        "column": "연평균_기온",
+        "rule": "first-numeric-column",
+        "defaultVariable": "연평균 기온",
+        "defaultPeriod": "2025",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-003_climate_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "연평균 기온",
+          "unit": "℃",
+          "periods": 125,
+          "column": "연평균_기온",
+          "indicatorId": "B-003_climate_adm1_year"
+        },
+        {
+          "label": "연평균 최고기온",
+          "unit": "℃",
+          "periods": 125,
+          "column": "연평균_최고기온",
+          "indicatorId": "B-003_climate_adm1_year"
+        },
+        {
+          "label": "연평균 최저기온",
+          "unit": "℃",
+          "periods": 125,
+          "column": "연평균_최저기온",
+          "indicatorId": "B-003_climate_adm1_year"
+        },
+        {
+          "label": "연강수량",
+          "unit": "mm",
+          "periods": 125,
+          "column": "연강수량_mm",
+          "indicatorId": "B-003_climate_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 1000,
+      "divisionNamesCrossChecked": 1000,
+      "publishedValueCount": 4000,
+      "droppedRowsByReason": {
+        "not-a-division-row": 125
+      }
+    },
+    {
+      "elementId": "B-004",
+      "publicName": "미래기후 전망(CMIP6)",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 7488,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-004",
+      "kind": "choropleth",
+      "measure": {
+        "column": "연평균_기온",
+        "rule": "first-numeric-column",
+        "defaultVariable": "연평균 기온 · SSP2-4.5",
+        "defaultPeriod": "2100",
+        "scenario": "ssp245",
+        "split": null,
+        "sourceIndicatorId": "B-004_climate_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "연평균 기온 · SSP2-4.5",
+          "unit": "℃",
+          "periods": 86,
+          "column": "연평균_기온",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "연평균 최고기온 · SSP2-4.5",
+          "unit": "℃",
+          "periods": 86,
+          "column": "연평균_최고기온",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "연평균 최저기온 · SSP2-4.5",
+          "unit": "℃",
+          "periods": 86,
+          "column": "연평균_최저기온",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "연강수량 · SSP2-4.5",
+          "unit": "mm",
+          "periods": 86,
+          "column": "연강수량_mm",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "상대습도 · SSP2-4.5",
+          "unit": "%",
+          "periods": 86,
+          "column": "상대습도",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "지표면 풍속 · SSP2-4.5",
+          "unit": "m/s",
+          "periods": 86,
+          "column": "지표면_풍속_m_s",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "지표면 일사량 · SSP2-4.5",
+          "unit": "W/m²",
+          "periods": 86,
+          "column": "지표면_일사량_W_m",
+          "indicatorId": "B-004_climate_adm1_year"
+        },
+        {
+          "label": "연평균 기온 · 과거 모형(historical)",
+          "unit": "℃",
+          "periods": 65,
+          "column": "연평균_기온",
+          "indicatorId": "B-004_climate_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 26,
+      "rejectedSeries": [],
+      "sourceRows": 3960,
+      "divisionNamesCrossChecked": 3960,
+      "publishedValueCount": 5336,
+      "droppedRowsByReason": {
+        "monthly-or-climatology-row": 3528,
+        "not-a-division-row": 936
+      }
+    },
+    {
+      "elementId": "B-005",
+      "publicName": "가뭄",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 4464,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-005",
+      "kind": "choropleth",
+      "measure": {
+        "column": "연속_건조일수_CDD_일",
+        "rule": "first-numeric-column",
+        "defaultVariable": "연속 건조일수 CDD · SSP2-4.5",
+        "defaultPeriod": "2100",
+        "scenario": "ssp245",
+        "split": null,
+        "sourceIndicatorId": "B-005_climate_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "연속 건조일수 CDD · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "연속_건조일수_CDD_일",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "표준강수증발산지수 SPEI12 · SSP2-4.5",
+          "unit": "",
+          "periods": 86,
+          "column": "표준강수증발산지수_SPEI12",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "연속 건조일수 CDD · 과거 모형(historical)",
+          "unit": "일",
+          "periods": 65,
+          "column": "연속_건조일수_CDD_일",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "연속 건조일수 CDD · SSP1-2.6",
+          "unit": "일",
+          "periods": 86,
+          "column": "연속_건조일수_CDD_일",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "연속 건조일수 CDD · SSP3-7.0",
+          "unit": "일",
+          "periods": 86,
+          "column": "연속_건조일수_CDD_일",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "연속 건조일수 CDD · SSP5-8.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "연속_건조일수_CDD_일",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "표준강수증발산지수 SPEI12 · 과거 모형(historical)",
+          "unit": "",
+          "periods": 64,
+          "column": "표준강수증발산지수_SPEI12",
+          "indicatorId": "B-005_climate_adm1_year"
+        },
+        {
+          "label": "표준강수증발산지수 SPEI12 · SSP1-1.9",
+          "unit": "",
+          "periods": 86,
+          "column": "표준강수증발산지수_SPEI12",
+          "indicatorId": "B-005_climate_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 3,
+      "rejectedSeries": [],
+      "sourceRows": 3960,
+      "divisionNamesCrossChecked": 3960,
+      "publishedValueCount": 5160,
+      "droppedRowsByReason": {
+        "monthly-or-climatology-row": 504,
+        "not-a-division-row": 558
+      }
+    },
+    {
+      "elementId": "B-006",
+      "publicName": "폭염",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 6480,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-006",
+      "kind": "choropleth",
+      "measure": {
+        "column": "폭염일수_TX_35_일",
+        "rule": "first-numeric-column",
+        "defaultVariable": "폭염일수 TX≥35℃ · SSP2-4.5",
+        "defaultPeriod": "2100",
+        "scenario": "ssp245",
+        "split": null,
+        "sourceIndicatorId": "B-006_climate_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "폭염일수 TX≥35℃ · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "폭염일수_TX_35_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "폭염일수 TX≥40℃ · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "폭염일수_TX_40_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "Heat Index ≥35℃ · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "Heat_Index_35_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "열대야 TR≥20℃ · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "열대야_TR_20_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "열대야 TR≥26℃ · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "열대야_TR_26_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "폭염일수 TX≥35℃ · 과거 모형(historical)",
+          "unit": "일",
+          "periods": 65,
+          "column": "폭염일수_TX_35_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "폭염일수 TX≥35℃ · SSP1-1.9",
+          "unit": "일",
+          "periods": 86,
+          "column": "폭염일수_TX_35_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        },
+        {
+          "label": "폭염일수 TX≥35℃ · SSP1-2.6",
+          "unit": "일",
+          "periods": 86,
+          "column": "폭염일수_TX_35_일",
+          "indicatorId": "B-006_climate_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 22,
+      "rejectedSeries": [],
+      "sourceRows": 3960,
+      "divisionNamesCrossChecked": 3960,
+      "publishedValueCount": 5336,
+      "droppedRowsByReason": {
+        "monthly-or-climatology-row": 2520,
+        "not-a-division-row": 810
+      }
+    },
+    {
+      "elementId": "B-007",
+      "publicName": "극한강수",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 6480,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-007",
+      "kind": "choropleth",
+      "measure": {
+        "column": "최대_1일_강수_mm",
+        "rule": "first-numeric-column",
+        "defaultVariable": "최대 1일 강수 · SSP2-4.5",
+        "defaultPeriod": "2100",
+        "scenario": "ssp245",
+        "split": null,
+        "sourceIndicatorId": "B-007_climate_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "최대 1일 강수 · SSP2-4.5",
+          "unit": "mm",
+          "periods": 86,
+          "column": "최대_1일_강수_mm",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "최대 5일 강수 · SSP2-4.5",
+          "unit": "mm",
+          "periods": 86,
+          "column": "최대_5일_강수_mm",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "호우일수 ≥20mm · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "호우일수_20mm_일",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "호우일수 ≥50mm · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "호우일수_50mm_일",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "연속 습윤일수 CWD · SSP2-4.5",
+          "unit": "일",
+          "periods": 86,
+          "column": "연속_습윤일수_CWD_일",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "최대 1일 강수 · 과거 모형(historical)",
+          "unit": "mm",
+          "periods": 65,
+          "column": "최대_1일_강수_mm",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "최대 1일 강수 · SSP1-1.9",
+          "unit": "mm",
+          "periods": 86,
+          "column": "최대_1일_강수_mm",
+          "indicatorId": "B-007_climate_adm1_year"
+        },
+        {
+          "label": "최대 1일 강수 · SSP1-2.6",
+          "unit": "mm",
+          "periods": 86,
+          "column": "최대_1일_강수_mm",
+          "indicatorId": "B-007_climate_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 21,
+      "rejectedSeries": [],
+      "sourceRows": 3960,
+      "divisionNamesCrossChecked": 3960,
+      "publishedValueCount": 5336,
+      "droppedRowsByReason": {
+        "monthly-or-climatology-row": 2520,
+        "not-a-division-row": 810
+      }
+    },
+    {
+      "elementId": "B-008",
+      "publicName": "해수면 상승 전망",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 1260,
+      "outsideOutline": 315,
+      "layerId": "bgd-v162-b-008",
+      "kind": "point",
+      "keptRows": 945,
+      "featureCount": 3,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {
+        "outside-country-outline": 315
+      }
+    },
+    {
+      "elementId": "B-009",
+      "publicName": "생물다양성 위험",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 0,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-009",
+      "kind": "choropleth",
+      "measure": {
+        "column": "brf_prov_sph",
+        "rule": "first-numeric-column",
+        "defaultVariable": "WWF BRF 물리적 위험(Scape Physical)",
+        "defaultPeriod": "2026",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-009_brf_prov"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "WWF BRF 물리적 위험(Scape Physical)",
+          "unit": "점",
+          "periods": 1,
+          "column": "brf_prov_sph",
+          "indicatorId": "B-009_brf_prov_sph"
+        },
+        {
+          "label": "WWF BRF 제공 서비스(Provisioning)",
+          "unit": "점",
+          "periods": 1,
+          "column": "brf_prov_src1",
+          "indicatorId": "B-009_brf_prov_src1"
+        },
+        {
+          "label": "WWF BRF 조절·지원 서비스(Enabling)",
+          "unit": "점",
+          "periods": 1,
+          "column": "brf_prov_src2",
+          "indicatorId": "B-009_brf_prov_src2"
+        },
+        {
+          "label": "WWF BRF 조절 서비스(Mitigating)",
+          "unit": "점",
+          "periods": 1,
+          "column": "brf_prov_src3",
+          "indicatorId": "B-009_brf_prov_src3"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 32,
+      "divisionNamesCrossChecked": 0,
+      "publishedValueCount": 32,
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "B-017",
+      "publicName": "물 스트레스",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 7,
+      "coordinateRows": 565,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-017",
+      "kind": "choropleth",
+      "measure": {
+        "column": "순위표_값",
+        "rule": "reviewed-override",
+        "defaultVariable": "기준 물스트레스(Baseline Water Stress) — 기준연도 — 전체 가중",
+        "defaultPeriod": "2023",
+        "scenario": null,
+        "split": "기준 물스트레스(Baseline Water Stress) — 기준연도 — 전체 가중",
+        "sourceIndicatorId": "B-017_adm1_ranking"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ],
+      "divisionsInAnySeries": 7,
+      "featureCount": 7,
+      "publishedVariables": [
+        {
+          "label": "기준 물스트레스(Baseline Water Stress) — 기준연도 — 전체 가중",
+          "unit": "점",
+          "periods": 1,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        },
+        {
+          "label": "기준 물스트레스(Baseline Water Stress) — 현행유지(BAU) — 전체 가중",
+          "unit": "점",
+          "periods": 3,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        },
+        {
+          "label": "기준 물스트레스(Baseline Water Stress) — 낙관(Optimistic) — 전체 가중",
+          "unit": "점",
+          "periods": 3,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        },
+        {
+          "label": "기준 물스트레스(Baseline Water Stress) — 비관(Pessimistic) — 전체 가중",
+          "unit": "점",
+          "periods": 3,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        },
+        {
+          "label": "가뭄위험(Drought Risk) — 기준연도 — 전체 가중",
+          "unit": "점",
+          "periods": 1,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        },
+        {
+          "label": "하천 홍수위험(Riverine Flood Risk) — 기준연도 — 인구 가중",
+          "unit": "점",
+          "periods": 1,
+          "column": "순위표_값",
+          "indicatorId": "B-017_adm1_ranking"
+        }
+      ],
+      "validSeriesNotPublished": 25,
+      "rejectedSeries": [],
+      "sourceRows": 469,
+      "divisionNamesCrossChecked": 469,
+      "publishedValueCount": 84,
+      "droppedRowsByReason": {
+        "division-unit-without-division-key": 96,
+        "not-a-division-row": 67
+      }
+    },
+    {
+      "elementId": "B-023",
+      "publicName": "건기·우기 유량 차이",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 558,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-023",
+      "kind": "point",
+      "locationNote": "지점은 수문관측소 위치에서 가장 가까운 하천 격자(GloFAS 0.05°)의 중심입니다.",
+      "keptRows": 558,
+      "featureCount": 3,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "B-025",
+      "publicName": "유역 면적",
+      "decision": "reference",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 66,
+      "outsideOutline": 6,
+      "layerId": "bgd-v162-b-025",
+      "kind": "reference",
+      "basis": "유역 중심점",
+      "keptRows": 60,
+      "featureCount": 60,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {
+        "no-coordinate": 1,
+        "outside-country-outline": 6
+      }
+    },
+    {
+      "elementId": "B-026",
+      "publicName": "흐름방향",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 40,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-026",
+      "kind": "choropleth",
+      "measure": {
+        "column": "우세_유향_비율",
+        "rule": "first-numeric-column",
+        "defaultVariable": "우세 유향 비율",
+        "defaultPeriod": "2022",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-026_flowdir_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "우세 유향 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "우세_유향_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "E 동 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "E_동_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "SE 남동 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "SE_남동_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "S 남 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "S_남_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "SW 남서 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "SW_남서_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "W 서 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "W_서_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "NW 북서 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "NW_북서_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        },
+        {
+          "label": "N 북 비율",
+          "unit": "%",
+          "periods": 1,
+          "column": "N_북_비율",
+          "indicatorId": "B-026_flowdir_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 1,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 64,
+      "droppedRowsByReason": {
+        "not-a-division-row": 41
+      }
+    },
+    {
+      "elementId": "B-028",
+      "publicName": "하천유량",
+      "decision": "point",
+      "divisionKeysInEvidence": 4,
+      "coordinateRows": 61,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-028",
+      "kind": "point",
+      "locationNote": "지점은 유역 출구 또는 수문관측소 인근 하천 격자(GloFAS 0.05°)의 중심입니다.",
+      "keptRows": 61,
+      "featureCount": 61,
+      "featureCountByKind": {
+        "유역 출구 격자점": 58,
+        "관측소 인근 하천 격자점": 3
+      },
+      "droppedRowsByReason": {
+        "no-coordinate": 12
+      }
+    },
+    {
+      "elementId": "B-029",
+      "publicName": "산림 유형별 면적",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 24,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-029",
+      "kind": "choropleth",
+      "measure": {
+        "column": "이탄지_면적_이탄_우세_km",
+        "rule": "first-numeric-column",
+        "defaultVariable": "이탄지 면적 — 이탄 우세",
+        "defaultPeriod": "2022",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-029_peatland_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "이탄지 면적 — 이탄 우세",
+          "unit": "km²",
+          "periods": 1,
+          "column": "이탄지_면적_이탄_우세_km",
+          "indicatorId": "B-029_peatland_adm1"
+        },
+        {
+          "label": "이탄지 면적 — 모자이크",
+          "unit": "km²",
+          "periods": 1,
+          "column": "이탄지_면적_모자이크_km",
+          "indicatorId": "B-029_peatland_adm1"
+        },
+        {
+          "label": "이탄지 면적 — 합계",
+          "unit": "km²",
+          "periods": 1,
+          "column": "이탄지_면적_합계_km",
+          "indicatorId": "B-029_peatland_adm1"
+        },
+        {
+          "label": "습윤열대 1차림 면적 2001",
+          "unit": "ha",
+          "periods": 1,
+          "column": "습윤열대_1차림_면적_2001_ha",
+          "indicatorId": "B-029_primary_extent_adm1"
+        },
+        {
+          "label": "1차림 비율 2001",
+          "unit": "%",
+          "periods": 1,
+          "column": "1차림_비율_2001",
+          "indicatorId": "B-029_primary_extent_adm1"
+        },
+        {
+          "label": "맹그로브 면적 2020",
+          "unit": "ha",
+          "periods": 1,
+          "column": "맹그로브_면적_2020_ha",
+          "indicatorId": "B-029_mangrove_adm1"
+        },
+        {
+          "label": "맹그로브 면적 1996",
+          "unit": "ha",
+          "periods": 1,
+          "column": "맹그로브_면적_1996_ha",
+          "indicatorId": "B-029_mangrove_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 24,
+      "divisionNamesCrossChecked": 24,
+      "publishedValueCount": 56,
+      "droppedRowsByReason": {
+        "not-a-division-row": 157
+      }
+    },
+    {
+      "elementId": "B-030",
+      "publicName": "산림 이득",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-030",
+      "kind": "choropleth",
+      "measure": {
+        "column": "이득_ha",
+        "rule": "reviewed-override",
+        "defaultVariable": "이득",
+        "defaultPeriod": "2000–2020",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-030_forest_change_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ],
+      "divisionsInAnySeries": 7,
+      "featureCount": 7,
+      "publishedVariables": [
+        {
+          "label": "이득",
+          "unit": "ha",
+          "periods": 1,
+          "column": "이득_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "2000년 수관 면적",
+          "unit": "ha",
+          "periods": 1,
+          "column": "2000년_수관_면적_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "유지",
+          "unit": "ha",
+          "periods": 1,
+          "column": "유지_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "손실",
+          "unit": "ha",
+          "periods": 1,
+          "column": "손실_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "교란 후 회복",
+          "unit": "ha",
+          "periods": 1,
+          "column": "교란_후_회복_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "순변화",
+          "unit": "ha",
+          "periods": 1,
+          "column": "순변화_ha",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "순변화율",
+          "unit": "%",
+          "periods": 1,
+          "column": "순변화율",
+          "indicatorId": "B-030_forest_change_adm1"
+        },
+        {
+          "label": "분석대상 면적(GFW)",
+          "unit": "ha",
+          "periods": 1,
+          "column": "분석대상_면적_ha_GFW",
+          "indicatorId": "B-030_forest_change_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 56,
+      "droppedRowsByReason": {
+        "not-a-division-row": 2
+      }
+    },
+    {
+      "elementId": "B-031",
+      "publicName": "산림 총면적",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-031",
+      "kind": "choropleth",
+      "measure": {
+        "column": "수관_면적_2010_ha",
+        "rule": "reviewed-override",
+        "defaultVariable": "수관 면적 2010",
+        "defaultPeriod": "2010",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-031_forest_extent_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ],
+      "divisionsInAnySeries": 7,
+      "featureCount": 7,
+      "publishedVariables": [
+        {
+          "label": "수관 면적 2010",
+          "unit": "ha",
+          "periods": 1,
+          "column": "수관_면적_2010_ha",
+          "indicatorId": "B-031_forest_extent_adm1"
+        },
+        {
+          "label": "분석대상 면적",
+          "unit": "ha",
+          "periods": 1,
+          "column": "분석대상_면적_ha",
+          "indicatorId": "B-031_forest_extent_adm1"
+        },
+        {
+          "label": "수관 면적 2000",
+          "unit": "ha",
+          "periods": 1,
+          "column": "수관_면적_2000_ha",
+          "indicatorId": "B-031_forest_extent_adm1"
+        },
+        {
+          "label": "수관 피복률 2000",
+          "unit": "%",
+          "periods": 1,
+          "column": "수관_피복률_2000",
+          "indicatorId": "B-031_forest_extent_adm1"
+        },
+        {
+          "label": "수관 피복률 2010",
+          "unit": "%",
+          "periods": 1,
+          "column": "수관_피복률_2010",
+          "indicatorId": "B-031_forest_extent_adm1"
+        },
+        {
+          "label": "2000→2010 증감",
+          "unit": "ha",
+          "periods": 1,
+          "column": "2000_2010_증감_ha",
+          "indicatorId": "B-031_forest_extent_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 42,
+      "droppedRowsByReason": {
+        "not-a-division-row": 1
+      }
+    },
+    {
+      "elementId": "B-032",
+      "publicName": "수관피복률",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 16,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-032",
+      "kind": "choropleth",
+      "measure": {
+        "column": "수관_피복률",
+        "rule": "first-numeric-column",
+        "defaultVariable": "수관 피복률",
+        "defaultPeriod": "2010",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-032_canopy_cover_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ],
+      "divisionsInAnySeries": 7,
+      "featureCount": 7,
+      "publishedVariables": [
+        {
+          "label": "수관 피복률",
+          "unit": "%",
+          "periods": 2,
+          "column": "수관_피복률",
+          "indicatorId": "B-032_canopy_cover_adm1"
+        },
+        {
+          "label": "수관 면적",
+          "unit": "ha",
+          "periods": 2,
+          "column": "수관_면적_ha",
+          "indicatorId": "B-032_canopy_cover_adm1"
+        },
+        {
+          "label": "분석대상 면적",
+          "unit": "ha",
+          "periods": 2,
+          "column": "분석대상_면적_ha",
+          "indicatorId": "B-032_canopy_cover_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 16,
+      "divisionNamesCrossChecked": 16,
+      "publishedValueCount": 42,
+      "droppedRowsByReason": {
+        "not-a-division-row": 2
+      }
+    },
+    {
+      "elementId": "B-033",
+      "publicName": "산림손실",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 307,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-033",
+      "kind": "choropleth",
+      "measure": {
+        "column": "수관_손실_ha",
+        "rule": "first-numeric-column",
+        "defaultVariable": "수관 손실 · 연간 산림 손실",
+        "defaultPeriod": "2024",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-033_loss_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "수관 손실 · 연간 산림 손실",
+          "unit": "ha",
+          "periods": 24,
+          "column": "수관_손실_ha",
+          "indicatorId": "B-033_loss_adm1_year"
+        },
+        {
+          "label": "수관 손실 · 습윤열대 1차림 연간 손실",
+          "unit": "ha",
+          "periods": 24,
+          "column": "수관_손실_ha",
+          "indicatorId": "B-033_primary_loss_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 307,
+      "divisionNamesCrossChecked": 307,
+      "publishedValueCount": 307,
+      "droppedRowsByReason": {
+        "not-a-division-row": 72
+      }
+    },
+    {
+      "elementId": "B-034",
+      "publicName": "산림탄소",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 88,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-034",
+      "kind": "choropleth",
+      "measure": {
+        "column": "지상부_탄소저장량_Mg_C",
+        "rule": "first-numeric-column",
+        "defaultVariable": "지상부 탄소저장량",
+        "defaultPeriod": "2000",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-034_forest_carbon_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "지상부 탄소저장량",
+          "unit": "Mg C",
+          "periods": 1,
+          "column": "지상부_탄소저장량_Mg_C",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "지상부 탄소밀도",
+          "unit": "Mg C/ha",
+          "periods": 1,
+          "column": "지상부_탄소밀도_Mg_C_ha",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "산림탄소 총배출",
+          "unit": "Mg CO2e",
+          "periods": 1,
+          "column": "산림탄소_총배출_Mg_CO2e",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "산림탄소 총흡수",
+          "unit": "Mg CO2",
+          "periods": 1,
+          "column": "산림탄소_총흡수_Mg_CO2",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "산림탄소 순플럭스",
+          "unit": "Mg CO2e",
+          "periods": 1,
+          "column": "산림탄소_순플럭스_Mg_CO2e",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "수관 면적 2000",
+          "unit": "ha",
+          "periods": 1,
+          "column": "수관_면적_2000_ha",
+          "indicatorId": "B-034_forest_carbon_adm1"
+        },
+        {
+          "label": "지상부 바이오매스 AGB(ESA CCI)",
+          "unit": "Mg",
+          "periods": 10,
+          "column": "지상부_바이오매스_AGB_Mg_ESA_CCI",
+          "indicatorId": "B-034_cci_agb_adm1"
+        },
+        {
+          "label": "지상부 바이오매스 밀도(ESA CCI)",
+          "unit": "Mg/ha",
+          "periods": 10,
+          "column": "지상부_바이오매스_밀도_Mg_ha_ESA_CCI",
+          "indicatorId": "B-034_cci_agb_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 88,
+      "divisionNamesCrossChecked": 88,
+      "publishedValueCount": 202,
+      "droppedRowsByReason": {
+        "not-a-division-row": 1
+      }
+    },
+    {
+      "elementId": "B-035",
+      "publicName": "토지이용 면적",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 279,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-035",
+      "kind": "choropleth",
+      "measure": {
+        "column": "산림_면적_km",
+        "rule": "first-numeric-column",
+        "defaultVariable": "산림 면적",
+        "defaultPeriod": "2022",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-035_lc_adm1_year"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "산림 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "산림_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "농경지 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "농경지_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "초지·관목 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "초지_관목_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "습지 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "습지_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "도시 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "도시_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "나지 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "나지_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "수체 면적",
+          "unit": "km²",
+          "periods": 31,
+          "column": "수체_면적_km",
+          "indicatorId": "B-035_lc_adm1_year"
+        },
+        {
+          "label": "육지 면적 합계(수체 제외)",
+          "unit": "km²",
+          "periods": 31,
+          "column": "육지_면적_합계_km_수체_제외",
+          "indicatorId": "B-035_lc_adm1_year"
+        }
+      ],
+      "validSeriesNotPublished": 6,
+      "rejectedSeries": [
+        {
+          "series": "entity|B-035_lc_adm1_year|빙설_면적_km||",
+          "reason": "same-value-in-every-division",
+          "value": 0
+        }
+      ],
+      "sourceRows": 248,
+      "divisionNamesCrossChecked": 248,
+      "publishedValueCount": 1984,
+      "droppedRowsByReason": {
+        "not-a-division-row": 31
+      }
+    },
+    {
+      "elementId": "B-036",
+      "publicName": "토지이용 변화율",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 36,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-036",
+      "kind": "choropleth",
+      "measure": {
+        "column": "산림_CAGR_yr",
+        "rule": "first-numeric-column",
+        "defaultVariable": "산림 CAGR",
+        "defaultPeriod": "2015-2022",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-036_lc_cagr_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "산림 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "산림_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "농경지 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "농경지_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "초지·관목 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "초지_관목_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "습지 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "습지_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "도시 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "도시_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "나지 CAGR",
+          "unit": "%/yr",
+          "periods": 4,
+          "column": "나지_CAGR_yr",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "산림 면적 시작",
+          "unit": "km²",
+          "periods": 4,
+          "column": "산림_면적_시작_km",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        },
+        {
+          "label": "농경지 면적 시작",
+          "unit": "km²",
+          "periods": 4,
+          "column": "농경지_면적_시작_km",
+          "indicatorId": "B-036_lc_cagr_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 10,
+      "rejectedSeries": [],
+      "sourceRows": 32,
+      "divisionNamesCrossChecked": 32,
+      "publishedValueCount": 248,
+      "droppedRowsByReason": {
+        "not-a-division-row": 4
+      }
+    },
+    {
+      "elementId": "B-037",
+      "publicName": "토지피복 분류별 면적",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-037",
+      "kind": "choropleth",
+      "measure": {
+        "column": "수목_면적_km",
+        "rule": "first-numeric-column",
+        "defaultVariable": "수목 면적",
+        "defaultPeriod": "2021",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-037_landcover_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "수목 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "수목_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "관목 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "관목_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "초지 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "초지_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "경작지 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "경작지_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "건물(인공지표) 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "건물_인공지표_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "나지·희박식생 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "나지_희박식생_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "영구수체 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "영구수체_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        },
+        {
+          "label": "초본습지 면적",
+          "unit": "km²",
+          "periods": 1,
+          "column": "초본습지_면적_km",
+          "indicatorId": "B-037_landcover_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 2,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 64,
+      "droppedRowsByReason": {
+        "not-a-division-row": 676
+      }
+    },
+    {
+      "elementId": "B-039",
+      "publicName": "수력 잠재량",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-039",
+      "kind": "choropleth",
+      "measure": {
+        "column": "이론_총잠재량_GWh_yr",
+        "rule": "first-numeric-column",
+        "defaultVariable": "이론 총잠재량",
+        "defaultPeriod": "2017",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-039_gross_potential_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "이론 총잠재량",
+          "unit": "GWh/yr",
+          "periods": 1,
+          "column": "이론_총잠재량_GWh_yr",
+          "indicatorId": "B-039_gross_potential_adm1"
+        },
+        {
+          "label": "최대 단일격자",
+          "unit": "GWh/yr",
+          "periods": 1,
+          "column": "최대_단일격자_GWh_yr",
+          "indicatorId": "B-039_gross_potential_adm1"
+        },
+        {
+          "label": "90분위 격자",
+          "unit": "GWh/yr",
+          "periods": 1,
+          "column": "90분위_격자_GWh_yr",
+          "indicatorId": "B-039_gross_potential_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 24,
+      "droppedRowsByReason": {
+        "not-a-division-row": 152
+      }
+    },
+    {
+      "elementId": "B-040",
+      "publicName": "지열 자원",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-040",
+      "kind": "choropleth",
+      "measure": {
+        "column": "심도_1km_지온_평균",
+        "rule": "first-numeric-column",
+        "defaultVariable": "심도 1km 지온 — 평균",
+        "defaultPeriod": "2026",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-040_geotemp_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "심도 1km 지온 — 평균",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_1km_지온_평균",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 1km 지온 — 최소",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_1km_지온_최소",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 1km 지온 — 최대",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_1km_지온_최대",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 2km 지온 — 평균",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_2km_지온_평균",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 2km 지온 — 최소",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_2km_지온_최소",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 2km 지온 — 최대",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_2km_지온_최대",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 3km 지온 — 평균",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_3km_지온_평균",
+          "indicatorId": "B-040_geotemp_adm1"
+        },
+        {
+          "label": "심도 3km 지온 — 최소",
+          "unit": "℃",
+          "periods": 1,
+          "column": "심도_3km_지온_최소",
+          "indicatorId": "B-040_geotemp_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 3,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 64,
+      "droppedRowsByReason": {
+        "not-a-division-row": 12
+      }
+    },
+    {
+      "elementId": "B-041",
+      "publicName": "태양광 자원",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-041",
+      "kind": "choropleth",
+      "measure": {
+        "column": "수평면_전일사량_GHI_평균",
+        "rule": "first-numeric-column",
+        "defaultVariable": "수평면 전일사량 GHI 평균",
+        "defaultPeriod": "1999–2018 장기평균(LTA)",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-041_solar_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "수평면 전일사량 GHI 평균",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "수평면_전일사량_GHI_평균",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "수평면 전일사량 GHI 최소",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "수평면_전일사량_GHI_최소",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "수평면 전일사량 GHI 최대",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "수평면_전일사량_GHI_최대",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "직달 일사량 DNI 평균",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "직달_일사량_DNI_평균",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "직달 일사량 DNI 최소",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "직달_일사량_DNI_최소",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "직달 일사량 DNI 최대",
+          "unit": "kWh/m²/일",
+          "periods": 1,
+          "column": "직달_일사량_DNI_최대",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "실용 발전량 PVOUT 평균",
+          "unit": "kWh/kWp/일",
+          "periods": 1,
+          "column": "실용_발전량_PVOUT_평균",
+          "indicatorId": "B-041_solar_adm1"
+        },
+        {
+          "label": "실용 발전량 PVOUT 최소",
+          "unit": "kWh/kWp/일",
+          "periods": 1,
+          "column": "실용_발전량_PVOUT_최소",
+          "indicatorId": "B-041_solar_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 7,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 64,
+      "droppedRowsByReason": {
+        "not-a-division-row": 35
+      }
+    },
+    {
+      "elementId": "B-042",
+      "publicName": "풍력 자원",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 32,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-042",
+      "kind": "choropleth",
+      "measure": {
+        "column": "풍속_평균_m_s",
+        "rule": "first-numeric-column",
+        "defaultVariable": "풍속 평균",
+        "defaultPeriod": "2008–2017 장기평균(ERA5 기반)",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-042_wind_adm1"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "풍속 평균",
+          "unit": "m/s",
+          "periods": 1,
+          "column": "풍속_평균_m_s",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "풍속 최소",
+          "unit": "m/s",
+          "periods": 1,
+          "column": "풍속_최소_m_s",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "풍속 최대",
+          "unit": "m/s",
+          "periods": 1,
+          "column": "풍속_최대_m_s",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "풍속 상위10%",
+          "unit": "m/s",
+          "periods": 1,
+          "column": "풍속_상위10_m_s",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "에너지밀도 평균",
+          "unit": "W/m²",
+          "periods": 1,
+          "column": "에너지밀도_평균_W_m",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "에너지밀도 최소",
+          "unit": "W/m²",
+          "periods": 1,
+          "column": "에너지밀도_최소_W_m",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "에너지밀도 최대",
+          "unit": "W/m²",
+          "periods": 1,
+          "column": "에너지밀도_최대_W_m",
+          "indicatorId": "B-042_wind_adm1"
+        },
+        {
+          "label": "에너지밀도 상위10%",
+          "unit": "W/m²",
+          "periods": 1,
+          "column": "에너지밀도_상위10_W_m",
+          "indicatorId": "B-042_wind_adm1"
+        }
+      ],
+      "validSeriesNotPublished": 1,
+      "rejectedSeries": [
+        {
+          "series": "entity|B-042_capacity_factor_adm1|설비이용률_상위10||",
+          "reason": "several-values-per-division-and-period",
+          "cells": 8
+        },
+        {
+          "series": "entity|B-042_capacity_factor_adm1|설비이용률_평균||",
+          "reason": "several-values-per-division-and-period",
+          "cells": 8
+        }
+      ],
+      "sourceRows": 32,
+      "divisionNamesCrossChecked": 32,
+      "publishedValueCount": 64,
+      "droppedRowsByReason": {
+        "not-a-division-row": 74
+      }
+    },
+    {
+      "elementId": "B-048",
+      "publicName": "주요 광산",
+      "decision": "point",
+      "divisionKeysInEvidence": 1,
+      "coordinateRows": 3,
+      "outsideOutline": 1,
+      "layerId": "bgd-v162-b-048",
+      "kind": "point",
+      "keptRows": 2,
+      "featureCount": 2,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {
+        "outside-country-outline": 1
+      }
+    },
+    {
+      "elementId": "C-025",
+      "publicName": "탄소크레딧 사업",
+      "decision": "point",
+      "divisionKeysInEvidence": 5,
+      "coordinateRows": 19,
+      "outsideOutline": 1,
+      "layerId": "bgd-v162-c-025",
+      "kind": "point",
+      "keptRows": 18,
+      "featureCount": 18,
+      "featureCountByKind": {
+        "산업·상업 (Industrial & Commercial)": 6,
+        "가정·지역사회 (Household & Community)": 4,
+        "재생에너지 (Renewable Energy)": 3,
+        "폐기물 관리 (Waste Management)": 2,
+        "농업 (Agriculture)": 1,
+        "수송 (Transportation)": 1,
+        "산림·토지이용 (Forestry & Land Use)": 1
+      },
+      "droppedRowsByReason": {
+        "no-coordinate": 166,
+        "outside-country-outline": 1
+      }
+    },
+    {
+      "elementId": "D-012",
+      "publicName": "외국기업 진출",
+      "decision": "point",
+      "divisionKeysInEvidence": 6,
+      "coordinateRows": 122,
+      "outsideOutline": 2,
+      "layerId": "bgd-v162-d-012",
+      "kind": "point",
+      "keptRows": 114,
+      "featureCount": 107,
+      "featureCountByKind": {
+        "태양광": 91,
+        "풍력": 11,
+        "바이오에너지": 3,
+        "수력": 1,
+        "지열": 1
+      },
+      "droppedRowsByReason": {
+        "admin-representative-point": 6,
+        "outside-country-outline": 2
+      }
+    },
+    {
+      "elementId": "E-004",
+      "publicName": "국제기구 현지사무소",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 16,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-e-004",
+      "kind": "point",
+      "keptRows": 15,
+      "featureCount": 15,
+      "featureCountByKind": {
+        "양자원조기관": 4,
+        "공관": 3,
+        "다자개발은행": 3,
+        "유엔 전문기구": 3,
+        "지역기구": 1,
+        "유엔": 1
+      },
+      "droppedRowsByReason": {
+        "no-coordinate": 3,
+        "city-centroid": 1
+      }
+    },
+    {
+      "elementId": "E-005",
+      "publicName": "대학·연구기관·NGO",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 20,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-e-005",
+      "kind": "point",
+      "keptRows": 9,
+      "featureCount": 9,
+      "featureCountByKind": {
+        "대학": 4,
+        "연구소": 2,
+        "NGO": 2,
+        "정부연구기관": 1
+      },
+      "droppedRowsByReason": {
+        "city-centroid": 11
+      }
+    },
+    {
+      "elementId": "E-006",
+      "publicName": "현지 투자자 네트워크",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 16,
+      "outsideOutline": 7,
+      "layerId": "bgd-v162-e-006",
+      "kind": "point",
+      "keptRows": 5,
+      "featureCount": 5,
+      "featureCountByKind": {
+        "DFI": 4,
+        "임팩트투자": 1
+      },
+      "droppedRowsByReason": {
+        "outside-country-outline": 7,
+        "overseas-headquarters": 4
+      }
+    },
+    {
+      "elementId": "E-018",
+      "publicName": "한국 기업 진출",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 3,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-e-018",
+      "kind": "point",
+      "keptRows": 3,
+      "featureCount": 3,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "E-019",
+      "publicName": "한국 기관 사무소",
+      "decision": "point",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 3,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-e-019",
+      "kind": "point",
+      "keptRows": 3,
+      "featureCount": 3,
+      "featureCountByKind": {},
+      "droppedRowsByReason": {
+        "no-coordinate": 5
+      }
+    }
+  ],
+  "holds": [
+    {
+      "elementId": "A-013",
+      "publicName": "NDC-SDG 지역조치",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "A-022",
+      "publicName": "전력공급 신뢰도",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "A-025",
+      "publicName": "CCS 시설·실증 및 후보지역",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation",
+          "point"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "A-027",
+      "publicName": "교통 인프라(도로·철도)",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "point"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "B-012",
+      "publicName": "재해 이력",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 282,
+        "outsideOutline": 5,
+        "divisionKeys": 8,
+        "districtKeys": 26,
+        "spatialUnits": [
+          "point"
+        ],
+        "coordinateRowsNotAdminRepresentative": 14,
+        "coordinateRowsNotAdminRepresentativeInside": 14
+      },
+      "conflict": "14 coordinate rows inside the outline are not marked as administrative representative points (e.g. 실제 위치(원자료 좌표, EM-DAT))"
+    },
+    {
+      "elementId": "B-021",
+      "publicName": "지역 취약성(GVI)",
+      "holdGroup": "not-division-units",
+      "reason": "지역 단위가 주(Division)가 아닌 별도 권역(GDL 하위지역)입니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 5,
+        "districtKeys": 20,
+        "spatialUnits": [
+          "GDL subnational region",
+          "admin1",
+          "nation",
+          "국가 전체"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "B-024",
+      "publicName": "농업용수 대리지표",
+      "holdGroup": "allocated-estimate",
+      "reason": "주(Division) 값이 전국 값을 배분 기준값·지역 비율로 나눈 추정치입니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 8,
+        "outsideOutline": 0,
+        "divisionKeys": 8,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "admin1",
+          "nation"
+        ],
+        "allocationColumns": [
+          "배분_기준값_원값",
+          "지역_비율"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "B-044",
+      "publicName": "핵심광물 부존",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "B-046",
+      "publicName": "광물 매장량",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "B-047",
+      "publicName": "광물 생산량",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-003",
+      "publicName": "국가적응계획 지역과제",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-006",
+      "publicName": "JCM 사업",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-008",
+      "publicName": "국제 이니셔티브",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-012",
+      "publicName": "PPP 사업 이력",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-013",
+      "publicName": "외국인 투자 규정(지역 특별 인센티브)",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-016",
+      "publicName": "재생에너지 발주 및 확대 계획",
+      "holdGroup": "district-only",
+      "reason": "지역 표기가 구(District) 단위뿐이며, 주(Division)로 합치면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 6,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-017",
+      "publicName": "재생에너지 투자 인센티브",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-022",
+      "publicName": "탄소시장 대상시설 업종 구성",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "C-024",
+      "publicName": "REDD+ 사업 참여지역",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-008",
+      "publicName": "지역 기후예산",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "BGD",
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-014",
+      "publicName": "EDCF 사업",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 15,
+        "outsideOutline": 0,
+        "divisionKeys": 5,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-015",
+      "publicName": "한국 ODA 사업",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 19,
+        "outsideOutline": 0,
+        "divisionKeys": 5,
+        "districtKeys": 1,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-016",
+      "publicName": "부처·지자체 ODA",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 3,
+        "outsideOutline": 0,
+        "divisionKeys": 1,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-017",
+      "publicName": "사업 입찰·공모",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 16,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-018",
+      "publicName": "적응기금 사업",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "BGD",
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-019",
+      "publicName": "기술지원 사업",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 1,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-020",
+      "publicName": "GCF 사업",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "BGD",
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-021",
+      "publicName": "국제기구·MDB 사업",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 26,
+        "outsideOutline": 1,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-022",
+      "publicName": "MDB·DFI 금융",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 47,
+        "outsideOutline": 7,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "BGD",
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-023",
+      "publicName": "기후기금 사업",
+      "holdGroup": "admin-centroid",
+      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 3,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ],
+        "coordinateRowsNotAdminRepresentative": 0,
+        "coordinateRowsNotAdminRepresentativeInside": 0
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-025",
+      "publicName": "민간 인프라 사업",
+      "holdGroup": "no-region",
+      "reason": "지역 구분과 좌표가 모두 없습니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "BGD",
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "D-026",
+      "publicName": "보증 지원사업",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "E-001",
+      "publicName": "CTCN 참여기관",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "E-002",
+      "publicName": "DNA 협력창구",
+      "holdGroup": "not-office-location",
+      "reason": "좌표가 기관 사무소가 아니라 CDM 승인 사업 기록의 위치입니다.",
+      "facts": {
+        "nationwideOnly": false,
+        "coordinateRows": 6,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation",
+          "point"
+        ],
+        "coordinateNature": [
+          "범용(전 분야)",
+          "해당 없음"
+        ]
+      },
+      "conflict": null
+    },
+    {
+      "elementId": "E-020",
+      "publicName": "한국 지원사업",
+      "holdGroup": "nationwide",
+      "reason": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
+      "facts": {
+        "nationwideOnly": true,
+        "coordinateRows": 0,
+        "outsideOutline": 0,
+        "divisionKeys": 0,
+        "districtKeys": 0,
+        "spatialUnits": [
+          "nation"
+        ]
+      },
+      "conflict": null
+    }
+  ]
+}
