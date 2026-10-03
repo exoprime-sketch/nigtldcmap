@@ -85,6 +85,30 @@ export interface DetailCountryCompareV158Props {
  *   - the page's own country is drawn first, so its own colour and chip lead
  *     the comparison rather than whichever country happens to sort first.
  */
+/**
+ * V164: the block compares the countries, so its title names the measure, not
+ * the page's own country ("CPI 점수 · 방글라데시", "대방글라데시 ODA"), and the
+ * few delivered labels left in English read in Korean. The delivered label is
+ * unchanged in the data and in the page's own charts.
+ */
+const COMPARE_TITLE_TERMS_V164: Array<[RegExp, string]> = [
+  [/Coal\(계통연계\)/gu, "석탄(계통연계)"],
+  [/\s*—\s*Trade in Value Added:.*$/u, ""],
+  [/Official donors/gu, "공적 공여자 전체"],
+];
+
+export function publicCompareTitleV164(title: string, countryNames: string[]): string {
+  let text = String(title || "");
+  for (const [pattern, replacement] of COMPARE_TITLE_TERMS_V164) text = text.replace(pattern, replacement);
+  for (const name of countryNames.filter(Boolean)) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    text = text
+      .replace(new RegExp(`\\s·\\s${escaped}(?=\\s—|\\s·|$)`, "u"), "")
+      .replace(new RegExp(`대${escaped}\\s*`, "u"), "");
+  }
+  return text.replace(/\s{2,}/gu, " ").trim();
+}
+
 export default function DetailCountryCompareV158({
   elementId,
   countryIso3,
@@ -123,7 +147,10 @@ export default function DetailCountryCompareV158({
       sourceOrg: entry.sourceOrg ?? undefined,
     }));
     // V163-T2: gas formulas in the delivered label read as words (A-010).
-    const title = publicGasTextV163(liveEntries[0]?.labelKo || "") || "국가 비교";
+    const title = publicCompareTitleV164(
+      publicGasTextV163(liveEntries[0]?.labelKo || ""),
+      liveEntries.map((entry) => entry.countryNameKo)
+    ) || "국가 비교";
     return { compareKey: element.compareKey, series, title };
   }, [doc, elementId, countryIso3]);
 

@@ -13,3 +13,6 @@
 .dumbbell153__values li { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
 .dumbbell153__values small { color: #6b7f78; }
 @media (max-width: 480px) { .dumbbell153__svg { font-size: 15px; } }
+/* V164: the legend keys are HTML dots, so they take the dot colours as a background. */
+.dumbbell153__legend i.dumbbell153__dot--low { background: #d97706; }
+.dumbbell153__legend i.dumbbell153__dot--high { background: #176b57; }

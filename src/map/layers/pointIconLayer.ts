@@ -11,12 +11,15 @@
 import type { Map as MapLibreMap } from "maplibre-gl";
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
 import {
+  assetIconCategoriesV164,
   MAP_ICON_BADGE_V152,
   mapIconCategoryV152,
   mapIconImageIdV152,
   mapLayerIconV152,
 } from "../../data/map/mapIconsV152";
 import type { MapLayerRuntimeIdsV152 } from "./ids";
+
+export { assetIconPropertiesV164 } from "../../data/map/mapIconsV152";
 
 /** Feature property keys the icon layers and the legend read. */
 export const MAP_ICON_PROPERTY_V152 = {
@@ -45,6 +48,37 @@ export function assignPointIconsV152(
     if (category.tag) properties[MAP_ICON_PROPERTY_V152.tag] = category.tag;
     feature.properties = properties;
   }
+}
+
+/**
+ * V164: draws a point asset with the same icon badges as Viet Nam's point
+ * layers when the layer has an icon rule and the rule recognises the asset's
+ * sites (a categorised rule that falls back on every site - e.g. a field the
+ * country does not deliver - keeps the category dots instead). Writes the icon
+ * properties in place and returns whether icon mode applies.
+ */
+export function assignAssetPointIconsV164(
+  elementId: string,
+  features: Array<{ properties: Record<string, unknown> | null; geometry?: { type: string } | null }>,
+  layerColor: string
+): boolean {
+  if (features.some((feature) => !/point/iu.test(String(feature.geometry?.type || "")))) return false;
+  const categories = assetIconCategoriesV164(
+    elementId,
+    features.map((feature) => (feature.properties || {}) as Record<string, unknown>),
+    layerColor
+  );
+  if (!categories) return false;
+  features.forEach((feature, index) => {
+    const category = categories[index];
+    const properties = (feature.properties || {}) as Record<string, unknown>;
+    properties[MAP_ICON_PROPERTY_V152.image] = mapIconImageIdV152(category.iconId);
+    properties[MAP_ICON_PROPERTY_V152.color] = category.color;
+    properties[MAP_ICON_PROPERTY_V152.key] = category.key;
+    if (category.tag) properties[MAP_ICON_PROPERTY_V152.tag] = category.tag;
+    feature.properties = properties;
+  });
+  return true;
 }
 
 const zoomStops = (stops: readonly (readonly [number, number])[]) => stops.flatMap(([zoom, value]) => [zoom, value]);

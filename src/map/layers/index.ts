@@ -27,7 +27,7 @@ import {
 } from "./features";
 import { layerRuntimeIds, type MapLayerRuntimeIdsV152 } from "./ids";
 import { mountLineLayersV152 } from "./lineLayer";
-import { assignPointIconsV152 } from "./pointIconLayer";
+import { assignAssetPointIconsV164, assignPointIconsV152, mountPointIconLayersV152 } from "./pointIconLayer";
 import { mountPointLayersV152 } from "./pointLayer";
 import { mountBudgetContextLayersV152, mountRegionalScopeLayersV152 } from "./regionLayer";
 import {
@@ -172,8 +172,35 @@ export function mountAreaLayerV152(
     contextIndex,
     roleOpacity,
     icons = false,
-  }: { ids: MapLayerRuntimeIdsV152; color: string; isPrimary: boolean; contextIndex: number; roleOpacity: number; icons?: boolean }
+    layer,
+  }: {
+    ids: MapLayerRuntimeIdsV152;
+    color: string;
+    isPrimary: boolean;
+    contextIndex: number;
+    roleOpacity: number;
+    icons?: boolean;
+    /** V164: the layer, so a point asset with an icon rule is drawn like Viet Nam's point layers. */
+    layer?: CountryMapLayerV122;
+  }
 ): { interactiveLayerId: string; additionalInteractiveLayerId?: string } {
+  // V164: another country's points arrive as a point asset; when the layer has an
+  // icon rule they get the same badges, rings and legend keys as Viet Nam's.
+  if (
+    icons &&
+    layer &&
+    prepared.renderer === "point-and-polygon" &&
+    assignAssetPointIconsV164(layer.elementId, prepared.data.features, color)
+  ) {
+    mountPointIconLayersV152(map, {
+      layer,
+      ids,
+      color,
+      isPrimary,
+      data: prepared.data as GeoJSON.FeatureCollection<GeoJSON.Point>,
+    });
+    return { interactiveLayerId: ids.pointHit };
+  }
   map.addSource(ids.source, { type: "geojson", data: prepared.data });
   if (prepared.renderer === "line") {
     return { interactiveLayerId: mountLineLayersV152(map, { ids, color, isPrimary, roleOpacity }) };
@@ -375,7 +402,7 @@ export function mountPreparedMapLayerV152(
 ): MapLayerRenderResultV152 {
   const { ids, renderer, color, isPrimary, contextIndex, roleOpacity, layer } = prepared;
   if (prepared.kind === "area") {
-    const mounted = mountAreaLayerV152(map, prepared.area, { ids, color, isPrimary, contextIndex, roleOpacity, icons: options.icons });
+    const mounted = mountAreaLayerV152(map, prepared.area, { ids, color, isPrimary, contextIndex, roleOpacity, icons: options.icons, layer });
     return {
       ids,
       renderer,

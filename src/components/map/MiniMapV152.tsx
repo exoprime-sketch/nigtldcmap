@@ -29,8 +29,9 @@ function storageV152(): Storage | null {
   }
 }
 
+/** V164: the backdrop is always drawn (no on/off button); it steps aside only when its tiles fail. */
 function readMiniMapBackdropOnV152(): boolean {
-  return storageV152()?.getItem(MINIMAP_BACKDROP_STORAGE_KEY_V152) !== "off";
+  return true;
 }
 
 type ControlActionV152 = "zoom-in" | "zoom-out" | "reset";
@@ -219,18 +220,6 @@ export default function MiniMapV152(props: MiniMapV152Props) {
     intent("button");
   };
 
-  const toggleBackdrop = () => {
-    const next = !backdropOn;
-    setBackdropOn(next);
-    try {
-      storageV152()?.setItem(MINIMAP_BACKDROP_STORAGE_KEY_V152, next ? "on" : "off");
-    } catch {
-      // optional preference
-    }
-    engineRef.current?.setBackdropOn(next);
-    if (!engineRef.current) intent("button");
-  };
-
   const active = machine.state === "active";
   const help = active
     ? coarse
@@ -297,14 +286,6 @@ export default function MiniMapV152(props: MiniMapV152Props) {
         </button>
         <button type="button" data-testid="minimap-reset-v152" onClick={() => act("reset")}>
           전체 보기
-        </button>
-        <button
-          type="button"
-          data-testid="minimap-backdrop-v152"
-          aria-pressed={backdropOn}
-          onClick={toggleBackdrop}
-        >
-          배경지도
         </button>
       </div>
       <p id={helpId} className="minimap152__help" data-testid="minimap-help-v152">

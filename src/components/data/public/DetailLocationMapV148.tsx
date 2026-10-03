@@ -119,7 +119,9 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     return () => { cancelled = true; };
   }, [elementId, countryIso3, retry]);
   // Sites (points, D-018 activity sites) are drawn as icons; lines and provinces never load the glyphs.
-  const drawsSites = Boolean(runtime && (!runtime.layer.geometryUrl || runtime.layer.renderer === "regional-scope"));
+  // V164: another country's point asset (point-and-polygon) with an icon rule draws the same badges.
+  const drawsSites = Boolean(runtime && (!runtime.layer.geometryUrl || runtime.layer.renderer === "regional-scope" ||
+    (!isDefaultCountryV163(countryIso3) && runtime.layer.renderer === "point-and-polygon" && Boolean(runtime.geometry?.features.some((f) => f.geometry?.type === "Point")))));
   useEffect(() => {
     if (!drawsSites || iconKit) return undefined;
     let cancelled = false;
@@ -188,9 +190,16 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const categories = new Map(points.map((r, index) => [r.recordId, iconKit ? iconKit.mapIconCategoryV152(layer.elementId, iconProperties[index], layerColor) : null]));
     const iconLegend = iconKit ? iconKit.mapIconLegendEntriesV152(layer.elementId, iconProperties, layerColor, layerTitle) : [];
     // The categories the live map paints (kind), in its legend order, so the static map and the live one agree.
-    const assetCategories = assetFeatures ? categoryLegendV157(assetFeatures) : [];
+    // V164: another country's point assets take the live map's icon badges when the layer's icon rule recognises them.
+    const assetIconProps = assetFeatures && iconKit ? assetFeatures.features.map((f) => iconKit.assetIconPropertiesV164(layer.elementId, (f.properties || {}) as Record<string, unknown>)) : [];
+    const assetIconList = assetFeatures && iconKit && assetFeatures.features.every((f) => f.geometry?.type === "Point")
+      ? iconKit.assetIconCategoriesV164(layer.elementId, assetIconProps, layerColor)
+      : null;
+    const assetIcons = assetIconList ? new Map(assetFeatures!.features.map((f, i) => [String(f.id ?? i), assetIconList[i]])) : null;
+    const assetIconLegend = assetIconList ? iconKit!.mapIconLegendEntriesV152(layer.elementId, assetIconProps, layerColor, layerTitle) : [];
+    const assetCategories = assetFeatures && !assetIconList ? categoryLegendV157(assetFeatures) : [];
     const categoryColor = new Map(assetCategories.map((c) => [c.label, c.color]));
-    return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend, unitKey, assetCategories, categoryColor };
+    return { variable, values, byCode, min, max, points, prepared, features, project, options, categories, iconLegend, unitKey, assetCategories, categoryColor, assetIcons, assetIconLegend };
   }, [runtime, slice, selection.dimensions, compact, iconKit, elementId, countryIso3]);
   const isDefaultCountry = isDefaultCountryV163(countryIso3);
 
@@ -246,7 +255,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const basisCaptionV163 = level1BasisCaptionV163(level1V163);
   const sliceSources = [...new Set(model.values.map((v) => mapIndicatorSourceV148(v.sourceIndicatorId || "")).filter(Boolean))];
   return <section className="detail-map148" data-testid="detail-location-map-v148" data-element-id={elementId} data-map-variable={slice.variable} data-map-period={pointPeriod} data-map-count={data ? model.values.length : geometry ? model.features.length : model.points.length}>
-    <header><div><h3>{data ? "지역별 분포" : layer.renderer === "line" ? "송전선 경로" : "위치 살펴보기"}</h3><p><PublicTermTextV134 text={`${model.variable?.label || layer.publicShortTitle} · ${pointPeriod}${units && data ? ` · ${units}` : ""}`} /></p></div>
+    <header><div><h3>{data ? "지역별 분포" : layer.renderer === "line" ? "송전선 경로" : "위치 살펴보기"}</h3><p><PublicTermTextV134 text={`${(model.variable?.label && model.variable.label !== "전체" ? model.variable.label : "") || layer.publicShortTitle} · ${pointPeriod}${units && data ? ` · ${units}` : ""}`} /></p></div>
       <button className="cdp-button cdp-button--secondary" data-testid={compact ? "home-hero-map-link-v139" : "detail-map-open-v152"} type="button" onClick={() => onOpenMap(elementId, countryIso3, handoff, miniMapHandoffV152(cameraRef.current, slice))}>큰 지도에서 비교</button>
     </header>
     {!override && resolved?.note && <p className="detail-map148-note">{resolved.note}</p>}
@@ -280,8 +289,18 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
             const v = model.byCode.get(id);
             const color = data ? mapColorV148(v ? finiteMapValueV148(v.value) : null, model.min, model.max) : lineColorV152(Number(f.properties.voltageKv || f.properties.voltage));
             if (f.geometry.type === "Point" && !isDefaultCountry) {
-              // V163: another country's site is a dot in the live map's category colour (no per-site icon set).
+              // V163: another country's site is a dot in the live map's category colour; V164: a layer
+              // whose icon rule recognises the sites draws the live map's badge instead.
               const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy);
+              const assetIcon = iconKit && model.assetIcons?.get(id);
+              if (assetIcon && model.features.length <= STATIC_ICON_LIMIT_V152) {
+                return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)}) scale(${picked === id ? 1.25 : 1})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id={assetIcon.iconId}>
+                  <circle r="8.5" fill="#fff" stroke={picked === id ? "#c04721" : assetIcon.color} strokeWidth={picked === id ? 2.6 : 2} />
+                  <use href={`#${iconKit.mapIconImageIdV152(assetIcon.iconId)}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} />
+                  <title>{model.options.find((o) => o.id === id)?.label}</title>
+                </g>;
+              }
+              if (assetIcon) return <circle key={id} cx={x} cy={y} r={picked === id ? 5.5 : compact ? 2.6 : 3} fill={assetIcon.color} stroke={picked === id ? "#c04721" : "#fff"} strokeWidth={picked === id ? 2 : 0.8} onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>;
               const fill = model.categoryColor.get(String(f.properties.categoryLabel ?? "")) || LAYER_COLORS[layer.elementId] || "#176a4b";
               return <circle key={id} cx={x} cy={y} r={picked === id ? 5.5 : compact ? 2.6 : 3} fill={fill} stroke={picked === id ? "#c04721" : "#fff"} strokeWidth={picked === id ? 2 : 0.8} onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>;
             }
@@ -311,6 +330,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         {data && engineLegend?.kind === "ramp" && <figcaption className="detail-map148-legend" data-legend-source="live-map"><span>{formatPublicNumberV126(engineLegend.minimum, units)}</span><i style={{ background: `linear-gradient(to right, ${engineLegend.from}, ${engineLegend.to})` }} /><span>{formatPublicNumberV126(engineLegend.maximum, units)} {units}</span><small>{isDefaultCountry ? (engineLegend.boundaryMode === "34" ? "개편 후 34개 성·시 기준 · 색 없음: 자료 없음" : "색 없음: 자료 없음") : `${basisCaptionV163 ? `${basisCaptionV163} · ` : ""}색 없음: 자료 없음`}</small></figcaption>}
         {data && engineLegend?.kind !== "ramp" && <figcaption className="detail-map148-legend"><span>{formatPublicNumberV126(model.min, units)}</span><i style={{ background: `linear-gradient(to right, ${mapColorV148(model.min, model.min, model.max)}, ${mapColorV148((model.min + model.max) / 2, model.min, model.max)}, ${mapColorV148(model.max, model.min, model.max)})` }} /><span>{formatPublicNumberV126(model.max, units)} {units}</span><small>{!isDefaultCountry && basisCaptionV163 ? `${basisCaptionV163} · ` : ""}회색: 자료 없음</small></figcaption>}
         {!data && !geometry && iconKit && model.iconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.iconLegend} compact /></div>}
+        {!data && iconKit && model.assetIconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.assetIconLegend} compact /></div>}
         {!data && model.assetCategories.length > 0 && <figcaption className="detail-map148-category-legend" data-testid="detail-map-category-legend-v163">{model.assetCategories.map((c) => <span key={c.label}><i className="detail-map148-category-key" style={{ background: c.color }} />{c.text} {c.featureCount.toLocaleString()}</span>)}</figcaption>}
         {!data && <figcaption>{layer.renderer === "line" ? <>{LINE_CLASSES_V152.map((entry) => <span key={entry.kv}><span className="detail-map148-line-key" style={{ background: entry.color, height: entry.kv === 500 ? 4 : 3 }} /><PublicTermTextV134 text={`${entry.kv} kV`} /> </span>)}<PublicTermTextV134 text={`· ${model.features.length}개 선로 구간`} /></> : `${geometry ? model.features.length : model.points.length}개 위치·범위`}{approximate ? " · 속 빈 점은 소재 지역의 대표 위치" : ""}</figcaption>}
       </figure>

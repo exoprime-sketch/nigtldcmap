@@ -568,3 +568,61 @@ export function attachMapIconMissingHandlerV152(map: MaplibreMapLike): void {
     registerMapIcons(map, [iconId], white ? "white" : "ink");
   });
 }
+
+// ------------------------------------------------------------------ V164 other-country assets
+
+/**
+ * V164: another country's point asset (`point-and-polygon`) names a site's
+ * category in its own field (`kindLabel`, B-048 `commodity`), while each icon
+ * rule reads the field Viet Nam's entity rows carry. The rule is shown the
+ * asset's own value under the name it reads; the feature's properties (and so
+ * its popup) are not changed. C-025 is left out on purpose: another country's
+ * C-025 kinds are project sectors, not the crediting standard the rule colours.
+ */
+const ASSET_ICON_FIELD_V164: Record<string, { field: string; from: string[] }> = {
+  "B-012": { field: "disasterType", from: ["kindLabel"] },
+  "E-005": { field: "orgType", from: ["kindLabel"] },
+  "B-048": { field: "mineral", from: ["commodity", "kindLabel"] },
+  "B-044": { field: "mineral", from: ["commodity", "kindLabel"] },
+  "B-046": { field: "mineral", from: ["commodity", "kindLabel"] },
+  "B-047": { field: "mineral", from: ["commodity", "kindLabel"] },
+};
+
+export function assetIconPropertiesV164(
+  elementId: string,
+  properties: Record<string, unknown>
+): Record<string, unknown> {
+  const rule = ASSET_ICON_FIELD_V164[elementId];
+  if (!rule) return properties;
+  const current = properties[rule.field];
+  if (current !== null && current !== undefined && String(current).trim() !== "") return properties;
+  for (const key of rule.from) {
+    const value = properties[key];
+    if (value !== null && value !== undefined && String(value).trim() !== "") {
+      return { ...properties, [rule.field]: value };
+    }
+  }
+  return properties;
+}
+
+/**
+ * V164: the icon category of each of another country's point assets, or null
+ * when icon mode does not apply (a layer without an icon rule, or a
+ * categorised rule that falls back on more than half the sites - e.g. a field
+ * the country does not deliver - which keeps the category dots instead).
+ */
+export function assetIconCategoriesV164(
+  elementId: string,
+  propertiesList: Array<Record<string, unknown>>,
+  layerColor: string
+): MapIconCategoryV152[] | null {
+  if (propertiesList.length === 0) return null;
+  const categories = propertiesList.map((properties) =>
+    mapIconCategoryV152(elementId, assetIconPropertiesV164(elementId, properties), layerColor)
+  );
+  if (categories.some((category) => !category)) return null;
+  const fallbackCount = categories.filter((category) => category?.fallback).length;
+  if (fallbackCount * 2 > categories.length) return null;
+  return categories as MapIconCategoryV152[];
+}
+

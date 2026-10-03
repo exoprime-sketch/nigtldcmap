@@ -16,5 +16,11 @@ export function publicProcessWordingV162(text: string): string {
     // A clause that points at other rows by the delivery's record ids
     // ("개별 업종은 BGD-C013-EQ-RSV-01~04 · CTL-01~22 행으로 전개").
     .replace(/\s*[^.。·]*\b(?:VNM|BGD)-[A-E]\d{3}-[^.。]*[.。]?/gu, "")
+    // V164: the delivery's missing-reason codes ("미확인(M06)", "공란(NP·M01)",
+    // "M03 구조적 부존") are for the data sheet; the words around them stay.
+    .replace(/\s*\((?:NP|M(?:0[1-9]|1\d))(?:\s*·\s*(?:NP|M(?:0[1-9]|1\d)))*\)/gu, "")
+    .replace(/(^|[\s\]·(])(?:CF\/)?M(?:0[1-9]|1\d)\s+(?=[가-힣])/gu, "$1")
+    // An OSM tag value in a label ("track_grade1") reads as the class it names.
+    .replace(/track_grade([1-5])/gu, "임도 $1등급")
     .trim();
 }

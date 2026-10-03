@@ -190,6 +190,15 @@ export function severityLabelV157(label: string): { text: string; rank: number }
   };
 }
 
+/** V164: A-024 voltage bands in reading order, coloured like the 500/220/110 kV line classes. */
+const VOLTAGE_BAND_COLORS_V164: Record<string, string> = {
+  "400 kV 이상": "#8b2635",
+  "200~399 kV": "#d35a3d",
+  "100~199 kV": "#e59b32",
+  "100 kV 미만": "#c7b23a",
+  "전압 미기재": "#98a5a2",
+};
+
 export function categoryLegendV157(
   collection: GeoJSON.FeatureCollection<GeoJSON.Geometry>
 ): CategoryLegendEntryV157[] {
@@ -200,6 +209,12 @@ export function categoryLegendV157(
     if (!label) continue;
     if (!counts.has(label)) order.push(label);
     counts.set(label, (counts.get(label) ?? 0) + 1);
+  }
+  // V164: voltage bands are read high to low in the transmission palette Viet Nam's lines use.
+  if (order.length > 0 && order.every((label) => VOLTAGE_BAND_COLORS_V164[label])) {
+    return Object.keys(VOLTAGE_BAND_COLORS_V164)
+      .filter((label) => counts.has(label))
+      .map((label) => ({ label, text: label, color: VOLTAGE_BAND_COLORS_V164[label], featureCount: counts.get(label) ?? 0 }));
   }
   // A severity scale is read worst-first; anything the table does not know keeps the
   // order it arrived in, after the bands it does.
@@ -222,6 +237,25 @@ export function categoricalFillColorV157(categories: CategoryLegendEntryV157[]):
   for (const entry of categories) match.push(entry.label, entry.color);
   match.push("rgba(0, 0, 0, 0)");
   return ["case", ["==", ["get", "hasValue"], false], "rgba(0, 0, 0, 0)", match];
+}
+
+/**
+ * V164: a grid asset that states each segment's voltage is read by voltage, as
+ * Viet Nam's transmission lines are (the source's own line class stays in the
+ * popup). The bands only group the stated value; an unstated voltage is named.
+ */
+export function assetCategoryLabelV164(elementId: string, properties: Record<string, unknown>): string {
+  if (elementId === "A-024") {
+    // A segment without a stated voltage is not placed in a band (its kind stays in the popup).
+    const raw = properties.voltageKv;
+    const kv = Number(raw);
+    if (raw === null || raw === undefined || raw === "" || !Number.isFinite(kv) || kv <= 0) return "전압 미기재";
+    if (kv >= 400) return "400 kV 이상";
+    if (kv >= 200) return "200~399 kV";
+    if (kv >= 100) return "100~199 kV";
+    return "100 kV 미만";
+  }
+  return String(properties.kindLabel || properties.class || "");
 }
 
 /**
@@ -257,7 +291,7 @@ export function assetFeatureCollectionV157(
           selectionKey: key,
           // The asset's own name and kind are what a reader clicked on.
           adm1Name: String(properties.name || properties.kindLabel || key),
-          categoryLabel: String(properties.kindLabel || properties.class || ""),
+          categoryLabel: assetCategoryLabelV164(layer.elementId, properties),
           period: String(properties.sourceYear || layer.sourceYear || ""),
           variable: layer.selectors?.defaultVariable || "all",
           variableLabel: layer.publicShortTitle,

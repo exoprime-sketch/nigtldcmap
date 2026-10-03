@@ -8,12 +8,9 @@ import { useDatasetUsageV149 } from "../data/publicUsageV149";
 import {
   applyMapBackdropV151,
   backdropAttributionV151,
-  backdropKindLabelV151,
   backdropOwnsCityLabelsV151,
   BACKDROP_SOURCE_PREFIX_V151,
-  MAP_BACKDROP_KINDS_V151,
-  MAP_BACKDROP_STORAGE_KEY_V151,
-  readMapBackdropKindV151,
+  FIXED_MAP_BACKDROP_V164,
   removeMapBackdropV151,
   warmBackdropV151,
   type MapBackdropKindV151,
@@ -198,6 +195,8 @@ import {
 } from "../map/layers/contract";
 import {
   assetFeatureCollectionV157,
+  assetIconPropertiesV164,
+  assignAssetPointIconsV164,
   categoryLegendV157,
   isAreaRendererV152,
   unitChoroplethCollectionV157,
@@ -1484,9 +1483,11 @@ export default function RealMapExplorerPage({
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
   // V151-2: which backdrop (지형/위성/도로·지명/없음) sits under the data layers.
   // The v150 on/off preference is migrated on first read.
-  const [backdropKindV151, setBackdropKindV151] = useState<MapBackdropKindV151>(() =>
-    readMapBackdropKindV151(typeof localStorage === "undefined" ? null : localStorage)
-  );
+  // V164: one backdrop for every reader - roads and Korean place names under the
+  // data (the 지형/위성/없음 switch is gone: terrain shading muddied the value
+  // colours and the switch covered the map). "none" remains only as the
+  // automatic fallback when the tiles cannot load.
+  const [backdropKindV151, setBackdropKindV151] = useState<MapBackdropKindV151>(FIXED_MAP_BACKDROP_V164);
   const [backdropStatusV151, setBackdropStatusV151] = useState<"loading" | "ready" | "fallback" | "none">(
     "loading"
   );
@@ -2562,7 +2563,6 @@ export default function RealMapExplorerPage({
     if (!map || baseMapStatus !== "ready") return;
     const controller = new AbortController();
     const kind = backdropKindV151;
-    try { localStorage.setItem(MAP_BACKDROP_STORAGE_KEY_V151, kind); } catch { /* optional preference */ }
     setBackdropFirstTileMsV151(null);
     setBackdropStatusV151(kind === "none" ? "none" : "loading");
     let errorCount = 0;
@@ -2992,6 +2992,7 @@ export default function RealMapExplorerPage({
             contextIndex,
             roleOpacity,
             icons: true,
+            layer,
           });
 
         const onClick = (event: MapLayerMouseEvent) => {
@@ -3956,7 +3957,27 @@ export default function RealMapExplorerPage({
   // V152: the focused point layer's legend = the drawn features' own icons and
   // ring colours, counted under the current filters (the map and the legend
   // read the same properties, so they cannot disagree).
+  // V164: another country's point asset drawn with icons (see mountAreaLayerV152):
+  // its legend is read from the same features and the same rule.
+  const focusedAssetIconLegendV164 = useMemo(() => {
+    if (!focusedLayer || rendererOf(focusedLayer) !== "point-and-polygon") return null;
+    if (!(MAP_ICON_LAYER_IDS_V152 as readonly string[]).includes(focusedLayer.elementId)) return null;
+    const asset = spatialByElement[focusedLayer.elementId];
+    if (!asset) return null;
+    const color = LAYER_COLORS[focusedLayer.elementId] || "#176a4b";
+    const collection = assetFeatureCollectionV157(focusedLayer, asset, filters);
+    if (!assignAssetPointIconsV164(focusedLayer.elementId, collection.features, color)) return null;
+    return mapIconLegendEntriesV152(
+      focusedLayer.elementId,
+      collection.features.map((feature) =>
+        assetIconPropertiesV164(focusedLayer.elementId, (feature.properties || {}) as Record<string, unknown>)
+      ),
+      color,
+      publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
+    );
+  }, [filters, focusedLayer, spatialByElement]);
   const focusedIconLegendV152 = useMemo(() => {
+    if (focusedAssetIconLegendV164) return focusedAssetIconLegendV164;
     if (!focusedLayer || !(MAP_ICON_LAYER_IDS_V152 as readonly string[]).includes(focusedLayer.elementId)) return [];
     const records = recordsByElement[focusedLayer.elementId];
     if (!records) return [];
@@ -3979,13 +4000,15 @@ export default function RealMapExplorerPage({
       color,
       publicMapLayerTitleV126(focusedLayer.elementId, focusedLayer.publicShortTitle)
     );
-  }, [boundaryContextV151.system, filters, focusedLayer, locationsByElementV151, recordsByElement]);
+  }, [boundaryContextV151.system, filters, focusedAssetIconLegendV164, focusedLayer, locationsByElementV151, recordsByElement]);
   /**
    * V157: the focused layer's categories, when it is drawn by category rather
    * than by value. Read from the features the map drew, under the same filters.
    */
   const focusedCategoryLegendV157 = useMemo(() => {
     if (!focusedLayer || !focusedSelector) return [];
+    // V164: drawn with icons, so the icon legend names the categories.
+    if (focusedAssetIconLegendV164) return [];
     const asset = spatialByElement[focusedLayer.elementId];
     if (!asset) return [];
     const renderer = rendererOf(focusedLayer);
@@ -4006,6 +4029,7 @@ export default function RealMapExplorerPage({
   }, [
     boundaryContextV151,
     filters,
+    focusedAssetIconLegendV164,
     focusedLayer,
     focusedSelector,
     spatialByElement,
@@ -4043,12 +4067,14 @@ export default function RealMapExplorerPage({
               : publicMapSymbolShapeV129(layer),
           title: publicMapLayerTitleV126(elementId, layer.publicShortTitle),
           unit: layer.countNoun || variablePresentation?.unit || variable?.unit || layer.unit,
-          variable:
+          variable: ((label: string) =>
+            // V164: an asset's "전체" choice is every kind of site, so it is named as such.
+            label === "전체" && layer.renderer === "point-and-polygon" ? "전체 유형" : label)(
             layer.analysisItemLabel ||
             (layer.layerId.startsWith("vnm-v138-") ? variable?.label : null) ||
             variablePresentation?.label ||
             variable?.label ||
-            layer.legend.title,
+            layer.legend.title),
           hidden: hiddenIdsV138.includes(elementId),
           hasApproximate,
         },
@@ -7545,29 +7571,11 @@ export default function RealMapExplorerPage({
           {/* V151: one stack, so the boundary picker keeps its place when the
               backdrop card grows to show its error message. */}
           <div className="cdp-map-control-stack-v151">
-          <div className="cdp-map-backdrop-v150 cdp-map-backdrop-v151" data-backdrop-kind={backdropKindV151}>
-            <fieldset>
-              <legend>배경지도</legend>
-              {MAP_BACKDROP_KINDS_V151.map((kind) => (
-                <label key={kind}>
-                  <input
-                    type="radio"
-                    name="cdp-map-backdrop-v151"
-                    value={kind}
-                    checked={backdropKindV151 === kind}
-                    onChange={() => {
-                      backdropFellBackRef.current = false;
-                      setBackdropKindV151(kind);
-                    }}
-                  />
-                  {backdropKindLabelV151(kind)}
-                </label>
-              ))}
-            </fieldset>
-            {backdropStatusV151 === "fallback" && (
-              <span role="status">배경지도 타일을 불러오지 못해 &lsquo;없음&rsquo;으로 전환했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>
-            )}
-          </div>
+          {backdropStatusV151 === "fallback" && (
+            <p className="cdp-map-backdrop-note-v164" role="status">
+              배경지도를 불러오지 못해 경계와 데이터만 표시합니다.
+            </p>
+          )}
           {!level1V162 && (
           <div
             className="cdp-map-boundary-system-v151"
@@ -7606,14 +7614,6 @@ export default function RealMapExplorerPage({
             </p>
           </div>
           )}
-          </div>
-          <div className="cdp-map-status-badge">
-            {baseMapStatus === "ready"
-              ? "지도 사용 가능"
-              : fallbackBoundaryStatus === "ready"
-              ? "대체 경계지도 표시 중"
-              : "지도 준비 중"}
-          </div>
           <div className="cdp-map-overlay-card">
             <strong>
               <PublicTermTextV134
@@ -7624,13 +7624,13 @@ export default function RealMapExplorerPage({
                 }
               />
             </strong>
-            <div>
-              {focusedLayer
-                ? loadingIds.includes(focusedLayer.elementId)
-                  ? "불러오는 중입니다"
-                  : "선로·시설·지역을 선택하면 세부정보를 볼 수 있습니다"
-                : `배경지도와 ${boundaryPhraseV162} 경계가 준비되어 있습니다`}
-            </div>
+            {/* V164: the analysis panel already explains what clicking does; the card
+                keeps the layer name, a loading line and the item stepper only. */}
+            {!focusedLayer ? (
+              <div>왼쪽 데이터 목록에서 켜면 지도에 표시됩니다</div>
+            ) : loadingIds.includes(focusedLayer.elementId) ? (
+              <div>불러오는 중입니다</div>
+            ) : null}
             {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
               <div
                 aria-label="키보드 지도 항목 탐색"
@@ -7681,6 +7681,12 @@ export default function RealMapExplorerPage({
               </div>
             ) : null}
           </div>
+          </div>
+          {baseMapStatus !== "ready" && (
+            <div className="cdp-map-status-badge">
+              {fallbackBoundaryStatus === "ready" ? "대체 경계지도 표시 중" : "지도 준비 중"}
+            </div>
+          )}
           {overlapChoicesV133.length > 1 && (
             <section
               className="cdp-map-overlap-picker-v133"
@@ -7870,7 +7876,7 @@ export default function RealMapExplorerPage({
                   </p>
                 )}
               </div>
-              {focusedLayer.elementId === "A-024" ? (
+              {focusedLayer.elementId === "A-024" && rendererOf(focusedLayer) === "line" ? (
                 <div className="cdp-map-legend__network" aria-label="전압별 선 표현">
                   {focusedAnalysisV126.summaryRows
                     .filter((row) => /^\d+ kV$/u.test(row.label))
@@ -8004,6 +8010,14 @@ export default function RealMapExplorerPage({
                   <span>묶음 숫자: 포함된 위치 수</span>
                 </div>
               )}
+              {/* V164: a layer drawn by one reference point per segment (another country's
+                  grid) says so beside its legend, not only in the data panel. */}
+              {(focusedLayer as { coordinateMeaning?: string }).coordinateMeaning === "reference-representative-point" &&
+                focusedLayer.publicSpatialNotice ? (
+                <p className="cdp-map-legend__missing" data-testid="map-legend-reference-point-v164">
+                  <PublicTermTextV134 text={focusedLayer.publicSpatialNotice} />
+                </p>
+              ) : null}
               {focusedMissingReason && focusedMissingReason !== "없음" && (
                 <p className="cdp-map-legend__missing">
                   결측: {focusedMissingReason}

@@ -120,13 +120,28 @@ async function sectionMap(browser, base) {
     };
   });
   const before = await layerState();
-  await page.locator('input[name="cdp-map-backdrop-v151"][value="none"]').check();
-  await page.waitForTimeout(800);
-  const afterOff = await layerState();
-  await page.locator('input[name="cdp-map-backdrop-v151"][value="terrain"]').check();
-  await page.waitForTimeout(4000);
-  const afterOn = await layerState();
-  result.checks.backdrop = {
+  // V164 (user decision 2026-10-04, reports/v164/REVIEW_V164.md): the backdrop is fixed to
+  // streets and the picker is gone. Without a picker the check is that the fixed backdrop is
+  // drawn with its attribution and no picker is offered.
+  const hasPickerV164 = await page.locator('input[name="cdp-map-backdrop-v151"]').count();
+  if (!hasPickerV164) {
+    result.checks.backdrop = {
+      fixed: true,
+      initial: { visible: before.backdropVisible, hidden: before.backdropHidden, attribution: before.attributionHasOpenFreeMap, layerIds: before.backdropLayerIds },
+      pass: before.backdropLayerIds.length > 0 && before.backdropVisible > 0 && before.attributionHasOpenFreeMap === true,
+    };
+  }
+  const afterOff = hasPickerV164 ? await (async () => {
+    await page.locator('input[name="cdp-map-backdrop-v151"][value="none"]').check();
+    await page.waitForTimeout(800);
+    return layerState();
+  })() : before;
+  const afterOn = hasPickerV164 ? await (async () => {
+    await page.locator('input[name="cdp-map-backdrop-v151"][value="terrain"]').check();
+    await page.waitForTimeout(4000);
+    return layerState();
+  })() : before;
+  if (hasPickerV164) result.checks.backdrop = {
     initial: { checkbox: before.checkbox, visible: before.backdropVisible, hidden: before.backdropHidden, attribution: before.attributionHasOpenFreeMap, layerIds: before.backdropLayerIds },
     off: { checkbox: afterOff.checkbox, visible: afterOff.backdropVisible, hidden: afterOff.backdropHidden, attribution: afterOff.attributionHasOpenFreeMap, stored: afterOff.stored },
     on: { checkbox: afterOn.checkbox, visible: afterOn.backdropVisible, hidden: afterOn.backdropHidden, attribution: afterOn.attributionHasOpenFreeMap, stored: afterOn.stored },

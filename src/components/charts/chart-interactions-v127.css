@@ -427,3 +427,8 @@
 [data-highlight-indicators] .v127-interactive-chart__series.is-highlighted .v127-interactive-chart__line {
   stroke-width: 3.5;
 }
+/* V164: a long legend shows its first dozen series; the rest fold under one summary. */
+.v127-interactive-chart__legend-main { display: contents; }
+.v127-interactive-chart__legend-more { flex-basis: 100%; }
+.v127-interactive-chart__legend-more > summary { cursor: pointer; color: #1d5a49; font-weight: 600; font-size: 0.86rem; padding: 4px 0; }
+.v127-interactive-chart__legend-more-list { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 6px; max-height: 320px; overflow: auto; }

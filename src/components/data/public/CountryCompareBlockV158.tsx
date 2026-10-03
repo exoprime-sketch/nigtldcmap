@@ -1,7 +1,8 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import "./country-compare-v158.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { formatAxisTicksV164, formatAxisValueV164, niceTicksV164 } from "../../../utils/axisTicksV164";
 
 /**
  * One country's series for the element being compared.
@@ -57,6 +58,127 @@ function commonYearsV158(series: CountryCompareSeriesV158[]): number[] {
 function valueAtV158(row: CountryCompareSeriesV158, year: number): number | null {
   const point = row.points.find((candidate) => candidate.year === year);
   return typeof point?.value === "number" && Number.isFinite(point.value) ? point.value : null;
+}
+
+/** V164: round steps (1, 2, 2.5, 5 x 10^n) for a value axis between lo and hi. */
+/**
+ * V164: the country lines with what a reader needs to read them - a value axis
+ * with its unit, the first, middle and last years, and each country's latest
+ * value at its line's end. The axis fits the data (a score between 37 and 50
+ * no longer sits in the top fifth of a 0-based box). Only years every country
+ * states are drawn, as before.
+ */
+function MultiLineChartV164({
+  title,
+  unit,
+  years,
+  rows,
+}: {
+  title: string;
+  unit: string;
+  years: number[];
+  rows: Array<{ row: CountryCompareSeriesV158; color: string }>;
+}) {
+  // The drawing is laid out at the width it is shown at, so labels stay at their
+  // set size instead of growing with a wide card or being cut at its edges.
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [measured, setMeasured] = useState(640);
+  useEffect(() => {
+    const node = wrapRef.current;
+    if (!node) return undefined;
+    const update = () => setMeasured(Math.round(node.getBoundingClientRect().width) || 640);
+    update();
+    if (typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(update);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  const width = Math.max(300, Math.min(1100, measured));
+  const height = width < 480 ? 220 : 260;
+  const values = years.flatMap((year) => rows.map(({ row }) => valueAtV158(row, year)).filter((value): value is number => value !== null));
+  if (values.length === 0) return null;
+  const ticks = niceTicksV164(Math.min(...values), Math.max(...values));
+  const tickLabels = formatAxisTicksV164(ticks);
+  const lo = ticks[0];
+  const hi = ticks[ticks.length - 1];
+  const span = hi - lo || 1;
+  const lastIndex = years.length - 1;
+  const endText = (row: CountryCompareSeriesV158, value: number) => `${row.countryNameKo} ${formatAxisValueV164(value)}`;
+  const textWidth = (text: string) => Array.from(text).reduce((sum, ch) => sum + (/[\d.,\s-]/.test(ch) ? 7 : 12), 0);
+  const left = Math.max(40, ...tickLabels.map((label) => textWidth(label) + 14), unit ? textWidth(unit) + 8 : 0);
+  const endLabels = rows.map(({ row }) => valueAtV158(row, years[lastIndex])).filter((value): value is number => value !== null);
+  const right = Math.min(width * 0.38, Math.max(24, ...rows.map(({ row }, index) => (endLabels[index] === undefined ? 0 : textWidth(endText(row, endLabels[index])) + 18))));
+  const top = 22;
+  const bottom = 28;
+  const x = (position: number) => (years.length === 1 ? left + (width - left - right) / 2 : left + (position / (years.length - 1)) * (width - left - right));
+  const y = (value: number) => top + (1 - (value - lo) / span) * (height - top - bottom);
+  const yearMarks = years.length <= 3 ? years.map((year, index) => ({ year, index })) : [0, Math.floor((years.length - 1) / 2), years.length - 1].map((index) => ({ year: years[index], index }));
+  // End labels, nudged apart when two lines finish close together.
+  const ends = rows
+    .map(({ row, color }) => ({ row, color, value: valueAtV158(row, years[lastIndex]) }))
+    .filter((end): end is { row: CountryCompareSeriesV158; color: string; value: number } => end.value !== null)
+    .map((end) => ({ ...end, labelY: y(end.value) }))
+    .sort((a, b) => a.labelY - b.labelY);
+  for (let index = 1; index < ends.length; index += 1) {
+    if (ends[index].labelY - ends[index - 1].labelY < 15) ends[index].labelY = ends[index - 1].labelY + 15;
+  }
+  return (
+    <div ref={wrapRef} className="ccb158__chart-wrap">
+    <svg
+      className="ccb158__chart"
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      role="img"
+      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${unit}` : ""}`}
+      data-testid="country-compare-lines-v158"
+    >
+      {ticks.map((tick, index) => (
+        <g key={tick} className="ccb158__tick">
+          <line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} stroke="#e1ebe7" strokeWidth="1" />
+          <text x={left - 6} y={y(tick) + 4} textAnchor="end" fontSize="11" fill="#5b7169">
+            {tickLabels[index]}
+          </text>
+        </g>
+      ))}
+      {unit ? (
+        <text x={4} y={11} textAnchor="start" fontSize="11" fill="#5b7169" data-testid="country-compare-unit-v164">
+          {`단위: ${unit}`}
+        </text>
+      ) : null}
+      {yearMarks.map(({ year, index }) => (
+        <text key={year} x={x(index)} y={height - 10} textAnchor={index === 0 ? "start" : index === lastIndex ? "end" : "middle"} fontSize="11" fill="#5b7169">
+          {year}
+        </text>
+      ))}
+      {rows.map(({ row, color }) => (
+        <polyline
+          key={row.countryIso3}
+          fill="none"
+          stroke={color}
+          strokeWidth="2.4"
+          strokeLinejoin="round"
+          data-country={row.countryIso3}
+          points={years
+            .map((year, position) => {
+              const value = valueAtV158(row, year);
+              return value === null ? null : `${x(position).toFixed(1)},${y(value).toFixed(1)}`;
+            })
+            .filter(Boolean)
+            .join(" ")}
+        />
+      ))}
+      {ends.map((end) => (
+        <g key={end.row.countryIso3}>
+          <circle cx={x(lastIndex)} cy={y(end.value)} r="3.2" fill={end.color} />
+          <text x={x(lastIndex) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
+            {endText(end.row, end.value)}
+          </text>
+        </g>
+      ))}
+    </svg>
+    </div>
+  );
 }
 
 interface LatestPointV158 {
@@ -240,31 +362,15 @@ export default function CountryCompareBlockV158({
       </ul>
 
       {model.shape === "multi-line" ? (
-        <svg
-          className="ccb158__chart"
-          viewBox="0 0 320 160"
-          role="img"
-          aria-label={`${title} · ${model.matched.map((row) => row.countryNameKo).join(", ")}`}
-          data-testid="country-compare-lines-v158"
-        >
-          {model.matched.map((row, index) => (
-            <polyline
-              key={row.countryIso3}
-              fill="none"
-              stroke={COLORS_V158[index % COLORS_V158.length]}
-              strokeWidth="2"
-              data-country={row.countryIso3}
-              points={model.years
-                .map((year, position) => {
-                  const value = valueAtV158(row, year) ?? min;
-                  const x = model.years.length === 1 ? 160 : (position / (model.years.length - 1)) * 300 + 10;
-                  const y = 150 - ((value - min) / span) * 130;
-                  return `${x.toFixed(1)},${y.toFixed(1)}`;
-                })
-                .join(" ")}
-            />
-          ))}
-        </svg>
+        <MultiLineChartV164
+          title={title}
+          unit={compareKey.unit}
+          years={model.years}
+          rows={model.matched.map((row, index) => ({
+            row,
+            color: COLORS_V158[index % COLORS_V158.length],
+          }))}
+        />
       ) : (
         <table className="ccb158__bars" data-testid="country-compare-bars-v158">
           <caption>
@@ -306,7 +412,7 @@ export default function CountryCompareBlockV158({
       ) : null}
       {/* V162 PR-D: the measure is named in the block's title; the note states
           the year rule in words and never the internal indicator key. */}
-      {compareKey.yearRule === "latest-common" ? (
+      {compareKey.yearRule === "latest-common" && model.shape !== "multi-line" ? (
         <p className="ccb158__note">연도 기준 · 두 국가가 모두 가진 최신 연도</p>
       ) : null}
     </section>
