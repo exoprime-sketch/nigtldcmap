@@ -391,8 +391,9 @@ def _download_csv(element: Mapping[str, Any], observations: list[Any], entities:
         "element_id", "element_label", "record_type", "record_id", "indicator_id", "country_iso3",
         "year", "period_start", "period_end", "period", "statistic_type", "source_year_label",
         "value", "unit", "name", "latitude", "longitude", "attributes_json", "missing_reason_code",
-        "note", "source_org", "source_url", "license_code", "source_file", "source_sheet",
-        "source_row", "publication_decision_id", "지역명_한글",
+        # V163-DL: no delivery workbook file/sheet/row columns in the public CSV.
+        "note", "source_org", "source_url", "license_code",
+        "publication_decision_id", "지역명_한글",
     ]
     stream = io.StringIO(newline="")
     writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
@@ -762,11 +763,20 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
                 "observations": obs_defaults,
                 "entities": ent_defaults,
             }
+        # V163-DL: the download is a cleaned copy (workbook provenance dropped,
+        # working notes out of every text field); the pack keeps its records.
+        document = public_text_v163.download_document_v163(document, element_id=element["elementId"], country=iso3, log=public_text_log_v163)
+        download_source_v163 = public_text_v163._source_name(document, iso3)
         zip_path = write_element_zip(
             out / "downloads",
             token,
             v2._json_bytes(document, pretty=False),
-            _download_csv(element, obs_rows, ent_rows, names, region_columns, region_separator),
+            _download_csv(
+                document["element"],
+                public_text_v163.download_rows_v163(obs_rows, element_id=element["elementId"], country=iso3, source_name=download_source_v163, log=public_text_log_v163),
+                public_text_v163.download_rows_v163(ent_rows, element_id=element["elementId"], country=iso3, source_name=download_source_v163, log=public_text_log_v163),
+                names, region_columns, region_separator,
+            ),
             element["downloadAssets"][0],
         )
         download_assets.append(describe_download_asset(element["elementId"], "ZIP", "application/zip", int(element["downloadableRecordCount"]), zip_path, f"{data_root}/downloads/{zip_path.name}"))
@@ -961,6 +971,8 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
     }
     for row in rights_rows:
         public_text_v163.sanitize_payload(row, element_id=str(row.get("elementId") or ""), country=iso3, log=public_text_log_v163)
+    # V163-DL: the quality report is a public file too (not drawn on any screen).
+    quality_report = public_text_v163.sanitize_download_v163(quality_report, country=iso3, source_name=None, element_id="quality-report", log=public_text_log_v163)
     public_text_v163.write_internal_report(public_text_log_v163, iso3)
     v2._write_json(out / "catalog.json", {"schemaVersion": SCHEMA_VERSION, "elements": catalog})
     v2._write_json(out / "framework-coverage.json", framework_coverage)

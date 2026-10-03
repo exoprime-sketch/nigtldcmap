@@ -28,3 +28,9 @@
 - `scripts/v153/qa-policy-descriptions-v153.mjs`·`PolicyDescriptionV153.test.tsx`: 정책 설명 카드 라벨 '… yyyy-mm-dd 확인' → '… yyyy-mm-dd 기준'(공개 문구 스캔의 'yyyy-mm-dd 확인' 금지 패턴, 사용자 지시)
 - `scripts/v157/public-wording-scan-v157.mjs`: OSM 'ko (value)' 예외 삭제(화면이 더는 원문 키를 붙이지 않음) — 기준 강화
 - 날짜 확인 패턴은 데이터 버전 표기(v2026-04-30) 뒤의 '확인'은 제외 — 버전명은 확인 날짜가 아님
+
+## V163-DL(다운로드·quality-report, 2026-10-03)
+- 공개 다운로드 CSV 열에서 `source_file`·`source_sheet`·`source_row` 제거(납품 워크북 출처 = 내부 작업 정보, 사용자 지시). BGD 검증기 `SCHEMA_CSV_HEADER`는 VNM CSV 머리글과 비교하므로 양국 같은 열로 통과
+- 다운로드 JSON에서 `provenance.sourceFileOriginal/sourceFileDecoded/sourceSheet/sourceRow/sourcePackage`, 요소 `sourceWorkbook` 제거. quality-report에서 `archiveName`·`sheetNames` 제거(읽는 감사 스크립트는 summary·행 수·sourceZip.sha256만 사용)
+- 지표 메타 `unit`의 시트 참조 꼬리('…, 1.2_entity 3행 머리글 괄호 표기 참조') 제거 — 레코드 값 단위는 보호(바뀌지 않음, 값 열 대조로 확인)
+- 화면용 팩·카탈로그는 다운로드 규칙을 적용하지 않음(화면 변화 0) — #63 공개 텍스트 규칙만 그대로

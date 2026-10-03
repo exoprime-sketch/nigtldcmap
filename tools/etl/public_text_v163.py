@@ -239,19 +239,209 @@ def sanitize_payload(payload: dict[str, Any], *, element_id: str, country: str, 
     return sanitize_tree(payload, country=country, source_name=_source_name(payload, country), element_id=element_id, log=log)
 
 
+# ---------------------------------------------------------------------------
+# V163-DL: the download files (ZIP JSON and CSV) and quality-report.json.
+#
+# A download carries every field of a record, not only the public text keys:
+# the delivery workbook's own provenance (file, sheet, row, package), notes in
+# attribute cells, local folder paths and the names of our working files. In a
+# download the workbook provenance is dropped, every other text is cleaned with
+# the rules above plus the ones below, and the fields that state a value
+# (value, unit, year, period, region, record keys, coordinates) are never
+# touched. A file a publisher distributes ("global_power_plant_database.csv",
+# "ndgain_countryindex_2026.zip") is a citation and stays; a workbook (.xlsx)
+# and any file we named are not.
+# ---------------------------------------------------------------------------
+DOWNLOAD_DROP_KEYS_V163 = frozenset(
+    {"sourceFileOriginal", "sourceFileDecoded", "sourceSheet", "sourceRow", "sourcePackage", "sourceFile", "sourceWorkbook", "archiveName", "sheetNames"}
+)
+DOWNLOAD_PROTECTED_KEY_V163 = re.compile(
+    r"^(?:value|rawValue|unit|year|years|period|periodStart|periodEnd|period_start|period_end|recordId|indicatorId|elementId|elementIdsFound|"
+    r"countryIso3|regionId|regionLabel|sourceRegionKey|reorganised2025Parent|latitude|longitude|lat|lon|sha256|"
+    # Korean record columns that state a region, a key, a year, a unit or a
+    # coordinate. A column that merely mentions one in a longer name
+    # ("수집_기준_절차_DB_검색어_연도") is a description and is cleaned.
+    r"지역.*|행정구역.*|.*소속_단위|.*레코드_키|연도|기준연도|단위|위도|경도)$"
+)
+# A working note in brackets inside a sentence ("상위 500건 상한(수집 규모 관리
+# 목적, 발주처 확인 예정)") goes on its own; the sentence stays.
+MEMO_ASIDE_V163 = re.compile(r"\s*\([^()]*(?:★|검토의견|공통의견|발주처|별첨\s*\d)[^()]*\)")
+MEMO_SENTENCE_V163 = re.compile(r"★|검토의견|공통의견|발주처|별첨\s*\d|raw\s*폴더|raw\s*미보관|raw_data|지오코딩_대장|_원자료구성_설명|_중간집계_")
+# A bracketed aside about our raw folder inside a methods sentence ("내려받아(raw_data 의
+# GloFAS CSV) 월별 평년값…") goes on its own; the sentence stays.
+RAW_ASIDE_V163 = re.compile(r"\s*\(raw_data[^()]*\)")
+# A unit description that points into the workbook ("속성별 — 1.2_entity 3행 머리글
+# 괄호 표기 참조") keeps its unit word only.
+SHEET_POINTER_V163 = re.compile(r"\s*[—–,-]\s*1\.\d_(?:entity|observation)[^—\"]*?참조")
+# Our shared-boundary folder named in a sentence ("…34개 체계; 00_공통 경계 파일 v1.3)").
+SHARED_FOLDER_V163 = re.compile(r"\s*[;,]?\s*00_공통[^;)\]」\n]*")
+# A downloaded copy's name with its " (2)" ("database_2026 (2).xlsx").
+FILE_COPY_V163 = re.compile(r"[«「]?([^\s«»「」;,()\[\]]+ \(\d+\)\.(?:xlsx?|csv|json|zip|pdf|txt|geojson))(?![A-Za-z0-9_.])[»」]?", re.IGNORECASE)
+LOCAL_PATH_V163 = re.compile(r"(?:00_공통|raw_data)[\\/][^\s;,」»\]]*")
+# Our raw folder in front of a file the publisher distributes ("raw/768-ttg.signed.pdf"):
+# the folder goes, the publisher's file name stays.
+RAW_FOLDER_V163 = re.compile(r"(?<![\w/.])raw/")
+SHEET_REF_V163 = re.compile(r"(?<![\w.])1\.\d_(?:entity|observation)(?:\([^)]*\))?")
+FILE_TOKEN_V163 = re.compile(r"[«「]?([^\s«»「」;,()\[\]]+\.(?:xlsx?|csv|json|zip|pdf|txt|geojson|tif|shp))(?![A-Za-z0-9_.])[»」]?", re.IGNORECASE)
+HANGUL_V163 = re.compile(r"[가-힣]")
+DOWNLOAD_SENTENCE_SPLIT_V163 = re.compile(r"(?<=[.。])\s+|\s+/\s+|\s*·\s+(?=\[)")
+
+
+def _our_file(name: str) -> bool:
+    """A name we gave a file, or a workbook - never a publisher's distribution."""
+    return bool(
+        HANGUL_V163.search(name)
+        or re.match(r"(?:[A-E]-\d{3}_|_|\d_)", name)
+        or re.search(r"_0\d판", name)
+        # a response we saved per country ("cckp_historical_BGD.json"), a layer we
+        # cut for one country and stamped ("BGD_hybas_lev06_v1c_260924_v1.0.geojson")
+        or re.search(r"_(?:BGD|VNM)(?:[_.]|$)", name)
+        or re.match(r"(?:BGD|VNM)_", name)
+        or re.search(r"_\d{6}_v\d", name)
+        # an extract named after our element code ("GFW_B033_loss_by_driver_adm1.json")
+        or re.search(r"(?<![A-Za-z])[A-E]-?\d{3}(?!\d)", name)
+        or re.search(r"\.(?:xlsx?|txt)$", name, re.IGNORECASE)
+        # our own notation and naming: a back-quoted file ("`VNM_QD263…signed.pdf"),
+        # a country-coded name ("vnm33857grid.geojson"), a per-country save
+        # ("GS_projects_Vietnam.json") and any saved JSON response - a publisher
+        # serves those through the URL the record keeps
+        or name.startswith("`")
+        or re.match(r"(?:vnm|bgd)", name, re.IGNORECASE)
+        or re.search(r"_(?:Vietnam|Bangladesh)(?:[_.]|$)", name)
+        or re.search(r"\.json$", name, re.IGNORECASE)
+    )
+
+
+def clean_download_text(value: str, *, country: str, source_name: str | None, meta: bool) -> tuple[str, list[tuple[str, str]]]:
+    """A download text field: the public rules, then paths, sheets, memo sentences and our files."""
+    text, removed = clean_public_text(value, country=country, source_name=source_name, meta=meta)
+    parts: list[tuple[str, str]] = [(_category(item), item) for item in removed]
+    for match in LOCAL_PATH_V163.findall(text):
+        parts.append(("local-path", match))
+    text = LOCAL_PATH_V163.sub("", text)
+    for match in RAW_FOLDER_V163.findall(text):
+        parts.append(("local-path", match))
+    text = RAW_FOLDER_V163.sub("", text)
+    for match in RAW_ASIDE_V163.findall(text):
+        parts.append(("local-path", match.strip()))
+    text = RAW_ASIDE_V163.sub("", text)
+    for match in MEMO_ASIDE_V163.findall(text):
+        parts.append(("memo-sentence", match.strip()))
+    text = MEMO_ASIDE_V163.sub("", text)
+    for match in SHEET_POINTER_V163.findall(text):
+        parts.append(("workbook-sheet", match.strip()))
+    text = SHEET_POINTER_V163.sub("", text)
+    for match in SHARED_FOLDER_V163.findall(text):
+        parts.append(("local-path", match.strip(" ;,")))
+    text = SHARED_FOLDER_V163.sub("", text)
+    for match in SHEET_REF_V163.findall(text):
+        parts.append(("workbook-sheet", match))
+    text = SHEET_REF_V163.sub("", text)
+    sentences = [part for part in DOWNLOAD_SENTENCE_SPLIT_V163.split(text) if part]
+    kept = []
+    for sentence in sentences:
+        if MEMO_SENTENCE_V163.search(sentence):
+            parts.append(("memo-sentence", sentence.strip()))
+            continue
+        kept.append(sentence)
+    if len(kept) != len(sentences):
+        text = " ".join(kept)
+
+    def _file(match: re.Match[str]) -> str:
+        name = match.group(1)
+        if not _our_file(name):
+            return match.group(0)
+        parts.append(("work-file", match.group(0)))
+        return f"「{source_name}」" if source_name else ""
+
+    text = FILE_COPY_V163.sub(_file, text)
+    text = FILE_TOKEN_V163.sub(_file, text)
+    if source_name:
+        quoted = re.escape(f"「{source_name}」")
+        text = re.sub(rf"{quoted}(?:\s*[;,·]\s*{quoted})+", f"「{source_name}」", text)
+    return (_tidy(text, value) if parts else text), parts
+
+
+def _category(removed: str) -> str:
+    if RULE_SENTENCE_V163.search(removed):
+        return "memo-sentence"
+    if CHECK_DATE_V163.fullmatch(removed.strip()) or re.fullmatch(r"\d{4}-\d{2}-\d{2}\s*확인", removed.strip()):
+        return "check-date"
+    if removed.startswith("["):
+        return "memo-tag"
+    if removed.startswith("raw_data"):
+        return "local-path"
+    if WORK_FILE_V163.search(removed):
+        return "work-file"
+    if WORKBOOK_POINTER_V163.fullmatch(removed):
+        return "workbook-pointer"
+    return "memo-sentence"
+
+
+def sanitize_download_v163(node: Any, *, country: str, source_name: str | None, element_id: str, log: list[dict[str, Any]], path: str = "", key: str = "") -> Any:
+    """A cleaned deep copy of a download document, record list or quality report."""
+    if isinstance(node, dict):
+        out: dict[str, Any] = {}
+        for child_key, value in node.items():
+            here = f"{path}.{child_key}"
+            if child_key in DOWNLOAD_DROP_KEYS_V163:
+                log.append({"elementId": element_id, "field": here, "removed": child_key, "category": "workbook-provenance"})
+                continue
+            out[child_key] = sanitize_download_v163(value, country=country, source_name=source_name, element_id=element_id, log=log, path=here, key=str(child_key))
+        return out
+    if isinstance(node, list):
+        cleaned = [sanitize_download_v163(item, country=country, source_name=source_name, element_id=element_id, log=log, path=f"{path}[]", key=key) for item in node]
+        if all(isinstance(item, str) for item in node):
+            deduped: list[Any] = []
+            for item in cleaned:
+                if item and item not in deduped:
+                    deduped.append(item)
+            return deduped
+        return cleaned
+    # An indicator's `unit` is its description in the metadata ("속성별 — …"); a
+    # record's unit is a value and stays protected.
+    indicator_unit = key == "unit" and path.startswith(".indicators")
+    if isinstance(node, str) and node and (indicator_unit or not DOWNLOAD_PROTECTED_KEY_V163.match(key)):
+        cleaned, parts = clean_download_text(node, country=country, source_name=source_name, meta=key in META_TEXT_KEYS)
+        for category, text in parts:
+            log.append({"elementId": element_id, "field": re.sub(r"\[\]", "", path), "removed": text, "category": category})
+        return cleaned if cleaned else (None if node else node)
+    return node
+
+
+def download_document_v163(document: dict[str, Any], *, element_id: str, country: str, log: list[dict[str, Any]]) -> dict[str, Any]:
+    """The element's download JSON, cleaned (a copy; the pack is untouched)."""
+    source = _source_name(document, country)
+    if source:
+        # the name that replaces a working file is itself cleaned first
+        # ("… — 레코드별 상이, 1.2_entity attr_14 참조" names a sheet column)
+        source = clean_download_text(source, country=country, source_name=None, meta=False)[0] or None
+    return sanitize_download_v163(document, country=country, source_name=source, element_id=element_id, log=log)
+
+
+def download_rows_v163(rows: list[Any], *, element_id: str, country: str, source_name: str | None, log: list[dict[str, Any]]) -> list[Any]:
+    """Records for the download CSV, cleaned the same way (log is shared, so counts stay once)."""
+    scratch: list[dict[str, Any]] = []
+    return sanitize_download_v163(rows, country=country, source_name=source_name, element_id=element_id, log=scratch)
+
+
 def write_internal_report(log: list[dict[str, Any]], country: str) -> pathlib.Path:
     """The removed notes, summarised per element and field (not published)."""
     summary: dict[str, dict[str, dict[str, int]]] = {}
+    categories: dict[str, int] = {}
     for row in log:
         by_field = summary.setdefault(row["elementId"], {}).setdefault(row["field"], {})
         by_field[row["removed"]] = by_field.get(row["removed"], 0) + 1
+        category = row.get("category") or "public-text"
+        categories[category] = categories.get(category, 0) + 1
     out = ROOT / "reports" / "v163" / f"internal-notes-{country.lower()}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     body = {
-        "schemaVersion": "v163-internal-notes-1",
+        "schemaVersion": "v163-internal-notes-2",
         "country": country.upper(),
-        "note": "Working notes taken out of public text fields by tools/etl/public_text_v163.py. Internal - never published.",
+        "note": "Working notes taken out of public text fields (packs, catalog, rights) and of the download files and quality report by tools/etl/public_text_v163.py. Internal - never published.",
         "removedCount": len(log),
+        "byCategory": dict(sorted(categories.items())),
         "elements": {element_id: {field: [{"text": text, "count": count} for text, count in sorted(parts.items())] for field, parts in sorted(fields.items())} for element_id, fields in sorted(summary.items())},
     }
     out.write_text(json.dumps(body, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
