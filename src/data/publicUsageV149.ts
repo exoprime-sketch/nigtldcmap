@@ -10,13 +10,19 @@ export const mapDatasetIdsV149 = new Set(directory.filter(d => d.map).map(d => d
 // build served under a subpath (GitHub Pages) has no /api, so it neither asks
 // nor reports - a 404 there would be a runtime error, not a signal.
 export const USAGE_API_AVAILABLE_V149 = publicAssetUrlV128("api/usage") === "/api/usage";
-export function usePublicUsageV149() {
+/**
+ * V163: counts are per country (`country` = ISO3, or "all" for the finder's
+ * every-country list). No country yet (the page is still resolving it) asks nothing.
+ */
+export function usePublicUsageV149(country: string | null | undefined = "VNM") {
   const [usage, setUsage] = useState<PublicUsageV149 | null>(null);
+  const scope = String(country || "").trim().toUpperCase();
   useEffect(() => {
-    if (!USAGE_API_AVAILABLE_V149) return undefined;
+    setUsage(null);
+    if (!USAGE_API_AVAILABLE_V149 || !scope) return undefined;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 6000);
-    void fetch("/api/usage", {signal:controller.signal}).then(async r => {
+    void fetch(`/api/usage?country=${encodeURIComponent(scope)}`, {signal:controller.signal}).then(async r => {
       if (!r.ok || !r.headers.get("content-type")?.includes("application/json")) {
         // A static host answers with the app shell; drain it so the request
         // completes instead of holding an unread stream open.
@@ -27,14 +33,14 @@ export function usePublicUsageV149() {
       if (data.status === "ready" && Array.isArray(data.detail) && Array.isArray(data.map)) setUsage(data);
     }).catch(() => undefined).finally(() => clearTimeout(timeout));
     return () => { controller.abort(); clearTimeout(timeout); };
-  }, []);
+  }, [scope]);
   return usage;
 }
 const sent = new Map<string, number>();
-export function useDatasetUsageV149(kind: "detail" | "map", elementId: string | null, ready: boolean) {
+export function useDatasetUsageV149(kind: "detail" | "map", elementId: string | null, ready: boolean, country = "VNM") {
   useEffect(() => {
-    if (!USAGE_API_AVAILABLE_V149 || !ready || !elementId || navigator.webdriver || navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
-    const key = `${kind}:${elementId}`;
+    if (!USAGE_API_AVAILABLE_V149 || !ready || !elementId || !country || navigator.webdriver || navigator.doNotTrack === "1" || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return;
+    const key = `${kind}:${country}:${elementId}`;
     const timer = setTimeout(() => {
       if (document.visibilityState !== "visible" || Date.now() - (sent.get(key) || 0) < 1800000) return;
       let visitor: string;
@@ -43,11 +49,11 @@ export function useDatasetUsageV149(kind: "detail" | "map", elementId: string | 
         sessionStorage.setItem("cdp-usage-visitor-v149", visitor);
       } catch { return; } // No tracking if session storage is disabled.
       sent.set(key, Date.now());
-      void fetch("/api/usage", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({kind,elementId,visitor}), keepalive:true})
+      void fetch("/api/usage", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({kind,elementId,visitor,country}), keepalive:true})
         .then(r => { if (!r.ok) sent.delete(key); }).catch(() => { sent.delete(key); });
     }, 2000);
     return () => clearTimeout(timer);
-  }, [kind, elementId, ready]);
+  }, [kind, elementId, ready, country]);
 }
 
 export function sortHomeItemsV149<T extends {elementId:string; publicTitle:string}>(items:T[], mode:"views"|"latest", ranks:UsageRankV149[], dates:Map<string,string|null> = datasetDatesV149):T[] {
