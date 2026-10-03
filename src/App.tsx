@@ -60,7 +60,18 @@ import {
 import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
 import type { MiniMapHandoffV152 } from "./components/map/miniMapStateV152";
 
-const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
+// V163-BTN: one retry after a short wait - a transient 5xx on the map chunk
+// otherwise replaced the whole site with the error page.
+const RealMapExplorerPage = lazy(() =>
+  import("./pages/RealMapExplorerPage").catch(
+    () =>
+      new Promise<typeof import("./pages/RealMapExplorerPage")>((resolve, reject) => {
+        window.setTimeout(() => {
+          import("./pages/RealMapExplorerPage").then(resolve, reject);
+        }, 1500);
+      })
+  )
+);
 
 /**
  * V162 PR-D: the finder opens on the reader's current country (the V158-B2
@@ -479,8 +490,12 @@ export default function App() {
   const [sourceOrganization, setSourceOrganization] = useState(
     initialParams.get("source") ?? "all"
   );
+  // V163-BTN: a detail opened from a link returns ("검색 결과로 돌아가기") to its
+  // own country's list, not to every country's.
   const [explorerCountryIso3, setExplorerCountryIso3] = useState(
-    initialView === "explorer" ? finderCountryV162(initialCountryParam) : "all"
+    initialView === "explorer" || initialView === "element-detail"
+      ? finderCountryV162(initialCountryParam)
+      : "all"
   );
   const [category, setCategory] = useState<CategoryCode | "all">(
     (initialParams.get("category") as CategoryCode | null) ?? "all"
@@ -595,7 +610,9 @@ export default function App() {
       setQuery(params.get("q") ?? "");
       setSourceOrganization(params.get("source") ?? "all");
       setExplorerCountryIso3(
-        nextView === "explorer" ? finderCountryV162(countryParam) : "all"
+        nextView === "explorer" || nextView === "element-detail"
+          ? finderCountryV162(countryParam)
+          : "all"
       );
       setCategory((params.get("category") as CategoryCode | null) ?? "all");
 
@@ -779,6 +796,15 @@ export default function App() {
       appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
+    // V163-BTN: the home and the guide read `?country=` themselves (after the
+    // registry loads, i.e. after this effect), so a logo or "데이터 이용안내"
+    // click from another country's page keeps that country in the address
+    // instead of falling back to the default country's home and guide.
+    if (view === "home" || view === "guide") {
+      const pageCountry = currentUrlCountryIso3();
+      if (pageCountry && pageCountry !== DEFAULT_COUNTRY_ISO3_V158) params.set("country", pageCountry);
+    }
+
     if (view === "country" && selectedCountryIso3) {
       params.set("country", selectedCountryIso3);
       if (technologyId !== "all") params.set("technology", technologyId);
@@ -871,7 +897,14 @@ export default function App() {
     const currentContextCountry =
       (view === "explorer" && explorerCountryIso3 !== "all"
         ? explorerCountryIso3
-        : selectedCountryIso3) || currentUrlCountryIso3();
+        : selectedCountryIso3) ||
+      currentUrlCountryIso3() ||
+      // V163-BTN: the home and the guide show the default country without a
+      // `?country=`; a nav click from there keeps that country (the download
+      // tab opened on every country from the default home).
+      (view === "home" || view === "guide"
+        ? resolveHomeCountryV161(window.location.search)?.iso3 || null
+        : null);
 
     if (nextView === "explorer") {
       setExplorerCountryIso3(
@@ -1255,7 +1288,8 @@ export default function App() {
             <RealMapExplorerPage
               onOpenElement={openElement}
               onOpenDataFinder={() =>
-                openExplorerFromGlobalSearch("", DEFAULT_COUNTRY_ISO3_V158, null)
+                // V163-BTN: the map's own country (the guide link opened the default country's list).
+                openExplorerFromGlobalSearch("", mapViewState.countryIso3 || DEFAULT_COUNTRY_ISO3_V158, null)
               }
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);

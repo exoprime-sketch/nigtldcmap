@@ -144,3 +144,13 @@ describe("publicUnstatedWordingV161", () => {
     expect(publicUnstatedWordingV161("Biomass power")).toBe("Biomass power");
   });
 });
+
+describe("publicSourceOrganizationV136_1 - notes the 자료 wording reached (V163-BTN)", () => {
+  it("drops the per-record note once 레코드 reads 자료, and the compiler's own check", () => {
+    expect(publicSourceOrganizationV136_1("각 운용사·투자사 공식 웹사이트(레코드별 상이 — 1.2_entity 참조)")).toBe("각 운용사·투자사 공식 웹사이트");
+    expect(publicSourceOrganizationV136_1("CTCN 기술지원 프로젝트 / 한국에너지공단 — 레코드별 상이")).toBe("CTCN 기술지원 프로젝트 / 한국에너지공단");
+    expect(publicSourceOrganizationV136_1("개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산")).toBe("개정 PDP8 부록Ⅱ(768/QĐ-TTg)");
+    expect(publicSourceOrganizationV136_1("출처기관 미확인")).toBeNull();
+    expect(publicSourceOrganizationV136_1("World Bank Projects & Operations (기후 관련 자체 분류)")).toBe("World Bank Projects & Operations (기후 관련 자체 분류)");
+  });
+});

@@ -70,7 +70,8 @@ const FEATURED_ELEMENT_IDS_V128 = [
 ] as const;
 
 const overviewCacheV161 = new Map<string, Promise<PublicOverviewV161>>();
-let searchCacheV128: Promise<PublicSearchItemV128[]> | null = null;
+// V163-BTN: one search list per country (the header search follows the page's country).
+const searchCacheV128 = new Map<string, Promise<PublicSearchItemV128[]>>();
 
 function normalizeSearchTextV128(value: string): string {
   return value
@@ -238,11 +239,13 @@ export async function loadVietnamPublicOverviewV128(): Promise<VietnamPublicOver
   return loadPublicOverviewV161("VNM");
 }
 
-export async function loadPublicSearchItemsV128(): Promise<PublicSearchItemV128[]> {
-  if (!searchCacheV128) {
-    searchCacheV128 = Promise.all([
-      loadCatalogForCountrySelectionV122("VNM"),
-      loadSearchIndexForCountrySelectionV122("VNM"),
+export async function loadPublicSearchItemsV128(countryIso3 = "VNM"): Promise<PublicSearchItemV128[]> {
+  const iso3 = countryIso3.toUpperCase();
+  let cached = searchCacheV128.get(iso3);
+  if (!cached) {
+    cached = Promise.all([
+      loadCatalogForCountrySelectionV122(iso3),
+      loadSearchIndexForCountrySelectionV122(iso3),
     ])
       .then(([catalog, searchIndex]) =>
         catalog.map((item) => {
@@ -272,11 +275,12 @@ export async function loadPublicSearchItemsV128(): Promise<PublicSearchItemV128[
         })
       )
       .catch((error) => {
-        searchCacheV128 = null;
+        searchCacheV128.delete(iso3);
         throw error;
       });
+    searchCacheV128.set(iso3, cached);
   }
-  return searchCacheV128;
+  return cached;
 }
 
 export function searchPublicDataV128(
