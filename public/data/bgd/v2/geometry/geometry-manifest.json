@@ -87,6 +87,46 @@
         "validator": "Shapely 2.1.2 (GEOS is_valid) + pyproj Geod area"
       },
       "version": "v158"
+    },
+    {
+      "attribution": "geoBoundaries (BBS, OCHA ROAP), CC BY 3.0 IGO",
+      "derivedFrom": {
+        "asset": "/data/bgd/v2/geometry/bgd-country-outline.geojson",
+        "method": "shapely simplify(tolerance=0.005 deg, preserve_topology) of the full outline; parts < 2.0 km2 dropped",
+        "sha256": "d58c46c342ea20d225b479d69a5c8f3db3ead3e8a84e2dd23c70e445b1eaed92"
+      },
+      "displayOnly": true,
+      "droppedSliverParts": 156,
+      "featureCount": 1,
+      "geometryTypes": [
+        "MultiPolygon"
+      ],
+      "kind": "country-outline-z5",
+      "license": {
+        "attributionRequired": true,
+        "geoBoundariesDerivativeLicense": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceBoundaryLicense": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)"
+      },
+      "sha256": "5841a15a41f3b098d509a3482bbc2b9bdc80e4e7e74de6eee799cd7e7aa55236",
+      "simplificationToleranceDeg": 0.005,
+      "source": {
+        "boundaryId": "BGD-ADM2-16705992",
+        "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+        "provider": "Bangladesh Bureau of Statistics (BBS), OCHA ROAP",
+        "sha256": "54379ccc77f6f59dab3569ecc5f9b3850dbed2d65a5f43a034bdf92179f5621b",
+        "sourceCommit": "9469f09",
+        "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM2/geoBoundaries-BGD-ADM2.geojson"
+      },
+      "url": "/data/bgd/v2/geometry/bgd-country-outline-z5.geojson",
+      "validation": {
+        "areaChangePctSimplified": -0.2191,
+        "keptParts": 115,
+        "synthesizedVertices": 0,
+        "valid": true,
+        "validator": "Shapely (GEOS is_valid) + pyproj Geod area"
+      },
+      "version": "v163"
     }
   ],
   "boundarySystem": "adm1-8",
