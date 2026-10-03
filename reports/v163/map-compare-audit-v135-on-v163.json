@@ -1,0 +1,562 @@
+{
+  "schemaVersion": "v135-final-public-screen-audit-1",
+  "generatedAt": "2026-10-03T04:43:39.635Z",
+  "audit": "map-compare:v135",
+  "status": "PASS",
+  "summary": {
+    "type": "summary",
+    "audit": "map-compare:v135",
+    "status": "PASS",
+    "passed": 10,
+    "failed": 0,
+    "total": 10,
+    "failedChecks": [],
+    "pairResults": [
+      {
+        "name": "finance",
+        "a": "D-018",
+        "b": "C-025",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 10,
+              "right": 700,
+              "top": 167.4375,
+              "bottom": 1133.5625,
+              "width": 690,
+              "height": 966.125
+            },
+            "elementId": "D-018",
+            "legendCount": 1,
+            "selectorCount": 1,
+            "viewBox": "",
+            "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목지역 협력범위·세부 활동지역기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지역 협력범위·세부 활동지역 (사업) · 2026참여국 범위세부 활동지역자료정보데이터명적응기금 사업항목지역 협력범위·세부 활동지역기준 시점2026단위사업출처 기관Adaptation Fund Board Secretariat공간 단위사업 참여국 범위와 세부 활동지역요약지역 협력사업2건참여국 범위2개세부 활동지역2곳지도에서 지역이나 지점을 누르면 값과 순위를 보여 줍니다."
+          },
+          "b": {
+            "box": {
+              "left": 710,
+              "right": 1400,
+              "top": 167.4375,
+              "bottom": 1247.21875,
+              "width": 690,
+              "height": 1079.78125
+            },
+            "elementId": "C-025",
+            "legendCount": 1,
+            "selectorCount": 1,
+            "viewBox": "",
+            "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목사업 위치·유형기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다사업 위치·유형 (건) · 2026자료정보데이터명탄소크레딧 사업항목사업 위치·유형기준 시점2026단위건출처 기관Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry · Global Carbon Council (GCC)공간 단위시설·지점 위치"
+          },
+          "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      },
+      {
+        "name": "vulnerability-budget",
+        "a": "B-021",
+        "b": "D-008",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 10,
+              "right": 700,
+              "top": 167.4375,
+              "bottom": 1295.21875,
+              "width": 690,
+              "height": 1127.78125
+            },
+            "elementId": "B-021",
+            "legendCount": 1,
+            "selectorCount": 3,
+            "viewBox": "",
+            "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시지표GVI 취약성 지수1인당 GNI(로그)기대수명도시화율부양비빈곤 가구 비율(IWI<70)상수도 보급 가구 비율성개발지수(GDI)전기 보급 가구 비율종합 지방부패지수(SCI)평균 교육연수(25세 이상)휴대폰 보유 가구 비율기준 시점200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합 | geoBoundaries VNM ADM1 · CC BY 4.0 · 2025-07-01 34개 통합 대응선택한 지도 데이터를 불러오는 중입니다GVI 취약성 지수 (0–100 지수) · 2023자료정보데이터명지역 취약성선택 지표GVI 취약성 지수기준 시점2023단위0–100 지수출처 기관Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025) · Global Data Lab (GDL Area Database)공간 단위베트남 성·시 63개(개편 전)읽는 법높을수록 사회경제적 취약성이 큼"
+          },
+          "b": {
+            "box": {
+              "left": 710,
+              "right": 1400,
+              "top": 167.4375,
+              "bottom": 1379.21875,
+              "width": 690,
+              "height": 1211.78125
+            },
+            "elementId": "D-008",
+            "legendCount": 1,
+            "selectorCount": 1,
+            "viewBox": "",
+            "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목성 단위 기후변화 지출 누계기준 시점2010-2013Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다성 단위 기후변화 지출 누계 (VND) · 2010-2013자료정보데이터명지역 기후예산항목성 단위 기후변화 지출 누계기준 시점2010-2013단위VND출처 기관United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 · United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015공간 단위베트남 성·시 63개(개편 전)"
+          },
+          "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      },
+      {
+        "name": "forest",
+        "a": "B-033",
+        "b": "B-034",
+        "selection": {
+          "changed": true,
+          "changedA": true,
+          "changedB": true
+        },
+        "snapshot": {
+          "present": true,
+          "mode": "side-by-side",
+          "synchronized": "true",
+          "a": {
+            "box": {
+              "left": 10,
+              "right": 700,
+              "top": 167.4375,
+              "bottom": 1353.5625,
+              "width": 690,
+              "height": 1186.125
+            },
+            "elementId": "B-033",
+            "legendCount": 1,
+            "selectorCount": 2,
+            "viewBox": "",
+            "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목연간 수관 손실 — 성(省) 단위기준 시점200120022003200420052006200720082009201020112012201320142015201620172018201920202021202220232024Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합 | geoBoundaries VNM ADM1 · CC BY 4.0 · 2025-07-01 34개 통합 대응선택한 지도 데이터를 불러오는 중입니다연간 수관 손실 — 성(省) 단위 (ha) · 2024자료정보데이터명연간 산림손실항목연간 수관 손실 — 성(省) 단위기준 시점2024단위ha출처 기관Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1)공간 단위베트남 성·시 63개(개편 전)"
+          },
+          "b": {
+            "box": {
+              "left": 710,
+              "right": 1400,
+              "top": 167.4375,
+              "bottom": 1302.25,
+              "width": 690,
+              "height": 1134.8125
+            },
+            "elementId": "B-034",
+            "legendCount": 1,
+            "selectorCount": 2,
+            "viewBox": "",
+            "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시지표산림탄소 순플럭스(누계)산림탄소 총배출(누계)산림탄소 총흡수(누계)지상부 탄소밀도지상부 탄소저장량기준 시점2001–2024Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다산림탄소 순플럭스(누계) (Mg CO2e) · 2001–2024자료정보데이터명산림 탄소선택 지표산림탄소 순플럭스(누계)기준 시점2001–2024단위Mg CO2e출처 기관ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (Harris et al. 2021) - 배포 30m 래스터(aboveground carbon stock 2000 v20230222, forest carbon gross emissions v20250430 · gross removals v20250416 · net flux v20250430) · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1)공간 단위베트남 성·시 63개(개편 전)"
+          },
+          "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+          "pageOverflow": -15,
+          "backAction": true
+        }
+      }
+    ],
+    "compareSideBySideDesktop": true,
+    "compareStackedMobile": true,
+    "compareUrlRestoration": true,
+    "compareRuntimeErrorCount": 0,
+    "runtimeFailure": null
+  },
+  "checks": [
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_RUNTIME",
+      "status": "PASS",
+      "actual": {
+        "runtimeFailure": null,
+        "present": true
+      },
+      "expected": {
+        "present": true
+      }
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_PAIR_COVERAGE",
+      "status": "PASS",
+      "actual": [
+        {
+          "name": "finance",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        },
+        {
+          "name": "vulnerability-budget",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        },
+        {
+          "name": "forest",
+          "selection": {
+            "changed": true,
+            "changedA": true,
+            "changedB": true
+          },
+          "present": true
+        }
+      ],
+      "expected": 3
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_SIDE_BY_SIDE_DESKTOP",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 10,
+            "right": 700,
+            "top": 167.4375,
+            "bottom": 1133.5625,
+            "width": 690,
+            "height": 966.125
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목지역 협력범위·세부 활동지역기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지역 협력범위·세부 활동지역 (사업) · 2026참여국 범위세부 활동지역자료정보데이터명적응기금 사업항목지역 협력범위·세부 활동지역기준 시점2026단위사업출처 기관Adaptation Fund Board Secretariat공간 단위사업 참여국 범위와 세부 활동지역요약지역 협력사업2건참여국 범위2개세부 활동지역2곳지도에서 지역이나 지점을 누르면 값과 순위를 보여 줍니다."
+        },
+        "b": {
+          "box": {
+            "left": 710,
+            "right": 1400,
+            "top": 167.4375,
+            "bottom": 1247.21875,
+            "width": 690,
+            "height": 1079.78125
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목사업 위치·유형기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다사업 위치·유형 (건) · 2026자료정보데이터명탄소크레딧 사업항목사업 위치·유형기준 시점2026단위건출처 기관Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry · Global Carbon Council (GCC)공간 단위시설·지점 위치"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": "two non-overlapping horizontal panes"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_STACKED_MOBILE",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 8,
+            "right": 367,
+            "top": 258.59375,
+            "bottom": 894.96875,
+            "width": 359,
+            "height": 636.375
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "A데이터불러오는 중베트남방글라데시항목—기준 시점—Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지도 데이터 목록을 불러오는 중입니다범례 준비 중"
+        },
+        "b": {
+          "box": {
+            "left": 8,
+            "right": 367,
+            "top": 904.96875,
+            "bottom": 1541.34375,
+            "width": 359,
+            "height": 636.375
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "B데이터불러오는 중베트남방글라데시항목—기준 시점—Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지도 데이터 목록을 불러오는 중입니다범례 준비 중"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": "two stacked panes without overflow"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_INDEPENDENT_LEGENDS",
+      "status": "PASS",
+      "actual": [
+        {
+          "name": "finance",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "name": "vulnerability-budget",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "name": "forest",
+          "a": 1,
+          "b": 1
+        }
+      ],
+      "expected": "both panes have legends"
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_SYNCHRONIZED_VIEW",
+      "status": "PASS",
+      "actual": {
+        "runtimeSyncEvidence": true,
+        "sourceSyncContract": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_URL_RESTORATION",
+      "status": "PASS",
+      "actual": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 10,
+            "right": 707.5,
+            "top": 167.4375,
+            "bottom": 960.15625,
+            "width": 697.5,
+            "height": 792.71875
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "A데이터불러오는 중베트남항목—기준 시점—Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지도 데이터 목록을 불러오는 중입니다범례 준비 중"
+        },
+        "b": {
+          "box": {
+            "left": 717.5,
+            "right": 1415,
+            "top": 167.4375,
+            "bottom": 960.15625,
+            "width": 697.5,
+            "height": 792.71875
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "B데이터불러오는 중베트남항목—기준 시점—Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지도 데이터 목록을 불러오는 중입니다범례 준비 중"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      },
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_NORMAL_MAP_RETURN",
+      "status": "PASS",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "COMPARE_RUNTIME_ERROR_COUNT",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "type": "check",
+      "audit": "map-compare:v135",
+      "name": "BROKEN_ASSET",
+      "status": "PASS",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "pairResults": [
+    {
+      "name": "finance",
+      "a": "D-018",
+      "b": "C-025",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 10,
+            "right": 700,
+            "top": 167.4375,
+            "bottom": 1133.5625,
+            "width": 690,
+            "height": 966.125
+          },
+          "elementId": "D-018",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목지역 협력범위·세부 활동지역기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합지역 협력범위·세부 활동지역 (사업) · 2026참여국 범위세부 활동지역자료정보데이터명적응기금 사업항목지역 협력범위·세부 활동지역기준 시점2026단위사업출처 기관Adaptation Fund Board Secretariat공간 단위사업 참여국 범위와 세부 활동지역요약지역 협력사업2건참여국 범위2개세부 활동지역2곳지도에서 지역이나 지점을 누르면 값과 순위를 보여 줍니다."
+        },
+        "b": {
+          "box": {
+            "left": 710,
+            "right": 1400,
+            "top": 167.4375,
+            "bottom": 1247.21875,
+            "width": 690,
+            "height": 1079.78125
+          },
+          "elementId": "C-025",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목사업 위치·유형기준 시점2026Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다사업 위치·유형 (건) · 2026자료정보데이터명탄소크레딧 사업항목사업 위치·유형기준 시점2026단위건출처 기관Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry · Global Carbon Council (GCC)공간 단위시설·지점 위치"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    },
+    {
+      "name": "vulnerability-budget",
+      "a": "B-021",
+      "b": "D-008",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 10,
+            "right": 700,
+            "top": 167.4375,
+            "bottom": 1295.21875,
+            "width": 690,
+            "height": 1127.78125
+          },
+          "elementId": "B-021",
+          "legendCount": 1,
+          "selectorCount": 3,
+          "viewBox": "",
+          "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시지표GVI 취약성 지수1인당 GNI(로그)기대수명도시화율부양비빈곤 가구 비율(IWI<70)상수도 보급 가구 비율성개발지수(GDI)전기 보급 가구 비율종합 지방부패지수(SCI)평균 교육연수(25세 이상)휴대폰 보유 가구 비율기준 시점200020012002200320042005200620072008200920102011201220132014201520162017201820192020202120222023Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합 | geoBoundaries VNM ADM1 · CC BY 4.0 · 2025-07-01 34개 통합 대응선택한 지도 데이터를 불러오는 중입니다GVI 취약성 지수 (0–100 지수) · 2023자료정보데이터명지역 취약성선택 지표GVI 취약성 지수기준 시점2023단위0–100 지수출처 기관Global Data Lab (GDL Area Database) · Global Data Lab GVI · Global Data Lab GVI (Huisman et al., 2025) · Global Data Lab — GVIP Database (Huisman et al., 2025) · Global Data Lab (GDL Area Database)공간 단위베트남 성·시 63개(개편 전)읽는 법높을수록 사회경제적 취약성이 큼"
+        },
+        "b": {
+          "box": {
+            "left": 710,
+            "right": 1400,
+            "top": 167.4375,
+            "bottom": 1379.21875,
+            "width": 690,
+            "height": 1211.78125
+          },
+          "elementId": "D-008",
+          "legendCount": 1,
+          "selectorCount": 1,
+          "viewBox": "",
+          "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목성 단위 기후변화 지출 누계기준 시점2010-2013Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다성 단위 기후변화 지출 누계 (VND) · 2010-2013자료정보데이터명지역 기후예산항목성 단위 기후변화 지출 누계기준 시점2010-2013단위VND출처 기관United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015 · United Nations Development Programme 베트남사무소 · 베트남 기획투자부(MPI) — CPEIR 2022 · World Bank — Viet Nam Country Climate and Development Report (CCDR) 2022 · United Nations Development Programme · 베트남 기획투자부(MPI) — Viet Nam Climate Public Expenditure and Investment Review (CPEIR) 2015공간 단위베트남 성·시 63개(개편 전)"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    },
+    {
+      "name": "forest",
+      "a": "B-033",
+      "b": "B-034",
+      "selection": {
+        "changed": true,
+        "changedA": true,
+        "changedB": true
+      },
+      "snapshot": {
+        "present": true,
+        "mode": "side-by-side",
+        "synchronized": "true",
+        "a": {
+          "box": {
+            "left": 10,
+            "right": 700,
+            "top": 167.4375,
+            "bottom": 1353.5625,
+            "width": 690,
+            "height": 1186.125
+          },
+          "elementId": "B-033",
+          "legendCount": 1,
+          "selectorCount": 2,
+          "viewBox": "",
+          "text": "A데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시항목연간 수관 손실 — 성(省) 단위기준 시점200120022003200420052006200720082009201020112012201320142015201620172018201920202021202220232024Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합 | geoBoundaries VNM ADM1 · CC BY 4.0 · 2025-07-01 34개 통합 대응선택한 지도 데이터를 불러오는 중입니다연간 수관 손실 — 성(省) 단위 (ha) · 2024자료정보데이터명연간 산림손실항목연간 수관 손실 — 성(省) 단위기준 시점2024단위ha출처 기관Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1)공간 단위베트남 성·시 63개(개편 전)"
+        },
+        "b": {
+          "box": {
+            "left": 710,
+            "right": 1400,
+            "top": 167.4375,
+            "bottom": 1302.25,
+            "width": 690,
+            "height": 1134.8125
+          },
+          "elementId": "B-034",
+          "legendCount": 1,
+          "selectorCount": 2,
+          "viewBox": "",
+          "text": "B데이터가뭄건기·우기 유량 차이광물 매장량광물 생산량교통 인프라(도로·철도)국가적응계획 지역과제국제 이니셔티브국제기구 현지사무소국제기구·MDB 사업극한강수기술지원 사업기후기금 사업기후대농업용수 대리지표대학·연구기관·NGO물 스트레스미래기후 전망(CMIP6)민간 인프라 사업발전소베트남 송전망보증 지원사업부처·지자체 ODA사업 입찰·공모산림 이득산림 총면적산림 탄소생물다양성 위험수관 피복률수력 이론 잠재량수자원 시설연간 산림손실연평균 기온·강수외국기업 진출외국인 투자 규정(지역 특별 인센티브)유역면적이탄지 면적(산림 유형별 면적 중)재생에너지 지역계획재해 이력적응기금 사업전력공급 신뢰도주요 광산지역 기후예산지역 발전가격·지원지역 취약성지열 자원(심도별 지온)탄소시장 대상시설 업종 구성탄소크레딧 사업태양광 자원토지이용 면적토지이용 변화율토지피복 분류별 면적폭염풍력 자원하천유량한국 기관 사무소한국 기업 진출한국 지원사업한국 ODA 사업해수면 상승 전망핵심광물 부존현지 투자자 네트워크흐름방향CCS 시설·실증 및 후보지역CTCN 참여기관DNA 협력창구EDCF 사업GCF 사업JCM 사업MDB·DFI 금융NDC-SDG 지역조치PPP 사업 이력REDD+ 사업 참여지역베트남방글라데시지표산림탄소 순플럭스(누계)산림탄소 총배출(누계)산림탄소 총흡수(누계)지상부 탄소밀도지상부 탄소저장량기준 시점2001–2024Natural Earth · 로컬 국가 경계 | 국가 외곽선: geoBoundaries VNM ADM1(개편 전 63개 성·시) 병합선택한 지도 데이터를 불러오는 중입니다산림탄소 순플럭스(누계) (Mg CO2e) · 2001–2024자료정보데이터명산림 탄소선택 지표산림탄소 순플럭스(누계)기준 시점2001–2024단위Mg CO2e출처 기관ESA Climate Change Initiative — Biomass CCI (Santoro, M.; Cartus, O., GAMMA Remote Sensing) · NERC EDS CEDA 배포 · Global Forest Watch (Harris et al. 2021) · Global Forest Watch (Harris et al. 2021) - 배포 30m 래스터(aboveground carbon stock 2000 v20230222, forest carbon gross emissions v20250430 · gross removals v20250416 · net flux v20250430) · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1)공간 단위베트남 성·시 63개(개편 전)"
+        },
+        "url": "http://127.0.0.1:45539/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=global-data-lab-gvi-vulnerability-index%2Cjugwan-buceobyeol-gihu-yesan-gyumo&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C5.17&mapList=all#map",
+        "pageOverflow": -15,
+        "backAction": true
+      }
+    }
+  ],
+  "compareSideBySideDesktop": true,
+  "compareStackedMobile": true,
+  "compareUrlRestoration": true,
+  "compareRuntimeErrorCount": 0,
+  "runtimeFailure": null
+}

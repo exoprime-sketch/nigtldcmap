@@ -1,0 +1,1006 @@
+{
+  "startedAt": "2026-10-03T04:46:02.677Z",
+  "scenarios": [
+    {
+      "name": "vnm-choropleths",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 42,
+          "layers": [
+            "v124-fill-vnm-b-039"
+          ]
+        },
+        "legend_a": "이론 총잠재량 (GWh/년) · 2017 최소 5.23 GWh/년 최대 22,204 GWh/년",
+        "legendKind_a": "ramp",
+        "country_a": "VNM",
+        "renderer_a": "admin1-choropleth",
+        "rendered_b": {
+          "count": 42,
+          "layers": [
+            "v124-fill-vnm-b-041"
+          ]
+        },
+        "legend_b": "수평면 전일사량(GHI, 평균) (kWh/m²/일) · 1999–2018 장기평균(LTA) 최소 3.36 kWh/m²/일 최대 5.11 kWh/m²/일",
+        "legendKind_b": "ramp",
+        "country_b": "VNM",
+        "renderer_b": "admin1-choropleth",
+        "synchronized": "true",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 805,
+            "bottom": 873,
+            "left": 21,
+            "right": 240
+          },
+          "legendB": {
+            "top": 789,
+            "bottom": 873,
+            "left": 736,
+            "right": 1066
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1324,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1116,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 235.96000000000004,
+          "y": 369.23625,
+          "key": "VN34-01",
+          "layer": "v124-fill"
+        },
+        "card_a": "라이쩌우 (Lai Châu) 수력 이론 잠재량 · 성·시 이론 총잠재량 16,204 GWh/년 기준 시점 2017 순위(값이 큰 순) 34개 성·시 중 6위 성·시 평균 대비 +9,603.59 GWh/년 (평균 6,600.68 GWh/년) 이 위치로 확대 데이터 상세보기 자료연도 2017 · Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · IHA / EVN · International Hydropower Association (IHA 2024) · International Hydropower Association (IHA) · International Hydropower Association (IHA) / EVN · U.S. EIA International Energy Statistics · Vietnam Electricity (EVN) · World Bank / ESMAP (2017) · 베트남 총리 Decision 768/QĐ-TTg (2025) — 개정 PDP8 · Energy Institute Statistical Review of World Energy · 성·시 색 표시 선택 해제",
+        "linkedCardB": "왼쪽 지도에서 고른 위치를 이 지도의 값으로 보여 줍니다 라이쩌우 (Lai Châu) 태양광 자원 · 성·시 수평면 전일사량(GHI, 평균) 3.77 kWh/m²/일 기준 시점 1999–2018 장기평균(LTA) 순위(값이 큰 순) 34개 성·시 중 20위 성·시 평균 대비 −0.38 kWh/m²/일 (평균 4.15 kWh/m²/일) 이 위치로 확대 데이터 상세보기 자료연도 1999–2018 장기평균(LTA) · Global Solar Atlas 2.0 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Solar Atlas 2.0 · 성·시 색 표시 선택 해제",
+        "click_b": {
+          "x": 950.96,
+          "y": 369.23625,
+          "key": "VN34-01",
+          "layer": "v124-fill"
+        },
+        "card_b": "라이쩌우 (Lai Châu) 태양광 자원 · 성·시 수평면 전일사량(GHI, 평균) 3.77 kWh/m²/일 기준 시점 1999–2018 장기평균(LTA) 순위(값이 큰 순) 34개 성·시 중 20위 성·시 평균 대비 −0.38 kWh/m²/일 (평균 4.15 kWh/m²/일) 이 위치로 확대 데이터 상세보기 자료연도 1999–2018 장기평균(LTA) · Global Solar Atlas 2.0 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Solar Atlas 2.0 · 성·시 색 표시 선택 해제",
+        "summaryA": "요약 값 있는 지역 34 / 34개 성·시 최댓값 22,204 GWh/년 · 럼동 (Lâm Đồng) 최솟값 5.23 GWh/년 · 빈롱 (Vĩnh Long) 중앙값(파생) 2,420 GWh/년",
+        "summaryB": "요약 값 있는 지역 34 / 34개 성·시 최댓값 5.11 kWh/m²/일 · 떠이닌 (Tây Ninh) 최솟값 3.36 kWh/m²/일 · 뚜옌꽝 (Tuyên Quang) 중앙값(파생) 3.86 kWh/m²/일",
+        "infoA": "자료정보 데이터명 수력 이론 잠재량 선택 지표 이론 총잠재량 기준 시점 2017 단위 GWh/년 출처 기관 Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · IHA / EVN · International Hydropower Association (IHA 2024) · International Hydropower Association (IHA) · International Hydropower Association (IHA) / EVN · U.S. EIA International Energy Statistics · Vietnam Electricity (EVN) · World Bank / ESMAP (2017) · 베트남 총리 Decision 768/QĐ-TTg (2025) — 개정 PDP8 · Energy Institute Statistical Review of World Energy 공간 단위 베트남 성·시 34개(2025-07-01 시행)",
+        "infoB": "자료정보 데이터명 태양광 자원 선택 지표 수평면 전일사량(GHI, 평균) 기준 시점 1999–2018 장기평균(LTA) 단위 kWh/m²/일 출처 기관 Global Solar Atlas 2.0 · Global Solar Atlas 2.0 (World Bank/ESMAP, Solargis) · Global Solar Atlas 2.0 공간 단위 베트남 성·시 34개(2025-07-01 시행)",
+        "syncMove": {
+          "za": "5.293",
+          "zb": "5.293",
+          "ca": [
+            "106.4000",
+            "16.0564"
+          ],
+          "cb": [
+            "106.4000",
+            "16.0564"
+          ]
+        }
+      }
+    },
+    {
+      "name": "vnm-point-line",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 7,
+          "layers": [
+            "v122-cluster-vnm-a-023",
+            "v122-point-vnm-a-023",
+            "v129-point-symbol-vnm-a-023",
+            "v126-point-hit-vnm-a-023"
+          ]
+        },
+        "legend_a": "발전소 위치·발전원 (곳) · 2021 수력 174개 태양광 16개 풍력 5개 석탄 24개 가스 9개 석유 6개 바이오매스 2개",
+        "legendKind_a": "point",
+        "country_a": "VNM",
+        "renderer_a": "cluster",
+        "rendered_b": {
+          "count": 1138,
+          "layers": [
+            "v124-line-vnm-a-024",
+            "v126-line-hit-vnm-a-024"
+          ]
+        },
+        "legend_b": "전체 전압 (kV) · 2016 110 kV 220 kV 500 kV 기타 전압",
+        "legendKind_b": "area",
+        "country_b": "VNM",
+        "renderer_b": "line",
+        "synchronized": "true",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 760,
+            "bottom": 873,
+            "left": 21,
+            "right": 351
+          },
+          "legendB": {
+            "top": 820,
+            "bottom": 873,
+            "left": 736,
+            "right": 1036
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1148,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1096,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "renderedZoomed_a": {
+          "count": 11,
+          "layers": [
+            "v122-cluster-vnm-a-023",
+            "v122-point-vnm-a-023",
+            "v129-point-symbol-vnm-a-023",
+            "v126-point-hit-vnm-a-023"
+          ]
+        },
+        "renderedZoomed_b": {
+          "count": 309,
+          "layers": [
+            "v124-line-vnm-a-024",
+            "v126-line-hit-vnm-a-024"
+          ]
+        },
+        "click_a": {
+          "x": 278.1400000000001,
+          "y": 649.5562500000002,
+          "key": "v124-a-023-entity-00009",
+          "layer": "v126-point-hit"
+        },
+        "card_a": "주 분석 · 발전소 Mao Khe 국가 베트남 명칭 Mao Khe 발전원 석탄 소유·운영 Vinacomin 설비용량 440 MW 가동 연도 미기재 소재지 하노이 (Hà Nội) · 개편 후 34개 기준 자료 출처 WRI GPPD (2021) · Vietnam Electricity Annual Report 선택 해제",
+        "click_b": {
+          "x": 950.96,
+          "y": 369.23625,
+          "key": "A-024-WB2016-0509",
+          "layer": "v126-line-hit"
+        },
+        "card_b": "220 kV 송전선 구간 베트남 송전망 전압 220 kV 구간 길이 25.93 km 운영 상태 existing 이 위치로 확대 데이터 상세보기 자료연도 2016 · World Bank Group / ENERGYDATA.INFO · 선 표시 선택 해제",
+        "summaryA": "요약 표시 대상 236곳 수력 174개 태양광 16개 풍력 5개 석탄 24개 가스 9개 석유 6개 바이오매스 2개",
+        "summaryB": "요약 표시 구간 606개 110 kV 431개 구간 220 kV 143개 구간 500 kV 32개 구간",
+        "infoA": "자료정보 데이터명 발전소 항목 발전소 위치·발전원 기준 시점 2021 단위 곳 출처 기관 OpenStreetMap contributors · World Resources Institute · OpenStreetMap contributors 공간 단위 시설·지점 위치",
+        "infoB": "자료정보 데이터명 베트남 송전망 선택 지표 전체 전압 기준 시점 2016 단위 kV 출처 기관 World Bank Group / ENERGYDATA.INFO 공간 단위 선형 구간(송전선 등)",
+        "syncMove": {
+          "za": "9.400",
+          "zb": "9.400",
+          "ca": [
+            "105.9000",
+            "21.2000"
+          ],
+          "cb": [
+            "105.9000",
+            "21.2000"
+          ]
+        }
+      }
+    },
+    {
+      "name": "vnm-unit-group",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 376,
+          "layers": [
+            "v124-fill-vnm-b-017"
+          ]
+        },
+        "legend_a": "종합 물 리스크(기본 가중) (점) · 2023 매우 높음 (4-5) 112 높음 (3-4) 155 중간–높음 (2-3) 120",
+        "legendKind_a": "area",
+        "country_a": "VNM",
+        "renderer_a": "unit-choropleth",
+        "rendered_b": {
+          "count": 73,
+          "layers": [
+            "v124-fill-vnm-a-022"
+          ]
+        },
+        "legend_b": "평균 정전시간(SAIDI) (분/고객) · 2026 중부전력총공사(EVNCPC) 13 남부전력총공사( EVNSPC ) 19 호찌민시전력총공사(EVNHCMC) 3 하노이전력총공사( EVNHANOI ) 1",
+        "legendKind_b": "area",
+        "country_b": "VNM",
+        "renderer_b": "partial-choropleth",
+        "synchronized": "true",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 799,
+            "bottom": 873,
+            "left": 21,
+            "right": 351
+          },
+          "legendB": {
+            "top": 752,
+            "bottom": 873,
+            "left": 736,
+            "right": 1066
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1097,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1174,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 235.96000000000004,
+          "y": 369.23625,
+          "key": "436870-VNM.36_1-1626",
+          "layer": "v124-fill"
+        },
+        "card_a": "유역 436870 · Lai Châu 물 스트레스 · 평가구역 종합 물 리스크(기본 가중) 2.2 점 분류 Medium - High (2-3) 기준 시점 2023 이 위치로 확대 데이터 상세보기 자료연도 2023 · World Resources Institute (WRI) Aqueduct 4.0 · 평가구역 색 표시 선택 해제",
+        "click_b": {
+          "x": 1056.41,
+          "y": 421.79625,
+          "key": "VN-HN",
+          "layer": "v124-fill"
+        },
+        "card_b": "하노이 (Hà Nội) 전력공급 신뢰도 · 성·시 평균 정전시간(SAIDI) 29.81 분/고객 분류 하노이전력총공사(EVNHANOI) 기준 시점 2026 자료 설명 소속 그룹 전체에 적용되는 값이며, 지역마다 다른 값이 아닙니다. 이 위치로 확대 데이터 상세보기 자료연도 2026 · Vietnam Electricity (EVN) · 성·시 색 표시(일부 지역) 선택 해제",
+        "summaryA": "요약 표시한 평가구역 442개 매우 높음 (4-5) 112개 높음 (3-4) 155개 중간–높음 (2-3) 120개",
+        "summaryB": "요약 표시한 성·시 63개 중부전력총공사(EVNCPC) 13개 남부전력총공사(EVNSPC) 19개 호찌민시전력총공사(EVNHCMC) 3개 하노이전력총공사(EVNHANOI) 1개",
+        "infoA": "자료정보 데이터명 물 스트레스 선택 지표 종합 물 리스크(기본 가중) 기준 시점 2023 단위 점 출처 기관 World Resources Institute (WRI) Aqueduct 4.0 공간 단위 평가구역 442개",
+        "infoB": "자료정보 데이터명 전력공급 신뢰도 선택 지표 평균 정전시간(SAIDI) 기준 시점 2026 단위 분/고객 출처 기관 Vietnam Electricity (EVN) 공간 단위 베트남 성·시 63개(개편 전)",
+        "syncMove": {
+          "za": "5.293",
+          "zb": "5.293",
+          "ca": [
+            "106.4000",
+            "16.0564"
+          ],
+          "cb": [
+            "106.4000",
+            "16.0564"
+          ]
+        }
+      }
+    },
+    {
+      "name": "vnm-bgd-cross",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 42,
+          "layers": [
+            "v124-fill-vnm-b-039"
+          ]
+        },
+        "legend_a": "이론 총잠재량 (GWh/년) · 2017 최소 5.23 GWh/년 최대 22,204 GWh/년",
+        "legendKind_a": "ramp",
+        "country_a": "VNM",
+        "renderer_a": "admin1-choropleth",
+        "rendered_b": {
+          "count": 15,
+          "layers": [
+            "v124-fill-bgd-b-039"
+          ]
+        },
+        "legend_b": "이론 총잠재량 (GWh/yr) · 2017 최소 67.38 GWh/yr 최대 21,226 GWh/yr",
+        "legendKind_b": "ramp",
+        "country_b": "BGD",
+        "renderer_b": "admin1-choropleth",
+        "synchronized": "false",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 805,
+            "bottom": 873,
+            "left": 21,
+            "right": 240
+          },
+          "legendB": {
+            "top": 805,
+            "bottom": 873,
+            "left": 736,
+            "right": 958
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1324,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1116,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 235.96000000000004,
+          "y": 369.23625,
+          "key": "VN34-01",
+          "layer": "v124-fill"
+        },
+        "card_a": "라이쩌우 (Lai Châu) 수력 이론 잠재량 · 성·시 이론 총잠재량 16,204 GWh/년 기준 시점 2017 순위(값이 큰 순) 34개 성·시 중 6위 성·시 평균 대비 +9,603.59 GWh/년 (평균 6,600.68 GWh/년) 이 위치로 확대 데이터 상세보기 자료연도 2017 · Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · IHA / EVN · International Hydropower Association (IHA 2024) · International Hydropower Association (IHA) · International Hydropower Association (IHA) / EVN · U.S. EIA International Energy Statistics · Vietnam Electricity (EVN) · World Bank / ESMAP (2017) · 베트남 총리 Decision 768/QĐ-TTg (2025) — 개정 PDP8 · Energy Institute Statistical Review of World Energy · 성·시 색 표시 선택 해제",
+        "click_b": {
+          "x": 908.78,
+          "y": 369.23625,
+          "key": "BGD.6_1",
+          "layer": "v124-fill"
+        },
+        "card_b": "랑푸르 (Rangpur) 수력 이론 잠재량 · 주(Division) 이론 총잠재량 12,204 GWh/yr 기준 시점 2017 순위(값이 큰 순) 8개 주(Division) 중 2위 주(Division) 평균 대비 +3,846.89 GWh/yr (평균 8,357.39 GWh/yr) 이 위치로 확대 데이터 상세보기 자료연도 2017 · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 · 주(Division) 색 표시 선택 해제",
+        "summaryA": "요약 값 있는 지역 34 / 34개 성·시 최댓값 22,204 GWh/년 · 럼동 (Lâm Đồng) 최솟값 5.23 GWh/년 · 빈롱 (Vĩnh Long) 중앙값(파생) 2,420 GWh/년",
+        "summaryB": "요약 값 있는 지역 8 / 8개 주(Division) 최댓값 21,226 GWh/yr · 라지샤히 (Rajshahi) 최솟값 67.38 GWh/yr · 바리살 (Barisal) 중앙값(파생) 7,541 GWh/yr",
+        "infoA": "자료정보 데이터명 수력 이론 잠재량 선택 지표 이론 총잠재량 기준 시점 2017 단위 GWh/년 출처 기관 Energy Institute Statistical Review of World Energy · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) / Gernaat et al.(2017) · IHA / EVN · International Hydropower Association (IHA 2024) · International Hydropower Association (IHA) · International Hydropower Association (IHA) / EVN · U.S. EIA International Energy Statistics · Vietnam Electricity (EVN) · World Bank / ESMAP (2017) · 베트남 총리 Decision 768/QĐ-TTg (2025) — 개정 PDP8 · Energy Institute Statistical Review of World Energy 공간 단위 베트남 성·시 34개(2025-07-01 시행)",
+        "infoB": "자료정보 데이터명 수력 이론 잠재량 선택 지표 이론 총잠재량 기준 시점 2017 단위 GWh/yr 출처 기관 Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 공간 단위 방글라데시 주(Division) 8개"
+      }
+    },
+    {
+      "name": "bgd-choropleth-point",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 15,
+          "layers": [
+            "v124-fill-bgd-b-039"
+          ]
+        },
+        "legend_a": "이론 총잠재량 (GWh/yr) · 2017 최소 67.38 GWh/yr 최대 21,226 GWh/yr",
+        "legendKind_a": "ramp",
+        "country_a": "BGD",
+        "renderer_a": "admin1-choropleth",
+        "rendered_b": {
+          "count": 112,
+          "layers": [
+            "v122-point-bgd-a-023",
+            "v126-point-hit-bgd-a-023"
+          ]
+        },
+        "legend_b": "전체 (곳) · 2021 석유 26 가스 27 석탄 1 수력 1 태양광 1",
+        "legendKind_b": "area",
+        "country_b": "BGD",
+        "renderer_b": "point-and-polygon",
+        "synchronized": "true",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 805,
+            "bottom": 873,
+            "left": 21,
+            "right": 243
+          },
+          "legendB": {
+            "top": 799,
+            "bottom": 873,
+            "left": 736,
+            "right": 1066
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1115,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1103,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 193.78,
+          "y": 369.23625,
+          "key": "BGD.6_1",
+          "layer": "v124-fill"
+        },
+        "card_a": "랑푸르 (Rangpur) 수력 이론 잠재량 · 주(Division) 이론 총잠재량 12,204 GWh/yr 기준 시점 2017 순위(값이 큰 순) 8개 주(Division) 중 2위 주(Division) 평균 대비 +3,846.89 GWh/yr (평균 8,357.39 GWh/yr) 이 위치로 확대 데이터 상세보기 자료연도 2017 · Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 · 주(Division) 색 표시 선택 해제",
+        "click_b": {
+          "x": 929.87,
+          "y": 386.75625,
+          "key": "a-023-1915dd4f5b",
+          "layer": "v126-point-hit"
+        },
+        "card_b": "Thakurgaon (RZ) 발전소 분류 석유 설비용량 47 MW 좌표 근거 원천 geolocation_source: WRI 이 위치로 확대 데이터 상세보기 자료연도 2021 · World Resources Institute · 시설 지점·구역 표시 선택 해제",
+        "summaryA": "요약 값 있는 지역 8 / 8개 주(Division) 최댓값 21,226 GWh/yr · 라지샤히 (Rajshahi) 최솟값 67.38 GWh/yr · 바리살 (Barisal) 중앙값(파생) 7,541 GWh/yr",
+        "summaryB": "요약 표시 대상 56개 석유 26개 가스 27개 석탄 1개 수력 1개 태양광 1개",
+        "infoA": "자료정보 데이터명 수력 이론 잠재량 선택 지표 이론 총잠재량 기준 시점 2017 단위 GWh/yr 출처 기관 Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 공간 단위 방글라데시 주(Division) 8개",
+        "infoB": "자료정보 데이터명 발전소 선택 지표 전체 기준 시점 2021 단위 곳 출처 기관 World Resources Institute 공간 단위 시설·지점 위치",
+        "syncMove": {
+          "za": "6.650",
+          "zb": "6.650",
+          "ca": [
+            "90.3450",
+            "23.7182"
+          ],
+          "cb": [
+            "90.3450",
+            "23.7182"
+          ]
+        }
+      }
+    },
+    {
+      "name": "vnm-same-colors",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 42,
+          "layers": [
+            "v124-fill-vnm-b-033"
+          ]
+        },
+        "legend_a": "연간 수관 손실 — 성(省) 단위 (ha) · 2005 최소 0 ha 최대 14,265 ha 두 지도 같은 색 구간",
+        "legendKind_a": "ramp",
+        "country_a": "VNM",
+        "renderer_a": "admin1-choropleth",
+        "rendered_b": {
+          "count": 42,
+          "layers": [
+            "v124-fill-vnm-b-033"
+          ]
+        },
+        "legend_b": "연간 수관 손실 — 성(省) 단위 (ha) · 2024 최소 0 ha 최대 14,265 ha 두 지도 같은 색 구간",
+        "legendKind_b": "ramp",
+        "country_b": "VNM",
+        "renderer_b": "admin1-choropleth",
+        "synchronized": "true",
+        "sharedColors": "true",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 788,
+            "bottom": 873,
+            "left": 21,
+            "right": 254
+          },
+          "legendB": {
+            "top": 788,
+            "bottom": 873,
+            "left": 736,
+            "right": 969
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1269,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1269,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 235.96000000000004,
+          "y": 369.23625,
+          "key": "VN34-01",
+          "layer": "v124-fill"
+        },
+        "card_a": "라이쩌우 (Lai Châu) 연간 산림손실 · 성·시 연간 수관 손실 — 성(省) 단위 883 ha 기준 시점 2005 순위(값이 큰 순) 34개 성·시 중 21위 성·시 평균 대비 −2,125.44 ha (평균 3,008.44 ha) 이 위치로 확대 데이터 상세보기 자료연도 2005 · Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1) · 성·시 색 표시 선택 해제",
+        "click_b": {
+          "x": 950.96,
+          "y": 369.23625,
+          "key": "VN34-01",
+          "layer": "v124-fill"
+        },
+        "card_b": "라이쩌우 (Lai Châu) 연간 산림손실 · 성·시 연간 수관 손실 — 성(省) 단위 943.8 ha 기준 시점 2024 순위(값이 큰 순) 34개 성·시 중 26위 성·시 평균 대비 −2,852.48 ha (평균 3,796.24 ha) 이 위치로 확대 데이터 상세보기 자료연도 2024 · Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1) · 성·시 색 표시 선택 해제",
+        "summaryA": "요약 값 있는 지역 34 / 34개 성·시 최댓값 14,265 ha · 럼동 (Lâm Đồng) 최솟값 5.7 ha · 흥옌 (Hưng Yên) 중앙값(파생) 1,628 ha",
+        "summaryB": "요약 값 있는 지역 34 / 34개 성·시 최댓값 11,752 ha · 꽝닌 (Quảng Ninh) 최솟값 0 ha · 흥옌 (Hưng Yên) 중앙값(파생) 2,797 ha",
+        "infoA": "자료정보 데이터명 연간 산림손실 항목 연간 수관 손실 — 성(省) 단위 기준 시점 2005 단위 ha 출처 기관 Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1) 공간 단위 베트남 성·시 34개(2025-07-01 시행)",
+        "infoB": "자료정보 데이터명 연간 산림손실 항목 연간 수관 손실 — 성(省) 단위 기준 시점 2024 단위 ha 출처 기관 Global Forest Watch (UMD/WRI) — Hansen/UMD tree cover loss × 습윤열대 1차림 지도(Turubanova et al. 2018) · Global Forest Watch (UMD/WRI, Hansen et al. 2013) · 경계 GADM 4.1 ADM1 · Global Forest Watch / Hansen (UMD) · Global Forest Watch / UMD (Hansen et al. 2013) Global Forest Change 2024 v1.12 30m 래스터 · 경계 OSM 개편 후 ADM1(v1.2, 육지 마스크 GADM 4.1) 공간 단위 베트남 성·시 34개(2025-07-01 시행)",
+        "syncMove": {
+          "za": "5.293",
+          "zb": "5.293",
+          "ca": [
+            "106.4000",
+            "16.0564"
+          ],
+          "cb": [
+            "106.4000",
+            "16.0564"
+          ]
+        }
+      }
+    },
+    {
+      "name": "vnm-scope-point",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "rendered_a": {
+          "count": 10,
+          "layers": [
+            "v124-fill-vnm-d-018",
+            "v122-point-vnm-d-018",
+            "v129-point-symbol-vnm-d-018",
+            "v126-point-hit-vnm-d-018"
+          ]
+        },
+        "legend_a": "지역 협력범위·세부 활동지역 (사업) · 2026 참여국 범위 세부 활동지역",
+        "legendKind_a": "area",
+        "country_a": "VNM",
+        "renderer_a": "regional-scope",
+        "rendered_b": {
+          "count": 1023,
+          "layers": [
+            "v122-point-vnm-c-025",
+            "v129-point-symbol-vnm-c-025",
+            "v126-point-hit-vnm-c-025"
+          ]
+        },
+        "legend_b": "사업 위치·유형 (건) · 2026 CDM 200개 Gold Standard 60개 Verra VCS 63개 GCC 18개",
+        "legendKind_b": "point",
+        "country_b": "VNM",
+        "renderer_b": "point",
+        "synchronized": "true",
+        "sharedColors": "false",
+        "fit1440": {
+          "innerHeight": 900,
+          "innerWidth": 1440,
+          "mapA": {
+            "top": 299,
+            "bottom": 883,
+            "left": 11,
+            "right": 714
+          },
+          "mapB": {
+            "top": 299,
+            "bottom": 883,
+            "left": 726,
+            "right": 1429
+          },
+          "legendA": {
+            "top": 820,
+            "bottom": 873,
+            "left": 21,
+            "right": 261
+          },
+          "legendB": {
+            "top": 788,
+            "bottom": 873,
+            "left": 736,
+            "right": 1066
+          },
+          "paneA": {
+            "top": 167,
+            "bottom": 1078,
+            "left": 10,
+            "right": 715
+          },
+          "paneB": {
+            "top": 167,
+            "bottom": 1173,
+            "left": 725,
+            "right": 1430
+          },
+          "overflow": 0
+        },
+        "click_a": {
+          "x": 257.05000000000007,
+          "y": 369.23625,
+          "key": "v124-d-018-entity-00002:scope",
+          "layer": "v124-fill"
+        },
+        "card_a": "Groundwater resources in the Greater Mekong Subregion: Collaborative management to increase resilience (Cambodia, Lao People’s Democratic Republic, Thailand, Viet Nam) 적응기금 사업 운영 상태 Project Under Implementation 참여국 Cambodia · Lao PDR · Thailand · Viet Nam 이 위치로 확대 데이터 상세보기 자료연도 2026 · Adaptation Fund Board Secretariat · 사업 범위 표시 선택 해제",
+        "click_b": {
+          "x": 972.0500000000001,
+          "y": 369.23625,
+          "key": "v124-c-025-entity-01118",
+          "layer": "v126-point-hit"
+        },
+        "card_b": "주 분석 · 탄소크레딧 사업 Nam Si Luong 1 hydropower project 국가 베트남 명칭 Nam Si Luong 1 hydropower project 등록 제도 Verra VCS 사업자 Nam Si Luong 1 Hydropower Joint Stock Company 규모 97,992 tCO₂e/년 시점 미기재 상태 Registration requested 소재지 라이쩌우 (Lai Chau) (성·시 경계 밖 · 원문 표기) 자료 출처 registry.verra.org/verra/public/program/VCS/projects/2024 선택 해제",
+        "summaryA": "요약 지역 협력사업 2건 참여국 범위 2개 세부 활동지역 2곳",
+        "summaryB": "요약 표시 대상 341건 CDM 200개 Gold Standard 60개 Verra VCS 63개 GCC 18개",
+        "infoA": "자료정보 데이터명 적응기금 사업 항목 지역 협력범위·세부 활동지역 기준 시점 2026 단위 사업 출처 기관 Adaptation Fund Board Secretariat 공간 단위 사업 참여국 범위와 세부 활동지역",
+        "infoB": "자료정보 데이터명 탄소크레딧 사업 항목 사업 위치·유형 기준 시점 2026 단위 건 출처 기관 Global Carbon Council (GCC) · UNFCCC CDM Insights · Verra Registry / Gold Standard Registry / CarbonPlan offsets-db · Verra VCS Registry · Gold Standard Registry · Global Carbon Council (GCC) 공간 단위 시설·지점 위치",
+        "syncMove": {
+          "za": "5.293",
+          "zb": "5.293",
+          "ca": [
+            "106.4000",
+            "16.0564"
+          ],
+          "cb": [
+            "106.4000",
+            "16.0564"
+          ]
+        }
+      }
+    },
+    {
+      "name": "flow",
+      "console": [],
+      "broken": [],
+      "checks": {
+        "entryElements": "D-018,C-025",
+        "entryUrl": "http://127.0.0.1:5061/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CVNM&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C4.99#map",
+        "afterCountry": {
+          "elements": "D-018,C-025",
+          "countries": "VNM,BGD",
+          "sync": "false",
+          "notice": "",
+          "url": "http://127.0.0.1:5061/?layer=electricityGap&layers=none&contextLayers=none&mapMode=compare&compareLayers=adaptation-fund-peurojegteu-peurojegteumyeong-gugga-silhaenggigwan-nie-mie-gubun-gigwanmye%2Ctansokeuredis-balhaeng-sogag-siljeog-peurojegteumyeong-deungrog-pyojun-vcs-gs-gugga-gisul&compareCountries=VNM%2CBGD&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C4.99#map",
+          "renderedB": {
+            "count": 36,
+            "layers": [
+              "v122-point-bgd-c-025",
+              "v126-point-hit-bgd-c-025"
+            ]
+          }
+        },
+        "afterCountryA": {
+          "elements": "B-005,C-025",
+          "sync": "true",
+          "notice": "방글라데시에는 이 데이터가 없어 '가뭄'을 표시합니다.×"
+        },
+        "swap": {
+          "before": "B-005,C-025",
+          "after": "C-025,B-005"
+        },
+        "widths": {
+          "320": {
+            "innerHeight": 844,
+            "innerWidth": 320,
+            "mapA": {
+              "top": 542,
+              "bottom": 922,
+              "left": 9,
+              "right": 311
+            },
+            "mapB": {
+              "top": 1891,
+              "bottom": 2270,
+              "left": 9,
+              "right": 311
+            },
+            "legendA": {
+              "top": 775,
+              "bottom": 912,
+              "left": 19,
+              "right": 301
+            },
+            "legendB": {
+              "top": 2192,
+              "bottom": 2260,
+              "left": 19,
+              "right": 248
+            },
+            "paneA": {
+              "top": 307,
+              "bottom": 1645,
+              "left": 8,
+              "right": 312
+            },
+            "paneB": {
+              "top": 1655,
+              "bottom": 2686,
+              "left": 8,
+              "right": 312
+            },
+            "overflow": 0
+          },
+          "390": {
+            "innerHeight": 844,
+            "innerWidth": 390,
+            "mapA": {
+              "top": 434,
+              "bottom": 814,
+              "left": 9,
+              "right": 381
+            },
+            "mapB": {
+              "top": 1706,
+              "bottom": 2085,
+              "left": 9,
+              "right": 381
+            },
+            "legendA": {
+              "top": 667,
+              "bottom": 804,
+              "left": 19,
+              "right": 349
+            },
+            "legendB": {
+              "top": 2007,
+              "bottom": 2075,
+              "left": 19,
+              "right": 248
+            },
+            "paneA": {
+              "top": 259,
+              "bottom": 1520,
+              "left": 8,
+              "right": 382
+            },
+            "paneB": {
+              "top": 1530,
+              "bottom": 2465,
+              "left": 8,
+              "right": 382
+            },
+            "overflow": 0
+          },
+          "768": {
+            "innerHeight": 844,
+            "innerWidth": 768,
+            "mapA": {
+              "top": 386,
+              "bottom": 766,
+              "left": 9,
+              "right": 759
+            },
+            "mapB": {
+              "top": 1436,
+              "bottom": 1816,
+              "left": 9,
+              "right": 759
+            },
+            "legendA": {
+              "top": 619,
+              "bottom": 756,
+              "left": 19,
+              "right": 349
+            },
+            "legendB": {
+              "top": 1738,
+              "bottom": 1806,
+              "left": 19,
+              "right": 248
+            },
+            "paneA": {
+              "top": 211,
+              "bottom": 1251,
+              "left": 8,
+              "right": 760
+            },
+            "paneB": {
+              "top": 1261,
+              "bottom": 2032,
+              "left": 8,
+              "right": 760
+            },
+            "overflow": 0
+          },
+          "1024": {
+            "innerHeight": 900,
+            "innerWidth": 1024,
+            "mapA": {
+              "top": 364,
+              "bottom": 948,
+              "left": 11,
+              "right": 506
+            },
+            "mapB": {
+              "top": 364,
+              "bottom": 948,
+              "left": 518,
+              "right": 1013
+            },
+            "legendA": {
+              "top": 754,
+              "bottom": 938,
+              "left": 21,
+              "right": 351
+            },
+            "legendB": {
+              "top": 869,
+              "bottom": 938,
+              "left": 528,
+              "right": 769
+            },
+            "paneA": {
+              "top": 232,
+              "bottom": 1525,
+              "left": 10,
+              "right": 507
+            },
+            "paneB": {
+              "top": 232,
+              "bottom": 1309,
+              "left": 517,
+              "right": 1014
+            },
+            "overflow": 0
+          },
+          "1440": {
+            "innerHeight": 900,
+            "innerWidth": 1440,
+            "mapA": {
+              "top": 299,
+              "bottom": 883,
+              "left": 11,
+              "right": 714
+            },
+            "mapB": {
+              "top": 299,
+              "bottom": 883,
+              "left": 726,
+              "right": 1429
+            },
+            "legendA": {
+              "top": 689,
+              "bottom": 873,
+              "left": 21,
+              "right": 351
+            },
+            "legendB": {
+              "top": 804,
+              "bottom": 873,
+              "left": 736,
+              "right": 977
+            },
+            "paneA": {
+              "top": 167,
+              "bottom": 1368,
+              "left": 10,
+              "right": 715
+            },
+            "paneB": {
+              "top": 167,
+              "bottom": 1099,
+              "left": 725,
+              "right": 1430
+            },
+            "overflow": 0
+          },
+          "1920": {
+            "innerHeight": 900,
+            "innerWidth": 1920,
+            "mapA": {
+              "top": 299,
+              "bottom": 883,
+              "left": 11,
+              "right": 954
+            },
+            "mapB": {
+              "top": 299,
+              "bottom": 883,
+              "left": 966,
+              "right": 1909
+            },
+            "legendA": {
+              "top": 689,
+              "bottom": 873,
+              "left": 21,
+              "right": 351
+            },
+            "legendB": {
+              "top": 804,
+              "bottom": 873,
+              "left": 976,
+              "right": 1217
+            },
+            "paneA": {
+              "top": 167,
+              "bottom": 1258,
+              "left": 10,
+              "right": 955
+            },
+            "paneB": {
+              "top": 167,
+              "bottom": 1099,
+              "left": 965,
+              "right": 1910
+            },
+            "overflow": 0
+          }
+        },
+        "closed": {
+          "workspace": 0,
+          "url": "http://127.0.0.1:5061/?layer=electricityGap&layers=none&contextLayers=none&scope=priority&country=VNM&baseOpacity=0.58&view=106.40000%2C16.05644%2C4.99#map",
+          "mapVisible": "visible"
+        }
+      }
+    }
+  ],
+  "extra": {}
+}

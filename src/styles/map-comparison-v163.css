@@ -1,0 +1,606 @@
+/* V163 "비교해서 보기": two complete maps side by side (stacked on a phone).
+   The workspace covers the normal map, which stays mounted underneath so the
+   reader returns to it exactly as left. */
+
+.cdp-map-page--compare-v163 {
+  position: relative;
+}
+
+.cdp-map-page--compare-v163 > .cdp-map-layout {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cmp163 {
+  position: absolute;
+  z-index: 24;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #e9f0ed;
+  color: #183f32;
+}
+
+.cmp163__header {
+  position: sticky;
+  z-index: 6;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #c5d6cf;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.cmp163__heading {
+  min-width: 0;
+}
+
+.cmp163__heading > span {
+  color: #176a4b;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.cmp163__heading h2,
+.cmp163__heading p {
+  margin: 0;
+}
+
+.cmp163__heading h2 {
+  color: #183f32;
+  font-size: 1rem;
+}
+
+.cmp163__heading p {
+  margin-top: 2px;
+  color: #587068;
+  font-size: 0.72rem;
+}
+
+.cmp163__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.cmp163-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 4px 10px;
+  border: 1px solid #c5d6cf;
+  border-radius: 9px;
+  background: #f6faf8;
+  color: #205440;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cmp163-toggle input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #176a4b;
+}
+
+.cmp163__tool,
+.cmp163__close {
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid #9cb9ad;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #205440;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cmp163__close {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-color: #176a4b;
+  background: #176a4b;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.cmp163__close small {
+  font-size: 0.64rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.cmp163__tool:hover,
+.cmp163__close:hover,
+.cmp163-toggle:hover {
+  border-color: #176a4b;
+}
+
+.cmp163__tool:focus-visible,
+.cmp163__close:focus-visible,
+.cmp163-toggle:focus-within,
+.cmp163-countries button:focus-visible,
+.cmp163-field select:focus-visible {
+  outline: 3px solid #f0a51a;
+  outline-offset: 1px;
+}
+
+.cmp163__panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px;
+}
+
+.cmp163-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #c5d6cf;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.cmp163-pane__controls {
+  display: grid;
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0ebe6;
+}
+
+.cmp163-pane__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 6px 8px;
+  min-width: 0;
+}
+
+.cmp163-pane__badge {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  background: #183f32;
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.cmp163-field {
+  display: grid;
+  flex: 1 1 180px;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cmp163-field--data {
+  flex: 1 1 220px;
+}
+
+.cmp163-field--period {
+  flex: 0 1 150px;
+}
+
+.cmp163-field > span {
+  color: #5b7168;
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+
+.cmp163-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 5px 26px 5px 8px;
+  border: 1px solid #b9cdc4;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e4638;
+  font: inherit;
+  font-size: 0.76rem;
+}
+
+.cmp163-countries {
+  display: inline-flex;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid #b9cdc4;
+  border-radius: 8px;
+}
+
+.cmp163-countries button {
+  min-width: 64px;
+  min-height: 36px;
+  padding: 4px 10px;
+  border: 0;
+  border-left: 1px solid #d7e5e1;
+  background: #ffffff;
+  color: #2f5446;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cmp163-countries button:first-child {
+  border-left: 0;
+}
+
+.cmp163-countries button.is-active {
+  background: #176a4b;
+  color: #ffffff;
+}
+
+.cmp163-countries button[aria-busy="true"] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* Said once when a country switch replaced the data; sits on the map so the
+   two maps keep the same height. */
+.cmp163-pane__notice {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: calc(100% - 64px);
+  margin: 0;
+  padding: 5px 6px 5px 9px;
+  border: 1px solid #f0d58a;
+  border-radius: 7px;
+  background: #fff6e0;
+  box-shadow: 0 3px 10px rgba(24, 63, 50, 0.12);
+  color: #6b4b00;
+  font-size: 0.72rem;
+}
+
+.cmp163-pane__notice button {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #6b4b00;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cmp163-field--fixed > strong {
+  display: block;
+  overflow: hidden;
+  min-height: 36px;
+  padding: 8px 9px;
+  border: 1px solid #d7e5e1;
+  border-radius: 8px;
+  background: #f7faf9;
+  color: #163d35;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cmp163-pane__map {
+  position: relative;
+  height: clamp(300px, calc(100vh - var(--header-height, 66px) - 250px), 640px);
+  min-width: 0;
+  overflow: hidden;
+  background: #e7efeb;
+}
+
+.cmp163-pane__canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.cmp163-pane__status {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: min(320px, calc(100% - 32px));
+  padding: 12px 14px;
+  border: 1px solid #c5d6cf;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 18px rgba(24, 63, 50, 0.12);
+  color: #2f5446;
+  font-size: 0.8rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.cmp163-pane__status p {
+  margin: 0;
+}
+
+.cmp163-pane__status--error {
+  border-color: #e3b4a8;
+  color: #8a2f1c;
+}
+
+.cmp163-pane__status button {
+  min-height: 36px;
+  padding: 4px 14px;
+  border: 1px solid #176a4b;
+  border-radius: 8px;
+  background: #176a4b;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* The legend sits on the map so it is always in view with it. */
+.cmp163-legend {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 10px;
+  max-width: min(330px, calc(100% - 20px));
+  max-height: 46%;
+  overflow: auto;
+  padding: 7px 10px;
+  border: 1px solid #c5d6cf;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 14px rgba(24, 63, 50, 0.12);
+  font-size: 0.72rem;
+}
+
+.cmp163-legend__title {
+  margin: 0 0 4px;
+  color: #183f32;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.cmp163-legend__title span {
+  font-weight: 600;
+}
+
+.cmp163-legend__period {
+  color: #587068;
+}
+
+.cmp163-legend__ramp {
+  display: block;
+  width: 100%;
+  min-width: 180px;
+  height: 10px;
+  border: 1px solid #b9cdc4;
+  border-radius: 3px;
+}
+
+.cmp163-legend__ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2px;
+  color: #2f5446;
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cmp163-legend__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cmp163-legend__chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #2f5446;
+}
+
+.cmp163-legend__swatch {
+  width: 14px;
+  height: 12px;
+  border: 1px solid rgba(24, 63, 50, 0.3);
+  border-radius: 2px;
+}
+
+.cmp163-legend__swatch--none {
+  background: repeating-linear-gradient(45deg, #ffffff 0 3px, #dfe8e4 3px 6px);
+}
+
+.cmp163-legend__dot {
+  width: 11px;
+  height: 11px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(24, 63, 50, 0.35);
+}
+
+.cmp163-legend__line {
+  width: 18px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.cmp163-legend__count {
+  color: #6b7a76;
+  font-variant-numeric: tabular-nums;
+}
+
+.cmp163-legend__shared {
+  color: #1d3f8f;
+  font-weight: 700;
+}
+
+.cmp163-legend .mi152-legend-wrap {
+  margin-top: 2px;
+}
+
+.cmp163-pane__info {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.cmp163-card {
+  position: relative;
+  padding: 8px 10px;
+  border: 1px solid #f0c66a;
+  border-radius: 9px;
+  background: #fffaf0;
+}
+
+.cmp163-card__linked {
+  margin: 0 0 6px;
+  color: #1d3f8f;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.cmp163-card__point > * {
+  max-width: none;
+}
+
+.cmp163-card__close {
+  margin-top: 6px;
+  padding: 3px 10px;
+  border: 1px solid #c5d6cf;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #2f5446;
+  font: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.cmp163-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.cmp163-info__block {
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #e0ebe6;
+  border-radius: 9px;
+  background: #fbfdfc;
+}
+
+.cmp163-info__block h3 {
+  margin: 0 0 6px;
+  color: #176a4b;
+  font-size: 0.78rem;
+}
+
+.cmp163-info__block dl {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.cmp163-info__block dl > div {
+  display: grid;
+  grid-template-columns: minmax(78px, 0.42fr) minmax(0, 1fr);
+  gap: 8px;
+  font-size: 0.74rem;
+}
+
+.cmp163-info__block dt {
+  color: #5b7168;
+  font-weight: 700;
+}
+
+.cmp163-info__block dd {
+  min-width: 0;
+  margin: 0;
+  color: #183f32;
+  overflow-wrap: anywhere;
+}
+
+.cmp163-info__hint {
+  margin: 8px 0 0;
+  color: #6b7a76;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .cdp-map-page--compare-v163 {
+    height: auto;
+  }
+
+  .cdp-map-page--compare-v163 > .cdp-map-layout {
+    position: absolute !important;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .cmp163 {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+
+  .cmp163__header {
+    position: static;
+    padding: 8px 10px;
+  }
+
+  .cmp163__heading p {
+    display: none;
+  }
+
+  .cmp163__panes {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 8px;
+  }
+
+  .cmp163-pane__map {
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  .cmp163-countries {
+    flex: 1 1 100%;
+  }
+
+  .cmp163-countries button {
+    flex: 1 1 0;
+  }
+
+  .cmp163-legend {
+    max-height: 36%;
+    font-size: 0.68rem;
+  }
+}

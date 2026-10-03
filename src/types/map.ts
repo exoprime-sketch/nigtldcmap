@@ -1,3 +1,7 @@
+import {
+  parseCompareCountriesV163,
+  parseCompareSelectorsV163,
+} from "../components/map/compare/compareModelV163";
 import { resolveCountryElementIdV122 } from "../data/countries/countryDataFacadeV122";
 
 export type MapLayerId =
@@ -82,8 +86,15 @@ export interface MapViewState {
   mapPresetId: string | null;
   /** V135 dedicated two-map comparison workspace. */
   comparisonMode: boolean;
-  /** Exactly two verified element ids while comparison mode is active. */
+  /**
+   * Exactly two verified element ids while comparison mode is active. V163:
+   * the two may be the same element (two periods, or two countries).
+   */
   comparisonLayerIds: string[];
+  /** V163: each comparison pane's country (`compareCountries=VNM,BGD`). */
+  comparisonCountries?: string[];
+  /** V163: each comparison pane's chosen variable and period, when not the default. */
+  comparisonSelectors?: Array<{ variable: string; period: string } | null>;
   /** Per-layer public variable and period selections restored from the URL. */
   layerSelectors: Record<string, { variable: string; period: string }>;
   /**
@@ -401,10 +412,17 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
     ? mapPresetParam
     : null;
   const comparisonMode = params.get("mapMode") === "compare";
-  const comparisonLayerIds = uniqueValidKeys(
-    (params.get("compareLayers") || "").split(","),
-    countryIso3
-  ).slice(0, 2);
+  // V163: one id per pane, in pane order. Not de-duplicated: the same dataset
+  // in two periods or two countries is a comparison.
+  const comparisonLayerIds = (params.get("compareLayers") || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .map((value) => normalizeModernElementMapKey(value, countryIso3))
+    .filter((key): key is string => Boolean(key))
+    .slice(0, 2);
+  const comparisonCountries = parseCompareCountriesV163(params.get("compareCountries"));
+  const comparisonSelectors = parseCompareSelectorsV163(params.get("compareSelectors"));
   const layerSelectors: Record<string, { variable: string; period: string }> = {};
   const rawLayerSelectors = params.get("mapSelectors");
   if (rawLayerSelectors) {
@@ -473,6 +491,10 @@ export function parseMapViewState(params: URLSearchParams): MapViewState {
       comparisonMode && comparisonLayerIds.length === 2
         ? comparisonLayerIds
         : [],
+    comparisonCountries:
+      comparisonMode && comparisonLayerIds.length === 2 ? comparisonCountries : [],
+    comparisonSelectors:
+      comparisonMode && comparisonLayerIds.length === 2 ? comparisonSelectors : [],
     layerSelectors,
     camera: parseMapCameraV151(params.get("view")),
   };
