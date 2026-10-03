@@ -180,7 +180,12 @@ export default function FinderCardSummaryV140({ summary, country }: { summary: C
           </dl>
         ) : kind === "facts" ? (
           <ul className="fcs140-facts">
-            {(preview.facts || []).map((fact, index) => (
+            {/* V163 (5ii): a fact label that only repeats the source's own
+                publication-status note ("자료 공표 상태 — …") is not a reader-
+                facing fact - dropped here rather than invented into one. */}
+            {(preview.facts || [])
+              .filter((fact) => !fact.label.startsWith("자료 공표 상태"))
+              .map((fact, index) => (
               <li key={`${fact.label}-${index}`}>
                 <span><PublicTermTextV134 text={fact.label} /></span>
                 {fact.value && <strong><PublicTermTextV134 text={fact.value} /></strong>}

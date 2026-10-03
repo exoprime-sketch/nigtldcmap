@@ -224,6 +224,13 @@ export function getE012IndicatorSemanticV125(
   throw new Error(`E-012 semantic grammar does not recognize ${indicatorId}`);
 }
 
+/** A standalone `from` token in `text` (word-bounded, not a substring of a longer word), replaced with `to`. */
+function replaceLabelTokenV163(text: string, from: string, to: string): string {
+  if (!text || !from || from === to) return text;
+  const escaped = from.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+  return text.replace(new RegExp(`(^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, "gu"), (_match, lead) => `${lead}${to}`);
+}
+
 function mergeObservationSemantic(
   observation: VietnamObservationV124,
   indicatorSemantic: IndicatorSemanticV125,
@@ -245,12 +252,32 @@ function mergeObservationSemantic(
     dimensions.period = observation.period;
     dimensionLabels.period = observation.period;
   }
+  let displayLabel = recordSemantic?.displayLabel || indicatorSemantic.displayLabel;
+  // V163 (3e): a "currency" dimension is stated by the indicator-id grammar
+  // (local-currency vs USD), not read from the record - right for Viet Nam
+  // (VND) but wrong for any other country's local-currency series (e.g.
+  // Bangladesh's BDT). The observation's own unit (its pack row) is
+  // authoritative; a currency dimension that disagrees with it is corrected
+  // to it, in the dimension, its label and the composed display label - never
+  // the other way around, and never touching a dimension that already agrees.
+  const observationUnit = String(observation.unit || "").trim();
+  if (
+    dimensions.currency &&
+    observationUnit &&
+    /^[A-Z]{3}$/u.test(observationUnit) &&
+    dimensions.currency !== observationUnit
+  ) {
+    const staleLabel = dimensionLabels.currency || dimensions.currency;
+    dimensions.currency = observationUnit;
+    dimensionLabels.currency = observationUnit;
+    displayLabel = replaceLabelTokenV163(displayLabel, staleLabel, observationUnit);
+  }
   return {
     ...observation,
     semanticMeasure: indicatorSemantic.measure,
     dimensions,
     dimensionLabels,
-    displayLabel: recordSemantic?.displayLabel || indicatorSemantic.displayLabel,
+    displayLabel,
     seriesKey: recordSemantic?.seriesKey || indicatorSemantic.seriesKey,
   };
 }
