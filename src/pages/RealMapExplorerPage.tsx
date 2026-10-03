@@ -946,9 +946,11 @@ function overlapChoiceLabelV137(
   const role = publicTextV126(properties.displayLabel);
   const site = publicTextV126(properties.activitySiteLabel);
   if (site) return role ? `${role} · ${site}` : site;
-  const named = publicTextV126(
+  const namedRaw = publicTextV126(
     properties.name || properties.projectTitle || properties.adm1Name
   );
+  // V163-T3: a blank-voltage segment reads "전압 미상 전력선 구간".
+  const named = namedRaw ? namedRaw.replace(/^kV\s+/u, "전압 미상 ") : namedRaw;
   // V163-T2 (10): a boundary unit reads "한글명 (현지명)" as in the selection
   // panel (BGD "마이멘싱 (Mymensingh)", not the bare source spelling).
   const isRegionUnit =
@@ -1152,15 +1154,25 @@ function popupFactLinesV137(
   const lines: string[] = [];
   for (const fact of layerFactFieldsV137(layer)) {
     if (lines.length >= limit) break;
-    const value = properties[fact.key];
-    if (!hasPublicMapFactValueV143(value)) continue;
+    const rawValue = properties[fact.key];
+    if (!hasPublicMapFactValueV143(rawValue)) continue;
+    // V163-T3: the layer's own value map ("k-8eef33" → 다자개발은행) and the
+    // source classification labels, as the selection panel reads them.
+    const mapped = fact.valueMap?.[String(rawValue).trim().toLowerCase()];
+    const value =
+      mapped !== undefined ? mapped : typeof rawValue === "string" ? publicMapFactValueV163(fact.key, rawValue) : rawValue;
+    // A note left empty by the label rules (a coding memo only) has no line.
+    if (value === "") continue;
     const numeric = Number(value);
     const shown =
       fact.unit && Number.isFinite(numeric)
         ? `${formatPublicNumberV126(numeric, fact.unit)} ${fact.unit}`
         : publicTextV126(formatValueV121(value));
     if (!shown) continue;
-    lines.push(`${factLabelV137(layer, fact.key)} ${shown}`);
+    const label = factLabelV137(layer, fact.key);
+    // V163-T3: a fact without a Korean label is a raw field ("project Id").
+    if (!/[\uac00-\ud7a3]/u.test(label)) continue;
+    lines.push(`${label} ${shown}`);
   }
   return lines;
 }
@@ -1223,7 +1235,32 @@ function countByPublicFieldV126(
 }
 
 function publicMapFeatureNameV126(value: unknown, fallback: string): string {
-  return publicTextV126(value) || fallback;
+  const text = publicTextV126(value);
+  // V163-T3: a segment whose source left the voltage blank was named " kV 전력선
+  // 구간" (BGD A-024, 144 segments) - say the voltage is unknown instead.
+  return (text && text.replace(/^kV\s+/u, "전압 미상 ")) || fallback;
+}
+
+/** V163-T3: "공간자료와", "송전망과" - the particle the word takes, not "와(과)". */
+function withWaGwaV163(word: string): string {
+  const last = word.trim().slice(-1);
+  const code = last.charCodeAt(0) - 0xac00;
+  const hasFinal = code >= 0 && code <= 11171 && code % 28 !== 0;
+  return `${word}${hasFinal ? "과" : "와"}`;
+}
+
+/**
+ * V163-T3: a disaster event is named by its kind and start date, not by the
+ * database's event number ("2009-0294-BGD" is EM-DAT's DisNo).
+ */
+function assetDisplayNameV163(properties: Record<string, unknown>): unknown {
+  const name = publicTextV126(properties.name);
+  const kind = publicTextV126(properties.kindLabel);
+  if (name && kind && /^\d{4}-\d{4}-[A-Z]{3}$/u.test(name)) {
+    const start = publicTextV126(properties.startDate);
+    return start ? `${kind} (${start})` : kind;
+  }
+  return properties.name;
 }
 
 /**
@@ -3131,7 +3168,7 @@ export default function RealMapExplorerPage({
               : publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
           const featureLabel =
             renderer === "point-and-polygon"
-              ? [publicMapFeatureNameV126(properties.name || properties.kindLabel, "시설·구역"), assetDetailV163]
+              ? [publicMapFeatureNameV126(assetDisplayNameV163(properties) || properties.kindLabel, "시설·구역"), assetDetailV163]
                   .filter(Boolean)
                   .join(" · ")
               : renderer === "line"
@@ -3153,9 +3190,11 @@ export default function RealMapExplorerPage({
                   publicRegionLabelV163(properties.adm1Name || properties.name, countryIso3, properties.boundarySystem) ||
                   regionWordV158(countryIso3).word
                 } · ${
-                  // V163-T3: the item the colours show, never a bare "현재 값".
-                  variablePresentationV129?.label ||
+                  // V163-T3: the item the colours show, in the selection
+                  // panel's own order (B-002 '열대 A군', not a generic title),
+                  // never a bare "현재 값".
                   publicTextV126(properties.variableLabel) ||
+                  variablePresentationV129?.label ||
                   layer.legend?.title ||
                   "값"
                 } ${formattedAreaValue}`;
@@ -3217,7 +3256,9 @@ export default function RealMapExplorerPage({
                         : isPrimary
                         ? // V163-T3: the period the value belongs to, not a role word.
                           publicTextV126(properties.period) || publicTextV126(selector.period)
-                          ? `기준 ${publicTextV126(properties.period) || publicTextV126(selector.period)}`
+                          ? /기준$/u.test(publicTextV126(properties.period) || publicTextV126(selector.period) || "")
+                            ? String(publicTextV126(properties.period) || publicTextV126(selector.period))
+                            : `기준 ${publicTextV126(properties.period) || publicTextV126(selector.period)}`
                           : ""
                         : "함께 보기",
                       boundaryLineV151,
@@ -4781,7 +4822,7 @@ export default function RealMapExplorerPage({
         : publicMapFeatureNameV126(
             (isScope
               ? properties.projectTitle || selectedSpatial.adm1Name
-              : properties.unitLabel || properties.name || selectedSpatial.adm1Name) as string,
+              : properties.unitLabel || assetDisplayNameV163(properties) || selectedSpatial.adm1Name) as string,
             "선택 항목"
           );
       const measureLabel =
@@ -4912,7 +4953,14 @@ export default function RealMapExplorerPage({
       }
       if (isLine || isAsset) {
         lines.push(...selectionLineV161("전압", properties.voltageKv ? `${properties.voltageKv} kV` : ""));
-        lines.push(...selectionLineV161("구간 길이", properties.lengthKm ? `${properties.lengthKm} km` : ""));
+        lines.push(
+          ...selectionLineV161(
+            "구간 길이",
+            Number.isFinite(Number(properties.lengthKm)) && properties.lengthKm !== null && properties.lengthKm !== ""
+              ? `${formatPublicNumberV126(Number(properties.lengthKm), "km")} km`
+              : ""
+          )
+        );
         // V163 (4d): the source states the status in English (A-024
         // "existing", BGD D-012 "operating"...); the same label the power
         // plant facts already use covers the values it recognises and
@@ -4940,13 +4988,15 @@ export default function RealMapExplorerPage({
       (layerCardV162.cardFactFields || []).forEach((field) => {
         // V163-T2 (13): the status already reads "운영 상태" above.
         if (field.key === "status" && statusShownV163) return;
+        // V163-T3: length and voltage already read "구간 길이"/"전압" above.
+        if ((isLine || isAsset) && (field.key === "lengthKm" || field.key === "voltageKv")) return;
         const raw = properties[field.key];
         // V163-T2 (13·17): source classification values read as words
         // ("Riverine flood" → 하천 범람, OSM "river" → 하천), and a source
         // record id (MRDS dep_id) is not printed.
         const shown =
           typeof raw === "string"
-            ? field.key === "division"
+            ? field.key === "division" && !/[\uac00-\ud7a3]/u.test(raw)
               ? formatRegionListV161(raw, { country: countryIso3 }) || raw
               : publicMapFactValueV163(field.key, raw)
             : raw;
@@ -5326,7 +5376,7 @@ export default function RealMapExplorerPage({
               ? publicTransmissionSegmentTitleV131(properties)
               : publicMapFeatureNameV126(properties.name || properties.ref, "구간")
             : renderer === "point-and-polygon"
-              ? publicMapFeatureNameV126(properties.name || properties.kindLabel, "시설·구역")
+              ? publicMapFeatureNameV126(assetDisplayNameV163(properties) || properties.kindLabel, "시설·구역")
             : renderer === "regional-scope"
             ? `${publicMapFeatureNameV126(
                 properties.displayLabel,
@@ -8333,7 +8383,7 @@ export default function RealMapExplorerPage({
                       <p className="cdp-map-region-trend-v132__notice" data-testid="map-shared-register-note-v138">
                         {selectedOwningLayer.sharedObjectKind === "document"
                           ? `같은 문서가 ${publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith)}에도 수록되어 있으며 두 자료를 함께 켜도 문서 수를 더하지 않습니다.`
-                          : `${publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith)}와(과) 같은 대상시설 명부를 다른 기준(지역별·업종별)으로 본 값이며 두 자료를 함께 켜도 시설 수를 더하지 않습니다.`}
+                          : `${withWaGwaV163(publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith))} 같은 대상시설 명부를 다른 기준(지역별·업종별)으로 본 값이며 두 자료를 함께 켜도 시설 수를 더하지 않습니다.`}
                       </p>
                     )}
                     {selectedMemberRecordsV138.length > 0 && (
@@ -8371,7 +8421,7 @@ export default function RealMapExplorerPage({
                           <p className="cdp-map-region-trend-v132__notice">
                             {selectedOwningLayer.sharedObjectKind === "document"
                               ? `같은 문서가 ${publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith)}에도 수록되어 있으며 두 자료를 함께 켜도 문서 수를 더하지 않습니다.`
-                              : `${publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith)}와(과) 같은 시설 명부를 다른 기준으로 본 값이며 시설 수를 더하지 않습니다.`}
+                              : `${withWaGwaV163(publicMapLayerTitleV126(selectedOwningLayer.sharedObjectsWith))} 같은 시설 명부를 다른 기준으로 본 값이며 시설 수를 더하지 않습니다.`}
                           </p>
                         )}
                       </section>

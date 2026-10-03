@@ -34,6 +34,14 @@ const EMDAT_SUBTYPES_V163: Readonly<Record<string, string>> = {
 };
 
 const GEM_STATUS_V163: Readonly<Record<string, string>> = {
+  // Global CCS Institute facility status (A-025).
+  planned: "계획",
+  operational: "운영",
+  "in construction": "건설 중",
+  "advanced development": "개발 후기",
+  "early development": "개발 초기",
+  completed: "완료",
+  suspended: "중단",
   operating: "운영",
   construction: "건설 중",
   "pre-construction": "착공 전",
@@ -101,6 +109,8 @@ const CREDIT_TYPES_V163: Readonly<Record<string, string>> = {
   "fuel switching": "연료 전환",
 };
 
+const CODING_MEMO_V163 = /억지\s*매핑|tech_ids?\b|별첨\s*\d|대응\s*불명확/u;
+
 function gemStatusLabelV163(value: string): string | null {
   const text = value.trim().toLowerCase();
   if (GEM_STATUS_V163[text]) return GEM_STATUS_V163[text];
@@ -135,11 +145,20 @@ export function publicMapFactValueV163(key: string, value: string): string {
       return text
         .replace(/^원천 geolocation_source:\s*(.+)$/u, "원천 제공 좌표($1)")
         .replace(/\(geolocation_source 미기재\)/u, "(근거 미기재)");
+    case "climateTechBasis":
+    case "note":
+      // V163-T3: the compiler's coding memo ("tech_id 공란(별첨2 R4: 억지 매핑
+      // 금지)") is not a fact about the site.
+      return text
+        .split(/(?<=[.。])\s+|\s+·\s+/u)
+        .filter((part) => part.trim() && !CODING_MEMO_V163.test(part))
+        .join(" ")
+        .trim();
     case "remarks":
     case "siteNote":
       return text
         .split(/\s+·\s+/u)
-        .filter((part) => !/^MRDS dep_id\s*\d+$/iu.test(part.trim()))
+        .filter((part) => !/^MRDS dep_id\s*\d+$/iu.test(part.trim()) && !/^GADM gid\b/iu.test(part.trim()))
         .map((part) => MINE_TYPES_V163[part.trim().toLowerCase()] || part)
         .join(" · ")
         .replace(/운영형태\s+([A-Za-z][A-Za-z -]*[A-Za-z])/u, (_m, kind: string) => `운영형태 ${MINE_TYPES_V163[kind.toLowerCase()] || kind}`)

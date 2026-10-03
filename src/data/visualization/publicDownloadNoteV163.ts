@@ -75,11 +75,27 @@ function cleanSegmentV163(segment: string, otherCountry: boolean): string | null
  * is left. `countryIso3` other than Viet Nam also drops the 2025 province
  * reform wording a shared template carried into another country's notes.
  */
+// A download repeats the same note on thousands of rows (B-004: 100k+), so
+// each distinct text is cleaned once.
+const CACHE_V163 = new Map<string, string | null>();
+const CACHE_LIMIT_V163 = 20000;
+
 export function publicDownloadTextV163(value: unknown, countryIso3?: string | null): string | null {
   if (value === null || value === undefined) return null;
-  const text = String(value).replace(/\s+/gu, " ").trim();
-  if (!text) return null;
+  const raw = String(value);
   const otherCountry = Boolean(countryIso3) && String(countryIso3).toUpperCase() !== "VNM";
+  const key = `${otherCountry ? 1 : 0}|${raw}`;
+  const cached = CACHE_V163.get(key);
+  if (cached !== undefined) return cached;
+  const result = cleanDownloadTextV163(raw, otherCountry);
+  if (CACHE_V163.size >= CACHE_LIMIT_V163) CACHE_V163.clear();
+  CACHE_V163.set(key, result);
+  return result;
+}
+
+function cleanDownloadTextV163(raw: string, otherCountry: boolean): string | null {
+  const text = raw.replace(/\s+/gu, " ").trim();
+  if (!text) return null;
   const parts = text
     .split(SEGMENT_SPLIT_V163)
     .map((segment) => cleanSegmentV163(segment, otherCountry))

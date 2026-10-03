@@ -1336,6 +1336,20 @@ export function publicEntityAttributeKeysV126(
   );
 }
 
+// V163-DL: a download repeats one note on many rows (B-004 has 100k+), so a
+// distinct note is projected once - same rules as the screens' record notes.
+const DOWNLOAD_NOTE_CACHE_V163 = new Map<string, string | null>();
+function downloadRecordNoteV163(note: unknown, countryIso3: string | null | undefined): string | null {
+  if (note === null || note === undefined || note === "") return null;
+  const key = `${countryIso3 || ""}|${String(note)}`;
+  const cached = DOWNLOAD_NOTE_CACHE_V163.get(key);
+  if (cached !== undefined) return cached;
+  const result = normalizeTextV126(publicDownloadTextV163(publicRecordNoteV161(note), countryIso3));
+  if (DOWNLOAD_NOTE_CACHE_V163.size >= 20000) DOWNLOAD_NOTE_CACHE_V163.clear();
+  DOWNLOAD_NOTE_CACHE_V163.set(key, result);
+  return result;
+}
+
 export function toPublicObservationRowsV126(
   input: PublicObservationProjectionInputV126
 ): PublicDownloadRowV126[] {
@@ -1382,7 +1396,7 @@ export function toPublicObservationRowsV126(
         row.missingReasonCode,
         row.note
       ),
-      public_note: normalizeTextV126(publicDownloadTextV163(publicRecordNoteV161(row.note), row.countryIso3 || input.element.countryIso3)) || source.caveat,
+      public_note: downloadRecordNoteV163(row.note, row.countryIso3 || input.element.countryIso3) || source.caveat,
       entityAttributes: {},
     };
   });
@@ -1479,7 +1493,7 @@ export function toPublicEntityRowsV126(
         row.missingReasonCode,
         row.note
       ),
-      public_note: normalizeTextV126(publicDownloadTextV163(publicRecordNoteV161(row.note), row.countryIso3 || input.element.countryIso3)) || source.caveat,
+      public_note: downloadRecordNoteV163(row.note, row.countryIso3 || input.element.countryIso3) || source.caveat,
       entityAttributes: attributes,
     };
   });

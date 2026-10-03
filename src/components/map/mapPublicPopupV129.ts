@@ -94,6 +94,10 @@ export function boundaryPopupLineV151(properties: Record<string, unknown>, unit:
         ? `구성 ${summary.memberCount}개 성·시`
         : `구성 ${summary.memberCount}개 성·시 중 ${summary.valueCount}개 값 있음`;
     const flags = summary.partial ? " · 부분 결측" : summary.conflict ? " · 구성 값 불일치" : "";
+    // V163-T3: no constituent value - say so, not "… 0개 값 있음 합계".
+    if (!single && summary.valueCount === 0 && summary.kind !== "native-34" && summary.kind !== "membership-or") {
+      return `구성 ${summary.memberCount}개 성·시 · 값 없음`;
+    }
     switch (summary.kind) {
       case "native-34":
         return `개편 후 34개 기준 원자료 값${single ? "" : ` · ${coverage}`}${flags}`;
@@ -102,7 +106,12 @@ export function boundaryPopupLineV151(properties: Record<string, unknown>, unit:
       case "count-sum":
         return single ? "" : `${coverage} 문서 수 합계${flags}`;
       case "membership-or":
-        return single ? "" : `${coverage} 중 참여 ${summary.valueCount}개${flags}`;
+        // V163-T3: "구성 2개 성·시 중 참여 1개" / "… · 참여 없음", not "… 값 있음 중 참여 0개".
+        return single
+          ? ""
+          : summary.valueCount > 0
+            ? `구성 ${summary.memberCount}개 성·시 중 참여 ${summary.valueCount}개${flags}`
+            : `구성 ${summary.memberCount}개 성·시 · 참여 없음${flags}`;
       case "area-weighted-mean":
         return single ? "개편에서 합쳐지지 않은 성·시" : `${coverage} 면적가중평균${range}${flags}`;
       default:

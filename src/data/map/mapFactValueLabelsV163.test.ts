@@ -31,6 +31,11 @@ test("carbon-credit project types", () => {
   expect(publicMapFactValueV163("technology", "Solar - Centralized")).toBe("태양광(집중형)");
 });
 
+test("coding memo and source ids leave mine notes", () => {
+  expect(publicMapFactValueV163("climateTechBasis", "38대 기후기술 대응 불명확 — tech_id 공란(별첨2 R4: 억지 매핑 금지)")).toBe("");
+  expect(publicMapFactValueV163("siteNote", "개발단계 생산 중(producer) · GADM gid VNM.38_1 · MRDS dep_id 10106727")).toBe("개발단계 생산 중");
+});
+
 test("unknown values and other fields stay as written", () => {
   expect(publicMapFactValueV163("status", "In service")).toBe("In service");
   expect(publicMapFactValueV163("name", "Riverine flood")).toBe("Riverine flood");
