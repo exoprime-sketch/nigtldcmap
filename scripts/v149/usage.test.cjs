@@ -57,3 +57,21 @@ test('storage errors fail closed, secrets never returned', async () => {
   }
 });
 test('only read and count methods', async () => { const r=await call(createUsageHandler({env}),'DELETE'); assert.equal(r.statusCode,405); });
+test('V163: counts are kept per country; Viet Nam keeps the original keys', async () => {
+  let command; const h=createUsageHandler({env,fetcher:async (_,o)=>{command=JSON.parse(o.body); return {ok:true,json:async()=>({result:1})};}});
+  await call(h,'POST',{body:{...body,country:'BGD'}});
+  assert.ok(command[5].includes(':BGD:detail:'), command[5]); assert.ok(command[4].includes(':BGD:detail:'));
+  await call(h,'POST');
+  assert.ok(!command[5].includes(':BGD:') && /:detail:\d{4}-\d{2}-\d{2}$/.test(command[5]), command[5]);
+  assert.equal((await call(h,'POST',{body:{...body,country:'XXX'}})).statusCode,400);
+});
+test('V163: GET reads one country, or every registered country for all', async () => {
+  const calls=[]; const h=createUsageHandler({env, now:()=>Date.parse('2026-09-18T01:00:00Z'),fetcher:async (_,o)=>{const cmd=JSON.parse(o.body); calls.push(cmd); return {ok:true,json:async()=>({result:['A-003',2]})};}});
+  let r=await call(h,'GET',{url:'/api/usage?country=BGD'}); assert.equal(r.statusCode,200);
+  assert.equal(calls[0][2],30); assert.ok(calls[0].slice(3).every(k => k.includes(':BGD:')));
+  calls.length=0; r=await call(h,'GET',{query:{country:'all'}}); assert.equal(r.statusCode,200);
+  const registered=require('../../public/data/countries.json').countries.length;
+  assert.equal(calls[0][2],30*registered);
+  calls.length=0; r=await call(h,'GET'); assert.equal(calls[0][2],30); assert.ok(calls[0].slice(3).every(k => !/:[A-Z]{3}:/.test(k)));
+  assert.equal((await call(h,'GET',{url:'/api/usage?country=ZZZ'})).statusCode,400);
+});

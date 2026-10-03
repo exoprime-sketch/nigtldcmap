@@ -2577,7 +2577,7 @@ export default function RealMapExplorerPage({
     spatialByElement,
   ]);
 
-  useDatasetUsageV149("map", primaryLayerId, countryIso3 === "VNM" && baseMapStatus === "ready" && externalStateHydrated && !!primaryLayerId && !!(recordsByElement[primaryLayerId] || spatialByElement[primaryLayerId]));
+  useDatasetUsageV149("map", primaryLayerId, baseMapStatus === "ready" && externalStateHydrated && !!primaryLayerId && !!(recordsByElement[primaryLayerId] || spatialByElement[primaryLayerId]), countryIso3);
 
   // V151-2 auto-fit case (b): the first layer ticked from an empty selection
   // lies wholly outside the viewport - otherwise the camera stays put.

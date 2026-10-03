@@ -232,7 +232,7 @@ export default function DataExplorerPage({
   const [yearFilter, setYearFilter] = useState(initialRestore?.yearFilter || "all");
   // 조회순 reads the usage counts the home already uses; without that service
   // (a static host) the option is disabled and the list stays in name order.
-  const usage = usePublicUsageV149();
+  const usage = usePublicUsageV149(countryIso3 || "all");
   const viewsAvailable = USAGE_API_AVAILABLE_V149 && usage !== null;
   const sortMode: FinderSortModeV128 = sort === "views" && viewsAvailable ? "views" : "name";
   const viewCounts = useMemo(

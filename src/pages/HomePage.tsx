@@ -36,7 +36,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
   const [summaries, setSummaries] = useState<Map<string, CardSummaryV140>>(new Map());
   const [loadError, setLoadError] = useState(false);
   const [sort, setSort] = useState<"views" | "latest">("views");
-  const usage = usePublicUsageV149();
+  const usage = usePublicUsageV149(country?.iso3 || null);
   useEffect(() => {
     let cancelled = false;
     void ensureCountryRegistryLoadedV158().catch(() => undefined).then(() => {

@@ -2,6 +2,19 @@ const { createHmac } = require('node:crypto');
 const directory = require('../src/data/datasetDirectoryV149.json');
 const ids = new Set(directory.map(x => x.elementId));
 const mapIds = new Set(directory.filter(x => x.map).map(x => x.elementId));
+// V163: counts are kept per country. Viet Nam keeps the original key layout
+// (no country segment) so existing counts stay readable; another registered
+// country gets its own segment, and `all` (the finder's every-country view)
+// reads every registered country's buckets together.
+const registry = require('../public/data/countries.json');
+const COUNTRIES = registry.countries.map(row => row.iso3);
+const DEFAULT_COUNTRY = 'VNM';
+function countryScope(country) { return country === DEFAULT_COUNTRY ? '' : `${country}:`; }
+function queryCountry(req) {
+  let raw = req.query?.country;
+  if (raw === undefined) { try { raw = new URL(req.url || '/', 'http://local').searchParams.get('country'); } catch { raw = null; } }
+  return String(raw || DEFAULT_COUNTRY).toUpperCase();
+}
 const DAY = 86400;
 const WRITE = `
 local rate = redis.call('INCR', KEYS[1])
@@ -49,8 +62,12 @@ function createUsageHandler({env = process.env, fetcher = fetch, now = Date.now}
     try {
       const ms = now();
       if (req.method === 'GET') {
+        const country = queryCountry(req);
+        if (country !== 'ALL' && !COUNTRIES.includes(country)) return send(400,{status:'invalid'});
+        const scopes = (country === 'ALL' ? COUNTRIES : [country]).map(countryScope);
         const days = Array.from({length:30},(_,i) => dayKey(ms-i*DAY*1000));
-        const [detail,map] = await Promise.all(['detail','map'].map(kind => command(['EVAL',READ,30,...days.map(d => `${prefix}:${kind}:${d}`)])));
+        const keysFor = kind => scopes.flatMap(scope => days.map(d => `${prefix}:${scope}${kind}:${d}`));
+        const [detail,map] = await Promise.all(['detail','map'].map(kind => { const keys = keysFor(kind); return command(['EVAL',READ,keys.length,...keys]); }));
         res.setHeader('Cache-Control','public, max-age=30, s-maxage=60, stale-while-revalidate=120');
         return send(200,{status:'ready', windowDays:30, from:days[29], through:days[0], timezone:'Asia/Seoul', generatedAt:new Date(ms).toISOString(), detail:ranking(detail,ids), map:ranking(map,mapIds)});
       }
@@ -68,14 +85,17 @@ function createUsageHandler({env = process.env, fetcher = fetch, now = Date.now}
       if (!body) { let raw=''; for await (const chunk of req) { raw+=chunk; if (Buffer.byteLength(raw)>1024) return send(413,{status:'too-large'}); } try { body=JSON.parse(raw); } catch { return send(400,{status:'invalid'}); } }
       if (typeof body === 'string') { try { body=JSON.parse(body); } catch { return send(400,{status:'invalid'}); } }
       if (!body || !['detail','map'].includes(body.kind) || !ids.has(body.elementId) || (body.kind === 'map' && !mapIds.has(body.elementId)) || !/^[a-f0-9-]{36}$/i.test(body.visitor || '')) return send(400,{status:'invalid'});
+      const country = String(body.country || DEFAULT_COUNTRY).toUpperCase();
+      if (!COUNTRIES.includes(country)) return send(400,{status:'invalid'});
+      const scope = countryScope(country);
       if (/bot|crawler|spider|headless|playwright/i.test(req.headers['user-agent'] || '')) return send(202,{status:'ignored',reason:'automated'});
       const hash = value => createHmac('sha256',secret).update(value).digest('hex').slice(0,32);
       // IP is used transiently for abuse protection; never stored in raw form.
       // Daily rotation prevents this rate-limit key becoming a visitor history.
       const ip = String(req.headers['x-vercel-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0];
       const rate = `${prefix}:rate:${hash(`${dayKey(ms)}:${ip}`)}`;
-      const dedup = `${prefix}:seen:${hash(body.visitor)}:${body.kind}:${body.elementId}`;
-      const value = await command(['EVAL',WRITE,3,rate,dedup,`${prefix}:${body.kind}:${dayKey(ms)}`,body.elementId]);
+      const dedup = `${prefix}:seen:${hash(body.visitor)}:${scope}${body.kind}:${body.elementId}`;
+      const value = await command(['EVAL',WRITE,3,rate,dedup,`${prefix}:${scope}${body.kind}:${dayKey(ms)}`,body.elementId]);
       if (value === -1) { res.setHeader('Retry-After','60'); return send(429,{status:'rate-limited'}); }
       return send(200,{status:'ready', counted:value === 1});
     } catch { return send(503,{status:'unavailable',reason:'storage-unavailable'}); }

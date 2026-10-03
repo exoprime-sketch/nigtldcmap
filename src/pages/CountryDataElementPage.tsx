@@ -736,7 +736,7 @@ function CountryDataElementPageV122({
   // for the release runner (`data-detail-prepare-ms`); null until measured.
   const [prepareMs, setPrepareMs] = useState<number | null>(null);
   const [error, setError] = useState("");
-  useDatasetUsageV149("detail", elementId, countryIso3 === "VNM" && !loading && !!bundle && catalogItem?.elementId === elementId);
+  useDatasetUsageV149("detail", elementId, !loading && !!bundle && catalogItem?.elementId === elementId, countryIso3 || "");
 
   useEffect(() => {
     if (
