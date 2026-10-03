@@ -60,7 +60,18 @@ import {
 import type { DataFinderSelectorStateV125 } from "./types/dataFinderV125";
 import type { MiniMapHandoffV152 } from "./components/map/miniMapStateV152";
 
-const RealMapExplorerPage = lazy(() => import("./pages/RealMapExplorerPage"));
+// V163-BTN: one retry after a short wait - a transient 5xx on the map chunk
+// otherwise replaced the whole site with the error page.
+const RealMapExplorerPage = lazy(() =>
+  import("./pages/RealMapExplorerPage").catch(
+    () =>
+      new Promise<typeof import("./pages/RealMapExplorerPage")>((resolve, reject) => {
+        window.setTimeout(() => {
+          import("./pages/RealMapExplorerPage").then(resolve, reject);
+        }, 1500);
+      })
+  )
+);
 
 /**
  * V162 PR-D: the finder opens on the reader's current country (the V158-B2
@@ -479,8 +490,12 @@ export default function App() {
   const [sourceOrganization, setSourceOrganization] = useState(
     initialParams.get("source") ?? "all"
   );
+  // V163-BTN: a detail opened from a link returns ("검색 결과로 돌아가기") to its
+  // own country's list, not to every country's.
   const [explorerCountryIso3, setExplorerCountryIso3] = useState(
-    initialView === "explorer" ? finderCountryV162(initialCountryParam) : "all"
+    initialView === "explorer" || initialView === "element-detail"
+      ? finderCountryV162(initialCountryParam)
+      : "all"
   );
   const [category, setCategory] = useState<CategoryCode | "all">(
     (initialParams.get("category") as CategoryCode | null) ?? "all"
@@ -595,7 +610,9 @@ export default function App() {
       setQuery(params.get("q") ?? "");
       setSourceOrganization(params.get("source") ?? "all");
       setExplorerCountryIso3(
-        nextView === "explorer" ? finderCountryV162(countryParam) : "all"
+        nextView === "explorer" || nextView === "element-detail"
+          ? finderCountryV162(countryParam)
+          : "all"
       );
       setCategory((params.get("category") as CategoryCode | null) ?? "all");
 
