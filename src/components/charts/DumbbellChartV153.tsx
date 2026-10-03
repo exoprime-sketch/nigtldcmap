@@ -2,6 +2,7 @@ import ChartAxesV150 from "./ChartAxesV150";
 import { formatPublicNumberV126 } from "../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import "./dumbbell-chart-v153.css";
+import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
 
 /**
  * V153-D1: two values per subject on one shared axis - a station's dry-season
@@ -34,12 +35,15 @@ const PADDING = { top: 14, right: 36, bottom: 34 };
 
 export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel, testId = "dumbbell-chart-v153" }: Props) {
   if (rows.length === 0) return null;
-  const maximum = Math.max(...rows.flatMap((row) => [row.low.value, row.high.value]), 1e-9);
+  const rawMaximum = Math.max(...rows.flatMap((row) => [row.low.value, row.high.value]), 1e-9);
+  // V164: the axis ends on a round tick, so its guides are round numbers.
+  const ticks = niceTicksV164(0, rawMaximum, 4);
+  const maximum = ticks[ticks.length - 1] || rawMaximum;
+  const tickLabels = formatAxisTicksV164(ticks);
   const plotLeft = LABEL_WIDTH;
   const plotWidth = WIDTH - LABEL_WIDTH - PADDING.right;
   const height = PADDING.top + rows.length * ROW_HEIGHT + PADDING.bottom;
   const x = (value: number) => plotLeft + (Math.max(0, value) / maximum) * plotWidth;
-  const ticks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => maximum * ratio);
   const format = (value: number) => formatPublicNumberV126(value, unit);
   return (
     <figure className="dumbbell153" data-testid={testId} data-row-count={rows.length}>
@@ -49,10 +53,10 @@ export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel,
         <span><i className="dumbbell153__dot dumbbell153__dot--high" /> {rows[0].high.label}</span>
       </div>
       <svg viewBox={`0 0 ${WIDTH} ${height}`} role="img" aria-label={ariaLabel} className="dumbbell153__svg">
-        {ticks.map((tick) => (
+        {ticks.map((tick, tickIndex) => (
           <g key={tick}>
             <line className="dumbbell153__grid" x1={x(tick)} x2={x(tick)} y1={PADDING.top} y2={height - PADDING.bottom} />
-            <text className="dumbbell153__tick" x={x(tick)} y={height - PADDING.bottom + 18} textAnchor="middle">{format(tick)}</text>
+            <text className="dumbbell153__tick" x={x(tick)} y={height - PADDING.bottom + 18} textAnchor="middle">{tickLabels[tickIndex] ?? format(tick)}</text>
           </g>
         ))}
         {rows.map((row, index) => {

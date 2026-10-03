@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { isSourceSubtotalV164, localizedEnergyCategoryV164 } from "../../../data/visualization/energyCategoryV164";
 import InteractiveTimeSeriesChartV127 from "../../charts/InteractiveTimeSeriesChartV127";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import type { TimeSeriesV127 } from "../../../types/chartInteractionV127";
@@ -58,27 +59,7 @@ function publicSeriesLabelV132(row: SemanticObservationV125): string {
 }
 
 function localizedEnergyCategoryV132(value: string): string {
-  const translations: Array<[RegExp, string]> = [
-    [/^Total non-renewable energy/iu, "비재생에너지 합계"],
-    [/^Total renewable energy/iu, "재생에너지 합계"],
-    [/^Other non-renewable energy/iu, "기타 비재생에너지"],
-    [/^Renewable hydropower/iu, "재생 수력"],
-    [/^Renewable waste/iu, "폐기물에너지"],
-    [/^Solar photovoltaic/iu, "태양광"],
-    [/^Solar energy/iu, "태양에너지"],
-    [/^Offshore wind energy/iu, "해상풍력"],
-    [/^Onshore wind energy/iu, "육상풍력"],
-    [/^Wind energy/iu, "풍력"],
-    [/^Natural gas/iu, "천연가스"],
-    [/^Gas biofuels/iu, "바이오가스"],
-    [/^Solid biofuels/iu, "고체 바이오연료"],
-    [/^Bioenergy/iu, "바이오에너지"],
-    [/^Fossil fuels/iu, "화석연료"],
-    [/^Coal/iu, "석탄"],
-    [/^Oil/iu, "석유"],
-  ];
-  const translated = translations.find(([pattern]) => pattern.test(value));
-  return translated ? value.replace(translated[0], translated[1]) : value;
+  return localizedEnergyCategoryV164(value);
 }
 
 function isTotalLikeV132(row: SemanticObservationV125): boolean {
@@ -86,7 +67,12 @@ function isTotalLikeV132(row: SemanticObservationV125): boolean {
   return /(?:^|[_\s(])(?:total|전체|총계|합계)(?:[_\s)]|$)/u.test(candidate);
 }
 
+function rawCategoryV164(row: SemanticObservationV125): string {
+  return String(row.dimensions.category || row.dimensionLabels.category || "").replace(/\s+/g, " ").trim();
+}
+
 function buildSeriesV132(rows: NumericCompositionRowV132[]): CompositionSeriesV132[] {
+  const categoriesV164 = Array.from(new Set(rows.map(rawCategoryV164).filter(Boolean)));
   const groups = new Map<string, NumericCompositionRowV132[]>();
   rows.forEach((row) => {
     const current = groups.get(row.indicatorId) || [];
@@ -107,7 +93,7 @@ function buildSeriesV132(rows: NumericCompositionRowV132[]): CompositionSeriesV1
         rows: ordered,
         latestValue: latest.value,
         latestYear: latest.year as number,
-        totalLike: isTotalLikeV132(latest),
+        totalLike: isTotalLikeV132(latest) || isSourceSubtotalV164(rawCategoryV164(latest), categoriesV164),
       };
     })
     .filter((item): item is CompositionSeriesV132 => Boolean(item))
@@ -222,6 +208,7 @@ export default function PublicCompositionTrendAnalysisV132({
           elementId={elementId}
           headingId={`pct132-${elementId}`}
           title="연도별 구성 변화(누적)"
+          overlapExcluded={allSeries.filter((series) => series.totalLike).map((series) => series.label)}
           series={allSeries.filter((series) => !series.totalLike).map((series) => ({
             key: series.publicKey,
             label: series.label,

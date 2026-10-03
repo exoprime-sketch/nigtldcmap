@@ -33,6 +33,8 @@ interface Props {
   /** The panel class of the host component, so the block reads like its siblings. */
   panelClassName: string;
   headingClassName: string;
+  /** V164: totals and subtotals left out of the stack because their parts are stacked. */
+  overlapExcluded?: string[];
 }
 
 const STACK_COLORS_V153 = ["#176b57", "#d97706", "#2563a6", "#a23e63", "#6d5aa8", "#4f7d20", "#b45309", "#0f766e", "#68737d"];
@@ -77,6 +79,7 @@ export default function CompositionStackV153({
   onSelectYear,
   panelClassName,
   headingClassName,
+  overlapExcluded = [],
 }: Props) {
   const [mode, setMode] = useState<"absolute" | "share">("absolute");
   const model = useMemo(() => compositionStackModelV153(series), [series]);
@@ -126,6 +129,11 @@ export default function CompositionStackV153({
         totalLineTestId={`${elementId.toLowerCase()}-stack-total-line-v153`}
         tooltipTestId={`${elementId.toLowerCase()}-stack-tooltip-v153`}
       />
+      {overlapExcluded.length > 0 && (
+        <p className="cs153__excluded" role="note" data-testid="composition-stack-overlap-v164">
+          누적에서 제외: <PublicTermTextV134 text={overlapExcluded.join(" · ")} /> — 합계·소계 {subject}은(는) 구성 {subject}과 겹치므로 면적으로 쌓지 않습니다.
+        </p>
+      )}
       {model.excluded.length > 0 && (
         <p className="cs153__excluded" role="note" data-testid="composition-stack-excluded-v153">
           누적에서 제외: <PublicTermTextV134 text={model.excluded.join(" · ")} /> — 음수(흡수) 값을 포함하는 {subject}은(는) 면적으로 쌓지 않고 아래 계열별 변화에서 확인합니다.

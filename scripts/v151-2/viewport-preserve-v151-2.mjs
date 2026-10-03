@@ -127,10 +127,16 @@ await page.locator('input[name="cdp-map-boundary-system-v151"][value="post-2025-
 await page.waitForTimeout(2500);
 await record("BOUNDARY_TOGGLE_34");
 
-for (const kind of ["satellite", "streets", "none", "terrain"]) {
-  await page.locator(`input[name="cdp-map-backdrop-v151"][value="${kind}"]`).check();
-  await page.waitForTimeout(3000);
-  await record(`BACKDROP_${kind.toUpperCase()}`);
+// V164 (user decision 2026-10-04, reports/v164/REVIEW_V164.md): the backdrop is fixed to
+// streets; the picker steps run only where a picker is still offered.
+if (await page.locator('input[name="cdp-map-backdrop-v151"]').count()) {
+  for (const kind of ["satellite", "streets", "none", "terrain"]) {
+    await page.locator(`input[name="cdp-map-backdrop-v151"][value="${kind}"]`).check();
+    await page.waitForTimeout(3000);
+    await record(`BACKDROP_${kind.toUpperCase()}`);
+  }
+} else {
+  check("BACKDROP_PICKER", "SKIP", "backdrop fixed to streets (V164)", "picker removed by user decision");
 }
 
 // URL carries the camera; a reload restores it.

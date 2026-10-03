@@ -85,6 +85,22 @@ function SourceLineV162({ source }: { source: WideRecordV162["source"] }) {
   );
 }
 
+/**
+ * V164: a card value as a reader reads it - a long count grouped (4378506 →
+ * 4,378,506; never a number, code or year field) and the delivery's internal
+ * missing-reason codes ("미확인(M06)") left out. The delivered value is unchanged.
+ */
+export function cardValueTextV164(attribute: string, value: string): string {
+  let text = String(value ?? "");
+  text = text.replace(/\s*\((?:M|CF\/M)\d{2}\)/gu, "");
+  const identifierField = /번호|코드|ID|참조|연도|년도|기준년|Ref|우편|전화|식별|일자|날짜/iu.test(String(attribute || ""));
+  if (!identifierField && /^-?\d{5,}(?:\.\d+)?$/u.test(text.trim())) {
+    const number = Number(text.trim());
+    if (Number.isFinite(number)) return number.toLocaleString("ko-KR", { maximumFractionDigits: 4 });
+  }
+  return text;
+}
+
 function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; elementId?: string }) {
   // V162 (P12-B): a [지역] block's place name reads "한글명 (현지명)"; its own
   // administrative code stays as delivered (regionText only rewrites the name
@@ -107,11 +123,14 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
           {/* A label inside the card, not a page heading: every card repeats it. */}
           <p className="wide162-block-title">{block.title}</p>
           <dl className="wide162-rows">
-            {(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values).map((value) => {
+            {(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
+              // V164: a field the record leaves empty is not shown as a bare label.
+              .filter((value) => value.href || String(value.value ?? "").trim() !== "")
+              .map((value) => {
               const displayValue =
                 block.block === "지역" && REGION_NAME_ATTRIBUTE_V162.test(value.attribute)
                   ? regionText(value.value)
-                  : value.value;
+                  : cardValueTextV164(value.attribute, value.value);
               return (
                 <div className="wide162-row" key={`${block.block}-${value.attribute}`}>
                   <dt>

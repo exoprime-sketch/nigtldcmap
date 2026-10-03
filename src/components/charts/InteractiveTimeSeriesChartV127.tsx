@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
 import ChartTooltipV127 from "./ChartTooltipV127";
 import ChartViewportControlsV129 from "./ChartViewportControlsV129";
 import {
@@ -101,6 +102,8 @@ function defaultFormatDeltaV127(delta: number): string {
 function defaultFormatXV127(value: number): string {
   return Number.isInteger(value) ? `${value}` : numberFormatterV127.format(value);
 }
+
+const LEGEND_OPEN_LIMIT_V164 = 12;
 
 function estimatedTextWidthV127(value: string): number {
   return Array.from(value).reduce((width, character) => {
@@ -372,21 +375,42 @@ export function InteractiveTimeSeriesChartV127({
       return [minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount, maximum + amount];
     }
     const amount = (maximum - minimum) * 0.08;
-    return [minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount, maximum + amount];
+    const padded: ChartDomainV127 = [minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount, maximum + amount];
+    // V164: the axis ends on round ticks (1·2·2.5·5×10ⁿ), so every guide is a round number.
+    const nice = niceTicksV164(padded[0], padded[1], 5);
+    return nice.length >= 2 ? [Math.max(minimum >= 0 ? 0 : -Infinity, nice[0]), nice[nice.length - 1]] : padded;
   }, [fixedYDomain, ySource]);
   const ySpan = Math.max(1e-8, calculatedYDomain[1] - calculatedYDomain[0]);
   const yTickCount = chartWidth < 480 ? 5 : 6;
-  const yTicks = Array.from({ length: yTickCount }, (_, index) =>
-    calculatedYDomain[1] - (index / (yTickCount - 1)) * ySpan
-  );
+  const niceYTicksV164 = fixedYDomain ? [] : niceTicksV164(calculatedYDomain[0], calculatedYDomain[1], yTickCount - 1);
+  const yTicks = niceYTicksV164.length >= 2 &&
+    Math.abs(niceYTicksV164[0] - calculatedYDomain[0]) < ySpan * 1e-6 &&
+    Math.abs(niceYTicksV164[niceYTicksV164.length - 1] - calculatedYDomain[1]) < ySpan * 1e-6
+    ? [...niceYTicksV164].reverse()
+    : Array.from({ length: yTickCount }, (_, index) =>
+        calculatedYDomain[1] - (index / (yTickCount - 1)) * ySpan
+      );
   const yTickWidthBudget = chartWidth < 480 ? 76 : 112;
   // Axis guides need less precision than observations. Keep exact values in
   // point labels, tooltips and tables; never round the plotted measurements.
   const tickDigits = Math.max(0, Math.min(8, 1 - Math.floor(Math.log10(ySpan / (yTickCount - 1)))));
   const formatTick = (value: number) => new Intl.NumberFormat("ko-KR", { maximumFractionDigits: tickDigits }).format(value);
-  const yTickLabels = yTicks.map((value) =>
+  // V164: past 억 the ticks share one Korean scale word (1,000억 · 2,000억) instead of 12-digit figures.
+  const scaledTickLabelsV164 = Math.max(...yTicks.map((value) => Math.abs(value))) >= 100_000_000
+    ? formatAxisTicksV164(yTicks)
+    : null;
+  const yTickLabels = scaledTickLabelsV164 || yTicks.map((value) =>
     formatAxisTickV127(value, formatTick, yTickWidthBudget)
   );
+  const legendItemsV164 = normalizedSeries
+    .map((item, seriesIndex) => ({ item, seriesIndex }))
+    .filter(({ item }) => item.points.length > 0);
+  const legendGroupsV164 = legendItemsV164.length > LEGEND_OPEN_LIMIT_V164
+    ? [
+        { more: false, items: legendItemsV164.slice(0, LEGEND_OPEN_LIMIT_V164) },
+        { more: true, items: legendItemsV164.slice(LEGEND_OPEN_LIMIT_V164) },
+      ]
+    : [{ more: false, items: legendItemsV164 }];
   const yTickLabelsKey = yTickLabels.join("|");
   const estimatedYTickWidth = Math.max(
     0,
@@ -767,9 +791,8 @@ export function InteractiveTimeSeriesChartV127({
 
       <div className="v127-interactive-chart__toolbar">
         <div className="v127-interactive-chart__legend" aria-label="계열 선택">
-          {normalizedSeries
-            .filter((item) => item.points.length > 0)
-            .map((item, seriesIndex) => {
+          {legendGroupsV164.map((group) => {
+            const buttons = group.items.map(({ item, seriesIndex }) => {
               const active = visibleSeriesIds.has(item.id);
               const marker = item.marker || MARKERS_V127[seriesIndex % MARKERS_V127.length];
               const linePattern =
@@ -796,7 +819,17 @@ export function InteractiveTimeSeriesChartV127({
                   <span><PublicTermExpandedTextV134 text={item.label} /></span>
                 </button>
               );
-            })}
+            });
+            // V164: past a dozen series the rest of the legend folds away (all stay selectable).
+            return group.more ? (
+              <details className="v127-interactive-chart__legend-more" key="more" data-testid="chart-legend-more-v164">
+                <summary>다른 계열 {group.items.length}개 보기</summary>
+                <div className="v127-interactive-chart__legend-more-list">{buttons}</div>
+              </details>
+            ) : (
+              <span className="v127-interactive-chart__legend-main" key="main">{buttons}</span>
+            );
+          })}
         </div>
 
         {zoomEnabled ? (

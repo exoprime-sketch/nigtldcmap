@@ -17,3 +17,6 @@
   .ccb158__bars th { width: 92px; }
   .ccb158__bars td.num { width: 78px; }
 }
+/* V164: the line chart is laid out at its shown width (fixed-size labels). */
+.ccb158__chart-wrap { width: 100%; }
+.ccb158__chart-wrap > .ccb158__chart { display: block; width: 100%; height: auto; max-width: 100%; }

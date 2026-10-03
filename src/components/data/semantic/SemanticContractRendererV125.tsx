@@ -885,6 +885,38 @@ function TwoYearChangeUnitV135({
   );
 }
 
+const TREND_OPEN_SERIES_LIMIT_V164 = 8;
+
+/**
+ * V164: legend labels without the words every series shares - the measure in
+ * front ("개도국 내 각국별 ODA 규모 · ") and the same description after " — "
+ * (a "(소계)"/"(개별)" variant is kept). Falls back to the delivered labels when
+ * shortening would make two labels the same.
+ */
+export function compactSeriesLabelsV164(labels: string[]): string[] {
+  if (labels.length < 4) return labels;
+  let head = labels[0];
+  for (const label of labels) while (head && !label.startsWith(head)) head = head.slice(0, -1);
+  const cut = head.lastIndexOf(" · ");
+  const prefix = cut > 0 ? head.slice(0, cut + 3) : "";
+  let out = labels.map((label) => (prefix ? label.slice(prefix.length) : label));
+  const tails = out.map((label) => {
+    const index = label.lastIndexOf(" — ");
+    return index > 0 ? label.slice(index) : null;
+  });
+  const base = (tail: string | null) => (tail === null ? null : tail.replace(/\((소계|개별|총계)\)$/u, ""));
+  const first = base(tails[0]);
+  if (first && tails.every((tail) => base(tail) === first)) {
+    out = out.map((label, index) => {
+      const tail = tails[index] as string;
+      const variant = tail.slice(first.length);
+      return `${label.slice(0, label.length - tail.length)}${variant ? ` ${variant}` : ""}`;
+    });
+  }
+  out = out.map((label, index) => label.trim() || labels[index]);
+  return new Set(out).size === out.length ? out : labels;
+}
+
 function TrendUnitV125({
   rows,
   unit,
@@ -910,6 +942,20 @@ function TrendUnitV125({
       values[0].semanticMeasure.labelKo,
     rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
   }));
+  // V164: many series (D-011's ~100 donors) open on the largest few by latest value,
+  // with the shared measure words taken out of each legend label; the rest stay one
+  // click away in the legend and all of them stay in the table below.
+  const compactLabelsV164 = compactSeriesLabelsV164(sourceSeries.map((item) => item.label));
+  sourceSeries.forEach((item, index) => { item.label = compactLabelsV164[index]; });
+  const latestOfV164 = (item: { rows: NumericRowV125[] }) => Math.abs(item.rows[item.rows.length - 1]?.value ?? 0);
+  const openSeriesV164 = new Set(
+    sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164
+      ? [...sourceSeries].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
+      : sourceSeries.map((item) => item.key)
+  );
+  if (sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164) {
+    sourceSeries.sort((left, right) => Number(openSeriesV164.has(right.key)) - Number(openSeriesV164.has(left.key)) || latestOfV164(right) - latestOfV164(left));
+  }
   const years = sourceSeries.flatMap((item) =>
     item.rows.map((row) => row.year as number)
   );
@@ -933,6 +979,7 @@ function TrendUnitV125({
     id: item.key,
     indicatorIds: Array.from(new Set(item.rows.map((row) => row.indicatorId).filter(Boolean))),
     label: item.label,
+    defaultVisible: openSeriesV164.has(item.key),
     unit: publicUnit,
     linePattern: patterns[index % patterns.length],
     marker: markers[index % markers.length],

@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 import type { KeyboardEvent, PointerEvent } from "react";
 import "../data/public/primary-energy-composition-v132.css";
+import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
 
 /**
  * V153-D1: the stacked-area chart the A-016 screen drew (V132), shared so a
@@ -63,9 +64,6 @@ export function StackedAreaChartV153({
   const [pinned, setPinned] = useState(false);
   const width = 960;
   const height = 370;
-  const padding = { left: 68, right: 22, top: 18, bottom: 58 };
-  const plotWidth = width - padding.left - padding.right;
-  const plotHeight = height - padding.top - padding.bottom;
   const availableSeries = series.filter((item) => visibleSeries.has(item.key));
   const yearMinimum = years.length > 0 ? years[0].year : 0;
   const yearMaximum = years.length > 0 ? years[years.length - 1].year : 1;
@@ -73,7 +71,7 @@ export function StackedAreaChartV153({
   const completeYears = years.filter((item) =>
     series.every((candidate) => Number.isFinite(item.values[candidate.key]))
   );
-  const stackMaximum = mode === "share"
+  const rawStackMaximum = mode === "share"
     ? 100
     : Math.max(
         1e-9,
@@ -84,6 +82,16 @@ export function StackedAreaChartV153({
           )
         )
       );
+  // V164: the value axis ends on a round tick, so its guides are round numbers.
+  const absoluteTicksV164 = mode === "share" ? [] : niceTicksV164(0, rawStackMaximum, 4);
+  const stackMaximum = mode === "share" ? 100 : absoluteTicksV164[absoluteTicksV164.length - 1] || rawStackMaximum;
+  const absoluteTickLabelsV164 = formatAxisTicksV164(absoluteTicksV164);
+  // The value labels set the left margin, so the rotated axis title never sits on them.
+  const tickLabelWidthV164 = Math.max(28, ...(mode === "share" ? ["100%"] : absoluteTickLabelsV164).map((label) =>
+    Array.from(label).reduce((sum, ch) => sum + (/[\d.,%\s-]/.test(ch) ? 7.4 : 12.5), 0)));
+  const padding = { left: Math.max(68, Math.round(tickLabelWidthV164 + 42)), right: 22, top: 18, bottom: 58 };
+  const plotWidth = width - padding.left - padding.right;
+  const plotHeight = height - padding.top - padding.bottom;
   const x = (year: number) =>
     padding.left + ((year - yearMinimum) / yearSpan) * plotWidth;
   const y = (value: number) =>
@@ -118,7 +126,8 @@ export function StackedAreaChartV153({
   const tickYears = adaptiveTicksV153(completeYears.map((item) => item.year), 7);
   const yTicks = mode === "share"
     ? [0, 25, 50, 75, 100]
-    : [0, 0.25, 0.5, 0.75, 1].map((ratio) => stackMaximum * ratio);
+    : absoluteTicksV164;
+
   const active = completeYears.find((item) => item.year === activeYear) || null;
   const activeX = active ? x(active.year) : null;
   const totalLinePath = mode === "absolute"
@@ -216,7 +225,7 @@ export function StackedAreaChartV153({
           <g key={`y-${tick}`}>
             <line className="pec132__grid" x1={padding.left} x2={width - padding.right} y1={y(tick)} y2={y(tick)} />
             <text className="pec132__tick" textAnchor="end" x={padding.left - 10} y={y(tick) + 4}>
-              {mode === "share" ? `${Math.round(tick)}%` : formatStackedV153(tick)}
+              {mode === "share" ? `${Math.round(tick)}%` : absoluteTickLabelsV164[absoluteTicksV164.indexOf(tick)] ?? formatStackedV153(tick)}
             </text>
           </g>
         ))}
@@ -245,7 +254,7 @@ export function StackedAreaChartV153({
           <line className="pec132__crosshair" x1={activeX} x2={activeX} y1={padding.top} y2={height - padding.bottom} />
         ) : null}
         <text className="pec132__axis-title" textAnchor="middle" x={padding.left + plotWidth / 2} y={height - 10}>연도</text>
-        <text className="pec132__axis-title" textAnchor="middle" transform={`translate(17 ${padding.top + plotHeight / 2}) rotate(-90)`}>{mode === "share" ? "구성비(%)" : `${words.quantity}(${unit})`}</text>
+        <text className="pec132__axis-title" textAnchor="middle" transform={`translate(14 ${padding.top + plotHeight / 2}) rotate(-90)`}>{mode === "share" ? "구성비(%)" : `${words.quantity}(${unit})`}</text>
       </svg>
       {active ? (
         <div

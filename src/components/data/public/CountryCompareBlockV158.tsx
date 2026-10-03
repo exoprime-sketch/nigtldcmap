@@ -1,7 +1,8 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import "./country-compare-v158.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { formatAxisTicksV164, formatAxisValueV164, niceTicksV164 } from "../../../utils/axisTicksV164";
 
 /**
  * One country's series for the element being compared.
@@ -60,26 +61,6 @@ function valueAtV158(row: CountryCompareSeriesV158, year: number): number | null
 }
 
 /** V164: round steps (1, 2, 2.5, 5 x 10^n) for a value axis between lo and hi. */
-function niceTicksV164(lo: number, hi: number, count = 4): number[] {
-  if (!Number.isFinite(lo) || !Number.isFinite(hi)) return [];
-  if (lo === hi) {
-    const pad = Math.abs(lo) * 0.1 || 1;
-    lo -= pad;
-    hi += pad;
-  }
-  const raw = (hi - lo) / count;
-  const magnitude = 10 ** Math.floor(Math.log10(raw));
-  const step = [1, 2, 2.5, 5, 10].map((m) => m * magnitude).find((candidate) => candidate >= raw) || raw;
-  const first = Math.floor(lo / step) * step;
-  const ticks: number[] = [];
-  for (let value = first; value <= hi + step * 0.5; value += step) ticks.push(Number(value.toFixed(10)));
-  return ticks;
-}
-
-function formatAxisV164(value: number): string {
-  return value.toLocaleString("ko-KR", { maximumFractionDigits: Math.abs(value) < 10 ? 2 : 1 });
-}
-
 /**
  * V164: the country lines with what a reader needs to read them - a value axis
  * with its unit, the first, middle and last years, and each country's latest
@@ -98,22 +79,40 @@ function MultiLineChartV164({
   years: number[];
   rows: Array<{ row: CountryCompareSeriesV158; color: string }>;
 }) {
-  const width = 640;
-  const height = 240;
-  const left = 56;
-  const right = 118;
-  const top = 14;
-  const bottom = 30;
+  // The drawing is laid out at the width it is shown at, so labels stay at their
+  // set size instead of growing with a wide card or being cut at its edges.
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [measured, setMeasured] = useState(640);
+  useEffect(() => {
+    const node = wrapRef.current;
+    if (!node) return undefined;
+    const update = () => setMeasured(Math.round(node.getBoundingClientRect().width) || 640);
+    update();
+    if (typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(update);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  const width = Math.max(300, Math.min(1100, measured));
+  const height = width < 480 ? 220 : 260;
   const values = years.flatMap((year) => rows.map(({ row }) => valueAtV158(row, year)).filter((value): value is number => value !== null));
   if (values.length === 0) return null;
   const ticks = niceTicksV164(Math.min(...values), Math.max(...values));
+  const tickLabels = formatAxisTicksV164(ticks);
   const lo = ticks[0];
   const hi = ticks[ticks.length - 1];
   const span = hi - lo || 1;
+  const lastIndex = years.length - 1;
+  const endText = (row: CountryCompareSeriesV158, value: number) => `${row.countryNameKo} ${formatAxisValueV164(value)}`;
+  const textWidth = (text: string) => Array.from(text).reduce((sum, ch) => sum + (/[\d.,\s-]/.test(ch) ? 7 : 12), 0);
+  const left = Math.max(40, ...tickLabels.map((label) => textWidth(label) + 14), unit ? textWidth(unit) + 8 : 0);
+  const endLabels = rows.map(({ row }) => valueAtV158(row, years[lastIndex])).filter((value): value is number => value !== null);
+  const right = Math.min(width * 0.38, Math.max(24, ...rows.map(({ row }, index) => (endLabels[index] === undefined ? 0 : textWidth(endText(row, endLabels[index])) + 18))));
+  const top = 22;
+  const bottom = 28;
   const x = (position: number) => (years.length === 1 ? left + (width - left - right) / 2 : left + (position / (years.length - 1)) * (width - left - right));
   const y = (value: number) => top + (1 - (value - lo) / span) * (height - top - bottom);
   const yearMarks = years.length <= 3 ? years.map((year, index) => ({ year, index })) : [0, Math.floor((years.length - 1) / 2), years.length - 1].map((index) => ({ year: years[index], index }));
-  const lastIndex = years.length - 1;
   // End labels, nudged apart when two lines finish close together.
   const ends = rows
     .map(({ row, color }) => ({ row, color, value: valueAtV158(row, years[lastIndex]) }))
@@ -121,27 +120,30 @@ function MultiLineChartV164({
     .map((end) => ({ ...end, labelY: y(end.value) }))
     .sort((a, b) => a.labelY - b.labelY);
   for (let index = 1; index < ends.length; index += 1) {
-    if (ends[index].labelY - ends[index - 1].labelY < 14) ends[index].labelY = ends[index - 1].labelY + 14;
+    if (ends[index].labelY - ends[index - 1].labelY < 15) ends[index].labelY = ends[index - 1].labelY + 15;
   }
   return (
+    <div ref={wrapRef} className="ccb158__chart-wrap">
     <svg
       className="ccb158__chart"
+      width={width}
+      height={height}
       viewBox={`0 0 ${width} ${height}`}
       role="img"
       aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${unit}` : ""}`}
       data-testid="country-compare-lines-v158"
     >
-      {ticks.map((tick) => (
+      {ticks.map((tick, index) => (
         <g key={tick} className="ccb158__tick">
           <line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} stroke="#e1ebe7" strokeWidth="1" />
           <text x={left - 6} y={y(tick) + 4} textAnchor="end" fontSize="11" fill="#5b7169">
-            {formatAxisV164(tick)}
+            {tickLabels[index]}
           </text>
         </g>
       ))}
       {unit ? (
-        <text x={left - 6} y={top - 3} textAnchor="end" fontSize="10.5" fill="#5b7169" data-testid="country-compare-unit-v164">
-          {unit}
+        <text x={4} y={11} textAnchor="start" fontSize="11" fill="#5b7169" data-testid="country-compare-unit-v164">
+          {`단위: ${unit}`}
         </text>
       ) : null}
       {yearMarks.map(({ year, index }) => (
@@ -170,11 +172,12 @@ function MultiLineChartV164({
         <g key={end.row.countryIso3}>
           <circle cx={x(lastIndex)} cy={y(end.value)} r="3.2" fill={end.color} />
           <text x={x(lastIndex) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
-            {end.row.countryNameKo} {formatAxisV164(end.value)}
+            {endText(end.row, end.value)}
           </text>
         </g>
       ))}
     </svg>
+    </div>
   );
 }
 

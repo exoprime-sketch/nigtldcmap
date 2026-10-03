@@ -1,4 +1,6 @@
 import { displayUnitV150 } from "../visualization/unitDisplayV150";
+import { publicScaledNumberV136_2 } from "../../utils/publicNumberScaleV136_2";
+import { isSourceSubtotalV164, isTotalCategoryV164, localizedEnergyCategoryV164 } from "../visualization/energyCategoryV164";
 import { publicSeriesNameV163 } from "../visualization/seriesLabelV163";
 import { PROVINCE_KO_V150 } from "../map/mapBackdropV150";
 import { PROVINCE_KO_34_V151 } from "../map/adminBoundaryV151";
@@ -97,8 +99,18 @@ export function decisionPointsV159(
   }
 }
 
-function formatNumber(value: number): string {
+function formatNumber(value: number, unit?: string | null): string {
+  // V164: a twelve-digit figure is read with its Korean scale word (4,563.19억); the
+  // exact value stays in the table and the download.
+  const scaled = publicScaledNumberV136_2(value, unit);
+  if (scaled.scaled) return scaled.display;
   return value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+}
+
+function periodTextV164(row: S1CountryObservationV159): string {
+  const range = String(row.period || "").match(/^\s*(\d{4})\s*[-–~]\s*(\d{4})\s*$/u) ||
+    String(row.label || "").match(/(\d{4})\s*[-–~]\s*(\d{4})\s*평년/u);
+  return range && range[1] !== range[2] ? `${range[1]}–${range[2]}년` : `${row.year}년`;
 }
 
 function isNumeric(value: unknown): value is number {
@@ -120,9 +132,13 @@ function pickHeadlineIndicatorId(
   for (const id of headlineIndicatorIds || []) {
     if (rows.some((row) => row.indicatorId === id && isNumeric(row.value))) return id;
   }
+  // V164: a series the delivery marks as the representative value ("(대표값)") is the
+  // headline the analysis below also leads with (D-005).
+  const representative = rows.filter((row) => isNumeric(row.value) && /\(대표값\)/u.test(String(row.label || "")));
+  const pool = representative.length > 0 ? representative : rows;
   const counts = new Map<string, number>();
   const order: string[] = [];
-  for (const row of rows) {
+  for (const row of pool) {
     if (!isNumeric(row.value)) continue;
     if (!counts.has(row.indicatorId)) order.push(row.indicatorId);
     counts.set(row.indicatorId, (counts.get(row.indicatorId) || 0) + 1);
@@ -154,7 +170,7 @@ function decisionPointsU1(
   const latest = subjectRows[0];
 
   if (latest) {
-    const displayValue = isNumeric(latest.value) ? formatNumber(latest.value) : String(latest.value);
+    const displayValue = isNumeric(latest.value) ? formatNumber(latest.value, latest.unit) : String(latest.value);
     // V163-T2: when the subject has several numeric series (A-010 four gases),
     // a bare number reads as the element total - name the series it belongs to.
     const subjectSeries = new Set(
@@ -163,11 +179,21 @@ function decisionPointsU1(
         .map((row) => row.indicatorId)
     );
     const seriesLabel = publicSeriesNameV163(latest.label);
+    // V164: when several series share that name (D-005 감축: 부처·성·경상·대표값), the
+    // series' own description after " — " says which one the value is.
+    const sameName = new Set(
+      rows
+        .filter((row) => row.countryIso3 === opts.countryIso3 && isNumeric(row.value) && publicSeriesNameV163(row.label) === seriesLabel)
+        .map((row) => row.indicatorId)
+    );
+    const tail = String(latest.label || "").split(" — ").slice(1).join(" — ").trim();
+    const seriesText = seriesLabel && sameName.size > 1 && tail ? `${seriesLabel} · ${tail}` : seriesLabel;
     points.push({
       key: "latest-value",
       label: "최신값·연도",
-      value: `${displayValue}${unitSuffix(latest.unit)} (${latest.year}년)`,
-      ...(subjectSeries.size > 1 && seriesLabel ? { detail: `${seriesLabel} 기준` } : {}),
+      // V164: a climatology ("1991-2020" 평년값) is dated by its period, not its first year.
+      value: `${displayValue}${unitSuffix(latest.unit)} (${periodTextV164(latest)})`,
+      ...(subjectSeries.size > 1 && seriesText ? { detail: `${seriesText} 기준` } : {}),
     });
   }
 
@@ -191,7 +217,7 @@ function decisionPointsU1(
         key: "five-year-direction",
         label: "최근 5년 방향",
         value: direction,
-        detail: `${earlierYear}년 ${formatNumber(earlier.value as number)}${unitSuffix(latest.unit)} → ${latest.year}년 ${formatNumber(latest.value as number)}${unitSuffix(latest.unit)}`,
+        detail: `${earlierYear}년 ${formatNumber(earlier.value as number, latest.unit)}${unitSuffix(latest.unit)} → ${latest.year}년 ${formatNumber(latest.value as number, latest.unit)}${unitSuffix(latest.unit)}`,
       });
     }
   }
@@ -237,7 +263,7 @@ function decisionPointsU2(
   const sorted = [...atLatestYear].sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
   const formatRegion = (row: S2RegionObservationV159) =>
-    `${regionDisplayNameV159(row, opts.countryIso3)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`;
+    `${regionDisplayNameV159(row, opts.countryIso3)}: ${formatNumber(row.value as number, unit)}${unitSuffix(unit)}`;
 
   const points: DecisionPointV159[] = [];
   // A row whose region cannot be named is left out: a code is not a region name.
@@ -256,7 +282,7 @@ function decisionPointsU2(
     points.push({
       key: "national-comparison",
       label: "전국 대비",
-      value: `전국 ${formatNumber(national.value as number)}${unitSuffix(unit)} (${latestYear}년)`,
+      value: `전국 ${formatNumber(national.value as number, unit)}${unitSuffix(unit)} (${latestYear}년)`,
       detail: `최고 ${formatRegion(sorted[0])} · 최저 ${formatRegion(sorted[sorted.length - 1])}`,
     });
   }
@@ -287,18 +313,29 @@ function decisionPointsU3(
   if (candidates.length === 0) return opts.referenceCountryIso3 ? decisionPointsReferenceCountry(rows, opts) : [];
   const latestYear = Math.max(...candidates.map((row) => row.year ?? -Infinity));
   if (!Number.isFinite(latestYear)) return [];
-  const atLatestYear = candidates.filter((row) => row.year === latestYear);
+  const latestRows = candidates.filter((row) => row.year === latestYear);
+  // V164: a delivered total or source subtotal (IRENA "Total non-renewable energy",
+  // "Fossil fuels") sums other rows; it is not a technology of its own.
+  const latestCategories = latestRows.map((row) => String(row.category || ""));
+  const atLatestYear = latestRows.filter((row) =>
+    !(row.category && (isTotalCategoryV164(row.category) || isSourceSubtotalV164(row.category, latestCategories)))
+  );
   if (atLatestYear.length === 0) return [];
 
-  // One reading per tech/category: keep the first seen when a group repeats.
-  const seen = new Set<string>();
-  const deduped: S1CountryObservationV159[] = [];
+  // One reading per tech/category: the largest of a group that repeats (V164: was the
+  // first seen), named with its category when the group holds several.
+  const groups = new Map<string, S1CountryObservationV159[]>();
   for (const row of atLatestYear) {
     const key = techLabel(row);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    deduped.push(row);
+    groups.set(key, [...(groups.get(key) || []), row]);
   }
+  const deduped = Array.from(groups.values()).map((group) => [...group].sort((a, b) => (b.value as number) - (a.value as number))[0]);
+  const groupSize = (row: S1CountryObservationV159) => groups.get(techLabel(row))?.length || 1;
+  const readingLabel = (row: S1CountryObservationV159) => {
+    const tech = techLabel(row);
+    const category = row.category && row.techIds.length > 0 && groupSize(row) > 1 ? localizedEnergyCategoryV164(row.category) : "";
+    return category && category !== tech ? `${category} · ${tech}` : tech;
+  };
   const sorted = deduped.sort((a, b) => (b.value as number) - (a.value as number));
   const unit = sorted[0].unit;
   const top = sorted.slice(0, 3);
@@ -308,7 +345,7 @@ function decisionPointsU3(
       key: "top-technologies",
       label: "값이 큰 기술 상위 3",
       value: top
-        .map((row) => `${techLabel(row)}: ${formatNumber(row.value as number)}${unitSuffix(unit)}`)
+        .map((row) => `${readingLabel(row)}: ${formatNumber(row.value as number, unit)}${unitSuffix(unit)}`)
         .join(" · "),
     },
     {
@@ -345,14 +382,14 @@ function decisionPointsReferenceCountry(
   const top = sorted[0];
   const gap = (top.value as number) - (own.value as number);
   // A gap between two percentages is in percentage points.
-  const gapText = unit === "%" ? `${formatNumber(gap)}%p` : `${formatNumber(gap)}${unitSuffix(unit)}`;
+  const gapText = unit === "%" ? `${formatNumber(gap)}%p` : `${formatNumber(gap, unit)}${unitSuffix(unit)}`;
   return [
-    { key: "reference-level", label: `${label(subject)} 수준`, value: `${formatNumber(own.value as number)}${unitSuffix(unit)} (${latestYear}년)` },
+    { key: "reference-level", label: `${label(subject)} 수준`, value: `${formatNumber(own.value as number, unit)}${unitSuffix(unit)} (${latestYear}년)` },
     { key: "reference-rank", label: `${byCountry.size}개국 중 순위`, value: `${sorted.indexOf(own) + 1}위` },
     {
       key: "reference-gap",
       label: "최고국과 격차",
-      value: top === own ? "최고국" : `${gapText} (${label(top.countryIso3)} ${formatNumber(top.value as number)}${unitSuffix(unit)})`,
+      value: top === own ? "최고국" : `${gapText} (${label(top.countryIso3)} ${formatNumber(top.value as number, unit)}${unitSuffix(unit)})`,
     },
   ];
 }
@@ -399,7 +436,7 @@ function decisionPointsU4(rows: readonly S3LocatedEntityV159[]): DecisionPointV1
     const units = new Set(sized.map((row) => row.size?.unit ?? null));
     if (units.size === 1) {
       const total = sized.reduce((sum, row) => sum + (row.size?.value || 0), 0);
-      points.push({ key: "size-total", label: "규모 합계", value: `${formatNumber(total)}${unitSuffix(sized[0].size?.unit)}` });
+      points.push({ key: "size-total", label: "규모 합계", value: `${formatNumber(total, sized[0].size?.unit)}${unitSuffix(sized[0].size?.unit)}` });
     }
   }
 
@@ -431,7 +468,7 @@ function decisionPointsU5(rows: readonly S4EntityV159[]): DecisionPointV159[] {
     const currencies = new Set(amounted.map((row) => row.amount?.currency ?? null));
     if (currencies.size === 1) {
       const total = amounted.reduce((sum, row) => sum + (row.amount?.value || 0), 0);
-      points.push({ key: "amount-total", label: "총액", value: `${formatNumber(total)} ${amounted[0].amount?.currency}` });
+      points.push({ key: "amount-total", label: "총액", value: `${formatNumber(total, amounted[0].amount?.currency)} ${amounted[0].amount?.currency}` });
     }
   }
 
