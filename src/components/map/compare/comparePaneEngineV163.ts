@@ -127,6 +127,9 @@ function countryProvinceLabelsV163(reference: VietnamMapGeoJsonV124 | null): Geo
   return features;
 }
 
+/** Visible-time budget for the first frame before a pane reports an error. */
+const LOAD_BUDGET_MS_V163 = 20000;
+
 export async function createComparePaneEngineV163(input: ComparePaneEngineInputV163): Promise<ComparePaneEngineV163> {
   const style = JSON.parse(JSON.stringify(MAP_STYLE));
   const bbox = input.bbox || [102.14, 8.18, 109.46, 23.39];
@@ -169,12 +172,30 @@ export async function createComparePaneEngineV163(input: ComparePaneEngineInputV
   };
   map.on("error", onError);
 
+  // MapLibre's first frame (and so "load") waits for requestAnimationFrame,
+  // which a hidden tab never runs: a comparison opened in a background tab
+  // used to time out and show its error before the reader ever looked. The
+  // budget therefore only runs while the page is visible.
   await new Promise<void>((resolve, reject) => {
-    const timeout = window.setTimeout(() => reject(new Error("compare map load timeout")), 20000);
-    map.once("load", () => {
+    let timeout = 0;
+    const cleanup = () => {
       window.clearTimeout(timeout);
+      document.removeEventListener("visibilitychange", arm);
+    };
+    function arm() {
+      window.clearTimeout(timeout);
+      if (document.hidden) return;
+      timeout = window.setTimeout(() => {
+        cleanup();
+        reject(new Error("compare map load timeout"));
+      }, LOAD_BUDGET_MS_V163);
+    }
+    document.addEventListener("visibilitychange", arm);
+    map.once("load", () => {
+      cleanup();
       resolve();
     });
+    arm();
   }).catch((reason) => {
     map.off("error", onError);
     map.remove();
