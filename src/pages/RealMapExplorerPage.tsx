@@ -1,6 +1,7 @@
 import { countryDataLoaderV158 } from "../data/countries/countryDataLoaderV158";
 import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
-import { countryLevel1AssetUrlV162, regionWordV158 } from "../data/countries/countryLevel1V158";
+import { countryLevel1AssetUrlV162, countryLevel1V158, regionWordV158 } from "../data/countries/countryLevel1V158";
+import { boundaryCreditPhraseV163 } from "../data/map/miniMapCountryV163";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
@@ -1902,8 +1903,8 @@ export default function RealMapExplorerPage({
               ""
           ),
           name: publicMapFeatureNameV126(
-            feature.properties?.name,
-            "성·시"
+            feature.properties?.nameKo || feature.properties?.name,
+            regionWordV158(countryIso3).word
           ),
           path: geometryToFallbackPath(
             feature.geometry as { type: string; coordinates: unknown },
@@ -1911,7 +1912,7 @@ export default function RealMapExplorerPage({
           ),
         }))
         .filter((row) => Boolean(row.path)),
-    [adm1Boundary, fallbackBounds]
+    [adm1Boundary, countryIso3, fallbackBounds]
   );
 
   useEffect(() => {
@@ -1965,7 +1966,26 @@ export default function RealMapExplorerPage({
     let cancelled = false;
     setAdm1Boundary(null);
     if (countryIso3 !== "VNM") {
-      setAdm1OutlineStatus("idle");
+      // V163: another country draws its registry level-1 units (BGD: 8 divisions)
+      // as the reference outline and names them, as Viet Nam's 34 do.
+      const level1Url = countryLevel1AssetUrlV162(countryIso3);
+      if (!level1Url) {
+        setAdm1OutlineStatus("idle");
+        return () => {
+          cancelled = true;
+        };
+      }
+      setAdm1OutlineStatus("loading");
+      void countryDataLoaderV158(countryIso3)
+        .loadSpatialGeoJson(level1Url)
+        .then((collection) => {
+          if (cancelled) return;
+          setAdm1Boundary(collection as unknown as VietnamMapGeoJsonV124);
+          setAdm1OutlineStatus("ready");
+        })
+        .catch(() => {
+          if (!cancelled) setAdm1OutlineStatus("error");
+        });
       return () => {
         cancelled = true;
       };
@@ -2465,6 +2485,8 @@ export default function RealMapExplorerPage({
     // V151-2: province labels (grey, polylabel anchors) and city labels (marker
     // + bold) are separate tiers; a centrally-run city gets one label only.
     addKoreanMapLabelsV151(map, adm1Boundary, { showCities: !backdropOwnsCityLabelsV151(backdropKindV151) });
+    // V163: Viet Nam's 34 names wait for zoom 6.3; BGD's 8 divisions read at its opening view.
+    if (map.getLayer("cdp-ko-province")) map.setLayerZoomRange("cdp-ko-province", countryIso3 === "VNM" ? 6.3 : 4.5, 24);
     const keepLabelsAboveData = () => {
       const ids = [...KOREAN_LABEL_LAYER_IDS_V151];
       const all = map.getStyle().layers;
@@ -2472,15 +2494,22 @@ export default function RealMapExplorerPage({
     };
     map.on("idle", keepLabelsAboveData);
     return () => { map.off("idle", keepLabelsAboveData); };
-  }, [adm1Boundary, backdropKindV151, baseMapStatus]);
+  }, [adm1Boundary, backdropKindV151, baseMapStatus, countryIso3]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
-    applyBoundaryReferenceV152(map, countryIso3, adm1Boundary);
+    applyBoundaryReferenceV152(
+      map,
+      countryIso3,
+      adm1Boundary,
+      countryIso3 === "VNM"
+        ? {}
+        : { countryCredit: boundaryCreditPhraseV163(provider?.countryNameKo, countryLevel1V158(countryIso3)) }
+    );
     // V163: another country is drawn from its own outline, not Natural Earth's.
     applyCountryOutlineV163(map, countryIso3);
-  }, [adm1Boundary, baseMapStatus, countryIso3]);
+  }, [adm1Boundary, baseMapStatus, countryIso3, provider]);
 
   useEffect(() => {
     const map = mapRef.current;
