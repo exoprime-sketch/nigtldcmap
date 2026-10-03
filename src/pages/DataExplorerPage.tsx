@@ -718,6 +718,7 @@ export default function DataExplorerPage({
             <span className="cdp-field__label">국가</span>
             <select
               className="cdp-select"
+              data-country-selector="v162"
               value={countryIso3}
               onChange={(event) => onCountryChange(event.target.value)}
             >

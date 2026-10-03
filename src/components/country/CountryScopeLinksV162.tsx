@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useCountryDataProvidersV158 } from "../../data/countries/useCountryDataProvidersV158";
 
 /**
  * V162 PR-D: the public countries named once, each a way into that country's
@@ -8,18 +9,18 @@ import { Fragment } from "react";
  */
 export default function CountryScopeLinksV162({
   current,
-  live,
   hash,
   className,
 }: {
   current: string | null;
-  live: { iso3: string; nameKo: string }[];
   /** The page the links open ("home", "guide"). */
   hash: string;
   className?: string;
 }) {
+  // V162 PR-D: the live countries as every country selector reads them.
+  const live = useCountryDataProvidersV158().map((provider) => ({ iso3: provider.countryIso3, nameKo: provider.countryNameKo }));
   return (
-    <p className={className} data-country-picker="true" data-testid="country-scope-links-v162">
+    <p className={className} data-country-picker="true" data-country-selector="v162" data-testid="country-scope-links-v162">
       현재 제공 국가 ·{" "}
       {live.length === 0
         ? "—"

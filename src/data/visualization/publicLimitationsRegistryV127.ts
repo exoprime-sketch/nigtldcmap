@@ -89,10 +89,27 @@ const HOME_CARD_LIMITATIONS_V140: Readonly<
   ]),
 });
 
+/**
+ * V162 PR-D (user decision 2026-10-03): A-022's map paints each power
+ * corporation's value over its current jurisdiction; the line states which
+ * reorganisation that jurisdiction is. The date is the jurisdiction table's own
+ * (tools/etl/countries/vnm/evn-jurisdiction.json hcmcChange.effectiveDate); a
+ * unit test keeps the two equal.
+ */
+export const A022_JURISDICTION_DATE_V162 = "2025-07-01";
+const A022_PUBLIC_LIMITATIONS_V162: readonly PublicLimitationV127[] =
+  Object.freeze<PublicLimitationV127[]>([
+    {
+      kind: "update-lag",
+      message: `관할 기준 시점: ${A022_JURISDICTION_DATE_V162} — 베트남전력공사(EVN) 전력총공사 관할 재편 시행일(EVN 남부전력총공사 공지)`,
+    },
+  ]);
+
 const PUBLIC_LIMITATIONS_V127: Readonly<
   Record<string, readonly PublicLimitationV127[]>
 > = Object.freeze({
   "A-002": A002_PUBLIC_LIMITATIONS_V127,
+  "A-022": A022_PUBLIC_LIMITATIONS_V162,
   ...HOME_CARD_LIMITATIONS_V140,
 });
 

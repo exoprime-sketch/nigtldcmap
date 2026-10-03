@@ -37,6 +37,7 @@
         "boundaryPolicy34": {
           "kind": "group-constant"
         },
+        "defaultBoundary": "pre-2025-63",
         "kind": "group-constant",
         "publicWording": {
           "accuracyNotice": "NDC 조치 원문이 6대 사회경제 권역의 이름을 직접 적은 연계만 그 권역에 표시합니다. 값은 권역 전체에 해당하며 성·시별로 다르지 않습니다. 해안·산지 같은 일반 지역어는 권역에 연결하지 않습니다.",
@@ -90,6 +91,7 @@
         "boundaryPolicy34": {
           "kind": "group-constant"
         },
+        "defaultBoundary": "pre-2025-63",
         "kind": "group-constant",
         "publicWording": {
           "accuracyNotice": "이 값은 전력총공사 관할 전체에 적용되는 값이며, 성·시별로 다르지 않습니다. 관할 값이 공개되지 않은 곳(북부전력총공사 등)은 비워 두며 0으로 채우지 않습니다.",
@@ -351,6 +353,7 @@
           }
         ],
         "defaultMeasure": "dominant-zone-share",
+        "defaultPeriod": "1991-2020",
         "boundaryPolicy34": {
           "kind": "area-weighted-mean"
         }
@@ -2391,6 +2394,7 @@
         "boundaryPolicy34": {
           "kind": "group-constant"
         },
+        "defaultBoundary": "pre-2025-63",
         "kind": "group-constant",
         "publicWording": {
           "accuracyNotice": "국가적응계획 원문이 6대 사회경제 권역의 이름을 직접 적은 과제·취약성 항목만 그 권역에 표시합니다. 값은 권역 전체에 해당하며 성·시별로 다르지 않습니다. 나머지 항목은 전국 단위로 상세 화면에서 제공합니다.",

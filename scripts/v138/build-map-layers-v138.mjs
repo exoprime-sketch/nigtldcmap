@@ -884,7 +884,11 @@ function finishChoroplethLayer({
     variables.find((option) => option.measureKey === defaultMeasureKey)?.key ||
     variables[0]?.key;
   const defaultOption = variables.find((option) => option.key === defaultVariable);
-  const defaultPeriod = defaultOption
+  // V162 PR-D: a target may name the period its map opens on (B-002 opens on
+  // the observed 1991-2020 normal; scenario periods are a choice).
+  const defaultPeriod = build.defaultPeriod && defaultOption?.periods.includes(build.defaultPeriod)
+    ? build.defaultPeriod
+    : defaultOption
     ? defaultOption.periods.includes("2050")
       ? "2050"
       : defaultOption.periods[defaultOption.periods.length - 1]
@@ -1886,6 +1890,9 @@ function main() {
     } else {
       throw new Error(`unknown build kind ${kind} for ${target.elementId}`);
     }
+    // V162 PR-D: a layer whose values are defined on the 63 pre-2025 provinces
+    // (a group of provinces) names that outline as the one it opens on.
+    if (target.build.defaultBoundary) layers[layers.length - 1].defaultBoundarySystem = target.build.defaultBoundary;
   }
   // ETL layers outside the contract are kept so nothing published is lost - but
   // a target the contract drops (C-009·C-010·C-019 in V157) is dropped on purpose.

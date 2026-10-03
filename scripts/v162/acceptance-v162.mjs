@@ -528,6 +528,49 @@ for (const iso3 of liveCountries.filter((iso3) => iso3 !== DEFAULT_COUNTRY && CO
   check(iso3, "country", "country-selectable", `${iso3} 선택 가능(공개 국가)`, selectable, selectable, true);
 }
 
+// V162 PR-D (user decision 2026-10-03): every country selector offers every live
+// country, on each live country's own screens. The map's list once read the
+// priority-country list and showed Bangladesh as '준비 중' on Viet Nam's map
+// while Bangladesh's map offered it. Selectors carry data-country-selector="v162"
+// (a <select>, or the picker line that names the countries).
+const liveRowsV162 = registryCountries.filter((row) => row.status === "live").map((row) => ({ iso3: row.iso3, nameKo: row.nameKo }));
+for (const iso3 of COUNTRIES.filter((code) => liveCountries.includes(code))) {
+  if (SKIP.has("country-selectors")) break;
+  const sampleId = countryData(iso3).publicIds[0];
+  const screens = [
+    ["home", `/${countryQuery(iso3)}#home`, true],
+    ["finder", `/?country=${iso3}#explorer`, true],
+    ["map", `/?view=map&country=${iso3}#map`, true],
+    ["download", `/?country=${iso3}#download`, true],
+    ["guide", `/${countryQuery(iso3)}#guide`, true],
+    ["detail", `/?view=data&country=${iso3}&element=${sampleId}#element-detail`, false],
+  ];
+  const result = await withPage(async (page) => {
+    const out = {};
+    for (const [name, path] of screens) {
+      await page.goto(`${base}${path}`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(120_000) });
+      await page.waitForSelector('[data-country-selector="v162"]', { timeout: scaledTimeoutMsV150(30_000) }).catch(() => null);
+      await page.waitForTimeout(1500);
+      out[name] = await page.evaluate((rows) =>
+        [...document.querySelectorAll('[data-country-selector="v162"]')].map((node) => {
+          if (node.tagName === "SELECT") {
+            const options = [...node.options];
+            return rows.filter((row) => !options.some((option) => option.value.toUpperCase() === row.iso3 && !option.disabled)).map((row) => row.iso3);
+          }
+          const text = node.textContent || "";
+          return rows.filter((row) => !text.includes(row.nameKo)).map((row) => row.iso3);
+        }), liveRowsV162);
+    }
+    return out;
+  });
+  const problems = screens.flatMap(([name, , required]) => {
+    const selectors = result[name] || [];
+    if (!selectors.length) return required ? [`${name}:선택기 없음`] : [];
+    return selectors.flatMap((missing, index) => missing.map((code) => `${name}#${index + 1}:${code} 없음·비활성`));
+  });
+  check(iso3, "country", "country-selectors-live", "모든 국가 선택기에서 live 국가 선택 가능(홈·찾기·지도·다운로드·이용안내, 상세는 있을 때)", problems.length === 0, { problems, selectors: Object.fromEntries(Object.entries(result).map(([name, value]) => [name, value.length])) }, { problems: [], live: liveRowsV162.map((row) => row.iso3) });
+}
+
 await browser.close();
 await server.close();
 

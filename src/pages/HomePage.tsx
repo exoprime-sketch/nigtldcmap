@@ -75,7 +75,7 @@ export default function HomePage({ query, onQueryChange, onSubmit, onSearchExamp
           <span className="home-final-eyebrow">국가별 기후기술 협력 데이터</span>
           <h1 id="home-v128-title">개도국 기후기술 협력 플랫폼</h1>
           <p>{country ? `${country.nameKo}의 ` : ""}정책·에너지·기후위험·사업·협력기관 정보를 검색하고, 지역별 분포와 변화를 확인하세요.</p>
-          <CountryScopeLinksV162 className="home-final-scope" current={country?.iso3 || null} live={country?.live || []} hash="home" />
+          <CountryScopeLinksV162 className="home-final-scope" current={country?.iso3 || null} hash="home" />
           <form className="home-final-search" onSubmit={onSubmit} role="search">
             <label className="sr-only" htmlFor="home-search">데이터명·지역·기술·기관 검색</label>
             <input id="home-search" value={query} onChange={event => onQueryChange(event.target.value)} placeholder="데이터명·지역·기술·기관 검색" />

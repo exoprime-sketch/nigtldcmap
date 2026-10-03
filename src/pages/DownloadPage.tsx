@@ -530,6 +530,7 @@ export default function DownloadPage({
             <span className="cdp-field__label">국가</span>
             <select
               className="cdp-select"
+              data-country-selector="v162"
               value={countrySelection}
               onChange={(event) => {
                 setCountrySelection(event.target.value);

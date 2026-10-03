@@ -138,3 +138,8 @@
   - PR #58(feat/v162-prd) 생성: BGD live · 지도 37(판정 72) · 비교 55 · 나라별 문구. 로컬 BGD 인수 18/18, VNM 지도 60/60, 단위 790/790
   - #57·#58 겹침: RealMapExplorerPage 1곳 충돌(선택 패널 순위 비교) — 해결: map12의 group-constant 조건 유지 + peerLabel은 `regionWordV158(countryIso3).word`
   - 판단 필요: B-012 decisionConflicts 14행
+- **2026-10-03 밤 — PR #57 병합(68831c2), #58 후속**
+  - 운영 확인: 홈 데이터 146 · 지도 제공 72 · 기준일 2026.09.30, 지도 연결 72 · 준비 중 0
+  - #58: origin/main merge(403b4e0, 충돌 1곳 HEAD 유지) + 지시 5건(국가 선택기 단일 출처·country-selectors-live, B-002 1991–2020, A-022·A-013·C-003 63개 경계 기본·A-022 관할 기준 시점, C-006 꼬리표 제거, 캡처 함께 push)
+  - 로컬: 단위 832/832, BGD 인수 20/20, VNM 7/7, role-split 52/52
+  - 데이터 목록 updatedAt 재생성은 병합 커밋 시각으로 일괄 바뀌어 되돌림(내용 동일, verify 통과)

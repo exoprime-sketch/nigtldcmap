@@ -100,7 +100,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   return (
     <div className="page-shell data-guide-v128" data-v128-guide>
       <header className="data-guide-v128__hero">
-        <CountryScopeLinksV162 className="data-guide-v128__scope" current={scopeCountry?.iso3 || null} live={scopeCountry?.live || []} hash="guide" />
+        <CountryScopeLinksV162 className="data-guide-v128__scope" current={scopeCountry?.iso3 || null} hash="guide" />
         <h1>데이터 이용안내</h1>
         <p>
           데이터 범위, 자료기간, 출처, 다운로드 및 지도 이용 시 참고사항을

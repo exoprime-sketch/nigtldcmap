@@ -1,4 +1,5 @@
 import { countryDataLoaderV158 } from "../data/countries/countryDataLoaderV158";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
 import { countryLevel1AssetUrlV162, regionWordV158 } from "../data/countries/countryLevel1V158";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
@@ -139,7 +140,6 @@ import {
 } from "../data/interpretation/publicIndicatorInterpretationV129";
 import { loadVietnamCountryOutlineV151, loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
-import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
 import type { MapCameraV151, MapViewState } from "../types/map";
 import {
   fieldLabelV121,
@@ -1358,6 +1358,7 @@ export default function RealMapExplorerPage({
   const [countryIso3, setCountryIso3] = useState(() =>
     resolveInitialCountry(initialState.countryIso3)
   );
+  const countryProvidersV162 = useCountryDataProvidersV158();
   // V162 PR-D: layer titles read the page's country (see publicMapLayerTitleV126).
   setPublicMapTitleCountryV162(countryIso3);
   useEffect(() => () => setPublicMapTitleCountryV162(null), []);
@@ -2016,7 +2017,44 @@ export default function RealMapExplorerPage({
     };
   }, [countryIso3]);
 
+  // V162 PR-D (user decision 2026-10-03): a layer whose values are defined on
+  // the 63 pre-2025 provinces (A-022 · A-013 · C-003 - a group of provinces)
+  // opens on that outline while it is the primary layer. The reader's own
+  // choice wins and is what is stored; leaving such a layer restores it.
+  const boundaryBeforeAutoRefV162 = useRef<BoundarySystemV151 | null>(null);
+  const boundaryAutoRefV162 = useRef(false);
   useEffect(() => {
+    const layer = layers.find((item) => item.elementId === primaryLayerId) as
+      | (CountryMapLayerV122 & { defaultBoundarySystem?: string })
+      | undefined;
+    const wanted =
+      countryIso3 === DEFAULT_COUNTRY_ISO3_V158 &&
+      (layer?.defaultBoundarySystem === "pre-2025-63" || layer?.defaultBoundarySystem === "post-2025-34")
+        ? (layer.defaultBoundarySystem as BoundarySystemV151)
+        : null;
+    setBoundarySystemV151State((current) => {
+      if (wanted && wanted !== current) {
+        if (boundaryBeforeAutoRefV162.current === null) boundaryBeforeAutoRefV162.current = current;
+        boundaryAutoRefV162.current = true;
+        return wanted;
+      }
+      if (!wanted && boundaryBeforeAutoRefV162.current !== null) {
+        const restored = boundaryBeforeAutoRefV162.current;
+        boundaryBeforeAutoRefV162.current = null;
+        if (restored === current) return current;
+        boundaryAutoRefV162.current = true;
+        return restored;
+      }
+      return current;
+    });
+  }, [countryIso3, layers, primaryLayerId]);
+
+  useEffect(() => {
+    // An outline the page chose for a layer is not the reader's preference.
+    if (boundaryAutoRefV162.current) {
+      boundaryAutoRefV162.current = false;
+      return;
+    }
     try {
       localStorage.setItem(
         BOUNDARY_SYSTEM_STORAGE_KEY_V151,
@@ -5675,21 +5713,19 @@ export default function RealMapExplorerPage({
 
           <label className="cdp-field">
             <span className="cdp-field__label">국가</span>
+            {/* V162 PR-D: the live countries of the registry, as every country
+                selector reads them (useCountryDataProvidersV158 re-reads once
+                countries.json has loaded). The old list asked each priority
+                country at render time and kept the bundled answer. */}
             <select
               className="cdp-select"
+              data-country-selector="v162"
               value={countryIso3}
               onChange={(event) => changeCountry(event.target.value)}
             >
-              {PRIORITY_COUNTRIES.map((country) => (
-                <option
-                  key={country.iso3}
-                  value={country.iso3}
-                  disabled={!hasCountryDataProviderV122(country.iso3)}
-                >
-                  {country.nameKo}
-                  {!hasCountryDataProviderV122(country.iso3)
-                    ? " · 준비 중"
-                    : ""}
+              {countryProvidersV162.map((item) => (
+                <option key={item.countryIso3} value={item.countryIso3}>
+                  {item.countryNameKo}
                 </option>
               ))}
             </select>
@@ -7323,7 +7359,11 @@ export default function RealMapExplorerPage({
                   <input
                     checked={boundarySystemV151State === system}
                     name="cdp-map-boundary-system-v151"
-                    onChange={() => setBoundarySystemV151State(system)}
+                    onChange={() => {
+                      // The reader's choice replaces any layer default.
+                      boundaryBeforeAutoRefV162.current = null;
+                      setBoundarySystemV151State(system);
+                    }}
                     type="radio"
                     value={system}
                   />
