@@ -9,16 +9,27 @@ export const VNM_ADM1_BASE_SOURCE_V126 = "cdp-vietnam-adm1-reference";
 
 export const VNM_ADM1_BASE_OUTLINE_V126 = "cdp-vietnam-adm1-reference-outline";
 
+export interface BoundaryReferenceOptionsV163 {
+  /**
+   * V163: another country's level-1 outline is drawn (thin, under the data) only
+   * when the caller gives its source credit; without it the outline is removed
+   * outside Viet Nam, as the big map has always done.
+   */
+  countryCredit?: string;
+}
+
 /**
  * Draws (or re-points) the province reference outline for the boundary vintage
- * the loaded asset carries; removes it outside Viet Nam.
+ * the loaded asset carries; removes it outside Viet Nam unless the caller names
+ * the other country's credit.
  */
 export function applyBoundaryReferenceV152(
   map: MapLibreMap,
   countryIso3: string,
-  adm1Boundary: VietnamMapGeoJsonV124 | null
+  adm1Boundary: VietnamMapGeoJsonV124 | null,
+  options: BoundaryReferenceOptionsV163 = {}
 ): void {
-  if (countryIso3 !== "VNM" || !adm1Boundary) {
+  if ((countryIso3 !== "VNM" && !options.countryCredit) || !adm1Boundary) {
     if (map.getLayer(VNM_ADM1_BASE_OUTLINE_V126)) {
       map.removeLayer(VNM_ADM1_BASE_OUTLINE_V126);
     }
@@ -47,7 +58,9 @@ export function applyBoundaryReferenceV152(
     type: "geojson",
     data: adm1Boundary as GeoJSON.FeatureCollection,
     attribution:
-      '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0 · 2025-07-01 34개 통합 대응',
+      countryIso3 !== "VNM"
+        ? `<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries</a> · ${options.countryCredit}`
+        : '<a href="https://www.geoboundaries.org/" target="_blank" rel="noreferrer">geoBoundaries VNM ADM1</a> · CC BY 4.0 · 2025-07-01 34개 통합 대응',
   });
   // Below any data layer already mounted (re-entering Viet Nam), above the backdrop.
   const firstDataLayer = map.getStyle().layers?.find((entry) => /^v1\d\d-/u.test(entry.id))?.id;

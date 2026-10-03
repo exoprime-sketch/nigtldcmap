@@ -207,7 +207,8 @@ function resetBasePaintV151(map: MapLibreMap, kind: MapBackdropKindV151): void {
   const withBackdrop = kind !== "none";
   if (map.getLayer("cdp-base-background")) map.setPaintProperty("cdp-base-background", "background-color", withBackdrop ? "#cfe0ea" : "#e7efeb");
   const opacity = withBackdrop ? BASE_FILL_OPACITY_V151.withBackdrop : BASE_FILL_OPACITY_V151.withoutBackdrop;
-  for (const id of ["cdp-country-fill", "cdp-vnm-country-fill"]) if (map.getLayer(id)) map.setPaintProperty(id, "fill-opacity", opacity);
+  // "cdp-country-fill-v163": another country's own outline fill (applyCountryOutlineV163).
+  for (const id of ["cdp-country-fill", "cdp-vnm-country-fill", "cdp-country-fill-v163"]) if (map.getLayer(id)) map.setPaintProperty(id, "fill-opacity", opacity);
 }
 
 const OFM_ATTRIBUTION_V151 = "© OpenStreetMap contributors";

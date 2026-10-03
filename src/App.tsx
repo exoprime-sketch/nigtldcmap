@@ -42,6 +42,10 @@ import type {
 } from "./types/compare";
 import { DEFAULT_COMPARE_VIEW_STATE } from "./types/compare";
 import {
+  serializeCompareCountriesV163,
+  serializeCompareSelectorsV163,
+} from "./components/map/compare/compareModelV163";
+import {
   formatMapCameraV151,
   mapCamerasEqualV151,
   parseMapViewState,
@@ -249,6 +253,17 @@ function mapViewStatesEqual(a: MapViewState, b: MapViewState): boolean {
     if (a.comparisonLayerIds[index] !== b.comparisonLayerIds[index]) return false;
   }
 
+  if ((a.comparisonCountries || []).join(",") !== (b.comparisonCountries || []).join(",")) {
+    return false;
+  }
+
+  if (
+    JSON.stringify(a.comparisonSelectors || []) !==
+    JSON.stringify(b.comparisonSelectors || [])
+  ) {
+    return false;
+  }
+
   if (JSON.stringify(a.layerSelectors) !== JSON.stringify(b.layerSelectors)) {
     return false;
   }
@@ -325,9 +340,27 @@ function appendMapViewParams(
     params.set(
       "compareLayers",
       state.comparisonLayerIds
-        .map((key) => publicMapStateKeyV122(key, state.countryIso3))
+        .map((key, index) =>
+          publicMapStateKeyV122(
+            key,
+            state.comparisonCountries?.[index] || state.countryIso3
+          )
+        )
         .join(",")
     );
+    // V163: each pane's country, and its indicator/period when chosen.
+    if (state.comparisonCountries?.length === 2) {
+      params.set(
+        "compareCountries",
+        serializeCompareCountriesV163(state.comparisonCountries)
+      );
+    }
+    if (state.comparisonSelectors?.some(Boolean)) {
+      params.set(
+        "compareSelectors",
+        serializeCompareSelectorsV163(state.comparisonSelectors)
+      );
+    }
   }
   if (Object.keys(state.layerSelectors).length > 0) {
     params.set(

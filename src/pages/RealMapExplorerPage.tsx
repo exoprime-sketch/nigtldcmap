@@ -134,10 +134,7 @@ import {
 import { formatPublicNumberV126 } from "../data/visualization/publicNumberFormatV126";
 import { mapOverlapSummariesV145 } from "../data/map/publicMapOverlapV145";
 import { createMapOverlapPopupV145 } from "../components/map/mapOverlapPopupV145";
-import {
-  publicSourceOrganizationV136_1,
-  publicTextV126,
-} from "../data/visualization/publicFieldPolicyV126";
+import { publicTextV126 } from "../data/visualization/publicFieldPolicyV126";
 import {
   getPublicIndicatorInterpretationV129,
   getPublicIndicatorVariablePresentationV129,
@@ -153,11 +150,11 @@ import {
 import { publicAssetUrlV128 } from "../utils/publicAssetUrlV128";
 import MapPanelSeparatorV129 from "../components/map/MapPanelSeparatorV129";
 import MapDataGuideV130 from "../components/map/MapDataGuideV130";
-import MapComparisonWorkspaceV135 from "../components/map/MapComparisonWorkspaceV135";
-import type {
-  MapComparisonDatasetV135,
-  MapComparisonSideV135,
-} from "../components/map/MapComparisonWorkspaceV135";
+import MapComparisonWorkspaceV163 from "../components/map/compare/MapComparisonWorkspaceV163";
+import {
+  initialPanesV163,
+  type ComparePanesV163,
+} from "../components/map/compare/compareModelV163";
 import {
   PublicTermExpandedTextV134,
   PublicTermHelpV134,
@@ -180,7 +177,7 @@ import type {
   SpatialRuntimeAsset,
 } from "../map/layers/types";
 import { LAYER_COLORS } from "../map/layers/colors";
-import { MAP_STYLE } from "../map/layers/baseStyle";
+import { applyCountryOutlineV163, MAP_STYLE } from "../map/layers/baseStyle";
 import {
   layerRuntimeIds,
   moveMapDataLayersV126,
@@ -221,7 +218,6 @@ import type {
 import {
   areaKm2ByAdm1CodeV151,
   choroplethFeatureCollectionV151,
-  featureCollection,
   lineFeatureCollection,
   spatialValuesForSelectorV125,
   statisticalRepresentativePointsV133,
@@ -535,25 +531,19 @@ function geometryToFallbackLinePath(
     .join(" ");
 }
 
+/** The pair the comparison opens with when the reader has not chosen one (V135). */
+const DEFAULT_COMPARISON_PAIR_V163: [string, string] = ["D-018", "C-025"];
+
 /**
  * V135 comparison workspace DOM contract. Each pane is an equal primary view;
  * panning or zooming one pane synchronizes (동기화) the other to the same extent.
+ * V163: the panes are MapComparisonWorkspaceV163's, each with its own country,
+ * and the synchronisation is a toggle (on by default inside one country).
  */
 export const MAP_COMPARE_PANE_TEST_IDS_V135 = [
   "map-compare-pane-a",
   "map-compare-pane-b",
 ] as const;
-
-function publicMapCoverageTextV126(layer: CountryMapLayerV122): string {
-  if (layer.elementId === "A-023") return "발전소 좌표 레코드(두 출처, 중복 미통합)";
-  if (layer.elementId === "A-024") return "송전망 구간 606개";
-  const safe = publicTextV126(layer.spatialCoverage) || "";
-  if (!safe) return "공개 위치자료 범위";
-  return safe
-    .replace(/출처 좌표가 있는\s*([\d,]+)개\s*피처/gu, "위치자료 $1건")
-    .replace(/([\d,]+)개\s*피처/gu, "위치자료 $1건")
-    .replace(/피처/gu, "위치자료");
-}
 
 /**
  * Whether the layer draws a published spatial asset rather than entity records.
@@ -1446,11 +1436,13 @@ export default function RealMapExplorerPage({
   const [externalStateHydrated, setExternalStateHydrated] = useState(false);
   const [layers, setLayers] = useState<CountryMapLayerV122[]>([]);
   const [activeIds, setActiveIds] = useState<string[]>(() => {
+    // V163: the comparison workspace loads its panes' data itself; the map
+    // underneath keeps no layer for it.
     if (
       initialState.comparisonMode &&
       initialState.comparisonLayerIds.length === 2
     ) {
-      return initialState.comparisonLayerIds.slice(0, 2);
+      return [];
     }
     const primary =
       initialState.primaryLayerId || initialState.focusLayerKey || null;
@@ -1513,14 +1505,22 @@ export default function RealMapExplorerPage({
   const [comparisonModeV135, setComparisonModeV135] = useState(
     () => initialState.comparisonMode
   );
-  const [comparisonLayerIdsV135, setComparisonLayerIdsV135] = useState<
-    [string, string]
-  >(() => {
-    const restored = initialState.comparisonLayerIds;
-    return restored.length === 2
-      ? [restored[0], restored[1]]
-      : ["D-018", "C-025"];
-  });
+  // V163: the two comparison panes (country, data, indicator, period). Seeded
+  // from the URL; afterwards the workspace owns them and reports back here.
+  const [comparisonPanesV163, setComparisonPanesV163] =
+    useState<ComparePanesV163>(() =>
+      initialPanesV163({
+        layerIds:
+          initialState.comparisonLayerIds.length === 2
+            ? initialState.comparisonLayerIds
+            : DEFAULT_COMPARISON_PAIR_V163,
+        countries: initialState.comparisonCountries,
+        selectors: initialState.comparisonSelectors,
+        fallbackCountry: resolveInitialCountry(initialState.countryIso3),
+      })
+    );
+  // A new key per opening, so the workspace starts from the panes it is given.
+  const [comparisonSessionV163, setComparisonSessionV163] = useState(0);
   const [keyboardFeatureIndexV129, setKeyboardFeatureIndexV129] = useState(0);
   const [selectedPresetId, setSelectedPresetId] =
     useState<PublicMapWorkspacePresetIdV126 | null>(() =>
@@ -2205,15 +2205,6 @@ export default function RealMapExplorerPage({
     return () => window.cancelAnimationFrame(frame);
   }, [comparisonModeV135]);
 
-  useEffect(() => {
-    if (!comparisonModeV135) return;
-    const pair = [comparisonLayerIdsV135[0], comparisonLayerIdsV135[1]].filter(
-      Boolean
-    );
-    setActiveIds((current) => (sameStringArray(current, pair) ? current : pair));
-    setFocusId((current) => (current === pair[0] ? current : pair[0] || null));
-  }, [comparisonLayerIdsV135, comparisonModeV135]);
-
   const externalActiveLayerKey = initialState.activeLayerKeys.join("|");
   const externalContextLayerKey = initialState.contextLayerIds.join("|");
   const externalComparisonLayerKey = initialState.comparisonLayerIds.join("|");
@@ -2229,11 +2220,6 @@ export default function RealMapExplorerPage({
     // from it here would race the user and strand a pane without its data.
     // The initial pair is seeded from the URL when this page mounts, and
     // closeComparisonV135 is the only path that leaves the workspace.
-    if (comparisonModeV135) {
-      setExternalStateHydrated(true);
-      return;
-    }
-
     const hydrationSignature = [
       countryIso3,
       layers.length,
@@ -2246,20 +2232,26 @@ export default function RealMapExplorerPage({
       initialState.focusLayerKey || "",
       initialState.mapPresetId || "",
     ].join("::");
+    if (comparisonModeV135) {
+      // V163: the comparison's own URL echo counts as applied, so closing the
+      // workspace (before the URL says "normal") does not reopen it from the
+      // URL it is leaving.
+      appliedHydrationRefV135.current = hydrationSignature;
+      setExternalStateHydrated(true);
+      return;
+    }
     if (appliedHydrationRefV135.current === hydrationSignature) return;
     appliedHydrationRefV135.current = hydrationSignature;
 
     const available = new Set(layers.map((layer) => layer.elementId));
     const requestedPrimary =
       initialState.primaryLayerId || initialState.focusLayerKey || null;
-    const requestedComparisonIds = initialState.comparisonLayerIds
-      .filter((id) => available.has(id))
-      .filter((id, index, values) => values.indexOf(id) === index)
-      .slice(0, 2);
+    // V163: each pane checks its own country's layers, so the pair is taken
+    // as the URL names it (the same element twice is a comparison too).
     const restoreComparison =
-      initialState.comparisonMode && requestedComparisonIds.length === 2;
+      initialState.comparisonMode && initialState.comparisonLayerIds.length === 2;
     const nextFocus = restoreComparison
-      ? requestedComparisonIds[0]
+      ? null
       :
       requestedPrimary && available.has(requestedPrimary)
         ? requestedPrimary
@@ -2272,7 +2264,7 @@ export default function RealMapExplorerPage({
       .filter((id, index, values) => values.indexOf(id) === index)
       .slice(0, PUBLIC_MAP_WORKSPACE_LIMITS_V126.contextLayers);
     const nextActive = restoreComparison
-      ? requestedComparisonIds
+      ? []
       : nextFocus
       ? [nextFocus, ...nextContexts]
       : [];
@@ -2283,10 +2275,15 @@ export default function RealMapExplorerPage({
     setFocusId((current) => (current === nextFocus ? current : nextFocus));
     setComparisonModeV135(restoreComparison);
     if (restoreComparison) {
-      setComparisonLayerIdsV135([
-        requestedComparisonIds[0],
-        requestedComparisonIds[1],
-      ]);
+      setComparisonPanesV163(
+        initialPanesV163({
+          layerIds: initialState.comparisonLayerIds,
+          countries: initialState.comparisonCountries,
+          selectors: initialState.comparisonSelectors,
+          fallbackCountry: countryIso3,
+        })
+      );
+      setComparisonSessionV163((value) => value + 1);
     }
     const restoredPresetId = isPublicMapWorkspacePresetIdV126(
       initialState.mapPresetId
@@ -2522,6 +2519,8 @@ export default function RealMapExplorerPage({
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
     applyBoundaryReferenceV152(map, countryIso3, adm1Boundary);
+    // V163: another country is drawn from its own outline, not Natural Earth's.
+    applyCountryOutlineV163(map, countryIso3);
   }, [adm1Boundary, baseMapStatus, countryIso3]);
 
   useEffect(() => {
@@ -2778,7 +2777,17 @@ export default function RealMapExplorerPage({
       layerYears: nextYears,
       comparisonMode: comparisonModeV135,
       comparisonLayerIds: comparisonModeV135
-        ? [comparisonLayerIdsV135[0], comparisonLayerIdsV135[1]]
+        ? comparisonPanesV163.map((pane) => pane.elementId)
+        : [],
+      comparisonCountries: comparisonModeV135
+        ? comparisonPanesV163.map((pane) => pane.country)
+        : [],
+      comparisonSelectors: comparisonModeV135
+        ? comparisonPanesV163.map((pane) =>
+            pane.variable || pane.period
+              ? { variable: pane.variable || "", period: pane.period || "" }
+              : null
+          )
         : [],
       layerSelectors: Object.fromEntries(
         activeIds
@@ -2790,7 +2799,7 @@ export default function RealMapExplorerPage({
   }, [
     activeIds,
     cameraV151,
-    comparisonLayerIdsV135,
+    comparisonPanesV163,
     comparisonModeV135,
     countryIso3,
     externalStateHydrated,
@@ -3594,110 +3603,38 @@ export default function RealMapExplorerPage({
     [activeIds, layers]
   );
 
-  // V135 dedicated comparison workspace. Two datasets are treated as equal
-  // primary views here; the normal map still allows at most one companion.
-  const comparisonLayerOptionsV135 = useMemo(
+  // V163 comparison workspace ("비교해서 보기"). Each pane picks its own
+  // country, data, indicator and period and loads its own data, so the page
+  // only says which pair opens and where the reader returns to.
+  const comparisonCountriesV163 = useMemo(
     () =>
-      layers
-        .filter((layer) => layer.enabled !== false)
-        .map((layer) => ({
-          elementId: layer.elementId,
-          title: publicMapLayerTitleV126(
-            layer.elementId,
-            layer.publicShortTitle
-          ),
-        })),
-    [layers]
-  );
-
-  const buildComparisonDatasetV135 = useCallback(
-    (elementId: string, color: string): MapComparisonDatasetV135 | null => {
-      const layer = layers.find((item) => item.elementId === elementId);
-      if (!layer) return null;
-      const renderer = rendererOf(layer);
-      const selector = selectorForLayer(layer, selectorByElement[elementId]);
-      const asset = spatialByElement[elementId];
-      const records = recordsByElement[elementId];
-      let geoJson: GeoJSON.FeatureCollection<GeoJSON.Geometry> | null = null;
-      let valueDomain: { maximum: number; minimum: number } | undefined;
-
-      if (renderer === "point" || renderer === "cluster") {
-        if (!records) return null;
-        geoJson = featureCollection(
-          records,
-          layer
-        ) as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
-      } else if (renderer === "line") {
-        if (!asset) return null;
-        geoJson = lineFeatureCollection(layer, asset, selector, {});
-      } else if (renderer === "regional-scope") {
-        if (!asset) return null;
-        geoJson = asset.geometry as unknown as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
-      } else if (renderer === "point-and-polygon") {
-        if (!asset) return null;
-        geoJson = assetFeatureCollectionV157(layer, asset, filters);
-      } else if (renderer === "unit-choropleth") {
-        if (!asset) return null;
-        const result = unitChoroplethCollectionV157(layer, asset, selector);
-        geoJson = result.collection;
-        valueDomain = { maximum: result.maximum, minimum: result.minimum };
-      } else {
-        if (!asset) return null;
-        const result = choroplethFeatureCollectionV151(layer, asset, selector, boundaryContextV151);
-        geoJson = result.collection;
-        valueDomain = { maximum: result.maximum, minimum: result.minimum };
-      }
-      if (!geoJson) return null;
-
-      const variableOption = layer.selectors.variables.find(
-        (option) => option.key === selector.variable
-      );
-      const presentation = getPublicIndicatorVariablePresentationV129(
-        elementId,
-        selector.variable
-      );
-      return {
-        color,
-        coverage: publicMapCoverageTextV126(layer),
-        elementId,
-        geoJson,
-        renderer,
-        selector,
-        source: publicSourceOrganizationV136_1(layer.source) || "출처 미표기",
-        title: publicMapLayerTitleV126(elementId, layer.publicShortTitle),
-        unit: presentation?.unit || variableOption?.unit || layer.unit || "",
-        valueDomain,
-        variableLabel: publicTextV126(variableOption?.label) || "값",
-        variableOptions: layer.selectors.variables.map((option) => ({
-          key: option.key,
-          label: publicTextV126(option.label) || option.key,
-          periods: option.periods,
-          unit: option.unit,
-        })),
-      };
-    },
-    [boundaryContextV151, layers, recordsByElement, selectorByElement, spatialByElement]
-  );
-
-  const comparisonBoundsV135 = useMemo(
-    (): [[number, number], [number, number]] => [
-      [fallbackBounds[0][0], fallbackBounds[0][1]],
-      [fallbackBounds[1][0], fallbackBounds[1][1]],
-    ],
-    [fallbackBounds]
-  );
-
-  const comparisonDatasetsV135 = useMemo(
-    (): [MapComparisonDatasetV135 | null, MapComparisonDatasetV135 | null] => [
-      buildComparisonDatasetV135(comparisonLayerIdsV135[0], "#176a4b"),
-      buildComparisonDatasetV135(comparisonLayerIdsV135[1], "#8a4b12"),
-    ],
-    [buildComparisonDatasetV135, comparisonLayerIdsV135]
+      countryProvidersV162.map((provider) => ({
+        iso3: provider.countryIso3,
+        nameKo: provider.countryNameKo,
+      })),
+    [countryProvidersV162]
   );
 
   function openComparisonV135(elementIdA: string, elementIdB: string) {
-    const pair: [string, string] = [elementIdA, elementIdB];
-    setComparisonLayerIdsV135(pair);
+    // The reader's own indicator and period on the map carry over; a layer's
+    // default is left implicit (and out of the URL).
+    const paneFor = (elementId: string) => {
+      const chosen = selectorByElement[elementId];
+      const layer = layers.find((item) => item.elementId === elementId);
+      const own =
+        chosen &&
+        layer &&
+        (chosen.variable !== layer.selectors.defaultVariable ||
+          chosen.period !== layer.selectors.defaultPeriod);
+      return {
+        country: countryIso3,
+        elementId,
+        variable: own ? chosen.variable : null,
+        period: own ? chosen.period : null,
+      };
+    };
+    setComparisonPanesV163([paneFor(elementIdA), paneFor(elementIdB)]);
+    setComparisonSessionV163((value) => value + 1);
     setComparisonModeV135(true);
     setSelected(null);
     setSelectedSpatial(null);
@@ -3706,55 +3643,61 @@ export default function RealMapExplorerPage({
     setRoleNotice("두 데이터를 나란히 비교합니다.");
   }
 
-  function closeComparisonV135() {
-    const [primaryElement] = comparisonLayerIdsV135;
+  /**
+   * The general entry: pane A is the data the reader is looking at, pane B the
+   * data last compared with it (or a companion on the map, or the default
+   * pair), all in the page's country.
+   */
+  function openDefaultComparisonV163() {
+    const available = layers
+      .filter((layer) => layer.enabled !== false)
+      .map((layer) => layer.elementId);
+    const has = (id: string | null | undefined): id is string =>
+      Boolean(id && available.includes(id));
+    const [lastA, lastB] = comparisonPanesV163;
+    const elementA =
+      [
+        primaryLayerId,
+        focusId,
+        lastA.country === countryIso3 ? lastA.elementId : null,
+        DEFAULT_COMPARISON_PAIR_V163[0],
+        available[0],
+      ].find(has) || DEFAULT_COMPARISON_PAIR_V163[0];
+    const elementB =
+      [
+        lastB.country === countryIso3 ? lastB.elementId : null,
+        ...contextLayerIds,
+        DEFAULT_COMPARISON_PAIR_V163[1],
+        ...available,
+      ].find((id) => has(id) && id !== elementA) || elementA;
+    openComparisonV135(elementA, elementB);
+  }
+
+  function closeComparisonV135(panes: ComparePanesV163) {
+    const [paneA] = panes;
+    setComparisonPanesV163(panes);
     setComparisonModeV135(false);
-    setActiveIds(primaryElement ? [primaryElement] : []);
-    setFocusId(primaryElement || null);
+    // Back on the normal map with pane A's data, when it is this country's.
+    const layer =
+      paneA.country === countryIso3
+        ? layers.find((item) => item.elementId === paneA.elementId && item.enabled !== false)
+        : undefined;
+    if (layer) {
+      setActiveIds([layer.elementId]);
+      setFocusId(layer.elementId);
+      if (paneA.variable || paneA.period) {
+        setSelectorByElement((current) => ({
+          ...current,
+          [layer.elementId]: selectorForLayer(layer, {
+            variable: paneA.variable || layer.selectors.defaultVariable,
+            period: paneA.period || layer.selectors.defaultPeriod,
+          }),
+        }));
+      }
+    }
     setSelected(null);
     setSelectedSpatial(null);
     setRoleNotice("일반 지도로 돌아왔습니다.");
-  }
-
-  function changeComparisonDatasetV135(
-    side: MapComparisonSideV135,
-    elementId: string
-  ) {
-    // Both panes can change inside one batch, so the pair is updated
-    // functionally and the active layers are derived from it below. Assigning
-    // activeIds here instead would let the second pane overwrite the first.
-    setComparisonLayerIdsV135((current) =>
-      side === "a" ? [elementId, current[1]] : [current[0], elementId]
-    );
-    setSelected(null);
-    setSelectedSpatial(null);
-  }
-
-  function changeComparisonSelectorV135(
-    side: MapComparisonSideV135,
-    patch: { period?: string; variable?: string }
-  ) {
-    const elementId = side === "a"
-      ? comparisonLayerIdsV135[0]
-      : comparisonLayerIdsV135[1];
-    const layer = layers.find((item) => item.elementId === elementId);
-    if (!layer) return;
-    setSelectorByElement((current) => {
-      const active = selectorForLayer(layer, current[elementId]);
-      const variable = patch.variable || active.variable;
-      const option = layer.selectors.variables.find(
-        (row) => row.key === variable
-      );
-      const periods = option?.periods || layer.selectors.periods;
-      const requested = patch.period || active.period;
-      return {
-        ...current,
-        [elementId]: {
-          variable,
-          period: periods.includes(requested) ? requested : periods[0] || "",
-        },
-      };
-    });
   }
 
   const focusedLayer =
@@ -5702,7 +5645,7 @@ export default function RealMapExplorerPage({
 
   return (
     <div
-      className="cdp-map-page"
+      className={`cdp-map-page${comparisonModeV135 ? " cdp-map-page--compare-v163" : ""}`}
       data-testid="map-public-content"
       data-primary-layer-count={primaryLayerId ? 1 : 0}
       data-context-layer-count={contextLayerIds.length}
@@ -5733,19 +5676,13 @@ export default function RealMapExplorerPage({
       data-left-panel-compact={resizablePanelsV129.leftCompact ? "true" : "false"}
     >
       {comparisonModeV135 && (
-        <MapComparisonWorkspaceV135
-          bounds={comparisonBoundsV135}
-          datasets={comparisonDatasetsV135}
-          layerOptions={comparisonLayerOptionsV135}
+        <MapComparisonWorkspaceV163
+          key={comparisonSessionV163}
+          initialPanes={comparisonPanesV163}
+          countries={comparisonCountriesV163}
+          boundarySystem={boundarySystemV151State}
           onClose={closeComparisonV135}
-          onDatasetChange={changeComparisonDatasetV135}
-          onPeriodChange={(side, period) =>
-            changeComparisonSelectorV135(side, { period })
-          }
-          onVariableChange={(side, variable) =>
-            changeComparisonSelectorV135(side, { variable })
-          }
-          selectedElementIds={comparisonLayerIdsV135}
+          onStateChange={setComparisonPanesV163}
         />
       )}
       <div
@@ -6197,12 +6134,7 @@ export default function RealMapExplorerPage({
               type="button"
               className="cdp-button cdp-button--secondary cdp-map-all-data-v135__compare"
               data-testid="map-compare-open-v135"
-              onClick={() =>
-                openComparisonV135(
-                  comparisonLayerIdsV135[0],
-                  comparisonLayerIdsV135[1]
-                )
-              }
+              onClick={openDefaultComparisonV163}
             >
               비교해서 보기
             </button>

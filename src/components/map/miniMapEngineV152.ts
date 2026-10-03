@@ -15,6 +15,7 @@ import type { CountryEntityV122, CountryMapLayerV122 } from "../../data/countrie
 import {
   ADM1_34_GEOMETRY_PATH_V151,
   REGION_6_GEOMETRY_PATH_V151,
+  VALUE_BOUNDARY_SYSTEM_V151,
   boundaryGeometryPathV151,
   type BoundarySystemV151,
 } from "../../data/map/adminBoundaryV151";
@@ -34,7 +35,17 @@ import {
   registerMapIcons,
   type MaplibreMapLike,
 } from "../../data/map/mapIconsV152";
-import { loadVietnamLocationsV151, loadVietnamSpatialGeoJsonV124 } from "../../data/vietnam/vietnamDataLoaderV124";
+import { countryDataLoaderV158 } from "../../data/countries/countryDataLoaderV158";
+import { countryLevel1AssetUrlV162, countryLevel1V158, regionWordV158 } from "../../data/countries/countryLevel1V158";
+import { countryRegistryCacheV158 } from "../../data/countryContext";
+import { publicRegionTextV162 } from "../../data/geo/regionDisplayV162";
+import {
+  boundaryCreditPhraseV163,
+  countryCoreBoxV163,
+  isDefaultCountryV163,
+  isRawRegionKeyV163,
+} from "../../data/map/miniMapCountryV163";
+import { mapFactsV148 } from "../../data/map/mapPresentationV148";
 import { formatPublicNumberV126 } from "../../data/visualization/publicNumberFormatV126";
 import { publicTextV126 } from "../../data/visualization/publicFieldPolicyV126";
 import { publicMapLayerTitleV126 } from "../../data/visualization/publicMapWorkspaceV126";
@@ -43,6 +54,7 @@ import {
   applyBoundaryReferenceV152,
   isAreaRendererV152,
   MAP_STYLE,
+  applyCountryOutlineV163,
   mountPreparedMapLayerV152,
   prepareMapLayerV152,
   rendererOf,
@@ -111,6 +123,10 @@ function backdropKindWhenOnV152(): MapBackdropKindV151 {
   return saved === "none" ? "terrain" : saved;
 }
 
+function registryCountryNameKoV163(iso3: string): string {
+  return countryRegistryCacheV158()?.countries.find((row) => row.iso3 === iso3)?.nameKo || "";
+}
+
 export type MiniMapLegendV152 =
   | { kind: "ramp"; minimum: number; maximum: number; from: string; to: string; boundaryMode: string }
   | { kind: "lines"; classes: ReadonlyArray<{ kv: number; color: string }> };
@@ -142,9 +158,34 @@ function featureIdV152(feature: MapGeoJSONFeature): string {
   return String(p.selectionKey ?? p.recordId ?? p.adm1Code ?? feature.id ?? "");
 }
 
-function areaPopupV152(layer: CountryMapLayerV122, selected: LayerSelectorState, properties: Record<string, unknown>): HTMLDivElement {
+/**
+ * The title of a region popup. Viet Nam keeps the name as published; another
+ * country's goes through the region dictionary, and a boundary key ("BGD.8_1")
+ * is never shown - the country's own level-1 word stands in.
+ */
+function regionPopupTitleV163(layer: CountryMapLayerV122, countryIso3: string, properties: Record<string, unknown>): string {
+  const raw = publicTextV126(properties.adm1Name || properties.name);
+  if (isDefaultCountryV163(countryIso3)) return raw || "성·시";
+  const named = raw && !isRawRegionKeyV163(raw) ? publicRegionTextV162(raw, layer.elementId, countryIso3) : "";
+  return named || regionWordV158(countryIso3).word;
+}
+
+/** A facility or area feature of a geometry asset (point-and-polygon): its own name, its kind, its stated facts. */
+function assetFeaturePopupV163(layer: CountryMapLayerV122, countryIso3: string, properties: Record<string, unknown>): HTMLDivElement {
+  const title = publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle, countryIso3);
+  const facts = mapFactsV148(layer, properties).filter((fact) => fact.key !== "name" && fact.key !== "sourceLabel");
+  return createPublicMapPopupContentV129(
+    publicTextV126(properties.name) || title,
+    [title, ...facts.slice(0, 3).map((fact) => `${fact.label} ${fact.value}`)],
+    { attributes: { "element-id": layer.elementId, "selection-key": String(properties.selectionKey ?? "") }, testId: "map-hover-popup-v133" }
+  );
+}
+
+function areaPopupV152(layer: CountryMapLayerV122, selected: LayerSelectorState, properties: Record<string, unknown>, countryIso3 = "VNM"): HTMLDivElement {
   const renderer = rendererOf(layer);
-  const title = publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle);
+  // V163: a reviewed title that names Viet Nam ("베트남 송전망") yields on another country's map;
+  // Viet Nam keeps the helper's own default, as before.
+  const title = publicMapLayerTitleV126(layer.elementId, layer.publicShortTitle, isDefaultCountryV163(countryIso3) ? undefined : countryIso3);
   if (renderer === "line") {
     const raw = properties.lengthKm ?? properties.length;
     const length = raw === null || raw === undefined || raw === "" ? null : Number(raw);
@@ -161,13 +202,15 @@ function areaPopupV152(layer: CountryMapLayerV122, selected: LayerSelectorState,
       { attributes: { "element-id": layer.elementId, "selection-key": String(properties.selectionKey ?? "") }, testId: "map-hover-popup-v133" }
     );
   }
+  // V163: another country's facility/area asset states no value; a "결측" line would be wrong for a site.
+  if (renderer === "point-and-polygon" && !isDefaultCountryV163(countryIso3)) return assetFeaturePopupV163(layer, countryIso3, properties);
   const presentation = getPublicIndicatorVariablePresentationV129(layer.elementId, selected.variable);
   const unit = presentation?.unit || String(properties.unit || "");
   const value = properties.hasValue
     ? `${formatPublicNumberV126(Number(properties.value), unit)}${unit ? ` ${unit}` : ""}`
     : "결측";
   return createPublicMapPopupContentV129(
-    publicTextV126(properties.adm1Name || properties.name) || "성·시",
+    regionPopupTitleV163(layer, countryIso3, properties),
     [
       `${presentation?.label || publicTextV126(properties.variableLabel) || title} ${value}`,
       String(properties.period || selected.period || ""),
@@ -181,12 +224,23 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
   const { layer, countryIso3 } = input;
   const controller = new AbortController();
   const area = isAreaRendererV152(rendererOf(layer));
+  // V163: each country loads its own assets through its own loader (it refuses another
+  // country's URLs). Viet Nam's is the loader the V124 functions always used. Another
+  // country's reference outline is its registry level-1 asset, and it has no 34-unit or
+  // six-region context (the big map passes none for it either).
+  const isDefault = isDefaultCountryV163(countryIso3);
+  const loader = countryDataLoaderV158(countryIso3);
+  const level1Url = isDefault ? null : countryLevel1AssetUrlV162(countryIso3);
   const [reference, geometry34, region6, locations] = await Promise.all([
-    loadVietnamSpatialGeoJsonV124(publicAssetUrlV128(boundaryGeometryPathV151(input.boundarySystem))).catch(() => null),
-    area ? loadVietnamSpatialGeoJsonV124(publicAssetUrlV128(ADM1_34_GEOMETRY_PATH_V151)).catch(() => null) : Promise.resolve(null),
-    area ? loadVietnamSpatialGeoJsonV124(publicAssetUrlV128(REGION_6_GEOMETRY_PATH_V151)).catch(() => null) : Promise.resolve(null),
+    isDefault
+      ? loader.loadSpatialGeoJson(publicAssetUrlV128(boundaryGeometryPathV151(input.boundarySystem))).catch(() => null)
+      : level1Url
+        ? loader.loadSpatialGeoJson(level1Url).catch(() => null)
+        : Promise.resolve(null),
+    area && isDefault ? loader.loadSpatialGeoJson(publicAssetUrlV128(ADM1_34_GEOMETRY_PATH_V151)).catch(() => null) : Promise.resolve(null),
+    area && isDefault ? loader.loadSpatialGeoJson(publicAssetUrlV128(REGION_6_GEOMETRY_PATH_V151)).catch(() => null) : Promise.resolve(null),
     !area && layer.locationsUrl
-      ? loadVietnamLocationsV151(layer.locationsUrl, controller.signal).catch(() => undefined)
+      ? loader.loadLocations(layer.locationsUrl, controller.signal).catch(() => undefined)
       : Promise.resolve(undefined),
   ]);
   const prepared = prepareMapLayerV152({
@@ -195,7 +249,8 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
     role: "primary",
     selected: input.selected,
     filters: input.filters,
-    boundary: { system: input.boundarySystem, geometry34, region6 },
+    // The 34/63 switch is Viet Nam's; another country's values are on its one level-1 outline.
+    boundary: { system: isDefault ? input.boundarySystem : VALUE_BOUNDARY_SYSTEM_V151, geometry34, region6 },
     spatial: input.data.spatial,
     records: input.data.records,
     locations,
@@ -216,7 +271,14 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
       ? { kind: "lines", classes: TRANSMISSION_VOLTAGE_CLASSES_V152 }
       : null;
   const layerBbox: BboxV152 | null = featureBboxV152(prepared.data);
-  const bounds = miniMapBoundsV152(layerBbox, VIETNAM_CORE_BBOX_V151);
+  // The country's mainland box: Viet Nam's as ever, another country's from the registry,
+  // and failing that the layer's own extent (never Viet Nam's box for another country).
+  const core =
+    countryCoreBoxV163(countryIso3, VIETNAM_CORE_BBOX_V151, countryRegistryCacheV158()) ||
+    (layerBbox && layerBbox[0] < layerBbox[2] && layerBbox[1] < layerBbox[3]
+      ? { west: layerBbox[0], south: layerBbox[1], east: layerBbox[2], north: layerBbox[3] }
+      : VIETNAM_CORE_BBOX_V151);
+  const bounds = miniMapBoundsV152(layerBbox, core);
   // MapLibre keeps a reference to the style it was given; never share the module object.
   const style = JSON.parse(JSON.stringify(MAP_STYLE));
   const map = new maplibregl.Map(miniMapOptionsV152(input.container, style, bounds, input.camera) as any);
@@ -262,13 +324,13 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
         closeCard();
         pinned = false;
       });
-      const card = area ? areaPopupV152(layer, input.selected, properties) : createMapPointPopupV152({ layer, properties, primary: true, entity });
+      const card = area ? areaPopupV152(layer, input.selected, properties, countryIso3) : createMapPointPopupV152({ layer, properties, primary: true, entity });
       input.cardHost.replaceChildren(close, card);
       pinned = true;
       return;
     }
     const content = area
-      ? areaPopupV152(layer, input.selected, properties)
+      ? areaPopupV152(layer, input.selected, properties, countryIso3)
       : createMapPointPopupV152({ layer, properties, primary: true, entity, compact: true });
     popup?.remove();
     const at = feature.geometry.type === "Point" ? ((feature.geometry as GeoJSON.Point).coordinates as [number, number]) : lngLat;
@@ -411,7 +473,13 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
     throw reason;
   });
 
-  applyBoundaryReferenceV152(map, countryIso3, reference);
+  applyBoundaryReferenceV152(
+    map,
+    countryIso3,
+    reference,
+    isDefault ? {} : { countryCredit: boundaryCreditPhraseV163(registryCountryNameKoV163(countryIso3), countryLevel1V158(countryIso3)) }
+  );
+  applyCountryOutlineV163(map, countryIso3);
   // The same glyphs as the big map; a missing one is drawn on first request.
   const iconMap = map as unknown as MaplibreMapLike;
   registerMapIcons(iconMap);

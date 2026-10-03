@@ -132,17 +132,9 @@ export function choroplethFeatureCollection(
             ...feature.properties,
             elementId: layer.elementId,
             adm1Code,
-            // V163 (4a): Viet Nam's geometry carries `name`; Bangladesh's
-            // carries `nameEn`/`nameKo` instead (its join key is
-            // `divisionKey`, not `adm1Code`). A unit with no value for this
-            // selector (BGD.8_1/Mymensingh on B-017, B-030...B-034) must
-            // still show a name, never the raw join key.
-            adm1Name:
-              value?.adm1Name ||
-              feature.properties?.name ||
-              feature.properties?.nameEn ||
-              feature.properties?.nameKo ||
-              adm1Code,
+            // V163: a unit without a value row (Bangladesh's Mymensingh in B-017) is named by the
+            // boundary file's own name; the join key ("BGD.8_1") is the last resort, never the first.
+            adm1Name: value?.adm1Name || feature.properties?.name || feature.properties?.nameEn || feature.properties?.nameKo || adm1Code,
             value: value?.value ?? null,
             hasValue: Boolean(value),
             // V157: a province table may state a category as well as a number

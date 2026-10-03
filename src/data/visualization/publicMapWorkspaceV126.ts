@@ -521,10 +521,12 @@ export function setPublicMapTitleCountryV162(country: string | null): void {
 
 export function publicMapLayerTitleV126(
   elementId: string,
-  fallback?: string | null
+  fallback?: string | null,
+  /** V163: screens showing a country other than the map page's (comparison panes, small maps) name it per call. */
+  country: string | null = mapTitleCountryV162
 ): string {
   return (
-    copyForCountryV158(PUBLIC_MAP_LAYER_TITLES_V126[elementId], mapTitleCountryV162) ||
+    copyForCountryV158(PUBLIC_MAP_LAYER_TITLES_V126[elementId], country) ||
     publicMapTargetV138(elementId)?.publicName ||
     publicTextV126(fallback) ||
     "공간자료"
