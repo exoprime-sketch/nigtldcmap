@@ -779,6 +779,15 @@ export default function App() {
       appendDataFinderSelectorParamsV125(params, dataFinderSelectorState);
     }
 
+    // V163-BTN: the home and the guide read `?country=` themselves (after the
+    // registry loads, i.e. after this effect), so a logo or "데이터 이용안내"
+    // click from another country's page keeps that country in the address
+    // instead of falling back to the default country's home and guide.
+    if (view === "home" || view === "guide") {
+      const pageCountry = currentUrlCountryIso3();
+      if (pageCountry && pageCountry !== DEFAULT_COUNTRY_ISO3_V158) params.set("country", pageCountry);
+    }
+
     if (view === "country" && selectedCountryIso3) {
       params.set("country", selectedCountryIso3);
       if (technologyId !== "all") params.set("technology", technologyId);
@@ -871,7 +880,14 @@ export default function App() {
     const currentContextCountry =
       (view === "explorer" && explorerCountryIso3 !== "all"
         ? explorerCountryIso3
-        : selectedCountryIso3) || currentUrlCountryIso3();
+        : selectedCountryIso3) ||
+      currentUrlCountryIso3() ||
+      // V163-BTN: the home and the guide show the default country without a
+      // `?country=`; a nav click from there keeps that country (the download
+      // tab opened on every country from the default home).
+      (view === "home" || view === "guide"
+        ? resolveHomeCountryV161(window.location.search)?.iso3 || null
+        : null);
 
     if (nextView === "explorer") {
       setExplorerCountryIso3(
@@ -1255,7 +1271,8 @@ export default function App() {
             <RealMapExplorerPage
               onOpenElement={openElement}
               onOpenDataFinder={() =>
-                openExplorerFromGlobalSearch("", DEFAULT_COUNTRY_ISO3_V158, null)
+                // V163-BTN: the map's own country (the guide link opened the default country's list).
+                openExplorerFromGlobalSearch("", mapViewState.countryIso3 || DEFAULT_COUNTRY_ISO3_V158, null)
               }
               onOpenDownload={(elementId, iso3) => {
                 if (iso3) setSelectedCountryIso3(iso3);
