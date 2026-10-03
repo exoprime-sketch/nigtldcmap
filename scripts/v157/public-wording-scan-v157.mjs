@@ -64,16 +64,9 @@ const CITATION_V157 = [
   /[\w.+-]+@[\w.-]*/gu,
 ];
 
-/**
- * V162: a source value may stand in brackets only right after the Korean label
- * the platform's dictionary gives it - "협궤 철도 (narrow_gauge)" (A-027's 19
- * OpenStreetMap classes, src/data/visualization/osmClassLabelsV162.json). Any
- * other word before the bracket ("피처 수(narrow_gauge)") leaves the value an
- * identifier on the screen, and it counts.
- */
-const DICTIONARY_CITATIONS_V162 = Object.entries(
-  JSON.parse(readFileSync(resolve(ROOT, "src/data/visualization/osmClassLabelsV162.json"), "utf8")).labels
-).map(([value, ko]) => `${ko} (${value})`);
+// V163: the OpenStreetMap class keys are no longer shown after their Korean
+// label ("협궤 철도", not "협궤 철도 (narrow_gauge)"), so the V162 allowance for
+// "ko (value)" is gone - a source key in brackets anywhere counts again.
 
 /**
  * V162: words the sources themselves print that only look like identifiers -
@@ -91,7 +84,6 @@ const SOURCE_PROPER_WORDING_V162 = ["Vung Ang II coal-fired power plant", "Abery
 function withoutCitationsV157(text) {
   let value = String(text || "").normalize("NFC");
   for (const pattern of CITATION_V157) value = value.replace(pattern, " ");
-  for (const citation of DICTIONARY_CITATIONS_V162) value = value.split(citation).join(" ");
   for (const wording of SOURCE_PROPER_WORDING_V162) value = value.split(wording).join(" ");
   return value;
 }
@@ -101,6 +93,9 @@ const CAMEL_CASE_V157 = /\b[a-z][a-z0-9]*[A-Z][A-Za-z0-9]*\b/gu;
 const SNAKE_CASE_V157 = /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/gu;
 const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
+// V163 (user decision 2026-10-03): a working-note tag, a processing-rule
+// citation or a check date - counted on every screen, provider prose included.
+const MEMO_MARKER_V163 = /\[(?:라이선스 (?:근거|판정|확인)[^\]]*|출처 문구[^\]]*|표출범위|변경 고지|기준 원천|대조|처리규칙[^\]]*|DoD[^\]]*|열 구조|10개국 비교가능성|원천 갱신일 근거|추가수집[^\]]*|수집 방법|원문 정제)\]|처리규칙|\d{4}-\d{2}-\d{2}\s*확인/gu;
 // V162 (user decision 2026-09-30): a file name in the text a reader sees - a
 // link's href is not text, and a URL is masked as a citation above - is a
 // working file on the screen (C-003 "nap_report_eng_small.pdf").
@@ -134,6 +129,7 @@ function findingsIn(text, { hyphens = true, notes = true } = {}) {
     ["snake_case", SNAKE_CASE_V157],
     ...(hyphens ? [["kebab-case", KEBAB_CASE_V157]] : []),
     ["tag-syntax", TAG_SYNTAX_V157],
+    ["memo-marker", MEMO_MARKER_V163],
     ...(notes ? [["note-word", NOTE_WORDS_V157], ["work-word", WORK_WORDS_V157]] : []),
   ]) {
     pattern.lastIndex = 0;

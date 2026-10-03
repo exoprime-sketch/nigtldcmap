@@ -448,7 +448,11 @@ for (const [elementId, rows] of Object.entries(sourceCells.meta)) {
   for (const row of rows) {
     const indicator = indicators[row.indicatorId];
     const norm = (value) => (value === null || value === undefined ? null : String(value).normalize("NFC"));
-    if (!indicator || norm(indicator.labelKo) !== norm(row.elementKr || indicator.labelKo) || norm(indicator.sourceOrg) !== norm(row.sourceOrg || indicator.sourceOrg)) {
+    // V163: the published source is the delivered one without the research
+    // team's ranking marks ("[기준 원천]" / "[대조]", tools/etl/public_text_v163.py);
+    // everything else must still match the delivery character for character.
+    const delivered = (value) => (value === null || value === undefined ? value : String(value).replace(/\s*\[(?:기준 원천|대조)\]/gu, ""));
+    if (!indicator || norm(indicator.labelKo) !== norm(row.elementKr || indicator.labelKo) || norm(indicator.sourceOrg) !== norm(delivered(row.sourceOrg) || indicator.sourceOrg)) {
       specialProblems.push({ elementId, indicatorId: row.indicatorId });
     }
   }

@@ -1,0 +1,2676 @@
+{
+  "schemaVersion": "v163-internal-notes-1",
+  "country": "VNM",
+  "note": "Working notes taken out of public text fields by tools/etl/public_text_v163.py. Internal - never published.",
+  "removedCount": 18162,
+  "elements": {
+    "A-001": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 8
+        },
+        {
+          "text": "[원본 버전] Transparency International 「Corruption Perceptions Index 2025」 공식 결과파일 CPI2025_Results.xlsx(2026-02-10 공개)를 raw로 사용. 원본이 OOXML strict 형식이라 무손실 변환 후 판독하였으며 값은 원문 그대로임.",
+          "count": 6
+        },
+        {
+          "text": "[원본 버전] Transparency International이 연차별로 공개하는 공식 데이터셋(CPI-1997 ~ CPI-2011 CSV, transparencycdn.org)에서 연도별로 베트남 행을 직접 확보함. 각 연도 원본 URL은 note에 병기함.",
+          "count": 2
+        },
+        {
+          "text": "[해석 주의] 조사대상국 수가 연도마다 달라(2012년 176개국 → 2025년 182개국) 순위의 연도 간 직접 비교는 제한적임.",
+          "count": 1
+        }
+      ]
+    },
+    "A-002": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 21
+        },
+        {
+          "text": "[원본 버전] World Bank Data360 CPIA 데이터셋(CPIA_Vietnam.xlsx, DATABASE_ID=WB_CPIA) 및 WDI 추출본을 raw로 사용.",
+          "count": 21
+        }
+      ]
+    },
+    "A-003": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 7
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-003 폴더 GDP.xlsx)과 동일 지표의 WDI API를 사용. 검토의견 1번(총 성장률·명목 총액 누락)에 따라 GDP 총 성장률(NY.GDP.MKTP.KD.ZG)과 명목 GDP 총액(NY.GDP.MKTP.CD) 2개 지표를 WDI API에서 추가 수집하여 보완함.",
+          "count": 7
+        }
+      ]
+    },
+    "A-004": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 2
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-004 폴더 빈곤율극빈곤율.xlsx).",
+          "count": 2
+        }
+      ]
+    },
+    "A-005": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-005 폴더 산업구조 (농업제조서비스 비중).xlsx).",
+          "count": 4
+        }
+      ]
+    },
+    "A-006": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-006 폴더 Unemployment rate; youth unemployment rate.xlsx).",
+          "count": 4
+        }
+      ]
+    },
+    "A-007": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-007 폴더 인구 (총인구, 도시화율).xlsx).",
+          "count": 4
+        }
+      ]
+    },
+    "A-008": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 1
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-008 폴더 Gini index.xlsx).",
+          "count": 1
+        }
+      ]
+    },
+    "A-009": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 2
+        },
+        {
+          "text": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임.",
+          "count": 2
+        }
+      ]
+    },
+    "A-010": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 8
+        },
+        {
+          "text": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임.",
+          "count": 8
+        }
+      ]
+    },
+    "A-011": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 9
+        },
+        {
+          "text": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임.",
+          "count": 9
+        }
+      ]
+    },
+    "A-012": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 3
+        },
+        {
+          "text": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임.",
+          "count": 3
+        }
+      ]
+    },
+    "A-013": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 42
+        }
+      ]
+    },
+    "A-014": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 19
+        }
+      ]
+    },
+    "A-015": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 101
+        }
+      ]
+    },
+    "A-016": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 7
+        },
+        {
+          "text": "[원본 버전] Energy Institute 「Statistical Review of World Energy 2026」(75판, 2026년 7월 공개) 전체 데이터 파일. 원천 파일에 갱신일 표기가 없어 2026년판 공개 시점을 last_updated로 기재함.",
+          "count": 7
+        }
+      ],
+      ".meta.indicators.licenseCode": [
+        {
+          "text": "2026-08-18 확인",
+          "count": 7
+        }
+      ]
+    },
+    "A-017": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 24
+        }
+      ]
+    },
+    "A-018": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 26
+        },
+        {
+          "text": "[원본 버전] IRENA Renewable Capacity Statistics 2026",
+          "count": 26
+        }
+      ]
+    },
+    "A-019": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 1
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-019 폴더 Electric power transmission and distribution losses.xlsx). 원자료 출처는 IEA Energy Statistics Data Browser이며 세계은행이 재게시함.",
+          "count": 1
+        }
+      ]
+    },
+    "A-020": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 2
+        },
+        {
+          "text": "[원본 버전] IRENA Renewable Capacity Statistics 2026",
+          "count": 2
+        }
+      ]
+    },
+    "A-021": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 3
+        },
+        {
+          "text": "[원본 버전] 세계은행 WDI 2026-07-13 갱신본(raw: A-021 폴더 EG.ELC.ACCS.ZS.xlsx). 원자료는 세계은행 SDG 7.1.1 Electrification Dataset(Global Electrification Database)임.",
+          "count": 3
+        }
+      ]
+    },
+    "A-022": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 21
+        },
+        {
+          "text": "[원본 버전] STADT 정리본 A-022_정전빈도_SAIDI_SAIFI.xlsx(원천: EVN 연차보고서 및 배전공사 공식 공시).",
+          "count": 21
+        }
+      ],
+      ".meta.indicators.citationLocator": [
+        {
+          "text": "A-022_정전빈도_SAIDI_SAIFI.xlsx",
+          "count": 21
+        }
+      ],
+      ".meta.indicators.licenseCode": [
+        {
+          "text": "2026-08-18 확인",
+          "count": 21
+        }
+      ],
+      ".meta.indicators.provenance.citationLocator": [
+        {
+          "text": "A-022_정전빈도_SAIDI_SAIFI.xlsx",
+          "count": 21
+        }
+      ],
+      ".observations.records.provenance.citationLocator": [
+        {
+          "text": "A-022_정전빈도_SAIDI_SAIFI.xlsx",
+          "count": 54
+        }
+      ]
+    },
+    "A-023": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 2
+        },
+        {
+          "text": "[원본 버전] WRI Global Power Plant Database v1.3.0 (Release Date 2021-06-02). 원본 CSV에서 country=VNM 236건을 전수 수록함.",
+          "count": 1
+        }
+      ]
+    },
+    "A-024": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 6
+        }
+      ]
+    },
+    "A-025": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 2
+        },
+        {
+          "text": "[원본 버전] STADT 자체 정리본(검증일 2026-08-04). 원천은 JOGMEC(Rang Dong CO2-EOR)·GEM.wiki(Ca Voi Xanh)·Global CCS Institute·Offshore-technology·Mondaq(법제)·Carbon Pulse의 공개 페이지이며, 각 행 note에 프로젝트별 근거를 병기함.",
+          "count": 2
+        }
+      ]
+    },
+    "A-026": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 5
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[규칙 3·7 정리 2026-09-21] 본 요소의 납품 계열은 OpenStreetMap(Geofabrik 배포본) 기반 7개 계열이며 10개국 모두 값이 수록되어 있다. Google Open Buildings 는 같은 측정값을 제공하는 대안 원천으로 검토하였으나, 배포본이 S2 level-4 셀 단위 대용량 gzip CSV(셀당 최대 7.8GB)로만 제공되어 채택하지 않았다. 검토 사실을 남기기 위해 해당 계열을 삭제하지 않고 보조 지표(indicator_id 에 _aux_gob_ 표기)로 두며, 완료 판정 대상에서 제외한다. A-030 의 KITA 계열과 같은 처리 방식이다.",
+          "count": 7
+        }
+      ]
+    },
+    "A-027": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 35
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[규칙 3·8 처리 통일 2026-09-21] 원자료(Geofabrik 배포 셰이프파일)에서 전수 재산출한 값이다. ODbL 1.0 대상이므로 플랫폼 표출·다운로드 제공 대상이 아니며 산출 근거 보존 목적으로만 수록한다.",
+          "count": 33
+        },
+        {
+          "text": "[규칙 3·8 처리 통일 2026-09-21] 현행 Geofabrik 배포 레이어에 해당 속성 필드가 없어 원천 미제공(M01)으로 둔다.",
+          "count": 2
+        }
+      ]
+    },
+    "A-028": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 19
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[규칙 3·8 처리 통일 2026-09-21] 원자료(Geofabrik 배포 셰이프파일)에서 전수 재산출한 값이다. ODbL 1.0 대상이므로 플랫폼 표출·다운로드 제공 대상이 아니며 산출 근거 보존 목적으로만 수록한다.",
+          "count": 19
+        }
+      ]
+    },
+    "A-029": {
+      ".entities.records.note": [
+        {
+          "text": "[규칙 5 보정 2026-09-30] 원천(ADB ARIC FTA Database)이 이 협정의 서명 사건일을 제공하지 않아(각 행 「사건일」에 서명 항목 없음) M01(원천 미제공)로 둔다.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[상대국 전수 표기] 검토의견 4번 반영 — 원문에서 \"ASEAN 9개국\"·\"EU 27개국\"처럼 축약되어 있던 5개 다자협정의 상대국을 협정별 당사국 명단으로 전수 기입함(2026년 8월 기준).",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] STADT 자체 정리본(기준 시점 2026년 8월). 원천은 베트남 WTO Center(VCCI) FTA 종합 페이지 및 개별 발효 확인 기사임.",
+          "count": 4
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "처리규칙 7 — 설명과 제출물 일치.",
+          "count": 1
+        }
+      ]
+    },
+    "A-030": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] STADT 정리본 한베트남_교역액.xlsx(원천: 한국무역협회 KITA 무역통계).",
+          "count": 4
+        },
+        {
+          "text": "[커버리지] 검토의견 1번에 대응 — 원천 파일에는 중국·인도·인도네시아 등 12개국이 함께 들어 있으나 본 요소의 대상국은 베트남이므로 베트남 행만 수록하고 나머지 국가는 제외함(우선구축국 범위 외).",
+          "count": 4
+        }
+      ]
+    },
+    "A-031": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 7
+        },
+        {
+          "text": "[원본 버전] 세계은행 Logistics Performance Index. raw로 받은 API 일괄 다운로드 파일에는 6개 세부지수 중 \"Ease of arranging competitively priced shipments\"(LP.LPI.ITRN.XQ) 1개만 들어 있어, 종합지수(LP.LPI.OVRL.XQ)와 나머지 5개 세부지수를 세계은행 API에서 추가 수집하여 총 7개 지표로 보완함.",
+          "count": 7
+        }
+      ]
+    },
+    "A-032": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        }
+      ]
+    },
+    "A-033": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] UNCTADstat 정기간행 LSCI(US.LSCI) 분기 계열, 2026-08-02 조회분.",
+          "count": 4
+        }
+      ]
+    },
+    "B-001": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 38
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 38
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 38
+        }
+      ]
+    },
+    "B-002": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 64
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 18
+        },
+        {
+          "text": "[10개국 비교가능성] O — 전지구 격자이므로 국가 마스크만 교체하면 10개국 동일 산출",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] Beck et al.(2023) Köppen-Geiger v2",
+          "count": 19
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[근거자료] Beck et al.(2023) High-resolution (1 km) Köppen-Geiger maps 「koppen_geiger 0p008333, 1991-2020」 — 해당 지표의 원천·계열·URL 은 2_meta_info 시트 동일 indicator_id 행의 source_org·source_series_id·source_url 참조 · 별첨2 「31_map_element_tech 기술매핑대장」 B-002 행(relation_type=범용, basis=연구진 판단)",
+          "count": 64
+        }
+      ]
+    },
+    "B-003": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 2
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 4
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 4
+        }
+      ]
+    },
+    "B-004": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인). · 개편 후 경계: © OpenStreetMap contributors, ODbL 1.0 (00_공통 경계 파일 v1.3 — OSM relation ID·추출 일자는 경계 파일 속성)",
+          "count": 3
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 27
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 25
+        },
+        {
+          "text": "[원천 갱신일 근거] GSA 2.0 릴리스",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] GWA 3.x 릴리스",
+          "count": 1
+        }
+      ]
+    },
+    "B-005": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인). · 개편 후 경계: © OpenStreetMap contributors, ODbL 1.0 (00_공통 경계 파일 v1.3 — OSM relation ID·추출 일자는 경계 파일 속성)",
+          "count": 3
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 7
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 6
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 1
+        }
+      ]
+    },
+    "B-006": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인). · 개편 후 경계: © OpenStreetMap contributors, ODbL 1.0 (00_공통 경계 파일 v1.3 — OSM relation ID·추출 일자는 경계 파일 속성)",
+          "count": 3
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 19
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 19
+        }
+      ]
+    },
+    "B-007": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인). · 개편 후 경계: © OpenStreetMap contributors, ODbL 1.0 (00_공통 경계 파일 v1.3 — OSM relation ID·추출 일자는 경계 파일 속성)",
+          "count": 3
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 15
+        },
+        {
+          "text": "[원천 갱신일 근거] CCKP는 데이터 버전 갱신일을 미표기 — 원천 조회 기준일",
+          "count": 15
+        }
+      ]
+    },
+    "B-008": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 1
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 200
+        },
+        {
+          "text": "[원천 갱신일 근거] IPCC AR6 WG1 공개",
+          "count": 200
+        }
+      ]
+    },
+    "B-009": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 255
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 255
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 255
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 261
+        },
+        {
+          "text": "[원천 갱신일 근거] ND-GAIN 2026 릴리스 배포파일 기준일",
+          "count": 6
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 255
+        },
+        {
+          "text": "결측 국가가 30개국(235/265)으로 SPH·SRP보다 커버리지가 낮음.",
+          "count": 1
+        }
+      ]
+    },
+    "B-010": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). 원본 순위·수치만 표출하고 지수 재가공은 하지 않습니다.",
+          "count": 10
+        },
+        {
+          "text": "[라이선스 근거] 종전 \"CC BY-NC-ND 4.0 명시 확인\" 기재는 오류. Germanwatch CRI 페이지 및 보관 원자료 Germanwatch_CRI2026_full_report.pdf 판권면(2쪽) 전문을 재확인한 결과 CC 표기가 존재하지 않으며, 웹페이지에 독일 저작권법 기반 조항만 게시되어 있음 — \"The reproduction, processing, dissemination and all kinds of use outside the limits of copyright require the written consent of each author or creator.\" 다운로드는 \"private, non-commercial use\" 에 한정. 따라서 플랫폼 표출에는 저작자 서면동의가 필요합니다(문의 cri@germanwatch.org).",
+          "count": 10
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가",
+          "count": 4
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 10
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 10
+        },
+        {
+          "text": "[원천 갱신일 근거] CRI 2026 COP30 발간",
+          "count": 10
+        }
+      ]
+    },
+    "B-011": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 50
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 50
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 50
+        },
+        {
+          "text": "[원천 갱신일 근거] ND-GAIN 2026 릴리스 배포파일 기준일",
+          "count": 50
+        }
+      ]
+    },
+    "B-012": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ND(변경금지): 좌표는 GADM 기반 산출 파생물 — 원본 재해속성은 원형 유지.",
+          "count": 1
+        },
+        {
+          "text": "[라이선스 근거] 수령본은 Dataverse 공개 Archive판(DOI 10.14428/DVN/I0LTPH)으로 EM-DAT 공식문서가 CC BY-NC-ND 4.0 적용을 명시함. EM-DAT 본 DB(공개포털)는 CC가 아닌 자체 계약이며 \"파생 DB 생성 금지\" 조항이 있어 판별 필요.",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 44
+        },
+        {
+          "text": "[원천 갱신일 근거] EM-DAT Archive v2026-04-30",
+          "count": 43
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 1
+        }
+      ]
+    },
+    "B-013": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 26
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 35
+        },
+        {
+          "text": "[원천 갱신일 근거] CBAM Exposure Index 대시보드 공개",
+          "count": 26
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 9
+        },
+        {
+          "text": "기수록 \"EU 평균\" 기준선과 함께 보면 CBAM 부담의 **범위(하한~상한)**를 제시할 수 있음 — 예: 비료는 EU 평균 기준 52.28% vs 최고집약 3개국 기준 108.59%로 두 배 이상 벌어짐.",
+          "count": 4
+        }
+      ]
+    },
+    "B-014": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 5
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 8
+        },
+        {
+          "text": "[원천 갱신일 근거] CCDR 2022 발간",
+          "count": 8
+        }
+      ]
+    },
+    "B-015": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 1
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 2
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 14
+        },
+        {
+          "text": "[원천 갱신일 근거] Decree 29/2026/ND-CP 제정일",
+          "count": 9
+        },
+        {
+          "text": "[원천 갱신일 근거] 국내 탄소거래소 개장일",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 4
+        }
+      ]
+    },
+    "B-016": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 1
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 2
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 2
+        },
+        {
+          "text": "[원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] WDI API 응답 lastupdated",
+          "count": 1
+        }
+      ]
+    },
+    "B-017": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 1421
+        },
+        {
+          "text": "[원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+          "count": 4
+        },
+        {
+          "text": "[원천 갱신일 근거] Aqueduct 4.0 릴리스 Y2023M07D05",
+          "count": 1417
+        }
+      ]
+    },
+    "B-018": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 24
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 24
+        },
+        {
+          "text": "[원천 갱신일 근거] SSP Database v3.1 릴리스",
+          "count": 24
+        }
+      ]
+    },
+    "B-019": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 11
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 11
+        },
+        {
+          "text": "[원천 갱신일 근거] SSP Database v3.1 릴리스",
+          "count": 11
+        }
+      ]
+    },
+    "B-020": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 324
+        },
+        {
+          "text": "[원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
+          "count": 324
+        }
+      ]
+    },
+    "B-021": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 118
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 118
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "GDL이 별도 배포하는 GVIP Database(180개국 · SSP1·2·3 × 2020–2100년 5년 간격)를 취득하여 수록.",
+          "count": 33
+        },
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 118
+        },
+        {
+          "text": "[원천 갱신일 근거] GDL GVI (Huisman et al., 2025)",
+          "count": 118
+        }
+      ]
+    },
+    "B-022": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 5
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 11
+        },
+        {
+          "text": "[원천 갱신일 근거] CCDR 2022 발간",
+          "count": 8
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 3
+        },
+        {
+          "text": "할인율 6%(World Bank 경제성 분석 지침) 기준 현재가치이므로 명목 총액과 다름 — 10개국 비교 시 이 점을 반드시 맞춰야 함.",
+          "count": 1
+        }
+      ]
+    },
+    "B-023": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ·",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 7
+        },
+        {
+          "text": "[10개국 비교가능성] X — 베트남 전용 논문",
+          "count": 2
+        },
+        {
+          "text": "[10개국 비교가능성] X — 베트남 전용 논문. 타 국가는 GRDC/GloFAS 기반 산출로 대체 필요",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] △ — MRC는 메콩 유역 4개국 한정. 나머지 국가는 GRDC/GloFAS 기반 산출 필요",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 11
+        },
+        {
+          "text": "동일 절차를 10개국에 동일 적용 가능.",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.citationLocator": [
+        {
+          "text": "B-023_seasonal_flow_variation.csv",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.provenance.citationLocator": [
+        {
+          "text": "B-023_seasonal_flow_variation.csv",
+          "count": 1
+        }
+      ]
+    },
+    "B-024": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 7
+        },
+        {
+          "text": "[원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+          "count": 6
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 1
+        }
+      ]
+    },
+    "B-025": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 1
+        },
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). ·",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 19
+        },
+        {
+          "text": "[원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 18
+        }
+      ]
+    },
+    "B-026": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 11
+        },
+        {
+          "text": "[원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+          "count": 11
+        }
+      ]
+    },
+    "B-027": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 1
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 3
+        },
+        {
+          "text": "[원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+          "count": 2
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 1
+        }
+      ]
+    },
+    "B-028": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 1
+        },
+        {
+          "text": "(산출방식 열 참조)",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 11
+        },
+        {
+          "text": "[10개국 비교가능성] X — 베트남 전용 논문",
+          "count": 2
+        },
+        {
+          "text": "[10개국 비교가능성] △ — MRC는 메콩 유역국 한정",
+          "count": 2
+        },
+        {
+          "text": "[원천 갱신일 근거] AQUASTAT Dissemination System 조회 기준일",
+          "count": 4
+        },
+        {
+          "text": "[원천 갱신일 근거] HydroSHEDS v1 (2022 릴리스)",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 10
+        }
+      ],
+      ".meta.indicators.citationLocator": [
+        {
+          "text": "B-028_river_discharge_water_resources.csv",
+          "count": 5
+        }
+      ],
+      ".meta.indicators.provenance.citationLocator": [
+        {
+          "text": "B-028_river_discharge_water_resources.csv",
+          "count": 5
+        }
+      ]
+    },
+    "B-029": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 2
+        },
+        {
+          "text": "[라이선스 근거] 배포본에 동봉된 GPM2022_Licence.txt 에 \"CC BY-NC-SA 4.0",
+          "count": 2
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 9
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 6
+        },
+        {
+          "text": "[원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 2
+        }
+      ]
+    },
+    "B-030": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 3
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] GFW Data API 조회 기준일(데이터셋 버전 병기)",
+          "count": 2
+        }
+      ]
+    },
+    "B-035": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 41
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 41
+        }
+      ]
+    },
+    "B-036": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 34
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 34
+        }
+      ]
+    },
+    "B-037": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 56
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 56
+        }
+      ]
+    },
+    "B-038": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "원천이 별도 지정 인용문을 제공하지 않는 문헌·조사자료로 표준 서지 표기로 기재(처리규칙 8, 2026-09-20).",
+          "count": 11
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "World Bank Data Catalog에서 What a Waste **3.0** Country dataset(217개국, 2026-03 공개, CC BY 4.0)을 내려받아 iso3c=VNM 행을 추출했습니다.",
+          "count": 3
+        },
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 25
+        },
+        {
+          "text": "[원천 갱신일 근거] FAOSTAT bulk 파일 기준일",
+          "count": 7
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 18
+        },
+        {
+          "text": "동일 파일에 10개국 전체가 수록되어 있어 나머지 9개국도 동일 절차로 즉시 확장 가능합니다.",
+          "count": 3
+        }
+      ]
+    },
+    "B-039": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 2
+        },
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 3
+        },
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). · 본 값은 원자료를 가공·집계한 2차 산출물입니다. 4TU General Terms of Use 4b 조에 따라 재가공은 비상업 목적에 한해 허용되며, 4a 조에 따라 재배포 시 원 권리자(Creator) 표시가 승계되어야 합니다.",
+          "count": 2
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 3
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 5
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "10개국 비교 시에도 기술적 잠재량이 가장 널리 보고되는 개념입니다.",
+          "count": 1
+        },
+        {
+          "text": "45개년 시계열이라 증설 추이 확인이 가능하며 10개국 확장도 즉시 가능합니다.",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 10
+        },
+        {
+          "text": "[10개국 비교가능성] O — 전지구 격자로 10개국 동일 적용 가능",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] X — EVN은 베트남 전용 원천",
+          "count": 6
+        },
+        {
+          "text": "[10개국 비교가능성] △ — IHA는 다수국 보고. 미보고국은 아래 GIS 기반 산출로 보완 필요",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 17
+        },
+        {
+          "text": "동 계열은 225개 지역을 담고 있어 10개국 확장이 즉시 가능합니다.",
+          "count": 1
+        },
+        {
+          "text": "동 시트에 100개국 이상이 같은 형식으로 수록되어 있어 **10개국 확장이 즉시 가능**합니다.",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.citationLocator": [
+        {
+          "text": "B-039_hydropower_potential.csv",
+          "count": 4
+        }
+      ],
+      ".meta.indicators.provenance.citationLocator": [
+        {
+          "text": "B-039_hydropower_potential.csv",
+          "count": 4
+        }
+      ]
+    },
+    "B-040": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0). · 본 값은 IRENA Global Atlas 의 심도별 지온 GeoTIFF(격자 10′≈0.1667°)를 GADM 4.1 ADM1(63개 성) 폴리곤으로 zonal 집계한 2차 산출물입니다. IRENA 약관 4.1조는 access·copy·share·download·reproduce·print·view 만 열거하고 가공(adapt)을 명시하지 않으므로, 격자 집계물의 표출 가부는 4.5조에 따라 info@irena.org 확인이 필요합니다. ·",
+          "count": 2
+        },
+        {
+          "text": "[라이선스 근거] 운영기관 IGA 누리집에 이용약관 페이지가 없으며 푸터에 \"Copyright © 2024-2025 – International Geothermal Association Incorporated (IGA) – All Rights Reserved\" 만 게시. 논문 재이용 조건이 공표되어 있지 않으므로 표출 가부는 IGA 확인이 필요합니다. 종전 license_url 이 IRENA 약관을 가리키고 있었으나 본 지표의 주 원천은 IRENA 가 아니므로 IGA 기준으로 교체했습니다.",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 1
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "B-040_geothermal_potential.csv",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 31
+        },
+        {
+          "text": "[10개국 비교가능성] O — IRENA Global Atlas 전지구 레이어",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] X — 베트남 국가보고서 기반. 10개국 확장은 GIS 경로 필요",
+          "count": 1
+        },
+        {
+          "text": "[10개국 비교가능성] X — 베트남 국내 기관 보고서. 10개국 확장은 아래 GIS 경로 필요",
+          "count": 1
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 34
+        },
+        {
+          "text": "본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능.",
+          "count": 6
+        }
+      ]
+    },
+    "B-041": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 2
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "10개국 비교 시 어느 쪽 정의를 쓸지 통일 필요.",
+          "count": 3
+        },
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 50
+        },
+        {
+          "text": "[원천 갱신일 근거] GSA 2.0 릴리스",
+          "count": 50
+        }
+      ]
+    },
+    "B-042": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "(가공 내역은 2_meta_info 의 산출방식 열 참조)",
+          "count": 4
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 142
+        },
+        {
+          "text": "[원천 갱신일 근거] GWA 3.x 릴리스",
+          "count": 142
+        }
+      ]
+    },
+    "B-043": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "[DoD S-07 잠정] NIGT 비영리 해당여부 확정 후 재판정(라이선스 전수확인 v1.0).",
+          "count": 15
+        },
+        {
+          "text": "[출처 문구] 원천 지정 표기 그대로 기재(처리규칙 8, 2026-09-21 확인).",
+          "count": 18
+        },
+        {
+          "text": "[표출범위] 「개도국 전략지도」 비영리 연구·공공 협력 플랫폼 내 원본 값·순위 표출로 한정 · 출처 표기 유지 · 상업적 재배포·재판매 불가.",
+          "count": 15
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 38
+        },
+        {
+          "text": "[원천 갱신일 근거] EI Statistical Review 연 1회 6월 발간",
+          "count": 21
+        },
+        {
+          "text": "[원천 갱신일 근거] INFORM Risk 2026 v0.7.2 판",
+          "count": 2
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 15
+        },
+        {
+          "text": "동일 계열로 대상 10개국 중 인도네시아·태국·필리핀·미얀마·말레이시아까지 확보되어 함께 수록했습니다.",
+          "count": 8
+        },
+        {
+          "text": "동일 파일에 225개 국가·지역의 석탄 매장량이 들어 있어 10개국 전량 즉시 확장 가능합니다.",
+          "count": 1
+        }
+      ]
+    },
+    "B-044": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "원천이 별도 지정 인용문을 제공하지 않는 문헌·조사자료로 표준 서지 표기로 기재(처리규칙 8, 2026-09-20).",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 26
+        },
+        {
+          "text": "[원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+          "count": 24
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 2
+        },
+        {
+          "text": "[커버리지 확대] 검토의견대로 10개국 공통 기준광물을 먼저 정하고 국가별로 값을 채우는 방식을 채택하겠습니다.",
+          "count": 1
+        },
+        {
+          "text": "발주처 확정 후 10개국 × 12종 매트릭스로 재구성 예정.",
+          "count": 1
+        }
+      ]
+    },
+    "B-045": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 46
+        },
+        {
+          "text": "[원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+          "count": 46
+        }
+      ]
+    },
+    "B-046": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 13
+        },
+        {
+          "text": "[원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+          "count": 13
+        }
+      ]
+    },
+    "B-047": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 12
+        },
+        {
+          "text": "[원천 갱신일 근거] USGS MCS 연 1회 1월 발간",
+          "count": 12
+        }
+      ]
+    },
+    "B-048": {
+      ".meta.indicators.attributionText": [
+        {
+          "text": "원천이 별도 지정 인용문을 제공하지 않는 문헌·조사자료로 표준 서지 표기로 기재(처리규칙 8, 2026-09-20).",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능",
+          "count": 10
+        },
+        {
+          "text": "[원천 갱신일 근거] MYB Vietnam 2022 volume 공개 시점",
+          "count": 6
+        },
+        {
+          "text": "[원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+          "count": 4
+        }
+      ]
+    },
+    "C-004": {
+      ".entities.records.note": [
+        {
+          "text": "C-004_LT-LEDS (장기 저탄소 발전 전략)_WorldBank_Vietnam_CCDR_2022_full.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-005": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "36개국 대상 2개 라운드 중 1라운드 15개국에 베트남 포함.",
+          "count": 1
+        }
+      ]
+    },
+    "C-006": {
+      ".entities.records.note": [
+        {
+          "text": "C-006_VNM_ND112-2026-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-006_VNM_ND119-2025-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_A6.4_HPPR_VietNam.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-006_파리협정 제6.2조·제6.4조 이행 체계·현황_UNFCCC_CDM_activities_eligible_for_transition.xlsx",
+          "count": 1
+        },
+        {
+          "text": "C-019_VNM_ND06-2022-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_VNM_ND29-2026-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_VNM_QD232-QD-TTg_…signed.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-007": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "‖ ★정정: 1차 데이터는 베트남을 SUBARU의 'host'로 기재했으나, 원문 확인 결과 제출당사국은 일본이며 베트남은 참여국(17개국 중 1)임.",
+          "count": 16
+        }
+      ]
+    },
+    "C-008": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "C-008_NAZCA_베트남_행위자_전체목록_2026-08-18.csv",
+          "count": 8
+        },
+        {
+          "text": "COP26 계기 서명 ‖ [대체 출처 사용 2026-08-18] 1차 출처인 GMP 공식 사이트(globalmethanepledge.org)는 참여국 명단(159개국+EU집행위)만 게시하고 국가별 참여 일자 필드를 제공하지 않아 해당 값을 수집할 수 없었음.",
+          "count": 1
+        },
+        {
+          "text": "‖ 개도국 10개국 대상 5년내 CO2 10%·10년내 25% 감축, 남획 5년내 20%·10년내 50% 저감",
+          "count": 1
+        },
+        {
+          "text": "‖ 베트남+IPG(9개국+EU)",
+          "count": 1
+        }
+      ]
+    },
+    "C-010": {
+      ".entities.records.note": [
+        {
+          "text": "2023-03-13 확인",
+          "count": 1
+        },
+        {
+          "text": "C-010_VNM_Law72-2020-QH14_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_VNM_ND08-2022-ND-CP_…EIA.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_05_VNM_GiaLai_KH2810-KH-UBND_2022-12-01_climate_strategy_implementation_plan.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_06_VNM_Law146-2025-QH15_2025-12-11_amend_15_laws_agri_env.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_07_VNM_Law28-2023-QH15_2023-11-27_Water_Resources_Law.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_10_VNM_ND110-2026-ND-CP_2026-04-01_EPR_recycling_responsibility.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_11_VNM_ND48-2026-ND-CP_2026-01-29_amend_ND08_environment.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_12_VNM_NgheAn_QD3560-QD-UBND_2023-11-01_green_growth_action_plan.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_13_VNM_QCVN03-2023-BTNMT_soil_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_14_VNM_QCVN05-2023-BTNMT_ambient_air_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_15_VNM_QCVN08-2023-BTNMT_surface_water_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_16_VNM_QCVN09-2023-BTNMT_groundwater_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_17_VNM_QCVN10-2023-BTNMT_seawater_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_18_VNM_QD149-QD-TTg_2022-01-28_National_Biodiversity_Strategy_2030.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_19_VNM_TT01-2023-TT-BTNMT_2023-03-13_QCVN_environment_quality.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_20_VNM_VBHN73-VPQH_2026-03-25_Biodiversity_Law_20-2008_consolidated.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_기타 환경 관련 법제도 현황_Decree_05_2025_ND-CP_EN.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-011": {
+      ".entities.records.note": [
+        {
+          "text": "C-011_치안·안전 정보_Numbeo_Vietnam_crime_2026-07.csv",
+          "count": 14
+        },
+        {
+          "text": "C-011_치안·안전 정보_WorldBank_WDI_VC.IHR.PSRC.P5_VNM_intentional_homicide_2026-09-11.zip",
+          "count": 11
+        },
+        {
+          "text": "C-011_치안·안전 정보_해외안전여행_베트남.pdf",
+          "count": 6
+        },
+        {
+          "text": "C-011_치안·안전 정보_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 5
+        }
+      ]
+    },
+    "C-012": {
+      ".entities.records.note": [
+        {
+          "text": "C-012_PPP 법제도·조달 체계_05_VNM_ND125-2025-ND-CP_2025-06-11_local_authority_delineation_MOF.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_06_VNM_ND243-2025-ND-CP_2025-09-11_PPP_law_detailing.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_08_VNM_ND28-2021-ND-CP_2021-03-26_PPP_financial_management.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_09_VNM_ND35-2021-ND-CP_2021-03-29_PPP_law_detailing.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_11_VNM_ND71-2025-ND-CP_2025-03-28_amend_ND35_PPP.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_Law_64_2020_QH14_signed_VN.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_Law_64_2020_consolidated_123-VBHN-VPQH_2025_VN.pdf",
+          "count": 7
+        },
+        {
+          "text": "C-012_PPP 법제도·조달 체계_WB_PPP_Legal_Framework_Snapshot_Vietnam.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-013": {
+      ".entities.records.note": [
+        {
+          "text": "C-013_외국인 투자 규정_UNCTAD_IIA_Navigator_VietNam_BITs_TIPs_IRIs_2026-09-11.csv",
+          "count": 100
+        },
+        {
+          "text": "C-013_외국인 투자 규정_VNM_ND320-2025-ND-CP_2025-12-15_CIT_implementing_decree.signed.pdf",
+          "count": 3
+        },
+        {
+          "text": "C-013_외국인 투자 규정_luat143-2025.pdf",
+          "count": 2
+        },
+        {
+          "text": "C-013_외국인 투자 규정_외국인투자규정_베트남_데이터_2026-07-28.csv",
+          "count": 8
+        },
+        {
+          "text": "C-013_외국인 투자 규정_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 5
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] 2026-08-10 재검증 시 종전 인용 법령인 투자법 61/2020/QH14가 2026.3.1자로 폐지되어 투자법 143/2025/QH15로 교체함(1차 수집일 2026-07-27 시점에 이미 구법).",
+          "count": 1
+        },
+        {
+          "text": "[원본 버전] 법인세법 67/2025/QH15(2025.6.14 공포·2025.10.1 시행, 2025 과세연도부터 적용)가 종전 법인세법을 대체함.",
+          "count": 1
+        }
+      ]
+    },
+    "C-014": {
+      ".entities.records.note": [
+        {
+          "text": "C-014_인허가 프로세스_WB Doing Business 2020 — Vietnam Economy Profile.pdf",
+          "count": 28
+        },
+        {
+          "text": "C-014_인허가 프로세스_WorldBank_B-READY_2024_VietNam_economy_profile.pdf",
+          "count": 14
+        },
+        {
+          "text": "C-014_인허가 프로세스_WorldBank_B-READY_2025_VietNam_economy_profile.pdf",
+          "count": 15
+        },
+        {
+          "text": "C-014_인허가 프로세스_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 8
+        },
+        {
+          "text": "C-017_재생에너지 투자 인센티브_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 1
+        }
+      ]
+    },
+    "C-015": {
+      ".entities.records.note": [
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_06_VNM_Law135-2025-QH15_2025-12-10_Construction_Law.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_07_VNM_Law61-2024-QH15_2024-11-30_Electricity_Law.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_08_VNM_Law67-2025-QH15_2025-06-14_Corporate_Income_Tax_Law.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_10_VNM_ND217-2026-ND-CP_2026-06-19_construction_activity_management.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_11_VNM_ND243-2026-ND-CP_2026-06-26_amend_ND57_DPPA_ND58.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_12_VNM_ND272-2026-ND-CP_2026-07-04_NQ253_energy_policy_detailing.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_14_VNM_ND56-2025-ND-CP_2025-03-03_power_planning_investment_bidding.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_17_VNM_ND61-2025-ND-CP_2025-03-04_electricity_licensing.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_18_VNM_ND62-2025-ND-CP_2025-03-04_power_facility_protection_safety.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_19_VNM_ND96-2026-ND-CP_2026-03-31_Investment_Law_detailing.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_23_VNM_QD500-QD-TTg_2023-05-15_PDP8.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 13
+        },
+        {
+          "text": "C-016_재생에너지 발주 및 확대 계획_10_VNM_QD1509-QD-BCT_2025-05-30_PDP8_adjusted_implementation_plan.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_재생에너지 투자 인센티브_03_VNM_Law107-2016-QH13_2016-04-06_Import_Export_Duty_Law.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_재생에너지 투자 인센티브_04_VNM_ND103-2024-ND-CP_2024-07-30_land_use_fee_land_rent.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_재생에너지 투자 인센티브_13_VNM_QD11-2017-QD-TTg_2017-04-11_solar_FIT.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_재생에너지 투자 인센티브_17_VNM_QD21-QD-BCT_2023-01-07_transition_solar_wind_price_frame.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-016": {
+      ".entities.records.note": [
+        {
+          "text": "C-015_재생에너지 법제도 원본 링크_07_VNM_Law61-2024-QH15_2024-11-30_Electricity_Law.pdf",
+          "count": 2
+        },
+        {
+          "text": "C-016_재생에너지 발주 및 확대 계획_768-ttg.signed.pdf",
+          "count": 23
+        },
+        {
+          "text": "C-016_재생에너지 발주 및 확대 계획_pl1-2.pdf",
+          "count": 730
+        },
+        {
+          "text": "C-016_재생에너지 발주 및 확대 계획_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 17
+        },
+        {
+          "text": "C-017_VNM_ND57-2025-ND-CP_…DPPA.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_VNM_QD13-2020-QD-TTg_…solar_FIT.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-017_VNM_QD39-2018-QD-TTg_…wind_FIT.signed.pdf",
+          "count": 1
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "C-016_재생에너지 발주 및 확대 계획_pl1-2.pdf",
+          "count": 639
+        }
+      ]
+    },
+    "C-018": {
+      ".entities.records.note": [
+        {
+          "text": "C-018_중장기 에너지 전망_768-ttg.signed.pdf",
+          "count": 50
+        },
+        {
+          "text": "C-018_중장기 에너지 전망_IEA_Southeast_Asia_Energy_Outlook_2024.pdf",
+          "count": 3
+        },
+        {
+          "text": "C-018_중장기 에너지 전망_IEA_Southeast_Asia_Energy_Outlook_2026.pdf",
+          "count": 4
+        },
+        {
+          "text": "C-018_중장기 에너지 전망_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 9
+        }
+      ]
+    },
+    "C-019": {
+      ".entities.records.note": [
+        {
+          "text": "C-006_VNM_ND112-2026-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-006_VNM_ND119-2025-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-010_VNM_Law72-2020-QH14_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_VNM_ND06-2022-ND-CP_…signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_VNM_NQ579-2018-UBTVQH14_…signed.pdf",
+          "count": 11
+        },
+        {
+          "text": "C-019_…_08_VNM_NQ579-2018-UBTVQH14…signed.pdf",
+          "count": 8
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_07_VNM_NQ109-2025-UBTVQH15_2025-10-17_environmental_tax_fuel_2026.pdf",
+          "count": 8
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_ICAP_Vietnam_ETS_factsheet.pdf",
+          "count": 22
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_VNM_ND29-2026-ND-CP_2026-01-19_carbon_exchange.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_VNM_QD232-QD-TTg_2025-01-24_carbon_market_scheme.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_VNM_QD263-QD-TTg_2026-02-09_ETS_allowance.signed.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_VNM_QD42-2026-QD-TTg_2026-08-10_GHG_inventory_list.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-019_탄소 시장 관련 법률·예산_WorldBank_Vietnam_CCDR_2022_Full_Report_EN.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-022_VNM_ND45-2022-ND-CP_…signed.pdf",
+          "count": 1
+        }
+      ]
+    },
+    "C-022": {
+      ".entities.records.note": [
+        {
+          "text": "C-022_탄소시장 준비도_VNM_ND45-2022-ND-CP_2022-07-07_environmental_administrative_penalties.signed.pdf",
+          "count": 3
+        },
+        {
+          "text": "C-022_탄소시장 준비도_VNM_QD42-2026-QD-TTg_2026-08-10_GHG_inventory_facility_list_annex.pdf",
+          "count": 34
+        },
+        {
+          "text": "C-022_탄소시장 준비도_현지조사_FieldSurveyItems_vIDGcmt_260408_vF.xlsx",
+          "count": 9
+        }
+      ]
+    },
+    "C-024": {
+      ".entities.records.note": [
+        {
+          "text": "C-024_GCF_FP294_…Funding_Proposal_approved_2026-03-28.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_GCF_FP294_VietNam_REDD_RBP_2014_Funding_Proposal_approved_2026-03-28.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_UNFCCC_REDD_VNM_FREL_submission_2016.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_UNFCCC_REDD_VNM_SOI1_safeguards_2018.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_UNFCCC_REDD_VNM_technical_analysis_report_2021.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_VNM_ND107-2022-ND-CP_2022-12-28_BacTrungBo_ERPA.pdf",
+          "count": 6
+        },
+        {
+          "text": "C-024_REDD+ 현황_VNM_NRAP_Decision_419_QD-TTg_2017.pdf",
+          "count": 1
+        },
+        {
+          "text": "C-024_REDD+ 현황_WorldBank_FCPF_VNM_NorthCentral_ERP_Project_Document_2021.pdf",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.citationLocator": [
+        {
+          "text": "BioCarbon Fund ISFL — Programs (5개국 목록)",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.provenance.citationLocator": [
+        {
+          "text": "BioCarbon Fund ISFL — Programs (5개국 목록)",
+          "count": 1
+        }
+      ]
+    },
+    "D-001": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(베트남 132건, Financial Close 2001~2024).",
+          "count": 14
+        }
+      ]
+    },
+    "D-002": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 8
+        },
+        {
+          "text": "[원본 버전] 개정 PDP8(총리결정 768/QĐ-TTg, 2025-04-15)의 2030·2050 설비목표를 정리한 업계 전문지 해설본. 1차 출처인 결정문 원문은 미확보 상태이며, 수록값은 해설본에 게재된 목표 설비용량과 2023 실적치임.",
+          "count": 8
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-25] IRENASTAT Renewable energy share of electricity capacity and generation · RE share of electricity capacity (%)",
+          "count": 26
+        },
+        {
+          "text": "[추가수집 2026-09-25] IRENASTAT Renewable energy share of electricity capacity and generation · RE share of electricity generation (%)",
+          "count": 24
+        },
+        {
+          "text": "[추가수집 2026-09-25] 산출값 · CAGR=(2023 비중 44.89 ÷ 2013 비중 47.06)^(1/10)−1 · IRENASTAT 발전량 비중 기준. 비중의 성장률이며 발전량 절대치 성장률이 아님.",
+          "count": 1
+        }
+      ]
+    },
+    "D-003": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(Verra·Gold Standard·CDM 등록부 및 UNFCCC NDC 문서)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 396
+        },
+        {
+          "text": "[추가수집 2026-09-24] Gold Standard 등록사업의 연간 추정 크레딧(=감축량).",
+          "count": 79
+        },
+        {
+          "text": "[추가수집 2026-09-24] 사업설계서(PDD) 사전 산정 감축량. 베이스라인·사업·누출을 반영한 UNFCCC 등록값.",
+          "count": 308
+        },
+        {
+          "text": "[추가수집 2026-09-24] 자발적시장(VCS) 등록사업의 연평균 추정 감축량.",
+          "count": 67
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 12
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] IGES CDM DB v13.7 수록 등록사업 건수(상위 308건 수록 기준).",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-24] 수록 CDM 사업의 연간 사전 산정 감축량 합계.",
+          "count": 1
+        }
+      ]
+    },
+    "D-004": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 15
+        }
+      ]
+    },
+    "D-005": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 9
+        },
+        {
+          "text": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함.",
+          "count": 9
+        }
+      ]
+    },
+    "D-006": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 8
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Environmental Taxes · Domestic Currency",
+          "count": 18
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Environmental Taxes · Percent of GDP",
+          "count": 18
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Energy (including fuel for transport) · Domestic Currency",
+          "count": 18
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Energy (including fuel for transport) · Percent of GDP",
+          "count": 18
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Pollution · Domestic Currency",
+          "count": 27
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Pollution · Percent of GDP",
+          "count": 27
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Resources · Domestic Currency",
+          "count": 27
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Resources · Percent of GDP",
+          "count": 27
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Transport (excluding fuel for transport) · Domestic Currency",
+          "count": 27
+        },
+        {
+          "text": "[추가수집 2026-09-24] IMF Climate Change Indicators Dashboard · Taxes on Transport (excluding fuel for transport) · Percent of GDP",
+          "count": 27
+        }
+      ]
+    },
+    "D-007": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 3
+        },
+        {
+          "text": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함.",
+          "count": 3
+        }
+      ]
+    },
+    "D-008": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 15
+        },
+        {
+          "text": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함.",
+          "count": 15
+        }
+      ]
+    },
+    "D-009": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 5
+        },
+        {
+          "text": "[원본 버전] 베트남 기후공공지출·투자검토(CPEIR)는 2015년판(2010~2013 대상)과 2022년판(2016~2020 대상)이 있으며, 두 판은 조사대상 기관 범위와 분류체계가 달라 시계열로 직접 연결되지 않음. 지표별로 어느 판인지 명기함.",
+          "count": 5
+        }
+      ]
+    },
+    "D-010": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 8
+        }
+      ]
+    },
+    "D-011": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 80
+        },
+        {
+          "text": "[원본 버전] OECD Data Explorer CRS 내려받기본(Recipient=Viet Nam, Sector=All sectors, Measure=Official Development Assistance, Flow type=Disbursements, Price base=Constant prices, 단위 백만 USD). 수록값은 백만 USD를 USD로 환산한 것이며 2024년 불변가 기준임.",
+          "count": 80
+        }
+      ]
+    },
+    "D-012": {
+      ".entities.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] GEM 바이오에너지 Tracker의 베트남 소재 발전설비. 소유자·운영자 기준 진출 현황. 소유자 국적은 GEM Global Energy Ownership Tracker(2026-08 V2) All Entities 조인으로 보강(2026-09-25).",
+          "count": 40
+        },
+        {
+          "text": "[추가수집 2026-09-24] GEM 수력 Tracker의 베트남 소재 발전설비. 소유자·운영자 기준 진출 현황. 소유자 국적은 GEM Global Energy Ownership Tracker(2026-08 V2) All Entities 조인으로 보강(2026-09-25).",
+          "count": 123
+        },
+        {
+          "text": "[추가수집 2026-09-24] GEM 지열 Tracker의 베트남 소재 발전설비. 소유자·운영자 기준 진출 현황. 소유자 국적은 GEM Global Energy Ownership Tracker(2026-08 V2) All Entities 조인으로 보강(2026-09-25).",
+          "count": 2
+        },
+        {
+          "text": "[추가수집 2026-09-24] GEM 태양광 Tracker의 베트남 소재 발전설비. 소유자·운영자 기준 진출 현황. 소유자 국적은 GEM Global Energy Ownership Tracker(2026-08 V2) All Entities 조인으로 보강(2026-09-25).",
+          "count": 500
+        },
+        {
+          "text": "[추가수집 2026-09-24] GEM 풍력 Tracker의 베트남 소재 발전설비. 소유자·운영자 기준 진출 현황. 소유자 국적은 GEM Global Energy Ownership Tracker(2026-08 V2) All Entities 조인으로 보강(2026-09-25).",
+          "count": 481
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 15
+        }
+      ]
+    },
+    "D-013": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 21
+        },
+        {
+          "text": "[비교] 국가 간 비교는 GGGI가 동일 방법론으로 산출하므로 가능하나, 본 사업 10개국 취합 후 일괄 판정 대상이므로 미확인으로 둠.",
+          "count": 21
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] Yale EPI 2026 · 생태계 활력. GGGI 지수의 비교가능성 보강용 보조지표.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-24] Yale EPI 2026 · 환경보건. GGGI 지수의 비교가능성 보강용 보조지표.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-24] Yale EPI 2026 · 환경성과지수 종합. GGGI 지수의 비교가능성 보강용 보조지표.",
+          "count": 1
+        }
+      ]
+    },
+    "D-014": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(EDCF 사업정보)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 135
+        },
+        {
+          "text": "[추가수집 2026-09-24] ODA Korea 통계포털 사업목록 최신판(보고연도 2010–2025) 신규 수록분. 기존 2010–2023 수록분과 사업번호로 중복 제거.",
+          "count": 4
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] OECD CRS 보고 원자료(2010~2023 총괄본 + 2024 KOICA본)에서 수원국 \"베트남\" 행만 추출하여 사업번호 기준으로 재집계함. 2010~2023 파일의 금액 단위는 백만 USD, 2024 파일은 USD이므로 USD로 통일하여 합산함.",
+          "count": 7
+        }
+      ]
+    },
+    "D-015": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(ODA Korea 통계 사업목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 948
+        },
+        {
+          "text": "[추가수집 2026-09-24] ODA Korea 통계포털 사업목록 최신판(보고연도 2010–2025) 신규 수록분. 기존 2010–2023 수록분과 사업번호로 중복 제거.",
+          "count": 400
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] OECD CRS 보고 원자료(2010~2023 총괄본 + 2024 KOICA본)에서 수원국 \"베트남\" 행만 추출하여 사업번호 기준으로 재집계함. 2010~2023 파일의 금액 단위는 백만 USD, 2024 파일은 USD이므로 USD로 통일하여 합산함.",
+          "count": 10
+        }
+      ]
+    },
+    "D-016": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(지자체·정부부처 공개 사업목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 607
+        },
+        {
+          "text": "[추가수집 2026-09-24] ODA Korea 통계포털 사업목록 최신판(보고연도 2010–2025) 신규 수록분. 기존 2010–2023 수록분과 사업번호로 중복 제거.",
+          "count": 400
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] OECD CRS 보고 원자료(2010~2023 총괄본 + 2024 KOICA본)에서 수원국 \"베트남\" 행만 추출하여 사업번호 기준으로 재집계함. 2010~2023 파일의 금액 단위는 백만 USD, 2024 파일은 USD이므로 USD로 통일하여 합산함.",
+          "count": 10
+        }
+      ]
+    },
+    "D-017": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(ODA Korea 통계 사업목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 276
+        },
+        {
+          "text": "[추가수집 2026-09-24] 한국 ODA 사업 중 외부 기관이 수행한 건의 발주·수행 실적. 입찰공고 단위(공고번호·마감일)는 KOICA 전자조달 API로 별도 확보 예정.",
+          "count": 300
+        }
+      ]
+    },
+    "D-018": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(Adaptation Fund·CFU)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 3
+        }
+      ]
+    },
+    "D-019": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(CTCN Open Data)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 9
+        },
+        {
+          "text": "[추가수집 2026-09-24] CTCN 전체 공개 CSV 재추출분.",
+          "count": 10
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 6
+        }
+      ]
+    },
+    "D-020": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(GCF Open Data Library)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 9
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 3
+        }
+      ]
+    },
+    "D-021": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(World Bank Projects & Operations 등 MDB 공개 목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 593
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 9
+        },
+        {
+          "text": "[원본 버전] d-portal(IATI) 베트남 활동 목록 내려받기본(전체 10,133건). 그중 국제기구·MDB 보고분이면서 총 약정액 1,000,000 USD 이상인 건을 수록함 — 소액 활동까지 전수 수록하면 1,501건이 되어 전략지도 활용도가 낮아짐. 수록 기준을 명시하며, 절단된 861건은 소액(<1M USD) 활동임.",
+          "count": 9
+        }
+      ]
+    },
+    "D-022": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표·행정구역 미확보 2026-09-25] 원천(World Bank Projects·JICA·IFC·AIIB)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 247
+        },
+        {
+          "text": "[추가수집 2026-09-24] 일본 엔차관 사업. 경쟁국 양자 개발금융 비교용.",
+          "count": 214
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 - · 금융유형 Nonsovereign · 원문 금액표기 'Proposed Funding: USD100 million' · 상태 Proposed. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 - · 금융유형 Nonsovereign · 원문 금액표기 'Proposed Funding: USD60 million' · 상태 Proposed. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 - · 금융유형 Sovereign · 원문 금액표기 'Proposed Funding: USD300 million' · 상태 Proposed. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 2021 · 금융유형 Nonsovereign · 원문 금액표기 'Approved Financing: USD47.5 million' · 상태 Approved. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 2024 · 금융유형 Nonsovereign · 원문 금액표기 'Approved Financing: USD150 million' · 상태 Approved. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] AIIB Project List PDF 표 추출. 승인연도 2024 · 금융유형 Nonsovereign · 원문 금액표기 'Approved Financing: USD75 million' · 상태 Approved. 승인 전(Proposed) 건은 금액이 제안액이므로 승인액과 구분 필요.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 100.00M USD. 회계연도 2019 · 공시일 02/11/2019 · https://disclosures.ifc.org/project-detail/SII/40227/ac-energy-green-bond",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 100.00M USD. 회계연도 2021 · 공시일 06/30/2021 · https://disclosures.ifc.org/project-detail/SII/43733/ocb-green-loan",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 15.00M USD. 회계연도 2022 · 공시일 09/27/2021 · https://disclosures.ifc.org/project-detail/SII/44198/bac-ninh-wte",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 150.00M USD. 회계연도 2024 · 공시일 02/28/2024 · https://disclosures.ifc.org/project-detail/SII/48825/ocb-sustainability-2024",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 150.00M USD. 회계연도 2024 · 공시일 06/26/2024 · https://disclosures.ifc.org/project-detail/SII/48998/seabank-green-blue-gender",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 20.00M USD. 회계연도 2021 · 공시일 03/16/2021 · https://disclosures.ifc.org/project-detail/SII/44653/ree-wind-power-2",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 200.00M USD. 회계연도 2025 · 공시일 08/18/2025 · https://disclosures.ifc.org/project-detail/SII/49438/dcm-vpb-sustainability-bond",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 38.08M USD. 회계연도 2023 · 공시일 05/23/2022 · https://disclosures.ifc.org/project-detail/SII/45972/baf-vietnam-agri",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 43.37M USD. 회계연도 2021 · 공시일 03/11/2021 · https://disclosures.ifc.org/project-detail/SII/43531/greenfeed-asf",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 50.00M USD. 회계연도 2020 · 공시일 10/30/2019 · https://disclosures.ifc.org/project-detail/SII/41890/vpbank-green-loan",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 57.89M USD. 회계연도 2025 · 공시일 12/25/2024 · https://disclosures.ifc.org/project-detail/SII/47283/hdbank-greenbond",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-25] IFC Investment Services Projects(공식 CSV) 중 사업명·기업명 기후 키워드 해당 건. 투자 구성: 대출 70.00M USD. 회계연도 2021 · 공시일 05/11/2021 · https://disclosures.ifc.org/project-detail/SII/42040/hdbank-greenloan",
+          "count": 1
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] d-portal(IATI) 베트남 활동에서 MDB 기후 관련 건을 추출한 종전 수집분을 기준으로 하며, 섹터는 OECD DAC 5자리 목적코드로 매핑함.",
+          "count": 4
+        }
+      ]
+    },
+    "D-023": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(CFU·GEF·GCF 공개 목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 105
+        },
+        {
+          "text": "[추가수집 2026-09-24] Climate Funds Update 통합 기금 DB. 종전 GEF 단일 기금 편중을 해소.",
+          "count": 39
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 9
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] CFU 수록 기후기금 승인사업 건수. 기금 15종.",
+          "count": 1
+        },
+        {
+          "text": "[추가수집 2026-09-24] CFU 수록 승인액 합계(USD 백만).",
+          "count": 1
+        }
+      ]
+    },
+    "D-024": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(SPI·US DFC·IFC 공개 목록)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 26
+        },
+        {
+          "text": "[추가수집 2026-09-24] US DFC 활성 투자사업.",
+          "count": 9
+        },
+        {
+          "text": "[추가수집 2026-09-24] 임팩트 투자의 실체인 DFI 직접투자 공시. IFC 투자 사업 단위 레코드.",
+          "count": 6
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 6
+        }
+      ],
+      ".observations.records.note": [
+        {
+          "text": "[추가수집 2026-09-24] IFC 6건 + US DFC 9건.",
+          "count": 1
+        }
+      ]
+    },
+    "D-025": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(World Bank PPI)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 167
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[원본 버전] World Bank PPI Database Custom Query 내려받기본(Country=Vietnam, 132건, Financial Close 2001~2024).",
+          "count": 18
+        }
+      ]
+    },
+    "D-026": {
+      ".entities.records.note": [
+        {
+          "text": "[좌표 미확보 2026-09-25] 원천(MIGA Projects)이 사업지 좌표·1차 행정구역을 제공하지 않음. 발주처 기준에 따라 국가 중심점을 쓰지 않고 좌표를 공란 유지. 사업 제안서·보고서 확인 후 보완 예정.",
+          "count": 13
+        },
+        {
+          "text": "[추가수집 2026-09-24] MIGA 공개 데이터 최신판으로 전면 교체. Project Type은 상품구분이며 보증위험 유형(수용·이전제한·계약위반·전쟁내란)은 개별 Guarantee Summary 문서에만 존재.",
+          "count": 13
+        }
+      ],
+      ".meta.indicators.caveat": [
+        {
+          "text": "[라이선스 근거] 본 데이터셋은 저작권 비보호 대상인 사실값(수치·명칭·일자·코드)만 수록하고 원문 본문·번역문·해설문·표 이미지는 수록하지 않음 → 재배포 「제한」.",
+          "count": 4
+        },
+        {
+          "text": "[원본 버전] World Bank Group Guarantees—MIGA 프로젝트 DB 내려받기본(베트남 13행 → 9개 고유 프로젝트).",
+          "count": 4
+        }
+      ]
+    },
+    "E-010": {
+      ".meta.indicators.caveat": [
+        {
+          "text": "★GII 2024는 133개국, GII 2025는 139개국 기준이므로 연도 간 순위 단순비교 불가.",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

@@ -14551,12 +14551,10 @@
         {
           "key": "category",
           "labelKo": "분류",
-          "valueCount": 4,
+          "valueCount": 2,
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고, 인구 기준",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 사육두수"
+            "산출 투입·참고자료",
+            "산출 투입·참고자료 · 유기성 비중"
           ]
         },
         {
@@ -14670,34 +14668,10 @@
       "measures": [
         {
           "indicatorCount": 1,
-          "key": "measure-2552e0c53444",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 인구",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-22ac0ea3403a",
-          "labelKo": "[산출 투입",
-          "recordCount": 1,
-          "unit": "% 중량",
-          "unitFamily": "percent"
-        },
-        {
-          "indicatorCount": 1,
-          "key": "measure-a5170524e4e6",
-          "labelKo": "[산출 투입",
+          "key": "measure-13e56f3e0776",
+          "labelKo": "1인당 도시폐기물 발생량",
           "recordCount": 5,
           "unit": "kg/인/일",
-          "unitFamily": "other"
-        },
-        {
-          "indicatorCount": 4,
-          "key": "measure-1dfbcc7c9550",
-          "labelKo": "[산출 투입",
-          "recordCount": 181,
-          "unit": "두",
           "unitFamily": "other"
         },
         {
@@ -14710,6 +14684,14 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-1c9e1466aac1",
+          "labelKo": "도시폐기물 수거율(참고, 인구 기준",
+          "recordCount": 1,
+          "unit": "% 인구",
+          "unitFamily": "percent"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-f206688f0259",
           "labelKo": "도시폐기물 중 유기성 자원량(산출)",
           "recordCount": 5,
@@ -14718,10 +14700,26 @@
         },
         {
           "indicatorCount": 1,
+          "key": "measure-cd737328bac0",
+          "labelKo": "도시폐기물 중 음식물",
+          "recordCount": 1,
+          "unit": "% 중량",
+          "unitFamily": "percent"
+        },
+        {
+          "indicatorCount": 1,
           "key": "measure-9c0d857558df",
           "labelKo": "도시폐기물(MSW) 자원량",
           "recordCount": 5,
           "unit": "Mt/yr",
+          "unitFamily": "other"
+        },
+        {
+          "indicatorCount": 4,
+          "key": "measure-efdceb96360b",
+          "labelKo": "사육두수",
+          "recordCount": 181,
+          "unit": "두",
           "unitFamily": "other"
         },
         {
@@ -14753,30 +14751,28 @@
       "secondaryRenderer": "structured-table",
       "selectors": [
         {
-          "defaultValue": "measure-2552e0c53444",
+          "defaultValue": "measure-13e56f3e0776",
           "key": "measure",
           "labelKo": "측정항목",
           "values": [
-            "measure-2552e0c53444",
-            "measure-22ac0ea3403a",
-            "measure-a5170524e4e6",
-            "measure-1dfbcc7c9550",
+            "measure-13e56f3e0776",
             "measure-76bf52d804b4",
+            "measure-1c9e1466aac1",
             "measure-f206688f0259",
+            "measure-cd737328bac0",
             "measure-9c0d857558df",
+            "measure-efdceb96360b",
             "measure-cce048e76be7",
             "measure-ccc9e008a799"
           ]
         },
         {
-          "defaultValue": "참고자료] 1인당 도시폐기물 발생량",
+          "defaultValue": "산출 투입·참고자료",
           "key": "category",
           "labelKo": "분류",
           "values": [
-            "참고자료] 1인당 도시폐기물 발생량",
-            "참고자료] 도시폐기물 수거율(참고, 인구 기준",
-            "참고자료] 도시폐기물 중 음식물 · 유기성 비중",
-            "참고자료] 사육두수"
+            "산출 투입·참고자료",
+            "산출 투입·참고자료 · 유기성 비중"
           ]
         },
         {
@@ -19658,6 +19654,22 @@
           "values": [
             "entity"
           ]
+        },
+        {
+          "key": "status",
+          "labelKo": "status",
+          "valueCount": 9,
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "Late to verify",
+            "Listed",
+            "Registered",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested"
+          ]
         }
       ],
       "elementId": "C-025",
@@ -19698,7 +19710,24 @@
       ],
       "primaryRenderer": "portfolio",
       "secondaryRenderer": "structured-table",
-      "selectors": [],
+      "selectors": [
+        {
+          "defaultValue": "Gold Standard Certified Design",
+          "key": "status",
+          "labelKo": "status",
+          "values": [
+            "Gold Standard Certified Design",
+            "Gold Standard Certified Project",
+            "Late to verify",
+            "Listed",
+            "Registered",
+            "Under development",
+            "Under validation",
+            "Units Transferred from Approved GHG Program",
+            "Verification approval requested"
+          ]
+        }
+      ],
       "tableColumns": [
         "displayLabel",
         "value",
@@ -19708,6 +19737,11 @@
         "source",
         "missingReason",
         "sourceEvidence",
+        "methodology",
+        "projectId",
+        "proponent",
+        "standard",
+        "status",
         "tech_id",
         "결측_framework_필수_속성_결측_코드_사유",
         "기술_기술코드_판단_근거",
@@ -19723,16 +19757,11 @@
         "발행기록_연도_년",
         "사업_감축_제거_구분",
         "사업_기술_분야_등록부_분류",
-        "사업_방법론",
         "사업_방법론_버전",
         "사업_사업_규모",
         "사업_사업_범주_등록부_분류",
-        "사업_사업자_기관",
         "사업_연간_예상_감축량_tCO_e_년",
         "사업_적용_표준_버전",
-        "식별_등록_표준",
-        "식별_등록부_프로젝트ID",
-        "식별_등재_상태",
         "식별_레코드ID",
         "식별_레코드_유형",
         "식별_프로젝트명",
@@ -27125,7 +27154,7 @@
       "primaryLabelFields": [
         "displayLabel"
       ],
-      "primaryRenderer": "capability-scorecard",
+      "primaryRenderer": "score-benchmark",
       "secondaryRenderer": "structured-table",
       "selectors": [
         {

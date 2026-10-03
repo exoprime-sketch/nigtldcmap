@@ -44,6 +44,7 @@ sys.path.insert(0, str(REPO))
 
 from tools.etl import build_public_v2 as v2  # noqa: E402  (pure helpers only)
 from tools.etl.download_zip_v158 import write_element_zip, zip_download_asset  # noqa: E402
+from tools.etl import public_text_v163  # noqa: E402
 from tools.etl.download_delivery_v137 import (  # noqa: E402
     DELIVERY_EXTERNAL,
     NullObjectStorageAdapter,
@@ -460,6 +461,8 @@ def region_label(attributes: Mapping[str, Any], names: RegionNames, region_colum
 def build(code: str, out_override: str | None = None) -> dict[str, Any]:
     config, entry, decision = load_country(code)
     iso3 = config["iso3"]
+    # V163: working notes taken out of public text fields (internal report only).
+    public_text_log_v163: list[dict[str, Any]] = []
     data_root = str(entry["dataRoot"]).rstrip("/")
     prefix = str(config["packPrefix"])
     generated_at = f"{decision['approvedAt']}T00:00:00Z"
@@ -696,6 +699,8 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
             "observations": {"schemaVersion": SCHEMA_VERSION, "elementId": element_id, "recordCount": len(observations), "records": observations},
             "entities": {"schemaVersion": SCHEMA_VERSION, "elementId": element_id, "recordCount": len(entities), "records": entities},
         }
+        public_text_v163.sanitize_payload(payloads[element_id], element_id=element_id, country=iso3, log=public_text_log_v163)
+        public_text_v163.sanitize_payload(element, element_id=element_id, country=iso3, log=public_text_log_v163)
         catalog.append(element)
         coverage.append(
             {
@@ -954,6 +959,9 @@ def build(code: str, out_override: str | None = None) -> dict[str, Any]:
         "mapTargetContract": None,
         "layers": [],
     }
+    for row in rights_rows:
+        public_text_v163.sanitize_payload(row, element_id=str(row.get("elementId") or ""), country=iso3, log=public_text_log_v163)
+    public_text_v163.write_internal_report(public_text_log_v163, iso3)
     v2._write_json(out / "catalog.json", {"schemaVersion": SCHEMA_VERSION, "elements": catalog})
     v2._write_json(out / "framework-coverage.json", framework_coverage)
     v2._write_json(out / "quality-report.json", quality_report)

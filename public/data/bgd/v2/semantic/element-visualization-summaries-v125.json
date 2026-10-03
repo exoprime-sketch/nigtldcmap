@@ -1692,12 +1692,14 @@
       "downloadAvailable": true,
       "elementId": "B-038",
       "measureLabels": [
-        "[산출 투입",
+        "1인당 도시폐기물 발생량",
         "농업잔재 자원량",
+        "도시폐기물 수거율(참고, 인구 기준",
         "도시폐기물 중 유기성 자원량(산출)",
+        "도시폐기물 중 음식물",
         "도시폐기물(MSW) 자원량",
-        "임업잔재 자원량",
-        "축산폐기물(가축분뇨) 자원량"
+        "사육두수",
+        "임업잔재 자원량"
       ],
       "noDataReason": null,
       "populatedRecordCount": 327,
@@ -2400,7 +2402,8 @@
       "contractStatus": "archetype",
       "dataPresenceStatus": "actual-records",
       "dimensionLabels": [
-        "레코드 유형"
+        "레코드 유형",
+        "status"
       ],
       "downloadAvailable": true,
       "elementId": "C-025",
@@ -3258,7 +3261,7 @@
       ],
       "noDataReason": null,
       "populatedRecordCount": 50,
-      "primaryRenderer": "capability-scorecard",
+      "primaryRenderer": "score-benchmark",
       "spatiallyLinked": false,
       "yearRange": {
         "end": 2025,

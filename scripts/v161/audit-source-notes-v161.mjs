@@ -79,6 +79,10 @@ export const SOURCE_NOTE_PATTERNS_V161 = [
   // The delivery's internal record ids ("VNM-C017-FIT-001") and working paths.
   ["record id", /\b(?:VNM|BGD)-[A-E]\d{3}-/u],
   ["raw working path", /raw_data|raw는|raw\s*파일/iu],
+  // V163 (user decision 2026-10-03): the research team's working notes - a
+  // bracketed memo tag ("[표출범위]", "[라이선스 근거]", "[기준 원천]"), a
+  // processing-rule citation ("처리규칙 8") or a check date ("2026-09-21 확인").
+  ["internal memo marker", /\[(?:라이선스 (?:근거|판정|확인)[^\]]*|출처 문구[^\]]*|표출범위|변경 고지|기준 원천|대조|처리규칙[^\]]*|DoD[^\]]*|열 구조|10개국 비교가능성|원천 갱신일 근거|추가수집[^\]]*|수집 방법|원문 정제)\]|처리규칙|\d{4}-\d{2}-\d{2}\s*확인/u],
 ];
 
 /**

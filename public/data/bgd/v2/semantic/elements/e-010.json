@@ -80,7 +80,7 @@
         "unitFamily": "currency"
       },
       "seriesKey": "measure-8118ac1e0789|USD|detail=R&D 총지출 절대액|technology=범용|E-010_gerd_absolute",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. [중요 — 수집 결과] 산출 불가. GERD 비율이 원천에 없어 GDP를 곱하는 산출식을 적용할 수 없음. [원천 갱신 중단 사유] UNESCO UIS 는 각국이 자국 R&D 조사로 제출한 값만 수록한다(UIS 가 매년 약 125개국에 R&D 통계 조사표 발송, 그 밖은 OECD·Eurostat·RICYT 경유 수집). UIS 와 UN SDG 9.5.1 메타데이터는 「R&D 데이터는 조사를 통해 수집해야 하는데 비용이 많이 들어 다수 개발도상국에서는 정기적으로 실시되지 않는다」고 명시하고 있다. 따라서 이후 연도 값이 없는 것은 해당국의 R&D 조사 미실시·미제출에 따른 것이다. 다만 해당 국가가 언제·왜 조사를 중단했는지에 대한 개별 사유는 원천에 명시돼 있지 않아 확인 불가. 출처: UNESCO UIS, Background Information on R&D Statistics in the UIS Database(2025) / UNSD, SDG indicator metadata 9.5.1. [비교가능성 원기재] 해당 없음 [산출유형 원기재] 해당 없음",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. [중요 — 수집 결과] 산출 불가. GERD 비율이 원천에 없어 GDP를 곱하는 산출식을 적용할 수 없음. UIS 와 UN SDG 9.5.1 메타데이터는 「R&D 데이터는 조사를 통해 수집해야 하는데 비용이 많이 들어 다수 개발도상국에서는 정기적으로 실시되지 않는다」고 명시하고 있다. 따라서 이후 연도 값이 없는 것은 해당국의 R&D 조사 미실시·미제출에 따른 것이다. 다만 해당 국가가 언제·왜 조사를 중단했는지에 대한 개별 사유는 원천에 명시돼 있지 않아 확인 불가. 출처: UNESCO UIS, Background Information on R&D Statistics in the UIS Database(2025) UNSD, SDG indicator metadata 9.5.1. [비교가능성 원기재] 해당 없음 [산출유형 원기재] 해당 없음",
       "sourceLabel": "GERD — R&D 총지출 절대액",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "산출 기반(GERD 비율)이 원천에 없어 산출 불가(M01). [원천 갱신 중단 사유] 해당국 R&D 조사 미실시·미제출 — UIS 는 각국 제출분만 수록하며 다수 개발도상국은 R&D 조사를 정기적으로 실시하지 않음(UIS·UN SDG 9.5.1 메타데이터). 국가별 개별 사유는 원천 미명시.",
@@ -109,7 +109,7 @@
         "unitFamily": "percent"
       },
       "seriesKey": "measure-6f94f67e75e4|%|detail=GDP 대비 R&D 총지출 비율|technology=범용|E-010_gerd_pct_gdp",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. [중요 — 수집 결과] 원천 미제공으로 전건 결측. World Bank GB.XPD.RSDV.GD.ZS 벌크 CSV·API 및 UNESCO UIS EXPGDP.TOT API를 각각 조회한 결과 해당 국가 행 자체가 존재하지 않음(0건). 확보를 위해서는 해당국 과학기술 주무부처 R&D 조사 원자료 별도 요청 필요. [원천 갱신 중단 사유] UNESCO UIS 는 각국이 자국 R&D 조사로 제출한 값만 수록한다(UIS 가 매년 약 125개국에 R&D 통계 조사표 발송, 그 밖은 OECD·Eurostat·RICYT 경유 수집). UIS 와 UN SDG 9.5.1 메타데이터는 「R&D 데이터는 조사를 통해 수집해야 하는데 비용이 많이 들어 다수 개발도상국에서는 정기적으로 실시되지 않는다」고 명시하고 있다. 따라서 이후 연도 값이 없는 것은 해당국의 R&D 조사 미실시·미제출에 따른 것이다. 다만 해당 국가가 언제·왜 조사를 중단했는지에 대한 개별 사유는 원천에 명시돼 있지 않아 확인 불가. 출처: UNESCO UIS, Background Information on R&D Statistics in the UIS Database(2025) / UNSD, SDG indicator metadata 9.5.1. [비교가능성 원기재] 해당 없음",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. [중요 — 수집 결과] 원천 미제공으로 전건 결측. World Bank GB.XPD.RSDV.GD.ZS 벌크 CSV·API 및 UNESCO UIS EXPGDP.TOT API를 각각 조회한 결과 해당 국가 행 자체가 존재하지 않음(0건). 확보를 위해서는 해당국 과학기술 주무부처 R&D 조사 원자료 별도 요청 필요. UIS 와 UN SDG 9.5.1 메타데이터는 「R&D 데이터는 조사를 통해 수집해야 하는데 비용이 많이 들어 다수 개발도상국에서는 정기적으로 실시되지 않는다」고 명시하고 있다. 따라서 이후 연도 값이 없는 것은 해당국의 R&D 조사 미실시·미제출에 따른 것이다. 다만 해당 국가가 언제·왜 조사를 중단했는지에 대한 개별 사유는 원천에 명시돼 있지 않아 확인 불가. 출처: UNESCO UIS, Background Information on R&D Statistics in the UIS Database(2025) UNSD, SDG indicator metadata 9.5.1. [비교가능성 원기재] 해당 없음",
       "sourceLabel": "GERD — GDP 대비 R&D 총지출 비율",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "원천 미제공 — World Bank·UNESCO UIS 양쪽 모두 해당 국가 관측치 0건(M01). [원천 갱신 중단 사유] 해당국 R&D 조사 미실시·미제출 — UIS 는 각국 제출분만 수록하며 다수 개발도상국은 R&D 조사를 정기적으로 실시하지 않음(UIS·UN SDG 9.5.1 메타데이터). 국가별 개별 사유는 원천 미명시.",
@@ -138,7 +138,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=소득그룹(저중소득국(lower middle income)) 내 순위|technology=범용|E-010_gii_income_group_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 모집단(37개 경제)이 종합순위(139개)와 다르므로 함께 정렬 금지. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 모집단(37개 경제)이 종합순위(139개)와 다르므로 함께 정렬 금지. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — 소득그룹(저중소득국(lower middle income)) 내 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -167,7 +167,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Innovation Input Sub-Index 순위|technology=범용|E-010_gii_input_subindex_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Innovation Input Sub-Index 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -196,7 +196,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Innovation Input Sub-Index 점수|technology=범용|E-010_gii_input_subindex_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. WIPO GII 2025는 하위지수 순위(115위)만 공표하고 점수를 공표하지 않음. 공표된 pillar 점수로 방법론에 따라 산출. 산출값으로 종합점수를 역산하면 WIPO 공표 종합점수(21.0)와 일치하여 방법 타당성 확인 ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. WIPO GII 2025는 하위지수 순위(115위)만 공표하고 점수를 공표하지 않음. 공표된 pillar 점수로 방법론에 따라 산출. 산출값으로 종합점수를 역산하면 WIPO 공표 종합점수(21.0)와 일치하여 방법 타당성 확인 ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Innovation Input Sub-Index 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020·2021·2022·2023·2024 연도분 미확보(상세 사유는 본문 비고).",
@@ -225,7 +225,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Innovation Output Sub-Index 순위|technology=범용|E-010_gii_output_subindex_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Innovation Output Sub-Index 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -254,7 +254,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Innovation Output Sub-Index 점수|technology=범용|E-010_gii_output_subindex_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. WIPO GII 2025는 하위지수 순위(95위)만 공표하고 점수를 공표하지 않음. 공표된 pillar 점수로 방법론에 따라 산출. 산출값으로 종합점수를 역산하면 WIPO 공표 종합점수(21.0)와 일치하여 방법 타당성 확인 ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. WIPO GII 2025는 하위지수 순위(95위)만 공표하고 점수를 공표하지 않음. 공표된 pillar 점수로 방법론에 따라 산출. 산출값으로 종합점수를 역산하면 WIPO 공표 종합점수(21.0)와 일치하여 방법 타당성 확인 ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Innovation Output Sub-Index 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020·2021·2022·2023·2024 연도분 미확보(상세 사유는 본문 비고).",
@@ -283,7 +283,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=종합 순위|technology=범용|E-010_gii_overall_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★GII 2024는 133개 경제, GII 2025는 139개 경제 기준이므로 연도 간 순위 단순비교 불가. 순위 지표는 값이 작을수록 우수 — 방향 주의. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★GII 2024는 133개 경제, GII 2025는 139개 경제 기준이므로 연도 간 순위 단순비교 불가. 순위 지표는 값이 작을수록 우수 — 방향 주의. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — 종합 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018 연도분 미확보(상세 사유는 본문 비고).",
@@ -312,7 +312,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=종합 점수|technology=범용|E-010_gii_overall_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — 종합 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020·2021·2022·2023·2024 연도분 미확보(상세 사유는 본문 비고).",
@@ -341,7 +341,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 1 Institutions 순위|technology=범용|E-010_gii_p1_institutions_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 1 Institutions 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -370,7 +370,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 1 Institutions 점수|technology=범용|E-010_gii_p1_institutions_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 1 Institutions 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -399,7 +399,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 2 Human capital & research 순위|technology=범용|E-010_gii_p2_human_capital_research_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 2 Human capital & research 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -428,7 +428,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 2 Human capital & research 점수|technology=범용|E-010_gii_p2_human_capital_research_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 2 Human capital & research 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -457,7 +457,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 3 Infrastructure 순위|technology=범용|E-010_gii_p3_infrastructure_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 3 Infrastructure 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -486,7 +486,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 3 Infrastructure 점수|technology=범용|E-010_gii_p3_infrastructure_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 3 Infrastructure 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -515,7 +515,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 4 Market sophistication 순위|technology=범용|E-010_gii_p4_market_sophistication_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 4 Market sophistication 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -544,7 +544,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 4 Market sophistication 점수|technology=범용|E-010_gii_p4_market_sophistication_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 4 Market sophistication 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -573,7 +573,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 5 Business sophistication 순위|technology=범용|E-010_gii_p5_business_sophistication_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 5 Business sophistication 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -602,7 +602,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 5 Business sophistication 점수|technology=범용|E-010_gii_p5_business_sophistication_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 5 Business sophistication 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -631,7 +631,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 6 Knowledge & technology outputs 순위|technology=범용|E-010_gii_p6_knowledge_tech_outputs_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -660,7 +660,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 6 Knowledge & technology outputs 점수|technology=범용|E-010_gii_p6_knowledge_tech_outputs_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 6 Knowledge & technology outputs 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -689,7 +689,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=Pillar 7 Creative outputs 순위|technology=범용|E-010_gii_p7_creative_outputs_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 7 Creative outputs 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019 연도분 미확보(상세 사유는 본문 비고).",
@@ -718,7 +718,7 @@
         "unitFamily": "score"
       },
       "seriesKey": "measure-5480f474cca7|점수|detail=Pillar 7 Creative outputs 점수|technology=범용|E-010_gii_p7_creative_outputs_score",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — Pillar 7 Creative outputs 점수",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",
@@ -747,7 +747,7 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-48c6fb7ad3c4|순위|detail=지역(중앙·남아시아(Central and Southern Asia)) 내 순위|technology=범용|E-010_gii_region_rank",
-      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 모집단(10개 경제)이 종합순위(139개)와 다르므로 함께 정렬 금지. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 수록 경제 수가 GII 2018 126개국에서 GII 2025 139개국으로 달라지므로 연도 간 순위 단순비교는 불가하다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
+      "sourceCaveat": "[현지조사 구분] 본 요소는 현지조사 대상 항목이 아니다(현지조사항목 ver1.0 기준). 수록 값은 전건 공개 원천에서 별도 수집했다. 모집단(10개 경제)이 종합순위(139개)와 다르므로 함께 정렬 금지. ★연도별 수집 : GII 2018~2025 국가프로필에서 연도별 값을 수집했다. 종합점수·하위지수 점수는 국가프로필에 인쇄되지 않아 2018~2024년분이 원천 미제공(M01)이다. 연도별 프로필 주소는 https://www.wipo.int/edocs/gii-ranking/{연도}/{국가코드}.pdf 형식이며 전체 목록은 raw_data 출처 txt 에 있다.",
       "sourceLabel": "GII 2025 — 지역(중앙·남아시아(Central and Southern Asia)) 내 순위",
       "sourceLabelEn": "R&D expenditure (GERD) and Global Innovation Index (GII)",
       "sourceNote": "GII 2018·2019·2020 연도분 미확보(상세 사유는 본문 비고).",

@@ -56,6 +56,37 @@ const DATA = resolveDataRootV158({ root: ROOT, argv, env: process.env.VIETNAM_DA
 const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
 const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
 const COUNTRY_ENTRY = countryEntryV158(ROOT, COUNTRY_ISO3);
+
+/**
+ * V163: a region row whose record name is the delivery's region key
+ * ("BGD.4_1_2013", "BGD.8_1_cci_agb_2007") is named by its region and year on a
+ * card - the key is an internal id. The Korean name comes from the region
+ * dictionary (src/data/geo/regionNamesV161.json), else the romanised name.
+ */
+const REGION_KEY_V163 = /^[A-Z]{3}\.\d+_1(?:_|$)/u;
+const REGION_KO_V163 = new Map(
+  ((JSON.parse(readFileSync(resolve(ROOT, "src/data/geo/regionNamesV161.json"), "utf8")).countries || {})[COUNTRY_ISO3]?.entries || [])
+    .filter((entry) => entry.ko && entry.level === "division" || entry.ko && entry.level === "province")
+    .flatMap((entry) => [entry.local, ...(entry.keys || [])].map((key) => [String(key).toLowerCase().replace(/[^a-z0-9]+/gu, ""), entry.ko]))
+);
+function recordLabelV163(record) {
+  const name = String(record?.name ?? "");
+  // A facility row whose record name is its capacity (BGD A-023 "510") is named
+  // by the plant the note states ("[발전소명: Khulna (KPCL-2)]") with the
+  // capacity and its unit - a bare number on a card has no meaning.
+  const facility = String(record?.note ?? "").match(/\[(?:발전소명|시설명):\s*([^\]]+)\]/u)?.[1]?.trim();
+  if (facility && /^\d+(?:\.\d+)?$/u.test(name)) {
+    const capacityInMw = Object.keys(record.normalizedAttributes || {}).some((key) => /설비용량_MW/u.test(key));
+    return capacityInMw ? `${facility} · ${formatNumber(Number(name))} MW` : facility;
+  }
+  if (!REGION_KEY_V163.test(name)) return name;
+  const attributes = record.normalizedAttributes || {};
+  const local = String(attributes["지역명_로마자"] || attributes["지역명_현지어"] || attributes["지역명"] || "").trim();
+  const ko = REGION_KO_V163.get(local.toLowerCase().replace(/[^a-z0-9]+/gu, ""));
+  const region = ko || local || name;
+  const year = String(attributes["연도"] ?? attributes["기준연도"] ?? "").trim() || (name.match(/(?:19|20)\d{2}(?!.*\d)/u)?.[0] ?? "");
+  return year ? `${region} · ${year}년` : region;
+}
 const COUNTRY_NAME_KO = COUNTRY_ENTRY.nameKo;
 // V158-B2b: the country's own word for its level-1 unit (registry
 // `adm.level1.label`, Bangladesh "Division"); the default country keeps its
@@ -936,7 +967,7 @@ function entityCard(elementId, item, pack, contract, rule) {
     const current = entities.filter((row) => text(row.normalizedAttributes?.[rule.currentOnly]) === "현행");
     if (current.length) rows = current;
   }
-  const nameOf = rule.nameFrom || ((row) => row.name);
+  const nameOf = rule.nameFrom || recordLabelV163;
   const distinct = rule.distinctBy ? new Set(rows.map((row) => text(row.normalizedAttributes?.[rule.distinctBy] || row.name))).size : rows.length;
   // Installed offices vs. organisations the source found to have none (E-019).
   if (rule.notInstalled) {

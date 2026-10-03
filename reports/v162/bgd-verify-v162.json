@@ -1,11 +1,13 @@
 {
   "type": "summary",
   "audit": "country-verify:bgd:v162",
-  "status": "PASS",
-  "passed": 52,
-  "failed": 0,
+  "status": "FAIL",
+  "passed": 51,
+  "failed": 1,
   "total": 52,
-  "failedChecks": [],
+  "failedChecks": [
+    "REFERENCE_TREE_UNCHANGED"
+  ],
   "framework": 152,
   "delivered": 142,
   "notProvided": 10,
@@ -854,9 +856,9 @@
     },
     {
       "name": "REFERENCE_TREE_UNCHANGED",
-      "pass": true,
+      "pass": false,
       "actual": {
-        "gitDiffClean": true,
+        "gitDiffClean": false,
         "drift": []
       },
       "expected": "no change to the reference tree or the registry"
