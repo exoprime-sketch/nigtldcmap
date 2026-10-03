@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-037",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2021",
+    "defaultVariable": "m-522d1e08c9",
+    "periods": [
+      "2021"
+    ],
+    "variables": [
+      {
+        "key": "m-522d1e08c9",
+        "label": "수목 면적",
+        "measureId": "m-522d1e08c9",
+        "measureKey": "m-522d1e08c9",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-98f511023a",
+        "label": "관목 면적",
+        "measureId": "m-98f511023a",
+        "measureKey": "m-98f511023a",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-8f186cdbd1",
+        "label": "초지 면적",
+        "measureId": "m-8f186cdbd1",
+        "measureKey": "m-8f186cdbd1",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-a6ac85c93f",
+        "label": "경작지 면적",
+        "measureId": "m-a6ac85c93f",
+        "measureKey": "m-a6ac85c93f",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-3b1c0b6a81",
+        "label": "건물(인공지표) 면적",
+        "measureId": "m-3b1c0b6a81",
+        "measureKey": "m-3b1c0b6a81",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-00f2153541",
+        "label": "나지·희박식생 면적",
+        "measureId": "m-00f2153541",
+        "measureKey": "m-00f2153541",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-cc59062416",
+        "label": "영구수체 면적",
+        "measureId": "m-cc59062416",
+        "measureKey": "m-cc59062416",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-9c6cde59b9",
+        "label": "초본습지 면적",
+        "measureId": "m-9c6cde59b9",
+        "measureKey": "m-9c6cde59b9",
+        "unit": "km²",
+        "periods": [
+          "2021"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-522d1e08c9",
+        "variableLabel": "수목 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          4184.785,
+          20507.48,
+          7074.958,
+          5632.33,
+          5012.361,
+          4264.71,
+          3580.781,
+          3065.229
+        ]
+      },
+      {
+        "variable": "m-98f511023a",
+        "variableLabel": "관목 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          0.886,
+          0.936,
+          2.885,
+          0.363,
+          0.073,
+          0.031,
+          1.214,
+          0.051
+        ]
+      },
+      {
+        "variable": "m-8f186cdbd1",
+        "variableLabel": "초지 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          111.383,
+          676.605,
+          266.034,
+          153.892,
+          228.408,
+          332.724,
+          173.232,
+          103.52
+        ]
+      },
+      {
+        "variable": "m-a6ac85c93f",
+        "variableLabel": "경작지 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          4435.123,
+          7776.04,
+          10891.874,
+          8632.7,
+          11284.106,
+          10280.065,
+          6972.435,
+          6783.811
+        ]
+      },
+      {
+        "variable": "m-3b1c0b6a81",
+        "variableLabel": "건물(인공지표) 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          44.807,
+          349.183,
+          623.971,
+          265.355,
+          409.318,
+          343.899,
+          85.936,
+          117.769
+        ]
+      },
+      {
+        "variable": "m-00f2153541",
+        "variableLabel": "나지·희박식생 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          39.813,
+          154.572,
+          104.034,
+          135.182,
+          137.277,
+          190.483,
+          33.783,
+          55.56
+        ]
+      },
+      {
+        "variable": "m-cc59062416",
+        "variableLabel": "영구수체 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          789.651,
+          1490.742,
+          1330.957,
+          1992.884,
+          1033.909,
+          857.241,
+          407.038,
+          249.169
+        ]
+      },
+      {
+        "variable": "m-9c6cde59b9",
+        "variableLabel": "초본습지 면적",
+        "unit": "km²",
+        "period": "2021",
+        "sourceIndicatorId": "B-037_landcover_adm1",
+        "values": [
+          18.466,
+          98.688,
+          232.908,
+          92.273,
+          185.475,
+          10.88,
+          1149.403,
+          205.37
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-522d1e08c9",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-98f511023a",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8f186cdbd1",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a6ac85c93f",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-3b1c0b6a81",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-00f2153541",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-cc59062416",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-9c6cde59b9",
+      "period": "2021",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "ESA WorldCover 10 m v200 (2021) · 경계 GADM 4.1 ADM1 — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://bulks-faostat.fao.org/production/Environment_LandCover_E_All_Data_(Normalized).zip",
+      "https://esa-worldcover.org/en/data-access"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 64,
+    "sourceValueCount": 64,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

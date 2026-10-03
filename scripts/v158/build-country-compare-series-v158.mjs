@@ -48,6 +48,19 @@ const STATUS_ORDER = ["missing-in-country", "unit-mismatch", "latest-each", "com
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 
 /** A country's published packs, decoded once per pack and kept for reuse. */
+/**
+ * V162 PR-D: a delivery tag in front of an indicator name ("[산출 투입·참고자료]
+ * 1인당 도시폐기물 발생량", "[보조] 한-베트남 교역 · …") says what kind of row it
+ * is; the compare title names the measure first and keeps the tag after it,
+ * as the detail screen's category does.
+ */
+function publicCompareLabelV162(value) {
+  const text = String(value ?? "").trim();
+  if (!text) return null;
+  const match = text.match(/^\[([^\]]+)\]\s*(.+)$/u);
+  return match ? `${match[2]} (${match[1]})` : text;
+}
+
 function openCountryTree(country) {
   const publicDir = resolve(ROOT, `public${country.dataRoot}`);
   const bundleIndexPath = resolve(publicDir, "packs/bundle-index-v124.json");
@@ -132,7 +145,7 @@ function indicatorSeries(payload, indicatorId) {
   }
   return {
     unit: String(indicator.unit ?? "").trim(),
-    labelKo: String(indicator.labelKo ?? "").trim() || null,
+    labelKo: publicCompareLabelV162(indicator.labelKo),
     sourceOrg:
       String(indicator.sourceOrg ?? indicator.provenance?.sourceOrg ?? "").trim() || null,
     points: uniquePoints,

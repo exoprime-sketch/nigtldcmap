@@ -34,6 +34,23 @@ export function copyForCountryV158(text: string | null | undefined, country: str
   return findCountryTermsV158(value, otherCountryTermsV158(normalizeCountryIso3V158(country))).length > 0 ? "" : value;
 }
 
+/**
+ * V162 PR-D: platform notes written for the default country ("성·시 값은
+ * GADM 4.1 ADM1(개편 전 63개) 경계로 집계한…") as seen from the country on
+ * screen - each sentence that names another country, its places or its
+ * administrative wording is left out; the rest of the note stays as written.
+ */
+export function sentencesForCountryV162(text: string | null | undefined, country: string | null | undefined): string {
+  const value = text ?? "";
+  if (!value || !specNeedsCountryScopeV158(country)) return value;
+  const terms = otherCountryTermsV158(normalizeCountryIso3V158(country));
+  return value
+    .split(/(?<=[.!?])\s+/u)
+    .filter((sentence) => findCountryTermsV158(sentence, terms).length === 0)
+    .join(" ")
+    .trim();
+}
+
 /** Analysis headings with every line that names another country emptied (callers fall back). */
 export function headingsForCountryV158(
   headings: PublicAnalysisHeadingsV134 | null,

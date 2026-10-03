@@ -122,3 +122,24 @@
 - 5회차 전 로컬 필터 acceptance: 지도 60/60, 6폭 0, 스모크, 식별자 스캔 0, 국명 0(원자료 레코드 값 제외 — 사용자 결정 10-02)
 - 5회차(e2273fc): 명칭 감사 로더가 새 JSON import(OSM 분류 사전)를 TS로 컴파일하다 실패 — 로컬 수정 567baa5(미push), 명칭 10/10
 - 로컬 재확인: glossary 17/17, entity-cards 18/18, duplicate-copy 4/4, generic-detail 20/20, 단위 789/789
+
+## 2026-10-03 — 세션5 단독(PR-D + P8-2)
+- PR #56 병합(a8dbbf7), 운영 확인: 데이터 146 · 지도 60 · 기준일 2026.09.30
+- **P8-2(PR #57, feat/v157-2-map12, 워크트리 nigt-wt-map12)**
+  - origin/main merge(58cbd30), `--expect-pending 12` 제거(0d7c350)
+  - CI 1회차 실패: role-split QA 준비 중 검사 5건(준비 중 대상 0개 상태 미대응) → 1001280에서 수정, 사유 REVIEW_V157-2.md §9
+- **PR-D(feat/v162-prd, 워크트리 nigt-wt-d3)**
+  - 로컬 커밋 cb146da(미push): BGD live·주(Division)·비교 55·국가 선택 링크·다운로드 국가 초기값·용어 국가 필터·지도 런타임 국가화
+  - 지도 경계 문구 국가별(34/63 선택은 베트남만)
+  - BGD 지도 빌더는 서브에이전트가 feat/v162-prd-bgd-map에서 작성 중 → 검수 후 merge
+  - 남은 일: 빌더 산출 merge → BGD 인수(필터) → 6폭·출처 메모 → PR 본문·push·CI
+- **2026-10-03 오후**
+  - PR #57: CI 2회차 원인(VNM core-word '핵심 광물' = B-044 데이터명 띄어쓰기) → 2d20149 push(재실행 2회차), Playwright 실패는 시각 기준선 4건(main 동일, P5)
+  - PR #58(feat/v162-prd) 생성: BGD live · 지도 37(판정 72) · 비교 55 · 나라별 문구. 로컬 BGD 인수 18/18, VNM 지도 60/60, 단위 790/790
+  - #57·#58 겹침: RealMapExplorerPage 1곳 충돌(선택 패널 순위 비교) — 해결: map12의 group-constant 조건 유지 + peerLabel은 `regionWordV158(countryIso3).word`
+  - 판단 필요: B-012 decisionConflicts 14행
+- **2026-10-03 밤 — PR #57 병합(68831c2), #58 후속**
+  - 운영 확인: 홈 데이터 146 · 지도 제공 72 · 기준일 2026.09.30, 지도 연결 72 · 준비 중 0
+  - #58: origin/main merge(403b4e0, 충돌 1곳 HEAD 유지) + 지시 5건(국가 선택기 단일 출처·country-selectors-live, B-002 1991–2020, A-022·A-013·C-003 63개 경계 기본·A-022 관할 기준 시점, C-006 꼬리표 제거, 캡처 함께 push)
+  - 로컬: 단위 832/832, BGD 인수 20/20, VNM 7/7, role-split 52/52
+  - 데이터 목록 updatedAt 재생성은 병합 커밋 시각으로 일괄 바뀌어 되돌림(내용 동일, verify 통과)

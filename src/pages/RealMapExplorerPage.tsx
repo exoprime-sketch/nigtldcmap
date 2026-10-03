@@ -1,3 +1,6 @@
+import { countryDataLoaderV158 } from "../data/countries/countryDataLoaderV158";
+import { useCountryDataProvidersV158 } from "../data/countries/useCountryDataProvidersV158";
+import { countryLevel1AssetUrlV162, regionWordV158 } from "../data/countries/countryLevel1V158";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { listPeriodTagV162, periodStatementV162 } from "../data/visualization/periodStatementV162";
 import { useDatasetUsageV149 } from "../data/publicUsageV149";
@@ -63,7 +66,6 @@ import type {
 import {
   loadVietnamLocationsV151,
   loadVietnamSpatialGeoJsonV124,
-  loadVietnamSpatialLayerV124,
 } from "../data/vietnam/vietnamDataLoaderV124";
 import type {
   VietnamMapGeoJsonV124,
@@ -106,6 +108,7 @@ import { getElementVisualizationSummaryV125 } from "../data/visualization/elemen
 import {
   PUBLIC_MAP_TARGET_CATEGORIES_V138,
   PUBLIC_MAP_TARGETS_V138,
+  setPublicMapTitleCountryV162,
   PUBLIC_MAP_WORKSPACE_LIMITS_V126,
   PUBLIC_MAP_WORKSPACE_PRESETS_V126,
   createPublicMapWorkspaceStateV126,
@@ -137,7 +140,6 @@ import {
 } from "../data/interpretation/publicIndicatorInterpretationV129";
 import { loadVietnamCountryOutlineV151, loadWorldCountryBoundaries } from "../data/map/worldCountryBoundaries";
 import type { WorldCountryBoundaryGeometry } from "../data/map/worldCountryBoundaries";
-import { PRIORITY_COUNTRIES } from "../data/priorityCountries";
 import type { MapCameraV151, MapViewState } from "../types/map";
 import {
   fieldLabelV121,
@@ -594,7 +596,7 @@ export {
   MAP_SOURCE_IDS_RUNTIME_V115,
   MAP_SOURCE_IDS_RUNTIME_V116,
 } from "../data/map/mapRuntimeContractsV116";
-import { countryAssetPathV158 } from "../data/countryContext";
+import { countryAssetPathV158, DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 
 interface SpatialSelection {
   elementId: string;
@@ -1316,6 +1318,21 @@ function sameStringArray(a: string[], b: string[]): boolean {
   return a.length === b.length && a.every((value, index) => value === b[index]);
 }
 
+/**
+ * V162 PR-D: what another country's list row says it draws. The reviewed
+ * summaries describe the default country's layers (its 34/63 boundaries, its
+ * line geometry); another country's row is described from its own layer - a
+ * level-1 choropleth, a reference map's basis, or its located points.
+ */
+function countryMapItemSummaryV162(layer: CountryMapLayerV122, regionWord: string): string {
+  const reference = (layer as { referenceMap?: { label?: string; basis?: string } }).referenceMap;
+  const count = Number((layer as { displayedCoordinateCount?: number }).displayedCoordinateCount) || 0;
+  const places = count > 0 ? ` ${count.toLocaleString("ko-KR")}곳` : "";
+  if (reference?.basis) return `${reference.label || "참고 지도"} · ${reference.basis}${places}`;
+  if (rendererOf(layer) === "admin1-choropleth") return `${regionWord} 경계`;
+  return `위치${places}`;
+}
+
 export default function RealMapExplorerPage({
   onOpenElement,
   onOpenDataFinder,
@@ -1341,6 +1358,10 @@ export default function RealMapExplorerPage({
   const [countryIso3, setCountryIso3] = useState(() =>
     resolveInitialCountry(initialState.countryIso3)
   );
+  const countryProvidersV162 = useCountryDataProvidersV158();
+  // V162 PR-D: layer titles read the page's country (see publicMapLayerTitleV126).
+  setPublicMapTitleCountryV162(countryIso3);
+  useEffect(() => () => setPublicMapTitleCountryV162(null), []);
   const [baseMapStatus, setBaseMapStatus] = useState<LoadStatus>("loading");
   // V151-2: which backdrop (지형/위성/도로·지명/없음) sits under the data layers.
   // The v150 on/off preference is migrated on first read.
@@ -1585,6 +1606,12 @@ export default function RealMapExplorerPage({
   );
 
   const provider = getCountryDataProviderV122(countryIso3);
+  // V162 PR-D: the boundary the map names. Viet Nam keeps its 34/63 system;
+  // another country names its registry level-1 unit ("방글라데시 주(Division) 8개").
+  const level1V162 = regionWordV158(countryIso3).level1;
+  const boundaryPhraseV162 = level1V162
+    ? `${provider?.countryNameKo || ""} ${level1V162.label}${level1V162.count ? ` ${level1V162.count}개` : ""}`.trim()
+    : `베트남 ${boundarySystemLabelV151(boundarySystemV151State)}`;
   const fallbackBounds: FallbackBounds = provider?.mapView.bounds || [
     [-180, -85],
     [180, 85],
@@ -1990,7 +2017,44 @@ export default function RealMapExplorerPage({
     };
   }, [countryIso3]);
 
+  // V162 PR-D (user decision 2026-10-03): a layer whose values are defined on
+  // the 63 pre-2025 provinces (A-022 · A-013 · C-003 - a group of provinces)
+  // opens on that outline while it is the primary layer. The reader's own
+  // choice wins and is what is stored; leaving such a layer restores it.
+  const boundaryBeforeAutoRefV162 = useRef<BoundarySystemV151 | null>(null);
+  const boundaryAutoRefV162 = useRef(false);
   useEffect(() => {
+    const layer = layers.find((item) => item.elementId === primaryLayerId) as
+      | (CountryMapLayerV122 & { defaultBoundarySystem?: string })
+      | undefined;
+    const wanted =
+      countryIso3 === DEFAULT_COUNTRY_ISO3_V158 &&
+      (layer?.defaultBoundarySystem === "pre-2025-63" || layer?.defaultBoundarySystem === "post-2025-34")
+        ? (layer.defaultBoundarySystem as BoundarySystemV151)
+        : null;
+    setBoundarySystemV151State((current) => {
+      if (wanted && wanted !== current) {
+        if (boundaryBeforeAutoRefV162.current === null) boundaryBeforeAutoRefV162.current = current;
+        boundaryAutoRefV162.current = true;
+        return wanted;
+      }
+      if (!wanted && boundaryBeforeAutoRefV162.current !== null) {
+        const restored = boundaryBeforeAutoRefV162.current;
+        boundaryBeforeAutoRefV162.current = null;
+        if (restored === current) return current;
+        boundaryAutoRefV162.current = true;
+        return restored;
+      }
+      return current;
+    });
+  }, [countryIso3, layers, primaryLayerId]);
+
+  useEffect(() => {
+    // An outline the page chose for a layer is not the reader's preference.
+    if (boundaryAutoRefV162.current) {
+      boundaryAutoRefV162.current = false;
+      return;
+    }
     try {
       localStorage.setItem(
         BOUNDARY_SYSTEM_STORAGE_KEY_V151,
@@ -2544,18 +2608,22 @@ export default function RealMapExplorerPage({
       loadControllersRef.current.get(requestKey)?.abort();
       loadControllersRef.current.set(requestKey, controller);
       const request = externalSpatial
-        ? countryIso3 === "VNM" && layer.geometryUrl
+        ? layer.geometryUrl
           ? Promise.all([
               // All Admin-1 layers share the loader's resolved JSON cache.
               // The unique A-024 transmission geometry remains abortable.
-              loadVietnamSpatialGeoJsonV124(
+              // V162 PR-D: any live country's own map assets load through its
+              // loader (it refuses another country's URLs); Viet Nam's path is
+              // the same loader as before.
+              countryDataLoaderV158(countryIso3).loadSpatialGeoJson(
                 layer.geometryUrl,
-                layer.geometryUrl.endsWith("vnm-adm1-63.geojson")
+                layer.geometryUrl.endsWith("vnm-adm1-63.geojson") ||
+                  layer.geometryUrl === countryLevel1AssetUrlV162(countryIso3)
                   ? undefined
                   : controller.signal
               ),
               layer.dataUrl
-                ? loadVietnamSpatialLayerV124(layer.dataUrl, controller.signal)
+                ? countryDataLoaderV158(countryIso3).loadSpatialLayer(layer.dataUrl, controller.signal)
                 : Promise.resolve(undefined),
             ]).then(([geometry, data]) => {
               if (controller.signal.aborted) return;
@@ -3426,19 +3494,22 @@ export default function RealMapExplorerPage({
   // in its own order; a target without a layer stays visible with its reason.
   const mapTargetGroupsV138 = useMemo(() => {
     const layerByElement = new Map(layers.map((layer) => [layer.elementId, layer]));
+    // V162 PR-D: another country's map lists the targets its data supports (its
+    // own map index); the held ones stay in its judgement table, not as rows.
+    const ownTargetsOnly = countryIso3 !== DEFAULT_COUNTRY_ISO3_V158;
     return PUBLIC_MAP_TARGET_CATEGORIES_V138.map((category) => ({
       category,
-      rows: PUBLIC_MAP_TARGETS_V138.filter((target) => target.category === category).map(
-        (target) => ({ target, layer: layerByElement.get(target.elementId) || null })
-      ),
+      rows: PUBLIC_MAP_TARGETS_V138.filter((target) => target.category === category)
+        .map((target) => ({ target, layer: layerByElement.get(target.elementId) || null }))
+        .filter((row) => !ownTargetsOnly || row.layer !== null),
     })).filter((group) => group.rows.length > 0);
-  }, [layers]);
+  }, [countryIso3, layers]);
   // V140: the list's counts come from the map index, the same file the home
   // counts from, so "지도 자료 N개" is one number on every screen. Targets
   // the contract names but the index does not carry are counted as pending.
   const mapAvailabilityV140 = useMemo(
-    () => summarizeMapAvailabilityV140(layers),
-    [layers]
+    () => summarizeMapAvailabilityV140(layers, countryIso3),
+    [layers, countryIso3]
   );
   const [openCategoriesV138, setOpenCategoriesV138] = useState<Set<string>>(
     () => new Set<string>()
@@ -3716,7 +3787,7 @@ export default function RealMapExplorerPage({
       : null;
   const focusedMissingReason = focusedLayer
     ? focusedSeriesCoverage && focusedSeriesCoverage.missingCount > 0
-      ? `${focusedSeriesCoverage.missingCount}개 성·시는 원자료에 값 없음 · 0으로 대체하지 않음`
+      ? `${focusedSeriesCoverage.missingCount}개 ${level1V162?.label || "성·시"}는 원자료에 값 없음 · 0으로 대체하지 않음`
       : (focusedLayer.missingRegions ?? []).length
       ? (focusedLayer.missingRegions ?? []).join(" · ")
       : "없음"
@@ -4003,6 +4074,20 @@ export default function RealMapExplorerPage({
         .forEach(([kind, count]) =>
           summaryRows.push({ label: kind, value: `${count.toLocaleString()}개` })
         );
+      // V162 PR-D: records located only by an administrative representative
+      // point are not drawn; the layer states them as counts per level-1 unit.
+      const regionCountsV162 = (focusedLayer as {
+        regionCounts?: { label: string; unit: string; total: number; rows: Array<{ key: string; name: string; count: number }> };
+      }).regionCounts;
+      if (regionCountsV162 && regionCountsV162.rows.length) {
+        summaryRows.push({
+          label: regionCountsV162.label,
+          value: `${regionCountsV162.total.toLocaleString()}${regionCountsV162.unit} · 점으로 그리지 않음`,
+        });
+        regionCountsV162.rows.forEach((row) =>
+          summaryRows.push({ label: row.name, value: `${row.count.toLocaleString()}${regionCountsV162.unit}` })
+        );
+      }
       summaryRows.push({
         label: "기준연도",
         value: String(focusedLayer.sourceYear || focusedSelector.period),
@@ -4040,8 +4125,13 @@ export default function RealMapExplorerPage({
               };
             })
         : sourceValues;
-      const unitTotalV151 = aggregated34 ? 34 : 63;
-      const unitTotalLabelV151 = aggregated34 ? "34개 성·시(2025-07-01 시행)" : "63개 성·시(개편 전 기준)";
+      // V162 PR-D: another country counts against its registry level-1 units.
+      const countryLevel1 = regionWordV158(countryIso3).level1;
+      const unitTotalV151 = countryLevel1?.count || (aggregated34 ? 34 : 63);
+      const unitTotalLabelV151 = countryLevel1
+        ? `${countryLevel1.count}개 ${countryLevel1.label}`
+        : aggregated34 ? "34개 성·시(2025-07-01 시행)" : "63개 성·시(개편 전 기준)";
+      const unitWordV162 = countryLevel1?.label || "성·시";
       const sourceIsRegional = values.some(
         (row) => row.sourceSpatialUnit === "region"
       );
@@ -4124,7 +4214,7 @@ export default function RealMapExplorerPage({
         label: sourceIsRegional ? `미제공 ${regionUnitLabel}` : "미제공 지역",
         value: sourceIsRegional
           ? `${Math.max(0, regionTotal - ordered.length)}개 ${regionUnitLabel}`
-          : `${missingRegionCount}개 성·시`,
+          : `${missingRegionCount}개 ${unitWordV162}`,
       });
       return {
         capacityRows: empty.capacityRows,
@@ -4235,6 +4325,7 @@ export default function RealMapExplorerPage({
     return { ...empty, summaryRows, unit: noun };
   }, [
     boundaryContextV151,
+    countryIso3,
     filters,
     focusedLayer,
     focusedSelector,
@@ -4698,6 +4789,21 @@ export default function RealMapExplorerPage({
           )
         );
       }
+      // V162 PR-D: a layer that names its own card facts (Bangladesh point
+      // layers) shows them as stated, with the unit the layer gives; a
+      // representative-point map says what the point stands for.
+      const layerCardV162 = selectedOwningLayer as {
+        cardFactFields?: Array<{ key: string; label: string; unit?: string }>;
+        referenceMap?: { label?: string; notice?: string };
+      };
+      (layerCardV162.cardFactFields || []).forEach((field) => {
+        const raw = properties[field.key];
+        const text = raw === null || raw === undefined || raw === "" ? "" : `${raw}${field.unit ? ` ${field.unit}` : ""}`;
+        lines.push(...selectionLineV161(field.label, text));
+      });
+      if (layerCardV162.referenceMap?.notice) {
+        lines.push(...selectionLineV161(layerCardV162.referenceMap.label || "참고 지도", layerCardV162.referenceMap.notice));
+      }
       if (selectedMemberSummaryV151) {
         lines.push(
           ...selectionLineV161(
@@ -4750,7 +4856,7 @@ export default function RealMapExplorerPage({
               value: selectedSpatial.value ?? null,
               peers,
               unit,
-              peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : "성·시",
+              peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
             })
           );
         }
@@ -4763,7 +4869,7 @@ export default function RealMapExplorerPage({
           ...categoryShareLinesV161(
             String(properties.categoryLabel || ""),
             categoryCounts,
-            isUnit ? "평가구역" : isAsset ? "대상" : "성·시"
+            isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word
           )
         );
       }
@@ -4778,7 +4884,7 @@ export default function RealMapExplorerPage({
         subtitle: `${publicMapLayerTitleV126(
           selectedOwningLayer.elementId,
           selectedOwningLayer.publicShortTitle
-        )} · ${isRegion ? "성·시" : isUnit ? "평가구역" : isLine ? "구간" : isAsset ? "시설·구역" : "사업 범위"}`,
+        )} · ${isRegion ? regionWordV158(countryIso3).word : isUnit ? "평가구역" : isLine ? "구간" : isAsset ? "시설·구역" : "사업 범위"}`,
         lines,
         comparison,
         actions: [
@@ -5119,7 +5225,14 @@ export default function RealMapExplorerPage({
   ]);
 
   useEffect(() => {
-    setKeyboardFeatureIndexV129(0);
+    // V162 PR-D: keyboard navigation starts on the first feature that has a
+    // value (a province the source left blank - Lai Châu under EVNNPC on the
+    // 63 outline - is still reachable with the arrows). Features without values
+    // anywhere start on the first one, as before.
+    const firstWithValue = keyboardMapFeaturesV129.findIndex(
+      (feature) => feature.spatial?.value !== null && feature.spatial?.value !== undefined
+    );
+    setKeyboardFeatureIndexV129(Math.max(0, firstWithValue));
   }, [keyboardMapFeaturesV129]);
 
   const keyboardMapFeatureV129 =
@@ -5607,21 +5720,19 @@ export default function RealMapExplorerPage({
 
           <label className="cdp-field">
             <span className="cdp-field__label">국가</span>
+            {/* V162 PR-D: the live countries of the registry, as every country
+                selector reads them (useCountryDataProvidersV158 re-reads once
+                countries.json has loaded). The old list asked each priority
+                country at render time and kept the bundled answer. */}
             <select
               className="cdp-select"
+              data-country-selector="v162"
               value={countryIso3}
               onChange={(event) => changeCountry(event.target.value)}
             >
-              {PRIORITY_COUNTRIES.map((country) => (
-                <option
-                  key={country.iso3}
-                  value={country.iso3}
-                  disabled={!hasCountryDataProviderV122(country.iso3)}
-                >
-                  {country.nameKo}
-                  {!hasCountryDataProviderV122(country.iso3)
-                    ? " · 준비 중"
-                    : ""}
+              {countryProvidersV162.map((item) => (
+                <option key={item.countryIso3} value={item.countryIso3}>
+                  {item.countryNameKo}
                 </option>
               ))}
             </select>
@@ -5650,7 +5761,7 @@ export default function RealMapExplorerPage({
             className="cdp-map-catalog-v138"
             data-testid="map-all-data-v135"
             data-selected-count={activeIds.length}
-            data-target-count={PUBLIC_MAP_TARGETS_V138.length}
+            data-target-count={mapAvailabilityV140.targetCount}
             data-hidden-count={hiddenIdsV138.length}
             aria-labelledby="map-all-data-title-v135"
           >
@@ -5836,7 +5947,10 @@ export default function RealMapExplorerPage({
                                             : layer
                                               ? layerPeriodLabelV141(layer, filters, String(layer.latestYear || layer.sourceYear || target.period), true)
                                               : target.period;
-                                          return period ? `${publicMapDataItemSummaryV136(elementId)} · ${period}` : publicMapDataItemSummaryV136(elementId);
+                                          const itemSummary = countryIso3 !== DEFAULT_COUNTRY_ISO3_V158 && layer
+                                            ? countryMapItemSummaryV162(layer, regionWordV158(countryIso3).word)
+                                            : publicMapDataItemSummaryV136(elementId);
+                                          return period ? `${itemSummary} · ${period}` : itemSummary;
                                         })()
                                       : indexPending
                                         ? "지도 목록을 불러오는 중"
@@ -6145,6 +6259,7 @@ export default function RealMapExplorerPage({
           )}
 
           <MapDataGuideV130
+            countryIso3={countryIso3}
             layers={layers}
             onOpenDataFinder={onOpenDataFinder}
           />
@@ -6473,7 +6588,7 @@ export default function RealMapExplorerPage({
               preserveAspectRatio="xMidYMid meet"
               role="group"
               aria-hidden={baseMapStatus === "ready" ? true : undefined}
-              aria-label="베트남 로컬 경계 대체 지도"
+              aria-label={`${provider?.countryNameKo || "국가"} 로컬 경계 대체 지도`}
             >
               <g className="cdp-map-fallback__grid" aria-hidden="true">
                 {[100, 200, 300, 400, 500, 600, 700, 800, 900].map(
@@ -6512,9 +6627,7 @@ export default function RealMapExplorerPage({
               <g
                 className="cdp-map-fallback__adm1-reference"
                 data-testid="map-adm1-base-outline"
-                aria-label={`베트남 ${boundarySystemLabelV151(
-                  boundarySystemV151State
-                )} 기준 경계`}
+                aria-label={`${boundaryPhraseV162} 기준 경계`}
               >
                 {fallbackAdm1Paths.map((row) => (
                   <path key={row.code} d={row.path} fill="none">
@@ -7166,8 +7279,7 @@ export default function RealMapExplorerPage({
               })}
             </svg>
           <span className="cdp-map-fallback__attribution">
-              Natural Earth · 국가 외곽선 | geoBoundaries · 베트남{" "}
-              {boundarySystemLabelV151(boundarySystemV151State)} (CC BY 4.0)
+              Natural Earth · 국가 외곽선 | geoBoundaries · {boundaryPhraseV162} (CC BY 4.0)
           </span>
           </div>
           <div
@@ -7213,7 +7325,7 @@ export default function RealMapExplorerPage({
             >
               geoBoundaries
             </a>{" "}
-            · 베트남 {boundarySystemLabelV151(boundarySystemV151State)} (CC BY
+            · {boundaryPhraseV162} (CC BY
             4.0)
           </span>
           {/* V151: one stack, so the boundary picker keeps its place when the
@@ -7242,6 +7354,7 @@ export default function RealMapExplorerPage({
               <span role="status">배경지도 타일을 불러오지 못해 &lsquo;없음&rsquo;으로 전환했습니다. 데이터와 경계는 계속 볼 수 있습니다.</span>
             )}
           </div>
+          {!level1V162 && (
           <div
             className="cdp-map-boundary-system-v151"
             data-boundary-system={boundarySystemV151State}
@@ -7253,7 +7366,11 @@ export default function RealMapExplorerPage({
                   <input
                     checked={boundarySystemV151State === system}
                     name="cdp-map-boundary-system-v151"
-                    onChange={() => setBoundarySystemV151State(system)}
+                    onChange={() => {
+                      // The reader's choice replaces any layer default.
+                      boundaryBeforeAutoRefV162.current = null;
+                      setBoundarySystemV151State(system);
+                    }}
                     type="radio"
                     value={system}
                   />
@@ -7274,6 +7391,7 @@ export default function RealMapExplorerPage({
                 : boundaryValueNoticeV151(boundarySystemV151State)}
             </p>
           </div>
+          )}
           </div>
           <div className="cdp-map-status-badge">
             {baseMapStatus === "ready"
@@ -7297,9 +7415,7 @@ export default function RealMapExplorerPage({
                 ? loadingIds.includes(focusedLayer.elementId)
                   ? "불러오는 중입니다"
                   : "선로·시설·지역을 선택하면 세부정보를 볼 수 있습니다"
-                : `배경지도와 베트남 ${boundarySystemLabelV151(
-                    boundarySystemV151State
-                  )} 경계가 준비되어 있습니다`}
+                : `배경지도와 ${boundaryPhraseV162} 경계가 준비되어 있습니다`}
             </div>
             {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
               <div

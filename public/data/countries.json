@@ -14,7 +14,8 @@
           "label": "성·시",
           "asset": "/data/vietnam/v2/geometry/vnm-adm1-34.geojson",
           "keyScheme": "adm1Code34"
-        }
+        },
+        "publicTerms": ["성·시", "34개", "63개", "개편 전", "개편 후"]
       },
       "bbox": [102.14, 8.18, 109.46, 23.39],
       "defaultZoom": 4.6,
@@ -30,16 +31,17 @@
       "adm": {
         "level1": {
           "count": 8,
-          "label": "Division",
+          "label": "주(Division)",
           "asset": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
           "keyScheme": "gadmAdm1"
-        }
+        },
+        "publicTerms": ["주(Division)", "Division"]
       },
       "bbox": [88.01, 20.74, 92.68, 26.63],
       "defaultZoom": 6.4,
       "boundaryEpoch": "geoBoundaries gbOpen ADM1",
       "categoriesAvailable": ["A", "B", "C", "E"],
-      "status": "preparing"
+      "status": "live"
     }
   ]
 }

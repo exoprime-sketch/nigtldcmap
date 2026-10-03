@@ -4,6 +4,8 @@ import {
   publicTextV126,
 } from "./publicFieldPolicyV126";
 import publicMapTargetsContractV138 from "./publicMapTargetsV138.json";
+import { copyForCountryV158 } from "../countries/countryCopyV158";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
 
 /**
  * V138: one dataset colours the map; every other ticked dataset is drawn as
@@ -450,8 +452,12 @@ export function publicMapDataFunctionV135(
   elementId: string,
   fallback?: string | null
 ): string {
+  // V162 PR-D: the reviewed phrases describe the default country's layers;
+  // another country's map reads its own layer's statement first.
+  const ownCountryFirst = Boolean(mapTitleCountryV162 && mapTitleCountryV162 !== DEFAULT_COUNTRY_ISO3_V158);
   return (
-    PUBLIC_MAP_DATA_FUNCTION_V135[elementId] ||
+    (ownCountryFirst ? publicTextV126(fallback) : "") ||
+    copyForCountryV158(PUBLIC_MAP_DATA_FUNCTION_V135[elementId], mapTitleCountryV162) ||
     publicTextV126(fallback) ||
     "공간 분포 확인"
   );
@@ -500,12 +506,25 @@ export function publicMapSpatialTypeV126(
   return "location";
 }
 
+/**
+ * V162 PR-D: the country the map page shows. The reviewed titles were written
+ * for the default country ("베트남 송전망"); on another country's map a title
+ * that names a different country yields to the target's own name. The map page
+ * sets this while mounted and clears it on leaving, so every title it draws -
+ * list, popups, legends - reads the same country without threading it through.
+ */
+let mapTitleCountryV162: string | null = null;
+
+export function setPublicMapTitleCountryV162(country: string | null): void {
+  mapTitleCountryV162 = country;
+}
+
 export function publicMapLayerTitleV126(
   elementId: string,
   fallback?: string | null
 ): string {
   return (
-    PUBLIC_MAP_LAYER_TITLES_V126[elementId] ||
+    copyForCountryV158(PUBLIC_MAP_LAYER_TITLES_V126[elementId], mapTitleCountryV162) ||
     publicMapTargetV138(elementId)?.publicName ||
     publicTextV126(fallback) ||
     "공간자료"

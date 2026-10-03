@@ -162,7 +162,8 @@
       "groupConstantV157_2": {
         "groupTable": "six",
         "basis": "6대 사회경제 권역(Nghị quyết 81/2023/QH15 Điều 3)"
-      }
+      },
+      "defaultBoundarySystem": "pre-2025-63"
     },
     {
       "category": "에너지·인프라",
@@ -333,7 +334,8 @@
       "groupConstantV157_2": {
         "groupTable": "evn",
         "basis": "EVN 5개 전력총공사 관할(2025-07-01 이후, 총공사별 공식 소속 단위 페이지)"
-      }
+      },
+      "defaultBoundarySystem": "pre-2025-63"
     },
     {
       "accuracyNotice": "원천이 제공한 좌표만 표시하며 좌표가 없는 레코드는 지도에 투영하지 않습니다.",
@@ -1490,7 +1492,7 @@
       "spatialLimitation": "2071–2099는 시나리오 전망값. 성·시의 최다 기후대는 면적 기준이며 성 전체가 그 기후대라는 뜻은 아님.",
       "spatialScopeType": "admin1",
       "selectors": {
-        "defaultPeriod": "2071-2099 SSP5-8.5",
+        "defaultPeriod": "1991-2020",
         "defaultVariable": "dominant-zone-share",
         "periods": [
           "1901-1930",
@@ -11187,7 +11189,8 @@
       "groupConstantV157_2": {
         "groupTable": "six",
         "basis": "6대 사회경제 권역(Nghị quyết 81/2023/QH15 Điều 3)"
-      }
+      },
+      "defaultBoundarySystem": "pre-2025-63"
     },
     {
       "category": "정책·사업여건",

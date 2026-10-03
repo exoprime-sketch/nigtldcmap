@@ -146,6 +146,13 @@ export default function DownloadPage({
       ? normalizedInitialCountry
       : "all"
   );
+  // V162 PR-D: a second country's `?country=` is known only after the country
+  // registry loads; the app then hands the page the country again. Follow it.
+  useEffect(() => {
+    if (normalizedInitialCountry && getCountryDataProviderV122(normalizedInitialCountry)) {
+      setCountrySelection(normalizedInitialCountry);
+    }
+  }, [normalizedInitialCountry, providers]);
   const [catalog, setCatalog] = useState<CountryCatalogItemV122[]>([]);
   const [selectedKeys, setSelectedKeys] = useState<Set<string>>(new Set());
   const [query, setQuery] = useState("");
@@ -523,6 +530,7 @@ export default function DownloadPage({
             <span className="cdp-field__label">국가</span>
             <select
               className="cdp-select"
+              data-country-selector="v162"
               value={countrySelection}
               onChange={(event) => {
                 setCountrySelection(event.target.value);

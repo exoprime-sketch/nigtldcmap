@@ -11,11 +11,11 @@
       "VNM"
     ],
     "contractPath": "src/data/visualization/publicVisualizationContractV153.json",
-    "contractSha256": "672833ec437e687018f68efc5d2e3e0c16d9e28f1aa7f48a9733346e73a1e609"
+    "contractSha256": "7e6f7532de8309b4b1e721004523227aab9ceb294cfbbf12973fff7b8816b366"
   },
-  "elementCount": 54,
+  "elementCount": 55,
   "statusCounts": {
-    "common-year": 39,
+    "common-year": 40,
     "latest-each": 1,
     "unit-mismatch": 0,
     "missing-in-country": 14
@@ -9149,7 +9149,7 @@
           "countryNameKo": "방글라데시",
           "present": true,
           "unit": "kg/인/일",
-          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
+          "labelKo": "1인당 도시폐기물 발생량 (산출 투입·참고자료)",
           "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
           "points": [
             {
@@ -9179,7 +9179,7 @@
           "countryNameKo": "베트남",
           "present": true,
           "unit": "kg/인/일",
-          "labelKo": "[산출 투입·참고자료] 1인당 도시폐기물 발생량",
+          "labelKo": "1인당 도시폐기물 발생량 (산출 투입·참고자료)",
           "sourceOrg": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
           "points": [
             {
@@ -10053,6 +10053,87 @@
         }
       ],
       "status": "missing-in-country"
+    },
+    "E-011": {
+      "elementId": "E-011",
+      "compareKey": {
+        "indicatorId": "E-011_nri_overall_score",
+        "unit": "점수",
+        "yearRule": "latest-common"
+      },
+      "countries": {
+        "BGD": {
+          "countryIso3": "BGD",
+          "countryNameKo": "방글라데시",
+          "present": true,
+          "unit": "점수",
+          "labelKo": "NRI 2025 — 종합 점수",
+          "sourceOrg": "Portulans Institute",
+          "points": [
+            {
+              "year": 2021,
+              "value": 40.93
+            },
+            {
+              "year": 2022,
+              "value": 42.74
+            },
+            {
+              "year": 2023,
+              "value": 41.04
+            },
+            {
+              "year": 2024,
+              "value": 43.56
+            },
+            {
+              "year": 2025,
+              "value": 44.9
+            }
+          ]
+        },
+        "VNM": {
+          "countryIso3": "VNM",
+          "countryNameKo": "베트남",
+          "present": true,
+          "unit": "점수",
+          "labelKo": "NRI 2025 — 종합 점수",
+          "sourceOrg": "Portulans Institute",
+          "points": [
+            {
+              "year": 2021,
+              "value": 51.08
+            },
+            {
+              "year": 2022,
+              "value": 51.07
+            },
+            {
+              "year": 2023,
+              "value": 51.19
+            },
+            {
+              "year": 2024,
+              "value": 54.96
+            },
+            {
+              "year": 2025,
+              "value": 56
+            }
+          ]
+        }
+      },
+      "pairs": [
+        {
+          "countries": [
+            "BGD",
+            "VNM"
+          ],
+          "status": "common-year",
+          "commonYear": 2025
+        }
+      ],
+      "status": "common-year"
     }
   }
 }

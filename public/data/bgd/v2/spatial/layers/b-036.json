@@ -1,0 +1,994 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-036",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2015-2022",
+    "defaultVariable": "m-34a5229243",
+    "periods": [
+      "1992-2022",
+      "2000-2022",
+      "2010-2022",
+      "2015-2022"
+    ],
+    "variables": [
+      {
+        "key": "m-34a5229243",
+        "label": "산림 CAGR",
+        "measureId": "m-34a5229243",
+        "measureKey": "m-34a5229243",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-2d788ff3af",
+        "label": "농경지 CAGR",
+        "measureId": "m-2d788ff3af",
+        "measureKey": "m-2d788ff3af",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-e7a877292b",
+        "label": "초지·관목 CAGR",
+        "measureId": "m-e7a877292b",
+        "measureKey": "m-e7a877292b",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-292bbb2371",
+        "label": "습지 CAGR",
+        "measureId": "m-292bbb2371",
+        "measureKey": "m-292bbb2371",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-5676da1ecd",
+        "label": "도시 CAGR",
+        "measureId": "m-5676da1ecd",
+        "measureKey": "m-5676da1ecd",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-f09b5db810",
+        "label": "나지 CAGR",
+        "measureId": "m-f09b5db810",
+        "measureKey": "m-f09b5db810",
+        "unit": "%/yr",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-f75680dc8e",
+        "label": "산림 면적 시작",
+        "measureId": "m-f75680dc8e",
+        "measureKey": "m-f75680dc8e",
+        "unit": "km²",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-53903c9a1b",
+        "label": "농경지 면적 시작",
+        "measureId": "m-53903c9a1b",
+        "measureKey": "m-53903c9a1b",
+        "unit": "km²",
+        "periods": [
+          "1992-2022",
+          "2000-2022",
+          "2010-2022",
+          "2015-2022"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-34a5229243",
+        "variableLabel": "산림 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          2.3184,
+          0.4889,
+          1.3275,
+          1.4991,
+          1.4811,
+          0.1405,
+          0.1064,
+          0.0925
+        ]
+      },
+      {
+        "variable": "m-34a5229243",
+        "variableLabel": "산림 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          2.3046,
+          0.4917,
+          1.3831,
+          1.5971,
+          2.0251,
+          0.1917,
+          0.1142,
+          0.1261
+        ]
+      },
+      {
+        "variable": "m-34a5229243",
+        "variableLabel": "산림 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          4.2856,
+          0.9238,
+          2.5911,
+          2.3453,
+          3.744,
+          0.3517,
+          0.9144,
+          0.4209
+        ]
+      },
+      {
+        "variable": "m-34a5229243",
+        "variableLabel": "산림 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          4.3144,
+          1.5355,
+          3.8536,
+          2.7708,
+          6.5681,
+          0.6036,
+          1.5526,
+          0.5846
+        ]
+      },
+      {
+        "variable": "m-2d788ff3af",
+        "variableLabel": "농경지 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.0695,
+          -0.0445,
+          -0.0773,
+          -0.1015,
+          0.0021,
+          0.0122,
+          0.0377,
+          -0.0072
+        ]
+      },
+      {
+        "variable": "m-2d788ff3af",
+        "variableLabel": "농경지 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.2447,
+          -0.1064,
+          -0.1027,
+          -0.1245,
+          -0.037,
+          -0.0192,
+          -0.0084,
+          -0.0133
+        ]
+      },
+      {
+        "variable": "m-2d788ff3af",
+        "variableLabel": "농경지 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.5135,
+          -0.3086,
+          -0.2423,
+          -0.1572,
+          -0.0667,
+          -0.0444,
+          -0.1017,
+          -0.0282
+        ]
+      },
+      {
+        "variable": "m-2d788ff3af",
+        "variableLabel": "농경지 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.5593,
+          -0.4545,
+          -0.2475,
+          -0.1789,
+          -0.0361,
+          -0.0339,
+          -0.1649,
+          -0.024
+        ]
+      },
+      {
+        "variable": "m-e7a877292b",
+        "variableLabel": "초지·관목 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -3.0819,
+          -0.782,
+          -2.2278,
+          -1.748,
+          -1.4108,
+          -1.4263,
+          -1.61,
+          -0.8896
+        ]
+      },
+      {
+        "variable": "m-e7a877292b",
+        "variableLabel": "초지·관목 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -1.1022,
+          -0.6895,
+          -2.3481,
+          -0.7664,
+          -0.631,
+          -0.6865,
+          -0.8334,
+          -0.718
+        ]
+      },
+      {
+        "variable": "m-e7a877292b",
+        "variableLabel": "초지·관목 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.6441,
+          -1.0967,
+          -0.2499,
+          -0.3305,
+          -0.0538,
+          -0.1078,
+          -0.7588,
+          -0.6935
+        ]
+      },
+      {
+        "variable": "m-e7a877292b",
+        "variableLabel": "초지·관목 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.653,
+          -1.7562,
+          -0.4683,
+          -0.3456,
+          -0.0739,
+          -0.1046,
+          -1.1934,
+          -0.5217
+        ]
+      },
+      {
+        "variable": "m-292bbb2371",
+        "variableLabel": "습지 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -1.8772,
+          0.579,
+          0.5064,
+          0.1202,
+          0.652,
+          null,
+          1.3843,
+          0.311
+        ]
+      },
+      {
+        "variable": "m-292bbb2371",
+        "variableLabel": "습지 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          0.1709,
+          0.6618,
+          0.669,
+          0.0094,
+          0.8901,
+          null,
+          1.7843,
+          0.4244
+        ]
+      },
+      {
+        "variable": "m-292bbb2371",
+        "variableLabel": "습지 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.0614,
+          0.4014,
+          0.4455,
+          -0.015,
+          1.638,
+          null,
+          3.7246,
+          0.7794
+        ]
+      },
+      {
+        "variable": "m-292bbb2371",
+        "variableLabel": "습지 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          -0.2678,
+          0.7943,
+          0.6393,
+          -0.0322,
+          2.8244,
+          null,
+          6.0893,
+          1.3398
+        ]
+      },
+      {
+        "variable": "m-5676da1ecd",
+        "variableLabel": "도시 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          10.3525,
+          5.2146,
+          5.4487,
+          8.2913,
+          10.7583,
+          11.6861,
+          5.198,
+          6.4046
+        ]
+      },
+      {
+        "variable": "m-5676da1ecd",
+        "variableLabel": "도시 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          13.7655,
+          6.4583,
+          7.0577,
+          10.9961,
+          14.7613,
+          15.8439,
+          7.0327,
+          8.834
+        ]
+      },
+      {
+        "variable": "m-5676da1ecd",
+        "variableLabel": "도시 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          7.4288,
+          5.024,
+          4.432,
+          9.7409,
+          8.8884,
+          8.5633,
+          6.9103,
+          10.1746
+        ]
+      },
+      {
+        "variable": "m-5676da1ecd",
+        "variableLabel": "도시 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          1.3238,
+          1.8676,
+          2.0697,
+          5.3438,
+          1.779,
+          2.8301,
+          3.7534,
+          4.3772
+        ]
+      },
+      {
+        "variable": "m-f09b5db810",
+        "variableLabel": "나지 CAGR",
+        "unit": "%/yr",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          2.0156,
+          2.5317,
+          6.1037,
+          13.4426,
+          6.1412,
+          3.4434,
+          null,
+          5.2174
+        ]
+      },
+      {
+        "variable": "m-f09b5db810",
+        "variableLabel": "나지 CAGR",
+        "unit": "%/yr",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          2.4646,
+          3.1601,
+          6.4219,
+          15.0832,
+          6.331,
+          3.8772,
+          null,
+          6.2172
+        ]
+      },
+      {
+        "variable": "m-f09b5db810",
+        "variableLabel": "나지 CAGR",
+        "unit": "%/yr",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          0.1893,
+          2.1328,
+          3.092,
+          5.3661,
+          3.4322,
+          1.0242,
+          null,
+          -0.1791
+        ]
+      },
+      {
+        "variable": "m-f09b5db810",
+        "variableLabel": "나지 CAGR",
+        "unit": "%/yr",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          0.0638,
+          0.0286,
+          1.1183,
+          5.1311,
+          1.9874,
+          0.9975,
+          null,
+          -0.1236
+        ]
+      },
+      {
+        "variable": "m-f75680dc8e",
+        "variableLabel": "산림 면적 시작",
+        "unit": "km²",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          610.85,
+          8925.04,
+          651.01,
+          518.78,
+          20.67,
+          49.81,
+          879.26,
+          119.52
+        ]
+      },
+      {
+        "variable": "m-f75680dc8e",
+        "variableLabel": "산림 면적 시작",
+        "unit": "km²",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          735.97,
+          9274.43,
+          714.76,
+          572.07,
+          20.67,
+          49.81,
+          885.25,
+          119.52
+        ]
+      },
+      {
+        "variable": "m-f75680dc8e",
+        "variableLabel": "산림 면적 시작",
+        "unit": "km²",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          734.28,
+          9251.8,
+          711.37,
+          613.8,
+          20.67,
+          49.81,
+          813.83,
+          116.84
+        ]
+      },
+      {
+        "variable": "m-f75680dc8e",
+        "variableLabel": "산림 면적 시작",
+        "unit": "km²",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          903.94,
+          9285.89,
+          742.1,
+          669.51,
+          20.58,
+          49.81,
+          814.96,
+          117.97
+        ]
+      },
+      {
+        "variable": "m-53903c9a1b",
+        "variableLabel": "농경지 면적 시작",
+        "unit": "km²",
+        "period": "1992-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          7760.25,
+          13921.78,
+          16662.58,
+          12829.06,
+          15809.56,
+          14880.64,
+          10435.1,
+          10103.24
+        ]
+      },
+      {
+        "variable": "m-53903c9a1b",
+        "variableLabel": "농경지 면적 시작",
+        "unit": "km²",
+        "period": "2000-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          8020.87,
+          14062.66,
+          16652.7,
+          12790.02,
+          15948.84,
+          14998.66,
+          10573.34,
+          10110.94
+        ]
+      },
+      {
+        "variable": "m-53903c9a1b",
+        "variableLabel": "농경지 면적 시작",
+        "unit": "km²",
+        "period": "2010-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          8084.26,
+          14256.38,
+          16761.54,
+          12681.4,
+          15946.69,
+          15015.21,
+          10683.41,
+          10115.6
+        ]
+      },
+      {
+        "variable": "m-53903c9a1b",
+        "variableLabel": "농경지 면적 시작",
+        "unit": "km²",
+        "period": "2015-2022",
+        "sourceIndicatorId": "B-036_lc_cagr_adm1",
+        "values": [
+          7904.28,
+          14182.37,
+          16565.48,
+          12601.28,
+          15859.57,
+          14970.86,
+          10676.48,
+          10098.35
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-34a5229243",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-34a5229243",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-34a5229243",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-34a5229243",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-2d788ff3af",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-2d788ff3af",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-2d788ff3af",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-2d788ff3af",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e7a877292b",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e7a877292b",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e7a877292b",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e7a877292b",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-292bbb2371",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-292bbb2371",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-292bbb2371",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-292bbb2371",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5676da1ecd",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5676da1ecd",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5676da1ecd",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5676da1ecd",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f09b5db810",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f09b5db810",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f09b5db810",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f09b5db810",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f75680dc8e",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f75680dc8e",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f75680dc8e",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f75680dc8e",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-53903c9a1b",
+      "period": "1992-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-53903c9a1b",
+      "period": "2000-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-53903c9a1b",
+      "period": "2010-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-53903c9a1b",
+      "period": "2015-2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "ESA Climate Change Initiative Land Cover (v2.0.7cds, 1992-2015) · Copernicus Climate Change Service C3S Land Cover (v2.1.1, 2016-2022)"
+    ],
+    "licenses": [
+      "ESA CCI / C3S 데이터 라이선스"
+    ],
+    "attribution": [
+      "ESA Climate Change Initiative Land Cover (v2.0.7cds, 1992-2015) · Copernicus Climate Change Service C3S Land Cover (v2.1.1, 2016-2022) — ESA CCI / C3S 데이터 라이선스. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://bulks-faostat.fao.org/production/Environment_LandCover_E_All_Data_(Normalized).zip",
+      "https://bulks-faostat.fao.org/production/Inputs_LandUse_E_All_Data_(Normalized).zip",
+      "https://cds.climate.copernicus.eu/datasets/satellite-land-cover"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 248,
+    "sourceValueCount": 248,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-029",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2022",
+    "defaultVariable": "m-d5ce26f314",
+    "periods": [
+      "1996",
+      "2001",
+      "2020",
+      "2022"
+    ],
+    "variables": [
+      {
+        "key": "m-d5ce26f314",
+        "label": "이탄지 면적 — 이탄 우세",
+        "measureId": "m-d5ce26f314",
+        "measureKey": "m-d5ce26f314",
+        "unit": "km²",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-e083199623",
+        "label": "이탄지 면적 — 모자이크",
+        "measureId": "m-e083199623",
+        "measureKey": "m-e083199623",
+        "unit": "km²",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-a02a61abd1",
+        "label": "이탄지 면적 — 합계",
+        "measureId": "m-a02a61abd1",
+        "measureKey": "m-a02a61abd1",
+        "unit": "km²",
+        "periods": [
+          "2022"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-a1dec2e44d",
+        "label": "습윤열대 1차림 면적 2001",
+        "measureId": "m-a1dec2e44d",
+        "measureKey": "m-a1dec2e44d",
+        "unit": "ha",
+        "periods": [
+          "2001"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-a828726150",
+        "label": "1차림 비율 2001",
+        "measureId": "m-a828726150",
+        "measureKey": "m-a828726150",
+        "unit": "%",
+        "periods": [
+          "2001"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-0ad1a82eb9",
+        "label": "맹그로브 면적 2020",
+        "measureId": "m-0ad1a82eb9",
+        "measureKey": "m-0ad1a82eb9",
+        "unit": "ha",
+        "periods": [
+          "2020"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-4de6043f40",
+        "label": "맹그로브 면적 1996",
+        "measureId": "m-4de6043f40",
+        "measureKey": "m-4de6043f40",
+        "unit": "ha",
+        "periods": [
+          "1996"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-d5ce26f314",
+        "variableLabel": "이탄지 면적 — 이탄 우세",
+        "unit": "km²",
+        "period": "2022",
+        "sourceIndicatorId": "B-029_peatland_adm1",
+        "values": [
+          194.1,
+          863.71,
+          474.98,
+          1166.04,
+          1.11,
+          116.14,
+          33.53,
+          7.8
+        ]
+      },
+      {
+        "variable": "m-e083199623",
+        "variableLabel": "이탄지 면적 — 모자이크",
+        "unit": "km²",
+        "period": "2022",
+        "sourceIndicatorId": "B-029_peatland_adm1",
+        "values": [
+          2.27,
+          28.22,
+          620.22,
+          148.37,
+          272.33,
+          0,
+          2670.63,
+          142.13
+        ]
+      },
+      {
+        "variable": "m-a02a61abd1",
+        "variableLabel": "이탄지 면적 — 합계",
+        "unit": "km²",
+        "period": "2022",
+        "sourceIndicatorId": "B-029_peatland_adm1",
+        "values": [
+          196.37,
+          891.94,
+          1095.2,
+          1314.41,
+          273.45,
+          116.14,
+          2704.17,
+          149.94
+        ]
+      },
+      {
+        "variable": "m-a1dec2e44d",
+        "variableLabel": "습윤열대 1차림 면적 2001",
+        "unit": "ha",
+        "period": "2001",
+        "sourceIndicatorId": "B-029_primary_extent_adm1",
+        "values": [
+          3973.28,
+          73532.08,
+          6.82,
+          14457.16,
+          0,
+          0,
+          9085.73,
+          0.07
+        ]
+      },
+      {
+        "variable": "m-a828726150",
+        "variableLabel": "1차림 비율 2001",
+        "unit": "%",
+        "period": "2001",
+        "sourceIndicatorId": "B-029_primary_extent_adm1",
+        "values": [
+          0.42,
+          2.46,
+          0,
+          0.75,
+          0,
+          0,
+          0.89,
+          0
+        ]
+      },
+      {
+        "variable": "m-0ad1a82eb9",
+        "variableLabel": "맹그로브 면적 2020",
+        "unit": "ha",
+        "period": "2020",
+        "sourceIndicatorId": "B-029_mangrove_adm1",
+        "values": [
+          31873.63,
+          18450.14,
+          0,
+          396426.98,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "variable": "m-4de6043f40",
+        "variableLabel": "맹그로브 면적 1996",
+        "unit": "ha",
+        "period": "1996",
+        "sourceIndicatorId": "B-029_mangrove_adm1",
+        "values": [
+          26780.73,
+          17114.72,
+          0,
+          401954.67,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-d5ce26f314",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-e083199623",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a02a61abd1",
+      "period": "2022",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a1dec2e44d",
+      "period": "2001",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a828726150",
+      "period": "2001",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-0ad1a82eb9",
+      "period": "2020",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-4de6043f40",
+      "period": "1996",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Forest Watch / UMD - Primary humid tropical forests 2001 (Turubanova et al. 2018) · GFC 2024 v1.12 datamask",
+      "Global Mangrove Watch v3.0 (Bunting et al. 2022; Aberystwyth Univ. · soloEO · Wetlands International · JAXA · Zenodo)",
+      "Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "CC-BY-4.0",
+      "CC-BY-NC-SA-4.0"
+    ],
+    "attribution": [
+      "Global Forest Watch / UMD - Primary humid tropical forests 2001 (Turubanova et al. 2018) · GFC 2024 v1.12 datamask — CC-BY-4.0. 이용 시 출처 표기 필수",
+      "Global Mangrove Watch v3.0 (Bunting et al. 2022; Aberystwyth Univ. · soloEO · Wetlands International · JAXA · Zenodo) — CC-BY-4.0. 이용 시 출처 표기 필수",
+      "Greifswald Mire Centre — Global Peatland Map 2.0 (UNEP Global Peatlands Assessment 2022 기반자료) · 경계 GADM 4.1 ADM1 — CC-BY-NC-SA-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss",
+      "https://data.globalforestwatch.org/datasets/gfw::primary-forests-2001/about",
+      "https://doi.org/10.5281/zenodo.6894273",
+      "https://greifswaldmoor.de/global-peatland-database-en.html"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 17,
+    "publishedValueCount": 56,
+    "sourceValueCount": 56,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

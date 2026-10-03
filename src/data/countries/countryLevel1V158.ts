@@ -17,6 +17,16 @@ export function countryLevel1V158(country: string): CountryLevel1V158 | null {
   return level1?.label ? { label: level1.label, count: Number(level1.count) || 0 } : null;
 }
 
+/**
+ * V162 PR-D: the level-1 boundary file the registry names for a country
+ * (`adm.level1.asset`, the boundary GeoJSON under its data root), or null.
+ */
+export function countryLevel1AssetUrlV162(country: string): string | null {
+  const registry = countryRegistryCacheV158() ?? bundledCountryRegistryV158();
+  const iso3 = String(country || "").trim().toUpperCase();
+  return registry.countries.find((row) => row.iso3 === iso3)?.adm?.level1?.asset || null;
+}
+
 /** The default country's reviewed copy names its level-1 unit this way. */
 const DEFAULT_REGION_WORD_V158 = "성·시";
 

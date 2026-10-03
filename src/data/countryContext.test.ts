@@ -31,10 +31,11 @@ describe("country registry V158", () => {
     });
   });
 
-  test("Vietnam is live and Bangladesh is still preparing", () => {
+  // V162 PR-D (2026-10-03): Bangladesh goes public.
+  test("Vietnam and Bangladesh are live", () => {
     const byIso3 = new Map(registry.countries.map((row) => [row.iso3, row]));
     expect(byIso3.get("VNM")?.status).toBe("live");
-    expect(byIso3.get("BGD")?.status).toBe("preparing");
+    expect(byIso3.get("BGD")?.status).toBe("live");
     // The D category has no Bangladesh delivery yet, so it is not offered there.
     expect(byIso3.get("BGD")?.categoriesAvailable).not.toContain("D");
     expect(byIso3.get("VNM")?.categoriesAvailable).toEqual(["A", "B", "C", "D", "E"]);

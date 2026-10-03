@@ -8,6 +8,8 @@ import {
 import { Fragment, useMemo } from "react";
 import { orderBlocksV153 } from "../../../data/visualization/publicVisualizationContractV153";
 import { subjectParticleV158, useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
+import { sentencesForCountryV162 } from "../../../data/countries/countryCopyV158";
+import { usePageDataCountryV162 } from "../../../data/countries/DataCountryContextV158";
 import { useAnalysisContractV153 } from "./analysisContractContextV153";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
@@ -524,6 +526,7 @@ export default function PublicRegionScenarioSummaryV138({
   // V158: the level-1 unit the regions are counted in - the default country's
   // wording, another country's own from the registry (Bangladesh: Division).
   const { word: regionWord, level1: regionLevelV158 } = useRegionWordV158();
+  const pageCountryV162 = usePageDataCountryV162();
 
   if (!shape || !measure || !series.length) return null;
 
@@ -898,16 +901,20 @@ export default function PublicRegionScenarioSummaryV138({
         ],
         v153?.primary.type ?? null
       ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
-      {(contract?.constraints.length || contract?.scenarioNote) && (
-        <ul className="prs138__constraints" data-testid="region-scenario-constraints-v138">
-          {contract?.scenarioNote && (
-            <li><PublicTermTextV134 text={contract.scenarioNote} /></li>
-          )}
-          {contract?.constraints.map((item) => (
-            <li key={item}><PublicTermTextV134 text={item} /></li>
-          ))}
-        </ul>
-      )}
+      {(() => {
+        // V162 PR-D: the contract notes describe the default country's source;
+        // another country keeps the sentences that are not about it.
+        const scenarioNote = sentencesForCountryV162(contract?.scenarioNote, pageCountryV162);
+        const constraints = (contract?.constraints || []).map((item) => sentencesForCountryV162(item, pageCountryV162)).filter(Boolean);
+        return scenarioNote || constraints.length ? (
+          <ul className="prs138__constraints" data-testid="region-scenario-constraints-v138">
+            {scenarioNote && <li><PublicTermTextV134 text={scenarioNote} /></li>}
+            {constraints.map((item) => (
+              <li key={item}><PublicTermTextV134 text={item} /></li>
+            ))}
+          </ul>
+        ) : null;
+      })()}
       <p className="prs137__note">
         {multiYear
           ? "연도별 전체 값과 원자료 정밀도는 아래 상세 데이터와 다운로드에서 확인할 수 있습니다."

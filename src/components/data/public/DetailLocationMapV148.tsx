@@ -59,6 +59,9 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   const [runtime, setRuntime] = useState<Runtime | null>(null);
   const [error, setError] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
+  // V162 PR-D: the small map draws the default country's assets only; for
+  // another country it names the country's own map layer (or nothing).
+  const [countryLayerTitleV162, setCountryLayerTitleV162] = useState<string | null>(null);
   const [retry, setRetry] = useState(0);
   const [picked, setPickedState] = useState("");
   const [override, setOverride] = useState<{ variable: string; period: string } | null>(null);
@@ -73,8 +76,15 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
   useEffect(() => { setOverride(null); setPickedState(""); }, [selectionKey, elementId]);
   useEffect(() => {
     let cancelled = false;
-    setRuntime(null); setError(false); setUnavailable(false);
-    if (countryIso3 !== "VNM") { setUnavailable(true); return; }
+    setRuntime(null); setError(false); setUnavailable(false); setCountryLayerTitleV162(null);
+    if (countryIso3 !== "VNM") {
+      setUnavailable(true);
+      void loadCountryMapIndexV122(countryIso3).then((layers) => {
+        const own = layers.find((l) => l.elementId === elementId && l.enabled !== false);
+        if (!cancelled && own) setCountryLayerTitleV162(own.publicShortTitle || own.label || "");
+      }).catch(() => undefined);
+      return () => { cancelled = true; };
+    }
     void loadCountryMapIndexV122(countryIso3).then(async (layers) => {
       const layer = layers.find((l) => l.elementId === elementId && l.enabled !== false);
       if (!layer) { if (!cancelled) setUnavailable(true); return; }
@@ -142,6 +152,20 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
 
   // V157: a dataset the review named a map target but the data cannot place says so
   // here, with the contract's reason, instead of leaving the reader to wonder.
+  if (unavailable && countryIso3 !== "VNM") {
+    // The default country's not-mapped reasons describe its own data; another
+    // country states only what its own map index carries.
+    if (countryLayerTitleV162 === null) return null;
+    return (
+      <section className="detail-map148" data-testid="detail-map-country-layer-v162">
+        <h3>위치·분포</h3>
+        <p className="detail-map148-note">이 자료는 데이터 지도에서 볼 수 있습니다.</p>
+        <button type="button" onClick={() => onOpenMap(elementId, countryIso3, selection)}>
+          데이터 지도에서 보기
+        </button>
+      </section>
+    );
+  }
   if (unavailable) {
     const target = publicMapTargetV138(elementId);
     const reason = target?.build?.kind === "none" ? target.build.reason : "";

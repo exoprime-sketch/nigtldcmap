@@ -610,3 +610,10 @@
   color: #4f665f;
   overflow-wrap: anywhere;
 }
+
+/* V162 PR-D: the other public countries are links on the same line. */
+.home-final-copy > p.home-final-scope a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-030",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2000–2020",
+    "defaultVariable": "m-2ce465812e",
+    "periods": [
+      "2000–2020"
+    ],
+    "variables": [
+      {
+        "key": "m-2ce465812e",
+        "label": "이득",
+        "measureId": "m-2ce465812e",
+        "measureKey": "m-2ce465812e",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-f7bd947b33",
+        "label": "2000년 수관 면적",
+        "measureId": "m-f7bd947b33",
+        "measureKey": "m-f7bd947b33",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-d4975f19d6",
+        "label": "유지",
+        "measureId": "m-d4975f19d6",
+        "measureKey": "m-d4975f19d6",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-eac5be1576",
+        "label": "손실",
+        "measureId": "m-eac5be1576",
+        "measureKey": "m-eac5be1576",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-1338c3d1e5",
+        "label": "교란 후 회복",
+        "measureId": "m-1338c3d1e5",
+        "measureKey": "m-1338c3d1e5",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-a0cc066743",
+        "label": "순변화",
+        "measureId": "m-a0cc066743",
+        "measureKey": "m-a0cc066743",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-8bd838dd8d",
+        "label": "순변화율",
+        "measureId": "m-8bd838dd8d",
+        "measureKey": "m-8bd838dd8d",
+        "unit": "%",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      },
+      {
+        "key": "m-c077099a3c",
+        "label": "분석대상 면적(GFW)",
+        "measureId": "m-c077099a3c",
+        "measureKey": "m-c077099a3c",
+        "unit": "ha",
+        "periods": [
+          "2000–2020"
+        ],
+        "maxFeatureCount": 7
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-2ce465812e",
+        "variableLabel": "이득",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          28069.31,
+          106620.26,
+          66117.17,
+          27502.99,
+          34015.17,
+          30486.41,
+          25050.91,
+          null
+        ]
+      },
+      {
+        "variable": "m-f7bd947b33",
+        "variableLabel": "2000년 수관 면적",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          284328,
+          1701120,
+          691814,
+          598589,
+          229845,
+          279294,
+          256409,
+          null
+        ]
+      },
+      {
+        "variable": "m-d4975f19d6",
+        "variableLabel": "유지",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          282565.82,
+          1029998.39,
+          671132.5,
+          595316.1,
+          229131.93,
+          276729.6,
+          228158.18,
+          null
+        ]
+      },
+      {
+        "variable": "m-eac5be1576",
+        "variableLabel": "손실",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          1133.71,
+          100915.3,
+          5553.56,
+          1024.08,
+          467.52,
+          945.99,
+          5364.45,
+          null
+        ]
+      },
+      {
+        "variable": "m-1338c3d1e5",
+        "variableLabel": "교란 후 회복",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          628.55,
+          570208.27,
+          15127.7,
+          2248.4,
+          245.88,
+          1618.86,
+          22886.4,
+          null
+        ]
+      },
+      {
+        "variable": "m-a0cc066743",
+        "variableLabel": "순변화",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          26935.6,
+          5704.96,
+          60563.61,
+          26478.91,
+          33547.65,
+          29540.42,
+          19686.46,
+          null
+        ]
+      },
+      {
+        "variable": "m-8bd838dd8d",
+        "variableLabel": "순변화율",
+        "unit": "%",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          9.47343,
+          0.335365,
+          8.75432,
+          4.42355,
+          14.5958,
+          10.5768,
+          7.67776,
+          null
+        ]
+      },
+      {
+        "variable": "m-c077099a3c",
+        "variableLabel": "분석대상 면적(GFW)",
+        "unit": "ha",
+        "period": "2000–2020",
+        "sourceIndicatorId": "B-030_forest_change_adm1",
+        "values": [
+          982750.11,
+          3103445.69,
+          3097294.89,
+          2077851.91,
+          1821159.22,
+          1621045.67,
+          1234897.13,
+          null
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-2ce465812e",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-f7bd947b33",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-d4975f19d6",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-eac5be1576",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-1338c3d1e5",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-a0cc066743",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-8bd838dd8d",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-c077099a3c",
+      "period": "2000–2020",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "CC-BY-4.0"
+    ],
+    "attribution": [
+      "Global Forest Watch / UMD (Potapov et al. 2022) · 경계 GADM 4.1 ADM1 — CC-BY-4.0. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://data-api.globalforestwatch.org/dataset/umd_adm1_net_tree_cover_change_from_height",
+      "https://data-api.globalforestwatch.org/dataset/umd_tree_cover_loss"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 7,
+    "maxSeriesFeatureCount": 7,
+    "missingAdm1Count": 1,
+    "providedZeroCount": 0,
+    "publishedValueCount": 56,
+    "sourceValueCount": 56,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

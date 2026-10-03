@@ -2,8 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 import type { View } from "../app/navigation";
 import { SERVICE_LINKS } from "../config/serviceLinks";
 import { PUBLIC_GLOSSARY_V134, glossaryShownForCountryV162 } from "../data/glossary/publicGlossaryV134";
+import { sentencesForCountryV162 } from "../data/countries/countryCopyV158";
 import { usePageDataCountryV162 } from "../data/countries/DataCountryContextV158";
-import { loadVietnamPublicOverviewV128 } from "../data/publicPlatformV128";
+import { loadPublicOverviewV161 } from "../data/publicPlatformV128";
+import { ensureCountryRegistryLoadedV158 } from "../data/countries/countryDataProviderRegistryV122";
+import { resolveHomeCountryV161 } from "../data/homeCountryV161";
+import type { HomeCountryV161 } from "../data/homeCountryV161";
+import CountryScopeLinksV162 from "../components/country/CountryScopeLinksV162";
+import { countryLevel1V158 } from "../data/countries/countryLevel1V158";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../data/countryContext";
 import { PublicTermTextV134 } from "../components/help/PublicTermV134";
 import "../styles/data-guide-v128.css";
 
@@ -13,6 +20,9 @@ interface DataGuidePageProps {
 
 export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   const [releaseDate, setReleaseDate] = useState("확인 중");
+  // V162 PR-D: the guide names the public countries from the registry and
+  // states the current country's own data date.
+  const [scopeCountry, setScopeCountry] = useState<HomeCountryV161 | null>(() => resolveHomeCountryV161(window.location.search));
   const [glossaryQuery, setGlossaryQuery] = useState("");
 
   // V162: terms about particular countries are listed on those countries' screens only.
@@ -47,7 +57,14 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
 
   useEffect(() => {
     let cancelled = false;
-    void loadVietnamPublicOverviewV128()
+    void ensureCountryRegistryLoadedV158()
+      .catch(() => undefined)
+      .then(() => {
+        const current = resolveHomeCountryV161(window.location.search);
+        if (!cancelled) setScopeCountry(current);
+        if (!current) throw new Error("no public country");
+        return loadPublicOverviewV161(current.iso3);
+      })
       .then((overview) => {
         if (!cancelled) setReleaseDate(overview.releaseDate);
       })
@@ -83,7 +100,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
   return (
     <div className="page-shell data-guide-v128" data-v128-guide>
       <header className="data-guide-v128__hero">
-        <span>현재 제공 국가 · 베트남</span>
+        <CountryScopeLinksV162 className="data-guide-v128__scope" current={scopeCountry?.iso3 || null} hash="guide" />
         <h1>데이터 이용안내</h1>
         <p>
           데이터 범위, 자료기간, 출처, 다운로드 및 지도 이용 시 참고사항을
@@ -132,9 +149,11 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
         <section id="guide-scope">
           <h2>데이터 제공 범위</h2>
           <p>
-            현재 베트남 데이터를 제공합니다. 정책·제도, 에너지,
+            {/* V162 PR-D: the page's own country only; the picker above names the others. */}
+            현재 {scopeCountry?.nameKo || "선택한 나라"} 데이터를 제공합니다. 정책·제도, 에너지,
             온실가스, 산림·토지, 기후사업·재원, 연구·협력기관 자료를 데이터
             항목 단위로 확인할 수 있습니다.
+            {scopeCountry && scopeCountry.live.length > 1 ? " 다른 나라의 데이터는 위 '현재 제공 국가'에서 고릅니다." : null}
           </p>
         </section>
 
@@ -198,6 +217,20 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
 
         <section id="guide-map">
           <h2>지도 이용 시 참고사항</h2>
+          {/* V162 PR-D: the 34/63 boundary note is the default country's; another
+              country's guide names its own level-1 unit from the registry. */}
+          {(() => {
+            const level1 = scopeCountry && scopeCountry.iso3 !== DEFAULT_COUNTRY_ISO3_V158 ? countryLevel1V158(scopeCountry.iso3) : null;
+            return level1 ? (
+              <p>
+                지도의 경계선은 {level1.label}
+                {level1.count ? ` ${level1.count}개` : ""}입니다. 원자료가 {level1.label}별로 밝힌 값과
+                원천이 준 위치만 지도에 표시하며, 결측 지역을 0으로 표시하지 않습니다. &lsquo;참고 지도&rsquo;로
+                표시한 자료는 구간 중간점·시작점 같은 대표점만 보여 주며 실제 형상이 아닙니다.
+              </p>
+            ) : null;
+          })()}
+          {scopeCountry && scopeCountry.iso3 !== DEFAULT_COUNTRY_ISO3_V158 ? null : (
           <p>
             지도의 경계선은 2025-07-01 시행 34개 성·시가 기본이며, 개편 전
             63개 성·시로 바꿔 볼 수 있습니다. 원자료는 대부분 개편 전 63개
@@ -208,6 +241,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
             않습니다. 송전망 위치는 국가 단위 분포 확인용이며 정밀 설계나 시설
             경계 판정에는 적합하지 않습니다.
           </p>
+          )}
           <p>
             배경지도는 지형(Terrain Tiles — Mapzen · Amazon Web Services 공개
             데이터, Natural Earth 음영기복, OpenStreetMap 하천·도로·지명 via
@@ -297,7 +331,7 @@ export default function DataGuidePage({ onNavigate }: DataGuidePageProps) {
                   <span className="data-guide-v134__glossary-english">
                     {entry.englishName}
                   </span>
-                  <p>{entry.definition}</p>
+                  <p>{sentencesForCountryV162(entry.definition, pageCountry)}</p>
                   {entry.id === "spei" && (
                     <small>
                       지원 패턴: SPEI3 · SPEI6 · SPEI12 (누적기간

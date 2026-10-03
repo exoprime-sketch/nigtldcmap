@@ -2,6 +2,7 @@ import {
   PUBLIC_MAP_TARGETS_V138,
 } from "../visualization/publicMapWorkspaceV126";
 import type { PublicMapTargetV138 } from "../visualization/publicMapWorkspaceV126";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../countryContext";
 
 /**
  * One count of map datasets for every screen (V140).
@@ -44,11 +45,19 @@ export function isConnectedMapLayerV140(layer: MapLayerLikeV140): boolean {
 }
 
 export function summarizeMapAvailabilityV140(
-  layers: readonly MapLayerLikeV140[]
+  layers: readonly MapLayerLikeV140[],
+  countryIso3?: string | null
 ): MapAvailabilityV140 {
   const connectedIds = layers
     .filter(isConnectedMapLayerV140)
     .map((layer) => layer.elementId);
+  // V162 PR-D: the target contract below is Viet Nam's. Another country's map
+  // targets are the layers it registered from its own judgement table
+  // (reports/v162/bgd-map-judgement-v162.md); nothing of Viet Nam's list is
+  // pending there.
+  if (countryIso3 && countryIso3.trim().toUpperCase() !== DEFAULT_COUNTRY_ISO3_V158) {
+    return { connectedCount: connectedIds.length, pendingCount: 0, targetCount: connectedIds.length, connectedIds, pending: [] };
+  }
   const connected = new Set(connectedIds);
   const pending = PUBLIC_MAP_TARGETS_V138.filter(
     (target) => !connected.has(target.elementId)

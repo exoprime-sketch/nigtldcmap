@@ -1,6 +1,8 @@
 import { forwardRef } from "react";
 import type { CSSProperties, PointerEventHandler } from "react";
 import type { ResolvedPublicTermV134 } from "../../utils/publicTermTokenizerV134";
+import { sentencesForCountryV162 } from "../../data/countries/countryCopyV158";
+import { usePageDataCountryV162 } from "../../data/countries/DataCountryContextV158";
 
 export interface PublicTermTooltipV134Props {
   entry: ResolvedPublicTermV134;
@@ -17,6 +19,7 @@ const PublicTermTooltipV134 = forwardRef<
   { entry, id, style, onPointerEnter, onPointerLeave },
   ref
 ) {
+  const pageCountry = usePageDataCountryV162();
   return (
     <div
       className="public-term-tooltip-v134"
@@ -35,7 +38,8 @@ const PublicTermTooltipV134 = forwardRef<
       <span className="public-term-tooltip-v134__korean">
         {entry.koreanName}
       </span>
-      <p>{entry.definition}</p>
+      {/* V162 PR-D: a sentence about another country is left out of its definition. */}
+      {sentencesForCountryV162(entry.definition, pageCountry) ? <p>{sentencesForCountryV162(entry.definition, pageCountry)}</p> : null}
     </div>
   );
 });

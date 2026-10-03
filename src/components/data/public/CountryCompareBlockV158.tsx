@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 
 import "./country-compare-v158.css";
+import { PublicTermTextV134 } from "../../help/PublicTermV134";
 
 /**
  * One country's series for the element being compared.
@@ -151,7 +152,7 @@ export default function CountryCompareBlockV158({
             data-state="latest-each"
             data-year-rule={compareKey.yearRule}
           >
-            <h4 className="ccb158__title">{title}</h4>
+            <h4 className="ccb158__title"><PublicTermTextV134 text={title} /></h4>
             <ul className="ccb158__chips" aria-label="비교 국가">
               {latestEach.map(({ row }, index) => (
                 <li key={row.countryIso3} data-testid="country-compare-chip-v158">
@@ -182,7 +183,7 @@ export default function CountryCompareBlockV158({
             </p>
             {sourceNote ? (
               <p className="ccb158__note" data-testid="country-compare-source-note-v158">
-                {sourceNote}
+                <PublicTermTextV134 text={sourceNote} />
               </p>
             ) : null}
           </section>
@@ -197,7 +198,7 @@ export default function CountryCompareBlockV158({
         data-element-id={elementId}
         data-state="unit-mismatch"
       >
-        <h4 className="ccb158__title">{title}</h4>
+        <h4 className="ccb158__title"><PublicTermTextV134 text={title} /></h4>
         <p className="ccb158__note" data-testid="country-compare-unit-note-v158">
           단위가 달라 함께 비교하지 않았습니다 · 기준 {compareKey.unit} ·{" "}
           {model.mismatched.map((row) => `${row.countryNameKo} ${row.unit}`).join(" · ")}
@@ -224,7 +225,7 @@ export default function CountryCompareBlockV158({
       data-state={model.shape}
       data-year-rule={compareKey.yearRule}
     >
-      <h4 className="ccb158__title">{title}</h4>
+      <h4 className="ccb158__title"><PublicTermTextV134 text={title} /></h4>
       <ul className="ccb158__chips" aria-label="비교 국가">
         {model.matched.map((row, index) => (
           <li key={row.countryIso3} data-testid="country-compare-chip-v158">
@@ -300,13 +301,14 @@ export default function CountryCompareBlockV158({
       ) : null}
       {sourceNote ? (
         <p className="ccb158__note" data-testid="country-compare-source-note-v158">
-          {sourceNote}
+          <PublicTermTextV134 text={sourceNote} />
         </p>
       ) : null}
-      <p className="ccb158__note">
-        비교 지표 {compareKey.indicatorId} · 연도 규칙{" "}
-        {compareKey.yearRule === "latest-common" ? "두 국가가 모두 가진 최신 연도" : compareKey.yearRule}
-      </p>
+      {/* V162 PR-D: the measure is named in the block's title; the note states
+          the year rule in words and never the internal indicator key. */}
+      {compareKey.yearRule === "latest-common" ? (
+        <p className="ccb158__note">연도 기준 · 두 국가가 모두 가진 최신 연도</p>
+      ) : null}
     </section>
   );
 }

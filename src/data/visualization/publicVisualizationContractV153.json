@@ -5509,8 +5509,12 @@
       "status": "standard",
       "note": "V162: 2026-09-30 납품으로 NRI 2021–2025(종합·4개 부문 점수·순위) 입고 — 상태 안내에서 국가 시계열로",
       "countryCompare": {
-        "comparable": false,
-        "reason": "2026-09-30 신규 입고(기준서 v1.1의 54개 밖) — 비교 포함 여부는 PR-D 판단표에서 결정"
+        "comparable": true,
+        "compareKey": {
+          "indicatorId": "E-011_nri_overall_score",
+          "unit": "점수",
+          "yearRule": "latest-common"
+        }
       }
     },
     {

@@ -1,4 +1,6 @@
 import { getPublicLimitationsV127 } from "../../../data/visualization/publicLimitationsRegistryV127";
+import { sentencesForCountryV162 } from "../../../data/countries/countryCopyV158";
+import { usePageDataCountryV162 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
   elementId: string;
@@ -7,7 +9,11 @@ interface Props {
 export default function PublicDataLimitationsV126({
   elementId,
 }: Props) {
-  const limitations = getPublicLimitationsV127(elementId);
+  const pageCountry = usePageDataCountryV162();
+  // V162 PR-D: the registry was written for the default country's sources.
+  const limitations = getPublicLimitationsV127(elementId)
+    .map((limitation) => ({ ...limitation, message: sentencesForCountryV162(limitation.message, pageCountry) }))
+    .filter((limitation) => limitation.message);
 
   if (limitations.length === 0) return null;
 

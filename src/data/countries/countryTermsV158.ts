@@ -298,9 +298,16 @@ export function confirmedRegionEntriesV158(): RegionNameInputV158[] {
   return confirmedRegionEntriesCache;
 }
 
-/** Every registry country's level-1 label, for `adminUnits`. */
-export function adminUnitsV158(registry: { countries: ReadonlyArray<{ iso3: string; adm?: { level1?: { label?: string } } }> }): AdminUnitInputV158[] {
-  return registry.countries.map((row) => ({ iso3: row.iso3, label: row.adm?.level1?.label ?? null }));
+/**
+ * Every registry country's level-1 label, for `adminUnits`, and (V162 PR-D)
+ * each of its own administrative expressions (`adm.publicTerms` - Viet Nam's
+ * "34개", "개편 전"): another country's screens hide them like the label.
+ */
+export function adminUnitsV158(registry: { countries: ReadonlyArray<{ iso3: string; adm?: { level1?: { label?: string }; publicTerms?: readonly string[] } }> }): AdminUnitInputV158[] {
+  return registry.countries.flatMap((row) => [
+    { iso3: row.iso3, label: row.adm?.level1?.label ?? null },
+    ...(row.adm?.publicTerms ?? []).map((term) => ({ iso3: row.iso3, label: term })),
+  ]);
 }
 
 const otherCountryTermsMemo = new Map<

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-039",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2017",
+    "defaultVariable": "m-6d45bc0372",
+    "periods": [
+      "2017"
+    ],
+    "variables": [
+      {
+        "key": "m-6d45bc0372",
+        "label": "이론 총잠재량",
+        "measureId": "m-6d45bc0372",
+        "measureKey": "m-6d45bc0372",
+        "unit": "GWh/yr",
+        "periods": [
+          "2017"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-5debb9393b",
+        "label": "최대 단일격자",
+        "measureId": "m-5debb9393b",
+        "measureKey": "m-5debb9393b",
+        "unit": "GWh/yr",
+        "periods": [
+          "2017"
+        ],
+        "maxFeatureCount": 8
+      },
+      {
+        "key": "m-1a66831ef3",
+        "label": "90분위 격자",
+        "measureId": "m-1a66831ef3",
+        "measureKey": "m-1a66831ef3",
+        "unit": "GWh/yr",
+        "periods": [
+          "2017"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-6d45bc0372",
+        "variableLabel": "이론 총잠재량",
+        "unit": "GWh/yr",
+        "period": "2017",
+        "sourceIndicatorId": "B-039_gross_potential_adm1",
+        "values": [
+          67.38,
+          7295.46,
+          9213.36,
+          5455.37,
+          21226.38,
+          12204.28,
+          3609.55,
+          7787.36
+        ]
+      },
+      {
+        "variable": "m-5debb9393b",
+        "variableLabel": "최대 단일격자",
+        "unit": "GWh/yr",
+        "period": "2017",
+        "sourceIndicatorId": "B-039_gross_potential_adm1",
+        "values": [
+          3.3376,
+          831.1313,
+          1825.9002,
+          1059.6227,
+          2118.8083,
+          1816.2467,
+          279.4878,
+          1820.2589
+        ]
+      },
+      {
+        "variable": "m-1a66831ef3",
+        "variableLabel": "90분위 격자",
+        "unit": "GWh/yr",
+        "period": "2017",
+        "sourceIndicatorId": "B-039_gross_potential_adm1",
+        "values": [
+          0.1997,
+          1.1908,
+          0.3802,
+          0.2907,
+          0.4631,
+          0.9711,
+          0.5373,
+          0.7765
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-6d45bc0372",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-5debb9393b",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    },
+    {
+      "variable": "m-1a66831ef3",
+      "period": "2017",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1"
+    ],
+    "licenses": [
+      "기관 이용약관"
+    ],
+    "attribution": [
+      "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · 경계 GADM 4.1 ADM1 — 기관 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://doi.org/10.4121/uuid:99b42e30-8ee0-4d64-a3d0-4b0c4dd5d6b0",
+      "https://www.hydropower.org/status-report"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 24,
+    "sourceValueCount": 24,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

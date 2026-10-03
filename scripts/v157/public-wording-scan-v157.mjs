@@ -82,7 +82,10 @@ const DICTIONARY_CITATIONS_V162 = Object.entries(
  * credit (B-029 "Aberystwyth Univ. · soloEO · Wetlands International"). Each
  * is matched with the words around it, so the same token elsewhere still counts.
  */
-const SOURCE_PROPER_WORDING_V162 = ["Vung Ang II coal-fired power plant", "Aberystwyth Univ. · soloEO"];
+// V162 PR-D: GCF's programme as GCF writes it - "Vietnam REDD-plus results-based
+// payments for results period of 2014", the project title the D-020/D-023
+// selection panel lists for Điện Biên.
+const SOURCE_PROPER_WORDING_V162 = ["Vung Ang II coal-fired power plant", "Aberystwyth Univ. · soloEO", "REDD-plus results-based payments"];
 
 /** The text a reader sees, with its citations lifted out. */
 function withoutCitationsV157(text) {
