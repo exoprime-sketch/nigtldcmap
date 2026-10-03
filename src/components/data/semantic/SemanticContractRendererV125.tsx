@@ -947,7 +947,10 @@ function TrendUnitV125({
   // click away in the legend and all of them stay in the table below.
   const compactLabelsV164 = compactSeriesLabelsV164(sourceSeries.map((item) => item.label));
   sourceSeries.forEach((item, index) => { item.label = compactLabelsV164[index]; });
-  const latestOfV164 = (item: { rows: NumericRowV125[] }) => Math.abs(item.rows[item.rows.length - 1]?.value ?? 0);
+  const latestOfV164 = (item: { rows: NumericRowV125[] }) => {
+    const last = item.rows[item.rows.length - 1];
+    return last ? Math.abs(last.value) : -1;
+  };
   const openSeriesV164 = new Set(
     sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164
       ? [...sourceSeries].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
