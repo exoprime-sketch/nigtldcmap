@@ -39,7 +39,9 @@ export function labelNameV151(properties: Record<string, unknown>): string | nul
   if (typeof unitCode === "string" && PROVINCE_KO_34_V151[unitCode]) {
     return PROVINCE_KO_34_V151[unitCode];
   }
-  return PROVINCE_KO_V150[String(properties.adm1Code)] || null;
+  if (PROVINCE_KO_V150[String(properties.adm1Code)]) return PROVINCE_KO_V150[String(properties.adm1Code)];
+  // V163: another country's level-1 asset names its units in Korean itself (BGD `nameKo`).
+  return typeof properties.nameKo === "string" && properties.nameKo.trim() ? properties.nameKo.trim() : null;
 }
 export function addKoreanMapLabelsV150(map: MapLibreMap, boundary: VietnamMapGeoJsonV124 | null) {
   const features: GeoJSON.Feature<GeoJSON.Point>[] = MAP_PLACES_V150.map(p => ({ type: "Feature", properties: { name: p.name, kind: p.kind }, geometry: { type: "Point", coordinates: [p.lon, p.lat] } }));
