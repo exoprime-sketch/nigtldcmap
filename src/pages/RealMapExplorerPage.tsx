@@ -3797,6 +3797,20 @@ export default function RealMapExplorerPage({
           focusedSemanticSummary?.measureLabels[0] || focusedLayer.publicShortTitle
         )
       : null;
+  // V163: the map's '항목' names what the map draws. An area layer is coloured
+  // by the selected variable, so it is named by that variable; the delivered
+  // table's first measure (focusedSemantic, e.g. VNM B-039 "PDP8 개정 2030
+  // 목표", B-009 "ND-GAIN 취약성") describes a different column and is only the
+  // last resort. Points and lines keep their own item or legend title.
+  const focusedItemLabelV163 = focusedLayer
+    ? focusedLayer.analysisItemLabel ||
+      (focusedLayer.geometryUrl && !focusedLayer.dataUrl ? focusedLayer.legend.title : null) ||
+      focusedVariablePresentationV129?.label ||
+      (isAreaRendererV152(rendererOf(focusedLayer)) ? publicTextV126(focusedVariable?.label) : null) ||
+      focusedLayer.legend.title ||
+      focusedSemantic?.measureLabel ||
+      ""
+    : "";
   const focusedSeriesCoverage =
     focusedLayer && focusedSelector
       ? spatialByElement[focusedLayer.elementId]?.data?.seriesCoverage?.find(
@@ -6500,23 +6514,7 @@ export default function RealMapExplorerPage({
                 <div>
                   <dt>항목</dt>
                   <dd>
-                    <PublicTermTextV134
-                      text={
-                        focusedLayer.analysisItemLabel ||
-                        // A layer drawn from its own asset counts features on the map;
-                        // the delivered table's measure name ("도로 레이어") describes
-                        // that table, not what the reader is looking at.
-                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
-                          ? focusedLayer.legend.title
-                          : null) ||
-                        focusedVariablePresentationV129?.label ||
-                        (focusedLayer.layerId.startsWith("vnm-v138-")
-                          ? focusedVariable?.label
-                          : null) ||
-                        focusedSemantic?.measureLabel ||
-                        focusedLayer.legend.title
-                      }
-                    />
+                    <PublicTermTextV134 text={focusedItemLabelV163} />
                   </dd>
                 </div>
                 <div>
@@ -7579,18 +7577,7 @@ export default function RealMapExplorerPage({
                 <div>
                   <dt>항목</dt>
                   <dd>
-                    <PublicTermTextV134
-                      text={
-                        // A layer drawn from its own asset is named by what it draws;
-                        // the delivered table's measure name describes that table.
-                        (focusedLayer.geometryUrl && !focusedLayer.dataUrl
-                          ? focusedLayer.legend.title
-                          : null) ||
-                        focusedVariablePresentationV129?.label ||
-                        focusedSemantic?.measureLabel ||
-                        focusedLayer.legend.title
-                      }
-                    />
+                    <PublicTermTextV134 text={focusedItemLabelV163} />
                   </dd>
                 </div>
                 <div>
@@ -7897,34 +7884,14 @@ export default function RealMapExplorerPage({
                   <Evidence label="데이터명" value={focusedPublicCopy?.titleKo || ""} />
                   <Evidence
                     label="항목"
-                    value={
-                      focusedLayer.analysisItemLabel ||
-                      // An asset layer is named by what it draws (see the layer
-                      // meta above); the delivered table's measure name is not it.
-                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
-                        ? focusedLayer.legend.title
-                        : null) ||
-                      focusedVariablePresentationV129?.label ||
-                      (focusedLayer.layerId.startsWith("vnm-v138-")
-                        ? focusedVariable?.label
-                        : null) ||
-                      focusedSemantic?.measureLabel ||
-                      focusedLayer.legend.title
-                    }
+                    value={focusedItemLabelV163}
                   />
                   {/* Both rows fall back to the same presentation label, so
                       whenever one is set they printed the same string twice
                       under two headings. The selected variable is only worth a
                       row of its own when it says something the item did not. */}
                   {(() => {
-                    const item =
-                      focusedLayer.analysisItemLabel ||
-                      (focusedLayer.geometryUrl && !focusedLayer.dataUrl
-                        ? focusedLayer.legend.title
-                        : null) ||
-                      focusedVariablePresentationV129?.label ||
-                      focusedSemantic?.measureLabel ||
-                      focusedLayer.legend.title;
+                    const item = focusedItemLabelV163;
                     const variable =
                       focusedVariablePresentationV129?.label ||
                       focusedSemantic?.indicatorLabel ||
