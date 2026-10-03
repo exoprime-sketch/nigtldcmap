@@ -42,3 +42,10 @@
 .cdp-map-backdrop-v151 label { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; cursor: pointer; font-weight: 500; }
 .cdp-map-backdrop-v151 input { accent-color: #08796b; width: 16px; height: 16px; flex: none; }
 .cdp-map-backdrop-v151 > span { display: block; max-width: 226px; padding-top: 4px; font-size: 12px; }
+/* V164: the backdrop switch is gone; the layer card sits in the same top-left
+   stack (under the 34/63 picker in Viet Nam, at the top elsewhere) instead of
+   at a fixed offset, and stays one compact card. */
+.cdp-map-control-stack-v151 .cdp-map-overlay-card { position: static; top: auto; left: auto; max-width: min(300px, 100%); padding: 8px 10px; }
+.cdp-map-control-stack-v151 .cdp-map-overlay-card > strong { font-size: .86rem; }
+.cdp-map-canvas-wrap .cdp-map-control-stack-v151 .cdp-map-overlay-card { top: auto; }
+.cdp-map-backdrop-note-v164 { margin: 0; max-width: 240px; background: #fff; border: 1px solid #aabfc2; border-radius: 9px; padding: 6px 10px; color: #163b39; font-size: 12px; }

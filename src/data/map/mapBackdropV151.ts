@@ -13,6 +13,12 @@ type BackdropErrorEventV151 = MapLibreErrorEventV151 & { sourceId?: string };
 export type MapBackdropKindV151 = "terrain" | "satellite" | "streets" | "none";
 export const MAP_BACKDROP_KINDS_V151: readonly MapBackdropKindV151[] = ["terrain", "satellite", "streets", "none"];
 export const DEFAULT_MAP_BACKDROP_V151: MapBackdropKindV151 = "terrain";
+/**
+ * V164: the one backdrop every map draws - roads and Korean place names. The
+ * reader no longer switches it (지형 shading competed with the value colours);
+ * "none" is only the automatic fallback when its tiles cannot load.
+ */
+export const FIXED_MAP_BACKDROP_V164: MapBackdropKindV151 = "streets";
 export const MAP_BACKDROP_STORAGE_KEY_V151 = "cdp-map-backdrop-v151";
 export const LEGACY_MAP_BACKDROP_STORAGE_KEY_V150 = "cdp-map-backdrop-v150";
 

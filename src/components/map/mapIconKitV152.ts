@@ -6,6 +6,8 @@
 export { default as MapIconSpriteV152 } from "./MapIconSpriteV152";
 export { default as MapIconLegendV152 } from "./MapIconLegendV152";
 export {
+  assetIconCategoriesV164,
+  assetIconPropertiesV164,
   MAP_ICON_INK_V152,
   mapIconCategoryV152,
   mapIconImageIdV152,

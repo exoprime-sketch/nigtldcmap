@@ -59,6 +59,125 @@ function valueAtV158(row: CountryCompareSeriesV158, year: number): number | null
   return typeof point?.value === "number" && Number.isFinite(point.value) ? point.value : null;
 }
 
+/** V164: round steps (1, 2, 2.5, 5 x 10^n) for a value axis between lo and hi. */
+function niceTicksV164(lo: number, hi: number, count = 4): number[] {
+  if (!Number.isFinite(lo) || !Number.isFinite(hi)) return [];
+  if (lo === hi) {
+    const pad = Math.abs(lo) * 0.1 || 1;
+    lo -= pad;
+    hi += pad;
+  }
+  const raw = (hi - lo) / count;
+  const magnitude = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * magnitude).find((candidate) => candidate >= raw) || raw;
+  const first = Math.floor(lo / step) * step;
+  const ticks: number[] = [];
+  for (let value = first; value <= hi + step * 0.5; value += step) ticks.push(Number(value.toFixed(10)));
+  return ticks;
+}
+
+function formatAxisV164(value: number): string {
+  return value.toLocaleString("ko-KR", { maximumFractionDigits: Math.abs(value) < 10 ? 2 : 1 });
+}
+
+/**
+ * V164: the country lines with what a reader needs to read them - a value axis
+ * with its unit, the first, middle and last years, and each country's latest
+ * value at its line's end. The axis fits the data (a score between 37 and 50
+ * no longer sits in the top fifth of a 0-based box). Only years every country
+ * states are drawn, as before.
+ */
+function MultiLineChartV164({
+  title,
+  unit,
+  years,
+  rows,
+}: {
+  title: string;
+  unit: string;
+  years: number[];
+  rows: Array<{ row: CountryCompareSeriesV158; color: string }>;
+}) {
+  const width = 640;
+  const height = 240;
+  const left = 56;
+  const right = 118;
+  const top = 14;
+  const bottom = 30;
+  const values = years.flatMap((year) => rows.map(({ row }) => valueAtV158(row, year)).filter((value): value is number => value !== null));
+  if (values.length === 0) return null;
+  const ticks = niceTicksV164(Math.min(...values), Math.max(...values));
+  const lo = ticks[0];
+  const hi = ticks[ticks.length - 1];
+  const span = hi - lo || 1;
+  const x = (position: number) => (years.length === 1 ? left + (width - left - right) / 2 : left + (position / (years.length - 1)) * (width - left - right));
+  const y = (value: number) => top + (1 - (value - lo) / span) * (height - top - bottom);
+  const yearMarks = years.length <= 3 ? years.map((year, index) => ({ year, index })) : [0, Math.floor((years.length - 1) / 2), years.length - 1].map((index) => ({ year: years[index], index }));
+  const lastIndex = years.length - 1;
+  // End labels, nudged apart when two lines finish close together.
+  const ends = rows
+    .map(({ row, color }) => ({ row, color, value: valueAtV158(row, years[lastIndex]) }))
+    .filter((end): end is { row: CountryCompareSeriesV158; color: string; value: number } => end.value !== null)
+    .map((end) => ({ ...end, labelY: y(end.value) }))
+    .sort((a, b) => a.labelY - b.labelY);
+  for (let index = 1; index < ends.length; index += 1) {
+    if (ends[index].labelY - ends[index - 1].labelY < 14) ends[index].labelY = ends[index - 1].labelY + 14;
+  }
+  return (
+    <svg
+      className="ccb158__chart"
+      viewBox={`0 0 ${width} ${height}`}
+      role="img"
+      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${unit}` : ""}`}
+      data-testid="country-compare-lines-v158"
+    >
+      {ticks.map((tick) => (
+        <g key={tick} className="ccb158__tick">
+          <line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} stroke="#e1ebe7" strokeWidth="1" />
+          <text x={left - 6} y={y(tick) + 4} textAnchor="end" fontSize="11" fill="#5b7169">
+            {formatAxisV164(tick)}
+          </text>
+        </g>
+      ))}
+      {unit ? (
+        <text x={left - 6} y={top - 3} textAnchor="end" fontSize="10.5" fill="#5b7169" data-testid="country-compare-unit-v164">
+          {unit}
+        </text>
+      ) : null}
+      {yearMarks.map(({ year, index }) => (
+        <text key={year} x={x(index)} y={height - 10} textAnchor={index === 0 ? "start" : index === lastIndex ? "end" : "middle"} fontSize="11" fill="#5b7169">
+          {year}
+        </text>
+      ))}
+      {rows.map(({ row, color }) => (
+        <polyline
+          key={row.countryIso3}
+          fill="none"
+          stroke={color}
+          strokeWidth="2.4"
+          strokeLinejoin="round"
+          data-country={row.countryIso3}
+          points={years
+            .map((year, position) => {
+              const value = valueAtV158(row, year);
+              return value === null ? null : `${x(position).toFixed(1)},${y(value).toFixed(1)}`;
+            })
+            .filter(Boolean)
+            .join(" ")}
+        />
+      ))}
+      {ends.map((end) => (
+        <g key={end.row.countryIso3}>
+          <circle cx={x(lastIndex)} cy={y(end.value)} r="3.2" fill={end.color} />
+          <text x={x(lastIndex) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
+            {end.row.countryNameKo} {formatAxisV164(end.value)}
+          </text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 interface LatestPointV158 {
   year: number;
   value: number;
@@ -240,31 +359,15 @@ export default function CountryCompareBlockV158({
       </ul>
 
       {model.shape === "multi-line" ? (
-        <svg
-          className="ccb158__chart"
-          viewBox="0 0 320 160"
-          role="img"
-          aria-label={`${title} · ${model.matched.map((row) => row.countryNameKo).join(", ")}`}
-          data-testid="country-compare-lines-v158"
-        >
-          {model.matched.map((row, index) => (
-            <polyline
-              key={row.countryIso3}
-              fill="none"
-              stroke={COLORS_V158[index % COLORS_V158.length]}
-              strokeWidth="2"
-              data-country={row.countryIso3}
-              points={model.years
-                .map((year, position) => {
-                  const value = valueAtV158(row, year) ?? min;
-                  const x = model.years.length === 1 ? 160 : (position / (model.years.length - 1)) * 300 + 10;
-                  const y = 150 - ((value - min) / span) * 130;
-                  return `${x.toFixed(1)},${y.toFixed(1)}`;
-                })
-                .join(" ")}
-            />
-          ))}
-        </svg>
+        <MultiLineChartV164
+          title={title}
+          unit={compareKey.unit}
+          years={model.years}
+          rows={model.matched.map((row, index) => ({
+            row,
+            color: COLORS_V158[index % COLORS_V158.length],
+          }))}
+        />
       ) : (
         <table className="ccb158__bars" data-testid="country-compare-bars-v158">
           <caption>
@@ -306,7 +409,7 @@ export default function CountryCompareBlockV158({
       ) : null}
       {/* V162 PR-D: the measure is named in the block's title; the note states
           the year rule in words and never the internal indicator key. */}
-      {compareKey.yearRule === "latest-common" ? (
+      {compareKey.yearRule === "latest-common" && model.shape !== "multi-line" ? (
         <p className="ccb158__note">연도 기준 · 두 국가가 모두 가진 최신 연도</p>
       ) : null}
     </section>

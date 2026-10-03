@@ -23,7 +23,7 @@ import {
   applyMapBackdropV151,
   BACKDROP_SOURCE_PREFIX_V151,
   backdropOwnsCityLabelsV151,
-  readMapBackdropKindV151,
+  FIXED_MAP_BACKDROP_V164,
   removeMapBackdropV151,
   VIETNAM_CORE_BBOX_V151,
   type MapBackdropKindV151,
@@ -111,16 +111,9 @@ const BACKDROP_CREDIT_V152: Record<MapBackdropKindV151, string> = {
   none: "",
 };
 
-/** The kind to draw when the backdrop is on: the big map's saved kind, terrain when that is "none". */
+/** V164: the one backdrop every map draws (roads and Korean place names). */
 function backdropKindWhenOnV152(): MapBackdropKindV151 {
-  let storage: Storage | null = null;
-  try {
-    storage = window.localStorage;
-  } catch {
-    storage = null;
-  }
-  const saved = readMapBackdropKindV151(storage);
-  return saved === "none" ? "terrain" : saved;
+  return FIXED_MAP_BACKDROP_V164;
 }
 
 function registryCountryNameKoV163(iso3: string): string {
