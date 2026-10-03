@@ -894,12 +894,14 @@ export function publicTextV126(value: unknown): string | null {
  * goes as a whole - a source line is judged part by part (" / " and " | "
  * separate the parts), and only the parts that name a real source remain.
  */
-const SOURCE_NOTE_MARKER_V136_1 = /레코드별|attr_|시트|열\s*참조/u;
+// V163-BTN: the same note after the public wording turned 레코드 into 자료
+// ("(자료별 상이 — 1.2_entity 참조)" reached the BGD source filter).
+const SOURCE_NOTE_MARKER_V136_1 = /레코드별|자료별\s*상이|attr_|시트|열\s*참조/u;
 // V162: the 2026-09-30 attribution lines add the compiler's correction and
 // review memos - "[원천 정정] 종전 source_series_id …", "[DoD S-07 잠정] …
 // 재판정", "(근거: source_url …)" - written with the sheet's column names.
 const SOURCE_WORKING_NOTE_V161 =
-  /\[원천\s*정정\]|\[DoD\b|\b(?:source|license)_[a-z_]+\b|확인필요|제공기관\s*확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
+  /\[원천\s*정정\]|\[DoD\b|\b(?:source|license)_[a-z_]+\b|확인필요|제공기관\s*확인|출처\s*기관\s*미확인|해당\s*없음|공개\s*원천\s*부재|(?:생성|기재)\s*예정|발주처|용역사|STADT|현지조사|현지\s*컨설턴트|원천\s*미기재|Items_|_v\d+(?:\.\d+)*\b|\.(?:xlsx?|csv|docx?|hwpx?|pptx?)\b/iu;
 /** Parts of one source line: "A / B", "공개 원천: A | 현지조사: B". */
 const SOURCE_PART_SEPARATOR_V161 = /(\s+[|/]\s+)/u;
 /** The compiler's label in front of a part ("공개 원천: CTCN"). */
@@ -907,9 +909,11 @@ const SOURCE_PART_LABEL_V161 = /^공개\s*원천\s*:\s*/u;
 
 const SOURCE_NOTE_PATTERNS_V136_1: readonly RegExp[] = [
   // a bracketed aside about the sheet: "(레코드별 상이 - attr_19 참조)"
-  /\s*[([][^()[\]]*(?:레코드별|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
+  /\s*[([][^()[\]]*(?:레코드별|자료별\s*상이|attr_|시트|열\s*참조)[^()[\]]*[)\]]/gu,
   // everything from a dash or arrow onwards, once the tail turns into a note
-  /\s*[-—–→]\s*[^-—–→]*(?:레코드별|attr_|시트|열\s*참조)[\s\S]*$/u,
+  /\s*[-—–→]\s*[^-—–→]*(?:레코드별|자료별\s*상이|attr_|시트|열\s*참조)[\s\S]*$/u,
+  // V163-BTN: the compiler's own check after a cited document ("… 원문 자체 검산")
+  /\s*원문\s*자체\s*검산\s*$/u,
   // the file the provider shipped it in: "(projectsLocationAll.xml)"
   /\s*[([][^()[\]]*\.(?:xml|csv|json|xlsx?|geojson|zip|pdf)\s*[)\]]/giu,
 ];

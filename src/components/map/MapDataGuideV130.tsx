@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
+import { loadCatalogForCountrySelectionV122 } from "../../data/countries/countryDataFacadeV122";
 import {
   PUBLIC_MAP_TARGET_CATEGORIES_V138,
   publicMapDataFunctionV135,
@@ -26,7 +28,7 @@ function representation(layer: CountryMapLayerV122, regionWord = "성·시"): st
     return layer.spatialScopeType === "region"
       ? layer.aggregationLevel === "post-2025-34-unit"
         ? "개편 후 34개 성·시 값을 소속 63개 경계에 표시"
-        : "권역값을 연결한 성·시 경계"
+        : `권역값을 연결한 ${regionWord} 경계`
       : `${regionWord} 색상지도`;
   }
   if (layer.renderer === "partial-choropleth") return `일부 ${regionWord} 색상지도`;
@@ -48,6 +50,21 @@ export default function MapDataGuideV130({
 }: MapDataGuideV130Props) {
   // V140: the same count the home and the list state, from the map index.
   const availability = summarizeMapAvailabilityV140(layers, countryIso3);
+  // V163-BTN: the country's own list, as the finder counts it ("현재 N개의
+  // 데이터가 있습니다"); the guide said 152 (the framework) on every country.
+  const [catalogCount, setCatalogCount] = useState<number | null>(null);
+  useEffect(() => {
+    let alive = true;
+    setCatalogCount(null);
+    void loadCatalogForCountrySelectionV122(countryIso3 || DEFAULT_COUNTRY_ISO3_V158)
+      .then((items) => {
+        if (alive) setCatalogCount(items.length);
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [countryIso3]);
   const groups = GROUP_ORDER.map((group) => ({
     group,
     layers: layers.filter((layer) => layer.category === group),
@@ -62,7 +79,7 @@ export default function MapDataGuideV130({
         <div className="cdp-map-data-guide-v130__summary">
           <div>
             <strong>전체 데이터</strong>
-            <span>152개</span>
+            <span>{catalogCount === null ? "—" : `${catalogCount.toLocaleString("ko-KR")}개`}</span>
           </div>
           <div>
             <strong>지도</strong>
@@ -154,7 +171,8 @@ export default function MapDataGuideV130({
           className="cdp-map-data-guide-v130__link"
           onClick={onOpenDataFinder}
         >
-          전체 152개 데이터는 데이터 찾기에서 확인 →
+          {/* V163-BTN: the count was the framework total (152), not this country's list. */}
+          전체 데이터는 데이터 찾기에서 확인 →
         </button>
       </details>
     </section>

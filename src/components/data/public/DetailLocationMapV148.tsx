@@ -26,7 +26,7 @@ import { formatPublicNumberV126 } from "../../../data/visualization/publicNumber
 import { publicSourceOrganizationV136_1 } from "../../../data/visualization/publicFieldPolicyV126";
 import { PROVINCE_KO_V150 } from "../../../data/map/mapBackdropV150";
 import { publicMapTargetV138 } from "../../../data/visualization/publicMapWorkspaceV126";
-import { formatRegionName } from "../../../data/geo/regionNameV161";
+import { formatRegionName, formatRegionTextV162 } from "../../../data/geo/regionNameV161";
 import { MAP_PLACES_V150 } from "../../../data/map/mapBackdropV150";
 import "./detail-location-map-v148.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
@@ -316,7 +316,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
       </figure>
       {!compact && <div className="detail-map148-selection">
         <label>지역·대상 선택<select aria-label="작은 지도 지역·대상 선택" value={picked} onChange={(e) => setPicked(e.target.value)}><option value="">지도 또는 목록에서 선택</option>{model.options.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}</select></label>
-        {current ? <><h4>{current.label}</h4>{current.value !== null && <p className="detail-map148-value">{formatPublicNumberV126(current.value, units)} {units}</p>}{current.sourceRegion && <p className="detail-map148-note">{current.sourceRegion} 단위로 제공된 값입니다.</p>}
+        {current ? <><h4>{current.label}</h4>{current.value !== null && <p className="detail-map148-value">{formatPublicNumberV126(current.value, units)} {units}</p>}{current.sourceRegion && <p className="detail-map148-note">{formatRegionTextV162({ country: countryIso3, raw: current.sourceRegion })} 단위로 제공된 값입니다.</p>}
           {point && facilityCardSpecV153(elementId) ? <FacilityCardV153 elementId={elementId} entity={point} compact /> : <dl>{selectedFacts.map((f) => <div key={f.key}><dt>{f.label}</dt><dd>{/^https?:\/\//.test(f.value) ? <a href={f.value} target="_blank" rel="noreferrer">공식 원문</a> : f.value}</dd></div>)}</dl>}
           {point && <p className="detail-map148-note">{[mapIndicatorSourceV148(point.indicatorId, publicSourceOrganizationV136_1(point.provenance.sourceOrg) || ""), point.provenance.referenceYear].filter(Boolean).join(" · ")}</p>}
         </> : <p className="detail-map148-note">위치를 선택하면 지역 값이나 대상의 주요 정보를 확인할 수 있습니다.</p>}

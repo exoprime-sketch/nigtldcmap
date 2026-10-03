@@ -9,6 +9,8 @@ import {
   searchPublicDataV128,
 } from "../../data/publicPlatformV128";
 import type { PublicSearchItemV128 } from "../../data/publicPlatformV128";
+import { resolveHomeCountryV161 } from "../../data/homeCountryV161";
+import { DEFAULT_COUNTRY_ISO3_V158 } from "../../data/countryContext";
 import "../../styles/global-search-v41.css";
 
 interface GlobalQuickSearchV41Props {
@@ -33,7 +35,18 @@ export default function GlobalQuickSearchV41({
   onExploreSearch,
 }: GlobalQuickSearchV41Props) {
   const [query, setQuery] = useState("");
-  const [items, setItems] = useState<PublicSearchItemV128[]>([]);
+  // V163-BTN: the search covers the page's own country (`?country=`, else the
+  // default public country), read each time it opens; it was Viet Nam only.
+  const scope = useMemo(
+    () => (open ? resolveHomeCountryV161(window.location.search) : null),
+    [open]
+  );
+  const countryIso3 = scope?.iso3 || DEFAULT_COUNTRY_ISO3_V158;
+  const [loaded, setLoaded] = useState<{ iso3: string; items: PublicSearchItemV128[] } | null>(null);
+  const items = useMemo(
+    () => (loaded && loaded.iso3 === countryIso3 ? loaded.items : []),
+    [countryIso3, loaded]
+  );
   const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -47,9 +60,9 @@ export default function GlobalQuickSearchV41({
     let cancelled = false;
     setLoading(true);
     setLoadError(false);
-    void loadPublicSearchItemsV128()
+    void loadPublicSearchItemsV128(countryIso3)
       .then((value) => {
-        if (!cancelled) setItems(value);
+        if (!cancelled) setLoaded({ iso3: countryIso3, items: value });
       })
       .catch(() => {
         if (!cancelled) setLoadError(true);
@@ -60,7 +73,7 @@ export default function GlobalQuickSearchV41({
     return () => {
       cancelled = true;
     };
-  }, [items.length, open]);
+  }, [countryIso3, items.length, open]);
 
   useEffect(() => {
     if (!open) return;
@@ -111,7 +124,7 @@ export default function GlobalQuickSearchV41({
         <div className="global-search-v41-head">
           <div>
             <span className="global-search-v41-kicker">통합 검색</span>
-            <h2 id="global-search-v41-title">베트남 공개 데이터 찾기</h2>
+            <h2 id="global-search-v41-title">{scope ? `${scope.nameKo} ` : ""}공개 데이터 찾기</h2>
           </div>
           <button
             type="button"
@@ -153,7 +166,7 @@ export default function GlobalQuickSearchV41({
             <button
               type="button"
               className="global-search-v41-all-button"
-              onClick={() => closeAnd(() => onExploreSearch("", "VNM", null))}
+              onClick={() => closeAnd(() => onExploreSearch("", countryIso3, null))}
             >
               전체 데이터 보기 →
             </button>
@@ -191,7 +204,7 @@ export default function GlobalQuickSearchV41({
                           className="global-search-v41-result"
                           onClick={() =>
                             closeAnd(() =>
-                              onOpenElement(catalogItem.elementId, "VNM")
+                              onOpenElement(catalogItem.elementId, countryIso3)
                             )
                           }
                         >
@@ -229,7 +242,7 @@ export default function GlobalQuickSearchV41({
                               type="button"
                               onClick={() =>
                                 closeAnd(() =>
-                                  onOpenMapElement(catalogItem.elementId, "VNM")
+                                  onOpenMapElement(catalogItem.elementId, countryIso3)
                                 )
                               }
                             >
@@ -241,7 +254,7 @@ export default function GlobalQuickSearchV41({
                               type="button"
                               onClick={() =>
                                 closeAnd(() =>
-                                  onOpenDownload(catalogItem.elementId, "VNM")
+                                  onOpenDownload(catalogItem.elementId, countryIso3)
                                 )
                               }
                             >
@@ -267,7 +280,7 @@ export default function GlobalQuickSearchV41({
                 type="button"
                 className="global-search-v41-all-button"
                 onClick={() =>
-                  closeAnd(() => onExploreSearch(query.trim(), "VNM", null))
+                  closeAnd(() => onExploreSearch(query.trim(), countryIso3, null))
                 }
               >
                 데이터 찾기에서 전체 결과 보기 →
