@@ -29,6 +29,12 @@
 - `scripts/v157/public-wording-scan-v157.mjs`: OSM 'ko (value)' 예외 삭제(화면이 더는 원문 키를 붙이지 않음) — 기준 강화
 - 날짜 확인 패턴은 데이터 버전 표기(v2026-04-30) 뒤의 '확인'은 제외 — 버전명은 확인 날짜가 아님
 
+## V163-DL(다운로드·quality-report, 2026-10-03)
+- 공개 다운로드 CSV 열에서 `source_file`·`source_sheet`·`source_row` 제거(납품 워크북 출처 = 내부 작업 정보, 사용자 지시). BGD 검증기 `SCHEMA_CSV_HEADER`는 VNM CSV 머리글과 비교하므로 양국 같은 열로 통과
+- 다운로드 JSON에서 `provenance.sourceFileOriginal/sourceFileDecoded/sourceSheet/sourceRow/sourcePackage`, 요소 `sourceWorkbook` 제거. quality-report에서 `archiveName`·`sheetNames` 제거(읽는 감사 스크립트는 summary·행 수·sourceZip.sha256만 사용)
+- 지표 메타 `unit`의 시트 참조 꼬리('…, 1.2_entity 3행 머리글 괄호 표기 참조') 제거 — 레코드 값 단위는 보호(바뀌지 않음, 값 열 대조로 확인)
+- 화면용 팩·카탈로그는 다운로드 규칙을 적용하지 않음(화면 변화 0) — #63 공개 텍스트 규칙만 그대로
+
 ## V163-T3 (2026-10-03) — `src/data/countries/countryCopyV158.test.ts`
 - 변경: 'a reviewed series phrase naming the default country…' 테스트가 실제 문구표(publicIndicatorCopyV144.json)에서 베트남 국명이 든 문구를 찾지 못하면 실패하던 것을, 없을 때는 A-006 '국가추정'이 다른 나라에서도 '국가 통계'로 읽히는지 확인하도록 변경. 국명이 든 문구가 다시 생기면 기존 규칙(다른 나라에서는 원값) 그대로 검사.
 - 사유: 그 문구가 유일했던 A-006 '국가추정' → '베트남 통계'를 국가 중립 '국가 통계'로 바꿈. 방글라데시 A-006 차트 필터에 '베트남 통계'가 표시되던 결함(운영 전수 점검 21:25 발견) 수정.

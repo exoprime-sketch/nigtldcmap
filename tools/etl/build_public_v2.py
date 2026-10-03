@@ -1559,9 +1559,8 @@ def _download_csv(
         "source_org",
         "source_url",
         "license_code",
-        "source_file",
-        "source_sheet",
-        "source_row",
+        # V163-DL: the delivery workbook's file, sheet and row are our working
+        # provenance, not the source's; the public CSV cites org, URL and licence.
         "publication_decision_id",
     ]
     stream = io.StringIO(newline="")
@@ -2545,11 +2544,19 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
             }
         # V158: the same JSON and CSV bytes as before, shipped in one
         # deterministic ZIP (tools/etl/download_zip_v158.py).
+        # V163-DL: the download is a cleaned copy (workbook provenance dropped,
+        # working notes out of every text field); the pack keeps its records.
+        document = public_text_v163.download_document_v163(document, element_id=element["elementId"], country=country_iso3, log=public_text_log_v163)
+        download_source_v163 = public_text_v163._source_name(document, country_iso3)
         zip_path = write_element_zip(
             out / "downloads",
             token,
             _json_bytes(document, pretty=False),
-            _download_csv(element, observations, entities),
+            _download_csv(
+                document["element"],
+                public_text_v163.download_rows_v163(observations, element_id=element["elementId"], country=country_iso3, source_name=download_source_v163, log=public_text_log_v163),
+                public_text_v163.download_rows_v163(entities, element_id=element["elementId"], country=country_iso3, source_name=download_source_v163, log=public_text_log_v163),
+            ),
             element["downloadAssets"][0],
         )
         record_count = int(element.get("downloadableRecordCount") or 0)
@@ -2838,6 +2845,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     }
     for row in rights_rows:
         public_text_v163.sanitize_payload(row, element_id=str(row.get("elementId") or ""), country=country_iso3, log=public_text_log_v163)
+    # V163-DL: the quality report is a public file too (not drawn on any screen).
+    quality_report = public_text_v163.sanitize_download_v163(quality_report, country=country_iso3, source_name=None, element_id="quality-report", log=public_text_log_v163)
     public_text_v163.write_internal_report(public_text_log_v163, country_iso3)
     _write_json(out / "catalog.json", {"schemaVersion": SCHEMA_VERSION, "elements": catalog})
     _write_json(out / "framework-coverage.json", framework_coverage)
