@@ -23,7 +23,7 @@ test("C-008 lists every initiative and treaty as a labelled card, description fi
   const cards = section.querySelectorAll('[data-testid="policy-description-v153"]');
   expect(cards).toHaveLength(23);
   const jetp = section.querySelector('[data-policy-key="jetp"]')!;
-  expect(jetp.querySelector(".pdc153__label")!.textContent).toMatch(/^플랫폼 편집 설명 · 출처 \d+건 · \d{4}-\d{2}-\d{2} 확인$/u);
+  expect(jetp.querySelector(".pdc153__label")!.textContent).toMatch(/^플랫폼 편집 설명 · 출처 \d+건 · \d{4}-\d{2}-\d{2} 기준$/u);
   const title = jetp.querySelector(".pdc153__title")!.textContent!;
   expect(title.indexOf("석탄")).toBeLessThan(title.indexOf("(Just Energy Transition Partnership"));
   expect(title).toContain("JETP)");

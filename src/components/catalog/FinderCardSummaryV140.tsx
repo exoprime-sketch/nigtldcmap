@@ -25,14 +25,14 @@ const SERIES = ["#0f766e", "#c2410c", "#2563eb", "#7c3aed", "#b45309", "#0e7490"
 const fmt = (value: number, digits?: number) => {
   const abs = Math.abs(value);
   const fraction = digits ?? (abs >= 100 ? 0 : abs >= 10 ? 1 : abs >= 1 ? 2 : 3);
-  if (abs >= 1e8) return `${(value / 1e8).toLocaleString("en-US", { maximumFractionDigits: 2 })}억`;
+  // V163: an axis label asks for whole numbers ("4,601억", not "4,601.32억").
+  if (abs >= 1e8) return `${(value / 1e8).toLocaleString("en-US", { maximumFractionDigits: digits ?? 2 })}억`;
   if (abs >= 1e6) return `${(value / 1e4).toLocaleString("en-US", { maximumFractionDigits: 0 })}만`;
   return value.toLocaleString("en-US", { maximumFractionDigits: fraction, minimumFractionDigits: 0 });
 };
 
 function Line({ points, unit, seriesLabel, historicalUntil }: { points: Array<{ year: number; value: number }>; unit?: string; seriesLabel?: string; historicalUntil?: number | null }) {
   const H = 96;
-  const x0 = 40;
   const x1 = W - 8;
   const y0 = 8;
   const y1 = H - 20;
@@ -42,6 +42,10 @@ function Line({ points, unit, seriesLabel, historicalUntil }: { points: Array<{ 
   const maxYear = Math.max(...years);
   const maxValue = Math.max(...values, 0);
   const minValue = Math.min(...values, 0);
+  // V163: the plot starts where the longer axis label ends (about 6px a
+  // character at 10px), never closer than the old 40px.
+  const axisLabelWidth = Math.max(fmt(maxValue, 0).length, fmt(minValue, 0).length) * 6;
+  const x0 = Math.max(40, axisLabelWidth + 8);
   const sx = (year: number) => x0 + ((year - minYear) / Math.max(1, maxYear - minYear)) * (x1 - x0);
   const sy = (value: number) => y1 - ((value - minValue) / Math.max(1e-9, maxValue - minValue)) * (y1 - y0);
   const path = (subset: typeof points) =>

@@ -95,7 +95,7 @@ const KEBAB_CASE_V157 = /\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b/gu;
 const TAG_SYNTAX_V157 = /\b[a-z][a-z0-9_]*=[a-z][a-z0-9_/]*\b/gu;
 // V163 (user decision 2026-10-03): a working-note tag, a processing-rule
 // citation or a check date - counted on every screen, provider prose included.
-const MEMO_MARKER_V163 = /\[(?:라이선스 (?:근거|판정|확인)[^\]]*|출처 문구[^\]]*|표출범위|변경 고지|기준 원천|대조|처리규칙[^\]]*|DoD[^\]]*|열 구조|10개국 비교가능성|원천 갱신일 근거|추가수집[^\]]*|수집 방법|원문 정제)\]|처리규칙|\d{4}-\d{2}-\d{2}\s*확인/gu;
+const MEMO_MARKER_V163 = /\[(?:라이선스 (?:근거|판정|확인)[^\]]*|출처 문구[^\]]*|표출범위|변경 고지|기준 원천|대조|처리규칙[^\]]*|DoD[^\]]*|열 구조|10개국 비교가능성|원천 갱신일 근거|추가수집[^\]]*|수집 방법|원문 정제)\]|처리규칙|(?<!v)\d{4}-\d{2}-\d{2}\s*확인/gu;
 // V162 (user decision 2026-09-30): a file name in the text a reader sees - a
 // link's href is not text, and a URL is masked as a citation above - is a
 // working file on the screen (C-003 "nap_report_eng_small.pdf").

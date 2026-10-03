@@ -88,6 +88,13 @@ export function countrySourceLabelV158(item: CountrySpecItemV158 | null | undefi
     )
   );
   if (names.length === 0) return "";
+  // V163: one organisation is named once - "JRC — EDGAR · JRC — IEA-EDGAR CO2"
+  // reads "JRC — EDGAR · IEA-EDGAR CO2" (the card summaries' provider line does the same).
+  const split = names.map((name) => name.split(" — "));
+  const heads = new Set(split.map((parts) => parts[0].trim()));
+  if (names.length > 1 && names.length <= 3 && heads.size === 1 && split.every((parts) => parts.length > 1)) {
+    return `${[...heads][0]} — ${split.map((parts) => parts.slice(1).join(" — ").trim()).join(" · ")}`;
+  }
   if (names.length <= 2) return names.join(" · ");
   return `${names.slice(0, 2).join(" · ")} 외 ${names.length - 2}`;
 }

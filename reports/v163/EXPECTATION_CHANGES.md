@@ -23,3 +23,8 @@
 
 - 최초 작업 지시에는 BGD B-045·VNM C-023·E-013을 찾기/홈/다운로드 목록에서 숨기라는 내용이 있었으나, 작업 중 사용자가 "숨기지 않는다 — 기존 2026-09-29 결정(끝에 위치, '데이터 준비 중' 카드 유지)을 유지하고, 정렬·문구만 검증하라"로 정정했다.
 - 그에 따라 `isExcludedCatalogItemV156`/`loadCatalogForCountrySelectionV122`/`scripts/v162/acceptance-v162.mjs`의 `preparing-finder`·`preparing-detail` 체크는 **손대지 않았다**(원래 계획했던 숨김 변경은 코드에 반영되기 전에 정정 지시를 받아 실제 수정이 없었음). 검증 결과 두 체크 모두 기존 그대로 PASS.
+
+## 본 세션 추가분
+- `scripts/v153/qa-policy-descriptions-v153.mjs`·`PolicyDescriptionV153.test.tsx`: 정책 설명 카드 라벨 '… yyyy-mm-dd 확인' → '… yyyy-mm-dd 기준'(공개 문구 스캔의 'yyyy-mm-dd 확인' 금지 패턴, 사용자 지시)
+- `scripts/v157/public-wording-scan-v157.mjs`: OSM 'ko (value)' 예외 삭제(화면이 더는 원문 키를 붙이지 않음) — 기준 강화
+- 날짜 확인 패턴은 데이터 버전 표기(v2026-04-30) 뒤의 '확인'은 제외 — 버전명은 확인 날짜가 아님

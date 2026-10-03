@@ -1,7 +1,7 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-10-03T05:52:53.368Z",
+ "generatedAt": "2026-10-03T06:12:23.272Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
@@ -1406,186 +1406,55 @@
   {
    "elementId": "A-010",
    "title": "GHG 배출량[CO₂, CH₄, N₂O, F-gas]",
+   "kind": "composition",
    "headline": {
-    "value": "1.82 Gg",
-    "label": "가스별 배출량 · F-gas · 불소계 온실가스 10개 화종 질량 합계 · 2024년"
+    "value": "221",
+    "label": "MtCO₂e · 2024년 네 가스 합계"
    },
-   "period": "1990–2024년",
+   "preview": {
+    "parts": [
+     {
+      "label": "CO2",
+      "value": 124.190733
+     },
+     {
+      "label": "CH4",
+      "value": 70.455422
+     },
+     {
+      "label": "N2O",
+      "value": 23.279864
+     },
+     {
+      "label": "F-gas",
+      "value": 2.900702
+     }
+    ],
+    "unit": "MtCO₂e",
+    "scope": "2024년",
+    "omitted": 0,
+    "total": 220.826721
+   },
+   "period": "1970–2024년",
    "selection": {
-    "measure": "measure-a8662d9267c1",
+    "measure": "measure-165d8811fba3",
     "sex": null,
     "year": 2024,
     "period": null,
     "dimensions": {
-     "category": "F-gas",
-     "detail": "불소계 온실가스 10개 화종 질량 합계"
-    }
-   },
-   "measure": {
-    "key": "measure-a8662d9267c1",
-    "label": "가스별 배출량",
-    "unit": "Gg"
-   },
-   "kind": "line",
-   "preview": {
-    "points": [
-     {
-      "year": 1990,
-      "value": 0.000484
-     },
-     {
-      "year": 1991,
-      "value": 0.011383
-     },
-     {
-      "year": 1992,
-      "value": 0.02137
-     },
-     {
-      "year": 1993,
-      "value": 0.03113
-     },
-     {
-      "year": 1994,
-      "value": 0.048567
-     },
-     {
-      "year": 1995,
-      "value": 0.066538
-     },
-     {
-      "year": 1996,
-      "value": 0.085667
-     },
-     {
-      "year": 1997,
-      "value": 0.104279
-     },
-     {
-      "year": 1998,
-      "value": 0.125706
-     },
-     {
-      "year": 1999,
-      "value": 0.154056
-     },
-     {
-      "year": 2000,
-      "value": 0.229897
-     },
-     {
-      "year": 2001,
-      "value": 0.277209
-     },
-     {
-      "year": 2002,
-      "value": 0.329602
-     },
-     {
-      "year": 2003,
-      "value": 0.393289
-     },
-     {
-      "year": 2004,
-      "value": 0.44812
-     },
-     {
-      "year": 2005,
-      "value": 0.504395
-     },
-     {
-      "year": 2006,
-      "value": 0.541951
-     },
-     {
-      "year": 2007,
-      "value": 0.572687
-     },
-     {
-      "year": 2008,
-      "value": 0.612577
-     },
-     {
-      "year": 2009,
-      "value": 0.650518
-     },
-     {
-      "year": 2010,
-      "value": 0.680921
-     },
-     {
-      "year": 2011,
-      "value": 0.686898
-     },
-     {
-      "year": 2012,
-      "value": 0.688129
-     },
-     {
-      "year": 2013,
-      "value": 0.703671
-     },
-     {
-      "year": 2014,
-      "value": 0.768434
-     },
-     {
-      "year": 2015,
-      "value": 0.850767
-     },
-     {
-      "year": 2016,
-      "value": 0.945425
-     },
-     {
-      "year": 2017,
-      "value": 1.047563
-     },
-     {
-      "year": 2018,
-      "value": 1.166255
-     },
-     {
-      "year": 2019,
-      "value": 1.271418
-     },
-     {
-      "year": 2020,
-      "value": 1.380082
-     },
-     {
-      "year": 2021,
-      "value": 1.490922
-     },
-     {
-      "year": 2022,
-      "value": 1.599144
-     },
-     {
-      "year": 2023,
-      "value": 1.708386
-     },
-     {
-      "year": 2024,
-      "value": 1.817118
-     }
-    ],
-    "unit": "Gg",
-    "seriesLabel": "F-gas · 불소계 온실가스 10개 화종 질량 합계",
-    "first": {
-     "year": 1990,
-     "value": 0.000484
-    },
-    "latest": {
-     "year": 2024,
-     "value": 1.817118
+     "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "가스별 배출량(Gg) F-gas · 불소계 온실가스 10개 화종 질량 합계 계열 · 35개 연도 · 최신 2024년 값을 대표값으로"
+    "rule": "가스별 배출량(MtCO₂e)을 2024년 기준으로 4개 항목에서 비교"
    },
-   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2",
+   "measure": {
+    "key": "measure-165d8811fba3",
+    "label": "가스별 배출량",
+    "unit": "MtCO₂e"
+   },
+   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · IEA-EDGAR CO2",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
@@ -1593,13 +1462,16 @@
     "observationCount": 420,
     "entityCount": 0,
     "indicatorIds": [
-     "A-010_emissions_ch4_mass",
-     "A-010_emissions_co2_mass",
-     "A-010_emissions_fgas_mass",
-     "A-010_emissions_n2o_mass"
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_fgas_co2eq",
+     "A-010_emissions_n2o_co2eq"
     ],
     "headlineIndicatorIds": [
-     "A-010_emissions_fgas_mass"
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_n2o_co2eq",
+     "A-010_emissions_fgas_co2eq"
     ]
    }
   },
@@ -13239,7 +13111,7 @@
    "title": "수력 잠재량",
    "kind": "spatial",
    "headline": {
-    "value": "21,226 GWh/yr",
+    "value": "21,226 GWh/년",
     "label": "이론 총잠재량 최대 · Rajshahi · 8개 주(Division) 중 · 2017년 기준"
    },
    "preview": {
@@ -13265,7 +13137,7 @@
       "value": 7295.46
      }
     ],
-    "unit": "GWh/yr",
+    "unit": "GWh/년",
     "scope": "이론 총잠재량 상위 5개 주(Division)",
     "median": 7541.41,
     "range": {
@@ -13288,12 +13160,12 @@
    },
    "basis": {
     "unit": "주(Division) 값",
-    "rule": "이론 총잠재량(GWh/yr) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "rule": "이론 총잠재량(GWh/년) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "이론_총잠재량_GWh_yr",
     "label": "이론 총잠재량",
-    "unit": "GWh/yr"
+    "unit": "GWh/년"
    },
    "provider": "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · U.S. EIA International Energy Statistics · Energy Institute Statistical Review · IHA · Energy Institute · U.S. EIA · World Bank/ESMAP",
    "mapConnected": true,
@@ -15272,7 +15144,7 @@
     "unit": "관측값",
     "rule": "감축/적응 구분별 예산 배분 비율(%) 역량강화 · 제도강화(BCCSAP 주제영역) · FY2019-20 총 기후예산 대비 비중 · 단일 시점이므로 추이를 그리지 않음"
    },
-   "provider": "방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2019-20판 · 방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2026-27판(BSS·TBS 인용)",
+   "provider": "방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2019-20판 · Climate Financing for Sustainable Development (기후예산보고서) — FY2026-27판(BSS·TBS 인용)",
    "mapConnected": false,
    "downloadable": false,
    "provenance": {

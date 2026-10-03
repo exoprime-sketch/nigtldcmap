@@ -56,7 +56,7 @@ export function PolicyDescriptionCardV153({ entry, headingLevel = "p" }: { entry
       aria-label={`${entry.title} 플랫폼 편집 설명`}
     >
       <p className="pdc153__label">
-        플랫폼 편집 설명 · 출처 {sources.length.toLocaleString("ko-KR")}건 · {entry.checkedAt} 확인
+        플랫폼 편집 설명 · 출처 {sources.length.toLocaleString("ko-KR")}건 · {entry.checkedAt} 기준
       </p>
       <Heading className="pdc153__title">
         <strong><PublicTermTextV134 text={entry.title} /></strong>
