@@ -84,6 +84,7 @@ import {
 } from "./comparePaneDataV163";
 import { createComparePaneEngineV163, type ComparePaneEngineV163 } from "./comparePaneEngineV163";
 import "../../../styles/map-comparison-v163.css";
+import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 
 export interface CompareCountryOptionV163 {
   iso3: string;
@@ -237,7 +238,8 @@ function presentationV163(
   // country's layer reads its own variable label and unit.
   const reviewed = iso3 === DEFAULT_COUNTRY_ISO3_V158 ? getPublicIndicatorVariablePresentationV129(layer.elementId, selector.variable) : null;
   const firstValueUnit = prepared?.data.features.find((feature) => feature.properties?.hasValue)?.properties?.unit;
-  const unit = reviewed?.unit || publicTextV126(option?.unit) || publicTextV126(firstValueUnit) || publicTextV126(layer.unit) || "";
+  // Units read with the same display spelling as the detail page (displayUnitV150).
+  const unit = displayUnitV150(reviewed?.unit || publicTextV126(option?.unit) || publicTextV126(firstValueUnit) || publicTextV126(layer.unit) || "");
   const measureLabel =
     reviewed?.label || publicTextV126(option?.label) || publicTextV126(layer.legend?.title) || layerTitleV163(layer, iso3);
   const level1 = countryLevel1V158(iso3);
