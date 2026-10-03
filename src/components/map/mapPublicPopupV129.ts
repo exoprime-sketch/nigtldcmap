@@ -24,24 +24,32 @@ export function createPublicMapPopupContentV129(
     root.setAttribute(`data-${name}`, value);
   });
   const appendPublicText = (node: HTMLElement, value: string) => {
-    tokenizePublicTermsV134(value, { firstOccurrenceOnly: false }).forEach(
-      (token) => {
-        if (token.type === "text") {
-          node.appendChild(document.createTextNode(token.value));
-          return;
-        }
-        const term = document.createElement("span");
-        term.setAttribute("data-public-term-v134", token.entry.id);
-        term.setAttribute("data-public-term-mode", "visible-expansion");
-        term.appendChild(document.createTextNode(token.value));
+    const tokens = tokenizePublicTermsV134(value, { firstOccurrenceOnly: false });
+    let before = "";
+    tokens.forEach((token) => {
+      if (token.type === "text") {
+        node.appendChild(document.createTextNode(token.value));
+        before += token.value;
+        return;
+      }
+      const term = document.createElement("span");
+      term.setAttribute("data-public-term-v134", token.entry.id);
+      term.setAttribute("data-public-term-mode", "visible-expansion");
+      term.appendChild(document.createTextNode(token.value));
+      // V163-T3: a term already inside brackets ("평균 정전시간(SAIDI)") or
+      // already named in the line is not expanded again - no "(SAIDI(…))".
+      const insideBrackets = /\([^()]*$/u.test(before);
+      const alreadyNamed = value.includes(token.entry.koreanName);
+      if (!insideBrackets && !alreadyNamed) {
         const expansion = document.createElement("span");
         expansion.className = "public-term-visible-expansion-v134";
         expansion.setAttribute("data-public-term-expansion-v134", "true");
         expansion.textContent = `(${token.entry.koreanName})`;
         term.appendChild(expansion);
-        node.appendChild(term);
       }
-    );
+      node.appendChild(term);
+      before += token.value;
+    });
   };
   const heading = document.createElement("strong");
   appendPublicText(heading, title);

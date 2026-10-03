@@ -53,8 +53,15 @@ describe("country-scoped reviewed copy V158", () => {
         Object.entries(phrases).map(([raw, phrase]) => ({ elementId, raw, phrase }))
       )
       .find((row) => row.phrase.includes(defaultEntry.nameKo));
-    expect(found).toBeDefined();
-    const { elementId, raw, phrase } = found!;
+    // V163-T3: the only such phrase (A-006 '국가추정' → '베트남 통계') now reads
+    // the country-neutral '국가 통계' (a chart filter printed it on Bangladesh
+    // pages). While no reviewed phrase names the default country there is
+    // nothing to give way; a phrase added later is held to the rule below.
+    if (!found) {
+      expect(publicIndicatorDimensionV144("A-006", "국가추정", other)).toBe("국가 통계");
+      return;
+    }
+    const { elementId, raw, phrase } = found;
     expect(publicIndicatorDimensionV144(elementId, raw)).toBe(phrase);
     expect(publicIndicatorDimensionV144(elementId, raw, DEFAULT_COUNTRY_ISO3_V158)).toBe(phrase);
     expect(publicIndicatorDimensionV144(elementId, raw, other)).toBe(raw);

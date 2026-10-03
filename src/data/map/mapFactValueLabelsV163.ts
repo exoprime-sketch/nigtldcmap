@@ -79,6 +79,28 @@ const COUNTRY_KO_V163: Readonly<Record<string, string>> = {
   Turkey: "튀르키예",
 };
 
+// Carbon-credit registry project types (Verra / Gold Standard "Type").
+const CREDIT_TYPES_V163: Readonly<Record<string, string>> = {
+  "leak detection & repair in gas systems": "가스 배관 누출 탐지·보수",
+  cookstoves: "고효율 조리기구(쿡스토브)",
+  "solar - centralized": "태양광(집중형)",
+  "solar - distributed": "태양광(분산형)",
+  composting: "퇴비화",
+  "afforestation/reforestation": "신규조림·재조림",
+  "electric vehicles & charging": "전기차·충전",
+  "sustainable agriculture": "지속가능 농업",
+  wind: "풍력",
+  hydropower: "수력",
+  biogas: "바이오가스",
+  "landfill gas": "매립가스",
+  "energy efficiency": "에너지 효율",
+  "waste heat recovery": "폐열 회수",
+  biomass: "바이오매스",
+  "rice cultivation": "벼 재배(메탄 저감)",
+  "clean water": "깨끗한 물 공급",
+  "fuel switching": "연료 전환",
+};
+
 function gemStatusLabelV163(value: string): string | null {
   const text = value.trim().toLowerCase();
   if (GEM_STATUS_V163[text]) return GEM_STATUS_V163[text];
@@ -104,6 +126,8 @@ export function publicMapFactValueV163(key: string, value: string): string {
       const label = gemStatusLabelV163(text);
       return label || text;
     }
+    case "technology":
+      return CREDIT_TYPES_V163[lower] || text;
     case "nationality":
       // GEM owner nationality: "China(20%)", "United States; Bangladesh".
       return text.replace(/[A-Z][A-Za-z.]*(?: [A-Z][A-Za-z.]*)*/gu, (name) => COUNTRY_KO_V163[name] || name);

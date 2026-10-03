@@ -26,6 +26,11 @@ test("owner nationality and multi-word mine type", () => {
   expect(publicMapFactValueV163("remarks", "운영형태 Processing Plant · 개발단계 가동 설비(플랜트)")).toBe("운영형태 가공 설비 · 개발단계 가동 설비(플랜트)");
 });
 
+test("carbon-credit project types", () => {
+  expect(publicMapFactValueV163("technology", "Cookstoves")).toBe("고효율 조리기구(쿡스토브)");
+  expect(publicMapFactValueV163("technology", "Solar - Centralized")).toBe("태양광(집중형)");
+});
+
 test("unknown values and other fields stay as written", () => {
   expect(publicMapFactValueV163("status", "In service")).toBe("In service");
   expect(publicMapFactValueV163("name", "Riverine flood")).toBe("Riverine flood");

@@ -1226,6 +1226,32 @@ function publicMapFeatureNameV126(value: unknown, fallback: string): string {
   return publicTextV126(value) || fallback;
 }
 
+/**
+ * V163-T3: a boundary unit's name as every map surface prints it - hover
+ * popup, keyboard navigator, summary and the selection panel title all read
+ * "한글명 (현지명)" (VNM in the boundary vintage of the feature).
+ */
+function publicRegionLabelV163(
+  value: unknown,
+  countryIso3: string,
+  boundarySystem?: unknown
+): string | null {
+  const raw = publicTextV126(value);
+  if (!raw) return null;
+  return (
+    formatRegionListV161(raw, {
+      country: countryIso3,
+      ...(countryIso3 === DEFAULT_COUNTRY_ISO3_V158
+        ? {
+            level: (boundarySystem === "post-2025-34" ? "adm1-34" : "adm1-63") as
+              | "adm1-34"
+              | "adm1-63",
+          }
+        : {}),
+    }) || raw
+  );
+}
+
 function publicMapEntityTitleV131(
   entity: CountryEntityV122,
   layer: CountryMapLayerV122
@@ -3091,12 +3117,24 @@ export default function RealMapExplorerPage({
                   ? ` ${publicUnit}`
                   : ""
               }`
-            : "결측";
+            : "값 없음";
           const participantCount = optionalFiniteNumberV130(
             properties.participantCount
           );
+          // V163-T3: a facility or site (BGD point layers) is named with its
+          // kind, or its own value and unit - it has no area value to be "결측".
+          const assetValueV163 = optionalFiniteNumberV130(properties.value);
+          const assetUnitV163 = publicTextV126(properties.valueUnit) || "";
+          const assetDetailV163 =
+            assetValueV163 !== null && assetUnitV163
+              ? `${formatPublicNumberV126(assetValueV163, assetUnitV163)} ${assetUnitV163}`
+              : publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
           const featureLabel =
-            renderer === "line"
+            renderer === "point-and-polygon"
+              ? [publicMapFeatureNameV126(properties.name || properties.kindLabel, "시설·구역"), assetDetailV163]
+                  .filter(Boolean)
+                  .join(" · ")
+              : renderer === "line"
               ? `${properties.voltageKv || properties.voltage || ""} kV · ${
                   parsedLength !== null && Number.isFinite(parsedLength)
                     ? `${formatPublicNumberV126(parsedLength, "km")} km`
@@ -3111,10 +3149,16 @@ export default function RealMapExplorerPage({
                     ? "참여국 수 미표기"
                     : `${participantCount}개 참여국`
                 }`
-              : `${publicMapFeatureNameV126(
-                  properties.adm1Name || properties.name,
-                  "성·시"
-                )} · ${variablePresentationV129?.label || "현재 값"} ${formattedAreaValue}`;
+              : `${
+                  publicRegionLabelV163(properties.adm1Name || properties.name, countryIso3, properties.boundarySystem) ||
+                  regionWordV158(countryIso3).word
+                } · ${
+                  // V163-T3: the item the colours show, never a bare "현재 값".
+                  variablePresentationV129?.label ||
+                  publicTextV126(properties.variableLabel) ||
+                  layer.legend?.title ||
+                  "값"
+                } ${formattedAreaValue}`;
           const sourceRegion = publicVietnamSourceRegionV126(
             publicTextV126(properties.sourceRegion) || undefined
           );
@@ -3171,7 +3215,10 @@ export default function RealMapExplorerPage({
                         : publicTextV126(properties.sourceRegion)
                         ? `[${regionUnitLabelV138(layer)} 값] ${sourceRegion}`
                         : isPrimary
-                        ? "선택 데이터"
+                        ? // V163-T3: the period the value belongs to, not a role word.
+                          publicTextV126(properties.period) || publicTextV126(selector.period)
+                          ? `기준 ${publicTextV126(properties.period) || publicTextV126(selector.period)}`
+                          : ""
                         : "함께 보기",
                       boundaryLineV151,
                     ],
@@ -4744,6 +4791,9 @@ export default function RealMapExplorerPage({
         selectedOwningSemantic?.measureLabel ||
         selectedOwningLayer.legend.title;
       const unit =
+        // V163-T3: a site's own value unit (B-028 m³/s) before the layer's
+        // count noun ("곳"), so its rank and average read in the right unit.
+        publicTextV126(properties.valueUnit) ||
         selectedOwningVariablePresentationV129?.unit ||
         selectedSpatial.unit ||
         selectedOwningSemantic?.unit ||
@@ -4832,7 +4882,12 @@ export default function RealMapExplorerPage({
             "자료 설명",
             properties.categoryLabel
               ? `${properties.categoryLabel} 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다.`
-              : "소속 그룹(전력총공사 관할·가격 권역·사회경제 권역) 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다."
+              : `소속 ${
+                  // V163-T3: the group this layer uses, not all three kinds.
+                  ({ "A-022": "전력총공사 관할", "C-017": "발전가격 권역", "A-013": "사회경제 권역", "C-003": "사회경제 권역" } as Record<string, string>)[
+                    selectedOwningLayer.elementId
+                  ] || "그룹"
+                } 전체에 적용되는 값이며, 성·시마다 다른 값이 아닙니다.`
           )
         );
       } else if (properties.boundarySystem === "post-2025-34" && selectedMemberSummaryV151) {
@@ -4895,7 +4950,15 @@ export default function RealMapExplorerPage({
               ? formatRegionListV161(raw, { country: countryIso3 }) || raw
               : publicMapFactValueV163(field.key, raw)
             : raw;
-        const text = shown === null || shown === undefined || shown === "" ? "" : `${shown}${field.unit ? ` ${field.unit}` : ""}`;
+        // V163-T3: a number reads with thousands separators, and a value
+        // field without a stated unit takes the feature's own (B-028 m³/s).
+        const unitV163 = field.unit || (field.key === "value" ? publicTextV126(properties.valueUnit) || "" : "");
+        const shownText =
+          typeof shown === "number" && Number.isFinite(shown) ? formatPublicNumberV126(shown, unitV163) : shown;
+        const text =
+          shownText === null || shownText === undefined || shownText === ""
+            ? ""
+            : `${shownText}${unitV163 ? ` ${unitV163}` : ""}`;
         lines.push(...selectionLineV161(field.label, text));
       });
       if (layerCardV162.referenceMap?.notice) {
@@ -4962,13 +5025,26 @@ export default function RealMapExplorerPage({
           const label = String(feature.properties?.categoryLabel || "");
           if (label) categoryCounts[label] = (categoryCounts[label] ?? 0) + 1;
         });
-        comparison.push(
-          ...categoryShareLinesV161(
-            String(properties.categoryLabel || ""),
-            categoryCounts,
-            isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word
-          )
-        );
+        const peerWordV163 = isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word;
+        const ownCategoryV163 = String(properties.categoryLabel || "");
+        if (
+          ownCategoryV163 &&
+          policyKindForVariableV151(selectedOwningLayer.boundaryPolicy, selectedOwningSelector?.variable) ===
+            "group-constant"
+        ) {
+          // V163-T3: a group value (A-022 관할, C-017 가격 권역) - say how many
+          // units share it, not a "category share" of one repeated figure.
+          const ownCount = categoryCounts[ownCategoryV163] ?? 0;
+          const total = Object.values(categoryCounts).reduce((sum, count) => sum + count, 0);
+          if (ownCount > 0) {
+            comparison.push({
+              label: `같은 값을 쓰는 ${peerWordV163}`,
+              value: `${ownCount.toLocaleString()}개 (값이 있는 ${peerWordV163} ${total.toLocaleString()}개 중)`,
+            });
+          }
+        } else {
+          comparison.push(...categoryShareLinesV161(ownCategoryV163, categoryCounts, peerWordV163));
+        }
       }
       if (selectedB021RegionRankV129) {
         comparison.push({ label: "권역 비교", value: selectedB021RegionRankV129 });
@@ -5261,11 +5337,16 @@ export default function RealMapExplorerPage({
               )}`
             : publicMapFeatureNameV126(
                 properties.adm1Name || properties.name,
-                "성·시"
+                regionWordV158(countryIso3).word
               );
+        const isRegionNameV163 =
+          renderer !== "line" && renderer !== "point-and-polygon" && renderer !== "regional-scope";
+        const shownNameV163 = isRegionNameV163
+          ? publicRegionLabelV163(name, countryIso3, properties.boundarySystem) || name
+          : name;
         features.push({
           elementId,
-          label: `${title} · ${name}`,
+          label: `${title} · ${shownNameV163}`,
           role,
           spatial: {
             elementId,
@@ -5312,6 +5393,7 @@ export default function RealMapExplorerPage({
     return features;
   }, [
     boundaryContextV151,
+    countryIso3,
     filters,
     layers,
     primaryLayerId,
@@ -8303,7 +8385,7 @@ export default function RealMapExplorerPage({
                         data-region-unit={selectedB033TrendV132.unit}
                       >
                         <InteractiveTimeSeriesChartV127
-                          ariaLabel={`${selectedB033TrendV132.region} ${selectedB033TrendV132.measureLabel} 추이`}
+                          ariaLabel={`${publicRegionLabelV163(selectedB033TrendV132.region, countryIso3, selectedSpatial?.properties?.boundarySystem) || selectedB033TrendV132.region} ${selectedB033TrendV132.measureLabel} 추이`}
                           className="cdp-map-region-trend-v132__chart"
                           formatValue={(value) =>
                             formatPublicNumberV126(
@@ -8316,7 +8398,7 @@ export default function RealMapExplorerPage({
                           sharedYearTooltip={selectedB033TrendV132.scenarioSeries}
                           showDelta={false}
                           testId="map-b033-region-trend-chart"
-                          title={`${selectedB033TrendV132.region} ${selectedB033TrendV132.measureLabel} 추이`}
+                          title={`${publicRegionLabelV163(selectedB033TrendV132.region, countryIso3, selectedSpatial?.properties?.boundarySystem) || selectedB033TrendV132.region} ${selectedB033TrendV132.measureLabel} 추이`}
                           tooltipMode="nearest-point"
                           unit={selectedB033TrendV132.unit}
                           xAxisTitle="연도"
