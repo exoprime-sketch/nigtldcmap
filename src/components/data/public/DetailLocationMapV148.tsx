@@ -34,6 +34,7 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
 import { COUNTRY_OUTLINE_Z5_PATH_V151 } from "../../../data/map/adminBoundaryV151";
 import MiniMapV152 from "../../map/MiniMapV152";
+import { countryOutlineZ5UrlV163 } from "../../../map/layers/baseStyle";
 import { miniMapHandoffV152, type MiniMapHandoffV152 } from "../../map/miniMapStateV152";
 import type { MiniMapLegendV152 } from "../../map/miniMapEngineV152";
 import { TRANSMISSION_VOLTAGE_CLASSES_V152 as LINE_CLASSES_V152 } from "../../../map/layers/lineLayer";
@@ -105,10 +106,10 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
       if (!baseUrl) { if (!cancelled) setUnavailable(true); return; }
       const [base, outline, geometry, data, records] = await Promise.all([
         loader.loadSpatialGeoJson(baseUrl),
-        // The coast stroke is Viet Nam's own dissolved outline. Another country has none: the Natural
-        // Earth world file's feature (36 vertices for Bangladesh) runs straight across the 8-division
-        // asset's coast and delta, so a line drawn from it would contradict the map under it.
-        isDefault ? loader.loadSpatialGeoJson(OUTLINE).catch(() => null) : Promise.resolve(null),
+        // The coast stroke is the country's own dissolved outline (display z5). Natural Earth's
+        // feature (36 vertices for Bangladesh) runs across the division asset's coast and delta,
+        // so it is never used here; a missing outline simply draws none.
+        Promise.resolve().then(() => loader.loadSpatialGeoJson(isDefault ? OUTLINE : countryOutlineZ5UrlV163(countryIso3))).catch(() => null),
         layer.geometryUrl ? loader.loadSpatialGeoJson(layer.geometryUrl) : Promise.resolve(undefined),
         layer.dataUrl ? loader.loadSpatialLayer(layer.dataUrl) : Promise.resolve(undefined),
         layer.geometryUrl ? Promise.resolve(EMPTY_RECORDS) : loadCountryElementEntitiesV122(countryIso3, elementId).then((r) => r.records),
