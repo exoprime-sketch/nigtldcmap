@@ -313,3 +313,31 @@ export function wideRecordsOfEntitiesV162(entities: VietnamEntityV124[]): WideRe
   if (!first) return [];
   return readWideRecordsV162(entities, fieldDefinitionsForV162(first.countryIso3, first.elementId));
 }
+
+const REFORMED_NAME_ATTRIBUTE_V163 = "지역명 (개편 전)";
+const CURRENT_NAME_ATTRIBUTE_V163 = "지역명 (현행)";
+const PLAIN_NAME_ATTRIBUTE_V163 = "지역명";
+
+/**
+ * V163 (3a): a [지역] block's "지역명 (개편 전)"/"지역명 (현행)" pair is the 2025
+ * Vietnamese administrative reform's before/after name - meaningful only for a
+ * country that went through that reform. A country with no reform (e.g.
+ * Bangladesh) that nonetheless carries both columns (inherited from the same
+ * wide-sheet template, both filled with the one name it has) shows a single
+ * plain "지역명" row instead - the "개편 전" column dropped, never invented.
+ * The default country (Viet Nam) is untouched: its two columns always stay,
+ * whatever their values.
+ */
+export function mergeRegionNameValuesV163(values: WideValueV162[]): WideValueV162[] {
+  const current = values.find((value) => value.attribute === CURRENT_NAME_ATTRIBUTE_V163);
+  const reformed = values.find((value) => value.attribute === REFORMED_NAME_ATTRIBUTE_V163);
+  if (!current && !reformed) return values;
+  const kept = current || reformed;
+  if (!kept) return values;
+  return [
+    { ...kept, attribute: PLAIN_NAME_ATTRIBUTE_V163 },
+    ...values.filter(
+      (value) => value.attribute !== CURRENT_NAME_ATTRIBUTE_V163 && value.attribute !== REFORMED_NAME_ATTRIBUTE_V163
+    ),
+  ];
+}

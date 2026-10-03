@@ -1,7 +1,18 @@
 import { useId, useState } from "react";
 import type { DatasetSpecRowV159, UseCaseDataRefV159, UseCaseV159 } from "../../../data/spec/specTypesV159";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
+import { publicTextV126, publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import "./data-description-v159.css";
+
+/**
+ * True when a spec field has nothing left to show once the same filtering
+ * `PublicTermTextV134` applies at render time (country-scope wording, the
+ * "원천 미기재" pass) runs on it. A heading with that empty body under it
+ * is worse than no heading (V163, item 7).
+ */
+function hasPublicBodyV163(value: string | null | undefined): boolean {
+  return Boolean(publicUnstatedWordingV161(publicTextV126(value) || "").trim());
+}
 
 export interface DataDescriptionV159Props {
   spec: DatasetSpecRowV159 | null;
@@ -143,6 +154,10 @@ export default function DataDescriptionV159({
 
   if (!spec) return null;
 
+  const hasDescription = hasPublicBodyV163(spec.description);
+  const hasUsage = hasPublicBodyV163(spec.usage);
+  if (!hasDescription && !hasUsage && cases.length === 0) return null;
+
   const handleToggleChip = (chipKey: string, ids: string[]) => {
     if (activeChipKey === chipKey) {
       setActiveChipKey(null);
@@ -162,18 +177,22 @@ export default function DataDescriptionV159({
       data-dd159-cases={cases.length}
       data-testid="data-description-v159"
     >
-      <div className="dd159-part" data-dd159-part="description">
-        <h3>상세 설명</h3>
-        <p>
-          <PublicTermTextV134 text={spec.description} />
-        </p>
-      </div>
-      <div className="dd159-part" data-dd159-part="usage">
-        <h3>활용 방법</h3>
-        <p>
-          <PublicTermTextV134 text={spec.usage} />
-        </p>
-      </div>
+      {hasDescription && (
+        <div className="dd159-part" data-dd159-part="description">
+          <h3>상세 설명</h3>
+          <p>
+            <PublicTermTextV134 text={spec.description} />
+          </p>
+        </div>
+      )}
+      {hasUsage && (
+        <div className="dd159-part" data-dd159-part="usage">
+          <h3>활용 방법</h3>
+          <p>
+            <PublicTermTextV134 text={spec.usage} />
+          </p>
+        </div>
+      )}
       {cases.length > 0 && (
         <div className="dd159-part" data-dd159-part="cases">
           <h3>

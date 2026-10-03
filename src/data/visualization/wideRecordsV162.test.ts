@@ -236,3 +236,28 @@ describe("V162 public wording of the supplier's process and migration log", () =
     expect(publicRecordNoteV161("판권면을 재확인한 결과 Germanwatch_CRI2026_full_report.pdf 에 CC 표기가 없다.")).toBe("판권면을 재확인한 결과 에 CC 표기가 없다.");
   });
 });
+
+describe("V163 (3a): a [지역] block's 개편 전/현행 pair collapses to one 지역명 for a country with no reform", () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { mergeRegionNameValuesV163 } = require("./wideRecordsV162");
+  it("keeps '현행' and drops '개편 전', renamed to the plain '지역명'", () => {
+    const values = [
+      { attribute: "지역명 (개편 전)", value: "다카" },
+      { attribute: "지역명 (현행)", value: "다카" },
+      { attribute: "행정코드 (현행)", value: "BGD.3_1" },
+    ];
+    expect(mergeRegionNameValuesV163(values)).toEqual([
+      { attribute: "지역명", value: "다카" },
+      { attribute: "행정코드 (현행)", value: "BGD.3_1" },
+    ]);
+  });
+  it("falls back to '개편 전' alone when '현행' is absent", () => {
+    expect(mergeRegionNameValuesV163([{ attribute: "지역명 (개편 전)", value: "치타공" }])).toEqual([
+      { attribute: "지역명", value: "치타공" },
+    ]);
+  });
+  it("leaves a block with neither name attribute untouched", () => {
+    const values = [{ attribute: "행정코드 (현행)", value: "BGD.3_1" }];
+    expect(mergeRegionNameValuesV163(values)).toBe(values);
+  });
+});

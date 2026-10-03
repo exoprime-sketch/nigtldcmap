@@ -326,6 +326,23 @@ const PUBLIC_DIMENSION_VALUE_LABELS_V134: Record<string, string> = {
     "승인된 온실가스 프로그램에서 이전",
   "Verification approval requested": "검증 승인 요청",
   Withdrawn: "철회",
+  // V163 (4b): snake_case source codes the generated contract leaves
+  // untranslated (its own label repeats the raw value) - a faithful Korean
+  // gloss of the English term, nothing inferred beyond it.
+  first_ndc: "1차 NDC",
+  indc: "INDC(의도된 국가결정기여)",
+  armed_forces: "군인",
+  machine_operator: "설비·기계 조작원",
+  service_sales: "서비스·판매 종사자",
+  guarantee_amount_total_active: "보증금액 합계(유효)",
+  guarantee_amount_total_not_active: "보증금액 합계(비유효)",
+  guarantee_amount_total_proposed: "보증금액 합계(제안)",
+  guarantee_count_active: "보증 건수(유효)",
+  guarantee_count_climate_finance: "보증 건수(기후금융)",
+  guarantee_count_not_active: "보증 건수(비유효)",
+  guarantee_count_power_sector: "보증 건수(전력부문)",
+  guarantee_count_proposed: "보증 건수(제안)",
+  guarantee_count_total: "보증 건수(합계)",
 };
 
 /**

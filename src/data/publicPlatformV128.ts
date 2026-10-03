@@ -216,7 +216,12 @@ export async function loadPublicOverviewV161(countryIso3: string): Promise<Publi
         manifest.publicStatusCounts.actual +
         manifest.publicStatusCounts["public-authorized"] +
         manifest.publicStatusCounts.partial,
-      downloadableElementCount: manifest.downloadableElementCount,
+      // V163 (5iv): the download hub's own count, not the manifest's -
+      // `downloadAllowed` alone (the manifest's count) includes an element
+      // whose sheet carries no populated row yet (BGD B-045); the hub already
+      // excludes it (`hasDownloadableData`, which also checks the row count).
+      // One rule, read in both places.
+      downloadableElementCount: catalog.filter((item) => item.hasDownloadableData).length,
       mapLayerCount: activeLayers.length,
       mapElementIds: activeLayers.map((layer) => layer.elementId),
       // V162: the date the source arrived, per country; the build time only when a
