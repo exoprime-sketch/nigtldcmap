@@ -30,6 +30,7 @@ from .download_delivery_v137 import (
     describe_asset as describe_download_asset,
 )
 from .download_zip_v158 import write_element_zip, zip_download_asset
+from . import public_text_v163
 from .d018_facts_v137 import (
     AGGREGATES as D018_AGGREGATES,
     derive_d018_facts,
@@ -1801,6 +1802,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
     output_override = os.environ.get("VIETNAM_V2_OUTPUT", "").strip()
     expected_workbooks = int(os.environ.get("VIETNAM_EXPECTED_WORKBOOKS", "149"))
     row_exclusions_v162 = _load_row_exclusions_v162(repo)
+    # V163: working notes taken out of public text fields (internal report only).
+    public_text_log_v163: list[dict[str, Any]] = []
     delivered_at_v162: str | None = None  # resolved once source_dir is known
     row_exclusion_summary_v162: dict[str, Any] = {}
 
@@ -2437,6 +2440,8 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
                 "records": entities,
             },
         }
+        public_text_v163.sanitize_payload(payload, element_id=element_id, country=country_iso3, log=public_text_log_v163)
+        public_text_v163.sanitize_payload(element, element_id=element_id, country=country_iso3, log=public_text_log_v163)
         payloads[element_id] = payload
         catalog.append(element)
         coverage.append(
@@ -2831,6 +2836,9 @@ def build(repo: pathlib.Path) -> dict[str, Any]:
         "authorizedPrivacyBlockedCount": 0,
         "elements": rights_rows,
     }
+    for row in rights_rows:
+        public_text_v163.sanitize_payload(row, element_id=str(row.get("elementId") or ""), country=country_iso3, log=public_text_log_v163)
+    public_text_v163.write_internal_report(public_text_log_v163, country_iso3)
     _write_json(out / "catalog.json", {"schemaVersion": SCHEMA_VERSION, "elements": catalog})
     _write_json(out / "framework-coverage.json", framework_coverage)
     _write_json(out / "quality-report.json", quality_report)

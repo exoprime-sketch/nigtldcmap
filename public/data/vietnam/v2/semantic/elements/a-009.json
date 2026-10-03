@@ -106,10 +106,10 @@
         "unitFamily": "emissions"
       },
       "seriesKey": "measure-90f520e15b99|tCO2eq/1,000 국제달러|category=GDP 대비|detail=GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량|A-009_ghg_intensity_gdp_ppp",
-      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceCaveat": "[산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」.",
       "sourceLabel": "GHG 배출 강도 · GDP 대비 — GDP(PPP, 2021년 불변 국제달러) 1,000달러당 온실가스 배출량",
       "sourceLabelEn": "GHG emissions intensity per unit of GDP (PPP, constant 2021 international $)",
-      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceNote": "[산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」.",
       "sourceProvenance": {
         "elementId": "A-009",
         "indicatorId": "A-009_ghg_intensity_gdp_ppp",
@@ -138,10 +138,10 @@
         "unitFamily": "emissions"
       },
       "seriesKey": "measure-d46d687b64ca|tCO2eq/인|category=1인당|detail=인구 1인당 온실가스 배출량|A-009_ghg_intensity_per_capita",
-      "sourceCaveat": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceCaveat": "[산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」.",
       "sourceLabel": "GHG 배출 강도 · 1인당 — 인구 1인당 온실가스 배출량",
       "sourceLabelEn": "GHG emissions per capita",
-      "sourceNote": "[원본 버전] EU JRC EDGAR Community GHG Database, version EDGAR_2025_GHG(2025년 9월 9일 공개). raw는 EDGAR 웹툴 내려받기 파일이며 값은 원문 그대로임. LULUCF는 제외된 계열임. [산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」. [비교가능성] 10개국 정의 일치 여부는 전 대상국 취합 후 공통 기준으로 일괄 판정할 사항이므로 미확인으로 둠.",
+      "sourceNote": "[산출 근거] 검토의견 1번(출처 미기재)·2번(기준연도·불변가격 미표시)·3번(산출방법 주석 누락)에 대응하여 분자·분모 원천과 불변가격 기준을 모두 명시함. 분자는 EDGAR AR5 GHG 총배출량(LULUCF 제외), 분모는 세계은행 WDI GDP PPP 불변 2021 국제달러(NY.GDP.MKTP.PP.KD) 및 총인구(SP.POP.TOTL)임. [원문 확인] EDGAR raw 파일에는 GDP·인구 열이 존재하지 않으며(전 시트 확인), 인용 시트가 GDP 출처를 참조만 하고 값은 담고 있지 않음. 따라서 분모는 외부 원천을 사용해야 하며 이를 산출방식에 기재함. [라이선스] EDGAR는 CC BY 4.0, 세계은행 WDI는 CC BY 4.0이므로 재배포 「가능」.",
       "sourceProvenance": {
         "elementId": "A-009",
         "indicatorId": "A-009_ghg_intensity_per_capita",

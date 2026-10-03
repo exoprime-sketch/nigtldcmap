@@ -120,6 +120,18 @@ function normalizeDownloadCountryIso3(value: string | null): string | null {
   return hasCountryDataProviderV122(normalized) ? normalized : null;
 }
 
+/**
+ * V163 (5iii): the address bar's own `?country=`, read live rather than from
+ * the mount-time snapshot. The home page keeps its own country selection out
+ * of `selectedCountryIso3` (it reads the URL directly), so a header nav click
+ * made there - "데이터 다운로드" and the like - otherwise lost the country the
+ * reader was just looking at. Used only as a fallback, after the state each
+ * view already tracks.
+ */
+function currentUrlCountryIso3(): string | null {
+  return normalizeDownloadCountryIso3(new URLSearchParams(window.location.search).get("country"));
+}
+
 const COMPARE_TABS = new Set<CompareTab>(["indicator", "trend", "ndc", "gcf"]);
 
 const NDC_COMPARE_TECHNOLOGY_IDS = new Set([
@@ -857,9 +869,9 @@ export default function App() {
     }
 
     const currentContextCountry =
-      view === "explorer" && explorerCountryIso3 !== "all"
+      (view === "explorer" && explorerCountryIso3 !== "all"
         ? explorerCountryIso3
-        : selectedCountryIso3;
+        : selectedCountryIso3) || currentUrlCountryIso3();
 
     if (nextView === "explorer") {
       setExplorerCountryIso3(

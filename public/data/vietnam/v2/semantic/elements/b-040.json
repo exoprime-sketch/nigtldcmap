@@ -32,10 +32,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-2087231e0e35|MWt|technology=06,07|B-040_direct_use_thermal",
-      "sourceCaveat": "[누락 보완] [raw]\\[미수집]\\B-040_geothermal_potential.csv 에 수집돼 있었으나 지표행이 없어 누락돼 있던 항목. 발전(MW)과 단위·용도가 달라 별도 지표로 분리 수록. WGC는 5년 주기 국가보고서로 최신판 확인 시 갱신 필요. / [10개국 비교가능성] X — 베트남 국가보고서 기반. 10개국 확장은 GIS 경로 필요 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[누락 보완] [raw]\\[미수집]\\「DGGV (2021)」 에 수집돼 있었으나 지표행이 없어 누락돼 있던 항목. 발전(MW)과 단위·용도가 달라 별도 지표로 분리 수록. WGC는 5년 주기 국가보고서로 최신판 확인 시 갱신 필요.",
       "sourceLabel": "직접이용(열) 잠재량",
       "sourceLabelEn": "Direct-use thermal potential",
-      "sourceNote": "[누락 보완] [raw]\\[미수집]\\B-040_geothermal_potential.csv 에 수집돼 있었으나 지표행이 없어 누락돼 있던 항목. 발전(MW)과 단위·용도가 달라 별도 지표로 분리 수록. WGC는 5년 주기 국가보고서로 최신판 확인 시 갱신 필요. / [10개국 비교가능성] X — 베트남 국가보고서 기반. 10개국 확장은 GIS 경로 필요 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[누락 보완] [raw]\\[미수집]\\「DGGV (2021)」 에 수집돼 있었으나 지표행이 없어 누락돼 있던 항목. 발전(MW)과 단위·용도가 달라 별도 지표로 분리 수록. WGC는 5년 주기 국가보고서로 최신판 확인 시 갱신 필요.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_direct_use_thermal",
@@ -64,10 +64,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-40749593106a|백만 kW|detail=실적(EIA)|technology=07|B-040_geo_capacity_eia",
-      "sourceCaveat": "[근거 계열 신규 수록] 2000–2024년 전 연도 0. 발전량과 마찬가지로 명시적 0값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[근거 계열 신규 수록] 2000–2024년 전 연도 0. 발전량과 마찬가지로 명시적 0값임.",
       "sourceLabel": "지열 발전설비 용량 — 실적(EIA)",
       "sourceLabelEn": "Geothermal electricity installed capacity (EIA)",
-      "sourceNote": "[근거 계열 신규 수록] 2000–2024년 전 연도 0. 발전량과 마찬가지로 명시적 0값임. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[근거 계열 신규 수록] 2000–2024년 전 연도 0. 발전량과 마찬가지로 명시적 0값임.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_geo_capacity_eia",
@@ -96,10 +96,10 @@
         "unitFamily": "energy"
       },
       "seriesKey": "measure-9f446e55e5eb|십억 kWh/yr|detail=실적(EIA)|technology=07|B-040_geo_generation_eia",
-      "sourceCaveat": "[근거 계열 신규 수록] 종전에는 \"상업 발전 실적 전무\"가 서술로만 있고 인용 가능한 계열이 없었음. 보유 [raw] EIA 벌크파일에 **1980–2024년 45개년 전 연도 값 0**이 명시적으로 기재되어 있어 수록. 0은 결측이 아니라 원천이 보고한 실제 0값이며, 이로써 \"발전 실적 전무\"가 데이터로 뒷받침됩니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[근거 계열 신규 수록] 종전에는 \"상업 발전 실적 전무\"가 서술로만 있고 인용 가능한 계열이 없었음. 보유 [raw] EIA 벌크파일에 **1980–2024년 45개년 전 연도 값 0**이 명시적으로 기재되어 있어 수록. 0은 결측이 아니라 원천이 보고한 실제 0값이며, 이로써 \"발전 실적 전무\"가 데이터로 뒷받침됩니다.",
       "sourceLabel": "지열 발전량 — 실적(EIA)",
       "sourceLabelEn": "Geothermal electricity net generation (EIA)",
-      "sourceNote": "[근거 계열 신규 수록] 종전에는 \"상업 발전 실적 전무\"가 서술로만 있고 인용 가능한 계열이 없었음. 보유 [raw] EIA 벌크파일에 **1980–2024년 45개년 전 연도 값 0**이 명시적으로 기재되어 있어 수록. 0은 결측이 아니라 원천이 보고한 실제 0값이며, 이로써 \"발전 실적 전무\"가 데이터로 뒷받침됩니다. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[근거 계열 신규 수록] 종전에는 \"상업 발전 실적 전무\"가 서술로만 있고 인용 가능한 계열이 없었음. 보유 [raw] EIA 벌크파일에 **1980–2024년 45개년 전 연도 값 0**이 명시적으로 기재되어 있어 수록. 0은 결측이 아니라 원천이 보고한 실제 0값이며, 이로써 \"발전 실적 전무\"가 데이터로 뒷받침됩니다.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_geo_generation_eia",
@@ -188,10 +188,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-b454a6d3dfff|℃/km|detail=1→2km|technology=07|B-040_gis_geothermal_gradient_1_2km",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표.",
       "sourceLabel": "지온경사(GIS 기반 산출) — 1→2km",
       "sourceLabelEn": "Geothermal gradient (GIS-derived)",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_geothermal_gradient_1_2km",
@@ -220,10 +220,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-b454a6d3dfff|℃/km|detail=2→3km|technology=07|B-040_gis_geothermal_gradient_2_3km",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표.",
       "sourceLabel": "지온경사(GIS 기반 산출) — 2→3km",
       "sourceLabelEn": "Geothermal gradient (GIS-derived)",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 원자료 검증 목적으로 산출한 파생 지표.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_geothermal_gradient_2_3km",
@@ -254,10 +254,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=25분위|technology=07|B-040_gis_temp_1km_25",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 25분위",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_25",
@@ -288,10 +288,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=75분위|technology=07|B-040_gis_temp_1km_75",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 75분위",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_75",
@@ -322,10 +322,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=중앙값|technology=07|B-040_gis_temp_1km_g03",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 중앙값",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_g03",
@@ -356,10 +356,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=최대|technology=07|B-040_gis_temp_1km_g04",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 최대",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_g04",
@@ -390,10 +390,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=최소|technology=07|B-040_gis_temp_1km_g05",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 최소",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_g05",
@@ -424,10 +424,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-44010b0366a7|℃|detail=GIS 국가 집계|detail_2=평균|technology=07|B-040_gis_temp_1km_g06",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 1km 지온 — GIS 국가 집계 — 평균",
       "sourceLabelEn": "Subsurface temperature at 1 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 지온경사 검증: 전 격자에서 1km<2km<3km 단조 증가(3,986/3,986셀 = 100%), 평균 지온경사 1→2km 21.5℃/km · 2→3km 20.7℃/km로 대륙지각 통상범위와 부합. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_1km_g06",
@@ -458,10 +458,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=25분위|technology=07|B-040_gis_temp_2km_25",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 25분위",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_25",
@@ -492,10 +492,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=75분위|technology=07|B-040_gis_temp_2km_75",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 75분위",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_75",
@@ -526,10 +526,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=중앙값|technology=07|B-040_gis_temp_2km_g03",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 중앙값",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_g03",
@@ -560,10 +560,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=최대|technology=07|B-040_gis_temp_2km_g04",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 최대",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_g04",
@@ -594,10 +594,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=최소|technology=07|B-040_gis_temp_2km_g05",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 최소",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_g05",
@@ -628,10 +628,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-172b9be5466d|℃|detail=GIS 국가 집계|detail_2=평균|technology=07|B-040_gis_temp_2km_g06",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 2km 지온 — GIS 국가 집계 — 평균",
       "sourceLabelEn": "Subsurface temperature at 2 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_2km_g06",
@@ -662,10 +662,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=25분위|technology=07|B-040_gis_temp_3km_25",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 25분위",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_25",
@@ -696,10 +696,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=75분위|technology=07|B-040_gis_temp_3km_75",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 75분위",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_75",
@@ -730,10 +730,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=중앙값|technology=07|B-040_gis_temp_3km_g03",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 중앙값",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_g03",
@@ -764,10 +764,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=최대|technology=07|B-040_gis_temp_3km_g04",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 최대",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_g04",
@@ -798,10 +798,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=최소|technology=07|B-040_gis_temp_3km_g05",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 최소",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_g05",
@@ -832,10 +832,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-87d99c782845|℃|detail=GIS 국가 집계|detail_2=평균|technology=07|B-040_gis_temp_3km_g06",
-      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceLabel": "심도 3km 지온 — GIS 국가 집계 — 평균",
       "sourceLabelEn": "Subsurface temperature at 3 km depth",
-      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. 본 지표는 심도 3,000m로 기준이 고정되어 있어 10개국 동일 비교가 가능. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 격자 → 국가 면적가중 집계 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[GIS 산출 완료] IRENA Global Atlas 계정 발급 → 레이어 선정 → 다운로드 → 국경 절단 → 국가 집계까지 완료하여 종전 결측(M06)을 해소함. 원본 GeoTIFF는 [raw] 폴더에 보존. 기존 지표 temp_deep(심부수온 100–210℃, WGC 문헌)과는 산출 근거·심도 기준이 달라 접속하지 않고 별도 수록. / [지역 해상도] 격자 → 국가 면적가중 집계",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_gis_temp_3km_g06",
@@ -862,7 +862,7 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-44ad738d9f54|℃ / MW|detail=GIS 기반|B-040_gis_thermal",
-      "sourceCaveat": "[10개국 비교가능성] O — IRENA Global Atlas 전지구 레이어 / [지역 해상도] 지역(admin)·격자 단위 산출 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[지역 해상도] 지역(admin)·격자 단위 산출 가능",
       "sourceLabel": "지열 잠재량 — GIS 기반",
       "sourceLabelEn": "Geothermal potential (GIS)",
       "sourceNote": "2026년: 선정 7개 레이어 중 심도별 지온 3종은 수집·집계 완료(위 3개 지표로 분리 수록). 남은 EGS 이론 잠재량 1종·기술 잠재량 3종(회수율 2·14·20%)은 래스터는 확보했으나 원천이 단위를 표기하지 않아 수록 보류 — 단위 확인 후 즉시 반영 가능",
@@ -892,10 +892,10 @@
         "unitFamily": "count"
       },
       "seriesKey": "measure-efc020d676ff|개소|category=지열원 개소 (범위 상한)|B-040_hot_springs_max",
-      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능",
       "sourceLabel": "온천·지열원 개소 (범위 상한)",
       "sourceLabelEn": "Hot springs / geothermal sources",
-      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_hot_springs_max",
@@ -922,10 +922,10 @@
         "unitFamily": "count"
       },
       "seriesKey": "measure-efc020d676ff|개소|category=지열원 개소 (범위 하한)|B-040_hot_springs_min",
-      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능",
       "sourceLabel": "온천·지열원 개소 (범위 하한)",
       "sourceLabelEn": "Hot springs / geothermal sources",
-      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[지역 해상도] 지역(point) — 좌표 확보 시 지점 단위 관리 가능",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_hot_springs_min",
@@ -952,10 +952,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-57f223c42dfb|MW|technology=07|B-040_power_potential_max",
-      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": null,
       "sourceLabel": "발전 잠재량 (범위 상한)",
       "sourceLabelEn": "Geothermal power potential",
-      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": null,
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_power_potential_max",
@@ -982,10 +982,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-8ec7d46e065d|MW|technology=07|B-040_power_potential_min",
-      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": null,
       "sourceLabel": "발전 잠재량 (범위 하한)",
       "sourceLabelEn": "Geothermal power potential",
-      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": null,
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_power_potential_min",
@@ -1012,10 +1012,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-cc250e8cfaf5|MW|technology=07|B-040_technical_potential",
-      "sourceCaveat": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": null,
       "sourceLabel": "기술 잠재량",
       "sourceLabelEn": "Technical geothermal potential",
-      "sourceNote": "[10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": null,
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_technical_potential",
@@ -1044,10 +1044,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-1dbf50587b0d|℃|detail=심부 (범위 상한)|technology=07|B-040_temp_deep_max",
-      "sourceCaveat": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함.",
       "sourceLabel": "지열 저류층 온도 — 심부 (범위 상한)",
       "sourceLabelEn": "Geothermal reservoir temperature (deep)",
-      "sourceNote": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_temp_deep_max",
@@ -1076,10 +1076,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-1dbf50587b0d|℃|detail=심부 (범위 하한)|technology=07|B-040_temp_deep_min",
-      "sourceCaveat": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함.",
       "sourceLabel": "지열 저류층 온도 — 심부 (범위 하한)",
       "sourceLabelEn": "Geothermal reservoir temperature (deep)",
-      "sourceNote": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[누락 보완] 상동. 심부 온도가 100℃를 넘어 이론적으로는 발전이 가능한 구간이 존재하나, 실제 상업 발전 실적은 전무하다는 점을 발전 잠재량 지표와 함께 읽어야 함.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_temp_deep_min",
@@ -1108,10 +1108,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-1dbf50587b0d|℃|detail=표층 (범위 상한)|technology=06|B-040_temp_surface_max",
-      "sourceCaveat": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔.",
       "sourceLabel": "지열 저류층 온도 — 표층 (범위 상한)",
       "sourceLabelEn": "Geothermal reservoir temperature (surface)",
-      "sourceNote": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_temp_surface_max",
@@ -1140,10 +1140,10 @@
         "unitFamily": "other"
       },
       "seriesKey": "measure-1dbf50587b0d|℃|detail=표층 (범위 하한)|technology=06|B-040_temp_surface_min",
-      "sourceCaveat": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔.",
       "sourceLabel": "지열 저류층 온도 — 표층 (범위 하한)",
       "sourceLabelEn": "Geothermal reservoir temperature (surface)",
-      "sourceNote": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔. / [10개국 비교가능성] O — 10개국 동일 원천 적용 가능 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": "[누락 보완] 종전에는 온천 개소 지표의 유의사항 문장에만 있던 온도 범위를 정식 지표로 분리. 표층·심부는 온도대가 달라 지표를 나눔.",
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_temp_surface_min",
@@ -1170,10 +1170,10 @@
         "unitFamily": "capacity"
       },
       "seriesKey": "measure-3f6866d43f5a|MW|technology=06,07|B-040_theoretical_potential",
-      "sourceCaveat": "[10개국 비교가능성] X — 베트남 국내 기관 보고서. 10개국 확장은 아래 GIS 경로 필요 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceCaveat": null,
       "sourceLabel": "이론 잠재량",
       "sourceLabelEn": "Theoretical geothermal potential",
-      "sourceNote": "[10개국 비교가능성] X — 베트남 국내 기관 보고서. 10개국 확장은 아래 GIS 경로 필요 / [원천 갱신일 근거] 원천이 버전·갱신일을 명시하지 않아 수집 시점의 원천 파일 기준일을 기재",
+      "sourceNote": null,
       "sourceProvenance": {
         "elementId": "B-040",
         "indicatorId": "B-040_theoretical_potential",

@@ -56,6 +56,37 @@ const DATA = resolveDataRootV158({ root: ROOT, argv, env: process.env.VIETNAM_DA
 const COUNTRY_ISO3 = resolveCountryIso3V158({ argv });
 const IS_DEFAULT_COUNTRY = COUNTRY_ISO3 === DEFAULT_COUNTRY_ISO3_V158;
 const COUNTRY_ENTRY = countryEntryV158(ROOT, COUNTRY_ISO3);
+
+/**
+ * V163: a region row whose record name is the delivery's region key
+ * ("BGD.4_1_2013", "BGD.8_1_cci_agb_2007") is named by its region and year on a
+ * card - the key is an internal id. The Korean name comes from the region
+ * dictionary (src/data/geo/regionNamesV161.json), else the romanised name.
+ */
+const REGION_KEY_V163 = /^[A-Z]{3}\.\d+_1(?:_|$)/u;
+const REGION_KO_V163 = new Map(
+  ((JSON.parse(readFileSync(resolve(ROOT, "src/data/geo/regionNamesV161.json"), "utf8")).countries || {})[COUNTRY_ISO3]?.entries || [])
+    .filter((entry) => entry.ko && entry.level === "division" || entry.ko && entry.level === "province")
+    .flatMap((entry) => [entry.local, ...(entry.keys || [])].map((key) => [String(key).toLowerCase().replace(/[^a-z0-9]+/gu, ""), entry.ko]))
+);
+function recordLabelV163(record) {
+  const name = String(record?.name ?? "");
+  // A facility row whose record name is its capacity (BGD A-023 "510") is named
+  // by the plant the note states ("[발전소명: Khulna (KPCL-2)]") with the
+  // capacity and its unit - a bare number on a card has no meaning.
+  const facility = String(record?.note ?? "").match(/\[(?:발전소명|시설명):\s*([^\]]+)\]/u)?.[1]?.trim();
+  if (facility && /^\d+(?:\.\d+)?$/u.test(name)) {
+    const capacityInMw = Object.keys(record.normalizedAttributes || {}).some((key) => /설비용량_MW/u.test(key));
+    return capacityInMw ? `${facility} · ${formatNumber(Number(name))} MW` : facility;
+  }
+  if (!REGION_KEY_V163.test(name)) return name;
+  const attributes = record.normalizedAttributes || {};
+  const local = String(attributes["지역명_로마자"] || attributes["지역명_현지어"] || attributes["지역명"] || "").trim();
+  const ko = REGION_KO_V163.get(local.toLowerCase().replace(/[^a-z0-9]+/gu, ""));
+  const region = ko || local || name;
+  const year = String(attributes["연도"] ?? attributes["기준연도"] ?? "").trim() || (name.match(/(?:19|20)\d{2}(?!.*\d)/u)?.[0] ?? "");
+  return year ? `${region} · ${year}년` : region;
+}
 const COUNTRY_NAME_KO = COUNTRY_ENTRY.nameKo;
 // V158-B2b: the country's own word for its level-1 unit (registry
 // `adm.level1.label`, Bangladesh "Division"); the default country keeps its
@@ -118,6 +149,10 @@ const warn = (elementId, message) => warnings.push({ elementId, message });
 const OVERRIDES = {
   "A-004": { measure: { label: "빈곤율" } },
   "A-005": { kind: "bars", note: "제조업은 광공업·건설의 일부이므로 구성으로 합치지 않음" },
+  // V163: without a home summary (another country) the gases card is the
+  // four CO2-equivalent series of one source at one year - their sum and their
+  // shares, as Viet Nam's home card. Mass series (Gg) are never added.
+  "A-010": { kind: "composition", measure: { label: "가스별 배출량", unit: "Mt CO2eq" }, series: { match: /\(CO2 환산\)/u }, unitFromSeries: true, allPartsAtYear: true, headlineTotal: (count) => (count === 4 ? "네 가스 합계" : `${count}개 가스 합계`) },
   "A-011": { kind: "composition", excludeTotal: true },
   "A-016": { kind: "composition", excludeTotal: true },
   "A-018": { kind: "bars", excludeTotal: true, series: { exclude: /^(Total|Fossil fuels|Solar energy|Wind energy|Bioenergy)[(]/u }, note: "상위 합계 항목(화석연료·태양에너지·풍력·바이오에너지 합계)은 제외하고 하위 기술만 비교" },
@@ -164,7 +199,7 @@ const OVERRIDES = {
 };
 
 /** Parts of one denominator, reviewed: composition is drawn only here. */
-const COMPOSITION_ALLOWED = new Set(["A-011", "A-016", "D-005"]);
+const COMPOSITION_ALLOWED = new Set(["A-010", "A-011", "A-016", "D-005"]);
 
 /**
  * Elements whose detail is a specialised component with its own selection
@@ -333,6 +368,19 @@ function providerFor(pack, indicatorIds, item) {
     return catalogue.length > 2 ? `${catalogue.slice(0, 2).join(" · ")} 외 ${catalogue.length - 2}개 기관` : catalogue.join(" · ") || "제공기관 확인";
   }
   if (names.length > 3) return `기관별 공식 출처 ${names.length}개(상세 자료정보 참조)`;
+  return providerOnceV163(names);
+}
+
+/**
+ * V163: one organisation named once - "JRC — EDGAR · JRC — IEA-EDGAR CO2"
+ * reads "JRC — EDGAR · IEA-EDGAR CO2".
+ */
+function providerOnceV163(names) {
+  const split = names.map((name) => name.split(" — "));
+  const heads = new Set(split.map((parts) => parts[0].trim()));
+  if (names.length > 1 && heads.size === 1 && split.every((parts) => parts.length > 1)) {
+    return `${[...heads][0]} — ${split.map((parts) => parts.slice(1).join(" — ").trim()).join(" · ")}`;
+  }
   return names.join(" · ");
 }
 
@@ -447,6 +495,7 @@ function observationCard(elementId, item, pack, contract, override) {
   const numericRows = measureRows.filter(isNumeric);
   const series = seriesOf(measureRows);
   const unit = unitShort(measure.unit);
+  const measureUnit = unit;
   const kind = override?.kind;
 
   // A comparison across countries (rows told apart by countryIso3, not by a
@@ -480,7 +529,9 @@ function observationCard(elementId, item, pack, contract, override) {
         !(override?.excludeTotal && Object.values(s.labels).some((label) => TOTAL_LIKE.test(label))) &&
         !(override?.series?.exclude && Object.values(s.labels).some((label) => override.series.exclude.test(label)))
     );
-    const years = yearsOf(usable.flatMap((s) => s.rows));
+    let years = yearsOf(usable.flatMap((s) => s.rows));
+    // V163: a sum is only of parts that all state the same year.
+    if (override?.allPartsAtYear) years = years.filter((y) => usable.every((s) => s.rows.some((r) => isNumeric(r) && r.year === y)));
     const year = override?.year === "first" ? years[0] : Number.isFinite(override?.year) && years.includes(override.year) ? override.year : years[years.length - 1];
     // Parts are told apart by the dimension that differs between them; a
     // dimension every part shares (the measure's own description) is noise.
@@ -508,13 +559,19 @@ function observationCard(elementId, item, pack, contract, override) {
       .filter(Boolean)
       .sort((a, b) => b.value - a.value);
     if (parts.length < 2) return levelOrLine(elementId, item, contract, measure, series, override, rows);
+    // V163: the parts' own unit when the measure mixes units (A-010: Gg and Mt CO2eq).
+    const partUnits = new Set(usable.flatMap((s) => s.rows.filter(isNumeric).map((r) => unitShort(r.unit))).filter(Boolean));
+    if (override?.unitFromSeries && partUnits.size !== 1) return levelOrLine(elementId, item, contract, measure, series, override, rows);
+    const unit = override?.unitFromSeries ? [...partUnits][0] : measureUnit;
     const shown = parts.slice(0, 6);
     const total = parts.reduce((sum, part) => sum + part.value, 0);
     const top = (override?.headlineSeries && parts.find((part) => override.headlineSeries.test(part.label))) || parts[0];
     const scope = override?.scopeLabel || (Number.isFinite(year) ? `${year}년` : (usable[0]?.rows[0]?.period || periodOf(item)));
     return {
       kind: kind === "composition" && COMPOSITION_ALLOWED.has(elementId) ? "composition" : "bars",
-      headline: kind === "composition" && COMPOSITION_ALLOWED.has(elementId)
+      headline: kind === "composition" && COMPOSITION_ALLOWED.has(elementId) && override?.headlineTotal
+        ? { value: formatNumber(total), label: `${unit} · ${scope} ${override.headlineTotal(parts.length)}` }
+        : kind === "composition" && COMPOSITION_ALLOWED.has(elementId)
         ? { value: `${formatNumber(top.value)} ${unit}`, label: `${top.label} · ${scope}${parts.length > 1 ? ` · ${parts.length}개 부분 합계 ${formatNumber(total)} ${unit}` : ""}` }
         : { value: `${formatNumber(top.value)} ${unit}`, label: `${measure.labelKo}${override?.headlineSeries ? "" : " 최대"} · ${top.label} · ${scope}` },
       preview: { parts: shown.map(({ label, value }) => ({ label, value })), unit, scope, omitted: parts.length - shown.length, total: kind === "composition" ? total : null },
@@ -936,7 +993,7 @@ function entityCard(elementId, item, pack, contract, rule) {
     const current = entities.filter((row) => text(row.normalizedAttributes?.[rule.currentOnly]) === "현행");
     if (current.length) rows = current;
   }
-  const nameOf = rule.nameFrom || ((row) => row.name);
+  const nameOf = rule.nameFrom || recordLabelV163;
   const distinct = rule.distinctBy ? new Set(rows.map((row) => text(row.normalizedAttributes?.[rule.distinctBy] || row.name))).size : rows.length;
   // Installed offices vs. organisations the source found to have none (E-019).
   if (rule.notInstalled) {

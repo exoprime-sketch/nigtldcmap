@@ -198,3 +198,17 @@ export const DRAWING_LABEL_V161: Record<string, string> = {
   "unit-choropleth": "평가구역 색 표시",
   "point-and-polygon": "시설 지점·구역 표시",
 };
+
+/**
+ * `DRAWING_LABEL_V161` for the reader's own level-1 word: the default
+ * country keeps "성·시 색 표시"; another country's choropleth says its own
+ * word ("Division 색 표시") instead of the Vietnamese one.
+ */
+export function drawingLabelV161(
+  renderer: string | undefined,
+  regionWord = "성·시"
+): string {
+  if (renderer === "admin1-choropleth") return `${regionWord} 색 표시`;
+  if (renderer === "partial-choropleth") return `${regionWord} 색 표시(일부 지역)`;
+  return DRAWING_LABEL_V161[renderer || ""] || "";
+}

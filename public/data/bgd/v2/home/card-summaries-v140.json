@@ -1,13 +1,13 @@
 {
  "schemaVersion": "v140-card-summaries-1",
  "dataSnapshot": "2026-09-29T00:00:00Z",
- "generatedAt": "2026-10-02T20:20:44.357Z",
+ "generatedAt": "2026-10-03T06:12:23.272Z",
  "generatedFrom": {
   "bundleIndex": "packs/bundle-index-v124.json",
   "semantics": "semantic/element-visualization-contracts-v125.json",
   "homePreview": null
  },
- "sourceHash": "11155d8ffb538384",
+ "sourceHash": "21da83f41d28ab88",
  "cards": [
   {
    "elementId": "A-001",
@@ -108,7 +108,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 114,
     "entityCount": 0,
     "indicatorIds": [
@@ -266,7 +266,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 348,
     "entityCount": 0,
     "indicatorIds": [
@@ -484,7 +484,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 272,
     "entityCount": 0,
     "indicatorIds": [
@@ -530,7 +530,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 33,
     "entityCount": 0,
     "indicatorIds": [
@@ -594,7 +594,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 160,
     "entityCount": 0,
     "indicatorIds": [
@@ -797,7 +797,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 133,
     "entityCount": 0,
     "indicatorIds": [
@@ -1116,7 +1116,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 263,
     "entityCount": 0,
     "indicatorIds": [
@@ -1198,7 +1198,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-f728ee32.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-001-43edace2.json",
     "observationCount": 32,
     "entityCount": 0,
     "indicatorIds": [
@@ -1392,7 +1392,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 90,
     "entityCount": 0,
     "indicatorIds": [
@@ -1406,200 +1406,72 @@
   {
    "elementId": "A-010",
    "title": "GHG 배출량[CO₂, CH₄, N₂O, F-gas]",
+   "kind": "composition",
    "headline": {
-    "value": "1.82 Gg",
-    "label": "가스별 배출량 · F-gas · 불소계 온실가스 10개 화종 질량 합계 · 2024년"
+    "value": "221",
+    "label": "MtCO₂e · 2024년 네 가스 합계"
    },
-   "period": "1990–2024년",
+   "preview": {
+    "parts": [
+     {
+      "label": "CO2",
+      "value": 124.190733
+     },
+     {
+      "label": "CH4",
+      "value": 70.455422
+     },
+     {
+      "label": "N2O",
+      "value": 23.279864
+     },
+     {
+      "label": "F-gas",
+      "value": 2.900702
+     }
+    ],
+    "unit": "MtCO₂e",
+    "scope": "2024년",
+    "omitted": 0,
+    "total": 220.826721
+   },
+   "period": "1970–2024년",
    "selection": {
-    "measure": "measure-a8662d9267c1",
+    "measure": "measure-165d8811fba3",
     "sex": null,
     "year": 2024,
     "period": null,
     "dimensions": {
-     "category": "F-gas",
-     "detail": "불소계 온실가스 10개 화종 질량 합계"
-    }
-   },
-   "measure": {
-    "key": "measure-a8662d9267c1",
-    "label": "가스별 배출량",
-    "unit": "Gg"
-   },
-   "kind": "line",
-   "preview": {
-    "points": [
-     {
-      "year": 1990,
-      "value": 0.000484
-     },
-     {
-      "year": 1991,
-      "value": 0.011383
-     },
-     {
-      "year": 1992,
-      "value": 0.02137
-     },
-     {
-      "year": 1993,
-      "value": 0.03113
-     },
-     {
-      "year": 1994,
-      "value": 0.048567
-     },
-     {
-      "year": 1995,
-      "value": 0.066538
-     },
-     {
-      "year": 1996,
-      "value": 0.085667
-     },
-     {
-      "year": 1997,
-      "value": 0.104279
-     },
-     {
-      "year": 1998,
-      "value": 0.125706
-     },
-     {
-      "year": 1999,
-      "value": 0.154056
-     },
-     {
-      "year": 2000,
-      "value": 0.229897
-     },
-     {
-      "year": 2001,
-      "value": 0.277209
-     },
-     {
-      "year": 2002,
-      "value": 0.329602
-     },
-     {
-      "year": 2003,
-      "value": 0.393289
-     },
-     {
-      "year": 2004,
-      "value": 0.44812
-     },
-     {
-      "year": 2005,
-      "value": 0.504395
-     },
-     {
-      "year": 2006,
-      "value": 0.541951
-     },
-     {
-      "year": 2007,
-      "value": 0.572687
-     },
-     {
-      "year": 2008,
-      "value": 0.612577
-     },
-     {
-      "year": 2009,
-      "value": 0.650518
-     },
-     {
-      "year": 2010,
-      "value": 0.680921
-     },
-     {
-      "year": 2011,
-      "value": 0.686898
-     },
-     {
-      "year": 2012,
-      "value": 0.688129
-     },
-     {
-      "year": 2013,
-      "value": 0.703671
-     },
-     {
-      "year": 2014,
-      "value": 0.768434
-     },
-     {
-      "year": 2015,
-      "value": 0.850767
-     },
-     {
-      "year": 2016,
-      "value": 0.945425
-     },
-     {
-      "year": 2017,
-      "value": 1.047563
-     },
-     {
-      "year": 2018,
-      "value": 1.166255
-     },
-     {
-      "year": 2019,
-      "value": 1.271418
-     },
-     {
-      "year": 2020,
-      "value": 1.380082
-     },
-     {
-      "year": 2021,
-      "value": 1.490922
-     },
-     {
-      "year": 2022,
-      "value": 1.599144
-     },
-     {
-      "year": 2023,
-      "value": 1.708386
-     },
-     {
-      "year": 2024,
-      "value": 1.817118
-     }
-    ],
-    "unit": "Gg",
-    "seriesLabel": "F-gas · 불소계 온실가스 10개 화종 질량 합계",
-    "first": {
-     "year": 1990,
-     "value": 0.000484
-    },
-    "latest": {
-     "year": 2024,
-     "value": 1.817118
+     "detail": "GWP-100 AR5 적용 CO2 환산 배출량"
     }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "가스별 배출량(Gg) F-gas · 불소계 온실가스 10개 화종 질량 합계 계열 · 35개 연도 · 최신 2024년 값을 대표값으로"
+    "rule": "가스별 배출량(MtCO₂e)을 2024년 기준으로 4개 항목에서 비교"
    },
-   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · European Commission, Joint Research Centre (JRC) — IEA-EDGAR CO2",
+   "measure": {
+    "key": "measure-165d8811fba3",
+    "label": "가스별 배출량",
+    "unit": "MtCO₂e"
+   },
+   "provider": "European Commission, Joint Research Centre (JRC) — EDGAR · IEA-EDGAR CO2",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 420,
     "entityCount": 0,
     "indicatorIds": [
-     "A-010_emissions_ch4_mass",
-     "A-010_emissions_co2_mass",
-     "A-010_emissions_fgas_mass",
-     "A-010_emissions_n2o_mass"
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_fgas_co2eq",
+     "A-010_emissions_n2o_co2eq"
     ],
     "headlineIndicatorIds": [
-     "A-010_emissions_fgas_mass"
+     "A-010_emissions_co2_co2eq",
+     "A-010_emissions_ch4_co2eq",
+     "A-010_emissions_n2o_co2eq",
+     "A-010_emissions_fgas_co2eq"
     ]
    }
   },
@@ -1664,7 +1536,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 495,
     "entityCount": 0,
     "indicatorIds": [
@@ -1954,7 +1826,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 103,
     "entityCount": 0,
     "indicatorIds": [
@@ -2012,7 +1884,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 0,
     "entityCount": 220,
     "indicatorIds": [
@@ -2167,7 +2039,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 479,
     "entityCount": 0,
     "indicatorIds": [
@@ -2216,7 +2088,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 99,
     "entityCount": 0,
     "indicatorIds": [
@@ -2289,7 +2161,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-9ddc1834.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-002-43aca9ea.json",
     "observationCount": 427,
     "entityCount": 0,
     "indicatorIds": [
@@ -2372,7 +2244,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 498,
     "entityCount": 0,
     "indicatorIds": [
@@ -2594,7 +2466,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 34,
     "entityCount": 0,
     "indicatorIds": [
@@ -2754,7 +2626,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 50,
     "entityCount": 0,
     "indicatorIds": [
@@ -2939,7 +2811,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 95,
     "entityCount": 0,
     "indicatorIds": [
@@ -3007,7 +2879,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 34,
     "entityCount": 0,
     "indicatorIds": [
@@ -3029,19 +2901,19 @@
    "preview": {
     "facts": [
      {
-      "label": "510",
+      "label": "Khulna (KPCL-2) · 510 MW",
       "value": ""
      },
      {
-      "label": "560",
+      "label": "Bheramara GT (Unit-1 2 3) · 560 MW",
       "value": ""
      },
      {
-      "label": "100",
+      "label": "Jhulda · 100 MW",
       "value": ""
      }
     ],
-    "more": 41
+    "more": 54
    },
    "period": "2021–2026년",
    "selection": {
@@ -3065,7 +2937,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 0,
     "entityCount": 57,
     "indicatorIds": [
@@ -3108,7 +2980,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-eb2102c5.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-003-788e85a5.json",
     "observationCount": 3,
     "entityCount": 984,
     "indicatorIds": [
@@ -3154,7 +3026,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 1,
     "entityCount": 1,
     "indicatorIds": [
@@ -3202,7 +3074,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 8,
     "entityCount": 0,
     "indicatorIds": [
@@ -3280,7 +3152,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 69,
     "entityCount": 0,
     "indicatorIds": [
@@ -3356,7 +3228,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 20,
     "entityCount": 2102,
     "indicatorIds": [
@@ -3414,11 +3286,11 @@
     }
    },
    "measure": null,
-   "provider": "Asian Development Bank — Asia Regional Integration Center (ARIC) [기준 원천] / World Trade Organization — RTA-IS [대조]",
+   "provider": "Asian Development Bank — Asia Regional Integration Center (ARIC) / World Trade Organization — RTA-IS",
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 1,
     "entityCount": 18,
     "indicatorIds": [
@@ -3616,7 +3488,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 144,
     "entityCount": 0,
     "indicatorIds": [
@@ -3700,7 +3572,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 42,
     "entityCount": 0,
     "indicatorIds": [
@@ -3867,7 +3739,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-c1874434.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-004-1c05e854.json",
     "observationCount": 106,
     "entityCount": 0,
     "indicatorIds": [
@@ -4009,7 +3881,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-8049581d.json",
     "observationCount": 82,
     "entityCount": 0,
     "indicatorIds": [
@@ -4084,7 +3956,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-8049581d.json",
     "observationCount": 38,
     "entityCount": 0,
     "indicatorIds": [
@@ -4166,7 +4038,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-8049581d.json",
     "observationCount": 32,
     "entityCount": 93,
     "indicatorIds": [
@@ -4406,7 +4278,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-ac31a46b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-8049581d.json",
     "observationCount": 0,
     "entityCount": 1125,
     "indicatorIds": [
@@ -4636,7 +4508,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-004-b543cde8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-004-b7d084fa.json",
     "observationCount": 0,
     "entityCount": 8424,
     "indicatorIds": [
@@ -4868,7 +4740,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-005-13d39a5d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-005-1e24b349.json",
     "observationCount": 35,
     "entityCount": 5022,
     "indicatorIds": [
@@ -5101,7 +4973,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-006-f6ec9b7b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-006-7c5939ed.json",
     "observationCount": 0,
     "entityCount": 7290,
     "indicatorIds": [
@@ -5333,7 +5205,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-007-f4e000bf.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-005-b-007-0f6ac0e9.json",
     "observationCount": 0,
     "entityCount": 7290,
     "indicatorIds": [
@@ -10436,7 +10308,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 0,
     "entityCount": 1260,
     "indicatorIds": [
@@ -10481,7 +10353,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 35,
     "entityCount": 0,
     "indicatorIds": [
@@ -10534,7 +10406,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 40,
     "entityCount": 0,
     "indicatorIds": [
@@ -10708,7 +10580,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 1500,
     "entityCount": 0,
     "indicatorIds": [
@@ -10780,7 +10652,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 0,
     "entityCount": 367,
     "indicatorIds": [
@@ -10821,7 +10693,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 35,
     "entityCount": 0,
     "indicatorIds": [
@@ -10887,7 +10759,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 0,
     "entityCount": 18,
     "indicatorIds": [
@@ -10938,7 +10810,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-9865e2ea.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-006-28c2182f.json",
     "observationCount": 8,
     "entityCount": 0,
     "indicatorIds": [
@@ -11096,7 +10968,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 45,
     "entityCount": 0,
     "indicatorIds": [
@@ -11163,7 +11035,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 0,
     "entityCount": 632,
     "indicatorIds": [
@@ -11286,7 +11158,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 282,
     "entityCount": 0,
     "indicatorIds": [
@@ -11414,7 +11286,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 110,
     "entityCount": 0,
     "indicatorIds": [
@@ -11514,7 +11386,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 2718,
     "entityCount": 0,
     "indicatorIds": [
@@ -11669,7 +11541,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-b-021-32f961bb.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-b-021-a14620c6.json",
     "observationCount": 8530,
     "entityCount": 0,
     "indicatorIds": [
@@ -11752,7 +11624,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 10,
     "entityCount": 0,
     "indicatorIds": [
@@ -11820,7 +11692,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-4a5366e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-007-3284bcb5.json",
     "observationCount": 0,
     "entityCount": 558,
     "indicatorIds": [
@@ -11935,7 +11807,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 32,
     "entityCount": 8,
     "indicatorIds": [
@@ -11968,7 +11840,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 67,
     "indicatorIds": [
@@ -12042,7 +11914,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 49,
     "indicatorIds": [
@@ -12231,7 +12103,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 36,
     "entityCount": 0,
     "indicatorIds": [
@@ -12291,7 +12163,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 73,
     "indicatorIds": [
@@ -12366,7 +12238,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 181,
     "indicatorIds": [
@@ -12442,7 +12314,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 10,
     "indicatorIds": [
@@ -12462,15 +12334,15 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD.7_1",
+      "label": "실렛",
       "value": ""
      },
      {
-      "label": "BGD.6_1",
+      "label": "랑푸르",
       "value": ""
      },
      {
-      "label": "BGD.5_1",
+      "label": "라지샤히",
       "value": ""
      }
     ],
@@ -12498,7 +12370,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-213dd88c.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-008-40993288.json",
     "observationCount": 0,
     "entityCount": 9,
     "indicatorIds": [
@@ -12518,15 +12390,15 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD.1_1_2000",
+      "label": "바리살 · 2000년",
       "value": ""
      },
      {
-      "label": "BGD.2_1_2000",
+      "label": "치타공 · 2000년",
       "value": ""
      },
      {
-      "label": "BGD.7_1_2000",
+      "label": "실렛 · 2000년",
       "value": ""
      }
     ],
@@ -12554,7 +12426,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 0,
     "entityCount": 18,
     "indicatorIds": [
@@ -12574,19 +12446,19 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD.4_1_2013",
+      "label": "쿨나 · 2013년",
       "value": ""
      },
      {
-      "label": "BGD.4_1_2014",
+      "label": "쿨나 · 2014년",
       "value": ""
      },
      {
-      "label": "BGD.1_1_2014",
+      "label": "바리살 · 2014년",
       "value": ""
      }
     ],
-    "more": 376
+    "more": 264
    },
    "period": "2001–2025년",
    "selection": {
@@ -12610,7 +12482,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 0,
     "entityCount": 379,
     "indicatorIds": [
@@ -12633,15 +12505,15 @@
    "preview": {
     "facts": [
      {
-      "label": "BGD.8_1_cci_agb_2007",
+      "label": "마이멘싱 · 2007년",
       "value": ""
      },
      {
-      "label": "BGD.8_1_cci_agb_2010",
+      "label": "마이멘싱 · 2010년",
       "value": ""
      },
      {
-      "label": "BGD.8_1_cci_agb_2015",
+      "label": "마이멘싱 · 2015년",
       "value": ""
      }
     ],
@@ -12669,7 +12541,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 0,
     "entityCount": 89,
     "indicatorIds": [
@@ -12978,7 +12850,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 897,
     "entityCount": 279,
     "indicatorIds": [
@@ -13050,7 +12922,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 47,
     "entityCount": 36,
     "indicatorIds": [
@@ -13151,7 +13023,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 0,
     "entityCount": 684,
     "indicatorIds": [
@@ -13164,45 +13036,73 @@
    "elementId": "B-038",
    "title": "바이오매스 자원 가용량[농업잔재, 임업잔재, 도시폐기물, 축산폐기물]",
    "headline": {
-    "value": "77 % 인구",
-    "label": "[산출 투입 · 참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율) · 2021년"
+    "value": "0.648 kg/인/일",
+    "label": "1인당 도시폐기물 발생량 · 산출 투입·참고자료 · 2050년"
    },
-   "period": "2021년",
+   "period": "2021–2050년",
    "selection": {
-    "measure": "measure-2552e0c53444",
+    "measure": "measure-13e56f3e0776",
     "sex": null,
-    "year": 2021,
+    "year": 2050,
     "period": null,
     "dimensions": {}
    },
    "measure": {
-    "key": "measure-2552e0c53444",
-    "label": "[산출 투입",
-    "unit": "% 인구"
+    "key": "measure-13e56f3e0776",
+    "label": "1인당 도시폐기물 발생량",
+    "unit": "kg/인/일"
    },
-   "kind": "level",
+   "kind": "line",
    "preview": {
-    "unit": "% 인구",
-    "seriesLabel": "참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율)",
-    "others": [],
-    "note": "단일 시점 값"
+    "points": [
+     {
+      "year": 2021,
+      "value": 0.5
+     },
+     {
+      "year": 2022,
+      "value": 0.515
+     },
+     {
+      "year": 2030,
+      "value": 0.5304
+     },
+     {
+      "year": 2040,
+      "value": 0.5464
+     },
+     {
+      "year": 2050,
+      "value": 0.6481
+     }
+    ],
+    "unit": "kg/인/일",
+    "seriesLabel": "산출 투입·참고자료",
+    "first": {
+     "year": 2021,
+     "value": 0.5
+    },
+    "latest": {
+     "year": 2050,
+     "value": 0.6481
+    }
    },
    "basis": {
     "unit": "관측값",
-    "rule": "[산출 투입(% 인구) 참고자료] 도시폐기물 수거율(참고, 인구 기준 · 수거 서비스를 받는 인구 비율) · 단일 시점이므로 추이를 그리지 않음"
+    "rule": "1인당 도시폐기물 발생량(kg/인/일) 산출 투입·참고자료 계열 · 5개 연도 · 최신 2050년 값을 대표값으로"
    },
    "provider": "World Bank Group — What a Waste 3.0: Global Snapshot of Solid Waste Management Toward Circularity until 2050 (2026-03)",
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 328,
     "entityCount": 0,
     "indicatorIds": [
-     "B-038_aux_msw_collection_pop"
+     "B-038_aux_msw_percap"
     ],
     "headlineIndicatorIds": [
-     "B-038_aux_msw_collection_pop"
+     "B-038_aux_msw_percap"
     ]
    }
   },
@@ -13211,7 +13111,7 @@
    "title": "수력 잠재량",
    "kind": "spatial",
    "headline": {
-    "value": "21,226 GWh/yr",
+    "value": "21,226 GWh/년",
     "label": "이론 총잠재량 최대 · Rajshahi · 8개 주(Division) 중 · 2017년 기준"
    },
    "preview": {
@@ -13237,7 +13137,7 @@
       "value": 7295.46
      }
     ],
-    "unit": "GWh/yr",
+    "unit": "GWh/년",
     "scope": "이론 총잠재량 상위 5개 주(Division)",
     "median": 7541.41,
     "range": {
@@ -13260,18 +13160,18 @@
    },
    "basis": {
     "unit": "주(Division) 값",
-    "rule": "이론 총잠재량(GWh/yr) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
+    "rule": "이론 총잠재량(GWh/년) 8개 주(Division) 값의 중앙값과 상위 5개 · 전국값은 원천이 제공할 때만"
    },
    "measure": {
     "key": "이론_총잠재량_GWh_yr",
     "label": "이론 총잠재량",
-    "unit": "GWh/yr"
+    "unit": "GWh/년"
    },
    "provider": "Global Gross Hydropower Potential Dataset (Hoes et al. 2017) · U.S. EIA International Energy Statistics · Energy Institute Statistical Review · IHA · Energy Institute · U.S. EIA · World Bank/ESMAP",
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-a23dded9.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-009-1a451c06.json",
     "observationCount": 0,
     "entityCount": 160,
     "indicatorIds": [
@@ -13346,7 +13246,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 0,
     "entityCount": 20,
     "indicatorIds": [
@@ -13420,7 +13320,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 0,
     "entityCount": 43,
     "indicatorIds": [
@@ -13494,7 +13394,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 0,
     "entityCount": 106,
     "indicatorIds": [
@@ -13611,7 +13511,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 88,
     "entityCount": 0,
     "indicatorIds": [
@@ -13669,7 +13569,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 1,
     "entityCount": 21,
     "indicatorIds": [
@@ -13700,7 +13600,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 24,
     "entityCount": 0,
     "indicatorIds": [
@@ -13778,7 +13678,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 0,
     "entityCount": 21,
     "indicatorIds": [
@@ -13833,7 +13733,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-53b4dbb2.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-010-00a62a82.json",
     "observationCount": 0,
     "entityCount": 21,
     "indicatorIds": [
@@ -13888,7 +13788,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 3,
     "indicatorIds": [
@@ -13950,7 +13850,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 86,
     "indicatorIds": [
@@ -14013,7 +13913,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 76,
     "indicatorIds": [
@@ -14073,7 +13973,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 27,
     "indicatorIds": [
@@ -14132,7 +14032,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 38,
     "indicatorIds": [
@@ -14189,7 +14089,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 36,
     "indicatorIds": [
@@ -14248,7 +14148,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 16,
     "indicatorIds": [
@@ -14301,7 +14201,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-c999cd34.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-011-bf870e90.json",
     "observationCount": 0,
     "entityCount": 2,
     "indicatorIds": [
@@ -14346,7 +14246,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 96,
     "indicatorIds": [
@@ -14398,7 +14298,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 4,
     "indicatorIds": [
@@ -14448,7 +14348,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 13,
     "indicatorIds": [
@@ -14504,7 +14404,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 54,
     "indicatorIds": [
@@ -14566,7 +14466,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 75,
     "indicatorIds": [
@@ -14623,7 +14523,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 77,
     "indicatorIds": [
@@ -14682,7 +14582,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 54,
     "indicatorIds": [
@@ -14743,7 +14643,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-781f048b.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-012-0c07ecd9.json",
     "observationCount": 0,
     "entityCount": 10,
     "indicatorIds": [
@@ -14798,7 +14698,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-ff5104e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-dc8afafb.json",
     "observationCount": 0,
     "entityCount": 92,
     "indicatorIds": [
@@ -14858,7 +14758,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-ff5104e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-dc8afafb.json",
     "observationCount": 0,
     "entityCount": 41,
     "indicatorIds": [
@@ -14913,7 +14813,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-ff5104e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-dc8afafb.json",
     "observationCount": 0,
     "entityCount": 48,
     "indicatorIds": [
@@ -14978,7 +14878,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-ff5104e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-dc8afafb.json",
     "observationCount": 0,
     "entityCount": 44,
     "indicatorIds": [
@@ -15039,7 +14939,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-ff5104e1.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-013-dc8afafb.json",
     "observationCount": 0,
     "entityCount": 14,
     "indicatorIds": [
@@ -15096,7 +14996,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-622f7a43.json",
     "observationCount": 0,
     "entityCount": 7,
     "indicatorIds": [
@@ -15110,27 +15010,26 @@
   {
    "elementId": "C-025",
    "title": "탄소크레딧 발행·소각 실적[프로젝트명, 등록 표준(VCS/GS), 국가, 기술 분야, 발행량, 소각량, 빈티지, 발행일]",
-   "kind": "facts",
+   "kind": "bars",
    "headline": {
     "value": "185건",
-    "label": "프로젝트 · 2014–2026년"
+    "label": "프로젝트 수 · 2014–2026년"
    },
    "preview": {
-    "facts": [
+    "parts": [
      {
-      "label": "Improved Cooking Stoves in Bangladesh",
-      "value": ""
+      "label": "Gold Standard",
+      "value": 155
      },
      {
-      "label": "Safe Water Programme in Africa and Asia",
-      "value": ""
-     },
-     {
-      "label": "Improved Cooking Stoves in Bangladesh – CPA No.12 \"SZ Consultancy Services Ltd.\"",
-      "value": ""
+      "label": "Verra VCS",
+      "value": 22
      }
     ],
-    "more": 182
+    "unit": "프로젝트 수",
+    "scope": "등록 표준별",
+    "omitted": 0,
+    "unlabelled": 8
    },
    "period": "2014–2026년",
    "selection": {
@@ -15142,10 +15041,9 @@
    },
    "basis": {
     "unit": "프로젝트",
-    "rule": "프로젝트 1건 = 원천 1행",
+    "rule": "프로젝트 1건 = 원천 1행 · 등록 표준별 건수 · 등록 표준 미기재 8건",
     "count": {
      "rows": 185,
-     "distinct": 185,
      "sourceRows": 185
     }
    },
@@ -15154,7 +15052,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-622f7a43.json",
     "observationCount": 0,
     "entityCount": 185,
     "indicatorIds": [
@@ -15200,7 +15098,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-622f7a43.json",
     "observationCount": 65,
     "entityCount": 207,
     "indicatorIds": [
@@ -15246,11 +15144,11 @@
     "unit": "관측값",
     "rule": "감축/적응 구분별 예산 배분 비율(%) 역량강화 · 제도강화(BCCSAP 주제영역) · FY2019-20 총 기후예산 대비 비중 · 단일 시점이므로 추이를 그리지 않음"
    },
-   "provider": "방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2019-20판 · 방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2026-27판(BSS·TBS 인용)",
+   "provider": "방글라데시 재무부 재정국(Finance Division, Ministry of Finance) — Climate Financing for Sustainable Development (기후예산보고서) — FY2019-20판 · Climate Financing for Sustainable Development (기후예산보고서) — FY2026-27판(BSS·TBS 인용)",
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-622f7a43.json",
     "observationCount": 28,
     "entityCount": 0,
     "indicatorIds": [
@@ -15422,7 +15320,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-592e91a0.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-014-622f7a43.json",
     "observationCount": 347,
     "entityCount": 0,
     "indicatorIds": [
@@ -15478,7 +15376,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 20,
     "entityCount": 0,
     "indicatorIds": [
@@ -15540,7 +15438,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 17,
     "entityCount": 0,
     "indicatorIds": [
@@ -15592,7 +15490,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 108,
     "entityCount": 0,
     "indicatorIds": [
@@ -15643,7 +15541,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 140,
     "entityCount": 0,
     "indicatorIds": [
@@ -15735,7 +15633,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 552,
     "entityCount": 0,
     "indicatorIds": [
@@ -15893,7 +15791,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 6,
     "entityCount": 122,
     "indicatorIds": [
@@ -15944,7 +15842,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 30,
     "entityCount": 0,
     "indicatorIds": [
@@ -15992,7 +15890,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-d4f326d8.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-015-ee49687b.json",
     "observationCount": 5,
     "entityCount": 94,
     "indicatorIds": [
@@ -16042,7 +15940,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 5,
     "entityCount": 1427,
     "indicatorIds": [
@@ -16092,7 +15990,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 6,
     "entityCount": 370,
     "indicatorIds": [
@@ -16152,7 +16050,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 0,
     "entityCount": 300,
     "indicatorIds": [
@@ -16213,7 +16111,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 13,
     "entityCount": 4,
     "indicatorIds": [
@@ -16264,7 +16162,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 6,
     "entityCount": 7,
     "indicatorIds": [
@@ -16316,7 +16214,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 12,
     "entityCount": 10,
     "indicatorIds": [
@@ -16369,7 +16267,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 4,
     "entityCount": 542,
     "indicatorIds": [
@@ -16416,7 +16314,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-67dfdd9d.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-016-ca8d6771.json",
     "observationCount": 4,
     "entityCount": 336,
     "indicatorIds": [
@@ -16464,7 +16362,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 13,
     "entityCount": 119,
     "indicatorIds": [
@@ -16517,7 +16415,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 8,
     "entityCount": 21,
     "indicatorIds": [
@@ -16566,7 +16464,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 49,
     "entityCount": 67,
     "indicatorIds": [
@@ -16620,7 +16518,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 9,
     "entityCount": 17,
     "indicatorIds": [
@@ -16686,7 +16584,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 0,
     "entityCount": 11,
     "indicatorIds": [
@@ -16743,7 +16641,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 0,
     "entityCount": 12,
     "indicatorIds": [
@@ -16795,7 +16693,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 0,
     "entityCount": 5,
     "indicatorIds": [
@@ -16851,7 +16749,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-8b522551.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-017-18b152be.json",
     "observationCount": 0,
     "entityCount": 19,
     "indicatorIds": [
@@ -16930,7 +16828,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 0,
     "entityCount": 20,
     "indicatorIds": [
@@ -16985,7 +16883,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 0,
     "entityCount": 16,
     "indicatorIds": [
@@ -17054,7 +16952,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 0,
     "entityCount": 31,
     "indicatorIds": [
@@ -17125,7 +17023,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 18,
     "entityCount": 0,
     "indicatorIds": [
@@ -17213,7 +17111,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 178,
     "entityCount": 0,
     "indicatorIds": [
@@ -17300,7 +17198,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 50,
     "entityCount": 0,
     "indicatorIds": [
@@ -17382,7 +17280,7 @@
    "mapConnected": false,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-e6a75707.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-018-b840ab0a.json",
     "observationCount": 759,
     "entityCount": 0,
     "indicatorIds": [
@@ -17447,7 +17345,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-ba802eda.json",
     "observationCount": 0,
     "entityCount": 2,
     "indicatorIds": [
@@ -17502,7 +17400,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-ba802eda.json",
     "observationCount": 0,
     "entityCount": 4,
     "indicatorIds": [
@@ -17557,7 +17455,7 @@
    "mapConnected": true,
    "downloadable": true,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-ba802eda.json",
     "observationCount": 0,
     "entityCount": 3,
     "indicatorIds": [
@@ -17614,7 +17512,7 @@
    "mapConnected": true,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-ba802eda.json",
     "observationCount": 0,
     "entityCount": 8,
     "indicatorIds": [
@@ -17655,7 +17553,7 @@
    "mapConnected": false,
    "downloadable": false,
    "provenance": {
-    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-977b7d85.json",
+    "packUrl": "/data/bgd/v2/packs/bgd-v162-pack-019-ba802eda.json",
     "observationCount": 0,
     "entityCount": 9,
     "indicatorIds": [

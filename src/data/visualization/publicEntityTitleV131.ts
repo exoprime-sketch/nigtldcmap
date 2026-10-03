@@ -509,7 +509,8 @@ function factualCompositeV131(
     case "A-028": {
       // V162: the 2026-09-30 register names each OSM feature by its class value
       // only ("cave_entrance", "peak"); it reads as the platform's OSM class
-      // table writes it - "동굴 입구 (cave_entrance)" - as A-027's classes do.
+      // table writes it - "동굴 입구" (V163: Korean name only, no bracketed
+      // source key) - as A-027's classes do.
       const value = titleTextV131(entity.name);
       if (!value || !OSM_CLASS_KO_V162[value]) return null;
       return {

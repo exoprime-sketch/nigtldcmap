@@ -1,73 +1,90 @@
 ## 요약
-'데이터 지도' > '비교해서 보기' 재구축 — 두 지도가 각자 국가·데이터·지표·기준 시점을 고르고, 큰 지도와 같은 렌더러로 그리며, 자료정보·요약·범례·클릭 카드를 따로 보여 줍니다. VNM(72 레이어)·BGD(38 레이어)와 국가 교차 비교(A=베트남, B=방글라데시) 지원.
+V163-T 공개 문구·자료 정리 — 베트남·방글라데시 공통. 최신 main(338e102: #59 비교 보기·#60·#61 BGD 외곽선) merge 위에 문구 수정만 얹음(충돌 1곳 `features.ts`는 main 코드 유지 + `nameKo` 폴백 1개 추가).
 
-- **패널 머리**: 데이터(가나다순) · 국가(베트남/방글라데시) · 지표 · 기준 시점
-  - 국가를 바꿔도 같은 데이터가 있으면 유지, 없으면 첫 데이터로 바꾸고 한 줄 안내
-- **지도**: 큰 지도 파이프라인(`prepareMapLayerV152`·`mountPreparedMapLayerV152`) 그대로
-  - 성·시 색 지도·일부 지역 색 지도·평가구역/그룹값·시설 지점+구역·지역 협력사업·송전망·클러스터·아이콘 지점 모두 표시
-  - 국가 1급 행정구역 선(베트남 34/63, 방글라데시 주(Division) 8) + 한국어 지명
-  - 불러오는 중 / 오류 + '다시 시도' / 그 국가에 지도 없음 문구 — 빈 화면 없음
-- **패널 정보**: 자료정보(데이터명·항목·기준 시점·단위·출처 기관·공간 단위) · 요약(값 있는 지역 n/N, 최댓값·최솟값과 지역, 중앙값 / 표시 대상 수·분류별 개수) · 범례(최소·최대·단위·'색 없음: 자료 없음', 아이콘·범주·전압) · 클릭 카드('N개 지역 중 k위')
-- **패널 사이**: 위치 함께 이동(같은 국가 기본 ON, 국가가 다르면 자동 OFF) · 지역 연동(같은 국가 지역 지도 hover/클릭) · 같은 색 구간(같은 데이터·지표, 기본 ON) · 좌우 바꾸기 · 비교 닫기
-- **URL**: `mapMode=compare&compareLayers=A,B` 유지 + `compareCountries=VNM,BGD` · `compareSelectors=[…]`(선택한 지표·시점)
-- **버그 수정**: 비교 닫기 직후 URL이 아직 비교 모드라 작업공간이 다시 열리던 문제
-- 삭제: `MapComparisonWorkspaceV135.tsx`와 페이지의 V135 데이터셋 구성 코드
+- **merge 조건 변경(CLAUDE.md)**: Static gate 녹색 + 바뀐 항목 필터 검사 + 공개 문구 스캔 0 + Preview 캡처 + 사용자 "PR #N 병합". `PR gate finalize:v151`·Playwright(기준 이미지 4건)는 참고용
 
-상세: `reports/v163/REVIEW_V163_COMPARE.md`
+### 1·2. 내부 검토 메모·작업 파일명(ETL 단계, 생성 JSON 손편집 없음)
+- `tools/etl/public_text_v163.py`를 두 빌더(`build_public_v2.py`·`countries/bgd/build_country_v2.py`)가 공개 파일을 쓰기 직전에 적용
+- 대상 필드: 출처 표기·이용조건·출처 기관·caveat·note·결측 설명·출처 위치 → 화면·다운로드 ZIP·카탈로그·권리표·semantic 모두
+- 규칙
+  - 메모 구간 제거: [출처 문구]·[표출범위]·[라이선스 근거/판정/확인]·[처리규칙 …]·[열 구조] 등
+  - [기준 원천]/[대조] 표식 제거
+  - '처리규칙' 문장·'(yyyy-mm-dd 확인)' 제거
+  - 작업 파일명·raw_data 경로 → 요소의 공개 출처명
+  - BGD 여러 나라 공통 서식 문장(10개국…) 제거
+  - BGD '지역명 (개편 전)' → '지역명'
+- '[변경 고지]'는 이용조건(CC BY 4.0 §3(a)(1)(B))이 요구하는 변경 표시라 **문장은 유지**하고 표식·내부 열 참조만 제거
+- 걷어낸 메모는 비공개 보고서 `reports/v163/internal-notes-{vnm,bgd}.json`으로 이동
+- 재생성(2026-09-30 입고 그대로)
+  - VNM `refresh:data`: 152요소 값 변화 0
+  - BGD 빌더 + semantic·지도·카드·목록·integrity 체인
+  - 직전 커밋과 공개 텍스트 비교: VNM 11,913건·BGD 90,730건 변경, 메모 제거로 설명되지 않는 변경 0
+- 공개 문구 스캔 2종(`audit-source-notes-v161`·`public-wording-scan-v157`)에 내부 메모 표식·'처리규칙'·'yyyy-mm-dd 확인' 패턴 추가
+- 정책 설명 카드 '출처 N건 · yyyy-mm-dd 확인' → '… 기준'
 
-## Preview
-(PR 생성 후 Vercel Preview URL 기입)
+### 3. BGD 화면의 베트남 행정 표현
+- (a) C 계열 표 '지역명 (개편 전)/(현행)' → BGD는 '지역명' 한 열
+- (b) 지도 자료정보(i): 다른 나라는 자기 레이어 필드로(성·시·34/63·베트남 문구 0)
+- (c) 지도 클릭 패널 끝 '… 성·시 색 표시' → 나라의 1단계 행정구역
+- (d) BGD 범례 B-005 'SPEI12' → '연속 건조일수 CDD', B-017 '가뭄 리스크' → 자료의 물 스트레스. 베트남 전용 해설표를 기본 국가에만 적용
+- (e) E-012 평균 월임금 'VND' → 레코드 통화(BDT)
 
-## 화면이 바뀌는 페이지와 확인 경로
-| 페이지 | 확인 경로(URL · 클릭 순서) | 바뀌는 점 |
+### 4. 내부 키·원문 키
+- (a) BGD 행정구역 키
+  - 찾기·홈 카드 'BGD.4_1_2013' → '쿨나 · 2013년'(카드 빌더)
+  - 지도 클릭 'BGD.8_1' → 'Mymensingh'
+- (b) snake_case 분류값 → 공개 라벨: D-026 보증금액·건수, E-012 군인·설비·기계 조작원·서비스·판매 종사자, A-013 1차 NDC·INDC
+- (c) '협궤 철도 (narrow_gauge)' → '협궤 철도'. 문구 스캔의 'ko (value)' 예외 삭제
+- (d, 일부) 지도 운영 상태 existing/operating → '운영'
+
+### 5. 홈
+- (i) BGD A-023 카드 '510 · 560 · 100' → 'Khulna (KPCL-2) · 510 MW' 등
+- (ii) BGD C-016 '자료 공표 상태 —' 줄 제외
+- (iii) 헤더 '데이터 다운로드' 등 이동 시 현재 국가 유지
+- (iv) BGD 홈 '다운로드 가능' 100 → 99: 다운로드 목록과 같은 규칙(B-045는 입력 행 0)
+
+### 6. '데이터 준비 중'(정정 지시대로 확인만)
+- 숨김·건수 변경 없음
+- 가나다순·조회순 모두 맨 뒤, 카드 문구 '데이터 준비 중' 한 가지(BGD·VNM)
+
+### 7. 빈 섹션
+- 상세 설명·활용 방법 본문이 비면 제목도 렌더 안 함. 새 문구는 만들지 않음
+
+### 8·9. 홈 BGD 카드(추가 지시)
+- **8. A-010**: 'F-gas 1.82 Gg' → 'MtCO₂e · 2024년 네 가스 합계 221' + 가스별 구성비
+  - CO2·CH4·N2O·F-gas, 모두 CO2 환산 계열·같은 연도. 질량(Gg) 합산 없음
+  - 출처 줄은 기관명 한 번: 'European Commission, Joint Research Centre (JRC) — EDGAR · IEA-EDGAR CO2'
+- **9. A-003**: 미니 차트 y축 '01.32억' 잘림 → '4,601억'
+  - 축 라벨 정수 표기, 왼쪽 여백은 라벨 길이에 맞춰 넓힘(최소 40px 유지 — 베트남 짧은 라벨은 그대로)
+
+## 화면이 바뀌는 페이지(확인 경로)
+| 페이지 | 경로 | 변화 |
 |---|---|---|
-| 데이터 지도 > 비교해서 보기 | `/?view=map&country=VNM#map` → 왼쪽 목록 하단 **비교해서 보기** | 새 작업공간(국가 선택, 패널 정보·범례·카드, 동기화 토글, 좌우 바꾸기) |
-| 같은 국가 색 지도 2개 | `/?view=map&country=VNM&mapMode=compare&compareLayers=B-039,B-041&compareCountries=VNM,VNM#map` → 왼쪽 지도에서 성·시 클릭 | 두 패널 카드(값·순위), 오른쪽 패널에 같은 지역 연동 |
-| 국가 교차 | `/?view=map&country=VNM&mapMode=compare&compareLayers=B-039,B-039&compareCountries=VNM,BGD#map` | 오른쪽 방글라데시 주(Division) 8 색 지도, 위치 함께 이동 자동 OFF |
-| 방글라데시 2개 | `/?view=map&country=BGD&mapMode=compare&compareLayers=B-039,A-023&compareCountries=BGD,BGD#map` | 색 지도 / 발전소 지점, Division 한국어 이름 |
-| 같은 색 구간 | `/?view=map&country=VNM&mapMode=compare&compareLayers=B-033,B-033&compareCountries=VNM,VNM&compareSelectors=[{"variable":"annual-tree-cover-loss","period":"2005"},{"variable":"annual-tree-cover-loss","period":"2024"}]#map` | 머리의 **같은 색 구간** 체크, 두 범례 같은 최소·최대 |
-| 국가 전환 | 위 첫 경로 → 오른쪽 패널 **방글라데시** → 왼쪽 패널 **방글라데시** | C-025 유지 / D-018 없음 → '가뭄' + 안내 |
-| 일반 지도 복귀 | 작업공간 오른쪽 위 **비교 닫기 · 일반 지도로 돌아가기** | 왼쪽 패널 데이터로 일반 지도 |
-| 휴대폰(390px) | 위 경로를 390px로 | 두 패널 세로 쌓기, 가로 넘침 0 |
+| 상세 출처 패널(양국) | `/?view=data&country=BGD&element=B-010#element-detail` → '자료 출처·상세 데이터' | 이용조건·출처 표기에서 [표출범위]·[출처 문구]·처리규칙 문장 제거 |
+| 상세 출처 줄 | `/?view=data&country=BGD&element=A-029#element-detail` | '[기준 원천]/[대조]' 제거 |
+| 상세 C 계열 표(BGD) | `/?view=data&country=BGD&element=C-017#element-detail` | '지역명' 한 열 |
+| 상세 빈 섹션(BGD) | `/?view=data&country=BGD&element=B-003#element-detail` | 빈 '상세 설명'·'활용 방법' 제거 |
+| 지도(BGD) | `/?view=map&country=BGD#map` → B-002 'i' · B-005 범례 · B-030 Mymensingh | 국가별 정보·범례·지역명 |
+| 홈(BGD) | `/?country=BGD#home` | A-010 합계·구성비, A-003 축 라벨, A-023 발전소명, 다운로드 가능 99, C-016 줄 |
+| 찾기(BGD) | `/?country=BGD#explorer` → 산림 카드 | 지역 키 → 주 이름·연도 |
+| 다운로드 | 홈(국가 선택 상태) → 헤더 '데이터 다운로드' | 현재 국가 유지 |
+| 다운로드 ZIP | 각 요소 ZIP의 JSON·CSV 설명 열 | 메모·작업 파일명 제거 |
 
-그 밖의 페이지: 화면 변화 0
+캡처(1440px, 8·9는 390px 포함, 전 = 운영 main, 후 = 이 브랜치): `reports/v163/screens/text-*`, `detail-*`, `map-*`, `home-5ii-*`, `download-5iv-*`, `finder-6-*`
 
-## 캡처 (1440×900, `reports/v163/screens/`)
-- 전(V135, f19b490 빌드): `compare-before-v135.png`(베트남 진입) · `compare-before-v135-bgd.png`(방글라데시 진입 — 패널 비어 있음, '지도 데이터 준비 중', 국가 선택 없음)
-- 후:
-  - `compare-vnm-choropleths.png` · `compare-vnm-choropleths-selected.png`
-  - `compare-vnm-point-line.png` · `compare-vnm-point-line-zoomed.png` · `compare-vnm-point-line-selected.png`
-  - `compare-vnm-unit-group.png` · `compare-vnm-unit-group-selected.png`
-  - `compare-vnm-bgd-cross.png` · `compare-vnm-bgd-cross-selected.png`
-  - `compare-bgd-choropleth-point.png` · `compare-bgd-choropleth-point-selected.png`
-  - `compare-vnm-same-colors.png` · `compare-vnm-same-colors-selected.png`
-  - `compare-vnm-scope-point.png` · `compare-vnm-scope-point-selected.png`
-  - `compare-bgd-after-switch.png`
-  - `compare-mobile-390.png`(390px)
-
-## 검증
-- `npx tsc --noEmit` 오류 0
-- 단위: `compareModelV163` 15/15, 전체 `test:unit` 83 suites · 847 tests 통과
-- 빌드(production 형식, gate-lock) 성공
-- e2e `e2e/compare.spec.ts` 2/2(국가 전환 테스트 추가)
-- `audit:map-compare:v135` 10/10(로컬은 SwiftShader 허용 인자 필요 — 사유는 REVIEW 4절)
-- 실제 브라우저 QA 7개 조합: 두 패널 데이터 레이어 렌더 > 0, 클릭 카드 값·순위, 범례 최소·최대, 콘솔 오류 0, 404 0, 320~1920px 가로 넘침 0 → `reports/v163/qa-compare-v163.json`
-- 전체 게이트는 이 PR의 CI `gate` 작업에서
+## 검증(로컬 필터 검사)
+- `npx tsc --noEmit` 0 · `npm run test:unit` 879/879 · production 빌드 통과
+- 공개 문구 스캔 0
+  - 출처 메모 감사: VNM 146·BGD 141 상세 전부 + 찾기·홈·다운로드·지도
+  - 식별자·메모 스캔: 826건
+- `qa:acceptance:v162` 지도·문구·국가 영역 BGD 7/7·VNM 7/7(국명·고유 행정 표현·국가 선택기 포함)
+- BGD 검증기 52/52(커밋 후) · BGD 지도 빌더 `--check` PASS · 데이터 목록 verify 통과
 
 ## 남은 것
-- 배경지도(지형·위성)는 패널에 미적용, 큰 지도 세부 필터 미제공, 34↔63 혼합 지역 연동 미지원, 닫을 때 A가 다른 국가면 일반 지도 국가는 그대로 — REVIEW 4절
-
----
-## 함께 포함: 작은 지도 방글라데시 확장 (상세 '위치·분포' 38개 · 홈 상단)
-- 전: BGD 지도 대상 38개 상세와 홈 상단에 지도 없이 "이 자료는 데이터 지도에서 볼 수 있습니다." + 스타일 없는 회색 버튼
-- 후: 국가별 1급 행정구역 자산으로 정적 지도 + 확대 지도(큰 지도 렌더러). 베트남 전용 표시(도시 라벨·'개편 후 34개' 캡션·외곽선)는 베트남만
-- 행정구역 키(`BGD.8_1` 등) 대신 Division 이름 표시(경계 자산 이름 사용, 큰 지도에도 적용)
-- 확인 경로: `/?view=data&element=B-039&country=BGD&from=explorer#element-detail` → '지역별 분포' / `/?country=BGD#home` 상단
-- 검증: BGD 상세 38/38 지도 표시(1440·390, 콘솔 오류 0, 가로 넘침 0, 다른 국가 문구 0) · 확대 지도 7개 레이어 피처 확인 · VNM 상세 10쪽 지도 영역 HTML 바이트 동일(회귀 0) · 단위 테스트 22건 추가
-- 캡처: `reports/v163/screens/minimap-BGD-{A-023,B-039,B-017,A-024,home}-{before,after}.png`, `minimap-BGD-*-live-after.png`
-- 남은 것: BGD 국가 외곽선(단순화 자산 필요), B-002·B-009·B-035·B-036 상세 항목↔지도 변수 대응표 없음(대체 항목 안내 유지) — `reports/v163/REVIEW_V163_MINIMAP.md`
-
+- 지도 '이 위치의 데이터'(겹침 선택) 보조 팝업의 BGD 지역명은 영문(Mymensingh) 그대로 — 한글 지역명 사전 적용은 별도 경로
+- 4(d) 일부: B-012 'Riverine flood'(EM-DAT 세부유형 사전 필요), A-028 'river', B-048 'Processing Plant'·A-023 geolocation_source(노출 위치 미확정) — 다음 라운드
+- 레코드 속성 값 안의 확인 날짜(VNM C-002·C-004 등)는 원자료 셀 값이라 이번 정리 대상(설명 필드)에서 제외 — 화면 스캔에서는 미검출
+- B-033 등 지역 카드의 '외 N건'은 '주 · 연도' 단위로 셈(같은 주·연도의 원인별 행은 하나로 묶임)
+- 공개 파일 `quality-report.json`(화면 미사용)에는 원 메모가 남아 있음
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-https://claude.ai/code/session_01S2RXaZNPtnFSDFcQZeGuVf

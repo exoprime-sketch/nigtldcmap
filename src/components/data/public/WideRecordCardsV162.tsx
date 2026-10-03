@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
-import { sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
+import { mergeRegionNameValuesV163, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
 import { useRegionTextV162 } from "../../../data/geo/regionDisplayV162";
+import { useRegionWordV158 } from "../../../data/countries/countryLevel1V158";
 import "./wide-record-cards-v162.css";
 
 interface Props {
@@ -89,6 +90,10 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
   // administrative code stays as delivered (regionText only rewrites the name
   // attributes, matched by REGION_NAME_ATTRIBUTE_V162).
   const regionText = useRegionTextV162(elementId);
+  // V163 (3a): the 2025 성·시 reform's before/after name columns apply only to
+  // the default country (Viet Nam, `level1` null here); any other country's
+  // [지역] block shows a single plain "지역명" row instead.
+  const { level1 } = useRegionWordV158();
   return (
     <article className="wide162-card" data-testid="wide-record-card-v162">
       <header className="wide162-card-head">
@@ -102,7 +107,7 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
           {/* A label inside the card, not a page heading: every card repeats it. */}
           <p className="wide162-block-title">{block.title}</p>
           <dl className="wide162-rows">
-            {block.values.map((value) => {
+            {(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values).map((value) => {
               const displayValue =
                 block.block === "지역" && REGION_NAME_ATTRIBUTE_V162.test(value.attribute)
                   ? regionText(value.value)

@@ -3,7 +3,7 @@
 React 18 / TypeScript 4.9 / CRA 5 / MapLibre GL 5 / 자체 SVG 차트. 공개 provider는 베트남 파일럿(152개 데이터 항목, 지도 대상 43개 중 42개 활성). 배포는 Vercel(nigtldcmap.vercel.app). 사용자와의 대화·보고서·커밋 본문은 한국어(개조식), 코드 주석은 영어 유지.
 
 ## 절대 규칙
-- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건: PR의 CI `gate` 작업(`finalize:v151`, acceptance 포함) 통과(analysis QA는 41건 기준선 이내) + Vercel Preview Ready + 사용자 승인. GitHub CI는 merge를 막지 않되 **main에서 반드시 녹색**이어야 하며, 빨강이면 다음 PR을 시작하기 전에 fix-forward로 먼저 고친다.
+- main 직접 push 금지. 작업은 `origin/main`에서 분기한 브랜치 → PR(squash). merge 조건(2026-10-03 사용자 지시 '비필수 검증 제외'): CI `Static gate`(types·unit·build·data audits) 녹색 + 바뀐 항목 필터 검사 + 공개 문구 스캔 0 + Preview 캡처 + 사용자 "PR #N 병합". `PR gate finalize:v151`(약 2시간)와 `Playwright against the candidate build`(알려진 기준 이미지 4건 실패)는 참고용 — 기다리거나 재실행하지 않는다(사유: 화면 확인에 영향 없는 검사 대기로 병합이 반나절씩 늦어짐, #58). main의 Static gate가 빨강이면 다음 PR 전에 fix-forward로 먼저 고친다.
 - **병합은 사용자가 Preview를 직접 검토한 뒤 "PR #N 병합"이라고 명시한 경우에만.** 게이트 통과·검토자 '승인 권고'·앞선 일반 승인만으로 병합하지 않는다. PR 보고에는 ① Preview URL ② 화면이 바뀌는 페이지 목록과 확인 경로(URL·클릭 순서) ③ 바뀐 화면 전후 캡처(1440px)를 넣고, 화면 변화가 없으면 '화면 변화 0'이라고 쓴다. (2026-09-29, #34 운영 수동 복구 후)
 - 게이트·감사 스크립트의 기대값을 현재값으로 바꿔 통과시키지 않는다. 기대값 변경은 사유를 `reports/v15x/`에 기록.
 - 데이터 조작 금지: 결측 0 대체, 임의 경계·좌표 생성, 추정 분야 채움, 출처 간 중복 합산 금지. 원자료에 없는 값은 만들지 않는다.

@@ -86,7 +86,7 @@ for (const elementId of Object.keys(expected)) {
   if (cards.length !== expected[elementId]) problems.push(`cards ${cards.length} != ${expected[elementId]}`);
   cards.forEach((card) => {
     if (card.status !== "verified") problems.push(`${card.key} pending`);
-    if (!/^플랫폼 편집 설명 · 출처 \d+건 · \d{4}-\d{2}-\d{2} 확인$/u.test(card.label)) problems.push(`${card.key} label`);
+    if (!/^플랫폼 편집 설명 · 출처 \d+건 · \d{4}-\d{2}-\d{2} 기준$/u.test(card.label)) problems.push(`${card.key} label`);
     if (INTERNAL.test(card.text)) problems.push(`${card.key} internal phrase`);
     if (card.links.length === 0 || card.links.some((href) => !href.startsWith("https://"))) problems.push(`${card.key} links`);
     if (card.points.length < 2) problems.push(`${card.key} points ${card.points.length}`);

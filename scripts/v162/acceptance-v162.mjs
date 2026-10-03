@@ -453,10 +453,23 @@ for (const iso3 of COUNTRIES) {
   // 4 numbers -------------------------------------------------------------
   if (!SKIP.has("numbers")) {
     const figures = await withPage((page) => homeFigures(page, iso3));
-    const downloadable = data.manifest?.downloadableElementCount ?? data.catalog.filter((element) => !NON_PUBLIC_STATUSES.has(element.publicStatus) && element.downloadAllowed && (element.downloadableRecordCount || 0) > 0).length;
+    // V163 (5iv): the manifest's own count (`downloadAllowed` alone) and the
+    // download hub's (`hasDownloadableData`, which also requires a populated
+    // row) disagreed - BGD B-045 carries `downloadAllowed: true` with zero
+    // populated rows, so the manifest counted it and the hub did not (100 vs
+    // 99). The home figure now reads the hub's rule; this expectation is the
+    // same rule, not the manifest, so the two stay in agreement by
+    // construction (reports/v163/EXPECTATION_CHANGES.md).
+    const downloadable = data.catalog.filter((element) =>
+      !NON_PUBLIC_STATUSES.has(element.publicStatus) &&
+      (element.dataPresenceStatus === "actual-records" || element.dataPresenceStatus === "partial-records") &&
+      ((element.observationCount || 0) > 0 || (element.entityCount || 0) > 0) &&
+      element.downloadAllowed === true &&
+      (element.downloadableRecordCount || 0) > 0
+    ).length;
     check(iso3, "numbers", "home-total", "홈 전체 데이터 항목 = 카탈로그 공개 요소", number(figures["전체 데이터 항목"]) === data.publicIds.length, figures["전체 데이터 항목"], data.publicIds.length);
     check(iso3, "numbers", "home-map", "홈 지도 제공 항목 = map-index 활성 레이어", number(figures["지도 제공 항목"]) === data.layers.length, figures["지도 제공 항목"], data.layers.length);
-    check(iso3, "numbers", "home-download", "홈 다운로드 가능 항목 = manifest", number(figures["다운로드 가능 항목"]) === downloadable, figures["다운로드 가능 항목"], downloadable);
+    check(iso3, "numbers", "home-download", "홈 다운로드 가능 항목 = 다운로드 허브 규칙(hasDownloadableData)", number(figures["다운로드 가능 항목"]) === downloadable, figures["다운로드 가능 항목"], downloadable);
     const downloadList = await withPage(async (page) => {
       await page.goto(`${base}/${iso3 === DEFAULT_COUNTRY ? "?country=VNM" : `?country=${iso3}`}#download`, { waitUntil: "networkidle", timeout: scaledTimeoutMsV150(120_000) });
       await page.waitForSelector(".cdp-download-item[data-element-id]", { timeout: scaledTimeoutMsV150(60_000) });

@@ -134,7 +134,7 @@ export function choroplethFeatureCollection(
             adm1Code,
             // V163: a unit without a value row (Bangladesh's Mymensingh in B-017) is named by the
             // boundary file's own name; the join key ("BGD.8_1") is the last resort, never the first.
-            adm1Name: value?.adm1Name || feature.properties?.name || feature.properties?.nameEn || adm1Code,
+            adm1Name: value?.adm1Name || feature.properties?.name || feature.properties?.nameEn || feature.properties?.nameKo || adm1Code,
             value: value?.value ?? null,
             hasValue: Boolean(value),
             // V157: a province table may state a category as well as a number

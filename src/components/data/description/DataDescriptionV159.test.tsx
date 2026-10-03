@@ -84,6 +84,33 @@ test("spec === null renders nothing", () => {
   expect(container.innerHTML).toBe("");
 });
 
+test("a part whose text is empty is not rendered (V163: no heading over an empty body)", () => {
+  act(() =>
+    root.render(
+      <DataDescriptionV159
+        availableIndicatorIds={AVAILABLE}
+        cases={[]}
+        spec={{ ...SPEC, description: "", usage: "활용 방법 본문입니다." }}
+      />
+    )
+  );
+  expect(container.querySelector('[data-dd159-part="description"]')).toBeNull();
+  expect(container.querySelector('[data-dd159-part="usage"]')).not.toBeNull();
+});
+
+test("the whole section is absent when description, usage and cases are all empty", () => {
+  act(() =>
+    root.render(
+      <DataDescriptionV159
+        availableIndicatorIds={AVAILABLE}
+        cases={[]}
+        spec={{ ...SPEC, description: "", usage: "" }}
+      />
+    )
+  );
+  expect(container.innerHTML).toBe("");
+});
+
 test("활용 사례 disclosure starts collapsed and its aria-expanded toggles on click", () => {
   act(() =>
     root.render(
