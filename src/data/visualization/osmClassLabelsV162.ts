@@ -31,10 +31,10 @@ export function osmClassLabelV162(value: string): string {
 export function publicOsmIndicatorLabelV162(text: string): string {
   return String(text ?? "")
     .replace(
-      /분류별 피처 수\(([a-z_]+)\)(?:\s*[—·-]\s*(?:fclass|분류) 분류값별 지물 건수)?/gu,
+      /분류별 피처 수\(([a-z_]+)\)(?:\s*[—·-]\s*(?:fclass|highway|railway|분류) 분류값별 지물 건수)?/gu,
       (_, value: string) => `분류별 지물 수 · ${osmClassLabelV162(value)}`
     )
-    .replace(/\s*[—·-]\s*(?:fclass|분류) 분류값별 지물 건수/gu, "")
+    .replace(/\s*[—·-]\s*(?:fclass|highway|railway|분류) 분류값별 지물 건수/gu, "")
     .replace(/피처 수/gu, "지물 수")
     .replace(/\bfclass\b/gu, "분류");
 }

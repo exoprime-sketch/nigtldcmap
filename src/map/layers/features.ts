@@ -455,7 +455,8 @@ export function pointLocationLabelV151(
   system: BoundarySystemV151
 ): string | null {
   if (hit === undefined) return null;
-  if (hit === null) return "소재지 미확정(성·시 경계 밖)";
+  // V163-T3: printed after "소재" in the popup - "소재 미확정(…)", not "소재 소재지 …".
+  if (hit === null) return "미확정(성·시 경계 밖 지점)";
   if (system === "post-2025-34" && hit.unitCode) {
     const unitName = PROVINCE_KO_34_V151[hit.unitCode] || hit.adm1Name;
     return `${unitName} ${formerProvinceLabelV151(hit.adm1Code)}`.trim();

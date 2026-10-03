@@ -1,3 +1,4 @@
+import { publicMapFactValueV163 } from "../map/mapFactValueLabelsV163";
 import { formatRegionName, formatRegionTextV162 } from "../geo/regionNameV161";
 import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
@@ -46,6 +47,7 @@ export interface FacilityCardRowV153 {
   missing: boolean;
 }
 
+const COUNTRY_KO_V163: Readonly<Record<string, string>> = { VNM: "베트남", BGD: "방글라데시" };
 const COUNTRY: FacilityCardFieldV153 = { key: "country", label: "국가", sources: [], constant: "베트남" };
 const NAME: FacilityCardFieldV153 = { key: "name", label: "명칭", sources: ["@name"] };
 const ADM1: FacilityCardFieldV153 = { key: "location", label: "소재지", sources: ["adm1Name34"], format: "adm1" };
@@ -132,6 +134,10 @@ function readSource(entity: VietnamEntityV124, source: string): unknown {
 function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): FacilityCardRowV153 {
   const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
   const missing = { key: field.key, label: field.label, value: FACILITY_CARD_MISSING_V153, missing: true };
+  // V163-T3: the record's own country (a Bangladesh record never reads 베트남).
+  if (field.key === "country" && entity.countryIso3 && COUNTRY_KO_V163[entity.countryIso3]) {
+    return { key: field.key, label: field.label, value: COUNTRY_KO_V163[entity.countryIso3], missing: false };
+  }
   if (field.constant) return { key: field.key, label: field.label, value: field.constant, missing: false };
   if (field.format === "fuel") {
     const fuel = powerPlantFuelV141(attributes);
@@ -143,13 +149,15 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     if (current) {
       // V162 (P12-B): "한글명 (현지명)" from the region dictionary, the unit's
       // own vintage for each name (34 now, 63 before the 2025 reform).
-      const named = formatRegionName({ country: "VNM", raw: current, level: "adm1-34" });
-      const formerNamed = former ? formatRegionName({ country: "VNM", raw: former, level: "adm1-63" }) : "";
+      const named = formatRegionName({ country: entity.countryIso3 || "VNM", raw: current, level: "adm1-34" });
+      const formerNamed = former ? formatRegionName({ country: entity.countryIso3 || "VNM", raw: former, level: "adm1-63" }) : "";
       const suffix = former && former !== current ? ` · 개편 후 34개 기준 · 구 ${formerNamed}` : " · 개편 후 34개 기준";
       return { key: field.key, label: field.label, value: `${named}${suffix}`, missing: false };
     }
     const fallback = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
-    return fallback ? { key: field.key, label: field.label, value: `${formatRegionTextV162({ country: "VNM", raw: fallback })} (성·시 경계 밖 · 원문 표기)`, missing: false } : { ...missing, value: `${FACILITY_CARD_MISSING_V153}(성·시 경계 밖)` };
+    // V163-T3: an unknown location is 미기재, not asserted to be outside every
+    // province (the map can place the same point inside one).
+    return fallback ? { key: field.key, label: field.label, value: `${formatRegionTextV162({ country: entity.countryIso3 || "VNM", raw: fallback })} (원문 표기)`, missing: false } : missing;
   }
   if (field.format === "source") {
     // A-023: the registry's own name and year, then the row's link.
@@ -182,7 +190,10 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
   }
   // V162: a note field reads like any record note - the compiler's coding
   // memo ("tech_id 공란(별첨2 R4: 억지 매핑 금지)") is not the record's content.
-  const value = field.key === "note" ? text(publicRecordNoteV161(text(raw) || "")) : text(raw);
+  const plain = field.key === "note" ? text(publicRecordNoteV161(text(raw) || "")) : text(raw);
+  // V163-T3: a status in the source's own English (Global CCS Institute
+  // "Planned", GEM "pre-construction") reads in Korean; others as written.
+  const value = plain && field.key === "status" ? publicMapFactValueV163("status", plain) : plain;
   return value ? { key: field.key, label: field.label, value, missing: false } : missing;
 }
 
@@ -190,7 +201,13 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
 export function facilityCardRowsV153(elementId: string, entity: VietnamEntityV124): FacilityCardRowV153[] {
   const spec = FACILITY_CARD_SPECS_V153[elementId];
   if (!spec) return [];
-  return spec.fields.map((field) => formatField(field, entity));
+  const rows = spec.fields.map((field) => formatField(field, entity));
+  // V163-T3: a record whose name field repeats its type (A-025 "Power (coal)")
+  // has no name of its own - the row reads 미기재 rather than the type twice.
+  const type = rows.find((row) => row.key === "type" && !row.missing)?.value;
+  return rows.map((row) =>
+    row.key === "name" && type && row.value === type ? { ...row, value: FACILITY_CARD_MISSING_V153, missing: true } : row
+  );
 }
 
 export function facilityCardSpecV153(elementId: string): FacilityCardSpecV153 | null {

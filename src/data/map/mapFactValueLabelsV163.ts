@@ -34,6 +34,14 @@ const EMDAT_SUBTYPES_V163: Readonly<Record<string, string>> = {
 };
 
 const GEM_STATUS_V163: Readonly<Record<string, string>> = {
+  // Global CCS Institute facility status (A-025).
+  planned: "계획",
+  operational: "운영",
+  "in construction": "건설 중",
+  "advanced development": "개발 후기",
+  "early development": "개발 초기",
+  completed: "완료",
+  suspended: "중단",
   operating: "운영",
   construction: "건설 중",
   "pre-construction": "착공 전",
@@ -79,6 +87,30 @@ const COUNTRY_KO_V163: Readonly<Record<string, string>> = {
   Turkey: "튀르키예",
 };
 
+// Carbon-credit registry project types (Verra / Gold Standard "Type").
+const CREDIT_TYPES_V163: Readonly<Record<string, string>> = {
+  "leak detection & repair in gas systems": "가스 배관 누출 탐지·보수",
+  cookstoves: "고효율 조리기구(쿡스토브)",
+  "solar - centralized": "태양광(집중형)",
+  "solar - distributed": "태양광(분산형)",
+  composting: "퇴비화",
+  "afforestation/reforestation": "신규조림·재조림",
+  "electric vehicles & charging": "전기차·충전",
+  "sustainable agriculture": "지속가능 농업",
+  wind: "풍력",
+  hydropower: "수력",
+  biogas: "바이오가스",
+  "landfill gas": "매립가스",
+  "energy efficiency": "에너지 효율",
+  "waste heat recovery": "폐열 회수",
+  biomass: "바이오매스",
+  "rice cultivation": "벼 재배(메탄 저감)",
+  "clean water": "깨끗한 물 공급",
+  "fuel switching": "연료 전환",
+};
+
+const CODING_MEMO_V163 = /억지\s*매핑|tech_ids?\b|별첨\s*\d|대응\s*불명확/u;
+
 function gemStatusLabelV163(value: string): string | null {
   const text = value.trim().toLowerCase();
   if (GEM_STATUS_V163[text]) return GEM_STATUS_V163[text];
@@ -104,6 +136,8 @@ export function publicMapFactValueV163(key: string, value: string): string {
       const label = gemStatusLabelV163(text);
       return label || text;
     }
+    case "technology":
+      return CREDIT_TYPES_V163[lower] || text;
     case "nationality":
       // GEM owner nationality: "China(20%)", "United States; Bangladesh".
       return text.replace(/[A-Z][A-Za-z.]*(?: [A-Z][A-Za-z.]*)*/gu, (name) => COUNTRY_KO_V163[name] || name);
@@ -111,11 +145,20 @@ export function publicMapFactValueV163(key: string, value: string): string {
       return text
         .replace(/^원천 geolocation_source:\s*(.+)$/u, "원천 제공 좌표($1)")
         .replace(/\(geolocation_source 미기재\)/u, "(근거 미기재)");
+    case "climateTechBasis":
+    case "note":
+      // V163-T3: the compiler's coding memo ("tech_id 공란(별첨2 R4: 억지 매핑
+      // 금지)") is not a fact about the site.
+      return text
+        .split(/(?<=[.。])\s+|\s+·\s+/u)
+        .filter((part) => part.trim() && !CODING_MEMO_V163.test(part))
+        .join(" ")
+        .trim();
     case "remarks":
     case "siteNote":
       return text
         .split(/\s+·\s+/u)
-        .filter((part) => !/^MRDS dep_id\s*\d+$/iu.test(part.trim()))
+        .filter((part) => !/^MRDS dep_id\s*\d+$/iu.test(part.trim()) && !/^GADM gid\b/iu.test(part.trim()))
         .map((part) => MINE_TYPES_V163[part.trim().toLowerCase()] || part)
         .join(" · ")
         .replace(/운영형태\s+([A-Za-z][A-Za-z -]*[A-Za-z])/u, (_m, kind: string) => `운영형태 ${MINE_TYPES_V163[kind.toLowerCase()] || kind}`)

@@ -17,3 +17,8 @@ describe("A-027 OpenStreetMap class labels (V162)", () => {
     expect(publicOsmIndicatorLabelV162("피처 수 · OSM 철도 레이어의 지물 건수")).toBe("지물 수 · OSM 철도 레이어의 지물 건수");
   });
 });
+
+test("V163-T3: road classes and the highway column wording", () => {
+  expect(publicOsmIndicatorLabelV162("분류별 피처 수(living_street) · highway 분류값별 지물 건수")).toBe("분류별 지물 수 · 생활도로");
+  expect(osmClassLabelV162("motorway_link")).toBe("고속도로 연결로");
+});
