@@ -1,4 +1,5 @@
 import { publicProcessWordingV162 } from "./processWordingV162";
+import { publicDownloadTextV163 } from "./publicDownloadNoteV163";
 import type { CountryCatalogItemV122 } from "../countries/countryDataTypesV122";
 import type {
   VietnamEntityV124,
@@ -1041,9 +1042,22 @@ const RECORD_NOTE_MIGRATION_LOG_V162: readonly RegExp[] = [
 /** A file name outside a URL ("보관 원자료 Germanwatch_CRI2026_full_report.pdf"). */
 const RECORD_NOTE_BARE_FILE_V162 = /(^|[\s(（])(?!https?:)[^\s()（）]+\.(?:pdf|md|xlsx?|csv|docx?|hwpx?)\b/giu;
 
+/** V163-T3: NDC document types a record note writes as source codes (A-013 "문서유형: first_ndc"). */
+const NDC_DOCUMENT_TYPES_V163: Readonly<Record<string, string>> = {
+  revised_first_ndc: "1차 NDC(개정)",
+  first_ndc: "1차 NDC",
+  second_ndc: "2차 NDC",
+  updated_ndc: "갱신 NDC",
+  indc: "INDC",
+};
+
 export function publicRecordNoteV161(value: unknown): string | null {
-  const normalized = normalizeTextV126(value);
-  if (normalized === null) return null;
+  const normalizedRaw = normalizeTextV126(value);
+  if (normalizedRaw === null) return null;
+  const normalized = normalizedRaw.replace(
+    /\b(revised_first_ndc|first_ndc|second_ndc|updated_ndc|indc)\b/gu,
+    (code) => NDC_DOCUMENT_TYPES_V163[code] || code
+  );
   const withoutLog = RECORD_NOTE_MIGRATION_LOG_V162.reduce((text, pattern) => text.replace(pattern, ""), normalized)
     .replace(/\s{2,}/gu, " ")
     .trim();
@@ -1164,13 +1178,16 @@ export function toPublicSourceViewV126(
     license:
       normalizeTextV126(row.provenance.licenseCode) ||
       normalizeTextV126(meta?.licenseCode),
-    attribution: normalizeTextV126(meta?.attributionText),
+    // V163-DL: the download carries the source text the screens show - the
+    // delivery team's working notes (client review, raw folder, old sheet)
+    // are not part of it (publicDownloadNoteV163).
+    attribution: publicSourceOrganizationV136_1(meta?.attributionText),
     caveat:
-      normalizeTextV126(meta?.caveat) ||
-      normalizeTextV126(meta?.missingNote),
+      normalizeTextV126(publicDownloadTextV163(meta?.caveat, element.countryIso3)) ||
+      normalizeTextV126(publicDownloadTextV163(meta?.missingNote, element.countryIso3)),
     citation:
-      normalizeTextV126(row.provenance.citationLocator) ||
-      normalizeTextV126(meta?.citationLocator),
+      normalizeTextV126(publicDownloadTextV163(row.provenance.citationLocator, element.countryIso3)) ||
+      normalizeTextV126(publicDownloadTextV163(meta?.citationLocator, element.countryIso3)),
   };
 }
 
@@ -1319,6 +1336,20 @@ export function publicEntityAttributeKeysV126(
   );
 }
 
+// V163-DL: a download repeats one note on many rows (B-004 has 100k+), so a
+// distinct note is projected once - same rules as the screens' record notes.
+const DOWNLOAD_NOTE_CACHE_V163 = new Map<string, string | null>();
+function downloadRecordNoteV163(note: unknown, countryIso3: string | null | undefined): string | null {
+  if (note === null || note === undefined || note === "") return null;
+  const key = `${countryIso3 || ""}|${String(note)}`;
+  const cached = DOWNLOAD_NOTE_CACHE_V163.get(key);
+  if (cached !== undefined) return cached;
+  const result = normalizeTextV126(publicDownloadTextV163(publicRecordNoteV161(note), countryIso3));
+  if (DOWNLOAD_NOTE_CACHE_V163.size >= 20000) DOWNLOAD_NOTE_CACHE_V163.clear();
+  DOWNLOAD_NOTE_CACHE_V163.set(key, result);
+  return result;
+}
+
 export function toPublicObservationRowsV126(
   input: PublicObservationProjectionInputV126
 ): PublicDownloadRowV126[] {
@@ -1365,7 +1396,7 @@ export function toPublicObservationRowsV126(
         row.missingReasonCode,
         row.note
       ),
-      public_note: normalizeTextV126(row.note) || source.caveat,
+      public_note: downloadRecordNoteV163(row.note, row.countryIso3 || input.element.countryIso3) || source.caveat,
       entityAttributes: {},
     };
   });
@@ -1388,10 +1419,17 @@ export function toPublicEntityRowsV126(
       recordSemantic
     );
     const source = toPublicSourceViewV126(row, meta, input.element);
-    const attributes = approvedEntityAttributesV126(
-      row,
-      input.element.raw.detailTemplate
-    );
+    // V163-DL: an attribute holding a working note (where the delivery's
+    // geocoding ledger sits, a client review) loses that sentence in the file.
+    const attributes = Object.fromEntries(
+      Object.entries(approvedEntityAttributesV126(row, input.element.raw.detailTemplate)).flatMap(
+        ([key, value]): Array<[string, PublicAttributeValueV126]> => {
+          if (typeof value !== "string") return [[key, value]];
+          const cleaned = normalizeTextV126(publicDownloadTextV163(value, row.countryIso3 || input.element.countryIso3));
+          return cleaned === null ? [] : [[key, cleaned as PublicAttributeValueV126]];
+        }
+      )
+    ) as Record<string, PublicAttributeValueV126>;
     const attributeCategory = Object.entries(attributes)
       .filter(
         ([key]) =>
@@ -1455,7 +1493,7 @@ export function toPublicEntityRowsV126(
         row.missingReasonCode,
         row.note
       ),
-      public_note: normalizeTextV126(row.note) || source.caveat,
+      public_note: downloadRecordNoteV163(row.note, row.countryIso3 || input.element.countryIso3) || source.caveat,
       entityAttributes: attributes,
     };
   });

@@ -28,3 +28,7 @@
 - `scripts/v153/qa-policy-descriptions-v153.mjs`·`PolicyDescriptionV153.test.tsx`: 정책 설명 카드 라벨 '… yyyy-mm-dd 확인' → '… yyyy-mm-dd 기준'(공개 문구 스캔의 'yyyy-mm-dd 확인' 금지 패턴, 사용자 지시)
 - `scripts/v157/public-wording-scan-v157.mjs`: OSM 'ko (value)' 예외 삭제(화면이 더는 원문 키를 붙이지 않음) — 기준 강화
 - 날짜 확인 패턴은 데이터 버전 표기(v2026-04-30) 뒤의 '확인'은 제외 — 버전명은 확인 날짜가 아님
+
+## V163-T3 (2026-10-03) — `src/data/countries/countryCopyV158.test.ts`
+- 변경: 'a reviewed series phrase naming the default country…' 테스트가 실제 문구표(publicIndicatorCopyV144.json)에서 베트남 국명이 든 문구를 찾지 못하면 실패하던 것을, 없을 때는 A-006 '국가추정'이 다른 나라에서도 '국가 통계'로 읽히는지 확인하도록 변경. 국명이 든 문구가 다시 생기면 기존 규칙(다른 나라에서는 원값) 그대로 검사.
+- 사유: 그 문구가 유일했던 A-006 '국가추정' → '베트남 통계'를 국가 중립 '국가 통계'로 바꿈. 방글라데시 A-006 차트 필터에 '베트남 통계'가 표시되던 결함(운영 전수 점검 21:25 발견) 수정.

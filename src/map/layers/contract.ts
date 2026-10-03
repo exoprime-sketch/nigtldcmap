@@ -1,3 +1,4 @@
+import { publicMapFactValueV163 } from "../../data/map/mapFactValueLabelsV163";
 /**
  * V152: readings of a layer contract shared by the renderers and the page -
  * renderer kind, selected slice, filters and facts (moved from RealMapExplorerPage).
@@ -114,5 +115,9 @@ export function resolvePublicMapEntityTitleV131(
     layer.elementId,
     layer.publicShortTitle
   );
-  return resolvePublicEntityTitleV131(entity, { elementTitle });
+  const resolved = resolvePublicEntityTitleV131(entity, { elementTitle });
+  // V163-T3: a record named only by its EM-DAT subtype ("Tropical cyclone")
+  // reads in Korean, as the panel's 세부유형 row does.
+  const korean = publicMapFactValueV163("disasterSubtype", String(resolved.title || ""));
+  return korean && korean !== resolved.title ? { ...resolved, title: korean } : resolved;
 }
