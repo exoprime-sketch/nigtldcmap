@@ -59,6 +59,8 @@ export interface RegionNameInputV158 {
 export interface AdminUnitInputV158 {
   readonly iso3: string;
   readonly label?: string | null;
+  /** V163-T2: listed in the registry's `adm.publicTerms` (not the level-1 label). */
+  readonly publicTerm?: boolean;
 }
 
 export interface BuildOtherCountryTermsInputV158 {
@@ -199,9 +201,21 @@ export function buildOtherCountryTermsV158(
   for (const unit of input.adminUnits ?? []) {
     const iso3 = normalizeIso3V158(unit.iso3);
     const label = String(unit.label ?? "");
-    if (!iso3 || iso3 === displayed || !/[\uac00-\ud7a3]/u.test(label)) continue;
-    if (ownAdminUnits.has(hangulKeyV158(label))) continue;
-    pushHangul(label, iso3, "admin-unit");
+    if (!iso3 || iso3 === displayed) continue;
+    if (/[\uac00-\ud7a3]/u.test(label)) {
+      if (ownAdminUnits.has(hangulKeyV158(label))) continue;
+      pushHangul(label, iso3, "admin-unit");
+      continue;
+    }
+    // V163-T2: a registry public term in Latin script is another country's own
+    // institution name (Viet Nam's "PDP8", "EVN"). It is listed on purpose, so
+    // the short-name guard for country/region names does not apply.
+    if (!unit.publicTerm) continue;
+    const trimmed = label.trim();
+    const key = latinKeyV158(trimmed);
+    if (trimmed.length < 3 || !key || ownLatinKeys.has(key) || seenLatin.has(key)) continue;
+    seenLatin.add(key);
+    terms.push({ term: trimmed, script: "latin", iso3, kind: "admin-unit" });
   }
 
   return terms;
@@ -306,7 +320,7 @@ export function confirmedRegionEntriesV158(): RegionNameInputV158[] {
 export function adminUnitsV158(registry: { countries: ReadonlyArray<{ iso3: string; adm?: { level1?: { label?: string }; publicTerms?: readonly string[] } }> }): AdminUnitInputV158[] {
   return registry.countries.flatMap((row) => [
     { iso3: row.iso3, label: row.adm?.level1?.label ?? null },
-    ...(row.adm?.publicTerms ?? []).map((term) => ({ iso3: row.iso3, label: term })),
+    ...(row.adm?.publicTerms ?? []).map((term) => ({ iso3: row.iso3, label: term, publicTerm: true })),
   ]);
 }
 

@@ -233,3 +233,21 @@ describe("buildOtherCountryTermsV158: another country's level-1 word (V158-B2b)"
     expect(terms.filter((t) => t.kind === "admin-unit")).toEqual([]);
   });
 });
+
+describe("buildOtherCountryTermsV158: another country's institution names (V163-T2)", () => {
+  it("counts a Latin public term (PDP8, EVN) but not a Latin level-1 label", () => {
+    const terms = buildOtherCountryTermsV158({
+      displayedIso3: "BGD",
+      countries: [],
+      regionEntries: [],
+      adminUnits: [
+        { iso3: "VNM", label: "Province" },
+        { iso3: "VNM", label: "PDP8", publicTerm: true },
+        { iso3: "VNM", label: "EVN", publicTerm: true },
+      ],
+    });
+    expect(terms.map((t) => t.term)).toEqual(["PDP8", "EVN"]);
+    expect(findCountryTermsV158("개정 PDP8(768/QĐ-TTg)의 계획 용량", terms).map((t) => t.term)).toEqual(["PDP8"]);
+    expect(findCountryTermsV158("Bangladesh Power Development Board", terms)).toEqual([]);
+  });
+});

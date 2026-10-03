@@ -75,6 +75,7 @@ import { POWER_PLANT_SOURCES_V141 } from "../data/map/powerPlantFactsV141";
 import { prepareLayerRecordsV138, attributeText } from "../data/map/prepareLayerRecordsV148";
 import { applyNationalMineJoinV157_2 } from "../data/map/entityAttributeJoinV157_2";
 import { mapFactsV148, mapIndicatorSourceV148, powerCapacitySummaryV148 } from "../data/map/mapPresentationV148";
+import { publicMapFactValueV163 } from "../data/map/mapFactValueLabelsV163";
 import { createMapPointPopupV152 } from "../components/map/mapPointPopupV152";
 import MapIconLegendV152 from "../components/map/MapIconLegendV152";
 import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
@@ -935,7 +936,8 @@ function isTopmostActiveFeatureV129(
 function overlapChoiceLabelV137(
   elementId: string,
   properties: Record<string, unknown>,
-  selectionKey: string
+  selectionKey: string,
+  countryIso3: string = DEFAULT_COUNTRY_ISO3_V158
 ): string {
   // The most specific thing first. A project's activity site and its
   // participation range are two different choices at the same spot, and both
@@ -947,7 +949,27 @@ function overlapChoiceLabelV137(
   const named = publicTextV126(
     properties.name || properties.projectTitle || properties.adm1Name
   );
-  if (named) return role && role !== named ? `${role} · ${named}` : named;
+  // V163-T2 (10): a boundary unit reads "한글명 (현지명)" as in the selection
+  // panel (BGD "마이멘싱 (Mymensingh)", not the bare source spelling).
+  const isRegionUnit =
+    properties.adm1Code !== undefined &&
+    properties.adm1Code !== null &&
+    !properties.recordId &&
+    !properties.projectTitle;
+  const shownName =
+    named && isRegionUnit
+      ? formatRegionListV161(named, {
+          country: countryIso3,
+          ...(countryIso3 === DEFAULT_COUNTRY_ISO3_V158
+            ? {
+                level: (properties.boundarySystem === "post-2025-34" ? "adm1-34" : "adm1-63") as
+                  | "adm1-34"
+                  | "adm1-63",
+              }
+            : {}),
+        }) || named
+      : named;
+  if (shownName) return role && role !== shownName ? `${role} · ${shownName}` : shownName;
   if (role) return role;
   // The source stores voltage as a number, and publicTextV126 returns null for
   // anything that is not a string - which is why the voltage silently vanished
@@ -1016,7 +1038,7 @@ function mapHitCandidatesV133(
         : elementId === priority?.lastContextElementId
         ? 200
         : 300 + (contextIndex < 0 ? 99 : contextIndex);
-      const label = overlapChoiceLabelV137(elementId, properties, selectionKey);
+      const label = overlapChoiceLabelV137(elementId, properties, selectionKey, countryIso3);
       return [
         {
           elementId,
@@ -1229,7 +1251,9 @@ function publicPowerPlantStatusV132(value: unknown): string | null {
   if (/^(?:construction|under construction)$/u.test(normalized)) return "건설 중";
   if (/^(?:planned|proposed)$/u.test(normalized)) return "계획";
   if (/^(?:retired|decommissioned|closed)$/u.test(normalized)) return "운영 종료";
-  return status;
+  // V163-T2 (13): GEM tracker statuses ("pre-construction", "shelved -
+  // inferred 2 y") by the tracker's own definitions; anything else as written.
+  return publicMapFactValueV163("status", status);
 }
 
 function publicPowerPlantFactsV132(
@@ -4197,6 +4221,20 @@ export default function RealMapExplorerPage({
         focusedVariable?.unit ||
         focusedLayer.unit;
       const missingRegionCount = Math.max(0, unitTotalV151 - ordered.length);
+      // V163-T2 (10): the lowest/highest region is written "한글명 (현지명)" like
+      // the selected-region title, in the boundary vintage the map is drawing.
+      const summaryRegionNameV163 = (name: unknown) => {
+        const shown = publicMapFeatureNameV126(name, "미표기");
+        if (shown === "미표기") return shown;
+        return (
+          formatRegionListV161(shown, {
+            country: countryIso3,
+            ...(countryIso3 === DEFAULT_COUNTRY_ISO3_V158
+              ? { level: (aggregated34 ? "adm1-34" : "adm1-63") as "adm1-34" | "adm1-63" }
+              : {}),
+          }) || shown
+        );
+      };
       summaryRows.push({
         label: sourceIsRegional ? `자료가 있는 ${regionUnitLabel}` : "자료가 있는 지역",
         value: sourceIsRegional
@@ -4223,7 +4261,7 @@ export default function RealMapExplorerPage({
             value: `${
               sourceIsRegional
                 ? publicVietnamSourceRegionV126(ordered[0]?.sourceRegion)
-                : publicMapFeatureNameV126(ordered[0]?.adm1Name, "미표기")
+                : summaryRegionNameV163(ordered[0]?.adm1Name)
             } · ${formatPublicNumberV126(ordered[0]?.value, unit)} ${unit}`.trim(),
           },
           {
@@ -4233,10 +4271,7 @@ export default function RealMapExplorerPage({
                 ? publicVietnamSourceRegionV126(
                     ordered[ordered.length - 1]?.sourceRegion
                   )
-                : publicMapFeatureNameV126(
-                    ordered[ordered.length - 1]?.adm1Name,
-                    "미표기"
-                  )
+                : summaryRegionNameV163(ordered[ordered.length - 1]?.adm1Name)
             } · ${formatPublicNumberV126(
               ordered[ordered.length - 1]?.value,
               unit
@@ -4846,9 +4881,21 @@ export default function RealMapExplorerPage({
         cardFactFields?: Array<{ key: string; label: string; unit?: string }>;
         referenceMap?: { label?: string; notice?: string };
       };
+      const statusShownV163 = (isLine || isAsset) && Boolean(publicPowerPlantStatusV132(properties.status));
       (layerCardV162.cardFactFields || []).forEach((field) => {
+        // V163-T2 (13): the status already reads "운영 상태" above.
+        if (field.key === "status" && statusShownV163) return;
         const raw = properties[field.key];
-        const text = raw === null || raw === undefined || raw === "" ? "" : `${raw}${field.unit ? ` ${field.unit}` : ""}`;
+        // V163-T2 (13·17): source classification values read as words
+        // ("Riverine flood" → 하천 범람, OSM "river" → 하천), and a source
+        // record id (MRDS dep_id) is not printed.
+        const shown =
+          typeof raw === "string"
+            ? field.key === "division"
+              ? formatRegionListV161(raw, { country: countryIso3 }) || raw
+              : publicMapFactValueV163(field.key, raw)
+            : raw;
+        const text = shown === null || shown === undefined || shown === "" ? "" : `${shown}${field.unit ? ` ${field.unit}` : ""}`;
         lines.push(...selectionLineV161(field.label, text));
       });
       if (layerCardV162.referenceMap?.notice) {
@@ -7309,9 +7356,13 @@ export default function RealMapExplorerPage({
                 );
               })}
             </svg>
-          <span className="cdp-map-fallback__attribution">
+          {/* V163-T2 (12): the live map prints the same credit below; the
+              fallback's own line only shows while the fallback is the map. */}
+          {baseMapStatus !== "ready" ? (
+            <span className="cdp-map-fallback__attribution">
               Natural Earth · 국가 외곽선 | geoBoundaries · {boundaryPhraseV162} (CC BY 4.0)
-          </span>
+            </span>
+          ) : null}
           </div>
           <div
             ref={containerRef}
