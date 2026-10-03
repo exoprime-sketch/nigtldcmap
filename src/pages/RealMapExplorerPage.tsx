@@ -8010,6 +8010,14 @@ export default function RealMapExplorerPage({
                   <span>묶음 숫자: 포함된 위치 수</span>
                 </div>
               )}
+              {/* V164: a layer drawn by one reference point per segment (another country's
+                  grid) says so beside its legend, not only in the data panel. */}
+              {(focusedLayer as { coordinateMeaning?: string }).coordinateMeaning === "reference-representative-point" &&
+                focusedLayer.publicSpatialNotice ? (
+                <p className="cdp-map-legend__missing" data-testid="map-legend-reference-point-v164">
+                  <PublicTermTextV134 text={focusedLayer.publicSpatialNotice} />
+                </p>
+              ) : null}
               {focusedMissingReason && focusedMissingReason !== "없음" && (
                 <p className="cdp-map-legend__missing">
                   결측: {focusedMissingReason}
