@@ -5225,7 +5225,14 @@ export default function RealMapExplorerPage({
   ]);
 
   useEffect(() => {
-    setKeyboardFeatureIndexV129(0);
+    // V162 PR-D: keyboard navigation starts on the first feature that has a
+    // value (a province the source left blank - Lai Châu under EVNNPC on the
+    // 63 outline - is still reachable with the arrows). Features without values
+    // anywhere start on the first one, as before.
+    const firstWithValue = keyboardMapFeaturesV129.findIndex(
+      (feature) => feature.spatial?.value !== null && feature.spatial?.value !== undefined
+    );
+    setKeyboardFeatureIndexV129(Math.max(0, firstWithValue));
   }, [keyboardMapFeaturesV129]);
 
   const keyboardMapFeatureV129 =
