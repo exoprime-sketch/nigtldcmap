@@ -4,6 +4,7 @@ import { publicSourceOrganizationV136_1, publicTextV126 } from "../visualization
 import { formatPublicNumberV126 } from "../visualization/publicNumberFormatV126";
 import { hasPublicMapFactValueV143, isPublicMapFactV143, publicMapFactSourcesV143 } from "../visualization/publicMapCopyV143";
 import sourceByIndicator from "./mapSourcesV148.json";
+import { publicMapFactValueV163 } from "./mapFactValueLabelsV163";
 
 /** Per-dataset reading order, informed by GIPT/WRI, CCKP, GFW, Aqueduct,
  * project registries and institutional directories. These are display rules,
@@ -63,7 +64,10 @@ export function mapFactValueV148(fact: VietnamMapFactFieldV137, attributes: Reco
     const value = attributes[key];
     if (!hasPublicMapFactValueV143(value)) continue;
     if (typeof value === "string" && /^(미기재|미표기|미공개|미확인|unknown)$/iu.test(value.trim())) continue;
-    return fact.valueMap?.[String(value).trim().toLowerCase()] ?? value;
+    const mapped = fact.valueMap?.[String(value).trim().toLowerCase()];
+    if (mapped !== undefined) return mapped;
+    // V163-T2: source classification values without a delivered value map.
+    return typeof value === "string" ? publicMapFactValueV163(fact.key, value) : value;
   }
   return null;
 }
