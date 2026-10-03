@@ -378,6 +378,12 @@ for (const iso3 of COUNTRIES) {
     const screen = await withPage(async (page) => {
       await page.goto(`${base}/?view=map${iso3 === DEFAULT_COUNTRY ? "" : `&country=${iso3}`}#map`, { waitUntil: "domcontentloaded", timeout: scaledTimeoutMsV150(120_000) });
       await page.waitForSelector('[data-testid="map-catalog-status-v138"]', { timeout: scaledTimeoutMsV150(90_000) });
+      // V162 PR-D: the status line is drawn before the country's map index has
+      // arrived (a slow CI runner read 0 of 0 for Bangladesh once); wait for the
+      // counts to be filled, then read them. The expected numbers are unchanged.
+      await page
+        .waitForFunction(() => Number(document.querySelector('[data-testid="map-all-data-v135"]')?.getAttribute("data-target-count") || 0) > 0, null, { timeout: scaledTimeoutMsV150(60_000) })
+        .catch(() => null);
       await page.waitForTimeout(1500);
       return page.evaluate(() => {
         const status = document.querySelector('[data-testid="map-catalog-status-v138"]');
