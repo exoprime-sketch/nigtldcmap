@@ -28,3 +28,8 @@
 
 /* V152: icon legend under point maps (same icons as the live map) */
 .detail-map148-icon-legend { margin: 6px 8px 0; }
+
+/* V163: category colours of another country's facility maps (the live map's own colours) */
+.detail-map148-category-legend { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; }
+.detail-map148-category-legend > span { display: inline-flex; align-items: center; gap: 5px; }
+.detail-map148-category-key { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }

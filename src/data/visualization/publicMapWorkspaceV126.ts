@@ -522,7 +522,7 @@ export function setPublicMapTitleCountryV162(country: string | null): void {
 export function publicMapLayerTitleV126(
   elementId: string,
   fallback?: string | null,
-  /** V163: a screen showing two countries at once names the country per call. */
+  /** V163: screens showing a country other than the map page's (comparison panes, small maps) name it per call. */
   country: string | null = mapTitleCountryV162
 ): string {
   return (
