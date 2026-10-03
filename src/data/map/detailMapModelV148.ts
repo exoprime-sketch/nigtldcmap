@@ -41,6 +41,37 @@ export function detailMapSelectionV148(layer: CountryMapLayerV122, selection: Da
   return { variable: variable?.key || "locations", period, note: notes.join(" ") };
 }
 
+/**
+ * V163: the slice a small map opens on for a country other than the default.
+ *
+ * `detailMapSelectionV148` joins the detail selection to the default country's
+ * review table (`publicMapTargetsV138.json`: its measure keys, its scenario
+ * contract and its semantic bindings). Another country's layer carries its own
+ * measure ids, so that table must not be consulted: it produced the note "선택 항목의
+ * 지도자료가 없어 …" on pages where nothing was missing. Here the detail's
+ * measure and period are matched to this layer's own selectors, exactly, with the
+ * same disclosed fallbacks; a slice handed over from the big map is checked
+ * against the same selectors.
+ */
+export function detailMapSelectionForCountryV163(layer: CountryMapLayerV122, selection: DataFinderSelectorStateV125): DetailMapSelectionV148 {
+  const variables = layer.selectors.variables;
+  const defaultVariable = variables.find((v) => v.key === layer.selectors.defaultVariable) || variables[0];
+  const fromBigMap = selection.dimensions.__mapElementId === layer.elementId
+    ? variables.find((v) => v.key === selection.dimensions.__mapVariable && v.periods.includes(selection.dimensions.__mapPeriod))
+    : undefined;
+  const measure = selection.measure || "";
+  const byMeasure = measure ? variables.find((v) => v.key === measure || v.measureId === measure) : undefined;
+  const variable = fromBigMap || byMeasure || defaultVariable;
+  const periods = variable?.periods || layer.selectors.periods;
+  const requested = fromBigMap ? selection.dimensions.__mapPeriod : selection.period || (selection.year !== null ? String(selection.year) : "");
+  const period = requested && periods.includes(requested) ? requested
+    : periods.includes(layer.selectors.defaultPeriod) ? layer.selectors.defaultPeriod : periods[periods.length - 1] || "";
+  const notes: string[] = [];
+  if (requested && !periods.includes(requested) && layer.dataUrl) notes.push(`선택 시점의 지도자료가 없어 ${period} 자료를 표시합니다.`);
+  if (measure && !byMeasure && !fromBigMap && layer.dataUrl) notes.push("선택 항목의 지도자료가 없어 아래에 명시한 항목을 표시합니다.");
+  return { variable: variable?.key || "locations", period, note: notes.join(" ") };
+}
+
 export function finiteMapValueV148(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
@@ -64,18 +95,23 @@ export function coordinatePairsV148(value: unknown): Coordinate[] {
   return value.flatMap(coordinatePairsV148);
 }
 
-/** A small local equirectangular overview, explicitly not a distance tool. */
-export function overviewProjectionV148(coordinates: Coordinate[], width = 580, height = 350) {
+/**
+ * A small local equirectangular overview, explicitly not a distance tool.
+ * Longitude is scaled at `centerLatDeg` (Viet Nam's 17 degrees by default; V163: another
+ * country passes the middle of its own extent).
+ */
+export function overviewProjectionV148(coordinates: Coordinate[], width = 580, height = 350, centerLatDeg = 17) {
   const positions = coordinates.length ? coordinates : [[102, 8], [110, 24]];
+  const cosLat = Math.cos(centerLatDeg * Math.PI / 180);
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   for (const p of positions) {
-    const x = p[0] * Math.cos(17 * Math.PI / 180), y = -p[1];
+    const x = p[0] * cosLat, y = -p[1];
     minX = Math.min(minX, x); maxX = Math.max(maxX, x); minY = Math.min(minY, y); maxY = Math.max(maxY, y);
   }
   const spanX = maxX - minX || 1, spanY = maxY - minY || 1;
   const scale = Math.min((width - 28) / spanX, (height - 28) / spanY);
   const ox = (width - spanX * scale) / 2, oy = (height - spanY * scale) / 2;
-  return ([lon, lat]: Coordinate): Coordinate => [(lon * Math.cos(17 * Math.PI / 180) - minX) * scale + ox, (-lat - minY) * scale + oy];
+  return ([lon, lat]: Coordinate): Coordinate => [(lon * cosLat - minX) * scale + ox, (-lat - minY) * scale + oy];
 }
 
 export function geometryPathV148(geometry: { type: string; coordinates: unknown }, project: (p: Coordinate) => Coordinate): string {
