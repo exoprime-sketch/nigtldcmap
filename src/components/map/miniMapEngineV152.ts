@@ -54,6 +54,7 @@ import {
   applyBoundaryReferenceV152,
   isAreaRendererV152,
   MAP_STYLE,
+  applyCountryOutlineV163,
   mountPreparedMapLayerV152,
   prepareMapLayerV152,
   rendererOf,
@@ -478,6 +479,7 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
     reference,
     isDefault ? {} : { countryCredit: boundaryCreditPhraseV163(registryCountryNameKoV163(countryIso3), countryLevel1V158(countryIso3)) }
   );
+  applyCountryOutlineV163(map, countryIso3);
   // The same glyphs as the big map; a missing one is drawn on first request.
   const iconMap = map as unknown as MaplibreMapLike;
   registerMapIcons(iconMap);

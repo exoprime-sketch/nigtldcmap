@@ -173,7 +173,7 @@ import type {
   SpatialRuntimeAsset,
 } from "../map/layers/types";
 import { LAYER_COLORS } from "../map/layers/colors";
-import { MAP_STYLE } from "../map/layers/baseStyle";
+import { applyCountryOutlineV163, MAP_STYLE } from "../map/layers/baseStyle";
 import {
   layerRuntimeIds,
   moveMapDataLayersV126,
@@ -2478,6 +2478,8 @@ export default function RealMapExplorerPage({
     const map = mapRef.current;
     if (!map || baseMapStatus !== "ready") return;
     applyBoundaryReferenceV152(map, countryIso3, adm1Boundary);
+    // V163: another country is drawn from its own outline, not Natural Earth's.
+    applyCountryOutlineV163(map, countryIso3);
   }, [adm1Boundary, baseMapStatus, countryIso3]);
 
   useEffect(() => {

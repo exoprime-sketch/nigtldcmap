@@ -38,6 +38,7 @@ import type { VietnamMapGeoJsonV124 } from "../../../data/vietnam/vietnamDataLoa
 import {
   applyBoundaryReferenceV152,
   MAP_STYLE,
+  applyCountryOutlineV163,
   mountPreparedMapLayerV152,
   type MapLayerPreparedV152,
   type MapLayerRenderResultV152,
@@ -213,6 +214,7 @@ export async function createComparePaneEngineV163(input: ComparePaneEngineInputV
     const isDefault = iso3 === DEFAULT_COUNTRY_ISO3_V158;
     // Viet Nam: the big map's own province outline (34 heavy, 63 light).
     applyBoundaryReferenceV152(map, isDefault ? iso3 : "", isDefault ? reference : null);
+    applyCountryOutlineV163(map, iso3);
     const existing = map.getSource(REFERENCE_SOURCE_V163) as GeoJSONSource | undefined;
     if (isDefault || !reference) {
       if (map.getLayer(REFERENCE_LINE_V163)) map.removeLayer(REFERENCE_LINE_V163);
