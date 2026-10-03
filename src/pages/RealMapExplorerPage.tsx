@@ -93,6 +93,7 @@ import { boundaryPopupLineV151, createPublicMapPopupContentV129 } from "../compo
 import { powerPlantPeriodForSourceV142 } from "../data/visualization/mapSelectorBindingsV125";
 import type {
   VietnamLocationSidecarV151,
+  VietnamMapTargetFactsV138,
   VietnamSpatialLayerAssetV124,
 } from "../data/vietnam/vietnamTypesV124";
 import type { DataFinderSelectorStateV125 } from "../types/dataFinderV125";
@@ -121,7 +122,10 @@ import {
   publicMapPresetContextCandidatesV133,
   publicMapTargetV138,
 } from "../data/visualization/publicMapWorkspaceV126";
-import type { PublicMapWorkspacePresetIdV126 } from "../data/visualization/publicMapWorkspaceV126";
+import type {
+  PublicMapTargetV138,
+  PublicMapWorkspacePresetIdV126,
+} from "../data/visualization/publicMapWorkspaceV126";
 import {
   MAP_PENDING_LABEL_V140,
   MAP_PENDING_SUMMARY_V140,
@@ -204,6 +208,7 @@ import SelectionPanelV161 from "../components/map/SelectionPanelV161";
 import {
   DRAWING_LABEL_V161,
   categoryShareLinesV161,
+  drawingLabelV161,
   formatRegionListV161,
   metaLineV161,
   rankLinesV161,
@@ -1331,6 +1336,42 @@ function countryMapItemSummaryV162(layer: CountryMapLayerV122, regionWord: strin
   if (reference?.basis) return `${reference.label || "참고 지도"} · ${reference.basis}${places}`;
   if (rendererOf(layer) === "admin1-choropleth") return `${regionWord} 경계`;
   return `위치${places}`;
+}
+
+/**
+ * V163 (3b): the map list row's info panel ('i' button) for another country.
+ * `PUBLIC_MAP_TARGETS_V138` is the default country's 43-target contract,
+ * keyed by elementId; another country can reuse the same id for a different
+ * layer (BGD B-017 is water stress, not VNM's Aqueduct notice), so its panel
+ * must draw from its own map-index layer fields, never that contract. Only
+ * the fields the 'i' panel reads are overridden; everything else (category,
+ * build, etc.) is not shown there and is left as the contract's.
+ */
+function countryMapInfoTargetV163(
+  layer: CountryMapLayerV122,
+  fallback: PublicMapTargetV138,
+  regionWord: string
+): PublicMapTargetV138 {
+  const facts = (
+    layer as {
+      mapTargetV138?: VietnamMapTargetFactsV138 & { period?: string; build?: { reason?: string } };
+    }
+  ).mapTargetV138;
+  const variables = (layer.selectors?.variables || [])
+    .filter((variable) => variable.key !== "all")
+    .map((variable) => variable.label)
+    .filter(Boolean);
+  return {
+    ...fallback,
+    displaySpatialUnit:
+      facts?.displaySpatialUnit || layer.publicSpatialNotice || `${regionWord} 경계`,
+    sourceSpatialUnit: facts?.sourceSpatialUnit || "",
+    selectableVariables: variables.length > 1 ? variables.join(" / ") : "",
+    unit: layer.unit || "",
+    period: facts?.period || String(layer.latestYear || layer.sourceYear || ""),
+    limitation: layer.spatialLimitation || layer.accuracyNotice || "",
+    build: { ...fallback.build, reason: layer.disabledReason || facts?.build?.reason },
+  };
 }
 
 export default function RealMapExplorerPage({
@@ -3739,15 +3780,19 @@ export default function RealMapExplorerPage({
         ? "native-34"
         : policyKindForVariableV151(focusedLayer.boundaryPolicy, focusedSelector.variable)
       : null;
+  // V163: these two tables are keyed by elementId alone, written for the
+  // default country's indicator. Another country can reuse the same id for a
+  // different measure (BGD B-017 is water stress, not VNM's drought risk), so
+  // its layer must never borrow the default country's label or explanation.
   const focusedVariablePresentationV129 =
-    focusedLayer && focusedSelector
+    focusedLayer && focusedSelector && countryIso3 === DEFAULT_COUNTRY_ISO3_V158
       ? getPublicIndicatorVariablePresentationV129(
           focusedLayer.elementId,
           focusedSelector.variable
         )
       : null;
   const focusedInterpretationV129 =
-    focusedLayer && focusedSelector
+    focusedLayer && focusedSelector && countryIso3 === DEFAULT_COUNTRY_ISO3_V158
       ? getPublicIndicatorInterpretationV129(
           focusedLayer.elementId,
           focusedSelector.variable
@@ -3764,7 +3809,10 @@ export default function RealMapExplorerPage({
   const focusedFilterDimensions = focusedLayer
     ? selectedFilterDimensionsV125(focusedLayer, filters)
     : {};
-  const focusedSemanticSummary = focusedLayer
+  // V163: generated from the default country's own records (its measure
+  // list, e.g. B-005's "SPEI12"); another country's layer states its own
+  // variable labels, so this fallback source is skipped for it.
+  const focusedSemanticSummary = focusedLayer && countryIso3 === DEFAULT_COUNTRY_ISO3_V158
     ? getElementVisualizationSummaryV125(focusedLayer.elementId)
     : null;
   const focusedSemantic =
@@ -4356,14 +4404,18 @@ export default function RealMapExplorerPage({
           (row) => row.key === selectedOwningSelector.variable
         ) || null
       : null;
+  // V163: same elementId-only tables as `focusedVariablePresentationV129` /
+  // `focusedSemanticSummary` above - the default country's measure name and
+  // explanation, which another country's layer of the same id must not
+  // borrow (the click panel's own measureLabel comes from its own layer).
   const selectedOwningVariablePresentationV129 =
-    selectedOwningLayer && selectedOwningSelector
+    selectedOwningLayer && selectedOwningSelector && countryIso3 === DEFAULT_COUNTRY_ISO3_V158
       ? getPublicIndicatorVariablePresentationV129(
           selectedOwningLayer.elementId,
           selectedOwningSelector.variable
         )
       : null;
-  const selectedOwningSemanticSummary = selectedOwningLayer
+  const selectedOwningSemanticSummary = selectedOwningLayer && countryIso3 === DEFAULT_COUNTRY_ISO3_V158
     ? getElementVisualizationSummaryV125(selectedOwningLayer.elementId)
     : null;
   const selectedOwningSemantic =
@@ -4647,8 +4699,16 @@ export default function RealMapExplorerPage({
       const title = isRegion
         ? formatRegionListV161(selectedSpatial.adm1Name, {
             country: countryIso3,
-            level:
-              properties.boundarySystem === "post-2025-34" ? "adm1-34" : "adm1-63",
+            // V163 (4a): the 34/63 boundary vintage only applies to the
+            // default country; another country's dictionary (BGD's
+            // "division"/"district") is tried in its own order instead.
+            ...(countryIso3 === DEFAULT_COUNTRY_ISO3_V158
+              ? {
+                  level: (properties.boundarySystem === "post-2025-34"
+                    ? "adm1-34"
+                    : "adm1-63") as "adm1-34" | "adm1-63",
+                }
+              : {}),
           }) || selectedSpatial.adm1Name
         : publicMapFeatureNameV126(
             (isScope
@@ -4777,7 +4837,11 @@ export default function RealMapExplorerPage({
       if (isLine || isAsset) {
         lines.push(...selectionLineV161("전압", properties.voltageKv ? `${properties.voltageKv} kV` : ""));
         lines.push(...selectionLineV161("구간 길이", properties.lengthKm ? `${properties.lengthKm} km` : ""));
-        lines.push(...selectionLineV161("운영 상태", properties.status));
+        // V163 (4d): the source states the status in English (A-024
+        // "existing", BGD D-012 "operating"...); the same label the power
+        // plant facts already use covers the values it recognises and
+        // leaves anything else as written, never inventing a label.
+        lines.push(...selectionLineV161("운영 상태", publicPowerPlantStatusV132(properties.status) || ""));
         lines.push(...selectionLineV161("면적", properties.areaKm2 ? `${properties.areaKm2} km²` : ""));
         lines.push(
           ...selectionLineV161(
@@ -4900,7 +4964,7 @@ export default function RealMapExplorerPage({
             String(properties.sourceIndicatorId || ""),
             selectedSpatial.adm1Code ? "" : selectedOwningLayer.source
           ),
-          drawing: DRAWING_LABEL_V161[renderer],
+          drawing: drawingLabelV161(renderer, regionWordV158(countryIso3).word),
         }),
       };
     }
@@ -4955,7 +5019,7 @@ export default function RealMapExplorerPage({
             selected.indicatorId,
             selected.provenance?.sourceOrg || ""
           ),
-          drawing: DRAWING_LABEL_V161[rendererOf(selectedLayer)],
+          drawing: drawingLabelV161(rendererOf(selectedLayer), regionWordV158(countryIso3).word),
         }),
       };
     }
@@ -5897,6 +5961,14 @@ export default function RealMapExplorerPage({
                         elementId,
                         layer?.publicShortTitle || target.publicName
                       );
+                      // V163 (3b): the 'i' panel below reads `infoTarget`, not
+                      // `target` directly - another country's row draws its
+                      // facts from its own layer, never the default
+                      // country's 43-target contract (see the function doc).
+                      const infoTarget =
+                        countryIso3 !== DEFAULT_COUNTRY_ISO3_V158 && layer
+                          ? countryMapInfoTargetV163(layer, target, regionWordV158(countryIso3).word)
+                          : target;
                       const role = isPrimary
                         ? "primary"
                         : checked
@@ -6023,28 +6095,28 @@ export default function RealMapExplorerPage({
                             <dl className="cdp-map-catalog-v138__facts" data-testid="map-catalog-info-v138">
                               <div>
                                 <dt>지도 표시</dt>
-                                <dd><PublicTermTextV134 text={target.displaySpatialUnit} /></dd>
+                                <dd><PublicTermTextV134 text={infoTarget.displaySpatialUnit} /></dd>
                               </div>
-                              {target.sourceSpatialUnit ? (
+                              {infoTarget.sourceSpatialUnit ? (
                                 <div>
                                   <dt>원자료 공간단위</dt>
-                                  <dd><PublicTermTextV134 text={target.sourceSpatialUnit} /></dd>
+                                  <dd><PublicTermTextV134 text={infoTarget.sourceSpatialUnit} /></dd>
                                 </div>
                               ) : null}
-                              {target.selectableVariables ? (
+                              {infoTarget.selectableVariables ? (
                                 <div>
                                   <dt>선택 항목</dt>
-                                  <dd><PublicTermTextV134 text={target.selectableVariables} /></dd>
+                                  <dd><PublicTermTextV134 text={infoTarget.selectableVariables} /></dd>
                                 </div>
                               ) : null}
                               {periodStatementV162(elementId, countryIso3) ? (
                                 <>
                                   {/* V162 (d): the element's own period statement -
                                       '기준 시점 2026-07 수집', '자료기간 2010–2023년'. */}
-                                  {target.unit ? (
+                                  {infoTarget.unit ? (
                                     <div>
                                       <dt>단위</dt>
-                                      <dd><PublicTermTextV134 text={target.unit} /></dd>
+                                      <dd><PublicTermTextV134 text={infoTarget.unit} /></dd>
                                     </div>
                                   ) : null}
                                   <div data-testid="map-catalog-period-v162">
@@ -6053,25 +6125,25 @@ export default function RealMapExplorerPage({
                                   </div>
                                   {/* A basis the values are counted on ("승인일 기준", D-018)
                                       is not a period: it stays when it names no year. */}
-                                  {target.period && !/\d{4}/u.test(target.period) ? (
+                                  {infoTarget.period && !/\d{4}/u.test(infoTarget.period) ? (
                                     <div>
                                       <dt>집계 기준</dt>
-                                      <dd><PublicTermTextV134 text={target.period} /></dd>
+                                      <dd><PublicTermTextV134 text={infoTarget.period} /></dd>
                                     </div>
                                   ) : null}
                                 </>
-                              ) : target.unit || target.period ? (
+                              ) : infoTarget.unit || infoTarget.period ? (
                                 <div>
                                   <dt>단위·기간</dt>
-                                  <dd><PublicTermTextV134 text={[target.unit, target.period].filter(Boolean).join(" · ")} /></dd>
+                                  <dd><PublicTermTextV134 text={[infoTarget.unit, infoTarget.period].filter(Boolean).join(" · ")} /></dd>
                                 </div>
                               ) : null}
                               {/* An empty cell says nothing; a dataset that is not on
                                   the map has its one sentence in the status cell. */}
-                              {target.limitation ? (
+                              {infoTarget.limitation ? (
                                 <div>
                                   <dt>유의사항</dt>
-                                  <dd><PublicTermTextV134 text={target.limitation} /></dd>
+                                  <dd><PublicTermTextV134 text={infoTarget.limitation} /></dd>
                                 </div>
                               ) : null}
                               {!available && (
@@ -6083,7 +6155,7 @@ export default function RealMapExplorerPage({
                                     <PublicTermTextV134
                                       text={
                                         layer?.disabledReason ||
-                                        target.build.reason ||
+                                        infoTarget.build.reason ||
                                         "위치·경계 자료가 확인되지 않았습니다."
                                       }
                                     />
