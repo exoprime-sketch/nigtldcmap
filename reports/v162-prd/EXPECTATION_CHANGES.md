@@ -19,3 +19,8 @@
 - analysis QA 새 실패 3건(A-013·A-022·C-003 `mapSymbolVerified.valueOrFact`)
   - 원인: 63개 경계 기본으로 열리면서, 키보드 순회의 첫 피처가 원자료상 값이 없는 성(예: EVNNPC 관할 Lai Châu)이 되어 선택 패널이 '값 없음'만 표시
   - 수정: 키보드 순회 시작 위치를 '값이 있는 첫 피처'로 변경(화면 개선, 값 없는 성도 화살표로 그대로 도달). 검사 기대값은 바꾸지 않음
+
+## CI 3회차(재실행 확인) 원인(2026-10-03)
+- finder-scroll 뒤로 가기 복원 오차 443px: 코드 변경 없이 작업만 1회 재실행 → 오차 0으로 통과(기존 불안정 항목 확인)
+- 식별자 검사 D-020·D-023 `kebab-case:results-based`: 키보드 순회가 값이 있는 첫 지역(Điện Biên)에서 시작하면서 선택 패널에 GCF 사업 원문 제목 'Vietnam REDD-plus results-based payments…'가 나옴 → `SOURCE_PROPER_WORDING_V162`에 'REDD-plus results-based payments'(앞뒤 단어 포함 등록 — 다른 곳의 같은 단어는 계속 검출)
+- 인수 검사 BGD map-counts 0/0: 상태 줄이 지도 목록 도착 전에 그려져 0을 읽음 → 수가 채워질 때까지 대기(최대 60초) 후 읽기. 기대값 불변
