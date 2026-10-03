@@ -4,6 +4,7 @@ import { STACKED_AREA_PATTERNS_V153, StackedAreaChartV153 } from "../../charts/S
 import type { StackedAreaSeriesV153, StackedAreaYearV153 } from "../../charts/StackedAreaChartV153";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./composition-stack-v153.css";
+import { subjectParticleV158 } from "../../../data/countries/countryLevel1V158";
 
 /**
  * V153-D1: the first block of a composition dataset - the absolute stacked
@@ -99,7 +100,7 @@ export default function CompositionStackV153({
           <span>주 분석</span>
           <h3 id={`${headingId}-stack`}>{title}</h3>
           <p>
-            {firstYear}–{lastYear}년 · 모든 {model.stackable.length}개 {subject}이(가) 제공된 연도만 쌓았습니다. 비중은 같은 단위의 {subject}별 합계를 분모로 합니다.
+            {firstYear}–{lastYear}년 · 모든 {model.stackable.length}개 {subject}{subjectParticleV158(subject)} 제공된 연도만 쌓았습니다. 비중은 같은 단위의 {subject}별 합계를 분모로 합니다.
             {selectedYear ? ` 차트를 누르면 ${selectedYear}년 상세가 바뀝니다.` : ""}
           </p>
         </div>

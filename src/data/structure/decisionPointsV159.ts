@@ -1,4 +1,5 @@
 import { displayUnitV150 } from "../visualization/unitDisplayV150";
+import { publicSeriesNameV163 } from "../visualization/seriesLabelV163";
 import { PROVINCE_KO_V150 } from "../map/mapBackdropV150";
 import { PROVINCE_KO_34_V151 } from "../map/adminBoundaryV151";
 import { formatRegionName } from "../geo/regionNameV161";
@@ -154,10 +155,19 @@ function decisionPointsU1(
 
   if (latest) {
     const displayValue = isNumeric(latest.value) ? formatNumber(latest.value) : String(latest.value);
+    // V163-T2: when the subject has several numeric series (A-010 four gases),
+    // a bare number reads as the element total - name the series it belongs to.
+    const subjectSeries = new Set(
+      rows
+        .filter((row) => row.countryIso3 === opts.countryIso3 && isNumeric(row.value))
+        .map((row) => row.indicatorId)
+    );
+    const seriesLabel = publicSeriesNameV163(latest.label);
     points.push({
       key: "latest-value",
       label: "최신값·연도",
       value: `${displayValue}${unitSuffix(latest.unit)} (${latest.year}년)`,
+      ...(subjectSeries.size > 1 && seriesLabel ? { detail: `${seriesLabel} 기준` } : {}),
     });
   }
 

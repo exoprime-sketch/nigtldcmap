@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import CountryCompareBlockV158 from "./CountryCompareBlockV158";
+import { publicGasTextV163 } from "../../../data/visualization/seriesLabelV163";
 import type { CountryCompareSeriesV158 } from "./CountryCompareBlockV158";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
 import { isLiveCountryV158 } from "../../../data/countryContext";
@@ -121,7 +122,8 @@ export default function DetailCountryCompareV158({
       points: entry.points,
       sourceOrg: entry.sourceOrg ?? undefined,
     }));
-    const title = liveEntries[0]?.labelKo || "국가 비교";
+    // V163-T2: gas formulas in the delivered label read as words (A-010).
+    const title = publicGasTextV163(liveEntries[0]?.labelKo || "") || "국가 비교";
     return { compareKey: element.compareKey, series, title };
   }, [doc, elementId, countryIso3]);
 
