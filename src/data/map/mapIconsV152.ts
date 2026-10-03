@@ -50,7 +50,10 @@ export const MAP_ICON_BADGE_V152 = {
   ring: { primary: 2.5, context: 2 },
 } as const;
 
-/** The 15 map layers an icon rule exists for (5 classified + 10 single-icon). */
+/**
+ * The 18 map layers an icon rule exists for (5 classified + 10 single-icon, plus
+ * V157-2's three mineral layers drawn on B-048's mines with B-048's own rule).
+ */
 export const MAP_ICON_LAYER_IDS_V152 = [
   "A-023",
   "B-012",
@@ -67,6 +70,9 @@ export const MAP_ICON_LAYER_IDS_V152 = [
   "E-006",
   "E-018",
   "E-019",
+  "B-044",
+  "B-046",
+  "B-047",
 ] as const;
 
 export type MapIconLayerIdV152 = (typeof MAP_ICON_LAYER_IDS_V152)[number];
@@ -290,6 +296,9 @@ const REPRESENTATIVE_ICON_OVERRIDES_V152: Record<string, MapIconIdV152> = {
   "B-012": "alert-triangle",
   "C-025": "certificate",
   "B-048": "pick",
+  "B-044": "pick",
+  "B-046": "pick",
+  "B-047": "pick",
   "E-005": "building",
 };
 
@@ -323,6 +332,9 @@ export function mapIconCategoryV152(
     case "C-025":
       return carbonIconCategoryV152(properties);
     case "B-048":
+    case "B-044":
+    case "B-046":
+    case "B-047":
       return mineralIconCategoryV152(properties, layerColor);
     case "E-005":
       return orgIconCategoryV152(properties, layerColor);
@@ -356,6 +368,9 @@ const DECLARED_KEY_ORDER_V152: Record<string, string[]> = {
   "B-012": B012_DISASTER_RULES_V152.map((rule) => rule.key),
   "C-025": [...Object.keys(C025_STANDARD_COLORS_V152), C025_OTHER_LABEL_V152],
   "B-048": [...Object.keys(B048_MINERAL_COLORS_V152), B048_OTHER_LABEL_V152],
+  "B-044": [...Object.keys(B048_MINERAL_COLORS_V152), B048_OTHER_LABEL_V152],
+  "B-046": [...Object.keys(B048_MINERAL_COLORS_V152), B048_OTHER_LABEL_V152],
+  "B-047": [...Object.keys(B048_MINERAL_COLORS_V152), B048_OTHER_LABEL_V152],
   "E-005": [...E005_GROUPS_V152.map((group) => group.key), E005_OTHER_LABEL_V152],
 };
 

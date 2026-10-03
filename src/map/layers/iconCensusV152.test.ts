@@ -7,6 +7,7 @@ import { MAP_ICON_LAYER_IDS_V152, mapIconCategoryV152 } from "../../data/map/map
 import { LAYER_COLORS } from "./colors";
 import { preparePointLayerV152, rendererOf } from "./index";
 import { countryPublicDirV158 } from "../../data/countryContext";
+import { applyNationalMineJoinV157_2 } from "../../data/map/entityAttributeJoinV157_2";
 
 /**
  * V152 icon census over the real delivery: every drawn site of every point
@@ -47,7 +48,10 @@ describe("map icon census on the delivered data (V152)", () => {
 
   for (const layer of pointLayers) {
     it(`${layer.elementId}: every drawn site has its own category icon`, () => {
-      const records = recordsFor(layer.elementId);
+      // V157-2: a mineral layer draws its host's mines, joined the way the map does.
+      const records = layer.entityJoinV157_2
+        ? applyNationalMineJoinV157_2(recordsFor(layer.entityJoinV157_2.hostElementId), layer.entityJoinV157_2)
+        : recordsFor(layer.elementId);
       const color = LAYER_COLORS[layer.elementId] || "#176a4b";
       const { data } = preparePointLayerV152({
         layer,

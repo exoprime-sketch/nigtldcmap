@@ -18,6 +18,9 @@
  *   membership-or       a unit takes part if any member does
  *   native-34           the source already publishes per 34-unit
  *   six-region-only     B-021 draws on its own six-region asset
+ *   group-constant      value is broadcast from a group outside the 34-unit
+ *                        hierarchy (an EVN corporation, a price bracket, P8-2);
+ *                        agrees within a group, conflicts across two
  *   none                points and lines: only the popup names the unit
  */
 import { readFileSync } from "node:fs";
@@ -34,6 +37,7 @@ export const BOUNDARY_POLICY_KINDS = [
   "membership-or",
   "native-34",
   "six-region-only",
+  "group-constant",
   "none",
 ];
 const AGGREGATING_KINDS = new Set([
@@ -44,6 +48,7 @@ const AGGREGATING_KINDS = new Set([
   "count-sum",
   "membership-or",
   "native-34",
+  "group-constant",
 ]);
 
 // A percentile, median or rank statistic has no defensible single value for
@@ -62,6 +67,7 @@ const NOTES = {
   "membership-or": "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.",
   "native-34": "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.",
   "six-region-only": "GDL 6개 권역 값을 권역 경계에 표시하며 행정경계 기준과 무관합니다.",
+  "group-constant": "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.",
   none: "지점·선 자료는 합산하지 않으며 팝업에 소재 성·시(34개 기준)를 표시합니다.",
 };
 

@@ -345,11 +345,12 @@ describe("mapLayerIconV152", () => {
 // ------------------------------------------------------------------ MAP_ICON_LAYER_IDS_V152
 
 describe("MAP_ICON_LAYER_IDS_V152", () => {
-  it("lists exactly the 15 layers this module has a rule for", () => {
+  // V157-2: B-044 · B-046 · B-047 draw B-048's mines and reuse its mineral rule.
+  it("lists exactly the 18 layers this module has a rule for", () => {
     expect([...MAP_ICON_LAYER_IDS_V152].sort()).toEqual(
-      ["A-023", "A-025", "B-008", "B-012", "B-023", "B-025", "B-028", "B-048", "C-025", "D-018", "E-004", "E-005", "E-006", "E-018", "E-019"].sort()
+      ["A-023", "A-025", "B-008", "B-012", "B-023", "B-025", "B-028", "B-044", "B-046", "B-047", "B-048", "C-025", "D-018", "E-004", "E-005", "E-006", "E-018", "E-019"].sort()
     );
-    expect(MAP_ICON_LAYER_IDS_V152.length).toBe(15);
+    expect(MAP_ICON_LAYER_IDS_V152.length).toBe(18);
   });
 });
 

@@ -19,11 +19,11 @@ import { PROVINCE_KO_V150 } from "./mapBackdropV150";
 
 export type BoundaryPolicyKindV151 =
   | "sum" | "area-weighted-mean" | "member-max" | "member-min" | "range-only"
-  | "count-sum" | "membership-or" | "native-34" | "six-region-only" | "none";
+  | "count-sum" | "membership-or" | "native-34" | "six-region-only" | "group-constant" | "none";
 
 export const BOUNDARY_POLICY_KINDS_V151: readonly BoundaryPolicyKindV151[] = [
   "sum", "area-weighted-mean", "member-max", "member-min", "range-only",
-  "count-sum", "membership-or", "native-34", "six-region-only", "none",
+  "count-sum", "membership-or", "native-34", "six-region-only", "group-constant", "none",
 ];
 
 export function isBoundaryPolicyKindV151(v: unknown): v is BoundaryPolicyKindV151 {
@@ -37,7 +37,7 @@ export interface BoundaryPolicyV151 {
 
 // Kinds that produce one combined 34-unit value; the rest keep 63 rendering.
 const AGGREGATING_KINDS_V151: ReadonlySet<BoundaryPolicyKindV151> = new Set([
-  "sum", "area-weighted-mean", "member-max", "member-min", "count-sum", "membership-or", "native-34",
+  "sum", "area-weighted-mean", "member-max", "member-min", "count-sum", "membership-or", "native-34", "group-constant",
 ]);
 export function isAggregatingKindV151(kind: BoundaryPolicyKindV151): boolean {
   return AGGREGATING_KINDS_V151.has(kind);
@@ -142,7 +142,15 @@ export function aggregateTo34V151(
         value = valueCount === 0 ? null : present.some((m) => m.value > 0) ? 1 : 0;
         partial = false;
         break;
-      case "native-34": {
+      case "native-34":
+      case "group-constant": {
+        // Same arithmetic for both: a combined value only where every present
+        // member already carries the identical number. They differ in why that
+        // is expected - native-34 because the source published at 34-unit level,
+        // group-constant because an external grouping (an EVN corporation, a
+        // price bracket) that has nothing to do with the 34-unit merger broadcasts
+        // one figure to every province in it; a unit whose members split across
+        // two such groups correctly conflicts rather than averaging them.
         partial = false; // this kind never reads as "incomplete"; it either agrees or conflicts
         if (valueCount > 0) {
           const first = present[0].value;
@@ -252,6 +260,7 @@ export function boundaryPolicyNoticeV151(
     case "membership-or": return "구성 성·시 중 하나라도 참여하면 34개 단위를 참여로 표시합니다.";
     case "native-34": return "원자료가 개편 후 34개 성·시 기준으로 발표한 값을 34개 경계에 직접 표시합니다.";
     case "six-region-only": return "GDL 6개 권역 값을 권역 경계에 표시합니다(행정경계 기준과 무관).";
+    case "group-constant": return "이 값은 행정경계와 무관한 별도 그룹(전력회사 관할·가격권역 등) 전체에 적용됩니다. 34개 단위가 그룹 경계에 걸치면 '복수 소속'으로 표시하고 값을 나누지 않습니다.";
     default: return boundaryValueNoticeV151(system);
   }
 }

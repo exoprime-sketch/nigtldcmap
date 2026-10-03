@@ -1,0 +1,1034 @@
+{
+  "schema": "c017-price-regions-v157-2",
+  "retrievedAt": "2026-09-30T00:00:00+09:00",
+  "priceDecisions": [
+    {
+      "techGroup": "Điện gió trên đất liền / điện gió gần bờ (onshore / near-shore wind)",
+      "number": "1508/QĐ-BCT",
+      "date": "2025-05-30",
+      "url": "https://vepg.vn/wp-content/uploads/2025/06/1508_framing-price-for-wind-power-projects.pdf",
+      "sourceNote": "Retrieved and read as an official-letterhead PDF (BỘ CÔNG THƯƠNG seal, signed by Thứ trưởng Nguyễn Hoàng Long) mirrored on vepg.vn (Viet Nam-EU Energy Partnership Group); a congbao.chinhphu.vn primary copy was not located within the research window. Text confirmed verbatim by direct PDF read.",
+      "pricesVndPerKwh": {
+        "onshoreWind": {
+          "north": 1959.4,
+          "central": 1807.4,
+          "south": 1840.3
+        },
+        "nearShoreWind": {
+          "north": 1987.4,
+          "central": 1987.4,
+          "south": 1987.4
+        }
+      }
+    },
+    {
+      "techGroup": "Điện gió ngoài khơi (offshore wind)",
+      "number": "1824/QĐ-BCT",
+      "date": "2025-06-26",
+      "url": "https://baochinhphu.vn/phe-duyet-khung-gia-phat-dien-loai-hinh-nha-may-dien-gio-ngoai-khoi-10225070110000838.htm",
+      "sourceNote": "Cited via baochinhphu.vn (Government e-newspaper, part of the Government Portal). Could not locate a congbao.chinhphu.vn/datafiles.chinhphu.vn direct PDF within the research window; figures cross-checked against 3 independent news reports (baodautu.vn, cafeland.vn, tapchicongthuong.vn) with consistent numbers.",
+      "pricesVndPerKwh": {
+        "offshoreWind": {
+          "bacBo": 3975.1,
+          "namTrungBo": 3078.9,
+          "namBo": 3868.5
+        }
+      }
+    },
+    {
+      "techGroup": "Điện mặt trời (solar)",
+      "number": "988/QĐ-BCT",
+      "date": "2025-04-10",
+      "url": "https://thuvienphapluat.vn/van-ban/Tai-nguyen-Moi-truong/Quyet-dinh-988-QD-BCT-2025-khung-gia-phat-dien-nha-may-dien-mat-troi-651205.aspx",
+      "sourceNote": "thuvienphapluat.vn copy carrying the document number 988/QĐ-BCT; content cross-checked against evn.com.vn official corporate news page and nangluongvietnam.vn. A chinhphu.vn/moit.gov.vn primary PDF was not located within the research window.",
+      "pricesVndPerKwh": {
+        "groundSolarNoStorage": {
+          "north": 1382.7,
+          "central": 1107.1,
+          "south": 1012
+        },
+        "floatingSolarNoStorage": {
+          "north": 1685.8,
+          "central": 1336.1,
+          "south": 1228.2
+        }
+      }
+    }
+  ],
+  "regionDefinition": {
+    "document": "Thông tư 09/2025/TT-BCT (01/02/2025), Điều 3 được bổ sung khoản 7, khoản 8 bởi Điều 1 Thông tư 25/2025/TT-BCT (13/05/2025)",
+    "article": "Điều 3 khoản 7, khoản 8 (Thông tư 09/2025/TT-BCT, bản hợp nhất sau khi Thông tư 25/2025/TT-BCT có hiệu lực từ 13/5/2025)",
+    "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf",
+    "quote": "7. Khung giá phát điện loại hình nhà máy điện gió được xây dựng theo các miền, khu vực biển trên cơ sở kết quả điều tra tài nguyên điện gió theo quy định của pháp luật, cụ thể như sau: a) Khung giá phát điện loại hình điện gió trên đất liền, điện gió gần bờ được xây dựng theo 03 (ba) miền: miền Bắc, miền Trung và miền Nam. b) Việc xác định các khu vực để xây dựng khung giá phát điện loại hình điện gió ngoài khơi căn cứ theo: b1) Quy hoạch không gian biển quốc gia; b2) Quy hoạch phát triển điện lực quốc gia. Giai đoạn 2025 - 2035, khung giá phát điện loại hình nhà máy điện gió ngoài khơi được xây dựng theo 03 (ba) khu vực biển: khu vực Bắc Bộ, khu vực Nam Trung Bộ và khu vực Nam Bộ. 8. Việc xác định các miền để xây dựng khung giá phát điện đối với loại hình nhà máy điện mặt trời và nhà máy điện gió trên đất liền, nhà máy điện gió gần bờ căn cứ theo: a) Phân vùng kinh tế - xã hội tại Quy hoạch tổng thể quốc gia; b) Quy hoạch phát triển điện lực quốc gia; c) Chủ trương, quyết định của cấp có thẩm quyền về việc sắp xếp, sáp nhập, hợp nhất các đơn vị hành chính cấp tỉnh.",
+    "criticalCaveat": "IMPORTANT: this text states the CRITERIA for building the miền/khu vực biển boundaries (socio-economic zoning + power development plan + provincial-merger decisions); it does NOT itself enumerate which provinces fall in miền Bắc/Trung/Nam or in each sea area. Thông tư 09/2025/TT-BCT (original, read in full, 16 pages) and its predecessor Thông tư 19/2023/TT-BCT (read in full, 17 pages, the first circular to introduce the 3-miền solar/wind price method) were both checked directly and neither contains a province list or appendix mapping provinces to miền. No BCT circular/decision with an explicit province-to-miền crosswalk for the price frame was found."
+  },
+  "offshoreAreas": [
+    {
+      "area": "Khu vực Bắc Bộ",
+      "definition": "Một trong 03 khu vực biển dùng để xây dựng khung giá phát điện gió ngoài khơi giai đoạn 2025-2035, xác định theo Quy hoạch không gian biển quốc gia và Quy hoạch phát triển điện lực quốc gia (Thông tư 09/2025/TT-BCT, Điều 3 khoản 7.b, bổ sung bởi Thông tư 25/2025/TT-BCT). Văn bản không liệt kê danh sách tỉnh ven biển thuộc khu vực này.",
+      "provinces": [],
+      "referenceLocationsNotExhaustive": [
+        "Quảng Ninh",
+        "Hải Phòng",
+        "Thái Bình"
+      ],
+      "referenceLocationsNote": "Các địa điểm trên là vị trí nhà máy điện gió ngoài khơi 'chuẩn' được EVN/Viện Năng lượng dùng để TÍNH TOÁN mức giá 3.975,1 đồng/kWh của Quyết định 1824/QĐ-BCT (theo báo baodautu.vn), không phải là ranh giới pháp lý đầy đủ của 'khu vực Bắc Bộ'.",
+      "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf"
+    },
+    {
+      "area": "Khu vực Nam Trung Bộ",
+      "definition": "Một trong 03 khu vực biển dùng để xây dựng khung giá phát điện gió ngoài khơi giai đoạn 2025-2035, xác định theo Quy hoạch không gian biển quốc gia và Quy hoạch phát triển điện lực quốc gia. Văn bản không liệt kê danh sách tỉnh ven biển thuộc khu vực này.",
+      "provinces": [],
+      "referenceLocationsNotExhaustive": [
+        "Bình Thuận"
+      ],
+      "referenceLocationsNote": "Bình Thuận là vị trí nhà máy điện gió ngoài khơi 'chuẩn' dùng để tính mức giá 3.078,9 đồng/kWh; không phải ranh giới đầy đủ.",
+      "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf"
+    },
+    {
+      "area": "Khu vực Nam Bộ",
+      "definition": "Một trong 03 khu vực biển dùng để xây dựng khung giá phát điện gió ngoài khơi giai đoạn 2025-2035, xác định theo Quy hoạch không gian biển quốc gia và Quy hoạch phát triển điện lực quốc gia. Văn bản không liệt kê danh sách tỉnh ven biển thuộc khu vực này.",
+      "provinces": [],
+      "referenceLocationsNotExhaustive": [
+        "Bà Rịa–Vũng Tàu"
+      ],
+      "referenceLocationsNote": "Bà Rịa–Vũng Tàu là vị trí nhà máy điện gió ngoài khơi 'chuẩn' dùng để tính mức giá 3.868,5 đồng/kWh; không phải ranh giới đầy đủ.",
+      "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf"
+    }
+  ],
+  "ninhThuanSpecialCase": {
+    "exists": true,
+    "document": "Nghị quyết 115/NQ-CP ngày 31/8/2018 (cơ chế, chính sách đặc thù hỗ trợ tỉnh Ninh Thuận phát triển kinh tế - xã hội, ổn định sản xuất, đời sống nhân dân giai đoạn 2018-2023) và Quyết định 13/2020/QĐ-TTg ngày 06/4/2020 (cơ chế khuyến khích phát triển điện mặt trời tại Việt Nam), Điều 5",
+    "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=194661",
+    "url2": "https://vanban.chinhphu.vn/?pageid=27160&docid=199694",
+    "summary": "Nghị quyết 115/NQ-CP (31/8/2018) phê duyệt chủ trương xây dựng Ninh Thuận thành trung tâm năng lượng tái tạo (điện gió, điện mặt trời) của cả nước. Cụ thể hóa bằng ưu đãi giá: Điều 5 Quyết định 13/2020/QĐ-TTg (06/4/2020) quy định giá mua điện 2.086 đồng/kWh (chưa VAT, tương đương 9,35 UScents/kWh theo tỷ giá 22.316 đồng/USD ngày 10/4/2017), áp dụng 20 năm, cho các dự án điện mặt trời nối lưới tại Ninh Thuận đã có trong quy hoạch phát triển điện lực, có ngày vận hành thương mại trước 01/01/2021, tổng công suất tích lũy không quá 2.000 MW -- cao hơn giá trần khu vực Nam áp dụng cho các dự án điện mặt trời thông thường không thuộc diện này. Đây là cơ chế đặc thù cho Ninh Thuận nằm NGOÀI khung giá phát điện theo miền 2025 (Thông tư 09/2025/TT-BCT) đang xét trong nghiên cứu này; không tìm thấy văn bản nào áp dụng cơ chế tương tự cho khung giá 2025 của C-017."
+  },
+  "unconfirmed": [
+    {
+      "item": "provinces63[].region (toàn bộ 63 tỉnh) và units34[].regions",
+      "reason": "Không tìm thấy văn bản BCT nào (đã kiểm tra toàn văn Thông tư 09/2025/TT-BCT, Thông tư 25/2025/TT-BCT, Thông tư 19/2023/TT-BCT, Quyết định 1508/QĐ-BCT) liệt kê trực tiếp tỉnh nào thuộc miền Bắc/Trung/Nam cho mục đích khung giá phát điện. Giá trị 'region' trong file này là suy luận từ cách gộp 6 vùng kinh tế - xã hội của Nghị quyết 81/2023/QH15 (xem 'provinceMappingMethodology'), được khoản 8 Điều 3 (bổ sung bởi TT 25/2025) dẫn chiếu làm một trong ba căn cứ, nhưng phép gộp 6-thành-3 cụ thể không được nêu bằng câu chữ trong luật."
+    },
+    {
+      "item": "Ninh Thuận (VN-36), Bình Thuận (VN-40), Khánh Hòa (VN-34) — ranh giới Trung/Nam",
+      "reason": "Theo Nghị quyết 81/2023/QH15, ba tỉnh này thuộc vùng 'Bắc Trung Bộ và duyên hải miền Trung' (-> suy luận 'central' trong file này), phù hợp với việc Quyết định 1824/QĐ-BCT xếp Bình Thuận vào 'khu vực Nam Trung Bộ' (không phải 'Nam Bộ'). Tuy nhiên trong thực tiễn vận hành hệ thống điện (địa bàn Tổng công ty Điện lực miền Nam - EVNSPC, Trung tâm Điều độ Hệ thống điện miền Nam A2), Ninh Thuận và Bình Thuận thường được xem là 'miền Nam'. Chưa tìm được văn bản khung giá phát điện xác nhận rõ ràng cách xếp cho hai tỉnh này; đây là điểm rủi ro sai lệch cao nhất trong toàn bộ mapping."
+    },
+    {
+      "item": "Danh sách tỉnh ven biển cho 3 khu vực biển điện gió ngoài khơi (Bắc Bộ, Nam Trung Bộ, Nam Bộ)",
+      "reason": "Thông tư 25/2025/TT-BCT chỉ dẫn chiếu Quy hoạch không gian biển quốc gia và Quy hoạch phát triển điện lực quốc gia (Quy hoạch điện VIII / Quyết định 500/QĐ-TTg 2023, điều chỉnh bởi Quyết định 768/QĐ-TTg 2025) làm căn cứ xác định khu vực biển, nhưng không nêu danh sách tỉnh. Hai quy hoạch này (đặc biệt Quy hoạch điện VIII và các phụ lục cân bằng công suất theo miền) chưa được đọc toàn văn trong phạm vi nghiên cứu này do dung lượng lớn; nếu cần ranh giới chính xác cho từng khu vực biển, cần tra tiếp các phụ lục này hoặc Quy hoạch không gian biển quốc gia (đang được Quốc hội/Chính phủ xây dựng, tình trạng ban hành chưa được xác minh trong nghiên cứu này)."
+    },
+    {
+      "item": "URL chính thức (congbao.chinhphu.vn / datafiles.chinhphu.vn) cho Quyết định 1824/QĐ-BCT và Quyết định 988/QĐ-BCT",
+      "reason": "Trong thời gian nghiên cứu, chỉ tìm được các bài báo chính thống (baochinhphu.vn) và bản sao có ghi số hiệu văn bản (thuvienphapluat.vn) cho hai quyết định này; không tìm được liên kết PDF gốc trên congbao.chinhphu.vn hoặc datafiles.chinhphu.vn như đã làm được với Thông tư 09/2025/TT-BCT, Thông tư 19/2023/TT-BCT, Thông tư 25/2025/TT-BCT và Quyết định 1508/QĐ-BCT (đọc toàn văn PDF gốc). Số liệu giá đã được đối chiếu chéo qua nhiều báo độc lập và khớp nhau."
+    },
+    {
+      "item": "Đề xuất bỏ khung 3 miền (2026)",
+      "reason": "Ghi nhận thêm (không phải câu hỏi của nhiệm vụ): tính đến 08/2026, Bộ Công Thương đang lấy ý kiến dự thảo sửa đổi Thông tư 09/2025/TT-BCT theo hướng bỏ cách tính khung giá điện mặt trời/điện gió theo 3 miền, chuyển sang tính theo vùng kinh tế - xã hội hoặc theo từng tỉnh/thành, với lý do cách chia 3 miền hiện tại không còn phù hợp sau sáp nhập tỉnh. Nếu dự thảo này được ban hành, toàn bộ mapping miền trong file này sẽ hết hiệu lực cho các năm giá sau 2025."
+    }
+  ],
+  "decision": {
+    "date": "2026-09-30",
+    "rule": "가격틀 조항(TT 09/2025 Điều 3 khoản 8, TT 25/2025 추가)은 권역 획정 근거(사회경제 6권역·PDP8·성 통합)만 제시하고 성 명단은 없음. 6권역 2개씩 묶음(NQ 81)과 EVN 총공사 관할(2025 이전) 두 공식 구분이 같은 권역을 주는 성만 칠하고, 다른 성은 '권역 불확실'로 두 후보 상한을 함께 표시",
+    "uncertain": [
+      [
+        "VN-21",
+        "Thanh Hóa",
+        "central",
+        "north"
+      ],
+      [
+        "VN-22",
+        "Nghệ An",
+        "central",
+        "north"
+      ],
+      [
+        "VN-23",
+        "Hà Tĩnh",
+        "central",
+        "north"
+      ],
+      [
+        "VN-35",
+        "Lâm Đồng",
+        "central",
+        "south"
+      ],
+      [
+        "VN-36",
+        "Ninh Thuận",
+        "central",
+        "south"
+      ],
+      [
+        "VN-40",
+        "Bình Thuận",
+        "central",
+        "south"
+      ]
+    ]
+  },
+  "regionGrouping": {
+    "basis": "circular-text-then-evn-jurisdiction",
+    "circularQuote": "7. Khung giá phát điện loại hình nhà máy điện gió được xây dựng theo các miền, khu vực biển trên cơ sở kết quả điều tra tài nguyên điện gió theo quy định của pháp luật, cụ thể như sau: a) Khung giá phát điện loại hình điện gió trên đất liền, điện gió gần bờ được xây dựng theo 03 (ba) miền: miền Bắc, miền Trung và miền Nam. b) Việc xác định các khu vực để xây dựng khung giá phát điện loại hình điện gió ngoài khơi căn cứ theo: b1) Quy hoạch không gian biển quốc gia; b2) Quy hoạch phát triển điện lực quốc gia. Giai đoạn 2025 - 2035, khung giá phát điện loại hình nhà máy điện gió ngoài khơi được xây dựng theo 03 (ba) khu vực biển: khu vực Bắc Bộ, khu vực Nam Trung Bộ và khu vực Nam Bộ. 8. Việc xác định các miền để xây dựng khung giá phát điện đối với loại hình nhà máy điện mặt trời và nhà máy điện gió trên đất liền, nhà máy điện gió gần bờ căn cứ theo: a) Phân vùng kinh tế - xã hội tại Quy hoạch tổng thể quốc gia; b) Quy hoạch phát triển điện lực quốc gia; c) Chủ trương, quyết định của cấp có thẩm quyền về việc sắp xếp, sáp nhập, hợp nhất các đơn vị hành chính cấp tỉnh.",
+    "circularReadingNote": "Điều 3 khoản 8은 미엔 경계를 정할 때 따를 기준 3가지(사회경제 권역 구분·전력개발계획·성·시 통합 결정)를 지정할 뿐, 성을 직접 나열하지 않는다(원문 확인, 부록·대응표 없음). 그래서 63개 성 전부가 2단계(EVN 관할 기준)로 결정된다.",
+    "fallback": "EVN jurisdiction (verified, evn-jurisdiction.json): 북=NPC+HANOI, 중=CPC, 남=SPC+HCMC",
+    "publicNote": "이 성의 권역은 {basisLabel}으로 정해졌습니다.",
+    "sourceUrl": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/5/25-bct.pdf",
+    "reason": "가격 규정 원문이 성을 나열하지 않아, 원문이 인용하는 전력계통 권역(EVN 관할)으로 정한다(사용자 결정 2026-09-30 16:15 — 6대 권역 묶음 규칙 철회).",
+    "withdrawn": {
+      "rule": "6대 권역을 둘씩 묶는 방식(2026-09-30 최초 결정)",
+      "withdrawnAt": "2026-09-30 16:15",
+      "reason": "가격 규정과 무관한 별도 문서(국가 종합계획)에 의존해 근거가 약함"
+    }
+  },
+  "provinces63": [
+    {
+      "adm1Code": "VN-01",
+      "name": "Lai Châu",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-02",
+      "name": "Lào Cai",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-03",
+      "name": "Hà Giang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-04",
+      "name": "Cao Bằng",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-05",
+      "name": "Sơn La",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-06",
+      "name": "Yên Bái",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-07",
+      "name": "Tuyên Quang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-09",
+      "name": "Lạng Sơn",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-13",
+      "name": "Quảng Ninh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-14",
+      "name": "Hòa Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-18",
+      "name": "Ninh Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-20",
+      "name": "Thái Bình",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-21",
+      "name": "Thanh Hóa",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-22",
+      "name": "Nghệ An",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-23",
+      "name": "Hà Tĩnh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-24",
+      "name": "Quảng Bình",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-25",
+      "name": "Quảng Trị",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-26",
+      "name": "Thừa Thiên Huế",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-27",
+      "name": "Quảng Nam",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-28",
+      "name": "Kon Tum",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-29",
+      "name": "Quảng Ngãi",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-30",
+      "name": "Gia Lai",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-31",
+      "name": "Bình Định",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-32",
+      "name": "Phú Yên",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-33",
+      "name": "Đắk Lắk",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-34",
+      "name": "Khánh Hòa",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-35",
+      "name": "Lâm Đồng",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-36",
+      "name": "Ninh Thuận",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-37",
+      "name": "Tây Ninh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-39",
+      "name": "Đồng Nai",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-40",
+      "name": "Bình Thuận",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-41",
+      "name": "Long An",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-43",
+      "name": "Bà Rịa–Vũng Tàu",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-44",
+      "name": "An Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-45",
+      "name": "Đồng Tháp",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-46",
+      "name": "Tiền Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-47",
+      "name": "Kiên Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-49",
+      "name": "Vĩnh Long",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-50",
+      "name": "Bến Tre",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-51",
+      "name": "Trà Vinh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-52",
+      "name": "Sóc Trăng",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-53",
+      "name": "Bắc Kạn",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-54",
+      "name": "Bắc Giang",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-55",
+      "name": "Bạc Liêu",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-56",
+      "name": "Bắc Ninh",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-57",
+      "name": "Bình Dương",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-58",
+      "name": "Bình Phước",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-59",
+      "name": "Cà Mau",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-61",
+      "name": "Hải Dương",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-63",
+      "name": "Hà Nam",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-66",
+      "name": "Hưng Yên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-67",
+      "name": "Nam Định",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-68",
+      "name": "Phú Thọ",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-69",
+      "name": "Thái Nguyên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-70",
+      "name": "Vĩnh Phúc",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-71",
+      "name": "Điện Biên",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-72",
+      "name": "Đắk Nông",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-73",
+      "name": "Hậu Giang",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-CT",
+      "name": "Cần Thơ",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnspc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-DN",
+      "name": "Đà Nẵng",
+      "region": "central",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evncpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-HN",
+      "name": "Hà Nội",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhanoi",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-HP",
+      "name": "Hải Phòng",
+      "region": "north",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnnpc",
+      "status": "decided"
+    },
+    {
+      "adm1Code": "VN-SG",
+      "name": "Hồ Chí Minh",
+      "region": "south",
+      "regionBasis": "evn",
+      "regionBasisLabel": "EVN 관할 기준",
+      "corporation": "evnhcmc",
+      "status": "decided"
+    }
+  ],
+  "provinces63RegionCounts": {
+    "north": 28,
+    "central": 13,
+    "south": 22
+  },
+  "units34": [
+    {
+      "unitCode": "an giang",
+      "name": "An Giang",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "bac ninh",
+      "name": "Bắc Ninh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "cao bang",
+      "name": "Cao Bằng",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ca mau",
+      "name": "Cà Mau",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "can tho",
+      "name": "Cần Thơ",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "gia lai",
+      "name": "Gia Lai",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hue",
+      "name": "Huế",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ha noi",
+      "name": "Hà Nội",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ha tinh",
+      "name": "Hà Tĩnh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hung yen",
+      "name": "Hưng Yên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "hai phong",
+      "name": "Hải Phòng",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ho chi minh",
+      "name": "Hồ Chí Minh",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "khanh hoa",
+      "name": "Khánh Hòa",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lai chau",
+      "name": "Lai Châu",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lao cai",
+      "name": "Lào Cai",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lam dong",
+      "name": "Lâm Đồng",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "lang son",
+      "name": "Lạng Sơn",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "nghe an",
+      "name": "Nghệ An",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "ninh binh",
+      "name": "Ninh Bình",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "phu tho",
+      "name": "Phú Thọ",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang ngai",
+      "name": "Quảng Ngãi",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang ninh",
+      "name": "Quảng Ninh",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "quang tri",
+      "name": "Quảng Trị",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "son la",
+      "name": "Sơn La",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "thanh hoa",
+      "name": "Thanh Hóa",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "thai nguyen",
+      "name": "Thái Nguyên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "tuyen quang",
+      "name": "Tuyên Quang",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "tay ninh",
+      "name": "Tây Ninh",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "vinh long",
+      "name": "Vĩnh Long",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dien bien",
+      "name": "Điện Biên",
+      "regions": [
+        "north"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "da nang",
+      "name": "Đà Nẵng",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dak lak",
+      "name": "Đắk Lắk",
+      "regions": [
+        "central"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dong nai",
+      "name": "Đồng Nai",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    },
+    {
+      "unitCode": "dong thap",
+      "name": "Đồng Tháp",
+      "regions": [
+        "south"
+      ],
+      "status": "single"
+    }
+  ],
+  "mixedUnits34": [],
+  "generatedBy": "scripts/v157-2/build-c017-regions-v157-2.mjs"
+}

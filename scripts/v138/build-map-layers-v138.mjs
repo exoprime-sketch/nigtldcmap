@@ -38,6 +38,10 @@ import {
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, "../..");
 import { resolveDataRootV158 } from "../v158/country-context-v158.mjs";
+import {
+  buildGroupConstantInputsV157_2,
+  buildMineJoinV157_2,
+} from "../v157-2/map12-builders-v157-2.mjs";
 
 const argv = process.argv.slice(2);
 const opt = (name, fallback) => {
@@ -1303,6 +1307,138 @@ function buildEntityLayer(target, packs, catalog, report, locator) {
   return layer;
 }
 
+// ---------------------------------------------------------------- P8-2 (V157-2) layers
+
+/**
+ * P8-2: a value the source states for a group of provinces - an EVN power
+ * corporation, a price region, a socio-economic region, or a registry project
+ * count - shown unchanged on each member province (scripts/v157-2/
+ * map12-builders-v157-2.mjs). The layer's notices say plainly that the value
+ * belongs to the group, not to the province.
+ */
+function buildGroupConstantLayer(target, packs, boundaries, catalog, report) {
+  const entry = catalogEntry(catalog, target.elementId);
+  const inputs = buildGroupConstantInputsV157_2(ROOT, target, packs, boundaries);
+  const derived = { ...target, build: { ...target.build, measures: inputs.measures } };
+  const source34 = inputs.report.source34Rows
+    ? { rows: inputs.report.source34Rows, unmatched: new Map(), duplicateValueCount: 0, sourceRowCount: inputs.report.source34Rows.length }
+    : null;
+  const layer = finishChoroplethLayer({
+    target: derived,
+    entry,
+    series: inputs.series,
+    seriesMeta: inputs.seriesMeta,
+    members: inputs.members,
+    boundaries,
+    report,
+    stats: inputs.stats,
+    aggregationLevel: "admin1",
+    spatialScopeType: "admin1",
+    mappingMethod: null,
+    source34,
+  });
+  const wording = target.build.publicWording || {};
+  if (wording.accuracyNotice) layer.accuracyNotice = wording.accuracyNotice;
+  if (wording.publicSpatialNotice) layer.publicSpatialNotice = wording.publicSpatialNotice;
+  const isCount = target.elementId === "C-006";
+  layer.spatialCoverage =
+    wording.spatialCoverage ||
+    `개편 전 63개 성·시 중 최대 ${layer.featureCount}개에 ${isCount ? "사업 건수" : "그룹 전체 값"} 표시(34개 경계: ${
+      isCount ? "단위 안 사업을 중복 없이 집계" : "구성 성·시가 같은 그룹이면 같은 값, 걸치면 복수 소속"
+    })`;
+  layer.groupConstantV157_2 = { groupTable: target.build.groupTable, basis: inputs.report.basis };
+  const { source34Rows: _rows, ...evidence } = inputs.report;
+  Object.assign(report[report.length - 1], { groupConstant: evidence });
+  return layer;
+}
+
+/**
+ * P8-2: B-044 · B-046 · B-047 on B-048's mine points. The layer reads the host's
+ * records at runtime (assetRef) and joins the national figure by ore type
+ * (src/data/map/entityAttributeJoinV157_2.ts); here it is declared and counted.
+ */
+function buildMineJoinLayer(target, packs, catalog, report, etlByElement) {
+  const { build } = target;
+  const entry = catalogEntry(catalog, target.elementId);
+  const hostLayer = etlByElement.get(build.hostElementId);
+  if (!hostLayer) throw new Error(`${target.elementId}: host layer ${build.hostElementId} missing from map-index`);
+  const { attributes, joined, hostRecords } = buildMineJoinV157_2(ROOT, target, packs);
+  const shown = joined.filter(
+    (record) => typeof record.latitude === "number" && typeof record.longitude === "number" && record.mapEligible !== false
+  );
+  const factFields = [
+    { key: "nationalValue", label: "국가 전체 값", sources: ["국가_전체_값"], recordCount: shown.length, filledRecordCount: shown.length },
+    // Only the ore type from the host: its other notes (coordinate basis, MRDS
+    // ids, technology-mapping memos) belong to the mine register, not here.
+    ...(hostLayer.factFields || [])
+      .filter((fact) => fact.key === "mineral")
+      .map((fact) => ({ ...fact, recordCount: shown.length })),
+  ];
+  const mineralValues = [...new Set(shown.map((record) => text(record.normalizedAttributes?.["광종"])).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b, "ko")
+  );
+  const latestYear = hostLayer.latestYear ?? null;
+  const layer = {
+    ...baseLayerFacts(entry, target),
+    accuracyNotice:
+      "광산 지점은 '주요 광산' 자료의 좌표이며, 표시된 값은 광종별 국가 전체 값입니다. 개별 광산의 값으로 나누지 않습니다.",
+    active: true,
+    aggregationLevel: "facility",
+    assetRef: { elementId: build.hostElementId, provider: hostLayer.assetRef?.provider || "vietnam-v121", section: "entities" },
+    boundaryPolicy: hostLayer.boundaryPolicy,
+    cluster: false,
+    coordinateMeaning: hostLayer.coordinateMeaning,
+    displayedCoordinateCount: shown.length,
+    enabled: shown.length > 0,
+    ...(shown.length === 0 ? { disabledReason: "광종이 일치하는 광산이 없습니다" } : {}),
+    entityJoinV157_2: { hostElementId: build.hostElementId, elementId: target.elementId, attributes },
+    featureCount: shown.length,
+    factFields,
+    fieldLabels: Object.fromEntries(factFields.map((fact) => [fact.key, fact.label])),
+    filters: mineralValues.length > 1 ? [{ field: "광종", label: "광종", values: mineralValues }] : [],
+    geometryTypes: ["point"],
+    join: { failures: [], matchedCount: shown.length, requiredCount: shown.length },
+    latestYear,
+    layerId: `${LAYER_ID_PREFIX}${target.elementId.toLowerCase()}`,
+    legend: { title: target.publicName, note: "광산 지점 · 값은 국가 전체" },
+    mapBenefit: target.selectableVariables,
+    mapMode: "point",
+    missingRegions: [],
+    publicSpatialNotice: target.displaySpatialUnit,
+    renderer: "point",
+    selectors: {
+      defaultPeriod: String(latestYear || "미기재"),
+      defaultVariable: "locations",
+      periods: [String(latestYear || "미기재")],
+      variables: [{ key: "locations", label: build.analysisItemLabel || `${target.publicName} 광산`, periods: [String(latestYear || "미기재")], unit: "곳" }],
+    },
+    sourceCoordinateCount: shown.length,
+    sourceYear: latestYear,
+    spatialCoverage: `광종이 일치하는 광산 ${shown.length}곳`,
+    spatialLimitation: target.limitation,
+    spatialScopeType: "facility-site",
+    tooltipFields: ["name", "nationalValue", "mineral"],
+    totalEntityCount: joined.length,
+    unit: "source-provided location",
+    countNoun: "곳",
+    analysisItemLabel: build.analysisItemLabel || `${target.publicName} 광산`,
+    ...(hostLayer.locationsUrl ? { locationsUrl: hostLayer.locationsUrl, locationCounts: hostLayer.locationCounts } : {}),
+  };
+  report.push({
+    elementId: target.elementId,
+    status: shown.length ? "implemented" : "not-connected",
+    representation: target.representation,
+    build: build.kind,
+    hostElementId: build.hostElementId,
+    hostRecordCount: hostRecords.length,
+    joinedRecordCount: joined.length,
+    featureCount: shown.length,
+    mineralsJoined: attributes.map((attribute) => attribute.mineral),
+    ...(shown.length ? {} : { reason: "광종이 일치하는 광산이 없습니다" }),
+  });
+  return layer;
+}
+
 // ---------------------------------------------------------------- existing layers
 
 /**
@@ -1743,6 +1879,10 @@ function main() {
       layers.push(buildRegionMembershipLayer(target, packs, boundaries, crosswalk, catalog, report));
     } else if (kind === "entities") {
       layers.push(buildEntityLayer(target, packs, catalog, report, locator));
+    } else if (kind === "group-constant") {
+      layers.push(buildGroupConstantLayer(target, packs, boundaries, catalog, report));
+    } else if (kind === "entity-join") {
+      layers.push(buildMineJoinLayer(target, packs, catalog, report, etlByElement));
     } else {
       throw new Error(`unknown build kind ${kind} for ${target.elementId}`);
     }
