@@ -18,6 +18,9 @@ import {
 import { safePublicFilenamePartV122 } from "../data/countries/publicLabelsV122";
 import { publicDownloadStatusV128 } from "../data/publicPlatformV128";
 import { isPreparingStatusV160 } from "../data/finderSortV160";
+import { categoryOptionsV164 } from "../data/finderFiltersV164";
+import { itemHasProviderV164, itemProviderNamesV164, providerFilterOptionsV164 } from "../data/providerNamesV164";
+import { publicItemNameV164 } from "../data/spec/publicItemNameV164";
 import type {
   VietnamEntityV124,
   VietnamIndicatorMetaV124,
@@ -230,10 +233,9 @@ export default function DownloadPage({
       ),
     [catalog, category]
   );
-  const sources = useMemo(
-    () => unique(catalog.flatMap((item) => item.sourceOrganizations)),
-    [catalog]
-  );
+  // V164-4: organisation names (as the finder's filter), not the compiled source strings.
+  const sources = useMemo(() => providerFilterOptionsV164(catalog), [catalog]);
+  const categoryOptions = useMemo(() => categoryOptionsV164(catalog), [catalog]);
   // V153: one option per technology whatever spelling the elements carry.
   const technologies = useMemo(
     () => technologyOptionsV153(catalog),
@@ -255,10 +257,7 @@ export default function DownloadPage({
     return catalog.filter((item) => {
       if (category !== "all" && item.categoryCode !== category) return false;
       if (group !== "all" && item.groupLabel !== group) return false;
-      if (
-        sourceOrganization !== "all" &&
-        !item.sourceOrganizations.includes(sourceOrganization)
-      ) {
+      if (sourceOrganization !== "all" && !itemHasProviderV164(item, sourceOrganization)) {
         return false;
       }
       if (!matchesTechnologyV153(item.technologyIds, technologyId)) {
@@ -268,6 +267,7 @@ export default function DownloadPage({
       return normalizedSearchV121(
         [
           item.publicTitle,
+          publicItemNameV164(item),
           item.publicDescription,
           item.countryNameKo,
           item.categoryLabel,
@@ -557,10 +557,9 @@ export default function DownloadPage({
               }}
             >
               <option value="all">전체</option>
-              {unique(catalog.map((item) => item.categoryCode)).map((code) => (
-                <option key={code} value={code}>
-                  {catalog.find((item) => item.categoryCode === code)
-                    ?.categoryLabel || code}
+              {categoryOptions.map((option) => (
+                <option key={option.code} value={option.code}>
+                  {option.label}
                 </option>
               ))}
             </select>
@@ -592,6 +591,8 @@ export default function DownloadPage({
               const downloadStatus = publicDownloadStatusV128(item);
               const downloadSelectable = downloadStatus.key === "downloadable";
               const inputId = `download-${key.replace(/[^a-z0-9_-]+/giu, "-")}`;
+              // V164-4: the name the finder card and the detail print.
+              const itemName = publicItemNameV164(item);
               return (
                 <article
                   className={`cdp-download-item ${
@@ -607,14 +608,14 @@ export default function DownloadPage({
                       checked={selected}
                       disabled={!downloadSelectable}
                       onChange={() => toggleSelection(item)}
-                      aria-label={`${item.publicTitle} ${downloadStatus.label}`}
+                      aria-label={`${itemName} ${downloadStatus.label}`}
                     />
-                    <span className="sr-only">{item.publicTitle} 선택</span>
+                    <span className="sr-only">{itemName} 선택</span>
                   </label>
                   <span>
                     <span className="cdp-download-item__heading">
                       <strong>
-                        <PublicTermTextV134 text={item.publicTitle} />
+                        <PublicTermTextV134 text={itemName} />
                       </strong>
                       <span
                         className={`cdp-download-status cdp-download-status--${downloadStatus.key}`}
@@ -628,7 +629,7 @@ export default function DownloadPage({
                         text={[
                           providers.length > 1 ? item.countryNameKo : null,
                           isPreparingStatusV160(item.publicStatus) ? null : item.latestYear,
-                          item.sourceOrganizations[0],
+                          itemProviderNamesV164(item.sourceOrganizations)[0] ?? item.sourceOrganizations[0],
                         ]
                           .filter(Boolean)
                           .join(" · ")}

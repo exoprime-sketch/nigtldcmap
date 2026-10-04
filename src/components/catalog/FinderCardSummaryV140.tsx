@@ -6,6 +6,7 @@ import HomePreviewChartV139 from "../home/HomePreviewChartV139";
 import ChartAxesV150 from "../charts/ChartAxesV150";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import { regionWordV158 } from "../../data/countries/countryLevel1V158";
+import { factsMoreNoteV164, levelScopeNoteV164 } from "../../data/cardNotesV164";
 import "./finder-card-summary-v140.css";
 
 /**
@@ -134,6 +135,13 @@ export default function FinderCardSummaryV140({ summary, country }: { summary: C
   const { kind, headline, preview } = summary;
   // The card's country's level-1 word (V158-B2b); the default country when none is given.
   const { word: regionWord } = regionWordV158(country);
+  // V164-4: the facts the card lists, and what "the rest" counts (the dropped
+  // rows are part of it, and the line says when it counts names, not rows).
+  const allFacts = preview.facts || [];
+  const listedFacts = allFacts.filter((fact) => !fact.label.startsWith("자료 공표 상태"));
+  const factsMore =
+    kind === "facts" ? factsMoreNoteV164(headline.value, listedFacts.length, allFacts.length - listedFacts.length, preview.more || 0) : null;
+  const levelScope = levelScopeNoteV164(summary);
   return (
     <div className="fcs140" data-testid="finder-card-summary-v140" data-card-kind={kind}>
       <p className="fcs140-headline" data-testid="finder-card-headline-v140">
@@ -181,21 +189,21 @@ export default function FinderCardSummaryV140({ summary, country }: { summary: C
               <div key={other.label}><dt>{other.label}</dt><dd>{fmt(other.value)} {preview.unit}</dd></div>
             ))}
             {preview.note && <div><dt>비고</dt><dd>{preview.note}</dd></div>}
+            {/* V164-4: which part of the dataset the figure is, next to the dataset's own total. */}
+            {levelScope && <div><dt>범위</dt><dd data-testid="finder-card-scope-v164">{levelScope}</dd></div>}
           </dl>
         ) : kind === "facts" ? (
           <ul className="fcs140-facts">
             {/* V163 (5ii): a fact label that only repeats the source's own
                 publication-status note ("자료 공표 상태 — …") is not a reader-
                 facing fact - dropped here rather than invented into one. */}
-            {(preview.facts || [])
-              .filter((fact) => !fact.label.startsWith("자료 공표 상태"))
-              .map((fact, index) => (
+            {listedFacts.map((fact, index) => (
               <li key={`${fact.label}-${index}`}>
                 <span><PublicTermTextV134 text={fact.label} /></span>
                 {fact.value && <strong><PublicTermTextV134 text={fact.value} /></strong>}
               </li>
             ))}
-            {(preview.more || 0) > 0 && <li className="fcs140-facts__more">외 {preview.more}건은 상세에서</li>}
+            {factsMore && <li className="fcs140-facts__more">{factsMore}</li>}
           </ul>
         ) : kind === "status" ? (
           <p className="fcs140-status" role="status"><PublicTermTextV134 text={preview.note || "현재 제공하지 않음"} /></p>

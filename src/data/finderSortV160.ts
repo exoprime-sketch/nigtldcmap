@@ -37,3 +37,27 @@ export function compareFinderItemsV160(
   }
   return COLLATOR_V160.compare(left.title, right.title);
 }
+
+/**
+ * V164-4: what 조회순 says while no detail view has been counted yet. The home
+ * and the finder both print this sentence (the home adds what it lists in the
+ * meantime, the finder how it is ordered), so a reader who picks 조회순 and
+ * sees the 가나다순 order is told why instead of finding two identical lists.
+ */
+export const VIEWS_NOT_READY_NOTE_V164 = "조회 집계가 준비되면 조회순으로 표시합니다.";
+
+/** True once at least one dataset has a counted view. */
+export function hasCountedViewsV164(views: ReadonlyMap<string, number>): boolean {
+  for (const count of views.values()) if (count > 0) return true;
+  return false;
+}
+
+/**
+ * The finder's line under the sort choice: only when 조회순 is the chosen order
+ * and there is nothing counted to order by (no count is invented - the list is
+ * then in 가나다순). Null when the order is 가나다순 or the counts exist.
+ */
+export function finderSortNoteV164(mode: FinderSortV160, views: ReadonlyMap<string, number>): string | null {
+  if (mode !== "views" || hasCountedViewsV164(views)) return null;
+  return `${VIEWS_NOT_READY_NOTE_V164} 현재는 가나다순으로 표시합니다.`;
+}

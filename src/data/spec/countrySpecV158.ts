@@ -44,6 +44,7 @@ import { otherCountryTermsV158 } from "../countries/countryTermsV158";
 import { scopeCasesToCountryV158, scopeTextToCountryV158 } from "../countries/countryTextScopeV158";
 import { publicSourceOrganizationV136_1 } from "../visualization/publicFieldPolicyV126";
 import { publicTitleFromRawLabelV158 } from "../countries/publicLabelsV122";
+import { providerLineV164 } from "../providerNamesV164";
 
 export { SPEC_AUTHORED_COUNTRIES_V158, specNeedsCountryScopeV158 };
 
@@ -95,8 +96,10 @@ export function countrySourceLabelV158(item: CountrySpecItemV158 | null | undefi
   if (names.length > 1 && names.length <= 3 && heads.size === 1 && split.every((parts) => parts.length > 1)) {
     return `${[...heads][0]} — ${split.map((parts) => parts.slice(1).join(" — ").trim()).join(" · ")}`;
   }
-  if (names.length <= 2) return names.join(" · ");
-  return `${names.slice(0, 2).join(" · ")} 외 ${names.length - 2}`;
+  // V164-4: a country's source strings are as compiled - one organisation under
+  // several spellings, boundary / coordinate clauses, "A | B" lists. The line
+  // names each organisation once (two at most, the rest counted).
+  return providerLineV164(names, 2);
 }
 
 function scoped(text: string | null | undefined, country: string): string {

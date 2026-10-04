@@ -16,8 +16,10 @@ import {
   ensureElementVisualizationSummariesV158,
   getElementVisualizationSummaryV125,
 } from "../data/visualization/elementVisualizationRegistryV125";
-import { CATEGORIES } from "../data/publicTaxonomy";
 import type { CategoryCode } from "../data/publicTaxonomy";
+import { categoryOptionsV164, finderResetValuesV164 } from "../data/finderFiltersV164";
+import { itemHasProviderV164, providerFilterOptionsV164, providerLineV164 } from "../data/providerNamesV164";
+import { publicItemNameV164 } from "../data/spec/publicItemNameV164";
 import {
   PublicTermHelpV134,
   PublicTermTextV134,
@@ -33,7 +35,7 @@ import { DISPLAY_TYPE_LABELS_V159, DISPLAY_TYPE_MARKS_V159, PRIMARY_USERS_V159 }
 import type { DisplayTypeV159 } from "../data/spec/specTypesV159";
 import DatasetCardTitleV159 from "../components/data/description/DatasetCardTitleV159";
 import { USAGE_API_AVAILABLE_V149, usePublicUsageV149 } from "../data/publicUsageV149";
-import { compareFinderItemsV160, isPreparingStatusV160 } from "../data/finderSortV160";
+import { compareFinderItemsV160, finderSortNoteV164, isPreparingStatusV160 } from "../data/finderSortV160";
 import "../styles/country-data-platform-v122.css";
 
 interface DataExplorerPageProps {
@@ -156,7 +158,7 @@ type FinderSortModeV128 = "name" | "views";
 
 /** The name the card shows (V159 base name, else the catalogue title) - the key of 가나다순. */
 function finderDisplayTitleV160(item: CountryCatalogItemV122): string {
-  return getCardSpecForCountryV158(item.elementId, item.countryIso3, item)?.baseName || item.publicTitle;
+  return publicItemNameV164(item);
 }
 /** A dataset not yet delivered is listed last, marked '데이터 준비 중'. */
 function isPreparingV160(item: CountryCatalogItemV122): boolean {
@@ -239,6 +241,9 @@ export default function DataExplorerPage({
     () => new Map((usage?.detail || []).map((row) => [row.elementId, row.count])),
     [usage]
   );
+  // V164-4: 조회순 with no counted views lists in 가나다순 - the page says so
+  // (the home says the same) instead of reordering silently.
+  const sortNote = finderSortNoteV164(sortMode, viewCounts);
   // V159: who the dataset serves (from its use cases) and its display type.
   const [userFilter, setUserFilter] = useState<string>("all");
   const [typeFilter, setTypeFilter] = useState<DisplayTypeV159 | "all">("all");
@@ -398,10 +403,14 @@ export default function DataExplorerPage({
         .sort((a, b) => Number(b) - Number(a)),
     [availableCatalog]
   );
+  // V164-4: organisation names, not the source strings as compiled (boundary
+  // clauses, '|' lists, one organisation under several spellings).
   const sources = useMemo(
-    () => unique(availableCatalog.flatMap((item) => item.sourceOrganizations)),
+    () => providerFilterOptionsV164(availableCatalog),
     [availableCatalog]
   );
+  // V164-4: the 대분류 names the cards, the detail and the download list print.
+  const categoryOptions = useMemo(() => categoryOptionsV164(availableCatalog), [availableCatalog]);
   // V153: one option per technology whatever spelling the elements carry.
   const technologies = useMemo(
     () => technologyOptionsV153(availableCatalog),
@@ -419,10 +428,7 @@ export default function DataExplorerPage({
       ) {
         return false;
       }
-      if (
-        sourceOrganization !== "all" &&
-        !item.sourceOrganizations.includes(sourceOrganization)
-      ) {
+      if (sourceOrganization !== "all" && !itemHasProviderV164(item, sourceOrganization)) {
         return false;
       }
       if (!matchesTechnologyV153(item.technologyIds, selectedTechnology)) {
@@ -678,16 +684,19 @@ export default function DataExplorerPage({
     providers.length > 1 || normalizedCountry === "all";
 
   function resetFilters(): void {
-    onQueryChange("");
-    onCountryChange("all");
-    onCategoryChange("all");
-    onGroupChange(null);
-    onSourceOrganizationChange("all");
-    onTechnologyChange("all");
-    setYearFilter("all");
-    setDeliveryFilter("all");
-    setUserFilter("all");
-    setTypeFilter("all");
+    // V164-4: the country is the page's scope and stays; "전체" would mix in
+    // the other country's datasets.
+    const values = finderResetValuesV164(countryIso3);
+    onQueryChange(values.query);
+    if (values.countryIso3 !== countryIso3) onCountryChange(values.countryIso3);
+    onCategoryChange(values.category);
+    onGroupChange(values.group);
+    onSourceOrganizationChange(values.sourceOrganization);
+    onTechnologyChange(values.technologyId);
+    setYearFilter(values.year);
+    setDeliveryFilter(values.delivery);
+    setUserFilter(values.user);
+    setTypeFilter(values.type);
   }
 
   return (
@@ -743,6 +752,9 @@ export default function DataExplorerPage({
               <option value="name">가나다순</option>
               <option value="views" disabled={!viewsAvailable}>조회순</option>
             </select>
+            {sortNote ? (
+              <small className="cdp-field__hint" role="status" data-testid="finder-sort-note-v164">{sortNote}</small>
+            ) : null}
           </label>
 
           <label className="cdp-field">
@@ -756,9 +768,9 @@ export default function DataExplorerPage({
               }}
             >
               <option value="all">전체</option>
-              {CATEGORIES.map((item) => (
+              {categoryOptions.map((item) => (
                 <option key={item.code} value={item.code}>
-                  {item.nameKo}
+                  {item.label}
                 </option>
               ))}
             </select>
@@ -1018,7 +1030,7 @@ export default function DataExplorerPage({
                   <dt>제공기관</dt>
                   <dd>
                     <PublicTermTextV134
-                      text={summary?.provider || item.sourceOrganizations.slice(0, 2).join(" · ")}
+                      text={summary?.provider || providerLineV164(item.sourceOrganizations, 2)}
                     />
                   </dd>
                 </div>
