@@ -802,6 +802,25 @@ function publicClassLabel(label: string): string | null {
   return /[가-힣]/u.test(text) ? text : null;
 }
 
+/** A national or overall row the delivery lists beside the units it sums ("전국 집계"). */
+const AGGREGATE_ENTITY_V164 = /전국|합계|총계|\b(?:total|national|country)\b/iu;
+/** Area units: polygons such as river basins nest and overlap, so their areas do not add up. */
+const AREA_UNIT_V164 = /^(?:km|km2|km²|㎢|ha|m2|m²|acre)s?$/iu;
+
+/**
+ * V164-3: whether the sizes can be summed into one '규모 합계' without counting
+ * anything twice. Not when the rows come from more than one list (A-023 VNM:
+ * the same plant in two sources), when one row is the delivery's own total
+ * (B-025 BGD: "전국 집계" beside 66 basins), or when the sizes are areas of
+ * shapes that may overlap (B-025 VNM: a whole basin and its Viet Nam part).
+ */
+function sizesAddUpV164(sized: readonly S3LocatedEntityV159[]): boolean {
+  if (new Set(sized.map((row) => row.indicatorId || "")).size > 1) return false;
+  if (sized.some((row) => AGGREGATE_ENTITY_V164.test(`${row.name || ""} ${row.classLabel || ""}`))) return false;
+  if (sized.some((row) => AREA_UNIT_V164.test((row.size?.unit || "").replace(/\s+/gu, "")))) return false;
+  return true;
+}
+
 function decisionPointsU4(allRows: readonly S3LocatedEntityV159[]): DecisionPointV159[] {
   const rows = allRows.filter((row) => !isPlaceholderEntity(row));
   if (rows.length === 0) return [];
@@ -810,7 +829,7 @@ function decisionPointsU4(allRows: readonly S3LocatedEntityV159[]): DecisionPoin
   ];
 
   const sized = rows.filter((row) => row.size !== null);
-  if (sized.length > 0) {
+  if (sized.length > 0 && sizesAddUpV164(sized)) {
     const units = new Set(sized.map((row) => row.size?.unit ?? null));
     if (units.size === 1) {
       const total = sized.reduce((sum, row) => sum + (row.size?.value || 0), 0);

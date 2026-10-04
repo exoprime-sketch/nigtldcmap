@@ -1,4 +1,4 @@
-import { expect, test } from "@jest/globals";
+import { describe, expect, it, test } from "@jest/globals";
 import type {
   S1CountryObservationV159,
   S2RegionObservationV159,
@@ -545,4 +545,20 @@ test("V164-3: series drawn by a folded chart do not outrank the chart's unit and
   );
   expect(point?.value).toMatch(/^70\.5? ?MtCO₂e|^70/u);
   expect(point?.value).not.toMatch(/Gg/u);
+});
+
+describe("V164-3 U4 규모 합계 is not a double count", () => {
+  const entity = (name: string, value: number, unit: string, indicatorId = "X-000_list"): S3LocatedEntityV159 => ({
+    elementId: "X-000", indicatorId, recordKey: name, name, latitude: 1, longitude: 1, geometryType: "point", crs: null, geometryRef: null,
+    classKey: null, classLabel: null, size: { value, unit }, year: 2024, owner: null, adm1Source: null, techIds: [], sourceUrl: null, coordinateQuality: "exact",
+  });
+  const total = (rows: S3LocatedEntityV159[]) => pointOf(decisionPointsV159("U4", { structure: "S3", rows }, opts()), "size-total");
+  it("sums one list of plants", () => {
+    expect(total([entity("A", 100, "MW"), entity("B", 50, "MW")])?.value).toMatch(/^150/u);
+  });
+  it("does not add two source lists, a national total row, or overlapping areas", () => {
+    expect(total([entity("A", 100, "MW", "X-000_gppd"), entity("A", 100, "MW", "X-000_other")])).toBeUndefined();
+    expect(total([entity("전국 집계", 140000, "MW"), entity("A", 70000, "MW")])).toBeUndefined();
+    expect(total([entity("Mekong", 795000, "km²"), entity("Mekong (VN)", 40000, "km²")])).toBeUndefined();
+  });
 });
