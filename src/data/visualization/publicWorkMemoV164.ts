@@ -37,6 +37,15 @@ const SIGNALS_V164: readonly string[] = [
   String.raw`확인\s*대상`,
   // the sheet's own note on keeping an earlier collection ("종전 수집 근거 유지")
   String.raw`종전\s*수집`,
+  // R2: how the collector handled a document it could not link or obtain
+  // ("개별 문서 URL은 원문 미제시, 오인 방지를 위해 포털 상위 URL만 표기", "2025년 개정판
+  // 존재, 원본 미확보", "행 #25가 인용한 포털 상위 URL", "상한(최고가)이므로 하한=상한 기재").
+  String.raw`원본\s*미확보`,
+  String.raw`오인\s*방지`,
+  String.raw`개별\s*(?:문서|원문)?\s*URL|문서별\s*URL|포털\s*상위\s*URL|원문\s*비고`,
+  String.raw`행\s*#\d+`,
+  String.raw`하한\s*=\s*상한`,
+  String.raw`확정\s*기재`,
   // how a page was fetched
   String.raw`HTTP\s*[1-5]\d{2}`,
   String.raw`봇\s*차단`,
@@ -85,7 +94,7 @@ const RAW_POINTER_V164: readonly RegExp[] = [
  * with a name outside this list ("[협정약칭: APTA]", "[1]") is data and stays.
  */
 const MEMO_TAG_V164 =
-  /\s*\[\s*(?:상충|공식|국제|부분\s*미확보[^\]]*|M\d{2}[^\]]*|결측\s*(?:M\d{2}|보완)[^\]]*|값\s*정규화|지역\s*출처|열\s*→\s*행\s*전개|구분자\s*통일|진출\s*상태\s*기준[^\]]*|보조\s*지표[^\]]*)\s*\]\s*/gu;
+  /\s*\[\s*(?:상충|공식|국제|부분\s*미확보[^\]]*|M\d{2}[^\]]*|결측\s*(?:M\d{2}|보완)[^\]]*|값\s*정규화|지역\s*출처|열\s*→\s*행\s*전개|구분자\s*통일|진출\s*상태\s*기준[^\]]*|보조\s*지표[^\]]*|이상치\s*각주[^\]]*)\s*\]\s*/gu;
 
 /** A memo phrase glued to the end of a statement: "개정 PDP8 부록Ⅱ(768/QĐ-TTg) 원문 자체 검산". */
 const TRAILING_MEMO_V164 = /\s+(?:원문\s*(?:제?\d+\s*면\s*)?(?:대조|자체\s*검산)|전수\s*대조)\s*$/u;

@@ -2,6 +2,7 @@ import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamElementMetaBundleV124, VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicRecordNoteV161, publicSourceUrlV126, publicUnstatedWordingV161 } from "./publicFieldPolicyV126";
 import { publicWorkMemoV164 } from "./publicWorkMemoV164";
+import { koreanCategoryV164 } from "./publicCategoryLabelV164";
 
 /**
  * V162: one reader for the wide record template.
@@ -167,13 +168,71 @@ const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;
  */
 export function publicWideValueV162(value: unknown, attribute = ""): string {
   const text = cellText(value);
-  if (!text || FILE_VALUE_V162.test(text)) return "";
+  if (!text || FILE_VALUE_V162.test(text) || PLACEHOLDER_V164.test(text)) return "";
   const cleaned = NOTE_ATTRIBUTE_V162.test(attribute) ? publicRecordNoteV161(text) || "" : text;
   // V164-3: the delivery's working memos, in any column (note-like or not),
   // then an API's own field names and the markup the sheet's text still carries.
-  return plainMarkupV164(
+  const plain = plainMarkupV164(
     withoutApiKeysV164(publicWorkMemoV164(publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)))))
   );
+  // V164 R2: classification keys, the sheet's own column names and English
+  // classification values, in the form a reader reads.
+  return translatedClassificationV164(publicColumnNameV164(withoutPipeKeysV164(plain), attribute), attribute);
+}
+
+/** What a sheet writes for "no value": a dash or "N/A". "해당 없음" is a statement and stays. */
+const PLACEHOLDER_V164 = /^(?:[—–-]+|n\/?a|none|null)$/iu;
+
+/**
+ * A classification the source keeps as "name|group" ("기준·의무·규범 (Standards,
+ * obligations and norms|Regulation)", C-009/C-010): the bar is the source's key
+ * delimiter. The group reads as a Korean word after a slash and the name stays.
+ */
+export function withoutPipeKeysV164(text: string): string {
+  if (!text.includes("|")) return text;
+  return text
+    .replace(/\(([^()|]+?)\s*\|\s*([^()|]+?)\)/gu, (_match, name: string, group: string) => `(${name.trim()} / ${koreanCategoryV164(group.trim())})`)
+    .replace(/([A-Za-z가-힣])\s*\|\s*(?=[A-Za-z가-힣])/gu, "$1 / ");
+}
+
+/**
+ * The scoring basis C-005 names by the TAP table's own column ("Weighted score
+ * 열", "Weighted score (With PV) 열"): the English column name is the source's
+ * term, the Korean words say what it is.
+ */
+function publicColumnNameV164(text: string, attribute: string): string {
+  if (!/산정\s*기준|산출\s*기준/u.test(attribute)) return text;
+  const named = /^Weighted score(?:\s*\(\s*With PV\s*\))?\s*열?$/iu.exec(text.trim());
+  if (!named) return text;
+  return /With PV/iu.test(text) ? "가중 점수 (Weighted score, 태양광 포함)" : "가중 점수 (Weighted score)";
+}
+
+/** An attribute whose value is a classification (a type, a category, a sector). */
+const CLASSIFICATION_ATTRIBUTE_V164 = /분류|유형|구분|부문|분야|종류/u;
+
+/**
+ * An English classification value in a classification column reads in Korean
+ * ("Support actions" → "지원 조치"); a column that states the source's own wording
+ * ("부문 (원문)") keeps it after the Korean name: "에너지 (Energy)". A value the
+ * dictionary does not know is left as delivered.
+ */
+function translatedClassificationV164(text: string, attribute: string): string {
+  if (!text || !CLASSIFICATION_ATTRIBUTE_V164.test(attribute) || /[가-힣]/u.test(text)) return text;
+  const korean = koreanCategoryV164(text);
+  if (korean === text) return text;
+  return /원문|영문|원어/u.test(attribute) ? `${korean} (${text})` : korean;
+}
+
+/**
+ * A column label as a reader reads it: the sheet's own spec hints ("근거 법령
+ * (번호 + 국문 명칭)", "적용 조건 (용량·기한 등 사업 요건)") are not part of the
+ * name, and a "+" that joins two names reads as the list it is.
+ */
+export function publicAttributeLabelV164(attribute: string): string {
+  return attribute
+    .replace(/\s*\((?:번호\s*\+\s*국문\s*명칭|용량·기한\s*등\s*사업\s*요건)\)\s*$/u, "")
+    .replace(/\s+\+\s+/gu, " · ")
+    .trim();
 }
 
 /**
@@ -227,6 +286,17 @@ export function plainMarkupV164(text: string): string {
 
 const SHORT_VALUE_V162 = 40;
 
+/**
+ * V164 R2: a bare number ("20037", "6.8", "35,000") says nothing in a title -
+ * "적응 재원 총 소요 2023-2050 · 20037" read as a figure with no unit. A year is
+ * a number a reader does read, and a period ("2023-2050") is not a bare number.
+ */
+export function isBareNumberTitleValueV164(value: string): boolean {
+  const text = String(value ?? "").trim();
+  if (!/^[+-]?\d[\d,]*(?:\.\d+)?$/u.test(text)) return false;
+  return !/^(?:19|20)\d{2}$/u.test(text);
+}
+
 /** Up to two values that tell the records at `indexes` apart, per record. */
 function distinguishingValuesV162(records: WideRecordV162[], indexes: number[], allowLong: boolean): string[][] {
   const candidates = new Map<string, string[]>();
@@ -237,6 +307,7 @@ function distinguishingValuesV162(records: WideRecordV162[], indexes: number[], 
     if (record.source.citation) pairs.push(["source\u0000citation", record.source.citation]);
     for (const [key, raw] of pairs) {
       if (!raw || raw === record.name) continue;
+      if (isBareNumberTitleValueV164(raw)) continue;
       if (raw.length > SHORT_VALUE_V162 && !allowLong) continue;
       // A long value is cut at a word boundary and marked as cut; never reworded.
       const value = raw.length > SHORT_VALUE_V162 ? `${raw.slice(0, SHORT_VALUE_V162).replace(/\s+\S*$/u, "")}…` : raw;
@@ -250,13 +321,18 @@ function distinguishingValuesV162(records: WideRecordV162[], indexes: number[], 
   const distinctWith = (keys: string[]) => new Set(indexes.map((_, position) => signature(position, keys))).size;
   for (let round = 0; round < 2; round += 1) {
     if (chosen.length && distinctWith(chosen) === indexes.length) break;
-    let best: { key: string; distinct: number } | null = null;
+    let best: { key: string; distinct: number; length: number } | null = null;
     candidates.forEach((values, key) => {
       // The short pass uses only values every record states; the long pass
       // also a value some records leave blank (a blank adds nothing).
       if (chosen.includes(key) || (!allowLong && values.some((value) => !value))) return;
       const distinct = distinctWith([...chosen, key]);
-      if (distinct > (chosen.length ? distinctWith(chosen) : 1) && (!best || distinct > best.distinct)) best = { key, distinct };
+      // Of two columns that tell the records apart equally well, the one with
+      // the shorter values names them better ("BDT" over "십억 BDT").
+      const length = values.reduce((sum, value) => sum + value.length, 0);
+      if (distinct > (chosen.length ? distinctWith(chosen) : 1) && (!best || distinct > best.distinct || (distinct === best.distinct && length < best.length))) {
+        best = { key, distinct, length };
+      }
     });
     if (!best) break;
     chosen.push((best as { key: string }).key);
@@ -310,15 +386,20 @@ export function readWideRecordsV162(
     // V164-3: a card that defines a grade ("외교부 여행경보 등급 — 여행금지") does
     // not state a current grade: its "현재 등급 (단계)" reads "등급 (단계)".
     const definesGrade = DEFINITION_TYPE_V164.test(read(typeField));
+    const recordName = read(nameField);
     const byBlock = new Map<string, WideValueV162[]>();
     for (const field of fields) {
       if (BOOKKEEPING_BLOCKS_V162.has(field.block) || field.block === SOURCE_BLOCK_V162) continue;
       if (HIDDEN_ATTRIBUTE_V162.test(field.attribute)) continue;
       const value = read(field);
       if (!value) continue;
+      // V164 R2: a composite name column ("제도명 + 적용 대상") that holds the
+      // record's own name says it a second time under the title.
+      if (recordName && value === recordName && /\s\+\s/u.test(field.attribute)) continue;
       const href = /URL|링크/iu.test(field.attribute) ? publicSourceUrlV126(value) || undefined : undefined;
       const list = byBlock.get(field.block) || [];
-      list.push({ attribute: definesGrade ? field.attribute.replace(/^현재\s+/u, "") : field.attribute, value, href });
+      const label = publicAttributeLabelV164(field.attribute);
+      list.push({ attribute: definesGrade ? label.replace(/^현재\s+/u, "") : label, value, href });
       byBlock.set(field.block, list);
     }
     const blocks: WideBlockV162[] = [...byBlock].map(([block, values]) => ({

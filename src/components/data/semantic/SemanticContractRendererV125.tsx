@@ -1341,7 +1341,7 @@ function CategoryComparisonUnitV143({
 }
 
 /** Values without a meaningful shared axis belong in a table, never headline tiles. */
-function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
+export function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
   if (!rows.length) return null;
   return (
     <div className="sv125-matrix-wrap sv146-values-table" data-testid="analysis-values-table-v146" data-analysis-block="table">
@@ -1356,7 +1356,8 @@ function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRow
             <td>{formatValueV121(row.value)}</td>
             <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
             <td>{observationTimeTextV164(row) || "미기재"}</td>
-            {context && <td>{change ? <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></> : "비교 자료 없음"}</td>}
+            {/* V164 R2: a change of exactly zero reads "변화 없음", not "0 1000 ha". */}
+            {context && <td>{change ? (change.value === 0 ? "변화 없음" : <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></>) : "비교 자료 없음"}</td>}
           </tr>
         ); })}</tbody>
       </table>

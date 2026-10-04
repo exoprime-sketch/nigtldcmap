@@ -240,3 +240,27 @@ describe("category variants and company labels (R2)", () => {
     expect(investmentRoundLabelV164("Seed (신규 라운드)")).toBe("Seed");
   });
 });
+
+describe("TNA barrier categories and policy instrument groups (R2, C-005/C-009)", () => {
+  it("reads the several wordings of one barrier category as one Korean name", () => {
+    for (const english of ["Technical barriers", "Technical barrier", "Technical", "Technology barriers", "Technological Barriers"]) {
+      expect(koreanCategoryV164(english)).toBe("기술적 장벽");
+    }
+    for (const english of ["Social and economic barriers", "Social-economic barriers", "Socio-economic"]) {
+      expect(koreanCategoryV164(english)).toBe("사회경제적 장벽");
+    }
+    for (const english of ["Market linkage", "Market chain", "Market chains"]) expect(koreanCategoryV164(english)).toBe("시장 연계");
+    expect(koreanCategoryV164("The support services")).toBe(koreanCategoryV164("The supporting services"));
+    expect(koreanCategoryV164("Support actions")).toBe("지원 조치");
+  });
+
+  it("reads the policy instrument groups", () => {
+    expect(koreanCategoryV164("Regulation")).toBe("규제");
+    expect(koreanCategoryV164("Governance")).toBe("거버넌스");
+    expect(koreanCategoryV164("Direct Investment")).toBe("직접 투자");
+  });
+
+  it("leaves a barrier the dictionary does not know as delivered", () => {
+    expect(koreanCategoryV164("Lack of a technology transfer network")).toBe("Lack of a technology transfer network");
+  });
+});

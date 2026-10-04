@@ -151,6 +151,25 @@ describe("publicWorkMemoV164", () => {
   it("cuts the note on keeping an earlier collection and keeps the statement it qualifies", () => {
     expect(publicWorkMemoV164("해당국 발효일: 2024-11-17 (종전 수집 근거 유지 — 해당국 기준 발효일)")).toBe("해당국 발효일: 2024-11-17 (해당국 기준 발효일)");
   });
+
+  it("R2: cuts the review tag and the sentence that records the check (B-047 rare earths)", () => {
+    const note =
+      "[이상치 각주 — 1차 출처 확인 완료] USGS MCS 2026 원문 각주에서 산출 근거를 확인하여 확정 기재. 베트남 희토류 생산량 계열 전체가 중국 수입통계 기반 추정치이므로 연도 간 변동은 교역 경로 변화에 민감함.";
+    expect(publicWorkMemoV164(note)).toBe("베트남 희토류 생산량 계열 전체가 중국 수입통계 기반 추정치이므로 연도 간 변동은 교역 경로 변화에 민감함.");
+  });
+
+  it("R2: cuts the sentences about a URL the collector could not give and keeps the dates and names before them", () => {
+    expect(publicWorkMemoV164("2022-01-18 결정. 2024년 Decision 13/2024/QĐ-TTg로 대체·폐지. 개별 문서 URL은 원문 미제시, 오인 방지를 위해 포털 상위 URL만 표기.")).toBe(
+      "2022-01-18 결정. 2024년 Decision 13/2024/QĐ-TTg로 대체·폐지."
+    );
+    expect(publicWorkMemoV164("https://vanban.chinhphu.vn/?pageid=27160 (행 #25가 인용한 포털 상위 URL — 원문 비고상 개별 문서 URL 미제시)")).toBe(
+      "https://vanban.chinhphu.vn/?pageid=27160"
+    );
+  });
+
+  it("R2: a source that says the source does not state a figure is a statement, not a memo", () => {
+    expect(publicWorkMemoV164("500.4→1,237.7(하한), 20년, 원문 미제시, 2030·2050 전망치로 자체 산출(가공)")).toContain("원문 미제시");
+  });
 });
 
 describe("publicMarksV164", () => {
