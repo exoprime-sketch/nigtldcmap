@@ -112,8 +112,23 @@ function isNationalRowV158(attributes: Record<string, unknown>, region: string):
 }
 const ROW_UNIT_KEYS = ["레코드_키_string_id", "HydroBASINS_lvl6_코드_pfaf_id"];
 
+/**
+ * V164-3: the public text of a cell, remembered per raw string. A region
+ * register reads the same region, level and quantile strings on every one of
+ * its rows (VNM B-007: 80,070) and the public-text rules are many regexes, so
+ * the screen spent seconds re-cleaning identical strings.
+ */
+const TEXT_CACHE_V164 = new Map<string, string>();
 const text = (value: unknown): string => {
   if (typeof value === "number") return Number.isFinite(value) ? String(value) : "";
+  if (typeof value === "string") {
+    const known = TEXT_CACHE_V164.get(value);
+    if (known !== undefined) return known;
+    const cleaned = publicTextV126(value) || "";
+    if (TEXT_CACHE_V164.size > 50_000) TEXT_CACHE_V164.clear();
+    TEXT_CACHE_V164.set(value, cleaned);
+    return cleaned;
+  }
   return publicTextV126(value) || "";
 };
 

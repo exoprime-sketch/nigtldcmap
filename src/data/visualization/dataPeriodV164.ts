@@ -72,17 +72,33 @@ function observationYearsV164(observations: PeriodSourcesV164["observations"]): 
   return years;
 }
 
+/** What a column key holds, decided once per key: a register repeats its keys on every row. */
+const KEY_KIND_V164 = new Map<string, "year" | "period" | "other">();
+
+function keyKindV164(rawKey: string): "year" | "period" | "other" {
+  const known = KEY_KIND_V164.get(rawKey);
+  if (known) return known;
+  // The numbered-slot templates prefix a column with its slot ("속성3_연도").
+  const key = rawKey.replace(/^속성\d+_?/u, "");
+  const kind = ENTITY_YEAR_KEY_V164.test(key) ? "year" : ENTITY_PERIOD_KEY_V164.test(key) ? "period" : "other";
+  KEY_KIND_V164.set(rawKey, kind);
+  return kind;
+}
+
 function entityYearsV164(entities: PeriodSourcesV164["entities"]): number[] {
   const years: number[] = [];
   for (const entity of entities || []) {
-    for (const [rawKey, value] of Object.entries(entity.normalizedAttributes || {})) {
+    const attributes = entity.normalizedAttributes || {};
+    // eslint-disable-next-line guard-for-in
+    for (const rawKey in attributes) {
+      const kind = keyKindV164(rawKey);
+      if (kind === "other") continue;
+      const value = (attributes as Record<string, unknown>)[rawKey];
       if (!hasValueV164(value)) continue;
-      // The numbered-slot templates prefix a column with its slot ("속성3_연도").
-      const key = rawKey.replace(/^속성\d+_?/u, "");
-      if (ENTITY_YEAR_KEY_V164.test(key)) {
+      if (kind === "year") {
         // A year, or one cell holding a short run of years; a cell with a date keeps its year.
-        years.push(...yearsInTextV164(value));
-      } else if (ENTITY_PERIOD_KEY_V164.test(key)) {
+        for (const year of yearsInTextV164(value)) years.push(year);
+      } else {
         const range = PURE_RANGE_V164.exec(String(value));
         if (range) years.push(Number(range[1]), Number(range[2]));
       }
@@ -93,6 +109,26 @@ function entityYearsV164(entities: PeriodSourcesV164["entities"]): number[] {
 
 /** The span of the data the loaded records state, or null when none states a year. */
 export function dataPeriodSpanV164(sources: PeriodSourcesV164): PeriodSpanV164 | null {
+  // The same loaded arrays are read by the source line and the tiles on every
+  // render; a region register has tens of thousands of rows (VNM B-007 80,070).
+  const observationsKey = (sources.observations || EMPTY_V164) as object;
+  const entitiesKey = (sources.entities || EMPTY_V164) as object;
+  const indicatorsKey = (sources.indicators || EMPTY_V164) as object;
+  const cached = SPAN_CACHE_V164.get(observationsKey)?.get(entitiesKey)?.get(indicatorsKey);
+  if (cached !== undefined) return cached;
+  const span = computeDataPeriodSpanV164(sources);
+  let byEntities = SPAN_CACHE_V164.get(observationsKey);
+  if (!byEntities) SPAN_CACHE_V164.set(observationsKey, (byEntities = new WeakMap()));
+  let byIndicators = byEntities.get(entitiesKey);
+  if (!byIndicators) byEntities.set(entitiesKey, (byIndicators = new WeakMap()));
+  byIndicators.set(indicatorsKey, span);
+  return span;
+}
+
+const EMPTY_V164: readonly never[] = [];
+const SPAN_CACHE_V164 = new WeakMap<object, WeakMap<object, WeakMap<object, PeriodSpanV164 | null>>>();
+
+function computeDataPeriodSpanV164(sources: PeriodSourcesV164): PeriodSpanV164 | null {
   const fromObservations = spanOfV164(observationYearsV164(sources.observations));
   if (fromObservations) return fromObservations;
   const fromEntities = spanOfV164(entityYearsV164(sources.entities));
