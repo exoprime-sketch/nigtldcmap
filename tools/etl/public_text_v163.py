@@ -326,6 +326,7 @@ LICENCE_POINTER_V164 = re.compile(r"\s*\(\s*라이선스\s*판정서\s*참조\s*
 LICENCE_CHECK_ASIDE_V164 = re.compile(r"\s*\([^()]*(?:전수\s*확인|확인\s*결과)[^()]*\)")
 LICENCE_QUOTE_LABEL_V164 = re.compile(r"\[[^\[\]]{1,20}이용조건\s*원문\]\s*")
 LICENCE_VERDICT_V164 = re.compile(r"\s*출처표시\s*외\s*추가\s*제약이\s*없어\s*표출\s*·\s*다운로드\s*모두\s*(?:허용|가능)\s*\.?")
+KOGL_TEMPLATE_V164 = re.compile(r"본\s*저작물은\s*(\S+?)에서\s*O{2,4}년\s*작성하여\s*공공누리\s*제O유형으로\s*개방한\s*저작물명\s*\(\s*작성자\s*:\s*O+\s*\)을\s*이용하였으며,\s*해당\s*저작물은\s*\S+\s*홈페이지에서\s*무료로\s*다운받을\s*수\s*있습니다\.?")
 DOWNLOAD_SCOPE_NOTE_V164 = re.compile(r"\s*다운로드\s*제공\s*대상은[^.]*용역사[^.]*\.?")
 LICENCE_TEXT_KEYS_V164 = frozenset({"licenseCode", "licenses", "license", "attributionText", "attributionTexts", "rightsNote", "caveat"})
 
@@ -337,6 +338,7 @@ def clean_licence_review_v164(value: str) -> str:
     text = LICENCE_POINTER_V164.sub("", text)
     text = LICENCE_CHECK_ASIDE_V164.sub("", text)
     text = LICENCE_VERDICT_V164.sub("", text)
+    text = KOGL_TEMPLATE_V164.sub(r"출처: \1(공공누리 개방 저작물)", text)
     text = LICENCE_QUOTE_LABEL_V164.sub("이용조건 원문: ", text)
     text = DOWNLOAD_SCOPE_NOTE_V164.sub("", text)
     if text == value:

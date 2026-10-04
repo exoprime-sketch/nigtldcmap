@@ -1004,6 +1004,9 @@ export function publicSourceOrganizationV136_1(value: unknown): string | null {
 const LICENCE_REVIEW_V164 =
   /\s*\[(?:사실\s*\/\s*표현\s*분리|라이선스\s*[XO×○]|라이선스\s*(?:근거|판정|확인)[^\]]*|처리규칙[^\]]*)\][^]*?(?=\s·\s|$)/gu;
 const LICENCE_CHECK_ASIDE_V164 = /\s*\([^()]*(?:전수\s*확인|확인\s*결과)[^()]*\)/gu;
+// The KOGL attribution template copied with its blanks unfilled
+// ("본 저작물은 한국국제협력단에서 OOOO년 작성하여 공공누리 제O유형으로 …").
+const KOGL_TEMPLATE_V164 = /본\s*저작물은\s*(\S+?)에서\s*O{2,4}년\s*작성하여\s*공공누리\s*제O유형으로\s*개방한\s*저작물명\s*\(\s*작성자\s*:\s*O+\s*\)을\s*이용하였으며,\s*해당\s*저작물은\s*\S+\s*홈페이지에서\s*무료로\s*다운받을\s*수\s*있습니다\.?/gu;
 const LICENCE_VERDICT_V164 = /\s*출처표시\s*외\s*추가\s*제약이\s*없어\s*표출\s*·\s*다운로드\s*모두\s*(?:허용|가능)\s*\.?/gu;
 const LICENCE_QUOTE_LABEL_V164 = /\[[^\[\]]{1,20}이용조건\s*원문\]\s*/gu;
 
@@ -1014,6 +1017,7 @@ export function publicLicenseTextV164(value: unknown): string | null {
     .replace(LICENCE_REVIEW_V164, "")
     .replace(LICENCE_CHECK_ASIDE_V164, "")
     .replace(LICENCE_VERDICT_V164, "")
+    .replace(KOGL_TEMPLATE_V164, "출처: $1(공공누리 개방 저작물)")
     .replace(LICENCE_QUOTE_LABEL_V164, "이용조건 원문: ")
     .replace(/(?:\s·\s){2,}/gu, " · ")
     .replace(/^\s*·\s*|\s*·\s*$/gu, "")

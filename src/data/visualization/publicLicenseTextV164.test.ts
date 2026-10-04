@@ -11,6 +11,11 @@ describe("V164 licence text", () => {
       "ADB 이용약관(개인·비상업 한정 · 재배포 금지) · 라이선스 미게시 — 덴마크 외교부 누리집에 저작권·이용약관 페이지 부재 · EU 문서 재사용 결정 2011/833/EU(출처표시 조건)"
     );
   });
+  it("names the KOGL source instead of the unfilled template", () => {
+    expect(publicLicenseTextV164("본 저작물은 한국국제협력단에서 OOOO년 작성하여 공공누리 제O유형으로 개방한 저작물명(작성자: OOO)을 이용하였으며, 해당 저작물은 한국국제협력단 홈페이지에서 무료로 다운받을 수 있습니다. / 좌표: © OpenStreetMap")).toBe(
+      "출처: 한국국제협력단(공공누리 개방 저작물) / 좌표: © OpenStreetMap"
+    );
+  });
   it("leaves a plain licence as it is", () => {
     expect(publicLicenseTextV164("CC BY 4.0")).toBe("CC BY 4.0");
     expect(publicLicenseTextV164("")).toBeNull();
