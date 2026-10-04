@@ -229,6 +229,9 @@ const HEADLINE_OVERRIDES_V164: ReadonlyArray<{ elementId: string; countryIso3?: 
   { elementId: "D-006", countryIso3: "BGD", indicator: /_environmental_tax_revenue_pct_gdp$/u },
   // D-010: the chart draws the explicit subsidies in USD.
   { elementId: "D-010", indicator: /_explicit_total_usd$/u },
+  // A-004 (V164-3): the main chart opens on the international extreme-poverty rate;
+  // the national-line rate is the comparison block's series.
+  { elementId: "A-004", indicator: /_poverty_rate_extreme_intl$/u },
 ];
 
 /** A unit compared without its qualifiers: "점(0~100)" is a 점, "USD_2017" a USD. */
@@ -237,7 +240,10 @@ function baseUnit(unit: string | null | undefined): string {
     .toLowerCase()
     .replace(/\([^)]*\)/gu, "")
     .replace(/_\d{4}/gu, "")
-    .replace(/\s+/gu, "");
+    .replace(/\s+/gu, "")
+    // V164-3: "MtCO₂e" (contract) and "Mt CO2eq" (delivery) are one unit.
+    .replace(/[₀-₉]/gu, (digit) => String(digit.charCodeAt(0) - 0x2080))
+    .replace(/co2-?eq?\b/gu, "co2e");
 }
 
 interface SeriesV164 {

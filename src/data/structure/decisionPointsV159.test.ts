@@ -562,3 +562,16 @@ describe("V164-3 U4 규모 합계 is not a double count", () => {
     expect(total([entity("Mekong", 795000, "km²"), entity("Mekong (VN)", 40000, "km²")])).toBeUndefined();
   });
 });
+
+test("V164-3: a species-sum label in another unit is not the chart's total (A-010 F-gas 질량 합계)", () => {
+  const series = (key: string, unit: string, value: number, label: string) =>
+    [2019, 2024].map((year) => s1({ elementId: "A-010", indicatorId: `A-010_emissions_${key}`, countryIso3: "BGD", year, value, unit, label }));
+  const rows = [
+    ...series("ch4_co2eq", "Mt CO2eq", 70.46, "가스별 배출량 · CH4(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량"),
+    ...series("fgas_co2eq", "Mt CO2eq", 1.2, "가스별 배출량 · F-gas(CO2 환산) — GWP-100 AR5 적용 CO2 환산 배출량"),
+    ...series("fgas_mass", "Gg", 1.82, "가스별 배출량 · F-gas — 불소계 온실가스 10개 화종 질량 합계"),
+  ];
+  const value = pointOf(decisionPointsV159("U1", { structure: "S1", rows }, opts({ countryIso3: "BGD" })), "latest-value")?.value || "";
+  expect(value).not.toMatch(/Gg/u);
+  expect(value).toMatch(/^70/u);
+});
