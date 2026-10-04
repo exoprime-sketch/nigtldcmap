@@ -554,7 +554,7 @@ export function featureCollection(
           entityType: record.entityType,
           referenceYear:
             record.provenance.referenceYear || null,
-          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "") || null,
+          sourceOrg: mapIndicatorSourceV148(record.indicatorId, record.provenance.sourceOrg || "", layer.countryIso3) || null,
           selectionKey: record.recordId,
           approximate: prepared.approximateRecordIds.has(record.recordId),
           memberCount: prepared.membersByRecordId.get(record.recordId)?.length || 1,

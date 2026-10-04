@@ -83,6 +83,7 @@ import { pointUnitNameV164 } from "../data/map/pointLocationV164";
 import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
 import {
   attachMapIconMissingHandlerV152,
+  canonicalMineralLabelV164,
   MAP_ICON_LAYER_IDS_V152,
   mapIconLegendEntriesV152,
   mapLayerIconV152,
@@ -189,6 +190,7 @@ import {
   type LayerHandlers,
 } from "../map/layers/ids";
 import {
+  factValueV137,
   filterRecords,
   layerFactFieldsV137,
   rendererOf,
@@ -4718,7 +4720,20 @@ export default function RealMapExplorerPage({
     const primaryGroupField = focusedLayer.filters[0]?.field;
     if (primaryGroupField) {
       const labels = focusedLayer.filters[0]?.valueLabels || {};
-      countByPublicFieldV126(records, primaryGroupField)
+      // V164-4: read the group value where the layer's fact contract says it
+      // lives (B-048 "mineral" is attrs["광종"]), as the map's features do;
+      // reading attrs["mineral"] counted all 37 mines as "미표기".
+      const groupFactV164 = layerFactFieldsV137(focusedLayer).find((fact) => fact.key === primaryGroupField);
+      const groupRowsV164 = groupFactV164
+        ? records.map((row) => {
+            const attrs = row.normalizedAttributes || {};
+            const stated = attrs[primaryGroupField] ?? factValueV137(groupFactV164, attrs);
+            const value =
+              primaryGroupField === "mineral" && typeof stated === "string" ? canonicalMineralLabelV164(stated) : stated;
+            return { ...row, normalizedAttributes: { ...attrs, [primaryGroupField]: value } };
+          })
+        : records;
+      countByPublicFieldV126(groupRowsV164, primaryGroupField)
         .forEach(([label, count]) =>
           // V164-4: a place value reads "한글 (현지명)" (E-006 "Ho Chi Minh City; Hanoi").
           summaryRows.push({ label: labels[label] || publicMapFactValueV163(primaryGroupField, label) || label, value: `${count.toLocaleString()}${noun}` })
@@ -5448,7 +5463,10 @@ export default function RealMapExplorerPage({
           period: selectedSpatial.period || properties.period,
           source: mapIndicatorSourceV148(
             String(properties.sourceIndicatorId || ""),
-            selectedSpatial.adm1Code ? "" : selectedOwningLayer.source
+            // The indicator table is Viet Nam's; another country's layer
+            // source is built clean by its map builder (V164-4).
+            selectedSpatial.adm1Code && countryIso3 === "VNM" ? "" : selectedOwningLayer.source,
+            countryIso3
           ),
           drawing: drawingLabelV161(renderer, regionWordV158(countryIso3).word),
         }),
@@ -5502,7 +5520,8 @@ export default function RealMapExplorerPage({
           // internal attribute keys, which must not reach a public line.
           source: mapIndicatorSourceV148(
             selected.indicatorId,
-            selected.provenance?.sourceOrg || ""
+            selected.provenance?.sourceOrg || "",
+            countryIso3
           ),
           drawing: drawingLabelV161(rendererOf(selectedLayer), regionWordV158(countryIso3).word),
         }),

@@ -1,4 +1,8 @@
 .map148-popup { width: min(280px, 70vw); display: grid; gap: 7px; color: #153e36; font: 13px/1.45 inherit; overflow-wrap: anywhere; }
+/* V164-4: MapLibre caps a popup at 240px (inline max-width); these cards are 280px/248px wide, so their
+   right edge was cut off (pinned) or ran past the white box (hover). The card sets its own width. */
+.maplibregl-popup:has(.map148-popup),
+.maplibregl-popup:has(.cdp-map-overlap-summary-v145) { max-width: none !important; }
 .map148-popup > strong { font-size: 16px; line-height: 1.4; }
 .map148-popup > small { color: #547068; font-size: 11px; line-height: 1.45; }
 .map148-popup dl { display: grid; grid-template-columns: minmax(56px, auto) 1fr; gap: 4px 12px; margin: 0; border-top: 1px solid #dce7e2; padding-top: 7px; }

@@ -84,10 +84,25 @@ export function publicSourceLineV164(line: string): string {
   return kept.join(" · ");
 }
 
-export function mapIndicatorSourceV148(indicatorId: string | null | undefined, fallback = ""): string {
-  return publicSourceLineV164(
-    publicSourceOrganizationV136_1((sourceByIndicator as Record<string, string>)[indicatorId || ""] || fallback) || ""
-  );
+/**
+ * The public source line for a record of `indicatorId`.
+ *
+ * V164-4: `mapSourcesV148.json` was compiled from the Viet Nam delivery, and
+ * Bangladesh reuses the same indicator ids (B-048_mine_site, B-023_hydro_site,
+ * E-004_*), so a Bangladesh record read "USGS Minerals Yearbook Vietnam" or
+ * "MRC (2009)". The table answers for Viet Nam only; any other country reads
+ * the record's own source (`fallback`).
+ */
+export function mapIndicatorSourceV148(
+  indicatorId: string | null | undefined,
+  fallback = "",
+  countryIso3: string | null | undefined = "VNM"
+): string {
+  const registry =
+    !countryIso3 || countryIso3.toUpperCase() === "VNM"
+      ? (sourceByIndicator as Record<string, string>)[indicatorId || ""]
+      : undefined;
+  return publicSourceLineV164(publicSourceOrganizationV136_1(registry || fallback) || "");
 }
 
 export function mapFactValueV148(fact: VietnamMapFactFieldV137, attributes: Record<string, unknown>): unknown {

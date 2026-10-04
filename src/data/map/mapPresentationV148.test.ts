@@ -90,3 +90,11 @@ test("a source line names each publisher once and carries no processing remark",
   expect(publicSourceLineV164("베트남 정부 — Nghị định 45/2022/NĐ-CP · 베트남 정부 — Nghị định 45/2022/NĐ-CP")).toBe("베트남 정부 — Nghị định 45/2022/NĐ-CP");
   expect(publicSourceLineV164("")).toBe("");
 });
+
+test("the indicator source table answers for Viet Nam only", () => {
+  // V164-4: Bangladesh reuses B-048_mine_site; its record names its own source.
+  expect(mapIndicatorSourceV148("B-048_mine_site", "", "VNM")).toBe("USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS");
+  expect(mapIndicatorSourceV148("B-048_mine_site")).toBe("USGS Minerals Yearbook Vietnam 2022 (Table 2); USGS MRDS");
+  expect(mapIndicatorSourceV148("B-048_mine_site", "USGS MRDS", "BGD")).toBe("USGS MRDS");
+  expect(mapIndicatorSourceV148("B-023_hydro_site", "", "BGD")).not.toMatch(/MRC|Vietnam/u);
+});

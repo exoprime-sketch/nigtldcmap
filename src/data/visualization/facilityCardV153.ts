@@ -260,7 +260,8 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     // (IEA)"), with the link kept, not as a bare address ("www.data.go.kr/…").
     // A record with no link of its own still names its publisher.
     const organisation =
-      mapIndicatorSourceV148(entity.indicatorId, text(entity.provenance?.sourceOrg) || "") || publisherOfHostV164(href);
+      mapIndicatorSourceV148(entity.indicatorId, text(entity.provenance?.sourceOrg) || "", entity.countryIso3) ||
+      publisherOfHostV164(href);
     if (organisation) return { key: field.key, label: field.label, value: organisation, href, missing: false };
     return href ? { key: field.key, label: field.label, value: href.replace(/^https?:\/\//u, "").replace(/\/$/u, ""), href, missing: false } : missing;
   }
