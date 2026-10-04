@@ -249,3 +249,13 @@ describe("V164-R3 count axes", () => {
     expect(ticks.every((tick) => Number.isInteger(tick))).toBe(true);
   });
 });
+
+describe("V164-3 year labels are years the data has", () => {
+  it("does not label a round year that falls in a gap of sparse records", () => {
+    const sparse = [1997, 2001, 2003, 2004, 2007, 2009, 2011, 2012, 2014, 2016, 2018, 2019, 2020, 2021, 2022, 2023];
+    const ticks = niceXTicksV164(sparse, 6, 600);
+    expect(ticks.every((year) => sparse.includes(year))).toBe(true);
+    expect(ticks[0]).toBe(1997);
+    expect(ticks[ticks.length - 1]).toBe(2023);
+  });
+});

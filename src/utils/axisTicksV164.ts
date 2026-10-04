@@ -214,9 +214,8 @@ export function valueAxisV164({
  * Labels for the horizontal axis. Every observation gets one while they fit -
  * and, when `plotWidth` is given, while neighbouring labels keep `minGap`
  * pixels apart (a run of consecutive years squeezed beside a distant one would
- * not). Past that, the ticks are the round years (every 2nd, 5th, 10th …)
- * inside the range, so the labels are evenly spaced and never skip or double
- * up a year the way picking every n-th observation does.
+ * not). Past that, years are a spaced subset of the observed years (first and
+ * last kept) - never a year the data does not have.
  */
 export function niceXTicksV164(values: number[], maxCount: number, plotWidth?: number, minGap = 40): number[] {
   const sorted = Array.from(new Set(values.filter((value) => Number.isFinite(value)))).sort((a, b) => a - b);
@@ -230,17 +229,39 @@ export function niceXTicksV164(values: number[], maxCount: number, plotWidth?: n
   if (sorted.length < 2) return sorted;
   const limit = Math.max(2, maxCount);
   if (sorted.every((value) => Number.isInteger(value))) {
+    // V164-3: a year label is a year the data has. Round years between sparse
+    // observations ("1998" on a list whose records start in 1997 and resume in
+    // 2001) read as observed years (portfolio audit PORTFOLIO_YEAR_NOT_INVENTED).
+    // The evenly spaced round years are kept when the data has them (a
+    // continuous series always does); otherwise the labels are a spaced subset
+    // of the observed years, first and last kept.
+    const observed = new Set(sorted);
     for (let exponent = 0; exponent <= 6; exponent += 1) {
+      let settled = false;
       for (const factor of STEP_FACTORS_V164) {
         const step = factor * 10 ** exponent;
         if (!Number.isInteger(step)) continue;
         const first = Math.ceil(lo / step);
         const last = Math.floor(hi / step);
         const total = last - first + 1;
-        if (total >= 2 && total <= limit) return Array.from({ length: total }, (_, index) => (first + index) * step);
+        if (total >= 2 && total <= limit) {
+          const round = Array.from({ length: total }, (_, index) => (first + index) * step);
+          if (round.every((year) => observed.has(year))) return round;
+          settled = true;
+          break;
+        }
       }
+      if (settled) break;
     }
-    return [lo, hi];
+    const span = hi - lo;
+    const width = plotWidth && plotWidth > 0 ? plotWidth : limit * minGap;
+    const gapYears = Math.max(span / Math.max(1, limit - 1), (minGap / width) * span);
+    const picked: number[] = [lo];
+    for (const value of sorted.slice(1, -1)) {
+      if (value - picked[picked.length - 1] >= gapYears && hi - value >= gapYears * 0.6) picked.push(value);
+    }
+    picked.push(hi);
+    return picked;
   }
   const ticks = roundTicksWithinV164(lo, hi, limit - 1);
   return ticks.length >= 2 ? ticks : [lo, hi];
