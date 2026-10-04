@@ -13,12 +13,12 @@
   "counts": {
     "targets": 72,
     "choropleth": 23,
-    "region-count": 9,
+    "region-count": 12,
     "point": 13,
     "reference": 3,
-    "hold": 24,
-    "registeredLayers": 48,
-    "mapFeatureCount": 3569
+    "hold": 21,
+    "registeredLayers": 51,
+    "mapFeatureCount": 3582
   },
   "evidenceCheck": {
     "comparedElements": 72,
@@ -2342,6 +2342,30 @@
       }
     },
     {
+      "elementId": "C-008",
+      "publicName": "국제 이니셔티브",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 0,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-c-008",
+      "kind": "region-count",
+      "featureCount": 5,
+      "rows": 9,
+      "counted": 8,
+      "notCounted": 1,
+      "projectsPerDivision": {
+        "Barisal": 1,
+        "Dhaka": 4,
+        "Rajshahi": 1,
+        "Rangpur": 1,
+        "Sylhet": 1
+      },
+      "unmatchedNames": {
+        "Singra": 1
+      }
+    },
+    {
       "elementId": "C-016",
       "publicName": "재생에너지 발주 및 확대 계획",
       "decision": "region-count",
@@ -2568,6 +2592,77 @@
       "notCounted": 116,
       "projectsPerDivision": {
         "Dhaka": 2
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-025",
+      "publicName": "민간 인프라 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 0,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-025",
+      "kind": "region-count",
+      "featureCount": 7,
+      "rows": 67,
+      "counted": 41,
+      "notCounted": 26,
+      "projectsPerDivision": {
+        "Barisal": 2,
+        "Chittagong": 13,
+        "Dhaka": 12,
+        "Khulna": 4,
+        "Rajshahi": 4,
+        "Sylhet": 3,
+        "Mymensingh": 1
+      },
+      "unmatchedNames": {
+        "Meghnaghat": 4,
+        "Haripur": 2,
+        "10 kilometers from the city of Dhaka": 1,
+        "Amnura": 1,
+        "Ashuganj": 1,
+        "Bahmanbaria": 1,
+        "Baispukur village": 1,
+        "Ghorasal": 1,
+        "Ghorashal": 1,
+        "Hobigonj": 1,
+        "Juldah": 1,
+        "Keraniganj": 1,
+        "Khottar Char": 1,
+        "Kodda": 1,
+        "Madanganj": 1,
+        "Manikgonj": 1,
+        "Munshiganj Mawa": 1,
+        "Nationwide": 1,
+        "Noapara": 1,
+        "Norshindhi": 1,
+        "Parkul Village in the Bibiyana Gas Field on the Kushiyara River": 1,
+        "Paturia": 1,
+        "Shahjibazar": 1,
+        "Shibaloy": 1,
+        "Shikalbaha": 1,
+        "Siddirganj": 1,
+        "Taltoli": 1,
+        "Teknaf": 1
+      }
+    },
+    {
+      "elementId": "E-002",
+      "publicName": "DNA 협력창구",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 6,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-e-002",
+      "kind": "region-count",
+      "featureCount": 1,
+      "rows": 12,
+      "counted": 1,
+      "notCounted": 11,
+      "projectsPerDivision": {
+        "Dhaka": 1
       },
       "unmatchedNames": {}
     },
@@ -2843,23 +2938,6 @@
       "conflict": null
     },
     {
-      "elementId": "C-008",
-      "publicName": "국제 이니셔티브",
-      "holdGroup": "no-region",
-      "reason": "지역 구분과 좌표가 모두 없습니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 0,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ]
-      },
-      "conflict": null
-    },
-    {
       "elementId": "C-012",
       "publicName": "PPP 사업 이력",
       "holdGroup": "nationwide",
@@ -2999,24 +3077,6 @@
       "conflict": null
     },
     {
-      "elementId": "D-025",
-      "publicName": "민간 인프라 사업",
-      "holdGroup": "no-region",
-      "reason": "지역 구분과 좌표가 모두 없습니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 0,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "BGD",
-          "nation"
-        ]
-      },
-      "conflict": null
-    },
-    {
       "elementId": "D-026",
       "publicName": "보증 지원사업",
       "holdGroup": "nationwide",
@@ -3046,28 +3106,6 @@
         "districtKeys": 0,
         "spatialUnits": [
           "nation"
-        ]
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "E-002",
-      "publicName": "DNA 협력창구",
-      "holdGroup": "not-office-location",
-      "reason": "좌표가 기관 사무소가 아니라 CDM 승인 사업 기록의 위치입니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 6,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation",
-          "point"
-        ],
-        "coordinateNature": [
-          "범용(전 분야)",
-          "해당 없음"
         ]
       },
       "conflict": null

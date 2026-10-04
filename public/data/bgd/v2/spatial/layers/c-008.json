@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "C-008",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "c-008-located-count",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "c-008-located-count",
+        "label": "지역이 확인된 참여 도시 수",
+        "measureId": "c-008-located-count",
+        "measureKey": "c-008-located-count",
+        "unit": "건",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 5
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "c-008-located-count",
+        "variableLabel": "지역이 확인된 참여 도시 수",
+        "unit": "건",
+        "period": "2026",
+        "sourceIndicatorId": null,
+        "values": [
+          1,
+          null,
+          4,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.1_1": [
+      {
+        "recordId": "bgd-v162-c-008-entity-00051",
+        "label": "Barisal",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Barisal",
+        "indicatorId": "C-008_actor"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-c-008-entity-00052",
+        "label": "Dhaka North City",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka North City",
+        "indicatorId": "C-008_actor"
+      },
+      {
+        "recordId": "bgd-v162-c-008-entity-00055",
+        "label": "Dhaka South",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka South",
+        "indicatorId": "C-008_actor"
+      },
+      {
+        "recordId": "bgd-v162-c-008-entity-00053",
+        "label": "Madaripur Municipality",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Madaripur Municipality",
+        "indicatorId": "C-008_actor"
+      },
+      {
+        "recordId": "bgd-v162-c-008-entity-00078",
+        "label": "Narayanganj City Corporation",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Narayanganj City Corporation",
+        "indicatorId": "C-008_actor"
+      }
+    ],
+    "BGD.5_1": [
+      {
+        "recordId": "bgd-v162-c-008-entity-00074",
+        "label": "Rajshahi City Corporation",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Rajshahi City Corporation",
+        "indicatorId": "C-008_actor"
+      }
+    ],
+    "BGD.6_1": [
+      {
+        "recordId": "bgd-v162-c-008-entity-00049",
+        "label": "Nilphamari",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Nilphamari",
+        "indicatorId": "C-008_actor"
+      }
+    ],
+    "BGD.7_1": [
+      {
+        "recordId": "bgd-v162-c-008-entity-00050",
+        "label": "Moulvibazar",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Moulvibazar",
+        "indicatorId": "C-008_actor"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "c-008-located-count",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "UNFCCC Global Climate Action Portal (NAZCA) / Global Climate Action Portal API (GCAP)"
+    ],
+    "licenses": [
+      "UNFCCC 웹사이트 이용조건"
+    ],
+    "attribution": [
+      "UNFCCC Global Climate Action Portal (NAZCA) / Global Climate Action Portal API (GCAP) — UNFCCC 웹사이트 이용조건. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://climateaction.unfccc.int/Actors/Countries/BGD"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 5,
+    "maxSeriesFeatureCount": 5,
+    "missingAdm1Count": 3,
+    "providedZeroCount": 0,
+    "publishedValueCount": 5,
+    "sourceValueCount": 8,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 1,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

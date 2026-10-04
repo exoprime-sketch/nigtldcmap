@@ -1,5 +1,5 @@
 {
-  "activeMapLayerCount": 48,
+  "activeMapLayerCount": 51,
   "countryIso3": "BGD",
   "dataSchemaVersion": "v124",
   "generatedAt": "2026-09-29T00:00:00Z",
@@ -10644,6 +10644,121 @@
       "downloadableRecordCount": 3
     },
     {
+      "accuracyNotice": "건수는 주(Division)가 확인된 참여 도시 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 참여 도시은 각 주(Division)에 1건으로 세고, 같은 참여 도시의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다. 행정구역 대표점 좌표는 정확한 사업 위치가 아니어서 점으로 그리지 않습니다.",
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "C-008",
+        "provider": "bgd-v162",
+        "section": "spatial"
+      },
+      "category": "정책·사업여건",
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/bgd/v2/spatial/layers/c-008.json",
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "detailElementId": "C-008",
+      "detailUrl": "/?element=c-008&country=BGD#element-detail",
+      "displayedCoordinateCount": 0,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 96,
+      "elementId": "C-008",
+      "enabled": true,
+      "fakeGeometryCount": 0,
+      "featureCount": 5,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 5,
+        "missingCount": 3,
+        "requiredCount": 8
+      },
+      "label": "국제 이니셔티브",
+      "latestYear": "2026",
+      "layerId": "bgd-v162-c-008",
+      "legend": {
+        "note": "단위 건 · 기록 없는 주(Division) 3개",
+        "title": "지역이 확인된 참여 도시 수"
+      },
+      "licenses": [
+        "UNFCCC 웹사이트 이용조건"
+      ],
+      "attribution": "UNFCCC Global Climate Action Portal (NAZCA) / Global Climate Action Portal API (GCAP) — UNFCCC 웹사이트 이용조건. 이용 시 출처 표기 필수",
+      "mapBenefit": "주(Division) 클릭 → 참여 도시 목록",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Chittagong",
+        "Khulna",
+        "Mymensingh"
+      ],
+      "publicShortTitle": "국제 이니셔티브",
+      "publicSpatialNotice": "8개 주(Division) 경계에 주(Division)별 참여 도시 수를 표시합니다.",
+      "rawLabel": "Cooperative Climate Initiative[이니셔티브 명, 참여 상태(Active/Completed), 참여 연도, 기후 분야(감축/적응), 주제(에너지/산림/수송/도시 등), 참여 국가·기관 목록]",
+      "regionalProject": false,
+      "renderer": "partial-choropleth",
+      "scopeCountries": [
+        "BGD"
+      ],
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "c-008-located-count",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "c-008-located-count",
+            "label": "지역이 확인된 참여 도시 수",
+            "measureId": "c-008-located-count",
+            "measureKey": "c-008-located-count",
+            "unit": "건",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 5
+          }
+        ]
+      },
+      "source": "UNFCCC Global Climate Action Portal (NAZCA) / Global Climate Action Portal API (GCAP)",
+      "sourceCoordinateCount": 0,
+      "sourceOrganizations": [
+        "UNFCCC Global Climate Action Portal (NAZCA) / Global Climate Action Portal API (GCAP)"
+      ],
+      "sourceUrls": [
+        "https://climateaction.unfccc.int/Actors/Countries/BGD"
+      ],
+      "sourceYear": "2026",
+      "spatialCoverage": "8개 주(Division) 중 5개",
+      "spatialLimitation": "건수는 주(Division)가 확인된 참여 도시 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 참여 도시은 각 주(Division)에 1건으로 세고, 같은 참여 도시의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "spatialStatus": "ready",
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 96,
+      "unit": "건",
+      "zeroImputationCount": 0,
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료에 주(Division)가 적힌 기록 8건",
+        "displaySpatialUnit": "주(Division) 경계",
+        "period": "2026",
+        "representativeItem": "지역이 확인된 참여 도시 수",
+        "evidence": "기록 9건 중 주(Division) 확인 8건 · 주(Division) 5개",
+        "build": {
+          "kind": "stated-division-count"
+        }
+      }
+    },
+    {
       "accuracyNotice": "건수는 주(Division)가 확인된 입찰 사업 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 입찰 사업은 각 주(Division)에 1건으로 세고, 같은 입찰 사업의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다. 행정구역 대표점 좌표는 정확한 사업 위치가 아니어서 점으로 그리지 않습니다.",
       "active": true,
       "aggregationLevel": "admin1",
@@ -12194,6 +12309,237 @@
       }
     },
     {
+      "accuracyNotice": "건수는 주(Division)가 확인된 사업 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 사업은 각 주(Division)에 1건으로 세고, 같은 사업의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다. 행정구역 대표점 좌표는 정확한 사업 위치가 아니어서 점으로 그리지 않습니다.",
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "D-025",
+        "provider": "bgd-v162",
+        "section": "spatial"
+      },
+      "category": "국제사업·재원",
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/bgd/v2/spatial/layers/d-025.json",
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "detailElementId": "D-025",
+      "detailUrl": "/?element=d-025&country=BGD#element-detail",
+      "displayedCoordinateCount": 0,
+      "downloadStatus": "available",
+      "downloadableRecordCount": 49,
+      "elementId": "D-025",
+      "enabled": true,
+      "fakeGeometryCount": 0,
+      "featureCount": 7,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 7,
+        "missingCount": 1,
+        "requiredCount": 8
+      },
+      "label": "민간 인프라 사업",
+      "latestYear": "2026",
+      "layerId": "bgd-v162-d-025",
+      "legend": {
+        "note": "단위 건 · 기록 없는 주(Division) 1개",
+        "title": "지역이 확인된 사업 수"
+      },
+      "licenses": [],
+      "mapBenefit": "주(Division) 클릭 → 사업 목록",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Rangpur"
+      ],
+      "publicShortTitle": "민간 인프라 사업",
+      "publicSpatialNotice": "8개 주(Division) 경계에 주(Division)별 사업 수를 표시합니다.",
+      "rawLabel": "민간 인프라 투자(PPI)[프로젝트명, 국가, 섹터(전력/수도/교통/통신), 투자 유형(Greenfield/Concession/Divestiture), 총 투자액, 민간 투자액, 계약 기간, 상태(Active/Cancelled/Distressed), Financial Close 연도, 스폰서/개발사, IDA 지위, 공동투자 참여 가능 여부 및 형태]",
+      "regionalProject": false,
+      "renderer": "partial-choropleth",
+      "scopeCountries": [
+        "BGD"
+      ],
+      "selectors": {
+        "defaultPeriod": "2026",
+        "defaultVariable": "d-025-located-count",
+        "periods": [
+          "2026"
+        ],
+        "variables": [
+          {
+            "key": "d-025-located-count",
+            "label": "지역이 확인된 사업 수",
+            "measureId": "d-025-located-count",
+            "measureKey": "d-025-located-count",
+            "unit": "건",
+            "periods": [
+              "2026"
+            ],
+            "maxFeatureCount": 7
+          }
+        ]
+      },
+      "source": "",
+      "sourceCoordinateCount": 0,
+      "sourceOrganizations": [],
+      "sourceUrls": [
+        "https://ppi.worldbank.org",
+        "https://ppi.worldbank.org/content/dam/PPI/documents/PPI_2024_Annual_Report.pdf",
+        "https://ppi.worldbank.org/en/customquery",
+        "https://ppi.worldbank.org/en/ppidata"
+      ],
+      "sourceYear": "2026",
+      "spatialCoverage": "8개 주(Division) 중 7개",
+      "spatialLimitation": "건수는 주(Division)가 확인된 사업 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 사업은 각 주(Division)에 1건으로 세고, 같은 사업의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "spatialStatus": "ready",
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 67,
+      "unit": "건",
+      "zeroImputationCount": 0,
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료에 주(Division)가 적힌 기록 41건",
+        "displaySpatialUnit": "주(Division) 경계",
+        "period": "2026",
+        "representativeItem": "지역이 확인된 사업 수",
+        "evidence": "기록 67건 중 주(Division) 확인 41건 · 주(Division) 7개",
+        "build": {
+          "kind": "stated-division-count"
+        }
+      }
+    },
+    {
+      "accuracyNotice": "건수는 주(Division)가 확인된 기관 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 기관은 각 주(Division)에 1건으로 세고, 같은 기관의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다. 행정구역 대표점 좌표는 정확한 사업 위치가 아니어서 점으로 그리지 않습니다.",
+      "active": true,
+      "aggregationLevel": "admin1",
+      "assetRef": {
+        "elementId": "E-002",
+        "provider": "bgd-v162",
+        "section": "spatial"
+      },
+      "category": "협력기관·기업",
+      "cluster": false,
+      "coordinateMeaning": "source-region-value",
+      "dataUrl": "/data/bgd/v2/spatial/layers/e-002.json",
+      "defaultOverlay": false,
+      "defaultPrimary": false,
+      "detailElementId": "E-002",
+      "detailUrl": "/?element=e-002&country=BGD#element-detail",
+      "displayedCoordinateCount": 0,
+      "downloadStatus": "not-available",
+      "downloadableRecordCount": 0,
+      "elementId": "E-002",
+      "enabled": true,
+      "fakeGeometryCount": 0,
+      "featureCount": 1,
+      "filters": [],
+      "geometryTypes": [
+        "Polygon",
+        "MultiPolygon"
+      ],
+      "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+      "join": {
+        "failures": [],
+        "matchedCount": 1,
+        "missingCount": 7,
+        "requiredCount": 8
+      },
+      "label": "DNA 협력창구",
+      "latestYear": "2024",
+      "layerId": "bgd-v162-e-002",
+      "legend": {
+        "note": "단위 건 · 기록 없는 주(Division) 7개",
+        "title": "지역이 확인된 기관 수"
+      },
+      "licenses": [
+        "UNFCCC 이용약관"
+      ],
+      "attribution": "United Nations Framework Convention on Climate Change (UNFCCC) — UNFCCC 이용약관. 이용 시 출처 표기 필수",
+      "mapBenefit": "주(Division) 클릭 → 기관 목록",
+      "mapMode": "region-choropleth",
+      "missingRegions": [
+        "Barisal",
+        "Chittagong",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "publicShortTitle": "DNA 협력창구",
+      "publicSpatialNotice": "8개 주(Division) 경계에 주(Division)별 기관 수를 표시합니다.",
+      "rawLabel": "DNA(국가지정기관)[국가, 기관명, 소속 부처, 담당자명, 직함, 이메일, 승인 절차 개요, 제6.4조 전환 상태]",
+      "regionalProject": false,
+      "renderer": "partial-choropleth",
+      "scopeCountries": [
+        "BGD"
+      ],
+      "selectors": {
+        "defaultPeriod": "2024",
+        "defaultVariable": "e-002-located-count",
+        "periods": [
+          "2024"
+        ],
+        "variables": [
+          {
+            "key": "e-002-located-count",
+            "label": "지역이 확인된 기관 수",
+            "measureId": "e-002-located-count",
+            "measureKey": "e-002-located-count",
+            "unit": "건",
+            "periods": [
+              "2024"
+            ],
+            "maxFeatureCount": 1
+          }
+        ]
+      },
+      "source": "United Nations Framework Convention on Climate Change (UNFCCC)",
+      "sourceCoordinateCount": 6,
+      "sourceOrganizations": [
+        "United Nations Framework Convention on Climate Change (UNFCCC)"
+      ],
+      "sourceUrls": [
+        "https://unfccc.int/sites/default/files/resource/A6.4_Form_AC_001_Bangladesh_Host-Party_fullfilment_form.pdf; https://unfccc.int/process-and-meetings/the-paris-agreement/paris-agreement-crediting-mechanism/CDM_transition/transition-list",
+        "https://unfccc.int/sites/default/files/resource/A6.4_Form_AC_001_Bangladesh_Host-Party_fullfilment_form.pdf; https://unfccc.int/process-and-meetings/the-paris-agreement/paris-agreement-crediting-mechanism/CDM_transition/transition-list | https://unepccc.org/cdm-ji-pipeline/; https://datasets.wri.org/dataset/globalpowerplantdatabase"
+      ],
+      "sourceYear": "2024",
+      "spatialCoverage": "8개 주(Division) 중 1개",
+      "spatialLimitation": "건수는 주(Division)가 확인된 기관 수이며 금액·규모의 합이 아닙니다. 여러 주(Division)에 걸친 기관은 각 주(Division)에 1건으로 세고, 같은 기관의 여러 기록은 1건으로 셉니다. 주(Division)가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다.",
+      "spatialScopeType": "region",
+      "spatialStatus": "ready",
+      "tooltipFields": [
+        "adm1Name",
+        "value",
+        "unit",
+        "period"
+      ],
+      "totalEntityCount": 12,
+      "unit": "건",
+      "zeroImputationCount": 0,
+      "mapTargetV138": {
+        "sourceSpatialUnit": "원자료에 주(Division)가 적힌 기록 1건",
+        "displaySpatialUnit": "주(Division) 경계",
+        "period": "2024",
+        "representativeItem": "지역이 확인된 기관 수",
+        "evidence": "기록 12건 중 주(Division) 확인 1건 · 주(Division) 1개",
+        "build": {
+          "kind": "stated-division-count"
+        }
+      }
+    },
+    {
       "elementId": "E-004",
       "layerId": "bgd-v162-e-004",
       "label": "국제기구 현지사무소",
@@ -13240,11 +13586,11 @@
       "downloadableRecordCount": 0
     }
   ],
-  "mapFeatureCount": 3569,
+  "mapFeatureCount": 3582,
   "mapTargetContract": {
     "schemaVersion": "country-map-targets-v162",
-    "targetCount": 48,
-    "connectedCount": 48,
+    "targetCount": 51,
+    "connectedCount": 51,
     "notConnected": [],
     "judgement": "reports/v162/bgd-map-judgement-v162.md"
   },

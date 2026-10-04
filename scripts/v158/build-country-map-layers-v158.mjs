@@ -707,7 +707,15 @@ function divisionsOfRow(spec, attributes) {
   for (const field of spec.nameFields || []) {
     const raw = text(attributes[field]);
     if (!raw) continue;
-    for (const part of raw.split(/\s*(?:·|;|\/)\s*/u).map((value) => value.replace(/\s*\((?:행정구역|Division)\)\s*$/u, "").replace(/\s+Division$/iu, "").trim()).filter(Boolean)) {
+    // A stated place may carry a generic word ("Sylhet Division", "Bhola
+    // district", "Rajshahi City Corporation", "Dhaka-1207"); only that word is
+    // removed (spec.cleanPatterns), never a guess at a misspelt name.
+    const cleaned = raw.replace(/\s*\((?:행정구역|Division)\)/gu, "");
+    const parts = cleaned
+      .split(spec.splitParts ? /\s*(?:·|;|\/|,|\(|\))\s*/u : /\s*(?:·|;|\/)\s*/u)
+      .map((value) => (spec.cleanPatterns || []).reduce((acc, pattern) => acc.replace(new RegExp(pattern, "iu"), ""), value.replace(/[-\s]*\d{3,}$/u, "").replace(/\s+Division$/iu, "")).trim())
+      .filter(Boolean);
+    for (const part of parts) {
       const local = dictionaryParentDivision.get(normalizeToken(part));
       if (local) found.set(local, field);
       else unmatched.push(part);

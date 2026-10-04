@@ -232,6 +232,29 @@
     "D-021": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
     "D-022": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
     "D-023": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "C-008": {
+      "label": "지역이 확인된 참여 도시 수",
+      "noun": "참여 도시",
+      "nameFields": ["행위자_기관명_원문"],
+      "rowFilter": { "field": "행위자_유형", "pattern": "^City$" },
+      "cleanPatterns": ["\\s+City Corporation$", "\\s+Municipality$", "\\s+(?:North|South)(?:\\s+City)?$", "\\s+City$"],
+      "why": "city actors (행위자_유형 City) name their own city; companies, investors and organisations are not placed"
+    },
+    "D-025": {
+      "label": "지역이 확인된 사업 수",
+      "noun": "사업",
+      "nameFields": ["위치"],
+      "splitParts": true,
+      "cleanPatterns": ["\\s+district(?:\\s+of\\s+.*)?$", "\\s+state$", "^Greater\\s+", "^Bangladesh$"],
+      "why": "the PPI location column names districts and towns in free text; a part counts only when it is a district or division name the dictionary places (misspellings and towns stay unplaced and are listed for the data supplier)"
+    },
+    "E-002": {
+      "label": "지역이 확인된 기관 수",
+      "noun": "기관",
+      "nameFields": ["사무소_주소"],
+      "splitParts": true,
+      "why": "the DNA's own office address names its city; the CDM activity rows have no office and are not placed"
+    },
     "C-016": {
       "label": "지역이 확인된 입찰 사업 수",
       "noun": "입찰 사업",
@@ -251,16 +274,14 @@
   "holdReasons": {
     "nationwide": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
     "no-region": "지역 구분과 좌표가 모두 없습니다.",
-    "not-division-units": "지역 단위가 주(Division)가 아닌 별도 권역(GDL 하위지역)입니다.",
-    "not-office-location": "좌표가 기관 사무소가 아니라 CDM 승인 사업 기록의 위치입니다."
+    "not-division-units": "지역 단위가 주(Division)가 아닌 별도 권역(GDL 하위지역)입니다."
   },
   "holds": {
     "A-013": "nationwide", "A-022": "nationwide", "B-044": "nationwide", "B-046": "nationwide", "B-047": "nationwide",
     "C-003": "nationwide", "C-006": "nationwide", "C-012": "nationwide", "C-013": "nationwide", "C-022": "nationwide",
     "C-024": "nationwide", "D-026": "nationwide", "E-001": "nationwide", "E-020": "nationwide",
-    "A-025": "no-region", "A-027": "no-region", "C-008": "no-region", "C-017": "no-region", "D-008": "no-region",
-    "D-018": "no-region", "D-020": "no-region", "D-025": "no-region",
-    "B-021": "not-division-units",
-    "E-002": "not-office-location"
+    "A-025": "no-region", "A-027": "no-region", "C-017": "no-region", "D-008": "no-region",
+    "D-018": "no-region", "D-020": "no-region",
+    "B-021": "not-division-units"
   }
 }

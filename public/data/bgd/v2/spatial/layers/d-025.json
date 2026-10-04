@@ -1,0 +1,517 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-025",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2026",
+    "defaultVariable": "d-025-located-count",
+    "periods": [
+      "2026"
+    ],
+    "variables": [
+      {
+        "key": "d-025-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-025-located-count",
+        "measureKey": "d-025-located-count",
+        "unit": "건",
+        "periods": [
+          "2026"
+        ],
+        "maxFeatureCount": 7
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-025-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2026",
+        "sourceIndicatorId": null,
+        "values": [
+          2,
+          13,
+          12,
+          4,
+          4,
+          null,
+          3,
+          1
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.1_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00061",
+        "label": "Bangladesh Bhola IPP",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Bhola district",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00024",
+        "label": "Sinha Bhola Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Kheya ghat, Bhola",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00017",
+        "label": "Asian-Entech Power Corporation IPPs",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Feni, Tangail and Narsingdi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00005",
+        "label": "Bandarban Solar power plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chittagong",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00052",
+        "label": "Baraka Patenga   Power Limited",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Patenga, Chittagong",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00042",
+        "label": "Comilla Union Consultants power plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Comilla",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00025",
+        "label": "Energis Power Corporation Rental Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Shikalbaha, Chittagong",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00051",
+        "label": "Energypac Confidence Power Ventures Chittagong Limited",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chittagong",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00065",
+        "label": "Feni Oil-Fired Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram, Bangladesh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00027",
+        "label": "Regent Power IPP",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Barabkunda, Chittagong",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00026",
+        "label": "Saiham Power IPP",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mohipal, Feni",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00019",
+        "label": "Summit Power IPPs",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Maona (Gazipur), Rupganj (Narayanganj), Jangalia (Comilla) and Ullapara (Sirajganj)",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00020",
+        "label": "Titas Gas Transmission and Distribution Co. Ltd.",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Greater Dhaka, Greater Mimensingh, Brahmanbaria district",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00058",
+        "label": "United Ashuganj Energy",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Brahmanbaria District, Ashuganj",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00008",
+        "label": "United Summit Power Co.",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Narsingdi, Comilla, Dhaka,Tangail, and Mymensingh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00013",
+        "label": "Dhaka Electric Supply Company",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Greater Dhaka",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00055",
+        "label": "Digital Power & Associates Limited",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Narayanganj, Bangladesh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00029",
+        "label": "Ghorasal Quick Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka, Bangladesh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00060",
+        "label": "Munshiganj HFO Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Munshiganj District",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00064",
+        "label": "Reliance Meghnaghat Combined Cycle Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Narayanganj",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00056",
+        "label": "Sinha Power Munshiganj Power Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Kamalaghat, Mirkadim near Kathpatti, Munshiganj",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00063",
+        "label": "Summit Meghnaghat II CCGT Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00054",
+        "label": "Summit Meghnaghat Power Company Limited",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Meghnaghat, Narayanganj",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00019",
+        "label": "Summit Power IPPs",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Maona (Gazipur), Rupganj (Narayanganj), Jangalia (Comilla) and Ullapara (Sirajganj)",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00020",
+        "label": "Titas Gas Transmission and Distribution Co. Ltd.",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Greater Dhaka, Greater Mimensingh, Brahmanbaria district",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00008",
+        "label": "United Summit Power Co.",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Narsingdi, Comilla, Dhaka,Tangail, and Mymensingh",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00007",
+        "label": "WWR Dhaka Biomass Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka, Bangladesh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00030",
+        "label": "Bheramara 110 MW Diesel Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna state",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00039",
+        "label": "Khulna (KPCL) power plants",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00034",
+        "label": "Khulna 55 MW Quick Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00031",
+        "label": "Thakurgaon 50MW Diesel Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna state, Bangladesh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.5_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00041",
+        "label": "ENA Katakhali HFO Rental Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Katakhali, Rajshahi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00004",
+        "label": "Paramount solar power plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Pabna",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00059",
+        "label": "Sirajganj 4 Combined Cycle Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Sirajganj district of Rajshahi",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00019",
+        "label": "Summit Power IPPs",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Maona (Gazipur), Rupganj (Narayanganj), Jangalia (Comilla) and Ullapara (Sirajganj)",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.7_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00016",
+        "label": "Energypac Confidence Power Venture IPP",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Habiganj",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00046",
+        "label": "Hosaf Fenchugonj Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Fenchuganj, Sylhet",
+        "indicatorId": "D-025_ppi_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-025-entity-00018",
+        "label": "Hosaf Sylhet Rental Power Plant",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Kumargaon, Sylhet",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ],
+    "BGD.8_1": [
+      {
+        "recordId": "bgd-v162-d-025-entity-00006",
+        "label": "Muktagacha solar PV project (20MW)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mymensingh",
+        "indicatorId": "D-025_ppi_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-025-located-count",
+      "period": "2026",
+      "expectedCount": 8,
+      "matchedCount": 7,
+      "missingCount": 1,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [],
+    "licenses": [],
+    "attribution": [],
+    "urls": [
+      "https://ppi.worldbank.org",
+      "https://ppi.worldbank.org/content/dam/PPI/documents/PPI_2024_Annual_Report.pdf",
+      "https://ppi.worldbank.org/en/customquery",
+      "https://ppi.worldbank.org/en/ppidata"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 7,
+    "maxSeriesFeatureCount": 7,
+    "missingAdm1Count": 1,
+    "providedZeroCount": 0,
+    "publishedValueCount": 7,
+    "sourceValueCount": 39,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 28,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}
