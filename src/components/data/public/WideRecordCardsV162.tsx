@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
+import type { WideRecordV162, WideValueV162 } from "../../../data/visualization/wideRecordsV162";
+import { koreanTitleV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { mergeRegionNameValuesV163, sourceLinkTextV162 } from "../../../data/visualization/wideRecordsV162";
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { PolicyDocumentDescriptionV153 } from "./PolicyDescriptionV153";
@@ -86,19 +87,58 @@ function SourceLineV162({ source }: { source: WideRecordV162["source"] }) {
 }
 
 /**
- * V164: a card value as a reader reads it - a long count grouped (4378506 →
- * 4,378,506; never a number, code or year field) and the delivery's internal
- * missing-reason codes ("미확인(M06)") left out. The delivered value is unchanged.
+ * V164: a card value as a reader reads it - a number grouped by thousands and
+ * cut to a readable length, and the delivery's internal missing-reason codes
+ * ("미확인(M06)") left out. The delivered value is unchanged.
+ *
+ * V164-3: every plain number is written one way (4133.6 and 29,321.6 sat side by
+ * side on C-012; 6706.04 and 2.48468340032929 on C-002/C-011). A year, a code, a
+ * number and a phone number (the identifier fields) are never grouped; a
+ * four-digit integer is grouped only in a field that states a quantity.
  */
 export function cardValueTextV164(attribute: string, value: string): string {
   let text = String(value ?? "");
   text = text.replace(/\s*\((?:M|CF\/M)\d{2}\)/gu, "");
   const identifierField = /번호|코드|ID|참조|연도|년도|기준년|Ref|우편|전화|식별|일자|날짜/iu.test(String(attribute || ""));
-  if (!identifierField && /^-?\d{5,}(?:\.\d+)?$/u.test(text.trim())) {
-    const number = Number(text.trim());
-    if (Number.isFinite(number)) return number.toLocaleString("ko-KR", { maximumFractionDigits: 4 });
-  }
-  return text;
+  const bare = text.trim();
+  if (identifierField || !/^-?\d+(?:\.\d+)?$/u.test(bare)) return text;
+  const [integer, decimals = ""] = bare.replace(/^-/u, "").split(".");
+  const quantityField = /금액|규모|용량|면적|투자|비용|합계|총|수요|소요|배출|발전량/u.test(String(attribute || ""));
+  if (integer.length < 4 && decimals.length <= 4) return text;
+  if (integer.length === 4 && decimals === "" && !quantityField) return text;
+  const number = Number(bare);
+  if (!Number.isFinite(number)) return text;
+  // More than four decimals is floating-point noise (2.48468340032929): two
+  // digits for a value of 1 or more, four for one between 0.01 and 1. A
+  // smaller value keeps what it was delivered with, so no digit is lost.
+  if (decimals.length > 4 && Math.abs(number) < 0.01) return text;
+  const maximumFractionDigits = decimals.length > 4 ? (Math.abs(number) >= 1 ? 2 : 4) : decimals.length;
+  return number.toLocaleString("ko-KR", { maximumFractionDigits });
+}
+
+/** An English column that holds the source's own wording ("사업명 (원문)", "기술명 (영문)"). */
+const ORIGINAL_WORDING_ATTRIBUTE_V164 = /원문|영문|원어/u;
+
+/**
+ * V164-3: the rows a block shows. A 금액 row and the 단위 row beside it read as
+ * one amount ("157 십억 USD"); a ratio (단위 "%") is a 값, not a 금액 ("49%");
+ * an amount with no 단위 and no 통화 says so ("230,000 (단위 미기재)") rather
+ * than standing without a unit.
+ */
+export function cardRowsV164(values: WideValueV162[]): WideValueV162[] {
+  const amountIndex = values.findIndex((value) => value.attribute === "금액" && !value.href);
+  if (amountIndex < 0) return values;
+  const amount = values[amountIndex];
+  const number = cardValueTextV164(amount.attribute, amount.value).trim();
+  if (!/^-?[\d,]+(?:\.\d+)?$/u.test(number)) return values;
+  const unitIndex = values.findIndex((value) => value.attribute === "단위" && value.value.trim() !== "");
+  const unit = unitIndex >= 0 ? values[unitIndex].value.trim() : "";
+  const hasCurrency = values.some((value) => value.attribute === "통화" && value.value.trim() !== "");
+  if (!unit && hasCurrency) return values;
+  const merged: WideValueV162 = /^(?:%|퍼센트|%p|% ?포인트)$/u.test(unit)
+    ? { attribute: "값", value: `${number}${unit}` }
+    : { attribute: "금액", value: unit ? `${number} ${unit}` : `${number} (단위 미기재)` };
+  return values.flatMap((value, index) => (index === amountIndex ? [merged] : index === unitIndex ? [] : [value]));
 }
 
 function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; elementId?: string }) {
@@ -114,7 +154,7 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
     <article className="wide162-card" data-testid="wide-record-card-v162">
       <header className="wide162-card-head">
         <h4 className="wide162-card-title">
-          <PublicTermTextV134 text={record.name} />
+          <PublicTermTextV134 text={koreanTitleV164(record.name)} />
         </h4>
         {record.type ? <span className="wide162-type-chip">{record.type}</span> : null}
       </header>
@@ -123,7 +163,7 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
           {/* A label inside the card, not a page heading: every card repeats it. */}
           <p className="wide162-block-title">{block.title}</p>
           <dl className="wide162-rows">
-            {(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
+            {cardRowsV164(block.block === "지역" && level1 ? mergeRegionNameValuesV163(block.values) : block.values)
               // V164: a field the record leaves empty is not shown as a bare label.
               .filter((value) => value.href || String(value.value ?? "").trim() !== "")
               .map((value) => {
@@ -143,7 +183,12 @@ function WideRecordCardV162({ record, elementId }: { record: WideRecordV162; ele
                         <PublicTermExpandedTextV134 text={/\.pdf(?:$|[?#])/iu.test(value.href) || /^https?:\/\//iu.test(value.value) ? sourceLinkTextV162(value.href) : value.value} />
                       </a>
                     ) : (
-                      <PublicTermTextV134 text={displayValue} />
+                      // V164-3: a line break the sheet marked ("⏎") is a line here.
+                      displayValue.split("\n").map((line, lineIndex) => (
+                        <span className="wide162-line" key={lineIndex}>
+                          <PublicTermTextV134 text={line} keepOriginal={ORIGINAL_WORDING_ATTRIBUTE_V164.test(value.attribute)} />
+                        </span>
+                      ))
                     )}
                   </dd>
                 </div>

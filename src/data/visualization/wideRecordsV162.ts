@@ -153,7 +153,9 @@ export function sourceLinkTextV162(url: string, title?: string | null): string {
 // …or names a raw column key ("SOURCE_ORGANIZATION") or an internal sheet,
 // or (V162, C-008) the supplier's own file ("C-008_… 참여 현황_….csv") and a
 // raw key=value pointer into it ("public_id=GCAP14444").
-const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행|\b[A-Z]{3,}_[A-Z_]{3,}\b|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\b|(?:^|[^A-Za-z0-9])[A-E]-\d{3}_|\b[a-z]+_id=/u;
+// V164-3: also a pointer into an API payload ("actors[] publicId=GCAP26615"):
+// the key=value pair names a field, not a place in a document.
+const WORKBOOK_CITATION_V162 = /(?:Dataset\s+[A-Z]\s*)?시트\s*(?:[「"“][^」"”]*[」"”]\s*)?\d+\s*행|\b[A-Z]{3,}_[A-Z_]{3,}\b|\bELEMENT\s+[A-E]-\d{3}\b|\bDataset\s+[A-Z]\b|(?:^|[^A-Za-z0-9])[A-E]-\d{3}_|\b[a-z]+_id=|\bactors\[\]|\b[a-z]+Id=/u;
 
 /** Attributes that hold free-text notes, where the supplier's memo sentences can sit. */
 const NOTE_ATTRIBUTE_V162 = /비고|설명|근거|메모|참고|주석|note/iu;
@@ -167,8 +169,60 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   const text = cellText(value);
   if (!text || FILE_VALUE_V162.test(text)) return "";
   const cleaned = NOTE_ATTRIBUTE_V162.test(attribute) ? publicRecordNoteV161(text) || "" : text;
-  // V164-3: the delivery's working memos, in any column (note-like or not).
-  return publicWorkMemoV164(publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned))));
+  // V164-3: the delivery's working memos, in any column (note-like or not),
+  // then an API's own field names and the markup the sheet's text still carries.
+  return plainMarkupV164(
+    withoutApiKeysV164(publicWorkMemoV164(publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)))))
+  );
+}
+
+/**
+ * V164-3: the names of an API's own fields and records, out of a source or a
+ * reason ("플랫폼 ParticipatingParties에 베트남 없음", "…NMA Platform, nma-list
+ * API (2026-09-11 조회)", "nma-list API 레코드 Id=ad2f0eae · 플랫폼 상세 페이지").
+ * The field is named as the sheet's own column names it; a record pointer goes,
+ * the page it points at stays.
+ */
+const API_KEY_REWRITES_V164: ReadonlyArray<readonly [RegExp, string]> = [
+  [/\bParticipatingParties\b/gu, "참여 당사국 목록"],
+  [/\s*,?\s*\bnma-list\s+API\s+(?:레코드\s*)?(?:Id=[0-9a-f]+)?\s*·?\s*/giu, " "],
+];
+
+export function withoutApiKeysV164(text: string): string {
+  if (!text || !/ParticipatingParties|nma-list/iu.test(text)) return text;
+  let result = text;
+  for (const [pattern, replacement] of API_KEY_REWRITES_V164) result = result.replace(pattern, replacement);
+  return result
+    .replace(/\s{2,}/gu, " ")
+    .replace(/\(\s*\)/gu, "")
+    .replace(/^[\s·,]+|[\s·,]+$/gu, "")
+    .trim();
+}
+
+const LATEX_SPAN_V164 = /\$([^$]*\\[A-Za-z][^$]*)\$/gu;
+const LATEX_SYMBOLS_V164: ReadonlyArray<readonly [RegExp, string]> = [
+  [/\\(?:ge|geq)\b/gu, "≥"],
+  [/\\(?:le|leq)\b/gu, "≤"],
+  [/\\times\b/gu, "×"],
+  [/\\approx\b/gu, "≈"],
+  [/\\%/gu, "%"],
+  [/\\text\{([^{}]*)\}/gu, "$1"],
+];
+
+/**
+ * V164-3: markup that reached the cell from the sheet's text editor. A LaTeX
+ * span is written as its symbols; the sheet's line-break mark "⏎" becomes a
+ * real line break, which the card shows as one. A dollar amount ("$368
+ * billion") has no backslash and is left alone.
+ */
+export function plainMarkupV164(text: string): string {
+  if (!text || !/\$|⏎/u.test(text)) return text;
+  const plain = text.replace(LATEX_SPAN_V164, (_span, body: string) =>
+    LATEX_SYMBOLS_V164.reduce((current, [pattern, replacement]) => current.replace(pattern, replacement), body)
+      .replace(/\s{2,}/gu, " ")
+      .trim()
+  );
+  return plain.replace(/\s*⏎\s*/gu, "\n").trim();
 }
 
 const SHORT_VALUE_V162 = 40;
@@ -250,9 +304,12 @@ export function readWideRecordsV162(
   const pageField = sourceField(/문서\s*페이지\s*URL|페이지\s*URL/iu);
   const citationField = sourceField(/인용\s*위치/u);
 
-  return disambiguateWideNamesV162(entities.map((entity) => {
+  const records = entities.map((entity) => {
     const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
     const read = (field: WideFieldV162 | undefined) => (field ? publicWideValueV162(attributes[field.key], field.attribute) : "");
+    // V164-3: a card that defines a grade ("외교부 여행경보 등급 — 여행금지") does
+    // not state a current grade: its "현재 등급 (단계)" reads "등급 (단계)".
+    const definesGrade = DEFINITION_TYPE_V164.test(read(typeField));
     const byBlock = new Map<string, WideValueV162[]>();
     for (const field of fields) {
       if (BOOKKEEPING_BLOCKS_V162.has(field.block) || field.block === SOURCE_BLOCK_V162) continue;
@@ -261,7 +318,7 @@ export function readWideRecordsV162(
       if (!value) continue;
       const href = /URL|링크/iu.test(field.attribute) ? publicSourceUrlV126(value) || undefined : undefined;
       const list = byBlock.get(field.block) || [];
-      list.push({ attribute: field.attribute, value, href });
+      list.push({ attribute: definesGrade ? field.attribute.replace(/^현재\s+/u, "") : field.attribute, value, href });
       byBlock.set(field.block, list);
     }
     const blocks: WideBlockV162[] = [...byBlock].map(([block, values]) => ({
@@ -270,15 +327,19 @@ export function readWideRecordsV162(
       values,
     }));
     const lookup = new Map(fields.map((field) => [`${field.block}\u0000${field.attribute}`, field]));
+    const pageUrl = pageField ? publicSourceUrlV126(read(pageField)) : null;
+    const sourceUrl = urlField ? publicSourceUrlV126(read(urlField)) : null;
     return {
       entity,
-      name: read(nameField) || publicWideValueV162(entity.name),
+      name: titleWithProjectV164(repairCutTitleV164(read(nameField) || publicWideValueV162(entity.name), blocks), blocks),
       type: read(typeField) || null,
       blocks,
       source: {
         document: read(documentField) || null,
-        url: urlField ? publicSourceUrlV126(read(urlField)) : null,
-        pageUrl: pageField ? publicSourceUrlV126(read(pageField)) : null,
+        // V164-3: an API endpoint is not a page a reader can open; the record's
+        // own page (when the sheet gives one) is the link.
+        url: sourceUrl && pageUrl && API_ENDPOINT_V164.test(sourceUrl) ? null : sourceUrl,
+        pageUrl,
         citation: (() => {
           const citation = read(citationField);
           return citation && !WORKBOOK_CITATION_V162.test(citation) ? citation : null;
@@ -293,7 +354,122 @@ export function readWideRecordsV162(
         return field && !HIDDEN_ATTRIBUTE_V162.test(field.attribute) ? read(field) || null : null;
       },
     };
-  }));
+  });
+  return disambiguateWideNamesV162(sortYearSeriesV164(records));
+}
+
+const DEFINITION_TYPE_V164 = /등급\s*체계/u;
+const API_ENDPOINT_V164 =/\/api\/|\.azure-api\.net\b/iu;
+
+/**
+ * V164-3: a title that ends in the sheet's own short code ("CDM→제6.4조 전환
+ * 활동 — COOK", "… — TITA") names the project instead, as the record states
+ * it in 사업명. A record without a project name keeps its title ("NDC 3.0
+ * 감축수단 — AFOLU" names a sector, not a code).
+ */
+export function titleWithProjectV164(name: string, blocks: WideBlockV162[]): string {
+  const match = /^(.+?)\s+—\s+[A-Z]{3,6}$/u.exec(name);
+  if (!match) return name;
+  const project = blocks.flatMap((block) => block.values).find((value) => /^사업명/u.test(value.attribute) && value.value);
+  return project ? `${match[1]} — ${project.value}` : name;
+}
+
+/**
+ * V164-3: the sheet cut some record names at about 80 characters, mid-word
+ * ("… 신형 풍력터빈을 포", "JCM VN016, Installation of High Efficiency Kiln in
+ * Sanitary Ware Manufacturing Fa"). When one of the record's own values starts
+ * with the cut name (after at most a short prefix such as the project number),
+ * that value is the full name: the title is completed from it, or - when it
+ * would be long - ended at its first sentence, its last list item or its last
+ * whole word. A name no value continues is left as it is.
+ */
+export function repairCutTitleV164(name: string, blocks: WideBlockV162[]): string {
+  if (name.length < 50) return name;
+  const values = blocks.flatMap((block) => block.values.filter((value) => !value.href).map((value) => value.value));
+  for (const value of values) {
+    for (let offset = 0; offset <= 24 && name.length - offset >= 40; offset += 1) {
+      const rest = name.slice(offset);
+      if (value.length <= rest.length || !value.startsWith(rest)) continue;
+      const full = `${name.slice(0, offset)}${value}`;
+      const sentenceEnd = full.search(/[.。]\s/u);
+      if (sentenceEnd >= 20 && sentenceEnd <= name.length) return full.slice(0, sentenceEnd);
+      if (full.length <= 140) return full;
+      const items = name.split(" · ");
+      if (items.length >= 3) return items.slice(0, -1).join(" · ");
+      return `${name.replace(/\s+\S*$/u, "")}…`;
+    }
+  }
+  return name;
+}
+
+interface YearSeriesKeyV164 {
+  stem: string;
+  year: number;
+  suffix: string;
+  leading: boolean;
+}
+
+/**
+ * "민간참여 인프라 투자 실적 2019: Energy" is the 2019 entry of the series
+ * "민간참여 인프라 투자 실적" (suffix "Energy"); "2025 태양광" is the 2025 entry
+ * of "태양광". A name that does not end (or start) in a year is not an entry.
+ */
+function yearSeriesKeyV164(name: string): YearSeriesKeyV164 | null {
+  const leading = /^((?:19|20)\d{2})(?:년)?\s+(.+)$/u.exec(name);
+  if (leading) return { stem: leading[2].trim(), year: Number(leading[1]), suffix: "", leading: true };
+  const trailing = /^(.+?)\s+((?:19|20)\d{2})(?:년)?(?:\s*[:：]\s*(.+))?$/u.exec(name);
+  if (trailing) return { stem: trailing[1].trim(), year: Number(trailing[2]), suffix: (trailing[3] || "").trim(), leading: false };
+  return null;
+}
+
+/**
+ * V164-3: records of one yearly series (3+ entries over 3+ years: C-012's PPI
+ * investment by year, C-016's capacity by year and source) were delivered in
+ * no order. They are listed together, newest year first, at the place the
+ * series first appears; a year's total comes before its breakdown. Records
+ * that are not a series keep their delivered order.
+ */
+export function sortYearSeriesV164<T extends { name: string; type: string | null }>(records: T[]): T[] {
+  const keys = records.map((record) => yearSeriesKeyV164(record.name));
+  const idOf = (index: number) => {
+    const key = keys[index];
+    return key ? `${records[index].type ?? ""}\u0000${key.leading ? "L" : "T"}\u0000${key.stem}` : "";
+  };
+  const groups = new Map<string, number[]>();
+  keys.forEach((key, index) => {
+    if (key) groups.set(idOf(index), [...(groups.get(idOf(index)) || []), index]);
+  });
+  const series = new Set<string>();
+  groups.forEach((indexes, id) => {
+    const years = indexes.map((index) => (keys[index] as YearSeriesKeyV164).year);
+    if (indexes.length < 3 || new Set(years).size < 3) return;
+    // A series the sheet already lists in year order (either way) is left as it is.
+    const steps = years.slice(1).map((year, position) => Math.sign(year - years[position]));
+    if (steps.every((step) => step >= 0) || steps.every((step) => step <= 0)) return;
+    series.add(id);
+  });
+  if (series.size === 0) return records;
+  const emitted = new Set<number>();
+  const sorted: T[] = [];
+  records.forEach((record, index) => {
+    if (emitted.has(index)) return;
+    const id = idOf(index);
+    if (!id || !series.has(id)) {
+      sorted.push(record);
+      emitted.add(index);
+      return;
+    }
+    const members = [...(groups.get(id) || [])].sort((a, b) => {
+      const left = keys[a] as YearSeriesKeyV164;
+      const right = keys[b] as YearSeriesKeyV164;
+      return right.year - left.year || Number(Boolean(left.suffix)) - Number(Boolean(right.suffix)) || a - b;
+    });
+    for (const member of members) {
+      sorted.push(records[member]);
+      emitted.add(member);
+    }
+  });
+  return sorted;
 }
 
 // ---------------------------------------------------------------------------

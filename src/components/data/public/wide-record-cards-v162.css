@@ -9,10 +9,10 @@
 .wide162-search input { border: 1px solid #b9cdc3; border-radius: 8px; padding: 6px 10px; font-size: .86rem; min-width: 0; width: 220px; max-width: 100%; }
 .wide162-empty { margin: 0; color: #6b8078; font-size: .9rem; }
 
-.wide162-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); min-width: 0; }
+.wide162-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); min-width: 0; /* V164-3: a card keeps its own height; it is not stretched to the tallest card of its row */ align-items: start; }
 .wide162-grid > * { min-width: 0; }
 
-.wide162-card { min-width: 0; border: 1px solid #d5e2dc; border-radius: 10px; padding: 14px 16px; background: #fbfdfc; display: grid; gap: 10px; overflow-wrap: anywhere; }
+.wide162-card { min-width: 0; border: 1px solid #d5e2dc; border-radius: 10px; padding: 14px 16px; background: #fbfdfc; display: grid; gap: 10px; overflow-wrap: anywhere; /* V164-3: Korean wraps between words, not between syllables */ word-break: keep-all; }
 .wide162-card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
 .wide162-card-title { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
 .wide162-type-chip { display: inline-block; border-radius: 999px; background: #eaf3ef; color: #16806b; padding: 2px 10px; font-size: .78rem; }
@@ -23,6 +23,7 @@
 .wide162-row { display: grid; grid-template-columns: minmax(84px, 160px) minmax(0, 1fr); gap: 10px; font-size: .9rem; line-height: 1.55; }
 .wide162-row dt { margin: 0; color: #567067; }
 .wide162-row dd { margin: 0; overflow-wrap: anywhere; }
+.wide162-line { display: block; }
 .wide162-row a { color: #16806b; }
 
 .wide162-source { margin: 0; padding-top: 4px; border-top: 1px dashed #e2ebe6; font-size: .82rem; color: #567067; overflow-wrap: anywhere; }
