@@ -34,6 +34,7 @@ import {
   REGION_6_GEOMETRY_PATH_V151,
   boundaryGeometryPathV151,
   boundarySystemLabelV151,
+  boundarySystemShortLabelV151,
   boundarySystemV151,
   boundaryValueNoticeV151,
 } from "../data/map/adminBoundaryV151";
@@ -171,6 +172,7 @@ import "../styles/map-comparison-v135.css";
 import "../styles/map-catalog-v138.css";
 import "../styles/map-overlap-v145.css";
 import "../styles/map-presentation-v148.css";
+import "../styles/map-overlay-v164.css";
 
 import type {
   BoundaryRenderContextV151,
@@ -1480,6 +1482,41 @@ function unpinMapPopupV164(refs: Pick<MapPopupRefsV164, "pinned" | "pinnedKey">)
   popup?.remove();
 }
 
+/** V164-4: the smallest map that keeps the legend open by default. */
+const MAP_LEGEND_OPEN_MIN_WIDTH_V164 = 600;
+const MAP_LEGEND_OPEN_MIN_HEIGHT_V164 = 520;
+
+/**
+ * V164-4: where the map is not covered. A move to a selected item centres it
+ * in the part of the map the cards leave free (the legend at the bottom left,
+ * the zoom and outline switch at the top right) instead of under them.
+ * Returns the pixel offset for `easeTo` and the padding for `fitBounds`.
+ */
+function freeMapAreaV164(map: MapLibreMap): {
+  offset: [number, number];
+  padding: { top: number; right: number; bottom: number; left: number };
+} {
+  const canvas = map.getContainer().getBoundingClientRect();
+  const padding = { top: 56, right: 64, bottom: 44, left: 24 };
+  const legend = map
+    .getContainer()
+    .closest(".cdp-map-canvas-wrap")
+    ?.querySelector<HTMLElement>('[data-testid="map-dynamic-legend"]');
+  if (legend && canvas.width > 0) {
+    const box = legend.getBoundingClientRect();
+    // A tall legend takes a column on the left; a short one a band at the bottom.
+    if (box.height > canvas.height * 0.3) {
+      padding.left = Math.max(padding.left, Math.min(canvas.width * 0.55, box.right - canvas.left + 16));
+    } else {
+      padding.bottom = Math.max(padding.bottom, Math.min(canvas.height * 0.5, canvas.bottom - box.top + 16));
+    }
+  }
+  return {
+    offset: [(padding.left - padding.right) / 2, (padding.top - padding.bottom) / 2],
+    padding,
+  };
+}
+
 /**
  * V164-3: keep the clicked site's popup open. The hover popup closes when the
  * pointer leaves the site; the reader asked for the clicked one to stay. It
@@ -1766,6 +1803,48 @@ export default function RealMapExplorerPage({
   const [legendOpen, setLegendOpen] = useState(
     () => typeof window === "undefined" || window.innerWidth >= 1200
   );
+  // V164-4: once the reader opens or folds the legend, the map's size no
+  // longer decides it.
+  const legendUserChoiceRefV164 = useRef(false);
+  useEffect(() => {
+    // V164-4: the legend opens by itself only where the map has room for it -
+    // the map's own size, which the two side panels change, not the window's.
+    // At 1280x720 with both panels open the map is 576x649 and the open legend
+    // covered half of it.
+    const node = containerRef.current;
+    if (!node || typeof ResizeObserver === "undefined") return;
+    const apply = () => {
+      if (legendUserChoiceRefV164.current) return;
+      const { width, height } = node.getBoundingClientRect();
+      if (!width || !height) return;
+      setLegendOpen(width >= MAP_LEGEND_OPEN_MIN_WIDTH_V164 && height >= MAP_LEGEND_OPEN_MIN_HEIGHT_V164);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    // V164-4: the legend sits just above the map credit, whose height changes
+    // with the map's width (two lines at 736px, three at 396px, four on a
+    // phone); a fixed 58px let the credit cover the legend's stepper row.
+    if (baseMapStatus !== "ready") return;
+    const node = containerRef.current;
+    const wrap = node?.closest<HTMLElement>(".cdp-map-canvas-wrap");
+    const credit = wrap?.querySelector<HTMLElement>(".cdp-map-public-attribution");
+    if (!wrap || !credit || typeof ResizeObserver === "undefined") return;
+    const apply = () => {
+      const box = credit.getBoundingClientRect();
+      const frame = wrap.getBoundingClientRect();
+      if (!box.height) return;
+      wrap.style.setProperty("--cdp-map-credit-clear-v164", `${Math.ceil(frame.bottom - box.top)}px`);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(credit);
+    observer.observe(wrap);
+    return () => observer.disconnect();
+  }, [baseMapStatus]);
   const resizeMapAfterPanelChangeV129 = useCallback(() => {
     mapRef.current?.resize();
   }, []);
@@ -5568,7 +5647,12 @@ export default function RealMapExplorerPage({
     const map = mapRef.current;
     if (!map) return;
     if (selected && typeof selected.latitude === "number" && typeof selected.longitude === "number") {
-      map.easeTo({ center: [selected.longitude, selected.latitude], zoom: Math.max(map.getZoom(), 9), duration: 400 });
+      map.easeTo({
+        center: [selected.longitude, selected.latitude],
+        zoom: Math.max(map.getZoom(), 9),
+        offset: freeMapAreaV164(map).offset,
+        duration: 400,
+      });
       return;
     }
     if (!selectedSpatial || !selectedOwningLayer) return;
@@ -5581,7 +5665,7 @@ export default function RealMapExplorerPage({
         .includes(String(key));
     });
     const bounds = feature ? geometryBoundsV161(feature.geometry as GeoJSON.Geometry) : null;
-    if (bounds) map.fitBounds(bounds, { padding: 56, duration: 400 });
+    if (bounds) map.fitBounds(bounds, { padding: freeMapAreaV164(map).padding, duration: 400 });
   }, [selected, selectedOwningLayer, selectedSpatial, spatialByElement]);
   // Hydrological sites: each member row is one named indicator with its own unit.
   const selectedMemberFactsV138 = useMemo(() => {
@@ -5748,7 +5832,14 @@ export default function RealMapExplorerPage({
               );
         const isRegionNameV163 =
           renderer !== "line" && renderer !== "point-and-polygon" && renderer !== "regional-scope";
-        const shownNameV163 = isRegionNameV163
+        // V164-4: an assessment unit (B-017 Aqueduct basin) is named as its
+        // selection card names it ("유역 436642 · Cao Bằng"); the province name
+        // alone matched every basin in that province.
+        const unitLabelV164 =
+          renderer === "unit-choropleth" ? publicMapFeatureNameV126(properties.label, "") : "";
+        const shownNameV163 = unitLabelV164
+          ? unitLabelV164
+          : isRegionNameV163
           ? publicRegionLabelV163(name, countryIso3, properties.boundarySystem) || name
           : name;
         features.push({
@@ -5910,7 +6001,7 @@ export default function RealMapExplorerPage({
       // An area or a line opens the panel only, as a click on it does.
       unpinMapPopupV164(refs);
     }
-    if (center) map.easeTo({ center, duration: 400 });
+    if (center) map.easeTo({ center, offset: freeMapAreaV164(map).offset, duration: 400 });
   }
 
   function moveKeyboardFeatureV129(direction: -1 | 1) {
@@ -5935,6 +6026,66 @@ export default function RealMapExplorerPage({
     );
     setAnalysisPanelOpen(true);
   }
+  // V164-4: the item stepper is one line in the legend (it was its own card,
+  // 231x106, stacked over the legend). Without a legend it stays in the
+  // status card.
+  const boundaryNoticeTextV164 = focusedLayer?.boundaryPolicy
+    ? boundaryPolicyNoticeV151(
+        boundarySystemV151State,
+        focusedLayer.boundaryPolicy,
+        focusedBoundaryPolicyKindV151 || undefined
+      )
+    : boundaryValueNoticeV151(boundarySystemV151State);
+  const keyboardNavV164 =
+    baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
+      <div
+        aria-label="키보드 지도 항목 탐색"
+        className="cdp-map-keyboard-feature-nav"
+        data-testid="map-keyboard-feature-navigation"
+        onKeyDown={(event) => {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            moveKeyboardFeatureV129(-1);
+          } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            moveKeyboardFeatureV129(1);
+          }
+        }}
+        role="group"
+      >
+        <button
+          aria-label="이전 지도 항목"
+          onClick={() => moveKeyboardFeatureV129(-1)}
+          type="button"
+        >
+          ←
+        </button>
+        <button
+          aria-label={`${keyboardMapFeatureV129.label} 선택`}
+          data-testid="map-keyboard-feature-select"
+          onClick={selectKeyboardFeatureV129}
+          onKeyDown={(event) => {
+            if (event.key !== "Enter" && event.key !== " ") return;
+            event.preventDefault();
+            selectKeyboardFeatureV129();
+          }}
+          title="Enter 또는 Space로 세부정보 보기"
+          type="button"
+        >
+          <span>{keyboardMapFeatureV129.label}</span>
+          <small aria-live="polite">
+            {keyboardFeatureIndexV129 + 1} / {keyboardMapFeaturesV129.length}
+          </small>
+        </button>
+        <button
+          aria-label="다음 지도 항목"
+          onClick={() => moveKeyboardFeatureV129(1)}
+          type="button"
+        >
+          →
+        </button>
+      </div>
+    ) : null;
   const analysisActionLayerV129 = selectedOwningLayer || focusedLayer;
 
   function semanticStateForLayerV125(
@@ -8023,21 +8174,18 @@ export default function RealMapExplorerPage({
           </span>
           {/* V151: one stack, so the boundary picker keeps its place when the
               backdrop card grows to show its error message. */}
-          <div className="cdp-map-control-stack-v151">
-          {backdropStatusV151 === "fallback" && (
-            <p className="cdp-map-backdrop-note-v164" role="status">
-              배경지도를 불러오지 못해 경계와 데이터만 표시합니다.
-            </p>
-          )}
+          {/* V164-4: the outline choice is a two-way switch under the zoom
+              buttons (it was a 246x160 card over the map's top-left); its
+              explanation opens from the ⓘ. */}
           {!level1V162 && (
           <div
-            className="cdp-map-boundary-system-v151"
+            className="cdp-map-boundary-system-v151 cdp-map-boundary-compact-v164"
             data-boundary-system={boundarySystemV151State}
           >
             <fieldset>
-              <legend>행정경계 기준</legend>
+              <legend>행정경계</legend>
               {(["post-2025-34", "pre-2025-63"] as const).map((system) => (
-                <label key={system}>
+                <label key={system} title={boundarySystemLabelV151(system)}>
                   <input
                     checked={boundarySystemV151State === system}
                     name="cdp-map-boundary-system-v151"
@@ -8049,25 +8197,37 @@ export default function RealMapExplorerPage({
                     type="radio"
                     value={system}
                   />
-                  {boundarySystemLabelV151(system)}
+                  <span aria-hidden="true">{boundarySystemShortLabelV151(system)}</span>
+                  <span className="sr-only">{boundarySystemLabelV151(system)}</span>
                 </label>
               ))}
             </fieldset>
+            {/* The notice is read in place by assistive technology (and by the
+                boundary audits); the ⓘ shows the same sentence to the eye. */}
             <p
+              className="sr-only"
               data-testid="map-boundary-value-notice-v151"
               data-boundary-policy={focusedBoundaryPolicyKindV151 || "none"}
             >
-              {focusedLayer?.boundaryPolicy
-                ? boundaryPolicyNoticeV151(
-                    boundarySystemV151State,
-                    focusedLayer.boundaryPolicy,
-                    focusedBoundaryPolicyKindV151 || undefined
-                  )
-                : boundaryValueNoticeV151(boundarySystemV151State)}
+              {boundaryNoticeTextV164}
             </p>
+            <details className="cdp-map-boundary-info-v164">
+              <summary aria-label="행정경계 기준 설명" title="행정경계 기준 설명">ⓘ</summary>
+              <p aria-hidden="true">{boundaryNoticeTextV164}</p>
+            </details>
           </div>
           )}
-          <div className="cdp-map-overlay-card">
+          <div className="cdp-map-control-stack-v151">
+          {backdropStatusV151 === "fallback" && (
+            <p className="cdp-map-backdrop-note-v164" role="status">
+              배경지도를 불러오지 못해 경계와 데이터만 표시합니다.
+            </p>
+          )}
+          <div
+            className={`cdp-map-overlay-card${
+              focusedLayer && !loadingIds.includes(focusedLayer.elementId) ? " is-idle-v164" : ""
+            }`}
+          >
             <strong>
               <PublicTermTextV134
                 text={
@@ -8084,55 +8244,7 @@ export default function RealMapExplorerPage({
             ) : loadingIds.includes(focusedLayer.elementId) ? (
               <div>불러오는 중입니다</div>
             ) : null}
-            {baseMapStatus === "ready" && keyboardMapFeatureV129 ? (
-              <div
-                aria-label="키보드 지도 항목 탐색"
-                className="cdp-map-keyboard-feature-nav"
-                data-testid="map-keyboard-feature-navigation"
-                onKeyDown={(event) => {
-                  if (event.key === "ArrowLeft") {
-                    event.preventDefault();
-                    moveKeyboardFeatureV129(-1);
-                  } else if (event.key === "ArrowRight") {
-                    event.preventDefault();
-                    moveKeyboardFeatureV129(1);
-                  }
-                }}
-                role="group"
-              >
-                <button
-                  aria-label="이전 지도 항목"
-                  onClick={() => moveKeyboardFeatureV129(-1)}
-                  type="button"
-                >
-                  ←
-                </button>
-                <button
-                  aria-label={`${keyboardMapFeatureV129.label} 선택`}
-                  data-testid="map-keyboard-feature-select"
-                  onClick={selectKeyboardFeatureV129}
-                  onKeyDown={(event) => {
-                    if (event.key !== "Enter" && event.key !== " ") return;
-                    event.preventDefault();
-                    selectKeyboardFeatureV129();
-                  }}
-                  title="Enter 또는 Space로 세부정보 보기"
-                  type="button"
-                >
-                  <span>{keyboardMapFeatureV129.label}</span>
-                  <small aria-live="polite">
-                    {keyboardFeatureIndexV129 + 1} / {keyboardMapFeaturesV129.length}
-                  </small>
-                </button>
-                <button
-                  aria-label="다음 지도 항목"
-                  onClick={() => moveKeyboardFeatureV129(1)}
-                  type="button"
-                >
-                  →
-                </button>
-              </div>
-            ) : null}
+            {focusedLayer ? null : keyboardNavV164}
           </div>
           </div>
           {baseMapStatus !== "ready" && (
@@ -8210,11 +8322,15 @@ export default function RealMapExplorerPage({
                   data-testid="map-legend-toggle-v137"
                   aria-expanded={legendOpen}
                   aria-label={legendOpen ? "범례 접기" : "범례 펼치기"}
-                  onClick={() => setLegendOpen((current) => !current)}
+                  onClick={() => {
+                    legendUserChoiceRefV164.current = true;
+                    setLegendOpen((current) => !current);
+                  }}
                 >
                   {legendOpen ? "범례 접기" : "범례"}
                 </button>
               </div>
+              {keyboardNavV164}
               <dl className="cdp-map-legend__facts">
                 <div>
                   <dt>항목</dt>
