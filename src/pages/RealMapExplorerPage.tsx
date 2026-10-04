@@ -225,6 +225,7 @@ import type {
 import {
   areaKm2ByAdm1CodeV151,
   choroplethFeatureCollectionV151,
+  featureCollection,
   lineFeatureCollection,
   spatialValuesForSelectorV125,
   statisticalRepresentativePointsV133,
@@ -637,6 +638,8 @@ interface KeyboardMapFeatureV129 {
   record?: CountryEntityV122;
   role: PublicMapLayerRoleV129;
   spatial?: SpatialSelection;
+  /** V164-4: where the item is drawn, so the stepper can bring it into view. */
+  geometry?: GeoJSON.Geometry | null;
 }
 
 interface FallbackMapTooltipV129 {
@@ -5752,6 +5755,7 @@ export default function RealMapExplorerPage({
           elementId,
           label: `${title} · ${shownNameV163}`,
           role,
+          geometry: (feature.geometry as GeoJSON.Geometry | null) ?? null,
           spatial: {
             elementId,
             adm1Code: String(properties.adm1Code || "") || undefined,
@@ -5834,7 +5838,16 @@ export default function RealMapExplorerPage({
         ? `${feature.elementId}:${feature.spatial.selectionKey ?? ""}` === target
         : false
     );
-    if (index >= 0) setKeyboardFeatureIndexV129(index);
+    if (index < 0) return;
+    setKeyboardFeatureIndexV129((current) => {
+      const shown = keyboardMapFeaturesV129[current];
+      const shownKey = shown?.record
+        ? `${shown.elementId}:${shown.record.recordId}`
+        : shown?.spatial
+        ? `${shown.elementId}:${shown.spatial.selectionKey ?? ""}`
+        : null;
+      return shownKey === target ? current : index;
+    });
   }, [keyboardMapFeaturesV129, selected, selectedSpatial]);
 
   const keyboardMapFeatureV129 =
@@ -5842,23 +5855,76 @@ export default function RealMapExplorerPage({
       Math.min(keyboardFeatureIndexV129, keyboardMapFeaturesV129.length - 1)
     ] || null;
 
+  /**
+   * V164-4: ← / → select the next item and show it on the map, as a click on
+   * it does - the selection ring, the right panel and, for a site, its pinned
+   * popup - and bring it into view. They used to move only the card's label
+   * ("20 / 236") while the map stayed as it was.
+   */
+  function showKeyboardFeatureV164(feature: KeyboardMapFeatureV129) {
+    if (feature.record) {
+      setSelected(feature.record);
+      setSelectedSpatial(null);
+    } else if (feature.spatial) {
+      setSelected(null);
+      setSelectedSpatial(feature.spatial);
+    } else {
+      return;
+    }
+    setAnalysisPanelOpen(true);
+    const map = mapRef.current;
+    const layer = layers.find((item) => item.elementId === feature.elementId);
+    if (!map || !layer) return;
+    const refs = { hover: popupRef, hoverOwner: popupOwnerRef, pinned: pinnedPopupRefV164, pinnedKey: pinnedKeyRefV164 };
+    const primary = feature.role === "primary";
+    let center: [number, number] | null = null;
+    let content: HTMLElement | null = null;
+    let key = "";
+    if (feature.record && typeof feature.record.longitude === "number" && typeof feature.record.latitude === "number") {
+      center = [feature.record.longitude, feature.record.latitude];
+      // The same properties the map drew the point with (location line, flags).
+      const drawn = featureCollection(
+        [feature.record],
+        layer,
+        prepareLayerRecordsV138(recordsByElement[feature.elementId] || [feature.record], layer),
+        { sidecar: locationsByElementV151[feature.elementId], system: boundaryContextV151.system }
+      ).features[0];
+      const properties = (drawn?.properties || {}) as Record<string, unknown>;
+      content = createMapPointPopupV152({ layer, properties, primary, entity: feature.record });
+      key = `${feature.elementId}:${String(properties.selectionKey ?? feature.record.recordId)}`;
+    } else if (feature.spatial && feature.geometry) {
+      if (feature.geometry.type === "Point") {
+        center = [...feature.geometry.coordinates] as [number, number];
+        const properties = feature.spatial.properties || {};
+        const facility = spatialFacilityForFeatureV164(facilityRecordsRefV164.current, countryIso3, feature.elementId, properties);
+        content = createMapPointPopupV152({ layer, properties, primary, entity: facility });
+        key = `${feature.elementId}:${String(feature.spatial.selectionKey ?? "")}`;
+      } else {
+        const bounds = geometryBoundsV161(feature.geometry);
+        if (bounds) center = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+      }
+    }
+    if (content && center) {
+      pinMapPopupV164(map, refs, center, content, key);
+    } else {
+      // An area or a line opens the panel only, as a click on it does.
+      unpinMapPopupV164(refs);
+    }
+    if (center) map.easeTo({ center, duration: 400 });
+  }
+
   function moveKeyboardFeatureV129(direction: -1 | 1) {
-    if (keyboardMapFeaturesV129.length === 0) return;
-    setKeyboardFeatureIndexV129((current) =>
-      (current + direction + keyboardMapFeaturesV129.length) %
-      keyboardMapFeaturesV129.length
-    );
+    const count = keyboardMapFeaturesV129.length;
+    if (count === 0) return;
+    const current = Math.min(keyboardFeatureIndexV129, count - 1);
+    const next = (current + direction + count) % count;
+    setKeyboardFeatureIndexV129(next);
+    showKeyboardFeatureV164(keyboardMapFeaturesV129[next]);
   }
 
   function selectKeyboardFeatureV129() {
     if (!keyboardMapFeatureV129) return;
-    if (keyboardMapFeatureV129.record) {
-      setSelected(keyboardMapFeatureV129.record);
-      setSelectedSpatial(null);
-    } else if (keyboardMapFeatureV129.spatial) {
-      setSelected(null);
-      setSelectedSpatial(keyboardMapFeatureV129.spatial);
-    }
+    showKeyboardFeatureV164(keyboardMapFeatureV129);
     setRoleNotice(
       keyboardMapFeatureV129.role === "context"
         ? `선택한 보조 데이터 · ${publicMapLayerTitleV126(
@@ -5911,6 +5977,29 @@ export default function RealMapExplorerPage({
   function changeCountry(nextCountryIso3: string) {
     if (nextCountryIso3 === countryIso3) return;
     setCountryIso3(nextCountryIso3);
+    // V164-4: the chosen country goes to the URL at once. Hydration waits for
+    // the URL to name the page's country, and the state echo waits for the
+    // map list: switching back (BGD → VNM) before Bangladesh's list had loaded
+    // left the URL on BGD, so Viet Nam never hydrated and the map stayed on
+    // Bangladesh while the selector said 베트남.
+    onStateChange({
+      ...initialState,
+      countryIso3: nextCountryIso3,
+      activeLayerKeys: [],
+      focusLayerKey: null,
+      primaryLayerId: null,
+      contextLayerIds: [],
+      hiddenLayerIds: [],
+      mapPresetId: null,
+      layerOpacities: {},
+      layerYears: {},
+      comparisonMode: false,
+      comparisonLayerIds: [],
+      comparisonCountries: [],
+      comparisonSelectors: [],
+      layerSelectors: {},
+      camera: null,
+    });
     setActiveIds([]);
     setHiddenIdsV138([]);
     setFocusId(null);
