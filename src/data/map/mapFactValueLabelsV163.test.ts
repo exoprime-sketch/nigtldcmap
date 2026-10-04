@@ -40,3 +40,15 @@ test("unknown values and other fields stay as written", () => {
   expect(publicMapFactValueV163("status", "In service")).toBe("In service");
   expect(publicMapFactValueV163("name", "Riverine flood")).toBe("Riverine flood");
 });
+
+test("V164: places read 한글 (현지명) and a country code reads as a country", () => {
+  expect(publicMapFactValueV163("adm1Name34", "Quảng Trị")).toBe("꽝찌 (Quảng Trị)");
+  expect(publicMapFactValueV163("regionName", "Quang Tri")).toBe("꽝찌 (Quang Tri)");
+  expect(publicMapFactValueV163("city", "Ho Chi Minh City; Hanoi")).toBe("호찌민 (Ho Chi Minh City) · 하노이 (Hanoi)");
+  expect(publicMapFactValueV163("division", "Dhaka")).toBe("다카 (Dhaka)");
+  expect(publicMapFactValueV163("hqCountry", "VNM")).toBe("베트남");
+  expect(publicMapFactValueV163("hqCountry", "USA")).toBe("미국");
+  // Not in the dictionary: as written, never guessed.
+  expect(publicMapFactValueV163("city", "Nowhereville")).toBe("Nowhereville");
+  expect(publicMapFactValueV163("hqCountry", "XYZ")).toBe("XYZ");
+});

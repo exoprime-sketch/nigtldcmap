@@ -16,6 +16,7 @@
  *     ("Thanh Hóa · Nghệ An") is split and formatted one name at a time;
  *   - no raw key, internal code or personal contact detail reaches a line.
  */
+import { severityLabelV157 } from "../../map/layers/unitFeaturesV157";
 import { formatRegionName } from "../geo/regionNameV161";
 import type { RegionLevelV161 } from "../geo/regionNameV161";
 
@@ -160,10 +161,12 @@ export function categoryShareLinesV161(
   const own = categoryCounts[categoryLabel] ?? 0;
   if (total === 0 || own === 0) return [];
   const share = Math.round((own / total) * 1000) / 10;
+  // V164: the band reads as the legend and the 분류 row do ("높음 (3-4)", not
+  // the source's "High (3-4)"); the counts are keyed by the source label.
   return [
     {
       label: `같은 분류 비중`,
-      value: `${categoryLabel} ${own.toLocaleString()}개 / ${peerLabel} ${total.toLocaleString()}개 (${share}%)`,
+      value: `${severityLabelV157(categoryLabel).text} ${own.toLocaleString()}개 / ${peerLabel} ${total.toLocaleString()}개 (${share}%)`,
     },
   ];
 }

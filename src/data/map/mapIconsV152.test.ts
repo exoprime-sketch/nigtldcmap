@@ -7,6 +7,7 @@ import {
   MAP_ICON_LAYER_IDS_V152,
   MAP_ICON_SOURCES_V152,
   attachMapIconMissingHandlerV152,
+  canonicalMineralLabelV164,
   mapIconCategoryV152,
   mapIconIdFor,
   mapIconImageIdV152,
@@ -181,7 +182,7 @@ describe("mapIconCategoryV152 — B-048 mines", () => {
     ["니켈", "#5f7f3a"],
     ["구리", "#b5651d"],
     ["희토류", "#6a5acd"],
-    ["보크사이트/알루미나", "#c0504d"],
+    ["알루미늄(보크사이트)", "#c0504d"],
     ["티타늄(ilmenite·leucoxene)", "#607d8b"],
     ["텅스텐(+형석·비스무트·구리)", "#37474f"],
   ];
@@ -194,6 +195,20 @@ describe("mapIconCategoryV152 — B-048 mines", () => {
       color,
       fallback: false,
     });
+  });
+
+  // V164: one name per commodity (the legend split the same combination by spelling and order).
+  it("folds the two spellings of bauxite and the order of a compound site into one category", () => {
+    const labels = ["보크사이트/알루미나", "알루미늄(보크사이트)"].map((value) => mapIconCategoryV152("B-048", { mineral: value }, LAYER_COLOR));
+    expect(labels.map((row) => row?.key)).toEqual(["알루미늄(보크사이트)", "알루미늄(보크사이트)"]);
+    expect(labels[0]).toEqual(labels[1]);
+    const zinc = mapIconCategoryV152("B-048", { mineral: "아연 / 납" }, LAYER_COLOR);
+    const lead = mapIconCategoryV152("B-048", { mineral: "납 / 아연" }, LAYER_COLOR);
+    expect(zinc).toEqual(lead);
+    expect(zinc).toMatchObject({ key: "납 / 아연", label: "납 / 아연", fallback: false });
+    // One name per commodity: a repeated entry is not listed twice.
+    expect(mapIconCategoryV152("B-048", { mineral: "구리 / 구리 / 니켈" }, LAYER_COLOR)).toMatchObject({ key: "구리 / 니켈" });
+    expect(canonicalMineralLabelV164("텅스텐(+형석·비스무트·구리)")).toBe("텅스텐(+형석·비스무트·구리)");
   });
 
   it("falls back to the Korean 광종 key when mineral is absent", () => {

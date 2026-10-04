@@ -5,6 +5,10 @@ import type { VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { POWER_PLANT_SOURCES_V141, powerPlantCapacityMwV141, powerPlantFuelV141, powerPlantSourceKeyV141 } from "../map/powerPlantFactsV141";
 import { formatPublicNumberV126 } from "./publicNumberFormatV126";
 import { NUMBER_ONLY_NAME_V164, powerPlantStatedEntityV164 } from "../map/powerPlantStatedV164";
+import { mapIndicatorSourceV148 } from "../map/mapPresentationV148";
+import { countryNameKoV164 } from "../geo/countryNameKoV164";
+import { regionNameEntryV161 } from "../geo/regionNameV161";
+import { resolvePublicEntityTitleV131 } from "./publicEntityTitleV131";
 import { publicRecordNoteV161, publicSourceUrlV126 } from "./publicFieldPolicyV126";
 
 export { powerPlantStatedEntityV164 };
@@ -24,7 +28,7 @@ export { powerPlantStatedEntityV164 };
  */
 export const FACILITY_CARD_MISSING_V153 = "미기재";
 
-export type FacilityCardFormatV153 = "text" | "number" | "year" | "url" | "adm1" | "fuel" | "source";
+export type FacilityCardFormatV153 = "text" | "number" | "year" | "url" | "adm1" | "fuel" | "source" | "country";
 
 export interface FacilityCardFieldV153 {
   key: string;
@@ -56,14 +60,19 @@ const COUNTRY: FacilityCardFieldV153 = { key: "country", label: "국가", source
 const NAME: FacilityCardFieldV153 = { key: "name", label: "명칭", sources: ["@name"] };
 const ADM1: FacilityCardFieldV153 = { key: "location", label: "소재지", sources: ["adm1Name34"], format: "adm1" };
 
-function orgFields(typeSources: string[], extra: FacilityCardFieldV153[] = []): FacilityCardFieldV153[] {
+function orgFields(
+  typeSources: string[],
+  extra: FacilityCardFieldV153[] = [],
+  // V164: where the Bangladesh delivery states these (its keys differ from Viet Nam's).
+  more: { location?: string[]; source?: string[] } = {}
+): FacilityCardFieldV153[] {
   return [
     COUNTRY,
     NAME,
     { key: "type", label: "유형", sources: typeSources },
     ...extra,
-    { key: "location", label: "소재지", sources: ["adm1Name34", "city"], format: "adm1" },
-    { key: "source", label: "자료 출처", sources: ["sourceUrl", "recordSourceUrl", "field_efec870d", "@sourceUrl"], format: "url" },
+    { key: "location", label: "소재지", sources: ["adm1Name34", "city", ...(more.location || [])], format: "adm1" },
+    { key: "source", label: "자료 출처", sources: ["sourceUrl", "recordSourceUrl", "field_efec870d", ...(more.source || []), "@sourceUrl"], format: "url" },
   ];
 }
 
@@ -92,7 +101,7 @@ export const FACILITY_CARD_SPECS_V153: Record<string, FacilityCardSpecV153> = {
       { key: "owner", label: "펀드·소속", sources: ["fundOrAffiliate"] },
       { key: "sector", label: "투자 분야", sources: ["investSector"] },
       { key: "scale", label: "규모", sources: ["amountValue"], format: "number", unit: "amountCurrency" },
-      { key: "hq", label: "본부 소재국", sources: ["hqCountryIso3"] },
+      { key: "hq", label: "본부 소재국", sources: ["hqCountryIso3", "실제_본사_소재국_hq_country_iso3"], format: "country" },
       { key: "location", label: "소재지", sources: ["adm1Name34", "city"], format: "adm1" },
       { key: "source", label: "자료 출처", sources: ["field_efec870d"], format: "url" },
     ],
@@ -105,7 +114,7 @@ export const FACILITY_CARD_SPECS_V153: Record<string, FacilityCardSpecV153> = {
   "B-048": {
     elementId: "B-048",
     noun: "광산",
-    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["광산명", "@name"] }, { key: "type", label: "광종", sources: ["광종"] }, { key: "note", label: "기후기술 연계", sources: ["기후기술_연계_근거"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "소재_행정구역_성"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["좌표_산출근거", "@sourceUrl"], format: "url" }],
+    fields: [COUNTRY, { key: "name", label: "명칭", sources: ["광산명", "@name"] }, { key: "type", label: "광종", sources: ["광종"] }, { key: "note", label: "기후기술 연계", sources: ["기후기술_연계_근거"] }, { key: "location", label: "소재지", sources: ["adm1Name34", "개편_후_소속_단위", "소재_행정구역_ADM1", "소재_행정구역_성"], format: "adm1" }, { key: "source", label: "자료 출처", sources: ["sourceUrl", "recordSourceUrl", "@sourceUrl"], format: "url" }],
   },
   // 2026-09-30 delivery: C-025 moved to the wide "[블록] 속성" template
   // (wideRecordsV162.ts), one row per project ("크레딧 사업") or per issuance
@@ -118,9 +127,41 @@ export const FACILITY_CARD_SPECS_V153: Record<string, FacilityCardSpecV153> = {
   },
   "E-004": { elementId: "E-004", noun: "기관", fields: orgFields(["orgType"], [{ key: "program", label: "담당·프로그램", sources: ["officeProgram"] }, { key: "contact", label: "연락처", sources: ["email", "phone"] }]) },
   "E-005": { elementId: "E-005", noun: "기관", fields: orgFields(["orgType"], [{ key: "domain", label: "분야", sources: ["domain"] }, { key: "contact", label: "연락처", sources: ["contact"] }]) },
-  "E-018": { elementId: "E-018", noun: "기업", fields: orgFields(["진출_상태"], [{ key: "business", label: "사업 분야", sources: ["field_a2123512"] }, { key: "year", label: "설립·진출", sources: ["field_8440b85d"] }, { key: "contact", label: "연락처", sources: ["contact"] }]) },
+  "E-018": {
+    elementId: "E-018",
+    noun: "기업",
+    // V164: the Bangladesh delivery names these columns (업종, 설립_사업연도, 연락처,
+    // 현지_주소) where Viet Nam's carries hashed ones; both are read.
+    fields: orgFields(
+      ["진출_상태"],
+      [{ key: "business", label: "사업 분야", sources: ["field_a2123512", "업종"] }, { key: "year", label: "설립·진출", sources: ["field_8440b85d", "설립_사업연도"] }, { key: "contact", label: "연락처", sources: ["contact", "연락처"] }],
+      // 출처 is a sentence ("KOTRA, 「…」 … — https://…"), not an address; the
+      // record's own link is its provenance (@sourceUrl) and the name comes from there too.
+      { location: ["현지_주소"] }
+    ),
+  },
   "E-019": { elementId: "E-019", noun: "기관", fields: orgFields(["field_6b3e1e90"], [{ key: "address", label: "주소", sources: ["address"] }, { key: "contact", label: "연락처", sources: ["contact"] }]) },
 };
+
+/**
+ * V164: the publisher a source address belongs to, for a record whose own
+ * provenance names none (A-025's is the supplier's, not the publisher's).
+ * Only addresses whose owner is the address itself are named.
+ */
+const PUBLISHER_BY_HOST_V164: ReadonlyArray<readonly [RegExp, string]> = [
+  [/(?:^|\.)globalccsinstitute\.com$/iu, "Global CCS Institute"],
+  [/(?:^|\.)data\.go\.kr$/iu, "공공데이터포털(data.go.kr)"],
+];
+
+function publisherOfHostV164(href: string | undefined): string {
+  if (!href) return "";
+  try {
+    const host = new URL(href).hostname;
+    return PUBLISHER_BY_HOST_V164.find(([pattern]) => pattern.test(host))?.[1] || "";
+  } catch {
+    return "";
+  }
+}
 
 function text(value: unknown): string | null {
   if (value === null || value === undefined) return null;
@@ -165,10 +206,27 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
     if (statedUnit) {
       return { key: field.key, label: field.label, value: formatRegionName({ country: entity.countryIso3 || "VNM", raw: statedUnit }), missing: false };
     }
+    // V164: the 2025 unit the delivery states in its own column (B-048 "Quảng Trị")
+    // when the sidecar-derived adm1Name34 is absent - the record does state it.
+    const country = entity.countryIso3 || "VNM";
+    const stated34 = text(attributes["개편_후_소속_단위"]);
+    if (stated34 && !/해당\s*없음|국외/u.test(stated34) && field.sources.includes("개편_후_소속_단위")) {
+      return { key: field.key, label: field.label, value: `${formatRegionTextV162({ country, raw: stated34, level: "adm1-34" })} · 개편 후 34개 기준`, missing: false };
+    }
     const fallback = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
+    if (!fallback) return missing;
     // V163-T3: an unknown location is 미기재, not asserted to be outside every
-    // province (the map can place the same point inside one).
-    return fallback ? { key: field.key, label: field.label, value: `${formatRegionTextV162({ country: entity.countryIso3 || "VNM", raw: fallback })} (원문 표기)`, missing: false } : missing;
+    // province (the map can place the same point inside one). A place the
+    // region dictionary knows ("Chittagong") needs no "원문 표기" caveat.
+    const known = regionNameEntryV161({ country, raw: fallback }) !== null;
+    const named = formatRegionTextV162({ country, raw: fallback });
+    return { key: field.key, label: field.label, value: known ? named : `${named} (원문 표기)`, missing: false };
+  }
+  if (field.format === "country") {
+    const raw = field.sources.map((source) => text(readSource(entity, source))).find(Boolean);
+    if (!raw) return missing;
+    // The delivery stores ISO 3166-1 alpha-3 ("USA"); a reader says 미국.
+    return { key: field.key, label: field.label, value: countryNameKoV164(raw) || raw, missing: false };
   }
   if (field.format === "source") {
     // A-023: the registry's own name and year, then the row's link.
@@ -198,6 +256,12 @@ function formatField(field: FacilityCardFieldV153, entity: VietnamEntityV124): F
   }
   if (field.format === "url") {
     const href = publicSourceUrlV126(text(raw)) || undefined;
+    // V164: a source reads as who published it ("International Energy Agency
+    // (IEA)"), with the link kept, not as a bare address ("www.data.go.kr/…").
+    // A record with no link of its own still names its publisher.
+    const organisation =
+      mapIndicatorSourceV148(entity.indicatorId, text(entity.provenance?.sourceOrg) || "") || publisherOfHostV164(href);
+    if (organisation) return { key: field.key, label: field.label, value: organisation, href, missing: false };
     return href ? { key: field.key, label: field.label, value: href.replace(/^https?:\/\//u, "").replace(/\/$/u, ""), href, missing: false } : missing;
   }
   // V162: a note field reads like any record note - the compiler's coding
@@ -218,9 +282,16 @@ export function facilityCardRowsV153(elementId: string, entityIn: VietnamEntityV
   // V163-T3: a record whose name field repeats its type (A-025 "Power (coal)")
   // has no name of its own - the row reads 미기재 rather than the type twice.
   const type = rows.find((row) => row.key === "type" && !row.missing)?.value;
-  return rows.map((row) =>
-    row.key === "name" && type && row.value === type ? { ...row, value: FACILITY_CARD_MISSING_V153, missing: true } : row
-  );
+  return rows.map((row) => {
+    if (!(row.key === "name" && type && row.value === type)) return row;
+    // V164: the facility's own name is stated elsewhere in the record (A-025
+    // "[시설명: VAPCO Vung Ang II …]" in its note) and is the card's title;
+    // the row says that name, and is 미기재 only when the record has none.
+    const title = resolvePublicEntityTitleV131(entity).title;
+    return title && title !== type
+      ? { ...row, value: title, missing: false }
+      : { ...row, value: FACILITY_CARD_MISSING_V153, missing: true };
+  });
 }
 
 export function facilityCardSpecV153(elementId: string): FacilityCardSpecV153 | null {

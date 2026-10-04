@@ -206,7 +206,6 @@ const B048_MINERAL_COLORS_V152: Record<string, string> = {
   니켈: "#5f7f3a",
   구리: "#b5651d",
   희토류: "#6a5acd",
-  "보크사이트/알루미나": "#c0504d",
   "티타늄(ilmenite·leucoxene)": "#607d8b",
   "텅스텐(+형석·비스무트·구리)": "#37474f",
   텅스텐: "#37474f",
@@ -224,11 +223,44 @@ const B048_MINERAL_COLORS_V152: Record<string, string> = {
   "알루미늄(보크사이트)": "#c0504d",
 };
 
+/**
+ * V164: one name per commodity. USGS MRDS spells one ore two ways
+ * ("보크사이트/알루미나" and "알루미늄(보크사이트)") and lists a site's co-located
+ * minerals in no fixed order ("아연 / 납" and "납 / 아연"), so the legend showed
+ * the same combination as separate entries. The label is the commodity names
+ * (aliases folded to the platform's name) de-duplicated and sorted, joined by
+ * " / "; a parenthesis stays inside its entry, as in the national-value join.
+ */
+const B048_MINERAL_ALIASES_V164: Readonly<Record<string, string>> = {
+  "보크사이트/알루미나": "알루미늄(보크사이트)",
+};
+
+export function canonicalMineralLabelV164(raw: string): string {
+  const entries = String(raw ?? "")
+    .split(/\s+\/\s+/u)
+    .map((entry) => entry.trim())
+    .filter(Boolean)
+    .map((entry) => B048_MINERAL_ALIASES_V164[entry] ?? entry);
+  return [...new Set(entries)].sort((left, right) => (left < right ? -1 : left > right ? 1 : 0)).join(" / ");
+}
+
+/** Colour by the commodity label; a compound site takes the colour of its first-declared known mineral. */
+function mineralColorV164(label: string): string | undefined {
+  const verbatim = B048_MINERAL_COLORS_V152[label];
+  if (verbatim) return verbatim;
+  const declared = Object.keys(B048_MINERAL_COLORS_V152);
+  const known = label
+    .split(/\s+\/\s+/u)
+    .filter((entry) => B048_MINERAL_COLORS_V152[entry])
+    .sort((left, right) => declared.indexOf(left) - declared.indexOf(right));
+  return known.length ? B048_MINERAL_COLORS_V152[known[0]] : undefined;
+}
+
 function mineralIconCategoryV152(properties: Record<string, unknown>, layerColor: string): MapIconCategoryV152 {
-  const raw = firstNonEmpty(properties.mineral, properties["광종"]);
-  const primary = raw ? raw.split(/\s*\/\s*/u)[0] : null;
-  const color = raw ? B048_MINERAL_COLORS_V152[raw] ?? (primary ? B048_MINERAL_COLORS_V152[primary] : undefined) : undefined;
-  if (raw && color) return { iconId: "pick", key: raw, label: raw, color, fallback: false };
+  const stated = firstNonEmpty(properties.mineral, properties["광종"]);
+  const label = stated ? canonicalMineralLabelV164(stated) : null;
+  const color = label ? mineralColorV164(label) : undefined;
+  if (label && color) return { iconId: "pick", key: label, label, color, fallback: false };
   return { iconId: "pick", key: B048_OTHER_LABEL_V152, label: B048_OTHER_LABEL_V152, color: layerColor, fallback: true };
 }
 
