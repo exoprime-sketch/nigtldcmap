@@ -27,6 +27,16 @@ export interface CountryCompareKeyV158 {
   yearRule: string;
 }
 
+/**
+ * V164-3: a unit as the delivery keyed it ("십억 USD_2017/yr") reads as words
+ * ("십억 USD(2017년 기준)/년"). Only the key spellings change.
+ */
+export function publicUnitTextV164(unit: string | null | undefined): string {
+  return String(unit ?? "")
+    .replace(/USD_(\d{4})/gu, "USD($1년 기준)")
+    .replace(/\/yr\b/gu, "/년");
+}
+
 export interface CountryCompareBlockPropsV158 {
   elementId: string;
   title: string;
@@ -138,7 +148,7 @@ function MultiLineChartV164({
       height={height}
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${unit}` : ""}`}
+      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${publicUnitTextV164(unit)}` : ""}`}
       data-testid="country-compare-lines-v158"
     >
       {ticks.map((tick, index) => (
@@ -151,7 +161,7 @@ function MultiLineChartV164({
       ))}
       {unit ? (
         <text x={4} y={11} textAnchor="start" fontSize="11" fill="#5b7169" data-testid="country-compare-unit-v164">
-          {`단위: ${unit}`}
+          {`단위: ${publicUnitTextV164(unit)}`}
         </text>
       ) : null}
       {yearMarks.map((year) => (
@@ -331,7 +341,7 @@ export default function CountryCompareBlockV158({
       >
         <h4 className="ccb158__title"><PublicTermTextV134 text={title} /></h4>
         <p className="ccb158__note" data-testid="country-compare-unit-note-v158">
-          단위가 달라 함께 비교하지 않았습니다 · 기준 {compareKey.unit} ·{" "}
+          단위가 달라 함께 비교하지 않았습니다 · 기준 {publicUnitTextV164(compareKey.unit)} ·{" "}
           {model.mismatched.map((row) => `${row.countryNameKo} ${row.unit}`).join(" · ")}
         </p>
       </section>
@@ -383,7 +393,7 @@ export default function CountryCompareBlockV158({
       ) : (
         <table className="ccb158__bars" data-testid="country-compare-bars-v158">
           <caption>
-            {barYear === null ? "공통 연도 없음" : `${periodText(barYear)} · 단위 ${compareKey.unit}`}
+            {barYear === null ? "공통 연도 없음" : `${periodText(barYear)} · 단위 ${publicUnitTextV164(compareKey.unit)}`}
           </caption>
           <tbody>
             {model.matched.map((row, index) => {
