@@ -1,6 +1,7 @@
 import { publicProcessWordingV162 } from "./processWordingV162";
 import type { VietnamElementMetaBundleV124, VietnamEntityV124 } from "../vietnam/vietnamTypesV124";
 import { publicRecordNoteV161, publicSourceUrlV126, publicUnstatedWordingV161 } from "./publicFieldPolicyV126";
+import { publicWorkMemoV164 } from "./publicWorkMemoV164";
 
 /**
  * V162: one reader for the wide record template.
@@ -79,7 +80,9 @@ const BLOCK_TITLES_V162: Record<string, string> = { 현지조사: "현장 확인
 // V162: the supplier's own file bookkeeping ("[링크] raw 보유 여부", "raw 파일명").
 // V162: also the identifier columns ("GCAP NAZCA ID") and the field survey's
 // own table reference ("[현지조사] 표" = "ELEMENT C-014 표").
-const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b|\bID$|^표$|기술코드/iu;
+// V164-3: "재확보 대상 출처" (the source the compiler still meant to fetch) and
+// "관련 데이터요소" (the sheet's cross references) are working columns.
+const HIDDEN_ATTRIBUTE_V162 = /레코드\s*ID|행정\s*코드|P-?code|판단\s*(근거|유형)|\braw\b|\bID$|^표$|기술코드|재확보\s*대상|관련\s*데이터\s*요소/iu;
 /** A format hint in the column label ("시행일 (YYYY-MM-DD)", "시행 연도 (년)"). */
 const FORMAT_HINT_V162 = /\s*\((?:YYYY(?:[-.]MM(?:[-.]DD)?)?|년|월|일)\)\s*$/u;
 /** A value that names a delivered or working file rather than stating anything. */
@@ -164,7 +167,8 @@ export function publicWideValueV162(value: unknown, attribute = ""): string {
   const text = cellText(value);
   if (!text || FILE_VALUE_V162.test(text)) return "";
   const cleaned = NOTE_ATTRIBUTE_V162.test(attribute) ? publicRecordNoteV161(text) || "" : text;
-  return publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned)));
+  // V164-3: the delivery's working memos, in any column (note-like or not).
+  return publicWorkMemoV164(publicProcessWordingV162(withoutFileNamesV162(publicUnstatedWordingV161(cleaned))));
 }
 
 const SHORT_VALUE_V162 = 40;
