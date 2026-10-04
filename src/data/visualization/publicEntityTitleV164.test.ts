@@ -55,3 +55,10 @@ describe("raw-key record titles (V164)", () => {
     expect(resolvePublicEntityTitleV131(row, { template: "generic" }).title).toBe("Hon Dau");
   });
 });
+
+describe("V164-3 B-028 basin field name in titles", () => {
+  it("reads MAIN_BAS as 유역", () => {
+    const entity = { elementId: "B-028", name: "HydroBASINS MAIN_BAS 4080025230", normalizedAttributes: { 지점_유역명: "HydroBASINS MAIN_BAS 4080025230" } } as unknown as VietnamEntityV124;
+    expect(resolvePublicEntityTitleV131(entity).title).not.toMatch(/MAIN_BAS/u);
+  });
+});

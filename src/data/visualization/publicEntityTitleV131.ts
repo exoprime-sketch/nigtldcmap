@@ -751,7 +751,10 @@ export function resolvePublicEntityTitleV131(
   options: PublicEntityTitleOptionsV131 = {}
 ): PublicEntityTitleResolutionV131 {
   const resolved = resolvePublicEntityTitleBaseV131(entity, options);
-  return { ...resolved, title: publicProcessWordingV162(resolved.title) };
+  // V164-3: B-028 names unnamed stations by the HydroBASINS field (MAIN_BAS);
+  // the field name reads as the word it stands for.
+  const title = publicProcessWordingV162(resolved.title).replace(/HydroBASINS\s+MAIN_BAS\s+/gu, "HydroBASINS 유역 ");
+  return { ...resolved, title };
 }
 
 function resolvePublicEntityTitleBaseV131(
