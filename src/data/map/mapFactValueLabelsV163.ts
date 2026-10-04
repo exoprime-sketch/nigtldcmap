@@ -1,4 +1,6 @@
 import { osmClassLabelV162 } from "../visualization/osmClassLabelsV162";
+import { formatRegionName, regionNameEntryV161, type RegionLevelV161 } from "../geo/regionNameV161";
+import { countryNameKoV164 } from "../geo/countryNameKoV164";
 
 /**
  * V163-T2 (13·17): source classification values a map fact prints as they were
@@ -120,18 +122,57 @@ function gemStatusLabelV163(value: string): string | null {
   return null;
 }
 
+/**
+ * V164: a place a fact names, as "한글 (현지명)" through the region dictionary.
+ * A fact value carries no country, so the two pilot countries' lists are tried
+ * in turn (their place names do not collide); a name neither knows, and any
+ * sentence, stays exactly as written. A list ("Ho Chi Minh City; Hanoi") is
+ * split, each place named, and joined with " · ".
+ */
+function placeFactTextV164(text: string, level?: RegionLevelV161): string {
+  const parts = text.split(/\s*;\s*|\s+·\s+/u).map((part) => part.trim()).filter(Boolean);
+  const named = parts.map((part) => {
+    for (const country of ["VNM", "BGD"]) {
+      const scoped = level && country === "VNM" ? level : undefined;
+      if (regionNameEntryV161({ country, raw: part, level: scoped })) return formatRegionName({ country, raw: part, level: scoped });
+    }
+    return part;
+  });
+  return named.join(" · ");
+}
+
 /** A map fact's value as a reader sees it; `key` is the fact field key. */
 export function publicMapFactValueV163(key: string, value: string): string {
   const text = String(value ?? "").trim();
   if (!text) return text;
   const lower = text.toLowerCase();
   switch (key) {
+    // V164: places read "한글 (현지명)", not "Quảng Trị" / "Ho Chi Minh City; Hanoi".
+    case "adm1Name34":
+    case "regionName":
+      return placeFactTextV164(text, "adm1-34");
+    case "adm1Name":
+    case "adm1Name63":
+      return placeFactTextV164(text, "adm1-63");
+    case "city":
+    case "division":
+      return placeFactTextV164(text);
+    // V164: the source's ISO code ("VNM") is a code, not what a reader says.
+    case "hqCountry":
+    case "hqCountryIso3":
+      return text
+        .split(/\s*;\s*/u)
+        .map((part) => countryNameKoV164(part) || part)
+        .join(" · ");
     case "disasterSubtype":
     case "disasterType":
       return EMDAT_SUBTYPES_V163[lower] || text;
     case "featureClass":
     case "fclass":
       return osmClassLabelV162(text);
+    case "ref":
+      // V164: OSM joins several route numbers with ";" ("QL.14;HCM").
+      return text.split(/\s*;\s*/u).filter(Boolean).join(" · ");
     case "status": {
       const label = gemStatusLabelV163(text);
       return label || text;

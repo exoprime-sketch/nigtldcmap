@@ -91,10 +91,22 @@ export function joinNationalMineAttributesV157_2(
   });
 }
 
+/**
+ * V164: the figure's text in Korean. B-044's copper production reads
+ * "30,000~35,000 t Cu cathode/yr" in the delivery; the unit is spelled out.
+ */
+function nationalValueTextV164(valueText: string): string {
+  return valueText.replace(/\bt\s+Cu cathode\s*\/\s*yr\b/giu, "t/년 (구리 음극판 기준)");
+}
+
 /** The public line for an attached attribute: mineral, figure, period, then that it is national. */
 export function nationalMineAttributeLineV157_2(attribute: AttachedAttributeV157_2): string {
   const period = attribute.period ? `(${attribute.period})` : "";
-  return `${attribute.mineral} ${attribute.label} ${attribute.valueText}${period} — ${attribute.scope} 값`;
+  const valueText = nationalValueTextV164(attribute.valueText);
+  // V164: B-044 declares label "부존" and text "부존 확인 — …", which read
+  // "구리 부존 부존 확인". The label is not said twice.
+  const label = attribute.label && valueText.startsWith(attribute.label) ? "" : attribute.label;
+  return `${[attribute.mineral, label, `${valueText}${period}`].filter(Boolean).join(" ")} — ${attribute.scope} 값`;
 }
 
 /**

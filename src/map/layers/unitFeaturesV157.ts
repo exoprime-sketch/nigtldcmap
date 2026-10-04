@@ -19,6 +19,7 @@
 import type { CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
 import type { ChoroplethCollectionV151, LayerSelectorState, SpatialRuntimeAsset } from "./types";
 import { spatialValuesForSelectorV125 } from "./features";
+import { assetNameV164 } from "../../data/map/assetNameV164";
 
 /** Colours for categorical fills, in the order categories first appear. */
 export const CATEGORY_COLORS_V157 = [
@@ -281,16 +282,22 @@ export function assetFeatureCollectionV157(
     features: features.map((feature, index) => {
       const properties = (feature.properties || {}) as Record<string, unknown>;
       const key = String(properties.featureId || properties.stringId || index);
+      // V164: a basin point the delivery leaves unnamed ("HydroBASINS MAIN_BAS
+      // 4080025450", "유역(HydroBASINS 4080025470)") is named for what it is,
+      // "유역 출구 대표점 (번호 4080025450)"; a stated station or river is kept.
+      // A-024 segments with no stated voltage read "전압 미기재 전력선 구간".
+      const stated = typeof properties.name === "string" ? assetNameV164(layer.elementId, properties.name) : properties.name;
       return {
         type: "Feature" as const,
         id: key,
         geometry: feature.geometry as GeoJSON.Geometry,
         properties: {
           ...properties,
+          ...(stated !== properties.name ? { name: stated } : {}),
           elementId: layer.elementId,
           selectionKey: key,
           // The asset's own name and kind are what a reader clicked on.
-          adm1Name: String(properties.name || properties.kindLabel || key),
+          adm1Name: String(stated || properties.kindLabel || key),
           categoryLabel: assetCategoryLabelV164(layer.elementId, properties),
           period: String(properties.sourceYear || layer.sourceYear || ""),
           variable: layer.selectors?.defaultVariable || "all",

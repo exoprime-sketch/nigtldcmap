@@ -125,3 +125,18 @@ test("nationalMineAttributeLineV157_2 states the mineral, figure, period and tha
   });
   expect(line).toBe("구리 광산 생산량 30,000 t(2023) — 국가 전체 값");
 });
+
+test("V164: B-044's label is not said twice and its English unit is spelled out", () => {
+  const line = nationalMineAttributeLineV157_2({
+    elementId: "B-044",
+    mineral: "구리",
+    label: "부존",
+    valueText: "부존 확인 — 정량 수록(생산 기준) · 생산 30,000~35,000 t Cu cathode/yr",
+    period: "",
+    source: "USGS",
+    scope: "국가 전체",
+  });
+  expect(line).toBe("구리 부존 확인 — 정량 수록(생산 기준) · 생산 30,000~35,000 t/년 (구리 음극판 기준) — 국가 전체 값");
+  expect(line).not.toContain("부존 부존");
+  expect(line).not.toContain("cathode");
+});
