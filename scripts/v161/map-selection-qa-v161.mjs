@@ -218,6 +218,9 @@ for (const sample of SAMPLES_V161) {
       }))
     );
     for (const point of points) {
+      // V164-3: a clicked site keeps its popup open; Esc closes it so the next
+      // grid point is clicked on the map, not on that popup.
+      await page.keyboard.press("Escape");
       await page.mouse.click(point.x, point.y);
       await page.waitForTimeout(900);
       card = await page.evaluate(() => {

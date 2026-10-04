@@ -2,12 +2,18 @@ import { useEffect, useMemo, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
 import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 import type { CardSummaryV140 } from "../../../data/cardSummariesV140";
+import type { DecisionPointV159 } from "../../../data/structure/decisionPointsV159";
 import type {
   VietnamEntityV124,
+  VietnamIndicatorMetaV124,
   VietnamObservationV124,
 } from "../../../data/vietnam/vietnamTypesV124";
+import { dataPeriodSpanV164 } from "../../../data/visualization/dataPeriodV164";
+import type { PeriodSpanV164 } from "../../../data/visualization/dataPeriodV164";
+import { periodStatementV162 } from "../../../data/visualization/periodStatementV162";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
+import { coverageFigureV164, guardedHeadlineV164, screenPeriodTileV164 } from "./kpiTilesV164";
 
 /**
  * V153-D1: the small row of core figures under the hero - three or four
@@ -16,6 +22,12 @@ import { PublicTermTextV134 } from "../../help/PublicTermV134";
  * finder card shows and the analysis QA checks on the detail), the period is
  * the card's, and the counts are the loaded records as they are. A dataset
  * without values shows its status line and no figure.
+ *
+ * V164-3: the card is a generated summary that does not see the screen, so its
+ * headline and its period are judged against what the screen holds: a headline
+ * that counts nothing, that another series than the 판단 포인트 states or that
+ * the screen's own list does not reach is corrected from the screen or left
+ * out, and the period is the one the source line states (kpiTilesV164).
  */
 interface Props {
   elementId: string;
@@ -23,6 +35,10 @@ interface Props {
   entities: VietnamEntityV124[];
   /** Province series count one indicator per province; the family count is what a reader means by "지표". */
   indicatorFamilyCount: number;
+  /** The element's indicators: the period of the data they state when the records carry no year. */
+  indicators?: ReadonlyArray<Pick<VietnamIndicatorMetaV124, "timeRange" | "referenceYear">>;
+  /** The 판단 포인트 the screen shows: the headline is one of their series, or it is not shown. */
+  decisionPoints?: ReadonlyArray<DecisionPointV159>;
 }
 
 export interface KpiTileV153 {
@@ -30,6 +46,15 @@ export interface KpiTileV153 {
   value: string;
   unit: string;
   label: string;
+}
+
+/** What the screen holds that the card summary cannot know (V164-3). */
+export interface KpiContextV153 {
+  /** The element's period statement, which the source line states too. */
+  statement?: { label: string; text: string } | null;
+  /** The span of the loaded records' years (dataPeriodSpanV164). */
+  span?: PeriodSpanV164 | null;
+  decisionPoints?: ReadonlyArray<DecisionPointV159>;
 }
 
 /** "41 점" → "점", "41,350 MW" → "MW", "54건" → "건", "3.2%" → "%". */
@@ -57,22 +82,42 @@ export function kpiTilesV153(
   card: CardSummaryV140 | null,
   observations: VietnamObservationV124[],
   entities: VietnamEntityV124[],
-  indicatorFamilyCount: number
+  indicatorFamilyCount: number,
+  context: KpiContextV153 = {}
 ): KpiTileV153[] {
   if (!card || card.kind === "status") return [];
   const tiles: KpiTileV153[] = [];
-  // The unit as the headline states it: the measure's unit when the headline
-  // ends with it (long units carry digits of their own), else the trailing
-  // token, else the measure's unit for a bare count.
-  const statedUnit = [card.measure?.unit, card.preview?.unit]
-    .map((unit) => displayUnitV150(unit || ""))
-    .find((unit) => unit && card.headline.value.trim().endsWith(unit));
-  const headlineUnit = statedUnit || trailingUnitV153(card.headline.value) || displayUnitV150(card.measure?.unit || card.preview?.unit || "");
-  const headlineHasNumber = /\d/u.test(card.headline.value);
-  if (headlineHasNumber && headlineUnit) {
-    tiles.push({ key: "headline", value: card.headline.value, unit: headlineUnit, label: card.headline.label });
+  // V164-3: the headline as the screen can stand behind it, or none.
+  const headline = guardedHeadlineV164(card, { decisionPoints: context.decisionPoints, entities });
+  // The period the tile states (the screen's, or null for the card's own).
+  const screenPeriod = screenPeriodTileV164(card.period, context);
+  if (headline) {
+    // The unit as the headline states it: the measure's unit when the headline
+    // ends with it (long units carry digits of their own), else the trailing
+    // token, else the measure's unit for a bare count.
+    const statedUnit = [card.measure?.unit, card.preview?.unit]
+      .map((unit) => displayUnitV150(unit || ""))
+      .find((unit) => unit && headline.value.trim().endsWith(unit));
+    // A figure taken from the 판단 포인트 is another series than the card's: the card's unit is not its unit.
+    const ownFigure = headline.value === card.headline.value;
+    const headlineUnit =
+      statedUnit ||
+      trailingUnitV153(headline.value) ||
+      (ownFigure ? displayUnitV150(card.measure?.unit || card.preview?.unit || "") : "");
+    // The card's period inside the label follows the tile's period ("광산 · 2016–2022년").
+    // A single year in the label of a measured value is that value's own year, not the period.
+    const labelStatesPeriod = card.kind === "facts" || /[–~]/u.test(card.period);
+    const label =
+      screenPeriod && screenPeriod.label === "자료기간" && card.period && labelStatesPeriod
+        ? headline.label.split(card.period).join(screenPeriod.value)
+        : headline.label;
+    if (/\d/u.test(headline.value) && headlineUnit) {
+      tiles.push({ key: "headline", value: headline.value, unit: headlineUnit, label });
+    }
   }
-  if (card.period && card.period !== "—" && /\d{4}/u.test(card.period)) {
+  if (screenPeriod) {
+    tiles.push({ key: "period", ...screenPeriod });
+  } else if (card.period && card.period !== "—" && /\d{4}/u.test(card.period)) {
     // A period stated as a date ("2026-08-10 기준") is a reference day, not years.
     const dated = !/년/u.test(card.period) && /\d{4}-\d{2}-\d{2}/u.test(card.period);
     tiles.push(dated
@@ -91,10 +136,16 @@ export function kpiTilesV153(
   } else if (populatedObservations > 0 && populatedEntities > 0) {
     tiles.push({ key: "entities", value: `${populatedEntities.toLocaleString("ko-KR")}건`, unit: "건", label: "공개 목록" });
   }
+  // A list of regions or stations whose headline could not be kept still states
+  // what it covers, counted from its own rows.
+  if (!tiles.some((tile) => tile.key === "headline") && tiles.length < 3) {
+    const coverage = coverageFigureV164(entities);
+    if (coverage) tiles.unshift({ key: "coverage", value: coverage.value, unit: "곳", label: coverage.label });
+  }
   return tiles.slice(0, 4);
 }
 
-export default function DetailKpiStripV153({ elementId, observations, entities, indicatorFamilyCount }: Props) {
+export default function DetailKpiStripV153({ elementId, observations, entities, indicatorFamilyCount, indicators, decisionPoints }: Props) {
   const [card, setCard] = useState<CardSummaryV140 | null | undefined>(undefined);
   const dataCountryV158 = useDataCountryV158();
   useEffect(() => {
@@ -112,8 +163,13 @@ export default function DetailKpiStripV153({ elementId, observations, entities, 
     };
   }, [dataCountryV158, elementId]);
   const tiles = useMemo(
-    () => kpiTilesV153(card ?? null, observations, entities, indicatorFamilyCount),
-    [card, entities, indicatorFamilyCount, observations]
+    () =>
+      kpiTilesV153(card ?? null, observations, entities, indicatorFamilyCount, {
+        statement: periodStatementV162(elementId, dataCountryV158),
+        span: dataPeriodSpanV164({ observations, entities, indicators }),
+        decisionPoints,
+      }),
+    [card, dataCountryV158, decisionPoints, elementId, entities, indicatorFamilyCount, indicators, observations]
   );
   if (card === undefined) return null;
   if (card?.kind === "status") {

@@ -195,6 +195,25 @@ describe("safe public term tokenizer v134", () => {
     expect(all).toHaveLength(2);
   });
 
+  test("V164-3: an abbreviation inside a dotted code is not explained", () => {
+    // "VC" in World Bank's VC.IHR.PSRC.P5 is a code part, not venture capital.
+    expect(terms("World Bank VC.IHR.PSRC.P5 (10만 명당)")).toEqual([]);
+    expect(terms("지표 EG.ELC.RNEW.ZS 와 NY.GDP.MKTP.CD")).toEqual([]);
+    // a sentence-final stop is followed by a space and is not a code joint
+    expect(terms("지원 대상은 ODA. 다음 항목")).toEqual(["oda"]);
+  });
+
+  test("V164-3: PM is a prime minister in a government decision, a project manager beside a project", () => {
+    const prime = tokenizePublicTermsV134("PM Decision 500 approving PDP VIII").filter(
+      (token) => token.type === "term" && token.value === "PM"
+    );
+    expect(prime).toHaveLength(1);
+    expect(prime[0].type === "term" && prime[0].entry.koreanName).toBe("총리");
+    expect(terms("사업 PM 배치 계획")).toEqual(["project-manager"]);
+    // no context for either meaning: nothing is explained
+    expect(terms("PM 2.5 농도")).toEqual([]);
+  });
+
   test("uses word boundaries and leaves internal identifiers untouched", () => {
     expect(terms("RE는 재생에너지이지만 RENEWABLE과 D-011은 다릅니다")).toEqual([
       "re",

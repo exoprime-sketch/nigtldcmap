@@ -4,6 +4,7 @@ import { technologyLabelV121 } from "../../utils/vietnamActualV121";
 import { normalizeTechnologyIdsV153 } from "../../utils/technologyIdV153";
 import { publicTextV126 } from "./publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "./publicCategoryLabelV136_2";
+import { koreanCategoryV164 } from "./publicCategoryLabelV164";
 import descriptionsV150 from "./datasetDescriptionsV150.json";
 import { copyForCountryV158, headingsForCountryV158, specNeedsCountryScopeV158 } from "../countries/countryCopyV158";
 
@@ -266,6 +267,16 @@ export function publicDimensionLabelV126(
     technologyfield: "기술 분야",
     type: "유형",
     typeofinformation: "정보 유형",
+    // V164: columns the generated contract names by their snake_case source
+    // field (A-013 offered four selectors that all read "분류"). Each is the
+    // translation of a column the source has, as the table's own rows call it.
+    climateresponse: "기후 대응",
+    detail2: "세부 분류 2",
+    documenttype: "문서 유형",
+    implementationstatus: "이행 상태",
+    informationtype: "정보 유형",
+    ndcsector: "부문",
+    source: "출처",
 
     category: "분류",
     city: "도시",
@@ -298,11 +309,37 @@ export function publicDimensionLabelV126(
   if (mapped) return mapped;
 
   const label = publicCopyOrEmptyV126(labelValue);
-  if (label && !isIdentifierLikeV136_2(label)) return label;
+  if (label && !isIdentifierLikeV136_2(label)) return publicDimensionNameV164(label);
   // The label is still the stored column key - "dacSectorCode" reached a
   // selector on the public screen this way. A reader cannot use a key, and
   // prettifying it only produces "dac Sector Code", so name the role instead.
   return "분류";
+}
+
+/**
+ * V164: a selector named in the sheet's own working words, in the words a reader
+ * would use. "수집 상태", "행 유형", "좌표 구분" and "기후·에너지 담당 판정" are
+ * the compiler's columns; the values under them are unchanged. A label this table
+ * does not list stays as delivered, minus the sheet's block tag
+ * ("[이니셔티브] 운영 상태") and its full-width slash.
+ */
+const DIMENSION_NAMES_V164: Readonly<Record<string, string>> = {
+  "수집 상태": "자료 상태",
+  // E-019: the values are 현지사무소 / 미설치 안내 / 설치여부 미확인.
+  "행 유형": "사무소 구분",
+  // E-018: the values say how the pin was placed (도로 중심선 기준점 / 행정구역 중심점).
+  "좌표 구분": "위치 표시 기준",
+  "좌표 소재 구분": "소재지 구분",
+  "기후·에너지 담당 판정": "기후·에너지 담당 여부",
+  "확인 상태 구분": "확인 상태",
+  "레코드 유형": "자료 유형",
+  "개체 구분(Basin／Country)": "개체 구분(유역·국가)",
+};
+
+export function publicDimensionNameV164(label: string): string {
+  const exact = DIMENSION_NAMES_V164[label.replace(/\s+/gu, " ").trim()];
+  if (exact) return exact;
+  return label.replace(/^\[\s*([^\]]+?)\s*\]\s*/u, "$1 ").replace(/／/gu, "/").trim() || label;
 }
 
 /**
@@ -532,7 +569,11 @@ export function publicDimensionValueV134(
   }
 
   // A stored value may still name a row rather than a thing ("원본 레코드 수").
-  return publicTextV126(value)?.replace(/레코드/gu, "자료") || "분류 미기재";
+  // V164: a classification value the delivery left in English ("Agriculture",
+  // "Needs & Gaps") reads in Korean when the whole value is a known one; names,
+  // sentences and unknown values are returned as delivered.
+  const text = publicTextV126(value)?.replace(/레코드/gu, "자료");
+  return (text ? koreanCategoryV164(text) : "") || "분류 미기재";
 }
 
 export function publicCopyOrEmptyV126(value: unknown): string {

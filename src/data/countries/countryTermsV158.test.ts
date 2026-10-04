@@ -249,5 +249,10 @@ describe("buildOtherCountryTermsV158: another country's institution names (V163-
     expect(terms.map((t) => t.term)).toEqual(["PDP8", "EVN"]);
     expect(findCountryTermsV158("개정 PDP8(768/QĐ-TTg)의 계획 용량", terms).map((t) => t.term)).toEqual(["PDP8"]);
     expect(findCountryTermsV158("Bangladesh Power Development Board", terms)).toEqual([]);
+    // V164-3: a Korean particle right after the term does not hide it.
+    expect(findCountryTermsV158("개정 PDP8의 전력 계획·전망", terms).map((t) => t.term)).toEqual(["PDP8"]);
+    expect(findCountryTermsV158("EVN과 협의", terms).map((t) => t.term)).toEqual(["EVN"]);
+    // A longer Latin word is still not the term.
+    expect(findCountryTermsV158("PDP80 plan, EVNX", terms)).toEqual([]);
   });
 });

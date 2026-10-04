@@ -50,6 +50,20 @@ export interface RegionScenarioContractV138 {
   scenarioNote?: string;
 }
 
+/**
+ * V164 R2: the name of one Aqueduct assessment zone (B-017). The zone is a
+ * HydroBASINS basin crossed with a province and an aquifer; the source has no
+ * name for it. It is named by the area the source measured, never by the basin
+ * and aquifer codes. A zone with no measured area (the source writes null or
+ * -9999 where the polygon is missing) is simply "평가구역".
+ */
+export function evaluationZoneNameV164(attributes: Record<string, unknown>): string {
+  const area = Number(attributes["Aqueduct_단위면적_km"]);
+  if (!Number.isFinite(area) || area <= 0) return "평가구역";
+  const text = area.toLocaleString("ko-KR", { maximumFractionDigits: area < 1 ? 3 : 1 });
+  return `평가구역 면적 ${text} km²`;
+}
+
 const MAP_TARGET_MEASURES = new Map<string, RegionScenarioMeasureV138[]>(
   publicMapTargetsContractV138.targets
     .filter((target) => Array.isArray((target.build as { measures?: unknown[] }).measures))
@@ -255,19 +269,11 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
     rowUnit: {
       label: "평가구역",
       idKeys: ["레코드_키_string_id"],
-      // string_id is `HydroBASINS pfaf_id - GADM GID_1 - aquifer aqid`; the
-      // source writes None / -9999 where a zone has no basin or aquifer part.
-      describe: (attributes) => {
-        const code = (key: string) => {
-          const value = String(attributes[key] ?? "").trim();
-          return value && value !== "-9999" && value !== "None" ? value : "";
-        };
-        const basin = code("HydroBASINS_lvl6_코드_pfaf_id");
-        const aquifer = code("대수층_코드_aqid");
-        return `${basin ? `유역 ${basin}` : "유역 구분 없음"} · ${
-          aquifer ? `대수층 ${aquifer}` : "대수층 없음"
-        }`;
-      },
+      // string_id is `HydroBASINS pfaf_id - GADM GID_1 - aquifer aqid`. V164 R2:
+      // the basin and aquifer codes are the source's own identifiers ("유역
+      // 441030 · 대수층 1882") and tell a reader nothing; the zone is told apart
+      // by the area the source measured for it, which is a figure, not a code.
+      describe: (attributes) => evaluationZoneNameV164(attributes),
     },
     periodLabel: "Aqueduct 4.0 기준선(2023년판)",
     constraints: [
@@ -298,7 +304,7 @@ const CONTRACTS: Record<string, RegionScenarioContractV138> = {
     measures: MAP_TARGET_MEASURES.get("B-037") || [],
     defaultMeasure: "경작지_면적_km",
     constraints: [
-      "같은 분류체계(ESA WorldCover 2021)의 배타적 항목이므로 합계_km 대비 구성비를 계산할 수 있습니다. 다른 연도·분류체계의 값과 직접 비교하지 않습니다.",
+      "같은 분류체계(ESA WorldCover 2021)의 배타적 항목이므로 전체 면적 합계 대비 구성비를 계산할 수 있습니다. 다른 연도·분류체계의 값과 직접 비교하지 않습니다.",
     ],
   },
   "B-039": {

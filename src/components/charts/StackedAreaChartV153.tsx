@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import type { KeyboardEvent, PointerEvent } from "react";
 import "../data/public/primary-energy-composition-v132.css";
-import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
+import { formatAxisTicksV164, isCountUnitV164, niceTicksV164, niceXTicksV164 } from "../../utils/axisTicksV164";
 
 /**
  * V153-D1: the stacked-area chart the A-016 screen drew (V132), shared so a
@@ -83,7 +83,7 @@ export function StackedAreaChartV153({
         )
       );
   // V164: the value axis ends on a round tick, so its guides are round numbers.
-  const absoluteTicksV164 = mode === "share" ? [] : niceTicksV164(0, rawStackMaximum, 4);
+  const absoluteTicksV164 = mode === "share" ? [] : niceTicksV164(0, rawStackMaximum, 4, isCountUnitV164(unit));
   const stackMaximum = mode === "share" ? 100 : absoluteTicksV164[absoluteTicksV164.length - 1] || rawStackMaximum;
   const absoluteTickLabelsV164 = formatAxisTicksV164(absoluteTicksV164);
   // The value labels set the left margin, so the rotated axis title never sits on them.
@@ -123,7 +123,8 @@ export function StackedAreaChartV153({
     paths.push({ series: item, path: `${upperPath} ${lowerPath} Z` });
     lowerByYear = upperByYear;
   });
-  const tickYears = adaptiveTicksV153(completeYears.map((item) => item.year), 7);
+  // V164: round, evenly spaced years (every 2nd, 5th, 10th …), as many as the plot has room for.
+  const tickYears = niceXTicksV164(completeYears.map((item) => item.year), Math.max(3, Math.floor(plotWidth / 70)), plotWidth);
   const yTicks = mode === "share"
     ? [0, 25, 50, 75, 100]
     : absoluteTicksV164;
@@ -295,12 +296,48 @@ export function StackedAreaChartV153({
   );
 }
 
-function adaptiveTicksV153(values: number[], maximum: number): number[] {
-  if (values.length <= maximum) return values;
-  const ticks = Array.from({ length: maximum }, (_, index) =>
-    values[Math.round((index * (values.length - 1)) / (maximum - 1))]
+/** V164: legends longer than this keep the first `LEGEND_FOLD_SHOWN_V164` entries and fold the rest. */
+export const LEGEND_FOLD_AFTER_V164 = 10;
+export const LEGEND_FOLD_SHOWN_V164 = 8;
+
+/** How many legend entries are visible: all of them, or the first few when the legend is long and folded. */
+export function legendVisibleCountV164(total: number, expanded: boolean): number {
+  if (expanded || total <= LEGEND_FOLD_AFTER_V164) return total;
+  return LEGEND_FOLD_SHOWN_V164;
+}
+
+/**
+ * V164: ties each colour and pattern of a stacked area to its series name. The
+ * chart paints series only as hatched areas, so without this a reader cannot
+ * tell which area is which gas, sector or technology. The legend lists the
+ * series bottom-up, the order they are stacked in.
+ */
+export function StackedAreaLegendV164({ series, testId = "stacked-area-legend-v164" }: { series: StackedAreaSeriesV153[]; testId?: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const shown = legendVisibleCountV164(series.length, expanded);
+  const foldable = series.length > LEGEND_FOLD_AFTER_V164;
+  return (
+    <div className="pec132__legend-static" data-testid={testId} data-legend-count={series.length}>
+      <ul aria-label="누적 면적 범례" className="pec132__legend pec132__legend--static">
+        {series.slice(0, shown).map((item) => (
+          <li key={item.key}>
+            <i aria-hidden="true" data-pattern={item.pattern} style={{ backgroundColor: item.color }} />
+            <span>{item.label}</span>
+          </li>
+        ))}
+      </ul>
+      {foldable ? (
+        <button
+          aria-expanded={expanded}
+          className="pec132__legend-more"
+          onClick={() => setExpanded((value) => !value)}
+          type="button"
+        >
+          {expanded ? "범례 접기" : `나머지 ${series.length - shown}개 보기`}
+        </button>
+      ) : null}
+    </div>
   );
-  return ticks.filter((value, index) => index === 0 || value !== ticks[index - 1]);
 }
 
 function patternMarksV153(pattern: StackedAreaSeriesV153["pattern"], index: number) {

@@ -3,6 +3,7 @@ import type { DatasetSpecRowV159, UseCaseDataRefV159, UseCaseV159 } from "../../
 import { PublicTermExpandedTextV134, PublicTermTextV134 } from "../../help/PublicTermV134";
 import { publicTextV126, publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import "./data-description-v159.css";
+import { publicDeliveryWordingV164 } from "../../../data/visualization/publicDeliveryWordingV164";
 
 /**
  * True when a spec field has nothing left to show once the same filtering
@@ -87,14 +88,14 @@ function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onTog
       data-verified={caseItem.verified}
     >
       <h4 className="dd159-case-heading">
-        <PublicTermTextV134 text={caseItem.purpose} />
+        <PublicTermTextV134 text={publicDeliveryWordingV164(caseItem.purpose)} />
         <small className="dd159-case-en">{caseItem.purposeEn}</small>
         {caseItem.verified === "pending" && <span className="dd159-badge-pending">검증 대기</span>}
       </h4>
       <div className="dd159-case-body">
         <p className="dd159-case-field">
           <span className="dd159-case-field-label">논리 구조</span>
-          <PublicTermTextV134 text={caseItem.logic} />
+          <PublicTermTextV134 text={publicDeliveryWordingV164(caseItem.logic)} />
         </p>
         <div className="dd159-case-field">
           <span className="dd159-case-field-label">쓰는 데이터</span>
@@ -116,7 +117,7 @@ function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onTog
           </ul>
         </div>
         <blockquote className="dd159-storyline">
-          <PublicTermTextV134 text={caseItem.storyline} />
+          <PublicTermTextV134 text={publicDeliveryWordingV164(caseItem.storyline)} />
         </blockquote>
         <div className="dd159-case-field">
           <span className="dd159-case-field-label">주 사용자</span>
@@ -133,7 +134,7 @@ function UseCaseCardV159({ caseItem, availableIndicatorIds, activeChipKey, onTog
         {caseItem.cautionDisplay ? (
           <p className="dd159-case-field dd159-caution">
             <span className="dd159-case-field-label">유의점</span>
-            <PublicTermTextV134 text={caseItem.cautionDisplay} />
+            <PublicTermTextV134 text={publicDeliveryWordingV164(caseItem.cautionDisplay)} />
           </p>
         ) : null}
       </div>
@@ -181,7 +182,7 @@ export default function DataDescriptionV159({
         <div className="dd159-part" data-dd159-part="description">
           <h3>상세 설명</h3>
           <p>
-            <PublicTermTextV134 text={spec.description} />
+            <PublicTermTextV134 text={publicDeliveryWordingV164(spec.description)} />
           </p>
         </div>
       )}
@@ -189,7 +190,7 @@ export default function DataDescriptionV159({
         <div className="dd159-part" data-dd159-part="usage">
           <h3>활용 방법</h3>
           <p>
-            <PublicTermTextV134 text={spec.usage} />
+            <PublicTermTextV134 text={publicDeliveryWordingV164(spec.usage)} />
           </p>
         </div>
       )}

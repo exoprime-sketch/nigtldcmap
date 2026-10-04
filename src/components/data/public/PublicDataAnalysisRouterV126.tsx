@@ -86,7 +86,7 @@ import { variantForCountryV158 } from "../templates/variantCountryScopeV158";
 import { headingsForCountryV158 } from "../../../data/countries/countryCopyV158";
 import { GENERIC_BODY_VARIANTS_V159 } from "../templates/templateVariantsV159";
 import type { TemplateVariantKeyV159 } from "../templates/templateVariantsV159";
-import { technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
+import { populatedIndicatorIdsV164, technologyOptionsForIndicatorsV159 } from "../templates/TechFilterV159";
 import type { TemplateContextV159 } from "../templates/TemplateShellV159";
 import StatusNoticeV159 from "../templates/StatusNoticeV159";
 import { KoreaTechLevelV159, KoreaTechReadinessV159 } from "./KoreaReferenceAnalysisV159";
@@ -195,9 +195,15 @@ export default function PublicDataAnalysisRouterV126({
     () => new Set([...allObservations.map((row) => row.indicatorId), ...allEntities.map((row) => row.indicatorId || "")]),
     [allEntities, allObservations]
   );
+  // V164-3: a technology chip is offered only when its indicator has a value
+  // to show - a chip whose rows are all empty opened an empty screen.
+  const populatedIndicatorIds = useMemo(
+    () => populatedIndicatorIdsV164(allObservations, allEntities),
+    [allEntities, allObservations]
+  );
   const techOptions = useMemo(
-    () => technologyOptionsForIndicatorsV159(indicators, presentIndicatorIds),
-    [indicators, presentIndicatorIds]
+    () => technologyOptionsForIndicatorsV159(indicators, populatedIndicatorIds),
+    [indicators, populatedIndicatorIds]
   );
   const [selectedTech, setSelectedTech] = useState("all");
   const foldV160 = useDetailFoldV160();
@@ -709,7 +715,13 @@ export default function PublicDataAnalysisRouterV126({
     case "U2": {
       const archetype = visualizationContractV153(elementId)?.archetype;
       const nationalOnly = typology.structure === "S2" && (archetype === "national-series" || archetype === "composition");
-      return <U2RegionalV159 context={templateContext} nationalOnly={nationalOnly}>{content}</U2RegionalV159>;
+      // V164-3: with a map beside it the national chart is not the whole page -
+      // the map draws the region values, so the notice says where they are.
+      return (
+        <U2RegionalV159 context={templateContext} nationalOnly={nationalOnly} hasRegionMap={Boolean(mapSlot)}>
+          {content}
+        </U2RegionalV159>
+      );
     }
     case "U3":
       return <U3TechnologyV159 context={templateContext}>{content}</U3TechnologyV159>;

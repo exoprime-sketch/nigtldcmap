@@ -44,7 +44,8 @@ export interface MiniMapV152Props {
   /** Detail selection dimensions (field -> value); point filters read them like the static map. */
   dimensions: Record<string, string>;
   /** Data the static map already loaded; the engine reuses it. */
-  data: { spatial?: SpatialRuntimeAsset; records?: CountryEntityV122[] };
+  /** `facilityRecords` (V164-3): the records behind sites drawn from a spatial asset, for the facility card only. */
+  data: { spatial?: SpatialRuntimeAsset; records?: CountryEntityV122[]; facilityRecords?: CountryEntityV122[] };
   /** Accessible name of the interactive map. */
   label: string;
   onSelectFeature?: (id: string | null) => void;

@@ -12,6 +12,7 @@ import {
   level1NamesByKeyV163,
   projectionCenterLatV163,
   regionLabelV163,
+  staticRowKeyV164,
   staticUnitKeyV163,
 } from "./miniMapCountryV163";
 
@@ -41,6 +42,24 @@ describe("miniMapCountryV163 - which country, which key", () => {
     expect(staticUnitKeyV163({ adm1Code: "A" }, "divisionKey", "BGD")).toBe("A");
     expect(staticUnitKeyV163(bgd, undefined, "BGD")).toBe("");
     expect(staticUnitKeyV163(null, "divisionKey", "BGD")).toBe("");
+  });
+
+  it("V164-R3: joins Viet Nam's 34-unit layer (adm1Code34) on the boundary's unitCode, never on an empty key", () => {
+    const unit34 = { unitCode: "VN34-22", name: "Nghệ An" };
+    expect(staticUnitKeyV163(unit34, "adm1Code34", "VNM")).toBe("VN34-22");
+    expect(staticUnitKeyV163({ adm1Code34: "VN34-44" }, "adm1Code34", "VNM")).toBe("VN34-44");
+    // the 63-province join is untouched, and a layer without the 34 key does not read unitCode
+    expect(staticUnitKeyV163({ adm1Code: "VN-22", unitCode: "VN34-22" }, "adm1Code34", "VNM")).toBe("VN-22");
+    expect(staticUnitKeyV163(unit34, undefined, "VNM")).toBe("");
+    expect(staticUnitKeyV163(unit34, "adm1Code", "VNM")).toBe("");
+  });
+
+  it("V164-R3: a value row is keyed by adm1Code or the layer's own join column", () => {
+    expect(staticRowKeyV164({ adm1Code34: "VN34-22", value: 3 }, "adm1Code34")).toBe("VN34-22");
+    expect(staticRowKeyV164({ adm1Code: "VN-22" }, undefined)).toBe("VN-22");
+    expect(staticRowKeyV164({ adm1Code: "BGD.1_1" }, "divisionKey")).toBe("BGD.1_1");
+    expect(staticRowKeyV164({ divisionKey: "BGD.2_1" }, "divisionKey")).toBe("BGD.2_1");
+    expect(staticRowKeyV164(null, "adm1Code34")).toBe("");
   });
 
   it("recognises boundary keys, not names", () => {

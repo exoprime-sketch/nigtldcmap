@@ -1,4 +1,5 @@
 import { publicProcessWordingV162 } from "./processWordingV162";
+import { publicMarksV164, publicWorkMemoV164 } from "./publicWorkMemoV164";
 import { publicDownloadTextV163 } from "./publicDownloadNoteV163";
 import type { CountryCatalogItemV122 } from "../countries/countryDataTypesV122";
 import type {
@@ -799,7 +800,7 @@ const LEADING_ROW_IDENTIFIER_V137 =
 
 function normalizeTextV126(value: unknown): string | null {
   if (typeof value !== "string") return null;
-  const normalized = value
+  const chained = value
     .replace(LEADING_ROW_IDENTIFIER_V137, "")
     .replace(TRAILING_SERIES_ID_V137, "")
     .replace(UNMATCHED_CLOSING_BRACKET_V137, "$1 ")
@@ -858,6 +859,9 @@ function normalizeTextV126(value: unknown): string | null {
     .replace(/^\s*(?![-−]\s*[\d.])[·|—–-]+\s*/u, "")
     .replace(/\s*[·|—–-]+\s*$/u, "")
     .trim();
+  // V164-3: the delivery's working memos (구서식 이관, raw 대조, 확인 필요,
+  // HTTP 403 …) are cut here, so every public text policy shares the cut.
+  const normalized = publicMarksV164(publicWorkMemoV164(chained));
   if (!normalized) return null;
   if (
     PUBLIC_DOM_FORBIDDEN_VALUE_PATTERNS_V126.some((pattern) =>

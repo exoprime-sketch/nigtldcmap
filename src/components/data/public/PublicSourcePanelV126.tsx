@@ -17,6 +17,8 @@ import PublicDataLimitationsV126 from "./PublicDataLimitationsV126";
 import { useEffect, useState } from "react";
 import { loadCardSummariesV140 } from "../../../data/cardSummariesV140";
 import { periodStatementV162 } from "../../../data/visualization/periodStatementV162";
+import { dataPeriodSpanV164, periodSpanLineTextV164 } from "../../../data/visualization/dataPeriodV164";
+import { publicUnitsV164 } from "../../../data/visualization/sourceUnitsV164";
 import { useDataCountryV158 } from "../../../data/countries/DataCountryContextV158";
 
 interface Props {
@@ -49,14 +51,18 @@ export default function PublicSourcePanelV126({
   pending = false,
 }: Props) {
   const [provider, setProvider] = useState<string>("");
+  const [cardPeriod, setCardPeriod] = useState<string>("");
   const dataCountryV158 = useDataCountryV158();
   useEffect(() => {
     let cancelled = false;
     setProvider("");
+    setCardPeriod("");
     if (!elementId) return undefined;
     loadCardSummariesV140(dataCountryV158)
       .then((cards) => {
-        if (!cancelled) setProvider(cards.get(elementId)?.provider || "");
+        if (cancelled) return;
+        setProvider(cards.get(elementId)?.provider || "");
+        setCardPeriod(cards.get(elementId)?.period || "");
       })
       .catch(() => undefined);
     return () => {
@@ -121,12 +127,21 @@ export default function PublicSourcePanelV126({
     populatedYears.length > 0
       ? populatedYears
       : uniquePublicValuesV126(indicators.map((item) => item.referenceYear));
+  // V164-3: the span the loaded records state - observation years, then the
+  // entity rows' own year columns, then the indicators' time range - so the
+  // line and the 데이터 설명 자료기간 tile read one period (the tile used the
+  // card's, which also counted the collection year of a list).
+  const dataSpan = dataPeriodSpanV164({ observations, entities, indicators });
   // V161: "해당없음" is the delivery's way of saying there is no unit - left
   // out like any unstated value, not printed as a unit.
-  const units = uniquePublicValuesV126([
-    ...indicators.map((item) => item.unit),
-    ...observations.map((item) => item.unit),
-  ]).filter((unit) => !/^해당\s*없음$/u.test(unit));
+  // V164-3: a note filed in the unit column ("속성별 —3행 머리글 괄호 표기 참조")
+  // is not a unit; only the units a reader can use are printed.
+  const units = publicUnitsV164(
+    uniquePublicValuesV126([
+      ...indicators.map((item) => item.unit),
+      ...observations.map((item) => item.unit),
+    ]).filter((unit) => !/^해당\s*없음$/u.test(unit))
+  );
   const licenses = uniquePublicValuesV126([
     // V161: a licence line can end with a working note ("다운로드 제공 대상은 …
     // 용역사가 재편집한 표준서식 자료임.") - judged like every source display.
@@ -150,7 +165,15 @@ export default function PublicSourcePanelV126({
   // on that date - instead of the years the rows happen to carry.
   const statement = periodStatementV162(elementId, dataCountryV158);
   const periodLabel = statement ? statement.label : "자료기간";
-  const period = pending ? "" : statement ? statement.text : summarizeYearsV126(years);
+  // V164-3: a climate normal / long-term mean ("1999–2018 장기평균(LTA)") is
+  // the card's own wording of the period; the years of the one map or table
+  // the rows hold would contradict the description beside it.
+  const normalPeriod = /평년|장기\s*평균/u.test(cardPeriod) ? publicTextV126(cardPeriod) || "" : "";
+  const period = pending
+    ? ""
+    : statement
+      ? statement.text
+      : normalPeriod || (dataSpan ? periodSpanLineTextV164(dataSpan) : summarizeYearsV126(years));
   const sourceLine = (
     pending
       ? [pendingProvider && `출처 ${pendingProvider}`, unitText && `단위 ${unitText}`]

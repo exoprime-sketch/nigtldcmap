@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
-import { STACKED_AREA_PATTERNS_V153, StackedAreaChartV153 } from "../../charts/StackedAreaChartV153";
+import { STACKED_AREA_PATTERNS_V153, StackedAreaChartV153, StackedAreaLegendV164 } from "../../charts/StackedAreaChartV153";
 import type { StackedAreaSeriesV153, StackedAreaYearV153 } from "../../charts/StackedAreaChartV153";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./composition-stack-v153.css";
@@ -35,6 +35,18 @@ interface Props {
   headingClassName: string;
   /** V164: totals and subtotals left out of the stack because their parts are stacked. */
   overlapExcluded?: string[];
+}
+
+/** V164: the particle a word takes - "가스는 · 가스와", "부문은 · 부문과" - not "은(는) · 와(과)". */
+export function topicParticleV164(word: string): "은" | "는" {
+  const last = word.trim().slice(-1);
+  const code = last.charCodeAt(0);
+  if (code >= 0xac00 && code <= 0xd7a3) return (code - 0xac00) % 28 === 0 ? "는" : "은";
+  return /[aeiouy]$/iu.test(last) ? "는" : "은";
+}
+
+export function withParticleV164(word: string): "와" | "과" {
+  return topicParticleV164(word) === "는" ? "와" : "과";
 }
 
 const STACK_COLORS_V153 = ["#176b57", "#d97706", "#2563a6", "#a23e63", "#6d5aa8", "#4f7d20", "#b45309", "#0f766e", "#68737d"];
@@ -129,14 +141,15 @@ export default function CompositionStackV153({
         totalLineTestId={`${elementId.toLowerCase()}-stack-total-line-v153`}
         tooltipTestId={`${elementId.toLowerCase()}-stack-tooltip-v153`}
       />
+      <StackedAreaLegendV164 series={model.stackable} testId={`${elementId.toLowerCase()}-stack-legend-v164`} />
       {overlapExcluded.length > 0 && (
         <p className="cs153__excluded" role="note" data-testid="composition-stack-overlap-v164">
-          누적에서 제외: <PublicTermTextV134 text={overlapExcluded.join(" · ")} /> — 합계·소계 {subject}은(는) 구성 {subject}과 겹치므로 면적으로 쌓지 않습니다.
+          누적에서 제외: <PublicTermTextV134 text={overlapExcluded.join(" · ")} /> — 합계·소계 {subject}{topicParticleV164(subject)} 구성 {subject}{withParticleV164(subject)} 겹치므로 면적으로 쌓지 않습니다.
         </p>
       )}
       {model.excluded.length > 0 && (
         <p className="cs153__excluded" role="note" data-testid="composition-stack-excluded-v153">
-          누적에서 제외: <PublicTermTextV134 text={model.excluded.join(" · ")} /> — 음수(흡수) 값을 포함하는 {subject}은(는) 면적으로 쌓지 않고 아래 계열별 변화에서 확인합니다.
+          누적에서 제외: <PublicTermTextV134 text={model.excluded.join(" · ")} /> — 음수(흡수) 값을 포함하는 {subject}{topicParticleV164(subject)} 면적으로 쌓지 않고 아래 계열별 변화에서 확인합니다.
         </p>
       )}
     </section>

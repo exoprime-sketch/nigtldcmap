@@ -5,6 +5,7 @@ import { publicGasTextV163 } from "../../../data/visualization/seriesLabelV163";
 import type { CountryCompareSeriesV158 } from "./CountryCompareBlockV158";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
 import { isLiveCountryV158 } from "../../../data/countryContext";
+import { observationYearTextV164 } from "../../../data/visualization/barRowsV164";
 
 /** One country's slice of a comparable element, as the builder writes it. */
 interface CountryCompareEntryV158 {
@@ -103,10 +104,22 @@ export function publicCompareTitleV164(title: string, countryNames: string[]): s
   for (const name of countryNames.filter(Boolean)) {
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
     text = text
+      // "한-방글라데시 교역" is Korea's trade with that one country; the block draws both partners.
+      .replace(new RegExp(`한-${escaped}\\s*교역`, "u"), "한국과의 교역")
       .replace(new RegExp(`\\s·\\s${escaped}(?=\\s—|\\s·|$)`, "u"), "")
       .replace(new RegExp(`대${escaped}\\s*`, "u"), "");
   }
   return text.replace(/\s{2,}/gu, " ").trim();
+}
+
+/**
+ * V164: how a compared bar's time reads. A climatology (B-001's "연 평년강수
+ * (1991-2020 평년)") is delivered with the first year of its span as the point's
+ * year, so the caption "1991년" dated a 30-year normal to one year; its label
+ * names the span. Any other series keeps "YYYY년".
+ */
+export function comparePeriodTextV164(labelKo: string | null | undefined, year: number): string {
+  return observationYearTextV164({ year, semanticMeasure: { labelKo } });
 }
 
 export default function DetailCountryCompareV158({
@@ -151,7 +164,7 @@ export default function DetailCountryCompareV158({
       publicGasTextV163(liveEntries[0]?.labelKo || ""),
       liveEntries.map((entry) => entry.countryNameKo)
     ) || "국가 비교";
-    return { compareKey: element.compareKey, series, title };
+    return { compareKey: element.compareKey, series, title, labelKo: liveEntries[0]?.labelKo || "" };
   }, [doc, elementId, countryIso3]);
 
   if (!model) return null;
@@ -161,6 +174,7 @@ export default function DetailCountryCompareV158({
       title={model.title}
       compareKey={model.compareKey}
       series={model.series}
+      periodText={(year) => comparePeriodTextV164(model.labelKo, year)}
     />
   );
 }

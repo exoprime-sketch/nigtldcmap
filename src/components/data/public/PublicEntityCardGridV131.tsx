@@ -58,8 +58,13 @@ const CARD_FACT_KEYS_V131: Record<
     },
     {
       label: "규모",
-      keys: ["budgetScale", "approvedAmount", "primaryFinanceAmount", "commitmentAmount"],
+      keys: ["budgetScale", "approvedAmount", "primaryFinanceAmount"],
     },
+    // V164 R2: D-014~D-016 state each project once per reporting period with the
+    // commitment made in that period (a later year of a loan committed in 2011
+    // states 0) - not the project's size. Labelled "규모" it read as a 0 USD
+    // project that had 3.8 million disbursed.
+    { label: "약정액(보고기간)", keys: ["commitmentAmount"] },
     { label: "집행액", keys: ["disbursedAmount"] },
     { label: "지원 한도", keys: ["supportLimit"] },
     { label: "지원 대상", keys: ["eligibleRecipients", "targetGroup"] },
@@ -115,9 +120,57 @@ const CARD_FACT_KEYS_V131: Record<
     { label: "발행량(tCO2e)", keys: ["issuedVolume"] },
     { label: "지역", keys: ["city", "regionName"] },
     { label: "기준연도", keys: ["referenceYear", "vintageYear", "year"] },
+    // V164 R2: B-035 / B-036 rows state areas and rates, never a name.
+    { label: "토지피복 면적(km²)", keys: ["landCoverArea"], maxLength: 160 },
+    { label: "연평균 변화율(%/yr)", keys: ["landCoverTrend"], maxLength: 160 },
     { label: "설명", keys: ["recordDescription"], maxLength: 120 },
   ],
 };
+
+/** B-035 / B-036: the land-cover classes a row states, in the source's own column names. */
+const LAND_COVER_CLASSES_V164: ReadonlyArray<readonly [string, string]> = [
+  ["산림", "산림"],
+  ["농경지", "농경지"],
+  ["초지_관목", "초지·관목"],
+  ["습지", "습지"],
+  ["도시", "도시"],
+  ["나지", "나지"],
+  ["수체", "수체"],
+  ["빙설", "빙설"],
+];
+
+function landCoverNumberV164(value: unknown, signed: boolean): string | null {
+  if (typeof value !== "number" || !Number.isFinite(value)) return null;
+  const text = value.toLocaleString("ko-KR", { maximumFractionDigits: 2 });
+  return signed && value > 0 ? `+${text}` : text;
+}
+
+/**
+ * V164 R2: B-035 (land cover by province and year) and B-036 (its 1992-2022
+ * change) deliver one row per province and year with the areas and rates in
+ * columns of their own, and the card showed only "An Giang · 2022년". The row's
+ * own figures are its facts: each class with the area (km²) or the yearly rate
+ * (%/yr) the row states. A class the row leaves empty (a rate the source could
+ * not compute) is not listed, and nothing is computed here.
+ */
+export function landCoverFactsV164(entity: VietnamEntityV124): Record<string, string> {
+  const attributes = (entity.normalizedAttributes || {}) as Record<string, unknown>;
+  if (entity.elementId === "B-035") {
+    const parts = LAND_COVER_CLASSES_V164.flatMap(([key, label]) => {
+      const text = landCoverNumberV164(attributes[`${key}_면적_km`], false);
+      return text ? [`${label} ${text}`] : [];
+    });
+    return parts.length ? { landCoverArea: parts.join(" · ") } : {};
+  }
+  if (entity.elementId === "B-036") {
+    const parts = LAND_COVER_CLASSES_V164.flatMap(([key, label]) => {
+      const text = landCoverNumberV164(attributes[`${key}_CAGR_yr`], true);
+      return text ? [`${label} ${text}`] : [];
+    });
+    return parts.length ? { landCoverTrend: parts.join(" · ") } : {};
+  }
+  return {};
+}
 
 const CARD_BADGE_KEYS_V131: Record<PublicEntityCardTemplateV131, string[]> = {
   portfolio: ["status", "entryMode", "supportType", "fund"],
@@ -212,6 +265,7 @@ export default function PublicEntityCardGridV131({
                 : titleResults[index]
             }
             titleSuffix={titleSuffixes[index]}
+            regionTitled={regionTitledV164(titleResults[index].secondaryNote)}
           />
         ))}
       </div>
@@ -231,6 +285,11 @@ export default function PublicEntityCardGridV131({
   );
 }
 
+/** True for a card the source names by its region ("원천이 개별 명칭 대신 지역·연도로 행을 구분합니다."). */
+export function regionTitledV164(secondaryNote: string | null | undefined): boolean {
+  return /^원천이 개별 명칭 대신 지역/u.test(String(secondaryNote || ""));
+}
+
 function PublicEntityCardV131({
   entity,
   template,
@@ -238,6 +297,7 @@ function PublicEntityCardV131({
   elementTitle,
   titleResult,
   titleSuffix,
+  regionTitled,
 }: {
   entity: VietnamEntityV124;
   template: PublicEntityCardTemplateV131;
@@ -245,19 +305,33 @@ function PublicEntityCardV131({
   elementTitle?: string;
   titleResult: ReturnType<typeof resolvePublicEntityTitleV131>;
   titleSuffix: string | null;
+  regionTitled: boolean;
 }) {
+  const regionText = useRegionTextV162(entity.elementId);
   const approved = approvedCardAttributesV131(entity, template, detailTemplate);
-  const title =
+  const composedTitle =
     compactTextV131(
       titleSuffix ? `${titleResult.title} · ${titleSuffix}` : titleResult.title,
       220
     ) || "공개 데이터 항목";
+  // V164: a basin's title is its id; the kind and the area inside the country are
+  // a badge and a fact instead of the tail of a title the card clipped.
+  const basin = basinCardV164(entity, composedTitle);
+  // V164 R2: a card titled by its region ("Mymensingh · 1901-1930") names the
+  // place as the platform does everywhere else, "한글명 (현지명)".
+  const title = basin ? basin.title : regionTitled ? regionText(composedTitle) : composedTitle;
   const secondaryNote = compactTextV131(titleResult.secondaryNote, 112);
-  const badges = badgeValuesV131(entity, approved, template, title);
+  const badges = basin?.badge
+    ? [basin.badge, ...badgeValuesV131(entity, approved, template, title)].slice(0, 3)
+    : badgeValuesV131(entity, approved, template, title);
   // The official name and the numbers identify the record; they follow the
   // reviewed facts rather than standing in for the project's name.
+  // The area fact above is the row's stated value and unit, so those two are not repeated.
   const facts = [
-    ...factValuesV131(approved, template, title),
+    ...(basin?.fact ? [basin.fact] : []),
+    ...factValuesV131(approved, template, title).filter(
+      (fact) => !(basin?.fact && (fact.label === "값" || fact.label === "단위"))
+    ),
     ...(titleResult.identifierFacts || []),
   ];
   const sourceUrl = publicEntityUrlV131(entity, approved);
@@ -381,7 +455,7 @@ function titleDisambiguationSuffixesV137(
     let best: { key: string; values: string[]; distinct: number } | null = null;
     for (const key of keys) {
       const values = indexes.map((index) =>
-        compactTextV131(approved[index][key], 42)
+        titleSuffixCandidateV164(approved[index], key, titles[index])
       );
       if (values.some((value) => !value)) continue;
       const distinct = new Set(values).size;
@@ -410,8 +484,8 @@ function titleDisambiguationSuffixesV137(
       const systems = indexes.map((index) => regionSystemOfV162(entities[index]));
       const bySystem = new Set(systems).size > 1 && systems.every((system) => system === "adm1" || system === "adm1-prev");
       let stated: { values: string[]; distinct: number } | null = null;
-      for (const [key, label] of STATED_DISAMBIGUATION_KEYS_V162) {
-        const values = indexes.map((index) => compactTextV131(entities[index].normalizedAttributes?.[key], 42));
+      for (const [key, label, unit] of STATED_DISAMBIGUATION_KEYS_V162) {
+        const values = indexes.map((index) => statedTitleValueV164(entities[index].normalizedAttributes?.[key], unit));
         if (values.some((value) => !value)) continue;
         const distinct = new Set(values).size;
         if (distinct < 2) continue;
@@ -437,8 +511,82 @@ function titleDisambiguationSuffixesV137(
   return suffixes;
 }
 
-/** Columns the 2026-09-30 delivery states that separate same-named rows, with their label. */
-const STATED_DISAMBIGUATION_KEYS_V162: ReadonlyArray<[string, string]> = [
+/** Columns that hold a basin's area inside the country (the first delivery named it after Viet Nam). */
+const BASIN_AREA_KEYS_V164 = ["자국_내_면적_km_GIS_산출", "베트남_내_면적_km_GIS_산출"];
+
+/**
+ * B-025's basin card (V164).
+ *
+ * The title resolver composes "HydroBASINS 유역 4080024890 · 국제 공유 · 자국 내
+ * 7.1 km²" for a basin the source gives no name. In a four-column grid that is
+ * four lines under a two-line clamp, so the card read "HydroBASINS 유역 4080024890
+ * · …" with the area cut off. The id stays the title; the kind (국제 공유 / 국내 완결)
+ * becomes a badge and the area a fact. The figures are the row's own - nothing is
+ * computed, and a basin with no area column simply has no area fact.
+ */
+export function basinCardV164(
+  entity: VietnamEntityV124,
+  title: string
+): { title: string; badge: string | null; fact: PublicCardFactV131 | null } | null {
+  if (entity.elementId !== "B-025") return null;
+  const match = /^(HydroBASINS 유역 \S+) · /u.exec(title);
+  if (!match) return null;
+  const attributes = entity.normalizedAttributes || {};
+  const area = BASIN_AREA_KEYS_V164.map((key) => attributes[key]).find(
+    (value): value is number => typeof value === "number" && Number.isFinite(value)
+  );
+  return {
+    title: match[1],
+    badge: compactTextV131(attributes["유역_구분_국내_완결_국제_공유"], 24),
+    fact:
+      area === undefined
+        ? null
+        : { label: "자국 내 면적(GIS 산출)", value: `${area.toLocaleString("ko-KR", { maximumFractionDigits: 1 })} km²` },
+  };
+}
+
+/**
+ * What an approved attribute adds to a repeated title (V164).
+ *
+ * - The measure's name ("브라마푸트라(자무나)강(Bahadurabad) 건기·우기 유량비 - 2001년",
+ *   B-023) is 50+ characters: cut at 42 it was the same on every row, so BGD's
+ *   gauging cards fell through to the bare stated value ("Bahadurabad · 12883.454").
+ *   It is read up to 90 characters, without the site name the title already says.
+ * - A stated value that does separate the cards is written as it is in the facts:
+ *   digits grouped and the unit after it (m3/s and 비(倍) are different things).
+ */
+function titleSuffixCandidateV164(
+  attributes: Record<string, PublicAttributeValueV126>,
+  key: string,
+  title: string
+): string | null {
+  const text = compactTextV131(attributes[key], key === "measureName" ? 90 : 42);
+  if (!text) return null;
+  if (key === "statedValue" || key === "nationalMeasureValue") {
+    const unit = compactTextV131(attributes.statedUnit ?? attributes.nationalMeasureUnit, 24);
+    const grouped = groupedNumberV140(text);
+    return unit ? `${grouped} ${unit}` : grouped;
+  }
+  if (key === "measureName" && title) {
+    const escaped = title.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    const without = text.replace(new RegExp(`\\s*[(（]\\s*${escaped}\\s*[)）]`, "iu"), "").replace(/\s{2,}/gu, " ").trim();
+    return without || text;
+  }
+  return text;
+}
+
+/**
+ * Columns the 2026-09-30 delivery states that separate same-named rows, with
+ * their label and, for a bare number, the unit its column is stated in.
+ *
+ * V164 R2: a card title never carries a bare number ("약정액(USD) 89540.384",
+ * "금액 35710000"): a number is read grouped with its unit, and a column whose
+ * unit differs per element (대표금액: D-026 states it in USD millions) is not
+ * used - the records stay under one name and their own facts tell them apart.
+ * 총 투자액 and 용량 are written with their unit by the source ("18.5 백만 USD",
+ * "66 MW").
+ */
+const STATED_DISAMBIGUATION_KEYS_V162: ReadonlyArray<readonly [string, string, string?]> = [
   ["회계연도", "회계연도"],
   ["보고연도", "보고연도"],
   ["기준연도", "기준연도"],
@@ -448,9 +596,25 @@ const STATED_DISAMBIGUATION_KEYS_V162: ReadonlyArray<[string, string]> = [
   ["발행기록_연도_년", "발행"],
   ["기간", ""],
   ["기간_시작_종료", ""],
-  ["약정액_USD", "약정액(USD)"],
-  ["대표금액", "금액"],
+  ["약정액_USD", "약정액", "USD"],
+  ["총_투자액", "총 투자액"],
+  ["용량", "용량"],
 ];
+
+/** A stated value for a title: a bare number is grouped and followed by its unit, or left out. */
+export function statedTitleValueV164(value: unknown, unit?: string): string | null {
+  const text = compactTextV131(value, 42);
+  if (!text) return null;
+  if (!/^-?\d+(?:\.\d+)?$/u.test(text)) return text;
+  // A year is a number a reader reads without a unit.
+  if (/^(?:19|20)\d{2}$/u.test(text)) return text;
+  if (!unit) return null;
+  const number = Number(text);
+  const readable = Number.isFinite(number)
+    ? number.toLocaleString("ko-KR", { maximumFractionDigits: Math.abs(number) >= 100 ? 0 : 2 })
+    : text;
+  return `${readable} ${unit}`;
+}
 
 function disambiguatedCardTitleV131(
   entity: VietnamEntityV124,
@@ -560,6 +724,7 @@ function approvedCardAttributesV131(
 function reviewedElementCardAttributesV131(
   entity: VietnamEntityV124
 ): Record<string, PublicAttributeValueV126> {
+  if (entity.elementId === "B-035" || entity.elementId === "B-036") return landCoverFactsV164(entity);
   const aliases = PUBLIC_CARD_ELEMENT_ATTRIBUTE_ALIASES_V131[entity.elementId];
   if (!aliases) return {};
   const entries: Array<[string, PublicAttributeValueV126]> = [];

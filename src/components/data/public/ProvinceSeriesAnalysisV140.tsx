@@ -181,6 +181,9 @@ export default function ProvinceSeriesAnalysisV140({
         .sort((a, b) => b.row.value - a.row.value),
     [regions, time, valueAt]
   );
+  // V164: a province with no value at this time is not in the ranking; the list
+  // says how many were left out instead of counting 62 of 63 without a word.
+  const missingRegionsV164 = regions.filter((name) => !comparison.some((entry) => entry.region === name));
   const values = comparison.map((entry) => entry.row.value);
   const median = medianV146(values);
   const total = SUM_ALLOWED.has(elementId) && values.length ? values.reduce((sum, value) => sum + value, 0) : null;
@@ -220,14 +223,24 @@ export default function ProvinceSeriesAnalysisV140({
   const rankFold = useRankFoldV160(comparison.length, `${measure?.key}|${time}`);
   // One line above the list saying what it shows - the fold's own numbers,
   // so the sentence and the rows on screen always agree.
-  const rankNoticeV160 = (withSelection: boolean) =>
-    rankFold.foldable ? (
-      <p className="psa140__notice" data-testid="psa140-rank-notice-v160">
-        {rankFold.expanded
-          ? `${isYearTime(time) ? `${time}년` : time} 기준 전체 ${comparison.length}개 성·시입니다.`
-          : `${isYearTime(time) ? `${time}년` : time} 기준 상위·하위 ${rankFold.edge}개 성·시${withSelection ? "와 선택 지역" : ""}입니다. 전체는 '전체 ${comparison.length}개 보기'에서 확인할 수 있습니다.`}
-      </p>
-    ) : null;
+  const rankNoticeV160 = (withSelection: boolean) => (
+    <>
+      {rankFold.foldable ? (
+        <p className="psa140__notice" data-testid="psa140-rank-notice-v160">
+          {rankFold.expanded
+            ? `${isYearTime(time) ? `${time}년` : time} 기준 전체 ${comparison.length}개 성·시입니다.`
+            : `${isYearTime(time) ? `${time}년` : time} 기준 상위·하위 ${rankFold.edge}개 성·시${withSelection ? "와 선택 지역" : ""}입니다. 전체는 '전체 ${comparison.length}개 보기'에서 확인할 수 있습니다.`}
+        </p>
+      ) : null}
+      {missingRegionsV164.length > 0 ? (
+        <p className="psa140__notice" data-testid="psa140-missing-regions-v164">
+          {`이 시점에 값이 없는 성·시 ${missingRegionsV164.length}곳은 순위에서 제외했습니다${
+            missingRegionsV164.length <= 3 ? `(${missingRegionsV164.map((name) => regionText(name)).join(", ")})` : ""
+          }.`}
+        </p>
+      ) : null}
+    </>
+  );
 
   if (!measure) {
     return <div className="pav126-empty" role="status">이 자료에는 수치 값이 없습니다.</div>;

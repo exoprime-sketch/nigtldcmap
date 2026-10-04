@@ -2,6 +2,12 @@ import { useMemo } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
 import { isNumericCodeListV136_2 } from "../../../data/visualization/publicCategoryLabelV136_2";
+import {
+  categoryVariantKeyV164,
+  investmentRoundLabelV164,
+  koreanCategoryV164,
+  nationalityLabelV164,
+} from "../../../data/visualization/publicCategoryLabelV164";
 import { publicCategoryRowsV136_3 } from "../../../utils/publicCategoryGroupingV136_3";
 import { reviewedEntityAttributesV132 } from "../../../data/visualization/publicEntityFieldPolicyV132";
 import { publicRecordRoleV142 } from "../../../data/visualization/publicRecordRoleV142";
@@ -66,6 +72,11 @@ type PortfolioConfigV132 = {
   identityKey?: string;
   identityNormalize?: (value: string) => string;
   identityLabel?: string;
+  /**
+   * V164-R3: the year the dataset was compiled. Years after it are plans (D-012 files a plant under its
+   * planned start year: 2030 holds 247 rows and 2045 two), so the year chart draws them apart.
+   */
+  plannedAfterYear?: number;
 };
 
 /** What one row of this element is, for headings outside this module. */
@@ -105,6 +116,7 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     yearKeys: ["entryYear", "entryTiming"],
     yearLabel: "진출 확인연도",
     categoryKeys: ["technologyField", "entryCountry", "entryMode"],
+    plannedAfterYear: 2026,
   },
   "D-014": {
     amountKeys: [
@@ -358,7 +370,7 @@ export default function PublicPortfolioSummaryV132({
         {/* The classes open the screen (V153 contract: category-bar); the years follow. */}
         {analysis.categories.length > 0 && (
           <section className="d153-block" data-analysis-block="category-bar">
-            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} />
+            <PublicCountDistributionV143 title="주요 분야·기금 구성" rows={analysis.categories} yAxis={analysis.categoryKeyLabel || "분류"} />
             {analysis.uncategorizedCount > 0 ? (
               <p className="pps132-note" data-testid="portfolio-uncategorized-v162">
                 <PublicTermTextV134 text={`${analysis.categoryKeyLabel || "분류"}가 기재되지 않은 ${analysis.uncategorizedCount.toLocaleString("ko-KR")}건은 이 구성에 넣지 않았습니다.`} />
@@ -373,6 +385,7 @@ export default function PublicPortfolioSummaryV132({
               rows={analysis.years}
               testId="portfolio-year-trend-v132"
               chronological
+              plannedAfterYear={config?.plannedAfterYear}
             />
           </section>
         )}
@@ -381,7 +394,7 @@ export default function PublicPortfolioSummaryV132({
           .slice(0, 3)
           .map((entry) => (
             <section className="d153-block" data-analysis-block="category-bar" key={entry.key}>
-              <PublicCountDistributionV143 title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} testId={`portfolio-category-${entry.key}-v141`} />
+              <PublicCountDistributionV143 title={`${entry.label}별 ${config?.recordLabel || "사업"} 수`} rows={entry.rows} yAxis={entry.label} testId={`portfolio-category-${entry.key}-v141`} />
             </section>
           ))}
       </div>
@@ -390,6 +403,7 @@ export default function PublicPortfolioSummaryV132({
           ...(identity.identityCount !== null ? [{ label: `${config?.identityLabel || "고유 항목"} 수`, value: identity.identityCount, unit: config?.identityLabel === "지원제도" ? "개" : "곳" }] : []),
           { key: "record-count", label: `${config?.recordLabel || "사업"} 수`, value: analysis.individualCount, unit: "건", context: analysis.yearRange || "수록 자료 기준" },
           ...(analysis.yearRange ? [{ key: "year-range", label: "자료기간", value: analysis.yearRange, context: "수록 자료 기준" }] : []),
+          ...(analysis.plannedRange ? [{ key: "planned-year-range", label: "계획 연도", value: analysis.plannedRange, context: `기준 연도 이후로 기재된 ${analysis.plannedCount.toLocaleString("ko-KR")}건` }] : []),
           ...identity.statusRows.map((row) => ({ label: `${config?.statusGroups?.label || "상태"} · ${row.label}`, value: row.value, unit: "건" })),
           ...analysis.amounts.map((amount) => ({ label: config?.amountLabel || "확인 금액 합계", value: amount.value, unit: amount.currency, context: `금액이 기재된 ${amount.count.toLocaleString("ko-KR")}건` })),
         ]} />
@@ -491,7 +505,7 @@ function portfolioAnalysisV132(
     if (category) {
       // Counted under the source's own value. Turning that into something a
       // reader recognises happens later, on the way to the screen.
-      categories.set(category, (categories.get(category) || 0) + 1);
+      addCategoryCountV164(categories, categoryCountValueV164(elementId, elementCategoryKeyV162 || "", category));
     } else if (elementCategoryKeyV162) {
       uncategorizedCount += 1;
     }
@@ -499,7 +513,7 @@ function portfolioAnalysisV132(
       const value = publicTextV126(facet.attributes?.[key]);
       if (!value || isNumericCodeListV136_2(value) || COMPILER_REMARK_VALUE_V142.test(value)) return;
       const bucket = categoriesByKey.get(key) || new Map<string, number>();
-      bucket.set(value, (bucket.get(value) || 0) + 1);
+      addCategoryCountV164(bucket, categoryCountValueV164(elementId, key, value));
       categoriesByKey.set(key, bucket);
     });
 
@@ -514,6 +528,9 @@ function portfolioAnalysisV132(
 
   const yearRows = mapToRowsV132(years, true);
   const parsedYears = yearRows.map((row) => Number(row.label)).filter(Number.isFinite);
+  const plannedAfterYear = PORTFOLIO_CONFIG_V132[elementId]?.plannedAfterYear;
+  const plannedYears = plannedAfterYear === undefined ? [] : parsedYears.filter((year) => year > plannedAfterYear);
+  const datedYears = plannedAfterYear === undefined ? parsedYears : parsedYears.filter((year) => year <= plannedAfterYear);
   return {
     individualCount: individual.length,
     aggregateCount,
@@ -527,12 +544,18 @@ function portfolioAnalysisV132(
     categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: portfolioCategoryKeyLabelV142(elementId, key), rows: categoryRowsV136_3(counts) }))
       .filter((entry): entry is { key: string; label: string; rows: CountRowV132[] } => entry.label !== null && entry.rows.length >= 2),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
-    yearRange: parsedYears.length
-      ? (Math.min(...parsedYears) === Math.max(...parsedYears)
-        ? String(Math.min(...parsedYears))
-        : `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`)
-      : null,
+    yearRange: yearRangeTextV164(datedYears.length ? datedYears : parsedYears),
+    // V164-R3: the years after the dataset's own year are plans, written apart from the period it covers.
+    plannedRange: yearRangeTextV164(plannedYears),
+    plannedCount: yearRows.filter((row) => plannedYears.includes(Number(row.label))).reduce((sum, row) => sum + row.value, 0),
   };
+}
+
+function yearRangeTextV164(years: number[]): string | null {
+  if (years.length === 0) return null;
+  const first = Math.min(...years);
+  const last = Math.max(...years);
+  return first === last ? String(first) : `${first}–${last}`;
 }
 
 export type PublicPortfolioFacetV132 = {
@@ -611,6 +634,34 @@ export function publicPortfolioFacetV132(
   };
 }
 
+/**
+ * The value a category count is keyed by (V164-3 round 2). A company's nationality
+ * is counted without its ownership share ("Vietnam(100%)" and "베트남" are one bar),
+ * and an investment round without the delivery's "(신규 라운드)" note. Every other
+ * value is counted as delivered.
+ */
+export function categoryCountValueV164(elementId: string, key: string, value: string): string {
+  if (elementId === "D-012" && key === "entryCountry") return nationalityLabelV164(value);
+  if (key === "fundingRound") return investmentRoundLabelV164(value);
+  return value;
+}
+
+/**
+ * One count per classification, spelled however the source spelled it first: the
+ * same status delivered as "GOLD_STANDARD_CERTIFIED_DESIGN" and as "Gold Standard
+ * Certified Design" (C-025) is one bar, not two that print the same Korean name.
+ */
+export function addCategoryCountV164(counts: Map<string, number>, value: string): void {
+  const variant = categoryVariantKeyV164(value);
+  for (const existing of counts.keys()) {
+    if (categoryVariantKeyV164(existing) === variant) {
+      counts.set(existing, (counts.get(existing) || 0) + 1);
+      return;
+    }
+  }
+  counts.set(value, 1);
+}
+
 function numericAmountV132(value: unknown): number | null {
   if (typeof value === "number") return Number.isFinite(value) && value >= 0 ? value : null;
   if (typeof value !== "string") return null;
@@ -631,7 +682,9 @@ function extractYearV132(value: unknown): number | null {
 }
 
 function compactCategoryV132(value: string): string {
-  const normalized = value.replace(/\s+/gu, " ").trim();
+  // V164: a known English classification ("Banking", "Climate Change") reads in
+  // Korean on the bar; the count stays keyed by the source value.
+  const normalized = koreanCategoryV164(value.replace(/\s+/gu, " ").trim());
   return normalized.length > 54 ? `${normalized.slice(0, 52).trim()}…` : normalized;
 }
 
@@ -691,6 +744,11 @@ const PORTFOLIO_CATEGORY_KEY_LABELS_BY_ELEMENT_V142: Readonly<Record<string, Rea
   "D-018": { implementingEntity: "실행기관(IE · 다자/국가/지역)" },
   // 인가기관_Agency: GCF accredited entity, GEF agency, AF implementing entity or CIF MDB.
   "D-023": { implementingEntity: "인가·집행기관(AE/Agency)" },
+  // V164-3: VC·impact deals are grouped by climate field (RE·효율·모빌리티·AgTech), not a DAC sector.
+  "D-024": { portfolioCategory: "기후 분야" },
+  // V164-3 round 2: a PPI project's sector is the World Bank's own sector path, not a
+  // DAC sector, and its "mode" is the investment type (신규 건설·기존 시설 개량), not a market entry.
+  "D-025": { portfolioCategory: "섹터", entryMode: "투자 유형" },
 });
 
 export function portfolioCategoryKeyLabelV142(elementId: string, key: string): string | null {

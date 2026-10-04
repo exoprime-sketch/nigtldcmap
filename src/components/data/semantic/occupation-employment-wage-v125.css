@@ -235,6 +235,12 @@
   padding-left: 10px;
 }
 
+/* V164-R3: the drawing is laid out for its measured width, so it is shown at 1:1 (text keeps its pixel size). */
+.e012v125__scatter-frame {
+  min-width: 0;
+  width: 100%;
+}
+
 .e012v125__scatter {
   display: block;
   height: auto;
@@ -245,7 +251,7 @@
 
 .e012v125__scatter text {
   fill: var(--e012-muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .e012v125__axis {
@@ -261,7 +267,7 @@
 
 .e012v125__scatter .e012v125__axis-title {
   fill: var(--e012-ink);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -271,9 +277,9 @@
   stroke-width: 2.5;
 }
 
-.e012v125__point text {
+.e012v125__scatter .e012v125__point text {
   fill: var(--e012-ink);
-  font-size: 9.5px;
+  font-size: 11.5px;
   font-weight: 700;
   paint-order: stroke;
   stroke: #fff;

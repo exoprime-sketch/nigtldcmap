@@ -45,7 +45,9 @@ import { adaptStructureV159 } from "../data/structure/adaptStructureV159";
 import { adaptSpatialLayerS2V159 } from "../data/structure/S2RegionObservationV159";
 import type { S2RegionObservationV159 } from "../data/structure/structureTypesV159";
 import { loadVietnamSpatialLayerV124 } from "../data/vietnam/vietnamDataLoaderV124";
-import { decisionPointsU3RecordsV159, decisionPointsV159 } from "../data/structure/decisionPointsV159";
+import { decisionPointsU3RecordsV159 } from "../data/structure/decisionPointsV159";
+import { decisionPointsForPageV164 } from "../data/structure/decisionPointsPageV164";
+import { showsEmptyStateBlockV164 } from "./detailEmptyStateV164";
 import { visualizationContractV153 } from "../data/visualization/publicVisualizationContractV153";
 import { researchRecordV132 } from "../components/data/public/ResearchPatentAnalysisV132";
 import { koreaTechReadinessPointsV159, referenceSubjectLabelV159 } from "../components/data/public/KoreaReferenceAnalysisV159";
@@ -797,8 +799,11 @@ function CountryDataElementPageV122({
   // default - the count of delivered segments - opened a mapped screen by
   // announcing it was not mapped, and named an electricity-access indicator the
   // reader had not chosen. Only 미공급 지역 has no spatial counterpart.
+  // V164-3: the two notes below state the Viet Nam delivery (722·606·116, its
+  // unserved-area indicator); another country's A-024 is a different source.
+  const vietnamA024V164 = elementId === "A-024" && (countryIso3 || DEFAULT_COUNTRY_ISO3_V158).toUpperCase() === "VNM";
   const mapSelectionUnavailableReason =
-    elementId === "A-024" &&
+    vietnamA024V164 &&
     selectorState.measure === A024_UNSERVED_AREA_MEASURE_V138
       ? "선택한 미공급 지역 지표에는 공개 공간자료가 없어 지도에 연결하지 않습니다. 데이터 지도에서 베트남 송전망을 별도로 분석할 수 있습니다."
       : "";
@@ -807,7 +812,7 @@ function CountryDataElementPageV122({
   // the World Bank 2016 network is delivered with its own line geometry, and the
   // existing/planned segments stated in the plan table carry no coordinates.
   const mapCoverageNote =
-    elementId === "A-024" && !mapSelectionUnavailableReason
+    vietnamA024V164 && !mapSelectionUnavailableReason
       ? "수록 선로 구간 722건 중 원천이 좌표를 제공한 606건을 지도에 표시합니다. 나머지 116건은 계획표에 기재된 구간으로 좌표가 없어 지도에 나타나지 않습니다."
       : "";
 
@@ -856,6 +861,30 @@ function CountryDataElementPageV122({
       alive = false;
     };
   }, [countryIso3, elementId, typologyV159]);
+  // A '쓰는 데이터' chip can only point at a series the first chart actually
+  // draws, so the enabled set is read from the rendered section (series carry
+  // data-indicator-id), not from the rows that were loaded. The 판단 포인트 read
+  // the same set (V164-3), so the card and the chart name the same series.
+  const [seriesIdsKeyV159, setSeriesIdsKeyV159] = useState("");
+  useEffect(() => {
+    setSeriesIdsKeyV159("");
+    const read = () => {
+      const ids = new Set<string>();
+      document
+        .querySelectorAll('[data-testid="public-analysis-primary"] [data-indicator-id]')
+        .forEach((node) => (node.getAttribute("data-indicator-id") || "").split(/\s+/u).forEach((id) => id && ids.add(id)));
+      const key = Array.from(ids).sort().join(" ");
+      setSeriesIdsKeyV159((current) => (current === key ? current : key));
+    };
+    read();
+    const observer = new MutationObserver(read);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [elementId]);
+  const drawnIndicatorIdsV164 = useMemo(
+    () => (seriesIdsKeyV159 ? seriesIdsKeyV159.split(" ") : undefined),
+    [seriesIdsKeyV159]
+  );
   const decisionPointListV159 = useMemo(() => {
     if (!typologyV159 || typologyV159.statusNotice || !bundle?.meta || !hasPopulatedRows) return [];
     const rows = adaptStructureV159(typologyV159.structure, {
@@ -880,37 +909,24 @@ function CountryDataElementPageV122({
     // primary chart draws, i.e. the rows in the contract's primary unit.
     const reference = typologyV159.referenceCountryIso3;
     const primaryUnit = reference ? visualizationContractV153(typologyV159.elementId)?.primary.unit : null;
-    const fromRows = decisionPointsV159(typologyV159.displayType, rows, {
-      countryIso3: countryIso3 || "VNM",
-      referenceCountryIso3: reference,
-      countryLabel: referenceSubjectLabelV159,
-      headlineIndicatorIds:
-        rows.structure === "S1" && primaryUnit
-          ? [...new Set(rows.rows.filter((row) => row.unit === primaryUnit).map((row) => row.indicatorId))]
-          : undefined,
-    });
-    if (fromRows.length > 0 || layerRowsV159.length === 0) return fromRows;
-    return decisionPointsV159("U2", { structure: "S2", rows: layerRowsV159 }, { countryIso3: countryIso3 || "VNM" });
-  }, [bundle, countryIso3, hasPopulatedRows, layerRowsV159, typologyV159]);
-  // A '쓰는 데이터' chip can only point at a series the first chart actually
-  // draws, so the enabled set is read from the rendered section (series carry
-  // data-indicator-id), not from the rows that were loaded.
-  const [seriesIdsKeyV159, setSeriesIdsKeyV159] = useState("");
-  useEffect(() => {
-    setSeriesIdsKeyV159("");
-    const read = () => {
-      const ids = new Set<string>();
-      document
-        .querySelectorAll('[data-testid="public-analysis-primary"] [data-indicator-id]')
-        .forEach((node) => (node.getAttribute("data-indicator-id") || "").split(/\s+/u).forEach((id) => id && ids.add(id)));
-      const key = Array.from(ids).sort().join(" ");
-      setSeriesIdsKeyV159((current) => (current === key ? current : key));
-    };
-    read();
-    const observer = new MutationObserver(read);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, [elementId]);
+    // V164-3: the series the body chart draws decides the headline, and a
+    // province screen whose map layer is loaded reads the layer before the pack rows.
+    return decisionPointsForPageV164(
+      typologyV159.displayType,
+      rows,
+      {
+        countryIso3: countryIso3 || "VNM",
+        referenceCountryIso3: reference,
+        countryLabel: referenceSubjectLabelV159,
+        headlineIndicatorIds:
+          rows.structure === "S1" && primaryUnit
+            ? [...new Set(rows.rows.filter((row) => row.unit === primaryUnit).map((row) => row.indicatorId))]
+            : undefined,
+        drawnIndicatorIds: drawnIndicatorIdsV164,
+      },
+      layerRowsV159
+    );
+  }, [bundle, countryIso3, drawnIndicatorIdsV164, hasPopulatedRows, layerRowsV159, typologyV159]);
   const presentIndicatorIdsV159 = useMemo(
     () => new Set(seriesIdsKeyV159 ? seriesIdsKeyV159.split(" ") : []),
     [seriesIdsKeyV159]
@@ -1209,7 +1225,12 @@ function CountryDataElementPageV122({
                 mapSlot={mapSlot}
               />
 
-              {observations.length === 0 && entities.length === 0 && !preparingV162 && (
+              {showsEmptyStateBlockV164({
+                observationCount: observations.length,
+                entityCount: entities.length,
+                preparing: preparingV162,
+                hasStatusNotice: Boolean(typologyV159?.statusNotice),
+              }) && (
                 <div className="cdp-empty">
                   <h3>{emptyStateCopy.title}</h3>
                   <p>{emptyStateCopy.description}</p>
@@ -1230,6 +1251,8 @@ function CountryDataElementPageV122({
               observations={observations}
               entities={entities}
               indicatorFamilyCount={indicatorFamilyCountV153(observations)}
+              indicators={bundle?.meta?.indicators}
+              decisionPoints={decisionPointListV159}
             />
             {specBundleV159?.spec ? (
               <DataDescriptionV159

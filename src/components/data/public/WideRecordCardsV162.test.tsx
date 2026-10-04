@@ -6,7 +6,7 @@ import type { Root } from "react-dom/client";
 import type { VietnamElementMetaBundleV124, VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import type { WideRecordV162 } from "../../../data/visualization/wideRecordsV162";
 import { readWideRecordsV162 } from "../../../data/visualization/wideRecordsV162";
-import WideRecordCardsV162 from "./WideRecordCardsV162";
+import WideRecordCardsV162, { cardRowsV164, cardValueTextV164 } from "./WideRecordCardsV162";
 import c017Fixture from "../../../data/visualization/__fixtures__/wideRecordC017V162.json";
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
@@ -163,4 +163,74 @@ test("a real C-017 record renders with no record id anywhere in the DOM text", (
   act(() => root.render(<WideRecordCardsV162 records={records} />));
   expect(container.querySelectorAll('[data-testid="wide-record-card-v162"]')).toHaveLength(1);
   expect(container.textContent).not.toContain(recordId);
+});
+
+// ---------------------------------------------------------------------------
+// V164-3: number format, amount and unit, English classification, line breaks
+// ---------------------------------------------------------------------------
+test("V164-3: every plain number reads one way - grouped, and cut to a readable length", () => {
+  expect(cardValueTextV164("금액", "4133.6")).toBe("4,133.6");
+  expect(cardValueTextV164("금액", "6706.04")).toBe("6,706.04");
+  expect(cardValueTextV164("값", "2.48468340032929")).toBe("2.48");
+  expect(cardValueTextV164("값", "4378506")).toBe("4,378,506");
+  expect(cardValueTextV164("총배출량", "2024")).toBe("2,024");
+  // a year, a code, a plain small number and an already written value are not touched
+  expect(cardValueTextV164("제출 연도", "2024")).toBe("2024");
+  expect(cardValueTextV164("값", "2024")).toBe("2024");
+  expect(cardValueTextV164("값", "12.5")).toBe("12.5");
+  expect(cardValueTextV164("값", "29,321.6")).toBe("29,321.6");
+  expect(cardValueTextV164("값", "0.00012345")).toBe("0.00012345");
+  expect(cardValueTextV164("CDM 참조번호", "10431")).toBe("10431");
+  expect(cardValueTextV164("값", "-12.5")).toBe("-12.5");
+});
+
+test("V164-3: an amount reads with its unit, a ratio is a 값, and an amount without a unit says so", () => {
+  const rows = (values: Array<[string, string]>) => cardRowsV164(values.map(([attribute, value]) => ({ attribute, value })));
+  expect(rows([["구분", "소요"], ["금액", "157"], ["단위", "십억 USD"], ["통화", "USD"]])).toEqual([
+    { attribute: "구분", value: "소요" },
+    { attribute: "금액", value: "157 십억 USD" },
+    { attribute: "통화", value: "USD" },
+  ]);
+  expect(rows([["금액", "49"], ["단위", "%"]])).toEqual([{ attribute: "값", value: "49%" }]);
+  expect(rows([["금액", "230000"]])).toEqual([{ attribute: "금액", value: "230,000 (단위 미기재)" }]);
+  // a currency without a unit is left as the sheet states it
+  expect(rows([["금액", "3000"], ["통화", "USD"]])).toEqual([{ attribute: "금액", value: "3000" }, { attribute: "통화", value: "USD" }]);
+  // no amount: the rows are the same rows
+  const plain = [{ attribute: "값", value: "100" }, { attribute: "단위", value: "회" }];
+  expect(cardRowsV164(plain)).toBe(plain);
+});
+
+test("V164-3: an English classification reads in Korean, a source's own wording does not", () => {
+  const records = [
+    wideRecord({
+      name: "PPI 부문별 사업 건수 — Energy",
+      blocks: [
+        {
+          block: "행위자",
+          title: "행위자",
+          values: [
+            { attribute: "유형", value: "Company" },
+            { attribute: "지역", value: "Asia" },
+            { attribute: "사업명 (원문)", value: "Energy" },
+          ],
+        },
+      ],
+    }),
+  ];
+  act(() => root.render(<WideRecordCardsV162 records={records} />));
+  expect(container.querySelector(".wide162-card-title")!.textContent).toBe("PPI 부문별 사업 건수 — 에너지");
+  const rowsText = [...container.querySelectorAll(".wide162-row")].map((row) => row.textContent);
+  expect(rowsText).toEqual(["유형기업", "지역아시아", "사업명 (원문)Energy"]);
+});
+
+test("V164-3: a line break the sheet marked is shown as a line", () => {
+  const records = [
+    wideRecord({
+      name: "근거",
+      blocks: [{ block: "현지조사", title: "현장 확인 자료", values: [{ attribute: "근거 규정", value: "• Resolution 107/2023/QH15\n• Ministry of Finance" }] }],
+    }),
+  ];
+  act(() => root.render(<WideRecordCardsV162 records={records} />));
+  const lines = [...container.querySelectorAll(".wide162-row dd .wide162-line")].map((line) => line.textContent);
+  expect(lines).toEqual(["• Resolution 107/2023/QH15", "• Ministry of Finance"]);
 });

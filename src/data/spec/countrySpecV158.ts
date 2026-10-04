@@ -131,6 +131,18 @@ export function getCardSpecForCountryV158(
   return card;
 }
 
+/**
+ * V164-3: card definitions whose shared wording describes the default
+ * country's own source (a Vietnamese trade paper's PDP8 summary, a Vietnam
+ * investment survey) and so reads wrong on another country's card. The
+ * sentence names no country, so the scope rule cannot drop it; the element's
+ * neutral definition is stated instead.
+ */
+const COUNTRY_CARD_DEFINITIONS_V164: Record<string, string> = {
+  "BGD:D-002": "국가 전력 계획의 2030년 설비용량 목표를 기준연도 실적과 견줘 환산한 기술별 연평균 성장률",
+  "BGD:D-024": "기후기술 기업이 받은 벤처캐피털·임팩트 투자 거래를 거래 1건당 한 행으로 모은 대장",
+};
+
 function buildCardSpecForCountryV158(
   elementId: string,
   iso3: string,
@@ -143,7 +155,8 @@ function buildCardSpecForCountryV158(
     ? countryLabel || scoped(base?.baseName, iso3) || item?.publicTitle || ""
     : scoped(base?.baseName, iso3) || countryLabel || item?.publicTitle || "";
   const sourceLabel = countrySource || scoped(base?.sourceLabel, iso3);
-  const shortDefinitionCard = scoped(base?.shortDefinitionCard, iso3);
+  const shortDefinitionCard =
+    COUNTRY_CARD_DEFINITIONS_V164[`${iso3}:${String(elementId).toUpperCase()}`] ?? scoped(base?.shortDefinitionCard, iso3);
   // The card's notice follows the country's own typology.
   const typology = getTypologyForCountryV158(elementId, iso3, item);
   const displayType = typology?.displayType || base?.displayType;

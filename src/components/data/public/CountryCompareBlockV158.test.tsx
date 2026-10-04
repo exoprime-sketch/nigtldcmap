@@ -6,6 +6,8 @@ import type { Root } from "react-dom/client";
 import CountryCompareBlockV158 from "./CountryCompareBlockV158";
 import type { CountryCompareSeriesV158 } from "./CountryCompareBlockV158";
 
+(globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
+
 /**
  * The comparison block ships before a second country does, so the case that
  * matters most is the empty one: with Vietnam alone it must add nothing to a
@@ -192,5 +194,79 @@ describe("CountryCompareBlockV158", () => {
       bangladesh([{ year: 2024, value: 451 }]),
     ]);
     expect(view.querySelector('[data-testid="country-compare-source-note-v158"]')).toBeNull();
+  });
+});
+
+/**
+ * Review 164: the comparison lines put their value axis past 100 for a share
+ * that never reaches 100, spread uneven years evenly, and labelled years the
+ * data does not hold.
+ */
+describe("CountryCompareBlockV158 lines (review 164)", () => {
+  const percentKey = { indicatorId: "A-004_share", unit: "%", yearRule: "latest-common" };
+  const pair = (vnm: Array<[number, number]>, bgd: Array<[number, number]>): CountryCompareSeriesV158[] => [
+    { countryIso3: "VNM", countryNameKo: "베트남", unit: "%", points: vnm.map(([year, value]) => ({ year, value })) },
+    { countryIso3: "BGD", countryNameKo: "방글라데시", unit: "%", points: bgd.map(([year, value]) => ({ year, value })) },
+  ];
+  function drawLines(series: CountryCompareSeriesV158[]) {
+    act(() => {
+      root.render(<CountryCompareBlockV158 elementId="A-004" title="비중 비교" compareKey={percentKey} series={series} />);
+    });
+    return container.querySelector('[data-testid="country-compare-lines-v158"]') as SVGElement;
+  }
+  const yTicks = (chart: SVGElement) => Array.from(chart.querySelectorAll(".ccb158__tick text")).map((node) => Number((node.textContent ?? "").replace(/[^0-9.\-]/gu, "")));
+  const yearLabels = (chart: SVGElement) =>
+    Array.from(chart.querySelectorAll("text")).map((node) => node.textContent ?? "").filter((text) => /^\d{4}$/u.test(text));
+  const pointsOf = (chart: SVGElement, iso: string) =>
+    (chart.querySelector(`polyline[data-country="${iso}"]`)?.getAttribute("points") ?? "").split(" ").map((pair2) => pair2.split(",").map(Number));
+
+  test("a share that stays under 100 never gets an axis past 100", () => {
+    const chart = drawLines(
+      pair(
+        [[2020, 91], [2021, 94], [2022, 97]],
+        [[2020, 90], [2021, 92], [2022, 95]],
+      ),
+    );
+    expect(Math.max(...yTicks(chart))).toBeLessThanOrEqual(100);
+  });
+
+  test("ticks are counted in one step, so they carry one number of decimals", () => {
+    const chart = drawLines(
+      pair(
+        [[2020, 32.5], [2021, 35], [2022, 37.5]],
+        [[2020, 33], [2021, 34], [2022, 36]],
+      ),
+    );
+    const labels = Array.from(chart.querySelectorAll(".ccb158__tick text")).map((node) => node.textContent ?? "");
+    expect(new Set(labels.map((label) => (label.split(".")[1] ?? "").length)).size).toBe(1);
+  });
+
+  test("a gap between shared years stays a gap on the axis", () => {
+    const chart = drawLines(
+      pair(
+        [[2015, 10], [2016, 12], [2017, 13], [2022, 20]],
+        [[2015, 9], [2016, 11], [2017, 12], [2022, 18]],
+      ),
+    );
+    const points = pointsOf(chart, "VNM");
+    expect(points).toHaveLength(4);
+    const span = points[3][0] - points[0][0];
+    expect((points[1][0] - points[0][0]) / span).toBeCloseTo(1 / 7, 1);
+    expect((points[2][0] - points[0][0]) / span).toBeCloseTo(2 / 7, 1);
+  });
+
+  test("the year axis names only years the data holds", () => {
+    const chart = drawLines(
+      pair(
+        [[2015, 10], [2016, 12], [2017, 13], [2022, 20]],
+        [[2015, 9], [2016, 11], [2017, 12], [2022, 18]],
+      ),
+    );
+    const held = new Set([2015, 2016, 2017, 2022]);
+    const labels = yearLabels(chart).map(Number);
+    expect(labels.length).toBeGreaterThanOrEqual(2);
+    expect(labels.every((year) => held.has(year))).toBe(true);
+    expect(labels).toContain(2015);
+    expect(labels).toContain(2022);
   });
 });

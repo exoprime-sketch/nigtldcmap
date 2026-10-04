@@ -45,7 +45,17 @@ function hasSafeBoundariesV134(
   start: number,
   end: number
 ): boolean {
-  return !isWordCharacterV134(text[start - 1]) && !isWordCharacterV134(text[end]);
+  // V164-3: a dot joining two code parts ("VC.IHR.PSRC.P5", "EG.ELC.RNEW.ZS")
+  // makes the abbreviation a piece of a code, not a word to explain. A full
+  // stop that ends a sentence is followed by a space, so it is not one.
+  const joinedToCodeBefore = text[start - 1] === "." && /[A-Za-z0-9]/u.test(text[start - 2] ?? "");
+  const joinedToCodeAfter = text[end] === "." && /[A-Za-z0-9]/u.test(text[end + 1] ?? "");
+  return (
+    !isWordCharacterV134(text[start - 1]) &&
+    !isWordCharacterV134(text[end]) &&
+    !joinedToCodeBefore &&
+    !joinedToCodeAfter
+  );
 }
 
 function excludedRangesV134(text: string): Array<[number, number]> {
@@ -236,12 +246,40 @@ function resolveIpV134(
   return entry ? { ...entry, displayTerm: value, derivedFrom: "IP" } : null;
 }
 
+/**
+ * V164-3: "PM" in a government document is the Prime Minister ("PM Decision
+ * 500 approving PDP VIII" is a prime minister's decision), not a project
+ * manager. The project-manager meaning applies only beside a project word;
+ * with neither context nothing is explained.
+ */
+function resolvePmV134(
+  value: string,
+  context: string
+): ResolvedPublicTermV134 | null {
+  if (normalizePublicTermAliasV134(value) !== "PM") return null;
+  const base = PUBLIC_GLOSSARY_BY_ID_V134.get("project-manager");
+  if (!base) return null;
+  if (/\bPM\s+(?:Decision|Decree|Directive|Order|Resolution|Circular|Office)|Prime\s+Minister|총리/iu.test(context)) {
+    return {
+      ...base,
+      id: "prime-minister",
+      term: "PM",
+      englishName: "Prime Minister",
+      koreanName: "총리",
+      definition: "정부 수반인 총리(Prime Minister)입니다. 'PM Decision'은 총리가 내린 결정으로, 베트남에서는 국가 계획을 승인하는 문서 형식으로 쓰입니다.",
+      displayTerm: value,
+    };
+  }
+  return /(?:사업|프로젝트|PMU|Project|관리자|PMC)/iu.test(context) ? { ...base, displayTerm: value } : null;
+}
+
 export function resolvePublicTermV134(
   value: string,
   context = value
 ): ResolvedPublicTermV134 | null {
   return (
     resolveSpeiV134(value) ??
+    resolvePmV134(value, context) ??
     resolveSspV134(value) ??
     resolveSdgV134(value) ??
     resolvePppV134(value, context) ??
@@ -251,6 +289,8 @@ export function resolvePublicTermV134(
     (() => {
       const entry = getPublicGlossaryByAliasV134(value);
       if (!entry) return null;
+      // "PM" is decided by resolvePmV134 alone (a prime minister or a project manager).
+      if (entry.id === "project-manager" && normalizePublicTermAliasV134(value) === "PM") return null;
       // A unit symbol is case-sensitive: "ha" is a hectare and "HA" is not.
       // B-020 prints INFORM's dimension codes - 위험·노출(HA), 취약성(VU) - and
       // the case-insensitive alias made the hazard dimension a unit of area.

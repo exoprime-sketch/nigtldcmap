@@ -47,6 +47,9 @@ describe("V159 S2 rows from the map layer", () => {
         row("VN-03", "C", 3),
         row("VN-04", "D", 2),
         row("VN-05", "E", 1),
+        // V164: a top three and a bottom three that never overlap need six regions.
+        row("VN-06", "F", 2.5),
+        row("VN-07", "G", 3.5),
       ])
     );
     const points = decisionPointsV159("U2", { structure: "S2", rows }, { countryIso3: "VNM" });

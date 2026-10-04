@@ -3,6 +3,7 @@ import type { VietnamEntityV124, VietnamIndicatorMetaV124, VietnamObservationV12
 import { mineralModelV153, percentChangeV153 } from "../../../data/visualization/mineralResourcesV153";
 import type { MineralRowV153 } from "../../../data/visualization/mineralResourcesV153";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
+import { publicWorkMemoV164 } from "../../../data/visualization/publicWorkMemoV164";
 import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import "./detail-analysis-v146.css";
@@ -149,9 +150,14 @@ export default function MineralResourceSummaryV153({ elementId, observations, en
 
       {model.notes.length ? (
         <ul className="d153-facts" data-testid="mineral-notes-v153">
-          {model.notes.map((note) => (
-            <li key={note.label}><span><PublicTermTextV134 text={note.label} /></span><span><PublicTermTextV134 text={note.text} /></span></li>
-          ))}
+          {model.notes
+            // V164 R2: the sheet's own review tag ("[이상치 각주 — 1차 출처 확인 완료] … 확정 기재")
+            // is a working memo, not a note for the reader.
+            .map((note) => ({ label: note.label, text: publicWorkMemoV164(note.text) }))
+            .filter((note) => note.text !== "")
+            .map((note) => (
+              <li key={note.label}><span><PublicTermTextV134 text={note.label} /></span><span><PublicTermTextV134 text={note.text} /></span></li>
+            ))}
         </ul>
       ) : null}
       <p className="detail146-note"><PublicTermTextV134 text="세계 순위·비중은 USGS가 밝힌 값을 그대로 옮긴 것이며, 광종 간 값 비교는 단위가 달라 하지 않습니다." /></p>

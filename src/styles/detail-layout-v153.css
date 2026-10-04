@@ -110,10 +110,11 @@
 }
 
 /* ---- charts: a first block is never a sliver ------------------------------ */
+/* V164-R3: a list of bars (category-bar) is as tall as its rows. A two-bar SDG list (VNM A-015) was padded
+   to 320px, leaving a blank band between the bars and the table under them. */
 [data-analysis-rank="1"][data-analysis-block="line"],
 [data-analysis-rank="1"][data-analysis-block="stacked-area"],
 [data-analysis-rank="1"][data-analysis-block="region-bar"],
-[data-analysis-rank="1"][data-analysis-block="category-bar"],
 [data-analysis-rank="1"][data-analysis-block="dumbbell"],
 [data-analysis-rank="1"][data-analysis-block="heatmap"] {
   min-height: 320px;

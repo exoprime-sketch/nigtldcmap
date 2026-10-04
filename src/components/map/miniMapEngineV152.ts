@@ -66,6 +66,7 @@ import {
 import type { MapCameraV151 } from "../../types/map";
 import { publicAssetUrlV128 } from "../../utils/publicAssetUrlV128";
 import { createMapPointPopupV152 } from "./mapPointPopupV152";
+import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../../data/visualization/facilityCardV153";
 import { boundaryPopupLineV151, createPublicMapPopupContentV129 } from "./mapPublicPopupV129";
 import {
   featureBboxV152,
@@ -87,7 +88,8 @@ export interface MiniMapEngineInputV152 {
   /** The mini map's backdrop switch; the kind drawn is the big map's saved one. */
   backdropOn: boolean;
   camera: MapCameraV151 | null;
-  data: { spatial?: SpatialRuntimeAsset; records?: CountryEntityV122[] };
+  /** `facilityRecords` (V164-3): the records behind sites drawn from a spatial asset, for the facility card only. */
+  data: { spatial?: SpatialRuntimeAsset; records?: CountryEntityV122[]; facilityRecords?: CountryEntityV122[] };
   icons?: boolean;
   /** `atFit`: the camera is (still) the initial fit to the layer, not a view the reader chose. */
   onCamera: (camera: MapCameraV151, atFit: boolean) => void;
@@ -250,6 +252,16 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
   }, { icons: input.icons !== false });
   if (!prepared) throw new Error("mini map data unavailable");
   const entityById = new Map((input.data.records || []).map((record) => [record.recordId, record]));
+  const facilityRecordById = new Map((input.data.facilityRecords || []).map((record) => [record.recordId, record]));
+  // V164-3: a facility drawn from a spatial asset (Bangladesh A-023) reads with
+  // the same label-form card as one drawn from records, once its record is read.
+  const spatialFacilityOf = (feature: MapGeoJSONFeature, properties: Record<string, unknown>): CountryEntityV122 | null => {
+    if (!area || feature.geometry.type !== "Point" || !facilityCardSpecV153(layer.elementId)) return null;
+    const record = featureRecordIdsV164(properties.recordIds ?? properties.recordId)
+      .map((id) => facilityRecordById.get(id))
+      .find(Boolean);
+    return record ? spatialFacilityEntityV164({ elementId: layer.elementId, countryIso3, properties, entity: record }) : null;
+  };
   const legend: MiniMapLegendV152 | null =
     prepared.kind === "area" && prepared.area.choropleth && !prepared.area.isRegionalScope
       ? {
@@ -303,7 +315,9 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
   };
   const showPopup = (feature: MapGeoJSONFeature, lngLat: maplibregl.LngLatLike, pin: boolean) => {
     const properties = (feature.properties || {}) as Record<string, unknown>;
-    const entity = entityById.get(String(properties.recordId ?? ""));
+    const facility = spatialFacilityOf(feature, properties);
+    const entity = entityById.get(String(properties.recordId ?? "")) || facility;
+    const asArea = area && !facility;
     if (pin && input.cardHost) {
       // Full label-form card inside the map box, scrollable, with its own close button.
       popup?.remove();
@@ -317,12 +331,12 @@ export async function createMiniMapEngineV152(input: MiniMapEngineInputV152): Pr
         closeCard();
         pinned = false;
       });
-      const card = area ? areaPopupV152(layer, input.selected, properties, countryIso3) : createMapPointPopupV152({ layer, properties, primary: true, entity });
+      const card = asArea ? areaPopupV152(layer, input.selected, properties, countryIso3) : createMapPointPopupV152({ layer, properties, primary: true, entity });
       input.cardHost.replaceChildren(close, card);
       pinned = true;
       return;
     }
-    const content = area
+    const content = asArea
       ? areaPopupV152(layer, input.selected, properties, countryIso3)
       : createMapPointPopupV152({ layer, properties, primary: true, entity, compact: true });
     popup?.remove();

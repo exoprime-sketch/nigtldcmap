@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import "./country-compare-v158.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
-import { formatAxisTicksV164, formatAxisValueV164, niceTicksV164 } from "../../../utils/axisTicksV164";
+import { formatAxisTicksV164, formatAxisValueV164, niceXTicksV164, valueAxisV164 } from "../../../utils/axisTicksV164";
 
 /**
  * One country's series for the element being compared.
@@ -27,6 +27,16 @@ export interface CountryCompareKeyV158 {
   yearRule: string;
 }
 
+/**
+ * V164-3: a unit as the delivery keyed it ("십억 USD_2017/yr") reads as words
+ * ("십억 USD(2017년 기준)/년"). Only the key spellings change.
+ */
+export function publicUnitTextV164(unit: string | null | undefined): string {
+  return String(unit ?? "")
+    .replace(/USD_(\d{4})/gu, "USD($1년 기준)")
+    .replace(/\/yr\b/gu, "/년");
+}
+
 export interface CountryCompareBlockPropsV158 {
   elementId: string;
   title: string;
@@ -34,6 +44,8 @@ export interface CountryCompareBlockPropsV158 {
   series: CountryCompareSeriesV158[];
   /** Overrides the shape the data would pick; used by the tests. */
   mode?: "auto" | "grouped-bars" | "multi-line";
+  /** How a compared year reads ("2023년", "1991–2020 평년"); defaults to "{year}년" (V164-3). */
+  periodText?: (year: number) => string;
 }
 
 const COLORS_V158 = ["#16806b", "#2563eb", "#c2410c", "#7c3aed", "#be123c"];
@@ -97,10 +109,12 @@ function MultiLineChartV164({
   const height = width < 480 ? 220 : 260;
   const values = years.flatMap((year) => rows.map(({ row }) => valueAtV158(row, year)).filter((value): value is number => value !== null));
   if (values.length === 0) return null;
-  const ticks = niceTicksV164(Math.min(...values), Math.max(...values));
+  // The axis ends on round ticks counted in one step (32.5 · 35 · 37.5, never 33 · 35 · 38), and a % whose values fit in 0-100 stops at 100.
+  const axis = valueAxisV164({ values, unit, intervals: 4 });
+  const ticks = axis.ticks;
   const tickLabels = formatAxisTicksV164(ticks);
-  const lo = ticks[0];
-  const hi = ticks[ticks.length - 1];
+  const lo = axis.domain[0];
+  const hi = axis.domain[1];
   const span = hi - lo || 1;
   const lastIndex = years.length - 1;
   const endText = (row: CountryCompareSeriesV158, value: number) => `${row.countryNameKo} ${formatAxisValueV164(value)}`;
@@ -110,9 +124,13 @@ function MultiLineChartV164({
   const right = Math.min(width * 0.38, Math.max(24, ...rows.map(({ row }, index) => (endLabels[index] === undefined ? 0 : textWidth(endText(row, endLabels[index])) + 18))));
   const top = 22;
   const bottom = 28;
-  const x = (position: number) => (years.length === 1 ? left + (width - left - right) / 2 : left + (position / (years.length - 1)) * (width - left - right));
+  // Placed by year, not by position: the shared years can have gaps, and an evenly spaced axis would stretch them.
+  const firstYear = years[0];
+  const yearSpan = years[lastIndex] - firstYear;
+  const x = (year: number) => (yearSpan <= 0 ? left + (width - left - right) / 2 : left + ((year - firstYear) / yearSpan) * (width - left - right));
   const y = (value: number) => top + (1 - (value - lo) / span) * (height - top - bottom);
-  const yearMarks = years.length <= 3 ? years.map((year, index) => ({ year, index })) : [0, Math.floor((years.length - 1) / 2), years.length - 1].map((index) => ({ year: years[index], index }));
+  // Round, evenly spaced years (every 2nd, 5th, 10th …) as many as the plot has room for.
+  const yearMarks = niceXTicksV164(years, Math.max(3, Math.floor((width - left - right) / 72)), width - left - right);
   // End labels, nudged apart when two lines finish close together.
   const ends = rows
     .map(({ row, color }) => ({ row, color, value: valueAtV158(row, years[lastIndex]) }))
@@ -130,7 +148,7 @@ function MultiLineChartV164({
       height={height}
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${unit}` : ""}`}
+      aria-label={`${title} · ${rows.map(({ row }) => row.countryNameKo).join(", ")} · ${years[0]}–${years[lastIndex]}년${unit ? ` · 단위 ${publicUnitTextV164(unit)}` : ""}`}
       data-testid="country-compare-lines-v158"
     >
       {ticks.map((tick, index) => (
@@ -143,11 +161,11 @@ function MultiLineChartV164({
       ))}
       {unit ? (
         <text x={4} y={11} textAnchor="start" fontSize="11" fill="#5b7169" data-testid="country-compare-unit-v164">
-          {`단위: ${unit}`}
+          {`단위: ${publicUnitTextV164(unit)}`}
         </text>
       ) : null}
-      {yearMarks.map(({ year, index }) => (
-        <text key={year} x={x(index)} y={height - 10} textAnchor={index === 0 ? "start" : index === lastIndex ? "end" : "middle"} fontSize="11" fill="#5b7169">
+      {yearMarks.map((year) => (
+        <text key={year} x={x(year)} y={height - 10} textAnchor={year === firstYear ? "start" : year === years[lastIndex] ? "end" : "middle"} fontSize="11" fill="#5b7169">
           {year}
         </text>
       ))}
@@ -160,9 +178,9 @@ function MultiLineChartV164({
           strokeLinejoin="round"
           data-country={row.countryIso3}
           points={years
-            .map((year, position) => {
+            .map((year) => {
               const value = valueAtV158(row, year);
-              return value === null ? null : `${x(position).toFixed(1)},${y(value).toFixed(1)}`;
+              return value === null ? null : `${x(year).toFixed(1)},${y(value).toFixed(1)}`;
             })
             .filter(Boolean)
             .join(" ")}
@@ -170,8 +188,8 @@ function MultiLineChartV164({
       ))}
       {ends.map((end) => (
         <g key={end.row.countryIso3}>
-          <circle cx={x(lastIndex)} cy={y(end.value)} r="3.2" fill={end.color} />
-          <text x={x(lastIndex) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
+          <circle cx={x(years[lastIndex])} cy={y(end.value)} r="3.2" fill={end.color} />
+          <text x={x(years[lastIndex]) + 8} y={end.labelY + 4} fontSize="11.5" fill={end.color} fontWeight="700">
             {endText(end.row, end.value)}
           </text>
         </g>
@@ -234,6 +252,7 @@ export default function CountryCompareBlockV158({
   elementId,
   title,
   compareKey,
+  periodText = (year: number) => `${year}년`,
   series,
   mode = "auto",
 }: CountryCompareBlockPropsV158) {
@@ -322,7 +341,7 @@ export default function CountryCompareBlockV158({
       >
         <h4 className="ccb158__title"><PublicTermTextV134 text={title} /></h4>
         <p className="ccb158__note" data-testid="country-compare-unit-note-v158">
-          단위가 달라 함께 비교하지 않았습니다 · 기준 {compareKey.unit} ·{" "}
+          단위가 달라 함께 비교하지 않았습니다 · 기준 {publicUnitTextV164(compareKey.unit)} ·{" "}
           {model.mismatched.map((row) => `${row.countryNameKo} ${row.unit}`).join(" · ")}
         </p>
       </section>
@@ -374,7 +393,7 @@ export default function CountryCompareBlockV158({
       ) : (
         <table className="ccb158__bars" data-testid="country-compare-bars-v158">
           <caption>
-            {barYear === null ? "공통 연도 없음" : `${barYear}년 · 단위 ${compareKey.unit}`}
+            {barYear === null ? "공통 연도 없음" : `${periodText(barYear)} · 단위 ${publicUnitTextV164(compareKey.unit)}`}
           </caption>
           <tbody>
             {model.matched.map((row, index) => {

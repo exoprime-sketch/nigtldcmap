@@ -30,7 +30,9 @@
 
 .eop141__bars li {
   display: grid;
-  grid-template-columns: minmax(120px, 0.9fr) minmax(0, 2fr) auto;
+  /* V164: the value column has one width in every row, so every track has the same length and
+     the bars share one scale (a 31,055 MW bar no longer ends right of a 33,294-34,667 MW one). */
+  grid-template-columns: minmax(120px, 0.9fr) minmax(0, 2fr) 10.5rem;
   align-items: center;
   gap: 8px;
   font-size: 0.86rem;
@@ -62,6 +64,7 @@
 .eop141__value {
   font-variant-numeric: tabular-nums;
   color: #123d31;
+  text-align: right;
   white-space: nowrap;
 }
 

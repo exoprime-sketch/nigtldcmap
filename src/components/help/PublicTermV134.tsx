@@ -18,6 +18,7 @@ import type {
   ResolvedPublicTermV134,
 } from "../../utils/publicTermTokenizerV134";
 import { publicTextV126, publicUnstatedWordingV161 } from "../../data/visualization/publicFieldPolicyV126";
+import { koreanCategoryV164 } from "../../data/visualization/publicCategoryLabelV164";
 import PublicTermTooltipV134 from "./PublicTermTooltipV134";
 import { glossaryShownForCountryV162 } from "../../data/glossary/publicGlossaryV134";
 import { usePageDataCountryV162 } from "../../data/countries/DataCountryContextV158";
@@ -240,6 +241,18 @@ export interface PublicTermTextV134Props {
   text: string;
   className?: string;
   firstOccurrenceOnly?: boolean;
+  /**
+   * V164-3: show the delivered wording as it is. By default a whole text that
+   * is a known English classification ("Mitigation", "In force") reads in
+   * Korean; a column that holds the source's own wording ("… (원문)") opts out.
+   */
+  keepOriginal?: boolean;
+}
+
+/** The public text of one value, its English classification name in Korean (V164-3). */
+function displayTextV164(text: string, keepOriginal: boolean | undefined): string {
+  const plain = publicUnstatedWordingV161(publicTextV126(text) || "");
+  return keepOriginal ? plain : koreanCategoryV164(plain);
 }
 
 /** Safe opt-in wrapper for a text node; never use it for attributes or raw files. */
@@ -247,9 +260,10 @@ export function PublicTermTextV134({
   text,
   className,
   firstOccurrenceOnly = false,
+  keepOriginal,
 }: PublicTermTextV134Props) {
   // V161: the delivery's "원천 미기재" reads 미기재 on every public text.
-  const tokens = tokenizePublicTermsV134(publicUnstatedWordingV161(publicTextV126(text) || ""), {
+  const tokens = tokenizePublicTermsV134(displayTextV164(text, keepOriginal), {
     firstOccurrenceOnly,
   });
   return (
@@ -310,8 +324,9 @@ export function PublicTermExpandedTextV134({
   text,
   className,
   firstOccurrenceOnly = false,
+  keepOriginal,
 }: PublicTermTextV134Props) {
-  const plain = publicUnstatedWordingV161(publicTextV126(text) || "");
+  const plain = displayTextV164(text, keepOriginal);
   // V162 PR-D: like the help button, a term about another country is not
   // expanded on this country's screen ("VCCI(베트남상공회의소)" on Bangladesh).
   const pageCountry = usePageDataCountryV162();
@@ -383,7 +398,8 @@ export function PublicTermHelpV134({ text }: { text: string }) {
       <span>용어 도움말</span>
       {terms.map((token) => (
         <PublicTermV134 entry={token.entry} key={token.entry.id} term={token.value}>
-          <span aria-hidden="true">?</span>
+          {/* V164: two bare "?" buttons side by side could not be told apart; each names its term. */}
+          <span aria-hidden="true">{token.value} ?</span>
           <span className="sr-only">{token.value} 설명</span>
         </PublicTermV134>
       ))}

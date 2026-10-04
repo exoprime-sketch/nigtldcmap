@@ -160,3 +160,63 @@
   font-size: 0.8rem;
   line-height: 1.55;
 }
+
+/*
+ * V164-3 (WP-E): the generic cards (gauging sites, basins) carry long names and
+ * long place descriptions. A label beside a value left the value a 7-character
+ * column ("Bahaduraba / d"), and a two-line clamp cut the title before the figure
+ * that told the cards apart. The label sits above its value, a word is broken
+ * only when it cannot fit a line on its own; the title keeps the two-line rule.
+ */
+.pec131-grid--generic .pec131-card__title {
+  /* Two lines stay the card title rule (entity-cards audit); long names end in an ellipsis. */
+  -webkit-line-clamp: 2;
+  min-height: 0;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.pec131-grid--generic .pec131-card__facts > div {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pec131-grid--generic .pec131-card__facts dd {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+/*
+ * V164 R2: a directory lists a few institutions, each with an address, a
+ * mandate and a contact in whole sentences. Four fixed columns left a single
+ * card in a quarter of the width, its address and contact broken down the
+ * card line by line. The cards share the row as wide as the row allows (one
+ * card takes the whole row, two take half each), the label keeps a short
+ * column, and a Korean word is not broken in the middle. Placed after the
+ * breakpoints above so it governs at every width.
+ */
+.pec131-grid--directory {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.pec131-grid--directory .pec131-card__title {
+  /* Two lines stay the card title rule (entity-cards audit); long names end in an ellipsis. */
+  -webkit-line-clamp: 2;
+  min-height: 0;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.pec131-grid--directory .pec131-card__facts > div {
+  grid-template-columns: minmax(4.3rem, 6.5rem) minmax(0, 1fr);
+}
+
+.pec131-grid--directory .pec131-card__facts dd {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+@media (max-width: 620px) {
+  .pec131-grid--directory .pec131-card__facts > div {
+    grid-template-columns: 1fr;
+  }
+}

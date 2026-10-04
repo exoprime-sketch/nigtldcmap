@@ -1,6 +1,8 @@
 import { describe, expect, it } from "@jest/globals";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { EMPTY_PORTFOLIO_SELECTION_V143, portfolioSelectionModelV143 } from "./PublicPortfolioWorkspaceV143";
+import { addCategoryCountV164, categoryCountValueV164, publicPortfolioFacetV132 } from "./PublicPortfolioSummaryV132";
+import { categoryVariantKeyV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { isPublicMapFactV143, publicMapFactSourcesV143, hasPublicMapFactValueV143 } from "../../../data/visualization/publicMapCopyV143";
 import { readDownloadJsonV158 } from "../../../data/testing/downloadZipV158";
 
@@ -38,6 +40,93 @@ describe("shared portfolio selection", () => {
     // 2016 Project Brief disclosure of the same guarantee), both matching.
     expect(portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, query: "Hoi Xuan" }).filtered).toHaveLength(2);
     expect(portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, query: "존재하지 않는 검색어" }).filtered).toHaveLength(0);
+  });
+});
+
+// V164-3: year and category each offer only what the other one's choice leaves, so
+// no pair the reader can pick ends in "조건에 맞는 자료가 없습니다" (D-017).
+describe("cross-conditioned selectors", () => {
+  const allOffered = portfolioSelectionModelV143(props, EMPTY_PORTFOLIO_SELECTION_V143);
+
+  it("offers every year and every category while nothing is chosen", () => {
+    expect(allOffered.years.length).toBeGreaterThan(1);
+    expect(allOffered.categories.length).toBeGreaterThan(1);
+  });
+
+  it("narrows the categories to the chosen year, and the years to the chosen category", () => {
+    const narrowedByYear = allOffered.years.some(
+      (year) => portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories.length < allOffered.categories.length
+    );
+    const narrowedByCategory = allOffered.categories.some(
+      (category) => portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, category }).years.length < allOffered.years.length
+    );
+    expect(narrowedByYear).toBe(true);
+    expect(narrowedByCategory).toBe(true);
+  });
+
+  it("every year x category pair that is offered leads to a record", () => {
+    for (const year of allOffered.years) {
+      const categories = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories;
+      for (const category of categories) {
+        const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year, category });
+        expect(result.filtered.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("keeps the reader's current choice in its own list", () => {
+    const year = allOffered.years[0];
+    const category = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories[0];
+    const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year, category });
+    expect(result.years).toContain(year);
+    expect(result.categories).toContain(category);
+  });
+
+  it("does not change the totals or the source rows", () => {
+    const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year: allOffered.years[0] });
+    expect(result.total).toBe(allOffered.total);
+    expect(entities).toHaveLength(13);
+  });
+});
+
+// V164 R2: C-025 delivered one status in two spellings (GOLD_STANDARD_CERTIFIED_DESIGN
+// and "Gold Standard Certified Design"); the status selector offered it twice and a
+// chart counted two bars with one Korean name.
+describe("one choice per classification (R2)", () => {
+  const registry = readDownloadJsonV158("c-025").entities as VietnamEntityV124[];
+  const registryProps = { elementId: "C-025", entities: registry, detailTemplate: "portfolio" };
+
+  it("offers one entry for every spelling-insensitive category", () => {
+    const { categories } = portfolioSelectionModelV143(registryProps, EMPTY_PORTFOLIO_SELECTION_V143);
+    const keys = categories.map((category) => categoryVariantKeyV164(category));
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it("selecting a category finds the records of every spelling of it", () => {
+    const all = portfolioSelectionModelV143(registryProps, EMPTY_PORTFOLIO_SELECTION_V143);
+    const counted = all.categories.reduce(
+      (sum, category) => sum + portfolioSelectionModelV143(registryProps, { ...EMPTY_PORTFOLIO_SELECTION_V143, category }).filtered.length,
+      0
+    );
+    // every record that has a category is reachable through exactly one entry
+    const withCategory = registry.filter((entity) => publicPortfolioFacetV132("C-025", entity, "portfolio").category).length;
+    expect(counted).toBeLessThanOrEqual(withCategory);
+    expect(counted).toBeGreaterThan(0);
+  });
+});
+
+describe("category counting (R2)", () => {
+  it("counts two spellings of one status as one bar, under the first spelling", () => {
+    const counts = new Map<string, number>();
+    ["Gold Standard Certified Design", "GOLD_STANDARD_CERTIFIED_DESIGN", "Listed", "LISTED", "Listed"].forEach((value) => addCategoryCountV164(counts, value));
+    expect([...counts.entries()]).toEqual([["Gold Standard Certified Design", 2], ["Listed", 3]]);
+  });
+
+  it("counts a nationality without the ownership share and a round without the new-round note", () => {
+    expect(categoryCountValueV164("D-012", "entryCountry", "Vietnam(100%)")).toBe("베트남");
+    expect(categoryCountValueV164("D-012", "entryCountry", "베트남")).toBe("베트남");
+    expect(categoryCountValueV164("D-024", "fundingRound", "Series B(신규 라운드)")).toBe("Series B");
+    expect(categoryCountValueV164("D-024", "sector", "Finance")).toBe("Finance");
   });
 });
 

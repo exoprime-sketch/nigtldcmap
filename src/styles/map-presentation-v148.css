@@ -3,7 +3,7 @@
 .map148-popup > small { color: #547068; font-size: 11px; line-height: 1.45; }
 .map148-popup dl { display: grid; grid-template-columns: minmax(56px, auto) 1fr; gap: 4px 12px; margin: 0; border-top: 1px solid #dce7e2; padding-top: 7px; }
 .map148-popup dt { color: #547068; font-size: 12px; }
-.map148-popup dd { margin: 0; font-size: 13px; font-weight: 600; }
+.map148-popup dd { margin: 0; font-size: 13px; font-weight: 600; word-break: keep-all; } /* V164-3: "34개 기준" never splits inside a word */
 .map148-summary-context { font-size: 12px; color: #5b716b; line-height: 1.5; margin: 5px 0 12px; }
 .map148-capacity { margin: 12px 0; }
 .map148-capacity table { width: 100%; border-collapse: collapse; font-size: 12px; }

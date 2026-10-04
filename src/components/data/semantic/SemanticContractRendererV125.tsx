@@ -52,6 +52,27 @@ import type { AnalysisBlockTypeV153 } from "../../../data/visualization/publicVi
 import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
 import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
+import { cdmActivityRowV164, splitCdmActivitiesV164, withDirectoryKeysV164 } from "../../../data/visualization/directoryEntitiesV164";
+import { agreementDateTextV164, agreementDetailV164, partiesTextV164, withAgreementNameV164 } from "../../../data/visualization/agreementTimelineV164";
+import { dedupeIdenticalRowsV164, evidenceColumnsV164 } from "../../../data/visualization/evidenceRowsV164";
+import { koreanLabeledValuesV164, restoredApostropheV164 } from "../../../data/visualization/publicCategoryLabelV164";
+import {
+  auxSeriesLabelV164,
+  barAxisLabelV164,
+  categoryLabelKeysV164,
+  categoryLabelSourceV164,
+  dominantSourceV164,
+  isAuxIndicatorV164,
+  koreanLegendLabelV164,
+  numberDuplicateLabelsV164,
+  observationTimeTextV164,
+  observationYearTextV164,
+  scaleKindLabelV164,
+  splitScaleGroupsV164,
+  withoutRawKeysV164,
+} from "../../../data/visualization/barRowsV164";
+import type { ScaleKindV164 } from "../../../data/visualization/barRowsV164";
+import { barScaleV164, formatBarWithUnitV164 } from "../../charts/barScaleV164";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -218,7 +239,7 @@ export default function SemanticContractRendererV125({
             primaryType
           ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
           {["kpi-trend", "multi-metric-trend", "score-benchmark"].includes(renderer) && numericRows.length > 0 && (
-            <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${numericRows[0].year || numericRows[0].period || "선택 조건"} · 항목별 값`} />
+            <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${observationTimeTextV164(numericRows[0]) || "선택 조건"} · 항목별 값`} />
           )}
           {renderEntityPanelV125(
             renderer,
@@ -323,7 +344,7 @@ function renderObservationPanelV125(
               <>
                 {typeof numericRows[0]?.year === "number" && numericRows.every((row) => row.year === numericRows[0].year) && (
                   <p className="sv125-contract-help" data-testid="selected-year-statement-v140">
-                    선택한 {numericRows[0].year}년 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다.
+                    선택한 {observationYearTextV164(numericRows[0])} 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다.
                   </p>
                 )}
                 <CategoryComparisonV125 rows={numericRows} />
@@ -361,14 +382,17 @@ export type IndicatorUnitsV142 = Record<string, { unit: string | null; unitFamil
 
 function renderEntityPanelV125(
   renderer: RendererV125,
-  entities: VietnamEntityV124[],
+  deliveredEntities: VietnamEntityV124[],
   contract: ElementVisualizationContractV125,
   countryNameKo: string,
   detailTemplate?: string,
   elementTitle?: string,
   indicatorUnits: IndicatorUnitsV142 = {}
 ) {
-  if (entities.length === 0) return null;
+  if (deliveredEntities.length === 0) return null;
+  // V164: an A-029 row named by its signing date or status is named by its note's 협정명.
+  const renamedEntities = deliveredEntities.map(withAgreementNameV164);
+  const entities = renamedEntities.some((entity, index) => entity !== deliveredEntities[index]) ? renamedEntities : deliveredEntities;
   // V162: the wide record template ('[블록] 속성' columns, one row per record)
   // reads as block cards whatever the renderer; record ids, working files and
   // the supplier's note never reach the screen (wideRecordsV162).
@@ -397,7 +421,7 @@ function renderEntityPanelV125(
     case "directory":
       return (
         <>
-          <EntityFacetCountsV153 entities={entities} recordLabel="기관" />
+          <EntityFacetCountsV153 entities={splitCdmActivitiesV164(entities.map(withDirectoryKeysV164)).institutions} recordLabel="기관" />
           <DirectoryEntitiesV125
             entities={entities}
             detailTemplate={detailTemplate}
@@ -581,7 +605,7 @@ function ScenarioRangePanelV125({ rows }: { rows: NumericRowV125[] }) {
   );
 }
 
-function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
+export function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
   if (rows.length === 0) return null;
   const ordered = [...rows].sort(
     (left, right) => seasonOrderV125(left) - seasonOrderV125(right)
@@ -594,7 +618,8 @@ function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
             <span><PublicTermTextV134 text={seasonLabelV125(row)} /></span>
             <strong>{formatValueV121(row.value)}</strong>
             <small>
-              {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
+              {/* A climatology is dated by its span ("1991–2020 평년"), not by the first year of it. */}
+              {[row.unit, observationTimeTextV164(row)].filter(Boolean).join(" · ") ||
                 "기준정보 미기재"}
             </small>
           </article>
@@ -708,7 +733,7 @@ function CapabilityScorecardV125({
               <span><PublicTermTextV134 text={row.displayLabel} /></span>
               <strong>{formatValueV121(row.value)}</strong>
               <small>
-                {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
+                {[row.unit, observationTimeTextV164(row)].filter(Boolean).join(" · ") ||
                   "기준정보 미기재"}
               </small>
             </article>
@@ -838,8 +863,9 @@ function TwoYearChangeUnitV135({
           : (delta / Math.abs(first.value)) * 100;
       return {
         key,
-        label:
-          publicTextV126(first.displayLabel) || first.semanticMeasure.labelKo,
+        label: koreanLegendLabelV164(
+          publicRowLabelV164(first.displayLabel) || first.semanticMeasure.labelKo
+        ),
         first,
         last,
         delta,
@@ -917,7 +943,7 @@ export function compactSeriesLabelsV164(labels: string[]): string[] {
   return new Set(out).size === out.length ? out : labels;
 }
 
-function TrendUnitV125({
+export function TrendUnitV125({
   rows,
   unit,
   elementId,
@@ -935,29 +961,40 @@ function TrendUnitV125({
       map.set(row.seriesKey, bucket);
       return map;
     }, new Map<string, NumericRowV125[]>())
-  ).map(([key, values]) => ({
-    key,
-    label:
-      publicTextV126(publicIndicatorSeriesV144(values[0])) ||
-      values[0].semanticMeasure.labelKo,
-    rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
-  }));
+  ).map(([key, values]) => {
+    // V164: an auxiliary source (A-030's KITA rows) says so in its legend entry.
+    const aux = values.every((row) => isAuxIndicatorV164(row.indicatorId));
+    const label = seriesLabelV164(values[0]);
+    return {
+      key,
+      aux,
+      label: aux ? auxSeriesLabelV164(label) : label,
+      rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
+    };
+  });
   // V164: many series (D-011's ~100 donors) open on the largest few by latest value,
   // with the shared measure words taken out of each legend label; the rest stay one
   // click away in the legend and all of them stay in the table below.
-  const compactLabelsV164 = compactSeriesLabelsV164(sourceSeries.map((item) => item.label));
+  const compactLabelsV164 = numberDuplicateLabelsV164(compactSeriesLabelsV164(sourceSeries.map((item) => item.label)));
   sourceSeries.forEach((item, index) => { item.label = compactLabelsV164[index]; });
   const latestOfV164 = (item: { rows: NumericRowV125[] }) => {
     const last = item.rows[item.rows.length - 1];
     return last ? Math.abs(last.value) : -1;
   };
+  // An auxiliary series is the same item from another source: it opens hidden, one
+  // click away in the legend, so the same year never shows two values for one item.
+  const hidesAuxV164 = sourceSeries.some((item) => !item.aux) && sourceSeries.some((item) => item.aux);
+  const openCandidatesV164 = hidesAuxV164 ? sourceSeries.filter((item) => !item.aux) : sourceSeries;
+  const overLimitV164 = openCandidatesV164.length > TREND_OPEN_SERIES_LIMIT_V164;
   const openSeriesV164 = new Set(
-    sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164
-      ? [...sourceSeries].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
-      : sourceSeries.map((item) => item.key)
+    overLimitV164
+      ? [...openCandidatesV164].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
+      : openCandidatesV164.map((item) => item.key)
   );
-  if (sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164) {
+  if (overLimitV164) {
     sourceSeries.sort((left, right) => Number(openSeriesV164.has(right.key)) - Number(openSeriesV164.has(left.key)) || latestOfV164(right) - latestOfV164(left));
+  } else if (hidesAuxV164) {
+    sourceSeries.sort((left, right) => Number(left.aux) - Number(right.aux));
   }
   const years = sourceSeries.flatMap((item) =>
     item.rows.map((row) => row.year as number)
@@ -1069,15 +1106,9 @@ function TrendUnitV125({
  * Magnitude still sets the length; only the anchor and direction come from the
  * sign, so a value's size reads the same as before.
  */
-function barScaleV137(values: number[]) {
-  const negMax = Math.max(0, ...values.map((value) => (value < 0 ? -value : 0)));
-  const posMax = Math.max(0, ...values.map((value) => (value > 0 ? value : 0)));
-  const span = Math.max(negMax + posMax, 1e-9);
-  return {
-    signed: negMax > 0,
-    zeroPercent: (negMax / span) * 100,
-    spanFor: (value: number) => (Math.abs(value) / span) * 100,
-  };
+function barScaleV137(values: number[], unit: string) {
+  // V164: a lone percentage is measured against 100 and a rank has no bar at all.
+  return barScaleV164(values, unit);
 }
 
 /**
@@ -1127,7 +1158,7 @@ function ChartRowsTableV141({
   );
 }
 
-function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
+export function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
   // V162 (P12-B): a bar named after a place reads "한글명 (현지명)".
   const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   if (rows.length === 0) return null;
@@ -1139,29 +1170,41 @@ function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
-  const comparisonKey = comparisonKeyV138(rows);
+  // V164: a dimension that is the same on every row names no bar (BGD A-024 named
+  // its three bars after technology "24"); the rows' own label comes first.
+  const labelKeys = categoryLabelKeysV164(rows);
+  const comparisonKey = comparisonKeyV138(rows, labelKeys);
   const rowLabel = (row: NumericRowV125) => {
     if (comparisonKey) {
       const value = rowSubjectValuesV138(row).get(comparisonKey);
       if (value) return subjectLabelV138(comparisonKey, value);
     }
-    return categoryLabelV125(row);
+    return categoryLabelV125(row, labelKeys);
   };
+  const rowSource = (row: NumericRowV125) =>
+    comparisonKey && rowSubjectValuesV138(row).has(comparisonKey) ? comparisonKey : categoryLabelSourceV164(row, labelKeys);
   const labelCounts = new Map<string, number>();
   rows.forEach((row) => {
     const label = rowLabel(row);
     labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
   });
+  // V164: English classification values read in Korean wherever a bar is named.
   const barLabel = (row: NumericRowV125) => {
     const label = rowLabel(row);
-    if ((labelCounts.get(label) || 0) < 2) return regionText(label);
+    if ((labelCounts.get(label) || 0) < 2) return koreanLegendLabelV164(regionText(label));
     const qualifier = comparisonQualifierV137(row, label);
-    return regionText(qualifier ? `${label} · ${qualifier}` : label);
+    return koreanLegendLabelV164(regionText(qualifier ? `${label} · ${qualifier}` : label));
   };
+  // V164: the auxiliary source of an indicator (A-030's KITA rows) is a second value
+  // for the same item and year, so it is not drawn beside the main one; it sits
+  // behind a disclosure with its own bars.
+  const auxRows = rows.filter((row) => isAuxIndicatorV164(row.indicatorId));
+  const mainRows = auxRows.length > 0 && auxRows.length < rows.length ? rows.filter((row) => !isAuxIndicatorV164(row.indicatorId)) : rows;
+  const hiddenAuxRows = mainRows === rows ? [] : auxRows;
   // "항목별 값" says nothing about what is on the chart. Where every bar carries
   // the same measure and the same period, those are the title.
-  const measures = new Set(rows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
-  const periods = new Set(rows.map((row) => row.period).filter(Boolean));
+  const measures = new Set(mainRows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
+  const periods = new Set(mainRows.map((row) => row.period).filter(Boolean));
   const measureTitle = measures.size === 1 ? [...measures][0] : "";
   const periodTitle = periods.size === 1 ? [...periods][0] : "";
   const frameTitle = measureTitle
@@ -1169,14 +1212,55 @@ function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV
       ? `${measureTitle} · ${periodTitle}`
       : measureTitle
     : "항목별 값";
+  const axisSource = dominantSourceV164(mainRows.map(rowSource));
+  // A mean and a total of one unit are 10^6 apart (A-026) and are scaled apart.
+  const unitGroups = (list: NumericRowV125[]) =>
+    groupByUnitV125(list).flatMap(({ unit, rows: unitRows }) =>
+      splitScaleGroupsV164(unitRows, barLabel, (row) => row.value).map((group) => (
+        <CategoryComparisonUnitV143
+          key={`${unit || "no-unit"}|${group.kind}`}
+          unit={unit}
+          rows={group.items}
+          barLabel={barLabel}
+          title={frameTitle}
+          markedYear={markYear}
+          axisSource={axisSource}
+          scaleKind={group.kind}
+        />
+      ))
+    );
   return (
     <VisualizationFrameV125 eyebrow="항목" title={frameTitle} block="category-bar">
-      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} markedYear={markYear} />)}
+      {unitGroups(mainRows)}
+      {hiddenAuxRows.length > 0 && (
+        <details className="sv164-aux-rows" data-testid="aux-rows-v164">
+          <summary>보조 자료 {hiddenAuxRows.length}개 보기</summary>
+          {unitGroups(hiddenAuxRows)}
+        </details>
+      )}
     </VisualizationFrameV125>
   );
 }
 
-function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = null }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string; markedYear?: number | null }) {
+function CategoryComparisonUnitV143({
+  rows,
+  unit,
+  barLabel,
+  title,
+  markedYear = null,
+  axisSource = "measure",
+  scaleKind = "all",
+}: {
+  rows: NumericRowV125[];
+  unit: string;
+  barLabel: (row: NumericRowV125) => string;
+  title: string;
+  markedYear?: number | null;
+  /** What names the bars (a dimension key, or "measure" for the row's own indicator label). */
+  axisSource?: string;
+  /** "average" / "total" when a unit's rows were split onto scales of their own. */
+  scaleKind?: ScaleKindV164;
+}) {
   // What each bar is, from the dataset's contract when this is its bar screen (V153).
   const comparisonContract = useAnalysisContractV153();
   const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
@@ -1184,10 +1268,14 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
   const [expanded, setExpanded] = useState(false);
   const ordered = order === "source" ? rows : [...rows].sort((a, b) => order === "desc" ? b.value - a.value : a.value - b.value);
   const shown = expanded ? ordered : ordered.slice(0, 12);
-  const scale = barScaleV137(rows.map((row) => row.value));
+  const scale = barScaleV137(rows.map((row) => row.value), unit);
+  // V164: the axis is the contract's unless the bars contradict it (D-009 and E-009
+  // are contracted as 연도 but draw one bar per indicator).
+  const axisLabel = barAxisLabelV164(comparisonAxisV153, axisSource, rows.map(barLabel));
+  const kindLabel = scaleKindLabelV164(scaleKind);
   return <article className="sv125-contract-axis" data-testid="comparison-workspace-v143">
             <div className="sv143-comparison-tools">
-              <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+              <h5>단위: <PublicTermTextV134 text={unit || "미기재"} />{kindLabel ? ` · ${kindLabel}` : ""}</h5>
               {rows.length > 1 && <label>정렬 <select aria-label={`${title} ${unit} 정렬`} value={order} onChange={(event) => setOrder(event.target.value)}><option value="source">자료 순서</option><option value="desc">높은 값부터</option><option value="asc">낮은 값부터</option></select></label>}
             </div>
             {scale.signed && (
@@ -1195,7 +1283,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
-            <ChartAxesV150 x={title} y={comparisonAxisV153 || "비교 항목"} unit={unit} />
+            <ChartAxesV150 x={title} y={axisLabel} unit={unit} />
             <div className="sv125-contract-bars" role="list">
               {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);
@@ -1207,6 +1295,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                 return (
                   <InteractiveValueItemV127
                     key={row.recordId}
+                    className={scale.drawTrack ? "" : "sv164-rank-row"}
                     label={barLabel(row)}
                     value={formatValueV121(row.value)}
                     unit={unit}
@@ -1217,32 +1306,33 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                         <em className="sv162-marked-year" data-testid="bar-marked-year-v162"> 선택 {markedYear}년</em>
                       ) : null}
                     </strong>
-                    <span
-                      aria-hidden="true"
-                      className={scale.signed ? "sv125-contract-track--signed" : undefined}
-                      style={
-                        scale.signed
-                          ? ({ "--sv125-zero": `${scale.zeroPercent}%` } as CSSProperties)
-                          : undefined
-                      }
-                    >
-                      <i
-                        className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}${
-                          scale.signed && row.value < 0 ? " sv125-contract-fill--negative" : ""
-                        }`}
-                        style={{ width: `${width}%`, marginInlineStart: `${offset}%` }}
-                      />
-                    </span>
-                    <b>
-                      {formatValueV121(row.value)} {unit}
-                    </b>
+                    {scale.drawTrack && (
+                      <span
+                        aria-hidden="true"
+                        className={scale.signed ? "sv125-contract-track--signed" : undefined}
+                        style={
+                          scale.signed
+                            ? ({ "--sv125-zero": `${scale.zeroPercent}%` } as CSSProperties)
+                            : undefined
+                        }
+                      >
+                        <i
+                          className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}${
+                            scale.signed && row.value < 0 ? " sv125-contract-fill--negative" : ""
+                          }`}
+                          style={{ width: `${width}%`, marginInlineStart: `${offset}%` }}
+                        />
+                      </span>
+                    )}
+                    {/* Three significant digits on the bar; the exact figure is in the tooltip and the table. */}
+                    <b>{formatBarWithUnitV164(row.value, unit)}</b>
                   </InteractiveValueItemV127>
                 );
               })}
             </div>
             {rows.length > 12 && <div className="sv143-comparison-tools"><span>{shown.length} / {rows.length}개 항목 표시</span><button type="button" onClick={() => setExpanded((value) => !value)}>{expanded ? "12개만 보기" : `전체 ${rows.length}개 보기`}</button></div>}
             <ChartRowsTableV141
-              rows={ordered.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: String(row.year || row.period || ""), value: row.value }))}
+              rows={ordered.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: observationTimeTextV164(row), value: row.value }))}
               unit={publicTextV126(unit) || ""}
               label={title}
               testId="comparison-chart-table-v141"
@@ -1251,7 +1341,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
 }
 
 /** Values without a meaningful shared axis belong in a table, never headline tiles. */
-function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
+export function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRowV125[]; title: string; context?: SemanticObservationV125[] }) {
   if (!rows.length) return null;
   return (
     <div className="sv125-matrix-wrap sv146-values-table" data-testid="analysis-values-table-v146" data-analysis-block="table">
@@ -1262,11 +1352,12 @@ function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRow
           const change = context ? previousYearChangeV144(row, context) : null;
           return (
           <tr key={row.recordId}>
-            <th scope="row"><PublicTermTextV134 text={publicIndicatorSeriesV144(row)} /></th>
+            <th scope="row"><PublicTermTextV134 text={seriesLabelV164(row)} /></th>
             <td>{formatValueV121(row.value)}</td>
-            <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
-            <td>{row.year || row.period || "미기재"}</td>
-            {context && <td>{change ? <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></> : "비교 자료 없음"}</td>}
+            <td><PublicTermTextV134 text={amountUnitTextV164(seriesLabelV164(row), observationUnitV125(row)) || "—"} /></td>
+            <td>{observationTimeTextV164(row) || "미기재"}</td>
+            {/* V164 R2: a change of exactly zero reads "변화 없음", not "0 1000 ha". */}
+            {context && <td>{change ? (change.value === 0 ? "변화 없음" : <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></>) : "비교 자료 없음"}</td>}
           </tr>
         ); })}</tbody>
       </table>
@@ -1285,12 +1376,12 @@ function EvidenceCardsV125({
     <div className="sv125-contract-evidence-grid">
       {rows.slice(0, 24).map((row) => (
         <article key={row.recordId} tabIndex={0}>
-          <strong><PublicTermTextV134 text={row.displayLabel} /></strong>
+          <strong><PublicTermTextV134 text={withoutRawKeysV164(row.displayLabel) || row.displayLabel} /></strong>
           <p><PublicTermTextV134 text={formatValueV121(row.value)} /></p>
           <small>
             <PublicTermTextV134
               text={
-                [row.year || row.period, publicSourceOrganizationV136_1(row.provenance.sourceOrg)]
+                [observationTimeTextV164(row), publicSourceOrganizationV136_1(row.provenance.sourceOrg)]
                   .filter(Boolean)
                   .join(" · ") || "기준정보 미기재"
               }
@@ -1474,11 +1565,12 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
  * counts; the detail used to list events only, so the comparison the card
  * promised was nowhere on the screen (V141).
  */
-const TIMELINE_GROUP_FIELD_V141: Readonly<Record<string, { key: string; label: string; noun: string }>> = Object.freeze({
-  "B-012": { key: "재해유형", label: "재해 유형별 사건 수", noun: "건" },
+const TIMELINE_GROUP_FIELD_V141: Readonly<Record<string, { key: string; label: string; axis: string; noun: string }>> = Object.freeze({
+  // `label` titles the card; `axis` is what the bars are (the contract's 재해 유형), not the title again.
+  "B-012": { key: "재해유형", label: "재해 유형별 사건 수", axis: "재해 유형", noun: "건" },
 });
 
-function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEntityV124[]; elementId: string }) {
+export function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEntityV124[]; elementId: string }) {
   const rule = TIMELINE_GROUP_FIELD_V141[elementId];
   if (!rule) return null;
   const counts = new Map<string, number>();
@@ -1493,11 +1585,11 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
   const max = items[0][1];
   return (
     <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`} block="category-bar">
-      <ChartAxesV150 x="건수" y={rule.label} unit={rule.noun} />
+      <ChartAxesV150 x="건수" y={rule.axis} unit={rule.noun} />
       <ol className="sv125-group-counts" data-testid="timeline-group-counts-v141">
         {items.map(([label, count]) => (
           <li key={label}>
-            <span><PublicTermTextV134 text={label} /></span>
+            <span><PublicTermTextV134 text={koreanLegendLabelV164(label)} /></span>
             <i aria-hidden="true" style={{ width: `${(count / max) * 100}%` }} />
             <strong>{count.toLocaleString("ko-KR")}{rule.noun}</strong>
           </li>
@@ -1506,6 +1598,16 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
       {unstated > 0 && <p className="sv125-contract-help">유형 미기재 {unstated.toLocaleString("ko-KR")}{rule.noun}</p>}
     </VisualizationFrameV125>
   );
+}
+
+/**
+ * V164: an A-029 note is a detail line without the repeated or unreadable parts
+ * (agreementDetailV164); an agreement of E-014 names its parties first.
+ */
+function timelineDetailV164(entity: VietnamEntityV124, detail: string): string {
+  if (entity.elementId === "A-029") return agreementDetailV164(detail);
+  const parties = partiesTextV164(entity.normalizedAttributes?.["체결국"]);
+  return parties ? `체결국: ${parties}${detail ? ` · ${detail}` : ""}` : detail;
 }
 
 function PolicyTimelineV125({
@@ -1520,6 +1622,8 @@ function PolicyTimelineV125({
   /** The contract's first block: the timeline opens the screen unless the contract asks for the counts (V153). */
   primaryType?: AnalysisBlockTypeV153 | null;
 }) {
+  // V164 R2: a place a record names reads "한글명 (현지명)" where the dictionary knows it.
+  const regionText = useRegionTextV162(elementId);
   if (documentTimelineShapeV140(entities)) {
     return <DocumentTimelineV140 entities={entities} />;
   }
@@ -1534,8 +1638,11 @@ function PolicyTimelineV125({
     })),
     ...entities.map((entity) => ({
       key: entity.recordId,
-      date: entityFieldV125(entity, [
+      // V164: A-029's signing / entry-into-force columns (also the Bangladesh
+      // names) and the events of its note date a row before the generic keys do.
+      date: agreementDateTextV164(entity) || entityFieldV125(entity, [
         "signedDate",
+        "signed_date",
         "effectiveDate",
         "date",
         "year",
@@ -1550,27 +1657,33 @@ function PolicyTimelineV125({
         // EM-DAT dates each event by its start day.
         "시작일",
       ]),
-      title: publicEntityTitleV131(entity),
-      detail:
-        publicDescriptionNoteV137(
-          entityFieldV125(entity, [
-            "status",
-            "scope",
-            "agreementType",
-            "속성23_설명",
-            "속성7_상태",
-            // EM-DAT states where the event struck in its own column.
-            "발생지역_원문",
-          ])
-        ) ||
-        withoutRestatedTitleV137(
-          publicDescriptionNoteV137(entity.note),
-          publicEntityTitleV131(entity)
-        ) ||
-        "",
+      title: timelineTitleV164(entity, publicEntityTitleV131(entity)),
+      detail: timelineEventPlaceV164(
+        entity,
+        timelineDetailV164(
+          entity,
+          publicDescriptionNoteV137(
+            entityFieldV125(entity, [
+              "status",
+              "scope",
+              "agreementType",
+              "속성23_설명",
+              "속성7_상태",
+              // EM-DAT states where the event struck in its own column.
+              "발생지역_원문",
+            ])
+          ) ||
+            withoutRestatedTitleV137(
+              publicDescriptionNoteV137(entity.note),
+              publicEntityTitleV131(entity)
+            ) ||
+            ""
+        ),
+        regionText
+      ),
       sourceUrl: entityUrlV125(entity),
     })),
-  ].sort((left, right) => timelineSortV125(left.date) - timelineSortV125(right.date));
+  ].sort((left, right) => timelineOrderKeyV164(left.date) - timelineOrderKeyV164(right.date));
   if (items.length === 0) return null;
   return (
     <>
@@ -1642,7 +1755,7 @@ export function EvidenceMatrixV125({
     }
     return categoryLabelV125(row);
   };
-  const items: Array<{
+  const allItems: Array<{
     key: string;
     group: string | null;
     area: string;
@@ -1662,14 +1775,19 @@ export function EvidenceMatrixV125({
       .filter((entity) => !isCompilerMethodRowV139(entity))
       .map((entity) => entityMatrixRowV137(entity, emissionUnit, entities)),
   ];
+  // V164: a row whose every cell repeats a row already listed is listed once
+  // (A-013 holds one NDC action per source document, and the document is not a
+  // column of this table); the count of those is stated below the controls.
+  const { items, hiddenCount: repeatedCount } = dedupeIdenticalRowsV164(allItems, (cell) => publicTextV126(cell) ?? "");
   if (items.length === 0) return null;
   const groups = [...new Set(items.map((item) => item.group).filter((value): value is string => Boolean(value)))];
   const needle = query.trim().toLocaleLowerCase("ko-KR");
   const filtered = items.filter((item) => (group === "all" || item.group === group) && (!needle || `${item.area} ${item.result} ${item.basis}`.toLocaleLowerCase("ko-KR").includes(needle)));
   const pages = Math.max(1, Math.ceil(filtered.length / 20));
   const currentPage = Math.min(page, pages - 1);
-  const hasGroups = items.some((item) => item.group);
-  const hasUnits = items.some((item) => item.unit);
+  // A column no row fills is not printed (its header wrapped one character per
+  // line on A-013 and E-015), and a single group is not a column of its own.
+  const { hasGroups, hasUnits, hasBasis } = evidenceColumnsV164(items);
   // Rows stay in source order; a group is named once, on its first row.
   let lastGroup: string | null = null;
   return (
@@ -1679,15 +1797,20 @@ export function EvidenceMatrixV125({
         {groups.length > 1 && <label>자료 구분 <select value={group} onChange={(event) => { setGroup(event.target.value); setPage(0); }}><option value="all">전체</option>{groups.map((value) => <option key={value}>{value}</option>)}</select></label>}
         <span role="status">{filtered.length.toLocaleString("ko-KR")}건 / 전체 {items.length.toLocaleString("ko-KR")}건</span>
       </div>
+      {repeatedCount > 0 && (
+        <p className="sv125-evidence-matrix__repeats" data-testid="evidence-matrix-repeats-v164">
+          표시 내용이 완전히 같은 {repeatedCount.toLocaleString("ko-KR")}건은 한 번만 보여 드립니다.
+        </p>
+      )}
       <div className="sv125-matrix-wrap">
-        <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
+        <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"} data-columns={2 + (hasGroups ? 1 : 0) + (hasUnits ? 1 : 0) + (hasBasis ? 1 : 0)}>
           <thead>
             <tr>
               {hasGroups && <th scope="col">구분</th>}
               <th scope="col">항목</th>
               <th scope="col">내용·값</th>
               {hasUnits && <th scope="col">단위</th>}
-              <th scope="col">기준연도·대상·근거</th>
+              {hasBasis && <th scope="col">기준연도·대상·근거</th>}
             </tr>
           </thead>
           <tbody>
@@ -1704,7 +1827,7 @@ export function EvidenceMatrixV125({
                   <th scope="row"><PublicTermTextV134 text={item.area} /></th>
                   <td>{item.result === "—" ? "—" : <PublicTermTextV134 text={item.result} />}</td>
                   {hasUnits && <td>{item.unit ? <PublicTermTextV134 text={item.unit} /> : "—"}</td>}
-                  <td><PublicTermTextV134 text={item.basis} /></td>
+                  {hasBasis && <td><PublicTermTextV134 text={item.basis} /></td>}
                 </tr>
               );
             })}
@@ -1793,7 +1916,7 @@ export function directoryCountsV142(entities: VietnamEntityV124[]): {
 } {
   const byOrganisation = new Map<string, { contacts: number; roles: Set<string> }>();
   let contacts = 0;
-  entities.forEach((entity) => {
+  entities.map(withDirectoryKeysV164).forEach((entity) => {
     const organisation = directoryOrganisationV142(entity);
     const person = directoryPersonV142(entity);
     const role = publicTextV126((entity.normalizedAttributes || {})["role"]) || "";
@@ -1812,8 +1935,37 @@ export function directoryCountsV142(entities: VietnamEntityV124[]): {
   };
 }
 
+/** A directory shows every institution it counts (the grid's default stops at 12 of 16). */
+const DIRECTORY_CARD_LIMIT_V164 = 30;
+
+/**
+ * V164: the CDM activities an Article 6.4 authority is processing are projects,
+ * so they are listed by name with their kind and status, apart from the
+ * institutions the heading counts.
+ */
+function CdmActivitiesTableV164({ entities }: { entities: VietnamEntityV124[] }) {
+  const rows = entities.map(cdmActivityRowV164);
+  return (
+    <section className="sv164-activities" data-testid="directory-cdm-activities-v164" data-activity-count={rows.length} aria-label="CDM 전환 활동">
+      <h5 className="sv164-activities__title">CDM 전환 활동 · {rows.length.toLocaleString("ko-KR")}건</h5>
+      <p className="sv164-activities__note">제6.4조 국가지정기관이 전환 승인 절차를 진행 중인 CDM 사업·프로그램 목록입니다.</p>
+      <ListFoldV160 total={rows.length} noun="건">
+        <ol className="sv164-activities__list">
+          {rows.map((row) => (
+            <li key={row.recordId}>
+              <strong><PublicTermTextV134 text={row.name} /></strong>
+              {(row.kind || row.status) && <span>{[row.kind, row.status].filter(Boolean).join(" · ")}</span>}
+              {row.procedure && <span className="sv164-activities__procedure"><PublicTermTextV134 text={row.procedure} /></span>}
+            </li>
+          ))}
+        </ol>
+      </ListFoldV160>
+    </section>
+  );
+}
+
 function DirectoryEntitiesV125({
-  entities,
+  entities: deliveredEntities,
   detailTemplate,
   elementTitle,
 }: {
@@ -1821,6 +1973,9 @@ function DirectoryEntitiesV125({
   detailTemplate?: string;
   elementTitle?: string;
 }) {
+  // V164: the Korean-named columns of a country delivery are read as the cards'
+  // keys, and CDM activities (projects) are listed apart from the institutions.
+  const { institutions: entities, activities: cdmActivities } = splitCdmActivitiesV164(deliveredEntities.map(withDirectoryKeysV164));
   const installed = entities.filter((entity) => !isNotInstalledEntityV138(entity));
   const notInstalled = entities.filter(isNotInstalledEntityV138);
   const counts = directoryCountsV142(installed.length ? installed : entities);
@@ -1865,7 +2020,9 @@ function DirectoryEntitiesV125({
         template="directory"
         detailTemplate={detailTemplate}
         elementTitle={elementTitle}
+        limit={DIRECTORY_CARD_LIMIT_V164}
       />
+      {cdmActivities.length > 0 && <CdmActivitiesTableV164 entities={cdmActivities} />}
       {notInstalled.length > 0 && (
         <div className="sv125-contract-note" role="note" data-testid="directory-not-installed-v138">
           <strong>현지 사무소가 없는 기관 {notInstalled.length.toLocaleString("ko-KR")}곳</strong>
@@ -2003,7 +2160,8 @@ function GenericEntitiesV125({
         <ol className="sv125-group-counts" data-testid="entity-value-comparison-v141" data-compared-measure={comparable[0].measureKey || comparable[0].unit}>
           {comparable.slice(0, 20).map((item) => (
             <li key={item.recordId}>
-              <span><PublicTermTextV134 text={item.title} /></span>
+              {/* V164-3: B-028's basin ID field name (MAIN_BAS) reads as the word it stands for. */}
+              <span><PublicTermTextV134 text={item.title.replace(/HydroBASINS\s+MAIN_BAS\s+/gu, "HydroBASINS 유역 ")} /></span>
               <i aria-hidden="true" style={{ width: `${(Math.abs(item.value) / comparableMax) * 100}%` }} />
               <strong>{formatValueV121(item.value)} <PublicTermTextV134 text={item.unit} /></strong>
             </li>
@@ -2239,8 +2397,53 @@ function comparisonQualifierV137(
     const text = publicDimensionValueV134(key, value);
     if (text && text !== label) return text;
   }
-  const displayed = publicTextV126(row.displayLabel);
+  const displayed = publicRowLabelV164(row.displayLabel);
   return displayed && displayed !== label ? displayed : null;
+}
+
+/** The delivered row label without the delivery's own column and indicator keys (V164). */
+function publicRowLabelV164(value: string | null | undefined): string | null {
+  const text = publicTextV126(value);
+  return text === null ? null : withoutRawKeysV164(text) || null;
+}
+
+/**
+ * The name of a row's series in a legend or a table: the delivery's keys cut
+ * (BGD D-006 "D006_carbon_tax_…", BGD E-012 "EMP_TEMP_SEX_OCU_NB_A · occupation_…")
+ * and known English classification values in Korean. Falls back to the measure.
+ */
+function seriesLabelV164(row: SemanticObservationV125): string {
+  const text = publicTextV126(namedRawKeysV164(publicIndicatorSeriesV144(row))) || "";
+  return koreanLegendLabelV164(restoredApostropheV164(withoutRawKeysV164(text) || row.semanticMeasure.labelKo || ""));
+}
+
+/**
+ * V164 R2: a delivery key the platform has a reviewed name for ("MIGA 정치적 리스크
+ * 보증 · guarantee_amount_total_active", BGD D-026) reads as that name instead of
+ * being cut - cut, nine statistics all read "MIGA 정치적 리스크 보증". A key with no
+ * reviewed name is left for `withoutRawKeysV164`.
+ */
+export function namedRawKeysV164(label: string): string {
+  return String(label ?? "")
+    .split(/(\s+·\s+)/u)
+    .map((part, index) => {
+      if (index % 2 === 1 || !/^[a-z][a-z0-9]*(?:_[a-z0-9]+){2,}$/u.test(part.trim())) return part;
+      const named = publicDimensionValueV134("indicator", part.trim());
+      return named && named !== part.trim() && named !== "분류 미기재" ? named : part;
+    })
+    .join("");
+}
+
+const AMOUNT_LABEL_V164 = /금액|예산|비용|투자액|대출액|지원액|보증금/u;
+const COUNT_UNIT_V164 = /^(?:건|개|곳|명|회)$/u;
+
+/**
+ * V164 R2: an amount the source files under a count unit (BGD D-026's "보증금액
+ * 합계 … 1,211,600,000 건") has no unit a reader can trust. The figure stays and
+ * the unit says it is not stated; no currency is assumed.
+ */
+export function amountUnitTextV164(label: string, unit: string): string {
+  return AMOUNT_LABEL_V164.test(label) && COUNT_UNIT_V164.test(unit.trim()) ? "단위 미기재" : unit;
 }
 
 /**
@@ -2301,8 +2504,8 @@ function subjectLabelV138(key: string, value: string): string {
  * across these rows is what is being compared. Returns null when the preferred
  * label is already unique, so screens that read correctly today are untouched.
  */
-function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
-  const preferred = new Set(rows.map((row) => categoryLabelV125(row)));
+function comparisonKeyV138(rows: SemanticObservationV125[], labelKeys?: readonly string[]): string | null {
+  const preferred = new Set(rows.map((row) => categoryLabelV125(row, labelKeys)));
   if (preferred.size === rows.length) return null;
   const values = new Map<string, Set<string>>();
   for (const row of rows) {
@@ -2323,20 +2526,15 @@ function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
   return best;
 }
 
-function categoryLabelV125(row: SemanticObservationV125): string {
-  for (const key of [
-    "category",
-    "scenario",
-    "technology",
-    "region",
-    "province",
-    "detail",
-    "sex",
-  ]) {
-    const label = row.dimensionLabels[key] || row.dimensions[key];
-    if (label) return publicDimensionValueV134(key, label);
-  }
-  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
+/**
+ * The name of a bar. `labelKeys` is the order the rows being compared prefer
+ * (see categoryLabelKeysV164: a dimension that is the same on every row comes
+ * last); callers that label one row on its own use the default order.
+ */
+function categoryLabelV125(row: SemanticObservationV125, labelKeys?: readonly string[]): string {
+  const key = categoryLabelSourceV164(row, labelKeys);
+  if (key) return publicDimensionValueV134(key, row.dimensionLabels[key] || row.dimensions[key]);
+  return publicRowLabelV164(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function scenarioLabelV125(row: SemanticObservationV125): string {
@@ -2344,7 +2542,7 @@ function scenarioLabelV125(row: SemanticObservationV125): string {
     const label = row.dimensionLabels[key] || row.dimensions[key];
     if (label) return publicDimensionValueV134(key, label);
   }
-  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
+  return publicRowLabelV164(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function seasonLabelV125(row: SemanticObservationV125): string {
@@ -2354,7 +2552,7 @@ function seasonLabelV125(row: SemanticObservationV125): string {
   }
   return (
     row.period ||
-    publicTextV126(row.displayLabel) ||
+    publicRowLabelV164(row.displayLabel) ||
     row.semanticMeasure.labelKo
   );
 }
@@ -2733,7 +2931,10 @@ function entityMatrixRowV137(
     // An empty cell reads as empty. C-009 printed "세부 내용은 상세 데이터에서
     // 확인" forty-three times down one column, which says nothing forty-three
     // times; the table already leads to the detail below it.
-    result: restatedAbbreviation ? "—" : result || "—",
+    // V164: "부문: Energy Efficiency · 상태: Future" (A-013) reads its known
+    // classification values in Korean; a sentence of the source is never touched.
+    // The restated-text test above compares the delivered text, so it stays first.
+    result: restatedAbbreviation ? "—" : koreanLabeledValuesV164(result) || "—",
     unit: unitFromDescriptionV138(
       name || "",
       indicatorGroupLabelV138(entity),
@@ -2839,6 +3040,44 @@ function safeHttpUrlV125(value: string): boolean {
 function timelineSortV125(value: string): number {
   const year = value.match(/(?:19|20)\d{2}/)?.[0];
   return year ? Number(year) : Number.MAX_SAFE_INTEGER;
+}
+
+/**
+ * V164 R2: the order key of a timeline date - the year, then the month and the
+ * day the date states ("1990-08", "1909-10-15"). Sorted by year alone, the events
+ * of one year kept the order of the file (1990-08 before 1990-01). A date with
+ * no month sorts with the year's first day; no year sorts last, as before.
+ */
+export function timelineOrderKeyV164(value: string): number {
+  const match = /((?:19|20)\d{2})(?:[-./](0?[1-9]|1[0-2])(?:[-./](0?[1-9]|[12]\d|3[01]))?(?!\d))?/u.exec(value);
+  if (!match) return Number.MAX_SAFE_INTEGER;
+  return Number(match[1]) * 10000 + Number(match[2] || 0) * 100 + Number(match[3] || 0);
+}
+
+/**
+ * V164 R2: an event whose type the register gives in Korean ("폭풍·태풍") but whose
+ * title is the English type ("Tropical cyclone") reads the Korean type first, the
+ * source's wording after it. A title that is already Korean is left as it is.
+ */
+export function timelineTitleV164(entity: VietnamEntityV124, title: string): string {
+  const type = publicTextV126(entity.normalizedAttributes?.["재해유형"]);
+  if (!type || /[가-힣]/u.test(title) || title.trim() === type) return title;
+  return `${type} · ${title}`;
+}
+
+/**
+ * V164 R2: the place EM-DAT names for an event is the source's own wording
+ * ("Chittagong", "Barisal, Chittagong, Khulna provinces"). It is labelled as
+ * such and a name the dictionary knows reads "치타공 (Chittagong)".
+ */
+export function timelineEventPlaceV164(
+  entity: VietnamEntityV124,
+  detail: string,
+  regionText: (text: string | null | undefined) => string
+): string {
+  const place = publicTextV126(entity.normalizedAttributes?.["발생지역_원문"]);
+  if (!place || detail !== place) return detail;
+  return `발생 지역(원문): ${regionText(place)}`;
 }
 
 function hasCoordinateV125(entity: VietnamEntityV124): boolean {

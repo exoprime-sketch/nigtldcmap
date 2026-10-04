@@ -1,6 +1,7 @@
 import { technologyLabelV121 } from "../../../utils/vietnamActualV121";
 import { normalizeTechnologyIdsV153 } from "../../../utils/technologyIdV153";
 import type { VietnamIndicatorMetaV124 } from "../../../data/vietnam/vietnamTypesV124";
+import { hasPublicValueV164 } from "../../../data/visualization/selectorPopulatedV164";
 
 /**
  * V159: the climate-technology filter every template shares.
@@ -16,6 +17,24 @@ export interface TechOptionV159 {
   code: string;
   label: string;
   indicatorIds: string[];
+}
+
+/**
+ * V164-3: the indicators that have something to show. A row whose value the
+ * source leaves empty is a row, not a reading: D-002's "24 기타 온실가스 처리 및
+ * 대체 기술" and D-003's "15 폐자원" are tagged on indicators whose every row is
+ * empty, and the chip led to a screen with no value. An entity record is a
+ * reading in itself (it has no single value to be empty). Pass the result as the
+ * `presentIndicatorIds` of technologyOptionsForIndicatorsV159.
+ */
+export function populatedIndicatorIdsV164(
+  observations: readonly { indicatorId: string; value?: unknown }[],
+  entities: readonly { indicatorId?: string | null }[] = []
+): Set<string> {
+  const ids = new Set<string>();
+  for (const row of observations) if (hasPublicValueV164(row.value)) ids.add(row.indicatorId);
+  for (const row of entities) if (row.indicatorId) ids.add(row.indicatorId);
+  return ids;
 }
 
 export function technologyOptionsForIndicatorsV159(

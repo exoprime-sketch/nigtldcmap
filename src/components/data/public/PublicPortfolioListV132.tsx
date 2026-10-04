@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { resolvePublicEntityTitleV131 } from "../../../data/visualization/publicEntityTitleV131";
+import { categoryVariantKeyV164, koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { publicTextV126, publicUnstatedWordingV161 } from "../../../data/visualization/publicFieldPolicyV126";
 import PublicEntityCardGridV131 from "./PublicEntityCardGridV131";
 import {
@@ -87,18 +88,21 @@ export default function PublicPortfolioListV132({
       ).sort((left, right) => Number(right) - Number(left)),
     [records]
   );
-  const categories = useMemo(
-    () =>
-      Array.from(
-        new Set(records.flatMap(({ facet }) => (facet.category ? [facet.category] : [])))
-      ).sort((left, right) => left.localeCompare(right, "ko")),
-    [records]
-  );
+  // V164 R2: one entry per spelling-insensitive key, listed by its Korean name.
+  const categories = useMemo(() => {
+    const byKey = new Map<string, string>();
+    records.forEach(({ facet }) => {
+      if (!facet.category) return;
+      const key = categoryVariantKeyV164(facet.category);
+      if (!byKey.has(key)) byKey.set(key, facet.category);
+    });
+    return [...byKey.values()].sort((left, right) => koreanCategoryV164(left).localeCompare(koreanCategoryV164(right), "ko"));
+  }, [records]);
   const filtered = useMemo(() => {
     const needle = query.normalize("NFC").trim().toLocaleLowerCase("ko-KR");
     return records.filter(({ facet, title }) => {
       if (year !== "all" && String(facet.year || "") !== year) return false;
-      if (category !== "all" && facet.category !== category) return false;
+      if (category !== "all" && (!facet.category || categoryVariantKeyV164(facet.category) !== categoryVariantKeyV164(category))) return false;
       if (!needle) return true;
       return `${title} ${facet.searchText}`
         .normalize("NFC")
@@ -169,7 +173,7 @@ export default function PublicPortfolioListV132({
             <option value="all">전체</option>
             {categories.map((option) => (
               // V161: the value stays the delivery's; the label reads 미기재.
-              <option key={option} value={option}>{publicUnstatedWordingV161(option)}</option>
+              <option key={option} value={option}>{koreanCategoryV164(publicUnstatedWordingV161(option))}</option>
             ))}
           </select>
         </label>

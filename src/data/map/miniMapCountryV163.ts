@@ -43,8 +43,23 @@ export function staticUnitKeyV163(
   iso3: string | null | undefined
 ): string {
   const props = properties || {};
-  if (isDefaultCountryV163(iso3)) return String(props.adm1Code || "");
+  if (isDefaultCountryV163(iso3)) {
+    // V164-R3: a layer joined on the post-2025 34 units (D-022 `adm1Code34`) has boundary features keyed by
+    // `unitCode` (VN34-xx), not `adm1Code`; an empty key there made every unit equal the unpicked "" selection.
+    const native34 = joinKey === "adm1Code34" ? props.adm1Code34 || props.unitCode : "";
+    return String(props.adm1Code || native34 || "");
+  }
   return String(props[joinKey || "adm1Code"] || props.adm1Code || "");
+}
+
+/**
+ * The key of a value row on the static map: `adm1Code`, or the layer's own join
+ * column (Viet Nam's 34-unit layers: `adm1Code34`). Always a string.
+ */
+export function staticRowKeyV164(row: object | null | undefined, joinKey: string | null | undefined): string {
+  const fields = (row || {}) as Record<string, unknown>;
+  const own = joinKey && joinKey !== "adm1Code" ? fields[joinKey] : "";
+  return String(fields.adm1Code || own || "");
 }
 
 export interface Level1NameV163 {
