@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-016",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "d-016-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "d-016-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-016-located-count",
+        "measureKey": "d-016-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 1
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-016-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-016-entity-00012",
+        "label": "방글라데시 다카 미르푸르 지역 재난위험경감(DRR) 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-016_local_government_and_ministry_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-016-entity-00162",
+        "label": "방글라데시 다카 밀풀 슬럼 어린이 센터 운영(2015-2017/272백만원/CPP/아드라코리아/phase2)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-016_local_government_and_ministry_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-016-entity-00011",
+        "label": "방글라데시 다카시 스마트물관리를 위한 스마트미터 선정 및 구축 시범사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-016_local_government_and_ministry_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-016-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 1,
+      "missingCount": 7,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "대한민국 ODA 통합보고(OECD CRS) — 중앙부처·지자체 보고분"
+    ],
+    "licenses": [
+      "공공누리 제1유형"
+    ],
+    "attribution": [
+      "대한민국 ODA 통합보고(OECD CRS) — 중앙부처·지자체 보고분 — 공공누리 제1유형. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 1,
+    "maxSeriesFeatureCount": 1,
+    "missingAdm1Count": 7,
+    "providedZeroCount": 0,
+    "publishedValueCount": 1,
+    "sourceValueCount": 3,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

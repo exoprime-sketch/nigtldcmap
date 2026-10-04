@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-023",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "d-023-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "d-023-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-023-located-count",
+        "measureKey": "d-023-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 1
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-023-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-023-entity-00004",
+        "label": "ASTUD: Greater Dhaka Sustainable Urban Transport Corridor Project",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-023-entity-00008",
+        "label": "TAF: Implementation support on Building Energy and Environment Rating System in Bangladesh and a Cool Roof Program in Dhaka",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-023_climate_fund_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-023-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 1,
+      "missingCount": 7,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "Climate Funds Update (ODI · Heinrich Böll Stiftung)",
+      "Global Environment Facility (GEF)"
+    ],
+    "licenses": [
+      "공개 데이터",
+      "비상업 이용 허용"
+    ],
+    "attribution": [
+      "Climate Funds Update (ODI · Heinrich Böll Stiftung) — 공개 데이터. 이용 시 출처 표기 필수",
+      "Global Environment Facility (GEF) — 비상업 이용 허용. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://climatefundsupdate.org/data-dashboard/",
+      "https://www.thegef.org/projects-operations/database"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 1,
+    "maxSeriesFeatureCount": 1,
+    "missingAdm1Count": 7,
+    "providedZeroCount": 0,
+    "publishedValueCount": 1,
+    "sourceValueCount": 2,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

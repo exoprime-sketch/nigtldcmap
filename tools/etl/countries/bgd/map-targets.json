@@ -1,7 +1,7 @@
 {
   "schemaVersion": "country-map-targets-v162",
   "countryIso3": "BGD",
-  "note": "BGD map-layer decisions for the 72 public map targets (approved 2026-10-03). Read by scripts/v158/build-country-map-layers-v158.mjs. Choropleth entries are empty unless the automatic measure choice would be wrong; point entries say which source column names a feature and which 2-4 facts it shows. Holds are not BGD map targets - they are recorded only in reports/v162/bgd-map-judgement-v162.md.",
+  "note": "BGD map-layer decisions for the 72 public map targets (approved 2026-10-03; region counts added by the user's decision 2026-10-04). Read by scripts/v158/build-country-map-layers-v158.mjs. Choropleth entries are empty unless the automatic measure choice would be wrong; point entries say which source column names a feature and which 2-4 facts it shows. Holds are not BGD map targets - they are recorded only in reports/v162/bgd-map-judgement-v162.md.",
   "regionWord": "주(Division)",
   "choropleth": {
     "B-002": { "measure": "열대_A군", "exclude": ["우세_기후대_점유율"], "why": "the dominant-zone share means nothing without the zone it belongs to; the tropical (A) share is comparable across divisions" },
@@ -26,6 +26,7 @@
       ],
       "why": "the ranking table states one value column per indicator name; the indicator name is the variable, the all-sector weighting is the default"
     },
+    "B-024": { "measure": "값", "labels": { "값": "관개면적" }, "units": { "값": "ha" }, "exclude": ["배분_기준값_원값", "지역_비율", "전국_합계_원값", "국가_농업용수_비중_AQUASTAT"], "requireNature": { "field": "값의_성격", "pattern": "원천 통계" }, "why": "user decision 2026-10-04: the division rows state the statistics office's irrigated area (BBS Yearbook of Agricultural Statistics Table 7.6, converted to ha by the delivery); only that value is drawn - the allocation ratio and base value in the same rows are not" },
     "B-026": {},
     "B-029": { "exclude": ["이탄지_면적_이탄_우세_천ha", "이탄지_면적_합계_천ha"], "why": "the same peat areas are delivered in km² and in 1000 ha; one unit is published" },
     "B-030": { "measure": "이득_ha", "why": "element is forest gain; first numeric column is the 2000 canopy baseline" },
@@ -222,13 +223,35 @@
       ]
     }
   },
+  "regionCounts": {
+    "D-014": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-015": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-016": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-017": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-019": { "label": "지역이 확인된 기술지원 사업 수", "noun": "기술지원 사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-021": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-022": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "D-023": { "label": "지역이 확인된 사업 수", "noun": "사업", "nameFields": ["사업지_행정구역", "행정구역_개편후", "행정구역_개편전"] },
+    "C-016": {
+      "label": "지역이 확인된 입찰 사업 수",
+      "noun": "입찰 사업",
+      "nameFields": [],
+      "codeField": "지역_행정코드_현행",
+      "codeNameFields": ["지역_지역명_현행"],
+      "rowFilter": { "field": "식별_행정_수준", "pattern": "^지역" },
+      "valueFact": { "field": "입찰_공고_용량_MW", "label": "공고 용량", "unit": "MW" },
+      "why": "the 11 solar IPP bid packages state their upazila or district with the statistics office's area code, whose first two digits name the division; each package's announced capacity is listed, never added up"
+    },
+    "why": "user decision 2026-10-04: project and bid registers whose rows state the division (or a district/city the dictionary places in one division) are shown as the number of projects per division, like Viet Nam's D-group layers. Administrative representative coordinates are not drawn; one project counts once per division; amounts are not added"
+  },
+  "divisionCodes": {
+    "note": "Bangladesh Bureau of Statistics area code (geocode): BD + 2-digit division + 2-digit district. Read only to place a row whose stated location is below division level, and cross-checked against any district name the row states.",
+    "codes": { "BD10": "Barisal", "BD20": "Chittagong", "BD30": "Dhaka", "BD40": "Khulna", "BD45": "Mymensingh", "BD50": "Rajshahi", "BD55": "Rangpur", "BD60": "Sylhet" }
+  },
   "holdReasons": {
     "nationwide": "원자료가 전국 단위 값·규정만 제공하여 지역별 값이나 위치가 없습니다.",
     "no-region": "지역 구분과 좌표가 모두 없습니다.",
-    "admin-centroid": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-    "district-only": "지역 표기가 구(District) 단위뿐이며, 주(Division)로 합치면 원자료에 없는 집계가 됩니다.",
     "not-division-units": "지역 단위가 주(Division)가 아닌 별도 권역(GDL 하위지역)입니다.",
-    "allocated-estimate": "주(Division) 값이 전국 값을 배분 기준값·지역 비율로 나눈 추정치입니다.",
     "not-office-location": "좌표가 기관 사무소가 아니라 CDM 승인 사업 기록의 위치입니다."
   },
   "holds": {
@@ -237,12 +260,7 @@
     "C-024": "nationwide", "D-026": "nationwide", "E-001": "nationwide", "E-020": "nationwide",
     "A-025": "no-region", "A-027": "no-region", "C-008": "no-region", "C-017": "no-region", "D-008": "no-region",
     "D-018": "no-region", "D-020": "no-region", "D-025": "no-region",
-    "D-014": "admin-centroid", "D-015": "admin-centroid", "D-016": "admin-centroid",
-    "D-017": "admin-centroid", "D-019": "admin-centroid", "D-021": "admin-centroid", "D-022": "admin-centroid",
-    "D-023": "admin-centroid",
-    "C-016": "district-only",
     "B-021": "not-division-units",
-    "B-024": "allocated-estimate",
     "E-002": "not-office-location"
   }
 }

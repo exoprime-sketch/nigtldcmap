@@ -12,12 +12,13 @@
   },
   "counts": {
     "targets": 72,
-    "choropleth": 22,
+    "choropleth": 23,
+    "region-count": 9,
     "point": 13,
     "reference": 3,
-    "hold": 34,
-    "registeredLayers": 38,
-    "mapFeatureCount": 3532
+    "hold": 24,
+    "registeredLayers": 48,
+    "mapFeatureCount": 3569
   },
   "evidenceCheck": {
     "comparedElements": 72,
@@ -1000,6 +1001,52 @@
       "keptRows": 558,
       "featureCount": 3,
       "featureCountByKind": {},
+      "droppedRowsByReason": {}
+    },
+    {
+      "elementId": "B-024",
+      "publicName": "농업용수 대리지표",
+      "decision": "choropleth",
+      "divisionKeysInEvidence": 8,
+      "coordinateRows": 8,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-b-024",
+      "kind": "choropleth",
+      "measure": {
+        "column": "값",
+        "rule": "reviewed-override",
+        "defaultVariable": "관개면적",
+        "defaultPeriod": "2022-23",
+        "scenario": null,
+        "split": null,
+        "sourceIndicatorId": "B-024_irrigated_area_subnat"
+      },
+      "divisionsWithValues": [
+        "Barisal",
+        "Chittagong",
+        "Dhaka",
+        "Khulna",
+        "Rajshahi",
+        "Rangpur",
+        "Sylhet",
+        "Mymensingh"
+      ],
+      "divisionsInAnySeries": 8,
+      "featureCount": 8,
+      "publishedVariables": [
+        {
+          "label": "관개면적",
+          "unit": "ha",
+          "periods": 1,
+          "column": "값",
+          "indicatorId": "B-024_irrigated_area_subnat"
+        }
+      ],
+      "validSeriesNotPublished": 0,
+      "rejectedSeries": [],
+      "sourceRows": 8,
+      "divisionNamesCrossChecked": 8,
+      "publishedValueCount": 8,
       "droppedRowsByReason": {}
     },
     {
@@ -2295,6 +2342,27 @@
       }
     },
     {
+      "elementId": "C-016",
+      "publicName": "재생에너지 발주 및 확대 계획",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 0,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-c-016",
+      "kind": "region-count",
+      "featureCount": 4,
+      "rows": 11,
+      "counted": 11,
+      "notCounted": 0,
+      "projectsPerDivision": {
+        "Chittagong": 4,
+        "Dhaka": 2,
+        "Rangpur": 3,
+        "Mymensingh": 2
+      },
+      "unmatchedNames": {}
+    },
+    {
       "elementId": "C-025",
       "publicName": "탄소크레딧 사업",
       "decision": "point",
@@ -2341,6 +2409,167 @@
         "admin-representative-point": 6,
         "outside-country-outline": 2
       }
+    },
+    {
+      "elementId": "D-014",
+      "publicName": "EDCF 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 5,
+      "coordinateRows": 15,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-014",
+      "kind": "region-count",
+      "featureCount": 4,
+      "rows": 94,
+      "counted": 15,
+      "notCounted": 79,
+      "projectsPerDivision": {
+        "Chittagong": 4,
+        "Dhaka": 4,
+        "Khulna": 1,
+        "Sylhet": 1
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-015",
+      "publicName": "한국 ODA 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 5,
+      "coordinateRows": 19,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-015",
+      "kind": "region-count",
+      "featureCount": 5,
+      "rows": 1427,
+      "counted": 19,
+      "notCounted": 1408,
+      "projectsPerDivision": {
+        "Chittagong": 5,
+        "Dhaka": 6,
+        "Khulna": 3,
+        "Rangpur": 1,
+        "Mymensingh": 3
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-016",
+      "publicName": "부처·지자체 ODA",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 1,
+      "coordinateRows": 3,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-016",
+      "kind": "region-count",
+      "featureCount": 1,
+      "rows": 370,
+      "counted": 3,
+      "notCounted": 367,
+      "projectsPerDivision": {
+        "Dhaka": 3
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-017",
+      "publicName": "사업 입찰·공모",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 16,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-017",
+      "kind": "region-count",
+      "featureCount": 4,
+      "rows": 300,
+      "counted": 16,
+      "notCounted": 284,
+      "projectsPerDivision": {
+        "Dhaka": 6,
+        "Khulna": 1,
+        "Rangpur": 1,
+        "Mymensingh": 1
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-019",
+      "publicName": "기술지원 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 1,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-019",
+      "kind": "region-count",
+      "featureCount": 1,
+      "rows": 7,
+      "counted": 1,
+      "notCounted": 6,
+      "projectsPerDivision": {
+        "Dhaka": 1
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-021",
+      "publicName": "국제기구·MDB 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 26,
+      "outsideOutline": 1,
+      "layerId": "bgd-v162-d-021",
+      "kind": "region-count",
+      "featureCount": 4,
+      "rows": 542,
+      "counted": 26,
+      "notCounted": 516,
+      "projectsPerDivision": {
+        "Chittagong": 1,
+        "Dhaka": 21,
+        "Khulna": 2,
+        "Sylhet": 2
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-022",
+      "publicName": "MDB·DFI 금융",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 47,
+      "outsideOutline": 7,
+      "layerId": "bgd-v162-d-022",
+      "kind": "region-count",
+      "featureCount": 5,
+      "rows": 336,
+      "counted": 47,
+      "notCounted": 289,
+      "projectsPerDivision": {
+        "Chittagong": 7,
+        "Dhaka": 33,
+        "Khulna": 3,
+        "Rajshahi": 1,
+        "Sylhet": 3
+      },
+      "unmatchedNames": {}
+    },
+    {
+      "elementId": "D-023",
+      "publicName": "기후기금 사업",
+      "decision": "region-count",
+      "divisionKeysInEvidence": 0,
+      "coordinateRows": 3,
+      "outsideOutline": 0,
+      "layerId": "bgd-v162-d-023",
+      "kind": "region-count",
+      "featureCount": 1,
+      "rows": 119,
+      "counted": 3,
+      "notCounted": 116,
+      "projectsPerDivision": {
+        "Dhaka": 2
+      },
+      "unmatchedNames": {}
     },
     {
       "elementId": "E-004",
@@ -2529,28 +2758,6 @@
       "conflict": null
     },
     {
-      "elementId": "B-024",
-      "publicName": "농업용수 대리지표",
-      "holdGroup": "allocated-estimate",
-      "reason": "주(Division) 값이 전국 값을 배분 기준값·지역 비율로 나눈 추정치입니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 8,
-        "outsideOutline": 0,
-        "divisionKeys": 8,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "admin1",
-          "nation"
-        ],
-        "allocationColumns": [
-          "배분_기준값_원값",
-          "지역_비율"
-        ]
-      },
-      "conflict": null
-    },
-    {
       "elementId": "B-044",
       "publicName": "핵심광물 부존",
       "holdGroup": "nationwide",
@@ -2687,23 +2894,6 @@
       "conflict": null
     },
     {
-      "elementId": "C-016",
-      "publicName": "재생에너지 발주 및 확대 계획",
-      "holdGroup": "district-only",
-      "reason": "지역 표기가 구(District) 단위뿐이며, 주(Division)로 합치면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 0,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 6,
-        "spatialUnits": [
-          "nation"
-        ]
-      },
-      "conflict": null
-    },
-    {
       "elementId": "C-017",
       "publicName": "재생에너지 투자 인센티브",
       "holdGroup": "no-region",
@@ -2773,82 +2963,6 @@
       "conflict": null
     },
     {
-      "elementId": "D-014",
-      "publicName": "EDCF 사업",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 15,
-        "outsideOutline": 0,
-        "divisionKeys": 5,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-015",
-      "publicName": "한국 ODA 사업",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 19,
-        "outsideOutline": 0,
-        "divisionKeys": 5,
-        "districtKeys": 1,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-016",
-      "publicName": "부처·지자체 ODA",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 3,
-        "outsideOutline": 0,
-        "divisionKeys": 1,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-017",
-      "publicName": "사업 입찰·공모",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 16,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
       "elementId": "D-018",
       "publicName": "적응기금 사업",
       "holdGroup": "no-region",
@@ -2867,25 +2981,6 @@
       "conflict": null
     },
     {
-      "elementId": "D-019",
-      "publicName": "기술지원 사업",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 1,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
       "elementId": "D-020",
       "publicName": "GCF 사업",
       "holdGroup": "no-region",
@@ -2900,64 +2995,6 @@
           "BGD",
           "nation"
         ]
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-021",
-      "publicName": "국제기구·MDB 사업",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 26,
-        "outsideOutline": 1,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-022",
-      "publicName": "MDB·DFI 금융",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 47,
-        "outsideOutline": 7,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "BGD",
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
-      },
-      "conflict": null
-    },
-    {
-      "elementId": "D-023",
-      "publicName": "기후기금 사업",
-      "holdGroup": "admin-centroid",
-      "reason": "좌표가 행정구역 대표점뿐이고, 지역 표기를 주(Division)별로 세면 원자료에 없는 집계가 됩니다.",
-      "facts": {
-        "nationwideOnly": false,
-        "coordinateRows": 3,
-        "outsideOutline": 0,
-        "divisionKeys": 0,
-        "districtKeys": 0,
-        "spatialUnits": [
-          "nation"
-        ],
-        "coordinateRowsNotAdminRepresentative": 0,
-        "coordinateRowsNotAdminRepresentativeInside": 0
       },
       "conflict": null
     },

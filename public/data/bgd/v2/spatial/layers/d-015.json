@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "D-015",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "partial",
+  "selectors": {
+    "defaultPeriod": "2025",
+    "defaultVariable": "d-015-located-count",
+    "periods": [
+      "2025"
+    ],
+    "variables": [
+      {
+        "key": "d-015-located-count",
+        "label": "지역이 확인된 사업 수",
+        "measureId": "d-015-located-count",
+        "measureKey": "d-015-located-count",
+        "unit": "건",
+        "periods": [
+          "2025"
+        ],
+        "maxFeatureCount": 5
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "d-015-located-count",
+        "variableLabel": "지역이 확인된 사업 수",
+        "unit": "건",
+        "period": "2025",
+        "sourceIndicatorId": null,
+        "values": [
+          null,
+          5,
+          6,
+          3,
+          null,
+          1,
+          null,
+          3
+        ]
+      }
+    ]
+  },
+  "memberRecords": {
+    "BGD.2_1": [
+      {
+        "recordId": "bgd-v162-d-015-entity-00417",
+        "label": "방글라데시 치타공 직업훈련원 역량강화사업('11-'13/480만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Chattogram",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01238",
+        "label": "방글라데시 콕스바자르 로힝야 강제이주민의 영양실조 예방을 위한 통합지원사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cox's Bazar",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01237",
+        "label": "방글라데시 콕스바자르 로힝야 난민 및 수용 공동체 내 GBV 경감",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cox's Bazar",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01241",
+        "label": "방글라데시 콕스바자르 로힝야 난민캠프 내 코로나19 긴급대응 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cox's Bazar",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01264",
+        "label": "방글라데시 콕스바자르 지역 소녀 및 여성 생리보건 증진 사업 (UNFPA) ('21-'24/300만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Cox's Bazar",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "BGD.3_1": [
+      {
+        "recordId": "bgd-v162-d-015-entity-00138",
+        "label": "방글라데시 다카 등 6개 지역 빈곤 아동 초등교육 지원 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01143",
+        "label": "방글라데시 다카 밀풀 슬럼 어린이 센터 운영(2015-2017/272백만원/CPP/아드라코리아/phase2)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01279",
+        "label": "방글라데시 다카 슬럼지역 노동 아동 기초 교육권 증진 사업(2022-2025/1,696백만원/어린이재단)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01395",
+        "label": "방글라데시 다카 지역 송전전문인력 양성 사업(2025-2029/3,571백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01403",
+        "label": "방글라데시 다카주 사람중심의 통합적 접근을 통한 일차 안보건 강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-00628",
+        "label": "방글라데시 다카지역 중등학교 IT 교육지원사업(12-14/353만불)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Dhaka Division",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "BGD.4_1": [
+      {
+        "recordId": "bgd-v162-d-015-entity-01386",
+        "label": "방글라데시 서남해안 쿨나지역 극빈층 소득증대 및 회복력강화 지원 사업 2단계",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-00128",
+        "label": "방글라데시 서남해안 쿨나지역 극빈층 소득증대 및 회복력강화 지원사업(2021-2023/1,479백만원/컨선월드와이드)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna Division",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-00416",
+        "label": "방글라데시 쿨나 권역 빈곤아동 기초교육 지원사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Khulna",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "BGD.6_1": [
+      {
+        "recordId": "bgd-v162-d-015-entity-01301",
+        "label": "방글라데시 랑푸르 주 모자보건 시스템 강화 사업('23-'27/14,300백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Rangpur",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ],
+    "BGD.8_1": [
+      {
+        "recordId": "bgd-v162-d-015-entity-00633",
+        "label": "마이멘싱시 여성 및 도시빈민을 위한 커뮤니티센터 건립 및 역량강화 사업",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mymensingh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01278",
+        "label": "방글라데시 마이멘싱 구 지역 안질환 통합관리 지원사업(22-24/920백만원)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mymensingh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      },
+      {
+        "recordId": "bgd-v162-d-015-entity-01182",
+        "label": "방글라데시 지역사회 포괄적 안보건 증진사업(2019-2021/669백만원/굿피플인터내셔날)",
+        "date": "",
+        "status": "",
+        "value": "",
+        "url": "",
+        "region": "Mymensingh",
+        "indicatorId": "D-015_oda_korea_project_registry"
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "d-015-located-count",
+      "period": "2025",
+      "expectedCount": 8,
+      "matchedCount": 5,
+      "missingCount": 3,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "대한민국 ODA 통합보고(OECD CRS) — KOICA 보고분"
+    ],
+    "licenses": [
+      "공공누리 제1유형"
+    ],
+    "attribution": [
+      "대한민국 ODA 통합보고(OECD CRS) — KOICA 보고분 — 공공누리 제1유형. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://stats.odakorea.go.kr/portal/oda/spot/statistics"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 5,
+    "maxSeriesFeatureCount": 5,
+    "missingAdm1Count": 3,
+    "providedZeroCount": 0,
+    "publishedValueCount": 5,
+    "sourceValueCount": 18,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0,
+    "mappingMethod": "stated-division-count"
+  }
+}

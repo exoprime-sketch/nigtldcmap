@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "v124",
+  "assetSchemaVersion": "v124-spatial-layer-1",
+  "countryIso3": "BGD",
+  "elementId": "B-024",
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "geometryUrl": "/data/bgd/v2/geometry/bgd-adm1-8.geojson",
+  "joinKey": "divisionKey",
+  "boundarySystem": "bgd-adm1-8",
+  "coverageKind": "full",
+  "selectors": {
+    "defaultPeriod": "2022-23",
+    "defaultVariable": "m-8bba61c3bb",
+    "periods": [
+      "2022-23"
+    ],
+    "variables": [
+      {
+        "key": "m-8bba61c3bb",
+        "label": "관개면적",
+        "measureId": "m-8bba61c3bb",
+        "measureKey": "m-8bba61c3bb",
+        "unit": "ha",
+        "periods": [
+          "2022-23"
+        ],
+        "maxFeatureCount": 8
+      }
+    ]
+  },
+  "values": [],
+  "valueTable": {
+    "adm1Codes": [
+      "BGD.1_1",
+      "BGD.2_1",
+      "BGD.3_1",
+      "BGD.4_1",
+      "BGD.5_1",
+      "BGD.6_1",
+      "BGD.7_1",
+      "BGD.8_1"
+    ],
+    "adm1Names": [
+      "Barisal",
+      "Chittagong",
+      "Dhaka",
+      "Khulna",
+      "Rajshahi",
+      "Rangpur",
+      "Sylhet",
+      "Mymensingh"
+    ],
+    "sourceSpatialUnit": "admin1",
+    "series": [
+      {
+        "variable": "m-8bba61c3bb",
+        "variableLabel": "관개면적",
+        "unit": "ha",
+        "period": "2022-23",
+        "sourceIndicatorId": "B-024_irrigated_area_subnat",
+        "values": [
+          196272.71,
+          762023.74,
+          1233482.93,
+          1641811.1,
+          2029500.29,
+          1541448.97,
+          536208.95,
+          772140.89
+        ]
+      }
+    ]
+  },
+  "seriesCoverage": [
+    {
+      "variable": "m-8bba61c3bb",
+      "period": "2022-23",
+      "expectedCount": 8,
+      "matchedCount": 8,
+      "missingCount": 0,
+      "failureCount": 0
+    }
+  ],
+  "source": {
+    "organizations": [
+      "방글라데시 통계국(BBS) × FAO AQUASTAT(국가 농업용수 비중)"
+    ],
+    "licenses": [
+      "기관 이용약관"
+    ],
+    "attribution": [
+      "방글라데시 통계국(BBS) × FAO AQUASTAT(국가 농업용수 비중) — 기관 이용약관. 이용 시 출처 표기 필수"
+    ],
+    "urls": [
+      "https://bbs.gov.bd/",
+      "https://data.apps.fao.org/aquastat/?lang=en&country=BGD"
+    ]
+  },
+  "validation": {
+    "duplicateValueCount": 0,
+    "expectedAdm1Count": 8,
+    "fakeGeometryCount": 0,
+    "joinFailureCount": 0,
+    "matchedAdm1Count": 8,
+    "maxSeriesFeatureCount": 8,
+    "missingAdm1Count": 0,
+    "providedZeroCount": 0,
+    "publishedValueCount": 8,
+    "sourceValueCount": 8,
+    "suppressedValueCount": 0,
+    "unmatchedSourceNameCount": 0,
+    "zeroImputationCount": 0
+  }
+}

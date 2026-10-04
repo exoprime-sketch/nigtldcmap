@@ -210,6 +210,10 @@ const decisions = new Map();
 for (const id of Object.keys(CONFIG.choropleth)) decisions.set(id, "choropleth");
 for (const id of Object.keys(CONFIG.points)) decisions.set(id, "point");
 for (const id of Object.keys(CONFIG.reference)) decisions.set(id, "reference");
+for (const id of Object.keys(CONFIG.regionCounts || {}).filter((key) => /^[A-E]-\d{3}$/u.test(key))) {
+  if (decisions.has(id)) throw new Error(`DECISION_DUPLICATE: ${id}`);
+  decisions.set(id, "region-count");
+}
 for (const id of Object.keys(CONFIG.holds)) {
   if (decisions.has(id)) throw new Error(`DECISION_DUPLICATE: ${id}`);
   decisions.set(id, "hold");
@@ -381,6 +385,7 @@ function buildChoropleth(target, spec) {
       drop("monthly-or-climatology-row");
       continue;
     }
+    if (spec.requireNature && !new RegExp(spec.requireNature.pattern, "u").test(text(attributes[spec.requireNature.field]))) { drop("not-a-source-statistic"); continue; }
     const division = divisionByKey.get(`${ISO3}.${match[1]}_1`);
     if (!division) throw new Error(`UNKNOWN_DIVISION_KEY: ${elementId} ${key}`);
     const nameField = NAME_FIELDS.find((field) => text(attributes[field]));
@@ -491,7 +496,7 @@ function buildChoropleth(target, spec) {
       unit = [...entry.unitValues].filter(Boolean)[0] || text(indicator?.unit);
     } else {
       const parsed = splitFieldLabel(fieldLabel(entry.attr));
-      base = spec.labelFromSplit && entry.split ? entry.split : parsed.label;
+      base = spec.labels?.[entry.attr] || (spec.labelFromSplit && entry.split ? entry.split : parsed.label);
       unit = spec.units?.[entry.attr] || parsed.unit || [...entry.unitValues].filter(Boolean)[0] || "";
       if ((attrIndicators.get(entry.attr)?.size || 0) > 1) base = `${base} · ${cleanIndicatorLabel(indicators.get(entry.indicatorId)?.labelKo)}`;
       if (entry.split && !spec.labelFromSplit) base = `${base} · ${entry.split}`;
@@ -677,6 +682,230 @@ function buildChoropleth(target, spec) {
       divisionNamesCrossChecked: nameChecked,
       publishedValueCount,
       droppedRowsByReason: dropped,
+    },
+  };
+}
+
+// ------------------------------------------------------------------ region counts
+// V164-4 (user decision 2026-10-04): project and bid registers whose rows state
+// the division they are in - by name ("Dhaka Division"), by a district or city
+// the dictionary places in one division ("Cox's Bazar"), or by the statistics
+// office's area code ("BD3093", its first two digits name the division) - are
+// shown as the number of named projects per division, as Viet Nam's D-group
+// layers are. Coordinates that are only an administrative representative point
+// are never drawn. A row counts once in every division it states; rows of the
+// same project (the same name) count once; amounts are never added up.
+const DIVISION_CODES = new Map(Object.entries(CONFIG.divisionCodes?.codes || {}));
+for (const local of DIVISION_CODES.values()) {
+  if (!divisionByNameEn.has(local)) throw new Error(`DIVISION_CODE_UNKNOWN_DIVISION: ${local}`);
+}
+const projectKey = (value) => text(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+
+function divisionsOfRow(spec, attributes) {
+  const found = new Map();
+  const unmatched = [];
+  for (const field of spec.nameFields || []) {
+    const raw = text(attributes[field]);
+    if (!raw) continue;
+    for (const part of raw.split(/\s*(?:·|;|\/)\s*/u).map((value) => value.replace(/\s*\((?:행정구역|Division)\)\s*$/u, "").replace(/\s+Division$/iu, "").trim()).filter(Boolean)) {
+      const local = dictionaryParentDivision.get(normalizeToken(part));
+      if (local) found.set(local, field);
+      else unmatched.push(part);
+    }
+    if (found.size) return { divisions: [...found.keys()], via: field, unmatched: [] };
+  }
+  if (spec.codeField) {
+    const code = text(attributes[spec.codeField]);
+    const local = DIVISION_CODES.get(code.slice(0, 4));
+    if (local) {
+      // Cross-check: a stated name the dictionary places must agree with the code.
+      const named = (spec.codeNameFields || [])
+        .flatMap((field) => text(attributes[field]).split(/\s*,\s*/u))
+        .map((part) => dictionaryParentDivision.get(normalizeToken(part)))
+        .filter(Boolean);
+      if (named.length && !named.includes(local)) throw new Error(`DIVISION_CODE_NAME_MISMATCH: ${code} -> ${local} but names place it in ${named.join(",")}`);
+      return { divisions: [local], via: spec.codeField, unmatched: [] };
+    }
+    if (code) unmatched.push(code);
+  }
+  return { divisions: [], via: null, unmatched };
+}
+
+function buildRegionCounts(target, spec) {
+  const elementId = target.elementId;
+  const pack = packs.get(elementId);
+  const indicators = new Map(pack.meta.indicators.map((indicator) => [indicator.indicatorId, indicator]));
+  const rowFilter = spec.rowFilter ? new RegExp(spec.rowFilter.pattern, "u") : null;
+  const rows = pack.entities.records
+    .filter((row) => !rowFilter || rowFilter.test(text(row.normalizedAttributes?.[spec.rowFilter.field])))
+    .sort((a, b) => compareText(a.recordId, b.recordId));
+  const byDivision = new Map();
+  const unmatched = new Map();
+  const usedIndicators = new Set();
+  const years = [];
+  let counted = 0;
+  let notCounted = 0;
+  for (const row of rows) {
+    const attributes = row.normalizedAttributes || {};
+    const { divisions, unmatched: names } = divisionsOfRow(spec, attributes);
+    for (const name of names) unmatched.set(name, (unmatched.get(name) || 0) + 1);
+    if (!divisions.length) { notCounted += 1; continue; }
+    counted += 1;
+    usedIndicators.add(row.indicatorId);
+    const year = indicators.get(row.indicatorId)?.referenceYear;
+    if (year !== null && year !== undefined) years.push(String(year));
+    const label = text(row.name);
+    if (!label) throw new Error(`REGION_COUNT_ROW_WITHOUT_NAME: ${elementId} ${row.recordId}`);
+    const valueText = spec.valueFact && isNumber(Number(attributes[spec.valueFact.field])) && text(attributes[spec.valueFact.field])
+      ? `${spec.valueFact.label} ${formatCount(Number(attributes[spec.valueFact.field]))} ${spec.valueFact.unit}`
+      : "";
+    const regionText = spec.nameFields.map((field) => text(attributes[field])).find(Boolean) || text(attributes[spec.codeNameFields?.[0]]) || "";
+    for (const local of divisions) {
+      if (!byDivision.has(local)) byDivision.set(local, new Map());
+      const projects = byDivision.get(local);
+      const key = projectKey(label);
+      if (!projects.has(key)) projects.set(key, { recordId: row.recordId, label, date: "", status: "", value: valueText, url: "", region: regionText.replace(/\s*\(행정구역\)$/u, ""), indicatorId: row.indicatorId });
+    }
+  }
+  if (byDivision.size < 1) return { hold: true, reason: `${REGION}가 확인된 기록이 없습니다.`, dropped: { "no-division": notCounted } };
+  const period = years.sort().slice(-1)[0] || yearOf(catalogById.get(elementId)?.latestYear) || "";
+  const variableKey = `${elementId.toLowerCase()}-located-count`;
+  const values = DIVISIONS.map((division) => (byDivision.has(division.nameEn) ? byDivision.get(division.nameEn).size : null));
+  const featureCount = values.filter((value) => value !== null).length;
+  const missingRegions = DIVISIONS.filter((_, index) => values[index] === null).map((division) => division.nameEn);
+  const memberRecords = Object.fromEntries(
+    DIVISIONS.filter((division) => byDivision.has(division.nameEn)).map((division) => [
+      division.key,
+      [...byDivision.get(division.nameEn).values()].sort((a, b) => compareText(a.label, b.label)),
+    ])
+  );
+  const source = sourceBlock(elementId, [...usedIndicators].sort(compareText));
+  const selectors = {
+    defaultPeriod: period,
+    defaultVariable: variableKey,
+    periods: [period],
+    variables: [{ key: variableKey, label: spec.label, measureId: variableKey, measureKey: variableKey, unit: "건", periods: [period], maxFeatureCount: featureCount }],
+  };
+  const dataUrl = `${DATA_ROOT_URL}/spatial/layers/${elementId.toLowerCase()}.json`;
+  const sourceValueCount = [...byDivision.values()].reduce((sum, projects) => sum + projects.size, 0);
+  const asset = {
+    schemaVersion: "v124",
+    assetSchemaVersion: "v124-spatial-layer-1",
+    countryIso3: ISO3,
+    elementId,
+    generatedAt: GENERATED_AT,
+    geometryUrl: ADM1_URL,
+    joinKey: "divisionKey",
+    boundarySystem: `${SLUG}-adm1-${ADM1_COUNT}`,
+    coverageKind: featureCount === ADM1_COUNT ? "full" : "partial",
+    selectors,
+    values: [],
+    valueTable: {
+      adm1Codes: DIVISIONS.map((division) => division.key),
+      adm1Names: DIVISIONS.map((division) => division.nameEn),
+      // The counts are per division (the country's own level 1), not a
+      // source region drawn on finer boundaries.
+      sourceSpatialUnit: "admin1",
+      series: [{ variable: variableKey, variableLabel: spec.label, unit: "건", period, sourceIndicatorId: null, values }],
+    },
+    memberRecords,
+    seriesCoverage: [{ variable: variableKey, period, expectedCount: ADM1_COUNT, matchedCount: featureCount, missingCount: ADM1_COUNT - featureCount, failureCount: 0 }],
+    source,
+    validation: {
+      duplicateValueCount: 0,
+      expectedAdm1Count: ADM1_COUNT,
+      fakeGeometryCount: 0,
+      joinFailureCount: 0,
+      matchedAdm1Count: featureCount,
+      maxSeriesFeatureCount: featureCount,
+      missingAdm1Count: ADM1_COUNT - featureCount,
+      providedZeroCount: 0,
+      publishedValueCount: featureCount,
+      sourceValueCount,
+      suppressedValueCount: 0,
+      unmatchedSourceNameCount: unmatched.size,
+      zeroImputationCount: 0,
+      mappingMethod: "stated-division-count",
+    },
+  };
+  const publicName = publicNameOf(target);
+  const item = catalogById.get(elementId);
+  const limitation = `건수는 ${REGION}가 확인된 ${spec.noun} 수이며 금액·규모의 합이 아닙니다. 여러 ${REGION}에 걸친 ${spec.noun}은 각 ${REGION}에 1건으로 세고, 같은 ${spec.noun}의 여러 기록은 1건으로 셉니다. ${REGION}가 확인되지 않은 기록은 지도에 올리지 않고 목록·다운로드에만 남습니다.`;
+  const layer = {
+    accuracyNotice: `${limitation} 행정구역 대표점 좌표는 정확한 사업 위치가 아니어서 점으로 그리지 않습니다.`,
+    active: true,
+    aggregationLevel: "admin1",
+    assetRef: { elementId, provider: PROVIDER, section: "spatial" },
+    category: target.category,
+    cluster: false,
+    coordinateMeaning: "source-region-value",
+    dataUrl,
+    defaultOverlay: false,
+    defaultPrimary: false,
+    detailElementId: elementId,
+    detailUrl: detailUrlOf(elementId),
+    displayedCoordinateCount: 0,
+    downloadStatus: downloadStatusOf(item),
+    downloadableRecordCount: Number(item?.downloadableRecordCount || 0),
+    elementId,
+    enabled: true,
+    fakeGeometryCount: 0,
+    featureCount,
+    filters: [],
+    geometryTypes: [...new Set(adm1.features.map((feature) => feature.geometry.type))].sort().reverse(),
+    geometryUrl: ADM1_URL,
+    join: { failures: [], matchedCount: featureCount, missingCount: missingRegions.length, requiredCount: ADM1_COUNT },
+    label: publicName,
+    latestYear: period,
+    layerId: `${PROVIDER}-${elementId.toLowerCase()}`,
+    legend: { note: `단위 건 · 기록 없는 ${REGION} ${missingRegions.length}개`, title: spec.label },
+    licenses: source.licenses,
+    ...(source.attribution.length ? { attribution: source.attribution.join(" · ") } : {}),
+    mapBenefit: `${REGION} 클릭 → ${spec.noun} 목록`,
+    mapMode: "region-choropleth",
+    missingRegions,
+    publicShortTitle: publicName,
+    publicSpatialNotice: `${ADM1_COUNT}개 ${REGION} 경계에 ${REGION}별 ${spec.noun} 수를 표시합니다.`,
+    rawLabel: catalogLabel(elementId),
+    regionalProject: false,
+    renderer: "partial-choropleth",
+    scopeCountries: [ISO3],
+    selectors,
+    source: source.organizations.join(" · "),
+    sourceCoordinateCount: pack.entities.records.filter(hasCoordinate).length,
+    sourceOrganizations: source.organizations,
+    sourceUrls: source.urls,
+    sourceYear: period,
+    spatialCoverage: `${ADM1_COUNT}개 ${REGION} 중 ${featureCount}개`,
+    spatialLimitation: limitation,
+    spatialScopeType: "region",
+    spatialStatus: "ready",
+    tooltipFields: ["adm1Name", "value", "unit", "period"],
+    totalEntityCount: pack.entities.records.length,
+    unit: "건",
+    zeroImputationCount: 0,
+    mapTargetV138: {
+      sourceSpatialUnit: `원자료에 ${REGION}가 적힌 기록 ${formatCount(counted)}건`,
+      displaySpatialUnit: `${REGION} 경계`,
+      period,
+      representativeItem: spec.label,
+      evidence: `기록 ${formatCount(rows.length)}건 중 ${REGION} 확인 ${formatCount(counted)}건 · ${REGION} ${featureCount}개`,
+      build: { kind: "stated-division-count" },
+    },
+  };
+  return {
+    hold: false,
+    layer,
+    asset,
+    dataUrl,
+    report: {
+      kind: "region-count",
+      featureCount,
+      rows: rows.length,
+      counted,
+      notCounted,
+      projectsPerDivision: Object.fromEntries(DIVISIONS.filter((division) => byDivision.has(division.nameEn)).map((division) => [division.nameEn, byDivision.get(division.nameEn).size])),
+      unmatchedNames: Object.fromEntries([...unmatched.entries()].sort((a, b) => b[1] - a[1] || compareText(a[0], b[0]))),
     },
   };
 }
@@ -1049,6 +1278,8 @@ for (const target of TARGETS) {
   const built =
     decision === "choropleth"
       ? buildChoropleth(target, CONFIG.choropleth[elementId])
+      : decision === "region-count"
+      ? buildRegionCounts(target, CONFIG.regionCounts[elementId])
       : buildPoints(target, decision === "reference" ? CONFIG.reference[elementId] : CONFIG.points[elementId], decision === "reference");
   if (built.hold) {
     conflicts.push({ elementId, decision, finding: built.reason, resolution: "not registered - no publishable values" });
@@ -1110,7 +1341,7 @@ for (const item of nextCatalog.elements) {
   const layer = layerByElement.get(item.elementId);
   const before = { mapMode: item.mapMode, mapFeatureCount: item.mapFeatureCount };
   if (layer) {
-    item.mapMode = layer.renderer === "admin1-choropleth" ? "choropleth" : "point";
+    item.mapMode = layer.renderer === "admin1-choropleth" ? "choropleth" : layer.mapMode === "region-choropleth" ? "region-choropleth" : "point";
     item.mapFeatureCount = layer.featureCount;
   } else if (decisions.get(item.elementId) === "hold" && MAP_MODES.has(item.mapMode)) {
     // A held target keeps no map claim - the finder's "지도 있음" filter reads this.
@@ -1128,7 +1359,7 @@ writeOut(`public${DATA_ROOT_URL}/manifest.json`, nextManifest);
 
 // ------------------------------------------------------------------ reports
 const judgementOf = (row) => (row.decision === "hold" ? "hold" : row.kind);
-const counts = { choropleth: 0, point: 0, reference: 0, hold: 0 };
+const counts = { choropleth: 0, "region-count": 0, point: 0, reference: 0, hold: 0 };
 for (const row of rows) counts[judgementOf(row)] += 1;
 const report = {
   schema: "country-map-layers-v162",
@@ -1145,15 +1376,19 @@ const report = {
 };
 writeOut(REPORT_JSON, report);
 
-const JUDGEMENT_KO = { choropleth: "등록-지역 비교", point: "등록-위치", reference: "등록-참고 지도", hold: "보류" };
+const JUDGEMENT_KO = { choropleth: "등록-지역 비교", "region-count": "등록-지역별 건수", point: "등록-위치", reference: "등록-참고 지도", hold: "보류" };
 const mdEscape = (value) => String(value ?? "").replace(/\|/gu, "\\|").replace(/\n/gu, " ");
 const evidenceText = (row) => {
-  const parts = [`주 ${row.kind === "choropleth" ? `${row.featureCount}개(값)` : `${row.divisionKeysInEvidence}개(표기)`}`, `좌표 행 ${formatCount(row.coordinateRows)}`, `경계 밖 ${formatCount(row.outsideOutline)}`];
+  const parts = [`주 ${row.kind === "choropleth" ? `${row.featureCount}개(값)` : row.kind === "region-count" ? `${row.featureCount}개(건수)` : `${row.divisionKeysInEvidence}개(표기)`}`, `좌표 행 ${formatCount(row.coordinateRows)}`, `경계 밖 ${formatCount(row.outsideOutline)}`];
   if (row.kind === "point" || row.kind === "reference") parts.push(`표시 ${formatCount(row.featureCount)}곳`);
   return parts.join(" · ");
 };
 const reasonText = (row) => {
   if (row.kind === "choropleth") return `원자료가 ${REGION}별로 밝힌 값 — 기본 ${row.measure.defaultVariable}(${row.measure.defaultPeriod})${row.publishedVariables.length > 1 ? ` 외 ${row.publishedVariables.length - 1}개 항목` : ""}`;
+  if (row.kind === "region-count") {
+    const unmatchedNames = Object.keys(row.unmatchedNames || {});
+    return `원자료가 밝힌 ${REGION}별 기록 수(같은 이름 1건, 금액 합산 없음) — 기록 ${formatCount(row.rows)}건 중 ${REGION} 확인 ${formatCount(row.counted)}건${row.notCounted ? `, 미확인 ${formatCount(row.notCounted)}건 제외` : ""}${unmatchedNames.length ? ` (위치 미상 표기 ${unmatchedNames.length}종)` : ""} · 사용자 결정 2026-10-04`;
+  }
   if (row.kind === "point" || row.kind === "reference") {
     const droppedText = Object.entries(row.droppedRowsByReason).filter(([reason]) => reason !== "no-coordinate").map(([reason, count]) => `${DROP_REASON_KO[reason] || reason} ${formatCount(count)}`).join(" · ");
     const lead = row.kind === "reference" ? `${row.basis}만 표시(실제 형상 아님)` : row.locationNote ? `원천 좌표 — ${row.locationNote}` : "원천 좌표의 실제 위치";
@@ -1170,6 +1405,7 @@ const md = [
   "",
   `- 대상: 공개 지도 대상 ${rows.length}개 항목(베트남 지도 대상과 같은 목록) · 판정 ${judgementCounts}`,
   "- 판정 기준(1쪽 요약): ① 지역별 비교 — 원자료가 주(Division)별로 밝힌 값이 2개 주 이상 ② 위치 — 원천이 준 실제 위치 좌표(국경+0.05° 안, 행정구역 대표점·도시 중심점·해외 본부 제외) ③ 지역별 계획·규정 — 전국 공통 값·규정은 제외",
+  "- 지역별 건수(사용자 결정 2026-10-04): 사업·입찰 기록이 밝힌 주(Division) — 주 이름, 사전이 한 주에 두는 구·도시 이름, 통계청 지역코드 앞 두 자리 — 로 주별 사업 수를 표시(베트남 D군과 같은 방식). 행정구역 대표점 좌표는 점으로 그리지 않고, 같은 사업의 여러 기록은 1건, 금액은 합산하지 않음",
   "- 금지: 결측 0 대체, 구(District)→주(Division) 합산, 전국 값 배분, 임의 좌표·경계 생성. 보류 항목은 지도 대상에서 빠지고 이 표에만 남습니다.",
   `- 생성: \`node scripts/v158/build-country-map-layers-v158.mjs --country ${SLUG}\` · 근거 수치는 \`${REPORT_JSON}\``,
   "",
