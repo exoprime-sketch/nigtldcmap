@@ -35,7 +35,7 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Future", "향후 계획"],
   ["Existing", "기존 조치"],
   ["indc", "INDC"],
-  ["first_ndc", "최초 NDC"],
+  ["first_ndc", "1차 NDC"],
   ["Forest and land use", "산림·토지이용"],
   ["Energy Efficiency", "에너지 효율"],
   ["Renewable Energy", "재생에너지"],
@@ -195,6 +195,10 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   ["Province", "성"],
   ["Division", "주(Division)"],
   ["Country", "국가"],
+  // B-025's "개체 구분": a river basin or a country
+  ["Basin", "유역"],
+  ["Basin(국가 문헌)", "유역(국가 문헌)"],
+  ["Country(국가 문헌)", "국가(국가 문헌)"],
   // --- flags and absence ---
   ["Yes", "예"],
   ["No", "아니오"],
@@ -372,6 +376,28 @@ export function koreanListV164(value: string): string {
   const translated = parts.map((part) => koreanSingleV164(part));
   if (parts.length < 2 || translated.every((part) => part === null)) return koreanCategoryV164(text);
   return parts.map((part, index) => translated[index] ?? part).join("·");
+}
+
+/**
+ * A description written as "label: value · label: value" (A-013's rows read
+ * "부문: Energy Efficiency · 기후대응: Adaptation · 상태: Future · NDC 원문: ...")
+ * whose values are classifications the dictionary knows. Only a part that is a
+ * short label and a WHOLE known value is translated; the text of a part such as
+ * "NDC 원문: Viet Nam has determined ..." and every part without a label stay as
+ * delivered.
+ */
+export function koreanLabeledValuesV164(text: string): string {
+  const value = String(text ?? "");
+  if (!value.includes(":")) return value;
+  return value
+    .split(/(\s+·\s+)/u)
+    .map((part) => {
+      const match = /^(\s*[^:：·]{1,16}[:：]\s*)([A-Za-z][^:：·]*?)(\s*)$/u.exec(part);
+      if (!match) return part;
+      const translated = koreanSingleV164(match[2]);
+      return translated ? `${match[1]}${translated}${match[3]}` : part;
+    })
+    .join("");
 }
 
 /**

@@ -54,6 +54,8 @@ import { PolicyDocumentDescriptionV153 } from "../public/PolicyDescriptionV153";
 import EntityFacetCountsV153 from "../public/EntityFacetCountsV153";
 import { cdmActivityRowV164, splitCdmActivitiesV164, withDirectoryKeysV164 } from "../../../data/visualization/directoryEntitiesV164";
 import { agreementDateTextV164, agreementDetailV164, partiesTextV164, withAgreementNameV164 } from "../../../data/visualization/agreementTimelineV164";
+import { dedupeIdenticalRowsV164, evidenceColumnsV164 } from "../../../data/visualization/evidenceRowsV164";
+import { koreanLabeledValuesV164 } from "../../../data/visualization/publicCategoryLabelV164";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -1662,7 +1664,7 @@ export function EvidenceMatrixV125({
     }
     return categoryLabelV125(row);
   };
-  const items: Array<{
+  const allItems: Array<{
     key: string;
     group: string | null;
     area: string;
@@ -1682,14 +1684,19 @@ export function EvidenceMatrixV125({
       .filter((entity) => !isCompilerMethodRowV139(entity))
       .map((entity) => entityMatrixRowV137(entity, emissionUnit, entities)),
   ];
+  // V164: a row whose every cell repeats a row already listed is listed once
+  // (A-013 holds one NDC action per source document, and the document is not a
+  // column of this table); the count of those is stated below the controls.
+  const { items, hiddenCount: repeatedCount } = dedupeIdenticalRowsV164(allItems, (cell) => publicTextV126(cell) ?? "");
   if (items.length === 0) return null;
   const groups = [...new Set(items.map((item) => item.group).filter((value): value is string => Boolean(value)))];
   const needle = query.trim().toLocaleLowerCase("ko-KR");
   const filtered = items.filter((item) => (group === "all" || item.group === group) && (!needle || `${item.area} ${item.result} ${item.basis}`.toLocaleLowerCase("ko-KR").includes(needle)));
   const pages = Math.max(1, Math.ceil(filtered.length / 20));
   const currentPage = Math.min(page, pages - 1);
-  const hasGroups = items.some((item) => item.group);
-  const hasUnits = items.some((item) => item.unit);
+  // A column no row fills is not printed (its header wrapped one character per
+  // line on A-013 and E-015), and a single group is not a column of its own.
+  const { hasGroups, hasUnits, hasBasis } = evidenceColumnsV164(items);
   // Rows stay in source order; a group is named once, on its first row.
   let lastGroup: string | null = null;
   return (
@@ -1699,6 +1706,11 @@ export function EvidenceMatrixV125({
         {groups.length > 1 && <label>자료 구분 <select value={group} onChange={(event) => { setGroup(event.target.value); setPage(0); }}><option value="all">전체</option>{groups.map((value) => <option key={value}>{value}</option>)}</select></label>}
         <span role="status">{filtered.length.toLocaleString("ko-KR")}건 / 전체 {items.length.toLocaleString("ko-KR")}건</span>
       </div>
+      {repeatedCount > 0 && (
+        <p className="sv125-evidence-matrix__repeats" data-testid="evidence-matrix-repeats-v164">
+          표시 내용이 완전히 같은 {repeatedCount.toLocaleString("ko-KR")}건은 한 번만 보여 드립니다.
+        </p>
+      )}
       <div className="sv125-matrix-wrap">
         <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
           <thead>
@@ -1707,7 +1719,7 @@ export function EvidenceMatrixV125({
               <th scope="col">항목</th>
               <th scope="col">내용·값</th>
               {hasUnits && <th scope="col">단위</th>}
-              <th scope="col">기준연도·대상·근거</th>
+              {hasBasis && <th scope="col">기준연도·대상·근거</th>}
             </tr>
           </thead>
           <tbody>
@@ -1724,7 +1736,7 @@ export function EvidenceMatrixV125({
                   <th scope="row"><PublicTermTextV134 text={item.area} /></th>
                   <td>{item.result === "—" ? "—" : <PublicTermTextV134 text={item.result} />}</td>
                   {hasUnits && <td>{item.unit ? <PublicTermTextV134 text={item.unit} /> : "—"}</td>}
-                  <td><PublicTermTextV134 text={item.basis} /></td>
+                  {hasBasis && <td><PublicTermTextV134 text={item.basis} /></td>}
                 </tr>
               );
             })}
@@ -2787,7 +2799,10 @@ function entityMatrixRowV137(
     // An empty cell reads as empty. C-009 printed "세부 내용은 상세 데이터에서
     // 확인" forty-three times down one column, which says nothing forty-three
     // times; the table already leads to the detail below it.
-    result: restatedAbbreviation ? "—" : result || "—",
+    // V164: "부문: Energy Efficiency · 상태: Future" (A-013) reads its known
+    // classification values in Korean; a sentence of the source is never touched.
+    // The restated-text test above compares the delivered text, so it stays first.
+    result: restatedAbbreviation ? "—" : koreanLabeledValuesV164(result) || "—",
     unit: unitFromDescriptionV138(
       name || "",
       indicatorGroupLabelV138(entity),

@@ -398,7 +398,8 @@ export function PublicTermHelpV134({ text }: { text: string }) {
       <span>용어 도움말</span>
       {terms.map((token) => (
         <PublicTermV134 entry={token.entry} key={token.entry.id} term={token.value}>
-          <span aria-hidden="true">?</span>
+          {/* V164: two bare "?" buttons side by side could not be told apart; each names its term. */}
+          <span aria-hidden="true">{token.value} ?</span>
           <span className="sr-only">{token.value} 설명</span>
         </PublicTermV134>
       ))}

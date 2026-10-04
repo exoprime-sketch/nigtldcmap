@@ -843,3 +843,20 @@
     top: 1.8rem;
   }
 }
+
+/*
+ * V164-3: the evidence table's headers stay on one line ("항 목" and
+ * "기준연도·대상·근거" wrapped one character per line on A-013) and a row's name
+ * keeps a readable width next to a long description.
+ */
+.sv125-evidence-matrix thead th {
+  white-space: nowrap;
+}
+.sv125-evidence-matrix tbody th[scope="row"] {
+  min-width: 9rem;
+}
+.sv125-evidence-matrix__repeats {
+  color: #52645f;
+  font-size: 0.8rem;
+  margin: 0 0 0.6rem;
+}

@@ -31,6 +31,7 @@ import {
   publicMeasureLabelV126,
 } from "../../../data/visualization/publicCopyRegistryV126";
 import { publicIndicatorDimensionV144 } from "../../../data/visualization/publicIndicatorCopyV144";
+import { withoutRawTwinSelectorsV164 } from "../../../data/visualization/selectorDimensionsV164";
 import {
   PublicTermHelpV134,
   PublicTermTextV134,
@@ -184,7 +185,9 @@ export default function SemanticArchetypePreviewV125({
           !(dimension.key.endsWith("Raw") && keys.has(dimension.key.replace(/Raw$/u, ""))) &&
           dimension.values.length > 1
       );
-      return candidates;
+      // V164: a raw-delivery selector that shares its name with a Korean one
+      // (VNM E-002 offered "상태" twice) is the same choice written twice.
+      return withoutRawTwinSelectorsV164(candidates, (dimension) => publicDimensionLabelV126(dimension.key, dimension.labelKo));
     },
     [contract.dimensions, contract.elementId]
   );

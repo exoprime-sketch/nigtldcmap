@@ -1,4 +1,4 @@
-import { koreanCategoryV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
+import { koreanCategoryV164, koreanLabeledValuesV164, koreanListV164, koreanTitleV164 } from "./publicCategoryLabelV164";
 
 /** V164-3: the English classification values the delivery shipped, in Korean. */
 describe("koreanCategoryV164", () => {
@@ -97,5 +97,30 @@ describe("koreanListV164", () => {
   it("returns a list with no known name, and a value that is not English, as it was", () => {
     expect(koreanListV164("Acme Ltd, Foo Corp")).toBe("Acme Ltd, Foo Corp");
     expect(koreanListV164("방글라데시, 부탄")).toBe("방글라데시, 부탄");
+  });
+});
+
+describe("koreanLabeledValuesV164", () => {
+  const row = "SDG1 · 세부목표 1.2 · 부문: Energy Efficiency · 기후대응: Adaptation · 상태: Future · NDC 원문: Viet Nam has determined that climate change adaptation must be carried out in a focussed manner.";
+
+  it("reads the known values of a labelled description and keeps its figures and its source sentence", () => {
+    const text = koreanLabeledValuesV164(row);
+    expect(text).toBe("SDG1 · 세부목표 1.2 · 부문: 에너지 효율 · 기후대응: 적응 · 상태: 향후 계획 · NDC 원문: Viet Nam has determined that climate change adaptation must be carried out in a focussed manner.");
+    for (const fact of ["SDG1", "세부목표 1.2", "NDC 원문: Viet Nam has determined that climate change adaptation must be carried out in a focussed manner."]) expect(text).toContain(fact);
+  });
+
+  it("reads a document type that is a known value and leaves a part that is not one", () => {
+    expect(koreanLabeledValuesV164("부문: Forest and land use · 정보유형: Needs & Gaps · 비고: Pilot phase")).toBe("부문: 산림·토지이용 · 정보유형: 필요·격차 · 비고: Pilot phase");
+  });
+
+  it("does not translate a name, a sentence that only begins with a known word, or a value that is not whole", () => {
+    expect(koreanLabeledValuesV164("원천: Green Climate Fund · 대상: Water supply upgrade programme")).toBe("원천: Green Climate Fund · 대상: Water supply upgrade programme");
+    expect(koreanLabeledValuesV164("상태: Future plans of the ministry")).toBe("상태: Future plans of the ministry");
+  });
+
+  it("returns text with no label, and an empty value, as it was", () => {
+    expect(koreanLabeledValuesV164("Adaptation")).toBe("Adaptation");
+    expect(koreanLabeledValuesV164("")).toBe("");
+    expect(koreanLabeledValuesV164("2030년까지 감축: 21.7%")).toBe("2030년까지 감축: 21.7%");
   });
 });
