@@ -335,6 +335,7 @@ const ENTRIES_V164: ReadonlyArray<readonly [string, string]> = [
   // --- OECD 환경 관련 세목 (D-006) ---
   ["Taxes on Energy (including fuel for transport)", "에너지 관련 세(수송 연료 포함)"],
   ["Taxes on Pollution", "오염 관련 세"],
+  ["Environmental Taxes", "환경 관련 세 합계"],
   ["Taxes on Resources", "자원 관련 세"],
   ["Taxes on Transport (excluding fuel for transport)", "수송 관련 세(수송 연료 제외)"],
 ];
