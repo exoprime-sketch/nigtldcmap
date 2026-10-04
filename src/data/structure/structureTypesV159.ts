@@ -83,13 +83,27 @@ export interface S4EntityV159 {
   date: string | null;
   status: string | null;
   description: string | null;
-  amount: { value: number; currency: string | null } | null;
+  /**
+   * `scale` is the multiplier the source states for the figure ("USD mn" ->
+   * 1,000,000); it is absent when the figure is already in the plain currency.
+   */
+  amount: { value: number; currency: string | null; scale?: number } | null;
   org: string | null;
   /** "system:key" region tags the source states, e.g. "adm1-34:VN-HN". */
   regionTags: string[];
   techIds: string[];
   links: string[];
   score: number | null;
+  /**
+   * V164: where the record came from. "entity" rows are the delivered records;
+   * "observation" rows are the legacy observation-derived ones, which no list
+   * shows. Absent on hand-built rows (read as "entity").
+   */
+  origin?: "entity" | "observation";
+  /** V164: the row's public role (publicRecordRoleV142); aggregate and definition rows are not individual records. */
+  recordRole?: "individual" | "aggregate" | "definition";
+  /** V164: the normalized name of the column the `date` came from (e.g. "이사회승인일"), so a caller can tell an approval date from an issue date. */
+  dateKey?: string | null;
 }
 
 export type StructureRowsV159 =

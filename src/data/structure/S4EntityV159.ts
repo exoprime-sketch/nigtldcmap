@@ -2,6 +2,7 @@ import { normalizeTechnologyIdV153 } from "../../utils/technologyIdV153";
 import type { VietnamEntityV124, VietnamObservationV124 } from "../vietnam/vietnamTypesV124";
 import type { S4EntityV159 } from "./structureTypesV159";
 import { countryPublicDirV158 } from "../countryContext";
+import { publicRecordRoleV142 } from "../visualization/publicRecordRoleV142";
 
 /**
  * S4 adapter (docs/DATA_TYPOLOGY_V159_SCHEMA.md §2.4).
@@ -22,7 +23,7 @@ import { countryPublicDirV158 } from "../countryContext";
  * | status | attribute matching `상태`/`status` | D-020 |
  * | description | attribute matching `비고`/`description` only (never the numbered-slot's own `설명`, which names what `값` means, not the record) | D-020 `비고` |
  * | org | attribute matching `인가기관_ae`/`사업자_기관`/`org`/`기관` | D-020 |
- * | amount | a numeric attribute matching `대표금액`/`amount`/`amountvalue`, paired with a currency token (`USD`/`KRW`/`EUR`/`VND`/`JPY`/`GBP`/`CNY`) found in *any* string attribute on the same record; both must be present, or amount stays null | D-020 (`대표금액` + `GCF_승인액` string ending "USD"), E-006 (`amountValue`+`currency`) |
+ * | amount | a numeric attribute matching `대표금액`/`amount`/`amountvalue`, paired with a currency token (`USD`/`KRW`/`EUR`/`VND`/`JPY`/`GBP`/`CNY`) found in *any* string attribute on the same record; both must be present, or amount stays null. V164: when that string states the scale right after the token ("USD mn", "USD million") the amount carries `scale: 1000000`; otherwise `scale` is absent | D-020 (`대표금액` + `GCF_승인액` string ending "USD"), E-006 (`amountValue`+`currency`), D-017 (`예산유형` "약정액(USD mn)") |
  * | techIds | attribute matching `38대_기후기술`/`기술코드` whose value starts with a 1-2 digit number (e.g. "17 산업효율 기술") | D-020 |
  * | links | attributes matching `원문url`/`link`/`url`/`recordsourceurl` (all found, http(s) only) | C-009 `속성19_원문URL` |
  *
@@ -115,11 +116,12 @@ function toFiniteNumber(value: unknown): number | null {
   return null;
 }
 
-function extractDate(attrs: Record<string, unknown>): string | null {
+/** The date and the (normalized) name of the column it came from, so a caller can tell an approval date from an issue date. */
+function extractDateWithKey(attrs: Record<string, unknown>): { date: string; key: string } | null {
   const direct = findAttribute(attrs, DATE_KEY_CANDIDATES);
   if (direct) {
     const match = String(direct.value).match(/\d{4}-\d{2}-\d{2}/u);
-    if (match) return match[0];
+    if (match) return { date: match[0], key: blockStrippedKey(direct.key) ?? normalizeKey(direct.key) };
   }
   // Numbered-slot delivery (C-009/C-022 style): a generic "값" column is a
   // date only when its sibling "설명" column says so (contains "일").
@@ -127,26 +129,29 @@ function extractDate(attrs: Record<string, unknown>): string | null {
   const value = findAttribute(attrs, ["값"]);
   if (description && value && String(description.value).includes("일")) {
     const match = String(value.value).match(/\d{4}-\d{2}-\d{2}/u);
-    if (match) return match[0];
+    if (match) return { date: match[0], key: normalizeKey(String(description.value)) };
   }
   return null;
 }
 
-function extractAmount(attrs: Record<string, unknown>): { value: number; currency: string | null } | null {
+function extractAmount(attrs: Record<string, unknown>): { value: number; currency: string | null; scale?: number } | null {
   const amountAttr = findAttribute(attrs, AMOUNT_KEY_CANDIDATES);
   const numeric = amountAttr ? toFiniteNumber(amountAttr.value) : null;
   if (numeric === null) return null;
   let currency: string | null = null;
+  let scale: number | null = null;
   for (const value of Object.values(attrs)) {
     if (typeof value !== "string") continue;
     const match = value.match(new RegExp(`\\b(${CURRENCY_TOKENS.join("|")})\\b`, "u"));
     if (match) {
       currency = match[1];
+      // V164: "USD mn" / "USD million" states that the figure is in millions.
+      if (new RegExp(`\\b${match[1]}\\s*(mn|million)\\b`, "iu").test(value)) scale = 1_000_000;
       break;
     }
   }
   if (!currency) return null;
-  return { value: numeric, currency };
+  return scale ? { value: numeric, currency, scale } : { value: numeric, currency };
 }
 
 function extractTechIds(attrs: Record<string, unknown>): string[] {
@@ -172,7 +177,8 @@ function buildRecord(
   name: string | null,
   note: string | null,
   attrs: Record<string, unknown>,
-  fallbackRecordKey: string
+  fallbackRecordKey: string,
+  recordRole?: S4EntityV159["recordRole"]
 ): S4EntityV159 {
   const idAttr = findAttribute(attrs, ID_KEY_CANDIDATES);
   const nameAttr = findAttribute(attrs, NAME_KEY_CANDIDATES);
@@ -181,6 +187,7 @@ function buildRecord(
   const statusAttr = findAttribute(attrs, STATUS_KEY_CANDIDATES);
   const descriptionAttr = findAttribute(attrs, DESCRIPTION_KEY_CANDIDATES);
   const orgAttr = findAttribute(attrs, ORG_KEY_CANDIDATES);
+  const dated = extractDateWithKey(attrs);
   return {
     elementId,
     indicatorId,
@@ -188,7 +195,7 @@ function buildRecord(
     name: name ?? (nameAttr ? String(nameAttr.value) : null),
     recordType: typeAttr ? String(typeAttr.value) : null,
     year: yearAttr ? toFiniteNumber(yearAttr.value) : null,
-    date: extractDate(attrs),
+    date: dated ? dated.date : null,
     status: statusAttr ? String(statusAttr.value) : null,
     description: descriptionAttr ? String(descriptionAttr.value) : null,
     amount: extractAmount(attrs),
@@ -197,6 +204,9 @@ function buildRecord(
     techIds: extractTechIds(attrs),
     links: extractLinks(attrs),
     score: null,
+    origin: "entity",
+    ...(recordRole ? { recordRole } : {}),
+    dateKey: dated ? dated.key : null,
   };
 }
 
@@ -220,7 +230,8 @@ export function adaptS4V159(
       entity.note ?? null,
       entity.normalizedAttributes || {},
       // The documented order: an id attribute, else the record's own name, else the pack id.
-      entity.name || entity.recordId
+      entity.name || entity.recordId,
+      publicRecordRoleV142(entity).role
     )
   );
   const observationRecords = (observations || []).map((obs) => ({
@@ -239,6 +250,7 @@ export function adaptS4V159(
     techIds: [],
     links: [],
     score: null,
+    origin: "observation" as const,
   }));
   return [...entityRecords, ...observationRecords];
 }

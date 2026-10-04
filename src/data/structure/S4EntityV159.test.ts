@@ -110,3 +110,46 @@ test("legacy observation-row S4 delivery: one record per observation, recordKey 
   expect(rows[0].year).toBe(2022);
   expect(rows[0].description).toBe("베트남 기후법령");
 });
+
+test("V164: an amount stated in millions (\"USD mn\") carries its scale; a plain amount carries none", () => {
+  const rows = adaptS4V159([
+    entity({ normalizedAttributes: { 대표금액: 0.129077, 예산유형: "약정액(USD mn)" } }),
+    entity({ normalizedAttributes: { 대표금액: 8600000, CTF_배분액: "8.6 백만 USD" } }),
+  ]);
+  expect(rows[0].amount).toEqual({ value: 0.129077, currency: "USD", scale: 1_000_000 });
+  // "백만 USD" beside an already-absolute 대표금액 must not be scaled twice.
+  expect(rows[1].amount).toEqual({ value: 8600000, currency: "USD" });
+});
+
+test("V164: delivered rows carry origin, role and the date column; observation-derived rows are marked", () => {
+  const rows = adaptS4V159(
+    [
+      entity({ normalizedAttributes: { 이사회_승인일: "2024-05-01", 레코드구분: "개별" } }),
+      entity({ normalizedAttributes: { 발행일: "2023-01-02", 레코드구분: "집계" } }),
+      entity({ normalizedAttributes: { 시점: "2016" } }),
+    ],
+    [
+      {
+        recordId: "obs-1",
+        elementId: "X-000",
+        indicatorId: "X-000_series",
+        countryIso3: "VNM",
+        year: 2026,
+        value: 1,
+        loadStatus: "published",
+        warnings: [],
+        rightsStatus: "ok",
+        rightsNote: "",
+        downloadEligible: true,
+        provenance: {} as VietnamObservationV124["provenance"],
+      },
+    ]
+  );
+  expect(rows.map((row) => row.origin)).toEqual(["entity", "entity", "entity", "observation"]);
+  expect(rows.map((row) => row.recordRole)).toEqual(["individual", "aggregate", "individual", undefined]);
+  expect(rows[0].dateKey).toBe("승인일");
+  expect(rows[1].dateKey).toBe("발행일");
+  // A year the delivery merely carries is not a date.
+  expect(rows[2].date).toBeNull();
+  expect(rows[2].dateKey).toBeNull();
+});
