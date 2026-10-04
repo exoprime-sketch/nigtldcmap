@@ -282,13 +282,13 @@ function pickHeadlineIndicatorId(
   for (const id of opts.headlineIndicatorIds || []) {
     if (rows.some((row) => row.indicatorId === id && isNumeric(row.value))) return id;
   }
-  let series = seriesOf(rows, opts.countryIso3);
+  const series = seriesOf(rows, opts.countryIso3);
   if (series.length === 0) return null;
+  // The ids read from the page are every series any chart in the analysis
+  // draws - folded charts included (A-010's mass charts in Gg) - so they
+  // break ties after the chart's unit and the comparison key instead of
+  // narrowing the choice first (V164-3: A-010 headline went to F-gas in Gg).
   const drawn = new Set(opts.drawnIndicatorIds || []);
-  if (drawn.size > 0) {
-    const inChart = series.filter((item) => drawn.has(item.id));
-    if (inChart.length > 0) series = inChart;
-  }
   const elementId = rows[0]?.elementId || "";
   const curated = HEADLINE_OVERRIDES_V164.filter(
     (item) => item.elementId === elementId && (!item.countryIso3 || item.countryIso3 === opts.countryIso3)
@@ -312,6 +312,7 @@ function pickHeadlineIndicatorId(
       unitOk(item) ? (STRONG_COMPOSITE_PATTERN.test(item.label) ? 2 : WEAK_COMPOSITE_PATTERN.test(item.label) ? 1 : 0) : 0,
       compareId === item.id && unitOk(item) ? 1 : 0,
       sameUnit(item) ? 1 : 0,
+      drawn.has(item.id) ? 1 : 0,
       isRankUnit(item.unit) ? 0 : 1,
       PLANNED_PATTERN.test(item.label) ? 0 : 1,
       item.count,

@@ -529,3 +529,20 @@ test("V164 U6: statuses read as short Korean names; review notes and English raw
   const many = ["가", "나", "다", "라", "마", "바"].map(status);
   expect(pointOf(decisionPointsV159("U6", { structure: "S4", rows: many }, opts()), "status-breakdown")?.value).toContain("그 밖 2종");
 });
+
+test("V164-3: series drawn by a folded chart do not outrank the chart's unit and comparison key (A-010)", () => {
+  const gas = (key: string, unit: string, value: number, label: string) =>
+    [2019, 2024].map((year) =>
+      s1({ elementId: "A-010", indicatorId: `A-010_emissions_${key}`, countryIso3: "BGD", year, value, unit, label })
+    );
+  const rows = [
+    ...gas("ch4_co2eq", "MtCO₂e", 70.46, "가스별 배출량 · 메탄(CH₄ 환산)"),
+    ...gas("fgas_mass", "Gg", 1.82, "가스별 배출량 · 불소계 온실가스"),
+  ];
+  const point = pointOf(
+    decisionPointsV159("U1", { structure: "S1", rows }, opts({ countryIso3: "BGD", drawnIndicatorIds: ["A-010_emissions_fgas_mass"] })),
+    "latest-value"
+  );
+  expect(point?.value).toMatch(/^70\.5? ?MtCO₂e|^70/u);
+  expect(point?.value).not.toMatch(/Gg/u);
+});
