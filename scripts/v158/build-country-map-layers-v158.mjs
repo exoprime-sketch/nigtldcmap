@@ -772,7 +772,9 @@ function buildRegionCounts(target, spec) {
       if (!byDivision.has(local)) byDivision.set(local, new Map());
       const projects = byDivision.get(local);
       const key = projectKey(label);
-      if (!projects.has(key)) projects.set(key, { recordId: row.recordId, label, date: "", status: "", value: valueText, url: "", region: regionText.replace(/\s*\(행정구역\)$/u, ""), indicatorId: row.indicatorId });
+      // The place is listed after the name unless the name already is the place (a city actor).
+      const region = regionText.replace(/\s*\(행정구역\)$/u, "");
+      if (!projects.has(key)) projects.set(key, { recordId: row.recordId, label, date: "", status: "", value: valueText, url: "", region: projectKey(region) === key ? "" : region, indicatorId: row.indicatorId });
     }
   }
   if (byDivision.size < 1) return { hold: true, reason: `${REGION}가 확인된 기록이 없습니다.`, dropped: { "no-division": notCounted } };
