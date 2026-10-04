@@ -26,10 +26,13 @@
 ### 검증
 - tsc 0 · 단위 테스트 144 suites / 1,520 통과 · CI=true 빌드 경고 0
 - V136 정적 감사 묶음 통과
-- 304쪽 글자 스캔(최종 빌드)과 빈 선택지 페이지 재조작: 보고서 5절
+- 304쪽 글자 스캔(최종 빌드): 열림 304/304 · 오류 0 · 긴 눈금 0 · 가로 넘침 0 · 작업 메모·내부 코드·방글라데시 화면의 베트남 용어 0
+- 빈 선택지가 있던 36쪽 재조작: BGD 229회 · VNM 272회, 빈 화면 0(BGD D-010 세부 분류는 마지막 수정 반영)
+- 반응형: 바뀐 10화면 × 6폭 = 60건 가로 넘침 0 · 주요 화면 스모크 20건 이상 없음
+- CI: Static gate 통과. `PR gate finalize:v151`은 #71·#72와 같이 수 분 만에 실패(참고용)
 
 ### Preview 확인
-- Preview URL: (Vercel 배포 후 아래 댓글에 추가)
+- Preview URL: https://nigtldcmap-git-fix-v164-3-full-review-exoprime-5142s-projects.vercel.app (Vercel 로그인 필요)
 - 확인 경로(데이터 찾기 → 국가 선택 → 항목 클릭, 또는 URL 직접)
 
 | 화면 | URL(Preview 기준) | 볼 것 |
