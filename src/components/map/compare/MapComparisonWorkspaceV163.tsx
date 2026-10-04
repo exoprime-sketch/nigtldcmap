@@ -45,7 +45,7 @@ import {
   TRANSMISSION_VOLTAGE_CLASSES_V152,
   type MapLayerPreparedV152,
 } from "../../../map/layers";
-import { choroplethFillColorV152 } from "../../../map/layers/choroplethLayer";
+import { CHOROPLETH_RAMP_START_V164, choroplethFillColorV152 } from "../../../map/layers/choroplethLayer";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import MapIconLegendV152 from "../MapIconLegendV152";
 import { createMapPointPopupV152 } from "../mapPointPopupV152";
@@ -110,7 +110,7 @@ interface PaneMetaV163 {
 
 const SIDE_LABEL_V163: Record<CompareSideV163, string> = { a: "A", b: "B" };
 const SIDE_POSITION_V163: Record<CompareSideV163, string> = { a: "왼쪽", b: "오른쪽" };
-const RAMP_START_V163 = "#e6f2ea";
+const RAMP_START_V163 = CHOROPLETH_RAMP_START_V164;
 
 function indexOfSideV163(side: CompareSideV163): 0 | 1 {
   return side === "a" ? 0 : 1;

@@ -96,6 +96,10 @@
 .cdp-map-canvas.is-visible .cdp-map-pinned-popup-v164 .maplibregl-popup-content {
   pointer-events: auto;
   padding-right: 28px;
+  /* V164-4: a long card (E-018's two offices) scrolls inside the map
+     instead of running past its bottom edge. */
+  max-height: min(58vh, 460px);
+  overflow-y: auto;
 }
 
 .cdp-map-pinned-popup-v164 .maplibregl-popup-close-button {

@@ -78,6 +78,8 @@ import MapIconLegendV152 from "../components/map/MapIconLegendV152";
 import { MapIconBadgeV152 } from "../components/map/MapIconSpriteV152";
 import FacilityCardV153 from "../components/data/public/FacilityCardV153";
 import { facilityCardSpecV153, featureRecordIdsV164, spatialFacilityEntityV164 } from "../data/visualization/facilityCardV153";
+import { publicScenarioLabelV164 } from "../data/map/scenarioLabelV164";
+import { pointUnitNameV164 } from "../data/map/pointLocationV164";
 import { A023_CAPACITY_BADGE_RADIUS_V152 } from "../map/layers/pointIconLayer";
 import {
   attachMapIconMissingHandlerV152,
@@ -176,6 +178,8 @@ import type {
   SpatialRuntimeAsset,
 } from "../map/layers/types";
 import { LAYER_COLORS } from "../map/layers/colors";
+import { TRANSMISSION_VOLTAGE_CLASSES_V152 } from "../map/layers/lineLayer";
+import { CHOROPLETH_RAMP_START_V164 } from "../map/layers/choroplethLayer";
 import { applyCountryOutlineV163, MAP_STYLE } from "../map/layers/baseStyle";
 import {
   layerRuntimeIds,
@@ -1414,6 +1418,8 @@ function countryMapItemSummaryV162(layer: CountryMapLayerV122, regionWord: strin
   const places = count > 0 ? ` ${count.toLocaleString("ko-KR")}곳` : "";
   if (reference?.basis) return `${reference.label || "참고 지도"} · ${reference.basis}${places}`;
   if (rendererOf(layer) === "admin1-choropleth") return `${regionWord} 경계`;
+  // V164-4: a count of records per region is drawn on the region boundaries.
+  if (rendererOf(layer) === "partial-choropleth") return `${regionWord}별 건수`;
   return `위치${places}`;
 }
 
@@ -3316,10 +3322,14 @@ export default function RealMapExplorerPage({
           // kind, or its own value and unit - it has no area value to be "결측".
           const assetValueV163 = optionalFiniteNumberV130(properties.value);
           const assetUnitV163 = publicTextV126(properties.valueUnit) || "";
+          const assetKindV164 = publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
           const assetDetailV163 =
             assetValueV163 !== null && assetUnitV163
               ? `${formatPublicNumberV126(assetValueV163, assetUnitV163)} ${assetUnitV163}`
-              : publicTextV126(properties.kindLabel) || publicTextV126(properties.categoryLabel) || "";
+              : // V164-4: a name that already says its kind ("홍수 (2016-07-19)") is not followed by it again.
+              assetKindV164 && String(assetDisplayNameV163(properties) || "").includes(assetKindV164)
+              ? ""
+              : assetKindV164;
           const featureLabel =
             renderer === "point-and-polygon"
               ? [publicMapFeatureNameV126(assetDisplayNameV163(properties) || properties.kindLabel, "시설·구역"), assetDetailV163]
@@ -3412,6 +3422,9 @@ export default function RealMapExplorerPage({
                           publicTextV126(properties.period) || publicTextV126(selector.period)
                           ? /기준$/u.test(publicTextV126(properties.period) || publicTextV126(selector.period) || "")
                             ? String(publicTextV126(properties.period) || publicTextV126(selector.period))
+                            : renderer === "point-and-polygon" && /^\d{4}$/u.test(publicTextV126(properties.period) || publicTextV126(selector.period) || "")
+                            ? // V164-4: a site's year is the edition of the register, not the event's date.
+                              `자료 ${publicTextV126(properties.period) || publicTextV126(selector.period)}년판`
                             : `기준 ${publicTextV126(properties.period) || publicTextV126(selector.period)}`
                           : ""
                         : "함께 보기",
@@ -4356,6 +4369,38 @@ export default function RealMapExplorerPage({
         focusedSelector,
         filters
       ).features;
+      // V164-4: a route layer (A-027 roads and railways) is not a grid; it is
+      // counted by its own class field, and its length is summed per class.
+      const routeFieldV164 = focusedLayer.filters[0]?.field;
+      const isGridV164 = features.some(
+        (feature) => feature.properties?.voltageKv !== undefined || feature.properties?.voltage !== undefined
+      );
+      if (!isGridV164 && routeFieldV164) {
+        const byClass = new Map<string, { count: number; km: number }>();
+        features.forEach((feature) => {
+          const key = publicTextV126(feature.properties?.[routeFieldV164]) || "미표기";
+          const entry = byClass.get(key) || { count: 0, km: 0 };
+          entry.count += 1;
+          const km = Number(feature.properties?.lengthKm);
+          if (Number.isFinite(km)) entry.km += km;
+          byClass.set(key, entry);
+        });
+        summaryRows.push({ label: "표시 구간", value: `${features.length.toLocaleString()}개` });
+        const order = focusedLayer.filters[0]?.values || [];
+        [...byClass.entries()]
+          .sort(([left], [right]) => (order.indexOf(left) + 1 || 999) - (order.indexOf(right) + 1 || 999))
+          .forEach(([label, entry]) =>
+            summaryRows.push({
+              label: focusedLayer.filters[0]?.valueLabels?.[label] || label,
+              value: `${entry.count.toLocaleString()}개 구간 · ${formatPublicNumberV126(entry.km, "km")} km`,
+            })
+          );
+        summaryRows.push({
+          label: "기준연도",
+          value: String(focusedLayer.sourceYear || focusedSelector.period),
+        });
+        return { ...empty, summaryRows, unit: "구간" };
+      }
       const voltageCounts = new Map<string, number>();
       features.forEach((feature) => {
         const voltage = String(
@@ -4575,10 +4620,13 @@ export default function RealMapExplorerPage({
         minimum,
         median: middle,
         maximum,
-        dataRegionCount: values.length,
+        // V164-4: counted the way the map draws them - one per region a
+        // value names (B-021's six regions are 6, not the 63 provinces they
+        // are painted on), so "값 있음 + 결측" adds up to the regions on screen.
+        dataRegionCount: ordered.length,
         missingRegionCount: sourceIsRegional
           ? Math.max(0, regionTotal - ordered.length)
-          : Math.max(0, unitTotalV151 - values.length),
+          : Math.max(0, unitTotalV151 - ordered.length),
         unit,
       };
     }
@@ -4626,11 +4674,11 @@ export default function RealMapExplorerPage({
       label: `${featureNoun} 수(지도 표시)`,
       value: `${records.length.toLocaleString()}${noun}`,
     });
-    if (focusedLayer.featureIdentity && focusedLayer.memberRowCount) {
+    // V164-4: the delivery's row count is not a public fact unless the layer
+    // names what a row is ("사업 기록 행"); "원자료 건수 8행" was an internal tally.
+    if (focusedLayer.featureIdentity?.memberLabel && focusedLayer.memberRowCount) {
       summaryRows.push({
-        label: focusedLayer.featureIdentity.memberLabel
-          ? `${focusedLayer.featureIdentity.memberLabel} 행`
-          : "원자료 건수",
+        label: `${focusedLayer.featureIdentity.memberLabel} 행`,
         value: `${focusedLayer.memberRowCount.toLocaleString()}행`,
       });
     }
@@ -4672,7 +4720,8 @@ export default function RealMapExplorerPage({
       const labels = focusedLayer.filters[0]?.valueLabels || {};
       countByPublicFieldV126(records, primaryGroupField)
         .forEach(([label, count]) =>
-          summaryRows.push({ label: labels[label] || label, value: `${count.toLocaleString()}${noun}` })
+          // V164-4: a place value reads "한글 (현지명)" (E-006 "Ho Chi Minh City; Hanoi").
+          summaryRows.push({ label: labels[label] || publicMapFactValueV163(primaryGroupField, label) || label, value: `${count.toLocaleString()}${noun}` })
         );
     }
     return { ...empty, summaryRows, unit: noun };
@@ -4687,6 +4736,26 @@ export default function RealMapExplorerPage({
     recordsByElement,
     spatialByElement,
   ]);
+  /**
+   * V164-4: the legend's "결측" line counts on the same basis as the
+   * "값 있음 N개 · 결측 M개" line above it. It read the asset's own coverage
+   * (63 provinces, or a basin layer's provinces) while the map drew 34 units,
+   * so one legend said "결측 0개" and "결측: 2개 성·시".
+   */
+  const focusedMissingTextV164 = (() => {
+    if (!focusedLayer) return "";
+    const renderer = rendererOf(focusedLayer);
+    if (renderer === "admin1-choropleth" || renderer === "partial-choropleth") {
+      const missing = focusedAnalysisV126.missingRegionCount;
+      if (!missing) return "";
+      const missingRow = focusedAnalysisV126.summaryRows.find((row) => row.label.startsWith("미제공"));
+      const unitWord = String(missingRow?.value || "").replace(/^[\d,]+개\s*/u, "") || level1V162?.label || "지역";
+      return `${missing.toLocaleString()}개 ${unitWord}는 원자료에 값 없음 · 0으로 대체하지 않음`;
+    }
+    // A basin or zone layer draws its own units; a province count does not describe it.
+    if (renderer === "unit-choropleth") return "";
+    return focusedMissingReason && focusedMissingReason !== "없음" ? focusedMissingReason : "";
+  })();
   const selectedLayer = selected
     ? layers.find((layer) => layer.elementId === selected.elementId) || null
       : null;
@@ -4882,8 +4951,10 @@ export default function RealMapExplorerPage({
     const allRows = [...rowsByVariable.values()].flat();
     const distinctPeriods = new Set(allRows.map((row) => row.period));
     if (distinctPeriods.size < 2) return null;
+    // V164-4: a layer without scenario groups (Bangladesh B-004~B-007) reads
+    // "SSP2-4.5", not the raw key "ssp245".
     const scenarioLabel = (key: string) =>
-      groups?.scenarios.find((scenario) => scenario.key === key)?.label || key;
+      groups?.scenarios.find((scenario) => scenario.key === key)?.label || publicScenarioLabelV164(key);
     const markers = ["circle", "square", "diamond", "triangle", "cross"] as const;
     const series: TimeSeriesV127[] = [...rowsByVariable]
       .map(([variable, rows], index) => {
@@ -4978,13 +5049,24 @@ export default function RealMapExplorerPage({
       : [selectedSpatial.adm1Code];
     const seen = new Set<string>();
     const merged: NonNullable<VietnamSpatialLayerAssetV124["memberRecords"]>[string] = [];
+    // V164-4: a record filed under every member (its source names the 2025
+    // unit, e.g. "Quảng Trị") belongs to no single former province; only a
+    // record filed under one member is marked with it ("(구 꽝빈성)" was
+    // attached to Quảng Trị projects because Quảng Bình was listed first).
+    const filedUnder = new Map<string, number>();
+    for (const code of codes) {
+      for (const record of data?.memberRecords?.[code] || []) {
+        const key = `${record.recordId}|${record.label}`;
+        filedUnder.set(key, (filedUnder.get(key) || 0) + 1);
+      }
+    }
     for (const code of codes) {
       for (const record of data?.memberRecords?.[code] || []) {
         const key = `${record.recordId}|${record.label}`;
         if (seen.has(key)) continue;
         seen.add(key);
         merged.push(
-          codes.length > 1
+          codes.length > 1 && filedUnder.get(key) === 1
             ? { ...record, label: `${record.label} ${formerProvinceLabelV151(code)}`.trim() }
             : record
         );
@@ -5300,6 +5382,7 @@ export default function RealMapExplorerPage({
               peers,
               unit,
               peerLabel: isUnit ? "평가구역" : isAsset ? "대상" : regionWordV158(countryIso3).word,
+              withAverage: !(selectedOwningLayer.mapMode === "region-choropleth" && unit === "건"),
             })
           );
         }
@@ -5375,10 +5458,9 @@ export default function RealMapExplorerPage({
         lines.push(
           ...selectionLineV161(
             "소재 성·시",
-            formatRegionListV161(locatedIn.adm1Name, {
-              country: countryIso3,
-              level: "adm1-63",
-            }),
+            // V164-4: the unit in the boundary vintage on screen (2025 "후에",
+            // not the pre-2025 "트어티엔후에").
+            pointUnitNameV164(locatedIn, boundarySystemV151State, countryIso3),
             selectedApproximateV138
               ? "소재 지역을 나타내는 점이며 실제 시설 위치가 아닙니다."
               : undefined
@@ -5696,6 +5778,25 @@ export default function RealMapExplorerPage({
     );
     setKeyboardFeatureIndexV129(Math.max(0, firstWithValue));
   }, [keyboardMapFeaturesV129]);
+
+  // V164-4: the stepper card follows a click - it said "안장 1 / 34" while the
+  // panel showed the clicked Quảng Trị.
+  useEffect(() => {
+    const target = selected
+      ? `${selected.elementId}:${selected.recordId}`
+      : selectedSpatial
+      ? `${selectedSpatial.elementId}:${selectedSpatial.selectionKey ?? ""}`
+      : null;
+    if (!target) return;
+    const index = keyboardMapFeaturesV129.findIndex((feature) =>
+      feature.record
+        ? `${feature.elementId}:${feature.record.recordId}` === target
+        : feature.spatial
+        ? `${feature.elementId}:${feature.spatial.selectionKey ?? ""}` === target
+        : false
+    );
+    if (index >= 0) setKeyboardFeatureIndexV129(index);
+  }, [keyboardMapFeaturesV129, selected, selectedSpatial]);
 
   const keyboardMapFeatureV129 =
     keyboardMapFeaturesV129[
@@ -8175,7 +8276,7 @@ export default function RealMapExplorerPage({
                           focusedAnalysisV126.minimum !== null &&
                           focusedAnalysisV126.minimum === focusedAnalysisV126.maximum
                             ? LAYER_COLORS[focusedLayer.elementId] || "#106f4e"
-                            : `linear-gradient(90deg, #e6f2ea, ${
+                            : `linear-gradient(90deg, ${CHOROPLETH_RAMP_START_V164}, ${
                                 LAYER_COLORS[focusedLayer.elementId] || "#106f4e"
                               })`,
                       }}
@@ -8230,8 +8331,49 @@ export default function RealMapExplorerPage({
                 </div>
               ) : (
                 <div className="cdp-map-legend__explanation">
-                  <span>색상: 자료 유형</span>
-                  <span>묶음 숫자: 포함된 위치 수</span>
+                  {rendererOf(focusedLayer) === "line" && focusedLayer.filters[0]?.field !== "class" ? (
+                    // V164-4: a grid is coloured by voltage (110·220·500 kV), any other
+                    // voltage in the layer's own colour.
+                    <>
+                      {TRANSMISSION_VOLTAGE_CLASSES_V152.map((entry) => (
+                        <span key={entry.kv}>
+                          <i className="cdp-map-legend__swatch" style={{ background: entry.color }} aria-hidden="true" />{" "}
+                          <PublicTermTextV134 text={`${entry.kv} kV`} />
+                        </span>
+                      ))}
+                      <span>
+                        <i
+                          className="cdp-map-legend__swatch"
+                          style={{ background: LAYER_COLORS[focusedLayer.elementId] || "#106f4e" }}
+                          aria-hidden="true"
+                        />{" "}
+                        그 밖의 전압·미표기
+                      </span>
+                    </>
+                  ) : rendererOf(focusedLayer) === "line" ? (
+                    // V164-4: a route layer is drawn in one colour; its classes
+                    // and lengths are counted in the analysis panel.
+                    <>
+                      <span>
+                        <i
+                          className="cdp-map-legend__swatch"
+                          style={{ background: LAYER_COLORS[focusedLayer.elementId] || "#106f4e" }}
+                          aria-hidden="true"
+                        />{" "}
+                        <PublicTermTextV134 text={focusedLayer.legend.title || focusedLayer.publicShortTitle} />
+                      </span>
+                      {focusedLayer.legend.note && (
+                        <span>
+                          <PublicTermTextV134 text={focusedLayer.legend.note} />
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <span>색상: 자료 유형</span>
+                      {focusedLayer.cluster && <span>묶음 숫자: 포함된 위치 수</span>}
+                    </>
+                  )}
                 </div>
               )}
               {/* V164: a layer drawn by one reference point per segment (another country's
@@ -8242,9 +8384,9 @@ export default function RealMapExplorerPage({
                   <PublicTermTextV134 text={focusedLayer.publicSpatialNotice} />
                 </p>
               ) : null}
-              {focusedMissingReason && focusedMissingReason !== "없음" && (
+              {focusedMissingTextV164 && (
                 <p className="cdp-map-legend__missing">
-                  결측: {focusedMissingReason}
+                  결측: {focusedMissingTextV164}
                 </p>
               )}
             </div>

@@ -627,6 +627,10 @@
 @media (min-width: 769px) {
   .cdp-map-legend {
     max-height: min(46vh, 380px);
+    /* V164-4: clear the map credit line (two lines at 1440px, three at
+       1024px) so the legend's last rows - the value range and the count of
+       regions with values - are never under it. */
+    bottom: 58px;
   }
 }
 

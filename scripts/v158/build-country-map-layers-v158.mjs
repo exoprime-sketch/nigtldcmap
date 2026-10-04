@@ -598,12 +598,14 @@ function buildChoropleth(target, spec) {
   };
   const publicName = publicNameOf(target);
   const unitText = defaultVariable.unit ? `단위 ${defaultVariable.unit} · ` : "";
-  const notice = `${ADM1_COUNT}개 ${REGION} 경계를 사용합니다.`;
+  // V164-4: a source that kept the pre-2015 seven divisions says so on the map
+  // (its Dhaka value covers today's Dhaka and Mymensingh).
+  const notice = `${ADM1_COUNT}개 ${REGION} 경계를 사용합니다.${spec.basisNote ? ` ${spec.basisNote}` : ""}`;
   const item = catalogById.get(elementId);
   const latestYear = yearOf(defaultPeriod);
   const measures = [...new Map(variables.filter((variable) => variable.entry.source === "entity" && !variable.entry.split).map((variable) => [variable.entry.attr, { sourceKey: variable.entry.attr, label: splitFieldLabel(fieldLabel(variable.entry.attr)).label, unit: variable.unit }])).values()];
   const layer = {
-    accuracyNotice: `누락값은 투명 처리하며 0으로 대체하지 않습니다. 원자료가 ${REGION} 단위로 제공한 값만 표시합니다.`,
+    accuracyNotice: `누락값은 투명 처리하며 0으로 대체하지 않습니다. 원자료가 ${REGION} 단위로 제공한 값만 표시합니다.${spec.basisNote ? ` ${spec.basisNote}` : ""}`,
     active: true,
     aggregationLevel: "admin1",
     assetRef: { elementId, provider: PROVIDER, section: "spatial" },

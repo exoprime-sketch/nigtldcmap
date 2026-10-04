@@ -110,7 +110,13 @@ export function choroplethFeatureCollection(
   const values = asset.data
     ? spatialValuesForSelectorV125(asset.data, selector)
     : [];
-  const valueByCode = new Map(values.map((row) => [row.adm1Code, row]));
+  // V164-4: a value row is keyed by the asset's own join column (Viet Nam
+  // D-022 states the post-2025 unit, `adm1Code34`); keyed only by adm1Code,
+  // every D-022 row was unmatched and the layer drew an empty map.
+  const assetJoinKeyV164 = String((asset.data as { joinKey?: string } | undefined)?.joinKey || "adm1Code");
+  const valueByCode = new Map(
+    values.map((row) => [String((row as unknown as Record<string, unknown>)[assetJoinKeyV164] ?? row.adm1Code ?? ""), row])
+  );
   const numericValues = values.map((row) => row.value).filter(Number.isFinite);
   const minimum = numericValues.length ? Math.min(...numericValues) : 0;
   const maximum = numericValues.length ? Math.max(...numericValues) : 1;
@@ -123,7 +129,13 @@ export function choroplethFeatureCollection(
         // V162 PR-D: the boundary file's own key names the unit the values are
         // keyed by ("divisionKey" for Bangladesh); Viet Nam's is adm1Code.
         const joinKey = String((asset.data as { joinKey?: string } | undefined)?.joinKey || "adm1Code");
-        const adm1Code = String(feature.properties?.[joinKey] || feature.properties?.adm1Code || "");
+        // The 2025 boundary file keys its units as `unitCode` (VN34-xx).
+        const adm1Code = String(
+          feature.properties?.[joinKey] ||
+            (joinKey === "adm1Code34" ? feature.properties?.unitCode : "") ||
+            feature.properties?.adm1Code ||
+            ""
+        );
         const value = valueByCode.get(adm1Code);
         return {
           type: "Feature" as const,
