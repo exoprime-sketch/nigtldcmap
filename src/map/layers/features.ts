@@ -4,7 +4,7 @@
  * RealMapExplorerPage so the mini map builds exactly the same features).
  */
 import type { CountryEntityV122, CountryMapLayerV122 } from "../../data/countries/countryDataTypesV122";
-import type { VietnamLocationSidecarV151, VietnamSpatialLayerAssetV124 } from "../../data/vietnam/vietnamTypesV124";
+import type { VietnamLocationSidecarV151, VietnamSpatialLayerAssetV124, VietnamSpatialValue34V162 } from "../../data/vietnam/vietnamTypesV124";
 import type { VietnamMapGeoJsonV124 } from "../../data/vietnam/vietnamDataLoaderV124";
 import type { BoundarySystemV151 } from "../../data/map/adminBoundaryV151";
 import { PROVINCE_KO_34_V151 } from "../../data/map/adminBoundaryV151";
@@ -261,9 +261,39 @@ export function choroplethFeatureCollectionV151(
   // V162: where the source itself states the 34-unit values for this variable
   // and period, the 34 outline shows them as printed (native-34). The 63-unit
   // aggregation below is used only where no such row exists.
+  // V164-4: a layer whose rows are keyed by the 2025 unit itself (VNM D-022,
+  // `joinKey: "adm1Code34"`) states its 34-unit values in `values`, not in
+  // `values34`; read them as the same native rows, never through the 63-unit
+  // aggregation (which found no members and drew an empty map).
+  const keyed34V164 =
+    (asset.data as { joinKey?: string } | undefined)?.joinKey === "adm1Code34"
+      ? values
+          .map((row): VietnamSpatialValue34V162 | null => {
+            const fields = row as unknown as Record<string, unknown>;
+            const unitCode = String(fields.adm1Code34 ?? "");
+            return unitCode && Number.isFinite(row.value)
+              ? {
+                  unitCode,
+                  unitName: String(fields.adm1Name34 ?? unitCode),
+                  variable: row.variable,
+                  variableLabel: row.variableLabel || variableLabel,
+                  period: row.period,
+                  value: row.value,
+                  unit: row.unit ?? null,
+                  sourceIndicatorId: row.sourceIndicatorId ?? null,
+                  sourceRecordId: row.sourceRecordId ?? null,
+                  sourceSpatialUnit: "admin1-34" as const,
+                  imputed: false as const,
+                }
+              : null;
+          })
+          .filter((row): row is VietnamSpatialValue34V162 => row !== null)
+      : [];
   const source34 =
     context.system === "post-2025-34" && context.geometry34
-      ? source34ValuesForSelectorV162(asset.data, selector.variable, selector.period)
+      ? keyed34V164.length
+        ? keyed34V164
+        : source34ValuesForSelectorV162(asset.data, selector.variable, selector.period)
       : [];
   if (source34.length && context.geometry34) {
     const byUnit = new Map(source34.map((row) => [row.unitCode, row]));
