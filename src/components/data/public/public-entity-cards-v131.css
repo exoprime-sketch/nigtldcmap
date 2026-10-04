@@ -160,3 +160,26 @@
   font-size: 0.8rem;
   line-height: 1.55;
 }
+
+/*
+ * V164-3 (WP-E): the generic cards (gauging sites, basins) carry long names and
+ * long place descriptions. A label beside a value left the value a 7-character
+ * column ("Bahaduraba / d"), and a two-line clamp cut the title before the figure
+ * that told the cards apart. The label sits above its value, a word is broken
+ * only when it cannot fit a line on its own, and the title may take three lines.
+ */
+.pec131-grid--generic .pec131-card__title {
+  -webkit-line-clamp: 3;
+  min-height: 0;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.pec131-grid--generic .pec131-card__facts > div {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pec131-grid--generic .pec131-card__facts dd {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}

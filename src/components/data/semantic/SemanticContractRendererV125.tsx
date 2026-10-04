@@ -56,6 +56,23 @@ import { cdmActivityRowV164, splitCdmActivitiesV164, withDirectoryKeysV164 } fro
 import { agreementDateTextV164, agreementDetailV164, partiesTextV164, withAgreementNameV164 } from "../../../data/visualization/agreementTimelineV164";
 import { dedupeIdenticalRowsV164, evidenceColumnsV164 } from "../../../data/visualization/evidenceRowsV164";
 import { koreanLabeledValuesV164 } from "../../../data/visualization/publicCategoryLabelV164";
+import {
+  auxSeriesLabelV164,
+  barAxisLabelV164,
+  categoryLabelKeysV164,
+  categoryLabelSourceV164,
+  dominantSourceV164,
+  isAuxIndicatorV164,
+  koreanLegendLabelV164,
+  numberDuplicateLabelsV164,
+  observationTimeTextV164,
+  observationYearTextV164,
+  scaleKindLabelV164,
+  splitScaleGroupsV164,
+  withoutRawKeysV164,
+} from "../../../data/visualization/barRowsV164";
+import type { ScaleKindV164 } from "../../../data/visualization/barRowsV164";
+import { barScaleV164, formatBarWithUnitV164 } from "../../charts/barScaleV164";
 
 import "./semantic-contract-renderer-v125.css";
 
@@ -222,7 +239,7 @@ export default function SemanticContractRendererV125({
             primaryType
           ).map((block) => <Fragment key={block.key}>{block.node}</Fragment>)}
           {["kpi-trend", "multi-metric-trend", "score-benchmark"].includes(renderer) && numericRows.length > 0 && (
-            <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${numericRows[0].year || numericRows[0].period || "선택 조건"} · 항목별 값`} />
+            <ObservationValuesTableV146 rows={numericRows} context={contextRows} title={`${observationTimeTextV164(numericRows[0]) || "선택 조건"} · 항목별 값`} />
           )}
           {renderEntityPanelV125(
             renderer,
@@ -327,7 +344,7 @@ function renderObservationPanelV125(
               <>
                 {typeof numericRows[0]?.year === "number" && numericRows.every((row) => row.year === numericRows[0].year) && (
                   <p className="sv125-contract-help" data-testid="selected-year-statement-v140">
-                    선택한 {numericRows[0].year}년 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다.
+                    선택한 {observationYearTextV164(numericRows[0])} 값을 항목별로 비교합니다. 연도 선택기로 다른 시점을 볼 수 있으며, 두 시점의 변화는 아래 추이에서 확인합니다.
                   </p>
                 )}
                 <CategoryComparisonV125 rows={numericRows} />
@@ -588,7 +605,7 @@ function ScenarioRangePanelV125({ rows }: { rows: NumericRowV125[] }) {
   );
 }
 
-function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
+export function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
   if (rows.length === 0) return null;
   const ordered = [...rows].sort(
     (left, right) => seasonOrderV125(left) - seasonOrderV125(right)
@@ -601,7 +618,8 @@ function SeasonalityPanelV125({ rows }: { rows: PresentRowV125[] }) {
             <span><PublicTermTextV134 text={seasonLabelV125(row)} /></span>
             <strong>{formatValueV121(row.value)}</strong>
             <small>
-              {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
+              {/* A climatology is dated by its span ("1991–2020 평년"), not by the first year of it. */}
+              {[row.unit, observationTimeTextV164(row)].filter(Boolean).join(" · ") ||
                 "기준정보 미기재"}
             </small>
           </article>
@@ -715,7 +733,7 @@ function CapabilityScorecardV125({
               <span><PublicTermTextV134 text={row.displayLabel} /></span>
               <strong>{formatValueV121(row.value)}</strong>
               <small>
-                {[row.unit, row.year || row.period].filter(Boolean).join(" · ") ||
+                {[row.unit, observationTimeTextV164(row)].filter(Boolean).join(" · ") ||
                   "기준정보 미기재"}
               </small>
             </article>
@@ -845,8 +863,9 @@ function TwoYearChangeUnitV135({
           : (delta / Math.abs(first.value)) * 100;
       return {
         key,
-        label:
-          publicTextV126(first.displayLabel) || first.semanticMeasure.labelKo,
+        label: koreanLegendLabelV164(
+          publicRowLabelV164(first.displayLabel) || first.semanticMeasure.labelKo
+        ),
         first,
         last,
         delta,
@@ -924,7 +943,7 @@ export function compactSeriesLabelsV164(labels: string[]): string[] {
   return new Set(out).size === out.length ? out : labels;
 }
 
-function TrendUnitV125({
+export function TrendUnitV125({
   rows,
   unit,
   elementId,
@@ -942,29 +961,40 @@ function TrendUnitV125({
       map.set(row.seriesKey, bucket);
       return map;
     }, new Map<string, NumericRowV125[]>())
-  ).map(([key, values]) => ({
-    key,
-    label:
-      publicTextV126(publicIndicatorSeriesV144(values[0])) ||
-      values[0].semanticMeasure.labelKo,
-    rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
-  }));
+  ).map(([key, values]) => {
+    // V164: an auxiliary source (A-030's KITA rows) says so in its legend entry.
+    const aux = values.every((row) => isAuxIndicatorV164(row.indicatorId));
+    const label = seriesLabelV164(values[0]);
+    return {
+      key,
+      aux,
+      label: aux ? auxSeriesLabelV164(label) : label,
+      rows: values.sort((left, right) => (left.year || 0) - (right.year || 0)),
+    };
+  });
   // V164: many series (D-011's ~100 donors) open on the largest few by latest value,
   // with the shared measure words taken out of each legend label; the rest stay one
   // click away in the legend and all of them stay in the table below.
-  const compactLabelsV164 = compactSeriesLabelsV164(sourceSeries.map((item) => item.label));
+  const compactLabelsV164 = numberDuplicateLabelsV164(compactSeriesLabelsV164(sourceSeries.map((item) => item.label)));
   sourceSeries.forEach((item, index) => { item.label = compactLabelsV164[index]; });
   const latestOfV164 = (item: { rows: NumericRowV125[] }) => {
     const last = item.rows[item.rows.length - 1];
     return last ? Math.abs(last.value) : -1;
   };
+  // An auxiliary series is the same item from another source: it opens hidden, one
+  // click away in the legend, so the same year never shows two values for one item.
+  const hidesAuxV164 = sourceSeries.some((item) => !item.aux) && sourceSeries.some((item) => item.aux);
+  const openCandidatesV164 = hidesAuxV164 ? sourceSeries.filter((item) => !item.aux) : sourceSeries;
+  const overLimitV164 = openCandidatesV164.length > TREND_OPEN_SERIES_LIMIT_V164;
   const openSeriesV164 = new Set(
-    sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164
-      ? [...sourceSeries].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
-      : sourceSeries.map((item) => item.key)
+    overLimitV164
+      ? [...openCandidatesV164].sort((left, right) => latestOfV164(right) - latestOfV164(left)).slice(0, TREND_OPEN_SERIES_LIMIT_V164).map((item) => item.key)
+      : openCandidatesV164.map((item) => item.key)
   );
-  if (sourceSeries.length > TREND_OPEN_SERIES_LIMIT_V164) {
+  if (overLimitV164) {
     sourceSeries.sort((left, right) => Number(openSeriesV164.has(right.key)) - Number(openSeriesV164.has(left.key)) || latestOfV164(right) - latestOfV164(left));
+  } else if (hidesAuxV164) {
+    sourceSeries.sort((left, right) => Number(left.aux) - Number(right.aux));
   }
   const years = sourceSeries.flatMap((item) =>
     item.rows.map((row) => row.year as number)
@@ -1076,15 +1106,9 @@ function TrendUnitV125({
  * Magnitude still sets the length; only the anchor and direction come from the
  * sign, so a value's size reads the same as before.
  */
-function barScaleV137(values: number[]) {
-  const negMax = Math.max(0, ...values.map((value) => (value < 0 ? -value : 0)));
-  const posMax = Math.max(0, ...values.map((value) => (value > 0 ? value : 0)));
-  const span = Math.max(negMax + posMax, 1e-9);
-  return {
-    signed: negMax > 0,
-    zeroPercent: (negMax / span) * 100,
-    spanFor: (value: number) => (Math.abs(value) / span) * 100,
-  };
+function barScaleV137(values: number[], unit: string) {
+  // V164: a lone percentage is measured against 100 and a rank has no bar at all.
+  return barScaleV164(values, unit);
 }
 
 /**
@@ -1134,7 +1158,7 @@ function ChartRowsTableV141({
   );
 }
 
-function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
+export function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV125[]; markedYear?: number | null }) {
   // V162 (P12-B): a bar named after a place reads "한글명 (현지명)".
   const regionText = useRegionTextV162(useAnalysisContractV153()?.elementId);
   if (rows.length === 0) return null;
@@ -1146,29 +1170,41 @@ function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV
   // Rows that share a category label are told apart by the dimension that
   // differs. D-001 drew four "수력 기술" bars reading 1,156 / 1,961 / 98 / 1,103
   // USD/kW - the median and the sample's bounds, with nothing to say so.
-  const comparisonKey = comparisonKeyV138(rows);
+  // V164: a dimension that is the same on every row names no bar (BGD A-024 named
+  // its three bars after technology "24"); the rows' own label comes first.
+  const labelKeys = categoryLabelKeysV164(rows);
+  const comparisonKey = comparisonKeyV138(rows, labelKeys);
   const rowLabel = (row: NumericRowV125) => {
     if (comparisonKey) {
       const value = rowSubjectValuesV138(row).get(comparisonKey);
       if (value) return subjectLabelV138(comparisonKey, value);
     }
-    return categoryLabelV125(row);
+    return categoryLabelV125(row, labelKeys);
   };
+  const rowSource = (row: NumericRowV125) =>
+    comparisonKey && rowSubjectValuesV138(row).has(comparisonKey) ? comparisonKey : categoryLabelSourceV164(row, labelKeys);
   const labelCounts = new Map<string, number>();
   rows.forEach((row) => {
     const label = rowLabel(row);
     labelCounts.set(label, (labelCounts.get(label) || 0) + 1);
   });
+  // V164: English classification values read in Korean wherever a bar is named.
   const barLabel = (row: NumericRowV125) => {
     const label = rowLabel(row);
-    if ((labelCounts.get(label) || 0) < 2) return regionText(label);
+    if ((labelCounts.get(label) || 0) < 2) return koreanLegendLabelV164(regionText(label));
     const qualifier = comparisonQualifierV137(row, label);
-    return regionText(qualifier ? `${label} · ${qualifier}` : label);
+    return koreanLegendLabelV164(regionText(qualifier ? `${label} · ${qualifier}` : label));
   };
+  // V164: the auxiliary source of an indicator (A-030's KITA rows) is a second value
+  // for the same item and year, so it is not drawn beside the main one; it sits
+  // behind a disclosure with its own bars.
+  const auxRows = rows.filter((row) => isAuxIndicatorV164(row.indicatorId));
+  const mainRows = auxRows.length > 0 && auxRows.length < rows.length ? rows.filter((row) => !isAuxIndicatorV164(row.indicatorId)) : rows;
+  const hiddenAuxRows = mainRows === rows ? [] : auxRows;
   // "항목별 값" says nothing about what is on the chart. Where every bar carries
   // the same measure and the same period, those are the title.
-  const measures = new Set(rows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
-  const periods = new Set(rows.map((row) => row.period).filter(Boolean));
+  const measures = new Set(mainRows.map((row) => row.semanticMeasure.labelKo).filter(Boolean));
+  const periods = new Set(mainRows.map((row) => row.period).filter(Boolean));
   const measureTitle = measures.size === 1 ? [...measures][0] : "";
   const periodTitle = periods.size === 1 ? [...periods][0] : "";
   const frameTitle = measureTitle
@@ -1176,14 +1212,55 @@ function CategoryComparisonV125({ rows, markedYear = null }: { rows: NumericRowV
       ? `${measureTitle} · ${periodTitle}`
       : measureTitle
     : "항목별 값";
+  const axisSource = dominantSourceV164(mainRows.map(rowSource));
+  // A mean and a total of one unit are 10^6 apart (A-026) and are scaled apart.
+  const unitGroups = (list: NumericRowV125[]) =>
+    groupByUnitV125(list).flatMap(({ unit, rows: unitRows }) =>
+      splitScaleGroupsV164(unitRows, barLabel, (row) => row.value).map((group) => (
+        <CategoryComparisonUnitV143
+          key={`${unit || "no-unit"}|${group.kind}`}
+          unit={unit}
+          rows={group.items}
+          barLabel={barLabel}
+          title={frameTitle}
+          markedYear={markYear}
+          axisSource={axisSource}
+          scaleKind={group.kind}
+        />
+      ))
+    );
   return (
     <VisualizationFrameV125 eyebrow="항목" title={frameTitle} block="category-bar">
-      {groupByUnitV125(rows).map(({ unit, rows: unitRows }) => <CategoryComparisonUnitV143 key={unit || "no-unit"} unit={unit} rows={unitRows} barLabel={barLabel} title={frameTitle} markedYear={markYear} />)}
+      {unitGroups(mainRows)}
+      {hiddenAuxRows.length > 0 && (
+        <details className="sv164-aux-rows" data-testid="aux-rows-v164">
+          <summary>보조 자료 {hiddenAuxRows.length}개 보기</summary>
+          {unitGroups(hiddenAuxRows)}
+        </details>
+      )}
     </VisualizationFrameV125>
   );
 }
 
-function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = null }: { rows: NumericRowV125[]; unit: string; barLabel: (row: NumericRowV125) => string; title: string; markedYear?: number | null }) {
+function CategoryComparisonUnitV143({
+  rows,
+  unit,
+  barLabel,
+  title,
+  markedYear = null,
+  axisSource = "measure",
+  scaleKind = "all",
+}: {
+  rows: NumericRowV125[];
+  unit: string;
+  barLabel: (row: NumericRowV125) => string;
+  title: string;
+  markedYear?: number | null;
+  /** What names the bars (a dimension key, or "measure" for the row's own indicator label). */
+  axisSource?: string;
+  /** "average" / "total" when a unit's rows were split onto scales of their own. */
+  scaleKind?: ScaleKindV164;
+}) {
   // What each bar is, from the dataset's contract when this is its bar screen (V153).
   const comparisonContract = useAnalysisContractV153();
   const comparisonAxisV153 = comparisonContract && ["category-bar", "region-bar"].includes(comparisonContract.primary.type) ? comparisonContract.primary.yAxis : null;
@@ -1191,10 +1268,14 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
   const [expanded, setExpanded] = useState(false);
   const ordered = order === "source" ? rows : [...rows].sort((a, b) => order === "desc" ? b.value - a.value : a.value - b.value);
   const shown = expanded ? ordered : ordered.slice(0, 12);
-  const scale = barScaleV137(rows.map((row) => row.value));
+  const scale = barScaleV137(rows.map((row) => row.value), unit);
+  // V164: the axis is the contract's unless the bars contradict it (D-009 and E-009
+  // are contracted as 연도 but draw one bar per indicator).
+  const axisLabel = barAxisLabelV164(comparisonAxisV153, axisSource, rows.map(barLabel));
+  const kindLabel = scaleKindLabelV164(scaleKind);
   return <article className="sv125-contract-axis" data-testid="comparison-workspace-v143">
             <div className="sv143-comparison-tools">
-              <h5>단위: <PublicTermTextV134 text={unit || "미기재"} /></h5>
+              <h5>단위: <PublicTermTextV134 text={unit || "미기재"} />{kindLabel ? ` · ${kindLabel}` : ""}</h5>
               {rows.length > 1 && <label>정렬 <select aria-label={`${title} ${unit} 정렬`} value={order} onChange={(event) => setOrder(event.target.value)}><option value="source">자료 순서</option><option value="desc">높은 값부터</option><option value="asc">낮은 값부터</option></select></label>}
             </div>
             {scale.signed && (
@@ -1202,7 +1283,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                 0을 기준으로 왼쪽은 음수, 오른쪽은 양수입니다. 막대 길이는 0에서 떨어진 크기입니다.
               </p>
             )}
-            <ChartAxesV150 x={title} y={comparisonAxisV153 || "비교 항목"} unit={unit} />
+            <ChartAxesV150 x={title} y={axisLabel} unit={unit} />
             <div className="sv125-contract-bars" role="list">
               {shown.map((row, index) => {
                 const width = scale.spanFor(row.value);
@@ -1214,6 +1295,7 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                 return (
                   <InteractiveValueItemV127
                     key={row.recordId}
+                    className={scale.drawTrack ? "" : "sv164-rank-row"}
                     label={barLabel(row)}
                     value={formatValueV121(row.value)}
                     unit={unit}
@@ -1224,32 +1306,33 @@ function CategoryComparisonUnitV143({ rows, unit, barLabel, title, markedYear = 
                         <em className="sv162-marked-year" data-testid="bar-marked-year-v162"> 선택 {markedYear}년</em>
                       ) : null}
                     </strong>
-                    <span
-                      aria-hidden="true"
-                      className={scale.signed ? "sv125-contract-track--signed" : undefined}
-                      style={
-                        scale.signed
-                          ? ({ "--sv125-zero": `${scale.zeroPercent}%` } as CSSProperties)
-                          : undefined
-                      }
-                    >
-                      <i
-                        className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}${
-                          scale.signed && row.value < 0 ? " sv125-contract-fill--negative" : ""
-                        }`}
-                        style={{ width: `${width}%`, marginInlineStart: `${offset}%` }}
-                      />
-                    </span>
-                    <b>
-                      {formatValueV121(row.value)} {unit}
-                    </b>
+                    {scale.drawTrack && (
+                      <span
+                        aria-hidden="true"
+                        className={scale.signed ? "sv125-contract-track--signed" : undefined}
+                        style={
+                          scale.signed
+                            ? ({ "--sv125-zero": `${scale.zeroPercent}%` } as CSSProperties)
+                            : undefined
+                        }
+                      >
+                        <i
+                          className={`sv125-contract-pattern--${SERIES_PATTERNS[index % SERIES_PATTERNS.length]}${
+                            scale.signed && row.value < 0 ? " sv125-contract-fill--negative" : ""
+                          }`}
+                          style={{ width: `${width}%`, marginInlineStart: `${offset}%` }}
+                        />
+                      </span>
+                    )}
+                    {/* Three significant digits on the bar; the exact figure is in the tooltip and the table. */}
+                    <b>{formatBarWithUnitV164(row.value, unit)}</b>
                   </InteractiveValueItemV127>
                 );
               })}
             </div>
             {rows.length > 12 && <div className="sv143-comparison-tools"><span>{shown.length} / {rows.length}개 항목 표시</span><button type="button" onClick={() => setExpanded((value) => !value)}>{expanded ? "12개만 보기" : `전체 ${rows.length}개 보기`}</button></div>}
             <ChartRowsTableV141
-              rows={ordered.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: String(row.year || row.period || ""), value: row.value }))}
+              rows={ordered.map((row) => ({ recordId: row.recordId, label: barLabel(row), time: observationTimeTextV164(row), value: row.value }))}
               unit={publicTextV126(unit) || ""}
               label={title}
               testId="comparison-chart-table-v141"
@@ -1269,10 +1352,10 @@ function ObservationValuesTableV146({ rows, title, context }: { rows: PresentRow
           const change = context ? previousYearChangeV144(row, context) : null;
           return (
           <tr key={row.recordId}>
-            <th scope="row"><PublicTermTextV134 text={publicIndicatorSeriesV144(row)} /></th>
+            <th scope="row"><PublicTermTextV134 text={seriesLabelV164(row)} /></th>
             <td>{formatValueV121(row.value)}</td>
             <td><PublicTermTextV134 text={observationUnitV125(row) || "—"} /></td>
-            <td>{row.year || row.period || "미기재"}</td>
+            <td>{observationTimeTextV164(row) || "미기재"}</td>
             {context && <td>{change ? <>{`${change.value > 0 ? "+" : ""}${formatValueV121(Number(change.value.toPrecision(10)))} `}<PublicTermTextV134 text={displayUnitV150(change.unit || "")} /></> : "비교 자료 없음"}</td>}
           </tr>
         ); })}</tbody>
@@ -1292,12 +1375,12 @@ function EvidenceCardsV125({
     <div className="sv125-contract-evidence-grid">
       {rows.slice(0, 24).map((row) => (
         <article key={row.recordId} tabIndex={0}>
-          <strong><PublicTermTextV134 text={row.displayLabel} /></strong>
+          <strong><PublicTermTextV134 text={withoutRawKeysV164(row.displayLabel) || row.displayLabel} /></strong>
           <p><PublicTermTextV134 text={formatValueV121(row.value)} /></p>
           <small>
             <PublicTermTextV134
               text={
-                [row.year || row.period, publicSourceOrganizationV136_1(row.provenance.sourceOrg)]
+                [observationTimeTextV164(row), publicSourceOrganizationV136_1(row.provenance.sourceOrg)]
                   .filter(Boolean)
                   .join(" · ") || "기준정보 미기재"
               }
@@ -1481,11 +1564,12 @@ function DocumentTimelineV140({ entities }: { entities: VietnamEntityV124[] }) {
  * counts; the detail used to list events only, so the comparison the card
  * promised was nowhere on the screen (V141).
  */
-const TIMELINE_GROUP_FIELD_V141: Readonly<Record<string, { key: string; label: string; noun: string }>> = Object.freeze({
-  "B-012": { key: "재해유형", label: "재해 유형별 사건 수", noun: "건" },
+const TIMELINE_GROUP_FIELD_V141: Readonly<Record<string, { key: string; label: string; axis: string; noun: string }>> = Object.freeze({
+  // `label` titles the card; `axis` is what the bars are (the contract's 재해 유형), not the title again.
+  "B-012": { key: "재해유형", label: "재해 유형별 사건 수", axis: "재해 유형", noun: "건" },
 });
 
-function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEntityV124[]; elementId: string }) {
+export function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEntityV124[]; elementId: string }) {
   const rule = TIMELINE_GROUP_FIELD_V141[elementId];
   if (!rule) return null;
   const counts = new Map<string, number>();
@@ -1500,11 +1584,11 @@ function TimelineGroupCountsV141({ entities, elementId }: { entities: VietnamEnt
   const max = items[0][1];
   return (
     <VisualizationFrameV125 eyebrow="유형별" title={`${rule.label} · ${entities.length.toLocaleString("ko-KR")}${rule.noun}`} block="category-bar">
-      <ChartAxesV150 x="건수" y={rule.label} unit={rule.noun} />
+      <ChartAxesV150 x="건수" y={rule.axis} unit={rule.noun} />
       <ol className="sv125-group-counts" data-testid="timeline-group-counts-v141">
         {items.map(([label, count]) => (
           <li key={label}>
-            <span><PublicTermTextV134 text={label} /></span>
+            <span><PublicTermTextV134 text={koreanLegendLabelV164(label)} /></span>
             <i aria-hidden="true" style={{ width: `${(count / max) * 100}%` }} />
             <strong>{count.toLocaleString("ko-KR")}{rule.noun}</strong>
           </li>
@@ -2305,8 +2389,24 @@ function comparisonQualifierV137(
     const text = publicDimensionValueV134(key, value);
     if (text && text !== label) return text;
   }
-  const displayed = publicTextV126(row.displayLabel);
+  const displayed = publicRowLabelV164(row.displayLabel);
   return displayed && displayed !== label ? displayed : null;
+}
+
+/** The delivered row label without the delivery's own column and indicator keys (V164). */
+function publicRowLabelV164(value: string | null | undefined): string | null {
+  const text = publicTextV126(value);
+  return text === null ? null : withoutRawKeysV164(text) || null;
+}
+
+/**
+ * The name of a row's series in a legend or a table: the delivery's keys cut
+ * (BGD D-006 "D006_carbon_tax_…", BGD E-012 "EMP_TEMP_SEX_OCU_NB_A · occupation_…")
+ * and known English classification values in Korean. Falls back to the measure.
+ */
+function seriesLabelV164(row: SemanticObservationV125): string {
+  const text = publicTextV126(publicIndicatorSeriesV144(row)) || "";
+  return koreanLegendLabelV164(withoutRawKeysV164(text) || row.semanticMeasure.labelKo || "");
 }
 
 /**
@@ -2367,8 +2467,8 @@ function subjectLabelV138(key: string, value: string): string {
  * across these rows is what is being compared. Returns null when the preferred
  * label is already unique, so screens that read correctly today are untouched.
  */
-function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
-  const preferred = new Set(rows.map((row) => categoryLabelV125(row)));
+function comparisonKeyV138(rows: SemanticObservationV125[], labelKeys?: readonly string[]): string | null {
+  const preferred = new Set(rows.map((row) => categoryLabelV125(row, labelKeys)));
   if (preferred.size === rows.length) return null;
   const values = new Map<string, Set<string>>();
   for (const row of rows) {
@@ -2389,20 +2489,15 @@ function comparisonKeyV138(rows: SemanticObservationV125[]): string | null {
   return best;
 }
 
-function categoryLabelV125(row: SemanticObservationV125): string {
-  for (const key of [
-    "category",
-    "scenario",
-    "technology",
-    "region",
-    "province",
-    "detail",
-    "sex",
-  ]) {
-    const label = row.dimensionLabels[key] || row.dimensions[key];
-    if (label) return publicDimensionValueV134(key, label);
-  }
-  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
+/**
+ * The name of a bar. `labelKeys` is the order the rows being compared prefer
+ * (see categoryLabelKeysV164: a dimension that is the same on every row comes
+ * last); callers that label one row on its own use the default order.
+ */
+function categoryLabelV125(row: SemanticObservationV125, labelKeys?: readonly string[]): string {
+  const key = categoryLabelSourceV164(row, labelKeys);
+  if (key) return publicDimensionValueV134(key, row.dimensionLabels[key] || row.dimensions[key]);
+  return publicRowLabelV164(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function scenarioLabelV125(row: SemanticObservationV125): string {
@@ -2410,7 +2505,7 @@ function scenarioLabelV125(row: SemanticObservationV125): string {
     const label = row.dimensionLabels[key] || row.dimensions[key];
     if (label) return publicDimensionValueV134(key, label);
   }
-  return publicTextV126(row.displayLabel) || row.semanticMeasure.labelKo;
+  return publicRowLabelV164(row.displayLabel) || row.semanticMeasure.labelKo;
 }
 
 function seasonLabelV125(row: SemanticObservationV125): string {
@@ -2420,7 +2515,7 @@ function seasonLabelV125(row: SemanticObservationV125): string {
   }
   return (
     row.period ||
-    publicTextV126(row.displayLabel) ||
+    publicRowLabelV164(row.displayLabel) ||
     row.semanticMeasure.labelKo
   );
 }

@@ -14,6 +14,7 @@ import {
 import "./occupation-employment-wage-v125.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
+import { formatBarValueV164 } from "../../charts/barScaleV164";
 
 export type E012OccupationMeasureKeyV125 =
   | "occupation_employment_count"
@@ -683,12 +684,12 @@ function EmploymentWageScatter({
                       <th scope="row">{point.occupation.label}</th>
                       <td>
                         <PublicTermTextV134
-                          text={formatValue(point.employment, point.employmentUnit)}
+                          text={formatExactValue(point.employment, point.employmentUnit)}
                         />
                       </td>
                       <td>
                         <PublicTermTextV134
-                          text={formatValue(point.wage, point.wageUnit)}
+                          text={formatExactValue(point.wage, point.wageUnit)}
                         />
                       </td>
                       <td>{SEX_LABELS[selection.sex]}</td>
@@ -1153,7 +1154,16 @@ function isSex(value: string): value is E012SexV125 {
   return SEX_OPTIONS.some((option) => option.key === value);
 }
 
+/**
+ * A value as a bar, a point or a label writes it: three significant digits
+ * ("12,909 천명", not "12,909.26 천명"). The tables keep the exact figure
+ * (formatExactValue / formatRawValue).
+ */
 function formatValue(value: number, unit: string): string {
+  return `${formatBarValueV164(value)}${unit ? ` ${unit}` : ""}`;
+}
+
+function formatExactValue(value: number, unit: string): string {
   return `${formatNumber(value)}${unit ? ` ${unit}` : ""}`;
 }
 

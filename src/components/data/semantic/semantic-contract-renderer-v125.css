@@ -860,3 +860,29 @@
   font-size: 0.8rem;
   margin: 0 0 0.6rem;
 }
+
+/*
+ * V164-3 (WP-E): a rank (29th of 49) is written as a number with no bar - its
+ * length would claim "29 long" - so the row has two columns instead of three.
+ * The auxiliary source of an item sits behind a disclosure under the main bars.
+ */
+.sv125-contract-bars > div.sv164-rank-row {
+  grid-template-columns: minmax(150px, 1fr) minmax(105px, auto);
+}
+@media (max-width: 768px) {
+  .sv125-contract-bars > div.sv164-rank-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+.sv164-aux-rows {
+  border-top: 1px solid #d6e3df;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+}
+.sv164-aux-rows > summary {
+  color: #35514a;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}

@@ -247,17 +247,27 @@ function PublicEntityCardV131({
   titleSuffix: string | null;
 }) {
   const approved = approvedCardAttributesV131(entity, template, detailTemplate);
-  const title =
+  const composedTitle =
     compactTextV131(
       titleSuffix ? `${titleResult.title} · ${titleSuffix}` : titleResult.title,
       220
     ) || "공개 데이터 항목";
+  // V164: a basin's title is its id; the kind and the area inside the country are
+  // a badge and a fact instead of the tail of a title the card clipped.
+  const basin = basinCardV164(entity, composedTitle);
+  const title = basin ? basin.title : composedTitle;
   const secondaryNote = compactTextV131(titleResult.secondaryNote, 112);
-  const badges = badgeValuesV131(entity, approved, template, title);
+  const badges = basin?.badge
+    ? [basin.badge, ...badgeValuesV131(entity, approved, template, title)].slice(0, 3)
+    : badgeValuesV131(entity, approved, template, title);
   // The official name and the numbers identify the record; they follow the
   // reviewed facts rather than standing in for the project's name.
+  // The area fact above is the row's stated value and unit, so those two are not repeated.
   const facts = [
-    ...factValuesV131(approved, template, title),
+    ...(basin?.fact ? [basin.fact] : []),
+    ...factValuesV131(approved, template, title).filter(
+      (fact) => !(basin?.fact && (fact.label === "값" || fact.label === "단위"))
+    ),
     ...(titleResult.identifierFacts || []),
   ];
   const sourceUrl = publicEntityUrlV131(entity, approved);
@@ -381,7 +391,7 @@ function titleDisambiguationSuffixesV137(
     let best: { key: string; values: string[]; distinct: number } | null = null;
     for (const key of keys) {
       const values = indexes.map((index) =>
-        compactTextV131(approved[index][key], 42)
+        titleSuffixCandidateV164(approved[index], key, titles[index])
       );
       if (values.some((value) => !value)) continue;
       const distinct = new Set(values).size;
@@ -435,6 +445,70 @@ function titleDisambiguationSuffixesV137(
   });
 
   return suffixes;
+}
+
+/** Columns that hold a basin's area inside the country (the first delivery named it after Viet Nam). */
+const BASIN_AREA_KEYS_V164 = ["자국_내_면적_km_GIS_산출", "베트남_내_면적_km_GIS_산출"];
+
+/**
+ * B-025's basin card (V164).
+ *
+ * The title resolver composes "HydroBASINS 유역 4080024890 · 국제 공유 · 자국 내
+ * 7.1 km²" for a basin the source gives no name. In a four-column grid that is
+ * four lines under a two-line clamp, so the card read "HydroBASINS 유역 4080024890
+ * · …" with the area cut off. The id stays the title; the kind (국제 공유 / 국내 완결)
+ * becomes a badge and the area a fact. The figures are the row's own - nothing is
+ * computed, and a basin with no area column simply has no area fact.
+ */
+export function basinCardV164(
+  entity: VietnamEntityV124,
+  title: string
+): { title: string; badge: string | null; fact: PublicCardFactV131 | null } | null {
+  if (entity.elementId !== "B-025") return null;
+  const match = /^(HydroBASINS 유역 \S+) · /u.exec(title);
+  if (!match) return null;
+  const attributes = entity.normalizedAttributes || {};
+  const area = BASIN_AREA_KEYS_V164.map((key) => attributes[key]).find(
+    (value): value is number => typeof value === "number" && Number.isFinite(value)
+  );
+  return {
+    title: match[1],
+    badge: compactTextV131(attributes["유역_구분_국내_완결_국제_공유"], 24),
+    fact:
+      area === undefined
+        ? null
+        : { label: "자국 내 면적(GIS 산출)", value: `${area.toLocaleString("ko-KR", { maximumFractionDigits: 1 })} km²` },
+  };
+}
+
+/**
+ * What an approved attribute adds to a repeated title (V164).
+ *
+ * - The measure's name ("브라마푸트라(자무나)강(Bahadurabad) 건기·우기 유량비 - 2001년",
+ *   B-023) is 50+ characters: cut at 42 it was the same on every row, so BGD's
+ *   gauging cards fell through to the bare stated value ("Bahadurabad · 12883.454").
+ *   It is read up to 90 characters, without the site name the title already says.
+ * - A stated value that does separate the cards is written as it is in the facts:
+ *   digits grouped and the unit after it (m3/s and 비(倍) are different things).
+ */
+function titleSuffixCandidateV164(
+  attributes: Record<string, PublicAttributeValueV126>,
+  key: string,
+  title: string
+): string | null {
+  const text = compactTextV131(attributes[key], key === "measureName" ? 90 : 42);
+  if (!text) return null;
+  if (key === "statedValue" || key === "nationalMeasureValue") {
+    const unit = compactTextV131(attributes.statedUnit ?? attributes.nationalMeasureUnit, 24);
+    const grouped = groupedNumberV140(text);
+    return unit ? `${grouped} ${unit}` : grouped;
+  }
+  if (key === "measureName" && title) {
+    const escaped = title.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    const without = text.replace(new RegExp(`\\s*[(（]\\s*${escaped}\\s*[)）]`, "iu"), "").replace(/\s{2,}/gu, " ").trim();
+    return without || text;
+  }
+  return text;
 }
 
 /** Columns the 2026-09-30 delivery states that separate same-named rows, with their label. */

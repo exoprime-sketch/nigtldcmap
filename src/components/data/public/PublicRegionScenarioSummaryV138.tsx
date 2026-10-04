@@ -15,6 +15,8 @@ import { AnalysisBarsV147 } from "./AnalysisChartsV147";
 
 import type { VietnamEntityV124 } from "../../../data/vietnam/vietnamTypesV124";
 import { publicTextV126 } from "../../../data/visualization/publicFieldPolicyV126";
+import { gradeOrderV164 } from "../../../data/visualization/barRowsV164";
+import { koreanCategoryV164 } from "../../../data/visualization/publicCategoryLabelV164";
 import { formatPublicNumberV126 } from "../../../data/visualization/publicNumberFormatV126";
 import {
   publicRegionScenarioContractV138,
@@ -676,14 +678,11 @@ export default function PublicRegionScenarioSummaryV138({
       if (!grade) continue;
       counts.set(grade, (counts.get(grade) || 0) + 1);
     }
-    const order = ["Low", "Low - Medium", "Medium - High", "High", "Extremely High", "Arid and Low Water Use", "No Data"];
+    // V164: low to extremely high by the grade's own order ("Low (<10%)" before
+    // "Low - Medium (10-20%)"; a prefix match put both in one place), "No Data" last.
     return [...counts]
       .map(([grade, count]) => ({ grade, count }))
-      .sort((a, b) => {
-        const ia = order.findIndex((item) => a.grade.startsWith(item));
-        const ib = order.findIndex((item) => b.grade.startsWith(item));
-        return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.grade.localeCompare(b.grade, "en");
-      });
+      .sort((a, b) => gradeOrderV164(a.grade) - gradeOrderV164(b.grade) || a.grade.localeCompare(b.grade, "en"));
   }, [entities, measureMeta.gradeKey, region]);
 
   // V158: the level-1 unit the regions are counted in - the default country's
@@ -845,7 +844,7 @@ export default function PublicRegionScenarioSummaryV138({
                 const total = gradeDistribution.reduce((sum, item) => sum + item.count, 0);
                 return (
                   <tr key={row.grade}>
-                    <th scope="row">{row.grade}</th>
+                    <th scope="row">{koreanCategoryV164(row.grade)}</th>
                     <td>{row.count.toLocaleString("ko-KR")}</td>
                     <td>{total ? `${((row.count / total) * 100).toFixed(1)}%` : "-"}</td>
                   </tr>
