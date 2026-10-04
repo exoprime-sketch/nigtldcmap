@@ -33,6 +33,12 @@ import {
 import { publicIndicatorDimensionV144 } from "../../../data/visualization/publicIndicatorCopyV144";
 import { withoutRawTwinSelectorsV164 } from "../../../data/visualization/selectorDimensionsV164";
 import {
+  drawsPortfolioWorkspaceV164,
+  hasPublicValueV164,
+  namedMeasuresV164,
+  populatedChoicesV164,
+} from "../../../data/visualization/selectorPopulatedV164";
+import {
   PublicTermHelpV134,
   PublicTermTextV134,
 } from "../../help/PublicTermV134";
@@ -191,32 +197,53 @@ export default function SemanticArchetypePreviewV125({
     },
     [contract.dimensions, contract.elementId]
   );
+  // V164-3: a screen that draws its records in the portfolio workspace has that
+  // workspace's own selection line; the analysis selectors are not drawn above it
+  // and do not narrow its records (see drawsPortfolioWorkspaceV164).
+  const showsPortfolioWorkspace = useMemo(
+    () => drawsPortfolioWorkspaceV164(contract.elementId, contract.primaryRenderer, entities),
+    [contract.elementId, contract.primaryRenderer, entities]
+  );
   const explicitDimensions = useMemo(
     () =>
-      Object.fromEntries(
-        additionalDimensions.flatMap((dimension) => {
-          const selected = selectorState.dimensions[dimension.key];
-          return selected && dimension.values.includes(selected)
-            ? [[dimension.key, selected]]
-            : [];
-        })
-      ),
-    [additionalDimensions, selectorState.dimensions]
+      showsPortfolioWorkspace
+        ? {}
+        : Object.fromEntries(
+            additionalDimensions.flatMap((dimension) => {
+              const selected = selectorState.dimensions[dimension.key];
+              return selected && dimension.values.includes(selected)
+                ? [[dimension.key, selected]]
+                : [];
+            })
+          ),
+    [additionalDimensions, selectorState.dimensions, showsPortfolioWorkspace]
   );
   const measureOptions = useMemo(() => {
     const availableKeys = new Set(
       semanticRows.map((row) => row.semanticMeasure.key)
     );
-    return contract.measures.filter(
+    const delivered = contract.measures.filter(
       (measure) => measure.recordCount > 0 && availableKeys.has(measure.key)
     );
+    // V164-3: a measure is offered when it has a value to show (A-022's SAIDI and
+    // SAIFI are rows the source leaves empty), and by a name a reader can use
+    // (D-009 listed two measures by their column keys). Neither rule empties the
+    // list: when nothing qualifies the delivered measures stay.
+    const valued = new Set(
+      semanticRows.filter((row) => hasPublicValueV164(row.value)).map((row) => row.semanticMeasure.key)
+    );
+    return populatedChoicesV164(namedMeasuresV164(delivered), (measure) => valued.has(measure.key));
   }, [contract.measures, semanticRows]);
   const explicitMeasureIsValid = measureOptions.some(
     (measure) => measure.key === selectorState.measure
   );
-  const explicitMeasureIsKnown = contract.measures.some(
-    (measure) => measure.key === selectorState.measure
-  );
+  // A measure the delivery knows but the rows in hand do not carry - the reader
+  // narrowed the page to a technology whose indicators lack it (B-038) - is not
+  // kept: the screen would show a measure it has no rows for. It stays only when
+  // there is nothing else to show.
+  const explicitMeasureIsKnown =
+    measureOptions.length === 0 &&
+    contract.measures.some((measure) => measure.key === selectorState.measure);
   const measureHasPopulatedRow = (measure: { key: string }) =>
     semanticRows.some(
       (row) =>
@@ -261,7 +288,17 @@ export default function SemanticArchetypePreviewV125({
       Object.fromEntries(
         additionalDimensions.flatMap((dimension) => {
           const selected = explicitDimensions[dimension.key];
-          if (selected) return [[dimension.key, selected]];
+          // A selection the chosen measure's rows do not carry (it was made for
+          // another measure, or before the page was narrowed to a technology) is
+          // dropped rather than kept as a filter that matches nothing.
+          if (
+            selected &&
+            (measureRows.length === 0 ||
+              measureRows.some((row) => row.dimensions[dimension.key] === selected) ||
+              entities.some((entity) => entityDimensionValueV137(entity, dimension.key) === selected))
+          ) {
+            return [[dimension.key, selected]];
+          }
           if (!singleDenominatorDimensionKeys.includes(dimension.key)) return [];
           const populatedDefault = dimension.values.find((value) =>
             measureRows.some(
@@ -277,6 +314,7 @@ export default function SemanticArchetypePreviewV125({
       ),
     [
       additionalDimensions,
+      entities,
       explicitDimensions,
       measureRows,
       singleDenominatorDimensionKeys,
@@ -304,6 +342,7 @@ export default function SemanticArchetypePreviewV125({
     return keys;
   }, [entities]);
   const visibleEntities = useMemo(() => {
+    if (showsPortfolioWorkspace) return entities;
     const active = Object.entries(dimensions).filter(([key]) =>
       entityDimensionKeys.has(key)
     );
@@ -313,13 +352,13 @@ export default function SemanticArchetypePreviewV125({
         ([key, value]) => entityDimensionValueV137(entity, key) === value
       )
     );
-  }, [dimensions, entities, entityDimensionKeys]);
+  }, [dimensions, entities, entityDimensionKeys, showsPortfolioWorkspace]);
 
   const sexDimension = contract.dimensions.find(
     (dimension) => dimension.key === "sex"
   );
-  const sexValues = sexDimension?.values || [];
-  const populatedSexValues = sexValues.filter((value) =>
+  const deliveredSexValues = sexDimension?.values || [];
+  const populatedSexValues = deliveredSexValues.filter((value) =>
     measureRows.some(
       (row) =>
         semanticRowMatchesDimensionsV125(row, dimensions) &&
@@ -327,6 +366,8 @@ export default function SemanticArchetypePreviewV125({
         isPopulatedSemanticRowV125(row)
     )
   );
+  // Only the groups that have a value are offered (all of them when none has).
+  const sexValues = populatedChoicesV164(deliveredSexValues, (value) => populatedSexValues.includes(value));
   const sex = (
     selectorState.sex && sexValues.includes(selectorState.sex)
       ? selectorState.sex
@@ -340,13 +381,17 @@ export default function SemanticArchetypePreviewV125({
       semanticRowMatchesSexV125(row, sex) &&
       semanticRowMatchesDimensionsV125(row, dimensions)
   );
-  const periods = Array.from(
+  const deliveredPeriods = Array.from(
     new Set(
       measureContextRows
         .map((row) => row.period)
         .filter((value): value is string => Boolean(value && value.trim()))
     )
   ).sort((left, right) => left.localeCompare(right, "ko"));
+  // V164-3: a period is offered when some row in it has a value (all when none has).
+  const periods = populatedChoicesV164(deliveredPeriods, (value) =>
+    measureContextRows.some((row) => row.period === value && isPopulatedSemanticRowV125(row))
+  );
   // The newest period with a value opens the screen. B-033 delivers 2001-2024
   // and opened on 2001, so a reader met the oldest year of the series first.
   const populatedDefaultPeriod = [...periods].reverse().find((value) =>
@@ -363,13 +408,18 @@ export default function SemanticArchetypePreviewV125({
   const periodContextRows = measureContextRows.filter(
     (row) => !period || row.period === period
   );
-  const years = Array.from(
+  const deliveredYears = Array.from(
     new Set(
       periodContextRows
         .map((row) => row.year)
         .filter((value): value is number => typeof value === "number")
     )
   ).sort((left, right) => right - left);
+  // V164-3: a year is offered when some row in it has a value. A-004 listed 32
+  // years of which 2021 and 2006 held rows the source leaves empty.
+  const years = populatedChoicesV164(deliveredYears, (value) =>
+    periodContextRows.some((row) => row.year === value && isPopulatedSemanticRowV125(row))
+  );
   const populatedDefaultYear = years.find((value) =>
     periodContextRows.some(
       (row) => row.year === value && isPopulatedSemanticRowV125(row)
@@ -413,6 +463,42 @@ export default function SemanticArchetypePreviewV125({
     );
   }
 
+  /**
+   * V164-3: the values of one dimension that lead to something on screen, judged
+   * against the selections made in the others (a reader who picked 분류 A is not
+   * offered the 세부 분류 that A has no value for). Where no value leads anywhere
+   * the whole delivered list stays, and the reader's own current choice always
+   * stays in its list so the control never shows a value it is not set to.
+   */
+  const selectableDimensionValuesV164 = (key: string, deliveredValues: string[], rowDriven: boolean): string[] => {
+    const others = Object.fromEntries(Object.entries(dimensions).filter(([otherKey]) => otherKey !== key));
+    const keepCurrent = (kept: string[]) => {
+      const current = dimensions[key];
+      return current && deliveredValues.includes(current) && !kept.includes(current)
+        ? deliveredValues.filter((value) => kept.includes(value) || value === current)
+        : kept;
+    };
+    if (rowDriven) {
+      const inMeasure = measureRows.filter((row) => semanticRowMatchesSexV125(row, sex));
+      const inContext = inMeasure.filter((row) => semanticRowMatchesDimensionsV125(row, others));
+      const valuesOf = (rows: SemanticObservationV125[]) =>
+        new Set(rows.filter(isPopulatedSemanticRowV125).map((row) => row.dimensions[key]));
+      const contextValues = valuesOf(inContext);
+      const measureValues = valuesOf(inMeasure);
+      const inContextList = deliveredValues.filter((value) => contextValues.has(value));
+      const inMeasureList = deliveredValues.filter((value) => measureValues.has(value));
+      return keepCurrent(inContextList.length > 0 ? inContextList : inMeasureList.length > 0 ? inMeasureList : deliveredValues);
+    }
+    const entityContext = entities.filter((entity) =>
+      Object.entries(others).every(
+        ([otherKey, value]) => !entityDimensionKeys.has(otherKey) || entityDimensionValueV137(entity, otherKey) === value
+      )
+    );
+    const entityValues = new Set(entityContext.map((entity) => entityDimensionValueV137(entity, key)));
+    const entityList = deliveredValues.filter((value) => entityValues.has(value));
+    return keepCurrent(entityList.length > 0 ? entityList : deliveredValues);
+  };
+
   const selectedRows = dimensionFilteredRows.filter((row) => {
     if (year !== null && row.year !== year) return false;
     return true;
@@ -453,6 +539,9 @@ export default function SemanticArchetypePreviewV125({
           the trend and values table that follow, so they come after it -
           above the first chart they moved nothing a reader could see. */}
       {regionalFirst && <RegionalVulnerabilityV147 rows={semanticRows} />}
+      {/* V164-3: the portfolio workspace below carries its own selection line
+          (검색어 · 연도 · 분류); a second line of the same choices is not drawn. */}
+      {!showsPortfolioWorkspace && (
       <div className="sv125-controls" aria-label="데이터 분류 선택" data-testid="public-selector">
         {measureOptions.length > 1 && (
           <label>
@@ -518,9 +607,9 @@ export default function SemanticArchetypePreviewV125({
           // Do not offer other measures' categories: a string-valued national
           // climate class has no Af/Am filter, for example. Entity directories
           // retain their own city/type filters even without observation rows.
-          const values = valuesForMeasure.length > 0 ? valuesForMeasure
+          const deliveredValues = valuesForMeasure.length > 0 ? valuesForMeasure
             : entityDimensionKeys.has(dimension.key) ? dimension.values.filter((value) => entities.some((entity) => entityDimensionValueV137(entity, dimension.key) === value)) : [];
-          if (!values.length) return null;
+          if (!deliveredValues.length) return null;
           // Two dimensions that always travel together within the measure -
           // A-006's 분류 "ILO 모델추정" and 세부 분류 "경제활동인구 대비 실업자
           // 비율(ILO 모형 보정 추정치)" - are one choice written twice; the one
@@ -528,9 +617,9 @@ export default function SemanticArchetypePreviewV125({
           const pairsWithShorter = additionalDimensions.some((other) => {
             if (other.key === dimension.key || dimensions[dimension.key]) return false;
             const otherValues = other.values.filter((value) => measureRows.some((row) => row.dimensions[other.key] === value));
-            if (otherValues.length !== values.length || otherValues.length < 2) return false;
+            if (otherValues.length !== deliveredValues.length || otherValues.length < 2) return false;
             const otherLength = otherValues.reduce((sum, value) => sum + value.length, 0);
-            const ownLength = values.reduce((sum, value) => sum + value.length, 0);
+            const ownLength = deliveredValues.reduce((sum, value) => sum + value.length, 0);
             if (otherLength >= ownLength) return false;
             const forward = new Map<string, string>();
             for (const row of measureRows) {
@@ -540,9 +629,11 @@ export default function SemanticArchetypePreviewV125({
               if (forward.has(left) && forward.get(left) !== right) return false;
               forward.set(left, right);
             }
-            return forward.size === values.length;
+            return forward.size === deliveredValues.length;
           });
           if (pairsWithShorter) return null;
+          // V164-3: of the delivered values, the ones that lead to a value.
+          const values = selectableDimensionValuesV164(dimension.key, deliveredValues, valuesForMeasure.length > 0);
           if (values.length === 1 && !dimensions[dimension.key]) {
             return (
               <p className="sv125-fixed-value" key={dimension.key} data-public-dimension-key={dimension.key}>
@@ -666,6 +757,7 @@ export default function SemanticArchetypePreviewV125({
           ].filter(Boolean).join(" · ")}
         />
       </div>
+      )}
 
 
 

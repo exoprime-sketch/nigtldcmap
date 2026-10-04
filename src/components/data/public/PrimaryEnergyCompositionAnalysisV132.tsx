@@ -86,7 +86,24 @@ function formatEnergyV132(value: number): string {
   return numberFormatterV132.format(value);
 }
 
-function completeEnergyYearsV132(rows: NumericEnergyRowV132[]): EnergyYearV132[] {
+/**
+ * The sources the rows carry. The whole screen carries all six; a page narrowed
+ * to a climate technology carries the indicators tagged with it (05 수력 → 수력,
+ * 11 원자력 → 원자력, 01·02·03·04·07·08 → 기타 재생에너지), and only those are drawn.
+ */
+export function energySeriesInRowsV164(rows: readonly NumericEnergyRowV132[]): EnergySeriesV132[] {
+  return ENERGY_SERIES_V132.filter((series) => rows.some((row) => row.indicatorId === series.indicatorId));
+}
+
+/**
+ * The years every given series has a value for. With no source series (the page
+ * narrowed to 16 발전효율, which only the 공급 총계 indicator carries) a year
+ * counts when the total itself is delivered.
+ */
+export function completeEnergyYearsV132(
+  rows: readonly NumericEnergyRowV132[],
+  seriesList: readonly EnergySeriesV132[] = ENERGY_SERIES_V132
+): EnergyYearV132[] {
   const byIndicatorAndYear = new Map<string, number>();
   rows.forEach((row) => {
     if (typeof row.year !== "number") return;
@@ -102,18 +119,14 @@ function completeEnergyYearsV132(rows: NumericEnergyRowV132[]): EnergyYearV132[]
 
   return years.flatMap((year) => {
     const values: Record<string, number> = {};
-    for (const series of ENERGY_SERIES_V132) {
+    for (const series of seriesList) {
       const value = byIndicatorAndYear.get(`${series.indicatorId}|${year}`);
       if (value === undefined) return [];
       values[series.key] = value;
     }
-    return [
-      {
-        year,
-        values,
-        total: byIndicatorAndYear.get(`${TOTAL_INDICATOR_V132}|${year}`) ?? null,
-      },
-    ];
+    const total = byIndicatorAndYear.get(`${TOTAL_INDICATOR_V132}|${year}`) ?? null;
+    if (seriesList.length === 0 && total === null) return [];
+    return [{ year, values, total }];
   });
 }
 
@@ -123,7 +136,12 @@ export default function PrimaryEnergyCompositionAnalysisV132({
   onSelectorStateChange,
 }: Props) {
   const numericRows = useMemo(() => rows.filter(isNumericEnergyRowV132), [rows]);
-  const allYears = useMemo(() => completeEnergyYearsV132(numericRows), [numericRows]);
+  // V164-3: a page narrowed to a climate technology holds only that technology's
+  // sources; those are drawn (not "no observation" because the other five are
+  // absent). The six-source composition is only drawn when all six are present.
+  const activeSeries = useMemo(() => energySeriesInRowsV164(numericRows), [numericRows]);
+  const isSubset = activeSeries.length < ENERGY_SERIES_V132.length;
+  const allYears = useMemo(() => completeEnergyYearsV132(numericRows, activeSeries), [numericRows, activeSeries]);
   const minimumYear = allYears[0]?.year ?? null;
   const maximumYear = allYears[allYears.length - 1]?.year ?? null;
   const [rangeStart, setRangeStart] = useState<number | null>(minimumYear);
@@ -132,7 +150,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
     () => new Set(ENERGY_SERIES_V132.map((series) => series.key))
   );
   const unit =
-    numericRows.find((row) => ENERGY_SERIES_V132.some((series) => series.indicatorId === row.indicatorId))
+    numericRows.find((row) => activeSeries.some((series) => series.indicatorId === row.indicatorId) || row.indicatorId === TOTAL_INDICATOR_V132)
       ?.semanticMeasure.unit || "EJ";
 
   if (minimumYear === null || maximumYear === null || allYears.length === 0) {
@@ -156,20 +174,14 @@ export default function PrimaryEnergyCompositionAnalysisV132({
       ? selectorState.year
       : maximumYear;
   const selected = allYears.find((item) => item.year === selectedYear) || latest;
-  const latestSources = ENERGY_SERIES_V132.map((series) => ({
-    ...series,
-    value: latest.values[series.key],
-  }));
-  const largestSource = latestSources.reduce((largest, candidate) =>
-    candidate.value > largest.value ? candidate : largest
-  );
-  const renewableTotal = latest.values.hydro + latest.values.renewables;
+  // The sources drawn now: at least one stays on.
+  const visibleActiveCount = activeSeries.filter((series) => visibleSeries.has(series.key)).length;
 
   const toggleSeries = (key: string) => {
     setVisibleSeries((current) => {
       const next = new Set(current);
       if (next.has(key)) {
-        if (next.size <= 1) return current;
+        if (activeSeries.filter((series) => next.has(series.key)).length <= 1) return current;
         next.delete(key);
       } else {
         next.add(key);
@@ -193,6 +205,7 @@ export default function PrimaryEnergyCompositionAnalysisV132({
       data-testid="a016-energy-analysis-v132"
       data-total-included-as-component="false"
       data-zero-imputation="false"
+      data-technology-subset-v164={isSubset ? "true" : undefined}
     >
 
       <section className="pec132__panel" aria-labelledby="pec132-absolute-title" data-testid="a016-absolute-trend" data-analysis-block="stacked-area">
@@ -200,7 +213,13 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           <div>
             <span>주 분석</span>
             <h3 id="pec132-absolute-title">연도별 에너지원 절대량 변화</h3>
-            <p>공급 총계는 구성항목과 중복되므로 면적 합계에 포함하지 않습니다.</p>
+            <p>
+              {isSubset
+                ? activeSeries.length > 0
+                  ? "자료가 있는 에너지원(선택한 기후기술에 해당하는 것)만 표시합니다. 점선은 공급 총계입니다."
+                  : "에너지원별 구분 자료가 없어 공급 총계만 표시합니다."
+                : "공급 총계는 구성항목과 중복되므로 면적 합계에 포함하지 않습니다."}
+            </p>
           </div>
           <div className="pec132__range" aria-label="표시기간 선택">
             <span>표시기간 {safeStart}–{safeEnd}</span>
@@ -213,13 +232,13 @@ export default function PrimaryEnergyCompositionAnalysisV132({
         </header>
 
         <div className="pec132__legend" aria-label="에너지원 계열 선택">
-          {ENERGY_SERIES_V132.map((series) => {
+          {activeSeries.map((series) => {
             const active = visibleSeries.has(series.key);
             return (
               <button
                 aria-label={`${series.label} 계열 ${active ? "숨기기" : "표시"}`}
                 aria-pressed={active}
-                disabled={active && visibleSeries.size === 1}
+                disabled={active && visibleActiveCount === 1}
                 key={series.key}
                 onClick={() => toggleSeries(series.key)}
                 type="button"
@@ -248,13 +267,16 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           onSelectYear={(year) =>
             onSelectorStateChange({ ...selectorState, year })
           }
-          series={ENERGY_SERIES_V132}
+          series={activeSeries}
           unit={unit}
           visibleSeries={visibleSeries}
           years={displayedYears}
         />
       </section>
 
+      {/* The share of one or two sources in a total of their own is always
+          100%, so the composition is drawn for the whole six only. */}
+      {!isSubset && (
       <section className="pec132__panel" aria-labelledby="pec132-share-title" data-testid="a016-share-trend" data-analysis-block="stacked-area">
         <header className="pec132__heading">
           <div>
@@ -272,13 +294,15 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           onSelectYear={(year) =>
             onSelectorStateChange({ ...selectorState, year })
           }
-          series={ENERGY_SERIES_V132}
+          series={activeSeries}
           unit="%"
           visibleSeries={visibleSeries}
           years={displayedYears}
         />
       </section>
+      )}
 
+      {activeSeries.length > 0 && (
       <section className="pec132__panel" aria-labelledby="pec132-selected-title" data-testid="a016-selected-year" data-analysis-block="category-bar">
         <header className="pec132__heading pec132__heading--selected">
           <div>
@@ -304,8 +328,9 @@ export default function PrimaryEnergyCompositionAnalysisV132({
           </label>
         </header>
         <ChartAxesV150 x="에너지 소비량" y="에너지원" unit={unit} />
-        <SelectedYearBarsV132 series={ENERGY_SERIES_V132} unit={unit} year={selected} />
+        <SelectedYearBarsV132 series={activeSeries} showShare={!isSubset} unit={unit} year={selected} />
       </section>
+      )}
 
       <footer className="pec132__source">
         <span>자료 제공기관: Energy Institute</span>
@@ -320,10 +345,13 @@ export default function PrimaryEnergyCompositionAnalysisV132({
 
 function SelectedYearBarsV132({
   series,
+  showShare = true,
   unit,
   year,
 }: {
   series: EnergySeriesV132[];
+  /** The share of the sources drawn; left out when they are only some of the six. */
+  showShare?: boolean;
   unit: string;
   year: EnergyYearV132;
 }) {
@@ -341,7 +369,7 @@ function SelectedYearBarsV132({
               <i style={{ backgroundColor: item.color, width: `${(item.value / maximum) * 100}%` }} />
             </div>
             <strong>{formatEnergyV132(item.value)} {unit}</strong>
-            <small>{componentTotal > 0 ? `${percentFormatterV132.format((item.value / componentTotal) * 100)}%` : "—"}</small>
+            {showShare && <small>{componentTotal > 0 ? `${percentFormatterV132.format((item.value / componentTotal) * 100)}%` : "—"}</small>}
           </div>
         ))}
     </div>

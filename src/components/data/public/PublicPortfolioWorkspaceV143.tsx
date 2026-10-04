@@ -24,10 +24,25 @@ export function portfolioSelectionModelV143(props: Props, selection: PortfolioSe
     (selection.category === "all" || facet.category === selection.category) &&
     (!needle || `${title} ${facet.searchText}`.normalize("NFC").toLocaleLowerCase("ko-KR").includes(needle))
   ).map(({ entity }) => entity);
+  // V164-3: each of the two selectors offers what the other one's current choice
+  // leaves. D-017 offered 77 sectors against any year, and a reader who chose 2003
+  // and then a sector the year has no project in met "조건에 맞는 자료가 없습니다".
+  // The reader's own current choice stays in its list so the control never shows a
+  // value it is not set to.
+  const yearsOf = (items: typeof individual) =>
+    [...new Set(items.flatMap(({ facet }) => facet.year ? [String(facet.year)] : []))].sort((a, b) => Number(b) - Number(a));
+  const categoriesOf = (items: typeof individual) =>
+    [...new Set(items.flatMap(({ facet }) => facet.category ? [facet.category] : []))].sort((a, b) => a.localeCompare(b, "ko"));
+  const inYear = individual.filter(({ facet }) => selection.year === "all" || String(facet.year) === selection.year);
+  const inCategory = individual.filter(({ facet }) => selection.category === "all" || facet.category === selection.category);
+  const withCurrent = (offered: string[], current: string, delivered: string[]) =>
+    current !== "all" && !offered.includes(current) && delivered.includes(current) ? [...offered, current] : offered;
+  const allYears = yearsOf(individual);
+  const allCategories = categoriesOf(individual);
   return {
     filtered, noteEntities, total: individual.length,
-    years: [...new Set(individual.flatMap(({ facet }) => facet.year ? [String(facet.year)] : []))].sort((a, b) => Number(b) - Number(a)),
-    categories: [...new Set(individual.flatMap(({ facet }) => facet.category ? [facet.category] : []))].sort((a, b) => a.localeCompare(b, "ko")),
+    years: withCurrent(yearsOf(inCategory), selection.year, allYears).sort((a, b) => Number(b) - Number(a)),
+    categories: withCurrent(categoriesOf(inYear), selection.category, allCategories).sort((a, b) => a.localeCompare(b, "ko")),
   };
 }
 

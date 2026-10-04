@@ -41,6 +41,52 @@ describe("shared portfolio selection", () => {
   });
 });
 
+// V164-3: year and category each offer only what the other one's choice leaves, so
+// no pair the reader can pick ends in "조건에 맞는 자료가 없습니다" (D-017).
+describe("cross-conditioned selectors", () => {
+  const allOffered = portfolioSelectionModelV143(props, EMPTY_PORTFOLIO_SELECTION_V143);
+
+  it("offers every year and every category while nothing is chosen", () => {
+    expect(allOffered.years.length).toBeGreaterThan(1);
+    expect(allOffered.categories.length).toBeGreaterThan(1);
+  });
+
+  it("narrows the categories to the chosen year, and the years to the chosen category", () => {
+    const narrowedByYear = allOffered.years.some(
+      (year) => portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories.length < allOffered.categories.length
+    );
+    const narrowedByCategory = allOffered.categories.some(
+      (category) => portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, category }).years.length < allOffered.years.length
+    );
+    expect(narrowedByYear).toBe(true);
+    expect(narrowedByCategory).toBe(true);
+  });
+
+  it("every year x category pair that is offered leads to a record", () => {
+    for (const year of allOffered.years) {
+      const categories = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories;
+      for (const category of categories) {
+        const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year, category });
+        expect(result.filtered.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("keeps the reader's current choice in its own list", () => {
+    const year = allOffered.years[0];
+    const category = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year }).categories[0];
+    const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year, category });
+    expect(result.years).toContain(year);
+    expect(result.categories).toContain(category);
+  });
+
+  it("does not change the totals or the source rows", () => {
+    const result = portfolioSelectionModelV143(props, { ...EMPTY_PORTFOLIO_SELECTION_V143, year: allOffered.years[0] });
+    expect(result.total).toBe(allOffered.total);
+    expect(entities).toHaveLength(13);
+  });
+});
+
 describe("public map copy", () => {
   it("aligns E-018 map facts with the reviewed detail columns", () => {
     // 2026-09-30 재적재: E-018이 KOTRA 해외진출기업 디렉토리 기준으로 24행→36행으로
