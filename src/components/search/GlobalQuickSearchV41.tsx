@@ -10,6 +10,8 @@ import {
 } from "../../data/publicPlatformV128";
 import type { PublicSearchItemV128 } from "../../data/publicPlatformV128";
 import { resolveHomeCountryV161 } from "../../data/homeCountryV161";
+import { publicItemNameV164 } from "../../data/spec/publicItemNameV164";
+import { searchResultLineV164 } from "../../data/searchResultLineV164";
 import { DEFAULT_COUNTRY_ISO3_V158 } from "../../data/countryContext";
 import "../../styles/global-search-v41.css";
 
@@ -215,10 +217,9 @@ export default function GlobalQuickSearchV41({
                             ▤
                           </span>
                           <span className="global-search-v41-result-copy">
-                            <strong>{catalogItem.publicTitle}</strong>
+                            <strong>{publicItemNameV164(catalogItem)}</strong>
                             <small>
-                              {measureLabels.slice(0, 2).join(" · ") ||
-                                catalogItem.groupLabel}
+                              {searchResultLineV164(measureLabels, catalogItem.groupLabel)}
                               {` · ${publicReferencePeriodV128(catalogItem)}`}
                             </small>
                           </span>

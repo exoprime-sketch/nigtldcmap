@@ -8,6 +8,7 @@ import { getElementVisualizationSummaryV125 } from "./visualization/elementVisua
 import { technologyLabelV121 } from "../utils/vietnamActualV121";
 import { normalizeTechnologyIdsV153 } from "../utils/technologyIdV153";
 import type { CountryCatalogItemV122 } from "./countries/countryDataTypesV122";
+import { publicItemNameV164 } from "./spec/publicItemNameV164";
 import type { VietnamElementPublicStatusV124 } from "./vietnam/vietnamTypesV124";
 
 export type PublicDataStatusKeyV128 =
@@ -260,6 +261,7 @@ export async function loadPublicSearchItemsV128(countryIso3 = "VNM"): Promise<Pu
             searchText: normalizeSearchTextV128(
               [
                 item.publicTitle,
+                publicItemNameV164(item),
                 item.publicDescription,
                 item.categoryLabel,
                 item.groupLabel,
@@ -294,15 +296,18 @@ export function searchPublicDataV128(
 
   return items
     .map((item) => {
+      // V164-4: the list shows the name the finder card shows, so that name is
+      // what a query is matched and ordered by (the catalogue title still matches).
+      const publicName = normalizeSearchTextV128(publicItemNameV164(item.catalogItem));
       const title = normalizeSearchTextV128(item.catalogItem.publicTitle);
       const measures = normalizeSearchTextV128(item.measureLabels.join(" "));
       const technologies = normalizeSearchTextV128(
         normalizeTechnologyIdsV153(item.catalogItem.technologyIds).map(technologyLabelV121).join(" ")
       );
       let score = 0;
-      if (title === normalized) score += 500;
-      else if (title.startsWith(normalized)) score += 360;
-      else if (title.includes(normalized)) score += 280;
+      if (publicName === normalized || title === normalized) score += 500;
+      else if (publicName.startsWith(normalized) || title.startsWith(normalized)) score += 360;
+      else if (publicName.includes(normalized) || title.includes(normalized)) score += 280;
       if (measures.includes(normalized) || technologies.includes(normalized)) {
         score += 210;
       }
@@ -315,8 +320,8 @@ export function searchPublicDataV128(
     .sort(
       (a, b) =>
         b.score - a.score ||
-        a.catalogItem.publicTitle.localeCompare(
-          b.catalogItem.publicTitle,
+        publicItemNameV164(a.catalogItem).localeCompare(
+          publicItemNameV164(b.catalogItem),
           "ko"
         )
     )
