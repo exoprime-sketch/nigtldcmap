@@ -993,6 +993,35 @@ export function publicSourceOrganizationV136_1(value: unknown): string | null {
   return text === "" ? null : text;
 }
 
+/**
+ * V164: a licence line as a reader reads it. The delivery wrote its own licence
+ * review after each licence name - "[사실/표현 분리] 자료는 … 판단(출처표시 조건부
+ * 표출).", "[라이선스 X] 원천이 … 표출 '불가'로 판정한다." - and the checking it
+ * did ("(사이트맵·푸터 전수 확인)"). The licence names stay; each review runs to
+ * the next licence (" · ") and goes, and so does the checking aside. A quoted
+ * original ("[GDL 이용조건 원문] \"…\"") keeps the quote under a plain label.
+ */
+const LICENCE_REVIEW_V164 =
+  /\s*\[(?:사실\s*\/\s*표현\s*분리|라이선스\s*[XO×○]|라이선스\s*(?:근거|판정|확인)[^\]]*|처리규칙[^\]]*)\][^]*?(?=\s·\s|$)/gu;
+const LICENCE_CHECK_ASIDE_V164 = /\s*\([^()]*(?:전수\s*확인|확인\s*결과)[^()]*\)/gu;
+const LICENCE_VERDICT_V164 = /\s*출처표시\s*외\s*추가\s*제약이\s*없어\s*표출\s*·\s*다운로드\s*모두\s*(?:허용|가능)\s*\.?/gu;
+const LICENCE_QUOTE_LABEL_V164 = /\[[^\[\]]{1,20}이용조건\s*원문\]\s*/gu;
+
+export function publicLicenseTextV164(value: unknown): string | null {
+  const text = publicSourceOrganizationV136_1(value);
+  if (text === null) return null;
+  const cleaned = text
+    .replace(LICENCE_REVIEW_V164, "")
+    .replace(LICENCE_CHECK_ASIDE_V164, "")
+    .replace(LICENCE_VERDICT_V164, "")
+    .replace(LICENCE_QUOTE_LABEL_V164, "이용조건 원문: ")
+    .replace(/(?:\s·\s){2,}/gu, " · ")
+    .replace(/^\s*·\s*|\s*·\s*$/gu, "")
+    .replace(/\s{2,}/gu, " ")
+    .trim();
+  return cleaned === "" ? null : cleaned;
+}
+
 /** A source citation inside a record note: "출처: …". */
 const RECORD_NOTE_SOURCE_V161 = /^\s*출처\s*:\s*/u;
 /**
@@ -1180,8 +1209,8 @@ export function toPublicSourceViewV126(
       normalizeTextV126(row.provenance.referenceYear) ||
       normalizeTextV126(meta?.referenceYear),
     license:
-      normalizeTextV126(row.provenance.licenseCode) ||
-      normalizeTextV126(meta?.licenseCode),
+      publicLicenseTextV164(row.provenance.licenseCode) ||
+      publicLicenseTextV164(meta?.licenseCode),
     // V163-DL: the download carries the source text the screens show - the
     // delivery team's working notes (client review, raw folder, old sheet)
     // are not part of it (publicDownloadNoteV163).

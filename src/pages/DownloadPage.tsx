@@ -28,6 +28,7 @@ import {
   publicDownloadRowsHaveTechnicalFieldsV126,
   publicRowsToCsvV126,
   publicRowsToJsonV126,
+  publicLicenseTextV164,
   publicSourceOrganizationV136_1,
   publicSourceUrlV126,
   publicTextV126,
@@ -294,12 +295,12 @@ export default function DownloadPage({
   const licenses = unique(
     selectedCatalog
       .flatMap((item) => item.raw.rights.licenses)
-      .map(publicTextV126)
+      .map(publicLicenseTextV164)
   );
   const attributions = unique(
     selectedCatalog
       .flatMap((item) => item.raw.rights.attributionTexts)
-      .map(publicSourceOrganizationV136_1)
+      .map(publicLicenseTextV164)
   );
   const sourceUrls = unique(
     selectedCatalog.flatMap((item) => item.sourceUrls).map(publicSourceUrlV126)

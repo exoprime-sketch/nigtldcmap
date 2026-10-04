@@ -312,10 +312,48 @@ def _our_file(name: str) -> bool:
     )
 
 
+# V164: the delivery's own licence review written after a licence name or in a
+# caveat - "[사실/표현 분리] …", "[라이선스 X] … 표출 '불가'로 판정한다.",
+# "라이선스 판정: … '가능'.", "(라이선스 판정서 참조)", the checking aside
+# "(사이트맵·푸터 전수 확인)" and the note on what the download is. The licence
+# names and the quoted original terms stay (the quote under a plain label). The
+# screen applies the same rule (publicLicenseTextV164).
+LICENCE_REVIEW_V164 = re.compile(
+    r"\s*\[(?:사실\s*/\s*표현\s*분리|라이선스\s*[XO×○]|라이선스\s*(?:근거|판정|확인)[^\]]*|처리규칙[^\]]*)\][\s\S]*?(?=\s·\s|$)"
+)
+LICENCE_JUDGEMENT_V164 = re.compile(r"\s*라이선스\s*판정\s*:[^.]*\.?")
+LICENCE_POINTER_V164 = re.compile(r"\s*\(\s*라이선스\s*판정서\s*참조\s*\)")
+LICENCE_CHECK_ASIDE_V164 = re.compile(r"\s*\([^()]*(?:전수\s*확인|확인\s*결과)[^()]*\)")
+LICENCE_QUOTE_LABEL_V164 = re.compile(r"\[[^\[\]]{1,20}이용조건\s*원문\]\s*")
+LICENCE_VERDICT_V164 = re.compile(r"\s*출처표시\s*외\s*추가\s*제약이\s*없어\s*표출\s*·\s*다운로드\s*모두\s*(?:허용|가능)\s*\.?")
+DOWNLOAD_SCOPE_NOTE_V164 = re.compile(r"\s*다운로드\s*제공\s*대상은[^.]*용역사[^.]*\.?")
+LICENCE_TEXT_KEYS_V164 = frozenset({"licenseCode", "licenses", "license", "attributionText", "attributionTexts", "rightsNote", "caveat"})
+
+
+def clean_licence_review_v164(value: str) -> str:
+    """A licence, attribution or caveat text without the delivery's licence review."""
+    text = LICENCE_REVIEW_V164.sub("", value)
+    text = LICENCE_JUDGEMENT_V164.sub("", text)
+    text = LICENCE_POINTER_V164.sub("", text)
+    text = LICENCE_CHECK_ASIDE_V164.sub("", text)
+    text = LICENCE_VERDICT_V164.sub("", text)
+    text = LICENCE_QUOTE_LABEL_V164.sub("이용조건 원문: ", text)
+    text = DOWNLOAD_SCOPE_NOTE_V164.sub("", text)
+    if text == value:
+        return value
+    text = re.sub(r"(?:\s·\s){2,}", " · ", text)
+    text = re.sub(r"^\s*·\s*|\s*·\s*$", "", text)
+    return re.sub(r"\s{2,}", " ", text).strip()
+
+
 def clean_download_text(value: str, *, country: str, source_name: str | None, meta: bool) -> tuple[str, list[tuple[str, str]]]:
     """A download text field: the public rules, then paths, sheets, memo sentences and our files."""
     text, removed = clean_public_text(value, country=country, source_name=source_name, meta=meta)
     parts: list[tuple[str, str]] = [(_category(item), item) for item in removed]
+    reviewed = clean_licence_review_v164(text)
+    if reviewed != text:
+        parts.append(("licence-review", text))
+        text = reviewed
     for match in LOCAL_PATH_V163.findall(text):
         parts.append(("local-path", match))
     text = LOCAL_PATH_V163.sub("", text)
