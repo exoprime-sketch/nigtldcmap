@@ -23,6 +23,8 @@
 .detail-map148 figcaption { font-size: 11px; margin: 8px 4px; color: #526b62; }
 .detail-map148-legend { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px; }
 .detail-map148-legend i { width: 110px; height: 9px; }
+/* V164-R3: the "no data" fill the static map paints (#edf1ef), shown as a swatch beside its words */
+.detail-map148-nodata-key { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -2px; background: #edf1ef; border: 1px solid #8aa19b; border-radius: 2px; }
 .detail-map148 footer { font-size: 11px; color: #60746c; margin: 12px 0 0; }
 @media(max-width: 680px) { .detail-map148 { padding: 14px; } .detail-map148-layout { grid-template-columns: 1fr; gap: 5px; } .detail-map148 svg { height: 300px; } .detail-map148-controls { flex-direction: column; } }
 

@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import type { KeyboardEvent, PointerEvent } from "react";
 import "../data/public/primary-energy-composition-v132.css";
-import { formatAxisTicksV164, niceTicksV164, niceXTicksV164 } from "../../utils/axisTicksV164";
+import { formatAxisTicksV164, isCountUnitV164, niceTicksV164, niceXTicksV164 } from "../../utils/axisTicksV164";
 
 /**
  * V153-D1: the stacked-area chart the A-016 screen drew (V132), shared so a
@@ -83,7 +83,7 @@ export function StackedAreaChartV153({
         )
       );
   // V164: the value axis ends on a round tick, so its guides are round numbers.
-  const absoluteTicksV164 = mode === "share" ? [] : niceTicksV164(0, rawStackMaximum, 4);
+  const absoluteTicksV164 = mode === "share" ? [] : niceTicksV164(0, rawStackMaximum, 4, isCountUnitV164(unit));
   const stackMaximum = mode === "share" ? 100 : absoluteTicksV164[absoluteTicksV164.length - 1] || rawStackMaximum;
   const absoluteTickLabelsV164 = formatAxisTicksV164(absoluteTicksV164);
   // The value labels set the left margin, so the rotated axis title never sits on them.

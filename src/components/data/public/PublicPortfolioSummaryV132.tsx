@@ -72,6 +72,11 @@ type PortfolioConfigV132 = {
   identityKey?: string;
   identityNormalize?: (value: string) => string;
   identityLabel?: string;
+  /**
+   * V164-R3: the year the dataset was compiled. Years after it are plans (D-012 files a plant under its
+   * planned start year: 2030 holds 247 rows and 2045 two), so the year chart draws them apart.
+   */
+  plannedAfterYear?: number;
 };
 
 /** What one row of this element is, for headings outside this module. */
@@ -111,6 +116,7 @@ const PORTFOLIO_CONFIG_V132: Record<string, PortfolioConfigV132> = {
     yearKeys: ["entryYear", "entryTiming"],
     yearLabel: "진출 확인연도",
     categoryKeys: ["technologyField", "entryCountry", "entryMode"],
+    plannedAfterYear: 2026,
   },
   "D-014": {
     amountKeys: [
@@ -379,6 +385,7 @@ export default function PublicPortfolioSummaryV132({
               rows={analysis.years}
               testId="portfolio-year-trend-v132"
               chronological
+              plannedAfterYear={config?.plannedAfterYear}
             />
           </section>
         )}
@@ -396,6 +403,7 @@ export default function PublicPortfolioSummaryV132({
           ...(identity.identityCount !== null ? [{ label: `${config?.identityLabel || "고유 항목"} 수`, value: identity.identityCount, unit: config?.identityLabel === "지원제도" ? "개" : "곳" }] : []),
           { key: "record-count", label: `${config?.recordLabel || "사업"} 수`, value: analysis.individualCount, unit: "건", context: analysis.yearRange || "수록 자료 기준" },
           ...(analysis.yearRange ? [{ key: "year-range", label: "자료기간", value: analysis.yearRange, context: "수록 자료 기준" }] : []),
+          ...(analysis.plannedRange ? [{ key: "planned-year-range", label: "계획 연도", value: analysis.plannedRange, context: `기준 연도 이후로 기재된 ${analysis.plannedCount.toLocaleString("ko-KR")}건` }] : []),
           ...identity.statusRows.map((row) => ({ label: `${config?.statusGroups?.label || "상태"} · ${row.label}`, value: row.value, unit: "건" })),
           ...analysis.amounts.map((amount) => ({ label: config?.amountLabel || "확인 금액 합계", value: amount.value, unit: amount.currency, context: `금액이 기재된 ${amount.count.toLocaleString("ko-KR")}건` })),
         ]} />
@@ -520,6 +528,9 @@ function portfolioAnalysisV132(
 
   const yearRows = mapToRowsV132(years, true);
   const parsedYears = yearRows.map((row) => Number(row.label)).filter(Number.isFinite);
+  const plannedAfterYear = PORTFOLIO_CONFIG_V132[elementId]?.plannedAfterYear;
+  const plannedYears = plannedAfterYear === undefined ? [] : parsedYears.filter((year) => year > plannedAfterYear);
+  const datedYears = plannedAfterYear === undefined ? parsedYears : parsedYears.filter((year) => year <= plannedAfterYear);
   return {
     individualCount: individual.length,
     aggregateCount,
@@ -533,12 +544,18 @@ function portfolioAnalysisV132(
     categoriesByKey: Array.from(categoriesByKey, ([key, counts]) => ({ key, label: portfolioCategoryKeyLabelV142(elementId, key), rows: categoryRowsV136_3(counts) }))
       .filter((entry): entry is { key: string; label: string; rows: CountRowV132[] } => entry.label !== null && entry.rows.length >= 2),
     amounts: Array.from(amounts, ([currency, value]) => ({ currency, ...value })),
-    yearRange: parsedYears.length
-      ? (Math.min(...parsedYears) === Math.max(...parsedYears)
-        ? String(Math.min(...parsedYears))
-        : `${Math.min(...parsedYears)}–${Math.max(...parsedYears)}`)
-      : null,
+    yearRange: yearRangeTextV164(datedYears.length ? datedYears : parsedYears),
+    // V164-R3: the years after the dataset's own year are plans, written apart from the period it covers.
+    plannedRange: yearRangeTextV164(plannedYears),
+    plannedCount: yearRows.filter((row) => plannedYears.includes(Number(row.label))).reduce((sum, row) => sum + row.value, 0),
   };
+}
+
+function yearRangeTextV164(years: number[]): string | null {
+  if (years.length === 0) return null;
+  const first = Math.min(...years);
+  const last = Math.max(...years);
+  return first === last ? String(first) : `${first}–${last}`;
 }
 
 export type PublicPortfolioFacetV132 = {

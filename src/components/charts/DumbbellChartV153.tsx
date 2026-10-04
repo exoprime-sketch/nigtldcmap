@@ -2,7 +2,7 @@ import ChartAxesV150 from "./ChartAxesV150";
 import { formatPublicNumberV126 } from "../../data/visualization/publicNumberFormatV126";
 import { PublicTermTextV134 } from "../help/PublicTermV134";
 import "./dumbbell-chart-v153.css";
-import { formatAxisTicksV164, niceTicksV164 } from "../../utils/axisTicksV164";
+import { formatAxisTicksV164, isCountUnitV164, niceTicksV164 } from "../../utils/axisTicksV164";
 
 /**
  * V153-D1: two values per subject on one shared axis - a station's dry-season
@@ -85,7 +85,7 @@ export default function DumbbellChartV153({ rows, unit, xAxis, yAxis, ariaLabel,
   if (rows.length === 0) return null;
   const rawMaximum = Math.max(...rows.flatMap((row) => [row.low.value, row.high.value]), 1e-9);
   // V164: the axis ends on a round tick, so its guides are round numbers.
-  const ticks = niceTicksV164(0, rawMaximum, 4);
+  const ticks = niceTicksV164(0, rawMaximum, 4, isCountUnitV164(unit) && rows.every((row) => Number.isInteger(row.low.value) && Number.isInteger(row.high.value)));
   const maximum = ticks[ticks.length - 1] || rawMaximum;
   const tickLabels = formatAxisTicksV164(ticks);
   const plotLeft = LABEL_WIDTH;

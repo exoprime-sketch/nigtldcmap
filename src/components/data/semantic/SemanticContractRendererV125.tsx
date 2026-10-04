@@ -1803,7 +1803,7 @@ export function EvidenceMatrixV125({
         </p>
       )}
       <div className="sv125-matrix-wrap">
-        <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"}>
+        <table className="sv125-evidence-matrix" data-testid="evidence-matrix-v138" data-has-units={hasUnits ? "true" : "false"} data-columns={2 + (hasGroups ? 1 : 0) + (hasUnits ? 1 : 0) + (hasBasis ? 1 : 0)}>
           <thead>
             <tr>
               {hasGroups && <th scope="col">구분</th>}

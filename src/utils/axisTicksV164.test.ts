@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import { decimalsOfV164, formatAxisTicksV164, formatAxisValueV164, niceTicksV164, niceXTicksV164, roundTicksWithinV164, symmetricBoundV164, valueAxisV164 } from "./axisTicksV164";
+import { decimalsOfV164, formatAxisTicksV164, isCountUnitV164, niceStepV164, formatAxisValueV164, niceTicksV164, niceXTicksV164, roundTicksWithinV164, symmetricBoundV164, valueAxisV164 } from "./axisTicksV164";
 import { publicCompareTitleV164 } from "../components/data/public/DetailCountryCompareV158";
 
 describe("V164 axis ticks", () => {
@@ -195,5 +195,57 @@ describe("V164 value axis keeps enough guides (chart audit floor of five)", () =
   it("a flat series still has five guides around its value", () => {
     const axis = valueAxisV164({ values: [21.12, 21.12, 21.12], intervals: 5 });
     expect(axis.ticks.length).toBeGreaterThanOrEqual(5);
+  });
+});
+
+describe("V164-R3 count axes", () => {
+  it("knows which units count things one by one", () => {
+    for (const unit of ["건", "곳", "명", "개", "개소", " 건 "]) expect(isCountUnitV164(unit)).toBe(true);
+    for (const unit of ["%", "GWh", "USD", "", "천명", "건/년", null, undefined]) expect(isCountUnitV164(unit as string)).toBe(false);
+  });
+
+  it("a whole-number step never goes below 1 and never lands on 2.5 below 10", () => {
+    expect(niceStepV164(0.4, true)).toBe(1);
+    expect(niceStepV164(1.2, true)).toBe(2);
+    expect(niceStepV164(2.2, true)).toBe(5);
+    expect(niceStepV164(3, true)).toBe(5);
+    expect(niceStepV164(12, true)).toBe(20);
+    expect(niceStepV164(22, true)).toBe(25);
+    // without the flag the 0.5 / 2.5 steps stay
+    expect(niceStepV164(0.4)).toBe(0.5);
+    expect(niceStepV164(2.2)).toBe(2.5);
+  });
+
+  it.each([
+    [[0, 1, 2, 3]],
+    [[1, 2, 2, 3]],
+    [[0, 1]],
+    [[2, 2, 2]],
+    [[0, 3, 4, 7, 9]],
+    [[5, 12, 31]],
+  ])("a count series %j is guided at whole numbers only (D-018/019/020/024)", (values) => {
+    const axis = valueAxisV164({ values, unit: "건", intervals: 5 });
+    expect(axis.ticks.every((tick) => Number.isInteger(tick))).toBe(true);
+    expect(axis.ticks.length).toBeGreaterThanOrEqual(2);
+    expect(axis.domain[0]).toBeLessThanOrEqual(Math.min(...values));
+    expect(axis.domain[1]).toBeGreaterThanOrEqual(Math.max(...values));
+    expect(formatAxisTicksV164(axis.ticks).every((label) => !label.includes("."))).toBe(true);
+  });
+
+  it("a measured value (not a count) keeps fractional guides", () => {
+    const axis = valueAxisV164({ values: [0, 1], unit: "GWh", intervals: 5 });
+    expect(axis.ticks.some((tick) => !Number.isInteger(tick))).toBe(true);
+  });
+
+  it("a count series with a fractional value is not forced onto whole numbers", () => {
+    const axis = valueAxisV164({ values: [0.5, 1.5, 2], unit: "건", intervals: 5 });
+    expect(axis.ticks.some((tick) => !Number.isInteger(tick))).toBe(true);
+  });
+
+  it("niceTicksV164 with integerOnly gives whole ticks for a 0-3 range", () => {
+    const ticks = niceTicksV164(0, 3, 4, true);
+    expect(ticks[0]).toBe(0);
+    expect(ticks[ticks.length - 1]).toBeGreaterThanOrEqual(3);
+    expect(ticks.every((tick) => Number.isInteger(tick))).toBe(true);
   });
 });

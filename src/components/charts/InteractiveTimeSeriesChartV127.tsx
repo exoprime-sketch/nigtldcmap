@@ -26,7 +26,8 @@ import type {
 } from "../../types/chartInteractionV127";
 import "./chart-interactions-v127.css";
 import ChartAxesV150 from "./ChartAxesV150";
-import { scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
+import { allZeroSeriesIdsV164, scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
+import { estimateLabelWidthV164, markedLabelPlacementV164 } from "./chartLabelLayoutV164";
 
 const SERIES_COLORS_V127 = [
   "#0f6b4d",
@@ -234,9 +235,22 @@ export function InteractiveTimeSeriesChartV127({
     [normalizedSeries]
   );
   // V164: a lone point many times larger than every other series starts switched off (still in the legend).
-  const scaleOutlierIds = useMemo(
+  const scaleOutlierOnlyIds = useMemo(
     () => (fixedYDomain ? new Set<string>() : scaleOutlierSeriesIdsV164(normalizedSeries)),
     [fixedYDomain, normalizedSeries]
+  );
+  // V164-R3: a series whose every value is 0 lies on the zero line under the others; it starts switched
+  // off too (the zero stays in the legend, the table and the download, and one click draws it).
+  const allZeroIds = useMemo(() => allZeroSeriesIdsV164(normalizedSeries), [normalizedSeries]);
+  // The note "모든 연도 0" also stands beside a zero series that is shown (it is the only one, or all are zero),
+  // so a flat line on 0 reads as the delivered value and not as a chart that failed to draw.
+  const zeroNoteIds = useMemo(
+    () => new Set(normalizedSeries.filter((item) => item.points.length > 0 && item.points.every((point) => point.value === 0)).map((item) => item.id)),
+    [normalizedSeries]
+  );
+  const scaleOutlierIds = useMemo(
+    () => new Set<string>([...Array.from(scaleOutlierOnlyIds), ...Array.from(allZeroIds)]),
+    [scaleOutlierOnlyIds, allZeroIds]
   );
   const [visibleSeriesIds, setVisibleSeriesIds] = useState<Set<string>>(() => {
     const defaults = normalizedSeries
@@ -786,7 +800,10 @@ export function InteractiveTimeSeriesChartV127({
                     className={`v127-chart-legend-button__sample v127-chart-legend-button__sample--${marker}`}
                     style={{ color }}
                   />
-                  <span><PublicTermExpandedTextV134 text={item.label} /></span>
+                  <span>
+                    <PublicTermExpandedTextV134 text={item.label} />
+                    {zeroNoteIds.has(item.id) ? <small className="v127-chart-legend-button__note" data-testid="chart-legend-zero-note-v164"> · 모든 연도 0</small> : scaleOutlierOnlyIds.has(item.id) ? <small className="v127-chart-legend-button__note" data-testid="chart-legend-outlier-note-v164"> · 값이 매우 커서 숨김</small> : null}
+                  </span>
                 </button>
               );
             });
@@ -933,9 +950,6 @@ export function InteractiveTimeSeriesChartV127({
                   y1={padding.top}
                   y2={safeHeight - padding.bottom}
                 />
-                <text x={xScale(markedX) + 6} y={padding.top + 12}>
-                  {markedLabel || formatX(markedX)}
-                </text>
               </g>
             ) : null}
             {plottedSeries.map((item) => (
@@ -1163,6 +1177,29 @@ export function InteractiveTimeSeriesChartV127({
               y={padding.top}
             />
           </g>
+          {/* V164-R3: the marked year's label sits outside the plot clip, on the side of its line that has room
+              (the newest year's line stands at the right edge, where the label was cut to a stray dot). */}
+          {markedX !== null && Number.isFinite(markedX) && markedX >= visibleXDomain[0] && markedX <= visibleXDomain[1] ? (() => {
+            const text = markedLabel || formatX(markedX);
+            const placement = markedLabelPlacementV164({
+              lineX: xScale(markedX),
+              labelWidth: estimateLabelWidthV164(text, 12),
+              plotLeft: padding.left,
+              plotRight: chartWidth - padding.right,
+            });
+            return (
+              <text
+                className="v127-interactive-chart__marked-label"
+                data-testid="chart-marked-label-v164"
+                pointerEvents="none"
+                textAnchor={placement.anchor}
+                x={placement.x}
+                y={padding.top + 12}
+              >
+                {text}
+              </text>
+            );
+          })() : null}
         </svg>
         <ChartTooltipV127 state={tooltip} stageHeight={safeHeight} stageWidth={chartWidth} />
       </div>

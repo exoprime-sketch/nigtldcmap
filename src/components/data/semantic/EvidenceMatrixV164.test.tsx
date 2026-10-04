@@ -69,4 +69,11 @@ describe("EvidenceMatrixV125 (V164)", () => {
     expect(headers()).toEqual(["항목", "내용·값"]);
     expect(host.querySelectorAll("tbody tr:first-child > *")).toHaveLength(2);
   });
+
+  test("V164-R3 (A-013): a two-column table says so, so its text is not held to a 760px minimum width and clipped", () => {
+    render([ndcRow(1, 1, "Agriculture", "A."), ndcRow(2, 2, "Waste", "B.")]);
+    const table = host.querySelector("table.sv125-evidence-matrix");
+    expect(table?.getAttribute("data-columns")).toBe("2");
+    expect(host.querySelectorAll("thead th")).toHaveLength(Number(table?.getAttribute("data-columns")));
+  });
 });

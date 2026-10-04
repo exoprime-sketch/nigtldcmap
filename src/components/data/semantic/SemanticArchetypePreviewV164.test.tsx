@@ -188,6 +188,25 @@ describe("selectors offer what leads to a value (V164-3)", () => {
     expect(lastState?.year).toBe(2022);
   });
 
+  test("연도 (A-030): the screen opens on the newest year the main series has, not on a year only the auxiliary source fills", () => {
+    render(
+      fixture([
+        { id: "I1", measure: "보급 면적", unit: "ha", values: [[2023, 5], [2022, 4]] },
+        { id: "I2_aux_ndc", measure: "보급 면적", unit: "ha", values: [[2024, 7]] },
+      ])
+    );
+    const yearSelect = host.querySelector('select[data-testid="v125-year-select"]') as HTMLSelectElement;
+    // 2024 stays selectable (its row exists) but is not the opening year.
+    expect(Array.from(yearSelect.options).map((option) => option.value)).toContain("2024");
+    expect(lastState?.year).toBe(2023);
+    expect(yearSelect.value).toBe("2023");
+  });
+
+  test("연도 (A-030): when only an auxiliary source fills a year, that year is still used", () => {
+    render(fixture([{ id: "I2_aux_ndc", measure: "보급 면적", unit: "ha", values: [[2024, 7], [2023, 6]] }]));
+    expect(lastState?.year).toBe(2024);
+  });
+
   test("항목: a measure without any value is not offered (A-022 SAIDI/SAIFI)", () => {
     render(
       fixture([

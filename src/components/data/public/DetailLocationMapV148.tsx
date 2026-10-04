@@ -14,6 +14,7 @@ import {
   level1NamesByKeyV163,
   projectionCenterLatV163,
   regionLabelV163,
+  staticRowKeyV164,
   staticUnitKeyV163,
 } from "../../../data/map/miniMapCountryV163";
 import { assetFeatureCollectionV157, categoryLegendV157 } from "../../../map/layers/unitFeaturesV157";
@@ -47,7 +48,7 @@ import "./detail-location-map-v148.css";
 import { displayUnitV150 } from "../../../data/visualization/unitDisplayV150";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import { publicAssetUrlV128 } from "../../../utils/publicAssetUrlV128";
-import { COUNTRY_OUTLINE_Z5_PATH_V151 } from "../../../data/map/adminBoundaryV151";
+import { COUNTRY_OUTLINE_Z5_PATH_V151, PROVINCE_KO_34_V151 } from "../../../data/map/adminBoundaryV151";
 import MiniMapV152 from "../../map/MiniMapV152";
 import { countryOutlineZ5UrlV163 } from "../../../map/layers/baseStyle";
 import { miniMapHandoffV152, type MiniMapHandoffV152 } from "../../map/miniMapStateV152";
@@ -159,9 +160,9 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
     const variable = layer.selectors.variables.find((v) => v.key === slice.variable);
     const values = data?.values.filter((v) => v.variable === slice.variable && v.period === slice.period) || [];
     const isDefault = isDefaultCountryV163(countryIso3);
-    const byCode = new Map(values.map((v) => [v.adm1Code, v]));
-    // The key the value rows and the boundary file share (Viet Nam: adm1Code, as ever).
+    // The key the value rows and the boundary file share (Viet Nam: adm1Code, as ever; its 34-unit layers: adm1Code34).
     const joinKey = (data as { joinKey?: string } | undefined)?.joinKey;
+    const byCode = new Map(values.map((v) => [staticRowKeyV164(v, joinKey), v]));
     const unitKey = (f: { properties: Record<string, unknown> }) => staticUnitKeyV163(f.properties, joinKey, countryIso3);
     const level1Names = isDefault ? undefined : level1NamesByKeyV163(base, joinKey);
     const categoryFields = layer.filters.map((flt) => flt.field);
@@ -204,13 +205,14 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         // Another country: the name goes through the region dictionary; a row without a name takes
         // the boundary file's own name. A boundary key (BGD.8_1) is never shown.
         ? regionLabelV163({ row, iso3: countryIso3, elementId, level1Names }) || "지역 미표기"
-        : (row.adm1Name ? publicRegionTextV162(row.adm1Name, elementId, countryIso3) : "") ||
+        : (PROVINCE_KO_34_V151[row.adm1Code] ? formatRegionName({ country: "VNM", raw: PROVINCE_KO_34_V151[row.adm1Code] }) : "") ||
+          (row.adm1Name ? publicRegionTextV162(row.adm1Name, elementId, countryIso3) : "") ||
           row.label ||
           (PROVINCE_KO_V150[row.adm1Code]
             ? formatRegionName({ country: "VNM", raw: PROVINCE_KO_V150[row.adm1Code] })
             : "") ||
           "지역 미표기";
-    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => ({ id: v.adm1Code, label: regionLabelV157(v as { adm1Code: string; adm1Name?: string; label?: string }), value: v.value, sourceRegion: v.sourceRegion }))
+    const options: Array<{ id: string; label: string; value: number | null; sourceRegion?: string }> = data ? values.map((v) => { const key = staticRowKeyV164(v, joinKey); const named = v as { adm1Name?: string; adm1Name34?: string; label?: string }; return { id: key, label: regionLabelV157({ adm1Code: key, adm1Name: named.adm1Name || named.adm1Name34, label: named.label }), value: v.value, sourceRegion: v.sourceRegion }; })
       : geometry ? features.map((f, i) => ({ id: String(f.id ?? i), label: String(f.properties.projectTitle || f.properties.name || f.properties.displayLabel || (layer.renderer === "line" ? lineFeatureFallbackLabelV164(f.properties, categoryFields, i) : isDefault ? `${f.properties.voltageKv || ""} kV 선로 ${i + 1}` : `${layer.publicShortTitle} ${i + 1}`)), value: null, sourceRegion: undefined }))
       : points.map((r) => ({ id: r.recordId, label: resolvePublicEntityTitleV131(r, { elementTitle: layer.publicShortTitle }).title, value: null, sourceRegion: undefined }));
     const layerColor = LAYER_COLORS[layer.elementId] || "#176a4b";
@@ -351,6 +353,8 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
           {geometry && model.features.map((f, i) => {
             const id = data ? model.unitKey(f) : String(f.id ?? i);
             const v = model.byCode.get(id);
+            // V164-R3: a unit without a key is never "the picked one" (the unpicked selection is "").
+            const chosen = id !== "" && picked === id;
             const color = data ? mapColorV148(v ? finiteMapValueV148(v.value) : null, model.min, model.max) : lineColorV152(Number(f.properties.voltageKv || f.properties.voltage));
             if (f.geometry.type === "Point" && !isDefaultCountry) {
               // V163: another country's site is a dot in the live map's category colour; V164: a layer
@@ -369,7 +373,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
               return <circle key={id} cx={x} cy={y} r={picked === id ? 5.5 : compact ? 2.6 : 3} fill={fill} stroke={picked === id ? "#c04721" : "#fff"} strokeWidth={picked === id ? 2 : 0.8} onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>;
             }
             if (f.geometry.type === "Point") { const xy = coordinatePairsV148(f.geometry.coordinates)[0]; if (!xy) return null; const [x, y] = model.project(xy); if (!iconKit) return <circle key={id} cx={x} cy={y} r={picked === id ? 5 : 3} fill="#a95025" onClick={compact ? undefined : () => setPicked(id)}><title>{model.options.find((o) => o.id === id)?.label}</title></circle>; return <g key={id} transform={`translate(${x.toFixed(1)},${y.toFixed(1)})`} onClick={compact ? undefined : () => setPicked(id)} data-icon-id="world"><circle r={picked === id ? 10 : 8.5} fill="#fff" stroke={picked === id ? "#c04721" : LAYER_COLORS[layer.elementId] || "#a95025"} strokeWidth="2" /><use href={`#${iconKit.mapIconImageIdV152("world")}`} x="-5.6" y="-5.6" width="11.2" height="11.2" style={{ color: iconKit.MAP_ICON_INK_V152 }} /><title>{model.options.find((o) => o.id === id)?.label}</title></g>; }
-            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={picked === id ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={picked === id ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${model.options.find((o) => o.id === id)?.label || ""}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
+            return <path key={id} d={geometryPathV148(f.geometry, model.project)} fillRule="evenodd" fill={layer.renderer === "line" ? "none" : color} stroke={chosen ? "#142e27" : layer.renderer === "line" ? color : "#556f69"} strokeWidth={chosen ? 2.5 : layer.renderer === "line" ? 1.4 : 0.65} data-picked={chosen ? "true" : undefined} data-has-value={data ? (v ? "true" : "false") : undefined} fillOpacity={layer.renderer === "regional-scope" ? 0.35 : 1} onClick={compact ? undefined : () => setPicked(id)}><title>{v ? `${model.options.find((o) => o.id === id)?.label || ""}: ${formatPublicNumberV126(v.value, units)} ${units}` : model.options.find((o) => o.id === id)?.label || "자료 없음"}</title></path>;
           })}
           {!geometry && model.points.map((r) => {
             const [x, y] = model.project([r.longitude!, r.latitude!]);
@@ -392,7 +396,7 @@ export default function DetailLocationMapV148({ elementId, countryIso3, selectio
         </svg>
         </MiniMapV152>
         {data && engineLegend?.kind === "ramp" && <figcaption className="detail-map148-legend" data-legend-source="live-map"><span>{formatPublicNumberV126(engineLegend.minimum, units)}</span><i style={{ background: `linear-gradient(to right, ${engineLegend.from}, ${engineLegend.to})` }} /><span>{formatPublicNumberV126(engineLegend.maximum, units)} {units}</span><small>{isDefaultCountry ? (engineLegend.boundaryMode === "34" ? "개편 후 34개 성·시 기준 · 색 없음: 자료 없음" : "색 없음: 자료 없음") : `${basisCaptionV163 ? `${basisCaptionV163} · ` : ""}색 없음: 자료 없음`}</small></figcaption>}
-        {data && engineLegend?.kind !== "ramp" && <figcaption className="detail-map148-legend"><span>{formatPublicNumberV126(model.min, units)}</span><i style={{ background: `linear-gradient(to right, ${mapColorV148(model.min, model.min, model.max)}, ${mapColorV148((model.min + model.max) / 2, model.min, model.max)}, ${mapColorV148(model.max, model.min, model.max)})` }} /><span>{formatPublicNumberV126(model.max, units)} {units}</span><small>{!isDefaultCountry && basisCaptionV163 ? `${basisCaptionV163} · ` : ""}회색: 자료 없음</small></figcaption>}
+        {data && engineLegend?.kind !== "ramp" && <figcaption className="detail-map148-legend"><span>{formatPublicNumberV126(model.min, units)}</span><i style={{ background: `linear-gradient(to right, ${mapColorV148(model.min, model.min, model.max)}, ${mapColorV148((model.min + model.max) / 2, model.min, model.max)}, ${mapColorV148(model.max, model.min, model.max)})` }} /><span>{formatPublicNumberV126(model.max, units)} {units}</span><small data-testid="detail-map-nodata-legend-v164"><span className="detail-map148-nodata-key" aria-hidden="true" />{!isDefaultCountry && basisCaptionV163 ? `${basisCaptionV163} · ` : ""}회색: 자료 없음</small></figcaption>}
         {!data && !geometry && iconKit && model.iconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.iconLegend} compact /></div>}
         {!data && iconKit && model.assetIconLegend.length > 0 && <div className="detail-map148-icon-legend" data-testid="detail-map-icon-legend-v152"><iconKit.MapIconLegendV152 entries={model.assetIconLegend} compact /></div>}
         {!data && model.assetCategories.length > 0 && <figcaption className="detail-map148-category-legend" data-testid="detail-map-category-legend-v163">{model.assetCategories.map((c) => <span key={c.label}><i className="detail-map148-category-key" style={{ background: c.color }} />{c.text} {c.featureCount.toLocaleString()}</span>)}</figcaption>}

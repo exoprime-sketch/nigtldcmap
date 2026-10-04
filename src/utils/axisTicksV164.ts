@@ -12,13 +12,26 @@
 const EOK = 100_000_000;
 const JO = 1_000_000_000_000;
 
-/** The 1·2·2.5·5×10ⁿ step at or above `raw`. */
-export function niceStepV164(raw: number): number {
+/**
+ * A unit that counts things one by one (건·곳·명·개 …): 1.5건 is not a reading, so
+ * the axis of such a series is guided at whole numbers only.
+ */
+export function isCountUnitV164(unit: string | null | undefined): boolean {
+  return /^(건|건수|곳|명|개|개소|개사|개국|기|대|편|회|가구|호|종|사례)$/u.test(String(unit ?? "").trim());
+}
+
+/**
+ * The 1·2·2.5·5×10ⁿ step at or above `raw`. With `integerOnly` the step is a
+ * whole number (1, 2, 5, 10, 20, 25, 50 …): a count axis never counts in halves.
+ */
+export function niceStepV164(raw: number, integerOnly = false): number {
   if (!Number.isFinite(raw) || raw <= 0) return 1;
+  if (integerOnly && raw <= 1) return 1;
   const magnitude = 10 ** Math.floor(Math.log10(raw));
   const fraction = raw / magnitude;
-  const factor = fraction <= 1 ? 1 : fraction <= 2 ? 2 : fraction <= 2.5 ? 2.5 : fraction <= 5 ? 5 : 10;
-  return factor * magnitude;
+  const factors = [1, 2, 2.5, 5, 10];
+  const wanted = factors.find((factor) => fraction <= factor && (!integerOnly || Number.isInteger(factor * magnitude))) ?? 10;
+  return wanted * magnitude;
 }
 
 /**
@@ -36,7 +49,7 @@ export function symmetricBoundV164(maximumAbsolute: number, floor = 0.5): number
  * ticks are the axis bounds, so a chart that uses them as its domain shows every
  * value inside a labelled range.
  */
-export function niceTicksV164(lo: number, hi: number, count = 4): number[] {
+export function niceTicksV164(lo: number, hi: number, count = 4, integerOnly = false): number[] {
   if (!Number.isFinite(lo) || !Number.isFinite(hi)) return [];
   let low = Math.min(lo, hi);
   let high = Math.max(lo, hi);
@@ -45,7 +58,7 @@ export function niceTicksV164(lo: number, hi: number, count = 4): number[] {
     low -= pad;
     high += pad;
   }
-  const step = niceStepV164((high - low) / Math.max(1, count));
+  const step = niceStepV164((high - low) / Math.max(1, count), integerOnly);
   const first = Math.floor(low / step + 1e-9) * step;
   const last = Math.ceil(high / step - 1e-9) * step;
   const ticks: number[] = [];
@@ -178,20 +191,23 @@ export function valueAxisV164({
   }
   const finite = values.filter((value) => Number.isFinite(value));
   if (finite.length === 0) return { domain: [0, 1], ticks: niceTicksV164(0, 1, intervals) };
+  // V164-R3: a count (건·곳·명) whose values are whole numbers is guided at whole numbers (0 1 2 3, never 0.5 1.5).
+  const wholeCounts = isCountUnitV164(unit) && finite.every((value) => Number.isInteger(value));
   const minimum = Math.min(...finite);
   const maximum = Math.max(...finite);
   const amount = minimum === maximum ? Math.abs(minimum) * 0.1 || 1 : (maximum - minimum) * 0.08;
   const low = minimum >= 0 ? Math.max(0, minimum - amount) : minimum - amount;
   const high = maximum + amount;
   // At least five guides (the chart audit's floor): a coarse step that leaves four is traded for the next finer one.
-  let nice = niceTicksV164(low, high, intervals);
-  for (let want = intervals + 1; nice.length < MIN_VALUE_TICKS_V164 && want <= intervals + 5; want += 1) nice = niceTicksV164(low, high, want);
+  let nice = niceTicksV164(low, high, intervals, wholeCounts);
+  for (let want = intervals + 1; nice.length < MIN_VALUE_TICKS_V164 && want <= intervals + 5; want += 1) nice = niceTicksV164(low, high, want, wholeCounts);
   if (nice.length < 2) return { domain: [low, high], ticks: [low, high] };
   const domainLow = minimum >= 0 ? Math.max(0, nice[0]) : nice[0];
   let domainHigh = nice[nice.length - 1];
   if (/%/u.test(unit) && minimum >= 0 && maximum <= 100 && domainHigh > 100 && domainLow < 100) domainHigh = 100;
   if (domainLow === nice[0] && domainHigh === nice[nice.length - 1]) return { domain: [domainLow, domainHigh], ticks: nice };
-  return { domain: [domainLow, domainHigh], ticks: roundTicksWithinV164(domainLow, domainHigh, intervals) };
+  const within = roundTicksWithinV164(domainLow, domainHigh, intervals);
+  return { domain: [domainLow, domainHigh], ticks: wholeCounts ? within.filter((tick) => Number.isInteger(tick)) : within };
 }
 
 /**

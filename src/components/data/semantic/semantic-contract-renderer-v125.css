@@ -855,6 +855,20 @@
 .sv125-evidence-matrix tbody th[scope="row"] {
   min-width: 9rem;
 }
+/*
+ * V164-R3: a table of two or three columns takes the width of its panel and wraps its text. The 760px floor
+ * is for the four- and five-column table; under it a two-column table (A-013 beside its map) was wider than
+ * the panel and the right of its 내용·값 column was cut off by the panel's scroll.
+ */
+.sv125-evidence-matrix[data-columns="2"],
+.sv125-evidence-matrix[data-columns="3"] {
+  min-width: 0;
+  table-layout: auto;
+}
+.sv125-evidence-matrix[data-columns="2"] td,
+.sv125-evidence-matrix[data-columns="3"] td {
+  overflow-wrap: anywhere;
+}
 .sv125-evidence-matrix__repeats {
   color: #52645f;
   font-size: 0.8rem;

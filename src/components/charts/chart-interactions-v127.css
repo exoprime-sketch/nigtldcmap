@@ -201,10 +201,21 @@
   vector-effect: non-scaling-stroke;
 }
 
-.v127-interactive-chart__marked text {
+.v127-interactive-chart__marked-label {
   fill: var(--cdp-brand-strong, #0f6b4f);
   font-size: 12px;
   font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--cdp-panel, #fff);
+  stroke-linejoin: round;
+  stroke-width: 3px;
+}
+
+/* V164-R3: what the legend says about a series that starts switched off. */
+.v127-chart-legend-button__note {
+  color: var(--cdp-muted, #5f716a);
+  font-size: 0.86em;
+  font-weight: 400;
 }
 
 .v127-interactive-chart__tick,

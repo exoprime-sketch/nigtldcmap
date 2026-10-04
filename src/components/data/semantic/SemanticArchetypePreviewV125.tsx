@@ -47,7 +47,7 @@ import PeerComparisonV147 from "../public/PeerComparisonV147";
 import RegionalVulnerabilityV147 from "../public/RegionalVulnerabilityV147";
 import { useAnalysisContractV153 } from "../public/analysisContractContextV153";
 import type { IndicatorUnitsV142 } from "./SemanticContractRendererV125";
-import { observationTimeTextV164 } from "../../../data/visualization/barRowsV164";
+import { isAuxIndicatorV164, observationTimeTextV164 } from "../../../data/visualization/barRowsV164";
 import "../../../styles/semantic-visualization-v125.css";
 
 interface Props {
@@ -421,11 +421,20 @@ export default function SemanticArchetypePreviewV125({
   const years = populatedChoicesV164(deliveredYears, (value) =>
     periodContextRows.some((row) => row.year === value && isPopulatedSemanticRowV125(row))
   );
-  const populatedDefaultYear = years.find((value) =>
-    periodContextRows.some(
-      (row) => row.year === value && isPopulatedSemanticRowV125(row)
-    )
-  );
+  // V164-R3: the screen opens on the newest year the main series has a value for. A-030 offers 2024 because its
+  // auxiliary source (a "_aux_" indicator) has a row there, but the main series ends in 2023: opening on 2024
+  // showed only the "[보조]" row. A year only an auxiliary source fills is still selectable.
+  const populatedDefaultYear =
+    years.find((value) =>
+      periodContextRows.some(
+        (row) => row.year === value && isPopulatedSemanticRowV125(row) && !isAuxIndicatorV164(row.indicatorId)
+      )
+    ) ??
+    years.find((value) =>
+      periodContextRows.some(
+        (row) => row.year === value && isPopulatedSemanticRowV125(row)
+      )
+    );
   const year =
     measureRows.length === 0
       ? selectorState.year

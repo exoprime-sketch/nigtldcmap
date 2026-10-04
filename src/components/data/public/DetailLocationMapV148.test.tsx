@@ -289,3 +289,72 @@ describe("another country's regional map", () => {
     expect(section.querySelector("[data-testid='detail-map-coverage-v164']")).toBeNull();
   });
 });
+
+describe("Viet Nam's 34-unit layer (D-022, V164-R3)", () => {
+  // Boundary features carry `unitCode`, the value rows `adm1Code34`: no `adm1Code` on either side.
+  function layer34() {
+    mockGeo["/geo/vnm-adm1-34.geojson"] = collection([
+      { type: "Feature", id: "u1", properties: { unitCode: "VN34-22", name: "Nghệ An" }, geometry: square(105, 15) },
+      { type: "Feature", id: "u2", properties: { unitCode: "VN34-44", name: "An Giang" }, geometry: square(106, 16) },
+      { type: "Feature", id: "u3", properties: { unitCode: "VN34-01", name: "Lai Châu" }, geometry: square(107, 17) },
+    ]);
+    mockGeo["/layers/d-022.json"] = {
+      joinKey: "adm1Code34",
+      values: [
+        { adm1Code34: "VN34-22", adm1Name34: "Nghệ An", variable: "project-count", period: "1997–2025", value: 3, unit: "건" },
+        { adm1Code34: "VN34-44", adm1Name34: "An Giang", variable: "project-count", period: "1997–2025", value: 1, unit: "건" },
+      ],
+    };
+    return layerOf("D-022", {
+      renderer: "admin1-choropleth",
+      geometryUrl: "/geo/vnm-adm1-34.geojson",
+      dataUrl: "/layers/d-022.json",
+      unit: "건",
+      selectors: { defaultPeriod: "1997–2025", defaultVariable: "project-count", periods: ["1997–2025"], variables: [{ key: "project-count", label: "사업 수(소재 성 기준)", periods: ["1997–2025"], unit: "건" }] },
+    }, "1997–2025");
+  }
+
+  const unitPaths = (section: HTMLElement) => Array.from(section.querySelectorAll<SVGPathElement>("svg path[data-has-value]"));
+
+  test("units with a value are filled, units without one are pale grey with a thin line, and none is 'picked'", async () => {
+    const section = await mount("D-022", [layer34()]);
+
+    const paths = unitPaths(section);
+    expect(paths).toHaveLength(3);
+    const withValue = paths.filter((path) => path.getAttribute("data-has-value") === "true");
+    const without = paths.filter((path) => path.getAttribute("data-has-value") === "false");
+    expect(withValue).toHaveLength(2);
+    expect(without).toHaveLength(1);
+    expect(without[0].getAttribute("fill")).toBe("#edf1ef");
+    expect(without[0].getAttribute("stroke-width")).toBe("0.65");
+    expect(without[0].getAttribute("stroke")).not.toBe("#142e27");
+    expect(withValue.every((path) => path.getAttribute("fill") !== "#edf1ef")).toBe(true);
+    // No unit is drawn as the selected one before anything is picked.
+    expect(paths.some((path) => path.hasAttribute("data-picked"))).toBe(false);
+    expect(paths.every((path) => path.getAttribute("stroke-width") === "0.65")).toBe(true);
+  });
+
+  test("the legend names 'no data' with a swatch", async () => {
+    const section = await mount("D-022", [layer34()]);
+    const legend = section.querySelector("[data-testid='detail-map-nodata-legend-v164']");
+    expect(legend).not.toBeNull();
+    expect(text(legend)).toContain("자료 없음");
+    expect(legend?.querySelector(".detail-map148-nodata-key")).not.toBeNull();
+  });
+
+  test("the selection list names the units in Korean and picking one marks only that unit", async () => {
+    const section = await mount("D-022", [layer34()]);
+    const select = section.querySelector("select[aria-label='작은 지도 지역·대상 선택']") as HTMLSelectElement;
+    const options = Array.from(select.querySelectorAll("option")).map((option) => text(option));
+    expect(options).toContain("응에안");
+    expect(options.some((option) => /VN34|adm1/u.test(option))).toBe(false);
+
+    await act(async () => {
+      select.value = "VN34-22";
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    const picked = unitPaths(section).filter((path) => path.hasAttribute("data-picked"));
+    expect(picked).toHaveLength(1);
+    expect(picked[0].getAttribute("stroke-width")).toBe("2.5");
+  });
+});

@@ -1,4 +1,4 @@
-import { useId, useMemo, useState } from "react";
+import { useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import type {
   E012MeasureKeyV125,
@@ -15,6 +15,7 @@ import "./occupation-employment-wage-v125.css";
 import { PublicTermTextV134 } from "../../help/PublicTermV134";
 import ChartAxesV150 from "../../charts/ChartAxesV150";
 import { formatBarValueV164 } from "../../charts/barScaleV164";
+import { scatterLayoutV164, MIN_WIDTH_V164, SCATTER_LABEL_FONT_V164, SCATTER_RADIUS_V164 } from "../../charts/scatterLayoutV164";
 
 export type E012OccupationMeasureKeyV125 =
   | "occupation_employment_count"
@@ -534,15 +535,36 @@ function EmploymentWageScatter({
   invalidUnits: boolean;
   selection: E012VisualizationSelectionV125;
 }) {
-  const width = 620;
-  const height = 390;
-  const margin = { top: 28, right: 88, bottom: 62, left: 78 };
-  const plotWidth = width - margin.left - margin.right;
-  const plotHeight = height - margin.top - margin.bottom;
-  const maxEmployment = Math.max(...points.map((point) => point.employment), 0);
-  const maxWage = Math.max(...points.map((point) => point.wage), 0);
+  // V164-R3: the drawing is as wide as its box (a 620-wide viewBox shrunk to a phone made every label 6px), so the
+  // text keeps its pixel size; the layout below is computed from the measured width.
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const [measuredWidth, setMeasuredWidth] = useState(620);
+  const hasChart = !invalidUnits && points.length > 0;
+  useLayoutEffect(() => {
+    const target = frameRef.current;
+    if (!target) return undefined;
+    const update = () => {
+      const next = Math.floor(target.getBoundingClientRect().width);
+      if (next > 0) setMeasuredWidth(Math.max(MIN_WIDTH_V164, next));
+    };
+    update();
+    if (typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(update);
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [hasChart]);
   const employmentUnit = points[0]?.employmentUnit || "천명";
   const wageUnit = points[0]?.wageUnit || "천VND";
+  const layout = useMemo(
+    () =>
+      scatterLayoutV164(
+        points.map((point) => ({ id: point.occupation.key, x: point.employment, y: point.wage, label: point.occupation.shortLabel })),
+        measuredWidth
+      ),
+    [points, measuredWidth]
+  );
+  const { width, height, margin, plotWidth, plotHeight } = layout;
+  const plotBottom = margin.top + plotHeight;
 
   return (
     <section
@@ -576,54 +598,42 @@ function EmploymentWageScatter({
         </p>
       ) : (
         <>
+          <div className="e012v125__scatter-frame" ref={frameRef}>
           <svg
             className="e012v125__scatter"
             viewBox={`0 0 ${width} ${height}`}
+            width={width}
+            height={height}
             role="img"
             aria-label={`${selection.year}년 ${SEX_LABELS[selection.sex]} 직군별 종사자 수와 월평균 임금 산점도, ${points.length}개 직군`}
           >
-            <line
-              className="e012v125__axis"
-              x1={margin.left}
-              y1={height - margin.bottom}
-              x2={width - margin.right}
-              y2={height - margin.bottom}
-            />
-            <line
-              className="e012v125__axis"
-              x1={margin.left}
-              y1={margin.top}
-              x2={margin.left}
-              y2={height - margin.bottom}
-            />
-            {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
-              const y = margin.top + plotHeight * (1 - ratio);
+            {layout.yTicks.map((tick, index) => {
+              const y = margin.top + plotHeight * (1 - (tick - layout.yDomain[0]) / (layout.yDomain[1] - layout.yDomain[0] || 1));
               return (
-                <g key={ratio} aria-hidden="true">
-                  <line
-                    className="e012v125__grid-line"
-                    x1={margin.left}
-                    y1={y}
-                    x2={width - margin.right}
-                    y2={y}
-                  />
-                  <text x={margin.left - 10} y={y + 4} textAnchor="end">
-                    {formatAxis(maxWage * ratio)}
+                <g key={`y-${tick}`} aria-hidden="true" data-testid="e012-scatter-y-tick">
+                  <line className="e012v125__grid-line" x1={margin.left} y1={y} x2={width - margin.right} y2={y} />
+                  <text x={margin.left - 8} y={y + 4} textAnchor="end">
+                    {layout.yTickLabels[index]}
                   </text>
                 </g>
               );
             })}
-            {points.map((point) => {
-              const x =
-                margin.left +
-                (maxEmployment > 0
-                  ? (point.employment / maxEmployment) * plotWidth
-                  : plotWidth / 2);
-              const y =
-                margin.top +
-                (maxWage > 0
-                  ? (1 - point.wage / maxWage) * plotHeight
-                  : plotHeight / 2);
+            {layout.xTicks.map((tick, index) => {
+              const x = margin.left + plotWidth * ((tick - layout.xDomain[0]) / (layout.xDomain[1] - layout.xDomain[0] || 1));
+              return (
+                <g key={`x-${tick}`} aria-hidden="true" data-testid="e012-scatter-x-tick">
+                  <line className="e012v125__grid-line" x1={x} y1={margin.top} x2={x} y2={plotBottom} />
+                  <line className="e012v125__axis" x1={x} y1={plotBottom} x2={x} y2={plotBottom + 5} />
+                  <text x={x} y={plotBottom + 19} textAnchor={index === layout.xTicks.length - 1 ? "end" : "middle"}>
+                    {layout.xTickLabels[index]}
+                  </text>
+                </g>
+              );
+            })}
+            <line className="e012v125__axis" x1={margin.left} y1={plotBottom} x2={width - margin.right} y2={plotBottom} />
+            <line className="e012v125__axis" x1={margin.left} y1={margin.top} x2={margin.left} y2={plotBottom} />
+            {points.map((point, index) => {
+              const placement = layout.points[index];
               const accessibleLabel = `${point.occupation.label}: 종사자 수 ${formatValue(
                 point.employment,
                 point.employmentUnit
@@ -638,29 +648,27 @@ function EmploymentWageScatter({
                   aria-label={accessibleLabel}
                 >
                   <title>{accessibleLabel}</title>
-                  <circle cx={x} cy={y} r={7} />
-                  <text x={x + 9} y={y - 9}>
+                  <circle cx={placement.cx} cy={placement.cy} r={SCATTER_RADIUS_V164} />
+                  <text
+                    data-testid="e012-scatter-label"
+                    x={placement.label.x}
+                    y={placement.label.y}
+                    textAnchor={placement.label.anchor}
+                    fontSize={SCATTER_LABEL_FONT_V164}
+                  >
                     {point.occupation.shortLabel}
                   </text>
                 </g>
               );
             })}
-            <text
-              className="e012v125__axis-title"
-              x={margin.left + plotWidth / 2}
-              y={height - 16}
-              textAnchor="middle"
-            >
+            <text className="e012v125__axis-title" data-testid="e012-scatter-y-title" x={6} y={16} textAnchor="start">
+              월평균 임금 ({wageUnit})
+            </text>
+            <text className="e012v125__axis-title" x={margin.left + plotWidth / 2} y={height - 10} textAnchor="middle">
               직군별 종사자 수 ({employmentUnit})
             </text>
-            <text
-              className="e012v125__axis-title"
-              transform={`translate(18 ${margin.top + plotHeight / 2}) rotate(-90)`}
-              textAnchor="middle"
-            >
-              월평균 임금
-            </text>
           </svg>
+          </div>
           <div className="e012v125__axis-unit-note">
             <ChartAxesV150 x={`직군별 종사자 수(${employmentUnit})`} y="월평균 임금" unit={wageUnit} />
           </div>
@@ -1175,13 +1183,6 @@ function formatRawValue(value: number, raw: unknown): string {
 function formatNumber(value: number, maximumFractionDigits = 2): string {
   return new Intl.NumberFormat("ko-KR", {
     maximumFractionDigits,
-  }).format(value);
-}
-
-function formatAxis(value: number): string {
-  return new Intl.NumberFormat("ko-KR", {
-    notation: value >= 10000 ? "compact" : "standard",
-    maximumFractionDigits: 1,
   }).format(value);
 }
 

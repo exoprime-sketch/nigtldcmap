@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 
-import { scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
+import { allZeroSeriesIdsV164, scaleOutlierSeriesIdsV164 } from "./seriesScaleV164";
 
 const history = (id: string, values: number[]) => ({ id, points: values.map((value) => ({ value })) });
 
@@ -34,5 +34,24 @@ describe("a single point that would flatten every other line", () => {
   test("lines that are all zero give nothing to compare against", () => {
     const ids = scaleOutlierSeriesIdsV164([history("a", [0, 0, 0]), history("b", [0, 0, 0]), { id: "lone", points: [{ value: 3 }] }]);
     expect(ids.size).toBe(0);
+  });
+});
+
+describe("V164-R3 series that are zero in every year", () => {
+  test("D-006 / B-040 shape: a line that is 0 in all years while others move is named", () => {
+    const ids = allZeroSeriesIdsV164([history("tax", [0, 0, 0, 0]), history("a", [3, 4, 5]), history("b", [0, 1, 0])]);
+    expect(Array.from(ids)).toEqual(["tax"]);
+  });
+
+  test("a line with one non-zero year is not an all-zero line", () => {
+    expect(allZeroSeriesIdsV164([history("a", [0, 0, 2]), history("b", [3, 4, 5])]).size).toBe(0);
+  });
+
+  test("when every line is zero there is nothing to hide behind", () => {
+    expect(allZeroSeriesIdsV164([history("a", [0, 0]), history("b", [0, 0, 0])]).size).toBe(0);
+  });
+
+  test("a line without points is not called zero", () => {
+    expect(allZeroSeriesIdsV164([{ id: "empty", points: [] }, history("b", [3, 4])]).size).toBe(0);
   });
 });

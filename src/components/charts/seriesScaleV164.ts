@@ -25,3 +25,20 @@ export function scaleOutlierSeriesIdsV164(series: ScaleSeriesV164[]): Set<string
   if (!(largest > 0)) return new Set();
   return new Set(lone.filter((item) => Math.abs(item.points[0].value) >= OUTLIER_FACTOR_V164 * largest).map((item) => item.id));
 }
+
+/**
+ * V164-R3: ids of the series whose every value is 0, while another series of the
+ * chart has a value above 0. BGD D-006 draws eight tax series of which seven are
+ * 0 in every year (the source states those zeros), and VNM B-040 draws a
+ * geothermal output of 0 TWh in 1980-2024: laid over the other lines they hide
+ * each other on the zero line. They start switched off, marked "모든 연도 0" in the
+ * legend; the zeros themselves stay in the table and the download. When every
+ * series of the chart is 0, none is hidden.
+ */
+export function allZeroSeriesIdsV164(series: ScaleSeriesV164[]): Set<string> {
+  const withPoints = series.filter((item) => item.points.length > 0);
+  const isZero = (item: ScaleSeriesV164) => item.points.every((point) => Number.isFinite(point.value) && point.value === 0);
+  const zero = withPoints.filter(isZero);
+  if (zero.length === 0 || zero.length === withPoints.length) return new Set();
+  return new Set(zero.map((item) => item.id));
+}
